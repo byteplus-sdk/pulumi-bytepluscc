@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class ImageSnapshotGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 快照大小。单位为GiB。
+        /// Snapshot size (GiB)
         /// </summary>
         [Input("size")]
         public Input<int>? Size { get; set; }
 
         /// <summary>
-        /// 快照ID。
+        /// Snapshot ID
         /// </summary>
         [Input("snapshotId")]
         public Input<string>? SnapshotId { get; set; }
 
         /// <summary>
-        /// 云盘种类。system：系统盘。data：数据盘。
+        /// Cloud disk type. system: System disk. data: Data disk.
         /// </summary>
         [Input("volumeKind")]
         public Input<string>? VolumeKind { get; set; }

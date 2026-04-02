@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Outputs
     public sealed class InstanceMaintenanceWindow
     {
         /// <summary>
-        /// 可维护周期粒度，默认取值为：Week（周）。
+        /// Maintenance cycle granularity. Default value: Week.
         /// </summary>
         public readonly string? DayKind;
         /// <summary>
-        /// 指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+        /// Specify which day of the month is the maintenance window. Default is empty, meaning every day is specified.
         /// </summary>
         public readonly ImmutableArray<int> DayOfMonths;
         /// <summary>
-        /// 每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+        /// Which day of the week is the maintenance window. Default value is every day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
         /// </summary>
         public readonly ImmutableArray<string> DayOfWeeks;
         /// <summary>
-        /// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+        /// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time).
         /// </summary>
         public readonly string? MaintenanceTime;
 

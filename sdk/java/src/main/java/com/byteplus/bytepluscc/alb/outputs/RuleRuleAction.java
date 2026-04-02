@@ -42,7 +42,7 @@ public final class RuleRuleAction {
      */
     private @Nullable RuleRuleActionTrafficLimitConfig trafficLimitConfig;
     /**
-     * @return 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+     * @return Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
      * 
      */
     private @Nullable String type;
@@ -84,7 +84,7 @@ public final class RuleRuleAction {
         return Optional.ofNullable(this.trafficLimitConfig);
     }
     /**
-     * @return 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+     * @return Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
      * 
      */
     public Optional<String> type() {

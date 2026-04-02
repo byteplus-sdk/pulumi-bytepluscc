@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 资源项目（Project）是提供的一种资源分组管理的机制，帮助您达成逻辑层面的资源隔离，您能够通过资源项目进行项目制授权和分账等操作。
+ * Resource project (Project) provides a mechanism for resource group management, helping you achieve logical resource isolation. You can use resource projects for project-based authorization, billing, and other operations.
  *
  * ## Example Usage
  *
@@ -56,43 +56,43 @@ export class Project extends pulumi.CustomResource {
     }
 
     /**
-     * 账号ID
+     * Account ID
      */
     public /*out*/ readonly accountId!: pulumi.Output<number>;
     /**
-     * 创建时间
+     * Creation Time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 描述
+     * Description
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 展示名
+     * Display Name
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * 是否可见
+     * Visible
      */
     public /*out*/ readonly hasPermission!: pulumi.Output<boolean>;
     /**
-     * 父项目名称
+     * Parent Project Name
      */
     public readonly parentProjectName!: pulumi.Output<string>;
     /**
-     * 项目路径
+     * Project Path
      */
     public /*out*/ readonly path!: pulumi.Output<string>;
     /**
-     * 项目名称
+     * Project Name
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 启用状态
+     * Enabled Status
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 更新时间
+     * Update Time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -145,43 +145,43 @@ export class Project extends pulumi.CustomResource {
  */
 export interface ProjectState {
     /**
-     * 账号ID
+     * Account ID
      */
     accountId?: pulumi.Input<number>;
     /**
-     * 创建时间
+     * Creation Time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 描述
+     * Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 展示名
+     * Display Name
      */
     displayName?: pulumi.Input<string>;
     /**
-     * 是否可见
+     * Visible
      */
     hasPermission?: pulumi.Input<boolean>;
     /**
-     * 父项目名称
+     * Parent Project Name
      */
     parentProjectName?: pulumi.Input<string>;
     /**
-     * 项目路径
+     * Project Path
      */
     path?: pulumi.Input<string>;
     /**
-     * 项目名称
+     * Project Name
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 启用状态
+     * Enabled Status
      */
     status?: pulumi.Input<string>;
     /**
-     * 更新时间
+     * Update Time
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -191,19 +191,19 @@ export interface ProjectState {
  */
 export interface ProjectArgs {
     /**
-     * 描述
+     * Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 展示名
+     * Display Name
      */
     displayName?: pulumi.Input<string>;
     /**
-     * 父项目名称
+     * Parent Project Name
      */
     parentProjectName?: pulumi.Input<string>;
     /**
-     * 项目名称
+     * Project Name
      */
     projectName: pulumi.Input<string>;
 }

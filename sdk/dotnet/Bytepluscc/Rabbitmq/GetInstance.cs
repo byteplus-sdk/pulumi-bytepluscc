@@ -65,35 +65,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
     public sealed class GetInstanceResult
     {
         /// <summary>
-        /// 创建实例的主账号ID。
+        /// Main account ID used to create the instance.
         /// </summary>
         public readonly string AccountId;
         /// <summary>
-        /// 是否已开启公网解析功能。true：已开启, false：已关闭
+        /// Whether public DNS resolution is enabled. true: enabled, false: disabled.
         /// </summary>
         public readonly bool ApplyPrivateDnsToPublic;
         /// <summary>
-        /// 实例的类型，即集群版或单机版。
+        /// Instance type, either cluster or standalone.
         /// </summary>
         public readonly string ArchType;
         /// <summary>
-        /// 实例的计费方式等计费信息。
+        /// Instance billing method and related billing information.
         /// </summary>
         public readonly Outputs.GetInstanceChargeDetailResult ChargeDetail;
         /// <summary>
-        /// RabbitMQ实例的计算规格。
+        /// Compute specification of the RabbitMQ instance.
         /// </summary>
         public readonly string ComputeSpec;
         /// <summary>
-        /// 实例的创建时间。
+        /// Instance creation time.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// EIP的ID。
+        /// EIP ID.
         /// </summary>
         public readonly string EipId;
         /// <summary>
-        /// 实例的连接信息。
+        /// Instance connection information.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceEndpointResult> Endpoints;
         /// <summary>
@@ -101,67 +101,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 实例的简单描述。
+        /// Brief description of the instance.
         /// </summary>
         public readonly string InstanceDescription;
         /// <summary>
-        /// RabbitMQ 实例 ID。
+        /// RabbitMQ instance ID.
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// RabbitMQ 实例名称。
+        /// RabbitMQ instance name.
         /// </summary>
         public readonly string InstanceName;
         /// <summary>
-        /// 实例状态。
+        /// Instance status.
         /// </summary>
         public readonly string InstanceStatus;
         /// <summary>
-        /// 是否开启了云盘加密。
+        /// Whether cloud disk encryption is enabled.
         /// </summary>
         public readonly bool IsEncrypted;
         /// <summary>
-        /// 实例所属的IAM项目。
+        /// IAM project to which the instance belongs.
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 实例总存储空间。单位为 GiB。
+        /// Total storage space of the instance, measured in GiB.
         /// </summary>
         public readonly int StorageSpace;
         /// <summary>
-        /// VPC的子网ID。
+        /// VPC subnet ID.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
-        /// 实例绑定的标签。
+        /// Tags bound to the instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceTagResult> Tags;
         /// <summary>
-        /// 实例已用存储空间。单位为 GiB。
+        /// Used storage space of the instance, measured in GiB.
         /// </summary>
         public readonly int UsedStorageSpace;
         /// <summary>
-        /// RabbitMQ WebUI管理员账号名。
+        /// RabbitMQ WebUI administrator account name.
         /// </summary>
         public readonly string UserName;
         /// <summary>
-        /// RabbitMQ WebUI管理员密码。
+        /// RabbitMQ WebUI administrator password.
         /// </summary>
         public readonly string UserPassword;
         /// <summary>
-        /// 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+        /// Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
         /// </summary>
         public readonly string Version;
         /// <summary>
-        /// 私有网络（VPC）ID。
+        /// Private network (VPC) ID.
         /// </summary>
         public readonly string VpcId;
         /// <summary>
-        /// 可用区的描述信息。
+        /// Description of the availability zone.
         /// </summary>
         public readonly string ZoneDescription;
         /// <summary>
-        /// 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+        /// Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
         /// </summary>
         public readonly string ZoneId;
 

@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class UpstreamUpstreamSpecEcsInstance
     {
         /// <summary>
-        /// 云服务器ID。
+        /// Cloud server ID
         /// </summary>
         public readonly string? EcsId;
         /// <summary>
-        /// IP地址。
+        /// IP address
         /// </summary>
         public readonly string? Ip;
         /// <summary>
-        /// 端口。
+        /// Port
         /// </summary>
         public readonly int? Port;
 

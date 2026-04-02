@@ -67,7 +67,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListCategory")
     def allow_list_category(self) -> builtins.str:
         """
-        白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+        Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
         """
         return pulumi.get(self, "allow_list_category")
 
@@ -75,7 +75,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListDesc")
     def allow_list_desc(self) -> builtins.str:
         """
-        白名单的备注信息，长度不可超过 200 个字符。
+        Allowlist remarks. Maximum length: 200 characters.
         """
         return pulumi.get(self, "allow_list_desc")
 
@@ -83,7 +83,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListId")
     def allow_list_id(self) -> builtins.str:
         """
-        白名单 ID。
+        Allowlist ID.
         """
         return pulumi.get(self, "allow_list_id")
 
@@ -91,7 +91,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListIpNum")
     def allow_list_ip_num(self) -> builtins.int:
         """
-        白名单内的 IP 地址（或地址段）总数。
+        Total number of IP addresses (or address ranges) in the allowlist.
         """
         return pulumi.get(self, "allow_list_ip_num")
 
@@ -99,7 +99,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListName")
     def allow_list_name(self) -> builtins.str:
         """
-        白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+        Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
         """
         return pulumi.get(self, "allow_list_name")
 
@@ -107,7 +107,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListType")
     def allow_list_type(self) -> builtins.str:
         """
-        白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+        IP address type in the allowlist. Only IPv4 addresses are currently supported.
         """
         return pulumi.get(self, "allow_list_type")
 
@@ -115,7 +115,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowLists")
     def allow_lists(self) -> Sequence[builtins.str]:
         """
-        输入 IP 地址或 CIDR 格式的 IP 地址段。
+        Enter an IP address or a CIDR-format IP address range.
         """
         return pulumi.get(self, "allow_lists")
 
@@ -123,7 +123,7 @@ class GetAllowListResult:
     @pulumi.getter(name="associatedInstanceNum")
     def associated_instance_num(self) -> builtins.int:
         """
-        已绑定当前白名单的实例总数。
+        Total number of instances bound to the current allowlist.
         """
         return pulumi.get(self, "associated_instance_num")
 
@@ -131,7 +131,7 @@ class GetAllowListResult:
     @pulumi.getter(name="associatedInstances")
     def associated_instances(self) -> Sequence['outputs.GetAllowListAssociatedInstanceResult']:
         """
-        已绑定当前白名单的实例信息。
+        Instance information bound to the current allowlist.
         """
         return pulumi.get(self, "associated_instances")
 
@@ -147,7 +147,7 @@ class GetAllowListResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        当前白名单所属的项目。
+        Project to which the current allowlist belongs.
         """
         return pulumi.get(self, "project_name")
 

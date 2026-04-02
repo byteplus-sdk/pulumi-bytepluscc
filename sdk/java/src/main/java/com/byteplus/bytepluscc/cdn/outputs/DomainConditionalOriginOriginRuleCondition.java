@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 public final class DomainConditionalOriginOriginRuleCondition {
     private @Nullable List<DomainConditionalOriginOriginRuleConditionConditionGroup> conditionGroups;
     /**
-     * @return 表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 &#34;或&#34;。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 &#34;与&#34;。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+     * @return Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an &#39;or&#39; relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an &#39;and&#39; relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
      * 
      */
     private @Nullable String connective;
     /**
-     * @return 表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+     * @return Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
      * 
      */
     private @Nullable Boolean isGroup;
@@ -31,14 +31,14 @@ public final class DomainConditionalOriginOriginRuleCondition {
         return this.conditionGroups == null ? List.of() : this.conditionGroups;
     }
     /**
-     * @return 表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 &#34;或&#34;。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 &#34;与&#34;。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+     * @return Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an &#39;or&#39; relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an &#39;and&#39; relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
      * 
      */
     public Optional<String> connective() {
         return Optional.ofNullable(this.connective);
     }
     /**
-     * @return 表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+     * @return Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
      * 
      */
     public Optional<Boolean> isGroup() {

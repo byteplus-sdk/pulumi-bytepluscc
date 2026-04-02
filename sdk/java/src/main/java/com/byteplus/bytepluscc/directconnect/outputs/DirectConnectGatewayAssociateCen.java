@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DirectConnectGatewayAssociateCen {
     /**
-     * @return CEN的ID。
+     * @return ID of CEN.
      * 
      */
     private @Nullable String cenId;
     /**
-     * @return CEN的用户ID。
+     * @return User ID of CEN.
      * 
      */
     private @Nullable String cenOwnerId;
     /**
-     * @return 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+     * @return Status of the instance in CEN. Attaching: attaching. Attached: attached.
      * 
      */
     private @Nullable String cenStatus;
 
     private DirectConnectGatewayAssociateCen() {}
     /**
-     * @return CEN的ID。
+     * @return ID of CEN.
      * 
      */
     public Optional<String> cenId() {
         return Optional.ofNullable(this.cenId);
     }
     /**
-     * @return CEN的用户ID。
+     * @return User ID of CEN.
      * 
      */
     public Optional<String> cenOwnerId() {
         return Optional.ofNullable(this.cenOwnerId);
     }
     /**
-     * @return 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+     * @return Status of the instance in CEN. Attaching: attaching. Attached: attached.
      * 
      */
     public Optional<String> cenStatus() {

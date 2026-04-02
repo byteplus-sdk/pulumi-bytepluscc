@@ -13,50 +13,50 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceInstanceConfigurationNetworkSpec {
     /**
-     * @return 公网IP的带宽上限，默认为“1”，单位：Mbps。
+     * @return Public IP bandwidth limit. Default is &#39;1&#39;, unit: Mbps.
      * 
      */
     private Integer bandwidth;
     /**
-     * @return 开启/关闭
+     * @return Enable/Disable
      * 
      */
     private Boolean isOpen;
     /**
-     * @return 实例公网资源规格名称
+     * @return Instance public resource specification name
      * 
      */
     private String specName;
     /**
-     * @return 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+     * @return Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
      * 
      */
     private String type;
 
     private GetInstanceInstanceConfigurationNetworkSpec() {}
     /**
-     * @return 公网IP的带宽上限，默认为“1”，单位：Mbps。
+     * @return Public IP bandwidth limit. Default is &#39;1&#39;, unit: Mbps.
      * 
      */
     public Integer bandwidth() {
         return this.bandwidth;
     }
     /**
-     * @return 开启/关闭
+     * @return Enable/Disable
      * 
      */
     public Boolean isOpen() {
         return this.isOpen;
     }
     /**
-     * @return 实例公网资源规格名称
+     * @return Instance public resource specification name
      * 
      */
     public String specName() {
         return this.specName;
     }
     /**
-     * @return 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+     * @return Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
      * 
      */
     public String type() {

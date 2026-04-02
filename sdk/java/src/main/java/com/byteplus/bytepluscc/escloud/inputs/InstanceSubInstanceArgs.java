@@ -16,14 +16,14 @@ public final class InstanceSubInstanceArgs extends com.pulumi.resources.Resource
     public static final InstanceSubInstanceArgs Empty = new InstanceSubInstanceArgs();
 
     /**
-     * 企业级 SQL 分析实例 ID。
+     * Enterprise-level SQL analysis instance ID.
      * 
      */
     @Import(name="subInstanceId")
     private @Nullable Output<String> subInstanceId;
 
     /**
-     * @return 企业级 SQL 分析实例 ID。
+     * @return Enterprise-level SQL analysis instance ID.
      * 
      */
     public Optional<Output<String>> subInstanceId() {
@@ -31,14 +31,14 @@ public final class InstanceSubInstanceArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 实例状态。
+     * Instance status
      * 
      */
     @Import(name="subInstanceStatus")
     private @Nullable Output<String> subInstanceStatus;
 
     /**
-     * @return 实例状态。
+     * @return Instance status
      * 
      */
     public Optional<Output<String>> subInstanceStatus() {
@@ -46,14 +46,14 @@ public final class InstanceSubInstanceArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 实例类型。
+     * Instance type
      * 
      */
     @Import(name="subInstanceType")
     private @Nullable Output<String> subInstanceType;
 
     /**
-     * @return 实例类型。
+     * @return Instance type
      * 
      */
     public Optional<Output<String>> subInstanceType() {
@@ -87,7 +87,7 @@ public final class InstanceSubInstanceArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param subInstanceId 企业级 SQL 分析实例 ID。
+         * @param subInstanceId Enterprise-level SQL analysis instance ID.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class InstanceSubInstanceArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param subInstanceId 企业级 SQL 分析实例 ID。
+         * @param subInstanceId Enterprise-level SQL analysis instance ID.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class InstanceSubInstanceArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param subInstanceStatus 实例状态。
+         * @param subInstanceStatus Instance status
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class InstanceSubInstanceArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param subInstanceStatus 实例状态。
+         * @param subInstanceStatus Instance status
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class InstanceSubInstanceArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param subInstanceType 实例类型。
+         * @param subInstanceType Instance type
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class InstanceSubInstanceArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param subInstanceType 实例类型。
+         * @param subInstanceType Instance type
          * 
          * @return builder
          * 

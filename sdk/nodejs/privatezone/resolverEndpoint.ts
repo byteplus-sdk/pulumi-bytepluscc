@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 在把外部的 DNS 查询请求转发到解析器的场景中，您需要创建终端节点。收到解析器转发的 DNS 查询请求后，终端节点出站终端节点会把 DNS 查询请求转发到外部的 DNS 服务器。收到来自外部的 DNS 查询请求后，入站终端节点会把 DNS 查询请求转发到解析器。
+ * In scenarios where external DNS query requests are forwarded to the resolver, you need to create an endpoint. After receiving DNS query requests forwarded by the resolver, outbound endpoints forward DNS queries to external DNS servers. After receiving DNS query requests from external sources, inbound endpoints forward DNS queries to the resolver
  *
  * ## Import
  *
@@ -44,49 +44,49 @@ export class ResolverEndpoint extends pulumi.CustomResource {
     }
 
     /**
-     * 创建时间
+     * Creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+     * DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
      */
     public readonly direction!: pulumi.Output<string>;
     /**
-     * 终端节点的 ID。
+     * Endpoint ID
      */
     public /*out*/ readonly endpointId!: pulumi.Output<string>;
     /**
-     * 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+     * Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
      */
     public readonly endpointType!: pulumi.Output<string>;
     public readonly ipConfigs!: pulumi.Output<outputs.privatezone.ResolverEndpointIpConfig[]>;
     /**
-     * 终端节点的名称。支持 UTF-8 格式。
+     * Endpoint name. Supports UTF-8 format
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * 终端节点所属的项目名称。默认为 default。
+     * Project name to which the endpoint belongs. Default is default
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+     * Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
      */
     public /*out*/ readonly securityGroupId!: pulumi.Output<string>;
     /**
-     * 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+     * Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.privatezone.ResolverEndpointTag[]>;
     /**
-     * 更新时间
+     * Update time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * 终端节点所在的 VPC 的 ID。
+     * VPC ID where the endpoint is located
      */
     public readonly vpcId!: pulumi.Output<string>;
     /**
-     * 终端节点所在的 VPC 的地域。
+     * Region of the VPC where the endpoint is located
      */
     public readonly vpcRegion!: pulumi.Output<string>;
 
@@ -151,49 +151,49 @@ export class ResolverEndpoint extends pulumi.CustomResource {
  */
 export interface ResolverEndpointState {
     /**
-     * 创建时间
+     * Creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+     * DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
      */
     direction?: pulumi.Input<string>;
     /**
-     * 终端节点的 ID。
+     * Endpoint ID
      */
     endpointId?: pulumi.Input<string>;
     /**
-     * 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+     * Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
      */
     endpointType?: pulumi.Input<string>;
     ipConfigs?: pulumi.Input<pulumi.Input<inputs.privatezone.ResolverEndpointIpConfig>[]>;
     /**
-     * 终端节点的名称。支持 UTF-8 格式。
+     * Endpoint name. Supports UTF-8 format
      */
     name?: pulumi.Input<string>;
     /**
-     * 终端节点所属的项目名称。默认为 default。
+     * Project name to which the endpoint belongs. Default is default
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+     * Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
      */
     securityGroupId?: pulumi.Input<string>;
     /**
-     * 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+     * Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.privatezone.ResolverEndpointTag>[]>;
     /**
-     * 更新时间
+     * Update time
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * 终端节点所在的 VPC 的 ID。
+     * VPC ID where the endpoint is located
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * 终端节点所在的 VPC 的地域。
+     * Region of the VPC where the endpoint is located
      */
     vpcRegion?: pulumi.Input<string>;
 }
@@ -203,29 +203,29 @@ export interface ResolverEndpointState {
  */
 export interface ResolverEndpointArgs {
     /**
-     * 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+     * DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
      */
     direction?: pulumi.Input<string>;
     /**
-     * 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+     * Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
      */
     endpointType?: pulumi.Input<string>;
     ipConfigs?: pulumi.Input<pulumi.Input<inputs.privatezone.ResolverEndpointIpConfig>[]>;
     /**
-     * 终端节点的名称。支持 UTF-8 格式。
+     * Endpoint name. Supports UTF-8 format
      */
     name: pulumi.Input<string>;
     /**
-     * 终端节点所属的项目名称。默认为 default。
+     * Project name to which the endpoint belongs. Default is default
      */
     projectName?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.privatezone.ResolverEndpointTag>[]>;
     /**
-     * 终端节点所在的 VPC 的 ID。
+     * VPC ID where the endpoint is located
      */
     vpcId: pulumi.Input<string>;
     /**
-     * 终端节点所在的 VPC 的地域。
+     * Region of the VPC where the endpoint is located
      */
     vpcRegion: pulumi.Input<string>;
 }

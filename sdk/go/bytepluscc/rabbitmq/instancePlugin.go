@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 在消息队列 RabbitMQ版控制台中创建实例之后，实例插件默认为关闭状态，您可以手动为实例开启/关闭插件。开启/关闭部分插件会导致集群滚动重启，建议避开业务运行时段执行该操作。集群滚动重启时会造成未持久化的消息丢失，也会出现短暂的连接不稳定现象，例如连接断开，断开后会根据客户端配置决定是否自动重连。
+// After you create an instance in the RabbitMQ console, plugins are disabled by default. You can manually enable or disable plugins for the instance. Enabling or disabling certain plugins will cause a rolling restart of the cluster. It is recommended to perform this operation outside of business hours. A rolling restart may result in the loss of non-persistent messages and temporary connection instability, such as connection drops. After a connection drop, whether the client automatically reconnects depends on its configuration
 //
 // ## Example Usage
 //
@@ -49,23 +49,23 @@ import (
 type InstancePlugin struct {
 	pulumi.CustomResourceState
 
-	// 插件描述。
+	// Plugin description
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 关闭此插件的注意事项说明。
+	// Notes for disabling this plugin
 	DisablePrompt pulumi.StringOutput `pulumi:"disablePrompt"`
-	// 开启此插件的注意事项说明。
+	// Notes for enabling this plugin
 	EnablePrompt pulumi.StringOutput `pulumi:"enablePrompt"`
-	// 是否已开启插件。true：插件已开启。false：插件已关闭。
+	// Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// 实例 ID。
+	// Instance ID
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
-	// 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+	// Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
 	NeedRebootOnChange pulumi.BoolOutput `pulumi:"needRebootOnChange"`
-	// 插件名称。
+	// Plugin name
 	PluginName pulumi.StringOutput `pulumi:"pluginName"`
-	// 插件监听的端口。
+	// Plugin listening port
 	Port pulumi.IntOutput `pulumi:"port"`
-	// 插件版本。
+	// Plugin version
 	Version pulumi.StringOutput `pulumi:"version"`
 }
 
@@ -102,44 +102,44 @@ func GetInstancePlugin(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering InstancePlugin resources.
 type instancePluginState struct {
-	// 插件描述。
+	// Plugin description
 	Description *string `pulumi:"description"`
-	// 关闭此插件的注意事项说明。
+	// Notes for disabling this plugin
 	DisablePrompt *string `pulumi:"disablePrompt"`
-	// 开启此插件的注意事项说明。
+	// Notes for enabling this plugin
 	EnablePrompt *string `pulumi:"enablePrompt"`
-	// 是否已开启插件。true：插件已开启。false：插件已关闭。
+	// Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
 	Enabled *bool `pulumi:"enabled"`
-	// 实例 ID。
+	// Instance ID
 	InstanceId *string `pulumi:"instanceId"`
-	// 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+	// Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
 	NeedRebootOnChange *bool `pulumi:"needRebootOnChange"`
-	// 插件名称。
+	// Plugin name
 	PluginName *string `pulumi:"pluginName"`
-	// 插件监听的端口。
+	// Plugin listening port
 	Port *int `pulumi:"port"`
-	// 插件版本。
+	// Plugin version
 	Version *string `pulumi:"version"`
 }
 
 type InstancePluginState struct {
-	// 插件描述。
+	// Plugin description
 	Description pulumi.StringPtrInput
-	// 关闭此插件的注意事项说明。
+	// Notes for disabling this plugin
 	DisablePrompt pulumi.StringPtrInput
-	// 开启此插件的注意事项说明。
+	// Notes for enabling this plugin
 	EnablePrompt pulumi.StringPtrInput
-	// 是否已开启插件。true：插件已开启。false：插件已关闭。
+	// Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
 	Enabled pulumi.BoolPtrInput
-	// 实例 ID。
+	// Instance ID
 	InstanceId pulumi.StringPtrInput
-	// 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+	// Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
 	NeedRebootOnChange pulumi.BoolPtrInput
-	// 插件名称。
+	// Plugin name
 	PluginName pulumi.StringPtrInput
-	// 插件监听的端口。
+	// Plugin listening port
 	Port pulumi.IntPtrInput
-	// 插件版本。
+	// Plugin version
 	Version pulumi.StringPtrInput
 }
 
@@ -148,17 +148,17 @@ func (InstancePluginState) ElementType() reflect.Type {
 }
 
 type instancePluginArgs struct {
-	// 实例 ID。
+	// Instance ID
 	InstanceId string `pulumi:"instanceId"`
-	// 插件名称。
+	// Plugin name
 	PluginName *string `pulumi:"pluginName"`
 }
 
 // The set of arguments for constructing a InstancePlugin resource.
 type InstancePluginArgs struct {
-	// 实例 ID。
+	// Instance ID
 	InstanceId pulumi.StringInput
-	// 插件名称。
+	// Plugin name
 	PluginName pulumi.StringPtrInput
 }
 
@@ -249,47 +249,47 @@ func (o InstancePluginOutput) ToInstancePluginOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 插件描述。
+// Plugin description
 func (o InstancePluginOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstancePlugin) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 关闭此插件的注意事项说明。
+// Notes for disabling this plugin
 func (o InstancePluginOutput) DisablePrompt() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstancePlugin) pulumi.StringOutput { return v.DisablePrompt }).(pulumi.StringOutput)
 }
 
-// 开启此插件的注意事项说明。
+// Notes for enabling this plugin
 func (o InstancePluginOutput) EnablePrompt() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstancePlugin) pulumi.StringOutput { return v.EnablePrompt }).(pulumi.StringOutput)
 }
 
-// 是否已开启插件。true：插件已开启。false：插件已关闭。
+// Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
 func (o InstancePluginOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *InstancePlugin) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 实例 ID。
+// Instance ID
 func (o InstancePluginOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstancePlugin) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+// Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
 func (o InstancePluginOutput) NeedRebootOnChange() pulumi.BoolOutput {
 	return o.ApplyT(func(v *InstancePlugin) pulumi.BoolOutput { return v.NeedRebootOnChange }).(pulumi.BoolOutput)
 }
 
-// 插件名称。
+// Plugin name
 func (o InstancePluginOutput) PluginName() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstancePlugin) pulumi.StringOutput { return v.PluginName }).(pulumi.StringOutput)
 }
 
-// 插件监听的端口。
+// Plugin listening port
 func (o InstancePluginOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v *InstancePlugin) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
 }
 
-// 插件版本。
+// Plugin version
 func (o InstancePluginOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstancePlugin) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }

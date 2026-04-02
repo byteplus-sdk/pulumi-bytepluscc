@@ -14,49 +14,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq.Inputs
     public sealed class PublicAddressChargeDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 包年包月实例到期后是否自动续费。
+        /// Whether subscription instances are automatically renewed after expiration.
         /// </summary>
         [Input("autoRenew")]
         public Input<bool>? AutoRenew { get; set; }
 
         /// <summary>
-        /// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        /// Instance billing end time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         /// </summary>
         [Input("chargeEndTime")]
         public Input<string>? ChargeEndTime { get; set; }
 
         /// <summary>
-        /// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        /// Expiration time for subscription instances. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         /// </summary>
         [Input("chargeExpireTime")]
         public Input<string>? ChargeExpireTime { get; set; }
 
         /// <summary>
-        /// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        /// Instance billing start time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         /// </summary>
         [Input("chargeStartTime")]
         public Input<string>? ChargeStartTime { get; set; }
 
         /// <summary>
-        /// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+        /// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
         /// </summary>
         [Input("chargeStatus")]
         public Input<string>? ChargeStatus { get; set; }
 
         /// <summary>
-        /// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+        /// Instance billing type. Supported types: PostPaid: pay-as-you-go, PrePaid: subscription.
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
 
         /// <summary>
-        /// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        /// Estimated release time after instance is stopped due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         /// </summary>
         [Input("overdueReclaimTime")]
         public Input<string>? OverdueReclaimTime { get; set; }
 
         /// <summary>
-        /// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        /// Instance overdue shutdown time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         /// </summary>
         [Input("overdueTime")]
         public Input<string>? OverdueTime { get; set; }

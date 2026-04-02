@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainOriginSni {
     /**
-     * @return 指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
+     * @return Specifies the domain name for origin SNI. When Switch is true, this parameter is required. The value cannot exceed 1,024 characters.
      * 
      */
     private @Nullable String sniDomain;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
      * 
      */
     private @Nullable Boolean switch_;
 
     private DomainOriginSni() {}
     /**
-     * @return 指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
+     * @return Specifies the domain name for origin SNI. When Switch is true, this parameter is required. The value cannot exceed 1,024 characters.
      * 
      */
     public Optional<String> sniDomain() {
         return Optional.ofNullable(this.sniDomain);
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
      * 
      */
     public Optional<Boolean> switch_() {

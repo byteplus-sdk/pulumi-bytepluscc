@@ -16,14 +16,14 @@ public final class ResolverEndpointIpConfigArgs extends com.pulumi.resources.Res
     public static final ResolverEndpointIpConfigArgs Empty = new ResolverEndpointIpConfigArgs();
 
     /**
-     * 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+     * Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
      * 
      */
     @Import(name="azId")
     private @Nullable Output<String> azId;
 
     /**
-     * @return 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+     * @return Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
      * 
      */
     public Optional<Output<String>> azId() {
@@ -31,14 +31,14 @@ public final class ResolverEndpointIpConfigArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+     * IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
      * 
      */
     @Import(name="ip")
     private @Nullable Output<String> ip;
 
     /**
-     * @return 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+     * @return IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
      * 
      */
     public Optional<Output<String>> ip() {
@@ -46,14 +46,14 @@ public final class ResolverEndpointIpConfigArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+     * IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
      * 
      */
     @Import(name="ipv6")
     private @Nullable Output<String> ipv6;
 
     /**
-     * @return 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+     * @return IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
      * 
      */
     public Optional<Output<String>> ipv6() {
@@ -61,14 +61,14 @@ public final class ResolverEndpointIpConfigArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 终端节点 IP 地址所在的子网 ID。
+     * Subnet ID for the endpoint IP address
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 终端节点 IP 地址所在的子网 ID。
+     * @return Subnet ID for the endpoint IP address
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -103,7 +103,7 @@ public final class ResolverEndpointIpConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param azId 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+         * @param azId Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class ResolverEndpointIpConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param azId 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+         * @param azId Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class ResolverEndpointIpConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ip 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+         * @param ip IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class ResolverEndpointIpConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ip 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+         * @param ip IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class ResolverEndpointIpConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ipv6 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+         * @param ipv6 IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class ResolverEndpointIpConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ipv6 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+         * @param ipv6 IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class ResolverEndpointIpConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param subnetId 终端节点 IP 地址所在的子网 ID。
+         * @param subnetId Subnet ID for the endpoint IP address
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class ResolverEndpointIpConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param subnetId 终端节点 IP 地址所在的子网 ID。
+         * @param subnetId Subnet ID for the endpoint IP address
          * 
          * @return builder
          * 

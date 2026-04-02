@@ -14,38 +14,38 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleDimensionConditionsMetaCondition {
     /**
-     * @return 是否为全量资源。true：全部资源。false：部分资源。
+     * @return Whether all resources are included. true: All resources. false: Partial resources.
      * 
      */
     private Boolean allDimensions;
     /**
-     * @return 判断条件。and：全部满足。or：任意满足。
+     * @return Condition. and: All conditions met. or: Any condition met.
      * 
      */
     private String condition;
     /**
-     * @return 判断条件。and：全部满足。or：任意满足。
+     * @return Condition. and: All conditions met. or: Any condition met.
      * 
      */
     private List<GetRuleDimensionConditionsMetaConditionMeta> metas;
 
     private GetRuleDimensionConditionsMetaCondition() {}
     /**
-     * @return 是否为全量资源。true：全部资源。false：部分资源。
+     * @return Whether all resources are included. true: All resources. false: Partial resources.
      * 
      */
     public Boolean allDimensions() {
         return this.allDimensions;
     }
     /**
-     * @return 判断条件。and：全部满足。or：任意满足。
+     * @return Condition. and: All conditions met. or: Any condition met.
      * 
      */
     public String condition() {
         return this.condition;
     }
     /**
-     * @return 判断条件。and：全部满足。or：任意满足。
+     * @return Condition. and: All conditions met. or: Any condition met.
      * 
      */
     public List<GetRuleDimensionConditionsMetaConditionMeta> metas() {

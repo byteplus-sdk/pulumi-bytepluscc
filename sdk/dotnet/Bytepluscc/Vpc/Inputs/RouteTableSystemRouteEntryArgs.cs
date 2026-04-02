@@ -14,37 +14,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Inputs
     public sealed class RouteTableSystemRouteEntryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 路由条目描述。
+        /// Route Entry Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 路由条目的目标网段。
+        /// Destination CIDR of the route entry
         /// </summary>
         [Input("destinationCidrBlock")]
         public Input<string>? DestinationCidrBlock { get; set; }
 
         /// <summary>
-        /// 前缀列表ID。
+        /// Prefix List ID
         /// </summary>
         [Input("destinationPrefixListId")]
         public Input<string>? DestinationPrefixListId { get; set; }
 
         /// <summary>
-        /// 下一跳资源ID。
+        /// Next Hop Resource ID
         /// </summary>
         [Input("nextHopId")]
         public Input<string>? NextHopId { get; set; }
 
         /// <summary>
-        /// 路由条目下一跳资源的名称。
+        /// Name of the next hop resource for the route entry
         /// </summary>
         [Input("nextHopName")]
         public Input<string>? NextHopName { get; set; }
 
         /// <summary>
-        /// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+        /// Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
         /// </summary>
         [Input("nextHopType")]
         public Input<string>? NextHopType { get; set; }
@@ -53,7 +53,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Inputs
         private InputList<string>? _prefixListCidrBlocks;
 
         /// <summary>
-        /// 前缀列表的CIDR。
+        /// Prefix List CIDR
         /// </summary>
         public InputList<string> PrefixListCidrBlocks
         {
@@ -62,37 +62,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Inputs
         }
 
         /// <summary>
-        /// 路由条目ID。
+        /// Route Entry ID
         /// </summary>
         [Input("routeEntryId")]
         public Input<string>? RouteEntryId { get; set; }
 
         /// <summary>
-        /// 路由条目名称。
+        /// Route Entry Name
         /// </summary>
         [Input("routeEntryName")]
         public Input<string>? RouteEntryName { get; set; }
 
         /// <summary>
-        /// 路由表ID。
+        /// Route Table ID
         /// </summary>
         [Input("routeTableId")]
         public Input<string>? RouteTableId { get; set; }
 
         /// <summary>
-        /// 路由条目状态。1、Pending：待创建。2、Available：可用。
+        /// Route entry status. 1. Pending: Pending creation 2. Available: Available
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+        /// Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// 路由条目所属私有网络的ID。
+        /// ID of the private network to which the route entry belongs
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }

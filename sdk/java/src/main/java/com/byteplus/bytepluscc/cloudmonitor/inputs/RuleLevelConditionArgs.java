@@ -25,14 +25,14 @@ public final class RuleLevelConditionArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+     * Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
      * 
      */
     @Import(name="level")
     private @Nullable Output<String> level;
 
     /**
-     * @return 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+     * @return Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
      * 
      */
     public Optional<Output<String>> level() {
@@ -78,7 +78,7 @@ public final class RuleLevelConditionArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param level 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+         * @param level Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class RuleLevelConditionArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param level 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+         * @param level Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
          * 
          * @return builder
          * 

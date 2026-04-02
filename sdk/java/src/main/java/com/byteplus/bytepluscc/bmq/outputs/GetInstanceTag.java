@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceTag {
     /**
-     * @return 标签键。
+     * @return Tag key
      * 
      */
     private String key;
     /**
-     * @return 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+     * @return Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
      * 
      */
     private String type;
     /**
-     * @return 标签值。
+     * @return Tag value
      * 
      */
     private String value;
 
     private GetInstanceTag() {}
     /**
-     * @return 标签键。
+     * @return Tag key
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+     * @return Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return 标签值。
+     * @return Tag value
      * 
      */
     public String value() {

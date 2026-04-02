@@ -21,14 +21,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     public static final AllowListState Empty = new AllowListState();
 
     /**
-     * 白名单分类。取值：Ordinary：普通白名单。Default：默认白名单。说明该参数作为请求参数时，默认值为 Ordinary。
+     * Allowlist category. Values: Ordinary: Ordinary allowlist. Default: Default allowlist. Note: When used as a request parameter, the default value is Ordinary.
      * 
      */
     @Import(name="allowListCategory")
     private @Nullable Output<String> allowListCategory;
 
     /**
-     * @return 白名单分类。取值：Ordinary：普通白名单。Default：默认白名单。说明该参数作为请求参数时，默认值为 Ordinary。
+     * @return Allowlist category. Values: Ordinary: Ordinary allowlist. Default: Default allowlist. Note: When used as a request parameter, the default value is Ordinary.
      * 
      */
     public Optional<Output<String>> allowListCategory() {
@@ -36,14 +36,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单的备注。
+     * Allowlist remarks.
      * 
      */
     @Import(name="allowListDesc")
     private @Nullable Output<String> allowListDesc;
 
     /**
-     * @return 白名单的备注。
+     * @return Allowlist remarks.
      * 
      */
     public Optional<Output<String>> allowListDesc() {
@@ -51,14 +51,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单 ID 。
+     * Allowlist ID.
      * 
      */
     @Import(name="allowListId")
     private @Nullable Output<String> allowListId;
 
     /**
-     * @return 白名单 ID 。
+     * @return Allowlist ID.
      * 
      */
     public Optional<Output<String>> allowListId() {
@@ -66,14 +66,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单内的 IP 地址（或地址段）总数。
+     * Total number of IP addresses (or ranges) in the allowlist.
      * 
      */
     @Import(name="allowListIpNum")
     private @Nullable Output<Integer> allowListIpNum;
 
     /**
-     * @return 白名单内的 IP 地址（或地址段）总数。
+     * @return Total number of IP addresses (or ranges) in the allowlist.
      * 
      */
     public Optional<Output<Integer>> allowListIpNum() {
@@ -81,14 +81,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单名称。
+     * Allowlist name.
      * 
      */
     @Import(name="allowListName")
     private @Nullable Output<String> allowListName;
 
     /**
-     * @return 白名单名称。
+     * @return Allowlist name.
      * 
      */
     public Optional<Output<String>> allowListName() {
@@ -96,14 +96,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+     * IP address types in the allowlist. Only IPv4 addresses are currently supported.
      * 
      */
     @Import(name="allowListType")
     private @Nullable Output<String> allowListType;
 
     /**
-     * @return 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+     * @return IP address types in the allowlist. Only IPv4 addresses are currently supported.
      * 
      */
     public Optional<Output<String>> allowListType() {
@@ -111,14 +111,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单内的 IP 地址列表
+     * IP address list in the allowlist
      * 
      */
     @Import(name="allowLists")
     private @Nullable Output<List<String>> allowLists;
 
     /**
-     * @return 白名单内的 IP 地址列表
+     * @return IP address list in the allowlist
      * 
      */
     public Optional<Output<List<String>>> allowLists() {
@@ -126,14 +126,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单下绑定的实例总数。
+     * Total number of instances bound to the allowlist.
      * 
      */
     @Import(name="associatedInstanceNum")
     private @Nullable Output<Integer> associatedInstanceNum;
 
     /**
-     * @return 白名单下绑定的实例总数。
+     * @return Total number of instances bound to the allowlist.
      * 
      */
     public Optional<Output<Integer>> associatedInstanceNum() {
@@ -148,14 +148,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否忽略实例状态校验。取值：true：是。false：否。默认值。
+     * Ignore instance status check. Values: true: Yes. false: No. Default value.
      * 
      */
     @Import(name="ignoreInstanceStatus")
     private @Nullable Output<Boolean> ignoreInstanceStatus;
 
     /**
-     * @return 是否忽略实例状态校验。取值：true：是。false：否。默认值。
+     * @return Ignore instance status check. Values: true: Yes. false: No. Default value.
      * 
      */
     public Optional<Output<Boolean>> ignoreInstanceStatus() {
@@ -163,14 +163,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID。
+     * Instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -178,14 +178,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单包含的 IP 地址和 IP 地址段的列表。在请求参数 WithIpList 取值为 true 时返回，在取值为 false 或不为其传值时返回为 null。
+     * List of IP addresses and IP ranges included in the allowlist. Returned when the WithIpList request parameter is set to true; returns null when set to false or not specified.
      * 
      */
     @Import(name="ipLists")
     private @Nullable Output<List<String>> ipLists;
 
     /**
-     * @return 白名单包含的 IP 地址和 IP 地址段的列表。在请求参数 WithIpList 取值为 true 时返回，在取值为 false 或不为其传值时返回为 null。
+     * @return List of IP addresses and IP ranges included in the allowlist. Returned when the WithIpList request parameter is set to true; returns null when set to false or not specified.
      * 
      */
     public Optional<Output<List<String>>> ipLists() {
@@ -193,14 +193,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 修改方式，取值范围如下：Cover（默认值）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+     * Modification method. Available values: Cover (default): Overwrite the original allowlist with the values from the AllowList parameter. Append: Add the IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove the IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
      * 
      */
     @Import(name="modifyMode")
     private @Nullable Output<String> modifyMode;
 
     /**
-     * @return 修改方式，取值范围如下：Cover（默认值）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+     * @return Modification method. Available values: Cover (default): Overwrite the original allowlist with the values from the AllowList parameter. Append: Add the IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove the IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
      * 
      */
     public Optional<Output<String>> modifyMode() {
@@ -208,14 +208,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 所属的项目。说明如您调用接口使用的 AK/SK 属于某个子账号，且该子账号只拥有某个项目的权限，需要传入该请求参数。
+     * Project. Note: If the AK/SK used to call the API belongs to a sub-account that only has permission for a specific project, you need to provide this request parameter.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 所属的项目。说明如您调用接口使用的 AK/SK 属于某个子账号，且该子账号只拥有某个项目的权限，需要传入该请求参数。
+     * @return Project. Note: If the AK/SK used to call the API belongs to a sub-account that only has permission for a specific project, you need to provide this request parameter.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -230,14 +230,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 需要关联的安全组 ID 列表。说明您可以调用 DescribeSecurityGroups 接口查询安全组信息，包括安全组 ID。单个白名单单次最多可选择添加 10 个安全组。该字段不能与 SecurityGroupBindInfos 同时使用。
+     * List of security group IDs to associate. Note: You can call the DescribeSecurityGroups API to query security group information, including security group IDs. A single allowlist can add up to 10 security groups at a time. This field cannot be used together with SecurityGroupBindInfos.
      * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
-     * @return 需要关联的安全组 ID 列表。说明您可以调用 DescribeSecurityGroups 接口查询安全组信息，包括安全组 ID。单个白名单单次最多可选择添加 10 个安全组。该字段不能与 SecurityGroupBindInfos 同时使用。
+     * @return List of security group IDs to associate. Note: You can call the DescribeSecurityGroups API to query security group information, including security group IDs. A single allowlist can add up to 10 security groups at a time. This field cannot be used together with SecurityGroupBindInfos.
      * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
@@ -245,14 +245,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否更新白名单所绑定的安全组。true：更新。false：不更新。默认值。说明该字段仅在白名单已绑定了安全组时生效。可调用 DescribeAllowLists 接口查询白名单是否绑定了安全组。
+     * Whether to update the security group bound to the allowlist. true: update. false: do not update. Default value. This field is effective only when the allowlist is already bound to a security group. You can call the DescribeAllowLists API to check if the allowlist is bound to a security group.
      * 
      */
     @Import(name="updateSecurityGroup")
     private @Nullable Output<Boolean> updateSecurityGroup;
 
     /**
-     * @return 是否更新白名单所绑定的安全组。true：更新。false：不更新。默认值。说明该字段仅在白名单已绑定了安全组时生效。可调用 DescribeAllowLists 接口查询白名单是否绑定了安全组。
+     * @return Whether to update the security group bound to the allowlist. true: update. false: do not update. Default value. This field is effective only when the allowlist is already bound to a security group. You can call the DescribeAllowLists API to check if the allowlist is bound to a security group.
      * 
      */
     public Optional<Output<Boolean>> updateSecurityGroup() {
@@ -260,14 +260,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 该名单中由用户输入的 IP 地址。AllowList 字段中的 IP 为 UserAllowList 和 SecurityGroupBindInfos 包含的 IP 的并集。
+     * IP addresses entered by the user in this list. The IPs in the AllowList field are the union of IPs included in UserAllowList and SecurityGroupBindInfos.
      * 
      */
     @Import(name="userAllowLists")
     private @Nullable Output<List<String>> userAllowLists;
 
     /**
-     * @return 该名单中由用户输入的 IP 地址。AllowList 字段中的 IP 为 UserAllowList 和 SecurityGroupBindInfos 包含的 IP 的并集。
+     * @return IP addresses entered by the user in this list. The IPs in the AllowList field are the union of IPs included in UserAllowList and SecurityGroupBindInfos.
      * 
      */
     public Optional<Output<List<String>>> userAllowLists() {
@@ -316,7 +316,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListCategory 白名单分类。取值：Ordinary：普通白名单。Default：默认白名单。说明该参数作为请求参数时，默认值为 Ordinary。
+         * @param allowListCategory Allowlist category. Values: Ordinary: Ordinary allowlist. Default: Default allowlist. Note: When used as a request parameter, the default value is Ordinary.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListCategory 白名单分类。取值：Ordinary：普通白名单。Default：默认白名单。说明该参数作为请求参数时，默认值为 Ordinary。
+         * @param allowListCategory Allowlist category. Values: Ordinary: Ordinary allowlist. Default: Default allowlist. Note: When used as a request parameter, the default value is Ordinary.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListDesc 白名单的备注。
+         * @param allowListDesc Allowlist remarks.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListDesc 白名单的备注。
+         * @param allowListDesc Allowlist remarks.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListId 白名单 ID 。
+         * @param allowListId Allowlist ID.
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListId 白名单 ID 。
+         * @param allowListId Allowlist ID.
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIpNum 白名单内的 IP 地址（或地址段）总数。
+         * @param allowListIpNum Total number of IP addresses (or ranges) in the allowlist.
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIpNum 白名单内的 IP 地址（或地址段）总数。
+         * @param allowListIpNum Total number of IP addresses (or ranges) in the allowlist.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListName 白名单名称。
+         * @param allowListName Allowlist name.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListName 白名单名称。
+         * @param allowListName Allowlist name.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListType 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+         * @param allowListType IP address types in the allowlist. Only IPv4 addresses are currently supported.
          * 
          * @return builder
          * 
@@ -432,7 +432,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListType 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+         * @param allowListType IP address types in the allowlist. Only IPv4 addresses are currently supported.
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowLists 白名单内的 IP 地址列表
+         * @param allowLists IP address list in the allowlist
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowLists 白名单内的 IP 地址列表
+         * @param allowLists IP address list in the allowlist
          * 
          * @return builder
          * 
@@ -463,7 +463,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowLists 白名单内的 IP 地址列表
+         * @param allowLists IP address list in the allowlist
          * 
          * @return builder
          * 
@@ -473,7 +473,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associatedInstanceNum 白名单下绑定的实例总数。
+         * @param associatedInstanceNum Total number of instances bound to the allowlist.
          * 
          * @return builder
          * 
@@ -484,7 +484,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associatedInstanceNum 白名单下绑定的实例总数。
+         * @param associatedInstanceNum Total number of instances bound to the allowlist.
          * 
          * @return builder
          * 
@@ -507,7 +507,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ignoreInstanceStatus 是否忽略实例状态校验。取值：true：是。false：否。默认值。
+         * @param ignoreInstanceStatus Ignore instance status check. Values: true: Yes. false: No. Default value.
          * 
          * @return builder
          * 
@@ -518,7 +518,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ignoreInstanceStatus 是否忽略实例状态校验。取值：true：是。false：否。默认值。
+         * @param ignoreInstanceStatus Ignore instance status check. Values: true: Yes. false: No. Default value.
          * 
          * @return builder
          * 
@@ -528,7 +528,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -539,7 +539,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -549,7 +549,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipLists 白名单包含的 IP 地址和 IP 地址段的列表。在请求参数 WithIpList 取值为 true 时返回，在取值为 false 或不为其传值时返回为 null。
+         * @param ipLists List of IP addresses and IP ranges included in the allowlist. Returned when the WithIpList request parameter is set to true; returns null when set to false or not specified.
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipLists 白名单包含的 IP 地址和 IP 地址段的列表。在请求参数 WithIpList 取值为 true 时返回，在取值为 false 或不为其传值时返回为 null。
+         * @param ipLists List of IP addresses and IP ranges included in the allowlist. Returned when the WithIpList request parameter is set to true; returns null when set to false or not specified.
          * 
          * @return builder
          * 
@@ -570,7 +570,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipLists 白名单包含的 IP 地址和 IP 地址段的列表。在请求参数 WithIpList 取值为 true 时返回，在取值为 false 或不为其传值时返回为 null。
+         * @param ipLists List of IP addresses and IP ranges included in the allowlist. Returned when the WithIpList request parameter is set to true; returns null when set to false or not specified.
          * 
          * @return builder
          * 
@@ -580,7 +580,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modifyMode 修改方式，取值范围如下：Cover（默认值）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+         * @param modifyMode Modification method. Available values: Cover (default): Overwrite the original allowlist with the values from the AllowList parameter. Append: Add the IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove the IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
          * 
          * @return builder
          * 
@@ -591,7 +591,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modifyMode 修改方式，取值范围如下：Cover（默认值）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+         * @param modifyMode Modification method. Available values: Cover (default): Overwrite the original allowlist with the values from the AllowList parameter. Append: Add the IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove the IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
          * 
          * @return builder
          * 
@@ -601,7 +601,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 所属的项目。说明如您调用接口使用的 AK/SK 属于某个子账号，且该子账号只拥有某个项目的权限，需要传入该请求参数。
+         * @param projectName Project. Note: If the AK/SK used to call the API belongs to a sub-account that only has permission for a specific project, you need to provide this request parameter.
          * 
          * @return builder
          * 
@@ -612,7 +612,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 所属的项目。说明如您调用接口使用的 AK/SK 属于某个子账号，且该子账号只拥有某个项目的权限，需要传入该请求参数。
+         * @param projectName Project. Note: If the AK/SK used to call the API belongs to a sub-account that only has permission for a specific project, you need to provide this request parameter.
          * 
          * @return builder
          * 
@@ -635,7 +635,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds 需要关联的安全组 ID 列表。说明您可以调用 DescribeSecurityGroups 接口查询安全组信息，包括安全组 ID。单个白名单单次最多可选择添加 10 个安全组。该字段不能与 SecurityGroupBindInfos 同时使用。
+         * @param securityGroupIds List of security group IDs to associate. Note: You can call the DescribeSecurityGroups API to query security group information, including security group IDs. A single allowlist can add up to 10 security groups at a time. This field cannot be used together with SecurityGroupBindInfos.
          * 
          * @return builder
          * 
@@ -646,7 +646,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds 需要关联的安全组 ID 列表。说明您可以调用 DescribeSecurityGroups 接口查询安全组信息，包括安全组 ID。单个白名单单次最多可选择添加 10 个安全组。该字段不能与 SecurityGroupBindInfos 同时使用。
+         * @param securityGroupIds List of security group IDs to associate. Note: You can call the DescribeSecurityGroups API to query security group information, including security group IDs. A single allowlist can add up to 10 security groups at a time. This field cannot be used together with SecurityGroupBindInfos.
          * 
          * @return builder
          * 
@@ -656,7 +656,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds 需要关联的安全组 ID 列表。说明您可以调用 DescribeSecurityGroups 接口查询安全组信息，包括安全组 ID。单个白名单单次最多可选择添加 10 个安全组。该字段不能与 SecurityGroupBindInfos 同时使用。
+         * @param securityGroupIds List of security group IDs to associate. Note: You can call the DescribeSecurityGroups API to query security group information, including security group IDs. A single allowlist can add up to 10 security groups at a time. This field cannot be used together with SecurityGroupBindInfos.
          * 
          * @return builder
          * 
@@ -666,7 +666,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateSecurityGroup 是否更新白名单所绑定的安全组。true：更新。false：不更新。默认值。说明该字段仅在白名单已绑定了安全组时生效。可调用 DescribeAllowLists 接口查询白名单是否绑定了安全组。
+         * @param updateSecurityGroup Whether to update the security group bound to the allowlist. true: update. false: do not update. Default value. This field is effective only when the allowlist is already bound to a security group. You can call the DescribeAllowLists API to check if the allowlist is bound to a security group.
          * 
          * @return builder
          * 
@@ -677,7 +677,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateSecurityGroup 是否更新白名单所绑定的安全组。true：更新。false：不更新。默认值。说明该字段仅在白名单已绑定了安全组时生效。可调用 DescribeAllowLists 接口查询白名单是否绑定了安全组。
+         * @param updateSecurityGroup Whether to update the security group bound to the allowlist. true: update. false: do not update. Default value. This field is effective only when the allowlist is already bound to a security group. You can call the DescribeAllowLists API to check if the allowlist is bound to a security group.
          * 
          * @return builder
          * 
@@ -687,7 +687,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userAllowLists 该名单中由用户输入的 IP 地址。AllowList 字段中的 IP 为 UserAllowList 和 SecurityGroupBindInfos 包含的 IP 的并集。
+         * @param userAllowLists IP addresses entered by the user in this list. The IPs in the AllowList field are the union of IPs included in UserAllowList and SecurityGroupBindInfos.
          * 
          * @return builder
          * 
@@ -698,7 +698,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userAllowLists 该名单中由用户输入的 IP 地址。AllowList 字段中的 IP 为 UserAllowList 和 SecurityGroupBindInfos 包含的 IP 的并集。
+         * @param userAllowLists IP addresses entered by the user in this list. The IPs in the AllowList field are the union of IPs included in UserAllowList and SecurityGroupBindInfos.
          * 
          * @return builder
          * 
@@ -708,7 +708,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userAllowLists 该名单中由用户输入的 IP 地址。AllowList 字段中的 IP 为 UserAllowList 和 SecurityGroupBindInfos 包含的 IP 的并集。
+         * @param userAllowLists IP addresses entered by the user in this list. The IPs in the AllowList field are the union of IPs included in UserAllowList and SecurityGroupBindInfos.
          * 
          * @return builder
          * 

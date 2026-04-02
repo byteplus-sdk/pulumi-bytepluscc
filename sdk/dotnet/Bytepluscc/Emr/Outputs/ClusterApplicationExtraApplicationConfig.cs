@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Outputs
     public sealed class ClusterApplicationExtraApplicationConfig
     {
         /// <summary>
-        /// 组件实例名称。
+        /// Component instance name.
         /// </summary>
         public readonly string? ComponentInstanceName;
         /// <summary>
-        /// 组件名称。
+        /// Component name.
         /// </summary>
         public readonly string? ComponentName;
         /// <summary>
-        /// 配置文件名。
+        /// Configuration file name.
         /// </summary>
         public readonly string? ConfigFileName;
         /// <summary>
-        /// 配置项名称。
+        /// Configuration item name.
         /// </summary>
         public readonly string? ConfigItemKey;
         /// <summary>
-        /// 配置项值。
+        /// Configuration item value.
         /// </summary>
         public readonly string? ConfigItemValue;
         /// <summary>
-        /// 是否删除。
+        /// Whether to delete.
         /// </summary>
         public readonly bool? Deleted;
         /// <summary>
-        /// 影响组件。
+        /// Affected component.
         /// </summary>
         public readonly Outputs.ClusterApplicationExtraApplicationConfigEffectiveScope? EffectiveScope;
 

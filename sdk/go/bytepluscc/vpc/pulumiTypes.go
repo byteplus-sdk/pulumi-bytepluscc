@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type BandwidthPackageEipAddress struct {
-	// 分配ID
+	// Allocation ID
 	AllocationId *string `pulumi:"allocationId"`
 }
 
@@ -30,7 +30,7 @@ type BandwidthPackageEipAddressInput interface {
 }
 
 type BandwidthPackageEipAddressArgs struct {
-	// 分配ID
+	// Allocation ID
 	AllocationId pulumi.StringPtrInput `pulumi:"allocationId"`
 }
 
@@ -85,7 +85,7 @@ func (o BandwidthPackageEipAddressOutput) ToBandwidthPackageEipAddressOutputWith
 	return o
 }
 
-// 分配ID
+// Allocation ID
 func (o BandwidthPackageEipAddressOutput) AllocationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BandwidthPackageEipAddress) *string { return v.AllocationId }).(pulumi.StringPtrOutput)
 }
@@ -111,9 +111,9 @@ func (o BandwidthPackageEipAddressArrayOutput) Index(i pulumi.IntInput) Bandwidt
 }
 
 type BandwidthPackageTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -129,9 +129,9 @@ type BandwidthPackageTagInput interface {
 }
 
 type BandwidthPackageTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -186,12 +186,12 @@ func (o BandwidthPackageTagOutput) ToBandwidthPackageTagOutputWithContext(ctx co
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o BandwidthPackageTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BandwidthPackageTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o BandwidthPackageTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BandwidthPackageTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -217,9 +217,9 @@ func (o BandwidthPackageTagArrayOutput) Index(i pulumi.IntInput) BandwidthPackag
 }
 
 type EipTag struct {
-	// 标签键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -235,9 +235,9 @@ type EipTagInput interface {
 }
 
 type EipTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -292,12 +292,12 @@ func (o EipTagOutput) ToEipTagOutputWithContext(ctx context.Context) EipTagOutpu
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o EipTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EipTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o EipTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EipTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -323,11 +323,11 @@ func (o EipTagArrayOutput) Index(i pulumi.IntInput) EipTagOutput {
 }
 
 type EniPrimaryIpAddress struct {
-	// 网卡主私网IPv4关联的公网IP的信息。
+	// Information about the public IP associated with the primary private IPv4 address of the network interface.
 	AssociatedElasticIp *EniPrimaryIpAddressAssociatedElasticIp `pulumi:"associatedElasticIp"`
-	// 是否为主私网IPv4地址。
+	// Indicates whether this is the primary private IPv4 address.
 	Primary *bool `pulumi:"primary"`
-	// 网卡的私网IP地址。
+	// Private IP address of the network interface.
 	PrivateIpAddress *string `pulumi:"privateIpAddress"`
 }
 
@@ -343,11 +343,11 @@ type EniPrimaryIpAddressInput interface {
 }
 
 type EniPrimaryIpAddressArgs struct {
-	// 网卡主私网IPv4关联的公网IP的信息。
+	// Information about the public IP associated with the primary private IPv4 address of the network interface.
 	AssociatedElasticIp EniPrimaryIpAddressAssociatedElasticIpPtrInput `pulumi:"associatedElasticIp"`
-	// 是否为主私网IPv4地址。
+	// Indicates whether this is the primary private IPv4 address.
 	Primary pulumi.BoolPtrInput `pulumi:"primary"`
-	// 网卡的私网IP地址。
+	// Private IP address of the network interface.
 	PrivateIpAddress pulumi.StringPtrInput `pulumi:"privateIpAddress"`
 }
 
@@ -428,17 +428,17 @@ func (o EniPrimaryIpAddressOutput) ToEniPrimaryIpAddressPtrOutputWithContext(ctx
 	}).(EniPrimaryIpAddressPtrOutput)
 }
 
-// 网卡主私网IPv4关联的公网IP的信息。
+// Information about the public IP associated with the primary private IPv4 address of the network interface.
 func (o EniPrimaryIpAddressOutput) AssociatedElasticIp() EniPrimaryIpAddressAssociatedElasticIpPtrOutput {
 	return o.ApplyT(func(v EniPrimaryIpAddress) *EniPrimaryIpAddressAssociatedElasticIp { return v.AssociatedElasticIp }).(EniPrimaryIpAddressAssociatedElasticIpPtrOutput)
 }
 
-// 是否为主私网IPv4地址。
+// Indicates whether this is the primary private IPv4 address.
 func (o EniPrimaryIpAddressOutput) Primary() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v EniPrimaryIpAddress) *bool { return v.Primary }).(pulumi.BoolPtrOutput)
 }
 
-// 网卡的私网IP地址。
+// Private IP address of the network interface.
 func (o EniPrimaryIpAddressOutput) PrivateIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EniPrimaryIpAddress) *string { return v.PrivateIpAddress }).(pulumi.StringPtrOutput)
 }
@@ -467,7 +467,7 @@ func (o EniPrimaryIpAddressPtrOutput) Elem() EniPrimaryIpAddressOutput {
 	}).(EniPrimaryIpAddressOutput)
 }
 
-// 网卡主私网IPv4关联的公网IP的信息。
+// Information about the public IP associated with the primary private IPv4 address of the network interface.
 func (o EniPrimaryIpAddressPtrOutput) AssociatedElasticIp() EniPrimaryIpAddressAssociatedElasticIpPtrOutput {
 	return o.ApplyT(func(v *EniPrimaryIpAddress) *EniPrimaryIpAddressAssociatedElasticIp {
 		if v == nil {
@@ -477,7 +477,7 @@ func (o EniPrimaryIpAddressPtrOutput) AssociatedElasticIp() EniPrimaryIpAddressA
 	}).(EniPrimaryIpAddressAssociatedElasticIpPtrOutput)
 }
 
-// 是否为主私网IPv4地址。
+// Indicates whether this is the primary private IPv4 address.
 func (o EniPrimaryIpAddressPtrOutput) Primary() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *EniPrimaryIpAddress) *bool {
 		if v == nil {
@@ -487,7 +487,7 @@ func (o EniPrimaryIpAddressPtrOutput) Primary() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 网卡的私网IP地址。
+// Private IP address of the network interface.
 func (o EniPrimaryIpAddressPtrOutput) PrivateIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EniPrimaryIpAddress) *string {
 		if v == nil {
@@ -498,11 +498,11 @@ func (o EniPrimaryIpAddressPtrOutput) PrivateIpAddress() pulumi.StringPtrOutput 
 }
 
 type EniPrimaryIpAddressAssociatedElasticIp struct {
-	// 公网IP的ID。
+	// Public IP ID
 	AllocationId *string `pulumi:"allocationId"`
-	// 公网IP的地址。
+	// Public IP address
 	EipAddress *string `pulumi:"eipAddress"`
-	// 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+	// Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
 	ReleaseWithInstance *bool `pulumi:"releaseWithInstance"`
 }
 
@@ -518,11 +518,11 @@ type EniPrimaryIpAddressAssociatedElasticIpInput interface {
 }
 
 type EniPrimaryIpAddressAssociatedElasticIpArgs struct {
-	// 公网IP的ID。
+	// Public IP ID
 	AllocationId pulumi.StringPtrInput `pulumi:"allocationId"`
-	// 公网IP的地址。
+	// Public IP address
 	EipAddress pulumi.StringPtrInput `pulumi:"eipAddress"`
-	// 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+	// Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
 	ReleaseWithInstance pulumi.BoolPtrInput `pulumi:"releaseWithInstance"`
 }
 
@@ -603,17 +603,17 @@ func (o EniPrimaryIpAddressAssociatedElasticIpOutput) ToEniPrimaryIpAddressAssoc
 	}).(EniPrimaryIpAddressAssociatedElasticIpPtrOutput)
 }
 
-// 公网IP的ID。
+// Public IP ID
 func (o EniPrimaryIpAddressAssociatedElasticIpOutput) AllocationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EniPrimaryIpAddressAssociatedElasticIp) *string { return v.AllocationId }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的地址。
+// Public IP address
 func (o EniPrimaryIpAddressAssociatedElasticIpOutput) EipAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EniPrimaryIpAddressAssociatedElasticIp) *string { return v.EipAddress }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+// Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
 func (o EniPrimaryIpAddressAssociatedElasticIpOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v EniPrimaryIpAddressAssociatedElasticIp) *bool { return v.ReleaseWithInstance }).(pulumi.BoolPtrOutput)
 }
@@ -642,7 +642,7 @@ func (o EniPrimaryIpAddressAssociatedElasticIpPtrOutput) Elem() EniPrimaryIpAddr
 	}).(EniPrimaryIpAddressAssociatedElasticIpOutput)
 }
 
-// 公网IP的ID。
+// Public IP ID
 func (o EniPrimaryIpAddressAssociatedElasticIpPtrOutput) AllocationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EniPrimaryIpAddressAssociatedElasticIp) *string {
 		if v == nil {
@@ -652,7 +652,7 @@ func (o EniPrimaryIpAddressAssociatedElasticIpPtrOutput) AllocationId() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的地址。
+// Public IP address
 func (o EniPrimaryIpAddressAssociatedElasticIpPtrOutput) EipAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EniPrimaryIpAddressAssociatedElasticIp) *string {
 		if v == nil {
@@ -662,7 +662,7 @@ func (o EniPrimaryIpAddressAssociatedElasticIpPtrOutput) EipAddress() pulumi.Str
 	}).(pulumi.StringPtrOutput)
 }
 
-// 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+// Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
 func (o EniPrimaryIpAddressAssociatedElasticIpPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *EniPrimaryIpAddressAssociatedElasticIp) *bool {
 		if v == nil {
@@ -673,9 +673,9 @@ func (o EniPrimaryIpAddressAssociatedElasticIpPtrOutput) ReleaseWithInstance() p
 }
 
 type EniPrivateIpSet struct {
-	// 网卡主私网IPv4关联的公网IP的信息。
+	// Information about the public IP associated with the primary private IPv4 address of the network interface.
 	AssociatedElasticIp *EniPrivateIpSetAssociatedElasticIp `pulumi:"associatedElasticIp"`
-	// 网卡的私网IP地址。
+	// Private IP address of the network interface.
 	PrivateIpAddress *string `pulumi:"privateIpAddress"`
 }
 
@@ -691,9 +691,9 @@ type EniPrivateIpSetInput interface {
 }
 
 type EniPrivateIpSetArgs struct {
-	// 网卡主私网IPv4关联的公网IP的信息。
+	// Information about the public IP associated with the primary private IPv4 address of the network interface.
 	AssociatedElasticIp EniPrivateIpSetAssociatedElasticIpPtrInput `pulumi:"associatedElasticIp"`
-	// 网卡的私网IP地址。
+	// Private IP address of the network interface.
 	PrivateIpAddress pulumi.StringPtrInput `pulumi:"privateIpAddress"`
 }
 
@@ -748,12 +748,12 @@ func (o EniPrivateIpSetOutput) ToEniPrivateIpSetOutputWithContext(ctx context.Co
 	return o
 }
 
-// 网卡主私网IPv4关联的公网IP的信息。
+// Information about the public IP associated with the primary private IPv4 address of the network interface.
 func (o EniPrivateIpSetOutput) AssociatedElasticIp() EniPrivateIpSetAssociatedElasticIpPtrOutput {
 	return o.ApplyT(func(v EniPrivateIpSet) *EniPrivateIpSetAssociatedElasticIp { return v.AssociatedElasticIp }).(EniPrivateIpSetAssociatedElasticIpPtrOutput)
 }
 
-// 网卡的私网IP地址。
+// Private IP address of the network interface.
 func (o EniPrivateIpSetOutput) PrivateIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EniPrivateIpSet) *string { return v.PrivateIpAddress }).(pulumi.StringPtrOutput)
 }
@@ -779,7 +779,7 @@ func (o EniPrivateIpSetArrayOutput) Index(i pulumi.IntInput) EniPrivateIpSetOutp
 }
 
 type EniPrivateIpSetAssociatedElasticIp struct {
-	// 公网IP的ID。
+	// Public IP ID
 	AllocationId *string `pulumi:"allocationId"`
 }
 
@@ -795,7 +795,7 @@ type EniPrivateIpSetAssociatedElasticIpInput interface {
 }
 
 type EniPrivateIpSetAssociatedElasticIpArgs struct {
-	// 公网IP的ID。
+	// Public IP ID
 	AllocationId pulumi.StringPtrInput `pulumi:"allocationId"`
 }
 
@@ -876,7 +876,7 @@ func (o EniPrivateIpSetAssociatedElasticIpOutput) ToEniPrivateIpSetAssociatedEla
 	}).(EniPrivateIpSetAssociatedElasticIpPtrOutput)
 }
 
-// 公网IP的ID。
+// Public IP ID
 func (o EniPrivateIpSetAssociatedElasticIpOutput) AllocationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EniPrivateIpSetAssociatedElasticIp) *string { return v.AllocationId }).(pulumi.StringPtrOutput)
 }
@@ -905,7 +905,7 @@ func (o EniPrivateIpSetAssociatedElasticIpPtrOutput) Elem() EniPrivateIpSetAssoc
 	}).(EniPrivateIpSetAssociatedElasticIpOutput)
 }
 
-// 公网IP的ID。
+// Public IP ID
 func (o EniPrivateIpSetAssociatedElasticIpPtrOutput) AllocationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EniPrivateIpSetAssociatedElasticIp) *string {
 		if v == nil {
@@ -916,9 +916,9 @@ func (o EniPrivateIpSetAssociatedElasticIpPtrOutput) AllocationId() pulumi.Strin
 }
 
 type EniTag struct {
-	// 用户标签的标签键。
+	// Tag key for the user tag.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for the user tag.
 	Value *string `pulumi:"value"`
 }
 
@@ -934,9 +934,9 @@ type EniTagInput interface {
 }
 
 type EniTagArgs struct {
-	// 用户标签的标签键。
+	// Tag key for the user tag.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for the user tag.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -991,12 +991,12 @@ func (o EniTagOutput) ToEniTagOutputWithContext(ctx context.Context) EniTagOutpu
 	return o
 }
 
-// 用户标签的标签键。
+// Tag key for the user tag.
 func (o EniTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EniTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// Tag value for the user tag.
 func (o EniTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EniTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1022,9 +1022,9 @@ func (o EniTagArrayOutput) Index(i pulumi.IntInput) EniTagOutput {
 }
 
 type FlowLogTag struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// User label tag key. Length must be 1–128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ symbols (@). If the tag key starts or ends with a space, the system automatically removes it.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// User tag value. Supports input in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 	Value *string `pulumi:"value"`
 }
 
@@ -1040,9 +1040,9 @@ type FlowLogTagInput interface {
 }
 
 type FlowLogTagArgs struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// User label tag key. Length must be 1–128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ symbols (@). If the tag key starts or ends with a space, the system automatically removes it.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// User tag value. Supports input in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1097,12 +1097,12 @@ func (o FlowLogTagOutput) ToFlowLogTagOutputWithContext(ctx context.Context) Flo
 	return o
 }
 
-// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+// User label tag key. Length must be 1–128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ symbols (@). If the tag key starts or ends with a space, the system automatically removes it.
 func (o FlowLogTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FlowLogTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+// User tag value. Supports input in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 func (o FlowLogTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FlowLogTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1128,9 +1128,9 @@ func (o FlowLogTagArrayOutput) Index(i pulumi.IntInput) FlowLogTagOutput {
 }
 
 type HaVipTag struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// Tag key for user tags. Length range: 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
 	Value *string `pulumi:"value"`
 }
 
@@ -1146,9 +1146,9 @@ type HaVipTagInput interface {
 }
 
 type HaVipTagArgs struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// Tag key for user tags. Length range: 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1203,12 +1203,12 @@ func (o HaVipTagOutput) ToHaVipTagOutputWithContext(ctx context.Context) HaVipTa
 	return o
 }
 
-// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+// Tag key for user tags. Length range: 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it
 func (o HaVipTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v HaVipTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+// Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
 func (o HaVipTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v HaVipTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1234,9 +1234,9 @@ func (o HaVipTagArrayOutput) Index(i pulumi.IntInput) HaVipTagOutput {
 }
 
 type Ipv6AddressBandwidthTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -1252,9 +1252,9 @@ type Ipv6AddressBandwidthTagInput interface {
 }
 
 type Ipv6AddressBandwidthTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1309,12 +1309,12 @@ func (o Ipv6AddressBandwidthTagOutput) ToIpv6AddressBandwidthTagOutputWithContex
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o Ipv6AddressBandwidthTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v Ipv6AddressBandwidthTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o Ipv6AddressBandwidthTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v Ipv6AddressBandwidthTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1340,9 +1340,9 @@ func (o Ipv6AddressBandwidthTagArrayOutput) Index(i pulumi.IntInput) Ipv6Address
 }
 
 type Ipv6GatewayTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -1358,9 +1358,9 @@ type Ipv6GatewayTagInput interface {
 }
 
 type Ipv6GatewayTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1415,12 +1415,12 @@ func (o Ipv6GatewayTagOutput) ToIpv6GatewayTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o Ipv6GatewayTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v Ipv6GatewayTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o Ipv6GatewayTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v Ipv6GatewayTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1446,21 +1446,21 @@ func (o Ipv6GatewayTagArrayOutput) Index(i pulumi.IntInput) Ipv6GatewayTagOutput
 }
 
 type NetworkAclDefaultEgressAclEntry struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp *string `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description *string `pulumi:"description"`
-	// 规则的ID。
+	// Rule ID.
 	NetworkAclEntryId *string `pulumi:"networkAclEntryId"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName *string `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy *string `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port *string `pulumi:"port"`
-	// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+	// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 	Priority *int `pulumi:"priority"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol *string `pulumi:"protocol"`
 }
 
@@ -1476,21 +1476,21 @@ type NetworkAclDefaultEgressAclEntryInput interface {
 }
 
 type NetworkAclDefaultEgressAclEntryArgs struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp pulumi.StringPtrInput `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 规则的ID。
+	// Rule ID.
 	NetworkAclEntryId pulumi.StringPtrInput `pulumi:"networkAclEntryId"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName pulumi.StringPtrInput `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy pulumi.StringPtrInput `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port pulumi.StringPtrInput `pulumi:"port"`
-	// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+	// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 	Priority pulumi.IntPtrInput `pulumi:"priority"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 }
 
@@ -1545,42 +1545,42 @@ func (o NetworkAclDefaultEgressAclEntryOutput) ToNetworkAclDefaultEgressAclEntry
 	return o
 }
 
-// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 func (o NetworkAclDefaultEgressAclEntryOutput) CidrIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultEgressAclEntry) *string { return v.CidrIp }).(pulumi.StringPtrOutput)
 }
 
-// 规则的描述信息。
+// Rule description.
 func (o NetworkAclDefaultEgressAclEntryOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultEgressAclEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 规则的ID。
+// Rule ID.
 func (o NetworkAclDefaultEgressAclEntryOutput) NetworkAclEntryId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultEgressAclEntry) *string { return v.NetworkAclEntryId }).(pulumi.StringPtrOutput)
 }
 
-// 规则的名称。
+// Rule name.
 func (o NetworkAclDefaultEgressAclEntryOutput) NetworkAclEntryName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultEgressAclEntry) *string { return v.NetworkAclEntryName }).(pulumi.StringPtrOutput)
 }
 
-// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 func (o NetworkAclDefaultEgressAclEntryOutput) Policy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultEgressAclEntry) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
-// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 func (o NetworkAclDefaultEgressAclEntryOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultEgressAclEntry) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
-// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 func (o NetworkAclDefaultEgressAclEntryOutput) Priority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultEgressAclEntry) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
-// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 func (o NetworkAclDefaultEgressAclEntryOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultEgressAclEntry) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
@@ -1606,21 +1606,21 @@ func (o NetworkAclDefaultEgressAclEntryArrayOutput) Index(i pulumi.IntInput) Net
 }
 
 type NetworkAclDefaultIngressAclEntry struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp *string `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description *string `pulumi:"description"`
-	// 规则的ID。
+	// Rule ID.
 	NetworkAclEntryId *string `pulumi:"networkAclEntryId"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName *string `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy *string `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port *string `pulumi:"port"`
-	// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+	// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 	Priority *int `pulumi:"priority"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol *string `pulumi:"protocol"`
 }
 
@@ -1636,21 +1636,21 @@ type NetworkAclDefaultIngressAclEntryInput interface {
 }
 
 type NetworkAclDefaultIngressAclEntryArgs struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp pulumi.StringPtrInput `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 规则的ID。
+	// Rule ID.
 	NetworkAclEntryId pulumi.StringPtrInput `pulumi:"networkAclEntryId"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName pulumi.StringPtrInput `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy pulumi.StringPtrInput `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port pulumi.StringPtrInput `pulumi:"port"`
-	// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+	// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 	Priority pulumi.IntPtrInput `pulumi:"priority"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 }
 
@@ -1705,42 +1705,42 @@ func (o NetworkAclDefaultIngressAclEntryOutput) ToNetworkAclDefaultIngressAclEnt
 	return o
 }
 
-// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 func (o NetworkAclDefaultIngressAclEntryOutput) CidrIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultIngressAclEntry) *string { return v.CidrIp }).(pulumi.StringPtrOutput)
 }
 
-// 规则的描述信息。
+// Rule description.
 func (o NetworkAclDefaultIngressAclEntryOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultIngressAclEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 规则的ID。
+// Rule ID.
 func (o NetworkAclDefaultIngressAclEntryOutput) NetworkAclEntryId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultIngressAclEntry) *string { return v.NetworkAclEntryId }).(pulumi.StringPtrOutput)
 }
 
-// 规则的名称。
+// Rule name.
 func (o NetworkAclDefaultIngressAclEntryOutput) NetworkAclEntryName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultIngressAclEntry) *string { return v.NetworkAclEntryName }).(pulumi.StringPtrOutput)
 }
 
-// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 func (o NetworkAclDefaultIngressAclEntryOutput) Policy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultIngressAclEntry) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
-// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 func (o NetworkAclDefaultIngressAclEntryOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultIngressAclEntry) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
-// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 func (o NetworkAclDefaultIngressAclEntryOutput) Priority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultIngressAclEntry) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
-// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 func (o NetworkAclDefaultIngressAclEntryOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclDefaultIngressAclEntry) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
@@ -1766,17 +1766,17 @@ func (o NetworkAclDefaultIngressAclEntryArrayOutput) Index(i pulumi.IntInput) Ne
 }
 
 type NetworkAclEgressAclEntry struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp *string `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description *string `pulumi:"description"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName *string `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy *string `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port *string `pulumi:"port"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol *string `pulumi:"protocol"`
 }
 
@@ -1792,17 +1792,17 @@ type NetworkAclEgressAclEntryInput interface {
 }
 
 type NetworkAclEgressAclEntryArgs struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp pulumi.StringPtrInput `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName pulumi.StringPtrInput `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy pulumi.StringPtrInput `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port pulumi.StringPtrInput `pulumi:"port"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 }
 
@@ -1857,32 +1857,32 @@ func (o NetworkAclEgressAclEntryOutput) ToNetworkAclEgressAclEntryOutputWithCont
 	return o
 }
 
-// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 func (o NetworkAclEgressAclEntryOutput) CidrIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclEgressAclEntry) *string { return v.CidrIp }).(pulumi.StringPtrOutput)
 }
 
-// 规则的描述信息。
+// Rule description.
 func (o NetworkAclEgressAclEntryOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclEgressAclEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 规则的名称。
+// Rule name.
 func (o NetworkAclEgressAclEntryOutput) NetworkAclEntryName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclEgressAclEntry) *string { return v.NetworkAclEntryName }).(pulumi.StringPtrOutput)
 }
 
-// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 func (o NetworkAclEgressAclEntryOutput) Policy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclEgressAclEntry) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
-// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 func (o NetworkAclEgressAclEntryOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclEgressAclEntry) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
-// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 func (o NetworkAclEgressAclEntryOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclEgressAclEntry) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
@@ -1908,17 +1908,17 @@ func (o NetworkAclEgressAclEntryArrayOutput) Index(i pulumi.IntInput) NetworkAcl
 }
 
 type NetworkAclIngressAclEntry struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp *string `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description *string `pulumi:"description"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName *string `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy *string `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port *string `pulumi:"port"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol *string `pulumi:"protocol"`
 }
 
@@ -1934,17 +1934,17 @@ type NetworkAclIngressAclEntryInput interface {
 }
 
 type NetworkAclIngressAclEntryArgs struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp pulumi.StringPtrInput `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName pulumi.StringPtrInput `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy pulumi.StringPtrInput `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port pulumi.StringPtrInput `pulumi:"port"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 }
 
@@ -1999,32 +1999,32 @@ func (o NetworkAclIngressAclEntryOutput) ToNetworkAclIngressAclEntryOutputWithCo
 	return o
 }
 
-// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 func (o NetworkAclIngressAclEntryOutput) CidrIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclIngressAclEntry) *string { return v.CidrIp }).(pulumi.StringPtrOutput)
 }
 
-// 规则的描述信息。
+// Rule description.
 func (o NetworkAclIngressAclEntryOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclIngressAclEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 规则的名称。
+// Rule name.
 func (o NetworkAclIngressAclEntryOutput) NetworkAclEntryName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclIngressAclEntry) *string { return v.NetworkAclEntryName }).(pulumi.StringPtrOutput)
 }
 
-// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 func (o NetworkAclIngressAclEntryOutput) Policy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclIngressAclEntry) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
-// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 func (o NetworkAclIngressAclEntryOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclIngressAclEntry) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
-// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 func (o NetworkAclIngressAclEntryOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclIngressAclEntry) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
@@ -2050,7 +2050,7 @@ func (o NetworkAclIngressAclEntryArrayOutput) Index(i pulumi.IntInput) NetworkAc
 }
 
 type NetworkAclResource struct {
-	// 关联资源的ID。
+	// Associated resource ID.
 	ResourceId *string `pulumi:"resourceId"`
 }
 
@@ -2066,7 +2066,7 @@ type NetworkAclResourceInput interface {
 }
 
 type NetworkAclResourceArgs struct {
-	// 关联资源的ID。
+	// Associated resource ID.
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 }
 
@@ -2121,7 +2121,7 @@ func (o NetworkAclResourceOutput) ToNetworkAclResourceOutputWithContext(ctx cont
 	return o
 }
 
-// 关联资源的ID。
+// Associated resource ID.
 func (o NetworkAclResourceOutput) ResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclResource) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
@@ -2147,9 +2147,9 @@ func (o NetworkAclResourceArrayOutput) Index(i pulumi.IntInput) NetworkAclResour
 }
 
 type NetworkAclTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -2165,9 +2165,9 @@ type NetworkAclTagInput interface {
 }
 
 type NetworkAclTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -2222,12 +2222,12 @@ func (o NetworkAclTagOutput) ToNetworkAclTagOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o NetworkAclTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o NetworkAclTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAclTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -2253,9 +2253,9 @@ func (o NetworkAclTagArrayOutput) Index(i pulumi.IntInput) NetworkAclTagOutput {
 }
 
 type PrefixListAssociationsRouteTable struct {
-	// 关联资源的ID。
+	// ID of the associated resource.
 	ResourceId *string `pulumi:"resourceId"`
-	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
 	ResourceType *string `pulumi:"resourceType"`
 }
 
@@ -2271,9 +2271,9 @@ type PrefixListAssociationsRouteTableInput interface {
 }
 
 type PrefixListAssociationsRouteTableArgs struct {
-	// 关联资源的ID。
+	// ID of the associated resource.
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
-	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 }
 
@@ -2328,12 +2328,12 @@ func (o PrefixListAssociationsRouteTableOutput) ToPrefixListAssociationsRouteTab
 	return o
 }
 
-// 关联资源的ID。
+// ID of the associated resource.
 func (o PrefixListAssociationsRouteTableOutput) ResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PrefixListAssociationsRouteTable) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
-// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
 func (o PrefixListAssociationsRouteTableOutput) ResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PrefixListAssociationsRouteTable) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
@@ -2359,9 +2359,9 @@ func (o PrefixListAssociationsRouteTableArrayOutput) Index(i pulumi.IntInput) Pr
 }
 
 type PrefixListAssociationsSecurityGroup struct {
-	// 关联资源的ID。
+	// ID of the associated resource.
 	ResourceId *string `pulumi:"resourceId"`
-	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
 	ResourceType *string `pulumi:"resourceType"`
 }
 
@@ -2377,9 +2377,9 @@ type PrefixListAssociationsSecurityGroupInput interface {
 }
 
 type PrefixListAssociationsSecurityGroupArgs struct {
-	// 关联资源的ID。
+	// ID of the associated resource.
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
-	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 }
 
@@ -2434,12 +2434,12 @@ func (o PrefixListAssociationsSecurityGroupOutput) ToPrefixListAssociationsSecur
 	return o
 }
 
-// 关联资源的ID。
+// ID of the associated resource.
 func (o PrefixListAssociationsSecurityGroupOutput) ResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PrefixListAssociationsSecurityGroup) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
-// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
 func (o PrefixListAssociationsSecurityGroupOutput) ResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PrefixListAssociationsSecurityGroup) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
@@ -2465,9 +2465,9 @@ func (o PrefixListAssociationsSecurityGroupArrayOutput) Index(i pulumi.IntInput)
 }
 
 type PrefixListPrefixListEntry struct {
-	// 前缀列表条目的CIDR。
+	// CIDR of the prefix list entry.
 	Cidr *string `pulumi:"cidr"`
-	// 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
 	Description *string `pulumi:"description"`
 }
 
@@ -2483,9 +2483,9 @@ type PrefixListPrefixListEntryInput interface {
 }
 
 type PrefixListPrefixListEntryArgs struct {
-	// 前缀列表条目的CIDR。
+	// CIDR of the prefix list entry.
 	Cidr pulumi.StringPtrInput `pulumi:"cidr"`
-	// 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
 	Description pulumi.StringPtrInput `pulumi:"description"`
 }
 
@@ -2540,12 +2540,12 @@ func (o PrefixListPrefixListEntryOutput) ToPrefixListPrefixListEntryOutputWithCo
 	return o
 }
 
-// 前缀列表条目的CIDR。
+// CIDR of the prefix list entry.
 func (o PrefixListPrefixListEntryOutput) Cidr() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PrefixListPrefixListEntry) *string { return v.Cidr }).(pulumi.StringPtrOutput)
 }
 
-// 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+// Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
 func (o PrefixListPrefixListEntryOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PrefixListPrefixListEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -2571,9 +2571,9 @@ func (o PrefixListPrefixListEntryArrayOutput) Index(i pulumi.IntInput) PrefixLis
 }
 
 type PrefixListTag struct {
-	// 用户标签的标签键。
+	// Tag key of the user tag.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value of the user tag.
 	Value *string `pulumi:"value"`
 }
 
@@ -2589,9 +2589,9 @@ type PrefixListTagInput interface {
 }
 
 type PrefixListTagArgs struct {
-	// 用户标签的标签键。
+	// Tag key of the user tag.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value of the user tag.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -2646,12 +2646,12 @@ func (o PrefixListTagOutput) ToPrefixListTagOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 用户标签的标签键。
+// Tag key of the user tag.
 func (o PrefixListTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PrefixListTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// Tag value of the user tag.
 func (o PrefixListTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PrefixListTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -2677,19 +2677,19 @@ func (o PrefixListTagArrayOutput) Index(i pulumi.IntInput) PrefixListTagOutput {
 }
 
 type RouteTableCustomRouteEntry struct {
-	// 路由条目描述。
+	// Route Entry Description
 	Description *string `pulumi:"description"`
-	// 路由条目的目标网段。
+	// Destination CIDR of the route entry
 	DestinationCidrBlock *string `pulumi:"destinationCidrBlock"`
-	// 前缀列表ID。
+	// Prefix List ID
 	DestinationPrefixListId *string `pulumi:"destinationPrefixListId"`
-	// 下一跳资源ID。
+	// Next Hop Resource ID
 	NextHopId *string `pulumi:"nextHopId"`
-	// 路由条目下一跳资源的名称。
+	// Name of the next hop resource for the route entry
 	NextHopName *string `pulumi:"nextHopName"`
-	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	// Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
 	NextHopType *string `pulumi:"nextHopType"`
-	// 路由条目名称。
+	// Route Entry Name
 	RouteEntryName *string `pulumi:"routeEntryName"`
 }
 
@@ -2705,19 +2705,19 @@ type RouteTableCustomRouteEntryInput interface {
 }
 
 type RouteTableCustomRouteEntryArgs struct {
-	// 路由条目描述。
+	// Route Entry Description
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 路由条目的目标网段。
+	// Destination CIDR of the route entry
 	DestinationCidrBlock pulumi.StringPtrInput `pulumi:"destinationCidrBlock"`
-	// 前缀列表ID。
+	// Prefix List ID
 	DestinationPrefixListId pulumi.StringPtrInput `pulumi:"destinationPrefixListId"`
-	// 下一跳资源ID。
+	// Next Hop Resource ID
 	NextHopId pulumi.StringPtrInput `pulumi:"nextHopId"`
-	// 路由条目下一跳资源的名称。
+	// Name of the next hop resource for the route entry
 	NextHopName pulumi.StringPtrInput `pulumi:"nextHopName"`
-	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	// Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
 	NextHopType pulumi.StringPtrInput `pulumi:"nextHopType"`
-	// 路由条目名称。
+	// Route Entry Name
 	RouteEntryName pulumi.StringPtrInput `pulumi:"routeEntryName"`
 }
 
@@ -2772,37 +2772,37 @@ func (o RouteTableCustomRouteEntryOutput) ToRouteTableCustomRouteEntryOutputWith
 	return o
 }
 
-// 路由条目描述。
+// Route Entry Description
 func (o RouteTableCustomRouteEntryOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 路由条目的目标网段。
+// Destination CIDR of the route entry
 func (o RouteTableCustomRouteEntryOutput) DestinationCidrBlock() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.DestinationCidrBlock }).(pulumi.StringPtrOutput)
 }
 
-// 前缀列表ID。
+// Prefix List ID
 func (o RouteTableCustomRouteEntryOutput) DestinationPrefixListId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.DestinationPrefixListId }).(pulumi.StringPtrOutput)
 }
 
-// 下一跳资源ID。
+// Next Hop Resource ID
 func (o RouteTableCustomRouteEntryOutput) NextHopId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.NextHopId }).(pulumi.StringPtrOutput)
 }
 
-// 路由条目下一跳资源的名称。
+// Name of the next hop resource for the route entry
 func (o RouteTableCustomRouteEntryOutput) NextHopName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.NextHopName }).(pulumi.StringPtrOutput)
 }
 
-// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+// Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
 func (o RouteTableCustomRouteEntryOutput) NextHopType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.NextHopType }).(pulumi.StringPtrOutput)
 }
 
-// 路由条目名称。
+// Route Entry Name
 func (o RouteTableCustomRouteEntryOutput) RouteEntryName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.RouteEntryName }).(pulumi.StringPtrOutput)
 }
@@ -2828,31 +2828,31 @@ func (o RouteTableCustomRouteEntryArrayOutput) Index(i pulumi.IntInput) RouteTab
 }
 
 type RouteTableSystemRouteEntry struct {
-	// 路由条目描述。
+	// Route Entry Description
 	Description *string `pulumi:"description"`
-	// 路由条目的目标网段。
+	// Destination CIDR of the route entry
 	DestinationCidrBlock *string `pulumi:"destinationCidrBlock"`
-	// 前缀列表ID。
+	// Prefix List ID
 	DestinationPrefixListId *string `pulumi:"destinationPrefixListId"`
-	// 下一跳资源ID。
+	// Next Hop Resource ID
 	NextHopId *string `pulumi:"nextHopId"`
-	// 路由条目下一跳资源的名称。
+	// Name of the next hop resource for the route entry
 	NextHopName *string `pulumi:"nextHopName"`
-	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	// Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
 	NextHopType *string `pulumi:"nextHopType"`
-	// 前缀列表的CIDR。
+	// Prefix List CIDR
 	PrefixListCidrBlocks []string `pulumi:"prefixListCidrBlocks"`
-	// 路由条目ID。
+	// Route Entry ID
 	RouteEntryId *string `pulumi:"routeEntryId"`
-	// 路由条目名称。
+	// Route Entry Name
 	RouteEntryName *string `pulumi:"routeEntryName"`
-	// 路由表ID。
+	// Route Table ID
 	RouteTableId *string `pulumi:"routeTableId"`
-	// 路由条目状态。1、Pending：待创建。2、Available：可用。
+	// Route entry status. 1. Pending: Pending creation 2. Available: Available
 	Status *string `pulumi:"status"`
-	// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+	// Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
 	Type *string `pulumi:"type"`
-	// 路由条目所属私有网络的ID。
+	// ID of the private network to which the route entry belongs
 	VpcId *string `pulumi:"vpcId"`
 }
 
@@ -2868,31 +2868,31 @@ type RouteTableSystemRouteEntryInput interface {
 }
 
 type RouteTableSystemRouteEntryArgs struct {
-	// 路由条目描述。
+	// Route Entry Description
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 路由条目的目标网段。
+	// Destination CIDR of the route entry
 	DestinationCidrBlock pulumi.StringPtrInput `pulumi:"destinationCidrBlock"`
-	// 前缀列表ID。
+	// Prefix List ID
 	DestinationPrefixListId pulumi.StringPtrInput `pulumi:"destinationPrefixListId"`
-	// 下一跳资源ID。
+	// Next Hop Resource ID
 	NextHopId pulumi.StringPtrInput `pulumi:"nextHopId"`
-	// 路由条目下一跳资源的名称。
+	// Name of the next hop resource for the route entry
 	NextHopName pulumi.StringPtrInput `pulumi:"nextHopName"`
-	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	// Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
 	NextHopType pulumi.StringPtrInput `pulumi:"nextHopType"`
-	// 前缀列表的CIDR。
+	// Prefix List CIDR
 	PrefixListCidrBlocks pulumi.StringArrayInput `pulumi:"prefixListCidrBlocks"`
-	// 路由条目ID。
+	// Route Entry ID
 	RouteEntryId pulumi.StringPtrInput `pulumi:"routeEntryId"`
-	// 路由条目名称。
+	// Route Entry Name
 	RouteEntryName pulumi.StringPtrInput `pulumi:"routeEntryName"`
-	// 路由表ID。
+	// Route Table ID
 	RouteTableId pulumi.StringPtrInput `pulumi:"routeTableId"`
-	// 路由条目状态。1、Pending：待创建。2、Available：可用。
+	// Route entry status. 1. Pending: Pending creation 2. Available: Available
 	Status pulumi.StringPtrInput `pulumi:"status"`
-	// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+	// Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
 	Type pulumi.StringPtrInput `pulumi:"type"`
-	// 路由条目所属私有网络的ID。
+	// ID of the private network to which the route entry belongs
 	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
 }
 
@@ -2947,67 +2947,67 @@ func (o RouteTableSystemRouteEntryOutput) ToRouteTableSystemRouteEntryOutputWith
 	return o
 }
 
-// 路由条目描述。
+// Route Entry Description
 func (o RouteTableSystemRouteEntryOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 路由条目的目标网段。
+// Destination CIDR of the route entry
 func (o RouteTableSystemRouteEntryOutput) DestinationCidrBlock() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.DestinationCidrBlock }).(pulumi.StringPtrOutput)
 }
 
-// 前缀列表ID。
+// Prefix List ID
 func (o RouteTableSystemRouteEntryOutput) DestinationPrefixListId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.DestinationPrefixListId }).(pulumi.StringPtrOutput)
 }
 
-// 下一跳资源ID。
+// Next Hop Resource ID
 func (o RouteTableSystemRouteEntryOutput) NextHopId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.NextHopId }).(pulumi.StringPtrOutput)
 }
 
-// 路由条目下一跳资源的名称。
+// Name of the next hop resource for the route entry
 func (o RouteTableSystemRouteEntryOutput) NextHopName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.NextHopName }).(pulumi.StringPtrOutput)
 }
 
-// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+// Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
 func (o RouteTableSystemRouteEntryOutput) NextHopType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.NextHopType }).(pulumi.StringPtrOutput)
 }
 
-// 前缀列表的CIDR。
+// Prefix List CIDR
 func (o RouteTableSystemRouteEntryOutput) PrefixListCidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RouteTableSystemRouteEntry) []string { return v.PrefixListCidrBlocks }).(pulumi.StringArrayOutput)
 }
 
-// 路由条目ID。
+// Route Entry ID
 func (o RouteTableSystemRouteEntryOutput) RouteEntryId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.RouteEntryId }).(pulumi.StringPtrOutput)
 }
 
-// 路由条目名称。
+// Route Entry Name
 func (o RouteTableSystemRouteEntryOutput) RouteEntryName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.RouteEntryName }).(pulumi.StringPtrOutput)
 }
 
-// 路由表ID。
+// Route Table ID
 func (o RouteTableSystemRouteEntryOutput) RouteTableId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.RouteTableId }).(pulumi.StringPtrOutput)
 }
 
-// 路由条目状态。1、Pending：待创建。2、Available：可用。
+// Route entry status. 1. Pending: Pending creation 2. Available: Available
 func (o RouteTableSystemRouteEntryOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
-// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+// Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
 func (o RouteTableSystemRouteEntryOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// 路由条目所属私有网络的ID。
+// ID of the private network to which the route entry belongs
 func (o RouteTableSystemRouteEntryOutput) VpcId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.VpcId }).(pulumi.StringPtrOutput)
 }
@@ -3033,9 +3033,9 @@ func (o RouteTableSystemRouteEntryArrayOutput) Index(i pulumi.IntInput) RouteTab
 }
 
 type RouteTableTag struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -3051,9 +3051,9 @@ type RouteTableTagInput interface {
 }
 
 type RouteTableTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3108,12 +3108,12 @@ func (o RouteTableTagOutput) ToRouteTableTagOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key
 func (o RouteTableTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value
 func (o RouteTableTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RouteTableTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3139,25 +3139,25 @@ func (o RouteTableTagArrayOutput) Index(i pulumi.IntInput) RouteTableTagOutput {
 }
 
 type SecurityGroupEgressPermission struct {
-	// 源地址的IPv4 CIDR或IPv6 CIDR
+	// IPv4 CIDR or IPv6 CIDR of the source address
 	CidrIp *string `pulumi:"cidrIp"`
-	// 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+	// Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
 	Description *string `pulumi:"description"`
-	// 安全组规则方向。ingress：入方向。egress：出方向
+	// Security group rule direction. ingress: inbound direction. egress: outbound direction
 	Direction *string `pulumi:"direction"`
-	// 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+	// Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
 	Policy *string `pulumi:"policy"`
-	// 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
 	PortEnd *int `pulumi:"portEnd"`
-	// 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
 	PortStart *int `pulumi:"portStart"`
-	// 前缀列表的ID
+	// Prefix list ID
 	PrefixListId *string `pulumi:"prefixListId"`
-	// 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+	// Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
 	Priority *int `pulumi:"priority"`
-	// 协议类型。tcp、udp、icmp、icmpv6、all
+	// Protocol type. tcp, udp, icmp, icmpv6, all
 	Protocol *string `pulumi:"protocol"`
-	// 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+	// Source address security group ID. All NIC addresses in this security group are used as source addresses
 	SourceGroupId *string `pulumi:"sourceGroupId"`
 }
 
@@ -3173,25 +3173,25 @@ type SecurityGroupEgressPermissionInput interface {
 }
 
 type SecurityGroupEgressPermissionArgs struct {
-	// 源地址的IPv4 CIDR或IPv6 CIDR
+	// IPv4 CIDR or IPv6 CIDR of the source address
 	CidrIp pulumi.StringPtrInput `pulumi:"cidrIp"`
-	// 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+	// Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 安全组规则方向。ingress：入方向。egress：出方向
+	// Security group rule direction. ingress: inbound direction. egress: outbound direction
 	Direction pulumi.StringPtrInput `pulumi:"direction"`
-	// 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+	// Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
 	Policy pulumi.StringPtrInput `pulumi:"policy"`
-	// 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
 	PortEnd pulumi.IntPtrInput `pulumi:"portEnd"`
-	// 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
 	PortStart pulumi.IntPtrInput `pulumi:"portStart"`
-	// 前缀列表的ID
+	// Prefix list ID
 	PrefixListId pulumi.StringPtrInput `pulumi:"prefixListId"`
-	// 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+	// Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
 	Priority pulumi.IntPtrInput `pulumi:"priority"`
-	// 协议类型。tcp、udp、icmp、icmpv6、all
+	// Protocol type. tcp, udp, icmp, icmpv6, all
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
-	// 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+	// Source address security group ID. All NIC addresses in this security group are used as source addresses
 	SourceGroupId pulumi.StringPtrInput `pulumi:"sourceGroupId"`
 }
 
@@ -3246,52 +3246,52 @@ func (o SecurityGroupEgressPermissionOutput) ToSecurityGroupEgressPermissionOutp
 	return o
 }
 
-// 源地址的IPv4 CIDR或IPv6 CIDR
+// IPv4 CIDR or IPv6 CIDR of the source address
 func (o SecurityGroupEgressPermissionOutput) CidrIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupEgressPermission) *string { return v.CidrIp }).(pulumi.StringPtrOutput)
 }
 
-// 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+// Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
 func (o SecurityGroupEgressPermissionOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupEgressPermission) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 安全组规则方向。ingress：入方向。egress：出方向
+// Security group rule direction. ingress: inbound direction. egress: outbound direction
 func (o SecurityGroupEgressPermissionOutput) Direction() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupEgressPermission) *string { return v.Direction }).(pulumi.StringPtrOutput)
 }
 
-// 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+// Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
 func (o SecurityGroupEgressPermissionOutput) Policy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupEgressPermission) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
-// 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+// Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
 func (o SecurityGroupEgressPermissionOutput) PortEnd() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v SecurityGroupEgressPermission) *int { return v.PortEnd }).(pulumi.IntPtrOutput)
 }
 
-// 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+// Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
 func (o SecurityGroupEgressPermissionOutput) PortStart() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v SecurityGroupEgressPermission) *int { return v.PortStart }).(pulumi.IntPtrOutput)
 }
 
-// 前缀列表的ID
+// Prefix list ID
 func (o SecurityGroupEgressPermissionOutput) PrefixListId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupEgressPermission) *string { return v.PrefixListId }).(pulumi.StringPtrOutput)
 }
 
-// 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+// Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
 func (o SecurityGroupEgressPermissionOutput) Priority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v SecurityGroupEgressPermission) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
-// 协议类型。tcp、udp、icmp、icmpv6、all
+// Protocol type. tcp, udp, icmp, icmpv6, all
 func (o SecurityGroupEgressPermissionOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupEgressPermission) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
-// 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+// Source address security group ID. All NIC addresses in this security group are used as source addresses
 func (o SecurityGroupEgressPermissionOutput) SourceGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupEgressPermission) *string { return v.SourceGroupId }).(pulumi.StringPtrOutput)
 }
@@ -3317,25 +3317,25 @@ func (o SecurityGroupEgressPermissionArrayOutput) Index(i pulumi.IntInput) Secur
 }
 
 type SecurityGroupIngressPermission struct {
-	// 源地址的IPv4 CIDR或IPv6 CIDR
+	// IPv4 CIDR or IPv6 CIDR of the source address
 	CidrIp *string `pulumi:"cidrIp"`
-	// 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+	// Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
 	Description *string `pulumi:"description"`
-	// 安全组规则方向。ingress：入方向。egress：出方向
+	// Security group rule direction. ingress: inbound direction. egress: outbound direction
 	Direction *string `pulumi:"direction"`
-	// 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+	// Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
 	Policy *string `pulumi:"policy"`
-	// 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
 	PortEnd *int `pulumi:"portEnd"`
-	// 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
 	PortStart *int `pulumi:"portStart"`
-	// 前缀列表的ID
+	// Prefix list ID
 	PrefixListId *string `pulumi:"prefixListId"`
-	// 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+	// Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
 	Priority *int `pulumi:"priority"`
-	// 协议类型。tcp、udp、icmp、icmpv6、all
+	// Protocol type. tcp, udp, icmp, icmpv6, all
 	Protocol *string `pulumi:"protocol"`
-	// 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+	// Source address security group ID. All NIC addresses in this security group are used as source addresses
 	SourceGroupId *string `pulumi:"sourceGroupId"`
 }
 
@@ -3351,25 +3351,25 @@ type SecurityGroupIngressPermissionInput interface {
 }
 
 type SecurityGroupIngressPermissionArgs struct {
-	// 源地址的IPv4 CIDR或IPv6 CIDR
+	// IPv4 CIDR or IPv6 CIDR of the source address
 	CidrIp pulumi.StringPtrInput `pulumi:"cidrIp"`
-	// 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+	// Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 安全组规则方向。ingress：入方向。egress：出方向
+	// Security group rule direction. ingress: inbound direction. egress: outbound direction
 	Direction pulumi.StringPtrInput `pulumi:"direction"`
-	// 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+	// Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
 	Policy pulumi.StringPtrInput `pulumi:"policy"`
-	// 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
 	PortEnd pulumi.IntPtrInput `pulumi:"portEnd"`
-	// 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
 	PortStart pulumi.IntPtrInput `pulumi:"portStart"`
-	// 前缀列表的ID
+	// Prefix list ID
 	PrefixListId pulumi.StringPtrInput `pulumi:"prefixListId"`
-	// 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+	// Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
 	Priority pulumi.IntPtrInput `pulumi:"priority"`
-	// 协议类型。tcp、udp、icmp、icmpv6、all
+	// Protocol type. tcp, udp, icmp, icmpv6, all
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
-	// 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+	// Source address security group ID. All NIC addresses in this security group are used as source addresses
 	SourceGroupId pulumi.StringPtrInput `pulumi:"sourceGroupId"`
 }
 
@@ -3424,52 +3424,52 @@ func (o SecurityGroupIngressPermissionOutput) ToSecurityGroupIngressPermissionOu
 	return o
 }
 
-// 源地址的IPv4 CIDR或IPv6 CIDR
+// IPv4 CIDR or IPv6 CIDR of the source address
 func (o SecurityGroupIngressPermissionOutput) CidrIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupIngressPermission) *string { return v.CidrIp }).(pulumi.StringPtrOutput)
 }
 
-// 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+// Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
 func (o SecurityGroupIngressPermissionOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupIngressPermission) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 安全组规则方向。ingress：入方向。egress：出方向
+// Security group rule direction. ingress: inbound direction. egress: outbound direction
 func (o SecurityGroupIngressPermissionOutput) Direction() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupIngressPermission) *string { return v.Direction }).(pulumi.StringPtrOutput)
 }
 
-// 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+// Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
 func (o SecurityGroupIngressPermissionOutput) Policy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupIngressPermission) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
-// 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+// Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
 func (o SecurityGroupIngressPermissionOutput) PortEnd() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v SecurityGroupIngressPermission) *int { return v.PortEnd }).(pulumi.IntPtrOutput)
 }
 
-// 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+// Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
 func (o SecurityGroupIngressPermissionOutput) PortStart() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v SecurityGroupIngressPermission) *int { return v.PortStart }).(pulumi.IntPtrOutput)
 }
 
-// 前缀列表的ID
+// Prefix list ID
 func (o SecurityGroupIngressPermissionOutput) PrefixListId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupIngressPermission) *string { return v.PrefixListId }).(pulumi.StringPtrOutput)
 }
 
-// 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+// Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
 func (o SecurityGroupIngressPermissionOutput) Priority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v SecurityGroupIngressPermission) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
-// 协议类型。tcp、udp、icmp、icmpv6、all
+// Protocol type. tcp, udp, icmp, icmpv6, all
 func (o SecurityGroupIngressPermissionOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupIngressPermission) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
-// 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+// Source address security group ID. All NIC addresses in this security group are used as source addresses
 func (o SecurityGroupIngressPermissionOutput) SourceGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupIngressPermission) *string { return v.SourceGroupId }).(pulumi.StringPtrOutput)
 }
@@ -3495,9 +3495,9 @@ func (o SecurityGroupIngressPermissionArrayOutput) Index(i pulumi.IntInput) Secu
 }
 
 type SecurityGroupTag struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -3513,9 +3513,9 @@ type SecurityGroupTagInput interface {
 }
 
 type SecurityGroupTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3570,12 +3570,12 @@ func (o SecurityGroupTagOutput) ToSecurityGroupTagOutputWithContext(ctx context.
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key
 func (o SecurityGroupTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value
 func (o SecurityGroupTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SecurityGroupTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3601,9 +3601,9 @@ func (o SecurityGroupTagArrayOutput) Index(i pulumi.IntInput) SecurityGroupTagOu
 }
 
 type SubnetRouteTable struct {
-	// 子网关联的路由表ID。
+	// ID of the route table associated with the subnet
 	RouteTableId *string `pulumi:"routeTableId"`
-	// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+	// Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
 	RouteTableType *string `pulumi:"routeTableType"`
 }
 
@@ -3619,9 +3619,9 @@ type SubnetRouteTableInput interface {
 }
 
 type SubnetRouteTableArgs struct {
-	// 子网关联的路由表ID。
+	// ID of the route table associated with the subnet
 	RouteTableId pulumi.StringPtrInput `pulumi:"routeTableId"`
-	// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+	// Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
 	RouteTableType pulumi.StringPtrInput `pulumi:"routeTableType"`
 }
 
@@ -3702,12 +3702,12 @@ func (o SubnetRouteTableOutput) ToSubnetRouteTablePtrOutputWithContext(ctx conte
 	}).(SubnetRouteTablePtrOutput)
 }
 
-// 子网关联的路由表ID。
+// ID of the route table associated with the subnet
 func (o SubnetRouteTableOutput) RouteTableId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubnetRouteTable) *string { return v.RouteTableId }).(pulumi.StringPtrOutput)
 }
 
-// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+// Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
 func (o SubnetRouteTableOutput) RouteTableType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubnetRouteTable) *string { return v.RouteTableType }).(pulumi.StringPtrOutput)
 }
@@ -3736,7 +3736,7 @@ func (o SubnetRouteTablePtrOutput) Elem() SubnetRouteTableOutput {
 	}).(SubnetRouteTableOutput)
 }
 
-// 子网关联的路由表ID。
+// ID of the route table associated with the subnet
 func (o SubnetRouteTablePtrOutput) RouteTableId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SubnetRouteTable) *string {
 		if v == nil {
@@ -3746,7 +3746,7 @@ func (o SubnetRouteTablePtrOutput) RouteTableId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+// Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
 func (o SubnetRouteTablePtrOutput) RouteTableType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SubnetRouteTable) *string {
 		if v == nil {
@@ -3757,9 +3757,9 @@ func (o SubnetRouteTablePtrOutput) RouteTableType() pulumi.StringPtrOutput {
 }
 
 type SubnetTag struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -3775,9 +3775,9 @@ type SubnetTagInput interface {
 }
 
 type SubnetTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3832,12 +3832,12 @@ func (o SubnetTagOutput) ToSubnetTagOutputWithContext(ctx context.Context) Subne
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key
 func (o SubnetTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubnetTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value
 func (o SubnetTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubnetTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3863,31 +3863,31 @@ func (o SubnetTagArrayOutput) Index(i pulumi.IntInput) SubnetTagOutput {
 }
 
 type TrafficMirrorFilterEgressFilterRule struct {
-	// 筛选规则实例描述。
+	// Filter rule instance description
 	Description *string `pulumi:"description"`
-	// 筛选规则目的地址。
+	// Filter rule destination address
 	DestinationCidrBlock *string `pulumi:"destinationCidrBlock"`
-	// 筛选规则目的端口范围。
+	// Filter rule destination port range
 	DestinationPortRange *string `pulumi:"destinationPortRange"`
-	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
 	Policy *string `pulumi:"policy"`
-	// 筛选规则优先级。
+	// Filter rule priority
 	Priority *int `pulumi:"priority"`
-	// 所属项目的名称。
+	// Project name
 	ProjectName *string `pulumi:"projectName"`
-	// 筛选规则协议类型。
+	// Filter rule protocol type
 	Protocol *string `pulumi:"protocol"`
-	// 筛选规则源地址。
+	// Filter rule source address
 	SourceCidrBlock *string `pulumi:"sourceCidrBlock"`
-	// 筛选规则源端口范围。
+	// Filter rule source port range
 	SourcePortRange *string `pulumi:"sourcePortRange"`
-	// 筛选规则状态。
+	// Filter rule status
 	Status *string `pulumi:"status"`
-	// 筛选规则方向。egress：出方向。ingress：入方向。
+	// Filter rule direction. egress: Outbound. ingress: Inbound
 	TrafficDirection *string `pulumi:"trafficDirection"`
-	// 筛选条件实例ID。
+	// Filter condition instance ID
 	TrafficMirrorFilterId *string `pulumi:"trafficMirrorFilterId"`
-	// 筛选规则实例ID。
+	// Filter rule instance ID
 	TrafficMirrorFilterRuleId *string `pulumi:"trafficMirrorFilterRuleId"`
 }
 
@@ -3903,31 +3903,31 @@ type TrafficMirrorFilterEgressFilterRuleInput interface {
 }
 
 type TrafficMirrorFilterEgressFilterRuleArgs struct {
-	// 筛选规则实例描述。
+	// Filter rule instance description
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 筛选规则目的地址。
+	// Filter rule destination address
 	DestinationCidrBlock pulumi.StringPtrInput `pulumi:"destinationCidrBlock"`
-	// 筛选规则目的端口范围。
+	// Filter rule destination port range
 	DestinationPortRange pulumi.StringPtrInput `pulumi:"destinationPortRange"`
-	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
 	Policy pulumi.StringPtrInput `pulumi:"policy"`
-	// 筛选规则优先级。
+	// Filter rule priority
 	Priority pulumi.IntPtrInput `pulumi:"priority"`
-	// 所属项目的名称。
+	// Project name
 	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
-	// 筛选规则协议类型。
+	// Filter rule protocol type
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
-	// 筛选规则源地址。
+	// Filter rule source address
 	SourceCidrBlock pulumi.StringPtrInput `pulumi:"sourceCidrBlock"`
-	// 筛选规则源端口范围。
+	// Filter rule source port range
 	SourcePortRange pulumi.StringPtrInput `pulumi:"sourcePortRange"`
-	// 筛选规则状态。
+	// Filter rule status
 	Status pulumi.StringPtrInput `pulumi:"status"`
-	// 筛选规则方向。egress：出方向。ingress：入方向。
+	// Filter rule direction. egress: Outbound. ingress: Inbound
 	TrafficDirection pulumi.StringPtrInput `pulumi:"trafficDirection"`
-	// 筛选条件实例ID。
+	// Filter condition instance ID
 	TrafficMirrorFilterId pulumi.StringPtrInput `pulumi:"trafficMirrorFilterId"`
-	// 筛选规则实例ID。
+	// Filter rule instance ID
 	TrafficMirrorFilterRuleId pulumi.StringPtrInput `pulumi:"trafficMirrorFilterRuleId"`
 }
 
@@ -3982,67 +3982,67 @@ func (o TrafficMirrorFilterEgressFilterRuleOutput) ToTrafficMirrorFilterEgressFi
 	return o
 }
 
-// 筛选规则实例描述。
+// Filter rule instance description
 func (o TrafficMirrorFilterEgressFilterRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则目的地址。
+// Filter rule destination address
 func (o TrafficMirrorFilterEgressFilterRuleOutput) DestinationCidrBlock() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.DestinationCidrBlock }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则目的端口范围。
+// Filter rule destination port range
 func (o TrafficMirrorFilterEgressFilterRuleOutput) DestinationPortRange() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.DestinationPortRange }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
 func (o TrafficMirrorFilterEgressFilterRuleOutput) Policy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则优先级。
+// Filter rule priority
 func (o TrafficMirrorFilterEgressFilterRuleOutput) Priority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
-// 所属项目的名称。
+// Project name
 func (o TrafficMirrorFilterEgressFilterRuleOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则协议类型。
+// Filter rule protocol type
 func (o TrafficMirrorFilterEgressFilterRuleOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则源地址。
+// Filter rule source address
 func (o TrafficMirrorFilterEgressFilterRuleOutput) SourceCidrBlock() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.SourceCidrBlock }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则源端口范围。
+// Filter rule source port range
 func (o TrafficMirrorFilterEgressFilterRuleOutput) SourcePortRange() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.SourcePortRange }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则状态。
+// Filter rule status
 func (o TrafficMirrorFilterEgressFilterRuleOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则方向。egress：出方向。ingress：入方向。
+// Filter rule direction. egress: Outbound. ingress: Inbound
 func (o TrafficMirrorFilterEgressFilterRuleOutput) TrafficDirection() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.TrafficDirection }).(pulumi.StringPtrOutput)
 }
 
-// 筛选条件实例ID。
+// Filter condition instance ID
 func (o TrafficMirrorFilterEgressFilterRuleOutput) TrafficMirrorFilterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.TrafficMirrorFilterId }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则实例ID。
+// Filter rule instance ID
 func (o TrafficMirrorFilterEgressFilterRuleOutput) TrafficMirrorFilterRuleId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.TrafficMirrorFilterRuleId }).(pulumi.StringPtrOutput)
 }
@@ -4068,31 +4068,31 @@ func (o TrafficMirrorFilterEgressFilterRuleArrayOutput) Index(i pulumi.IntInput)
 }
 
 type TrafficMirrorFilterIngressFilterRule struct {
-	// 筛选规则实例描述。
+	// Filter rule instance description
 	Description *string `pulumi:"description"`
-	// 筛选规则目的地址。
+	// Filter rule destination address
 	DestinationCidrBlock *string `pulumi:"destinationCidrBlock"`
-	// 筛选规则目的端口范围。
+	// Filter rule destination port range
 	DestinationPortRange *string `pulumi:"destinationPortRange"`
-	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
 	Policy *string `pulumi:"policy"`
-	// 筛选规则优先级。
+	// Filter rule priority
 	Priority *int `pulumi:"priority"`
-	// 所属项目的名称。
+	// Project name
 	ProjectName *string `pulumi:"projectName"`
-	// 筛选规则协议类型。
+	// Filter rule protocol type
 	Protocol *string `pulumi:"protocol"`
-	// 筛选规则源地址。
+	// Filter rule source address
 	SourceCidrBlock *string `pulumi:"sourceCidrBlock"`
-	// 筛选规则源端口范围。
+	// Filter rule source port range
 	SourcePortRange *string `pulumi:"sourcePortRange"`
-	// 筛选规则状态。
+	// Filter rule status
 	Status *string `pulumi:"status"`
-	// 筛选规则方向。egress：出方向。ingress：入方向。
+	// Filter rule direction. egress: Outbound. ingress: Inbound
 	TrafficDirection *string `pulumi:"trafficDirection"`
-	// 筛选条件实例ID。
+	// Filter condition instance ID
 	TrafficMirrorFilterId *string `pulumi:"trafficMirrorFilterId"`
-	// 筛选规则实例ID。
+	// Filter rule instance ID
 	TrafficMirrorFilterRuleId *string `pulumi:"trafficMirrorFilterRuleId"`
 }
 
@@ -4108,31 +4108,31 @@ type TrafficMirrorFilterIngressFilterRuleInput interface {
 }
 
 type TrafficMirrorFilterIngressFilterRuleArgs struct {
-	// 筛选规则实例描述。
+	// Filter rule instance description
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 筛选规则目的地址。
+	// Filter rule destination address
 	DestinationCidrBlock pulumi.StringPtrInput `pulumi:"destinationCidrBlock"`
-	// 筛选规则目的端口范围。
+	// Filter rule destination port range
 	DestinationPortRange pulumi.StringPtrInput `pulumi:"destinationPortRange"`
-	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
 	Policy pulumi.StringPtrInput `pulumi:"policy"`
-	// 筛选规则优先级。
+	// Filter rule priority
 	Priority pulumi.IntPtrInput `pulumi:"priority"`
-	// 所属项目的名称。
+	// Project name
 	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
-	// 筛选规则协议类型。
+	// Filter rule protocol type
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
-	// 筛选规则源地址。
+	// Filter rule source address
 	SourceCidrBlock pulumi.StringPtrInput `pulumi:"sourceCidrBlock"`
-	// 筛选规则源端口范围。
+	// Filter rule source port range
 	SourcePortRange pulumi.StringPtrInput `pulumi:"sourcePortRange"`
-	// 筛选规则状态。
+	// Filter rule status
 	Status pulumi.StringPtrInput `pulumi:"status"`
-	// 筛选规则方向。egress：出方向。ingress：入方向。
+	// Filter rule direction. egress: Outbound. ingress: Inbound
 	TrafficDirection pulumi.StringPtrInput `pulumi:"trafficDirection"`
-	// 筛选条件实例ID。
+	// Filter condition instance ID
 	TrafficMirrorFilterId pulumi.StringPtrInput `pulumi:"trafficMirrorFilterId"`
-	// 筛选规则实例ID。
+	// Filter rule instance ID
 	TrafficMirrorFilterRuleId pulumi.StringPtrInput `pulumi:"trafficMirrorFilterRuleId"`
 }
 
@@ -4187,67 +4187,67 @@ func (o TrafficMirrorFilterIngressFilterRuleOutput) ToTrafficMirrorFilterIngress
 	return o
 }
 
-// 筛选规则实例描述。
+// Filter rule instance description
 func (o TrafficMirrorFilterIngressFilterRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则目的地址。
+// Filter rule destination address
 func (o TrafficMirrorFilterIngressFilterRuleOutput) DestinationCidrBlock() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.DestinationCidrBlock }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则目的端口范围。
+// Filter rule destination port range
 func (o TrafficMirrorFilterIngressFilterRuleOutput) DestinationPortRange() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.DestinationPortRange }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
 func (o TrafficMirrorFilterIngressFilterRuleOutput) Policy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则优先级。
+// Filter rule priority
 func (o TrafficMirrorFilterIngressFilterRuleOutput) Priority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
-// 所属项目的名称。
+// Project name
 func (o TrafficMirrorFilterIngressFilterRuleOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则协议类型。
+// Filter rule protocol type
 func (o TrafficMirrorFilterIngressFilterRuleOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则源地址。
+// Filter rule source address
 func (o TrafficMirrorFilterIngressFilterRuleOutput) SourceCidrBlock() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.SourceCidrBlock }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则源端口范围。
+// Filter rule source port range
 func (o TrafficMirrorFilterIngressFilterRuleOutput) SourcePortRange() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.SourcePortRange }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则状态。
+// Filter rule status
 func (o TrafficMirrorFilterIngressFilterRuleOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则方向。egress：出方向。ingress：入方向。
+// Filter rule direction. egress: Outbound. ingress: Inbound
 func (o TrafficMirrorFilterIngressFilterRuleOutput) TrafficDirection() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.TrafficDirection }).(pulumi.StringPtrOutput)
 }
 
-// 筛选条件实例ID。
+// Filter condition instance ID
 func (o TrafficMirrorFilterIngressFilterRuleOutput) TrafficMirrorFilterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.TrafficMirrorFilterId }).(pulumi.StringPtrOutput)
 }
 
-// 筛选规则实例ID。
+// Filter rule instance ID
 func (o TrafficMirrorFilterIngressFilterRuleOutput) TrafficMirrorFilterRuleId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.TrafficMirrorFilterRuleId }).(pulumi.StringPtrOutput)
 }
@@ -4273,9 +4273,9 @@ func (o TrafficMirrorFilterIngressFilterRuleArrayOutput) Index(i pulumi.IntInput
 }
 
 type TrafficMirrorFilterTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -4291,9 +4291,9 @@ type TrafficMirrorFilterTagInput interface {
 }
 
 type TrafficMirrorFilterTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -4348,12 +4348,12 @@ func (o TrafficMirrorFilterTagOutput) ToTrafficMirrorFilterTagOutputWithContext(
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o TrafficMirrorFilterTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o TrafficMirrorFilterTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorFilterTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -4379,9 +4379,9 @@ func (o TrafficMirrorFilterTagArrayOutput) Index(i pulumi.IntInput) TrafficMirro
 }
 
 type TrafficMirrorSessionTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -4397,9 +4397,9 @@ type TrafficMirrorSessionTagInput interface {
 }
 
 type TrafficMirrorSessionTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -4454,12 +4454,12 @@ func (o TrafficMirrorSessionTagOutput) ToTrafficMirrorSessionTagOutputWithContex
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o TrafficMirrorSessionTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorSessionTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o TrafficMirrorSessionTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorSessionTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -4485,9 +4485,9 @@ func (o TrafficMirrorSessionTagArrayOutput) Index(i pulumi.IntInput) TrafficMirr
 }
 
 type TrafficMirrorTargetTag struct {
-	// 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it.
 	Key *string `pulumi:"key"`
-	// 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 	Value *string `pulumi:"value"`
 }
 
@@ -4503,9 +4503,9 @@ type TrafficMirrorTargetTagInput interface {
 }
 
 type TrafficMirrorTargetTagArgs struct {
-	// 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -4560,12 +4560,12 @@ func (o TrafficMirrorTargetTagOutput) ToTrafficMirrorTargetTagOutputWithContext(
 	return o
 }
 
-// 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+// Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it.
 func (o TrafficMirrorTargetTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorTargetTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+// Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 func (o TrafficMirrorTargetTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TrafficMirrorTargetTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -4591,11 +4591,11 @@ func (o TrafficMirrorTargetTagArrayOutput) Index(i pulumi.IntInput) TrafficMirro
 }
 
 type VpcAssociateCen struct {
-	// CEN的ID。
+	// ID of the CEN.
 	CenId *string `pulumi:"cenId"`
-	// CEN的用户ID。
+	// User ID of the CEN.
 	CenOwnerId *string `pulumi:"cenOwnerId"`
-	// VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+	// Status of the VPC in the CEN. Loading: loading, Loaded: loaded
 	CenStatus *string `pulumi:"cenStatus"`
 }
 
@@ -4611,11 +4611,11 @@ type VpcAssociateCenInput interface {
 }
 
 type VpcAssociateCenArgs struct {
-	// CEN的ID。
+	// ID of the CEN.
 	CenId pulumi.StringPtrInput `pulumi:"cenId"`
-	// CEN的用户ID。
+	// User ID of the CEN.
 	CenOwnerId pulumi.StringPtrInput `pulumi:"cenOwnerId"`
-	// VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+	// Status of the VPC in the CEN. Loading: loading, Loaded: loaded
 	CenStatus pulumi.StringPtrInput `pulumi:"cenStatus"`
 }
 
@@ -4670,17 +4670,17 @@ func (o VpcAssociateCenOutput) ToVpcAssociateCenOutputWithContext(ctx context.Co
 	return o
 }
 
-// CEN的ID。
+// ID of the CEN.
 func (o VpcAssociateCenOutput) CenId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VpcAssociateCen) *string { return v.CenId }).(pulumi.StringPtrOutput)
 }
 
-// CEN的用户ID。
+// User ID of the CEN.
 func (o VpcAssociateCenOutput) CenOwnerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VpcAssociateCen) *string { return v.CenOwnerId }).(pulumi.StringPtrOutput)
 }
 
-// VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+// Status of the VPC in the CEN. Loading: loading, Loaded: loaded
 func (o VpcAssociateCenOutput) CenStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VpcAssociateCen) *string { return v.CenStatus }).(pulumi.StringPtrOutput)
 }
@@ -4706,9 +4706,9 @@ func (o VpcAssociateCenArrayOutput) Index(i pulumi.IntInput) VpcAssociateCenOutp
 }
 
 type VpcTag struct {
-	// 标签键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -4724,9 +4724,9 @@ type VpcTagInput interface {
 }
 
 type VpcTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -4781,12 +4781,12 @@ func (o VpcTagOutput) ToVpcTagOutputWithContext(ctx context.Context) VpcTagOutpu
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o VpcTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VpcTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o VpcTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VpcTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -4812,9 +4812,9 @@ func (o VpcTagArrayOutput) Index(i pulumi.IntInput) VpcTagOutput {
 }
 
 type GetBandwidthPackageEipAddress struct {
-	// 分配ID
+	// Allocation ID
 	AllocationId string `pulumi:"allocationId"`
-	// 弹性IP地址
+	// Elastic IP address
 	EipAddress string `pulumi:"eipAddress"`
 }
 
@@ -4830,9 +4830,9 @@ type GetBandwidthPackageEipAddressInput interface {
 }
 
 type GetBandwidthPackageEipAddressArgs struct {
-	// 分配ID
+	// Allocation ID
 	AllocationId pulumi.StringInput `pulumi:"allocationId"`
-	// 弹性IP地址
+	// Elastic IP address
 	EipAddress pulumi.StringInput `pulumi:"eipAddress"`
 }
 
@@ -4887,12 +4887,12 @@ func (o GetBandwidthPackageEipAddressOutput) ToGetBandwidthPackageEipAddressOutp
 	return o
 }
 
-// 分配ID
+// Allocation ID
 func (o GetBandwidthPackageEipAddressOutput) AllocationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBandwidthPackageEipAddress) string { return v.AllocationId }).(pulumi.StringOutput)
 }
 
-// 弹性IP地址
+// Elastic IP address
 func (o GetBandwidthPackageEipAddressOutput) EipAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBandwidthPackageEipAddress) string { return v.EipAddress }).(pulumi.StringOutput)
 }
@@ -4918,9 +4918,9 @@ func (o GetBandwidthPackageEipAddressArrayOutput) Index(i pulumi.IntInput) GetBa
 }
 
 type GetBandwidthPackageTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -4936,9 +4936,9 @@ type GetBandwidthPackageTagInput interface {
 }
 
 type GetBandwidthPackageTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -4993,12 +4993,12 @@ func (o GetBandwidthPackageTagOutput) ToGetBandwidthPackageTagOutputWithContext(
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o GetBandwidthPackageTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBandwidthPackageTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o GetBandwidthPackageTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBandwidthPackageTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -5024,9 +5024,9 @@ func (o GetBandwidthPackageTagArrayOutput) Index(i pulumi.IntInput) GetBandwidth
 }
 
 type GetEipTag struct {
-	// 标签键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -5042,9 +5042,9 @@ type GetEipTagInput interface {
 }
 
 type GetEipTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -5099,12 +5099,12 @@ func (o GetEipTagOutput) ToGetEipTagOutputWithContext(ctx context.Context) GetEi
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o GetEipTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEipTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetEipTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEipTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -5130,11 +5130,11 @@ func (o GetEipTagArrayOutput) Index(i pulumi.IntInput) GetEipTagOutput {
 }
 
 type GetEniPrimaryIpAddress struct {
-	// 网卡主私网IPv4关联的公网IP的信息。
+	// Information about the public IP associated with the primary private IPv4 address of the network interface.
 	AssociatedElasticIp GetEniPrimaryIpAddressAssociatedElasticIp `pulumi:"associatedElasticIp"`
-	// 是否为主私网IPv4地址。
+	// Indicates whether this is the primary private IPv4 address.
 	Primary bool `pulumi:"primary"`
-	// 网卡的私网IP地址。
+	// Private IP address of the network interface.
 	PrivateIpAddress string `pulumi:"privateIpAddress"`
 }
 
@@ -5150,11 +5150,11 @@ type GetEniPrimaryIpAddressInput interface {
 }
 
 type GetEniPrimaryIpAddressArgs struct {
-	// 网卡主私网IPv4关联的公网IP的信息。
+	// Information about the public IP associated with the primary private IPv4 address of the network interface.
 	AssociatedElasticIp GetEniPrimaryIpAddressAssociatedElasticIpInput `pulumi:"associatedElasticIp"`
-	// 是否为主私网IPv4地址。
+	// Indicates whether this is the primary private IPv4 address.
 	Primary pulumi.BoolInput `pulumi:"primary"`
-	// 网卡的私网IP地址。
+	// Private IP address of the network interface.
 	PrivateIpAddress pulumi.StringInput `pulumi:"privateIpAddress"`
 }
 
@@ -5184,27 +5184,27 @@ func (o GetEniPrimaryIpAddressOutput) ToGetEniPrimaryIpAddressOutputWithContext(
 	return o
 }
 
-// 网卡主私网IPv4关联的公网IP的信息。
+// Information about the public IP associated with the primary private IPv4 address of the network interface.
 func (o GetEniPrimaryIpAddressOutput) AssociatedElasticIp() GetEniPrimaryIpAddressAssociatedElasticIpOutput {
 	return o.ApplyT(func(v GetEniPrimaryIpAddress) GetEniPrimaryIpAddressAssociatedElasticIp { return v.AssociatedElasticIp }).(GetEniPrimaryIpAddressAssociatedElasticIpOutput)
 }
 
-// 是否为主私网IPv4地址。
+// Indicates whether this is the primary private IPv4 address.
 func (o GetEniPrimaryIpAddressOutput) Primary() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetEniPrimaryIpAddress) bool { return v.Primary }).(pulumi.BoolOutput)
 }
 
-// 网卡的私网IP地址。
+// Private IP address of the network interface.
 func (o GetEniPrimaryIpAddressOutput) PrivateIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEniPrimaryIpAddress) string { return v.PrivateIpAddress }).(pulumi.StringOutput)
 }
 
 type GetEniPrimaryIpAddressAssociatedElasticIp struct {
-	// 公网IP的ID。
+	// Public IP ID
 	AllocationId string `pulumi:"allocationId"`
-	// 公网IP的地址。
+	// Public IP address
 	EipAddress string `pulumi:"eipAddress"`
-	// 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+	// Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
 	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
 }
 
@@ -5220,11 +5220,11 @@ type GetEniPrimaryIpAddressAssociatedElasticIpInput interface {
 }
 
 type GetEniPrimaryIpAddressAssociatedElasticIpArgs struct {
-	// 公网IP的ID。
+	// Public IP ID
 	AllocationId pulumi.StringInput `pulumi:"allocationId"`
-	// 公网IP的地址。
+	// Public IP address
 	EipAddress pulumi.StringInput `pulumi:"eipAddress"`
-	// 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+	// Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
 	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
 }
 
@@ -5254,27 +5254,27 @@ func (o GetEniPrimaryIpAddressAssociatedElasticIpOutput) ToGetEniPrimaryIpAddres
 	return o
 }
 
-// 公网IP的ID。
+// Public IP ID
 func (o GetEniPrimaryIpAddressAssociatedElasticIpOutput) AllocationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEniPrimaryIpAddressAssociatedElasticIp) string { return v.AllocationId }).(pulumi.StringOutput)
 }
 
-// 公网IP的地址。
+// Public IP address
 func (o GetEniPrimaryIpAddressAssociatedElasticIpOutput) EipAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEniPrimaryIpAddressAssociatedElasticIp) string { return v.EipAddress }).(pulumi.StringOutput)
 }
 
-// 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+// Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
 func (o GetEniPrimaryIpAddressAssociatedElasticIpOutput) ReleaseWithInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetEniPrimaryIpAddressAssociatedElasticIp) bool { return v.ReleaseWithInstance }).(pulumi.BoolOutput)
 }
 
 type GetEniPrivateIpSet struct {
-	// 网卡主私网IPv4关联的公网IP的信息。
+	// Information about the public IP associated with the primary private IPv4 address of the network interface.
 	AssociatedElasticIp GetEniPrivateIpSetAssociatedElasticIp `pulumi:"associatedElasticIp"`
-	// 是否为主私网IPv4地址。
+	// Indicates whether this is the primary private IPv4 address.
 	Primary bool `pulumi:"primary"`
-	// 网卡的私网IP地址。
+	// Private IP address of the network interface.
 	PrivateIpAddress string `pulumi:"privateIpAddress"`
 }
 
@@ -5290,11 +5290,11 @@ type GetEniPrivateIpSetInput interface {
 }
 
 type GetEniPrivateIpSetArgs struct {
-	// 网卡主私网IPv4关联的公网IP的信息。
+	// Information about the public IP associated with the primary private IPv4 address of the network interface.
 	AssociatedElasticIp GetEniPrivateIpSetAssociatedElasticIpInput `pulumi:"associatedElasticIp"`
-	// 是否为主私网IPv4地址。
+	// Indicates whether this is the primary private IPv4 address.
 	Primary pulumi.BoolInput `pulumi:"primary"`
-	// 网卡的私网IP地址。
+	// Private IP address of the network interface.
 	PrivateIpAddress pulumi.StringInput `pulumi:"privateIpAddress"`
 }
 
@@ -5349,17 +5349,17 @@ func (o GetEniPrivateIpSetOutput) ToGetEniPrivateIpSetOutputWithContext(ctx cont
 	return o
 }
 
-// 网卡主私网IPv4关联的公网IP的信息。
+// Information about the public IP associated with the primary private IPv4 address of the network interface.
 func (o GetEniPrivateIpSetOutput) AssociatedElasticIp() GetEniPrivateIpSetAssociatedElasticIpOutput {
 	return o.ApplyT(func(v GetEniPrivateIpSet) GetEniPrivateIpSetAssociatedElasticIp { return v.AssociatedElasticIp }).(GetEniPrivateIpSetAssociatedElasticIpOutput)
 }
 
-// 是否为主私网IPv4地址。
+// Indicates whether this is the primary private IPv4 address.
 func (o GetEniPrivateIpSetOutput) Primary() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetEniPrivateIpSet) bool { return v.Primary }).(pulumi.BoolOutput)
 }
 
-// 网卡的私网IP地址。
+// Private IP address of the network interface.
 func (o GetEniPrivateIpSetOutput) PrivateIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEniPrivateIpSet) string { return v.PrivateIpAddress }).(pulumi.StringOutput)
 }
@@ -5385,11 +5385,11 @@ func (o GetEniPrivateIpSetArrayOutput) Index(i pulumi.IntInput) GetEniPrivateIpS
 }
 
 type GetEniPrivateIpSetAssociatedElasticIp struct {
-	// 公网IP的ID。
+	// Public IP ID
 	AllocationId string `pulumi:"allocationId"`
-	// 公网IP的地址。
+	// Public IP address
 	EipAddress string `pulumi:"eipAddress"`
-	// 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+	// Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
 	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
 }
 
@@ -5405,11 +5405,11 @@ type GetEniPrivateIpSetAssociatedElasticIpInput interface {
 }
 
 type GetEniPrivateIpSetAssociatedElasticIpArgs struct {
-	// 公网IP的ID。
+	// Public IP ID
 	AllocationId pulumi.StringInput `pulumi:"allocationId"`
-	// 公网IP的地址。
+	// Public IP address
 	EipAddress pulumi.StringInput `pulumi:"eipAddress"`
-	// 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+	// Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
 	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
 }
 
@@ -5439,25 +5439,25 @@ func (o GetEniPrivateIpSetAssociatedElasticIpOutput) ToGetEniPrivateIpSetAssocia
 	return o
 }
 
-// 公网IP的ID。
+// Public IP ID
 func (o GetEniPrivateIpSetAssociatedElasticIpOutput) AllocationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEniPrivateIpSetAssociatedElasticIp) string { return v.AllocationId }).(pulumi.StringOutput)
 }
 
-// 公网IP的地址。
+// Public IP address
 func (o GetEniPrivateIpSetAssociatedElasticIpOutput) EipAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEniPrivateIpSetAssociatedElasticIp) string { return v.EipAddress }).(pulumi.StringOutput)
 }
 
-// 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+// Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
 func (o GetEniPrivateIpSetAssociatedElasticIpOutput) ReleaseWithInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetEniPrivateIpSetAssociatedElasticIp) bool { return v.ReleaseWithInstance }).(pulumi.BoolOutput)
 }
 
 type GetEniTag struct {
-	// 用户标签的标签键。
+	// Tag key for the user tag.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for the user tag.
 	Value string `pulumi:"value"`
 }
 
@@ -5473,9 +5473,9 @@ type GetEniTagInput interface {
 }
 
 type GetEniTagArgs struct {
-	// 用户标签的标签键。
+	// Tag key for the user tag.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for the user tag.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -5530,12 +5530,12 @@ func (o GetEniTagOutput) ToGetEniTagOutputWithContext(ctx context.Context) GetEn
 	return o
 }
 
-// 用户标签的标签键。
+// Tag key for the user tag.
 func (o GetEniTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEniTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// Tag value for the user tag.
 func (o GetEniTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEniTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -5561,9 +5561,9 @@ func (o GetEniTagArrayOutput) Index(i pulumi.IntInput) GetEniTagOutput {
 }
 
 type GetFlowLogTag struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// User label tag key. Length must be 1–128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ symbols (@). If the tag key starts or ends with a space, the system automatically removes it.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// User tag value. Supports input in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 	Value string `pulumi:"value"`
 }
 
@@ -5579,9 +5579,9 @@ type GetFlowLogTagInput interface {
 }
 
 type GetFlowLogTagArgs struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// User label tag key. Length must be 1–128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ symbols (@). If the tag key starts or ends with a space, the system automatically removes it.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// User tag value. Supports input in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -5636,12 +5636,12 @@ func (o GetFlowLogTagOutput) ToGetFlowLogTagOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+// User label tag key. Length must be 1–128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ symbols (@). If the tag key starts or ends with a space, the system automatically removes it.
 func (o GetFlowLogTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFlowLogTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+// User tag value. Supports input in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 func (o GetFlowLogTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFlowLogTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -5667,9 +5667,9 @@ func (o GetFlowLogTagArrayOutput) Index(i pulumi.IntInput) GetFlowLogTagOutput {
 }
 
 type GetHaVipTag struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// Tag key for user tags. Length range: 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
 	Value string `pulumi:"value"`
 }
 
@@ -5685,9 +5685,9 @@ type GetHaVipTagInput interface {
 }
 
 type GetHaVipTagArgs struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// Tag key for user tags. Length range: 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -5742,12 +5742,12 @@ func (o GetHaVipTagOutput) ToGetHaVipTagOutputWithContext(ctx context.Context) G
 	return o
 }
 
-// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+// Tag key for user tags. Length range: 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it
 func (o GetHaVipTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHaVipTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+// Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
 func (o GetHaVipTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHaVipTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -5773,9 +5773,9 @@ func (o GetHaVipTagArrayOutput) Index(i pulumi.IntInput) GetHaVipTagOutput {
 }
 
 type GetIpv6AddressBandwidthTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -5791,9 +5791,9 @@ type GetIpv6AddressBandwidthTagInput interface {
 }
 
 type GetIpv6AddressBandwidthTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -5848,12 +5848,12 @@ func (o GetIpv6AddressBandwidthTagOutput) ToGetIpv6AddressBandwidthTagOutputWith
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetIpv6AddressBandwidthTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpv6AddressBandwidthTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetIpv6AddressBandwidthTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpv6AddressBandwidthTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -5879,9 +5879,9 @@ func (o GetIpv6AddressBandwidthTagArrayOutput) Index(i pulumi.IntInput) GetIpv6A
 }
 
 type GetIpv6GatewayTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -5897,9 +5897,9 @@ type GetIpv6GatewayTagInput interface {
 }
 
 type GetIpv6GatewayTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -5954,12 +5954,12 @@ func (o GetIpv6GatewayTagOutput) ToGetIpv6GatewayTagOutputWithContext(ctx contex
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetIpv6GatewayTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpv6GatewayTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetIpv6GatewayTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpv6GatewayTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -5985,21 +5985,21 @@ func (o GetIpv6GatewayTagArrayOutput) Index(i pulumi.IntInput) GetIpv6GatewayTag
 }
 
 type GetNetworkAclDefaultEgressAclEntry struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp string `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description string `pulumi:"description"`
-	// 规则的ID。
+	// Rule ID.
 	NetworkAclEntryId string `pulumi:"networkAclEntryId"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName string `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy string `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port string `pulumi:"port"`
-	// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+	// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 	Priority int `pulumi:"priority"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol string `pulumi:"protocol"`
 }
 
@@ -6015,21 +6015,21 @@ type GetNetworkAclDefaultEgressAclEntryInput interface {
 }
 
 type GetNetworkAclDefaultEgressAclEntryArgs struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp pulumi.StringInput `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 规则的ID。
+	// Rule ID.
 	NetworkAclEntryId pulumi.StringInput `pulumi:"networkAclEntryId"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName pulumi.StringInput `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy pulumi.StringInput `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port pulumi.StringInput `pulumi:"port"`
-	// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+	// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 	Priority pulumi.IntInput `pulumi:"priority"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 }
 
@@ -6084,42 +6084,42 @@ func (o GetNetworkAclDefaultEgressAclEntryOutput) ToGetNetworkAclDefaultEgressAc
 	return o
 }
 
-// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 func (o GetNetworkAclDefaultEgressAclEntryOutput) CidrIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultEgressAclEntry) string { return v.CidrIp }).(pulumi.StringOutput)
 }
 
-// 规则的描述信息。
+// Rule description.
 func (o GetNetworkAclDefaultEgressAclEntryOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultEgressAclEntry) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 规则的ID。
+// Rule ID.
 func (o GetNetworkAclDefaultEgressAclEntryOutput) NetworkAclEntryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultEgressAclEntry) string { return v.NetworkAclEntryId }).(pulumi.StringOutput)
 }
 
-// 规则的名称。
+// Rule name.
 func (o GetNetworkAclDefaultEgressAclEntryOutput) NetworkAclEntryName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultEgressAclEntry) string { return v.NetworkAclEntryName }).(pulumi.StringOutput)
 }
 
-// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 func (o GetNetworkAclDefaultEgressAclEntryOutput) Policy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultEgressAclEntry) string { return v.Policy }).(pulumi.StringOutput)
 }
 
-// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 func (o GetNetworkAclDefaultEgressAclEntryOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultEgressAclEntry) string { return v.Port }).(pulumi.StringOutput)
 }
 
-// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 func (o GetNetworkAclDefaultEgressAclEntryOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultEgressAclEntry) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 func (o GetNetworkAclDefaultEgressAclEntryOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultEgressAclEntry) string { return v.Protocol }).(pulumi.StringOutput)
 }
@@ -6145,21 +6145,21 @@ func (o GetNetworkAclDefaultEgressAclEntryArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetNetworkAclDefaultIngressAclEntry struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp string `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description string `pulumi:"description"`
-	// 规则的ID。
+	// Rule ID.
 	NetworkAclEntryId string `pulumi:"networkAclEntryId"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName string `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy string `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port string `pulumi:"port"`
-	// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+	// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 	Priority int `pulumi:"priority"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol string `pulumi:"protocol"`
 }
 
@@ -6175,21 +6175,21 @@ type GetNetworkAclDefaultIngressAclEntryInput interface {
 }
 
 type GetNetworkAclDefaultIngressAclEntryArgs struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp pulumi.StringInput `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 规则的ID。
+	// Rule ID.
 	NetworkAclEntryId pulumi.StringInput `pulumi:"networkAclEntryId"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName pulumi.StringInput `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy pulumi.StringInput `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port pulumi.StringInput `pulumi:"port"`
-	// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+	// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 	Priority pulumi.IntInput `pulumi:"priority"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 }
 
@@ -6244,42 +6244,42 @@ func (o GetNetworkAclDefaultIngressAclEntryOutput) ToGetNetworkAclDefaultIngress
 	return o
 }
 
-// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 func (o GetNetworkAclDefaultIngressAclEntryOutput) CidrIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultIngressAclEntry) string { return v.CidrIp }).(pulumi.StringOutput)
 }
 
-// 规则的描述信息。
+// Rule description.
 func (o GetNetworkAclDefaultIngressAclEntryOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultIngressAclEntry) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 规则的ID。
+// Rule ID.
 func (o GetNetworkAclDefaultIngressAclEntryOutput) NetworkAclEntryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultIngressAclEntry) string { return v.NetworkAclEntryId }).(pulumi.StringOutput)
 }
 
-// 规则的名称。
+// Rule name.
 func (o GetNetworkAclDefaultIngressAclEntryOutput) NetworkAclEntryName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultIngressAclEntry) string { return v.NetworkAclEntryName }).(pulumi.StringOutput)
 }
 
-// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 func (o GetNetworkAclDefaultIngressAclEntryOutput) Policy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultIngressAclEntry) string { return v.Policy }).(pulumi.StringOutput)
 }
 
-// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 func (o GetNetworkAclDefaultIngressAclEntryOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultIngressAclEntry) string { return v.Port }).(pulumi.StringOutput)
 }
 
-// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 func (o GetNetworkAclDefaultIngressAclEntryOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultIngressAclEntry) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 func (o GetNetworkAclDefaultIngressAclEntryOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclDefaultIngressAclEntry) string { return v.Protocol }).(pulumi.StringOutput)
 }
@@ -6305,21 +6305,21 @@ func (o GetNetworkAclDefaultIngressAclEntryArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetNetworkAclEgressAclEntry struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp string `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description string `pulumi:"description"`
-	// 规则的ID。
+	// Rule ID.
 	NetworkAclEntryId string `pulumi:"networkAclEntryId"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName string `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy string `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port string `pulumi:"port"`
-	// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+	// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 	Priority int `pulumi:"priority"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol string `pulumi:"protocol"`
 }
 
@@ -6335,21 +6335,21 @@ type GetNetworkAclEgressAclEntryInput interface {
 }
 
 type GetNetworkAclEgressAclEntryArgs struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp pulumi.StringInput `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 规则的ID。
+	// Rule ID.
 	NetworkAclEntryId pulumi.StringInput `pulumi:"networkAclEntryId"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName pulumi.StringInput `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy pulumi.StringInput `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port pulumi.StringInput `pulumi:"port"`
-	// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+	// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 	Priority pulumi.IntInput `pulumi:"priority"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 }
 
@@ -6404,42 +6404,42 @@ func (o GetNetworkAclEgressAclEntryOutput) ToGetNetworkAclEgressAclEntryOutputWi
 	return o
 }
 
-// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 func (o GetNetworkAclEgressAclEntryOutput) CidrIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclEgressAclEntry) string { return v.CidrIp }).(pulumi.StringOutput)
 }
 
-// 规则的描述信息。
+// Rule description.
 func (o GetNetworkAclEgressAclEntryOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclEgressAclEntry) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 规则的ID。
+// Rule ID.
 func (o GetNetworkAclEgressAclEntryOutput) NetworkAclEntryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclEgressAclEntry) string { return v.NetworkAclEntryId }).(pulumi.StringOutput)
 }
 
-// 规则的名称。
+// Rule name.
 func (o GetNetworkAclEgressAclEntryOutput) NetworkAclEntryName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclEgressAclEntry) string { return v.NetworkAclEntryName }).(pulumi.StringOutput)
 }
 
-// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 func (o GetNetworkAclEgressAclEntryOutput) Policy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclEgressAclEntry) string { return v.Policy }).(pulumi.StringOutput)
 }
 
-// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 func (o GetNetworkAclEgressAclEntryOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclEgressAclEntry) string { return v.Port }).(pulumi.StringOutput)
 }
 
-// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 func (o GetNetworkAclEgressAclEntryOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNetworkAclEgressAclEntry) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 func (o GetNetworkAclEgressAclEntryOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclEgressAclEntry) string { return v.Protocol }).(pulumi.StringOutput)
 }
@@ -6465,21 +6465,21 @@ func (o GetNetworkAclEgressAclEntryArrayOutput) Index(i pulumi.IntInput) GetNetw
 }
 
 type GetNetworkAclIngressAclEntry struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp string `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description string `pulumi:"description"`
-	// 规则的ID。
+	// Rule ID.
 	NetworkAclEntryId string `pulumi:"networkAclEntryId"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName string `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy string `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port string `pulumi:"port"`
-	// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+	// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 	Priority int `pulumi:"priority"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol string `pulumi:"protocol"`
 }
 
@@ -6495,21 +6495,21 @@ type GetNetworkAclIngressAclEntryInput interface {
 }
 
 type GetNetworkAclIngressAclEntryArgs struct {
-	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+	// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 	CidrIp pulumi.StringInput `pulumi:"cidrIp"`
-	// 规则的描述信息。
+	// Rule description.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 规则的ID。
+	// Rule ID.
 	NetworkAclEntryId pulumi.StringInput `pulumi:"networkAclEntryId"`
-	// 规则的名称。
+	// Rule name.
 	NetworkAclEntryName pulumi.StringInput `pulumi:"networkAclEntryName"`
-	// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+	// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 	Policy pulumi.StringInput `pulumi:"policy"`
-	// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+	// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 	Port pulumi.StringInput `pulumi:"port"`
-	// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+	// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 	Priority pulumi.IntInput `pulumi:"priority"`
-	// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+	// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 }
 
@@ -6564,42 +6564,42 @@ func (o GetNetworkAclIngressAclEntryOutput) ToGetNetworkAclIngressAclEntryOutput
 	return o
 }
 
-// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+// For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
 func (o GetNetworkAclIngressAclEntryOutput) CidrIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclIngressAclEntry) string { return v.CidrIp }).(pulumi.StringOutput)
 }
 
-// 规则的描述信息。
+// Rule description.
 func (o GetNetworkAclIngressAclEntryOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclIngressAclEntry) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 规则的ID。
+// Rule ID.
 func (o GetNetworkAclIngressAclEntryOutput) NetworkAclEntryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclIngressAclEntry) string { return v.NetworkAclEntryId }).(pulumi.StringOutput)
 }
 
-// 规则的名称。
+// Rule name.
 func (o GetNetworkAclIngressAclEntryOutput) NetworkAclEntryName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclIngressAclEntry) string { return v.NetworkAclEntryName }).(pulumi.StringOutput)
 }
 
-// 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+// Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
 func (o GetNetworkAclIngressAclEntryOutput) Policy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclIngressAclEntry) string { return v.Policy }).(pulumi.StringOutput)
 }
 
-// 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+// Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
 func (o GetNetworkAclIngressAclEntryOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclIngressAclEntry) string { return v.Port }).(pulumi.StringOutput)
 }
 
-// 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+// Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
 func (o GetNetworkAclIngressAclEntryOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNetworkAclIngressAclEntry) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+// Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
 func (o GetNetworkAclIngressAclEntryOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclIngressAclEntry) string { return v.Protocol }).(pulumi.StringOutput)
 }
@@ -6625,9 +6625,9 @@ func (o GetNetworkAclIngressAclEntryArrayOutput) Index(i pulumi.IntInput) GetNet
 }
 
 type GetNetworkAclResource struct {
-	// 关联资源的ID。
+	// Associated resource ID.
 	ResourceId string `pulumi:"resourceId"`
-	// 网络ACL关联资源的状态。BINDED：已绑定。BINDING：绑定中。UNBINDING：解绑中。
+	// Status of resources associated with the network ACL. BINDED: Bound. BINDING: Binding. UNBINDING: Unbinding.
 	Status string `pulumi:"status"`
 }
 
@@ -6643,9 +6643,9 @@ type GetNetworkAclResourceInput interface {
 }
 
 type GetNetworkAclResourceArgs struct {
-	// 关联资源的ID。
+	// Associated resource ID.
 	ResourceId pulumi.StringInput `pulumi:"resourceId"`
-	// 网络ACL关联资源的状态。BINDED：已绑定。BINDING：绑定中。UNBINDING：解绑中。
+	// Status of resources associated with the network ACL. BINDED: Bound. BINDING: Binding. UNBINDING: Unbinding.
 	Status pulumi.StringInput `pulumi:"status"`
 }
 
@@ -6700,12 +6700,12 @@ func (o GetNetworkAclResourceOutput) ToGetNetworkAclResourceOutputWithContext(ct
 	return o
 }
 
-// 关联资源的ID。
+// Associated resource ID.
 func (o GetNetworkAclResourceOutput) ResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclResource) string { return v.ResourceId }).(pulumi.StringOutput)
 }
 
-// 网络ACL关联资源的状态。BINDED：已绑定。BINDING：绑定中。UNBINDING：解绑中。
+// Status of resources associated with the network ACL. BINDED: Bound. BINDING: Binding. UNBINDING: Unbinding.
 func (o GetNetworkAclResourceOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclResource) string { return v.Status }).(pulumi.StringOutput)
 }
@@ -6731,9 +6731,9 @@ func (o GetNetworkAclResourceArrayOutput) Index(i pulumi.IntInput) GetNetworkAcl
 }
 
 type GetNetworkAclTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -6749,9 +6749,9 @@ type GetNetworkAclTagInput interface {
 }
 
 type GetNetworkAclTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -6806,12 +6806,12 @@ func (o GetNetworkAclTagOutput) ToGetNetworkAclTagOutputWithContext(ctx context.
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o GetNetworkAclTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o GetNetworkAclTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkAclTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -6837,9 +6837,9 @@ func (o GetNetworkAclTagArrayOutput) Index(i pulumi.IntInput) GetNetworkAclTagOu
 }
 
 type GetPrefixListAssociationsRouteTable struct {
-	// 关联资源的ID。
+	// ID of the associated resource.
 	ResourceId string `pulumi:"resourceId"`
-	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
 	ResourceType string `pulumi:"resourceType"`
 }
 
@@ -6855,9 +6855,9 @@ type GetPrefixListAssociationsRouteTableInput interface {
 }
 
 type GetPrefixListAssociationsRouteTableArgs struct {
-	// 关联资源的ID。
+	// ID of the associated resource.
 	ResourceId pulumi.StringInput `pulumi:"resourceId"`
-	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
 }
 
@@ -6912,12 +6912,12 @@ func (o GetPrefixListAssociationsRouteTableOutput) ToGetPrefixListAssociationsRo
 	return o
 }
 
-// 关联资源的ID。
+// ID of the associated resource.
 func (o GetPrefixListAssociationsRouteTableOutput) ResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrefixListAssociationsRouteTable) string { return v.ResourceId }).(pulumi.StringOutput)
 }
 
-// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
 func (o GetPrefixListAssociationsRouteTableOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrefixListAssociationsRouteTable) string { return v.ResourceType }).(pulumi.StringOutput)
 }
@@ -6943,9 +6943,9 @@ func (o GetPrefixListAssociationsRouteTableArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetPrefixListAssociationsSecurityGroup struct {
-	// 关联资源的ID。
+	// ID of the associated resource.
 	ResourceId string `pulumi:"resourceId"`
-	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
 	ResourceType string `pulumi:"resourceType"`
 }
 
@@ -6961,9 +6961,9 @@ type GetPrefixListAssociationsSecurityGroupInput interface {
 }
 
 type GetPrefixListAssociationsSecurityGroupArgs struct {
-	// 关联资源的ID。
+	// ID of the associated resource.
 	ResourceId pulumi.StringInput `pulumi:"resourceId"`
-	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
 }
 
@@ -7018,12 +7018,12 @@ func (o GetPrefixListAssociationsSecurityGroupOutput) ToGetPrefixListAssociation
 	return o
 }
 
-// 关联资源的ID。
+// ID of the associated resource.
 func (o GetPrefixListAssociationsSecurityGroupOutput) ResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrefixListAssociationsSecurityGroup) string { return v.ResourceId }).(pulumi.StringOutput)
 }
 
-// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
 func (o GetPrefixListAssociationsSecurityGroupOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrefixListAssociationsSecurityGroup) string { return v.ResourceType }).(pulumi.StringOutput)
 }
@@ -7049,9 +7049,9 @@ func (o GetPrefixListAssociationsSecurityGroupArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetPrefixListPrefixListEntry struct {
-	// 前缀列表条目的CIDR。
+	// CIDR of the prefix list entry.
 	Cidr string `pulumi:"cidr"`
-	// 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
 	Description string `pulumi:"description"`
 }
 
@@ -7067,9 +7067,9 @@ type GetPrefixListPrefixListEntryInput interface {
 }
 
 type GetPrefixListPrefixListEntryArgs struct {
-	// 前缀列表条目的CIDR。
+	// CIDR of the prefix list entry.
 	Cidr pulumi.StringInput `pulumi:"cidr"`
-	// 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
 	Description pulumi.StringInput `pulumi:"description"`
 }
 
@@ -7124,12 +7124,12 @@ func (o GetPrefixListPrefixListEntryOutput) ToGetPrefixListPrefixListEntryOutput
 	return o
 }
 
-// 前缀列表条目的CIDR。
+// CIDR of the prefix list entry.
 func (o GetPrefixListPrefixListEntryOutput) Cidr() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrefixListPrefixListEntry) string { return v.Cidr }).(pulumi.StringOutput)
 }
 
-// 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+// Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
 func (o GetPrefixListPrefixListEntryOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrefixListPrefixListEntry) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -7155,9 +7155,9 @@ func (o GetPrefixListPrefixListEntryArrayOutput) Index(i pulumi.IntInput) GetPre
 }
 
 type GetPrefixListTag struct {
-	// 用户标签的标签键。
+	// Tag key of the user tag.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value of the user tag.
 	Value string `pulumi:"value"`
 }
 
@@ -7173,9 +7173,9 @@ type GetPrefixListTagInput interface {
 }
 
 type GetPrefixListTagArgs struct {
-	// 用户标签的标签键。
+	// Tag key of the user tag.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value of the user tag.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -7230,12 +7230,12 @@ func (o GetPrefixListTagOutput) ToGetPrefixListTagOutputWithContext(ctx context.
 	return o
 }
 
-// 用户标签的标签键。
+// Tag key of the user tag.
 func (o GetPrefixListTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrefixListTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// Tag value of the user tag.
 func (o GetPrefixListTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrefixListTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -7261,31 +7261,31 @@ func (o GetPrefixListTagArrayOutput) Index(i pulumi.IntInput) GetPrefixListTagOu
 }
 
 type GetRouteTableCustomRouteEntry struct {
-	// 路由条目描述。
+	// Route Entry Description
 	Description string `pulumi:"description"`
-	// 路由条目的目标网段。
+	// Destination CIDR of the route entry
 	DestinationCidrBlock string `pulumi:"destinationCidrBlock"`
-	// 前缀列表ID。
+	// Prefix List ID
 	DestinationPrefixListId string `pulumi:"destinationPrefixListId"`
-	// 下一跳资源ID。
+	// Next Hop Resource ID
 	NextHopId string `pulumi:"nextHopId"`
-	// 路由条目下一跳资源的名称。
+	// Name of the next hop resource for the route entry
 	NextHopName string `pulumi:"nextHopName"`
-	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	// Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
 	NextHopType string `pulumi:"nextHopType"`
-	// 前缀列表的CIDR。
+	// Prefix List CIDR
 	PrefixListCidrBlocks []string `pulumi:"prefixListCidrBlocks"`
-	// 路由条目ID。
+	// Route Entry ID
 	RouteEntryId string `pulumi:"routeEntryId"`
-	// 路由条目名称。
+	// Route Entry Name
 	RouteEntryName string `pulumi:"routeEntryName"`
-	// 路由表ID。
+	// Route Table ID
 	RouteTableId string `pulumi:"routeTableId"`
-	// 路由条目状态。1、Pending：待创建。2、Available：可用。
+	// Route entry status. 1. Pending: Pending creation 2. Available: Available
 	Status string `pulumi:"status"`
-	// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+	// Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
 	Type string `pulumi:"type"`
-	// 路由条目所属私有网络的ID。
+	// ID of the private network to which the route entry belongs
 	VpcId string `pulumi:"vpcId"`
 }
 
@@ -7301,31 +7301,31 @@ type GetRouteTableCustomRouteEntryInput interface {
 }
 
 type GetRouteTableCustomRouteEntryArgs struct {
-	// 路由条目描述。
+	// Route Entry Description
 	Description pulumi.StringInput `pulumi:"description"`
-	// 路由条目的目标网段。
+	// Destination CIDR of the route entry
 	DestinationCidrBlock pulumi.StringInput `pulumi:"destinationCidrBlock"`
-	// 前缀列表ID。
+	// Prefix List ID
 	DestinationPrefixListId pulumi.StringInput `pulumi:"destinationPrefixListId"`
-	// 下一跳资源ID。
+	// Next Hop Resource ID
 	NextHopId pulumi.StringInput `pulumi:"nextHopId"`
-	// 路由条目下一跳资源的名称。
+	// Name of the next hop resource for the route entry
 	NextHopName pulumi.StringInput `pulumi:"nextHopName"`
-	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	// Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
 	NextHopType pulumi.StringInput `pulumi:"nextHopType"`
-	// 前缀列表的CIDR。
+	// Prefix List CIDR
 	PrefixListCidrBlocks pulumi.StringArrayInput `pulumi:"prefixListCidrBlocks"`
-	// 路由条目ID。
+	// Route Entry ID
 	RouteEntryId pulumi.StringInput `pulumi:"routeEntryId"`
-	// 路由条目名称。
+	// Route Entry Name
 	RouteEntryName pulumi.StringInput `pulumi:"routeEntryName"`
-	// 路由表ID。
+	// Route Table ID
 	RouteTableId pulumi.StringInput `pulumi:"routeTableId"`
-	// 路由条目状态。1、Pending：待创建。2、Available：可用。
+	// Route entry status. 1. Pending: Pending creation 2. Available: Available
 	Status pulumi.StringInput `pulumi:"status"`
-	// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+	// Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
 	Type pulumi.StringInput `pulumi:"type"`
-	// 路由条目所属私有网络的ID。
+	// ID of the private network to which the route entry belongs
 	VpcId pulumi.StringInput `pulumi:"vpcId"`
 }
 
@@ -7380,67 +7380,67 @@ func (o GetRouteTableCustomRouteEntryOutput) ToGetRouteTableCustomRouteEntryOutp
 	return o
 }
 
-// 路由条目描述。
+// Route Entry Description
 func (o GetRouteTableCustomRouteEntryOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 路由条目的目标网段。
+// Destination CIDR of the route entry
 func (o GetRouteTableCustomRouteEntryOutput) DestinationCidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.DestinationCidrBlock }).(pulumi.StringOutput)
 }
 
-// 前缀列表ID。
+// Prefix List ID
 func (o GetRouteTableCustomRouteEntryOutput) DestinationPrefixListId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.DestinationPrefixListId }).(pulumi.StringOutput)
 }
 
-// 下一跳资源ID。
+// Next Hop Resource ID
 func (o GetRouteTableCustomRouteEntryOutput) NextHopId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.NextHopId }).(pulumi.StringOutput)
 }
 
-// 路由条目下一跳资源的名称。
+// Name of the next hop resource for the route entry
 func (o GetRouteTableCustomRouteEntryOutput) NextHopName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.NextHopName }).(pulumi.StringOutput)
 }
 
-// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+// Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
 func (o GetRouteTableCustomRouteEntryOutput) NextHopType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.NextHopType }).(pulumi.StringOutput)
 }
 
-// 前缀列表的CIDR。
+// Prefix List CIDR
 func (o GetRouteTableCustomRouteEntryOutput) PrefixListCidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) []string { return v.PrefixListCidrBlocks }).(pulumi.StringArrayOutput)
 }
 
-// 路由条目ID。
+// Route Entry ID
 func (o GetRouteTableCustomRouteEntryOutput) RouteEntryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.RouteEntryId }).(pulumi.StringOutput)
 }
 
-// 路由条目名称。
+// Route Entry Name
 func (o GetRouteTableCustomRouteEntryOutput) RouteEntryName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.RouteEntryName }).(pulumi.StringOutput)
 }
 
-// 路由表ID。
+// Route Table ID
 func (o GetRouteTableCustomRouteEntryOutput) RouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.RouteTableId }).(pulumi.StringOutput)
 }
 
-// 路由条目状态。1、Pending：待创建。2、Available：可用。
+// Route entry status. 1. Pending: Pending creation 2. Available: Available
 func (o GetRouteTableCustomRouteEntryOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+// Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
 func (o GetRouteTableCustomRouteEntryOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 路由条目所属私有网络的ID。
+// ID of the private network to which the route entry belongs
 func (o GetRouteTableCustomRouteEntryOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.VpcId }).(pulumi.StringOutput)
 }
@@ -7466,31 +7466,31 @@ func (o GetRouteTableCustomRouteEntryArrayOutput) Index(i pulumi.IntInput) GetRo
 }
 
 type GetRouteTableSystemRouteEntry struct {
-	// 路由条目描述。
+	// Route Entry Description
 	Description string `pulumi:"description"`
-	// 路由条目的目标网段。
+	// Destination CIDR of the route entry
 	DestinationCidrBlock string `pulumi:"destinationCidrBlock"`
-	// 前缀列表ID。
+	// Prefix List ID
 	DestinationPrefixListId string `pulumi:"destinationPrefixListId"`
-	// 下一跳资源ID。
+	// Next Hop Resource ID
 	NextHopId string `pulumi:"nextHopId"`
-	// 路由条目下一跳资源的名称。
+	// Name of the next hop resource for the route entry
 	NextHopName string `pulumi:"nextHopName"`
-	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	// Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
 	NextHopType string `pulumi:"nextHopType"`
-	// 前缀列表的CIDR。
+	// Prefix List CIDR
 	PrefixListCidrBlocks []string `pulumi:"prefixListCidrBlocks"`
-	// 路由条目ID。
+	// Route Entry ID
 	RouteEntryId string `pulumi:"routeEntryId"`
-	// 路由条目名称。
+	// Route Entry Name
 	RouteEntryName string `pulumi:"routeEntryName"`
-	// 路由表ID。
+	// Route Table ID
 	RouteTableId string `pulumi:"routeTableId"`
-	// 路由条目状态。1、Pending：待创建。2、Available：可用。
+	// Route entry status. 1. Pending: Pending creation 2. Available: Available
 	Status string `pulumi:"status"`
-	// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+	// Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
 	Type string `pulumi:"type"`
-	// 路由条目所属私有网络的ID。
+	// ID of the private network to which the route entry belongs
 	VpcId string `pulumi:"vpcId"`
 }
 
@@ -7506,31 +7506,31 @@ type GetRouteTableSystemRouteEntryInput interface {
 }
 
 type GetRouteTableSystemRouteEntryArgs struct {
-	// 路由条目描述。
+	// Route Entry Description
 	Description pulumi.StringInput `pulumi:"description"`
-	// 路由条目的目标网段。
+	// Destination CIDR of the route entry
 	DestinationCidrBlock pulumi.StringInput `pulumi:"destinationCidrBlock"`
-	// 前缀列表ID。
+	// Prefix List ID
 	DestinationPrefixListId pulumi.StringInput `pulumi:"destinationPrefixListId"`
-	// 下一跳资源ID。
+	// Next Hop Resource ID
 	NextHopId pulumi.StringInput `pulumi:"nextHopId"`
-	// 路由条目下一跳资源的名称。
+	// Name of the next hop resource for the route entry
 	NextHopName pulumi.StringInput `pulumi:"nextHopName"`
-	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	// Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
 	NextHopType pulumi.StringInput `pulumi:"nextHopType"`
-	// 前缀列表的CIDR。
+	// Prefix List CIDR
 	PrefixListCidrBlocks pulumi.StringArrayInput `pulumi:"prefixListCidrBlocks"`
-	// 路由条目ID。
+	// Route Entry ID
 	RouteEntryId pulumi.StringInput `pulumi:"routeEntryId"`
-	// 路由条目名称。
+	// Route Entry Name
 	RouteEntryName pulumi.StringInput `pulumi:"routeEntryName"`
-	// 路由表ID。
+	// Route Table ID
 	RouteTableId pulumi.StringInput `pulumi:"routeTableId"`
-	// 路由条目状态。1、Pending：待创建。2、Available：可用。
+	// Route entry status. 1. Pending: Pending creation 2. Available: Available
 	Status pulumi.StringInput `pulumi:"status"`
-	// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+	// Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
 	Type pulumi.StringInput `pulumi:"type"`
-	// 路由条目所属私有网络的ID。
+	// ID of the private network to which the route entry belongs
 	VpcId pulumi.StringInput `pulumi:"vpcId"`
 }
 
@@ -7585,67 +7585,67 @@ func (o GetRouteTableSystemRouteEntryOutput) ToGetRouteTableSystemRouteEntryOutp
 	return o
 }
 
-// 路由条目描述。
+// Route Entry Description
 func (o GetRouteTableSystemRouteEntryOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 路由条目的目标网段。
+// Destination CIDR of the route entry
 func (o GetRouteTableSystemRouteEntryOutput) DestinationCidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.DestinationCidrBlock }).(pulumi.StringOutput)
 }
 
-// 前缀列表ID。
+// Prefix List ID
 func (o GetRouteTableSystemRouteEntryOutput) DestinationPrefixListId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.DestinationPrefixListId }).(pulumi.StringOutput)
 }
 
-// 下一跳资源ID。
+// Next Hop Resource ID
 func (o GetRouteTableSystemRouteEntryOutput) NextHopId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.NextHopId }).(pulumi.StringOutput)
 }
 
-// 路由条目下一跳资源的名称。
+// Name of the next hop resource for the route entry
 func (o GetRouteTableSystemRouteEntryOutput) NextHopName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.NextHopName }).(pulumi.StringOutput)
 }
 
-// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+// Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
 func (o GetRouteTableSystemRouteEntryOutput) NextHopType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.NextHopType }).(pulumi.StringOutput)
 }
 
-// 前缀列表的CIDR。
+// Prefix List CIDR
 func (o GetRouteTableSystemRouteEntryOutput) PrefixListCidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) []string { return v.PrefixListCidrBlocks }).(pulumi.StringArrayOutput)
 }
 
-// 路由条目ID。
+// Route Entry ID
 func (o GetRouteTableSystemRouteEntryOutput) RouteEntryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.RouteEntryId }).(pulumi.StringOutput)
 }
 
-// 路由条目名称。
+// Route Entry Name
 func (o GetRouteTableSystemRouteEntryOutput) RouteEntryName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.RouteEntryName }).(pulumi.StringOutput)
 }
 
-// 路由表ID。
+// Route Table ID
 func (o GetRouteTableSystemRouteEntryOutput) RouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.RouteTableId }).(pulumi.StringOutput)
 }
 
-// 路由条目状态。1、Pending：待创建。2、Available：可用。
+// Route entry status. 1. Pending: Pending creation 2. Available: Available
 func (o GetRouteTableSystemRouteEntryOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+// Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
 func (o GetRouteTableSystemRouteEntryOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 路由条目所属私有网络的ID。
+// ID of the private network to which the route entry belongs
 func (o GetRouteTableSystemRouteEntryOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.VpcId }).(pulumi.StringOutput)
 }
@@ -7671,9 +7671,9 @@ func (o GetRouteTableSystemRouteEntryArrayOutput) Index(i pulumi.IntInput) GetRo
 }
 
 type GetRouteTableTag struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value string `pulumi:"value"`
 }
 
@@ -7689,9 +7689,9 @@ type GetRouteTableTagInput interface {
 }
 
 type GetRouteTableTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -7746,12 +7746,12 @@ func (o GetRouteTableTagOutput) ToGetRouteTableTagOutputWithContext(ctx context.
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key
 func (o GetRouteTableTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value
 func (o GetRouteTableTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTableTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -7777,31 +7777,31 @@ func (o GetRouteTableTagArrayOutput) Index(i pulumi.IntInput) GetRouteTableTagOu
 }
 
 type GetSecurityGroupEgressPermission struct {
-	// 源地址的IPv4 CIDR或IPv6 CIDR
+	// IPv4 CIDR or IPv6 CIDR of the source address
 	CidrIp string `pulumi:"cidrIp"`
-	// 安全组规则创建时间。
+	// Security group rule creation time
 	CreationTime string `pulumi:"creationTime"`
-	// 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+	// Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
 	Description string `pulumi:"description"`
-	// 安全组规则方向。ingress：入方向。egress：出方向
+	// Security group rule direction. ingress: inbound direction. egress: outbound direction
 	Direction string `pulumi:"direction"`
-	// 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+	// Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
 	Policy string `pulumi:"policy"`
-	// 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
 	PortEnd int `pulumi:"portEnd"`
-	// 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
 	PortStart int `pulumi:"portStart"`
-	// 前缀列表的CIDR。
+	// Prefix list CIDR
 	PrefixListCidrs []string `pulumi:"prefixListCidrs"`
-	// 前缀列表的ID
+	// Prefix list ID
 	PrefixListId string `pulumi:"prefixListId"`
-	// 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+	// Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
 	Priority int `pulumi:"priority"`
-	// 协议类型。tcp、udp、icmp、icmpv6、all
+	// Protocol type. tcp, udp, icmp, icmpv6, all
 	Protocol string `pulumi:"protocol"`
-	// 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+	// Source address security group ID. All NIC addresses in this security group are used as source addresses
 	SourceGroupId string `pulumi:"sourceGroupId"`
-	// 安全组规则更新时间。
+	// Security group rule update time
 	UpdateTime string `pulumi:"updateTime"`
 }
 
@@ -7817,31 +7817,31 @@ type GetSecurityGroupEgressPermissionInput interface {
 }
 
 type GetSecurityGroupEgressPermissionArgs struct {
-	// 源地址的IPv4 CIDR或IPv6 CIDR
+	// IPv4 CIDR or IPv6 CIDR of the source address
 	CidrIp pulumi.StringInput `pulumi:"cidrIp"`
-	// 安全组规则创建时间。
+	// Security group rule creation time
 	CreationTime pulumi.StringInput `pulumi:"creationTime"`
-	// 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+	// Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
 	Description pulumi.StringInput `pulumi:"description"`
-	// 安全组规则方向。ingress：入方向。egress：出方向
+	// Security group rule direction. ingress: inbound direction. egress: outbound direction
 	Direction pulumi.StringInput `pulumi:"direction"`
-	// 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+	// Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
 	Policy pulumi.StringInput `pulumi:"policy"`
-	// 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
 	PortEnd pulumi.IntInput `pulumi:"portEnd"`
-	// 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
 	PortStart pulumi.IntInput `pulumi:"portStart"`
-	// 前缀列表的CIDR。
+	// Prefix list CIDR
 	PrefixListCidrs pulumi.StringArrayInput `pulumi:"prefixListCidrs"`
-	// 前缀列表的ID
+	// Prefix list ID
 	PrefixListId pulumi.StringInput `pulumi:"prefixListId"`
-	// 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+	// Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
 	Priority pulumi.IntInput `pulumi:"priority"`
-	// 协议类型。tcp、udp、icmp、icmpv6、all
+	// Protocol type. tcp, udp, icmp, icmpv6, all
 	Protocol pulumi.StringInput `pulumi:"protocol"`
-	// 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+	// Source address security group ID. All NIC addresses in this security group are used as source addresses
 	SourceGroupId pulumi.StringInput `pulumi:"sourceGroupId"`
-	// 安全组规则更新时间。
+	// Security group rule update time
 	UpdateTime pulumi.StringInput `pulumi:"updateTime"`
 }
 
@@ -7896,67 +7896,67 @@ func (o GetSecurityGroupEgressPermissionOutput) ToGetSecurityGroupEgressPermissi
 	return o
 }
 
-// 源地址的IPv4 CIDR或IPv6 CIDR
+// IPv4 CIDR or IPv6 CIDR of the source address
 func (o GetSecurityGroupEgressPermissionOutput) CidrIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupEgressPermission) string { return v.CidrIp }).(pulumi.StringOutput)
 }
 
-// 安全组规则创建时间。
+// Security group rule creation time
 func (o GetSecurityGroupEgressPermissionOutput) CreationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupEgressPermission) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
-// 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+// Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
 func (o GetSecurityGroupEgressPermissionOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupEgressPermission) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 安全组规则方向。ingress：入方向。egress：出方向
+// Security group rule direction. ingress: inbound direction. egress: outbound direction
 func (o GetSecurityGroupEgressPermissionOutput) Direction() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupEgressPermission) string { return v.Direction }).(pulumi.StringOutput)
 }
 
-// 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+// Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
 func (o GetSecurityGroupEgressPermissionOutput) Policy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupEgressPermission) string { return v.Policy }).(pulumi.StringOutput)
 }
 
-// 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+// Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
 func (o GetSecurityGroupEgressPermissionOutput) PortEnd() pulumi.IntOutput {
 	return o.ApplyT(func(v GetSecurityGroupEgressPermission) int { return v.PortEnd }).(pulumi.IntOutput)
 }
 
-// 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+// Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
 func (o GetSecurityGroupEgressPermissionOutput) PortStart() pulumi.IntOutput {
 	return o.ApplyT(func(v GetSecurityGroupEgressPermission) int { return v.PortStart }).(pulumi.IntOutput)
 }
 
-// 前缀列表的CIDR。
+// Prefix list CIDR
 func (o GetSecurityGroupEgressPermissionOutput) PrefixListCidrs() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityGroupEgressPermission) []string { return v.PrefixListCidrs }).(pulumi.StringArrayOutput)
 }
 
-// 前缀列表的ID
+// Prefix list ID
 func (o GetSecurityGroupEgressPermissionOutput) PrefixListId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupEgressPermission) string { return v.PrefixListId }).(pulumi.StringOutput)
 }
 
-// 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+// Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
 func (o GetSecurityGroupEgressPermissionOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v GetSecurityGroupEgressPermission) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// 协议类型。tcp、udp、icmp、icmpv6、all
+// Protocol type. tcp, udp, icmp, icmpv6, all
 func (o GetSecurityGroupEgressPermissionOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupEgressPermission) string { return v.Protocol }).(pulumi.StringOutput)
 }
 
-// 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+// Source address security group ID. All NIC addresses in this security group are used as source addresses
 func (o GetSecurityGroupEgressPermissionOutput) SourceGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupEgressPermission) string { return v.SourceGroupId }).(pulumi.StringOutput)
 }
 
-// 安全组规则更新时间。
+// Security group rule update time
 func (o GetSecurityGroupEgressPermissionOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupEgressPermission) string { return v.UpdateTime }).(pulumi.StringOutput)
 }
@@ -7982,31 +7982,31 @@ func (o GetSecurityGroupEgressPermissionArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetSecurityGroupIngressPermission struct {
-	// 源地址的IPv4 CIDR或IPv6 CIDR
+	// IPv4 CIDR or IPv6 CIDR of the source address
 	CidrIp string `pulumi:"cidrIp"`
-	// 安全组规则创建时间。
+	// Security group rule creation time
 	CreationTime string `pulumi:"creationTime"`
-	// 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+	// Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
 	Description string `pulumi:"description"`
-	// 安全组规则方向。ingress：入方向。egress：出方向
+	// Security group rule direction. ingress: inbound direction. egress: outbound direction
 	Direction string `pulumi:"direction"`
-	// 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+	// Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
 	Policy string `pulumi:"policy"`
-	// 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
 	PortEnd int `pulumi:"portEnd"`
-	// 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
 	PortStart int `pulumi:"portStart"`
-	// 前缀列表的CIDR。
+	// Prefix list CIDR
 	PrefixListCidrs []string `pulumi:"prefixListCidrs"`
-	// 前缀列表的ID
+	// Prefix list ID
 	PrefixListId string `pulumi:"prefixListId"`
-	// 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+	// Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
 	Priority int `pulumi:"priority"`
-	// 协议类型。tcp、udp、icmp、icmpv6、all
+	// Protocol type. tcp, udp, icmp, icmpv6, all
 	Protocol string `pulumi:"protocol"`
-	// 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+	// Source address security group ID. All NIC addresses in this security group are used as source addresses
 	SourceGroupId string `pulumi:"sourceGroupId"`
-	// 安全组规则更新时间。
+	// Security group rule update time
 	UpdateTime string `pulumi:"updateTime"`
 }
 
@@ -8022,31 +8022,31 @@ type GetSecurityGroupIngressPermissionInput interface {
 }
 
 type GetSecurityGroupIngressPermissionArgs struct {
-	// 源地址的IPv4 CIDR或IPv6 CIDR
+	// IPv4 CIDR or IPv6 CIDR of the source address
 	CidrIp pulumi.StringInput `pulumi:"cidrIp"`
-	// 安全组规则创建时间。
+	// Security group rule creation time
 	CreationTime pulumi.StringInput `pulumi:"creationTime"`
-	// 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+	// Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
 	Description pulumi.StringInput `pulumi:"description"`
-	// 安全组规则方向。ingress：入方向。egress：出方向
+	// Security group rule direction. ingress: inbound direction. egress: outbound direction
 	Direction pulumi.StringInput `pulumi:"direction"`
-	// 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+	// Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
 	Policy pulumi.StringInput `pulumi:"policy"`
-	// 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
 	PortEnd pulumi.IntInput `pulumi:"portEnd"`
-	// 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+	// Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
 	PortStart pulumi.IntInput `pulumi:"portStart"`
-	// 前缀列表的CIDR。
+	// Prefix list CIDR
 	PrefixListCidrs pulumi.StringArrayInput `pulumi:"prefixListCidrs"`
-	// 前缀列表的ID
+	// Prefix list ID
 	PrefixListId pulumi.StringInput `pulumi:"prefixListId"`
-	// 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+	// Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
 	Priority pulumi.IntInput `pulumi:"priority"`
-	// 协议类型。tcp、udp、icmp、icmpv6、all
+	// Protocol type. tcp, udp, icmp, icmpv6, all
 	Protocol pulumi.StringInput `pulumi:"protocol"`
-	// 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+	// Source address security group ID. All NIC addresses in this security group are used as source addresses
 	SourceGroupId pulumi.StringInput `pulumi:"sourceGroupId"`
-	// 安全组规则更新时间。
+	// Security group rule update time
 	UpdateTime pulumi.StringInput `pulumi:"updateTime"`
 }
 
@@ -8101,67 +8101,67 @@ func (o GetSecurityGroupIngressPermissionOutput) ToGetSecurityGroupIngressPermis
 	return o
 }
 
-// 源地址的IPv4 CIDR或IPv6 CIDR
+// IPv4 CIDR or IPv6 CIDR of the source address
 func (o GetSecurityGroupIngressPermissionOutput) CidrIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupIngressPermission) string { return v.CidrIp }).(pulumi.StringOutput)
 }
 
-// 安全组规则创建时间。
+// Security group rule creation time
 func (o GetSecurityGroupIngressPermissionOutput) CreationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupIngressPermission) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
-// 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+// Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
 func (o GetSecurityGroupIngressPermissionOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupIngressPermission) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 安全组规则方向。ingress：入方向。egress：出方向
+// Security group rule direction. ingress: inbound direction. egress: outbound direction
 func (o GetSecurityGroupIngressPermissionOutput) Direction() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupIngressPermission) string { return v.Direction }).(pulumi.StringOutput)
 }
 
-// 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+// Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
 func (o GetSecurityGroupIngressPermissionOutput) Policy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupIngressPermission) string { return v.Policy }).(pulumi.StringOutput)
 }
 
-// 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+// Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
 func (o GetSecurityGroupIngressPermissionOutput) PortEnd() pulumi.IntOutput {
 	return o.ApplyT(func(v GetSecurityGroupIngressPermission) int { return v.PortEnd }).(pulumi.IntOutput)
 }
 
-// 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+// Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
 func (o GetSecurityGroupIngressPermissionOutput) PortStart() pulumi.IntOutput {
 	return o.ApplyT(func(v GetSecurityGroupIngressPermission) int { return v.PortStart }).(pulumi.IntOutput)
 }
 
-// 前缀列表的CIDR。
+// Prefix list CIDR
 func (o GetSecurityGroupIngressPermissionOutput) PrefixListCidrs() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityGroupIngressPermission) []string { return v.PrefixListCidrs }).(pulumi.StringArrayOutput)
 }
 
-// 前缀列表的ID
+// Prefix list ID
 func (o GetSecurityGroupIngressPermissionOutput) PrefixListId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupIngressPermission) string { return v.PrefixListId }).(pulumi.StringOutput)
 }
 
-// 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+// Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
 func (o GetSecurityGroupIngressPermissionOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v GetSecurityGroupIngressPermission) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// 协议类型。tcp、udp、icmp、icmpv6、all
+// Protocol type. tcp, udp, icmp, icmpv6, all
 func (o GetSecurityGroupIngressPermissionOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupIngressPermission) string { return v.Protocol }).(pulumi.StringOutput)
 }
 
-// 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+// Source address security group ID. All NIC addresses in this security group are used as source addresses
 func (o GetSecurityGroupIngressPermissionOutput) SourceGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupIngressPermission) string { return v.SourceGroupId }).(pulumi.StringOutput)
 }
 
-// 安全组规则更新时间。
+// Security group rule update time
 func (o GetSecurityGroupIngressPermissionOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupIngressPermission) string { return v.UpdateTime }).(pulumi.StringOutput)
 }
@@ -8187,9 +8187,9 @@ func (o GetSecurityGroupIngressPermissionArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetSecurityGroupTag struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value string `pulumi:"value"`
 }
 
@@ -8205,9 +8205,9 @@ type GetSecurityGroupTagInput interface {
 }
 
 type GetSecurityGroupTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -8262,12 +8262,12 @@ func (o GetSecurityGroupTagOutput) ToGetSecurityGroupTagOutputWithContext(ctx co
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key
 func (o GetSecurityGroupTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value
 func (o GetSecurityGroupTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityGroupTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -8293,9 +8293,9 @@ func (o GetSecurityGroupTagArrayOutput) Index(i pulumi.IntInput) GetSecurityGrou
 }
 
 type GetSubnetRouteTable struct {
-	// 子网关联的路由表ID。
+	// ID of the route table associated with the subnet
 	RouteTableId string `pulumi:"routeTableId"`
-	// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+	// Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
 	RouteTableType string `pulumi:"routeTableType"`
 }
 
@@ -8311,9 +8311,9 @@ type GetSubnetRouteTableInput interface {
 }
 
 type GetSubnetRouteTableArgs struct {
-	// 子网关联的路由表ID。
+	// ID of the route table associated with the subnet
 	RouteTableId pulumi.StringInput `pulumi:"routeTableId"`
-	// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+	// Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
 	RouteTableType pulumi.StringInput `pulumi:"routeTableType"`
 }
 
@@ -8343,20 +8343,20 @@ func (o GetSubnetRouteTableOutput) ToGetSubnetRouteTableOutputWithContext(ctx co
 	return o
 }
 
-// 子网关联的路由表ID。
+// ID of the route table associated with the subnet
 func (o GetSubnetRouteTableOutput) RouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubnetRouteTable) string { return v.RouteTableId }).(pulumi.StringOutput)
 }
 
-// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+// Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
 func (o GetSubnetRouteTableOutput) RouteTableType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubnetRouteTable) string { return v.RouteTableType }).(pulumi.StringOutput)
 }
 
 type GetSubnetTag struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value string `pulumi:"value"`
 }
 
@@ -8372,9 +8372,9 @@ type GetSubnetTagInput interface {
 }
 
 type GetSubnetTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -8429,12 +8429,12 @@ func (o GetSubnetTagOutput) ToGetSubnetTagOutputWithContext(ctx context.Context)
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key
 func (o GetSubnetTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubnetTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value
 func (o GetSubnetTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubnetTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -8460,31 +8460,31 @@ func (o GetSubnetTagArrayOutput) Index(i pulumi.IntInput) GetSubnetTagOutput {
 }
 
 type GetTrafficMirrorFilterEgressFilterRule struct {
-	// 筛选规则实例描述。
+	// Filter rule instance description
 	Description string `pulumi:"description"`
-	// 筛选规则目的地址。
+	// Filter rule destination address
 	DestinationCidrBlock string `pulumi:"destinationCidrBlock"`
-	// 筛选规则目的端口范围。
+	// Filter rule destination port range
 	DestinationPortRange string `pulumi:"destinationPortRange"`
-	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
 	Policy string `pulumi:"policy"`
-	// 筛选规则优先级。
+	// Filter rule priority
 	Priority int `pulumi:"priority"`
-	// 所属项目的名称。
+	// Project name
 	ProjectName string `pulumi:"projectName"`
-	// 筛选规则协议类型。
+	// Filter rule protocol type
 	Protocol string `pulumi:"protocol"`
-	// 筛选规则源地址。
+	// Filter rule source address
 	SourceCidrBlock string `pulumi:"sourceCidrBlock"`
-	// 筛选规则源端口范围。
+	// Filter rule source port range
 	SourcePortRange string `pulumi:"sourcePortRange"`
-	// 筛选规则状态。
+	// Filter rule status
 	Status string `pulumi:"status"`
-	// 筛选规则方向。egress：出方向。ingress：入方向。
+	// Filter rule direction. egress: Outbound. ingress: Inbound
 	TrafficDirection string `pulumi:"trafficDirection"`
-	// 筛选条件实例ID。
+	// Filter condition instance ID
 	TrafficMirrorFilterId string `pulumi:"trafficMirrorFilterId"`
-	// 筛选规则实例ID。
+	// Filter rule instance ID
 	TrafficMirrorFilterRuleId string `pulumi:"trafficMirrorFilterRuleId"`
 }
 
@@ -8500,31 +8500,31 @@ type GetTrafficMirrorFilterEgressFilterRuleInput interface {
 }
 
 type GetTrafficMirrorFilterEgressFilterRuleArgs struct {
-	// 筛选规则实例描述。
+	// Filter rule instance description
 	Description pulumi.StringInput `pulumi:"description"`
-	// 筛选规则目的地址。
+	// Filter rule destination address
 	DestinationCidrBlock pulumi.StringInput `pulumi:"destinationCidrBlock"`
-	// 筛选规则目的端口范围。
+	// Filter rule destination port range
 	DestinationPortRange pulumi.StringInput `pulumi:"destinationPortRange"`
-	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
 	Policy pulumi.StringInput `pulumi:"policy"`
-	// 筛选规则优先级。
+	// Filter rule priority
 	Priority pulumi.IntInput `pulumi:"priority"`
-	// 所属项目的名称。
+	// Project name
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
-	// 筛选规则协议类型。
+	// Filter rule protocol type
 	Protocol pulumi.StringInput `pulumi:"protocol"`
-	// 筛选规则源地址。
+	// Filter rule source address
 	SourceCidrBlock pulumi.StringInput `pulumi:"sourceCidrBlock"`
-	// 筛选规则源端口范围。
+	// Filter rule source port range
 	SourcePortRange pulumi.StringInput `pulumi:"sourcePortRange"`
-	// 筛选规则状态。
+	// Filter rule status
 	Status pulumi.StringInput `pulumi:"status"`
-	// 筛选规则方向。egress：出方向。ingress：入方向。
+	// Filter rule direction. egress: Outbound. ingress: Inbound
 	TrafficDirection pulumi.StringInput `pulumi:"trafficDirection"`
-	// 筛选条件实例ID。
+	// Filter condition instance ID
 	TrafficMirrorFilterId pulumi.StringInput `pulumi:"trafficMirrorFilterId"`
-	// 筛选规则实例ID。
+	// Filter rule instance ID
 	TrafficMirrorFilterRuleId pulumi.StringInput `pulumi:"trafficMirrorFilterRuleId"`
 }
 
@@ -8579,67 +8579,67 @@ func (o GetTrafficMirrorFilterEgressFilterRuleOutput) ToGetTrafficMirrorFilterEg
 	return o
 }
 
-// 筛选规则实例描述。
+// Filter rule instance description
 func (o GetTrafficMirrorFilterEgressFilterRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 筛选规则目的地址。
+// Filter rule destination address
 func (o GetTrafficMirrorFilterEgressFilterRuleOutput) DestinationCidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.DestinationCidrBlock }).(pulumi.StringOutput)
 }
 
-// 筛选规则目的端口范围。
+// Filter rule destination port range
 func (o GetTrafficMirrorFilterEgressFilterRuleOutput) DestinationPortRange() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.DestinationPortRange }).(pulumi.StringOutput)
 }
 
-// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
 func (o GetTrafficMirrorFilterEgressFilterRuleOutput) Policy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.Policy }).(pulumi.StringOutput)
 }
 
-// 筛选规则优先级。
+// Filter rule priority
 func (o GetTrafficMirrorFilterEgressFilterRuleOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// 所属项目的名称。
+// Project name
 func (o GetTrafficMirrorFilterEgressFilterRuleOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 筛选规则协议类型。
+// Filter rule protocol type
 func (o GetTrafficMirrorFilterEgressFilterRuleOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.Protocol }).(pulumi.StringOutput)
 }
 
-// 筛选规则源地址。
+// Filter rule source address
 func (o GetTrafficMirrorFilterEgressFilterRuleOutput) SourceCidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.SourceCidrBlock }).(pulumi.StringOutput)
 }
 
-// 筛选规则源端口范围。
+// Filter rule source port range
 func (o GetTrafficMirrorFilterEgressFilterRuleOutput) SourcePortRange() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.SourcePortRange }).(pulumi.StringOutput)
 }
 
-// 筛选规则状态。
+// Filter rule status
 func (o GetTrafficMirrorFilterEgressFilterRuleOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 筛选规则方向。egress：出方向。ingress：入方向。
+// Filter rule direction. egress: Outbound. ingress: Inbound
 func (o GetTrafficMirrorFilterEgressFilterRuleOutput) TrafficDirection() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.TrafficDirection }).(pulumi.StringOutput)
 }
 
-// 筛选条件实例ID。
+// Filter condition instance ID
 func (o GetTrafficMirrorFilterEgressFilterRuleOutput) TrafficMirrorFilterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.TrafficMirrorFilterId }).(pulumi.StringOutput)
 }
 
-// 筛选规则实例ID。
+// Filter rule instance ID
 func (o GetTrafficMirrorFilterEgressFilterRuleOutput) TrafficMirrorFilterRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.TrafficMirrorFilterRuleId }).(pulumi.StringOutput)
 }
@@ -8665,31 +8665,31 @@ func (o GetTrafficMirrorFilterEgressFilterRuleArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetTrafficMirrorFilterIngressFilterRule struct {
-	// 筛选规则实例描述。
+	// Filter rule instance description
 	Description string `pulumi:"description"`
-	// 筛选规则目的地址。
+	// Filter rule destination address
 	DestinationCidrBlock string `pulumi:"destinationCidrBlock"`
-	// 筛选规则目的端口范围。
+	// Filter rule destination port range
 	DestinationPortRange string `pulumi:"destinationPortRange"`
-	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
 	Policy string `pulumi:"policy"`
-	// 筛选规则优先级。
+	// Filter rule priority
 	Priority int `pulumi:"priority"`
-	// 所属项目的名称。
+	// Project name
 	ProjectName string `pulumi:"projectName"`
-	// 筛选规则协议类型。
+	// Filter rule protocol type
 	Protocol string `pulumi:"protocol"`
-	// 筛选规则源地址。
+	// Filter rule source address
 	SourceCidrBlock string `pulumi:"sourceCidrBlock"`
-	// 筛选规则源端口范围。
+	// Filter rule source port range
 	SourcePortRange string `pulumi:"sourcePortRange"`
-	// 筛选规则状态。
+	// Filter rule status
 	Status string `pulumi:"status"`
-	// 筛选规则方向。egress：出方向。ingress：入方向。
+	// Filter rule direction. egress: Outbound. ingress: Inbound
 	TrafficDirection string `pulumi:"trafficDirection"`
-	// 筛选条件实例ID。
+	// Filter condition instance ID
 	TrafficMirrorFilterId string `pulumi:"trafficMirrorFilterId"`
-	// 筛选规则实例ID。
+	// Filter rule instance ID
 	TrafficMirrorFilterRuleId string `pulumi:"trafficMirrorFilterRuleId"`
 }
 
@@ -8705,31 +8705,31 @@ type GetTrafficMirrorFilterIngressFilterRuleInput interface {
 }
 
 type GetTrafficMirrorFilterIngressFilterRuleArgs struct {
-	// 筛选规则实例描述。
+	// Filter rule instance description
 	Description pulumi.StringInput `pulumi:"description"`
-	// 筛选规则目的地址。
+	// Filter rule destination address
 	DestinationCidrBlock pulumi.StringInput `pulumi:"destinationCidrBlock"`
-	// 筛选规则目的端口范围。
+	// Filter rule destination port range
 	DestinationPortRange pulumi.StringInput `pulumi:"destinationPortRange"`
-	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
 	Policy pulumi.StringInput `pulumi:"policy"`
-	// 筛选规则优先级。
+	// Filter rule priority
 	Priority pulumi.IntInput `pulumi:"priority"`
-	// 所属项目的名称。
+	// Project name
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
-	// 筛选规则协议类型。
+	// Filter rule protocol type
 	Protocol pulumi.StringInput `pulumi:"protocol"`
-	// 筛选规则源地址。
+	// Filter rule source address
 	SourceCidrBlock pulumi.StringInput `pulumi:"sourceCidrBlock"`
-	// 筛选规则源端口范围。
+	// Filter rule source port range
 	SourcePortRange pulumi.StringInput `pulumi:"sourcePortRange"`
-	// 筛选规则状态。
+	// Filter rule status
 	Status pulumi.StringInput `pulumi:"status"`
-	// 筛选规则方向。egress：出方向。ingress：入方向。
+	// Filter rule direction. egress: Outbound. ingress: Inbound
 	TrafficDirection pulumi.StringInput `pulumi:"trafficDirection"`
-	// 筛选条件实例ID。
+	// Filter condition instance ID
 	TrafficMirrorFilterId pulumi.StringInput `pulumi:"trafficMirrorFilterId"`
-	// 筛选规则实例ID。
+	// Filter rule instance ID
 	TrafficMirrorFilterRuleId pulumi.StringInput `pulumi:"trafficMirrorFilterRuleId"`
 }
 
@@ -8784,67 +8784,67 @@ func (o GetTrafficMirrorFilterIngressFilterRuleOutput) ToGetTrafficMirrorFilterI
 	return o
 }
 
-// 筛选规则实例描述。
+// Filter rule instance description
 func (o GetTrafficMirrorFilterIngressFilterRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 筛选规则目的地址。
+// Filter rule destination address
 func (o GetTrafficMirrorFilterIngressFilterRuleOutput) DestinationCidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.DestinationCidrBlock }).(pulumi.StringOutput)
 }
 
-// 筛选规则目的端口范围。
+// Filter rule destination port range
 func (o GetTrafficMirrorFilterIngressFilterRuleOutput) DestinationPortRange() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.DestinationPortRange }).(pulumi.StringOutput)
 }
 
-// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
 func (o GetTrafficMirrorFilterIngressFilterRuleOutput) Policy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.Policy }).(pulumi.StringOutput)
 }
 
-// 筛选规则优先级。
+// Filter rule priority
 func (o GetTrafficMirrorFilterIngressFilterRuleOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// 所属项目的名称。
+// Project name
 func (o GetTrafficMirrorFilterIngressFilterRuleOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 筛选规则协议类型。
+// Filter rule protocol type
 func (o GetTrafficMirrorFilterIngressFilterRuleOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.Protocol }).(pulumi.StringOutput)
 }
 
-// 筛选规则源地址。
+// Filter rule source address
 func (o GetTrafficMirrorFilterIngressFilterRuleOutput) SourceCidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.SourceCidrBlock }).(pulumi.StringOutput)
 }
 
-// 筛选规则源端口范围。
+// Filter rule source port range
 func (o GetTrafficMirrorFilterIngressFilterRuleOutput) SourcePortRange() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.SourcePortRange }).(pulumi.StringOutput)
 }
 
-// 筛选规则状态。
+// Filter rule status
 func (o GetTrafficMirrorFilterIngressFilterRuleOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 筛选规则方向。egress：出方向。ingress：入方向。
+// Filter rule direction. egress: Outbound. ingress: Inbound
 func (o GetTrafficMirrorFilterIngressFilterRuleOutput) TrafficDirection() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.TrafficDirection }).(pulumi.StringOutput)
 }
 
-// 筛选条件实例ID。
+// Filter condition instance ID
 func (o GetTrafficMirrorFilterIngressFilterRuleOutput) TrafficMirrorFilterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.TrafficMirrorFilterId }).(pulumi.StringOutput)
 }
 
-// 筛选规则实例ID。
+// Filter rule instance ID
 func (o GetTrafficMirrorFilterIngressFilterRuleOutput) TrafficMirrorFilterRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.TrafficMirrorFilterRuleId }).(pulumi.StringOutput)
 }
@@ -8870,9 +8870,9 @@ func (o GetTrafficMirrorFilterIngressFilterRuleArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetTrafficMirrorFilterTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -8888,9 +8888,9 @@ type GetTrafficMirrorFilterTagInput interface {
 }
 
 type GetTrafficMirrorFilterTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -8945,12 +8945,12 @@ func (o GetTrafficMirrorFilterTagOutput) ToGetTrafficMirrorFilterTagOutputWithCo
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetTrafficMirrorFilterTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetTrafficMirrorFilterTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorFilterTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -8976,9 +8976,9 @@ func (o GetTrafficMirrorFilterTagArrayOutput) Index(i pulumi.IntInput) GetTraffi
 }
 
 type GetTrafficMirrorSessionTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -8994,9 +8994,9 @@ type GetTrafficMirrorSessionTagInput interface {
 }
 
 type GetTrafficMirrorSessionTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -9051,12 +9051,12 @@ func (o GetTrafficMirrorSessionTagOutput) ToGetTrafficMirrorSessionTagOutputWith
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetTrafficMirrorSessionTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorSessionTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetTrafficMirrorSessionTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorSessionTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -9082,9 +9082,9 @@ func (o GetTrafficMirrorSessionTagArrayOutput) Index(i pulumi.IntInput) GetTraff
 }
 
 type GetTrafficMirrorTargetTag struct {
-	// 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it.
 	Key string `pulumi:"key"`
-	// 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 	Value string `pulumi:"value"`
 }
 
@@ -9100,9 +9100,9 @@ type GetTrafficMirrorTargetTagInput interface {
 }
 
 type GetTrafficMirrorTargetTagArgs struct {
-	// 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -9157,12 +9157,12 @@ func (o GetTrafficMirrorTargetTagOutput) ToGetTrafficMirrorTargetTagOutputWithCo
 	return o
 }
 
-// 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+// Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it.
 func (o GetTrafficMirrorTargetTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorTargetTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+// Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 func (o GetTrafficMirrorTargetTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrafficMirrorTargetTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -9188,11 +9188,11 @@ func (o GetTrafficMirrorTargetTagArrayOutput) Index(i pulumi.IntInput) GetTraffi
 }
 
 type GetVpcAssociateCen struct {
-	// CEN的ID。
+	// ID of the CEN.
 	CenId string `pulumi:"cenId"`
-	// CEN的用户ID。
+	// User ID of the CEN.
 	CenOwnerId string `pulumi:"cenOwnerId"`
-	// VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+	// Status of the VPC in the CEN. Loading: loading, Loaded: loaded
 	CenStatus string `pulumi:"cenStatus"`
 }
 
@@ -9208,11 +9208,11 @@ type GetVpcAssociateCenInput interface {
 }
 
 type GetVpcAssociateCenArgs struct {
-	// CEN的ID。
+	// ID of the CEN.
 	CenId pulumi.StringInput `pulumi:"cenId"`
-	// CEN的用户ID。
+	// User ID of the CEN.
 	CenOwnerId pulumi.StringInput `pulumi:"cenOwnerId"`
-	// VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+	// Status of the VPC in the CEN. Loading: loading, Loaded: loaded
 	CenStatus pulumi.StringInput `pulumi:"cenStatus"`
 }
 
@@ -9267,17 +9267,17 @@ func (o GetVpcAssociateCenOutput) ToGetVpcAssociateCenOutputWithContext(ctx cont
 	return o
 }
 
-// CEN的ID。
+// ID of the CEN.
 func (o GetVpcAssociateCenOutput) CenId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpcAssociateCen) string { return v.CenId }).(pulumi.StringOutput)
 }
 
-// CEN的用户ID。
+// User ID of the CEN.
 func (o GetVpcAssociateCenOutput) CenOwnerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpcAssociateCen) string { return v.CenOwnerId }).(pulumi.StringOutput)
 }
 
-// VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+// Status of the VPC in the CEN. Loading: loading, Loaded: loaded
 func (o GetVpcAssociateCenOutput) CenStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpcAssociateCen) string { return v.CenStatus }).(pulumi.StringOutput)
 }
@@ -9303,9 +9303,9 @@ func (o GetVpcAssociateCenArrayOutput) Index(i pulumi.IntInput) GetVpcAssociateC
 }
 
 type GetVpcTag struct {
-	// 标签键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -9321,9 +9321,9 @@ type GetVpcTagInput interface {
 }
 
 type GetVpcTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -9378,12 +9378,12 @@ func (o GetVpcTagOutput) ToGetVpcTagOutputWithContext(ctx context.Context) GetVp
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o GetVpcTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpcTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetVpcTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpcTag) string { return v.Value }).(pulumi.StringOutput)
 }

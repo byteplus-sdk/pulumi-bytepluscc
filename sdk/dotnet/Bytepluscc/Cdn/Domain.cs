@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cdn
 {
     /// <summary>
-    /// 加速域名是您希望加速内容传输的域名。当您将域名添加到内容分发网络中后，该域名在内容分发网络中就成了一个加速域名。内容分发网络会为该域名分配一个 CNAME。在您创建一条 DNS 记录将您的域名解析到该 CNAME 后，用户向您域名发送的请求就会被路由到您的加速域名，实现内容传输的加速。
+    /// An accelerated domain name is the domain you want to speed up content delivery for. After you add the domain to the content delivery network, it becomes an accelerated domain name in the CDN. The CDN assigns a CNAME to this domain. Once you create a DNS record to resolve your domain to this CNAME, requests sent by users to your domain are routed to your accelerated domain name, enabling faster content delivery.
     /// 
     /// ## Import
     /// 
@@ -23,13 +23,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     public partial class Domain : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
         /// </summary>
         [Output("areaAccessRule")]
         public Output<Outputs.DomainAreaAccessRule> AreaAccessRule { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
+        /// Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
         /// </summary>
         [Output("backupOrigins")]
         public Output<ImmutableArray<string>> BackupOrigins { get; private set; } = null!;
@@ -38,7 +38,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         public Output<ImmutableArray<Outputs.DomainBrowserCach>> BrowserCaches { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
+        /// Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
         /// </summary>
         [Output("cacheHost")]
         public Output<Outputs.DomainCacheHost> CacheHost { get; private set; } = null!;
@@ -47,14 +47,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         public Output<ImmutableArray<Outputs.DomainCacheKey>> CacheKeys { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该域名在 "共享缓存" 配置中的角色。该参数有以下取值：target*host：表示 "目标域名"。cache*shared_on：表示 "配置域名"。如果该域名未在任何 "共享缓存" 配置中，该参数值是空（""）。
+        /// Indicates the role of this domain in the 'shared cache' configuration. The parameter has the following values: target*host: indicates the 'target domain'. cache*shared_on: indicates the 'configured domain'. If this domain is not included in any 'shared cache' configuration, the parameter value is an empty string ('').
         /// </summary>
         [Output("cacheShared")]
         public Output<string> CacheShared { get; private set; } = null!;
 
         /// <summary>
-        /// 如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 "共享缓存" 配置中的 "目标域名"。
-        /// 如果 CacheShared 是 target_host，该参数值为空（""）。
+        /// If CacheShared is cache*shared*on, this parameter indicates the 'Target Domain' in the 'Shared Cache' configuration for this domain name. If CacheShared is target_host, this parameter is empty ("").
         /// </summary>
         [Output("cacheSharedTargetHost")]
         public Output<string> CacheSharedTargetHost { get; private set; } = null!;
@@ -63,109 +62,109 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         public Output<ImmutableArray<Outputs.DomainCach>> Caches { get; private set; } = null!;
 
         /// <summary>
-        /// 表示内容分发网络为该加速域名分配的 CNAME。
+        /// Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
         /// </summary>
         [Output("cname")]
         public Output<string> Cname { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
         /// </summary>
         [Output("compression")]
         public Output<Outputs.DomainCompression> Compression { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "条件源站" 特性的配置模块。
+        /// Specifies the configuration module for the 'Conditional Origin' feature.
         /// </summary>
         [Output("conditionalOrigin")]
         public Output<Outputs.DomainConditionalOrigin> ConditionalOrigin { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该加速域名的创建时间，格式是 Unix 时间戳。
+        /// Indicates the creation time of this accelerated domain name, in Unix timestamp format.
         /// </summary>
         [Output("createdTime")]
         public Output<int> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
         /// </summary>
         [Output("customErrorPage")]
         public Output<Outputs.DomainCustomErrorPage> CustomErrorPage { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
         /// </summary>
         [Output("customizeAccessRule")]
         public Output<Outputs.DomainCustomizeAccessRule> CustomizeAccessRule { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该加速域名。
+        /// Indicates the acceleration domain name.
         /// </summary>
         [Output("domain")]
         public Output<string> DomainValue { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该域名的锁定状态。
+        /// Indicates the lock status of this domain name.
         /// </summary>
         [Output("domainLock")]
         public Output<Outputs.DomainDomainLock> DomainLock { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "下载限速" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
         /// </summary>
         [Output("downloadSpeedLimit")]
         public Output<Outputs.DomainDownloadSpeedLimit> DownloadSpeedLimit { get; private set; } = null!;
 
         /// <summary>
-        /// 表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        /// Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
         /// </summary>
         [Output("followRedirect")]
         public Output<bool> FollowRedirect { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
+        /// Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
         /// </summary>
         [Output("httpForcedRedirect")]
         public Output<Outputs.DomainHttpForcedRedirect> HttpForcedRedirect { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 HTTPS 配置模块。该功能默认是禁用。
+        /// Indicates the HTTPS configuration module. This feature is disabled by default.
         /// </summary>
         [Output("https")]
         public Output<Outputs.DomainHttps> Https { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 IPv6 特性的配置模块。
+        /// Indicates the configuration module for the IPv6 feature.
         /// </summary>
         [Output("iPv6")]
         public Output<Outputs.DomainIPv6> IPv6 { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+        /// Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
         /// </summary>
         [Output("ipAccessRule")]
         public Output<Outputs.DomainIpAccessRule> IpAccessRule { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
+        /// Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
         /// </summary>
         [Output("isConflictDomain")]
         public Output<bool> IsConflictDomain { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
+        /// Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
         /// </summary>
         [Output("lockStatus")]
         public Output<string> LockStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
         /// </summary>
         [Output("methodDeniedRule")]
         public Output<Outputs.DomainMethodDeniedRule> MethodDeniedRule { get; private set; } = null!;
 
         /// <summary>
-        /// 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the multi-range feature. This feature is disabled by default
         /// </summary>
         [Output("multiRange")]
         public Output<Outputs.DomainMultiRange> MultiRange { get; private set; } = null!;
@@ -174,13 +173,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         public Output<ImmutableArray<Outputs.DomainNegativeCach>> NegativeCaches { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "离线缓存" 特性的配置模块。
+        /// Indicates the configuration module for the 'offline cache' feature.
         /// </summary>
         [Output("offlineCache")]
         public Output<Outputs.DomainOfflineCache> OfflineCache { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
         /// </summary>
         [Output("originAccessRule")]
         public Output<Outputs.DomainOriginAccessRule> OriginAccessRule { get; private set; } = null!;
@@ -189,49 +188,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         public Output<ImmutableArray<Outputs.DomainOriginArg>> OriginArgs { get; private set; } = null!;
 
         /// <summary>
-        /// 源站证书校验
+        /// Origin certificate validation
         /// </summary>
         [Output("originCertCheck")]
         public Output<Outputs.DomainOriginCertCheck> OriginCertCheck { get; private set; } = null!;
 
         /// <summary>
-        /// 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+        /// If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
         /// </summary>
         [Output("originHost")]
         public Output<string> OriginHost { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+        /// Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
         /// </summary>
         [Output("originIPv6")]
         public Output<string> OriginIPv6 { get; private set; } = null!;
 
         /// <summary>
-        /// 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+        /// Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
         /// </summary>
         [Output("originProtocol")]
         public Output<string> OriginProtocol { get; private set; } = null!;
 
         /// <summary>
-        /// 表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        /// Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         /// </summary>
         [Output("originRange")]
         public Output<bool> OriginRange { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "回源重试设置" 特性的配置模块。
+        /// Indicates the configuration module for the "origin fetch retry settings" feature.
         /// </summary>
         [Output("originRetry")]
         public Output<Outputs.DomainOriginRetry> OriginRetry { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "回源 URL 改写" 特性的配置模块。
+        /// Indicates the configuration module for the 'Origin URL Rewrite' feature.
         /// </summary>
         [Output("originRewrite")]
         public Output<Outputs.DomainOriginRewrite> OriginRewrite { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "回源 SNI" 特性的配置模块。
+        /// Indicates the configuration module for the 'origin SNI' feature.
         /// </summary>
         [Output("originSni")]
         public Output<Outputs.DomainOriginSni> OriginSni { get; private set; } = null!;
@@ -240,49 +239,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         public Output<ImmutableArray<Outputs.DomainOrigin>> Origins { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "页面优化" 特性的配置模块。
+        /// Specifies the configuration module for the 'page optimization' feature.
         /// </summary>
         [Output("pageOptimization")]
         public Output<Outputs.DomainPageOptimization> PageOptimization { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该域名配置的主源站列表。
+        /// Indicates the list of primary origin servers configured for this domain name.
         /// </summary>
         [Output("primaryOrigins")]
         public Output<ImmutableArray<string>> PrimaryOrigins { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该加速域名归属的项目。
+        /// Indicates the project to which the acceleration domain belongs
         /// </summary>
         [Output("project")]
         public Output<string> Project { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 QUIC 特性的配置模块。该特性默认是禁用。
+        /// Indicates the configuration module for the QUIC feature. This feature is disabled by default.
         /// </summary>
         [Output("quic")]
         public Output<Outputs.DomainQuic> Quic { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
         /// </summary>
         [Output("redirectionRewrite")]
         public Output<Outputs.DomainRedirectionRewrite> RedirectionRewrite { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
         /// </summary>
         [Output("refererAccessRule")]
         public Output<Outputs.DomainRefererAccessRule> RefererAccessRule { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
         /// </summary>
         [Output("remoteAuth")]
         public Output<Outputs.DomainRemoteAuth> RemoteAuth { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
         /// </summary>
         [Output("requestBlockRule")]
         public Output<Outputs.DomainRequestBlockRule> RequestBlockRule { get; private set; } = null!;
@@ -294,31 +293,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         public Output<ImmutableArray<Outputs.DomainResponseHeader>> ResponseHeaders { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
         /// </summary>
         [Output("rewriteHls")]
         public Output<Outputs.DomainRewriteHls> RewriteHls { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+        /// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
         /// </summary>
         [Output("serviceRegion")]
         public Output<string> ServiceRegion { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+        /// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
         /// </summary>
         [Output("serviceType")]
         public Output<string> ServiceType { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
         /// </summary>
         [Output("signedUrlAuth")]
         public Output<Outputs.DomainSignedUrlAuth> SignedUrlAuth { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
+        /// Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -327,31 +326,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         public Output<ImmutableArray<Outputs.DomainTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
         /// </summary>
         [Output("timeout")]
         public Output<Outputs.DomainTimeout> Timeout { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
         /// </summary>
         [Output("uaAccessRule")]
         public Output<Outputs.DomainUaAccessRule> UaAccessRule { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
+        /// Indicates the most recent update time for this domain configuration, in Unix timestamp format.
         /// </summary>
         [Output("updatedTime")]
         public Output<int> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
+        /// Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
         /// </summary>
         [Output("urlNormalize")]
         public Output<Outputs.DomainUrlNormalize> UrlNormalize { get; private set; } = null!;
 
         /// <summary>
-        /// 表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
         /// </summary>
         [Output("videoDrag")]
         public Output<Outputs.DomainVideoDrag> VideoDrag { get; private set; } = null!;
@@ -404,7 +403,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     public sealed class DomainArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
         /// </summary>
         [Input("areaAccessRule")]
         public Input<Inputs.DomainAreaAccessRuleArgs>? AreaAccessRule { get; set; }
@@ -418,7 +417,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
+        /// Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
         /// </summary>
         [Input("cacheHost")]
         public Input<Inputs.DomainCacheHostArgs>? CacheHost { get; set; }
@@ -440,79 +439,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
         /// </summary>
         [Input("compression")]
         public Input<Inputs.DomainCompressionArgs>? Compression { get; set; }
 
         /// <summary>
-        /// 表示 "条件源站" 特性的配置模块。
+        /// Specifies the configuration module for the 'Conditional Origin' feature.
         /// </summary>
         [Input("conditionalOrigin")]
         public Input<Inputs.DomainConditionalOriginArgs>? ConditionalOrigin { get; set; }
 
         /// <summary>
-        /// 表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
         /// </summary>
         [Input("customErrorPage")]
         public Input<Inputs.DomainCustomErrorPageArgs>? CustomErrorPage { get; set; }
 
         /// <summary>
-        /// 表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
         /// </summary>
         [Input("customizeAccessRule")]
         public Input<Inputs.DomainCustomizeAccessRuleArgs>? CustomizeAccessRule { get; set; }
 
         /// <summary>
-        /// 表示该加速域名。
+        /// Indicates the acceleration domain name.
         /// </summary>
         [Input("domain", required: true)]
         public Input<string> DomainValue { get; set; } = null!;
 
         /// <summary>
-        /// 表示 "下载限速" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
         /// </summary>
         [Input("downloadSpeedLimit")]
         public Input<Inputs.DomainDownloadSpeedLimitArgs>? DownloadSpeedLimit { get; set; }
 
         /// <summary>
-        /// 表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        /// Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
         /// </summary>
         [Input("followRedirect")]
         public Input<bool>? FollowRedirect { get; set; }
 
         /// <summary>
-        /// 表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
+        /// Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
         /// </summary>
         [Input("httpForcedRedirect")]
         public Input<Inputs.DomainHttpForcedRedirectArgs>? HttpForcedRedirect { get; set; }
 
         /// <summary>
-        /// 表示 HTTPS 配置模块。该功能默认是禁用。
+        /// Indicates the HTTPS configuration module. This feature is disabled by default.
         /// </summary>
         [Input("https")]
         public Input<Inputs.DomainHttpsArgs>? Https { get; set; }
 
         /// <summary>
-        /// 表示 IPv6 特性的配置模块。
+        /// Indicates the configuration module for the IPv6 feature.
         /// </summary>
         [Input("iPv6")]
         public Input<Inputs.DomainIPv6Args>? IPv6 { get; set; }
 
         /// <summary>
-        /// 表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+        /// Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
         /// </summary>
         [Input("ipAccessRule")]
         public Input<Inputs.DomainIpAccessRuleArgs>? IpAccessRule { get; set; }
 
         /// <summary>
-        /// 表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
         /// </summary>
         [Input("methodDeniedRule")]
         public Input<Inputs.DomainMethodDeniedRuleArgs>? MethodDeniedRule { get; set; }
 
         /// <summary>
-        /// 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the multi-range feature. This feature is disabled by default
         /// </summary>
         [Input("multiRange")]
         public Input<Inputs.DomainMultiRangeArgs>? MultiRange { get; set; }
@@ -526,13 +525,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示 "离线缓存" 特性的配置模块。
+        /// Indicates the configuration module for the 'offline cache' feature.
         /// </summary>
         [Input("offlineCache")]
         public Input<Inputs.DomainOfflineCacheArgs>? OfflineCache { get; set; }
 
         /// <summary>
-        /// 表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
         /// </summary>
         [Input("originAccessRule")]
         public Input<Inputs.DomainOriginAccessRuleArgs>? OriginAccessRule { get; set; }
@@ -546,49 +545,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 源站证书校验
+        /// Origin certificate validation
         /// </summary>
         [Input("originCertCheck")]
         public Input<Inputs.DomainOriginCertCheckArgs>? OriginCertCheck { get; set; }
 
         /// <summary>
-        /// 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+        /// If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
         /// </summary>
         [Input("originHost")]
         public Input<string>? OriginHost { get; set; }
 
         /// <summary>
-        /// 表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+        /// Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
         /// </summary>
         [Input("originIPv6")]
         public Input<string>? OriginIPv6 { get; set; }
 
         /// <summary>
-        /// 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+        /// Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
         /// </summary>
         [Input("originProtocol")]
         public Input<string>? OriginProtocol { get; set; }
 
         /// <summary>
-        /// 表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        /// Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         /// </summary>
         [Input("originRange")]
         public Input<bool>? OriginRange { get; set; }
 
         /// <summary>
-        /// 表示 "回源重试设置" 特性的配置模块。
+        /// Indicates the configuration module for the "origin fetch retry settings" feature.
         /// </summary>
         [Input("originRetry")]
         public Input<Inputs.DomainOriginRetryArgs>? OriginRetry { get; set; }
 
         /// <summary>
-        /// 表示 "回源 URL 改写" 特性的配置模块。
+        /// Indicates the configuration module for the 'Origin URL Rewrite' feature.
         /// </summary>
         [Input("originRewrite")]
         public Input<Inputs.DomainOriginRewriteArgs>? OriginRewrite { get; set; }
 
         /// <summary>
-        /// 表示 "回源 SNI" 特性的配置模块。
+        /// Indicates the configuration module for the 'origin SNI' feature.
         /// </summary>
         [Input("originSni")]
         public Input<Inputs.DomainOriginSniArgs>? OriginSni { get; set; }
@@ -602,43 +601,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示 "页面优化" 特性的配置模块。
+        /// Specifies the configuration module for the 'page optimization' feature.
         /// </summary>
         [Input("pageOptimization")]
         public Input<Inputs.DomainPageOptimizationArgs>? PageOptimization { get; set; }
 
         /// <summary>
-        /// 表示该加速域名归属的项目。
+        /// Indicates the project to which the acceleration domain belongs
         /// </summary>
         [Input("project")]
         public Input<string>? Project { get; set; }
 
         /// <summary>
-        /// 表示 QUIC 特性的配置模块。该特性默认是禁用。
+        /// Indicates the configuration module for the QUIC feature. This feature is disabled by default.
         /// </summary>
         [Input("quic")]
         public Input<Inputs.DomainQuicArgs>? Quic { get; set; }
 
         /// <summary>
-        /// 表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
         /// </summary>
         [Input("redirectionRewrite")]
         public Input<Inputs.DomainRedirectionRewriteArgs>? RedirectionRewrite { get; set; }
 
         /// <summary>
-        /// 表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
         /// </summary>
         [Input("refererAccessRule")]
         public Input<Inputs.DomainRefererAccessRuleArgs>? RefererAccessRule { get; set; }
 
         /// <summary>
-        /// 表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
         /// </summary>
         [Input("remoteAuth")]
         public Input<Inputs.DomainRemoteAuthArgs>? RemoteAuth { get; set; }
 
         /// <summary>
-        /// 表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
         /// </summary>
         [Input("requestBlockRule")]
         public Input<Inputs.DomainRequestBlockRuleArgs>? RequestBlockRule { get; set; }
@@ -660,25 +659,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
         /// </summary>
         [Input("rewriteHls")]
         public Input<Inputs.DomainRewriteHlsArgs>? RewriteHls { get; set; }
 
         /// <summary>
-        /// 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+        /// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
         /// </summary>
         [Input("serviceRegion")]
         public Input<string>? ServiceRegion { get; set; }
 
         /// <summary>
-        /// 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+        /// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
         /// </summary>
         [Input("serviceType", required: true)]
         public Input<string> ServiceType { get; set; } = null!;
 
         /// <summary>
-        /// 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
         /// </summary>
         [Input("signedUrlAuth")]
         public Input<Inputs.DomainSignedUrlAuthArgs>? SignedUrlAuth { get; set; }
@@ -692,25 +691,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
         /// </summary>
         [Input("timeout")]
         public Input<Inputs.DomainTimeoutArgs>? Timeout { get; set; }
 
         /// <summary>
-        /// 表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
         /// </summary>
         [Input("uaAccessRule")]
         public Input<Inputs.DomainUaAccessRuleArgs>? UaAccessRule { get; set; }
 
         /// <summary>
-        /// 表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
+        /// Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
         /// </summary>
         [Input("urlNormalize")]
         public Input<Inputs.DomainUrlNormalizeArgs>? UrlNormalize { get; set; }
 
         /// <summary>
-        /// 表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
         /// </summary>
         [Input("videoDrag")]
         public Input<Inputs.DomainVideoDragArgs>? VideoDrag { get; set; }
@@ -724,7 +723,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     public sealed class DomainState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
         /// </summary>
         [Input("areaAccessRule")]
         public Input<Inputs.DomainAreaAccessRuleGetArgs>? AreaAccessRule { get; set; }
@@ -733,7 +732,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         private InputList<string>? _backupOrigins;
 
         /// <summary>
-        /// 表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
+        /// Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
         /// </summary>
         public InputList<string> BackupOrigins
         {
@@ -750,7 +749,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
+        /// Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
         /// </summary>
         [Input("cacheHost")]
         public Input<Inputs.DomainCacheHostGetArgs>? CacheHost { get; set; }
@@ -764,14 +763,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示该域名在 "共享缓存" 配置中的角色。该参数有以下取值：target*host：表示 "目标域名"。cache*shared_on：表示 "配置域名"。如果该域名未在任何 "共享缓存" 配置中，该参数值是空（""）。
+        /// Indicates the role of this domain in the 'shared cache' configuration. The parameter has the following values: target*host: indicates the 'target domain'. cache*shared_on: indicates the 'configured domain'. If this domain is not included in any 'shared cache' configuration, the parameter value is an empty string ('').
         /// </summary>
         [Input("cacheShared")]
         public Input<string>? CacheShared { get; set; }
 
         /// <summary>
-        /// 如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 "共享缓存" 配置中的 "目标域名"。
-        /// 如果 CacheShared 是 target_host，该参数值为空（""）。
+        /// If CacheShared is cache*shared*on, this parameter indicates the 'Target Domain' in the 'Shared Cache' configuration for this domain name. If CacheShared is target_host, this parameter is empty ("").
         /// </summary>
         [Input("cacheSharedTargetHost")]
         public Input<string>? CacheSharedTargetHost { get; set; }
@@ -785,109 +783,109 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示内容分发网络为该加速域名分配的 CNAME。
+        /// Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
         /// </summary>
         [Input("cname")]
         public Input<string>? Cname { get; set; }
 
         /// <summary>
-        /// 表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
         /// </summary>
         [Input("compression")]
         public Input<Inputs.DomainCompressionGetArgs>? Compression { get; set; }
 
         /// <summary>
-        /// 表示 "条件源站" 特性的配置模块。
+        /// Specifies the configuration module for the 'Conditional Origin' feature.
         /// </summary>
         [Input("conditionalOrigin")]
         public Input<Inputs.DomainConditionalOriginGetArgs>? ConditionalOrigin { get; set; }
 
         /// <summary>
-        /// 表示该加速域名的创建时间，格式是 Unix 时间戳。
+        /// Indicates the creation time of this accelerated domain name, in Unix timestamp format.
         /// </summary>
         [Input("createdTime")]
         public Input<int>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
         /// </summary>
         [Input("customErrorPage")]
         public Input<Inputs.DomainCustomErrorPageGetArgs>? CustomErrorPage { get; set; }
 
         /// <summary>
-        /// 表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
         /// </summary>
         [Input("customizeAccessRule")]
         public Input<Inputs.DomainCustomizeAccessRuleGetArgs>? CustomizeAccessRule { get; set; }
 
         /// <summary>
-        /// 表示该加速域名。
+        /// Indicates the acceleration domain name.
         /// </summary>
         [Input("domain")]
         public Input<string>? DomainValue { get; set; }
 
         /// <summary>
-        /// 表示该域名的锁定状态。
+        /// Indicates the lock status of this domain name.
         /// </summary>
         [Input("domainLock")]
         public Input<Inputs.DomainDomainLockGetArgs>? DomainLock { get; set; }
 
         /// <summary>
-        /// 表示 "下载限速" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
         /// </summary>
         [Input("downloadSpeedLimit")]
         public Input<Inputs.DomainDownloadSpeedLimitGetArgs>? DownloadSpeedLimit { get; set; }
 
         /// <summary>
-        /// 表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        /// Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
         /// </summary>
         [Input("followRedirect")]
         public Input<bool>? FollowRedirect { get; set; }
 
         /// <summary>
-        /// 表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
+        /// Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
         /// </summary>
         [Input("httpForcedRedirect")]
         public Input<Inputs.DomainHttpForcedRedirectGetArgs>? HttpForcedRedirect { get; set; }
 
         /// <summary>
-        /// 表示 HTTPS 配置模块。该功能默认是禁用。
+        /// Indicates the HTTPS configuration module. This feature is disabled by default.
         /// </summary>
         [Input("https")]
         public Input<Inputs.DomainHttpsGetArgs>? Https { get; set; }
 
         /// <summary>
-        /// 表示 IPv6 特性的配置模块。
+        /// Indicates the configuration module for the IPv6 feature.
         /// </summary>
         [Input("iPv6")]
         public Input<Inputs.DomainIPv6GetArgs>? IPv6 { get; set; }
 
         /// <summary>
-        /// 表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+        /// Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
         /// </summary>
         [Input("ipAccessRule")]
         public Input<Inputs.DomainIpAccessRuleGetArgs>? IpAccessRule { get; set; }
 
         /// <summary>
-        /// 表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
+        /// Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
         /// </summary>
         [Input("isConflictDomain")]
         public Input<bool>? IsConflictDomain { get; set; }
 
         /// <summary>
-        /// 表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
+        /// Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
         /// </summary>
         [Input("lockStatus")]
         public Input<string>? LockStatus { get; set; }
 
         /// <summary>
-        /// 表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
         /// </summary>
         [Input("methodDeniedRule")]
         public Input<Inputs.DomainMethodDeniedRuleGetArgs>? MethodDeniedRule { get; set; }
 
         /// <summary>
-        /// 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the multi-range feature. This feature is disabled by default
         /// </summary>
         [Input("multiRange")]
         public Input<Inputs.DomainMultiRangeGetArgs>? MultiRange { get; set; }
@@ -901,13 +899,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示 "离线缓存" 特性的配置模块。
+        /// Indicates the configuration module for the 'offline cache' feature.
         /// </summary>
         [Input("offlineCache")]
         public Input<Inputs.DomainOfflineCacheGetArgs>? OfflineCache { get; set; }
 
         /// <summary>
-        /// 表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
         /// </summary>
         [Input("originAccessRule")]
         public Input<Inputs.DomainOriginAccessRuleGetArgs>? OriginAccessRule { get; set; }
@@ -921,49 +919,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 源站证书校验
+        /// Origin certificate validation
         /// </summary>
         [Input("originCertCheck")]
         public Input<Inputs.DomainOriginCertCheckGetArgs>? OriginCertCheck { get; set; }
 
         /// <summary>
-        /// 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+        /// If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
         /// </summary>
         [Input("originHost")]
         public Input<string>? OriginHost { get; set; }
 
         /// <summary>
-        /// 表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+        /// Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
         /// </summary>
         [Input("originIPv6")]
         public Input<string>? OriginIPv6 { get; set; }
 
         /// <summary>
-        /// 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+        /// Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
         /// </summary>
         [Input("originProtocol")]
         public Input<string>? OriginProtocol { get; set; }
 
         /// <summary>
-        /// 表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        /// Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         /// </summary>
         [Input("originRange")]
         public Input<bool>? OriginRange { get; set; }
 
         /// <summary>
-        /// 表示 "回源重试设置" 特性的配置模块。
+        /// Indicates the configuration module for the "origin fetch retry settings" feature.
         /// </summary>
         [Input("originRetry")]
         public Input<Inputs.DomainOriginRetryGetArgs>? OriginRetry { get; set; }
 
         /// <summary>
-        /// 表示 "回源 URL 改写" 特性的配置模块。
+        /// Indicates the configuration module for the 'Origin URL Rewrite' feature.
         /// </summary>
         [Input("originRewrite")]
         public Input<Inputs.DomainOriginRewriteGetArgs>? OriginRewrite { get; set; }
 
         /// <summary>
-        /// 表示 "回源 SNI" 特性的配置模块。
+        /// Indicates the configuration module for the 'origin SNI' feature.
         /// </summary>
         [Input("originSni")]
         public Input<Inputs.DomainOriginSniGetArgs>? OriginSni { get; set; }
@@ -977,7 +975,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示 "页面优化" 特性的配置模块。
+        /// Specifies the configuration module for the 'page optimization' feature.
         /// </summary>
         [Input("pageOptimization")]
         public Input<Inputs.DomainPageOptimizationGetArgs>? PageOptimization { get; set; }
@@ -986,7 +984,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         private InputList<string>? _primaryOrigins;
 
         /// <summary>
-        /// 表示该域名配置的主源站列表。
+        /// Indicates the list of primary origin servers configured for this domain name.
         /// </summary>
         public InputList<string> PrimaryOrigins
         {
@@ -995,37 +993,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示该加速域名归属的项目。
+        /// Indicates the project to which the acceleration domain belongs
         /// </summary>
         [Input("project")]
         public Input<string>? Project { get; set; }
 
         /// <summary>
-        /// 表示 QUIC 特性的配置模块。该特性默认是禁用。
+        /// Indicates the configuration module for the QUIC feature. This feature is disabled by default.
         /// </summary>
         [Input("quic")]
         public Input<Inputs.DomainQuicGetArgs>? Quic { get; set; }
 
         /// <summary>
-        /// 表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
         /// </summary>
         [Input("redirectionRewrite")]
         public Input<Inputs.DomainRedirectionRewriteGetArgs>? RedirectionRewrite { get; set; }
 
         /// <summary>
-        /// 表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
         /// </summary>
         [Input("refererAccessRule")]
         public Input<Inputs.DomainRefererAccessRuleGetArgs>? RefererAccessRule { get; set; }
 
         /// <summary>
-        /// 表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
         /// </summary>
         [Input("remoteAuth")]
         public Input<Inputs.DomainRemoteAuthGetArgs>? RemoteAuth { get; set; }
 
         /// <summary>
-        /// 表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
         /// </summary>
         [Input("requestBlockRule")]
         public Input<Inputs.DomainRequestBlockRuleGetArgs>? RequestBlockRule { get; set; }
@@ -1047,31 +1045,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
         /// </summary>
         [Input("rewriteHls")]
         public Input<Inputs.DomainRewriteHlsGetArgs>? RewriteHls { get; set; }
 
         /// <summary>
-        /// 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+        /// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
         /// </summary>
         [Input("serviceRegion")]
         public Input<string>? ServiceRegion { get; set; }
 
         /// <summary>
-        /// 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+        /// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
         /// </summary>
         [Input("serviceType")]
         public Input<string>? ServiceType { get; set; }
 
         /// <summary>
-        /// 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
         /// </summary>
         [Input("signedUrlAuth")]
         public Input<Inputs.DomainSignedUrlAuthGetArgs>? SignedUrlAuth { get; set; }
 
         /// <summary>
-        /// 表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
+        /// Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -1085,31 +1083,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         }
 
         /// <summary>
-        /// 表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
         /// </summary>
         [Input("timeout")]
         public Input<Inputs.DomainTimeoutGetArgs>? Timeout { get; set; }
 
         /// <summary>
-        /// 表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
         /// </summary>
         [Input("uaAccessRule")]
         public Input<Inputs.DomainUaAccessRuleGetArgs>? UaAccessRule { get; set; }
 
         /// <summary>
-        /// 表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
+        /// Indicates the most recent update time for this domain configuration, in Unix timestamp format.
         /// </summary>
         [Input("updatedTime")]
         public Input<int>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
+        /// Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
         /// </summary>
         [Input("urlNormalize")]
         public Input<Inputs.DomainUrlNormalizeGetArgs>? UrlNormalize { get; set; }
 
         /// <summary>
-        /// 表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+        /// Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
         /// </summary>
         [Input("videoDrag")]
         public Input<Inputs.DomainVideoDragGetArgs>? VideoDrag { get; set; }

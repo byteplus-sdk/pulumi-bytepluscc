@@ -18,14 +18,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     public static final SnapshotState Empty = new SnapshotState();
 
     /**
-     * 快照创建时间。
+     * Snapshot Creation Time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 快照创建时间。
+     * @return Snapshot Creation Time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -33,14 +33,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照描述信息。
+     * Snapshot Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 快照描述信息。
+     * @return Snapshot Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -48,14 +48,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统 ID。
+     * File System ID
      * 
      */
     @Import(name="fileSystemId")
     private @Nullable Output<String> fileSystemId;
 
     /**
-     * @return 文件系统 ID。
+     * @return File System ID
      * 
      */
     public Optional<Output<String>> fileSystemId() {
@@ -63,14 +63,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统名称。
+     * File System Name
      * 
      */
     @Import(name="fileSystemName")
     private @Nullable Output<String> fileSystemName;
 
     /**
-     * @return 文件系统名称。
+     * @return File System Name
      * 
      */
     public Optional<Output<String>> fileSystemName() {
@@ -78,14 +78,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否加密，当前仅支持false，即不加密。
+     * Is encryption enabled. Currently only false is supported (not encrypted)
      * 
      */
     @Import(name="isEncrypt")
     private @Nullable Output<Boolean> isEncrypt;
 
     /**
-     * @return 是否加密，当前仅支持false，即不加密。
+     * @return Is encryption enabled. Currently only false is supported (not encrypted)
      * 
      */
     public Optional<Output<Boolean>> isEncrypt() {
@@ -93,14 +93,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照创建进度。
+     * Snapshot Creation Progress
      * 
      */
     @Import(name="progress")
     private @Nullable Output<String> progress;
 
     /**
-     * @return 快照创建进度。
+     * @return Snapshot Creation Progress
      * 
      */
     public Optional<Output<String>> progress() {
@@ -108,14 +108,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照保留时间，默认为2147483647，即永久保留。
+     * Snapshot Retention Period. Default is 2147483647 (permanent retention)
      * 
      */
     @Import(name="retentionDays")
     private @Nullable Output<Integer> retentionDays;
 
     /**
-     * @return 快照保留时间，默认为2147483647，即永久保留。
+     * @return Snapshot Retention Period. Default is 2147483647 (permanent retention)
      * 
      */
     public Optional<Output<Integer>> retentionDays() {
@@ -123,14 +123,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照 ID。
+     * Snapshot ID
      * 
      */
     @Import(name="snapshotId")
     private @Nullable Output<String> snapshotId;
 
     /**
-     * @return 快照 ID。
+     * @return Snapshot ID
      * 
      */
     public Optional<Output<String>> snapshotId() {
@@ -138,14 +138,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照名称。
+     * Snapshot Name
      * 
      */
     @Import(name="snapshotName")
     private @Nullable Output<String> snapshotName;
 
     /**
-     * @return 快照名称。
+     * @return Snapshot Name
      * 
      */
     public Optional<Output<String>> snapshotName() {
@@ -153,14 +153,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照类型，默认为Manual，即手动快照。
+     * Snapshot Type. Default is Manual (manual snapshot)
      * 
      */
     @Import(name="snapshotType")
     private @Nullable Output<String> snapshotType;
 
     /**
-     * @return 快照类型，默认为Manual，即手动快照。
+     * @return Snapshot Type. Default is Manual (manual snapshot)
      * 
      */
     public Optional<Output<String>> snapshotType() {
@@ -168,14 +168,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统容量，单位为 GiB。
+     * File System Capacity (GiB)
      * 
      */
     @Import(name="sourceSize")
     private @Nullable Output<Integer> sourceSize;
 
     /**
-     * @return 文件系统容量，单位为 GiB。
+     * @return File System Capacity (GiB)
      * 
      */
     public Optional<Output<Integer>> sourceSize() {
@@ -183,14 +183,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统版本。
+     * File System Version
      * 
      */
     @Import(name="sourceVersion")
     private @Nullable Output<String> sourceVersion;
 
     /**
-     * @return 文件系统版本。
+     * @return File System Version
      * 
      */
     public Optional<Output<String>> sourceVersion() {
@@ -198,14 +198,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+     * Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+     * @return Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
      * 
      */
     public Optional<Output<String>> status() {
@@ -213,14 +213,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 可用区 ID。
+     * Availability Zone ID
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 可用区 ID。
+     * @return Availability Zone ID
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -265,7 +265,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 快照创建时间。
+         * @param createdTime Snapshot Creation Time
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 快照创建时间。
+         * @param createdTime Snapshot Creation Time
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 快照描述信息。
+         * @param description Snapshot Description
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 快照描述信息。
+         * @param description Snapshot Description
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemId 文件系统 ID。
+         * @param fileSystemId File System ID
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemId 文件系统 ID。
+         * @param fileSystemId File System ID
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemName 文件系统名称。
+         * @param fileSystemName File System Name
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemName 文件系统名称。
+         * @param fileSystemName File System Name
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEncrypt 是否加密，当前仅支持false，即不加密。
+         * @param isEncrypt Is encryption enabled. Currently only false is supported (not encrypted)
          * 
          * @return builder
          * 
@@ -360,7 +360,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEncrypt 是否加密，当前仅支持false，即不加密。
+         * @param isEncrypt Is encryption enabled. Currently only false is supported (not encrypted)
          * 
          * @return builder
          * 
@@ -370,7 +370,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param progress 快照创建进度。
+         * @param progress Snapshot Creation Progress
          * 
          * @return builder
          * 
@@ -381,7 +381,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param progress 快照创建进度。
+         * @param progress Snapshot Creation Progress
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionDays 快照保留时间，默认为2147483647，即永久保留。
+         * @param retentionDays Snapshot Retention Period. Default is 2147483647 (permanent retention)
          * 
          * @return builder
          * 
@@ -402,7 +402,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionDays 快照保留时间，默认为2147483647，即永久保留。
+         * @param retentionDays Snapshot Retention Period. Default is 2147483647 (permanent retention)
          * 
          * @return builder
          * 
@@ -412,7 +412,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotId 快照 ID。
+         * @param snapshotId Snapshot ID
          * 
          * @return builder
          * 
@@ -423,7 +423,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotId 快照 ID。
+         * @param snapshotId Snapshot ID
          * 
          * @return builder
          * 
@@ -433,7 +433,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotName 快照名称。
+         * @param snapshotName Snapshot Name
          * 
          * @return builder
          * 
@@ -444,7 +444,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotName 快照名称。
+         * @param snapshotName Snapshot Name
          * 
          * @return builder
          * 
@@ -454,7 +454,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotType 快照类型，默认为Manual，即手动快照。
+         * @param snapshotType Snapshot Type. Default is Manual (manual snapshot)
          * 
          * @return builder
          * 
@@ -465,7 +465,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotType 快照类型，默认为Manual，即手动快照。
+         * @param snapshotType Snapshot Type. Default is Manual (manual snapshot)
          * 
          * @return builder
          * 
@@ -475,7 +475,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceSize 文件系统容量，单位为 GiB。
+         * @param sourceSize File System Capacity (GiB)
          * 
          * @return builder
          * 
@@ -486,7 +486,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceSize 文件系统容量，单位为 GiB。
+         * @param sourceSize File System Capacity (GiB)
          * 
          * @return builder
          * 
@@ -496,7 +496,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceVersion 文件系统版本。
+         * @param sourceVersion File System Version
          * 
          * @return builder
          * 
@@ -507,7 +507,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceVersion 文件系统版本。
+         * @param sourceVersion File System Version
          * 
          * @return builder
          * 
@@ -517,7 +517,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+         * @param status Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
          * 
          * @return builder
          * 
@@ -528,7 +528,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+         * @param status Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
          * 
          * @return builder
          * 
@@ -538,7 +538,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区 ID。
+         * @param zoneId Availability Zone ID
          * 
          * @return builder
          * 
@@ -549,7 +549,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区 ID。
+         * @param zoneId Availability Zone ID
          * 
          * @return builder
          * 

@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class RuleRuleActionRewriteConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 重写路径。
+        /// Rewrite path.
         /// </summary>
         [Input("path")]
         public Input<string>? Path { get; set; }

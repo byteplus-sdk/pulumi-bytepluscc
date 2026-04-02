@@ -18,112 +18,112 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceResult {
     /**
-     * @return 是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+     * @return Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
      * 
      */
     private Boolean cerebroEnabled;
     /**
-     * @return cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+     * @return Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     private String cerebroPrivateDomain;
     /**
-     * @return erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * @return Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     private String cerebroPublicDomain;
     /**
-     * @return 实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+     * @return Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
      * 
      */
     private Boolean chargeEnabled;
     /**
-     * @return 实例所属集群的 ID。
+     * @return ID of the cluster to which the instance belongs.
      * 
      */
     private String clusterId;
     /**
-     * @return 实例的创建时间。
+     * @return Instance creation time.
      * 
      */
     private String createTime;
     /**
-     * @return 实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * @return Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      * 
      */
     private Boolean enableEsPrivateDomainPublic;
     /**
-     * @return 实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+     * @return Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
      * 
      */
     private Boolean enableEsPrivateNetwork;
     /**
-     * @return 实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+     * @return Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
      * 
      */
     private Boolean enableEsPublicNetwork;
     /**
-     * @return Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * @return Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      * 
      */
     private Boolean enableKibanaPrivateDomainPublic;
     /**
-     * @return Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+     * @return Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
      * 
      */
     private Boolean enableKibanaPrivateNetwork;
     /**
-     * @return Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+     * @return Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
      * 
      */
     private Boolean enableKibanaPublicNetwork;
     /**
-     * @return 实例所绑定的 EIP。
+     * @return EIP bound to the instance.
      * 
      */
     private String esEip;
     /**
-     * @return 实例所绑定的 EIP 的 ID。
+     * @return ID of the EIP bound to the instance
      * 
      */
     private String esEipId;
     /**
-     * @return 实例私网访问地址。
+     * @return Instance private network access address.
      * 
      */
     private String esPrivateEndpoint;
     /**
-     * @return 实例私网地址访问白名单。同 ESPrivateIpWhitelist
+     * @return Instance private network address access allowlist. Same as ESPrivateIpWhitelist
      * 
      */
     private String esPrivateIpAllowList;
     /**
-     * @return 实例私网地址访问白名单。
+     * @return Instance private network address access allowlist
      * 
      */
     private String esPrivateIpWhitelist;
     /**
-     * @return ES公网带宽，单位:Mbps。
+     * @return ES public network bandwidth, unit: Mbps.
      * 
      */
     private Integer esPubBandwidth;
     /**
-     * @return 实例公网访问地址。
+     * @return Instance public access address
      * 
      */
     private String esPublicEndpoint;
     /**
-     * @return 实例公网地址访问白名单。同 ESPublicIpWhitelist
+     * @return Instance public IP address access allowlist. Same as ESPublicIpWhitelist
      * 
      */
     private String esPublicIpAllowList;
     /**
-     * @return 实例公网地址访问白名单。
+     * @return Allowlist for instance public network address access.
      * 
      */
     private String esPublicIpWhitelist;
     /**
-     * @return 包年包月实例的付费过期时间。
+     * @return Expiration time for subscription instance payment
      * 
      */
     private String expireDate;
@@ -133,266 +133,266 @@ public final class GetInstanceResult {
      */
     private String id;
     /**
-     * @return 实例配置详情信息。
+     * @return Instance configuration details
      * 
      */
     private GetInstanceInstanceConfiguration instanceConfiguration;
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     private String instanceId;
     /**
-     * @return Kibana 参数配置。
+     * @return Kibana parameter configuration
      * 
      */
     private GetInstanceKibanaConfig kibanaConfig;
     /**
-     * @return Kibana 所绑定的 EIP。
+     * @return EIP bound to Kibana
      * 
      */
     private String kibanaEip;
     /**
-     * @return Kibana 所绑定的 EIP 的 ID。
+     * @return ID of the EIP bound to Kibana.
      * 
      */
     private String kibanaEipId;
     /**
-     * @return Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * @return Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
      * 
      */
     private String kibanaPrivateDomain;
     /**
-     * @return Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+     * @return Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
      * 
      */
     private String kibanaPrivateIpAllowList;
     /**
-     * @return Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+     * @return Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
      * 
      */
     private String kibanaPrivateIpWhitelist;
     /**
-     * @return Kibana公网带宽，单位: Mbps
+     * @return Kibana public network bandwidth, unit: Mbps
      * 
      */
     private Integer kibanaPubBandwidth;
     /**
-     * @return Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * @return Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     private String kibanaPublicDomain;
     /**
-     * @return Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+     * @return Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
      * 
      */
     private String kibanaPublicIpAllowList;
     /**
-     * @return Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+     * @return Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
      * 
      */
     private String kibanaPublicIpWhitelist;
     /**
-     * @return 主可用区
+     * @return Primary availability zone
      * 
      */
     private String mainZoneId;
     /**
-     * @return 实例的可维护日期。
+     * @return Instance maintenance date.
      * 
      */
     private List<String> maintenanceDays;
     /**
-     * @return 实例的可维护时间段。
+     * @return Instance maintenance window.
      * 
      */
     private String maintenanceTime;
     /**
-     * @return 实例当前状态。
+     * @return Current instance status
      * 
      */
     private String status;
     /**
-     * @return 子实例开启情况。
+     * @return Sub-instance activation status
      * 
      */
     private String subInstanceEnable;
     /**
-     * @return 企业级 SQL 分析实例配置信息。
+     * @return Enterprise SQL analytics instance configuration information
      * 
      */
     private List<GetInstanceSubInstance> subInstances;
     /**
-     * @return 是否支持冷节点。
+     * @return Whether cold nodes are supported
      * 
      */
     private Boolean supportColdNode;
     /**
-     * @return 实例的总节点数。
+     * @return Total number of nodes in the instance
      * 
      */
     private Integer totalNodes;
     /**
-     * @return 数据迁移任务信息。
+     * @return Data migration task information
      * 
      */
     private GetInstanceTransferInfo transferInfo;
     /**
-     * @return 实例所有者的用户 ID。
+     * @return Instance owner&#39;s user ID
      * 
      */
     private String userId;
 
     private GetInstanceResult() {}
     /**
-     * @return 是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+     * @return Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
      * 
      */
     public Boolean cerebroEnabled() {
         return this.cerebroEnabled;
     }
     /**
-     * @return cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+     * @return Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     public String cerebroPrivateDomain() {
         return this.cerebroPrivateDomain;
     }
     /**
-     * @return erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * @return Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     public String cerebroPublicDomain() {
         return this.cerebroPublicDomain;
     }
     /**
-     * @return 实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+     * @return Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
      * 
      */
     public Boolean chargeEnabled() {
         return this.chargeEnabled;
     }
     /**
-     * @return 实例所属集群的 ID。
+     * @return ID of the cluster to which the instance belongs.
      * 
      */
     public String clusterId() {
         return this.clusterId;
     }
     /**
-     * @return 实例的创建时间。
+     * @return Instance creation time.
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return 实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * @return Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      * 
      */
     public Boolean enableEsPrivateDomainPublic() {
         return this.enableEsPrivateDomainPublic;
     }
     /**
-     * @return 实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+     * @return Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
      * 
      */
     public Boolean enableEsPrivateNetwork() {
         return this.enableEsPrivateNetwork;
     }
     /**
-     * @return 实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+     * @return Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
      * 
      */
     public Boolean enableEsPublicNetwork() {
         return this.enableEsPublicNetwork;
     }
     /**
-     * @return Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * @return Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      * 
      */
     public Boolean enableKibanaPrivateDomainPublic() {
         return this.enableKibanaPrivateDomainPublic;
     }
     /**
-     * @return Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+     * @return Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
      * 
      */
     public Boolean enableKibanaPrivateNetwork() {
         return this.enableKibanaPrivateNetwork;
     }
     /**
-     * @return Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+     * @return Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
      * 
      */
     public Boolean enableKibanaPublicNetwork() {
         return this.enableKibanaPublicNetwork;
     }
     /**
-     * @return 实例所绑定的 EIP。
+     * @return EIP bound to the instance.
      * 
      */
     public String esEip() {
         return this.esEip;
     }
     /**
-     * @return 实例所绑定的 EIP 的 ID。
+     * @return ID of the EIP bound to the instance
      * 
      */
     public String esEipId() {
         return this.esEipId;
     }
     /**
-     * @return 实例私网访问地址。
+     * @return Instance private network access address.
      * 
      */
     public String esPrivateEndpoint() {
         return this.esPrivateEndpoint;
     }
     /**
-     * @return 实例私网地址访问白名单。同 ESPrivateIpWhitelist
+     * @return Instance private network address access allowlist. Same as ESPrivateIpWhitelist
      * 
      */
     public String esPrivateIpAllowList() {
         return this.esPrivateIpAllowList;
     }
     /**
-     * @return 实例私网地址访问白名单。
+     * @return Instance private network address access allowlist
      * 
      */
     public String esPrivateIpWhitelist() {
         return this.esPrivateIpWhitelist;
     }
     /**
-     * @return ES公网带宽，单位:Mbps。
+     * @return ES public network bandwidth, unit: Mbps.
      * 
      */
     public Integer esPubBandwidth() {
         return this.esPubBandwidth;
     }
     /**
-     * @return 实例公网访问地址。
+     * @return Instance public access address
      * 
      */
     public String esPublicEndpoint() {
         return this.esPublicEndpoint;
     }
     /**
-     * @return 实例公网地址访问白名单。同 ESPublicIpWhitelist
+     * @return Instance public IP address access allowlist. Same as ESPublicIpWhitelist
      * 
      */
     public String esPublicIpAllowList() {
         return this.esPublicIpAllowList;
     }
     /**
-     * @return 实例公网地址访问白名单。
+     * @return Allowlist for instance public network address access.
      * 
      */
     public String esPublicIpWhitelist() {
         return this.esPublicIpWhitelist;
     }
     /**
-     * @return 包年包月实例的付费过期时间。
+     * @return Expiration time for subscription instance payment
      * 
      */
     public String expireDate() {
@@ -406,154 +406,154 @@ public final class GetInstanceResult {
         return this.id;
     }
     /**
-     * @return 实例配置详情信息。
+     * @return Instance configuration details
      * 
      */
     public GetInstanceInstanceConfiguration instanceConfiguration() {
         return this.instanceConfiguration;
     }
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return Kibana 参数配置。
+     * @return Kibana parameter configuration
      * 
      */
     public GetInstanceKibanaConfig kibanaConfig() {
         return this.kibanaConfig;
     }
     /**
-     * @return Kibana 所绑定的 EIP。
+     * @return EIP bound to Kibana
      * 
      */
     public String kibanaEip() {
         return this.kibanaEip;
     }
     /**
-     * @return Kibana 所绑定的 EIP 的 ID。
+     * @return ID of the EIP bound to Kibana.
      * 
      */
     public String kibanaEipId() {
         return this.kibanaEipId;
     }
     /**
-     * @return Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * @return Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
      * 
      */
     public String kibanaPrivateDomain() {
         return this.kibanaPrivateDomain;
     }
     /**
-     * @return Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+     * @return Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
      * 
      */
     public String kibanaPrivateIpAllowList() {
         return this.kibanaPrivateIpAllowList;
     }
     /**
-     * @return Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+     * @return Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
      * 
      */
     public String kibanaPrivateIpWhitelist() {
         return this.kibanaPrivateIpWhitelist;
     }
     /**
-     * @return Kibana公网带宽，单位: Mbps
+     * @return Kibana public network bandwidth, unit: Mbps
      * 
      */
     public Integer kibanaPubBandwidth() {
         return this.kibanaPubBandwidth;
     }
     /**
-     * @return Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * @return Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     public String kibanaPublicDomain() {
         return this.kibanaPublicDomain;
     }
     /**
-     * @return Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+     * @return Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
      * 
      */
     public String kibanaPublicIpAllowList() {
         return this.kibanaPublicIpAllowList;
     }
     /**
-     * @return Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+     * @return Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
      * 
      */
     public String kibanaPublicIpWhitelist() {
         return this.kibanaPublicIpWhitelist;
     }
     /**
-     * @return 主可用区
+     * @return Primary availability zone
      * 
      */
     public String mainZoneId() {
         return this.mainZoneId;
     }
     /**
-     * @return 实例的可维护日期。
+     * @return Instance maintenance date.
      * 
      */
     public List<String> maintenanceDays() {
         return this.maintenanceDays;
     }
     /**
-     * @return 实例的可维护时间段。
+     * @return Instance maintenance window.
      * 
      */
     public String maintenanceTime() {
         return this.maintenanceTime;
     }
     /**
-     * @return 实例当前状态。
+     * @return Current instance status
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 子实例开启情况。
+     * @return Sub-instance activation status
      * 
      */
     public String subInstanceEnable() {
         return this.subInstanceEnable;
     }
     /**
-     * @return 企业级 SQL 分析实例配置信息。
+     * @return Enterprise SQL analytics instance configuration information
      * 
      */
     public List<GetInstanceSubInstance> subInstances() {
         return this.subInstances;
     }
     /**
-     * @return 是否支持冷节点。
+     * @return Whether cold nodes are supported
      * 
      */
     public Boolean supportColdNode() {
         return this.supportColdNode;
     }
     /**
-     * @return 实例的总节点数。
+     * @return Total number of nodes in the instance
      * 
      */
     public Integer totalNodes() {
         return this.totalNodes;
     }
     /**
-     * @return 数据迁移任务信息。
+     * @return Data migration task information
      * 
      */
     public GetInstanceTransferInfo transferInfo() {
         return this.transferInfo;
     }
     /**
-     * @return 实例所有者的用户 ID。
+     * @return Instance owner&#39;s user ID
      * 
      */
     public String userId() {

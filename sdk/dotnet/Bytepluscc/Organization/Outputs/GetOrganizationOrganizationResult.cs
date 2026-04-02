@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization.Outputs
     public sealed class GetOrganizationOrganizationResult
     {
         /// <summary>
-        /// 创建时间
+        /// Creation Time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 描述
+        /// Description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 组织名称
+        /// Organization Name
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 管理员ID
+        /// Administrator ID
         /// </summary>
         public readonly string Owner;
         /// <summary>
-        /// 状态
+        /// Status
         /// </summary>
         public readonly int Status;
         /// <summary>
-        /// 组织类型，企业组织固定是 1
+        /// Organization type, enterprise organization is always 1
         /// </summary>
         public readonly int Type;
         /// <summary>
-        /// 更新时间
+        /// Last Updated
         /// </summary>
         public readonly string UpdatedTime;
 

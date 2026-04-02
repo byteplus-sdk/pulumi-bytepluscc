@@ -16,42 +16,42 @@ import java.util.Objects;
 @CustomType
 public final class GetDnsControlPolicyResult {
     /**
-     * @return 用户的唯一标识ID。
+     * @return User&#39;s unique identifier.
      * 
      */
     private String accountId;
     /**
-     * @return 策略的描述信息。
+     * @return Policy description information.
      * 
      */
     private String description;
     /**
-     * @return 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+     * @return Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
      * 
      */
     private String destination;
     /**
-     * @return 域名地址簿名称列表。
+     * @return Domain address book name list.
      * 
      */
     private List<String> destinationGroupLists;
     /**
-     * @return 访问目的的类型。domain：域名；group：域名地址簿。
+     * @return Type of access target. domain: domain; group: domain address book.
      * 
      */
     private String destinationType;
     /**
-     * @return 域名地址簿的域名列表。
+     * @return Domain list in the domain address book.
      * 
      */
     private List<GetDnsControlPolicyDomainListV1> domainListV1s;
     /**
-     * @return 域名列表。
+     * @return Domain list.
      * 
      */
     private List<String> domainLists;
     /**
-     * @return 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+     * @return Hit count, indicating the number of times the domain denylist access control policy was triggered.
      * 
      */
     private Integer hitCnt;
@@ -61,88 +61,88 @@ public final class GetDnsControlPolicyResult {
      */
     private String id;
     /**
-     * @return 互联网边界防火墙实例ID。
+     * @return Internet border firewall instance ID.
      * 
      */
     private String internetFirewallId;
     /**
-     * @return 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+     * @return Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
      * 
      */
     private Integer lastHitTime;
     /**
-     * @return 访问控制策略的唯一标识ID。
+     * @return Unique identifier of the access control policy.
      * 
      */
     private String ruleId;
     /**
-     * @return 访问源信息，包含VPC列表。
+     * @return Access source information, including VPC list.
      * 
      */
     private List<GetDnsControlPolicySource> sources;
     /**
-     * @return 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+     * @return Switch status of the domain denylist access control policy. false: Off; true: On.
      * 
      */
     private Boolean status;
     /**
-     * @return 该域名黑名单访问控制策略占用的策略数量。
+     * @return Number of policies occupied by this domain denylist access control policy.
      * 
      */
     private Integer useCount;
 
     private GetDnsControlPolicyResult() {}
     /**
-     * @return 用户的唯一标识ID。
+     * @return User&#39;s unique identifier.
      * 
      */
     public String accountId() {
         return this.accountId;
     }
     /**
-     * @return 策略的描述信息。
+     * @return Policy description information.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+     * @return Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
      * 
      */
     public String destination() {
         return this.destination;
     }
     /**
-     * @return 域名地址簿名称列表。
+     * @return Domain address book name list.
      * 
      */
     public List<String> destinationGroupLists() {
         return this.destinationGroupLists;
     }
     /**
-     * @return 访问目的的类型。domain：域名；group：域名地址簿。
+     * @return Type of access target. domain: domain; group: domain address book.
      * 
      */
     public String destinationType() {
         return this.destinationType;
     }
     /**
-     * @return 域名地址簿的域名列表。
+     * @return Domain list in the domain address book.
      * 
      */
     public List<GetDnsControlPolicyDomainListV1> domainListV1s() {
         return this.domainListV1s;
     }
     /**
-     * @return 域名列表。
+     * @return Domain list.
      * 
      */
     public List<String> domainLists() {
         return this.domainLists;
     }
     /**
-     * @return 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+     * @return Hit count, indicating the number of times the domain denylist access control policy was triggered.
      * 
      */
     public Integer hitCnt() {
@@ -156,42 +156,42 @@ public final class GetDnsControlPolicyResult {
         return this.id;
     }
     /**
-     * @return 互联网边界防火墙实例ID。
+     * @return Internet border firewall instance ID.
      * 
      */
     public String internetFirewallId() {
         return this.internetFirewallId;
     }
     /**
-     * @return 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+     * @return Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
      * 
      */
     public Integer lastHitTime() {
         return this.lastHitTime;
     }
     /**
-     * @return 访问控制策略的唯一标识ID。
+     * @return Unique identifier of the access control policy.
      * 
      */
     public String ruleId() {
         return this.ruleId;
     }
     /**
-     * @return 访问源信息，包含VPC列表。
+     * @return Access source information, including VPC list.
      * 
      */
     public List<GetDnsControlPolicySource> sources() {
         return this.sources;
     }
     /**
-     * @return 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+     * @return Switch status of the domain denylist access control policy. false: Off; true: On.
      * 
      */
     public Boolean status() {
         return this.status;
     }
     /**
-     * @return 该域名黑名单访问控制策略占用的策略数量。
+     * @return Number of policies occupied by this domain denylist access control policy.
      * 
      */
     public Integer useCount() {

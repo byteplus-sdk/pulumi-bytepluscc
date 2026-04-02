@@ -13,86 +13,86 @@ import javax.annotation.Nullable;
 @CustomType
 public final class EndpointCertificate {
     /**
-     * @return X509私有证书过期的时间。使用秒级时间戳表示。
+     * @return X509 private certificate expiration time, represented as a timestamp in seconds
      * 
      */
     private @Nullable Integer notAfter;
     /**
-     * @return X509私有证书开始生效的时间。使用秒级时间戳表示。
+     * @return X509 private certificate activation time, represented as a timestamp in seconds
      * 
      */
     private @Nullable Integer notBefore;
     /**
-     * @return 证书方。
+     * @return Certificate subject
      * 
      */
     private @Nullable String pcaHost;
     /**
-     * @return PEM 格式的叶子证书。
+     * @return PEM format leaf certificate
      * 
      */
     private @Nullable String pcaInstanceCertificate;
     /**
-     * @return 证书名称。
+     * @return Certificate name
      * 
      */
     private @Nullable String pcaName;
     /**
-     * @return PEM 格式的根证书。
+     * @return PEM format root certificate
      * 
      */
     private @Nullable String pcaRootCaCertificate;
     /**
-     * @return PEM 格式的中间根证书和根证书。
+     * @return Intermediate certificate and root certificate in PEM format
      * 
      */
     private @Nullable String pcaSubCaCertificate;
 
     private EndpointCertificate() {}
     /**
-     * @return X509私有证书过期的时间。使用秒级时间戳表示。
+     * @return X509 private certificate expiration time, represented as a timestamp in seconds
      * 
      */
     public Optional<Integer> notAfter() {
         return Optional.ofNullable(this.notAfter);
     }
     /**
-     * @return X509私有证书开始生效的时间。使用秒级时间戳表示。
+     * @return X509 private certificate activation time, represented as a timestamp in seconds
      * 
      */
     public Optional<Integer> notBefore() {
         return Optional.ofNullable(this.notBefore);
     }
     /**
-     * @return 证书方。
+     * @return Certificate subject
      * 
      */
     public Optional<String> pcaHost() {
         return Optional.ofNullable(this.pcaHost);
     }
     /**
-     * @return PEM 格式的叶子证书。
+     * @return PEM format leaf certificate
      * 
      */
     public Optional<String> pcaInstanceCertificate() {
         return Optional.ofNullable(this.pcaInstanceCertificate);
     }
     /**
-     * @return 证书名称。
+     * @return Certificate name
      * 
      */
     public Optional<String> pcaName() {
         return Optional.ofNullable(this.pcaName);
     }
     /**
-     * @return PEM 格式的根证书。
+     * @return PEM format root certificate
      * 
      */
     public Optional<String> pcaRootCaCertificate() {
         return Optional.ofNullable(this.pcaRootCaCertificate);
     }
     /**
-     * @return PEM 格式的中间根证书和根证书。
+     * @return Intermediate certificate and root certificate in PEM format
      * 
      */
     public Optional<String> pcaSubCaCertificate() {

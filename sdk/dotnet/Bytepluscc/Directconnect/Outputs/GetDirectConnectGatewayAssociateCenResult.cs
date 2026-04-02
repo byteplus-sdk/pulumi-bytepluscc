@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Directconnect.Outputs
     public sealed class GetDirectConnectGatewayAssociateCenResult
     {
         /// <summary>
-        /// CEN的ID。
+        /// ID of CEN.
         /// </summary>
         public readonly string CenId;
         /// <summary>
-        /// CEN的用户ID。
+        /// User ID of CEN.
         /// </summary>
         public readonly string CenOwnerId;
         /// <summary>
-        /// 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+        /// Status of the instance in CEN. Attaching: attaching. Attached: attached.
         /// </summary>
         public readonly string CenStatus;
 

@@ -14,50 +14,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamLoadBalancerSettings {
     /**
-     * @return 一致性哈希负载均衡。
+     * @return Consistent Hash Load Balancing
      * 
      */
     private @Nullable UpstreamLoadBalancerSettingsConsistentHashLb consistentHashLb;
     /**
-     * @return 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+     * @return Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
      * 
      */
     private @Nullable String lbPolicy;
     /**
-     * @return 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+     * @return Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
      * 
      */
     private @Nullable String simpleLb;
     /**
-     * @return 预热时间。单位为秒。
+     * @return Warm-up time (seconds)
      * 
      */
     private @Nullable Integer warmupDuration;
 
     private UpstreamLoadBalancerSettings() {}
     /**
-     * @return 一致性哈希负载均衡。
+     * @return Consistent Hash Load Balancing
      * 
      */
     public Optional<UpstreamLoadBalancerSettingsConsistentHashLb> consistentHashLb() {
         return Optional.ofNullable(this.consistentHashLb);
     }
     /**
-     * @return 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+     * @return Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
      * 
      */
     public Optional<String> lbPolicy() {
         return Optional.ofNullable(this.lbPolicy);
     }
     /**
-     * @return 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+     * @return Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
      * 
      */
     public Optional<String> simpleLb() {
         return Optional.ofNullable(this.simpleLb);
     }
     /**
-     * @return 预热时间。单位为秒。
+     * @return Warm-up time (seconds)
      * 
      */
     public Optional<Integer> warmupDuration() {

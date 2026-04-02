@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// API网关(Gateway)是API管理服务的核心组件，负责接收、处理、转发API请求，并提供安全认证、流量控制等功能。
+// API Gateway (Gateway) is the core component of the API management service. It receives, processes, and forwards API requests, and provides security authentication, traffic control, and other features
 //
 // ## Import
 //
@@ -22,40 +22,40 @@ import (
 type Gateway struct {
 	pulumi.CustomResourceState
 
-	// 后端服务配置信息。
+	// Backend service configuration information
 	BackendSpec GatewayBackendSpecOutput `pulumi:"backendSpec"`
-	// 网关备注信息。长度限制为0~253个字符。
+	// Gateway remarks. Length limit: 0–253 characters.
 	Comments pulumi.StringOutput `pulumi:"comments"`
-	// 网关创建时间。
+	// Gateway creation time
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 自定义日志配置。
+	// Custom log configuration
 	CustomLog GatewayCustomLogOutput  `pulumi:"customLog"`
 	Events    GatewayEventArrayOutput `pulumi:"events"`
-	// 网关实例ID。
+	// Gateway instance ID
 	GatewayId pulumi.StringOutput `pulumi:"gatewayId"`
-	// 日志配置。
+	// Log configuration
 	LogSpec GatewayLogSpecOutput `pulumi:"logSpec"`
-	// 网关创建失败、删除失败或异常时的错误信息。
+	// Error message for gateway creation failure, deletion failure, or abnormal status
 	Message pulumi.StringOutput `pulumi:"message"`
-	// 监控配置信息。
+	// Monitoring configuration information
 	MonitorSpec GatewayMonitorSpecOutput `pulumi:"monitorSpec"`
-	// 网关名称。
+	// Gateway name
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 网络配置信息。
+	// Network configuration information
 	NetworkSpec GatewayNetworkSpecOutput `pulumi:"networkSpec"`
-	// 项目名称。
+	// Project name
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 资源规格配置信息。
+	// Resource specification configuration information
 	ResourceSpec GatewayResourceSpecOutput `pulumi:"resourceSpec"`
-	// 网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+	// Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
 	Status pulumi.StringOutput `pulumi:"status"`
-	// 子网ID列表。长度限制为1~2个。
+	// Subnet ID list. Length limit: 1–2
 	SubnetIds pulumi.StringArrayOutput `pulumi:"subnetIds"`
-	// 链路追踪配置信息。
+	// Link tracing configuration information.
 	TraceSpec GatewayTraceSpecOutput `pulumi:"traceSpec"`
-	// 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+	// Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
 	Type pulumi.StringOutput `pulumi:"type"`
-	// 网关版本。
+	// Gateway version.
 	Version pulumi.StringOutput `pulumi:"version"`
 	// VPC ID。
 	VpcId pulumi.StringOutput `pulumi:"vpcId"`
@@ -94,80 +94,80 @@ func GetGateway(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Gateway resources.
 type gatewayState struct {
-	// 后端服务配置信息。
+	// Backend service configuration information
 	BackendSpec *GatewayBackendSpec `pulumi:"backendSpec"`
-	// 网关备注信息。长度限制为0~253个字符。
+	// Gateway remarks. Length limit: 0–253 characters.
 	Comments *string `pulumi:"comments"`
-	// 网关创建时间。
+	// Gateway creation time
 	CreatedTime *string `pulumi:"createdTime"`
-	// 自定义日志配置。
+	// Custom log configuration
 	CustomLog *GatewayCustomLog `pulumi:"customLog"`
 	Events    []GatewayEvent    `pulumi:"events"`
-	// 网关实例ID。
+	// Gateway instance ID
 	GatewayId *string `pulumi:"gatewayId"`
-	// 日志配置。
+	// Log configuration
 	LogSpec *GatewayLogSpec `pulumi:"logSpec"`
-	// 网关创建失败、删除失败或异常时的错误信息。
+	// Error message for gateway creation failure, deletion failure, or abnormal status
 	Message *string `pulumi:"message"`
-	// 监控配置信息。
+	// Monitoring configuration information
 	MonitorSpec *GatewayMonitorSpec `pulumi:"monitorSpec"`
-	// 网关名称。
+	// Gateway name
 	Name *string `pulumi:"name"`
-	// 网络配置信息。
+	// Network configuration information
 	NetworkSpec *GatewayNetworkSpec `pulumi:"networkSpec"`
-	// 项目名称。
+	// Project name
 	ProjectName *string `pulumi:"projectName"`
-	// 资源规格配置信息。
+	// Resource specification configuration information
 	ResourceSpec *GatewayResourceSpec `pulumi:"resourceSpec"`
-	// 网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+	// Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
 	Status *string `pulumi:"status"`
-	// 子网ID列表。长度限制为1~2个。
+	// Subnet ID list. Length limit: 1–2
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 链路追踪配置信息。
+	// Link tracing configuration information.
 	TraceSpec *GatewayTraceSpec `pulumi:"traceSpec"`
-	// 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+	// Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
 	Type *string `pulumi:"type"`
-	// 网关版本。
+	// Gateway version.
 	Version *string `pulumi:"version"`
 	// VPC ID。
 	VpcId *string `pulumi:"vpcId"`
 }
 
 type GatewayState struct {
-	// 后端服务配置信息。
+	// Backend service configuration information
 	BackendSpec GatewayBackendSpecPtrInput
-	// 网关备注信息。长度限制为0~253个字符。
+	// Gateway remarks. Length limit: 0–253 characters.
 	Comments pulumi.StringPtrInput
-	// 网关创建时间。
+	// Gateway creation time
 	CreatedTime pulumi.StringPtrInput
-	// 自定义日志配置。
+	// Custom log configuration
 	CustomLog GatewayCustomLogPtrInput
 	Events    GatewayEventArrayInput
-	// 网关实例ID。
+	// Gateway instance ID
 	GatewayId pulumi.StringPtrInput
-	// 日志配置。
+	// Log configuration
 	LogSpec GatewayLogSpecPtrInput
-	// 网关创建失败、删除失败或异常时的错误信息。
+	// Error message for gateway creation failure, deletion failure, or abnormal status
 	Message pulumi.StringPtrInput
-	// 监控配置信息。
+	// Monitoring configuration information
 	MonitorSpec GatewayMonitorSpecPtrInput
-	// 网关名称。
+	// Gateway name
 	Name pulumi.StringPtrInput
-	// 网络配置信息。
+	// Network configuration information
 	NetworkSpec GatewayNetworkSpecPtrInput
-	// 项目名称。
+	// Project name
 	ProjectName pulumi.StringPtrInput
-	// 资源规格配置信息。
+	// Resource specification configuration information
 	ResourceSpec GatewayResourceSpecPtrInput
-	// 网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+	// Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
 	Status pulumi.StringPtrInput
-	// 子网ID列表。长度限制为1~2个。
+	// Subnet ID list. Length limit: 1–2
 	SubnetIds pulumi.StringArrayInput
-	// 链路追踪配置信息。
+	// Link tracing configuration information.
 	TraceSpec GatewayTraceSpecPtrInput
-	// 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+	// Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
 	Type pulumi.StringPtrInput
-	// 网关版本。
+	// Gateway version.
 	Version pulumi.StringPtrInput
 	// VPC ID。
 	VpcId pulumi.StringPtrInput
@@ -178,25 +178,25 @@ func (GatewayState) ElementType() reflect.Type {
 }
 
 type gatewayArgs struct {
-	// 网关备注信息。长度限制为0~253个字符。
+	// Gateway remarks. Length limit: 0–253 characters.
 	Comments *string `pulumi:"comments"`
-	// 自定义日志配置。
+	// Custom log configuration
 	CustomLog *GatewayCustomLog `pulumi:"customLog"`
-	// 日志配置。
+	// Log configuration
 	LogSpec *GatewayLogSpec `pulumi:"logSpec"`
-	// 监控配置信息。
+	// Monitoring configuration information
 	MonitorSpec *GatewayMonitorSpec `pulumi:"monitorSpec"`
-	// 网关名称。
+	// Gateway name
 	Name string `pulumi:"name"`
-	// 项目名称。
+	// Project name
 	ProjectName *string `pulumi:"projectName"`
-	// 资源规格配置信息。
+	// Resource specification configuration information
 	ResourceSpec *GatewayResourceSpec `pulumi:"resourceSpec"`
-	// 子网ID列表。长度限制为1~2个。
+	// Subnet ID list. Length limit: 1–2
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 链路追踪配置信息。
+	// Link tracing configuration information.
 	TraceSpec *GatewayTraceSpec `pulumi:"traceSpec"`
-	// 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+	// Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
 	Type *string `pulumi:"type"`
 	// VPC ID。
 	VpcId *string `pulumi:"vpcId"`
@@ -204,25 +204,25 @@ type gatewayArgs struct {
 
 // The set of arguments for constructing a Gateway resource.
 type GatewayArgs struct {
-	// 网关备注信息。长度限制为0~253个字符。
+	// Gateway remarks. Length limit: 0–253 characters.
 	Comments pulumi.StringPtrInput
-	// 自定义日志配置。
+	// Custom log configuration
 	CustomLog GatewayCustomLogPtrInput
-	// 日志配置。
+	// Log configuration
 	LogSpec GatewayLogSpecPtrInput
-	// 监控配置信息。
+	// Monitoring configuration information
 	MonitorSpec GatewayMonitorSpecPtrInput
-	// 网关名称。
+	// Gateway name
 	Name pulumi.StringInput
-	// 项目名称。
+	// Project name
 	ProjectName pulumi.StringPtrInput
-	// 资源规格配置信息。
+	// Resource specification configuration information
 	ResourceSpec GatewayResourceSpecPtrInput
-	// 子网ID列表。长度限制为1~2个。
+	// Subnet ID list. Length limit: 1–2
 	SubnetIds pulumi.StringArrayInput
-	// 链路追踪配置信息。
+	// Link tracing configuration information.
 	TraceSpec GatewayTraceSpecPtrInput
-	// 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+	// Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
 	Type pulumi.StringPtrInput
 	// VPC ID。
 	VpcId pulumi.StringPtrInput
@@ -315,22 +315,22 @@ func (o GatewayOutput) ToGatewayOutputWithContext(ctx context.Context) GatewayOu
 	return o
 }
 
-// 后端服务配置信息。
+// Backend service configuration information
 func (o GatewayOutput) BackendSpec() GatewayBackendSpecOutput {
 	return o.ApplyT(func(v *Gateway) GatewayBackendSpecOutput { return v.BackendSpec }).(GatewayBackendSpecOutput)
 }
 
-// 网关备注信息。长度限制为0~253个字符。
+// Gateway remarks. Length limit: 0–253 characters.
 func (o GatewayOutput) Comments() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.Comments }).(pulumi.StringOutput)
 }
 
-// 网关创建时间。
+// Gateway creation time
 func (o GatewayOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 自定义日志配置。
+// Custom log configuration
 func (o GatewayOutput) CustomLog() GatewayCustomLogOutput {
 	return o.ApplyT(func(v *Gateway) GatewayCustomLogOutput { return v.CustomLog }).(GatewayCustomLogOutput)
 }
@@ -339,67 +339,67 @@ func (o GatewayOutput) Events() GatewayEventArrayOutput {
 	return o.ApplyT(func(v *Gateway) GatewayEventArrayOutput { return v.Events }).(GatewayEventArrayOutput)
 }
 
-// 网关实例ID。
+// Gateway instance ID
 func (o GatewayOutput) GatewayId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.GatewayId }).(pulumi.StringOutput)
 }
 
-// 日志配置。
+// Log configuration
 func (o GatewayOutput) LogSpec() GatewayLogSpecOutput {
 	return o.ApplyT(func(v *Gateway) GatewayLogSpecOutput { return v.LogSpec }).(GatewayLogSpecOutput)
 }
 
-// 网关创建失败、删除失败或异常时的错误信息。
+// Error message for gateway creation failure, deletion failure, or abnormal status
 func (o GatewayOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.Message }).(pulumi.StringOutput)
 }
 
-// 监控配置信息。
+// Monitoring configuration information
 func (o GatewayOutput) MonitorSpec() GatewayMonitorSpecOutput {
 	return o.ApplyT(func(v *Gateway) GatewayMonitorSpecOutput { return v.MonitorSpec }).(GatewayMonitorSpecOutput)
 }
 
-// 网关名称。
+// Gateway name
 func (o GatewayOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 网络配置信息。
+// Network configuration information
 func (o GatewayOutput) NetworkSpec() GatewayNetworkSpecOutput {
 	return o.ApplyT(func(v *Gateway) GatewayNetworkSpecOutput { return v.NetworkSpec }).(GatewayNetworkSpecOutput)
 }
 
-// 项目名称。
+// Project name
 func (o GatewayOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 资源规格配置信息。
+// Resource specification configuration information
 func (o GatewayOutput) ResourceSpec() GatewayResourceSpecOutput {
 	return o.ApplyT(func(v *Gateway) GatewayResourceSpecOutput { return v.ResourceSpec }).(GatewayResourceSpecOutput)
 }
 
-// 网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+// Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
 func (o GatewayOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// 子网ID列表。长度限制为1~2个。
+// Subnet ID list. Length limit: 1–2
 func (o GatewayOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringArrayOutput { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 链路追踪配置信息。
+// Link tracing configuration information.
 func (o GatewayOutput) TraceSpec() GatewayTraceSpecOutput {
 	return o.ApplyT(func(v *Gateway) GatewayTraceSpecOutput { return v.TraceSpec }).(GatewayTraceSpecOutput)
 }
 
-// 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+// Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
 func (o GatewayOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-// 网关版本。
+// Gateway version.
 func (o GatewayOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }

@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 消息队列 RabbitMQ版支持开启公网访问，开启后，您可以通过公网访问 RabbitMQ 实例。
+ * RabbitMQ supports enabling public access. Once enabled, you can access the RabbitMQ instance via the public network.
  *
  * ## Example Usage
  *
@@ -56,89 +56,89 @@ export class PublicAddress extends pulumi.CustomResource {
     }
 
     /**
-     * 创建实例的主账号ID。
+     * Main account ID that created the instance.
      */
     public /*out*/ readonly accountId!: pulumi.Output<string>;
     /**
-     * 是否已开启公网解析功能。true：已开启, false：已关闭。
+     * Whether public DNS resolution is enabled. true: enabled, false: disabled.
      */
     public /*out*/ readonly applyPrivateDnsToPublic!: pulumi.Output<boolean>;
     /**
-     * 实例的类型，即集群版或单机版。
+     * Instance type: cluster or standalone.
      */
     public /*out*/ readonly archType!: pulumi.Output<string>;
     /**
-     * 实例的计费方式等计费信息。
+     * Instance billing method and related billing information.
      */
     public /*out*/ readonly chargeDetail!: pulumi.Output<outputs.rabbitmq.PublicAddressChargeDetail>;
     /**
-     * RabbitMQ实例的计算规格。
+     * RabbitMQ instance compute specification.
      */
     public /*out*/ readonly computeSpec!: pulumi.Output<string>;
     /**
-     * 实例的创建时间。
+     * Instance creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * EIP的ID。
+     * EIP ID.
      */
     public readonly eipId!: pulumi.Output<string>;
     public /*out*/ readonly endpoints!: pulumi.Output<outputs.rabbitmq.PublicAddressEndpoint[]>;
     /**
-     * 实例的简单描述。
+     * Brief description of the instance.
      */
     public /*out*/ readonly instanceDescription!: pulumi.Output<string>;
     /**
-     * RabbitMQ 实例 ID。
+     * RabbitMQ instance ID.
      */
     public readonly instanceId!: pulumi.Output<string>;
     /**
-     * RabbitMQ 实例名称。
+     * RabbitMQ instance name.
      */
     public /*out*/ readonly instanceName!: pulumi.Output<string>;
     /**
-     * 实例状态。
+     * Instance status.
      */
     public /*out*/ readonly instanceStatus!: pulumi.Output<string>;
     /**
-     * 是否开启了云盘加密。
+     * Whether cloud disk encryption is enabled.
      */
     public /*out*/ readonly isEncrypted!: pulumi.Output<boolean>;
     /**
-     * 实例所属的IAM项目。
+     * IAM project the instance belongs to.
      */
     public /*out*/ readonly projectName!: pulumi.Output<string>;
     /**
-     * 实例总存储空间。单位为 GiB。
+     * Total storage space of the instance, in GiB.
      */
     public /*out*/ readonly storageSpace!: pulumi.Output<number>;
     /**
-     * VPC的子网ID。
+     * VPC subnet ID.
      */
     public /*out*/ readonly subnetId!: pulumi.Output<string>;
     public /*out*/ readonly tags!: pulumi.Output<outputs.rabbitmq.PublicAddressTag[]>;
     /**
-     * 实例已用存储空间。单位为 GiB。
+     * Used storage space of the instance, in GiB.
      */
     public /*out*/ readonly usedStorageSpace!: pulumi.Output<number>;
     /**
-     * RabbitMQ WebUI管理员账号名。
+     * RabbitMQ WebUI administrator account name.
      */
     public /*out*/ readonly userName!: pulumi.Output<string>;
     /**
-     * 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+     * Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
      */
     public /*out*/ readonly version!: pulumi.Output<string>;
     /**
-     * 私有网络（VPC）ID。
+     * Private network (VPC) ID.
      */
     public /*out*/ readonly vpcId!: pulumi.Output<string>;
     /**
-     * 可用区的描述信息。
+     * Description of the availability zone.
      */
     public /*out*/ readonly zoneDescription!: pulumi.Output<string>;
     /**
-     * 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+     * Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
      */
     public /*out*/ readonly zoneId!: pulumi.Output<string>;
 
@@ -220,89 +220,89 @@ export class PublicAddress extends pulumi.CustomResource {
  */
 export interface PublicAddressState {
     /**
-     * 创建实例的主账号ID。
+     * Main account ID that created the instance.
      */
     accountId?: pulumi.Input<string>;
     /**
-     * 是否已开启公网解析功能。true：已开启, false：已关闭。
+     * Whether public DNS resolution is enabled. true: enabled, false: disabled.
      */
     applyPrivateDnsToPublic?: pulumi.Input<boolean>;
     /**
-     * 实例的类型，即集群版或单机版。
+     * Instance type: cluster or standalone.
      */
     archType?: pulumi.Input<string>;
     /**
-     * 实例的计费方式等计费信息。
+     * Instance billing method and related billing information.
      */
     chargeDetail?: pulumi.Input<inputs.rabbitmq.PublicAddressChargeDetail>;
     /**
-     * RabbitMQ实例的计算规格。
+     * RabbitMQ instance compute specification.
      */
     computeSpec?: pulumi.Input<string>;
     /**
-     * 实例的创建时间。
+     * Instance creation time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * EIP的ID。
+     * EIP ID.
      */
     eipId?: pulumi.Input<string>;
     endpoints?: pulumi.Input<pulumi.Input<inputs.rabbitmq.PublicAddressEndpoint>[]>;
     /**
-     * 实例的简单描述。
+     * Brief description of the instance.
      */
     instanceDescription?: pulumi.Input<string>;
     /**
-     * RabbitMQ 实例 ID。
+     * RabbitMQ instance ID.
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * RabbitMQ 实例名称。
+     * RabbitMQ instance name.
      */
     instanceName?: pulumi.Input<string>;
     /**
-     * 实例状态。
+     * Instance status.
      */
     instanceStatus?: pulumi.Input<string>;
     /**
-     * 是否开启了云盘加密。
+     * Whether cloud disk encryption is enabled.
      */
     isEncrypted?: pulumi.Input<boolean>;
     /**
-     * 实例所属的IAM项目。
+     * IAM project the instance belongs to.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 实例总存储空间。单位为 GiB。
+     * Total storage space of the instance, in GiB.
      */
     storageSpace?: pulumi.Input<number>;
     /**
-     * VPC的子网ID。
+     * VPC subnet ID.
      */
     subnetId?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.rabbitmq.PublicAddressTag>[]>;
     /**
-     * 实例已用存储空间。单位为 GiB。
+     * Used storage space of the instance, in GiB.
      */
     usedStorageSpace?: pulumi.Input<number>;
     /**
-     * RabbitMQ WebUI管理员账号名。
+     * RabbitMQ WebUI administrator account name.
      */
     userName?: pulumi.Input<string>;
     /**
-     * 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+     * Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
      */
     version?: pulumi.Input<string>;
     /**
-     * 私有网络（VPC）ID。
+     * Private network (VPC) ID.
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * 可用区的描述信息。
+     * Description of the availability zone.
      */
     zoneDescription?: pulumi.Input<string>;
     /**
-     * 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+     * Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
      */
     zoneId?: pulumi.Input<string>;
 }
@@ -312,11 +312,11 @@ export interface PublicAddressState {
  */
 export interface PublicAddressArgs {
     /**
-     * EIP的ID。
+     * EIP ID.
      */
     eipId: pulumi.Input<string>;
     /**
-     * RabbitMQ 实例 ID。
+     * RabbitMQ instance ID.
      */
     instanceId: pulumi.Input<string>;
 }

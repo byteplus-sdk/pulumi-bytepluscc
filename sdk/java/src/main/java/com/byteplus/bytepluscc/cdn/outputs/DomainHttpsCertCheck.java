@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class DomainHttpsCertCheck {
     private @Nullable List<DomainHttpsCertCheckCertInfoList> certInfoLists;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
      * 
      */
     private @Nullable Boolean switch_;
@@ -25,7 +25,7 @@ public final class DomainHttpsCertCheck {
         return this.certInfoLists == null ? List.of() : this.certInfoLists;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
      * 
      */
     public Optional<Boolean> switch_() {

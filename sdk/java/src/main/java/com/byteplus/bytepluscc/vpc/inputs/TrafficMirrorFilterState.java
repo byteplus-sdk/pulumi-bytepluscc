@@ -20,14 +20,14 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
     public static final TrafficMirrorFilterState Empty = new TrafficMirrorFilterState();
 
     /**
-     * 筛选条件的创建时间。
+     * Filter condition creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 筛选条件的创建时间。
+     * @return Filter condition creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -35,14 +35,14 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 筛选条件实例描述。
+     * Filter condition instance description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 筛选条件实例描述。
+     * @return Filter condition instance description
      * 
      */
     public Optional<Output<String>> description() {
@@ -64,14 +64,14 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 筛选条件所属项目的名称。
+     * Project name of the filter condition
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 筛选条件所属项目的名称。
+     * @return Project name of the filter condition
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -79,14 +79,14 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 筛选条件状态。
+     * Filter condition status
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 筛选条件状态。
+     * @return Filter condition status
      * 
      */
     public Optional<Output<String>> status() {
@@ -101,14 +101,14 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 筛选条件实例ID。
+     * Filter condition instance ID
      * 
      */
     @Import(name="trafficMirrorFilterId")
     private @Nullable Output<String> trafficMirrorFilterId;
 
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     public Optional<Output<String>> trafficMirrorFilterId() {
@@ -116,14 +116,14 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 筛选条件名称。
+     * Filter condition name
      * 
      */
     @Import(name="trafficMirrorFilterName")
     private @Nullable Output<String> trafficMirrorFilterName;
 
     /**
-     * @return 筛选条件名称。
+     * @return Filter condition name
      * 
      */
     public Optional<Output<String>> trafficMirrorFilterName() {
@@ -163,7 +163,7 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param createdTime 筛选条件的创建时间。
+         * @param createdTime Filter condition creation time
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param createdTime 筛选条件的创建时间。
+         * @param createdTime Filter condition creation time
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description 筛选条件实例描述。
+         * @param description Filter condition instance description
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description 筛选条件实例描述。
+         * @param description Filter condition instance description
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param projectName 筛选条件所属项目的名称。
+         * @param projectName Project name of the filter condition
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param projectName 筛选条件所属项目的名称。
+         * @param projectName Project name of the filter condition
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param status 筛选条件状态。
+         * @param status Filter condition status
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param status 筛选条件状态。
+         * @param status Filter condition status
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorFilterId 筛选条件实例ID。
+         * @param trafficMirrorFilterId Filter condition instance ID
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorFilterId 筛选条件实例ID。
+         * @param trafficMirrorFilterId Filter condition instance ID
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorFilterName 筛选条件名称。
+         * @param trafficMirrorFilterName Filter condition name
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorFilterName 筛选条件名称。
+         * @param trafficMirrorFilterName Filter condition name
          * 
          * @return builder
          * 

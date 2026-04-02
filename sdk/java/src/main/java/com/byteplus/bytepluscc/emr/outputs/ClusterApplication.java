@@ -13,98 +13,98 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterApplication {
     /**
-     * @return 应用配置路径。
+     * @return Application configuration path.
      * 
      */
     private @Nullable String applicationConfigHome;
     /**
-     * @return 应用安装路径。
+     * @return Application installation path.
      * 
      */
     private @Nullable String applicationHome;
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     private @Nullable String applicationName;
     /**
-     * @return 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+     * @return Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
      * 
      */
     private @Nullable String applicationState;
     /**
-     * @return 应用版本。
+     * @return Application version.
      * 
      */
     private @Nullable String applicationVersion;
     /**
-     * @return 应用用户组。
+     * @return Application user group.
      * 
      */
     private @Nullable String group;
     /**
-     * @return 是否支持客户端。
+     * @return Whether client is supported.
      * 
      */
     private @Nullable Boolean supportClient;
     /**
-     * @return 应用用户。
+     * @return Application user.
      * 
      */
     private @Nullable String user;
 
     private ClusterApplication() {}
     /**
-     * @return 应用配置路径。
+     * @return Application configuration path.
      * 
      */
     public Optional<String> applicationConfigHome() {
         return Optional.ofNullable(this.applicationConfigHome);
     }
     /**
-     * @return 应用安装路径。
+     * @return Application installation path.
      * 
      */
     public Optional<String> applicationHome() {
         return Optional.ofNullable(this.applicationHome);
     }
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     public Optional<String> applicationName() {
         return Optional.ofNullable(this.applicationName);
     }
     /**
-     * @return 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+     * @return Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
      * 
      */
     public Optional<String> applicationState() {
         return Optional.ofNullable(this.applicationState);
     }
     /**
-     * @return 应用版本。
+     * @return Application version.
      * 
      */
     public Optional<String> applicationVersion() {
         return Optional.ofNullable(this.applicationVersion);
     }
     /**
-     * @return 应用用户组。
+     * @return Application user group.
      * 
      */
     public Optional<String> group() {
         return Optional.ofNullable(this.group);
     }
     /**
-     * @return 是否支持客户端。
+     * @return Whether client is supported.
      * 
      */
     public Optional<Boolean> supportClient() {
         return Optional.ofNullable(this.supportClient);
     }
     /**
-     * @return 应用用户。
+     * @return Application user.
      * 
      */
     public Optional<String> user() {

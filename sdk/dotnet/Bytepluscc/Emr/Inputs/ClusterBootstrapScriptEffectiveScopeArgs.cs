@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
         private InputList<string>? _componentNames;
 
         /// <summary>
-        /// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+        /// Component name list. Required when EffectiveType=COMPONENT_NAME.
         /// </summary>
         public InputList<string> ComponentNames
         {
@@ -26,7 +26,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
         }
 
         /// <summary>
-        /// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+        /// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
         /// </summary>
         [Input("effectiveType")]
         public Input<string>? EffectiveType { get; set; }
@@ -35,7 +35,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
         private InputList<string>? _nodeGroupIds;
 
         /// <summary>
-        /// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+        /// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
         /// </summary>
         public InputList<string> NodeGroupIds
         {
@@ -47,7 +47,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
         private InputList<string>? _nodeGroupNames;
 
         /// <summary>
-        /// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+        /// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
         /// </summary>
         public InputList<string> NodeGroupNames
         {
@@ -59,7 +59,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
         private InputList<string>? _nodeGroupTypes;
 
         /// <summary>
-        /// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+        /// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
         /// </summary>
         public InputList<string> NodeGroupTypes
         {
@@ -71,7 +71,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
         private InputList<string>? _nodeIds;
 
         /// <summary>
-        /// 节点ID列表，EffectiveType=NODE_ID时，必选。
+        /// Node ID list. Required when EffectiveType=NODE_ID.
         /// </summary>
         public InputList<string> NodeIds
         {
@@ -83,7 +83,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
         private InputList<string>? _nodeNames;
 
         /// <summary>
-        /// 节点名列表，EffectiveType=NODE_NAME时，必选。
+        /// Node name list. Required when EffectiveType=NODE_NAME.
         /// </summary>
         public InputList<string> NodeNames
         {

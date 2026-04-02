@@ -22,14 +22,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     public static final DirectConnectGatewayState Empty = new DirectConnectGatewayState();
 
     /**
-     * 专线网关所属账号的ID。
+     * ID of the account to which the Direct Connect Gateway belongs.
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
-     * @return 专线网关所属账号的ID。
+     * @return ID of the account to which the Direct Connect Gateway belongs.
      * 
      */
     public Optional<Output<String>> accountId() {
@@ -44,14 +44,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 关联的EIC信息。
+     * Associated EIC information.
      * 
      */
     @Import(name="associateEic")
     private @Nullable Output<DirectConnectGatewayAssociateEicArgs> associateEic;
 
     /**
-     * @return 关联的EIC信息。
+     * @return Associated EIC information.
      * 
      */
     public Optional<Output<DirectConnectGatewayAssociateEicArgs>> associateEic() {
@@ -59,14 +59,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
+     * ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
      * 
      */
     @Import(name="bgpAsn")
     private @Nullable Output<Integer> bgpAsn;
 
     /**
-     * @return 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
+     * @return ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
      * 
      */
     public Optional<Output<Integer>> bgpAsn() {
@@ -74,14 +74,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
+     * Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
      * 
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
-     * @return 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
+     * @return Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
      * 
      */
     public Optional<Output<String>> businessStatus() {
@@ -89,14 +89,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 创建专线网关的时间。
+     * Time when the Direct Connect Gateway was created.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建专线网关的时间。
+     * @return Time when the Direct Connect Gateway was created.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -104,14 +104,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 预期资源强制回收时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
      * 
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
-     * @return 预期资源强制回收时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * @return Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
      * 
      */
     public Optional<Output<String>> deletedTime() {
@@ -119,14 +119,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * @return Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -134,14 +134,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 专线网关的ID。
+     * ID of the Direct Connect Gateway.
      * 
      */
     @Import(name="directConnectGatewayId")
     private @Nullable Output<String> directConnectGatewayId;
 
     /**
-     * @return 专线网关的ID。
+     * @return ID of the Direct Connect Gateway.
      * 
      */
     public Optional<Output<String>> directConnectGatewayId() {
@@ -149,14 +149,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
+     * Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
      * 
      */
     @Import(name="directConnectGatewayName")
     private @Nullable Output<String> directConnectGatewayName;
 
     /**
-     * @return 专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
+     * @return Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
      * 
      */
     public Optional<Output<String>> directConnectGatewayName() {
@@ -164,14 +164,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 是否支持IPv6。true：支持。false：不支持。
+     * Whether IPv6 is supported. true: supported. false: not supported.
      * 
      */
     @Import(name="enableIpv6")
     private @Nullable Output<Boolean> enableIpv6;
 
     /**
-     * @return 是否支持IPv6。true：支持。false：不支持。
+     * @return Whether IPv6 is supported. true: supported. false: not supported.
      * 
      */
     public Optional<Output<Boolean>> enableIpv6() {
@@ -179,14 +179,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 专线网关被锁定的原因。unlock：解锁。financial：因欠费被锁定。security：因安全被锁定。
+     * Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
      * 
      */
     @Import(name="lockReason")
     private @Nullable Output<String> lockReason;
 
     /**
-     * @return 专线网关被锁定的原因。unlock：解锁。financial：因欠费被锁定。security：因安全被锁定。
+     * @return Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
      * 
      */
     public Optional<Output<String>> lockReason() {
@@ -194,14 +194,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
      * 
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
-     * @return 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * @return Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
      * 
      */
     public Optional<Output<String>> overdueTime() {
@@ -209,14 +209,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 专线网关所属的项目。
+     * Project to which the Direct Connect Gateway belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 专线网关所属的项目。
+     * @return Project to which the Direct Connect Gateway belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -224,14 +224,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 专线网关的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+     * Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 专线网关的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+     * @return Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
      * 
      */
     public Optional<Output<String>> status() {
@@ -246,14 +246,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 更新专线网关的时间。
+     * Time when the Direct Connect Gateway was updated.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新专线网关的时间。
+     * @return Time when the Direct Connect Gateway was updated.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -301,7 +301,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param accountId 专线网关所属账号的ID。
+         * @param accountId ID of the account to which the Direct Connect Gateway belongs.
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param accountId 专线网关所属账号的ID。
+         * @param accountId ID of the account to which the Direct Connect Gateway belongs.
          * 
          * @return builder
          * 
@@ -335,7 +335,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param associateEic 关联的EIC信息。
+         * @param associateEic Associated EIC information.
          * 
          * @return builder
          * 
@@ -346,7 +346,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param associateEic 关联的EIC信息。
+         * @param associateEic Associated EIC information.
          * 
          * @return builder
          * 
@@ -356,7 +356,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param bgpAsn 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
+         * @param bgpAsn ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
          * 
          * @return builder
          * 
@@ -367,7 +367,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param bgpAsn 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
+         * @param bgpAsn ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
          * 
          * @return builder
          * 
@@ -377,7 +377,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param businessStatus 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
+         * @param businessStatus Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param businessStatus 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
+         * @param businessStatus Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
          * 
          * @return builder
          * 
@@ -398,7 +398,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param createdTime 创建专线网关的时间。
+         * @param createdTime Time when the Direct Connect Gateway was created.
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param createdTime 创建专线网关的时间。
+         * @param createdTime Time when the Direct Connect Gateway was created.
          * 
          * @return builder
          * 
@@ -419,7 +419,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param deletedTime 预期资源强制回收时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+         * @param deletedTime Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param deletedTime 预期资源强制回收时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+         * @param deletedTime Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param description 专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+         * @param description Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
          * 
          * @return builder
          * 
@@ -451,7 +451,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param description 专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+         * @param description Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
          * 
          * @return builder
          * 
@@ -461,7 +461,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param directConnectGatewayId 专线网关的ID。
+         * @param directConnectGatewayId ID of the Direct Connect Gateway.
          * 
          * @return builder
          * 
@@ -472,7 +472,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param directConnectGatewayId 专线网关的ID。
+         * @param directConnectGatewayId ID of the Direct Connect Gateway.
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param directConnectGatewayName 专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
+         * @param directConnectGatewayName Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param directConnectGatewayName 专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
+         * @param directConnectGatewayName Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param enableIpv6 是否支持IPv6。true：支持。false：不支持。
+         * @param enableIpv6 Whether IPv6 is supported. true: supported. false: not supported.
          * 
          * @return builder
          * 
@@ -514,7 +514,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param enableIpv6 是否支持IPv6。true：支持。false：不支持。
+         * @param enableIpv6 Whether IPv6 is supported. true: supported. false: not supported.
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param lockReason 专线网关被锁定的原因。unlock：解锁。financial：因欠费被锁定。security：因安全被锁定。
+         * @param lockReason Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
          * 
          * @return builder
          * 
@@ -535,7 +535,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param lockReason 专线网关被锁定的原因。unlock：解锁。financial：因欠费被锁定。security：因安全被锁定。
+         * @param lockReason Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param overdueTime 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+         * @param overdueTime Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
          * 
          * @return builder
          * 
@@ -556,7 +556,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param overdueTime 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+         * @param overdueTime Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
          * 
          * @return builder
          * 
@@ -566,7 +566,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param projectName 专线网关所属的项目。
+         * @param projectName Project to which the Direct Connect Gateway belongs.
          * 
          * @return builder
          * 
@@ -577,7 +577,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param projectName 专线网关所属的项目。
+         * @param projectName Project to which the Direct Connect Gateway belongs.
          * 
          * @return builder
          * 
@@ -587,7 +587,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param status 专线网关的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+         * @param status Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
          * 
          * @return builder
          * 
@@ -598,7 +598,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param status 专线网关的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+         * @param status Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
          * 
          * @return builder
          * 
@@ -621,7 +621,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param updatedTime 更新专线网关的时间。
+         * @param updatedTime Time when the Direct Connect Gateway was updated.
          * 
          * @return builder
          * 
@@ -632,7 +632,7 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param updatedTime 更新专线网关的时间。
+         * @param updatedTime Time when the Direct Connect Gateway was updated.
          * 
          * @return builder
          * 

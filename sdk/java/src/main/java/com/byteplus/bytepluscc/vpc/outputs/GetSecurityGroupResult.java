@@ -16,17 +16,17 @@ import java.util.Objects;
 @CustomType
 public final class GetSecurityGroupResult {
     /**
-     * @return 安全组创建时间。
+     * @return Security group creation time
      * 
      */
     private String creationTime;
     /**
-     * @return 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+     * @return Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
      * 
      */
     private String description;
     /**
-     * @return 安全组出向规则描述信息。未改动的信息按照原信息返回，未填或者变动的内容视为修改，请按需填写。
+     * @return Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
      * 
      */
     private List<GetSecurityGroupEgressPermission> egressPermissions;
@@ -36,68 +36,68 @@ public final class GetSecurityGroupResult {
      */
     private String id;
     /**
-     * @return 安全组入向规则描述信息。未改动的信息按照原信息返回，未填或者变动的内容视为修改，请按需填写。
+     * @return Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
      * 
      */
     private List<GetSecurityGroupIngressPermission> ingressPermissions;
     /**
-     * @return 安全组所属项目名称。不填默认项目为default。
+     * @return Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
      * 
      */
     private String projectName;
     /**
-     * @return 安全组ID。
+     * @return Security group ID
      * 
      */
     private String securityGroupId;
     /**
-     * @return 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+     * @return Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
      * 
      */
     private String securityGroupName;
     /**
-     * @return 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+     * @return Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
      * 
      */
     private Boolean serviceManaged;
     /**
-     * @return 安全组状态。Available为可用，Creating为创建中。
+     * @return Security group status. Available means available for use, Creating means being created
      * 
      */
     private String status;
     /**
-     * @return 标签列表。
+     * @return Tag list
      * 
      */
     private List<GetSecurityGroupTag> tags;
     /**
-     * @return 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+     * @return Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
      * 
      */
     private String type;
     /**
-     * @return 安全组所属的VPC ID。
+     * @return VPC ID to which the security group belongs
      * 
      */
     private String vpcId;
 
     private GetSecurityGroupResult() {}
     /**
-     * @return 安全组创建时间。
+     * @return Security group creation time
      * 
      */
     public String creationTime() {
         return this.creationTime;
     }
     /**
-     * @return 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+     * @return Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 安全组出向规则描述信息。未改动的信息按照原信息返回，未填或者变动的内容视为修改，请按需填写。
+     * @return Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
      * 
      */
     public List<GetSecurityGroupEgressPermission> egressPermissions() {
@@ -111,63 +111,63 @@ public final class GetSecurityGroupResult {
         return this.id;
     }
     /**
-     * @return 安全组入向规则描述信息。未改动的信息按照原信息返回，未填或者变动的内容视为修改，请按需填写。
+     * @return Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
      * 
      */
     public List<GetSecurityGroupIngressPermission> ingressPermissions() {
         return this.ingressPermissions;
     }
     /**
-     * @return 安全组所属项目名称。不填默认项目为default。
+     * @return Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 安全组ID。
+     * @return Security group ID
      * 
      */
     public String securityGroupId() {
         return this.securityGroupId;
     }
     /**
-     * @return 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+     * @return Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
      * 
      */
     public String securityGroupName() {
         return this.securityGroupName;
     }
     /**
-     * @return 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+     * @return Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
      * 
      */
     public Boolean serviceManaged() {
         return this.serviceManaged;
     }
     /**
-     * @return 安全组状态。Available为可用，Creating为创建中。
+     * @return Security group status. Available means available for use, Creating means being created
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 标签列表。
+     * @return Tag list
      * 
      */
     public List<GetSecurityGroupTag> tags() {
         return this.tags;
     }
     /**
-     * @return 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+     * @return Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return 安全组所属的VPC ID。
+     * @return VPC ID to which the security group belongs
      * 
      */
     public String vpcId() {

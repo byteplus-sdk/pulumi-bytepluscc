@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterApplicationExtraApplicationComponentLayout {
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     private String componentName;
     /**
-     * @return 组件的布局范围。
+     * @return Component layout scope.
      * 
      */
     private GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope effectiveScope;
 
     private GetClusterApplicationExtraApplicationComponentLayout() {}
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     public String componentName() {
         return this.componentName;
     }
     /**
-     * @return 组件的布局范围。
+     * @return Component layout scope.
      * 
      */
     public GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope effectiveScope() {

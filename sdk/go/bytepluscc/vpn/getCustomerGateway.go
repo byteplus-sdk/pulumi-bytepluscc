@@ -30,33 +30,33 @@ type LookupCustomerGatewayArgs struct {
 
 // A collection of values returned by getCustomerGateway.
 type LookupCustomerGatewayResult struct {
-	// 用户网关所属账户的ID。
+	// ID of the account to which the user gateway belongs
 	AccountId string `pulumi:"accountId"`
-	// 用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
+	// User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
 	Asn int `pulumi:"asn"`
-	// 用户网关关联的IPsec连接的数量。
+	// Number of IPsec connections associated with the user gateway
 	ConnectionCount int `pulumi:"connectionCount"`
-	// 创建用户网关的时间。
+	// Time when the user gateway was created
 	CreatedTime string `pulumi:"createdTime"`
-	// 网关ID。
+	// Gateway ID
 	CustomerGatewayId string `pulumi:"customerGatewayId"`
-	// 用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
+	// User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
 	CustomerGatewayName string `pulumi:"customerGatewayName"`
-	// 用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
+	// Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
+	// Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
 	IpAddress string `pulumi:"ipAddress"`
-	// VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
+	// IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
 	IpVersion string `pulumi:"ipVersion"`
-	// 用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
+	// Project to which the user gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project
 	ProjectName string `pulumi:"projectName"`
-	// 用户网关的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+	// Status of the user gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
 	Status string `pulumi:"status"`
-	// 标签列表。
+	// Tag list
 	Tags []GetCustomerGatewayTag `pulumi:"tags"`
-	// 更新用户网关的时间。
+	// Time when the user gateway was updated
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -94,37 +94,37 @@ func (o LookupCustomerGatewayResultOutput) ToLookupCustomerGatewayResultOutputWi
 	return o
 }
 
-// 用户网关所属账户的ID。
+// ID of the account to which the user gateway belongs
 func (o LookupCustomerGatewayResultOutput) AccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) string { return v.AccountId }).(pulumi.StringOutput)
 }
 
-// 用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
+// User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
 func (o LookupCustomerGatewayResultOutput) Asn() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) int { return v.Asn }).(pulumi.IntOutput)
 }
 
-// 用户网关关联的IPsec连接的数量。
+// Number of IPsec connections associated with the user gateway
 func (o LookupCustomerGatewayResultOutput) ConnectionCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) int { return v.ConnectionCount }).(pulumi.IntOutput)
 }
 
-// 创建用户网关的时间。
+// Time when the user gateway was created
 func (o LookupCustomerGatewayResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 网关ID。
+// Gateway ID
 func (o LookupCustomerGatewayResultOutput) CustomerGatewayId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) string { return v.CustomerGatewayId }).(pulumi.StringOutput)
 }
 
-// 用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
+// User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
 func (o LookupCustomerGatewayResultOutput) CustomerGatewayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) string { return v.CustomerGatewayName }).(pulumi.StringOutput)
 }
 
-// 用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
+// Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
 func (o LookupCustomerGatewayResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -134,32 +134,32 @@ func (o LookupCustomerGatewayResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
+// Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
 func (o LookupCustomerGatewayResultOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
+// IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
 func (o LookupCustomerGatewayResultOutput) IpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) string { return v.IpVersion }).(pulumi.StringOutput)
 }
 
-// 用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
+// Project to which the user gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project
 func (o LookupCustomerGatewayResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 用户网关的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+// Status of the user gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
 func (o LookupCustomerGatewayResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 标签列表。
+// Tag list
 func (o LookupCustomerGatewayResultOutput) Tags() GetCustomerGatewayTagArrayOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) []GetCustomerGatewayTag { return v.Tags }).(GetCustomerGatewayTagArrayOutput)
 }
 
-// 更新用户网关的时间。
+// Time when the user gateway was updated
 func (o LookupCustomerGatewayResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomerGatewayResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

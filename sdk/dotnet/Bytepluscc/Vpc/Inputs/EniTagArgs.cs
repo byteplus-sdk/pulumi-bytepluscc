@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Inputs
     public sealed class EniTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 用户标签的标签键。
+        /// Tag key for the user tag.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 用户标签的标签值。
+        /// Tag value for the user tag.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

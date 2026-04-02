@@ -25,14 +25,14 @@ public final class InstanceShardArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Shard 节点的 ID。
+     * Shard node ID.
      * 
      */
     @Import(name="shardId")
     private @Nullable Output<String> shardId;
 
     /**
-     * @return Shard 节点的 ID。
+     * @return Shard node ID.
      * 
      */
     public Optional<Output<String>> shardId() {
@@ -78,7 +78,7 @@ public final class InstanceShardArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shardId Shard 节点的 ID。
+         * @param shardId Shard node ID.
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class InstanceShardArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shardId Shard 节点的 ID。
+         * @param shardId Shard node ID.
          * 
          * @return builder
          * 

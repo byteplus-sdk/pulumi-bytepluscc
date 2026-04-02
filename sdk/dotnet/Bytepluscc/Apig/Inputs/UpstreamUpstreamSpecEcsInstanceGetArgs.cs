@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamUpstreamSpecEcsInstanceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 云服务器ID。
+        /// Cloud server ID
         /// </summary>
         [Input("ecsId")]
         public Input<string>? EcsId { get; set; }
 
         /// <summary>
-        /// IP地址。
+        /// IP address
         /// </summary>
         [Input("ip")]
         public Input<string>? Ip { get; set; }
 
         /// <summary>
-        /// 端口。
+        /// Port
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }

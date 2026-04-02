@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetImageDetectionResultsItem {
     /**
-     * @return 检测项名称。
+     * @return Check item name
      * 
      */
     private String name;
     /**
-     * @return 该检测项对应结果。
+     * @return Result for this check item.
      * 
      */
     private String result;
     /**
-     * @return 风险描述码。
+     * @return Risk description code
      * 
      */
     private String riskCode;
     /**
-     * @return 风险等级。若该参数返回值为空，表示无风险。
+     * @return Risk level. If this parameter is empty, it means no risk
      * 
      */
     private String riskLevel;
 
     private GetImageDetectionResultsItem() {}
     /**
-     * @return 检测项名称。
+     * @return Check item name
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 该检测项对应结果。
+     * @return Result for this check item.
      * 
      */
     public String result() {
         return this.result;
     }
     /**
-     * @return 风险描述码。
+     * @return Risk description code
      * 
      */
     public String riskCode() {
         return this.riskCode;
     }
     /**
-     * @return 风险等级。若该参数返回值为空，表示无风险。
+     * @return Risk level. If this parameter is empty, it means no risk
      * 
      */
     public String riskLevel() {

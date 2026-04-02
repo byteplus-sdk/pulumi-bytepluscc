@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class GetImageDetectionResultsResult
     {
         /// <summary>
-        /// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+        /// Check status. Options: Finished (completed), Processing (in progress).
         /// </summary>
         public readonly string DetectionStatus;
         /// <summary>
-        /// 镜像检测项详情。
+        /// Details of image check items.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImageDetectionResultsItemResult> Items;
 

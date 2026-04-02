@@ -58,7 +58,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 加速域名是您希望加速内容传输的域名。当您将域名添加到内容分发网络中后，该域名在内容分发网络中就成了一个加速域名。内容分发网络会为该域名分配一个 CNAME。在您创建一条 DNS 记录将您的域名解析到该 CNAME 后，用户向您域名发送的请求就会被路由到您的加速域名，实现内容传输的加速。
+ * An accelerated domain name is the domain you want to speed up content delivery for. After you add the domain to the content delivery network, it becomes an accelerated domain name in the CDN. The CDN assigns a CNAME to this domain. Once you create a DNS record to resolve your domain to this CNAME, requests sent by users to your domain are routed to your accelerated domain name, enabling faster content delivery.
  * 
  * ## Example Usage
  * 
@@ -75,28 +75,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:cdn/domain:Domain")
 public class Domain extends com.pulumi.resources.CustomResource {
     /**
-     * 表示 &#34;地域访问控制&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
      * 
      */
     @Export(name="areaAccessRule", refs={DomainAreaAccessRule.class}, tree="[0]")
     private Output<DomainAreaAccessRule> areaAccessRule;
 
     /**
-     * @return 表示 &#34;地域访问控制&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainAreaAccessRule> areaAccessRule() {
         return this.areaAccessRule;
     }
     /**
-     * 表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
+     * Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
      * 
      */
     @Export(name="backupOrigins", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> backupOrigins;
 
     /**
-     * @return 表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
+     * @return Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
      * 
      */
     public Output<List<String>> backupOrigins() {
@@ -109,14 +109,14 @@ public class Domain extends com.pulumi.resources.CustomResource {
         return this.browserCaches;
     }
     /**
-     * 表示 &#34;共享缓存&#34; 特性的配置模块。该特性默认为禁用。
+     * Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
      * 
      */
     @Export(name="cacheHost", refs={DomainCacheHost.class}, tree="[0]")
     private Output<DomainCacheHost> cacheHost;
 
     /**
-     * @return 表示 &#34;共享缓存&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainCacheHost> cacheHost() {
@@ -129,30 +129,28 @@ public class Domain extends com.pulumi.resources.CustomResource {
         return this.cacheKeys;
     }
     /**
-     * 表示该域名在 &#34;共享缓存&#34; 配置中的角色。该参数有以下取值：target*host：表示 &#34;目标域名&#34;。cache*shared_on：表示 &#34;配置域名&#34;。如果该域名未在任何 &#34;共享缓存&#34; 配置中，该参数值是空（&#34;&#34;）。
+     * Indicates the role of this domain in the &#39;shared cache&#39; configuration. The parameter has the following values: target*host: indicates the &#39;target domain&#39;. cache*shared_on: indicates the &#39;configured domain&#39;. If this domain is not included in any &#39;shared cache&#39; configuration, the parameter value is an empty string (&#39;&#39;).
      * 
      */
     @Export(name="cacheShared", refs={String.class}, tree="[0]")
     private Output<String> cacheShared;
 
     /**
-     * @return 表示该域名在 &#34;共享缓存&#34; 配置中的角色。该参数有以下取值：target*host：表示 &#34;目标域名&#34;。cache*shared_on：表示 &#34;配置域名&#34;。如果该域名未在任何 &#34;共享缓存&#34; 配置中，该参数值是空（&#34;&#34;）。
+     * @return Indicates the role of this domain in the &#39;shared cache&#39; configuration. The parameter has the following values: target*host: indicates the &#39;target domain&#39;. cache*shared_on: indicates the &#39;configured domain&#39;. If this domain is not included in any &#39;shared cache&#39; configuration, the parameter value is an empty string (&#39;&#39;).
      * 
      */
     public Output<String> cacheShared() {
         return this.cacheShared;
     }
     /**
-     * 如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 &#34;共享缓存&#34; 配置中的 &#34;目标域名&#34;。
-     * 如果 CacheShared 是 target_host，该参数值为空（&#34;&#34;）。
+     * If CacheShared is cache*shared*on, this parameter indicates the &#39;Target Domain&#39; in the &#39;Shared Cache&#39; configuration for this domain name. If CacheShared is target_host, this parameter is empty (&#34;&#34;).
      * 
      */
     @Export(name="cacheSharedTargetHost", refs={String.class}, tree="[0]")
     private Output<String> cacheSharedTargetHost;
 
     /**
-     * @return 如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 &#34;共享缓存&#34; 配置中的 &#34;目标域名&#34;。
-     * 如果 CacheShared 是 target_host，该参数值为空（&#34;&#34;）。
+     * @return If CacheShared is cache*shared*on, this parameter indicates the &#39;Target Domain&#39; in the &#39;Shared Cache&#39; configuration for this domain name. If CacheShared is target_host, this parameter is empty (&#34;&#34;).
      * 
      */
     public Output<String> cacheSharedTargetHost() {
@@ -165,252 +163,252 @@ public class Domain extends com.pulumi.resources.CustomResource {
         return this.caches;
     }
     /**
-     * 表示内容分发网络为该加速域名分配的 CNAME。
+     * Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
      * 
      */
     @Export(name="cname", refs={String.class}, tree="[0]")
     private Output<String> cname;
 
     /**
-     * @return 表示内容分发网络为该加速域名分配的 CNAME。
+     * @return Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
      * 
      */
     public Output<String> cname() {
         return this.cname;
     }
     /**
-     * 表示 &#34;智能压缩&#34; 特性的配置模块。该特性默认为禁用。
+     * Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
      * 
      */
     @Export(name="compression", refs={DomainCompression.class}, tree="[0]")
     private Output<DomainCompression> compression;
 
     /**
-     * @return 表示 &#34;智能压缩&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainCompression> compression() {
         return this.compression;
     }
     /**
-     * 表示 &#34;条件源站&#34; 特性的配置模块。
+     * Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
      * 
      */
     @Export(name="conditionalOrigin", refs={DomainConditionalOrigin.class}, tree="[0]")
     private Output<DomainConditionalOrigin> conditionalOrigin;
 
     /**
-     * @return 表示 &#34;条件源站&#34; 特性的配置模块。
+     * @return Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
      * 
      */
     public Output<DomainConditionalOrigin> conditionalOrigin() {
         return this.conditionalOrigin;
     }
     /**
-     * 表示该加速域名的创建时间，格式是 Unix 时间戳。
+     * Indicates the creation time of this accelerated domain name, in Unix timestamp format.
      * 
      */
     @Export(name="createdTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdTime;
 
     /**
-     * @return 表示该加速域名的创建时间，格式是 Unix 时间戳。
+     * @return Indicates the creation time of this accelerated domain name, in Unix timestamp format.
      * 
      */
     public Output<Integer> createdTime() {
         return this.createdTime;
     }
     /**
-     * 表示 &#34;自定义错误页面&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
      * 
      */
     @Export(name="customErrorPage", refs={DomainCustomErrorPage.class}, tree="[0]")
     private Output<DomainCustomErrorPage> customErrorPage;
 
     /**
-     * @return 表示 &#34;自定义错误页面&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainCustomErrorPage> customErrorPage() {
         return this.customErrorPage;
     }
     /**
-     * 表示 &#34;自定义头部黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
      * 
      */
     @Export(name="customizeAccessRule", refs={DomainCustomizeAccessRule.class}, tree="[0]")
     private Output<DomainCustomizeAccessRule> customizeAccessRule;
 
     /**
-     * @return 表示 &#34;自定义头部黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainCustomizeAccessRule> customizeAccessRule() {
         return this.customizeAccessRule;
     }
     /**
-     * 表示该加速域名。
+     * Indicates the acceleration domain name.
      * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
-     * @return 表示该加速域名。
+     * @return Indicates the acceleration domain name.
      * 
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
-     * 表示该域名的锁定状态。
+     * Indicates the lock status of this domain name.
      * 
      */
     @Export(name="domainLock", refs={DomainDomainLock.class}, tree="[0]")
     private Output<DomainDomainLock> domainLock;
 
     /**
-     * @return 表示该域名的锁定状态。
+     * @return Indicates the lock status of this domain name.
      * 
      */
     public Output<DomainDomainLock> domainLock() {
         return this.domainLock;
     }
     /**
-     * 表示 &#34;下载限速&#34; 特性的配置模块。该特性默认为禁用。
+     * Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
      * 
      */
     @Export(name="downloadSpeedLimit", refs={DomainDownloadSpeedLimit.class}, tree="[0]")
     private Output<DomainDownloadSpeedLimit> downloadSpeedLimit;
 
     /**
-     * @return 表示 &#34;下载限速&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainDownloadSpeedLimit> downloadSpeedLimit() {
         return this.downloadSpeedLimit;
     }
     /**
-     * 表示是否启用 &#34;回源重定向跟随&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
      * 
      */
     @Export(name="followRedirect", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> followRedirect;
 
     /**
-     * @return 表示是否启用 &#34;回源重定向跟随&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
      * 
      */
     public Output<Boolean> followRedirect() {
         return this.followRedirect;
     }
     /**
-     * 表示 &#34;HTTPS 强制跳转到 HTTP&#34; 特性的配置模块。该特性默认是禁用。
+     * Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
      * 
      */
     @Export(name="httpForcedRedirect", refs={DomainHttpForcedRedirect.class}, tree="[0]")
     private Output<DomainHttpForcedRedirect> httpForcedRedirect;
 
     /**
-     * @return 表示 &#34;HTTPS 强制跳转到 HTTP&#34; 特性的配置模块。该特性默认是禁用。
+     * @return Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainHttpForcedRedirect> httpForcedRedirect() {
         return this.httpForcedRedirect;
     }
     /**
-     * 表示 HTTPS 配置模块。该功能默认是禁用。
+     * Indicates the HTTPS configuration module. This feature is disabled by default.
      * 
      */
     @Export(name="https", refs={DomainHttps.class}, tree="[0]")
     private Output<DomainHttps> https;
 
     /**
-     * @return 表示 HTTPS 配置模块。该功能默认是禁用。
+     * @return Indicates the HTTPS configuration module. This feature is disabled by default.
      * 
      */
     public Output<DomainHttps> https() {
         return this.https;
     }
     /**
-     * 表示 IPv6 特性的配置模块。
+     * Indicates the configuration module for the IPv6 feature.
      * 
      */
     @Export(name="iPv6", refs={DomainIPv6.class}, tree="[0]")
     private Output<DomainIPv6> iPv6;
 
     /**
-     * @return 表示 IPv6 特性的配置模块。
+     * @return Indicates the configuration module for the IPv6 feature.
      * 
      */
     public Output<DomainIPv6> iPv6() {
         return this.iPv6;
     }
     /**
-     * 表示 &#34;IP 黑白名单&#34; 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+     * Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
      * 
      */
     @Export(name="ipAccessRule", refs={DomainIpAccessRule.class}, tree="[0]")
     private Output<DomainIpAccessRule> ipAccessRule;
 
     /**
-     * @return 表示 &#34;IP 黑白名单&#34; 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+     * @return Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
      * 
      */
     public Output<DomainIpAccessRule> ipAccessRule() {
         return this.ipAccessRule;
     }
     /**
-     * 表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
+     * Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
      * 
      */
     @Export(name="isConflictDomain", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isConflictDomain;
 
     /**
-     * @return 表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
+     * @return Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
      * 
      */
     public Output<Boolean> isConflictDomain() {
         return this.isConflictDomain;
     }
     /**
-     * 表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
+     * Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
      * 
      */
     @Export(name="lockStatus", refs={String.class}, tree="[0]")
     private Output<String> lockStatus;
 
     /**
-     * @return 表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
+     * @return Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
      * 
      */
     public Output<String> lockStatus() {
         return this.lockStatus;
     }
     /**
-     * 表示 &#34;禁用 HTTP Method&#34; 特性的配置模块。该特性默认为禁用。
+     * Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
      * 
      */
     @Export(name="methodDeniedRule", refs={DomainMethodDeniedRule.class}, tree="[0]")
     private Output<DomainMethodDeniedRule> methodDeniedRule;
 
     /**
-     * @return 表示 &#34;禁用 HTTP Method&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainMethodDeniedRule> methodDeniedRule() {
         return this.methodDeniedRule;
     }
     /**
-     * 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the multi-range feature. This feature is disabled by default
      * 
      */
     @Export(name="multiRange", refs={DomainMultiRange.class}, tree="[0]")
     private Output<DomainMultiRange> multiRange;
 
     /**
-     * @return 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the multi-range feature. This feature is disabled by default
      * 
      */
     public Output<DomainMultiRange> multiRange() {
@@ -423,28 +421,28 @@ public class Domain extends com.pulumi.resources.CustomResource {
         return this.negativeCaches;
     }
     /**
-     * 表示 &#34;离线缓存&#34; 特性的配置模块。
+     * Indicates the configuration module for the &#39;offline cache&#39; feature.
      * 
      */
     @Export(name="offlineCache", refs={DomainOfflineCache.class}, tree="[0]")
     private Output<DomainOfflineCache> offlineCache;
 
     /**
-     * @return 表示 &#34;离线缓存&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#39;offline cache&#39; feature.
      * 
      */
     public Output<DomainOfflineCache> offlineCache() {
         return this.offlineCache;
     }
     /**
-     * 表示 &#34;Origin 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
      * 
      */
     @Export(name="originAccessRule", refs={DomainOriginAccessRule.class}, tree="[0]")
     private Output<DomainOriginAccessRule> originAccessRule;
 
     /**
-     * @return 表示 &#34;Origin 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainOriginAccessRule> originAccessRule() {
@@ -457,112 +455,112 @@ public class Domain extends com.pulumi.resources.CustomResource {
         return this.originArgs;
     }
     /**
-     * 源站证书校验
+     * Origin certificate validation
      * 
      */
     @Export(name="originCertCheck", refs={DomainOriginCertCheck.class}, tree="[0]")
     private Output<DomainOriginCertCheck> originCertCheck;
 
     /**
-     * @return 源站证书校验
+     * @return Origin certificate validation
      * 
      */
     public Output<DomainOriginCertCheck> originCertCheck() {
         return this.originCertCheck;
     }
     /**
-     * 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+     * If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
      * 
      */
     @Export(name="originHost", refs={String.class}, tree="[0]")
     private Output<String> originHost;
 
     /**
-     * @return 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+     * @return If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
      * 
      */
     public Output<String> originHost() {
         return this.originHost;
     }
     /**
-     * 表示 &#34;IPv6 回源&#34; 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+     * Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
      * 
      */
     @Export(name="originIPv6", refs={String.class}, tree="[0]")
     private Output<String> originIPv6;
 
     /**
-     * @return 表示 &#34;IPv6 回源&#34; 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+     * @return Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
      * 
      */
     public Output<String> originIPv6() {
         return this.originIPv6;
     }
     /**
-     * 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+     * Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
      * 
      */
     @Export(name="originProtocol", refs={String.class}, tree="[0]")
     private Output<String> originProtocol;
 
     /**
-     * @return 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+     * @return Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
      * 
      */
     public Output<String> originProtocol() {
         return this.originProtocol;
     }
     /**
-     * 表示是否启用 &#34;Range 回源&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
      * 
      */
     @Export(name="originRange", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> originRange;
 
     /**
-     * @return 表示是否启用 &#34;Range 回源&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
      * 
      */
     public Output<Boolean> originRange() {
         return this.originRange;
     }
     /**
-     * 表示 &#34;回源重试设置&#34; 特性的配置模块。
+     * Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
      * 
      */
     @Export(name="originRetry", refs={DomainOriginRetry.class}, tree="[0]")
     private Output<DomainOriginRetry> originRetry;
 
     /**
-     * @return 表示 &#34;回源重试设置&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
      * 
      */
     public Output<DomainOriginRetry> originRetry() {
         return this.originRetry;
     }
     /**
-     * 表示 &#34;回源 URL 改写&#34; 特性的配置模块。
+     * Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
      * 
      */
     @Export(name="originRewrite", refs={DomainOriginRewrite.class}, tree="[0]")
     private Output<DomainOriginRewrite> originRewrite;
 
     /**
-     * @return 表示 &#34;回源 URL 改写&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
      * 
      */
     public Output<DomainOriginRewrite> originRewrite() {
         return this.originRewrite;
     }
     /**
-     * 表示 &#34;回源 SNI&#34; 特性的配置模块。
+     * Indicates the configuration module for the &#39;origin SNI&#39; feature.
      * 
      */
     @Export(name="originSni", refs={DomainOriginSni.class}, tree="[0]")
     private Output<DomainOriginSni> originSni;
 
     /**
-     * @return 表示 &#34;回源 SNI&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#39;origin SNI&#39; feature.
      * 
      */
     public Output<DomainOriginSni> originSni() {
@@ -575,112 +573,112 @@ public class Domain extends com.pulumi.resources.CustomResource {
         return this.origins;
     }
     /**
-     * 表示 &#34;页面优化&#34; 特性的配置模块。
+     * Specifies the configuration module for the &#39;page optimization&#39; feature.
      * 
      */
     @Export(name="pageOptimization", refs={DomainPageOptimization.class}, tree="[0]")
     private Output<DomainPageOptimization> pageOptimization;
 
     /**
-     * @return 表示 &#34;页面优化&#34; 特性的配置模块。
+     * @return Specifies the configuration module for the &#39;page optimization&#39; feature.
      * 
      */
     public Output<DomainPageOptimization> pageOptimization() {
         return this.pageOptimization;
     }
     /**
-     * 表示该域名配置的主源站列表。
+     * Indicates the list of primary origin servers configured for this domain name.
      * 
      */
     @Export(name="primaryOrigins", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> primaryOrigins;
 
     /**
-     * @return 表示该域名配置的主源站列表。
+     * @return Indicates the list of primary origin servers configured for this domain name.
      * 
      */
     public Output<List<String>> primaryOrigins() {
         return this.primaryOrigins;
     }
     /**
-     * 表示该加速域名归属的项目。
+     * Indicates the project to which the acceleration domain belongs
      * 
      */
     @Export(name="project", refs={String.class}, tree="[0]")
     private Output<String> project;
 
     /**
-     * @return 表示该加速域名归属的项目。
+     * @return Indicates the project to which the acceleration domain belongs
      * 
      */
     public Output<String> project() {
         return this.project;
     }
     /**
-     * 表示 QUIC 特性的配置模块。该特性默认是禁用。
+     * Indicates the configuration module for the QUIC feature. This feature is disabled by default.
      * 
      */
     @Export(name="quic", refs={DomainQuic.class}, tree="[0]")
     private Output<DomainQuic> quic;
 
     /**
-     * @return 表示 QUIC 特性的配置模块。该特性默认是禁用。
+     * @return Indicates the configuration module for the QUIC feature. This feature is disabled by default.
      * 
      */
     public Output<DomainQuic> quic() {
         return this.quic;
     }
     /**
-     * 表示 &#34;URL 重定向改写&#34; 特性的配置模块。该特性默认为禁用。
+     * Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
      * 
      */
     @Export(name="redirectionRewrite", refs={DomainRedirectionRewrite.class}, tree="[0]")
     private Output<DomainRedirectionRewrite> redirectionRewrite;
 
     /**
-     * @return 表示 &#34;URL 重定向改写&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainRedirectionRewrite> redirectionRewrite() {
         return this.redirectionRewrite;
     }
     /**
-     * 表示 &#34;Referer 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
      * 
      */
     @Export(name="refererAccessRule", refs={DomainRefererAccessRule.class}, tree="[0]")
     private Output<DomainRefererAccessRule> refererAccessRule;
 
     /**
-     * @return 表示 &#34;Referer 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainRefererAccessRule> refererAccessRule() {
         return this.refererAccessRule;
     }
     /**
-     * 表示 &#34;远程鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
      * 
      */
     @Export(name="remoteAuth", refs={DomainRemoteAuth.class}, tree="[0]")
     private Output<DomainRemoteAuth> remoteAuth;
 
     /**
-     * @return 表示 &#34;远程鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainRemoteAuth> remoteAuth() {
         return this.remoteAuth;
     }
     /**
-     * 表示 &#34;自定义拦截&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
      * 
      */
     @Export(name="requestBlockRule", refs={DomainRequestBlockRule.class}, tree="[0]")
     private Output<DomainRequestBlockRule> requestBlockRule;
 
     /**
-     * @return 表示 &#34;自定义拦截&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
      * 
      */
     public Output<DomainRequestBlockRule> requestBlockRule() {
@@ -699,70 +697,70 @@ public class Domain extends com.pulumi.resources.CustomResource {
         return this.responseHeaders;
     }
     /**
-     * 表示 &#34;标准 HLS 加密改写&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
      * 
      */
     @Export(name="rewriteHls", refs={DomainRewriteHls.class}, tree="[0]")
     private Output<DomainRewriteHls> rewriteHls;
 
     /**
-     * @return 表示 &#34;标准 HLS 加密改写&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainRewriteHls> rewriteHls() {
         return this.rewriteHls;
     }
     /**
-     * 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+     * Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
      * 
      */
     @Export(name="serviceRegion", refs={String.class}, tree="[0]")
     private Output<String> serviceRegion;
 
     /**
-     * @return 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+     * @return Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
      * 
      */
     public Output<String> serviceRegion() {
         return this.serviceRegion;
     }
     /**
-     * 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+     * Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
      * 
      */
     @Export(name="serviceType", refs={String.class}, tree="[0]")
     private Output<String> serviceType;
 
     /**
-     * @return 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+     * @return Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
      * 
      */
     public Output<String> serviceType() {
         return this.serviceType;
     }
     /**
-     * 表示 &#34;URL 鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
      * 
      */
     @Export(name="signedUrlAuth", refs={DomainSignedUrlAuth.class}, tree="[0]")
     private Output<DomainSignedUrlAuth> signedUrlAuth;
 
     /**
-     * @return 表示 &#34;URL 鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
      * 
      */
     public Output<DomainSignedUrlAuth> signedUrlAuth() {
         return this.signedUrlAuth;
     }
     /**
-     * 表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
+     * Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
+     * @return Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
      * 
      */
     public Output<String> status() {
@@ -775,70 +773,70 @@ public class Domain extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 表示 &#34;回源超时时间&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
      * 
      */
     @Export(name="timeout", refs={DomainTimeout.class}, tree="[0]")
     private Output<DomainTimeout> timeout;
 
     /**
-     * @return 表示 &#34;回源超时时间&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainTimeout> timeout() {
         return this.timeout;
     }
     /**
-     * 表示 &#34;UA 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
      * 
      */
     @Export(name="uaAccessRule", refs={DomainUaAccessRule.class}, tree="[0]")
     private Output<DomainUaAccessRule> uaAccessRule;
 
     /**
-     * @return 表示 &#34;UA 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainUaAccessRule> uaAccessRule() {
         return this.uaAccessRule;
     }
     /**
-     * 表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
+     * Indicates the most recent update time for this domain configuration, in Unix timestamp format.
      * 
      */
     @Export(name="updatedTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedTime;
 
     /**
-     * @return 表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
+     * @return Indicates the most recent update time for this domain configuration, in Unix timestamp format.
      * 
      */
     public Output<Integer> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 表示 &#34;URL 标准化&#34; 特性的配置模块。该特性默认为禁用。
+     * Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
      * 
      */
     @Export(name="urlNormalize", refs={DomainUrlNormalize.class}, tree="[0]")
     private Output<DomainUrlNormalize> urlNormalize;
 
     /**
-     * @return 表示 &#34;URL 标准化&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainUrlNormalize> urlNormalize() {
         return this.urlNormalize;
     }
     /**
-     * 表示 &#34;视频拖拽&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
      * 
      */
     @Export(name="videoDrag", refs={DomainVideoDrag.class}, tree="[0]")
     private Output<DomainVideoDrag> videoDrag;
 
     /**
-     * @return 表示 &#34;视频拖拽&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
      * 
      */
     public Output<DomainVideoDrag> videoDrag() {

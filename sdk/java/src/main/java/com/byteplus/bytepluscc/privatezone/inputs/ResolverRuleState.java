@@ -22,14 +22,14 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
     public static final ResolverRuleState Empty = new ResolverRuleState();
 
     /**
-     * 转发规则的创建时间
+     * Creation time of the forwarding rule
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 转发规则的创建时间
+     * @return Creation time of the forwarding rule
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -37,14 +37,14 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则是否被启用。true：启用。false：禁用。
+     * Whether the forwarding rule is enabled. true: enabled. false: disabled
      * 
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
-     * @return 转发规则是否被启用。true：启用。false：禁用。
+     * @return Whether the forwarding rule is enabled. true: enabled. false: disabled
      * 
      */
     public Optional<Output<Boolean>> enable() {
@@ -52,14 +52,14 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+     * Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
      * 
      */
     @Import(name="endpointId")
     private @Nullable Output<Integer> endpointId;
 
     /**
-     * @return 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+     * @return Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
      * 
      */
     public Optional<Output<Integer>> endpointId() {
@@ -74,14 +74,14 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 最近一次更新转发规则的账号的 ID
+     * Account ID of the last update to the forwarding rule
      * 
      */
     @Import(name="lastOperator")
     private @Nullable Output<String> lastOperator;
 
     /**
-     * @return 最近一次更新转发规则的账号的 ID
+     * @return Account ID of the last update to the forwarding rule
      * 
      */
     public Optional<Output<String>> lastOperator() {
@@ -89,14 +89,14 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+     * Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
      * 
      */
     @Import(name="line")
     private @Nullable Output<String> line;
 
     /**
-     * @return 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+     * @return Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
      * 
      */
     public Optional<Output<String>> line() {
@@ -104,14 +104,14 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则的名称。支持 UTF-8 格式。
+     * Name of the forwarding rule. Supports UTF-8 format
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 转发规则的名称。支持 UTF-8 格式。
+     * @return Name of the forwarding rule. Supports UTF-8 format
      * 
      */
     public Optional<Output<String>> name() {
@@ -119,14 +119,14 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则所属的项目名称。默认为 default。
+     * Project name associated with the forwarding rule. Default is default
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 转发规则所属的项目名称。默认为 default。
+     * @return Project name associated with the forwarding rule. Default is default
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -134,14 +134,14 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则的 ID。
+     * Forwarding rule ID
      * 
      */
     @Import(name="ruleId")
     private @Nullable Output<String> ruleId;
 
     /**
-     * @return 转发规则的 ID。
+     * @return Forwarding rule ID
      * 
      */
     public Optional<Output<String>> ruleId() {
@@ -156,14 +156,14 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+     * Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+     * @return Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
      * 
      */
     public Optional<Output<String>> type() {
@@ -171,14 +171,14 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则的更新时间
+     * Update time of the forwarding rule
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 转发规则的更新时间
+     * @return Update time of the forwarding rule
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -193,14 +193,14 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+     * Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
      * 
      */
     @Import(name="zoneName")
     private @Nullable Output<String> zoneName;
 
     /**
-     * @return 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+     * @return Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
      * 
      */
     public Optional<Output<String>> zoneName() {
@@ -245,7 +245,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 转发规则的创建时间
+         * @param createdTime Creation time of the forwarding rule
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 转发规则的创建时间
+         * @param createdTime Creation time of the forwarding rule
          * 
          * @return builder
          * 
@@ -266,7 +266,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enable 转发规则是否被启用。true：启用。false：禁用。
+         * @param enable Whether the forwarding rule is enabled. true: enabled. false: disabled
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enable 转发规则是否被启用。true：启用。false：禁用。
+         * @param enable Whether the forwarding rule is enabled. true: enabled. false: disabled
          * 
          * @return builder
          * 
@@ -287,7 +287,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointId 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+         * @param endpointId Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointId 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+         * @param endpointId Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lastOperator 最近一次更新转发规则的账号的 ID
+         * @param lastOperator Account ID of the last update to the forwarding rule
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lastOperator 最近一次更新转发规则的账号的 ID
+         * @param lastOperator Account ID of the last update to the forwarding rule
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param line 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+         * @param line Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param line 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+         * @param line Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
          * 
          * @return builder
          * 
@@ -363,7 +363,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 转发规则的名称。支持 UTF-8 格式。
+         * @param name Name of the forwarding rule. Supports UTF-8 format
          * 
          * @return builder
          * 
@@ -374,7 +374,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 转发规则的名称。支持 UTF-8 格式。
+         * @param name Name of the forwarding rule. Supports UTF-8 format
          * 
          * @return builder
          * 
@@ -384,7 +384,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 转发规则所属的项目名称。默认为 default。
+         * @param projectName Project name associated with the forwarding rule. Default is default
          * 
          * @return builder
          * 
@@ -395,7 +395,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 转发规则所属的项目名称。默认为 default。
+         * @param projectName Project name associated with the forwarding rule. Default is default
          * 
          * @return builder
          * 
@@ -405,7 +405,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleId 转发规则的 ID。
+         * @param ruleId Forwarding rule ID
          * 
          * @return builder
          * 
@@ -416,7 +416,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleId 转发规则的 ID。
+         * @param ruleId Forwarding rule ID
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+         * @param type Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+         * @param type Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
          * 
          * @return builder
          * 
@@ -460,7 +460,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 转发规则的更新时间
+         * @param updatedTime Update time of the forwarding rule
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 转发规则的更新时间
+         * @param updatedTime Update time of the forwarding rule
          * 
          * @return builder
          * 
@@ -494,7 +494,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneName 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+         * @param zoneName Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
          * 
          * @return builder
          * 
@@ -505,7 +505,7 @@ public final class ResolverRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneName 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+         * @param zoneName Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
          * 
          * @return builder
          * 

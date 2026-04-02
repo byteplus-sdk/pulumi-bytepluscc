@@ -24,8 +24,8 @@ class PermissionSetProvisioningArgs:
                  target_id: pulumi.Input[builtins.str]):
         """
         The set of arguments for constructing a PermissionSetProvisioning resource.
-        :param pulumi.Input[builtins.str] permission_set_id: 权限集 ID。
-        :param pulumi.Input[builtins.str] target_id: 授权的账号 ID。
+        :param pulumi.Input[builtins.str] permission_set_id: Permission set ID
+        :param pulumi.Input[builtins.str] target_id: Authorized account ID
         """
         pulumi.set(__self__, "permission_set_id", permission_set_id)
         pulumi.set(__self__, "target_id", target_id)
@@ -34,7 +34,7 @@ class PermissionSetProvisioningArgs:
     @pulumi.getter(name="permissionSetId")
     def permission_set_id(self) -> pulumi.Input[builtins.str]:
         """
-        权限集 ID。
+        Permission set ID
         """
         return pulumi.get(self, "permission_set_id")
 
@@ -46,7 +46,7 @@ class PermissionSetProvisioningArgs:
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Input[builtins.str]:
         """
-        授权的账号 ID。
+        Authorized account ID
         """
         return pulumi.get(self, "target_id")
 
@@ -67,13 +67,13 @@ class _PermissionSetProvisioningState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering PermissionSetProvisioning resources.
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] permission_set_id: 权限集 ID。
-        :param pulumi.Input[builtins.str] permission_set_name: 权限集名。
-        :param pulumi.Input[builtins.str] provisioning_status: 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
-        :param pulumi.Input[builtins.str] target_id: 授权的账号 ID。
-        :param pulumi.Input[builtins.str] target_name: 账号名。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
+        :param pulumi.Input[builtins.str] created_time: Creation time
+        :param pulumi.Input[builtins.str] permission_set_id: Permission set ID
+        :param pulumi.Input[builtins.str] permission_set_name: Permission set name
+        :param pulumi.Input[builtins.str] provisioning_status: Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
+        :param pulumi.Input[builtins.str] target_id: Authorized account ID
+        :param pulumi.Input[builtins.str] target_name: Account name
+        :param pulumi.Input[builtins.str] updated_time: Update time
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -94,7 +94,7 @@ class _PermissionSetProvisioningState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -106,7 +106,7 @@ class _PermissionSetProvisioningState:
     @pulumi.getter(name="permissionSetId")
     def permission_set_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限集 ID。
+        Permission set ID
         """
         return pulumi.get(self, "permission_set_id")
 
@@ -118,7 +118,7 @@ class _PermissionSetProvisioningState:
     @pulumi.getter(name="permissionSetName")
     def permission_set_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限集名。
+        Permission set name
         """
         return pulumi.get(self, "permission_set_name")
 
@@ -130,7 +130,7 @@ class _PermissionSetProvisioningState:
     @pulumi.getter(name="provisioningStatus")
     def provisioning_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+        Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
         """
         return pulumi.get(self, "provisioning_status")
 
@@ -142,7 +142,7 @@ class _PermissionSetProvisioningState:
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        授权的账号 ID。
+        Authorized account ID
         """
         return pulumi.get(self, "target_id")
 
@@ -154,7 +154,7 @@ class _PermissionSetProvisioningState:
     @pulumi.getter(name="targetName")
     def target_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号名。
+        Account name
         """
         return pulumi.get(self, "target_name")
 
@@ -166,7 +166,7 @@ class _PermissionSetProvisioningState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间。
+        Update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -185,7 +185,7 @@ class PermissionSetProvisioning(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        给指定的账号部署权限集。
+        Deploy permission set to the specified account
 
         ## Example Usage
 
@@ -206,8 +206,8 @@ class PermissionSetProvisioning(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] permission_set_id: 权限集 ID。
-        :param pulumi.Input[builtins.str] target_id: 授权的账号 ID。
+        :param pulumi.Input[builtins.str] permission_set_id: Permission set ID
+        :param pulumi.Input[builtins.str] target_id: Authorized account ID
         """
         ...
     @overload
@@ -216,7 +216,7 @@ class PermissionSetProvisioning(pulumi.CustomResource):
                  args: PermissionSetProvisioningArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        给指定的账号部署权限集。
+        Deploy permission set to the specified account
 
         ## Example Usage
 
@@ -296,13 +296,13 @@ class PermissionSetProvisioning(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] permission_set_id: 权限集 ID。
-        :param pulumi.Input[builtins.str] permission_set_name: 权限集名。
-        :param pulumi.Input[builtins.str] provisioning_status: 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
-        :param pulumi.Input[builtins.str] target_id: 授权的账号 ID。
-        :param pulumi.Input[builtins.str] target_name: 账号名。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
+        :param pulumi.Input[builtins.str] created_time: Creation time
+        :param pulumi.Input[builtins.str] permission_set_id: Permission set ID
+        :param pulumi.Input[builtins.str] permission_set_name: Permission set name
+        :param pulumi.Input[builtins.str] provisioning_status: Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
+        :param pulumi.Input[builtins.str] target_id: Authorized account ID
+        :param pulumi.Input[builtins.str] target_name: Account name
+        :param pulumi.Input[builtins.str] updated_time: Update time
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -321,7 +321,7 @@ class PermissionSetProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -329,7 +329,7 @@ class PermissionSetProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="permissionSetId")
     def permission_set_id(self) -> pulumi.Output[builtins.str]:
         """
-        权限集 ID。
+        Permission set ID
         """
         return pulumi.get(self, "permission_set_id")
 
@@ -337,7 +337,7 @@ class PermissionSetProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="permissionSetName")
     def permission_set_name(self) -> pulumi.Output[builtins.str]:
         """
-        权限集名。
+        Permission set name
         """
         return pulumi.get(self, "permission_set_name")
 
@@ -345,7 +345,7 @@ class PermissionSetProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="provisioningStatus")
     def provisioning_status(self) -> pulumi.Output[builtins.str]:
         """
-        权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+        Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
         """
         return pulumi.get(self, "provisioning_status")
 
@@ -353,7 +353,7 @@ class PermissionSetProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[builtins.str]:
         """
-        授权的账号 ID。
+        Authorized account ID
         """
         return pulumi.get(self, "target_id")
 
@@ -361,7 +361,7 @@ class PermissionSetProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="targetName")
     def target_name(self) -> pulumi.Output[builtins.str]:
         """
-        账号名。
+        Account name
         """
         return pulumi.get(self, "target_name")
 
@@ -369,7 +369,7 @@ class PermissionSetProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间。
+        Update time
         """
         return pulumi.get(self, "updated_time")
 

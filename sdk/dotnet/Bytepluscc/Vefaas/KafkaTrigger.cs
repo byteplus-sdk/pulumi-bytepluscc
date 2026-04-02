@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vefaas
 {
     /// <summary>
-    /// 函数服务支持对接消息队列 Kafka 版。通过创建 Kafka 触发器，函数服务将作为消费者消费 Kafka 中的消息，并将消息传递给用户函数，触发函数代码逻辑。您无需关心函数服务消费消息的细节，只需编写处理消息的函数。
+    /// Function service supports integration with Kafka message queue. By creating a Kafka trigger, the function service acts as a consumer to consume messages from Kafka and passes them to your function, triggering your function logic. You do not need to handle the details of message consumption; just write the function to process messages.
     /// 
     /// ## Example Usage
     /// 
@@ -56,97 +56,97 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
     public partial class KafkaTrigger : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+        /// Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
         /// </summary>
         [Output("batchFlushDurationMilliseconds")]
         public Output<int> BatchFlushDurationMilliseconds { get; private set; } = null!;
 
         /// <summary>
-        /// 触发器批量消费的每批次消息数。
+        /// Number of messages per batch for trigger batch consumption.
         /// </summary>
         [Output("batchSize")]
         public Output<int> BatchSize { get; private set; } = null!;
 
         /// <summary>
-        /// 消息队列 Kafka 实例的消费组名字。
+        /// Consumer group name of the Kafka message queue instance.
         /// </summary>
         [Output("consumerGroup")]
         public Output<string> ConsumerGroup { get; private set; } = null!;
 
         /// <summary>
-        /// Kafka 触发器创建时间。
+        /// Kafka trigger creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// Kafka 触发器描述。长度限制为 200 个字符以内。
+        /// Description of the Kafka trigger. Limited to 200 characters.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+        /// Enable the trigger when creating it. Options: true—enable. false—disable.
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// 函数 ID。
+        /// Function ID.
         /// </summary>
         [Output("functionId")]
         public Output<string> FunctionId { get; private set; } = null!;
 
         /// <summary>
-        /// Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+        /// Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
         /// </summary>
         [Output("kafkaCredentials")]
         public Output<Outputs.KafkaTriggerKafkaCredentials> KafkaCredentials { get; private set; } = null!;
 
         /// <summary>
-        /// Kafka 触发器 ID。
+        /// Kafka trigger ID.
         /// </summary>
         [Output("kafkaTriggerId")]
         public Output<string> KafkaTriggerId { get; private set; } = null!;
 
         /// <summary>
-        /// 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+        /// Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
         /// </summary>
         [Output("maximumRetryAttempts")]
         public Output<int> MaximumRetryAttempts { get; private set; } = null!;
 
         /// <summary>
-        /// 消息队列 Kafka 实例 ID。
+        /// Kafka message queue instance ID.
         /// </summary>
         [Output("mqInstanceId")]
         public Output<string> MqInstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+        /// Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+        /// Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
         /// </summary>
         [Output("startingPosition")]
         public Output<string> StartingPosition { get; private set; } = null!;
 
         /// <summary>
-        /// Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+        /// Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 消息队列 Kafka 实例的 Topic 名称。
+        /// Topic name of the Kafka message queue instance.
         /// </summary>
         [Output("topicName")]
         public Output<string> TopicName { get; private set; } = null!;
 
         /// <summary>
-        /// Kafka 触发器最近一次更新时间。
+        /// Last update time of the Kafka trigger.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -199,67 +199,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
     public sealed class KafkaTriggerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+        /// Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
         /// </summary>
         [Input("batchFlushDurationMilliseconds")]
         public Input<int>? BatchFlushDurationMilliseconds { get; set; }
 
         /// <summary>
-        /// 触发器批量消费的每批次消息数。
+        /// Number of messages per batch for trigger batch consumption.
         /// </summary>
         [Input("batchSize")]
         public Input<int>? BatchSize { get; set; }
 
         /// <summary>
-        /// Kafka 触发器描述。长度限制为 200 个字符以内。
+        /// Description of the Kafka trigger. Limited to 200 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+        /// Enable the trigger when creating it. Options: true—enable. false—disable.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// 函数 ID。
+        /// Function ID.
         /// </summary>
         [Input("functionId", required: true)]
         public Input<string> FunctionId { get; set; } = null!;
 
         /// <summary>
-        /// Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+        /// Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
         /// </summary>
         [Input("kafkaCredentials", required: true)]
         public Input<Inputs.KafkaTriggerKafkaCredentialsArgs> KafkaCredentials { get; set; } = null!;
 
         /// <summary>
-        /// 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+        /// Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
         /// </summary>
         [Input("maximumRetryAttempts")]
         public Input<int>? MaximumRetryAttempts { get; set; }
 
         /// <summary>
-        /// 消息队列 Kafka 实例 ID。
+        /// Kafka message queue instance ID.
         /// </summary>
         [Input("mqInstanceId", required: true)]
         public Input<string> MqInstanceId { get; set; } = null!;
 
         /// <summary>
-        /// Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+        /// Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+        /// Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
         /// </summary>
         [Input("startingPosition")]
         public Input<string>? StartingPosition { get; set; }
 
         /// <summary>
-        /// 消息队列 Kafka 实例的 Topic 名称。
+        /// Topic name of the Kafka message queue instance.
         /// </summary>
         [Input("topicName", required: true)]
         public Input<string> TopicName { get; set; } = null!;
@@ -273,97 +273,97 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
     public sealed class KafkaTriggerState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+        /// Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
         /// </summary>
         [Input("batchFlushDurationMilliseconds")]
         public Input<int>? BatchFlushDurationMilliseconds { get; set; }
 
         /// <summary>
-        /// 触发器批量消费的每批次消息数。
+        /// Number of messages per batch for trigger batch consumption.
         /// </summary>
         [Input("batchSize")]
         public Input<int>? BatchSize { get; set; }
 
         /// <summary>
-        /// 消息队列 Kafka 实例的消费组名字。
+        /// Consumer group name of the Kafka message queue instance.
         /// </summary>
         [Input("consumerGroup")]
         public Input<string>? ConsumerGroup { get; set; }
 
         /// <summary>
-        /// Kafka 触发器创建时间。
+        /// Kafka trigger creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// Kafka 触发器描述。长度限制为 200 个字符以内。
+        /// Description of the Kafka trigger. Limited to 200 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+        /// Enable the trigger when creating it. Options: true—enable. false—disable.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// 函数 ID。
+        /// Function ID.
         /// </summary>
         [Input("functionId")]
         public Input<string>? FunctionId { get; set; }
 
         /// <summary>
-        /// Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+        /// Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
         /// </summary>
         [Input("kafkaCredentials")]
         public Input<Inputs.KafkaTriggerKafkaCredentialsGetArgs>? KafkaCredentials { get; set; }
 
         /// <summary>
-        /// Kafka 触发器 ID。
+        /// Kafka trigger ID.
         /// </summary>
         [Input("kafkaTriggerId")]
         public Input<string>? KafkaTriggerId { get; set; }
 
         /// <summary>
-        /// 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+        /// Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
         /// </summary>
         [Input("maximumRetryAttempts")]
         public Input<int>? MaximumRetryAttempts { get; set; }
 
         /// <summary>
-        /// 消息队列 Kafka 实例 ID。
+        /// Kafka message queue instance ID.
         /// </summary>
         [Input("mqInstanceId")]
         public Input<string>? MqInstanceId { get; set; }
 
         /// <summary>
-        /// Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+        /// Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+        /// Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
         /// </summary>
         [Input("startingPosition")]
         public Input<string>? StartingPosition { get; set; }
 
         /// <summary>
-        /// Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+        /// Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 消息队列 Kafka 实例的 Topic 名称。
+        /// Topic name of the Kafka message queue instance.
         /// </summary>
         [Input("topicName")]
         public Input<string>? TopicName { get; set; }
 
         /// <summary>
-        /// Kafka 触发器最近一次更新时间。
+        /// Last update time of the Kafka trigger.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

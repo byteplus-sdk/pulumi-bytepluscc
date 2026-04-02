@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Organization
 {
     /// <summary>
-    /// 企业组织管理
+    /// Enterprise Organization Management
     /// 
     /// ## Example Usage
     /// 
@@ -38,19 +38,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
     public partial class Organization : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 组织详情
+        /// Organization Details
         /// </summary>
         [Output("organization")]
         public Output<Outputs.OrganizationOrganization> OrganizationValue { get; private set; } = null!;
 
         /// <summary>
-        /// 组织ID
+        /// Organization ID
         /// </summary>
         [Output("organizationId")]
         public Output<string> OrganizationId { get; private set; } = null!;
 
         /// <summary>
-        /// 管理员详情
+        /// Administrator Details
         /// </summary>
         [Output("owner")]
         public Output<Outputs.OrganizationOwner> Owner { get; private set; } = null!;
@@ -103,13 +103,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
     public sealed class OrganizationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 组织详情
+        /// Organization Details
         /// </summary>
         [Input("organization")]
         public Input<Inputs.OrganizationOrganizationArgs>? OrganizationValue { get; set; }
 
         /// <summary>
-        /// 管理员详情
+        /// Administrator Details
         /// </summary>
         [Input("owner")]
         public Input<Inputs.OrganizationOwnerArgs>? Owner { get; set; }
@@ -123,19 +123,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
     public sealed class OrganizationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 组织详情
+        /// Organization Details
         /// </summary>
         [Input("organization")]
         public Input<Inputs.OrganizationOrganizationGetArgs>? OrganizationValue { get; set; }
 
         /// <summary>
-        /// 组织ID
+        /// Organization ID
         /// </summary>
         [Input("organizationId")]
         public Input<string>? OrganizationId { get; set; }
 
         /// <summary>
-        /// 管理员详情
+        /// Administrator Details
         /// </summary>
         [Input("owner")]
         public Input<Inputs.OrganizationOwnerGetArgs>? Owner { get; set; }

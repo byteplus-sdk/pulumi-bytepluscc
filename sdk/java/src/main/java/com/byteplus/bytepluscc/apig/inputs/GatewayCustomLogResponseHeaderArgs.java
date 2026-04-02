@@ -16,14 +16,14 @@ public final class GatewayCustomLogResponseHeaderArgs extends com.pulumi.resourc
     public static final GatewayCustomLogResponseHeaderArgs Empty = new GatewayCustomLogResponseHeaderArgs();
 
     /**
-     * 字段别名。
+     * Field alias
      * 
      */
     @Import(name="aliasesInLog")
     private @Nullable Output<String> aliasesInLog;
 
     /**
-     * @return 字段别名。
+     * @return Field alias
      * 
      */
     public Optional<Output<String>> aliasesInLog() {
@@ -31,14 +31,14 @@ public final class GatewayCustomLogResponseHeaderArgs extends com.pulumi.resourc
     }
 
     /**
-     * 请求头键。
+     * Request header key
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 请求头键。
+     * @return Request header key
      * 
      */
     public Optional<Output<String>> key() {
@@ -71,7 +71,7 @@ public final class GatewayCustomLogResponseHeaderArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param aliasesInLog 字段别名。
+         * @param aliasesInLog Field alias
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class GatewayCustomLogResponseHeaderArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param aliasesInLog 字段别名。
+         * @param aliasesInLog Field alias
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class GatewayCustomLogResponseHeaderArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param key 请求头键。
+         * @param key Request header key
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class GatewayCustomLogResponseHeaderArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param key 请求头键。
+         * @param key Request header key
          * 
          * @return builder
          * 

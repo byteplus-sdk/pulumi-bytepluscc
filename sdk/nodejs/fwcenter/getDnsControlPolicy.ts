@@ -31,35 +31,35 @@ export interface GetDnsControlPolicyArgs {
  */
 export interface GetDnsControlPolicyResult {
     /**
-     * 用户的唯一标识ID。
+     * User's unique identifier.
      */
     readonly accountId: string;
     /**
-     * 策略的描述信息。
+     * Policy description information.
      */
     readonly description: string;
     /**
-     * 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+     * Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
      */
     readonly destination: string;
     /**
-     * 域名地址簿名称列表。
+     * Domain address book name list.
      */
     readonly destinationGroupLists: string[];
     /**
-     * 访问目的的类型。domain：域名；group：域名地址簿。
+     * Type of access target. domain: domain; group: domain address book.
      */
     readonly destinationType: string;
     /**
-     * 域名地址簿的域名列表。
+     * Domain list in the domain address book.
      */
     readonly domainListV1s: outputs.fwcenter.GetDnsControlPolicyDomainListV1[];
     /**
-     * 域名列表。
+     * Domain list.
      */
     readonly domainLists: string[];
     /**
-     * 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+     * Hit count, indicating the number of times the domain denylist access control policy was triggered.
      */
     readonly hitCnt: number;
     /**
@@ -67,27 +67,27 @@ export interface GetDnsControlPolicyResult {
      */
     readonly id: string;
     /**
-     * 互联网边界防火墙实例ID。
+     * Internet border firewall instance ID.
      */
     readonly internetFirewallId: string;
     /**
-     * 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+     * Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
      */
     readonly lastHitTime: number;
     /**
-     * 访问控制策略的唯一标识ID。
+     * Unique identifier of the access control policy.
      */
     readonly ruleId: string;
     /**
-     * 访问源信息，包含VPC列表。
+     * Access source information, including VPC list.
      */
     readonly sources: outputs.fwcenter.GetDnsControlPolicySource[];
     /**
-     * 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+     * Switch status of the domain denylist access control policy. false: Off; true: On.
      */
     readonly status: boolean;
     /**
-     * 该域名黑名单访问控制策略占用的策略数量。
+     * Number of policies occupied by this domain denylist access control policy.
      */
     readonly useCount: number;
 }

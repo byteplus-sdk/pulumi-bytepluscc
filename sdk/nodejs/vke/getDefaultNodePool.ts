@@ -31,15 +31,15 @@ export interface GetDefaultNodePoolArgs {
  */
 export interface GetDefaultNodePoolResult {
     /**
-     * 节点池伸缩策略配置。
+     * Node pool scaling policy configuration
      */
     readonly autoScaling: outputs.vke.GetDefaultNodePoolAutoScaling;
     /**
-     * 节点池所在集群的 ID。
+     * Cluster ID where the node pool is located
      */
     readonly clusterId: string;
     /**
-     * 创建节点池的时间。
+     * Node pool creation time
      */
     readonly createdTime: string;
     /**
@@ -47,39 +47,39 @@ export interface GetDefaultNodePoolResult {
      */
     readonly id: string;
     /**
-     * 节点池 Kubernetes 相关配置。
+     * Kubernetes-related configuration for the node pool
      */
     readonly kubernetesConfig: outputs.vke.GetDefaultNodePoolKubernetesConfig;
     /**
-     * 托管节点池配置。
+     * Managed node pool configuration
      */
     readonly management: outputs.vke.GetDefaultNodePoolManagement;
     /**
-     * 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
      */
     readonly name: string;
     /**
-     * 节点池中云服务器（ECS）实例配置。
+     * Cloud server (ECS) instance configuration in the node pool
      */
     readonly nodeConfig: outputs.vke.GetDefaultNodePoolNodeConfig;
     /**
-     * 节点池 ID 。
+     * Node pool ID
      */
     readonly nodePoolId: string;
     /**
-     * 节点池中的节点统计。
+     * Node statistics in the node pool.
      */
     readonly nodeStatistics: outputs.vke.GetDefaultNodePoolNodeStatistics;
     /**
-     * 节点池状态。
+     * Node pool status
      */
     readonly status: outputs.vke.GetDefaultNodePoolStatus;
     /**
-     * 节点池的标签信息
+     * Node pool tag information
      */
     readonly tags: outputs.vke.GetDefaultNodePoolTag[];
     /**
-     * 更新节点池的时间。
+     * Time when the node pool was updated
      */
     readonly updatedTime: string;
 }

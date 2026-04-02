@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterMonitoringConfigComponentConfig {
     /**
-     * @return 是否启用该监控组件，true 表示启用，false 表示禁用。
+     * @return Whether to enable this monitoring component. true means enabled; false means disabled.
      * 
      */
     private Boolean enabled;
     /**
-     * @return 监控组件的名称，例如 &#39;prometheus&#39;、&#39;grafana&#39; 等。
+     * @return Name of the monitoring component, such as &#39;prometheus&#39;, &#39;grafana&#39;, etc.
      * 
      */
     private String name;
 
     private GetClusterMonitoringConfigComponentConfig() {}
     /**
-     * @return 是否启用该监控组件，true 表示启用，false 表示禁用。
+     * @return Whether to enable this monitoring component. true means enabled; false means disabled.
      * 
      */
     public Boolean enabled() {
         return this.enabled;
     }
     /**
-     * @return 监控组件的名称，例如 &#39;prometheus&#39;、&#39;grafana&#39; 等。
+     * @return Name of the monitoring component, such as &#39;prometheus&#39;, &#39;grafana&#39;, etc.
      * 
      */
     public String name() {

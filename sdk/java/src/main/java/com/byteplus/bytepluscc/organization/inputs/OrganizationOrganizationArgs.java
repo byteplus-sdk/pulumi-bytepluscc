@@ -17,14 +17,14 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
     public static final OrganizationOrganizationArgs Empty = new OrganizationOrganizationArgs();
 
     /**
-     * 创建时间
+     * Creation Time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间
+     * @return Creation Time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -32,14 +32,14 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 描述
+     * Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 描述
+     * @return Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -47,14 +47,14 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 组织名称
+     * Organization Name
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 组织名称
+     * @return Organization Name
      * 
      */
     public Optional<Output<String>> name() {
@@ -62,14 +62,14 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 管理员ID
+     * Administrator ID
      * 
      */
     @Import(name="owner")
     private @Nullable Output<String> owner;
 
     /**
-     * @return 管理员ID
+     * @return Administrator ID
      * 
      */
     public Optional<Output<String>> owner() {
@@ -77,14 +77,14 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 状态
+     * Status
      * 
      */
     @Import(name="status")
     private @Nullable Output<Integer> status;
 
     /**
-     * @return 状态
+     * @return Status
      * 
      */
     public Optional<Output<Integer>> status() {
@@ -92,14 +92,14 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 组织类型，企业组织固定是 1
+     * Organization type, enterprise organization is always 1
      * 
      */
     @Import(name="type")
     private @Nullable Output<Integer> type;
 
     /**
-     * @return 组织类型，企业组织固定是 1
+     * @return Organization type, enterprise organization is always 1
      * 
      */
     public Optional<Output<Integer>> type() {
@@ -107,14 +107,14 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 更新时间
+     * Last Updated
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间
+     * @return Last Updated
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -152,7 +152,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param createdTime 创建时间
+         * @param createdTime Creation Time
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param createdTime 创建时间
+         * @param createdTime Creation Time
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param description 描述
+         * @param description Description
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param description 描述
+         * @param description Description
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name 组织名称
+         * @param name Organization Name
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name 组织名称
+         * @param name Organization Name
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param owner 管理员ID
+         * @param owner Administrator ID
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param owner 管理员ID
+         * @param owner Administrator ID
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param status 状态
+         * @param status Status
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param status 状态
+         * @param status Status
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param type 组织类型，企业组织固定是 1
+         * @param type Organization type, enterprise organization is always 1
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param type 组织类型，企业组织固定是 1
+         * @param type Organization type, enterprise organization is always 1
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param updatedTime 更新时间
+         * @param updatedTime Last Updated
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class OrganizationOrganizationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param updatedTime 更新时间
+         * @param updatedTime Last Updated
          * 
          * @return builder
          * 

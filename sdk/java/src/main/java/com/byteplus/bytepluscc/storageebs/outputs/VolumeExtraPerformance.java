@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class VolumeExtraPerformance {
     /**
-     * @return 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+     * @return Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
      * 
      */
     private @Nullable String extraPerformanceTypeId;
     /**
-     * @return 云盘的额外IOPS。
+     * @return Extra IOPS of the disk.
      * 
      */
     private @Nullable Double iops;
     /**
-     * @return 云盘的额外吞吐量。
+     * @return Extra throughput of the disk.
      * 
      */
     private @Nullable Double throughput;
 
     private VolumeExtraPerformance() {}
     /**
-     * @return 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+     * @return Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
      * 
      */
     public Optional<String> extraPerformanceTypeId() {
         return Optional.ofNullable(this.extraPerformanceTypeId);
     }
     /**
-     * @return 云盘的额外IOPS。
+     * @return Extra IOPS of the disk.
      * 
      */
     public Optional<Double> iops() {
         return Optional.ofNullable(this.iops);
     }
     /**
-     * @return 云盘的额外吞吐量。
+     * @return Extra throughput of the disk.
      * 
      */
     public Optional<Double> throughput() {

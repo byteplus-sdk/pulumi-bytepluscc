@@ -16,14 +16,14 @@ public final class KeyTagArgs extends com.pulumi.resources.ResourceArgs {
     public static final KeyTagArgs Empty = new KeyTagArgs();
 
     /**
-     * KMS密钥的标签键
+     * KMS key label key.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return KMS密钥的标签键
+     * @return KMS key label key.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class KeyTagArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * KMS密钥的标签值
+     * KMS key label value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return KMS密钥的标签值
+     * @return KMS key label value.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class KeyTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key KMS密钥的标签键
+         * @param key KMS key label key.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class KeyTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key KMS密钥的标签键
+         * @param key KMS key label key.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class KeyTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value KMS密钥的标签值
+         * @param value KMS key label value.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class KeyTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value KMS密钥的标签值
+         * @param value KMS key label value.
          * 
          * @return builder
          * 

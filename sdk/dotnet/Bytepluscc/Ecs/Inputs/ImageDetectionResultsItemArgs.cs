@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class ImageDetectionResultsItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 检测项名称。
+        /// Check item name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 该检测项对应结果。
+        /// Result for this check item.
         /// </summary>
         [Input("result")]
         public Input<string>? Result { get; set; }
 
         /// <summary>
-        /// 风险描述码。
+        /// Risk description code
         /// </summary>
         [Input("riskCode")]
         public Input<string>? RiskCode { get; set; }
 
         /// <summary>
-        /// 风险等级。若该参数返回值为空，表示无风险。
+        /// Risk level. If this parameter is empty, it means no risk
         /// </summary>
         [Input("riskLevel")]
         public Input<string>? RiskLevel { get; set; }

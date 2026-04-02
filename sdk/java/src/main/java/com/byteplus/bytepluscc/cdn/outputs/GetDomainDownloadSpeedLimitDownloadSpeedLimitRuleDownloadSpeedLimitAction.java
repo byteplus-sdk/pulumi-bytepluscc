@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitAction {
     /**
-     * @return 表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+     * @return Indicates the maximum download speed for a single request, measured in B/S. The parameter range is 1–1,073,741,824,000,000, using a base conversion of 1,024.
      * 
      */
     private Integer speedLimitRate;
     /**
-     * @return 表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+     * @return Represents a data volume. Download throttling is enabled for a request only when the amount of data downloaded in a single request reaches this value. Unit: Byte. The parameter range is 0–1,073,741,824,000,000, using a base of 1,024 for conversion.
      * 
      */
     private Integer speedLimitRateAfter;
     /**
-     * @return 表示限速发生的日期和时间段。
+     * @return Indicates the date and time period when rate limiting occurs.
      * 
      */
     private GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTime speedLimitTime;
 
     private GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitAction() {}
     /**
-     * @return 表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+     * @return Indicates the maximum download speed for a single request, measured in B/S. The parameter range is 1–1,073,741,824,000,000, using a base conversion of 1,024.
      * 
      */
     public Integer speedLimitRate() {
         return this.speedLimitRate;
     }
     /**
-     * @return 表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+     * @return Represents a data volume. Download throttling is enabled for a request only when the amount of data downloaded in a single request reaches this value. Unit: Byte. The parameter range is 0–1,073,741,824,000,000, using a base of 1,024 for conversion.
      * 
      */
     public Integer speedLimitRateAfter() {
         return this.speedLimitRateAfter;
     }
     /**
-     * @return 表示限速发生的日期和时间段。
+     * @return Indicates the date and time period when rate limiting occurs.
      * 
      */
     public GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTime speedLimitTime() {

@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CenTag {
     /**
-     * @return 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和{@literal @}。同一资源的标签键不允许重复
+     * @return Tag key for user labels. Length limit: 1–128 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}. Duplicate tag keys are not allowed for the same resource
      * 
      */
     private @Nullable String key;
     /**
-     * @return 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和{@literal @}
+     * @return Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}
      * 
      */
     private @Nullable String value;
 
     private CenTag() {}
     /**
-     * @return 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和{@literal @}。同一资源的标签键不允许重复
+     * @return Tag key for user labels. Length limit: 1–128 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}. Duplicate tag keys are not allowed for the same resource
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和{@literal @}
+     * @return Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}
      * 
      */
     public Optional<String> value() {

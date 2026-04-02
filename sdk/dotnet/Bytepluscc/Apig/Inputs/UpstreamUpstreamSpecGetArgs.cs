@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamUpstreamSpecGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// AI模型代理。
+        /// AI model proxy
         /// </summary>
         [Input("aiProvider")]
         public Input<Inputs.UpstreamUpstreamSpecAiProviderGetArgs>? AiProvider { get; set; }
 
         /// <summary>
-        /// 固定域名。
+        /// Fixed domain name
         /// </summary>
         [Input("domain")]
         public Input<Inputs.UpstreamUpstreamSpecDomainGetArgs>? Domain { get; set; }
@@ -34,19 +34,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
         }
 
         /// <summary>
-        /// 容器服务。
+        /// Container Service
         /// </summary>
         [Input("k8SService")]
         public Input<Inputs.UpstreamUpstreamSpecK8SServiceGetArgs>? K8SService { get; set; }
 
         /// <summary>
-        /// 注册中心。
+        /// Registry Center
         /// </summary>
         [Input("nacosService")]
         public Input<Inputs.UpstreamUpstreamSpecNacosServiceGetArgs>? NacosService { get; set; }
 
         /// <summary>
-        /// 函数服务。
+        /// Function service
         /// </summary>
         [Input("veFaas")]
         public Input<Inputs.UpstreamUpstreamSpecVeFaasGetArgs>? VeFaas { get; set; }

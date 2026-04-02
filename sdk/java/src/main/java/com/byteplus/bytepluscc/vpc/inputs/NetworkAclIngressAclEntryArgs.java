@@ -16,14 +16,14 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
     public static final NetworkAclIngressAclEntryArgs Empty = new NetworkAclIngressAclEntryArgs();
 
     /**
-     * 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+     * For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
      * 
      */
     @Import(name="cidrIp")
     private @Nullable Output<String> cidrIp;
 
     /**
-     * @return 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+     * @return For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
      * 
      */
     public Optional<Output<String>> cidrIp() {
@@ -31,14 +31,14 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 规则的描述信息。
+     * Rule description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 规则的描述信息。
+     * @return Rule description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -46,14 +46,14 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 规则的名称。
+     * Rule name.
      * 
      */
     @Import(name="networkAclEntryName")
     private @Nullable Output<String> networkAclEntryName;
 
     /**
-     * @return 规则的名称。
+     * @return Rule name.
      * 
      */
     public Optional<Output<String>> networkAclEntryName() {
@@ -61,14 +61,14 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+     * Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
      * 
      */
     @Import(name="policy")
     private @Nullable Output<String> policy;
 
     /**
-     * @return 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+     * @return Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
      * 
      */
     public Optional<Output<String>> policy() {
@@ -76,14 +76,14 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+     * Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
      * 
      */
     @Import(name="port")
     private @Nullable Output<String> port;
 
     /**
-     * @return 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+     * @return Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
      * 
      */
     public Optional<Output<String>> port() {
@@ -91,14 +91,14 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+     * Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
      * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
-     * @return 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+     * @return Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -135,7 +135,7 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param cidrIp 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+         * @param cidrIp For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param cidrIp 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+         * @param cidrIp For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param description 规则的描述信息。
+         * @param description Rule description.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param description 规则的描述信息。
+         * @param description Rule description.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param networkAclEntryName 规则的名称。
+         * @param networkAclEntryName Rule name.
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param networkAclEntryName 规则的名称。
+         * @param networkAclEntryName Rule name.
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param policy 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+         * @param policy Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param policy 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+         * @param policy Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param port 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+         * @param port Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param port 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+         * @param port Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param protocol 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+         * @param protocol Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class NetworkAclIngressAclEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param protocol 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+         * @param protocol Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
          * 
          * @return builder
          * 

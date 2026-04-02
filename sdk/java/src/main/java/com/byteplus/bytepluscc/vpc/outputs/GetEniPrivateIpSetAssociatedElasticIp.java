@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetEniPrivateIpSetAssociatedElasticIp {
     /**
-     * @return 公网IP的ID。
+     * @return Public IP ID
      * 
      */
     private String allocationId;
     /**
-     * @return 公网IP的地址。
+     * @return Public IP address
      * 
      */
     private String eipAddress;
     /**
-     * @return 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+     * @return Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC&#39;s primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
      * 
      */
     private Boolean releaseWithInstance;
 
     private GetEniPrivateIpSetAssociatedElasticIp() {}
     /**
-     * @return 公网IP的ID。
+     * @return Public IP ID
      * 
      */
     public String allocationId() {
         return this.allocationId;
     }
     /**
-     * @return 公网IP的地址。
+     * @return Public IP address
      * 
      */
     public String eipAddress() {
         return this.eipAddress;
     }
     /**
-     * @return 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+     * @return Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC&#39;s primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
      * 
      */
     public Boolean releaseWithInstance() {

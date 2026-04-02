@@ -91,7 +91,7 @@ class GetInstanceResult:
     @pulumi.getter(name="cachePerformance")
     def cache_performance(self) -> 'outputs.GetInstanceCachePerformanceResult':
         """
-        缓存型性能信息。
+        Cache performance information
         """
         return pulumi.get(self, "cache_performance")
 
@@ -99,7 +99,7 @@ class GetInstanceResult:
     @pulumi.getter
     def capacity(self) -> 'outputs.GetInstanceCapacityResult':
         """
-        文件系统容量。
+        File system capacity
         """
         return pulumi.get(self, "capacity")
 
@@ -107,7 +107,7 @@ class GetInstanceResult:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        计费类型，取值 PayAsYouGo，表示按量计费。
+        Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
         """
         return pulumi.get(self, "charge_type")
 
@@ -115,7 +115,7 @@ class GetInstanceResult:
     @pulumi.getter(name="createTime")
     def create_time(self) -> builtins.str:
         """
-        创建时间
+        Creation time
         """
         return pulumi.get(self, "create_time")
 
@@ -123,7 +123,7 @@ class GetInstanceResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        描述信息。
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -131,7 +131,7 @@ class GetInstanceResult:
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> builtins.str:
         """
-        文件系统 ID。
+        File system ID
         """
         return pulumi.get(self, "file_system_id")
 
@@ -139,7 +139,7 @@ class GetInstanceResult:
     @pulumi.getter(name="fileSystemName")
     def file_system_name(self) -> builtins.str:
         """
-        文件系统名称。
+        File system name
         """
         return pulumi.get(self, "file_system_name")
 
@@ -147,7 +147,7 @@ class GetInstanceResult:
     @pulumi.getter(name="fileSystemType")
     def file_system_type(self) -> builtins.str:
         """
-        文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+        File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
         """
         return pulumi.get(self, "file_system_type")
 
@@ -163,7 +163,7 @@ class GetInstanceResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        所属项目，默认值为 default 项目。
+        Project, default value is the Default project
         """
         return pulumi.get(self, "project_name")
 
@@ -171,7 +171,7 @@ class GetInstanceResult:
     @pulumi.getter(name="protocolType")
     def protocol_type(self) -> builtins.str:
         """
-        文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+        File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
         """
         return pulumi.get(self, "protocol_type")
 
@@ -179,7 +179,7 @@ class GetInstanceResult:
     @pulumi.getter(name="snapshotCount")
     def snapshot_count(self) -> builtins.int:
         """
-        快照数量
+        Number of snapshots
         """
         return pulumi.get(self, "snapshot_count")
 
@@ -187,7 +187,7 @@ class GetInstanceResult:
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> builtins.str:
         """
-        创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+        Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -195,7 +195,7 @@ class GetInstanceResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+        File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
         """
         return pulumi.get(self, "status")
 
@@ -203,7 +203,7 @@ class GetInstanceResult:
     @pulumi.getter(name="storageType")
     def storage_type(self) -> builtins.str:
         """
-        存储类型，取值Standard，表示标准型。
+        Storage type. Value: Standard, indicates standard type
         """
         return pulumi.get(self, "storage_type")
 
@@ -211,7 +211,7 @@ class GetInstanceResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetInstanceTagResult']:
         """
-        文件系统的标签信息
+        File system tag information
         """
         return pulumi.get(self, "tags")
 
@@ -219,7 +219,7 @@ class GetInstanceResult:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> builtins.str:
         """
-        更新时间
+        Update time
         """
         return pulumi.get(self, "update_time")
 
@@ -227,7 +227,7 @@ class GetInstanceResult:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        可用区 ID。
+        Availability Zone ID
         """
         return pulumi.get(self, "zone_id")
 
@@ -235,7 +235,7 @@ class GetInstanceResult:
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> builtins.str:
         """
-        可用区名称。
+        Availability Zone name
         """
         return pulumi.get(self, "zone_name")
 

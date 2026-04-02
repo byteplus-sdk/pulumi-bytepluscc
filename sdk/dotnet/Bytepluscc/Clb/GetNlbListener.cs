@@ -65,31 +65,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     public sealed class GetNlbListenerResult
     {
         /// <summary>
-        /// TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+        /// TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
         /// </summary>
         public readonly string CertificateId;
         /// <summary>
-        /// 监听器的连接超时时间（秒）。
+        /// Listener connection timeout (seconds)
         /// </summary>
         public readonly int ConnectionTimeout;
         /// <summary>
-        /// 监听器的创建时间。
+        /// Listener creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 监听器描述信息。
+        /// Listener description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 是否启用监听器。true：开启；false：关闭。
+        /// Listener enabled: true (enabled); false (disabled)
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// 全端口监听的结束端口，仅当Port为0时有效。
+        /// End port for all-port listening. Valid only when Port is 0.
         /// </summary>
         public readonly int EndPort;
         /// <summary>
-        /// 后端实例健康检查响应信息。
+        /// Backend instance health check response information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNlbListenerHealthResult> Healths;
         /// <summary>
@@ -97,47 +97,47 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 监听器唯一标识。
+        /// Listener unique identifier
         /// </summary>
         public readonly string ListenerId;
         /// <summary>
-        /// 监听器名称。
+        /// Listener name
         /// </summary>
         public readonly string ListenerName;
         /// <summary>
-        /// 负载均衡实例ID。
+        /// Load balancer instance ID
         /// </summary>
         public readonly string LoadBalancerId;
         /// <summary>
-        /// 监听器接收请求的端口，0表示启用全端口监听。
+        /// Port on which the listener receives requests. 0 indicates all-port listening is enabled.
         /// </summary>
         public readonly int Port;
         /// <summary>
-        /// 监听协议类型。TCP,UDP,TLS
+        /// Listener protocol type: TCP, UDP, TLS
         /// </summary>
         public readonly string Protocol;
         /// <summary>
-        /// TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+        /// TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
         /// </summary>
         public readonly string SecurityPolicyId;
         /// <summary>
-        /// 监听器关联的服务器组ID。
+        /// Server group ID associated with the listener
         /// </summary>
         public readonly string ServerGroupId;
         /// <summary>
-        /// 全端口监听的起始端口，仅当Port为0时有效。
+        /// Start port for all-port listening. Valid only when Port is 0.
         /// </summary>
         public readonly int StartPort;
         /// <summary>
-        /// 监听器的状态。
+        /// Listener status
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 资源标签。
+        /// Resource tags
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNlbListenerTagResult> Tags;
         /// <summary>
-        /// 监听器最近操作时间。
+        /// Listener's most recent operation time
         /// </summary>
         public readonly string UpdatedTime;
 

@@ -13,62 +13,62 @@ import java.util.Objects;
 @CustomType
 public final class GetScalingConfigurationEip {
     /**
-     * @return 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+     * @return Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
      * 
      */
     private Integer bandwidth;
     /**
-     * @return 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+     * @return ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
      * 
      */
     private String bandwidthPackageId;
     /**
-     * @return 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+     * @return Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
      * 
      */
     private String billingType;
     /**
-     * @return 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+     * @return Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
      * 
      */
     private String isp;
     /**
-     * @return 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+     * @return Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
      * 
      */
     private Boolean releaseWithInstance;
 
     private GetScalingConfigurationEip() {}
     /**
-     * @return 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+     * @return Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
      * 
      */
     public Integer bandwidth() {
         return this.bandwidth;
     }
     /**
-     * @return 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+     * @return ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
      * 
      */
     public String bandwidthPackageId() {
         return this.bandwidthPackageId;
     }
     /**
-     * @return 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+     * @return Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
      * 
      */
     public String billingType() {
         return this.billingType;
     }
     /**
-     * @return 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+     * @return Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
      * 
      */
     public String isp() {
         return this.isp;
     }
     /**
-     * @return 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+     * @return Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
      * 
      */
     public Boolean releaseWithInstance() {

@@ -299,6 +299,12 @@
                     "db_instance_ids": {
                         "maxItemsOne": false
                     },
+                    "instance_remove_policies": {
+                        "maxItemsOne": false
+                    },
+                    "instances": {
+                        "maxItemsOne": false
+                    },
                     "launch_template_overrides": {
                         "maxItemsOne": false
                     },
@@ -975,6 +981,9 @@
                     }
                 }
             },
+            "bytepluscc_cen_grant_instance": {
+                "current": "bytepluscc:cen/grantInstance:GrantInstance"
+            },
             "bytepluscc_clb_acl": {
                 "current": "bytepluscc:clb/acl:Acl",
                 "fields": {
@@ -1324,6 +1333,13 @@
                     "detection_results": {
                         "fields": {
                             "items": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "import_image": {
+                        "fields": {
+                            "import_data_volumes": {
                                 "maxItemsOne": false
                             }
                         }
@@ -2017,6 +2033,9 @@
                     }
                 }
             },
+            "bytepluscc_privatezone_user_vpc_authorization": {
+                "current": "bytepluscc:privatezone/userVpcAuthorization:UserVpcAuthorization"
+            },
             "bytepluscc_rabbitmq_instance": {
                 "current": "bytepluscc:rabbitmq/instance:Instance",
                 "fields": {
@@ -2455,6 +2474,9 @@
                     }
                 }
             },
+            "bytepluscc_vedbm_account": {
+                "current": "bytepluscc:vedbm/account:Account"
+            },
             "bytepluscc_vedbm_allow_list": {
                 "current": "bytepluscc:vedbm/allowList:AllowList",
                 "fields": {
@@ -2512,6 +2534,41 @@
                     },
                     "tags": {
                         "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vefaas_function": {
+                "current": "bytepluscc:vefaas/function:Function",
+                "fields": {
+                    "envs": {
+                        "maxItemsOne": false
+                    },
+                    "nas_storage": {
+                        "fields": {
+                            "nas_configs": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "tos_mount_config": {
+                        "fields": {
+                            "mount_points": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "vpc_config": {
+                        "fields": {
+                            "security_group_ids": {
+                                "maxItemsOne": false
+                            },
+                            "subnet_ids": {
+                                "maxItemsOne": false
+                            }
+                        }
                     }
                 }
             },
@@ -2807,6 +2864,16 @@
                 "fields": {
                     "instance_type": {
                         "fields": {
+                            "calculate_price_params": {
+                                "maxItemsOne": false,
+                                "elem": {
+                                    "fields": {
+                                        "cal_charge_item_list": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                }
+                            },
                             "downsampling_periods": {
                                 "maxItemsOne": false
                             }
@@ -3052,6 +3119,26 @@
                 "current": "bytepluscc:vpn/customerGateway:CustomerGateway",
                 "fields": {
                     "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpn_vpn_connection": {
+                "current": "bytepluscc:vpn/vpnConnection:VpnConnection",
+                "fields": {
+                    "health_checkers": {
+                        "maxItemsOne": false
+                    },
+                    "local_subnet": {
+                        "maxItemsOne": false
+                    },
+                    "remote_subnet": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "tunnel_options": {
                         "maxItemsOne": false
                     }
                 }
@@ -3560,6 +3647,12 @@
                 "current": "bytepluscc:autoscaling/getScalingGroup:getScalingGroup",
                 "fields": {
                     "db_instance_ids": {
+                        "maxItemsOne": false
+                    },
+                    "instance_remove_policies": {
+                        "maxItemsOne": false
+                    },
+                    "instances": {
                         "maxItemsOne": false
                     },
                     "launch_template_overrides": {
@@ -4302,6 +4395,17 @@
                     }
                 }
             },
+            "bytepluscc_cen_grant_instance": {
+                "current": "bytepluscc:cen/getGrantInstance:getGrantInstance"
+            },
+            "bytepluscc_cen_grant_instances": {
+                "current": "bytepluscc:cen/getGrantInstances:getGrantInstances",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_clb_acl": {
                 "current": "bytepluscc:clb/getAcl:getAcl",
                 "fields": {
@@ -4851,6 +4955,13 @@
                     "detection_results": {
                         "fields": {
                             "items": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "import_image": {
+                        "fields": {
+                            "import_data_volumes": {
                                 "maxItemsOne": false
                             }
                         }
@@ -5870,6 +5981,17 @@
                     }
                 }
             },
+            "bytepluscc_privatezone_user_vpc_authorization": {
+                "current": "bytepluscc:privatezone/getUserVpcAuthorization:getUserVpcAuthorization"
+            },
+            "bytepluscc_privatezone_user_vpc_authorizations": {
+                "current": "bytepluscc:privatezone/getUserVpcAuthorizations:getUserVpcAuthorizations",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_rabbitmq_instance": {
                 "current": "bytepluscc:rabbitmq/getInstance:getInstance",
                 "fields": {
@@ -6548,6 +6670,17 @@
                     }
                 }
             },
+            "bytepluscc_vedbm_account": {
+                "current": "bytepluscc:vedbm/getAccount:getAccount"
+            },
+            "bytepluscc_vedbm_accounts": {
+                "current": "bytepluscc:vedbm/getAccounts:getAccounts",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_vedbm_allow_list": {
                 "current": "bytepluscc:vedbm/getAllowList:getAllowList",
                 "fields": {
@@ -6634,6 +6767,49 @@
             },
             "bytepluscc_vedbm_instances": {
                 "current": "bytepluscc:vedbm/getInstances:getInstances",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vefaas_function": {
+                "current": "bytepluscc:vefaas/getFunction:getFunction",
+                "fields": {
+                    "envs": {
+                        "maxItemsOne": false
+                    },
+                    "nas_storage": {
+                        "fields": {
+                            "nas_configs": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "tos_mount_config": {
+                        "fields": {
+                            "mount_points": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "vpc_config": {
+                        "fields": {
+                            "security_group_ids": {
+                                "maxItemsOne": false
+                            },
+                            "subnet_ids": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_vefaas_functions": {
+                "current": "bytepluscc:vefaas/getFunctions:getFunctions",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -7004,6 +7180,16 @@
                 "fields": {
                     "instance_type": {
                         "fields": {
+                            "calculate_price_params": {
+                                "maxItemsOne": false,
+                                "elem": {
+                                    "fields": {
+                                        "cal_charge_item_list": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                }
+                            },
                             "downsampling_periods": {
                                 "maxItemsOne": false
                             }
@@ -7420,6 +7606,34 @@
             },
             "bytepluscc_vpn_customer_gateways": {
                 "current": "bytepluscc:vpn/getCustomerGateways:getCustomerGateways",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpn_vpn_connection": {
+                "current": "bytepluscc:vpn/getVpnConnection:getVpnConnection",
+                "fields": {
+                    "health_checkers": {
+                        "maxItemsOne": false
+                    },
+                    "local_subnet": {
+                        "maxItemsOne": false
+                    },
+                    "remote_subnet": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "tunnel_options": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpn_vpn_connections": {
+                "current": "bytepluscc:vpn/getVpnConnections:getVpnConnections",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

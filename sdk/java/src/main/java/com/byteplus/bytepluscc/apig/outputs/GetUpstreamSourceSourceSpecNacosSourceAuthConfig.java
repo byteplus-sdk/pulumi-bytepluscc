@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamSourceSourceSpecNacosSourceAuthConfig {
     /**
-     * @return Basic认证。
+     * @return Basic authentication
      * 
      */
     private GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasic basic;
 
     private GetUpstreamSourceSourceSpecNacosSourceAuthConfig() {}
     /**
-     * @return Basic认证。
+     * @return Basic authentication
      * 
      */
     public GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasic basic() {

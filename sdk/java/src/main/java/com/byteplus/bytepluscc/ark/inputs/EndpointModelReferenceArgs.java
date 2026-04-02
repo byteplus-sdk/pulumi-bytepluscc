@@ -17,14 +17,14 @@ public final class EndpointModelReferenceArgs extends com.pulumi.resources.Resou
     public static final EndpointModelReferenceArgs Empty = new EndpointModelReferenceArgs();
 
     /**
-     * 定制模型的ID。
+     * Custom model ID
      * 
      */
     @Import(name="customModelId")
     private @Nullable Output<String> customModelId;
 
     /**
-     * @return 定制模型的ID。
+     * @return Custom model ID
      * 
      */
     public Optional<Output<String>> customModelId() {
@@ -32,14 +32,14 @@ public final class EndpointModelReferenceArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 基础模型。
+     * Base model
      * 
      */
     @Import(name="foundationModel")
     private @Nullable Output<EndpointModelReferenceFoundationModelArgs> foundationModel;
 
     /**
-     * @return 基础模型。
+     * @return Base model
      * 
      */
     public Optional<Output<EndpointModelReferenceFoundationModelArgs>> foundationModel() {
@@ -72,7 +72,7 @@ public final class EndpointModelReferenceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param customModelId 定制模型的ID。
+         * @param customModelId Custom model ID
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class EndpointModelReferenceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param customModelId 定制模型的ID。
+         * @param customModelId Custom model ID
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class EndpointModelReferenceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param foundationModel 基础模型。
+         * @param foundationModel Base model
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class EndpointModelReferenceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param foundationModel 基础模型。
+         * @param foundationModel Base model
          * 
          * @return builder
          * 

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig
     {
         /// <summary>
-        /// 代理地址。
+        /// Proxy address.
         /// </summary>
         public readonly ImmutableArray<string> ProxyEndpoints;
         /// <summary>
-        /// 容器镜像仓库地址。
+        /// Container image repository address.
         /// </summary>
         public readonly string? Registry;
 

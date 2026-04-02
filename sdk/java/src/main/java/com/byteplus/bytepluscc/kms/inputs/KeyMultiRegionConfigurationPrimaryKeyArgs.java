@@ -16,14 +16,14 @@ public final class KeyMultiRegionConfigurationPrimaryKeyArgs extends com.pulumi.
     public static final KeyMultiRegionConfigurationPrimaryKeyArgs Empty = new KeyMultiRegionConfigurationPrimaryKeyArgs();
 
     /**
-     * 多区域密钥的区域 ID。
+     * Multi-region key region ID.
      * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
-     * @return 多区域密钥的区域 ID。
+     * @return Multi-region key region ID.
      * 
      */
     public Optional<Output<String>> region() {
@@ -31,14 +31,14 @@ public final class KeyMultiRegionConfigurationPrimaryKeyArgs extends com.pulumi.
     }
 
     /**
-     * 多区域密钥的 TRN。
+     * Multi-region key TRN.
      * 
      */
     @Import(name="trn")
     private @Nullable Output<String> trn;
 
     /**
-     * @return 多区域密钥的 TRN。
+     * @return Multi-region key TRN.
      * 
      */
     public Optional<Output<String>> trn() {
@@ -71,7 +71,7 @@ public final class KeyMultiRegionConfigurationPrimaryKeyArgs extends com.pulumi.
         }
 
         /**
-         * @param region 多区域密钥的区域 ID。
+         * @param region Multi-region key region ID.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class KeyMultiRegionConfigurationPrimaryKeyArgs extends com.pulumi.
         }
 
         /**
-         * @param region 多区域密钥的区域 ID。
+         * @param region Multi-region key region ID.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class KeyMultiRegionConfigurationPrimaryKeyArgs extends com.pulumi.
         }
 
         /**
-         * @param trn 多区域密钥的 TRN。
+         * @param trn Multi-region key TRN.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class KeyMultiRegionConfigurationPrimaryKeyArgs extends com.pulumi.
         }
 
         /**
-         * @param trn 多区域密钥的 TRN。
+         * @param trn Multi-region key TRN.
          * 
          * @return builder
          * 

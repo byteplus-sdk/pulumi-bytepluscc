@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs.Outputs
     public sealed class VolumeExtraPerformance
     {
         /// <summary>
-        /// 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+        /// Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
         /// </summary>
         public readonly string? ExtraPerformanceTypeId;
         /// <summary>
-        /// 云盘的额外IOPS。
+        /// Extra IOPS of the disk.
         /// </summary>
         public readonly double? Iops;
         /// <summary>
-        /// 云盘的额外吞吐量。
+        /// Extra throughput of the disk.
         /// </summary>
         public readonly double? Throughput;
 

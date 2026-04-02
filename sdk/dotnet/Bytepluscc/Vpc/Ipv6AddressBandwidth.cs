@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// IPv6公网流量的带宽，决定IPv6地址的公网通信能力。IPv6地址若未开通IPv6公网带宽，则仅支持私网互通，您可以按需为IPv6地址开通IPv6公网带宽，使该IPv6地址具备与公网互通的能力。
+    /// IPv6 public traffic bandwidth determines the public communication capability of the IPv6 address. If the IPv6 address does not have IPv6 public bandwidth enabled, it only supports private network communication. You can enable IPv6 public bandwidth for the IPv6 address as needed to allow public network communication.
     /// 
     /// ## Example Usage
     /// 
@@ -53,109 +53,109 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class Ipv6AddressBandwidth : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// IPv6公网带宽的ID。
+        /// IPv6 public bandwidth ID
         /// </summary>
         [Output("allocationId")]
         public Output<string> AllocationId { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽的带宽上限。
+        /// IPv6 public bandwidth cap
         /// </summary>
         [Output("bandwidth")]
         public Output<int> Bandwidth { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6共享带宽包的ID。
+        /// IPv6 shared bandwidth package ID
         /// </summary>
         [Output("bandwidthPackageId")]
         public Output<string> BandwidthPackageId { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+        /// IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
         /// </summary>
         [Output("billingType")]
         public Output<int> BillingType { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+        /// Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
         /// </summary>
         [Output("businessStatus")]
         public Output<string> BusinessStatus { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽的开通时间。
+        /// IPv6 public bandwidth activation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽的删除时间。
+        /// IPv6 public bandwidth deletion time
         /// </summary>
         [Output("deletedTime")]
         public Output<string> DeletedTime { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽关联的实例ID。
+        /// Instance ID associated with IPv6 public bandwidth
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+        /// Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
         /// </summary>
         [Output("instanceType")]
         public Output<string> InstanceType { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6地址。
+        /// IPv6 address
         /// </summary>
         [Output("ipv6Address")]
         public Output<string> Ipv6Address { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6网关的ID。
+        /// IPv6 gateway ID
         /// </summary>
         [Output("ipv6GatewayId")]
         public Output<string> Ipv6GatewayId { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽的线路类型。BGP：BGP（多线）。
+        /// IPv6 public bandwidth line type. BGP: BGP (multi-line).
         /// </summary>
         [Output("isp")]
         public Output<string> Isp { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+        /// Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
         /// </summary>
         [Output("lockReason")]
         public Output<string> LockReason { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+        /// IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
         /// </summary>
         [Output("networkType")]
         public Output<string> NetworkType { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽欠费关停的时间。
+        /// IPv6 public bandwidth deactivation time due to overdue payment
         /// </summary>
         [Output("overdueTime")]
         public Output<string> OverdueTime { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽的项目。
+        /// IPv6 public bandwidth project
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 是否为服务托管。
+        /// Service hosting status
         /// </summary>
         [Output("serviceManaged")]
         public Output<bool> ServiceManaged { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽的状态。Creating：创建中。Available：可用。
+        /// IPv6 public bandwidth status. Creating: Creating. Available: Available.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -164,7 +164,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.Ipv6AddressBandwidthTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽的最近操作时间。
+        /// IPv6 public bandwidth last operation time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -217,31 +217,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class Ipv6AddressBandwidthArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// IPv6公网带宽的带宽上限。
+        /// IPv6 public bandwidth cap
         /// </summary>
         [Input("bandwidth")]
         public Input<int>? Bandwidth { get; set; }
 
         /// <summary>
-        /// IPv6共享带宽包的ID。
+        /// IPv6 shared bandwidth package ID
         /// </summary>
         [Input("bandwidthPackageId")]
         public Input<string>? BandwidthPackageId { get; set; }
 
         /// <summary>
-        /// IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+        /// IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
         /// </summary>
         [Input("billingType", required: true)]
         public Input<int> BillingType { get; set; } = null!;
 
         /// <summary>
-        /// IPv6地址。
+        /// IPv6 address
         /// </summary>
         [Input("ipv6Address", required: true)]
         public Input<string> Ipv6Address { get; set; } = null!;
 
         /// <summary>
-        /// IPv6公网带宽的项目。
+        /// IPv6 public bandwidth project
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -263,109 +263,109 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class Ipv6AddressBandwidthState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// IPv6公网带宽的ID。
+        /// IPv6 public bandwidth ID
         /// </summary>
         [Input("allocationId")]
         public Input<string>? AllocationId { get; set; }
 
         /// <summary>
-        /// IPv6公网带宽的带宽上限。
+        /// IPv6 public bandwidth cap
         /// </summary>
         [Input("bandwidth")]
         public Input<int>? Bandwidth { get; set; }
 
         /// <summary>
-        /// IPv6共享带宽包的ID。
+        /// IPv6 shared bandwidth package ID
         /// </summary>
         [Input("bandwidthPackageId")]
         public Input<string>? BandwidthPackageId { get; set; }
 
         /// <summary>
-        /// IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+        /// IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
         /// </summary>
         [Input("billingType")]
         public Input<int>? BillingType { get; set; }
 
         /// <summary>
-        /// IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+        /// Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
         /// </summary>
         [Input("businessStatus")]
         public Input<string>? BusinessStatus { get; set; }
 
         /// <summary>
-        /// IPv6公网带宽的开通时间。
+        /// IPv6 public bandwidth activation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// IPv6公网带宽的删除时间。
+        /// IPv6 public bandwidth deletion time
         /// </summary>
         [Input("deletedTime")]
         public Input<string>? DeletedTime { get; set; }
 
         /// <summary>
-        /// IPv6公网带宽关联的实例ID。
+        /// Instance ID associated with IPv6 public bandwidth
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+        /// Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
         /// </summary>
         [Input("instanceType")]
         public Input<string>? InstanceType { get; set; }
 
         /// <summary>
-        /// IPv6地址。
+        /// IPv6 address
         /// </summary>
         [Input("ipv6Address")]
         public Input<string>? Ipv6Address { get; set; }
 
         /// <summary>
-        /// IPv6网关的ID。
+        /// IPv6 gateway ID
         /// </summary>
         [Input("ipv6GatewayId")]
         public Input<string>? Ipv6GatewayId { get; set; }
 
         /// <summary>
-        /// IPv6公网带宽的线路类型。BGP：BGP（多线）。
+        /// IPv6 public bandwidth line type. BGP: BGP (multi-line).
         /// </summary>
         [Input("isp")]
         public Input<string>? Isp { get; set; }
 
         /// <summary>
-        /// IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+        /// Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
         /// </summary>
         [Input("lockReason")]
         public Input<string>? LockReason { get; set; }
 
         /// <summary>
-        /// IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+        /// IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
         /// </summary>
         [Input("networkType")]
         public Input<string>? NetworkType { get; set; }
 
         /// <summary>
-        /// IPv6公网带宽欠费关停的时间。
+        /// IPv6 public bandwidth deactivation time due to overdue payment
         /// </summary>
         [Input("overdueTime")]
         public Input<string>? OverdueTime { get; set; }
 
         /// <summary>
-        /// IPv6公网带宽的项目。
+        /// IPv6 public bandwidth project
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 是否为服务托管。
+        /// Service hosting status
         /// </summary>
         [Input("serviceManaged")]
         public Input<bool>? ServiceManaged { get; set; }
 
         /// <summary>
-        /// IPv6公网带宽的状态。Creating：创建中。Available：可用。
+        /// IPv6 public bandwidth status. Creating: Creating. Available: Available.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -379,7 +379,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// IPv6公网带宽的最近操作时间。
+        /// IPv6 public bandwidth last operation time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

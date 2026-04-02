@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterNodeAttribute {
     /**
-     * @return ECS实例角色。
+     * @return ECS instance role.
      * 
      */
     private String ecsIamRole;
     /**
-     * @return 可用区ID。
+     * @return Zone ID.
      * 
      */
     private String zoneId;
 
     private GetClusterNodeAttribute() {}
     /**
-     * @return ECS实例角色。
+     * @return ECS instance role.
      * 
      */
     public String ecsIamRole() {
         return this.ecsIamRole;
     }
     /**
-     * @return 可用区ID。
+     * @return Zone ID.
      * 
      */
     public String zoneId() {

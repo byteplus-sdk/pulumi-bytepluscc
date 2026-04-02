@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GroupMember {
     /**
-     * @return 用户id。
+     * @return User ID
      * 
      */
     private @Nullable String userId;
 
     private GroupMember() {}
     /**
-     * @return 用户id。
+     * @return User ID
      * 
      */
     public Optional<String> userId() {

@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class EndpointAddress
     {
         /// <summary>
-        /// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+        /// false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
         /// </summary>
         public readonly bool? DnsVisibility;
         /// <summary>
-        /// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+        /// Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
         /// </summary>
         public readonly string? DomainPrefix;
         /// <summary>
-        /// 端口。
+        /// Port.
         /// </summary>
         public readonly string? Port;
 

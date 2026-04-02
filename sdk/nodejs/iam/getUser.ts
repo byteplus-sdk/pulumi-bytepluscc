@@ -31,35 +31,35 @@ export interface GetUserArgs {
  */
 export interface GetUserResult {
     /**
-     * 子用户的访问密钥。
+     * Sub-user's access key.
      */
     readonly accessKeys: outputs.iam.GetUserAccessKey[];
     /**
-     * 子用户归属的主账号。
+     * Main account to which the sub-user belongs.
      */
     readonly accountId: number;
     /**
-     * 子用户对应的创建时间。
+     * Sub-user's creation time.
      */
     readonly createDate: string;
     /**
-     * 子用户对应的描述信息，长度不超过255。
+     * Description for the sub-user, up to 255 characters.
      */
     readonly description: string;
     /**
-     * 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+     * Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
      */
     readonly displayName: string;
     /**
-     * 子用户对应的电子邮件地址。
+     * Sub-user's email address.
      */
     readonly email: string;
     /**
-     * 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+     * Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
      */
     readonly emailIsVerify: boolean;
     /**
-     * 子用户归属的用户组。
+     * User group to which the sub-user belongs.
      */
     readonly groups: string[];
     /**
@@ -67,43 +67,43 @@ export interface GetUserResult {
      */
     readonly id: string;
     /**
-     * 子用户的登录配置。
+     * Login configuration for the sub-user.
      */
     readonly loginProfile: outputs.iam.GetUserLoginProfile;
     /**
-     * 子用户对应的手机号。
+     * Sub-user's mobile number.
      */
     readonly mobilePhone: string;
     /**
-     * 子用户手机号是否已验证。true代表已验证，false代表未验证。
+     * Whether the sub-user's phone number is verified. 'true' means verified, 'false' means not verified.
      */
     readonly mobilePhoneIsVerify: boolean;
     /**
-     * 子用户对应的权限策略。
+     * Sub-user's permission policy.
      */
     readonly policies: outputs.iam.GetUserPolicy[];
     /**
-     * 子用户的操作保护配置。
+     * Operation protection configuration for the sub-user.
      */
     readonly securityConfig: outputs.iam.GetUserSecurityConfig;
     /**
-     * 子用户对应的资源标签。
+     * Sub-user's resource tags.
      */
     readonly tags: outputs.iam.GetUserTag[];
     /**
-     * 子用户对应的Trn表达式。
+     * TRN expression for the sub-user.
      */
     readonly trn: string;
     /**
-     * 子用户对应的更新时间。
+     * Update time for the sub-user.
      */
     readonly updateDate: string;
     /**
-     * 子用户的ID。
+     * Sub-user's ID.
      */
     readonly userId: number;
     /**
-     * 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+     * Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
      */
     readonly userName: string;
 }

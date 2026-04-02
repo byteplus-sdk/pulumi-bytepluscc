@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetPolicyPolicyRolePolicyScope {
     /**
-     * @return 项目授权时间。
+     * @return Project authorization time.
      * 
      */
     private String createdTime;
     /**
-     * @return 授权类型。Global代表全局授权，Project代表按项目授权。
+     * @return Authorization type. Global indicates global authorization; Project indicates project-based authorization.
      * 
      */
     private String policyScopeType;
     /**
-     * @return 项目显示名。
+     * @return Project display name.
      * 
      */
     private String projectDisplayName;
     /**
-     * @return 项目名。
+     * @return Project name.
      * 
      */
     private String projectName;
 
     private GetPolicyPolicyRolePolicyScope() {}
     /**
-     * @return 项目授权时间。
+     * @return Project authorization time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 授权类型。Global代表全局授权，Project代表按项目授权。
+     * @return Authorization type. Global indicates global authorization; Project indicates project-based authorization.
      * 
      */
     public String policyScopeType() {
         return this.policyScopeType;
     }
     /**
-     * @return 项目显示名。
+     * @return Project display name.
      * 
      */
     public String projectDisplayName() {
         return this.projectDisplayName;
     }
     /**
-     * @return 项目名。
+     * @return Project name.
      * 
      */
     public String projectName() {

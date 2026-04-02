@@ -17,14 +17,14 @@ public final class IndexUserInnerKeyValueValueJsonKeyArgs extends com.pulumi.res
     public static final IndexUserInnerKeyValueValueJsonKeyArgs Empty = new IndexUserInnerKeyValueValueJsonKeyArgs();
 
     /**
-     * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+     * Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field &#39;namelist&#39; contains a text-type subfield &#39;totalcount&#39; and a JSON-type subfield &#39;info&#39;, and &#39;info&#39; contains the field &#39;name&#39;, the field names should be configured as &#39;totalcount&#39; and &#39;info.name&#39; respectively.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+     * @return Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field &#39;namelist&#39; contains a text-type subfield &#39;totalcount&#39; and a JSON-type subfield &#39;info&#39;, and &#39;info&#39; contains the field &#39;name&#39;, the field names should be configured as &#39;totalcount&#39; and &#39;info.name&#39; respectively.
      * 
      */
     public Optional<Output<String>> key() {
@@ -32,14 +32,14 @@ public final class IndexUserInnerKeyValueValueJsonKeyArgs extends com.pulumi.res
     }
 
     /**
-     * 需要配置键值索引的字段描述信息。
+     * Field description information required for configuring key-value indexes.
      * 
      */
     @Import(name="value")
     private @Nullable Output<IndexUserInnerKeyValueValueJsonKeyValueArgs> value;
 
     /**
-     * @return 需要配置键值索引的字段描述信息。
+     * @return Field description information required for configuring key-value indexes.
      * 
      */
     public Optional<Output<IndexUserInnerKeyValueValueJsonKeyValueArgs>> value() {
@@ -72,7 +72,7 @@ public final class IndexUserInnerKeyValueValueJsonKeyArgs extends com.pulumi.res
         }
 
         /**
-         * @param key 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         * @param key Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field &#39;namelist&#39; contains a text-type subfield &#39;totalcount&#39; and a JSON-type subfield &#39;info&#39;, and &#39;info&#39; contains the field &#39;name&#39;, the field names should be configured as &#39;totalcount&#39; and &#39;info.name&#39; respectively.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class IndexUserInnerKeyValueValueJsonKeyArgs extends com.pulumi.res
         }
 
         /**
-         * @param key 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         * @param key Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field &#39;namelist&#39; contains a text-type subfield &#39;totalcount&#39; and a JSON-type subfield &#39;info&#39;, and &#39;info&#39; contains the field &#39;name&#39;, the field names should be configured as &#39;totalcount&#39; and &#39;info.name&#39; respectively.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class IndexUserInnerKeyValueValueJsonKeyArgs extends com.pulumi.res
         }
 
         /**
-         * @param value 需要配置键值索引的字段描述信息。
+         * @param value Field description information required for configuring key-value indexes.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class IndexUserInnerKeyValueValueJsonKeyArgs extends com.pulumi.res
         }
 
         /**
-         * @param value 需要配置键值索引的字段描述信息。
+         * @param value Field description information required for configuring key-value indexes.
          * 
          * @return builder
          * 

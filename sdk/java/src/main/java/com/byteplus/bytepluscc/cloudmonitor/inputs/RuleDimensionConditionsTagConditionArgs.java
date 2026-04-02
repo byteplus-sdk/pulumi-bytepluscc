@@ -18,14 +18,14 @@ public final class RuleDimensionConditionsTagConditionArgs extends com.pulumi.re
     public static final RuleDimensionConditionsTagConditionArgs Empty = new RuleDimensionConditionsTagConditionArgs();
 
     /**
-     * 判断条件。and：全部满足。or：任意满足。
+     * Condition. and: All conditions met. or: Any condition met.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return 判断条件。and：全部满足。or：任意满足。
+     * @return Condition. and: All conditions met. or: Any condition met.
      * 
      */
     public Optional<Output<String>> condition() {
@@ -65,7 +65,7 @@ public final class RuleDimensionConditionsTagConditionArgs extends com.pulumi.re
         }
 
         /**
-         * @param condition 判断条件。and：全部满足。or：任意满足。
+         * @param condition Condition. and: All conditions met. or: Any condition met.
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class RuleDimensionConditionsTagConditionArgs extends com.pulumi.re
         }
 
         /**
-         * @param condition 判断条件。and：全部满足。or：任意满足。
+         * @param condition Condition. and: All conditions met. or: Any condition met.
          * 
          * @return builder
          * 

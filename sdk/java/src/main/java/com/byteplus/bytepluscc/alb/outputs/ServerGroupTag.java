@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ServerGroupTag {
     /**
-     * @return 标签的标签键。同一资源的标签键不允许重复。
+     * @return Tag key. Tag keys for the same resource must be unique.
      * 
      */
     private @Nullable String key;
     /**
-     * @return 标签的标签值。
+     * @return Tag value of the tag.
      * 
      */
     private @Nullable String value;
 
     private ServerGroupTag() {}
     /**
-     * @return 标签的标签键。同一资源的标签键不允许重复。
+     * @return Tag key. Tag keys for the same resource must be unique.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 标签的标签值。
+     * @return Tag value of the tag.
      * 
      */
     public Optional<String> value() {

@@ -15,100 +15,100 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class DefaultNodePoolNodeConfig
     {
         /// <summary>
-        /// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+        /// Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
         /// </summary>
         public readonly bool? AdditionalContainerStorageEnabled;
         /// <summary>
-        /// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+        /// Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
         /// </summary>
         public readonly bool? AutoRenew;
         /// <summary>
-        /// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+        /// Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
         /// </summary>
         public readonly int? AutoRenewPeriod;
         public readonly ImmutableArray<Outputs.DefaultNodePoolNodeConfigDataVolume> DataVolumes;
         /// <summary>
-        /// 实例在部署集中的分组号，0表示未设置
+        /// Group number of the instance in the deployment set. 0 means not set
         /// </summary>
         public readonly int? DeploymentSetGroupNumber;
         /// <summary>
-        /// 实例需要加入的部署集ID
+        /// Deployment set ID to be added to the instance
         /// </summary>
         public readonly string? DeploymentSetId;
         /// <summary>
-        /// 节点对应的主机名称。
+        /// Host name corresponding to the node
         /// </summary>
         public readonly string? Hostname;
         /// <summary>
-        /// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+        /// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
         /// </summary>
         public readonly ImmutableArray<string> HpcClusterIds;
         /// <summary>
-        /// 节点对应云服务器所使用的镜像 ID。
+        /// Image ID used by the cloud server corresponding to the node
         /// </summary>
         public readonly string? ImageId;
         /// <summary>
-        /// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+        /// Custom script executed after creating and initializing the node. Shell script in Base64 encoding
         /// </summary>
         public readonly string? InitializeScript;
         /// <summary>
-        /// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+        /// Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
         /// </summary>
         public readonly string? InstanceChargeType;
         /// <summary>
-        /// 节点（实例）名称。
+        /// Node (instance) name
         /// </summary>
         public readonly string? InstanceName;
         /// <summary>
-        /// 节点对应的云服务器实例规格 ID 列表。
+        /// List of cloud server instance type IDs corresponding to the node
         /// </summary>
         public readonly ImmutableArray<string> InstanceTypeIds;
         /// <summary>
-        /// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+        /// Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
         /// </summary>
         public readonly Outputs.DefaultNodePoolNodeConfigInstancesDistribution? InstancesDistribution;
         /// <summary>
-        /// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+        /// Node name prefix. An empty string or nil means the node name prefix policy is not enabled
         /// </summary>
         public readonly string? NamePrefix;
         /// <summary>
-        /// 节点间的网络通讯模式。
+        /// Network communication mode between nodes
         /// </summary>
         public readonly string? NetworkTrafficMode;
         /// <summary>
-        /// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+        /// Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
         /// </summary>
         public readonly int? Period;
         /// <summary>
-        /// 部署节点前执行脚本。
+        /// Script executed before deploying nodes
         /// </summary>
         public readonly string? PreScript;
         /// <summary>
-        /// ECS所属项目，一个ECS只能归属于一个项目。
+        /// The project to which the ECS belongs. Each ECS can only belong to one project.
         /// </summary>
         public readonly string? ProjectName;
         /// <summary>
-        /// 节点自动开启公网访问的配置信息
+        /// Configuration for automatic public network access for nodes
         /// </summary>
         public readonly Outputs.DefaultNodePoolNodeConfigPublicAccessConfig? PublicAccessConfig;
         /// <summary>
-        /// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+        /// Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
         /// </summary>
         public readonly bool? PublicAccessEnabled;
         /// <summary>
-        /// 节点安全配置。
+        /// Node security configuration.
         /// </summary>
         public readonly Outputs.DefaultNodePoolNodeConfigSecurity? Security;
         /// <summary>
-        /// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+        /// Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
         /// </summary>
         public readonly string? SpotStrategy;
         /// <summary>
-        /// 节点网络所属的子网 ID 列表。
+        /// List of subnet IDs to which the node network belongs.
         /// </summary>
         public readonly ImmutableArray<string> SubnetIds;
         /// <summary>
-        /// 节点的系统盘配置。
+        /// System disk configuration for the node
         /// </summary>
         public readonly Outputs.DefaultNodePoolNodeConfigSystemVolume? SystemVolume;
         public readonly ImmutableArray<Outputs.DefaultNodePoolNodeConfigTag> Tags;

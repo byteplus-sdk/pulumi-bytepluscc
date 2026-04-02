@@ -25,14 +25,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     public static final LaunchTemplateLaunchTemplateVersionArgs Empty = new LaunchTemplateLaunchTemplateVersionArgs();
 
     /**
-     * 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+     * When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
      * 
      */
     @Import(name="deploymentSetGroupNumber")
     private @Nullable Output<Integer> deploymentSetGroupNumber;
 
     /**
-     * @return 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+     * @return When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
      * 
      */
     public Optional<Output<Integer>> deploymentSetGroupNumber() {
@@ -40,14 +40,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 实例需要加入的部署集ID。
+     * Deployment set ID the instance needs to join.
      * 
      */
     @Import(name="deploymentSetId")
     private @Nullable Output<String> deploymentSetId;
 
     /**
-     * @return 实例需要加入的部署集ID。
+     * @return Deployment set ID the instance needs to join.
      * 
      */
     public Optional<Output<String>> deploymentSetId() {
@@ -55,14 +55,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 实例的描述。
+     * Instance description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 实例的描述。
+     * @return Instance description
      * 
      */
     public Optional<Output<String>> description() {
@@ -70,14 +70,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 实例绑定的公网IP信息。
+     * Public IP information bound to the instance
      * 
      */
     @Import(name="eip")
     private @Nullable Output<LaunchTemplateLaunchTemplateVersionEipArgs> eip;
 
     /**
-     * @return 实例绑定的公网IP信息。
+     * @return Public IP information bound to the instance
      * 
      */
     public Optional<Output<LaunchTemplateLaunchTemplateVersionEipArgs>> eip() {
@@ -85,14 +85,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+     * Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
      * 
      */
     @Import(name="hostName")
     private @Nullable Output<String> hostName;
 
     /**
-     * @return 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+     * @return Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
      * 
      */
     public Optional<Output<String>> hostName() {
@@ -100,14 +100,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+     * When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
      * 
      */
     @Import(name="hpcClusterId")
     private @Nullable Output<String> hpcClusterId;
 
     /**
-     * @return 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+     * @return When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
      * 
      */
     public Optional<Output<String>> hpcClusterId() {
@@ -115,14 +115,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 镜像ID。
+     * Image ID.
      * 
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
-     * @return 镜像ID。
+     * @return Image ID.
      * 
      */
     public Optional<Output<String>> imageId() {
@@ -130,14 +130,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 镜像名称。
+     * Image name.
      * 
      */
     @Import(name="imageName")
     private @Nullable Output<String> imageName;
 
     /**
-     * @return 镜像名称。
+     * @return Image name.
      * 
      */
     public Optional<Output<String>> imageName() {
@@ -145,14 +145,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+     * Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
      * 
      */
     @Import(name="instanceChargeType")
     private @Nullable Output<String> instanceChargeType;
 
     /**
-     * @return 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+     * @return Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
      * 
      */
     public Optional<Output<String>> instanceChargeType() {
@@ -160,14 +160,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 实例的名称。
+     * Instance name.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 实例的名称。
+     * @return Instance name.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -175,14 +175,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 实例的规格。
+     * Instance specification
      * 
      */
     @Import(name="instanceTypeId")
     private @Nullable Output<String> instanceTypeId;
 
     /**
-     * @return 实例的规格。
+     * @return Instance specification
      * 
      */
     public Optional<Output<String>> instanceTypeId() {
@@ -190,14 +190,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+     * Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
      * 
      */
     @Import(name="keepImageCredential")
     private @Nullable Output<Boolean> keepImageCredential;
 
     /**
-     * @return 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+     * @return Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
      * 
      */
     public Optional<Output<Boolean>> keepImageCredential() {
@@ -205,14 +205,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 实例绑定的密钥对。
+     * Key pair bound to the instance.
      * 
      */
     @Import(name="keyPairName")
     private @Nullable Output<String> keyPairName;
 
     /**
-     * @return 实例绑定的密钥对。
+     * @return Key pair bound to the instance.
      * 
      */
     public Optional<Output<String>> keyPairName() {
@@ -227,14 +227,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 实例所属项目。
+     * Project associated with the instance.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 实例所属项目。
+     * @return Project associated with the instance.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -242,14 +242,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 弹性预约单信息。
+     * Elastic reservation order information
      * 
      */
     @Import(name="scheduledInstance")
     private @Nullable Output<LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs> scheduledInstance;
 
     /**
-     * @return 弹性预约单信息。
+     * @return Elastic reservation order information
      * 
      */
     public Optional<Output<LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs>> scheduledInstance() {
@@ -257,14 +257,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+     * Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
      * 
      */
     @Import(name="securityEnhancementStrategy")
     private @Nullable Output<String> securityEnhancementStrategy;
 
     /**
-     * @return 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+     * @return Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
      * 
      */
     public Optional<Output<String>> securityEnhancementStrategy() {
@@ -272,14 +272,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 抢占式实例的每小时最高价格。
+     * Maximum hourly price for preemptible instances
      * 
      */
     @Import(name="spotPriceLimit")
     private @Nullable Output<Double> spotPriceLimit;
 
     /**
-     * @return 抢占式实例的每小时最高价格。
+     * @return Maximum hourly price for preemptible instances
      * 
      */
     public Optional<Output<Double>> spotPriceLimit() {
@@ -287,14 +287,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+     * Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
      * 
      */
     @Import(name="spotStrategy")
     private @Nullable Output<String> spotStrategy;
 
     /**
-     * @return 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+     * @return Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
      * 
      */
     public Optional<Output<String>> spotStrategy() {
@@ -302,14 +302,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 有序后缀的起始序号。
+     * Starting number for the sequential suffix
      * 
      */
     @Import(name="suffixIndex")
     private @Nullable Output<Integer> suffixIndex;
 
     /**
-     * @return 有序后缀的起始序号。
+     * @return Starting number for the sequential suffix
      * 
      */
     public Optional<Output<Integer>> suffixIndex() {
@@ -324,14 +324,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+     * Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
      * 
      */
     @Import(name="uniqueSuffix")
     private @Nullable Output<Boolean> uniqueSuffix;
 
     /**
-     * @return 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+     * @return Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
      * 
      */
     public Optional<Output<Boolean>> uniqueSuffix() {
@@ -339,14 +339,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 实例的自定义数据。
+     * Custom data for the instance.
      * 
      */
     @Import(name="userData")
     private @Nullable Output<String> userData;
 
     /**
-     * @return 实例的自定义数据。
+     * @return Custom data for the instance.
      * 
      */
     public Optional<Output<String>> userData() {
@@ -354,14 +354,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 模版版本描述。
+     * Template version description.
      * 
      */
     @Import(name="versionDescription")
     private @Nullable Output<String> versionDescription;
 
     /**
-     * @return 模版版本描述。
+     * @return Template version description.
      * 
      */
     public Optional<Output<String>> versionDescription() {
@@ -376,14 +376,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 私有网络ID。
+     * Private network ID.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 私有网络ID。
+     * @return Private network ID.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -391,14 +391,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
     }
 
     /**
-     * 实例所属可用区ID。
+     * Instance availability zone ID
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 实例所属可用区ID。
+     * @return Instance availability zone ID
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -456,7 +456,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param deploymentSetGroupNumber 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+         * @param deploymentSetGroupNumber When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
          * 
          * @return builder
          * 
@@ -467,7 +467,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param deploymentSetGroupNumber 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+         * @param deploymentSetGroupNumber When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param deploymentSetId 实例需要加入的部署集ID。
+         * @param deploymentSetId Deployment set ID the instance needs to join.
          * 
          * @return builder
          * 
@@ -488,7 +488,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param deploymentSetId 实例需要加入的部署集ID。
+         * @param deploymentSetId Deployment set ID the instance needs to join.
          * 
          * @return builder
          * 
@@ -498,7 +498,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param description 实例的描述。
+         * @param description Instance description
          * 
          * @return builder
          * 
@@ -509,7 +509,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param description 实例的描述。
+         * @param description Instance description
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param eip 实例绑定的公网IP信息。
+         * @param eip Public IP information bound to the instance
          * 
          * @return builder
          * 
@@ -530,7 +530,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param eip 实例绑定的公网IP信息。
+         * @param eip Public IP information bound to the instance
          * 
          * @return builder
          * 
@@ -540,7 +540,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param hostName 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+         * @param hostName Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
          * 
          * @return builder
          * 
@@ -551,7 +551,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param hostName 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+         * @param hostName Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
          * 
          * @return builder
          * 
@@ -561,7 +561,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param hpcClusterId 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+         * @param hpcClusterId When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
          * 
          * @return builder
          * 
@@ -572,7 +572,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param hpcClusterId 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+         * @param hpcClusterId When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
          * 
          * @return builder
          * 
@@ -582,7 +582,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param imageId 镜像ID。
+         * @param imageId Image ID.
          * 
          * @return builder
          * 
@@ -593,7 +593,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param imageId 镜像ID。
+         * @param imageId Image ID.
          * 
          * @return builder
          * 
@@ -603,7 +603,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param imageName 镜像名称。
+         * @param imageName Image name.
          * 
          * @return builder
          * 
@@ -614,7 +614,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param imageName 镜像名称。
+         * @param imageName Image name.
          * 
          * @return builder
          * 
@@ -624,7 +624,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param instanceChargeType 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+         * @param instanceChargeType Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
          * 
          * @return builder
          * 
@@ -635,7 +635,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param instanceChargeType 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+         * @param instanceChargeType Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
          * 
          * @return builder
          * 
@@ -645,7 +645,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param instanceName 实例的名称。
+         * @param instanceName Instance name.
          * 
          * @return builder
          * 
@@ -656,7 +656,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param instanceName 实例的名称。
+         * @param instanceName Instance name.
          * 
          * @return builder
          * 
@@ -666,7 +666,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param instanceTypeId 实例的规格。
+         * @param instanceTypeId Instance specification
          * 
          * @return builder
          * 
@@ -677,7 +677,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param instanceTypeId 实例的规格。
+         * @param instanceTypeId Instance specification
          * 
          * @return builder
          * 
@@ -687,7 +687,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param keepImageCredential 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+         * @param keepImageCredential Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
          * 
          * @return builder
          * 
@@ -698,7 +698,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param keepImageCredential 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+         * @param keepImageCredential Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
          * 
          * @return builder
          * 
@@ -708,7 +708,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param keyPairName 实例绑定的密钥对。
+         * @param keyPairName Key pair bound to the instance.
          * 
          * @return builder
          * 
@@ -719,7 +719,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param keyPairName 实例绑定的密钥对。
+         * @param keyPairName Key pair bound to the instance.
          * 
          * @return builder
          * 
@@ -742,7 +742,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param projectName 实例所属项目。
+         * @param projectName Project associated with the instance.
          * 
          * @return builder
          * 
@@ -753,7 +753,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param projectName 实例所属项目。
+         * @param projectName Project associated with the instance.
          * 
          * @return builder
          * 
@@ -763,7 +763,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param scheduledInstance 弹性预约单信息。
+         * @param scheduledInstance Elastic reservation order information
          * 
          * @return builder
          * 
@@ -774,7 +774,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param scheduledInstance 弹性预约单信息。
+         * @param scheduledInstance Elastic reservation order information
          * 
          * @return builder
          * 
@@ -784,7 +784,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param securityEnhancementStrategy 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+         * @param securityEnhancementStrategy Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
          * 
          * @return builder
          * 
@@ -795,7 +795,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param securityEnhancementStrategy 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+         * @param securityEnhancementStrategy Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
          * 
          * @return builder
          * 
@@ -805,7 +805,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param spotPriceLimit 抢占式实例的每小时最高价格。
+         * @param spotPriceLimit Maximum hourly price for preemptible instances
          * 
          * @return builder
          * 
@@ -816,7 +816,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param spotPriceLimit 抢占式实例的每小时最高价格。
+         * @param spotPriceLimit Maximum hourly price for preemptible instances
          * 
          * @return builder
          * 
@@ -826,7 +826,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param spotStrategy 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+         * @param spotStrategy Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
          * 
          * @return builder
          * 
@@ -837,7 +837,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param spotStrategy 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+         * @param spotStrategy Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
          * 
          * @return builder
          * 
@@ -847,7 +847,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param suffixIndex 有序后缀的起始序号。
+         * @param suffixIndex Starting number for the sequential suffix
          * 
          * @return builder
          * 
@@ -858,7 +858,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param suffixIndex 有序后缀的起始序号。
+         * @param suffixIndex Starting number for the sequential suffix
          * 
          * @return builder
          * 
@@ -881,7 +881,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param uniqueSuffix 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+         * @param uniqueSuffix Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
          * 
          * @return builder
          * 
@@ -892,7 +892,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param uniqueSuffix 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+         * @param uniqueSuffix Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
          * 
          * @return builder
          * 
@@ -902,7 +902,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param userData 实例的自定义数据。
+         * @param userData Custom data for the instance.
          * 
          * @return builder
          * 
@@ -913,7 +913,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param userData 实例的自定义数据。
+         * @param userData Custom data for the instance.
          * 
          * @return builder
          * 
@@ -923,7 +923,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param versionDescription 模版版本描述。
+         * @param versionDescription Template version description.
          * 
          * @return builder
          * 
@@ -934,7 +934,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param versionDescription 模版版本描述。
+         * @param versionDescription Template version description.
          * 
          * @return builder
          * 
@@ -957,7 +957,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param vpcId 私有网络ID。
+         * @param vpcId Private network ID.
          * 
          * @return builder
          * 
@@ -968,7 +968,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param vpcId 私有网络ID。
+         * @param vpcId Private network ID.
          * 
          * @return builder
          * 
@@ -978,7 +978,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param zoneId 实例所属可用区ID。
+         * @param zoneId Instance availability zone ID
          * 
          * @return builder
          * 
@@ -989,7 +989,7 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
         }
 
         /**
-         * @param zoneId 实例所属可用区ID。
+         * @param zoneId Instance availability zone ID
          * 
          * @return builder
          * 

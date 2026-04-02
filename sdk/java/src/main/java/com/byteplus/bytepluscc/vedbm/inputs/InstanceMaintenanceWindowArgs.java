@@ -18,14 +18,14 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
     public static final InstanceMaintenanceWindowArgs Empty = new InstanceMaintenanceWindowArgs();
 
     /**
-     * 可维护周期粒度，默认取值为：Week（周）。
+     * Maintenance cycle granularity. Default value: Week.
      * 
      */
     @Import(name="dayKind")
     private @Nullable Output<String> dayKind;
 
     /**
-     * @return 可维护周期粒度，默认取值为：Week（周）。
+     * @return Maintenance cycle granularity. Default value: Week.
      * 
      */
     public Optional<Output<String>> dayKind() {
@@ -33,14 +33,14 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+     * Specify which day of the month is the maintenance window. Default is empty, meaning every day is specified.
      * 
      */
     @Import(name="dayOfMonths")
     private @Nullable Output<List<Integer>> dayOfMonths;
 
     /**
-     * @return 指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+     * @return Specify which day of the month is the maintenance window. Default is empty, meaning every day is specified.
      * 
      */
     public Optional<Output<List<Integer>>> dayOfMonths() {
@@ -48,14 +48,14 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+     * Which day of the week is the maintenance window. Default value is every day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
      * 
      */
     @Import(name="dayOfWeeks")
     private @Nullable Output<List<String>> dayOfWeeks;
 
     /**
-     * @return 每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+     * @return Which day of the week is the maintenance window. Default value is every day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
      * 
      */
     public Optional<Output<List<String>>> dayOfWeeks() {
@@ -63,14 +63,14 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time).
      * 
      */
     @Import(name="maintenanceTime")
     private @Nullable Output<String> maintenanceTime;
 
     /**
-     * @return 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * @return Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time).
      * 
      */
     public Optional<Output<String>> maintenanceTime() {
@@ -105,7 +105,7 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dayKind 可维护周期粒度，默认取值为：Week（周）。
+         * @param dayKind Maintenance cycle granularity. Default value: Week.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dayKind 可维护周期粒度，默认取值为：Week（周）。
+         * @param dayKind Maintenance cycle granularity. Default value: Week.
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dayOfMonths 指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+         * @param dayOfMonths Specify which day of the month is the maintenance window. Default is empty, meaning every day is specified.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dayOfMonths 指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+         * @param dayOfMonths Specify which day of the month is the maintenance window. Default is empty, meaning every day is specified.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dayOfMonths 指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+         * @param dayOfMonths Specify which day of the month is the maintenance window. Default is empty, meaning every day is specified.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dayOfWeeks 每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+         * @param dayOfWeeks Which day of the week is the maintenance window. Default value is every day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dayOfWeeks 每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+         * @param dayOfWeeks Which day of the week is the maintenance window. Default value is every day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dayOfWeeks 每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+         * @param dayOfWeeks Which day of the week is the maintenance window. Default value is every day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param maintenanceTime 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+         * @param maintenanceTime Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time).
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param maintenanceTime 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+         * @param maintenanceTime Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time).
          * 
          * @return builder
          * 

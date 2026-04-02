@@ -96,14 +96,14 @@ public final class RuleRuleActionArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+     * Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+     * @return Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
      * 
      */
     public Optional<Output<String>> type() {
@@ -245,7 +245,7 @@ public final class RuleRuleActionArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param type 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+         * @param type Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class RuleRuleActionArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param type 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+         * @param type Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
          * 
          * @return builder
          * 

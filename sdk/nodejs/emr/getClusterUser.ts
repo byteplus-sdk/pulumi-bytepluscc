@@ -29,19 +29,19 @@ export interface GetClusterUserArgs {
  */
 export interface GetClusterUserResult {
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     readonly clusterId: string;
     /**
-     * 创建时间。
+     * Creation time.
      */
     readonly createdTime: number;
     /**
-     * 创建者用户名。
+     * Creator username.
      */
     readonly creatorName: string;
     /**
-     * 用户组描述。
+     * User group description.
      */
     readonly description: string;
     /**
@@ -49,23 +49,23 @@ export interface GetClusterUserResult {
      */
     readonly id: string;
     /**
-     * 旧的用户的登录密码。修改密码时必填。
+     * Old user login password. Required when changing password.
      */
     readonly oldPassword: string;
     /**
-     * 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+     * New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
      */
     readonly password: string;
     /**
-     * 更新时间。
+     * Last updated time.
      */
     readonly updatedTime: number;
     /**
-     * 所属用户组名称。
+     * User group name.
      */
     readonly userGroupNames: string[];
     /**
-     * 集群用户名。仅支持小写字母。
+     * Cluster username. Only lowercase letters are supported.
      */
     readonly userName: string;
 }

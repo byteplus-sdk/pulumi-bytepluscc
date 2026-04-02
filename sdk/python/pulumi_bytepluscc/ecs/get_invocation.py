@@ -121,7 +121,7 @@ class GetInvocationResult:
     @pulumi.getter(name="commandContent")
     def command_content(self) -> builtins.str:
         """
-        命令内容。
+        Command content.
         """
         return pulumi.get(self, "command_content")
 
@@ -129,7 +129,7 @@ class GetInvocationResult:
     @pulumi.getter(name="commandDescription")
     def command_description(self) -> builtins.str:
         """
-        被调用命令的描述。
+        Description of the invoked command.
         """
         return pulumi.get(self, "command_description")
 
@@ -137,7 +137,7 @@ class GetInvocationResult:
     @pulumi.getter(name="commandId")
     def command_id(self) -> builtins.str:
         """
-        命令ID。
+        Command ID.
         """
         return pulumi.get(self, "command_id")
 
@@ -145,7 +145,7 @@ class GetInvocationResult:
     @pulumi.getter(name="commandName")
     def command_name(self) -> builtins.str:
         """
-        任务触发时的命令名称。
+        Command name when the task is triggered.
         """
         return pulumi.get(self, "command_name")
 
@@ -153,7 +153,7 @@ class GetInvocationResult:
     @pulumi.getter(name="commandProvider")
     def command_provider(self) -> builtins.str:
         """
-        被调用命令的提供方。
+        Provider of the invoked command.
         """
         return pulumi.get(self, "command_provider")
 
@@ -161,7 +161,7 @@ class GetInvocationResult:
     @pulumi.getter(name="commandType")
     def command_type(self) -> builtins.str:
         """
-        作业触发的命令类型。
+        Command type triggered by the job.
         """
         return pulumi.get(self, "command_type")
 
@@ -169,7 +169,7 @@ class GetInvocationResult:
     @pulumi.getter(name="enableParameter")
     def enable_parameter(self) -> builtins.bool:
         """
-        被调用命令是否使用自定义参数。true：已启用。false：未启用。
+        Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
         """
         return pulumi.get(self, "enable_parameter")
 
@@ -177,7 +177,7 @@ class GetInvocationResult:
     @pulumi.getter(name="endTime")
     def end_time(self) -> builtins.str:
         """
-        任务结束时间。
+        Task end time.
         """
         return pulumi.get(self, "end_time")
 
@@ -185,7 +185,7 @@ class GetInvocationResult:
     @pulumi.getter
     def frequency(self) -> builtins.str:
         """
-        执行频率。RepeatMode=Rate 时本参数必填。格式：<执行间隔数值><执行间隔单位>，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+        Execution frequency. This parameter is required when RepeatMode=Rate. Format: \\n\\n\\n\\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
         """
         return pulumi.get(self, "frequency")
 
@@ -201,7 +201,7 @@ class GetInvocationResult:
     @pulumi.getter(name="instanceIds")
     def instance_ids(self) -> Sequence[builtins.str]:
         """
-        实例ID列表，最多支持200个ID。
+        Instance ID list, supports up to 200 IDs.
         """
         return pulumi.get(self, "instance_ids")
 
@@ -209,7 +209,7 @@ class GetInvocationResult:
     @pulumi.getter(name="instanceNumber")
     def instance_number(self) -> builtins.int:
         """
-        执行实例数量。
+        Number of instances executed.
         """
         return pulumi.get(self, "instance_number")
 
@@ -217,7 +217,7 @@ class GetInvocationResult:
     @pulumi.getter(name="invocationDescription")
     def invocation_description(self) -> builtins.str:
         """
-        作业描述，默认为空字符串，不超过256个字符。
+        Job description. Defaults to an empty string and must not exceed 256 characters.
         """
         return pulumi.get(self, "invocation_description")
 
@@ -225,7 +225,7 @@ class GetInvocationResult:
     @pulumi.getter(name="invocationId")
     def invocation_id(self) -> builtins.str:
         """
-        任务执行 ID。
+        Task execution ID.
         """
         return pulumi.get(self, "invocation_id")
 
@@ -233,7 +233,7 @@ class GetInvocationResult:
     @pulumi.getter(name="invocationName")
     def invocation_name(self) -> builtins.str:
         """
-        作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+        Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
         """
         return pulumi.get(self, "invocation_name")
 
@@ -241,7 +241,7 @@ class GetInvocationResult:
     @pulumi.getter(name="invocationResults")
     def invocation_results(self) -> Sequence['outputs.GetInvocationInvocationResultResult']:
         """
-        单台实例执行命令的结果。
+        Result of command execution on a single instance.
         """
         return pulumi.get(self, "invocation_results")
 
@@ -249,7 +249,7 @@ class GetInvocationResult:
     @pulumi.getter(name="invocationStatus")
     def invocation_status(self) -> builtins.str:
         """
-        命令执行的总执行状态。
+        Overall execution status of the command.
         """
         return pulumi.get(self, "invocation_status")
 
@@ -257,7 +257,7 @@ class GetInvocationResult:
     @pulumi.getter(name="launchTime")
     def launch_time(self) -> builtins.str:
         """
-        执行时间。
+        Execution time.
         """
         return pulumi.get(self, "launch_time")
 
@@ -265,7 +265,7 @@ class GetInvocationResult:
     @pulumi.getter(name="parameterDefinitions")
     def parameter_definitions(self) -> Sequence['outputs.GetInvocationParameterDefinitionResult']:
         """
-        任务触发时的命令自定义参数定义。
+        Custom parameter definition for the command triggered by the task.
         """
         return pulumi.get(self, "parameter_definitions")
 
@@ -273,7 +273,7 @@ class GetInvocationResult:
     @pulumi.getter
     def parameters(self) -> builtins.str:
         """
-        命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+        When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
         """
         return pulumi.get(self, "parameters")
 
@@ -281,7 +281,7 @@ class GetInvocationResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        资源所属项目，一个资源只能归属于一个项目。
+        Project to which the resource belongs; each resource can belong to only one project.
         """
         return pulumi.get(self, "project_name")
 
@@ -289,7 +289,7 @@ class GetInvocationResult:
     @pulumi.getter(name="recurrenceEndTime")
     def recurrence_end_time(self) -> builtins.str:
         """
-        周期结束时间，仅适用于周期任务（Rate）。
+        Cycle end time, applicable only to periodic tasks (Rate).
         """
         return pulumi.get(self, "recurrence_end_time")
 
@@ -297,7 +297,7 @@ class GetInvocationResult:
     @pulumi.getter(name="repeatMode")
     def repeat_mode(self) -> builtins.str:
         """
-        设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+        Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
         """
         return pulumi.get(self, "repeat_mode")
 
@@ -305,7 +305,7 @@ class GetInvocationResult:
     @pulumi.getter(name="startTime")
     def start_time(self) -> builtins.str:
         """
-        任务开始时间。
+        Task start time.
         """
         return pulumi.get(self, "start_time")
 
@@ -313,7 +313,7 @@ class GetInvocationResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetInvocationTagResult']:
         """
-        标签键值对。
+        Tag key-value pair.
         """
         return pulumi.get(self, "tags")
 
@@ -321,7 +321,7 @@ class GetInvocationResult:
     @pulumi.getter
     def timeout(self) -> builtins.int:
         """
-        创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+        Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
         """
         return pulumi.get(self, "timeout")
 
@@ -329,7 +329,7 @@ class GetInvocationResult:
     @pulumi.getter
     def username(self) -> builtins.str:
         """
-        在ECS实例中执行命令的用户名称。
+        User name for executing the command in the ECS instance.
         """
         return pulumi.get(self, "username")
 
@@ -337,7 +337,7 @@ class GetInvocationResult:
     @pulumi.getter(name="windowsPassword")
     def windows_password(self) -> builtins.str:
         """
-        自定义windows用户的密码。
+        Password for custom Windows user.
         """
         return pulumi.get(self, "windows_password")
 
@@ -345,7 +345,7 @@ class GetInvocationResult:
     @pulumi.getter(name="workingDir")
     def working_dir(self) -> builtins.str:
         """
-        创建的命令在ECS实例中运行的目录。
+        Directory where the created command runs in the ECS instance.
         """
         return pulumi.get(self, "working_dir")
 

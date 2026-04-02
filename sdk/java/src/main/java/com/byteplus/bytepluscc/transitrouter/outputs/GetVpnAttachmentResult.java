@@ -14,22 +14,22 @@ import java.util.Objects;
 @CustomType
 public final class GetVpnAttachmentResult {
     /**
-     * @return 是否自动同步TR路由到网络实例路由表中。
+     * @return Whether to automatically sync TR routes to the network instance route table.
      * 
      */
     private Boolean autoPublishRouteEnabled;
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     private String createdTime;
     /**
-     * @return 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * @return Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
      * 
      */
     private String description;
     /**
-     * @return 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+     * @return Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
      * 
      */
     private Boolean healthCheckRevokeRouteEnabled;
@@ -39,80 +39,80 @@ public final class GetVpnAttachmentResult {
      */
     private String id;
     /**
-     * @return 是否开启IPv6功能。
+     * @return Whether to enable IPv6.
      * 
      */
     private Boolean ipv6Enabled;
     /**
-     * @return 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+     * @return Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
      * 
      */
     private String status;
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     private List<GetVpnAttachmentTag> tags;
     /**
-     * @return 网络实例连接的ID。
+     * @return Network instance connection ID.
      * 
      */
     private String transitRouterAttachmentId;
     /**
-     * @return 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+     * @return Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
      * 
      */
     private String transitRouterAttachmentName;
     /**
-     * @return 中转路由器实例的ID。
+     * @return Transit router instance ID.
      * 
      */
     private String transitRouterId;
     /**
-     * @return 关联的TR路由表ID。
+     * @return Associated TR route table ID.
      * 
      */
     private String transitRouterRouteTableId;
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     private String updatedTime;
     /**
-     * @return IPsec连接的ID。
+     * @return IPsec connection ID.
      * 
      */
     private String vpnConnectionId;
     /**
-     * @return IPsec连接所属可用区的ID。
+     * @return ID of the availability zone to which the IPsec connection belongs.
      * 
      */
     private String zoneId;
 
     private GetVpnAttachmentResult() {}
     /**
-     * @return 是否自动同步TR路由到网络实例路由表中。
+     * @return Whether to automatically sync TR routes to the network instance route table.
      * 
      */
     public Boolean autoPublishRouteEnabled() {
         return this.autoPublishRouteEnabled;
     }
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * @return Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+     * @return Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
      * 
      */
     public Boolean healthCheckRevokeRouteEnabled() {
@@ -126,70 +126,70 @@ public final class GetVpnAttachmentResult {
         return this.id;
     }
     /**
-     * @return 是否开启IPv6功能。
+     * @return Whether to enable IPv6.
      * 
      */
     public Boolean ipv6Enabled() {
         return this.ipv6Enabled;
     }
     /**
-     * @return 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+     * @return Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     public List<GetVpnAttachmentTag> tags() {
         return this.tags;
     }
     /**
-     * @return 网络实例连接的ID。
+     * @return Network instance connection ID.
      * 
      */
     public String transitRouterAttachmentId() {
         return this.transitRouterAttachmentId;
     }
     /**
-     * @return 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+     * @return Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
      * 
      */
     public String transitRouterAttachmentName() {
         return this.transitRouterAttachmentName;
     }
     /**
-     * @return 中转路由器实例的ID。
+     * @return Transit router instance ID.
      * 
      */
     public String transitRouterId() {
         return this.transitRouterId;
     }
     /**
-     * @return 关联的TR路由表ID。
+     * @return Associated TR route table ID.
      * 
      */
     public String transitRouterRouteTableId() {
         return this.transitRouterRouteTableId;
     }
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return IPsec连接的ID。
+     * @return IPsec connection ID.
      * 
      */
     public String vpnConnectionId() {
         return this.vpnConnectionId;
     }
     /**
-     * @return IPsec连接所属可用区的ID。
+     * @return ID of the availability zone to which the IPsec connection belongs.
      * 
      */
     public String zoneId() {

@@ -37,19 +37,19 @@ class ScheduleSqlTaskArgs:
                  process_sql_delay: Optional[pulumi.Input[builtins.int]] = None):
         """
         The set of arguments for constructing a ScheduleSqlTask resource.
-        :param pulumi.Input[builtins.str] dest_topic_id: 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
-        :param pulumi.Input[builtins.int] process_start_time: 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
-        :param pulumi.Input[builtins.str] process_time_window: SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
-        :param pulumi.Input[builtins.str] query: 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
-        :param pulumi.Input['ScheduleSqlTaskRequestCycleArgs'] request_cycle: 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
-        :param pulumi.Input[builtins.str] source_topic_id: 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
-        :param pulumi.Input[builtins.int] status: 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
-        :param pulumi.Input[builtins.str] task_name: 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
-        :param pulumi.Input[builtins.int] task_type: 任务类型：0 表示日志到日志；1 表示日志到指标。
-        :param pulumi.Input[builtins.str] description: 定时 SQL 分析任务的简单描述。不支持<>、'、\\、\\。长度范围为 0～64 个字符。
-        :param pulumi.Input[builtins.str] dest_region: 目标日志主题所属地域。默认为当前地域。
-        :param pulumi.Input[builtins.int] process_end_time: 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
-        :param pulumi.Input[builtins.int] process_sql_delay: 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+        :param pulumi.Input[builtins.str] dest_topic_id: Target log topic ID for storing scheduled SQL analysis result data.
+        :param pulumi.Input[builtins.int] process_start_time: Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
+        :param pulumi.Input[builtins.str] process_time_window: SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
+        :param pulumi.Input[builtins.str] query: The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service's retrieval and analysis syntax.
+        :param pulumi.Input['ScheduleSqlTaskRequestCycleArgs'] request_cycle: Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
+        :param pulumi.Input[builtins.str] source_topic_id: ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
+        :param pulumi.Input[builtins.int] status: Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
+        :param pulumi.Input[builtins.str] task_name: Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
+        :param pulumi.Input[builtins.int] task_type: Task type: 0 means log to log; 1 means log to metric.
+        :param pulumi.Input[builtins.str] description: Brief description of the scheduled SQL analysis task. Characters <>, ', \\, and \\ are not supported. Length: 0–64 characters.
+        :param pulumi.Input[builtins.str] dest_region: Region of the target log topic. The default is the current region.
+        :param pulumi.Input[builtins.int] process_end_time: End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
+        :param pulumi.Input[builtins.int] process_sql_delay: Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
         """
         pulumi.set(__self__, "dest_topic_id", dest_topic_id)
         pulumi.set(__self__, "process_start_time", process_start_time)
@@ -73,7 +73,7 @@ class ScheduleSqlTaskArgs:
     @pulumi.getter(name="destTopicId")
     def dest_topic_id(self) -> pulumi.Input[builtins.str]:
         """
-        用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+        Target log topic ID for storing scheduled SQL analysis result data.
         """
         return pulumi.get(self, "dest_topic_id")
 
@@ -85,7 +85,7 @@ class ScheduleSqlTaskArgs:
     @pulumi.getter(name="processStartTime")
     def process_start_time(self) -> pulumi.Input[builtins.int]:
         """
-        调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+        Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
         """
         return pulumi.get(self, "process_start_time")
 
@@ -97,7 +97,7 @@ class ScheduleSqlTaskArgs:
     @pulumi.getter(name="processTimeWindow")
     def process_time_window(self) -> pulumi.Input[builtins.str]:
         """
-        SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+        SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
         """
         return pulumi.get(self, "process_time_window")
 
@@ -109,7 +109,7 @@ class ScheduleSqlTaskArgs:
     @pulumi.getter
     def query(self) -> pulumi.Input[builtins.str]:
         """
-        定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+        The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service's retrieval and analysis syntax.
         """
         return pulumi.get(self, "query")
 
@@ -121,7 +121,7 @@ class ScheduleSqlTaskArgs:
     @pulumi.getter(name="requestCycle")
     def request_cycle(self) -> pulumi.Input['ScheduleSqlTaskRequestCycleArgs']:
         """
-        定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+        Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
         """
         return pulumi.get(self, "request_cycle")
 
@@ -133,7 +133,7 @@ class ScheduleSqlTaskArgs:
     @pulumi.getter(name="sourceTopicId")
     def source_topic_id(self) -> pulumi.Input[builtins.str]:
         """
-        待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+        ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
         """
         return pulumi.get(self, "source_topic_id")
 
@@ -145,7 +145,7 @@ class ScheduleSqlTaskArgs:
     @pulumi.getter
     def status(self) -> pulumi.Input[builtins.int]:
         """
-        完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+        Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
         """
         return pulumi.get(self, "status")
 
@@ -157,7 +157,7 @@ class ScheduleSqlTaskArgs:
     @pulumi.getter(name="taskName")
     def task_name(self) -> pulumi.Input[builtins.str]:
         """
-        定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+        Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
         """
         return pulumi.get(self, "task_name")
 
@@ -169,7 +169,7 @@ class ScheduleSqlTaskArgs:
     @pulumi.getter(name="taskType")
     def task_type(self) -> pulumi.Input[builtins.int]:
         """
-        任务类型：0 表示日志到日志；1 表示日志到指标。
+        Task type: 0 means log to log; 1 means log to metric.
         """
         return pulumi.get(self, "task_type")
 
@@ -181,7 +181,7 @@ class ScheduleSqlTaskArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        定时 SQL 分析任务的简单描述。不支持<>、'、\\、\\。长度范围为 0～64 个字符。
+        Brief description of the scheduled SQL analysis task. Characters <>, ', \\, and \\ are not supported. Length: 0–64 characters.
         """
         return pulumi.get(self, "description")
 
@@ -193,7 +193,7 @@ class ScheduleSqlTaskArgs:
     @pulumi.getter(name="destRegion")
     def dest_region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        目标日志主题所属地域。默认为当前地域。
+        Region of the target log topic. The default is the current region.
         """
         return pulumi.get(self, "dest_region")
 
@@ -205,7 +205,7 @@ class ScheduleSqlTaskArgs:
     @pulumi.getter(name="processEndTime")
     def process_end_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+        End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
         """
         return pulumi.get(self, "process_end_time")
 
@@ -217,7 +217,7 @@ class ScheduleSqlTaskArgs:
     @pulumi.getter(name="processSqlDelay")
     def process_sql_delay(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+        Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
         """
         return pulumi.get(self, "process_sql_delay")
 
@@ -252,27 +252,27 @@ class _ScheduleSqlTaskState:
                  updated_time: Optional[pulumi.Input[builtins.int]] = None):
         """
         Input properties used for looking up and filtering ScheduleSqlTask resources.
-        :param pulumi.Input[builtins.int] created_time: 创建时间（秒级 Unix 时间戳）。
-        :param pulumi.Input[builtins.str] description: 定时 SQL 分析任务的简单描述。不支持<>、'、\\、\\。长度范围为 0～64 个字符。
-        :param pulumi.Input[builtins.str] dest_project_id: 目标日志项目 ID。
-        :param pulumi.Input[builtins.str] dest_region: 目标日志主题所属地域。默认为当前地域。
-        :param pulumi.Input[builtins.str] dest_topic_id: 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
-        :param pulumi.Input[builtins.str] dest_topic_name: 目标日志主题名称。
-        :param pulumi.Input[builtins.int] process_end_time: 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
-        :param pulumi.Input[builtins.int] process_sql_delay: 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
-        :param pulumi.Input[builtins.int] process_start_time: 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
-        :param pulumi.Input[builtins.str] process_time_window: SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
-        :param pulumi.Input[builtins.str] query: 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
-        :param pulumi.Input['ScheduleSqlTaskRequestCycleArgs'] request_cycle: 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
-        :param pulumi.Input[builtins.str] source_project_id: 源日志项目 ID。
-        :param pulumi.Input[builtins.str] source_project_name: 源日志项目名称。
-        :param pulumi.Input[builtins.str] source_topic_id: 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
-        :param pulumi.Input[builtins.str] source_topic_name: 源日志主题名称。
-        :param pulumi.Input[builtins.int] status: 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
-        :param pulumi.Input[builtins.str] task_id: 任务 ID。
-        :param pulumi.Input[builtins.str] task_name: 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
-        :param pulumi.Input[builtins.int] task_type: 任务类型：0 表示日志到日志；1 表示日志到指标。
-        :param pulumi.Input[builtins.int] updated_time: 修改时间（秒级 Unix 时间戳）。
+        :param pulumi.Input[builtins.int] created_time: Creation time (seconds-level Unix timestamp).
+        :param pulumi.Input[builtins.str] description: Brief description of the scheduled SQL analysis task. Characters <>, ', \\, and \\ are not supported. Length: 0–64 characters.
+        :param pulumi.Input[builtins.str] dest_project_id: Target log project ID.
+        :param pulumi.Input[builtins.str] dest_region: Region of the target log topic. The default is the current region.
+        :param pulumi.Input[builtins.str] dest_topic_id: Target log topic ID for storing scheduled SQL analysis result data.
+        :param pulumi.Input[builtins.str] dest_topic_name: Target log topic name.
+        :param pulumi.Input[builtins.int] process_end_time: End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
+        :param pulumi.Input[builtins.int] process_sql_delay: Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
+        :param pulumi.Input[builtins.int] process_start_time: Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
+        :param pulumi.Input[builtins.str] process_time_window: SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
+        :param pulumi.Input[builtins.str] query: The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service's retrieval and analysis syntax.
+        :param pulumi.Input['ScheduleSqlTaskRequestCycleArgs'] request_cycle: Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
+        :param pulumi.Input[builtins.str] source_project_id: Source log project ID.
+        :param pulumi.Input[builtins.str] source_project_name: Source log project name.
+        :param pulumi.Input[builtins.str] source_topic_id: ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
+        :param pulumi.Input[builtins.str] source_topic_name: Source log topic name.
+        :param pulumi.Input[builtins.int] status: Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
+        :param pulumi.Input[builtins.str] task_id: Task ID.
+        :param pulumi.Input[builtins.str] task_name: Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
+        :param pulumi.Input[builtins.int] task_type: Task type: 0 means log to log; 1 means log to metric.
+        :param pulumi.Input[builtins.int] updated_time: Modification time (seconds-level Unix timestamp).
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -321,7 +321,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        创建时间（秒级 Unix 时间戳）。
+        Creation time (seconds-level Unix timestamp).
         """
         return pulumi.get(self, "created_time")
 
@@ -333,7 +333,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        定时 SQL 分析任务的简单描述。不支持<>、'、\\、\\。长度范围为 0～64 个字符。
+        Brief description of the scheduled SQL analysis task. Characters <>, ', \\, and \\ are not supported. Length: 0–64 characters.
         """
         return pulumi.get(self, "description")
 
@@ -345,7 +345,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="destProjectId")
     def dest_project_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        目标日志项目 ID。
+        Target log project ID.
         """
         return pulumi.get(self, "dest_project_id")
 
@@ -357,7 +357,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="destRegion")
     def dest_region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        目标日志主题所属地域。默认为当前地域。
+        Region of the target log topic. The default is the current region.
         """
         return pulumi.get(self, "dest_region")
 
@@ -369,7 +369,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="destTopicId")
     def dest_topic_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+        Target log topic ID for storing scheduled SQL analysis result data.
         """
         return pulumi.get(self, "dest_topic_id")
 
@@ -381,7 +381,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="destTopicName")
     def dest_topic_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        目标日志主题名称。
+        Target log topic name.
         """
         return pulumi.get(self, "dest_topic_name")
 
@@ -393,7 +393,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="processEndTime")
     def process_end_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+        End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
         """
         return pulumi.get(self, "process_end_time")
 
@@ -405,7 +405,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="processSqlDelay")
     def process_sql_delay(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+        Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
         """
         return pulumi.get(self, "process_sql_delay")
 
@@ -417,7 +417,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="processStartTime")
     def process_start_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+        Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
         """
         return pulumi.get(self, "process_start_time")
 
@@ -429,7 +429,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="processTimeWindow")
     def process_time_window(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+        SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
         """
         return pulumi.get(self, "process_time_window")
 
@@ -441,7 +441,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter
     def query(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+        The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service's retrieval and analysis syntax.
         """
         return pulumi.get(self, "query")
 
@@ -453,7 +453,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="requestCycle")
     def request_cycle(self) -> Optional[pulumi.Input['ScheduleSqlTaskRequestCycleArgs']]:
         """
-        定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+        Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
         """
         return pulumi.get(self, "request_cycle")
 
@@ -465,7 +465,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="sourceProjectId")
     def source_project_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        源日志项目 ID。
+        Source log project ID.
         """
         return pulumi.get(self, "source_project_id")
 
@@ -477,7 +477,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="sourceProjectName")
     def source_project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        源日志项目名称。
+        Source log project name.
         """
         return pulumi.get(self, "source_project_name")
 
@@ -489,7 +489,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="sourceTopicId")
     def source_topic_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+        ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
         """
         return pulumi.get(self, "source_topic_id")
 
@@ -501,7 +501,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="sourceTopicName")
     def source_topic_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        源日志主题名称。
+        Source log topic name.
         """
         return pulumi.get(self, "source_topic_name")
 
@@ -513,7 +513,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+        Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
         """
         return pulumi.get(self, "status")
 
@@ -525,7 +525,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="taskId")
     def task_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        任务 ID。
+        Task ID.
         """
         return pulumi.get(self, "task_id")
 
@@ -537,7 +537,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="taskName")
     def task_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+        Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
         """
         return pulumi.get(self, "task_name")
 
@@ -549,7 +549,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="taskType")
     def task_type(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        任务类型：0 表示日志到日志；1 表示日志到指标。
+        Task type: 0 means log to log; 1 means log to metric.
         """
         return pulumi.get(self, "task_type")
 
@@ -561,7 +561,7 @@ class _ScheduleSqlTaskState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        修改时间（秒级 Unix 时间戳）。
+        Modification time (seconds-level Unix timestamp).
         """
         return pulumi.get(self, "updated_time")
 
@@ -591,7 +591,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
                  task_type: Optional[pulumi.Input[builtins.int]] = None,
                  __props__=None):
         """
-        定时 SQL 分析任务的资源定义。
+        Resource definition for the scheduled SQL analysis task.
 
         ## Import
 
@@ -601,19 +601,19 @@ class ScheduleSqlTask(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 定时 SQL 分析任务的简单描述。不支持<>、'、\\、\\。长度范围为 0～64 个字符。
-        :param pulumi.Input[builtins.str] dest_region: 目标日志主题所属地域。默认为当前地域。
-        :param pulumi.Input[builtins.str] dest_topic_id: 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
-        :param pulumi.Input[builtins.int] process_end_time: 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
-        :param pulumi.Input[builtins.int] process_sql_delay: 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
-        :param pulumi.Input[builtins.int] process_start_time: 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
-        :param pulumi.Input[builtins.str] process_time_window: SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
-        :param pulumi.Input[builtins.str] query: 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
-        :param pulumi.Input[Union['ScheduleSqlTaskRequestCycleArgs', 'ScheduleSqlTaskRequestCycleArgsDict']] request_cycle: 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
-        :param pulumi.Input[builtins.str] source_topic_id: 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
-        :param pulumi.Input[builtins.int] status: 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
-        :param pulumi.Input[builtins.str] task_name: 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
-        :param pulumi.Input[builtins.int] task_type: 任务类型：0 表示日志到日志；1 表示日志到指标。
+        :param pulumi.Input[builtins.str] description: Brief description of the scheduled SQL analysis task. Characters <>, ', \\, and \\ are not supported. Length: 0–64 characters.
+        :param pulumi.Input[builtins.str] dest_region: Region of the target log topic. The default is the current region.
+        :param pulumi.Input[builtins.str] dest_topic_id: Target log topic ID for storing scheduled SQL analysis result data.
+        :param pulumi.Input[builtins.int] process_end_time: End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
+        :param pulumi.Input[builtins.int] process_sql_delay: Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
+        :param pulumi.Input[builtins.int] process_start_time: Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
+        :param pulumi.Input[builtins.str] process_time_window: SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
+        :param pulumi.Input[builtins.str] query: The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service's retrieval and analysis syntax.
+        :param pulumi.Input[Union['ScheduleSqlTaskRequestCycleArgs', 'ScheduleSqlTaskRequestCycleArgsDict']] request_cycle: Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
+        :param pulumi.Input[builtins.str] source_topic_id: ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
+        :param pulumi.Input[builtins.int] status: Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
+        :param pulumi.Input[builtins.str] task_name: Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
+        :param pulumi.Input[builtins.int] task_type: Task type: 0 means log to log; 1 means log to metric.
         """
         ...
     @overload
@@ -622,7 +622,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
                  args: ScheduleSqlTaskArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        定时 SQL 分析任务的资源定义。
+        Resource definition for the scheduled SQL analysis task.
 
         ## Import
 
@@ -744,27 +744,27 @@ class ScheduleSqlTask(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] created_time: 创建时间（秒级 Unix 时间戳）。
-        :param pulumi.Input[builtins.str] description: 定时 SQL 分析任务的简单描述。不支持<>、'、\\、\\。长度范围为 0～64 个字符。
-        :param pulumi.Input[builtins.str] dest_project_id: 目标日志项目 ID。
-        :param pulumi.Input[builtins.str] dest_region: 目标日志主题所属地域。默认为当前地域。
-        :param pulumi.Input[builtins.str] dest_topic_id: 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
-        :param pulumi.Input[builtins.str] dest_topic_name: 目标日志主题名称。
-        :param pulumi.Input[builtins.int] process_end_time: 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
-        :param pulumi.Input[builtins.int] process_sql_delay: 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
-        :param pulumi.Input[builtins.int] process_start_time: 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
-        :param pulumi.Input[builtins.str] process_time_window: SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
-        :param pulumi.Input[builtins.str] query: 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
-        :param pulumi.Input[Union['ScheduleSqlTaskRequestCycleArgs', 'ScheduleSqlTaskRequestCycleArgsDict']] request_cycle: 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
-        :param pulumi.Input[builtins.str] source_project_id: 源日志项目 ID。
-        :param pulumi.Input[builtins.str] source_project_name: 源日志项目名称。
-        :param pulumi.Input[builtins.str] source_topic_id: 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
-        :param pulumi.Input[builtins.str] source_topic_name: 源日志主题名称。
-        :param pulumi.Input[builtins.int] status: 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
-        :param pulumi.Input[builtins.str] task_id: 任务 ID。
-        :param pulumi.Input[builtins.str] task_name: 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
-        :param pulumi.Input[builtins.int] task_type: 任务类型：0 表示日志到日志；1 表示日志到指标。
-        :param pulumi.Input[builtins.int] updated_time: 修改时间（秒级 Unix 时间戳）。
+        :param pulumi.Input[builtins.int] created_time: Creation time (seconds-level Unix timestamp).
+        :param pulumi.Input[builtins.str] description: Brief description of the scheduled SQL analysis task. Characters <>, ', \\, and \\ are not supported. Length: 0–64 characters.
+        :param pulumi.Input[builtins.str] dest_project_id: Target log project ID.
+        :param pulumi.Input[builtins.str] dest_region: Region of the target log topic. The default is the current region.
+        :param pulumi.Input[builtins.str] dest_topic_id: Target log topic ID for storing scheduled SQL analysis result data.
+        :param pulumi.Input[builtins.str] dest_topic_name: Target log topic name.
+        :param pulumi.Input[builtins.int] process_end_time: End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
+        :param pulumi.Input[builtins.int] process_sql_delay: Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
+        :param pulumi.Input[builtins.int] process_start_time: Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
+        :param pulumi.Input[builtins.str] process_time_window: SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
+        :param pulumi.Input[builtins.str] query: The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service's retrieval and analysis syntax.
+        :param pulumi.Input[Union['ScheduleSqlTaskRequestCycleArgs', 'ScheduleSqlTaskRequestCycleArgsDict']] request_cycle: Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
+        :param pulumi.Input[builtins.str] source_project_id: Source log project ID.
+        :param pulumi.Input[builtins.str] source_project_name: Source log project name.
+        :param pulumi.Input[builtins.str] source_topic_id: ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
+        :param pulumi.Input[builtins.str] source_topic_name: Source log topic name.
+        :param pulumi.Input[builtins.int] status: Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
+        :param pulumi.Input[builtins.str] task_id: Task ID.
+        :param pulumi.Input[builtins.str] task_name: Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
+        :param pulumi.Input[builtins.int] task_type: Task type: 0 means log to log; 1 means log to metric.
+        :param pulumi.Input[builtins.int] updated_time: Modification time (seconds-level Unix timestamp).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -797,7 +797,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.int]:
         """
-        创建时间（秒级 Unix 时间戳）。
+        Creation time (seconds-level Unix timestamp).
         """
         return pulumi.get(self, "created_time")
 
@@ -805,7 +805,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        定时 SQL 分析任务的简单描述。不支持<>、'、\\、\\。长度范围为 0～64 个字符。
+        Brief description of the scheduled SQL analysis task. Characters <>, ', \\, and \\ are not supported. Length: 0–64 characters.
         """
         return pulumi.get(self, "description")
 
@@ -813,7 +813,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="destProjectId")
     def dest_project_id(self) -> pulumi.Output[builtins.str]:
         """
-        目标日志项目 ID。
+        Target log project ID.
         """
         return pulumi.get(self, "dest_project_id")
 
@@ -821,7 +821,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="destRegion")
     def dest_region(self) -> pulumi.Output[builtins.str]:
         """
-        目标日志主题所属地域。默认为当前地域。
+        Region of the target log topic. The default is the current region.
         """
         return pulumi.get(self, "dest_region")
 
@@ -829,7 +829,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="destTopicId")
     def dest_topic_id(self) -> pulumi.Output[builtins.str]:
         """
-        用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+        Target log topic ID for storing scheduled SQL analysis result data.
         """
         return pulumi.get(self, "dest_topic_id")
 
@@ -837,7 +837,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="destTopicName")
     def dest_topic_name(self) -> pulumi.Output[builtins.str]:
         """
-        目标日志主题名称。
+        Target log topic name.
         """
         return pulumi.get(self, "dest_topic_name")
 
@@ -845,7 +845,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="processEndTime")
     def process_end_time(self) -> pulumi.Output[builtins.int]:
         """
-        调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+        End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
         """
         return pulumi.get(self, "process_end_time")
 
@@ -853,7 +853,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="processSqlDelay")
     def process_sql_delay(self) -> pulumi.Output[builtins.int]:
         """
-        每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+        Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
         """
         return pulumi.get(self, "process_sql_delay")
 
@@ -861,7 +861,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="processStartTime")
     def process_start_time(self) -> pulumi.Output[builtins.int]:
         """
-        调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+        Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
         """
         return pulumi.get(self, "process_start_time")
 
@@ -869,7 +869,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="processTimeWindow")
     def process_time_window(self) -> pulumi.Output[builtins.str]:
         """
-        SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+        SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
         """
         return pulumi.get(self, "process_time_window")
 
@@ -877,7 +877,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter
     def query(self) -> pulumi.Output[builtins.str]:
         """
-        定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+        The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service's retrieval and analysis syntax.
         """
         return pulumi.get(self, "query")
 
@@ -885,7 +885,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="requestCycle")
     def request_cycle(self) -> pulumi.Output['outputs.ScheduleSqlTaskRequestCycle']:
         """
-        定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+        Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
         """
         return pulumi.get(self, "request_cycle")
 
@@ -893,7 +893,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="sourceProjectId")
     def source_project_id(self) -> pulumi.Output[builtins.str]:
         """
-        源日志项目 ID。
+        Source log project ID.
         """
         return pulumi.get(self, "source_project_id")
 
@@ -901,7 +901,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="sourceProjectName")
     def source_project_name(self) -> pulumi.Output[builtins.str]:
         """
-        源日志项目名称。
+        Source log project name.
         """
         return pulumi.get(self, "source_project_name")
 
@@ -909,7 +909,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="sourceTopicId")
     def source_topic_id(self) -> pulumi.Output[builtins.str]:
         """
-        待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+        ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
         """
         return pulumi.get(self, "source_topic_id")
 
@@ -917,7 +917,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="sourceTopicName")
     def source_topic_name(self) -> pulumi.Output[builtins.str]:
         """
-        源日志主题名称。
+        Source log topic name.
         """
         return pulumi.get(self, "source_topic_name")
 
@@ -925,7 +925,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.int]:
         """
-        完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+        Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
         """
         return pulumi.get(self, "status")
 
@@ -933,7 +933,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="taskId")
     def task_id(self) -> pulumi.Output[builtins.str]:
         """
-        任务 ID。
+        Task ID.
         """
         return pulumi.get(self, "task_id")
 
@@ -941,7 +941,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="taskName")
     def task_name(self) -> pulumi.Output[builtins.str]:
         """
-        定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+        Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
         """
         return pulumi.get(self, "task_name")
 
@@ -949,7 +949,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="taskType")
     def task_type(self) -> pulumi.Output[builtins.int]:
         """
-        任务类型：0 表示日志到日志；1 表示日志到指标。
+        Task type: 0 means log to log; 1 means log to metric.
         """
         return pulumi.get(self, "task_type")
 
@@ -957,7 +957,7 @@ class ScheduleSqlTask(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.int]:
         """
-        修改时间（秒级 Unix 时间戳）。
+        Modification time (seconds-level Unix timestamp).
         """
         return pulumi.get(self, "updated_time")
 

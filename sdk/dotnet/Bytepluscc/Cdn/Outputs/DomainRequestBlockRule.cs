@@ -16,7 +16,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     {
         public readonly ImmutableArray<Outputs.DomainRequestBlockRuleBlockRule> BlockRules;
         /// <summary>
-        /// 表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        /// Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
         /// </summary>
         public readonly bool? Switch;
 

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Bmq
 {
     /// <summary>
-    /// 云原生消息引擎 100% 兼容 Apache Kafka 协议，基于云原生的全托管、高吞吐、低时延、高可用、高可扩展性、高稳定性的分布式消息引擎服务，支持灵活动态扩缩容和流批一体计算，提供企业级大数据量级的实时流数据处理能力，帮助您构建数据处理的“中枢神经系统”，广泛应用于日志收集、数据聚合、离线数据分析等业务场景。
+    /// The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It is a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service built on cloud-native architecture. It supports flexible, dynamic scaling and integrated stream-batch processing, delivering enterprise-grade, real-time stream data processing at large scale. It helps you build the 'central nervous system' for data processing and is widely used in scenarios such as log collection, data aggregation, and offline data analysis.
     /// 
     /// ## Example Usage
     /// 
@@ -19,11 +19,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
-    /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
+    /// using Byteplus = Pulumi.Byteplus;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var bMQInstanceDemo = new Bytepluscc.Bmq.Instance("BMQInstanceDemo", new()
+    ///     var bMQInstanceDemo = new Byteplus.Index.BmqInstance("BMQInstanceDemo", new()
     ///     {
     ///         Name = "BMQInstanceDemo",
     ///         BillingType = "POST",
@@ -31,39 +31,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     ///         Specification = "bmq.standard",
     ///         VpcId = "vpc-miltj87lh2ww5smt1bxxxxx",
     ///         MessageRetention = 1,
-    ///         Endpoints = new Bytepluscc.Bmq.Inputs.InstanceEndpointsArgs
+    ///         Endpoints = 
     ///         {
-    ///             Public = new Bytepluscc.Bmq.Inputs.InstanceEndpointsPublicArgs
+    ///             { "public", 
     ///             {
-    ///                 EipId = "eip-3nriu2y2ufwu8931exxxxx",
-    ///             },
-    ///             Overlay = new Bytepluscc.Bmq.Inputs.InstanceEndpointsOverlayArgs
+    ///                 { "eipId", "eip-3nriu2y2ufwu8931exxxxx" },
+    ///             } },
+    ///             { "overlay", 
     ///             {
-    ///                 VpcIds = new[]
+    ///                 { "vpcIds", new[]
     ///                 {
     ///                     "vpc-miltj87lh2ww5smt1bxxxxx",
-    ///                 },
-    ///             },
+    ///                 } },
+    ///             } },
     ///         },
-    ///         SecurityGroupIdLists = new[]
+    ///         SecurityGroupIdList = new[]
     ///         {
     ///             "sg-3nqnz9en1ucxs931eaxxxxx",
     ///         },
-    ///         SubnetIdLists = new[]
+    ///         SubnetIdList = new[]
     ///         {
     ///             "subnet-w02wsq25fitc865ykaxxxxx",
     ///         },
-    ///         ZoneIdLists = new[]
+    ///         ZoneIdList = new[]
     ///         {
     ///             "cn-beijing-a",
     ///         },
     ///         Tags = new[]
     ///         {
-    ///             new Bytepluscc.Bmq.Inputs.InstanceTagArgs
+    ///             
     ///             {
-    ///                 Key = "env",
-    ///                 Type = "CUSTOM",
-    ///                 Value = "test",
+    ///                 { "key", "env" },
+    ///                 { "type", "CUSTOM" },
+    ///                 { "value", "test" },
     ///             },
     ///         },
     ///     });
@@ -81,85 +81,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     public partial class Instance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+        /// Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
         /// </summary>
         [Output("autoRenew")]
         public Output<string> AutoRenew { get; private set; } = null!;
 
         /// <summary>
-        /// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+        /// Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
         /// </summary>
         [Output("billingPeriod")]
         public Output<string> BillingPeriod { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+        /// Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
         /// </summary>
         [Output("billingType")]
         public Output<string> BillingType { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的创建时间。
+        /// Instance creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的描述语句。
+        /// Instance description statement
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+        /// Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
         /// </summary>
         [Output("eipId")]
         public Output<string> EipId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所有接入点响应数据。
+        /// Response data for all instance endpoints
         /// </summary>
         [Output("endpoints")]
         public Output<Outputs.InstanceEndpoints> Endpoints { get; private set; } = null!;
 
         /// <summary>
-        /// 实例过期时间。
+        /// Instance expiration time
         /// </summary>
         [Output("expirationTime")]
         public Output<string> ExpirationTime { get; private set; } = null!;
 
         /// <summary>
-        /// 实例消费组数量上限。
+        /// Maximum number of consumer groups per instance
         /// </summary>
         [Output("groupLimit")]
         public Output<int> GroupLimit { get; private set; } = null!;
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例下所有 Topic 的消息保留时长，单位为小时。
+        /// Message retention period for all topics under the instance, in hours
         /// </summary>
         [Output("messageRetention")]
         public Output<int> MessageRetention { get; private set; } = null!;
 
         /// <summary>
-        /// 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+        /// Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 实例分区数量上限。
+        /// Maximum number of partitions per instance
         /// </summary>
         [Output("partitionLimit")]
         public Output<int> PartitionLimit { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所属项目名称。
+        /// Project name to which the instance belongs
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
@@ -168,31 +168,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         public Output<ImmutableArray<Outputs.InstanceResourceTag>> ResourceTags { get; private set; } = null!;
 
         /// <summary>
-        /// 实例资源统计响应数据。
+        /// Instance resource statistics response data
         /// </summary>
         [Output("resources")]
         public Output<Outputs.InstanceResources> Resources { get; private set; } = null!;
 
         /// <summary>
-        /// 实例使用安全组列表。
+        /// List of security groups used by the instance
         /// </summary>
         [Output("securityGroupIdLists")]
         public Output<ImmutableArray<string>> SecurityGroupIdLists { get; private set; } = null!;
 
         /// <summary>
-        /// 实例规格。
+        /// Instance specification
         /// </summary>
         [Output("specification")]
         public Output<string> Specification { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+        /// Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 实例使用的子网列表。
+        /// List of subnets used by the instance
         /// </summary>
         [Output("subnetIdLists")]
         public Output<ImmutableArray<string>> SubnetIdLists { get; private set; } = null!;
@@ -201,25 +201,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         public Output<ImmutableArray<Outputs.InstanceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 包年包月类型实例的购买时长，单位为月。
+        /// Purchase duration for subscription instances, in months
         /// </summary>
         [Output("times")]
         public Output<int> Times { get; private set; } = null!;
 
         /// <summary>
-        /// 实例Topic数量上限。
+        /// Maximum number of topics per instance
         /// </summary>
         [Output("topicLimit")]
         public Output<int> TopicLimit { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所在VPC ID。
+        /// VPC ID where the instance is located
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所在可用区列表。
+        /// List of availability zones where the instance is located
         /// </summary>
         [Output("zoneIdLists")]
         public Output<ImmutableArray<string>> ZoneIdLists { get; private set; } = null!;
@@ -272,55 +272,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     public sealed class InstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+        /// Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
         /// </summary>
         [Input("autoRenew")]
         public Input<string>? AutoRenew { get; set; }
 
         /// <summary>
-        /// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+        /// Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
         /// </summary>
         [Input("billingPeriod")]
         public Input<string>? BillingPeriod { get; set; }
 
         /// <summary>
-        /// 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+        /// Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
         /// </summary>
         [Input("billingType", required: true)]
         public Input<string> BillingType { get; set; } = null!;
 
         /// <summary>
-        /// 实例的描述语句。
+        /// Instance description statement
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+        /// Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
         /// </summary>
         [Input("eipId")]
         public Input<string>? EipId { get; set; }
 
         /// <summary>
-        /// 实例所有接入点响应数据。
+        /// Response data for all instance endpoints
         /// </summary>
         [Input("endpoints")]
         public Input<Inputs.InstanceEndpointsArgs>? Endpoints { get; set; }
 
         /// <summary>
-        /// 实例下所有 Topic 的消息保留时长，单位为小时。
+        /// Message retention period for all topics under the instance, in hours
         /// </summary>
         [Input("messageRetention")]
         public Input<int>? MessageRetention { get; set; }
 
         /// <summary>
-        /// 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+        /// Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// 实例所属项目名称。
+        /// Project name to which the instance belongs
         /// </summary>
         [Input("projectName", required: true)]
         public Input<string> ProjectName { get; set; } = null!;
@@ -329,7 +329,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         private InputList<string>? _securityGroupIdLists;
 
         /// <summary>
-        /// 实例使用安全组列表。
+        /// List of security groups used by the instance
         /// </summary>
         public InputList<string> SecurityGroupIdLists
         {
@@ -338,7 +338,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         }
 
         /// <summary>
-        /// 实例规格。
+        /// Instance specification
         /// </summary>
         [Input("specification", required: true)]
         public Input<string> Specification { get; set; } = null!;
@@ -347,7 +347,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         private InputList<string>? _subnetIdLists;
 
         /// <summary>
-        /// 实例使用的子网列表。
+        /// List of subnets used by the instance
         /// </summary>
         public InputList<string> SubnetIdLists
         {
@@ -364,13 +364,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         }
 
         /// <summary>
-        /// 包年包月类型实例的购买时长，单位为月。
+        /// Purchase duration for subscription instances, in months
         /// </summary>
         [Input("times")]
         public Input<int>? Times { get; set; }
 
         /// <summary>
-        /// 实例所在VPC ID。
+        /// VPC ID where the instance is located
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
@@ -379,7 +379,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         private InputList<string>? _zoneIdLists;
 
         /// <summary>
-        /// 实例所在可用区列表。
+        /// List of availability zones where the instance is located
         /// </summary>
         public InputList<string> ZoneIdLists
         {
@@ -396,85 +396,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     public sealed class InstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+        /// Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
         /// </summary>
         [Input("autoRenew")]
         public Input<string>? AutoRenew { get; set; }
 
         /// <summary>
-        /// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+        /// Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
         /// </summary>
         [Input("billingPeriod")]
         public Input<string>? BillingPeriod { get; set; }
 
         /// <summary>
-        /// 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+        /// Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
         /// </summary>
         [Input("billingType")]
         public Input<string>? BillingType { get; set; }
 
         /// <summary>
-        /// 实例的创建时间。
+        /// Instance creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 实例的描述语句。
+        /// Instance description statement
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+        /// Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
         /// </summary>
         [Input("eipId")]
         public Input<string>? EipId { get; set; }
 
         /// <summary>
-        /// 实例所有接入点响应数据。
+        /// Response data for all instance endpoints
         /// </summary>
         [Input("endpoints")]
         public Input<Inputs.InstanceEndpointsGetArgs>? Endpoints { get; set; }
 
         /// <summary>
-        /// 实例过期时间。
+        /// Instance expiration time
         /// </summary>
         [Input("expirationTime")]
         public Input<string>? ExpirationTime { get; set; }
 
         /// <summary>
-        /// 实例消费组数量上限。
+        /// Maximum number of consumer groups per instance
         /// </summary>
         [Input("groupLimit")]
         public Input<int>? GroupLimit { get; set; }
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 实例下所有 Topic 的消息保留时长，单位为小时。
+        /// Message retention period for all topics under the instance, in hours
         /// </summary>
         [Input("messageRetention")]
         public Input<int>? MessageRetention { get; set; }
 
         /// <summary>
-        /// 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+        /// Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 实例分区数量上限。
+        /// Maximum number of partitions per instance
         /// </summary>
         [Input("partitionLimit")]
         public Input<int>? PartitionLimit { get; set; }
 
         /// <summary>
-        /// 实例所属项目名称。
+        /// Project name to which the instance belongs
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -488,7 +488,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         }
 
         /// <summary>
-        /// 实例资源统计响应数据。
+        /// Instance resource statistics response data
         /// </summary>
         [Input("resources")]
         public Input<Inputs.InstanceResourcesGetArgs>? Resources { get; set; }
@@ -497,7 +497,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         private InputList<string>? _securityGroupIdLists;
 
         /// <summary>
-        /// 实例使用安全组列表。
+        /// List of security groups used by the instance
         /// </summary>
         public InputList<string> SecurityGroupIdLists
         {
@@ -506,13 +506,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         }
 
         /// <summary>
-        /// 实例规格。
+        /// Instance specification
         /// </summary>
         [Input("specification")]
         public Input<string>? Specification { get; set; }
 
         /// <summary>
-        /// 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+        /// Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -521,7 +521,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         private InputList<string>? _subnetIdLists;
 
         /// <summary>
-        /// 实例使用的子网列表。
+        /// List of subnets used by the instance
         /// </summary>
         public InputList<string> SubnetIdLists
         {
@@ -538,19 +538,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         }
 
         /// <summary>
-        /// 包年包月类型实例的购买时长，单位为月。
+        /// Purchase duration for subscription instances, in months
         /// </summary>
         [Input("times")]
         public Input<int>? Times { get; set; }
 
         /// <summary>
-        /// 实例Topic数量上限。
+        /// Maximum number of topics per instance
         /// </summary>
         [Input("topicLimit")]
         public Input<int>? TopicLimit { get; set; }
 
         /// <summary>
-        /// 实例所在VPC ID。
+        /// VPC ID where the instance is located
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
@@ -559,7 +559,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         private InputList<string>? _zoneIdLists;
 
         /// <summary>
-        /// 实例所在可用区列表。
+        /// List of availability zones where the instance is located
         /// </summary>
         public InputList<string> ZoneIdLists
         {

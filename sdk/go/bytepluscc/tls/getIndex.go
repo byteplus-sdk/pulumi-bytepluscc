@@ -30,23 +30,23 @@ type LookupIndexArgs struct {
 
 // A collection of values returned by getIndex.
 type LookupIndexResult struct {
-	// 索引创建的时间。
+	// Index creation time.
 	CreateTime string `pulumi:"createTime"`
-	// 是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
+	// Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
 	EnableAutoIndex bool `pulumi:"enableAutoIndex"`
-	// 全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+	// Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
 	FullText GetIndexFullText `pulumi:"fullText"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 键值索引配置。此字段数组长度为 0 或者未配置，表示不开启键值索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+	// Key-value index configuration. If the length of this field array is 0 or not configured, key-value indexing is disabled. At least one of full-text index configuration or key-value index configuration must be set; that is, you must specify at least one parameter between FullText and KeyValue.
 	KeyValues []GetIndexKeyValue `pulumi:"keyValues"`
-	// 统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
+	// Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
 	MaxTextLen int `pulumi:"maxTextLen"`
-	// 索引最近修改的时间。
+	// Last modified time of the index.
 	ModifyTime string `pulumi:"modifyTime"`
-	// 日志主题ID。
+	// Log topic ID.
 	TopicId string `pulumi:"topicId"`
-	// 预留字段索引配置。此字段数组长度为 0 或者未配置，表示不开启预留字段索引。不能同时开启全文索引和预留字段 **content** 的键值索引，即如果通过 UserInnerKeyValue 参数设置**content** 索引，则不能同时设置参数 FullText。预留字段中，目前仅支持为 **content** 手动开启索引。其他预留字段的索引设置请参考预留字段。
+	// Reserved field index configuration. If the array length of this field is 0 or not configured, reserved field indexing is disabled. You cannot enable both full-text indexing and key-value indexing for the reserved field **content** at the same time. If you set the **content** index via the UserInnerKeyValue parameter, you cannot also set the FullText parameter. Among reserved fields, only manual indexing for **content** is currently supported. For other reserved field index settings, refer to reserved fields.
 	UserInnerKeyValues []GetIndexUserInnerKeyValue `pulumi:"userInnerKeyValues"`
 }
 
@@ -84,17 +84,17 @@ func (o LookupIndexResultOutput) ToLookupIndexResultOutputWithContext(ctx contex
 	return o
 }
 
-// 索引创建的时间。
+// Index creation time.
 func (o LookupIndexResultOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIndexResult) string { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
+// Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
 func (o LookupIndexResultOutput) EnableAutoIndex() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupIndexResult) bool { return v.EnableAutoIndex }).(pulumi.BoolOutput)
 }
 
-// 全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+// Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
 func (o LookupIndexResultOutput) FullText() GetIndexFullTextOutput {
 	return o.ApplyT(func(v LookupIndexResult) GetIndexFullText { return v.FullText }).(GetIndexFullTextOutput)
 }
@@ -104,27 +104,27 @@ func (o LookupIndexResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIndexResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 键值索引配置。此字段数组长度为 0 或者未配置，表示不开启键值索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+// Key-value index configuration. If the length of this field array is 0 or not configured, key-value indexing is disabled. At least one of full-text index configuration or key-value index configuration must be set; that is, you must specify at least one parameter between FullText and KeyValue.
 func (o LookupIndexResultOutput) KeyValues() GetIndexKeyValueArrayOutput {
 	return o.ApplyT(func(v LookupIndexResult) []GetIndexKeyValue { return v.KeyValues }).(GetIndexKeyValueArrayOutput)
 }
 
-// 统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
+// Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
 func (o LookupIndexResultOutput) MaxTextLen() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupIndexResult) int { return v.MaxTextLen }).(pulumi.IntOutput)
 }
 
-// 索引最近修改的时间。
+// Last modified time of the index.
 func (o LookupIndexResultOutput) ModifyTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIndexResult) string { return v.ModifyTime }).(pulumi.StringOutput)
 }
 
-// 日志主题ID。
+// Log topic ID.
 func (o LookupIndexResultOutput) TopicId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIndexResult) string { return v.TopicId }).(pulumi.StringOutput)
 }
 
-// 预留字段索引配置。此字段数组长度为 0 或者未配置，表示不开启预留字段索引。不能同时开启全文索引和预留字段 **content** 的键值索引，即如果通过 UserInnerKeyValue 参数设置**content** 索引，则不能同时设置参数 FullText。预留字段中，目前仅支持为 **content** 手动开启索引。其他预留字段的索引设置请参考预留字段。
+// Reserved field index configuration. If the array length of this field is 0 or not configured, reserved field indexing is disabled. You cannot enable both full-text indexing and key-value indexing for the reserved field **content** at the same time. If you set the **content** index via the UserInnerKeyValue parameter, you cannot also set the FullText parameter. Among reserved fields, only manual indexing for **content** is currently supported. For other reserved field index settings, refer to reserved fields.
 func (o LookupIndexResultOutput) UserInnerKeyValues() GetIndexUserInnerKeyValueArrayOutput {
 	return o.ApplyT(func(v LookupIndexResult) []GetIndexUserInnerKeyValue { return v.UserInnerKeyValues }).(GetIndexUserInnerKeyValueArrayOutput)
 }

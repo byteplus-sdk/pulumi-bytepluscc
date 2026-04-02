@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter.Outputs
     public sealed class DnsControlPolicySource
     {
         /// <summary>
-        /// VPC地域信息。
+        /// VPC region information.
         /// </summary>
         public readonly string? Region;
         /// <summary>

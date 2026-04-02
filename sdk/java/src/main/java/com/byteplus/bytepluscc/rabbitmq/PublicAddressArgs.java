@@ -15,14 +15,14 @@ public final class PublicAddressArgs extends com.pulumi.resources.ResourceArgs {
     public static final PublicAddressArgs Empty = new PublicAddressArgs();
 
     /**
-     * EIP的ID。
+     * EIP ID.
      * 
      */
     @Import(name="eipId", required=true)
     private Output<String> eipId;
 
     /**
-     * @return EIP的ID。
+     * @return EIP ID.
      * 
      */
     public Output<String> eipId() {
@@ -30,14 +30,14 @@ public final class PublicAddressArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * RabbitMQ 实例 ID。
+     * RabbitMQ instance ID.
      * 
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
-     * @return RabbitMQ 实例 ID。
+     * @return RabbitMQ instance ID.
      * 
      */
     public Output<String> instanceId() {
@@ -70,7 +70,7 @@ public final class PublicAddressArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId EIP的ID。
+         * @param eipId EIP ID.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class PublicAddressArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId EIP的ID。
+         * @param eipId EIP ID.
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class PublicAddressArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId RabbitMQ 实例 ID。
+         * @param instanceId RabbitMQ instance ID.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class PublicAddressArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId RabbitMQ 实例 ID。
+         * @param instanceId RabbitMQ instance ID.
          * 
          * @return builder
          * 

@@ -40,7 +40,7 @@ if not MYPY:
     class AllowListAssociatedInstanceArgsDict(TypedDict):
         instance_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例ID。
+        Instance ID.
         """
 elif False:
     AllowListAssociatedInstanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -50,7 +50,7 @@ class AllowListAssociatedInstanceArgs:
     def __init__(__self__, *,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
@@ -59,7 +59,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -72,15 +72,15 @@ if not MYPY:
     class DatabaseDatabasesPrivilegeArgsDict(TypedDict):
         account_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        需授权的账号名称
+        Account name to be authorized
         """
         account_privilege: NotRequired[pulumi.Input[builtins.str]]
         """
-        授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+        Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
         """
         account_privilege_details: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+        Specific SQL operation permissions, separated by English commas; required for Custom type
         """
 elif False:
     DatabaseDatabasesPrivilegeArgsDict: TypeAlias = Mapping[str, Any]
@@ -92,9 +92,9 @@ class DatabaseDatabasesPrivilegeArgs:
                  account_privilege: Optional[pulumi.Input[builtins.str]] = None,
                  account_privilege_details: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.str] account_name: 需授权的账号名称
-        :param pulumi.Input[builtins.str] account_privilege: 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] account_privilege_details: 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+        :param pulumi.Input[builtins.str] account_name: Account name to be authorized
+        :param pulumi.Input[builtins.str] account_privilege: Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] account_privilege_details: Specific SQL operation permissions, separated by English commas; required for Custom type
         """
         if account_name is not None:
             pulumi.set(__self__, "account_name", account_name)
@@ -107,7 +107,7 @@ class DatabaseDatabasesPrivilegeArgs:
     @pulumi.getter(name="accountName")
     def account_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        需授权的账号名称
+        Account name to be authorized
         """
         return pulumi.get(self, "account_name")
 
@@ -119,7 +119,7 @@ class DatabaseDatabasesPrivilegeArgs:
     @pulumi.getter(name="accountPrivilege")
     def account_privilege(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+        Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
         """
         return pulumi.get(self, "account_privilege")
 
@@ -131,7 +131,7 @@ class DatabaseDatabasesPrivilegeArgs:
     @pulumi.getter(name="accountPrivilegeDetails")
     def account_privilege_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+        Specific SQL operation permissions, separated by English commas; required for Custom type
         """
         return pulumi.get(self, "account_privilege_details")
 
@@ -144,39 +144,39 @@ if not MYPY:
     class InstanceChargeDetailArgsDict(TypedDict):
         auto_renew: NotRequired[pulumi.Input[builtins.bool]]
         """
-        预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+        Whether to enable auto-renewal in prepaid scenarios. Values: true: auto-renewal. false: no auto-renewal.
         """
         charge_end_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        预付费场景下计费到期的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Billing expiration time for prepaid scenarios, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         charge_start_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        计费开始的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Billing start time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         charge_status: NotRequired[pulumi.Input[builtins.str]]
         """
-        付费状态：Normal：正常。Overdue：欠费。Shutdown：关停。
+        Payment status: Normal: Normal. Overdue: Overdue. Shutdown: Shutdown
         """
         charge_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        计费类型。PostPaid：按量计费；PrePaid：包年包月。
+        Billing type. PostPaid: Pay-as-you-go. PrePaid: yearly/monthly subscription
         """
         overdue_reclaim_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        欠费关停时预计释放时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Estimated release time when shut down due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         overdue_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        欠费关停时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Shutdown time for overdue payments. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
         """
         period: NotRequired[pulumi.Input[builtins.int]]
         """
-        预付费场景下的购买时长。
+        Purchase duration for prepaid scenarios.
         """
         period_unit: NotRequired[pulumi.Input[builtins.str]]
         """
-        预付费场景下的购买周期。Month：包月。Year：包年。
+        Purchase period for prepaid scenarios. Month: monthly subscription. Year: annual subscription.
         """
 elif False:
     InstanceChargeDetailArgsDict: TypeAlias = Mapping[str, Any]
@@ -194,15 +194,15 @@ class InstanceChargeDetailArgs:
                  period: Optional[pulumi.Input[builtins.int]] = None,
                  period_unit: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] auto_renew: 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
-        :param pulumi.Input[builtins.str] charge_end_time: 预付费场景下计费到期的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param pulumi.Input[builtins.str] charge_start_time: 计费开始的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param pulumi.Input[builtins.str] charge_status: 付费状态：Normal：正常。Overdue：欠费。Shutdown：关停。
-        :param pulumi.Input[builtins.str] charge_type: 计费类型。PostPaid：按量计费；PrePaid：包年包月。
-        :param pulumi.Input[builtins.str] overdue_reclaim_time: 欠费关停时预计释放时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param pulumi.Input[builtins.str] overdue_time: 欠费关停时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param pulumi.Input[builtins.int] period: 预付费场景下的购买时长。
-        :param pulumi.Input[builtins.str] period_unit: 预付费场景下的购买周期。Month：包月。Year：包年。
+        :param pulumi.Input[builtins.bool] auto_renew: Whether to enable auto-renewal in prepaid scenarios. Values: true: auto-renewal. false: no auto-renewal.
+        :param pulumi.Input[builtins.str] charge_end_time: Billing expiration time for prepaid scenarios, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
+        :param pulumi.Input[builtins.str] charge_start_time: Billing start time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
+        :param pulumi.Input[builtins.str] charge_status: Payment status: Normal: Normal. Overdue: Overdue. Shutdown: Shutdown
+        :param pulumi.Input[builtins.str] charge_type: Billing type. PostPaid: Pay-as-you-go. PrePaid: yearly/monthly subscription
+        :param pulumi.Input[builtins.str] overdue_reclaim_time: Estimated release time when shut down due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
+        :param pulumi.Input[builtins.str] overdue_time: Shutdown time for overdue payments. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
+        :param pulumi.Input[builtins.int] period: Purchase duration for prepaid scenarios.
+        :param pulumi.Input[builtins.str] period_unit: Purchase period for prepaid scenarios. Month: monthly subscription. Year: annual subscription.
         """
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
@@ -227,7 +227,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+        Whether to enable auto-renewal in prepaid scenarios. Values: true: auto-renewal. false: no auto-renewal.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -239,7 +239,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="chargeEndTime")
     def charge_end_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        预付费场景下计费到期的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Billing expiration time for prepaid scenarios, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         return pulumi.get(self, "charge_end_time")
 
@@ -251,7 +251,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="chargeStartTime")
     def charge_start_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        计费开始的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Billing start time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         return pulumi.get(self, "charge_start_time")
 
@@ -263,7 +263,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        付费状态：Normal：正常。Overdue：欠费。Shutdown：关停。
+        Payment status: Normal: Normal. Overdue: Overdue. Shutdown: Shutdown
         """
         return pulumi.get(self, "charge_status")
 
@@ -275,7 +275,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        计费类型。PostPaid：按量计费；PrePaid：包年包月。
+        Billing type. PostPaid: Pay-as-you-go. PrePaid: yearly/monthly subscription
         """
         return pulumi.get(self, "charge_type")
 
@@ -287,7 +287,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        欠费关停时预计释放时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Estimated release time when shut down due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -299,7 +299,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        欠费关停时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Shutdown time for overdue payments. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
         """
         return pulumi.get(self, "overdue_time")
 
@@ -311,7 +311,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter
     def period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        预付费场景下的购买时长。
+        Purchase duration for prepaid scenarios.
         """
         return pulumi.get(self, "period")
 
@@ -323,7 +323,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        预付费场景下的购买周期。Month：包月。Year：包年。
+        Purchase period for prepaid scenarios. Month: monthly subscription. Year: annual subscription.
         """
         return pulumi.get(self, "period_unit")
 
@@ -337,51 +337,51 @@ if not MYPY:
         addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input['InstanceEndpointAddressArgsDict']]]]
         auto_add_new_nodes: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否允许自动加入新节点，取值：true：是。false：否。
+        Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
         """
         consist_level: NotRequired[pulumi.Input[builtins.str]]
         """
-        一致性级别，仅对读写模式的连接终端有效。取值：Eventual：最终一致性。Session：会话一致性。Global：全局一致性。
+        Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
         """
         consist_timeout: NotRequired[pulumi.Input[builtins.int]]
         """
-        延迟很大时，只读节点同步最新数据的超时时间，单位为 us，取值范围为 1us~100000000us。
+        When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
         """
         consist_timeout_action: NotRequired[pulumi.Input[builtins.str]]
         """
-        只读节点同步数据超时后的超时策略，支持以下两种策略：ReturnError：返回 SQL 报错（wait replication complete timeout, please retry）。ReadMaster：发送请求到主节点。
+        Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
         """
         description: NotRequired[pulumi.Input[builtins.str]]
         """
-        地址描述。
+        Address description
         """
         distributed_transaction: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否开启事务拆分，仅对读写模式的连接终端有效。取值：true：是。false：否。
+        Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
         """
         endpoint_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例连接终端 ID。
+        Instance connection endpoint ID.
         """
         endpoint_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例连接终端名称。
+        Instance connection endpoint name.
         """
         endpoint_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        连接终端类型，取值：Cluster：默认终端。Primary：主节点终端。Custom：自定义终端。
+        Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
         """
         master_accept_read_requests: NotRequired[pulumi.Input[builtins.bool]]
         """
-        主节点是否接受读请求。仅对读写模式的连接终端有效。true：是。false：否。
+        Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
         """
         node_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        连接终端配置的节点列表。
+        Node list configured for the connection endpoint.
         """
         read_write_mode: NotRequired[pulumi.Input[builtins.str]]
         """
-        连接终端的读写模式，取值：ReadWrite: 读写。ReadOnly: 只读。
+        Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
         """
 elif False:
     InstanceEndpointArgsDict: TypeAlias = Mapping[str, Any]
@@ -403,18 +403,18 @@ class InstanceEndpointArgs:
                  node_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  read_write_mode: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] auto_add_new_nodes: 是否允许自动加入新节点，取值：true：是。false：否。
-        :param pulumi.Input[builtins.str] consist_level: 一致性级别，仅对读写模式的连接终端有效。取值：Eventual：最终一致性。Session：会话一致性。Global：全局一致性。
-        :param pulumi.Input[builtins.int] consist_timeout: 延迟很大时，只读节点同步最新数据的超时时间，单位为 us，取值范围为 1us~100000000us。
-        :param pulumi.Input[builtins.str] consist_timeout_action: 只读节点同步数据超时后的超时策略，支持以下两种策略：ReturnError：返回 SQL 报错（wait replication complete timeout, please retry）。ReadMaster：发送请求到主节点。
-        :param pulumi.Input[builtins.str] description: 地址描述。
-        :param pulumi.Input[builtins.bool] distributed_transaction: 是否开启事务拆分，仅对读写模式的连接终端有效。取值：true：是。false：否。
-        :param pulumi.Input[builtins.str] endpoint_id: 实例连接终端 ID。
-        :param pulumi.Input[builtins.str] endpoint_name: 实例连接终端名称。
-        :param pulumi.Input[builtins.str] endpoint_type: 连接终端类型，取值：Cluster：默认终端。Primary：主节点终端。Custom：自定义终端。
-        :param pulumi.Input[builtins.bool] master_accept_read_requests: 主节点是否接受读请求。仅对读写模式的连接终端有效。true：是。false：否。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: 连接终端配置的节点列表。
-        :param pulumi.Input[builtins.str] read_write_mode: 连接终端的读写模式，取值：ReadWrite: 读写。ReadOnly: 只读。
+        :param pulumi.Input[builtins.bool] auto_add_new_nodes: Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
+        :param pulumi.Input[builtins.str] consist_level: Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
+        :param pulumi.Input[builtins.int] consist_timeout: When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
+        :param pulumi.Input[builtins.str] consist_timeout_action: Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
+        :param pulumi.Input[builtins.str] description: Address description
+        :param pulumi.Input[builtins.bool] distributed_transaction: Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
+        :param pulumi.Input[builtins.str] endpoint_id: Instance connection endpoint ID.
+        :param pulumi.Input[builtins.str] endpoint_name: Instance connection endpoint name.
+        :param pulumi.Input[builtins.str] endpoint_type: Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
+        :param pulumi.Input[builtins.bool] master_accept_read_requests: Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: Node list configured for the connection endpoint.
+        :param pulumi.Input[builtins.str] read_write_mode: Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
         """
         if addresses is not None:
             pulumi.set(__self__, "addresses", addresses)
@@ -456,7 +456,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="autoAddNewNodes")
     def auto_add_new_nodes(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否允许自动加入新节点，取值：true：是。false：否。
+        Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
         """
         return pulumi.get(self, "auto_add_new_nodes")
 
@@ -468,7 +468,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="consistLevel")
     def consist_level(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        一致性级别，仅对读写模式的连接终端有效。取值：Eventual：最终一致性。Session：会话一致性。Global：全局一致性。
+        Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
         """
         return pulumi.get(self, "consist_level")
 
@@ -480,7 +480,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="consistTimeout")
     def consist_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        延迟很大时，只读节点同步最新数据的超时时间，单位为 us，取值范围为 1us~100000000us。
+        When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
         """
         return pulumi.get(self, "consist_timeout")
 
@@ -492,7 +492,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="consistTimeoutAction")
     def consist_timeout_action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        只读节点同步数据超时后的超时策略，支持以下两种策略：ReturnError：返回 SQL 报错（wait replication complete timeout, please retry）。ReadMaster：发送请求到主节点。
+        Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
         """
         return pulumi.get(self, "consist_timeout_action")
 
@@ -504,7 +504,7 @@ class InstanceEndpointArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        地址描述。
+        Address description
         """
         return pulumi.get(self, "description")
 
@@ -516,7 +516,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="distributedTransaction")
     def distributed_transaction(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启事务拆分，仅对读写模式的连接终端有效。取值：true：是。false：否。
+        Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
         """
         return pulumi.get(self, "distributed_transaction")
 
@@ -528,7 +528,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例连接终端 ID。
+        Instance connection endpoint ID.
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -540,7 +540,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="endpointName")
     def endpoint_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例连接终端名称。
+        Instance connection endpoint name.
         """
         return pulumi.get(self, "endpoint_name")
 
@@ -552,7 +552,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接终端类型，取值：Cluster：默认终端。Primary：主节点终端。Custom：自定义终端。
+        Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -564,7 +564,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="masterAcceptReadRequests")
     def master_accept_read_requests(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        主节点是否接受读请求。仅对读写模式的连接终端有效。true：是。false：否。
+        Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
         """
         return pulumi.get(self, "master_accept_read_requests")
 
@@ -576,7 +576,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="nodeIds")
     def node_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        连接终端配置的节点列表。
+        Node list configured for the connection endpoint.
         """
         return pulumi.get(self, "node_ids")
 
@@ -588,7 +588,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="readWriteMode")
     def read_write_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接终端的读写模式，取值：ReadWrite: 读写。ReadOnly: 只读。
+        Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
         """
         return pulumi.get(self, "read_write_mode")
 
@@ -601,31 +601,31 @@ if not MYPY:
     class InstanceEndpointAddressArgsDict(TypedDict):
         dns_visibility: NotRequired[pulumi.Input[builtins.bool]]
         """
-        解析方式。当前返回值只能为 false。
+        Parsing method. The current return value can only be false.
         """
         domain: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例内网访问域名。
+        Instance private access domain name.
         """
         eip_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        公网 ID。
+        Public network ID.
         """
         ip_address: NotRequired[pulumi.Input[builtins.str]]
         """
-        IP 地址。
+        IP address.
         """
         network_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络类型：Private：私有网络 VPC。Public：公网访问。
+        Network type: Private: private network VPC. Public: public access.
         """
         port: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例内网访问端口。
+        Instance private network access port.
         """
         subnet_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        子网 ID。子网必须属于所选的可用区。
+        Subnet ID. The subnet must belong to the selected availability zone.
         """
 elif False:
     InstanceEndpointAddressArgsDict: TypeAlias = Mapping[str, Any]
@@ -641,13 +641,13 @@ class InstanceEndpointAddressArgs:
                  port: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] dns_visibility: 解析方式。当前返回值只能为 false。
-        :param pulumi.Input[builtins.str] domain: 实例内网访问域名。
-        :param pulumi.Input[builtins.str] eip_id: 公网 ID。
-        :param pulumi.Input[builtins.str] ip_address: IP 地址。
-        :param pulumi.Input[builtins.str] network_type: 网络类型：Private：私有网络 VPC。Public：公网访问。
-        :param pulumi.Input[builtins.str] port: 实例内网访问端口。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。子网必须属于所选的可用区。
+        :param pulumi.Input[builtins.bool] dns_visibility: Parsing method. The current return value can only be false.
+        :param pulumi.Input[builtins.str] domain: Instance private access domain name.
+        :param pulumi.Input[builtins.str] eip_id: Public network ID.
+        :param pulumi.Input[builtins.str] ip_address: IP address.
+        :param pulumi.Input[builtins.str] network_type: Network type: Private: private network VPC. Public: public access.
+        :param pulumi.Input[builtins.str] port: Instance private network access port.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID. The subnet must belong to the selected availability zone.
         """
         if dns_visibility is not None:
             pulumi.set(__self__, "dns_visibility", dns_visibility)
@@ -668,7 +668,7 @@ class InstanceEndpointAddressArgs:
     @pulumi.getter(name="dnsVisibility")
     def dns_visibility(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        解析方式。当前返回值只能为 false。
+        Parsing method. The current return value can only be false.
         """
         return pulumi.get(self, "dns_visibility")
 
@@ -680,7 +680,7 @@ class InstanceEndpointAddressArgs:
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例内网访问域名。
+        Instance private access domain name.
         """
         return pulumi.get(self, "domain")
 
@@ -692,7 +692,7 @@ class InstanceEndpointAddressArgs:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        公网 ID。
+        Public network ID.
         """
         return pulumi.get(self, "eip_id")
 
@@ -704,7 +704,7 @@ class InstanceEndpointAddressArgs:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP 地址。
+        IP address.
         """
         return pulumi.get(self, "ip_address")
 
@@ -716,7 +716,7 @@ class InstanceEndpointAddressArgs:
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络类型：Private：私有网络 VPC。Public：公网访问。
+        Network type: Private: private network VPC. Public: public access.
         """
         return pulumi.get(self, "network_type")
 
@@ -728,7 +728,7 @@ class InstanceEndpointAddressArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例内网访问端口。
+        Instance private network access port.
         """
         return pulumi.get(self, "port")
 
@@ -740,7 +740,7 @@ class InstanceEndpointAddressArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网 ID。子网必须属于所选的可用区。
+        Subnet ID. The subnet must belong to the selected availability zone.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -753,19 +753,19 @@ if not MYPY:
     class InstanceMaintenanceWindowArgsDict(TypedDict):
         day_kind: NotRequired[pulumi.Input[builtins.str]]
         """
-        可维护周期粒度，默认取值为：Week（周）。
+        Maintenance cycle granularity. Default value: Week.
         """
         day_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]
         """
-        指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+        Specify which day of the month is the maintenance window. Default is empty, meaning every day is specified.
         """
         day_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+        Which day of the week is the maintenance window. Default value is every day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
         """
         maintenance_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+        Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time).
         """
 elif False:
     InstanceMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
@@ -778,10 +778,10 @@ class InstanceMaintenanceWindowArgs:
                  day_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  maintenance_time: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] day_kind: 可维护周期粒度，默认取值为：Week（周）。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.int]]] day_of_months: 指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] day_of_weeks: 每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
-        :param pulumi.Input[builtins.str] maintenance_time: 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+        :param pulumi.Input[builtins.str] day_kind: Maintenance cycle granularity. Default value: Week.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.int]]] day_of_months: Specify which day of the month is the maintenance window. Default is empty, meaning every day is specified.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] day_of_weeks: Which day of the week is the maintenance window. Default value is every day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
+        :param pulumi.Input[builtins.str] maintenance_time: Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time).
         """
         if day_kind is not None:
             pulumi.set(__self__, "day_kind", day_kind)
@@ -796,7 +796,7 @@ class InstanceMaintenanceWindowArgs:
     @pulumi.getter(name="dayKind")
     def day_kind(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        可维护周期粒度，默认取值为：Week（周）。
+        Maintenance cycle granularity. Default value: Week.
         """
         return pulumi.get(self, "day_kind")
 
@@ -808,7 +808,7 @@ class InstanceMaintenanceWindowArgs:
     @pulumi.getter(name="dayOfMonths")
     def day_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]:
         """
-        指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+        Specify which day of the month is the maintenance window. Default is empty, meaning every day is specified.
         """
         return pulumi.get(self, "day_of_months")
 
@@ -820,7 +820,7 @@ class InstanceMaintenanceWindowArgs:
     @pulumi.getter(name="dayOfWeeks")
     def day_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+        Which day of the week is the maintenance window. Default value is every day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
         """
         return pulumi.get(self, "day_of_weeks")
 
@@ -832,7 +832,7 @@ class InstanceMaintenanceWindowArgs:
     @pulumi.getter(name="maintenanceTime")
     def maintenance_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+        Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time).
         """
         return pulumi.get(self, "maintenance_time")
 
@@ -845,11 +845,11 @@ if not MYPY:
     class InstanceNodeArgsDict(TypedDict):
         failover_priority: NotRequired[pulumi.Input[builtins.int]]
         """
-        节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+        Node failover priority. Range: 0~15. Higher values indicate higher priority
         """
         node_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        Node type. Values: Primary: primary node. ReadOnly: read-only node.
         """
 elif False:
     InstanceNodeArgsDict: TypeAlias = Mapping[str, Any]
@@ -860,8 +860,8 @@ class InstanceNodeArgs:
                  failover_priority: Optional[pulumi.Input[builtins.int]] = None,
                  node_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.int] failover_priority: 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
-        :param pulumi.Input[builtins.str] node_type: 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        :param pulumi.Input[builtins.int] failover_priority: Node failover priority. Range: 0~15. Higher values indicate higher priority
+        :param pulumi.Input[builtins.str] node_type: Node type. Values: Primary: primary node. ReadOnly: read-only node.
         """
         if failover_priority is not None:
             pulumi.set(__self__, "failover_priority", failover_priority)
@@ -872,7 +872,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="failoverPriority")
     def failover_priority(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+        Node failover priority. Range: 0~15. Higher values indicate higher priority
         """
         return pulumi.get(self, "failover_priority")
 
@@ -884,7 +884,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        Node type. Values: Primary: primary node. ReadOnly: read-only node.
         """
         return pulumi.get(self, "node_type")
 
@@ -897,11 +897,11 @@ if not MYPY:
     class InstanceTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        User tag key. Length range: 1~128 characters. Allows input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        User tag value. Allows input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system will automatically remove it
         """
 elif False:
     InstanceTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -912,8 +912,8 @@ class InstanceTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
-        :param pulumi.Input[builtins.str] value: 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        :param pulumi.Input[builtins.str] key: User tag key. Length range: 1~128 characters. Allows input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it
+        :param pulumi.Input[builtins.str] value: User tag value. Allows input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system will automatically remove it
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -924,7 +924,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        User tag key. Length range: 1~128 characters. Allows input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it
         """
         return pulumi.get(self, "key")
 
@@ -936,7 +936,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        User tag value. Allows input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system will automatically remove it
         """
         return pulumi.get(self, "value")
 

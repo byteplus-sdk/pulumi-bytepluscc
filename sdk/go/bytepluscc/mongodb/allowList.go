@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 文档数据库 MongoDB 版实例创建成功后，您可以为实例设置白名单，以允许外部设备访问该实例。本文介绍如何通过控制台设置白名单。
+// After you create a MongoDB document database instance, you can set an allowlist for the instance to permit external devices to access it. This article describes how to set an allowlist in the console.
 //
 // ## Import
 //
@@ -22,24 +22,24 @@ import (
 type AllowList struct {
 	pulumi.CustomResourceState
 
-	// 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+	// Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
 	AllowListCategory pulumi.StringOutput `pulumi:"allowListCategory"`
-	// 白名单的备注信息，长度不可超过 200 个字符。
+	// Allowlist remarks. Maximum length: 200 characters.
 	AllowListDesc pulumi.StringOutput `pulumi:"allowListDesc"`
-	// 白名单 ID。
+	// Allowlist ID.
 	AllowListId pulumi.StringOutput `pulumi:"allowListId"`
-	// 白名单内的 IP 地址（或地址段）总数。
+	// Total number of IP addresses (or address ranges) in the allowlist.
 	AllowListIpNum pulumi.IntOutput `pulumi:"allowListIpNum"`
-	// 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+	// Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
 	AllowListName pulumi.StringOutput `pulumi:"allowListName"`
-	// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+	// IP address type in the allowlist. Only IPv4 addresses are currently supported.
 	AllowListType pulumi.StringOutput `pulumi:"allowListType"`
-	// 输入 IP 地址或 CIDR 格式的 IP 地址段。
+	// Enter an IP address or a CIDR-format IP address range.
 	AllowLists pulumi.StringArrayOutput `pulumi:"allowLists"`
-	// 已绑定当前白名单的实例总数。
+	// Total number of instances bound to the current allowlist.
 	AssociatedInstanceNum pulumi.IntOutput                       `pulumi:"associatedInstanceNum"`
 	AssociatedInstances   AllowListAssociatedInstanceArrayOutput `pulumi:"associatedInstances"`
-	// 当前白名单所属的项目。
+	// Project to which the current allowlist belongs.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
 }
 
@@ -79,46 +79,46 @@ func GetAllowList(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AllowList resources.
 type allowListState struct {
-	// 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+	// Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
 	AllowListCategory *string `pulumi:"allowListCategory"`
-	// 白名单的备注信息，长度不可超过 200 个字符。
+	// Allowlist remarks. Maximum length: 200 characters.
 	AllowListDesc *string `pulumi:"allowListDesc"`
-	// 白名单 ID。
+	// Allowlist ID.
 	AllowListId *string `pulumi:"allowListId"`
-	// 白名单内的 IP 地址（或地址段）总数。
+	// Total number of IP addresses (or address ranges) in the allowlist.
 	AllowListIpNum *int `pulumi:"allowListIpNum"`
-	// 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+	// Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
 	AllowListName *string `pulumi:"allowListName"`
-	// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+	// IP address type in the allowlist. Only IPv4 addresses are currently supported.
 	AllowListType *string `pulumi:"allowListType"`
-	// 输入 IP 地址或 CIDR 格式的 IP 地址段。
+	// Enter an IP address or a CIDR-format IP address range.
 	AllowLists []string `pulumi:"allowLists"`
-	// 已绑定当前白名单的实例总数。
+	// Total number of instances bound to the current allowlist.
 	AssociatedInstanceNum *int                          `pulumi:"associatedInstanceNum"`
 	AssociatedInstances   []AllowListAssociatedInstance `pulumi:"associatedInstances"`
-	// 当前白名单所属的项目。
+	// Project to which the current allowlist belongs.
 	ProjectName *string `pulumi:"projectName"`
 }
 
 type AllowListState struct {
-	// 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+	// Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
 	AllowListCategory pulumi.StringPtrInput
-	// 白名单的备注信息，长度不可超过 200 个字符。
+	// Allowlist remarks. Maximum length: 200 characters.
 	AllowListDesc pulumi.StringPtrInput
-	// 白名单 ID。
+	// Allowlist ID.
 	AllowListId pulumi.StringPtrInput
-	// 白名单内的 IP 地址（或地址段）总数。
+	// Total number of IP addresses (or address ranges) in the allowlist.
 	AllowListIpNum pulumi.IntPtrInput
-	// 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+	// Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
 	AllowListName pulumi.StringPtrInput
-	// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+	// IP address type in the allowlist. Only IPv4 addresses are currently supported.
 	AllowListType pulumi.StringPtrInput
-	// 输入 IP 地址或 CIDR 格式的 IP 地址段。
+	// Enter an IP address or a CIDR-format IP address range.
 	AllowLists pulumi.StringArrayInput
-	// 已绑定当前白名单的实例总数。
+	// Total number of instances bound to the current allowlist.
 	AssociatedInstanceNum pulumi.IntPtrInput
 	AssociatedInstances   AllowListAssociatedInstanceArrayInput
-	// 当前白名单所属的项目。
+	// Project to which the current allowlist belongs.
 	ProjectName pulumi.StringPtrInput
 }
 
@@ -127,35 +127,35 @@ func (AllowListState) ElementType() reflect.Type {
 }
 
 type allowListArgs struct {
-	// 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+	// Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
 	AllowListCategory *string `pulumi:"allowListCategory"`
-	// 白名单的备注信息，长度不可超过 200 个字符。
+	// Allowlist remarks. Maximum length: 200 characters.
 	AllowListDesc *string `pulumi:"allowListDesc"`
-	// 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+	// Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
 	AllowListName string `pulumi:"allowListName"`
-	// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+	// IP address type in the allowlist. Only IPv4 addresses are currently supported.
 	AllowListType *string `pulumi:"allowListType"`
-	// 输入 IP 地址或 CIDR 格式的 IP 地址段。
+	// Enter an IP address or a CIDR-format IP address range.
 	AllowLists          []string                      `pulumi:"allowLists"`
 	AssociatedInstances []AllowListAssociatedInstance `pulumi:"associatedInstances"`
-	// 当前白名单所属的项目。
+	// Project to which the current allowlist belongs.
 	ProjectName *string `pulumi:"projectName"`
 }
 
 // The set of arguments for constructing a AllowList resource.
 type AllowListArgs struct {
-	// 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+	// Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
 	AllowListCategory pulumi.StringPtrInput
-	// 白名单的备注信息，长度不可超过 200 个字符。
+	// Allowlist remarks. Maximum length: 200 characters.
 	AllowListDesc pulumi.StringPtrInput
-	// 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+	// Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
 	AllowListName pulumi.StringInput
-	// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+	// IP address type in the allowlist. Only IPv4 addresses are currently supported.
 	AllowListType pulumi.StringPtrInput
-	// 输入 IP 地址或 CIDR 格式的 IP 地址段。
+	// Enter an IP address or a CIDR-format IP address range.
 	AllowLists          pulumi.StringArrayInput
 	AssociatedInstances AllowListAssociatedInstanceArrayInput
-	// 当前白名单所属的项目。
+	// Project to which the current allowlist belongs.
 	ProjectName pulumi.StringPtrInput
 }
 
@@ -246,42 +246,42 @@ func (o AllowListOutput) ToAllowListOutputWithContext(ctx context.Context) Allow
 	return o
 }
 
-// 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+// Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
 func (o AllowListOutput) AllowListCategory() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowListCategory }).(pulumi.StringOutput)
 }
 
-// 白名单的备注信息，长度不可超过 200 个字符。
+// Allowlist remarks. Maximum length: 200 characters.
 func (o AllowListOutput) AllowListDesc() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowListDesc }).(pulumi.StringOutput)
 }
 
-// 白名单 ID。
+// Allowlist ID.
 func (o AllowListOutput) AllowListId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowListId }).(pulumi.StringOutput)
 }
 
-// 白名单内的 IP 地址（或地址段）总数。
+// Total number of IP addresses (or address ranges) in the allowlist.
 func (o AllowListOutput) AllowListIpNum() pulumi.IntOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.IntOutput { return v.AllowListIpNum }).(pulumi.IntOutput)
 }
 
-// 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+// Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
 func (o AllowListOutput) AllowListName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowListName }).(pulumi.StringOutput)
 }
 
-// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+// IP address type in the allowlist. Only IPv4 addresses are currently supported.
 func (o AllowListOutput) AllowListType() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowListType }).(pulumi.StringOutput)
 }
 
-// 输入 IP 地址或 CIDR 格式的 IP 地址段。
+// Enter an IP address or a CIDR-format IP address range.
 func (o AllowListOutput) AllowLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringArrayOutput { return v.AllowLists }).(pulumi.StringArrayOutput)
 }
 
-// 已绑定当前白名单的实例总数。
+// Total number of instances bound to the current allowlist.
 func (o AllowListOutput) AssociatedInstanceNum() pulumi.IntOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.IntOutput { return v.AssociatedInstanceNum }).(pulumi.IntOutput)
 }
@@ -290,7 +290,7 @@ func (o AllowListOutput) AssociatedInstances() AllowListAssociatedInstanceArrayO
 	return o.ApplyT(func(v *AllowList) AllowListAssociatedInstanceArrayOutput { return v.AssociatedInstances }).(AllowListAssociatedInstanceArrayOutput)
 }
 
-// 当前白名单所属的项目。
+// Project to which the current allowlist belongs.
 func (o AllowListOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }

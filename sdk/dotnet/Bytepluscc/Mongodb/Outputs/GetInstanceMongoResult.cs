@@ -15,35 +15,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb.Outputs
     public sealed class GetInstanceMongoResult
     {
         /// <summary>
-        /// Mongos 的节点 ID。
+        /// Mongos node ID
         /// </summary>
         public readonly string MongosNodeId;
         /// <summary>
-        /// 节点规格。
+        /// Node specification.
         /// </summary>
         public readonly string NodeSpec;
         /// <summary>
-        /// 节点状态。
+        /// Node status.
         /// </summary>
         public readonly string NodeStatus;
         /// <summary>
-        /// 总内存。单位：GiB。
+        /// Total memory. Unit: GiB.
         /// </summary>
         public readonly double TotalMemoryGb;
         /// <summary>
-        /// 总核数。
+        /// Total cores.
         /// </summary>
         public readonly double TotalvCpu;
         /// <summary>
-        /// 已用内存。单位：GiB。
+        /// Used memory. Unit: GiB.
         /// </summary>
         public readonly double UsedMemoryGb;
         /// <summary>
-        /// 已用核数。
+        /// Used cores.
         /// </summary>
         public readonly double UsedvCpu;
         /// <summary>
-        /// 当前节点所属的可用区 ID。
+        /// Availability zone ID of the current node.
         /// </summary>
         public readonly string ZoneId;
 

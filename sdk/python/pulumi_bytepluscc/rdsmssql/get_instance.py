@@ -145,7 +145,7 @@ class GetInstanceResult:
     @pulumi.getter(name="advancedFeatures")
     def advanced_features(self) -> builtins.str:
         """
-        需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{"Key":"Value"}
+        Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
         """
         return pulumi.get(self, "advanced_features")
 
@@ -153,7 +153,7 @@ class GetInstanceResult:
     @pulumi.getter(name="allowListIds")
     def allow_list_ids(self) -> Sequence[builtins.str]:
         """
-        允许访问的白名单ID列表。
+        Allowlist ID list permitted for access.
         """
         return pulumi.get(self, "allow_list_ids")
 
@@ -161,7 +161,7 @@ class GetInstanceResult:
     @pulumi.getter(name="backupUse")
     def backup_use(self) -> builtins.float:
         """
-        实例已用备份空间。单位：GiB。
+        Used backup space for the instance, in GiB.
         """
         return pulumi.get(self, "backup_use")
 
@@ -169,7 +169,7 @@ class GetInstanceResult:
     @pulumi.getter(name="chargeInfo")
     def charge_info(self) -> 'outputs.GetInstanceChargeInfoResult':
         """
-        付费方式。
+        Payment method.
         """
         return pulumi.get(self, "charge_info")
 
@@ -177,7 +177,7 @@ class GetInstanceResult:
     @pulumi.getter(name="connectionInfos")
     def connection_infos(self) -> Sequence['outputs.GetInstanceConnectionInfoResult']:
         """
-        连接信息。
+        Connection information.
         """
         return pulumi.get(self, "connection_infos")
 
@@ -185,7 +185,7 @@ class GetInstanceResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -193,7 +193,7 @@ class GetInstanceResult:
     @pulumi.getter(name="dbEngineVersion")
     def db_engine_version(self) -> builtins.str:
         """
-        兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+        Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
         """
         return pulumi.get(self, "db_engine_version")
 
@@ -209,7 +209,7 @@ class GetInstanceResult:
     @pulumi.getter(name="innerVersion")
     def inner_version(self) -> builtins.str:
         """
-        内核版本号。
+        Kernel version number.
         """
         return pulumi.get(self, "inner_version")
 
@@ -217,7 +217,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceCategory")
     def instance_category(self) -> builtins.str:
         """
-        实例分类。取值：Primary：主实例。ReadOnly：只读实例。
+        Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
         """
         return pulumi.get(self, "instance_category")
 
@@ -225,7 +225,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -233,7 +233,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> builtins.str:
         """
-        实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+        Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -241,7 +241,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceStatus")
     def instance_status(self) -> builtins.str:
         """
-        实例状态，取值：Running：运行中。Creating：创建中。CreateFailed：创建失败。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主节点切换中。Error：错误。
+        Instance status. Values: Running: running. Creating: creating. CreateFailed: creation failed. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: primary node switching. Error: error.
         """
         return pulumi.get(self, "instance_status")
 
@@ -249,7 +249,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> builtins.str:
         """
-        实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+        Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
         """
         return pulumi.get(self, "instance_type")
 
@@ -257,7 +257,7 @@ class GetInstanceResult:
     @pulumi.getter(name="maintenanceTime")
     def maintenance_time(self) -> builtins.str:
         """
-        实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+        Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
         """
         return pulumi.get(self, "maintenance_time")
 
@@ -265,7 +265,7 @@ class GetInstanceResult:
     @pulumi.getter(name="masterNodeId")
     def master_node_id(self) -> builtins.str:
         """
-        主节点ID。手动切换主备节点时，该参数为必填项。
+        Primary node ID. This parameter is required when manually switching master and standby nodes.
         """
         return pulumi.get(self, "master_node_id")
 
@@ -273,7 +273,7 @@ class GetInstanceResult:
     @pulumi.getter
     def memory(self) -> builtins.int:
         """
-        内存大小，单位为 GiB。
+        Memory size, in GiB.
         """
         return pulumi.get(self, "memory")
 
@@ -281,7 +281,7 @@ class GetInstanceResult:
     @pulumi.getter(name="nodeDetailInfos")
     def node_detail_infos(self) -> Sequence['outputs.GetInstanceNodeDetailInfoResult']:
         """
-        实例节点信息。
+        Instance node information.
         """
         return pulumi.get(self, "node_detail_infos")
 
@@ -289,7 +289,7 @@ class GetInstanceResult:
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> builtins.str:
         """
-        实例规格代码。
+        Instance specification code.
         """
         return pulumi.get(self, "node_spec")
 
@@ -297,7 +297,7 @@ class GetInstanceResult:
     @pulumi.getter
     def port(self) -> builtins.str:
         """
-        端口
+        Port.
         """
         return pulumi.get(self, "port")
 
@@ -305,7 +305,7 @@ class GetInstanceResult:
     @pulumi.getter(name="primaryInstanceId")
     def primary_instance_id(self) -> builtins.str:
         """
-        主实例ID。如果为空说明它是主实例。
+        Primary instance ID. If this field is empty, this instance is the primary instance.
         """
         return pulumi.get(self, "primary_instance_id")
 
@@ -313,7 +313,7 @@ class GetInstanceResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        所属项目。
+        Project.
         """
         return pulumi.get(self, "project_name")
 
@@ -321,7 +321,7 @@ class GetInstanceResult:
     @pulumi.getter(name="readOnlyNumber")
     def read_only_number(self) -> builtins.int:
         """
-        只读实例数量。
+        Number of read-only instances.
         """
         return pulumi.get(self, "read_only_number")
 
@@ -329,7 +329,7 @@ class GetInstanceResult:
     @pulumi.getter(name="serverCollation")
     def server_collation(self) -> builtins.str:
         """
-        实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+        Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
         """
         return pulumi.get(self, "server_collation")
 
@@ -337,7 +337,7 @@ class GetInstanceResult:
     @pulumi.getter(name="slowQueryEnable")
     def slow_query_enable(self) -> builtins.bool:
         """
-        表示是否开启慢日志，取值如下：true：表示开启慢日志。false：表示不开启慢日志。
+        Indicates whether slow logs are enabled. Available values: true: slow logs enabled. false: slow logs disabled.
         """
         return pulumi.get(self, "slow_query_enable")
 
@@ -345,7 +345,7 @@ class GetInstanceResult:
     @pulumi.getter(name="slowQueryTime")
     def slow_query_time(self) -> builtins.str:
         """
-        慢日志的阈值，取值范围为 [1~10]，单位：秒（s）。
+        Slow log threshold. Range: [1~10], unit: seconds (s).
         """
         return pulumi.get(self, "slow_query_time")
 
@@ -353,7 +353,7 @@ class GetInstanceResult:
     @pulumi.getter(name="storageSpace")
     def storage_space(self) -> builtins.int:
         """
-        存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+        Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
         """
         return pulumi.get(self, "storage_space")
 
@@ -361,7 +361,7 @@ class GetInstanceResult:
     @pulumi.getter(name="storageType")
     def storage_type(self) -> builtins.str:
         """
-        实例存储类型。
+        Instance storage type.
         """
         return pulumi.get(self, "storage_type")
 
@@ -369,7 +369,7 @@ class GetInstanceResult:
     @pulumi.getter(name="storageUse")
     def storage_use(self) -> builtins.float:
         """
-        实例已用储空间。单位：GiB。
+        Used storage space for the instance. Unit: GiB.
         """
         return pulumi.get(self, "storage_use")
 
@@ -377,7 +377,7 @@ class GetInstanceResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+        Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -385,7 +385,7 @@ class GetInstanceResult:
     @pulumi.getter(name="superAccountPassword")
     def super_account_password(self) -> builtins.str:
         """
-        高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=。
+        Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=.
         """
         return pulumi.get(self, "super_account_password")
 
@@ -393,7 +393,7 @@ class GetInstanceResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetInstanceTagResult']:
         """
-        标签列表。
+        Tag list.
         """
         return pulumi.get(self, "tags")
 
@@ -401,7 +401,7 @@ class GetInstanceResult:
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> builtins.str:
         """
-        时区。
+        Time zone.
         """
         return pulumi.get(self, "time_zone")
 
@@ -409,7 +409,7 @@ class GetInstanceResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -417,7 +417,7 @@ class GetInstanceResult:
     @pulumi.getter
     def vcpu(self) -> builtins.int:
         """
-        CPU 大小。例如：1 表示 1核。
+        CPU size. For example: 1 means 1 core.
         """
         return pulumi.get(self, "vcpu")
 
@@ -433,7 +433,7 @@ class GetInstanceResult:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+        Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node's zone by default, the second is the standby node's zone.
         """
         return pulumi.get(self, "zone_id")
 

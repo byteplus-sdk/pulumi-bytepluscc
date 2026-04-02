@@ -16,14 +16,14 @@ public final class RuleNotifyTemplateArgs extends com.pulumi.resources.ResourceA
     public static final RuleNotifyTemplateArgs Empty = new RuleNotifyTemplateArgs();
 
     /**
-     * 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+     * Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
      * 
      */
     @Import(name="channel")
     private @Nullable Output<String> channel;
 
     /**
-     * @return 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+     * @return Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
      * 
      */
     public Optional<Output<String>> channel() {
@@ -31,14 +31,14 @@ public final class RuleNotifyTemplateArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+     * Notification template ID. Note: Each notification channel supports only one notification template ID.
      * 
      */
     @Import(name="notifyTemplateId")
     private @Nullable Output<String> notifyTemplateId;
 
     /**
-     * @return 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+     * @return Notification template ID. Note: Each notification channel supports only one notification template ID.
      * 
      */
     public Optional<Output<String>> notifyTemplateId() {
@@ -71,7 +71,7 @@ public final class RuleNotifyTemplateArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param channel 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+         * @param channel Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class RuleNotifyTemplateArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param channel 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+         * @param channel Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class RuleNotifyTemplateArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param notifyTemplateId 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+         * @param notifyTemplateId Notification template ID. Note: Each notification channel supports only one notification template ID.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class RuleNotifyTemplateArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param notifyTemplateId 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+         * @param notifyTemplateId Notification template ID. Note: Each notification channel supports only one notification template ID.
          * 
          * @return builder
          * 

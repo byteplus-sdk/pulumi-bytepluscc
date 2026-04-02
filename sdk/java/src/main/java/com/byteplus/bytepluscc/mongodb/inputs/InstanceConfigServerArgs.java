@@ -17,14 +17,14 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
     public static final InstanceConfigServerArgs Empty = new InstanceConfigServerArgs();
 
     /**
-     * ConfigServer 的节点 ID。
+     * ConfigServer node ID
      * 
      */
     @Import(name="configServerNodeId")
     private @Nullable Output<String> configServerNodeId;
 
     /**
-     * @return ConfigServer 的节点 ID。
+     * @return ConfigServer node ID
      * 
      */
     public Optional<Output<String>> configServerNodeId() {
@@ -32,14 +32,14 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+     * Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
      * 
      */
     @Import(name="nodeRole")
     private @Nullable Output<String> nodeRole;
 
     /**
-     * @return 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+     * @return Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
      * 
      */
     public Optional<Output<String>> nodeRole() {
@@ -47,14 +47,14 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 节点状态。
+     * Node status.
      * 
      */
     @Import(name="nodeStatus")
     private @Nullable Output<String> nodeStatus;
 
     /**
-     * @return 节点状态。
+     * @return Node status.
      * 
      */
     public Optional<Output<String>> nodeStatus() {
@@ -62,14 +62,14 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 总内存。单位：GiB。
+     * Total memory. Unit: GiB.
      * 
      */
     @Import(name="totalMemoryGb")
     private @Nullable Output<Double> totalMemoryGb;
 
     /**
-     * @return 总内存。单位：GiB。
+     * @return Total memory. Unit: GiB.
      * 
      */
     public Optional<Output<Double>> totalMemoryGb() {
@@ -77,14 +77,14 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 总核数。
+     * Total cores.
      * 
      */
     @Import(name="totalvCpu")
     private @Nullable Output<Double> totalvCpu;
 
     /**
-     * @return 总核数。
+     * @return Total cores.
      * 
      */
     public Optional<Output<Double>> totalvCpu() {
@@ -92,14 +92,14 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 已用内存。单位：GiB。
+     * Used memory. Unit: GiB.
      * 
      */
     @Import(name="usedMemoryGb")
     private @Nullable Output<Double> usedMemoryGb;
 
     /**
-     * @return 已用内存。单位：GiB。
+     * @return Used memory. Unit: GiB.
      * 
      */
     public Optional<Output<Double>> usedMemoryGb() {
@@ -107,14 +107,14 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 已用核数。
+     * Used cores.
      * 
      */
     @Import(name="usedvCpu")
     private @Nullable Output<Double> usedvCpu;
 
     /**
-     * @return 已用核数。
+     * @return Used cores.
      * 
      */
     public Optional<Output<Double>> usedvCpu() {
@@ -122,14 +122,14 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 当前节点所属的可用区 ID。
+     * Availability zone ID of the current node.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 当前节点所属的可用区 ID。
+     * @return Availability zone ID of the current node.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -168,7 +168,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param configServerNodeId ConfigServer 的节点 ID。
+         * @param configServerNodeId ConfigServer node ID
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param configServerNodeId ConfigServer 的节点 ID。
+         * @param configServerNodeId ConfigServer node ID
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param nodeRole 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+         * @param nodeRole Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param nodeRole 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+         * @param nodeRole Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param nodeStatus 节点状态。
+         * @param nodeStatus Node status.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param nodeStatus 节点状态。
+         * @param nodeStatus Node status.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param totalMemoryGb 总内存。单位：GiB。
+         * @param totalMemoryGb Total memory. Unit: GiB.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param totalMemoryGb 总内存。单位：GiB。
+         * @param totalMemoryGb Total memory. Unit: GiB.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param totalvCpu 总核数。
+         * @param totalvCpu Total cores.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param totalvCpu 总核数。
+         * @param totalvCpu Total cores.
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param usedMemoryGb 已用内存。单位：GiB。
+         * @param usedMemoryGb Used memory. Unit: GiB.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param usedMemoryGb 已用内存。单位：GiB。
+         * @param usedMemoryGb Used memory. Unit: GiB.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param usedvCpu 已用核数。
+         * @param usedvCpu Used cores.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param usedvCpu 已用核数。
+         * @param usedvCpu Used cores.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param zoneId 当前节点所属的可用区 ID。
+         * @param zoneId Availability zone ID of the current node.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class InstanceConfigServerArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param zoneId 当前节点所属的可用区 ID。
+         * @param zoneId Availability zone ID of the current node.
          * 
          * @return builder
          * 

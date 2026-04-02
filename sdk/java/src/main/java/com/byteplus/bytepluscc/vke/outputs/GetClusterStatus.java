@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterStatus {
     /**
-     * @return 状态条件列表
+     * @return Status condition list
      * 
      */
     private List<GetClusterStatusCondition> conditions;
     /**
-     * @return 集群状态阶段
+     * @return Cluster status phase.
      * 
      */
     private String phase;
 
     private GetClusterStatus() {}
     /**
-     * @return 状态条件列表
+     * @return Status condition list
      * 
      */
     public List<GetClusterStatusCondition> conditions() {
         return this.conditions;
     }
     /**
-     * @return 集群状态阶段
+     * @return Cluster status phase.
      * 
      */
     public String phase() {

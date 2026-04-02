@@ -16,14 +16,14 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
     public static final PublicAddressEndpointArgs Empty = new PublicAddressEndpointArgs();
 
     /**
-     * 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+     * Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
      * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
-     * @return 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+     * @return Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
      * 
      */
     public Optional<Output<String>> endpointType() {
@@ -31,14 +31,14 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 实例的私网访问域名。
+     * Instance private network access domain name.
      * 
      */
     @Import(name="internalEndpoint")
     private @Nullable Output<String> internalEndpoint;
 
     /**
-     * @return 实例的私网访问域名。
+     * @return Instance private network access domain name.
      * 
      */
     public Optional<Output<String>> internalEndpoint() {
@@ -46,14 +46,14 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 公共服务区 IP 接入点。
+     * Public service zone IP access point.
      * 
      */
     @Import(name="internalIpEndpoint")
     private @Nullable Output<String> internalIpEndpoint;
 
     /**
-     * @return 公共服务区 IP 接入点。
+     * @return Public service zone IP access point.
      * 
      */
     public Optional<Output<String>> internalIpEndpoint() {
@@ -61,14 +61,14 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+     * Network type of the access point. PrivateNetwork indicates private VPC network.
      * 
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
-     * @return 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+     * @return Network type of the access point. PrivateNetwork indicates private VPC network.
      * 
      */
     public Optional<Output<String>> networkType() {
@@ -76,14 +76,14 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 实例公网访问域名。仅在开启公网访问之后显示。
+     * Instance public access domain name. Displayed only after public access is enabled.
      * 
      */
     @Import(name="publicEndpoint")
     private @Nullable Output<String> publicEndpoint;
 
     /**
-     * @return 实例公网访问域名。仅在开启公网访问之后显示。
+     * @return Instance public access domain name. Displayed only after public access is enabled.
      * 
      */
     public Optional<Output<String>> publicEndpoint() {
@@ -119,7 +119,7 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param endpointType 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+         * @param endpointType Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param endpointType 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+         * @param endpointType Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param internalEndpoint 实例的私网访问域名。
+         * @param internalEndpoint Instance private network access domain name.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param internalEndpoint 实例的私网访问域名。
+         * @param internalEndpoint Instance private network access domain name.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param internalIpEndpoint 公共服务区 IP 接入点。
+         * @param internalIpEndpoint Public service zone IP access point.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param internalIpEndpoint 公共服务区 IP 接入点。
+         * @param internalIpEndpoint Public service zone IP access point.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param networkType 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+         * @param networkType Network type of the access point. PrivateNetwork indicates private VPC network.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param networkType 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+         * @param networkType Network type of the access point. PrivateNetwork indicates private VPC network.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param publicEndpoint 实例公网访问域名。仅在开启公网访问之后显示。
+         * @param publicEndpoint Instance public access domain name. Displayed only after public access is enabled.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class PublicAddressEndpointArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param publicEndpoint 实例公网访问域名。仅在开启公网访问之后显示。
+         * @param publicEndpoint Instance public access domain name. Displayed only after public access is enabled.
          * 
          * @return builder
          * 

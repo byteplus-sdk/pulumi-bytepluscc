@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class NodePoolKubernetesConfigKubeletConfigEvictionHardGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+        /// Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 硬性门限值。
+        /// Hard threshold value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

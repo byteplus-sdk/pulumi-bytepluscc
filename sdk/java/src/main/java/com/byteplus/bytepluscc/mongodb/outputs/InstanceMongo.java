@@ -13,98 +13,98 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceMongo {
     /**
-     * @return Mongos 的节点 ID。
+     * @return Mongos node ID
      * 
      */
     private @Nullable String mongosNodeId;
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     private @Nullable String nodeSpec;
     /**
-     * @return 节点状态。
+     * @return Node status.
      * 
      */
     private @Nullable String nodeStatus;
     /**
-     * @return 总内存。单位：GiB。
+     * @return Total memory. Unit: GiB.
      * 
      */
     private @Nullable Double totalMemoryGb;
     /**
-     * @return 总核数。
+     * @return Total cores.
      * 
      */
     private @Nullable Double totalvCpu;
     /**
-     * @return 已用内存。单位：GiB。
+     * @return Used memory. Unit: GiB.
      * 
      */
     private @Nullable Double usedMemoryGb;
     /**
-     * @return 已用核数。
+     * @return Used cores.
      * 
      */
     private @Nullable Double usedvCpu;
     /**
-     * @return 当前节点所属的可用区 ID。
+     * @return Availability zone ID of the current node.
      * 
      */
     private @Nullable String zoneId;
 
     private InstanceMongo() {}
     /**
-     * @return Mongos 的节点 ID。
+     * @return Mongos node ID
      * 
      */
     public Optional<String> mongosNodeId() {
         return Optional.ofNullable(this.mongosNodeId);
     }
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     public Optional<String> nodeSpec() {
         return Optional.ofNullable(this.nodeSpec);
     }
     /**
-     * @return 节点状态。
+     * @return Node status.
      * 
      */
     public Optional<String> nodeStatus() {
         return Optional.ofNullable(this.nodeStatus);
     }
     /**
-     * @return 总内存。单位：GiB。
+     * @return Total memory. Unit: GiB.
      * 
      */
     public Optional<Double> totalMemoryGb() {
         return Optional.ofNullable(this.totalMemoryGb);
     }
     /**
-     * @return 总核数。
+     * @return Total cores.
      * 
      */
     public Optional<Double> totalvCpu() {
         return Optional.ofNullable(this.totalvCpu);
     }
     /**
-     * @return 已用内存。单位：GiB。
+     * @return Used memory. Unit: GiB.
      * 
      */
     public Optional<Double> usedMemoryGb() {
         return Optional.ofNullable(this.usedMemoryGb);
     }
     /**
-     * @return 已用核数。
+     * @return Used cores.
      * 
      */
     public Optional<Double> usedvCpu() {
         return Optional.ofNullable(this.usedvCpu);
     }
     /**
-     * @return 当前节点所属的可用区 ID。
+     * @return Availability zone ID of the current node.
      * 
      */
     public Optional<String> zoneId() {

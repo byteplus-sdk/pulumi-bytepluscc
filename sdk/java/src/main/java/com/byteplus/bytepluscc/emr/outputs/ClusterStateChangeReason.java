@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterStateChangeReason {
     /**
-     * @return 状态更新码。
+     * @return Status update code.
      * 
      */
     private @Nullable String code;
     /**
-     * @return 状态更新原因。
+     * @return Status update reason.
      * 
      */
     private @Nullable String reason;
 
     private ClusterStateChangeReason() {}
     /**
-     * @return 状态更新码。
+     * @return Status update code.
      * 
      */
     public Optional<String> code() {
         return Optional.ofNullable(this.code);
     }
     /**
-     * @return 状态更新原因。
+     * @return Status update reason.
      * 
      */
     public Optional<String> reason() {

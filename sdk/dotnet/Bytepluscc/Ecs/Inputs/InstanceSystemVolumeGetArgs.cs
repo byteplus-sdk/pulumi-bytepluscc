@@ -14,49 +14,56 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class InstanceSystemVolumeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例是否随实例删除。
+        /// Whether the attached resources are deleted along with the instance.
         /// </summary>
         [Input("deleteWithInstance")]
         public Input<bool>? DeleteWithInstance { get; set; }
 
         /// <summary>
-        /// 实例的额外性能IOPS。
+        /// Additional performance IOPS for the instance
         /// </summary>
         [Input("extraPerformanceIops")]
         public Input<int>? ExtraPerformanceIops { get; set; }
 
         /// <summary>
-        /// 实例的额外性能吞吐量，单位MB。
+        /// The additional performance throughput of the instance, in MB.
         /// </summary>
         [Input("extraPerformanceThroughputMb")]
         public Input<int>? ExtraPerformanceThroughputMb { get; set; }
 
         /// <summary>
-        /// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+        /// Type of additional performance. Values:
+        ///   Balance: Balanced additional performance
+        ///   IOPS: IOPS additional performance
+        ///   Throughput: Throughput additional performance
         /// </summary>
         [Input("extraPerformanceTypeId")]
         public Input<string>? ExtraPerformanceTypeId { get; set; }
 
         /// <summary>
-        /// 实例的大小，单位GiB。
+        /// Instance size, in GiB
         /// </summary>
         [Input("size")]
         public Input<int>? Size { get; set; }
 
         /// <summary>
-        /// 实例的快照ID。
+        /// Instance snapshot ID
         /// </summary>
         [Input("snapshotId")]
         public Input<string>? SnapshotId { get; set; }
 
         /// <summary>
-        /// 实例的卷ID。
+        /// Instance volume ID.
         /// </summary>
         [Input("volumeId")]
         public Input<string>? VolumeId { get; set; }
 
         /// <summary>
-        /// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+        /// Cloud disk type. Values:
+        ///   PTSSD: Performance SSD.
+        ///   ESSD_PL0: Ultra SSD disk, PL0 specification.
+        ///   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+        ///   TSSD_TL0: Throughput SSD disk.
         /// </summary>
         [Input("volumeType")]
         public Input<string>? VolumeType { get; set; }

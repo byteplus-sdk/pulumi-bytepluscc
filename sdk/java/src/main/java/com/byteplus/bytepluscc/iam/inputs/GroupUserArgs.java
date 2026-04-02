@@ -16,14 +16,14 @@ public final class GroupUserArgs extends com.pulumi.resources.ResourceArgs {
     public static final GroupUserArgs Empty = new GroupUserArgs();
 
     /**
-     * 用户名。
+     * Username.
      * 
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
-     * @return 用户名。
+     * @return Username.
      * 
      */
     public Optional<Output<String>> userName() {
@@ -55,7 +55,7 @@ public final class GroupUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 用户名。
+         * @param userName Username.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class GroupUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 用户名。
+         * @param userName Username.
          * 
          * @return builder
          * 

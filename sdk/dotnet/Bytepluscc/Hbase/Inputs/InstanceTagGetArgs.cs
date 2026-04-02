@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Hbase.Inputs
     public sealed class InstanceTagGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例所绑定标签的标签键。
+        /// Tag key of the tags bound to the instance
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 实例所绑定标签的标签值。
+        /// Tag values bound to the instance.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

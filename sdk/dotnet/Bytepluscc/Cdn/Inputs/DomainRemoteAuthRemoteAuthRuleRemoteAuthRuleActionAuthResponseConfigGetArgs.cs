@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+        /// The content delivery network can cache authentication status codes. This parameter indicates the related configuration.
         /// </summary>
         [Input("cacheAction")]
         public Input<Inputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionGetArgs>? CacheAction { get; set; }
 
         /// <summary>
-        /// 表示鉴权失败时，内容分发网络如何响应用户。
+        /// Indicates how the content delivery network responds to users when authentication fails.
         /// </summary>
         [Input("responseAction")]
         public Input<Inputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionGetArgs>? ResponseAction { get; set; }
 
         /// <summary>
-        /// 表示内容分发网络对鉴权状态码的处理方式。
+        /// Specifies how the content delivery network handles authentication status codes.
         /// </summary>
         [Input("statusCodeAction")]
         public Input<Inputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionGetArgs>? StatusCodeAction { get; set; }
 
         /// <summary>
-        /// 表示鉴权超时后，内容分发网络如何处理鉴权请求。
+        /// Specifies how the content delivery network handles authentication requests after authentication timeout.
         /// </summary>
         [Input("timeOutAction")]
         public Input<Inputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionGetArgs>? TimeOutAction { get; set; }

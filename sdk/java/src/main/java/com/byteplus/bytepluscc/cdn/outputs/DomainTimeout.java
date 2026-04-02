@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainTimeout {
     /**
-     * @return 指定是否启用回源超时时间的配置。该参数有以下取值：true：表示启用回源超时时间的配置。false：表示禁用回源超时时间的配置。此时，TCP 请求和 HTTP 请求的超时时间使用系统默认值，分别是 2 秒和 60 秒。
+     * @return Specify whether to enable origin timeout configuration. This parameter has the following values: true: enables origin timeout configuration. false: disables origin timeout configuration. In this case, the system default timeout values are used for TCP and HTTP requests, which are 2 seconds and 60 seconds respectively.
      * 
      */
     private @Nullable Boolean switch_;
@@ -22,7 +22,7 @@ public final class DomainTimeout {
 
     private DomainTimeout() {}
     /**
-     * @return 指定是否启用回源超时时间的配置。该参数有以下取值：true：表示启用回源超时时间的配置。false：表示禁用回源超时时间的配置。此时，TCP 请求和 HTTP 请求的超时时间使用系统默认值，分别是 2 秒和 60 秒。
+     * @return Specify whether to enable origin timeout configuration. This parameter has the following values: true: enables origin timeout configuration. false: disables origin timeout configuration. In this case, the system default timeout values are used for TCP and HTTP requests, which are 2 seconds and 60 seconds respectively.
      * 
      */
     public Optional<Boolean> switch_() {

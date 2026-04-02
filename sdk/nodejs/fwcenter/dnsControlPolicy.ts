@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 域名黑名单访问控制策略。
+ * Domain denylist access control policy.
  *
  * ## Import
  *
@@ -44,53 +44,53 @@ export class DnsControlPolicy extends pulumi.CustomResource {
     }
 
     /**
-     * 用户的唯一标识ID。
+     * User's unique identifier.
      */
     public /*out*/ readonly accountId!: pulumi.Output<string>;
     /**
-     * 策略的描述信息。
+     * Policy description information.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+     * Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
      */
     public readonly destination!: pulumi.Output<string>;
     /**
-     * 域名地址簿名称列表。
+     * Domain address book name list.
      */
     public /*out*/ readonly destinationGroupLists!: pulumi.Output<string[]>;
     /**
-     * 访问目的的类型。domain：域名；group：域名地址簿。
+     * Type of access target. domain: domain; group: domain address book.
      */
     public readonly destinationType!: pulumi.Output<string>;
     public /*out*/ readonly domainListV1s!: pulumi.Output<outputs.fwcenter.DnsControlPolicyDomainListV1[]>;
     /**
-     * 域名列表。
+     * Domain list.
      */
     public /*out*/ readonly domainLists!: pulumi.Output<string[]>;
     /**
-     * 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+     * Hit count, indicating the number of times the domain denylist access control policy was triggered.
      */
     public /*out*/ readonly hitCnt!: pulumi.Output<number>;
     /**
-     * 互联网边界防火墙实例ID。
+     * Internet border firewall instance ID.
      */
     public readonly internetFirewallId!: pulumi.Output<string>;
     /**
-     * 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+     * Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
      */
     public /*out*/ readonly lastHitTime!: pulumi.Output<number>;
     /**
-     * 访问控制策略的唯一标识ID。
+     * Unique identifier of the access control policy.
      */
     public /*out*/ readonly ruleId!: pulumi.Output<string>;
     public readonly sources!: pulumi.Output<outputs.fwcenter.DnsControlPolicySource[]>;
     /**
-     * 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+     * Switch status of the domain denylist access control policy. false: Off; true: On.
      */
     public readonly status!: pulumi.Output<boolean>;
     /**
-     * 该域名黑名单访问控制策略占用的策略数量。
+     * Number of policies occupied by this domain denylist access control policy.
      */
     public /*out*/ readonly useCount!: pulumi.Output<number>;
 
@@ -154,53 +154,53 @@ export class DnsControlPolicy extends pulumi.CustomResource {
  */
 export interface DnsControlPolicyState {
     /**
-     * 用户的唯一标识ID。
+     * User's unique identifier.
      */
     accountId?: pulumi.Input<string>;
     /**
-     * 策略的描述信息。
+     * Policy description information.
      */
     description?: pulumi.Input<string>;
     /**
-     * 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+     * Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
      */
     destination?: pulumi.Input<string>;
     /**
-     * 域名地址簿名称列表。
+     * Domain address book name list.
      */
     destinationGroupLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 访问目的的类型。domain：域名；group：域名地址簿。
+     * Type of access target. domain: domain; group: domain address book.
      */
     destinationType?: pulumi.Input<string>;
     domainListV1s?: pulumi.Input<pulumi.Input<inputs.fwcenter.DnsControlPolicyDomainListV1>[]>;
     /**
-     * 域名列表。
+     * Domain list.
      */
     domainLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+     * Hit count, indicating the number of times the domain denylist access control policy was triggered.
      */
     hitCnt?: pulumi.Input<number>;
     /**
-     * 互联网边界防火墙实例ID。
+     * Internet border firewall instance ID.
      */
     internetFirewallId?: pulumi.Input<string>;
     /**
-     * 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+     * Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
      */
     lastHitTime?: pulumi.Input<number>;
     /**
-     * 访问控制策略的唯一标识ID。
+     * Unique identifier of the access control policy.
      */
     ruleId?: pulumi.Input<string>;
     sources?: pulumi.Input<pulumi.Input<inputs.fwcenter.DnsControlPolicySource>[]>;
     /**
-     * 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+     * Switch status of the domain denylist access control policy. false: Off; true: On.
      */
     status?: pulumi.Input<boolean>;
     /**
-     * 该域名黑名单访问控制策略占用的策略数量。
+     * Number of policies occupied by this domain denylist access control policy.
      */
     useCount?: pulumi.Input<number>;
 }
@@ -210,24 +210,24 @@ export interface DnsControlPolicyState {
  */
 export interface DnsControlPolicyArgs {
     /**
-     * 策略的描述信息。
+     * Policy description information.
      */
     description?: pulumi.Input<string>;
     /**
-     * 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+     * Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
      */
     destination: pulumi.Input<string>;
     /**
-     * 访问目的的类型。domain：域名；group：域名地址簿。
+     * Type of access target. domain: domain; group: domain address book.
      */
     destinationType: pulumi.Input<string>;
     /**
-     * 互联网边界防火墙实例ID。
+     * Internet border firewall instance ID.
      */
     internetFirewallId?: pulumi.Input<string>;
     sources?: pulumi.Input<pulumi.Input<inputs.fwcenter.DnsControlPolicySource>[]>;
     /**
-     * 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+     * Switch status of the domain denylist access control policy. false: Off; true: On.
      */
     status?: pulumi.Input<boolean>;
 }

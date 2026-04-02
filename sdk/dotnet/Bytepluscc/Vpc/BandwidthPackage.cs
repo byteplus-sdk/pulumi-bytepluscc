@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// 共享带宽包是一种支持复用和共享带宽的云资源。将单个地域内多个公网IP或IPv6公网带宽添加到一个共享带宽包实例中，共享一条带宽。
+    /// A shared bandwidth package is a cloud resource that supports multiplexing and sharing bandwidth. Add multiple public IPs or IPv6 public bandwidths within a single region to a shared bandwidth package instance to share one bandwidth.
     /// 
     /// ## Import
     /// 
@@ -23,49 +23,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class BandwidthPackage : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 共享带宽包的带宽上限，单位：Mbps。BillingType传入1：取值范围5 ~ 5000，BillingType传入2、3、4：取值范围2 ~ 5000。
+        /// Bandwidth cap of the shared bandwidth package, unit: Mbps. If BillingType is 1: range is 5–5000. If BillingType is 2, 3, or 4: range is 2–5000.
         /// </summary>
         [Output("bandwidth")]
         public Output<int> Bandwidth { get; private set; } = null!;
 
         /// <summary>
-        /// 带宽包ID
+        /// Bandwidth package ID
         /// </summary>
         [Output("bandwidthPackageId")]
         public Output<string> BandwidthPackageId { get; private set; } = null!;
 
         /// <summary>
-        /// 带宽包名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+        /// Bandwidth package name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
         /// </summary>
         [Output("bandwidthPackageName")]
         public Output<string> BandwidthPackageName { get; private set; } = null!;
 
         /// <summary>
-        /// 共享带宽包的计费方式。取值如下：1：包年包月。2 : 按带宽上限计费（默认值）。3：按主流量计费。4 : 按传统95计费（保底比例默认20%）。
+        /// Billing methods for shared bandwidth packages. Options are: 1: Annual/monthly subscription. 2: Billed by bandwidth cap (default). 3: Billed by peak traffic. 4: Billed by traditional 95th percentile (minimum ratio defaults to 20%).
         /// </summary>
         [Output("billingType")]
         public Output<int> BillingType { get; private set; } = null!;
 
         /// <summary>
-        /// 计费状态
+        /// Billing status
         /// </summary>
         [Output("businessStatus")]
         public Output<string> BusinessStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间
+        /// Creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 删除时间
+        /// Deletion time
         /// </summary>
         [Output("deletedTime")]
         public Output<string> DeletedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 描述信息，长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Description, limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -74,67 +74,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.BandwidthPackageEipAddress>> EipAddresses { get; private set; } = null!;
 
         /// <summary>
-        /// 是否启用双栈，取值如下：true：启用双栈。false：不启用双栈。
+        /// Enable dual stack. Options: true: enable dual stack; false: do not enable dual stack.
         /// </summary>
         [Output("enableDualStack")]
         public Output<bool> EnableDualStack { get; private set; } = null!;
 
         /// <summary>
-        /// 过期时间
+        /// Expiration time
         /// </summary>
         [Output("expiredTime")]
         public Output<string> ExpiredTime { get; private set; } = null!;
 
         /// <summary>
-        /// 线路类型，默认为BGP。BGP：BGP（多线）。1、若您的账号已申请并开通了静态单线权限，则可传入如下取值：1.1、ChinaMobile：中国移动静态单线。1.2、ChinaTelecom：中国电信静态单线。1.3、ChinaUnicom：中国联通静态单线。2、若您的账号已申请并开通了BGP单线权限，则可传入SingleLine*BGP。3、若您的账号已申请并开通了精品BGP权限，则可传入Premium*BGP。4、若您的账号已申请并开通了融合BGP权限，则可传入Fusion*BGP。5、若您的账号已申请并开通了惠选型静态单线权限，则可传入如下取值：5.1、ChinaMobile*Value：中国移动惠选型静态单线。5.2、ChinaUnicom*Value：中国联通惠选型静态单线。5.3、ChinaTelecom*Value：中国电信惠选型静态单线。
+        /// Line type, default is BGP. BGP: BGP (multi-line). 1. If your account has applied for and enabled static single line permissions, you can use the following values: 1.1, ChinaMobile: China Mobile static single line. 1.2, ChinaTelecom: China Telecom static single line. 1.3, ChinaUnicom: China Unicom static single line. 2. If your account has applied for and enabled BGP single line permissions, you can use SingleLine*BGP. 3. If your account has applied for and enabled Premium BGP permissions, you can use Premium*BGP. 4. If your account has applied for and enabled Fusion BGP permissions, you can use Fusion*BGP. 5. If your account has applied for and enabled Economical static single line permissions, you can use the following values: 5.1, ChinaMobile*Value: China Mobile economical static single line. 5.2, ChinaUnicom*Value: China Unicom economical static single line. 5.3, ChinaTelecom*Value: China Telecom economical static single line.
         /// </summary>
         [Output("isp")]
         public Output<string> Isp { get; private set; } = null!;
 
         /// <summary>
-        /// 欠费时间
+        /// Overdue time
         /// </summary>
         [Output("overdueTime")]
         public Output<string> OverdueTime { get; private set; } = null!;
 
         /// <summary>
-        /// 购买包年包月共享带宽包的时长，默认“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36。当PeriodUnit传入2，Period取值范围：1～3。
+        /// Duration for purchasing yearly/monthly shared bandwidth package, default is '1'. If PeriodUnit is 1, Period can be 1–9, 12, 24, or 36. If PeriodUnit is 2, Period can be 1–3.
         /// </summary>
         [Output("period")]
         public Output<int> Period { get; private set; } = null!;
 
         /// <summary>
-        /// 购买包年包月共享带宽包时长的单位，取值如下：1：月（默认值）。2 ：年。
+        /// Unit for the duration when purchasing an annual/monthly subscription shared bandwidth package. Options are: 1: Month (default). 2: Year.
         /// </summary>
         [Output("periodUnit")]
         public Output<int> PeriodUnit { get; private set; } = null!;
 
         /// <summary>
-        /// 项目名称，不填默认加入default项目。
+        /// Project name. If not specified, added to the default project.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 共享带宽包的IP协议，取值如下：Dual-stack：双栈协议类型。IPv4：IPv4协议类型协议。仅BillingType传2或4时，本参数支持传入Dual-stack
+        /// IP protocol of the shared bandwidth package. Options are: Dual-stack: Dual-stack protocol type. IPv4: IPv4 protocol type. This parameter supports Dual-stack only when BillingType is 2 or 4.
         /// </summary>
         [Output("protocol")]
         public Output<string> Protocol { get; private set; } = null!;
 
         /// <summary>
-        /// 95计费保底比例，单位%，仅95计费共享带宽包实例返回此参数。
+        /// 95 billing minimum ratio, unit: %, this parameter is returned only for 95 billing shared bandwidth package instances.
         /// </summary>
         [Output("ratio")]
         public Output<int> Ratio { get; private set; } = null!;
 
         /// <summary>
-        /// 共享带宽包的的安全防护类型。AntiDDoS_Enhanced：创建增强防护类型的共享带宽包，即创建支持添加基础防护类型公网IP的共享带宽包。不填则表示基础防护类型的共享带宽包，即创建支持添加增强防护类型公网IP的共享带宽包。
+        /// Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
         /// </summary>
         [Output("securityProtectionTypes")]
         public Output<ImmutableArray<string>> SecurityProtectionTypes { get; private set; } = null!;
 
         /// <summary>
-        /// 共享带宽包的状态。Creating：创建中。Available：可用。Deleting：删除中。
+        /// Status of the shared bandwidth package. Creating: In progress. Available: Available. Deleting: In progress.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -143,7 +143,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.BandwidthPackageTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间
+        /// Update time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -196,25 +196,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class BandwidthPackageArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 共享带宽包的带宽上限，单位：Mbps。BillingType传入1：取值范围5 ~ 5000，BillingType传入2、3、4：取值范围2 ~ 5000。
+        /// Bandwidth cap of the shared bandwidth package, unit: Mbps. If BillingType is 1: range is 5–5000. If BillingType is 2, 3, or 4: range is 2–5000.
         /// </summary>
         [Input("bandwidth", required: true)]
         public Input<int> Bandwidth { get; set; } = null!;
 
         /// <summary>
-        /// 带宽包名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+        /// Bandwidth package name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
         /// </summary>
         [Input("bandwidthPackageName")]
         public Input<string>? BandwidthPackageName { get; set; }
 
         /// <summary>
-        /// 共享带宽包的计费方式。取值如下：1：包年包月。2 : 按带宽上限计费（默认值）。3：按主流量计费。4 : 按传统95计费（保底比例默认20%）。
+        /// Billing methods for shared bandwidth packages. Options are: 1: Annual/monthly subscription. 2: Billed by bandwidth cap (default). 3: Billed by peak traffic. 4: Billed by traditional 95th percentile (minimum ratio defaults to 20%).
         /// </summary>
         [Input("billingType")]
         public Input<int>? BillingType { get; set; }
 
         /// <summary>
-        /// 描述信息，长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Description, limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -228,37 +228,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 是否启用双栈，取值如下：true：启用双栈。false：不启用双栈。
+        /// Enable dual stack. Options: true: enable dual stack; false: do not enable dual stack.
         /// </summary>
         [Input("enableDualStack")]
         public Input<bool>? EnableDualStack { get; set; }
 
         /// <summary>
-        /// 线路类型，默认为BGP。BGP：BGP（多线）。1、若您的账号已申请并开通了静态单线权限，则可传入如下取值：1.1、ChinaMobile：中国移动静态单线。1.2、ChinaTelecom：中国电信静态单线。1.3、ChinaUnicom：中国联通静态单线。2、若您的账号已申请并开通了BGP单线权限，则可传入SingleLine*BGP。3、若您的账号已申请并开通了精品BGP权限，则可传入Premium*BGP。4、若您的账号已申请并开通了融合BGP权限，则可传入Fusion*BGP。5、若您的账号已申请并开通了惠选型静态单线权限，则可传入如下取值：5.1、ChinaMobile*Value：中国移动惠选型静态单线。5.2、ChinaUnicom*Value：中国联通惠选型静态单线。5.3、ChinaTelecom*Value：中国电信惠选型静态单线。
+        /// Line type, default is BGP. BGP: BGP (multi-line). 1. If your account has applied for and enabled static single line permissions, you can use the following values: 1.1, ChinaMobile: China Mobile static single line. 1.2, ChinaTelecom: China Telecom static single line. 1.3, ChinaUnicom: China Unicom static single line. 2. If your account has applied for and enabled BGP single line permissions, you can use SingleLine*BGP. 3. If your account has applied for and enabled Premium BGP permissions, you can use Premium*BGP. 4. If your account has applied for and enabled Fusion BGP permissions, you can use Fusion*BGP. 5. If your account has applied for and enabled Economical static single line permissions, you can use the following values: 5.1, ChinaMobile*Value: China Mobile economical static single line. 5.2, ChinaUnicom*Value: China Unicom economical static single line. 5.3, ChinaTelecom*Value: China Telecom economical static single line.
         /// </summary>
         [Input("isp")]
         public Input<string>? Isp { get; set; }
 
         /// <summary>
-        /// 购买包年包月共享带宽包的时长，默认“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36。当PeriodUnit传入2，Period取值范围：1～3。
+        /// Duration for purchasing yearly/monthly shared bandwidth package, default is '1'. If PeriodUnit is 1, Period can be 1–9, 12, 24, or 36. If PeriodUnit is 2, Period can be 1–3.
         /// </summary>
         [Input("period")]
         public Input<int>? Period { get; set; }
 
         /// <summary>
-        /// 购买包年包月共享带宽包时长的单位，取值如下：1：月（默认值）。2 ：年。
+        /// Unit for the duration when purchasing an annual/monthly subscription shared bandwidth package. Options are: 1: Month (default). 2: Year.
         /// </summary>
         [Input("periodUnit")]
         public Input<int>? PeriodUnit { get; set; }
 
         /// <summary>
-        /// 项目名称，不填默认加入default项目。
+        /// Project name. If not specified, added to the default project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 共享带宽包的IP协议，取值如下：Dual-stack：双栈协议类型。IPv4：IPv4协议类型协议。仅BillingType传2或4时，本参数支持传入Dual-stack
+        /// IP protocol of the shared bandwidth package. Options are: Dual-stack: Dual-stack protocol type. IPv4: IPv4 protocol type. This parameter supports Dual-stack only when BillingType is 2 or 4.
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
@@ -267,7 +267,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         private InputList<string>? _securityProtectionTypes;
 
         /// <summary>
-        /// 共享带宽包的的安全防护类型。AntiDDoS_Enhanced：创建增强防护类型的共享带宽包，即创建支持添加基础防护类型公网IP的共享带宽包。不填则表示基础防护类型的共享带宽包，即创建支持添加增强防护类型公网IP的共享带宽包。
+        /// Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
         /// </summary>
         public InputList<string> SecurityProtectionTypes
         {
@@ -292,49 +292,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class BandwidthPackageState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 共享带宽包的带宽上限，单位：Mbps。BillingType传入1：取值范围5 ~ 5000，BillingType传入2、3、4：取值范围2 ~ 5000。
+        /// Bandwidth cap of the shared bandwidth package, unit: Mbps. If BillingType is 1: range is 5–5000. If BillingType is 2, 3, or 4: range is 2–5000.
         /// </summary>
         [Input("bandwidth")]
         public Input<int>? Bandwidth { get; set; }
 
         /// <summary>
-        /// 带宽包ID
+        /// Bandwidth package ID
         /// </summary>
         [Input("bandwidthPackageId")]
         public Input<string>? BandwidthPackageId { get; set; }
 
         /// <summary>
-        /// 带宽包名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+        /// Bandwidth package name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
         /// </summary>
         [Input("bandwidthPackageName")]
         public Input<string>? BandwidthPackageName { get; set; }
 
         /// <summary>
-        /// 共享带宽包的计费方式。取值如下：1：包年包月。2 : 按带宽上限计费（默认值）。3：按主流量计费。4 : 按传统95计费（保底比例默认20%）。
+        /// Billing methods for shared bandwidth packages. Options are: 1: Annual/monthly subscription. 2: Billed by bandwidth cap (default). 3: Billed by peak traffic. 4: Billed by traditional 95th percentile (minimum ratio defaults to 20%).
         /// </summary>
         [Input("billingType")]
         public Input<int>? BillingType { get; set; }
 
         /// <summary>
-        /// 计费状态
+        /// Billing status
         /// </summary>
         [Input("businessStatus")]
         public Input<string>? BusinessStatus { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// Creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 删除时间
+        /// Deletion time
         /// </summary>
         [Input("deletedTime")]
         public Input<string>? DeletedTime { get; set; }
 
         /// <summary>
-        /// 描述信息，长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Description, limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -348,55 +348,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 是否启用双栈，取值如下：true：启用双栈。false：不启用双栈。
+        /// Enable dual stack. Options: true: enable dual stack; false: do not enable dual stack.
         /// </summary>
         [Input("enableDualStack")]
         public Input<bool>? EnableDualStack { get; set; }
 
         /// <summary>
-        /// 过期时间
+        /// Expiration time
         /// </summary>
         [Input("expiredTime")]
         public Input<string>? ExpiredTime { get; set; }
 
         /// <summary>
-        /// 线路类型，默认为BGP。BGP：BGP（多线）。1、若您的账号已申请并开通了静态单线权限，则可传入如下取值：1.1、ChinaMobile：中国移动静态单线。1.2、ChinaTelecom：中国电信静态单线。1.3、ChinaUnicom：中国联通静态单线。2、若您的账号已申请并开通了BGP单线权限，则可传入SingleLine*BGP。3、若您的账号已申请并开通了精品BGP权限，则可传入Premium*BGP。4、若您的账号已申请并开通了融合BGP权限，则可传入Fusion*BGP。5、若您的账号已申请并开通了惠选型静态单线权限，则可传入如下取值：5.1、ChinaMobile*Value：中国移动惠选型静态单线。5.2、ChinaUnicom*Value：中国联通惠选型静态单线。5.3、ChinaTelecom*Value：中国电信惠选型静态单线。
+        /// Line type, default is BGP. BGP: BGP (multi-line). 1. If your account has applied for and enabled static single line permissions, you can use the following values: 1.1, ChinaMobile: China Mobile static single line. 1.2, ChinaTelecom: China Telecom static single line. 1.3, ChinaUnicom: China Unicom static single line. 2. If your account has applied for and enabled BGP single line permissions, you can use SingleLine*BGP. 3. If your account has applied for and enabled Premium BGP permissions, you can use Premium*BGP. 4. If your account has applied for and enabled Fusion BGP permissions, you can use Fusion*BGP. 5. If your account has applied for and enabled Economical static single line permissions, you can use the following values: 5.1, ChinaMobile*Value: China Mobile economical static single line. 5.2, ChinaUnicom*Value: China Unicom economical static single line. 5.3, ChinaTelecom*Value: China Telecom economical static single line.
         /// </summary>
         [Input("isp")]
         public Input<string>? Isp { get; set; }
 
         /// <summary>
-        /// 欠费时间
+        /// Overdue time
         /// </summary>
         [Input("overdueTime")]
         public Input<string>? OverdueTime { get; set; }
 
         /// <summary>
-        /// 购买包年包月共享带宽包的时长，默认“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36。当PeriodUnit传入2，Period取值范围：1～3。
+        /// Duration for purchasing yearly/monthly shared bandwidth package, default is '1'. If PeriodUnit is 1, Period can be 1–9, 12, 24, or 36. If PeriodUnit is 2, Period can be 1–3.
         /// </summary>
         [Input("period")]
         public Input<int>? Period { get; set; }
 
         /// <summary>
-        /// 购买包年包月共享带宽包时长的单位，取值如下：1：月（默认值）。2 ：年。
+        /// Unit for the duration when purchasing an annual/monthly subscription shared bandwidth package. Options are: 1: Month (default). 2: Year.
         /// </summary>
         [Input("periodUnit")]
         public Input<int>? PeriodUnit { get; set; }
 
         /// <summary>
-        /// 项目名称，不填默认加入default项目。
+        /// Project name. If not specified, added to the default project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 共享带宽包的IP协议，取值如下：Dual-stack：双栈协议类型。IPv4：IPv4协议类型协议。仅BillingType传2或4时，本参数支持传入Dual-stack
+        /// IP protocol of the shared bandwidth package. Options are: Dual-stack: Dual-stack protocol type. IPv4: IPv4 protocol type. This parameter supports Dual-stack only when BillingType is 2 or 4.
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
 
         /// <summary>
-        /// 95计费保底比例，单位%，仅95计费共享带宽包实例返回此参数。
+        /// 95 billing minimum ratio, unit: %, this parameter is returned only for 95 billing shared bandwidth package instances.
         /// </summary>
         [Input("ratio")]
         public Input<int>? Ratio { get; set; }
@@ -405,7 +405,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         private InputList<string>? _securityProtectionTypes;
 
         /// <summary>
-        /// 共享带宽包的的安全防护类型。AntiDDoS_Enhanced：创建增强防护类型的共享带宽包，即创建支持添加基础防护类型公网IP的共享带宽包。不填则表示基础防护类型的共享带宽包，即创建支持添加增强防护类型公网IP的共享带宽包。
+        /// Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
         /// </summary>
         public InputList<string> SecurityProtectionTypes
         {
@@ -414,7 +414,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 共享带宽包的状态。Creating：创建中。Available：可用。Deleting：删除中。
+        /// Status of the shared bandwidth package. Creating: In progress. Available: Available. Deleting: In progress.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -428,7 +428,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 更新时间
+        /// Update time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

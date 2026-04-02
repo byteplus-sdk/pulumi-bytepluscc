@@ -15,23 +15,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Outputs
     public sealed class GetClusterApplicationExtraResult
     {
         /// <summary>
-        /// 服务组件的自定义部署拓扑列表。
+        /// Custom deployment topology list for service components.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterApplicationExtraApplicationComponentLayoutResult> ApplicationComponentLayouts;
         /// <summary>
-        /// 服务的自定义配置参数列表。
+        /// Custom configuration parameter list for services.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterApplicationExtraApplicationConfigResult> ApplicationConfigs;
         /// <summary>
-        /// 应用名称。
+        /// Application name.
         /// </summary>
         public readonly string ApplicationName;
         /// <summary>
-        /// 元数据连接id。
+        /// Metadata connection ID.
         /// </summary>
         public readonly string ConnectionId;
         /// <summary>
-        /// 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+        /// Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
         /// </summary>
         public readonly string ConnectionType;
 

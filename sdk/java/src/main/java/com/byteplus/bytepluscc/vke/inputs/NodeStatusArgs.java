@@ -25,14 +25,14 @@ public final class NodeStatusArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+     * Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
      * 
      */
     @Import(name="phase")
     private @Nullable Output<String> phase;
 
     /**
-     * @return 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+     * @return Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
      * 
      */
     public Optional<Output<String>> phase() {
@@ -78,7 +78,7 @@ public final class NodeStatusArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phase 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+         * @param phase Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class NodeStatusArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phase 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+         * @param phase Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
          * 
          * @return builder
          * 

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 {
     /// <summary>
-    /// 云数据库 MySQL 版是火山引擎基于开源数据库 MySQL 打造的弹性、可靠的在线关系型数据库服务。 MySQL 实例使用云原生方式部署，结合本地 SSD 存储类型，提供高性能读写能力；完全兼容 MySQL 引擎，并提供实例管理、备份恢复、日志管理、监控告警、数据迁移等全套解决方案，帮助企业简化繁杂的数据库管理和运维任务，使企业有更多的时间与资源聚焦于自己的核心业务。
+    /// Volcano Engine Cloud Database MySQL Edition is an elastic and reliable online relational database service built on the open-source MySQL database. MySQL instances are deployed using cloud-native methods and local SSD storage, delivering high-performance read and write capabilities. The service is fully compatible with the MySQL engine and offers a complete suite of solutions, including instance management, backup and recovery, log management, monitoring and alerts, and data migration. This helps enterprises simplify complex database management and operations, allowing them to focus more time and resources on their core business.
     /// 
     /// ## Import
     /// 
@@ -26,133 +26,133 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<ImmutableArray<Outputs.InstanceAddressObject>> AddressObjects { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+        /// Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
         /// </summary>
         [Output("allowListIds")]
         public Output<ImmutableArray<string>> AllowListIds { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单版本。
+        /// Allowlist version
         /// </summary>
         [Output("allowListVersion")]
         public Output<string> AllowListVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 自动扩容配置。
+        /// Auto scaling configuration
         /// </summary>
         [Output("autoStorageScalingConfig")]
         public Output<Outputs.InstanceAutoStorageScalingConfig> AutoStorageScalingConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+        /// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
         /// </summary>
         [Output("autoUpgradeMinorVersion")]
         public Output<string> AutoUpgradeMinorVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 备份中审计日志使用的空间。
+        /// Space used by audit logs in backup.
         /// </summary>
         [Output("backupAuditLogSize")]
         public Output<int> BackupAuditLogSize { get; private set; } = null!;
 
         /// <summary>
-        /// 备份中 Binlog 日志使用的空间。
+        /// Space used by binlog logs in backup.
         /// </summary>
         [Output("backupBinLogSize")]
         public Output<int> BackupBinLogSize { get; private set; } = null!;
 
         /// <summary>
-        /// 备份中数据使用的空间。
+        /// Space used by data in backup.
         /// </summary>
         [Output("backupDataSize")]
         public Output<int> BackupDataSize { get; private set; } = null!;
 
         /// <summary>
-        /// 备份中错误日志使用的空间。
+        /// Space used by error logs in backups.
         /// </summary>
         [Output("backupErrorLogSize")]
         public Output<int> BackupErrorLogSize { get; private set; } = null!;
 
         /// <summary>
-        /// 免费的备份存储空间，单位为 GB。
+        /// Free backup storage space, in GB
         /// </summary>
         [Output("backupFreeQuotaSize")]
         public Output<int> BackupFreeQuotaSize { get; private set; } = null!;
 
         /// <summary>
-        /// 备份中日志使用的空间。
+        /// Space used by logs in backups.
         /// </summary>
         [Output("backupLogSize")]
         public Output<int> BackupLogSize { get; private set; } = null!;
 
         /// <summary>
-        /// 备份中慢日志使用的空间。
+        /// Space used by slow logs in backups.
         /// </summary>
         [Output("backupSlowLogSize")]
         public Output<int> BackupSlowLogSize { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的备份已使用的空间，单位为 GB。
+        /// Backup space used by the instance, in GB
         /// </summary>
         [Output("backupUse")]
         public Output<double> BackupUse { get; private set; } = null!;
 
         /// <summary>
-        /// 基础备份中 Binlog 日志使用的空间。
+        /// Space used by Binlog logs in basic backups.
         /// </summary>
         [Output("basicBackupBinlogSize")]
         public Output<int> BasicBackupBinlogSize { get; private set; } = null!;
 
         /// <summary>
-        /// 基础备份中数据使用的空间。
+        /// Space used by data in the base backup
         /// </summary>
         [Output("basicBackupDataSize")]
         public Output<int> BasicBackupDataSize { get; private set; } = null!;
 
         /// <summary>
-        /// 付费方式。
+        /// Billing method
         /// </summary>
         [Output("chargeDetail")]
         public Output<Outputs.InstanceChargeDetail> ChargeDetail { get; private set; } = null!;
 
         /// <summary>
-        /// 实例数据库代理服务的 CPU 核数。
+        /// Number of CPU cores for the database proxy service of the instance
         /// </summary>
         [Output("cpuNum")]
         public Output<int> CpuNum { get; private set; } = null!;
 
         /// <summary>
-        /// 实例创建本地时间。
+        /// Instance creation local time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的内核小版本。
+        /// Instance kernel minor version.
         /// </summary>
         [Output("currentKernelVersion")]
         public Output<string> CurrentKernelVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+        /// Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
         /// </summary>
         [Output("dbEngineVersion")]
         public Output<string> DbEngineVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+        /// Parameter template ID. Default value is the default parameter template for the database engine version
         /// </summary>
         [Output("dbParamGroupId")]
         public Output<string> DbParamGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+        /// Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
         /// </summary>
         [Output("dbTimeZone")]
         public Output<string> DbTimeZone { get; private set; } = null!;
 
         /// <summary>
-        /// 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+        /// Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
         /// </summary>
         [Output("deletionProtection")]
         public Output<string> DeletionProtection { get; private set; } = null!;
@@ -161,25 +161,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<ImmutableArray<Outputs.InstanceDisasterRecoveryInstance>> DisasterRecoveryInstances { get; private set; } = null!;
 
         /// <summary>
-        /// 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+        /// ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
         /// </summary>
         [Output("drDtsTaskId")]
         public Output<string> DrDtsTaskId { get; private set; } = null!;
 
         /// <summary>
-        /// 主实例与灾备实例之间同步任务的名称。
+        /// Name of synchronization tasks between primary and disaster recovery instances.
         /// </summary>
         [Output("drDtsTaskName")]
         public Output<string> DrDtsTaskName { get; private set; } = null!;
 
         /// <summary>
-        /// 主实例与灾备实例之间同步任务的状态。
+        /// Status of synchronization tasks between primary and disaster recovery instances.
         /// </summary>
         [Output("drDtsTaskStatus")]
         public Output<string> DrDtsTaskStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 灾备实例与主实例之间的时延。
+        /// Latency between the disaster recovery instance and the primary instance.
         /// </summary>
         [Output("drSecondsBehindMaster")]
         public Output<int> DrSecondsBehindMaster { get; private set; } = null!;
@@ -188,103 +188,103 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<ImmutableArray<Outputs.InstanceEndpoint>> Endpoints { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+        /// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         /// </summary>
         [Output("globalReadOnly")]
         public Output<bool> GlobalReadOnly { get; private set; } = null!;
 
         /// <summary>
-        /// 实例是否有灾备实例。取值：true：是。false：否。
+        /// Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
         /// </summary>
         [Output("hasDisasterRecoveryInstances")]
         public Output<bool> HasDisasterRecoveryInstances { get; private set; } = null!;
 
         /// <summary>
-        /// 实例是否处于蓝绿部署中。取值：true：是。false：否。
+        /// Is the instance in blue-green deployment? Values: true: yes. false: no.
         /// </summary>
         [Output("hasGreenInstance")]
         public Output<bool> HasGreenInstance { get; private set; } = null!;
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例名称。
+        /// Instance name.
         /// </summary>
         [Output("instanceName")]
         public Output<string> InstanceName { get; private set; } = null!;
 
         /// <summary>
-        /// 实例状态。
+        /// Instance status.
         /// </summary>
         [Output("instanceStatus")]
         public Output<string> InstanceStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+        /// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
         /// </summary>
         [Output("instanceType")]
         public Output<string> InstanceType { get; private set; } = null!;
 
         /// <summary>
-        /// 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+        /// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
         /// </summary>
         [Output("lowerCaseTableNames")]
         public Output<string> LowerCaseTableNames { get; private set; } = null!;
 
         /// <summary>
-        /// 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+        /// Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
         /// </summary>
         [Output("maintenanceWindow")]
         public Output<Outputs.InstanceMaintenanceWindow> MaintenanceWindow { get; private set; } = null!;
 
         /// <summary>
-        /// 主实例的 ID。
+        /// Primary instance ID
         /// </summary>
         [Output("masterInstanceId")]
         public Output<string> MasterInstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 主实例的名称。
+        /// Primary instance name.
         /// </summary>
         [Output("masterInstanceName")]
         public Output<string> MasterInstanceName { get; private set; } = null!;
 
         /// <summary>
-        /// 内存大小。单位：GB。
+        /// Memory size. Unit: GB.
         /// </summary>
         [Output("memory")]
         public Output<int> Memory { get; private set; } = null!;
 
         /// <summary>
-        /// 实例主节点 CPU 使用率近一分钟的平均值。
+        /// Average CPU usage of the primary node in the instance over the past minute.
         /// </summary>
         [Output("nodeCpuUsedPercentage")]
         public Output<double> NodeCpuUsedPercentage { get; private set; } = null!;
 
         /// <summary>
-        /// 实例主节点内存使用率近一分钟的平均值。
+        /// Average memory usage of the primary node over the past minute
         /// </summary>
         [Output("nodeMemoryUsedPercentage")]
         public Output<double> NodeMemoryUsedPercentage { get; private set; } = null!;
 
         /// <summary>
-        /// 节点数量。
+        /// Number of nodes.
         /// </summary>
         [Output("nodeNumber")]
         public Output<string> NodeNumber { get; private set; } = null!;
 
         /// <summary>
-        /// 实例主节点磁盘使用率近一分钟的平均值。
+        /// Average disk usage of the primary node over the past minute
         /// </summary>
         [Output("nodeSpaceUsedPercentage")]
         public Output<double> NodeSpaceUsedPercentage { get; private set; } = null!;
 
         /// <summary>
-        /// 节点规格。
+        /// Node specifications.
         /// </summary>
         [Output("nodeSpec")]
         public Output<string> NodeSpec { get; private set; } = null!;
@@ -293,97 +293,97 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<ImmutableArray<Outputs.InstanceNode>> Nodes { get; private set; } = null!;
 
         /// <summary>
-        /// 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+        /// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         /// </summary>
         [Output("port")]
         public Output<int> Port { get; private set; } = null!;
 
         /// <summary>
-        /// 所属项目。
+        /// Project.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// proxy信息
+        /// proxy information
         /// </summary>
         [Output("proxyDetail")]
         public Output<Outputs.InstanceProxyDetail> ProxyDetail { get; private set; } = null!;
 
         /// <summary>
-        /// 实例存储空间中审计日志使用的空间。
+        /// Space used by audit logs in instance storage
         /// </summary>
         [Output("storageAuditLogSize")]
         public Output<int> StorageAuditLogSize { get; private set; } = null!;
 
         /// <summary>
-        /// 实例存储空间中 Binlog 使用的空间。
+        /// Binlog space usage in the instance storage
         /// </summary>
         [Output("storageBinLogSize")]
         public Output<int> StorageBinLogSize { get; private set; } = null!;
 
         /// <summary>
-        /// 实例存储空间中数据使用的空间。
+        /// Space used by data in instance storage.
         /// </summary>
         [Output("storageDataSize")]
         public Output<int> StorageDataSize { get; private set; } = null!;
 
         /// <summary>
-        /// 实例存储空间中错误日志使用的空间。
+        /// Space used by error logs in instance storage.
         /// </summary>
         [Output("storageErrorLogSize")]
         public Output<int> StorageErrorLogSize { get; private set; } = null!;
 
         /// <summary>
-        /// 实例存储空间中日志使用的空间。
+        /// Space used by logs in the instance storage
         /// </summary>
         [Output("storageLogSize")]
         public Output<int> StorageLogSize { get; private set; } = null!;
 
         /// <summary>
-        /// 实例存储空间中慢日志使用的空间。
+        /// Space used by slow logs in instance storage
         /// </summary>
         [Output("storageSlowLogSize")]
         public Output<int> StorageSlowLogSize { get; private set; } = null!;
 
         /// <summary>
-        /// 实例总存储空间。单位为 GB。
+        /// Total storage space of the instance, in GB
         /// </summary>
         [Output("storageSpace")]
         public Output<int> StorageSpace { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+        /// Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
         /// </summary>
         [Output("storageType")]
         public Output<string> StorageType { get; private set; } = null!;
 
         /// <summary>
-        /// 实例已使用用存储空间，单位为 GB。
+        /// Storage space used by the instance, in GB
         /// </summary>
         [Output("storageUse")]
         public Output<double> StorageUse { get; private set; } = null!;
 
         /// <summary>
-        /// 子网 ID。
+        /// Subnet ID.
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
 
         /// <summary>
-        /// 高权限账号名称。不传此参数默认不创建高权限账号。
+        /// High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
         /// </summary>
         [Output("superAccountName")]
         public Output<string> SuperAccountName { get; private set; } = null!;
 
         /// <summary>
-        /// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&amp;*()_+-=,.&amp;?|/。
+        /// Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&amp;*()_+-=,.&amp;?|/.
         /// </summary>
         [Output("superAccountPassword")]
         public Output<string> SuperAccountPassword { get; private set; } = null!;
 
         /// <summary>
-        /// 数据同步方式：SemiSync：半同步。Async：异步。
+        /// Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
         /// </summary>
         [Output("syncMode")]
         public Output<string> SyncMode { get; private set; } = null!;
@@ -392,37 +392,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<ImmutableArray<Outputs.InstanceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 时区。
+        /// Time zone
         /// </summary>
         [Output("timeZone")]
         public Output<string> TimeZone { get; private set; } = null!;
 
         /// <summary>
-        /// 实例更新本地时间。
+        /// Instance updates local time.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// CPU 大小。例如：1 表示 1U。
+        /// CPU size. For example: 1 means 1U.
         /// </summary>
         [Output("vcpu")]
         public Output<int> Vcpu { get; private set; } = null!;
 
         /// <summary>
-        /// 专有网络（VPC） ID。
+        /// VPC (Virtual Private Cloud) ID.
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例主节点所在可用区。
+        /// Availability zone of the instance's primary node.
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例各节点所在的可用区列表。
+        /// List of availability zones for each node in the instance.
         /// </summary>
         [Output("zoneIds")]
         public Output<ImmutableArray<string>> ZoneIds { get; private set; } = null!;
@@ -478,7 +478,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         private InputList<string>? _allowListIds;
 
         /// <summary>
-        /// 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+        /// Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
         /// </summary>
         public InputList<string> AllowListIds
         {
@@ -487,85 +487,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 自动扩容配置。
+        /// Auto scaling configuration
         /// </summary>
         [Input("autoStorageScalingConfig")]
         public Input<Inputs.InstanceAutoStorageScalingConfigArgs>? AutoStorageScalingConfig { get; set; }
 
         /// <summary>
-        /// 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+        /// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
         /// </summary>
         [Input("autoUpgradeMinorVersion")]
         public Input<string>? AutoUpgradeMinorVersion { get; set; }
 
         /// <summary>
-        /// 付费方式。
+        /// Billing method
         /// </summary>
         [Input("chargeDetail", required: true)]
         public Input<Inputs.InstanceChargeDetailArgs> ChargeDetail { get; set; } = null!;
 
         /// <summary>
-        /// 实例数据库代理服务的 CPU 核数。
+        /// Number of CPU cores for the database proxy service of the instance
         /// </summary>
         [Input("cpuNum")]
         public Input<int>? CpuNum { get; set; }
 
         /// <summary>
-        /// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+        /// Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
         /// </summary>
         [Input("dbEngineVersion", required: true)]
         public Input<string> DbEngineVersion { get; set; } = null!;
 
         /// <summary>
-        /// 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+        /// Parameter template ID. Default value is the default parameter template for the database engine version
         /// </summary>
         [Input("dbParamGroupId")]
         public Input<string>? DbParamGroupId { get; set; }
 
         /// <summary>
-        /// 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+        /// Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
         /// </summary>
         [Input("dbTimeZone")]
         public Input<string>? DbTimeZone { get; set; }
 
         /// <summary>
-        /// 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+        /// Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
         /// </summary>
         [Input("deletionProtection")]
         public Input<string>? DeletionProtection { get; set; }
 
         /// <summary>
-        /// 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+        /// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         /// </summary>
         [Input("globalReadOnly")]
         public Input<bool>? GlobalReadOnly { get; set; }
 
         /// <summary>
-        /// 实例名称。
+        /// Instance name.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+        /// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
         /// </summary>
         [Input("instanceType")]
         public Input<string>? InstanceType { get; set; }
 
         /// <summary>
-        /// 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+        /// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
         /// </summary>
         [Input("lowerCaseTableNames")]
         public Input<string>? LowerCaseTableNames { get; set; }
 
         /// <summary>
-        /// 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+        /// Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
         /// </summary>
         [Input("maintenanceWindow")]
         public Input<Inputs.InstanceMaintenanceWindowArgs>? MaintenanceWindow { get; set; }
 
         /// <summary>
-        /// 节点规格。
+        /// Node specifications.
         /// </summary>
         [Input("nodeSpec")]
         public Input<string>? NodeSpec { get; set; }
@@ -579,49 +579,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+        /// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// 所属项目。
+        /// Project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 实例总存储空间。单位为 GB。
+        /// Total storage space of the instance, in GB
         /// </summary>
         [Input("storageSpace", required: true)]
         public Input<int> StorageSpace { get; set; } = null!;
 
         /// <summary>
-        /// 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+        /// Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
         /// </summary>
         [Input("storageType", required: true)]
         public Input<string> StorageType { get; set; } = null!;
 
         /// <summary>
-        /// 子网 ID。
+        /// Subnet ID.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
 
         /// <summary>
-        /// 高权限账号名称。不传此参数默认不创建高权限账号。
+        /// High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
         /// </summary>
         [Input("superAccountName")]
         public Input<string>? SuperAccountName { get; set; }
 
         /// <summary>
-        /// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&amp;*()_+-=,.&amp;?|/。
+        /// Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&amp;*()_+-=,.&amp;?|/.
         /// </summary>
         [Input("superAccountPassword")]
         public Input<string>? SuperAccountPassword { get; set; }
 
         /// <summary>
-        /// 数据同步方式：SemiSync：半同步。Async：异步。
+        /// Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
         /// </summary>
         [Input("syncMode")]
         public Input<string>? SyncMode { get; set; }
@@ -635,7 +635,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 专有网络（VPC） ID。
+        /// VPC (Virtual Private Cloud) ID.
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
@@ -660,7 +660,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         private InputList<string>? _allowListIds;
 
         /// <summary>
-        /// 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+        /// Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
         /// </summary>
         public InputList<string> AllowListIds
         {
@@ -669,127 +669,127 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 白名单版本。
+        /// Allowlist version
         /// </summary>
         [Input("allowListVersion")]
         public Input<string>? AllowListVersion { get; set; }
 
         /// <summary>
-        /// 自动扩容配置。
+        /// Auto scaling configuration
         /// </summary>
         [Input("autoStorageScalingConfig")]
         public Input<Inputs.InstanceAutoStorageScalingConfigGetArgs>? AutoStorageScalingConfig { get; set; }
 
         /// <summary>
-        /// 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+        /// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
         /// </summary>
         [Input("autoUpgradeMinorVersion")]
         public Input<string>? AutoUpgradeMinorVersion { get; set; }
 
         /// <summary>
-        /// 备份中审计日志使用的空间。
+        /// Space used by audit logs in backup.
         /// </summary>
         [Input("backupAuditLogSize")]
         public Input<int>? BackupAuditLogSize { get; set; }
 
         /// <summary>
-        /// 备份中 Binlog 日志使用的空间。
+        /// Space used by binlog logs in backup.
         /// </summary>
         [Input("backupBinLogSize")]
         public Input<int>? BackupBinLogSize { get; set; }
 
         /// <summary>
-        /// 备份中数据使用的空间。
+        /// Space used by data in backup.
         /// </summary>
         [Input("backupDataSize")]
         public Input<int>? BackupDataSize { get; set; }
 
         /// <summary>
-        /// 备份中错误日志使用的空间。
+        /// Space used by error logs in backups.
         /// </summary>
         [Input("backupErrorLogSize")]
         public Input<int>? BackupErrorLogSize { get; set; }
 
         /// <summary>
-        /// 免费的备份存储空间，单位为 GB。
+        /// Free backup storage space, in GB
         /// </summary>
         [Input("backupFreeQuotaSize")]
         public Input<int>? BackupFreeQuotaSize { get; set; }
 
         /// <summary>
-        /// 备份中日志使用的空间。
+        /// Space used by logs in backups.
         /// </summary>
         [Input("backupLogSize")]
         public Input<int>? BackupLogSize { get; set; }
 
         /// <summary>
-        /// 备份中慢日志使用的空间。
+        /// Space used by slow logs in backups.
         /// </summary>
         [Input("backupSlowLogSize")]
         public Input<int>? BackupSlowLogSize { get; set; }
 
         /// <summary>
-        /// 实例的备份已使用的空间，单位为 GB。
+        /// Backup space used by the instance, in GB
         /// </summary>
         [Input("backupUse")]
         public Input<double>? BackupUse { get; set; }
 
         /// <summary>
-        /// 基础备份中 Binlog 日志使用的空间。
+        /// Space used by Binlog logs in basic backups.
         /// </summary>
         [Input("basicBackupBinlogSize")]
         public Input<int>? BasicBackupBinlogSize { get; set; }
 
         /// <summary>
-        /// 基础备份中数据使用的空间。
+        /// Space used by data in the base backup
         /// </summary>
         [Input("basicBackupDataSize")]
         public Input<int>? BasicBackupDataSize { get; set; }
 
         /// <summary>
-        /// 付费方式。
+        /// Billing method
         /// </summary>
         [Input("chargeDetail")]
         public Input<Inputs.InstanceChargeDetailGetArgs>? ChargeDetail { get; set; }
 
         /// <summary>
-        /// 实例数据库代理服务的 CPU 核数。
+        /// Number of CPU cores for the database proxy service of the instance
         /// </summary>
         [Input("cpuNum")]
         public Input<int>? CpuNum { get; set; }
 
         /// <summary>
-        /// 实例创建本地时间。
+        /// Instance creation local time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 实例的内核小版本。
+        /// Instance kernel minor version.
         /// </summary>
         [Input("currentKernelVersion")]
         public Input<string>? CurrentKernelVersion { get; set; }
 
         /// <summary>
-        /// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+        /// Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
         /// </summary>
         [Input("dbEngineVersion")]
         public Input<string>? DbEngineVersion { get; set; }
 
         /// <summary>
-        /// 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+        /// Parameter template ID. Default value is the default parameter template for the database engine version
         /// </summary>
         [Input("dbParamGroupId")]
         public Input<string>? DbParamGroupId { get; set; }
 
         /// <summary>
-        /// 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+        /// Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
         /// </summary>
         [Input("dbTimeZone")]
         public Input<string>? DbTimeZone { get; set; }
 
         /// <summary>
-        /// 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+        /// Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
         /// </summary>
         [Input("deletionProtection")]
         public Input<string>? DeletionProtection { get; set; }
@@ -803,25 +803,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+        /// ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
         /// </summary>
         [Input("drDtsTaskId")]
         public Input<string>? DrDtsTaskId { get; set; }
 
         /// <summary>
-        /// 主实例与灾备实例之间同步任务的名称。
+        /// Name of synchronization tasks between primary and disaster recovery instances.
         /// </summary>
         [Input("drDtsTaskName")]
         public Input<string>? DrDtsTaskName { get; set; }
 
         /// <summary>
-        /// 主实例与灾备实例之间同步任务的状态。
+        /// Status of synchronization tasks between primary and disaster recovery instances.
         /// </summary>
         [Input("drDtsTaskStatus")]
         public Input<string>? DrDtsTaskStatus { get; set; }
 
         /// <summary>
-        /// 灾备实例与主实例之间的时延。
+        /// Latency between the disaster recovery instance and the primary instance.
         /// </summary>
         [Input("drSecondsBehindMaster")]
         public Input<int>? DrSecondsBehindMaster { get; set; }
@@ -835,103 +835,103 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+        /// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         /// </summary>
         [Input("globalReadOnly")]
         public Input<bool>? GlobalReadOnly { get; set; }
 
         /// <summary>
-        /// 实例是否有灾备实例。取值：true：是。false：否。
+        /// Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
         /// </summary>
         [Input("hasDisasterRecoveryInstances")]
         public Input<bool>? HasDisasterRecoveryInstances { get; set; }
 
         /// <summary>
-        /// 实例是否处于蓝绿部署中。取值：true：是。false：否。
+        /// Is the instance in blue-green deployment? Values: true: yes. false: no.
         /// </summary>
         [Input("hasGreenInstance")]
         public Input<bool>? HasGreenInstance { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 实例名称。
+        /// Instance name.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 实例状态。
+        /// Instance status.
         /// </summary>
         [Input("instanceStatus")]
         public Input<string>? InstanceStatus { get; set; }
 
         /// <summary>
-        /// 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+        /// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
         /// </summary>
         [Input("instanceType")]
         public Input<string>? InstanceType { get; set; }
 
         /// <summary>
-        /// 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+        /// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
         /// </summary>
         [Input("lowerCaseTableNames")]
         public Input<string>? LowerCaseTableNames { get; set; }
 
         /// <summary>
-        /// 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+        /// Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
         /// </summary>
         [Input("maintenanceWindow")]
         public Input<Inputs.InstanceMaintenanceWindowGetArgs>? MaintenanceWindow { get; set; }
 
         /// <summary>
-        /// 主实例的 ID。
+        /// Primary instance ID
         /// </summary>
         [Input("masterInstanceId")]
         public Input<string>? MasterInstanceId { get; set; }
 
         /// <summary>
-        /// 主实例的名称。
+        /// Primary instance name.
         /// </summary>
         [Input("masterInstanceName")]
         public Input<string>? MasterInstanceName { get; set; }
 
         /// <summary>
-        /// 内存大小。单位：GB。
+        /// Memory size. Unit: GB.
         /// </summary>
         [Input("memory")]
         public Input<int>? Memory { get; set; }
 
         /// <summary>
-        /// 实例主节点 CPU 使用率近一分钟的平均值。
+        /// Average CPU usage of the primary node in the instance over the past minute.
         /// </summary>
         [Input("nodeCpuUsedPercentage")]
         public Input<double>? NodeCpuUsedPercentage { get; set; }
 
         /// <summary>
-        /// 实例主节点内存使用率近一分钟的平均值。
+        /// Average memory usage of the primary node over the past minute
         /// </summary>
         [Input("nodeMemoryUsedPercentage")]
         public Input<double>? NodeMemoryUsedPercentage { get; set; }
 
         /// <summary>
-        /// 节点数量。
+        /// Number of nodes.
         /// </summary>
         [Input("nodeNumber")]
         public Input<string>? NodeNumber { get; set; }
 
         /// <summary>
-        /// 实例主节点磁盘使用率近一分钟的平均值。
+        /// Average disk usage of the primary node over the past minute
         /// </summary>
         [Input("nodeSpaceUsedPercentage")]
         public Input<double>? NodeSpaceUsedPercentage { get; set; }
 
         /// <summary>
-        /// 节点规格。
+        /// Node specifications.
         /// </summary>
         [Input("nodeSpec")]
         public Input<string>? NodeSpec { get; set; }
@@ -945,97 +945,97 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+        /// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// 所属项目。
+        /// Project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// proxy信息
+        /// proxy information
         /// </summary>
         [Input("proxyDetail")]
         public Input<Inputs.InstanceProxyDetailGetArgs>? ProxyDetail { get; set; }
 
         /// <summary>
-        /// 实例存储空间中审计日志使用的空间。
+        /// Space used by audit logs in instance storage
         /// </summary>
         [Input("storageAuditLogSize")]
         public Input<int>? StorageAuditLogSize { get; set; }
 
         /// <summary>
-        /// 实例存储空间中 Binlog 使用的空间。
+        /// Binlog space usage in the instance storage
         /// </summary>
         [Input("storageBinLogSize")]
         public Input<int>? StorageBinLogSize { get; set; }
 
         /// <summary>
-        /// 实例存储空间中数据使用的空间。
+        /// Space used by data in instance storage.
         /// </summary>
         [Input("storageDataSize")]
         public Input<int>? StorageDataSize { get; set; }
 
         /// <summary>
-        /// 实例存储空间中错误日志使用的空间。
+        /// Space used by error logs in instance storage.
         /// </summary>
         [Input("storageErrorLogSize")]
         public Input<int>? StorageErrorLogSize { get; set; }
 
         /// <summary>
-        /// 实例存储空间中日志使用的空间。
+        /// Space used by logs in the instance storage
         /// </summary>
         [Input("storageLogSize")]
         public Input<int>? StorageLogSize { get; set; }
 
         /// <summary>
-        /// 实例存储空间中慢日志使用的空间。
+        /// Space used by slow logs in instance storage
         /// </summary>
         [Input("storageSlowLogSize")]
         public Input<int>? StorageSlowLogSize { get; set; }
 
         /// <summary>
-        /// 实例总存储空间。单位为 GB。
+        /// Total storage space of the instance, in GB
         /// </summary>
         [Input("storageSpace")]
         public Input<int>? StorageSpace { get; set; }
 
         /// <summary>
-        /// 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+        /// Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
         /// </summary>
         [Input("storageType")]
         public Input<string>? StorageType { get; set; }
 
         /// <summary>
-        /// 实例已使用用存储空间，单位为 GB。
+        /// Storage space used by the instance, in GB
         /// </summary>
         [Input("storageUse")]
         public Input<double>? StorageUse { get; set; }
 
         /// <summary>
-        /// 子网 ID。
+        /// Subnet ID.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
         /// <summary>
-        /// 高权限账号名称。不传此参数默认不创建高权限账号。
+        /// High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
         /// </summary>
         [Input("superAccountName")]
         public Input<string>? SuperAccountName { get; set; }
 
         /// <summary>
-        /// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&amp;*()_+-=,.&amp;?|/。
+        /// Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&amp;*()_+-=,.&amp;?|/.
         /// </summary>
         [Input("superAccountPassword")]
         public Input<string>? SuperAccountPassword { get; set; }
 
         /// <summary>
-        /// 数据同步方式：SemiSync：半同步。Async：异步。
+        /// Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
         /// </summary>
         [Input("syncMode")]
         public Input<string>? SyncMode { get; set; }
@@ -1049,31 +1049,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 时区。
+        /// Time zone
         /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }
 
         /// <summary>
-        /// 实例更新本地时间。
+        /// Instance updates local time.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// CPU 大小。例如：1 表示 1U。
+        /// CPU size. For example: 1 means 1U.
         /// </summary>
         [Input("vcpu")]
         public Input<int>? Vcpu { get; set; }
 
         /// <summary>
-        /// 专有网络（VPC） ID。
+        /// VPC (Virtual Private Cloud) ID.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// 实例主节点所在可用区。
+        /// Availability zone of the instance's primary node.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }
@@ -1082,7 +1082,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         private InputList<string>? _zoneIds;
 
         /// <summary>
-        /// 实例各节点所在的可用区列表。
+        /// List of availability zones for each node in the instance.
         /// </summary>
         public InputList<string> ZoneIds
         {

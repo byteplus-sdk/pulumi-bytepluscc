@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainRefererAccessRuleSharedConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示一个全局配置的名称。
+        /// Indicates the name of a global configuration.
         /// </summary>
         [Input("configName")]
         public Input<string>? ConfigName { get; set; }

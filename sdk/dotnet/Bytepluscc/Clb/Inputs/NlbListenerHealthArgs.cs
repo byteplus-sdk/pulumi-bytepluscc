@@ -14,49 +14,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
     public sealed class NlbListenerHealthArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 后端服务器的实例 ID或IP地址。
+        /// Backend server instance ID or IP address
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 后端服务器的IP地址。
+        /// Backend server IP address
         /// </summary>
         [Input("ip")]
         public Input<string>? Ip { get; set; }
 
         /// <summary>
-        /// 后端服务器提供服务的端口。
+        /// Port on which the backend server provides services
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// 后端服务器ID。
+        /// Backend server ID
         /// </summary>
         [Input("serverId")]
         public Input<string>? ServerId { get; set; }
 
         /// <summary>
-        /// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+        /// Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
         /// </summary>
         [Input("serverType")]
         public Input<string>? ServerType { get; set; }
 
         /// <summary>
-        /// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+        /// Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server's zone)
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 健康状态最后更新时间。
+        /// Last update time of health status
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 后端服务器接收访问流量的可用区ID。
+        /// Zone ID where the backend server receives traffic
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

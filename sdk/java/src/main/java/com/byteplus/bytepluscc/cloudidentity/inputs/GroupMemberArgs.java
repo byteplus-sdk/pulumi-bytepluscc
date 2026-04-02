@@ -16,14 +16,14 @@ public final class GroupMemberArgs extends com.pulumi.resources.ResourceArgs {
     public static final GroupMemberArgs Empty = new GroupMemberArgs();
 
     /**
-     * 用户id。
+     * User ID
      * 
      */
     @Import(name="userId")
     private @Nullable Output<String> userId;
 
     /**
-     * @return 用户id。
+     * @return User ID
      * 
      */
     public Optional<Output<String>> userId() {
@@ -55,7 +55,7 @@ public final class GroupMemberArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userId 用户id。
+         * @param userId User ID
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class GroupMemberArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userId 用户id。
+         * @param userId User ID
          * 
          * @return builder
          * 

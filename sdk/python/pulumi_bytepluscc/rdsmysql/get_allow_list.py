@@ -91,7 +91,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListCategory")
     def allow_list_category(self) -> builtins.str:
         """
-        白名单分类。取值：Ordinary：普通白名单。Default：默认白名单。说明该参数作为请求参数时，默认值为 Ordinary。
+        Allowlist category. Values: Ordinary: Ordinary allowlist. Default: Default allowlist. Note: When used as a request parameter, the default value is Ordinary.
         """
         return pulumi.get(self, "allow_list_category")
 
@@ -99,7 +99,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListDesc")
     def allow_list_desc(self) -> builtins.str:
         """
-        白名单的备注。
+        Allowlist remarks.
         """
         return pulumi.get(self, "allow_list_desc")
 
@@ -107,7 +107,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListId")
     def allow_list_id(self) -> builtins.str:
         """
-        白名单 ID 。
+        Allowlist ID.
         """
         return pulumi.get(self, "allow_list_id")
 
@@ -115,7 +115,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListIpNum")
     def allow_list_ip_num(self) -> builtins.int:
         """
-        白名单内的 IP 地址（或地址段）总数。
+        Total number of IP addresses (or ranges) in the allowlist.
         """
         return pulumi.get(self, "allow_list_ip_num")
 
@@ -123,7 +123,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListName")
     def allow_list_name(self) -> builtins.str:
         """
-        白名单名称。
+        Allowlist name.
         """
         return pulumi.get(self, "allow_list_name")
 
@@ -131,7 +131,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListType")
     def allow_list_type(self) -> builtins.str:
         """
-        白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+        IP address types in the allowlist. Only IPv4 addresses are currently supported.
         """
         return pulumi.get(self, "allow_list_type")
 
@@ -139,7 +139,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowLists")
     def allow_lists(self) -> Sequence[builtins.str]:
         """
-        白名单内的 IP 地址列表
+        IP address list in the allowlist
         """
         return pulumi.get(self, "allow_lists")
 
@@ -147,7 +147,7 @@ class GetAllowListResult:
     @pulumi.getter(name="associatedInstanceNum")
     def associated_instance_num(self) -> builtins.int:
         """
-        白名单下绑定的实例总数。
+        Total number of instances bound to the allowlist.
         """
         return pulumi.get(self, "associated_instance_num")
 
@@ -155,7 +155,7 @@ class GetAllowListResult:
     @pulumi.getter(name="associatedInstances")
     def associated_instances(self) -> Sequence['outputs.GetAllowListAssociatedInstanceResult']:
         """
-        已绑定当前白名单的实例信息。
+        Instance information bound to the current allowlist.
         """
         return pulumi.get(self, "associated_instances")
 
@@ -171,7 +171,7 @@ class GetAllowListResult:
     @pulumi.getter(name="ignoreInstanceStatus")
     def ignore_instance_status(self) -> builtins.bool:
         """
-        是否忽略实例状态校验。取值：true：是。false：否。默认值。
+        Ignore instance status check. Values: true: Yes. false: No. Default value.
         """
         return pulumi.get(self, "ignore_instance_status")
 
@@ -179,7 +179,7 @@ class GetAllowListResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -187,7 +187,7 @@ class GetAllowListResult:
     @pulumi.getter(name="ipLists")
     def ip_lists(self) -> Sequence[builtins.str]:
         """
-        白名单包含的 IP 地址和 IP 地址段的列表。在请求参数 WithIpList 取值为 true 时返回，在取值为 false 或不为其传值时返回为 null。
+        List of IP addresses and IP ranges included in the allowlist. Returned when the WithIpList request parameter is set to true; returns null when set to false or not specified.
         """
         return pulumi.get(self, "ip_lists")
 
@@ -195,7 +195,7 @@ class GetAllowListResult:
     @pulumi.getter(name="modifyMode")
     def modify_mode(self) -> builtins.str:
         """
-        修改方式，取值范围如下：Cover（默认值）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+        Modification method. Available values: Cover (default): Overwrite the original allowlist with the values from the AllowList parameter. Append: Add the IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove the IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
         """
         return pulumi.get(self, "modify_mode")
 
@@ -203,7 +203,7 @@ class GetAllowListResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        所属的项目。说明如您调用接口使用的 AK/SK 属于某个子账号，且该子账号只拥有某个项目的权限，需要传入该请求参数。
+        Project. Note: If the AK/SK used to call the API belongs to a sub-account that only has permission for a specific project, you need to provide this request parameter.
         """
         return pulumi.get(self, "project_name")
 
@@ -211,7 +211,7 @@ class GetAllowListResult:
     @pulumi.getter(name="securityGroupBindInfos")
     def security_group_bind_infos(self) -> Sequence['outputs.GetAllowListSecurityGroupBindInfoResult']:
         """
-        白名单关联的安全组的信息。说明该字段不能与 SecurityGroupIds 同时使用。
+        Information about the security group associated with the allowlist. Note: This field cannot be used together with SecurityGroupIds.
         """
         return pulumi.get(self, "security_group_bind_infos")
 
@@ -219,7 +219,7 @@ class GetAllowListResult:
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Sequence[builtins.str]:
         """
-        需要关联的安全组 ID 列表。说明您可以调用 DescribeSecurityGroups 接口查询安全组信息，包括安全组 ID。单个白名单单次最多可选择添加 10 个安全组。该字段不能与 SecurityGroupBindInfos 同时使用。
+        List of security group IDs to associate. Note: You can call the DescribeSecurityGroups API to query security group information, including security group IDs. A single allowlist can add up to 10 security groups at a time. This field cannot be used together with SecurityGroupBindInfos.
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -227,7 +227,7 @@ class GetAllowListResult:
     @pulumi.getter(name="updateSecurityGroup")
     def update_security_group(self) -> builtins.bool:
         """
-        是否更新白名单所绑定的安全组。true：更新。false：不更新。默认值。说明该字段仅在白名单已绑定了安全组时生效。可调用 DescribeAllowLists 接口查询白名单是否绑定了安全组。
+        Whether to update the security group bound to the allowlist. true: update. false: do not update. Default value. This field is effective only when the allowlist is already bound to a security group. You can call the DescribeAllowLists API to check if the allowlist is bound to a security group.
         """
         return pulumi.get(self, "update_security_group")
 
@@ -235,7 +235,7 @@ class GetAllowListResult:
     @pulumi.getter(name="userAllowLists")
     def user_allow_lists(self) -> Sequence[builtins.str]:
         """
-        该名单中由用户输入的 IP 地址。AllowList 字段中的 IP 为 UserAllowList 和 SecurityGroupBindInfos 包含的 IP 的并集。
+        IP addresses entered by the user in this list. The IPs in the AllowList field are the union of IPs included in UserAllowList and SecurityGroupBindInfos.
         """
         return pulumi.get(self, "user_allow_lists")
 

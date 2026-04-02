@@ -65,19 +65,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
     public sealed class GetDnatentryResult
     {
         /// <summary>
-        /// DNAT规则的ID。
+        /// ID of the DNAT rule.
         /// </summary>
         public readonly string DnatEntryId;
         /// <summary>
-        /// DNAT规则的名称。
+        /// Name of the DNAT rule.
         /// </summary>
         public readonly string DnatEntryName;
         /// <summary>
-        /// NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+        /// IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
         /// </summary>
         public readonly string ExternalIp;
         /// <summary>
-        /// 接收来自公网外部请求的端口或端口段。
+        /// Port or port range that receives requests from the public network.
         /// </summary>
         public readonly string ExternalPort;
         /// <summary>
@@ -85,27 +85,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 云服务器实例的私网IP。
+        /// Private IP address of the cloud server instance.
         /// </summary>
         public readonly string InternalIp;
         /// <summary>
-        /// 云服务器实例私网IP的端口或端口段。
+        /// Port or port range of the private IP address of the cloud server instance.
         /// </summary>
         public readonly string InternalPort;
         /// <summary>
-        /// DNAT规则所属NAT网关的ID。
+        /// ID of the NAT gateway to which the DNAT rule belongs.
         /// </summary>
         public readonly string NatGatewayId;
         /// <summary>
-        /// DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+        /// Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
         /// </summary>
         public readonly string PortType;
         /// <summary>
-        /// 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+        /// Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
         /// </summary>
         public readonly string Protocol;
         /// <summary>
-        /// DNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+        /// Status of the DNAT rule. Creating: Creating. Deleting: Deleting. Available: Available.
         /// </summary>
         public readonly string Status;
 

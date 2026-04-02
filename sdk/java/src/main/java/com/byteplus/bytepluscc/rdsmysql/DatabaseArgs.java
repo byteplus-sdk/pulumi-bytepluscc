@@ -19,14 +19,14 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     public static final DatabaseArgs Empty = new DatabaseArgs();
 
     /**
-     * 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+     * Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
      * 
      */
     @Import(name="characterSetName")
     private @Nullable Output<String> characterSetName;
 
     /**
-     * @return 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+     * @return Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
      * 
      */
     public Optional<Output<String>> characterSetName() {
@@ -41,14 +41,14 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+     * Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+     * @return Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
      * 
      */
     public Optional<Output<String>> description() {
@@ -56,14 +56,14 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库实例 ID。
+     * Database instance ID.
      * 
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
-     * @return 数据库实例 ID。
+     * @return Database instance ID.
      * 
      */
     public Output<String> instanceId() {
@@ -71,14 +71,14 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+     * Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+     * @return Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
      * 
      */
     public Output<String> name() {
@@ -114,7 +114,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param characterSetName 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+         * @param characterSetName Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param characterSetName 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+         * @param characterSetName Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+         * @param description Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+         * @param description Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 数据库实例 ID。
+         * @param instanceId Database instance ID.
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 数据库实例 ID。
+         * @param instanceId Database instance ID.
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+         * @param name Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+         * @param name Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
          * 
          * @return builder
          * 

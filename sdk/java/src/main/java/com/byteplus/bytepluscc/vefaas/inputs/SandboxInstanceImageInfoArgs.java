@@ -17,14 +17,14 @@ public final class SandboxInstanceImageInfoArgs extends com.pulumi.resources.Res
     public static final SandboxInstanceImageInfoArgs Empty = new SandboxInstanceImageInfoArgs();
 
     /**
-     * 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+     * Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
      * 
      */
     @Import(name="command")
     private @Nullable Output<String> command;
 
     /**
-     * @return 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+     * @return Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
      * 
      */
     public Optional<Output<String>> command() {
@@ -32,14 +32,14 @@ public final class SandboxInstanceImageInfoArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 沙箱实例使用的已预热镜像地址。
+     * Preheated image address used by the sandbox instance
      * 
      */
     @Import(name="image")
     private @Nullable Output<String> image;
 
     /**
-     * @return 沙箱实例使用的已预热镜像地址。
+     * @return Preheated image address used by the sandbox instance
      * 
      */
     public Optional<Output<String>> image() {
@@ -47,14 +47,14 @@ public final class SandboxInstanceImageInfoArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 沙箱实例使用的已预热镜像 ID。
+     * Pre-warmed image ID used by the sandbox instance.
      * 
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
-     * @return 沙箱实例使用的已预热镜像 ID。
+     * @return Pre-warmed image ID used by the sandbox instance.
      * 
      */
     public Optional<Output<String>> imageId() {
@@ -62,14 +62,14 @@ public final class SandboxInstanceImageInfoArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 沙箱实例镜像监听端口。
+     * Listening port of the sandbox instance image.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 沙箱实例镜像监听端口。
+     * @return Listening port of the sandbox instance image.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -104,7 +104,7 @@ public final class SandboxInstanceImageInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param command 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+         * @param command Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class SandboxInstanceImageInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param command 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+         * @param command Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class SandboxInstanceImageInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param image 沙箱实例使用的已预热镜像地址。
+         * @param image Preheated image address used by the sandbox instance
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class SandboxInstanceImageInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param image 沙箱实例使用的已预热镜像地址。
+         * @param image Preheated image address used by the sandbox instance
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class SandboxInstanceImageInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param imageId 沙箱实例使用的已预热镜像 ID。
+         * @param imageId Pre-warmed image ID used by the sandbox instance.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class SandboxInstanceImageInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param imageId 沙箱实例使用的已预热镜像 ID。
+         * @param imageId Pre-warmed image ID used by the sandbox instance.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class SandboxInstanceImageInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param port 沙箱实例镜像监听端口。
+         * @param port Listening port of the sandbox instance image.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class SandboxInstanceImageInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param port 沙箱实例镜像监听端口。
+         * @param port Listening port of the sandbox instance image.
          * 
          * @return builder
          * 

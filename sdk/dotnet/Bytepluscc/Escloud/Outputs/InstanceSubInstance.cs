@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Outputs
     public sealed class InstanceSubInstance
     {
         /// <summary>
-        /// 企业级 SQL 分析实例 ID。
+        /// Enterprise-level SQL analysis instance ID.
         /// </summary>
         public readonly string? SubInstanceId;
         /// <summary>
-        /// 实例状态。
+        /// Instance status
         /// </summary>
         public readonly string? SubInstanceStatus;
         /// <summary>
-        /// 实例类型。
+        /// Instance type
         /// </summary>
         public readonly string? SubInstanceType;
 

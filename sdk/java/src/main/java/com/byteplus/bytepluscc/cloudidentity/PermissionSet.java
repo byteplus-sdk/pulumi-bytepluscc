@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。当用户访问火山引擎云资源的权限访问具备可抽象的共性时，如：网络运维权限、安全管理权限等，您可以在云身份中心预置访问权限集作为权限模版，最终基于访问权限集来实现中心化授权。云身份中心将会为您同步分发访问权限集到各个账号，减少企业权限的运维成本。
+ * After you create a Cloud Identity Center user, you need to grant the user login access permissions to each account. When access permissions to Volcano Engine cloud resources share common characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission operation and maintenance costs
  * 
  * ## Example Usage
  * 
@@ -34,42 +34,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:cloudidentity/permissionSet:PermissionSet")
 public class PermissionSet extends com.pulumi.resources.CustomResource {
     /**
-     * 创建时间。
+     * Creation Time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 权限集描述。
+     * Permission Set Description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 权限集描述。
+     * @return Permission Set Description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 权限集名称。
+     * Permission Set Name
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 权限集名称。
+     * @return Permission Set Name
      * 
      */
     public Output<String> name() {
@@ -82,70 +82,70 @@ public class PermissionSet extends com.pulumi.resources.CustomResource {
         return this.permissionPolicies;
     }
     /**
-     * 权限集 ID。
+     * Permission Set ID
      * 
      */
     @Export(name="permissionSetId", refs={String.class}, tree="[0]")
     private Output<String> permissionSetId;
 
     /**
-     * @return 权限集 ID。
+     * @return Permission Set ID
      * 
      */
     public Output<String> permissionSetId() {
         return this.permissionSetId;
     }
     /**
-     * 跳转控制台 URL。
+     * Console Redirect URL
      * 
      */
     @Export(name="relayState", refs={String.class}, tree="[0]")
     private Output<String> relayState;
 
     /**
-     * @return 跳转控制台 URL。
+     * @return Console Redirect URL
      * 
      */
     public Output<String> relayState() {
         return this.relayState;
     }
     /**
-     * session 过期时间，单位秒。
+     * Session Expiration Time (seconds)
      * 
      */
     @Export(name="sessionDuration", refs={Integer.class}, tree="[0]")
     private Output<Integer> sessionDuration;
 
     /**
-     * @return session 过期时间，单位秒。
+     * @return Session Expiration Time (seconds)
      * 
      */
     public Output<Integer> sessionDuration() {
         return this.sessionDuration;
     }
     /**
-     * 状态通知配置。
+     * Status Notification Configuration
      * 
      */
     @Export(name="statusNotifications", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> statusNotifications;
 
     /**
-     * @return 状态通知配置。
+     * @return Status Notification Configuration
      * 
      */
     public Output<List<String>> statusNotifications() {
         return this.statusNotifications;
     }
     /**
-     * 更新时间。
+     * Update Time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     public Output<String> updatedTime() {

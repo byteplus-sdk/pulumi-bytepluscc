@@ -16,14 +16,14 @@ public final class UserPolicyArgs extends com.pulumi.resources.ResourceArgs {
     public static final UserPolicyArgs Empty = new UserPolicyArgs();
 
     /**
-     * 权限策略名称，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+     * Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
      * 
      */
     @Import(name="policyName")
     private @Nullable Output<String> policyName;
 
     /**
-     * @return 权限策略名称，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+     * @return Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
      * 
      */
     public Optional<Output<String>> policyName() {
@@ -31,14 +31,14 @@ public final class UserPolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * Permission policy type. &#39;System&#39; indicates system preset policy, &#39;Custom&#39; indicates custom policy.
      * 
      */
     @Import(name="policyType")
     private @Nullable Output<String> policyType;
 
     /**
-     * @return 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Permission policy type. &#39;System&#39; indicates system preset policy, &#39;Custom&#39; indicates custom policy.
      * 
      */
     public Optional<Output<String>> policyType() {
@@ -71,7 +71,7 @@ public final class UserPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyName 权限策略名称，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+         * @param policyName Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class UserPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyName 权限策略名称，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+         * @param policyName Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class UserPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyType 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+         * @param policyType Permission policy type. &#39;System&#39; indicates system preset policy, &#39;Custom&#39; indicates custom policy.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class UserPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyType 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+         * @param policyType Permission policy type. &#39;System&#39; indicates system preset policy, &#39;Custom&#39; indicates custom policy.
          * 
          * @return builder
          * 

@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Outputs
     public sealed class GetDatabaseDatabasesPrivilegeResult
     {
         /// <summary>
-        /// 需授权的账号名称
+        /// Account name to be authorized
         /// </summary>
         public readonly string AccountName;
         /// <summary>
-        /// 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+        /// Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
         /// </summary>
         public readonly string AccountPrivilege;
         /// <summary>
-        /// 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+        /// Specific SQL operation permissions, separated by English commas; required for Custom type
         /// </summary>
         public readonly ImmutableArray<string> AccountPrivilegeDetails;
 

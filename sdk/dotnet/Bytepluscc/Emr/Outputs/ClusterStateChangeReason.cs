@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Outputs
     public sealed class ClusterStateChangeReason
     {
         /// <summary>
-        /// 状态更新码。
+        /// Status update code.
         /// </summary>
         public readonly string? Code;
         /// <summary>
-        /// 状态更新原因。
+        /// Status update reason.
         /// </summary>
         public readonly string? Reason;
 

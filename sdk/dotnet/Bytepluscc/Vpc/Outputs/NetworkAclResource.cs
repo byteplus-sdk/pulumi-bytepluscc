@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Outputs
     public sealed class NetworkAclResource
     {
         /// <summary>
-        /// 关联资源的ID。
+        /// Associated resource ID.
         /// </summary>
         public readonly string? ResourceId;
 

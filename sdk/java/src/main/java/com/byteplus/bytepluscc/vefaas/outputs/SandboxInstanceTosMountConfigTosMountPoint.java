@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SandboxInstanceTosMountConfigTosMountPoint {
     /**
-     * @return 沙箱实例挂载的 TOS 远端目录。
+     * @return TOS remote directory mounted by the sandbox instance
      * 
      */
     private @Nullable String bucketPath;
     /**
-     * @return 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+     * @return Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
      * 
      */
     private @Nullable String localMountPath;
 
     private SandboxInstanceTosMountConfigTosMountPoint() {}
     /**
-     * @return 沙箱实例挂载的 TOS 远端目录。
+     * @return TOS remote directory mounted by the sandbox instance
      * 
      */
     public Optional<String> bucketPath() {
         return Optional.ofNullable(this.bucketPath);
     }
     /**
-     * @return 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+     * @return Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
      * 
      */
     public Optional<String> localMountPath() {

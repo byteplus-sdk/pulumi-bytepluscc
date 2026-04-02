@@ -24,14 +24,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
     public static final DefaultNodePoolState Empty = new DefaultNodePoolState();
 
     /**
-     * 节点池伸缩策略配置。
+     * Node pool scaling policy configuration
      * 
      */
     @Import(name="autoScaling")
     private @Nullable Output<DefaultNodePoolAutoScalingArgs> autoScaling;
 
     /**
-     * @return 节点池伸缩策略配置。
+     * @return Node pool scaling policy configuration
      * 
      */
     public Optional<Output<DefaultNodePoolAutoScalingArgs>> autoScaling() {
@@ -39,14 +39,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 节点池所在集群的 ID。
+     * Cluster ID where the node pool is located
      * 
      */
     @Import(name="clusterId")
     private @Nullable Output<String> clusterId;
 
     /**
-     * @return 节点池所在集群的 ID。
+     * @return Cluster ID where the node pool is located
      * 
      */
     public Optional<Output<String>> clusterId() {
@@ -54,14 +54,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 创建节点池的时间。
+     * Node pool creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建节点池的时间。
+     * @return Node pool creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -69,14 +69,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 节点池 Kubernetes 相关配置。
+     * Kubernetes-related configuration for the node pool
      * 
      */
     @Import(name="kubernetesConfig")
     private @Nullable Output<DefaultNodePoolKubernetesConfigArgs> kubernetesConfig;
 
     /**
-     * @return 节点池 Kubernetes 相关配置。
+     * @return Kubernetes-related configuration for the node pool
      * 
      */
     public Optional<Output<DefaultNodePoolKubernetesConfigArgs>> kubernetesConfig() {
@@ -84,14 +84,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 托管节点池配置。
+     * Managed node pool configuration
      * 
      */
     @Import(name="management")
     private @Nullable Output<DefaultNodePoolManagementArgs> management;
 
     /**
-     * @return 托管节点池配置。
+     * @return Managed node pool configuration
      * 
      */
     public Optional<Output<DefaultNodePoolManagementArgs>> management() {
@@ -99,14 +99,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * @return Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
      * 
      */
     public Optional<Output<String>> name() {
@@ -114,14 +114,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 节点池中云服务器（ECS）实例配置。
+     * Cloud server (ECS) instance configuration in the node pool
      * 
      */
     @Import(name="nodeConfig")
     private @Nullable Output<DefaultNodePoolNodeConfigArgs> nodeConfig;
 
     /**
-     * @return 节点池中云服务器（ECS）实例配置。
+     * @return Cloud server (ECS) instance configuration in the node pool
      * 
      */
     public Optional<Output<DefaultNodePoolNodeConfigArgs>> nodeConfig() {
@@ -129,14 +129,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 节点池 ID 。
+     * Node pool ID
      * 
      */
     @Import(name="nodePoolId")
     private @Nullable Output<String> nodePoolId;
 
     /**
-     * @return 节点池 ID 。
+     * @return Node pool ID
      * 
      */
     public Optional<Output<String>> nodePoolId() {
@@ -144,14 +144,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 节点池中的节点统计。
+     * Node statistics in the node pool.
      * 
      */
     @Import(name="nodeStatistics")
     private @Nullable Output<DefaultNodePoolNodeStatisticsArgs> nodeStatistics;
 
     /**
-     * @return 节点池中的节点统计。
+     * @return Node statistics in the node pool.
      * 
      */
     public Optional<Output<DefaultNodePoolNodeStatisticsArgs>> nodeStatistics() {
@@ -159,14 +159,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 节点池状态。
+     * Node pool status
      * 
      */
     @Import(name="status")
     private @Nullable Output<DefaultNodePoolStatusArgs> status;
 
     /**
-     * @return 节点池状态。
+     * @return Node pool status
      * 
      */
     public Optional<Output<DefaultNodePoolStatusArgs>> status() {
@@ -181,14 +181,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 更新节点池的时间。
+     * Time when the node pool was updated
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新节点池的时间。
+     * @return Time when the node pool was updated
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -231,7 +231,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param autoScaling 节点池伸缩策略配置。
+         * @param autoScaling Node pool scaling policy configuration
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param autoScaling 节点池伸缩策略配置。
+         * @param autoScaling Node pool scaling policy configuration
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param clusterId 节点池所在集群的 ID。
+         * @param clusterId Cluster ID where the node pool is located
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param clusterId 节点池所在集群的 ID。
+         * @param clusterId Cluster ID where the node pool is located
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param createdTime 创建节点池的时间。
+         * @param createdTime Node pool creation time
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param createdTime 创建节点池的时间。
+         * @param createdTime Node pool creation time
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param kubernetesConfig 节点池 Kubernetes 相关配置。
+         * @param kubernetesConfig Kubernetes-related configuration for the node pool
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param kubernetesConfig 节点池 Kubernetes 相关配置。
+         * @param kubernetesConfig Kubernetes-related configuration for the node pool
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param management 托管节点池配置。
+         * @param management Managed node pool configuration
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param management 托管节点池配置。
+         * @param management Managed node pool configuration
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+         * @param name Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+         * @param name Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
          * 
          * @return builder
          * 
@@ -357,7 +357,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param nodeConfig 节点池中云服务器（ECS）实例配置。
+         * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
          * 
          * @return builder
          * 
@@ -368,7 +368,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param nodeConfig 节点池中云服务器（ECS）实例配置。
+         * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
          * 
          * @return builder
          * 
@@ -378,7 +378,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param nodePoolId 节点池 ID 。
+         * @param nodePoolId Node pool ID
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param nodePoolId 节点池 ID 。
+         * @param nodePoolId Node pool ID
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param nodeStatistics 节点池中的节点统计。
+         * @param nodeStatistics Node statistics in the node pool.
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param nodeStatistics 节点池中的节点统计。
+         * @param nodeStatistics Node statistics in the node pool.
          * 
          * @return builder
          * 
@@ -420,7 +420,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param status 节点池状态。
+         * @param status Node pool status
          * 
          * @return builder
          * 
@@ -431,7 +431,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param status 节点池状态。
+         * @param status Node pool status
          * 
          * @return builder
          * 
@@ -454,7 +454,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param updatedTime 更新节点池的时间。
+         * @param updatedTime Time when the node pool was updated
          * 
          * @return builder
          * 
@@ -465,7 +465,7 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param updatedTime 更新节点池的时间。
+         * @param updatedTime Time when the node pool was updated
          * 
          * @return builder
          * 

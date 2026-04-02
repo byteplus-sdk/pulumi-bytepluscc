@@ -16,14 +16,14 @@ public final class DomainDomainLockArgs extends com.pulumi.resources.ResourceArg
     public static final DomainDomainLockArgs Empty = new DomainDomainLockArgs();
 
     /**
-     * 表示该加速域名被锁定的原因。如果 Status 是 on，该参数值表示原因的描述。如果 Status 是 off，该参数值是空（&#34;&#34;）。
+     * Indicates the reason why the acceleration domain is locked. If Status is on, this parameter provides a description of the reason. If Status is off, this parameter is empty (&#34;&#34;)
      * 
      */
     @Import(name="remark")
     private @Nullable Output<String> remark;
 
     /**
-     * @return 表示该加速域名被锁定的原因。如果 Status 是 on，该参数值表示原因的描述。如果 Status 是 off，该参数值是空（&#34;&#34;）。
+     * @return Indicates the reason why the acceleration domain is locked. If Status is on, this parameter provides a description of the reason. If Status is off, this parameter is empty (&#34;&#34;)
      * 
      */
     public Optional<Output<String>> remark() {
@@ -31,14 +31,14 @@ public final class DomainDomainLockArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 表示该加速域名的锁定状态。该参数有以下取值：on：表示该加速域名已被锁定。off：表示该加速域名未被锁定。
+     * Indicates the lock status of the acceleration domain name. The parameter has the following values: on: the acceleration domain name is locked. off: the acceleration domain name is not locked.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 表示该加速域名的锁定状态。该参数有以下取值：on：表示该加速域名已被锁定。off：表示该加速域名未被锁定。
+     * @return Indicates the lock status of the acceleration domain name. The parameter has the following values: on: the acceleration domain name is locked. off: the acceleration domain name is not locked.
      * 
      */
     public Optional<Output<String>> status() {
@@ -71,7 +71,7 @@ public final class DomainDomainLockArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param remark 表示该加速域名被锁定的原因。如果 Status 是 on，该参数值表示原因的描述。如果 Status 是 off，该参数值是空（&#34;&#34;）。
+         * @param remark Indicates the reason why the acceleration domain is locked. If Status is on, this parameter provides a description of the reason. If Status is off, this parameter is empty (&#34;&#34;)
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class DomainDomainLockArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param remark 表示该加速域名被锁定的原因。如果 Status 是 on，该参数值表示原因的描述。如果 Status 是 off，该参数值是空（&#34;&#34;）。
+         * @param remark Indicates the reason why the acceleration domain is locked. If Status is on, this parameter provides a description of the reason. If Status is off, this parameter is empty (&#34;&#34;)
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class DomainDomainLockArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param status 表示该加速域名的锁定状态。该参数有以下取值：on：表示该加速域名已被锁定。off：表示该加速域名未被锁定。
+         * @param status Indicates the lock status of the acceleration domain name. The parameter has the following values: on: the acceleration domain name is locked. off: the acceleration domain name is not locked.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class DomainDomainLockArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param status 表示该加速域名的锁定状态。该参数有以下取值：on：表示该加速域名已被锁定。off：表示该加速域名未被锁定。
+         * @param status Indicates the lock status of the acceleration domain name. The parameter has the following values: on: the acceleration domain name is locked. off: the acceleration domain name is not locked.
          * 
          * @return builder
          * 

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetTrafficMirrorSessionTag {
     /**
-     * @return 标签键。
+     * @return Tag key
      * 
      */
     private String key;
     /**
-     * @return 标签值。
+     * @return Tag value
      * 
      */
     private String value;
 
     private GetTrafficMirrorSessionTag() {}
     /**
-     * @return 标签键。
+     * @return Tag key
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 标签值。
+     * @return Tag value
      * 
      */
     public String value() {

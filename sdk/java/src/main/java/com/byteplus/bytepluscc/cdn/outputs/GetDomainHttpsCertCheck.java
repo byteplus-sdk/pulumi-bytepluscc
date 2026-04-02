@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainHttpsCertCheck {
     /**
-     * @return 表示要与该加速域名关联的一个 CA 证书的列表。列表中最多包含两个 CA 证书。这些 CA 证书可以是已经托管在内容分发网络的，也可以是待上传的。CA 证书使用的加密算法可以是 RSA、ECC 或者 SM2。如果一个 CA 证书是托管在内容分发网络的，您需要在 CertId 中指定该证书的 ID。如果该证书是待上传的，您需要指定 Certificate 结构体，在该结构体中定义该证书。您上传证书后，该证书是托管在内容分发网络的。
+     * @return Specifies a list of CA certificates to associate with the accelerated domain name. The list can contain up to two CA certificates. These CA certificates can be already hosted on the content delivery network or pending upload. The encryption algorithm for CA certificates can be RSA, ECC, or SM2. If a CA certificate is hosted on the content delivery network, you need to specify its ID in CertId. If the certificate is pending upload, you need to specify the Certificate structure and define the certificate within it. After you upload the certificate, it will be hosted on the content delivery network.
      * 
      */
     private List<GetDomainHttpsCertCheckCertInfoList> certInfoLists;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
      * 
      */
     private Boolean switch_;
 
     private GetDomainHttpsCertCheck() {}
     /**
-     * @return 表示要与该加速域名关联的一个 CA 证书的列表。列表中最多包含两个 CA 证书。这些 CA 证书可以是已经托管在内容分发网络的，也可以是待上传的。CA 证书使用的加密算法可以是 RSA、ECC 或者 SM2。如果一个 CA 证书是托管在内容分发网络的，您需要在 CertId 中指定该证书的 ID。如果该证书是待上传的，您需要指定 Certificate 结构体，在该结构体中定义该证书。您上传证书后，该证书是托管在内容分发网络的。
+     * @return Specifies a list of CA certificates to associate with the accelerated domain name. The list can contain up to two CA certificates. These CA certificates can be already hosted on the content delivery network or pending upload. The encryption algorithm for CA certificates can be RSA, ECC, or SM2. If a CA certificate is hosted on the content delivery network, you need to specify its ID in CertId. If the certificate is pending upload, you need to specify the Certificate structure and define the certificate within it. After you upload the certificate, it will be hosted on the content delivery network.
      * 
      */
     public List<GetDomainHttpsCertCheckCertInfoList> certInfoLists() {
         return this.certInfoLists;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
      * 
      */
     public Boolean switch_() {

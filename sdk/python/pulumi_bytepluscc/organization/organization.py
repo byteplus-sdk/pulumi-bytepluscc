@@ -26,8 +26,8 @@ class OrganizationArgs:
                  owner: Optional[pulumi.Input['OrganizationOwnerArgs']] = None):
         """
         The set of arguments for constructing a Organization resource.
-        :param pulumi.Input['OrganizationOrganizationArgs'] organization: 组织详情
-        :param pulumi.Input['OrganizationOwnerArgs'] owner: 管理员详情
+        :param pulumi.Input['OrganizationOrganizationArgs'] organization: Organization Details
+        :param pulumi.Input['OrganizationOwnerArgs'] owner: Administrator Details
         """
         if organization is not None:
             pulumi.set(__self__, "organization", organization)
@@ -38,7 +38,7 @@ class OrganizationArgs:
     @pulumi.getter
     def organization(self) -> Optional[pulumi.Input['OrganizationOrganizationArgs']]:
         """
-        组织详情
+        Organization Details
         """
         return pulumi.get(self, "organization")
 
@@ -50,7 +50,7 @@ class OrganizationArgs:
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input['OrganizationOwnerArgs']]:
         """
-        管理员详情
+        Administrator Details
         """
         return pulumi.get(self, "owner")
 
@@ -67,9 +67,9 @@ class _OrganizationState:
                  owner: Optional[pulumi.Input['OrganizationOwnerArgs']] = None):
         """
         Input properties used for looking up and filtering Organization resources.
-        :param pulumi.Input['OrganizationOrganizationArgs'] organization: 组织详情
-        :param pulumi.Input[builtins.str] organization_id: 组织ID
-        :param pulumi.Input['OrganizationOwnerArgs'] owner: 管理员详情
+        :param pulumi.Input['OrganizationOrganizationArgs'] organization: Organization Details
+        :param pulumi.Input[builtins.str] organization_id: Organization ID
+        :param pulumi.Input['OrganizationOwnerArgs'] owner: Administrator Details
         """
         if organization is not None:
             pulumi.set(__self__, "organization", organization)
@@ -82,7 +82,7 @@ class _OrganizationState:
     @pulumi.getter
     def organization(self) -> Optional[pulumi.Input['OrganizationOrganizationArgs']]:
         """
-        组织详情
+        Organization Details
         """
         return pulumi.get(self, "organization")
 
@@ -94,7 +94,7 @@ class _OrganizationState:
     @pulumi.getter(name="organizationId")
     def organization_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组织ID
+        Organization ID
         """
         return pulumi.get(self, "organization_id")
 
@@ -106,7 +106,7 @@ class _OrganizationState:
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input['OrganizationOwnerArgs']]:
         """
-        管理员详情
+        Administrator Details
         """
         return pulumi.get(self, "owner")
 
@@ -125,7 +125,7 @@ class Organization(pulumi.CustomResource):
                  owner: Optional[pulumi.Input[Union['OrganizationOwnerArgs', 'OrganizationOwnerArgsDict']]] = None,
                  __props__=None):
         """
-        企业组织管理
+        Enterprise Organization Management
 
         ## Example Usage
 
@@ -144,8 +144,8 @@ class Organization(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OrganizationOrganizationArgs', 'OrganizationOrganizationArgsDict']] organization: 组织详情
-        :param pulumi.Input[Union['OrganizationOwnerArgs', 'OrganizationOwnerArgsDict']] owner: 管理员详情
+        :param pulumi.Input[Union['OrganizationOrganizationArgs', 'OrganizationOrganizationArgsDict']] organization: Organization Details
+        :param pulumi.Input[Union['OrganizationOwnerArgs', 'OrganizationOwnerArgsDict']] owner: Administrator Details
         """
         ...
     @overload
@@ -154,7 +154,7 @@ class Organization(pulumi.CustomResource):
                  args: Optional[OrganizationArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        企业组织管理
+        Enterprise Organization Management
 
         ## Example Usage
 
@@ -220,9 +220,9 @@ class Organization(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OrganizationOrganizationArgs', 'OrganizationOrganizationArgsDict']] organization: 组织详情
-        :param pulumi.Input[builtins.str] organization_id: 组织ID
-        :param pulumi.Input[Union['OrganizationOwnerArgs', 'OrganizationOwnerArgsDict']] owner: 管理员详情
+        :param pulumi.Input[Union['OrganizationOrganizationArgs', 'OrganizationOrganizationArgsDict']] organization: Organization Details
+        :param pulumi.Input[builtins.str] organization_id: Organization ID
+        :param pulumi.Input[Union['OrganizationOwnerArgs', 'OrganizationOwnerArgsDict']] owner: Administrator Details
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -237,7 +237,7 @@ class Organization(pulumi.CustomResource):
     @pulumi.getter
     def organization(self) -> pulumi.Output['outputs.OrganizationOrganization']:
         """
-        组织详情
+        Organization Details
         """
         return pulumi.get(self, "organization")
 
@@ -245,7 +245,7 @@ class Organization(pulumi.CustomResource):
     @pulumi.getter(name="organizationId")
     def organization_id(self) -> pulumi.Output[builtins.str]:
         """
-        组织ID
+        Organization ID
         """
         return pulumi.get(self, "organization_id")
 
@@ -253,7 +253,7 @@ class Organization(pulumi.CustomResource):
     @pulumi.getter
     def owner(self) -> pulumi.Output['outputs.OrganizationOwner']:
         """
-        管理员详情
+        Administrator Details
         """
         return pulumi.get(self, "owner")
 

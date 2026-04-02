@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class VpnGatewayTag {
     /**
-     * @return VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&amp;分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
+     * @return VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &amp;. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
      * 
      */
     private @Nullable String key;
     /**
-     * @return VPN网关标签的标签值（Value）。参数   - N：表示标签值的序号，取值范围：1～20。多个标签值之间用&amp;分隔。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。允许为空，长度限制在0～256个字符之间。大小写敏感，不能以空格开头或结尾。说明传入Tags.N.Value则必须传入Tags.N.Key。
+     * @return VPN gateway tag value (Value). Parameter   - N: Indicates the sequence number of the tag value, value range: 1–20. Multiple tag values are separated by &amp;. Naming rules: Can only contain language characters, numbers, spaces, and English symbols &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Can be empty. Length limit: 0–256 characters. Case-sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
      * 
      */
     private @Nullable String value;
 
     private VpnGatewayTag() {}
     /**
-     * @return VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&amp;分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
+     * @return VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &amp;. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return VPN网关标签的标签值（Value）。参数   - N：表示标签值的序号，取值范围：1～20。多个标签值之间用&amp;分隔。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。允许为空，长度限制在0～256个字符之间。大小写敏感，不能以空格开头或结尾。说明传入Tags.N.Value则必须传入Tags.N.Key。
+     * @return VPN gateway tag value (Value). Parameter   - N: Indicates the sequence number of the tag value, value range: 1–20. Multiple tag values are separated by &amp;. Naming rules: Can only contain language characters, numbers, spaces, and English symbols &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Can be empty. Length limit: 0–256 characters. Case-sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
      * 
      */
     public Optional<String> value() {

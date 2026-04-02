@@ -14,49 +14,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
     public sealed class InstanceAddressObjectArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// false：私网解析（默认）。true：私网以及公网解析。
+        /// false: private network resolution (default). true: private and public network resolution.
         /// </summary>
         [Input("dnsVisibility")]
         public Input<bool>? DnsVisibility { get; set; }
 
         /// <summary>
-        /// 连接域名。
+        /// Connection domain name
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
         /// <summary>
-        /// EIP 的 ID，仅对 Public 地址有效。
+        /// EIP ID, valid only for Public addresses.
         /// </summary>
         [Input("eipId")]
         public Input<string>? EipId { get; set; }
 
         /// <summary>
-        /// IP 协议版本。取值为 IPv4。
+        /// IP protocol version. Value: IPv4.
         /// </summary>
         [Input("internetProtocol")]
         public Input<string>? InternetProtocol { get; set; }
 
         /// <summary>
-        /// IP 地址。
+        /// IP address.
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+        /// Network address type. Values: Private: private address. Public: public address
         /// </summary>
         [Input("networkType")]
         public Input<string>? NetworkType { get; set; }
 
         /// <summary>
-        /// 端口。
+        /// Port
         /// </summary>
         [Input("port")]
         public Input<string>? Port { get; set; }
 
         /// <summary>
-        /// 子网 ID，仅对 Private 地址有效。
+        /// Subnet ID, valid only for Private addresses
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

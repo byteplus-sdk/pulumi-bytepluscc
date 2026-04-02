@@ -12,74 +12,74 @@ import java.util.Objects;
 @CustomType
 public final class GetAllowListAssociatedInstance {
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     private String instanceId;
     /**
-     * @return 实例名称。
+     * @return Instance name
      * 
      */
     private String instanceName;
     /**
-     * @return 实例状态。
+     * @return Instance status
      * 
      */
     private String instanceStatus;
     /**
-     * @return 是否同步最新白名单 IP
+     * @return Sync latest allowlist IP
      * 
      */
     private Boolean isLatest;
     /**
-     * @return 实例所属项目名称。
+     * @return Project name of the instance
      * 
      */
     private String projectName;
     /**
-     * @return 实例所属VPC ID。
+     * @return VPC ID of the instance
      * 
      */
     private String vpc;
 
     private GetAllowListAssociatedInstance() {}
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 实例名称。
+     * @return Instance name
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 实例状态。
+     * @return Instance status
      * 
      */
     public String instanceStatus() {
         return this.instanceStatus;
     }
     /**
-     * @return 是否同步最新白名单 IP
+     * @return Sync latest allowlist IP
      * 
      */
     public Boolean isLatest() {
         return this.isLatest;
     }
     /**
-     * @return 实例所属项目名称。
+     * @return Project name of the instance
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 实例所属VPC ID。
+     * @return VPC ID of the instance
      * 
      */
     public String vpc() {

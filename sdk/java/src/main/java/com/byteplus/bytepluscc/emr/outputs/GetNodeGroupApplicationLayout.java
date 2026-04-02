@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodeGroupApplicationLayout {
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     private String applicationName;
     /**
-     * @return 组件的自定义配置参数列表。
+     * @return Custom configuration parameter list for the component.
      * 
      */
     private List<String> layoutComponentNames;
 
     private GetNodeGroupApplicationLayout() {}
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     public String applicationName() {
         return this.applicationName;
     }
     /**
-     * @return 组件的自定义配置参数列表。
+     * @return Custom configuration parameter list for the component.
      * 
      */
     public List<String> layoutComponentNames() {

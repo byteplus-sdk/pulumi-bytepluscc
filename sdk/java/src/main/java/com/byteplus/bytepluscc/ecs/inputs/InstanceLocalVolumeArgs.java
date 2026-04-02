@@ -17,14 +17,14 @@ public final class InstanceLocalVolumeArgs extends com.pulumi.resources.Resource
     public static final InstanceLocalVolumeArgs Empty = new InstanceLocalVolumeArgs();
 
     /**
-     * 实例挂载的本地盘数量。
+     * The number of local disks attached to the instance.
      * 
      */
     @Import(name="count")
     private @Nullable Output<Integer> count;
 
     /**
-     * @return 实例挂载的本地盘数量。
+     * @return The number of local disks attached to the instance.
      * 
      */
     public Optional<Output<Integer>> count() {
@@ -32,14 +32,14 @@ public final class InstanceLocalVolumeArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 实例挂载的本地盘的单盘容量，单位GiB。
+     * Capacity of each local disk mounted to the instance (GiB).
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return 实例挂载的本地盘的单盘容量，单位GiB。
+     * @return Capacity of each local disk mounted to the instance (GiB).
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -47,14 +47,14 @@ public final class InstanceLocalVolumeArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+     * Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
      * 
      */
     @Import(name="volumeType")
     private @Nullable Output<String> volumeType;
 
     /**
-     * @return 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+     * @return Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
      * 
      */
     public Optional<Output<String>> volumeType() {
@@ -88,7 +88,7 @@ public final class InstanceLocalVolumeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param count 实例挂载的本地盘数量。
+         * @param count The number of local disks attached to the instance.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class InstanceLocalVolumeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param count 实例挂载的本地盘数量。
+         * @param count The number of local disks attached to the instance.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class InstanceLocalVolumeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param size 实例挂载的本地盘的单盘容量，单位GiB。
+         * @param size Capacity of each local disk mounted to the instance (GiB).
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class InstanceLocalVolumeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param size 实例挂载的本地盘的单盘容量，单位GiB。
+         * @param size Capacity of each local disk mounted to the instance (GiB).
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class InstanceLocalVolumeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param volumeType 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+         * @param volumeType Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class InstanceLocalVolumeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param volumeType 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+         * @param volumeType Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
          * 
          * @return builder
          * 

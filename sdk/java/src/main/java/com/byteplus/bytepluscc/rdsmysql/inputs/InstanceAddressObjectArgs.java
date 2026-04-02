@@ -17,14 +17,14 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
     public static final InstanceAddressObjectArgs Empty = new InstanceAddressObjectArgs();
 
     /**
-     * false：私网解析（默认）。true：私网以及公网解析。
+     * false: private network resolution (default). true: private and public network resolution.
      * 
      */
     @Import(name="dnsVisibility")
     private @Nullable Output<Boolean> dnsVisibility;
 
     /**
-     * @return false：私网解析（默认）。true：私网以及公网解析。
+     * @return false: private network resolution (default). true: private and public network resolution.
      * 
      */
     public Optional<Output<Boolean>> dnsVisibility() {
@@ -32,14 +32,14 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 连接域名。
+     * Connection domain name
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return 连接域名。
+     * @return Connection domain name
      * 
      */
     public Optional<Output<String>> domain() {
@@ -47,14 +47,14 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * EIP 的 ID，仅对 Public 地址有效。
+     * EIP ID, valid only for Public addresses.
      * 
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
-     * @return EIP 的 ID，仅对 Public 地址有效。
+     * @return EIP ID, valid only for Public addresses.
      * 
      */
     public Optional<Output<String>> eipId() {
@@ -62,14 +62,14 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * IP 协议版本。取值为 IPv4。
+     * IP protocol version. Value: IPv4.
      * 
      */
     @Import(name="internetProtocol")
     private @Nullable Output<String> internetProtocol;
 
     /**
-     * @return IP 协议版本。取值为 IPv4。
+     * @return IP protocol version. Value: IPv4.
      * 
      */
     public Optional<Output<String>> internetProtocol() {
@@ -77,14 +77,14 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * IP 地址。
+     * IP address.
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return IP 地址。
+     * @return IP address.
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -92,14 +92,14 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+     * Network address type. Values: Private: private address. Public: public address
      * 
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
-     * @return 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+     * @return Network address type. Values: Private: private address. Public: public address
      * 
      */
     public Optional<Output<String>> networkType() {
@@ -107,14 +107,14 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 端口。
+     * Port
      * 
      */
     @Import(name="port")
     private @Nullable Output<String> port;
 
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     public Optional<Output<String>> port() {
@@ -122,14 +122,14 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 子网 ID，仅对 Private 地址有效。
+     * Subnet ID, valid only for Private addresses
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 子网 ID，仅对 Private 地址有效。
+     * @return Subnet ID, valid only for Private addresses
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -168,7 +168,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param dnsVisibility false：私网解析（默认）。true：私网以及公网解析。
+         * @param dnsVisibility false: private network resolution (default). true: private and public network resolution.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param dnsVisibility false：私网解析（默认）。true：私网以及公网解析。
+         * @param dnsVisibility false: private network resolution (default). true: private and public network resolution.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param domain 连接域名。
+         * @param domain Connection domain name
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param domain 连接域名。
+         * @param domain Connection domain name
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param eipId EIP 的 ID，仅对 Public 地址有效。
+         * @param eipId EIP ID, valid only for Public addresses.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param eipId EIP 的 ID，仅对 Public 地址有效。
+         * @param eipId EIP ID, valid only for Public addresses.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param internetProtocol IP 协议版本。取值为 IPv4。
+         * @param internetProtocol IP protocol version. Value: IPv4.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param internetProtocol IP 协议版本。取值为 IPv4。
+         * @param internetProtocol IP protocol version. Value: IPv4.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ipAddress IP 地址。
+         * @param ipAddress IP address.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ipAddress IP 地址。
+         * @param ipAddress IP address.
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param networkType 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+         * @param networkType Network address type. Values: Private: private address. Public: public address
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param networkType 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+         * @param networkType Network address type. Values: Private: private address. Public: public address
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param port 端口。
+         * @param port Port
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param port 端口。
+         * @param port Port
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param subnetId 子网 ID，仅对 Private 地址有效。
+         * @param subnetId Subnet ID, valid only for Private addresses
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class InstanceAddressObjectArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param subnetId 子网 ID，仅对 Private 地址有效。
+         * @param subnetId Subnet ID, valid only for Private addresses
          * 
          * @return builder
          * 

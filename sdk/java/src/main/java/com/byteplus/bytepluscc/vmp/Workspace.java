@@ -15,12 +15,13 @@ import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 工作区（Workspace）是 VMP 服务中采集数据和规则的抽象整合，为用户提供物理隔离或逻辑隔离的 Prometheus 能力。在 VMP 服务中可创建不同的工作区，不同工作区中的数据彼此隔离。
+ * Workspace is an abstract integration of data collection and rules in the VMP service, providing users with physical or logical isolation for Prometheus capabilities. You can create different workspaces in the VMP service, and data in different workspaces is isolated from each other
  * 
  * ## Example Usage
  * 
@@ -49,13 +50,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var workspaceDemo = new Workspace("workspaceDemo", WorkspaceArgs.builder()
- *             .username("WorkspaceDemo")
- *             .password("***********")
- *             .name("WorkspaceDemo")
- *             .description("WorkspaceDemo")
+ *             .authType("BearerToken")
+ *             .bearerToken("M3cSN7gssM09-6wO8vdqo_xxxxxxxx")
  *             .deleteProtectionEnabled(false)
- *             .instanceTypeId("vmp.standard.xxx")
+ *             .description("test workspace")
+ *             .instanceTypeId("vmp.standard.30d")
+ *             .name("terraform_test_BearerToken")
  *             .projectName("default")
+ *             .publicAccessEnabled(true)
+ *             .publicQueryBandwidth(2)
+ *             .publicWriteBandwidth(50)
+ *             .searchLatencyOffset("32s")
  *             .tags(WorkspaceTagArgs.builder()
  *                 .key("env")
  *                 .value("test")
@@ -78,196 +83,322 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vmp/workspace:Workspace")
 public class Workspace extends com.pulumi.resources.CustomResource {
     /**
-     * 工作区创建时间，RFC3339 格式。
+     * Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+     * 
+     */
+    @Export(name="authType", refs={String.class}, tree="[0]")
+    private Output<String> authType;
+
+    /**
+     * @return Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+     * 
+     */
+    public Output<String> authType() {
+        return this.authType;
+    }
+    /**
+     * Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+     * 
+     */
+    @Export(name="bearerToken", refs={String.class}, tree="[0]")
+    private Output<String> bearerToken;
+
+    /**
+     * @return Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+     * 
+     */
+    public Output<String> bearerToken() {
+        return this.bearerToken;
+    }
+    /**
+     * Workspace creation time, RFC3339 format
      * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
-     * @return 工作区创建时间，RFC3339 格式。
+     * @return Workspace creation time, RFC3339 format
      * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
-     * 是否开启工作区删除保护,true：开启，false：关闭。
+     * Enable workspace deletion protection: true for enabled, false for disabled
      * 
      */
     @Export(name="deleteProtectionEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteProtectionEnabled;
 
     /**
-     * @return 是否开启工作区删除保护,true：开启，false：关闭。
+     * @return Enable workspace deletion protection: true for enabled, false for disabled
      * 
      */
     public Output<Boolean> deleteProtectionEnabled() {
         return this.deleteProtectionEnabled;
     }
     /**
-     * 工作区描述信息，字符串形式，长度限制为 0～200。
+     * Workspace description, string, length limit 0–200
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 工作区描述信息，字符串形式，长度限制为 0～200。
+     * @return Workspace description, string, length limit 0–200
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 工作区规格详情。
+     * Workspace specification details
      * 
      */
     @Export(name="instanceType", refs={WorkspaceInstanceType.class}, tree="[0]")
     private Output<WorkspaceInstanceType> instanceType;
 
     /**
-     * @return 工作区规格详情。
+     * @return Workspace specification details
      * 
      */
     public Output<WorkspaceInstanceType> instanceType() {
         return this.instanceType;
     }
     /**
-     * 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+     * Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
      * 
      */
     @Export(name="instanceTypeId", refs={String.class}, tree="[0]")
     private Output<String> instanceTypeId;
 
     /**
-     * @return 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+     * @return Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
      * 
      */
     public Output<String> instanceTypeId() {
         return this.instanceTypeId;
     }
     /**
-     * 工作区名称，字符串形式，长度限制为 1～100。
+     * Workspace name, string, length limit 1–100
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 工作区名称，字符串形式，长度限制为 1～100。
+     * @return Workspace name, string, length limit 1–100
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 工作区预期欠费回收时间，RFC3339 格式。
+     * Workspace expected overdue recovery time, RFC3339 format
      * 
      */
     @Export(name="overdueReclaimTime", refs={String.class}, tree="[0]")
     private Output<String> overdueReclaimTime;
 
     /**
-     * @return 工作区预期欠费回收时间，RFC3339 格式。
+     * @return Workspace expected overdue recovery time, RFC3339 format
      * 
      */
     public Output<String> overdueReclaimTime() {
         return this.overdueReclaimTime;
     }
     /**
-     * 工作区 BasicAuth 密码。
+     * Workspace BasicAuth password
      * 
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
-     * @return 工作区 BasicAuth 密码。
+     * @return Workspace BasicAuth password
      * 
      */
     public Output<String> password() {
         return this.password;
     }
     /**
-     * 项目名称。
+     * Project name
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 工作区 Push Gateway URL 地址。
+     * Workspace public Push Gateway URL address.
+     * 
+     */
+    @Export(name="prometheusPushEndpoint", refs={String.class}, tree="[0]")
+    private Output<String> prometheusPushEndpoint;
+
+    /**
+     * @return Workspace public Push Gateway URL address.
+     * 
+     */
+    public Output<String> prometheusPushEndpoint() {
+        return this.prometheusPushEndpoint;
+    }
+    /**
+     * Workspace Push Gateway URL address
      * 
      */
     @Export(name="prometheusPushIntranetEndpoint", refs={String.class}, tree="[0]")
     private Output<String> prometheusPushIntranetEndpoint;
 
     /**
-     * @return 工作区 Push Gateway URL 地址。
+     * @return Workspace Push Gateway URL address
      * 
      */
     public Output<String> prometheusPushIntranetEndpoint() {
         return this.prometheusPushIntranetEndpoint;
     }
     /**
-     * 工作区 Query URL 地址。
+     * Workspace public Query URL address.
+     * 
+     */
+    @Export(name="prometheusQueryEndpoint", refs={String.class}, tree="[0]")
+    private Output<String> prometheusQueryEndpoint;
+
+    /**
+     * @return Workspace public Query URL address.
+     * 
+     */
+    public Output<String> prometheusQueryEndpoint() {
+        return this.prometheusQueryEndpoint;
+    }
+    /**
+     * Workspace Query URL address
      * 
      */
     @Export(name="prometheusQueryIntranetEndpoint", refs={String.class}, tree="[0]")
     private Output<String> prometheusQueryIntranetEndpoint;
 
     /**
-     * @return 工作区 Query URL 地址。
+     * @return Workspace Query URL address
      * 
      */
     public Output<String> prometheusQueryIntranetEndpoint() {
         return this.prometheusQueryIntranetEndpoint;
     }
     /**
-     * 工作区 RemoteWrite URL 地址。
+     * Workspace public RemoteWrite URL address.
+     * 
+     */
+    @Export(name="prometheusWriteEndpoint", refs={String.class}, tree="[0]")
+    private Output<String> prometheusWriteEndpoint;
+
+    /**
+     * @return Workspace public RemoteWrite URL address.
+     * 
+     */
+    public Output<String> prometheusWriteEndpoint() {
+        return this.prometheusWriteEndpoint;
+    }
+    /**
+     * Workspace RemoteWrite URL address
      * 
      */
     @Export(name="prometheusWriteIntranetEndpoint", refs={String.class}, tree="[0]")
     private Output<String> prometheusWriteIntranetEndpoint;
 
     /**
-     * @return 工作区 RemoteWrite URL 地址。
+     * @return Workspace RemoteWrite URL address
      * 
      */
     public Output<String> prometheusWriteIntranetEndpoint() {
         return this.prometheusWriteIntranetEndpoint;
     }
     /**
-     * 工作区配额详情。
+     * Whether to enable workspace public access capability. true: enabled, false: disabled.
+     * 
+     */
+    @Export(name="publicAccessEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> publicAccessEnabled;
+
+    /**
+     * @return Whether to enable workspace public access capability. true: enabled, false: disabled.
+     * 
+     */
+    public Output<Boolean> publicAccessEnabled() {
+        return this.publicAccessEnabled;
+    }
+    /**
+     * Workspace public Query bandwidth (Mbps).
+     * 
+     */
+    @Export(name="publicQueryBandwidth", refs={Integer.class}, tree="[0]")
+    private Output<Integer> publicQueryBandwidth;
+
+    /**
+     * @return Workspace public Query bandwidth (Mbps).
+     * 
+     */
+    public Output<Integer> publicQueryBandwidth() {
+        return this.publicQueryBandwidth;
+    }
+    /**
+     * Workspace public RemoteWrite bandwidth (Mbps).
+     * 
+     */
+    @Export(name="publicWriteBandwidth", refs={Integer.class}, tree="[0]")
+    private Output<Integer> publicWriteBandwidth;
+
+    /**
+     * @return Workspace public RemoteWrite bandwidth (Mbps).
+     * 
+     */
+    public Output<Integer> publicWriteBandwidth() {
+        return this.publicWriteBandwidth;
+    }
+    /**
+     * Workspace quota details
      * 
      */
     @Export(name="quota", refs={WorkspaceQuota.class}, tree="[0]")
     private Output<WorkspaceQuota> quota;
 
     /**
-     * @return 工作区配额详情。
+     * @return Workspace quota details
      * 
      */
     public Output<WorkspaceQuota> quota() {
         return this.quota;
     }
     /**
-     * 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+     * Workspace public Query search latency offset.
+     * 
+     */
+    @Export(name="searchLatencyOffset", refs={String.class}, tree="[0]")
+    private Output<String> searchLatencyOffset;
+
+    /**
+     * @return Workspace public Query search latency offset.
+     * 
+     */
+    public Output<String> searchLatencyOffset() {
+        return this.searchLatencyOffset;
+    }
+    /**
+     * Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+     * @return Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
      * 
      */
     public Output<String> status() {
@@ -280,42 +411,42 @@ public class Workspace extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 工作区用量。
+     * Workspace usage
      * 
      */
     @Export(name="usage", refs={WorkspaceUsage.class}, tree="[0]")
     private Output<WorkspaceUsage> usage;
 
     /**
-     * @return 工作区用量。
+     * @return Workspace usage
      * 
      */
     public Output<WorkspaceUsage> usage() {
         return this.usage;
     }
     /**
-     * 工作区 BasicAuth 用户名。
+     * Workspace BasicAuth username
      * 
      */
     @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**
-     * @return 工作区 BasicAuth 用户名。
+     * @return Workspace BasicAuth username
      * 
      */
     public Output<String> username() {
         return this.username;
     }
     /**
-     * 工作区Id。
+     * Workspace ID
      * 
      */
     @Export(name="workspaceId", refs={String.class}, tree="[0]")
     private Output<String> workspaceId;
 
     /**
-     * @return 工作区Id。
+     * @return Workspace ID
      * 
      */
     public Output<String> workspaceId() {

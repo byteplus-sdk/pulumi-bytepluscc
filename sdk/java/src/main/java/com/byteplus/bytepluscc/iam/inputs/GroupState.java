@@ -20,14 +20,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     public static final GroupState Empty = new GroupState();
 
     /**
-     * 用户组所属主账号的ID。
+     * ID of the primary account to which the user group belongs.
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<Integer> accountId;
 
     /**
-     * @return 用户组所属主账号的ID。
+     * @return ID of the primary account to which the user group belongs.
      * 
      */
     public Optional<Output<Integer>> accountId() {
@@ -42,14 +42,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组的创建时间。
+     * User group creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 用户组的创建时间。
+     * @return User group creation time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -57,14 +57,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组描述信息。长度不超过128。
+     * User group description. Maximum length: 128 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 用户组描述信息。长度不超过128。
+     * @return User group description. Maximum length: 128 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -72,14 +72,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组显示名称。长度不超过64。
+     * User group display name. Maximum length: 64 characters.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return 用户组显示名称。长度不超过64。
+     * @return User group display name. Maximum length: 64 characters.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -87,14 +87,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组的更新时间。
+     * User group update time.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 用户组的更新时间。
+     * @return User group update time.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -102,14 +102,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组ID。
+     * User group ID.
      * 
      */
     @Import(name="userGroupId")
     private @Nullable Output<Integer> userGroupId;
 
     /**
-     * @return 用户组ID。
+     * @return User group ID.
      * 
      */
     public Optional<Output<Integer>> userGroupId() {
@@ -117,14 +117,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组名称。长度1~64，支持英文、数字和.-_符号。
+     * User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
      * 
      */
     @Import(name="userGroupName")
     private @Nullable Output<String> userGroupName;
 
     /**
-     * @return 用户组名称。长度1~64，支持英文、数字和.-_符号。
+     * @return User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
      * 
      */
     public Optional<Output<String>> userGroupName() {
@@ -171,7 +171,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 用户组所属主账号的ID。
+         * @param accountId ID of the primary account to which the user group belongs.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 用户组所属主账号的ID。
+         * @param accountId ID of the primary account to which the user group belongs.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 用户组的创建时间。
+         * @param createdTime User group creation time.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 用户组的创建时间。
+         * @param createdTime User group creation time.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 用户组描述信息。长度不超过128。
+         * @param description User group description. Maximum length: 128 characters.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 用户组描述信息。长度不超过128。
+         * @param description User group description. Maximum length: 128 characters.
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 用户组显示名称。长度不超过64。
+         * @param displayName User group display name. Maximum length: 64 characters.
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 用户组显示名称。长度不超过64。
+         * @param displayName User group display name. Maximum length: 64 characters.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 用户组的更新时间。
+         * @param updatedTime User group update time.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 用户组的更新时间。
+         * @param updatedTime User group update time.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userGroupId 用户组ID。
+         * @param userGroupId User group ID.
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userGroupId 用户组ID。
+         * @param userGroupId User group ID.
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userGroupName 用户组名称。长度1~64，支持英文、数字和.-_符号。
+         * @param userGroupName User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userGroupName 用户组名称。长度1~64，支持英文、数字和.-_符号。
+         * @param userGroupName User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
          * 
          * @return builder
          * 

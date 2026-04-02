@@ -65,15 +65,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class GetRuleResult
     {
         /// <summary>
-        /// 转发规则的描述。
+        /// Forwarding rule description.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 转发规则的域名。
+        /// Domain name of the forwarding rule.
         /// </summary>
         public readonly string Domain;
         /// <summary>
-        /// 转发规则服务器组配置
+        /// Forwarding rule server group configuration.
         /// </summary>
         public readonly Outputs.GetRuleForwardGroupConfigResult ForwardGroupConfig;
         /// <summary>
@@ -81,55 +81,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 监听器ID。
+        /// Listener ID.
         /// </summary>
         public readonly string ListenerId;
         /// <summary>
-        /// 标准版转发规则优先级。
+        /// Standard edition forwarding rule priority.
         /// </summary>
         public readonly int Priority;
         /// <summary>
-        /// 重定向相关配置信息。
+        /// Redirect-related configuration information.
         /// </summary>
         public readonly Outputs.GetRuleRedirectConfigResult RedirectConfig;
         /// <summary>
-        /// 重定向相关配置信息。
+        /// Redirect-related configuration information.
         /// </summary>
         public readonly Outputs.GetRuleRewriteConfigResult RewriteConfig;
         /// <summary>
-        /// 转发规则重写配置开关。on：开启。off：关闭。
+        /// Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
         /// </summary>
         public readonly string RewriteEnabled;
         /// <summary>
-        /// 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+        /// Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
         /// </summary>
         public readonly string RuleAction;
         /// <summary>
-        /// 标准版转发规则动作。
+        /// Standard edition forwarding rule action.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRuleRuleActionResult> RuleActions;
         /// <summary>
-        /// 标准版转发规则条件。
+        /// Standard edition forwarding rule condition.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRuleRuleConditionResult> RuleConditions;
         /// <summary>
-        /// 转发规则ID。
+        /// Forwarding rule ID.
         /// </summary>
         public readonly string RuleId;
         /// <summary>
-        /// 转发规则关联的后端服务器组ID。
+        /// Backend server group ID associated with the forwarding rule.
         /// </summary>
         public readonly string ServerGroupId;
         /// <summary>
-        /// 转发规则 QPS 限速开关。on：开启。off：关闭。
+        /// Forwarding rule QPS throttling switch. on: enabled. off: disabled.
         /// </summary>
         public readonly string TrafficLimitEnabled;
         /// <summary>
-        /// 每秒请求数。取值范围：100～100000。
+        /// Requests per second. Range: 100–100000.
         /// </summary>
         public readonly int TrafficLimitQps;
         /// <summary>
-        /// 转发规则的URL。
+        /// Forwarding rule URL.
         /// </summary>
         public readonly string Url;
 

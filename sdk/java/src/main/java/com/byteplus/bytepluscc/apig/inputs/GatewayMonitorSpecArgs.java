@@ -17,14 +17,14 @@ public final class GatewayMonitorSpecArgs extends com.pulumi.resources.ResourceA
     public static final GatewayMonitorSpecArgs Empty = new GatewayMonitorSpecArgs();
 
     /**
-     * 托管Prometheus（VMP）服务。
+     * Managed Prometheus (VMP) service
      * 
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
-     * @return 托管Prometheus（VMP）服务。
+     * @return Managed Prometheus (VMP) service
      * 
      */
     public Optional<Output<Boolean>> enable() {
@@ -32,14 +32,14 @@ public final class GatewayMonitorSpecArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * Prometheus工作区ID。
+     * Prometheus workspace ID
      * 
      */
     @Import(name="workspaceId")
     private @Nullable Output<String> workspaceId;
 
     /**
-     * @return Prometheus工作区ID。
+     * @return Prometheus workspace ID
      * 
      */
     public Optional<Output<String>> workspaceId() {
@@ -72,7 +72,7 @@ public final class GatewayMonitorSpecArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param enable 托管Prometheus（VMP）服务。
+         * @param enable Managed Prometheus (VMP) service
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class GatewayMonitorSpecArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param enable 托管Prometheus（VMP）服务。
+         * @param enable Managed Prometheus (VMP) service
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class GatewayMonitorSpecArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param workspaceId Prometheus工作区ID。
+         * @param workspaceId Prometheus workspace ID
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class GatewayMonitorSpecArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param workspaceId Prometheus工作区ID。
+         * @param workspaceId Prometheus workspace ID
          * 
          * @return builder
          * 

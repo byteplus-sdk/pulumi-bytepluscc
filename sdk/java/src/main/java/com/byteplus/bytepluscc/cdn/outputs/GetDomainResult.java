@@ -55,108 +55,107 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainResult {
     /**
-     * @return 表示 &#34;地域访问控制&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
      * 
      */
     private GetDomainAreaAccessRule areaAccessRule;
     /**
-     * @return 表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
+     * @return Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
      * 
      */
     private List<String> backupOrigins;
     /**
-     * @return 表示 &#34;浏览器缓存&#34; 特性的配置模块。该特性默认为禁用。该参数值表示一个规则列表，说明如下：每个列表元素是一个缓存规则的配置。您最多可以创建 50 条规则。列表中元素的顺序表示对应规则的优先级。列表中规则的优先级最高。如果您创建了多个规则，您需要留意规则之间是否存在包含关系。如果存在包含关系，作用范围较大的规则应出现在作用范围较小的规则的后面。
+     * @return Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
      * 
      */
     private List<GetDomainBrowserCach> browserCaches;
     /**
-     * @return 表示 &#34;共享缓存&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
      * 
      */
     private GetDomainCacheHost cacheHost;
     /**
-     * @return 表示 &#34;缓存键&#34; 特性的配置模块。该特性默认为禁用。该参数值表示一个规则列表，说明如下：每个列表元素是一个缓存键规则的配置。您最多可以创建 50 条规则。列表中元素的顺序表示对应规则的优先级。列表中规则的优先级最高。如果您创建了多个规则，您需要留意规则之间是否存在包含关系。如果存在包含关系，作用范围较大的规则应出现在作用范围较小的规则的后面。
+     * @return Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
      * 
      */
     private List<GetDomainCacheKey> cacheKeys;
     /**
-     * @return 表示该域名在 &#34;共享缓存&#34; 配置中的角色。该参数有以下取值：target*host：表示 &#34;目标域名&#34;。cache*shared_on：表示 &#34;配置域名&#34;。如果该域名未在任何 &#34;共享缓存&#34; 配置中，该参数值是空（&#34;&#34;）。
+     * @return Indicates the role of this domain in the &#39;shared cache&#39; configuration. The parameter has the following values: target*host: indicates the &#39;target domain&#39;. cache*shared_on: indicates the &#39;configured domain&#39;. If this domain is not included in any &#39;shared cache&#39; configuration, the parameter value is an empty string (&#39;&#39;).
      * 
      */
     private String cacheShared;
     /**
-     * @return 如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 &#34;共享缓存&#34; 配置中的 &#34;目标域名&#34;。
-     * 如果 CacheShared 是 target_host，该参数值为空（&#34;&#34;）。
+     * @return If CacheShared is cache*shared*on, this parameter indicates the &#39;Target Domain&#39; in the &#39;Shared Cache&#39; configuration for this domain name. If CacheShared is target_host, this parameter is empty (&#34;&#34;).
      * 
      */
     private String cacheSharedTargetHost;
     /**
-     * @return 表示 &#34;缓存规则&#34; 特性的配置模块。该特性默认为禁用，表示不创建自定义规则。列表中最多可以包含 50 条规则。列表中规则的顺序定义了规则的优先级。列表中第一条规则的优先级最高。规则中的过滤器定义了规则的作用范围。如果您创建了多条规则，作用范围较大的规则应出现在作用范围较小的规则后面。
+     * @return Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
      * 
      */
     private List<GetDomainCach> caches;
     /**
-     * @return 表示内容分发网络为该加速域名分配的 CNAME。
+     * @return Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
      * 
      */
     private String cname;
     /**
-     * @return 表示 &#34;智能压缩&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
      * 
      */
     private GetDomainCompression compression;
     /**
-     * @return 表示 &#34;条件源站&#34; 特性的配置模块。
+     * @return Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
      * 
      */
     private GetDomainConditionalOrigin conditionalOrigin;
     /**
-     * @return 表示该加速域名的创建时间，格式是 Unix 时间戳。
+     * @return Indicates the creation time of this accelerated domain name, in Unix timestamp format.
      * 
      */
     private Integer createdTime;
     /**
-     * @return 表示 &#34;自定义错误页面&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
      * 
      */
     private GetDomainCustomErrorPage customErrorPage;
     /**
-     * @return 表示 &#34;自定义头部黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
      * 
      */
     private GetDomainCustomizeAccessRule customizeAccessRule;
     /**
-     * @return 表示该加速域名。
+     * @return Indicates the acceleration domain name.
      * 
      */
     private String domain;
     /**
-     * @return 表示该域名的锁定状态。
+     * @return Indicates the lock status of this domain name.
      * 
      */
     private GetDomainDomainLock domainLock;
     /**
-     * @return 表示 &#34;下载限速&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
      * 
      */
     private GetDomainDownloadSpeedLimit downloadSpeedLimit;
     /**
-     * @return 表示是否启用 &#34;回源重定向跟随&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
      * 
      */
     private Boolean followRedirect;
     /**
-     * @return 表示 &#34;HTTPS 强制跳转到 HTTP&#34; 特性的配置模块。该特性默认是禁用。
+     * @return Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
      * 
      */
     private GetDomainHttpForcedRedirect httpForcedRedirect;
     /**
-     * @return 表示 HTTPS 配置模块。该功能默认是禁用。
+     * @return Indicates the HTTPS configuration module. This feature is disabled by default.
      * 
      */
     private GetDomainHttps https;
     /**
-     * @return 表示 IPv6 特性的配置模块。
+     * @return Indicates the configuration module for the IPv6 feature.
      * 
      */
     private GetDomainIPv6 iPv6;
@@ -166,345 +165,344 @@ public final class GetDomainResult {
      */
     private String id;
     /**
-     * @return 表示 &#34;IP 黑白名单&#34; 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+     * @return Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
      * 
      */
     private GetDomainIpAccessRule ipAccessRule;
     /**
-     * @return 表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
+     * @return Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
      * 
      */
     private Boolean isConflictDomain;
     /**
-     * @return 表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
+     * @return Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
      * 
      */
     private String lockStatus;
     /**
-     * @return 表示 &#34;禁用 HTTP Method&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
      * 
      */
     private GetDomainMethodDeniedRule methodDeniedRule;
     /**
-     * @return 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the multi-range feature. This feature is disabled by default
      * 
      */
     private GetDomainMultiRange multiRange;
     /**
-     * @return 表示 &#34;状态码缓存&#34; 特性的配置模块。该特性默认为禁用。该参数值是一个列表，说明如下：每个列表元素是一个缓存规则配置。您最多可以创建 50 条规则。列表中元素的顺序表示对应规则的优先级。列表中第一个规则的优先级最高。如果您创建了多个规则，您需要留意规则之间是否存在包含关系。如果存在包含关系，作用范围较大的规则应出现在作用范围较小的规则的后面。
+     * @return Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
      * 
      */
     private List<GetDomainNegativeCach> negativeCaches;
     /**
-     * @return 表示 &#34;离线缓存&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#39;offline cache&#39; feature.
      * 
      */
     private GetDomainOfflineCache offlineCache;
     /**
-     * @return 表示 &#34;Origin 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
      * 
      */
     private GetDomainOriginAccessRule originAccessRule;
     /**
-     * @return 表示 &#34;回源参数&#34; 配置模块的规则列表。列表中最多可以包含 50 条规则。每条规则包含一个过滤器（Condition）和 CDN 执行的操作（OriginArgAction）。列表中规则的顺序定义了规则的优先级。列表中第一条规则的优先级最高。规则中的过滤器定义了规则的作用范围。如果您创建了多条规则，作用范围较大的规则应出现在作用范围较小的规则后面。当收到一个用户请求时，CDN 按规则的优先级，从高到低尝试将请求与规则匹配。如果请求匹配了一条规则，CDN 就停止处理其余规则。你必须在规则列表的最后添加以下这条预设规则。您不可更改该规则中的 Condition，但可以更改 OriginArgAction 中的配置。
+     * @return Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
      * 
      */
     private List<GetDomainOriginArg> originArgs;
     /**
-     * @return 源站证书校验
+     * @return Origin certificate validation
      * 
      */
     private GetDomainOriginCertCheck originCertCheck;
     /**
-     * @return 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+     * @return If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
      * 
      */
     private String originHost;
     /**
-     * @return 表示 &#34;IPv6 回源&#34; 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+     * @return Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
      * 
      */
     private String originIPv6;
     /**
-     * @return 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+     * @return Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
      * 
      */
     private String originProtocol;
     /**
-     * @return 表示是否启用 &#34;Range 回源&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
      * 
      */
     private Boolean originRange;
     /**
-     * @return 表示 &#34;回源重试设置&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
      * 
      */
     private GetDomainOriginRetry originRetry;
     /**
-     * @return 表示 &#34;回源 URL 改写&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
      * 
      */
     private GetDomainOriginRewrite originRewrite;
     /**
-     * @return 表示 &#34;回源 SNI&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#39;origin SNI&#39; feature.
      * 
      */
     private GetDomainOriginSni originSni;
     /**
-     * @return 表示基础源站配置模块。
+     * @return Indicates the basic origin configuration module.
      * 
      */
     private List<GetDomainOrigin> origins;
     /**
-     * @return 表示 &#34;页面优化&#34; 特性的配置模块。
+     * @return Specifies the configuration module for the &#39;page optimization&#39; feature.
      * 
      */
     private GetDomainPageOptimization pageOptimization;
     /**
-     * @return 表示该域名配置的主源站列表。
+     * @return Indicates the list of primary origin servers configured for this domain name.
      * 
      */
     private List<String> primaryOrigins;
     /**
-     * @return 表示该加速域名归属的项目。
+     * @return Indicates the project to which the acceleration domain belongs
      * 
      */
     private String project;
     /**
-     * @return 表示 QUIC 特性的配置模块。该特性默认是禁用。
+     * @return Indicates the configuration module for the QUIC feature. This feature is disabled by default.
      * 
      */
     private GetDomainQuic quic;
     /**
-     * @return 表示 &#34;URL 重定向改写&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
      * 
      */
     private GetDomainRedirectionRewrite redirectionRewrite;
     /**
-     * @return 表示 &#34;Referer 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
      * 
      */
     private GetDomainRefererAccessRule refererAccessRule;
     /**
-     * @return 表示 &#34;远程鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
      * 
      */
     private GetDomainRemoteAuth remoteAuth;
     /**
-     * @return 表示 &#34;自定义拦截&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
      * 
      */
     private GetDomainRequestBlockRule requestBlockRule;
     /**
-     * @return 表示 &#34;回源 HTTP 请求头&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
      * 
      */
     private List<GetDomainRequestHeader> requestHeaders;
     /**
-     * @return 表示 &#34;HTTP 响应头&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
      * 
      */
     private List<GetDomainResponseHeader> responseHeaders;
     /**
-     * @return 表示 &#34;标准 HLS 加密改写&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
      * 
      */
     private GetDomainRewriteHls rewriteHls;
     /**
-     * @return 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+     * @return Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
      * 
      */
     private String serviceRegion;
     /**
-     * @return 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+     * @return Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
      * 
      */
     private String serviceType;
     /**
-     * @return 表示 &#34;URL 鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
      * 
      */
     private GetDomainSignedUrlAuth signedUrlAuth;
     /**
-     * @return 表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
+     * @return Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
      * 
      */
     private String status;
     /**
-     * @return 标签信息
+     * @return Tag information
      * 
      */
     private List<GetDomainTag> tags;
     /**
-     * @return 表示 &#34;回源超时时间&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
      * 
      */
     private GetDomainTimeout timeout;
     /**
-     * @return 表示 &#34;UA 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
      * 
      */
     private GetDomainUaAccessRule uaAccessRule;
     /**
-     * @return 表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
+     * @return Indicates the most recent update time for this domain configuration, in Unix timestamp format.
      * 
      */
     private Integer updatedTime;
     /**
-     * @return 表示 &#34;URL 标准化&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
      * 
      */
     private GetDomainUrlNormalize urlNormalize;
     /**
-     * @return 表示 &#34;视频拖拽&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
      * 
      */
     private GetDomainVideoDrag videoDrag;
 
     private GetDomainResult() {}
     /**
-     * @return 表示 &#34;地域访问控制&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
      * 
      */
     public GetDomainAreaAccessRule areaAccessRule() {
         return this.areaAccessRule;
     }
     /**
-     * @return 表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
+     * @return Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
      * 
      */
     public List<String> backupOrigins() {
         return this.backupOrigins;
     }
     /**
-     * @return 表示 &#34;浏览器缓存&#34; 特性的配置模块。该特性默认为禁用。该参数值表示一个规则列表，说明如下：每个列表元素是一个缓存规则的配置。您最多可以创建 50 条规则。列表中元素的顺序表示对应规则的优先级。列表中规则的优先级最高。如果您创建了多个规则，您需要留意规则之间是否存在包含关系。如果存在包含关系，作用范围较大的规则应出现在作用范围较小的规则的后面。
+     * @return Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
      * 
      */
     public List<GetDomainBrowserCach> browserCaches() {
         return this.browserCaches;
     }
     /**
-     * @return 表示 &#34;共享缓存&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
      * 
      */
     public GetDomainCacheHost cacheHost() {
         return this.cacheHost;
     }
     /**
-     * @return 表示 &#34;缓存键&#34; 特性的配置模块。该特性默认为禁用。该参数值表示一个规则列表，说明如下：每个列表元素是一个缓存键规则的配置。您最多可以创建 50 条规则。列表中元素的顺序表示对应规则的优先级。列表中规则的优先级最高。如果您创建了多个规则，您需要留意规则之间是否存在包含关系。如果存在包含关系，作用范围较大的规则应出现在作用范围较小的规则的后面。
+     * @return Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
      * 
      */
     public List<GetDomainCacheKey> cacheKeys() {
         return this.cacheKeys;
     }
     /**
-     * @return 表示该域名在 &#34;共享缓存&#34; 配置中的角色。该参数有以下取值：target*host：表示 &#34;目标域名&#34;。cache*shared_on：表示 &#34;配置域名&#34;。如果该域名未在任何 &#34;共享缓存&#34; 配置中，该参数值是空（&#34;&#34;）。
+     * @return Indicates the role of this domain in the &#39;shared cache&#39; configuration. The parameter has the following values: target*host: indicates the &#39;target domain&#39;. cache*shared_on: indicates the &#39;configured domain&#39;. If this domain is not included in any &#39;shared cache&#39; configuration, the parameter value is an empty string (&#39;&#39;).
      * 
      */
     public String cacheShared() {
         return this.cacheShared;
     }
     /**
-     * @return 如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 &#34;共享缓存&#34; 配置中的 &#34;目标域名&#34;。
-     * 如果 CacheShared 是 target_host，该参数值为空（&#34;&#34;）。
+     * @return If CacheShared is cache*shared*on, this parameter indicates the &#39;Target Domain&#39; in the &#39;Shared Cache&#39; configuration for this domain name. If CacheShared is target_host, this parameter is empty (&#34;&#34;).
      * 
      */
     public String cacheSharedTargetHost() {
         return this.cacheSharedTargetHost;
     }
     /**
-     * @return 表示 &#34;缓存规则&#34; 特性的配置模块。该特性默认为禁用，表示不创建自定义规则。列表中最多可以包含 50 条规则。列表中规则的顺序定义了规则的优先级。列表中第一条规则的优先级最高。规则中的过滤器定义了规则的作用范围。如果您创建了多条规则，作用范围较大的规则应出现在作用范围较小的规则后面。
+     * @return Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
      * 
      */
     public List<GetDomainCach> caches() {
         return this.caches;
     }
     /**
-     * @return 表示内容分发网络为该加速域名分配的 CNAME。
+     * @return Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
      * 
      */
     public String cname() {
         return this.cname;
     }
     /**
-     * @return 表示 &#34;智能压缩&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
      * 
      */
     public GetDomainCompression compression() {
         return this.compression;
     }
     /**
-     * @return 表示 &#34;条件源站&#34; 特性的配置模块。
+     * @return Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
      * 
      */
     public GetDomainConditionalOrigin conditionalOrigin() {
         return this.conditionalOrigin;
     }
     /**
-     * @return 表示该加速域名的创建时间，格式是 Unix 时间戳。
+     * @return Indicates the creation time of this accelerated domain name, in Unix timestamp format.
      * 
      */
     public Integer createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 表示 &#34;自定义错误页面&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
      * 
      */
     public GetDomainCustomErrorPage customErrorPage() {
         return this.customErrorPage;
     }
     /**
-     * @return 表示 &#34;自定义头部黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
      * 
      */
     public GetDomainCustomizeAccessRule customizeAccessRule() {
         return this.customizeAccessRule;
     }
     /**
-     * @return 表示该加速域名。
+     * @return Indicates the acceleration domain name.
      * 
      */
     public String domain() {
         return this.domain;
     }
     /**
-     * @return 表示该域名的锁定状态。
+     * @return Indicates the lock status of this domain name.
      * 
      */
     public GetDomainDomainLock domainLock() {
         return this.domainLock;
     }
     /**
-     * @return 表示 &#34;下载限速&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
      * 
      */
     public GetDomainDownloadSpeedLimit downloadSpeedLimit() {
         return this.downloadSpeedLimit;
     }
     /**
-     * @return 表示是否启用 &#34;回源重定向跟随&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
      * 
      */
     public Boolean followRedirect() {
         return this.followRedirect;
     }
     /**
-     * @return 表示 &#34;HTTPS 强制跳转到 HTTP&#34; 特性的配置模块。该特性默认是禁用。
+     * @return Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
      * 
      */
     public GetDomainHttpForcedRedirect httpForcedRedirect() {
         return this.httpForcedRedirect;
     }
     /**
-     * @return 表示 HTTPS 配置模块。该功能默认是禁用。
+     * @return Indicates the HTTPS configuration module. This feature is disabled by default.
      * 
      */
     public GetDomainHttps https() {
         return this.https;
     }
     /**
-     * @return 表示 IPv6 特性的配置模块。
+     * @return Indicates the configuration module for the IPv6 feature.
      * 
      */
     public GetDomainIPv6 iPv6() {
@@ -518,273 +516,273 @@ public final class GetDomainResult {
         return this.id;
     }
     /**
-     * @return 表示 &#34;IP 黑白名单&#34; 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+     * @return Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
      * 
      */
     public GetDomainIpAccessRule ipAccessRule() {
         return this.ipAccessRule;
     }
     /**
-     * @return 表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
+     * @return Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
      * 
      */
     public Boolean isConflictDomain() {
         return this.isConflictDomain;
     }
     /**
-     * @return 表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
+     * @return Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
      * 
      */
     public String lockStatus() {
         return this.lockStatus;
     }
     /**
-     * @return 表示 &#34;禁用 HTTP Method&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
      * 
      */
     public GetDomainMethodDeniedRule methodDeniedRule() {
         return this.methodDeniedRule;
     }
     /**
-     * @return 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the multi-range feature. This feature is disabled by default
      * 
      */
     public GetDomainMultiRange multiRange() {
         return this.multiRange;
     }
     /**
-     * @return 表示 &#34;状态码缓存&#34; 特性的配置模块。该特性默认为禁用。该参数值是一个列表，说明如下：每个列表元素是一个缓存规则配置。您最多可以创建 50 条规则。列表中元素的顺序表示对应规则的优先级。列表中第一个规则的优先级最高。如果您创建了多个规则，您需要留意规则之间是否存在包含关系。如果存在包含关系，作用范围较大的规则应出现在作用范围较小的规则的后面。
+     * @return Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
      * 
      */
     public List<GetDomainNegativeCach> negativeCaches() {
         return this.negativeCaches;
     }
     /**
-     * @return 表示 &#34;离线缓存&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#39;offline cache&#39; feature.
      * 
      */
     public GetDomainOfflineCache offlineCache() {
         return this.offlineCache;
     }
     /**
-     * @return 表示 &#34;Origin 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
      * 
      */
     public GetDomainOriginAccessRule originAccessRule() {
         return this.originAccessRule;
     }
     /**
-     * @return 表示 &#34;回源参数&#34; 配置模块的规则列表。列表中最多可以包含 50 条规则。每条规则包含一个过滤器（Condition）和 CDN 执行的操作（OriginArgAction）。列表中规则的顺序定义了规则的优先级。列表中第一条规则的优先级最高。规则中的过滤器定义了规则的作用范围。如果您创建了多条规则，作用范围较大的规则应出现在作用范围较小的规则后面。当收到一个用户请求时，CDN 按规则的优先级，从高到低尝试将请求与规则匹配。如果请求匹配了一条规则，CDN 就停止处理其余规则。你必须在规则列表的最后添加以下这条预设规则。您不可更改该规则中的 Condition，但可以更改 OriginArgAction 中的配置。
+     * @return Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
      * 
      */
     public List<GetDomainOriginArg> originArgs() {
         return this.originArgs;
     }
     /**
-     * @return 源站证书校验
+     * @return Origin certificate validation
      * 
      */
     public GetDomainOriginCertCheck originCertCheck() {
         return this.originCertCheck;
     }
     /**
-     * @return 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+     * @return If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
      * 
      */
     public String originHost() {
         return this.originHost;
     }
     /**
-     * @return 表示 &#34;IPv6 回源&#34; 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+     * @return Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
      * 
      */
     public String originIPv6() {
         return this.originIPv6;
     }
     /**
-     * @return 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+     * @return Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
      * 
      */
     public String originProtocol() {
         return this.originProtocol;
     }
     /**
-     * @return 表示是否启用 &#34;Range 回源&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
      * 
      */
     public Boolean originRange() {
         return this.originRange;
     }
     /**
-     * @return 表示 &#34;回源重试设置&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
      * 
      */
     public GetDomainOriginRetry originRetry() {
         return this.originRetry;
     }
     /**
-     * @return 表示 &#34;回源 URL 改写&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
      * 
      */
     public GetDomainOriginRewrite originRewrite() {
         return this.originRewrite;
     }
     /**
-     * @return 表示 &#34;回源 SNI&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#39;origin SNI&#39; feature.
      * 
      */
     public GetDomainOriginSni originSni() {
         return this.originSni;
     }
     /**
-     * @return 表示基础源站配置模块。
+     * @return Indicates the basic origin configuration module.
      * 
      */
     public List<GetDomainOrigin> origins() {
         return this.origins;
     }
     /**
-     * @return 表示 &#34;页面优化&#34; 特性的配置模块。
+     * @return Specifies the configuration module for the &#39;page optimization&#39; feature.
      * 
      */
     public GetDomainPageOptimization pageOptimization() {
         return this.pageOptimization;
     }
     /**
-     * @return 表示该域名配置的主源站列表。
+     * @return Indicates the list of primary origin servers configured for this domain name.
      * 
      */
     public List<String> primaryOrigins() {
         return this.primaryOrigins;
     }
     /**
-     * @return 表示该加速域名归属的项目。
+     * @return Indicates the project to which the acceleration domain belongs
      * 
      */
     public String project() {
         return this.project;
     }
     /**
-     * @return 表示 QUIC 特性的配置模块。该特性默认是禁用。
+     * @return Indicates the configuration module for the QUIC feature. This feature is disabled by default.
      * 
      */
     public GetDomainQuic quic() {
         return this.quic;
     }
     /**
-     * @return 表示 &#34;URL 重定向改写&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
      * 
      */
     public GetDomainRedirectionRewrite redirectionRewrite() {
         return this.redirectionRewrite;
     }
     /**
-     * @return 表示 &#34;Referer 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
      * 
      */
     public GetDomainRefererAccessRule refererAccessRule() {
         return this.refererAccessRule;
     }
     /**
-     * @return 表示 &#34;远程鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
      * 
      */
     public GetDomainRemoteAuth remoteAuth() {
         return this.remoteAuth;
     }
     /**
-     * @return 表示 &#34;自定义拦截&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
      * 
      */
     public GetDomainRequestBlockRule requestBlockRule() {
         return this.requestBlockRule;
     }
     /**
-     * @return 表示 &#34;回源 HTTP 请求头&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
      * 
      */
     public List<GetDomainRequestHeader> requestHeaders() {
         return this.requestHeaders;
     }
     /**
-     * @return 表示 &#34;HTTP 响应头&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
      * 
      */
     public List<GetDomainResponseHeader> responseHeaders() {
         return this.responseHeaders;
     }
     /**
-     * @return 表示 &#34;标准 HLS 加密改写&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
      * 
      */
     public GetDomainRewriteHls rewriteHls() {
         return this.rewriteHls;
     }
     /**
-     * @return 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+     * @return Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
      * 
      */
     public String serviceRegion() {
         return this.serviceRegion;
     }
     /**
-     * @return 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+     * @return Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
      * 
      */
     public String serviceType() {
         return this.serviceType;
     }
     /**
-     * @return 表示 &#34;URL 鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
      * 
      */
     public GetDomainSignedUrlAuth signedUrlAuth() {
         return this.signedUrlAuth;
     }
     /**
-     * @return 表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
+     * @return Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 标签信息
+     * @return Tag information
      * 
      */
     public List<GetDomainTag> tags() {
         return this.tags;
     }
     /**
-     * @return 表示 &#34;回源超时时间&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
      * 
      */
     public GetDomainTimeout timeout() {
         return this.timeout;
     }
     /**
-     * @return 表示 &#34;UA 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
      * 
      */
     public GetDomainUaAccessRule uaAccessRule() {
         return this.uaAccessRule;
     }
     /**
-     * @return 表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
+     * @return Indicates the most recent update time for this domain configuration, in Unix timestamp format.
      * 
      */
     public Integer updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 表示 &#34;URL 标准化&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
      * 
      */
     public GetDomainUrlNormalize urlNormalize() {
         return this.urlNormalize;
     }
     /**
-     * @return 表示 &#34;视频拖拽&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
      * 
      */
     public GetDomainVideoDrag videoDrag() {

@@ -30,23 +30,23 @@ type LookupProjectArgs struct {
 
 // A collection of values returned by getProject.
 type LookupProjectResult struct {
-	// 日志项目创建时间。
+	// Log project creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// 日志项目的简单描述。
+	// Brief description of the log project
 	Description string `pulumi:"description"`
-	// 日志项目所属的 IAM 项目。
+	// The IAM project associated with the log project
 	IamProjectName string `pulumi:"iamProjectName"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 私网连接域名。
+	// Private network connection domain name
 	InnerNetDomain string `pulumi:"innerNetDomain"`
-	// 日志项目的 ID。
+	// Log project ID
 	ProjectId string `pulumi:"projectId"`
-	// 日志项目名称。
+	// Log project name
 	ProjectName string `pulumi:"projectName"`
-	// 标签信息。
+	// Tag information
 	Tags []GetProjectTag `pulumi:"tags"`
-	// 当前日志项目下的日志主题数量。
+	// Number of log topics in the current log project
 	TopicCount int `pulumi:"topicCount"`
 }
 
@@ -84,17 +84,17 @@ func (o LookupProjectResultOutput) ToLookupProjectResultOutputWithContext(ctx co
 	return o
 }
 
-// 日志项目创建时间。
+// Log project creation time
 func (o LookupProjectResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 日志项目的简单描述。
+// Brief description of the log project
 func (o LookupProjectResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 日志项目所属的 IAM 项目。
+// The IAM project associated with the log project
 func (o LookupProjectResultOutput) IamProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.IamProjectName }).(pulumi.StringOutput)
 }
@@ -104,27 +104,27 @@ func (o LookupProjectResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 私网连接域名。
+// Private network connection domain name
 func (o LookupProjectResultOutput) InnerNetDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.InnerNetDomain }).(pulumi.StringOutput)
 }
 
-// 日志项目的 ID。
+// Log project ID
 func (o LookupProjectResultOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.ProjectId }).(pulumi.StringOutput)
 }
 
-// 日志项目名称。
+// Log project name
 func (o LookupProjectResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 标签信息。
+// Tag information
 func (o LookupProjectResultOutput) Tags() GetProjectTagArrayOutput {
 	return o.ApplyT(func(v LookupProjectResult) []GetProjectTag { return v.Tags }).(GetProjectTagArrayOutput)
 }
 
-// 当前日志项目下的日志主题数量。
+// Number of log topics in the current log project
 func (o LookupProjectResultOutput) TopicCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupProjectResult) int { return v.TopicCount }).(pulumi.IntOutput)
 }

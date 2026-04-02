@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamTlsSettings {
     /**
-     * @return SNI。留空时会将访问网关的域名透传到upstream。
+     * @return SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
      * 
      */
     private String sni;
     /**
-     * @return TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+     * @return TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
      * 
      */
     private String tlsMode;
 
     private GetUpstreamTlsSettings() {}
     /**
-     * @return SNI。留空时会将访问网关的域名透传到upstream。
+     * @return SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
      * 
      */
     public String sni() {
         return this.sni;
     }
     /**
-     * @return TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+     * @return TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
      * 
      */
     public String tlsMode() {

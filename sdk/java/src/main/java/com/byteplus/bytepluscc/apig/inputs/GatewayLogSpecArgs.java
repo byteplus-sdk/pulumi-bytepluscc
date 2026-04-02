@@ -17,14 +17,14 @@ public final class GatewayLogSpecArgs extends com.pulumi.resources.ResourceArgs 
     public static final GatewayLogSpecArgs Empty = new GatewayLogSpecArgs();
 
     /**
-     * 是否开启日志服务。
+     * Whether to enable log service
      * 
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
-     * @return 是否开启日志服务。
+     * @return Whether to enable log service
      * 
      */
     public Optional<Output<Boolean>> enable() {
@@ -32,14 +32,14 @@ public final class GatewayLogSpecArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 日志项目ID。
+     * Log project ID
      * 
      */
     @Import(name="projectId")
     private @Nullable Output<String> projectId;
 
     /**
-     * @return 日志项目ID。
+     * @return Log project ID
      * 
      */
     public Optional<Output<String>> projectId() {
@@ -47,14 +47,14 @@ public final class GatewayLogSpecArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 日志主题ID。ProjectId 指定项目里面的日志主题。
+     * Log topic ID. ProjectId specifies the log topic within the project
      * 
      */
     @Import(name="topicId")
     private @Nullable Output<String> topicId;
 
     /**
-     * @return 日志主题ID。ProjectId 指定项目里面的日志主题。
+     * @return Log topic ID. ProjectId specifies the log topic within the project
      * 
      */
     public Optional<Output<String>> topicId() {
@@ -88,7 +88,7 @@ public final class GatewayLogSpecArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param enable 是否开启日志服务。
+         * @param enable Whether to enable log service
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class GatewayLogSpecArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param enable 是否开启日志服务。
+         * @param enable Whether to enable log service
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class GatewayLogSpecArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param projectId 日志项目ID。
+         * @param projectId Log project ID
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class GatewayLogSpecArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param projectId 日志项目ID。
+         * @param projectId Log project ID
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class GatewayLogSpecArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param topicId 日志主题ID。ProjectId 指定项目里面的日志主题。
+         * @param topicId Log topic ID. ProjectId specifies the log topic within the project
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class GatewayLogSpecArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param topicId 日志主题ID。ProjectId 指定项目里面的日志主题。
+         * @param topicId Log topic ID. ProjectId specifies the log topic within the project
          * 
          * @return builder
          * 

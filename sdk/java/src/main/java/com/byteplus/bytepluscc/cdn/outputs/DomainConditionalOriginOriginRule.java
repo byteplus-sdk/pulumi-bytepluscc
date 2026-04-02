@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainConditionalOriginOriginRule {
     /**
-     * @return 表示列表中一条规则的操作配置。
+     * @return Indicates the operation configuration for a rule in the list.
      * 
      */
     private @Nullable DomainConditionalOriginOriginRuleActions actions;
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private @Nullable DomainConditionalOriginOriginRuleCondition condition;
 
     private DomainConditionalOriginOriginRule() {}
     /**
-     * @return 表示列表中一条规则的操作配置。
+     * @return Indicates the operation configuration for a rule in the list.
      * 
      */
     public Optional<DomainConditionalOriginOriginRuleActions> actions() {
         return Optional.ofNullable(this.actions);
     }
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<DomainConditionalOriginOriginRuleCondition> condition() {

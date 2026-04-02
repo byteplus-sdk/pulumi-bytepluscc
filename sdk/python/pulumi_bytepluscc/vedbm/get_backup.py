@@ -78,7 +78,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupEndTime")
     def backup_end_time(self) -> builtins.str:
         """
-        备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         return pulumi.get(self, "backup_end_time")
 
@@ -86,7 +86,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupFileSize")
     def backup_file_size(self) -> builtins.int:
         """
-        备份文件大小，单位为 KiB。
+        Backup file size, unit: KiB
         """
         return pulumi.get(self, "backup_file_size")
 
@@ -94,7 +94,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupId")
     def backup_id(self) -> builtins.str:
         """
-        备份 ID。
+        Backup ID
         """
         return pulumi.get(self, "backup_id")
 
@@ -102,7 +102,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupMethod")
     def backup_method(self) -> builtins.str:
         """
-        备份方式，目前仅支持物理备份。
+        Backup method, currently only physical backup is supported
         """
         return pulumi.get(self, "backup_method")
 
@@ -110,7 +110,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupRetentionPeriod")
     def backup_retention_period(self) -> builtins.int:
         """
-        数据备份保留天数。
+        Data backup retention days
         """
         return pulumi.get(self, "backup_retention_period")
 
@@ -118,7 +118,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupStartTime")
     def backup_start_time(self) -> builtins.str:
         """
-        备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         return pulumi.get(self, "backup_start_time")
 
@@ -126,7 +126,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupStatus")
     def backup_status(self) -> builtins.str:
         """
-        备份状态。
+        Backup status
         """
         return pulumi.get(self, "backup_status")
 
@@ -134,7 +134,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupTime")
     def backup_time(self) -> builtins.str:
         """
-        执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+        Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
         """
         return pulumi.get(self, "backup_time")
 
@@ -142,7 +142,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupType")
     def backup_type(self) -> builtins.str:
         """
-        备份类型，目前仅支持全量备份。
+        Backup type, currently only full backup is supported
         """
         return pulumi.get(self, "backup_type")
 
@@ -150,7 +150,7 @@ class GetBackupResult:
     @pulumi.getter(name="consistentTime")
     def consistent_time(self) -> builtins.str:
         """
-        一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         return pulumi.get(self, "consistent_time")
 
@@ -158,7 +158,7 @@ class GetBackupResult:
     @pulumi.getter(name="continueBackup")
     def continue_backup(self) -> builtins.bool:
         """
-        是否开启持续备份，取值固定为 true。
+        Enable continuous backup, value is always true
         """
         return pulumi.get(self, "continue_backup")
 
@@ -166,7 +166,7 @@ class GetBackupResult:
     @pulumi.getter(name="createType")
     def create_type(self) -> builtins.str:
         """
-        创建类型。
+        Creation type
         """
         return pulumi.get(self, "create_type")
 
@@ -174,7 +174,7 @@ class GetBackupResult:
     @pulumi.getter(name="fullBackupPeriod")
     def full_backup_period(self) -> builtins.str:
         """
-        全量备份周期，多个取值用英文逗号（,）隔开。
+        Full backup cycle, use commas (,) to separate multiple values
         """
         return pulumi.get(self, "full_backup_period")
 
@@ -190,7 +190,7 @@ class GetBackupResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 

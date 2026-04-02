@@ -12,62 +12,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfig {
     /**
-     * @return 表示鉴权服务器的备地址。地址格式和要求与主地址相同。
+     * @return Indicates the backup address of the authentication server. The address format and requirements are the same as the primary address.
      * 
      */
     private @Nullable String backupRemoteAddr;
     /**
-     * @return 表示鉴权服务器的主地址，长度不能超过 100 个字符。主地址的格式是 \n\n://\n\n:\n\n 或 \n\n://\n\n:\n\n，其中：\n\n 是 http 或者 https。\n\n 不能是 localhost。\n\n 不能是 127.0.0.1。\n\n 是可选的。
+     * @return Indicates the primary address of the authentication server. The length must not exceed 100 characters. The primary address format is \n\n://\n\n:\n\n or \n\n://\n\n:\n\n, where: \n\n is http or https. \n\n cannot be localhost. \n\n cannot be 127.0.0.1. \n\n is optional.
      * 
      */
     private @Nullable String masterRemoteAddr;
     /**
-     * @return 表示鉴权请求的路径。鉴权地址和请求路径组成了完整的鉴权 URL。内容分发网络会把用户的请求转发到该鉴权 URL。该参数有以下取值：constant：表示鉴权请求中的路径与用户请求中的路径相同。variable：表示您需要在 pathValue 参数中指定一个鉴权请求中的路径。
+     * @return Indicates the path for the authentication request. The authentication address and request path together form the complete authentication URL. The content delivery network forwards the user&#39;s request to this authentication URL. The parameter accepts the following values: constant: The path in the authentication request is the same as the path in the user&#39;s request. variable: You need to specify a path for the authentication request in the pathValue parameter.
      * 
      */
     private @Nullable String pathType;
     /**
-     * @return 表示一个鉴权请求的路径，长度不能超过 100 个字符。路径必须以斜杠（/）开头，可以包含除了以下字符的可打印 ASCII 字符：连续斜杠（//）、百分号（%）、美元符号（$）、空格、问号（?）、Delete（ASCII code 127）
+     * @return Represents the path for an authentication request. The path cannot exceed 100 characters. It must start with a slash (/), and can include any printable ASCII characters except the following: consecutive slashes (//), percent sign (%), dollar sign ($), space, question mark (?), and Delete (ASCII code 127).
      * 
      */
     private @Nullable String pathValue;
     /**
-     * @return 表示在发送鉴权请求时，内容分发网络所使用的请求方法。该参数有以下取值：default：表示鉴权请求所使用的方法与用户的请求相同。get：表示鉴权请求使用 GET 方法。post：表示鉴权请求使用 POST方法。head：表示鉴权请求使用 HEAD 方法。
+     * @return Indicates the request method used by the content delivery network when sending authentication requests. The parameter has the following values: default: uses the same method as the user&#39;s request. get: uses the GET method. post: uses the POST method. head: uses the HEAD method.
      * 
      */
     private @Nullable String requestMethod;
 
     private DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfig() {}
     /**
-     * @return 表示鉴权服务器的备地址。地址格式和要求与主地址相同。
+     * @return Indicates the backup address of the authentication server. The address format and requirements are the same as the primary address.
      * 
      */
     public Optional<String> backupRemoteAddr() {
         return Optional.ofNullable(this.backupRemoteAddr);
     }
     /**
-     * @return 表示鉴权服务器的主地址，长度不能超过 100 个字符。主地址的格式是 \n\n://\n\n:\n\n 或 \n\n://\n\n:\n\n，其中：\n\n 是 http 或者 https。\n\n 不能是 localhost。\n\n 不能是 127.0.0.1。\n\n 是可选的。
+     * @return Indicates the primary address of the authentication server. The length must not exceed 100 characters. The primary address format is \n\n://\n\n:\n\n or \n\n://\n\n:\n\n, where: \n\n is http or https. \n\n cannot be localhost. \n\n cannot be 127.0.0.1. \n\n is optional.
      * 
      */
     public Optional<String> masterRemoteAddr() {
         return Optional.ofNullable(this.masterRemoteAddr);
     }
     /**
-     * @return 表示鉴权请求的路径。鉴权地址和请求路径组成了完整的鉴权 URL。内容分发网络会把用户的请求转发到该鉴权 URL。该参数有以下取值：constant：表示鉴权请求中的路径与用户请求中的路径相同。variable：表示您需要在 pathValue 参数中指定一个鉴权请求中的路径。
+     * @return Indicates the path for the authentication request. The authentication address and request path together form the complete authentication URL. The content delivery network forwards the user&#39;s request to this authentication URL. The parameter accepts the following values: constant: The path in the authentication request is the same as the path in the user&#39;s request. variable: You need to specify a path for the authentication request in the pathValue parameter.
      * 
      */
     public Optional<String> pathType() {
         return Optional.ofNullable(this.pathType);
     }
     /**
-     * @return 表示一个鉴权请求的路径，长度不能超过 100 个字符。路径必须以斜杠（/）开头，可以包含除了以下字符的可打印 ASCII 字符：连续斜杠（//）、百分号（%）、美元符号（$）、空格、问号（?）、Delete（ASCII code 127）
+     * @return Represents the path for an authentication request. The path cannot exceed 100 characters. It must start with a slash (/), and can include any printable ASCII characters except the following: consecutive slashes (//), percent sign (%), dollar sign ($), space, question mark (?), and Delete (ASCII code 127).
      * 
      */
     public Optional<String> pathValue() {
         return Optional.ofNullable(this.pathValue);
     }
     /**
-     * @return 表示在发送鉴权请求时，内容分发网络所使用的请求方法。该参数有以下取值：default：表示鉴权请求所使用的方法与用户的请求相同。get：表示鉴权请求使用 GET 方法。post：表示鉴权请求使用 POST方法。head：表示鉴权请求使用 HEAD 方法。
+     * @return Indicates the request method used by the content delivery network when sending authentication requests. The parameter has the following values: default: uses the same method as the user&#39;s request. get: uses the GET method. post: uses the POST method. head: uses the HEAD method.
      * 
      */
     public Optional<String> requestMethod() {

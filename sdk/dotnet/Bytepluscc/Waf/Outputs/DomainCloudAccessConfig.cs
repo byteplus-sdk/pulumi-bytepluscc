@@ -15,35 +15,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Outputs
     public sealed class DomainCloudAccessConfig
     {
         /// <summary>
-        /// 接入协议类型。
+        /// Access protocol type
         /// </summary>
         public readonly string? AccessProtocol;
         /// <summary>
-        /// 防护模式。
+        /// Protection mode
         /// </summary>
         public readonly int? DefenceMode;
         /// <summary>
-        /// 负载均衡实例 ID。
+        /// Load balancing instance ID.
         /// </summary>
         public readonly string? InstanceId;
         /// <summary>
-        /// 负载均衡实例名称。
+        /// Load balancer instance name.
         /// </summary>
         public readonly string? InstanceName;
         /// <summary>
-        /// 负载均衡监听器 ID。
+        /// Load balancing listener ID.
         /// </summary>
         public readonly string? ListenerId;
         /// <summary>
-        /// 是否从 ALB 中丢失关联。
+        /// Disassociated from ALB
         /// </summary>
         public readonly int? LostAssociationFromAlb;
         /// <summary>
-        /// 监听器转发规则的端口号。
+        /// Listener forwarding rule port number
         /// </summary>
         public readonly string? Port;
         /// <summary>
-        /// 监听器转发规则的协议类型。
+        /// Protocol type for listener forwarding rules.
         /// </summary>
         public readonly string? Protocol;
 

@@ -40,21 +40,21 @@ class InstanceArgs:
                  times: Optional[pulumi.Input[builtins.int]] = None):
         """
         The set of arguments for constructing a Instance resource.
-        :param pulumi.Input[builtins.str] billing_type: 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
-        :param pulumi.Input[builtins.str] name: 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
-        :param pulumi.Input[builtins.str] project_name: 实例所属项目名称。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: 实例使用安全组列表。
-        :param pulumi.Input[builtins.str] specification: 实例规格。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: 实例使用的子网列表。
-        :param pulumi.Input[builtins.str] vpc_id: 实例所在VPC ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: 实例所在可用区列表。
-        :param pulumi.Input[builtins.str] auto_renew: 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
-        :param pulumi.Input[builtins.str] billing_period: 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
-        :param pulumi.Input[builtins.str] description: 实例的描述语句。
-        :param pulumi.Input[builtins.str] eip_id: 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
-        :param pulumi.Input['InstanceEndpointsArgs'] endpoints: 实例所有接入点响应数据。
-        :param pulumi.Input[builtins.int] message_retention: 实例下所有 Topic 的消息保留时长，单位为小时。
-        :param pulumi.Input[builtins.int] times: 包年包月类型实例的购买时长，单位为月。
+        :param pulumi.Input[builtins.str] billing_type: Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        :param pulumi.Input[builtins.str] name: Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        :param pulumi.Input[builtins.str] project_name: Project name to which the instance belongs
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: List of security groups used by the instance
+        :param pulumi.Input[builtins.str] specification: Instance specification
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: List of subnets used by the instance
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID where the instance is located
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: List of availability zones where the instance is located
+        :param pulumi.Input[builtins.str] auto_renew: Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+        :param pulumi.Input[builtins.str] billing_period: Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+        :param pulumi.Input[builtins.str] description: Instance description statement
+        :param pulumi.Input[builtins.str] eip_id: Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        :param pulumi.Input['InstanceEndpointsArgs'] endpoints: Response data for all instance endpoints
+        :param pulumi.Input[builtins.int] message_retention: Message retention period for all topics under the instance, in hours
+        :param pulumi.Input[builtins.int] times: Purchase duration for subscription instances, in months
         """
         pulumi.set(__self__, "billing_type", billing_type)
         pulumi.set(__self__, "name", name)
@@ -85,7 +85,7 @@ class InstanceArgs:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> pulumi.Input[builtins.str]:
         """
-        实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+        Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
         """
         return pulumi.get(self, "billing_type")
 
@@ -97,7 +97,7 @@ class InstanceArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+        Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         """
         return pulumi.get(self, "name")
 
@@ -109,7 +109,7 @@ class InstanceArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Input[builtins.str]:
         """
-        实例所属项目名称。
+        Project name to which the instance belongs
         """
         return pulumi.get(self, "project_name")
 
@@ -121,7 +121,7 @@ class InstanceArgs:
     @pulumi.getter(name="securityGroupIdLists")
     def security_group_id_lists(self) -> pulumi.Input[Sequence[pulumi.Input[builtins.str]]]:
         """
-        实例使用安全组列表。
+        List of security groups used by the instance
         """
         return pulumi.get(self, "security_group_id_lists")
 
@@ -133,7 +133,7 @@ class InstanceArgs:
     @pulumi.getter
     def specification(self) -> pulumi.Input[builtins.str]:
         """
-        实例规格。
+        Instance specification
         """
         return pulumi.get(self, "specification")
 
@@ -145,7 +145,7 @@ class InstanceArgs:
     @pulumi.getter(name="subnetIdLists")
     def subnet_id_lists(self) -> pulumi.Input[Sequence[pulumi.Input[builtins.str]]]:
         """
-        实例使用的子网列表。
+        List of subnets used by the instance
         """
         return pulumi.get(self, "subnet_id_lists")
 
@@ -157,7 +157,7 @@ class InstanceArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例所在VPC ID。
+        VPC ID where the instance is located
         """
         return pulumi.get(self, "vpc_id")
 
@@ -169,7 +169,7 @@ class InstanceArgs:
     @pulumi.getter(name="zoneIdLists")
     def zone_id_lists(self) -> pulumi.Input[Sequence[pulumi.Input[builtins.str]]]:
         """
-        实例所在可用区列表。
+        List of availability zones where the instance is located
         """
         return pulumi.get(self, "zone_id_lists")
 
@@ -181,7 +181,7 @@ class InstanceArgs:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+        Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
         """
         return pulumi.get(self, "auto_renew")
 
@@ -193,7 +193,7 @@ class InstanceArgs:
     @pulumi.getter(name="billingPeriod")
     def billing_period(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+        Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
         """
         return pulumi.get(self, "billing_period")
 
@@ -205,7 +205,7 @@ class InstanceArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的描述语句。
+        Instance description statement
         """
         return pulumi.get(self, "description")
 
@@ -217,7 +217,7 @@ class InstanceArgs:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+        Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
         """
         return pulumi.get(self, "eip_id")
 
@@ -229,7 +229,7 @@ class InstanceArgs:
     @pulumi.getter
     def endpoints(self) -> Optional[pulumi.Input['InstanceEndpointsArgs']]:
         """
-        实例所有接入点响应数据。
+        Response data for all instance endpoints
         """
         return pulumi.get(self, "endpoints")
 
@@ -241,7 +241,7 @@ class InstanceArgs:
     @pulumi.getter(name="messageRetention")
     def message_retention(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例下所有 Topic 的消息保留时长，单位为小时。
+        Message retention period for all topics under the instance, in hours
         """
         return pulumi.get(self, "message_retention")
 
@@ -262,7 +262,7 @@ class InstanceArgs:
     @pulumi.getter
     def times(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        包年包月类型实例的购买时长，单位为月。
+        Purchase duration for subscription instances, in months
         """
         return pulumi.get(self, "times")
 
@@ -301,29 +301,29 @@ class _InstanceState:
                  zone_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
-        :param pulumi.Input[builtins.str] auto_renew: 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
-        :param pulumi.Input[builtins.str] billing_period: 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
-        :param pulumi.Input[builtins.str] billing_type: 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
-        :param pulumi.Input[builtins.str] created_time: 实例的创建时间。
-        :param pulumi.Input[builtins.str] description: 实例的描述语句。
-        :param pulumi.Input[builtins.str] eip_id: 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
-        :param pulumi.Input['InstanceEndpointsArgs'] endpoints: 实例所有接入点响应数据。
-        :param pulumi.Input[builtins.str] expiration_time: 实例过期时间。
-        :param pulumi.Input[builtins.int] group_limit: 实例消费组数量上限。
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。
-        :param pulumi.Input[builtins.int] message_retention: 实例下所有 Topic 的消息保留时长，单位为小时。
-        :param pulumi.Input[builtins.str] name: 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
-        :param pulumi.Input[builtins.int] partition_limit: 实例分区数量上限。
-        :param pulumi.Input[builtins.str] project_name: 实例所属项目名称。
-        :param pulumi.Input['InstanceResourcesArgs'] resources: 实例资源统计响应数据。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: 实例使用安全组列表。
-        :param pulumi.Input[builtins.str] specification: 实例规格。
-        :param pulumi.Input[builtins.str] status: 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: 实例使用的子网列表。
-        :param pulumi.Input[builtins.int] times: 包年包月类型实例的购买时长，单位为月。
-        :param pulumi.Input[builtins.int] topic_limit: 实例Topic数量上限。
-        :param pulumi.Input[builtins.str] vpc_id: 实例所在VPC ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: 实例所在可用区列表。
+        :param pulumi.Input[builtins.str] auto_renew: Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+        :param pulumi.Input[builtins.str] billing_period: Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+        :param pulumi.Input[builtins.str] billing_type: Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        :param pulumi.Input[builtins.str] created_time: Instance creation time
+        :param pulumi.Input[builtins.str] description: Instance description statement
+        :param pulumi.Input[builtins.str] eip_id: Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        :param pulumi.Input['InstanceEndpointsArgs'] endpoints: Response data for all instance endpoints
+        :param pulumi.Input[builtins.str] expiration_time: Instance expiration time
+        :param pulumi.Input[builtins.int] group_limit: Maximum number of consumer groups per instance
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.int] message_retention: Message retention period for all topics under the instance, in hours
+        :param pulumi.Input[builtins.str] name: Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        :param pulumi.Input[builtins.int] partition_limit: Maximum number of partitions per instance
+        :param pulumi.Input[builtins.str] project_name: Project name to which the instance belongs
+        :param pulumi.Input['InstanceResourcesArgs'] resources: Instance resource statistics response data
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: List of security groups used by the instance
+        :param pulumi.Input[builtins.str] specification: Instance specification
+        :param pulumi.Input[builtins.str] status: Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: List of subnets used by the instance
+        :param pulumi.Input[builtins.int] times: Purchase duration for subscription instances, in months
+        :param pulumi.Input[builtins.int] topic_limit: Maximum number of topics per instance
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID where the instance is located
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: List of availability zones where the instance is located
         """
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
@@ -380,7 +380,7 @@ class _InstanceState:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+        Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
         """
         return pulumi.get(self, "auto_renew")
 
@@ -392,7 +392,7 @@ class _InstanceState:
     @pulumi.getter(name="billingPeriod")
     def billing_period(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+        Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
         """
         return pulumi.get(self, "billing_period")
 
@@ -404,7 +404,7 @@ class _InstanceState:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+        Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
         """
         return pulumi.get(self, "billing_type")
 
@@ -416,7 +416,7 @@ class _InstanceState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的创建时间。
+        Instance creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -428,7 +428,7 @@ class _InstanceState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的描述语句。
+        Instance description statement
         """
         return pulumi.get(self, "description")
 
@@ -440,7 +440,7 @@ class _InstanceState:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+        Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
         """
         return pulumi.get(self, "eip_id")
 
@@ -452,7 +452,7 @@ class _InstanceState:
     @pulumi.getter
     def endpoints(self) -> Optional[pulumi.Input['InstanceEndpointsArgs']]:
         """
-        实例所有接入点响应数据。
+        Response data for all instance endpoints
         """
         return pulumi.get(self, "endpoints")
 
@@ -464,7 +464,7 @@ class _InstanceState:
     @pulumi.getter(name="expirationTime")
     def expiration_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例过期时间。
+        Instance expiration time
         """
         return pulumi.get(self, "expiration_time")
 
@@ -476,7 +476,7 @@ class _InstanceState:
     @pulumi.getter(name="groupLimit")
     def group_limit(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例消费组数量上限。
+        Maximum number of consumer groups per instance
         """
         return pulumi.get(self, "group_limit")
 
@@ -488,7 +488,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -500,7 +500,7 @@ class _InstanceState:
     @pulumi.getter(name="messageRetention")
     def message_retention(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例下所有 Topic 的消息保留时长，单位为小时。
+        Message retention period for all topics under the instance, in hours
         """
         return pulumi.get(self, "message_retention")
 
@@ -512,7 +512,7 @@ class _InstanceState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+        Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         """
         return pulumi.get(self, "name")
 
@@ -524,7 +524,7 @@ class _InstanceState:
     @pulumi.getter(name="partitionLimit")
     def partition_limit(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例分区数量上限。
+        Maximum number of partitions per instance
         """
         return pulumi.get(self, "partition_limit")
 
@@ -536,7 +536,7 @@ class _InstanceState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属项目名称。
+        Project name to which the instance belongs
         """
         return pulumi.get(self, "project_name")
 
@@ -557,7 +557,7 @@ class _InstanceState:
     @pulumi.getter
     def resources(self) -> Optional[pulumi.Input['InstanceResourcesArgs']]:
         """
-        实例资源统计响应数据。
+        Instance resource statistics response data
         """
         return pulumi.get(self, "resources")
 
@@ -569,7 +569,7 @@ class _InstanceState:
     @pulumi.getter(name="securityGroupIdLists")
     def security_group_id_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        实例使用安全组列表。
+        List of security groups used by the instance
         """
         return pulumi.get(self, "security_group_id_lists")
 
@@ -581,7 +581,7 @@ class _InstanceState:
     @pulumi.getter
     def specification(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例规格。
+        Instance specification
         """
         return pulumi.get(self, "specification")
 
@@ -593,7 +593,7 @@ class _InstanceState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+        Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
         """
         return pulumi.get(self, "status")
 
@@ -605,7 +605,7 @@ class _InstanceState:
     @pulumi.getter(name="subnetIdLists")
     def subnet_id_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        实例使用的子网列表。
+        List of subnets used by the instance
         """
         return pulumi.get(self, "subnet_id_lists")
 
@@ -626,7 +626,7 @@ class _InstanceState:
     @pulumi.getter
     def times(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        包年包月类型实例的购买时长，单位为月。
+        Purchase duration for subscription instances, in months
         """
         return pulumi.get(self, "times")
 
@@ -638,7 +638,7 @@ class _InstanceState:
     @pulumi.getter(name="topicLimit")
     def topic_limit(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例Topic数量上限。
+        Maximum number of topics per instance
         """
         return pulumi.get(self, "topic_limit")
 
@@ -650,7 +650,7 @@ class _InstanceState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所在VPC ID。
+        VPC ID where the instance is located
         """
         return pulumi.get(self, "vpc_id")
 
@@ -662,7 +662,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneIdLists")
     def zone_id_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        实例所在可用区列表。
+        List of availability zones where the instance is located
         """
         return pulumi.get(self, "zone_id_lists")
 
@@ -695,36 +695,36 @@ class Instance(pulumi.CustomResource):
                  zone_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  __props__=None):
         """
-        云原生消息引擎 100% 兼容 Apache Kafka 协议，基于云原生的全托管、高吞吐、低时延、高可用、高可扩展性、高稳定性的分布式消息引擎服务，支持灵活动态扩缩容和流批一体计算，提供企业级大数据量级的实时流数据处理能力，帮助您构建数据处理的“中枢神经系统”，广泛应用于日志收集、数据聚合、离线数据分析等业务场景。
+        The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It is a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service built on cloud-native architecture. It supports flexible, dynamic scaling and integrated stream-batch processing, delivering enterprise-grade, real-time stream data processing at large scale. It helps you build the 'central nervous system' for data processing and is widely used in scenarios such as log collection, data aggregation, and offline data analysis.
 
         ## Example Usage
 
         ```python
         import pulumi
-        import pulumi_bytepluscc as bytepluscc
+        import pulumi_byteplus as byteplus
 
-        b_mq_instance_demo = bytepluscc.bmq.Instance("BMQInstanceDemo",
-            name="BMQInstanceDemo",
-            billing_type="POST",
-            project_name="default",
-            specification="bmq.standard",
-            vpc_id="vpc-miltj87lh2ww5smt1bxxxxx",
+        b_mq_instance_demo = byteplus.index.BmqInstance("BMQInstanceDemo",
+            name=BMQInstanceDemo,
+            billing_type=POST,
+            project_name=default,
+            specification=bmq.standard,
+            vpc_id=vpc-miltj87lh2ww5smt1bxxxxx,
             message_retention=1,
             endpoints={
-                "public": {
-                    "eip_id": "eip-3nriu2y2ufwu8931exxxxx",
+                public: {
+                    eipId: eip-3nriu2y2ufwu8931exxxxx,
                 },
-                "overlay": {
-                    "vpc_ids": ["vpc-miltj87lh2ww5smt1bxxxxx"],
+                overlay: {
+                    vpcIds: [vpc-miltj87lh2ww5smt1bxxxxx],
                 },
             },
-            security_group_id_lists=["sg-3nqnz9en1ucxs931eaxxxxx"],
-            subnet_id_lists=["subnet-w02wsq25fitc865ykaxxxxx"],
-            zone_id_lists=["cn-beijing-a"],
+            security_group_id_list=[sg-3nqnz9en1ucxs931eaxxxxx],
+            subnet_id_list=[subnet-w02wsq25fitc865ykaxxxxx],
+            zone_id_list=[cn-beijing-a],
             tags=[{
-                "key": "env",
-                "type": "CUSTOM",
-                "value": "test",
+                key: env,
+                type: CUSTOM,
+                value: test,
             }])
         ```
 
@@ -736,21 +736,21 @@ class Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] auto_renew: 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
-        :param pulumi.Input[builtins.str] billing_period: 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
-        :param pulumi.Input[builtins.str] billing_type: 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
-        :param pulumi.Input[builtins.str] description: 实例的描述语句。
-        :param pulumi.Input[builtins.str] eip_id: 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
-        :param pulumi.Input[Union['InstanceEndpointsArgs', 'InstanceEndpointsArgsDict']] endpoints: 实例所有接入点响应数据。
-        :param pulumi.Input[builtins.int] message_retention: 实例下所有 Topic 的消息保留时长，单位为小时。
-        :param pulumi.Input[builtins.str] name: 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
-        :param pulumi.Input[builtins.str] project_name: 实例所属项目名称。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: 实例使用安全组列表。
-        :param pulumi.Input[builtins.str] specification: 实例规格。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: 实例使用的子网列表。
-        :param pulumi.Input[builtins.int] times: 包年包月类型实例的购买时长，单位为月。
-        :param pulumi.Input[builtins.str] vpc_id: 实例所在VPC ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: 实例所在可用区列表。
+        :param pulumi.Input[builtins.str] auto_renew: Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+        :param pulumi.Input[builtins.str] billing_period: Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+        :param pulumi.Input[builtins.str] billing_type: Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        :param pulumi.Input[builtins.str] description: Instance description statement
+        :param pulumi.Input[builtins.str] eip_id: Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        :param pulumi.Input[Union['InstanceEndpointsArgs', 'InstanceEndpointsArgsDict']] endpoints: Response data for all instance endpoints
+        :param pulumi.Input[builtins.int] message_retention: Message retention period for all topics under the instance, in hours
+        :param pulumi.Input[builtins.str] name: Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        :param pulumi.Input[builtins.str] project_name: Project name to which the instance belongs
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: List of security groups used by the instance
+        :param pulumi.Input[builtins.str] specification: Instance specification
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: List of subnets used by the instance
+        :param pulumi.Input[builtins.int] times: Purchase duration for subscription instances, in months
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID where the instance is located
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: List of availability zones where the instance is located
         """
         ...
     @overload
@@ -759,36 +759,36 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        云原生消息引擎 100% 兼容 Apache Kafka 协议，基于云原生的全托管、高吞吐、低时延、高可用、高可扩展性、高稳定性的分布式消息引擎服务，支持灵活动态扩缩容和流批一体计算，提供企业级大数据量级的实时流数据处理能力，帮助您构建数据处理的“中枢神经系统”，广泛应用于日志收集、数据聚合、离线数据分析等业务场景。
+        The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It is a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service built on cloud-native architecture. It supports flexible, dynamic scaling and integrated stream-batch processing, delivering enterprise-grade, real-time stream data processing at large scale. It helps you build the 'central nervous system' for data processing and is widely used in scenarios such as log collection, data aggregation, and offline data analysis.
 
         ## Example Usage
 
         ```python
         import pulumi
-        import pulumi_bytepluscc as bytepluscc
+        import pulumi_byteplus as byteplus
 
-        b_mq_instance_demo = bytepluscc.bmq.Instance("BMQInstanceDemo",
-            name="BMQInstanceDemo",
-            billing_type="POST",
-            project_name="default",
-            specification="bmq.standard",
-            vpc_id="vpc-miltj87lh2ww5smt1bxxxxx",
+        b_mq_instance_demo = byteplus.index.BmqInstance("BMQInstanceDemo",
+            name=BMQInstanceDemo,
+            billing_type=POST,
+            project_name=default,
+            specification=bmq.standard,
+            vpc_id=vpc-miltj87lh2ww5smt1bxxxxx,
             message_retention=1,
             endpoints={
-                "public": {
-                    "eip_id": "eip-3nriu2y2ufwu8931exxxxx",
+                public: {
+                    eipId: eip-3nriu2y2ufwu8931exxxxx,
                 },
-                "overlay": {
-                    "vpc_ids": ["vpc-miltj87lh2ww5smt1bxxxxx"],
+                overlay: {
+                    vpcIds: [vpc-miltj87lh2ww5smt1bxxxxx],
                 },
             },
-            security_group_id_lists=["sg-3nqnz9en1ucxs931eaxxxxx"],
-            subnet_id_lists=["subnet-w02wsq25fitc865ykaxxxxx"],
-            zone_id_lists=["cn-beijing-a"],
+            security_group_id_list=[sg-3nqnz9en1ucxs931eaxxxxx],
+            subnet_id_list=[subnet-w02wsq25fitc865ykaxxxxx],
+            zone_id_list=[cn-beijing-a],
             tags=[{
-                "key": "env",
-                "type": "CUSTOM",
-                "value": "test",
+                key: env,
+                type: CUSTOM,
+                value: test,
             }])
         ```
 
@@ -921,29 +921,29 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] auto_renew: 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
-        :param pulumi.Input[builtins.str] billing_period: 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
-        :param pulumi.Input[builtins.str] billing_type: 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
-        :param pulumi.Input[builtins.str] created_time: 实例的创建时间。
-        :param pulumi.Input[builtins.str] description: 实例的描述语句。
-        :param pulumi.Input[builtins.str] eip_id: 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
-        :param pulumi.Input[Union['InstanceEndpointsArgs', 'InstanceEndpointsArgsDict']] endpoints: 实例所有接入点响应数据。
-        :param pulumi.Input[builtins.str] expiration_time: 实例过期时间。
-        :param pulumi.Input[builtins.int] group_limit: 实例消费组数量上限。
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。
-        :param pulumi.Input[builtins.int] message_retention: 实例下所有 Topic 的消息保留时长，单位为小时。
-        :param pulumi.Input[builtins.str] name: 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
-        :param pulumi.Input[builtins.int] partition_limit: 实例分区数量上限。
-        :param pulumi.Input[builtins.str] project_name: 实例所属项目名称。
-        :param pulumi.Input[Union['InstanceResourcesArgs', 'InstanceResourcesArgsDict']] resources: 实例资源统计响应数据。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: 实例使用安全组列表。
-        :param pulumi.Input[builtins.str] specification: 实例规格。
-        :param pulumi.Input[builtins.str] status: 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: 实例使用的子网列表。
-        :param pulumi.Input[builtins.int] times: 包年包月类型实例的购买时长，单位为月。
-        :param pulumi.Input[builtins.int] topic_limit: 实例Topic数量上限。
-        :param pulumi.Input[builtins.str] vpc_id: 实例所在VPC ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: 实例所在可用区列表。
+        :param pulumi.Input[builtins.str] auto_renew: Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+        :param pulumi.Input[builtins.str] billing_period: Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+        :param pulumi.Input[builtins.str] billing_type: Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        :param pulumi.Input[builtins.str] created_time: Instance creation time
+        :param pulumi.Input[builtins.str] description: Instance description statement
+        :param pulumi.Input[builtins.str] eip_id: Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        :param pulumi.Input[Union['InstanceEndpointsArgs', 'InstanceEndpointsArgsDict']] endpoints: Response data for all instance endpoints
+        :param pulumi.Input[builtins.str] expiration_time: Instance expiration time
+        :param pulumi.Input[builtins.int] group_limit: Maximum number of consumer groups per instance
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.int] message_retention: Message retention period for all topics under the instance, in hours
+        :param pulumi.Input[builtins.str] name: Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        :param pulumi.Input[builtins.int] partition_limit: Maximum number of partitions per instance
+        :param pulumi.Input[builtins.str] project_name: Project name to which the instance belongs
+        :param pulumi.Input[Union['InstanceResourcesArgs', 'InstanceResourcesArgsDict']] resources: Instance resource statistics response data
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: List of security groups used by the instance
+        :param pulumi.Input[builtins.str] specification: Instance specification
+        :param pulumi.Input[builtins.str] status: Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: List of subnets used by the instance
+        :param pulumi.Input[builtins.int] times: Purchase duration for subscription instances, in months
+        :param pulumi.Input[builtins.int] topic_limit: Maximum number of topics per instance
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID where the instance is located
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: List of availability zones where the instance is located
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -980,7 +980,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> pulumi.Output[builtins.str]:
         """
-        是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+        Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
         """
         return pulumi.get(self, "auto_renew")
 
@@ -988,7 +988,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="billingPeriod")
     def billing_period(self) -> pulumi.Output[builtins.str]:
         """
-        购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+        Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
         """
         return pulumi.get(self, "billing_period")
 
@@ -996,7 +996,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> pulumi.Output[builtins.str]:
         """
-        实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+        Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
         """
         return pulumi.get(self, "billing_type")
 
@@ -1004,7 +1004,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例的创建时间。
+        Instance creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -1012,7 +1012,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        实例的描述语句。
+        Instance description statement
         """
         return pulumi.get(self, "description")
 
@@ -1020,7 +1020,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="eipId")
     def eip_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+        Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
         """
         return pulumi.get(self, "eip_id")
 
@@ -1028,7 +1028,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def endpoints(self) -> pulumi.Output['outputs.InstanceEndpoints']:
         """
-        实例所有接入点响应数据。
+        Response data for all instance endpoints
         """
         return pulumi.get(self, "endpoints")
 
@@ -1036,7 +1036,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="expirationTime")
     def expiration_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例过期时间。
+        Instance expiration time
         """
         return pulumi.get(self, "expiration_time")
 
@@ -1044,7 +1044,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="groupLimit")
     def group_limit(self) -> pulumi.Output[builtins.int]:
         """
-        实例消费组数量上限。
+        Maximum number of consumer groups per instance
         """
         return pulumi.get(self, "group_limit")
 
@@ -1052,7 +1052,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -1060,7 +1060,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="messageRetention")
     def message_retention(self) -> pulumi.Output[builtins.int]:
         """
-        实例下所有 Topic 的消息保留时长，单位为小时。
+        Message retention period for all topics under the instance, in hours
         """
         return pulumi.get(self, "message_retention")
 
@@ -1068,7 +1068,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+        Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         """
         return pulumi.get(self, "name")
 
@@ -1076,7 +1076,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="partitionLimit")
     def partition_limit(self) -> pulumi.Output[builtins.int]:
         """
-        实例分区数量上限。
+        Maximum number of partitions per instance
         """
         return pulumi.get(self, "partition_limit")
 
@@ -1084,7 +1084,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例所属项目名称。
+        Project name to which the instance belongs
         """
         return pulumi.get(self, "project_name")
 
@@ -1097,7 +1097,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def resources(self) -> pulumi.Output['outputs.InstanceResources']:
         """
-        实例资源统计响应数据。
+        Instance resource statistics response data
         """
         return pulumi.get(self, "resources")
 
@@ -1105,7 +1105,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="securityGroupIdLists")
     def security_group_id_lists(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        实例使用安全组列表。
+        List of security groups used by the instance
         """
         return pulumi.get(self, "security_group_id_lists")
 
@@ -1113,7 +1113,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def specification(self) -> pulumi.Output[builtins.str]:
         """
-        实例规格。
+        Instance specification
         """
         return pulumi.get(self, "specification")
 
@@ -1121,7 +1121,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+        Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
         """
         return pulumi.get(self, "status")
 
@@ -1129,7 +1129,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="subnetIdLists")
     def subnet_id_lists(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        实例使用的子网列表。
+        List of subnets used by the instance
         """
         return pulumi.get(self, "subnet_id_lists")
 
@@ -1142,7 +1142,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def times(self) -> pulumi.Output[builtins.int]:
         """
-        包年包月类型实例的购买时长，单位为月。
+        Purchase duration for subscription instances, in months
         """
         return pulumi.get(self, "times")
 
@@ -1150,7 +1150,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="topicLimit")
     def topic_limit(self) -> pulumi.Output[builtins.int]:
         """
-        实例Topic数量上限。
+        Maximum number of topics per instance
         """
         return pulumi.get(self, "topic_limit")
 
@@ -1158,7 +1158,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例所在VPC ID。
+        VPC ID where the instance is located
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1166,7 +1166,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneIdLists")
     def zone_id_lists(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        实例所在可用区列表。
+        List of availability zones where the instance is located
         """
         return pulumi.get(self, "zone_id_lists")
 

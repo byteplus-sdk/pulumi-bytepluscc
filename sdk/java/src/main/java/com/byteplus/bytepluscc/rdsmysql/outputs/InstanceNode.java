@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class InstanceNode {
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     private String nodeSpec;
     /**
-     * @return 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+     * @return Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
      * 
      */
     private String nodeType;
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID
      * 
      */
     private String zoneId;
 
     private InstanceNode() {}
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     public String nodeSpec() {
         return this.nodeSpec;
     }
     /**
-     * @return 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+     * @return Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
      * 
      */
     public String nodeType() {
         return this.nodeType;
     }
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID
      * 
      */
     public String zoneId() {

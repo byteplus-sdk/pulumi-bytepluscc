@@ -31,14 +31,14 @@ public final class InstanceInstanceConfigurationSubnetArgs extends com.pulumi.re
     }
 
     /**
-     * Subnet 名称。
+     * Subnet name
      * 
      */
     @Import(name="subnetName")
     private @Nullable Output<String> subnetName;
 
     /**
-     * @return Subnet 名称。
+     * @return Subnet name
      * 
      */
     public Optional<Output<String>> subnetName() {
@@ -92,7 +92,7 @@ public final class InstanceInstanceConfigurationSubnetArgs extends com.pulumi.re
         }
 
         /**
-         * @param subnetName Subnet 名称。
+         * @param subnetName Subnet name
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class InstanceInstanceConfigurationSubnetArgs extends com.pulumi.re
         }
 
         /**
-         * @param subnetName Subnet 名称。
+         * @param subnetName Subnet name
          * 
          * @return builder
          * 

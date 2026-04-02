@@ -16,97 +16,97 @@ import java.util.Objects;
 @CustomType
 public final class GetBackupResult {
     /**
-     * @return 备份创建结束时间（UTC）。
+     * @return Backup creation end time (UTC)
      * 
      */
     private String backupEndTime;
     /**
-     * @return 备份文件名。
+     * @return Backup file name
      * 
      */
     private String backupFileName;
     /**
-     * @return 备份文件大小，单位为字节。
+     * @return Backup file size (bytes)
      * 
      */
     private Integer backupFileSize;
     /**
-     * @return 备份 ID。
+     * @return Backup ID
      * 
      */
     private String backupId;
     /**
-     * @return 创建逻辑备份类型的库表备份时，用于指定要备份的库表信息。
+     * @return When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
      * 
      */
     private List<GetBackupBackupMeta> backupMetas;
     /**
-     * @return 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+     * @return Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
      * 
      */
     private String backupMethod;
     /**
-     * @return 备份的名称。
+     * @return Backup name
      * 
      */
     private String backupName;
     /**
-     * @return 备份所在区域。
+     * @return Backup region
      * 
      */
     private String backupRegion;
     /**
-     * @return 备份创建开始时间（UTC）。
+     * @return Backup creation start time (UTC)
      * 
      */
     private String backupStartTime;
     /**
-     * @return 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+     * @return Backup status. Values: Success, Failed, Running
      * 
      */
     private String backupStatus;
     /**
-     * @return 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+     * @return Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
      * 
      */
     private String backupType;
     /**
-     * @return 一致性时间点。
+     * @return Consistency time point
      * 
      */
     private String consistentTime;
     /**
-     * @return 备份创建者，取值：System（系统）、User（用户）。
+     * @return Backup creator. Values: System (system), User (user)
      * 
      */
     private String createType;
     /**
-     * @return 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * @return Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
      * 
      */
     private String dbEngineVersion;
     /**
-     * @return 库表信息列表。
+     * @return Database and table information list
      * 
      */
     private List<GetBackupDbTableInfo> dbTableInfos;
     /**
-     * @return 下载状态。
+     * @return Download status
      * 
      */
     private String downloadStatus;
     /**
-     * @return 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+     * @return Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
      * 
      */
     private String engineType;
     /**
-     * @return 备份失败的错误信息。
+     * @return Error message for backup failure
      * 
      */
     private String errorMessage;
     /**
-     * @return 备份过期时间（UTC）。
+     * @return Backup expiration time (UTC)
      * 
      */
     private String expiredTime;
@@ -116,150 +116,150 @@ public final class GetBackupResult {
      */
     private String id;
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     private String instanceId;
     /**
-     * @return 是否加密。
+     * @return Whether encrypted
      * 
      */
     private Boolean isEncrypted;
     /**
-     * @return 是否已过期。
+     * @return Whether expired
      * 
      */
     private Boolean isExpired;
 
     private GetBackupResult() {}
     /**
-     * @return 备份创建结束时间（UTC）。
+     * @return Backup creation end time (UTC)
      * 
      */
     public String backupEndTime() {
         return this.backupEndTime;
     }
     /**
-     * @return 备份文件名。
+     * @return Backup file name
      * 
      */
     public String backupFileName() {
         return this.backupFileName;
     }
     /**
-     * @return 备份文件大小，单位为字节。
+     * @return Backup file size (bytes)
      * 
      */
     public Integer backupFileSize() {
         return this.backupFileSize;
     }
     /**
-     * @return 备份 ID。
+     * @return Backup ID
      * 
      */
     public String backupId() {
         return this.backupId;
     }
     /**
-     * @return 创建逻辑备份类型的库表备份时，用于指定要备份的库表信息。
+     * @return When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
      * 
      */
     public List<GetBackupBackupMeta> backupMetas() {
         return this.backupMetas;
     }
     /**
-     * @return 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+     * @return Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
      * 
      */
     public String backupMethod() {
         return this.backupMethod;
     }
     /**
-     * @return 备份的名称。
+     * @return Backup name
      * 
      */
     public String backupName() {
         return this.backupName;
     }
     /**
-     * @return 备份所在区域。
+     * @return Backup region
      * 
      */
     public String backupRegion() {
         return this.backupRegion;
     }
     /**
-     * @return 备份创建开始时间（UTC）。
+     * @return Backup creation start time (UTC)
      * 
      */
     public String backupStartTime() {
         return this.backupStartTime;
     }
     /**
-     * @return 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+     * @return Backup status. Values: Success, Failed, Running
      * 
      */
     public String backupStatus() {
         return this.backupStatus;
     }
     /**
-     * @return 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+     * @return Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
      * 
      */
     public String backupType() {
         return this.backupType;
     }
     /**
-     * @return 一致性时间点。
+     * @return Consistency time point
      * 
      */
     public String consistentTime() {
         return this.consistentTime;
     }
     /**
-     * @return 备份创建者，取值：System（系统）、User（用户）。
+     * @return Backup creator. Values: System (system), User (user)
      * 
      */
     public String createType() {
         return this.createType;
     }
     /**
-     * @return 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * @return Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
      * 
      */
     public String dbEngineVersion() {
         return this.dbEngineVersion;
     }
     /**
-     * @return 库表信息列表。
+     * @return Database and table information list
      * 
      */
     public List<GetBackupDbTableInfo> dbTableInfos() {
         return this.dbTableInfos;
     }
     /**
-     * @return 下载状态。
+     * @return Download status
      * 
      */
     public String downloadStatus() {
         return this.downloadStatus;
     }
     /**
-     * @return 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+     * @return Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
      * 
      */
     public String engineType() {
         return this.engineType;
     }
     /**
-     * @return 备份失败的错误信息。
+     * @return Error message for backup failure
      * 
      */
     public String errorMessage() {
         return this.errorMessage;
     }
     /**
-     * @return 备份过期时间（UTC）。
+     * @return Backup expiration time (UTC)
      * 
      */
     public String expiredTime() {
@@ -273,21 +273,21 @@ public final class GetBackupResult {
         return this.id;
     }
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 是否加密。
+     * @return Whether encrypted
      * 
      */
     public Boolean isEncrypted() {
         return this.isEncrypted;
     }
     /**
-     * @return 是否已过期。
+     * @return Whether expired
      * 
      */
     public Boolean isExpired() {

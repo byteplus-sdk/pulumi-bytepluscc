@@ -16,14 +16,14 @@ public final class DomainConditionalOriginOriginRuleConditionConditionGroupArgs 
     public static final DomainConditionalOriginOriginRuleConditionConditionGroupArgs Empty = new DomainConditionalOriginOriginRuleConditionConditionGroupArgs();
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgs>> condition() {
@@ -55,7 +55,7 @@ public final class DomainConditionalOriginOriginRuleConditionConditionGroupArgs 
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DomainConditionalOriginOriginRuleConditionConditionGroupArgs 
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 

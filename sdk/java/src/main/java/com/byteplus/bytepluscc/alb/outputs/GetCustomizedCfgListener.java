@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetCustomizedCfgListener {
     /**
-     * @return 监听器的 ID。
+     * @return Listener ID.
      * 
      */
     private String listenerId;
     /**
-     * @return 监听器的名称。
+     * @return Listener name.
      * 
      */
     private String listenerName;
     /**
-     * @return 监听器的端口。
+     * @return Listener port.
      * 
      */
     private Integer port;
     /**
-     * @return 监听器的协议。
+     * @return Listener protocol.
      * 
      */
     private String protocol;
 
     private GetCustomizedCfgListener() {}
     /**
-     * @return 监听器的 ID。
+     * @return Listener ID.
      * 
      */
     public String listenerId() {
         return this.listenerId;
     }
     /**
-     * @return 监听器的名称。
+     * @return Listener name.
      * 
      */
     public String listenerName() {
         return this.listenerName;
     }
     /**
-     * @return 监听器的端口。
+     * @return Listener port.
      * 
      */
     public Integer port() {
         return this.port;
     }
     /**
-     * @return 监听器的协议。
+     * @return Listener protocol.
      * 
      */
     public String protocol() {

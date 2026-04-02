@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 容器服务通过深度融合新一代云原生技术，提供以容器为核心的高性能 Kubernetes 容器集群管理服务。在云端一键构建高可用 Kubernetes 集群，并实现容器化应用的可视化全生命周期管理，助力用户快速构建容器化应用。
+// Container Service deeply integrates next-generation cloud-native technologies to provide high-performance Kubernetes cluster management centered on containers. Build highly available Kubernetes clusters in the cloud with one click and achieve visualized full lifecycle management of containerized applications, helping users quickly build containerized applications.
 //
 // ## Import
 //
@@ -22,46 +22,46 @@ import (
 type Cluster struct {
 	pulumi.CustomResourceState
 
-	// 集群控制面及部分节点的网络配置。
+	// Network configuration for the cluster control plane and some nodes.
 	ClusterConfig ClusterClusterConfigOutput `pulumi:"clusterConfig"`
-	// 集群 ID。
+	// Cluster ID.
 	ClusterId pulumi.StringOutput `pulumi:"clusterId"`
-	// 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Cluster creation time. Standard RFC3339 format, UTC+0.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+	// Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
 	DeleteProtectionEnabled pulumi.BoolOutput `pulumi:"deleteProtectionEnabled"`
-	// 集群描述。长度限制为 300 个字符以内。
+	// Cluster description. Maximum length is 300 characters.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// IRSA（IAM Role for Service Account）能力相关参数配置。
+	// IRSA (IAM Role for Service Account) capability parameter configuration
 	IrsaConfig ClusterIrsaConfigOutput `pulumi:"irsaConfig"`
-	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+	// Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
 	KubernetesVersion pulumi.StringOutput `pulumi:"kubernetesVersion"`
-	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+	// Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
 	KubernetesVersionCreate pulumi.StringOutput `pulumi:"kubernetesVersionCreate"`
-	// 集群的日志配置信息。
+	// Cluster log configuration information.
 	LoggingConfig ClusterLoggingConfigOutput `pulumi:"loggingConfig"`
-	// 集群状态描述。
+	// Cluster status description.
 	Message pulumi.StringOutput `pulumi:"message"`
-	// 监控配置信息。
+	// Monitoring configuration information.
 	MonitoringConfig ClusterMonitoringConfigOutput `pulumi:"monitoringConfig"`
-	// 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 集群中各主状态下对应的节点数量统计。
+	// Statistics of node counts for each main status in the cluster.
 	NodeStatistics ClusterNodeStatisticsOutput `pulumi:"nodeStatistics"`
-	// Pod 的网络配置。
+	// Pod network configuration.
 	PodsConfig ClusterPodsConfigOutput `pulumi:"podsConfig"`
-	// 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+	// Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 服务的网络配置。
+	// Network configuration for the service.
 	ServicesConfig ClusterServicesConfigOutput `pulumi:"servicesConfig"`
-	// 集群源地域。
+	// Cluster source region
 	SourceRegion pulumi.StringOutput `pulumi:"sourceRegion"`
-	// 集群状态。
+	// Cluster status.
 	Status ClusterStatusOutput   `pulumi:"status"`
 	Tags   ClusterTagArrayOutput `pulumi:"tags"`
-	// 集群类型。
+	// Cluster type.
 	Type pulumi.StringOutput `pulumi:"type"`
-	// 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Last update time of the cluster. Standard RFC3339 format, UTC+0.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -98,90 +98,90 @@ func GetCluster(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Cluster resources.
 type clusterState struct {
-	// 集群控制面及部分节点的网络配置。
+	// Network configuration for the cluster control plane and some nodes.
 	ClusterConfig *ClusterClusterConfig `pulumi:"clusterConfig"`
-	// 集群 ID。
+	// Cluster ID.
 	ClusterId *string `pulumi:"clusterId"`
-	// 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Cluster creation time. Standard RFC3339 format, UTC+0.
 	CreatedTime *string `pulumi:"createdTime"`
-	// 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+	// Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
 	DeleteProtectionEnabled *bool `pulumi:"deleteProtectionEnabled"`
-	// 集群描述。长度限制为 300 个字符以内。
+	// Cluster description. Maximum length is 300 characters.
 	Description *string `pulumi:"description"`
-	// IRSA（IAM Role for Service Account）能力相关参数配置。
+	// IRSA (IAM Role for Service Account) capability parameter configuration
 	IrsaConfig *ClusterIrsaConfig `pulumi:"irsaConfig"`
-	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+	// Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
 	KubernetesVersion *string `pulumi:"kubernetesVersion"`
-	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+	// Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
 	KubernetesVersionCreate *string `pulumi:"kubernetesVersionCreate"`
-	// 集群的日志配置信息。
+	// Cluster log configuration information.
 	LoggingConfig *ClusterLoggingConfig `pulumi:"loggingConfig"`
-	// 集群状态描述。
+	// Cluster status description.
 	Message *string `pulumi:"message"`
-	// 监控配置信息。
+	// Monitoring configuration information.
 	MonitoringConfig *ClusterMonitoringConfig `pulumi:"monitoringConfig"`
-	// 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
 	Name *string `pulumi:"name"`
-	// 集群中各主状态下对应的节点数量统计。
+	// Statistics of node counts for each main status in the cluster.
 	NodeStatistics *ClusterNodeStatistics `pulumi:"nodeStatistics"`
-	// Pod 的网络配置。
+	// Pod network configuration.
 	PodsConfig *ClusterPodsConfig `pulumi:"podsConfig"`
-	// 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+	// Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
 	ProjectName *string `pulumi:"projectName"`
-	// 服务的网络配置。
+	// Network configuration for the service.
 	ServicesConfig *ClusterServicesConfig `pulumi:"servicesConfig"`
-	// 集群源地域。
+	// Cluster source region
 	SourceRegion *string `pulumi:"sourceRegion"`
-	// 集群状态。
+	// Cluster status.
 	Status *ClusterStatus `pulumi:"status"`
 	Tags   []ClusterTag   `pulumi:"tags"`
-	// 集群类型。
+	// Cluster type.
 	Type *string `pulumi:"type"`
-	// 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Last update time of the cluster. Standard RFC3339 format, UTC+0.
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type ClusterState struct {
-	// 集群控制面及部分节点的网络配置。
+	// Network configuration for the cluster control plane and some nodes.
 	ClusterConfig ClusterClusterConfigPtrInput
-	// 集群 ID。
+	// Cluster ID.
 	ClusterId pulumi.StringPtrInput
-	// 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Cluster creation time. Standard RFC3339 format, UTC+0.
 	CreatedTime pulumi.StringPtrInput
-	// 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+	// Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
 	DeleteProtectionEnabled pulumi.BoolPtrInput
-	// 集群描述。长度限制为 300 个字符以内。
+	// Cluster description. Maximum length is 300 characters.
 	Description pulumi.StringPtrInput
-	// IRSA（IAM Role for Service Account）能力相关参数配置。
+	// IRSA (IAM Role for Service Account) capability parameter configuration
 	IrsaConfig ClusterIrsaConfigPtrInput
-	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+	// Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
 	KubernetesVersion pulumi.StringPtrInput
-	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+	// Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
 	KubernetesVersionCreate pulumi.StringPtrInput
-	// 集群的日志配置信息。
+	// Cluster log configuration information.
 	LoggingConfig ClusterLoggingConfigPtrInput
-	// 集群状态描述。
+	// Cluster status description.
 	Message pulumi.StringPtrInput
-	// 监控配置信息。
+	// Monitoring configuration information.
 	MonitoringConfig ClusterMonitoringConfigPtrInput
-	// 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
 	Name pulumi.StringPtrInput
-	// 集群中各主状态下对应的节点数量统计。
+	// Statistics of node counts for each main status in the cluster.
 	NodeStatistics ClusterNodeStatisticsPtrInput
-	// Pod 的网络配置。
+	// Pod network configuration.
 	PodsConfig ClusterPodsConfigPtrInput
-	// 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+	// Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
 	ProjectName pulumi.StringPtrInput
-	// 服务的网络配置。
+	// Network configuration for the service.
 	ServicesConfig ClusterServicesConfigPtrInput
-	// 集群源地域。
+	// Cluster source region
 	SourceRegion pulumi.StringPtrInput
-	// 集群状态。
+	// Cluster status.
 	Status ClusterStatusPtrInput
 	Tags   ClusterTagArrayInput
-	// 集群类型。
+	// Cluster type.
 	Type pulumi.StringPtrInput
-	// 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Last update time of the cluster. Standard RFC3339 format, UTC+0.
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -190,58 +190,58 @@ func (ClusterState) ElementType() reflect.Type {
 }
 
 type clusterArgs struct {
-	// 集群控制面及部分节点的网络配置。
+	// Network configuration for the cluster control plane and some nodes.
 	ClusterConfig *ClusterClusterConfig `pulumi:"clusterConfig"`
-	// 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+	// Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
 	DeleteProtectionEnabled *bool `pulumi:"deleteProtectionEnabled"`
-	// 集群描述。长度限制为 300 个字符以内。
+	// Cluster description. Maximum length is 300 characters.
 	Description *string `pulumi:"description"`
-	// IRSA（IAM Role for Service Account）能力相关参数配置。
+	// IRSA (IAM Role for Service Account) capability parameter configuration
 	IrsaConfig *ClusterIrsaConfig `pulumi:"irsaConfig"`
-	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+	// Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
 	KubernetesVersionCreate *string `pulumi:"kubernetesVersionCreate"`
-	// 集群的日志配置信息。
+	// Cluster log configuration information.
 	LoggingConfig *ClusterLoggingConfig `pulumi:"loggingConfig"`
-	// 监控配置信息。
+	// Monitoring configuration information.
 	MonitoringConfig *ClusterMonitoringConfig `pulumi:"monitoringConfig"`
-	// 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
 	Name string `pulumi:"name"`
-	// Pod 的网络配置。
+	// Pod network configuration.
 	PodsConfig *ClusterPodsConfig `pulumi:"podsConfig"`
-	// 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+	// Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
 	ProjectName *string `pulumi:"projectName"`
-	// 服务的网络配置。
+	// Network configuration for the service.
 	ServicesConfig *ClusterServicesConfig `pulumi:"servicesConfig"`
-	// 集群源地域。
+	// Cluster source region
 	SourceRegion *string      `pulumi:"sourceRegion"`
 	Tags         []ClusterTag `pulumi:"tags"`
 }
 
 // The set of arguments for constructing a Cluster resource.
 type ClusterArgs struct {
-	// 集群控制面及部分节点的网络配置。
+	// Network configuration for the cluster control plane and some nodes.
 	ClusterConfig ClusterClusterConfigPtrInput
-	// 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+	// Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
 	DeleteProtectionEnabled pulumi.BoolPtrInput
-	// 集群描述。长度限制为 300 个字符以内。
+	// Cluster description. Maximum length is 300 characters.
 	Description pulumi.StringPtrInput
-	// IRSA（IAM Role for Service Account）能力相关参数配置。
+	// IRSA (IAM Role for Service Account) capability parameter configuration
 	IrsaConfig ClusterIrsaConfigPtrInput
-	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+	// Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
 	KubernetesVersionCreate pulumi.StringPtrInput
-	// 集群的日志配置信息。
+	// Cluster log configuration information.
 	LoggingConfig ClusterLoggingConfigPtrInput
-	// 监控配置信息。
+	// Monitoring configuration information.
 	MonitoringConfig ClusterMonitoringConfigPtrInput
-	// 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
 	Name pulumi.StringInput
-	// Pod 的网络配置。
+	// Pod network configuration.
 	PodsConfig ClusterPodsConfigPtrInput
-	// 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+	// Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
 	ProjectName pulumi.StringPtrInput
-	// 服务的网络配置。
+	// Network configuration for the service.
 	ServicesConfig ClusterServicesConfigPtrInput
-	// 集群源地域。
+	// Cluster source region
 	SourceRegion pulumi.StringPtrInput
 	Tags         ClusterTagArrayInput
 }
@@ -333,92 +333,92 @@ func (o ClusterOutput) ToClusterOutputWithContext(ctx context.Context) ClusterOu
 	return o
 }
 
-// 集群控制面及部分节点的网络配置。
+// Network configuration for the cluster control plane and some nodes.
 func (o ClusterOutput) ClusterConfig() ClusterClusterConfigOutput {
 	return o.ApplyT(func(v *Cluster) ClusterClusterConfigOutput { return v.ClusterConfig }).(ClusterClusterConfigOutput)
 }
 
-// 集群 ID。
+// Cluster ID.
 func (o ClusterOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+// Cluster creation time. Standard RFC3339 format, UTC+0.
 func (o ClusterOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+// Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
 func (o ClusterOutput) DeleteProtectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.BoolOutput { return v.DeleteProtectionEnabled }).(pulumi.BoolOutput)
 }
 
-// 集群描述。长度限制为 300 个字符以内。
+// Cluster description. Maximum length is 300 characters.
 func (o ClusterOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// IRSA（IAM Role for Service Account）能力相关参数配置。
+// IRSA (IAM Role for Service Account) capability parameter configuration
 func (o ClusterOutput) IrsaConfig() ClusterIrsaConfigOutput {
 	return o.ApplyT(func(v *Cluster) ClusterIrsaConfigOutput { return v.IrsaConfig }).(ClusterIrsaConfigOutput)
 }
 
-// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+// Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
 func (o ClusterOutput) KubernetesVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.KubernetesVersion }).(pulumi.StringOutput)
 }
 
-// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+// Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
 func (o ClusterOutput) KubernetesVersionCreate() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.KubernetesVersionCreate }).(pulumi.StringOutput)
 }
 
-// 集群的日志配置信息。
+// Cluster log configuration information.
 func (o ClusterOutput) LoggingConfig() ClusterLoggingConfigOutput {
 	return o.ApplyT(func(v *Cluster) ClusterLoggingConfigOutput { return v.LoggingConfig }).(ClusterLoggingConfigOutput)
 }
 
-// 集群状态描述。
+// Cluster status description.
 func (o ClusterOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.Message }).(pulumi.StringOutput)
 }
 
-// 监控配置信息。
+// Monitoring configuration information.
 func (o ClusterOutput) MonitoringConfig() ClusterMonitoringConfigOutput {
 	return o.ApplyT(func(v *Cluster) ClusterMonitoringConfigOutput { return v.MonitoringConfig }).(ClusterMonitoringConfigOutput)
 }
 
-// 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+// Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
 func (o ClusterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 集群中各主状态下对应的节点数量统计。
+// Statistics of node counts for each main status in the cluster.
 func (o ClusterOutput) NodeStatistics() ClusterNodeStatisticsOutput {
 	return o.ApplyT(func(v *Cluster) ClusterNodeStatisticsOutput { return v.NodeStatistics }).(ClusterNodeStatisticsOutput)
 }
 
-// Pod 的网络配置。
+// Pod network configuration.
 func (o ClusterOutput) PodsConfig() ClusterPodsConfigOutput {
 	return o.ApplyT(func(v *Cluster) ClusterPodsConfigOutput { return v.PodsConfig }).(ClusterPodsConfigOutput)
 }
 
-// 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+// Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
 func (o ClusterOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 服务的网络配置。
+// Network configuration for the service.
 func (o ClusterOutput) ServicesConfig() ClusterServicesConfigOutput {
 	return o.ApplyT(func(v *Cluster) ClusterServicesConfigOutput { return v.ServicesConfig }).(ClusterServicesConfigOutput)
 }
 
-// 集群源地域。
+// Cluster source region
 func (o ClusterOutput) SourceRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.SourceRegion }).(pulumi.StringOutput)
 }
 
-// 集群状态。
+// Cluster status.
 func (o ClusterOutput) Status() ClusterStatusOutput {
 	return o.ApplyT(func(v *Cluster) ClusterStatusOutput { return v.Status }).(ClusterStatusOutput)
 }
@@ -427,12 +427,12 @@ func (o ClusterOutput) Tags() ClusterTagArrayOutput {
 	return o.ApplyT(func(v *Cluster) ClusterTagArrayOutput { return v.Tags }).(ClusterTagArrayOutput)
 }
 
-// 集群类型。
+// Cluster type.
 func (o ClusterOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-// 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+// Last update time of the cluster. Standard RFC3339 format, UTC+0.
 func (o ClusterOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

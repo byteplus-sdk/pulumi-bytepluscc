@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetRuleRuleConditionMethodConfigResult
     {
         /// <summary>
-        /// 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+        /// Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

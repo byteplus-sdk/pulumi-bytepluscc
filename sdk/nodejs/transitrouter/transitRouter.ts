@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 中转路由器服务的运行载体。接受来自网络实例的流量，并根据关联转发路由表进行转发。
+ * Platform on which the transit router service runs. Receives traffic from network instances and forwards it according to the associated forwarding route table
  *
  * ## Example Usage
  *
@@ -62,61 +62,61 @@ export class TransitRouter extends pulumi.CustomResource {
     }
 
     /**
-     * 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+     * ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
      */
     public readonly asn!: pulumi.Output<number>;
     public /*out*/ readonly attachments!: pulumi.Output<outputs.transitrouter.TransitRouterAttachment[]>;
     /**
-     * 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+     * Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
      */
     public /*out*/ readonly businessStatus!: pulumi.Output<string>;
     /**
-     * 网络实例连接的创建时间。
+     * Creation time of the network instance connection.
      */
     public /*out*/ readonly creationTime!: pulumi.Output<string>;
     /**
-     * 网络实例连接的删除时间。
+     * Deletion time of the network instance connection.
      */
     public /*out*/ readonly deletedTime!: pulumi.Output<string>;
     /**
-     * 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     * Sharing method of the transit router instance. rs: Shared via platform resource sharing. tr: Shared via transit router instance sharing
      */
     public /*out*/ readonly grantSourceType!: pulumi.Output<string>;
     /**
-     * 实例共享的状态。Accepted：已接受。Initial：待接受。
+     * Instance sharing status. Accepted: Received. Initial: Pending acceptance.
      */
     public /*out*/ readonly grantStatus!: pulumi.Output<string>;
     /**
-     * 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
      */
     public readonly multicastEnabled!: pulumi.Output<boolean>;
     /**
-     * 中转路由器实例的欠费关停时间。
+     * Shutdown time due to overdue payment for the transit router instance
      */
     public /*out*/ readonly overdueTime!: pulumi.Output<string>;
     /**
-     * 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+     * Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is 'default'
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 中转路由器实例的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+     * Status of the transit router instance. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.transitrouter.TransitRouterTag[]>;
     /**
-     * 中转路由器实例的ID。
+     * Transit router instance ID.
      */
     public /*out*/ readonly transitRouterId!: pulumi.Output<string>;
     /**
-     * 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+     * Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
      */
     public readonly transitRouterName!: pulumi.Output<string>;
     /**
-     * 中转路由器实例的最近操作时间。
+     * Last operation time of the transit router instance
      */
     public /*out*/ readonly updateTime!: pulumi.Output<string>;
 
@@ -178,61 +178,61 @@ export class TransitRouter extends pulumi.CustomResource {
  */
 export interface TransitRouterState {
     /**
-     * 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+     * ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
      */
     asn?: pulumi.Input<number>;
     attachments?: pulumi.Input<pulumi.Input<inputs.transitrouter.TransitRouterAttachment>[]>;
     /**
-     * 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+     * Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
      */
     businessStatus?: pulumi.Input<string>;
     /**
-     * 网络实例连接的创建时间。
+     * Creation time of the network instance connection.
      */
     creationTime?: pulumi.Input<string>;
     /**
-     * 网络实例连接的删除时间。
+     * Deletion time of the network instance connection.
      */
     deletedTime?: pulumi.Input<string>;
     /**
-     * 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
      */
     description?: pulumi.Input<string>;
     /**
-     * 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     * Sharing method of the transit router instance. rs: Shared via platform resource sharing. tr: Shared via transit router instance sharing
      */
     grantSourceType?: pulumi.Input<string>;
     /**
-     * 实例共享的状态。Accepted：已接受。Initial：待接受。
+     * Instance sharing status. Accepted: Received. Initial: Pending acceptance.
      */
     grantStatus?: pulumi.Input<string>;
     /**
-     * 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
      */
     multicastEnabled?: pulumi.Input<boolean>;
     /**
-     * 中转路由器实例的欠费关停时间。
+     * Shutdown time due to overdue payment for the transit router instance
      */
     overdueTime?: pulumi.Input<string>;
     /**
-     * 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+     * Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is 'default'
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 中转路由器实例的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+     * Status of the transit router instance. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.transitrouter.TransitRouterTag>[]>;
     /**
-     * 中转路由器实例的ID。
+     * Transit router instance ID.
      */
     transitRouterId?: pulumi.Input<string>;
     /**
-     * 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+     * Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
      */
     transitRouterName?: pulumi.Input<string>;
     /**
-     * 中转路由器实例的最近操作时间。
+     * Last operation time of the transit router instance
      */
     updateTime?: pulumi.Input<string>;
 }
@@ -242,24 +242,24 @@ export interface TransitRouterState {
  */
 export interface TransitRouterArgs {
     /**
-     * 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+     * ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
      */
     asn?: pulumi.Input<number>;
     /**
-     * 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
      */
     description?: pulumi.Input<string>;
     /**
-     * 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
      */
     multicastEnabled?: pulumi.Input<boolean>;
     /**
-     * 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+     * Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is 'default'
      */
     projectName?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.transitrouter.TransitRouterTag>[]>;
     /**
-     * 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+     * Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
      */
     transitRouterName?: pulumi.Input<string>;
 }

@@ -16,14 +16,14 @@ public final class RegistryProxyCacheArgs extends com.pulumi.resources.ResourceA
     public static final RegistryProxyCacheArgs Empty = new RegistryProxyCacheArgs();
 
     /**
-     * ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+     * Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+     * @return Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
      * 
      */
     public Optional<Output<String>> type() {
@@ -55,7 +55,7 @@ public final class RegistryProxyCacheArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param type ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+         * @param type Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class RegistryProxyCacheArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param type ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+         * @param type Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
          * 
          * @return builder
          * 

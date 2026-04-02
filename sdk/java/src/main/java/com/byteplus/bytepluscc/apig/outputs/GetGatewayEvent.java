@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayEvent {
     /**
-     * @return 事件代码。
+     * @return Event code
      * 
      */
     private String code;
     /**
-     * @return 事件创建时间。
+     * @return Event creation time
      * 
      */
     private String createdTime;
     /**
-     * @return 附带信息。
+     * @return Additional information
      * 
      */
     private String data;
     /**
-     * @return 事件描述。
+     * @return Event description
      * 
      */
     private String description;
 
     private GetGatewayEvent() {}
     /**
-     * @return 事件代码。
+     * @return Event code
      * 
      */
     public String code() {
         return this.code;
     }
     /**
-     * @return 事件创建时间。
+     * @return Event creation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 附带信息。
+     * @return Additional information
      * 
      */
     public String data() {
         return this.data;
     }
     /**
-     * @return 事件描述。
+     * @return Event description
      * 
      */
     public String description() {

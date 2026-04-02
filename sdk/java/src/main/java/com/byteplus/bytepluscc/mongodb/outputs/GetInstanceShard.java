@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceShard {
     /**
-     * @return Shard 分片中各节点的信息列表。
+     * @return List of node information in each Shard.
      * 
      */
     private List<GetInstanceShardNode> nodes;
     /**
-     * @return Shard 节点的 ID。
+     * @return Shard node ID.
      * 
      */
     private String shardId;
 
     private GetInstanceShard() {}
     /**
-     * @return Shard 分片中各节点的信息列表。
+     * @return List of node information in each Shard.
      * 
      */
     public List<GetInstanceShardNode> nodes() {
         return this.nodes;
     }
     /**
-     * @return Shard 节点的 ID。
+     * @return Shard node ID.
      * 
      */
     public String shardId() {

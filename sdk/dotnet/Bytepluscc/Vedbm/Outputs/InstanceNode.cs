@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Outputs
     public sealed class InstanceNode
     {
         /// <summary>
-        /// 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+        /// Node failover priority. Range: 0~15. Higher values indicate higher priority
         /// </summary>
         public readonly int? FailoverPriority;
         /// <summary>
-        /// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        /// Node type. Values: Primary: primary node. ReadOnly: read-only node.
         /// </summary>
         public readonly string? NodeType;
 

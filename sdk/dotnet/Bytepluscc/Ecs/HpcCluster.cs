@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Ecs
 {
     /// <summary>
-    /// 高性能计算集群（High Performance Compute Cluster，HPC集群）是一种用于处理大规模计算任务的集群计算环境，通常由大量的计算节点组成，这些节点通过RDMA（Remote Direct Memory Access）高速网络互联，并协同工作以处理复杂的计算任务。高性能计算集群可以提供强大的计算能力、大内存、高速存储和高速网络，以满足对计算密集型、数据密集型或两者结合的工作负载的需求。
+    /// A high performance compute cluster (HPC cluster) is a cluster computing environment designed for large-scale computational tasks. It typically consists of numerous compute nodes interconnected via RDMA (Remote Direct Memory Access) high-speed networks, working together to handle complex computational workloads. High performance compute clusters provide powerful computing capabilities, large memory, high-speed storage, and high-speed networking to meet the demands of compute-intensive, data-intensive, or combined workloads
     /// 
     /// ## Example Usage
     /// 
@@ -52,31 +52,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public partial class HpcCluster : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 创建时间，格式满足RFC3339。
+        /// Creation time, formatted according to RFC3339
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+        /// High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 高性能计算集群ID。
+        /// High performance compute cluster ID
         /// </summary>
         [Output("hpcClusterId")]
         public Output<string> HpcClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+        /// High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
@@ -85,19 +85,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<ImmutableArray<Outputs.HpcClusterTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间，格式满足RFC3339。
+        /// Update time, formatted according to RFC3339
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 私有网络ID。
+        /// Private network ID
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// 高性能计算集群所属可用区ID。
+        /// Availability zone ID of the high performance compute cluster
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
@@ -150,19 +150,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class HpcClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+        /// High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+        /// High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -176,7 +176,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 高性能计算集群所属可用区ID。
+        /// Availability zone ID of the high performance compute cluster
         /// </summary>
         [Input("zoneId", required: true)]
         public Input<string> ZoneId { get; set; } = null!;
@@ -190,31 +190,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class HpcClusterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 创建时间，格式满足RFC3339。
+        /// Creation time, formatted according to RFC3339
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+        /// High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 高性能计算集群ID。
+        /// High performance compute cluster ID
         /// </summary>
         [Input("hpcClusterId")]
         public Input<string>? HpcClusterId { get; set; }
 
         /// <summary>
-        /// 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+        /// High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -228,19 +228,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 更新时间，格式满足RFC3339。
+        /// Update time, formatted according to RFC3339
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 私有网络ID。
+        /// Private network ID
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// 高性能计算集群所属可用区ID。
+        /// Availability zone ID of the high performance compute cluster
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

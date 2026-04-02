@@ -30,31 +30,31 @@ type LookupUserArgs struct {
 
 // A collection of values returned by getUser.
 type LookupUserResult struct {
-	// 创建时间。
+	// Creation Time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 用户描述。
+	// User Description.
 	Description string `pulumi:"description"`
-	// 用户显示名。
+	// User Display Name.
 	DisplayName string `pulumi:"displayName"`
-	// 邮箱。
+	// Email.
 	Email string `pulumi:"email"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 身份类型。
+	// Identity Type.
 	IdentityType string `pulumi:"identityType"`
-	// 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+	// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
 	Password string `pulumi:"password"`
-	// 首次登陆需不需要重置密码。
+	// Is password reset required on first login?
 	PasswordResetRequired bool `pulumi:"passwordResetRequired"`
-	// 手机号。
+	// Mobile Number.
 	Phone string `pulumi:"phone"`
-	// 用户来源。
+	// User Source.
 	Source string `pulumi:"source"`
-	// 更新时间。
+	// Update Time.
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 用户id。
+	// User ID.
 	UserId string `pulumi:"userId"`
-	// 用户名。
+	// Username.
 	UserName string `pulumi:"userName"`
 }
 
@@ -92,22 +92,22 @@ func (o LookupUserResultOutput) ToLookupUserResultOutputWithContext(ctx context.
 	return o
 }
 
-// 创建时间。
+// Creation Time.
 func (o LookupUserResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 用户描述。
+// User Description.
 func (o LookupUserResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 用户显示名。
+// User Display Name.
 func (o LookupUserResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 邮箱。
+// Email.
 func (o LookupUserResultOutput) Email() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.Email }).(pulumi.StringOutput)
 }
@@ -117,42 +117,42 @@ func (o LookupUserResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 身份类型。
+// Identity Type.
 func (o LookupUserResultOutput) IdentityType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.IdentityType }).(pulumi.StringOutput)
 }
 
-// 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
 func (o LookupUserResultOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// 首次登陆需不需要重置密码。
+// Is password reset required on first login?
 func (o LookupUserResultOutput) PasswordResetRequired() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupUserResult) bool { return v.PasswordResetRequired }).(pulumi.BoolOutput)
 }
 
-// 手机号。
+// Mobile Number.
 func (o LookupUserResultOutput) Phone() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.Phone }).(pulumi.StringOutput)
 }
 
-// 用户来源。
+// User Source.
 func (o LookupUserResultOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.Source }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update Time.
 func (o LookupUserResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 用户id。
+// User ID.
 func (o LookupUserResultOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.UserId }).(pulumi.StringOutput)
 }
 
-// 用户名。
+// Username.
 func (o LookupUserResultOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.UserName }).(pulumi.StringOutput)
 }

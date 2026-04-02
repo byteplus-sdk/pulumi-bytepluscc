@@ -14,74 +14,74 @@ import java.util.Objects;
 @CustomType
 public final class GetScalingPolicyAlarmPolicy {
     /**
-     * @return 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+     * @return Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
      * 
      */
     private GetScalingPolicyAlarmPolicyCondition condition;
     /**
-     * @return 多指标告警时的判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+     * @return Determination conditions for multi-metric alarms. &amp;&amp;: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
      * 
      */
     private String conditionOperator;
     /**
-     * @return 多指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效，且必须配置AlarmPolicy.Condition.x或AlarmPolicy.Conditions.x相关参数，当二者同时配置时，仅AlarmPolicy.Conditions.x生效。
+     * @return Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
      * 
      */
     private List<GetScalingPolicyAlarmPolicyCondition> conditions;
     /**
-     * @return 报警任务的生效时间段。
+     * @return The effective period for the alarm task.
      * 
      */
     private String effective;
     /**
-     * @return 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+     * @return Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
      * 
      */
     private Integer evaluationCount;
     /**
-     * @return 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+     * @return Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
      * 
      */
     private String ruleType;
 
     private GetScalingPolicyAlarmPolicy() {}
     /**
-     * @return 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+     * @return Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
      * 
      */
     public GetScalingPolicyAlarmPolicyCondition condition() {
         return this.condition;
     }
     /**
-     * @return 多指标告警时的判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+     * @return Determination conditions for multi-metric alarms. &amp;&amp;: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
      * 
      */
     public String conditionOperator() {
         return this.conditionOperator;
     }
     /**
-     * @return 多指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效，且必须配置AlarmPolicy.Condition.x或AlarmPolicy.Conditions.x相关参数，当二者同时配置时，仅AlarmPolicy.Conditions.x生效。
+     * @return Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
      * 
      */
     public List<GetScalingPolicyAlarmPolicyCondition> conditions() {
         return this.conditions;
     }
     /**
-     * @return 报警任务的生效时间段。
+     * @return The effective period for the alarm task.
      * 
      */
     public String effective() {
         return this.effective;
     }
     /**
-     * @return 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+     * @return Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
      * 
      */
     public Integer evaluationCount() {
         return this.evaluationCount;
     }
     /**
-     * @return 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+     * @return Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
      * 
      */
     public String ruleType() {

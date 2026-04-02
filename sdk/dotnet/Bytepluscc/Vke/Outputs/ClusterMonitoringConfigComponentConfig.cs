@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class ClusterMonitoringConfigComponentConfig
     {
         /// <summary>
-        /// 是否启用该监控组件，true 表示启用，false 表示禁用。
+        /// Whether to enable this monitoring component. true means enabled; false means disabled.
         /// </summary>
         public readonly bool? Enabled;
         /// <summary>
-        /// 监控组件的名称，例如 'prometheus'、'grafana' 等。
+        /// Name of the monitoring component, such as 'prometheus', 'grafana', etc.
         /// </summary>
         public readonly string? Name;
 

@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainTimeout {
     /**
-     * @return 指定是否启用回源超时时间的配置。该参数有以下取值：true：表示启用回源超时时间的配置。false：表示禁用回源超时时间的配置。此时，TCP 请求和 HTTP 请求的超时时间使用系统默认值，分别是 2 秒和 60 秒。
+     * @return Specify whether to enable origin timeout configuration. This parameter has the following values: true: enables origin timeout configuration. false: disables origin timeout configuration. In this case, the system default timeout values are used for TCP and HTTP requests, which are 2 seconds and 60 seconds respectively.
      * 
      */
     private Boolean switch_;
     /**
-     * @return 表示一组超时时间的配置。当前您只能指定一个配置。当 Switch 是 true 时，该参数为必填。
+     * @return Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
      * 
      */
     private List<GetDomainTimeoutTimeoutRule> timeoutRules;
 
     private GetDomainTimeout() {}
     /**
-     * @return 指定是否启用回源超时时间的配置。该参数有以下取值：true：表示启用回源超时时间的配置。false：表示禁用回源超时时间的配置。此时，TCP 请求和 HTTP 请求的超时时间使用系统默认值，分别是 2 秒和 60 秒。
+     * @return Specify whether to enable origin timeout configuration. This parameter has the following values: true: enables origin timeout configuration. false: disables origin timeout configuration. In this case, the system default timeout values are used for TCP and HTTP requests, which are 2 seconds and 60 seconds respectively.
      * 
      */
     public Boolean switch_() {
         return this.switch_;
     }
     /**
-     * @return 表示一组超时时间的配置。当前您只能指定一个配置。当 Switch 是 true 时，该参数为必填。
+     * @return Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
      * 
      */
     public List<GetDomainTimeoutTimeoutRule> timeoutRules() {

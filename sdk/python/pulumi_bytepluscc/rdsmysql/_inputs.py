@@ -72,23 +72,23 @@ if not MYPY:
     class AllowListAssociatedInstanceArgsDict(TypedDict):
         instance_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        已绑定当前白名单的实例 ID。
+        Instance ID bound to the current allowlist.
         """
         instance_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        已绑定当前白名单的实例名称。
+        Instance name bound to the current allowlist.
         """
         instance_status: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例状态。
+        Instance status.
         """
         is_latest: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+        Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
         """
         vpc: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例所属的私有网络 ID。
+        Private network ID of the instance.
         """
 elif False:
     AllowListAssociatedInstanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -102,11 +102,11 @@ class AllowListAssociatedInstanceArgs:
                  is_latest: Optional[pulumi.Input[builtins.bool]] = None,
                  vpc: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] instance_id: 已绑定当前白名单的实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: 已绑定当前白名单的实例名称。
-        :param pulumi.Input[builtins.str] instance_status: 实例状态。
-        :param pulumi.Input[builtins.bool] is_latest: 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
-        :param pulumi.Input[builtins.str] vpc: 实例所属的私有网络 ID。
+        :param pulumi.Input[builtins.str] instance_id: Instance ID bound to the current allowlist.
+        :param pulumi.Input[builtins.str] instance_name: Instance name bound to the current allowlist.
+        :param pulumi.Input[builtins.str] instance_status: Instance status.
+        :param pulumi.Input[builtins.bool] is_latest: Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
+        :param pulumi.Input[builtins.str] vpc: Private network ID of the instance.
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
@@ -123,7 +123,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        已绑定当前白名单的实例 ID。
+        Instance ID bound to the current allowlist.
         """
         return pulumi.get(self, "instance_id")
 
@@ -135,7 +135,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        已绑定当前白名单的实例名称。
+        Instance name bound to the current allowlist.
         """
         return pulumi.get(self, "instance_name")
 
@@ -147,7 +147,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter(name="instanceStatus")
     def instance_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例状态。
+        Instance status.
         """
         return pulumi.get(self, "instance_status")
 
@@ -159,7 +159,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter(name="isLatest")
     def is_latest(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+        Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
         """
         return pulumi.get(self, "is_latest")
 
@@ -171,7 +171,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter
     def vpc(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的私有网络 ID。
+        Private network ID of the instance.
         """
         return pulumi.get(self, "vpc")
 
@@ -184,19 +184,19 @@ if not MYPY:
     class AllowListSecurityGroupBindInfoArgsDict(TypedDict):
         bind_mode: NotRequired[pulumi.Input[builtins.str]]
         """
-        关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+        Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
         """
         ip_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        安全组的 IP 地址列表。
+        Security group IP address list.
         """
         security_group_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        安全组 ID。
+        Security group ID.
         """
         security_group_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        安全组名称。
+        Security group name.
         """
 elif False:
     AllowListSecurityGroupBindInfoArgsDict: TypeAlias = Mapping[str, Any]
@@ -209,10 +209,10 @@ class AllowListSecurityGroupBindInfoArgs:
                  security_group_id: Optional[pulumi.Input[builtins.str]] = None,
                  security_group_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] bind_mode: 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_lists: 安全组的 IP 地址列表。
-        :param pulumi.Input[builtins.str] security_group_id: 安全组 ID。
-        :param pulumi.Input[builtins.str] security_group_name: 安全组名称。
+        :param pulumi.Input[builtins.str] bind_mode: Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_lists: Security group IP address list.
+        :param pulumi.Input[builtins.str] security_group_id: Security group ID.
+        :param pulumi.Input[builtins.str] security_group_name: Security group name.
         """
         if bind_mode is not None:
             pulumi.set(__self__, "bind_mode", bind_mode)
@@ -227,7 +227,7 @@ class AllowListSecurityGroupBindInfoArgs:
     @pulumi.getter(name="bindMode")
     def bind_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+        Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
         """
         return pulumi.get(self, "bind_mode")
 
@@ -239,7 +239,7 @@ class AllowListSecurityGroupBindInfoArgs:
     @pulumi.getter(name="ipLists")
     def ip_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        安全组的 IP 地址列表。
+        Security group IP address list.
         """
         return pulumi.get(self, "ip_lists")
 
@@ -251,7 +251,7 @@ class AllowListSecurityGroupBindInfoArgs:
     @pulumi.getter(name="securityGroupId")
     def security_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组 ID。
+        Security group ID.
         """
         return pulumi.get(self, "security_group_id")
 
@@ -263,7 +263,7 @@ class AllowListSecurityGroupBindInfoArgs:
     @pulumi.getter(name="securityGroupName")
     def security_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组名称。
+        Security group name.
         """
         return pulumi.get(self, "security_group_name")
 
@@ -276,11 +276,11 @@ if not MYPY:
     class BackupBackupMetaArgsDict(TypedDict):
         database: NotRequired[pulumi.Input[builtins.str]]
         """
-        数据库名。
+        Database name
         """
         tables: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表名列表。
+        Table name list
         """
 elif False:
     BackupBackupMetaArgsDict: TypeAlias = Mapping[str, Any]
@@ -291,8 +291,8 @@ class BackupBackupMetaArgs:
                  database: Optional[pulumi.Input[builtins.str]] = None,
                  tables: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.str] database: 数据库名。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tables: 表名列表。
+        :param pulumi.Input[builtins.str] database: Database name
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tables: Table name list
         """
         if database is not None:
             pulumi.set(__self__, "database", database)
@@ -303,7 +303,7 @@ class BackupBackupMetaArgs:
     @pulumi.getter
     def database(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库名。
+        Database name
         """
         return pulumi.get(self, "database")
 
@@ -315,7 +315,7 @@ class BackupBackupMetaArgs:
     @pulumi.getter
     def tables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表名列表。
+        Table name list
         """
         return pulumi.get(self, "tables")
 
@@ -328,11 +328,11 @@ if not MYPY:
     class BackupDbTableInfoArgsDict(TypedDict):
         database: NotRequired[pulumi.Input[builtins.str]]
         """
-        数据库名。
+        Database name
         """
         tables: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表名列表。
+        Table name list
         """
 elif False:
     BackupDbTableInfoArgsDict: TypeAlias = Mapping[str, Any]
@@ -343,8 +343,8 @@ class BackupDbTableInfoArgs:
                  database: Optional[pulumi.Input[builtins.str]] = None,
                  tables: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.str] database: 数据库名。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tables: 表名列表。
+        :param pulumi.Input[builtins.str] database: Database name
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tables: Table name list
         """
         if database is not None:
             pulumi.set(__self__, "database", database)
@@ -355,7 +355,7 @@ class BackupDbTableInfoArgs:
     @pulumi.getter
     def database(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库名。
+        Database name
         """
         return pulumi.get(self, "database")
 
@@ -367,7 +367,7 @@ class BackupDbTableInfoArgs:
     @pulumi.getter
     def tables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表名列表。
+        Table name list
         """
         return pulumi.get(self, "tables")
 
@@ -380,15 +380,15 @@ if not MYPY:
     class DatabaseDatabasePrivilegeArgsDict(TypedDict):
         account_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        数据库账号名称。
+        Database account name.
         """
         account_privilege: NotRequired[pulumi.Input[builtins.str]]
         """
-        授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+        Granted account privilege type. Values: ReadWrite (read and write privileges), ReadOnly (read-only privileges), DDLOnly (DDL privileges only), DMLOnly (DML privileges only), Custom (custom privileges).
         """
         host: NotRequired[pulumi.Input[builtins.str]]
         """
-        指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+        The specified database account can access the database from the IP address. Default value: %. If Host is set to %, the account can access the database from any IP address. If Host is set to 192.10.10.%, the account can access the database from IP addresses between 192.10.10.0 and 192.10.10.255. The specified Host must be added to the instance's allowlist.
         """
 elif False:
     DatabaseDatabasePrivilegeArgsDict: TypeAlias = Mapping[str, Any]
@@ -400,9 +400,9 @@ class DatabaseDatabasePrivilegeArgs:
                  account_privilege: Optional[pulumi.Input[builtins.str]] = None,
                  host: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] account_name: 数据库账号名称。
-        :param pulumi.Input[builtins.str] account_privilege: 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
-        :param pulumi.Input[builtins.str] host: 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+        :param pulumi.Input[builtins.str] account_name: Database account name.
+        :param pulumi.Input[builtins.str] account_privilege: Granted account privilege type. Values: ReadWrite (read and write privileges), ReadOnly (read-only privileges), DDLOnly (DDL privileges only), DMLOnly (DML privileges only), Custom (custom privileges).
+        :param pulumi.Input[builtins.str] host: The specified database account can access the database from the IP address. Default value: %. If Host is set to %, the account can access the database from any IP address. If Host is set to 192.10.10.%, the account can access the database from IP addresses between 192.10.10.0 and 192.10.10.255. The specified Host must be added to the instance's allowlist.
         """
         if account_name is not None:
             pulumi.set(__self__, "account_name", account_name)
@@ -415,7 +415,7 @@ class DatabaseDatabasePrivilegeArgs:
     @pulumi.getter(name="accountName")
     def account_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库账号名称。
+        Database account name.
         """
         return pulumi.get(self, "account_name")
 
@@ -427,7 +427,7 @@ class DatabaseDatabasePrivilegeArgs:
     @pulumi.getter(name="accountPrivilege")
     def account_privilege(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+        Granted account privilege type. Values: ReadWrite (read and write privileges), ReadOnly (read-only privileges), DDLOnly (DDL privileges only), DMLOnly (DML privileges only), Custom (custom privileges).
         """
         return pulumi.get(self, "account_privilege")
 
@@ -439,7 +439,7 @@ class DatabaseDatabasePrivilegeArgs:
     @pulumi.getter
     def host(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+        The specified database account can access the database from the IP address. Default value: %. If Host is set to %, the account can access the database from any IP address. If Host is set to 192.10.10.%, the account can access the database from IP addresses between 192.10.10.0 and 192.10.10.255. The specified Host must be added to the instance's allowlist.
         """
         return pulumi.get(self, "host")
 
@@ -452,15 +452,15 @@ if not MYPY:
     class DbAccountAccountPrivilegeArgsDict(TypedDict):
         account_privilege: NotRequired[pulumi.Input[builtins.str]]
         """
-        数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
+        Type of database permission. Value options: ReadWrite: read and write permission. ReadOnly: read-only permission. DDLOnly: DDL permission only. DMLOnly: DML permission only. Custom: custom permission. Global: global permission. None: clear account permission. Note: When used as a request parameter, pay attention to the following: Only Global and None are allowed as values when used as request parameters. Permission type is single-select; passing multiple values will result in an error. Only the GrantDBAccountPrivilege API supports None as a value for AccountPrivilege. When AccountPrivilege is set to None and DBName is an empty string, all global permissions for the account are cleared. If DBName is set to a specific database, all permissions for the account in that database are cleared.
         """
         account_privilege_details: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        账号的权限信息。当 AccountPrivilege 取值为 Custom 时，该字段的取值范围如下：SELECT INSERT UPDATE DELETE CREATE DROP REFERENCES INDEX ALTER CREATE TEMPORARY TABLES LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW EVENT TRIGGER CREATE ROUTINE ALTER ROUTINE 当 AccountPrivilege 取值为 Global 时，该字段的取值范围如下：PROCESS REPLICATION SLAVE REPLICATION CLIENT SELECT INSERT UPDATE DELETE CREATE DROP RELOAD REFERENCES INDEX ALTER LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW CREATE ROUTINE ALTER ROUTINE CREATE USER EVENT TRIGGER SHOW DATABASES CREATE TEMPORARY TABLES 说明  作为请求参数时，在 AccountPrivilege 取值为 Custom 时必填。 在 CreateDBAccount 接口中，会自动为账号赋予 REPLICATION SLAVE、PROCESS 和 REPLICATION CLIENT 全局权限。 可取多个值。使用英文逗号（,）分隔多个权限。写入方式为覆盖方式。
+        Account privilege information. When AccountPrivilege is set to Custom, the valid values for this field are: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, EVENT, TRIGGER, CREATE ROUTINE, ALTER ROUTINE. When AccountPrivilege is set to Global, the valid values for this field are: PROCESS, REPLICATION SLAVE, REPLICATION CLIENT, SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, REFERENCES, INDEX, ALTER, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, SHOW DATABASES, CREATE TEMPORARY TABLES. Note: When used as a request parameter, this field is required if AccountPrivilege is set to Custom. In the CreateDBAccount API, REPLICATION SLAVE, PROCESS, and REPLICATION CLIENT global privileges are automatically granted to the account. Multiple values can be specified, separated by commas (,). The write mode is overwrite.
         """
         db_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        需修改账号授权的或账号已有权限的数据库名称。说明在 CreateDBAccount 和 GrantDBAccountPrivilege 接口中作为请求参数时，需确认 DBName 对应的数据库已存在。进行全局授权的修改时，应为 DBName 传空字符。
+        The name of the database for which account authorization needs to be modified or for which the account already has privileges. Note: When used as a request parameter in the CreateDBAccount and GrantDBAccountPrivilege APIs, ensure that the database corresponding to DBName already exists. For global privilege modifications, set DBName to an empty string.
         """
 elif False:
     DbAccountAccountPrivilegeArgsDict: TypeAlias = Mapping[str, Any]
@@ -472,9 +472,9 @@ class DbAccountAccountPrivilegeArgs:
                  account_privilege_details: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  db_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] account_privilege: 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] account_privilege_details: 账号的权限信息。当 AccountPrivilege 取值为 Custom 时，该字段的取值范围如下：SELECT INSERT UPDATE DELETE CREATE DROP REFERENCES INDEX ALTER CREATE TEMPORARY TABLES LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW EVENT TRIGGER CREATE ROUTINE ALTER ROUTINE 当 AccountPrivilege 取值为 Global 时，该字段的取值范围如下：PROCESS REPLICATION SLAVE REPLICATION CLIENT SELECT INSERT UPDATE DELETE CREATE DROP RELOAD REFERENCES INDEX ALTER LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW CREATE ROUTINE ALTER ROUTINE CREATE USER EVENT TRIGGER SHOW DATABASES CREATE TEMPORARY TABLES 说明  作为请求参数时，在 AccountPrivilege 取值为 Custom 时必填。 在 CreateDBAccount 接口中，会自动为账号赋予 REPLICATION SLAVE、PROCESS 和 REPLICATION CLIENT 全局权限。 可取多个值。使用英文逗号（,）分隔多个权限。写入方式为覆盖方式。
-        :param pulumi.Input[builtins.str] db_name: 需修改账号授权的或账号已有权限的数据库名称。说明在 CreateDBAccount 和 GrantDBAccountPrivilege 接口中作为请求参数时，需确认 DBName 对应的数据库已存在。进行全局授权的修改时，应为 DBName 传空字符。
+        :param pulumi.Input[builtins.str] account_privilege: Type of database permission. Value options: ReadWrite: read and write permission. ReadOnly: read-only permission. DDLOnly: DDL permission only. DMLOnly: DML permission only. Custom: custom permission. Global: global permission. None: clear account permission. Note: When used as a request parameter, pay attention to the following: Only Global and None are allowed as values when used as request parameters. Permission type is single-select; passing multiple values will result in an error. Only the GrantDBAccountPrivilege API supports None as a value for AccountPrivilege. When AccountPrivilege is set to None and DBName is an empty string, all global permissions for the account are cleared. If DBName is set to a specific database, all permissions for the account in that database are cleared.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] account_privilege_details: Account privilege information. When AccountPrivilege is set to Custom, the valid values for this field are: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, EVENT, TRIGGER, CREATE ROUTINE, ALTER ROUTINE. When AccountPrivilege is set to Global, the valid values for this field are: PROCESS, REPLICATION SLAVE, REPLICATION CLIENT, SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, REFERENCES, INDEX, ALTER, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, SHOW DATABASES, CREATE TEMPORARY TABLES. Note: When used as a request parameter, this field is required if AccountPrivilege is set to Custom. In the CreateDBAccount API, REPLICATION SLAVE, PROCESS, and REPLICATION CLIENT global privileges are automatically granted to the account. Multiple values can be specified, separated by commas (,). The write mode is overwrite.
+        :param pulumi.Input[builtins.str] db_name: The name of the database for which account authorization needs to be modified or for which the account already has privileges. Note: When used as a request parameter in the CreateDBAccount and GrantDBAccountPrivilege APIs, ensure that the database corresponding to DBName already exists. For global privilege modifications, set DBName to an empty string.
         """
         if account_privilege is not None:
             pulumi.set(__self__, "account_privilege", account_privilege)
@@ -487,7 +487,7 @@ class DbAccountAccountPrivilegeArgs:
     @pulumi.getter(name="accountPrivilege")
     def account_privilege(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
+        Type of database permission. Value options: ReadWrite: read and write permission. ReadOnly: read-only permission. DDLOnly: DDL permission only. DMLOnly: DML permission only. Custom: custom permission. Global: global permission. None: clear account permission. Note: When used as a request parameter, pay attention to the following: Only Global and None are allowed as values when used as request parameters. Permission type is single-select; passing multiple values will result in an error. Only the GrantDBAccountPrivilege API supports None as a value for AccountPrivilege. When AccountPrivilege is set to None and DBName is an empty string, all global permissions for the account are cleared. If DBName is set to a specific database, all permissions for the account in that database are cleared.
         """
         return pulumi.get(self, "account_privilege")
 
@@ -499,7 +499,7 @@ class DbAccountAccountPrivilegeArgs:
     @pulumi.getter(name="accountPrivilegeDetails")
     def account_privilege_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        账号的权限信息。当 AccountPrivilege 取值为 Custom 时，该字段的取值范围如下：SELECT INSERT UPDATE DELETE CREATE DROP REFERENCES INDEX ALTER CREATE TEMPORARY TABLES LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW EVENT TRIGGER CREATE ROUTINE ALTER ROUTINE 当 AccountPrivilege 取值为 Global 时，该字段的取值范围如下：PROCESS REPLICATION SLAVE REPLICATION CLIENT SELECT INSERT UPDATE DELETE CREATE DROP RELOAD REFERENCES INDEX ALTER LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW CREATE ROUTINE ALTER ROUTINE CREATE USER EVENT TRIGGER SHOW DATABASES CREATE TEMPORARY TABLES 说明  作为请求参数时，在 AccountPrivilege 取值为 Custom 时必填。 在 CreateDBAccount 接口中，会自动为账号赋予 REPLICATION SLAVE、PROCESS 和 REPLICATION CLIENT 全局权限。 可取多个值。使用英文逗号（,）分隔多个权限。写入方式为覆盖方式。
+        Account privilege information. When AccountPrivilege is set to Custom, the valid values for this field are: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, EVENT, TRIGGER, CREATE ROUTINE, ALTER ROUTINE. When AccountPrivilege is set to Global, the valid values for this field are: PROCESS, REPLICATION SLAVE, REPLICATION CLIENT, SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, REFERENCES, INDEX, ALTER, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, SHOW DATABASES, CREATE TEMPORARY TABLES. Note: When used as a request parameter, this field is required if AccountPrivilege is set to Custom. In the CreateDBAccount API, REPLICATION SLAVE, PROCESS, and REPLICATION CLIENT global privileges are automatically granted to the account. Multiple values can be specified, separated by commas (,). The write mode is overwrite.
         """
         return pulumi.get(self, "account_privilege_details")
 
@@ -511,7 +511,7 @@ class DbAccountAccountPrivilegeArgs:
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        需修改账号授权的或账号已有权限的数据库名称。说明在 CreateDBAccount 和 GrantDBAccountPrivilege 接口中作为请求参数时，需确认 DBName 对应的数据库已存在。进行全局授权的修改时，应为 DBName 传空字符。
+        The name of the database for which account authorization needs to be modified or for which the account already has privileges. Note: When used as a request parameter in the CreateDBAccount and GrantDBAccountPrivilege APIs, ensure that the database corresponding to DBName already exists. For global privilege modifications, set DBName to an empty string.
         """
         return pulumi.get(self, "db_name")
 
@@ -525,7 +525,7 @@ if not MYPY:
         column_privileges: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbAccountTableColumnPrivilegeColumnPrivilegeArgsDict']]]]
         db_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        对账号进行权限设置的表所属的数据库的名称。
+        Name of the database to which the table belongs for setting permissions for the account.
         """
         table_privileges: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbAccountTableColumnPrivilegeTablePrivilegeArgsDict']]]]
 elif False:
@@ -538,7 +538,7 @@ class DbAccountTableColumnPrivilegeArgs:
                  db_name: Optional[pulumi.Input[builtins.str]] = None,
                  table_privileges: Optional[pulumi.Input[Sequence[pulumi.Input['DbAccountTableColumnPrivilegeTablePrivilegeArgs']]]] = None):
         """
-        :param pulumi.Input[builtins.str] db_name: 对账号进行权限设置的表所属的数据库的名称。
+        :param pulumi.Input[builtins.str] db_name: Name of the database to which the table belongs for setting permissions for the account.
         """
         if column_privileges is not None:
             pulumi.set(__self__, "column_privileges", column_privileges)
@@ -560,7 +560,7 @@ class DbAccountTableColumnPrivilegeArgs:
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        对账号进行权限设置的表所属的数据库的名称。
+        Name of the database to which the table belongs for setting permissions for the account.
         """
         return pulumi.get(self, "db_name")
 
@@ -582,15 +582,15 @@ if not MYPY:
     class DbAccountTableColumnPrivilegeColumnPrivilegeArgsDict(TypedDict):
         account_privilege_details: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+        Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
         """
         column_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        对账号进行列权限设置的列的名称。
+        Name of the column for setting column permissions for the account.
         """
         table_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        对账号进行列权限设置的表所属的数据库的名称。
+        Name of the database to which the table belongs for setting column permissions for the account.
         """
 elif False:
     DbAccountTableColumnPrivilegeColumnPrivilegeArgsDict: TypeAlias = Mapping[str, Any]
@@ -602,9 +602,9 @@ class DbAccountTableColumnPrivilegeColumnPrivilegeArgs:
                  column_name: Optional[pulumi.Input[builtins.str]] = None,
                  table_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] account_privilege_details: 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
-        :param pulumi.Input[builtins.str] column_name: 对账号进行列权限设置的列的名称。
-        :param pulumi.Input[builtins.str] table_name: 对账号进行列权限设置的表所属的数据库的名称。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] account_privilege_details: Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
+        :param pulumi.Input[builtins.str] column_name: Name of the column for setting column permissions for the account.
+        :param pulumi.Input[builtins.str] table_name: Name of the database to which the table belongs for setting column permissions for the account.
         """
         if account_privilege_details is not None:
             pulumi.set(__self__, "account_privilege_details", account_privilege_details)
@@ -617,7 +617,7 @@ class DbAccountTableColumnPrivilegeColumnPrivilegeArgs:
     @pulumi.getter(name="accountPrivilegeDetails")
     def account_privilege_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+        Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
         """
         return pulumi.get(self, "account_privilege_details")
 
@@ -629,7 +629,7 @@ class DbAccountTableColumnPrivilegeColumnPrivilegeArgs:
     @pulumi.getter(name="columnName")
     def column_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        对账号进行列权限设置的列的名称。
+        Name of the column for setting column permissions for the account.
         """
         return pulumi.get(self, "column_name")
 
@@ -641,7 +641,7 @@ class DbAccountTableColumnPrivilegeColumnPrivilegeArgs:
     @pulumi.getter(name="tableName")
     def table_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        对账号进行列权限设置的表所属的数据库的名称。
+        Name of the database to which the table belongs for setting column permissions for the account.
         """
         return pulumi.get(self, "table_name")
 
@@ -654,11 +654,11 @@ if not MYPY:
     class DbAccountTableColumnPrivilegeTablePrivilegeArgsDict(TypedDict):
         account_privilege_details: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+        Account table permissions. Value options (multiple selections allowed): ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, SHOW, VIEW, TRIGGER, UPDATE, CREATE VIEW, REFERENCES. Note: Use commas (,) to separate multiple permissions.
         """
         table_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        对账号进行权限设置的表的名称。
+        Name of the table for setting permissions for the account.
         """
 elif False:
     DbAccountTableColumnPrivilegeTablePrivilegeArgsDict: TypeAlias = Mapping[str, Any]
@@ -669,8 +669,8 @@ class DbAccountTableColumnPrivilegeTablePrivilegeArgs:
                  account_privilege_details: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  table_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] account_privilege_details: 账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
-        :param pulumi.Input[builtins.str] table_name: 对账号进行权限设置的表的名称。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] account_privilege_details: Account table permissions. Value options (multiple selections allowed): ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, SHOW, VIEW, TRIGGER, UPDATE, CREATE VIEW, REFERENCES. Note: Use commas (,) to separate multiple permissions.
+        :param pulumi.Input[builtins.str] table_name: Name of the table for setting permissions for the account.
         """
         if account_privilege_details is not None:
             pulumi.set(__self__, "account_privilege_details", account_privilege_details)
@@ -681,7 +681,7 @@ class DbAccountTableColumnPrivilegeTablePrivilegeArgs:
     @pulumi.getter(name="accountPrivilegeDetails")
     def account_privilege_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+        Account table permissions. Value options (multiple selections allowed): ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, SHOW, VIEW, TRIGGER, UPDATE, CREATE VIEW, REFERENCES. Note: Use commas (,) to separate multiple permissions.
         """
         return pulumi.get(self, "account_privilege_details")
 
@@ -693,7 +693,7 @@ class DbAccountTableColumnPrivilegeTablePrivilegeArgs:
     @pulumi.getter(name="tableName")
     def table_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        对账号进行权限设置的表的名称。
+        Name of the table for setting permissions for the account.
         """
         return pulumi.get(self, "table_name")
 
@@ -706,15 +706,15 @@ if not MYPY:
     class EndpointAddressArgsDict(TypedDict):
         dns_visibility: NotRequired[pulumi.Input[builtins.bool]]
         """
-        false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+        false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
         """
         domain_prefix: NotRequired[pulumi.Input[builtins.str]]
         """
-        连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+        Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
         """
         port: NotRequired[pulumi.Input[builtins.str]]
         """
-        端口。
+        Port.
         """
 elif False:
     EndpointAddressArgsDict: TypeAlias = Mapping[str, Any]
@@ -726,9 +726,9 @@ class EndpointAddressArgs:
                  domain_prefix: Optional[pulumi.Input[builtins.str]] = None,
                  port: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] dns_visibility: false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
-        :param pulumi.Input[builtins.str] domain_prefix: 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
-        :param pulumi.Input[builtins.str] port: 端口。
+        :param pulumi.Input[builtins.bool] dns_visibility: false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
+        :param pulumi.Input[builtins.str] domain_prefix: Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
+        :param pulumi.Input[builtins.str] port: Port.
         """
         if dns_visibility is not None:
             pulumi.set(__self__, "dns_visibility", dns_visibility)
@@ -741,7 +741,7 @@ class EndpointAddressArgs:
     @pulumi.getter(name="dnsVisibility")
     def dns_visibility(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+        false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
         """
         return pulumi.get(self, "dns_visibility")
 
@@ -753,7 +753,7 @@ class EndpointAddressArgs:
     @pulumi.getter(name="domainPrefix")
     def domain_prefix(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+        Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
         """
         return pulumi.get(self, "domain_prefix")
 
@@ -765,7 +765,7 @@ class EndpointAddressArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        端口。
+        Port.
         """
         return pulumi.get(self, "port")
 
@@ -801,11 +801,11 @@ if not MYPY:
     class EndpointCustomRouteStrategyKeywordRouteStrategyArgsDict(TypedDict):
         node_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+        SQL forwarding rule target. Options: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
         """
         sql_keyword: NotRequired[pulumi.Input[builtins.str]]
         """
-        转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+        Forwarding rule keywords. SQL keyword rules: Each rule can contain up to 20 keywords, with a maximum length of 64 characters. Allowed characters: English letters, digits, underscore (_), @, #, :=, and Chinese characters.
         """
 elif False:
     EndpointCustomRouteStrategyKeywordRouteStrategyArgsDict: TypeAlias = Mapping[str, Any]
@@ -816,8 +816,8 @@ class EndpointCustomRouteStrategyKeywordRouteStrategyArgs:
                  node_type: Optional[pulumi.Input[builtins.str]] = None,
                  sql_keyword: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] node_type: SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
-        :param pulumi.Input[builtins.str] sql_keyword: 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+        :param pulumi.Input[builtins.str] node_type: SQL forwarding rule target. Options: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
+        :param pulumi.Input[builtins.str] sql_keyword: Forwarding rule keywords. SQL keyword rules: Each rule can contain up to 20 keywords, with a maximum length of 64 characters. Allowed characters: English letters, digits, underscore (_), @, #, :=, and Chinese characters.
         """
         if node_type is not None:
             pulumi.set(__self__, "node_type", node_type)
@@ -828,7 +828,7 @@ class EndpointCustomRouteStrategyKeywordRouteStrategyArgs:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+        SQL forwarding rule target. Options: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
         """
         return pulumi.get(self, "node_type")
 
@@ -840,7 +840,7 @@ class EndpointCustomRouteStrategyKeywordRouteStrategyArgs:
     @pulumi.getter(name="sqlKeyword")
     def sql_keyword(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+        Forwarding rule keywords. SQL keyword rules: Each rule can contain up to 20 keywords, with a maximum length of 64 characters. Allowed characters: English letters, digits, underscore (_), @, #, :=, and Chinese characters.
         """
         return pulumi.get(self, "sql_keyword")
 
@@ -853,15 +853,15 @@ if not MYPY:
     class EndpointReadOnlyNodeWeightArgsDict(TypedDict):
         node_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        只读节点需要传入 NodeId，主节点无需传入。
+        NodeId is required for read-only nodes; not required for primary nodes.
         """
         node_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点类型。Primary：主节点。ReadOnly：只读节点。
+        Node type. Primary: primary node. ReadOnly: read-only node.
         """
         weight: NotRequired[pulumi.Input[builtins.int]]
         """
-        节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+        Node read weight increases in increments of 100, up to a maximum of 10,000. Note: Not all weights can be set to 0.
         """
 elif False:
     EndpointReadOnlyNodeWeightArgsDict: TypeAlias = Mapping[str, Any]
@@ -873,9 +873,9 @@ class EndpointReadOnlyNodeWeightArgs:
                  node_type: Optional[pulumi.Input[builtins.str]] = None,
                  weight: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] node_id: 只读节点需要传入 NodeId，主节点无需传入。
-        :param pulumi.Input[builtins.str] node_type: 节点类型。Primary：主节点。ReadOnly：只读节点。
-        :param pulumi.Input[builtins.int] weight: 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+        :param pulumi.Input[builtins.str] node_id: NodeId is required for read-only nodes; not required for primary nodes.
+        :param pulumi.Input[builtins.str] node_type: Node type. Primary: primary node. ReadOnly: read-only node.
+        :param pulumi.Input[builtins.int] weight: Node read weight increases in increments of 100, up to a maximum of 10,000. Note: Not all weights can be set to 0.
         """
         if node_id is not None:
             pulumi.set(__self__, "node_id", node_id)
@@ -888,7 +888,7 @@ class EndpointReadOnlyNodeWeightArgs:
     @pulumi.getter(name="nodeId")
     def node_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        只读节点需要传入 NodeId，主节点无需传入。
+        NodeId is required for read-only nodes; not required for primary nodes.
         """
         return pulumi.get(self, "node_id")
 
@@ -900,7 +900,7 @@ class EndpointReadOnlyNodeWeightArgs:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点类型。Primary：主节点。ReadOnly：只读节点。
+        Node type. Primary: primary node. ReadOnly: read-only node.
         """
         return pulumi.get(self, "node_type")
 
@@ -912,7 +912,7 @@ class EndpointReadOnlyNodeWeightArgs:
     @pulumi.getter
     def weight(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+        Node read weight increases in increments of 100, up to a maximum of 10,000. Note: Not all weights can be set to 0.
         """
         return pulumi.get(self, "weight")
 
@@ -925,35 +925,35 @@ if not MYPY:
     class InstanceAddressObjectArgsDict(TypedDict):
         dns_visibility: NotRequired[pulumi.Input[builtins.bool]]
         """
-        false：私网解析（默认）。true：私网以及公网解析。
+        false: private network resolution (default). true: private and public network resolution.
         """
         domain: NotRequired[pulumi.Input[builtins.str]]
         """
-        连接域名。
+        Connection domain name
         """
         eip_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        EIP 的 ID，仅对 Public 地址有效。
+        EIP ID, valid only for Public addresses.
         """
         internet_protocol: NotRequired[pulumi.Input[builtins.str]]
         """
-        IP 协议版本。取值为 IPv4。
+        IP protocol version. Value: IPv4.
         """
         ip_address: NotRequired[pulumi.Input[builtins.str]]
         """
-        IP 地址。
+        IP address.
         """
         network_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络地址类型，取值为：Private：私网地址。Public：公网地址。
+        Network address type. Values: Private: private address. Public: public address
         """
         port: NotRequired[pulumi.Input[builtins.str]]
         """
-        端口。
+        Port
         """
         subnet_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        子网 ID，仅对 Private 地址有效。
+        Subnet ID, valid only for Private addresses
         """
 elif False:
     InstanceAddressObjectArgsDict: TypeAlias = Mapping[str, Any]
@@ -970,14 +970,14 @@ class InstanceAddressObjectArgs:
                  port: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] dns_visibility: false：私网解析（默认）。true：私网以及公网解析。
-        :param pulumi.Input[builtins.str] domain: 连接域名。
-        :param pulumi.Input[builtins.str] eip_id: EIP 的 ID，仅对 Public 地址有效。
-        :param pulumi.Input[builtins.str] internet_protocol: IP 协议版本。取值为 IPv4。
-        :param pulumi.Input[builtins.str] ip_address: IP 地址。
-        :param pulumi.Input[builtins.str] network_type: 网络地址类型，取值为：Private：私网地址。Public：公网地址。
-        :param pulumi.Input[builtins.str] port: 端口。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID，仅对 Private 地址有效。
+        :param pulumi.Input[builtins.bool] dns_visibility: false: private network resolution (default). true: private and public network resolution.
+        :param pulumi.Input[builtins.str] domain: Connection domain name
+        :param pulumi.Input[builtins.str] eip_id: EIP ID, valid only for Public addresses.
+        :param pulumi.Input[builtins.str] internet_protocol: IP protocol version. Value: IPv4.
+        :param pulumi.Input[builtins.str] ip_address: IP address.
+        :param pulumi.Input[builtins.str] network_type: Network address type. Values: Private: private address. Public: public address
+        :param pulumi.Input[builtins.str] port: Port
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID, valid only for Private addresses
         """
         if dns_visibility is not None:
             pulumi.set(__self__, "dns_visibility", dns_visibility)
@@ -1000,7 +1000,7 @@ class InstanceAddressObjectArgs:
     @pulumi.getter(name="dnsVisibility")
     def dns_visibility(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        false：私网解析（默认）。true：私网以及公网解析。
+        false: private network resolution (default). true: private and public network resolution.
         """
         return pulumi.get(self, "dns_visibility")
 
@@ -1012,7 +1012,7 @@ class InstanceAddressObjectArgs:
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接域名。
+        Connection domain name
         """
         return pulumi.get(self, "domain")
 
@@ -1024,7 +1024,7 @@ class InstanceAddressObjectArgs:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        EIP 的 ID，仅对 Public 地址有效。
+        EIP ID, valid only for Public addresses.
         """
         return pulumi.get(self, "eip_id")
 
@@ -1036,7 +1036,7 @@ class InstanceAddressObjectArgs:
     @pulumi.getter(name="internetProtocol")
     def internet_protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP 协议版本。取值为 IPv4。
+        IP protocol version. Value: IPv4.
         """
         return pulumi.get(self, "internet_protocol")
 
@@ -1048,7 +1048,7 @@ class InstanceAddressObjectArgs:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP 地址。
+        IP address.
         """
         return pulumi.get(self, "ip_address")
 
@@ -1060,7 +1060,7 @@ class InstanceAddressObjectArgs:
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络地址类型，取值为：Private：私网地址。Public：公网地址。
+        Network address type. Values: Private: private address. Public: public address
         """
         return pulumi.get(self, "network_type")
 
@@ -1072,7 +1072,7 @@ class InstanceAddressObjectArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        端口。
+        Port
         """
         return pulumi.get(self, "port")
 
@@ -1084,7 +1084,7 @@ class InstanceAddressObjectArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网 ID，仅对 Private 地址有效。
+        Subnet ID, valid only for Private addresses
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1097,15 +1097,15 @@ if not MYPY:
     class InstanceAutoStorageScalingConfigArgsDict(TypedDict):
         enable_storage_auto_scale: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否开启实例的自动扩容功能。取值：true：是。false：否。
+        Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
         """
         storage_threshold: NotRequired[pulumi.Input[builtins.int]]
         """
-        触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+        Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
         """
         storage_upper_bound: NotRequired[pulumi.Input[builtins.int]]
         """
-        可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+        Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
         """
 elif False:
     InstanceAutoStorageScalingConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -1117,9 +1117,9 @@ class InstanceAutoStorageScalingConfigArgs:
                  storage_threshold: Optional[pulumi.Input[builtins.int]] = None,
                  storage_upper_bound: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.bool] enable_storage_auto_scale: 是否开启实例的自动扩容功能。取值：true：是。false：否。
-        :param pulumi.Input[builtins.int] storage_threshold: 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
-        :param pulumi.Input[builtins.int] storage_upper_bound: 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+        :param pulumi.Input[builtins.bool] enable_storage_auto_scale: Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
+        :param pulumi.Input[builtins.int] storage_threshold: Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
+        :param pulumi.Input[builtins.int] storage_upper_bound: Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
         """
         if enable_storage_auto_scale is not None:
             pulumi.set(__self__, "enable_storage_auto_scale", enable_storage_auto_scale)
@@ -1132,7 +1132,7 @@ class InstanceAutoStorageScalingConfigArgs:
     @pulumi.getter(name="enableStorageAutoScale")
     def enable_storage_auto_scale(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启实例的自动扩容功能。取值：true：是。false：否。
+        Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
         """
         return pulumi.get(self, "enable_storage_auto_scale")
 
@@ -1144,7 +1144,7 @@ class InstanceAutoStorageScalingConfigArgs:
     @pulumi.getter(name="storageThreshold")
     def storage_threshold(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+        Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
         """
         return pulumi.get(self, "storage_threshold")
 
@@ -1156,7 +1156,7 @@ class InstanceAutoStorageScalingConfigArgs:
     @pulumi.getter(name="storageUpperBound")
     def storage_upper_bound(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+        Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
         """
         return pulumi.get(self, "storage_upper_bound")
 
@@ -1169,51 +1169,51 @@ if not MYPY:
     class InstanceChargeDetailArgsDict(TypedDict):
         charge_type: pulumi.Input[builtins.str]
         """
-        付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+        Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
         """
         auto_renew: NotRequired[pulumi.Input[builtins.bool]]
         """
-        预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+        Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
         """
         charge_end_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
         """
         charge_start_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
         """
         charge_status: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+        Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
         """
         number: NotRequired[pulumi.Input[builtins.int]]
         """
-        实例购买数量。取值范围为 1~50。默认值为 1。
+        Number of instances to purchase. Value range: 1–50. Default: 1
         """
         overdue_reclaim_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
         """
         overdue_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
         """
         period: NotRequired[pulumi.Input[builtins.int]]
         """
-        预付费场景下的购买时长。
+        Purchase duration in prepaid scenarios.
         """
         period_unit: NotRequired[pulumi.Input[builtins.str]]
         """
-        预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+        Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
         """
         temp_modify_end_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
         """
         temp_modify_start_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
         """
 elif False:
     InstanceChargeDetailArgsDict: TypeAlias = Mapping[str, Any]
@@ -1234,18 +1234,18 @@ class InstanceChargeDetailArgs:
                  temp_modify_end_time: Optional[pulumi.Input[builtins.str]] = None,
                  temp_modify_start_time: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] charge_type: 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
-        :param pulumi.Input[builtins.bool] auto_renew: 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
-        :param pulumi.Input[builtins.str] charge_end_time: 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
-        :param pulumi.Input[builtins.str] charge_start_time: 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
-        :param pulumi.Input[builtins.str] charge_status: 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
-        :param pulumi.Input[builtins.int] number: 实例购买数量。取值范围为 1~50。默认值为 1。
-        :param pulumi.Input[builtins.str] overdue_reclaim_time: 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
-        :param pulumi.Input[builtins.str] overdue_time: 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
-        :param pulumi.Input[builtins.int] period: 预付费场景下的购买时长。
-        :param pulumi.Input[builtins.str] period_unit: 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
-        :param pulumi.Input[builtins.str] temp_modify_end_time: 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
-        :param pulumi.Input[builtins.str] temp_modify_start_time: 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        :param pulumi.Input[builtins.str] charge_type: Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
+        :param pulumi.Input[builtins.bool] auto_renew: Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
+        :param pulumi.Input[builtins.str] charge_end_time: Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
+        :param pulumi.Input[builtins.str] charge_start_time: Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
+        :param pulumi.Input[builtins.str] charge_status: Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
+        :param pulumi.Input[builtins.int] number: Number of instances to purchase. Value range: 1–50. Default: 1
+        :param pulumi.Input[builtins.str] overdue_reclaim_time: Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
+        :param pulumi.Input[builtins.str] overdue_time: Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
+        :param pulumi.Input[builtins.int] period: Purchase duration in prepaid scenarios.
+        :param pulumi.Input[builtins.str] period_unit: Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
+        :param pulumi.Input[builtins.str] temp_modify_end_time: Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
+        :param pulumi.Input[builtins.str] temp_modify_start_time: Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
         """
         pulumi.set(__self__, "charge_type", charge_type)
         if auto_renew is not None:
@@ -1275,7 +1275,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Input[builtins.str]:
         """
-        付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+        Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
         """
         return pulumi.get(self, "charge_type")
 
@@ -1287,7 +1287,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+        Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
         """
         return pulumi.get(self, "auto_renew")
 
@@ -1299,7 +1299,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="chargeEndTime")
     def charge_end_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
         """
         return pulumi.get(self, "charge_end_time")
 
@@ -1311,7 +1311,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="chargeStartTime")
     def charge_start_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
         """
         return pulumi.get(self, "charge_start_time")
 
@@ -1323,7 +1323,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+        Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
         """
         return pulumi.get(self, "charge_status")
 
@@ -1335,7 +1335,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter
     def number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例购买数量。取值范围为 1~50。默认值为 1。
+        Number of instances to purchase. Value range: 1–50. Default: 1
         """
         return pulumi.get(self, "number")
 
@@ -1347,7 +1347,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -1359,7 +1359,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -1371,7 +1371,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter
     def period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        预付费场景下的购买时长。
+        Purchase duration in prepaid scenarios.
         """
         return pulumi.get(self, "period")
 
@@ -1383,7 +1383,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+        Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
         """
         return pulumi.get(self, "period_unit")
 
@@ -1395,7 +1395,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="tempModifyEndTime")
     def temp_modify_end_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
         """
         return pulumi.get(self, "temp_modify_end_time")
 
@@ -1407,7 +1407,7 @@ class InstanceChargeDetailArgs:
     @pulumi.getter(name="tempModifyStartTime")
     def temp_modify_start_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
         """
         return pulumi.get(self, "temp_modify_start_time")
 
@@ -1420,27 +1420,27 @@ if not MYPY:
     class InstanceDisasterRecoveryInstanceArgsDict(TypedDict):
         dts_task_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        主实例与灾备实例之间同步任务的 ID。
+        ID of synchronization tasks between primary and disaster recovery instances.
         """
         dts_task_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        主实例与灾备实例之间同步任务的名称。
+        Name of the synchronization task between the primary instance and the disaster recovery instance
         """
         dts_task_status: NotRequired[pulumi.Input[builtins.str]]
         """
-        主实例与灾备实例之间同步任务的状态。
+        Status of synchronization tasks between the primary instance and the disaster recovery instance
         """
         instance_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        灾备实例的 ID。
+        Disaster recovery instance ID.
         """
         instance_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        灾备实例的名称。
+        Name of disaster recovery instance.
         """
         seconds_behind_master: NotRequired[pulumi.Input[builtins.int]]
         """
-        灾备实例与主实例之间的时延。
+        Latency between the disaster recovery instance and the primary instance.
         """
 elif False:
     InstanceDisasterRecoveryInstanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -1455,12 +1455,12 @@ class InstanceDisasterRecoveryInstanceArgs:
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
                  seconds_behind_master: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] dts_task_id: 主实例与灾备实例之间同步任务的 ID。
-        :param pulumi.Input[builtins.str] dts_task_name: 主实例与灾备实例之间同步任务的名称。
-        :param pulumi.Input[builtins.str] dts_task_status: 主实例与灾备实例之间同步任务的状态。
-        :param pulumi.Input[builtins.str] instance_id: 灾备实例的 ID。
-        :param pulumi.Input[builtins.str] instance_name: 灾备实例的名称。
-        :param pulumi.Input[builtins.int] seconds_behind_master: 灾备实例与主实例之间的时延。
+        :param pulumi.Input[builtins.str] dts_task_id: ID of synchronization tasks between primary and disaster recovery instances.
+        :param pulumi.Input[builtins.str] dts_task_name: Name of the synchronization task between the primary instance and the disaster recovery instance
+        :param pulumi.Input[builtins.str] dts_task_status: Status of synchronization tasks between the primary instance and the disaster recovery instance
+        :param pulumi.Input[builtins.str] instance_id: Disaster recovery instance ID.
+        :param pulumi.Input[builtins.str] instance_name: Name of disaster recovery instance.
+        :param pulumi.Input[builtins.int] seconds_behind_master: Latency between the disaster recovery instance and the primary instance.
         """
         if dts_task_id is not None:
             pulumi.set(__self__, "dts_task_id", dts_task_id)
@@ -1479,7 +1479,7 @@ class InstanceDisasterRecoveryInstanceArgs:
     @pulumi.getter(name="dtsTaskId")
     def dts_task_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        主实例与灾备实例之间同步任务的 ID。
+        ID of synchronization tasks between primary and disaster recovery instances.
         """
         return pulumi.get(self, "dts_task_id")
 
@@ -1491,7 +1491,7 @@ class InstanceDisasterRecoveryInstanceArgs:
     @pulumi.getter(name="dtsTaskName")
     def dts_task_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        主实例与灾备实例之间同步任务的名称。
+        Name of the synchronization task between the primary instance and the disaster recovery instance
         """
         return pulumi.get(self, "dts_task_name")
 
@@ -1503,7 +1503,7 @@ class InstanceDisasterRecoveryInstanceArgs:
     @pulumi.getter(name="dtsTaskStatus")
     def dts_task_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        主实例与灾备实例之间同步任务的状态。
+        Status of synchronization tasks between the primary instance and the disaster recovery instance
         """
         return pulumi.get(self, "dts_task_status")
 
@@ -1515,7 +1515,7 @@ class InstanceDisasterRecoveryInstanceArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        灾备实例的 ID。
+        Disaster recovery instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -1527,7 +1527,7 @@ class InstanceDisasterRecoveryInstanceArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        灾备实例的名称。
+        Name of disaster recovery instance.
         """
         return pulumi.get(self, "instance_name")
 
@@ -1539,7 +1539,7 @@ class InstanceDisasterRecoveryInstanceArgs:
     @pulumi.getter(name="secondsBehindMaster")
     def seconds_behind_master(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        灾备实例与主实例之间的时延。
+        Latency between the disaster recovery instance and the primary instance.
         """
         return pulumi.get(self, "seconds_behind_master")
 
@@ -1552,84 +1552,84 @@ if not MYPY:
     class InstanceEndpointArgsDict(TypedDict):
         auto_add_new_nodes: NotRequired[pulumi.Input[builtins.str]]
         """
-        当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+        When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
         """
         connection_info_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        连接终端标签。
+        Connection endpoint tag.
         """
         connection_mode: NotRequired[pulumi.Input[builtins.str]]
         """
-        连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+        Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
         """
         connection_pool_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+        Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
         """
         description: NotRequired[pulumi.Input[builtins.str]]
         """
-        连接终端的描述信息。
+        Description of the connection endpoint
         """
         enable_connection_persistent: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否启用连接保持。取值：true：是。false：否。
+        Enable connection keep-alive. Options: true: yes. false: no
         """
         enable_read_only: NotRequired[pulumi.Input[builtins.str]]
         """
-        是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+        Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
         """
         enable_read_write_splitting: NotRequired[pulumi.Input[builtins.str]]
         """
-        是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+        Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
         """
         endpoint_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例连接终端 ID。
+        Instance connection endpoint ID.
         """
         endpoint_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例连接终端名称。
+        Instance connection endpoint name.
         """
         endpoint_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        终端类型。取值为 Custom，自定义终端。
+        Endpoint type. Value: Custom, custom endpoint.
         """
         idle_connection_reclaim: NotRequired[pulumi.Input[builtins.bool]]
         """
-        空闲连接回收功能是否开启。true：开启。false：不开启。
+        Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
         """
         implicit_trans_split: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否开启事务分离。取值：true：是。false：否。
+        Whether to enable transaction separation. Values: true: Yes. false: No.
         """
         master_node_routing: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否开启主节点路由。取值：true：是。false：否。
+        Whether to enable primary node routing. Values: true: Yes. false: No.
         """
         master_protector_timeout: NotRequired[pulumi.Input[builtins.int]]
         """
-        过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+        Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
         """
         multi_statements_mode: NotRequired[pulumi.Input[builtins.str]]
         """
-        代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+        Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
         """
         overload_protection: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否开启过载保护。取值：true：是。false：否。
+        Overload protection enabled. Values: true: yes. false: no
         """
         read_only_node_distribution_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+        Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
         """
         read_only_node_max_delay_time: NotRequired[pulumi.Input[builtins.int]]
         """
-        只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+        Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
         """
         read_only_node_weights: NotRequired[pulumi.Input[Sequence[pulumi.Input['InstanceEndpointReadOnlyNodeWeightArgsDict']]]]
         read_write_mode: NotRequired[pulumi.Input[builtins.str]]
         """
-        读写模式：ReadWrite：读写。ReadOnly：只读。
+        Read/write mode: ReadWrite: read/write. ReadOnly: read-only
         """
 elif False:
     InstanceEndpointArgsDict: TypeAlias = Mapping[str, Any]
@@ -1659,26 +1659,26 @@ class InstanceEndpointArgs:
                  read_only_node_weights: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceEndpointReadOnlyNodeWeightArgs']]]] = None,
                  read_write_mode: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] auto_add_new_nodes: 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] connection_info_tags: 连接终端标签。
-        :param pulumi.Input[builtins.str] connection_mode: 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
-        :param pulumi.Input[builtins.str] connection_pool_type: 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
-        :param pulumi.Input[builtins.str] description: 连接终端的描述信息。
-        :param pulumi.Input[builtins.bool] enable_connection_persistent: 是否启用连接保持。取值：true：是。false：否。
-        :param pulumi.Input[builtins.str] enable_read_only: 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
-        :param pulumi.Input[builtins.str] enable_read_write_splitting: 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
-        :param pulumi.Input[builtins.str] endpoint_id: 实例连接终端 ID。
-        :param pulumi.Input[builtins.str] endpoint_name: 实例连接终端名称。
-        :param pulumi.Input[builtins.str] endpoint_type: 终端类型。取值为 Custom，自定义终端。
-        :param pulumi.Input[builtins.bool] idle_connection_reclaim: 空闲连接回收功能是否开启。true：开启。false：不开启。
-        :param pulumi.Input[builtins.bool] implicit_trans_split: 是否开启事务分离。取值：true：是。false：否。
-        :param pulumi.Input[builtins.bool] master_node_routing: 是否开启主节点路由。取值：true：是。false：否。
-        :param pulumi.Input[builtins.int] master_protector_timeout: 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
-        :param pulumi.Input[builtins.str] multi_statements_mode: 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
-        :param pulumi.Input[builtins.bool] overload_protection: 是否开启过载保护。取值：true：是。false：否。
-        :param pulumi.Input[builtins.str] read_only_node_distribution_type: 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
-        :param pulumi.Input[builtins.int] read_only_node_max_delay_time: 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
-        :param pulumi.Input[builtins.str] read_write_mode: 读写模式：ReadWrite：读写。ReadOnly：只读。
+        :param pulumi.Input[builtins.str] auto_add_new_nodes: When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] connection_info_tags: Connection endpoint tag.
+        :param pulumi.Input[builtins.str] connection_mode: Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
+        :param pulumi.Input[builtins.str] connection_pool_type: Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
+        :param pulumi.Input[builtins.str] description: Description of the connection endpoint
+        :param pulumi.Input[builtins.bool] enable_connection_persistent: Enable connection keep-alive. Options: true: yes. false: no
+        :param pulumi.Input[builtins.str] enable_read_only: Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
+        :param pulumi.Input[builtins.str] enable_read_write_splitting: Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
+        :param pulumi.Input[builtins.str] endpoint_id: Instance connection endpoint ID.
+        :param pulumi.Input[builtins.str] endpoint_name: Instance connection endpoint name.
+        :param pulumi.Input[builtins.str] endpoint_type: Endpoint type. Value: Custom, custom endpoint.
+        :param pulumi.Input[builtins.bool] idle_connection_reclaim: Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
+        :param pulumi.Input[builtins.bool] implicit_trans_split: Whether to enable transaction separation. Values: true: Yes. false: No.
+        :param pulumi.Input[builtins.bool] master_node_routing: Whether to enable primary node routing. Values: true: Yes. false: No.
+        :param pulumi.Input[builtins.int] master_protector_timeout: Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
+        :param pulumi.Input[builtins.str] multi_statements_mode: Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
+        :param pulumi.Input[builtins.bool] overload_protection: Overload protection enabled. Values: true: yes. false: no
+        :param pulumi.Input[builtins.str] read_only_node_distribution_type: Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
+        :param pulumi.Input[builtins.int] read_only_node_max_delay_time: Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
+        :param pulumi.Input[builtins.str] read_write_mode: Read/write mode: ReadWrite: read/write. ReadOnly: read-only
         """
         if auto_add_new_nodes is not None:
             pulumi.set(__self__, "auto_add_new_nodes", auto_add_new_nodes)
@@ -1727,7 +1727,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="autoAddNewNodes")
     def auto_add_new_nodes(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+        When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
         """
         return pulumi.get(self, "auto_add_new_nodes")
 
@@ -1739,7 +1739,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="connectionInfoTags")
     def connection_info_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        连接终端标签。
+        Connection endpoint tag.
         """
         return pulumi.get(self, "connection_info_tags")
 
@@ -1751,7 +1751,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="connectionMode")
     def connection_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+        Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
         """
         return pulumi.get(self, "connection_mode")
 
@@ -1763,7 +1763,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="connectionPoolType")
     def connection_pool_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+        Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
         """
         return pulumi.get(self, "connection_pool_type")
 
@@ -1775,7 +1775,7 @@ class InstanceEndpointArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接终端的描述信息。
+        Description of the connection endpoint
         """
         return pulumi.get(self, "description")
 
@@ -1787,7 +1787,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="enableConnectionPersistent")
     def enable_connection_persistent(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否启用连接保持。取值：true：是。false：否。
+        Enable connection keep-alive. Options: true: yes. false: no
         """
         return pulumi.get(self, "enable_connection_persistent")
 
@@ -1799,7 +1799,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="enableReadOnly")
     def enable_read_only(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+        Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
         """
         return pulumi.get(self, "enable_read_only")
 
@@ -1811,7 +1811,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="enableReadWriteSplitting")
     def enable_read_write_splitting(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+        Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
         """
         return pulumi.get(self, "enable_read_write_splitting")
 
@@ -1823,7 +1823,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例连接终端 ID。
+        Instance connection endpoint ID.
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -1835,7 +1835,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="endpointName")
     def endpoint_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例连接终端名称。
+        Instance connection endpoint name.
         """
         return pulumi.get(self, "endpoint_name")
 
@@ -1847,7 +1847,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端类型。取值为 Custom，自定义终端。
+        Endpoint type. Value: Custom, custom endpoint.
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -1859,7 +1859,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="idleConnectionReclaim")
     def idle_connection_reclaim(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        空闲连接回收功能是否开启。true：开启。false：不开启。
+        Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
         """
         return pulumi.get(self, "idle_connection_reclaim")
 
@@ -1871,7 +1871,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="implicitTransSplit")
     def implicit_trans_split(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启事务分离。取值：true：是。false：否。
+        Whether to enable transaction separation. Values: true: Yes. false: No.
         """
         return pulumi.get(self, "implicit_trans_split")
 
@@ -1883,7 +1883,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="masterNodeRouting")
     def master_node_routing(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启主节点路由。取值：true：是。false：否。
+        Whether to enable primary node routing. Values: true: Yes. false: No.
         """
         return pulumi.get(self, "master_node_routing")
 
@@ -1895,7 +1895,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="masterProtectorTimeout")
     def master_protector_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+        Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
         """
         return pulumi.get(self, "master_protector_timeout")
 
@@ -1907,7 +1907,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="multiStatementsMode")
     def multi_statements_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+        Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
         """
         return pulumi.get(self, "multi_statements_mode")
 
@@ -1919,7 +1919,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="overloadProtection")
     def overload_protection(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启过载保护。取值：true：是。false：否。
+        Overload protection enabled. Values: true: yes. false: no
         """
         return pulumi.get(self, "overload_protection")
 
@@ -1931,7 +1931,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="readOnlyNodeDistributionType")
     def read_only_node_distribution_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+        Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
         """
         return pulumi.get(self, "read_only_node_distribution_type")
 
@@ -1943,7 +1943,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="readOnlyNodeMaxDelayTime")
     def read_only_node_max_delay_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+        Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
         """
         return pulumi.get(self, "read_only_node_max_delay_time")
 
@@ -1964,7 +1964,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="readWriteMode")
     def read_write_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        读写模式：ReadWrite：读写。ReadOnly：只读。
+        Read/write mode: ReadWrite: read/write. ReadOnly: read-only
         """
         return pulumi.get(self, "read_write_mode")
 
@@ -1977,15 +1977,15 @@ if not MYPY:
     class InstanceEndpointReadOnlyNodeWeightArgsDict(TypedDict):
         node_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        只读节点需要传入 NodeId，主节点无需传入。
+        Read-only nodes require NodeId. Primary nodes do not require it
         """
         node_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点类型。Primary：主节点。ReadOnly：只读节点。
+        Node type. Primary: primary node. ReadOnly: read-only node
         """
         weight: NotRequired[pulumi.Input[builtins.int]]
         """
-        节点的读权重，以 100 递增，最大值为 10000。
+        Node read weight, increments of 100, maximum value is 10000.
         """
 elif False:
     InstanceEndpointReadOnlyNodeWeightArgsDict: TypeAlias = Mapping[str, Any]
@@ -1997,9 +1997,9 @@ class InstanceEndpointReadOnlyNodeWeightArgs:
                  node_type: Optional[pulumi.Input[builtins.str]] = None,
                  weight: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] node_id: 只读节点需要传入 NodeId，主节点无需传入。
-        :param pulumi.Input[builtins.str] node_type: 节点类型。Primary：主节点。ReadOnly：只读节点。
-        :param pulumi.Input[builtins.int] weight: 节点的读权重，以 100 递增，最大值为 10000。
+        :param pulumi.Input[builtins.str] node_id: Read-only nodes require NodeId. Primary nodes do not require it
+        :param pulumi.Input[builtins.str] node_type: Node type. Primary: primary node. ReadOnly: read-only node
+        :param pulumi.Input[builtins.int] weight: Node read weight, increments of 100, maximum value is 10000.
         """
         if node_id is not None:
             pulumi.set(__self__, "node_id", node_id)
@@ -2012,7 +2012,7 @@ class InstanceEndpointReadOnlyNodeWeightArgs:
     @pulumi.getter(name="nodeId")
     def node_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        只读节点需要传入 NodeId，主节点无需传入。
+        Read-only nodes require NodeId. Primary nodes do not require it
         """
         return pulumi.get(self, "node_id")
 
@@ -2024,7 +2024,7 @@ class InstanceEndpointReadOnlyNodeWeightArgs:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点类型。Primary：主节点。ReadOnly：只读节点。
+        Node type. Primary: primary node. ReadOnly: read-only node
         """
         return pulumi.get(self, "node_type")
 
@@ -2036,7 +2036,7 @@ class InstanceEndpointReadOnlyNodeWeightArgs:
     @pulumi.getter
     def weight(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        节点的读权重，以 100 递增，最大值为 10000。
+        Node read weight, increments of 100, maximum value is 10000.
         """
         return pulumi.get(self, "weight")
 
@@ -2049,15 +2049,15 @@ if not MYPY:
     class InstanceMaintenanceWindowArgsDict(TypedDict):
         day_kind: NotRequired[pulumi.Input[builtins.str]]
         """
-        可维护周期粒度，取值为 Week，周。
+        Maintenance cycle granularity. Value: Week.
         """
         day_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+        Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
         """
         maintenance_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+        Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
         """
 elif False:
     InstanceMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
@@ -2069,9 +2069,9 @@ class InstanceMaintenanceWindowArgs:
                  day_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  maintenance_time: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] day_kind: 可维护周期粒度，取值为 Week，周。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] day_of_weeks: 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
-        :param pulumi.Input[builtins.str] maintenance_time: 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+        :param pulumi.Input[builtins.str] day_kind: Maintenance cycle granularity. Value: Week.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] day_of_weeks: Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+        :param pulumi.Input[builtins.str] maintenance_time: Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
         """
         if day_kind is not None:
             pulumi.set(__self__, "day_kind", day_kind)
@@ -2084,7 +2084,7 @@ class InstanceMaintenanceWindowArgs:
     @pulumi.getter(name="dayKind")
     def day_kind(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        可维护周期粒度，取值为 Week，周。
+        Maintenance cycle granularity. Value: Week.
         """
         return pulumi.get(self, "day_kind")
 
@@ -2096,7 +2096,7 @@ class InstanceMaintenanceWindowArgs:
     @pulumi.getter(name="dayOfWeeks")
     def day_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+        Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
         """
         return pulumi.get(self, "day_of_weeks")
 
@@ -2108,7 +2108,7 @@ class InstanceMaintenanceWindowArgs:
     @pulumi.getter(name="maintenanceTime")
     def maintenance_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+        Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
         """
         return pulumi.get(self, "maintenance_time")
 
@@ -2121,15 +2121,15 @@ if not MYPY:
     class InstanceNodeArgsDict(TypedDict):
         node_spec: pulumi.Input[builtins.str]
         """
-        节点规格。
+        Node specification.
         """
         node_type: pulumi.Input[builtins.str]
         """
-        节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+        Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
         """
         zone_id: pulumi.Input[builtins.str]
         """
-        可用区 ID。
+        Availability zone ID
         """
 elif False:
     InstanceNodeArgsDict: TypeAlias = Mapping[str, Any]
@@ -2141,9 +2141,9 @@ class InstanceNodeArgs:
                  node_type: pulumi.Input[builtins.str],
                  zone_id: pulumi.Input[builtins.str]):
         """
-        :param pulumi.Input[builtins.str] node_spec: 节点规格。
-        :param pulumi.Input[builtins.str] node_type: 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
-        :param pulumi.Input[builtins.str] zone_id: 可用区 ID。
+        :param pulumi.Input[builtins.str] node_spec: Node specification.
+        :param pulumi.Input[builtins.str] node_type: Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID
         """
         pulumi.set(__self__, "node_spec", node_spec)
         pulumi.set(__self__, "node_type", node_type)
@@ -2153,7 +2153,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> pulumi.Input[builtins.str]:
         """
-        节点规格。
+        Node specification.
         """
         return pulumi.get(self, "node_spec")
 
@@ -2165,7 +2165,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> pulumi.Input[builtins.str]:
         """
-        节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+        Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
         """
         return pulumi.get(self, "node_type")
 
@@ -2177,7 +2177,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[builtins.str]:
         """
-        可用区 ID。
+        Availability zone ID
         """
         return pulumi.get(self, "zone_id")
 
@@ -2190,11 +2190,11 @@ if not MYPY:
     class InstanceProxyDetailArgsDict(TypedDict):
         db_proxy_status: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+        Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
         """
         proxy_resource_info: NotRequired[pulumi.Input['InstanceProxyDetailProxyResourceInfoArgsDict']]
         """
-        实例的数据库代理服务的资源信息。
+        Resource information for the instance's database proxy service
         """
 elif False:
     InstanceProxyDetailArgsDict: TypeAlias = Mapping[str, Any]
@@ -2205,8 +2205,8 @@ class InstanceProxyDetailArgs:
                  db_proxy_status: Optional[pulumi.Input[builtins.str]] = None,
                  proxy_resource_info: Optional[pulumi.Input['InstanceProxyDetailProxyResourceInfoArgs']] = None):
         """
-        :param pulumi.Input[builtins.str] db_proxy_status: 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
-        :param pulumi.Input['InstanceProxyDetailProxyResourceInfoArgs'] proxy_resource_info: 实例的数据库代理服务的资源信息。
+        :param pulumi.Input[builtins.str] db_proxy_status: Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
+        :param pulumi.Input['InstanceProxyDetailProxyResourceInfoArgs'] proxy_resource_info: Resource information for the instance's database proxy service
         """
         if db_proxy_status is not None:
             pulumi.set(__self__, "db_proxy_status", db_proxy_status)
@@ -2217,7 +2217,7 @@ class InstanceProxyDetailArgs:
     @pulumi.getter(name="dbProxyStatus")
     def db_proxy_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+        Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
         """
         return pulumi.get(self, "db_proxy_status")
 
@@ -2229,7 +2229,7 @@ class InstanceProxyDetailArgs:
     @pulumi.getter(name="proxyResourceInfo")
     def proxy_resource_info(self) -> Optional[pulumi.Input['InstanceProxyDetailProxyResourceInfoArgs']]:
         """
-        实例的数据库代理服务的资源信息。
+        Resource information for the instance's database proxy service
         """
         return pulumi.get(self, "proxy_resource_info")
 
@@ -2242,15 +2242,15 @@ if not MYPY:
     class InstanceProxyDetailProxyResourceInfoArgsDict(TypedDict):
         current_proxy_cpu_num: NotRequired[pulumi.Input[builtins.int]]
         """
-        实例数据库代理服务当前的核数。
+        Current number of cores for the instance database proxy service
         """
         max_proxy_cpu_num: NotRequired[pulumi.Input[builtins.int]]
         """
-        用户可为数据库代理服务配置的最多核数。
+        Maximum number of cores configurable for database proxy service.
         """
         min_proxy_cpu_num: NotRequired[pulumi.Input[builtins.int]]
         """
-        用户可为数据库代理服务配置的最少核数。
+        Minimum number of CPU cores configurable for the database proxy service
         """
 elif False:
     InstanceProxyDetailProxyResourceInfoArgsDict: TypeAlias = Mapping[str, Any]
@@ -2262,9 +2262,9 @@ class InstanceProxyDetailProxyResourceInfoArgs:
                  max_proxy_cpu_num: Optional[pulumi.Input[builtins.int]] = None,
                  min_proxy_cpu_num: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.int] current_proxy_cpu_num: 实例数据库代理服务当前的核数。
-        :param pulumi.Input[builtins.int] max_proxy_cpu_num: 用户可为数据库代理服务配置的最多核数。
-        :param pulumi.Input[builtins.int] min_proxy_cpu_num: 用户可为数据库代理服务配置的最少核数。
+        :param pulumi.Input[builtins.int] current_proxy_cpu_num: Current number of cores for the instance database proxy service
+        :param pulumi.Input[builtins.int] max_proxy_cpu_num: Maximum number of cores configurable for database proxy service.
+        :param pulumi.Input[builtins.int] min_proxy_cpu_num: Minimum number of CPU cores configurable for the database proxy service
         """
         if current_proxy_cpu_num is not None:
             pulumi.set(__self__, "current_proxy_cpu_num", current_proxy_cpu_num)
@@ -2277,7 +2277,7 @@ class InstanceProxyDetailProxyResourceInfoArgs:
     @pulumi.getter(name="currentProxyCpuNum")
     def current_proxy_cpu_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例数据库代理服务当前的核数。
+        Current number of cores for the instance database proxy service
         """
         return pulumi.get(self, "current_proxy_cpu_num")
 
@@ -2289,7 +2289,7 @@ class InstanceProxyDetailProxyResourceInfoArgs:
     @pulumi.getter(name="maxProxyCpuNum")
     def max_proxy_cpu_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        用户可为数据库代理服务配置的最多核数。
+        Maximum number of cores configurable for database proxy service.
         """
         return pulumi.get(self, "max_proxy_cpu_num")
 
@@ -2301,7 +2301,7 @@ class InstanceProxyDetailProxyResourceInfoArgs:
     @pulumi.getter(name="minProxyCpuNum")
     def min_proxy_cpu_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        用户可为数据库代理服务配置的最少核数。
+        Minimum number of CPU cores configurable for the database proxy service
         """
         return pulumi.get(self, "min_proxy_cpu_num")
 
@@ -2314,11 +2314,11 @@ if not MYPY:
     class InstanceTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Tag key
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value.
         """
 elif False:
     InstanceTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -2329,8 +2329,8 @@ class InstanceTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2341,7 +2341,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -2353,7 +2353,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 

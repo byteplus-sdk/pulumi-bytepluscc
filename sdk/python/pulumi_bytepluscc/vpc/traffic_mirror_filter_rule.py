@@ -32,16 +32,16 @@ class TrafficMirrorFilterRuleArgs:
                  source_port_range: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a TrafficMirrorFilterRule resource.
-        :param pulumi.Input[builtins.str] destination_cidr_block: 目的网段。
-        :param pulumi.Input[builtins.str] policy: 流量采集策略。accept：允许。即当镜像源的流量匹配该规则时，复制该流量至镜像目标进行监控分析。reject：拒绝。即当镜像源的流量匹配该规则时，不复制该流量，拒绝对该流量进行监控分析。
-        :param pulumi.Input[builtins.str] protocol: 流量的协议。取值如下：all：含TCP、UDP、ICMP协议。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。
-        :param pulumi.Input[builtins.str] source_cidr_block: 流量源网段。
-        :param pulumi.Input[builtins.str] traffic_direction: 流量的方向。取值如下：ingress：入向规则。egress：出向规则。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: 筛选条件的ID。
-        :param pulumi.Input[builtins.str] description: 筛选规则的描述。
-        :param pulumi.Input[builtins.str] destination_port_range: 流量目的端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
-        :param pulumi.Input[builtins.int] priority: 筛选规则的优先级，范围为1-1000。数值越小，优先级越高。默认为1，1为最高优先级。同一筛选条件同一方向的优先级唯一。
-        :param pulumi.Input[builtins.str] source_port_range: 流量源端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+        :param pulumi.Input[builtins.str] destination_cidr_block: Destination network segment.
+        :param pulumi.Input[builtins.str] policy: Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
+        :param pulumi.Input[builtins.str] protocol: Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
+        :param pulumi.Input[builtins.str] source_cidr_block: Source network segment.
+        :param pulumi.Input[builtins.str] traffic_direction: Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: Filtering condition ID.
+        :param pulumi.Input[builtins.str] description: Description of the filtering rule.
+        :param pulumi.Input[builtins.str] destination_port_range: Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
+        :param pulumi.Input[builtins.int] priority: Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
+        :param pulumi.Input[builtins.str] source_port_range: Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
         """
         pulumi.set(__self__, "destination_cidr_block", destination_cidr_block)
         pulumi.set(__self__, "policy", policy)
@@ -62,7 +62,7 @@ class TrafficMirrorFilterRuleArgs:
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> pulumi.Input[builtins.str]:
         """
-        目的网段。
+        Destination network segment.
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -74,7 +74,7 @@ class TrafficMirrorFilterRuleArgs:
     @pulumi.getter
     def policy(self) -> pulumi.Input[builtins.str]:
         """
-        流量采集策略。accept：允许。即当镜像源的流量匹配该规则时，复制该流量至镜像目标进行监控分析。reject：拒绝。即当镜像源的流量匹配该规则时，不复制该流量，拒绝对该流量进行监控分析。
+        Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
         """
         return pulumi.get(self, "policy")
 
@@ -86,7 +86,7 @@ class TrafficMirrorFilterRuleArgs:
     @pulumi.getter
     def protocol(self) -> pulumi.Input[builtins.str]:
         """
-        流量的协议。取值如下：all：含TCP、UDP、ICMP协议。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。
+        Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
         """
         return pulumi.get(self, "protocol")
 
@@ -98,7 +98,7 @@ class TrafficMirrorFilterRuleArgs:
     @pulumi.getter(name="sourceCidrBlock")
     def source_cidr_block(self) -> pulumi.Input[builtins.str]:
         """
-        流量源网段。
+        Source network segment.
         """
         return pulumi.get(self, "source_cidr_block")
 
@@ -110,7 +110,7 @@ class TrafficMirrorFilterRuleArgs:
     @pulumi.getter(name="trafficDirection")
     def traffic_direction(self) -> pulumi.Input[builtins.str]:
         """
-        流量的方向。取值如下：ingress：入向规则。egress：出向规则。
+        Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
         """
         return pulumi.get(self, "traffic_direction")
 
@@ -122,7 +122,7 @@ class TrafficMirrorFilterRuleArgs:
     @pulumi.getter(name="trafficMirrorFilterId")
     def traffic_mirror_filter_id(self) -> pulumi.Input[builtins.str]:
         """
-        筛选条件的ID。
+        Filtering condition ID.
         """
         return pulumi.get(self, "traffic_mirror_filter_id")
 
@@ -134,7 +134,7 @@ class TrafficMirrorFilterRuleArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选规则的描述。
+        Description of the filtering rule.
         """
         return pulumi.get(self, "description")
 
@@ -146,7 +146,7 @@ class TrafficMirrorFilterRuleArgs:
     @pulumi.getter(name="destinationPortRange")
     def destination_port_range(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        流量目的端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+        Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
         """
         return pulumi.get(self, "destination_port_range")
 
@@ -158,7 +158,7 @@ class TrafficMirrorFilterRuleArgs:
     @pulumi.getter
     def priority(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        筛选规则的优先级，范围为1-1000。数值越小，优先级越高。默认为1，1为最高优先级。同一筛选条件同一方向的优先级唯一。
+        Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
         """
         return pulumi.get(self, "priority")
 
@@ -170,7 +170,7 @@ class TrafficMirrorFilterRuleArgs:
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        流量源端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+        Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
         """
         return pulumi.get(self, "source_port_range")
 
@@ -196,18 +196,18 @@ class _TrafficMirrorFilterRuleState:
                  traffic_mirror_filter_rule_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering TrafficMirrorFilterRule resources.
-        :param pulumi.Input[builtins.str] description: 筛选规则的描述。
-        :param pulumi.Input[builtins.str] destination_cidr_block: 目的网段。
-        :param pulumi.Input[builtins.str] destination_port_range: 流量目的端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
-        :param pulumi.Input[builtins.str] policy: 流量采集策略。accept：允许。即当镜像源的流量匹配该规则时，复制该流量至镜像目标进行监控分析。reject：拒绝。即当镜像源的流量匹配该规则时，不复制该流量，拒绝对该流量进行监控分析。
-        :param pulumi.Input[builtins.int] priority: 筛选规则的优先级，范围为1-1000。数值越小，优先级越高。默认为1，1为最高优先级。同一筛选条件同一方向的优先级唯一。
-        :param pulumi.Input[builtins.str] protocol: 流量的协议。取值如下：all：含TCP、UDP、ICMP协议。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。
-        :param pulumi.Input[builtins.str] source_cidr_block: 流量源网段。
-        :param pulumi.Input[builtins.str] source_port_range: 流量源端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
-        :param pulumi.Input[builtins.str] status: 筛选规则的状态。Available：可用。Deleting：删除中。Creating：创建中。Pending：修改中。
-        :param pulumi.Input[builtins.str] traffic_direction: 流量的方向。取值如下：ingress：入向规则。egress：出向规则。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: 筛选条件的ID。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_rule_id: 筛选规则的ID。
+        :param pulumi.Input[builtins.str] description: Description of the filtering rule.
+        :param pulumi.Input[builtins.str] destination_cidr_block: Destination network segment.
+        :param pulumi.Input[builtins.str] destination_port_range: Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
+        :param pulumi.Input[builtins.str] policy: Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
+        :param pulumi.Input[builtins.int] priority: Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
+        :param pulumi.Input[builtins.str] protocol: Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
+        :param pulumi.Input[builtins.str] source_cidr_block: Source network segment.
+        :param pulumi.Input[builtins.str] source_port_range: Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
+        :param pulumi.Input[builtins.str] status: Status of the filtering rule. Available: available. Deleting: deleting. Creating: creating. Pending: modifying.
+        :param pulumi.Input[builtins.str] traffic_direction: Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: Filtering condition ID.
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_rule_id: Filtering rule ID.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -238,7 +238,7 @@ class _TrafficMirrorFilterRuleState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选规则的描述。
+        Description of the filtering rule.
         """
         return pulumi.get(self, "description")
 
@@ -250,7 +250,7 @@ class _TrafficMirrorFilterRuleState:
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        目的网段。
+        Destination network segment.
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -262,7 +262,7 @@ class _TrafficMirrorFilterRuleState:
     @pulumi.getter(name="destinationPortRange")
     def destination_port_range(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        流量目的端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+        Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
         """
         return pulumi.get(self, "destination_port_range")
 
@@ -274,7 +274,7 @@ class _TrafficMirrorFilterRuleState:
     @pulumi.getter
     def policy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        流量采集策略。accept：允许。即当镜像源的流量匹配该规则时，复制该流量至镜像目标进行监控分析。reject：拒绝。即当镜像源的流量匹配该规则时，不复制该流量，拒绝对该流量进行监控分析。
+        Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
         """
         return pulumi.get(self, "policy")
 
@@ -286,7 +286,7 @@ class _TrafficMirrorFilterRuleState:
     @pulumi.getter
     def priority(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        筛选规则的优先级，范围为1-1000。数值越小，优先级越高。默认为1，1为最高优先级。同一筛选条件同一方向的优先级唯一。
+        Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
         """
         return pulumi.get(self, "priority")
 
@@ -298,7 +298,7 @@ class _TrafficMirrorFilterRuleState:
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        流量的协议。取值如下：all：含TCP、UDP、ICMP协议。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。
+        Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
         """
         return pulumi.get(self, "protocol")
 
@@ -310,7 +310,7 @@ class _TrafficMirrorFilterRuleState:
     @pulumi.getter(name="sourceCidrBlock")
     def source_cidr_block(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        流量源网段。
+        Source network segment.
         """
         return pulumi.get(self, "source_cidr_block")
 
@@ -322,7 +322,7 @@ class _TrafficMirrorFilterRuleState:
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        流量源端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+        Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
         """
         return pulumi.get(self, "source_port_range")
 
@@ -334,7 +334,7 @@ class _TrafficMirrorFilterRuleState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选规则的状态。Available：可用。Deleting：删除中。Creating：创建中。Pending：修改中。
+        Status of the filtering rule. Available: available. Deleting: deleting. Creating: creating. Pending: modifying.
         """
         return pulumi.get(self, "status")
 
@@ -346,7 +346,7 @@ class _TrafficMirrorFilterRuleState:
     @pulumi.getter(name="trafficDirection")
     def traffic_direction(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        流量的方向。取值如下：ingress：入向规则。egress：出向规则。
+        Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
         """
         return pulumi.get(self, "traffic_direction")
 
@@ -358,7 +358,7 @@ class _TrafficMirrorFilterRuleState:
     @pulumi.getter(name="trafficMirrorFilterId")
     def traffic_mirror_filter_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选条件的ID。
+        Filtering condition ID.
         """
         return pulumi.get(self, "traffic_mirror_filter_id")
 
@@ -370,7 +370,7 @@ class _TrafficMirrorFilterRuleState:
     @pulumi.getter(name="trafficMirrorFilterRuleId")
     def traffic_mirror_filter_rule_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选规则的ID。
+        Filtering rule ID.
         """
         return pulumi.get(self, "traffic_mirror_filter_rule_id")
 
@@ -397,7 +397,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
                  traffic_mirror_filter_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        筛选条件由筛选规则组成，分为入向筛选规则和出向筛选规则。
+        Filtering conditions are composed of filtering rules, divided into inbound filtering rules and outbound filtering rules.
 
         ## Example Usage
 
@@ -426,16 +426,16 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 筛选规则的描述。
-        :param pulumi.Input[builtins.str] destination_cidr_block: 目的网段。
-        :param pulumi.Input[builtins.str] destination_port_range: 流量目的端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
-        :param pulumi.Input[builtins.str] policy: 流量采集策略。accept：允许。即当镜像源的流量匹配该规则时，复制该流量至镜像目标进行监控分析。reject：拒绝。即当镜像源的流量匹配该规则时，不复制该流量，拒绝对该流量进行监控分析。
-        :param pulumi.Input[builtins.int] priority: 筛选规则的优先级，范围为1-1000。数值越小，优先级越高。默认为1，1为最高优先级。同一筛选条件同一方向的优先级唯一。
-        :param pulumi.Input[builtins.str] protocol: 流量的协议。取值如下：all：含TCP、UDP、ICMP协议。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。
-        :param pulumi.Input[builtins.str] source_cidr_block: 流量源网段。
-        :param pulumi.Input[builtins.str] source_port_range: 流量源端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
-        :param pulumi.Input[builtins.str] traffic_direction: 流量的方向。取值如下：ingress：入向规则。egress：出向规则。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: 筛选条件的ID。
+        :param pulumi.Input[builtins.str] description: Description of the filtering rule.
+        :param pulumi.Input[builtins.str] destination_cidr_block: Destination network segment.
+        :param pulumi.Input[builtins.str] destination_port_range: Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
+        :param pulumi.Input[builtins.str] policy: Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
+        :param pulumi.Input[builtins.int] priority: Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
+        :param pulumi.Input[builtins.str] protocol: Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
+        :param pulumi.Input[builtins.str] source_cidr_block: Source network segment.
+        :param pulumi.Input[builtins.str] source_port_range: Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
+        :param pulumi.Input[builtins.str] traffic_direction: Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: Filtering condition ID.
         """
         ...
     @overload
@@ -444,7 +444,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
                  args: TrafficMirrorFilterRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        筛选条件由筛选规则组成，分为入向筛选规则和出向筛选规则。
+        Filtering conditions are composed of filtering rules, divided into inbound filtering rules and outbound filtering rules.
 
         ## Example Usage
 
@@ -558,18 +558,18 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 筛选规则的描述。
-        :param pulumi.Input[builtins.str] destination_cidr_block: 目的网段。
-        :param pulumi.Input[builtins.str] destination_port_range: 流量目的端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
-        :param pulumi.Input[builtins.str] policy: 流量采集策略。accept：允许。即当镜像源的流量匹配该规则时，复制该流量至镜像目标进行监控分析。reject：拒绝。即当镜像源的流量匹配该规则时，不复制该流量，拒绝对该流量进行监控分析。
-        :param pulumi.Input[builtins.int] priority: 筛选规则的优先级，范围为1-1000。数值越小，优先级越高。默认为1，1为最高优先级。同一筛选条件同一方向的优先级唯一。
-        :param pulumi.Input[builtins.str] protocol: 流量的协议。取值如下：all：含TCP、UDP、ICMP协议。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。
-        :param pulumi.Input[builtins.str] source_cidr_block: 流量源网段。
-        :param pulumi.Input[builtins.str] source_port_range: 流量源端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
-        :param pulumi.Input[builtins.str] status: 筛选规则的状态。Available：可用。Deleting：删除中。Creating：创建中。Pending：修改中。
-        :param pulumi.Input[builtins.str] traffic_direction: 流量的方向。取值如下：ingress：入向规则。egress：出向规则。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: 筛选条件的ID。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_rule_id: 筛选规则的ID。
+        :param pulumi.Input[builtins.str] description: Description of the filtering rule.
+        :param pulumi.Input[builtins.str] destination_cidr_block: Destination network segment.
+        :param pulumi.Input[builtins.str] destination_port_range: Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
+        :param pulumi.Input[builtins.str] policy: Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
+        :param pulumi.Input[builtins.int] priority: Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
+        :param pulumi.Input[builtins.str] protocol: Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
+        :param pulumi.Input[builtins.str] source_cidr_block: Source network segment.
+        :param pulumi.Input[builtins.str] source_port_range: Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
+        :param pulumi.Input[builtins.str] status: Status of the filtering rule. Available: available. Deleting: deleting. Creating: creating. Pending: modifying.
+        :param pulumi.Input[builtins.str] traffic_direction: Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: Filtering condition ID.
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_rule_id: Filtering rule ID.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -593,7 +593,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        筛选规则的描述。
+        Description of the filtering rule.
         """
         return pulumi.get(self, "description")
 
@@ -601,7 +601,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> pulumi.Output[builtins.str]:
         """
-        目的网段。
+        Destination network segment.
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -609,7 +609,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
     @pulumi.getter(name="destinationPortRange")
     def destination_port_range(self) -> pulumi.Output[builtins.str]:
         """
-        流量目的端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+        Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
         """
         return pulumi.get(self, "destination_port_range")
 
@@ -617,7 +617,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
     @pulumi.getter
     def policy(self) -> pulumi.Output[builtins.str]:
         """
-        流量采集策略。accept：允许。即当镜像源的流量匹配该规则时，复制该流量至镜像目标进行监控分析。reject：拒绝。即当镜像源的流量匹配该规则时，不复制该流量，拒绝对该流量进行监控分析。
+        Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
         """
         return pulumi.get(self, "policy")
 
@@ -625,7 +625,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
     @pulumi.getter
     def priority(self) -> pulumi.Output[builtins.int]:
         """
-        筛选规则的优先级，范围为1-1000。数值越小，优先级越高。默认为1，1为最高优先级。同一筛选条件同一方向的优先级唯一。
+        Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
         """
         return pulumi.get(self, "priority")
 
@@ -633,7 +633,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
     @pulumi.getter
     def protocol(self) -> pulumi.Output[builtins.str]:
         """
-        流量的协议。取值如下：all：含TCP、UDP、ICMP协议。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。
+        Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
         """
         return pulumi.get(self, "protocol")
 
@@ -641,7 +641,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
     @pulumi.getter(name="sourceCidrBlock")
     def source_cidr_block(self) -> pulumi.Output[builtins.str]:
         """
-        流量源网段。
+        Source network segment.
         """
         return pulumi.get(self, "source_cidr_block")
 
@@ -649,7 +649,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> pulumi.Output[builtins.str]:
         """
-        流量源端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+        Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
         """
         return pulumi.get(self, "source_port_range")
 
@@ -657,7 +657,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        筛选规则的状态。Available：可用。Deleting：删除中。Creating：创建中。Pending：修改中。
+        Status of the filtering rule. Available: available. Deleting: deleting. Creating: creating. Pending: modifying.
         """
         return pulumi.get(self, "status")
 
@@ -665,7 +665,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
     @pulumi.getter(name="trafficDirection")
     def traffic_direction(self) -> pulumi.Output[builtins.str]:
         """
-        流量的方向。取值如下：ingress：入向规则。egress：出向规则。
+        Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
         """
         return pulumi.get(self, "traffic_direction")
 
@@ -673,7 +673,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
     @pulumi.getter(name="trafficMirrorFilterId")
     def traffic_mirror_filter_id(self) -> pulumi.Output[builtins.str]:
         """
-        筛选条件的ID。
+        Filtering condition ID.
         """
         return pulumi.get(self, "traffic_mirror_filter_id")
 
@@ -681,7 +681,7 @@ class TrafficMirrorFilterRule(pulumi.CustomResource):
     @pulumi.getter(name="trafficMirrorFilterRuleId")
     def traffic_mirror_filter_rule_id(self) -> pulumi.Output[builtins.str]:
         """
-        筛选规则的ID。
+        Filtering rule ID.
         """
         return pulumi.get(self, "traffic_mirror_filter_rule_id")
 

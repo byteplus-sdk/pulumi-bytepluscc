@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainSignedUrlAuthResult
     {
         /// <summary>
-        /// 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+        /// Represents the configuration module for the 'URL authentication' feature. This feature is disabled by default.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleResult> SignedUrlAuthRules;
         /// <summary>
-        /// 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        /// Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
         /// </summary>
         public readonly bool Switch;
 

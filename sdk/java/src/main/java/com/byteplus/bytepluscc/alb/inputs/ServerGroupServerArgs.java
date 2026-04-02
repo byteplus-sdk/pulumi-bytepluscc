@@ -17,14 +17,14 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
     public static final ServerGroupServerArgs Empty = new ServerGroupServerArgs();
 
     /**
-     * 后端服务器的描述。
+     * Description of the backend server.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 后端服务器的描述。
+     * @return Description of the backend server.
      * 
      */
     public Optional<Output<String>> description() {
@@ -32,14 +32,14 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 云服务器实例或网卡的ID。
+     * ID of the cloud server instance or network interface card.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 云服务器实例或网卡的ID。
+     * @return ID of the cloud server instance or network interface card.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -47,14 +47,14 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 后端服务器的私网IP地址。
+     * Private IP address of the backend server.
      * 
      */
     @Import(name="ip")
     private @Nullable Output<String> ip;
 
     /**
-     * @return 后端服务器的私网IP地址。
+     * @return Private IP address of the backend server.
      * 
      */
     public Optional<Output<String>> ip() {
@@ -62,14 +62,14 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 后端服务器接收请求的端口号。
+     * Port number on which the backend server receives requests.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 后端服务器接收请求的端口号。
+     * @return Port number on which the backend server receives requests.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -77,14 +77,14 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+     * Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
      * 
      */
     @Import(name="remoteEnabled")
     private @Nullable Output<String> remoteEnabled;
 
     /**
-     * @return 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+     * @return Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
      * 
      */
     public Optional<Output<String>> remoteEnabled() {
@@ -92,14 +92,14 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 后端服务器ID。
+     * Backend server ID.
      * 
      */
     @Import(name="serverId")
     private @Nullable Output<String> serverId;
 
     /**
-     * @return 后端服务器ID。
+     * @return Backend server ID.
      * 
      */
     public Optional<Output<String>> serverId() {
@@ -107,14 +107,14 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+     * Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+     * @return Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
      * 
      */
     public Optional<Output<String>> type() {
@@ -122,14 +122,14 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 后端服务器的权重。
+     * Weight of the backend server.
      * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
-     * @return 后端服务器的权重。
+     * @return Weight of the backend server.
      * 
      */
     public Optional<Output<Integer>> weight() {
@@ -168,7 +168,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description 后端服务器的描述。
+         * @param description Description of the backend server.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description 后端服务器的描述。
+         * @param description Description of the backend server.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param instanceId 云服务器实例或网卡的ID。
+         * @param instanceId ID of the cloud server instance or network interface card.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param instanceId 云服务器实例或网卡的ID。
+         * @param instanceId ID of the cloud server instance or network interface card.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ip 后端服务器的私网IP地址。
+         * @param ip Private IP address of the backend server.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ip 后端服务器的私网IP地址。
+         * @param ip Private IP address of the backend server.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param port 后端服务器接收请求的端口号。
+         * @param port Port number on which the backend server receives requests.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param port 后端服务器接收请求的端口号。
+         * @param port Port number on which the backend server receives requests.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param remoteEnabled 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+         * @param remoteEnabled Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param remoteEnabled 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+         * @param remoteEnabled Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param serverId 后端服务器ID。
+         * @param serverId Backend server ID.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param serverId 后端服务器ID。
+         * @param serverId Backend server ID.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param type 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+         * @param type Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param type 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+         * @param type Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param weight 后端服务器的权重。
+         * @param weight Weight of the backend server.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param weight 后端服务器的权重。
+         * @param weight Weight of the backend server.
          * 
          * @return builder
          * 

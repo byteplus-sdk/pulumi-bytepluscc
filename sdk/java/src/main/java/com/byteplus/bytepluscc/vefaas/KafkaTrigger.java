@@ -17,7 +17,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 函数服务支持对接消息队列 Kafka 版。通过创建 Kafka 触发器，函数服务将作为消费者消费 Kafka 中的消息，并将消息传递给用户函数，触发函数代码逻辑。您无需关心函数服务消费消息的细节，只需编写处理消息的函数。
+ * Function service supports integration with Kafka message queue. By creating a Kafka trigger, the function service acts as a consumer to consume messages from Kafka and passes them to your function, triggering your function logic. You do not need to handle the details of message consumption; just write the function to process messages.
  * 
  * ## Example Usage
  * 
@@ -79,224 +79,224 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vefaas/kafkaTrigger:KafkaTrigger")
 public class KafkaTrigger extends com.pulumi.resources.CustomResource {
     /**
-     * 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+     * Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
      * 
      */
     @Export(name="batchFlushDurationMilliseconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> batchFlushDurationMilliseconds;
 
     /**
-     * @return 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+     * @return Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
      * 
      */
     public Output<Integer> batchFlushDurationMilliseconds() {
         return this.batchFlushDurationMilliseconds;
     }
     /**
-     * 触发器批量消费的每批次消息数。
+     * Number of messages per batch for trigger batch consumption.
      * 
      */
     @Export(name="batchSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> batchSize;
 
     /**
-     * @return 触发器批量消费的每批次消息数。
+     * @return Number of messages per batch for trigger batch consumption.
      * 
      */
     public Output<Integer> batchSize() {
         return this.batchSize;
     }
     /**
-     * 消息队列 Kafka 实例的消费组名字。
+     * Consumer group name of the Kafka message queue instance.
      * 
      */
     @Export(name="consumerGroup", refs={String.class}, tree="[0]")
     private Output<String> consumerGroup;
 
     /**
-     * @return 消息队列 Kafka 实例的消费组名字。
+     * @return Consumer group name of the Kafka message queue instance.
      * 
      */
     public Output<String> consumerGroup() {
         return this.consumerGroup;
     }
     /**
-     * Kafka 触发器创建时间。
+     * Kafka trigger creation time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return Kafka 触发器创建时间。
+     * @return Kafka trigger creation time.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * Kafka 触发器描述。长度限制为 200 个字符以内。
+     * Description of the Kafka trigger. Limited to 200 characters.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return Kafka 触发器描述。长度限制为 200 个字符以内。
+     * @return Description of the Kafka trigger. Limited to 200 characters.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+     * Enable the trigger when creating it. Options: true—enable. false—disable.
      * 
      */
     @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
-     * @return 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+     * @return Enable the trigger when creating it. Options: true—enable. false—disable.
      * 
      */
     public Output<Boolean> enabled() {
         return this.enabled;
     }
     /**
-     * 函数 ID。
+     * Function ID.
      * 
      */
     @Export(name="functionId", refs={String.class}, tree="[0]")
     private Output<String> functionId;
 
     /**
-     * @return 函数 ID。
+     * @return Function ID.
      * 
      */
     public Output<String> functionId() {
         return this.functionId;
     }
     /**
-     * Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+     * Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
      * 
      */
     @Export(name="kafkaCredentials", refs={KafkaTriggerKafkaCredentials.class}, tree="[0]")
     private Output<KafkaTriggerKafkaCredentials> kafkaCredentials;
 
     /**
-     * @return Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+     * @return Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
      * 
      */
     public Output<KafkaTriggerKafkaCredentials> kafkaCredentials() {
         return this.kafkaCredentials;
     }
     /**
-     * Kafka 触发器 ID。
+     * Kafka trigger ID.
      * 
      */
     @Export(name="kafkaTriggerId", refs={String.class}, tree="[0]")
     private Output<String> kafkaTriggerId;
 
     /**
-     * @return Kafka 触发器 ID。
+     * @return Kafka trigger ID.
      * 
      */
     public Output<String> kafkaTriggerId() {
         return this.kafkaTriggerId;
     }
     /**
-     * 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+     * Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
      * 
      */
     @Export(name="maximumRetryAttempts", refs={Integer.class}, tree="[0]")
     private Output<Integer> maximumRetryAttempts;
 
     /**
-     * @return 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+     * @return Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
      * 
      */
     public Output<Integer> maximumRetryAttempts() {
         return this.maximumRetryAttempts;
     }
     /**
-     * 消息队列 Kafka 实例 ID。
+     * Kafka message queue instance ID.
      * 
      */
     @Export(name="mqInstanceId", refs={String.class}, tree="[0]")
     private Output<String> mqInstanceId;
 
     /**
-     * @return 消息队列 Kafka 实例 ID。
+     * @return Kafka message queue instance ID.
      * 
      */
     public Output<String> mqInstanceId() {
         return this.mqInstanceId;
     }
     /**
-     * Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+     * Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+     * @return Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+     * Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
      * 
      */
     @Export(name="startingPosition", refs={String.class}, tree="[0]")
     private Output<String> startingPosition;
 
     /**
-     * @return 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+     * @return Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
      * 
      */
     public Output<String> startingPosition() {
         return this.startingPosition;
     }
     /**
-     * Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+     * Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+     * @return Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 消息队列 Kafka 实例的 Topic 名称。
+     * Topic name of the Kafka message queue instance.
      * 
      */
     @Export(name="topicName", refs={String.class}, tree="[0]")
     private Output<String> topicName;
 
     /**
-     * @return 消息队列 Kafka 实例的 Topic 名称。
+     * @return Topic name of the Kafka message queue instance.
      * 
      */
     public Output<String> topicName() {
         return this.topicName;
     }
     /**
-     * Kafka 触发器最近一次更新时间。
+     * Last update time of the Kafka trigger.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return Kafka 触发器最近一次更新时间。
+     * @return Last update time of the Kafka trigger.
      * 
      */
     public Output<String> updatedTime() {

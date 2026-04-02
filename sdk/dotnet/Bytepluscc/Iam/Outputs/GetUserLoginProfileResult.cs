@@ -15,63 +15,63 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
     public sealed class GetUserLoginProfileResult
     {
         /// <summary>
-        /// 登录配置创建时间。
+        /// Login configuration creation time.
         /// </summary>
         public readonly string CreateDate;
         /// <summary>
-        /// 上次登录时间。
+        /// Last login time.
         /// </summary>
         public readonly string LastLoginDate;
         /// <summary>
-        /// 上次登录IP。
+        /// Last login IP.
         /// </summary>
         public readonly string LastLoginIp;
         /// <summary>
-        /// 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
+        /// Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
         /// </summary>
-        public readonly double LastResetPasswordTime;
+        public readonly int LastResetPasswordTime;
         /// <summary>
-        /// 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+        /// Whether login is allowed. 'true' means allowed, 'false' means not allowed. Default is 'false'.
         /// </summary>
         public readonly bool LoginAllowed;
         /// <summary>
-        /// 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+        /// Whether login is locked. 'true' means locked, 'false' means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
         /// </summary>
         public readonly bool LoginLocked;
         /// <summary>
-        /// 登录密码。
+        /// Login password.
         /// </summary>
         public readonly string Password;
         /// <summary>
-        /// 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
+        /// Password expiration time. '0' means never expires; non-zero means the expiration timestamp.
         /// </summary>
-        public readonly double PasswordExpireAt;
+        public readonly int PasswordExpireAt;
         /// <summary>
-        /// 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+        /// Whether password reset is required on next login. Whether password reset is required on next login. 'true' means password reset is required, 'false' means not required. Default is 'false'.
         /// </summary>
         public readonly bool PasswordResetRequired;
         /// <summary>
-        /// 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+        /// Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
         /// </summary>
         public readonly double SafeAuthExemptDuration;
         /// <summary>
-        /// 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+        /// Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
         /// </summary>
         public readonly double SafeAuthExemptRequired;
         /// <summary>
-        /// 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+        /// Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
         /// </summary>
         public readonly double SafeAuthExemptUnit;
         /// <summary>
-        /// 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+        /// Whether login protection is enabled. 'true' means enabled, 'false' means disabled. Default is 'false'.
         /// </summary>
         public readonly bool SafeAuthFlag;
         /// <summary>
-        /// 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+        /// Login protection type. Login protection type. 'phone' represents mobile verification, 'email' represents email verification, 'vmfa' represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
         /// </summary>
         public readonly string SafeAuthType;
         /// <summary>
-        /// 登录配置更新时间。
+        /// Login configuration update time.
         /// </summary>
         public readonly string UpdateDate;
 
@@ -83,7 +83,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
 
             string lastLoginIp,
 
-            double lastResetPasswordTime,
+            int lastResetPasswordTime,
 
             bool loginAllowed,
 
@@ -91,7 +91,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
 
             string password,
 
-            double passwordExpireAt,
+            int passwordExpireAt,
 
             bool passwordResetRequired,
 

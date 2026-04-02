@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterNodeGroupAttributeSystemDisk {
     /**
-     * @return 磁盘大小。
+     * @return Disk size.
      * 
      */
     private @Nullable Integer size;
     /**
-     * @return 磁盘类型。
+     * @return Disk type.
      * 
      */
     private @Nullable String volumeType;
 
     private ClusterNodeGroupAttributeSystemDisk() {}
     /**
-     * @return 磁盘大小。
+     * @return Disk size.
      * 
      */
     public Optional<Integer> size() {
         return Optional.ofNullable(this.size);
     }
     /**
-     * @return 磁盘类型。
+     * @return Disk type.
      * 
      */
     public Optional<String> volumeType() {

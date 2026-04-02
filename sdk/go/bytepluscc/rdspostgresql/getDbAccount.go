@@ -30,19 +30,19 @@ type LookupDbAccountArgs struct {
 
 // A collection of values returned by getDbAccount.
 type LookupDbAccountResult struct {
-	// 数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+	// Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
 	AccountName string `pulumi:"accountName"`
-	// 数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !@#$%^*()&_+-=。
+	// Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !@#$%^*()&_+-=.
 	AccountPassword string `pulumi:"accountPassword"`
-	// 账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数
+	// Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
 	AccountPrivileges string `pulumi:"accountPrivileges"`
-	// 数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。
+	// Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
 	AccountType string `pulumi:"accountType"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 实例 ID
+	// Instance ID
 	InstanceId string `pulumi:"instanceId"`
-	// 为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+	// Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
 	NotAllowPrivileges []string `pulumi:"notAllowPrivileges"`
 }
 
@@ -80,22 +80,22 @@ func (o LookupDbAccountResultOutput) ToLookupDbAccountResultOutputWithContext(ct
 	return o
 }
 
-// 数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+// Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
 func (o LookupDbAccountResultOutput) AccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.AccountName }).(pulumi.StringOutput)
 }
 
-// 数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !@#$%^*()&_+-=。
+// Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !@#$%^*()&_+-=.
 func (o LookupDbAccountResultOutput) AccountPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.AccountPassword }).(pulumi.StringOutput)
 }
 
-// 账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数
+// Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
 func (o LookupDbAccountResultOutput) AccountPrivileges() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.AccountPrivileges }).(pulumi.StringOutput)
 }
 
-// 数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。
+// Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
 func (o LookupDbAccountResultOutput) AccountType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.AccountType }).(pulumi.StringOutput)
 }
@@ -105,12 +105,12 @@ func (o LookupDbAccountResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 实例 ID
+// Instance ID
 func (o LookupDbAccountResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+// Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
 func (o LookupDbAccountResultOutput) NotAllowPrivileges() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) []string { return v.NotAllowPrivileges }).(pulumi.StringArrayOutput)
 }

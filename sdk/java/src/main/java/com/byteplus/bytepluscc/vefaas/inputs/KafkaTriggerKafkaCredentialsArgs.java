@@ -15,14 +15,14 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
     public static final KafkaTriggerKafkaCredentialsArgs Empty = new KafkaTriggerKafkaCredentialsArgs();
 
     /**
-     * Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+     * Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
      * 
      */
     @Import(name="mechanism", required=true)
     private Output<String> mechanism;
 
     /**
-     * @return Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+     * @return Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
      * 
      */
     public Output<String> mechanism() {
@@ -30,14 +30,14 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
     }
 
     /**
-     * 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+     * SASL/PLAIN password set when creating the Kafka instance.
      * 
      */
     @Import(name="password", required=true)
     private Output<String> password;
 
     /**
-     * @return 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+     * @return SASL/PLAIN password set when creating the Kafka instance.
      * 
      */
     public Output<String> password() {
@@ -45,14 +45,14 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
     }
 
     /**
-     * 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+     * SASL/PLAIN username set when creating the Kafka instance.
      * 
      */
     @Import(name="username", required=true)
     private Output<String> username;
 
     /**
-     * @return 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+     * @return SASL/PLAIN username set when creating the Kafka instance.
      * 
      */
     public Output<String> username() {
@@ -86,7 +86,7 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param mechanism Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+         * @param mechanism Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param mechanism Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+         * @param mechanism Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param password 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+         * @param password SASL/PLAIN password set when creating the Kafka instance.
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param password 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+         * @param password SASL/PLAIN password set when creating the Kafka instance.
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param username 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+         * @param username SASL/PLAIN username set when creating the Kafka instance.
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param username 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+         * @param username SASL/PLAIN username set when creating the Kafka instance.
          * 
          * @return builder
          * 

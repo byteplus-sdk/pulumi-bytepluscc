@@ -14,9 +14,9 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type SnapshotTag struct {
-	// 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	// User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key *string `pulumi:"key"`
-	// 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	// User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
 	Value *string `pulumi:"value"`
 }
 
@@ -32,9 +32,9 @@ type SnapshotTagInput interface {
 }
 
 type SnapshotTagArgs struct {
-	// 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	// User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	// User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -89,12 +89,12 @@ func (o SnapshotTagOutput) ToSnapshotTagOutputWithContext(ctx context.Context) S
 	return o
 }
 
-// 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+// User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 func (o SnapshotTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SnapshotTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+// User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
 func (o SnapshotTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SnapshotTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -120,9 +120,9 @@ func (o SnapshotTagArrayOutput) Index(i pulumi.IntInput) SnapshotTagOutput {
 }
 
 type VolumeBaselinePerformance struct {
-	// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+	// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 	Iops *float64 `pulumi:"iops"`
-	// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+	// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 	Throughput *float64 `pulumi:"throughput"`
 }
 
@@ -138,9 +138,9 @@ type VolumeBaselinePerformanceInput interface {
 }
 
 type VolumeBaselinePerformanceArgs struct {
-	// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+	// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 	Iops pulumi.Float64PtrInput `pulumi:"iops"`
-	// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+	// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 	Throughput pulumi.Float64PtrInput `pulumi:"throughput"`
 }
 
@@ -221,12 +221,12 @@ func (o VolumeBaselinePerformanceOutput) ToVolumeBaselinePerformancePtrOutputWit
 	}).(VolumeBaselinePerformancePtrOutput)
 }
 
-// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 func (o VolumeBaselinePerformanceOutput) Iops() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v VolumeBaselinePerformance) *float64 { return v.Iops }).(pulumi.Float64PtrOutput)
 }
 
-// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 func (o VolumeBaselinePerformanceOutput) Throughput() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v VolumeBaselinePerformance) *float64 { return v.Throughput }).(pulumi.Float64PtrOutput)
 }
@@ -255,7 +255,7 @@ func (o VolumeBaselinePerformancePtrOutput) Elem() VolumeBaselinePerformanceOutp
 	}).(VolumeBaselinePerformanceOutput)
 }
 
-// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 func (o VolumeBaselinePerformancePtrOutput) Iops() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *VolumeBaselinePerformance) *float64 {
 		if v == nil {
@@ -265,7 +265,7 @@ func (o VolumeBaselinePerformancePtrOutput) Iops() pulumi.Float64PtrOutput {
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 func (o VolumeBaselinePerformancePtrOutput) Throughput() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *VolumeBaselinePerformance) *float64 {
 		if v == nil {
@@ -276,11 +276,11 @@ func (o VolumeBaselinePerformancePtrOutput) Throughput() pulumi.Float64PtrOutput
 }
 
 type VolumeExtraPerformance struct {
-	// 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+	// Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
 	ExtraPerformanceTypeId *string `pulumi:"extraPerformanceTypeId"`
-	// 云盘的额外IOPS。
+	// Extra IOPS of the disk.
 	Iops *float64 `pulumi:"iops"`
-	// 云盘的额外吞吐量。
+	// Extra throughput of the disk.
 	Throughput *float64 `pulumi:"throughput"`
 }
 
@@ -296,11 +296,11 @@ type VolumeExtraPerformanceInput interface {
 }
 
 type VolumeExtraPerformanceArgs struct {
-	// 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+	// Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
 	ExtraPerformanceTypeId pulumi.StringPtrInput `pulumi:"extraPerformanceTypeId"`
-	// 云盘的额外IOPS。
+	// Extra IOPS of the disk.
 	Iops pulumi.Float64PtrInput `pulumi:"iops"`
-	// 云盘的额外吞吐量。
+	// Extra throughput of the disk.
 	Throughput pulumi.Float64PtrInput `pulumi:"throughput"`
 }
 
@@ -381,17 +381,17 @@ func (o VolumeExtraPerformanceOutput) ToVolumeExtraPerformancePtrOutputWithConte
 	}).(VolumeExtraPerformancePtrOutput)
 }
 
-// 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+// Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
 func (o VolumeExtraPerformanceOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VolumeExtraPerformance) *string { return v.ExtraPerformanceTypeId }).(pulumi.StringPtrOutput)
 }
 
-// 云盘的额外IOPS。
+// Extra IOPS of the disk.
 func (o VolumeExtraPerformanceOutput) Iops() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v VolumeExtraPerformance) *float64 { return v.Iops }).(pulumi.Float64PtrOutput)
 }
 
-// 云盘的额外吞吐量。
+// Extra throughput of the disk.
 func (o VolumeExtraPerformanceOutput) Throughput() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v VolumeExtraPerformance) *float64 { return v.Throughput }).(pulumi.Float64PtrOutput)
 }
@@ -420,7 +420,7 @@ func (o VolumeExtraPerformancePtrOutput) Elem() VolumeExtraPerformanceOutput {
 	}).(VolumeExtraPerformanceOutput)
 }
 
-// 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+// Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
 func (o VolumeExtraPerformancePtrOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VolumeExtraPerformance) *string {
 		if v == nil {
@@ -430,7 +430,7 @@ func (o VolumeExtraPerformancePtrOutput) ExtraPerformanceTypeId() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// 云盘的额外IOPS。
+// Extra IOPS of the disk.
 func (o VolumeExtraPerformancePtrOutput) Iops() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *VolumeExtraPerformance) *float64 {
 		if v == nil {
@@ -440,7 +440,7 @@ func (o VolumeExtraPerformancePtrOutput) Iops() pulumi.Float64PtrOutput {
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 云盘的额外吞吐量。
+// Extra throughput of the disk.
 func (o VolumeExtraPerformancePtrOutput) Throughput() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *VolumeExtraPerformance) *float64 {
 		if v == nil {
@@ -451,9 +451,9 @@ func (o VolumeExtraPerformancePtrOutput) Throughput() pulumi.Float64PtrOutput {
 }
 
 type VolumeTag struct {
-	// 标签键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -469,9 +469,9 @@ type VolumeTagInput interface {
 }
 
 type VolumeTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -526,12 +526,12 @@ func (o VolumeTagOutput) ToVolumeTagOutputWithContext(ctx context.Context) Volum
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o VolumeTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VolumeTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o VolumeTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VolumeTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -557,9 +557,9 @@ func (o VolumeTagArrayOutput) Index(i pulumi.IntInput) VolumeTagOutput {
 }
 
 type VolumeTotalPerformance struct {
-	// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+	// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 	Iops *float64 `pulumi:"iops"`
-	// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+	// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 	Throughput *float64 `pulumi:"throughput"`
 }
 
@@ -575,9 +575,9 @@ type VolumeTotalPerformanceInput interface {
 }
 
 type VolumeTotalPerformanceArgs struct {
-	// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+	// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 	Iops pulumi.Float64PtrInput `pulumi:"iops"`
-	// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+	// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 	Throughput pulumi.Float64PtrInput `pulumi:"throughput"`
 }
 
@@ -658,12 +658,12 @@ func (o VolumeTotalPerformanceOutput) ToVolumeTotalPerformancePtrOutputWithConte
 	}).(VolumeTotalPerformancePtrOutput)
 }
 
-// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 func (o VolumeTotalPerformanceOutput) Iops() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v VolumeTotalPerformance) *float64 { return v.Iops }).(pulumi.Float64PtrOutput)
 }
 
-// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 func (o VolumeTotalPerformanceOutput) Throughput() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v VolumeTotalPerformance) *float64 { return v.Throughput }).(pulumi.Float64PtrOutput)
 }
@@ -692,7 +692,7 @@ func (o VolumeTotalPerformancePtrOutput) Elem() VolumeTotalPerformanceOutput {
 	}).(VolumeTotalPerformanceOutput)
 }
 
-// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 func (o VolumeTotalPerformancePtrOutput) Iops() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *VolumeTotalPerformance) *float64 {
 		if v == nil {
@@ -702,7 +702,7 @@ func (o VolumeTotalPerformancePtrOutput) Iops() pulumi.Float64PtrOutput {
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 func (o VolumeTotalPerformancePtrOutput) Throughput() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *VolumeTotalPerformance) *float64 {
 		if v == nil {
@@ -713,9 +713,9 @@ func (o VolumeTotalPerformancePtrOutput) Throughput() pulumi.Float64PtrOutput {
 }
 
 type GetSnapshotTag struct {
-	// 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	// User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key string `pulumi:"key"`
-	// 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	// User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
 	Value string `pulumi:"value"`
 }
 
@@ -731,9 +731,9 @@ type GetSnapshotTagInput interface {
 }
 
 type GetSnapshotTagArgs struct {
-	// 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	// User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	// User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -788,12 +788,12 @@ func (o GetSnapshotTagOutput) ToGetSnapshotTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+// User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 func (o GetSnapshotTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSnapshotTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+// User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
 func (o GetSnapshotTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSnapshotTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -819,9 +819,9 @@ func (o GetSnapshotTagArrayOutput) Index(i pulumi.IntInput) GetSnapshotTagOutput
 }
 
 type GetVolumeBaselinePerformance struct {
-	// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+	// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 	Iops float64 `pulumi:"iops"`
-	// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+	// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 	Throughput float64 `pulumi:"throughput"`
 }
 
@@ -837,9 +837,9 @@ type GetVolumeBaselinePerformanceInput interface {
 }
 
 type GetVolumeBaselinePerformanceArgs struct {
-	// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+	// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 	Iops pulumi.Float64Input `pulumi:"iops"`
-	// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+	// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 	Throughput pulumi.Float64Input `pulumi:"throughput"`
 }
 
@@ -869,22 +869,22 @@ func (o GetVolumeBaselinePerformanceOutput) ToGetVolumeBaselinePerformanceOutput
 	return o
 }
 
-// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 func (o GetVolumeBaselinePerformanceOutput) Iops() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVolumeBaselinePerformance) float64 { return v.Iops }).(pulumi.Float64Output)
 }
 
-// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 func (o GetVolumeBaselinePerformanceOutput) Throughput() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVolumeBaselinePerformance) float64 { return v.Throughput }).(pulumi.Float64Output)
 }
 
 type GetVolumeExtraPerformance struct {
-	// 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+	// Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
 	ExtraPerformanceTypeId string `pulumi:"extraPerformanceTypeId"`
-	// 云盘的额外IOPS。
+	// Extra IOPS of the disk.
 	Iops float64 `pulumi:"iops"`
-	// 云盘的额外吞吐量。
+	// Extra throughput of the disk.
 	Throughput float64 `pulumi:"throughput"`
 }
 
@@ -900,11 +900,11 @@ type GetVolumeExtraPerformanceInput interface {
 }
 
 type GetVolumeExtraPerformanceArgs struct {
-	// 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+	// Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
 	ExtraPerformanceTypeId pulumi.StringInput `pulumi:"extraPerformanceTypeId"`
-	// 云盘的额外IOPS。
+	// Extra IOPS of the disk.
 	Iops pulumi.Float64Input `pulumi:"iops"`
-	// 云盘的额外吞吐量。
+	// Extra throughput of the disk.
 	Throughput pulumi.Float64Input `pulumi:"throughput"`
 }
 
@@ -934,25 +934,25 @@ func (o GetVolumeExtraPerformanceOutput) ToGetVolumeExtraPerformanceOutputWithCo
 	return o
 }
 
-// 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+// Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
 func (o GetVolumeExtraPerformanceOutput) ExtraPerformanceTypeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeExtraPerformance) string { return v.ExtraPerformanceTypeId }).(pulumi.StringOutput)
 }
 
-// 云盘的额外IOPS。
+// Extra IOPS of the disk.
 func (o GetVolumeExtraPerformanceOutput) Iops() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVolumeExtraPerformance) float64 { return v.Iops }).(pulumi.Float64Output)
 }
 
-// 云盘的额外吞吐量。
+// Extra throughput of the disk.
 func (o GetVolumeExtraPerformanceOutput) Throughput() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVolumeExtraPerformance) float64 { return v.Throughput }).(pulumi.Float64Output)
 }
 
 type GetVolumeTag struct {
-	// 标签键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -968,9 +968,9 @@ type GetVolumeTagInput interface {
 }
 
 type GetVolumeTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1025,12 +1025,12 @@ func (o GetVolumeTagOutput) ToGetVolumeTagOutputWithContext(ctx context.Context)
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o GetVolumeTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetVolumeTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1056,9 +1056,9 @@ func (o GetVolumeTagArrayOutput) Index(i pulumi.IntInput) GetVolumeTagOutput {
 }
 
 type GetVolumeTotalPerformance struct {
-	// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+	// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 	Iops float64 `pulumi:"iops"`
-	// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+	// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 	Throughput float64 `pulumi:"throughput"`
 }
 
@@ -1074,9 +1074,9 @@ type GetVolumeTotalPerformanceInput interface {
 }
 
 type GetVolumeTotalPerformanceArgs struct {
-	// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+	// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 	Iops pulumi.Float64Input `pulumi:"iops"`
-	// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+	// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 	Throughput pulumi.Float64Input `pulumi:"throughput"`
 }
 
@@ -1106,12 +1106,12 @@ func (o GetVolumeTotalPerformanceOutput) ToGetVolumeTotalPerformanceOutputWithCo
 	return o
 }
 
-// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
 func (o GetVolumeTotalPerformanceOutput) Iops() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVolumeTotalPerformance) float64 { return v.Iops }).(pulumi.Float64Output)
 }
 
-// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
 func (o GetVolumeTotalPerformanceOutput) Throughput() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVolumeTotalPerformance) float64 { return v.Throughput }).(pulumi.Float64Output)
 }

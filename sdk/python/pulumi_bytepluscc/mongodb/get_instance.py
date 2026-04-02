@@ -169,7 +169,7 @@ class GetInstanceResult:
     @pulumi.getter(name="allowListIds")
     def allow_list_ids(self) -> Sequence[builtins.str]:
         """
-        白名单 ID 列表。新建实例会被绑定到指定白名单。
+        Allowlist ID list. New instances are bound to the specified allowlist.
         """
         return pulumi.get(self, "allow_list_ids")
 
@@ -177,7 +177,7 @@ class GetInstanceResult:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> builtins.bool:
         """
-        是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+        Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -185,7 +185,7 @@ class GetInstanceResult:
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> builtins.str:
         """
-        实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+        Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
         """
         return pulumi.get(self, "charge_status")
 
@@ -193,7 +193,7 @@ class GetInstanceResult:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+        Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
         """
         return pulumi.get(self, "charge_type")
 
@@ -201,7 +201,7 @@ class GetInstanceResult:
     @pulumi.getter(name="closedTime")
     def closed_time(self) -> builtins.str:
         """
-        计划关停时间（UTC）。
+        Scheduled shutdown time (UTC).
         """
         return pulumi.get(self, "closed_time")
 
@@ -209,7 +209,7 @@ class GetInstanceResult:
     @pulumi.getter(name="configServerNodeSpec")
     def config_server_node_spec(self) -> builtins.str:
         """
-        分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+        ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
         """
         return pulumi.get(self, "config_server_node_spec")
 
@@ -217,7 +217,7 @@ class GetInstanceResult:
     @pulumi.getter(name="configServerStorageSpaceGb")
     def config_server_storage_space_gb(self) -> builtins.int:
         """
-        分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+        ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
         """
         return pulumi.get(self, "config_server_storage_space_gb")
 
@@ -225,7 +225,7 @@ class GetInstanceResult:
     @pulumi.getter(name="configServers")
     def config_servers(self) -> Sequence['outputs.GetInstanceConfigServerResult']:
         """
-        ConfigServers 的信息列表。
+        ConfigServer information list.
         """
         return pulumi.get(self, "config_servers")
 
@@ -233,7 +233,7 @@ class GetInstanceResult:
     @pulumi.getter(name="configServersId")
     def config_servers_id(self) -> builtins.str:
         """
-        ConfigServer 的 ID。
+        ConfigServer ID
         """
         return pulumi.get(self, "config_servers_id")
 
@@ -241,7 +241,7 @@ class GetInstanceResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        实例创建时间（UTC）。
+        Instance creation time (UTC).
         """
         return pulumi.get(self, "created_time")
 
@@ -249,7 +249,7 @@ class GetInstanceResult:
     @pulumi.getter(name="dbEngine")
     def db_engine(self) -> builtins.str:
         """
-        数据库引擎。取值固定为 MongoDB
+        Database engine. The value is fixed as MongoDB
         """
         return pulumi.get(self, "db_engine")
 
@@ -257,7 +257,7 @@ class GetInstanceResult:
     @pulumi.getter(name="dbEngineVersion")
     def db_engine_version(self) -> builtins.str:
         """
-        数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+        Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
         """
         return pulumi.get(self, "db_engine_version")
 
@@ -265,7 +265,7 @@ class GetInstanceResult:
     @pulumi.getter(name="dbEngineVersionStr")
     def db_engine_version_str(self) -> builtins.str:
         """
-        数据库引擎版本的字符串。
+        Database engine version string
         """
         return pulumi.get(self, "db_engine_version_str")
 
@@ -273,7 +273,7 @@ class GetInstanceResult:
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> builtins.str:
         """
-        实例到期时间（UTC）。
+        Instance expiration time (UTC).
         """
         return pulumi.get(self, "expired_time")
 
@@ -289,7 +289,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> builtins.int:
         """
-        需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+        Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
         """
         return pulumi.get(self, "instance_count")
 
@@ -297,7 +297,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -305,7 +305,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> builtins.str:
         """
-        实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+        Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -313,7 +313,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceStatus")
     def instance_status(self) -> builtins.str:
         """
-        实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+        Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
         """
         return pulumi.get(self, "instance_status")
 
@@ -321,7 +321,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> builtins.str:
         """
-        MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+        MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
         """
         return pulumi.get(self, "instance_type")
 
@@ -329,7 +329,7 @@ class GetInstanceResult:
     @pulumi.getter
     def mongos(self) -> Sequence['outputs.GetInstanceMongoResult']:
         """
-        Mongos 的信息列表。
+        Mongos information list
         """
         return pulumi.get(self, "mongos")
 
@@ -337,7 +337,7 @@ class GetInstanceResult:
     @pulumi.getter(name="mongosId")
     def mongos_id(self) -> builtins.str:
         """
-        Mongos 的 ID。
+        Mongos ID.
         """
         return pulumi.get(self, "mongos_id")
 
@@ -345,7 +345,7 @@ class GetInstanceResult:
     @pulumi.getter(name="mongosNodeNumber")
     def mongos_node_number(self) -> builtins.int:
         """
-        分片集群中 Mongos 节点的数量。取值范围：2~32。
+        Number of Mongos nodes in the sharded cluster. Range: 2~32.
         """
         return pulumi.get(self, "mongos_node_number")
 
@@ -353,7 +353,7 @@ class GetInstanceResult:
     @pulumi.getter(name="mongosNodeSpec")
     def mongos_node_spec(self) -> builtins.str:
         """
-        分片集群中 Mongos 节点的规格码。
+        Specification code for Mongos nodes in a sharded cluster.
         """
         return pulumi.get(self, "mongos_node_spec")
 
@@ -361,7 +361,7 @@ class GetInstanceResult:
     @pulumi.getter(name="nodeAvailabilityZones")
     def node_availability_zones(self) -> Sequence['outputs.GetInstanceNodeAvailabilityZoneResult']:
         """
-        添加只读节点信息，包括只读节点所在的可用区和数量。
+        Add read-only node information, including the availability zone and quantity of read-only nodes.
         """
         return pulumi.get(self, "node_availability_zones")
 
@@ -369,7 +369,7 @@ class GetInstanceResult:
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> builtins.int:
         """
-        节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+        Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
         """
         return pulumi.get(self, "node_number")
 
@@ -377,7 +377,7 @@ class GetInstanceResult:
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> builtins.str:
         """
-        实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+        Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
         """
         return pulumi.get(self, "node_spec")
 
@@ -385,7 +385,7 @@ class GetInstanceResult:
     @pulumi.getter
     def nodes(self) -> Sequence['outputs.GetInstanceNodeResult']:
         """
-        副本集实例中各节点或分片集群 Shard 分片中各节点的信息列表。
+        Information list for each node in the replica set instance or each node in the sharded cluster shard
         """
         return pulumi.get(self, "nodes")
 
@@ -393,7 +393,7 @@ class GetInstanceResult:
     @pulumi.getter
     def period(self) -> builtins.int:
         """
-        包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+        Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
         """
         return pulumi.get(self, "period")
 
@@ -401,7 +401,7 @@ class GetInstanceResult:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> builtins.str:
         """
-        指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+        Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
         """
         return pulumi.get(self, "period_unit")
 
@@ -409,7 +409,7 @@ class GetInstanceResult:
     @pulumi.getter(name="privateEndpoint")
     def private_endpoint(self) -> builtins.str:
         """
-        实例私网连接地址的字符串信息。
+        String information for the instance's private network connection address.
         """
         return pulumi.get(self, "private_endpoint")
 
@@ -417,7 +417,7 @@ class GetInstanceResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+        Select the project for the instance. If left blank, the new instance will be added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -425,7 +425,7 @@ class GetInstanceResult:
     @pulumi.getter(name="readOnlyNodeNumber")
     def read_only_node_number(self) -> builtins.int:
         """
-        实例的只读节点数量。
+        Number of read-only nodes in the instance
         """
         return pulumi.get(self, "read_only_node_number")
 
@@ -433,7 +433,7 @@ class GetInstanceResult:
     @pulumi.getter(name="reclaimTime")
     def reclaim_time(self) -> builtins.str:
         """
-        实例的计划回收时间（UTC）。
+        Scheduled recycle time for the instance (UTC)
         """
         return pulumi.get(self, "reclaim_time")
 
@@ -441,7 +441,7 @@ class GetInstanceResult:
     @pulumi.getter(name="shardNumber")
     def shard_number(self) -> builtins.int:
         """
-        分片集群中 Shard 分片的数量。取值范围：2~32。
+        Number of shards in the sharded cluster. Range: 2–32.
         """
         return pulumi.get(self, "shard_number")
 
@@ -449,7 +449,7 @@ class GetInstanceResult:
     @pulumi.getter
     def shards(self) -> Sequence['outputs.GetInstanceShardResult']:
         """
-        Shards 的信息列表。
+        Shard information list
         """
         return pulumi.get(self, "shards")
 
@@ -457,7 +457,7 @@ class GetInstanceResult:
     @pulumi.getter(name="storageSpaceGb")
     def storage_space_gb(self) -> builtins.int:
         """
-        副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+        Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
         """
         return pulumi.get(self, "storage_space_gb")
 
@@ -465,7 +465,7 @@ class GetInstanceResult:
     @pulumi.getter(name="storageType")
     def storage_type(self) -> builtins.str:
         """
-        实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+        Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
         """
         return pulumi.get(self, "storage_type")
 
@@ -473,7 +473,7 @@ class GetInstanceResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        子网 ID。
+        Subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -481,7 +481,7 @@ class GetInstanceResult:
     @pulumi.getter(name="superAccountName")
     def super_account_name(self) -> builtins.str:
         """
-        数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+        Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
         """
         return pulumi.get(self, "super_account_name")
 
@@ -489,7 +489,7 @@ class GetInstanceResult:
     @pulumi.getter(name="superAccountPassword")
     def super_account_password(self) -> builtins.str:
         """
-        root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
+        Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
         """
         return pulumi.get(self, "super_account_password")
 
@@ -497,7 +497,7 @@ class GetInstanceResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetInstanceTagResult']:
         """
-        MongoDB实例的标签信息
+        MongoDB instance tag information
         """
         return pulumi.get(self, "tags")
 
@@ -505,7 +505,7 @@ class GetInstanceResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        实例的更新时间（UTC）。
+        Instance update time (UTC).
         """
         return pulumi.get(self, "updated_time")
 
@@ -513,7 +513,7 @@ class GetInstanceResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        私有网络 ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -521,7 +521,7 @@ class GetInstanceResult:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        实例所在可用区的 ID。
+        Availability zone ID where the instance is located.
         """
         return pulumi.get(self, "zone_id")
 

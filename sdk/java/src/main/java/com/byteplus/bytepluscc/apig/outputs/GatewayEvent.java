@@ -12,50 +12,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GatewayEvent {
     /**
-     * @return 事件代码。
+     * @return Event code
      * 
      */
     private @Nullable String code;
     /**
-     * @return 事件创建时间。
+     * @return Event creation time
      * 
      */
     private @Nullable String createdTime;
     /**
-     * @return 附带信息。
+     * @return Additional information
      * 
      */
     private @Nullable String data;
     /**
-     * @return 事件描述。
+     * @return Event description
      * 
      */
     private @Nullable String description;
 
     private GatewayEvent() {}
     /**
-     * @return 事件代码。
+     * @return Event code
      * 
      */
     public Optional<String> code() {
         return Optional.ofNullable(this.code);
     }
     /**
-     * @return 事件创建时间。
+     * @return Event creation time
      * 
      */
     public Optional<String> createdTime() {
         return Optional.ofNullable(this.createdTime);
     }
     /**
-     * @return 附带信息。
+     * @return Additional information
      * 
      */
     public Optional<String> data() {
         return Optional.ofNullable(this.data);
     }
     /**
-     * @return 事件描述。
+     * @return Event description
      * 
      */
     public Optional<String> description() {

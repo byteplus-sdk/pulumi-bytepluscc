@@ -16,14 +16,14 @@ public final class InstanceCapacityArgs extends com.pulumi.resources.ResourceArg
     public static final InstanceCapacityArgs Empty = new InstanceCapacityArgs();
 
     /**
-     * 当前实例的内存总容量。单位：MiB。
+     * Total memory capacity of the current instance. Unit: MiB.
      * 
      */
     @Import(name="total")
     private @Nullable Output<Integer> total;
 
     /**
-     * @return 当前实例的内存总容量。单位：MiB。
+     * @return Total memory capacity of the current instance. Unit: MiB.
      * 
      */
     public Optional<Output<Integer>> total() {
@@ -31,14 +31,14 @@ public final class InstanceCapacityArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 当前实例已用容量。单位：MiB。
+     * Used capacity of the current instance. Unit: MiB.
      * 
      */
     @Import(name="used")
     private @Nullable Output<Integer> used;
 
     /**
-     * @return 当前实例已用容量。单位：MiB。
+     * @return Used capacity of the current instance. Unit: MiB.
      * 
      */
     public Optional<Output<Integer>> used() {
@@ -71,7 +71,7 @@ public final class InstanceCapacityArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param total 当前实例的内存总容量。单位：MiB。
+         * @param total Total memory capacity of the current instance. Unit: MiB.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class InstanceCapacityArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param total 当前实例的内存总容量。单位：MiB。
+         * @param total Total memory capacity of the current instance. Unit: MiB.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class InstanceCapacityArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param used 当前实例已用容量。单位：MiB。
+         * @param used Used capacity of the current instance. Unit: MiB.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class InstanceCapacityArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param used 当前实例已用容量。单位：MiB。
+         * @param used Used capacity of the current instance. Unit: MiB.
          * 
          * @return builder
          * 

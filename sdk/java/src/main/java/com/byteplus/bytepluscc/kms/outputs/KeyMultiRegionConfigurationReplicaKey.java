@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class KeyMultiRegionConfigurationReplicaKey {
     /**
-     * @return 多区域密钥的区域 ID。
+     * @return Multi-region key region ID.
      * 
      */
     private @Nullable String region;
     /**
-     * @return 多区域密钥的转换。
+     * @return Multi-region key conversion.
      * 
      */
     private @Nullable String trn;
 
     private KeyMultiRegionConfigurationReplicaKey() {}
     /**
-     * @return 多区域密钥的区域 ID。
+     * @return Multi-region key region ID.
      * 
      */
     public Optional<String> region() {
         return Optional.ofNullable(this.region);
     }
     /**
-     * @return 多区域密钥的转换。
+     * @return Multi-region key conversion.
      * 
      */
     public Optional<String> trn() {

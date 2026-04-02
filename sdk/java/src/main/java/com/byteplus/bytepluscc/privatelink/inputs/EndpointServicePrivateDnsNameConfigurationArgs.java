@@ -16,14 +16,14 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
     public static final EndpointServicePrivateDnsNameConfigurationArgs Empty = new EndpointServicePrivateDnsNameConfigurationArgs();
 
     /**
-     * 域验证名称。
+     * Domain verification name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 域验证名称。
+     * @return Domain verification name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +31,14 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
     }
 
     /**
-     * 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+     * Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+     * @return Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
      * 
      */
     public Optional<Output<String>> status() {
@@ -46,14 +46,14 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
     }
 
     /**
-     * 域验证类型。TXT：TXT记录。
+     * Domain verification type. TXT: TXT record.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 域验证类型。TXT：TXT记录。
+     * @return Domain verification type. TXT: TXT record.
      * 
      */
     public Optional<Output<String>> type() {
@@ -61,14 +61,14 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
     }
 
     /**
-     * 域验证值。
+     * Domain verification value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 域验证值。
+     * @return Domain verification value.
      * 
      */
     public Optional<Output<String>> value() {
@@ -103,7 +103,7 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
         }
 
         /**
-         * @param name 域验证名称。
+         * @param name Domain verification name.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
         }
 
         /**
-         * @param name 域验证名称。
+         * @param name Domain verification name.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
         }
 
         /**
-         * @param status 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+         * @param status Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
         }
 
         /**
-         * @param status 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+         * @param status Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
         }
 
         /**
-         * @param type 域验证类型。TXT：TXT记录。
+         * @param type Domain verification type. TXT: TXT record.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
         }
 
         /**
-         * @param type 域验证类型。TXT：TXT记录。
+         * @param type Domain verification type. TXT: TXT record.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
         }
 
         /**
-         * @param value 域验证值。
+         * @param value Domain verification value.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
         }
 
         /**
-         * @param value 域验证值。
+         * @param value Domain verification value.
          * 
          * @return builder
          * 

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql.Inputs
     public sealed class InstanceTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 用户标签的标签键。
+        /// Tag key for user tags.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 用户标签的标签值。
+        /// User tag value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

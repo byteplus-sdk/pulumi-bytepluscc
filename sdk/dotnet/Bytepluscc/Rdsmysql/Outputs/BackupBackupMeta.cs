@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class BackupBackupMeta
     {
         /// <summary>
-        /// 数据库名。
+        /// Database name
         /// </summary>
         public readonly string? Database;
         /// <summary>
-        /// 表名列表。
+        /// Table name list
         /// </summary>
         public readonly ImmutableArray<string> Tables;
 

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetVpcAttachmentTag {
     /**
-     * @return 用户标签的标签键。
+     * @return Tag key for user tag.
      * 
      */
     private String key;
     /**
-     * @return 用户标签的标签值。
+     * @return Tag value for user tag.
      * 
      */
     private String value;
 
     private GetVpcAttachmentTag() {}
     /**
-     * @return 用户标签的标签键。
+     * @return Tag key for user tag.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 用户标签的标签值。
+     * @return Tag value for user tag.
      * 
      */
     public String value() {

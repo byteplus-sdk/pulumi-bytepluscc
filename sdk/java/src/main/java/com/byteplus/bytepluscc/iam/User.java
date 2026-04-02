@@ -23,7 +23,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * IAM子用户是访问控制的一种身份，由账号或是拥有权限的用户创建。用户被授予权限后，可登录控制台或使用访问密钥调用API访问云资源。
+ * An IAM sub-user is an identity for access control, created by an account or a user with permissions. After permissions are granted, the user can log in to the console or use the access key to call APIs to access cloud resources.
  * 
  * ## Example Usage
  * 
@@ -46,140 +46,140 @@ public class User extends com.pulumi.resources.CustomResource {
         return this.accessKeys;
     }
     /**
-     * 子用户归属的主账号。
+     * Main account to which the sub-user belongs.
      * 
      */
     @Export(name="accountId", refs={Double.class}, tree="[0]")
     private Output<Double> accountId;
 
     /**
-     * @return 子用户归属的主账号。
+     * @return Main account to which the sub-user belongs.
      * 
      */
     public Output<Double> accountId() {
         return this.accountId;
     }
     /**
-     * 子用户对应的创建时间。
+     * Sub-user&#39;s creation time.
      * 
      */
     @Export(name="createDate", refs={String.class}, tree="[0]")
     private Output<String> createDate;
 
     /**
-     * @return 子用户对应的创建时间。
+     * @return Sub-user&#39;s creation time.
      * 
      */
     public Output<String> createDate() {
         return this.createDate;
     }
     /**
-     * 子用户对应的描述信息，长度不超过255。
+     * Description for the sub-user, up to 255 characters.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 子用户对应的描述信息，长度不超过255。
+     * @return Description for the sub-user, up to 255 characters.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_{@literal @}符号。
+     * Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_{@literal @}符号。
+     * @return Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * 子用户对应的电子邮件地址。
+     * Sub-user&#39;s email address.
      * 
      */
     @Export(name="email", refs={String.class}, tree="[0]")
     private Output<String> email;
 
     /**
-     * @return 子用户对应的电子邮件地址。
+     * @return Sub-user&#39;s email address.
      * 
      */
     public Output<String> email() {
         return this.email;
     }
     /**
-     * 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+     * Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
      * 
      */
     @Export(name="emailIsVerify", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> emailIsVerify;
 
     /**
-     * @return 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+     * @return Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
      * 
      */
     public Output<Boolean> emailIsVerify() {
         return this.emailIsVerify;
     }
     /**
-     * 子用户归属的用户组。
+     * User group to which the sub-user belongs.
      * 
      */
     @Export(name="groups", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> groups;
 
     /**
-     * @return 子用户归属的用户组。
+     * @return User group to which the sub-user belongs.
      * 
      */
     public Output<List<String>> groups() {
         return this.groups;
     }
     /**
-     * 子用户的登录配置。
+     * Login configuration for the sub-user.
      * 
      */
     @Export(name="loginProfile", refs={UserLoginProfile.class}, tree="[0]")
     private Output<UserLoginProfile> loginProfile;
 
     /**
-     * @return 子用户的登录配置。
+     * @return Login configuration for the sub-user.
      * 
      */
     public Output<UserLoginProfile> loginProfile() {
         return this.loginProfile;
     }
     /**
-     * 子用户对应的手机号。
+     * Sub-user&#39;s mobile number.
      * 
      */
     @Export(name="mobilePhone", refs={String.class}, tree="[0]")
     private Output<String> mobilePhone;
 
     /**
-     * @return 子用户对应的手机号。
+     * @return Sub-user&#39;s mobile number.
      * 
      */
     public Output<String> mobilePhone() {
         return this.mobilePhone;
     }
     /**
-     * 子用户手机号是否已验证。true代表已验证，false代表未验证。
+     * Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
      * 
      */
     @Export(name="mobilePhoneIsVerify", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> mobilePhoneIsVerify;
 
     /**
-     * @return 子用户手机号是否已验证。true代表已验证，false代表未验证。
+     * @return Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
      * 
      */
     public Output<Boolean> mobilePhoneIsVerify() {
@@ -192,14 +192,14 @@ public class User extends com.pulumi.resources.CustomResource {
         return this.policies;
     }
     /**
-     * 子用户的操作保护配置。
+     * Operation protection configuration for the sub-user.
      * 
      */
     @Export(name="securityConfig", refs={UserSecurityConfig.class}, tree="[0]")
     private Output<UserSecurityConfig> securityConfig;
 
     /**
-     * @return 子用户的操作保护配置。
+     * @return Operation protection configuration for the sub-user.
      * 
      */
     public Output<UserSecurityConfig> securityConfig() {
@@ -212,56 +212,56 @@ public class User extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 子用户对应的Trn表达式。
+     * TRN expression for the sub-user.
      * 
      */
     @Export(name="trn", refs={String.class}, tree="[0]")
     private Output<String> trn;
 
     /**
-     * @return 子用户对应的Trn表达式。
+     * @return TRN expression for the sub-user.
      * 
      */
     public Output<String> trn() {
         return this.trn;
     }
     /**
-     * 子用户对应的更新时间。
+     * Update time for the sub-user.
      * 
      */
     @Export(name="updateDate", refs={String.class}, tree="[0]")
     private Output<String> updateDate;
 
     /**
-     * @return 子用户对应的更新时间。
+     * @return Update time for the sub-user.
      * 
      */
     public Output<String> updateDate() {
         return this.updateDate;
     }
     /**
-     * 子用户的ID。
+     * Sub-user&#39;s ID.
      * 
      */
     @Export(name="userId", refs={Integer.class}, tree="[0]")
     private Output<Integer> userId;
 
     /**
-     * @return 子用户的ID。
+     * @return Sub-user&#39;s ID.
      * 
      */
     public Output<Integer> userId() {
         return this.userId;
     }
     /**
-     * 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-{@literal @}符号。
+     * Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
      * 
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
-     * @return 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-{@literal @}符号。
+     * @return Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
      * 
      */
     public Output<String> userName() {

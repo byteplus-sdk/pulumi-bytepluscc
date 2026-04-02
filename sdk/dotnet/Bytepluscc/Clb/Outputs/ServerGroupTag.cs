@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Outputs
     public sealed class ServerGroupTag
     {
         /// <summary>
-        /// 绑定的标签键信息。
+        /// Information about bound tag keys.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 绑定的标签值信息。
+        /// Bound tag value information.
         /// </summary>
         public readonly string? Value;
 

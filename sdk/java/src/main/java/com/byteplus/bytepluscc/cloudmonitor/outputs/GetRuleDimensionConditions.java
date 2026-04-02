@@ -14,50 +14,50 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleDimensionConditions {
     /**
-     * @return 根据资源名称选择告警对象的条件。当Type为meta时必填。
+     * @return Condition for selecting alert objects based on resource name. Required when Type is meta.
      * 
      */
     private GetRuleDimensionConditionsMetaCondition metaCondition;
     /**
-     * @return 根据项目选择告警对象的条件。当Type为project时必填。
+     * @return Condition for selecting alert targets by project. Required when Type is project.
      * 
      */
     private GetRuleDimensionConditionsProjectCondition projectCondition;
     /**
-     * @return 根据标签选择告警对象的条件。当Type为tag时必填。
+     * @return Condition for selecting alert objects by tag. Required when Type is tag.
      * 
      */
     private GetRuleDimensionConditionsTagCondition tagCondition;
     /**
-     * @return Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+     * @return Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
      * 
      */
     private String type;
 
     private GetRuleDimensionConditions() {}
     /**
-     * @return 根据资源名称选择告警对象的条件。当Type为meta时必填。
+     * @return Condition for selecting alert objects based on resource name. Required when Type is meta.
      * 
      */
     public GetRuleDimensionConditionsMetaCondition metaCondition() {
         return this.metaCondition;
     }
     /**
-     * @return 根据项目选择告警对象的条件。当Type为project时必填。
+     * @return Condition for selecting alert targets by project. Required when Type is project.
      * 
      */
     public GetRuleDimensionConditionsProjectCondition projectCondition() {
         return this.projectCondition;
     }
     /**
-     * @return 根据标签选择告警对象的条件。当Type为tag时必填。
+     * @return Condition for selecting alert objects by tag. Required when Type is tag.
      * 
      */
     public GetRuleDimensionConditionsTagCondition tagCondition() {
         return this.tagCondition;
     }
     /**
-     * @return Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+     * @return Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
      * 
      */
     public String type() {

@@ -32,13 +32,13 @@ class NodePoolArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolTagArgs']]]] = None):
         """
         The set of arguments for constructing a NodePool resource.
-        :param pulumi.Input[builtins.str] cluster_id: 节点池所在集群的 ID。
-        :param pulumi.Input['NodePoolAutoScalingArgs'] auto_scaling: 节点池伸缩策略配置。
-        :param pulumi.Input['NodePoolKubernetesConfigArgs'] kubernetes_config: 节点池 Kubernetes 相关配置。
-        :param pulumi.Input['NodePoolManagementArgs'] management: 托管节点池配置。
-        :param pulumi.Input[builtins.str] name: 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
-        :param pulumi.Input['NodePoolNodeConfigArgs'] node_config: 节点池中云服务器（ECS）实例配置。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] retain_resources: 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+        :param pulumi.Input[builtins.str] cluster_id: ID of the cluster where the node pool is located
+        :param pulumi.Input['NodePoolAutoScalingArgs'] auto_scaling: Node pool scaling policy configuration.
+        :param pulumi.Input['NodePoolKubernetesConfigArgs'] kubernetes_config: Kubernetes-related configuration for the node pool
+        :param pulumi.Input['NodePoolManagementArgs'] management: Managed node pool configuration
+        :param pulumi.Input[builtins.str] name: Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+        :param pulumi.Input['NodePoolNodeConfigArgs'] node_config: Cloud server (ECS) instance configuration in the node pool
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] retain_resources: When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
         if auto_scaling is not None:
@@ -60,7 +60,7 @@ class NodePoolArgs:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Input[builtins.str]:
         """
-        节点池所在集群的 ID。
+        ID of the cluster where the node pool is located
         """
         return pulumi.get(self, "cluster_id")
 
@@ -72,7 +72,7 @@ class NodePoolArgs:
     @pulumi.getter(name="autoScaling")
     def auto_scaling(self) -> Optional[pulumi.Input['NodePoolAutoScalingArgs']]:
         """
-        节点池伸缩策略配置。
+        Node pool scaling policy configuration.
         """
         return pulumi.get(self, "auto_scaling")
 
@@ -84,7 +84,7 @@ class NodePoolArgs:
     @pulumi.getter(name="kubernetesConfig")
     def kubernetes_config(self) -> Optional[pulumi.Input['NodePoolKubernetesConfigArgs']]:
         """
-        节点池 Kubernetes 相关配置。
+        Kubernetes-related configuration for the node pool
         """
         return pulumi.get(self, "kubernetes_config")
 
@@ -96,7 +96,7 @@ class NodePoolArgs:
     @pulumi.getter
     def management(self) -> Optional[pulumi.Input['NodePoolManagementArgs']]:
         """
-        托管节点池配置。
+        Managed node pool configuration
         """
         return pulumi.get(self, "management")
 
@@ -108,7 +108,7 @@ class NodePoolArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
         """
         return pulumi.get(self, "name")
 
@@ -120,7 +120,7 @@ class NodePoolArgs:
     @pulumi.getter(name="nodeConfig")
     def node_config(self) -> Optional[pulumi.Input['NodePoolNodeConfigArgs']]:
         """
-        节点池中云服务器（ECS）实例配置。
+        Cloud server (ECS) instance configuration in the node pool
         """
         return pulumi.get(self, "node_config")
 
@@ -132,7 +132,7 @@ class NodePoolArgs:
     @pulumi.getter(name="retainResources")
     def retain_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+        When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
         """
         return pulumi.get(self, "retain_resources")
 
@@ -168,18 +168,18 @@ class _NodePoolState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering NodePool resources.
-        :param pulumi.Input['NodePoolAutoScalingArgs'] auto_scaling: 节点池伸缩策略配置。
-        :param pulumi.Input[builtins.str] cluster_id: 节点池所在集群的 ID。
-        :param pulumi.Input[builtins.str] created_time: 创建节点池的时间。
-        :param pulumi.Input['NodePoolKubernetesConfigArgs'] kubernetes_config: 节点池 Kubernetes 相关配置。
-        :param pulumi.Input['NodePoolManagementArgs'] management: 托管节点池配置。
-        :param pulumi.Input[builtins.str] name: 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
-        :param pulumi.Input['NodePoolNodeConfigArgs'] node_config: 节点池中云服务器（ECS）实例配置。
-        :param pulumi.Input[builtins.str] node_pool_id: 节点池 ID 。
-        :param pulumi.Input['NodePoolNodeStatisticsArgs'] node_statistics: 节点池中的节点统计。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] retain_resources: 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
-        :param pulumi.Input['NodePoolStatusArgs'] status: 节点池状态。
-        :param pulumi.Input[builtins.str] updated_time: 更新节点池的时间。
+        :param pulumi.Input['NodePoolAutoScalingArgs'] auto_scaling: Node pool scaling policy configuration.
+        :param pulumi.Input[builtins.str] cluster_id: ID of the cluster where the node pool is located
+        :param pulumi.Input[builtins.str] created_time: Node pool creation time
+        :param pulumi.Input['NodePoolKubernetesConfigArgs'] kubernetes_config: Kubernetes-related configuration for the node pool
+        :param pulumi.Input['NodePoolManagementArgs'] management: Managed node pool configuration
+        :param pulumi.Input[builtins.str] name: Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+        :param pulumi.Input['NodePoolNodeConfigArgs'] node_config: Cloud server (ECS) instance configuration in the node pool
+        :param pulumi.Input[builtins.str] node_pool_id: Node pool ID
+        :param pulumi.Input['NodePoolNodeStatisticsArgs'] node_statistics: Node statistics in the node pool.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] retain_resources: When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
+        :param pulumi.Input['NodePoolStatusArgs'] status: Node pool status
+        :param pulumi.Input[builtins.str] updated_time: Node pool update time
         """
         if auto_scaling is not None:
             pulumi.set(__self__, "auto_scaling", auto_scaling)
@@ -212,7 +212,7 @@ class _NodePoolState:
     @pulumi.getter(name="autoScaling")
     def auto_scaling(self) -> Optional[pulumi.Input['NodePoolAutoScalingArgs']]:
         """
-        节点池伸缩策略配置。
+        Node pool scaling policy configuration.
         """
         return pulumi.get(self, "auto_scaling")
 
@@ -224,7 +224,7 @@ class _NodePoolState:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点池所在集群的 ID。
+        ID of the cluster where the node pool is located
         """
         return pulumi.get(self, "cluster_id")
 
@@ -236,7 +236,7 @@ class _NodePoolState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建节点池的时间。
+        Node pool creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -248,7 +248,7 @@ class _NodePoolState:
     @pulumi.getter(name="kubernetesConfig")
     def kubernetes_config(self) -> Optional[pulumi.Input['NodePoolKubernetesConfigArgs']]:
         """
-        节点池 Kubernetes 相关配置。
+        Kubernetes-related configuration for the node pool
         """
         return pulumi.get(self, "kubernetes_config")
 
@@ -260,7 +260,7 @@ class _NodePoolState:
     @pulumi.getter
     def management(self) -> Optional[pulumi.Input['NodePoolManagementArgs']]:
         """
-        托管节点池配置。
+        Managed node pool configuration
         """
         return pulumi.get(self, "management")
 
@@ -272,7 +272,7 @@ class _NodePoolState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
         """
         return pulumi.get(self, "name")
 
@@ -284,7 +284,7 @@ class _NodePoolState:
     @pulumi.getter(name="nodeConfig")
     def node_config(self) -> Optional[pulumi.Input['NodePoolNodeConfigArgs']]:
         """
-        节点池中云服务器（ECS）实例配置。
+        Cloud server (ECS) instance configuration in the node pool
         """
         return pulumi.get(self, "node_config")
 
@@ -296,7 +296,7 @@ class _NodePoolState:
     @pulumi.getter(name="nodePoolId")
     def node_pool_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点池 ID 。
+        Node pool ID
         """
         return pulumi.get(self, "node_pool_id")
 
@@ -308,7 +308,7 @@ class _NodePoolState:
     @pulumi.getter(name="nodeStatistics")
     def node_statistics(self) -> Optional[pulumi.Input['NodePoolNodeStatisticsArgs']]:
         """
-        节点池中的节点统计。
+        Node statistics in the node pool.
         """
         return pulumi.get(self, "node_statistics")
 
@@ -320,7 +320,7 @@ class _NodePoolState:
     @pulumi.getter(name="retainResources")
     def retain_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+        When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
         """
         return pulumi.get(self, "retain_resources")
 
@@ -332,7 +332,7 @@ class _NodePoolState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input['NodePoolStatusArgs']]:
         """
-        节点池状态。
+        Node pool status
         """
         return pulumi.get(self, "status")
 
@@ -353,7 +353,7 @@ class _NodePoolState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新节点池的时间。
+        Node pool update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -378,7 +378,7 @@ class NodePool(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolTagArgs', 'NodePoolTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        节点池是集群中具有相同配置的一组节点，一个节点池包含一个节点或多个节点。节点池的配置包含节点的属性，例如节点规格、可用区、标签、污点等。这些属性可以在创建节点池时指定，也可以在创建完成后进行编辑修改。
+        A node pool is a group of nodes in a cluster with the same configuration. A node pool can contain one or more nodes. The node pool configuration includes node attributes such as node specifications, availability zones, labels, taints, and more. These attributes can be specified when creating the node pool or edited after creation.
 
         ## Import
 
@@ -388,13 +388,13 @@ class NodePool(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['NodePoolAutoScalingArgs', 'NodePoolAutoScalingArgsDict']] auto_scaling: 节点池伸缩策略配置。
-        :param pulumi.Input[builtins.str] cluster_id: 节点池所在集群的 ID。
-        :param pulumi.Input[Union['NodePoolKubernetesConfigArgs', 'NodePoolKubernetesConfigArgsDict']] kubernetes_config: 节点池 Kubernetes 相关配置。
-        :param pulumi.Input[Union['NodePoolManagementArgs', 'NodePoolManagementArgsDict']] management: 托管节点池配置。
-        :param pulumi.Input[builtins.str] name: 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
-        :param pulumi.Input[Union['NodePoolNodeConfigArgs', 'NodePoolNodeConfigArgsDict']] node_config: 节点池中云服务器（ECS）实例配置。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] retain_resources: 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+        :param pulumi.Input[Union['NodePoolAutoScalingArgs', 'NodePoolAutoScalingArgsDict']] auto_scaling: Node pool scaling policy configuration.
+        :param pulumi.Input[builtins.str] cluster_id: ID of the cluster where the node pool is located
+        :param pulumi.Input[Union['NodePoolKubernetesConfigArgs', 'NodePoolKubernetesConfigArgsDict']] kubernetes_config: Kubernetes-related configuration for the node pool
+        :param pulumi.Input[Union['NodePoolManagementArgs', 'NodePoolManagementArgsDict']] management: Managed node pool configuration
+        :param pulumi.Input[builtins.str] name: Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+        :param pulumi.Input[Union['NodePoolNodeConfigArgs', 'NodePoolNodeConfigArgsDict']] node_config: Cloud server (ECS) instance configuration in the node pool
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] retain_resources: When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
         """
         ...
     @overload
@@ -403,7 +403,7 @@ class NodePool(pulumi.CustomResource):
                  args: NodePoolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        节点池是集群中具有相同配置的一组节点，一个节点池包含一个节点或多个节点。节点池的配置包含节点的属性，例如节点规格、可用区、标签、污点等。这些属性可以在创建节点池时指定，也可以在创建完成后进行编辑修改。
+        A node pool is a group of nodes in a cluster with the same configuration. A node pool can contain one or more nodes. The node pool configuration includes node attributes such as node specifications, availability zones, labels, taints, and more. These attributes can be specified when creating the node pool or edited after creation.
 
         ## Import
 
@@ -488,18 +488,18 @@ class NodePool(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['NodePoolAutoScalingArgs', 'NodePoolAutoScalingArgsDict']] auto_scaling: 节点池伸缩策略配置。
-        :param pulumi.Input[builtins.str] cluster_id: 节点池所在集群的 ID。
-        :param pulumi.Input[builtins.str] created_time: 创建节点池的时间。
-        :param pulumi.Input[Union['NodePoolKubernetesConfigArgs', 'NodePoolKubernetesConfigArgsDict']] kubernetes_config: 节点池 Kubernetes 相关配置。
-        :param pulumi.Input[Union['NodePoolManagementArgs', 'NodePoolManagementArgsDict']] management: 托管节点池配置。
-        :param pulumi.Input[builtins.str] name: 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
-        :param pulumi.Input[Union['NodePoolNodeConfigArgs', 'NodePoolNodeConfigArgsDict']] node_config: 节点池中云服务器（ECS）实例配置。
-        :param pulumi.Input[builtins.str] node_pool_id: 节点池 ID 。
-        :param pulumi.Input[Union['NodePoolNodeStatisticsArgs', 'NodePoolNodeStatisticsArgsDict']] node_statistics: 节点池中的节点统计。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] retain_resources: 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
-        :param pulumi.Input[Union['NodePoolStatusArgs', 'NodePoolStatusArgsDict']] status: 节点池状态。
-        :param pulumi.Input[builtins.str] updated_time: 更新节点池的时间。
+        :param pulumi.Input[Union['NodePoolAutoScalingArgs', 'NodePoolAutoScalingArgsDict']] auto_scaling: Node pool scaling policy configuration.
+        :param pulumi.Input[builtins.str] cluster_id: ID of the cluster where the node pool is located
+        :param pulumi.Input[builtins.str] created_time: Node pool creation time
+        :param pulumi.Input[Union['NodePoolKubernetesConfigArgs', 'NodePoolKubernetesConfigArgsDict']] kubernetes_config: Kubernetes-related configuration for the node pool
+        :param pulumi.Input[Union['NodePoolManagementArgs', 'NodePoolManagementArgsDict']] management: Managed node pool configuration
+        :param pulumi.Input[builtins.str] name: Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+        :param pulumi.Input[Union['NodePoolNodeConfigArgs', 'NodePoolNodeConfigArgsDict']] node_config: Cloud server (ECS) instance configuration in the node pool
+        :param pulumi.Input[builtins.str] node_pool_id: Node pool ID
+        :param pulumi.Input[Union['NodePoolNodeStatisticsArgs', 'NodePoolNodeStatisticsArgsDict']] node_statistics: Node statistics in the node pool.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] retain_resources: When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
+        :param pulumi.Input[Union['NodePoolStatusArgs', 'NodePoolStatusArgsDict']] status: Node pool status
+        :param pulumi.Input[builtins.str] updated_time: Node pool update time
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -524,7 +524,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter(name="autoScaling")
     def auto_scaling(self) -> pulumi.Output['outputs.NodePoolAutoScaling']:
         """
-        节点池伸缩策略配置。
+        Node pool scaling policy configuration.
         """
         return pulumi.get(self, "auto_scaling")
 
@@ -532,7 +532,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[builtins.str]:
         """
-        节点池所在集群的 ID。
+        ID of the cluster where the node pool is located
         """
         return pulumi.get(self, "cluster_id")
 
@@ -540,7 +540,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建节点池的时间。
+        Node pool creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -548,7 +548,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter(name="kubernetesConfig")
     def kubernetes_config(self) -> pulumi.Output['outputs.NodePoolKubernetesConfig']:
         """
-        节点池 Kubernetes 相关配置。
+        Kubernetes-related configuration for the node pool
         """
         return pulumi.get(self, "kubernetes_config")
 
@@ -556,7 +556,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter
     def management(self) -> pulumi.Output['outputs.NodePoolManagement']:
         """
-        托管节点池配置。
+        Managed node pool configuration
         """
         return pulumi.get(self, "management")
 
@@ -564,7 +564,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
         """
         return pulumi.get(self, "name")
 
@@ -572,7 +572,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter(name="nodeConfig")
     def node_config(self) -> pulumi.Output['outputs.NodePoolNodeConfig']:
         """
-        节点池中云服务器（ECS）实例配置。
+        Cloud server (ECS) instance configuration in the node pool
         """
         return pulumi.get(self, "node_config")
 
@@ -580,7 +580,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter(name="nodePoolId")
     def node_pool_id(self) -> pulumi.Output[builtins.str]:
         """
-        节点池 ID 。
+        Node pool ID
         """
         return pulumi.get(self, "node_pool_id")
 
@@ -588,7 +588,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter(name="nodeStatistics")
     def node_statistics(self) -> pulumi.Output['outputs.NodePoolNodeStatistics']:
         """
-        节点池中的节点统计。
+        Node statistics in the node pool.
         """
         return pulumi.get(self, "node_statistics")
 
@@ -596,7 +596,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter(name="retainResources")
     def retain_resources(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+        When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
         """
         return pulumi.get(self, "retain_resources")
 
@@ -604,7 +604,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output['outputs.NodePoolStatus']:
         """
-        节点池状态。
+        Node pool status
         """
         return pulumi.get(self, "status")
 
@@ -617,7 +617,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新节点池的时间。
+        Node pool update time
         """
         return pulumi.get(self, "updated_time")
 

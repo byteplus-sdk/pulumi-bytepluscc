@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
 {
     /// <summary>
-    /// 当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。
+    /// After you create a Cloud Identity Center user, you need to grant the user login access to each account.
     /// 
     /// ## Example Usage
     /// 
@@ -48,79 +48,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public partial class UserProvisioning : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation Time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 删除策略。
+        /// Deletion Policy
         /// </summary>
         [Output("deletionStrategy")]
         public Output<string> DeletionStrategy { get; private set; } = null!;
 
         /// <summary>
-        /// 任务描述。
+        /// Task Description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 用户名冲突策略。
+        /// Username Conflict Policy
         /// </summary>
         [Output("duplicationStrategy")]
         public Output<string> DuplicationStrategy { get; private set; } = null!;
 
         /// <summary>
-        /// 本次同步IAM用户名称后缀。
+        /// Suffix for IAM user name in this synchronization
         /// </summary>
         [Output("duplicationSuffix")]
         public Output<string> DuplicationSuffix { get; private set; } = null!;
 
         /// <summary>
-        /// 身份源冲突策略。
+        /// Identity Source Conflict Policy
         /// </summary>
         [Output("identitySourceStrategy")]
         public Output<string> IdentitySourceStrategy { get; private set; } = null!;
 
         /// <summary>
-        /// 身份id。
+        /// Identity ID
         /// </summary>
         [Output("principalId")]
         public Output<string> PrincipalId { get; private set; } = null!;
 
         /// <summary>
-        /// 目标名称。
+        /// Target Name
         /// </summary>
         [Output("principalName")]
         public Output<string> PrincipalName { get; private set; } = null!;
 
         /// <summary>
-        /// 身份类型。
+        /// Identity Type
         /// </summary>
         [Output("principalType")]
         public Output<string> PrincipalType { get; private set; } = null!;
 
         /// <summary>
-        /// 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+        /// Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
         /// </summary>
         [Output("provisionStatus")]
         public Output<string> ProvisionStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 目标id。
+        /// Target ID
         /// </summary>
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update Time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// IAM 用户同步任务ID。
+        /// IAM User Synchronization Task ID
         /// </summary>
         [Output("userProvisioningId")]
         public Output<string> UserProvisioningId { get; private set; } = null!;
@@ -173,49 +173,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class UserProvisioningArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 删除策略。
+        /// Deletion Policy
         /// </summary>
         [Input("deletionStrategy", required: true)]
         public Input<string> DeletionStrategy { get; set; } = null!;
 
         /// <summary>
-        /// 任务描述。
+        /// Task Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 用户名冲突策略。
+        /// Username Conflict Policy
         /// </summary>
         [Input("duplicationStrategy", required: true)]
         public Input<string> DuplicationStrategy { get; set; } = null!;
 
         /// <summary>
-        /// 本次同步IAM用户名称后缀。
+        /// Suffix for IAM user name in this synchronization
         /// </summary>
         [Input("duplicationSuffix")]
         public Input<string>? DuplicationSuffix { get; set; }
 
         /// <summary>
-        /// 身份源冲突策略。
+        /// Identity Source Conflict Policy
         /// </summary>
         [Input("identitySourceStrategy", required: true)]
         public Input<string> IdentitySourceStrategy { get; set; } = null!;
 
         /// <summary>
-        /// 身份id。
+        /// Identity ID
         /// </summary>
         [Input("principalId", required: true)]
         public Input<string> PrincipalId { get; set; } = null!;
 
         /// <summary>
-        /// 身份类型。
+        /// Identity Type
         /// </summary>
         [Input("principalType", required: true)]
         public Input<string> PrincipalType { get; set; } = null!;
 
         /// <summary>
-        /// 目标id。
+        /// Target ID
         /// </summary>
         [Input("targetId", required: true)]
         public Input<string> TargetId { get; set; } = null!;
@@ -229,79 +229,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class UserProvisioningState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation Time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 删除策略。
+        /// Deletion Policy
         /// </summary>
         [Input("deletionStrategy")]
         public Input<string>? DeletionStrategy { get; set; }
 
         /// <summary>
-        /// 任务描述。
+        /// Task Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 用户名冲突策略。
+        /// Username Conflict Policy
         /// </summary>
         [Input("duplicationStrategy")]
         public Input<string>? DuplicationStrategy { get; set; }
 
         /// <summary>
-        /// 本次同步IAM用户名称后缀。
+        /// Suffix for IAM user name in this synchronization
         /// </summary>
         [Input("duplicationSuffix")]
         public Input<string>? DuplicationSuffix { get; set; }
 
         /// <summary>
-        /// 身份源冲突策略。
+        /// Identity Source Conflict Policy
         /// </summary>
         [Input("identitySourceStrategy")]
         public Input<string>? IdentitySourceStrategy { get; set; }
 
         /// <summary>
-        /// 身份id。
+        /// Identity ID
         /// </summary>
         [Input("principalId")]
         public Input<string>? PrincipalId { get; set; }
 
         /// <summary>
-        /// 目标名称。
+        /// Target Name
         /// </summary>
         [Input("principalName")]
         public Input<string>? PrincipalName { get; set; }
 
         /// <summary>
-        /// 身份类型。
+        /// Identity Type
         /// </summary>
         [Input("principalType")]
         public Input<string>? PrincipalType { get; set; }
 
         /// <summary>
-        /// 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+        /// Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
         /// </summary>
         [Input("provisionStatus")]
         public Input<string>? ProvisionStatus { get; set; }
 
         /// <summary>
-        /// 目标id。
+        /// Target ID
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update Time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// IAM 用户同步任务ID。
+        /// IAM User Synchronization Task ID
         /// </summary>
         [Input("userProvisioningId")]
         public Input<string>? UserProvisioningId { get; set; }

@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetAllowListSecurityGroupBindInfo {
     /**
-     * @return 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+     * @return Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
      * 
      */
     private String bindMode;
     /**
-     * @return 安全组的 IP 地址列表。
+     * @return Security group IP address list.
      * 
      */
     private List<String> ipLists;
     /**
-     * @return 安全组 ID。
+     * @return Security group ID.
      * 
      */
     private String securityGroupId;
     /**
-     * @return 安全组名称。
+     * @return Security group name.
      * 
      */
     private String securityGroupName;
 
     private GetAllowListSecurityGroupBindInfo() {}
     /**
-     * @return 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+     * @return Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
      * 
      */
     public String bindMode() {
         return this.bindMode;
     }
     /**
-     * @return 安全组的 IP 地址列表。
+     * @return Security group IP address list.
      * 
      */
     public List<String> ipLists() {
         return this.ipLists;
     }
     /**
-     * @return 安全组 ID。
+     * @return Security group ID.
      * 
      */
     public String securityGroupId() {
         return this.securityGroupId;
     }
     /**
-     * @return 安全组名称。
+     * @return Security group name.
      * 
      */
     public String securityGroupName() {

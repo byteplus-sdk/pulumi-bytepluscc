@@ -13,110 +13,110 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceChargeInfo {
     /**
-     * @return 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+     * @return Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
      * 
      */
     private Boolean autoRenew;
     /**
-     * @return 包年包月实例的到期时间。
+     * @return Expiration time for the subscription instance.
      * 
      */
     private String chargeExpireTime;
     /**
-     * @return 实例的计费开始时间。
+     * @return Instance billing start time.
      * 
      */
     private String chargeStartTime;
     /**
-     * @return 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+     * @return Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
      * 
      */
     private String chargeStatus;
     /**
-     * @return 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+     * @return Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
      * 
      */
     private String chargeType;
     /**
-     * @return 实例欠费关停后的预计释放时间。
+     * @return Estimated release time after the instance is stopped due to overdue payment.
      * 
      */
     private String overdueReclaimTime;
     /**
-     * @return 实例的欠费关停时间。
+     * @return Instance suspension time due to overdue payment.
      * 
      */
     private String overdueTime;
     /**
-     * @return 包年包月类型实例的购买时长。
+     * @return Purchase duration for subscription-based instances.
      * 
      */
     private Integer period;
     /**
-     * @return 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+     * @return The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
      * 
      */
     private String periodUnit;
 
     private GetInstanceChargeInfo() {}
     /**
-     * @return 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+     * @return Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
      * 
      */
     public Boolean autoRenew() {
         return this.autoRenew;
     }
     /**
-     * @return 包年包月实例的到期时间。
+     * @return Expiration time for the subscription instance.
      * 
      */
     public String chargeExpireTime() {
         return this.chargeExpireTime;
     }
     /**
-     * @return 实例的计费开始时间。
+     * @return Instance billing start time.
      * 
      */
     public String chargeStartTime() {
         return this.chargeStartTime;
     }
     /**
-     * @return 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+     * @return Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
      * 
      */
     public String chargeStatus() {
         return this.chargeStatus;
     }
     /**
-     * @return 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+     * @return Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
      * 
      */
     public String chargeType() {
         return this.chargeType;
     }
     /**
-     * @return 实例欠费关停后的预计释放时间。
+     * @return Estimated release time after the instance is stopped due to overdue payment.
      * 
      */
     public String overdueReclaimTime() {
         return this.overdueReclaimTime;
     }
     /**
-     * @return 实例的欠费关停时间。
+     * @return Instance suspension time due to overdue payment.
      * 
      */
     public String overdueTime() {
         return this.overdueTime;
     }
     /**
-     * @return 包年包月类型实例的购买时长。
+     * @return Purchase duration for subscription-based instances.
      * 
      */
     public Integer period() {
         return this.period;
     }
     /**
-     * @return 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+     * @return The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
      * 
      */
     public String periodUnit() {

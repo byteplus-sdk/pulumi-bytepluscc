@@ -16,14 +16,14 @@ public final class ClusterStatusConditionArgs extends com.pulumi.resources.Resou
     public static final ClusterStatusConditionArgs Empty = new ClusterStatusConditionArgs();
 
     /**
-     * 条件类型
+     * Condition type
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 条件类型
+     * @return Condition type
      * 
      */
     public Optional<Output<String>> type() {
@@ -55,7 +55,7 @@ public final class ClusterStatusConditionArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param type 条件类型
+         * @param type Condition type
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class ClusterStatusConditionArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param type 条件类型
+         * @param type Condition type
          * 
          * @return builder
          * 

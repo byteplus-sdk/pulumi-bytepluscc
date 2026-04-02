@@ -15,23 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp.Outputs
     public sealed class GetWorkspaceQuotaResult
     {
         /// <summary>
-        /// 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+        /// Maximum active time series count. Integer, default range is 1–50000000
         /// </summary>
         public readonly int ActiveSeries;
         /// <summary>
-        /// 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+        /// Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
         /// </summary>
         public readonly int IngestSamplesPerSecond;
         /// <summary>
-        /// 最大查询 QPS。整数形式，默认取值范围为 1～500。
+        /// Workspace public Query bandwidth (Mbps).
+        /// </summary>
+        public readonly int PublicQueryBandwidth;
+        /// <summary>
+        /// Workspace public RemoteWrite bandwidth (Mbps).
+        /// </summary>
+        public readonly int PublicWriteBandwidth;
+        /// <summary>
+        /// Maximum query QPS. Integer, default range is 1–500
         /// </summary>
         public readonly int QueryPerSecond;
         /// <summary>
-        /// 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+        /// Maximum samples scanned per second. Integer, default range is 1–1000000000
         /// </summary>
         public readonly int ScanSamplesPerSecond;
         /// <summary>
-        /// 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+        /// Maximum time series scanned per second. Integer, default range is 1–200000
         /// </summary>
         public readonly int ScanSeriesPerSecond;
 
@@ -41,6 +49,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp.Outputs
 
             int ingestSamplesPerSecond,
 
+            int publicQueryBandwidth,
+
+            int publicWriteBandwidth,
+
             int queryPerSecond,
 
             int scanSamplesPerSecond,
@@ -49,6 +61,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp.Outputs
         {
             ActiveSeries = activeSeries;
             IngestSamplesPerSecond = ingestSamplesPerSecond;
+            PublicQueryBandwidth = publicQueryBandwidth;
+            PublicWriteBandwidth = publicWriteBandwidth;
             QueryPerSecond = queryPerSecond;
             ScanSamplesPerSecond = scanSamplesPerSecond;
             ScanSeriesPerSecond = scanSeriesPerSecond;

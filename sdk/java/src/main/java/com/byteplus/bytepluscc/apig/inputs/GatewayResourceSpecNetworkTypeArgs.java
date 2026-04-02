@@ -16,14 +16,14 @@ public final class GatewayResourceSpecNetworkTypeArgs extends com.pulumi.resourc
     public static final GatewayResourceSpecNetworkTypeArgs Empty = new GatewayResourceSpecNetworkTypeArgs();
 
     /**
-     * 是否启用私网。
+     * Whether to enable private network
      * 
      */
     @Import(name="enablePrivateNetwork")
     private @Nullable Output<Boolean> enablePrivateNetwork;
 
     /**
-     * @return 是否启用私网。
+     * @return Whether to enable private network
      * 
      */
     public Optional<Output<Boolean>> enablePrivateNetwork() {
@@ -31,14 +31,14 @@ public final class GatewayResourceSpecNetworkTypeArgs extends com.pulumi.resourc
     }
 
     /**
-     * 是否启用公网。
+     * Whether to enable public network
      * 
      */
     @Import(name="enablePublicNetwork")
     private @Nullable Output<Boolean> enablePublicNetwork;
 
     /**
-     * @return 是否启用公网。
+     * @return Whether to enable public network
      * 
      */
     public Optional<Output<Boolean>> enablePublicNetwork() {
@@ -71,7 +71,7 @@ public final class GatewayResourceSpecNetworkTypeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param enablePrivateNetwork 是否启用私网。
+         * @param enablePrivateNetwork Whether to enable private network
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class GatewayResourceSpecNetworkTypeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param enablePrivateNetwork 是否启用私网。
+         * @param enablePrivateNetwork Whether to enable private network
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class GatewayResourceSpecNetworkTypeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param enablePublicNetwork 是否启用公网。
+         * @param enablePublicNetwork Whether to enable public network
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class GatewayResourceSpecNetworkTypeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param enablePublicNetwork 是否启用公网。
+         * @param enablePublicNetwork Whether to enable public network
          * 
          * @return builder
          * 

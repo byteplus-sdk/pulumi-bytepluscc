@@ -17,14 +17,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     public static final GroupArgs Empty = new GroupArgs();
 
     /**
-     * Consumer Group 描述。
+     * Consumer Group description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Consumer Group 描述。
+     * @return Consumer Group description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -32,14 +32,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+     * Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      * 
      */
     @Import(name="groupName")
     private @Nullable Output<String> groupName;
 
     /**
-     * @return 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+     * @return Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      * 
      */
     public Optional<Output<String>> groupName() {
@@ -47,14 +47,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 所属 BMQ 实例 ID。
+     * BMQ instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 所属 BMQ 实例 ID。
+     * @return BMQ instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -62,14 +62,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 重置消费位点信息。
+     * Reset consumption position information.
      * 
      */
     @Import(name="resetInfo")
     private @Nullable Output<GroupResetInfoArgs> resetInfo;
 
     /**
-     * @return 重置消费位点信息。
+     * @return Reset consumption position information.
      * 
      */
     public Optional<Output<GroupResetInfoArgs>> resetInfo() {
@@ -104,7 +104,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Consumer Group 描述。
+         * @param description Consumer Group description.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Consumer Group 描述。
+         * @param description Consumer Group description.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupName 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+         * @param groupName Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupName 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+         * @param groupName Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 所属 BMQ 实例 ID。
+         * @param instanceId BMQ instance ID.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 所属 BMQ 实例 ID。
+         * @param instanceId BMQ instance ID.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resetInfo 重置消费位点信息。
+         * @param resetInfo Reset consumption position information.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resetInfo 重置消费位点信息。
+         * @param resetInfo Reset consumption position information.
          * 
          * @return builder
          * 

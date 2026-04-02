@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainRequestHeader {
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private GetDomainRequestHeaderCondition condition;
     /**
-     * @return 表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+     * @return Represents a list of configuration rules for request headers. Each rule includes settings for header operations. You can add up to 50 rules.
      * 
      */
     private GetDomainRequestHeaderRequestHeaderAction requestHeaderAction;
 
     private GetDomainRequestHeader() {}
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public GetDomainRequestHeaderCondition condition() {
         return this.condition;
     }
     /**
-     * @return 表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+     * @return Represents a list of configuration rules for request headers. Each rule includes settings for header operations. You can add up to 50 rules.
      * 
      */
     public GetDomainRequestHeaderRequestHeaderAction requestHeaderAction() {

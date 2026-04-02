@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 后端服务器组是一组后端服务器。
+// A backend server group is a collection of backend servers.
 //
 // ## Import
 //
@@ -22,26 +22,26 @@ import (
 type ServerGroup struct {
 	pulumi.CustomResourceState
 
-	// 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+	// IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
 	AddressIpVersion pulumi.StringOutput `pulumi:"addressIpVersion"`
-	// 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+	// Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
 	AnyPortEnabled pulumi.StringOutput `pulumi:"anyPortEnabled"`
-	// 后端服务器组的创建时间。
+	// Creation time of the backend server group.
 	CreateTime pulumi.StringOutput `pulumi:"createTime"`
-	// 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+	// Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 	Description pulumi.StringOutput            `pulumi:"description"`
 	Listeners   ServerGroupListenerArrayOutput `pulumi:"listeners"`
-	// 后端服务器组所属的CLB实例ID。
+	// CLB instance ID to which the backend server group belongs.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
-	// 后端服务器组的ID。
+	// Backend server group ID.
 	ServerGroupId pulumi.StringOutput `pulumi:"serverGroupId"`
-	// 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+	// Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
 	ServerGroupName pulumi.StringOutput          `pulumi:"serverGroupName"`
 	Servers         ServerGroupServerArrayOutput `pulumi:"servers"`
 	Tags            ServerGroupTagArrayOutput    `pulumi:"tags"`
-	// 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+	// Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
 	Type pulumi.StringOutput `pulumi:"type"`
-	// 后端服务器组的最近操作时间。
+	// Last operation time of the backend server group.
 	UpdateTime pulumi.StringOutput `pulumi:"updateTime"`
 }
 
@@ -78,50 +78,50 @@ func GetServerGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ServerGroup resources.
 type serverGroupState struct {
-	// 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+	// IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
 	AddressIpVersion *string `pulumi:"addressIpVersion"`
-	// 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+	// Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
 	AnyPortEnabled *string `pulumi:"anyPortEnabled"`
-	// 后端服务器组的创建时间。
+	// Creation time of the backend server group.
 	CreateTime *string `pulumi:"createTime"`
-	// 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+	// Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 	Description *string               `pulumi:"description"`
 	Listeners   []ServerGroupListener `pulumi:"listeners"`
-	// 后端服务器组所属的CLB实例ID。
+	// CLB instance ID to which the backend server group belongs.
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
-	// 后端服务器组的ID。
+	// Backend server group ID.
 	ServerGroupId *string `pulumi:"serverGroupId"`
-	// 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+	// Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
 	ServerGroupName *string             `pulumi:"serverGroupName"`
 	Servers         []ServerGroupServer `pulumi:"servers"`
 	Tags            []ServerGroupTag    `pulumi:"tags"`
-	// 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+	// Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
 	Type *string `pulumi:"type"`
-	// 后端服务器组的最近操作时间。
+	// Last operation time of the backend server group.
 	UpdateTime *string `pulumi:"updateTime"`
 }
 
 type ServerGroupState struct {
-	// 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+	// IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
 	AddressIpVersion pulumi.StringPtrInput
-	// 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+	// Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
 	AnyPortEnabled pulumi.StringPtrInput
-	// 后端服务器组的创建时间。
+	// Creation time of the backend server group.
 	CreateTime pulumi.StringPtrInput
-	// 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+	// Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 	Description pulumi.StringPtrInput
 	Listeners   ServerGroupListenerArrayInput
-	// 后端服务器组所属的CLB实例ID。
+	// CLB instance ID to which the backend server group belongs.
 	LoadBalancerId pulumi.StringPtrInput
-	// 后端服务器组的ID。
+	// Backend server group ID.
 	ServerGroupId pulumi.StringPtrInput
-	// 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+	// Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
 	ServerGroupName pulumi.StringPtrInput
 	Servers         ServerGroupServerArrayInput
 	Tags            ServerGroupTagArrayInput
-	// 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+	// Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
 	Type pulumi.StringPtrInput
-	// 后端服务器组的最近操作时间。
+	// Last operation time of the backend server group.
 	UpdateTime pulumi.StringPtrInput
 }
 
@@ -130,37 +130,37 @@ func (ServerGroupState) ElementType() reflect.Type {
 }
 
 type serverGroupArgs struct {
-	// 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+	// IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
 	AddressIpVersion *string `pulumi:"addressIpVersion"`
-	// 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+	// Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
 	AnyPortEnabled *string `pulumi:"anyPortEnabled"`
-	// 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+	// Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 	Description *string `pulumi:"description"`
-	// 后端服务器组所属的CLB实例ID。
+	// CLB instance ID to which the backend server group belongs.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
-	// 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+	// Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
 	ServerGroupName *string             `pulumi:"serverGroupName"`
 	Servers         []ServerGroupServer `pulumi:"servers"`
 	Tags            []ServerGroupTag    `pulumi:"tags"`
-	// 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+	// Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
 	Type *string `pulumi:"type"`
 }
 
 // The set of arguments for constructing a ServerGroup resource.
 type ServerGroupArgs struct {
-	// 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+	// IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
 	AddressIpVersion pulumi.StringPtrInput
-	// 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+	// Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
 	AnyPortEnabled pulumi.StringPtrInput
-	// 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+	// Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 	Description pulumi.StringPtrInput
-	// 后端服务器组所属的CLB实例ID。
+	// CLB instance ID to which the backend server group belongs.
 	LoadBalancerId pulumi.StringInput
-	// 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+	// Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
 	ServerGroupName pulumi.StringPtrInput
 	Servers         ServerGroupServerArrayInput
 	Tags            ServerGroupTagArrayInput
-	// 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+	// Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
 	Type pulumi.StringPtrInput
 }
 
@@ -251,22 +251,22 @@ func (o ServerGroupOutput) ToServerGroupOutputWithContext(ctx context.Context) S
 	return o
 }
 
-// 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+// IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
 func (o ServerGroupOutput) AddressIpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServerGroup) pulumi.StringOutput { return v.AddressIpVersion }).(pulumi.StringOutput)
 }
 
-// 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+// Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
 func (o ServerGroupOutput) AnyPortEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServerGroup) pulumi.StringOutput { return v.AnyPortEnabled }).(pulumi.StringOutput)
 }
 
-// 后端服务器组的创建时间。
+// Creation time of the backend server group.
 func (o ServerGroupOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServerGroup) pulumi.StringOutput { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+// Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 func (o ServerGroupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServerGroup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -275,17 +275,17 @@ func (o ServerGroupOutput) Listeners() ServerGroupListenerArrayOutput {
 	return o.ApplyT(func(v *ServerGroup) ServerGroupListenerArrayOutput { return v.Listeners }).(ServerGroupListenerArrayOutput)
 }
 
-// 后端服务器组所属的CLB实例ID。
+// CLB instance ID to which the backend server group belongs.
 func (o ServerGroupOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServerGroup) pulumi.StringOutput { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
 
-// 后端服务器组的ID。
+// Backend server group ID.
 func (o ServerGroupOutput) ServerGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServerGroup) pulumi.StringOutput { return v.ServerGroupId }).(pulumi.StringOutput)
 }
 
-// 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+// Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
 func (o ServerGroupOutput) ServerGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServerGroup) pulumi.StringOutput { return v.ServerGroupName }).(pulumi.StringOutput)
 }
@@ -298,12 +298,12 @@ func (o ServerGroupOutput) Tags() ServerGroupTagArrayOutput {
 	return o.ApplyT(func(v *ServerGroup) ServerGroupTagArrayOutput { return v.Tags }).(ServerGroupTagArrayOutput)
 }
 
-// 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+// Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
 func (o ServerGroupOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServerGroup) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-// 后端服务器组的最近操作时间。
+// Last operation time of the backend server group.
 func (o ServerGroupOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServerGroup) pulumi.StringOutput { return v.UpdateTime }).(pulumi.StringOutput)
 }

@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceUsage {
     /**
-     * @return 活跃时序数。
+     * @return Active time series count
      * 
      */
     private @Nullable Integer activeSeries;
     /**
-     * @return 每秒写入样本数。
+     * @return Samples written per second
      * 
      */
     private @Nullable Double ingestedSamplesPerSecond;
 
     private WorkspaceUsage() {}
     /**
-     * @return 活跃时序数。
+     * @return Active time series count
      * 
      */
     public Optional<Integer> activeSeries() {
         return Optional.ofNullable(this.activeSeries);
     }
     /**
-     * @return 每秒写入样本数。
+     * @return Samples written per second
      * 
      */
     public Optional<Double> ingestedSamplesPerSecond() {

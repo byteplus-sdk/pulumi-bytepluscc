@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis.Outputs
     public sealed class GetInstanceCapacityResult
     {
         /// <summary>
-        /// 当前实例的内存总容量。单位：MiB。
+        /// Total memory capacity of the current instance. Unit: MiB.
         /// </summary>
         public readonly int Total;
         /// <summary>
-        /// 当前实例已用容量。单位：MiB。
+        /// Used capacity of the current instance. Unit: MiB.
         /// </summary>
         public readonly int Used;
 

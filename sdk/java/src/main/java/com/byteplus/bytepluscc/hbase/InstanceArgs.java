@@ -22,14 +22,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceArgs Empty = new InstanceArgs();
 
     /**
-     * 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+     * Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
      * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
-     * @return 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+     * @return Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
      * 
      */
     public Optional<Output<Boolean>> autoRenew() {
@@ -37,14 +37,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+     * Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
      * 
      */
     @Import(name="chargeType", required=true)
     private Output<String> chargeType;
 
     /**
-     * @return 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+     * @return Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
      * 
      */
     public Output<String> chargeType() {
@@ -52,14 +52,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例总容量型存储空间大小，单位 GiB。
+     * Total capacity-type storage space for the instance, in GiB.
      * 
      */
     @Import(name="coldStorage")
     private @Nullable Output<Integer> coldStorage;
 
     /**
-     * @return 实例总容量型存储空间大小，单位 GiB。
+     * @return Total capacity-type storage space for the instance, in GiB.
      * 
      */
     public Optional<Output<Integer>> coldStorage() {
@@ -67,14 +67,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+     * Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
      * 
      */
     @Import(name="deletionProtection")
     private @Nullable Output<String> deletionProtection;
 
     /**
-     * @return 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+     * @return Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
      * 
      */
     public Optional<Output<String>> deletionProtection() {
@@ -82,14 +82,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+     * Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
      * 
      */
     @Import(name="enableAuth")
     private @Nullable Output<Boolean> enableAuth;
 
     /**
-     * @return 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+     * @return Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
      * 
      */
     public Optional<Output<Boolean>> enableAuth() {
@@ -97,14 +97,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+     * Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
      * 
      */
     @Import(name="enableCloudStorage")
     private @Nullable Output<Boolean> enableCloudStorage;
 
     /**
-     * @return 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+     * @return Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
      * 
      */
     public Optional<Output<Boolean>> enableCloudStorage() {
@@ -119,14 +119,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+     * HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
      * 
      */
     @Import(name="engineVersion", required=true)
     private Output<String> engineVersion;
 
     /**
-     * @return HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+     * @return HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
      * 
      */
     public Output<String> engineVersion() {
@@ -134,14 +134,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例名称。
+     * Instance name
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 实例名称。
+     * @return Instance name
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -149,14 +149,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例类型。当前仅支持标准型，取值默认为 Standard。
+     * Instance type. Currently, only Standard is supported. The default value is Standard
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
-     * @return 实例类型。当前仅支持标准型，取值默认为 Standard。
+     * @return Instance type. Currently, only Standard is supported. The default value is Standard
      * 
      */
     public Optional<Output<String>> instanceType() {
@@ -164,14 +164,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+     * Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
      * 
      */
     @Import(name="masterSpec", required=true)
     private Output<String> masterSpec;
 
     /**
-     * @return Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+     * @return Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
      * 
      */
     public Output<String> masterSpec() {
@@ -179,14 +179,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+     * Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
      * 
      */
     @Import(name="multiAz")
     private @Nullable Output<Boolean> multiAz;
 
     /**
-     * @return 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+     * @return Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
      * 
      */
     public Optional<Output<Boolean>> multiAz() {
@@ -194,14 +194,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所属的项目名称。
+     * Project name of the instance
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 实例所属的项目名称。
+     * @return Project name of the instance
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -209,14 +209,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+     * Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
      * 
      */
     @Import(name="purchaseMonths")
     private @Nullable Output<Integer> purchaseMonths;
 
     /**
-     * @return 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+     * @return Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
      * 
      */
     public Optional<Output<Integer>> purchaseMonths() {
@@ -224,14 +224,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所属的地域 ID。
+     * Region ID of the instance.
      * 
      */
     @Import(name="regionId", required=true)
     private Output<String> regionId;
 
     /**
-     * @return 实例所属的地域 ID。
+     * @return Region ID of the instance.
      * 
      */
     public Output<String> regionId() {
@@ -239,14 +239,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * RegionServer 节点的数量。
+     * Number of RegionServer nodes
      * 
      */
     @Import(name="rsCount", required=true)
     private Output<Integer> rsCount;
 
     /**
-     * @return RegionServer 节点的数量。
+     * @return Number of RegionServer nodes
      * 
      */
     public Output<Integer> rsCount() {
@@ -254,14 +254,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * RegionServer 节点的规格码。
+     * RegionServer node specification code.
      * 
      */
     @Import(name="rsSpec", required=true)
     private Output<String> rsSpec;
 
     /**
-     * @return RegionServer 节点的规格码。
+     * @return RegionServer node specification code.
      * 
      */
     public Output<String> rsSpec() {
@@ -269,14 +269,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例总存储容量，单位：GiB。
+     * Total storage capacity of the instance, unit: GiB.
      * 
      */
     @Import(name="storageCapacity", required=true)
     private Output<Integer> storageCapacity;
 
     /**
-     * @return 实例总存储容量，单位：GiB。
+     * @return Total storage capacity of the instance, unit: GiB.
      * 
      */
     public Output<Integer> storageCapacity() {
@@ -284,14 +284,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+     * Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
      * 
      */
     @Import(name="storageType", required=true)
     private Output<String> storageType;
 
     /**
-     * @return 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+     * @return Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
      * 
      */
     public Output<String> storageType() {
@@ -299,14 +299,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+     * Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+     * @return Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
      * 
      */
     public Output<String> subnetId() {
@@ -321,14 +321,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+     * Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+     * @return Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
      * 
      */
     public Output<String> vpcId() {
@@ -336,14 +336,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所属的可用区 ID。
+     * Zone ID of the instance
      * 
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
-     * @return 实例所属的可用区 ID。
+     * @return Zone ID of the instance
      * 
      */
     public Output<String> zoneId() {
@@ -397,7 +397,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenew 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+         * @param autoRenew Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
          * 
          * @return builder
          * 
@@ -408,7 +408,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenew 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+         * @param autoRenew Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+         * @param chargeType Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+         * @param chargeType Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param coldStorage 实例总容量型存储空间大小，单位 GiB。
+         * @param coldStorage Total capacity-type storage space for the instance, in GiB.
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param coldStorage 实例总容量型存储空间大小，单位 GiB。
+         * @param coldStorage Total capacity-type storage space for the instance, in GiB.
          * 
          * @return builder
          * 
@@ -460,7 +460,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletionProtection 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+         * @param deletionProtection Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletionProtection 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+         * @param deletionProtection Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
          * 
          * @return builder
          * 
@@ -481,7 +481,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableAuth 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+         * @param enableAuth Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableAuth 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+         * @param enableAuth Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
          * 
          * @return builder
          * 
@@ -502,7 +502,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableCloudStorage 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+         * @param enableCloudStorage Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableCloudStorage 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+         * @param enableCloudStorage Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
          * 
          * @return builder
          * 
@@ -536,7 +536,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param engineVersion HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+         * @param engineVersion HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
          * 
          * @return builder
          * 
@@ -547,7 +547,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param engineVersion HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+         * @param engineVersion HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
          * 
          * @return builder
          * 
@@ -557,7 +557,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName 实例名称。
+         * @param instanceName Instance name
          * 
          * @return builder
          * 
@@ -568,7 +568,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName 实例名称。
+         * @param instanceName Instance name
          * 
          * @return builder
          * 
@@ -578,7 +578,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 实例类型。当前仅支持标准型，取值默认为 Standard。
+         * @param instanceType Instance type. Currently, only Standard is supported. The default value is Standard
          * 
          * @return builder
          * 
@@ -589,7 +589,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 实例类型。当前仅支持标准型，取值默认为 Standard。
+         * @param instanceType Instance type. Currently, only Standard is supported. The default value is Standard
          * 
          * @return builder
          * 
@@ -599,7 +599,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterSpec Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+         * @param masterSpec Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
          * 
          * @return builder
          * 
@@ -610,7 +610,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterSpec Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+         * @param masterSpec Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
          * 
          * @return builder
          * 
@@ -620,7 +620,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiAz 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+         * @param multiAz Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
          * 
          * @return builder
          * 
@@ -631,7 +631,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiAz 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+         * @param multiAz Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
          * 
          * @return builder
          * 
@@ -641,7 +641,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属的项目名称。
+         * @param projectName Project name of the instance
          * 
          * @return builder
          * 
@@ -652,7 +652,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属的项目名称。
+         * @param projectName Project name of the instance
          * 
          * @return builder
          * 
@@ -662,7 +662,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param purchaseMonths 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+         * @param purchaseMonths Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
          * 
          * @return builder
          * 
@@ -673,7 +673,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param purchaseMonths 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+         * @param purchaseMonths Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
          * 
          * @return builder
          * 
@@ -683,7 +683,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param regionId 实例所属的地域 ID。
+         * @param regionId Region ID of the instance.
          * 
          * @return builder
          * 
@@ -694,7 +694,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param regionId 实例所属的地域 ID。
+         * @param regionId Region ID of the instance.
          * 
          * @return builder
          * 
@@ -704,7 +704,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rsCount RegionServer 节点的数量。
+         * @param rsCount Number of RegionServer nodes
          * 
          * @return builder
          * 
@@ -715,7 +715,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rsCount RegionServer 节点的数量。
+         * @param rsCount Number of RegionServer nodes
          * 
          * @return builder
          * 
@@ -725,7 +725,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rsSpec RegionServer 节点的规格码。
+         * @param rsSpec RegionServer node specification code.
          * 
          * @return builder
          * 
@@ -736,7 +736,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rsSpec RegionServer 节点的规格码。
+         * @param rsSpec RegionServer node specification code.
          * 
          * @return builder
          * 
@@ -746,7 +746,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageCapacity 实例总存储容量，单位：GiB。
+         * @param storageCapacity Total storage capacity of the instance, unit: GiB.
          * 
          * @return builder
          * 
@@ -757,7 +757,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageCapacity 实例总存储容量，单位：GiB。
+         * @param storageCapacity Total storage capacity of the instance, unit: GiB.
          * 
          * @return builder
          * 
@@ -767,7 +767,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageType 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+         * @param storageType Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
          * 
          * @return builder
          * 
@@ -778,7 +778,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageType 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+         * @param storageType Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
          * 
          * @return builder
          * 
@@ -788,7 +788,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+         * @param subnetId Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
          * 
          * @return builder
          * 
@@ -799,7 +799,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+         * @param subnetId Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
          * 
          * @return builder
          * 
@@ -822,7 +822,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+         * @param vpcId Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
          * 
          * @return builder
          * 
@@ -833,7 +833,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+         * @param vpcId Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
          * 
          * @return builder
          * 
@@ -843,7 +843,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 实例所属的可用区 ID。
+         * @param zoneId Zone ID of the instance
          * 
          * @return builder
          * 
@@ -854,7 +854,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 实例所属的可用区 ID。
+         * @param zoneId Zone ID of the instance
          * 
          * @return builder
          * 

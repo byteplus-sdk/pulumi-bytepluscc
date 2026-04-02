@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ImageDetectionResults {
     /**
-     * @return 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+     * @return Check status. Options: Finished (completed), Processing (in progress).
      * 
      */
     private @Nullable String detectionStatus;
@@ -22,7 +22,7 @@ public final class ImageDetectionResults {
 
     private ImageDetectionResults() {}
     /**
-     * @return 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+     * @return Check status. Options: Finished (completed), Processing (in progress).
      * 
      */
     public Optional<String> detectionStatus() {

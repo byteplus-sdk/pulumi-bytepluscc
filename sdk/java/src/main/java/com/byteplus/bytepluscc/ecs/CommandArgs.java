@@ -22,14 +22,14 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
     public static final CommandArgs Empty = new CommandArgs();
 
     /**
-     * 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+     * Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
      * 
      */
     @Import(name="commandContent", required=true)
     private Output<String> commandContent;
 
     /**
-     * @return 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+     * @return Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
      * 
      */
     public Output<String> commandContent() {
@@ -37,14 +37,14 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+     * Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
      * 
      */
     @Import(name="contentEncoding")
     private @Nullable Output<String> contentEncoding;
 
     /**
-     * @return 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+     * @return Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
      * 
      */
     public Optional<Output<String>> contentEncoding() {
@@ -52,14 +52,14 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+     * Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+     * @return Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -67,14 +67,14 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+     * Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
      * 
      */
     @Import(name="enableParameter")
     private @Nullable Output<Boolean> enableParameter;
 
     /**
-     * @return 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+     * @return Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
      * 
      */
     public Optional<Output<Boolean>> enableParameter() {
@@ -82,14 +82,14 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 命令名称。字符长度1~32。不限制特殊字符。
+     * Command name. Character length: 1~32. No restriction on special characters.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return 命令名称。字符长度1~32。不限制特殊字符。
+     * @return Command name. Character length: 1~32. No restriction on special characters.
      * 
      */
     public Output<String> name() {
@@ -104,14 +104,14 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 资源所属项目，一个资源只能归属于一个项目。
+     * Project to which the resource belongs. Each resource can belong to only one project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 资源所属项目，一个资源只能归属于一个项目。
+     * @return Project to which the resource belongs. Each resource can belong to only one project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -126,14 +126,14 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+     * Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
      * 
      */
     @Import(name="timeout")
     private @Nullable Output<Integer> timeout;
 
     /**
-     * @return 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+     * @return Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
      * 
      */
     public Optional<Output<Integer>> timeout() {
@@ -141,14 +141,14 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+     * Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+     * @return Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
      * 
      */
     public Output<String> type() {
@@ -156,14 +156,14 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 执行命令时的用户名。
+     * Username for executing the command.
      * 
      */
     @Import(name="username")
     private @Nullable Output<String> username;
 
     /**
-     * @return 执行命令时的用户名。
+     * @return Username for executing the command.
      * 
      */
     public Optional<Output<String>> username() {
@@ -171,14 +171,14 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建的命令在ECS实例中运行的目录。
+     * Directory where the created command runs on ECS instances.
      * 
      */
     @Import(name="workingDir")
     private @Nullable Output<String> workingDir;
 
     /**
-     * @return 创建的命令在ECS实例中运行的目录。
+     * @return Directory where the created command runs on ECS instances.
      * 
      */
     public Optional<Output<String>> workingDir() {
@@ -221,7 +221,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandContent 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+         * @param commandContent Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandContent 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+         * @param commandContent Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contentEncoding 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+         * @param contentEncoding Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contentEncoding 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+         * @param contentEncoding Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+         * @param description Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+         * @param description Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableParameter 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+         * @param enableParameter Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableParameter 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+         * @param enableParameter Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 命令名称。字符长度1~32。不限制特殊字符。
+         * @param name Command name. Character length: 1~32. No restriction on special characters.
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 命令名称。字符长度1~32。不限制特殊字符。
+         * @param name Command name. Character length: 1~32. No restriction on special characters.
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属项目，一个资源只能归属于一个项目。
+         * @param projectName Project to which the resource belongs. Each resource can belong to only one project.
          * 
          * @return builder
          * 
@@ -350,7 +350,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属项目，一个资源只能归属于一个项目。
+         * @param projectName Project to which the resource belongs. Each resource can belong to only one project.
          * 
          * @return builder
          * 
@@ -373,7 +373,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeout 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+         * @param timeout Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
          * 
          * @return builder
          * 
@@ -384,7 +384,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeout 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+         * @param timeout Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
          * 
          * @return builder
          * 
@@ -394,7 +394,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+         * @param type Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
          * 
          * @return builder
          * 
@@ -405,7 +405,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+         * @param type Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
          * 
          * @return builder
          * 
@@ -415,7 +415,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param username 执行命令时的用户名。
+         * @param username Username for executing the command.
          * 
          * @return builder
          * 
@@ -426,7 +426,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param username 执行命令时的用户名。
+         * @param username Username for executing the command.
          * 
          * @return builder
          * 
@@ -436,7 +436,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param workingDir 创建的命令在ECS实例中运行的目录。
+         * @param workingDir Directory where the created command runs on ECS instances.
          * 
          * @return builder
          * 
@@ -447,7 +447,7 @@ public final class CommandArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param workingDir 创建的命令在ECS实例中运行的目录。
+         * @param workingDir Directory where the created command runs on ECS instances.
          * 
          * @return builder
          * 

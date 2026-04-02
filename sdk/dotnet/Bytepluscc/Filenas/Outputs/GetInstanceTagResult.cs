@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas.Outputs
     public sealed class GetInstanceTagResult
     {
         /// <summary>
-        /// 标签键。
+        /// Tag key
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// 标签类型。
+        /// Tag type
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// 标签值。
+        /// Tag value
         /// </summary>
         public readonly string Value;
 

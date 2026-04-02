@@ -30,33 +30,33 @@ type LookupCertificateArgs struct {
 
 // A collection of values returned by getCertificate.
 type LookupCertificateResult struct {
-	// 证书的ID。
+	// Certificate ID.
 	CertificateId string `pulumi:"certificateId"`
-	// 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+	// Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
 	CertificateName string `pulumi:"certificateName"`
-	// 证书的创建时间。
+	// Certificate creation time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
 	Description string `pulumi:"description"`
-	// 证书的主域名。
+	// Certificate primary domain name.
 	DomainName string `pulumi:"domainName"`
-	// 证书的过期时间。
+	// Certificate expiration time.
 	ExpiredAt string `pulumi:"expiredAt"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 证书关联的监听器的ID。
+	// ID of the listener associated with the certificate.
 	Listeners []string `pulumi:"listeners"`
-	// 证书的私钥。
+	// Certificate private key.
 	PrivateKey string `pulumi:"privateKey"`
-	// 证书所属项目的名称。不填默认为default。
+	// Name of the project the certificate belongs to. If not specified, defaults to 'default'.
 	ProjectName string `pulumi:"projectName"`
-	// 证书的公钥。
+	// Certificate public key.
 	PublicKey string `pulumi:"publicKey"`
-	// 是否为托管资源。true：托管资源。false：非托管资源。
+	// Managed resource status. true: managed resource. false: unmanaged resource.
 	ServiceManaged bool `pulumi:"serviceManaged"`
-	// 证书的备用域名列表。
+	// List of alternate domain names for the certificate.
 	SubjectAlternativeNames []string `pulumi:"subjectAlternativeNames"`
-	// 标签列表。
+	// Tag list.
 	Tags []GetCertificateTag `pulumi:"tags"`
 }
 
@@ -94,32 +94,32 @@ func (o LookupCertificateResultOutput) ToLookupCertificateResultOutputWithContex
 	return o
 }
 
-// 证书的ID。
+// Certificate ID.
 func (o LookupCertificateResultOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.CertificateId }).(pulumi.StringOutput)
 }
 
-// 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+// Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
 func (o LookupCertificateResultOutput) CertificateName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.CertificateName }).(pulumi.StringOutput)
 }
 
-// 证书的创建时间。
+// Certificate creation time.
 func (o LookupCertificateResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+// Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
 func (o LookupCertificateResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 证书的主域名。
+// Certificate primary domain name.
 func (o LookupCertificateResultOutput) DomainName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.DomainName }).(pulumi.StringOutput)
 }
 
-// 证书的过期时间。
+// Certificate expiration time.
 func (o LookupCertificateResultOutput) ExpiredAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.ExpiredAt }).(pulumi.StringOutput)
 }
@@ -129,37 +129,37 @@ func (o LookupCertificateResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 证书关联的监听器的ID。
+// ID of the listener associated with the certificate.
 func (o LookupCertificateResultOutput) Listeners() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCertificateResult) []string { return v.Listeners }).(pulumi.StringArrayOutput)
 }
 
-// 证书的私钥。
+// Certificate private key.
 func (o LookupCertificateResultOutput) PrivateKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.PrivateKey }).(pulumi.StringOutput)
 }
 
-// 证书所属项目的名称。不填默认为default。
+// Name of the project the certificate belongs to. If not specified, defaults to 'default'.
 func (o LookupCertificateResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 证书的公钥。
+// Certificate public key.
 func (o LookupCertificateResultOutput) PublicKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.PublicKey }).(pulumi.StringOutput)
 }
 
-// 是否为托管资源。true：托管资源。false：非托管资源。
+// Managed resource status. true: managed resource. false: unmanaged resource.
 func (o LookupCertificateResultOutput) ServiceManaged() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupCertificateResult) bool { return v.ServiceManaged }).(pulumi.BoolOutput)
 }
 
-// 证书的备用域名列表。
+// List of alternate domain names for the certificate.
 func (o LookupCertificateResultOutput) SubjectAlternativeNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCertificateResult) []string { return v.SubjectAlternativeNames }).(pulumi.StringArrayOutput)
 }
 
-// 标签列表。
+// Tag list.
 func (o LookupCertificateResultOutput) Tags() GetCertificateTagArrayOutput {
 	return o.ApplyT(func(v LookupCertificateResult) []GetCertificateTag { return v.Tags }).(GetCertificateTagArrayOutput)
 }

@@ -15,39 +15,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class GetInstancePrimaryNetworkInterfaceResult
     {
         /// <summary>
-        /// 实例的IPv6地址数量。
+        /// The number of IPv6 addresses for the instance.
         /// </summary>
         public readonly int Ipv6AddressCount;
         /// <summary>
-        /// 实例的IPv6地址。
+        /// IPv6 address of the instance.
         /// </summary>
         public readonly ImmutableArray<string> Ipv6Addresses;
         /// <summary>
-        /// 实例的MAC地址。
+        /// Instance MAC address.
         /// </summary>
         public readonly string MacAddress;
         /// <summary>
-        /// 实例的网络接口ID。
+        /// The network interface ID of the instance.
         /// </summary>
         public readonly string NetworkInterfaceId;
         /// <summary>
-        /// 实例的主IP地址。
+        /// Instance primary IP address
         /// </summary>
         public readonly string PrimaryIpAddress;
         /// <summary>
-        /// 实例的私有IP地址。
+        /// Instance private IP address.
         /// </summary>
         public readonly ImmutableArray<string> PrivateIpAddresses;
         /// <summary>
-        /// 实例的安全组ID。
+        /// Instance security group ID
         /// </summary>
         public readonly ImmutableArray<string> SecurityGroupIds;
         /// <summary>
-        /// 实例的子网ID。
+        /// Instance subnet ID.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
-        /// 实例的VPC ID。
+        /// VPC ID of the instance.
         /// </summary>
         public readonly string VpcId;
 

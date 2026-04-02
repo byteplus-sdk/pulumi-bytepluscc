@@ -13,158 +13,158 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RouteTableSystemRouteEntry {
     /**
-     * @return 路由条目描述。
+     * @return Route Entry Description
      * 
      */
     private @Nullable String description;
     /**
-     * @return 路由条目的目标网段。
+     * @return Destination CIDR of the route entry
      * 
      */
     private @Nullable String destinationCidrBlock;
     /**
-     * @return 前缀列表ID。
+     * @return Prefix List ID
      * 
      */
     private @Nullable String destinationPrefixListId;
     /**
-     * @return 下一跳资源ID。
+     * @return Next Hop Resource ID
      * 
      */
     private @Nullable String nextHopId;
     /**
-     * @return 路由条目下一跳资源的名称。
+     * @return Name of the next hop resource for the route entry
      * 
      */
     private @Nullable String nextHopName;
     /**
-     * @return 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+     * @return Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
      * 
      */
     private @Nullable String nextHopType;
     /**
-     * @return 前缀列表的CIDR。
+     * @return Prefix List CIDR
      * 
      */
     private @Nullable List<String> prefixListCidrBlocks;
     /**
-     * @return 路由条目ID。
+     * @return Route Entry ID
      * 
      */
     private @Nullable String routeEntryId;
     /**
-     * @return 路由条目名称。
+     * @return Route Entry Name
      * 
      */
     private @Nullable String routeEntryName;
     /**
-     * @return 路由表ID。
+     * @return Route Table ID
      * 
      */
     private @Nullable String routeTableId;
     /**
-     * @return 路由条目状态。1、Pending：待创建。2、Available：可用。
+     * @return Route entry status. 1. Pending: Pending creation 2. Available: Available
      * 
      */
     private @Nullable String status;
     /**
-     * @return 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+     * @return Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
      * 
      */
     private @Nullable String type;
     /**
-     * @return 路由条目所属私有网络的ID。
+     * @return ID of the private network to which the route entry belongs
      * 
      */
     private @Nullable String vpcId;
 
     private RouteTableSystemRouteEntry() {}
     /**
-     * @return 路由条目描述。
+     * @return Route Entry Description
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return 路由条目的目标网段。
+     * @return Destination CIDR of the route entry
      * 
      */
     public Optional<String> destinationCidrBlock() {
         return Optional.ofNullable(this.destinationCidrBlock);
     }
     /**
-     * @return 前缀列表ID。
+     * @return Prefix List ID
      * 
      */
     public Optional<String> destinationPrefixListId() {
         return Optional.ofNullable(this.destinationPrefixListId);
     }
     /**
-     * @return 下一跳资源ID。
+     * @return Next Hop Resource ID
      * 
      */
     public Optional<String> nextHopId() {
         return Optional.ofNullable(this.nextHopId);
     }
     /**
-     * @return 路由条目下一跳资源的名称。
+     * @return Name of the next hop resource for the route entry
      * 
      */
     public Optional<String> nextHopName() {
         return Optional.ofNullable(this.nextHopName);
     }
     /**
-     * @return 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+     * @return Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
      * 
      */
     public Optional<String> nextHopType() {
         return Optional.ofNullable(this.nextHopType);
     }
     /**
-     * @return 前缀列表的CIDR。
+     * @return Prefix List CIDR
      * 
      */
     public List<String> prefixListCidrBlocks() {
         return this.prefixListCidrBlocks == null ? List.of() : this.prefixListCidrBlocks;
     }
     /**
-     * @return 路由条目ID。
+     * @return Route Entry ID
      * 
      */
     public Optional<String> routeEntryId() {
         return Optional.ofNullable(this.routeEntryId);
     }
     /**
-     * @return 路由条目名称。
+     * @return Route Entry Name
      * 
      */
     public Optional<String> routeEntryName() {
         return Optional.ofNullable(this.routeEntryName);
     }
     /**
-     * @return 路由表ID。
+     * @return Route Table ID
      * 
      */
     public Optional<String> routeTableId() {
         return Optional.ofNullable(this.routeTableId);
     }
     /**
-     * @return 路由条目状态。1、Pending：待创建。2、Available：可用。
+     * @return Route entry status. 1. Pending: Pending creation 2. Available: Available
      * 
      */
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
     /**
-     * @return 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+     * @return Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
      * 
      */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return 路由条目所属私有网络的ID。
+     * @return ID of the private network to which the route entry belongs
      * 
      */
     public Optional<String> vpcId() {

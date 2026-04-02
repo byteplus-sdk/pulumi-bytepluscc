@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class LaunchTemplateVersionScheduledInstance {
     /**
-     * @return 弹性预约单的描述。
+     * @return Description of the elastic reservation order
      * 
      */
     private @Nullable String scheduledInstanceDescription;
     /**
-     * @return 弹性预约单的名称。
+     * @return Name of the elastic reservation order
      * 
      */
     private @Nullable String scheduledInstanceName;
 
     private LaunchTemplateVersionScheduledInstance() {}
     /**
-     * @return 弹性预约单的描述。
+     * @return Description of the elastic reservation order
      * 
      */
     public Optional<String> scheduledInstanceDescription() {
         return Optional.ofNullable(this.scheduledInstanceDescription);
     }
     /**
-     * @return 弹性预约单的名称。
+     * @return Name of the elastic reservation order
      * 
      */
     public Optional<String> scheduledInstanceName() {

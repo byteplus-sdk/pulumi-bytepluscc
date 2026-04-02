@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class InstanceLocalVolume
     {
         /// <summary>
-        /// 实例挂载的本地盘数量。
+        /// The number of local disks attached to the instance.
         /// </summary>
         public readonly int? Count;
         /// <summary>
-        /// 实例挂载的本地盘的单盘容量，单位GiB。
+        /// Capacity of each local disk mounted to the instance (GiB).
         /// </summary>
         public readonly int? Size;
         /// <summary>
-        /// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+        /// Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
         /// </summary>
         public readonly string? VolumeType;
 

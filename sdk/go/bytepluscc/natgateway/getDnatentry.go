@@ -30,27 +30,27 @@ type LookupDnatentryArgs struct {
 
 // A collection of values returned by getDnatentry.
 type LookupDnatentryResult struct {
-	// DNAT规则的ID。
+	// ID of the DNAT rule.
 	DnatEntryId string `pulumi:"dnatEntryId"`
-	// DNAT规则的名称。
+	// Name of the DNAT rule.
 	DnatEntryName string `pulumi:"dnatEntryName"`
-	// NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+	// IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
 	ExternalIp string `pulumi:"externalIp"`
-	// 接收来自公网外部请求的端口或端口段。
+	// Port or port range that receives requests from the public network.
 	ExternalPort string `pulumi:"externalPort"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 云服务器实例的私网IP。
+	// Private IP address of the cloud server instance.
 	InternalIp string `pulumi:"internalIp"`
-	// 云服务器实例私网IP的端口或端口段。
+	// Port or port range of the private IP address of the cloud server instance.
 	InternalPort string `pulumi:"internalPort"`
-	// DNAT规则所属NAT网关的ID。
+	// ID of the NAT gateway to which the DNAT rule belongs.
 	NatGatewayId string `pulumi:"natGatewayId"`
-	// DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+	// Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
 	PortType string `pulumi:"portType"`
-	// 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+	// Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
 	Protocol string `pulumi:"protocol"`
-	// DNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+	// Status of the DNAT rule. Creating: Creating. Deleting: Deleting. Available: Available.
 	Status string `pulumi:"status"`
 }
 
@@ -88,22 +88,22 @@ func (o LookupDnatentryResultOutput) ToLookupDnatentryResultOutputWithContext(ct
 	return o
 }
 
-// DNAT规则的ID。
+// ID of the DNAT rule.
 func (o LookupDnatentryResultOutput) DnatEntryId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnatentryResult) string { return v.DnatEntryId }).(pulumi.StringOutput)
 }
 
-// DNAT规则的名称。
+// Name of the DNAT rule.
 func (o LookupDnatentryResultOutput) DnatEntryName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnatentryResult) string { return v.DnatEntryName }).(pulumi.StringOutput)
 }
 
-// NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+// IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
 func (o LookupDnatentryResultOutput) ExternalIp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnatentryResult) string { return v.ExternalIp }).(pulumi.StringOutput)
 }
 
-// 接收来自公网外部请求的端口或端口段。
+// Port or port range that receives requests from the public network.
 func (o LookupDnatentryResultOutput) ExternalPort() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnatentryResult) string { return v.ExternalPort }).(pulumi.StringOutput)
 }
@@ -113,32 +113,32 @@ func (o LookupDnatentryResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnatentryResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 云服务器实例的私网IP。
+// Private IP address of the cloud server instance.
 func (o LookupDnatentryResultOutput) InternalIp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnatentryResult) string { return v.InternalIp }).(pulumi.StringOutput)
 }
 
-// 云服务器实例私网IP的端口或端口段。
+// Port or port range of the private IP address of the cloud server instance.
 func (o LookupDnatentryResultOutput) InternalPort() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnatentryResult) string { return v.InternalPort }).(pulumi.StringOutput)
 }
 
-// DNAT规则所属NAT网关的ID。
+// ID of the NAT gateway to which the DNAT rule belongs.
 func (o LookupDnatentryResultOutput) NatGatewayId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnatentryResult) string { return v.NatGatewayId }).(pulumi.StringOutput)
 }
 
-// DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+// Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
 func (o LookupDnatentryResultOutput) PortType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnatentryResult) string { return v.PortType }).(pulumi.StringOutput)
 }
 
-// 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+// Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
 func (o LookupDnatentryResultOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnatentryResult) string { return v.Protocol }).(pulumi.StringOutput)
 }
 
-// DNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+// Status of the DNAT rule. Creating: Creating. Deleting: Deleting. Available: Available.
 func (o LookupDnatentryResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnatentryResult) string { return v.Status }).(pulumi.StringOutput)
 }

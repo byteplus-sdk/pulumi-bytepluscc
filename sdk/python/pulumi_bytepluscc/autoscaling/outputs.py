@@ -21,6 +21,8 @@ __all__ = [
     'ScalingConfigurationInstanceTypeOverride',
     'ScalingConfigurationTag',
     'ScalingConfigurationVolume',
+    'ScalingGroupInstance',
+    'ScalingGroupInstanceRemovePolicy',
     'ScalingGroupInstancesDistribution',
     'ScalingGroupLaunchTemplateOverride',
     'ScalingGroupServerGroupAttribute',
@@ -33,6 +35,8 @@ __all__ = [
     'GetScalingConfigurationInstanceTypeOverrideResult',
     'GetScalingConfigurationTagResult',
     'GetScalingConfigurationVolumeResult',
+    'GetScalingGroupInstanceResult',
+    'GetScalingGroupInstanceRemovePolicyResult',
     'GetScalingGroupInstancesDistributionResult',
     'GetScalingGroupLaunchTemplateOverrideResult',
     'GetScalingGroupServerGroupAttributeResult',
@@ -73,11 +77,11 @@ class ScalingConfigurationEip(dict):
                  isp: Optional[builtins.str] = None,
                  release_with_instance: Optional[builtins.bool] = None):
         """
-        :param builtins.int bandwidth: 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
-        :param builtins.str bandwidth_package_id: 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
-        :param builtins.str billing_type: 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
-        :param builtins.str isp: 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
-        :param builtins.bool release_with_instance: 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+        :param builtins.int bandwidth: Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
+        :param builtins.str bandwidth_package_id: ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
+        :param builtins.str billing_type: Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
+        :param builtins.str isp: Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
+        :param builtins.bool release_with_instance: Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
         """
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
@@ -94,7 +98,7 @@ class ScalingConfigurationEip(dict):
     @pulumi.getter
     def bandwidth(self) -> Optional[builtins.int]:
         """
-        公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+        Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -102,7 +106,7 @@ class ScalingConfigurationEip(dict):
     @pulumi.getter(name="bandwidthPackageId")
     def bandwidth_package_id(self) -> Optional[builtins.str]:
         """
-        共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+        ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
         """
         return pulumi.get(self, "bandwidth_package_id")
 
@@ -110,7 +114,7 @@ class ScalingConfigurationEip(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[builtins.str]:
         """
-        公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+        Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
         """
         return pulumi.get(self, "billing_type")
 
@@ -118,7 +122,7 @@ class ScalingConfigurationEip(dict):
     @pulumi.getter
     def isp(self) -> Optional[builtins.str]:
         """
-        线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+        Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
         """
         return pulumi.get(self, "isp")
 
@@ -126,7 +130,7 @@ class ScalingConfigurationEip(dict):
     @pulumi.getter(name="releaseWithInstance")
     def release_with_instance(self) -> Optional[builtins.bool]:
         """
-        公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+        Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
         """
         return pulumi.get(self, "release_with_instance")
 
@@ -156,8 +160,8 @@ class ScalingConfigurationInstanceTypeOverride(dict):
                  instance_type: Optional[builtins.str] = None,
                  price_limit: Optional[builtins.float] = None):
         """
-        :param builtins.str instance_type: 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
-        :param builtins.float price_limit: 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+        :param builtins.str instance_type: Specify the specifications for preemptible instances. Parameter   - N: Indicates the sequence number of the instance specification, value range 1–10. Value   - InstanceType: Specifies the specification for the preemptible instance. Use & to separate multiple specifications.
+        :param builtins.float price_limit: Specify the maximum hourly price for preemptible instance types. Parameter   - N: Indicates the instance type sequence number. Value: 1–10. PriceLimit: Specifies the maximum hourly price for the preemptible instance type. Value: Greater than 0, up to three decimal places. Use & to separate multiple prices.
         """
         if instance_type is not None:
             pulumi.set(__self__, "instance_type", instance_type)
@@ -168,7 +172,7 @@ class ScalingConfigurationInstanceTypeOverride(dict):
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[builtins.str]:
         """
-        指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+        Specify the specifications for preemptible instances. Parameter   - N: Indicates the sequence number of the instance specification, value range 1–10. Value   - InstanceType: Specifies the specification for the preemptible instance. Use & to separate multiple specifications.
         """
         return pulumi.get(self, "instance_type")
 
@@ -176,7 +180,7 @@ class ScalingConfigurationInstanceTypeOverride(dict):
     @pulumi.getter(name="priceLimit")
     def price_limit(self) -> Optional[builtins.float]:
         """
-        指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+        Specify the maximum hourly price for preemptible instance types. Parameter   - N: Indicates the instance type sequence number. Value: 1–10. PriceLimit: Specifies the maximum hourly price for the preemptible instance type. Value: Greater than 0, up to three decimal places. Use & to separate multiple prices.
         """
         return pulumi.get(self, "price_limit")
 
@@ -187,8 +191,8 @@ class ScalingConfigurationTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -199,7 +203,7 @@ class ScalingConfigurationTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -207,7 +211,7 @@ class ScalingConfigurationTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -247,12 +251,12 @@ class ScalingConfigurationVolume(dict):
                  size: Optional[builtins.int] = None,
                  volume_type: Optional[builtins.str] = None):
         """
-        :param builtins.bool delete_with_instance: 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
-        :param builtins.int extra_performance_iops: 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
-        :param builtins.int extra_performance_throughput_mb: 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
-        :param builtins.str extra_performance_type_id: 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
-        :param builtins.int size: 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
-        :param builtins.str volume_type: 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
+        :param builtins.bool delete_with_instance: Whether the cloud disk is released with the instance: true (default): The cloud disk is released with the instance. false: The cloud disk is not released with the instance. When set to false, this does not apply to system disks. System disks are always released with the instance and cannot be retained.
+        :param builtins.int extra_performance_iops: You can use this parameter to configure the extra performance package IOPS size for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceIOPS specifies the extra performance package IOPS size for the Nth disk: IOPS: 1–50000. Balance: 1–50000.
+        :param builtins.int extra_performance_throughput_mb: You can use this parameter to configure the extra performance package throughput size for cloud disks, in MB/s. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceThroughputMB specifies the extra performance package throughput size for the Nth disk: Throughput: 1–650.
+        :param builtins.str extra_performance_type_id: This parameter allows you to purchase extra performance for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. "1" is the system disk; "2" or greater indicates a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceTypeId specifies the extra performance package type for the Nth disk: IOPS: IOPS type, use the ExtraPerformanceIOPS parameter. Balance: Balanced type, use the ExtraPerformanceIOPS parameter. Throughput: Throughput type, use the ExtraPerformanceThroughputMB parameter.
+        :param builtins.int size: Cloud disk capacity, in GiB. System disk range: 10–500. Data disk range: 10–8192. If using ESSD_FlexPL with additional performance, size must be >= 500 GB
+        :param builtins.str volume_type: Cloud disk types: ESSD*FlexPL: Extreme SSD FlexPL. ESSD*PL0: Extreme SSD PL0.
         """
         if delete_with_instance is not None:
             pulumi.set(__self__, "delete_with_instance", delete_with_instance)
@@ -271,7 +275,7 @@ class ScalingConfigurationVolume(dict):
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> Optional[builtins.bool]:
         """
-        云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+        Whether the cloud disk is released with the instance: true (default): The cloud disk is released with the instance. false: The cloud disk is not released with the instance. When set to false, this does not apply to system disks. System disks are always released with the instance and cannot be retained.
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -279,7 +283,7 @@ class ScalingConfigurationVolume(dict):
     @pulumi.getter(name="extraPerformanceIops")
     def extra_performance_iops(self) -> Optional[builtins.int]:
         """
-        通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+        You can use this parameter to configure the extra performance package IOPS size for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceIOPS specifies the extra performance package IOPS size for the Nth disk: IOPS: 1–50000. Balance: 1–50000.
         """
         return pulumi.get(self, "extra_performance_iops")
 
@@ -287,7 +291,7 @@ class ScalingConfigurationVolume(dict):
     @pulumi.getter(name="extraPerformanceThroughputMb")
     def extra_performance_throughput_mb(self) -> Optional[builtins.int]:
         """
-        通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+        You can use this parameter to configure the extra performance package throughput size for cloud disks, in MB/s. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceThroughputMB specifies the extra performance package throughput size for the Nth disk: Throughput: 1–650.
         """
         return pulumi.get(self, "extra_performance_throughput_mb")
 
@@ -295,7 +299,7 @@ class ScalingConfigurationVolume(dict):
     @pulumi.getter(name="extraPerformanceTypeId")
     def extra_performance_type_id(self) -> Optional[builtins.str]:
         """
-        通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+        This parameter allows you to purchase extra performance for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. "1" is the system disk; "2" or greater indicates a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceTypeId specifies the extra performance package type for the Nth disk: IOPS: IOPS type, use the ExtraPerformanceIOPS parameter. Balance: Balanced type, use the ExtraPerformanceIOPS parameter. Throughput: Throughput type, use the ExtraPerformanceThroughputMB parameter.
         """
         return pulumi.get(self, "extra_performance_type_id")
 
@@ -303,7 +307,7 @@ class ScalingConfigurationVolume(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
+        Cloud disk capacity, in GiB. System disk range: 10–500. Data disk range: 10–8192. If using ESSD_FlexPL with additional performance, size must be >= 500 GB
         """
         return pulumi.get(self, "size")
 
@@ -311,9 +315,189 @@ class ScalingConfigurationVolume(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> Optional[builtins.str]:
         """
-        云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
+        Cloud disk types: ESSD*FlexPL: Extreme SSD FlexPL. ESSD*PL0: Extreme SSD PL0.
         """
         return pulumi.get(self, "volume_type")
+
+
+@pulumi.output_type
+class ScalingGroupInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceId":
+            suggest = "instance_id"
+        elif key == "lifecycleHook":
+            suggest = "lifecycle_hook"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScalingGroupInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScalingGroupInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScalingGroupInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 entrusted: Optional[builtins.bool] = None,
+                 instance_id: Optional[builtins.str] = None,
+                 lifecycle_hook: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool entrusted: Whether to enable managed mode for the instance when AttachInstances is performed
+        :param builtins.str instance_id: ECS instance ID, unique identifier of the subresource
+        :param builtins.bool lifecycle_hook: Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+        """
+        if entrusted is not None:
+            pulumi.set(__self__, "entrusted", entrusted)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if lifecycle_hook is not None:
+            pulumi.set(__self__, "lifecycle_hook", lifecycle_hook)
+
+    @property
+    @pulumi.getter
+    def entrusted(self) -> Optional[builtins.bool]:
+        """
+        Whether to enable managed mode for the instance when AttachInstances is performed
+        """
+        return pulumi.get(self, "entrusted")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        ECS instance ID, unique identifier of the subresource
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="lifecycleHook")
+    def lifecycle_hook(self) -> Optional[builtins.bool]:
+        """
+        Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+        """
+        return pulumi.get(self, "lifecycle_hook")
+
+
+@pulumi.output_type
+class ScalingGroupInstanceRemovePolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "decreaseDesiredCapacity":
+            suggest = "decrease_desired_capacity"
+        elif key == "detachOption":
+            suggest = "detach_option"
+        elif key == "forceDelete":
+            suggest = "force_delete"
+        elif key == "instanceId":
+            suggest = "instance_id"
+        elif key == "lifecycleHook":
+            suggest = "lifecycle_hook"
+        elif key == "removeMode":
+            suggest = "remove_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScalingGroupInstanceRemovePolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScalingGroupInstanceRemovePolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScalingGroupInstanceRemovePolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 decrease_desired_capacity: Optional[builtins.bool] = None,
+                 detach_option: Optional[builtins.str] = None,
+                 force_delete: Optional[builtins.bool] = None,
+                 instance_id: Optional[builtins.str] = None,
+                 lifecycle_hook: Optional[builtins.bool] = None,
+                 mode: Optional[builtins.str] = None,
+                 remove_mode: Optional[builtins.str] = None):
+        """
+        :param builtins.bool decrease_desired_capacity: Whether to decrease the desired instance count synchronously when DetachInstances or RemoveInstances is performed
+        :param builtins.str detach_option: Instance removal policy for DetachInstances
+        :param builtins.bool force_delete: Whether to force delete the instance when RemoveInstances is performed
+        :param builtins.str instance_id: ECS instance ID, unique identifier of the subresource
+        :param builtins.bool lifecycle_hook: Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+        :param builtins.str mode: Mode: How to handle an instance when it is removed from the scaling group: Detach means only remove from the scaling group, Remove means remove and delete the instance
+        :param builtins.str remove_mode: Removal mode for RemoveInstances
+        """
+        if decrease_desired_capacity is not None:
+            pulumi.set(__self__, "decrease_desired_capacity", decrease_desired_capacity)
+        if detach_option is not None:
+            pulumi.set(__self__, "detach_option", detach_option)
+        if force_delete is not None:
+            pulumi.set(__self__, "force_delete", force_delete)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if lifecycle_hook is not None:
+            pulumi.set(__self__, "lifecycle_hook", lifecycle_hook)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if remove_mode is not None:
+            pulumi.set(__self__, "remove_mode", remove_mode)
+
+    @property
+    @pulumi.getter(name="decreaseDesiredCapacity")
+    def decrease_desired_capacity(self) -> Optional[builtins.bool]:
+        """
+        Whether to decrease the desired instance count synchronously when DetachInstances or RemoveInstances is performed
+        """
+        return pulumi.get(self, "decrease_desired_capacity")
+
+    @property
+    @pulumi.getter(name="detachOption")
+    def detach_option(self) -> Optional[builtins.str]:
+        """
+        Instance removal policy for DetachInstances
+        """
+        return pulumi.get(self, "detach_option")
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> Optional[builtins.bool]:
+        """
+        Whether to force delete the instance when RemoveInstances is performed
+        """
+        return pulumi.get(self, "force_delete")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        ECS instance ID, unique identifier of the subresource
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="lifecycleHook")
+    def lifecycle_hook(self) -> Optional[builtins.bool]:
+        """
+        Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+        """
+        return pulumi.get(self, "lifecycle_hook")
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional[builtins.str]:
+        """
+        Mode: How to handle an instance when it is removed from the scaling group: Detach means only remove from the scaling group, Remove means remove and delete the instance
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter(name="removeMode")
+    def remove_mode(self) -> Optional[builtins.str]:
+        """
+        Removal mode for RemoveInstances
+        """
+        return pulumi.get(self, "remove_mode")
 
 
 @pulumi.output_type
@@ -347,10 +531,10 @@ class ScalingGroupInstancesDistribution(dict):
                  on_demand_percentage_above_base_capacity: Optional[builtins.int] = None,
                  spot_instance_remedy: Optional[builtins.bool] = None):
         """
-        :param builtins.bool compensate_with_on_demand: 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
-        :param builtins.int on_demand_base_capacity: 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
-        :param builtins.int on_demand_percentage_above_base_capacity: 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
-        :param builtins.bool spot_instance_remedy: 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+        :param builtins.bool compensate_with_on_demand: Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
+        :param builtins.int on_demand_base_capacity: Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
+        :param builtins.int on_demand_percentage_above_base_capacity: After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
+        :param builtins.bool spot_instance_remedy: Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
         """
         if compensate_with_on_demand is not None:
             pulumi.set(__self__, "compensate_with_on_demand", compensate_with_on_demand)
@@ -365,7 +549,7 @@ class ScalingGroupInstancesDistribution(dict):
     @pulumi.getter(name="compensateWithOnDemand")
     def compensate_with_on_demand(self) -> Optional[builtins.bool]:
         """
-        当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+        Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
         """
         return pulumi.get(self, "compensate_with_on_demand")
 
@@ -373,7 +557,7 @@ class ScalingGroupInstancesDistribution(dict):
     @pulumi.getter(name="onDemandBaseCapacity")
     def on_demand_base_capacity(self) -> Optional[builtins.int]:
         """
-        伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+        Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
         """
         return pulumi.get(self, "on_demand_base_capacity")
 
@@ -381,7 +565,7 @@ class ScalingGroupInstancesDistribution(dict):
     @pulumi.getter(name="onDemandPercentageAboveBaseCapacity")
     def on_demand_percentage_above_base_capacity(self) -> Optional[builtins.int]:
         """
-        伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+        After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
         """
         return pulumi.get(self, "on_demand_percentage_above_base_capacity")
 
@@ -389,7 +573,7 @@ class ScalingGroupInstancesDistribution(dict):
     @pulumi.getter(name="spotInstanceRemedy")
     def spot_instance_remedy(self) -> Optional[builtins.bool]:
         """
-        是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+        Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
         """
         return pulumi.get(self, "spot_instance_remedy")
 
@@ -419,8 +603,8 @@ class ScalingGroupLaunchTemplateOverride(dict):
                  instance_type: Optional[builtins.str] = None,
                  price_limit: Optional[builtins.float] = None):
         """
-        :param builtins.str instance_type: 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
-        :param builtins.float price_limit: 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+        :param builtins.str instance_type: Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
+        :param builtins.float price_limit: Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template's billing mode is SpotWithPriceLimit.
         """
         if instance_type is not None:
             pulumi.set(__self__, "instance_type", instance_type)
@@ -431,7 +615,7 @@ class ScalingGroupLaunchTemplateOverride(dict):
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[builtins.str]:
         """
-        指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+        Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
         """
         return pulumi.get(self, "instance_type")
 
@@ -439,7 +623,7 @@ class ScalingGroupLaunchTemplateOverride(dict):
     @pulumi.getter(name="priceLimit")
     def price_limit(self) -> Optional[builtins.float]:
         """
-        指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+        Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template's billing mode is SpotWithPriceLimit.
         """
         return pulumi.get(self, "price_limit")
 
@@ -469,10 +653,10 @@ class ScalingGroupServerGroupAttribute(dict):
                  type: Optional[builtins.str] = None,
                  weight: Optional[builtins.int] = None):
         """
-        :param builtins.int port: 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
-        :param builtins.str server_group_id: 负载均衡后端服务器组的ID。
-        :param builtins.str type: 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
-        :param builtins.int weight: 负载均衡后端服务器组中服务器的权重。
+        :param builtins.int port: Port number of the server in the backend server group for load balancing. Range: 1–65535.
+        :param builtins.str server_group_id: Backend server group ID for load balancing.
+        :param builtins.str type: Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
+        :param builtins.int weight: Weight of servers in the backend server group of the load balancer
         """
         if port is not None:
             pulumi.set(__self__, "port", port)
@@ -487,7 +671,7 @@ class ScalingGroupServerGroupAttribute(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.int]:
         """
-        负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+        Port number of the server in the backend server group for load balancing. Range: 1–65535.
         """
         return pulumi.get(self, "port")
 
@@ -495,7 +679,7 @@ class ScalingGroupServerGroupAttribute(dict):
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> Optional[builtins.str]:
         """
-        负载均衡后端服务器组的ID。
+        Backend server group ID for load balancing.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -503,7 +687,7 @@ class ScalingGroupServerGroupAttribute(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+        Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
         """
         return pulumi.get(self, "type")
 
@@ -511,7 +695,7 @@ class ScalingGroupServerGroupAttribute(dict):
     @pulumi.getter
     def weight(self) -> Optional[builtins.int]:
         """
-        负载均衡后端服务器组中服务器的权重。
+        Weight of servers in the backend server group of the load balancer
         """
         return pulumi.get(self, "weight")
 
@@ -522,8 +706,8 @@ class ScalingGroupTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User label tag key
+        :param builtins.str value: The value of the user tag.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -534,7 +718,7 @@ class ScalingGroupTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        User label tag key
         """
         return pulumi.get(self, "key")
 
@@ -542,7 +726,7 @@ class ScalingGroupTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        The value of the user tag.
         """
         return pulumi.get(self, "value")
 
@@ -570,8 +754,8 @@ class ScalingLifecycleHookLifecycleCommand(dict):
                  command_id: Optional[builtins.str] = None,
                  parameters: Optional[builtins.str] = None):
         """
-        :param builtins.str command_id: 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
-        :param builtins.str parameters: 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+        :param builtins.str command_id: Cloud Assistant command ID, indicates that after the lifecycle hook is triggered, the Cloud Assistant command is executed on the instance. If the command executes successfully, the post-suspend policy is executed according to CONTINUE. If the command fails, times out, or the lifecycle hook times out, the post-suspend policy is executed according to the LifecycleHookPolicy parameter configuration.
+        :param builtins.str parameters: Parameters and values in the Cloud Assistant command. The number of parameters ranges from 0 to 60. Note: Parameters cannot be empty strings and can have up to 64 characters. Values can be empty strings. After Base64 encoding, the combined length of parameters and the original command content must not exceed 16 KB. The set of parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
         """
         if command_id is not None:
             pulumi.set(__self__, "command_id", command_id)
@@ -582,7 +766,7 @@ class ScalingLifecycleHookLifecycleCommand(dict):
     @pulumi.getter(name="commandId")
     def command_id(self) -> Optional[builtins.str]:
         """
-        云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+        Cloud Assistant command ID, indicates that after the lifecycle hook is triggered, the Cloud Assistant command is executed on the instance. If the command executes successfully, the post-suspend policy is executed according to CONTINUE. If the command fails, times out, or the lifecycle hook times out, the post-suspend policy is executed according to the LifecycleHookPolicy parameter configuration.
         """
         return pulumi.get(self, "command_id")
 
@@ -590,7 +774,7 @@ class ScalingLifecycleHookLifecycleCommand(dict):
     @pulumi.getter
     def parameters(self) -> Optional[builtins.str]:
         """
-        云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+        Parameters and values in the Cloud Assistant command. The number of parameters ranges from 0 to 60. Note: Parameters cannot be empty strings and can have up to 64 characters. Values can be empty strings. After Base64 encoding, the combined length of parameters and the original command content must not exceed 16 KB. The set of parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
         """
         return pulumi.get(self, "parameters")
 
@@ -626,11 +810,11 @@ class ScalingPolicyAlarmPolicy(dict):
                  evaluation_count: Optional[builtins.int] = None,
                  rule_type: Optional[builtins.str] = None):
         """
-        :param 'ScalingPolicyAlarmPolicyConditionArgs' condition: 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
-        :param builtins.str condition_operator: 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
-        :param builtins.str effective: 报警任务的生效时间段。
-        :param builtins.int evaluation_count: 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
-        :param builtins.str rule_type: 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+        :param 'ScalingPolicyAlarmPolicyConditionArgs' condition: Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
+        :param builtins.str condition_operator: Determination conditions for multi-metric alarms. &&: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
+        :param builtins.str effective: The effective period for the alarm task.
+        :param builtins.int evaluation_count: Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
+        :param builtins.str rule_type: Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
         """
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
@@ -649,7 +833,7 @@ class ScalingPolicyAlarmPolicy(dict):
     @pulumi.getter
     def condition(self) -> Optional['outputs.ScalingPolicyAlarmPolicyCondition']:
         """
-        单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+        Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
         """
         return pulumi.get(self, "condition")
 
@@ -657,7 +841,7 @@ class ScalingPolicyAlarmPolicy(dict):
     @pulumi.getter(name="conditionOperator")
     def condition_operator(self) -> Optional[builtins.str]:
         """
-        多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+        Determination conditions for multi-metric alarms. &&: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
         """
         return pulumi.get(self, "condition_operator")
 
@@ -670,7 +854,7 @@ class ScalingPolicyAlarmPolicy(dict):
     @pulumi.getter
     def effective(self) -> Optional[builtins.str]:
         """
-        报警任务的生效时间段。
+        The effective period for the alarm task.
         """
         return pulumi.get(self, "effective")
 
@@ -678,7 +862,7 @@ class ScalingPolicyAlarmPolicy(dict):
     @pulumi.getter(name="evaluationCount")
     def evaluation_count(self) -> Optional[builtins.int]:
         """
-        当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+        Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
         """
         return pulumi.get(self, "evaluation_count")
 
@@ -686,7 +870,7 @@ class ScalingPolicyAlarmPolicy(dict):
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> Optional[builtins.str]:
         """
-        报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+        Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
         """
         return pulumi.get(self, "rule_type")
 
@@ -720,10 +904,10 @@ class ScalingPolicyAlarmPolicyCondition(dict):
                  metric_unit: Optional[builtins.str] = None,
                  threshold: Optional[builtins.str] = None):
         """
-        :param builtins.str comparison_operator: 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
-        :param builtins.str metric_name: 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
-        :param builtins.str metric_unit: 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
-        :param builtins.str threshold: 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+        :param builtins.str comparison_operator: Rule expression object for metric alarms. >: Greater than. <: Less than. =: Equal to.
+        :param builtins.str metric_name: Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
+        :param builtins.str metric_unit: The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
+        :param builtins.str threshold: The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
         """
         if comparison_operator is not None:
             pulumi.set(__self__, "comparison_operator", comparison_operator)
@@ -738,7 +922,7 @@ class ScalingPolicyAlarmPolicyCondition(dict):
     @pulumi.getter(name="comparisonOperator")
     def comparison_operator(self) -> Optional[builtins.str]:
         """
-        指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+        Rule expression object for metric alarms. >: Greater than. <: Less than. =: Equal to.
         """
         return pulumi.get(self, "comparison_operator")
 
@@ -746,7 +930,7 @@ class ScalingPolicyAlarmPolicyCondition(dict):
     @pulumi.getter(name="metricName")
     def metric_name(self) -> Optional[builtins.str]:
         """
-        指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+        Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
         """
         return pulumi.get(self, "metric_name")
 
@@ -754,7 +938,7 @@ class ScalingPolicyAlarmPolicyCondition(dict):
     @pulumi.getter(name="metricUnit")
     def metric_unit(self) -> Optional[builtins.str]:
         """
-        指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+        The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
         """
         return pulumi.get(self, "metric_unit")
 
@@ -762,7 +946,7 @@ class ScalingPolicyAlarmPolicyCondition(dict):
     @pulumi.getter
     def threshold(self) -> Optional[builtins.str]:
         """
-        指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+        The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
         """
         return pulumi.get(self, "threshold")
 
@@ -807,13 +991,13 @@ class ScalingPolicyScheduledPolicy(dict):
                  recurrence_type: Optional[builtins.str] = None,
                  recurrence_value: Optional[builtins.str] = None):
         """
-        :param builtins.str launch_time: 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
-        :param builtins.str launch_time_read: 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
-        :param builtins.str recurrence_end_time: 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
-        :param builtins.str recurrence_end_time_read: 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
-        :param builtins.str recurrence_start_time: 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
-        :param builtins.str recurrence_type: 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
-        :param builtins.str recurrence_value: 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+        :param builtins.str launch_time: Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
+        :param builtins.str launch_time_read: Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
+        :param builtins.str recurrence_end_time: Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
+        :param builtins.str recurrence_end_time_read: Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
+        :param builtins.str recurrence_start_time: Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
+        :param builtins.str recurrence_type: Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
+        :param builtins.str recurrence_value: Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
         """
         if launch_time is not None:
             pulumi.set(__self__, "launch_time", launch_time)
@@ -834,7 +1018,7 @@ class ScalingPolicyScheduledPolicy(dict):
     @pulumi.getter(name="launchTime")
     def launch_time(self) -> Optional[builtins.str]:
         """
-        表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+        Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
         """
         return pulumi.get(self, "launch_time")
 
@@ -842,7 +1026,7 @@ class ScalingPolicyScheduledPolicy(dict):
     @pulumi.getter(name="launchTimeRead")
     def launch_time_read(self) -> Optional[builtins.str]:
         """
-        表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+        Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
         """
         return pulumi.get(self, "launch_time_read")
 
@@ -850,7 +1034,7 @@ class ScalingPolicyScheduledPolicy(dict):
     @pulumi.getter(name="recurrenceEndTime")
     def recurrence_end_time(self) -> Optional[builtins.str]:
         """
-        表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+        Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
         """
         return pulumi.get(self, "recurrence_end_time")
 
@@ -858,7 +1042,7 @@ class ScalingPolicyScheduledPolicy(dict):
     @pulumi.getter(name="recurrenceEndTimeRead")
     def recurrence_end_time_read(self) -> Optional[builtins.str]:
         """
-        表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+        Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
         """
         return pulumi.get(self, "recurrence_end_time_read")
 
@@ -866,7 +1050,7 @@ class ScalingPolicyScheduledPolicy(dict):
     @pulumi.getter(name="recurrenceStartTime")
     def recurrence_start_time(self) -> Optional[builtins.str]:
         """
-        表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+        Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
         """
         return pulumi.get(self, "recurrence_start_time")
 
@@ -874,7 +1058,7 @@ class ScalingPolicyScheduledPolicy(dict):
     @pulumi.getter(name="recurrenceType")
     def recurrence_type(self) -> Optional[builtins.str]:
         """
-        表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+        Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
         """
         return pulumi.get(self, "recurrence_type")
 
@@ -882,7 +1066,7 @@ class ScalingPolicyScheduledPolicy(dict):
     @pulumi.getter(name="recurrenceValue")
     def recurrence_value(self) -> Optional[builtins.str]:
         """
-        表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+        Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
         """
         return pulumi.get(self, "recurrence_value")
 
@@ -896,11 +1080,11 @@ class GetScalingConfigurationEipResult(dict):
                  isp: builtins.str,
                  release_with_instance: builtins.bool):
         """
-        :param builtins.int bandwidth: 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
-        :param builtins.str bandwidth_package_id: 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
-        :param builtins.str billing_type: 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
-        :param builtins.str isp: 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
-        :param builtins.bool release_with_instance: 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+        :param builtins.int bandwidth: Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
+        :param builtins.str bandwidth_package_id: ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
+        :param builtins.str billing_type: Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
+        :param builtins.str isp: Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
+        :param builtins.bool release_with_instance: Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
         """
         pulumi.set(__self__, "bandwidth", bandwidth)
         pulumi.set(__self__, "bandwidth_package_id", bandwidth_package_id)
@@ -912,7 +1096,7 @@ class GetScalingConfigurationEipResult(dict):
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+        Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -920,7 +1104,7 @@ class GetScalingConfigurationEipResult(dict):
     @pulumi.getter(name="bandwidthPackageId")
     def bandwidth_package_id(self) -> builtins.str:
         """
-        共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+        ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
         """
         return pulumi.get(self, "bandwidth_package_id")
 
@@ -928,7 +1112,7 @@ class GetScalingConfigurationEipResult(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.str:
         """
-        公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+        Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
         """
         return pulumi.get(self, "billing_type")
 
@@ -936,7 +1120,7 @@ class GetScalingConfigurationEipResult(dict):
     @pulumi.getter
     def isp(self) -> builtins.str:
         """
-        线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+        Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
         """
         return pulumi.get(self, "isp")
 
@@ -944,7 +1128,7 @@ class GetScalingConfigurationEipResult(dict):
     @pulumi.getter(name="releaseWithInstance")
     def release_with_instance(self) -> builtins.bool:
         """
-        公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+        Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
         """
         return pulumi.get(self, "release_with_instance")
 
@@ -955,8 +1139,8 @@ class GetScalingConfigurationInstanceTypeOverrideResult(dict):
                  instance_type: builtins.str,
                  price_limit: builtins.float):
         """
-        :param builtins.str instance_type: 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
-        :param builtins.float price_limit: 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+        :param builtins.str instance_type: Specify the specifications for preemptible instances. Parameter   - N: Indicates the sequence number of the instance specification, value range 1–10. Value   - InstanceType: Specifies the specification for the preemptible instance. Use & to separate multiple specifications.
+        :param builtins.float price_limit: Specify the maximum hourly price for preemptible instance types. Parameter   - N: Indicates the instance type sequence number. Value: 1–10. PriceLimit: Specifies the maximum hourly price for the preemptible instance type. Value: Greater than 0, up to three decimal places. Use & to separate multiple prices.
         """
         pulumi.set(__self__, "instance_type", instance_type)
         pulumi.set(__self__, "price_limit", price_limit)
@@ -965,7 +1149,7 @@ class GetScalingConfigurationInstanceTypeOverrideResult(dict):
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> builtins.str:
         """
-        指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+        Specify the specifications for preemptible instances. Parameter   - N: Indicates the sequence number of the instance specification, value range 1–10. Value   - InstanceType: Specifies the specification for the preemptible instance. Use & to separate multiple specifications.
         """
         return pulumi.get(self, "instance_type")
 
@@ -973,7 +1157,7 @@ class GetScalingConfigurationInstanceTypeOverrideResult(dict):
     @pulumi.getter(name="priceLimit")
     def price_limit(self) -> builtins.float:
         """
-        指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+        Specify the maximum hourly price for preemptible instance types. Parameter   - N: Indicates the instance type sequence number. Value: 1–10. PriceLimit: Specifies the maximum hourly price for the preemptible instance type. Value: Greater than 0, up to three decimal places. Use & to separate multiple prices.
         """
         return pulumi.get(self, "price_limit")
 
@@ -984,8 +1168,8 @@ class GetScalingConfigurationTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -994,7 +1178,7 @@ class GetScalingConfigurationTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -1002,7 +1186,7 @@ class GetScalingConfigurationTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -1017,12 +1201,12 @@ class GetScalingConfigurationVolumeResult(dict):
                  size: builtins.int,
                  volume_type: builtins.str):
         """
-        :param builtins.bool delete_with_instance: 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
-        :param builtins.int extra_performance_iops: 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
-        :param builtins.int extra_performance_throughput_mb: 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
-        :param builtins.str extra_performance_type_id: 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
-        :param builtins.int size: 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
-        :param builtins.str volume_type: 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
+        :param builtins.bool delete_with_instance: Whether the cloud disk is released with the instance: true (default): The cloud disk is released with the instance. false: The cloud disk is not released with the instance. When set to false, this does not apply to system disks. System disks are always released with the instance and cannot be retained.
+        :param builtins.int extra_performance_iops: You can use this parameter to configure the extra performance package IOPS size for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceIOPS specifies the extra performance package IOPS size for the Nth disk: IOPS: 1–50000. Balance: 1–50000.
+        :param builtins.int extra_performance_throughput_mb: You can use this parameter to configure the extra performance package throughput size for cloud disks, in MB/s. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceThroughputMB specifies the extra performance package throughput size for the Nth disk: Throughput: 1–650.
+        :param builtins.str extra_performance_type_id: This parameter allows you to purchase extra performance for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. "1" is the system disk; "2" or greater indicates a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceTypeId specifies the extra performance package type for the Nth disk: IOPS: IOPS type, use the ExtraPerformanceIOPS parameter. Balance: Balanced type, use the ExtraPerformanceIOPS parameter. Throughput: Throughput type, use the ExtraPerformanceThroughputMB parameter.
+        :param builtins.int size: Cloud disk capacity, in GiB. System disk range: 10–500. Data disk range: 10–8192. If using ESSD_FlexPL with additional performance, size must be >= 500 GB
+        :param builtins.str volume_type: Cloud disk types: ESSD*FlexPL: Extreme SSD FlexPL. ESSD*PL0: Extreme SSD PL0.
         """
         pulumi.set(__self__, "delete_with_instance", delete_with_instance)
         pulumi.set(__self__, "extra_performance_iops", extra_performance_iops)
@@ -1035,7 +1219,7 @@ class GetScalingConfigurationVolumeResult(dict):
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> builtins.bool:
         """
-        云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+        Whether the cloud disk is released with the instance: true (default): The cloud disk is released with the instance. false: The cloud disk is not released with the instance. When set to false, this does not apply to system disks. System disks are always released with the instance and cannot be retained.
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -1043,7 +1227,7 @@ class GetScalingConfigurationVolumeResult(dict):
     @pulumi.getter(name="extraPerformanceIops")
     def extra_performance_iops(self) -> builtins.int:
         """
-        通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+        You can use this parameter to configure the extra performance package IOPS size for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceIOPS specifies the extra performance package IOPS size for the Nth disk: IOPS: 1–50000. Balance: 1–50000.
         """
         return pulumi.get(self, "extra_performance_iops")
 
@@ -1051,7 +1235,7 @@ class GetScalingConfigurationVolumeResult(dict):
     @pulumi.getter(name="extraPerformanceThroughputMb")
     def extra_performance_throughput_mb(self) -> builtins.int:
         """
-        通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+        You can use this parameter to configure the extra performance package throughput size for cloud disks, in MB/s. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceThroughputMB specifies the extra performance package throughput size for the Nth disk: Throughput: 1–650.
         """
         return pulumi.get(self, "extra_performance_throughput_mb")
 
@@ -1059,7 +1243,7 @@ class GetScalingConfigurationVolumeResult(dict):
     @pulumi.getter(name="extraPerformanceTypeId")
     def extra_performance_type_id(self) -> builtins.str:
         """
-        通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+        This parameter allows you to purchase extra performance for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. "1" is the system disk; "2" or greater indicates a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceTypeId specifies the extra performance package type for the Nth disk: IOPS: IOPS type, use the ExtraPerformanceIOPS parameter. Balance: Balanced type, use the ExtraPerformanceIOPS parameter. Throughput: Throughput type, use the ExtraPerformanceThroughputMB parameter.
         """
         return pulumi.get(self, "extra_performance_type_id")
 
@@ -1067,7 +1251,7 @@ class GetScalingConfigurationVolumeResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
+        Cloud disk capacity, in GiB. System disk range: 10–500. Data disk range: 10–8192. If using ESSD_FlexPL with additional performance, size must be >= 500 GB
         """
         return pulumi.get(self, "size")
 
@@ -1075,9 +1259,221 @@ class GetScalingConfigurationVolumeResult(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> builtins.str:
         """
-        云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
+        Cloud disk types: ESSD*FlexPL: Extreme SSD FlexPL. ESSD*PL0: Extreme SSD PL0.
         """
         return pulumi.get(self, "volume_type")
+
+
+@pulumi.output_type
+class GetScalingGroupInstanceResult(dict):
+    def __init__(__self__, *,
+                 created_time: builtins.str,
+                 creation_type: builtins.str,
+                 entrusted: builtins.bool,
+                 instance_id: builtins.str,
+                 launch_template_id: builtins.str,
+                 launch_template_version: builtins.str,
+                 lifecycle_hook: builtins.bool,
+                 scaling_configuration_id: builtins.str,
+                 scaling_policy_id: builtins.str,
+                 status: builtins.str,
+                 zone_id: builtins.str):
+        """
+        :param builtins.str created_time: Time when the instance joined the scaling group
+        :param builtins.str creation_type: How the instance joined the scaling group (Attached / AutoCreated)
+        :param builtins.bool entrusted: Whether to enable managed mode for the instance when AttachInstances is performed
+        :param builtins.str instance_id: ECS instance ID, unique identifier of the subresource
+        :param builtins.str launch_template_id: Launch template ID used by the instance
+        :param builtins.str launch_template_version: Launch template version used by the instance
+        :param builtins.bool lifecycle_hook: Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+        :param builtins.str scaling_configuration_id: Scaling configuration ID associated with the instance
+        :param builtins.str scaling_policy_id: Scaling policy ID associated with the instance
+        :param builtins.str status: Current status of the instance in the scaling group
+        :param builtins.str zone_id: Availability zone of the instance
+        """
+        pulumi.set(__self__, "created_time", created_time)
+        pulumi.set(__self__, "creation_type", creation_type)
+        pulumi.set(__self__, "entrusted", entrusted)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "launch_template_id", launch_template_id)
+        pulumi.set(__self__, "launch_template_version", launch_template_version)
+        pulumi.set(__self__, "lifecycle_hook", lifecycle_hook)
+        pulumi.set(__self__, "scaling_configuration_id", scaling_configuration_id)
+        pulumi.set(__self__, "scaling_policy_id", scaling_policy_id)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="createdTime")
+    def created_time(self) -> builtins.str:
+        """
+        Time when the instance joined the scaling group
+        """
+        return pulumi.get(self, "created_time")
+
+    @property
+    @pulumi.getter(name="creationType")
+    def creation_type(self) -> builtins.str:
+        """
+        How the instance joined the scaling group (Attached / AutoCreated)
+        """
+        return pulumi.get(self, "creation_type")
+
+    @property
+    @pulumi.getter
+    def entrusted(self) -> builtins.bool:
+        """
+        Whether to enable managed mode for the instance when AttachInstances is performed
+        """
+        return pulumi.get(self, "entrusted")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        ECS instance ID, unique identifier of the subresource
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="launchTemplateId")
+    def launch_template_id(self) -> builtins.str:
+        """
+        Launch template ID used by the instance
+        """
+        return pulumi.get(self, "launch_template_id")
+
+    @property
+    @pulumi.getter(name="launchTemplateVersion")
+    def launch_template_version(self) -> builtins.str:
+        """
+        Launch template version used by the instance
+        """
+        return pulumi.get(self, "launch_template_version")
+
+    @property
+    @pulumi.getter(name="lifecycleHook")
+    def lifecycle_hook(self) -> builtins.bool:
+        """
+        Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+        """
+        return pulumi.get(self, "lifecycle_hook")
+
+    @property
+    @pulumi.getter(name="scalingConfigurationId")
+    def scaling_configuration_id(self) -> builtins.str:
+        """
+        Scaling configuration ID associated with the instance
+        """
+        return pulumi.get(self, "scaling_configuration_id")
+
+    @property
+    @pulumi.getter(name="scalingPolicyId")
+    def scaling_policy_id(self) -> builtins.str:
+        """
+        Scaling policy ID associated with the instance
+        """
+        return pulumi.get(self, "scaling_policy_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> builtins.str:
+        """
+        Current status of the instance in the scaling group
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> builtins.str:
+        """
+        Availability zone of the instance
+        """
+        return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class GetScalingGroupInstanceRemovePolicyResult(dict):
+    def __init__(__self__, *,
+                 decrease_desired_capacity: builtins.bool,
+                 detach_option: builtins.str,
+                 force_delete: builtins.bool,
+                 instance_id: builtins.str,
+                 lifecycle_hook: builtins.bool,
+                 mode: builtins.str,
+                 remove_mode: builtins.str):
+        """
+        :param builtins.bool decrease_desired_capacity: Whether to decrease the desired instance count synchronously when DetachInstances or RemoveInstances is performed
+        :param builtins.str detach_option: Instance removal policy for DetachInstances
+        :param builtins.bool force_delete: Whether to force delete the instance when RemoveInstances is performed
+        :param builtins.str instance_id: ECS instance ID, unique identifier of the subresource
+        :param builtins.bool lifecycle_hook: Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+        :param builtins.str mode: Mode: How to handle an instance when it is removed from the scaling group: Detach means only remove from the scaling group, Remove means remove and delete the instance
+        :param builtins.str remove_mode: Removal mode for RemoveInstances
+        """
+        pulumi.set(__self__, "decrease_desired_capacity", decrease_desired_capacity)
+        pulumi.set(__self__, "detach_option", detach_option)
+        pulumi.set(__self__, "force_delete", force_delete)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "lifecycle_hook", lifecycle_hook)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "remove_mode", remove_mode)
+
+    @property
+    @pulumi.getter(name="decreaseDesiredCapacity")
+    def decrease_desired_capacity(self) -> builtins.bool:
+        """
+        Whether to decrease the desired instance count synchronously when DetachInstances or RemoveInstances is performed
+        """
+        return pulumi.get(self, "decrease_desired_capacity")
+
+    @property
+    @pulumi.getter(name="detachOption")
+    def detach_option(self) -> builtins.str:
+        """
+        Instance removal policy for DetachInstances
+        """
+        return pulumi.get(self, "detach_option")
+
+    @property
+    @pulumi.getter(name="forceDelete")
+    def force_delete(self) -> builtins.bool:
+        """
+        Whether to force delete the instance when RemoveInstances is performed
+        """
+        return pulumi.get(self, "force_delete")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        ECS instance ID, unique identifier of the subresource
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="lifecycleHook")
+    def lifecycle_hook(self) -> builtins.bool:
+        """
+        Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+        """
+        return pulumi.get(self, "lifecycle_hook")
+
+    @property
+    @pulumi.getter
+    def mode(self) -> builtins.str:
+        """
+        Mode: How to handle an instance when it is removed from the scaling group: Detach means only remove from the scaling group, Remove means remove and delete the instance
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter(name="removeMode")
+    def remove_mode(self) -> builtins.str:
+        """
+        Removal mode for RemoveInstances
+        """
+        return pulumi.get(self, "remove_mode")
 
 
 @pulumi.output_type
@@ -1088,10 +1484,10 @@ class GetScalingGroupInstancesDistributionResult(dict):
                  on_demand_percentage_above_base_capacity: builtins.int,
                  spot_instance_remedy: builtins.bool):
         """
-        :param builtins.bool compensate_with_on_demand: 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
-        :param builtins.int on_demand_base_capacity: 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
-        :param builtins.int on_demand_percentage_above_base_capacity: 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
-        :param builtins.bool spot_instance_remedy: 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+        :param builtins.bool compensate_with_on_demand: Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
+        :param builtins.int on_demand_base_capacity: Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
+        :param builtins.int on_demand_percentage_above_base_capacity: After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
+        :param builtins.bool spot_instance_remedy: Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
         """
         pulumi.set(__self__, "compensate_with_on_demand", compensate_with_on_demand)
         pulumi.set(__self__, "on_demand_base_capacity", on_demand_base_capacity)
@@ -1102,7 +1498,7 @@ class GetScalingGroupInstancesDistributionResult(dict):
     @pulumi.getter(name="compensateWithOnDemand")
     def compensate_with_on_demand(self) -> builtins.bool:
         """
-        当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+        Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
         """
         return pulumi.get(self, "compensate_with_on_demand")
 
@@ -1110,7 +1506,7 @@ class GetScalingGroupInstancesDistributionResult(dict):
     @pulumi.getter(name="onDemandBaseCapacity")
     def on_demand_base_capacity(self) -> builtins.int:
         """
-        伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+        Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
         """
         return pulumi.get(self, "on_demand_base_capacity")
 
@@ -1118,7 +1514,7 @@ class GetScalingGroupInstancesDistributionResult(dict):
     @pulumi.getter(name="onDemandPercentageAboveBaseCapacity")
     def on_demand_percentage_above_base_capacity(self) -> builtins.int:
         """
-        伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+        After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
         """
         return pulumi.get(self, "on_demand_percentage_above_base_capacity")
 
@@ -1126,7 +1522,7 @@ class GetScalingGroupInstancesDistributionResult(dict):
     @pulumi.getter(name="spotInstanceRemedy")
     def spot_instance_remedy(self) -> builtins.bool:
         """
-        是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+        Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
         """
         return pulumi.get(self, "spot_instance_remedy")
 
@@ -1138,9 +1534,9 @@ class GetScalingGroupLaunchTemplateOverrideResult(dict):
                  price_limit: builtins.float,
                  weighted_capacity: builtins.int):
         """
-        :param builtins.str instance_type: 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
-        :param builtins.float price_limit: 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
-        :param builtins.int weighted_capacity: 实例规格的权重。
+        :param builtins.str instance_type: Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
+        :param builtins.float price_limit: Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template's billing mode is SpotWithPriceLimit.
+        :param builtins.int weighted_capacity: Instance type weight
         """
         pulumi.set(__self__, "instance_type", instance_type)
         pulumi.set(__self__, "price_limit", price_limit)
@@ -1150,7 +1546,7 @@ class GetScalingGroupLaunchTemplateOverrideResult(dict):
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> builtins.str:
         """
-        指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+        Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
         """
         return pulumi.get(self, "instance_type")
 
@@ -1158,7 +1554,7 @@ class GetScalingGroupLaunchTemplateOverrideResult(dict):
     @pulumi.getter(name="priceLimit")
     def price_limit(self) -> builtins.float:
         """
-        指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+        Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template's billing mode is SpotWithPriceLimit.
         """
         return pulumi.get(self, "price_limit")
 
@@ -1166,7 +1562,7 @@ class GetScalingGroupLaunchTemplateOverrideResult(dict):
     @pulumi.getter(name="weightedCapacity")
     def weighted_capacity(self) -> builtins.int:
         """
-        实例规格的权重。
+        Instance type weight
         """
         return pulumi.get(self, "weighted_capacity")
 
@@ -1180,11 +1576,11 @@ class GetScalingGroupServerGroupAttributeResult(dict):
                  type: builtins.str,
                  weight: builtins.int):
         """
-        :param builtins.str load_balancer_id: 负载均衡实例的ID。
-        :param builtins.int port: 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
-        :param builtins.str server_group_id: 负载均衡后端服务器组的ID。
-        :param builtins.str type: 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
-        :param builtins.int weight: 负载均衡后端服务器组中服务器的权重。
+        :param builtins.str load_balancer_id: ID of the load balancer instance.
+        :param builtins.int port: Port number of the server in the backend server group for load balancing. Range: 1–65535.
+        :param builtins.str server_group_id: Backend server group ID for load balancing.
+        :param builtins.str type: Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
+        :param builtins.int weight: Weight of servers in the backend server group of the load balancer
         """
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         pulumi.set(__self__, "port", port)
@@ -1196,7 +1592,7 @@ class GetScalingGroupServerGroupAttributeResult(dict):
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> builtins.str:
         """
-        负载均衡实例的ID。
+        ID of the load balancer instance.
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -1204,7 +1600,7 @@ class GetScalingGroupServerGroupAttributeResult(dict):
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+        Port number of the server in the backend server group for load balancing. Range: 1–65535.
         """
         return pulumi.get(self, "port")
 
@@ -1212,7 +1608,7 @@ class GetScalingGroupServerGroupAttributeResult(dict):
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> builtins.str:
         """
-        负载均衡后端服务器组的ID。
+        Backend server group ID for load balancing.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -1220,7 +1616,7 @@ class GetScalingGroupServerGroupAttributeResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+        Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
         """
         return pulumi.get(self, "type")
 
@@ -1228,7 +1624,7 @@ class GetScalingGroupServerGroupAttributeResult(dict):
     @pulumi.getter
     def weight(self) -> builtins.int:
         """
-        负载均衡后端服务器组中服务器的权重。
+        Weight of servers in the backend server group of the load balancer
         """
         return pulumi.get(self, "weight")
 
@@ -1239,8 +1635,8 @@ class GetScalingGroupTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User label tag key
+        :param builtins.str value: The value of the user tag.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -1249,7 +1645,7 @@ class GetScalingGroupTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        User label tag key
         """
         return pulumi.get(self, "key")
 
@@ -1257,7 +1653,7 @@ class GetScalingGroupTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        The value of the user tag.
         """
         return pulumi.get(self, "value")
 
@@ -1268,8 +1664,8 @@ class GetScalingLifecycleHookLifecycleCommandResult(dict):
                  command_id: builtins.str,
                  parameters: builtins.str):
         """
-        :param builtins.str command_id: 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
-        :param builtins.str parameters: 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+        :param builtins.str command_id: Cloud Assistant command ID, indicates that after the lifecycle hook is triggered, the Cloud Assistant command is executed on the instance. If the command executes successfully, the post-suspend policy is executed according to CONTINUE. If the command fails, times out, or the lifecycle hook times out, the post-suspend policy is executed according to the LifecycleHookPolicy parameter configuration.
+        :param builtins.str parameters: Parameters and values in the Cloud Assistant command. The number of parameters ranges from 0 to 60. Note: Parameters cannot be empty strings and can have up to 64 characters. Values can be empty strings. After Base64 encoding, the combined length of parameters and the original command content must not exceed 16 KB. The set of parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
         """
         pulumi.set(__self__, "command_id", command_id)
         pulumi.set(__self__, "parameters", parameters)
@@ -1278,7 +1674,7 @@ class GetScalingLifecycleHookLifecycleCommandResult(dict):
     @pulumi.getter(name="commandId")
     def command_id(self) -> builtins.str:
         """
-        云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+        Cloud Assistant command ID, indicates that after the lifecycle hook is triggered, the Cloud Assistant command is executed on the instance. If the command executes successfully, the post-suspend policy is executed according to CONTINUE. If the command fails, times out, or the lifecycle hook times out, the post-suspend policy is executed according to the LifecycleHookPolicy parameter configuration.
         """
         return pulumi.get(self, "command_id")
 
@@ -1286,7 +1682,7 @@ class GetScalingLifecycleHookLifecycleCommandResult(dict):
     @pulumi.getter
     def parameters(self) -> builtins.str:
         """
-        云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+        Parameters and values in the Cloud Assistant command. The number of parameters ranges from 0 to 60. Note: Parameters cannot be empty strings and can have up to 64 characters. Values can be empty strings. After Base64 encoding, the combined length of parameters and the original command content must not exceed 16 KB. The set of parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
         """
         return pulumi.get(self, "parameters")
 
@@ -1301,12 +1697,12 @@ class GetScalingPolicyAlarmPolicyResult(dict):
                  evaluation_count: builtins.int,
                  rule_type: builtins.str):
         """
-        :param 'GetScalingPolicyAlarmPolicyConditionArgs' condition: 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
-        :param builtins.str condition_operator: 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
-        :param Sequence['GetScalingPolicyAlarmPolicyConditionArgs'] conditions: 多指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效，且必须配置AlarmPolicy.Condition.x或AlarmPolicy.Conditions.x相关参数，当二者同时配置时，仅AlarmPolicy.Conditions.x生效。
-        :param builtins.str effective: 报警任务的生效时间段。
-        :param builtins.int evaluation_count: 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
-        :param builtins.str rule_type: 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+        :param 'GetScalingPolicyAlarmPolicyConditionArgs' condition: Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
+        :param builtins.str condition_operator: Determination conditions for multi-metric alarms. &&: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
+        :param Sequence['GetScalingPolicyAlarmPolicyConditionArgs'] conditions: Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
+        :param builtins.str effective: The effective period for the alarm task.
+        :param builtins.int evaluation_count: Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
+        :param builtins.str rule_type: Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
         """
         pulumi.set(__self__, "condition", condition)
         pulumi.set(__self__, "condition_operator", condition_operator)
@@ -1319,7 +1715,7 @@ class GetScalingPolicyAlarmPolicyResult(dict):
     @pulumi.getter
     def condition(self) -> 'outputs.GetScalingPolicyAlarmPolicyConditionResult':
         """
-        单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+        Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
         """
         return pulumi.get(self, "condition")
 
@@ -1327,7 +1723,7 @@ class GetScalingPolicyAlarmPolicyResult(dict):
     @pulumi.getter(name="conditionOperator")
     def condition_operator(self) -> builtins.str:
         """
-        多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+        Determination conditions for multi-metric alarms. &&: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
         """
         return pulumi.get(self, "condition_operator")
 
@@ -1335,7 +1731,7 @@ class GetScalingPolicyAlarmPolicyResult(dict):
     @pulumi.getter
     def conditions(self) -> Sequence['outputs.GetScalingPolicyAlarmPolicyConditionResult']:
         """
-        多指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效，且必须配置AlarmPolicy.Condition.x或AlarmPolicy.Conditions.x相关参数，当二者同时配置时，仅AlarmPolicy.Conditions.x生效。
+        Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
         """
         return pulumi.get(self, "conditions")
 
@@ -1343,7 +1739,7 @@ class GetScalingPolicyAlarmPolicyResult(dict):
     @pulumi.getter
     def effective(self) -> builtins.str:
         """
-        报警任务的生效时间段。
+        The effective period for the alarm task.
         """
         return pulumi.get(self, "effective")
 
@@ -1351,7 +1747,7 @@ class GetScalingPolicyAlarmPolicyResult(dict):
     @pulumi.getter(name="evaluationCount")
     def evaluation_count(self) -> builtins.int:
         """
-        当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+        Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
         """
         return pulumi.get(self, "evaluation_count")
 
@@ -1359,7 +1755,7 @@ class GetScalingPolicyAlarmPolicyResult(dict):
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> builtins.str:
         """
-        报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+        Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
         """
         return pulumi.get(self, "rule_type")
 
@@ -1372,10 +1768,10 @@ class GetScalingPolicyAlarmPolicyConditionResult(dict):
                  metric_unit: builtins.str,
                  threshold: builtins.str):
         """
-        :param builtins.str comparison_operator: 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
-        :param builtins.str metric_name: 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
-        :param builtins.str metric_unit: 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
-        :param builtins.str threshold: 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+        :param builtins.str comparison_operator: Rule expression object for metric alarms. >: Greater than. <: Less than. =: Equal to.
+        :param builtins.str metric_name: Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
+        :param builtins.str metric_unit: The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
+        :param builtins.str threshold: The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
         """
         pulumi.set(__self__, "comparison_operator", comparison_operator)
         pulumi.set(__self__, "metric_name", metric_name)
@@ -1386,7 +1782,7 @@ class GetScalingPolicyAlarmPolicyConditionResult(dict):
     @pulumi.getter(name="comparisonOperator")
     def comparison_operator(self) -> builtins.str:
         """
-        指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+        Rule expression object for metric alarms. >: Greater than. <: Less than. =: Equal to.
         """
         return pulumi.get(self, "comparison_operator")
 
@@ -1394,7 +1790,7 @@ class GetScalingPolicyAlarmPolicyConditionResult(dict):
     @pulumi.getter(name="metricName")
     def metric_name(self) -> builtins.str:
         """
-        指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+        Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
         """
         return pulumi.get(self, "metric_name")
 
@@ -1402,7 +1798,7 @@ class GetScalingPolicyAlarmPolicyConditionResult(dict):
     @pulumi.getter(name="metricUnit")
     def metric_unit(self) -> builtins.str:
         """
-        指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+        The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
         """
         return pulumi.get(self, "metric_unit")
 
@@ -1410,7 +1806,7 @@ class GetScalingPolicyAlarmPolicyConditionResult(dict):
     @pulumi.getter
     def threshold(self) -> builtins.str:
         """
-        指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+        The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
         """
         return pulumi.get(self, "threshold")
 
@@ -1426,13 +1822,13 @@ class GetScalingPolicyScheduledPolicyResult(dict):
                  recurrence_type: builtins.str,
                  recurrence_value: builtins.str):
         """
-        :param builtins.str launch_time: 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
-        :param builtins.str launch_time_read: 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
-        :param builtins.str recurrence_end_time: 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
-        :param builtins.str recurrence_end_time_read: 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
-        :param builtins.str recurrence_start_time: 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
-        :param builtins.str recurrence_type: 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
-        :param builtins.str recurrence_value: 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+        :param builtins.str launch_time: Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
+        :param builtins.str launch_time_read: Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
+        :param builtins.str recurrence_end_time: Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
+        :param builtins.str recurrence_end_time_read: Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
+        :param builtins.str recurrence_start_time: Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
+        :param builtins.str recurrence_type: Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
+        :param builtins.str recurrence_value: Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
         """
         pulumi.set(__self__, "launch_time", launch_time)
         pulumi.set(__self__, "launch_time_read", launch_time_read)
@@ -1446,7 +1842,7 @@ class GetScalingPolicyScheduledPolicyResult(dict):
     @pulumi.getter(name="launchTime")
     def launch_time(self) -> builtins.str:
         """
-        表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+        Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
         """
         return pulumi.get(self, "launch_time")
 
@@ -1454,7 +1850,7 @@ class GetScalingPolicyScheduledPolicyResult(dict):
     @pulumi.getter(name="launchTimeRead")
     def launch_time_read(self) -> builtins.str:
         """
-        表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+        Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
         """
         return pulumi.get(self, "launch_time_read")
 
@@ -1462,7 +1858,7 @@ class GetScalingPolicyScheduledPolicyResult(dict):
     @pulumi.getter(name="recurrenceEndTime")
     def recurrence_end_time(self) -> builtins.str:
         """
-        表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+        Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
         """
         return pulumi.get(self, "recurrence_end_time")
 
@@ -1470,7 +1866,7 @@ class GetScalingPolicyScheduledPolicyResult(dict):
     @pulumi.getter(name="recurrenceEndTimeRead")
     def recurrence_end_time_read(self) -> builtins.str:
         """
-        表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+        Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
         """
         return pulumi.get(self, "recurrence_end_time_read")
 
@@ -1478,7 +1874,7 @@ class GetScalingPolicyScheduledPolicyResult(dict):
     @pulumi.getter(name="recurrenceStartTime")
     def recurrence_start_time(self) -> builtins.str:
         """
-        表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+        Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
         """
         return pulumi.get(self, "recurrence_start_time")
 
@@ -1486,7 +1882,7 @@ class GetScalingPolicyScheduledPolicyResult(dict):
     @pulumi.getter(name="recurrenceType")
     def recurrence_type(self) -> builtins.str:
         """
-        表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+        Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
         """
         return pulumi.get(self, "recurrence_type")
 
@@ -1494,7 +1890,7 @@ class GetScalingPolicyScheduledPolicyResult(dict):
     @pulumi.getter(name="recurrenceValue")
     def recurrence_value(self) -> builtins.str:
         """
-        表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+        Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
         """
         return pulumi.get(self, "recurrence_value")
 

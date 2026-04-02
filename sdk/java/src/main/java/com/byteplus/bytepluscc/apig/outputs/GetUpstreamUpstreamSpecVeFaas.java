@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamUpstreamSpecVeFaas {
     /**
-     * @return 函数ID。
+     * @return Function ID
      * 
      */
     private String functionId;
 
     private GetUpstreamUpstreamSpecVeFaas() {}
     /**
-     * @return 函数ID。
+     * @return Function ID
      * 
      */
     public String functionId() {

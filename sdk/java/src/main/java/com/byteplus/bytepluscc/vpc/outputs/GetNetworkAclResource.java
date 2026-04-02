@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNetworkAclResource {
     /**
-     * @return 关联资源的ID。
+     * @return Associated resource ID.
      * 
      */
     private String resourceId;
     /**
-     * @return 网络ACL关联资源的状态。BINDED：已绑定。BINDING：绑定中。UNBINDING：解绑中。
+     * @return Status of resources associated with the network ACL. BINDED: Bound. BINDING: Binding. UNBINDING: Unbinding.
      * 
      */
     private String status;
 
     private GetNetworkAclResource() {}
     /**
-     * @return 关联资源的ID。
+     * @return Associated resource ID.
      * 
      */
     public String resourceId() {
         return this.resourceId;
     }
     /**
-     * @return 网络ACL关联资源的状态。BINDED：已绑定。BINDING：绑定中。UNBINDING：解绑中。
+     * @return Status of resources associated with the network ACL. BINDED: Bound. BINDING: Binding. UNBINDING: Unbinding.
      * 
      */
     public String status() {

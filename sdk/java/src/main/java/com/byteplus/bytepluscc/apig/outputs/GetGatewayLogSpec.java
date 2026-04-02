@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayLogSpec {
     /**
-     * @return 是否开启日志服务。
+     * @return Whether to enable log service
      * 
      */
     private Boolean enable;
     /**
-     * @return 日志项目ID。
+     * @return Log project ID
      * 
      */
     private String projectId;
     /**
-     * @return 日志主题ID。ProjectId 指定项目里面的日志主题。
+     * @return Log topic ID. ProjectId specifies the log topic within the project
      * 
      */
     private String topicId;
 
     private GetGatewayLogSpec() {}
     /**
-     * @return 是否开启日志服务。
+     * @return Whether to enable log service
      * 
      */
     public Boolean enable() {
         return this.enable;
     }
     /**
-     * @return 日志项目ID。
+     * @return Log project ID
      * 
      */
     public String projectId() {
         return this.projectId;
     }
     /**
-     * @return 日志主题ID。ProjectId 指定项目里面的日志主题。
+     * @return Log topic ID. ProjectId specifies the log topic within the project
      * 
      */
     public String topicId() {

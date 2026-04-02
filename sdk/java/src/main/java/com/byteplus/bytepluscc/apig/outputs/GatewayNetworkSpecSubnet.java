@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GatewayNetworkSpecSubnet {
     /**
-     * @return 可用区。
+     * @return Availability zone
      * 
      */
     private @Nullable String az;
     /**
-     * @return 子网ID。
+     * @return Subnet ID
      * 
      */
     private @Nullable String subnetId;
     /**
-     * @return 子网名称。
+     * @return Subnet name
      * 
      */
     private @Nullable String subnetName;
 
     private GatewayNetworkSpecSubnet() {}
     /**
-     * @return 可用区。
+     * @return Availability zone
      * 
      */
     public Optional<String> az() {
         return Optional.ofNullable(this.az);
     }
     /**
-     * @return 子网ID。
+     * @return Subnet ID
      * 
      */
     public Optional<String> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
     /**
-     * @return 子网名称。
+     * @return Subnet name
      * 
      */
     public Optional<String> subnetName() {

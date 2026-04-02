@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolKubernetesConfigKubeletConfigEvictionHard {
     /**
-     * @return 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+     * @return Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
      * 
      */
     private @Nullable String key;
     /**
-     * @return 硬性门限值。
+     * @return Hard threshold value.
      * 
      */
     private @Nullable String value;
 
     private NodePoolKubernetesConfigKubeletConfigEvictionHard() {}
     /**
-     * @return 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+     * @return Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 硬性门限值。
+     * @return Hard threshold value.
      * 
      */
     public Optional<String> value() {

@@ -18,52 +18,52 @@ import java.util.Objects;
 @CustomType
 public final class GetVolumeResult {
     /**
-     * @return 自动快照策略ID。
+     * @return Automatic snapshot policy ID.
      * 
      */
     private String autoSnapshotPolicyId;
     /**
-     * @return 自动快照策略名称。
+     * @return Automatic snapshot policy name.
      * 
      */
     private String autoSnapshotPolicyName;
     /**
-     * @return 基本性能。
+     * @return Baseline performance.
      * 
      */
     private GetVolumeBaselinePerformance baselinePerformance;
     /**
-     * @return 云盘创建时间。
+     * @return Disk creation time.
      * 
      */
     private String createdAt;
     /**
-     * @return 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+     * @return When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
      * 
      */
     private Boolean deleteWithInstance;
     /**
-     * @return 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+     * @return Disk description. Default is empty. Length must be between 1 and 255 characters.
      * 
      */
     private String description;
     /**
-     * @return 设备名称
+     * @return Device name
      * 
      */
     private String deviceName;
     /**
-     * @return 具体错误
+     * @return Specific error
      * 
      */
     private String errorDetail;
     /**
-     * @return 包年包月到期时间。
+     * @return Expiration time for yearly/monthly subscription.
      * 
      */
     private String expiredTime;
     /**
-     * @return 额外性能。
+     * @return Extra performance.
      * 
      */
     private GetVolumeExtraPerformance extraPerformance;
@@ -73,172 +73,172 @@ public final class GetVolumeResult {
      */
     private String id;
     /**
-     * @return 云盘中的镜像ID。
+     * @return Image ID in the disk.
      * 
      */
     private String imageId;
     /**
-     * @return 创建云盘的同时挂载的ECS实例ID。
+     * @return ECS instance ID mounted when creating the cloud disk.
      * 
      */
     private String instanceId;
     /**
-     * @return 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+     * @return Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
      * 
      */
     private String kind;
     /**
-     * @return 云盘欠费回收时间。
+     * @return Disk overdue reclamation time.
      * 
      */
     private String overdueReclaimTime;
     /**
-     * @return 云盘欠费关停时间。
+     * @return Disk overdue shutdown time.
      * 
      */
     private String overdueTime;
     /**
-     * @return 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+     * @return Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
      * 
      */
     private String payType;
     /**
-     * @return 云盘所要加入的Project（项目）名称。
+     * @return Project name to which the disk will be added.
      * 
      */
     private String projectName;
     /**
-     * @return 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+     * @return Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
      * 
      */
     private Double renewType;
     /**
-     * @return Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+     * @return Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
      * 
      */
     private Double size;
     /**
-     * @return 快照计数
+     * @return Snapshot count.
      * 
      */
     private Double snapshotCount;
     /**
-     * @return 源快照。
+     * @return Source snapshot.
      * 
      */
     private String sourceSnapshotId;
     /**
-     * @return 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+     * @return Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
      * 
      */
     private String status;
     /**
-     * @return 云盘的标签信息
+     * @return Disk tag information.
      * 
      */
     private List<GetVolumeTag> tags;
     /**
-     * @return 总性能。
+     * @return Total performance.
      * 
      */
     private GetVolumeTotalPerformance totalPerformance;
     /**
-     * @return 交易状态 0：创建中 1：运行中 2：创建失败
+     * @return Transaction status 0: Creating 1: Running 2: Creation failed
      * 
      */
     private Double tradeStatus;
     /**
-     * @return 云盘更新时间。
+     * @return Disk update time.
      * 
      */
     private String updatedAt;
     /**
-     * @return 云盘id。
+     * @return Disk ID.
      * 
      */
     private String volumeId;
     /**
-     * @return 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+     * @return Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     private String volumeName;
     /**
-     * @return 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+     * @return Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
      * 
      */
     private String volumeType;
     /**
-     * @return 可用区ID。
+     * @return Availability zone ID.
      * 
      */
     private String zoneId;
 
     private GetVolumeResult() {}
     /**
-     * @return 自动快照策略ID。
+     * @return Automatic snapshot policy ID.
      * 
      */
     public String autoSnapshotPolicyId() {
         return this.autoSnapshotPolicyId;
     }
     /**
-     * @return 自动快照策略名称。
+     * @return Automatic snapshot policy name.
      * 
      */
     public String autoSnapshotPolicyName() {
         return this.autoSnapshotPolicyName;
     }
     /**
-     * @return 基本性能。
+     * @return Baseline performance.
      * 
      */
     public GetVolumeBaselinePerformance baselinePerformance() {
         return this.baselinePerformance;
     }
     /**
-     * @return 云盘创建时间。
+     * @return Disk creation time.
      * 
      */
     public String createdAt() {
         return this.createdAt;
     }
     /**
-     * @return 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+     * @return When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
      * 
      */
     public Boolean deleteWithInstance() {
         return this.deleteWithInstance;
     }
     /**
-     * @return 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+     * @return Disk description. Default is empty. Length must be between 1 and 255 characters.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 设备名称
+     * @return Device name
      * 
      */
     public String deviceName() {
         return this.deviceName;
     }
     /**
-     * @return 具体错误
+     * @return Specific error
      * 
      */
     public String errorDetail() {
         return this.errorDetail;
     }
     /**
-     * @return 包年包月到期时间。
+     * @return Expiration time for yearly/monthly subscription.
      * 
      */
     public String expiredTime() {
         return this.expiredTime;
     }
     /**
-     * @return 额外性能。
+     * @return Extra performance.
      * 
      */
     public GetVolumeExtraPerformance extraPerformance() {
@@ -252,140 +252,140 @@ public final class GetVolumeResult {
         return this.id;
     }
     /**
-     * @return 云盘中的镜像ID。
+     * @return Image ID in the disk.
      * 
      */
     public String imageId() {
         return this.imageId;
     }
     /**
-     * @return 创建云盘的同时挂载的ECS实例ID。
+     * @return ECS instance ID mounted when creating the cloud disk.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+     * @return Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
      * 
      */
     public String kind() {
         return this.kind;
     }
     /**
-     * @return 云盘欠费回收时间。
+     * @return Disk overdue reclamation time.
      * 
      */
     public String overdueReclaimTime() {
         return this.overdueReclaimTime;
     }
     /**
-     * @return 云盘欠费关停时间。
+     * @return Disk overdue shutdown time.
      * 
      */
     public String overdueTime() {
         return this.overdueTime;
     }
     /**
-     * @return 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+     * @return Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
      * 
      */
     public String payType() {
         return this.payType;
     }
     /**
-     * @return 云盘所要加入的Project（项目）名称。
+     * @return Project name to which the disk will be added.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+     * @return Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
      * 
      */
     public Double renewType() {
         return this.renewType;
     }
     /**
-     * @return Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+     * @return Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
      * 
      */
     public Double size() {
         return this.size;
     }
     /**
-     * @return 快照计数
+     * @return Snapshot count.
      * 
      */
     public Double snapshotCount() {
         return this.snapshotCount;
     }
     /**
-     * @return 源快照。
+     * @return Source snapshot.
      * 
      */
     public String sourceSnapshotId() {
         return this.sourceSnapshotId;
     }
     /**
-     * @return 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+     * @return Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 云盘的标签信息
+     * @return Disk tag information.
      * 
      */
     public List<GetVolumeTag> tags() {
         return this.tags;
     }
     /**
-     * @return 总性能。
+     * @return Total performance.
      * 
      */
     public GetVolumeTotalPerformance totalPerformance() {
         return this.totalPerformance;
     }
     /**
-     * @return 交易状态 0：创建中 1：运行中 2：创建失败
+     * @return Transaction status 0: Creating 1: Running 2: Creation failed
      * 
      */
     public Double tradeStatus() {
         return this.tradeStatus;
     }
     /**
-     * @return 云盘更新时间。
+     * @return Disk update time.
      * 
      */
     public String updatedAt() {
         return this.updatedAt;
     }
     /**
-     * @return 云盘id。
+     * @return Disk ID.
      * 
      */
     public String volumeId() {
         return this.volumeId;
     }
     /**
-     * @return 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+     * @return Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     public String volumeName() {
         return this.volumeName;
     }
     /**
-     * @return 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+     * @return Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
      * 
      */
     public String volumeType() {
         return this.volumeType;
     }
     /**
-     * @return 可用区ID。
+     * @return Availability zone ID.
      * 
      */
     public String zoneId() {

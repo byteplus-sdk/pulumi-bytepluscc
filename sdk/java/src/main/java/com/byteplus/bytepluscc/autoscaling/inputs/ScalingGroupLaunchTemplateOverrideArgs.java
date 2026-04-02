@@ -17,14 +17,14 @@ public final class ScalingGroupLaunchTemplateOverrideArgs extends com.pulumi.res
     public static final ScalingGroupLaunchTemplateOverrideArgs Empty = new ScalingGroupLaunchTemplateOverrideArgs();
 
     /**
-     * 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+     * Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
-     * @return 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+     * @return Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
      * 
      */
     public Optional<Output<String>> instanceType() {
@@ -32,14 +32,14 @@ public final class ScalingGroupLaunchTemplateOverrideArgs extends com.pulumi.res
     }
 
     /**
-     * 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+     * Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template&#39;s billing mode is SpotWithPriceLimit.
      * 
      */
     @Import(name="priceLimit")
     private @Nullable Output<Double> priceLimit;
 
     /**
-     * @return 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+     * @return Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template&#39;s billing mode is SpotWithPriceLimit.
      * 
      */
     public Optional<Output<Double>> priceLimit() {
@@ -72,7 +72,7 @@ public final class ScalingGroupLaunchTemplateOverrideArgs extends com.pulumi.res
         }
 
         /**
-         * @param instanceType 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+         * @param instanceType Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class ScalingGroupLaunchTemplateOverrideArgs extends com.pulumi.res
         }
 
         /**
-         * @param instanceType 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+         * @param instanceType Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class ScalingGroupLaunchTemplateOverrideArgs extends com.pulumi.res
         }
 
         /**
-         * @param priceLimit 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+         * @param priceLimit Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template&#39;s billing mode is SpotWithPriceLimit.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class ScalingGroupLaunchTemplateOverrideArgs extends com.pulumi.res
         }
 
         /**
-         * @param priceLimit 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+         * @param priceLimit Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template&#39;s billing mode is SpotWithPriceLimit.
          * 
          * @return builder
          * 

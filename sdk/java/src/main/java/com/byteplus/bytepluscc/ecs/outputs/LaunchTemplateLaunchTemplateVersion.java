@@ -21,216 +21,216 @@ import javax.annotation.Nullable;
 @CustomType
 public final class LaunchTemplateLaunchTemplateVersion {
     /**
-     * @return 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+     * @return When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
      * 
      */
     private @Nullable Integer deploymentSetGroupNumber;
     /**
-     * @return 实例需要加入的部署集ID。
+     * @return Deployment set ID the instance needs to join.
      * 
      */
     private @Nullable String deploymentSetId;
     /**
-     * @return 实例的描述。
+     * @return Instance description
      * 
      */
     private @Nullable String description;
     /**
-     * @return 实例绑定的公网IP信息。
+     * @return Public IP information bound to the instance
      * 
      */
     private @Nullable LaunchTemplateLaunchTemplateVersionEip eip;
     /**
-     * @return 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+     * @return Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
      * 
      */
     private @Nullable String hostName;
     /**
-     * @return 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+     * @return When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
      * 
      */
     private @Nullable String hpcClusterId;
     /**
-     * @return 镜像ID。
+     * @return Image ID.
      * 
      */
     private @Nullable String imageId;
     /**
-     * @return 镜像名称。
+     * @return Image name.
      * 
      */
     private @Nullable String imageName;
     /**
-     * @return 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+     * @return Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
      * 
      */
     private @Nullable String instanceChargeType;
     /**
-     * @return 实例的名称。
+     * @return Instance name.
      * 
      */
     private @Nullable String instanceName;
     /**
-     * @return 实例的规格。
+     * @return Instance specification
      * 
      */
     private @Nullable String instanceTypeId;
     /**
-     * @return 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+     * @return Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
      * 
      */
     private @Nullable Boolean keepImageCredential;
     /**
-     * @return 实例绑定的密钥对。
+     * @return Key pair bound to the instance.
      * 
      */
     private @Nullable String keyPairName;
     private @Nullable List<LaunchTemplateLaunchTemplateVersionNetworkInterface> networkInterfaces;
     /**
-     * @return 实例所属项目。
+     * @return Project associated with the instance.
      * 
      */
     private @Nullable String projectName;
     /**
-     * @return 弹性预约单信息。
+     * @return Elastic reservation order information
      * 
      */
     private @Nullable LaunchTemplateLaunchTemplateVersionScheduledInstance scheduledInstance;
     /**
-     * @return 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+     * @return Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
      * 
      */
     private @Nullable String securityEnhancementStrategy;
     /**
-     * @return 抢占式实例的每小时最高价格。
+     * @return Maximum hourly price for preemptible instances
      * 
      */
     private @Nullable Double spotPriceLimit;
     /**
-     * @return 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+     * @return Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
      * 
      */
     private @Nullable String spotStrategy;
     /**
-     * @return 有序后缀的起始序号。
+     * @return Starting number for the sequential suffix
      * 
      */
     private @Nullable Integer suffixIndex;
     private @Nullable List<LaunchTemplateLaunchTemplateVersionTag> tags;
     /**
-     * @return 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+     * @return Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
      * 
      */
     private @Nullable Boolean uniqueSuffix;
     /**
-     * @return 实例的自定义数据。
+     * @return Custom data for the instance.
      * 
      */
     private @Nullable String userData;
     /**
-     * @return 模版版本描述。
+     * @return Template version description.
      * 
      */
     private @Nullable String versionDescription;
     private @Nullable List<LaunchTemplateLaunchTemplateVersionVolume> volumes;
     /**
-     * @return 私有网络ID。
+     * @return Private network ID.
      * 
      */
     private @Nullable String vpcId;
     /**
-     * @return 实例所属可用区ID。
+     * @return Instance availability zone ID
      * 
      */
     private @Nullable String zoneId;
 
     private LaunchTemplateLaunchTemplateVersion() {}
     /**
-     * @return 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+     * @return When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
      * 
      */
     public Optional<Integer> deploymentSetGroupNumber() {
         return Optional.ofNullable(this.deploymentSetGroupNumber);
     }
     /**
-     * @return 实例需要加入的部署集ID。
+     * @return Deployment set ID the instance needs to join.
      * 
      */
     public Optional<String> deploymentSetId() {
         return Optional.ofNullable(this.deploymentSetId);
     }
     /**
-     * @return 实例的描述。
+     * @return Instance description
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return 实例绑定的公网IP信息。
+     * @return Public IP information bound to the instance
      * 
      */
     public Optional<LaunchTemplateLaunchTemplateVersionEip> eip() {
         return Optional.ofNullable(this.eip);
     }
     /**
-     * @return 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+     * @return Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
      * 
      */
     public Optional<String> hostName() {
         return Optional.ofNullable(this.hostName);
     }
     /**
-     * @return 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+     * @return When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
      * 
      */
     public Optional<String> hpcClusterId() {
         return Optional.ofNullable(this.hpcClusterId);
     }
     /**
-     * @return 镜像ID。
+     * @return Image ID.
      * 
      */
     public Optional<String> imageId() {
         return Optional.ofNullable(this.imageId);
     }
     /**
-     * @return 镜像名称。
+     * @return Image name.
      * 
      */
     public Optional<String> imageName() {
         return Optional.ofNullable(this.imageName);
     }
     /**
-     * @return 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+     * @return Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
      * 
      */
     public Optional<String> instanceChargeType() {
         return Optional.ofNullable(this.instanceChargeType);
     }
     /**
-     * @return 实例的名称。
+     * @return Instance name.
      * 
      */
     public Optional<String> instanceName() {
         return Optional.ofNullable(this.instanceName);
     }
     /**
-     * @return 实例的规格。
+     * @return Instance specification
      * 
      */
     public Optional<String> instanceTypeId() {
         return Optional.ofNullable(this.instanceTypeId);
     }
     /**
-     * @return 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+     * @return Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
      * 
      */
     public Optional<Boolean> keepImageCredential() {
         return Optional.ofNullable(this.keepImageCredential);
     }
     /**
-     * @return 实例绑定的密钥对。
+     * @return Key pair bound to the instance.
      * 
      */
     public Optional<String> keyPairName() {
@@ -240,42 +240,42 @@ public final class LaunchTemplateLaunchTemplateVersion {
         return this.networkInterfaces == null ? List.of() : this.networkInterfaces;
     }
     /**
-     * @return 实例所属项目。
+     * @return Project associated with the instance.
      * 
      */
     public Optional<String> projectName() {
         return Optional.ofNullable(this.projectName);
     }
     /**
-     * @return 弹性预约单信息。
+     * @return Elastic reservation order information
      * 
      */
     public Optional<LaunchTemplateLaunchTemplateVersionScheduledInstance> scheduledInstance() {
         return Optional.ofNullable(this.scheduledInstance);
     }
     /**
-     * @return 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+     * @return Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
      * 
      */
     public Optional<String> securityEnhancementStrategy() {
         return Optional.ofNullable(this.securityEnhancementStrategy);
     }
     /**
-     * @return 抢占式实例的每小时最高价格。
+     * @return Maximum hourly price for preemptible instances
      * 
      */
     public Optional<Double> spotPriceLimit() {
         return Optional.ofNullable(this.spotPriceLimit);
     }
     /**
-     * @return 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+     * @return Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
      * 
      */
     public Optional<String> spotStrategy() {
         return Optional.ofNullable(this.spotStrategy);
     }
     /**
-     * @return 有序后缀的起始序号。
+     * @return Starting number for the sequential suffix
      * 
      */
     public Optional<Integer> suffixIndex() {
@@ -285,21 +285,21 @@ public final class LaunchTemplateLaunchTemplateVersion {
         return this.tags == null ? List.of() : this.tags;
     }
     /**
-     * @return 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+     * @return Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
      * 
      */
     public Optional<Boolean> uniqueSuffix() {
         return Optional.ofNullable(this.uniqueSuffix);
     }
     /**
-     * @return 实例的自定义数据。
+     * @return Custom data for the instance.
      * 
      */
     public Optional<String> userData() {
         return Optional.ofNullable(this.userData);
     }
     /**
-     * @return 模版版本描述。
+     * @return Template version description.
      * 
      */
     public Optional<String> versionDescription() {
@@ -309,14 +309,14 @@ public final class LaunchTemplateLaunchTemplateVersion {
         return this.volumes == null ? List.of() : this.volumes;
     }
     /**
-     * @return 私有网络ID。
+     * @return Private network ID.
      * 
      */
     public Optional<String> vpcId() {
         return Optional.ofNullable(this.vpcId);
     }
     /**
-     * @return 实例所属可用区ID。
+     * @return Instance availability zone ID
      * 
      */
     public Optional<String> zoneId() {

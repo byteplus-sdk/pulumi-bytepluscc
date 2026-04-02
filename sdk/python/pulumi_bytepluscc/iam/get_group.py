@@ -64,7 +64,7 @@ class GetGroupResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.int:
         """
-        用户组所属主账号的ID。
+        ID of the primary account to which the user group belongs.
         """
         return pulumi.get(self, "account_id")
 
@@ -72,7 +72,7 @@ class GetGroupResult:
     @pulumi.getter(name="attachedPolicies")
     def attached_policies(self) -> Sequence['outputs.GetGroupAttachedPolicyResult']:
         """
-        用户组绑定的策略信息。
+        Policy information bound to the user group.
         """
         return pulumi.get(self, "attached_policies")
 
@@ -80,7 +80,7 @@ class GetGroupResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        用户组的创建时间。
+        User group creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -88,7 +88,7 @@ class GetGroupResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        用户组描述信息。长度不超过128。
+        User group description. Maximum length: 128 characters.
         """
         return pulumi.get(self, "description")
 
@@ -96,7 +96,7 @@ class GetGroupResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        用户组显示名称。长度不超过64。
+        User group display name. Maximum length: 64 characters.
         """
         return pulumi.get(self, "display_name")
 
@@ -112,7 +112,7 @@ class GetGroupResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        用户组的更新时间。
+        User group update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -120,7 +120,7 @@ class GetGroupResult:
     @pulumi.getter(name="userGroupId")
     def user_group_id(self) -> builtins.int:
         """
-        用户组ID。
+        User group ID.
         """
         return pulumi.get(self, "user_group_id")
 
@@ -128,7 +128,7 @@ class GetGroupResult:
     @pulumi.getter(name="userGroupName")
     def user_group_name(self) -> builtins.str:
         """
-        用户组名称。长度1~64，支持英文、数字和.-_符号。
+        User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
         """
         return pulumi.get(self, "user_group_name")
 
@@ -136,7 +136,7 @@ class GetGroupResult:
     @pulumi.getter
     def users(self) -> Sequence['outputs.GetGroupUserResult']:
         """
-        用户组内绑定的用户信息。
+        User information associated with the user group.
         """
         return pulumi.get(self, "users")
 

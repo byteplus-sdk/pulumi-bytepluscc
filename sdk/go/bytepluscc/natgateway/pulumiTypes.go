@@ -14,11 +14,11 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type NgwEipAddress struct {
-	// 公网IP的ID。
+	// Public IP ID
 	AllocationId *string `pulumi:"allocationId"`
-	// 公网IP的地址。
+	// Public IP address
 	EipAddress *string `pulumi:"eipAddress"`
-	// 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+	// Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
 	UsingStatus *string `pulumi:"usingStatus"`
 }
 
@@ -34,11 +34,11 @@ type NgwEipAddressInput interface {
 }
 
 type NgwEipAddressArgs struct {
-	// 公网IP的ID。
+	// Public IP ID
 	AllocationId pulumi.StringPtrInput `pulumi:"allocationId"`
-	// 公网IP的地址。
+	// Public IP address
 	EipAddress pulumi.StringPtrInput `pulumi:"eipAddress"`
-	// 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+	// Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
 	UsingStatus pulumi.StringPtrInput `pulumi:"usingStatus"`
 }
 
@@ -93,17 +93,17 @@ func (o NgwEipAddressOutput) ToNgwEipAddressOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 公网IP的ID。
+// Public IP ID
 func (o NgwEipAddressOutput) AllocationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NgwEipAddress) *string { return v.AllocationId }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的地址。
+// Public IP address
 func (o NgwEipAddressOutput) EipAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NgwEipAddress) *string { return v.EipAddress }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+// Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
 func (o NgwEipAddressOutput) UsingStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NgwEipAddress) *string { return v.UsingStatus }).(pulumi.StringPtrOutput)
 }
@@ -129,9 +129,9 @@ func (o NgwEipAddressArrayOutput) Index(i pulumi.IntInput) NgwEipAddressOutput {
 }
 
 type NgwNatIpAddress struct {
-	// 中转Ip地址。
+	// Transit IP address
 	NatIpAddress *string `pulumi:"natIpAddress"`
-	// 中转Ip id。
+	// Transit IP ID
 	NatIpId *string `pulumi:"natIpId"`
 }
 
@@ -147,9 +147,9 @@ type NgwNatIpAddressInput interface {
 }
 
 type NgwNatIpAddressArgs struct {
-	// 中转Ip地址。
+	// Transit IP address
 	NatIpAddress pulumi.StringPtrInput `pulumi:"natIpAddress"`
-	// 中转Ip id。
+	// Transit IP ID
 	NatIpId pulumi.StringPtrInput `pulumi:"natIpId"`
 }
 
@@ -204,12 +204,12 @@ func (o NgwNatIpAddressOutput) ToNgwNatIpAddressOutputWithContext(ctx context.Co
 	return o
 }
 
-// 中转Ip地址。
+// Transit IP address
 func (o NgwNatIpAddressOutput) NatIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NgwNatIpAddress) *string { return v.NatIpAddress }).(pulumi.StringPtrOutput)
 }
 
-// 中转Ip id。
+// Transit IP ID
 func (o NgwNatIpAddressOutput) NatIpId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NgwNatIpAddress) *string { return v.NatIpId }).(pulumi.StringPtrOutput)
 }
@@ -235,9 +235,9 @@ func (o NgwNatIpAddressArrayOutput) Index(i pulumi.IntInput) NgwNatIpAddressOutp
 }
 
 type NgwTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -253,9 +253,9 @@ type NgwTagInput interface {
 }
 
 type NgwTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -310,12 +310,12 @@ func (o NgwTagOutput) ToNgwTagOutputWithContext(ctx context.Context) NgwTagOutpu
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o NgwTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NgwTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value
 func (o NgwTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NgwTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -341,11 +341,11 @@ func (o NgwTagArrayOutput) Index(i pulumi.IntInput) NgwTagOutput {
 }
 
 type GetNgwEipAddress struct {
-	// 公网IP的ID。
+	// Public IP ID
 	AllocationId string `pulumi:"allocationId"`
-	// 公网IP的地址。
+	// Public IP address
 	EipAddress string `pulumi:"eipAddress"`
-	// 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+	// Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
 	UsingStatus string `pulumi:"usingStatus"`
 }
 
@@ -361,11 +361,11 @@ type GetNgwEipAddressInput interface {
 }
 
 type GetNgwEipAddressArgs struct {
-	// 公网IP的ID。
+	// Public IP ID
 	AllocationId pulumi.StringInput `pulumi:"allocationId"`
-	// 公网IP的地址。
+	// Public IP address
 	EipAddress pulumi.StringInput `pulumi:"eipAddress"`
-	// 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+	// Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
 	UsingStatus pulumi.StringInput `pulumi:"usingStatus"`
 }
 
@@ -420,17 +420,17 @@ func (o GetNgwEipAddressOutput) ToGetNgwEipAddressOutputWithContext(ctx context.
 	return o
 }
 
-// 公网IP的ID。
+// Public IP ID
 func (o GetNgwEipAddressOutput) AllocationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNgwEipAddress) string { return v.AllocationId }).(pulumi.StringOutput)
 }
 
-// 公网IP的地址。
+// Public IP address
 func (o GetNgwEipAddressOutput) EipAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNgwEipAddress) string { return v.EipAddress }).(pulumi.StringOutput)
 }
 
-// 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+// Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
 func (o GetNgwEipAddressOutput) UsingStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNgwEipAddress) string { return v.UsingStatus }).(pulumi.StringOutput)
 }
@@ -456,9 +456,9 @@ func (o GetNgwEipAddressArrayOutput) Index(i pulumi.IntInput) GetNgwEipAddressOu
 }
 
 type GetNgwNatIpAddress struct {
-	// 中转Ip地址。
+	// Transit IP address
 	NatIpAddress string `pulumi:"natIpAddress"`
-	// 中转Ip id。
+	// Transit IP ID
 	NatIpId string `pulumi:"natIpId"`
 }
 
@@ -474,9 +474,9 @@ type GetNgwNatIpAddressInput interface {
 }
 
 type GetNgwNatIpAddressArgs struct {
-	// 中转Ip地址。
+	// Transit IP address
 	NatIpAddress pulumi.StringInput `pulumi:"natIpAddress"`
-	// 中转Ip id。
+	// Transit IP ID
 	NatIpId pulumi.StringInput `pulumi:"natIpId"`
 }
 
@@ -531,12 +531,12 @@ func (o GetNgwNatIpAddressOutput) ToGetNgwNatIpAddressOutputWithContext(ctx cont
 	return o
 }
 
-// 中转Ip地址。
+// Transit IP address
 func (o GetNgwNatIpAddressOutput) NatIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNgwNatIpAddress) string { return v.NatIpAddress }).(pulumi.StringOutput)
 }
 
-// 中转Ip id。
+// Transit IP ID
 func (o GetNgwNatIpAddressOutput) NatIpId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNgwNatIpAddress) string { return v.NatIpId }).(pulumi.StringOutput)
 }
@@ -562,9 +562,9 @@ func (o GetNgwNatIpAddressArrayOutput) Index(i pulumi.IntInput) GetNgwNatIpAddre
 }
 
 type GetNgwTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value string `pulumi:"value"`
 }
 
@@ -580,9 +580,9 @@ type GetNgwTagInput interface {
 }
 
 type GetNgwTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -637,12 +637,12 @@ func (o GetNgwTagOutput) ToGetNgwTagOutputWithContext(ctx context.Context) GetNg
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o GetNgwTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNgwTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value
 func (o GetNgwTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNgwTag) string { return v.Value }).(pulumi.StringOutput)
 }

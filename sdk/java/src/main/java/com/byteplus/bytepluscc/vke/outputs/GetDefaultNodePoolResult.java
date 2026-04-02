@@ -19,17 +19,17 @@ import java.util.Objects;
 @CustomType
 public final class GetDefaultNodePoolResult {
     /**
-     * @return 节点池伸缩策略配置。
+     * @return Node pool scaling policy configuration
      * 
      */
     private GetDefaultNodePoolAutoScaling autoScaling;
     /**
-     * @return 节点池所在集群的 ID。
+     * @return Cluster ID where the node pool is located
      * 
      */
     private String clusterId;
     /**
-     * @return 创建节点池的时间。
+     * @return Node pool creation time
      * 
      */
     private String createdTime;
@@ -39,68 +39,68 @@ public final class GetDefaultNodePoolResult {
      */
     private String id;
     /**
-     * @return 节点池 Kubernetes 相关配置。
+     * @return Kubernetes-related configuration for the node pool
      * 
      */
     private GetDefaultNodePoolKubernetesConfig kubernetesConfig;
     /**
-     * @return 托管节点池配置。
+     * @return Managed node pool configuration
      * 
      */
     private GetDefaultNodePoolManagement management;
     /**
-     * @return 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * @return Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
      * 
      */
     private String name;
     /**
-     * @return 节点池中云服务器（ECS）实例配置。
+     * @return Cloud server (ECS) instance configuration in the node pool
      * 
      */
     private GetDefaultNodePoolNodeConfig nodeConfig;
     /**
-     * @return 节点池 ID 。
+     * @return Node pool ID
      * 
      */
     private String nodePoolId;
     /**
-     * @return 节点池中的节点统计。
+     * @return Node statistics in the node pool.
      * 
      */
     private GetDefaultNodePoolNodeStatistics nodeStatistics;
     /**
-     * @return 节点池状态。
+     * @return Node pool status
      * 
      */
     private GetDefaultNodePoolStatus status;
     /**
-     * @return 节点池的标签信息
+     * @return Node pool tag information
      * 
      */
     private List<GetDefaultNodePoolTag> tags;
     /**
-     * @return 更新节点池的时间。
+     * @return Time when the node pool was updated
      * 
      */
     private String updatedTime;
 
     private GetDefaultNodePoolResult() {}
     /**
-     * @return 节点池伸缩策略配置。
+     * @return Node pool scaling policy configuration
      * 
      */
     public GetDefaultNodePoolAutoScaling autoScaling() {
         return this.autoScaling;
     }
     /**
-     * @return 节点池所在集群的 ID。
+     * @return Cluster ID where the node pool is located
      * 
      */
     public String clusterId() {
         return this.clusterId;
     }
     /**
-     * @return 创建节点池的时间。
+     * @return Node pool creation time
      * 
      */
     public String createdTime() {
@@ -114,63 +114,63 @@ public final class GetDefaultNodePoolResult {
         return this.id;
     }
     /**
-     * @return 节点池 Kubernetes 相关配置。
+     * @return Kubernetes-related configuration for the node pool
      * 
      */
     public GetDefaultNodePoolKubernetesConfig kubernetesConfig() {
         return this.kubernetesConfig;
     }
     /**
-     * @return 托管节点池配置。
+     * @return Managed node pool configuration
      * 
      */
     public GetDefaultNodePoolManagement management() {
         return this.management;
     }
     /**
-     * @return 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * @return Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 节点池中云服务器（ECS）实例配置。
+     * @return Cloud server (ECS) instance configuration in the node pool
      * 
      */
     public GetDefaultNodePoolNodeConfig nodeConfig() {
         return this.nodeConfig;
     }
     /**
-     * @return 节点池 ID 。
+     * @return Node pool ID
      * 
      */
     public String nodePoolId() {
         return this.nodePoolId;
     }
     /**
-     * @return 节点池中的节点统计。
+     * @return Node statistics in the node pool.
      * 
      */
     public GetDefaultNodePoolNodeStatistics nodeStatistics() {
         return this.nodeStatistics;
     }
     /**
-     * @return 节点池状态。
+     * @return Node pool status
      * 
      */
     public GetDefaultNodePoolStatus status() {
         return this.status;
     }
     /**
-     * @return 节点池的标签信息
+     * @return Node pool tag information
      * 
      */
     public List<GetDefaultNodePoolTag> tags() {
         return this.tags;
     }
     /**
-     * @return 更新节点池的时间。
+     * @return Time when the node pool was updated
      * 
      */
     public String updatedTime() {

@@ -30,27 +30,27 @@ type LookupKeypairArgs struct {
 
 // A collection of values returned by getKeypair.
 type LookupKeypairResult struct {
-	// 密钥对创建时间。
+	// Creation time of the key pair.
 	CreatedTime string `pulumi:"createdTime"`
-	// 密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
+	// Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period ('.'), space, underscore ('_'), hyphen ('-'), equals sign ('='), English comma (','), Chinese comma ('，'), and Chinese period ('。'). Length must not exceed 255 characters.
 	Description string `pulumi:"description"`
-	// 密钥对的指纹。根据RFC4716定义的公钥指纹格式，采用MD5信息摘要算法。
+	// Fingerprint of the key pair. The public key fingerprint format is defined by RFC4716 and uses the MD5 hash algorithm.
 	FingerPrint string `pulumi:"fingerPrint"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 操作的实例ID。
+	// Instance ID for the operation.
 	InstanceIds []string `pulumi:"instanceIds"`
-	// 密钥对唯一ID。
+	// Unique ID of the key pair.
 	KeyPairId string `pulumi:"keyPairId"`
-	// 密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
+	// Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
 	KeyPairName string `pulumi:"keyPairName"`
-	// 资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+	// Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
 	ProjectName string `pulumi:"projectName"`
-	// 密钥对的公钥信息。
+	// Public key information of the key pair.
 	PublicKey string `pulumi:"publicKey"`
-	// 密钥对的标签。
+	// Tags of the key pair.
 	Tags []GetKeypairTag `pulumi:"tags"`
-	// 密钥对更新时间。
+	// Update time of the key pair.
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -88,17 +88,17 @@ func (o LookupKeypairResultOutput) ToLookupKeypairResultOutputWithContext(ctx co
 	return o
 }
 
-// 密钥对创建时间。
+// Creation time of the key pair.
 func (o LookupKeypairResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeypairResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
+// Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period ('.'), space, underscore ('_'), hyphen ('-'), equals sign ('='), English comma (','), Chinese comma ('，'), and Chinese period ('。'). Length must not exceed 255 characters.
 func (o LookupKeypairResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeypairResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 密钥对的指纹。根据RFC4716定义的公钥指纹格式，采用MD5信息摘要算法。
+// Fingerprint of the key pair. The public key fingerprint format is defined by RFC4716 and uses the MD5 hash algorithm.
 func (o LookupKeypairResultOutput) FingerPrint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeypairResult) string { return v.FingerPrint }).(pulumi.StringOutput)
 }
@@ -108,37 +108,37 @@ func (o LookupKeypairResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeypairResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 操作的实例ID。
+// Instance ID for the operation.
 func (o LookupKeypairResultOutput) InstanceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupKeypairResult) []string { return v.InstanceIds }).(pulumi.StringArrayOutput)
 }
 
-// 密钥对唯一ID。
+// Unique ID of the key pair.
 func (o LookupKeypairResultOutput) KeyPairId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeypairResult) string { return v.KeyPairId }).(pulumi.StringOutput)
 }
 
-// 密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
+// Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
 func (o LookupKeypairResultOutput) KeyPairName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeypairResult) string { return v.KeyPairName }).(pulumi.StringOutput)
 }
 
-// 资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+// Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
 func (o LookupKeypairResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeypairResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 密钥对的公钥信息。
+// Public key information of the key pair.
 func (o LookupKeypairResultOutput) PublicKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeypairResult) string { return v.PublicKey }).(pulumi.StringOutput)
 }
 
-// 密钥对的标签。
+// Tags of the key pair.
 func (o LookupKeypairResultOutput) Tags() GetKeypairTagArrayOutput {
 	return o.ApplyT(func(v LookupKeypairResult) []GetKeypairTag { return v.Tags }).(GetKeypairTagArrayOutput)
 }
 
-// 密钥对更新时间。
+// Update time of the key pair.
 func (o LookupKeypairResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeypairResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

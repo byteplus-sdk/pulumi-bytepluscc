@@ -14,32 +14,32 @@ import java.util.Objects;
 @CustomType
 public final class GetCertificateResult {
     /**
-     * @return 证书的ID。
+     * @return Certificate ID.
      * 
      */
     private String certificateId;
     /**
-     * @return 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+     * @return Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
      * 
      */
     private String certificateName;
     /**
-     * @return 证书的创建时间。
+     * @return Certificate creation time.
      * 
      */
     private String createdTime;
     /**
-     * @return 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * @return Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
      * 
      */
     private String description;
     /**
-     * @return 证书的主域名。
+     * @return Certificate primary domain name.
      * 
      */
     private String domainName;
     /**
-     * @return 证书的过期时间。
+     * @return Certificate expiration time.
      * 
      */
     private String expiredAt;
@@ -49,79 +49,79 @@ public final class GetCertificateResult {
      */
     private String id;
     /**
-     * @return 证书关联的监听器的ID。
+     * @return ID of the listener associated with the certificate.
      * 
      */
     private List<String> listeners;
     /**
-     * @return 证书的私钥。
+     * @return Certificate private key.
      * 
      */
     private String privateKey;
     /**
-     * @return 证书所属项目的名称。不填默认为default。
+     * @return Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
      * 
      */
     private String projectName;
     /**
-     * @return 证书的公钥。
+     * @return Certificate public key.
      * 
      */
     private String publicKey;
     /**
-     * @return 是否为托管资源。true：托管资源。false：非托管资源。
+     * @return Managed resource status. true: managed resource. false: unmanaged resource.
      * 
      */
     private Boolean serviceManaged;
     /**
-     * @return 证书的备用域名列表。
+     * @return List of alternate domain names for the certificate.
      * 
      */
     private List<String> subjectAlternativeNames;
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     private List<GetCertificateTag> tags;
 
     private GetCertificateResult() {}
     /**
-     * @return 证书的ID。
+     * @return Certificate ID.
      * 
      */
     public String certificateId() {
         return this.certificateId;
     }
     /**
-     * @return 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+     * @return Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
      * 
      */
     public String certificateName() {
         return this.certificateName;
     }
     /**
-     * @return 证书的创建时间。
+     * @return Certificate creation time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * @return Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 证书的主域名。
+     * @return Certificate primary domain name.
      * 
      */
     public String domainName() {
         return this.domainName;
     }
     /**
-     * @return 证书的过期时间。
+     * @return Certificate expiration time.
      * 
      */
     public String expiredAt() {
@@ -135,49 +135,49 @@ public final class GetCertificateResult {
         return this.id;
     }
     /**
-     * @return 证书关联的监听器的ID。
+     * @return ID of the listener associated with the certificate.
      * 
      */
     public List<String> listeners() {
         return this.listeners;
     }
     /**
-     * @return 证书的私钥。
+     * @return Certificate private key.
      * 
      */
     public String privateKey() {
         return this.privateKey;
     }
     /**
-     * @return 证书所属项目的名称。不填默认为default。
+     * @return Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 证书的公钥。
+     * @return Certificate public key.
      * 
      */
     public String publicKey() {
         return this.publicKey;
     }
     /**
-     * @return 是否为托管资源。true：托管资源。false：非托管资源。
+     * @return Managed resource status. true: managed resource. false: unmanaged resource.
      * 
      */
     public Boolean serviceManaged() {
         return this.serviceManaged;
     }
     /**
-     * @return 证书的备用域名列表。
+     * @return List of alternate domain names for the certificate.
      * 
      */
     public List<String> subjectAlternativeNames() {
         return this.subjectAlternativeNames;
     }
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     public List<GetCertificateTag> tags() {

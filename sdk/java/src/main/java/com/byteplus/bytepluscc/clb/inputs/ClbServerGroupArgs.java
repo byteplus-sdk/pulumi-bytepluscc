@@ -16,14 +16,14 @@ public final class ClbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     public static final ClbServerGroupArgs Empty = new ClbServerGroupArgs();
 
     /**
-     * 负载均衡实例中后端服务器组的ID。
+     * ID of the backend server group in the load balancer instance
      * 
      */
     @Import(name="serverGroupId")
     private @Nullable Output<String> serverGroupId;
 
     /**
-     * @return 负载均衡实例中后端服务器组的ID。
+     * @return ID of the backend server group in the load balancer instance
      * 
      */
     public Optional<Output<String>> serverGroupId() {
@@ -31,14 +31,14 @@ public final class ClbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 负载均衡实例中后端服务器组的名称。
+     * Name of the backend server group in the load balancer instance
      * 
      */
     @Import(name="serverGroupName")
     private @Nullable Output<String> serverGroupName;
 
     /**
-     * @return 负载均衡实例中后端服务器组的名称。
+     * @return Name of the backend server group in the load balancer instance
      * 
      */
     public Optional<Output<String>> serverGroupName() {
@@ -71,7 +71,7 @@ public final class ClbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serverGroupId 负载均衡实例中后端服务器组的ID。
+         * @param serverGroupId ID of the backend server group in the load balancer instance
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ClbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serverGroupId 负载均衡实例中后端服务器组的ID。
+         * @param serverGroupId ID of the backend server group in the load balancer instance
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ClbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serverGroupName 负载均衡实例中后端服务器组的名称。
+         * @param serverGroupName Name of the backend server group in the load balancer instance
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ClbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serverGroupName 负载均衡实例中后端服务器组的名称。
+         * @param serverGroupName Name of the backend server group in the load balancer instance
          * 
          * @return builder
          * 

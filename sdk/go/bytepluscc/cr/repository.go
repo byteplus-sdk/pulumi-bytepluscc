@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// OCI 制品仓库用于存储容器镜像或 Helm Chart 等，符合开源容器标准的 OCI（Open Container Initiative） 制品。
+// The OCI artifact repository is used to store container images, Helm Charts, and other OCI (Open Container Initiative) artifacts that comply with open container standards.
 //
 // ## Example Usage
 //
@@ -52,19 +52,19 @@ import (
 type Repository struct {
 	pulumi.CustomResourceState
 
-	// 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+	// Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
 	AccessLevel pulumi.StringOutput `pulumi:"accessLevel"`
-	// 创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+	// Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
 	CreateTime pulumi.StringOutput `pulumi:"createTime"`
-	// 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+	// Image repository description, with a length of 0–300 UTF-8 characters.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+	// OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+	// Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
-	// 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+	// Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
 	Registry pulumi.StringOutput `pulumi:"registry"`
-	// 最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+	// Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
 	UpdateTime pulumi.StringOutput `pulumi:"updateTime"`
 }
 
@@ -107,36 +107,36 @@ func GetRepository(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Repository resources.
 type repositoryState struct {
-	// 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+	// Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
 	AccessLevel *string `pulumi:"accessLevel"`
-	// 创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+	// Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
 	CreateTime *string `pulumi:"createTime"`
-	// 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+	// Image repository description, with a length of 0–300 UTF-8 characters.
 	Description *string `pulumi:"description"`
-	// OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+	// OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
 	Name *string `pulumi:"name"`
-	// 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+	// Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
 	Namespace *string `pulumi:"namespace"`
-	// 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+	// Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
 	Registry *string `pulumi:"registry"`
-	// 最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+	// Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
 	UpdateTime *string `pulumi:"updateTime"`
 }
 
 type RepositoryState struct {
-	// 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+	// Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
 	AccessLevel pulumi.StringPtrInput
-	// 创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+	// Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
 	CreateTime pulumi.StringPtrInput
-	// 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+	// Image repository description, with a length of 0–300 UTF-8 characters.
 	Description pulumi.StringPtrInput
-	// OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+	// OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
 	Name pulumi.StringPtrInput
-	// 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+	// Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
 	Namespace pulumi.StringPtrInput
-	// 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+	// Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
 	Registry pulumi.StringPtrInput
-	// 最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+	// Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
 	UpdateTime pulumi.StringPtrInput
 }
 
@@ -145,29 +145,29 @@ func (RepositoryState) ElementType() reflect.Type {
 }
 
 type repositoryArgs struct {
-	// 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+	// Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
 	AccessLevel *string `pulumi:"accessLevel"`
-	// 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+	// Image repository description, with a length of 0–300 UTF-8 characters.
 	Description *string `pulumi:"description"`
-	// OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+	// OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
 	Name string `pulumi:"name"`
-	// 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+	// Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
 	Namespace string `pulumi:"namespace"`
-	// 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+	// Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
 	Registry string `pulumi:"registry"`
 }
 
 // The set of arguments for constructing a Repository resource.
 type RepositoryArgs struct {
-	// 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+	// Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
 	AccessLevel pulumi.StringPtrInput
-	// 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+	// Image repository description, with a length of 0–300 UTF-8 characters.
 	Description pulumi.StringPtrInput
-	// OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+	// OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
 	Name pulumi.StringInput
-	// 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+	// Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
 	Namespace pulumi.StringInput
-	// 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+	// Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
 	Registry pulumi.StringInput
 }
 
@@ -258,37 +258,37 @@ func (o RepositoryOutput) ToRepositoryOutputWithContext(ctx context.Context) Rep
 	return o
 }
 
-// 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+// Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
 func (o RepositoryOutput) AccessLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.AccessLevel }).(pulumi.StringOutput)
 }
 
-// 创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+// Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
 func (o RepositoryOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+// Image repository description, with a length of 0–300 UTF-8 characters.
 func (o RepositoryOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+// OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
 func (o RepositoryOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+// Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
 func (o RepositoryOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+// Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
 func (o RepositoryOutput) Registry() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.Registry }).(pulumi.StringOutput)
 }
 
-// 最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+// Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
 func (o RepositoryOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.UpdateTime }).(pulumi.StringOutput)
 }

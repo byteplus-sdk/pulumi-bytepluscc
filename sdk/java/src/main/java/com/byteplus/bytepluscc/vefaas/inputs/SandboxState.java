@@ -23,14 +23,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     public static final SandboxState Empty = new SandboxState();
 
     /**
-     * 沙箱实例所在可用区 ID。
+     * Availability zone ID of the sandbox instance
      * 
      */
     @Import(name="availabilityZone")
     private @Nullable Output<String> availabilityZone;
 
     /**
-     * @return 沙箱实例所在可用区 ID。
+     * @return Availability zone ID of the sandbox instance
      * 
      */
     public Optional<Output<String>> availabilityZone() {
@@ -38,14 +38,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+     * Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
      * 
      */
     @Import(name="cpuMilli")
     private @Nullable Output<Integer> cpuMilli;
 
     /**
-     * @return 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+     * @return Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
      * 
      */
     public Optional<Output<Integer>> cpuMilli() {
@@ -53,14 +53,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例创建时间。
+     * Sandbox instance creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 沙箱实例创建时间。
+     * @return Sandbox instance creation time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -75,14 +75,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+     * Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
      * 
      */
     @Import(name="errorCode")
     private @Nullable Output<String> errorCode;
 
     /**
-     * @return 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+     * @return Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
      * 
      */
     public Optional<Output<String>> errorCode() {
@@ -90,14 +90,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+     * Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
      * 
      */
     @Import(name="errorMessage")
     private @Nullable Output<String> errorMessage;
 
     /**
-     * @return 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+     * @return Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
      * 
      */
     public Optional<Output<String>> errorMessage() {
@@ -105,14 +105,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例存活时长。
+     * Sandbox instance uptime.
      * 
      */
     @Import(name="expireAt")
     private @Nullable Output<String> expireAt;
 
     /**
-     * @return 沙箱实例存活时长。
+     * @return Sandbox instance uptime.
      * 
      */
     public Optional<Output<String>> expireAt() {
@@ -120,14 +120,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例所属的沙箱应用 ID。
+     * Sandbox application ID to which the sandbox instance belongs
      * 
      */
     @Import(name="functionId")
     private @Nullable Output<String> functionId;
 
     /**
-     * @return 沙箱实例所属的沙箱应用 ID。
+     * @return Sandbox application ID to which the sandbox instance belongs
      * 
      */
     public Optional<Output<String>> functionId() {
@@ -135,14 +135,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+     * Sandbox instance image information, including image address, startup command, and listening port.
      * 
      */
     @Import(name="instanceImageInfo")
     private @Nullable Output<SandboxInstanceImageInfoArgs> instanceImageInfo;
 
     /**
-     * @return 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+     * @return Sandbox instance image information, including image address, startup command, and listening port.
      * 
      */
     public Optional<Output<SandboxInstanceImageInfoArgs>> instanceImageInfo() {
@@ -150,14 +150,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例级别对象存储（TOS）存储挂载配置。
+     * Instance-level object storage (TOS) mount configuration for the sandbox instance
      * 
      */
     @Import(name="instanceTosMountConfig")
     private @Nullable Output<SandboxInstanceTosMountConfigArgs> instanceTosMountConfig;
 
     /**
-     * @return 沙箱实例级别对象存储（TOS）存储挂载配置。
+     * @return Instance-level object storage (TOS) mount configuration for the sandbox instance
      * 
      */
     public Optional<Output<SandboxInstanceTosMountConfigArgs>> instanceTosMountConfig() {
@@ -165,14 +165,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+     * Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
-     * @return 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+     * @return Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
      * 
      */
     public Optional<Output<String>> instanceType() {
@@ -180,14 +180,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+     * Maximum concurrent requests per instance: range: 10~1000, default: 100
      * 
      */
     @Import(name="maxConcurrency")
     private @Nullable Output<Integer> maxConcurrency;
 
     /**
-     * @return 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+     * @return Maximum concurrent requests per instance: range: 10~1000, default: 100
      * 
      */
     public Optional<Output<Integer>> maxConcurrency() {
@@ -195,14 +195,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+     * Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
      * 
      */
     @Import(name="memoryMb")
     private @Nullable Output<Integer> memoryMb;
 
     /**
-     * @return 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+     * @return Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
      * 
      */
     public Optional<Output<Integer>> memoryMb() {
@@ -217,14 +217,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+     * Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
      * 
      */
     @Import(name="pending")
     private @Nullable Output<Boolean> pending;
 
     /**
-     * @return 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+     * @return Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
      * 
      */
     public Optional<Output<Boolean>> pending() {
@@ -232,14 +232,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+     * Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
      * 
      */
     @Import(name="requestTimeout")
     private @Nullable Output<Integer> requestTimeout;
 
     /**
-     * @return 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+     * @return Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
      * 
      */
     public Optional<Output<Integer>> requestTimeout() {
@@ -247,14 +247,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 函数实例版本编号。
+     * Function instance version number
      * 
      */
     @Import(name="revisionNumber")
     private @Nullable Output<Integer> revisionNumber;
 
     /**
-     * @return 函数实例版本编号。
+     * @return Function instance version number
      * 
      */
     public Optional<Output<Integer>> revisionNumber() {
@@ -262,14 +262,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例 ID。
+     * Sandbox instance ID
      * 
      */
     @Import(name="sandboxId")
     private @Nullable Output<String> sandboxId;
 
     /**
-     * @return 沙箱实例 ID。
+     * @return Sandbox instance ID
      * 
      */
     public Optional<Output<String>> sandboxId() {
@@ -277,14 +277,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+     * Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+     * @return Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
      * 
      */
     public Optional<Output<String>> status() {
@@ -292,14 +292,14 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+     * Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
      * 
      */
     @Import(name="timeout")
     private @Nullable Output<Integer> timeout;
 
     /**
-     * @return 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+     * @return Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
      * 
      */
     public Optional<Output<Integer>> timeout() {
@@ -350,7 +350,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availabilityZone 沙箱实例所在可用区 ID。
+         * @param availabilityZone Availability zone ID of the sandbox instance
          * 
          * @return builder
          * 
@@ -361,7 +361,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availabilityZone 沙箱实例所在可用区 ID。
+         * @param availabilityZone Availability zone ID of the sandbox instance
          * 
          * @return builder
          * 
@@ -371,7 +371,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cpuMilli 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+         * @param cpuMilli Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cpuMilli 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+         * @param cpuMilli Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
          * 
          * @return builder
          * 
@@ -392,7 +392,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 沙箱实例创建时间。
+         * @param createdTime Sandbox instance creation time.
          * 
          * @return builder
          * 
@@ -403,7 +403,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 沙箱实例创建时间。
+         * @param createdTime Sandbox instance creation time.
          * 
          * @return builder
          * 
@@ -426,7 +426,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param errorCode 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+         * @param errorCode Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
          * 
          * @return builder
          * 
@@ -437,7 +437,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param errorCode 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+         * @param errorCode Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
          * 
          * @return builder
          * 
@@ -447,7 +447,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param errorMessage 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+         * @param errorMessage Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
          * 
          * @return builder
          * 
@@ -458,7 +458,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param errorMessage 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+         * @param errorMessage Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
          * 
          * @return builder
          * 
@@ -468,7 +468,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expireAt 沙箱实例存活时长。
+         * @param expireAt Sandbox instance uptime.
          * 
          * @return builder
          * 
@@ -479,7 +479,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expireAt 沙箱实例存活时长。
+         * @param expireAt Sandbox instance uptime.
          * 
          * @return builder
          * 
@@ -489,7 +489,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param functionId 沙箱实例所属的沙箱应用 ID。
+         * @param functionId Sandbox application ID to which the sandbox instance belongs
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param functionId 沙箱实例所属的沙箱应用 ID。
+         * @param functionId Sandbox application ID to which the sandbox instance belongs
          * 
          * @return builder
          * 
@@ -510,7 +510,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceImageInfo 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+         * @param instanceImageInfo Sandbox instance image information, including image address, startup command, and listening port.
          * 
          * @return builder
          * 
@@ -521,7 +521,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceImageInfo 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+         * @param instanceImageInfo Sandbox instance image information, including image address, startup command, and listening port.
          * 
          * @return builder
          * 
@@ -531,7 +531,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceTosMountConfig 沙箱实例级别对象存储（TOS）存储挂载配置。
+         * @param instanceTosMountConfig Instance-level object storage (TOS) mount configuration for the sandbox instance
          * 
          * @return builder
          * 
@@ -542,7 +542,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceTosMountConfig 沙箱实例级别对象存储（TOS）存储挂载配置。
+         * @param instanceTosMountConfig Instance-level object storage (TOS) mount configuration for the sandbox instance
          * 
          * @return builder
          * 
@@ -552,7 +552,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+         * @param instanceType Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
          * 
          * @return builder
          * 
@@ -563,7 +563,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+         * @param instanceType Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
          * 
          * @return builder
          * 
@@ -573,7 +573,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxConcurrency 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+         * @param maxConcurrency Maximum concurrent requests per instance: range: 10~1000, default: 100
          * 
          * @return builder
          * 
@@ -584,7 +584,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxConcurrency 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+         * @param maxConcurrency Maximum concurrent requests per instance: range: 10~1000, default: 100
          * 
          * @return builder
          * 
@@ -594,7 +594,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param memoryMb 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+         * @param memoryMb Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
          * 
          * @return builder
          * 
@@ -605,7 +605,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param memoryMb 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+         * @param memoryMb Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
          * 
          * @return builder
          * 
@@ -628,7 +628,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param pending 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+         * @param pending Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
          * 
          * @return builder
          * 
@@ -639,7 +639,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param pending 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+         * @param pending Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
          * 
          * @return builder
          * 
@@ -649,7 +649,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param requestTimeout 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+         * @param requestTimeout Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
          * 
          * @return builder
          * 
@@ -660,7 +660,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param requestTimeout 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+         * @param requestTimeout Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
          * 
          * @return builder
          * 
@@ -670,7 +670,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param revisionNumber 函数实例版本编号。
+         * @param revisionNumber Function instance version number
          * 
          * @return builder
          * 
@@ -681,7 +681,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param revisionNumber 函数实例版本编号。
+         * @param revisionNumber Function instance version number
          * 
          * @return builder
          * 
@@ -691,7 +691,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sandboxId 沙箱实例 ID。
+         * @param sandboxId Sandbox instance ID
          * 
          * @return builder
          * 
@@ -702,7 +702,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sandboxId 沙箱实例 ID。
+         * @param sandboxId Sandbox instance ID
          * 
          * @return builder
          * 
@@ -712,7 +712,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+         * @param status Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
          * 
          * @return builder
          * 
@@ -723,7 +723,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+         * @param status Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
          * 
          * @return builder
          * 
@@ -733,7 +733,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeout 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+         * @param timeout Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
          * 
          * @return builder
          * 
@@ -744,7 +744,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeout 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+         * @param timeout Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
          * 
          * @return builder
          * 

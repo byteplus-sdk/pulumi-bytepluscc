@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Iam
 {
     /// <summary>
-    /// 用户组是用户的集合。当用户组被关联上策略后，同一用户组里的所有用户会拥有对应的策略权限，同一个用户可存在于多个用户组中，可同时拥有多个用户组的权限。
+    /// A user group is a collection of users. When a user group is associated with a policy, all users in the group gain the corresponding policy permissions. A user can belong to multiple user groups and have permissions from each group.
     /// 
     /// ## Import
     /// 
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public partial class Group : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 用户组所属主账号的ID。
+        /// ID of the primary account to which the user group belongs.
         /// </summary>
         [Output("accountId")]
         public Output<int> AccountId { get; private set; } = null!;
@@ -32,37 +32,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         public Output<ImmutableArray<Outputs.GroupAttachedPolicy>> AttachedPolicies { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组的创建时间。
+        /// User group creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组描述信息。长度不超过128。
+        /// User group description. Maximum length: 128 characters.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组显示名称。长度不超过64。
+        /// User group display name. Maximum length: 64 characters.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组的更新时间。
+        /// User group update time.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组ID。
+        /// User group ID.
         /// </summary>
         [Output("userGroupId")]
         public Output<int> UserGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组名称。长度1~64，支持英文、数字和.-_符号。
+        /// User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
         /// </summary>
         [Output("userGroupName")]
         public Output<string> UserGroupName { get; private set; } = null!;
@@ -126,19 +126,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         }
 
         /// <summary>
-        /// 用户组描述信息。长度不超过128。
+        /// User group description. Maximum length: 128 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 用户组显示名称。长度不超过64。
+        /// User group display name. Maximum length: 64 characters.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// 用户组名称。长度1~64，支持英文、数字和.-_符号。
+        /// User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
         /// </summary>
         [Input("userGroupName", required: true)]
         public Input<string> UserGroupName { get; set; } = null!;
@@ -160,7 +160,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public sealed class GroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 用户组所属主账号的ID。
+        /// ID of the primary account to which the user group belongs.
         /// </summary>
         [Input("accountId")]
         public Input<int>? AccountId { get; set; }
@@ -174,37 +174,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         }
 
         /// <summary>
-        /// 用户组的创建时间。
+        /// User group creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 用户组描述信息。长度不超过128。
+        /// User group description. Maximum length: 128 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 用户组显示名称。长度不超过64。
+        /// User group display name. Maximum length: 64 characters.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// 用户组的更新时间。
+        /// User group update time.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 用户组ID。
+        /// User group ID.
         /// </summary>
         [Input("userGroupId")]
         public Input<int>? UserGroupId { get; set; }
 
         /// <summary>
-        /// 用户组名称。长度1~64，支持英文、数字和.-_符号。
+        /// User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
         /// </summary>
         [Input("userGroupName")]
         public Input<string>? UserGroupName { get; set; }

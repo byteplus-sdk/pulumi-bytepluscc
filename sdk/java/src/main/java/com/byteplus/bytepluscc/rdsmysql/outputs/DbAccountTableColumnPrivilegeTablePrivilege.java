@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbAccountTableColumnPrivilegeTablePrivilege {
     /**
-     * @return 账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+     * @return Account table permissions. Value options (multiple selections allowed): ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, SHOW, VIEW, TRIGGER, UPDATE, CREATE VIEW, REFERENCES. Note: Use commas (,) to separate multiple permissions.
      * 
      */
     private @Nullable List<String> accountPrivilegeDetails;
     /**
-     * @return 对账号进行权限设置的表的名称。
+     * @return Name of the table for setting permissions for the account.
      * 
      */
     private @Nullable String tableName;
 
     private DbAccountTableColumnPrivilegeTablePrivilege() {}
     /**
-     * @return 账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+     * @return Account table permissions. Value options (multiple selections allowed): ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, SHOW, VIEW, TRIGGER, UPDATE, CREATE VIEW, REFERENCES. Note: Use commas (,) to separate multiple permissions.
      * 
      */
     public List<String> accountPrivilegeDetails() {
         return this.accountPrivilegeDetails == null ? List.of() : this.accountPrivilegeDetails;
     }
     /**
-     * @return 对账号进行权限设置的表的名称。
+     * @return Name of the table for setting permissions for the account.
      * 
      */
     public Optional<String> tableName() {

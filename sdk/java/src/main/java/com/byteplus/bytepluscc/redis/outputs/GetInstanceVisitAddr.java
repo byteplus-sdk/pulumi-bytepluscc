@@ -11,74 +11,74 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceVisitAddr {
     /**
-     * @return 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+     * @return Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
      * 
      */
     private String addrType;
     /**
-     * @return IP 地址或者域名。
+     * @return IP address or domain name.
      * 
      */
     private String address;
     /**
-     * @return 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+     * @return EIP ID bound to the instance&#39;s public address. This parameter is returned only when the connection address type (AddrType) is Public.
      * 
      */
     private String eipId;
     /**
-     * @return 端口号。
+     * @return Port number.
      * 
      */
     private String port;
     /**
-     * @return 连接地址所对应的 IPv6 地址。
+     * @return IPv6 address corresponding to the connection address.
      * 
      */
     private String viPv6;
     /**
-     * @return 连接地址所对应的 IPv4 地址。
+     * @return The IPv4 address corresponding to the connection address.
      * 
      */
     private String vip;
 
     private GetInstanceVisitAddr() {}
     /**
-     * @return 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+     * @return Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
      * 
      */
     public String addrType() {
         return this.addrType;
     }
     /**
-     * @return IP 地址或者域名。
+     * @return IP address or domain name.
      * 
      */
     public String address() {
         return this.address;
     }
     /**
-     * @return 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+     * @return EIP ID bound to the instance&#39;s public address. This parameter is returned only when the connection address type (AddrType) is Public.
      * 
      */
     public String eipId() {
         return this.eipId;
     }
     /**
-     * @return 端口号。
+     * @return Port number.
      * 
      */
     public String port() {
         return this.port;
     }
     /**
-     * @return 连接地址所对应的 IPv6 地址。
+     * @return IPv6 address corresponding to the connection address.
      * 
      */
     public String viPv6() {
         return this.viPv6;
     }
     /**
-     * @return 连接地址所对应的 IPv4 地址。
+     * @return The IPv4 address corresponding to the connection address.
      * 
      */
     public String vip() {

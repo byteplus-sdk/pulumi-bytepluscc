@@ -16,14 +16,14 @@ public final class ListenerServerGroupArgs extends com.pulumi.resources.Resource
     public static final ListenerServerGroupArgs Empty = new ListenerServerGroupArgs();
 
     /**
-     * 服务器组 ID 。
+     * Server group ID.
      * 
      */
     @Import(name="serverGroupId")
     private @Nullable Output<String> serverGroupId;
 
     /**
-     * @return 服务器组 ID 。
+     * @return Server group ID.
      * 
      */
     public Optional<Output<String>> serverGroupId() {
@@ -31,14 +31,14 @@ public final class ListenerServerGroupArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 服务器组名称。
+     * Server group name.
      * 
      */
     @Import(name="serverGroupName")
     private @Nullable Output<String> serverGroupName;
 
     /**
-     * @return 服务器组名称。
+     * @return Server group name.
      * 
      */
     public Optional<Output<String>> serverGroupName() {
@@ -71,7 +71,7 @@ public final class ListenerServerGroupArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param serverGroupId 服务器组 ID 。
+         * @param serverGroupId Server group ID.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ListenerServerGroupArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param serverGroupId 服务器组 ID 。
+         * @param serverGroupId Server group ID.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ListenerServerGroupArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param serverGroupName 服务器组名称。
+         * @param serverGroupName Server group name.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ListenerServerGroupArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param serverGroupName 服务器组名称。
+         * @param serverGroupName Server group name.
          * 
          * @return builder
          * 

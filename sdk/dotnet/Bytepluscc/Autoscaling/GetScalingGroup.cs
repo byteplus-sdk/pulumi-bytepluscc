@@ -65,27 +65,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
     public sealed class GetScalingGroupResult
     {
         /// <summary>
-        /// 伸缩组绑定的伸缩配置的ID。
+        /// ID of the scaling configuration bound to the scaling group
         /// </summary>
         public readonly string ActiveScalingConfigurationId;
         /// <summary>
-        /// 伸缩组创建时间。
+        /// Scaling group creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// RDS数据库实例的ID。
+        /// ID of the RDS database instance.
         /// </summary>
         public readonly ImmutableArray<string> DbInstanceIds;
         /// <summary>
-        /// 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+        /// Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
         /// </summary>
         public readonly int DefaultCooldown;
         /// <summary>
-        /// 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+        /// Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
         /// </summary>
         public readonly int DesireInstanceNumber;
         /// <summary>
-        /// 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
+        /// Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
         /// </summary>
         public readonly string HealthCheckType;
         /// <summary>
@@ -93,95 +93,103 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
+        /// Instance removal policy
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetScalingGroupInstanceRemovePolicyResult> InstanceRemovePolicies;
+        /// <summary>
+        /// Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
         /// </summary>
         public readonly string InstanceTerminatePolicy;
         /// <summary>
-        /// 实例分布策略。
+        /// Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetScalingGroupInstanceResult> Instances;
+        /// <summary>
+        /// Instance distribution policy.
         /// </summary>
         public readonly Outputs.GetScalingGroupInstancesDistributionResult InstancesDistribution;
         /// <summary>
-        /// 是否启用伸缩组。true：启用。false：停止
+        /// Whether to enable the scaling group. true: enabled. false: stopped
         /// </summary>
         public readonly bool IsEnableScalingGroup;
         /// <summary>
-        /// 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+        /// Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
         /// </summary>
         public readonly string LaunchTemplateId;
         /// <summary>
-        /// 实例启动模版信息。
+        /// Instance launch template information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetScalingGroupLaunchTemplateOverrideResult> LaunchTemplateOverrides;
         /// <summary>
-        /// 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+        /// Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
         /// </summary>
         public readonly string LaunchTemplateVersion;
         /// <summary>
-        /// 伸缩组的状态。Active：已启用。InActive：未激活。Deleting：删除中。Locked: 已锁定。CoolingDown: 冷却中。Unknown: 未知状态。
+        /// Status of the scaling group. Active: enabled. InActive: not activated. Deleting: deleting. Locked: locked. CoolingDown: cooling down. Unknown: unknown status.
         /// </summary>
         public readonly string LifecycleState;
         /// <summary>
-        /// 伸缩组实例CLB健康状况检查宽限期。
+        /// Grace period for CLB health checks on scaling group instances
         /// </summary>
         public readonly int LoadBalancerHealthCheckGracePeriod;
         /// <summary>
-        /// 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+        /// Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
         /// </summary>
         public readonly int MaxInstanceNumber;
         /// <summary>
-        /// 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+        /// Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
         /// </summary>
         public readonly int MinInstanceNumber;
         /// <summary>
-        /// 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+        /// Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
         /// </summary>
         public readonly string MultiAzPolicy;
         /// <summary>
-        /// 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        /// Project to which the scaling group belongs. Default is 'default'. A resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length: 64 characters.
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 伸缩组ID。
+        /// Scaling group ID.
         /// </summary>
         public readonly string ScalingGroupId;
         /// <summary>
-        /// 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+        /// Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
         /// </summary>
         public readonly string ScalingGroupName;
         /// <summary>
-        /// 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+        /// Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
         /// </summary>
         public readonly string ScalingMode;
         /// <summary>
-        /// 伸缩组关联的负载均衡信息。
+        /// Load balancer information associated with the scaling group.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetScalingGroupServerGroupAttributeResult> ServerGroupAttributes;
         /// <summary>
-        /// 伸缩组内处于停用中状态的实例数量。
+        /// Number of instances in the scaling group that are in the disabled state.
         /// </summary>
         public readonly int StoppedInstanceCount;
         /// <summary>
-        /// 伸缩组中实例主网卡的子网ID列表。
+        /// List of subnet IDs for the primary network interface of instances in the scaling group
         /// </summary>
         public readonly ImmutableArray<string> SubnetIds;
         /// <summary>
-        /// 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+        /// Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
         /// </summary>
         public readonly ImmutableArray<string> SuspendedProcesses;
         /// <summary>
-        /// 标签列表。
+        /// Tag list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetScalingGroupTagResult> Tags;
         /// <summary>
-        /// 当前伸缩组内实例的个数。
+        /// Number of instances currently in the scaling group
         /// </summary>
         public readonly int TotalInstanceCount;
         /// <summary>
-        /// 伸缩组更新时间。
+        /// Scaling group update time.
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// 伸缩组所属私有网络ID。
+        /// VPC ID to which the scaling group belongs
         /// </summary>
         public readonly string VpcId;
 
@@ -201,7 +209,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
 
             string id,
 
+            ImmutableArray<Outputs.GetScalingGroupInstanceRemovePolicyResult> instanceRemovePolicies,
+
             string instanceTerminatePolicy,
+
+            ImmutableArray<Outputs.GetScalingGroupInstanceResult> instances,
 
             Outputs.GetScalingGroupInstancesDistributionResult instancesDistribution,
 
@@ -254,7 +266,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
             DesireInstanceNumber = desireInstanceNumber;
             HealthCheckType = healthCheckType;
             Id = id;
+            InstanceRemovePolicies = instanceRemovePolicies;
             InstanceTerminatePolicy = instanceTerminatePolicy;
+            Instances = instances;
             InstancesDistribution = instancesDistribution;
             IsEnableScalingGroup = isEnableScalingGroup;
             LaunchTemplateId = launchTemplateId;

@@ -13,122 +13,122 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceEndpointsOverlay {
     /**
-     * @return 域名映射地址。
+     * @return Domain mapping address
      * 
      */
     private String address;
     /**
-     * @return 实例绑定的EIP的ID。
+     * @return ID of the EIP bound to the instance
      * 
      */
     private String eipId;
     /**
-     * @return 私网Plain接入点。
+     * @return Private network Plain endpoint
      * 
      */
     private String plain;
     /**
-     * @return 普通接入点端口。
+     * @return Standard endpoint port
      * 
      */
     private Integer plainPort;
     /**
-     * @return 私网SASL认证接入点。
+     * @return Private network SASL authentication endpoint
      * 
      */
     private String sasl;
     /**
-     * @return 认证接入点端口。
+     * @return Authentication endpoint port
      * 
      */
     private Integer saslPort;
     /**
-     * @return 加密接入点。
+     * @return Encrypted endpoint
      * 
      */
     private String ssl;
     /**
-     * @return 加密接入点端口。
+     * @return Encrypted endpoint port
      * 
      */
     private Integer sslPort;
     /**
-     * @return 接入点状态。
+     * @return Endpoint status
      * 
      */
     private String status;
     /**
-     * @return 售卖区网络关联的VPC ID列表。
+     * @return List of VPC IDs associated with the sales zone network
      * 
      */
     private List<String> vpcIds;
 
     private GetInstanceEndpointsOverlay() {}
     /**
-     * @return 域名映射地址。
+     * @return Domain mapping address
      * 
      */
     public String address() {
         return this.address;
     }
     /**
-     * @return 实例绑定的EIP的ID。
+     * @return ID of the EIP bound to the instance
      * 
      */
     public String eipId() {
         return this.eipId;
     }
     /**
-     * @return 私网Plain接入点。
+     * @return Private network Plain endpoint
      * 
      */
     public String plain() {
         return this.plain;
     }
     /**
-     * @return 普通接入点端口。
+     * @return Standard endpoint port
      * 
      */
     public Integer plainPort() {
         return this.plainPort;
     }
     /**
-     * @return 私网SASL认证接入点。
+     * @return Private network SASL authentication endpoint
      * 
      */
     public String sasl() {
         return this.sasl;
     }
     /**
-     * @return 认证接入点端口。
+     * @return Authentication endpoint port
      * 
      */
     public Integer saslPort() {
         return this.saslPort;
     }
     /**
-     * @return 加密接入点。
+     * @return Encrypted endpoint
      * 
      */
     public String ssl() {
         return this.ssl;
     }
     /**
-     * @return 加密接入点端口。
+     * @return Encrypted endpoint port
      * 
      */
     public Integer sslPort() {
         return this.sslPort;
     }
     /**
-     * @return 接入点状态。
+     * @return Endpoint status
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 售卖区网络关联的VPC ID列表。
+     * @return List of VPC IDs associated with the sales zone network
      * 
      */
     public List<String> vpcIds() {

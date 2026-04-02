@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Hbase
 {
     /// <summary>
-    /// 表格数据库 HBase 版是基于 Apache HBase 提供的全托管 NoSQL 服务，兼容标准 HBase 访问协议，具备低成本存储、高扩展吞吐等优势。
+    /// Table Database HBase Edition is a fully managed NoSQL service based on Apache HBase, compatible with the standard HBase access protocol, offering advantages such as low-cost storage and high scalability throughput.
     /// 
     /// ## Example Usage
     /// 
@@ -68,49 +68,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Hbase
     public partial class Instance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+        /// Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
         /// </summary>
         [Output("autoRenew")]
         public Output<bool> AutoRenew { get; private set; } = null!;
 
         /// <summary>
-        /// 计费状态。取值：Normal：正常。Overdue：欠费。Shutdown：关停。
+        /// Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
         /// </summary>
         [Output("chargeStatus")]
         public Output<string> ChargeStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+        /// Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
         /// </summary>
         [Output("chargeType")]
         public Output<string> ChargeType { get; private set; } = null!;
 
         /// <summary>
-        /// 实例总容量型存储空间大小，单位 GiB。
+        /// Total capacity-type storage space for the instance, in GiB.
         /// </summary>
         [Output("coldStorage")]
         public Output<int> ColdStorage { get; private set; } = null!;
 
         /// <summary>
-        /// 实例创建时间（UTC 时间）。
+        /// Instance creation time (UTC).
         /// </summary>
         [Output("createTime")]
         public Output<string> CreateTime { get; private set; } = null!;
 
         /// <summary>
-        /// 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+        /// Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
         /// </summary>
         [Output("deletionProtection")]
         public Output<string> DeletionProtection { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+        /// Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
         /// </summary>
         [Output("enableAuth")]
         public Output<bool> EnableAuth { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+        /// Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
         /// </summary>
         [Output("enableCloudStorage")]
         public Output<bool> EnableCloudStorage { get; private set; } = null!;
@@ -119,121 +119,121 @@ namespace Byteplus.Pulumi.Bytepluscc.Hbase
         public Output<ImmutableArray<Outputs.InstanceEndpoint>> Endpoints { get; private set; } = null!;
 
         /// <summary>
-        /// HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+        /// HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
         /// </summary>
         [Output("engineVersion")]
         public Output<string> EngineVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例名称。
+        /// Instance name
         /// </summary>
         [Output("instanceName")]
         public Output<string> InstanceName { get; private set; } = null!;
 
         /// <summary>
-        /// 实例类型。当前仅支持标准型，取值默认为 Standard。
+        /// Instance type. Currently, only Standard is supported. The default value is Standard
         /// </summary>
         [Output("instanceType")]
         public Output<string> InstanceType { get; private set; } = null!;
 
         /// <summary>
-        /// Master 节点个数。单可用区部署，默认包含 2 个 Master 节点。
+        /// Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
         /// </summary>
         [Output("masterCount")]
         public Output<int> MasterCount { get; private set; } = null!;
 
         /// <summary>
-        /// Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+        /// Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
         /// </summary>
         [Output("masterSpec")]
         public Output<string> MasterSpec { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+        /// Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
         /// </summary>
         [Output("multiAz")]
         public Output<bool> MultiAz { get; private set; } = null!;
 
         /// <summary>
-        /// 实时主可用区子网 ID。
+        /// Real-time primary availability zone subnet ID.
         /// </summary>
         [Output("primarySubnetId")]
         public Output<string> PrimarySubnetId { get; private set; } = null!;
 
         /// <summary>
-        /// 实时主可用区 ID。
+        /// Real-time primary zone ID
         /// </summary>
         [Output("primaryZoneId")]
         public Output<string> PrimaryZoneId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所属的项目名称。
+        /// Project name of the instance
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+        /// Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
         /// </summary>
         [Output("purchaseMonths")]
         public Output<int> PurchaseMonths { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所属的地域 ID。
+        /// Region ID of the instance.
         /// </summary>
         [Output("regionId")]
         public Output<string> RegionId { get; private set; } = null!;
 
         /// <summary>
-        /// RegionServer 节点的数量。
+        /// Number of RegionServer nodes
         /// </summary>
         [Output("rsCount")]
         public Output<int> RsCount { get; private set; } = null!;
 
         /// <summary>
-        /// RegionServer 节点的规格码。
+        /// RegionServer node specification code.
         /// </summary>
         [Output("rsSpec")]
         public Output<string> RsSpec { get; private set; } = null!;
 
         /// <summary>
-        /// 实时备可用区子网 ID。
+        /// Real-time standby availability zone subnet ID.
         /// </summary>
         [Output("standbySubnetId")]
         public Output<string> StandbySubnetId { get; private set; } = null!;
 
         /// <summary>
-        /// 实时备可用区 ID。
+        /// Real-time standby zone ID
         /// </summary>
         [Output("standbyZoneId")]
         public Output<string> StandbyZoneId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例当前状态。关于实例状态的更多说明，请参见实例状态说明。
+        /// Current status of the instance. For more details about instance status, see Instance Status Description
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 实例总存储容量，单位：GiB。
+        /// Total storage capacity of the instance, unit: GiB.
         /// </summary>
         [Output("storageCapacity")]
         public Output<int> StorageCapacity { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+        /// Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
         /// </summary>
         [Output("storageType")]
         public Output<string> StorageType { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+        /// Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -242,37 +242,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Hbase
         public Output<ImmutableArray<Outputs.InstanceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 实例已使用的容量型存储空间大小，单位 MiB。
+        /// Capacity-type storage space used by the instance, in MiB
         /// </summary>
         [Output("usedColdStorage")]
         public Output<int> UsedColdStorage { get; private set; } = null!;
 
         /// <summary>
-        /// 主实例已使用的存储容量，单位：MiB。
+        /// Storage capacity used by the primary instance, in MiB
         /// </summary>
         [Output("usedStorage")]
         public Output<double> UsedStorage { get; private set; } = null!;
 
         /// <summary>
-        /// 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+        /// Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所属的私有网络名称。
+        /// Name of the private network to which the instance belongs.
         /// </summary>
         [Output("vpcName")]
         public Output<string> VpcName { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所属的可用区 ID。
+        /// Zone ID of the instance
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所属的可用区名称。
+        /// Name of the availability zone to which the instance belongs.
         /// </summary>
         [Output("zoneName")]
         public Output<string> ZoneName { get; private set; } = null!;
@@ -325,37 +325,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Hbase
     public sealed class InstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+        /// Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
         /// </summary>
         [Input("autoRenew")]
         public Input<bool>? AutoRenew { get; set; }
 
         /// <summary>
-        /// 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+        /// Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
         /// </summary>
         [Input("chargeType", required: true)]
         public Input<string> ChargeType { get; set; } = null!;
 
         /// <summary>
-        /// 实例总容量型存储空间大小，单位 GiB。
+        /// Total capacity-type storage space for the instance, in GiB.
         /// </summary>
         [Input("coldStorage")]
         public Input<int>? ColdStorage { get; set; }
 
         /// <summary>
-        /// 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+        /// Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
         /// </summary>
         [Input("deletionProtection")]
         public Input<string>? DeletionProtection { get; set; }
 
         /// <summary>
-        /// 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+        /// Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
         /// </summary>
         [Input("enableAuth")]
         public Input<bool>? EnableAuth { get; set; }
 
         /// <summary>
-        /// 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+        /// Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
         /// </summary>
         [Input("enableCloudStorage")]
         public Input<bool>? EnableCloudStorage { get; set; }
@@ -369,79 +369,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Hbase
         }
 
         /// <summary>
-        /// HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+        /// HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
         /// </summary>
         [Input("engineVersion", required: true)]
         public Input<string> EngineVersion { get; set; } = null!;
 
         /// <summary>
-        /// 实例名称。
+        /// Instance name
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 实例类型。当前仅支持标准型，取值默认为 Standard。
+        /// Instance type. Currently, only Standard is supported. The default value is Standard
         /// </summary>
         [Input("instanceType")]
         public Input<string>? InstanceType { get; set; }
 
         /// <summary>
-        /// Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+        /// Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
         /// </summary>
         [Input("masterSpec", required: true)]
         public Input<string> MasterSpec { get; set; } = null!;
 
         /// <summary>
-        /// 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+        /// Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
         /// </summary>
         [Input("multiAz")]
         public Input<bool>? MultiAz { get; set; }
 
         /// <summary>
-        /// 实例所属的项目名称。
+        /// Project name of the instance
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+        /// Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
         /// </summary>
         [Input("purchaseMonths")]
         public Input<int>? PurchaseMonths { get; set; }
 
         /// <summary>
-        /// 实例所属的地域 ID。
+        /// Region ID of the instance.
         /// </summary>
         [Input("regionId", required: true)]
         public Input<string> RegionId { get; set; } = null!;
 
         /// <summary>
-        /// RegionServer 节点的数量。
+        /// Number of RegionServer nodes
         /// </summary>
         [Input("rsCount", required: true)]
         public Input<int> RsCount { get; set; } = null!;
 
         /// <summary>
-        /// RegionServer 节点的规格码。
+        /// RegionServer node specification code.
         /// </summary>
         [Input("rsSpec", required: true)]
         public Input<string> RsSpec { get; set; } = null!;
 
         /// <summary>
-        /// 实例总存储容量，单位：GiB。
+        /// Total storage capacity of the instance, unit: GiB.
         /// </summary>
         [Input("storageCapacity", required: true)]
         public Input<int> StorageCapacity { get; set; } = null!;
 
         /// <summary>
-        /// 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+        /// Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
         /// </summary>
         [Input("storageType", required: true)]
         public Input<string> StorageType { get; set; } = null!;
 
         /// <summary>
-        /// 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+        /// Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
@@ -455,13 +455,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Hbase
         }
 
         /// <summary>
-        /// 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+        /// Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
 
         /// <summary>
-        /// 实例所属的可用区 ID。
+        /// Zone ID of the instance
         /// </summary>
         [Input("zoneId", required: true)]
         public Input<string> ZoneId { get; set; } = null!;
@@ -475,49 +475,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Hbase
     public sealed class InstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+        /// Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
         /// </summary>
         [Input("autoRenew")]
         public Input<bool>? AutoRenew { get; set; }
 
         /// <summary>
-        /// 计费状态。取值：Normal：正常。Overdue：欠费。Shutdown：关停。
+        /// Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
         /// </summary>
         [Input("chargeStatus")]
         public Input<string>? ChargeStatus { get; set; }
 
         /// <summary>
-        /// 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+        /// Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
 
         /// <summary>
-        /// 实例总容量型存储空间大小，单位 GiB。
+        /// Total capacity-type storage space for the instance, in GiB.
         /// </summary>
         [Input("coldStorage")]
         public Input<int>? ColdStorage { get; set; }
 
         /// <summary>
-        /// 实例创建时间（UTC 时间）。
+        /// Instance creation time (UTC).
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+        /// Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
         /// </summary>
         [Input("deletionProtection")]
         public Input<string>? DeletionProtection { get; set; }
 
         /// <summary>
-        /// 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+        /// Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
         /// </summary>
         [Input("enableAuth")]
         public Input<bool>? EnableAuth { get; set; }
 
         /// <summary>
-        /// 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+        /// Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
         /// </summary>
         [Input("enableCloudStorage")]
         public Input<bool>? EnableCloudStorage { get; set; }
@@ -531,121 +531,121 @@ namespace Byteplus.Pulumi.Bytepluscc.Hbase
         }
 
         /// <summary>
-        /// HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+        /// HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
         /// </summary>
         [Input("engineVersion")]
         public Input<string>? EngineVersion { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 实例名称。
+        /// Instance name
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 实例类型。当前仅支持标准型，取值默认为 Standard。
+        /// Instance type. Currently, only Standard is supported. The default value is Standard
         /// </summary>
         [Input("instanceType")]
         public Input<string>? InstanceType { get; set; }
 
         /// <summary>
-        /// Master 节点个数。单可用区部署，默认包含 2 个 Master 节点。
+        /// Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
         /// </summary>
         [Input("masterCount")]
         public Input<int>? MasterCount { get; set; }
 
         /// <summary>
-        /// Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+        /// Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
         /// </summary>
         [Input("masterSpec")]
         public Input<string>? MasterSpec { get; set; }
 
         /// <summary>
-        /// 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+        /// Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
         /// </summary>
         [Input("multiAz")]
         public Input<bool>? MultiAz { get; set; }
 
         /// <summary>
-        /// 实时主可用区子网 ID。
+        /// Real-time primary availability zone subnet ID.
         /// </summary>
         [Input("primarySubnetId")]
         public Input<string>? PrimarySubnetId { get; set; }
 
         /// <summary>
-        /// 实时主可用区 ID。
+        /// Real-time primary zone ID
         /// </summary>
         [Input("primaryZoneId")]
         public Input<string>? PrimaryZoneId { get; set; }
 
         /// <summary>
-        /// 实例所属的项目名称。
+        /// Project name of the instance
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+        /// Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
         /// </summary>
         [Input("purchaseMonths")]
         public Input<int>? PurchaseMonths { get; set; }
 
         /// <summary>
-        /// 实例所属的地域 ID。
+        /// Region ID of the instance.
         /// </summary>
         [Input("regionId")]
         public Input<string>? RegionId { get; set; }
 
         /// <summary>
-        /// RegionServer 节点的数量。
+        /// Number of RegionServer nodes
         /// </summary>
         [Input("rsCount")]
         public Input<int>? RsCount { get; set; }
 
         /// <summary>
-        /// RegionServer 节点的规格码。
+        /// RegionServer node specification code.
         /// </summary>
         [Input("rsSpec")]
         public Input<string>? RsSpec { get; set; }
 
         /// <summary>
-        /// 实时备可用区子网 ID。
+        /// Real-time standby availability zone subnet ID.
         /// </summary>
         [Input("standbySubnetId")]
         public Input<string>? StandbySubnetId { get; set; }
 
         /// <summary>
-        /// 实时备可用区 ID。
+        /// Real-time standby zone ID
         /// </summary>
         [Input("standbyZoneId")]
         public Input<string>? StandbyZoneId { get; set; }
 
         /// <summary>
-        /// 实例当前状态。关于实例状态的更多说明，请参见实例状态说明。
+        /// Current status of the instance. For more details about instance status, see Instance Status Description
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 实例总存储容量，单位：GiB。
+        /// Total storage capacity of the instance, unit: GiB.
         /// </summary>
         [Input("storageCapacity")]
         public Input<int>? StorageCapacity { get; set; }
 
         /// <summary>
-        /// 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+        /// Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
         /// </summary>
         [Input("storageType")]
         public Input<string>? StorageType { get; set; }
 
         /// <summary>
-        /// 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+        /// Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
@@ -659,37 +659,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Hbase
         }
 
         /// <summary>
-        /// 实例已使用的容量型存储空间大小，单位 MiB。
+        /// Capacity-type storage space used by the instance, in MiB
         /// </summary>
         [Input("usedColdStorage")]
         public Input<int>? UsedColdStorage { get; set; }
 
         /// <summary>
-        /// 主实例已使用的存储容量，单位：MiB。
+        /// Storage capacity used by the primary instance, in MiB
         /// </summary>
         [Input("usedStorage")]
         public Input<double>? UsedStorage { get; set; }
 
         /// <summary>
-        /// 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+        /// Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// 实例所属的私有网络名称。
+        /// Name of the private network to which the instance belongs.
         /// </summary>
         [Input("vpcName")]
         public Input<string>? VpcName { get; set; }
 
         /// <summary>
-        /// 实例所属的可用区 ID。
+        /// Zone ID of the instance
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }
 
         /// <summary>
-        /// 实例所属的可用区名称。
+        /// Name of the availability zone to which the instance belongs.
         /// </summary>
         [Input("zoneName")]
         public Input<string>? ZoneName { get; set; }

@@ -65,11 +65,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public sealed class GetAccesskeyResult
     {
         /// <summary>
-        /// 密钥ID（Access Key Id）。
+        /// Access Key Id.
         /// </summary>
         public readonly string AccessKeyId;
         /// <summary>
-        /// 密钥创建时间。时间格式为ISO8601。
+        /// Key creation time. The time format is ISO8601.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
@@ -77,35 +77,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 最后登录时间。
+        /// Last login time.
         /// </summary>
         public readonly string LastLoginDate;
         /// <summary>
-        /// API密钥最后访问的地域。
+        /// The last region accessed by the API key.
         /// </summary>
         public readonly string Region;
         /// <summary>
-        /// API密钥的最后使用的时间。
+        /// The last time the API key was used.
         /// </summary>
         public readonly string RequestTime;
         /// <summary>
-        /// 私有密钥（Secret Access Key）。
+        /// Secret Access Key.
         /// </summary>
         public readonly string SecretAccessKey;
         /// <summary>
-        /// API密钥最后访问的服务的英文简称。
+        /// The English abbreviation of the last service accessed by the API key.
         /// </summary>
         public readonly string Service;
         /// <summary>
-        /// 密钥状态。active代表启用状态，inactive代表禁用状态。
+        /// Key status. active means enabled, inactive means disabled.
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 密钥更新时间。时间格式为ISO8601。
+        /// Key update time. The time format is ISO8601.
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// 用户名。用于给指定的IAM用户创建密钥，未指定用户名时则为当前请求身份创建密钥（即主账号请求时为主账号自身创建密钥，IAM用户请求时为IAM用户自身创建密钥。注意：角色不支持为自身创建密钥）。当IAM用户拥有密钥自管理权限时（AccessKeySelfManageAccess），如需为自身创建密钥则需要在请求中传递自身的UserName。
+        /// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
         /// </summary>
         public readonly string UserName;
 

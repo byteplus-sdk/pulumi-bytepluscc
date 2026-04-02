@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * E-MapReduce集群由多个不同类型的实例节点组成，包括主实例节点（Master）、核心实例节点（Core）和计算实例节点（Task）。不同实例节点上部署的服务进程不同，负责完成的任务也不同。
+ * An E-MapReduce cluster consists of multiple types of instance nodes, including master instance nodes (Master), core instance nodes (Core), and task instance nodes (Task). Different service processes are deployed on each node type, and each is responsible for different tasks.
  *
  * ## Import
  *
@@ -45,73 +45,73 @@ export class NodeGroup extends pulumi.CustomResource {
 
     public readonly applicationLayouts!: pulumi.Output<outputs.emr.NodeGroupApplicationLayout[]>;
     /**
-     * 包周期付费配置。
+     * Subscription payment configuration.
      */
     public readonly chargePreConfig!: pulumi.Output<outputs.emr.NodeGroupChargePreConfig>;
     /**
-     * 付费类型。PRE表示包月，POST表示按量计费。
+     * Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
      */
     public readonly chargeType!: pulumi.Output<string>;
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     public readonly clusterId!: pulumi.Output<string>;
     /**
-     * 创建时间。
+     * Creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<number>;
     public readonly dataDisks!: pulumi.Output<outputs.emr.NodeGroupDataDisk[]>;
     /**
-     * ECS实例规格列表。当前修改仅支持单个实例规格。
+     * ECS instance specification list. Currently, only a single instance specification can be modified.
      */
     public readonly ecsInstanceTypes!: pulumi.Output<string[]>;
     /**
-     * 返回的节点组组件的自定义配置参数列表。
+     * Custom configuration parameter list for the returned node group components.
      */
     public /*out*/ readonly layoutComponentNames!: pulumi.Output<string[]>;
     /**
-     * 节点数量。取值范围：1~1000。
+     * Node count. Value range: 1~1000.
      */
     public readonly nodeCount!: pulumi.Output<number>;
     /**
-     * 节点组ID。
+     * Node group ID.
      */
     public /*out*/ readonly nodeGroupId!: pulumi.Output<string>;
     /**
-     * 节点组名称。
+     * Node group name.
      */
     public readonly nodeGroupName!: pulumi.Output<string>;
     /**
-     * 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+     * Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
      */
     public /*out*/ readonly nodeGroupState!: pulumi.Output<string>;
     /**
-     * 节点组类型。
+     * Node group type.
      */
     public readonly nodeGroupType!: pulumi.Output<string>;
     public /*out*/ readonly nodes!: pulumi.Output<outputs.emr.NodeGroupNode[]>;
     /**
-     * 子网ID列表。
+     * Subnet ID list.
      */
     public readonly subnetIds!: pulumi.Output<string[]>;
     /**
-     * 系统盘。
+     * System disk.
      */
     public readonly systemDisk!: pulumi.Output<outputs.emr.NodeGroupSystemDisk>;
     /**
-     * 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+     * Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
      */
     public readonly targetDiskSize!: pulumi.Output<number>;
     /**
-     * 集群终止时间。
+     * Cluster termination time.
      */
     public /*out*/ readonly terminateTime!: pulumi.Output<string>;
     /**
-     * ECS是否附带公网IP。
+     * Whether the ECS instance includes a public IP.
      */
     public readonly withPublicIp!: pulumi.Output<boolean>;
     /**
-     * zoneId，为空时默认复用集群的zoneId。
+     * zoneId. If empty, the cluster's zoneId is reused by default.
      */
     public readonly zoneId!: pulumi.Output<string>;
 
@@ -197,73 +197,73 @@ export class NodeGroup extends pulumi.CustomResource {
 export interface NodeGroupState {
     applicationLayouts?: pulumi.Input<pulumi.Input<inputs.emr.NodeGroupApplicationLayout>[]>;
     /**
-     * 包周期付费配置。
+     * Subscription payment configuration.
      */
     chargePreConfig?: pulumi.Input<inputs.emr.NodeGroupChargePreConfig>;
     /**
-     * 付费类型。PRE表示包月，POST表示按量计费。
+     * Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
      */
     chargeType?: pulumi.Input<string>;
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     clusterId?: pulumi.Input<string>;
     /**
-     * 创建时间。
+     * Creation time.
      */
     createdTime?: pulumi.Input<number>;
     dataDisks?: pulumi.Input<pulumi.Input<inputs.emr.NodeGroupDataDisk>[]>;
     /**
-     * ECS实例规格列表。当前修改仅支持单个实例规格。
+     * ECS instance specification list. Currently, only a single instance specification can be modified.
      */
     ecsInstanceTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 返回的节点组组件的自定义配置参数列表。
+     * Custom configuration parameter list for the returned node group components.
      */
     layoutComponentNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 节点数量。取值范围：1~1000。
+     * Node count. Value range: 1~1000.
      */
     nodeCount?: pulumi.Input<number>;
     /**
-     * 节点组ID。
+     * Node group ID.
      */
     nodeGroupId?: pulumi.Input<string>;
     /**
-     * 节点组名称。
+     * Node group name.
      */
     nodeGroupName?: pulumi.Input<string>;
     /**
-     * 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+     * Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
      */
     nodeGroupState?: pulumi.Input<string>;
     /**
-     * 节点组类型。
+     * Node group type.
      */
     nodeGroupType?: pulumi.Input<string>;
     nodes?: pulumi.Input<pulumi.Input<inputs.emr.NodeGroupNode>[]>;
     /**
-     * 子网ID列表。
+     * Subnet ID list.
      */
     subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 系统盘。
+     * System disk.
      */
     systemDisk?: pulumi.Input<inputs.emr.NodeGroupSystemDisk>;
     /**
-     * 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+     * Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
      */
     targetDiskSize?: pulumi.Input<number>;
     /**
-     * 集群终止时间。
+     * Cluster termination time.
      */
     terminateTime?: pulumi.Input<string>;
     /**
-     * ECS是否附带公网IP。
+     * Whether the ECS instance includes a public IP.
      */
     withPublicIp?: pulumi.Input<boolean>;
     /**
-     * zoneId，为空时默认复用集群的zoneId。
+     * zoneId. If empty, the cluster's zoneId is reused by default.
      */
     zoneId?: pulumi.Input<string>;
 }
@@ -274,52 +274,52 @@ export interface NodeGroupState {
 export interface NodeGroupArgs {
     applicationLayouts?: pulumi.Input<pulumi.Input<inputs.emr.NodeGroupApplicationLayout>[]>;
     /**
-     * 包周期付费配置。
+     * Subscription payment configuration.
      */
     chargePreConfig?: pulumi.Input<inputs.emr.NodeGroupChargePreConfig>;
     /**
-     * 付费类型。PRE表示包月，POST表示按量计费。
+     * Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
      */
     chargeType: pulumi.Input<string>;
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     clusterId: pulumi.Input<string>;
     dataDisks?: pulumi.Input<pulumi.Input<inputs.emr.NodeGroupDataDisk>[]>;
     /**
-     * ECS实例规格列表。当前修改仅支持单个实例规格。
+     * ECS instance specification list. Currently, only a single instance specification can be modified.
      */
     ecsInstanceTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 节点数量。取值范围：1~1000。
+     * Node count. Value range: 1~1000.
      */
     nodeCount: pulumi.Input<number>;
     /**
-     * 节点组名称。
+     * Node group name.
      */
     nodeGroupName: pulumi.Input<string>;
     /**
-     * 节点组类型。
+     * Node group type.
      */
     nodeGroupType: pulumi.Input<string>;
     /**
-     * 子网ID列表。
+     * Subnet ID list.
      */
     subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 系统盘。
+     * System disk.
      */
     systemDisk?: pulumi.Input<inputs.emr.NodeGroupSystemDisk>;
     /**
-     * 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+     * Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
      */
     targetDiskSize?: pulumi.Input<number>;
     /**
-     * ECS是否附带公网IP。
+     * Whether the ECS instance includes a public IP.
      */
     withPublicIp?: pulumi.Input<boolean>;
     /**
-     * zoneId，为空时默认复用集群的zoneId。
+     * zoneId. If empty, the cluster's zoneId is reused by default.
      */
     zoneId?: pulumi.Input<string>;
 }

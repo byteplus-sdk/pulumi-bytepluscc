@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class GatewayNetworkSpecSubnetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 可用区。
+        /// Availability zone
         /// </summary>
         [Input("az")]
         public Input<string>? Az { get; set; }
 
         /// <summary>
-        /// 子网ID。
+        /// Subnet ID
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
         /// <summary>
-        /// 子网名称。
+        /// Subnet name
         /// </summary>
         [Input("subnetName")]
         public Input<string>? SubnetName { get; set; }

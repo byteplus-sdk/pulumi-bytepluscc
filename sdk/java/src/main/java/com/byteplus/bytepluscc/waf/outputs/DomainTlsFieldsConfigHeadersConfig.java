@@ -14,38 +14,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainTlsFieldsConfigHeadersConfig {
     /**
-     * @return 是否记录全量 header。
+     * @return Record all header fields
      * 
      */
     private @Nullable Integer enable;
     /**
-     * @return 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+     * @return Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
      * 
      */
     private @Nullable List<String> excludedKeyLists;
     /**
-     * @return 统计 header 字段，将对应字段用于日志统计分析和告警。
+     * @return Statistics header fields. Use the specified fields for log analysis and alerts.
      * 
      */
     private @Nullable List<String> statisticalKeyLists;
 
     private DomainTlsFieldsConfigHeadersConfig() {}
     /**
-     * @return 是否记录全量 header。
+     * @return Record all header fields
      * 
      */
     public Optional<Integer> enable() {
         return Optional.ofNullable(this.enable);
     }
     /**
-     * @return 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+     * @return Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
      * 
      */
     public List<String> excludedKeyLists() {
         return this.excludedKeyLists == null ? List.of() : this.excludedKeyLists;
     }
     /**
-     * @return 统计 header 字段，将对应字段用于日志统计分析和告警。
+     * @return Statistics header fields. Use the specified fields for log analysis and alerts.
      * 
      */
     public List<String> statisticalKeyLists() {

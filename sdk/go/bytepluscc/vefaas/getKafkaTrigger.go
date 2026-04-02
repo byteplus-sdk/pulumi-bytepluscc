@@ -30,39 +30,39 @@ type LookupKafkaTriggerArgs struct {
 
 // A collection of values returned by getKafkaTrigger.
 type LookupKafkaTriggerResult struct {
-	// 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+	// Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
 	BatchFlushDurationMilliseconds int `pulumi:"batchFlushDurationMilliseconds"`
-	// 触发器批量消费的每批次消息数。
+	// Number of messages per batch for trigger batch consumption.
 	BatchSize int `pulumi:"batchSize"`
-	// 消息队列 Kafka 实例的消费组名字。
+	// Consumer group name of the Kafka message queue instance.
 	ConsumerGroup string `pulumi:"consumerGroup"`
-	// Kafka 触发器创建时间。
+	// Kafka trigger creation time.
 	CreatedTime string `pulumi:"createdTime"`
-	// Kafka 触发器描述。长度限制为 200 个字符以内。
+	// Description of the Kafka trigger. Limited to 200 characters.
 	Description string `pulumi:"description"`
-	// 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+	// Enable the trigger when creating it. Options: true—enable. false—disable.
 	Enabled bool `pulumi:"enabled"`
-	// 函数 ID。
+	// Function ID.
 	FunctionId string `pulumi:"functionId"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+	// Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
 	KafkaCredentials GetKafkaTriggerKafkaCredentials `pulumi:"kafkaCredentials"`
-	// Kafka 触发器 ID。
+	// Kafka trigger ID.
 	KafkaTriggerId string `pulumi:"kafkaTriggerId"`
-	// 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+	// Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
 	MaximumRetryAttempts int `pulumi:"maximumRetryAttempts"`
-	// 消息队列 Kafka 实例 ID。
+	// Kafka message queue instance ID.
 	MqInstanceId string `pulumi:"mqInstanceId"`
-	// Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+	// Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
 	Name string `pulumi:"name"`
-	// 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+	// Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
 	StartingPosition string `pulumi:"startingPosition"`
-	// Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+	// Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
 	Status string `pulumi:"status"`
-	// 消息队列 Kafka 实例的 Topic 名称。
+	// Topic name of the Kafka message queue instance.
 	TopicName string `pulumi:"topicName"`
-	// Kafka 触发器最近一次更新时间。
+	// Last update time of the Kafka trigger.
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -100,37 +100,37 @@ func (o LookupKafkaTriggerResultOutput) ToLookupKafkaTriggerResultOutputWithCont
 	return o
 }
 
-// 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+// Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
 func (o LookupKafkaTriggerResultOutput) BatchFlushDurationMilliseconds() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) int { return v.BatchFlushDurationMilliseconds }).(pulumi.IntOutput)
 }
 
-// 触发器批量消费的每批次消息数。
+// Number of messages per batch for trigger batch consumption.
 func (o LookupKafkaTriggerResultOutput) BatchSize() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) int { return v.BatchSize }).(pulumi.IntOutput)
 }
 
-// 消息队列 Kafka 实例的消费组名字。
+// Consumer group name of the Kafka message queue instance.
 func (o LookupKafkaTriggerResultOutput) ConsumerGroup() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) string { return v.ConsumerGroup }).(pulumi.StringOutput)
 }
 
-// Kafka 触发器创建时间。
+// Kafka trigger creation time.
 func (o LookupKafkaTriggerResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// Kafka 触发器描述。长度限制为 200 个字符以内。
+// Description of the Kafka trigger. Limited to 200 characters.
 func (o LookupKafkaTriggerResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+// Enable the trigger when creating it. Options: true—enable. false—disable.
 func (o LookupKafkaTriggerResultOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 函数 ID。
+// Function ID.
 func (o LookupKafkaTriggerResultOutput) FunctionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) string { return v.FunctionId }).(pulumi.StringOutput)
 }
@@ -140,47 +140,47 @@ func (o LookupKafkaTriggerResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+// Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
 func (o LookupKafkaTriggerResultOutput) KafkaCredentials() GetKafkaTriggerKafkaCredentialsOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) GetKafkaTriggerKafkaCredentials { return v.KafkaCredentials }).(GetKafkaTriggerKafkaCredentialsOutput)
 }
 
-// Kafka 触发器 ID。
+// Kafka trigger ID.
 func (o LookupKafkaTriggerResultOutput) KafkaTriggerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) string { return v.KafkaTriggerId }).(pulumi.StringOutput)
 }
 
-// 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+// Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
 func (o LookupKafkaTriggerResultOutput) MaximumRetryAttempts() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) int { return v.MaximumRetryAttempts }).(pulumi.IntOutput)
 }
 
-// 消息队列 Kafka 实例 ID。
+// Kafka message queue instance ID.
 func (o LookupKafkaTriggerResultOutput) MqInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) string { return v.MqInstanceId }).(pulumi.StringOutput)
 }
 
-// Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+// Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
 func (o LookupKafkaTriggerResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+// Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
 func (o LookupKafkaTriggerResultOutput) StartingPosition() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) string { return v.StartingPosition }).(pulumi.StringOutput)
 }
 
-// Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+// Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
 func (o LookupKafkaTriggerResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 消息队列 Kafka 实例的 Topic 名称。
+// Topic name of the Kafka message queue instance.
 func (o LookupKafkaTriggerResultOutput) TopicName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) string { return v.TopicName }).(pulumi.StringOutput)
 }
 
-// Kafka 触发器最近一次更新时间。
+// Last update time of the Kafka trigger.
 func (o LookupKafkaTriggerResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKafkaTriggerResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

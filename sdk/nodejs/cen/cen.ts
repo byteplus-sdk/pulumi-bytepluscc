@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 云企业网（Cloud Enterprise Network，CEN）提供一种能够快速构建跨地域私有网络（VPC）与云下数据中心（IDC）之间高速、优质、稳定的网络能力，帮助您打造一张具有企业级规模和通信能力的全球云上网络。
+ * Cloud Enterprise Network (CEN) provides fast, high-quality, and stable networking capabilities to quickly build private networks (VPC) across regions and between on-premises data centers (IDC), helping you create a global cloud network with enterprise-scale and communication capabilities
  *
  * ## Import
  *
@@ -44,41 +44,41 @@ export class Cen extends pulumi.CustomResource {
     }
 
     /**
-     * CEN实例所属的账号ID。
+     * Account ID to which the CEN instance belongs
      */
     public /*out*/ readonly accountId!: pulumi.Output<string>;
     /**
-     * 带宽包ID。
+     * Bandwidth package ID
      */
     public /*out*/ readonly cenBandwidthPackageIds!: pulumi.Output<string[]>;
     /**
-     * CEN实例的ID。
+     * CEN instance ID
      */
     public /*out*/ readonly cenId!: pulumi.Output<string>;
     /**
-     * CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+     * Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
      */
     public readonly cenName!: pulumi.Output<string>;
     /**
-     * 创建CEN实例的时间。
+     * Time when the CEN instance was created
      */
     public /*out*/ readonly creationTime!: pulumi.Output<string>;
     /**
-     * CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+     * Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
      */
     public readonly description!: pulumi.Output<string>;
     public readonly instances!: pulumi.Output<outputs.cen.CenInstance[]>;
     /**
-     * CEN实例所属项目的名称。不填则默认为default。
+     * Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+     * Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.cen.CenTag[]>;
     /**
-     * 更新CEN实例的时间。
+     * Time when the CEN instance was updated
      */
     public /*out*/ readonly updateTime!: pulumi.Output<string>;
 
@@ -130,41 +130,41 @@ export class Cen extends pulumi.CustomResource {
  */
 export interface CenState {
     /**
-     * CEN实例所属的账号ID。
+     * Account ID to which the CEN instance belongs
      */
     accountId?: pulumi.Input<string>;
     /**
-     * 带宽包ID。
+     * Bandwidth package ID
      */
     cenBandwidthPackageIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * CEN实例的ID。
+     * CEN instance ID
      */
     cenId?: pulumi.Input<string>;
     /**
-     * CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+     * Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
      */
     cenName?: pulumi.Input<string>;
     /**
-     * 创建CEN实例的时间。
+     * Time when the CEN instance was created
      */
     creationTime?: pulumi.Input<string>;
     /**
-     * CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+     * Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
      */
     description?: pulumi.Input<string>;
     instances?: pulumi.Input<pulumi.Input<inputs.cen.CenInstance>[]>;
     /**
-     * CEN实例所属项目的名称。不填则默认为default。
+     * Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
      */
     projectName?: pulumi.Input<string>;
     /**
-     * CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+     * Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.cen.CenTag>[]>;
     /**
-     * 更新CEN实例的时间。
+     * Time when the CEN instance was updated
      */
     updateTime?: pulumi.Input<string>;
 }
@@ -174,16 +174,16 @@ export interface CenState {
  */
 export interface CenArgs {
     /**
-     * CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+     * Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
      */
     cenName?: pulumi.Input<string>;
     /**
-     * CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+     * Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
      */
     description?: pulumi.Input<string>;
     instances?: pulumi.Input<pulumi.Input<inputs.cen.CenInstance>[]>;
     /**
-     * CEN实例所属项目的名称。不填则默认为default。
+     * Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
      */
     projectName?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.cen.CenTag>[]>;

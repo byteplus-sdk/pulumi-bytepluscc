@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink.Inputs
     public sealed class EndpointServiceTagGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 终端节点服务标签的标签键。
+        /// Tag keys for endpoint service tags.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 终端节点服务标签的标签值。
+        /// Tag value of the endpoint service tag.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

@@ -30,43 +30,43 @@ type LookupAllowListArgs struct {
 
 // A collection of values returned by getAllowList.
 type LookupAllowListResult struct {
-	// 白名单分类。取值：Ordinary：普通白名单。Default：默认白名单。说明该参数作为请求参数时，默认值为 Ordinary。
+	// Allowlist category. Values: Ordinary: Ordinary allowlist. Default: Default allowlist. Note: When used as a request parameter, the default value is Ordinary.
 	AllowListCategory string `pulumi:"allowListCategory"`
-	// 白名单的备注。
+	// Allowlist remarks.
 	AllowListDesc string `pulumi:"allowListDesc"`
-	// 白名单 ID 。
+	// Allowlist ID.
 	AllowListId string `pulumi:"allowListId"`
-	// 白名单内的 IP 地址（或地址段）总数。
+	// Total number of IP addresses (or ranges) in the allowlist.
 	AllowListIpNum int `pulumi:"allowListIpNum"`
-	// 白名单名称。
+	// Allowlist name.
 	AllowListName string `pulumi:"allowListName"`
-	// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+	// IP address types in the allowlist. Only IPv4 addresses are currently supported.
 	AllowListType string `pulumi:"allowListType"`
-	// 白名单内的 IP 地址列表
+	// IP address list in the allowlist
 	AllowLists []string `pulumi:"allowLists"`
-	// 白名单下绑定的实例总数。
+	// Total number of instances bound to the allowlist.
 	AssociatedInstanceNum int `pulumi:"associatedInstanceNum"`
-	// 已绑定当前白名单的实例信息。
+	// Instance information bound to the current allowlist.
 	AssociatedInstances []GetAllowListAssociatedInstance `pulumi:"associatedInstances"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 是否忽略实例状态校验。取值：true：是。false：否。默认值。
+	// Ignore instance status check. Values: true: Yes. false: No. Default value.
 	IgnoreInstanceStatus bool `pulumi:"ignoreInstanceStatus"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId string `pulumi:"instanceId"`
-	// 白名单包含的 IP 地址和 IP 地址段的列表。在请求参数 WithIpList 取值为 true 时返回，在取值为 false 或不为其传值时返回为 null。
+	// List of IP addresses and IP ranges included in the allowlist. Returned when the WithIpList request parameter is set to true; returns null when set to false or not specified.
 	IpLists []string `pulumi:"ipLists"`
-	// 修改方式，取值范围如下：Cover（默认值）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+	// Modification method. Available values: Cover (default): Overwrite the original allowlist with the values from the AllowList parameter. Append: Add the IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove the IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
 	ModifyMode string `pulumi:"modifyMode"`
-	// 所属的项目。说明如您调用接口使用的 AK/SK 属于某个子账号，且该子账号只拥有某个项目的权限，需要传入该请求参数。
+	// Project. Note: If the AK/SK used to call the API belongs to a sub-account that only has permission for a specific project, you need to provide this request parameter.
 	ProjectName string `pulumi:"projectName"`
-	// 白名单关联的安全组的信息。说明该字段不能与 SecurityGroupIds 同时使用。
+	// Information about the security group associated with the allowlist. Note: This field cannot be used together with SecurityGroupIds.
 	SecurityGroupBindInfos []GetAllowListSecurityGroupBindInfo `pulumi:"securityGroupBindInfos"`
-	// 需要关联的安全组 ID 列表。说明您可以调用 DescribeSecurityGroups 接口查询安全组信息，包括安全组 ID。单个白名单单次最多可选择添加 10 个安全组。该字段不能与 SecurityGroupBindInfos 同时使用。
+	// List of security group IDs to associate. Note: You can call the DescribeSecurityGroups API to query security group information, including security group IDs. A single allowlist can add up to 10 security groups at a time. This field cannot be used together with SecurityGroupBindInfos.
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 是否更新白名单所绑定的安全组。true：更新。false：不更新。默认值。说明该字段仅在白名单已绑定了安全组时生效。可调用 DescribeAllowLists 接口查询白名单是否绑定了安全组。
+	// Whether to update the security group bound to the allowlist. true: update. false: do not update. Default value. This field is effective only when the allowlist is already bound to a security group. You can call the DescribeAllowLists API to check if the allowlist is bound to a security group.
 	UpdateSecurityGroup bool `pulumi:"updateSecurityGroup"`
-	// 该名单中由用户输入的 IP 地址。AllowList 字段中的 IP 为 UserAllowList 和 SecurityGroupBindInfos 包含的 IP 的并集。
+	// IP addresses entered by the user in this list. The IPs in the AllowList field are the union of IPs included in UserAllowList and SecurityGroupBindInfos.
 	UserAllowLists []string `pulumi:"userAllowLists"`
 }
 
@@ -104,47 +104,47 @@ func (o LookupAllowListResultOutput) ToLookupAllowListResultOutputWithContext(ct
 	return o
 }
 
-// 白名单分类。取值：Ordinary：普通白名单。Default：默认白名单。说明该参数作为请求参数时，默认值为 Ordinary。
+// Allowlist category. Values: Ordinary: Ordinary allowlist. Default: Default allowlist. Note: When used as a request parameter, the default value is Ordinary.
 func (o LookupAllowListResultOutput) AllowListCategory() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.AllowListCategory }).(pulumi.StringOutput)
 }
 
-// 白名单的备注。
+// Allowlist remarks.
 func (o LookupAllowListResultOutput) AllowListDesc() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.AllowListDesc }).(pulumi.StringOutput)
 }
 
-// 白名单 ID 。
+// Allowlist ID.
 func (o LookupAllowListResultOutput) AllowListId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.AllowListId }).(pulumi.StringOutput)
 }
 
-// 白名单内的 IP 地址（或地址段）总数。
+// Total number of IP addresses (or ranges) in the allowlist.
 func (o LookupAllowListResultOutput) AllowListIpNum() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAllowListResult) int { return v.AllowListIpNum }).(pulumi.IntOutput)
 }
 
-// 白名单名称。
+// Allowlist name.
 func (o LookupAllowListResultOutput) AllowListName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.AllowListName }).(pulumi.StringOutput)
 }
 
-// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+// IP address types in the allowlist. Only IPv4 addresses are currently supported.
 func (o LookupAllowListResultOutput) AllowListType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.AllowListType }).(pulumi.StringOutput)
 }
 
-// 白名单内的 IP 地址列表
+// IP address list in the allowlist
 func (o LookupAllowListResultOutput) AllowLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAllowListResult) []string { return v.AllowLists }).(pulumi.StringArrayOutput)
 }
 
-// 白名单下绑定的实例总数。
+// Total number of instances bound to the allowlist.
 func (o LookupAllowListResultOutput) AssociatedInstanceNum() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAllowListResult) int { return v.AssociatedInstanceNum }).(pulumi.IntOutput)
 }
 
-// 已绑定当前白名单的实例信息。
+// Instance information bound to the current allowlist.
 func (o LookupAllowListResultOutput) AssociatedInstances() GetAllowListAssociatedInstanceArrayOutput {
 	return o.ApplyT(func(v LookupAllowListResult) []GetAllowListAssociatedInstance { return v.AssociatedInstances }).(GetAllowListAssociatedInstanceArrayOutput)
 }
@@ -154,47 +154,47 @@ func (o LookupAllowListResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 是否忽略实例状态校验。取值：true：是。false：否。默认值。
+// Ignore instance status check. Values: true: Yes. false: No. Default value.
 func (o LookupAllowListResultOutput) IgnoreInstanceStatus() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAllowListResult) bool { return v.IgnoreInstanceStatus }).(pulumi.BoolOutput)
 }
 
-// 实例 ID。
+// Instance ID.
 func (o LookupAllowListResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 白名单包含的 IP 地址和 IP 地址段的列表。在请求参数 WithIpList 取值为 true 时返回，在取值为 false 或不为其传值时返回为 null。
+// List of IP addresses and IP ranges included in the allowlist. Returned when the WithIpList request parameter is set to true; returns null when set to false or not specified.
 func (o LookupAllowListResultOutput) IpLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAllowListResult) []string { return v.IpLists }).(pulumi.StringArrayOutput)
 }
 
-// 修改方式，取值范围如下：Cover（默认值）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+// Modification method. Available values: Cover (default): Overwrite the original allowlist with the values from the AllowList parameter. Append: Add the IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove the IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
 func (o LookupAllowListResultOutput) ModifyMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.ModifyMode }).(pulumi.StringOutput)
 }
 
-// 所属的项目。说明如您调用接口使用的 AK/SK 属于某个子账号，且该子账号只拥有某个项目的权限，需要传入该请求参数。
+// Project. Note: If the AK/SK used to call the API belongs to a sub-account that only has permission for a specific project, you need to provide this request parameter.
 func (o LookupAllowListResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 白名单关联的安全组的信息。说明该字段不能与 SecurityGroupIds 同时使用。
+// Information about the security group associated with the allowlist. Note: This field cannot be used together with SecurityGroupIds.
 func (o LookupAllowListResultOutput) SecurityGroupBindInfos() GetAllowListSecurityGroupBindInfoArrayOutput {
 	return o.ApplyT(func(v LookupAllowListResult) []GetAllowListSecurityGroupBindInfo { return v.SecurityGroupBindInfos }).(GetAllowListSecurityGroupBindInfoArrayOutput)
 }
 
-// 需要关联的安全组 ID 列表。说明您可以调用 DescribeSecurityGroups 接口查询安全组信息，包括安全组 ID。单个白名单单次最多可选择添加 10 个安全组。该字段不能与 SecurityGroupBindInfos 同时使用。
+// List of security group IDs to associate. Note: You can call the DescribeSecurityGroups API to query security group information, including security group IDs. A single allowlist can add up to 10 security groups at a time. This field cannot be used together with SecurityGroupBindInfos.
 func (o LookupAllowListResultOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAllowListResult) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 是否更新白名单所绑定的安全组。true：更新。false：不更新。默认值。说明该字段仅在白名单已绑定了安全组时生效。可调用 DescribeAllowLists 接口查询白名单是否绑定了安全组。
+// Whether to update the security group bound to the allowlist. true: update. false: do not update. Default value. This field is effective only when the allowlist is already bound to a security group. You can call the DescribeAllowLists API to check if the allowlist is bound to a security group.
 func (o LookupAllowListResultOutput) UpdateSecurityGroup() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAllowListResult) bool { return v.UpdateSecurityGroup }).(pulumi.BoolOutput)
 }
 
-// 该名单中由用户输入的 IP 地址。AllowList 字段中的 IP 为 UserAllowList 和 SecurityGroupBindInfos 包含的 IP 的并集。
+// IP addresses entered by the user in this list. The IPs in the AllowList field are the union of IPs included in UserAllowList and SecurityGroupBindInfos.
 func (o LookupAllowListResultOutput) UserAllowLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAllowListResult) []string { return v.UserAllowLists }).(pulumi.StringArrayOutput)
 }

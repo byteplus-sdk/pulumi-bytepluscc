@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vke
 {
     /// <summary>
-    /// 集群中支持安装多种类型的组件，包括 网络、存储、监控、DNS、安全、镜像、GPU 等，满足您多种业务场景需求。您可按需部署、升级或卸载组件。
+    /// The cluster supports installation of various types of components, including network, storage, monitoring, DNS, security, image, GPU, and more, to meet your diverse business needs. You can deploy, upgrade, or uninstall components as needed.
     /// 
     /// ## Example Usage
     /// 
@@ -46,55 +46,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public partial class Addon : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 组件所在集群 ID。
+        /// Cluster ID where the component is located.
         /// </summary>
         [Output("clusterId")]
         public Output<string> ClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// 组件配置。
+        /// Component configuration.
         /// </summary>
         [Output("config")]
         public Output<string> Config { get; private set; } = null!;
 
         /// <summary>
-        /// 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+        /// Component installation time. Standard RFC3339 format, UTC+0 time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+        /// Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
         /// </summary>
         [Output("deployMode")]
         public Output<string> DeployMode { get; private set; } = null!;
 
         /// <summary>
-        /// 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+        /// Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
         /// </summary>
         [Output("deployNodeType")]
         public Output<string> DeployNodeType { get; private set; } = null!;
 
         /// <summary>
-        /// 组件名称。
+        /// Component name.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 组件状态。
+        /// Component status.
         /// </summary>
         [Output("status")]
         public Output<Outputs.AddonStatus> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+        /// Component update time. Standard RFC3339 format, UTC+0 time.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 组件版本。
+        /// Component version.
         /// </summary>
         [Output("version")]
         public Output<string> Version { get; private set; } = null!;
@@ -147,43 +147,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public sealed class AddonArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 组件所在集群 ID。
+        /// Cluster ID where the component is located.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// 组件配置。
+        /// Component configuration.
         /// </summary>
         [Input("config")]
         public Input<string>? Config { get; set; }
 
         /// <summary>
-        /// 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+        /// Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
         /// </summary>
         [Input("deployMode")]
         public Input<string>? DeployMode { get; set; }
 
         /// <summary>
-        /// 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+        /// Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
         /// </summary>
         [Input("deployNodeType")]
         public Input<string>? DeployNodeType { get; set; }
 
         /// <summary>
-        /// 组件名称。
+        /// Component name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 组件状态。
+        /// Component status.
         /// </summary>
         [Input("status")]
         public Input<Inputs.AddonStatusArgs>? Status { get; set; }
 
         /// <summary>
-        /// 组件版本。
+        /// Component version.
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }
@@ -197,55 +197,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public sealed class AddonState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 组件所在集群 ID。
+        /// Cluster ID where the component is located.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// 组件配置。
+        /// Component configuration.
         /// </summary>
         [Input("config")]
         public Input<string>? Config { get; set; }
 
         /// <summary>
-        /// 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+        /// Component installation time. Standard RFC3339 format, UTC+0 time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+        /// Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
         /// </summary>
         [Input("deployMode")]
         public Input<string>? DeployMode { get; set; }
 
         /// <summary>
-        /// 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+        /// Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
         /// </summary>
         [Input("deployNodeType")]
         public Input<string>? DeployNodeType { get; set; }
 
         /// <summary>
-        /// 组件名称。
+        /// Component name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 组件状态。
+        /// Component status.
         /// </summary>
         [Input("status")]
         public Input<Inputs.AddonStatusGetArgs>? Status { get; set; }
 
         /// <summary>
-        /// 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+        /// Component update time. Standard RFC3339 format, UTC+0 time.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 组件版本。
+        /// Component version.
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }

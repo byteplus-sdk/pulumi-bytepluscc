@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Inputs
     public sealed class BandwidthPackageEipAddressArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 分配ID
+        /// Allocation ID
         /// </summary>
         [Input("allocationId")]
         public Input<string>? AllocationId { get; set; }

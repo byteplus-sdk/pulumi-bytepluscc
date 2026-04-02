@@ -13,22 +13,22 @@ import java.util.Objects;
 @CustomType
 public final class GetInstancePluginResult {
     /**
-     * @return 插件描述。
+     * @return Plugin description
      * 
      */
     private String description;
     /**
-     * @return 关闭此插件的注意事项说明。
+     * @return Notes for disabling this plugin
      * 
      */
     private String disablePrompt;
     /**
-     * @return 开启此插件的注意事项说明。
+     * @return Notes for enabling this plugin
      * 
      */
     private String enablePrompt;
     /**
-     * @return 是否已开启插件。true：插件已开启。false：插件已关闭。
+     * @return Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
      * 
      */
     private Boolean enabled;
@@ -38,55 +38,55 @@ public final class GetInstancePluginResult {
      */
     private String id;
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     private String instanceId;
     /**
-     * @return 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+     * @return Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
      * 
      */
     private Boolean needRebootOnChange;
     /**
-     * @return 插件名称。
+     * @return Plugin name
      * 
      */
     private String pluginName;
     /**
-     * @return 插件监听的端口。
+     * @return Plugin listening port
      * 
      */
     private Integer port;
     /**
-     * @return 插件版本。
+     * @return Plugin version
      * 
      */
     private String version;
 
     private GetInstancePluginResult() {}
     /**
-     * @return 插件描述。
+     * @return Plugin description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 关闭此插件的注意事项说明。
+     * @return Notes for disabling this plugin
      * 
      */
     public String disablePrompt() {
         return this.disablePrompt;
     }
     /**
-     * @return 开启此插件的注意事项说明。
+     * @return Notes for enabling this plugin
      * 
      */
     public String enablePrompt() {
         return this.enablePrompt;
     }
     /**
-     * @return 是否已开启插件。true：插件已开启。false：插件已关闭。
+     * @return Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
      * 
      */
     public Boolean enabled() {
@@ -100,35 +100,35 @@ public final class GetInstancePluginResult {
         return this.id;
     }
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+     * @return Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
      * 
      */
     public Boolean needRebootOnChange() {
         return this.needRebootOnChange;
     }
     /**
-     * @return 插件名称。
+     * @return Plugin name
      * 
      */
     public String pluginName() {
         return this.pluginName;
     }
     /**
-     * @return 插件监听的端口。
+     * @return Plugin listening port
      * 
      */
     public Integer port() {
         return this.port;
     }
     /**
-     * @return 插件版本。
+     * @return Plugin version
      * 
      */
     public String version() {

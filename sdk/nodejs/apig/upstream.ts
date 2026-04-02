@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * Upstream 是对 API 网关实例后端的抽象。您可以将具有相同功能的后端应用抽象为一个 Upstream，实现路由和后端应用解耦，更灵活地支持后端应用的灰度发布、多版本管理等场景。本文为您介绍 Upstream 的概念及作用。
+ * Upstream is an abstraction of the backend for API gateway instances. You can group backend applications with the same functionality into an upstream, which decouples routing from backend applications and provides flexible support for scenarios such as canary releases and multi-version management. This article introduces the concept and purpose of upstream
  *
  * ## Import
  *
@@ -45,47 +45,47 @@ export class Upstream extends pulumi.CustomResource {
 
     public /*out*/ readonly backendTargets!: pulumi.Output<outputs.apig.UpstreamBackendTarget[]>;
     /**
-     * 服务熔断配置。
+     * Service circuit breaking configuration
      */
     public readonly circuitBreakingSettings!: pulumi.Output<outputs.apig.UpstreamCircuitBreakingSettings>;
     /**
-     * 备注。
+     * Remarks
      */
     public readonly comments!: pulumi.Output<string>;
     /**
-     * 连接池配置。
+     * Connection Pool Configuration
      */
     public readonly connectionPoolSettings!: pulumi.Output<outputs.apig.UpstreamConnectionPoolSettings>;
     /**
-     * Upstream创建时间。
+     * Upstream creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 网关实例ID。
+     * Gateway Instance ID
      */
     public readonly gatewayId!: pulumi.Output<string>;
     /**
-     * 负载均衡配置。
+     * Load Balancing Configuration
      */
     public readonly loadBalancerSettings!: pulumi.Output<outputs.apig.UpstreamLoadBalancerSettings>;
     /**
-     * Upstream名称。
+     * Upstream name
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+     * Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
      */
     public readonly protocol!: pulumi.Output<string>;
     /**
-     * Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+     * Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
      */
     public readonly sourceType!: pulumi.Output<string>;
     /**
-     * TLS配置。
+     * TLS Configuration
      */
     public readonly tlsSettings!: pulumi.Output<outputs.apig.UpstreamTlsSettings>;
     /**
-     * Upstream更新时间。
+     * Upstream update time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
@@ -93,7 +93,7 @@ export class Upstream extends pulumi.CustomResource {
      */
     public /*out*/ readonly upstreamId!: pulumi.Output<string>;
     /**
-     * Upstream配置。
+     * Upstream Configuration
      */
     public readonly upstreamSpec!: pulumi.Output<outputs.apig.UpstreamUpstreamSpec>;
     public /*out*/ readonly versionDetails!: pulumi.Output<outputs.apig.UpstreamVersionDetail[]>;
@@ -167,47 +167,47 @@ export class Upstream extends pulumi.CustomResource {
 export interface UpstreamState {
     backendTargets?: pulumi.Input<pulumi.Input<inputs.apig.UpstreamBackendTarget>[]>;
     /**
-     * 服务熔断配置。
+     * Service circuit breaking configuration
      */
     circuitBreakingSettings?: pulumi.Input<inputs.apig.UpstreamCircuitBreakingSettings>;
     /**
-     * 备注。
+     * Remarks
      */
     comments?: pulumi.Input<string>;
     /**
-     * 连接池配置。
+     * Connection Pool Configuration
      */
     connectionPoolSettings?: pulumi.Input<inputs.apig.UpstreamConnectionPoolSettings>;
     /**
-     * Upstream创建时间。
+     * Upstream creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 网关实例ID。
+     * Gateway Instance ID
      */
     gatewayId?: pulumi.Input<string>;
     /**
-     * 负载均衡配置。
+     * Load Balancing Configuration
      */
     loadBalancerSettings?: pulumi.Input<inputs.apig.UpstreamLoadBalancerSettings>;
     /**
-     * Upstream名称。
+     * Upstream name
      */
     name?: pulumi.Input<string>;
     /**
-     * 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+     * Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
      */
     protocol?: pulumi.Input<string>;
     /**
-     * Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+     * Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
      */
     sourceType?: pulumi.Input<string>;
     /**
-     * TLS配置。
+     * TLS Configuration
      */
     tlsSettings?: pulumi.Input<inputs.apig.UpstreamTlsSettings>;
     /**
-     * Upstream更新时间。
+     * Upstream update time
      */
     updatedTime?: pulumi.Input<string>;
     /**
@@ -215,7 +215,7 @@ export interface UpstreamState {
      */
     upstreamId?: pulumi.Input<string>;
     /**
-     * Upstream配置。
+     * Upstream Configuration
      */
     upstreamSpec?: pulumi.Input<inputs.apig.UpstreamUpstreamSpec>;
     versionDetails?: pulumi.Input<pulumi.Input<inputs.apig.UpstreamVersionDetail>[]>;
@@ -226,43 +226,43 @@ export interface UpstreamState {
  */
 export interface UpstreamArgs {
     /**
-     * 服务熔断配置。
+     * Service circuit breaking configuration
      */
     circuitBreakingSettings?: pulumi.Input<inputs.apig.UpstreamCircuitBreakingSettings>;
     /**
-     * 备注。
+     * Remarks
      */
     comments?: pulumi.Input<string>;
     /**
-     * 连接池配置。
+     * Connection Pool Configuration
      */
     connectionPoolSettings?: pulumi.Input<inputs.apig.UpstreamConnectionPoolSettings>;
     /**
-     * 网关实例ID。
+     * Gateway Instance ID
      */
     gatewayId: pulumi.Input<string>;
     /**
-     * 负载均衡配置。
+     * Load Balancing Configuration
      */
     loadBalancerSettings?: pulumi.Input<inputs.apig.UpstreamLoadBalancerSettings>;
     /**
-     * Upstream名称。
+     * Upstream name
      */
     name: pulumi.Input<string>;
     /**
-     * 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+     * Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
      */
     protocol?: pulumi.Input<string>;
     /**
-     * Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+     * Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
      */
     sourceType: pulumi.Input<string>;
     /**
-     * TLS配置。
+     * TLS Configuration
      */
     tlsSettings?: pulumi.Input<inputs.apig.UpstreamTlsSettings>;
     /**
-     * Upstream配置。
+     * Upstream Configuration
      */
     upstreamSpec: pulumi.Input<inputs.apig.UpstreamUpstreamSpec>;
 }

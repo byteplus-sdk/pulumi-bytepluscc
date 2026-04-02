@@ -13,62 +13,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainResponseHeaderResponseHeaderActionResponseHeaderInstance {
     /**
-     * @return 表示在内容分发网络响应用户请求时，是否校验请求头中的 Origin 字段。该参数有以下取值：true：表示内容分发网络会校验 Origin 字段。如果校验成功，内容分发网络会在响应头中包含 Access-Control-Allow-Origin 字段。字段值与 Origin 字段值相同。如果校验失败，响应头中不会包含 Access-Control-Allow-Origin 字段。false：表示内容分发网络不会校验 Origin 字段。在响应头中，内容分发网络会包含 Access-Control-Allow-Origin 字段。字段值是您配置的 Access-Control-Allow-Origin 的内容。该参数的默认值是 false。该参数仅在以下条件都满足的情况下有效：Action 是 set。Key 是 Access-Control-Allow-Origin。ValueType 是 constant。
+     * @return Indicates whether the Origin field in the request header is validated when the content delivery network responds to user requests. Valid values are: true: The content delivery network validates the Origin field. If validation succeeds, the response header includes the Access-Control-Allow-Origin field, with the value matching the Origin field. If validation fails, the response header does not include the Access-Control-Allow-Origin field. false: The content delivery network does not validate the Origin field. The response header includes the Access-Control-Allow-Origin field, with the value set to your configured Access-Control-Allow-Origin content. The default value is false. This parameter is only effective when all the following conditions are met: Action is set. Key is Access-Control-Allow-Origin. ValueType is constant.
      * 
      */
     private @Nullable Boolean accessOriginControl;
     /**
-     * @return 指定对响应头的操作。该参数有以下取值：set：表示设置一个头部。设置操作包括添加与修改。如果源站响应中已包含该头部，该头部的值会被覆盖。如果源站响应中没有包含该头部，该头部会被添加。delete，表示删除一个头部。
+     * @return Specifies the operation on the response header. This parameter has the following values: set: sets a header. The set operation includes adding and modifying. If the header already exists in the origin response, its value will be overwritten. If the header does not exist in the origin response, it will be added. delete: deletes a header
      * 
      */
     private @Nullable String action;
     /**
-     * @return 指定一个头部的名称。名称不能超过 1,024个字符，不区分大小写，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（&#34;），Delete（ASCII code 127）
+     * @return Specifies the name of a header. The name cannot exceed 1,024 characters, is case-insensitive, and can include any printable ASCII character except the following: underscore (_), space, double quotes (&#34;), and Delete (ASCII code 127)
      * 
      */
     private @Nullable String key;
     /**
-     * @return 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+     * @return Indicates the value of the Key. This parameter is valid only when Action is set. If Action is not set, this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can include printable ASCII characters except for the following: dollar sign ($), Delete (ASCII code 127).
      * 
      */
     private @Nullable String value;
     /**
-     * @return 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+     * @return Specifies the value type for Key. This parameter is only valid when Action is set. If Action is not set, this parameter is invalid. The parameter supports the following values: constant: Key is a fixed string. variable: Key is sourced from a variable. customize: Key is a string formed by concatenating a variable and a fixed string.
      * 
      */
     private @Nullable String valueType;
 
     private DomainResponseHeaderResponseHeaderActionResponseHeaderInstance() {}
     /**
-     * @return 表示在内容分发网络响应用户请求时，是否校验请求头中的 Origin 字段。该参数有以下取值：true：表示内容分发网络会校验 Origin 字段。如果校验成功，内容分发网络会在响应头中包含 Access-Control-Allow-Origin 字段。字段值与 Origin 字段值相同。如果校验失败，响应头中不会包含 Access-Control-Allow-Origin 字段。false：表示内容分发网络不会校验 Origin 字段。在响应头中，内容分发网络会包含 Access-Control-Allow-Origin 字段。字段值是您配置的 Access-Control-Allow-Origin 的内容。该参数的默认值是 false。该参数仅在以下条件都满足的情况下有效：Action 是 set。Key 是 Access-Control-Allow-Origin。ValueType 是 constant。
+     * @return Indicates whether the Origin field in the request header is validated when the content delivery network responds to user requests. Valid values are: true: The content delivery network validates the Origin field. If validation succeeds, the response header includes the Access-Control-Allow-Origin field, with the value matching the Origin field. If validation fails, the response header does not include the Access-Control-Allow-Origin field. false: The content delivery network does not validate the Origin field. The response header includes the Access-Control-Allow-Origin field, with the value set to your configured Access-Control-Allow-Origin content. The default value is false. This parameter is only effective when all the following conditions are met: Action is set. Key is Access-Control-Allow-Origin. ValueType is constant.
      * 
      */
     public Optional<Boolean> accessOriginControl() {
         return Optional.ofNullable(this.accessOriginControl);
     }
     /**
-     * @return 指定对响应头的操作。该参数有以下取值：set：表示设置一个头部。设置操作包括添加与修改。如果源站响应中已包含该头部，该头部的值会被覆盖。如果源站响应中没有包含该头部，该头部会被添加。delete，表示删除一个头部。
+     * @return Specifies the operation on the response header. This parameter has the following values: set: sets a header. The set operation includes adding and modifying. If the header already exists in the origin response, its value will be overwritten. If the header does not exist in the origin response, it will be added. delete: deletes a header
      * 
      */
     public Optional<String> action() {
         return Optional.ofNullable(this.action);
     }
     /**
-     * @return 指定一个头部的名称。名称不能超过 1,024个字符，不区分大小写，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（&#34;），Delete（ASCII code 127）
+     * @return Specifies the name of a header. The name cannot exceed 1,024 characters, is case-insensitive, and can include any printable ASCII character except the following: underscore (_), space, double quotes (&#34;), and Delete (ASCII code 127)
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+     * @return Indicates the value of the Key. This parameter is valid only when Action is set. If Action is not set, this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can include printable ASCII characters except for the following: dollar sign ($), Delete (ASCII code 127).
      * 
      */
     public Optional<String> value() {
         return Optional.ofNullable(this.value);
     }
     /**
-     * @return 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+     * @return Specifies the value type for Key. This parameter is only valid when Action is set. If Action is not set, this parameter is invalid. The parameter supports the following values: constant: Key is a fixed string. variable: Key is sourced from a variable. customize: Key is a string formed by concatenating a variable and a fixed string.
      * 
      */
     public Optional<String> valueType() {

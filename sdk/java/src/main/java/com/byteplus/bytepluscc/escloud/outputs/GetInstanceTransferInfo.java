@@ -19,22 +19,22 @@ public final class GetInstanceTransferInfo {
      */
     private Boolean forbidStop;
     /**
-     * @return 资源信息。
+     * @return Resource information
      * 
      */
     private GetInstanceTransferInfoReduceSpecConfig reduceSpecConfig;
     /**
-     * @return 数据迁移任务进度，百分制。
+     * @return Data migration task progress, percentage
      * 
      */
     private Double transferProgress;
     /**
-     * @return 数据迁移任务状态。
+     * @return Data migration task status
      * 
      */
     private String transferStatus;
     /**
-     * @return 数据迁移任务 ID。
+     * @return Data migration task ID
      * 
      */
     private String transferTaskId;
@@ -48,28 +48,28 @@ public final class GetInstanceTransferInfo {
         return this.forbidStop;
     }
     /**
-     * @return 资源信息。
+     * @return Resource information
      * 
      */
     public GetInstanceTransferInfoReduceSpecConfig reduceSpecConfig() {
         return this.reduceSpecConfig;
     }
     /**
-     * @return 数据迁移任务进度，百分制。
+     * @return Data migration task progress, percentage
      * 
      */
     public Double transferProgress() {
         return this.transferProgress;
     }
     /**
-     * @return 数据迁移任务状态。
+     * @return Data migration task status
      * 
      */
     public String transferStatus() {
         return this.transferStatus;
     }
     /**
-     * @return 数据迁移任务 ID。
+     * @return Data migration task ID
      * 
      */
     public String transferTaskId() {

@@ -13,74 +13,74 @@ import java.util.Objects;
 @CustomType
 public final class GetScalingConfigurationVolume {
     /**
-     * @return 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+     * @return Whether the cloud disk is released with the instance: true (default): The cloud disk is released with the instance. false: The cloud disk is not released with the instance. When set to false, this does not apply to system disks. System disks are always released with the instance and cannot be retained.
      * 
      */
     private Boolean deleteWithInstance;
     /**
-     * @return 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+     * @return You can use this parameter to configure the extra performance package IOPS size for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. &#39;1&#39; represents the system disk; &#39;2&#39; or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceIOPS specifies the extra performance package IOPS size for the Nth disk: IOPS: 1–50000. Balance: 1–50000.
      * 
      */
     private Integer extraPerformanceIops;
     /**
-     * @return 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+     * @return You can use this parameter to configure the extra performance package throughput size for cloud disks, in MB/s. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. &#39;1&#39; represents the system disk; &#39;2&#39; or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceThroughputMB specifies the extra performance package throughput size for the Nth disk: Throughput: 1–650.
      * 
      */
     private Integer extraPerformanceThroughputMb;
     /**
-     * @return 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+     * @return This parameter allows you to purchase extra performance for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. &#34;1&#34; is the system disk; &#34;2&#34; or greater indicates a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceTypeId specifies the extra performance package type for the Nth disk: IOPS: IOPS type, use the ExtraPerformanceIOPS parameter. Balance: Balanced type, use the ExtraPerformanceIOPS parameter. Throughput: Throughput type, use the ExtraPerformanceThroughputMB parameter.
      * 
      */
     private String extraPerformanceTypeId;
     /**
-     * @return 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 &gt;= 500 GB。
+     * @return Cloud disk capacity, in GiB. System disk range: 10–500. Data disk range: 10–8192. If using ESSD_FlexPL with additional performance, size must be &gt;= 500 GB
      * 
      */
     private Integer size;
     /**
-     * @return 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
+     * @return Cloud disk types: ESSD*FlexPL: Extreme SSD FlexPL. ESSD*PL0: Extreme SSD PL0.
      * 
      */
     private String volumeType;
 
     private GetScalingConfigurationVolume() {}
     /**
-     * @return 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+     * @return Whether the cloud disk is released with the instance: true (default): The cloud disk is released with the instance. false: The cloud disk is not released with the instance. When set to false, this does not apply to system disks. System disks are always released with the instance and cannot be retained.
      * 
      */
     public Boolean deleteWithInstance() {
         return this.deleteWithInstance;
     }
     /**
-     * @return 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+     * @return You can use this parameter to configure the extra performance package IOPS size for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. &#39;1&#39; represents the system disk; &#39;2&#39; or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceIOPS specifies the extra performance package IOPS size for the Nth disk: IOPS: 1–50000. Balance: 1–50000.
      * 
      */
     public Integer extraPerformanceIops() {
         return this.extraPerformanceIops;
     }
     /**
-     * @return 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+     * @return You can use this parameter to configure the extra performance package throughput size for cloud disks, in MB/s. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. &#39;1&#39; represents the system disk; &#39;2&#39; or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceThroughputMB specifies the extra performance package throughput size for the Nth disk: Throughput: 1–650.
      * 
      */
     public Integer extraPerformanceThroughputMb() {
         return this.extraPerformanceThroughputMb;
     }
     /**
-     * @return 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+     * @return This parameter allows you to purchase extra performance for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. &#34;1&#34; is the system disk; &#34;2&#34; or greater indicates a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceTypeId specifies the extra performance package type for the Nth disk: IOPS: IOPS type, use the ExtraPerformanceIOPS parameter. Balance: Balanced type, use the ExtraPerformanceIOPS parameter. Throughput: Throughput type, use the ExtraPerformanceThroughputMB parameter.
      * 
      */
     public String extraPerformanceTypeId() {
         return this.extraPerformanceTypeId;
     }
     /**
-     * @return 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 &gt;= 500 GB。
+     * @return Cloud disk capacity, in GiB. System disk range: 10–500. Data disk range: 10–8192. If using ESSD_FlexPL with additional performance, size must be &gt;= 500 GB
      * 
      */
     public Integer size() {
         return this.size;
     }
     /**
-     * @return 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
+     * @return Cloud disk types: ESSD*FlexPL: Extreme SSD FlexPL. ESSD*PL0: Extreme SSD PL0.
      * 
      */
     public String volumeType() {

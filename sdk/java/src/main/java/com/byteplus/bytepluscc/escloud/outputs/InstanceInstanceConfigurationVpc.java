@@ -17,7 +17,7 @@ public final class InstanceInstanceConfigurationVpc {
      */
     private @Nullable String vpcId;
     /**
-     * @return VPC 名称。
+     * @return VPC name
      * 
      */
     private @Nullable String vpcName;
@@ -31,7 +31,7 @@ public final class InstanceInstanceConfigurationVpc {
         return Optional.ofNullable(this.vpcId);
     }
     /**
-     * @return VPC 名称。
+     * @return VPC name
      * 
      */
     public Optional<String> vpcName() {

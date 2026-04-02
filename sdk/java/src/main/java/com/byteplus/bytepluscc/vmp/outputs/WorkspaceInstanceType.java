@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.vmp.outputs;
 
+import com.byteplus.bytepluscc.vmp.outputs.WorkspaceInstanceTypeCalculatePriceParam;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
@@ -14,122 +15,126 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceInstanceType {
     /**
-     * @return 最大活跃时序数。
+     * @return Maximum active time series count
      * 
      */
     private @Nullable Integer activeSeries;
     /**
-     * @return 可用区（az）数。
+     * @return Number of availability zones (az)
      * 
      */
     private @Nullable Integer availabilityZoneReplicas;
+    private @Nullable List<WorkspaceInstanceTypeCalculatePriceParam> calculatePriceParams;
     /**
-     * @return 降采样策略。
+     * @return Downsampling policy
      * 
      */
     private @Nullable List<String> downsamplingPeriods;
     /**
-     * @return 最大每秒写入样本数。
+     * @return Maximum samples written per second
      * 
      */
     private @Nullable Integer ingestSamplesPerSecond;
     /**
-     * @return 最大查询并发数。
+     * @return Maximum query concurrency
      * 
      */
     private @Nullable Integer queryConcurrency;
     /**
-     * @return 最大查询 QPS。
+     * @return Maximum query QPS
      * 
      */
     private @Nullable Integer queryPerSecond;
     /**
-     * @return 每个可用区（az）的数据副本数。
+     * @return Number of data replicas per availability zone (az)
      * 
      */
     private @Nullable Integer replicasPerZone;
     /**
-     * @return 最长数据保留时间。
+     * @return Maximum data retention period
      * 
      */
     private @Nullable String retentionPeriod;
     /**
-     * @return 最大每秒扫描样本数。
+     * @return Maximum samples scanned per second
      * 
      */
     private @Nullable Integer scanSamplesPerSecond;
     /**
-     * @return 最大每秒扫描时序数。
+     * @return Maximum time series scanned per second
      * 
      */
     private @Nullable Integer scanSeriesPerSecond;
 
     private WorkspaceInstanceType() {}
     /**
-     * @return 最大活跃时序数。
+     * @return Maximum active time series count
      * 
      */
     public Optional<Integer> activeSeries() {
         return Optional.ofNullable(this.activeSeries);
     }
     /**
-     * @return 可用区（az）数。
+     * @return Number of availability zones (az)
      * 
      */
     public Optional<Integer> availabilityZoneReplicas() {
         return Optional.ofNullable(this.availabilityZoneReplicas);
     }
+    public List<WorkspaceInstanceTypeCalculatePriceParam> calculatePriceParams() {
+        return this.calculatePriceParams == null ? List.of() : this.calculatePriceParams;
+    }
     /**
-     * @return 降采样策略。
+     * @return Downsampling policy
      * 
      */
     public List<String> downsamplingPeriods() {
         return this.downsamplingPeriods == null ? List.of() : this.downsamplingPeriods;
     }
     /**
-     * @return 最大每秒写入样本数。
+     * @return Maximum samples written per second
      * 
      */
     public Optional<Integer> ingestSamplesPerSecond() {
         return Optional.ofNullable(this.ingestSamplesPerSecond);
     }
     /**
-     * @return 最大查询并发数。
+     * @return Maximum query concurrency
      * 
      */
     public Optional<Integer> queryConcurrency() {
         return Optional.ofNullable(this.queryConcurrency);
     }
     /**
-     * @return 最大查询 QPS。
+     * @return Maximum query QPS
      * 
      */
     public Optional<Integer> queryPerSecond() {
         return Optional.ofNullable(this.queryPerSecond);
     }
     /**
-     * @return 每个可用区（az）的数据副本数。
+     * @return Number of data replicas per availability zone (az)
      * 
      */
     public Optional<Integer> replicasPerZone() {
         return Optional.ofNullable(this.replicasPerZone);
     }
     /**
-     * @return 最长数据保留时间。
+     * @return Maximum data retention period
      * 
      */
     public Optional<String> retentionPeriod() {
         return Optional.ofNullable(this.retentionPeriod);
     }
     /**
-     * @return 最大每秒扫描样本数。
+     * @return Maximum samples scanned per second
      * 
      */
     public Optional<Integer> scanSamplesPerSecond() {
         return Optional.ofNullable(this.scanSamplesPerSecond);
     }
     /**
-     * @return 最大每秒扫描时序数。
+     * @return Maximum time series scanned per second
      * 
      */
     public Optional<Integer> scanSeriesPerSecond() {
@@ -147,6 +152,7 @@ public final class WorkspaceInstanceType {
     public static final class Builder {
         private @Nullable Integer activeSeries;
         private @Nullable Integer availabilityZoneReplicas;
+        private @Nullable List<WorkspaceInstanceTypeCalculatePriceParam> calculatePriceParams;
         private @Nullable List<String> downsamplingPeriods;
         private @Nullable Integer ingestSamplesPerSecond;
         private @Nullable Integer queryConcurrency;
@@ -160,6 +166,7 @@ public final class WorkspaceInstanceType {
     	      Objects.requireNonNull(defaults);
     	      this.activeSeries = defaults.activeSeries;
     	      this.availabilityZoneReplicas = defaults.availabilityZoneReplicas;
+    	      this.calculatePriceParams = defaults.calculatePriceParams;
     	      this.downsamplingPeriods = defaults.downsamplingPeriods;
     	      this.ingestSamplesPerSecond = defaults.ingestSamplesPerSecond;
     	      this.queryConcurrency = defaults.queryConcurrency;
@@ -181,6 +188,15 @@ public final class WorkspaceInstanceType {
 
             this.availabilityZoneReplicas = availabilityZoneReplicas;
             return this;
+        }
+        @CustomType.Setter
+        public Builder calculatePriceParams(@Nullable List<WorkspaceInstanceTypeCalculatePriceParam> calculatePriceParams) {
+
+            this.calculatePriceParams = calculatePriceParams;
+            return this;
+        }
+        public Builder calculatePriceParams(WorkspaceInstanceTypeCalculatePriceParam... calculatePriceParams) {
+            return calculatePriceParams(List.of(calculatePriceParams));
         }
         @CustomType.Setter
         public Builder downsamplingPeriods(@Nullable List<String> downsamplingPeriods) {
@@ -237,6 +253,7 @@ public final class WorkspaceInstanceType {
             final var _resultValue = new WorkspaceInstanceType();
             _resultValue.activeSeries = activeSeries;
             _resultValue.availabilityZoneReplicas = availabilityZoneReplicas;
+            _resultValue.calculatePriceParams = calculatePriceParams;
             _resultValue.downsamplingPeriods = downsamplingPeriods;
             _resultValue.ingestSamplesPerSecond = ingestSamplesPerSecond;
             _resultValue.queryConcurrency = queryConcurrency;

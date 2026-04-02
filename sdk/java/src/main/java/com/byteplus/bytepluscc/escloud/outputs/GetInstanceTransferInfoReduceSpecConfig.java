@@ -12,62 +12,62 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceTransferInfoReduceSpecConfig {
     /**
-     * @return 冷节点数量。
+     * @return Number of cold nodes.
      * 
      */
     private Integer coldNodeNum;
     /**
-     * @return 数据节点数量。
+     * @return Number of data nodes
      * 
      */
     private Integer dataNodeNum;
     /**
-     * @return Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+     * @return Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
      * 
      */
     private Boolean enablePureMaster;
     /**
-     * @return Master 节点数量。
+     * @return Number of master nodes.
      * 
      */
     private Integer masterNodeNum;
     /**
-     * @return 温节点数量。
+     * @return Number of warm nodes
      * 
      */
     private Integer warmNodeNum;
 
     private GetInstanceTransferInfoReduceSpecConfig() {}
     /**
-     * @return 冷节点数量。
+     * @return Number of cold nodes.
      * 
      */
     public Integer coldNodeNum() {
         return this.coldNodeNum;
     }
     /**
-     * @return 数据节点数量。
+     * @return Number of data nodes
      * 
      */
     public Integer dataNodeNum() {
         return this.dataNodeNum;
     }
     /**
-     * @return Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+     * @return Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
      * 
      */
     public Boolean enablePureMaster() {
         return this.enablePureMaster;
     }
     /**
-     * @return Master 节点数量。
+     * @return Number of master nodes.
      * 
      */
     public Integer masterNodeNum() {
         return this.masterNodeNum;
     }
     /**
-     * @return 温节点数量。
+     * @return Number of warm nodes
      * 
      */
     public Integer warmNodeNum() {

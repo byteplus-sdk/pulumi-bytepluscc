@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 挂载点是 NAS 文件系统在网络环境中的连接点。NAS 文件系统需要挂载在计算节点中才能完成数据的访问与存储。挂载是将计算节点与 NAS 文件系统相连接的操作。
+ * Mount point is the connection point for the NAS file system in a network environment. The NAS file system must be mounted on a compute node to enable data access and storage. Mounting is the operation that connects the compute node to the NAS file system.
  * 
  * ## Example Usage
  * 
@@ -74,196 +74,196 @@ public class MountPoint extends com.pulumi.resources.CustomResource {
         return this.clients;
     }
     /**
-     * 挂载点创建时间。
+     * Mount point creation time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 挂载点创建时间。
+     * @return Mount point creation time.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * DNS 地址。
+     * DNS address.
      * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
-     * @return DNS 地址。
+     * @return DNS address.
      * 
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
-     * 文件系统 ID。
+     * File system ID.
      * 
      */
     @Export(name="fileSystemId", refs={String.class}, tree="[0]")
     private Output<String> fileSystemId;
 
     /**
-     * @return 文件系统 ID。
+     * @return File system ID.
      * 
      */
     public Output<String> fileSystemId() {
         return this.fileSystemId;
     }
     /**
-     * 挂载点地址。
+     * Mount point address.
      * 
      */
     @Export(name="ip", refs={String.class}, tree="[0]")
     private Output<String> ip;
 
     /**
-     * @return 挂载点地址。
+     * @return Mount point address.
      * 
      */
     public Output<String> ip() {
         return this.ip;
     }
     /**
-     * 挂载点 ID。
+     * Mount point ID.
      * 
      */
     @Export(name="mountPointId", refs={String.class}, tree="[0]")
     private Output<String> mountPointId;
 
     /**
-     * @return 挂载点 ID。
+     * @return Mount point ID.
      * 
      */
     public Output<String> mountPointId() {
         return this.mountPointId;
     }
     /**
-     * 挂载点名称。
+     * Mount point name.
      * 
      */
     @Export(name="mountPointName", refs={String.class}, tree="[0]")
     private Output<String> mountPointName;
 
     /**
-     * @return 挂载点名称。
+     * @return Mount point name.
      * 
      */
     public Output<String> mountPointName() {
         return this.mountPointName;
     }
     /**
-     * 挂载点绑定的权限组信息。
+     * Permission group information bound to the mount point.
      * 
      */
     @Export(name="permissionGroup", refs={MountPointPermissionGroup.class}, tree="[0]")
     private Output<MountPointPermissionGroup> permissionGroup;
 
     /**
-     * @return 挂载点绑定的权限组信息。
+     * @return Permission group information bound to the mount point.
      * 
      */
     public Output<MountPointPermissionGroup> permissionGroup() {
         return this.permissionGroup;
     }
     /**
-     * 权限组 ID。
+     * Permission group ID.
      * 
      */
     @Export(name="permissionGroupId", refs={String.class}, tree="[0]")
     private Output<String> permissionGroupId;
 
     /**
-     * @return 权限组 ID。
+     * @return Permission group ID.
      * 
      */
     public Output<String> permissionGroupId() {
         return this.permissionGroupId;
     }
     /**
-     * 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+     * Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+     * @return Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 子网 ID。
+     * Subnet ID.
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return 子网 ID。
+     * @return Subnet ID.
      * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
     /**
-     * 子网名称。
+     * Subnet name.
      * 
      */
     @Export(name="subnetName", refs={String.class}, tree="[0]")
     private Output<String> subnetName;
 
     /**
-     * @return 子网名称。
+     * @return Subnet name.
      * 
      */
     public Output<String> subnetName() {
         return this.subnetName;
     }
     /**
-     * 挂载点更新时间。
+     * Mount point update time.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 挂载点更新时间。
+     * @return Mount point update time.
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 私有网络 ID。
+     * Private network ID.
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 私有网络 ID。
+     * @return Private network ID.
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * 私有网络名称。
+     * Private network name.
      * 
      */
     @Export(name="vpcName", refs={String.class}, tree="[0]")
     private Output<String> vpcName;
 
     /**
-     * @return 私有网络名称。
+     * @return Private network name.
      * 
      */
     public Output<String> vpcName() {

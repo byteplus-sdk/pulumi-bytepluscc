@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
     public sealed class NlbZoneMappingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 网卡ID。
+        /// Network interface card ID.
         /// </summary>
         [Input("eniId")]
         public Input<string>? EniId { get; set; }
 
         /// <summary>
-        /// NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+        /// Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
         /// </summary>
         [Input("ipv4Address")]
         public Input<string>? Ipv4Address { get; set; }
 
         /// <summary>
-        /// NLB实例的公网IPv4 EIP地址。
+        /// Public IPv4 EIP address of the NLB instance.
         /// </summary>
         [Input("ipv4EipAddress")]
         public Input<string>? Ipv4EipAddress { get; set; }
 
         /// <summary>
-        /// NLB实例的公网IPv4 EIP ID。
+        /// Public IPv4 EIP ID of the NLB instance.
         /// </summary>
         [Input("ipv4EipId")]
         public Input<string>? Ipv4EipId { get; set; }
 
         /// <summary>
-        /// NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+        /// Health status of the NLB instance's private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
         /// </summary>
         [Input("ipv4HcStatus")]
         public Input<string>? Ipv4HcStatus { get; set; }
@@ -47,7 +47,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
         private InputList<string>? _ipv4LocalAddresses;
 
         /// <summary>
-        /// NLB实例的私网IPv4 LIP地址。
+        /// Private IPv4 LIP address of the NLB instance.
         /// </summary>
         public InputList<string> Ipv4LocalAddresses
         {
@@ -56,19 +56,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
         }
 
         /// <summary>
-        /// NLB实例的私网IPv6 VIP地址。
+        /// Private IPv6 VIP address of the NLB instance.
         /// </summary>
         [Input("ipv6Address")]
         public Input<string>? Ipv6Address { get; set; }
 
         /// <summary>
-        /// NLB实例关联的IPv6公网带宽的ID。
+        /// ID of the IPv6 public bandwidth associated with the NLB instance.
         /// </summary>
         [Input("ipv6EipId")]
         public Input<string>? Ipv6EipId { get; set; }
 
         /// <summary>
-        /// NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+        /// Health status of the NLB instance's private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
         /// </summary>
         [Input("ipv6HcStatus")]
         public Input<string>? Ipv6HcStatus { get; set; }
@@ -77,7 +77,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
         private InputList<string>? _ipv6LocalAddresses;
 
         /// <summary>
-        /// NLB实例的私网IPv6 LIP地址。
+        /// Private IPv6 LIP address of the NLB instance.
         /// </summary>
         public InputList<string> Ipv6LocalAddresses
         {
@@ -86,13 +86,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
         }
 
         /// <summary>
-        /// NLB实例所属的子网ID。
+        /// Subnet ID to which the NLB instance belongs.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
         /// <summary>
-        /// NLB实例所属的可用区ID。
+        /// Availability zone ID to which the NLB instance belongs.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

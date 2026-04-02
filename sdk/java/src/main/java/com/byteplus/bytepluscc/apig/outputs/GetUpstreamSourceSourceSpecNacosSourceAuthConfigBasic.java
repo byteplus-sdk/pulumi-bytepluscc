@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasic {
     /**
-     * @return 密码。
+     * @return Password
      * 
      */
     private String password;
     /**
-     * @return 用户名。
+     * @return Username
      * 
      */
     private String username;
 
     private GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasic() {}
     /**
-     * @return 密码。
+     * @return Password
      * 
      */
     public String password() {
         return this.password;
     }
     /**
-     * @return 用户名。
+     * @return Username
      * 
      */
     public String username() {

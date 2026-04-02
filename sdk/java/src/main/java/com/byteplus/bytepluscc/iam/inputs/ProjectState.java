@@ -18,14 +18,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     public static final ProjectState Empty = new ProjectState();
 
     /**
-     * 账号ID
+     * Account ID
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<Integer> accountId;
 
     /**
-     * @return 账号ID
+     * @return Account ID
      * 
      */
     public Optional<Output<Integer>> accountId() {
@@ -33,14 +33,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建时间
+     * Creation Time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间
+     * @return Creation Time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -48,14 +48,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 描述
+     * Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 描述
+     * @return Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -63,14 +63,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 展示名
+     * Display Name
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return 展示名
+     * @return Display Name
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -78,14 +78,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否可见
+     * Visible
      * 
      */
     @Import(name="hasPermission")
     private @Nullable Output<Boolean> hasPermission;
 
     /**
-     * @return 是否可见
+     * @return Visible
      * 
      */
     public Optional<Output<Boolean>> hasPermission() {
@@ -93,14 +93,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 父项目名称
+     * Parent Project Name
      * 
      */
     @Import(name="parentProjectName")
     private @Nullable Output<String> parentProjectName;
 
     /**
-     * @return 父项目名称
+     * @return Parent Project Name
      * 
      */
     public Optional<Output<String>> parentProjectName() {
@@ -108,14 +108,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 项目路径
+     * Project Path
      * 
      */
     @Import(name="path")
     private @Nullable Output<String> path;
 
     /**
-     * @return 项目路径
+     * @return Project Path
      * 
      */
     public Optional<Output<String>> path() {
@@ -123,14 +123,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 项目名称
+     * Project Name
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 项目名称
+     * @return Project Name
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -138,14 +138,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 启用状态
+     * Enabled Status
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 启用状态
+     * @return Enabled Status
      * 
      */
     public Optional<Output<String>> status() {
@@ -153,14 +153,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新时间
+     * Update Time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间
+     * @return Update Time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -201,7 +201,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 账号ID
+         * @param accountId Account ID
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 账号ID
+         * @param accountId Account ID
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间
+         * @param createdTime Creation Time
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间
+         * @param createdTime Creation Time
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述
+         * @param description Description
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述
+         * @param description Description
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 展示名
+         * @param displayName Display Name
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 展示名
+         * @param displayName Display Name
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hasPermission 是否可见
+         * @param hasPermission Visible
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hasPermission 是否可见
+         * @param hasPermission Visible
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parentProjectName 父项目名称
+         * @param parentProjectName Parent Project Name
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parentProjectName 父项目名称
+         * @param parentProjectName Parent Project Name
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param path 项目路径
+         * @param path Project Path
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param path 项目路径
+         * @param path Project Path
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称
+         * @param projectName Project Name
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称
+         * @param projectName Project Name
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 启用状态
+         * @param status Enabled Status
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 启用状态
+         * @param status Enabled Status
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间
+         * @param updatedTime Update Time
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间
+         * @param updatedTime Update Time
          * 
          * @return builder
          * 

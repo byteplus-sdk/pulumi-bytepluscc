@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class RuleRuleActionFixedResponseConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 返回的固定内容。
+        /// Fixed response content.
         /// </summary>
         [Input("content")]
         public Input<string>? Content { get; set; }
 
         /// <summary>
-        /// 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+        /// Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
         /// </summary>
         [Input("contentType")]
         public Input<string>? ContentType { get; set; }
 
         /// <summary>
-        /// 返回的 HTTP 状态码。
+        /// Returned HTTP status code.
         /// </summary>
         [Input("httpCode")]
         public Input<string>? HttpCode { get; set; }

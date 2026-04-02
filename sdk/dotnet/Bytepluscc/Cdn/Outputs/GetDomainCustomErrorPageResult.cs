@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainCustomErrorPageResult
     {
         /// <summary>
-        /// 表示一个配置规则的集合。您最多可以添加 50 条规则。
+        /// Indicates a set of configuration rules. You can add up to 50 rules.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainCustomErrorPageErrorPageRuleResult> ErrorPageRules;
         /// <summary>
-        /// 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        /// Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
         /// </summary>
         public readonly bool Switch;
 

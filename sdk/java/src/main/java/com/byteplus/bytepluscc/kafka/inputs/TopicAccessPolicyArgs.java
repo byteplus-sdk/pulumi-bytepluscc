@@ -16,14 +16,14 @@ public final class TopicAccessPolicyArgs extends com.pulumi.resources.ResourceAr
     public static final TopicAccessPolicyArgs Empty = new TopicAccessPolicyArgs();
 
     /**
-     * SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+     * SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
      * 
      */
     @Import(name="accessPolicy")
     private @Nullable Output<String> accessPolicy;
 
     /**
-     * @return SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+     * @return SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
      * 
      */
     public Optional<Output<String>> accessPolicy() {
@@ -31,14 +31,14 @@ public final class TopicAccessPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * SASL 用户名称。
+     * SASL username.
      * 
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
-     * @return SASL 用户名称。
+     * @return SASL username.
      * 
      */
     public Optional<Output<String>> userName() {
@@ -71,7 +71,7 @@ public final class TopicAccessPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param accessPolicy SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+         * @param accessPolicy SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class TopicAccessPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param accessPolicy SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+         * @param accessPolicy SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class TopicAccessPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param userName SASL 用户名称。
+         * @param userName SASL username.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class TopicAccessPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param userName SASL 用户名称。
+         * @param userName SASL username.
          * 
          * @return builder
          * 

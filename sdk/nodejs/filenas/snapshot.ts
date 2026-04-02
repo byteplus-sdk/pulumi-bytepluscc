@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 快照是一种备份方式，每个快照都是文件存储在某个时间点的备份。当数据丢失或故障时，您可以通过快照恢复文件存储数据，找回丢失的数据。
+ * A snapshot is a backup method. Each snapshot is a backup of file storage at a specific point in time. If data is lost or a failure occurs, you can use snapshots to restore file storage and recover lost data
  *
  * ## Example Usage
  *
@@ -55,59 +55,59 @@ export class Snapshot extends pulumi.CustomResource {
     }
 
     /**
-     * 快照创建时间。
+     * Snapshot Creation Time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 快照描述信息。
+     * Snapshot Description
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 文件系统 ID。
+     * File System ID
      */
     public readonly fileSystemId!: pulumi.Output<string>;
     /**
-     * 文件系统名称。
+     * File System Name
      */
     public /*out*/ readonly fileSystemName!: pulumi.Output<string>;
     /**
-     * 是否加密，当前仅支持false，即不加密。
+     * Is encryption enabled. Currently only false is supported (not encrypted)
      */
     public /*out*/ readonly isEncrypt!: pulumi.Output<boolean>;
     /**
-     * 快照创建进度。
+     * Snapshot Creation Progress
      */
     public /*out*/ readonly progress!: pulumi.Output<string>;
     /**
-     * 快照保留时间，默认为2147483647，即永久保留。
+     * Snapshot Retention Period. Default is 2147483647 (permanent retention)
      */
     public /*out*/ readonly retentionDays!: pulumi.Output<number>;
     /**
-     * 快照 ID。
+     * Snapshot ID
      */
     public /*out*/ readonly snapshotId!: pulumi.Output<string>;
     /**
-     * 快照名称。
+     * Snapshot Name
      */
     public readonly snapshotName!: pulumi.Output<string>;
     /**
-     * 快照类型，默认为Manual，即手动快照。
+     * Snapshot Type. Default is Manual (manual snapshot)
      */
     public /*out*/ readonly snapshotType!: pulumi.Output<string>;
     /**
-     * 文件系统容量，单位为 GiB。
+     * File System Capacity (GiB)
      */
     public /*out*/ readonly sourceSize!: pulumi.Output<number>;
     /**
-     * 文件系统版本。
+     * File System Version
      */
     public /*out*/ readonly sourceVersion!: pulumi.Output<string>;
     /**
-     * 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+     * Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 可用区 ID。
+     * Availability Zone ID
      */
     public /*out*/ readonly zoneId!: pulumi.Output<string>;
 
@@ -171,59 +171,59 @@ export class Snapshot extends pulumi.CustomResource {
  */
 export interface SnapshotState {
     /**
-     * 快照创建时间。
+     * Snapshot Creation Time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 快照描述信息。
+     * Snapshot Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 文件系统 ID。
+     * File System ID
      */
     fileSystemId?: pulumi.Input<string>;
     /**
-     * 文件系统名称。
+     * File System Name
      */
     fileSystemName?: pulumi.Input<string>;
     /**
-     * 是否加密，当前仅支持false，即不加密。
+     * Is encryption enabled. Currently only false is supported (not encrypted)
      */
     isEncrypt?: pulumi.Input<boolean>;
     /**
-     * 快照创建进度。
+     * Snapshot Creation Progress
      */
     progress?: pulumi.Input<string>;
     /**
-     * 快照保留时间，默认为2147483647，即永久保留。
+     * Snapshot Retention Period. Default is 2147483647 (permanent retention)
      */
     retentionDays?: pulumi.Input<number>;
     /**
-     * 快照 ID。
+     * Snapshot ID
      */
     snapshotId?: pulumi.Input<string>;
     /**
-     * 快照名称。
+     * Snapshot Name
      */
     snapshotName?: pulumi.Input<string>;
     /**
-     * 快照类型，默认为Manual，即手动快照。
+     * Snapshot Type. Default is Manual (manual snapshot)
      */
     snapshotType?: pulumi.Input<string>;
     /**
-     * 文件系统容量，单位为 GiB。
+     * File System Capacity (GiB)
      */
     sourceSize?: pulumi.Input<number>;
     /**
-     * 文件系统版本。
+     * File System Version
      */
     sourceVersion?: pulumi.Input<string>;
     /**
-     * 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+     * Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
      */
     status?: pulumi.Input<string>;
     /**
-     * 可用区 ID。
+     * Availability Zone ID
      */
     zoneId?: pulumi.Input<string>;
 }
@@ -233,15 +233,15 @@ export interface SnapshotState {
  */
 export interface SnapshotArgs {
     /**
-     * 快照描述信息。
+     * Snapshot Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 文件系统 ID。
+     * File System ID
      */
     fileSystemId: pulumi.Input<string>;
     /**
-     * 快照名称。
+     * Snapshot Name
      */
     snapshotName: pulumi.Input<string>;
 }

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainTagResult
     {
         /// <summary>
-        /// 标签键。
+        /// Tag key
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// 标签值。
+        /// Tag value.
         /// </summary>
         public readonly string Value;
 

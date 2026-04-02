@@ -30,41 +30,41 @@ type LookupDirectConnectGatewayArgs struct {
 
 // A collection of values returned by getDirectConnectGateway.
 type LookupDirectConnectGatewayResult struct {
-	// 专线网关所属账号的ID。
+	// ID of the account to which the Direct Connect Gateway belongs.
 	AccountId string `pulumi:"accountId"`
-	// 关联的CEN信息。
+	// Associated CEN information.
 	AssociateCens []GetDirectConnectGatewayAssociateCen `pulumi:"associateCens"`
-	// 关联的EIC信息。
+	// Associated EIC information.
 	AssociateEic GetDirectConnectGatewayAssociateEic `pulumi:"associateEic"`
-	// 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
+	// ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
 	BgpAsn int `pulumi:"bgpAsn"`
-	// 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
+	// Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
 	BusinessStatus string `pulumi:"businessStatus"`
-	// 创建专线网关的时间。
+	// Time when the Direct Connect Gateway was created.
 	CreatedTime string `pulumi:"createdTime"`
-	// 预期资源强制回收时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+	// Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
 	DeletedTime string `pulumi:"deletedTime"`
-	// 专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+	// Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
 	Description string `pulumi:"description"`
-	// 专线网关的ID。
+	// ID of the Direct Connect Gateway.
 	DirectConnectGatewayId string `pulumi:"directConnectGatewayId"`
-	// 专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
+	// Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
 	DirectConnectGatewayName string `pulumi:"directConnectGatewayName"`
-	// 是否支持IPv6。true：支持。false：不支持。
+	// Whether IPv6 is supported. true: supported. false: not supported.
 	EnableIpv6 bool `pulumi:"enableIpv6"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 专线网关被锁定的原因。unlock：解锁。financial：因欠费被锁定。security：因安全被锁定。
+	// Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
 	LockReason string `pulumi:"lockReason"`
-	// 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+	// Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
 	OverdueTime string `pulumi:"overdueTime"`
-	// 专线网关所属的项目。
+	// Project to which the Direct Connect Gateway belongs.
 	ProjectName string `pulumi:"projectName"`
-	// 专线网关的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+	// Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
 	Status string `pulumi:"status"`
-	// 专线网关已添加的全部标签信息。
+	// All tag information added to the Direct Connect Gateway.
 	Tags []GetDirectConnectGatewayTag `pulumi:"tags"`
-	// 更新专线网关的时间。
+	// Time when the Direct Connect Gateway was updated.
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -102,57 +102,57 @@ func (o LookupDirectConnectGatewayResultOutput) ToLookupDirectConnectGatewayResu
 	return o
 }
 
-// 专线网关所属账号的ID。
+// ID of the account to which the Direct Connect Gateway belongs.
 func (o LookupDirectConnectGatewayResultOutput) AccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) string { return v.AccountId }).(pulumi.StringOutput)
 }
 
-// 关联的CEN信息。
+// Associated CEN information.
 func (o LookupDirectConnectGatewayResultOutput) AssociateCens() GetDirectConnectGatewayAssociateCenArrayOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) []GetDirectConnectGatewayAssociateCen { return v.AssociateCens }).(GetDirectConnectGatewayAssociateCenArrayOutput)
 }
 
-// 关联的EIC信息。
+// Associated EIC information.
 func (o LookupDirectConnectGatewayResultOutput) AssociateEic() GetDirectConnectGatewayAssociateEicOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) GetDirectConnectGatewayAssociateEic { return v.AssociateEic }).(GetDirectConnectGatewayAssociateEicOutput)
 }
 
-// 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
+// ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
 func (o LookupDirectConnectGatewayResultOutput) BgpAsn() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) int { return v.BgpAsn }).(pulumi.IntOutput)
 }
 
-// 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
+// Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
 func (o LookupDirectConnectGatewayResultOutput) BusinessStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) string { return v.BusinessStatus }).(pulumi.StringOutput)
 }
 
-// 创建专线网关的时间。
+// Time when the Direct Connect Gateway was created.
 func (o LookupDirectConnectGatewayResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 预期资源强制回收时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+// Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
 func (o LookupDirectConnectGatewayResultOutput) DeletedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) string { return v.DeletedTime }).(pulumi.StringOutput)
 }
 
-// 专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+// Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
 func (o LookupDirectConnectGatewayResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 专线网关的ID。
+// ID of the Direct Connect Gateway.
 func (o LookupDirectConnectGatewayResultOutput) DirectConnectGatewayId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) string { return v.DirectConnectGatewayId }).(pulumi.StringOutput)
 }
 
-// 专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
+// Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
 func (o LookupDirectConnectGatewayResultOutput) DirectConnectGatewayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) string { return v.DirectConnectGatewayName }).(pulumi.StringOutput)
 }
 
-// 是否支持IPv6。true：支持。false：不支持。
+// Whether IPv6 is supported. true: supported. false: not supported.
 func (o LookupDirectConnectGatewayResultOutput) EnableIpv6() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) bool { return v.EnableIpv6 }).(pulumi.BoolOutput)
 }
@@ -162,32 +162,32 @@ func (o LookupDirectConnectGatewayResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 专线网关被锁定的原因。unlock：解锁。financial：因欠费被锁定。security：因安全被锁定。
+// Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
 func (o LookupDirectConnectGatewayResultOutput) LockReason() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) string { return v.LockReason }).(pulumi.StringOutput)
 }
 
-// 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+// Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
 func (o LookupDirectConnectGatewayResultOutput) OverdueTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) string { return v.OverdueTime }).(pulumi.StringOutput)
 }
 
-// 专线网关所属的项目。
+// Project to which the Direct Connect Gateway belongs.
 func (o LookupDirectConnectGatewayResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 专线网关的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+// Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
 func (o LookupDirectConnectGatewayResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 专线网关已添加的全部标签信息。
+// All tag information added to the Direct Connect Gateway.
 func (o LookupDirectConnectGatewayResultOutput) Tags() GetDirectConnectGatewayTagArrayOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) []GetDirectConnectGatewayTag { return v.Tags }).(GetDirectConnectGatewayTagArrayOutput)
 }
 
-// 更新专线网关的时间。
+// Time when the Direct Connect Gateway was updated.
 func (o LookupDirectConnectGatewayResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

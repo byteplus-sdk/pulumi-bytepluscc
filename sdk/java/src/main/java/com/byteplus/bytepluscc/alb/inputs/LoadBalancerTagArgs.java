@@ -16,14 +16,14 @@ public final class LoadBalancerTagArgs extends com.pulumi.resources.ResourceArgs
     public static final LoadBalancerTagArgs Empty = new LoadBalancerTagArgs();
 
     /**
-     * 标签的键，用于标识标签的类别。
+     * Tag key, used to identify the tag category.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 标签的键，用于标识标签的类别。
+     * @return Tag key, used to identify the tag category.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class LoadBalancerTagArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 标签的值，用于标识具体的标签内容。
+     * Tag value used to identify the specific tag content.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 标签的值，用于标识具体的标签内容。
+     * @return Tag value used to identify the specific tag content.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class LoadBalancerTagArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param key 标签的键，用于标识标签的类别。
+         * @param key Tag key, used to identify the tag category.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class LoadBalancerTagArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param key 标签的键，用于标识标签的类别。
+         * @param key Tag key, used to identify the tag category.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class LoadBalancerTagArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value 标签的值，用于标识具体的标签内容。
+         * @param value Tag value used to identify the specific tag content.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class LoadBalancerTagArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value 标签的值，用于标识具体的标签内容。
+         * @param value Tag value used to identify the specific tag content.
          * 
          * @return builder
          * 

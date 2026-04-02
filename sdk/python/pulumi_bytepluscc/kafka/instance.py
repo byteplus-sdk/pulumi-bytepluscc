@@ -43,24 +43,24 @@ class InstanceArgs:
                  user_password: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Instance resource.
-        :param pulumi.Input[builtins.str] compute_spec: 实例的计算规格。
-        :param pulumi.Input[builtins.str] subnet_id: 实例所在的 VPC 子网 ID。
-        :param pulumi.Input[builtins.str] version: 支持的 Kafka 版本，当前支持的版本包括 2.2.2, 2.8.2。
-        :param pulumi.Input[builtins.str] vpc_id: 实例所在的私有网络 (VPC) ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所在的可用区 ID。消息队列 Kafka版实例支持跨 AZ 部署, 多个可用区ID之间以逗号间隔。
-        :param pulumi.Input['InstanceChargeInfoArgs'] charge_info: Kafka 实例的计费类型等计费信息。
-        :param pulumi.Input[builtins.str] eip_id: EIP 的 ID。
-        :param pulumi.Input[builtins.str] instance_description: Kafka 实例的简单描述。长度范围为 1~128 个字符。
-        :param pulumi.Input[builtins.str] instance_name: Kafka 实例的名称。只能包含中文、字母、数字、下划线（_）和连字符（-）。不能以数字和连字符（-）开头。长度范围为 1~128 个字符。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_white_lists: 实例绑定的白名单 ID 列表。绑定白名单后，仅配置在白名单中的 IP 地址与地址段才能访问此实例。若未设置此参数，新 Kafka 实例将绑定白名单 default，对应 IP 地址为 0.0.0.0，表示允许所有地址访问该 Kafka 实例。
-        :param pulumi.Input[builtins.bool] need_rebalance: 是否开启再均衡。
-        :param pulumi.Input[builtins.str] parameters: Kafka 实例的初始参数配置,格式为json,参数列表: 最大消息大小(MessageMaxByte)1-12MB 默认10, 消息保留时间(LogRetentionHours)0-2160Hour 默认72, 消费位点保留时长(OffsetRetentionMinutes)1-10080Min 默认4320 消息时间类型(MessageTimestampType)LogAppendTime/CreateTime 消息写入到服务端时间、producer创建消息时间。
-        :param pulumi.Input[builtins.int] partition_number: 分区数量。
-        :param pulumi.Input[builtins.str] project_name: 当前创建的 Kafka 实例所属的 IAM 项目。
-        :param pulumi.Input[builtins.int] storage_space: 实例的存储空间，单位为 GiB, 必须指定为 100 的倍数。
-        :param pulumi.Input[builtins.str] storage_type: Kafka 实例数据存储的云盘类型。可设置为 ESSD*FlexPL 或 ESSD*PL0，默认为 ESSD_FlexPL。
-        :param pulumi.Input[builtins.str] user_name: SASL/PLAIN 用户名称，需要满足以下要求: 1.由小写字母、数字、连字符（-）或下划线组成。2.长度为 3~64 个字符。3.用户名不支持设置为 admin 或 monitor,且实例内用户名称唯一。
-        :param pulumi.Input[builtins.str] user_password: SASL/PLAIN 用户的密码，需要满足以下要求: 1.长度在8到32个字符 2.由大写字母、小写字母、数字、特殊字符中的任意三种组成 3.支持的特殊字符包括 !@#$%^&*()_+-=。
+        :param pulumi.Input[builtins.str] compute_spec: Instance compute specification.
+        :param pulumi.Input[builtins.str] subnet_id: VPC subnet ID where the instance is located.
+        :param pulumi.Input[builtins.str] version: Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
+        :param pulumi.Input[builtins.str] vpc_id: Private network (VPC) ID where the instance is located.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
+        :param pulumi.Input['InstanceChargeInfoArgs'] charge_info: Billing type and related billing information for the Kafka instance.
+        :param pulumi.Input[builtins.str] eip_id: EIP ID.
+        :param pulumi.Input[builtins.str] instance_description: Brief description of the Kafka instance. Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] instance_name: Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_white_lists: List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist 'default', with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
+        :param pulumi.Input[builtins.bool] need_rebalance: Whether to enable rebalancing.
+        :param pulumi.Input[builtins.str] parameters: Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
+        :param pulumi.Input[builtins.int] partition_number: Number of partitions.
+        :param pulumi.Input[builtins.str] project_name: IAM project to which the currently created Kafka instance belongs.
+        :param pulumi.Input[builtins.int] storage_space: Instance storage space, measured in GiB, must be specified as a multiple of 100.
+        :param pulumi.Input[builtins.str] storage_type: Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
+        :param pulumi.Input[builtins.str] user_name: SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
+        :param pulumi.Input[builtins.str] user_password: Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !@#$%^&*()_+-=
         """
         pulumi.set(__self__, "compute_spec", compute_spec)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -100,7 +100,7 @@ class InstanceArgs:
     @pulumi.getter(name="computeSpec")
     def compute_spec(self) -> pulumi.Input[builtins.str]:
         """
-        实例的计算规格。
+        Instance compute specification.
         """
         return pulumi.get(self, "compute_spec")
 
@@ -112,7 +112,7 @@ class InstanceArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例所在的 VPC 子网 ID。
+        VPC subnet ID where the instance is located.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -124,7 +124,7 @@ class InstanceArgs:
     @pulumi.getter
     def version(self) -> pulumi.Input[builtins.str]:
         """
-        支持的 Kafka 版本，当前支持的版本包括 2.2.2, 2.8.2。
+        Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
         """
         return pulumi.get(self, "version")
 
@@ -136,7 +136,7 @@ class InstanceArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例所在的私有网络 (VPC) ID。
+        Private network (VPC) ID where the instance is located.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -148,7 +148,7 @@ class InstanceArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例所在的可用区 ID。消息队列 Kafka版实例支持跨 AZ 部署, 多个可用区ID之间以逗号间隔。
+        Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
         """
         return pulumi.get(self, "zone_id")
 
@@ -160,7 +160,7 @@ class InstanceArgs:
     @pulumi.getter(name="chargeInfo")
     def charge_info(self) -> Optional[pulumi.Input['InstanceChargeInfoArgs']]:
         """
-        Kafka 实例的计费类型等计费信息。
+        Billing type and related billing information for the Kafka instance.
         """
         return pulumi.get(self, "charge_info")
 
@@ -172,7 +172,7 @@ class InstanceArgs:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        EIP 的 ID。
+        EIP ID.
         """
         return pulumi.get(self, "eip_id")
 
@@ -184,7 +184,7 @@ class InstanceArgs:
     @pulumi.getter(name="instanceDescription")
     def instance_description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 实例的简单描述。长度范围为 1~128 个字符。
+        Brief description of the Kafka instance. Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "instance_description")
 
@@ -196,7 +196,7 @@ class InstanceArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 实例的名称。只能包含中文、字母、数字、下划线（_）和连字符（-）。不能以数字和连字符（-）开头。长度范围为 1~128 个字符。
+        Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -208,7 +208,7 @@ class InstanceArgs:
     @pulumi.getter(name="ipWhiteLists")
     def ip_white_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        实例绑定的白名单 ID 列表。绑定白名单后，仅配置在白名单中的 IP 地址与地址段才能访问此实例。若未设置此参数，新 Kafka 实例将绑定白名单 default，对应 IP 地址为 0.0.0.0，表示允许所有地址访问该 Kafka 实例。
+        List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist 'default', with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
         """
         return pulumi.get(self, "ip_white_lists")
 
@@ -220,7 +220,7 @@ class InstanceArgs:
     @pulumi.getter(name="needRebalance")
     def need_rebalance(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启再均衡。
+        Whether to enable rebalancing.
         """
         return pulumi.get(self, "need_rebalance")
 
@@ -232,7 +232,7 @@ class InstanceArgs:
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 实例的初始参数配置,格式为json,参数列表: 最大消息大小(MessageMaxByte)1-12MB 默认10, 消息保留时间(LogRetentionHours)0-2160Hour 默认72, 消费位点保留时长(OffsetRetentionMinutes)1-10080Min 默认4320 消息时间类型(MessageTimestampType)LogAppendTime/CreateTime 消息写入到服务端时间、producer创建消息时间。
+        Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
         """
         return pulumi.get(self, "parameters")
 
@@ -244,7 +244,7 @@ class InstanceArgs:
     @pulumi.getter(name="partitionNumber")
     def partition_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        分区数量。
+        Number of partitions.
         """
         return pulumi.get(self, "partition_number")
 
@@ -256,7 +256,7 @@ class InstanceArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当前创建的 Kafka 实例所属的 IAM 项目。
+        IAM project to which the currently created Kafka instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -268,7 +268,7 @@ class InstanceArgs:
     @pulumi.getter(name="storageSpace")
     def storage_space(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例的存储空间，单位为 GiB, 必须指定为 100 的倍数。
+        Instance storage space, measured in GiB, must be specified as a multiple of 100.
         """
         return pulumi.get(self, "storage_space")
 
@@ -280,7 +280,7 @@ class InstanceArgs:
     @pulumi.getter(name="storageType")
     def storage_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 实例数据存储的云盘类型。可设置为 ESSD*FlexPL 或 ESSD*PL0，默认为 ESSD_FlexPL。
+        Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
         """
         return pulumi.get(self, "storage_type")
 
@@ -301,7 +301,7 @@ class InstanceArgs:
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        SASL/PLAIN 用户名称，需要满足以下要求: 1.由小写字母、数字、连字符（-）或下划线组成。2.长度为 3~64 个字符。3.用户名不支持设置为 admin 或 monitor,且实例内用户名称唯一。
+        SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
         """
         return pulumi.get(self, "user_name")
 
@@ -313,7 +313,7 @@ class InstanceArgs:
     @pulumi.getter(name="userPassword")
     def user_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        SASL/PLAIN 用户的密码，需要满足以下要求: 1.长度在8到32个字符 2.由大写字母、小写字母、数字、特殊字符中的任意三种组成 3.支持的特殊字符包括 !@#$%^&*()_+-=。
+        Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !@#$%^&*()_+-=
         """
         return pulumi.get(self, "user_password")
 
@@ -359,36 +359,36 @@ class _InstanceState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
-        :param pulumi.Input[builtins.str] account_id: 创建实例的主账号 ID。
-        :param pulumi.Input['InstanceChargeInfoArgs'] charge_info: Kafka 实例的计费类型等计费信息。
-        :param pulumi.Input[builtins.str] compute_spec: 实例的计算规格。
-        :param pulumi.Input[builtins.str] created_time: 实例的创建时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param pulumi.Input[builtins.str] eip_id: EIP 的 ID。
-        :param pulumi.Input[builtins.str] instance_description: Kafka 实例的简单描述。长度范围为 1~128 个字符。
-        :param pulumi.Input[builtins.str] instance_id: Kafka 实例的 ID。
-        :param pulumi.Input[builtins.str] instance_name: Kafka 实例的名称。只能包含中文、字母、数字、下划线（_）和连字符（-）。不能以数字和连字符（-）开头。长度范围为 1~128 个字符。
-        :param pulumi.Input[builtins.str] instance_status: Kafka 实例的状态。Error：错误, Deleting：删除中, Creating：部署中, Upgrading：升级中, Updating：变更中, Running：运行中, Scaling：更配中, Rebuilding：重建中, Destroying：销毁中, Restarting：重启中, Migrating：迁移中, Restoring：恢复中, Importing：导入中, NetCreating：申请公网中, NetReleasing：释放公网中, Rollingback：回滚中, CreateFailed：创建失败, UpgradeFailed：升级失败, ScaleFailed：更配失败, RestartFailed：重启失败
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_white_lists: 实例绑定的白名单 ID 列表。绑定白名单后，仅配置在白名单中的 IP 地址与地址段才能访问此实例。若未设置此参数，新 Kafka 实例将绑定白名单 default，对应 IP 地址为 0.0.0.0，表示允许所有地址访问该 Kafka 实例。
-        :param pulumi.Input[builtins.bool] need_rebalance: 是否开启再均衡。
-        :param pulumi.Input[builtins.str] parameters: Kafka 实例的初始参数配置,格式为json,参数列表: 最大消息大小(MessageMaxByte)1-12MB 默认10, 消息保留时间(LogRetentionHours)0-2160Hour 默认72, 消费位点保留时长(OffsetRetentionMinutes)1-10080Min 默认4320 消息时间类型(MessageTimestampType)LogAppendTime/CreateTime 消息写入到服务端时间、producer创建消息时间。
-        :param pulumi.Input[builtins.int] partition_number: 分区数量。
-        :param pulumi.Input[builtins.bool] private_domain_on_public: 是否开启公网解析。
-        :param pulumi.Input[builtins.str] project_name: 当前创建的 Kafka 实例所属的 IAM 项目。
-        :param pulumi.Input[builtins.int] storage_space: 实例的存储空间，单位为 GiB, 必须指定为 100 的倍数。
-        :param pulumi.Input[builtins.str] storage_type: Kafka 实例数据存储的云盘类型。可设置为 ESSD*FlexPL 或 ESSD*PL0，默认为 ESSD_FlexPL。
-        :param pulumi.Input[builtins.str] subnet_id: 实例所在的 VPC 子网 ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] topics: 一个 Kafka 实例下的 Topic 列表
-        :param pulumi.Input[builtins.int] usable_group_number: 当前实例剩余可用消费组个数。
-        :param pulumi.Input[builtins.int] usable_partition_number: 当前实例剩余可用分区数。
-        :param pulumi.Input[builtins.int] used_group_number: 当前实例已经创建的消费组(Group)个数。
-        :param pulumi.Input[builtins.int] used_partition_number: 当前实例已经使用的分区个数。
-        :param pulumi.Input[builtins.int] used_storage_space: 实例已用储空间，单位为 GiB。
-        :param pulumi.Input[builtins.int] used_topic_number: 当前实例已创建的 Topic 个数。
-        :param pulumi.Input[builtins.str] user_name: SASL/PLAIN 用户名称，需要满足以下要求: 1.由小写字母、数字、连字符（-）或下划线组成。2.长度为 3~64 个字符。3.用户名不支持设置为 admin 或 monitor,且实例内用户名称唯一。
-        :param pulumi.Input[builtins.str] user_password: SASL/PLAIN 用户的密码，需要满足以下要求: 1.长度在8到32个字符 2.由大写字母、小写字母、数字、特殊字符中的任意三种组成 3.支持的特殊字符包括 !@#$%^&*()_+-=。
-        :param pulumi.Input[builtins.str] version: 支持的 Kafka 版本，当前支持的版本包括 2.2.2, 2.8.2。
-        :param pulumi.Input[builtins.str] vpc_id: 实例所在的私有网络 (VPC) ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所在的可用区 ID。消息队列 Kafka版实例支持跨 AZ 部署, 多个可用区ID之间以逗号间隔。
+        :param pulumi.Input[builtins.str] account_id: Main account ID for creating the instance.
+        :param pulumi.Input['InstanceChargeInfoArgs'] charge_info: Billing type and related billing information for the Kafka instance.
+        :param pulumi.Input[builtins.str] compute_spec: Instance compute specification.
+        :param pulumi.Input[builtins.str] created_time: Instance creation time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param pulumi.Input[builtins.str] eip_id: EIP ID.
+        :param pulumi.Input[builtins.str] instance_description: Brief description of the Kafka instance. Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] instance_id: Kafka instance ID.
+        :param pulumi.Input[builtins.str] instance_name: Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] instance_status: Status of the Kafka instance. Error: error, Deleting: deleting, Creating: deploying, Upgrading: upgrading, Updating: updating, Running: running, Scaling: scaling, Rebuilding: rebuilding, Destroying: destroying, Restarting: restarting, Migrating: migrating, Restoring: restoring, Importing: importing, NetCreating: applying for public network, NetReleasing: releasing public network, Rollingback: rolling back, CreateFailed: creation failed, UpgradeFailed: upgrade failed, ScaleFailed: scaling failed, RestartFailed: restart failed
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_white_lists: List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist 'default', with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
+        :param pulumi.Input[builtins.bool] need_rebalance: Whether to enable rebalancing.
+        :param pulumi.Input[builtins.str] parameters: Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
+        :param pulumi.Input[builtins.int] partition_number: Number of partitions.
+        :param pulumi.Input[builtins.bool] private_domain_on_public: Whether to enable public network domain resolution.
+        :param pulumi.Input[builtins.str] project_name: IAM project to which the currently created Kafka instance belongs.
+        :param pulumi.Input[builtins.int] storage_space: Instance storage space, measured in GiB, must be specified as a multiple of 100.
+        :param pulumi.Input[builtins.str] storage_type: Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
+        :param pulumi.Input[builtins.str] subnet_id: VPC subnet ID where the instance is located.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] topics: List of topics under a Kafka instance
+        :param pulumi.Input[builtins.int] usable_group_number: The remaining number of available consumer groups for the current instance.
+        :param pulumi.Input[builtins.int] usable_partition_number: Number of available partitions remaining for the current instance.
+        :param pulumi.Input[builtins.int] used_group_number: Number of consumer groups (Group) currently created in the instance.
+        :param pulumi.Input[builtins.int] used_partition_number: Number of partitions currently used by the instance.
+        :param pulumi.Input[builtins.int] used_storage_space: Used storage space of the instance, measured in GiB.
+        :param pulumi.Input[builtins.int] used_topic_number: Number of topics created in the current instance.
+        :param pulumi.Input[builtins.str] user_name: SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
+        :param pulumi.Input[builtins.str] user_password: Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !@#$%^&*()_+-=
+        :param pulumi.Input[builtins.str] version: Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
+        :param pulumi.Input[builtins.str] vpc_id: Private network (VPC) ID where the instance is located.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -459,7 +459,7 @@ class _InstanceState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建实例的主账号 ID。
+        Main account ID for creating the instance.
         """
         return pulumi.get(self, "account_id")
 
@@ -471,7 +471,7 @@ class _InstanceState:
     @pulumi.getter(name="chargeInfo")
     def charge_info(self) -> Optional[pulumi.Input['InstanceChargeInfoArgs']]:
         """
-        Kafka 实例的计费类型等计费信息。
+        Billing type and related billing information for the Kafka instance.
         """
         return pulumi.get(self, "charge_info")
 
@@ -483,7 +483,7 @@ class _InstanceState:
     @pulumi.getter(name="computeSpec")
     def compute_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的计算规格。
+        Instance compute specification.
         """
         return pulumi.get(self, "compute_spec")
 
@@ -504,7 +504,7 @@ class _InstanceState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的创建时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance creation time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "created_time")
 
@@ -516,7 +516,7 @@ class _InstanceState:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        EIP 的 ID。
+        EIP ID.
         """
         return pulumi.get(self, "eip_id")
 
@@ -528,7 +528,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceDescription")
     def instance_description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 实例的简单描述。长度范围为 1~128 个字符。
+        Brief description of the Kafka instance. Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "instance_description")
 
@@ -540,7 +540,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 实例的 ID。
+        Kafka instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -552,7 +552,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 实例的名称。只能包含中文、字母、数字、下划线（_）和连字符（-）。不能以数字和连字符（-）开头。长度范围为 1~128 个字符。
+        Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -564,7 +564,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceStatus")
     def instance_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 实例的状态。Error：错误, Deleting：删除中, Creating：部署中, Upgrading：升级中, Updating：变更中, Running：运行中, Scaling：更配中, Rebuilding：重建中, Destroying：销毁中, Restarting：重启中, Migrating：迁移中, Restoring：恢复中, Importing：导入中, NetCreating：申请公网中, NetReleasing：释放公网中, Rollingback：回滚中, CreateFailed：创建失败, UpgradeFailed：升级失败, ScaleFailed：更配失败, RestartFailed：重启失败
+        Status of the Kafka instance. Error: error, Deleting: deleting, Creating: deploying, Upgrading: upgrading, Updating: updating, Running: running, Scaling: scaling, Rebuilding: rebuilding, Destroying: destroying, Restarting: restarting, Migrating: migrating, Restoring: restoring, Importing: importing, NetCreating: applying for public network, NetReleasing: releasing public network, Rollingback: rolling back, CreateFailed: creation failed, UpgradeFailed: upgrade failed, ScaleFailed: scaling failed, RestartFailed: restart failed
         """
         return pulumi.get(self, "instance_status")
 
@@ -576,7 +576,7 @@ class _InstanceState:
     @pulumi.getter(name="ipWhiteLists")
     def ip_white_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        实例绑定的白名单 ID 列表。绑定白名单后，仅配置在白名单中的 IP 地址与地址段才能访问此实例。若未设置此参数，新 Kafka 实例将绑定白名单 default，对应 IP 地址为 0.0.0.0，表示允许所有地址访问该 Kafka 实例。
+        List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist 'default', with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
         """
         return pulumi.get(self, "ip_white_lists")
 
@@ -588,7 +588,7 @@ class _InstanceState:
     @pulumi.getter(name="needRebalance")
     def need_rebalance(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启再均衡。
+        Whether to enable rebalancing.
         """
         return pulumi.get(self, "need_rebalance")
 
@@ -600,7 +600,7 @@ class _InstanceState:
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 实例的初始参数配置,格式为json,参数列表: 最大消息大小(MessageMaxByte)1-12MB 默认10, 消息保留时间(LogRetentionHours)0-2160Hour 默认72, 消费位点保留时长(OffsetRetentionMinutes)1-10080Min 默认4320 消息时间类型(MessageTimestampType)LogAppendTime/CreateTime 消息写入到服务端时间、producer创建消息时间。
+        Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
         """
         return pulumi.get(self, "parameters")
 
@@ -612,7 +612,7 @@ class _InstanceState:
     @pulumi.getter(name="partitionNumber")
     def partition_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        分区数量。
+        Number of partitions.
         """
         return pulumi.get(self, "partition_number")
 
@@ -624,7 +624,7 @@ class _InstanceState:
     @pulumi.getter(name="privateDomainOnPublic")
     def private_domain_on_public(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启公网解析。
+        Whether to enable public network domain resolution.
         """
         return pulumi.get(self, "private_domain_on_public")
 
@@ -636,7 +636,7 @@ class _InstanceState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当前创建的 Kafka 实例所属的 IAM 项目。
+        IAM project to which the currently created Kafka instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -648,7 +648,7 @@ class _InstanceState:
     @pulumi.getter(name="storageSpace")
     def storage_space(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例的存储空间，单位为 GiB, 必须指定为 100 的倍数。
+        Instance storage space, measured in GiB, must be specified as a multiple of 100.
         """
         return pulumi.get(self, "storage_space")
 
@@ -660,7 +660,7 @@ class _InstanceState:
     @pulumi.getter(name="storageType")
     def storage_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 实例数据存储的云盘类型。可设置为 ESSD*FlexPL 或 ESSD*PL0，默认为 ESSD_FlexPL。
+        Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
         """
         return pulumi.get(self, "storage_type")
 
@@ -672,7 +672,7 @@ class _InstanceState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所在的 VPC 子网 ID。
+        VPC subnet ID where the instance is located.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -693,7 +693,7 @@ class _InstanceState:
     @pulumi.getter
     def topics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        一个 Kafka 实例下的 Topic 列表
+        List of topics under a Kafka instance
         """
         return pulumi.get(self, "topics")
 
@@ -705,7 +705,7 @@ class _InstanceState:
     @pulumi.getter(name="usableGroupNumber")
     def usable_group_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        当前实例剩余可用消费组个数。
+        The remaining number of available consumer groups for the current instance.
         """
         return pulumi.get(self, "usable_group_number")
 
@@ -717,7 +717,7 @@ class _InstanceState:
     @pulumi.getter(name="usablePartitionNumber")
     def usable_partition_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        当前实例剩余可用分区数。
+        Number of available partitions remaining for the current instance.
         """
         return pulumi.get(self, "usable_partition_number")
 
@@ -729,7 +729,7 @@ class _InstanceState:
     @pulumi.getter(name="usedGroupNumber")
     def used_group_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        当前实例已经创建的消费组(Group)个数。
+        Number of consumer groups (Group) currently created in the instance.
         """
         return pulumi.get(self, "used_group_number")
 
@@ -741,7 +741,7 @@ class _InstanceState:
     @pulumi.getter(name="usedPartitionNumber")
     def used_partition_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        当前实例已经使用的分区个数。
+        Number of partitions currently used by the instance.
         """
         return pulumi.get(self, "used_partition_number")
 
@@ -753,7 +753,7 @@ class _InstanceState:
     @pulumi.getter(name="usedStorageSpace")
     def used_storage_space(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例已用储空间，单位为 GiB。
+        Used storage space of the instance, measured in GiB.
         """
         return pulumi.get(self, "used_storage_space")
 
@@ -765,7 +765,7 @@ class _InstanceState:
     @pulumi.getter(name="usedTopicNumber")
     def used_topic_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        当前实例已创建的 Topic 个数。
+        Number of topics created in the current instance.
         """
         return pulumi.get(self, "used_topic_number")
 
@@ -777,7 +777,7 @@ class _InstanceState:
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        SASL/PLAIN 用户名称，需要满足以下要求: 1.由小写字母、数字、连字符（-）或下划线组成。2.长度为 3~64 个字符。3.用户名不支持设置为 admin 或 monitor,且实例内用户名称唯一。
+        SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
         """
         return pulumi.get(self, "user_name")
 
@@ -789,7 +789,7 @@ class _InstanceState:
     @pulumi.getter(name="userPassword")
     def user_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        SASL/PLAIN 用户的密码，需要满足以下要求: 1.长度在8到32个字符 2.由大写字母、小写字母、数字、特殊字符中的任意三种组成 3.支持的特殊字符包括 !@#$%^&*()_+-=。
+        Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !@#$%^&*()_+-=
         """
         return pulumi.get(self, "user_password")
 
@@ -801,7 +801,7 @@ class _InstanceState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        支持的 Kafka 版本，当前支持的版本包括 2.2.2, 2.8.2。
+        Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
         """
         return pulumi.get(self, "version")
 
@@ -813,7 +813,7 @@ class _InstanceState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所在的私有网络 (VPC) ID。
+        Private network (VPC) ID where the instance is located.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -825,7 +825,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所在的可用区 ID。消息队列 Kafka版实例支持跨 AZ 部署, 多个可用区ID之间以逗号间隔。
+        Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
         """
         return pulumi.get(self, "zone_id")
 
@@ -861,7 +861,7 @@ class Instance(pulumi.CustomResource):
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        消息队列 Kafka版是一款基于 Apache Kafka 构建的分布式消息中间件服务，具备高吞吐、高可扩展性等特性，提供流式数据的发布/订阅和多副本存储机制，广泛应用于日志压缩收集、流式数据处理、消息解耦、流量削峰去谷等应用场景。
+        Kafka Message Queue is a distributed messaging middleware service built on Apache Kafka. It features high throughput and scalability, provides stream data publishing/subscription and multi-replica storage mechanisms, and is widely used in log compression and collection, stream data processing, message decoupling, and traffic peak shaving scenarios.
 
         ## Import
 
@@ -871,24 +871,24 @@ class Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['InstanceChargeInfoArgs', 'InstanceChargeInfoArgsDict']] charge_info: Kafka 实例的计费类型等计费信息。
-        :param pulumi.Input[builtins.str] compute_spec: 实例的计算规格。
-        :param pulumi.Input[builtins.str] eip_id: EIP 的 ID。
-        :param pulumi.Input[builtins.str] instance_description: Kafka 实例的简单描述。长度范围为 1~128 个字符。
-        :param pulumi.Input[builtins.str] instance_name: Kafka 实例的名称。只能包含中文、字母、数字、下划线（_）和连字符（-）。不能以数字和连字符（-）开头。长度范围为 1~128 个字符。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_white_lists: 实例绑定的白名单 ID 列表。绑定白名单后，仅配置在白名单中的 IP 地址与地址段才能访问此实例。若未设置此参数，新 Kafka 实例将绑定白名单 default，对应 IP 地址为 0.0.0.0，表示允许所有地址访问该 Kafka 实例。
-        :param pulumi.Input[builtins.bool] need_rebalance: 是否开启再均衡。
-        :param pulumi.Input[builtins.str] parameters: Kafka 实例的初始参数配置,格式为json,参数列表: 最大消息大小(MessageMaxByte)1-12MB 默认10, 消息保留时间(LogRetentionHours)0-2160Hour 默认72, 消费位点保留时长(OffsetRetentionMinutes)1-10080Min 默认4320 消息时间类型(MessageTimestampType)LogAppendTime/CreateTime 消息写入到服务端时间、producer创建消息时间。
-        :param pulumi.Input[builtins.int] partition_number: 分区数量。
-        :param pulumi.Input[builtins.str] project_name: 当前创建的 Kafka 实例所属的 IAM 项目。
-        :param pulumi.Input[builtins.int] storage_space: 实例的存储空间，单位为 GiB, 必须指定为 100 的倍数。
-        :param pulumi.Input[builtins.str] storage_type: Kafka 实例数据存储的云盘类型。可设置为 ESSD*FlexPL 或 ESSD*PL0，默认为 ESSD_FlexPL。
-        :param pulumi.Input[builtins.str] subnet_id: 实例所在的 VPC 子网 ID。
-        :param pulumi.Input[builtins.str] user_name: SASL/PLAIN 用户名称，需要满足以下要求: 1.由小写字母、数字、连字符（-）或下划线组成。2.长度为 3~64 个字符。3.用户名不支持设置为 admin 或 monitor,且实例内用户名称唯一。
-        :param pulumi.Input[builtins.str] user_password: SASL/PLAIN 用户的密码，需要满足以下要求: 1.长度在8到32个字符 2.由大写字母、小写字母、数字、特殊字符中的任意三种组成 3.支持的特殊字符包括 !@#$%^&*()_+-=。
-        :param pulumi.Input[builtins.str] version: 支持的 Kafka 版本，当前支持的版本包括 2.2.2, 2.8.2。
-        :param pulumi.Input[builtins.str] vpc_id: 实例所在的私有网络 (VPC) ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所在的可用区 ID。消息队列 Kafka版实例支持跨 AZ 部署, 多个可用区ID之间以逗号间隔。
+        :param pulumi.Input[Union['InstanceChargeInfoArgs', 'InstanceChargeInfoArgsDict']] charge_info: Billing type and related billing information for the Kafka instance.
+        :param pulumi.Input[builtins.str] compute_spec: Instance compute specification.
+        :param pulumi.Input[builtins.str] eip_id: EIP ID.
+        :param pulumi.Input[builtins.str] instance_description: Brief description of the Kafka instance. Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] instance_name: Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_white_lists: List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist 'default', with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
+        :param pulumi.Input[builtins.bool] need_rebalance: Whether to enable rebalancing.
+        :param pulumi.Input[builtins.str] parameters: Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
+        :param pulumi.Input[builtins.int] partition_number: Number of partitions.
+        :param pulumi.Input[builtins.str] project_name: IAM project to which the currently created Kafka instance belongs.
+        :param pulumi.Input[builtins.int] storage_space: Instance storage space, measured in GiB, must be specified as a multiple of 100.
+        :param pulumi.Input[builtins.str] storage_type: Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
+        :param pulumi.Input[builtins.str] subnet_id: VPC subnet ID where the instance is located.
+        :param pulumi.Input[builtins.str] user_name: SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
+        :param pulumi.Input[builtins.str] user_password: Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !@#$%^&*()_+-=
+        :param pulumi.Input[builtins.str] version: Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
+        :param pulumi.Input[builtins.str] vpc_id: Private network (VPC) ID where the instance is located.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
         """
         ...
     @overload
@@ -897,7 +897,7 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        消息队列 Kafka版是一款基于 Apache Kafka 构建的分布式消息中间件服务，具备高吞吐、高可扩展性等特性，提供流式数据的发布/订阅和多副本存储机制，广泛应用于日志压缩收集、流式数据处理、消息解耦、流量削峰去谷等应用场景。
+        Kafka Message Queue is a distributed messaging middleware service built on Apache Kafka. It features high throughput and scalability, provides stream data publishing/subscription and multi-replica storage mechanisms, and is widely used in log compression and collection, stream data processing, message decoupling, and traffic peak shaving scenarios.
 
         ## Import
 
@@ -1039,36 +1039,36 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_id: 创建实例的主账号 ID。
-        :param pulumi.Input[Union['InstanceChargeInfoArgs', 'InstanceChargeInfoArgsDict']] charge_info: Kafka 实例的计费类型等计费信息。
-        :param pulumi.Input[builtins.str] compute_spec: 实例的计算规格。
-        :param pulumi.Input[builtins.str] created_time: 实例的创建时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param pulumi.Input[builtins.str] eip_id: EIP 的 ID。
-        :param pulumi.Input[builtins.str] instance_description: Kafka 实例的简单描述。长度范围为 1~128 个字符。
-        :param pulumi.Input[builtins.str] instance_id: Kafka 实例的 ID。
-        :param pulumi.Input[builtins.str] instance_name: Kafka 实例的名称。只能包含中文、字母、数字、下划线（_）和连字符（-）。不能以数字和连字符（-）开头。长度范围为 1~128 个字符。
-        :param pulumi.Input[builtins.str] instance_status: Kafka 实例的状态。Error：错误, Deleting：删除中, Creating：部署中, Upgrading：升级中, Updating：变更中, Running：运行中, Scaling：更配中, Rebuilding：重建中, Destroying：销毁中, Restarting：重启中, Migrating：迁移中, Restoring：恢复中, Importing：导入中, NetCreating：申请公网中, NetReleasing：释放公网中, Rollingback：回滚中, CreateFailed：创建失败, UpgradeFailed：升级失败, ScaleFailed：更配失败, RestartFailed：重启失败
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_white_lists: 实例绑定的白名单 ID 列表。绑定白名单后，仅配置在白名单中的 IP 地址与地址段才能访问此实例。若未设置此参数，新 Kafka 实例将绑定白名单 default，对应 IP 地址为 0.0.0.0，表示允许所有地址访问该 Kafka 实例。
-        :param pulumi.Input[builtins.bool] need_rebalance: 是否开启再均衡。
-        :param pulumi.Input[builtins.str] parameters: Kafka 实例的初始参数配置,格式为json,参数列表: 最大消息大小(MessageMaxByte)1-12MB 默认10, 消息保留时间(LogRetentionHours)0-2160Hour 默认72, 消费位点保留时长(OffsetRetentionMinutes)1-10080Min 默认4320 消息时间类型(MessageTimestampType)LogAppendTime/CreateTime 消息写入到服务端时间、producer创建消息时间。
-        :param pulumi.Input[builtins.int] partition_number: 分区数量。
-        :param pulumi.Input[builtins.bool] private_domain_on_public: 是否开启公网解析。
-        :param pulumi.Input[builtins.str] project_name: 当前创建的 Kafka 实例所属的 IAM 项目。
-        :param pulumi.Input[builtins.int] storage_space: 实例的存储空间，单位为 GiB, 必须指定为 100 的倍数。
-        :param pulumi.Input[builtins.str] storage_type: Kafka 实例数据存储的云盘类型。可设置为 ESSD*FlexPL 或 ESSD*PL0，默认为 ESSD_FlexPL。
-        :param pulumi.Input[builtins.str] subnet_id: 实例所在的 VPC 子网 ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] topics: 一个 Kafka 实例下的 Topic 列表
-        :param pulumi.Input[builtins.int] usable_group_number: 当前实例剩余可用消费组个数。
-        :param pulumi.Input[builtins.int] usable_partition_number: 当前实例剩余可用分区数。
-        :param pulumi.Input[builtins.int] used_group_number: 当前实例已经创建的消费组(Group)个数。
-        :param pulumi.Input[builtins.int] used_partition_number: 当前实例已经使用的分区个数。
-        :param pulumi.Input[builtins.int] used_storage_space: 实例已用储空间，单位为 GiB。
-        :param pulumi.Input[builtins.int] used_topic_number: 当前实例已创建的 Topic 个数。
-        :param pulumi.Input[builtins.str] user_name: SASL/PLAIN 用户名称，需要满足以下要求: 1.由小写字母、数字、连字符（-）或下划线组成。2.长度为 3~64 个字符。3.用户名不支持设置为 admin 或 monitor,且实例内用户名称唯一。
-        :param pulumi.Input[builtins.str] user_password: SASL/PLAIN 用户的密码，需要满足以下要求: 1.长度在8到32个字符 2.由大写字母、小写字母、数字、特殊字符中的任意三种组成 3.支持的特殊字符包括 !@#$%^&*()_+-=。
-        :param pulumi.Input[builtins.str] version: 支持的 Kafka 版本，当前支持的版本包括 2.2.2, 2.8.2。
-        :param pulumi.Input[builtins.str] vpc_id: 实例所在的私有网络 (VPC) ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所在的可用区 ID。消息队列 Kafka版实例支持跨 AZ 部署, 多个可用区ID之间以逗号间隔。
+        :param pulumi.Input[builtins.str] account_id: Main account ID for creating the instance.
+        :param pulumi.Input[Union['InstanceChargeInfoArgs', 'InstanceChargeInfoArgsDict']] charge_info: Billing type and related billing information for the Kafka instance.
+        :param pulumi.Input[builtins.str] compute_spec: Instance compute specification.
+        :param pulumi.Input[builtins.str] created_time: Instance creation time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param pulumi.Input[builtins.str] eip_id: EIP ID.
+        :param pulumi.Input[builtins.str] instance_description: Brief description of the Kafka instance. Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] instance_id: Kafka instance ID.
+        :param pulumi.Input[builtins.str] instance_name: Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] instance_status: Status of the Kafka instance. Error: error, Deleting: deleting, Creating: deploying, Upgrading: upgrading, Updating: updating, Running: running, Scaling: scaling, Rebuilding: rebuilding, Destroying: destroying, Restarting: restarting, Migrating: migrating, Restoring: restoring, Importing: importing, NetCreating: applying for public network, NetReleasing: releasing public network, Rollingback: rolling back, CreateFailed: creation failed, UpgradeFailed: upgrade failed, ScaleFailed: scaling failed, RestartFailed: restart failed
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_white_lists: List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist 'default', with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
+        :param pulumi.Input[builtins.bool] need_rebalance: Whether to enable rebalancing.
+        :param pulumi.Input[builtins.str] parameters: Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
+        :param pulumi.Input[builtins.int] partition_number: Number of partitions.
+        :param pulumi.Input[builtins.bool] private_domain_on_public: Whether to enable public network domain resolution.
+        :param pulumi.Input[builtins.str] project_name: IAM project to which the currently created Kafka instance belongs.
+        :param pulumi.Input[builtins.int] storage_space: Instance storage space, measured in GiB, must be specified as a multiple of 100.
+        :param pulumi.Input[builtins.str] storage_type: Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
+        :param pulumi.Input[builtins.str] subnet_id: VPC subnet ID where the instance is located.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] topics: List of topics under a Kafka instance
+        :param pulumi.Input[builtins.int] usable_group_number: The remaining number of available consumer groups for the current instance.
+        :param pulumi.Input[builtins.int] usable_partition_number: Number of available partitions remaining for the current instance.
+        :param pulumi.Input[builtins.int] used_group_number: Number of consumer groups (Group) currently created in the instance.
+        :param pulumi.Input[builtins.int] used_partition_number: Number of partitions currently used by the instance.
+        :param pulumi.Input[builtins.int] used_storage_space: Used storage space of the instance, measured in GiB.
+        :param pulumi.Input[builtins.int] used_topic_number: Number of topics created in the current instance.
+        :param pulumi.Input[builtins.str] user_name: SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
+        :param pulumi.Input[builtins.str] user_password: Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !@#$%^&*()_+-=
+        :param pulumi.Input[builtins.str] version: Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
+        :param pulumi.Input[builtins.str] vpc_id: Private network (VPC) ID where the instance is located.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1112,7 +1112,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        创建实例的主账号 ID。
+        Main account ID for creating the instance.
         """
         return pulumi.get(self, "account_id")
 
@@ -1120,7 +1120,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="chargeInfo")
     def charge_info(self) -> pulumi.Output['outputs.InstanceChargeInfo']:
         """
-        Kafka 实例的计费类型等计费信息。
+        Billing type and related billing information for the Kafka instance.
         """
         return pulumi.get(self, "charge_info")
 
@@ -1128,7 +1128,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="computeSpec")
     def compute_spec(self) -> pulumi.Output[builtins.str]:
         """
-        实例的计算规格。
+        Instance compute specification.
         """
         return pulumi.get(self, "compute_spec")
 
@@ -1141,7 +1141,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例的创建时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance creation time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "created_time")
 
@@ -1149,7 +1149,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="eipId")
     def eip_id(self) -> pulumi.Output[builtins.str]:
         """
-        EIP 的 ID。
+        EIP ID.
         """
         return pulumi.get(self, "eip_id")
 
@@ -1157,7 +1157,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceDescription")
     def instance_description(self) -> pulumi.Output[builtins.str]:
         """
-        Kafka 实例的简单描述。长度范围为 1~128 个字符。
+        Brief description of the Kafka instance. Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "instance_description")
 
@@ -1165,7 +1165,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        Kafka 实例的 ID。
+        Kafka instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -1173,7 +1173,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> pulumi.Output[builtins.str]:
         """
-        Kafka 实例的名称。只能包含中文、字母、数字、下划线（_）和连字符（-）。不能以数字和连字符（-）开头。长度范围为 1~128 个字符。
+        Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -1181,7 +1181,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceStatus")
     def instance_status(self) -> pulumi.Output[builtins.str]:
         """
-        Kafka 实例的状态。Error：错误, Deleting：删除中, Creating：部署中, Upgrading：升级中, Updating：变更中, Running：运行中, Scaling：更配中, Rebuilding：重建中, Destroying：销毁中, Restarting：重启中, Migrating：迁移中, Restoring：恢复中, Importing：导入中, NetCreating：申请公网中, NetReleasing：释放公网中, Rollingback：回滚中, CreateFailed：创建失败, UpgradeFailed：升级失败, ScaleFailed：更配失败, RestartFailed：重启失败
+        Status of the Kafka instance. Error: error, Deleting: deleting, Creating: deploying, Upgrading: upgrading, Updating: updating, Running: running, Scaling: scaling, Rebuilding: rebuilding, Destroying: destroying, Restarting: restarting, Migrating: migrating, Restoring: restoring, Importing: importing, NetCreating: applying for public network, NetReleasing: releasing public network, Rollingback: rolling back, CreateFailed: creation failed, UpgradeFailed: upgrade failed, ScaleFailed: scaling failed, RestartFailed: restart failed
         """
         return pulumi.get(self, "instance_status")
 
@@ -1189,7 +1189,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="ipWhiteLists")
     def ip_white_lists(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        实例绑定的白名单 ID 列表。绑定白名单后，仅配置在白名单中的 IP 地址与地址段才能访问此实例。若未设置此参数，新 Kafka 实例将绑定白名单 default，对应 IP 地址为 0.0.0.0，表示允许所有地址访问该 Kafka 实例。
+        List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist 'default', with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
         """
         return pulumi.get(self, "ip_white_lists")
 
@@ -1197,7 +1197,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="needRebalance")
     def need_rebalance(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启再均衡。
+        Whether to enable rebalancing.
         """
         return pulumi.get(self, "need_rebalance")
 
@@ -1205,7 +1205,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def parameters(self) -> pulumi.Output[builtins.str]:
         """
-        Kafka 实例的初始参数配置,格式为json,参数列表: 最大消息大小(MessageMaxByte)1-12MB 默认10, 消息保留时间(LogRetentionHours)0-2160Hour 默认72, 消费位点保留时长(OffsetRetentionMinutes)1-10080Min 默认4320 消息时间类型(MessageTimestampType)LogAppendTime/CreateTime 消息写入到服务端时间、producer创建消息时间。
+        Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
         """
         return pulumi.get(self, "parameters")
 
@@ -1213,7 +1213,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="partitionNumber")
     def partition_number(self) -> pulumi.Output[builtins.int]:
         """
-        分区数量。
+        Number of partitions.
         """
         return pulumi.get(self, "partition_number")
 
@@ -1221,7 +1221,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="privateDomainOnPublic")
     def private_domain_on_public(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启公网解析。
+        Whether to enable public network domain resolution.
         """
         return pulumi.get(self, "private_domain_on_public")
 
@@ -1229,7 +1229,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        当前创建的 Kafka 实例所属的 IAM 项目。
+        IAM project to which the currently created Kafka instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -1237,7 +1237,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageSpace")
     def storage_space(self) -> pulumi.Output[builtins.int]:
         """
-        实例的存储空间，单位为 GiB, 必须指定为 100 的倍数。
+        Instance storage space, measured in GiB, must be specified as a multiple of 100.
         """
         return pulumi.get(self, "storage_space")
 
@@ -1245,7 +1245,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageType")
     def storage_type(self) -> pulumi.Output[builtins.str]:
         """
-        Kafka 实例数据存储的云盘类型。可设置为 ESSD*FlexPL 或 ESSD*PL0，默认为 ESSD_FlexPL。
+        Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
         """
         return pulumi.get(self, "storage_type")
 
@@ -1253,7 +1253,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例所在的 VPC 子网 ID。
+        VPC subnet ID where the instance is located.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1266,7 +1266,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def topics(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        一个 Kafka 实例下的 Topic 列表
+        List of topics under a Kafka instance
         """
         return pulumi.get(self, "topics")
 
@@ -1274,7 +1274,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="usableGroupNumber")
     def usable_group_number(self) -> pulumi.Output[builtins.int]:
         """
-        当前实例剩余可用消费组个数。
+        The remaining number of available consumer groups for the current instance.
         """
         return pulumi.get(self, "usable_group_number")
 
@@ -1282,7 +1282,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="usablePartitionNumber")
     def usable_partition_number(self) -> pulumi.Output[builtins.int]:
         """
-        当前实例剩余可用分区数。
+        Number of available partitions remaining for the current instance.
         """
         return pulumi.get(self, "usable_partition_number")
 
@@ -1290,7 +1290,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="usedGroupNumber")
     def used_group_number(self) -> pulumi.Output[builtins.int]:
         """
-        当前实例已经创建的消费组(Group)个数。
+        Number of consumer groups (Group) currently created in the instance.
         """
         return pulumi.get(self, "used_group_number")
 
@@ -1298,7 +1298,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="usedPartitionNumber")
     def used_partition_number(self) -> pulumi.Output[builtins.int]:
         """
-        当前实例已经使用的分区个数。
+        Number of partitions currently used by the instance.
         """
         return pulumi.get(self, "used_partition_number")
 
@@ -1306,7 +1306,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="usedStorageSpace")
     def used_storage_space(self) -> pulumi.Output[builtins.int]:
         """
-        实例已用储空间，单位为 GiB。
+        Used storage space of the instance, measured in GiB.
         """
         return pulumi.get(self, "used_storage_space")
 
@@ -1314,7 +1314,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="usedTopicNumber")
     def used_topic_number(self) -> pulumi.Output[builtins.int]:
         """
-        当前实例已创建的 Topic 个数。
+        Number of topics created in the current instance.
         """
         return pulumi.get(self, "used_topic_number")
 
@@ -1322,7 +1322,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Output[builtins.str]:
         """
-        SASL/PLAIN 用户名称，需要满足以下要求: 1.由小写字母、数字、连字符（-）或下划线组成。2.长度为 3~64 个字符。3.用户名不支持设置为 admin 或 monitor,且实例内用户名称唯一。
+        SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
         """
         return pulumi.get(self, "user_name")
 
@@ -1330,7 +1330,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="userPassword")
     def user_password(self) -> pulumi.Output[builtins.str]:
         """
-        SASL/PLAIN 用户的密码，需要满足以下要求: 1.长度在8到32个字符 2.由大写字母、小写字母、数字、特殊字符中的任意三种组成 3.支持的特殊字符包括 !@#$%^&*()_+-=。
+        Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !@#$%^&*()_+-=
         """
         return pulumi.get(self, "user_password")
 
@@ -1338,7 +1338,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[builtins.str]:
         """
-        支持的 Kafka 版本，当前支持的版本包括 2.2.2, 2.8.2。
+        Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
         """
         return pulumi.get(self, "version")
 
@@ -1346,7 +1346,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例所在的私有网络 (VPC) ID。
+        Private network (VPC) ID where the instance is located.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1354,7 +1354,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例所在的可用区 ID。消息队列 Kafka版实例支持跨 AZ 部署, 多个可用区ID之间以逗号间隔。
+        Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
         """
         return pulumi.get(self, "zone_id")
 

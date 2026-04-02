@@ -18,14 +18,14 @@ public final class DomainHttpsHstsArgs extends com.pulumi.resources.ResourceArgs
     public static final DomainHttpsHstsArgs Empty = new DomainHttpsHstsArgs();
 
     /**
-     * 表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
+     * Indicates whether the HSTS configuration also applies to subdomains of the accelerated domain. The parameter has the following values: include: applies HSTS configuration to subdomain sites. exclude: does not apply HSTS configuration to subdomain sites. The default value is exclude.
      * 
      */
     @Import(name="subdomain")
     private @Nullable Output<String> subdomain;
 
     /**
-     * @return 表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
+     * @return Indicates whether the HSTS configuration also applies to subdomains of the accelerated domain. The parameter has the following values: include: applies HSTS configuration to subdomain sites. exclude: does not apply HSTS configuration to subdomain sites. The default value is exclude.
      * 
      */
     public Optional<Output<String>> subdomain() {
@@ -33,14 +33,14 @@ public final class DomainHttpsHstsArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -48,14 +48,14 @@ public final class DomainHttpsHstsArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+     * Indicates the cache expiration time for the Strict-Transport-Security response header in the browser, in seconds. If Switch is true, this parameter is required. The value range is 0–31,536,000. 31,536,000 seconds equals 365 days. If the value is 0, it is equivalent to disabling the HSTS setting.
      * 
      */
     @Import(name="ttl")
     private @Nullable Output<Integer> ttl;
 
     /**
-     * @return 表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+     * @return Indicates the cache expiration time for the Strict-Transport-Security response header in the browser, in seconds. If Switch is true, this parameter is required. The value range is 0–31,536,000. 31,536,000 seconds equals 365 days. If the value is 0, it is equivalent to disabling the HSTS setting.
      * 
      */
     public Optional<Output<Integer>> ttl() {
@@ -89,7 +89,7 @@ public final class DomainHttpsHstsArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param subdomain 表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
+         * @param subdomain Indicates whether the HSTS configuration also applies to subdomains of the accelerated domain. The parameter has the following values: include: applies HSTS configuration to subdomain sites. exclude: does not apply HSTS configuration to subdomain sites. The default value is exclude.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class DomainHttpsHstsArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param subdomain 表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
+         * @param subdomain Indicates whether the HSTS configuration also applies to subdomains of the accelerated domain. The parameter has the following values: include: applies HSTS configuration to subdomain sites. exclude: does not apply HSTS configuration to subdomain sites. The default value is exclude.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class DomainHttpsHstsArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param switch_ Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class DomainHttpsHstsArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param switch_ Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class DomainHttpsHstsArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ttl 表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+         * @param ttl Indicates the cache expiration time for the Strict-Transport-Security response header in the browser, in seconds. If Switch is true, this parameter is required. The value range is 0–31,536,000. 31,536,000 seconds equals 365 days. If the value is 0, it is equivalent to disabling the HSTS setting.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class DomainHttpsHstsArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ttl 表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+         * @param ttl Indicates the cache expiration time for the Strict-Transport-Security response header in the browser, in seconds. If Switch is true, this parameter is required. The value range is 0–31,536,000. 31,536,000 seconds equals 365 days. If the value is 0, it is equivalent to disabling the HSTS setting.
          * 
          * @return builder
          * 

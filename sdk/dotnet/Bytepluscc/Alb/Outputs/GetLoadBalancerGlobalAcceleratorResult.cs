@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetLoadBalancerGlobalAcceleratorResult
     {
         /// <summary>
-        /// 绑定的全球加速实例的ID。
+        /// ID of the bound Global Accelerator instance.
         /// </summary>
         public readonly string AcceleratorId;
         /// <summary>
-        /// 绑定的全球加速监听器的ID。
+        /// ID of the bound Global Accelerator listener.
         /// </summary>
         public readonly string AcceleratorListenerId;
         /// <summary>
-        /// 绑定的终端节点组的ID。
+        /// ID of the bound endpoint group.
         /// </summary>
         public readonly string EndpointGroupId;
         /// <summary>
-        /// 后端服务器的权重，决定流量分发比例。
+        /// Weight of the backend server, determines traffic distribution ratio.
         /// </summary>
         public readonly int Weight;
 

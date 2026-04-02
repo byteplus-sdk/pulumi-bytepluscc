@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleRuleConditionPathConfig {
     /**
-     * @return 转发规则的URL，仅支持绝对路径。
+     * @return Forwarding rule URL. Only absolute paths are supported.
      * 
      */
     private @Nullable List<String> values;
 
     private RuleRuleConditionPathConfig() {}
     /**
-     * @return 转发规则的URL，仅支持绝对路径。
+     * @return Forwarding rule URL. Only absolute paths are supported.
      * 
      */
     public List<String> values() {

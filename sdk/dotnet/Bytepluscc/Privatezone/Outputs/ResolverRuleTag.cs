@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone.Outputs
     public sealed class ResolverRuleTag
     {
         /// <summary>
-        /// 用户标签的标签键。
+        /// Tag key for the user tag
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 用户标签的标签值。
+        /// Tag value for the user tag
         /// </summary>
         public readonly string? Value;
 

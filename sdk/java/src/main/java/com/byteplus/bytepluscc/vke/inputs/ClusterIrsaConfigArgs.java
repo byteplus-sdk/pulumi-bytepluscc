@@ -17,14 +17,14 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
     public static final ClusterIrsaConfigArgs Empty = new ClusterIrsaConfigArgs();
 
     /**
-     * 接受令牌的标识符。
+     * Identifier for accepting tokens
      * 
      */
     @Import(name="audience")
     private @Nullable Output<String> audience;
 
     /**
-     * @return 接受令牌的标识符。
+     * @return Identifier for accepting tokens
      * 
      */
     public Optional<Output<String>> audience() {
@@ -32,14 +32,14 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+     * Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+     * @return Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -47,14 +47,14 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+     * OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
      * 
      */
     @Import(name="issuer")
     private @Nullable Output<String> issuer;
 
     /**
-     * @return OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+     * @return OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
      * 
      */
     public Optional<Output<String>> issuer() {
@@ -62,14 +62,14 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+     * JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
      * 
      */
     @Import(name="jwksUrl")
     private @Nullable Output<String> jwksUrl;
 
     /**
-     * @return JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+     * @return JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
      * 
      */
     public Optional<Output<String>> jwksUrl() {
@@ -77,14 +77,14 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * OIDC 提供商 TRN。
+     * OIDC provider TRN.
      * 
      */
     @Import(name="oidcTrn")
     private @Nullable Output<String> oidcTrn;
 
     /**
-     * @return OIDC 提供商 TRN。
+     * @return OIDC provider TRN.
      * 
      */
     public Optional<Output<String>> oidcTrn() {
@@ -92,14 +92,14 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+     * OIDC provider configuration document in JSON format, containing information about the OIDC provider.
      * 
      */
     @Import(name="openIdConfigUrl")
     private @Nullable Output<String> openIdConfigUrl;
 
     /**
-     * @return OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+     * @return OIDC provider configuration document in JSON format, containing information about the OIDC provider.
      * 
      */
     public Optional<Output<String>> openIdConfigUrl() {
@@ -136,7 +136,7 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param audience 接受令牌的标识符。
+         * @param audience Identifier for accepting tokens
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param audience 接受令牌的标识符。
+         * @param audience Identifier for accepting tokens
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param enabled 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+         * @param enabled Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param enabled 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+         * @param enabled Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param issuer OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+         * @param issuer OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param issuer OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+         * @param issuer OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param jwksUrl JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+         * @param jwksUrl JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param jwksUrl JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+         * @param jwksUrl JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param oidcTrn OIDC 提供商 TRN。
+         * @param oidcTrn OIDC provider TRN.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param oidcTrn OIDC 提供商 TRN。
+         * @param oidcTrn OIDC provider TRN.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param openIdConfigUrl OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+         * @param openIdConfigUrl OIDC provider configuration document in JSON format, containing information about the OIDC provider.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class ClusterIrsaConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param openIdConfigUrl OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+         * @param openIdConfigUrl OIDC provider configuration document in JSON format, containing information about the OIDC provider.
          * 
          * @return builder
          * 

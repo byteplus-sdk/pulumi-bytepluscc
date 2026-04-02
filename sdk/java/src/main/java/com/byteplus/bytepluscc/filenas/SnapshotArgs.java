@@ -17,14 +17,14 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
     public static final SnapshotArgs Empty = new SnapshotArgs();
 
     /**
-     * 快照描述信息。
+     * Snapshot Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 快照描述信息。
+     * @return Snapshot Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -32,14 +32,14 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统 ID。
+     * File System ID
      * 
      */
     @Import(name="fileSystemId", required=true)
     private Output<String> fileSystemId;
 
     /**
-     * @return 文件系统 ID。
+     * @return File System ID
      * 
      */
     public Output<String> fileSystemId() {
@@ -47,14 +47,14 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照名称。
+     * Snapshot Name
      * 
      */
     @Import(name="snapshotName", required=true)
     private Output<String> snapshotName;
 
     /**
-     * @return 快照名称。
+     * @return Snapshot Name
      * 
      */
     public Output<String> snapshotName() {
@@ -88,7 +88,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 快照描述信息。
+         * @param description Snapshot Description
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 快照描述信息。
+         * @param description Snapshot Description
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemId 文件系统 ID。
+         * @param fileSystemId File System ID
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemId 文件系统 ID。
+         * @param fileSystemId File System ID
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotName 快照名称。
+         * @param snapshotName Snapshot Name
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotName 快照名称。
+         * @param snapshotName Snapshot Name
          * 
          * @return builder
          * 

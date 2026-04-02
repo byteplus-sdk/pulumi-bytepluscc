@@ -14,11 +14,11 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type DirectConnectGatewayAssociateCen struct {
-	// CEN的ID。
+	// ID of CEN.
 	CenId *string `pulumi:"cenId"`
-	// CEN的用户ID。
+	// User ID of CEN.
 	CenOwnerId *string `pulumi:"cenOwnerId"`
-	// 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+	// Status of the instance in CEN. Attaching: attaching. Attached: attached.
 	CenStatus *string `pulumi:"cenStatus"`
 }
 
@@ -34,11 +34,11 @@ type DirectConnectGatewayAssociateCenInput interface {
 }
 
 type DirectConnectGatewayAssociateCenArgs struct {
-	// CEN的ID。
+	// ID of CEN.
 	CenId pulumi.StringPtrInput `pulumi:"cenId"`
-	// CEN的用户ID。
+	// User ID of CEN.
 	CenOwnerId pulumi.StringPtrInput `pulumi:"cenOwnerId"`
-	// 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+	// Status of the instance in CEN. Attaching: attaching. Attached: attached.
 	CenStatus pulumi.StringPtrInput `pulumi:"cenStatus"`
 }
 
@@ -93,17 +93,17 @@ func (o DirectConnectGatewayAssociateCenOutput) ToDirectConnectGatewayAssociateC
 	return o
 }
 
-// CEN的ID。
+// ID of CEN.
 func (o DirectConnectGatewayAssociateCenOutput) CenId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DirectConnectGatewayAssociateCen) *string { return v.CenId }).(pulumi.StringPtrOutput)
 }
 
-// CEN的用户ID。
+// User ID of CEN.
 func (o DirectConnectGatewayAssociateCenOutput) CenOwnerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DirectConnectGatewayAssociateCen) *string { return v.CenOwnerId }).(pulumi.StringPtrOutput)
 }
 
-// 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+// Status of the instance in CEN. Attaching: attaching. Attached: attached.
 func (o DirectConnectGatewayAssociateCenOutput) CenStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DirectConnectGatewayAssociateCen) *string { return v.CenStatus }).(pulumi.StringPtrOutput)
 }
@@ -129,11 +129,11 @@ func (o DirectConnectGatewayAssociateCenArrayOutput) Index(i pulumi.IntInput) Di
 }
 
 type DirectConnectGatewayAssociateEic struct {
-	// EIC的ID。
+	// ID of EIC.
 	EicId *string `pulumi:"eicId"`
-	// EIC的用户ID。
+	// User ID of EIC.
 	EicOwnerId *string `pulumi:"eicOwnerId"`
-	// 实例在EIC中的状态。
+	// Status of the instance in EIC.
 	EicStatus *string `pulumi:"eicStatus"`
 }
 
@@ -149,11 +149,11 @@ type DirectConnectGatewayAssociateEicInput interface {
 }
 
 type DirectConnectGatewayAssociateEicArgs struct {
-	// EIC的ID。
+	// ID of EIC.
 	EicId pulumi.StringPtrInput `pulumi:"eicId"`
-	// EIC的用户ID。
+	// User ID of EIC.
 	EicOwnerId pulumi.StringPtrInput `pulumi:"eicOwnerId"`
-	// 实例在EIC中的状态。
+	// Status of the instance in EIC.
 	EicStatus pulumi.StringPtrInput `pulumi:"eicStatus"`
 }
 
@@ -234,17 +234,17 @@ func (o DirectConnectGatewayAssociateEicOutput) ToDirectConnectGatewayAssociateE
 	}).(DirectConnectGatewayAssociateEicPtrOutput)
 }
 
-// EIC的ID。
+// ID of EIC.
 func (o DirectConnectGatewayAssociateEicOutput) EicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DirectConnectGatewayAssociateEic) *string { return v.EicId }).(pulumi.StringPtrOutput)
 }
 
-// EIC的用户ID。
+// User ID of EIC.
 func (o DirectConnectGatewayAssociateEicOutput) EicOwnerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DirectConnectGatewayAssociateEic) *string { return v.EicOwnerId }).(pulumi.StringPtrOutput)
 }
 
-// 实例在EIC中的状态。
+// Status of the instance in EIC.
 func (o DirectConnectGatewayAssociateEicOutput) EicStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DirectConnectGatewayAssociateEic) *string { return v.EicStatus }).(pulumi.StringPtrOutput)
 }
@@ -273,7 +273,7 @@ func (o DirectConnectGatewayAssociateEicPtrOutput) Elem() DirectConnectGatewayAs
 	}).(DirectConnectGatewayAssociateEicOutput)
 }
 
-// EIC的ID。
+// ID of EIC.
 func (o DirectConnectGatewayAssociateEicPtrOutput) EicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DirectConnectGatewayAssociateEic) *string {
 		if v == nil {
@@ -283,7 +283,7 @@ func (o DirectConnectGatewayAssociateEicPtrOutput) EicId() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// EIC的用户ID。
+// User ID of EIC.
 func (o DirectConnectGatewayAssociateEicPtrOutput) EicOwnerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DirectConnectGatewayAssociateEic) *string {
 		if v == nil {
@@ -293,7 +293,7 @@ func (o DirectConnectGatewayAssociateEicPtrOutput) EicOwnerId() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例在EIC中的状态。
+// Status of the instance in EIC.
 func (o DirectConnectGatewayAssociateEicPtrOutput) EicStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DirectConnectGatewayAssociateEic) *string {
 		if v == nil {
@@ -304,9 +304,9 @@ func (o DirectConnectGatewayAssociateEicPtrOutput) EicStatus() pulumi.StringPtrO
 }
 
 type DirectConnectGatewayTag struct {
-	// 用户标签的标签键。长度取值范围为1~128字符。
+	// User label tag key. Length must be between 1 and 128 characters.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。长度取值范围为0~256字符。
+	// User label tag value. Length must be between 0 and 256 characters.
 	Value *string `pulumi:"value"`
 }
 
@@ -322,9 +322,9 @@ type DirectConnectGatewayTagInput interface {
 }
 
 type DirectConnectGatewayTagArgs struct {
-	// 用户标签的标签键。长度取值范围为1~128字符。
+	// User label tag key. Length must be between 1 and 128 characters.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。长度取值范围为0~256字符。
+	// User label tag value. Length must be between 0 and 256 characters.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -379,12 +379,12 @@ func (o DirectConnectGatewayTagOutput) ToDirectConnectGatewayTagOutputWithContex
 	return o
 }
 
-// 用户标签的标签键。长度取值范围为1~128字符。
+// User label tag key. Length must be between 1 and 128 characters.
 func (o DirectConnectGatewayTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DirectConnectGatewayTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。长度取值范围为0~256字符。
+// User label tag value. Length must be between 0 and 256 characters.
 func (o DirectConnectGatewayTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DirectConnectGatewayTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -410,11 +410,11 @@ func (o DirectConnectGatewayTagArrayOutput) Index(i pulumi.IntInput) DirectConne
 }
 
 type GetDirectConnectGatewayAssociateCen struct {
-	// CEN的ID。
+	// ID of CEN.
 	CenId string `pulumi:"cenId"`
-	// CEN的用户ID。
+	// User ID of CEN.
 	CenOwnerId string `pulumi:"cenOwnerId"`
-	// 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+	// Status of the instance in CEN. Attaching: attaching. Attached: attached.
 	CenStatus string `pulumi:"cenStatus"`
 }
 
@@ -430,11 +430,11 @@ type GetDirectConnectGatewayAssociateCenInput interface {
 }
 
 type GetDirectConnectGatewayAssociateCenArgs struct {
-	// CEN的ID。
+	// ID of CEN.
 	CenId pulumi.StringInput `pulumi:"cenId"`
-	// CEN的用户ID。
+	// User ID of CEN.
 	CenOwnerId pulumi.StringInput `pulumi:"cenOwnerId"`
-	// 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+	// Status of the instance in CEN. Attaching: attaching. Attached: attached.
 	CenStatus pulumi.StringInput `pulumi:"cenStatus"`
 }
 
@@ -489,17 +489,17 @@ func (o GetDirectConnectGatewayAssociateCenOutput) ToGetDirectConnectGatewayAsso
 	return o
 }
 
-// CEN的ID。
+// ID of CEN.
 func (o GetDirectConnectGatewayAssociateCenOutput) CenId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDirectConnectGatewayAssociateCen) string { return v.CenId }).(pulumi.StringOutput)
 }
 
-// CEN的用户ID。
+// User ID of CEN.
 func (o GetDirectConnectGatewayAssociateCenOutput) CenOwnerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDirectConnectGatewayAssociateCen) string { return v.CenOwnerId }).(pulumi.StringOutput)
 }
 
-// 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+// Status of the instance in CEN. Attaching: attaching. Attached: attached.
 func (o GetDirectConnectGatewayAssociateCenOutput) CenStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDirectConnectGatewayAssociateCen) string { return v.CenStatus }).(pulumi.StringOutput)
 }
@@ -525,11 +525,11 @@ func (o GetDirectConnectGatewayAssociateCenArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetDirectConnectGatewayAssociateEic struct {
-	// EIC的ID。
+	// ID of EIC.
 	EicId string `pulumi:"eicId"`
-	// EIC的用户ID。
+	// User ID of EIC.
 	EicOwnerId string `pulumi:"eicOwnerId"`
-	// 实例在EIC中的状态。
+	// Status of the instance in EIC.
 	EicStatus string `pulumi:"eicStatus"`
 }
 
@@ -545,11 +545,11 @@ type GetDirectConnectGatewayAssociateEicInput interface {
 }
 
 type GetDirectConnectGatewayAssociateEicArgs struct {
-	// EIC的ID。
+	// ID of EIC.
 	EicId pulumi.StringInput `pulumi:"eicId"`
-	// EIC的用户ID。
+	// User ID of EIC.
 	EicOwnerId pulumi.StringInput `pulumi:"eicOwnerId"`
-	// 实例在EIC中的状态。
+	// Status of the instance in EIC.
 	EicStatus pulumi.StringInput `pulumi:"eicStatus"`
 }
 
@@ -579,25 +579,25 @@ func (o GetDirectConnectGatewayAssociateEicOutput) ToGetDirectConnectGatewayAsso
 	return o
 }
 
-// EIC的ID。
+// ID of EIC.
 func (o GetDirectConnectGatewayAssociateEicOutput) EicId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDirectConnectGatewayAssociateEic) string { return v.EicId }).(pulumi.StringOutput)
 }
 
-// EIC的用户ID。
+// User ID of EIC.
 func (o GetDirectConnectGatewayAssociateEicOutput) EicOwnerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDirectConnectGatewayAssociateEic) string { return v.EicOwnerId }).(pulumi.StringOutput)
 }
 
-// 实例在EIC中的状态。
+// Status of the instance in EIC.
 func (o GetDirectConnectGatewayAssociateEicOutput) EicStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDirectConnectGatewayAssociateEic) string { return v.EicStatus }).(pulumi.StringOutput)
 }
 
 type GetDirectConnectGatewayTag struct {
-	// 用户标签的标签键。长度取值范围为1~128字符。
+	// User label tag key. Length must be between 1 and 128 characters.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。长度取值范围为0~256字符。
+	// User label tag value. Length must be between 0 and 256 characters.
 	Value string `pulumi:"value"`
 }
 
@@ -613,9 +613,9 @@ type GetDirectConnectGatewayTagInput interface {
 }
 
 type GetDirectConnectGatewayTagArgs struct {
-	// 用户标签的标签键。长度取值范围为1~128字符。
+	// User label tag key. Length must be between 1 and 128 characters.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。长度取值范围为0~256字符。
+	// User label tag value. Length must be between 0 and 256 characters.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -670,12 +670,12 @@ func (o GetDirectConnectGatewayTagOutput) ToGetDirectConnectGatewayTagOutputWith
 	return o
 }
 
-// 用户标签的标签键。长度取值范围为1~128字符。
+// User label tag key. Length must be between 1 and 128 characters.
 func (o GetDirectConnectGatewayTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDirectConnectGatewayTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。长度取值范围为0~256字符。
+// User label tag value. Length must be between 0 and 256 characters.
 func (o GetDirectConnectGatewayTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDirectConnectGatewayTag) string { return v.Value }).(pulumi.StringOutput)
 }

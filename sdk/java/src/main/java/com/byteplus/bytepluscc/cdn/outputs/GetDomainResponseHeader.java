@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainResponseHeader {
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private GetDomainResponseHeaderCondition condition;
     /**
-     * @return 表示内容分发网络在响应用户请求的时候，对响应头的操作。
+     * @return Indicates operations on the response header performed by the Content Delivery Network when responding to user requests.
      * 
      */
     private GetDomainResponseHeaderResponseHeaderAction responseHeaderAction;
 
     private GetDomainResponseHeader() {}
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public GetDomainResponseHeaderCondition condition() {
         return this.condition;
     }
     /**
-     * @return 表示内容分发网络在响应用户请求的时候，对响应头的操作。
+     * @return Indicates operations on the response header performed by the Content Delivery Network when responding to user requests.
      * 
      */
     public GetDomainResponseHeaderResponseHeaderAction responseHeaderAction() {

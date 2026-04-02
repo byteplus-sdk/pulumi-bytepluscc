@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbEndpointAddress {
     /**
-     * @return 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+     * @return Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
      * 
      */
     private @Nullable Boolean dnsVisibility;
     /**
-     * @return 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+     * @return New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
      * 
      */
     private @Nullable String domainPrefix;
     /**
-     * @return 端口号。
+     * @return Port number.
      * 
      */
     private @Nullable String port;
 
     private DbEndpointAddress() {}
     /**
-     * @return 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+     * @return Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
      * 
      */
     public Optional<Boolean> dnsVisibility() {
         return Optional.ofNullable(this.dnsVisibility);
     }
     /**
-     * @return 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+     * @return New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
      * 
      */
     public Optional<String> domainPrefix() {
         return Optional.ofNullable(this.domainPrefix);
     }
     /**
-     * @return 端口号。
+     * @return Port number.
      * 
      */
     public Optional<String> port() {

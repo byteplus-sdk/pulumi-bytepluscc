@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ResolverRuleForwardIP {
     /**
-     * @return VPC 外部的 DNS 服务器的 IP 地址。
+     * @return IP address of the external DNS server for the VPC
      * 
      */
     private @Nullable String ip;
     /**
-     * @return VPC 外部的 DNS 服务器的端口。
+     * @return Port of the external DNS server for the VPC
      * 
      */
     private @Nullable Integer port;
 
     private ResolverRuleForwardIP() {}
     /**
-     * @return VPC 外部的 DNS 服务器的 IP 地址。
+     * @return IP address of the external DNS server for the VPC
      * 
      */
     public Optional<String> ip() {
         return Optional.ofNullable(this.ip);
     }
     /**
-     * @return VPC 外部的 DNS 服务器的端口。
+     * @return Port of the external DNS server for the VPC
      * 
      */
     public Optional<Integer> port() {

@@ -21,7 +21,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 网络ACL用于控制子网的出入流量，其基于白名单原理设计，出入子网的流量必须被网络ACL规则允许才能放通。
+ * The network ACL controls inbound and outbound traffic for subnets. It is designed based on the allowlist principle: traffic entering or leaving a subnet must be permitted by a network ACL rule to pass through.
  * 
  * ## Example Usage
  * 
@@ -38,14 +38,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/networkAcl:NetworkAcl")
 public class NetworkAcl extends com.pulumi.resources.CustomResource {
     /**
-     * 网络ACL的创建时间。
+     * Creation time of the network ACL.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 网络ACL的创建时间。
+     * @return Creation time of the network ACL.
      * 
      */
     public Output<String> createdTime() {
@@ -64,14 +64,14 @@ public class NetworkAcl extends com.pulumi.resources.CustomResource {
         return this.defaultIngressAclEntries;
     }
     /**
-     * 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     public Output<String> description() {
@@ -90,42 +90,42 @@ public class NetworkAcl extends com.pulumi.resources.CustomResource {
         return this.ingressAclEntries;
     }
     /**
-     * 网络ACL的ID。
+     * Network ACL ID.
      * 
      */
     @Export(name="networkAclId", refs={String.class}, tree="[0]")
     private Output<String> networkAclId;
 
     /**
-     * @return 网络ACL的ID。
+     * @return Network ACL ID.
      * 
      */
     public Output<String> networkAclId() {
         return this.networkAclId;
     }
     /**
-     * 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
      * 
      */
     @Export(name="networkAclName", refs={String.class}, tree="[0]")
     private Output<String> networkAclName;
 
     /**
-     * @return 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * @return Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
      * 
      */
     public Output<String> networkAclName() {
         return this.networkAclName;
     }
     /**
-     * 网络ACL所属项目的名称。不填默认加入default项目。
+     * Name of the project associated with the network ACL. If not specified, added to the default project.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 网络ACL所属项目的名称。不填默认加入default项目。
+     * @return Name of the project associated with the network ACL. If not specified, added to the default project.
      * 
      */
     public Output<String> projectName() {
@@ -138,14 +138,14 @@ public class NetworkAcl extends com.pulumi.resources.CustomResource {
         return this.resources;
     }
     /**
-     * 网络ACL的状态。Available：可用，Creating：创建中
+     * Status of the network ACL. Available: Available. Creating: Creating.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 网络ACL的状态。Available：可用，Creating：创建中
+     * @return Status of the network ACL. Available: Available. Creating: Creating.
      * 
      */
     public Output<String> status() {
@@ -158,28 +158,28 @@ public class NetworkAcl extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 网络ACL的更新时间。
+     * Last updated time of the network ACL.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 网络ACL的更新时间。
+     * @return Last updated time of the network ACL.
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 网络ACL所属VPC的ID。
+     * ID of the VPC associated with the network ACL.
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 网络ACL所属VPC的ID。
+     * @return ID of the VPC associated with the network ACL.
      * 
      */
     public Output<String> vpcId() {

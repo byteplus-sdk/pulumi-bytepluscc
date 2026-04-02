@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Ecs
 {
     /// <summary>
-    /// 镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
+    /// An image is a special file containing the basic operating system and application data required for a cloud server instance. You must select an image when creating an instance.
     /// 
     /// ## Example Usage
     /// 
@@ -56,145 +56,169 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public partial class Image : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+        /// Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
         /// </summary>
         [Output("architecture")]
         public Output<string> Architecture { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像的启动模式。可以选择BIOS、UEFI类型。
+        /// Image boot mode. You can select BIOS or UEFI
         /// </summary>
         [Output("bootMode")]
         public Output<string> BootMode { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像创建时间
+        /// Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+        /// </summary>
+        [Output("createWholeImage")]
+        public Output<bool> CreateWholeImage { get; private set; } = null!;
+
+        /// <summary>
+        /// Image creation time
         /// </summary>
         [Output("createdAt")]
         public Output<string> CreatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+        /// Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像的检测结果。
+        /// Image check result.
         /// </summary>
         [Output("detectionResults")]
         public Output<Outputs.ImageDetectionResults> DetectionResults { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像ID。
+        /// Image ID
         /// </summary>
         [Output("imageId")]
         public Output<string> ImageId { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+        /// Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
         /// </summary>
         [Output("imageName")]
         public Output<string> ImageName { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像所属的账号ID。
+        /// Account ID to which the image belongs.
         /// </summary>
         [Output("imageOwnerId")]
         public Output<string> ImageOwnerId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+        /// Imported image information
+        /// </summary>
+        [Output("importImage")]
+        public Output<Outputs.ImageImportImage> ImportImage { get; private set; } = null!;
+
+        /// <summary>
+        /// Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像中是否安装了云助手Agent。
+        /// Whether Cloud Assistant Agent is installed in the image
         /// </summary>
         [Output("isInstallRunCommandAgent")]
         public Output<bool> IsInstallRunCommandAgent { get; private set; } = null!;
 
         /// <summary>
-        /// 公共镜像是否长期维护。
+        /// Whether the public image is maintained long-term.
         /// </summary>
         [Output("isLts")]
         public Output<bool> IsLts { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像是否支持Cloud-init。
+        /// Whether the image supports Cloud-init.
         /// </summary>
         [Output("isSupportCloudInit")]
         public Output<bool> IsSupportCloudInit { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像的内核版本。
+        /// Image kernel version.
         /// </summary>
         [Output("kernel")]
         public Output<string> Kernel { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+        /// Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
         /// </summary>
         [Output("licenseType")]
         public Output<string> LicenseType { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像操作系统的名称。
+        /// Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+        /// </summary>
+        [Output("needDetection")]
+        public Output<bool> NeedDetection { get; private set; } = null!;
+
+        /// <summary>
+        /// Name of the image operating system.
         /// </summary>
         [Output("osName")]
         public Output<string> OsName { get; private set; } = null!;
 
         /// <summary>
-        /// 操作系统类型。
+        /// Operating system type
         /// </summary>
         [Output("osType")]
         public Output<string> OsType { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+        /// Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
         /// </summary>
         [Output("platform")]
         public Output<string> Platform { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像的发行版本。
+        /// Image release version.
         /// </summary>
         [Output("platformVersion")]
         public Output<string> PlatformVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+        /// Product code for marketplace image
+        /// </summary>
+        [Output("productCode")]
+        public Output<string> ProductCode { get; private set; } = null!;
+
+        /// <summary>
+        /// Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像共享的账户
+        /// Accounts with which the image is shared
         /// </summary>
         [Output("sharePermissions")]
         public Output<ImmutableArray<string>> SharePermissions { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+        /// Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
         /// </summary>
         [Output("shareStatus")]
         public Output<string> ShareStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像大小，单位为GiB。
+        /// Image size, in GiB.
         /// </summary>
         [Output("size")]
         public Output<int> Size { get; private set; } = null!;
 
         /// <summary>
-        /// 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+        /// Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
         /// </summary>
         [Output("snapshotGroupId")]
         public Output<string> SnapshotGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+        /// System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         /// </summary>
         [Output("snapshotId")]
         public Output<string> SnapshotId { get; private set; } = null!;
@@ -203,7 +227,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<ImmutableArray<Outputs.ImageSnapshot>> Snapshots { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像的状态。
+        /// Image status.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -212,19 +236,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<ImmutableArray<Outputs.ImageTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像更新时间
+        /// Image update time
         /// </summary>
         [Output("updatedAt")]
         public Output<string> UpdatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像大小，单位为Byte。
+        /// Image size, in Bytes.
         /// </summary>
         [Output("virtualSize")]
         public Output<double> VirtualSize { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+        /// Image visibility. public: Public image. private: Private image. shared: Shared image.
         /// </summary>
         [Output("visibility")]
         public Output<string> Visibility { get; private set; } = null!;
@@ -277,25 +301,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class ImageArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+        /// Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
+        /// </summary>
+        [Input("architecture")]
+        public Input<string>? Architecture { get; set; }
+
+        /// <summary>
+        /// Image boot mode. You can select BIOS or UEFI
+        /// </summary>
+        [Input("bootMode")]
+        public Input<string>? BootMode { get; set; }
+
+        /// <summary>
+        /// Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+        /// </summary>
+        [Input("createWholeImage")]
+        public Input<bool>? CreateWholeImage { get; set; }
+
+        /// <summary>
+        /// Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+        /// Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
         /// </summary>
         [Input("imageName", required: true)]
         public Input<string> ImageName { get; set; } = null!;
 
         /// <summary>
-        /// 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+        /// Imported image information
+        /// </summary>
+        [Input("importImage")]
+        public Input<Inputs.ImageImportImageArgs>? ImportImage { get; set; }
+
+        /// <summary>
+        /// Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+        /// Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
+        /// </summary>
+        [Input("licenseType")]
+        public Input<string>? LicenseType { get; set; }
+
+        /// <summary>
+        /// Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+        /// </summary>
+        [Input("needDetection")]
+        public Input<bool>? NeedDetection { get; set; }
+
+        /// <summary>
+        /// Operating system type
+        /// </summary>
+        [Input("osType")]
+        public Input<string>? OsType { get; set; }
+
+        /// <summary>
+        /// Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
+        /// </summary>
+        [Input("platform")]
+        public Input<string>? Platform { get; set; }
+
+        /// <summary>
+        /// Image release version.
+        /// </summary>
+        [Input("platformVersion")]
+        public Input<string>? PlatformVersion { get; set; }
+
+        /// <summary>
+        /// Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -304,7 +382,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         private InputList<string>? _sharePermissions;
 
         /// <summary>
-        /// 镜像共享的账户
+        /// Accounts with which the image is shared
         /// </summary>
         public InputList<string> SharePermissions
         {
@@ -313,13 +391,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+        /// Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
         /// </summary>
         [Input("snapshotGroupId")]
         public Input<string>? SnapshotGroupId { get; set; }
 
         /// <summary>
-        /// 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+        /// System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         /// </summary>
         [Input("snapshotId")]
         public Input<string>? SnapshotId { get; set; }
@@ -341,115 +419,139 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class ImageState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+        /// Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
         /// </summary>
         [Input("architecture")]
         public Input<string>? Architecture { get; set; }
 
         /// <summary>
-        /// 镜像的启动模式。可以选择BIOS、UEFI类型。
+        /// Image boot mode. You can select BIOS or UEFI
         /// </summary>
         [Input("bootMode")]
         public Input<string>? BootMode { get; set; }
 
         /// <summary>
-        /// 镜像创建时间
+        /// Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+        /// </summary>
+        [Input("createWholeImage")]
+        public Input<bool>? CreateWholeImage { get; set; }
+
+        /// <summary>
+        /// Image creation time
         /// </summary>
         [Input("createdAt")]
         public Input<string>? CreatedAt { get; set; }
 
         /// <summary>
-        /// 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+        /// Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 镜像的检测结果。
+        /// Image check result.
         /// </summary>
         [Input("detectionResults")]
         public Input<Inputs.ImageDetectionResultsGetArgs>? DetectionResults { get; set; }
 
         /// <summary>
-        /// 镜像ID。
+        /// Image ID
         /// </summary>
         [Input("imageId")]
         public Input<string>? ImageId { get; set; }
 
         /// <summary>
-        /// 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+        /// Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
         /// </summary>
         [Input("imageName")]
         public Input<string>? ImageName { get; set; }
 
         /// <summary>
-        /// 镜像所属的账号ID。
+        /// Account ID to which the image belongs.
         /// </summary>
         [Input("imageOwnerId")]
         public Input<string>? ImageOwnerId { get; set; }
 
         /// <summary>
-        /// 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+        /// Imported image information
+        /// </summary>
+        [Input("importImage")]
+        public Input<Inputs.ImageImportImageGetArgs>? ImportImage { get; set; }
+
+        /// <summary>
+        /// Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 镜像中是否安装了云助手Agent。
+        /// Whether Cloud Assistant Agent is installed in the image
         /// </summary>
         [Input("isInstallRunCommandAgent")]
         public Input<bool>? IsInstallRunCommandAgent { get; set; }
 
         /// <summary>
-        /// 公共镜像是否长期维护。
+        /// Whether the public image is maintained long-term.
         /// </summary>
         [Input("isLts")]
         public Input<bool>? IsLts { get; set; }
 
         /// <summary>
-        /// 镜像是否支持Cloud-init。
+        /// Whether the image supports Cloud-init.
         /// </summary>
         [Input("isSupportCloudInit")]
         public Input<bool>? IsSupportCloudInit { get; set; }
 
         /// <summary>
-        /// 镜像的内核版本。
+        /// Image kernel version.
         /// </summary>
         [Input("kernel")]
         public Input<string>? Kernel { get; set; }
 
         /// <summary>
-        /// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+        /// Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
         /// </summary>
         [Input("licenseType")]
         public Input<string>? LicenseType { get; set; }
 
         /// <summary>
-        /// 镜像操作系统的名称。
+        /// Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+        /// </summary>
+        [Input("needDetection")]
+        public Input<bool>? NeedDetection { get; set; }
+
+        /// <summary>
+        /// Name of the image operating system.
         /// </summary>
         [Input("osName")]
         public Input<string>? OsName { get; set; }
 
         /// <summary>
-        /// 操作系统类型。
+        /// Operating system type
         /// </summary>
         [Input("osType")]
         public Input<string>? OsType { get; set; }
 
         /// <summary>
-        /// 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+        /// Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
         /// </summary>
         [Input("platform")]
         public Input<string>? Platform { get; set; }
 
         /// <summary>
-        /// 镜像的发行版本。
+        /// Image release version.
         /// </summary>
         [Input("platformVersion")]
         public Input<string>? PlatformVersion { get; set; }
 
         /// <summary>
-        /// 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+        /// Product code for marketplace image
+        /// </summary>
+        [Input("productCode")]
+        public Input<string>? ProductCode { get; set; }
+
+        /// <summary>
+        /// Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -458,7 +560,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         private InputList<string>? _sharePermissions;
 
         /// <summary>
-        /// 镜像共享的账户
+        /// Accounts with which the image is shared
         /// </summary>
         public InputList<string> SharePermissions
         {
@@ -467,25 +569,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+        /// Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
         /// </summary>
         [Input("shareStatus")]
         public Input<string>? ShareStatus { get; set; }
 
         /// <summary>
-        /// 镜像大小，单位为GiB。
+        /// Image size, in GiB.
         /// </summary>
         [Input("size")]
         public Input<int>? Size { get; set; }
 
         /// <summary>
-        /// 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+        /// Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
         /// </summary>
         [Input("snapshotGroupId")]
         public Input<string>? SnapshotGroupId { get; set; }
 
         /// <summary>
-        /// 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+        /// System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         /// </summary>
         [Input("snapshotId")]
         public Input<string>? SnapshotId { get; set; }
@@ -499,7 +601,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 镜像的状态。
+        /// Image status.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -513,19 +615,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 镜像更新时间
+        /// Image update time
         /// </summary>
         [Input("updatedAt")]
         public Input<string>? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 镜像大小，单位为Byte。
+        /// Image size, in Bytes.
         /// </summary>
         [Input("virtualSize")]
         public Input<double>? VirtualSize { get; set; }
 
         /// <summary>
-        /// 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+        /// Image visibility. public: Public image. private: Private image. shared: Shared image.
         /// </summary>
         [Input("visibility")]
         public Input<string>? Visibility { get; set; }

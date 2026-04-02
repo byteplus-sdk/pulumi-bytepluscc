@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Inputs
         private InputList<int>? _accessPorts;
 
         /// <summary>
-        /// 接入的端口号。
+        /// Access port number.
         /// </summary>
         public InputList<int> AccessPorts
         {
@@ -34,7 +34,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Inputs
         }
 
         /// <summary>
-        /// 源站组名称。
+        /// Origin group name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

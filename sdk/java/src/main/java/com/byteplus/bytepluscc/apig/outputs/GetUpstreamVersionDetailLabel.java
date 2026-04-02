@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamVersionDetailLabel {
     /**
-     * @return 键。
+     * @return Key
      * 
      */
     private String key;
     /**
-     * @return 值。
+     * @return Value
      * 
      */
     private String value;
 
     private GetUpstreamVersionDetailLabel() {}
     /**
-     * @return 键。
+     * @return Key
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 值。
+     * @return Value
      * 
      */
     public String value() {

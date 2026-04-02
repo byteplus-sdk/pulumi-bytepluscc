@@ -22,14 +22,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     public static final ServerGroupArgs Empty = new ServerGroupArgs();
 
     /**
-     * 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     * Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
      * 
      */
     @Import(name="crossZoneEnabled")
     private @Nullable Output<String> crossZoneEnabled;
 
     /**
-     * @return 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     * @return Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
      * 
      */
     public Optional<Output<String>> crossZoneEnabled() {
@@ -37,14 +37,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 后端服务器组的描述。
+     * Description of the backend server group.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 后端服务器组的描述。
+     * @return Description of the backend server group.
      * 
      */
     public Optional<Output<String>> description() {
@@ -52,14 +52,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 服务器组健康检查配置信息。
+     * Server group health check configuration information.
      * 
      */
     @Import(name="healthCheck")
     private @Nullable Output<ServerGroupHealthCheckArgs> healthCheck;
 
     /**
-     * @return 服务器组健康检查配置信息。
+     * @return Server group health check configuration information.
      * 
      */
     public Optional<Output<ServerGroupHealthCheckArgs>> healthCheck() {
@@ -67,14 +67,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 服务器组的IP地址类型。目前只支持 IPv4
+     * IP address type of the server group. Only IPv4 is supported.
      * 
      */
     @Import(name="ipAddressType")
     private @Nullable Output<String> ipAddressType;
 
     /**
-     * @return 服务器组的IP地址类型。目前只支持 IPv4
+     * @return IP address type of the server group. Only IPv4 is supported.
      * 
      */
     public Optional<Output<String>> ipAddressType() {
@@ -82,14 +82,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 后端服务器组所属项目名称。
+     * Name of the project to which the backend server group belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 后端服务器组所属项目名称。
+     * @return Name of the project to which the backend server group belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -97,14 +97,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 后端协议：HTTP，HTTPS。
+     * Backend protocol: HTTP, HTTPS.
      * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
-     * @return 后端协议：HTTP，HTTPS。
+     * @return Backend protocol: HTTP, HTTPS.
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -112,14 +112,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+     * Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
      * 
      */
     @Import(name="scheduler")
     private @Nullable Output<String> scheduler;
 
     /**
-     * @return 调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+     * @return Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
      * 
      */
     public Optional<Output<String>> scheduler() {
@@ -127,14 +127,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 后端服务器组的名称。
+     * Name of the backend server group.
      * 
      */
     @Import(name="serverGroupName")
     private @Nullable Output<String> serverGroupName;
 
     /**
-     * @return 后端服务器组的名称。
+     * @return Name of the backend server group.
      * 
      */
     public Optional<Output<String>> serverGroupName() {
@@ -142,14 +142,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
+     * Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
      * 
      */
     @Import(name="serverGroupType")
     private @Nullable Output<String> serverGroupType;
 
     /**
-     * @return 后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
+     * @return Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
      * 
      */
     public Optional<Output<String>> serverGroupType() {
@@ -164,14 +164,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
+     * Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
+     * @return Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
      * 
      */
     public Optional<Output<String>> status() {
@@ -179,14 +179,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 会话保持功能的参数信息。
+     * Session persistence parameter information.
      * 
      */
     @Import(name="stickySessionConfig")
     private @Nullable Output<ServerGroupStickySessionConfigArgs> stickySessionConfig;
 
     /**
-     * @return 会话保持功能的参数信息。
+     * @return Session persistence parameter information.
      * 
      */
     public Optional<Output<ServerGroupStickySessionConfigArgs>> stickySessionConfig() {
@@ -201,14 +201,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 后端服务器组所属 Vpc 的 ID。
+     * ID of the VPC to which the backend server group belongs.
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return 后端服务器组所属 Vpc 的 ID。
+     * @return ID of the VPC to which the backend server group belongs.
      * 
      */
     public Output<String> vpcId() {
@@ -253,7 +253,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param crossZoneEnabled 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+         * @param crossZoneEnabled Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param crossZoneEnabled 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+         * @param crossZoneEnabled Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 后端服务器组的描述。
+         * @param description Description of the backend server group.
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 后端服务器组的描述。
+         * @param description Description of the backend server group.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param healthCheck 服务器组健康检查配置信息。
+         * @param healthCheck Server group health check configuration information.
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param healthCheck 服务器组健康检查配置信息。
+         * @param healthCheck Server group health check configuration information.
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddressType 服务器组的IP地址类型。目前只支持 IPv4
+         * @param ipAddressType IP address type of the server group. Only IPv4 is supported.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddressType 服务器组的IP地址类型。目前只支持 IPv4
+         * @param ipAddressType IP address type of the server group. Only IPv4 is supported.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 后端服务器组所属项目名称。
+         * @param projectName Name of the project to which the backend server group belongs.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 后端服务器组所属项目名称。
+         * @param projectName Name of the project to which the backend server group belongs.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 后端协议：HTTP，HTTPS。
+         * @param protocol Backend protocol: HTTP, HTTPS.
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 后端协议：HTTP，HTTPS。
+         * @param protocol Backend protocol: HTTP, HTTPS.
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scheduler 调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+         * @param scheduler Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scheduler 调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+         * @param scheduler Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupName 后端服务器组的名称。
+         * @param serverGroupName Name of the backend server group.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupName 后端服务器组的名称。
+         * @param serverGroupName Name of the backend server group.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupType 后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
+         * @param serverGroupType Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
          * 
          * @return builder
          * 
@@ -432,7 +432,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupType 后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
+         * @param serverGroupType Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
          * 
          * @return builder
          * 
@@ -455,7 +455,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
+         * @param status Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
+         * @param status Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
          * 
          * @return builder
          * 
@@ -476,7 +476,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param stickySessionConfig 会话保持功能的参数信息。
+         * @param stickySessionConfig Session persistence parameter information.
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param stickySessionConfig 会话保持功能的参数信息。
+         * @param stickySessionConfig Session persistence parameter information.
          * 
          * @return builder
          * 
@@ -510,7 +510,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 后端服务器组所属 Vpc 的 ID。
+         * @param vpcId ID of the VPC to which the backend server group belongs.
          * 
          * @return builder
          * 
@@ -521,7 +521,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 后端服务器组所属 Vpc 的 ID。
+         * @param vpcId ID of the VPC to which the backend server group belongs.
          * 
          * @return builder
          * 

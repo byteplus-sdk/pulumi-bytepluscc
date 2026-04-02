@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 容器服务通过深度融合新一代云原生技术，提供以容器为核心的高性能 Kubernetes 容器集群管理服务。在云端一键构建高可用 Kubernetes 集群，并实现容器化应用的可视化全生命周期管理，助力用户快速构建容器化应用。
+ * Container Service deeply integrates next-generation cloud-native technologies to provide high-performance Kubernetes cluster management centered on containers. Build highly available Kubernetes clusters in the cloud with one click and achieve visualized full lifecycle management of containerized applications, helping users quickly build containerized applications.
  *
  * ## Import
  *
@@ -44,84 +44,84 @@ export class Cluster extends pulumi.CustomResource {
     }
 
     /**
-     * 集群控制面及部分节点的网络配置。
+     * Network configuration for the cluster control plane and some nodes.
      */
     public readonly clusterConfig!: pulumi.Output<outputs.vke.ClusterClusterConfig>;
     /**
-     * 集群 ID。
+     * Cluster ID.
      */
     public /*out*/ readonly clusterId!: pulumi.Output<string>;
     /**
-     * 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Cluster creation time. Standard RFC3339 format, UTC+0.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+     * Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
      */
     public readonly deleteProtectionEnabled!: pulumi.Output<boolean>;
     /**
-     * 集群描述。长度限制为 300 个字符以内。
+     * Cluster description. Maximum length is 300 characters.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * IRSA（IAM Role for Service Account）能力相关参数配置。
+     * IRSA (IAM Role for Service Account) capability parameter configuration
      */
     public readonly irsaConfig!: pulumi.Output<outputs.vke.ClusterIrsaConfig>;
     /**
-     * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+     * Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
      */
     public /*out*/ readonly kubernetesVersion!: pulumi.Output<string>;
     /**
-     * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+     * Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
      */
     public readonly kubernetesVersionCreate!: pulumi.Output<string>;
     /**
-     * 集群的日志配置信息。
+     * Cluster log configuration information.
      */
     public readonly loggingConfig!: pulumi.Output<outputs.vke.ClusterLoggingConfig>;
     /**
-     * 集群状态描述。
+     * Cluster status description.
      */
     public /*out*/ readonly message!: pulumi.Output<string>;
     /**
-     * 监控配置信息。
+     * Monitoring configuration information.
      */
     public readonly monitoringConfig!: pulumi.Output<outputs.vke.ClusterMonitoringConfig>;
     /**
-     * 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * 集群中各主状态下对应的节点数量统计。
+     * Statistics of node counts for each main status in the cluster.
      */
     public /*out*/ readonly nodeStatistics!: pulumi.Output<outputs.vke.ClusterNodeStatistics>;
     /**
-     * Pod 的网络配置。
+     * Pod network configuration.
      */
     public readonly podsConfig!: pulumi.Output<outputs.vke.ClusterPodsConfig>;
     /**
-     * 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+     * Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 服务的网络配置。
+     * Network configuration for the service.
      */
     public readonly servicesConfig!: pulumi.Output<outputs.vke.ClusterServicesConfig>;
     /**
-     * 集群源地域。
+     * Cluster source region
      */
     public readonly sourceRegion!: pulumi.Output<string>;
     /**
-     * 集群状态。
+     * Cluster status.
      */
     public /*out*/ readonly status!: pulumi.Output<outputs.vke.ClusterStatus>;
     public readonly tags!: pulumi.Output<outputs.vke.ClusterTag[]>;
     /**
-     * 集群类型。
+     * Cluster type.
      */
     public /*out*/ readonly type!: pulumi.Output<string>;
     /**
-     * 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Last update time of the cluster. Standard RFC3339 format, UTC+0.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -196,84 +196,84 @@ export class Cluster extends pulumi.CustomResource {
  */
 export interface ClusterState {
     /**
-     * 集群控制面及部分节点的网络配置。
+     * Network configuration for the cluster control plane and some nodes.
      */
     clusterConfig?: pulumi.Input<inputs.vke.ClusterClusterConfig>;
     /**
-     * 集群 ID。
+     * Cluster ID.
      */
     clusterId?: pulumi.Input<string>;
     /**
-     * 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Cluster creation time. Standard RFC3339 format, UTC+0.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+     * Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
      */
     deleteProtectionEnabled?: pulumi.Input<boolean>;
     /**
-     * 集群描述。长度限制为 300 个字符以内。
+     * Cluster description. Maximum length is 300 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * IRSA（IAM Role for Service Account）能力相关参数配置。
+     * IRSA (IAM Role for Service Account) capability parameter configuration
      */
     irsaConfig?: pulumi.Input<inputs.vke.ClusterIrsaConfig>;
     /**
-     * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+     * Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
      */
     kubernetesVersion?: pulumi.Input<string>;
     /**
-     * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+     * Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
      */
     kubernetesVersionCreate?: pulumi.Input<string>;
     /**
-     * 集群的日志配置信息。
+     * Cluster log configuration information.
      */
     loggingConfig?: pulumi.Input<inputs.vke.ClusterLoggingConfig>;
     /**
-     * 集群状态描述。
+     * Cluster status description.
      */
     message?: pulumi.Input<string>;
     /**
-     * 监控配置信息。
+     * Monitoring configuration information.
      */
     monitoringConfig?: pulumi.Input<inputs.vke.ClusterMonitoringConfig>;
     /**
-     * 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
      */
     name?: pulumi.Input<string>;
     /**
-     * 集群中各主状态下对应的节点数量统计。
+     * Statistics of node counts for each main status in the cluster.
      */
     nodeStatistics?: pulumi.Input<inputs.vke.ClusterNodeStatistics>;
     /**
-     * Pod 的网络配置。
+     * Pod network configuration.
      */
     podsConfig?: pulumi.Input<inputs.vke.ClusterPodsConfig>;
     /**
-     * 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+     * Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 服务的网络配置。
+     * Network configuration for the service.
      */
     servicesConfig?: pulumi.Input<inputs.vke.ClusterServicesConfig>;
     /**
-     * 集群源地域。
+     * Cluster source region
      */
     sourceRegion?: pulumi.Input<string>;
     /**
-     * 集群状态。
+     * Cluster status.
      */
     status?: pulumi.Input<inputs.vke.ClusterStatus>;
     tags?: pulumi.Input<pulumi.Input<inputs.vke.ClusterTag>[]>;
     /**
-     * 集群类型。
+     * Cluster type.
      */
     type?: pulumi.Input<string>;
     /**
-     * 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Last update time of the cluster. Standard RFC3339 format, UTC+0.
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -283,51 +283,51 @@ export interface ClusterState {
  */
 export interface ClusterArgs {
     /**
-     * 集群控制面及部分节点的网络配置。
+     * Network configuration for the cluster control plane and some nodes.
      */
     clusterConfig?: pulumi.Input<inputs.vke.ClusterClusterConfig>;
     /**
-     * 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+     * Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
      */
     deleteProtectionEnabled?: pulumi.Input<boolean>;
     /**
-     * 集群描述。长度限制为 300 个字符以内。
+     * Cluster description. Maximum length is 300 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * IRSA（IAM Role for Service Account）能力相关参数配置。
+     * IRSA (IAM Role for Service Account) capability parameter configuration
      */
     irsaConfig?: pulumi.Input<inputs.vke.ClusterIrsaConfig>;
     /**
-     * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+     * Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
      */
     kubernetesVersionCreate?: pulumi.Input<string>;
     /**
-     * 集群的日志配置信息。
+     * Cluster log configuration information.
      */
     loggingConfig?: pulumi.Input<inputs.vke.ClusterLoggingConfig>;
     /**
-     * 监控配置信息。
+     * Monitoring configuration information.
      */
     monitoringConfig?: pulumi.Input<inputs.vke.ClusterMonitoringConfig>;
     /**
-     * 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
      */
     name: pulumi.Input<string>;
     /**
-     * Pod 的网络配置。
+     * Pod network configuration.
      */
     podsConfig?: pulumi.Input<inputs.vke.ClusterPodsConfig>;
     /**
-     * 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+     * Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 服务的网络配置。
+     * Network configuration for the service.
      */
     servicesConfig?: pulumi.Input<inputs.vke.ClusterServicesConfig>;
     /**
-     * 集群源地域。
+     * Cluster source region
      */
     sourceRegion?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vke.ClusterTag>[]>;

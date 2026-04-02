@@ -16,14 +16,14 @@ public final class SchemaState extends com.pulumi.resources.ResourceArgs {
     public static final SchemaState Empty = new SchemaState();
 
     /**
-     * 数据库名称
+     * Database name
      * 
      */
     @Import(name="dbName")
     private @Nullable Output<String> dbName;
 
     /**
-     * @return 数据库名称
+     * @return Database name
      * 
      */
     public Optional<Output<String>> dbName() {
@@ -31,14 +31,14 @@ public final class SchemaState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID
+     * Instance ID
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例 ID
+     * @return Instance ID
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -46,14 +46,14 @@ public final class SchemaState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
+     * Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
      * 
      */
     @Import(name="owner")
     private @Nullable Output<String> owner;
 
     /**
-     * @return Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
+     * @return Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
      * 
      */
     public Optional<Output<String>> owner() {
@@ -61,14 +61,14 @@ public final class SchemaState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+     * Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
      * 
      */
     @Import(name="schemaName")
     private @Nullable Output<String> schemaName;
 
     /**
-     * @return Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+     * @return Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
      * 
      */
     public Optional<Output<String>> schemaName() {
@@ -103,7 +103,7 @@ public final class SchemaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbName 数据库名称
+         * @param dbName Database name
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class SchemaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbName 数据库名称
+         * @param dbName Database name
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class SchemaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class SchemaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class SchemaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param owner Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
+         * @param owner Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class SchemaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param owner Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
+         * @param owner Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class SchemaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param schemaName Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+         * @param schemaName Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class SchemaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param schemaName Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+         * @param schemaName Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
          * 
          * @return builder
          * 

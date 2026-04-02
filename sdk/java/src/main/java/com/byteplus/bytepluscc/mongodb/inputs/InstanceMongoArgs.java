@@ -17,14 +17,14 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceMongoArgs Empty = new InstanceMongoArgs();
 
     /**
-     * Mongos 的节点 ID。
+     * Mongos node ID
      * 
      */
     @Import(name="mongosNodeId")
     private @Nullable Output<String> mongosNodeId;
 
     /**
-     * @return Mongos 的节点 ID。
+     * @return Mongos node ID
      * 
      */
     public Optional<Output<String>> mongosNodeId() {
@@ -32,14 +32,14 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点规格。
+     * Node specification.
      * 
      */
     @Import(name="nodeSpec")
     private @Nullable Output<String> nodeSpec;
 
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     public Optional<Output<String>> nodeSpec() {
@@ -47,14 +47,14 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点状态。
+     * Node status.
      * 
      */
     @Import(name="nodeStatus")
     private @Nullable Output<String> nodeStatus;
 
     /**
-     * @return 节点状态。
+     * @return Node status.
      * 
      */
     public Optional<Output<String>> nodeStatus() {
@@ -62,14 +62,14 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 总内存。单位：GiB。
+     * Total memory. Unit: GiB.
      * 
      */
     @Import(name="totalMemoryGb")
     private @Nullable Output<Double> totalMemoryGb;
 
     /**
-     * @return 总内存。单位：GiB。
+     * @return Total memory. Unit: GiB.
      * 
      */
     public Optional<Output<Double>> totalMemoryGb() {
@@ -77,14 +77,14 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 总核数。
+     * Total cores.
      * 
      */
     @Import(name="totalvCpu")
     private @Nullable Output<Double> totalvCpu;
 
     /**
-     * @return 总核数。
+     * @return Total cores.
      * 
      */
     public Optional<Output<Double>> totalvCpu() {
@@ -92,14 +92,14 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 已用内存。单位：GiB。
+     * Used memory. Unit: GiB.
      * 
      */
     @Import(name="usedMemoryGb")
     private @Nullable Output<Double> usedMemoryGb;
 
     /**
-     * @return 已用内存。单位：GiB。
+     * @return Used memory. Unit: GiB.
      * 
      */
     public Optional<Output<Double>> usedMemoryGb() {
@@ -107,14 +107,14 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 已用核数。
+     * Used cores.
      * 
      */
     @Import(name="usedvCpu")
     private @Nullable Output<Double> usedvCpu;
 
     /**
-     * @return 已用核数。
+     * @return Used cores.
      * 
      */
     public Optional<Output<Double>> usedvCpu() {
@@ -122,14 +122,14 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 当前节点所属的可用区 ID。
+     * Availability zone ID of the current node.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 当前节点所属的可用区 ID。
+     * @return Availability zone ID of the current node.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -168,7 +168,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mongosNodeId Mongos 的节点 ID。
+         * @param mongosNodeId Mongos node ID
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mongosNodeId Mongos 的节点 ID。
+         * @param mongosNodeId Mongos node ID
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpec 节点规格。
+         * @param nodeSpec Node specification.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpec 节点规格。
+         * @param nodeSpec Node specification.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeStatus 节点状态。
+         * @param nodeStatus Node status.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeStatus 节点状态。
+         * @param nodeStatus Node status.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param totalMemoryGb 总内存。单位：GiB。
+         * @param totalMemoryGb Total memory. Unit: GiB.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param totalMemoryGb 总内存。单位：GiB。
+         * @param totalMemoryGb Total memory. Unit: GiB.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param totalvCpu 总核数。
+         * @param totalvCpu Total cores.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param totalvCpu 总核数。
+         * @param totalvCpu Total cores.
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param usedMemoryGb 已用内存。单位：GiB。
+         * @param usedMemoryGb Used memory. Unit: GiB.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param usedMemoryGb 已用内存。单位：GiB。
+         * @param usedMemoryGb Used memory. Unit: GiB.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param usedvCpu 已用核数。
+         * @param usedvCpu Used cores.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param usedvCpu 已用核数。
+         * @param usedvCpu Used cores.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 当前节点所属的可用区 ID。
+         * @param zoneId Availability zone ID of the current node.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class InstanceMongoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 当前节点所属的可用区 ID。
+         * @param zoneId Availability zone ID of the current node.
          * 
          * @return builder
          * 

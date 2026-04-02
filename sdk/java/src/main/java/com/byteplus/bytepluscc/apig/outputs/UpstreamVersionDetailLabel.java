@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamVersionDetailLabel {
     /**
-     * @return 键。
+     * @return Key
      * 
      */
     private @Nullable String key;
     /**
-     * @return 值。
+     * @return Value
      * 
      */
     private @Nullable String value;
 
     private UpstreamVersionDetailLabel() {}
     /**
-     * @return 键。
+     * @return Key
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 值。
+     * @return Value
      * 
      */
     public Optional<String> value() {

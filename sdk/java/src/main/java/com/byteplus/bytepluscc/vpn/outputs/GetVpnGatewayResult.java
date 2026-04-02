@@ -15,52 +15,52 @@ import java.util.Objects;
 @CustomType
 public final class GetVpnGatewayResult {
     /**
-     * @return VPN网关的ASN。
+     * @return ASN of the VPN gateway.
      * 
      */
     private Integer asn;
     /**
-     * @return VPN网关的带宽规格。
+     * @return VPN gateway bandwidth specification.
      * 
      */
     private Integer bandwidth;
     /**
-     * @return VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+     * @return VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
      * 
      */
     private Integer billingType;
     /**
-     * @return VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+     * @return VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
      * 
      */
     private String businessStatus;
     /**
-     * @return VPN网关关联IPsec连接的数量。
+     * @return Number of IPsec connections associated with the VPN gateway.
      * 
      */
     private Integer connectionCount;
     /**
-     * @return 创建VPN网关的时间。
+     * @return Time when the VPN gateway was created.
      * 
      */
     private String createTime;
     /**
-     * @return 预期资源强制回收时间。
+     * @return Expected resource forced reclaim time.
      * 
      */
     private String deletedTime;
     /**
-     * @return VPN网关的描述。
+     * @return Description of the VPN gateway.
      * 
      */
     private String description;
     /**
-     * @return VPN网关是否开启双隧道模式。true：开启false：关闭
+     * @return Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
      * 
      */
     private Boolean dualTunnelEnabled;
     /**
-     * @return VPN网关的到期时间。
+     * @return VPN gateway expiration time.
      * 
      */
     private String expiredTime;
@@ -70,182 +70,182 @@ public final class GetVpnGatewayResult {
      */
     private String id;
     /**
-     * @return VPN网关的公网IP地址。
+     * @return VPN gateway public IP address.
      * 
      */
     private String ipAddress;
     /**
-     * @return VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+     * @return VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
      * 
      */
     private String ipStackType;
     /**
-     * @return VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+     * @return IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
      * 
      */
     private String ipVersion;
     /**
-     * @return 是否开启IPSec功能。true：开启false：关闭。
+     * @return Enable IPSec feature. true: enabled false: disabled
      * 
      */
     private Boolean ipsecEnabled;
     /**
-     * @return 当前资源的状态是否被封禁。true：封禁false：未封禁。
+     * @return Whether the current resource is banned. true: Banned false: Not banned.
      * 
      */
     private Boolean isBlocked;
     /**
-     * @return VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+     * @return VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
      * 
      */
     private String lockReason;
     /**
-     * @return 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * @return Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
      * 
      */
     private String overdueTime;
     /**
-     * @return 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+     * @return Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
      * 
      */
     private Integer period;
     /**
-     * @return 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+     * @return Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
      * 
      */
     private String periodUnit;
     /**
-     * @return VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+     * @return Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
      * 
      */
     private String projectName;
     /**
-     * @return VPN网关的路由条目数量。
+     * @return Number of route entries for the VPN gateway.
      * 
      */
     private Integer routeCount;
     /**
-     * @return VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * @return Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      * 
      */
     private String secondaryIpAddress;
     /**
-     * @return VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * @return ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      * 
      */
     private String secondarySubnetId;
     /**
-     * @return 是否开启SSL VPN功能。true：开启false：关闭
+     * @return Enable SSL VPN feature. true: enabled false: disabled
      * 
      */
     private Boolean sslEnabled;
     /**
-     * @return VPN网关的最大SSL连接数。
+     * @return Maximum SSL connections for the VPN gateway.
      * 
      */
     private Integer sslMaxConnections;
     /**
-     * @return VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+     * @return Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
      * 
      */
     private String status;
     /**
-     * @return VPN网关使用的端口所属子网的ID。
+     * @return ID of the subnet to which the port used by the VPN gateway belongs.
      * 
      */
     private String subnetId;
     /**
-     * @return VPN网关已添加的全部标签信息。
+     * @return All tag information added to the VPN gateway.
      * 
      */
     private List<GetVpnGatewayTag> tags;
     /**
-     * @return 更新VPN网关的时间。
+     * @return VPN gateway update time.
      * 
      */
     private String updateTime;
     /**
-     * @return VPN网关所在VPC的ID。
+     * @return VPC ID where the VPN gateway is located.
      * 
      */
     private String vpcId;
     /**
-     * @return VPN网关的ID。
+     * @return ID of the VPN gateway.
      * 
      */
     private String vpnGatewayId;
     /**
-     * @return VPN网关的名称。
+     * @return Name of the VPN gateway.
      * 
      */
     private String vpnGatewayName;
 
     private GetVpnGatewayResult() {}
     /**
-     * @return VPN网关的ASN。
+     * @return ASN of the VPN gateway.
      * 
      */
     public Integer asn() {
         return this.asn;
     }
     /**
-     * @return VPN网关的带宽规格。
+     * @return VPN gateway bandwidth specification.
      * 
      */
     public Integer bandwidth() {
         return this.bandwidth;
     }
     /**
-     * @return VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+     * @return VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
      * 
      */
     public Integer billingType() {
         return this.billingType;
     }
     /**
-     * @return VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+     * @return VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
      * 
      */
     public String businessStatus() {
         return this.businessStatus;
     }
     /**
-     * @return VPN网关关联IPsec连接的数量。
+     * @return Number of IPsec connections associated with the VPN gateway.
      * 
      */
     public Integer connectionCount() {
         return this.connectionCount;
     }
     /**
-     * @return 创建VPN网关的时间。
+     * @return Time when the VPN gateway was created.
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return 预期资源强制回收时间。
+     * @return Expected resource forced reclaim time.
      * 
      */
     public String deletedTime() {
         return this.deletedTime;
     }
     /**
-     * @return VPN网关的描述。
+     * @return Description of the VPN gateway.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return VPN网关是否开启双隧道模式。true：开启false：关闭
+     * @return Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
      * 
      */
     public Boolean dualTunnelEnabled() {
         return this.dualTunnelEnabled;
     }
     /**
-     * @return VPN网关的到期时间。
+     * @return VPN gateway expiration time.
      * 
      */
     public String expiredTime() {
@@ -259,154 +259,154 @@ public final class GetVpnGatewayResult {
         return this.id;
     }
     /**
-     * @return VPN网关的公网IP地址。
+     * @return VPN gateway public IP address.
      * 
      */
     public String ipAddress() {
         return this.ipAddress;
     }
     /**
-     * @return VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+     * @return VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
      * 
      */
     public String ipStackType() {
         return this.ipStackType;
     }
     /**
-     * @return VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+     * @return IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
      * 
      */
     public String ipVersion() {
         return this.ipVersion;
     }
     /**
-     * @return 是否开启IPSec功能。true：开启false：关闭。
+     * @return Enable IPSec feature. true: enabled false: disabled
      * 
      */
     public Boolean ipsecEnabled() {
         return this.ipsecEnabled;
     }
     /**
-     * @return 当前资源的状态是否被封禁。true：封禁false：未封禁。
+     * @return Whether the current resource is banned. true: Banned false: Not banned.
      * 
      */
     public Boolean isBlocked() {
         return this.isBlocked;
     }
     /**
-     * @return VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+     * @return VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
      * 
      */
     public String lockReason() {
         return this.lockReason;
     }
     /**
-     * @return 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * @return Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
      * 
      */
     public String overdueTime() {
         return this.overdueTime;
     }
     /**
-     * @return 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+     * @return Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
      * 
      */
     public Integer period() {
         return this.period;
     }
     /**
-     * @return 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+     * @return Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
      * 
      */
     public String periodUnit() {
         return this.periodUnit;
     }
     /**
-     * @return VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+     * @return Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return VPN网关的路由条目数量。
+     * @return Number of route entries for the VPN gateway.
      * 
      */
     public Integer routeCount() {
         return this.routeCount;
     }
     /**
-     * @return VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * @return Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      * 
      */
     public String secondaryIpAddress() {
         return this.secondaryIpAddress;
     }
     /**
-     * @return VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * @return ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      * 
      */
     public String secondarySubnetId() {
         return this.secondarySubnetId;
     }
     /**
-     * @return 是否开启SSL VPN功能。true：开启false：关闭
+     * @return Enable SSL VPN feature. true: enabled false: disabled
      * 
      */
     public Boolean sslEnabled() {
         return this.sslEnabled;
     }
     /**
-     * @return VPN网关的最大SSL连接数。
+     * @return Maximum SSL connections for the VPN gateway.
      * 
      */
     public Integer sslMaxConnections() {
         return this.sslMaxConnections;
     }
     /**
-     * @return VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+     * @return Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return VPN网关使用的端口所属子网的ID。
+     * @return ID of the subnet to which the port used by the VPN gateway belongs.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return VPN网关已添加的全部标签信息。
+     * @return All tag information added to the VPN gateway.
      * 
      */
     public List<GetVpnGatewayTag> tags() {
         return this.tags;
     }
     /**
-     * @return 更新VPN网关的时间。
+     * @return VPN gateway update time.
      * 
      */
     public String updateTime() {
         return this.updateTime;
     }
     /**
-     * @return VPN网关所在VPC的ID。
+     * @return VPC ID where the VPN gateway is located.
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return VPN网关的ID。
+     * @return ID of the VPN gateway.
      * 
      */
     public String vpnGatewayId() {
         return this.vpnGatewayId;
     }
     /**
-     * @return VPN网关的名称。
+     * @return Name of the VPN gateway.
      * 
      */
     public String vpnGatewayName() {

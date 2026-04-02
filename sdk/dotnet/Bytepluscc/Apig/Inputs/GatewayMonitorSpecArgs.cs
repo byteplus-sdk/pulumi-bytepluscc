@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class GatewayMonitorSpecArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 托管Prometheus（VMP）服务。
+        /// Managed Prometheus (VMP) service
         /// </summary>
         [Input("enable")]
         public Input<bool>? Enable { get; set; }
 
         /// <summary>
-        /// Prometheus工作区ID。
+        /// Prometheus workspace ID
         /// </summary>
         [Input("workspaceId")]
         public Input<string>? WorkspaceId { get; set; }

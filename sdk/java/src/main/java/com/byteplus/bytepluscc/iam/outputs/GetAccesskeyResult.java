@@ -11,12 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetAccesskeyResult {
     /**
-     * @return 密钥ID（Access Key Id）。
+     * @return Access Key Id.
      * 
      */
     private String accessKeyId;
     /**
-     * @return 密钥创建时间。时间格式为ISO8601。
+     * @return Key creation time. The time format is ISO8601.
      * 
      */
     private String createdTime;
@@ -26,56 +26,56 @@ public final class GetAccesskeyResult {
      */
     private String id;
     /**
-     * @return 最后登录时间。
+     * @return Last login time.
      * 
      */
     private String lastLoginDate;
     /**
-     * @return API密钥最后访问的地域。
+     * @return The last region accessed by the API key.
      * 
      */
     private String region;
     /**
-     * @return API密钥的最后使用的时间。
+     * @return The last time the API key was used.
      * 
      */
     private String requestTime;
     /**
-     * @return 私有密钥（Secret Access Key）。
+     * @return Secret Access Key.
      * 
      */
     private String secretAccessKey;
     /**
-     * @return API密钥最后访问的服务的英文简称。
+     * @return The English abbreviation of the last service accessed by the API key.
      * 
      */
     private String service;
     /**
-     * @return 密钥状态。active代表启用状态，inactive代表禁用状态。
+     * @return Key status. active means enabled, inactive means disabled.
      * 
      */
     private String status;
     /**
-     * @return 密钥更新时间。时间格式为ISO8601。
+     * @return Key update time. The time format is ISO8601.
      * 
      */
     private String updatedTime;
     /**
-     * @return 用户名。用于给指定的IAM用户创建密钥，未指定用户名时则为当前请求身份创建密钥（即主账号请求时为主账号自身创建密钥，IAM用户请求时为IAM用户自身创建密钥。注意：角色不支持为自身创建密钥）。当IAM用户拥有密钥自管理权限时（AccessKeySelfManageAccess），如需为自身创建密钥则需要在请求中传递自身的UserName。
+     * @return User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
      * 
      */
     private String userName;
 
     private GetAccesskeyResult() {}
     /**
-     * @return 密钥ID（Access Key Id）。
+     * @return Access Key Id.
      * 
      */
     public String accessKeyId() {
         return this.accessKeyId;
     }
     /**
-     * @return 密钥创建时间。时间格式为ISO8601。
+     * @return Key creation time. The time format is ISO8601.
      * 
      */
     public String createdTime() {
@@ -89,56 +89,56 @@ public final class GetAccesskeyResult {
         return this.id;
     }
     /**
-     * @return 最后登录时间。
+     * @return Last login time.
      * 
      */
     public String lastLoginDate() {
         return this.lastLoginDate;
     }
     /**
-     * @return API密钥最后访问的地域。
+     * @return The last region accessed by the API key.
      * 
      */
     public String region() {
         return this.region;
     }
     /**
-     * @return API密钥的最后使用的时间。
+     * @return The last time the API key was used.
      * 
      */
     public String requestTime() {
         return this.requestTime;
     }
     /**
-     * @return 私有密钥（Secret Access Key）。
+     * @return Secret Access Key.
      * 
      */
     public String secretAccessKey() {
         return this.secretAccessKey;
     }
     /**
-     * @return API密钥最后访问的服务的英文简称。
+     * @return The English abbreviation of the last service accessed by the API key.
      * 
      */
     public String service() {
         return this.service;
     }
     /**
-     * @return 密钥状态。active代表启用状态，inactive代表禁用状态。
+     * @return Key status. active means enabled, inactive means disabled.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 密钥更新时间。时间格式为ISO8601。
+     * @return Key update time. The time format is ISO8601.
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 用户名。用于给指定的IAM用户创建密钥，未指定用户名时则为当前请求身份创建密钥（即主账号请求时为主账号自身创建密钥，IAM用户请求时为IAM用户自身创建密钥。注意：角色不支持为自身创建密钥）。当IAM用户拥有密钥自管理权限时（AccessKeySelfManageAccess），如需为自身创建密钥则需要在请求中传递自身的UserName。
+     * @return User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
      * 
      */
     public String userName() {

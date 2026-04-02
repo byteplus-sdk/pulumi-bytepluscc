@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamSourceSourceSpecNacosSourceAuthConfig {
     /**
-     * @return Basic认证。
+     * @return Basic authentication
      * 
      */
     private @Nullable UpstreamSourceSourceSpecNacosSourceAuthConfigBasic basic;
 
     private UpstreamSourceSourceSpecNacosSourceAuthConfig() {}
     /**
-     * @return Basic认证。
+     * @return Basic authentication
      * 
      */
     public Optional<UpstreamSourceSourceSpecNacosSourceAuthConfigBasic> basic() {

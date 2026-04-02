@@ -17,77 +17,77 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterNodeGroupAttribute {
     /**
-     * @return 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+     * @return Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
      * 
      */
     private @Nullable Integer bandwidth;
     /**
-     * @return 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+     * @return Node group billing type. If empty, reuses the cluster&#39;s chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster&#39;s chargeType is PRE, the task node group&#39;s chargeType can be set to POST. When the cluster&#39;s chargeType is POST, the node group&#39;s chargeType defaults to POST, and this parameter setting on the node group is invalid.
      * 
      */
     private @Nullable String chargeType;
     private @Nullable List<ClusterNodeGroupAttributeDataDisk> dataDisks;
     /**
-     * @return 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+     * @return Node group&#39;s ECS instance type list. Only one instance type can be set. The list length is limited to 1.
      * 
      */
     private @Nullable List<String> ecsInstanceTypes;
     /**
-     * @return ecs的密钥对名称。
+     * @return ECS key pair name.
      * 
      */
     private @Nullable String ecsKeyPairName;
     /**
-     * @return Ecs root账号的密码。
+     * @return Password for ECS root account.
      * 
      */
     private @Nullable String ecsPassword;
     /**
-     * @return 节点组当前期望购买的节点数量。
+     * @return Current expected number of nodes to purchase for the node group.
      * 
      */
     private @Nullable Integer nodeCount;
     /**
-     * @return 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+     * @return Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
      * 
      */
     private @Nullable String nodeGroupName;
     /**
-     * @return 节点组类型。
+     * @return Node group type.
      * 
      */
     private @Nullable String nodeGroupType;
     /**
-     * @return 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+     * @return Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
      * 
      */
     private @Nullable List<String> subnetIds;
     /**
-     * @return 系统盘配置。
+     * @return System disk configuration.
      * 
      */
     private @Nullable ClusterNodeGroupAttributeSystemDisk systemDisk;
     /**
-     * @return 是否挂载公网ip。
+     * @return Whether to attach public IP.
      * 
      */
     private @Nullable Boolean withPublicIp;
     /**
-     * @return 可用区ID。
+     * @return Availability zone ID.
      * 
      */
     private @Nullable String zoneId;
 
     private ClusterNodeGroupAttribute() {}
     /**
-     * @return 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+     * @return Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
      * 
      */
     public Optional<Integer> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
     }
     /**
-     * @return 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+     * @return Node group billing type. If empty, reuses the cluster&#39;s chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster&#39;s chargeType is PRE, the task node group&#39;s chargeType can be set to POST. When the cluster&#39;s chargeType is POST, the node group&#39;s chargeType defaults to POST, and this parameter setting on the node group is invalid.
      * 
      */
     public Optional<String> chargeType() {
@@ -97,70 +97,70 @@ public final class ClusterNodeGroupAttribute {
         return this.dataDisks == null ? List.of() : this.dataDisks;
     }
     /**
-     * @return 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+     * @return Node group&#39;s ECS instance type list. Only one instance type can be set. The list length is limited to 1.
      * 
      */
     public List<String> ecsInstanceTypes() {
         return this.ecsInstanceTypes == null ? List.of() : this.ecsInstanceTypes;
     }
     /**
-     * @return ecs的密钥对名称。
+     * @return ECS key pair name.
      * 
      */
     public Optional<String> ecsKeyPairName() {
         return Optional.ofNullable(this.ecsKeyPairName);
     }
     /**
-     * @return Ecs root账号的密码。
+     * @return Password for ECS root account.
      * 
      */
     public Optional<String> ecsPassword() {
         return Optional.ofNullable(this.ecsPassword);
     }
     /**
-     * @return 节点组当前期望购买的节点数量。
+     * @return Current expected number of nodes to purchase for the node group.
      * 
      */
     public Optional<Integer> nodeCount() {
         return Optional.ofNullable(this.nodeCount);
     }
     /**
-     * @return 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+     * @return Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
      * 
      */
     public Optional<String> nodeGroupName() {
         return Optional.ofNullable(this.nodeGroupName);
     }
     /**
-     * @return 节点组类型。
+     * @return Node group type.
      * 
      */
     public Optional<String> nodeGroupType() {
         return Optional.ofNullable(this.nodeGroupType);
     }
     /**
-     * @return 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+     * @return Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
      * 
      */
     public List<String> subnetIds() {
         return this.subnetIds == null ? List.of() : this.subnetIds;
     }
     /**
-     * @return 系统盘配置。
+     * @return System disk configuration.
      * 
      */
     public Optional<ClusterNodeGroupAttributeSystemDisk> systemDisk() {
         return Optional.ofNullable(this.systemDisk);
     }
     /**
-     * @return 是否挂载公网ip。
+     * @return Whether to attach public IP.
      * 
      */
     public Optional<Boolean> withPublicIp() {
         return Optional.ofNullable(this.withPublicIp);
     }
     /**
-     * @return 可用区ID。
+     * @return Availability zone ID.
      * 
      */
     public Optional<String> zoneId() {

@@ -42,23 +42,23 @@ class VpnGatewayArgs:
                  vpn_gateway_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a VpnGateway resource.
-        :param pulumi.Input[builtins.int] bandwidth: VPN网关的带宽规格。
-        :param pulumi.Input[builtins.str] subnet_id: VPN网关使用的端口所属子网的ID。
-        :param pulumi.Input[builtins.str] vpc_id: VPN网关所在VPC的ID。
-        :param pulumi.Input[builtins.int] asn: VPN网关的ASN。
-        :param pulumi.Input[builtins.int] billing_type: VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
-        :param pulumi.Input[builtins.str] description: VPN网关的描述。
-        :param pulumi.Input[builtins.bool] dual_tunnel_enabled: VPN网关是否开启双隧道模式。true：开启false：关闭
-        :param pulumi.Input[builtins.str] ip_stack_type: VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
-        :param pulumi.Input[builtins.str] ip_version: VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
-        :param pulumi.Input[builtins.bool] ipsec_enabled: 是否开启IPSec功能。true：开启false：关闭。
-        :param pulumi.Input[builtins.int] period: 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
-        :param pulumi.Input[builtins.str] period_unit: 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
-        :param pulumi.Input[builtins.str] project_name: VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
-        :param pulumi.Input[builtins.str] secondary_subnet_id: VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
-        :param pulumi.Input[builtins.bool] ssl_enabled: 是否开启SSL VPN功能。true：开启false：关闭
-        :param pulumi.Input[builtins.int] ssl_max_connections: VPN网关的最大SSL连接数。
-        :param pulumi.Input[builtins.str] vpn_gateway_name: VPN网关的名称。
+        :param pulumi.Input[builtins.int] bandwidth: VPN gateway bandwidth specification.
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet to which the port used by the VPN gateway belongs.
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID where the VPN gateway is located.
+        :param pulumi.Input[builtins.int] asn: ASN of the VPN gateway.
+        :param pulumi.Input[builtins.int] billing_type: VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
+        :param pulumi.Input[builtins.str] description: Description of the VPN gateway.
+        :param pulumi.Input[builtins.bool] dual_tunnel_enabled: Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
+        :param pulumi.Input[builtins.str] ip_stack_type: VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
+        :param pulumi.Input[builtins.str] ip_version: IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
+        :param pulumi.Input[builtins.bool] ipsec_enabled: Enable IPSec feature. true: enabled false: disabled
+        :param pulumi.Input[builtins.int] period: Subscription VPN gateway purchase duration, default is '1'. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
+        :param pulumi.Input[builtins.str] period_unit: Unit for the purchase duration of subscription-based VPN gateways. Default is 'Month'. Month: month Year: year
+        :param pulumi.Input[builtins.str] project_name: Project to which the VPN gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
+        :param pulumi.Input[builtins.str] secondary_subnet_id: ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
+        :param pulumi.Input[builtins.bool] ssl_enabled: Enable SSL VPN feature. true: enabled false: disabled
+        :param pulumi.Input[builtins.int] ssl_max_connections: Maximum SSL connections for the VPN gateway.
+        :param pulumi.Input[builtins.str] vpn_gateway_name: Name of the VPN gateway.
         """
         pulumi.set(__self__, "bandwidth", bandwidth)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -98,7 +98,7 @@ class VpnGatewayArgs:
     @pulumi.getter
     def bandwidth(self) -> pulumi.Input[builtins.int]:
         """
-        VPN网关的带宽规格。
+        VPN gateway bandwidth specification.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -110,7 +110,7 @@ class VpnGatewayArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[builtins.str]:
         """
-        VPN网关使用的端口所属子网的ID。
+        ID of the subnet to which the port used by the VPN gateway belongs.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -122,7 +122,7 @@ class VpnGatewayArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        VPN网关所在VPC的ID。
+        VPC ID where the VPN gateway is located.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -134,7 +134,7 @@ class VpnGatewayArgs:
     @pulumi.getter
     def asn(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        VPN网关的ASN。
+        ASN of the VPN gateway.
         """
         return pulumi.get(self, "asn")
 
@@ -146,7 +146,7 @@ class VpnGatewayArgs:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+        VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
         """
         return pulumi.get(self, "billing_type")
 
@@ -158,7 +158,7 @@ class VpnGatewayArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的描述。
+        Description of the VPN gateway.
         """
         return pulumi.get(self, "description")
 
@@ -170,7 +170,7 @@ class VpnGatewayArgs:
     @pulumi.getter(name="dualTunnelEnabled")
     def dual_tunnel_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        VPN网关是否开启双隧道模式。true：开启false：关闭
+        Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
         """
         return pulumi.get(self, "dual_tunnel_enabled")
 
@@ -182,7 +182,7 @@ class VpnGatewayArgs:
     @pulumi.getter(name="ipStackType")
     def ip_stack_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+        VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
         """
         return pulumi.get(self, "ip_stack_type")
 
@@ -194,7 +194,7 @@ class VpnGatewayArgs:
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+        IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
         """
         return pulumi.get(self, "ip_version")
 
@@ -206,7 +206,7 @@ class VpnGatewayArgs:
     @pulumi.getter(name="ipsecEnabled")
     def ipsec_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启IPSec功能。true：开启false：关闭。
+        Enable IPSec feature. true: enabled false: disabled
         """
         return pulumi.get(self, "ipsec_enabled")
 
@@ -218,7 +218,7 @@ class VpnGatewayArgs:
     @pulumi.getter
     def period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+        Subscription VPN gateway purchase duration, default is '1'. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
         """
         return pulumi.get(self, "period")
 
@@ -230,7 +230,7 @@ class VpnGatewayArgs:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+        Unit for the purchase duration of subscription-based VPN gateways. Default is 'Month'. Month: month Year: year
         """
         return pulumi.get(self, "period_unit")
 
@@ -242,7 +242,7 @@ class VpnGatewayArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+        Project to which the VPN gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
         """
         return pulumi.get(self, "project_name")
 
@@ -254,7 +254,7 @@ class VpnGatewayArgs:
     @pulumi.getter(name="secondarySubnetId")
     def secondary_subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+        ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
         """
         return pulumi.get(self, "secondary_subnet_id")
 
@@ -266,7 +266,7 @@ class VpnGatewayArgs:
     @pulumi.getter(name="sslEnabled")
     def ssl_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启SSL VPN功能。true：开启false：关闭
+        Enable SSL VPN feature. true: enabled false: disabled
         """
         return pulumi.get(self, "ssl_enabled")
 
@@ -278,7 +278,7 @@ class VpnGatewayArgs:
     @pulumi.getter(name="sslMaxConnections")
     def ssl_max_connections(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        VPN网关的最大SSL连接数。
+        Maximum SSL connections for the VPN gateway.
         """
         return pulumi.get(self, "ssl_max_connections")
 
@@ -299,7 +299,7 @@ class VpnGatewayArgs:
     @pulumi.getter(name="vpnGatewayName")
     def vpn_gateway_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的名称。
+        Name of the VPN gateway.
         """
         return pulumi.get(self, "vpn_gateway_name")
 
@@ -345,37 +345,37 @@ class _VpnGatewayState:
                  vpn_gateway_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering VpnGateway resources.
-        :param pulumi.Input[builtins.int] asn: VPN网关的ASN。
-        :param pulumi.Input[builtins.int] bandwidth: VPN网关的带宽规格。
-        :param pulumi.Input[builtins.int] billing_type: VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
-        :param pulumi.Input[builtins.str] business_status: VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
-        :param pulumi.Input[builtins.int] connection_count: VPN网关关联IPsec连接的数量。
-        :param pulumi.Input[builtins.str] create_time: 创建VPN网关的时间。
-        :param pulumi.Input[builtins.str] deleted_time: 预期资源强制回收时间。
-        :param pulumi.Input[builtins.str] description: VPN网关的描述。
-        :param pulumi.Input[builtins.bool] dual_tunnel_enabled: VPN网关是否开启双隧道模式。true：开启false：关闭
-        :param pulumi.Input[builtins.str] expired_time: VPN网关的到期时间。
-        :param pulumi.Input[builtins.str] ip_address: VPN网关的公网IP地址。
-        :param pulumi.Input[builtins.str] ip_stack_type: VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
-        :param pulumi.Input[builtins.str] ip_version: VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
-        :param pulumi.Input[builtins.bool] ipsec_enabled: 是否开启IPSec功能。true：开启false：关闭。
-        :param pulumi.Input[builtins.bool] is_blocked: 当前资源的状态是否被封禁。true：封禁false：未封禁。
-        :param pulumi.Input[builtins.str] lock_reason: VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
-        :param pulumi.Input[builtins.str] overdue_time: 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
-        :param pulumi.Input[builtins.int] period: 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
-        :param pulumi.Input[builtins.str] period_unit: 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
-        :param pulumi.Input[builtins.str] project_name: VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
-        :param pulumi.Input[builtins.int] route_count: VPN网关的路由条目数量。
-        :param pulumi.Input[builtins.str] secondary_ip_address: VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
-        :param pulumi.Input[builtins.str] secondary_subnet_id: VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
-        :param pulumi.Input[builtins.bool] ssl_enabled: 是否开启SSL VPN功能。true：开启false：关闭
-        :param pulumi.Input[builtins.int] ssl_max_connections: VPN网关的最大SSL连接数。
-        :param pulumi.Input[builtins.str] status: VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
-        :param pulumi.Input[builtins.str] subnet_id: VPN网关使用的端口所属子网的ID。
-        :param pulumi.Input[builtins.str] update_time: 更新VPN网关的时间。
-        :param pulumi.Input[builtins.str] vpc_id: VPN网关所在VPC的ID。
-        :param pulumi.Input[builtins.str] vpn_gateway_id: VPN网关的ID。
-        :param pulumi.Input[builtins.str] vpn_gateway_name: VPN网关的名称。
+        :param pulumi.Input[builtins.int] asn: ASN of the VPN gateway.
+        :param pulumi.Input[builtins.int] bandwidth: VPN gateway bandwidth specification.
+        :param pulumi.Input[builtins.int] billing_type: VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
+        :param pulumi.Input[builtins.str] business_status: VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
+        :param pulumi.Input[builtins.int] connection_count: Number of IPsec connections associated with the VPN gateway.
+        :param pulumi.Input[builtins.str] create_time: Time when the VPN gateway was created.
+        :param pulumi.Input[builtins.str] deleted_time: Expected resource forced reclaim time.
+        :param pulumi.Input[builtins.str] description: Description of the VPN gateway.
+        :param pulumi.Input[builtins.bool] dual_tunnel_enabled: Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
+        :param pulumi.Input[builtins.str] expired_time: VPN gateway expiration time.
+        :param pulumi.Input[builtins.str] ip_address: VPN gateway public IP address.
+        :param pulumi.Input[builtins.str] ip_stack_type: VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
+        :param pulumi.Input[builtins.str] ip_version: IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
+        :param pulumi.Input[builtins.bool] ipsec_enabled: Enable IPSec feature. true: enabled false: disabled
+        :param pulumi.Input[builtins.bool] is_blocked: Whether the current resource is banned. true: Banned false: Not banned.
+        :param pulumi.Input[builtins.str] lock_reason: VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
+        :param pulumi.Input[builtins.str] overdue_time: Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
+        :param pulumi.Input[builtins.int] period: Subscription VPN gateway purchase duration, default is '1'. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
+        :param pulumi.Input[builtins.str] period_unit: Unit for the purchase duration of subscription-based VPN gateways. Default is 'Month'. Month: month Year: year
+        :param pulumi.Input[builtins.str] project_name: Project to which the VPN gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
+        :param pulumi.Input[builtins.int] route_count: Number of route entries for the VPN gateway.
+        :param pulumi.Input[builtins.str] secondary_ip_address: Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
+        :param pulumi.Input[builtins.str] secondary_subnet_id: ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
+        :param pulumi.Input[builtins.bool] ssl_enabled: Enable SSL VPN feature. true: enabled false: disabled
+        :param pulumi.Input[builtins.int] ssl_max_connections: Maximum SSL connections for the VPN gateway.
+        :param pulumi.Input[builtins.str] status: Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet to which the port used by the VPN gateway belongs.
+        :param pulumi.Input[builtins.str] update_time: VPN gateway update time.
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID where the VPN gateway is located.
+        :param pulumi.Input[builtins.str] vpn_gateway_id: ID of the VPN gateway.
+        :param pulumi.Input[builtins.str] vpn_gateway_name: Name of the VPN gateway.
         """
         if asn is not None:
             pulumi.set(__self__, "asn", asn)
@@ -446,7 +446,7 @@ class _VpnGatewayState:
     @pulumi.getter
     def asn(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        VPN网关的ASN。
+        ASN of the VPN gateway.
         """
         return pulumi.get(self, "asn")
 
@@ -458,7 +458,7 @@ class _VpnGatewayState:
     @pulumi.getter
     def bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        VPN网关的带宽规格。
+        VPN gateway bandwidth specification.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -470,7 +470,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+        VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
         """
         return pulumi.get(self, "billing_type")
 
@@ -482,7 +482,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+        VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
         """
         return pulumi.get(self, "business_status")
 
@@ -494,7 +494,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="connectionCount")
     def connection_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        VPN网关关联IPsec连接的数量。
+        Number of IPsec connections associated with the VPN gateway.
         """
         return pulumi.get(self, "connection_count")
 
@@ -506,7 +506,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建VPN网关的时间。
+        Time when the VPN gateway was created.
         """
         return pulumi.get(self, "create_time")
 
@@ -518,7 +518,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        预期资源强制回收时间。
+        Expected resource forced reclaim time.
         """
         return pulumi.get(self, "deleted_time")
 
@@ -530,7 +530,7 @@ class _VpnGatewayState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的描述。
+        Description of the VPN gateway.
         """
         return pulumi.get(self, "description")
 
@@ -542,7 +542,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="dualTunnelEnabled")
     def dual_tunnel_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        VPN网关是否开启双隧道模式。true：开启false：关闭
+        Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
         """
         return pulumi.get(self, "dual_tunnel_enabled")
 
@@ -554,7 +554,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的到期时间。
+        VPN gateway expiration time.
         """
         return pulumi.get(self, "expired_time")
 
@@ -566,7 +566,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的公网IP地址。
+        VPN gateway public IP address.
         """
         return pulumi.get(self, "ip_address")
 
@@ -578,7 +578,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="ipStackType")
     def ip_stack_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+        VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
         """
         return pulumi.get(self, "ip_stack_type")
 
@@ -590,7 +590,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+        IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
         """
         return pulumi.get(self, "ip_version")
 
@@ -602,7 +602,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="ipsecEnabled")
     def ipsec_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启IPSec功能。true：开启false：关闭。
+        Enable IPSec feature. true: enabled false: disabled
         """
         return pulumi.get(self, "ipsec_enabled")
 
@@ -614,7 +614,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="isBlocked")
     def is_blocked(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        当前资源的状态是否被封禁。true：封禁false：未封禁。
+        Whether the current resource is banned. true: Banned false: Not banned.
         """
         return pulumi.get(self, "is_blocked")
 
@@ -626,7 +626,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+        VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
         """
         return pulumi.get(self, "lock_reason")
 
@@ -638,7 +638,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+        Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -650,7 +650,7 @@ class _VpnGatewayState:
     @pulumi.getter
     def period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+        Subscription VPN gateway purchase duration, default is '1'. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
         """
         return pulumi.get(self, "period")
 
@@ -662,7 +662,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+        Unit for the purchase duration of subscription-based VPN gateways. Default is 'Month'. Month: month Year: year
         """
         return pulumi.get(self, "period_unit")
 
@@ -674,7 +674,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+        Project to which the VPN gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
         """
         return pulumi.get(self, "project_name")
 
@@ -686,7 +686,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="routeCount")
     def route_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        VPN网关的路由条目数量。
+        Number of route entries for the VPN gateway.
         """
         return pulumi.get(self, "route_count")
 
@@ -698,7 +698,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="secondaryIpAddress")
     def secondary_ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+        Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
         """
         return pulumi.get(self, "secondary_ip_address")
 
@@ -710,7 +710,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="secondarySubnetId")
     def secondary_subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+        ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
         """
         return pulumi.get(self, "secondary_subnet_id")
 
@@ -722,7 +722,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="sslEnabled")
     def ssl_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启SSL VPN功能。true：开启false：关闭
+        Enable SSL VPN feature. true: enabled false: disabled
         """
         return pulumi.get(self, "ssl_enabled")
 
@@ -734,7 +734,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="sslMaxConnections")
     def ssl_max_connections(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        VPN网关的最大SSL连接数。
+        Maximum SSL connections for the VPN gateway.
         """
         return pulumi.get(self, "ssl_max_connections")
 
@@ -746,7 +746,7 @@ class _VpnGatewayState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+        Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
         """
         return pulumi.get(self, "status")
 
@@ -758,7 +758,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关使用的端口所属子网的ID。
+        ID of the subnet to which the port used by the VPN gateway belongs.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -779,7 +779,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新VPN网关的时间。
+        VPN gateway update time.
         """
         return pulumi.get(self, "update_time")
 
@@ -791,7 +791,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关所在VPC的ID。
+        VPC ID where the VPN gateway is located.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -803,7 +803,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="vpnGatewayId")
     def vpn_gateway_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的ID。
+        ID of the VPN gateway.
         """
         return pulumi.get(self, "vpn_gateway_id")
 
@@ -815,7 +815,7 @@ class _VpnGatewayState:
     @pulumi.getter(name="vpnGatewayName")
     def vpn_gateway_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的名称。
+        Name of the VPN gateway.
         """
         return pulumi.get(self, "vpn_gateway_name")
 
@@ -850,7 +850,7 @@ class VpnGateway(pulumi.CustomResource):
                  vpn_gateway_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        当您需要通过VPN连接实现私有网络与本地数据中心或其他私有网络之间的通信，您需要先创建一个VPN网关。
+        To enable communication between your private network and a local data center or another private network via a VPN connection, you must first create a VPN gateway.
 
         ## Example Usage
 
@@ -882,23 +882,23 @@ class VpnGateway(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] asn: VPN网关的ASN。
-        :param pulumi.Input[builtins.int] bandwidth: VPN网关的带宽规格。
-        :param pulumi.Input[builtins.int] billing_type: VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
-        :param pulumi.Input[builtins.str] description: VPN网关的描述。
-        :param pulumi.Input[builtins.bool] dual_tunnel_enabled: VPN网关是否开启双隧道模式。true：开启false：关闭
-        :param pulumi.Input[builtins.str] ip_stack_type: VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
-        :param pulumi.Input[builtins.str] ip_version: VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
-        :param pulumi.Input[builtins.bool] ipsec_enabled: 是否开启IPSec功能。true：开启false：关闭。
-        :param pulumi.Input[builtins.int] period: 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
-        :param pulumi.Input[builtins.str] period_unit: 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
-        :param pulumi.Input[builtins.str] project_name: VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
-        :param pulumi.Input[builtins.str] secondary_subnet_id: VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
-        :param pulumi.Input[builtins.bool] ssl_enabled: 是否开启SSL VPN功能。true：开启false：关闭
-        :param pulumi.Input[builtins.int] ssl_max_connections: VPN网关的最大SSL连接数。
-        :param pulumi.Input[builtins.str] subnet_id: VPN网关使用的端口所属子网的ID。
-        :param pulumi.Input[builtins.str] vpc_id: VPN网关所在VPC的ID。
-        :param pulumi.Input[builtins.str] vpn_gateway_name: VPN网关的名称。
+        :param pulumi.Input[builtins.int] asn: ASN of the VPN gateway.
+        :param pulumi.Input[builtins.int] bandwidth: VPN gateway bandwidth specification.
+        :param pulumi.Input[builtins.int] billing_type: VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
+        :param pulumi.Input[builtins.str] description: Description of the VPN gateway.
+        :param pulumi.Input[builtins.bool] dual_tunnel_enabled: Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
+        :param pulumi.Input[builtins.str] ip_stack_type: VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
+        :param pulumi.Input[builtins.str] ip_version: IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
+        :param pulumi.Input[builtins.bool] ipsec_enabled: Enable IPSec feature. true: enabled false: disabled
+        :param pulumi.Input[builtins.int] period: Subscription VPN gateway purchase duration, default is '1'. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
+        :param pulumi.Input[builtins.str] period_unit: Unit for the purchase duration of subscription-based VPN gateways. Default is 'Month'. Month: month Year: year
+        :param pulumi.Input[builtins.str] project_name: Project to which the VPN gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
+        :param pulumi.Input[builtins.str] secondary_subnet_id: ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
+        :param pulumi.Input[builtins.bool] ssl_enabled: Enable SSL VPN feature. true: enabled false: disabled
+        :param pulumi.Input[builtins.int] ssl_max_connections: Maximum SSL connections for the VPN gateway.
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet to which the port used by the VPN gateway belongs.
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID where the VPN gateway is located.
+        :param pulumi.Input[builtins.str] vpn_gateway_name: Name of the VPN gateway.
         """
         ...
     @overload
@@ -907,7 +907,7 @@ class VpnGateway(pulumi.CustomResource):
                  args: VpnGatewayArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        当您需要通过VPN连接实现私有网络与本地数据中心或其他私有网络之间的通信，您需要先创建一个VPN网关。
+        To enable communication between your private network and a local data center or another private network via a VPN connection, you must first create a VPN gateway.
 
         ## Example Usage
 
@@ -1066,37 +1066,37 @@ class VpnGateway(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] asn: VPN网关的ASN。
-        :param pulumi.Input[builtins.int] bandwidth: VPN网关的带宽规格。
-        :param pulumi.Input[builtins.int] billing_type: VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
-        :param pulumi.Input[builtins.str] business_status: VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
-        :param pulumi.Input[builtins.int] connection_count: VPN网关关联IPsec连接的数量。
-        :param pulumi.Input[builtins.str] create_time: 创建VPN网关的时间。
-        :param pulumi.Input[builtins.str] deleted_time: 预期资源强制回收时间。
-        :param pulumi.Input[builtins.str] description: VPN网关的描述。
-        :param pulumi.Input[builtins.bool] dual_tunnel_enabled: VPN网关是否开启双隧道模式。true：开启false：关闭
-        :param pulumi.Input[builtins.str] expired_time: VPN网关的到期时间。
-        :param pulumi.Input[builtins.str] ip_address: VPN网关的公网IP地址。
-        :param pulumi.Input[builtins.str] ip_stack_type: VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
-        :param pulumi.Input[builtins.str] ip_version: VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
-        :param pulumi.Input[builtins.bool] ipsec_enabled: 是否开启IPSec功能。true：开启false：关闭。
-        :param pulumi.Input[builtins.bool] is_blocked: 当前资源的状态是否被封禁。true：封禁false：未封禁。
-        :param pulumi.Input[builtins.str] lock_reason: VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
-        :param pulumi.Input[builtins.str] overdue_time: 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
-        :param pulumi.Input[builtins.int] period: 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
-        :param pulumi.Input[builtins.str] period_unit: 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
-        :param pulumi.Input[builtins.str] project_name: VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
-        :param pulumi.Input[builtins.int] route_count: VPN网关的路由条目数量。
-        :param pulumi.Input[builtins.str] secondary_ip_address: VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
-        :param pulumi.Input[builtins.str] secondary_subnet_id: VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
-        :param pulumi.Input[builtins.bool] ssl_enabled: 是否开启SSL VPN功能。true：开启false：关闭
-        :param pulumi.Input[builtins.int] ssl_max_connections: VPN网关的最大SSL连接数。
-        :param pulumi.Input[builtins.str] status: VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
-        :param pulumi.Input[builtins.str] subnet_id: VPN网关使用的端口所属子网的ID。
-        :param pulumi.Input[builtins.str] update_time: 更新VPN网关的时间。
-        :param pulumi.Input[builtins.str] vpc_id: VPN网关所在VPC的ID。
-        :param pulumi.Input[builtins.str] vpn_gateway_id: VPN网关的ID。
-        :param pulumi.Input[builtins.str] vpn_gateway_name: VPN网关的名称。
+        :param pulumi.Input[builtins.int] asn: ASN of the VPN gateway.
+        :param pulumi.Input[builtins.int] bandwidth: VPN gateway bandwidth specification.
+        :param pulumi.Input[builtins.int] billing_type: VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
+        :param pulumi.Input[builtins.str] business_status: VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
+        :param pulumi.Input[builtins.int] connection_count: Number of IPsec connections associated with the VPN gateway.
+        :param pulumi.Input[builtins.str] create_time: Time when the VPN gateway was created.
+        :param pulumi.Input[builtins.str] deleted_time: Expected resource forced reclaim time.
+        :param pulumi.Input[builtins.str] description: Description of the VPN gateway.
+        :param pulumi.Input[builtins.bool] dual_tunnel_enabled: Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
+        :param pulumi.Input[builtins.str] expired_time: VPN gateway expiration time.
+        :param pulumi.Input[builtins.str] ip_address: VPN gateway public IP address.
+        :param pulumi.Input[builtins.str] ip_stack_type: VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
+        :param pulumi.Input[builtins.str] ip_version: IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
+        :param pulumi.Input[builtins.bool] ipsec_enabled: Enable IPSec feature. true: enabled false: disabled
+        :param pulumi.Input[builtins.bool] is_blocked: Whether the current resource is banned. true: Banned false: Not banned.
+        :param pulumi.Input[builtins.str] lock_reason: VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
+        :param pulumi.Input[builtins.str] overdue_time: Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
+        :param pulumi.Input[builtins.int] period: Subscription VPN gateway purchase duration, default is '1'. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
+        :param pulumi.Input[builtins.str] period_unit: Unit for the purchase duration of subscription-based VPN gateways. Default is 'Month'. Month: month Year: year
+        :param pulumi.Input[builtins.str] project_name: Project to which the VPN gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
+        :param pulumi.Input[builtins.int] route_count: Number of route entries for the VPN gateway.
+        :param pulumi.Input[builtins.str] secondary_ip_address: Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
+        :param pulumi.Input[builtins.str] secondary_subnet_id: ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
+        :param pulumi.Input[builtins.bool] ssl_enabled: Enable SSL VPN feature. true: enabled false: disabled
+        :param pulumi.Input[builtins.int] ssl_max_connections: Maximum SSL connections for the VPN gateway.
+        :param pulumi.Input[builtins.str] status: Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet to which the port used by the VPN gateway belongs.
+        :param pulumi.Input[builtins.str] update_time: VPN gateway update time.
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID where the VPN gateway is located.
+        :param pulumi.Input[builtins.str] vpn_gateway_id: ID of the VPN gateway.
+        :param pulumi.Input[builtins.str] vpn_gateway_name: Name of the VPN gateway.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1140,7 +1140,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter
     def asn(self) -> pulumi.Output[builtins.int]:
         """
-        VPN网关的ASN。
+        ASN of the VPN gateway.
         """
         return pulumi.get(self, "asn")
 
@@ -1148,7 +1148,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter
     def bandwidth(self) -> pulumi.Output[builtins.int]:
         """
-        VPN网关的带宽规格。
+        VPN gateway bandwidth specification.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -1156,7 +1156,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> pulumi.Output[builtins.int]:
         """
-        VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+        VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
         """
         return pulumi.get(self, "billing_type")
 
@@ -1164,7 +1164,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+        VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
         """
         return pulumi.get(self, "business_status")
 
@@ -1172,7 +1172,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="connectionCount")
     def connection_count(self) -> pulumi.Output[builtins.int]:
         """
-        VPN网关关联IPsec连接的数量。
+        Number of IPsec connections associated with the VPN gateway.
         """
         return pulumi.get(self, "connection_count")
 
@@ -1180,7 +1180,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建VPN网关的时间。
+        Time when the VPN gateway was created.
         """
         return pulumi.get(self, "create_time")
 
@@ -1188,7 +1188,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> pulumi.Output[builtins.str]:
         """
-        预期资源强制回收时间。
+        Expected resource forced reclaim time.
         """
         return pulumi.get(self, "deleted_time")
 
@@ -1196,7 +1196,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关的描述。
+        Description of the VPN gateway.
         """
         return pulumi.get(self, "description")
 
@@ -1204,7 +1204,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="dualTunnelEnabled")
     def dual_tunnel_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        VPN网关是否开启双隧道模式。true：开启false：关闭
+        Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
         """
         return pulumi.get(self, "dual_tunnel_enabled")
 
@@ -1212,7 +1212,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关的到期时间。
+        VPN gateway expiration time.
         """
         return pulumi.get(self, "expired_time")
 
@@ -1220,7 +1220,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关的公网IP地址。
+        VPN gateway public IP address.
         """
         return pulumi.get(self, "ip_address")
 
@@ -1228,7 +1228,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="ipStackType")
     def ip_stack_type(self) -> pulumi.Output[builtins.str]:
         """
-        VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+        VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
         """
         return pulumi.get(self, "ip_stack_type")
 
@@ -1236,7 +1236,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+        IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
         """
         return pulumi.get(self, "ip_version")
 
@@ -1244,7 +1244,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="ipsecEnabled")
     def ipsec_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启IPSec功能。true：开启false：关闭。
+        Enable IPSec feature. true: enabled false: disabled
         """
         return pulumi.get(self, "ipsec_enabled")
 
@@ -1252,7 +1252,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="isBlocked")
     def is_blocked(self) -> pulumi.Output[builtins.bool]:
         """
-        当前资源的状态是否被封禁。true：封禁false：未封禁。
+        Whether the current resource is banned. true: Banned false: Not banned.
         """
         return pulumi.get(self, "is_blocked")
 
@@ -1260,7 +1260,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+        VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
         """
         return pulumi.get(self, "lock_reason")
 
@@ -1268,7 +1268,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> pulumi.Output[builtins.str]:
         """
-        资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+        Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -1276,7 +1276,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter
     def period(self) -> pulumi.Output[builtins.int]:
         """
-        包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+        Subscription VPN gateway purchase duration, default is '1'. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
         """
         return pulumi.get(self, "period")
 
@@ -1284,7 +1284,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> pulumi.Output[builtins.str]:
         """
-        包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+        Unit for the purchase duration of subscription-based VPN gateways. Default is 'Month'. Month: month Year: year
         """
         return pulumi.get(self, "period_unit")
 
@@ -1292,7 +1292,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+        Project to which the VPN gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
         """
         return pulumi.get(self, "project_name")
 
@@ -1300,7 +1300,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="routeCount")
     def route_count(self) -> pulumi.Output[builtins.int]:
         """
-        VPN网关的路由条目数量。
+        Number of route entries for the VPN gateway.
         """
         return pulumi.get(self, "route_count")
 
@@ -1308,7 +1308,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="secondaryIpAddress")
     def secondary_ip_address(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+        Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
         """
         return pulumi.get(self, "secondary_ip_address")
 
@@ -1316,7 +1316,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="secondarySubnetId")
     def secondary_subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+        ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
         """
         return pulumi.get(self, "secondary_subnet_id")
 
@@ -1324,7 +1324,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="sslEnabled")
     def ssl_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启SSL VPN功能。true：开启false：关闭
+        Enable SSL VPN feature. true: enabled false: disabled
         """
         return pulumi.get(self, "ssl_enabled")
 
@@ -1332,7 +1332,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="sslMaxConnections")
     def ssl_max_connections(self) -> pulumi.Output[builtins.int]:
         """
-        VPN网关的最大SSL连接数。
+        Maximum SSL connections for the VPN gateway.
         """
         return pulumi.get(self, "ssl_max_connections")
 
@@ -1340,7 +1340,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+        Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
         """
         return pulumi.get(self, "status")
 
@@ -1348,7 +1348,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关使用的端口所属子网的ID。
+        ID of the subnet to which the port used by the VPN gateway belongs.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1361,7 +1361,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新VPN网关的时间。
+        VPN gateway update time.
         """
         return pulumi.get(self, "update_time")
 
@@ -1369,7 +1369,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关所在VPC的ID。
+        VPC ID where the VPN gateway is located.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1377,7 +1377,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="vpnGatewayId")
     def vpn_gateway_id(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关的ID。
+        ID of the VPN gateway.
         """
         return pulumi.get(self, "vpn_gateway_id")
 
@@ -1385,7 +1385,7 @@ class VpnGateway(pulumi.CustomResource):
     @pulumi.getter(name="vpnGatewayName")
     def vpn_gateway_name(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关的名称。
+        Name of the VPN gateway.
         """
         return pulumi.get(self, "vpn_gateway_name")
 

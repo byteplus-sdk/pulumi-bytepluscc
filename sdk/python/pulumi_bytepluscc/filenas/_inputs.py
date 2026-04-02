@@ -36,7 +36,7 @@ if not MYPY:
     class InstanceCachePerformanceArgsDict(TypedDict):
         cache_bandwidth: NotRequired[pulumi.Input[builtins.int]]
         """
-        预配置带宽，用于增加文件系统带宽。
+        Provisioned bandwidth, used to increase file system bandwidth
         """
 elif False:
     InstanceCachePerformanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -46,7 +46,7 @@ class InstanceCachePerformanceArgs:
     def __init__(__self__, *,
                  cache_bandwidth: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.int] cache_bandwidth: 预配置带宽，用于增加文件系统带宽。
+        :param pulumi.Input[builtins.int] cache_bandwidth: Provisioned bandwidth, used to increase file system bandwidth
         """
         if cache_bandwidth is not None:
             pulumi.set(__self__, "cache_bandwidth", cache_bandwidth)
@@ -55,7 +55,7 @@ class InstanceCachePerformanceArgs:
     @pulumi.getter(name="cacheBandwidth")
     def cache_bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        预配置带宽，用于增加文件系统带宽。
+        Provisioned bandwidth, used to increase file system bandwidth
         """
         return pulumi.get(self, "cache_bandwidth")
 
@@ -68,11 +68,11 @@ if not MYPY:
     class InstanceCapacityArgsDict(TypedDict):
         total: NotRequired[pulumi.Input[builtins.float]]
         """
-        文件系统可用总容量，单位为 GiB。
+        Total available file system capacity, in GiB
         """
         used: NotRequired[pulumi.Input[builtins.float]]
         """
-        文件系统已使用容量，单位为 MiB。
+        Used file system capacity, in MiB
         """
 elif False:
     InstanceCapacityArgsDict: TypeAlias = Mapping[str, Any]
@@ -83,8 +83,8 @@ class InstanceCapacityArgs:
                  total: Optional[pulumi.Input[builtins.float]] = None,
                  used: Optional[pulumi.Input[builtins.float]] = None):
         """
-        :param pulumi.Input[builtins.float] total: 文件系统可用总容量，单位为 GiB。
-        :param pulumi.Input[builtins.float] used: 文件系统已使用容量，单位为 MiB。
+        :param pulumi.Input[builtins.float] total: Total available file system capacity, in GiB
+        :param pulumi.Input[builtins.float] used: Used file system capacity, in MiB
         """
         if total is not None:
             pulumi.set(__self__, "total", total)
@@ -95,7 +95,7 @@ class InstanceCapacityArgs:
     @pulumi.getter
     def total(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        文件系统可用总容量，单位为 GiB。
+        Total available file system capacity, in GiB
         """
         return pulumi.get(self, "total")
 
@@ -107,7 +107,7 @@ class InstanceCapacityArgs:
     @pulumi.getter
     def used(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        文件系统已使用容量，单位为 MiB。
+        Used file system capacity, in MiB
         """
         return pulumi.get(self, "used")
 
@@ -120,15 +120,15 @@ if not MYPY:
     class InstanceTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Tag key
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签类型。
+        Tag type
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value
         """
 elif False:
     InstanceTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -140,9 +140,9 @@ class InstanceTagArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] type: 标签类型。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] type: Tag type
+        :param pulumi.Input[builtins.str] value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -155,7 +155,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -167,7 +167,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签类型。
+        Tag type
         """
         return pulumi.get(self, "type")
 
@@ -179,7 +179,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -192,15 +192,15 @@ if not MYPY:
     class MountPointClientArgsDict(TypedDict):
         ip: NotRequired[pulumi.Input[builtins.str]]
         """
-        客户端的私有网络 IP 地址。
+        Client's private network IP address.
         """
         protocol_version: NotRequired[pulumi.Input[builtins.str]]
         """
-        挂载协议版本号。取值：NFSv3。
+        Mount protocol version. Value: NFSv3.
         """
         vpc_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        私有网络名称。
+        Private network name.
         """
 elif False:
     MountPointClientArgsDict: TypeAlias = Mapping[str, Any]
@@ -212,9 +212,9 @@ class MountPointClientArgs:
                  protocol_version: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] ip: 客户端的私有网络 IP 地址。
-        :param pulumi.Input[builtins.str] protocol_version: 挂载协议版本号。取值：NFSv3。
-        :param pulumi.Input[builtins.str] vpc_name: 私有网络名称。
+        :param pulumi.Input[builtins.str] ip: Client's private network IP address.
+        :param pulumi.Input[builtins.str] protocol_version: Mount protocol version. Value: NFSv3.
+        :param pulumi.Input[builtins.str] vpc_name: Private network name.
         """
         if ip is not None:
             pulumi.set(__self__, "ip", ip)
@@ -227,7 +227,7 @@ class MountPointClientArgs:
     @pulumi.getter
     def ip(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        客户端的私有网络 IP 地址。
+        Client's private network IP address.
         """
         return pulumi.get(self, "ip")
 
@@ -239,7 +239,7 @@ class MountPointClientArgs:
     @pulumi.getter(name="protocolVersion")
     def protocol_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        挂载协议版本号。取值：NFSv3。
+        Mount protocol version. Value: NFSv3.
         """
         return pulumi.get(self, "protocol_version")
 
@@ -251,7 +251,7 @@ class MountPointClientArgs:
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私有网络名称。
+        Private network name.
         """
         return pulumi.get(self, "vpc_name")
 
@@ -264,28 +264,28 @@ if not MYPY:
     class MountPointPermissionGroupArgsDict(TypedDict):
         create_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        权限组创建时间。
+        Permission group creation time.
         """
         description: NotRequired[pulumi.Input[builtins.str]]
         """
-        权限组描述信息。
+        Permission group description information.
         """
         file_system_count: NotRequired[pulumi.Input[builtins.int]]
         """
-        关联该权限组的文件系统数量。
+        Number of file systems associated with this permission group.
         """
         file_system_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+        File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
         """
         mount_points: NotRequired[pulumi.Input[Sequence[pulumi.Input['MountPointPermissionGroupMountPointArgsDict']]]]
         permission_group_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        权限组名称。
+        Permission group name.
         """
         permission_rule_count: NotRequired[pulumi.Input[builtins.int]]
         """
-        权限规则数量。
+        Number of permission rules.
         """
 elif False:
     MountPointPermissionGroupArgsDict: TypeAlias = Mapping[str, Any]
@@ -301,12 +301,12 @@ class MountPointPermissionGroupArgs:
                  permission_group_name: Optional[pulumi.Input[builtins.str]] = None,
                  permission_rule_count: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] create_time: 权限组创建时间。
-        :param pulumi.Input[builtins.str] description: 权限组描述信息。
-        :param pulumi.Input[builtins.int] file_system_count: 关联该权限组的文件系统数量。
-        :param pulumi.Input[builtins.str] file_system_type: 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
-        :param pulumi.Input[builtins.str] permission_group_name: 权限组名称。
-        :param pulumi.Input[builtins.int] permission_rule_count: 权限规则数量。
+        :param pulumi.Input[builtins.str] create_time: Permission group creation time.
+        :param pulumi.Input[builtins.str] description: Permission group description information.
+        :param pulumi.Input[builtins.int] file_system_count: Number of file systems associated with this permission group.
+        :param pulumi.Input[builtins.str] file_system_type: File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
+        :param pulumi.Input[builtins.str] permission_group_name: Permission group name.
+        :param pulumi.Input[builtins.int] permission_rule_count: Number of permission rules.
         """
         if create_time is not None:
             pulumi.set(__self__, "create_time", create_time)
@@ -327,7 +327,7 @@ class MountPointPermissionGroupArgs:
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限组创建时间。
+        Permission group creation time.
         """
         return pulumi.get(self, "create_time")
 
@@ -339,7 +339,7 @@ class MountPointPermissionGroupArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限组描述信息。
+        Permission group description information.
         """
         return pulumi.get(self, "description")
 
@@ -351,7 +351,7 @@ class MountPointPermissionGroupArgs:
     @pulumi.getter(name="fileSystemCount")
     def file_system_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        关联该权限组的文件系统数量。
+        Number of file systems associated with this permission group.
         """
         return pulumi.get(self, "file_system_count")
 
@@ -363,7 +363,7 @@ class MountPointPermissionGroupArgs:
     @pulumi.getter(name="fileSystemType")
     def file_system_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+        File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
         """
         return pulumi.get(self, "file_system_type")
 
@@ -384,7 +384,7 @@ class MountPointPermissionGroupArgs:
     @pulumi.getter(name="permissionGroupName")
     def permission_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限组名称。
+        Permission group name.
         """
         return pulumi.get(self, "permission_group_name")
 
@@ -396,7 +396,7 @@ class MountPointPermissionGroupArgs:
     @pulumi.getter(name="permissionRuleCount")
     def permission_rule_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        权限规则数量。
+        Number of permission rules.
         """
         return pulumi.get(self, "permission_rule_count")
 
@@ -409,15 +409,15 @@ if not MYPY:
     class MountPointPermissionGroupMountPointArgsDict(TypedDict):
         file_system_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        文件系统 ID。
+        File system ID.
         """
         mount_point_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        挂载点 ID。
+        Mount point ID.
         """
         mount_point_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        挂载点名称。
+        Mount point name.
         """
 elif False:
     MountPointPermissionGroupMountPointArgsDict: TypeAlias = Mapping[str, Any]
@@ -429,9 +429,9 @@ class MountPointPermissionGroupMountPointArgs:
                  mount_point_id: Optional[pulumi.Input[builtins.str]] = None,
                  mount_point_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] file_system_id: 文件系统 ID。
-        :param pulumi.Input[builtins.str] mount_point_id: 挂载点 ID。
-        :param pulumi.Input[builtins.str] mount_point_name: 挂载点名称。
+        :param pulumi.Input[builtins.str] file_system_id: File system ID.
+        :param pulumi.Input[builtins.str] mount_point_id: Mount point ID.
+        :param pulumi.Input[builtins.str] mount_point_name: Mount point name.
         """
         if file_system_id is not None:
             pulumi.set(__self__, "file_system_id", file_system_id)
@@ -444,7 +444,7 @@ class MountPointPermissionGroupMountPointArgs:
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统 ID。
+        File system ID.
         """
         return pulumi.get(self, "file_system_id")
 
@@ -456,7 +456,7 @@ class MountPointPermissionGroupMountPointArgs:
     @pulumi.getter(name="mountPointId")
     def mount_point_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        挂载点 ID。
+        Mount point ID.
         """
         return pulumi.get(self, "mount_point_id")
 
@@ -468,7 +468,7 @@ class MountPointPermissionGroupMountPointArgs:
     @pulumi.getter(name="mountPointName")
     def mount_point_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        挂载点名称。
+        Mount point name.
         """
         return pulumi.get(self, "mount_point_name")
 

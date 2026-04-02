@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 工作区（Workspace）是 VMP 服务中采集数据和规则的抽象整合，为用户提供物理隔离或逻辑隔离的 Prometheus 能力。在 VMP 服务中可创建不同的工作区，不同工作区中的数据彼此隔离。
+ * Workspace is an abstract integration of data collection and rules in the VMP service, providing users with physical or logical isolation for Prometheus capabilities. You can create different workspaces in the VMP service, and data in different workspaces is isolated from each other
  *
  * ## Example Usage
  *
@@ -16,13 +16,17 @@ import * as utilities from "../utilities";
  * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
  *
  * const workspaceDemo = new bytepluscc.vmp.Workspace("WorkspaceDemo", {
- *     username: "WorkspaceDemo",
- *     password: "***********",
- *     name: "WorkspaceDemo",
- *     description: "WorkspaceDemo",
+ *     authType: "BearerToken",
+ *     bearerToken: "M3cSN7gssM09-6wO8vdqo_xxxxxxxx",
  *     deleteProtectionEnabled: false,
- *     instanceTypeId: "vmp.standard.xxx",
+ *     description: "test workspace",
+ *     instanceTypeId: "vmp.standard.30d",
+ *     name: "terraform_test_BearerToken",
  *     projectName: "default",
+ *     publicAccessEnabled: true,
+ *     publicQueryBandwidth: 2,
+ *     publicWriteBandwidth: 50,
+ *     searchLatencyOffset: "32s",
  *     tags: [{
  *         key: "env",
  *         value: "test",
@@ -65,72 +69,108 @@ export class Workspace extends pulumi.CustomResource {
     }
 
     /**
-     * 工作区创建时间，RFC3339 格式。
+     * Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+     */
+    public readonly authType!: pulumi.Output<string>;
+    /**
+     * Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+     */
+    public readonly bearerToken!: pulumi.Output<string>;
+    /**
+     * Workspace creation time, RFC3339 format
      */
     public /*out*/ readonly createTime!: pulumi.Output<string>;
     /**
-     * 是否开启工作区删除保护,true：开启，false：关闭。
+     * Enable workspace deletion protection: true for enabled, false for disabled
      */
     public readonly deleteProtectionEnabled!: pulumi.Output<boolean>;
     /**
-     * 工作区描述信息，字符串形式，长度限制为 0～200。
+     * Workspace description, string, length limit 0–200
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 工作区规格详情。
+     * Workspace specification details
      */
     public /*out*/ readonly instanceType!: pulumi.Output<outputs.vmp.WorkspaceInstanceType>;
     /**
-     * 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+     * Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
      */
     public readonly instanceTypeId!: pulumi.Output<string>;
     /**
-     * 工作区名称，字符串形式，长度限制为 1～100。
+     * Workspace name, string, length limit 1–100
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * 工作区预期欠费回收时间，RFC3339 格式。
+     * Workspace expected overdue recovery time, RFC3339 format
      */
     public /*out*/ readonly overdueReclaimTime!: pulumi.Output<string>;
     /**
-     * 工作区 BasicAuth 密码。
+     * Workspace BasicAuth password
      */
     public readonly password!: pulumi.Output<string>;
     /**
-     * 项目名称。
+     * Project name
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 工作区 Push Gateway URL 地址。
+     * Workspace public Push Gateway URL address.
+     */
+    public /*out*/ readonly prometheusPushEndpoint!: pulumi.Output<string>;
+    /**
+     * Workspace Push Gateway URL address
      */
     public /*out*/ readonly prometheusPushIntranetEndpoint!: pulumi.Output<string>;
     /**
-     * 工作区 Query URL 地址。
+     * Workspace public Query URL address.
+     */
+    public /*out*/ readonly prometheusQueryEndpoint!: pulumi.Output<string>;
+    /**
+     * Workspace Query URL address
      */
     public /*out*/ readonly prometheusQueryIntranetEndpoint!: pulumi.Output<string>;
     /**
-     * 工作区 RemoteWrite URL 地址。
+     * Workspace public RemoteWrite URL address.
+     */
+    public /*out*/ readonly prometheusWriteEndpoint!: pulumi.Output<string>;
+    /**
+     * Workspace RemoteWrite URL address
      */
     public /*out*/ readonly prometheusWriteIntranetEndpoint!: pulumi.Output<string>;
     /**
-     * 工作区配额详情。
+     * Whether to enable workspace public access capability. true: enabled, false: disabled.
      */
-    public /*out*/ readonly quota!: pulumi.Output<outputs.vmp.WorkspaceQuota>;
+    public readonly publicAccessEnabled!: pulumi.Output<boolean>;
     /**
-     * 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+     * Workspace public Query bandwidth (Mbps).
+     */
+    public readonly publicQueryBandwidth!: pulumi.Output<number>;
+    /**
+     * Workspace public RemoteWrite bandwidth (Mbps).
+     */
+    public readonly publicWriteBandwidth!: pulumi.Output<number>;
+    /**
+     * Workspace quota details
+     */
+    public readonly quota!: pulumi.Output<outputs.vmp.WorkspaceQuota>;
+    /**
+     * Workspace public Query search latency offset.
+     */
+    public readonly searchLatencyOffset!: pulumi.Output<string>;
+    /**
+     * Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.vmp.WorkspaceTag[]>;
     /**
-     * 工作区用量。
+     * Workspace usage
      */
     public /*out*/ readonly usage!: pulumi.Output<outputs.vmp.WorkspaceUsage>;
     /**
-     * 工作区 BasicAuth 用户名。
+     * Workspace BasicAuth username
      */
     public readonly username!: pulumi.Output<string>;
     /**
-     * 工作区Id。
+     * Workspace ID
      */
     public /*out*/ readonly workspaceId!: pulumi.Output<string>;
 
@@ -147,6 +187,8 @@ export class Workspace extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WorkspaceState | undefined;
+            resourceInputs["authType"] = state ? state.authType : undefined;
+            resourceInputs["bearerToken"] = state ? state.bearerToken : undefined;
             resourceInputs["createTime"] = state ? state.createTime : undefined;
             resourceInputs["deleteProtectionEnabled"] = state ? state.deleteProtectionEnabled : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
@@ -156,10 +198,17 @@ export class Workspace extends pulumi.CustomResource {
             resourceInputs["overdueReclaimTime"] = state ? state.overdueReclaimTime : undefined;
             resourceInputs["password"] = state ? state.password : undefined;
             resourceInputs["projectName"] = state ? state.projectName : undefined;
+            resourceInputs["prometheusPushEndpoint"] = state ? state.prometheusPushEndpoint : undefined;
             resourceInputs["prometheusPushIntranetEndpoint"] = state ? state.prometheusPushIntranetEndpoint : undefined;
+            resourceInputs["prometheusQueryEndpoint"] = state ? state.prometheusQueryEndpoint : undefined;
             resourceInputs["prometheusQueryIntranetEndpoint"] = state ? state.prometheusQueryIntranetEndpoint : undefined;
+            resourceInputs["prometheusWriteEndpoint"] = state ? state.prometheusWriteEndpoint : undefined;
             resourceInputs["prometheusWriteIntranetEndpoint"] = state ? state.prometheusWriteIntranetEndpoint : undefined;
+            resourceInputs["publicAccessEnabled"] = state ? state.publicAccessEnabled : undefined;
+            resourceInputs["publicQueryBandwidth"] = state ? state.publicQueryBandwidth : undefined;
+            resourceInputs["publicWriteBandwidth"] = state ? state.publicWriteBandwidth : undefined;
             resourceInputs["quota"] = state ? state.quota : undefined;
+            resourceInputs["searchLatencyOffset"] = state ? state.searchLatencyOffset : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
             resourceInputs["tags"] = state ? state.tags : undefined;
             resourceInputs["usage"] = state ? state.usage : undefined;
@@ -173,21 +222,30 @@ export class Workspace extends pulumi.CustomResource {
             if ((!args || args.name === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'name'");
             }
+            resourceInputs["authType"] = args ? args.authType : undefined;
+            resourceInputs["bearerToken"] = args ? args.bearerToken : undefined;
             resourceInputs["deleteProtectionEnabled"] = args ? args.deleteProtectionEnabled : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["instanceTypeId"] = args ? args.instanceTypeId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["password"] = args ? args.password : undefined;
             resourceInputs["projectName"] = args ? args.projectName : undefined;
+            resourceInputs["publicAccessEnabled"] = args ? args.publicAccessEnabled : undefined;
+            resourceInputs["publicQueryBandwidth"] = args ? args.publicQueryBandwidth : undefined;
+            resourceInputs["publicWriteBandwidth"] = args ? args.publicWriteBandwidth : undefined;
+            resourceInputs["quota"] = args ? args.quota : undefined;
+            resourceInputs["searchLatencyOffset"] = args ? args.searchLatencyOffset : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["username"] = args ? args.username : undefined;
             resourceInputs["createTime"] = undefined /*out*/;
             resourceInputs["instanceType"] = undefined /*out*/;
             resourceInputs["overdueReclaimTime"] = undefined /*out*/;
+            resourceInputs["prometheusPushEndpoint"] = undefined /*out*/;
             resourceInputs["prometheusPushIntranetEndpoint"] = undefined /*out*/;
+            resourceInputs["prometheusQueryEndpoint"] = undefined /*out*/;
             resourceInputs["prometheusQueryIntranetEndpoint"] = undefined /*out*/;
+            resourceInputs["prometheusWriteEndpoint"] = undefined /*out*/;
             resourceInputs["prometheusWriteIntranetEndpoint"] = undefined /*out*/;
-            resourceInputs["quota"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["usage"] = undefined /*out*/;
             resourceInputs["workspaceId"] = undefined /*out*/;
@@ -202,72 +260,108 @@ export class Workspace extends pulumi.CustomResource {
  */
 export interface WorkspaceState {
     /**
-     * 工作区创建时间，RFC3339 格式。
+     * Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+     */
+    authType?: pulumi.Input<string>;
+    /**
+     * Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+     */
+    bearerToken?: pulumi.Input<string>;
+    /**
+     * Workspace creation time, RFC3339 format
      */
     createTime?: pulumi.Input<string>;
     /**
-     * 是否开启工作区删除保护,true：开启，false：关闭。
+     * Enable workspace deletion protection: true for enabled, false for disabled
      */
     deleteProtectionEnabled?: pulumi.Input<boolean>;
     /**
-     * 工作区描述信息，字符串形式，长度限制为 0～200。
+     * Workspace description, string, length limit 0–200
      */
     description?: pulumi.Input<string>;
     /**
-     * 工作区规格详情。
+     * Workspace specification details
      */
     instanceType?: pulumi.Input<inputs.vmp.WorkspaceInstanceType>;
     /**
-     * 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+     * Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
      */
     instanceTypeId?: pulumi.Input<string>;
     /**
-     * 工作区名称，字符串形式，长度限制为 1～100。
+     * Workspace name, string, length limit 1–100
      */
     name?: pulumi.Input<string>;
     /**
-     * 工作区预期欠费回收时间，RFC3339 格式。
+     * Workspace expected overdue recovery time, RFC3339 format
      */
     overdueReclaimTime?: pulumi.Input<string>;
     /**
-     * 工作区 BasicAuth 密码。
+     * Workspace BasicAuth password
      */
     password?: pulumi.Input<string>;
     /**
-     * 项目名称。
+     * Project name
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 工作区 Push Gateway URL 地址。
+     * Workspace public Push Gateway URL address.
+     */
+    prometheusPushEndpoint?: pulumi.Input<string>;
+    /**
+     * Workspace Push Gateway URL address
      */
     prometheusPushIntranetEndpoint?: pulumi.Input<string>;
     /**
-     * 工作区 Query URL 地址。
+     * Workspace public Query URL address.
+     */
+    prometheusQueryEndpoint?: pulumi.Input<string>;
+    /**
+     * Workspace Query URL address
      */
     prometheusQueryIntranetEndpoint?: pulumi.Input<string>;
     /**
-     * 工作区 RemoteWrite URL 地址。
+     * Workspace public RemoteWrite URL address.
+     */
+    prometheusWriteEndpoint?: pulumi.Input<string>;
+    /**
+     * Workspace RemoteWrite URL address
      */
     prometheusWriteIntranetEndpoint?: pulumi.Input<string>;
     /**
-     * 工作区配额详情。
+     * Whether to enable workspace public access capability. true: enabled, false: disabled.
+     */
+    publicAccessEnabled?: pulumi.Input<boolean>;
+    /**
+     * Workspace public Query bandwidth (Mbps).
+     */
+    publicQueryBandwidth?: pulumi.Input<number>;
+    /**
+     * Workspace public RemoteWrite bandwidth (Mbps).
+     */
+    publicWriteBandwidth?: pulumi.Input<number>;
+    /**
+     * Workspace quota details
      */
     quota?: pulumi.Input<inputs.vmp.WorkspaceQuota>;
     /**
-     * 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+     * Workspace public Query search latency offset.
+     */
+    searchLatencyOffset?: pulumi.Input<string>;
+    /**
+     * Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vmp.WorkspaceTag>[]>;
     /**
-     * 工作区用量。
+     * Workspace usage
      */
     usage?: pulumi.Input<inputs.vmp.WorkspaceUsage>;
     /**
-     * 工作区 BasicAuth 用户名。
+     * Workspace BasicAuth username
      */
     username?: pulumi.Input<string>;
     /**
-     * 工作区Id。
+     * Workspace ID
      */
     workspaceId?: pulumi.Input<string>;
 }
@@ -277,32 +371,60 @@ export interface WorkspaceState {
  */
 export interface WorkspaceArgs {
     /**
-     * 是否开启工作区删除保护,true：开启，false：关闭。
+     * Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+     */
+    authType?: pulumi.Input<string>;
+    /**
+     * Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+     */
+    bearerToken?: pulumi.Input<string>;
+    /**
+     * Enable workspace deletion protection: true for enabled, false for disabled
      */
     deleteProtectionEnabled?: pulumi.Input<boolean>;
     /**
-     * 工作区描述信息，字符串形式，长度限制为 0～200。
+     * Workspace description, string, length limit 0–200
      */
     description?: pulumi.Input<string>;
     /**
-     * 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+     * Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
      */
     instanceTypeId: pulumi.Input<string>;
     /**
-     * 工作区名称，字符串形式，长度限制为 1～100。
+     * Workspace name, string, length limit 1–100
      */
     name: pulumi.Input<string>;
     /**
-     * 工作区 BasicAuth 密码。
+     * Workspace BasicAuth password
      */
     password?: pulumi.Input<string>;
     /**
-     * 项目名称。
+     * Project name
      */
     projectName?: pulumi.Input<string>;
+    /**
+     * Whether to enable workspace public access capability. true: enabled, false: disabled.
+     */
+    publicAccessEnabled?: pulumi.Input<boolean>;
+    /**
+     * Workspace public Query bandwidth (Mbps).
+     */
+    publicQueryBandwidth?: pulumi.Input<number>;
+    /**
+     * Workspace public RemoteWrite bandwidth (Mbps).
+     */
+    publicWriteBandwidth?: pulumi.Input<number>;
+    /**
+     * Workspace quota details
+     */
+    quota?: pulumi.Input<inputs.vmp.WorkspaceQuota>;
+    /**
+     * Workspace public Query search latency offset.
+     */
+    searchLatencyOffset?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vmp.WorkspaceTag>[]>;
     /**
-     * 工作区 BasicAuth 用户名。
+     * Workspace BasicAuth username
      */
     username?: pulumi.Input<string>;
 }

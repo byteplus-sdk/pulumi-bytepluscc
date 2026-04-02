@@ -27,11 +27,11 @@ class AccountArgs:
                  description: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Account resource.
-        :param pulumi.Input[builtins.str] account_name: 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] password: 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!@#$%^&*-+=_|{}[];<>,.?
-        :param pulumi.Input[builtins.str] role_name: 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
-        :param pulumi.Input[builtins.str] description: 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+        :param pulumi.Input[builtins.str] account_name: Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] password: Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!@#$%^&*-+=_|{}[];<>,.?
+        :param pulumi.Input[builtins.str] role_name: Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role's ACL rules, see ACL syntax.
+        :param pulumi.Input[builtins.str] description: Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
         """
         pulumi.set(__self__, "account_name", account_name)
         pulumi.set(__self__, "instance_id", instance_id)
@@ -44,7 +44,7 @@ class AccountArgs:
     @pulumi.getter(name="accountName")
     def account_name(self) -> pulumi.Input[builtins.str]:
         """
-        账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
+        Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
         """
         return pulumi.get(self, "account_name")
 
@@ -56,7 +56,7 @@ class AccountArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -68,7 +68,7 @@ class AccountArgs:
     @pulumi.getter
     def password(self) -> pulumi.Input[builtins.str]:
         """
-        账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!@#$%^&*-+=_|{}[];<>,.?
+        Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!@#$%^&*-+=_|{}[];<>,.?
         """
         return pulumi.get(self, "password")
 
@@ -80,7 +80,7 @@ class AccountArgs:
     @pulumi.getter(name="roleName")
     def role_name(self) -> pulumi.Input[builtins.str]:
         """
-        账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+        Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role's ACL rules, see ACL syntax.
         """
         return pulumi.get(self, "role_name")
 
@@ -92,7 +92,7 @@ class AccountArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+        Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
         """
         return pulumi.get(self, "description")
 
@@ -112,12 +112,12 @@ class _AccountState:
                  role_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Account resources.
-        :param pulumi.Input[builtins.str] account_name: 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
-        :param pulumi.Input[builtins.str] account_status: 账号状态。取值范围如下：Available：可用。Unavailable：不可用。
-        :param pulumi.Input[builtins.str] description: 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] password: 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!@#$%^&*-+=_|{}[];<>,.?
-        :param pulumi.Input[builtins.str] role_name: 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+        :param pulumi.Input[builtins.str] account_name: Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
+        :param pulumi.Input[builtins.str] account_status: Account status. The value range is as follows: Available: Available. Unavailable: Unavailable.
+        :param pulumi.Input[builtins.str] description: Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] password: Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!@#$%^&*-+=_|{}[];<>,.?
+        :param pulumi.Input[builtins.str] role_name: Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role's ACL rules, see ACL syntax.
         """
         if account_name is not None:
             pulumi.set(__self__, "account_name", account_name)
@@ -136,7 +136,7 @@ class _AccountState:
     @pulumi.getter(name="accountName")
     def account_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
+        Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
         """
         return pulumi.get(self, "account_name")
 
@@ -148,7 +148,7 @@ class _AccountState:
     @pulumi.getter(name="accountStatus")
     def account_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号状态。取值范围如下：Available：可用。Unavailable：不可用。
+        Account status. The value range is as follows: Available: Available. Unavailable: Unavailable.
         """
         return pulumi.get(self, "account_status")
 
@@ -160,7 +160,7 @@ class _AccountState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+        Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
         """
         return pulumi.get(self, "description")
 
@@ -172,7 +172,7 @@ class _AccountState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -184,7 +184,7 @@ class _AccountState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!@#$%^&*-+=_|{}[];<>,.?
+        Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!@#$%^&*-+=_|{}[];<>,.?
         """
         return pulumi.get(self, "password")
 
@@ -196,7 +196,7 @@ class _AccountState:
     @pulumi.getter(name="roleName")
     def role_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+        Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role's ACL rules, see ACL syntax.
         """
         return pulumi.get(self, "role_name")
 
@@ -218,7 +218,7 @@ class Account(pulumi.CustomResource):
                  role_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        缓存数据库 Redis 版支持创建多个账号，您可以在创建账号时选择不同的角色，不同的角色支持的权限不同，帮助您实现数据库的精细化管理，提升数据安全性。
+        Redis Cache Database supports creating multiple accounts. You can select different roles when creating an account. Each role grants different permissions, helping you manage the database with greater precision and enhance data security.
 
         ## Example Usage
 
@@ -242,11 +242,11 @@ class Account(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_name: 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
-        :param pulumi.Input[builtins.str] description: 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] password: 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!@#$%^&*-+=_|{}[];<>,.?
-        :param pulumi.Input[builtins.str] role_name: 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+        :param pulumi.Input[builtins.str] account_name: Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
+        :param pulumi.Input[builtins.str] description: Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] password: Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!@#$%^&*-+=_|{}[];<>,.?
+        :param pulumi.Input[builtins.str] role_name: Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role's ACL rules, see ACL syntax.
         """
         ...
     @overload
@@ -255,7 +255,7 @@ class Account(pulumi.CustomResource):
                  args: AccountArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        缓存数据库 Redis 版支持创建多个账号，您可以在创建账号时选择不同的角色，不同的角色支持的权限不同，帮助您实现数据库的精细化管理，提升数据安全性。
+        Redis Cache Database supports creating multiple accounts. You can select different roles when creating an account. Each role grants different permissions, helping you manage the database with greater precision and enhance data security.
 
         ## Example Usage
 
@@ -343,12 +343,12 @@ class Account(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_name: 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
-        :param pulumi.Input[builtins.str] account_status: 账号状态。取值范围如下：Available：可用。Unavailable：不可用。
-        :param pulumi.Input[builtins.str] description: 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] password: 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!@#$%^&*-+=_|{}[];<>,.?
-        :param pulumi.Input[builtins.str] role_name: 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+        :param pulumi.Input[builtins.str] account_name: Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
+        :param pulumi.Input[builtins.str] account_status: Account status. The value range is as follows: Available: Available. Unavailable: Unavailable.
+        :param pulumi.Input[builtins.str] description: Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] password: Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!@#$%^&*-+=_|{}[];<>,.?
+        :param pulumi.Input[builtins.str] role_name: Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role's ACL rules, see ACL syntax.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -366,7 +366,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="accountName")
     def account_name(self) -> pulumi.Output[builtins.str]:
         """
-        账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
+        Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
         """
         return pulumi.get(self, "account_name")
 
@@ -374,7 +374,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="accountStatus")
     def account_status(self) -> pulumi.Output[builtins.str]:
         """
-        账号状态。取值范围如下：Available：可用。Unavailable：不可用。
+        Account status. The value range is as follows: Available: Available. Unavailable: Unavailable.
         """
         return pulumi.get(self, "account_status")
 
@@ -382,7 +382,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+        Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
         """
         return pulumi.get(self, "description")
 
@@ -390,7 +390,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -398,7 +398,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output[builtins.str]:
         """
-        账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!@#$%^&*-+=_|{}[];<>,.?
+        Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!@#$%^&*-+=_|{}[];<>,.?
         """
         return pulumi.get(self, "password")
 
@@ -406,7 +406,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="roleName")
     def role_name(self) -> pulumi.Output[builtins.str]:
         """
-        账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+        Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role's ACL rules, see ACL syntax.
         """
         return pulumi.get(self, "role_name")
 

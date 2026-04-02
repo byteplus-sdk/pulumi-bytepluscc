@@ -33,209 +33,209 @@ export interface ProviderEndpoints {
 export namespace alb {
     export interface AclAclEntry {
         /**
-         * IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+         * Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
          */
         description?: pulumi.Input<string>;
         /**
-         * IP条目的地址段，只支持CIDR地址。
+         * IP entry address range; only CIDR addresses are supported
          */
         entry?: pulumi.Input<string>;
     }
 
     export interface AclListener {
         /**
-         * 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+         * Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
          */
         aclType?: pulumi.Input<string>;
     }
 
     export interface AclTag {
         /**
-         * 用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+         * User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+         * User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
          */
         value?: pulumi.Input<string>;
     }
 
     export interface CertificateTag {
         /**
-         * 用户标签的标签键。
+         * User tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface CustomizedCfgListener {
         /**
-         * 监听器的 ID。
+         * Listener ID.
          */
         listenerId?: pulumi.Input<string>;
         /**
-         * 监听器的名称。
+         * Listener name.
          */
         listenerName?: pulumi.Input<string>;
         /**
-         * 监听器的端口。
+         * Listener port.
          */
         port?: pulumi.Input<number>;
         /**
-         * 监听器的协议。
+         * Listener protocol.
          */
         protocol?: pulumi.Input<string>;
     }
 
     export interface CustomizedCfgTag {
         /**
-         * 用户标签的标签键。
+         * User tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface HealthCheckTemplateTag {
         /**
-         * 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+         * Tag key for user tags. Rules: Length must be 1–128 characters. Case-sensitive. Cannot start with any case combination of sys:. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+         * Tag value for the user tag. If you specify this parameter, you must first specify Tags.N.Key. Rules: Length must be between 0 and 256 characters. Case-sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface ListenerDomainExtension {
         /**
-         * 域名使用的服务器证书 ID 。当证书来源为 certCenter 时生效。
+         * Server certificate ID used by the domain. Effective when the certificate source is cert_center.
          */
         certCenterCertificateId?: pulumi.Input<string>;
         /**
-         * 域名使用的服务器证书 ID。当证书来源为 alb 时生效。
+         * Server certificate ID used by the domain. Effective when the certificate source is alb.
          */
         certificateId?: pulumi.Input<string>;
         /**
-         * 域名使用的服务器证书的来源，取值：alb：表示通过 ALB 上传的证书。cert_center：表示通过火山引擎证书中心购买或上传的 SSL 证书。
+         * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
          */
         certificateSource?: pulumi.Input<string>;
         /**
-         * 域名。通常不能为空，若实例支持自动选择扩展证书，即SniAutoMatch为on，则Domain需传入空字符串。需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含小写字、字、‘.’、‘-‘、‘*’。长度限制为1 ～ 128个字符。泛域名：使用“*”代替1个或多个字符。“*”必须在域名开头或结尾。同一条域名中“*”不能出现两次。“*”前后不能有除了.以外的字符。精确域名：符合域名规范的精确域名。同一HTTPS监听器下的域名不能重复。匹配域名时，对域名的大小写不敏感。
+         * Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
          */
         domain?: pulumi.Input<string>;
         /**
-         * HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pcaLeaf 时必传。
+         * Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
          */
         pcaLeafCertificateId?: pulumi.Input<string>;
         /**
-         * 若实例支持自动选择扩展证书，即SniAutoMatch为on时，则Domain是空字符串。San为证书的扩展域名，用英文,分隔多个域名。
+         * If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
          */
         san?: pulumi.Input<string>;
     }
 
     export interface ListenerServerGroup {
         /**
-         * 服务器组 ID 。
+         * Server group ID.
          */
         serverGroupId?: pulumi.Input<string>;
         /**
-         * 服务器组名称。
+         * Server group name.
          */
         serverGroupName?: pulumi.Input<string>;
     }
 
     export interface ListenerTag {
         /**
-         * 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以volc:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+         * Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+         * The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface LoadBalancerEipBillingConfig {
         /**
-         * EIP的带宽峰值，单位为Mbps。
+         * Peak bandwidth of EIP, in Mbps.
          */
         bandwidth?: pulumi.Input<number>;
         /**
-         * EIP的计费方式，2为按带宽计费，3为按流量计费。
+         * EIP billing method: 2 for bandwidth-based, 3 for traffic-based.
          */
         billingType?: pulumi.Input<number>;
         /**
-         * 公网IP的线路类型，BGP表示多线。
+         * Line type of the public IP, BGP indicates multi-line.
          */
         isp?: pulumi.Input<string>;
         /**
-         * 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+         * When creating an ALB public instance, if IP protection resources are used, you must specify a DDoS native protection instance ID.
          */
         securityProtectionInstanceId?: pulumi.Input<number>;
         /**
-         * 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+         * When creating a public ALB instance, ALB allows you to purchase multiple public IP protection resources. The rules for public IP protection resources are as follows: separate multiple protection resources with a comma (,). The values for protection resources are: AntiDDoS_Enhanced: You are requesting an enhanced protection type public IP, which can be added to a native DDoS protection instance. If not specified: You are requesting a basic protection type public IP.
          */
         securityProtectionTypes?: pulumi.Input<string>;
     }
 
     export interface LoadBalancerGlobalAccelerator {
         /**
-         * 绑定的全球加速实例的ID。
+         * ID of the bound Global Accelerator instance.
          */
         acceleratorId?: pulumi.Input<string>;
         /**
-         * 绑定的全球加速监听器的ID。
+         * ID of the bound Global Accelerator listener.
          */
         acceleratorListenerId?: pulumi.Input<string>;
         /**
-         * 绑定的终端节点组的ID。
+         * ID of the bound endpoint group.
          */
         endpointGroupId?: pulumi.Input<string>;
         /**
-         * 后端服务器的权重，决定流量分发比例。
+         * Weight of the backend server, determines traffic distribution ratio.
          */
         weight?: pulumi.Input<number>;
     }
 
     export interface LoadBalancerIpv6EipBillingConfig {
         /**
-         * IPv6 EIP的带宽峰值，单位为Mbps。
+         * Peak bandwidth of IPv6 EIP, in Mbps.
          */
         bandwidth?: pulumi.Input<number>;
         /**
-         * IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+         * Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
          */
         billingType?: pulumi.Input<number>;
         /**
-         * IPv6公网IP的线路类型，BGP表示多线。
+         * Line type of IPv6 public IP; BGP indicates multi-line.
          */
         isp?: pulumi.Input<string>;
     }
 
     export interface LoadBalancerTag {
         /**
-         * 标签的键，用于标识标签的类别。
+         * Tag key, used to identify the tag category.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签的值，用于标识具体的标签内容。
+         * Tag value used to identify the specific tag content.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface LoadBalancerZoneMapping {
         /**
-         * 可用区内提供服务的子网ID。
+         * Subnet ID providing services within the availability zone.
          */
         subnetId?: pulumi.Input<string>;
         /**
-         * 可用区的唯一标识符。
+         * Unique identifier of the availability zone.
          */
         zoneId?: pulumi.Input<string>;
     }
@@ -243,52 +243,52 @@ export namespace alb {
     export interface RuleForwardGroupConfig {
         serverGroupTuples?: pulumi.Input<pulumi.Input<inputs.alb.RuleForwardGroupConfigServerGroupTuple>[]>;
         /**
-         * 是否开启组间会话保持。on：开启。off：不开启。
+         * Whether to enable inter-group session persistence. on: enabled. off: disabled.
          */
         stickySessionEnabled?: pulumi.Input<string>;
         /**
-         * 组件回话保持的超时时间。单位：秒。
+         * Component session stickiness timeout. Unit: seconds.
          */
         stickySessionTimeout?: pulumi.Input<number>;
     }
 
     export interface RuleForwardGroupConfigServerGroupTuple {
         /**
-         * 转发到的目的服务器组 ID。
+         * Destination server group ID.
          */
         serverGroupId?: pulumi.Input<string>;
         /**
-         * 服务器组权重。
+         * Server group weight.
          */
         weight?: pulumi.Input<number>;
     }
 
     export interface RuleRedirectConfig {
         /**
-         * 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+         * Redirect domain name. If the redirect domain name is left empty when creating or modifying a redirect forwarding rule, the API returns ${host}, which means the redirect domain matches the request domain. However, setting the redirect domain to ${host} is not supported when creating or modifying rules.
          */
         redirectDomain?: pulumi.Input<string>;
         /**
-         * 重定向状态码。301、302、307、308。
+         * Redirect status codes: 301, 302, 307, 308.
          */
         redirectHttpCode?: pulumi.Input<string>;
         /**
-         * 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+         * Redirect port. If the redirect port is left empty when creating or modifying a redirect forwarding rule, the API returns ${port}, which means the redirect port matches the request port (listener port). However, setting the redirect port to ${port} is not supported when creating or modifying rules.
          */
         redirectPort?: pulumi.Input<string>;
         /**
-         * 重定向使用的协议。HTTP、HTTPS。
+         * Protocol used for redirect. HTTP, HTTPS.
          */
         redirectProtocol?: pulumi.Input<string>;
         /**
-         * 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+         * Redirect URI. If the redirect URI is left empty when creating or modifying a redirect forwarding rule, the API returns ${request*uri}, which means the redirect URI matches the request URI. However, setting the redirect URI to ${request*uri} is not supported when creating or modifying rules.
          */
         redirectUri?: pulumi.Input<string>;
     }
 
     export interface RuleRewriteConfig {
         /**
-         * 重写路径。
+         * Rewrite path.
          */
         rewritePath?: pulumi.Input<string>;
     }
@@ -315,22 +315,22 @@ export namespace alb {
          */
         trafficLimitConfig?: pulumi.Input<inputs.alb.RuleRuleActionTrafficLimitConfig>;
         /**
-         * 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+         * Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface RuleRuleActionFixedResponseConfig {
         /**
-         * 返回的固定内容。
+         * Fixed response content.
          */
         content?: pulumi.Input<string>;
         /**
-         * 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+         * Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
          */
         contentType?: pulumi.Input<string>;
         /**
-         * 返回的 HTTP 状态码。
+         * Returned HTTP status code.
          */
         httpCode?: pulumi.Input<string>;
     }
@@ -345,59 +345,59 @@ export namespace alb {
 
     export interface RuleRuleActionForwardGroupConfigServerGroupStickySession {
         /**
-         * 是否开启组间会话保持。on：开启。off：不开启。
+         * Whether to enable inter-group session persistence. on: enabled. off: disabled.
          */
         enabled?: pulumi.Input<string>;
         /**
-         * 组件回话保持的超时时间。单位：秒。
+         * Component session stickiness timeout. Unit: seconds.
          */
         timeout?: pulumi.Input<number>;
     }
 
     export interface RuleRuleActionForwardGroupConfigServerGroupTuple {
         /**
-         * 转发到的目的服务器组 ID。
+         * Destination server group ID.
          */
         serverGroupId?: pulumi.Input<string>;
         /**
-         * 服务器组权重。
+         * Server group weight.
          */
         weight?: pulumi.Input<number>;
     }
 
     export interface RuleRuleActionRedirectConfig {
         /**
-         * 重定向域名，仅支持精确域名。
+         * Redirect domain. Only exact domains are supported.
          */
         host?: pulumi.Input<string>;
         /**
-         * 重定向状态码，支持301，302，307，308。
+         * Redirect status codes supported: 301, 302, 307, 308.
          */
         httpCode?: pulumi.Input<string>;
         /**
-         * 重定向 URI。。
+         * Redirect URI..
          */
         path?: pulumi.Input<string>;
         /**
-         * 重定向端口。
+         * Redirect port.
          */
         port?: pulumi.Input<string>;
         /**
-         * 重定向使用的协议，支持HTTP，HTTPS。
+         * Protocol used for redirect. Supports HTTP and HTTPS.
          */
         protocol?: pulumi.Input<string>;
     }
 
     export interface RuleRuleActionRewriteConfig {
         /**
-         * 重写路径。
+         * Rewrite path.
          */
         path?: pulumi.Input<string>;
     }
 
     export interface RuleRuleActionTrafficLimitConfig {
         /**
-         * 每秒请求数。
+         * Requests per second.
          */
         qps?: pulumi.Input<number>;
     }
@@ -424,39 +424,39 @@ export namespace alb {
          */
         queryStringConfig?: pulumi.Input<inputs.alb.RuleRuleConditionQueryStringConfig>;
         /**
-         * 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+         * Standard forwarding rule condition types. Host: domain name. Path: path. Header: HTTP header field. Method: request method. QueryString: query parameter.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface RuleRuleConditionHeaderConfig {
         /**
-         * 头字段键。
+         * Header field key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 头字段值。
+         * Header field value.
          */
         values?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface RuleRuleConditionHostConfig {
         /**
-         * 转发规则的域名，支持泛域名和精确域名。
+         * Domain name of the forwarding rule. Supports wildcard and exact domains.
          */
         values?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface RuleRuleConditionMethodConfig {
         /**
-         * 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+         * Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
          */
         values?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface RuleRuleConditionPathConfig {
         /**
-         * 转发规则的URL，仅支持绝对路径。
+         * Forwarding rule URL. Only absolute paths are supported.
          */
         values?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -467,134 +467,134 @@ export namespace alb {
 
     export interface RuleRuleConditionQueryStringConfigValue {
         /**
-         * 查询字符串键。
+         * Query string key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 查询字符串值。
+         * Query string value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface ServerGroupHealthCheck {
         /**
-         * 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+         * Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
          */
         domain?: pulumi.Input<string>;
         /**
-         * 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+         * Whether the listener enables health check. Values: on: enabled (default), off: disabled.
          */
         enabled?: pulumi.Input<string>;
         /**
-         * 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+         * Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
          */
         healthyThreshold?: pulumi.Input<number>;
         /**
-         * 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+         * HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
          */
         httpCode?: pulumi.Input<string>;
         /**
-         * 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+         * Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
          */
         httpVersion?: pulumi.Input<string>;
         /**
-         * 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+         * After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
          */
         interval?: pulumi.Input<number>;
         /**
-         * 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+         * Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
          */
         method?: pulumi.Input<string>;
         /**
-         * 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+         * Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
          */
         port?: pulumi.Input<number>;
         /**
-         * 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+         * Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
          */
         protocol?: pulumi.Input<string>;
         /**
-         * 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+         * Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
          */
         timeout?: pulumi.Input<number>;
         /**
-         * 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+         * Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
          */
         unhealthyThreshold?: pulumi.Input<number>;
         /**
-         * 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+         * Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
          */
         uri?: pulumi.Input<string>;
     }
 
     export interface ServerGroupListener {
         /**
-         * 监听器的ID。
+         * Listener ID.
          */
         listenerId?: pulumi.Input<string>;
     }
 
     export interface ServerGroupServer {
         /**
-         * 后端服务器的描述。
+         * Description of the backend server.
          */
         description?: pulumi.Input<string>;
         /**
-         * 云服务器实例或网卡的ID。
+         * ID of the cloud server instance or network interface card.
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 后端服务器的私网IP地址。
+         * Private IP address of the backend server.
          */
         ip?: pulumi.Input<string>;
         /**
-         * 后端服务器接收请求的端口号。
+         * Port number on which the backend server receives requests.
          */
         port?: pulumi.Input<number>;
         /**
-         * 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+         * Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
          */
         remoteEnabled?: pulumi.Input<string>;
         /**
-         * 后端服务器ID。
+         * Backend server ID.
          */
         serverId?: pulumi.Input<string>;
         /**
-         * 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+         * Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
          */
         type?: pulumi.Input<string>;
         /**
-         * 后端服务器的权重。
+         * Weight of the backend server.
          */
         weight?: pulumi.Input<number>;
     }
 
     export interface ServerGroupStickySessionConfig {
         /**
-         * 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+         * Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
          */
         cookie?: pulumi.Input<string>;
         /**
-         * 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+         * Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
          */
         cookieTimeout?: pulumi.Input<number>;
         /**
-         * 是否开启会话保持功能。on：开启；off（默认值）：关闭。
+         * Enable session persistence. on: Enable; off (default): Disable.
          */
         stickySessionEnabled?: pulumi.Input<string>;
         /**
-         * 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+         * Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
          */
         stickySessionType?: pulumi.Input<string>;
     }
 
     export interface ServerGroupTag {
         /**
-         * 标签的标签键。同一资源的标签键不允许重复。
+         * Tag key. Tag keys for the same resource must be unique.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签的标签值。
+         * Tag value of the tag.
          */
         value?: pulumi.Input<string>;
     }
@@ -603,7 +603,7 @@ export namespace alb {
 export namespace apig {
     export interface GatewayBackendSpec {
         /**
-         * 是否支持VKE Flannel CNI。
+         * Whether VKE Flannel CNI is supported
          */
         isVkeWithFlannelCniSupported?: pulumi.Input<boolean>;
         /**
@@ -620,78 +620,78 @@ export namespace apig {
 
     export interface GatewayCustomLogCustomVariable {
         /**
-         * 字段别名。
+         * Field alias
          */
         aliasesInLog?: pulumi.Input<string>;
         /**
-         * 请求头键。
+         * Request header key
          */
         key?: pulumi.Input<string>;
     }
 
     export interface GatewayCustomLogRequestHeader {
         /**
-         * 字段别名。
+         * Field alias
          */
         aliasesInLog?: pulumi.Input<string>;
         /**
-         * 请求头键。
+         * Request header key
          */
         key?: pulumi.Input<string>;
     }
 
     export interface GatewayCustomLogResponseHeader {
         /**
-         * 字段别名。
+         * Field alias
          */
         aliasesInLog?: pulumi.Input<string>;
         /**
-         * 请求头键。
+         * Request header key
          */
         key?: pulumi.Input<string>;
     }
 
     export interface GatewayEvent {
         /**
-         * 事件代码。
+         * Event code
          */
         code?: pulumi.Input<string>;
         /**
-         * 事件创建时间。
+         * Event creation time
          */
         createdTime?: pulumi.Input<string>;
         /**
-         * 附带信息。
+         * Additional information
          */
         data?: pulumi.Input<string>;
         /**
-         * 事件描述。
+         * Event description
          */
         description?: pulumi.Input<string>;
     }
 
     export interface GatewayLogSpec {
         /**
-         * 是否开启日志服务。
+         * Whether to enable log service
          */
         enable?: pulumi.Input<boolean>;
         /**
-         * 日志项目ID。
+         * Log project ID
          */
         projectId?: pulumi.Input<string>;
         /**
-         * 日志主题ID。ProjectId 指定项目里面的日志主题。
+         * Log topic ID. ProjectId specifies the log topic within the project
          */
         topicId?: pulumi.Input<string>;
     }
 
     export interface GatewayMonitorSpec {
         /**
-         * 托管Prometheus（VMP）服务。
+         * Managed Prometheus (VMP) service
          */
         enable?: pulumi.Input<boolean>;
         /**
-         * Prometheus工作区ID。
+         * Prometheus workspace ID
          */
         workspaceId?: pulumi.Input<string>;
     }
@@ -703,67 +703,67 @@ export namespace apig {
          */
         vpcId?: pulumi.Input<string>;
         /**
-         * VPC名称。
+         * VPC name
          */
         vpcName?: pulumi.Input<string>;
     }
 
     export interface GatewayNetworkSpecSubnet {
         /**
-         * 可用区。
+         * Availability zone
          */
         az?: pulumi.Input<string>;
         /**
-         * 子网ID。
+         * Subnet ID
          */
         subnetId?: pulumi.Input<string>;
         /**
-         * 子网名称。
+         * Subnet name
          */
         subnetName?: pulumi.Input<string>;
     }
 
     export interface GatewayResourceSpec {
         /**
-         * CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+         * CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
          */
         clbSpecCode?: pulumi.Input<string>;
         /**
-         * 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+         * Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
          */
         instanceSpecCode?: pulumi.Input<string>;
         /**
-         * 网络类型。默认值为开启公网，开启私网。
+         * Network type. Default value: enable public network, enable private network
          */
         networkType?: pulumi.Input<inputs.apig.GatewayResourceSpecNetworkType>;
         /**
-         * 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+         * Public network bandwidth limit. This field is only used for the 'bandwidth limit billing' public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
          */
         publicNetworkBandwidth?: pulumi.Input<number>;
         /**
-         * 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+         * Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
          */
         publicNetworkBillingType?: pulumi.Input<string>;
         /**
-         * 节点数量。取值限制为2~100。
+         * Node count. Value range: 2–100
          */
         replicas?: pulumi.Input<number>;
     }
 
     export interface GatewayResourceSpecNetworkType {
         /**
-         * 是否启用私网。
+         * Whether to enable private network
          */
         enablePrivateNetwork?: pulumi.Input<boolean>;
         /**
-         * 是否启用公网。
+         * Whether to enable public network
          */
         enablePublicNetwork?: pulumi.Input<boolean>;
     }
 
     export interface GatewayServiceAuthSpec {
         /**
-         * 是否开启认证。
+         * Whether authentication is enabled.
          */
         enable?: pulumi.Input<boolean>;
     }
@@ -773,52 +773,52 @@ export namespace apig {
 
     export interface GatewayServiceDomain {
         /**
-         * 域名。
+         * Domain.
          */
         domain?: pulumi.Input<string>;
         /**
-         * 域名类型。取值：public：公网。private：私网。
+         * Domain type. Options: public: Public network. private: Private network.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface GatewayServiceDomainSpec {
         /**
-         * 开启私网域名公网解析。
+         * Enable public resolution for private network domains.
          */
         enablePublicResolution?: pulumi.Input<boolean>;
     }
 
     export interface GatewayServiceServiceNetworkSpec {
         /**
-         * 开启私网。
+         * Enable private network.
          */
         enablePrivateNetwork?: pulumi.Input<boolean>;
         /**
-         * 开启公网。
+         * Enable public network.
          */
         enablePublicNetwork?: pulumi.Input<boolean>;
         /**
-         * 私网域名解析的目标IP。
+         * Target IP for private network domain resolution.
          */
         privateNetworkIps?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GatewayTraceSpec {
         /**
-         * 应用性能监控全链路版链路追踪配置。
+         * Application performance monitoring full-link trace configuration
          */
         apmTraceSpec?: pulumi.Input<inputs.apig.GatewayTraceSpecApmTraceSpec>;
         /**
-         * 是否启用链路追踪。
+         * Whether to enable trace
          */
         enable?: pulumi.Input<boolean>;
         /**
-         * 链路追踪配置信息。
+         * Link tracing configuration information.
          */
         tlsTraceSpec?: pulumi.Input<inputs.apig.GatewayTraceSpecTlsTraceSpec>;
         /**
-         * 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+         * Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
          */
         traceType?: pulumi.Input<string>;
     }
@@ -840,7 +840,7 @@ export namespace apig {
          */
         iamUserSk?: pulumi.Input<string>;
         /**
-         * 日志项目ID。
+         * Log project ID
          */
         projectId?: pulumi.Input<string>;
         /**
@@ -851,91 +851,91 @@ export namespace apig {
 
     export interface UpstreamBackendTarget {
         /**
-         * 健康检查状态。
+         * Health Check Status
          */
         healthStatus?: pulumi.Input<string>;
         /**
-         * 后端节点IP。
+         * Backend node IP
          */
         ip?: pulumi.Input<string>;
         /**
-         * 后端节点端口。
+         * Backend node port
          */
         port?: pulumi.Input<number>;
     }
 
     export interface UpstreamCircuitBreakingSettings {
         /**
-         * 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+         * Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
          */
         baseEjectionTime?: pulumi.Input<number>;
         /**
-         * 连续失败次数。取值限制为1~100。默认值为5。
+         * Consecutive failure count. Value range: 1~100. Default: 5
          */
         consecutiveErrors?: pulumi.Input<number>;
         /**
-         * 开启。
+         * Enable
          */
         enable?: pulumi.Input<boolean>;
         /**
-         * 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+         * Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
          */
         interval?: pulumi.Input<number>;
         /**
-         * 最大熔断比例。取值限制为1~100。默认值为20%。
+         * Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
          */
         maxEjectionPercent?: pulumi.Input<number>;
         /**
-         * 最小健康比例。取值限制为0~100。默认值为60%。
+         * Minimum health ratio. Value range: 0~100. Default: 60%
          */
         minHealthPercent?: pulumi.Input<number>;
     }
 
     export interface UpstreamConnectionPoolSettings {
         /**
-         * 开启。
+         * Enable
          */
         enable?: pulumi.Input<boolean>;
         /**
-         * HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+         * Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
          */
         http1MaxPendingRequests?: pulumi.Input<number>;
         /**
-         * 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+         * Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
          */
         idleTimeout?: pulumi.Input<number>;
         /**
-         * TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+         * Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
          */
         maxConnections?: pulumi.Input<number>;
     }
 
     export interface UpstreamLoadBalancerSettings {
         /**
-         * 一致性哈希负载均衡。
+         * Consistent Hash Load Balancing
          */
         consistentHashLb?: pulumi.Input<inputs.apig.UpstreamLoadBalancerSettingsConsistentHashLb>;
         /**
-         * 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+         * Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
          */
         lbPolicy?: pulumi.Input<string>;
         /**
-         * 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+         * Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
          */
         simpleLb?: pulumi.Input<string>;
         /**
-         * 预热时间。单位为秒。
+         * Warm-up time (seconds)
          */
         warmupDuration?: pulumi.Input<number>;
     }
 
     export interface UpstreamLoadBalancerSettingsConsistentHashLb {
         /**
-         * 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+         * Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
          */
         hashBalanceFactor?: pulumi.Input<number>;
         /**
-         * 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+         * Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
          */
         hashKey?: pulumi.Input<string>;
         /**
@@ -943,90 +943,90 @@ export namespace apig {
          */
         httpCookie?: pulumi.Input<inputs.apig.UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie>;
         /**
-         * 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+         * Parameter. Supports printable ASCII characters, length: 1–256 characters
          */
         httpHeaderName?: pulumi.Input<string>;
         /**
-         * 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+         * Parameter. Supports printable ASCII characters, length: 1–256 characters
          */
         httpQueryParameterName?: pulumi.Input<string>;
         /**
-         * 源IP地址。
+         * Source IP address
          */
         useSourceIp?: pulumi.Input<string>;
     }
 
     export interface UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie {
         /**
-         * 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+         * Name. Supports printable ASCII characters. Length: 0~256 characters
          */
         name?: pulumi.Input<string>;
         /**
-         * 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+         * Path. Supports printable ASCII characters. Length: 1~256 characters
          */
         path?: pulumi.Input<string>;
         /**
-         * 有效期。单位为秒。
+         * Validity period, in seconds
          */
         ttl?: pulumi.Input<number>;
     }
 
     export interface UpstreamSourceIngressSettings {
         /**
-         * 是否启用所有Ingress类。
+         * Whether to enable all Ingress classes
          */
         enableAllIngressClasses?: pulumi.Input<boolean>;
         /**
-         * 是否全部命名空间。
+         * Whether all namespaces
          */
         enableAllNamespaces?: pulumi.Input<boolean>;
         /**
-         * 是否开启。
+         * Whether enabled
          */
         enableIngress?: pulumi.Input<boolean>;
         /**
-         * 是否监听IngressClass为空的资源。
+         * Whether to monitor resources with empty IngressClass
          */
         enableIngressWithoutIngressClass?: pulumi.Input<boolean>;
         /**
-         * 指定IngressClass。
+         * Specify IngressClass
          */
         ingressClasses?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+         * Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
          */
         updateStatus?: pulumi.Input<boolean>;
         /**
-         * 指定命名空间。
+         * Specify namespace
          */
         watchNamespaces?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface UpstreamSourceSourceSpec {
         /**
-         * 容器集群来源。
+         * Container cluster source
          */
         k8SSource?: pulumi.Input<inputs.apig.UpstreamSourceSourceSpecK8SSource>;
         /**
-         * 注册中心来源。
+         * Registry source
          */
         nacosSource?: pulumi.Input<inputs.apig.UpstreamSourceSourceSpecNacosSource>;
     }
 
     export interface UpstreamSourceSourceSpecK8SSource {
         /**
-         * 集群ID。
+         * Cluster ID
          */
         clusterId?: pulumi.Input<string>;
         /**
-         * 集群类型。
+         * Cluster type
          */
         clusterType?: pulumi.Input<string>;
     }
 
     export interface UpstreamSourceSourceSpecNacosSource {
         /**
-         * 认证配置。
+         * Authentication configuration
          */
         authConfig?: pulumi.Input<inputs.apig.UpstreamSourceSourceSpecNacosSourceAuthConfig>;
         /**
@@ -1034,94 +1034,94 @@ export namespace apig {
          */
         nacosId?: pulumi.Input<string>;
         /**
-         * Nacos名称。
+         * Nacos name
          */
         nacosName?: pulumi.Input<string>;
     }
 
     export interface UpstreamSourceSourceSpecNacosSourceAuthConfig {
         /**
-         * Basic认证。
+         * Basic authentication
          */
         basic?: pulumi.Input<inputs.apig.UpstreamSourceSourceSpecNacosSourceAuthConfigBasic>;
     }
 
     export interface UpstreamSourceSourceSpecNacosSourceAuthConfigBasic {
         /**
-         * 密码。
+         * Password
          */
         password?: pulumi.Input<string>;
         /**
-         * 用户名。
+         * Username
          */
         username?: pulumi.Input<string>;
     }
 
     export interface UpstreamTlsSettings {
         /**
-         * SNI。留空时会将访问网关的域名透传到upstream。
+         * SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
          */
         sni?: pulumi.Input<string>;
         /**
-         * TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+         * TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
          */
         tlsMode?: pulumi.Input<string>;
     }
 
     export interface UpstreamUpstreamSpec {
         /**
-         * AI模型代理。
+         * AI model proxy
          */
         aiProvider?: pulumi.Input<inputs.apig.UpstreamUpstreamSpecAiProvider>;
         /**
-         * 固定域名。
+         * Fixed domain name
          */
         domain?: pulumi.Input<inputs.apig.UpstreamUpstreamSpecDomain>;
         ecsInstances?: pulumi.Input<pulumi.Input<inputs.apig.UpstreamUpstreamSpecEcsInstance>[]>;
         /**
-         * 容器服务。
+         * Container Service
          */
         k8SService?: pulumi.Input<inputs.apig.UpstreamUpstreamSpecK8SService>;
         /**
-         * 注册中心。
+         * Registry Center
          */
         nacosService?: pulumi.Input<inputs.apig.UpstreamUpstreamSpecNacosService>;
         /**
-         * 函数服务。
+         * Function service
          */
         veFaas?: pulumi.Input<inputs.apig.UpstreamUpstreamSpecVeFaas>;
     }
 
     export interface UpstreamUpstreamSpecAiProvider {
         /**
-         * 模型地址。
+         * Model address
          */
         baseUrl?: pulumi.Input<string>;
         /**
-         * 火山自部署模型服务。
+         * Volcano Engine self-hosted model service
          */
         customModelService?: pulumi.Input<inputs.apig.UpstreamUpstreamSpecAiProviderCustomModelService>;
         /**
-         * 模型服务商名称。
+         * Model Service Provider Name
          */
         name?: pulumi.Input<string>;
         /**
-         * 模型API key。
+         * Model API key
          */
         token?: pulumi.Input<string>;
     }
 
     export interface UpstreamUpstreamSpecAiProviderCustomModelService {
         /**
-         * 模型服务名称。
+         * Model Service Name
          */
         name?: pulumi.Input<string>;
         /**
-         * 命名空间。
+         * Namespace
          */
         namespace?: pulumi.Input<string>;
         /**
-         * 端口。
+         * Port
          */
         port?: pulumi.Input<number>;
     }
@@ -1132,71 +1132,71 @@ export namespace apig {
 
     export interface UpstreamUpstreamSpecDomainDomainList {
         /**
-         * 域名。
+         * Domain name
          */
         domain?: pulumi.Input<string>;
         /**
-         * 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+         * Port. Default: 80 for HTTP, 443 for HTTPS
          */
         port?: pulumi.Input<number>;
     }
 
     export interface UpstreamUpstreamSpecEcsInstance {
         /**
-         * 云服务器ID。
+         * Cloud server ID
          */
         ecsId?: pulumi.Input<string>;
         /**
-         * IP地址。
+         * IP address
          */
         ip?: pulumi.Input<string>;
         /**
-         * 端口。
+         * Port
          */
         port?: pulumi.Input<number>;
     }
 
     export interface UpstreamUpstreamSpecK8SService {
         /**
-         * 容器服务名称。长度限制为2~63个字符。
+         * Container Service Name. Length: 2–63 characters
          */
         name?: pulumi.Input<string>;
         /**
-         * 命名空间。长度限制为2~63个字符。
+         * Namespace. Length: 2~63 characters
          */
         namespace?: pulumi.Input<string>;
         /**
-         * 端口。
+         * Port
          */
         port?: pulumi.Input<number>;
     }
 
     export interface UpstreamUpstreamSpecNacosService {
         /**
-         * 分组。
+         * Group
          */
         group?: pulumi.Input<string>;
         /**
-         * 命名空间。
+         * Namespace
          */
         namespace?: pulumi.Input<string>;
         /**
-         * 命名空间ID。
+         * Namespace ID
          */
         namespaceId?: pulumi.Input<string>;
         /**
-         * 服务。
+         * Service
          */
         service?: pulumi.Input<string>;
         /**
-         * Upstream来源ID。
+         * Upstream source ID
          */
         upstreamSourceId?: pulumi.Input<string>;
     }
 
     export interface UpstreamUpstreamSpecVeFaas {
         /**
-         * 函数ID。
+         * Function ID
          */
         functionId?: pulumi.Input<string>;
     }
@@ -1204,22 +1204,22 @@ export namespace apig {
     export interface UpstreamVersionDetail {
         labels?: pulumi.Input<pulumi.Input<inputs.apig.UpstreamVersionDetailLabel>[]>;
         /**
-         * 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+         * Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
          */
         name?: pulumi.Input<string>;
         /**
-         * 更新时间。
+         * Update time
          */
         updateTime?: pulumi.Input<string>;
     }
 
     export interface UpstreamVersionDetailLabel {
         /**
-         * 键。
+         * Key
          */
         key?: pulumi.Input<string>;
         /**
-         * 值。
+         * Value
          */
         value?: pulumi.Input<string>;
     }
@@ -1228,82 +1228,82 @@ export namespace apig {
 export namespace ark {
     export interface EndpointCertificate {
         /**
-         * X509私有证书过期的时间。使用秒级时间戳表示。
+         * X509 private certificate expiration time, represented as a timestamp in seconds
          */
         notAfter?: pulumi.Input<number>;
         /**
-         * X509私有证书开始生效的时间。使用秒级时间戳表示。
+         * X509 private certificate activation time, represented as a timestamp in seconds
          */
         notBefore?: pulumi.Input<number>;
         /**
-         * 证书方。
+         * Certificate subject
          */
         pcaHost?: pulumi.Input<string>;
         /**
-         * PEM 格式的叶子证书。
+         * PEM format leaf certificate
          */
         pcaInstanceCertificate?: pulumi.Input<string>;
         /**
-         * 证书名称。
+         * Certificate name
          */
         pcaName?: pulumi.Input<string>;
         /**
-         * PEM 格式的根证书。
+         * PEM format root certificate
          */
         pcaRootCaCertificate?: pulumi.Input<string>;
         /**
-         * PEM 格式的中间根证书和根证书。
+         * Intermediate certificate and root certificate in PEM format
          */
         pcaSubCaCertificate?: pulumi.Input<string>;
     }
 
     export interface EndpointModelReference {
         /**
-         * 定制模型的ID。
+         * Custom model ID
          */
         customModelId?: pulumi.Input<string>;
         /**
-         * 基础模型。
+         * Base model
          */
         foundationModel?: pulumi.Input<inputs.ark.EndpointModelReferenceFoundationModel>;
     }
 
     export interface EndpointModelReferenceFoundationModel {
         /**
-         * 基础模型版本。
+         * Base model version
          */
         modelVersion?: pulumi.Input<string>;
         /**
-         * 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+         * Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
          */
         name?: pulumi.Input<string>;
     }
 
     export interface EndpointModeration {
         /**
-         * 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+         * Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
          */
         strategy?: pulumi.Input<string>;
     }
 
     export interface EndpointRateLimit {
         /**
-         * Requests Per Minute，每分钟请求数。
+         * Requests Per Minute, number of requests per minute
          */
         rpm?: pulumi.Input<number>;
         /**
-         * Tokens Per Minute，每分钟请求 token 数。
+         * Tokens Per Minute, number of tokens requested per minute
          */
         tpm?: pulumi.Input<number>;
     }
 
     export interface EndpointTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
@@ -1313,217 +1313,263 @@ export namespace ark {
 export namespace autoscaling {
     export interface ScalingConfigurationEip {
         /**
-         * 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+         * Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
          */
         bandwidth?: pulumi.Input<number>;
         /**
-         * 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+         * ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
          */
         bandwidthPackageId?: pulumi.Input<string>;
         /**
-         * 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+         * Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
          */
         billingType?: pulumi.Input<string>;
         /**
-         * 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+         * Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
          */
         isp?: pulumi.Input<string>;
         /**
-         * 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+         * Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
          */
         releaseWithInstance?: pulumi.Input<boolean>;
     }
 
     export interface ScalingConfigurationInstanceTypeOverride {
         /**
-         * 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+         * Specify the specifications for preemptible instances. Parameter   - N: Indicates the sequence number of the instance specification, value range 1–10. Value   - InstanceType: Specifies the specification for the preemptible instance. Use & to separate multiple specifications.
          */
         instanceType?: pulumi.Input<string>;
         /**
-         * 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+         * Specify the maximum hourly price for preemptible instance types. Parameter   - N: Indicates the instance type sequence number. Value: 1–10. PriceLimit: Specifies the maximum hourly price for the preemptible instance type. Value: Greater than 0, up to three decimal places. Use & to separate multiple prices.
          */
         priceLimit?: pulumi.Input<number>;
     }
 
     export interface ScalingConfigurationTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface ScalingConfigurationVolume {
         /**
-         * 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+         * Whether the cloud disk is released with the instance: true (default): The cloud disk is released with the instance. false: The cloud disk is not released with the instance. When set to false, this does not apply to system disks. System disks are always released with the instance and cannot be retained.
          */
         deleteWithInstance?: pulumi.Input<boolean>;
         /**
-         * 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+         * You can use this parameter to configure the extra performance package IOPS size for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceIOPS specifies the extra performance package IOPS size for the Nth disk: IOPS: 1–50000. Balance: 1–50000.
          */
         extraPerformanceIops?: pulumi.Input<number>;
         /**
-         * 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+         * You can use this parameter to configure the extra performance package throughput size for cloud disks, in MB/s. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceThroughputMB specifies the extra performance package throughput size for the Nth disk: Throughput: 1–650.
          */
         extraPerformanceThroughputMb?: pulumi.Input<number>;
         /**
-         * 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+         * This parameter allows you to purchase extra performance for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. "1" is the system disk; "2" or greater indicates a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceTypeId specifies the extra performance package type for the Nth disk: IOPS: IOPS type, use the ExtraPerformanceIOPS parameter. Balance: Balanced type, use the ExtraPerformanceIOPS parameter. Throughput: Throughput type, use the ExtraPerformanceThroughputMB parameter.
          */
         extraPerformanceTypeId?: pulumi.Input<string>;
         /**
-         * 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
+         * Cloud disk capacity, in GiB. System disk range: 10–500. Data disk range: 10–8192. If using ESSD_FlexPL with additional performance, size must be >= 500 GB
          */
         size?: pulumi.Input<number>;
         /**
-         * 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
+         * Cloud disk types: ESSD*FlexPL: Extreme SSD FlexPL. ESSD*PL0: Extreme SSD PL0.
          */
         volumeType?: pulumi.Input<string>;
     }
 
+    export interface ScalingGroupInstance {
+        /**
+         * Whether to enable managed mode for the instance when AttachInstances is performed
+         */
+        entrusted?: pulumi.Input<boolean>;
+        /**
+         * ECS instance ID, unique identifier of the subresource
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+         */
+        lifecycleHook?: pulumi.Input<boolean>;
+    }
+
+    export interface ScalingGroupInstanceRemovePolicy {
+        /**
+         * Whether to decrease the desired instance count synchronously when DetachInstances or RemoveInstances is performed
+         */
+        decreaseDesiredCapacity?: pulumi.Input<boolean>;
+        /**
+         * Instance removal policy for DetachInstances
+         */
+        detachOption?: pulumi.Input<string>;
+        /**
+         * Whether to force delete the instance when RemoveInstances is performed
+         */
+        forceDelete?: pulumi.Input<boolean>;
+        /**
+         * ECS instance ID, unique identifier of the subresource
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+         */
+        lifecycleHook?: pulumi.Input<boolean>;
+        /**
+         * Mode: How to handle an instance when it is removed from the scaling group: Detach means only remove from the scaling group, Remove means remove and delete the instance
+         */
+        mode?: pulumi.Input<string>;
+        /**
+         * Removal mode for RemoveInstances
+         */
+        removeMode?: pulumi.Input<string>;
+    }
+
     export interface ScalingGroupInstancesDistribution {
         /**
-         * 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+         * Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
          */
         compensateWithOnDemand?: pulumi.Input<boolean>;
         /**
-         * 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+         * Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
          */
         onDemandBaseCapacity?: pulumi.Input<number>;
         /**
-         * 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+         * After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
          */
         onDemandPercentageAboveBaseCapacity?: pulumi.Input<number>;
         /**
-         * 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+         * Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
          */
         spotInstanceRemedy?: pulumi.Input<boolean>;
     }
 
     export interface ScalingGroupLaunchTemplateOverride {
         /**
-         * 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+         * Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
          */
         instanceType?: pulumi.Input<string>;
         /**
-         * 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+         * Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template's billing mode is SpotWithPriceLimit.
          */
         priceLimit?: pulumi.Input<number>;
     }
 
     export interface ScalingGroupServerGroupAttribute {
         /**
-         * 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+         * Port number of the server in the backend server group for load balancing. Range: 1–65535.
          */
         port?: pulumi.Input<number>;
         /**
-         * 负载均衡后端服务器组的ID。
+         * Backend server group ID for load balancing.
          */
         serverGroupId?: pulumi.Input<string>;
         /**
-         * 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+         * Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
          */
         type?: pulumi.Input<string>;
         /**
-         * 负载均衡后端服务器组中服务器的权重。
+         * Weight of servers in the backend server group of the load balancer
          */
         weight?: pulumi.Input<number>;
     }
 
     export interface ScalingGroupTag {
         /**
-         * 用户标签的标签键。
+         * User label tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * The value of the user tag.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface ScalingLifecycleHookLifecycleCommand {
         /**
-         * 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+         * Cloud Assistant command ID, indicates that after the lifecycle hook is triggered, the Cloud Assistant command is executed on the instance. If the command executes successfully, the post-suspend policy is executed according to CONTINUE. If the command fails, times out, or the lifecycle hook times out, the post-suspend policy is executed according to the LifecycleHookPolicy parameter configuration.
          */
         commandId?: pulumi.Input<string>;
         /**
-         * 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+         * Parameters and values in the Cloud Assistant command. The number of parameters ranges from 0 to 60. Note: Parameters cannot be empty strings and can have up to 64 characters. Values can be empty strings. After Base64 encoding, the combined length of parameters and the original command content must not exceed 16 KB. The set of parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
          */
         parameters?: pulumi.Input<string>;
     }
 
     export interface ScalingPolicyAlarmPolicy {
         /**
-         * 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+         * Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
          */
         condition?: pulumi.Input<inputs.autoscaling.ScalingPolicyAlarmPolicyCondition>;
         /**
-         * 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+         * Determination conditions for multi-metric alarms. &&: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
          */
         conditionOperator?: pulumi.Input<string>;
         conditions?: pulumi.Input<pulumi.Input<inputs.autoscaling.ScalingPolicyAlarmPolicyCondition>[]>;
         /**
-         * 报警任务的生效时间段。
+         * The effective period for the alarm task.
          */
         effective?: pulumi.Input<string>;
         /**
-         * 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+         * Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
          */
         evaluationCount?: pulumi.Input<number>;
         /**
-         * 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+         * Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
          */
         ruleType?: pulumi.Input<string>;
     }
 
     export interface ScalingPolicyAlarmPolicyCondition {
         /**
-         * 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+         * Rule expression object for metric alarms. >: Greater than. <: Less than. =: Equal to.
          */
         comparisonOperator?: pulumi.Input<string>;
         /**
-         * 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+         * Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
          */
         metricName?: pulumi.Input<string>;
         /**
-         * 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+         * The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
          */
         metricUnit?: pulumi.Input<string>;
         /**
-         * 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+         * The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
          */
         threshold?: pulumi.Input<string>;
     }
 
     export interface ScalingPolicyScheduledPolicy {
         /**
-         * 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+         * Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
          */
         launchTime?: pulumi.Input<string>;
         /**
-         * 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+         * Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
          */
         launchTimeRead?: pulumi.Input<string>;
         /**
-         * 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         * Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
          */
         recurrenceEndTime?: pulumi.Input<string>;
         /**
-         * 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+         * Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
          */
         recurrenceEndTimeRead?: pulumi.Input<string>;
         /**
-         * 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+         * Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
          */
         recurrenceStartTime?: pulumi.Input<string>;
         /**
-         * 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         * Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
          */
         recurrenceType?: pulumi.Input<string>;
         /**
-         * 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         * Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
          */
         recurrenceValue?: pulumi.Input<string>;
     }
@@ -1532,19 +1578,19 @@ export namespace autoscaling {
 export namespace bmq {
     export interface GroupResetInfo {
         /**
-         * 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+         * This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
          */
         offsetType?: pulumi.Input<string>;
         /**
-         * 分区序号。
+         * Partition number.
          */
         partitionId?: pulumi.Input<number>;
         /**
-         * 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+         * Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
          */
         resetBy?: pulumi.Input<string>;
         /**
-         * 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+         * Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
          */
         resetValue?: pulumi.Input<number>;
         /**
@@ -1555,28 +1601,28 @@ export namespace bmq {
 
     export interface GroupTopicInfo {
         /**
-         * Topic 的创建时间。
+         * Topic creation time.
          */
         createTime?: pulumi.Input<string>;
         /**
-         * Topic 的描述语句。
+         * Topic description.
          */
         description?: pulumi.Input<string>;
         /**
-         * Topic 中未被消费的消息条数。
+         * Number of unconsumed messages in the Topic.
          */
         lag?: pulumi.Input<number>;
         partitionInfos?: pulumi.Input<pulumi.Input<inputs.bmq.GroupTopicInfoPartitionInfo>[]>;
         /**
-         * Topic 分区数。
+         * Number of Topic partitions.
          */
         partitions?: pulumi.Input<number>;
         /**
-         * 数据在 Topic 中的保留时长，单位为小时。
+         * Retention period of data in the Topic, in hours.
          */
         retention?: pulumi.Input<number>;
         /**
-         * Topic 的状态。
+         * Topic status.
          */
         status?: pulumi.Input<string>;
         /**
@@ -1584,131 +1630,131 @@ export namespace bmq {
          */
         topicId?: pulumi.Input<string>;
         /**
-         * Topic 的名称。
+         * Topic name.
          */
         topicName?: pulumi.Input<string>;
     }
 
     export interface GroupTopicInfoPartitionInfo {
         /**
-         * 当前消费位点。
+         * Current consumption position.
          */
         currentOffset?: pulumi.Input<number>;
         /**
-         * Consumer Group 的名称。
+         * Name of the Consumer Group.
          */
         groupName?: pulumi.Input<string>;
         /**
-         * 分区中未被消费的消息条数。
+         * Number of unconsumed messages in the partition.
          */
         lag?: pulumi.Input<number>;
         /**
-         * 最新消费位点。
+         * Latest consumption position.
          */
         latestOffset?: pulumi.Input<number>;
         /**
-         * 分区序号。
+         * Partition number.
          */
         partitionId?: pulumi.Input<number>;
         /**
-         * Consumer Group 订阅的 Topic 名称。
+         * Name of the Topic subscribed by the Consumer Group.
          */
         topicName?: pulumi.Input<string>;
     }
 
     export interface InstanceEndpoints {
         /**
-         * 实例私网访问接入点响应数据。
+         * Instance private network access endpoint response data
          */
         overlay?: pulumi.Input<inputs.bmq.InstanceEndpointsOverlay>;
         /**
-         * 实例公网访问接入点响应数据。
+         * Instance public access endpoint response data
          */
         public?: pulumi.Input<inputs.bmq.InstanceEndpointsPublic>;
     }
 
     export interface InstanceEndpointsOverlay {
         /**
-         * 域名映射地址。
+         * Domain mapping address
          */
         address?: pulumi.Input<string>;
         /**
-         * 实例绑定的EIP的ID。
+         * ID of the EIP bound to the instance
          */
         eipId?: pulumi.Input<string>;
         /**
-         * 私网Plain接入点。
+         * Private network Plain endpoint
          */
         plain?: pulumi.Input<string>;
         /**
-         * 普通接入点端口。
+         * Standard endpoint port
          */
         plainPort?: pulumi.Input<number>;
         /**
-         * 私网SASL认证接入点。
+         * Private network SASL authentication endpoint
          */
         sasl?: pulumi.Input<string>;
         /**
-         * 认证接入点端口。
+         * Authentication endpoint port
          */
         saslPort?: pulumi.Input<number>;
         /**
-         * 加密接入点。
+         * Encrypted endpoint
          */
         ssl?: pulumi.Input<string>;
         /**
-         * 加密接入点端口。
+         * Encrypted endpoint port
          */
         sslPort?: pulumi.Input<number>;
         /**
-         * 接入点状态。
+         * Endpoint status
          */
         status?: pulumi.Input<string>;
         /**
-         * 售卖区网络关联的VPC ID列表。
+         * List of VPC IDs associated with the sales zone network
          */
         vpcIds?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface InstanceEndpointsPublic {
         /**
-         * 域名映射地址。
+         * Domain mapping address
          */
         address?: pulumi.Input<string>;
         /**
-         * 实例绑定的EIP的ID。
+         * ID of the EIP bound to the instance
          */
         eipId?: pulumi.Input<string>;
         /**
-         * 私网Plain接入点。
+         * Private network Plain endpoint
          */
         plain?: pulumi.Input<string>;
         /**
-         * 普通接入点端口。
+         * Standard endpoint port
          */
         plainPort?: pulumi.Input<number>;
         /**
-         * 私网SASL认证接入点。
+         * Private network SASL authentication endpoint
          */
         sasl?: pulumi.Input<string>;
         /**
-         * 认证接入点端口。
+         * Authentication endpoint port
          */
         saslPort?: pulumi.Input<number>;
         /**
-         * 加密接入点。
+         * Encrypted endpoint
          */
         ssl?: pulumi.Input<string>;
         /**
-         * 加密接入点端口。
+         * Encrypted endpoint port
          */
         sslPort?: pulumi.Input<number>;
         /**
-         * 接入点状态。
+         * Endpoint status
          */
         status?: pulumi.Input<string>;
         /**
-         * 售卖区网络关联的VPC ID列表。
+         * List of VPC IDs associated with the sales zone network
          */
         vpcIds?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -1716,55 +1762,55 @@ export namespace bmq {
     export interface InstanceResourceTag {
         tagKvs?: pulumi.Input<pulumi.Input<inputs.bmq.InstanceResourceTagTagKv>[]>;
         /**
-         * 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+         * Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
          */
         type?: pulumi.Input<string>;
     }
 
     export interface InstanceResourceTagTagKv {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+         * Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
          */
         type?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface InstanceResources {
         /**
-         * 资源统计响应数据。
+         * Resource statistics response data
          */
         storage?: pulumi.Input<inputs.bmq.InstanceResourcesStorage>;
     }
 
     export interface InstanceResourcesStorage {
         /**
-         * 资源大小。
+         * Resource size
          */
         size?: pulumi.Input<number>;
         /**
-         * 资源单位。
+         * Resource unit
          */
         unit?: pulumi.Input<string>;
     }
 
     export interface InstanceTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+         * Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
          */
         type?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
@@ -1773,45 +1819,45 @@ export namespace bmq {
 export namespace cdn {
     export interface DomainAreaAccessRule {
         /**
-         * 表示一个国家列表，对该列表应用白名单或者黑名单。当 Switch 是 true 时，该参数为必填。国家的名称使用简写来表示。多个国家名称使用英文逗号（,）分隔。
+         * Indicates a list of countries to which an allowlist or denylist is applied. When Switch is true, this parameter is required. Country names are represented in abbreviated form. Multiple country names are separated by commas (,).
          */
         areas?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 表示 "地域访问控制" 特性的规则类型。该参数有以下取值：deny：表示白名单。allow：表示黑名单。
+         * Indicates the rule type for the 'region access control' feature. This parameter has the following values: deny: indicates Denylist. allow: indicates Allowlist.
          */
         ruleType?: pulumi.Input<string>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainBrowserCach {
         /**
-         * 表示缓存行为的相关配置。
+         * Indicates the relevant configuration for cache behavior.
          */
         cacheAction?: pulumi.Input<inputs.cdn.DomainBrowserCachCacheAction>;
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainBrowserCachCondition>;
     }
 
     export interface DomainBrowserCachCacheAction {
         /**
-         * 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+         * Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
          */
         action?: pulumi.Input<string>;
         /**
-         * 该参数被多个 CDN 特性共享。
+         * This parameter is shared by multiple CDN features.
          */
         defaultPolicy?: pulumi.Input<string>;
         /**
-         * 表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+         * Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
          */
         ignoreCase?: pulumi.Input<boolean>;
         /**
-         * 表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+         * Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
          */
         ttl?: pulumi.Input<number>;
     }
@@ -1819,60 +1865,60 @@ export namespace cdn {
     export interface DomainBrowserCachCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainBrowserCachConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainBrowserCachConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainCach {
         /**
-         * 表示缓存行为的相关配置。
+         * Indicates the relevant configuration for cache behavior.
          */
         cacheAction?: pulumi.Input<inputs.cdn.DomainCachCacheAction>;
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainCachCondition>;
     }
 
     export interface DomainCachCacheAction {
         /**
-         * 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+         * Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
          */
         action?: pulumi.Input<string>;
         /**
-         * 该参数被多个 CDN 特性共享。
+         * This parameter is shared by multiple CDN features.
          */
         defaultPolicy?: pulumi.Input<string>;
         /**
-         * 表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+         * Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
          */
         ignoreCase?: pulumi.Input<boolean>;
         /**
-         * 表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+         * Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
          */
         ttl?: pulumi.Input<number>;
     }
@@ -1880,30 +1926,30 @@ export namespace cdn {
     export interface DomainCachCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainCachConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainCachConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
@@ -1911,25 +1957,25 @@ export namespace cdn {
     export interface DomainCacheHost {
         cacheHostRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainCacheHostCacheHostRule>[]>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainCacheHostCacheHostRule {
         /**
-         * 表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+         * Indicates the target domain. The target domain must be an accelerated domain under your account. This parameter specifies that the Domain shares the cache of CacheHost.
          */
         cacheHostAction?: pulumi.Input<inputs.cdn.DomainCacheHostCacheHostRuleCacheHostAction>;
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainCacheHostCacheHostRuleCondition>;
     }
 
     export interface DomainCacheHostCacheHostRuleCacheHostAction {
         /**
-         * 表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+         * Specifies the target domain name. The target domain name must be an acceleration domain under your account. This parameter indicates that Domain shares the cache of CacheHost.
          */
         cacheHost?: pulumi.Input<string>;
     }
@@ -1937,41 +1983,41 @@ export namespace cdn {
     export interface DomainCacheHostCacheHostRuleCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainCacheHostCacheHostRuleConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainCacheHostCacheHostRuleConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainCacheKey {
         /**
-         * 表示在 Condition 情况下，内容分发网络执行的操作。
+         * Indicates the action performed by the content delivery network under the Condition scenario.
          */
         cacheKeyAction?: pulumi.Input<inputs.cdn.DomainCacheKeyCacheKeyAction>;
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainCacheKeyCondition>;
     }
@@ -1982,19 +2028,19 @@ export namespace cdn {
 
     export interface DomainCacheKeyCacheKeyActionCacheKeyComponent {
         /**
-         * 执行动作，修改时需要指定。该参数有以下取值：exclude：缓存键不包括任何查询参数，也就是去参数缓存。include：缓存键包括所有的查询参数，也就是保留参数缓存。includePart：缓存键包括 Subobject 中的查询参数，也就是保留部分参数缓存。excludePart：缓存键不包括 Subobject 中的查询参数，也就是删除部分参数缓存。
+         * Specifies the action to perform; required when modifying. This parameter has the following values: exclude: The cache key does not include any query parameters, which means parameters are removed from the cache. include: The cache key includes all query parameters, which means parameters are retained in the cache. includePart: The cache key includes query parameters in Subobject, which means some parameters are retained in the cache. excludePart: The cache key does not include query parameters in Subobject, which means some parameters are removed from the cache.
          */
         action?: pulumi.Input<string>;
         /**
-         * 表示内容分发网络在匹配 Value 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+         * Indicates whether the content delivery network ignores case when matching Value. The parameter values are: true: ignore case. false: do not ignore case. The default value is false.
          */
         ignoreCase?: pulumi.Input<boolean>;
         /**
-         * 表示需要设置的对象。当前您仅可指定 queryString。queryString 表示请求 URL 中的查询参数。
+         * Indicates the object to be set. Currently, you can only specify queryString. queryString refers to the query parameters in the request URL.
          */
         object?: pulumi.Input<string>;
         /**
-         * 指定一个或者多个 Object 类型的对象。该参数的说明如下：如果Action 是 include 或者 exclude，Subobject的值必须是 *。* 表示全部查询参数。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。您指定的查询参数不能是 *，也不能包含连续斜杠（//）、百分号（%）、空格。多个查询参数名称使用英文分号（;）分隔。Subobject 的默认值是 *。
+         * Specify one or more objects of the Object type. Parameter details: If Action is include or exclude, Subobject must be *. * means all query parameters. If Action is includePart or excludePart, you can specify one or more query parameters. The query parameters you specify cannot be *, and cannot contain consecutive slashes (//), percent signs (%), or spaces. Use a semicolon (;) to separate multiple query parameter names. The default value for Subobject is *.
          */
         subobject?: pulumi.Input<string>;
     }
@@ -2002,30 +2048,30 @@ export namespace cdn {
     export interface DomainCacheKeyCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainCacheKeyConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainCacheKeyConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
@@ -2033,41 +2079,41 @@ export namespace cdn {
     export interface DomainCompression {
         compressionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainCompressionCompressionRule>[]>;
         /**
-         * 智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+         * Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainCompressionCompressionRule {
         /**
-         * 表示压缩操作的配置。
+         * Represents the configuration for compression operations.
          */
         compressionAction?: pulumi.Input<inputs.cdn.DomainCompressionCompressionRuleCompressionAction>;
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainCompressionCompressionRuleCondition>;
     }
 
     export interface DomainCompressionCompressionRuleCompressionAction {
         /**
-         * 如果匹配条件是基于 Content-Type 头部（此时，Condition 是 null 或不指定），该参数用来指定 Content-Type 的匹配条件，有以下取值：default: 表示匹配条件是 Content-Type 头部匹配默认 Content-Type 列表中包含的文件类型。customize：表示匹配条件是 Content-Type 头部匹配自定义的文件类型。如果 Conditon 不为 null，表示匹配条件是在 ConditionRule 中定义的。此时，该参数必须设置为 all。
+         * If the matching condition is based on the Content-Type header (when Condition is null or not specified), this parameter specifies the matching criteria for Content-Type. The values are as follows: default: matches file types included in the default Content-Type list. customize: matches custom file types in the Content-Type header. If Condition is not null, the matching criteria are defined in ConditionRule. In this case, this parameter must be set to all.
          */
         compressionFormat?: pulumi.Input<string>;
         /**
-         * 指定压缩的文件类型。该参数的说明如下：如果 CompressionFormat 为 default，该参数必须设置为 *，表示默认的 Content-Type 列表。该列表包含以下文件类型：text/html、text/xml、text/plain、text/css、application/javascript、application/x-javascript、application/rss+xml、text/javascript、image/tiff、image/svg+xml、application/json、application/xml、text/plain; charset=utf-8。如果 CompressionFormat 为 customize，需要指定一个或者多个文件类型。多个文件类型以逗号（,）分隔。如果 CompressionFormat 为 all，该参数必须设置为 *。
+         * Specifies the file types to compress. The parameter is described as follows: If CompressionFormat is default, this parameter must be set to *, indicating the default Content-Type list. The list includes the following file types: text/html, text/xml, text/plain, text/css, application/javascript, application/x-javascript, application/rss+xml, text/javascript, image/tiff, image/svg+xml, application/json, application/xml, text/plain; charset=utf-8. If CompressionFormat is customize, you need to specify one or more file types. Multiple file types are separated by commas (,). If CompressionFormat is all, this parameter must be set to *.
          */
         compressionTarget?: pulumi.Input<string>;
         /**
-         * 压缩算法，gzip,br 指定类型压缩，default：默认所有文件压缩，次数Target为*；customize：自定义文件类型压缩. choices: [default, customize]
+         * Compression algorithm: gzip and br specify the compression type. default: compresses all files by default, with the target count as *. customize: compresses custom file types. Choices: [default, customize]
          */
         compressionTypes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 表示文件大小范围的最小值，CDN 仅对大小在 MinFileSizeKB 和 MaxFileSizeKB 所表示的范围内的文件进行压缩。该参数的取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。该参数的默认值是 0。
+         * Indicates the minimum value for the file size range. CDN only compresses files within the range specified by MinFileSizeKB and MaxFileSizeKB. The parameter value range is 0   - 2,147,483,647, the unit is KB, and the base is 1,024. The default value is 0.
          */
         maxFileSizeKb?: pulumi.Input<number>;
         /**
-         * 表示文件大小范围的最大值，取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。如果不指定该参数，表示您不限制文件大小的上限。
+         * Indicates the maximum value for the file size range. The value range is 0   - 2,147,483,647, in KB, using a base of 1,024. If this parameter is not specified, there is no upper limit for file size.
          */
         minFileSizeKb?: pulumi.Input<number>;
     }
@@ -2075,52 +2121,52 @@ export namespace cdn {
     export interface DomainCompressionCompressionRuleCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainCompressionCompressionRuleConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainCompressionCompressionRuleConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainConditionalOrigin {
         /**
-         * 表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+         * Indicates a list of rules. Each rule in the list defines a filter and the action the content delivery network performs on requests that meet the filter criteria.
          */
         originRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainConditionalOriginOriginRule>[]>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainConditionalOriginOriginRule {
         /**
-         * 表示列表中一条规则的操作配置。
+         * Indicates the operation configuration for a rule in the list.
          */
         actions?: pulumi.Input<inputs.cdn.DomainConditionalOriginOriginRuleActions>;
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainConditionalOriginOriginRuleCondition>;
     }
@@ -2131,23 +2177,23 @@ export namespace cdn {
 
     export interface DomainConditionalOriginOriginRuleActionsOriginLine {
         /**
-         * 表示一个源站的地址。当 InstanceType 是 ip 时，Address 表示一个 IPv4 或者 IPv6 地址。当 InstanceType 是 domain 时，Address 表示一个域名。该域名不能是泛域名。如果您指定了 OriginLines，Address 必填。
+         * Represents the address of an origin server. When InstanceType is ip, Address specifies an IPv4 or IPv6 address. When InstanceType is domain, Address specifies a domain name. The domain name cannot be a wildcard domain. If you specify OriginLines, Address is required.
          */
         address?: pulumi.Input<string>;
         /**
-         * 表示内容分发网络使用 HTTP 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 80。如果源站没有开放该端口，您无需指定该参数。
+         * Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The valid range is 1–65535, with a default value of 80. If the origin server does not have this port open, you do not need to specify this parameter.
          */
         httpPort?: pulumi.Input<string>;
         /**
-         * 表示内容分发网络使用 HTTPS 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 443。如果源站没有开放该端口，您无需指定该参数。
+         * Specifies the port used by the content delivery network to access the origin server via HTTPS. The value range is 1–65535, and the default is 443. If the origin server does not open this port, you do not need to specify this parameter.
          */
         httpsPort?: pulumi.Input<string>;
         /**
-         * 表示源站的类型。该参数有以下取值：ip：表示 IP 地址。domain：表示域名。如果您指定了 OriginLines，InstanceType 必填。
+         * Indicates the type of origin. The parameter has the following values: ip: indicates an IP address. domain: indicates a domain name. InstanceType is required if OriginLines is specified.
          */
         instanceType?: pulumi.Input<string>;
         /**
-         * 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数的优先级高于全局 OriginHost 参数。该参数值的长度不能超过 1,024 个字符。该参数的默认值与全局 OriginHost 相同。
+         * If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter takes precedence over the global OriginHost parameter. The value of this parameter cannot exceed 1,024 characters. The default value is the same as the global OriginHost.
          */
         originHost?: pulumi.Input<string>;
     }
@@ -2155,33 +2201,33 @@ export namespace cdn {
     export interface DomainConditionalOriginOriginRuleCondition {
         conditionGroups?: pulumi.Input<pulumi.Input<inputs.cdn.DomainConditionalOriginOriginRuleConditionConditionGroup>[]>;
         /**
-         * 表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 "或"。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 "与"。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+         * Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an 'or' relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an 'and' relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
          */
         connective?: pulumi.Input<string>;
         /**
-         * 表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+         * Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
          */
         isGroup?: pulumi.Input<boolean>;
     }
 
     export interface DomainConditionalOriginOriginRuleConditionConditionGroup {
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainConditionalOriginOriginRuleConditionConditionGroupCondition>;
     }
 
     export interface DomainConditionalOriginOriginRuleConditionConditionGroupCondition {
         /**
-         * 表示一个过滤类型。该参数有以下取值：path：表示请求 URL 中的完整路径。directory：表示路径中的任意一个目录。假设路径是 /a/b/c/d/file，则 /a/、/b/c/、/d/ 都是目录。filetype：表示路径末尾的扩展名。full*querystring：表示请求 URL 中的查询字符串。client*ip：表示客户端的 IP 地址或者 IP 地址的归属地。如果您指定了 Condition，Object 必填。
+         * Indicates a filter type. This parameter has the following values: path: The full path in the request URL. directory: Any directory in the path. For example, if the path is /a/b/c/d/file, then /a/, /b/c/, and /d/ are directories. filetype: The extension at the end of the path. full*querystring: The query string in the request URL. client*ip: The client's IP address or the location associated with the IP address. If you specify Condition, Object is required.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示一个对比类型。不同的 Object 对应不同的取值。当 Object 是 path、directory 或 filetype 时，该参数的取值有 equal、not*equal。当 Object 是 path 时，该参数还有额外取值 regex*match、regex*not*match。当 Object 是 full*querystring 时，该参数的取值有 regex*match、regex*not*match。当 Object 是 client*ip 时，该参数的取值有 equal、not*equal、belong、not*belong。各对比类型的说明如下：equal：表示如果 Object 匹配了 Value 中的某个过滤值，该请求就满足这个过滤条件。not*equal：表示如果 Object 不匹配 Value 中的所有过滤值，该请求才满足这个过滤条件。regex*match：表示如果 Value 中的某个正则表达式匹配了 Object 中的任何部分，该请求就满足这个过滤条件。regex*not*match：表示如果 Value 中的所有正则表达式都不匹配 Object 中的任何部分，该请求才满足这个过滤条件。belong：表示如果客户端 IP 地址归属地在 Value 所表示国家和地区列表中，该请求就满足这个过滤条件。not*belong：表示如果客户端 IP 地址归属地不在 Value 所表示国家和地区列表中，该请求才满足这个过滤条件。如果您指定了 Condition，Operator 必填。
+         * Specifies a comparison type. Different Objects correspond to different values. When Object is path, directory, or filetype, the parameter values are equal and not*equal. When Object is path, additional values are regex*match and regex*not*match. When Object is full*querystring, the values are regex*match and regex*not*match. When Object is client*ip, the values are equal, not*equal, belong, and not*belong. The comparison types are explained as follows: equal: If Object matches any filter value in Value, the request meets this filter condition. not*equal: If Object does not match any filter value in Value, the request meets this filter condition. regex*match: If any regular expression in Value matches any part of Object, the request meets this filter condition. regex*not*match: If none of the regular expressions in Value match any part of Object, the request meets this filter condition. belong: If the client IP address belongs to any country or region listed in Value, the request meets this filter condition. not*belong: If the client IP address does not belong to any country or region listed in Value, the request meets this filter condition. If you specify Condition, Operator is required.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示一个或者多个过滤值。过滤值之间使用分号（;）分隔。该参数的输入要求如下：当 Object 是 path、directory 或 filetype 时，所有过滤值的总长度不能超过 1,024 个字符，不能包含以下字符：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。当 Object 是 path 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头，但不能以 / 结尾。您可以在过滤值中使用一个或者多个星号（*），每个星号表示一个或者多个字符。例如：/www/img/my*image.png。当 Object 是 directory 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头和结尾。例如：/www/img/。当 Object 是 filetype 时，该参数有以下额外要求：每个过滤值无需以句点（.）开头。例如：png;txt。当 Object 是 full*querystring 时，该参数的输入要求如下：所有过滤值的总长度不能超过 256 个字符。过滤值可以包含数字、字母、百分号（%）、下划线（*）、中划线（-）。当 Object 是 client*ip 时，如果 Operator 是 equal 或者 not*equal，该参数的输入要求如下：IP 地址的数量不能超过 5 个。IP 地址必须是 IPv4 地址。如果您指定了 Condition，Value 必填。
+         * Represents one or more filter values. Filter values are separated by semicolons (;). The input requirements for this parameter are as follows: When Object is path, directory, or filetype, the total length of all filter values must not exceed 1,024 characters and must not contain the following characters: consecutive slashes (//), spaces, dollar sign ($), question mark (?), or Delete (ASCII code 127). When Object is path, this parameter has the following additional requirements: each filter value must start with a slash (/) but must not end with a slash (/). You can use one or more asterisks (*) in the filter value, where each asterisk represents one or more characters. For example: /www/img/my*image.png. When Object is directory, this parameter has the following additional requirements: each filter value must start and end with a slash (/). For example: /www/img/. When Object is filetype, this parameter has the following additional requirements: each filter value does not need to start with a period (.). For example: png;txt. When Object is full*querystring, the input requirements for this parameter are as follows: the total length of all filter values must not exceed 256 characters. Filter values can include numbers, letters, percent sign (%), underscore (*), and hyphen (-). When Object is client*ip, if Operator is equal or not*equal, the input requirements for this parameter are as follows: the number of IP addresses must not exceed 5. IP addresses must be IPv4 addresses. If you specify Condition, Value is required.
          */
         values?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -2189,33 +2235,33 @@ export namespace cdn {
     export interface DomainCustomErrorPage {
         errorPageRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainCustomErrorPageErrorPageRule>[]>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainCustomErrorPageErrorPageRule {
         /**
-         * 表示规则的相关配置。
+         * Indicates the relevant configuration for the rule.
          */
         errorPageAction?: pulumi.Input<inputs.cdn.DomainCustomErrorPageErrorPageRuleErrorPageAction>;
     }
 
     export interface DomainCustomErrorPageErrorPageRuleErrorPageAction {
         /**
-         * 表示实际的操作。当前您只能指定该参数值为 redirect。表示对客户端请求进行重定向。
+         * Indicates the actual operation. Currently, you can only set this parameter to redirect. This means the client request will be redirected.
          */
         action?: pulumi.Input<string>;
         /**
-         * 表示重定向的响应状态码。您可以根据需求选择合适的状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+         * Indicates the response status code for redirection. You can select an appropriate status code as needed. The available values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original request and will not be changed.
          */
         redirectCode?: pulumi.Input<string>;
         /**
-         * 表示跳转的目标地址，长度不能超过 1,024 个字符。地址必须包含协议，域名以及路径，并且符合 URL 的规范。
+         * Indicates the target address for redirection. The length must not exceed 1,024 characters. The address must include the protocol, domain name, and path, and comply with URL specifications.
          */
         redirectUrl?: pulumi.Input<string>;
         /**
-         * 表示一个状态码，取值范围是 400-599。您可以输入 4xx 或者 5xx。4xx 表示 400-499 之间的所有状态码。5xx 表示 500-599 之间的所有状态码。
+         * Indicates a status code, with a value range of 400–599. You can enter 4xx or 5xx. 4xx covers all status codes from 400 to 499. 5xx covers all status codes from 500 to 599.
          */
         statusCode?: pulumi.Input<string>;
     }
@@ -2223,44 +2269,44 @@ export namespace cdn {
     export interface DomainCustomizeAccessRule {
         customizeInstances?: pulumi.Input<pulumi.Input<inputs.cdn.DomainCustomizeAccessRuleCustomizeInstance>[]>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainCustomizeAccessRuleCustomizeInstance {
         /**
-         * 表示列表中一条规则的配置。
+         * Describes the configuration for a rule in the list.
          */
         customizeRule?: pulumi.Input<inputs.cdn.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRule>;
     }
 
     export interface DomainCustomizeAccessRuleCustomizeInstanceCustomizeRule {
         /**
-         * 表示该规则中的黑名单或者白名单的配置。
+         * Indicates the configuration of the denylist or allowlist in this rule.
          */
         accessAction?: pulumi.Input<inputs.cdn.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessAction>;
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleCondition>;
     }
 
     export interface DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessAction {
         /**
-         * 表示 CDN 是否接受 RequestHeader 的值为空的用户请求。头部值为空指的是以下任意情况：用户请求不包含 RequestHeader。用户请求包含 RequestHeader，但头部值为空（""）。
+         * Indicates whether the CDN accepts user requests where the RequestHeader value is empty. An empty header value refers to either of the following situations: The user request does not include RequestHeader. The user request includes RequestHeader, but the header value is empty ("").
          */
         allowEmpty?: pulumi.Input<boolean>;
         /**
-         * 表示一个正则表达式列表，用于匹配请求头的值。列表中的正则表达式不能超过 20 个，所有正则表达式总长度不能超过 1,024 个字符。正则表达式之间的关系是或。也就是说，如果一个用户请求中 RequestHeader 的值匹配任何一个正则表达式，该规则就匹配了这个请求。
+         * Indicates a list of regular expressions used to match the value of the request header. The list can contain up to 20 regular expressions, and the total length of all expressions cannot exceed 1,024 characters. The relationship between the regular expressions is OR. That is, if the value of RequestHeader in a user request matches any regular expression, the rule applies to the request.
          */
         listRules?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 表示一个指定的请求头。头部名称不区分大小写，并且有以下要求：名称的长度不超过 1,024 个字符，名称不能是 Referer、User-Agent 或 Origin。名称可以包含字母，数字，下划线（_），连字符（-）。名称不能以数字开头。
+         * Indicates a specified request header. Header names are case-insensitive and must meet the following requirements: The name must not exceed 1,024 characters. The name cannot be Referer, User-Agent, or Origin. The name can contain letters, digits, underscores (_), and hyphens (-). The name cannot start with a digit.
          */
         requestHeader?: pulumi.Input<string>;
         /**
-         * 表示名单的类型。该参数有以下取值：allow：表示该规则中定义的是一个白名单。如果一个用户请求不匹配白名单，CDN 会拒绝该请求，响应 403 状态码。deny：表示该规则中定义的是一个黑名单。如果一个用户请求匹配了黑名单，CDN 会拒绝该请求，响应 403 状态码。
+         * Indicates the type of list. This parameter has the following values: allow: defines an allowlist in this rule. If a user request does not match the allowlist, the CDN rejects the request and returns a 403 status code. deny: defines a denylist in this rule. If a user request matches the denylist, the CDN rejects the request and returns a 403 status code.
          */
         ruleType?: pulumi.Input<string>;
     }
@@ -2268,41 +2314,41 @@ export namespace cdn {
     export interface DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainDomainLock {
         /**
-         * 表示该加速域名被锁定的原因。如果 Status 是 on，该参数值表示原因的描述。如果 Status 是 off，该参数值是空（""）。
+         * Indicates the reason why the acceleration domain is locked. If Status is on, this parameter provides a description of the reason. If Status is off, this parameter is empty ("")
          */
         remark?: pulumi.Input<string>;
         /**
-         * 表示该加速域名的锁定状态。该参数有以下取值：on：表示该加速域名已被锁定。off：表示该加速域名未被锁定。
+         * Indicates the lock status of the acceleration domain name. The parameter has the following values: on: the acceleration domain name is locked. off: the acceleration domain name is not locked.
          */
         status?: pulumi.Input<string>;
     }
@@ -2310,18 +2356,18 @@ export namespace cdn {
     export interface DomainDownloadSpeedLimit {
         downloadSpeedLimitRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainDownloadSpeedLimitDownloadSpeedLimitRule>[]>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainDownloadSpeedLimitDownloadSpeedLimitRule {
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainDownloadSpeedLimitDownloadSpeedLimitRuleCondition>;
         /**
-         * 表示限速配置。
+         * Indicates the rate limiting configuration.
          */
         downloadSpeedLimitAction?: pulumi.Input<inputs.cdn.DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitAction>;
     }
@@ -2329,111 +2375,111 @@ export namespace cdn {
     export interface DomainDownloadSpeedLimitDownloadSpeedLimitRuleCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitAction {
         /**
-         * 表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+         * Indicates the maximum download speed for a single request, measured in B/S. The parameter range is 1–1,073,741,824,000,000, using a base conversion of 1,024.
          */
         speedLimitRate?: pulumi.Input<number>;
         /**
-         * 表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+         * Represents a data volume. Download throttling is enabled for a request only when the amount of data downloaded in a single request reaches this value. Unit: Byte. The parameter range is 0–1,073,741,824,000,000, using a base of 1,024 for conversion.
          */
         speedLimitRateAfter?: pulumi.Input<number>;
         /**
-         * 表示限速发生的日期和时间段。
+         * Indicates the date and time period when rate limiting occurs.
          */
         speedLimitTime?: pulumi.Input<inputs.cdn.DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTime>;
     }
 
     export interface DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTime {
         /**
-         * 表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+         * Indicates the start time for rate limiting. The time format is mm:ss. If the DayWeek parameter value is unlimited, the default values for BeginTime and EndTime will be set to 00:00 and 23:59, respectively.
          */
         beginTime?: pulumi.Input<string>;
         /**
-         * 表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
+         * Specifies the date when rate limiting occurs. This parameter has the following values: monday, tuesday, wednesday, thursday, friday, saturday, sunday, unlimited. unlimited means every day. You can specify one or more values. Separate multiple values with a semicolon (;).
          */
         dayWeek?: pulumi.Input<string>;
         /**
-         * 表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+         * Indicates the end time for rate limiting. The time format is mm:ss. If the DayWeek parameter is set to unlimited, the default values for BeginTime and EndTime are 00:00 and 23:59, respectively.
          */
         endTime?: pulumi.Input<string>;
     }
 
     export interface DomainHttpForcedRedirect {
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTPS 请求重定向到 HTTP 请求。false：表示禁用该特性。内容分发网络不会将 HTTPS 请求重定向到 HTTP 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+         * Indicates whether this feature is enabled. The parameter values are: true: enables the feature. When enabled, the content delivery network redirects incoming HTTPS requests to HTTP requests. false: disables the feature. The content delivery network does not redirect HTTPS requests to HTTP requests. To enable this feature, your acceleration domain must have HTTPS enabled.
          */
         enableForcedRedirect?: pulumi.Input<boolean>;
         /**
-         * 表示当收到 HTTPS 请求时，内容分发网络返回的重定向状态码。该参数有以下取值：301：表示 301 响应状态码。302：表示 302 响应状态码。该参数的默认值是 301。
+         * Indicates the redirect status code returned by the content delivery network when it receives an HTTPS request. This parameter has the following values: 301: indicates the 301 response status code. 302: indicates the 302 response status code. The default value for this parameter is 301.
          */
         statusCode?: pulumi.Input<string>;
     }
 
     export interface DomainHttps {
         /**
-         * 表示 "访问双向认证" 特性的配置模块。要配置 "访问双向认证"。
+         * Indicates the configuration module for the 'mutual authentication' feature. To configure 'mutual authentication'.
          */
         certCheck?: pulumi.Input<inputs.cdn.DomainHttpsCertCheck>;
         /**
-         * 表示要与加速域名关联的单本证书。
+         * Indicates the single certificate to be associated with the acceleration domain name.
          */
         certInfo?: pulumi.Input<inputs.cdn.DomainHttpsCertInfo>;
         certInfoLists?: pulumi.Input<pulumi.Input<inputs.cdn.DomainHttpsCertInfoList>[]>;
         /**
-         * 表示是否允许请求 URL 中 Scheme 是 HTTP 的请求。该参数有以下取值：true：表示允许 Scheme 是 HTTP 的请求。false：表示不允许 Scheme 是 HTTP 的请求。该参数的默认值是 false。
+         * Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
          */
         disableHttp?: pulumi.Input<boolean>;
         /**
-         * 表示 "HTTP 强制跳转到 HTTPS" 特性的配置模块。该特性默认是禁用。
+         * Indicates the configuration module for the 'HTTP Forced Redirect to HTTPS' feature. This feature is disabled by default.
          */
         forcedRedirect?: pulumi.Input<inputs.cdn.DomainHttpsForcedRedirect>;
         /**
-         * 表示 HSTS 特性的配置模块。该特性默认是禁用。
+         * Indicates the configuration module for the HSTS feature. This feature is disabled by default.
          */
         hsts?: pulumi.Input<inputs.cdn.DomainHttpsHsts>;
         /**
-         * HTTP/2 配置开关。该参数有以下取值：true：表示启用 HTTP/2。false：表示禁用 HTTP/2。要启用 HTTP/2，您必须先启用 HTTPS。该功能默认是禁用。但是在以下场景中，HTTP/2 默认是启用的：加速域名的业务类型是网页，也就是 ServiceType 是 web。加速域名已经启用了 HTTPS。
+         * HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
          */
         http2?: pulumi.Input<boolean>;
         /**
-         * 指定是否启用 OCSP 装订。该参数有以下取值：true：表示启用 OCSP 装订。false：表示禁用 OCSP 装订。要启用 OCSP 装订，您必须先启用 HTTPS。该参数的默认值是 false。
+         * Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
          */
         ocsp?: pulumi.Input<boolean>;
         /**
-         * 表示是否启用 HTTPS 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。如果 Switch 是 true，您必须指定证书。如果您指定的是单本证书，您需要指定 CertInfo。如果您指定的是双证书，您需要指定 CertInfoList。您指定的证书可以是托管在证书中心，也可以是托管在内容分发网络。
+         * Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
          */
         switch?: pulumi.Input<boolean>;
         /**
-         * 表示 "TLS 版本" 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
+         * Indicates the configuration module for the "TLS Version" feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
          */
         tlsVersions?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -2441,245 +2487,245 @@ export namespace cdn {
     export interface DomainHttpsCertCheck {
         certInfoLists?: pulumi.Input<pulumi.Input<inputs.cdn.DomainHttpsCertCheckCertInfoList>[]>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainHttpsCertCheckCertInfoList {
         /**
-         * 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 certHosting  - 开头的。
+         * Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
          */
         certId?: pulumi.Input<string>;
         /**
-         * 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+         * Represents the content of the Common Name (CN) field in the CA certificate.
          */
         certName?: pulumi.Input<string>;
         /**
-         * 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+         * Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
          */
         certificate?: pulumi.Input<inputs.cdn.DomainHttpsCertCheckCertInfoListCertificate>;
         /**
-         * 表示该证书的签发时间，单位是 Unix 时间戳。
+         * Indicates the issuance time of the certificate, in Unix timestamp.
          */
         effectiveTime?: pulumi.Input<number>;
         /**
-         * 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+         * Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
          */
         encryType?: pulumi.Input<string>;
         /**
-         * 表示该证书的到期时间，单位是 Unix 时间戳。
+         * Indicates the expiration time of the certificate, as a Unix timestamp.
          */
         expireTime?: pulumi.Input<number>;
         /**
-         * 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+         * Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
          */
         source?: pulumi.Input<string>;
     }
 
     export interface DomainHttpsCertCheckCertInfoListCertificate {
         /**
-         * 表示证书文件的内容。内容中的换行必须使用 \r\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+         * Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
          */
         certificate?: pulumi.Input<string>;
         /**
-         * 表示国密证书的证书文件的内容。内容中的换行必须使用 \r\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+         * Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
          */
         encryptionCert?: pulumi.Input<string>;
         /**
-         * 表示国密证书的私钥文件的内容。内容中的换行必须使用 \r\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+         * Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
          */
         encryptionKey?: pulumi.Input<string>;
         /**
-         * 表示私钥文件的内容。内容中的换行必须使用 \r\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+         * Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
          */
         privateKey?: pulumi.Input<string>;
     }
 
     export interface DomainHttpsCertInfo {
         /**
-         * 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 certHosting  - 开头的。
+         * Represents the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
          */
         certId?: pulumi.Input<string>;
         /**
-         * 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+         * Indicates the content of the Common Name (CN) field in the CA certificate.
          */
         certName?: pulumi.Input<string>;
         /**
-         * 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+         * Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the CDN.
          */
         certificate?: pulumi.Input<inputs.cdn.DomainHttpsCertInfoCertificate>;
         /**
-         * 表示该证书的签发时间，单位是 Unix 时间戳。
+         * Indicates the issuance time of the certificate, in Unix timestamp.
          */
         effectiveTime?: pulumi.Input<number>;
         /**
-         * 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+         * Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
          */
         encryType?: pulumi.Input<string>;
         /**
-         * 表示该证书的到期时间，单位是 Unix 时间戳。
+         * Indicates the expiration time of the certificate, in Unix timestamp.
          */
         expireTime?: pulumi.Input<number>;
         /**
-         * 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+         * Indicates the location where the certificate is hosted. This parameter has the following values: volc*cert*center: Certificate Center. cdn*cert*hosting: Content Delivery Network.
          */
         source?: pulumi.Input<string>;
     }
 
     export interface DomainHttpsCertInfoCertificate {
         /**
-         * 表示证书文件的内容。内容中的换行必须使用 \r\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+         * Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
          */
         certificate?: pulumi.Input<string>;
         /**
-         * 表示国密证书的证书文件的内容。内容中的换行必须使用 \r\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+         * Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
          */
         encryptionCert?: pulumi.Input<string>;
         /**
-         * 表示国密证书的私钥文件的内容。内容中的换行必须使用 \r\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+         * Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
          */
         encryptionKey?: pulumi.Input<string>;
         /**
-         * 表示私钥文件的内容。内容中的换行必须使用 \r\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+         * Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
          */
         privateKey?: pulumi.Input<string>;
     }
 
     export interface DomainHttpsCertInfoList {
         /**
-         * 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 certHosting  - 开头的。
+         * Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
          */
         certId?: pulumi.Input<string>;
         /**
-         * 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+         * Represents the content of the Common Name (CN) field in the CA certificate.
          */
         certName?: pulumi.Input<string>;
         /**
-         * 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+         * Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
          */
         certificate?: pulumi.Input<inputs.cdn.DomainHttpsCertInfoListCertificate>;
         /**
-         * 表示该证书的签发时间，单位是 Unix 时间戳。
+         * Indicates the issuance time of the certificate, in Unix timestamp.
          */
         effectiveTime?: pulumi.Input<number>;
         /**
-         * 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+         * Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
          */
         encryType?: pulumi.Input<string>;
         /**
-         * 表示该证书的到期时间，单位是 Unix 时间戳。
+         * Indicates the expiration time of the certificate, as a Unix timestamp.
          */
         expireTime?: pulumi.Input<number>;
         /**
-         * 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+         * Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
          */
         source?: pulumi.Input<string>;
     }
 
     export interface DomainHttpsCertInfoListCertificate {
         /**
-         * 表示证书文件的内容。内容中的换行必须使用 \r\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+         * Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
          */
         certificate?: pulumi.Input<string>;
         /**
-         * 表示国密证书的证书文件的内容。内容中的换行必须使用 \r\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+         * Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
          */
         encryptionCert?: pulumi.Input<string>;
         /**
-         * 表示国密证书的私钥文件的内容。内容中的换行必须使用 \r\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+         * Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
          */
         encryptionKey?: pulumi.Input<string>;
         /**
-         * 表示私钥文件的内容。内容中的换行必须使用 \r\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+         * Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
          */
         privateKey?: pulumi.Input<string>;
     }
 
     export interface DomainHttpsForcedRedirect {
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTP 请求重定向到 HTTPS 请求。false：表示禁用该特性。禁用后，内容分发网络不会将 HTTP 请求重定向到 HTTPS 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+         * Indicates whether to enable this feature. This parameter has the following values: true: enables the feature. When enabled, the content delivery network redirects HTTP requests to HTTPS requests. false: disables the feature. When disabled, the content delivery network does not redirect HTTP requests to HTTPS requests. To enable this feature, your acceleration domain must have HTTPS enabled.
          */
         enableForcedRedirect?: pulumi.Input<boolean>;
         /**
-         * 表示当收到 HTTPS 请求时内容分发网络的重定向响应状态码。该参数有以下取值：301：表示返回的状态码是 301。302：表示返回的状态码是 302。该参数的默认值是 301。
+         * Indicates the redirect response status code for the CDN when receiving HTTPS requests. The parameter values are: 301: returns status code 301. 302: returns status code 302. The default value is 301.
          */
         statusCode?: pulumi.Input<string>;
     }
 
     export interface DomainHttpsHsts {
         /**
-         * 表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
+         * Indicates whether the HSTS configuration also applies to subdomains of the accelerated domain. The parameter has the following values: include: applies HSTS configuration to subdomain sites. exclude: does not apply HSTS configuration to subdomain sites. The default value is exclude.
          */
         subdomain?: pulumi.Input<string>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
          */
         switch?: pulumi.Input<boolean>;
         /**
-         * 表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+         * Indicates the cache expiration time for the Strict-Transport-Security response header in the browser, in seconds. If Switch is true, this parameter is required. The value range is 0–31,536,000. 31,536,000 seconds equals 365 days. If the value is 0, it is equivalent to disabling the HSTS setting.
          */
         ttl?: pulumi.Input<number>;
     }
 
     export interface DomainIPv6 {
         /**
-         * 指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+         * Specifies whether to enable IPv6 configuration. This parameter has the following values: true: Enables IPv6. false: Disables IPv6.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainIpAccessRule {
         /**
-         * 表示黑名单或白名单中的 IP 地址。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址和 IP 地址网段。IP 地址和网段可以是 IPv4 或 IPv6 格式。您最多可输入 1,000 个地址。如果您指定了 SharedConfig，就不能指定该参数。
+         * Specifies IP addresses in the denylist or allowlist. This parameter is required when Switch is true. You can specify one or more IP addresses and IP address ranges. IP addresses and ranges can be in IPv4 or IPv6 format. You can enter up to 1,000 addresses. If you specify SharedConfig, you cannot specify this parameter.
          */
         ips?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 表示 IP 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。如果您指定了 SharedConfig，就不能指定该参数。
+         * Indicates the type of IP list. This parameter is required when Switch is true. Valid values are: allow: indicates Allowlist. deny: indicates Denylist. If you specify SharedConfig, you cannot specify this parameter.
          */
         ruleType?: pulumi.Input<string>;
         /**
-         * 表示一个全局配置。如果您指定了该参数，就不能指定 RuleType 和 Ip。
+         * Represents a global configuration. If you specify this parameter, you cannot specify RuleType and Ip.
          */
         sharedConfig?: pulumi.Input<inputs.cdn.DomainIpAccessRuleSharedConfig>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainIpAccessRuleSharedConfig {
         /**
-         * 表示一个全局配置的名称。
+         * Indicates the name of a global configuration.
          */
         configName?: pulumi.Input<string>;
     }
 
     export interface DomainMethodDeniedRule {
         /**
-         * 表示被禁用的一个或多个 HTTP 请求方法。当 Switch 是 true 时，该参数为必填。多个方法使用逗号（,）分隔。该参数有以下取值：get：表示禁用 GET 请求方法。post：表示禁用 POST 请求方法。delete：表示禁用 DELETE 请求方法。put：表示禁用 PUT 请求方法。head：表示禁用 HEAD 请求方法。patch：表示 PATCH 请求方法。connect：表示 CONNECT 请求方法。options：表示 OPTIONS 请求方法。
+         * Indicates one or more HTTP request methods that are disabled. When Switch is true, this parameter is required. Use commas (,) to separate multiple methods. The parameter values are: get: disables the GET request method. post: disables the POST request method. delete: disables the DELETE request method. put: disables the PUT request method. head: disables the HEAD request method. patch: disables the PATCH request method. connect: disables the CONNECT request method. options: disables the OPTIONS request method.
          */
         methods?: pulumi.Input<string>;
         /**
-         * 配置开关 禁用方法，多个用逗号,分割，开启时必填. choices: [get, post, head, delete, put]
+         * Configuration switch for disabling methods. Use commas to separate multiple methods. Required when enabled. choices: [get, post, head, delete, put]
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainMultiRange {
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。该特性启用后，CDN 允许指定了多重范围的 Range 请求。false：表示不启用该特性。如果收到一个指定了多重范围的 Range 请求，CDN 会拒绝该请求并返回 416 响应状态码。该参数的默认值是 false。
+         * Indicates whether the feature is enabled. This parameter has the following values: true: enables the feature. When enabled, CDN allows Range requests with multiple ranges. false: disables the feature. If a Range request with multiple ranges is received, CDN rejects the request and returns a 416 response status code. The default value is false.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainNegativeCach {
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainNegativeCachCondition>;
         /**
-         * 表示一个列表。该列表的每个元素是一个状态码缓存规则。
+         * Represents a list. Each element in the list is a status code cache rule.
          */
         negativeCacheRule?: pulumi.Input<inputs.cdn.DomainNegativeCachNegativeCacheRule>;
     }
@@ -2687,109 +2733,109 @@ export namespace cdn {
     export interface DomainNegativeCachCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainNegativeCachConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainNegativeCachConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainNegativeCachNegativeCacheRule {
         /**
-         * 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+         * Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
          */
         action?: pulumi.Input<string>;
         /**
-         * 表示内容分发网络对请求的文件匹配 ConditionRule 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+         * Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
          */
         ignoreCase?: pulumi.Input<boolean>;
         /**
-         * 指定一个需要缓存的状态码。状态码的范围是 400-599。您也可以指定 4xx 或者 5xx。4xx 表示 400 到 499 之间的所有状态码。5xx 表示 500 到 599 之间的所有状态码。
+         * Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
          */
         statusCode?: pulumi.Input<string>;
         /**
-         * 表示状态码的缓存时间。单位是秒。时间的范围是 1-315,360,000。315,360,000 表示 10年。
+         * Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
          */
         ttl?: pulumi.Input<number>;
     }
 
     export interface DomainOfflineCache {
         /**
-         * 表示该特性的触发条件，该参数有以下取值：request*error：表示回源请求异常。当回源请求出现异常时，CDN 无法从源站获取文件，并且 CDN 没有获得任何来自源站的响应状态码。error*code：表示 CDN 无法从源站获取文件，并且源站的响应状态码是 5xx。request*error,error*code：表示以上两个条件都包含。
+         * Indicates the trigger conditions for this feature. The parameter has the following values: request*error: indicates an origin request exception. When an origin request exception occurs, the CDN cannot retrieve files from the origin and does not receive any response status code from the origin. error*code: indicates the CDN cannot retrieve files from the origin, and the origin's response status code is 5xx. request*error,error*code: indicates both conditions are included.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示具体的 5xx 响应状态码，范围是 500-599。多个状态码之间使用分号（;）分隔。您也可以输入 5xx，表示任意以数字 5 开头的状态码。当 Object 是 error*code 或者 request*error,error_code 时，该参数才有效。
+         * Specifies the specific 5xx response status codes, ranging from 500 to 599. Separate multiple status codes with a semicolon (;). You can also enter 5xx to indicate any status code starting with the digit 5. This parameter is valid only when Object is error*code or request*error,error_code.
          */
         statusCode?: pulumi.Input<string>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainOrigin {
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainOriginCondition>;
         /**
-         * 表示源站配置。
+         * Indicates origin configuration.
          */
         originAction: pulumi.Input<inputs.cdn.DomainOriginOriginAction>;
     }
 
     export interface DomainOriginAccessRule {
         /**
-         * 表示用户请求头的 Origin 头部为空（""）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+         * Specifies whether requests are allowed when the Origin header in the user request is empty (""). The parameter values are: true: allow; false: do not allow. The default value is false.
          */
         allowEmpty?: pulumi.Input<boolean>;
         /**
-         * 表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
+         * Indicates whether Origin is case sensitive. This parameter has the following values: true: Origin is case insensitive; false: Origin is case sensitive. The default value is true.
          */
         ignoreCase?: pulumi.Input<boolean>;
         /**
-         * RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+         * The address list corresponding to RuleType. When Switch is true, this parameter is required. You can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domain names. Domain names can be second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 100 addresses. When entering domain names, you do not need to include http:// or https://. The value length cannot exceed 3,000 characters.
          */
         origins?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+         * Origin list configuration type. When Switch is true, this parameter is required. The parameter has the following values: allow: indicates allowlist. deny: indicates denylist.
          */
         ruleType?: pulumi.Input<string>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainOriginArg {
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainOriginArgCondition>;
         /**
-         * 表示在满足 Condition 条件时所执行的操作。
+         * Represents the action performed when the Condition is met.
          */
         originArgAction?: pulumi.Input<inputs.cdn.DomainOriginArgOriginArgAction>;
     }
@@ -2797,30 +2843,30 @@ export namespace cdn {
     export interface DomainOriginArgCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainOriginArgConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainOriginArgConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
@@ -2831,15 +2877,15 @@ export namespace cdn {
 
     export interface DomainOriginArgOriginArgActionOriginArgComponent {
         /**
-         * include: 表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。exclude：表示回源请求 URL 中不包含用户请求 URL 中的任何查询参数。addPart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，并额外包含 Subobject 中指定的查询参数。includePart：表示如果用户请求 URL 中包含 Subobject 中指定的查询参数，那么回源请求 URL 中包含这些指定的查询参数。excludePart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，除了Subobject 中指定的查询参数。set：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。同时，对于您在 Subobject 中指定的查询参数和参数值，CDN 会执行以下操作:如果这些查询参数在用户请求 URL 中，CDN 会在回源请求 URL 中将这些参数的值设置为您指定的值。如果用户请求 URL 中不包含这些查询参数，CDN 会在回源请求 URL 中添加这些查询参数。
+         * include: Indicates that the origin request URL includes all query parameters from the user request URL. exclude: Indicates that the origin request URL does not include any query parameters from the user request URL. addPart: Indicates that the origin request URL includes all query parameters from the user request URL, plus the query parameters specified in the Subobject. includePart: Indicates that if the user request URL contains the query parameters specified in the Subobject, the origin request URL will include these specified query parameters. excludePart: Indicates that the origin request URL includes all query parameters from the user request URL except those specified in the Subobject. set: Indicates that the origin request URL includes all query parameters from the user request URL. For the query parameters and values you specify in the Subobject, CDN will perform the following actions: If these query parameters exist in the user request URL, CDN will set their values in the origin request URL to the values you specify. If the user request URL does not contain these query parameters, CDN will add them to the origin request URL.
          */
         action?: pulumi.Input<string>;
         /**
-         * 表示 CDN 对哪个对象执行 Action。当前，该参数值只能是 queryString，表示请求 URL 中的查询字符串。
+         * Indicates which object the CDN performs the Action on. Currently, this parameter can only be set to queryString, which refers to the query string in the request URL.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示一个或者多个查询参数。多个查询参数之间使用分号（;）分隔，总长度不能超过 1,024 个字符。Subobject 只能包含字母、数字、下划线（_）、逗号（,）、短横线（-）、句点（.）和感叹号（!）。在匹配请求 URL 中的查询参数时，Subobject 中的参数是大小写敏感的。Subobject 的额外说明如下：当 Action 是 include 或 exclude 时，Subobject 必须是 *，表示请求 URL 中的所有查询参数。当 Action 是 includePart 或 excludePart 时，Subobject 表示一个或者多个查询参数。例如 param1;param2。当 Action 是 addPart 或 set 时，Subobject 表示一个或者多个查询参数和参数值，格式是 key=value。例如 param1=val1;param2=val2;param3=val3。
+         * Represents one or more query parameters. Use semicolons (;) to separate multiple query parameters. The total length must not exceed 1,024 characters. Subobject can only contain letters, numbers, underscores (_), commas (,), hyphens (-), periods (.), and exclamation marks (!). When matching query parameters in the request URL, parameters in Subobject are case-sensitive. Additional notes for Subobject: When Action is include or exclude, Subobject must be *, which represents all query parameters in the request URL. When Action is includePart or excludePart, Subobject represents one or more query parameters, for example, param1;param2. When Action is addPart or set, Subobject represents one or more query parameters and their values in the format key=value, for example, param1=val1;param2=val2;param3=val3.
          */
         subobject?: pulumi.Input<string>;
     }
@@ -2854,30 +2900,30 @@ export namespace cdn {
     export interface DomainOriginCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainOriginConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainOriginConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
@@ -2888,80 +2934,80 @@ export namespace cdn {
 
     export interface DomainOriginOriginActionOriginLine {
         /**
-         * 表示源站地址。该参数有以下说明：如果 InstanceType 是 ip，您可以设置一个 IP 地址。IP 地址可以是 IPv4 或 IPv6 地址。如果 InstanceType 是 domain，您可以设置一个域名。该域名不能是泛域名。如果 InstanceType 是 tos，您可以设置一个对象存储桶的域名。该存储桶可以来自阿里云、腾讯云、AWS。如果您在该 API 请求中指定了多个源站配置：所有主源站配置中的 InstanceType 必须相同。所有备源站配置中的 InstanceType 也必须相同。如果主源站配置中的 InstanceType 是 ip 或者 domain，备源站配置中的 InstanceType 必须是 ip 或者 domain。主源站地址和和备源站地址的总数不能超过 50 个。
+         * Indicates the origin address. The parameter has the following instructions: If InstanceType is ip, you can set an IP address. The IP address can be either IPv4 or IPv6. If InstanceType is domain, you can set a domain name. The domain name cannot be a wildcard domain. If InstanceType is tos, you can set the domain name of an object storage bucket. The bucket can be from Alibaba Cloud, Tencent Cloud, or AWS. If you specify multiple origin configurations in this API request: All primary origin configurations must have the same InstanceType. All backup origin configurations must also have the same InstanceType. If the InstanceType in the primary origin configuration is ip or domain, the InstanceType in the backup origin configuration must also be ip or domain. The total number of primary and backup origin addresses cannot exceed 50.
          */
         address: pulumi.Input<string>;
         /**
-         * 表示内容分发网络使用 HTTP 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 80。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+         * Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The value range is 1–65535, and the default value is 80. If the origin server does not support access on this port, you can specify the default value. This parameter is only valid when InstanceType is ip or domain.
          */
         httpPort?: pulumi.Input<string>;
         /**
-         * 表示内容分发网络使用 HTTPS 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 443。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+         * Indicates the port used by the content delivery network to access the origin server via HTTPS. The value range is 1-65535, and the default value is 443. If the origin server does not support access on this port, you can specify the default value. This parameter is only valid when InstanceType is ip or domain.
          */
         httpsPort?: pulumi.Input<string>;
         /**
-         * 表示源站的类型。该参数有以下取值：ip：表示源站是通过 IP 地址来访问的。domain：表示源站是通过域名来访问的。tos：表示源站是一个对象存储桶。
+         * Indicates the type of origin server. This parameter has the following values: ip: The origin server is accessed via IP address. domain: The origin server is accessed via domain name. tos: The origin server is an object storage bucket.
          */
         instanceType: pulumi.Input<string>;
         /**
-         * 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+         * If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
          */
         originHost?: pulumi.Input<string>;
         /**
-         * 表示源站的类别。该参数有以下取值：   - primary：表示主源站。   - backup：表示备源站。 该 API 请求中至少需要包含一个主源站配置。备源站配置是可选的。
+         * Indicates the type of origin server. This parameter has the following values:   - primary: Primary origin server.   - backup: Backup origin server. At least one primary origin server configuration must be included in this API request. Backup origin server configuration is optional.
          */
         originType: pulumi.Input<string>;
         /**
-         * 表示对象存储桶是否开启了私有读权限。该参数仅当 InstanceType 为 tos 时才有效。该参数有以下取值：true：表示开启了该权限。false：表示未开启该权限。该参数的默认值是 false。
+         * Indicates whether private read permissions are enabled for the object storage bucket. This parameter is only valid when InstanceType is tos. The parameter values are: true: Enabled. false: Not enabled. The default value is false.
          */
         privateBucketAccess?: pulumi.Input<boolean>;
         /**
-         * 表示第三方云厂商的对象存储桶的鉴权信息。
+         * Represents the authentication information for the object storage bucket of a third-party cloud provider.
          */
         privateBucketAuth?: pulumi.Input<inputs.cdn.DomainOriginOriginActionOriginLinePrivateBucketAuth>;
         /**
-         * 该参数暂不对外开放，请勿使用该参数。
+         * This parameter is not currently available externally. Do not use this parameter.
          */
         region?: pulumi.Input<string>;
         /**
-         * 表示该源站的权重，取值范围是 1-100，默认值是 1。权重越大，该源站在内容分发网络发送回源请求时被选择到的概率也越大。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+         * Specifies the weight of the origin. Value range is 1–100, default is 1. The higher the weight, the more likely this origin is selected when the content delivery network sends a request to the origin. This parameter is only valid when InstanceType is ip or domain.
          */
         weight?: pulumi.Input<string>;
     }
 
     export interface DomainOriginOriginActionOriginLinePrivateBucketAuth {
         /**
-         * 表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+         * Indicates the third-party cloud provider where the object storage bucket is located. The parameter values are: cos: Tencent Cloud. oss: Alibaba Cloud. aws: Amazon AWS.
          */
         authType?: pulumi.Input<string>;
         /**
-         * 表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+         * Indicates whether the object storage bucket is from a third-party cloud provider. This parameter has the following values: true: the object storage bucket is from a third-party cloud provider. The default value is false
          */
         switch?: pulumi.Input<boolean>;
         /**
-         * 表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+         * Specifies the access key for the third-party cloud provider. This parameter is only valid when Switch is true.
          */
         tosAuthInformation?: pulumi.Input<inputs.cdn.DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformation>;
     }
 
     export interface DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformation {
         /**
-         * 表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+         * Specifies the AccessKey ID for your Alibaba Cloud account, SecretId for your Tencent Cloud account, or access key ID for your AWS account.
          */
         accessKeyId?: pulumi.Input<string>;
         /**
-         * 表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+         * Indicates the AccessKey Secret for your Alibaba Cloud account, the SecretKey for your Tencent Cloud account, or the secret access key for your AWS account.
          */
         accessKeySecret?: pulumi.Input<string>;
     }
 
     export interface DomainOriginRetry {
         /**
-         * 表示范围在 400-599 之间的一个或者多个状态码。多个状态码之间使用分号（;）分隔。您可以输入 4xx 或者 5xx，表示所有以数字 4 或 数字 5 开头的状态码。
+         * Indicates one or more status codes in the range 400–599. Separate multiple status codes with a semicolon (;). You can enter 4xx or 5xx to represent all status codes starting with the digit 4 or 5.
          */
         statusCode?: pulumi.Input<string>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
          */
         switch?: pulumi.Input<boolean>;
     }
@@ -2969,18 +3015,18 @@ export namespace cdn {
     export interface DomainOriginRewrite {
         originRewriteRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainOriginRewriteOriginRewriteRule>[]>;
         /**
-         * 表示是否启用该模块。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+         * Indicates whether to enable this module. The parameter has the following values: true: enables the module. false: disables the module. The default value is false.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainOriginRewriteOriginRewriteRule {
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainOriginRewriteOriginRewriteRuleCondition>;
         /**
-         * 表示一个回源路径改写的规则配置。
+         * Indicates a rule configuration for origin path rewrite.
          */
         originRewriteAction?: pulumi.Input<inputs.cdn.DomainOriginRewriteOriginRewriteRuleOriginRewriteAction>;
     }
@@ -2988,74 +3034,74 @@ export namespace cdn {
     export interface DomainOriginRewriteOriginRewriteRuleCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainOriginRewriteOriginRewriteRuleConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainOriginRewriteOriginRewriteRuleConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainOriginRewriteOriginRewriteRuleOriginRewriteAction {
         /**
-         * 表示改写类型。该参数有以下取值：rewrite*path：表示对请求 URL 中的路径进行改写。rewrite*url：表示对请求 URL 中的路径和查询字符串进行改写。该参数的默认值是 rewrite_path。
+         * Indicates the rewrite type. This parameter supports the following values: rewrite*path: rewrites the path in the request URL. rewrite*url: rewrites both the path and query string in the request URL. The default value is rewrite_path.
          */
         rewriteType?: pulumi.Input<string>;
         /**
-         * 表示一个正则表达式，长度不能超过 1,024 个字符，用于匹配用户请求 URL 中的对象。对于一个用户请求，如果该正则表达式匹配了对象中的任何部分，这条规则就匹配了这个用户请求。当 RewriteType 是 rewrite*path 时，该对象指的是请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象指的是请求 URL 中的路径和查询字符串。
+         * Indicates a regular expression, with a maximum length of 1,024 characters, used to match objects in the user's request URL. For a user request, if the regular expression matches any part of the object, this rule applies to the request. When RewriteType is rewrite*path, the object refers to the path in the request URL. When RewriteType is rewrite*url, the object refers to both the path and query string in the request URL.
          */
         sourcePath?: pulumi.Input<string>;
         /**
-         * 表示改写后，回源请求 URL 中的对象。当 RewriteType 是 rewrite*path 时，该对象是回源请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象是回源请求 URL 中的路径和查询字符串。您可以在 TargetPath 中使用 $1、$2、$3 等表示您在 SourcePath 的正则表达式中定义的组。
+         * Indicates the object in the origin request URL after rewriting. When RewriteType is rewrite*path, this object is the path in the origin request URL. When RewriteType is rewrite*url, this object is the path and query string in the origin request URL. You can use $1, $2, $3, etc. in TargetPath to represent groups defined in the regular expression of SourcePath.
          */
         targetPath?: pulumi.Input<string>;
     }
 
     export interface DomainOriginSni {
         /**
-         * 指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
+         * Specifies the domain name for origin SNI. When Switch is true, this parameter is required. The value cannot exceed 1,024 characters.
          */
         sniDomain?: pulumi.Input<string>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainPageOptimization {
         /**
-         * 表示优化的对象。该参数有以下取值：html: 表示 HTML 页面。js: 表示 Javascript 代码。css: 表示 CSS 代码。该参数的默认值是 html。如果您指定了 js 或者 js，html 也必须指定。
+         * Specifies the optimization target. This parameter has the following values: html: HTML page. js: JavaScript code. css: CSS code. The default value is html. If you specify js or css, html must also be specified.
          */
         optimizationTypes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * Indicates whether this feature is enabled. The parameter values are: true: The feature is enabled. false: The feature is disabled.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainQuic {
         /**
-         * QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+         * QUIC configuration switch. The parameter values are as follows: true: enables QUIC. false: disables QUIC. To enable QUIC, you must first enable HTTPS.
          */
         switch?: pulumi.Input<boolean>;
     }
@@ -3063,119 +3109,119 @@ export namespace cdn {
     export interface DomainRedirectionRewrite {
         redirectionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainRedirectionRewriteRedirectionRule>[]>;
         /**
-         * 表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+         * Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainRedirectionRewriteRedirectionRule {
         /**
-         * 表示一个 URL 重定向改写的规则。
+         * Indicates a URL redirect rewrite rule
          */
         redirectionAction?: pulumi.Input<inputs.cdn.DomainRedirectionRewriteRedirectionRuleRedirectionAction>;
     }
 
     export interface DomainRedirectionRewriteRedirectionRuleRedirectionAction {
         /**
-         * 表示 URL 重定向的响应状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+         * Indicates the response status code for URL redirection. Valid values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original and is not changed.
          */
         redirectCode?: pulumi.Input<string>;
         /**
-         * 表示文件的原路径。也就是请求中包含的路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+         * Specifies the original file path, which is the path included in the request. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value of this parameter cannot exceed 1,024 characters.
          */
         sourcePath?: pulumi.Input<string>;
         /**
-         * 表示目标路径所归属站点的域名或者 IP 地址。IP 地址必须是 IPv4 类型的地址。该参数值的长度不能超过 1,024 个字符。该参数的默认值就是您的加速域名。
+         * Indicates the domain name or IP address of the site to which the target path belongs. The IP address must be IPv4. The parameter value cannot exceed 1,024 characters. The default value is your acceleration domain name.
          */
         targetHost?: pulumi.Input<string>;
         /**
-         * 表示跳转后的目标路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+         * Indicates the target path after redirection. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value cannot exceed 1,024 characters.
          */
         targetPath?: pulumi.Input<string>;
         /**
-         * 表示 URL重定向后的新请求所使用的协议。该参数有以下取值：followclient：表示使用原请求的协议。http：表示新请求强制使用 HTTP 协议。https：表示新请求强制使用 HTTPS 协议。
+         * Specifies the protocol used for the new request after URL redirection. The parameter values are: followclient: use the protocol of the original request; http: force the new request to use HTTP; https: force the new request to use HTTPS.
          */
         targetProtocol?: pulumi.Input<string>;
         /**
-         * 表示原请求 URL 中的查询参数的处理方式。
+         * Indicates how the query parameters in the original request URL are handled.
          */
         targetQueryComponents?: pulumi.Input<inputs.cdn.DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponents>;
     }
 
     export interface DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponents {
         /**
-         * 表示原请求 URL 中的查询参数的处理方式。该参数有以下取值：include：表示在跳转后的 URL 中包含原请求 URL 中的所有查询参数。exclude：表示在跳转后的 URL 中不包含原请求 URL 中的任何查询参数。includePart：表示在跳转后的 URL 中包含原请求 URL 中特定的查询参数。excludePart：表示在跳转后的 URL 中不包含原请求 URL 中特定的查询参数。
+         * Indicates how to handle query parameters in the original request URL. This parameter has the following values: include: includes all query parameters from the original request URL in the redirected URL. exclude: excludes all query parameters from the original request URL in the redirected URL. includePart: includes specific query parameters from the original request URL in the redirected URL. excludePart: excludes specific query parameters from the original request URL in the redirected URL.
          */
         action?: pulumi.Input<string>;
         /**
-         * 表示要保留或删除的查询参数。多个查询参数间使用英文分号（;）分隔。指定的查询参数不能包含连续斜杠（//）、百分号（"）、空格。Value 的默认值是 *，表示所有的查询参数。如果 Action 是 include 或者 exclude, 则 Value 必须为 *。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。此时，您指定的查询参数不能是 *。
+         * Indicates the query parameters to retain or remove. Multiple query parameters are separated by a semicolon (;). The specified query parameters cannot contain consecutive slashes (//), percent signs ("), or spaces. The default value of Value is *, which means all query parameters. If Action is include or exclude, Value must be *. If Action is includePart or excludePart, you can specify one or more query parameters. In this case, the specified query parameters cannot be *.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainRefererAccessRule {
         /**
-         * 表示用户请求头的 Referer 头部为空（""）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+         * Specifies whether the content delivery network accepts a request when the Referer header in the user's request is empty (""). This parameter has the following values: true: accepts the request; false: rejects the request. The default value is false.
          */
         allowEmpty?: pulumi.Input<boolean>;
         /**
-         * 表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+         * Indicates a list of Referers. The input requirements for this parameter are consistent with those for Referers under the CommonType of ReferersType. We recommend using ReferersType to specify the Referer list. If you specify SharedConfig, you cannot specify this parameter.
          */
         referers?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+         * Indicates a ReferersType object. It contains a CommonType object and a RegularType object, representing a standard Referer list and a Referer regular expression list, respectively. If you specify SharedConfig, you cannot specify this parameter.
          */
         referersType?: pulumi.Input<inputs.cdn.DomainRefererAccessRuleReferersType>;
         /**
-         * 表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+         * Indicates the type of Referer list. This parameter is required when Switch is true. This parameter has the following values: allow: indicates Allowlist. deny: indicates Denylist.
          */
         ruleType?: pulumi.Input<string>;
         /**
-         * 表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+         * Represents a global configuration. If you specify this parameter, you cannot specify Referers or ReferersType.
          */
         sharedConfig?: pulumi.Input<inputs.cdn.DomainRefererAccessRuleSharedConfig>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainRefererAccessRuleReferersType {
         /**
-         * 表示一个 CommonType 对象，其包含一个常规 Referer 的列表。
+         * Indicates a CommonType object that contains a list of standard Referers.
          */
         commonType?: pulumi.Input<inputs.cdn.DomainRefererAccessRuleReferersTypeCommonType>;
         /**
-         * 表示一个 RegularType 对象，其包含一个正则表达式列表用来匹配请求的 Referer 头部值。该参数为白名单功能。要使用该参数，请提交工单。需要注意的是，如果请求的 Referer 头部值匹配 CommonType 下的 Referers 名单或者 RegularType 下的 Referers 名单，内容分发网络就认为是匹配。
+         * Specifies a RegularType object, which contains a list of regular expressions used to match the Referer header value in requests This parameter provides the allowlist feature To use this parameter, submit a ticket Note that if the Referer header value in a request matches the Referers list under CommonType or the Referers list under RegularType, the content delivery network considers it a match
          */
         regularType?: pulumi.Input<inputs.cdn.DomainRefererAccessRuleReferersTypeRegularType>;
     }
 
     export interface DomainRefererAccessRuleReferersTypeCommonType {
         /**
-         * 表示 CommonType 下的这个 Referers 列表在匹配时是否是大小写敏感的。该参数有以下取值：true: 表示大小写不敏感。false: 表示大小写敏感。该参数的默认值是 true。
+         * Specifies whether the Referers list under CommonType is case sensitive during matching. The parameter supports the following values: true: not case sensitive. false: case sensitive. The default value is true.
          */
         ignoreCase?: pulumi.Input<boolean>;
         /**
-         * 表示匹配 CommonType 下的这个 Referers 列表的 Referer 头部值是否必须以 HTTP 或者 HTTPS 开头。该参数有以下取值：true: 表示不以 HTTP 或者 HTTPS 开头的 Referer 头部值是合法的。在这个情况下，内容分发网络会尝试将其与 Referers 列表匹配。false: 表示不以 HTTP 或者 HTTPS 开头 Referer 头部值是非法的。在这个情况下，内容分发网络判定为不匹配 CommonType 下的这个 Referers 列表。该参数的默认值是 false。
+         * Indicates whether the Referer header value in this Referers list under CommonType must start with HTTP or HTTPS. This parameter has the following values: true: Referer header values that do not start with HTTP or HTTPS are valid. In this case, the content delivery network will attempt to match them with the Referers list. false: Referer header values that do not start with HTTP or HTTPS are invalid. In this case, the content delivery network determines that they do not match the Referers list under CommonType. The default value is false.
          */
         ignoreScheme?: pulumi.Input<boolean>;
         /**
-         * 表示一个常规 Referer 的列表。在该列表中，您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入 1,000 个 IP 地址。输入的域名不能包含 http:// 或 https://。在匹配时，内容分发网络会将请求 Referer 头部值中的域名与 Referer 列表进行匹配。该参数值的长度不能超过 30,000 个字符。
+         * Represents a standard Referer list. In this list, you can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domains. Domain names can include second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 1,000 IP addresses. The domain names entered must not include http:// or https://. During matching, the content delivery network compares the domain name in the Referer header of the request with the Referer list. The value of this parameter must not exceed 30,000 characters.
          */
         referers?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface DomainRefererAccessRuleReferersTypeRegularType {
         /**
-         * 表示一个 Referer 正则表达式的列表。该参数值的长度不能超过 30,000 个字符。
+         * Indicates a list of Referer regular expressions. The value of this parameter cannot exceed 30,000 characters.
          */
         referers?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface DomainRefererAccessRuleSharedConfig {
         /**
-         * 表示一个全局配置的名称。
+         * Indicates the name of a global configuration.
          */
         configName?: pulumi.Input<string>;
     }
@@ -3183,18 +3229,18 @@ export namespace cdn {
     export interface DomainRemoteAuth {
         remoteAuthRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRule>[]>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRule {
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleCondition>;
         /**
-         * 表示具体的鉴权配置。
+         * Indicates the specific authentication configuration.
          */
         remoteAuthRuleAction?: pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleAction>;
     }
@@ -3202,150 +3248,150 @@ export namespace cdn {
     export interface DomainRemoteAuthRemoteAuthRuleCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRuleConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleAction {
         /**
-         * 表示鉴权服务器的配置。
+         * Indicates the configuration of the authentication server.
          */
         authModeConfig?: pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfig>;
         /**
-         * 内容分发网络需要对鉴权服务器返回的鉴权状态码进行处理。该参数表示相关的配置。
+         * The content delivery network needs to handle the authentication status codes returned by the authentication server. This parameter specifies the relevant configuration.
          */
         authResponseConfig?: pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfig>;
         /**
-         * 表示鉴权请求的参数设置。
+         * Represents the parameter settings for authentication requests.
          */
         queryStringRules?: pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules>;
         /**
-         * 表示鉴权请求正文的规则。您可以不指定该参数或者设置该参数值为 default。default 表示请求正文为空（""）。
+         * Indicates the rule for the authentication request body. You can leave this parameter unspecified or set its value to default. default means the request body is empty ("").
          */
         requestBodyRules?: pulumi.Input<string>;
         /**
-         * 表示鉴权请求头的设置。您最多可以设置 50 个请求头。
+         * Indicates the settings for authentication request headers. You can set up to 50 request headers.
          */
         requestHeaderRules?: pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfig {
         /**
-         * 表示鉴权服务器的备地址。地址格式和要求与主地址相同。
+         * Indicates the backup address of the authentication server. The address format and requirements are the same as the primary address.
          */
         backupRemoteAddr?: pulumi.Input<string>;
         /**
-         * 表示鉴权服务器的主地址，长度不能超过 100 个字符。主地址的格式是 \n\n://\n\n:\n\n 或 \n\n://\n\n:\n\n，其中：\n\n 是 http 或者 https。\n\n 不能是 localhost。\n\n 不能是 127.0.0.1。\n\n 是可选的。
+         * Indicates the primary address of the authentication server. The length must not exceed 100 characters. The primary address format is \n\n://\n\n:\n\n or \n\n://\n\n:\n\n, where: \n\n is http or https. \n\n cannot be localhost. \n\n cannot be 127.0.0.1. \n\n is optional.
          */
         masterRemoteAddr?: pulumi.Input<string>;
         /**
-         * 表示鉴权请求的路径。鉴权地址和请求路径组成了完整的鉴权 URL。内容分发网络会把用户的请求转发到该鉴权 URL。该参数有以下取值：constant：表示鉴权请求中的路径与用户请求中的路径相同。variable：表示您需要在 pathValue 参数中指定一个鉴权请求中的路径。
+         * Indicates the path for the authentication request. The authentication address and request path together form the complete authentication URL. The content delivery network forwards the user's request to this authentication URL. The parameter accepts the following values: constant: The path in the authentication request is the same as the path in the user's request. variable: You need to specify a path for the authentication request in the pathValue parameter.
          */
         pathType?: pulumi.Input<string>;
         /**
-         * 表示一个鉴权请求的路径，长度不能超过 100 个字符。路径必须以斜杠（/）开头，可以包含除了以下字符的可打印 ASCII 字符：连续斜杠（//）、百分号（%）、美元符号（$）、空格、问号（?）、Delete（ASCII code 127）
+         * Represents the path for an authentication request. The path cannot exceed 100 characters. It must start with a slash (/), and can include any printable ASCII characters except the following: consecutive slashes (//), percent sign (%), dollar sign ($), space, question mark (?), and Delete (ASCII code 127).
          */
         pathValue?: pulumi.Input<string>;
         /**
-         * 表示在发送鉴权请求时，内容分发网络所使用的请求方法。该参数有以下取值：default：表示鉴权请求所使用的方法与用户的请求相同。get：表示鉴权请求使用 GET 方法。post：表示鉴权请求使用 POST方法。head：表示鉴权请求使用 HEAD 方法。
+         * Indicates the request method used by the content delivery network when sending authentication requests. The parameter has the following values: default: uses the same method as the user's request. get: uses the GET method. post: uses the POST method. head: uses the HEAD method.
          */
         requestMethod?: pulumi.Input<string>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfig {
         /**
-         * 内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+         * The content delivery network can cache authentication status codes. This parameter indicates the related configuration.
          */
         cacheAction?: pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheAction>;
         /**
-         * 表示鉴权失败时，内容分发网络如何响应用户。
+         * Indicates how the content delivery network responds to users when authentication fails.
          */
         responseAction?: pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction>;
         /**
-         * 表示内容分发网络对鉴权状态码的处理方式。
+         * Specifies how the content delivery network handles authentication status codes.
          */
         statusCodeAction?: pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeAction>;
         /**
-         * 表示鉴权超时后，内容分发网络如何处理鉴权请求。
+         * Specifies how the content delivery network handles authentication requests after authentication timeout.
          */
         timeOutAction?: pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutAction>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheAction {
         /**
-         * 表示内容分发网络是否缓存鉴权状态码。该参数有以下取值：nocache：表示内容分发网络不缓存鉴权状态码。cache：内容分发网络缓存鉴权状态码。
+         * Indicates whether the CDN caches authentication status codes. The parameter values are: nocache: CDN does not cache authentication status codes. cache: CDN caches authentication status codes.
          */
         action?: pulumi.Input<string>;
         /**
-         * 缓存 key 指定了用于区分不同请求 URI 的查询参数。每个参数都必须以 $ 开头。
+         * The cache key specifies the query parameters used to distinguish different request URIs. Each parameter must start with $.
          */
         cacheKeys?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 表示鉴权状态码的缓存时间。单位是秒。取值范围是 1-86400。86400秒表示 24小时。
+         * Indicates the cache duration for authentication status codes, measured in seconds. The range is 1–86400. 86400 seconds equals 24 hours.
          */
         ttl?: pulumi.Input<number>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction {
         /**
-         * 表示鉴权失败时，内容分发网络响应用户的状态码。您可以指定范围在 400-499 中的任意一个状态码。该参数的默认值是 403。
+         * Indicates the status code returned by the content delivery network to the user when authentication fails. You can specify any status code in the range 400–499. The default value is 403.
          */
         statusCode?: pulumi.Input<string>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeAction {
         /**
-         * 表示如果鉴权状态码既不是 FailCode，又不是 SuccessCode 时，内容分发网络处理鉴权请求的方式。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+         * Specifies how the content delivery network handles authentication requests when the authentication status code is neither FailCode nor SuccessCode. This parameter has the following values: reject: the content delivery network considers authentication failed; pass: the content delivery network considers authentication successful.
          */
         defaultAction?: pulumi.Input<string>;
         /**
-         * 表示鉴权失败时的鉴权状态码。您可以指定范围在 400-499 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 4xx 表示 400-499 中的任意一个状态码。该参数的默认值是 401。
+         * Indicates the authentication status code returned when authentication fails. You can specify one or more status codes in the range 400–499. Separate multiple status codes with a semicolon (;). You can also specify 4xx to indicate any status code between 400 and 499. The default value for this parameter is 401.
          */
         failCode?: pulumi.Input<string>;
         /**
-         * 表示鉴权成功时的鉴权状态码。您可以指定范围在 200-299 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 2xx 表示 200-299 中的任意一个状态码。该参数的默认值是 200。
+         * Indicates the authentication status code for successful authentication. You can specify one or more status codes in the range 200–299. Separate multiple status codes with a semicolon (;). You can also specify 2xx to represent any status code from 200–299. The default value is 200.
          */
         successCode?: pulumi.Input<string>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutAction {
         /**
-         * 表示鉴权超时后，内容分发网络处理鉴权请求的策略。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+         * Indicates the strategy for handling authentication requests after a timeout in the content delivery network. This parameter supports the following values: reject: The content delivery network considers authentication failed. pass: The content delivery network considers authentication successful.
          */
         action?: pulumi.Input<string>;
         /**
-         * 表示鉴权超时的时间，单位是毫秒。该参数的默认值为 200，取值范围是 200   - 3600。
+         * Specifies the authentication timeout in milliseconds. The default value is 200. The valid range is 200–3600.
          */
         time?: pulumi.Input<number>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules {
         /**
-         * 表示鉴权请求参数的设置策略。
+         * Indicates the strategy for setting authentication request parameters.
          */
         queryStringComponents?: pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponents>;
         queryStringInstances?: pulumi.Input<pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance>[]>;
@@ -3353,72 +3399,72 @@ export namespace cdn {
 
     export interface DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponents {
         /**
-         * 表示鉴权请求是否包含用户请求 URL 中的查询参数。该参数有以下取值：exclude：表示鉴权请求不包含任何查询参数。include：表示鉴权请求包含所有查询参数。includePart：表示鉴权请求包含指定的查询参数。
+         * Indicates whether the authentication request includes query parameters from the user's request URL. The parameter accepts the following values: exclude: The authentication request does not include any query parameters. include: The authentication request includes all query parameters. includePart: The authentication request includes specified query parameters.
          */
         action?: pulumi.Input<string>;
         /**
-         * 表示 Action 参数所对应的参数值，长度不能超过1,024 个字符。该参数有以下取值：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，您需要在 Value 参数中指定用户请求 URL 中的一个或者多个查询参数，多个查询参数使用英文分号（;）分隔。您不能指定 *。查询参数是区分大小写的，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）该参数的默认值是 *。
+         * Indicates the parameter value corresponding to the Action parameter. The length cannot exceed 1,024 characters. The parameter accepts the following values: If Action is exclude or include, Value must be *. If Action is includePart, you need to specify one or more query parameters from the user's request URL in the Value parameter, separated by semicolons (;). You cannot specify *. Query parameters are case-sensitive and can include printable ASCII characters except for the following: double quotes (") , spaces, and Delete (ASCII code 127). The default value for this parameter is *.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance {
         /**
-         * 表示如何设置鉴权请求参数。当前您只能设置 Action 为 set。set 表示设置参数。您需要在 Key 中指定您需要设置的鉴权请求参数。如果您指定的鉴权请求参数不存在，内容分发网络会在鉴权请求中添加该参数。如果您指定的鉴权请求参数已存在，内容分发网络会使用 Value 的值作为该鉴权请求参数的值。
+         * Describes how to set authentication request parameters. Currently, you can only set Action to set. set means to configure parameters. You need to specify the authentication request parameter to set in Key. If the specified authentication request parameter does not exist, the content delivery network adds the parameter to the authentication request. If the specified authentication request parameter already exists, the content delivery network uses the value of Value as the parameter's value.
          */
         action?: pulumi.Input<string>;
         /**
-         * 表示您需要设置的鉴权请求参数，长度不能超过 1,024 个字符。鉴权请求参数可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）
+         * Indicates the authentication request parameter you need to set. The length must not exceed 1,024 characters. The authentication request parameter can contain printable ASCII characters except for the following: double quotes ("), space, and Delete (ASCII code 127)
          */
         key?: pulumi.Input<string>;
         /**
-         * 表示鉴权请求参数的值，长度不能超过 1,024 个字符，并且区分大小写。Value有以下取值：当 ValueType 是 constant 时，表示鉴权请求参数的值是一个常量。您需要指定该常量值。常量值不能以美元符号（$）开头，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、Delete（ASCII code 127）当 ValueType 是 variable 时，表示鉴权请求参数的值来自一个变量。您可以指定该变量列表中的变量。当 ValueType 是 customize 时，表示鉴权请求参数的值是列表中的变量与固定字符串拼接后的字符串。在拼接的字符串中，变量使用 ${变量名} 表示。示例值：bind${request*uri}to${local*ip}done
+         * Indicates the value of the authentication request parameter. The length cannot exceed 1,024 characters and is case-sensitive. Value has the following options: When ValueType is constant, the authentication request parameter value is a constant. You need to specify this constant value. The constant value cannot start with a dollar sign ($) and can include any printable ASCII character except the following: double quotes (") and Delete (ASCII code 127). When ValueType is variable, the authentication request parameter value comes from a variable. You can specify a variable from the variable list. When ValueType is customize, the authentication request parameter value is a string formed by concatenating variables from the list with fixed strings. In the concatenated string, variables are represented as ${variable*name}. Example value: bind${request*uri}to${local_ip}done
          */
         value?: pulumi.Input<string>;
         /**
-         * 表示您在 Key 中设置的鉴权请求参数的类型。ValueType 有以下取值：constant：表示鉴权请求参数是一个常量。此时，您需要在 Value 中指定该常量的值。variable：表示鉴权请求参数的值来自一个变量。参见 Value 的说明。customize：表示鉴权请求参数的值是一个变量与固定字符串拼接后的字符串。
+         * Indicates the type of authentication request parameter set in Key. ValueType has the following options: constant: The authentication request parameter is a constant. In this case, you need to specify the constant value in Value. variable: The authentication request parameter value comes from a variable. See the description for Value. customize: The authentication request parameter value is a string formed by concatenating a variable and a fixed string.
          */
         valueType?: pulumi.Input<string>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules {
         /**
-         * 表示鉴权请求头的设置策略。
+         * Indicates the configuration policy for authentication request headers.
          */
         requestHeaderComponents?: pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponents>;
         requestHeaderInstances?: pulumi.Input<pulumi.Input<inputs.cdn.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstance>[]>;
         /**
-         * 表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+         * Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
          */
         requestHost?: pulumi.Input<string>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponents {
         /**
-         * 表示鉴权请求头是否包含用户请求头。该参数有以下取值：exclude：表示鉴权请求头中不包含任何用户请求头。include：表示鉴权请求头中包含所有用户请求头。includePart：表示鉴权请求头包含指定的用户请求头。
+         * Indicates whether the authentication request header includes user request headers. The parameter values are: exclude: the authentication request header does not include any user request headers. include: the authentication request header includes all user request headers. includePart: the authentication request header includes specified user request headers.
          */
         action?: pulumi.Input<string>;
         /**
-         * 表示 Action 参数所对应的参数值，长度不能超过 1,024 个字符。该参数有以下说明：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，Value 参数的取值是用户请求中的一个或者多个头部。多个头部使用英文分号（;）分隔。其取值不能只是 *，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）该参数的默认值是 *。
+         * Indicates the parameter value corresponding to the Action parameter. The length must not exceed 1,024 characters. The parameter has the following notes: If Action is exclude or include, Value must be *. If Action is includePart, the Value parameter can be one or more headers from the user's request. Multiple headers are separated by a semicolon (;). The value cannot be only *, and can include printable ASCII characters except for the following: underscore (_), space, double quotes ("), Delete (ASCII code 127). The default value for this parameter is *.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstance {
         /**
-         * 表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+         * Indicates how to set the authentication request header. Currently, you can only set this parameter to set. set means to configure the request header. You need to specify the request header in Key. If the request header does not exist, the content delivery network adds it to the authentication request. If the request header already exists, the content delivery network uses the value specified in Value as the header value.
          */
         action?: pulumi.Input<string>;
         /**
-         * 指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+         * Specifies the name of a header. The name cannot exceed 1,024 characters and is case insensitive. It can contain any printable ASCII character except: underscore (_), space, double quotes ("), and Delete (ASCII code 127).
          */
         key?: pulumi.Input<string>;
         /**
-         * 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+         * Indicates the value of the Key. This parameter is only valid when Action equals "set". If Action does not equal "set", this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can contain any printable ASCII character except the following: dollar sign ($), Delete (ASCII code 127)
          */
         value?: pulumi.Input<string>;
         /**
-         * 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+         * Specifies the value type for the Key. This parameter is only valid when Action is set to 'set'. If Action is not 'set', this parameter is invalid. The parameter has the following values: constant: the Key value is a fixed string. variable: the Key value comes from a variable. customize: the Key value is a string formed by concatenating a variable and a fixed string.
          */
         valueType?: pulumi.Input<string>;
     }
@@ -3426,41 +3472,41 @@ export namespace cdn {
     export interface DomainRequestBlockRule {
         blockRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainRequestBlockRuleBlockRule>[]>;
         /**
-         * 表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+         * Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainRequestBlockRuleBlockRule {
         /**
-         * 表示列表中一条规则的拦截配置。
+         * Indicates the interception configuration for a rule in the list.
          */
         blockAction?: pulumi.Input<inputs.cdn.DomainRequestBlockRuleBlockRuleBlockAction>;
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainRequestBlockRuleBlockRuleCondition>;
         /**
-         * 表示规则的名称，长度不超过 20 个字符，可以包含字母、数字、下划线（_）、中划线（-）、汉字。一个汉字占 3 个字符。
+         * Indicates the name of the rule, which must not exceed 20 characters and can include letters, numbers, underscores (_), hyphens (-), and Chinese characters. One Chinese character counts as 3 characters.
          */
         ruleName?: pulumi.Input<string>;
     }
 
     export interface DomainRequestBlockRuleBlockRuleBlockAction {
         /**
-         * 表示内容分发网络如何拦截匹配的请求。该参数有以下取值：refuse：表示内容分发网络拒绝请求并响应一个 4xx 的错误码。错误码在 StatusCode 中指定。redirect：表示内容分发网络将请求重定向到 RedirectUrl 中指定的 URL。
+         * Specifies how the content delivery network intercepts matching requests. This parameter has the following values: refuse: The content delivery network rejects the request and returns a 4xx error code. The error code is specified in StatusCode. redirect: The content delivery network redirects the request to the URL specified in RedirectUrl.
          */
         action?: pulumi.Input<string>;
         /**
-         * 当 Action 是 refuse 时，该参数是可选的，说明如下：如果指定该参数，该参数表示全局配置下的一个自定义响应页面的名称。也就是说，当内容分发网络拒绝请求时，返回该自定义页面。需要留意的是，"全局配置" 是一个白名单功能。要使用该功能，请 提交工单。如果不指定该参数，表示内容分发网络使用 StatusCode 中指定错误码的标准响应正文。当 Action 是 redirect 时，该参数无效，可以不指定。
+         * When Action is refuse, this parameter is optional, as explained below: If specified, this parameter indicates the name of a custom response page under global configuration. When the content delivery network refuses a request, it returns this custom page. Note that 'global configuration' is an Allowlist feature. To use this feature, submit a ticket. If this parameter is not specified, the content delivery network uses the standard response body for the error code specified in StatusCode. When Action is redirect, this parameter is invalid and can be omitted.
          */
         errorPage?: pulumi.Input<string>;
         /**
-         * 当 Action 是 redirect 时，该参数必填，表示重定向 URL。URL 必须以 http:// 或 https:// 开头，长度不能超过 1,024 个字符。当 Action 是 refuse 时，该参数无效，可以不指定。
+         * When Action is redirect, this parameter is required and specifies the redirect URL. The URL must start with http:// or https:// and cannot exceed 1,024 characters. When Action is refuse, this parameter is invalid and can be omitted.
          */
         redirectUrl?: pulumi.Input<string>;
         /**
-         * 表示对于拦截的请求，内容分发网络的响应状态码。当 Action 是 refuse 时，该参数表示一个 400-499 范围内的错误码。当 Action 是 redirect 时，该参数有以下取值：301：表示响应状态码是 301。302：表示响应状态码是 302。
+         * Represents the response status code from the content delivery network for intercepted requests. When Action is refuse, this parameter specifies an error code in the range 400–499. When Action is redirect, this parameter can be: 301: The response status code is 301. 302: The response status code is 302.
          */
         statusCode?: pulumi.Input<string>;
     }
@@ -3468,41 +3514,41 @@ export namespace cdn {
     export interface DomainRequestBlockRuleBlockRuleCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainRequestBlockRuleBlockRuleConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainRequestBlockRuleBlockRuleConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainRequestHeader {
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainRequestHeaderCondition>;
         /**
-         * 表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+         * Represents a list of configuration rules for request headers. Each rule includes settings for header operations. You can add up to 50 rules.
          */
         requestHeaderAction?: pulumi.Input<inputs.cdn.DomainRequestHeaderRequestHeaderAction>;
     }
@@ -3510,30 +3556,30 @@ export namespace cdn {
     export interface DomainRequestHeaderCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainRequestHeaderConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainRequestHeaderConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
@@ -3544,30 +3590,30 @@ export namespace cdn {
 
     export interface DomainRequestHeaderRequestHeaderActionRequestHeaderInstance {
         /**
-         * 表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+         * Indicates how to set the authentication request header. Currently, you can only set this parameter to set. set means to configure the request header. You need to specify the request header in Key. If the request header does not exist, the content delivery network adds it to the authentication request. If the request header already exists, the content delivery network uses the value specified in Value as the header value.
          */
         action?: pulumi.Input<string>;
         /**
-         * 指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+         * Specifies the name of a header. The name cannot exceed 1,024 characters and is case insensitive. It can contain any printable ASCII character except: underscore (_), space, double quotes ("), and Delete (ASCII code 127).
          */
         key?: pulumi.Input<string>;
         /**
-         * 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+         * Indicates the value of the Key. This parameter is only valid when Action equals "set". If Action does not equal "set", this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can contain any printable ASCII character except the following: dollar sign ($), Delete (ASCII code 127)
          */
         value?: pulumi.Input<string>;
         /**
-         * 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+         * Specifies the value type for the Key. This parameter is only valid when Action is set to 'set'. If Action is not 'set', this parameter is invalid. The parameter has the following values: constant: the Key value is a fixed string. variable: the Key value comes from a variable. customize: the Key value is a string formed by concatenating a variable and a fixed string.
          */
         valueType?: pulumi.Input<string>;
     }
 
     export interface DomainResponseHeader {
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainResponseHeaderCondition>;
         /**
-         * 表示内容分发网络在响应用户请求的时候，对响应头的操作。
+         * Indicates operations on the response header performed by the Content Delivery Network when responding to user requests.
          */
         responseHeaderAction?: pulumi.Input<inputs.cdn.DomainResponseHeaderResponseHeaderAction>;
     }
@@ -3575,30 +3621,30 @@ export namespace cdn {
     export interface DomainResponseHeaderCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainResponseHeaderConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainResponseHeaderConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
@@ -3609,34 +3655,34 @@ export namespace cdn {
 
     export interface DomainResponseHeaderResponseHeaderActionResponseHeaderInstance {
         /**
-         * 表示在内容分发网络响应用户请求时，是否校验请求头中的 Origin 字段。该参数有以下取值：true：表示内容分发网络会校验 Origin 字段。如果校验成功，内容分发网络会在响应头中包含 Access-Control-Allow-Origin 字段。字段值与 Origin 字段值相同。如果校验失败，响应头中不会包含 Access-Control-Allow-Origin 字段。false：表示内容分发网络不会校验 Origin 字段。在响应头中，内容分发网络会包含 Access-Control-Allow-Origin 字段。字段值是您配置的 Access-Control-Allow-Origin 的内容。该参数的默认值是 false。该参数仅在以下条件都满足的情况下有效：Action 是 set。Key 是 Access-Control-Allow-Origin。ValueType 是 constant。
+         * Indicates whether the Origin field in the request header is validated when the content delivery network responds to user requests. Valid values are: true: The content delivery network validates the Origin field. If validation succeeds, the response header includes the Access-Control-Allow-Origin field, with the value matching the Origin field. If validation fails, the response header does not include the Access-Control-Allow-Origin field. false: The content delivery network does not validate the Origin field. The response header includes the Access-Control-Allow-Origin field, with the value set to your configured Access-Control-Allow-Origin content. The default value is false. This parameter is only effective when all the following conditions are met: Action is set. Key is Access-Control-Allow-Origin. ValueType is constant.
          */
         accessOriginControl?: pulumi.Input<boolean>;
         /**
-         * 指定对响应头的操作。该参数有以下取值：set：表示设置一个头部。设置操作包括添加与修改。如果源站响应中已包含该头部，该头部的值会被覆盖。如果源站响应中没有包含该头部，该头部会被添加。delete，表示删除一个头部。
+         * Specifies the operation on the response header. This parameter has the following values: set: sets a header. The set operation includes adding and modifying. If the header already exists in the origin response, its value will be overwritten. If the header does not exist in the origin response, it will be added. delete: deletes a header
          */
         action?: pulumi.Input<string>;
         /**
-         * 指定一个头部的名称。名称不能超过 1,024个字符，不区分大小写，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+         * Specifies the name of a header. The name cannot exceed 1,024 characters, is case-insensitive, and can include any printable ASCII character except the following: underscore (_), space, double quotes ("), and Delete (ASCII code 127)
          */
         key?: pulumi.Input<string>;
         /**
-         * 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+         * Indicates the value of the Key. This parameter is valid only when Action is set. If Action is not set, this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can include printable ASCII characters except for the following: dollar sign ($), Delete (ASCII code 127).
          */
         value?: pulumi.Input<string>;
         /**
-         * 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+         * Specifies the value type for Key. This parameter is only valid when Action is set. If Action is not set, this parameter is invalid. The parameter supports the following values: constant: Key is a fixed string. variable: Key is sourced from a variable. customize: Key is a string formed by concatenating a variable and a fixed string.
          */
         valueType?: pulumi.Input<string>;
     }
 
     export interface DomainRewriteHls {
         /**
-         * 表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。该参数的默认值是 DrmAuthToken。
+         * Indicates the name of the signature parameter, which cannot exceed 100 characters. Parameter names are case-sensitive and can include letters, numbers, underscores (_), hyphens (-), commas (,), periods (.), and exclamation marks (!). The default value is DrmAuthToken.
          */
         signName?: pulumi.Input<string>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
          */
         switch?: pulumi.Input<boolean>;
     }
@@ -3644,18 +3690,18 @@ export namespace cdn {
     export interface DomainSignedUrlAuth {
         signedUrlAuthRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainSignedUrlAuthSignedUrlAuthRule>[]>;
         /**
-         * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainSignedUrlAuthSignedUrlAuthRule {
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainSignedUrlAuthSignedUrlAuthRuleCondition>;
         /**
-         * 表示签名计算的配置。
+         * Indicates the configuration for signature calculation.
          */
         signedUrlAuthAction?: pulumi.Input<inputs.cdn.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthAction>;
     }
@@ -3663,85 +3709,85 @@ export namespace cdn {
     export interface DomainSignedUrlAuthSignedUrlAuthRuleCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthAction {
         /**
-         * 表示签名计算使用的算法。该配置有以下取值：md5：表示 MD5 算法。sha256：表示 SHA-256 算法。该参数的默认值是 md5。
+         * Indicates the algorithm used for signature calculation. This configuration has the following values: md5: MD5 algorithm. sha256: SHA-256 algorithm. The default value for this parameter is md5.
          */
         authAlgorithm?: pulumi.Input<string>;
         /**
-         * 表示备密钥。备密钥的长度为 6-40个字符可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+         * Indicates the backup secret key. The backup secret key must be 6–40 characters long and can contain any printable ASCII character except Delete (ASCII code 127).
          */
         backupSecretKey?: pulumi.Input<string>;
         /**
-         * 表示自定义签算变量。
+         * Indicates custom signature calculation variables.
          */
         customVariableRules?: pulumi.Input<inputs.cdn.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules>;
         /**
-         * 签名的有效时间，单位是秒。该参数与请求中包含时间戳搭配使用，用来计算签名的过期时间。该参数的取值范围是 0-315,360,000。签名的过期时间 = 时间戳 + Duration。在内容分发网络收到某个请求时，如果签名的过期时间小于当前时间，内容分发网络判定签名已过期。
+         * The validity period of the signature, in seconds. This parameter is used with the timestamp included in the request to calculate the expiration time of the signature. The value range for this parameter is 0–315,360,000. Signature expiration time = timestamp + Duration. When the content delivery network receives a request, if the signature expiration time is less than the current time, the content delivery network determines that the signature has expired.
          */
         duration?: pulumi.Input<number>;
         /**
-         * 该参数暂不对外开放，请勿使用该参数。
+         * This parameter is not currently available to external users. Do not use this parameter.
          */
         keepOriginArg?: pulumi.Input<boolean>;
         /**
-         * 表示主密钥，长度为 6-40个字符，可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+         * Indicates the primary key, with a length of 6–40 characters. It can include printable ASCII characters except Delete (ASCII code 127)
          */
         masterSecretKey?: pulumi.Input<string>;
         /**
-         * 表示在响应一个 .m3u8 文件的请求时，内容分发网络是否对 .m3u8 文件中每个分片文件的 URL 添加签名参数。每个分片 URL 的签名是基于改写后分片 URL，使用签名规则计算的。该参数有以下取值：true：表示启用。false：表示禁用。
+         * Indicates whether the content delivery network adds signature parameters to the URL of each segment file in a .m3u8 file when responding to a .m3u8 file request. The signature for each segment URL is calculated based on the rewritten segment URL using the signature rules. The parameter values are as follows: true: enabled. false: disabled.
          */
         rewriteM3U8?: pulumi.Input<boolean>;
         /**
-         * 表示 "M3U8 改写" 功能的配置。该配置仅当以下条件都满足时才有效：RewriteM3u8 是 true。URLAuthType 不是 typee。
+         * Specifies the configuration for the 'M3U8 Rewrite' feature. This configuration is valid only when both of the following conditions are met: RewriteM3u8 is true; URLAuthType is not typee.
          */
         rewriteM3U8Rule?: pulumi.Input<inputs.cdn.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8Rule>;
         /**
-         * 表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。
+         * Indicates the name of the signature parameter. The length cannot exceed 100 characters. Parameter names are case-sensitive and can include letters, numbers, underscores (_), hyphens (-), commas (,), periods (.), and exclamation marks (!).
          */
         signName?: pulumi.Input<string>;
         /**
-         * 当 URLAuthType 为 typee 时，该参数为必填，表示需要纳入签名计算的字段。必须纳入签名计算的字段如下：key：秘钥，即MasterSecretKey或BackupSecretKey的传参内容。uri：表示用户请求资源的 URI。如果 URI 包含中文字符，您需要对 URI 编码。TimeName：表示时间戳参数的传参内容。可选择纳入签名计算的字段如下：domain：表示加速域名。referer：表示用户请求携带的 referer 值。ua：表示用户请求携带的 User-Agent 值。ip：表示用户请求的客户端 IP。origin：表示用户请求携带的 Origin 值。自定义变量：表示您在 CustomVariableInstances 中定义的变量名称。列表中填充的顺序即为签名计算时MD5()中各值顺序。
+         * When URLAuthType is set to typee, this parameter is required and specifies the fields to be included in the signature calculation. The following fields must be included in the signature calculation: key: the secret key, which is the parameter value for MasterSecretKey or BackupSecretKey. uri: the URI of the resource requested by the user. If the URI contains Chinese characters, you need to encode the URI. TimeName: the parameter value for the timestamp. The following fields can optionally be included in the signature calculation: domain: the acceleration domain name. referer: the referer value carried in the user's request. ua: the User-Agent value carried in the user's request. ip: the client IP of the user's request. origin: the Origin value carried in the user's request. Custom variables: the variable names you define in CustomVariableInstances. The order in which the fields are listed determines the order of values in MD5() during signature calculation.
          */
         signatureRules?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 进制配置。该参数有以下取值：decimal：十进制。heximal：十六进制。当 URLAuthType 为 typed、typee 时，该参数为必填。当 URLAuthType 为 typec 时，无论您是否设置该参数，该参数的值会被强制设置为 heximal。对于 URLAuthType 的其他值，该参数不生效。
+         * Numeral system configuration. This parameter has the following values: decimal: decimal system; hexadecimal: hexadecimal system. When URLAuthType is typed or typee, this parameter is required. When URLAuthType is typec, regardless of your setting, this parameter is forcibly set to hexadecimal. For other URLAuthType values, this parameter is not effective.
          */
         timeFormat?: pulumi.Input<string>;
         /**
-         * 表示时间戳参数的名称。TimeName 的值可以包括英文字母、数字、下划线（_）、中划线（-）、句号（.）、逗号（,）、感叹号（!），长度为 1-100 个字符。TimenName 不能与 SignName 相同。当 URLAuthType 为 typed、typee 时，该参数为必填。对于其他类型，该参数不生效。
+         * Indicates the name of the timestamp parameter. The value of TimeName can include English letters, numbers, underscores (_), hyphens (-), periods (.), commas (,), and exclamation marks (!), with a length of 1–100 characters. TimeName cannot be the same as SignName. When URLAuthType is typed or typee, this parameter is required. For other types, this parameter does not apply.
          */
         timeName?: pulumi.Input<string>;
         /**
-         * 签名类型。
+         * Signature type
          */
         urlAuthType?: pulumi.Input<string>;
     }
@@ -3752,44 +3798,44 @@ export namespace cdn {
 
     export interface DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstance {
         /**
-         * 表示变量的匹配方式。该参数的取值只能是 match。
+         * Indicates the matching method for the variable. The value of this parameter can only be match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示变量的类型。该参数有以下取值：queryString：表示该变量是请求中的一个查询参数。requestHeader：表示该变量是请求中的一个头部字段。
+         * Indicates the variable type. This parameter has the following values: queryString: indicates the variable is a query parameter in the request. requestHeader: indicates the variable is a header field in the request.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示变量的名称，长度不超过 100 个字符。变量名称的要求如下：如果 Type 是 queryString，变量名称可以包含字母、数字、连字符（-）、逗号（,）、句号（.）、感叹号（!）。如果 Type 是 requestHeader，变量名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"）、冒号（:）、Delete（ASCII code 127）
+         * Specifies the variable name, with a maximum length of 100 characters. Variable name requirements are as follows: If Type is queryString, the variable name can include letters, numbers, hyphens (-), commas (,), periods (.), and exclamation marks (!). If Type is requestHeader, the variable name can include any printable ASCII character except: underscore (_), space, double quotes ("), colon (:), and Delete (ASCII code 127).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8Rule {
         /**
-         * 表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
+         * Indicates whether to retain the original parameters in the URL when rewriting the shard URL. This parameter has the following values: true: removes the original parameters. false: retains the original parameters.
          */
         deleteParam?: pulumi.Input<boolean>;
         /**
-         * 表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+         * Indicates whether to add unsigned query parameters from the M3U8 file request to the segment URL. The parameter has the following options: true: add query parameters to the segment URL. false: do not add query parameters.
          */
         keepM3U8Param?: pulumi.Input<boolean>;
     }
 
     export interface DomainTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainTimeout {
         /**
-         * 指定是否启用回源超时时间的配置。该参数有以下取值：true：表示启用回源超时时间的配置。false：表示禁用回源超时时间的配置。此时，TCP 请求和 HTTP 请求的超时时间使用系统默认值，分别是 2 秒和 60 秒。
+         * Specify whether to enable origin timeout configuration. This parameter has the following values: true: enables origin timeout configuration. false: disables origin timeout configuration. In this case, the system default timeout values are used for TCP and HTTP requests, which are 2 seconds and 60 seconds respectively.
          */
         switch?: pulumi.Input<boolean>;
         timeoutRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainTimeoutTimeoutRule>[]>;
@@ -3797,11 +3843,11 @@ export namespace cdn {
 
     export interface DomainTimeoutTimeoutRule {
         /**
-         * 表示该配置模块的生效条件，由一组规则组成。
+         * Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          */
         condition?: pulumi.Input<inputs.cdn.DomainTimeoutTimeoutRuleCondition>;
         /**
-         * 表示超时时间的配置。
+         * Indicates the timeout configuration.
          */
         timeoutAction?: pulumi.Input<inputs.cdn.DomainTimeoutTimeoutRuleTimeoutAction>;
     }
@@ -3809,158 +3855,158 @@ export namespace cdn {
     export interface DomainTimeoutTimeoutRuleCondition {
         conditionRules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainTimeoutTimeoutRuleConditionConditionRule>[]>;
         /**
-         * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+         * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
          */
         connective?: pulumi.Input<string>;
     }
 
     export interface DomainTimeoutTimeoutRuleConditionConditionRule {
         /**
-         * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          */
         name?: pulumi.Input<string>;
         /**
-         * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          */
         object?: pulumi.Input<string>;
         /**
-         * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          */
         operator?: pulumi.Input<string>;
         /**
-         * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          */
         type?: pulumi.Input<string>;
         /**
-         * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DomainTimeoutTimeoutRuleTimeoutAction {
         /**
-         * 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+         * Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
          */
         httpTimeout?: pulumi.Input<number>;
         /**
-         * 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+         * Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
          */
         tcpTimeout?: pulumi.Input<number>;
     }
 
     export interface DomainUaAccessRule {
         /**
-         * 表示是否允许 UA 为空（""）或者不包含 UA 字段的请求访问加速域名。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+         * Indicates whether requests with an empty UA ("") or without a UA field are allowed to access the acceleration domain. The parameter has the following values: true: allowed. false: not allowed. The default value is false.
          */
         allowEmpty?: pulumi.Input<boolean>;
         /**
-         * 表示 UA 字符串是否是大小写敏感的。该参数有以下取值：true: 表示 UA 字符串是大小写不敏感的。false: 表示 UA 字符串是大小写敏感的。该参数的默认值是 false。
+         * Indicates whether the UA string is case-sensitive. The parameter has the following options: true: The UA string is case-insensitive. false: The UA string is case-sensitive. The default value for this parameter is false.
          */
         ignoreCase?: pulumi.Input<boolean>;
         /**
-         * 表示指定的是黑名单还是白名单。当 Switch 是 true 时，该参数为必填。该参数有以下取值：deny: 表示指定的是黑名单。allow: 表示指定的是白名单。
+         * Specifies whether a denylist or allowlist is used. When Switch is true, this parameter is required. The parameter values are as follows: deny: specifies a denylist. allow: specifies an allowlist.
          */
         ruleType?: pulumi.Input<string>;
         /**
-         * 表示是否启用 UA 黑白名单功能。该参数有以下取值：true: 表示启用。false: 表示禁用。
+         * Indicates whether the UA allowlist and blocklist feature is enabled. This parameter has the following values: true: enabled. false: disabled.
          */
         switch?: pulumi.Input<boolean>;
         /**
-         * 表示一个 UA 的列表。当 Switch 是 true 时，该参数为必填。该列表最多包含 1,000 个 UA。该参数的说明如下：该参数值的长度不能超过 30,000 个字符。如果 RuleType 是 allow，表示仅允许包含列表中的 UA 的请求访问加速域名。如果 RuleType 是 deny，表示如果访问请求包含列表中的 UA，则不允许访问加速域名。UA 能包含的字符有以下限制：UA 中可以使用 * 表示一个或者多个字符。* 仅可以出现在 UA 的开头和末尾。UA 不能只包含 *或者空格。UA 可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。UA 如果包含符号，符号必须是被 HTML 编码的。
+         * Represents a list of UAs. When Switch is true, this parameter is required. The list can contain up to 1,000 UAs. The parameter details are as follows: The value length cannot exceed 30,000 characters. If RuleType is allow, only requests containing UAs in the list are permitted to access the acceleration domain. If RuleType is deny, requests containing UAs in the list are not permitted to access the acceleration domain. UA character restrictions are as follows: You can use * in a UA to represent one or more characters. * can only appear at the beginning or end of the UA. A UA cannot consist only of * or spaces. A UA can contain printable ASCII characters except Delete (ASCII code 127). If a UA contains symbols, the symbols must be HTML encoded.
          */
         userAgents?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface DomainUrlNormalize {
         /**
-         * 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+         * This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
          */
         normalizeObjects?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+         * This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface DomainVideoDrag {
         /**
-         * 智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+         * Smart compression configuration switch. The parameter has the following options: true: enable video seeking. false: disable video seeking.
          */
         switch?: pulumi.Input<boolean>;
     }
 
     export interface ShareConfigAllowIpAccessRule {
         /**
-         * 表示一个条目列表。列表中的每个条目是一个 IP 地址或 CIDR 网段。IP 地址和网段可以是 IPv4 和 IPv6 格式。列表的额度如下：对于 AddSharedConfig，列表中条目的数量不能超过 30,000 个。
+         * Specifies a list of entries. Each entry in the list is an IP address or CIDR block. IP addresses and blocks can be in IPv4 or IPv6 format. List limits: For AddSharedConfig, the number of entries in the list cannot exceed 30,000.
          */
         rules?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ShareConfigAllowRefererAccessRule {
         /**
-         * 表示是否不允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。false：表示允许。该参数的默认值是 false。
+         * Indicates whether requests with an empty Referer header or without a Referer header are not allowed. This parameter has the following values: true: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. false: Allowed. The default value is false.
          */
         allowEmpty?: pulumi.Input<boolean>;
         /**
-         * 表示该通用列表的内容。
+         * Specifies the contents of the common list.
          */
         commonType?: pulumi.Input<inputs.cdn.ShareConfigAllowRefererAccessRuleCommonType>;
     }
 
     export interface ShareConfigAllowRefererAccessRuleCommonType {
         /**
-         * 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+         * Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
          */
         ignoreCase?: pulumi.Input<boolean>;
         /**
-         * 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+         * Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
          */
         rules?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ShareConfigCommonMatchList {
         /**
-         * 表示该通用列表的内容。
+         * Specifies the contents of the common list.
          */
         commonType?: pulumi.Input<inputs.cdn.ShareConfigCommonMatchListCommonType>;
     }
 
     export interface ShareConfigCommonMatchListCommonType {
         /**
-         * 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+         * Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
          */
         ignoreCase?: pulumi.Input<boolean>;
         /**
-         * 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+         * Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
          */
         rules?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ShareConfigDenyIpAccessRule {
         /**
-         * 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+         * Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
          */
         rules?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ShareConfigDenyRefererAccessRule {
         /**
-         * 表示是否允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示允许。false：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。该参数的默认值是 true。
+         * Indicates whether requests with an empty Referer header or without a Referer header are allowed. This parameter has the following values: true: Allowed. false: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. The default value is true.
          */
         allowEmpty?: pulumi.Input<boolean>;
         /**
-         * 表示该通用列表的内容。
+         * Specifies the contents of the common list.
          */
         commonType?: pulumi.Input<inputs.cdn.ShareConfigDenyRefererAccessRuleCommonType>;
     }
 
     export interface ShareConfigDenyRefererAccessRuleCommonType {
         /**
-         * 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+         * Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
          */
         ignoreCase?: pulumi.Input<boolean>;
         /**
-         * 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+         * Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
          */
         rules?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -3969,30 +4015,30 @@ export namespace cdn {
 export namespace cen {
     export interface CenInstance {
         /**
-         * 网络实例的ID。
+         * Network instance ID
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 网络实例所属账号的ID。
+         * Account ID for the network instance
          */
         instanceOwnerId?: pulumi.Input<string>;
         /**
-         * 网络实例所在的地域。
+         * Region where the network instance is located
          */
         instanceRegionId?: pulumi.Input<string>;
         /**
-         * 网络实例的类型。
+         * Type of the network instance
          */
         instanceType?: pulumi.Input<string>;
     }
 
     export interface CenTag {
         /**
-         * 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+         * Tag key for user labels. Length limit: 1–128 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Duplicate tag keys are not allowed for the same resource
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+         * Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @
          */
         value?: pulumi.Input<string>;
     }
@@ -4002,537 +4048,537 @@ export namespace cen {
 export namespace clb {
     export interface AclAclEntry {
         /**
-         * IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+         * Description of the IP entry. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters.
          */
         description?: pulumi.Input<string>;
         /**
-         * IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+         * Address range of the IP entry. Only CIDR addresses are supported. Both IPv4 and IPv6 entries can be provided.
          */
         entry?: pulumi.Input<string>;
     }
 
     export interface AclListener {
         /**
-         * 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+         * Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
          */
         aclType?: pulumi.Input<string>;
         /**
-         * 监听器的ID。
+         * Listener ID
          */
         listenerId?: pulumi.Input<string>;
         /**
-         * 监听器的名称。
+         * Listener name
          */
         listenerName?: pulumi.Input<string>;
         /**
-         * 监听器的端口。
+         * Listener port
          */
         port?: pulumi.Input<number>;
         /**
-         * 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+         * Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
          */
         protocol?: pulumi.Input<string>;
     }
 
     export interface AclTag {
         /**
-         * 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         * User tag key. Length must be 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         * User tag value. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface CertificateTag {
         /**
-         * 用户标签的标签键。
+         * User tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface ClbAccessLog {
         /**
-         * 存储七层访问日志的对象存储桶的名称。
+         * Name of the object storage bucket for storing Layer 7 access logs
          */
         bucketName?: pulumi.Input<string>;
         /**
-         * 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+         * Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
          */
         deliveryType?: pulumi.Input<string>;
         /**
-         * 是否开启访问日志（七层）投递至对象存储TOS的功能。
+         * Enable access log (Layer 7) delivery to object storage TOS
          */
         enabled?: pulumi.Input<boolean>;
         /**
-         * 日志项目。
+         * Log project
          */
         tlsProjectId?: pulumi.Input<string>;
         /**
-         * 日志主题。
+         * Log topic
          */
         tlsTopicId?: pulumi.Input<string>;
     }
 
     export interface ClbEip {
         /**
-         * 带宽峰值。
+         * Peak bandwidth
          */
         bandwidth?: pulumi.Input<number>;
         /**
-         * 共享带宽包ID。
+         * Shared bandwidth package ID
          */
         bandwidthPackageId?: pulumi.Input<string>;
         /**
-         * 计费方式。
+         * Billing method
          */
         eipBillingType?: pulumi.Input<number>;
         /**
-         * 线路类型。
+         * Line type
          */
         isp?: pulumi.Input<string>;
         /**
-         * 防护包ID。
+         * Protection package ID
          */
         securityProtectionInstanceId?: pulumi.Input<number>;
         /**
-         * 安全防护类型。
+         * Security protection type
          */
         securityProtectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ClbEni {
         /**
-         * 负载均衡实例的私网IP地址。
+         * Private IP address of the load balancer instance
          */
         eniAddress?: pulumi.Input<string>;
         /**
-         * 负载均衡实例占用的网卡ID。
+         * Network interface ID occupied by the load balancer instance
          */
         eniId?: pulumi.Input<string>;
     }
 
     export interface ClbEnis {
         /**
-         * 负载均衡实例的私网IP地址。
+         * Private IP address of the load balancer instance
          */
         eniAddress?: pulumi.Input<string>;
         /**
-         * 负载均衡实例占用的网卡ID。
+         * Network interface ID occupied by the load balancer instance
          */
         eniId?: pulumi.Input<string>;
     }
 
     export interface ClbListener {
         /**
-         * 监听器的ID。
+         * Listener ID
          */
         listenerId?: pulumi.Input<string>;
         /**
-         * 监听器的名称。
+         * Listener name
          */
         listenerName?: pulumi.Input<string>;
     }
 
     export interface ClbServerGroup {
         /**
-         * 负载均衡实例中后端服务器组的ID。
+         * ID of the backend server group in the load balancer instance
          */
         serverGroupId?: pulumi.Input<string>;
         /**
-         * 负载均衡实例中后端服务器组的名称。
+         * Name of the backend server group in the load balancer instance
          */
         serverGroupName?: pulumi.Input<string>;
     }
 
     export interface ClbTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface ListenerHealthCheck {
         /**
-         * 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+         * Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
          */
         domain?: pulumi.Input<string>;
         /**
-         * 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+         * Whether health check is enabled for the listener. on (default): enabled. off: disabled.
          */
         enabled?: pulumi.Input<string>;
         /**
-         * 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+         * Health threshold, i.e., the number of consecutive successful health checks. Range: 2–10, default is 3, unit: times.
          */
         healthyThreshold?: pulumi.Input<number>;
         /**
-         * 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+         * HTTP status codes for healthy checks. This parameter is effective when Protocol is HTTP or HTTPS and HealthCheck.Enabled is on. Values: http*2xx (default), http*3xx, http*4xx, http*5xx. Separate multiple status codes with a comma (,).
          */
         httpCode?: pulumi.Input<string>;
         /**
-         * 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+         * Interval for performing health checks. Range: 1–300, default is 2, in seconds.
          */
         interval?: pulumi.Input<number>;
         /**
-         * 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+         * Listener health check method. GET: server must support the GET method. HEAD: server returns only HEAD header information, which reduces backend overhead, but requires server support for the HEAD method.
          */
         method?: pulumi.Input<string>;
         /**
-         * 健康检查的端口，取值范围为1-65535。
+         * Health check port. Value range: 1–65535.
          */
         port?: pulumi.Input<number>;
         /**
-         * 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+         * Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered 'abnormal'. Value range: 1 to 60. Default: 2. Unit: seconds.
          */
         timeout?: pulumi.Input<number>;
         /**
-         * 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+         * Expected response string for health check. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
          */
         udpExpect?: pulumi.Input<string>;
         /**
-         * 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+         * Request string for performing health checks. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. The values of HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
          */
         udpRequest?: pulumi.Input<string>;
         /**
-         * 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+         * Unhealthy threshold, which is the number of consecutive health check failures. Value range: 2–10. Default: 3. Unit: occurrences.
          */
         unhealthyThreshold?: pulumi.Input<number>;
         /**
-         * 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+         * Health check path. Must be configured as the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must start with '/'. Only letters, digits, hyphens (-), underscores (_), slashes (/), periods (.), percent signs (%), question marks (?), #, &, and equals signs (=) are allowed. Length: 1–128 characters. If not specified or no value is provided, the default is '/'.
          */
         uri?: pulumi.Input<string>;
     }
 
     export interface ListenerTag {
         /**
-         * 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         * Tag key for user tags. Length range: 1–128 characters. Supports input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         * Tag value for user tags. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NlbAccessLog {
         /**
-         * 是否开启访问日志。true：是。flase：否。
+         * Enable access logs. true: yes. false: no.
          */
         accessLogEnabled?: pulumi.Input<boolean>;
         /**
-         * 日志项目的ID。
+         * Log project ID.
          */
         projectId?: pulumi.Input<string>;
         /**
-         * 日志主题的ID。
+         * Log topic ID.
          */
         topicId?: pulumi.Input<string>;
     }
 
     export interface NlbListenerHealth {
         /**
-         * 后端服务器的实例 ID或IP地址。
+         * Backend server instance ID or IP address
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 后端服务器的IP地址。
+         * Backend server IP address
          */
         ip?: pulumi.Input<string>;
         /**
-         * 后端服务器提供服务的端口。
+         * Port on which the backend server provides services
          */
         port?: pulumi.Input<number>;
         /**
-         * 后端服务器ID。
+         * Backend server ID
          */
         serverId?: pulumi.Input<string>;
         /**
-         * 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+         * Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
          */
         serverType?: pulumi.Input<string>;
         /**
-         * 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+         * Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server's zone)
          */
         status?: pulumi.Input<string>;
         /**
-         * 健康状态最后更新时间。
+         * Last update time of health status
          */
         updatedTime?: pulumi.Input<string>;
         /**
-         * 后端服务器接收访问流量的可用区ID。
+         * Zone ID where the backend server receives traffic
          */
         zoneId?: pulumi.Input<string>;
     }
 
     export interface NlbListenerTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NlbSecurityPolicyTag {
         /**
-         * 用户标签的标签键。
+         * User tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NlbServerGroupHealthCheck {
         /**
-         * 健康检查的域名。
+         * Health check domain name
          */
         domain?: pulumi.Input<string>;
         /**
-         * 是否开启健康检查。
+         * Enable health check
          */
         enabled?: pulumi.Input<boolean>;
         /**
-         * 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+         * Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with 'normal' results, it is considered health check 'normal'
          */
         healthyThreshold?: pulumi.Input<number>;
         /**
-         * 健康检查正常的HTTP状态码。
+         * HTTP status codes indicating a healthy health check.
          */
         httpCode?: pulumi.Input<string>;
         /**
-         * 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+         * Health check interval, range: 1–300 seconds, default: 10 seconds.
          */
         interval?: pulumi.Input<number>;
         /**
-         * 健康检查的请求方法。
+         * Health check request method
          */
         method?: pulumi.Input<string>;
         /**
-         * 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+         * Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server's port is used for health checks. If full port forwarding is enabled, this parameter must be specified
          */
         port?: pulumi.Input<number>;
         /**
-         * 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+         * Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check 'abnormal'
          */
         timeout?: pulumi.Input<number>;
         /**
-         * 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+         * Health check protocol type. Options: TCP (default), HTTP, UDP
          */
         type?: pulumi.Input<string>;
         /**
-         * UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+         * UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
          */
         udpExpect?: pulumi.Input<string>;
         /**
-         * UDP健康检查的预期响应字符串。
+         * Expected response string for UDP health check
          */
         udpRequest?: pulumi.Input<string>;
         /**
-         * 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+         * Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with 'abnormal' results, it is considered health check abnormal
          */
         unhealthyThreshold?: pulumi.Input<number>;
         /**
-         * 健康检查的路径。
+         * Health check path
          */
         uri?: pulumi.Input<string>;
     }
 
     export interface NlbServerGroupServer {
         /**
-         * 后端服务器的描述，默认值为空字符串。
+         * Description of the backend server, default is an empty string.
          */
         description?: pulumi.Input<string>;
         /**
-         * 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+         * Server instance ID or IP address. If the server type is 'ecs', enter the cloud server instance ID. You can call the DescribeInstances API to obtain the cloud server instance ID. If the server type is 'eni', enter the network interface card ID bound to the cloud server instance. You can call the DescribeNetworkInterfaces API to obtain the network interface card ID. If the server type is 'ip', enter the backend server's IP address.
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+         * Private IP address of the backend server. You can call the DescribeInstances API to obtain the private IP address of an 'ecs' type backend server. You can call the DescribeNetworkInterfaces API to obtain the private IP address of an 'eni' type backend server.
          */
         ip?: pulumi.Input<string>;
         /**
-         * 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+         * Port number on which the backend server receives requests, range: 1–65535. If AnyPortEnabled is 'false' (all-port forwarding is disabled), this parameter is required. If AnyPortEnabled is 'true' (all-port forwarding is enabled), the default value is 0.
          */
         port?: pulumi.Input<number>;
         /**
-         * 后端服务器 ID。
+         * Backend server ID
          */
         serverId?: pulumi.Input<string>;
         /**
-         * 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+         * Backend server type. Available values: ecs: cloud server instance (primary network interface). eni: auxiliary network interface. ip: IP address.
          */
         type?: pulumi.Input<string>;
         /**
-         * 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+         * Backend server weight, range: 0–100. Weight of 0 means requests will not be forwarded to this server. If not specified, the default is 0.
          */
         weight?: pulumi.Input<number>;
         /**
-         * 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+         * Specify the availability zone of the NLB instance associated with the backend server. This parameter is required when Servers.N.Type is ip. If the NLB instance enables cross-zone forwarding, the backend server can receive traffic from all availability zones of the NLB instance. If cross-zone forwarding is disabled, the backend server only receives traffic from the specified availability zone
          */
         zoneId?: pulumi.Input<string>;
     }
 
     export interface NlbServerGroupTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NlbTag {
         /**
-         * 标签键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NlbZoneMapping {
         /**
-         * 网卡ID。
+         * Network interface card ID.
          */
         eniId?: pulumi.Input<string>;
         /**
-         * NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+         * Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
          */
         ipv4Address?: pulumi.Input<string>;
         /**
-         * NLB实例的公网IPv4 EIP地址。
+         * Public IPv4 EIP address of the NLB instance.
          */
         ipv4EipAddress?: pulumi.Input<string>;
         /**
-         * NLB实例的公网IPv4 EIP ID。
+         * Public IPv4 EIP ID of the NLB instance.
          */
         ipv4EipId?: pulumi.Input<string>;
         /**
-         * NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+         * Health status of the NLB instance's private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
          */
         ipv4HcStatus?: pulumi.Input<string>;
         /**
-         * NLB实例的私网IPv4 LIP地址。
+         * Private IPv4 LIP address of the NLB instance.
          */
         ipv4LocalAddresses?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * NLB实例的私网IPv6 VIP地址。
+         * Private IPv6 VIP address of the NLB instance.
          */
         ipv6Address?: pulumi.Input<string>;
         /**
-         * NLB实例关联的IPv6公网带宽的ID。
+         * ID of the IPv6 public bandwidth associated with the NLB instance.
          */
         ipv6EipId?: pulumi.Input<string>;
         /**
-         * NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+         * Health status of the NLB instance's private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
          */
         ipv6HcStatus?: pulumi.Input<string>;
         /**
-         * NLB实例的私网IPv6 LIP地址。
+         * Private IPv6 LIP address of the NLB instance.
          */
         ipv6LocalAddresses?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * NLB实例所属的子网ID。
+         * Subnet ID to which the NLB instance belongs.
          */
         subnetId?: pulumi.Input<string>;
         /**
-         * NLB实例所属的可用区ID。
+         * Availability zone ID to which the NLB instance belongs.
          */
         zoneId?: pulumi.Input<string>;
     }
 
     export interface RuleRedirectConfig {
         /**
-         * 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+         * The domain name for forwarding rule redirection currently supports only exact domain names. Specifications: Must contain at least one '.', and cannot start or end with '.'. Only letters, numbers, '.', and '-' are allowed. Length must be between 1 and 128 characters. Example of a valid exact domain name: www.test.com.
          */
         host?: pulumi.Input<string>;
         /**
-         * 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+         * Path for forwarding rule redirection. Specifications: Must start with a forward slash '/'. Consecutive '/' characters are not allowed. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=', and other specified characters are allowed. Length must be between 1 and 128 characters.
          */
         path?: pulumi.Input<string>;
         /**
-         * 转发规则重定向的端口，取值范围为 1~65535。
+         * Port for forwarding rule redirection. Value range: 1~65535.
          */
         port?: pulumi.Input<string>;
         /**
-         * 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+         * Protocol for forwarding rule redirection. Options: HTTP. HTTPS (default).
          */
         protocol?: pulumi.Input<string>;
         /**
-         * 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+         * Status code for forwarding rule redirection. Options: 301 (default): Indicates the requested resource has been permanently moved to a new URL. The client should use the new URL for subsequent requests. 302: Indicates the requested resource has been temporarily moved to a new URL and may change again in the future. The client should use the new URL for subsequent requests. 307: Similar to 302, but requires the client to keep the request method unchanged during redirection. For example, if the original request is GET, the redirected request remains GET. 308: Similar to 301, but requires the client to keep the request method unchanged during redirection.
          */
         statusCode?: pulumi.Input<string>;
     }
 
     export interface RuleTag {
         /**
-         * 标签键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface ServerGroupListener {
         /**
-         * 监听器的ID。
+         * Listener ID.
          */
         listenerId?: pulumi.Input<string>;
     }
 
     export interface ServerGroupServer {
         /**
-         * 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+         * Backend server description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
          */
         description?: pulumi.Input<string>;
         /**
-         * 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+         * Backend server. Value options: When Type is ecs, provide the cloud server instance ID. When Type is eni, provide the ID of the auxiliary network card attached to the cloud server. When Type is ip, provide the IP address as the backend server.
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+         * Private IP address of the backend server. Use '&' to separate multiple backend server IP addresses.
          */
         ip?: pulumi.Input<string>;
         /**
-         * 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+         * Port number on which the backend server receives requests. Value range: 1–65535. If the AnyPortEnabled parameter is 'off' and you need to add backend servers at the same time, this parameter must be provided. If AnyPortEnabled is 'on', this parameter defaults to 0.
          */
         port?: pulumi.Input<number>;
         /**
-         * 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+         * Backend server instance type. When the Type parameter is instance, value options are: ecs: cloud server instance. eni: auxiliary network card. When the Type parameter is ip, this parameter value is ip.
          */
         type?: pulumi.Input<string>;
         /**
-         * 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+         * Backend server weight, range: 0–100. If not specified, defaults to 0. 0 means requests will not be forwarded to this backend server.
          */
         weight?: pulumi.Input<number>;
     }
 
     export interface ServerGroupTag {
         /**
-         * 绑定的标签键信息。
+         * Information about bound tag keys.
          */
         key?: pulumi.Input<string>;
         /**
-         * 绑定的标签值信息。
+         * Bound tag value information.
          */
         value?: pulumi.Input<string>;
     }
@@ -4541,22 +4587,22 @@ export namespace clb {
 export namespace cloudidentity {
     export interface GroupMember {
         /**
-         * 用户id。
+         * User ID
          */
         userId?: pulumi.Input<string>;
     }
 
     export interface PermissionSetPermissionPolicy {
         /**
-         * 策略语法内容。语法可参考 策略语法说明。
+         * Policy syntax content. Refer to policy syntax documentation
          */
         permissionPolicyDocument?: pulumi.Input<string>;
         /**
-         * 策略名称。
+         * Policy Name
          */
         permissionPolicyName?: pulumi.Input<string>;
         /**
-         * 策略类型，System or Inline。
+         * Policy Type: System or Inline
          */
         permissionPolicyType?: pulumi.Input<string>;
     }
@@ -4565,57 +4611,57 @@ export namespace cloudidentity {
 export namespace cloudmonitor {
     export interface RuleCondition {
         /**
-         * 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+         * Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
          */
         comparisonOperator?: pulumi.Input<string>;
         /**
-         * 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+         * Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
          */
         metricName?: pulumi.Input<string>;
         /**
-         * 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+         * Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
          */
         metricUnit?: pulumi.Input<string>;
         /**
-         * 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+         * Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
          */
         period?: pulumi.Input<string>;
         /**
-         * 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+         * Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
          */
         statistics?: pulumi.Input<string>;
         /**
-         * 指标阈值。支持输入正数或 0。最多支持三位小数。
+         * Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
          */
         threshold?: pulumi.Input<string>;
     }
 
     export interface RuleDimensionConditions {
         /**
-         * 根据资源名称选择告警对象的条件。当Type为meta时必填。
+         * Condition for selecting alert objects based on resource name. Required when Type is meta.
          */
         metaCondition?: pulumi.Input<inputs.cloudmonitor.RuleDimensionConditionsMetaCondition>;
         /**
-         * 根据项目选择告警对象的条件。当Type为project时必填。
+         * Condition for selecting alert targets by project. Required when Type is project.
          */
         projectCondition?: pulumi.Input<inputs.cloudmonitor.RuleDimensionConditionsProjectCondition>;
         /**
-         * 根据标签选择告警对象的条件。当Type为tag时必填。
+         * Condition for selecting alert objects by tag. Required when Type is tag.
          */
         tagCondition?: pulumi.Input<inputs.cloudmonitor.RuleDimensionConditionsTagCondition>;
         /**
-         * Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+         * Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface RuleDimensionConditionsMetaCondition {
         /**
-         * 是否为全量资源。true：全部资源。false：部分资源。
+         * Whether all resources are included. true: All resources. false: Partial resources.
          */
         allDimensions?: pulumi.Input<boolean>;
         /**
-         * 判断条件。and：全部满足。or：任意满足。
+         * Condition. and: All conditions met. or: Any condition met.
          */
         condition?: pulumi.Input<string>;
         metas?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleDimensionConditionsMetaConditionMeta>[]>;
@@ -4623,29 +4669,29 @@ export namespace cloudmonitor {
 
     export interface RuleDimensionConditionsMetaConditionMeta {
         /**
-         * 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+         * Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
          */
         comparator?: pulumi.Input<string>;
         /**
-         * 标签键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+         * Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
          */
         values?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface RuleDimensionConditionsProjectCondition {
         /**
-         * 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+         * Project name list, in array format. Separate multiple values with commas.
          */
         projects?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface RuleDimensionConditionsTagCondition {
         /**
-         * 判断条件。and：全部满足。or：任意满足。
+         * Condition. and: All conditions met. or: Any condition met.
          */
         condition?: pulumi.Input<string>;
         tags?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleDimensionConditionsTagConditionTag>[]>;
@@ -4653,15 +4699,15 @@ export namespace cloudmonitor {
 
     export interface RuleDimensionConditionsTagConditionTag {
         /**
-         * 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+         * Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
          */
         comparator?: pulumi.Input<string>;
         /**
-         * 标签键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+         * Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
          */
         values?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -4669,85 +4715,85 @@ export namespace cloudmonitor {
     export interface RuleLevelCondition {
         conditions?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleLevelConditionCondition>[]>;
         /**
-         * 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+         * Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
          */
         level?: pulumi.Input<string>;
     }
 
     export interface RuleLevelConditionCondition {
         /**
-         * 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+         * Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
          */
         comparisonOperator?: pulumi.Input<string>;
         /**
-         * 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+         * Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
          */
         metricName?: pulumi.Input<string>;
         /**
-         * 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+         * Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
          */
         metricUnit?: pulumi.Input<string>;
         /**
-         * 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+         * Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
          */
         period?: pulumi.Input<string>;
         /**
-         * 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+         * Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
          */
         statistics?: pulumi.Input<string>;
         /**
-         * 指标阈值。支持输入正数或 0。最多支持三位小数。
+         * Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
          */
         threshold?: pulumi.Input<string>;
     }
 
     export interface RuleNoData {
         /**
-         * 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+         * Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
          */
         enable?: pulumi.Input<boolean>;
         /**
-         * 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+         * No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
          */
         evaluationCount?: pulumi.Input<number>;
     }
 
     export interface RuleNotifyTemplate {
         /**
-         * 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+         * Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
          */
         channel?: pulumi.Input<string>;
         /**
-         * 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+         * Notification template ID. Note: Each notification channel supports only one notification template ID.
          */
         notifyTemplateId?: pulumi.Input<string>;
     }
 
     export interface RuleOriginalDimensions {
         /**
-         * 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+         * Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
          */
         key?: pulumi.Input<string>;
         /**
-         * 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：["*"] 。
+         * Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: ["*"] .
          */
         values?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface RuleRecoveryNotify {
         /**
-         * 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+         * Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
          */
         enable?: pulumi.Input<boolean>;
     }
 
     export interface RuleTag {
         /**
-         * 标签键。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。volc:和/sys:为系统预留的标签键，添加标签时，标签键的开头不能设置为任何大小写形式的volc:和/sys:。标签键的长度需为 1～128 个字符。
+         * Tag key. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. volc: and /sys: are system-reserved tag keys. When adding a tag, the tag key cannot start with any case form of volc: or /sys:. Tag key length must be 1–128 characters.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。标签键的长度需为 0～255 个字符。
+         * Tag value. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. Tag key length must be 0–255 characters.
          */
         value?: pulumi.Input<string>;
     }
@@ -4759,29 +4805,45 @@ export namespace config {
 export namespace cr {
     export interface RegistryProxyCache {
         /**
-         * ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+         * Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
          */
         type?: pulumi.Input<string>;
     }
 
     export interface RegistryStatus {
         /**
-         * Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+         * Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          */
         conditions?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+         * Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          */
         phase?: pulumi.Input<string>;
     }
 
     export interface RegistryTag {
         /**
-         * 标签的 Key 值。
+         * Tag key values
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签的 Value 值列表。
+         * List of tag values
          */
         value?: pulumi.Input<string>;
     }
@@ -4790,41 +4852,41 @@ export namespace cr {
 export namespace directconnect {
     export interface DirectConnectGatewayAssociateCen {
         /**
-         * CEN的ID。
+         * ID of CEN.
          */
         cenId?: pulumi.Input<string>;
         /**
-         * CEN的用户ID。
+         * User ID of CEN.
          */
         cenOwnerId?: pulumi.Input<string>;
         /**
-         * 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+         * Status of the instance in CEN. Attaching: attaching. Attached: attached.
          */
         cenStatus?: pulumi.Input<string>;
     }
 
     export interface DirectConnectGatewayAssociateEic {
         /**
-         * EIC的ID。
+         * ID of EIC.
          */
         eicId?: pulumi.Input<string>;
         /**
-         * EIC的用户ID。
+         * User ID of EIC.
          */
         eicOwnerId?: pulumi.Input<string>;
         /**
-         * 实例在EIC中的状态。
+         * Status of the instance in EIC.
          */
         eicStatus?: pulumi.Input<string>;
     }
 
     export interface DirectConnectGatewayTag {
         /**
-         * 用户标签的标签键。长度取值范围为1~128字符。
+         * User label tag key. Length must be between 1 and 128 characters.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。长度取值范围为0~256字符。
+         * User label tag value. Length must be between 0 and 256 characters.
          */
         value?: pulumi.Input<string>;
     }
@@ -4834,11 +4896,11 @@ export namespace directconnect {
 export namespace dns {
     export interface ZoneTag {
         /**
-         * 标签的键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签的值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
@@ -4847,83 +4909,83 @@ export namespace dns {
 export namespace ecs {
     export interface CommandParameterDefinition {
         /**
-         * 自定义参数值（数字）允许的小数点后位数。
+         * Allowed decimal places for custom parameter (number).
          */
         decimalPrecision?: pulumi.Input<number>;
         /**
-         * 自定义参数默认值。
+         * Default value for custom parameter.
          */
         defaultValue?: pulumi.Input<string>;
         /**
-         * 自定义参数值（字符串）的最大长度。
+         * Maximum length for custom parameter (string).
          */
         maxLength?: pulumi.Input<number>;
         /**
-         * 自定义参数值（数字）的最大值。
+         * Maximum value for custom parameter (number).
          */
         maxValue?: pulumi.Input<string>;
         /**
-         * 自定义参数值（字符串）的最小长度。
+         * Minimum length for custom parameter (string).
          */
         minLength?: pulumi.Input<number>;
         /**
-         * 自定义参数值（数字）的最小值。
+         * Minimum value for custom parameter (number).
          */
         minValue?: pulumi.Input<string>;
         /**
-         * 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+         * Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
          */
         name?: pulumi.Input<string>;
         /**
-         * 是否必填。
+         * Whether it is required.
          */
         required?: pulumi.Input<boolean>;
         /**
-         * 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+         * Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
          */
         type?: pulumi.Input<string>;
     }
 
     export interface CommandTag {
         /**
-         * 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+         * User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+         * User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DeploymentSetCapacity {
         /**
-         * 该可用区内，还可以加入当前部署集的ECS实例数量。
+         * You can also include the number of ECS instances in the current deployment set within this availability zone.
          */
         availableCount?: pulumi.Input<number>;
         /**
-         * 部署集内属于该可用区的ECS实例数量。
+         * Number of ECS instances in the deployment set that belong to this availability zone.
          */
         usedCount?: pulumi.Input<number>;
         /**
-         * 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+         * Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
          */
         zoneId?: pulumi.Input<string>;
     }
 
     export interface HpcClusterTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface ImageDetectionResults {
         /**
-         * 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+         * Check status. Options: Finished (completed), Processing (in progress).
          */
         detectionStatus?: pulumi.Input<string>;
         items?: pulumi.Input<pulumi.Input<inputs.ecs.ImageDetectionResultsItem>[]>;
@@ -4931,756 +4993,774 @@ export namespace ecs {
 
     export interface ImageDetectionResultsItem {
         /**
-         * 检测项名称。
+         * Check item name
          */
         name?: pulumi.Input<string>;
         /**
-         * 该检测项对应结果。
+         * Result for this check item.
          */
         result?: pulumi.Input<string>;
         /**
-         * 风险描述码。
+         * Risk description code
          */
         riskCode?: pulumi.Input<string>;
         /**
-         * 风险等级。若该参数返回值为空，表示无风险。
+         * Risk level. If this parameter is empty, it means no risk
          */
         riskLevel?: pulumi.Input<string>;
     }
 
+    export interface ImageImportImage {
+        /**
+         * Data disk files included in the custom image, at the TOS bucket URL.
+         */
+        importDataVolumes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * System disk files included in the custom image, at the TOS bucket URL.
+         */
+        url?: pulumi.Input<string>;
+    }
+
     export interface ImageSnapshot {
         /**
-         * 快照大小。单位为GiB。
+         * Snapshot size (GiB)
          */
         size?: pulumi.Input<number>;
         /**
-         * 快照ID。
+         * Snapshot ID
          */
         snapshotId?: pulumi.Input<string>;
         /**
-         * 云盘种类。system：系统盘。data：数据盘。
+         * Cloud disk type. system: System disk. data: Data disk.
          */
         volumeKind?: pulumi.Input<string>;
     }
 
     export interface ImageTag {
         /**
-         * 镜像标签的标签键。
+         * Tag key for the image label.
          */
         key?: pulumi.Input<string>;
         /**
-         * 镜像标签的值。
+         * Image tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface InstanceCpuMemory {
         /**
-         * 实例的核数。
+         * Number of instance cores.
          */
         coreCount?: pulumi.Input<number>;
         /**
-         * 实例的CPU数量。
+         * Number of vCPUs for the instance.
          */
         cpuNumber?: pulumi.Input<number>;
         /**
-         * 实例的内存大小，单位MB。
+         * Instance memory size (MB).
          */
         memorySize?: pulumi.Input<number>;
         /**
-         * 实例的每核线程数。
+         * Threads per core for the instance.
          */
         threadsPerCore?: pulumi.Input<number>;
     }
 
     export interface InstanceEipAddress {
         /**
-         * 实例的分配ID。
+         * Instance allocation ID
          */
         allocationId?: pulumi.Input<string>;
         /**
-         * 公网IP的带宽上限，默认值为1，单位：Mbps。
-         *     - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-         *     - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+         * Maximum bandwidth for public IP. Default value is 1, unit: Mbps.
+         *     - If `ChargeType` is `PayByBandwidth`: value range is 1–500.
+         *     - If `ChargeType` is `PayByTraffic`: value range is 1–200.
          */
         bandwidthMbps?: pulumi.Input<number>;
         /**
-         * 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-         *     - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-         *     - 公网IP加入到共享带宽包必须同时满足如下条件：
-         *       - 二者的安全防护类型相同。
-         *       - 二者的地域相同。
-         *       - 公网IP的计费方式必须是按量计费。
-         *       - 共享带宽包为IPv4类型。
+         * Shared bandwidth package ID, used to add a public IP to the shared bandwidth package.
+         *     - You can call the [DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685) API to query the shared bandwidth package ID.
+         *     - To add a public IP to a shared bandwidth package, all of the following conditions must be met:
+         *       - Both must have the same security protection type.
+         *       - Both must be in the same region.
+         *       - The public IP must use pay-as-you-go billing.
+         *       - The shared bandwidth package must be IPv4 type.
          */
         bandwidthPackageId?: pulumi.Input<string>;
         /**
-         * 公网IP的计费方式，取值：
-         *     - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-         *     - PayByTraffic：按量计费-按实际流量计费。
-         *     - PrePaid：包年包月。
+         * Public IP billing method. Values:
+         *     - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
+         *     - PayByTraffic: Pay-as-you-go—billed by actual traffic.
+         *     - PrePaid: Subscription.
          *   
-         *   **提示:**
-         *   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+         *   **Note:**
+         *   When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
          */
         chargeType?: pulumi.Input<string>;
         /**
-         * 实例的IP地址。
+         * Instance IP address.
          */
         ipAddress?: pulumi.Input<string>;
         /**
-         * 公网IP的线路类型，默认为BGP。取值：
-         *     - BGP：BGP（多线）。
-         *     - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-         *       - ChinaMobile：中国移动静态单线。
-         *       - ChinaTelecom：中国电信静态单线。
-         *       - ChinaUnicom：中国联通静态单线。
-         *     - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-         *     - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+         * Line type for the public IP. Default is BGP. Values:
+         *     - BGP: BGP (multi-line)
+         *     - If your account has applied for and enabled static single-line permissions, you can use the following values:
+         *       - ChinaMobile: China Mobile static single-line
+         *       - ChinaTelecom: China Telecom static single-line
+         *       - ChinaUnicom: China Unicom static single-line
+         *     - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.
+         *     - If your account has applied for and enabled static BGP permissions, you can use Static_BGP
          */
         isp?: pulumi.Input<string>;
         /**
-         * 实例是否随实例释放。
+         * Whether this resource is released when the instance is released.
          */
         releaseWithInstance?: pulumi.Input<boolean>;
         /**
-         * DDoS原生防护（企业版）ID。
+         * DDoS Native Protection (Enterprise Edition) ID.
          */
         securityProtectionInstanceId?: pulumi.Input<number>;
         /**
-         * 公网IP的安全防护类型。
+         * Public IP security protection type.
          */
         securityProtectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface InstanceImage {
         /**
-         * 实例的镜像ID。
+         * Instance image ID.
          */
         imageId: pulumi.Input<string>;
         /**
-         * 实例的镜像发布版本。
+         * The image release version of the instance.
          */
         imageReleaseVersion?: pulumi.Input<string>;
         /**
-         * 实例是否保留镜像凭证。
+         * Whether the instance retains image credentials
          */
         keepImageCredential?: pulumi.Input<boolean>;
         /**
-         * 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+         * Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
          */
         securityEnhancementStrategy?: pulumi.Input<string>;
     }
 
     export interface InstanceKeyPair {
         /**
-         * 实例的公钥。
+         * Instance public key
          */
         keyPairId?: pulumi.Input<string>;
         /**
-         * 实例的密钥对名称。
+         * Instance key pair name
          */
         keyPairName?: pulumi.Input<string>;
     }
 
     export interface InstanceLocalVolume {
         /**
-         * 实例挂载的本地盘数量。
+         * The number of local disks attached to the instance.
          */
         count?: pulumi.Input<number>;
         /**
-         * 实例挂载的本地盘的单盘容量，单位GiB。
+         * Capacity of each local disk mounted to the instance (GiB).
          */
         size?: pulumi.Input<number>;
         /**
-         * 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+         * Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
          */
         volumeType?: pulumi.Input<string>;
     }
 
     export interface InstanceOperationSystem {
         /**
-         * 实例的操作系统名称。
+         * Instance operating system name.
          */
         name?: pulumi.Input<string>;
         /**
-         * 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+         * Operating system type of the instance. Linux: Linux system. Windows: Windows system.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface InstancePlacement {
         /**
-         * 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+         * For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
          */
         affinity?: pulumi.Input<string>;
         /**
-         * 实例的专用主机集群ID。
+         * Instance dedicated host cluster ID.
          */
         dedicatedHostClusterId?: pulumi.Input<string>;
         /**
-         * 实例的专用主机ID。
+         * Dedicated host ID for the instance.
          */
         dedicatedHostId?: pulumi.Input<string>;
         /**
-         * 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+         * Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
          */
         tenancy?: pulumi.Input<string>;
     }
 
     export interface InstancePrimaryNetworkInterface {
         /**
-         * 实例的IPv6地址数量。
+         * The number of IPv6 addresses for the instance.
          */
         ipv6AddressCount?: pulumi.Input<number>;
         /**
-         * 实例的IPv6地址。
+         * IPv6 address of the instance.
          */
         ipv6Addresses?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 实例的MAC地址。
+         * Instance MAC address.
          */
         macAddress?: pulumi.Input<string>;
         /**
-         * 实例的网络接口ID。
+         * The network interface ID of the instance.
          */
         networkInterfaceId?: pulumi.Input<string>;
         /**
-         * 实例的主IP地址。
+         * Instance primary IP address
          */
         primaryIpAddress?: pulumi.Input<string>;
         /**
-         * 实例的私有IP地址。
+         * Instance private IP address.
          */
         privateIpAddresses?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 实例的安全组ID。
+         * Instance security group ID
          */
         securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 实例的子网ID。
+         * Instance subnet ID.
          */
         subnetId?: pulumi.Input<string>;
         /**
-         * 实例的VPC ID。
+         * VPC ID of the instance.
          */
         vpcId?: pulumi.Input<string>;
     }
 
     export interface InstanceRdmaNetworkInterfaceDetail {
         /**
-         * 网关地址。
+         * Gateway address.
          */
         gateway?: pulumi.Input<string>;
         /**
-         * IP地址。
+         * IP address
          */
         ip?: pulumi.Input<string>;
         /**
-         * 子网掩码。
+         * Subnet mask.
          */
         mask?: pulumi.Input<string>;
         /**
-         * 交换机名称。
+         * Switch name.
          */
         switchName?: pulumi.Input<string>;
         /**
-         * 交换机端口。
+         * Switch port.
          */
         switchPort?: pulumi.Input<string>;
     }
 
     export interface InstanceRenewInfo {
         /**
-         * 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+         * Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
          */
         period?: pulumi.Input<number>;
         /**
-         * 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+         * Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
          */
         periodUnit?: pulumi.Input<string>;
     }
 
     export interface InstanceSecondaryNetworkInterface {
         /**
-         * 实例的IPv6地址数量。
+         * The number of IPv6 addresses for the instance.
          */
         ipv6AddressCount?: pulumi.Input<number>;
         /**
-         * 实例的主IP地址。
+         * Instance primary IP address
          */
         primaryIpAddress?: pulumi.Input<string>;
         /**
-         * 实例的私有IP地址。
+         * Instance private IP address.
          */
         privateIpAddresses?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 实例的安全组ID。
+         * Instance security group ID
          */
         securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 实例的子网ID。
+         * Instance subnet ID.
          */
         subnetId?: pulumi.Input<string>;
     }
 
     export interface InstanceSystemVolume {
         /**
-         * 实例是否随实例删除。
+         * Whether the attached resources are deleted along with the instance.
          */
         deleteWithInstance?: pulumi.Input<boolean>;
         /**
-         * 实例的额外性能IOPS。
+         * Additional performance IOPS for the instance
          */
         extraPerformanceIops?: pulumi.Input<number>;
         /**
-         * 实例的额外性能吞吐量，单位MB。
+         * The additional performance throughput of the instance, in MB.
          */
         extraPerformanceThroughputMb?: pulumi.Input<number>;
         /**
-         * 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+         * Type of additional performance. Values:
+         *   Balance: Balanced additional performance
+         *   IOPS: IOPS additional performance
+         *   Throughput: Throughput additional performance
          */
         extraPerformanceTypeId?: pulumi.Input<string>;
         /**
-         * 实例的大小，单位GiB。
+         * Instance size, in GiB
          */
         size?: pulumi.Input<number>;
         /**
-         * 实例的快照ID。
+         * Instance snapshot ID
          */
         snapshotId?: pulumi.Input<string>;
         /**
-         * 实例的卷ID。
+         * Instance volume ID.
          */
         volumeId?: pulumi.Input<string>;
         /**
-         * 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+         * Cloud disk type. Values:
+         *   PTSSD: Performance SSD.
+         *   ESSD_PL0: Ultra SSD disk, PL0 specification.
+         *   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+         *   TSSD_TL0: Throughput SSD disk.
          */
         volumeType?: pulumi.Input<string>;
     }
 
     export interface InstanceTag {
         /**
-         * 实例的键。
+         * Instance key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 实例的值。
+         * Instance value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface InvocationInvocationResult {
         /**
-         * 命令ID。
+         * Command ID.
          */
         commandId?: pulumi.Input<string>;
         /**
-         * 命令执行的完成时间。
+         * Command execution completion time.
          */
         endTime?: pulumi.Input<string>;
         /**
-         * 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+         * Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
          */
         errorCode?: pulumi.Input<string>;
         /**
-         * 命令执行失败的错误信息。
+         * Error message for command execution failure.
          */
         errorMessage?: pulumi.Input<string>;
         /**
-         * 脚本执行后的退出状态码。
+         * Exit status code after script execution.
          */
         exitCode?: pulumi.Input<number>;
         /**
-         * 实例ID。
+         * Instance ID.
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 任务执行ID。
+         * Task execution ID.
          */
         invocationId?: pulumi.Input<string>;
         /**
-         * 任务执行结果ID。
+         * Task execution result ID.
          */
         invocationResultId?: pulumi.Input<string>;
         /**
-         * 单台实例的命令进度状态。
+         * Command progress status for a single instance.
          */
         invocationResultStatus?: pulumi.Input<string>;
         /**
-         * 经过Base64编码的命令执行后输出信息。
+         * Output information after command execution, encoded in Base64.
          */
         output?: pulumi.Input<string>;
         /**
-         * 命令在实例中开始执行的时间。
+         * Time when the command starts executing in the instance.
          */
         startTime?: pulumi.Input<string>;
         /**
-         * 在实例中执行命令的用户名称。
+         * User name for executing the command in the instance.
          */
         username?: pulumi.Input<string>;
     }
 
     export interface InvocationParameterDefinition {
         /**
-         * 自定义参数值（数字）允许的小数点后位数。
+         * Allowed number of decimal places for custom parameter values (numeric).
          */
         decimalPrecision?: pulumi.Input<number>;
         /**
-         * 自定义参数默认值。
+         * Default value for custom parameter.
          */
         defaultValue?: pulumi.Input<string>;
         /**
-         * 自定义参数值（字符串）的最大长度。
+         * Maximum length for custom parameter value (string).
          */
         maxLength?: pulumi.Input<number>;
         /**
-         * 自定义参数值（数字）的最大值。
+         * Maximum value for custom parameter (numeric).
          */
         maxValue?: pulumi.Input<string>;
         /**
-         * 自定义参数值（字符串）的最小长度。
+         * Minimum length for custom parameter values (string).
          */
         minLength?: pulumi.Input<number>;
         /**
-         * 自定义参数值（数字）的最小值。
+         * Minimum value for custom parameter (numeric).
          */
         minValue?: pulumi.Input<string>;
         /**
-         * 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+         * Custom parameter name. Must be defined in the script using {{Param}}.
          */
         name?: pulumi.Input<string>;
         /**
-         * 是否必填。true：必填。false：非必填。
+         * Required. true: Required. false: Optional.
          */
         required?: pulumi.Input<boolean>;
         /**
-         * 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+         * Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface InvocationTag {
         /**
-         * 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+         * Tag key for user tags. Naming rules: Cannot start with any combination of 'volc:' or 'sys:' in any case. Can only contain letters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+         * User tag value. Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty; length must be between 0 and 256 characters.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface KeypairTag {
         /**
-         * 标签键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface LaunchTemplateLaunchTemplateTag {
         /**
-         * 给资源添加的用户标签的标签键。
+         * Tag key for user tags added to the resource.
          */
         key?: pulumi.Input<string>;
         /**
-         * 给资源添加的用户标签的标签值。
+         * User tag value added to the resource
          */
         value?: pulumi.Input<string>;
     }
 
     export interface LaunchTemplateLaunchTemplateVersion {
         /**
-         * 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+         * When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
          */
         deploymentSetGroupNumber?: pulumi.Input<number>;
         /**
-         * 实例需要加入的部署集ID。
+         * Deployment set ID the instance needs to join.
          */
         deploymentSetId?: pulumi.Input<string>;
         /**
-         * 实例的描述。
+         * Instance description
          */
         description?: pulumi.Input<string>;
         /**
-         * 实例绑定的公网IP信息。
+         * Public IP information bound to the instance
          */
         eip?: pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateVersionEip>;
         /**
-         * 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+         * Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
          */
         hostName?: pulumi.Input<string>;
         /**
-         * 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+         * When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
          */
         hpcClusterId?: pulumi.Input<string>;
         /**
-         * 镜像ID。
+         * Image ID.
          */
         imageId?: pulumi.Input<string>;
         /**
-         * 镜像名称。
+         * Image name.
          */
         imageName?: pulumi.Input<string>;
         /**
-         * 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+         * Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
          */
         instanceChargeType?: pulumi.Input<string>;
         /**
-         * 实例的名称。
+         * Instance name.
          */
         instanceName?: pulumi.Input<string>;
         /**
-         * 实例的规格。
+         * Instance specification
          */
         instanceTypeId?: pulumi.Input<string>;
         /**
-         * 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+         * Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
          */
         keepImageCredential?: pulumi.Input<boolean>;
         /**
-         * 实例绑定的密钥对。
+         * Key pair bound to the instance.
          */
         keyPairName?: pulumi.Input<string>;
         networkInterfaces?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateVersionNetworkInterface>[]>;
         /**
-         * 实例所属项目。
+         * Project associated with the instance.
          */
         projectName?: pulumi.Input<string>;
         /**
-         * 弹性预约单信息。
+         * Elastic reservation order information
          */
         scheduledInstance?: pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateVersionScheduledInstance>;
         /**
-         * 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+         * Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
          */
         securityEnhancementStrategy?: pulumi.Input<string>;
         /**
-         * 抢占式实例的每小时最高价格。
+         * Maximum hourly price for preemptible instances
          */
         spotPriceLimit?: pulumi.Input<number>;
         /**
-         * 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+         * Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
          */
         spotStrategy?: pulumi.Input<string>;
         /**
-         * 有序后缀的起始序号。
+         * Starting number for the sequential suffix
          */
         suffixIndex?: pulumi.Input<number>;
         tags?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateVersionTag>[]>;
         /**
-         * 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+         * Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
          */
         uniqueSuffix?: pulumi.Input<boolean>;
         /**
-         * 实例的自定义数据。
+         * Custom data for the instance.
          */
         userData?: pulumi.Input<string>;
         /**
-         * 模版版本描述。
+         * Template version description.
          */
         versionDescription?: pulumi.Input<string>;
         volumes?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateVersionVolume>[]>;
         /**
-         * 私有网络ID。
+         * Private network ID.
          */
         vpcId?: pulumi.Input<string>;
         /**
-         * 实例所属可用区ID。
+         * Instance availability zone ID
          */
         zoneId?: pulumi.Input<string>;
     }
 
     export interface LaunchTemplateLaunchTemplateVersionEip {
         /**
-         * 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+         * Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
          */
         bandwidth?: pulumi.Input<number>;
         /**
-         * 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+         * Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
          */
         bandwidthPackageId?: pulumi.Input<string>;
         /**
-         * 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+         * Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
          */
         billingType?: pulumi.Input<number>;
         /**
-         * 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+         * Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
          */
         isp?: pulumi.Input<string>;
         /**
-         * 公网IP是否随实例删除，仅按量计费公网IP生效。
+         * Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
          */
         releaseWithInstance?: pulumi.Input<boolean>;
         /**
-         * 安全防护包ID。
+         * Security protection package ID
          */
         securityProtectionInstanceId?: pulumi.Input<number>;
         /**
-         * 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+         * Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
          */
         securityProtectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface LaunchTemplateLaunchTemplateVersionNetworkInterface {
         /**
-         * 网卡关联的安全组ID。
+         * Security group ID associated with the network interface.
          */
         securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 实例的私有网络子网ID。
+         * Instance VPC subnet ID
          */
         subnetId?: pulumi.Input<string>;
     }
 
     export interface LaunchTemplateLaunchTemplateVersionScheduledInstance {
         /**
-         * 弹性预约单的描述。
+         * Description of the elastic reservation order
          */
         scheduledInstanceDescription?: pulumi.Input<string>;
         /**
-         * 弹性预约单的名称。
+         * Name of the elastic reservation order
          */
         scheduledInstanceName?: pulumi.Input<string>;
     }
 
     export interface LaunchTemplateLaunchTemplateVersionTag {
         /**
-         * 给资源添加的用户标签的标签键。
+         * Tag key for user tags added to the resource.
          */
         key?: pulumi.Input<string>;
         /**
-         * 给资源添加的用户标签的标签值。
+         * User tag value added to the resource
          */
         value?: pulumi.Input<string>;
     }
 
     export interface LaunchTemplateLaunchTemplateVersionVolume {
         /**
-         * 云盘是否随实例释放。
+         * Whether the cloud disk is released with the instance
          */
         deleteWithInstance?: pulumi.Input<boolean>;
         /**
-         * 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+         * Cloud disk extra IOPS performance size, supported only by ESSD FlexPL data disks, unit: operations/second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. The value ranges for each extra performance type are as follows: IOPS type: 1–50000. Balance type: 1–50000.
          */
         extraPerformanceIops?: pulumi.Input<number>;
         /**
-         * 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+         * Extra throughput performance size for the cloud disk, in MB/s. Only supported by ESSD FlexPL data disks. This parameter must be set when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
          */
         extraPerformanceThroughputMb?: pulumi.Input<number>;
         /**
-         * 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+         * Type of cloud disk extra performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Cloud Disk Extra Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance.
          */
         extraPerformanceTypeId?: pulumi.Input<string>;
         /**
-         * 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+         * Cloud disk size, unit: GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
          */
         size?: pulumi.Input<number>;
         /**
-         * 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+         * Create a cloud disk using a snapshot, only supports creating data disks. You can call the DescribeSnapshots API to query the snapshot ID.
          */
         snapshotId?: pulumi.Input<string>;
         /**
-         * 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+         * Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
          */
         volumeType?: pulumi.Input<string>;
     }
 
     export interface LaunchTemplateVersionEip {
         /**
-         * 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+         * Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
          */
         bandwidth?: pulumi.Input<number>;
         /**
-         * 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+         * Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
          */
         bandwidthPackageId?: pulumi.Input<string>;
         /**
-         * 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+         * Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
          */
         billingType?: pulumi.Input<number>;
         /**
-         * 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+         * Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
          */
         isp?: pulumi.Input<string>;
         /**
-         * 公网IP是否随实例删除，仅按量计费公网IP生效。
+         * Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
          */
         releaseWithInstance?: pulumi.Input<boolean>;
         /**
-         * 安全防护包ID。
+         * Security protection package ID.
          */
         securityProtectionInstanceId?: pulumi.Input<number>;
         /**
-         * 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+         * Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
          */
         securityProtectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface LaunchTemplateVersionNetworkInterface {
         /**
-         * 网卡关联的安全组ID。
+         * Security group ID associated with the network interface.
          */
         securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 实例的私有网络子网ID。
+         * Private network subnet ID of the instance.
          */
         subnetId?: pulumi.Input<string>;
     }
 
     export interface LaunchTemplateVersionScheduledInstance {
         /**
-         * 弹性预约单的描述。
+         * Description of the elastic reservation order
          */
         scheduledInstanceDescription?: pulumi.Input<string>;
         /**
-         * 弹性预约单的名称。
+         * Name of the elastic reservation order
          */
         scheduledInstanceName?: pulumi.Input<string>;
     }
 
     export interface LaunchTemplateVersionTag {
         /**
-         * 给资源添加的用户标签的标签键。
+         * Tag key for user tags added to the resource.
          */
         key?: pulumi.Input<string>;
         /**
-         * 给资源添加的用户标签的标签值。
+         * Tag value for user tags added to the resource
          */
         value?: pulumi.Input<string>;
     }
 
     export interface LaunchTemplateVersionVolume {
         /**
-         * 云盘是否随实例释放。
+         * Whether the disk is released with the instance
          */
         deleteWithInstance?: pulumi.Input<boolean>;
         /**
-         * 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+         * Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
          */
         extraPerformanceIops?: pulumi.Input<number>;
         /**
-         * 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+         * Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
          */
         extraPerformanceThroughputMb?: pulumi.Input<number>;
         /**
-         * 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+         * Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
          */
         extraPerformanceTypeId?: pulumi.Input<string>;
         /**
-         * 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+         * Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
          */
         size?: pulumi.Input<number>;
         /**
-         * 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+         * Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
          */
         snapshotId?: pulumi.Input<string>;
         /**
-         * 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+         * Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
          */
         volumeType?: pulumi.Input<string>;
     }
@@ -5689,35 +5769,35 @@ export namespace ecs {
 export namespace emr {
     export interface ClusterApplication {
         /**
-         * 应用配置路径。
+         * Application configuration path.
          */
         applicationConfigHome?: pulumi.Input<string>;
         /**
-         * 应用安装路径。
+         * Application installation path.
          */
         applicationHome?: pulumi.Input<string>;
         /**
-         * 应用名称。
+         * Application name.
          */
         applicationName?: pulumi.Input<string>;
         /**
-         * 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+         * Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
          */
         applicationState?: pulumi.Input<string>;
         /**
-         * 应用版本。
+         * Application version.
          */
         applicationVersion?: pulumi.Input<string>;
         /**
-         * 应用用户组。
+         * Application user group.
          */
         group?: pulumi.Input<string>;
         /**
-         * 是否支持客户端。
+         * Whether client is supported.
          */
         supportClient?: pulumi.Input<boolean>;
         /**
-         * 应用用户。
+         * Application user.
          */
         user?: pulumi.Input<string>;
     }
@@ -5726,430 +5806,430 @@ export namespace emr {
         applicationComponentLayouts?: pulumi.Input<pulumi.Input<inputs.emr.ClusterApplicationExtraApplicationComponentLayout>[]>;
         applicationConfigs?: pulumi.Input<pulumi.Input<inputs.emr.ClusterApplicationExtraApplicationConfig>[]>;
         /**
-         * 应用名称。
+         * Application name.
          */
         applicationName?: pulumi.Input<string>;
         /**
-         * 元数据连接id。
+         * Metadata connection ID.
          */
         connectionId?: pulumi.Input<string>;
         /**
-         * 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+         * Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
          */
         connectionType?: pulumi.Input<string>;
     }
 
     export interface ClusterApplicationExtraApplicationComponentLayout {
         /**
-         * 组件名称。
+         * Component name.
          */
         componentName?: pulumi.Input<string>;
         /**
-         * 组件的布局范围。
+         * Component layout scope.
          */
         effectiveScope?: pulumi.Input<inputs.emr.ClusterApplicationExtraApplicationComponentLayoutEffectiveScope>;
     }
 
     export interface ClusterApplicationExtraApplicationComponentLayoutEffectiveScope {
         /**
-         * 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         * Component name list. Required when EffectiveType=COMPONENT_NAME.
          */
         componentNames?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         * Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
          */
         effectiveType?: pulumi.Input<string>;
         /**
-         * 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         * Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
          */
         nodeGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         * Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
          */
         nodeGroupNames?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         * Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
          */
         nodeGroupTypes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点ID列表，EffectiveType=NODE_ID时，必选。
+         * Node ID list. Required when EffectiveType=NODE_ID.
          */
         nodeIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点名列表，EffectiveType=NODE_NAME时，必选。
+         * Node name list. Required when EffectiveType=NODE_NAME.
          */
         nodeNames?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ClusterApplicationExtraApplicationConfig {
         /**
-         * 组件实例名称。
+         * Component instance name.
          */
         componentInstanceName?: pulumi.Input<string>;
         /**
-         * 组件名称。
+         * Component name.
          */
         componentName?: pulumi.Input<string>;
         /**
-         * 配置文件名。
+         * Configuration file name.
          */
         configFileName?: pulumi.Input<string>;
         /**
-         * 配置项名称。
+         * Configuration item name.
          */
         configItemKey?: pulumi.Input<string>;
         /**
-         * 配置项值。
+         * Configuration item value.
          */
         configItemValue?: pulumi.Input<string>;
         /**
-         * 是否删除。
+         * Whether to delete.
          */
         deleted?: pulumi.Input<boolean>;
         /**
-         * 影响组件。
+         * Affected component.
          */
         effectiveScope?: pulumi.Input<inputs.emr.ClusterApplicationExtraApplicationConfigEffectiveScope>;
     }
 
     export interface ClusterApplicationExtraApplicationConfigEffectiveScope {
         /**
-         * 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         * Component name list. Required when EffectiveType=COMPONENT_NAME.
          */
         componentNames?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         * Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
          */
         effectiveType?: pulumi.Input<string>;
         /**
-         * 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         * Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
          */
         nodeGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         * Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
          */
         nodeGroupNames?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         * Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
          */
         nodeGroupTypes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点ID列表，EffectiveType=NODE_ID时，必选。
+         * Node ID list. Required when EffectiveType=NODE_ID.
          */
         nodeIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点名列表，EffectiveType=NODE_NAME时，必选。
+         * Node name list. Required when EffectiveType=NODE_NAME.
          */
         nodeNames?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ClusterBootstrapScript {
         /**
-         * 脚本执行范围。
+         * Script execution scope.
          */
         effectiveScope?: pulumi.Input<inputs.emr.ClusterBootstrapScriptEffectiveScope>;
         /**
-         * 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+         * Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
          */
         executionFailStrategy?: pulumi.Input<string>;
         /**
-         * 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+         * Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
          */
         executionMoment?: pulumi.Input<string>;
         /**
-         * 脚本执行优先级。取值范围：1~1000。默认值1。
+         * Script execution priority. Range: 1~1000. Default: 1.
          */
         priority?: pulumi.Input<string>;
         /**
-         * 脚本参数。
+         * Script parameters.
          */
         scriptArgs?: pulumi.Input<string>;
         /**
-         * 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+         * Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
          */
         scriptName?: pulumi.Input<string>;
         /**
-         * 脚本所在TOS路径。必填。以 tos:： 开头。
+         * Script TOS path. Required. Must start with 'tos:'.
          */
         scriptPath?: pulumi.Input<string>;
         /**
-         * 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+         * Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
          */
         scriptType?: pulumi.Input<string>;
     }
 
     export interface ClusterBootstrapScriptEffectiveScope {
         /**
-         * 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         * Component name list. Required when EffectiveType=COMPONENT_NAME.
          */
         componentNames?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         * Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
          */
         effectiveType?: pulumi.Input<string>;
         /**
-         * 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         * Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
          */
         nodeGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         * Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
          */
         nodeGroupNames?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         * Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
          */
         nodeGroupTypes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点ID列表，EffectiveType=NODE_ID时，必选。
+         * Node ID list. Required when EffectiveType=NODE_ID.
          */
         nodeIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点名列表，EffectiveType=NODE_NAME时，必选。
+         * Node name list. Required when EffectiveType=NODE_NAME.
          */
         nodeNames?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ClusterChargePreConfig {
         /**
-         * 是否开启自动续费。取值范围：true：开启。false：不开启。
+         * Enable auto-renewal. Options: true (enabled), false (disabled).
          */
         autoRenew?: pulumi.Input<boolean>;
         /**
-         * 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+         * Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
          */
         autoRenewPeriod?: pulumi.Input<number>;
         /**
-         * 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+         * Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
          */
         autoRenewPeriodUnit?: pulumi.Input<string>;
         /**
-         * chargeType=PRE默认值=1，包月的购买时长单位。
+         * When chargeType=PRE, default value=1. Unit for monthly subscription duration.
          */
         chargePeriod?: pulumi.Input<number>;
         /**
-         * chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+         * When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
          */
         chargePeriodUnit?: pulumi.Input<string>;
         /**
-         * 付费类型，取值范围：PRE，POST。
+         * Payment type. Options: PRE, POST.
          */
         chargeType?: pulumi.Input<string>;
     }
 
     export interface ClusterNodeAttribute {
         /**
-         * ECS实例角色。
+         * ECS instance role.
          */
         ecsIamRole?: pulumi.Input<string>;
         /**
-         * 可用区ID。
+         * Zone ID.
          */
         zoneId?: pulumi.Input<string>;
     }
 
     export interface ClusterNodeGroupAttribute {
         /**
-         * 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+         * Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
          */
         bandwidth?: pulumi.Input<number>;
         /**
-         * 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+         * Node group billing type. If empty, reuses the cluster's chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster's chargeType is PRE, the task node group's chargeType can be set to POST. When the cluster's chargeType is POST, the node group's chargeType defaults to POST, and this parameter setting on the node group is invalid.
          */
         chargeType?: pulumi.Input<string>;
         dataDisks?: pulumi.Input<pulumi.Input<inputs.emr.ClusterNodeGroupAttributeDataDisk>[]>;
         /**
-         * 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+         * Node group's ECS instance type list. Only one instance type can be set. The list length is limited to 1.
          */
         ecsInstanceTypes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * ecs的密钥对名称。
+         * ECS key pair name.
          */
         ecsKeyPairName?: pulumi.Input<string>;
         /**
-         * Ecs root账号的密码。
+         * Password for ECS root account.
          */
         ecsPassword?: pulumi.Input<string>;
         /**
-         * 节点组当前期望购买的节点数量。
+         * Current expected number of nodes to purchase for the node group.
          */
         nodeCount?: pulumi.Input<number>;
         /**
-         * 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+         * Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
          */
         nodeGroupName?: pulumi.Input<string>;
         /**
-         * 节点组类型。
+         * Node group type.
          */
         nodeGroupType?: pulumi.Input<string>;
         /**
-         * 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+         * Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
          */
         subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 系统盘配置。
+         * System disk configuration.
          */
         systemDisk?: pulumi.Input<inputs.emr.ClusterNodeGroupAttributeSystemDisk>;
         /**
-         * 是否挂载公网ip。
+         * Whether to attach public IP.
          */
         withPublicIp?: pulumi.Input<boolean>;
         /**
-         * 可用区ID。
+         * Availability zone ID.
          */
         zoneId?: pulumi.Input<string>;
     }
 
     export interface ClusterNodeGroupAttributeDataDisk {
         /**
-         * 磁盘块数，默认值4，最大15，最小1。
+         * Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
          */
         count?: pulumi.Input<number>;
         /**
-         * 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         * Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
          */
         size?: pulumi.Input<number>;
         /**
-         * 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+         * Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
          */
         volumeType?: pulumi.Input<string>;
     }
 
     export interface ClusterNodeGroupAttributeSystemDisk {
         /**
-         * 磁盘大小。
+         * Disk size.
          */
         size?: pulumi.Input<number>;
         /**
-         * 磁盘类型。
+         * Disk type.
          */
         volumeType?: pulumi.Input<string>;
     }
 
     export interface ClusterStateChangeReason {
         /**
-         * 状态更新码。
+         * Status update code.
          */
         code?: pulumi.Input<string>;
         /**
-         * 状态更新原因。
+         * Status update reason.
          */
         reason?: pulumi.Input<string>;
     }
 
     export interface ClusterTag {
         /**
-         * 用户标签的标签键。
+         * User tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NodeGroupApplicationLayout {
         /**
-         * 应用名称。
+         * Application name.
          */
         applicationName?: pulumi.Input<string>;
         /**
-         * 组件的自定义配置参数列表。
+         * Custom configuration parameter list for the component.
          */
         layoutComponentNames?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface NodeGroupChargePreConfig {
         /**
-         * 是否开启自动续费。
+         * Whether to enable auto-renewal.
          */
         autoRenew?: pulumi.Input<boolean>;
         /**
-         * 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+         * Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
          */
         autoRenewPeriod?: pulumi.Input<number>;
         /**
-         * 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+         * Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
          */
         autoRenewPeriodUnit?: pulumi.Input<string>;
         /**
-         * chargeType=PRE默认值=1，包月的购买时长单位。
+         * When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
          */
         chargePeriod?: pulumi.Input<number>;
         /**
-         * chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+         * When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
          */
         chargePeriodUnit?: pulumi.Input<string>;
         /**
-         * 付费类型，枚举值：POST，PRE。
+         * Payment type. Enum values: POST, PRE.
          */
         chargeType?: pulumi.Input<string>;
     }
 
     export interface NodeGroupDataDisk {
         /**
-         * 磁盘块数，默认值4，最大15，最小1。
+         * Number of disk blocks. Default value: 4. Maximum: 15. Minimum: 1.
          */
         count?: pulumi.Input<number>;
         /**
-         * 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         * Disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
          */
         size?: pulumi.Input<number>;
         /**
-         * 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+         * Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
          */
         volumeType?: pulumi.Input<string>;
     }
 
     export interface NodeGroupNode {
         /**
-         * 节点创建时间。
+         * Node creation time.
          */
         createdTime?: pulumi.Input<number>;
         /**
-         * ecs实例规格。
+         * ecs instance specification.
          */
         ecsInstanceType?: pulumi.Input<string>;
         /**
-         * 节点FQDN。
+         * Node FQDN.
          */
         nodeFqdn?: pulumi.Input<string>;
         /**
-         * 节点ID。
+         * Node ID.
          */
         nodeId?: pulumi.Input<string>;
         /**
-         * 节点名称。
+         * Node name.
          */
         nodeName?: pulumi.Input<string>;
         /**
-         * 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+         * Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
          */
         nodeState?: pulumi.Input<string>;
         /**
-         * 私有IP。
+         * Private IP.
          */
         privateIp?: pulumi.Input<string>;
         /**
-         * 公网IP。
+         * Public IP.
          */
         publicIp?: pulumi.Input<string>;
         /**
-         * 准备完毕时间。
+         * Ready time.
          */
         readyTime?: pulumi.Input<number>;
         /**
-         * 集群终止时间。
+         * Cluster termination time.
          */
         terminateTime?: pulumi.Input<number>;
     }
 
     export interface NodeGroupSystemDisk {
         /**
-         * 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         * System disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
          */
         size?: pulumi.Input<number>;
         /**
-         * 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+         * Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
          */
         volumeType?: pulumi.Input<string>;
     }
@@ -6158,418 +6238,418 @@ export namespace emr {
 export namespace escloud {
     export interface InstanceInstanceConfiguration {
         /**
-         * 管理员密码。
+         * Administrator password.
          */
         adminPassword?: pulumi.Input<string>;
         /**
-         * 管理员用户名。
+         * Administrator username.
          */
         adminUserName?: pulumi.Input<string>;
         /**
-         * 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+         * Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
          */
         autoRenew?: pulumi.Input<boolean>;
         /**
-         * 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+         * Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
          */
         chargeType?: pulumi.Input<string>;
         /**
-         * 冷节点数量。
+         * Number of cold nodes.
          */
         coldNodeNumber?: pulumi.Input<number>;
         /**
-         * 冷节点的节点规格配置详情。
+         * Node specification details for cold nodes
          */
         coldNodeResourceSpec?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationColdNodeResourceSpec>;
         /**
-         * 冷节点的存储规格配置详情。
+         * Details of cold node storage specification configuration
          */
         coldNodeStorageSpec?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationColdNodeStorageSpec>;
         /**
-         * 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+         * Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
          */
         configurationCode?: pulumi.Input<string>;
         /**
-         * 协调节点数量。
+         * Coordinator node count
          */
         coordinatorNodeNumber?: pulumi.Input<number>;
         /**
-         * 协调节点的节点规格配置详情。
+         * Node specification configuration details for coordinator node.
          */
         coordinatorNodeResourceSpec?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationCoordinatorNodeResourceSpec>;
         /**
-         * 协调节点的存储规格配置详情。
+         * Storage specification configuration details for coordinator node.
          */
         coordinatorNodeStorageSpec?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationCoordinatorNodeStorageSpec>;
         /**
-         * 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+         * Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
          */
         deletionProtection?: pulumi.Input<boolean>;
         /**
-         * 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+         * Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
          */
         enableHttps?: pulumi.Input<boolean>;
         /**
-         * Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+         * Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
          */
         enablePureMaster?: pulumi.Input<boolean>;
         /**
-         * 数据节点数量。
+         * Number of data nodes
          */
         hotNodeNumber?: pulumi.Input<number>;
         /**
-         * 数据节点的节点规格配置详情。
+         * Node specification configuration details for data node.
          */
         hotNodeResourceSpec?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationHotNodeResourceSpec>;
         /**
-         * 数据节点的存储规格配置详情。
+         * Data node storage specification configuration details
          */
         hotNodeStorageSpec?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationHotNodeStorageSpec>;
         /**
-         * 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+         * Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
          */
         instanceName?: pulumi.Input<string>;
         /**
-         * kibana 节点数量。
+         * Number of Kibana nodes
          */
         kibanaNodeNumber?: pulumi.Input<number>;
         /**
-         * Kibana 节点的节点规格配置详情。
+         * Kibana node specification configuration details
          */
         kibanaNodeResourceSpec?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationKibanaNodeResourceSpec>;
         /**
-         * master 节点数量。
+         * Number of master nodes.
          */
         masterNodeNumber?: pulumi.Input<number>;
         /**
-         * Master 节点的节点规格配置详情。
+         * Master node specification configuration details
          */
         masterNodeResourceSpec?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationMasterNodeResourceSpec>;
         /**
-         * Master 节点的存储规格配置详情。
+         * Storage specification details for master node
          */
         masterNodeStorageSpec?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationMasterNodeStorageSpec>;
         networkSpecs?: pulumi.Input<pulumi.Input<inputs.escloud.InstanceInstanceConfigurationNetworkSpec>[]>;
         nodeSpecsAssigns?: pulumi.Input<pulumi.Input<inputs.escloud.InstanceInstanceConfigurationNodeSpecsAssign>[]>;
         /**
-         * 包年包月实例的购买时长，单位：月。
+         * Subscription instance purchase duration, in months.
          */
         period?: pulumi.Input<number>;
         /**
-         * 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+         * Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
          */
         projectName?: pulumi.Input<string>;
         /**
-         * 实例所在区域。
+         * Instance region
          */
         regionId?: pulumi.Input<string>;
         /**
-         * 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+         * Set subnet information for the instance. Note: The subnet must be in the primary zone.
          */
         subnet?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationSubnet>;
         tags?: pulumi.Input<pulumi.Input<inputs.escloud.InstanceInstanceConfigurationTag>[]>;
         /**
-         * API的版本，取值：2023-01-01。
+         * API version. Value: 2023-01-01.
          */
         version?: pulumi.Input<string>;
         /**
-         * 设置实例的私有网络 VPC 信息。
+         * Set VPC information for the instance
          */
         vpc?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationVpc>;
         /**
-         * 温节点数量。
+         * Warm node count.
          */
         warmNodeNumber?: pulumi.Input<number>;
         /**
-         * 温节点的节点规格配置详情。
+         * Warm node specification configuration details.
          */
         warmNodeResourceSpec?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationWarmNodeResourceSpec>;
         /**
-         * 温节点的存储规格配置详情。
+         * Storage specification details for warm nodes
          */
         warmNodeStorageSpec?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationWarmNodeStorageSpec>;
         /**
-         * 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+         * Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
          */
         zoneId?: pulumi.Input<string>;
         /**
-         * 实例的可用区数量。
+         * Number of instance availability zones.
          */
         zoneNumber?: pulumi.Input<number>;
     }
 
     export interface InstanceInstanceConfigurationColdNodeResourceSpec {
         /**
-         * 节点规格的 CPU 资源，单位为核（Core）
+         * CPU resources for node specification, measured in cores.
          */
         cpu?: pulumi.Input<number>;
         /**
-         * 节点规格的描述信息
+         * Description of node specifications
          */
         description?: pulumi.Input<string>;
         /**
-         * 节点规格的显示名称
+         * Display name of node specification.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * 节点规格的内存容量，单位 GiB
+         * Memory capacity for node specification, measured in GiB
          */
         memory?: pulumi.Input<number>;
         /**
-         * 节点规格。如需了解节点规格类型和详情
+         * Node specification. For details on node specification types and details.
          */
         name?: pulumi.Input<string>;
     }
 
     export interface InstanceInstanceConfigurationColdNodeStorageSpec {
         /**
-         * 存储规格的描述信息
+         * Description of storage specification
          */
         description?: pulumi.Input<string>;
         /**
-         * 存储规格的显示名称
+         * Display name of storage specification
          */
         displayName?: pulumi.Input<string>;
         /**
-         * 存储规格的最大值，单位为 GiB
+         * Maximum storage specification, measured in GiB
          */
         maxSize?: pulumi.Input<number>;
         /**
-         * 存储规格最小值，单位为 GiB
+         * Minimum storage specification, measured in GiB
          */
         minSize?: pulumi.Input<number>;
         /**
-         * 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+         * Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
          */
         name?: pulumi.Input<string>;
         /**
-         * 当前存储规格值，单位为 GiB
+         * Current storage specification value, in GiB.
          */
         size?: pulumi.Input<number>;
     }
 
     export interface InstanceInstanceConfigurationCoordinatorNodeResourceSpec {
         /**
-         * 节点规格的 CPU 资源，单位为核（Core）
+         * CPU resources of node specification, unit: cores.
          */
         cpu?: pulumi.Input<number>;
         /**
-         * 节点规格的描述信息
+         * Description of node specifications
          */
         description?: pulumi.Input<string>;
         /**
-         * 节点规格的显示名称
+         * Display name of node specification.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * 节点规格的内存容量，单位 GiB
+         * Memory capacity of node specification, unit: GiB.
          */
         memory?: pulumi.Input<number>;
         /**
-         * 节点规格。如需了解节点规格类型和详情
+         * Node specification. For details on node specification types and details.
          */
         name?: pulumi.Input<string>;
     }
 
     export interface InstanceInstanceConfigurationCoordinatorNodeStorageSpec {
         /**
-         * 存储规格的描述信息
+         * Description of storage specification.
          */
         description?: pulumi.Input<string>;
         /**
-         * 存储规格的显示名称
+         * Display name of storage specification
          */
         displayName?: pulumi.Input<string>;
         /**
-         * 存储规格的最大值，单位为 GiB
+         * Maximum storage specification, in GiB
          */
         maxSize?: pulumi.Input<number>;
         /**
-         * 存储规格最小值，单位为 GiB
+         * Minimum value for storage specification, unit: GiB.
          */
         minSize?: pulumi.Input<number>;
         /**
-         * 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+         * Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
          */
         name?: pulumi.Input<string>;
         /**
-         * 当前存储规格值，单位为 GiB
+         * Current storage specification value, in GiB.
          */
         size?: pulumi.Input<number>;
     }
 
     export interface InstanceInstanceConfigurationHotNodeResourceSpec {
         /**
-         * 节点规格的 CPU 资源，单位为核（Core）。
+         * CPU resources of node specification, measured in cores
          */
         cpu?: pulumi.Input<number>;
         /**
-         * 节点规格的描述信息。
+         * Description of node specification.
          */
         description?: pulumi.Input<string>;
         /**
-         * 节点规格的显示名称。
+         * Display name of node specification.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * 节点规格的内存容量，单位 GiB。
+         * Memory capacity for node specification, measured in GiB.
          */
         memory?: pulumi.Input<number>;
         /**
-         * 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+         * Node specification. For details on node specification types and details, see Product Specifications.
          */
         name?: pulumi.Input<string>;
     }
 
     export interface InstanceInstanceConfigurationHotNodeStorageSpec {
         /**
-         * 存储规格的描述信息。
+         * Description of storage specification
          */
         description?: pulumi.Input<string>;
         /**
-         * 存储规格的显示名称。
+         * Display name of storage specification.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * 存储规格的最大值，单位为 GiB。
+         * Maximum storage specification, in GiB
          */
         maxSize?: pulumi.Input<number>;
         /**
-         * 存储规格最小值，单位为 GiB。
+         * Minimum storage specification, measured in GiB.
          */
         minSize?: pulumi.Input<number>;
         /**
-         * 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+         * Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
          */
         name?: pulumi.Input<string>;
         /**
-         * 配置的可用磁盘空间大小。
+         * Configured available disk space size
          */
         size?: pulumi.Input<number>;
     }
 
     export interface InstanceInstanceConfigurationKibanaNodeResourceSpec {
         /**
-         * 节点规格的 CPU 资源，单位为核（Core）
+         * CPU resources for node specification, measured in cores.
          */
         cpu?: pulumi.Input<number>;
         /**
-         * 节点规格的描述信息
+         * Description of node specifications
          */
         description?: pulumi.Input<string>;
         /**
-         * 节点规格的显示名称
+         * Display name of node specification.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * 节点规格的内存容量，单位 GiB
+         * Memory capacity for node specification, measured in GiB
          */
         memory?: pulumi.Input<number>;
         /**
-         * 节点规格。如需了解节点规格类型和详情
+         * Node specification. For information about node specification types and details, please refer to the documentation.
          */
         name?: pulumi.Input<string>;
     }
 
     export interface InstanceInstanceConfigurationMasterNodeResourceSpec {
         /**
-         * 节点规格的 CPU 资源，单位为核（Core）
+         * CPU resources of node specification, unit: cores.
          */
         cpu?: pulumi.Input<number>;
         /**
-         * 节点规格的描述信息
+         * Description of node specifications
          */
         description?: pulumi.Input<string>;
         /**
-         * 节点规格的显示名称
+         * Display name of node specification
          */
         displayName?: pulumi.Input<string>;
         /**
-         * 节点规格的内存容量，单位 GiB
+         * Memory capacity of node specification, unit: GiB.
          */
         memory?: pulumi.Input<number>;
         /**
-         * 节点规格。如需了解节点规格类型和详情
+         * Node specification. For information about node specification types and details, please refer to the documentation.
          */
         name?: pulumi.Input<string>;
     }
 
     export interface InstanceInstanceConfigurationMasterNodeStorageSpec {
         /**
-         * 存储规格的描述信息
+         * Description of storage specification.
          */
         description?: pulumi.Input<string>;
         /**
-         * 存储规格的显示名称
+         * Display name of storage specification.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * 存储规格的最大值，单位为 GiB
+         * Maximum storage specification, measured in GiB
          */
         maxSize?: pulumi.Input<number>;
         /**
-         * 存储规格最小值，单位为 GiB
+         * Minimum value for storage specification, unit: GiB.
          */
         minSize?: pulumi.Input<number>;
         /**
-         * 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+         * Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
          */
         name?: pulumi.Input<string>;
         /**
-         * 当前存储规格值，单位为 GiB
+         * Current storage specification value, in GiB.
          */
         size?: pulumi.Input<number>;
     }
 
     export interface InstanceInstanceConfigurationNetworkSpec {
         /**
-         * 公网IP的带宽上限，默认为“1”，单位：Mbps。
+         * Public IP bandwidth limit. Default is '1', unit: Mbps.
          */
         bandwidth?: pulumi.Input<number>;
         /**
-         * 开启/关闭
+         * Enable/Disable
          */
         isOpen?: pulumi.Input<boolean>;
         /**
-         * 实例公网资源规格名称
+         * Instance public resource specification name
          */
         specName?: pulumi.Input<string>;
         /**
-         * 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+         * Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
          */
         type?: pulumi.Input<string>;
     }
 
     export interface InstanceInstanceConfigurationNodeSpecsAssign {
         /**
-         * 磁盘额外性能包相关配置。
+         * Disk extra performance package configuration.
          */
         extraPerformance?: pulumi.Input<inputs.escloud.InstanceInstanceConfigurationNodeSpecsAssignExtraPerformance>;
         /**
-         * 节点数量。配置数据节点数量时，在不同部署方式下，需要注意以下信息：单可用区部署：建议生产环境至少配置 3 个数据节点，配置 2 个节点时存在脑裂风险。如果启用专有主节点，2 个数据节点不会脑裂。双可用区部署，默认启用专有主节点：建议生产环境至少配置 4 个数据节点，即每个可用区两个数据节点。三可用区部署，默认启用专有主节点：建议生产环境至少配置 6 个数据节点，即每个可用区两个数据节点。数据节点数量可设范围为 1~100，如果有更多数据节点的需求，可申请开白提升配额到 200。配置 Master 节点：如果没有启用专有主节点，那么 Master 节点的配置和数据节点相同，否则 Master 配置是独立的。配置专有主节点，如需启用专有主节点，数量默认配置为 3。配置 Kibana 节点，数量固定为 1。配置协调节点，如需启用，生产环境建议至少 2 个协调节点，可配范围为 2~50。温数据节点：如需启用，生产环境建议至少 3 个温数据节点，最多可配置 100 个。冷数据节点：如需启用，生产环境建议至少 2 个温数据节点，最多可配置 100 个。
+         * Node count. When configuring the number of data nodes, note the following based on deployment mode: Single availability zone deployment: For production environments, configure at least 3 data nodes. Configuring 2 nodes poses a split-brain risk. If dedicated master nodes are enabled, 2 data nodes will not result in split-brain. Dual availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 4 data nodes—2 per availability zone. Triple availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 6 data nodes—2 per availability zone. You can set the number of data nodes from 1 to 100. If you need more, apply to increase the quota to 200. Master node configuration: If dedicated master nodes are not enabled, master node configuration matches data nodes; otherwise, master node configuration is independent. Dedicated master node configuration: If you need to enable dedicated master nodes, the default number is 3. Kibana node configuration: The number is fixed at 1. Coordinator node configuration: If enabled, configure at least 2 coordinator nodes for production environments. The configurable range is 2–50. Warm data nodes: If enabled, configure at least 3 warm data nodes for production environments, up to 100. Cold data nodes: If enabled, configure at least 2 cold data nodes for production environments, up to 100.
          */
         number?: pulumi.Input<number>;
         /**
-         * 计算资源规格名称。您可以通过调用DescribeNodeAvailableSpecs接口获取可用的节点规格列表。如需了解规格详情，请参见V2 实例规格
+         * Compute resource specification name. You can call the DescribeNodeAvailableSpecs API to get the list of available node specifications. For details, see V2 instance specifications.
          */
         resourceSpecName?: pulumi.Input<string>;
         /**
-         * 存储容量，单位为 GiB。默认值为 100GiB，调整步长为 10GiB。说明Kibana 节点的 StorageSize 设置为0，即"StorageSize": 0。专有主节点和协调节点的 StorageSize 默认是 20。
+         * Storage capacity, measured in GiB. Default value is 100 GiB, adjustment step is 10 GiB. Note: StorageSize for Kibana nodes is set to 0, i.e., "StorageSize": 0. StorageSize for dedicated master and coordinator nodes defaults to 20
          */
         storageSize?: pulumi.Input<number>;
         /**
-         * 存储规格名称，当前支持的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0。es.volume.essd.flexpl-standard：标准版-高性能云盘-flexpl。说明Kibana 节点的 StorageSpecName 设置为空，即"StorageSpecName": ""。
+         * Storage specification name. Currently supported specifications: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0. es.volume.essd.flexpl-standard: Standard Edition   - High Performance Cloud Disk   - flexpl. Note: StorageSpecName for Kibana nodes is set to empty, i.e., "StorageSpecName": ""
          */
         storageSpecName?: pulumi.Input<string>;
         /**
-         * 节点类型。请先了解节点类型的作用，然后结合业务判断是否需要创建，详情请参见节点类型。Master：Master 节点。Hot：数据节点。Cold：冷数据节点。Warm：温数据节点。Kibana：Kibana 节点。Coordinator：协调节点。
+         * Node type. Please understand the function of each node type first, then determine whether to create based on your business needs. For details, see node types. Master: Master node. Hot: Data node. Cold: Cold data node. Warm: Warm data node. Kibana: Kibana node. Coordinator: Coordinator node
          */
         type?: pulumi.Input<string>;
     }
 
     export interface InstanceInstanceConfigurationNodeSpecsAssignExtraPerformance {
         /**
-         * 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+         * When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
          */
         throughput?: pulumi.Input<number>;
     }
@@ -6580,18 +6660,18 @@ export namespace escloud {
          */
         subnetId?: pulumi.Input<string>;
         /**
-         * Subnet 名称。
+         * Subnet name
          */
         subnetName?: pulumi.Input<string>;
     }
 
     export interface InstanceInstanceConfigurationTag {
         /**
-         * 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+         * Tag key for user labels. Length limit: 1–128 characters. Case-sensitive. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and @ are allowed. Duplicate tag keys are not allowed for the same resource
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+         * Tag value for user tag. Length limit: 0–256 characters. Case-sensitive, cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscore (_), period (.), colon (:), slash (/), equals (=), plus (+), minus (-), and @
          */
         value?: pulumi.Input<string>;
     }
@@ -6602,87 +6682,87 @@ export namespace escloud {
          */
         vpcId?: pulumi.Input<string>;
         /**
-         * VPC 名称。
+         * VPC name
          */
         vpcName?: pulumi.Input<string>;
     }
 
     export interface InstanceInstanceConfigurationWarmNodeResourceSpec {
         /**
-         * 节点规格的 CPU 资源，单位为核（Core）
+         * CPU resources for node specification, measured in cores.
          */
         cpu?: pulumi.Input<number>;
         /**
-         * 节点规格的描述信息
+         * Description of node specification
          */
         description?: pulumi.Input<string>;
         /**
-         * 节点规格的显示名称
+         * Display name of node specification.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * 节点规格的内存容量，单位 GiB
+         * Memory capacity for node specification, measured in GiB
          */
         memory?: pulumi.Input<number>;
         /**
-         * 节点规格。如需了解节点规格类型和详情
+         * Node specification. For details on node specification types and details.
          */
         name?: pulumi.Input<string>;
     }
 
     export interface InstanceInstanceConfigurationWarmNodeStorageSpec {
         /**
-         * 存储规格的描述信息
+         * Description of storage specification.
          */
         description?: pulumi.Input<string>;
         /**
-         * 存储规格的显示名称
+         * Display name of storage specification.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * 存储规格的最大值，单位为 GiB
+         * Maximum storage specification, measured in GiB
          */
         maxSize?: pulumi.Input<number>;
         /**
-         * 存储规格最小值，单位为 GiB
+         * Minimum value for storage specification, unit: GiB.
          */
         minSize?: pulumi.Input<number>;
         /**
-         * 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+         * Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
          */
         name?: pulumi.Input<string>;
         /**
-         * 当前存储规格值，单位为 GiB
+         * Current storage specification value, in GiB.
          */
         size?: pulumi.Input<number>;
     }
 
     export interface InstanceKibanaConfig {
         /**
-         * 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+         * API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
          */
         requestTimeout?: pulumi.Input<number>;
         /**
-         * 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+         * Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
          */
         sessionKeepAlive?: pulumi.Input<boolean>;
         /**
-         * 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+         * Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
          */
         sessionTtl?: pulumi.Input<number>;
     }
 
     export interface InstanceSubInstance {
         /**
-         * 企业级 SQL 分析实例 ID。
+         * Enterprise-level SQL analysis instance ID.
          */
         subInstanceId?: pulumi.Input<string>;
         /**
-         * 实例状态。
+         * Instance status
          */
         subInstanceStatus?: pulumi.Input<string>;
         /**
-         * 实例类型。
+         * Instance type
          */
         subInstanceType?: pulumi.Input<string>;
     }
@@ -6693,42 +6773,42 @@ export namespace escloud {
          */
         forbidStop?: pulumi.Input<boolean>;
         /**
-         * 资源信息。
+         * Resource information
          */
         reduceSpecConfig?: pulumi.Input<inputs.escloud.InstanceTransferInfoReduceSpecConfig>;
         /**
-         * 数据迁移任务进度，百分制。
+         * Data migration task progress, percentage
          */
         transferProgress?: pulumi.Input<number>;
         /**
-         * 数据迁移任务状态。
+         * Data migration task status
          */
         transferStatus?: pulumi.Input<string>;
         /**
-         * 数据迁移任务 ID。
+         * Data migration task ID
          */
         transferTaskId?: pulumi.Input<string>;
     }
 
     export interface InstanceTransferInfoReduceSpecConfig {
         /**
-         * 冷节点数量。
+         * Number of cold nodes.
          */
         coldNodeNum?: pulumi.Input<number>;
         /**
-         * 数据节点数量。
+         * Number of data nodes
          */
         dataNodeNum?: pulumi.Input<number>;
         /**
-         * Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+         * Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
          */
         enablePureMaster?: pulumi.Input<boolean>;
         /**
-         * Master 节点数量。
+         * Number of master nodes.
          */
         masterNodeNum?: pulumi.Input<number>;
         /**
-         * 温节点数量。
+         * Number of warm nodes
          */
         warmNodeNum?: pulumi.Input<number>;
     }
@@ -6737,91 +6817,91 @@ export namespace escloud {
 export namespace filenas {
     export interface InstanceCachePerformance {
         /**
-         * 预配置带宽，用于增加文件系统带宽。
+         * Provisioned bandwidth, used to increase file system bandwidth
          */
         cacheBandwidth?: pulumi.Input<number>;
     }
 
     export interface InstanceCapacity {
         /**
-         * 文件系统可用总容量，单位为 GiB。
+         * Total available file system capacity, in GiB
          */
         total?: pulumi.Input<number>;
         /**
-         * 文件系统已使用容量，单位为 MiB。
+         * Used file system capacity, in MiB
          */
         used?: pulumi.Input<number>;
     }
 
     export interface InstanceTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签类型。
+         * Tag type
          */
         type?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface MountPointClient {
         /**
-         * 客户端的私有网络 IP 地址。
+         * Client's private network IP address.
          */
         ip?: pulumi.Input<string>;
         /**
-         * 挂载协议版本号。取值：NFSv3。
+         * Mount protocol version. Value: NFSv3.
          */
         protocolVersion?: pulumi.Input<string>;
         /**
-         * 私有网络名称。
+         * Private network name.
          */
         vpcName?: pulumi.Input<string>;
     }
 
     export interface MountPointPermissionGroup {
         /**
-         * 权限组创建时间。
+         * Permission group creation time.
          */
         createTime?: pulumi.Input<string>;
         /**
-         * 权限组描述信息。
+         * Permission group description information.
          */
         description?: pulumi.Input<string>;
         /**
-         * 关联该权限组的文件系统数量。
+         * Number of file systems associated with this permission group.
          */
         fileSystemCount?: pulumi.Input<number>;
         /**
-         * 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+         * File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
          */
         fileSystemType?: pulumi.Input<string>;
         mountPoints?: pulumi.Input<pulumi.Input<inputs.filenas.MountPointPermissionGroupMountPoint>[]>;
         /**
-         * 权限组名称。
+         * Permission group name.
          */
         permissionGroupName?: pulumi.Input<string>;
         /**
-         * 权限规则数量。
+         * Number of permission rules.
          */
         permissionRuleCount?: pulumi.Input<number>;
     }
 
     export interface MountPointPermissionGroupMountPoint {
         /**
-         * 文件系统 ID。
+         * File system ID.
          */
         fileSystemId?: pulumi.Input<string>;
         /**
-         * 挂载点 ID。
+         * Mount point ID.
          */
         mountPointId?: pulumi.Input<string>;
         /**
-         * 挂载点名称。
+         * Mount point name.
          */
         mountPointName?: pulumi.Input<string>;
     }
@@ -6830,22 +6910,22 @@ export namespace filenas {
 export namespace fwcenter {
     export interface DnsControlPolicyDomainListV1 {
         /**
-         * 具体地址信息。
+         * Specific address information.
          */
         address?: pulumi.Input<string>;
         /**
-         * 描述信息。
+         * Description information.
          */
         description?: pulumi.Input<string>;
         /**
-         * 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+         * Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface DnsControlPolicySource {
         /**
-         * VPC地域信息。
+         * VPC region information.
          */
         region?: pulumi.Input<string>;
         /**
@@ -6859,38 +6939,38 @@ export namespace fwcenter {
 export namespace hbase {
     export interface InstanceEndpoint {
         /**
-         * 连接地址类型，关于连接地址的更多信息，请参见连接地址类型。取值范围如下：Zk：ZK 地址。Thrift：Thrift2 地址。HBaseReUsedEipId：当 ZK 连接地址或 Thrift2 连接地址开启了公网访问时，会返回该参数，表示实例中其他组件（如 RS 节点、Master 节点等）共享绑定使用的 EIP ID 信息。
+         * Connection address type. For more information about connection addresses, see Connection Address Types. The value range is as follows: Zk: ZK address. Thrift: Thrift2 address. HBaseReUsedEipId: When public access is enabled for the ZK or Thrift2 connection address, this parameter is returned, indicating the EIP ID information shared and used by other components in the instance (such as RS nodes, Master nodes, etc.)
          */
         addressType?: pulumi.Input<string>;
         /**
-         * 当 ZK 连接地址或 Thrift2 连接地址开启了公网访问时，会返回该参数，表示 EIP ID。
+         * When the ZK connection address or Thrift2 connection address enables public access, this parameter is returned, indicating the EIP ID.
          */
         eipId?: pulumi.Input<string>;
         /**
-         * 连接地址 ID。说明默认仅返回 ZK 私网连接地址。若您申请了 Thrift2 连接地址，或者为 ZK 或 Thrift2 连接地址开启了公网访问，那么还会同时对应连接地址的 ID。当连接地址类型为 HBaseReUsedEipId 时，连接地址 ID 也固定为 HBaseReUsedEipId。
+         * Connection address ID. By default, only the ZK private network connection address is returned. If you apply for a Thrift2 connection address or enable public access for the ZK or Thrift2 connection address, the corresponding connection address ID will also be returned. When the connection address type is HBaseReUsedEipId, the connection address ID is fixed as HBaseReUsedEipId
          */
         endpointId?: pulumi.Input<string>;
         /**
-         * 连接地址的连接串。说明默认仅返回 ZK 私网连接地址。若您申请了 Thrift2 连接地址，或者为 ZK 或 Thrift2 连接地址开启了公网访问，那么还会同时对应连接地址的连接串。当连接地址类型为 HBaseReUsedEipId 时，连接地址的连接串也固定为 HBaseReUsedEipId。
+         * Connection string for the connection address. By default, only the ZK private network connection address is returned. If you have requested a Thrift2 connection address, or enabled public access for ZK or Thrift2 connection addresses, the corresponding connection string will also be provided. When the connection address type is HBaseReUsedEipId, the connection string is always set to HBaseReUsedEipId.
          */
         endpointStr?: pulumi.Input<string>;
         /**
-         * 连接地址网络类型。取值范围如下：Public：公网访问地址。Private：私网访问地址。
+         * Connection address network type. Value range: Public: public access address. Private: private access address.
          */
         networkType?: pulumi.Input<string>;
         /**
-         * 私网域名是否开启公网解析。
+         * Whether public DNS resolution is enabled for the private network domain name.
          */
         privateDnsVisibility?: pulumi.Input<boolean>;
     }
 
     export interface InstanceTag {
         /**
-         * 实例所绑定标签的标签键。
+         * Tag key of the tags bound to the instance
          */
         key?: pulumi.Input<string>;
         /**
-         * 实例所绑定标签的标签值。
+         * Tag values bound to the instance.
          */
         value?: pulumi.Input<string>;
     }
@@ -6899,45 +6979,45 @@ export namespace hbase {
 export namespace iam {
     export interface GroupAttachedPolicy {
         /**
-         * 策略名。
+         * Policy name.
          */
         policyName?: pulumi.Input<string>;
         policyScopes?: pulumi.Input<pulumi.Input<inputs.iam.GroupAttachedPolicyPolicyScope>[]>;
         /**
-         * 策略类型。System代表系统预设策略，Custom代表自定义策略。
+         * Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
          */
         policyType?: pulumi.Input<string>;
     }
 
     export interface GroupAttachedPolicyPolicyScope {
         /**
-         * 项目授权时间。
+         * Project authorization time.
          */
         attachTime?: pulumi.Input<string>;
         /**
-         * 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+         * Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
          */
         policyScopeType?: pulumi.Input<string>;
         /**
-         * 按项目授权时的项目显示名。
+         * Project display name for project-based authorization.
          */
         projectDisplayName?: pulumi.Input<string>;
         /**
-         * 按项目授权时的项目名。
+         * Project name for project-based authorization.
          */
         projectName?: pulumi.Input<string>;
     }
 
     export interface GroupUser {
         /**
-         * 用户名。
+         * Username.
          */
         userName?: pulumi.Input<string>;
     }
 
     export interface PolicyPolicyRole {
         /**
-         * 对应用户、角色、用户组的名称。
+         * Name of the corresponding user, role, or user group.
          */
         name?: pulumi.Input<string>;
         policyScopes?: pulumi.Input<pulumi.Input<inputs.iam.PolicyPolicyRolePolicyScope>[]>;
@@ -6945,14 +7025,14 @@ export namespace iam {
 
     export interface PolicyPolicyRolePolicyScope {
         /**
-         * 项目名。
+         * Project name.
          */
         projectName?: pulumi.Input<string>;
     }
 
     export interface PolicyPolicyUser {
         /**
-         * 对应用户、角色、用户组的名称。
+         * Name of the corresponding user, role, or user group.
          */
         name?: pulumi.Input<string>;
         policyScopes?: pulumi.Input<pulumi.Input<inputs.iam.PolicyPolicyUserPolicyScope>[]>;
@@ -6960,7 +7040,7 @@ export namespace iam {
 
     export interface PolicyPolicyUserGroup {
         /**
-         * 对应用户、角色、用户组的名称。
+         * Name of the corresponding user, role, or user group.
          */
         name?: pulumi.Input<string>;
         policyScopes?: pulumi.Input<pulumi.Input<inputs.iam.PolicyPolicyUserGroupPolicyScope>[]>;
@@ -6968,171 +7048,171 @@ export namespace iam {
 
     export interface PolicyPolicyUserGroupPolicyScope {
         /**
-         * 项目名。
+         * Project name.
          */
         projectName?: pulumi.Input<string>;
     }
 
     export interface PolicyPolicyUserPolicyScope {
         /**
-         * 项目名。
+         * Project name.
          */
         projectName?: pulumi.Input<string>;
     }
 
     export interface RolePolicy {
         /**
-         * 策略名。
+         * Policy name
          */
         policyName?: pulumi.Input<string>;
         /**
-         * 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+         * Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
          */
         policyType?: pulumi.Input<string>;
     }
 
     export interface RoleTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface UserAccessKey {
         /**
-         * 访问密钥ID。
+         * Access key ID.
          */
         accessKeyId?: pulumi.Input<string>;
         /**
-         * 访问密钥创建时间。
+         * Access key creation time.
          */
         createDate?: pulumi.Input<string>;
         /**
-         * 最近一次使用的服务区域。
+         * Most recently used service region.
          */
         region?: pulumi.Input<string>;
         /**
-         * 访问密钥最近一次使用时间。
+         * Last used time of the access key.
          */
         requestTime?: pulumi.Input<string>;
         /**
-         * 最近一次使用的服务名称。
+         * Name of the most recently used service.
          */
         service?: pulumi.Input<string>;
         /**
-         * 访问密钥状态。Active代表启用，Inactive代表禁用。
+         * Access key status. 'Active' means enabled, 'Inactive' means disabled.
          */
         status?: pulumi.Input<string>;
         /**
-         * 访问密钥更新时间。
+         * Access key update time.
          */
         updateDate?: pulumi.Input<string>;
         /**
-         * 访问密钥Secret。
+         * Access key Secret.
          */
         userName?: pulumi.Input<string>;
     }
 
     export interface UserLoginProfile {
         /**
-         * 登录配置创建时间。
+         * Login configuration creation time.
          */
         createDate?: pulumi.Input<string>;
         /**
-         * 上次登录时间。
+         * Last login time.
          */
         lastLoginDate?: pulumi.Input<string>;
         /**
-         * 上次登录IP。
+         * Last login IP.
          */
         lastLoginIp?: pulumi.Input<string>;
         /**
-         * 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
+         * Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
          */
         lastResetPasswordTime?: pulumi.Input<number>;
         /**
-         * 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+         * Whether login is allowed. 'true' means allowed, 'false' means not allowed. Default is 'false'.
          */
         loginAllowed?: pulumi.Input<boolean>;
         /**
-         * 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+         * Whether login is locked. 'true' means locked, 'false' means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
          */
         loginLocked?: pulumi.Input<boolean>;
         /**
-         * 登录密码。
+         * Login password.
          */
         password?: pulumi.Input<string>;
         /**
-         * 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
+         * Password expiration time. '0' means never expires; non-zero means the expiration timestamp.
          */
         passwordExpireAt?: pulumi.Input<number>;
         /**
-         * 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+         * Whether password reset is required on next login. Whether password reset is required on next login. 'true' means password reset is required, 'false' means not required. Default is 'false'.
          */
         passwordResetRequired?: pulumi.Input<boolean>;
         /**
-         * 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+         * Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
          */
         safeAuthExemptDuration?: pulumi.Input<number>;
         /**
-         * 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+         * Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
          */
         safeAuthExemptRequired?: pulumi.Input<number>;
         /**
-         * 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+         * Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
          */
         safeAuthExemptUnit?: pulumi.Input<number>;
         /**
-         * 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+         * Whether login protection is enabled. 'true' means enabled, 'false' means disabled. Default is 'false'.
          */
         safeAuthFlag?: pulumi.Input<boolean>;
         /**
-         * 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+         * Login protection type. Login protection type. 'phone' represents mobile verification, 'email' represents email verification, 'vmfa' represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
          */
         safeAuthType?: pulumi.Input<string>;
         /**
-         * 登录配置更新时间。
+         * Login configuration update time.
          */
         updateDate?: pulumi.Input<string>;
     }
 
     export interface UserPolicy {
         /**
-         * 权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
+         * Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
          */
         policyName?: pulumi.Input<string>;
         /**
-         * 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+         * Permission policy type. 'System' indicates system preset policy, 'Custom' indicates custom policy.
          */
         policyType?: pulumi.Input<string>;
     }
 
     export interface UserSecurityConfig {
         /**
-         * 是否开启操作保护。0代表开启，1代表关闭。
+         * Whether operation protection is enabled. 0 means enabled, 1 means disabled.
          */
         safeAuthClose?: pulumi.Input<number>;
         /**
-         * 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+         * Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
          */
         safeAuthExemptDuration?: pulumi.Input<number>;
         /**
-         * 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+         * Operation protection type. 'phone' indicates phone verification, 'email' indicates email verification, 'vmfa' indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
          */
         safeAuthType?: pulumi.Input<string>;
     }
 
     export interface UserTag {
         /**
-         * 标签键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
@@ -7141,98 +7221,98 @@ export namespace iam {
 export namespace kafka {
     export interface AllowListAssociatedInstance {
         /**
-         * 白名单绑定的实例ID。
+         * ID of the instance bound to the allowlist
          */
         instanceId?: pulumi.Input<string>;
     }
 
     export interface InstanceChargeInfo {
         /**
-         * 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+         * Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
          */
         autoRenew?: pulumi.Input<boolean>;
         /**
-         * 包年包月实例的到期时间。
+         * Expiration time for the subscription instance.
          */
         chargeExpireTime?: pulumi.Input<string>;
         /**
-         * 实例的计费开始时间。
+         * Instance billing start time.
          */
         chargeStartTime?: pulumi.Input<string>;
         /**
-         * 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+         * Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
          */
         chargeStatus?: pulumi.Input<string>;
         /**
-         * 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+         * Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
          */
         chargeType?: pulumi.Input<string>;
         /**
-         * 实例欠费关停后的预计释放时间。
+         * Estimated release time after the instance is stopped due to overdue payment.
          */
         overdueReclaimTime?: pulumi.Input<string>;
         /**
-         * 实例的欠费关停时间。
+         * Instance suspension time due to overdue payment.
          */
         overdueTime?: pulumi.Input<string>;
         /**
-         * 包年包月类型实例的购买时长。
+         * Purchase duration for subscription-based instances.
          */
         period?: pulumi.Input<number>;
         /**
-         * 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+         * The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
          */
         periodUnit?: pulumi.Input<string>;
     }
 
     export interface InstanceConnectionInfo {
         /**
-         * 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+         * Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
          */
         endpointType?: pulumi.Input<string>;
         /**
-         * 实例私网访问域名。
+         * Instance private network access domain name.
          */
         internalEndpoint?: pulumi.Input<string>;
         /**
-         * 接入点的网络类型。统一为 PrivateNetwork。
+         * Network type for the access point. Unified as PrivateNetwork.
          */
         networkType?: pulumi.Input<string>;
         /**
-         * 实例公网访问域名。
+         * Public access domain name for the instance.
          */
         publicEndpoint?: pulumi.Input<string>;
     }
 
     export interface InstanceTag {
         /**
-         * 标签的键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签的值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface TopicAccessPolicy {
         /**
-         * SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+         * SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
          */
         accessPolicy?: pulumi.Input<string>;
         /**
-         * SASL 用户名称。
+         * SASL username.
          */
         userName?: pulumi.Input<string>;
     }
 
     export interface TopicTag {
         /**
-         * 标签键。
+         * Label key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
@@ -7241,11 +7321,11 @@ export namespace kafka {
 export namespace kms {
     export interface KeyMultiRegionConfiguration {
         /**
-         * 多区域密钥的类型。
+         * Multi-region key type.
          */
         multiRegionKeyType?: pulumi.Input<string>;
         /**
-         * 主多区域键的事务识别号和区域 ID。
+         * Primary multi-region key transaction identifier and region ID.
          */
         primaryKey?: pulumi.Input<inputs.kms.KeyMultiRegionConfigurationPrimaryKey>;
         replicaKeys?: pulumi.Input<pulumi.Input<inputs.kms.KeyMultiRegionConfigurationReplicaKey>[]>;
@@ -7253,33 +7333,33 @@ export namespace kms {
 
     export interface KeyMultiRegionConfigurationPrimaryKey {
         /**
-         * 多区域密钥的区域 ID。
+         * Multi-region key region ID.
          */
         region?: pulumi.Input<string>;
         /**
-         * 多区域密钥的 TRN。
+         * Multi-region key TRN.
          */
         trn?: pulumi.Input<string>;
     }
 
     export interface KeyMultiRegionConfigurationReplicaKey {
         /**
-         * 多区域密钥的区域 ID。
+         * Multi-region key region ID.
          */
         region?: pulumi.Input<string>;
         /**
-         * 多区域密钥的转换。
+         * Multi-region key conversion.
          */
         trn?: pulumi.Input<string>;
     }
 
     export interface KeyTag {
         /**
-         * KMS密钥的标签键
+         * KMS key label key.
          */
         key?: pulumi.Input<string>;
         /**
-         * KMS密钥的标签值
+         * KMS key label value.
          */
         value?: pulumi.Input<string>;
     }
@@ -7288,151 +7368,151 @@ export namespace kms {
 export namespace mongodb {
     export interface AllowListAssociatedInstance {
         /**
-         * 已绑定当前白名单的实例 ID。
+         * Instance ID bound to the current allowlist.
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 已绑定当前白名单的实例名称。
+         * Instance name bound to the current allowlist.
          */
         instanceName?: pulumi.Input<string>;
         /**
-         * 实例所属的项目名称。
+         * Project name of the instance.
          */
         projectName?: pulumi.Input<string>;
         /**
-         * 实例所属的私有网络 ID。
+         * Private network ID of the instance.
          */
         vpc?: pulumi.Input<string>;
     }
 
     export interface InstanceConfigServer {
         /**
-         * ConfigServer 的节点 ID。
+         * ConfigServer node ID
          */
         configServerNodeId?: pulumi.Input<string>;
         /**
-         * 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+         * Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
          */
         nodeRole?: pulumi.Input<string>;
         /**
-         * 节点状态。
+         * Node status.
          */
         nodeStatus?: pulumi.Input<string>;
         /**
-         * 总内存。单位：GiB。
+         * Total memory. Unit: GiB.
          */
         totalMemoryGb?: pulumi.Input<number>;
         /**
-         * 总核数。
+         * Total cores.
          */
         totalvCpu?: pulumi.Input<number>;
         /**
-         * 已用内存。单位：GiB。
+         * Used memory. Unit: GiB.
          */
         usedMemoryGb?: pulumi.Input<number>;
         /**
-         * 已用核数。
+         * Used cores.
          */
         usedvCpu?: pulumi.Input<number>;
         /**
-         * 当前节点所属的可用区 ID。
+         * Availability zone ID of the current node.
          */
         zoneId?: pulumi.Input<string>;
     }
 
     export interface InstanceMongo {
         /**
-         * Mongos 的节点 ID。
+         * Mongos node ID
          */
         mongosNodeId?: pulumi.Input<string>;
         /**
-         * 节点规格。
+         * Node specification.
          */
         nodeSpec?: pulumi.Input<string>;
         /**
-         * 节点状态。
+         * Node status.
          */
         nodeStatus?: pulumi.Input<string>;
         /**
-         * 总内存。单位：GiB。
+         * Total memory. Unit: GiB.
          */
         totalMemoryGb?: pulumi.Input<number>;
         /**
-         * 总核数。
+         * Total cores.
          */
         totalvCpu?: pulumi.Input<number>;
         /**
-         * 已用内存。单位：GiB。
+         * Used memory. Unit: GiB.
          */
         usedMemoryGb?: pulumi.Input<number>;
         /**
-         * 已用核数。
+         * Used cores.
          */
         usedvCpu?: pulumi.Input<number>;
         /**
-         * 当前节点所属的可用区 ID。
+         * Availability zone ID of the current node.
          */
         zoneId?: pulumi.Input<string>;
     }
 
     export interface InstanceNode {
         /**
-         * 节点延迟时间。单位：秒。
+         * Node latency. Unit: seconds.
          */
         nodeDelayTime?: pulumi.Input<number>;
         /**
-         * 节点 ID。
+         * Node ID.
          */
         nodeId?: pulumi.Input<string>;
         /**
-         * 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+         * Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
          */
         nodeRole?: pulumi.Input<string>;
         /**
-         * 节点规格。
+         * Node specification.
          */
         nodeSpec?: pulumi.Input<string>;
         /**
-         * 节点状态。
+         * Node status.
          */
         nodeStatus?: pulumi.Input<string>;
         /**
-         * 总内存。单位：GiB。
+         * Total memory. Unit: GiB.
          */
         totalMemoryGb?: pulumi.Input<number>;
         /**
-         * 该节点的总存储空间。单位：GiB。
+         * Total storage space for this node. Unit: GiB.
          */
         totalStorageGb?: pulumi.Input<number>;
         /**
-         * 总核数。
+         * Total cores.
          */
         totalvCpu?: pulumi.Input<number>;
         /**
-         * 已用内存。单位：GiB。
+         * Used memory. Unit: GiB.
          */
         usedMemoryGb?: pulumi.Input<number>;
         /**
-         * 该节点已用的存储空间。单位：GiB。
+         * Storage space used by this node. Unit: GiB.
          */
         usedStorageGb?: pulumi.Input<number>;
         /**
-         * 已用核数。
+         * Used cores.
          */
         usedvCpu?: pulumi.Input<number>;
         /**
-         * 当前节点所属的可用区 ID。
+         * Availability zone ID of the current node.
          */
         zoneId?: pulumi.Input<string>;
     }
 
     export interface InstanceNodeAvailabilityZone {
         /**
-         * 当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
+         * Number of read-only nodes to add in the current availability zone. Currently, only replica set instances and Shard nodes in sharded cluster instances support adding read-only nodes. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this value indicates the total number of read-only nodes in a single replica set instance. Each replica set instance supports up to 5 read-only nodes. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this value indicates the number of read-only nodes per Shard node. Each Shard node supports up to 5 read-only nodes.
          */
         nodeNumber?: pulumi.Input<number>;
         /**
-         * 只读节点所在的可用区。
+         * Availability zone of the read-only node.
          */
         zoneId?: pulumi.Input<string>;
     }
@@ -7440,69 +7520,69 @@ export namespace mongodb {
     export interface InstanceShard {
         nodes?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceShardNode>[]>;
         /**
-         * Shard 节点的 ID。
+         * Shard node ID.
          */
         shardId?: pulumi.Input<string>;
     }
 
     export interface InstanceShardNode {
         /**
-         * 节点延迟时间。单位：秒。
+         * Node latency. Unit: seconds.
          */
         nodeDelayTime?: pulumi.Input<number>;
         /**
-         * 节点 ID。
+         * Node ID.
          */
         nodeId?: pulumi.Input<string>;
         /**
-         * 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+         * Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
          */
         nodeRole?: pulumi.Input<string>;
         /**
-         * 节点规格。
+         * Node specification.
          */
         nodeSpec?: pulumi.Input<string>;
         /**
-         * 节点状态。
+         * Node status.
          */
         nodeStatus?: pulumi.Input<string>;
         /**
-         * 总内存。单位：GiB。
+         * Total memory. Unit: GiB.
          */
         totalMemoryGb?: pulumi.Input<number>;
         /**
-         * 该节点的总存储空间。单位：GiB。
+         * Total storage space for this node. Unit: GiB.
          */
         totalStorageGb?: pulumi.Input<number>;
         /**
-         * 总核数。
+         * Total cores.
          */
         totalvCpu?: pulumi.Input<number>;
         /**
-         * 已用内存。单位：GiB。
+         * Used memory. Unit: GiB.
          */
         usedMemoryGb?: pulumi.Input<number>;
         /**
-         * 该节点已用的存储空间。单位：GiB。
+         * Storage space used by this node. Unit: GiB.
          */
         usedStorageGb?: pulumi.Input<number>;
         /**
-         * 已用核数。
+         * Used cores.
          */
         usedvCpu?: pulumi.Input<number>;
         /**
-         * 当前节点所属的可用区 ID。
+         * Availability zone ID of the current node.
          */
         zoneId?: pulumi.Input<string>;
     }
 
     export interface InstanceTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
@@ -7511,37 +7591,37 @@ export namespace mongodb {
 export namespace natgateway {
     export interface NgwEipAddress {
         /**
-         * 公网IP的ID。
+         * Public IP ID
          */
         allocationId?: pulumi.Input<string>;
         /**
-         * 公网IP的地址。
+         * Public IP address
          */
         eipAddress?: pulumi.Input<string>;
         /**
-         * 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+         * Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
          */
         usingStatus?: pulumi.Input<string>;
     }
 
     export interface NgwNatIpAddress {
         /**
-         * 中转Ip地址。
+         * Transit IP address
          */
         natIpAddress?: pulumi.Input<string>;
         /**
-         * 中转Ip id。
+         * Transit IP ID
          */
         natIpId?: pulumi.Input<string>;
     }
 
     export interface NgwTag {
         /**
-         * 用户标签的标签键。
+         * User tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value
          */
         value?: pulumi.Input<string>;
     }
@@ -7550,84 +7630,84 @@ export namespace natgateway {
 export namespace organization {
     export interface AccountSecureContactInfo {
         /**
-         * 安全邮箱。
+         * Security email
          */
         email?: pulumi.Input<string>;
         /**
-         * 安全邮箱是否验证，1: 未验证，2: 已验证。
+         * Security email verification status: 1. Not verified, 2. Verified
          */
         emailVerified?: pulumi.Input<number>;
         /**
-         * 变更中的新邮箱。
+         * New email being changed
          */
         newEmail?: pulumi.Input<string>;
         /**
-         * 变更中的新手机号。
+         * New mobile number being changed
          */
         newPhone?: pulumi.Input<string>;
         /**
-         * 安全手机号。
+         * Security mobile number
          */
         phone?: pulumi.Input<string>;
         /**
-         * 安全手机号是否验证，1: 未验证，2: 已验证。
+         * Security mobile number verification status: 1. Not verified, 2. Verified
          */
         phoneVerified?: pulumi.Input<number>;
     }
 
     export interface AccountTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface OrganizationOrganization {
         /**
-         * 创建时间
+         * Creation Time
          */
         createdTime?: pulumi.Input<string>;
         /**
-         * 描述
+         * Description
          */
         description?: pulumi.Input<string>;
         /**
-         * 组织名称
+         * Organization Name
          */
         name?: pulumi.Input<string>;
         /**
-         * 管理员ID
+         * Administrator ID
          */
         owner?: pulumi.Input<string>;
         /**
-         * 状态
+         * Status
          */
         status?: pulumi.Input<number>;
         /**
-         * 组织类型，企业组织固定是 1
+         * Organization type, enterprise organization is always 1
          */
         type?: pulumi.Input<number>;
         /**
-         * 更新时间
+         * Last Updated
          */
         updatedTime?: pulumi.Input<string>;
     }
 
     export interface OrganizationOwner {
         /**
-         * 账号ID
+         * Account ID
          */
         accountId?: pulumi.Input<number>;
         /**
-         * 账号名称
+         * Account Name
          */
         accountName?: pulumi.Input<string>;
         /**
-         * 主体名称
+         * Entity Name
          */
         mainName?: pulumi.Input<string>;
     }
@@ -7636,45 +7716,45 @@ export namespace organization {
 export namespace privatelink {
     export interface EndpointServicePrivateDnsNameConfiguration {
         /**
-         * 域验证名称。
+         * Domain verification name.
          */
         name?: pulumi.Input<string>;
         /**
-         * 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+         * Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
          */
         status?: pulumi.Input<string>;
         /**
-         * 域验证类型。TXT：TXT记录。
+         * Domain verification type. TXT: TXT record.
          */
         type?: pulumi.Input<string>;
         /**
-         * 域验证值。
+         * Domain verification value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface EndpointServiceResource {
         /**
-         * 终端节点服务ID。
+         * Endpoint service ID.
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 待添加到终端节点服务中的服务资源ID。
+         * Service resource ID to be added to the endpoint service.
          */
         resourceId?: pulumi.Input<string>;
         /**
-         * 负载均衡提供服务的可用区。
+         * Availability zone where the load balancer provides service.
          */
         zoneIds?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface EndpointServiceTag {
         /**
-         * 终端节点服务标签的标签键。
+         * Tag keys for endpoint service tags.
          */
         key?: pulumi.Input<string>;
         /**
-         * 终端节点服务标签的标签值。
+         * Tag value of the endpoint service tag.
          */
         value?: pulumi.Input<string>;
     }
@@ -7684,63 +7764,63 @@ export namespace privatelink {
 export namespace privatezone {
     export interface ResolverEndpointIpConfig {
         /**
-         * 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+         * Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
          */
         azId?: pulumi.Input<string>;
         /**
-         * 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+         * IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
          */
         ip?: pulumi.Input<string>;
         /**
-         * 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+         * IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
          */
         ipv6?: pulumi.Input<string>;
         /**
-         * 终端节点 IP 地址所在的子网 ID。
+         * Subnet ID for the endpoint IP address
          */
         subnetId?: pulumi.Input<string>;
     }
 
     export interface ResolverEndpointTag {
         /**
-         * 用户标签的标签键。
+         * User tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface ResolverRuleForwardIP {
         /**
-         * VPC 外部的 DNS 服务器的 IP 地址。
+         * IP address of the external DNS server for the VPC
          */
         ip?: pulumi.Input<string>;
         /**
-         * VPC 外部的 DNS 服务器的端口。
+         * Port of the external DNS server for the VPC
          */
         port?: pulumi.Input<number>;
     }
 
     export interface ResolverRuleTag {
         /**
-         * 用户标签的标签键。
+         * Tag key for the user tag
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * Tag value for the user tag
          */
         value?: pulumi.Input<string>;
     }
 
     export interface ResolverRuleVpC {
         /**
-         * VPC 的地域。
+         * Region of the VPC
          */
         region?: pulumi.Input<string>;
         /**
-         * VPC 的 ID。
+         * VPC ID
          */
         vpcId?: pulumi.Input<string>;
     }
@@ -7749,146 +7829,146 @@ export namespace privatezone {
 export namespace rabbitmq {
     export interface InstanceChargeDetail {
         /**
-         * 包年包月实例到期后是否自动续费。
+         * Whether to automatically renew the subscription instance after expiration.
          */
         autoRenew?: pulumi.Input<boolean>;
         /**
-         * 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         * Instance billing end time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
          */
         chargeEndTime?: pulumi.Input<string>;
         /**
-         * 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         * Expiration time of the subscription instance. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
          */
         chargeExpireTime?: pulumi.Input<string>;
         /**
-         * 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         * Instance billing start time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
          */
         chargeStartTime?: pulumi.Input<string>;
         /**
-         * 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+         * Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
          */
         chargeStatus?: pulumi.Input<string>;
         /**
-         * 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+         * Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
          */
         chargeType?: pulumi.Input<string>;
         /**
-         * 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         * Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
          */
         overdueReclaimTime?: pulumi.Input<string>;
         /**
-         * 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         * Instance suspension time due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
          */
         overdueTime?: pulumi.Input<string>;
         /**
-         * 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+         * Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
          */
         period?: pulumi.Input<number>;
         /**
-         * 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+         * Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
          */
         periodUnit?: pulumi.Input<string>;
     }
 
     export interface InstanceEndpoint {
         /**
-         * 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+         * Type of instance endpoint. RabbitMQ instances provide the following endpoint types: WEB: Web UI endpoint, AMQP0*9*1: AMQP endpoint, MQTT: MQTT endpoint, WEB_MQTT: WEB and MQTT endpoints, STOMP: STOMP endpoint.
          */
         endpointType?: pulumi.Input<string>;
         /**
-         * 实例的私网访问域名。
+         * Private network access domain name of the instance.
          */
         internalEndpoint?: pulumi.Input<string>;
         /**
-         * 公共服务区 IP 接入点。
+         * Public service zone IP endpoint.
          */
         internalIpEndpoint?: pulumi.Input<string>;
         /**
-         * 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+         * Network type of the endpoint. PrivateNetwork indicates a private network (VPC).
          */
         networkType?: pulumi.Input<string>;
         /**
-         * 实例公网访问域名。仅在开启公网访问之后显示。
+         * Instance public access domain name. Displayed only after public access is enabled.
          */
         publicEndpoint?: pulumi.Input<string>;
     }
 
     export interface InstanceTag {
         /**
-         * 标签的键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签的值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface PublicAddressChargeDetail {
         /**
-         * 包年包月实例到期后是否自动续费。
+         * Whether subscription instances are automatically renewed after expiration.
          */
         autoRenew?: pulumi.Input<boolean>;
         /**
-         * 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         * Instance billing end time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
          */
         chargeEndTime?: pulumi.Input<string>;
         /**
-         * 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         * Expiration time for subscription instances. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
          */
         chargeExpireTime?: pulumi.Input<string>;
         /**
-         * 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         * Instance billing start time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
          */
         chargeStartTime?: pulumi.Input<string>;
         /**
-         * 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+         * Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
          */
         chargeStatus?: pulumi.Input<string>;
         /**
-         * 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+         * Instance billing type. Supported types: PostPaid: pay-as-you-go, PrePaid: subscription.
          */
         chargeType?: pulumi.Input<string>;
         /**
-         * 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         * Estimated release time after instance is stopped due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
          */
         overdueReclaimTime?: pulumi.Input<string>;
         /**
-         * 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         * Instance overdue shutdown time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
          */
         overdueTime?: pulumi.Input<string>;
     }
 
     export interface PublicAddressEndpoint {
         /**
-         * 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+         * Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
          */
         endpointType?: pulumi.Input<string>;
         /**
-         * 实例的私网访问域名。
+         * Instance private network access domain name.
          */
         internalEndpoint?: pulumi.Input<string>;
         /**
-         * 公共服务区 IP 接入点。
+         * Public service zone IP access point.
          */
         internalIpEndpoint?: pulumi.Input<string>;
         /**
-         * 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+         * Network type of the access point. PrivateNetwork indicates private VPC network.
          */
         networkType?: pulumi.Input<string>;
         /**
-         * 实例公网访问域名。仅在开启公网访问之后显示。
+         * Instance public access domain name. Displayed only after public access is enabled.
          */
         publicEndpoint?: pulumi.Input<string>;
     }
 
     export interface PublicAddressTag {
         /**
-         * 标签的键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签的值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
@@ -7897,46 +7977,46 @@ export namespace rabbitmq {
 export namespace rdsmssql {
     export interface AllowListAssociatedInstance {
         /**
-         * 实例ID。
+         * Instance ID
          */
         instanceId?: pulumi.Input<string>;
     }
 
     export interface InstanceChargeInfo {
         /**
-         * 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+         * Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
          */
         autoRenew?: pulumi.Input<boolean>;
         /**
-         * 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
          */
         chargeEndTime?: pulumi.Input<string>;
         /**
-         * 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
          */
         chargeStartTime?: pulumi.Input<string>;
         /**
-         * 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+         * Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
          */
         chargeStatus?: pulumi.Input<string>;
         /**
-         * 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+         * Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
          */
         chargeType?: pulumi.Input<string>;
         /**
-         * 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
          */
         overdueReclaimTime?: pulumi.Input<string>;
         /**
-         * 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
          */
         overdueTime?: pulumi.Input<string>;
         /**
-         * 预付费场景下的购买时长。默认值：1。
+         * Purchase duration for prepaid scenarios. Default: 1 month.
          */
         period?: pulumi.Input<number>;
         /**
-         * 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+         * Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
          */
         periodUnit?: pulumi.Input<string>;
     }
@@ -7944,116 +8024,116 @@ export namespace rdsmssql {
     export interface InstanceConnectionInfo {
         addresses?: pulumi.Input<pulumi.Input<inputs.rdsmssql.InstanceConnectionInfoAddress>[]>;
         /**
-         * 描述信息。
+         * Description.
          */
         description?: pulumi.Input<string>;
         /**
-         * 终端 ID。
+         * Terminal ID.
          */
         endpointId?: pulumi.Input<string>;
         /**
-         * 终端名称。
+         * Terminal name.
          */
         endpointName?: pulumi.Input<string>;
         /**
-         * 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+         * Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
          */
         endpointType?: pulumi.Input<string>;
     }
 
     export interface InstanceConnectionInfoAddress {
         /**
-         * 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+         * Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
          */
         dnsVisibility?: pulumi.Input<boolean>;
         /**
-         * 域名。
+         * Domain name.
          */
         domain?: pulumi.Input<string>;
         /**
-         * EIP的ID，仅对公网地址有效。
+         * EIP ID, valid only for public addresses.
          */
         eipId?: pulumi.Input<string>;
         /**
-         * IP地址。
+         * IP address.
          */
         ipAddress?: pulumi.Input<string>;
         /**
-         * 网络地址类型。取值：Private：私网类型。Public：公网类型。
+         * Network address type. Possible values: Private: private network type. Public: public network type.
          */
         networkType?: pulumi.Input<string>;
         /**
-         * 端口。
+         * Port.
          */
         port?: pulumi.Input<string>;
         /**
-         * 子网 ID，仅对私网地址有效。
+         * Subnet ID, valid only for private network addresses.
          */
         subnetId?: pulumi.Input<string>;
     }
 
     export interface InstanceNodeDetailInfo {
         /**
-         * 节点的创建时间。
+         * Node creation time.
          */
         createTime?: pulumi.Input<string>;
         /**
-         * 节点主机名。
+         * Node hostname.
          */
         hostName?: pulumi.Input<string>;
         /**
-         * 实例ID。
+         * Instance ID.
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 内存大小，单位为 GiB。
+         * Memory size, in GiB.
          */
         memory?: pulumi.Input<number>;
         /**
-         * 节点ID。
+         * Node ID.
          */
         nodeId?: pulumi.Input<string>;
         /**
-         * 节点IP。
+         * Node IP.
          */
         nodeIp?: pulumi.Input<string>;
         /**
-         * 节点规格。
+         * Node specification.
          */
         nodeSpec?: pulumi.Input<string>;
         /**
-         * 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+         * Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
          */
         nodeStatus?: pulumi.Input<string>;
         /**
-         * 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+         * Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
          */
         nodeType?: pulumi.Input<string>;
         /**
-         * 区域ID。
+         * Region ID.
          */
         regionId?: pulumi.Input<string>;
         /**
-         * 更新时间。
+         * Update time.
          */
         updateTime?: pulumi.Input<string>;
         /**
-         * vCPU 数量。
+         * vCPU count.
          */
         vcpu?: pulumi.Input<number>;
         /**
-         * 可用区ID。
+         * Availability zone ID.
          */
         zoneId?: pulumi.Input<string>;
     }
 
     export interface InstanceTag {
         /**
-         * 用户标签的标签键。
+         * Tag key for user tags.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value.
          */
         value?: pulumi.Input<string>;
     }
@@ -8062,94 +8142,94 @@ export namespace rdsmssql {
 export namespace rdsmysql {
     export interface AllowListAssociatedInstance {
         /**
-         * 已绑定当前白名单的实例 ID。
+         * Instance ID bound to the current allowlist.
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 已绑定当前白名单的实例名称。
+         * Instance name bound to the current allowlist.
          */
         instanceName?: pulumi.Input<string>;
         /**
-         * 实例状态。
+         * Instance status.
          */
         instanceStatus?: pulumi.Input<string>;
         /**
-         * 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+         * Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
          */
         isLatest?: pulumi.Input<boolean>;
         /**
-         * 实例所属的私有网络 ID。
+         * Private network ID of the instance.
          */
         vpc?: pulumi.Input<string>;
     }
 
     export interface AllowListSecurityGroupBindInfo {
         /**
-         * 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+         * Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
          */
         bindMode?: pulumi.Input<string>;
         /**
-         * 安全组的 IP 地址列表。
+         * Security group IP address list.
          */
         ipLists?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 安全组 ID。
+         * Security group ID.
          */
         securityGroupId?: pulumi.Input<string>;
         /**
-         * 安全组名称。
+         * Security group name.
          */
         securityGroupName?: pulumi.Input<string>;
     }
 
     export interface BackupBackupMeta {
         /**
-         * 数据库名。
+         * Database name
          */
         database?: pulumi.Input<string>;
         /**
-         * 表名列表。
+         * Table name list
          */
         tables?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface BackupDbTableInfo {
         /**
-         * 数据库名。
+         * Database name
          */
         database?: pulumi.Input<string>;
         /**
-         * 表名列表。
+         * Table name list
          */
         tables?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface DatabaseDatabasePrivilege {
         /**
-         * 数据库账号名称。
+         * Database account name.
          */
         accountName?: pulumi.Input<string>;
         /**
-         * 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+         * Granted account privilege type. Values: ReadWrite (read and write privileges), ReadOnly (read-only privileges), DDLOnly (DDL privileges only), DMLOnly (DML privileges only), Custom (custom privileges).
          */
         accountPrivilege?: pulumi.Input<string>;
         /**
-         * 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+         * The specified database account can access the database from the IP address. Default value: %. If Host is set to %, the account can access the database from any IP address. If Host is set to 192.10.10.%, the account can access the database from IP addresses between 192.10.10.0 and 192.10.10.255. The specified Host must be added to the instance's allowlist.
          */
         host?: pulumi.Input<string>;
     }
 
     export interface DbAccountAccountPrivilege {
         /**
-         * 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
+         * Type of database permission. Value options: ReadWrite: read and write permission. ReadOnly: read-only permission. DDLOnly: DDL permission only. DMLOnly: DML permission only. Custom: custom permission. Global: global permission. None: clear account permission. Note: When used as a request parameter, pay attention to the following: Only Global and None are allowed as values when used as request parameters. Permission type is single-select; passing multiple values will result in an error. Only the GrantDBAccountPrivilege API supports None as a value for AccountPrivilege. When AccountPrivilege is set to None and DBName is an empty string, all global permissions for the account are cleared. If DBName is set to a specific database, all permissions for the account in that database are cleared.
          */
         accountPrivilege?: pulumi.Input<string>;
         /**
-         * 账号的权限信息。当 AccountPrivilege 取值为 Custom 时，该字段的取值范围如下：SELECT INSERT UPDATE DELETE CREATE DROP REFERENCES INDEX ALTER CREATE TEMPORARY TABLES LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW EVENT TRIGGER CREATE ROUTINE ALTER ROUTINE 当 AccountPrivilege 取值为 Global 时，该字段的取值范围如下：PROCESS REPLICATION SLAVE REPLICATION CLIENT SELECT INSERT UPDATE DELETE CREATE DROP RELOAD REFERENCES INDEX ALTER LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW CREATE ROUTINE ALTER ROUTINE CREATE USER EVENT TRIGGER SHOW DATABASES CREATE TEMPORARY TABLES 说明  作为请求参数时，在 AccountPrivilege 取值为 Custom 时必填。 在 CreateDBAccount 接口中，会自动为账号赋予 REPLICATION SLAVE、PROCESS 和 REPLICATION CLIENT 全局权限。 可取多个值。使用英文逗号（,）分隔多个权限。写入方式为覆盖方式。
+         * Account privilege information. When AccountPrivilege is set to Custom, the valid values for this field are: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, EVENT, TRIGGER, CREATE ROUTINE, ALTER ROUTINE. When AccountPrivilege is set to Global, the valid values for this field are: PROCESS, REPLICATION SLAVE, REPLICATION CLIENT, SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, REFERENCES, INDEX, ALTER, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, SHOW DATABASES, CREATE TEMPORARY TABLES. Note: When used as a request parameter, this field is required if AccountPrivilege is set to Custom. In the CreateDBAccount API, REPLICATION SLAVE, PROCESS, and REPLICATION CLIENT global privileges are automatically granted to the account. Multiple values can be specified, separated by commas (,). The write mode is overwrite.
          */
         accountPrivilegeDetails?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 需修改账号授权的或账号已有权限的数据库名称。说明在 CreateDBAccount 和 GrantDBAccountPrivilege 接口中作为请求参数时，需确认 DBName 对应的数据库已存在。进行全局授权的修改时，应为 DBName 传空字符。
+         * The name of the database for which account authorization needs to be modified or for which the account already has privileges. Note: When used as a request parameter in the CreateDBAccount and GrantDBAccountPrivilege APIs, ensure that the database corresponding to DBName already exists. For global privilege modifications, set DBName to an empty string.
          */
         dbName?: pulumi.Input<string>;
     }
@@ -8157,7 +8237,7 @@ export namespace rdsmysql {
     export interface DbAccountTableColumnPrivilege {
         columnPrivileges?: pulumi.Input<pulumi.Input<inputs.rdsmysql.DbAccountTableColumnPrivilegeColumnPrivilege>[]>;
         /**
-         * 对账号进行权限设置的表所属的数据库的名称。
+         * Name of the database to which the table belongs for setting permissions for the account.
          */
         dbName?: pulumi.Input<string>;
         tablePrivileges?: pulumi.Input<pulumi.Input<inputs.rdsmysql.DbAccountTableColumnPrivilegeTablePrivilege>[]>;
@@ -8165,41 +8245,41 @@ export namespace rdsmysql {
 
     export interface DbAccountTableColumnPrivilegeColumnPrivilege {
         /**
-         * 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+         * Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
          */
         accountPrivilegeDetails?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 对账号进行列权限设置的列的名称。
+         * Name of the column for setting column permissions for the account.
          */
         columnName?: pulumi.Input<string>;
         /**
-         * 对账号进行列权限设置的表所属的数据库的名称。
+         * Name of the database to which the table belongs for setting column permissions for the account.
          */
         tableName?: pulumi.Input<string>;
     }
 
     export interface DbAccountTableColumnPrivilegeTablePrivilege {
         /**
-         * 账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+         * Account table permissions. Value options (multiple selections allowed): ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, SHOW, VIEW, TRIGGER, UPDATE, CREATE VIEW, REFERENCES. Note: Use commas (,) to separate multiple permissions.
          */
         accountPrivilegeDetails?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 对账号进行权限设置的表的名称。
+         * Name of the table for setting permissions for the account.
          */
         tableName?: pulumi.Input<string>;
     }
 
     export interface EndpointAddress {
         /**
-         * false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+         * false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
          */
         dnsVisibility?: pulumi.Input<boolean>;
         /**
-         * 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+         * Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
          */
         domainPrefix?: pulumi.Input<string>;
         /**
-         * 端口。
+         * Port.
          */
         port?: pulumi.Input<string>;
     }
@@ -8210,320 +8290,320 @@ export namespace rdsmysql {
 
     export interface EndpointCustomRouteStrategyKeywordRouteStrategy {
         /**
-         * SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+         * SQL forwarding rule target. Options: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
          */
         nodeType?: pulumi.Input<string>;
         /**
-         * 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+         * Forwarding rule keywords. SQL keyword rules: Each rule can contain up to 20 keywords, with a maximum length of 64 characters. Allowed characters: English letters, digits, underscore (_), @, #, :=, and Chinese characters.
          */
         sqlKeyword?: pulumi.Input<string>;
     }
 
     export interface EndpointReadOnlyNodeWeight {
         /**
-         * 只读节点需要传入 NodeId，主节点无需传入。
+         * NodeId is required for read-only nodes; not required for primary nodes.
          */
         nodeId?: pulumi.Input<string>;
         /**
-         * 节点类型。Primary：主节点。ReadOnly：只读节点。
+         * Node type. Primary: primary node. ReadOnly: read-only node.
          */
         nodeType?: pulumi.Input<string>;
         /**
-         * 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+         * Node read weight increases in increments of 100, up to a maximum of 10,000. Note: Not all weights can be set to 0.
          */
         weight?: pulumi.Input<number>;
     }
 
     export interface InstanceAddressObject {
         /**
-         * false：私网解析（默认）。true：私网以及公网解析。
+         * false: private network resolution (default). true: private and public network resolution.
          */
         dnsVisibility?: pulumi.Input<boolean>;
         /**
-         * 连接域名。
+         * Connection domain name
          */
         domain?: pulumi.Input<string>;
         /**
-         * EIP 的 ID，仅对 Public 地址有效。
+         * EIP ID, valid only for Public addresses.
          */
         eipId?: pulumi.Input<string>;
         /**
-         * IP 协议版本。取值为 IPv4。
+         * IP protocol version. Value: IPv4.
          */
         internetProtocol?: pulumi.Input<string>;
         /**
-         * IP 地址。
+         * IP address.
          */
         ipAddress?: pulumi.Input<string>;
         /**
-         * 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+         * Network address type. Values: Private: private address. Public: public address
          */
         networkType?: pulumi.Input<string>;
         /**
-         * 端口。
+         * Port
          */
         port?: pulumi.Input<string>;
         /**
-         * 子网 ID，仅对 Private 地址有效。
+         * Subnet ID, valid only for Private addresses
          */
         subnetId?: pulumi.Input<string>;
     }
 
     export interface InstanceAutoStorageScalingConfig {
         /**
-         * 是否开启实例的自动扩容功能。取值：true：是。false：否。
+         * Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
          */
         enableStorageAutoScale?: pulumi.Input<boolean>;
         /**
-         * 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+         * Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
          */
         storageThreshold?: pulumi.Input<number>;
         /**
-         * 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+         * Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
          */
         storageUpperBound?: pulumi.Input<number>;
     }
 
     export interface InstanceChargeDetail {
         /**
-         * 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+         * Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
          */
         autoRenew?: pulumi.Input<boolean>;
         /**
-         * 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+         * Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
          */
         chargeEndTime?: pulumi.Input<string>;
         /**
-         * 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+         * Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
          */
         chargeStartTime?: pulumi.Input<string>;
         /**
-         * 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+         * Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
          */
         chargeStatus?: pulumi.Input<string>;
         /**
-         * 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+         * Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
          */
         chargeType: pulumi.Input<string>;
         /**
-         * 实例购买数量。取值范围为 1~50。默认值为 1。
+         * Number of instances to purchase. Value range: 1–50. Default: 1
          */
         number?: pulumi.Input<number>;
         /**
-         * 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+         * Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
          */
         overdueReclaimTime?: pulumi.Input<string>;
         /**
-         * 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+         * Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
          */
         overdueTime?: pulumi.Input<string>;
         /**
-         * 预付费场景下的购买时长。
+         * Purchase duration in prepaid scenarios.
          */
         period?: pulumi.Input<number>;
         /**
-         * 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+         * Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
          */
         periodUnit?: pulumi.Input<string>;
         /**
-         * 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+         * Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
          */
         tempModifyEndTime?: pulumi.Input<string>;
         /**
-         * 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+         * Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
          */
         tempModifyStartTime?: pulumi.Input<string>;
     }
 
     export interface InstanceDisasterRecoveryInstance {
         /**
-         * 主实例与灾备实例之间同步任务的 ID。
+         * ID of synchronization tasks between primary and disaster recovery instances.
          */
         dtsTaskId?: pulumi.Input<string>;
         /**
-         * 主实例与灾备实例之间同步任务的名称。
+         * Name of the synchronization task between the primary instance and the disaster recovery instance
          */
         dtsTaskName?: pulumi.Input<string>;
         /**
-         * 主实例与灾备实例之间同步任务的状态。
+         * Status of synchronization tasks between the primary instance and the disaster recovery instance
          */
         dtsTaskStatus?: pulumi.Input<string>;
         /**
-         * 灾备实例的 ID。
+         * Disaster recovery instance ID.
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 灾备实例的名称。
+         * Name of disaster recovery instance.
          */
         instanceName?: pulumi.Input<string>;
         /**
-         * 灾备实例与主实例之间的时延。
+         * Latency between the disaster recovery instance and the primary instance.
          */
         secondsBehindMaster?: pulumi.Input<number>;
     }
 
     export interface InstanceEndpoint {
         /**
-         * 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+         * When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
          */
         autoAddNewNodes?: pulumi.Input<string>;
         /**
-         * 连接终端标签。
+         * Connection endpoint tag.
          */
         connectionInfoTags?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+         * Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
          */
         connectionMode?: pulumi.Input<string>;
         /**
-         * 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+         * Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
          */
         connectionPoolType?: pulumi.Input<string>;
         /**
-         * 连接终端的描述信息。
+         * Description of the connection endpoint
          */
         description?: pulumi.Input<string>;
         /**
-         * 是否启用连接保持。取值：true：是。false：否。
+         * Enable connection keep-alive. Options: true: yes. false: no
          */
         enableConnectionPersistent?: pulumi.Input<boolean>;
         /**
-         * 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+         * Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
          */
         enableReadOnly?: pulumi.Input<string>;
         /**
-         * 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+         * Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
          */
         enableReadWriteSplitting?: pulumi.Input<string>;
         /**
-         * 实例连接终端 ID。
+         * Instance connection endpoint ID.
          */
         endpointId?: pulumi.Input<string>;
         /**
-         * 实例连接终端名称。
+         * Instance connection endpoint name.
          */
         endpointName?: pulumi.Input<string>;
         /**
-         * 终端类型。取值为 Custom，自定义终端。
+         * Endpoint type. Value: Custom, custom endpoint.
          */
         endpointType?: pulumi.Input<string>;
         /**
-         * 空闲连接回收功能是否开启。true：开启。false：不开启。
+         * Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
          */
         idleConnectionReclaim?: pulumi.Input<boolean>;
         /**
-         * 是否开启事务分离。取值：true：是。false：否。
+         * Whether to enable transaction separation. Values: true: Yes. false: No.
          */
         implicitTransSplit?: pulumi.Input<boolean>;
         /**
-         * 是否开启主节点路由。取值：true：是。false：否。
+         * Whether to enable primary node routing. Values: true: Yes. false: No.
          */
         masterNodeRouting?: pulumi.Input<boolean>;
         /**
-         * 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+         * Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
          */
         masterProtectorTimeout?: pulumi.Input<number>;
         /**
-         * 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+         * Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
          */
         multiStatementsMode?: pulumi.Input<string>;
         /**
-         * 是否开启过载保护。取值：true：是。false：否。
+         * Overload protection enabled. Values: true: yes. false: no
          */
         overloadProtection?: pulumi.Input<boolean>;
         /**
-         * 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+         * Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
          */
         readOnlyNodeDistributionType?: pulumi.Input<string>;
         /**
-         * 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+         * Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
          */
         readOnlyNodeMaxDelayTime?: pulumi.Input<number>;
         readOnlyNodeWeights?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceEndpointReadOnlyNodeWeight>[]>;
         /**
-         * 读写模式：ReadWrite：读写。ReadOnly：只读。
+         * Read/write mode: ReadWrite: read/write. ReadOnly: read-only
          */
         readWriteMode?: pulumi.Input<string>;
     }
 
     export interface InstanceEndpointReadOnlyNodeWeight {
         /**
-         * 只读节点需要传入 NodeId，主节点无需传入。
+         * Read-only nodes require NodeId. Primary nodes do not require it
          */
         nodeId?: pulumi.Input<string>;
         /**
-         * 节点类型。Primary：主节点。ReadOnly：只读节点。
+         * Node type. Primary: primary node. ReadOnly: read-only node
          */
         nodeType?: pulumi.Input<string>;
         /**
-         * 节点的读权重，以 100 递增，最大值为 10000。
+         * Node read weight, increments of 100, maximum value is 10000.
          */
         weight?: pulumi.Input<number>;
     }
 
     export interface InstanceMaintenanceWindow {
         /**
-         * 可维护周期粒度，取值为 Week，周。
+         * Maintenance cycle granularity. Value: Week.
          */
         dayKind?: pulumi.Input<string>;
         /**
-         * 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+         * Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
          */
         dayOfWeeks?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+         * Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
          */
         maintenanceTime?: pulumi.Input<string>;
     }
 
     export interface InstanceNode {
         /**
-         * 节点规格。
+         * Node specification.
          */
         nodeSpec: pulumi.Input<string>;
         /**
-         * 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+         * Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
          */
         nodeType: pulumi.Input<string>;
         /**
-         * 可用区 ID。
+         * Availability zone ID
          */
         zoneId: pulumi.Input<string>;
     }
 
     export interface InstanceProxyDetail {
         /**
-         * 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+         * Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
          */
         dbProxyStatus?: pulumi.Input<string>;
         /**
-         * 实例的数据库代理服务的资源信息。
+         * Resource information for the instance's database proxy service
          */
         proxyResourceInfo?: pulumi.Input<inputs.rdsmysql.InstanceProxyDetailProxyResourceInfo>;
     }
 
     export interface InstanceProxyDetailProxyResourceInfo {
         /**
-         * 实例数据库代理服务当前的核数。
+         * Current number of cores for the instance database proxy service
          */
         currentProxyCpuNum?: pulumi.Input<number>;
         /**
-         * 用户可为数据库代理服务配置的最多核数。
+         * Maximum number of cores configurable for database proxy service.
          */
         maxProxyCpuNum?: pulumi.Input<number>;
         /**
-         * 用户可为数据库代理服务配置的最少核数。
+         * Minimum number of CPU cores configurable for the database proxy service
          */
         minProxyCpuNum?: pulumi.Input<number>;
     }
 
     export interface InstanceTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
@@ -8532,64 +8612,64 @@ export namespace rdsmysql {
 export namespace rdspostgresql {
     export interface AllowListAssociatedInstance {
         /**
-         * 实例 ID。
+         * Instance ID.
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 实例名称。
+         * Instance name.
          */
         instanceName?: pulumi.Input<string>;
         /**
-         * 实例所属的 VPC ID。
+         * VPC ID to which the instance belongs.
          */
         vpc?: pulumi.Input<string>;
     }
 
     export interface AllowListSecurityGroupBindInfo {
         /**
-         * 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+         * Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
          */
         bindMode?: pulumi.Input<string>;
         /**
-         * 安全组中的 IP 列表。
+         * IP address list in the security group.
          */
         ipLists?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 安全组 ID。
+         * Security group ID.
          */
         securityGroupId?: pulumi.Input<string>;
         /**
-         * 安全组名称。
+         * Security group name.
          */
         securityGroupName?: pulumi.Input<string>;
     }
 
     export interface DbEndpointAddress {
         /**
-         * 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+         * Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
          */
         dnsVisibility?: pulumi.Input<boolean>;
         /**
-         * 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+         * New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
          */
         domainPrefix?: pulumi.Input<string>;
         /**
-         * 端口号。
+         * Port number.
          */
         port?: pulumi.Input<string>;
     }
 
     export interface DbEndpointReadOnlyNodeWeight {
         /**
-         * 只读节点需要传入 NodeId。
+         * Read-only nodes require the NodeId to be provided.
          */
         nodeId?: pulumi.Input<string>;
         /**
-         * 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+         * Node type. Values: Primary: primary node. ReadOnly: read-only node.
          */
         nodeType?: pulumi.Input<string>;
         /**
-         * 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+         * Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
          */
         weight?: pulumi.Input<number>;
     }
@@ -8599,87 +8679,87 @@ export namespace rdspostgresql {
 export namespace redis {
     export interface InstanceCapacity {
         /**
-         * 当前实例的内存总容量。单位：MiB。
+         * Total memory capacity of the current instance. Unit: MiB.
          */
         total?: pulumi.Input<number>;
         /**
-         * 当前实例已用容量。单位：MiB。
+         * Used capacity of the current instance. Unit: MiB.
          */
         used?: pulumi.Input<number>;
     }
 
     export interface InstanceConfigureNode {
         /**
-         * 每个节点所属的可用区。
+         * The availability zone each node belongs to.
          */
         az?: pulumi.Input<string>;
     }
 
     export interface InstanceInstanceShard {
         /**
-         * 分片中的节点数量
+         * Number of nodes in each shard
          */
         nodeNumber?: pulumi.Input<number>;
         serverNodes?: pulumi.Input<pulumi.Input<inputs.redis.InstanceInstanceShardServerNode>[]>;
         /**
-         * 分片 ID。
+         * Shard ID.
          */
         shardId?: pulumi.Input<string>;
     }
 
     export interface InstanceInstanceShardServerNode {
         /**
-         * 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+         * Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
          */
         currentRole?: pulumi.Input<string>;
         /**
-         * 节点 ID。
+         * Node ID.
          */
         nodeId?: pulumi.Input<string>;
         /**
-         * 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+         * Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
          */
         status?: pulumi.Input<string>;
         /**
-         * 节点所在的可用区。
+         * Availability zone where the node is located.
          */
         zoneId?: pulumi.Input<string>;
     }
 
     export interface InstanceTag {
         /**
-         * 标签键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface InstanceVisitAddr {
         /**
-         * 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+         * Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
          */
         addrType?: pulumi.Input<string>;
         /**
-         * IP 地址或者域名。
+         * IP address or domain name.
          */
         address?: pulumi.Input<string>;
         /**
-         * 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+         * EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
          */
         eipId?: pulumi.Input<string>;
         /**
-         * 端口号。
+         * Port number.
          */
         port?: pulumi.Input<string>;
         /**
-         * 连接地址所对应的 IPv6 地址。
+         * IPv6 address corresponding to the connection address.
          */
         viPv6?: pulumi.Input<string>;
         /**
-         * 连接地址所对应的 IPv4 地址。
+         * The IPv4 address corresponding to the connection address.
          */
         vip?: pulumi.Input<string>;
     }
@@ -8688,59 +8768,59 @@ export namespace redis {
 export namespace storageebs {
     export interface SnapshotTag {
         /**
-         * 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+         * User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
          */
         key?: pulumi.Input<string>;
         /**
-         * 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+         * User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface VolumeBaselinePerformance {
         /**
-         * 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+         * Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
          */
         iops?: pulumi.Input<number>;
         /**
-         * 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+         * The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
          */
         throughput?: pulumi.Input<number>;
     }
 
     export interface VolumeExtraPerformance {
         /**
-         * 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+         * Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
          */
         extraPerformanceTypeId?: pulumi.Input<string>;
         /**
-         * 云盘的额外IOPS。
+         * Extra IOPS of the disk.
          */
         iops?: pulumi.Input<number>;
         /**
-         * 云盘的额外吞吐量。
+         * Extra throughput of the disk.
          */
         throughput?: pulumi.Input<number>;
     }
 
     export interface VolumeTag {
         /**
-         * 标签键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface VolumeTotalPerformance {
         /**
-         * 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+         * Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
          */
         iops?: pulumi.Input<number>;
         /**
-         * 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+         * The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
          */
         throughput?: pulumi.Input<number>;
     }
@@ -8749,218 +8829,218 @@ export namespace storageebs {
 export namespace tls {
     export interface IndexFullText {
         /**
-         * 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+         * Case sensitivity. true: Case sensitive. false: Not case sensitive.
          */
         caseSensitive?: pulumi.Input<boolean>;
         /**
-         * 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         * Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
          */
         delimiter?: pulumi.Input<string>;
         /**
-         * 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+         * When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
          */
         includeChinese?: pulumi.Input<boolean>;
     }
 
     export interface IndexKeyValue {
         /**
-         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         * Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
          */
         key?: pulumi.Input<string>;
         /**
-         * 需要配置键值索引的字段描述信息。
+         * Field description information required for configuring key-value indexes.
          */
         value?: pulumi.Input<inputs.tls.IndexKeyValueValue>;
     }
 
     export interface IndexKeyValueValue {
         /**
-         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         * Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
          */
         autoIndexFlag?: pulumi.Input<boolean>;
         /**
-         * 是否区分大小写。默认为 false。
+         * Whether to distinguish case. Default is false.
          */
         caseSensitive?: pulumi.Input<boolean>;
         /**
-         * 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         * Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
          */
         delimiter?: pulumi.Input<string>;
         /**
-         * 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+         * When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
          */
         includeChinese?: pulumi.Input<boolean>;
         /**
-         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         * Create indexes for all fields with text values in the JSON field.
          */
         indexAll?: pulumi.Input<boolean>;
         /**
-         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         * Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
          */
         indexSqlAll?: pulumi.Input<boolean>;
         jsonKeys?: pulumi.Input<pulumi.Input<inputs.tls.IndexKeyValueValueJsonKey>[]>;
         /**
-         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         * Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
          */
         sqlFlag?: pulumi.Input<boolean>;
         /**
-         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         * Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
          */
         valueType?: pulumi.Input<string>;
     }
 
     export interface IndexKeyValueValueJsonKey {
         /**
-         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         * Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
          */
         key?: pulumi.Input<string>;
         /**
-         * 需要配置键值索引的字段描述信息。
+         * Field description information required for configuring key-value indexes.
          */
         value?: pulumi.Input<inputs.tls.IndexKeyValueValueJsonKeyValue>;
     }
 
     export interface IndexKeyValueValueJsonKeyValue {
         /**
-         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         * Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
          */
         autoIndexFlag?: pulumi.Input<boolean>;
         /**
-         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         * Create indexes for all fields with text values in the JSON field.
          */
         indexAll?: pulumi.Input<boolean>;
         /**
-         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         * Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
          */
         indexSqlAll?: pulumi.Input<boolean>;
         /**
-         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         * Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
          */
         sqlFlag?: pulumi.Input<boolean>;
         /**
-         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         * Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
          */
         valueType?: pulumi.Input<string>;
     }
 
     export interface IndexUserInnerKeyValue {
         /**
-         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         * Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
          */
         key?: pulumi.Input<string>;
         /**
-         * 需要配置键值索引的字段描述信息。
+         * Field description information required for configuring key-value indexes.
          */
         value?: pulumi.Input<inputs.tls.IndexUserInnerKeyValueValue>;
     }
 
     export interface IndexUserInnerKeyValueValue {
         /**
-         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         * Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
          */
         autoIndexFlag?: pulumi.Input<boolean>;
         /**
-         * 是否区分大小写。默认为 false。
+         * Whether to distinguish case. Default is false.
          */
         caseSensitive?: pulumi.Input<boolean>;
         /**
-         * 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         * Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
          */
         delimiter?: pulumi.Input<string>;
         /**
-         * 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+         * When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
          */
         includeChinese?: pulumi.Input<boolean>;
         /**
-         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         * Create indexes for all fields with text values in the JSON field.
          */
         indexAll?: pulumi.Input<boolean>;
         /**
-         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         * Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
          */
         indexSqlAll?: pulumi.Input<boolean>;
         jsonKeys?: pulumi.Input<pulumi.Input<inputs.tls.IndexUserInnerKeyValueValueJsonKey>[]>;
         /**
-         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         * Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
          */
         sqlFlag?: pulumi.Input<boolean>;
         /**
-         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         * Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
          */
         valueType?: pulumi.Input<string>;
     }
 
     export interface IndexUserInnerKeyValueValueJsonKey {
         /**
-         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         * Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
          */
         key?: pulumi.Input<string>;
         /**
-         * 需要配置键值索引的字段描述信息。
+         * Field description information required for configuring key-value indexes.
          */
         value?: pulumi.Input<inputs.tls.IndexUserInnerKeyValueValueJsonKeyValue>;
     }
 
     export interface IndexUserInnerKeyValueValueJsonKeyValue {
         /**
-         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         * Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
          */
         autoIndexFlag?: pulumi.Input<boolean>;
         /**
-         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         * Create indexes for all fields with text values in the JSON field.
          */
         indexAll?: pulumi.Input<boolean>;
         /**
-         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         * Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
          */
         indexSqlAll?: pulumi.Input<boolean>;
         /**
-         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         * Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
          */
         sqlFlag?: pulumi.Input<boolean>;
         /**
-         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         * Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
          */
         valueType?: pulumi.Input<string>;
     }
 
     export interface ProjectTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface ScheduleSqlTaskRequestCycle {
         /**
-         * Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+         * Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
          */
         cronTab?: pulumi.Input<string>;
         /**
-         * 设置 Type 为 Cron 时，还需设置时区。
+         * If Type is set to Cron, you must also set the time zone.
          */
         cronTimeZone?: pulumi.Input<string>;
         /**
-         * 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+         * Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
          */
         time: pulumi.Input<number>;
         /**
-         * 调度周期类型。可选值：Period、Fixed、Cron。
+         * Scheduling period type. Options: Period, Fixed, Cron.
          */
         type: pulumi.Input<string>;
     }
 
     export interface TopicTag {
         /**
-         * 用户标签的标签键。
+         * User tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value.
          */
         value?: pulumi.Input<string>;
     }
@@ -8969,142 +9049,142 @@ export namespace tls {
 export namespace transitrouter {
     export interface TransitRouterAttachment {
         /**
-         * 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+         * Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
          */
         autoPublishRouteEnabled?: pulumi.Input<boolean>;
         /**
-         * 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+         * Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
          */
         businessStatus?: pulumi.Input<string>;
         /**
-         * 网络实例连接的创建时间。
+         * Creation time of the network instance connection.
          */
         creationTime?: pulumi.Input<string>;
         /**
-         * 网络实例连接的删除时间。
+         * Deletion time of the network instance connection.
          */
         deletedTime?: pulumi.Input<string>;
         /**
-         * 网络实例连接的描述信息。
+         * Description of the network instance connection.
          */
         description?: pulumi.Input<string>;
         /**
-         * 是否开启IPv6功能。true：是。false：否。
+         * Whether IPv6 is enabled. true: yes. false: no
          */
         ipv6Enabled?: pulumi.Input<boolean>;
         /**
-         * 网络实例连接的欠费关停时间。
+         * Shutdown time due to overdue payment for the network instance connection
          */
         overdueTime?: pulumi.Input<string>;
         /**
-         * 网络实例的ID。
+         * ID of the network instance
          */
         resourceId?: pulumi.Input<string>;
         /**
-         * 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+         * Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
          */
         resourceType?: pulumi.Input<string>;
         /**
-         * 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+         * Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
          */
         status?: pulumi.Input<string>;
         tags?: pulumi.Input<pulumi.Input<inputs.transitrouter.TransitRouterAttachmentTag>[]>;
         /**
-         * 网络实例连接的ID。
+         * Network instance connection ID.
          */
         transitRouterAttachmentId?: pulumi.Input<string>;
         /**
-         * 网络实例连接的名称。
+         * Name of the network instance connection
          */
         transitRouterAttachmentName?: pulumi.Input<string>;
         /**
-         * 跨地域连接关联的转发策略的ID。
+         * ID of the forwarding policy associated with the cross-region connection
          */
         transitRouterForwardPolicyTableId?: pulumi.Input<string>;
         /**
-         * 中转路由器实例的ID。
+         * Transit router instance ID.
          */
         transitRouterId?: pulumi.Input<string>;
         /**
-         * 网络实例连接关联转发的路由表ID。
+         * Route table ID associated with the forwarding of the network instance connection.
          */
         transitRouterRouteTableId?: pulumi.Input<string>;
         /**
-         * 跨地域连接关联的流标记策略的ID。
+         * ID of the flow marking policy associated with the cross-region connection
          */
         transitRouterTrafficQosMarkingPolicyId?: pulumi.Input<string>;
         /**
-         * 跨地域连接关联的流队列策略的ID。
+         * ID of the flow queue policy associated with the cross-region connection
          */
         transitRouterTrafficQosQueuePolicyId?: pulumi.Input<string>;
         /**
-         * 网络实例连接的最近操作时间。
+         * Last operation time of the network instance connection
          */
         updateTime?: pulumi.Input<string>;
     }
 
     export interface TransitRouterAttachmentTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface TransitRouterRouteTableTag {
         /**
-         * 标签键
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface TransitRouterTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface VpcAttachmentAttachPoint {
         /**
-         * 连接点的子网ID。
+         * Subnet ID of the connection point.
          */
         subnetId: pulumi.Input<string>;
         /**
-         * 连接点的可用区ID。
+         * Availability zone ID of the connection point.
          */
         zoneId: pulumi.Input<string>;
     }
 
     export interface VpcAttachmentTag {
         /**
-         * 用户标签的标签键。
+         * Tag key for user tag.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * Tag value for user tag.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface VpnAttachmentTag {
         /**
-         * 用户标签的标签键。
+         * User tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value.
          */
         value?: pulumi.Input<string>;
     }
@@ -9113,61 +9193,61 @@ export namespace transitrouter {
 export namespace vedbm {
     export interface AllowListAssociatedInstance {
         /**
-         * 实例ID。
+         * Instance ID.
          */
         instanceId?: pulumi.Input<string>;
     }
 
     export interface DatabaseDatabasesPrivilege {
         /**
-         * 需授权的账号名称
+         * Account name to be authorized
          */
         accountName?: pulumi.Input<string>;
         /**
-         * 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+         * Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
          */
         accountPrivilege?: pulumi.Input<string>;
         /**
-         * 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+         * Specific SQL operation permissions, separated by English commas; required for Custom type
          */
         accountPrivilegeDetails?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface InstanceChargeDetail {
         /**
-         * 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+         * Whether to enable auto-renewal in prepaid scenarios. Values: true: auto-renewal. false: no auto-renewal.
          */
         autoRenew?: pulumi.Input<boolean>;
         /**
-         * 预付费场景下计费到期的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * Billing expiration time for prepaid scenarios, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          */
         chargeEndTime?: pulumi.Input<string>;
         /**
-         * 计费开始的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * Billing start time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          */
         chargeStartTime?: pulumi.Input<string>;
         /**
-         * 付费状态：Normal：正常。Overdue：欠费。Shutdown：关停。
+         * Payment status: Normal: Normal. Overdue: Overdue. Shutdown: Shutdown
          */
         chargeStatus?: pulumi.Input<string>;
         /**
-         * 计费类型。PostPaid：按量计费；PrePaid：包年包月。
+         * Billing type. PostPaid: Pay-as-you-go. PrePaid: yearly/monthly subscription
          */
         chargeType?: pulumi.Input<string>;
         /**
-         * 欠费关停时预计释放时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * Estimated release time when shut down due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          */
         overdueReclaimTime?: pulumi.Input<string>;
         /**
-         * 欠费关停时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * Shutdown time for overdue payments. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
          */
         overdueTime?: pulumi.Input<string>;
         /**
-         * 预付费场景下的购买时长。
+         * Purchase duration for prepaid scenarios.
          */
         period?: pulumi.Input<number>;
         /**
-         * 预付费场景下的购买周期。Month：包月。Year：包年。
+         * Purchase period for prepaid scenarios. Month: monthly subscription. Year: annual subscription.
          */
         periodUnit?: pulumi.Input<string>;
     }
@@ -9175,177 +9255,369 @@ export namespace vedbm {
     export interface InstanceEndpoint {
         addresses?: pulumi.Input<pulumi.Input<inputs.vedbm.InstanceEndpointAddress>[]>;
         /**
-         * 是否允许自动加入新节点，取值：true：是。false：否。
+         * Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
          */
         autoAddNewNodes?: pulumi.Input<boolean>;
         /**
-         * 一致性级别，仅对读写模式的连接终端有效。取值：Eventual：最终一致性。Session：会话一致性。Global：全局一致性。
+         * Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
          */
         consistLevel?: pulumi.Input<string>;
         /**
-         * 延迟很大时，只读节点同步最新数据的超时时间，单位为 us，取值范围为 1us~100000000us。
+         * When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
          */
         consistTimeout?: pulumi.Input<number>;
         /**
-         * 只读节点同步数据超时后的超时策略，支持以下两种策略：ReturnError：返回 SQL 报错（wait replication complete timeout, please retry）。ReadMaster：发送请求到主节点。
+         * Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
          */
         consistTimeoutAction?: pulumi.Input<string>;
         /**
-         * 地址描述。
+         * Address description
          */
         description?: pulumi.Input<string>;
         /**
-         * 是否开启事务拆分，仅对读写模式的连接终端有效。取值：true：是。false：否。
+         * Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
          */
         distributedTransaction?: pulumi.Input<boolean>;
         /**
-         * 实例连接终端 ID。
+         * Instance connection endpoint ID.
          */
         endpointId?: pulumi.Input<string>;
         /**
-         * 实例连接终端名称。
+         * Instance connection endpoint name.
          */
         endpointName?: pulumi.Input<string>;
         /**
-         * 连接终端类型，取值：Cluster：默认终端。Primary：主节点终端。Custom：自定义终端。
+         * Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
          */
         endpointType?: pulumi.Input<string>;
         /**
-         * 主节点是否接受读请求。仅对读写模式的连接终端有效。true：是。false：否。
+         * Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
          */
         masterAcceptReadRequests?: pulumi.Input<boolean>;
         /**
-         * 连接终端配置的节点列表。
+         * Node list configured for the connection endpoint.
          */
         nodeIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 连接终端的读写模式，取值：ReadWrite: 读写。ReadOnly: 只读。
+         * Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
          */
         readWriteMode?: pulumi.Input<string>;
     }
 
     export interface InstanceEndpointAddress {
         /**
-         * 解析方式。当前返回值只能为 false。
+         * Parsing method. The current return value can only be false.
          */
         dnsVisibility?: pulumi.Input<boolean>;
         /**
-         * 实例内网访问域名。
+         * Instance private access domain name.
          */
         domain?: pulumi.Input<string>;
         /**
-         * 公网 ID。
+         * Public network ID.
          */
         eipId?: pulumi.Input<string>;
         /**
-         * IP 地址。
+         * IP address.
          */
         ipAddress?: pulumi.Input<string>;
         /**
-         * 网络类型：Private：私有网络 VPC。Public：公网访问。
+         * Network type: Private: private network VPC. Public: public access.
          */
         networkType?: pulumi.Input<string>;
         /**
-         * 实例内网访问端口。
+         * Instance private network access port.
          */
         port?: pulumi.Input<string>;
         /**
-         * 子网 ID。子网必须属于所选的可用区。
+         * Subnet ID. The subnet must belong to the selected availability zone.
          */
         subnetId?: pulumi.Input<string>;
     }
 
     export interface InstanceMaintenanceWindow {
         /**
-         * 可维护周期粒度，默认取值为：Week（周）。
+         * Maintenance cycle granularity. Default value: Week.
          */
         dayKind?: pulumi.Input<string>;
         /**
-         * 指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+         * Specify which day of the month is the maintenance window. Default is empty, meaning every day is specified.
          */
         dayOfMonths?: pulumi.Input<pulumi.Input<number>[]>;
         /**
-         * 每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+         * Which day of the week is the maintenance window. Default value is every day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
          */
         dayOfWeeks?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+         * Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time).
          */
         maintenanceTime?: pulumi.Input<string>;
     }
 
     export interface InstanceNode {
         /**
-         * 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+         * Node failover priority. Range: 0~15. Higher values indicate higher priority
          */
         failoverPriority?: pulumi.Input<number>;
         /**
-         * 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+         * Node type. Values: Primary: primary node. ReadOnly: read-only node.
          */
         nodeType?: pulumi.Input<string>;
     }
 
     export interface InstanceTag {
         /**
-         * 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         * User tag key. Length range: 1~128 characters. Allows input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         * User tag value. Allows input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system will automatically remove it
          */
         value?: pulumi.Input<string>;
     }
 }
 
 export namespace vefaas {
+    export interface FunctionAsyncTaskConfig {
+        /**
+         * Asynchronous task callback target configuration
+         */
+        destinationConfig?: pulumi.Input<inputs.vefaas.FunctionAsyncTaskConfigDestinationConfig>;
+        /**
+         * Whether to enable asynchronous task
+         */
+        enableAsyncTask?: pulumi.Input<boolean>;
+        /**
+         * Number of retry attempts for asynchronous task failures. Available values: 0–3
+         */
+        maxRetry?: pulumi.Input<number>;
+    }
+
+    export interface FunctionAsyncTaskConfigDestinationConfig {
+        /**
+         * Callback target configuration when the task fails
+         */
+        onFailure?: pulumi.Input<inputs.vefaas.FunctionAsyncTaskConfigDestinationConfigOnFailure>;
+        /**
+         * Callback target configuration when the task succeeds
+         */
+        onSuccess?: pulumi.Input<inputs.vefaas.FunctionAsyncTaskConfigDestinationConfigOnSuccess>;
+    }
+
+    export interface FunctionAsyncTaskConfigDestinationConfigOnFailure {
+        /**
+         * Specific callback target. Set the value to empty ("") to disable this callback
+         */
+        destination?: pulumi.Input<string>;
+    }
+
+    export interface FunctionAsyncTaskConfigDestinationConfigOnSuccess {
+        /**
+         * Specific callback target. Set the value to empty ("") to disable this callback
+         */
+        destination?: pulumi.Input<string>;
+    }
+
+    export interface FunctionEnv {
+        /**
+         * Environment variable key. 1–63 characters; can include letters, numbers, and underscores (_), but cannot start with a number. Key must be unique within the same function
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Environment variable value
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface FunctionNasStorage {
+        /**
+         * Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
+         */
+        enableNas?: pulumi.Input<boolean>;
+        nasConfigs?: pulumi.Input<pulumi.Input<inputs.vefaas.FunctionNasStorageNasConfig>[]>;
+    }
+
+    export interface FunctionNasStorageNasConfig {
+        /**
+         * NAS file system ID.
+         */
+        fileSystemId?: pulumi.Input<string>;
+        /**
+         * User group in the file system. Customization is not currently supported. If this parameter is provided, its value is 1000 (consistent with the function run user gid)
+         */
+        gid?: pulumi.Input<number>;
+        /**
+         * Function local mount directory. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #).
+         */
+        localMountPath?: pulumi.Input<string>;
+        /**
+         * NAS mount point ID
+         */
+        mountPointId?: pulumi.Input<string>;
+        /**
+         * Remote directory in the file system. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #)
+         */
+        remotePath?: pulumi.Input<string>;
+        /**
+         * The user in the file system cannot be customized for now. If this parameter is provided, the value must be 1000 (consistent with the function run user uid).
+         */
+        uid?: pulumi.Input<number>;
+    }
+
+    export interface FunctionSourceAccessConfig {
+        /**
+         * Image repository password
+         */
+        password?: pulumi.Input<string>;
+        /**
+         * Image repository username
+         */
+        username?: pulumi.Input<string>;
+    }
+
+    export interface FunctionTag {
+        /**
+         * Function tag key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Function tag value
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface FunctionTlsConfig {
+        /**
+         * TLS log feature toggle. true: enabled, function stdout/stderr logs will be collected to the specified log project and log topic in Log Service. false: disabled, logs will not be collected
+         */
+        enableLog?: pulumi.Input<boolean>;
+        /**
+         * TLS log project ID
+         */
+        tlsProjectId?: pulumi.Input<string>;
+        /**
+         * TLS log topic ID.
+         */
+        tlsTopicId?: pulumi.Input<string>;
+    }
+
+    export interface FunctionTosMountConfig {
+        /**
+         * AKSK with TOS domain access permission.
+         */
+        credentials?: pulumi.Input<inputs.vefaas.FunctionTosMountConfigCredentials>;
+        /**
+         * Enable TOS storage mount.
+         */
+        enableTos?: pulumi.Input<boolean>;
+        mountPoints?: pulumi.Input<pulumi.Input<inputs.vefaas.FunctionTosMountConfigMountPoint>[]>;
+    }
+
+    export interface FunctionTosMountConfigCredentials {
+        /**
+         * Account AccessKey ID
+         */
+        accessKeyId?: pulumi.Input<string>;
+        /**
+         * Account Secret Access Key
+         */
+        secretAccessKey?: pulumi.Input<string>;
+    }
+
+    export interface FunctionTosMountConfigMountPoint {
+        /**
+         * TOS bucket name.
+         */
+        bucketName?: pulumi.Input<string>;
+        /**
+         * Mounted TOS Bucket path.
+         */
+        bucketPath?: pulumi.Input<string>;
+        /**
+         * TOS access domain name.
+         */
+        endpoint?: pulumi.Input<string>;
+        /**
+         * Function local mount directory.
+         */
+        localMountPath?: pulumi.Input<string>;
+        /**
+         * Function local directory access permission. After mounting a TOS bucket, whether the function's local mount directory is read-only. true: read-only; false (default): read/write
+         */
+        readOnly?: pulumi.Input<boolean>;
+    }
+
+    export interface FunctionVpcConfig {
+        /**
+         * Function public network access switch. Whether to access the public network via veFaaS VPC shared NAT gateway. Values: true: enabled, access public network via default network interface. Public outbound traffic fees apply. false: disabled, function cannot access public network via default network interface.
+         */
+        enableSharedInternetAccess?: pulumi.Input<boolean>;
+        /**
+         * Whether the function enables private network access
+         */
+        enableVpc?: pulumi.Input<boolean>;
+        /**
+         * Security group ID
+         */
+        securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Subnet ID
+         */
+        subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * VPC ID. If the VPC ID is an empty string, it means the current VPC configuration will be deleted
+         */
+        vpcId?: pulumi.Input<string>;
+    }
+
     export interface KafkaTriggerKafkaCredentials {
         /**
-         * Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+         * Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
          */
         mechanism: pulumi.Input<string>;
         /**
-         * 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+         * SASL/PLAIN password set when creating the Kafka instance.
          */
         password: pulumi.Input<string>;
         /**
-         * 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+         * SASL/PLAIN username set when creating the Kafka instance.
          */
         username: pulumi.Input<string>;
     }
 
     export interface SandboxEnv {
         /**
-         * 环境变量键。
+         * Environment variable key
          */
         key?: pulumi.Input<string>;
         /**
-         * 环境变量值。
+         * Environment variable value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface SandboxInstanceImageInfo {
         /**
-         * 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+         * Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
          */
         command?: pulumi.Input<string>;
         /**
-         * 沙箱实例使用的已预热镜像地址。
+         * Preheated image address used by the sandbox instance
          */
         image?: pulumi.Input<string>;
         /**
-         * 沙箱实例使用的已预热镜像 ID。
+         * Pre-warmed image ID used by the sandbox instance.
          */
         imageId?: pulumi.Input<string>;
         /**
-         * 沙箱实例镜像监听端口。
+         * Listening port of the sandbox instance image.
          */
         port?: pulumi.Input<number>;
     }
 
     export interface SandboxInstanceTosMountConfig {
         /**
-         * 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+         * Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
          */
         enable?: pulumi.Input<boolean>;
         tosMountPoints?: pulumi.Input<pulumi.Input<inputs.vefaas.SandboxInstanceTosMountConfigTosMountPoint>[]>;
@@ -9353,22 +9625,22 @@ export namespace vefaas {
 
     export interface SandboxInstanceTosMountConfigTosMountPoint {
         /**
-         * 沙箱实例挂载的 TOS 远端目录。
+         * TOS remote directory mounted by the sandbox instance
          */
         bucketPath?: pulumi.Input<string>;
         /**
-         * 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+         * Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
          */
         localMountPath?: pulumi.Input<string>;
     }
 
     export interface SandboxMetadata {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
@@ -9377,22 +9649,22 @@ export namespace vefaas {
 export namespace vepfs {
     export interface InstanceCapacityInfo {
         /**
-         * 文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
+         * Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
          */
         totalTiB?: pulumi.Input<number>;
         /**
-         * 已使用容量（GiB）。
+         * Used capacity (GiB).
          */
         usedGiB?: pulumi.Input<number>;
     }
 
     export interface InstanceTag {
         /**
-         * 用户标签的标签键。
+         * User tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value.
          */
         value?: pulumi.Input<string>;
     }
@@ -9402,7 +9674,7 @@ export namespace vke {
     export interface AddonStatus {
         conditions?: pulumi.Input<pulumi.Input<inputs.vke.AddonStatusCondition>[]>;
         /**
-         * 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+         * Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
          */
         phase?: pulumi.Input<string>;
     }
@@ -9412,116 +9684,116 @@ export namespace vke {
 
     export interface ClusterClusterConfig {
         /**
-         * 集群 API Server 访问的 IPv4 地址信息。
+         * Cluster API Server access IPv4 address information
          */
         apiServerEndpoints?: pulumi.Input<inputs.vke.ClusterClusterConfigApiServerEndpoints>;
         /**
-         * 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+         * Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
          */
         apiServerPublicAccessConfig?: pulumi.Input<inputs.vke.ClusterClusterConfigApiServerPublicAccessConfig>;
         /**
-         * 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+         * Node public access configuration. Parameter value description: false: Disabled. true: Enabled
          */
         apiServerPublicAccessEnabled?: pulumi.Input<boolean>;
         /**
-         * 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+         * Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
          */
         ipFamily?: pulumi.Input<string>;
         /**
-         * 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+         * Node public access configuration. Parameter value description: false: Disabled. true: Enabled
          */
         resourcePublicAccessDefaultEnabled?: pulumi.Input<boolean>;
         /**
-         * 集群控制面及节点使用的的安全组。
+         * Security group used by the cluster control plane and nodes.
          */
         securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 集群控制面在私有网络内通信的子网 ID。
+         * Subnet ID for cluster control plane communication within the private network.
          */
         subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+         * Private network (VPC) ID where the cluster control plane and some nodes are located.
          */
         vpcId?: pulumi.Input<string>;
     }
 
     export interface ClusterClusterConfigApiServerEndpoints {
         /**
-         * 集群 API Server 私网的 IPv4 地址。
+         * Cluster API Server private IPv4 address.
          */
         privateIp?: pulumi.Input<inputs.vke.ClusterClusterConfigApiServerEndpointsPrivateIp>;
         /**
-         * 集群 API Server 公网的 IPv4 地址。
+         * Cluster API Server public IPv4 address
          */
         publicIp?: pulumi.Input<inputs.vke.ClusterClusterConfigApiServerEndpointsPublicIp>;
     }
 
     export interface ClusterClusterConfigApiServerEndpointsPrivateIp {
         /**
-         * 私网 IP 的 IPv4 地址。
+         * IPv4 address of the private network IP.
          */
         ipv4?: pulumi.Input<string>;
     }
 
     export interface ClusterClusterConfigApiServerEndpointsPublicIp {
         /**
-         * 公网 IP 的 IPv4 地址。
+         * IPv4 address of the public IP.
          */
         ipv4?: pulumi.Input<string>;
     }
 
     export interface ClusterClusterConfigApiServerPublicAccessConfig {
         /**
-         * 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+         * Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
          */
         publicAccessNetworkConfig?: pulumi.Input<inputs.vke.ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig>;
     }
 
     export interface ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig {
         /**
-         * 公网 IP 的带宽峰值，单位：Mbps。
+         * Peak bandwidth of the public IP, unit: Mbps
          */
         bandwidth?: pulumi.Input<number>;
         /**
-         * 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+         * Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
          */
         billingType?: pulumi.Input<number>;
         /**
-         * 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+         * Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
          */
         isp?: pulumi.Input<string>;
     }
 
     export interface ClusterIrsaConfig {
         /**
-         * 接受令牌的标识符。
+         * Identifier for accepting tokens
          */
         audience?: pulumi.Input<string>;
         /**
-         * 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+         * Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
          */
         enabled?: pulumi.Input<boolean>;
         /**
-         * OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+         * OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
          */
         issuer?: pulumi.Input<string>;
         /**
-         * JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+         * JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
          */
         jwksUrl?: pulumi.Input<string>;
         /**
-         * OIDC 提供商 TRN。
+         * OIDC provider TRN.
          */
         oidcTrn?: pulumi.Input<string>;
         /**
-         * OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+         * OIDC provider configuration document in JSON format, containing information about the OIDC provider.
          */
         openIdConfigUrl?: pulumi.Input<string>;
     }
 
     export interface ClusterLoggingConfig {
         /**
-         * 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+         * Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
          */
         logProjectId?: pulumi.Input<string>;
         logSetups?: pulumi.Input<pulumi.Input<inputs.vke.ClusterLoggingConfigLogSetup>[]>;
@@ -9529,15 +9801,15 @@ export namespace vke {
 
     export interface ClusterLoggingConfigLogSetup {
         /**
-         * 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+         * Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
          */
         enabled?: pulumi.Input<boolean>;
         /**
-         * 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+         * Retention period of logs in log service, in days. 3650 days means permanent storage.
          */
         logTtl?: pulumi.Input<number>;
         /**
-         * 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+         * Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
          */
         logType?: pulumi.Input<string>;
     }
@@ -9545,97 +9817,97 @@ export namespace vke {
     export interface ClusterMonitoringConfig {
         componentConfigs?: pulumi.Input<pulumi.Input<inputs.vke.ClusterMonitoringConfigComponentConfig>[]>;
         /**
-         * 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+         * Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
          */
         enableMetricsExternalCollection?: pulumi.Input<boolean>;
         /**
-         * 监控数据所属的工作区 ID。
+         * Workspace ID to which the monitoring data belongs.
          */
         workspaceId?: pulumi.Input<string>;
     }
 
     export interface ClusterMonitoringConfigComponentConfig {
         /**
-         * 是否启用该监控组件，true 表示启用，false 表示禁用。
+         * Whether to enable this monitoring component. true means enabled; false means disabled.
          */
         enabled?: pulumi.Input<boolean>;
         /**
-         * 监控组件的名称，例如 'prometheus'、'grafana' 等。
+         * Name of the monitoring component, such as 'prometheus', 'grafana', etc.
          */
         name?: pulumi.Input<string>;
     }
 
     export interface ClusterNodeStatistics {
         /**
-         * Phase=Creating的节点总数量。
+         * Total number of nodes in Phase=Creating.
          */
         creatingCount?: pulumi.Input<number>;
         /**
-         * Phase=Deleting的节点总数量。
+         * Total number of nodes with Phase=Deleting.
          */
         deletingCount?: pulumi.Input<number>;
         /**
-         * Phase=Failed的节点总数量。
+         * Total number of nodes with Phase=Failed.
          */
         failedCount?: pulumi.Input<number>;
         /**
-         * Phase=Running的节点总数量。
+         * Total number of nodes with Phase=Running.
          */
         runningCount?: pulumi.Input<number>;
         /**
-         * 节点总数量。
+         * Total number of nodes.
          */
         totalCount?: pulumi.Input<number>;
         /**
-         * Phase=Updating的节点总数量。
+         * Total number of nodes in Phase=Updating.
          */
         updatingCount?: pulumi.Input<number>;
     }
 
     export interface ClusterPodsConfig {
         /**
-         * Flannel 网络配置。
+         * Flannel network configuration.
          */
         flannelConfig?: pulumi.Input<inputs.vke.ClusterPodsConfigFlannelConfig>;
         /**
-         * 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+         * Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
          */
         podNetworkMode?: pulumi.Input<string>;
         /**
-         * VPC-CNI 网络配置。
+         * VPC-CNI network configuration.
          */
         vpcCniConfig?: pulumi.Input<inputs.vke.ClusterPodsConfigVpcCniConfig>;
     }
 
     export interface ClusterPodsConfigFlannelConfig {
         /**
-         * Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+         * Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
          */
         maxPodsPerNode?: pulumi.Input<number>;
         /**
-         * Flannel 容器网络的 Pod CIDR。
+         * Pod CIDR for Flannel container network.
          */
         podCidrs?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+         * List of Pod subnet IDs for the Flannel container network model.
          */
         subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ClusterPodsConfigVpcCniConfig {
         /**
-         * VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+         * List of Pod subnet IDs for the VPC-CNI container network model.
          */
         subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+         * Whether to enable Trunk mode for the VPC-CNI container network model
          */
         trunkEniEnabled?: pulumi.Input<boolean>;
     }
 
     export interface ClusterServicesConfig {
         /**
-         * Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+         * IPv4 private network address exposed by Kubernetes Service.
          */
         serviceCidrsv4s?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -9643,84 +9915,84 @@ export namespace vke {
     export interface ClusterStatus {
         conditions?: pulumi.Input<pulumi.Input<inputs.vke.ClusterStatusCondition>[]>;
         /**
-         * 集群状态阶段
+         * Cluster status phase.
          */
         phase?: pulumi.Input<string>;
     }
 
     export interface ClusterStatusCondition {
         /**
-         * 条件类型
+         * Condition type
          */
         type?: pulumi.Input<string>;
     }
 
     export interface ClusterTag {
         /**
-         * 标签键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolAutoScaling {
         /**
-         * 配置节点池的期望节点数。
+         * Configure the desired number of nodes in the node pool.
          */
         desiredReplicas?: pulumi.Input<number>;
         /**
-         * 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+         * Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
          */
         enabled?: pulumi.Input<boolean>;
         /**
-         * 配置节点池的最大节点数。
+         * Configure the maximum number of nodes in the node pool
          */
         maxReplicas?: pulumi.Input<number>;
         /**
-         * 配置节点池的最小节点数。
+         * Configure the minimum number of nodes in the node pool
          */
         minReplicas?: pulumi.Input<number>;
         /**
-         * 优先级。
+         * Priority
          */
         priority?: pulumi.Input<number>;
         /**
-         * 伸缩组ID。
+         * Scaling group ID
          */
         scalingGroupId?: pulumi.Input<string>;
         /**
-         * 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+         * Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
          */
         subnetPolicy?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolKubernetesConfig {
         /**
-         * 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+         * Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
          */
         autoSyncDisabled?: pulumi.Input<boolean>;
         /**
-         * 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+         * Node blocking configuration. Parameter value description: false: not blocked. true: blocked
          */
         cordon?: pulumi.Input<boolean>;
         /**
-         * Kubelet 组件的相关配置
+         * Kubelet component configuration
          */
         kubeletConfig?: pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfigKubeletConfig>;
         labels?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfigLabel>[]>;
         /**
-         * Kubernetes 中节点对象的元数据名称前缀。
+         * Prefix of the metadata name for node objects in Kubernetes.
          */
         namePrefix?: pulumi.Input<string>;
         /**
-         * Kubernetes 中节点对象的元数据名称后缀。
+         * Suffix of the metadata name for node objects in Kubernetes.
          */
         nameSuffix?: pulumi.Input<string>;
         /**
-         * Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+         * Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
          */
         nameUseHostname?: pulumi.Input<boolean>;
         taints?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfigTaint>[]>;
@@ -9728,226 +10000,226 @@ export namespace vke {
 
     export interface DefaultNodePoolKubernetesConfigKubeletConfig {
         /**
-         * 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+         * Configure kubelet's CpuManagerPolicy. Includes none and static strategies
          */
         cpuManagerPolicy?: pulumi.Input<string>;
         /**
-         * 特性门控。
+         * Feature gate.
          */
         featureGates?: pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates>;
         /**
-         * 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+         * Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
          */
         kubeApiBurst?: pulumi.Input<number>;
         /**
-         * 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+         * Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
          */
         kubeApiQps?: pulumi.Input<number>;
         kubeReserveds?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved>[]>;
         /**
-         * 配置 kubelet 支持的最大 Pod 数量
+         * Configure the maximum number of Pods supported by kubelet
          */
         maxPods?: pulumi.Input<number>;
         /**
-         * 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+         * Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
          */
         registryBurst?: pulumi.Input<number>;
         /**
-         * 可用来限制镜像仓库的 QPS 上限
+         * Can be used to limit the QPS cap for the image repository
          */
         registryPullQps?: pulumi.Input<number>;
         /**
-         * 逐一拉取镜像。
+         * Pull images one by one
          */
         serializeImagePulls?: pulumi.Input<boolean>;
         systemReserveds?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved>[]>;
         /**
-         * 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+         * Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
          */
         topologyManagerPolicy?: pulumi.Input<string>;
         /**
-         * 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+         * Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
          */
         topologyManagerScope?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates {
         /**
-         * 是否开启特性开关本地垂直Pod伸缩
+         * Whether to enable the feature switch for local vertical Pod autoscaling
          */
         inPlacePodVerticalScaling?: pulumi.Input<boolean>;
         /**
-         * 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+         * Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
          */
         qoSResourceManager?: pulumi.Input<boolean>;
     }
 
     export interface DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved {
         /**
-         * 资源名称，取值为 cpu 或 memory。
+         * Resource name. Values: cpu or memory
          */
         name?: pulumi.Input<string>;
         /**
-         * 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+         * Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
          */
         quantity?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved {
         /**
-         * 资源名称，取值为 cpu 或 memory。
+         * Resource name. Values: cpu or memory.
          */
         name?: pulumi.Input<string>;
         /**
-         * 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+         * Resource quantity for the specified resource.   - For cpu, example value: 200m   - For memory, example value: 1G
          */
         quantity?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolKubernetesConfigLabel {
         /**
-         * 标签键。
+         * Label key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Label value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolKubernetesConfigTaint {
         /**
-         * 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+         * Taint effect. Values: NoSchedule (default): do not schedule. NoExecute: evict pods that do not tolerate the taint. PreferNoSchedule: avoid scheduling if possible.
          */
         effect?: pulumi.Input<string>;
         /**
-         * 污点键。
+         * Taint key
          */
         key?: pulumi.Input<string>;
         /**
-         * 污点值。
+         * Taint value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolManagement {
         /**
-         * 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+         * Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
          */
         enabled?: pulumi.Input<boolean>;
         /**
-         * 检查自愈配置。
+         * Check self-healing configuration.
          */
         remedyConfig?: pulumi.Input<inputs.vke.DefaultNodePoolManagementRemedyConfig>;
     }
 
     export interface DefaultNodePoolManagementRemedyConfig {
         /**
-         * 是否开启检查自愈。
+         * Enable self-healing check
          */
         enabled?: pulumi.Input<boolean>;
         /**
-         * 检查自愈规则ID。
+         * Self-healing rule ID
          */
         remedyId?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolNodeConfig {
         /**
-         * 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+         * Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
          */
         additionalContainerStorageEnabled?: pulumi.Input<boolean>;
         /**
-         * 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+         * Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
          */
         autoRenew?: pulumi.Input<boolean>;
         /**
-         * 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+         * Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
          */
         autoRenewPeriod?: pulumi.Input<number>;
         dataVolumes?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigDataVolume>[]>;
         /**
-         * 实例在部署集中的分组号，0表示未设置
+         * Group number of the instance in the deployment set. 0 means not set
          */
         deploymentSetGroupNumber?: pulumi.Input<number>;
         /**
-         * 实例需要加入的部署集ID
+         * Deployment set ID to be added to the instance
          */
         deploymentSetId?: pulumi.Input<string>;
         /**
-         * 节点对应的主机名称。
+         * Host name corresponding to the node
          */
         hostname?: pulumi.Input<string>;
         /**
-         * 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+         * High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
          */
         hpcClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点对应云服务器所使用的镜像 ID。
+         * Image ID used by the cloud server corresponding to the node
          */
         imageId?: pulumi.Input<string>;
         /**
-         * 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+         * Custom script executed after creating and initializing the node. Shell script in Base64 encoding
          */
         initializeScript?: pulumi.Input<string>;
         /**
-         * 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+         * Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
          */
         instanceChargeType?: pulumi.Input<string>;
         /**
-         * 节点（实例）名称。
+         * Node (instance) name
          */
         instanceName?: pulumi.Input<string>;
         /**
-         * 节点对应的云服务器实例规格 ID 列表。
+         * List of cloud server instance type IDs corresponding to the node
          */
         instanceTypeIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+         * Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
          */
         instancesDistribution?: pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigInstancesDistribution>;
         /**
-         * 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+         * Node name prefix. An empty string or nil means the node name prefix policy is not enabled
          */
         namePrefix?: pulumi.Input<string>;
         /**
-         * 节点间的网络通讯模式。
+         * Network communication mode between nodes
          */
         networkTrafficMode?: pulumi.Input<string>;
         /**
-         * 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+         * Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
          */
         period?: pulumi.Input<number>;
         /**
-         * 部署节点前执行脚本。
+         * Script executed before deploying nodes
          */
         preScript?: pulumi.Input<string>;
         /**
-         * ECS所属项目，一个ECS只能归属于一个项目。
+         * The project to which the ECS belongs. Each ECS can only belong to one project.
          */
         projectName?: pulumi.Input<string>;
         /**
-         * 节点自动开启公网访问的配置信息
+         * Configuration for automatic public network access for nodes
          */
         publicAccessConfig?: pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigPublicAccessConfig>;
         /**
-         * 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+         * Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
          */
         publicAccessEnabled?: pulumi.Input<boolean>;
         /**
-         * 节点安全配置。
+         * Node security configuration.
          */
         security?: pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigSecurity>;
         /**
-         * 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+         * Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
          */
         spotStrategy?: pulumi.Input<string>;
         /**
-         * 节点网络所属的子网 ID 列表。
+         * List of subnet IDs to which the node network belongs.
          */
         subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点的系统盘配置。
+         * System disk configuration for the node
          */
         systemVolume?: pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigSystemVolume>;
         tags?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigTag>[]>;
@@ -9955,156 +10227,156 @@ export namespace vke {
 
     export interface DefaultNodePoolNodeConfigDataVolume {
         /**
-         * 文件系统，取值：  - Ext4 (默认值)  - Xfs
+         * File system. Options:   - Ext4 (default)   - Xfs
          */
         fileSystem?: pulumi.Input<string>;
         /**
-         * 磁盘格式化后的目标挂载目录。
+         * Target mount directory after disk formatting.
          */
         mountPoint?: pulumi.Input<string>;
         /**
-         * 放置组Id
+         * Placement group ID
          */
         placementGroupId?: pulumi.Input<string>;
         /**
-         * 磁盘容量，单位 GiB。
+         * Disk capacity, in GiB
          */
         size?: pulumi.Input<number>;
         /**
-         * 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+         * Create a data disk using a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSD and efficient cloud disks support creating disks from snapshots. Only snapshots in 'available' status can be used to create new disks; snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks
          */
         snapshotId?: pulumi.Input<string>;
         /**
-         * 放置子组
+         * Placement subgroup
          */
         subgroupNumber?: pulumi.Input<number>;
         /**
-         * 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         * Disk type: ESSD*PL0: ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD cloud disk with performance level PL1.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolNodeConfigInstancesDistribution {
         /**
-         * 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+         * Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, a new preemptible instance is proactively created for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count.
          */
         capacityRebalance?: pulumi.Input<boolean>;
         /**
-         * 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+         * Pay-as-you-go instance fallback feature. Value range:   - true: enables this feature. If all preemptible instances fail to purchase due to insufficient inventory, pay-as-you-go instances will be attempted   - false (default): disables this feature. When scaling preemptible instances, only the configured preemptible instances are attempted
          */
         compensateWithOnDemand?: pulumi.Input<boolean>;
         /**
-         * 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+         * Base capacity size. The base capacity is always pay-as-you-go instances. Value range: [0,500], default: 0
          */
         onDemandBaseCapacity?: pulumi.Input<number>;
         /**
-         * 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+         * Proportion of pay-as-you-go instances for capacity exceeding the base capacity. Value range [0, 100]. 0 means only preemptible instances are produced for excess capacity; 100 means only pay-as-you-go instances are produced. Default is 0.
          */
         onDemandPercentageAboveBaseCapacity?: pulumi.Input<number>;
     }
 
     export interface DefaultNodePoolNodeConfigPublicAccessConfig {
         /**
-         * 公网 IP 的带宽峰值，单位：Mbps。
+         * Peak bandwidth for the public IP, unit: Mbps
          */
         bandwidth?: pulumi.Input<number>;
         /**
-         * 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+         * Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
          */
         billingType?: pulumi.Input<number>;
         /**
-         * 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+         * Public IP line type. Parameter description: BGP: BGP (multi-line)
          */
         isp?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolNodeConfigSecurity {
         /**
-         * 节点的访问方式配置。
+         * Node access configuration
          */
         login?: pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigSecurityLogin>;
         /**
-         * 节点网络所在的安全组 ID 列表。
+         * List of security group IDs for the node network
          */
         securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点的安全策略，参数值说明：Hids：主机安全加固。
+         * Node security policy. Parameter value description: Hids: host security hardening
          */
         securityStrategies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+         * Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
          */
         securityStrategyEnabled?: pulumi.Input<boolean>;
     }
 
     export interface DefaultNodePoolNodeConfigSecurityLogin {
         /**
-         * Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+         * Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
          */
         password?: pulumi.Input<string>;
         /**
-         * SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+         * SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
          */
         sshKeyPairName?: pulumi.Input<string>;
         /**
-         * 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+         * Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolNodeConfigSystemVolume {
         /**
-         * 放置组Id
+         * Placement group ID
          */
         placementGroupId?: pulumi.Input<string>;
         /**
-         * 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+         * Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
          */
         size?: pulumi.Input<number>;
         /**
-         * 放置子组
+         * Placement subgroup
          */
         subgroupNumber?: pulumi.Input<number>;
         /**
-         * 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         * Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
          */
         type?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolNodeConfigTag {
         /**
-         * 标签键。
+         * Label key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolNodeStatistics {
         /**
-         * Phase=Creating的节点总数量。
+         * Total number of nodes with Phase=Creating.
          */
         creatingCount?: pulumi.Input<number>;
         /**
-         * Phase=Deleting的节点总数量。
+         * Total number of nodes with Phase=Deleting.
          */
         deletingCount?: pulumi.Input<number>;
         /**
-         * Phase=Failed的节点总数量。
+         * Total number of nodes with Phase=Failed
          */
         failedCount?: pulumi.Input<number>;
         /**
-         * Phase=Running的节点总数量。
+         * Total number of nodes with Phase=Running
          */
         runningCount?: pulumi.Input<number>;
         /**
-         * 节点池中的节点总数量。
+         * Total number of nodes in the node pool.
          */
         totalCount?: pulumi.Input<number>;
         /**
-         * Phase=Updating的节点总数量。
+         * Total number of nodes with Phase=Updating
          */
         updatingCount?: pulumi.Input<number>;
     }
@@ -10112,32 +10384,32 @@ export namespace vke {
     export interface DefaultNodePoolStatus {
         conditions?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolStatusCondition>[]>;
         /**
-         * 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+         * Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
          */
         phase?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolStatusCondition {
         /**
-         * 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+         * Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface DefaultNodePoolTag {
         /**
-         * 标签键。
+         * Label key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NodeKubernetesConfig {
         /**
-         * 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+         * Node lock configuration. Options: false (default): not locked; true: locked
          */
         cordon?: pulumi.Input<boolean>;
         labels?: pulumi.Input<pulumi.Input<inputs.vke.NodeKubernetesConfigLabel>[]>;
@@ -10146,89 +10418,89 @@ export namespace vke {
 
     export interface NodeKubernetesConfigLabel {
         /**
-         * 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+         * Label key. A valid label key consists of two parts: \n\n and \n\n, separated by a slash (/). \n\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+         * Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NodeKubernetesConfigTaint {
         /**
-         * 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+         * Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
          */
         effect?: pulumi.Input<string>;
         /**
-         * 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+         * Taint key. A valid taint key has two segments: \n\n and \n\n, separated by a slash (/). \n\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
          */
         key?: pulumi.Input<string>;
         /**
-         * 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+         * Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NodePoolAutoScaling {
         /**
-         * 配置节点池的期望节点数。
+         * Configure the expected number of nodes in the node pool
          */
         desiredReplicas?: pulumi.Input<number>;
         /**
-         * 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+         * Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
          */
         enabled?: pulumi.Input<boolean>;
         /**
-         * 配置节点池的最大节点数。
+         * Configure the maximum number of nodes in the node pool
          */
         maxReplicas?: pulumi.Input<number>;
         /**
-         * 配置节点池的最小节点数。
+         * Minimum number of nodes configured for the node pool
          */
         minReplicas?: pulumi.Input<number>;
         /**
-         * 优先级。
+         * Priority
          */
         priority?: pulumi.Input<number>;
         /**
-         * 伸缩组ID。
+         * Scaling group ID
          */
         scalingGroupId?: pulumi.Input<string>;
         /**
-         * 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+         * Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
          */
         subnetPolicy?: pulumi.Input<string>;
     }
 
     export interface NodePoolKubernetesConfig {
         /**
-         * 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+         * Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
          */
         autoSyncDisabled?: pulumi.Input<boolean>;
         /**
-         * 节点池 Containerd 相关配置。
+         * Node pool Containerd configuration
          */
         containerdConfig?: pulumi.Input<inputs.vke.NodePoolKubernetesConfigContainerdConfig>;
         /**
-         * 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+         * Node blocking configuration. Parameter values: false: not blocked; true: blocked
          */
         cordon?: pulumi.Input<boolean>;
         /**
-         * Kubelet 组件的相关配置
+         * Kubelet component configuration
          */
         kubeletConfig?: pulumi.Input<inputs.vke.NodePoolKubernetesConfigKubeletConfig>;
         labels?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolKubernetesConfigLabel>[]>;
         /**
-         * Kubernetes 中节点对象的元数据名称前缀。
+         * Prefix for node object metadata name in Kubernetes
          */
         namePrefix?: pulumi.Input<string>;
         /**
-         * Kubernetes 中节点对象的元数据名称后缀。
+         * Suffix for node object metadata name in Kubernetes
          */
         nameSuffix?: pulumi.Input<string>;
         /**
-         * Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+         * Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
          */
         nameUseHostname?: pulumi.Input<boolean>;
         taints?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolKubernetesConfigTaint>[]>;
@@ -10236,7 +10508,7 @@ export namespace vke {
 
     export interface NodePoolKubernetesConfigContainerdConfig {
         /**
-         * 指定跳过证书认证的容器镜像仓库地址。
+         * Specify the container image repository address to skip certificate verification.
          */
         insecureRegistries?: pulumi.Input<pulumi.Input<string>[]>;
         registryProxyConfigs?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig>[]>;
@@ -10244,249 +10516,249 @@ export namespace vke {
 
     export interface NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig {
         /**
-         * 代理地址。
+         * Proxy address.
          */
         proxyEndpoints?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 容器镜像仓库地址。
+         * Container image repository address.
          */
         registry?: pulumi.Input<string>;
     }
 
     export interface NodePoolKubernetesConfigKubeletConfig {
         /**
-         * 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+         * Configure kubelet CpuManagerPolicy. Supports none and static policies
          */
         cpuManagerPolicy?: pulumi.Input<string>;
         evictionHards?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolKubernetesConfigKubeletConfigEvictionHard>[]>;
         /**
-         * 特性门控。
+         * Feature gate
          */
         featureGates?: pulumi.Input<inputs.vke.NodePoolKubernetesConfigKubeletConfigFeatureGates>;
         /**
-         * 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+         * Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
          */
         kubeApiBurst?: pulumi.Input<number>;
         /**
-         * 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+         * Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
          */
         kubeApiQps?: pulumi.Input<number>;
         kubeReserveds?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolKubernetesConfigKubeletConfigKubeReserved>[]>;
         /**
-         * 配置 kubelet 支持的最大 Pod 数量
+         * Configure the maximum number of Pods supported by kubelet
          */
         maxPods?: pulumi.Input<number>;
         /**
-         * 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+         * Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
          */
         registryBurst?: pulumi.Input<number>;
         /**
-         * 可用来限制镜像仓库的 QPS 上限
+         * Used to limit the QPS cap for the image repository
          */
         registryPullQps?: pulumi.Input<number>;
         /**
-         * 逐一拉取镜像。
+         * Pull images sequentially
          */
         serializeImagePulls?: pulumi.Input<boolean>;
         systemReserveds?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolKubernetesConfigKubeletConfigSystemReserved>[]>;
         /**
-         * 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+         * Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
          */
         topologyManagerPolicy?: pulumi.Input<string>;
         /**
-         * 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+         * Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
          */
         topologyManagerScope?: pulumi.Input<string>;
     }
 
     export interface NodePoolKubernetesConfigKubeletConfigEvictionHard {
         /**
-         * 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+         * Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
          */
         key?: pulumi.Input<string>;
         /**
-         * 硬性门限值。
+         * Hard threshold value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NodePoolKubernetesConfigKubeletConfigFeatureGates {
         /**
-         * 是否开启特性开关本地垂直Pod伸缩
+         * Enable local vertical Pod autoscaling feature toggle
          */
         inPlacePodVerticalScaling?: pulumi.Input<boolean>;
         /**
-         * 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+         * Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
          */
         qoSResourceManager?: pulumi.Input<boolean>;
     }
 
     export interface NodePoolKubernetesConfigKubeletConfigKubeReserved {
         /**
-         * 资源名称，取值为 cpu 或 memory。
+         * Resource name. Valid values: cpu or memory.
          */
         name?: pulumi.Input<string>;
         /**
-         * 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+         * Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
          */
         quantity?: pulumi.Input<string>;
     }
 
     export interface NodePoolKubernetesConfigKubeletConfigSystemReserved {
         /**
-         * 资源名称，取值为 cpu 或 memory。
+         * Resource name. Valid values: cpu or memory.
          */
         name?: pulumi.Input<string>;
         /**
-         * 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+         * Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
          */
         quantity?: pulumi.Input<string>;
     }
 
     export interface NodePoolKubernetesConfigLabel {
         /**
-         * 标签键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Label value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NodePoolKubernetesConfigTaint {
         /**
-         * 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+         * Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
          */
         effect?: pulumi.Input<string>;
         /**
-         * 污点键。
+         * Taint key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 污点值。
+         * Taint value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NodePoolManagement {
         /**
-         * 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+         * Enable managed mode for node pool. Options:   - true: on   - false: off
          */
         enabled?: pulumi.Input<boolean>;
         /**
-         * 检查自愈配置。
+         * Check self-healing configuration.
          */
         remedyConfig?: pulumi.Input<inputs.vke.NodePoolManagementRemedyConfig>;
     }
 
     export interface NodePoolManagementRemedyConfig {
         /**
-         * 是否开启检查自愈。
+         * Enable self-healing check
          */
         enabled?: pulumi.Input<boolean>;
         /**
-         * 检查自愈规则ID。
+         * Self-healing rule ID
          */
         remedyId?: pulumi.Input<string>;
     }
 
     export interface NodePoolNodeConfig {
         /**
-         * 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+         * Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
          */
         additionalContainerStorageEnabled?: pulumi.Input<boolean>;
         /**
-         * 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+         * Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
          */
         autoRenew?: pulumi.Input<boolean>;
         /**
-         * 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+         * Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
          */
         autoRenewPeriod?: pulumi.Input<number>;
         dataVolumes?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolNodeConfigDataVolume>[]>;
         /**
-         * 实例在部署集中的分组号，0表示未设置
+         * Group number of the instance in the deployment set; 0 means not set
          */
         deploymentSetGroupNumber?: pulumi.Input<number>;
         /**
-         * 实例需要加入的部署集ID
+         * Deployment Set ID to be added to the instance
          */
         deploymentSetId?: pulumi.Input<string>;
         /**
-         * 节点对应的主机名称。
+         * The host name corresponding to the node.
          */
         hostname?: pulumi.Input<string>;
         /**
-         * 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+         * High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
          */
         hpcClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点对应云服务器所使用的镜像 ID。
+         * Image ID used by the cloud server corresponding to the node
          */
         imageId?: pulumi.Input<string>;
         /**
-         * 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+         * Custom script executed after node creation and initialization. Shell script in Base64 encoding
          */
         initializeScript?: pulumi.Input<string>;
         /**
-         * 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+         * Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
          */
         instanceChargeType?: pulumi.Input<string>;
         /**
-         * 节点（实例）名称。
+         * Node (instance) name
          */
         instanceName?: pulumi.Input<string>;
         /**
-         * 节点对应的云服务器实例规格 ID 列表。
+         * List of cloud server instance type IDs corresponding to the nodes
          */
         instanceTypeIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+         * Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
          */
         instancesDistribution?: pulumi.Input<inputs.vke.NodePoolNodeConfigInstancesDistribution>;
         /**
-         * 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+         * Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
          */
         namePrefix?: pulumi.Input<string>;
         /**
-         * 节点间的网络通讯模式。
+         * Network communication mode between nodes
          */
         networkTrafficMode?: pulumi.Input<string>;
         /**
-         * 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+         * Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
          */
         period?: pulumi.Input<number>;
         /**
-         * 部署节点前执行脚本。
+         * Script to execute before deploying the node
          */
         preScript?: pulumi.Input<string>;
         /**
-         * ECS所属项目，一个ECS只能归属于一个项目。
+         * Project to which the ECS belongs. Each ECS can only belong to one project.
          */
         projectName?: pulumi.Input<string>;
         /**
-         * 节点自动开启公网访问的配置信息
+         * Configuration for automatic public network access for nodes
          */
         publicAccessConfig?: pulumi.Input<inputs.vke.NodePoolNodeConfigPublicAccessConfig>;
         /**
-         * 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+         * Enable public network access for nodes automatically. Options:   - false: off   - true: on
          */
         publicAccessEnabled?: pulumi.Input<boolean>;
         /**
-         * 节点安全配置。
+         * Node security configuration
          */
         security?: pulumi.Input<inputs.vke.NodePoolNodeConfigSecurity>;
         /**
-         * 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+         * Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
          */
         spotStrategy?: pulumi.Input<string>;
         /**
-         * 节点网络所属的子网 ID 列表。
+         * List of subnet IDs for the node network.
          */
         subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点的系统盘配置。
+         * System disk configuration for the node
          */
         systemVolume?: pulumi.Input<inputs.vke.NodePoolNodeConfigSystemVolume>;
         tags?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolNodeConfigTag>[]>;
@@ -10494,156 +10766,156 @@ export namespace vke {
 
     export interface NodePoolNodeConfigDataVolume {
         /**
-         * 文件系统，取值：  - Ext4 (默认值)  - Xfs
+         * File system. Options:   - Ext4 (default)   - Xfs
          */
         fileSystem?: pulumi.Input<string>;
         /**
-         * 磁盘格式化后的目标挂载目录。
+         * Target mount directory after disk formatting.
          */
         mountPoint?: pulumi.Input<string>;
         /**
-         * 放置组Id
+         * Placement group ID
          */
         placementGroupId?: pulumi.Input<string>;
         /**
-         * 磁盘容量，单位 GiB。
+         * Disk capacity, in GiB.
          */
         size?: pulumi.Input<number>;
         /**
-         * 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+         * Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
          */
         snapshotId?: pulumi.Input<string>;
         /**
-         * 放置子组
+         * Placement subgroup
          */
         subgroupNumber?: pulumi.Input<number>;
         /**
-         * 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         * Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
          */
         type?: pulumi.Input<string>;
     }
 
     export interface NodePoolNodeConfigInstancesDistribution {
         /**
-         * 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+         * Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
          */
         capacityRebalance?: pulumi.Input<boolean>;
         /**
-         * 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+         * On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
          */
         compensateWithOnDemand?: pulumi.Input<boolean>;
         /**
-         * 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+         * Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
          */
         onDemandBaseCapacity?: pulumi.Input<number>;
         /**
-         * 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+         * Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
          */
         onDemandPercentageAboveBaseCapacity?: pulumi.Input<number>;
     }
 
     export interface NodePoolNodeConfigPublicAccessConfig {
         /**
-         * 公网 IP 的带宽峰值，单位：Mbps。
+         * Peak bandwidth for public IP, unit: Mbps
          */
         bandwidth?: pulumi.Input<number>;
         /**
-         * 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+         * Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
          */
         billingType?: pulumi.Input<number>;
         /**
-         * 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+         * Public IP line type. Parameter description: BGP: BGP (multi-line)
          */
         isp?: pulumi.Input<string>;
     }
 
     export interface NodePoolNodeConfigSecurity {
         /**
-         * 节点的访问方式配置。
+         * Node access configuration.
          */
         login?: pulumi.Input<inputs.vke.NodePoolNodeConfigSecurityLogin>;
         /**
-         * 节点网络所在的安全组 ID 列表。
+         * List of security group IDs for the node network
          */
         securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点的安全策略，参数值说明：Hids：主机安全加固。
+         * Node security policy. Parameter description: Hids: Host security hardening.
          */
         securityStrategies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+         * Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
          */
         securityStrategyEnabled?: pulumi.Input<boolean>;
     }
 
     export interface NodePoolNodeConfigSecurityLogin {
         /**
-         * Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+         * Root user login password in Base64 encoding. Follow the cloud server's requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
          */
         password?: pulumi.Input<string>;
         /**
-         * SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+         * SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
          */
         sshKeyPairName?: pulumi.Input<string>;
         /**
-         * 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+         * Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
          */
         type?: pulumi.Input<string>;
     }
 
     export interface NodePoolNodeConfigSystemVolume {
         /**
-         * 放置组Id
+         * Placement group ID
          */
         placementGroupId?: pulumi.Input<string>;
         /**
-         * 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+         * Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
          */
         size?: pulumi.Input<number>;
         /**
-         * 放置子组
+         * Placement subgroup
          */
         subgroupNumber?: pulumi.Input<number>;
         /**
-         * 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         * Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface NodePoolNodeConfigTag {
         /**
-         * 标签键。
+         * Label key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Label value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NodePoolNodeStatistics {
         /**
-         * Phase=Creating的节点总数量。
+         * Total number of nodes in Phase=Creating.
          */
         creatingCount?: pulumi.Input<number>;
         /**
-         * Phase=Deleting的节点总数量。
+         * Total number of nodes with Phase=Deleting
          */
         deletingCount?: pulumi.Input<number>;
         /**
-         * Phase=Failed的节点总数量。
+         * Total number of nodes with Phase=Failed
          */
         failedCount?: pulumi.Input<number>;
         /**
-         * Phase=Running的节点总数量。
+         * Total number of nodes with Phase=Running
          */
         runningCount?: pulumi.Input<number>;
         /**
-         * 节点池中的节点总数量。
+         * Total number of nodes in the node pool
          */
         totalCount?: pulumi.Input<number>;
         /**
-         * Phase=Updating的节点总数量。
+         * Total number of nodes with Phase=Updating
          */
         updatingCount?: pulumi.Input<number>;
     }
@@ -10651,25 +10923,25 @@ export namespace vke {
     export interface NodePoolStatus {
         conditions?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolStatusCondition>[]>;
         /**
-         * 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+         * Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
          */
         phase?: pulumi.Input<string>;
     }
 
     export interface NodePoolStatusCondition {
         /**
-         * 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+         * Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
          */
         type?: pulumi.Input<string>;
     }
 
     export interface NodePoolTag {
         /**
-         * 标签键。
+         * Label key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Label value.
          */
         value?: pulumi.Input<string>;
     }
@@ -10677,14 +10949,14 @@ export namespace vke {
     export interface NodeStatus {
         conditions?: pulumi.Input<pulumi.Input<inputs.vke.NodeStatusCondition>[]>;
         /**
-         * 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+         * Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
          */
         phase?: pulumi.Input<string>;
     }
 
     export interface NodeStatusCondition {
         /**
-         * 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+         * Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
          */
         type?: pulumi.Input<string>;
     }
@@ -10693,88 +10965,120 @@ export namespace vke {
 export namespace vmp {
     export interface WorkspaceInstanceType {
         /**
-         * 最大活跃时序数。
+         * Maximum active time series count
          */
         activeSeries?: pulumi.Input<number>;
         /**
-         * 可用区（az）数。
+         * Number of availability zones (az)
          */
         availabilityZoneReplicas?: pulumi.Input<number>;
+        calculatePriceParams?: pulumi.Input<pulumi.Input<inputs.vmp.WorkspaceInstanceTypeCalculatePriceParam>[]>;
         /**
-         * 降采样策略。
+         * Downsampling policy
          */
         downsamplingPeriods?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 最大每秒写入样本数。
+         * Maximum samples written per second
          */
         ingestSamplesPerSecond?: pulumi.Input<number>;
         /**
-         * 最大查询并发数。
+         * Maximum query concurrency
          */
         queryConcurrency?: pulumi.Input<number>;
         /**
-         * 最大查询 QPS。
+         * Maximum query QPS
          */
         queryPerSecond?: pulumi.Input<number>;
         /**
-         * 每个可用区（az）的数据副本数。
+         * Number of data replicas per availability zone (az)
          */
         replicasPerZone?: pulumi.Input<number>;
         /**
-         * 最长数据保留时间。
+         * Maximum data retention period
          */
         retentionPeriod?: pulumi.Input<string>;
         /**
-         * 最大每秒扫描样本数。
+         * Maximum samples scanned per second
          */
         scanSamplesPerSecond?: pulumi.Input<number>;
         /**
-         * 最大每秒扫描时序数。
+         * Maximum time series scanned per second
          */
         scanSeriesPerSecond?: pulumi.Input<number>;
     }
 
+    export interface WorkspaceInstanceTypeCalculatePriceParam {
+        calChargeItemLists?: pulumi.Input<pulumi.Input<inputs.vmp.WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList>[]>;
+        /**
+         * Configuration item code.
+         */
+        configurationCode?: pulumi.Input<string>;
+        /**
+         * Billing cycle.
+         */
+        period?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList {
+        /**
+         * Billing item attribute value.
+         */
+        attrValue?: pulumi.Input<string>;
+        /**
+         * Billing item code.
+         */
+        chargeItemCode?: pulumi.Input<string>;
+    }
+
     export interface WorkspaceQuota {
         /**
-         * 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+         * Maximum active time series count. Integer, default range is 1–50000000
          */
         activeSeries?: pulumi.Input<number>;
         /**
-         * 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+         * Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
          */
         ingestSamplesPerSecond?: pulumi.Input<number>;
         /**
-         * 最大查询 QPS。整数形式，默认取值范围为 1～500。
+         * Workspace public Query bandwidth (Mbps).
+         */
+        publicQueryBandwidth?: pulumi.Input<number>;
+        /**
+         * Workspace public RemoteWrite bandwidth (Mbps).
+         */
+        publicWriteBandwidth?: pulumi.Input<number>;
+        /**
+         * Maximum query QPS. Integer, default range is 1–500
          */
         queryPerSecond?: pulumi.Input<number>;
         /**
-         * 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+         * Maximum samples scanned per second. Integer, default range is 1–1000000000
          */
         scanSamplesPerSecond?: pulumi.Input<number>;
         /**
-         * 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+         * Maximum time series scanned per second. Integer, default range is 1–200000
          */
         scanSeriesPerSecond?: pulumi.Input<number>;
     }
 
     export interface WorkspaceTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface WorkspaceUsage {
         /**
-         * 活跃时序数。
+         * Active time series count
          */
         activeSeries?: pulumi.Input<number>;
         /**
-         * 每秒写入样本数。
+         * Samples written per second
          */
         ingestedSamplesPerSecond?: pulumi.Input<number>;
     }
@@ -10783,703 +11087,703 @@ export namespace vmp {
 export namespace vpc {
     export interface BandwidthPackageEipAddress {
         /**
-         * 分配ID
+         * Allocation ID
          */
         allocationId?: pulumi.Input<string>;
     }
 
     export interface BandwidthPackageTag {
         /**
-         * 用户标签的标签键。
+         * User tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface EipTag {
         /**
-         * 标签键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface EniPrimaryIpAddress {
         /**
-         * 网卡主私网IPv4关联的公网IP的信息。
+         * Information about the public IP associated with the primary private IPv4 address of the network interface.
          */
         associatedElasticIp?: pulumi.Input<inputs.vpc.EniPrimaryIpAddressAssociatedElasticIp>;
         /**
-         * 是否为主私网IPv4地址。
+         * Indicates whether this is the primary private IPv4 address.
          */
         primary?: pulumi.Input<boolean>;
         /**
-         * 网卡的私网IP地址。
+         * Private IP address of the network interface.
          */
         privateIpAddress?: pulumi.Input<string>;
     }
 
     export interface EniPrimaryIpAddressAssociatedElasticIp {
         /**
-         * 公网IP的ID。
+         * Public IP ID
          */
         allocationId?: pulumi.Input<string>;
         /**
-         * 公网IP的地址。
+         * Public IP address
          */
         eipAddress?: pulumi.Input<string>;
         /**
-         * 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+         * Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
          */
         releaseWithInstance?: pulumi.Input<boolean>;
     }
 
     export interface EniPrivateIpSet {
         /**
-         * 网卡主私网IPv4关联的公网IP的信息。
+         * Information about the public IP associated with the primary private IPv4 address of the network interface.
          */
         associatedElasticIp?: pulumi.Input<inputs.vpc.EniPrivateIpSetAssociatedElasticIp>;
         /**
-         * 网卡的私网IP地址。
+         * Private IP address of the network interface.
          */
         privateIpAddress?: pulumi.Input<string>;
     }
 
     export interface EniPrivateIpSetAssociatedElasticIp {
         /**
-         * 公网IP的ID。
+         * Public IP ID
          */
         allocationId?: pulumi.Input<string>;
     }
 
     export interface EniTag {
         /**
-         * 用户标签的标签键。
+         * Tag key for the user tag.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * Tag value for the user tag.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface FlowLogTag {
         /**
-         * 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         * User label tag key. Length must be 1–128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ symbols (@). If the tag key starts or ends with a space, the system automatically removes it.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         * User tag value. Supports input in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface HaVipTag {
         /**
-         * 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         * Tag key for user tags. Length range: 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         * Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
          */
         value?: pulumi.Input<string>;
     }
 
     export interface Ipv6AddressBandwidthTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface Ipv6GatewayTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface NetworkAclDefaultEgressAclEntry {
         /**
-         * 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+         * For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
          */
         cidrIp?: pulumi.Input<string>;
         /**
-         * 规则的描述信息。
+         * Rule description.
          */
         description?: pulumi.Input<string>;
         /**
-         * 规则的ID。
+         * Rule ID.
          */
         networkAclEntryId?: pulumi.Input<string>;
         /**
-         * 规则的名称。
+         * Rule name.
          */
         networkAclEntryName?: pulumi.Input<string>;
         /**
-         * 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+         * Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
          */
         policy?: pulumi.Input<string>;
         /**
-         * 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+         * Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
          */
         port?: pulumi.Input<string>;
         /**
-         * 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+         * Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
          */
         priority?: pulumi.Input<number>;
         /**
-         * 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+         * Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
          */
         protocol?: pulumi.Input<string>;
     }
 
     export interface NetworkAclDefaultIngressAclEntry {
         /**
-         * 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+         * For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
          */
         cidrIp?: pulumi.Input<string>;
         /**
-         * 规则的描述信息。
+         * Rule description.
          */
         description?: pulumi.Input<string>;
         /**
-         * 规则的ID。
+         * Rule ID.
          */
         networkAclEntryId?: pulumi.Input<string>;
         /**
-         * 规则的名称。
+         * Rule name.
          */
         networkAclEntryName?: pulumi.Input<string>;
         /**
-         * 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+         * Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
          */
         policy?: pulumi.Input<string>;
         /**
-         * 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+         * Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
          */
         port?: pulumi.Input<string>;
         /**
-         * 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+         * Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
          */
         priority?: pulumi.Input<number>;
         /**
-         * 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+         * Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
          */
         protocol?: pulumi.Input<string>;
     }
 
     export interface NetworkAclEgressAclEntry {
         /**
-         * 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+         * For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
          */
         cidrIp?: pulumi.Input<string>;
         /**
-         * 规则的描述信息。
+         * Rule description.
          */
         description?: pulumi.Input<string>;
         /**
-         * 规则的名称。
+         * Rule name.
          */
         networkAclEntryName?: pulumi.Input<string>;
         /**
-         * 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+         * Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
          */
         policy?: pulumi.Input<string>;
         /**
-         * 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+         * Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
          */
         port?: pulumi.Input<string>;
         /**
-         * 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+         * Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
          */
         protocol?: pulumi.Input<string>;
     }
 
     export interface NetworkAclIngressAclEntry {
         /**
-         * 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+         * For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
          */
         cidrIp?: pulumi.Input<string>;
         /**
-         * 规则的描述信息。
+         * Rule description.
          */
         description?: pulumi.Input<string>;
         /**
-         * 规则的名称。
+         * Rule name.
          */
         networkAclEntryName?: pulumi.Input<string>;
         /**
-         * 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+         * Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
          */
         policy?: pulumi.Input<string>;
         /**
-         * 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+         * Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
          */
         port?: pulumi.Input<string>;
         /**
-         * 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+         * Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
          */
         protocol?: pulumi.Input<string>;
     }
 
     export interface NetworkAclResource {
         /**
-         * 关联资源的ID。
+         * Associated resource ID.
          */
         resourceId?: pulumi.Input<string>;
     }
 
     export interface NetworkAclTag {
         /**
-         * 用户标签的标签键。
+         * User tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface PrefixListAssociationsRouteTable {
         /**
-         * 关联资源的ID。
+         * ID of the associated resource.
          */
         resourceId?: pulumi.Input<string>;
         /**
-         * 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+         * Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
          */
         resourceType?: pulumi.Input<string>;
     }
 
     export interface PrefixListAssociationsSecurityGroup {
         /**
-         * 关联资源的ID。
+         * ID of the associated resource.
          */
         resourceId?: pulumi.Input<string>;
         /**
-         * 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+         * Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
          */
         resourceType?: pulumi.Input<string>;
     }
 
     export interface PrefixListPrefixListEntry {
         /**
-         * 前缀列表条目的CIDR。
+         * CIDR of the prefix list entry.
          */
         cidr?: pulumi.Input<string>;
         /**
-         * 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
          */
         description?: pulumi.Input<string>;
     }
 
     export interface PrefixListTag {
         /**
-         * 用户标签的标签键。
+         * Tag key of the user tag.
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * Tag value of the user tag.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface RouteTableCustomRouteEntry {
         /**
-         * 路由条目描述。
+         * Route Entry Description
          */
         description?: pulumi.Input<string>;
         /**
-         * 路由条目的目标网段。
+         * Destination CIDR of the route entry
          */
         destinationCidrBlock?: pulumi.Input<string>;
         /**
-         * 前缀列表ID。
+         * Prefix List ID
          */
         destinationPrefixListId?: pulumi.Input<string>;
         /**
-         * 下一跳资源ID。
+         * Next Hop Resource ID
          */
         nextHopId?: pulumi.Input<string>;
         /**
-         * 路由条目下一跳资源的名称。
+         * Name of the next hop resource for the route entry
          */
         nextHopName?: pulumi.Input<string>;
         /**
-         * 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+         * Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
          */
         nextHopType?: pulumi.Input<string>;
         /**
-         * 路由条目名称。
+         * Route Entry Name
          */
         routeEntryName?: pulumi.Input<string>;
     }
 
     export interface RouteTableSystemRouteEntry {
         /**
-         * 路由条目描述。
+         * Route Entry Description
          */
         description?: pulumi.Input<string>;
         /**
-         * 路由条目的目标网段。
+         * Destination CIDR of the route entry
          */
         destinationCidrBlock?: pulumi.Input<string>;
         /**
-         * 前缀列表ID。
+         * Prefix List ID
          */
         destinationPrefixListId?: pulumi.Input<string>;
         /**
-         * 下一跳资源ID。
+         * Next Hop Resource ID
          */
         nextHopId?: pulumi.Input<string>;
         /**
-         * 路由条目下一跳资源的名称。
+         * Name of the next hop resource for the route entry
          */
         nextHopName?: pulumi.Input<string>;
         /**
-         * 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+         * Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
          */
         nextHopType?: pulumi.Input<string>;
         /**
-         * 前缀列表的CIDR。
+         * Prefix List CIDR
          */
         prefixListCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 路由条目ID。
+         * Route Entry ID
          */
         routeEntryId?: pulumi.Input<string>;
         /**
-         * 路由条目名称。
+         * Route Entry Name
          */
         routeEntryName?: pulumi.Input<string>;
         /**
-         * 路由表ID。
+         * Route Table ID
          */
         routeTableId?: pulumi.Input<string>;
         /**
-         * 路由条目状态。1、Pending：待创建。2、Available：可用。
+         * Route entry status. 1. Pending: Pending creation 2. Available: Available
          */
         status?: pulumi.Input<string>;
         /**
-         * 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+         * Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
          */
         type?: pulumi.Input<string>;
         /**
-         * 路由条目所属私有网络的ID。
+         * ID of the private network to which the route entry belongs
          */
         vpcId?: pulumi.Input<string>;
     }
 
     export interface RouteTableTag {
         /**
-         * 用户标签的标签键。
+         * User tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface SecurityGroupEgressPermission {
         /**
-         * 源地址的IPv4 CIDR或IPv6 CIDR
+         * IPv4 CIDR or IPv6 CIDR of the source address
          */
         cidrIp?: pulumi.Input<string>;
         /**
-         * 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+         * Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
          */
         description?: pulumi.Input<string>;
         /**
-         * 安全组规则方向。ingress：入方向。egress：出方向
+         * Security group rule direction. ingress: inbound direction. egress: outbound direction
          */
         direction?: pulumi.Input<string>;
         /**
-         * 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+         * Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
          */
         policy?: pulumi.Input<string>;
         /**
-         * 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+         * Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
          */
         portEnd?: pulumi.Input<number>;
         /**
-         * 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+         * Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
          */
         portStart?: pulumi.Input<number>;
         /**
-         * 前缀列表的ID
+         * Prefix list ID
          */
         prefixListId?: pulumi.Input<string>;
         /**
-         * 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+         * Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
          */
         priority?: pulumi.Input<number>;
         /**
-         * 协议类型。tcp、udp、icmp、icmpv6、all
+         * Protocol type. tcp, udp, icmp, icmpv6, all
          */
         protocol?: pulumi.Input<string>;
         /**
-         * 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+         * Source address security group ID. All NIC addresses in this security group are used as source addresses
          */
         sourceGroupId?: pulumi.Input<string>;
     }
 
     export interface SecurityGroupIngressPermission {
         /**
-         * 源地址的IPv4 CIDR或IPv6 CIDR
+         * IPv4 CIDR or IPv6 CIDR of the source address
          */
         cidrIp?: pulumi.Input<string>;
         /**
-         * 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+         * Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
          */
         description?: pulumi.Input<string>;
         /**
-         * 安全组规则方向。ingress：入方向。egress：出方向
+         * Security group rule direction. ingress: inbound direction. egress: outbound direction
          */
         direction?: pulumi.Input<string>;
         /**
-         * 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+         * Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
          */
         policy?: pulumi.Input<string>;
         /**
-         * 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+         * Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
          */
         portEnd?: pulumi.Input<number>;
         /**
-         * 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+         * Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
          */
         portStart?: pulumi.Input<number>;
         /**
-         * 前缀列表的ID
+         * Prefix list ID
          */
         prefixListId?: pulumi.Input<string>;
         /**
-         * 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+         * Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
          */
         priority?: pulumi.Input<number>;
         /**
-         * 协议类型。tcp、udp、icmp、icmpv6、all
+         * Protocol type. tcp, udp, icmp, icmpv6, all
          */
         protocol?: pulumi.Input<string>;
         /**
-         * 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+         * Source address security group ID. All NIC addresses in this security group are used as source addresses
          */
         sourceGroupId?: pulumi.Input<string>;
     }
 
     export interface SecurityGroupTag {
         /**
-         * 用户标签的标签键。
+         * User tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface SubnetRouteTable {
         /**
-         * 子网关联的路由表ID。
+         * ID of the route table associated with the subnet
          */
         routeTableId?: pulumi.Input<string>;
         /**
-         * 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+         * Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
          */
         routeTableType?: pulumi.Input<string>;
     }
 
     export interface SubnetTag {
         /**
-         * 用户标签的标签键。
+         * User tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * User tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface TrafficMirrorFilterEgressFilterRule {
         /**
-         * 筛选规则实例描述。
+         * Filter rule instance description
          */
         description?: pulumi.Input<string>;
         /**
-         * 筛选规则目的地址。
+         * Filter rule destination address
          */
         destinationCidrBlock?: pulumi.Input<string>;
         /**
-         * 筛选规则目的端口范围。
+         * Filter rule destination port range
          */
         destinationPortRange?: pulumi.Input<string>;
         /**
-         * 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+         * Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
          */
         policy?: pulumi.Input<string>;
         /**
-         * 筛选规则优先级。
+         * Filter rule priority
          */
         priority?: pulumi.Input<number>;
         /**
-         * 所属项目的名称。
+         * Project name
          */
         projectName?: pulumi.Input<string>;
         /**
-         * 筛选规则协议类型。
+         * Filter rule protocol type
          */
         protocol?: pulumi.Input<string>;
         /**
-         * 筛选规则源地址。
+         * Filter rule source address
          */
         sourceCidrBlock?: pulumi.Input<string>;
         /**
-         * 筛选规则源端口范围。
+         * Filter rule source port range
          */
         sourcePortRange?: pulumi.Input<string>;
         /**
-         * 筛选规则状态。
+         * Filter rule status
          */
         status?: pulumi.Input<string>;
         /**
-         * 筛选规则方向。egress：出方向。ingress：入方向。
+         * Filter rule direction. egress: Outbound. ingress: Inbound
          */
         trafficDirection?: pulumi.Input<string>;
         /**
-         * 筛选条件实例ID。
+         * Filter condition instance ID
          */
         trafficMirrorFilterId?: pulumi.Input<string>;
         /**
-         * 筛选规则实例ID。
+         * Filter rule instance ID
          */
         trafficMirrorFilterRuleId?: pulumi.Input<string>;
     }
 
     export interface TrafficMirrorFilterIngressFilterRule {
         /**
-         * 筛选规则实例描述。
+         * Filter rule instance description
          */
         description?: pulumi.Input<string>;
         /**
-         * 筛选规则目的地址。
+         * Filter rule destination address
          */
         destinationCidrBlock?: pulumi.Input<string>;
         /**
-         * 筛选规则目的端口范围。
+         * Filter rule destination port range
          */
         destinationPortRange?: pulumi.Input<string>;
         /**
-         * 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+         * Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
          */
         policy?: pulumi.Input<string>;
         /**
-         * 筛选规则优先级。
+         * Filter rule priority
          */
         priority?: pulumi.Input<number>;
         /**
-         * 所属项目的名称。
+         * Project name
          */
         projectName?: pulumi.Input<string>;
         /**
-         * 筛选规则协议类型。
+         * Filter rule protocol type
          */
         protocol?: pulumi.Input<string>;
         /**
-         * 筛选规则源地址。
+         * Filter rule source address
          */
         sourceCidrBlock?: pulumi.Input<string>;
         /**
-         * 筛选规则源端口范围。
+         * Filter rule source port range
          */
         sourcePortRange?: pulumi.Input<string>;
         /**
-         * 筛选规则状态。
+         * Filter rule status
          */
         status?: pulumi.Input<string>;
         /**
-         * 筛选规则方向。egress：出方向。ingress：入方向。
+         * Filter rule direction. egress: Outbound. ingress: Inbound
          */
         trafficDirection?: pulumi.Input<string>;
         /**
-         * 筛选条件实例ID。
+         * Filter condition instance ID
          */
         trafficMirrorFilterId?: pulumi.Input<string>;
         /**
-         * 筛选规则实例ID。
+         * Filter rule instance ID
          */
         trafficMirrorFilterRuleId?: pulumi.Input<string>;
     }
 
     export interface TrafficMirrorFilterTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface TrafficMirrorSessionTag {
         /**
-         * 标签键。
+         * Tag key
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface TrafficMirrorTargetTag {
         /**
-         * 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         * Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         * Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface VpcAssociateCen {
         /**
-         * CEN的ID。
+         * ID of the CEN.
          */
         cenId?: pulumi.Input<string>;
         /**
-         * CEN的用户ID。
+         * User ID of the CEN.
          */
         cenOwnerId?: pulumi.Input<string>;
         /**
-         * VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+         * Status of the VPC in the CEN. Loading: loading, Loaded: loaded
          */
         cenStatus?: pulumi.Input<string>;
     }
 
     export interface VpcTag {
         /**
-         * 标签键。
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * 标签值。
+         * Tag value.
          */
         value?: pulumi.Input<string>;
     }
@@ -11488,22 +11792,261 @@ export namespace vpc {
 export namespace vpn {
     export interface CustomerGatewayTag {
         /**
-         * 用户标签的标签键。
+         * Tag key for user tag
          */
         key?: pulumi.Input<string>;
         /**
-         * 用户标签的标签值。
+         * Tag value for user tag
          */
         value?: pulumi.Input<string>;
     }
 
-    export interface VpnGatewayTag {
+    export interface VpnConnectionBgpInfo {
         /**
-         * VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
+         * Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+         */
+        enableBgp?: pulumi.Input<boolean>;
+        /**
+         * The ASN of the VPN gateway.
+         */
+        localAsn?: pulumi.Input<number>;
+        /**
+         * The local tunnel IP, which is the BGP address configured on the VPN gateway and defaults to the first host address of BgpConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel subnet. If BgpConfig.EnableBgp is set to true, this parameter must be provided.
+         */
+        localBgpIp?: pulumi.Input<string>;
+        /**
+         * ASN of the customer gateway.
+         */
+        peerAsn?: pulumi.Input<number>;
+        /**
+         * BGP peer IP, that is, the BGP address on the customer gateway side.
+         */
+        peerBgpIp?: pulumi.Input<string>;
+        /**
+         * Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+         */
+        sessionStatus?: pulumi.Input<string>;
+        /**
+         * CIDR address range for the local and peer IPs of the BGP session.
+         */
+        tunnelCidr?: pulumi.Input<string>;
+    }
+
+    export interface VpnConnectionHealthChecker {
+        /**
+         * Interval for performing health checks
+         */
+        checkInterval?: pulumi.Input<number>;
+        /**
+         * Health check result. Up: Normal. Down: Abnormal.
+         */
+        checkResult?: pulumi.Input<string>;
+        /**
+         * ID of the IPsec connection health check
+         */
+        checkerId?: pulumi.Input<string>;
+        /**
+         * Health check unhealthy threshold. If the health check result is 'abnormal' for the specified number of consecutive times, the IPsec connection is considered unhealthy.
+         */
+        downTime?: pulumi.Input<number>;
+        /**
+         * Health check source IP.
+         */
+        localIp?: pulumi.Input<string>;
+        /**
+         * Health check target IP.
+         */
+        remoteIp?: pulumi.Input<string>;
+        /**
+         * Health check response timeout. If the IPsec connection does not respond correctly within the specified response time, it is considered 'abnormal' for health check.
+         */
+        timeout?: pulumi.Input<number>;
+        /**
+         * Health check threshold. If the specified number of consecutive health checks are all 'healthy', the IPsec connection is considered 'healthy' by health check.
+         */
+        upTime?: pulumi.Input<number>;
+    }
+
+    export interface VpnConnectionIkeConfig {
+        /**
+         * Authentication algorithm for phase one.
+         */
+        authAlg?: pulumi.Input<string>;
+        /**
+         * DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+         */
+        dhGroup?: pulumi.Input<string>;
+        /**
+         * Encryption algorithm for phase 1 negotiation.
+         */
+        encAlg?: pulumi.Input<string>;
+        /**
+         * Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+         */
+        lifetime?: pulumi.Input<number>;
+        /**
+         * Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+         */
+        localId?: pulumi.Input<string>;
+        /**
+         * Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+         */
+        mode?: pulumi.Input<string>;
+        /**
+         * Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+         */
+        psk?: pulumi.Input<string>;
+        /**
+         * Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+         */
+        remoteId?: pulumi.Input<string>;
+        /**
+         * Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface VpnConnectionIpsecConfig {
+        /**
+         * Authentication algorithm for phase 2 negotiation
+         */
+        authAlg?: pulumi.Input<string>;
+        /**
+         * DH (Diffie-Hellman) key exchange algorithm used in phase 2
+         */
+        dhGroup?: pulumi.Input<string>;
+        /**
+         * Encryption algorithm for phase 2 negotiation
+         */
+        encAlg?: pulumi.Input<string>;
+        /**
+         * Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+         */
+        lifetime?: pulumi.Input<number>;
+    }
+
+    export interface VpnConnectionTag {
+        /**
+         * Tag key.
          */
         key?: pulumi.Input<string>;
         /**
-         * VPN网关标签的标签值（Value）。参数   - N：表示标签值的序号，取值范围：1～20。多个标签值之间用&分隔。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。大小写敏感，不能以空格开头或结尾。说明传入Tags.N.Value则必须传入Tags.N.Key。
+         * Tag value
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface VpnConnectionTunnelOption {
+        /**
+         * ID of the customer gateway associated with the IPsec connection.
+         */
+        customerGatewayId?: pulumi.Input<string>;
+        /**
+         * Status of the DPD feature.
+         */
+        dpdAction?: pulumi.Input<string>;
+        /**
+         * IKE configuration information for the IPsec connection.
+         */
+        ikeConfig?: pulumi.Input<inputs.vpn.VpnConnectionTunnelOptionIkeConfig>;
+        /**
+         * Information about the IPsec configuration in the IPsec connection.
+         */
+        ipsecConfig?: pulumi.Input<inputs.vpn.VpnConnectionTunnelOptionIpsecConfig>;
+        /**
+         * Whether to enable NAT traversal
+         */
+        natTraversal?: pulumi.Input<boolean>;
+        /**
+         * The role of the tunnel.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * BGP session information.
+         */
+        tunnelBgpInfo?: pulumi.Input<inputs.vpn.VpnConnectionTunnelOptionTunnelBgpInfo>;
+        /**
+         * Tunnel ID of the IPsec connection.
+         */
+        tunnelId?: pulumi.Input<string>;
+    }
+
+    export interface VpnConnectionTunnelOptionIkeConfig {
+        /**
+         * Authentication algorithm for phase one.
+         */
+        authAlg?: pulumi.Input<string>;
+        /**
+         * DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+         */
+        dhGroup?: pulumi.Input<string>;
+        /**
+         * Encryption algorithm for phase 1 negotiation.
+         */
+        encAlg?: pulumi.Input<string>;
+        /**
+         * Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+         */
+        lifetime?: pulumi.Input<number>;
+        /**
+         * Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+         */
+        localId?: pulumi.Input<string>;
+        /**
+         * Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+         */
+        mode?: pulumi.Input<string>;
+        /**
+         * Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+         */
+        psk?: pulumi.Input<string>;
+        /**
+         * Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+         */
+        remoteId?: pulumi.Input<string>;
+        /**
+         * Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface VpnConnectionTunnelOptionIpsecConfig {
+        /**
+         * Authentication algorithm for phase 2 negotiation
+         */
+        authAlg?: pulumi.Input<string>;
+        /**
+         * DH (Diffie-Hellman) key exchange algorithm used in phase 2
+         */
+        dhGroup?: pulumi.Input<string>;
+        /**
+         * Encryption algorithm for phase 2 negotiation
+         */
+        encAlg?: pulumi.Input<string>;
+        /**
+         * Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+         */
+        lifetime?: pulumi.Input<number>;
+    }
+
+    export interface VpnConnectionTunnelOptionTunnelBgpInfo {
+        /**
+         * BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
+         */
+        localBgpIp?: pulumi.Input<string>;
+        /**
+         * The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
+         */
+        tunnelCidr?: pulumi.Input<string>;
+    }
+
+    export interface VpnGatewayTag {
+        /**
+         * VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * VPN gateway tag value (Value). Parameter   - N: Indicates the sequence number of the tag value, value range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length limit: 0–256 characters. Case-sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
          */
         value?: pulumi.Input<string>;
     }
@@ -11512,112 +12055,112 @@ export namespace vpn {
 export namespace waf {
     export interface DomainBackendGroup {
         /**
-         * 接入的端口号。
+         * Access port number.
          */
         accessPorts?: pulumi.Input<pulumi.Input<number>[]>;
         backends?: pulumi.Input<pulumi.Input<inputs.waf.DomainBackendGroupBackend>[]>;
         /**
-         * 源站组名称。
+         * Origin group name.
          */
         name?: pulumi.Input<string>;
     }
 
     export interface DomainBackendGroupBackend {
         /**
-         * 源站 IP 地址。
+         * Origin IP address
          */
         ip?: pulumi.Input<string>;
         /**
-         * 源站端口。
+         * Origin port
          */
         port?: pulumi.Input<number>;
         /**
-         * 源站协议。
+         * Origin protocol.
          */
         protocol?: pulumi.Input<string>;
         /**
-         * 源站权重。
+         * Origin weight
          */
         weight?: pulumi.Input<number>;
     }
 
     export interface DomainCloudAccessConfig {
         /**
-         * 接入协议类型。
+         * Access protocol type
          */
         accessProtocol?: pulumi.Input<string>;
         /**
-         * 防护模式。
+         * Protection mode
          */
         defenceMode?: pulumi.Input<number>;
         /**
-         * 负载均衡实例 ID。
+         * Load balancing instance ID.
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 负载均衡实例名称。
+         * Load balancer instance name.
          */
         instanceName?: pulumi.Input<string>;
         /**
-         * 负载均衡监听器 ID。
+         * Load balancing listener ID.
          */
         listenerId?: pulumi.Input<string>;
         /**
-         * 是否从 ALB 中丢失关联。
+         * Disassociated from ALB
          */
         lostAssociationFromAlb?: pulumi.Input<number>;
         /**
-         * 监听器转发规则的端口号。
+         * Listener forwarding rule port number
          */
         port?: pulumi.Input<string>;
         /**
-         * 监听器转发规则的协议类型。
+         * Protocol type for listener forwarding rules.
          */
         protocol?: pulumi.Input<string>;
     }
 
     export interface DomainProtocolPorts {
         /**
-         * HTTP 协议的端口号。
+         * HTTP protocol port number
          */
         http?: pulumi.Input<pulumi.Input<number>[]>;
         /**
-         * HTTPS 协议的端口号。
+         * HTTPS protocol port number
          */
         https?: pulumi.Input<pulumi.Input<number>[]>;
     }
 
     export interface DomainTcpListenerConfig {
         /**
-         * 接入协议类型。
+         * Access protocol type
          */
         accessProtocol?: pulumi.Input<string>;
         /**
-         * 防护模式。
+         * Protection mode
          */
         defenceMode?: pulumi.Input<number>;
         /**
-         * 实例 ID。
+         * Instance ID.
          */
         instanceId?: pulumi.Input<string>;
         /**
-         * 实例名称。
+         * Instance name.
          */
         instanceName?: pulumi.Input<string>;
         /**
-         * 监听器 ID。
+         * Listener ID.
          */
         listenerId?: pulumi.Input<string>;
         /**
-         * 是否从 ALB 中丢失关联。
+         * Disassociated from ALB
          */
         lostAssociationFromAlb?: pulumi.Input<number>;
         /**
-         * 监听器的端口号。
+         * Listener port number
          */
         port?: pulumi.Input<string>;
         /**
-         * 监听器协议类型。
+         * Listener protocol type.
          */
         protocol?: pulumi.Input<string>;
     }
@@ -11628,15 +12171,15 @@ export namespace waf {
 
     export interface DomainTlsFieldsConfigHeadersConfig {
         /**
-         * 是否记录全量 header。
+         * Record all header fields
          */
         enable?: pulumi.Input<number>;
         /**
-         * 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+         * Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
          */
         excludedKeyLists?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * 统计 header 字段，将对应字段用于日志统计分析和告警。
+         * Statistics header fields. Use the specified fields for log analysis and alerts.
          */
         statisticalKeyLists?: pulumi.Input<pulumi.Input<string>[]>;
     }

@@ -17,14 +17,14 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
     public static final DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs Empty = new DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs();
 
     /**
-     * 表示 URL 重定向的响应状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+     * Indicates the response status code for URL redirection. Valid values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original and is not changed.
      * 
      */
     @Import(name="redirectCode")
     private @Nullable Output<String> redirectCode;
 
     /**
-     * @return 表示 URL 重定向的响应状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+     * @return Indicates the response status code for URL redirection. Valid values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original and is not changed.
      * 
      */
     public Optional<Output<String>> redirectCode() {
@@ -32,14 +32,14 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
     }
 
     /**
-     * 表示文件的原路径。也就是请求中包含的路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+     * Specifies the original file path, which is the path included in the request. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value of this parameter cannot exceed 1,024 characters.
      * 
      */
     @Import(name="sourcePath")
     private @Nullable Output<String> sourcePath;
 
     /**
-     * @return 表示文件的原路径。也就是请求中包含的路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+     * @return Specifies the original file path, which is the path included in the request. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value of this parameter cannot exceed 1,024 characters.
      * 
      */
     public Optional<Output<String>> sourcePath() {
@@ -47,14 +47,14 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
     }
 
     /**
-     * 表示目标路径所归属站点的域名或者 IP 地址。IP 地址必须是 IPv4 类型的地址。该参数值的长度不能超过 1,024 个字符。该参数的默认值就是您的加速域名。
+     * Indicates the domain name or IP address of the site to which the target path belongs. The IP address must be IPv4. The parameter value cannot exceed 1,024 characters. The default value is your acceleration domain name.
      * 
      */
     @Import(name="targetHost")
     private @Nullable Output<String> targetHost;
 
     /**
-     * @return 表示目标路径所归属站点的域名或者 IP 地址。IP 地址必须是 IPv4 类型的地址。该参数值的长度不能超过 1,024 个字符。该参数的默认值就是您的加速域名。
+     * @return Indicates the domain name or IP address of the site to which the target path belongs. The IP address must be IPv4. The parameter value cannot exceed 1,024 characters. The default value is your acceleration domain name.
      * 
      */
     public Optional<Output<String>> targetHost() {
@@ -62,14 +62,14 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
     }
 
     /**
-     * 表示跳转后的目标路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+     * Indicates the target path after redirection. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value cannot exceed 1,024 characters.
      * 
      */
     @Import(name="targetPath")
     private @Nullable Output<String> targetPath;
 
     /**
-     * @return 表示跳转后的目标路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+     * @return Indicates the target path after redirection. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value cannot exceed 1,024 characters.
      * 
      */
     public Optional<Output<String>> targetPath() {
@@ -77,14 +77,14 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
     }
 
     /**
-     * 表示 URL重定向后的新请求所使用的协议。该参数有以下取值：followclient：表示使用原请求的协议。http：表示新请求强制使用 HTTP 协议。https：表示新请求强制使用 HTTPS 协议。
+     * Specifies the protocol used for the new request after URL redirection. The parameter values are: followclient: use the protocol of the original request; http: force the new request to use HTTP; https: force the new request to use HTTPS.
      * 
      */
     @Import(name="targetProtocol")
     private @Nullable Output<String> targetProtocol;
 
     /**
-     * @return 表示 URL重定向后的新请求所使用的协议。该参数有以下取值：followclient：表示使用原请求的协议。http：表示新请求强制使用 HTTP 协议。https：表示新请求强制使用 HTTPS 协议。
+     * @return Specifies the protocol used for the new request after URL redirection. The parameter values are: followclient: use the protocol of the original request; http: force the new request to use HTTP; https: force the new request to use HTTPS.
      * 
      */
     public Optional<Output<String>> targetProtocol() {
@@ -92,14 +92,14 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
     }
 
     /**
-     * 表示原请求 URL 中的查询参数的处理方式。
+     * Indicates how the query parameters in the original request URL are handled.
      * 
      */
     @Import(name="targetQueryComponents")
     private @Nullable Output<DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsArgs> targetQueryComponents;
 
     /**
-     * @return 表示原请求 URL 中的查询参数的处理方式。
+     * @return Indicates how the query parameters in the original request URL are handled.
      * 
      */
     public Optional<Output<DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsArgs>> targetQueryComponents() {
@@ -136,7 +136,7 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
         }
 
         /**
-         * @param redirectCode 表示 URL 重定向的响应状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+         * @param redirectCode Indicates the response status code for URL redirection. Valid values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original and is not changed.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
         }
 
         /**
-         * @param redirectCode 表示 URL 重定向的响应状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+         * @param redirectCode Indicates the response status code for URL redirection. Valid values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original and is not changed.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
         }
 
         /**
-         * @param sourcePath 表示文件的原路径。也就是请求中包含的路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+         * @param sourcePath Specifies the original file path, which is the path included in the request. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value of this parameter cannot exceed 1,024 characters.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
         }
 
         /**
-         * @param sourcePath 表示文件的原路径。也就是请求中包含的路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+         * @param sourcePath Specifies the original file path, which is the path included in the request. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value of this parameter cannot exceed 1,024 characters.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
         }
 
         /**
-         * @param targetHost 表示目标路径所归属站点的域名或者 IP 地址。IP 地址必须是 IPv4 类型的地址。该参数值的长度不能超过 1,024 个字符。该参数的默认值就是您的加速域名。
+         * @param targetHost Indicates the domain name or IP address of the site to which the target path belongs. The IP address must be IPv4. The parameter value cannot exceed 1,024 characters. The default value is your acceleration domain name.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
         }
 
         /**
-         * @param targetHost 表示目标路径所归属站点的域名或者 IP 地址。IP 地址必须是 IPv4 类型的地址。该参数值的长度不能超过 1,024 个字符。该参数的默认值就是您的加速域名。
+         * @param targetHost Indicates the domain name or IP address of the site to which the target path belongs. The IP address must be IPv4. The parameter value cannot exceed 1,024 characters. The default value is your acceleration domain name.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
         }
 
         /**
-         * @param targetPath 表示跳转后的目标路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+         * @param targetPath Indicates the target path after redirection. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value cannot exceed 1,024 characters.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
         }
 
         /**
-         * @param targetPath 表示跳转后的目标路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+         * @param targetPath Indicates the target path after redirection. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value cannot exceed 1,024 characters.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
         }
 
         /**
-         * @param targetProtocol 表示 URL重定向后的新请求所使用的协议。该参数有以下取值：followclient：表示使用原请求的协议。http：表示新请求强制使用 HTTP 协议。https：表示新请求强制使用 HTTPS 协议。
+         * @param targetProtocol Specifies the protocol used for the new request after URL redirection. The parameter values are: followclient: use the protocol of the original request; http: force the new request to use HTTP; https: force the new request to use HTTPS.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
         }
 
         /**
-         * @param targetProtocol 表示 URL重定向后的新请求所使用的协议。该参数有以下取值：followclient：表示使用原请求的协议。http：表示新请求强制使用 HTTP 协议。https：表示新请求强制使用 HTTPS 协议。
+         * @param targetProtocol Specifies the protocol used for the new request after URL redirection. The parameter values are: followclient: use the protocol of the original request; http: force the new request to use HTTP; https: force the new request to use HTTPS.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
         }
 
         /**
-         * @param targetQueryComponents 表示原请求 URL 中的查询参数的处理方式。
+         * @param targetQueryComponents Indicates how the query parameters in the original request URL are handled.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs 
         }
 
         /**
-         * @param targetQueryComponents 表示原请求 URL 中的查询参数的处理方式。
+         * @param targetQueryComponents Indicates how the query parameters in the original request URL are handled.
          * 
          * @return builder
          * 

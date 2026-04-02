@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamSourceSourceSpec {
     /**
-     * @return 容器集群来源。
+     * @return Container cluster source
      * 
      */
     private @Nullable UpstreamSourceSourceSpecK8SSource k8SSource;
     /**
-     * @return 注册中心来源。
+     * @return Registry source
      * 
      */
     private @Nullable UpstreamSourceSourceSpecNacosSource nacosSource;
 
     private UpstreamSourceSourceSpec() {}
     /**
-     * @return 容器集群来源。
+     * @return Container cluster source
      * 
      */
     public Optional<UpstreamSourceSourceSpecK8SSource> k8SSource() {
         return Optional.ofNullable(this.k8SSource);
     }
     /**
-     * @return 注册中心来源。
+     * @return Registry source
      * 
      */
     public Optional<UpstreamSourceSourceSpecNacosSource> nacosSource() {

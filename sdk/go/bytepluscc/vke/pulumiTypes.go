@@ -15,7 +15,7 @@ var _ = internal.GetEnvOrDefault
 
 type AddonStatus struct {
 	Conditions []AddonStatusCondition `pulumi:"conditions"`
-	// 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+	// Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
 	Phase *string `pulumi:"phase"`
 }
 
@@ -32,7 +32,7 @@ type AddonStatusInput interface {
 
 type AddonStatusArgs struct {
 	Conditions AddonStatusConditionArrayInput `pulumi:"conditions"`
-	// 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+	// Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
 	Phase pulumi.StringPtrInput `pulumi:"phase"`
 }
 
@@ -117,7 +117,7 @@ func (o AddonStatusOutput) Conditions() AddonStatusConditionArrayOutput {
 	return o.ApplyT(func(v AddonStatus) []AddonStatusCondition { return v.Conditions }).(AddonStatusConditionArrayOutput)
 }
 
-// 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+// Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
 func (o AddonStatusOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AddonStatus) *string { return v.Phase }).(pulumi.StringPtrOutput)
 }
@@ -155,7 +155,7 @@ func (o AddonStatusPtrOutput) Conditions() AddonStatusConditionArrayOutput {
 	}).(AddonStatusConditionArrayOutput)
 }
 
-// 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+// Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
 func (o AddonStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AddonStatus) *string {
 		if v == nil {
@@ -254,21 +254,21 @@ func (o AddonStatusConditionArrayOutput) Index(i pulumi.IntInput) AddonStatusCon
 }
 
 type ClusterClusterConfig struct {
-	// 集群 API Server 访问的 IPv4 地址信息。
+	// Cluster API Server access IPv4 address information
 	ApiServerEndpoints *ClusterClusterConfigApiServerEndpoints `pulumi:"apiServerEndpoints"`
-	// 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+	// Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 	ApiServerPublicAccessConfig *ClusterClusterConfigApiServerPublicAccessConfig `pulumi:"apiServerPublicAccessConfig"`
-	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+	// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 	ApiServerPublicAccessEnabled *bool `pulumi:"apiServerPublicAccessEnabled"`
-	// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+	// Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
 	IpFamily *string `pulumi:"ipFamily"`
-	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+	// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 	ResourcePublicAccessDefaultEnabled *bool `pulumi:"resourcePublicAccessDefaultEnabled"`
-	// 集群控制面及节点使用的的安全组。
+	// Security group used by the cluster control plane and nodes.
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 集群控制面在私有网络内通信的子网 ID。
+	// Subnet ID for cluster control plane communication within the private network.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+	// Private network (VPC) ID where the cluster control plane and some nodes are located.
 	VpcId *string `pulumi:"vpcId"`
 }
 
@@ -284,21 +284,21 @@ type ClusterClusterConfigInput interface {
 }
 
 type ClusterClusterConfigArgs struct {
-	// 集群 API Server 访问的 IPv4 地址信息。
+	// Cluster API Server access IPv4 address information
 	ApiServerEndpoints ClusterClusterConfigApiServerEndpointsPtrInput `pulumi:"apiServerEndpoints"`
-	// 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+	// Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 	ApiServerPublicAccessConfig ClusterClusterConfigApiServerPublicAccessConfigPtrInput `pulumi:"apiServerPublicAccessConfig"`
-	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+	// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 	ApiServerPublicAccessEnabled pulumi.BoolPtrInput `pulumi:"apiServerPublicAccessEnabled"`
-	// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+	// Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
 	IpFamily pulumi.StringPtrInput `pulumi:"ipFamily"`
-	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+	// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 	ResourcePublicAccessDefaultEnabled pulumi.BoolPtrInput `pulumi:"resourcePublicAccessDefaultEnabled"`
-	// 集群控制面及节点使用的的安全组。
+	// Security group used by the cluster control plane and nodes.
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 集群控制面在私有网络内通信的子网 ID。
+	// Subnet ID for cluster control plane communication within the private network.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
-	// 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+	// Private network (VPC) ID where the cluster control plane and some nodes are located.
 	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
 }
 
@@ -379,44 +379,44 @@ func (o ClusterClusterConfigOutput) ToClusterClusterConfigPtrOutputWithContext(c
 	}).(ClusterClusterConfigPtrOutput)
 }
 
-// 集群 API Server 访问的 IPv4 地址信息。
+// Cluster API Server access IPv4 address information
 func (o ClusterClusterConfigOutput) ApiServerEndpoints() ClusterClusterConfigApiServerEndpointsPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfig) *ClusterClusterConfigApiServerEndpoints { return v.ApiServerEndpoints }).(ClusterClusterConfigApiServerEndpointsPtrOutput)
 }
 
-// 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+// Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 func (o ClusterClusterConfigOutput) ApiServerPublicAccessConfig() ClusterClusterConfigApiServerPublicAccessConfigPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfig) *ClusterClusterConfigApiServerPublicAccessConfig {
 		return v.ApiServerPublicAccessConfig
 	}).(ClusterClusterConfigApiServerPublicAccessConfigPtrOutput)
 }
 
-// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 func (o ClusterClusterConfigOutput) ApiServerPublicAccessEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfig) *bool { return v.ApiServerPublicAccessEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+// Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
 func (o ClusterClusterConfigOutput) IpFamily() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfig) *string { return v.IpFamily }).(pulumi.StringPtrOutput)
 }
 
-// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 func (o ClusterClusterConfigOutput) ResourcePublicAccessDefaultEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfig) *bool { return v.ResourcePublicAccessDefaultEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// 集群控制面及节点使用的的安全组。
+// Security group used by the cluster control plane and nodes.
 func (o ClusterClusterConfigOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterClusterConfig) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 集群控制面在私有网络内通信的子网 ID。
+// Subnet ID for cluster control plane communication within the private network.
 func (o ClusterClusterConfigOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterClusterConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+// Private network (VPC) ID where the cluster control plane and some nodes are located.
 func (o ClusterClusterConfigOutput) VpcId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfig) *string { return v.VpcId }).(pulumi.StringPtrOutput)
 }
@@ -445,7 +445,7 @@ func (o ClusterClusterConfigPtrOutput) Elem() ClusterClusterConfigOutput {
 	}).(ClusterClusterConfigOutput)
 }
 
-// 集群 API Server 访问的 IPv4 地址信息。
+// Cluster API Server access IPv4 address information
 func (o ClusterClusterConfigPtrOutput) ApiServerEndpoints() ClusterClusterConfigApiServerEndpointsPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfig) *ClusterClusterConfigApiServerEndpoints {
 		if v == nil {
@@ -455,7 +455,7 @@ func (o ClusterClusterConfigPtrOutput) ApiServerEndpoints() ClusterClusterConfig
 	}).(ClusterClusterConfigApiServerEndpointsPtrOutput)
 }
 
-// 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+// Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 func (o ClusterClusterConfigPtrOutput) ApiServerPublicAccessConfig() ClusterClusterConfigApiServerPublicAccessConfigPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfig) *ClusterClusterConfigApiServerPublicAccessConfig {
 		if v == nil {
@@ -465,7 +465,7 @@ func (o ClusterClusterConfigPtrOutput) ApiServerPublicAccessConfig() ClusterClus
 	}).(ClusterClusterConfigApiServerPublicAccessConfigPtrOutput)
 }
 
-// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 func (o ClusterClusterConfigPtrOutput) ApiServerPublicAccessEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfig) *bool {
 		if v == nil {
@@ -475,7 +475,7 @@ func (o ClusterClusterConfigPtrOutput) ApiServerPublicAccessEnabled() pulumi.Boo
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+// Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
 func (o ClusterClusterConfigPtrOutput) IpFamily() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfig) *string {
 		if v == nil {
@@ -485,7 +485,7 @@ func (o ClusterClusterConfigPtrOutput) IpFamily() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 func (o ClusterClusterConfigPtrOutput) ResourcePublicAccessDefaultEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfig) *bool {
 		if v == nil {
@@ -495,7 +495,7 @@ func (o ClusterClusterConfigPtrOutput) ResourcePublicAccessDefaultEnabled() pulu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 集群控制面及节点使用的的安全组。
+// Security group used by the cluster control plane and nodes.
 func (o ClusterClusterConfigPtrOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterClusterConfig) []string {
 		if v == nil {
@@ -505,7 +505,7 @@ func (o ClusterClusterConfigPtrOutput) SecurityGroupIds() pulumi.StringArrayOutp
 	}).(pulumi.StringArrayOutput)
 }
 
-// 集群控制面在私有网络内通信的子网 ID。
+// Subnet ID for cluster control plane communication within the private network.
 func (o ClusterClusterConfigPtrOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterClusterConfig) []string {
 		if v == nil {
@@ -515,7 +515,7 @@ func (o ClusterClusterConfigPtrOutput) SubnetIds() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
-// 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+// Private network (VPC) ID where the cluster control plane and some nodes are located.
 func (o ClusterClusterConfigPtrOutput) VpcId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfig) *string {
 		if v == nil {
@@ -526,9 +526,9 @@ func (o ClusterClusterConfigPtrOutput) VpcId() pulumi.StringPtrOutput {
 }
 
 type ClusterClusterConfigApiServerEndpoints struct {
-	// 集群 API Server 私网的 IPv4 地址。
+	// Cluster API Server private IPv4 address.
 	PrivateIp *ClusterClusterConfigApiServerEndpointsPrivateIp `pulumi:"privateIp"`
-	// 集群 API Server 公网的 IPv4 地址。
+	// Cluster API Server public IPv4 address
 	PublicIp *ClusterClusterConfigApiServerEndpointsPublicIp `pulumi:"publicIp"`
 }
 
@@ -544,9 +544,9 @@ type ClusterClusterConfigApiServerEndpointsInput interface {
 }
 
 type ClusterClusterConfigApiServerEndpointsArgs struct {
-	// 集群 API Server 私网的 IPv4 地址。
+	// Cluster API Server private IPv4 address.
 	PrivateIp ClusterClusterConfigApiServerEndpointsPrivateIpPtrInput `pulumi:"privateIp"`
-	// 集群 API Server 公网的 IPv4 地址。
+	// Cluster API Server public IPv4 address
 	PublicIp ClusterClusterConfigApiServerEndpointsPublicIpPtrInput `pulumi:"publicIp"`
 }
 
@@ -627,14 +627,14 @@ func (o ClusterClusterConfigApiServerEndpointsOutput) ToClusterClusterConfigApiS
 	}).(ClusterClusterConfigApiServerEndpointsPtrOutput)
 }
 
-// 集群 API Server 私网的 IPv4 地址。
+// Cluster API Server private IPv4 address.
 func (o ClusterClusterConfigApiServerEndpointsOutput) PrivateIp() ClusterClusterConfigApiServerEndpointsPrivateIpPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfigApiServerEndpoints) *ClusterClusterConfigApiServerEndpointsPrivateIp {
 		return v.PrivateIp
 	}).(ClusterClusterConfigApiServerEndpointsPrivateIpPtrOutput)
 }
 
-// 集群 API Server 公网的 IPv4 地址。
+// Cluster API Server public IPv4 address
 func (o ClusterClusterConfigApiServerEndpointsOutput) PublicIp() ClusterClusterConfigApiServerEndpointsPublicIpPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfigApiServerEndpoints) *ClusterClusterConfigApiServerEndpointsPublicIp {
 		return v.PublicIp
@@ -665,7 +665,7 @@ func (o ClusterClusterConfigApiServerEndpointsPtrOutput) Elem() ClusterClusterCo
 	}).(ClusterClusterConfigApiServerEndpointsOutput)
 }
 
-// 集群 API Server 私网的 IPv4 地址。
+// Cluster API Server private IPv4 address.
 func (o ClusterClusterConfigApiServerEndpointsPtrOutput) PrivateIp() ClusterClusterConfigApiServerEndpointsPrivateIpPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfigApiServerEndpoints) *ClusterClusterConfigApiServerEndpointsPrivateIp {
 		if v == nil {
@@ -675,7 +675,7 @@ func (o ClusterClusterConfigApiServerEndpointsPtrOutput) PrivateIp() ClusterClus
 	}).(ClusterClusterConfigApiServerEndpointsPrivateIpPtrOutput)
 }
 
-// 集群 API Server 公网的 IPv4 地址。
+// Cluster API Server public IPv4 address
 func (o ClusterClusterConfigApiServerEndpointsPtrOutput) PublicIp() ClusterClusterConfigApiServerEndpointsPublicIpPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfigApiServerEndpoints) *ClusterClusterConfigApiServerEndpointsPublicIp {
 		if v == nil {
@@ -686,7 +686,7 @@ func (o ClusterClusterConfigApiServerEndpointsPtrOutput) PublicIp() ClusterClust
 }
 
 type ClusterClusterConfigApiServerEndpointsPrivateIp struct {
-	// 私网 IP 的 IPv4 地址。
+	// IPv4 address of the private network IP.
 	Ipv4 *string `pulumi:"ipv4"`
 }
 
@@ -702,7 +702,7 @@ type ClusterClusterConfigApiServerEndpointsPrivateIpInput interface {
 }
 
 type ClusterClusterConfigApiServerEndpointsPrivateIpArgs struct {
-	// 私网 IP 的 IPv4 地址。
+	// IPv4 address of the private network IP.
 	Ipv4 pulumi.StringPtrInput `pulumi:"ipv4"`
 }
 
@@ -783,7 +783,7 @@ func (o ClusterClusterConfigApiServerEndpointsPrivateIpOutput) ToClusterClusterC
 	}).(ClusterClusterConfigApiServerEndpointsPrivateIpPtrOutput)
 }
 
-// 私网 IP 的 IPv4 地址。
+// IPv4 address of the private network IP.
 func (o ClusterClusterConfigApiServerEndpointsPrivateIpOutput) Ipv4() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfigApiServerEndpointsPrivateIp) *string { return v.Ipv4 }).(pulumi.StringPtrOutput)
 }
@@ -812,7 +812,7 @@ func (o ClusterClusterConfigApiServerEndpointsPrivateIpPtrOutput) Elem() Cluster
 	}).(ClusterClusterConfigApiServerEndpointsPrivateIpOutput)
 }
 
-// 私网 IP 的 IPv4 地址。
+// IPv4 address of the private network IP.
 func (o ClusterClusterConfigApiServerEndpointsPrivateIpPtrOutput) Ipv4() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfigApiServerEndpointsPrivateIp) *string {
 		if v == nil {
@@ -823,7 +823,7 @@ func (o ClusterClusterConfigApiServerEndpointsPrivateIpPtrOutput) Ipv4() pulumi.
 }
 
 type ClusterClusterConfigApiServerEndpointsPublicIp struct {
-	// 公网 IP 的 IPv4 地址。
+	// IPv4 address of the public IP.
 	Ipv4 *string `pulumi:"ipv4"`
 }
 
@@ -839,7 +839,7 @@ type ClusterClusterConfigApiServerEndpointsPublicIpInput interface {
 }
 
 type ClusterClusterConfigApiServerEndpointsPublicIpArgs struct {
-	// 公网 IP 的 IPv4 地址。
+	// IPv4 address of the public IP.
 	Ipv4 pulumi.StringPtrInput `pulumi:"ipv4"`
 }
 
@@ -920,7 +920,7 @@ func (o ClusterClusterConfigApiServerEndpointsPublicIpOutput) ToClusterClusterCo
 	}).(ClusterClusterConfigApiServerEndpointsPublicIpPtrOutput)
 }
 
-// 公网 IP 的 IPv4 地址。
+// IPv4 address of the public IP.
 func (o ClusterClusterConfigApiServerEndpointsPublicIpOutput) Ipv4() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfigApiServerEndpointsPublicIp) *string { return v.Ipv4 }).(pulumi.StringPtrOutput)
 }
@@ -949,7 +949,7 @@ func (o ClusterClusterConfigApiServerEndpointsPublicIpPtrOutput) Elem() ClusterC
 	}).(ClusterClusterConfigApiServerEndpointsPublicIpOutput)
 }
 
-// 公网 IP 的 IPv4 地址。
+// IPv4 address of the public IP.
 func (o ClusterClusterConfigApiServerEndpointsPublicIpPtrOutput) Ipv4() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfigApiServerEndpointsPublicIp) *string {
 		if v == nil {
@@ -960,7 +960,7 @@ func (o ClusterClusterConfigApiServerEndpointsPublicIpPtrOutput) Ipv4() pulumi.S
 }
 
 type ClusterClusterConfigApiServerPublicAccessConfig struct {
-	// 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+	// Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 	PublicAccessNetworkConfig *ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig `pulumi:"publicAccessNetworkConfig"`
 }
 
@@ -976,7 +976,7 @@ type ClusterClusterConfigApiServerPublicAccessConfigInput interface {
 }
 
 type ClusterClusterConfigApiServerPublicAccessConfigArgs struct {
-	// 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+	// Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 	PublicAccessNetworkConfig ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigPtrInput `pulumi:"publicAccessNetworkConfig"`
 }
 
@@ -1057,7 +1057,7 @@ func (o ClusterClusterConfigApiServerPublicAccessConfigOutput) ToClusterClusterC
 	}).(ClusterClusterConfigApiServerPublicAccessConfigPtrOutput)
 }
 
-// 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+// Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 func (o ClusterClusterConfigApiServerPublicAccessConfigOutput) PublicAccessNetworkConfig() ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfigApiServerPublicAccessConfig) *ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig {
 		return v.PublicAccessNetworkConfig
@@ -1088,7 +1088,7 @@ func (o ClusterClusterConfigApiServerPublicAccessConfigPtrOutput) Elem() Cluster
 	}).(ClusterClusterConfigApiServerPublicAccessConfigOutput)
 }
 
-// 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+// Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 func (o ClusterClusterConfigApiServerPublicAccessConfigPtrOutput) PublicAccessNetworkConfig() ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfigApiServerPublicAccessConfig) *ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig {
 		if v == nil {
@@ -1099,11 +1099,11 @@ func (o ClusterClusterConfigApiServerPublicAccessConfigPtrOutput) PublicAccessNe
 }
 
 type ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig struct {
-	// 公网 IP 的带宽峰值，单位：Mbps。
+	// Peak bandwidth of the public IP, unit: Mbps
 	Bandwidth *int `pulumi:"bandwidth"`
-	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 	BillingType *int `pulumi:"billingType"`
-	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	// Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
 	Isp *string `pulumi:"isp"`
 }
 
@@ -1119,11 +1119,11 @@ type ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigInp
 }
 
 type ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigArgs struct {
-	// 公网 IP 的带宽峰值，单位：Mbps。
+	// Peak bandwidth of the public IP, unit: Mbps
 	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
-	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 	BillingType pulumi.IntPtrInput `pulumi:"billingType"`
-	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	// Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
 	Isp pulumi.StringPtrInput `pulumi:"isp"`
 }
 
@@ -1204,21 +1204,21 @@ func (o ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig
 	}).(ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigPtrOutput)
 }
 
-// 公网 IP 的带宽峰值，单位：Mbps。
+// Peak bandwidth of the public IP, unit: Mbps
 func (o ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig) *int {
 		return v.Bandwidth
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 func (o ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigOutput) BillingType() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig) *int {
 		return v.BillingType
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+// Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
 func (o ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig) *string { return v.Isp }).(pulumi.StringPtrOutput)
 }
@@ -1247,7 +1247,7 @@ func (o ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig
 	}).(ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigOutput)
 }
 
-// 公网 IP 的带宽峰值，单位：Mbps。
+// Peak bandwidth of the public IP, unit: Mbps
 func (o ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigPtrOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig) *int {
 		if v == nil {
@@ -1257,7 +1257,7 @@ func (o ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 func (o ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigPtrOutput) BillingType() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig) *int {
 		if v == nil {
@@ -1267,7 +1267,7 @@ func (o ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+// Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
 func (o ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigPtrOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig) *string {
 		if v == nil {
@@ -1278,17 +1278,17 @@ func (o ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig
 }
 
 type ClusterIrsaConfig struct {
-	// 接受令牌的标识符。
+	// Identifier for accepting tokens
 	Audience *string `pulumi:"audience"`
-	// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+	// Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
 	Enabled *bool `pulumi:"enabled"`
-	// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+	// OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
 	Issuer *string `pulumi:"issuer"`
-	// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+	// JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
 	JwksUrl *string `pulumi:"jwksUrl"`
-	// OIDC 提供商 TRN。
+	// OIDC provider TRN.
 	OidcTrn *string `pulumi:"oidcTrn"`
-	// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+	// OIDC provider configuration document in JSON format, containing information about the OIDC provider.
 	OpenIdConfigUrl *string `pulumi:"openIdConfigUrl"`
 }
 
@@ -1304,17 +1304,17 @@ type ClusterIrsaConfigInput interface {
 }
 
 type ClusterIrsaConfigArgs struct {
-	// 接受令牌的标识符。
+	// Identifier for accepting tokens
 	Audience pulumi.StringPtrInput `pulumi:"audience"`
-	// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+	// Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+	// OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
 	Issuer pulumi.StringPtrInput `pulumi:"issuer"`
-	// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+	// JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
 	JwksUrl pulumi.StringPtrInput `pulumi:"jwksUrl"`
-	// OIDC 提供商 TRN。
+	// OIDC provider TRN.
 	OidcTrn pulumi.StringPtrInput `pulumi:"oidcTrn"`
-	// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+	// OIDC provider configuration document in JSON format, containing information about the OIDC provider.
 	OpenIdConfigUrl pulumi.StringPtrInput `pulumi:"openIdConfigUrl"`
 }
 
@@ -1395,32 +1395,32 @@ func (o ClusterIrsaConfigOutput) ToClusterIrsaConfigPtrOutputWithContext(ctx con
 	}).(ClusterIrsaConfigPtrOutput)
 }
 
-// 接受令牌的标识符。
+// Identifier for accepting tokens
 func (o ClusterIrsaConfigOutput) Audience() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterIrsaConfig) *string { return v.Audience }).(pulumi.StringPtrOutput)
 }
 
-// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+// Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
 func (o ClusterIrsaConfigOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterIrsaConfig) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+// OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
 func (o ClusterIrsaConfigOutput) Issuer() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterIrsaConfig) *string { return v.Issuer }).(pulumi.StringPtrOutput)
 }
 
-// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+// JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
 func (o ClusterIrsaConfigOutput) JwksUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterIrsaConfig) *string { return v.JwksUrl }).(pulumi.StringPtrOutput)
 }
 
-// OIDC 提供商 TRN。
+// OIDC provider TRN.
 func (o ClusterIrsaConfigOutput) OidcTrn() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterIrsaConfig) *string { return v.OidcTrn }).(pulumi.StringPtrOutput)
 }
 
-// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+// OIDC provider configuration document in JSON format, containing information about the OIDC provider.
 func (o ClusterIrsaConfigOutput) OpenIdConfigUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterIrsaConfig) *string { return v.OpenIdConfigUrl }).(pulumi.StringPtrOutput)
 }
@@ -1449,7 +1449,7 @@ func (o ClusterIrsaConfigPtrOutput) Elem() ClusterIrsaConfigOutput {
 	}).(ClusterIrsaConfigOutput)
 }
 
-// 接受令牌的标识符。
+// Identifier for accepting tokens
 func (o ClusterIrsaConfigPtrOutput) Audience() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterIrsaConfig) *string {
 		if v == nil {
@@ -1459,7 +1459,7 @@ func (o ClusterIrsaConfigPtrOutput) Audience() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+// Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
 func (o ClusterIrsaConfigPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ClusterIrsaConfig) *bool {
 		if v == nil {
@@ -1469,7 +1469,7 @@ func (o ClusterIrsaConfigPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+// OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
 func (o ClusterIrsaConfigPtrOutput) Issuer() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterIrsaConfig) *string {
 		if v == nil {
@@ -1479,7 +1479,7 @@ func (o ClusterIrsaConfigPtrOutput) Issuer() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+// JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
 func (o ClusterIrsaConfigPtrOutput) JwksUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterIrsaConfig) *string {
 		if v == nil {
@@ -1489,7 +1489,7 @@ func (o ClusterIrsaConfigPtrOutput) JwksUrl() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// OIDC 提供商 TRN。
+// OIDC provider TRN.
 func (o ClusterIrsaConfigPtrOutput) OidcTrn() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterIrsaConfig) *string {
 		if v == nil {
@@ -1499,7 +1499,7 @@ func (o ClusterIrsaConfigPtrOutput) OidcTrn() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+// OIDC provider configuration document in JSON format, containing information about the OIDC provider.
 func (o ClusterIrsaConfigPtrOutput) OpenIdConfigUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterIrsaConfig) *string {
 		if v == nil {
@@ -1510,7 +1510,7 @@ func (o ClusterIrsaConfigPtrOutput) OpenIdConfigUrl() pulumi.StringPtrOutput {
 }
 
 type ClusterLoggingConfig struct {
-	// 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+	// Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
 	LogProjectId *string                        `pulumi:"logProjectId"`
 	LogSetups    []ClusterLoggingConfigLogSetup `pulumi:"logSetups"`
 }
@@ -1527,7 +1527,7 @@ type ClusterLoggingConfigInput interface {
 }
 
 type ClusterLoggingConfigArgs struct {
-	// 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+	// Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
 	LogProjectId pulumi.StringPtrInput                  `pulumi:"logProjectId"`
 	LogSetups    ClusterLoggingConfigLogSetupArrayInput `pulumi:"logSetups"`
 }
@@ -1609,7 +1609,7 @@ func (o ClusterLoggingConfigOutput) ToClusterLoggingConfigPtrOutputWithContext(c
 	}).(ClusterLoggingConfigPtrOutput)
 }
 
-// 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+// Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
 func (o ClusterLoggingConfigOutput) LogProjectId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterLoggingConfig) *string { return v.LogProjectId }).(pulumi.StringPtrOutput)
 }
@@ -1642,7 +1642,7 @@ func (o ClusterLoggingConfigPtrOutput) Elem() ClusterLoggingConfigOutput {
 	}).(ClusterLoggingConfigOutput)
 }
 
-// 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+// Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
 func (o ClusterLoggingConfigPtrOutput) LogProjectId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterLoggingConfig) *string {
 		if v == nil {
@@ -1662,11 +1662,11 @@ func (o ClusterLoggingConfigPtrOutput) LogSetups() ClusterLoggingConfigLogSetupA
 }
 
 type ClusterLoggingConfigLogSetup struct {
-	// 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+	// Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
 	Enabled *bool `pulumi:"enabled"`
-	// 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+	// Retention period of logs in log service, in days. 3650 days means permanent storage.
 	LogTtl *int `pulumi:"logTtl"`
-	// 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+	// Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
 	LogType *string `pulumi:"logType"`
 }
 
@@ -1682,11 +1682,11 @@ type ClusterLoggingConfigLogSetupInput interface {
 }
 
 type ClusterLoggingConfigLogSetupArgs struct {
-	// 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+	// Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+	// Retention period of logs in log service, in days. 3650 days means permanent storage.
 	LogTtl pulumi.IntPtrInput `pulumi:"logTtl"`
-	// 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+	// Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
 	LogType pulumi.StringPtrInput `pulumi:"logType"`
 }
 
@@ -1741,17 +1741,17 @@ func (o ClusterLoggingConfigLogSetupOutput) ToClusterLoggingConfigLogSetupOutput
 	return o
 }
 
-// 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+// Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
 func (o ClusterLoggingConfigLogSetupOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterLoggingConfigLogSetup) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+// Retention period of logs in log service, in days. 3650 days means permanent storage.
 func (o ClusterLoggingConfigLogSetupOutput) LogTtl() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterLoggingConfigLogSetup) *int { return v.LogTtl }).(pulumi.IntPtrOutput)
 }
 
-// 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+// Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
 func (o ClusterLoggingConfigLogSetupOutput) LogType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterLoggingConfigLogSetup) *string { return v.LogType }).(pulumi.StringPtrOutput)
 }
@@ -1778,9 +1778,9 @@ func (o ClusterLoggingConfigLogSetupArrayOutput) Index(i pulumi.IntInput) Cluste
 
 type ClusterMonitoringConfig struct {
 	ComponentConfigs []ClusterMonitoringConfigComponentConfig `pulumi:"componentConfigs"`
-	// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+	// Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
 	EnableMetricsExternalCollection *bool `pulumi:"enableMetricsExternalCollection"`
-	// 监控数据所属的工作区 ID。
+	// Workspace ID to which the monitoring data belongs.
 	WorkspaceId *string `pulumi:"workspaceId"`
 }
 
@@ -1797,9 +1797,9 @@ type ClusterMonitoringConfigInput interface {
 
 type ClusterMonitoringConfigArgs struct {
 	ComponentConfigs ClusterMonitoringConfigComponentConfigArrayInput `pulumi:"componentConfigs"`
-	// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+	// Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
 	EnableMetricsExternalCollection pulumi.BoolPtrInput `pulumi:"enableMetricsExternalCollection"`
-	// 监控数据所属的工作区 ID。
+	// Workspace ID to which the monitoring data belongs.
 	WorkspaceId pulumi.StringPtrInput `pulumi:"workspaceId"`
 }
 
@@ -1884,12 +1884,12 @@ func (o ClusterMonitoringConfigOutput) ComponentConfigs() ClusterMonitoringConfi
 	return o.ApplyT(func(v ClusterMonitoringConfig) []ClusterMonitoringConfigComponentConfig { return v.ComponentConfigs }).(ClusterMonitoringConfigComponentConfigArrayOutput)
 }
 
-// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+// Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
 func (o ClusterMonitoringConfigOutput) EnableMetricsExternalCollection() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterMonitoringConfig) *bool { return v.EnableMetricsExternalCollection }).(pulumi.BoolPtrOutput)
 }
 
-// 监控数据所属的工作区 ID。
+// Workspace ID to which the monitoring data belongs.
 func (o ClusterMonitoringConfigOutput) WorkspaceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterMonitoringConfig) *string { return v.WorkspaceId }).(pulumi.StringPtrOutput)
 }
@@ -1927,7 +1927,7 @@ func (o ClusterMonitoringConfigPtrOutput) ComponentConfigs() ClusterMonitoringCo
 	}).(ClusterMonitoringConfigComponentConfigArrayOutput)
 }
 
-// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+// Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
 func (o ClusterMonitoringConfigPtrOutput) EnableMetricsExternalCollection() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ClusterMonitoringConfig) *bool {
 		if v == nil {
@@ -1937,7 +1937,7 @@ func (o ClusterMonitoringConfigPtrOutput) EnableMetricsExternalCollection() pulu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 监控数据所属的工作区 ID。
+// Workspace ID to which the monitoring data belongs.
 func (o ClusterMonitoringConfigPtrOutput) WorkspaceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterMonitoringConfig) *string {
 		if v == nil {
@@ -1948,9 +1948,9 @@ func (o ClusterMonitoringConfigPtrOutput) WorkspaceId() pulumi.StringPtrOutput {
 }
 
 type ClusterMonitoringConfigComponentConfig struct {
-	// 是否启用该监控组件，true 表示启用，false 表示禁用。
+	// Whether to enable this monitoring component. true means enabled; false means disabled.
 	Enabled *bool `pulumi:"enabled"`
-	// 监控组件的名称，例如 'prometheus'、'grafana' 等。
+	// Name of the monitoring component, such as 'prometheus', 'grafana', etc.
 	Name *string `pulumi:"name"`
 }
 
@@ -1966,9 +1966,9 @@ type ClusterMonitoringConfigComponentConfigInput interface {
 }
 
 type ClusterMonitoringConfigComponentConfigArgs struct {
-	// 是否启用该监控组件，true 表示启用，false 表示禁用。
+	// Whether to enable this monitoring component. true means enabled; false means disabled.
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// 监控组件的名称，例如 'prometheus'、'grafana' 等。
+	// Name of the monitoring component, such as 'prometheus', 'grafana', etc.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -2023,12 +2023,12 @@ func (o ClusterMonitoringConfigComponentConfigOutput) ToClusterMonitoringConfigC
 	return o
 }
 
-// 是否启用该监控组件，true 表示启用，false 表示禁用。
+// Whether to enable this monitoring component. true means enabled; false means disabled.
 func (o ClusterMonitoringConfigComponentConfigOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterMonitoringConfigComponentConfig) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// 监控组件的名称，例如 'prometheus'、'grafana' 等。
+// Name of the monitoring component, such as 'prometheus', 'grafana', etc.
 func (o ClusterMonitoringConfigComponentConfigOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterMonitoringConfigComponentConfig) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -2054,17 +2054,17 @@ func (o ClusterMonitoringConfigComponentConfigArrayOutput) Index(i pulumi.IntInp
 }
 
 type ClusterNodeStatistics struct {
-	// Phase=Creating的节点总数量。
+	// Total number of nodes in Phase=Creating.
 	CreatingCount *int `pulumi:"creatingCount"`
-	// Phase=Deleting的节点总数量。
+	// Total number of nodes with Phase=Deleting.
 	DeletingCount *int `pulumi:"deletingCount"`
-	// Phase=Failed的节点总数量。
+	// Total number of nodes with Phase=Failed.
 	FailedCount *int `pulumi:"failedCount"`
-	// Phase=Running的节点总数量。
+	// Total number of nodes with Phase=Running.
 	RunningCount *int `pulumi:"runningCount"`
-	// 节点总数量。
+	// Total number of nodes.
 	TotalCount *int `pulumi:"totalCount"`
-	// Phase=Updating的节点总数量。
+	// Total number of nodes in Phase=Updating.
 	UpdatingCount *int `pulumi:"updatingCount"`
 }
 
@@ -2080,17 +2080,17 @@ type ClusterNodeStatisticsInput interface {
 }
 
 type ClusterNodeStatisticsArgs struct {
-	// Phase=Creating的节点总数量。
+	// Total number of nodes in Phase=Creating.
 	CreatingCount pulumi.IntPtrInput `pulumi:"creatingCount"`
-	// Phase=Deleting的节点总数量。
+	// Total number of nodes with Phase=Deleting.
 	DeletingCount pulumi.IntPtrInput `pulumi:"deletingCount"`
-	// Phase=Failed的节点总数量。
+	// Total number of nodes with Phase=Failed.
 	FailedCount pulumi.IntPtrInput `pulumi:"failedCount"`
-	// Phase=Running的节点总数量。
+	// Total number of nodes with Phase=Running.
 	RunningCount pulumi.IntPtrInput `pulumi:"runningCount"`
-	// 节点总数量。
+	// Total number of nodes.
 	TotalCount pulumi.IntPtrInput `pulumi:"totalCount"`
-	// Phase=Updating的节点总数量。
+	// Total number of nodes in Phase=Updating.
 	UpdatingCount pulumi.IntPtrInput `pulumi:"updatingCount"`
 }
 
@@ -2171,32 +2171,32 @@ func (o ClusterNodeStatisticsOutput) ToClusterNodeStatisticsPtrOutputWithContext
 	}).(ClusterNodeStatisticsPtrOutput)
 }
 
-// Phase=Creating的节点总数量。
+// Total number of nodes in Phase=Creating.
 func (o ClusterNodeStatisticsOutput) CreatingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterNodeStatistics) *int { return v.CreatingCount }).(pulumi.IntPtrOutput)
 }
 
-// Phase=Deleting的节点总数量。
+// Total number of nodes with Phase=Deleting.
 func (o ClusterNodeStatisticsOutput) DeletingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterNodeStatistics) *int { return v.DeletingCount }).(pulumi.IntPtrOutput)
 }
 
-// Phase=Failed的节点总数量。
+// Total number of nodes with Phase=Failed.
 func (o ClusterNodeStatisticsOutput) FailedCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterNodeStatistics) *int { return v.FailedCount }).(pulumi.IntPtrOutput)
 }
 
-// Phase=Running的节点总数量。
+// Total number of nodes with Phase=Running.
 func (o ClusterNodeStatisticsOutput) RunningCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterNodeStatistics) *int { return v.RunningCount }).(pulumi.IntPtrOutput)
 }
 
-// 节点总数量。
+// Total number of nodes.
 func (o ClusterNodeStatisticsOutput) TotalCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterNodeStatistics) *int { return v.TotalCount }).(pulumi.IntPtrOutput)
 }
 
-// Phase=Updating的节点总数量。
+// Total number of nodes in Phase=Updating.
 func (o ClusterNodeStatisticsOutput) UpdatingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterNodeStatistics) *int { return v.UpdatingCount }).(pulumi.IntPtrOutput)
 }
@@ -2225,7 +2225,7 @@ func (o ClusterNodeStatisticsPtrOutput) Elem() ClusterNodeStatisticsOutput {
 	}).(ClusterNodeStatisticsOutput)
 }
 
-// Phase=Creating的节点总数量。
+// Total number of nodes in Phase=Creating.
 func (o ClusterNodeStatisticsPtrOutput) CreatingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ClusterNodeStatistics) *int {
 		if v == nil {
@@ -2235,7 +2235,7 @@ func (o ClusterNodeStatisticsPtrOutput) CreatingCount() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Phase=Deleting的节点总数量。
+// Total number of nodes with Phase=Deleting.
 func (o ClusterNodeStatisticsPtrOutput) DeletingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ClusterNodeStatistics) *int {
 		if v == nil {
@@ -2245,7 +2245,7 @@ func (o ClusterNodeStatisticsPtrOutput) DeletingCount() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Phase=Failed的节点总数量。
+// Total number of nodes with Phase=Failed.
 func (o ClusterNodeStatisticsPtrOutput) FailedCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ClusterNodeStatistics) *int {
 		if v == nil {
@@ -2255,7 +2255,7 @@ func (o ClusterNodeStatisticsPtrOutput) FailedCount() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Phase=Running的节点总数量。
+// Total number of nodes with Phase=Running.
 func (o ClusterNodeStatisticsPtrOutput) RunningCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ClusterNodeStatistics) *int {
 		if v == nil {
@@ -2265,7 +2265,7 @@ func (o ClusterNodeStatisticsPtrOutput) RunningCount() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点总数量。
+// Total number of nodes.
 func (o ClusterNodeStatisticsPtrOutput) TotalCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ClusterNodeStatistics) *int {
 		if v == nil {
@@ -2275,7 +2275,7 @@ func (o ClusterNodeStatisticsPtrOutput) TotalCount() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Phase=Updating的节点总数量。
+// Total number of nodes in Phase=Updating.
 func (o ClusterNodeStatisticsPtrOutput) UpdatingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ClusterNodeStatistics) *int {
 		if v == nil {
@@ -2286,11 +2286,11 @@ func (o ClusterNodeStatisticsPtrOutput) UpdatingCount() pulumi.IntPtrOutput {
 }
 
 type ClusterPodsConfig struct {
-	// Flannel 网络配置。
+	// Flannel network configuration.
 	FlannelConfig *ClusterPodsConfigFlannelConfig `pulumi:"flannelConfig"`
-	// 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+	// Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
 	PodNetworkMode *string `pulumi:"podNetworkMode"`
-	// VPC-CNI 网络配置。
+	// VPC-CNI network configuration.
 	VpcCniConfig *ClusterPodsConfigVpcCniConfig `pulumi:"vpcCniConfig"`
 }
 
@@ -2306,11 +2306,11 @@ type ClusterPodsConfigInput interface {
 }
 
 type ClusterPodsConfigArgs struct {
-	// Flannel 网络配置。
+	// Flannel network configuration.
 	FlannelConfig ClusterPodsConfigFlannelConfigPtrInput `pulumi:"flannelConfig"`
-	// 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+	// Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
 	PodNetworkMode pulumi.StringPtrInput `pulumi:"podNetworkMode"`
-	// VPC-CNI 网络配置。
+	// VPC-CNI network configuration.
 	VpcCniConfig ClusterPodsConfigVpcCniConfigPtrInput `pulumi:"vpcCniConfig"`
 }
 
@@ -2391,17 +2391,17 @@ func (o ClusterPodsConfigOutput) ToClusterPodsConfigPtrOutputWithContext(ctx con
 	}).(ClusterPodsConfigPtrOutput)
 }
 
-// Flannel 网络配置。
+// Flannel network configuration.
 func (o ClusterPodsConfigOutput) FlannelConfig() ClusterPodsConfigFlannelConfigPtrOutput {
 	return o.ApplyT(func(v ClusterPodsConfig) *ClusterPodsConfigFlannelConfig { return v.FlannelConfig }).(ClusterPodsConfigFlannelConfigPtrOutput)
 }
 
-// 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+// Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
 func (o ClusterPodsConfigOutput) PodNetworkMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterPodsConfig) *string { return v.PodNetworkMode }).(pulumi.StringPtrOutput)
 }
 
-// VPC-CNI 网络配置。
+// VPC-CNI network configuration.
 func (o ClusterPodsConfigOutput) VpcCniConfig() ClusterPodsConfigVpcCniConfigPtrOutput {
 	return o.ApplyT(func(v ClusterPodsConfig) *ClusterPodsConfigVpcCniConfig { return v.VpcCniConfig }).(ClusterPodsConfigVpcCniConfigPtrOutput)
 }
@@ -2430,7 +2430,7 @@ func (o ClusterPodsConfigPtrOutput) Elem() ClusterPodsConfigOutput {
 	}).(ClusterPodsConfigOutput)
 }
 
-// Flannel 网络配置。
+// Flannel network configuration.
 func (o ClusterPodsConfigPtrOutput) FlannelConfig() ClusterPodsConfigFlannelConfigPtrOutput {
 	return o.ApplyT(func(v *ClusterPodsConfig) *ClusterPodsConfigFlannelConfig {
 		if v == nil {
@@ -2440,7 +2440,7 @@ func (o ClusterPodsConfigPtrOutput) FlannelConfig() ClusterPodsConfigFlannelConf
 	}).(ClusterPodsConfigFlannelConfigPtrOutput)
 }
 
-// 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+// Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
 func (o ClusterPodsConfigPtrOutput) PodNetworkMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterPodsConfig) *string {
 		if v == nil {
@@ -2450,7 +2450,7 @@ func (o ClusterPodsConfigPtrOutput) PodNetworkMode() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// VPC-CNI 网络配置。
+// VPC-CNI network configuration.
 func (o ClusterPodsConfigPtrOutput) VpcCniConfig() ClusterPodsConfigVpcCniConfigPtrOutput {
 	return o.ApplyT(func(v *ClusterPodsConfig) *ClusterPodsConfigVpcCniConfig {
 		if v == nil {
@@ -2461,11 +2461,11 @@ func (o ClusterPodsConfigPtrOutput) VpcCniConfig() ClusterPodsConfigVpcCniConfig
 }
 
 type ClusterPodsConfigFlannelConfig struct {
-	// Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+	// Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
 	MaxPodsPerNode *int `pulumi:"maxPodsPerNode"`
-	// Flannel 容器网络的 Pod CIDR。
+	// Pod CIDR for Flannel container network.
 	PodCidrs []string `pulumi:"podCidrs"`
-	// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+	// List of Pod subnet IDs for the Flannel container network model.
 	SubnetIds []string `pulumi:"subnetIds"`
 }
 
@@ -2481,11 +2481,11 @@ type ClusterPodsConfigFlannelConfigInput interface {
 }
 
 type ClusterPodsConfigFlannelConfigArgs struct {
-	// Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+	// Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
 	MaxPodsPerNode pulumi.IntPtrInput `pulumi:"maxPodsPerNode"`
-	// Flannel 容器网络的 Pod CIDR。
+	// Pod CIDR for Flannel container network.
 	PodCidrs pulumi.StringArrayInput `pulumi:"podCidrs"`
-	// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+	// List of Pod subnet IDs for the Flannel container network model.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
 }
 
@@ -2566,17 +2566,17 @@ func (o ClusterPodsConfigFlannelConfigOutput) ToClusterPodsConfigFlannelConfigPt
 	}).(ClusterPodsConfigFlannelConfigPtrOutput)
 }
 
-// Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+// Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
 func (o ClusterPodsConfigFlannelConfigOutput) MaxPodsPerNode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterPodsConfigFlannelConfig) *int { return v.MaxPodsPerNode }).(pulumi.IntPtrOutput)
 }
 
-// Flannel 容器网络的 Pod CIDR。
+// Pod CIDR for Flannel container network.
 func (o ClusterPodsConfigFlannelConfigOutput) PodCidrs() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterPodsConfigFlannelConfig) []string { return v.PodCidrs }).(pulumi.StringArrayOutput)
 }
 
-// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+// List of Pod subnet IDs for the Flannel container network model.
 func (o ClusterPodsConfigFlannelConfigOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterPodsConfigFlannelConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
@@ -2605,7 +2605,7 @@ func (o ClusterPodsConfigFlannelConfigPtrOutput) Elem() ClusterPodsConfigFlannel
 	}).(ClusterPodsConfigFlannelConfigOutput)
 }
 
-// Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+// Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
 func (o ClusterPodsConfigFlannelConfigPtrOutput) MaxPodsPerNode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ClusterPodsConfigFlannelConfig) *int {
 		if v == nil {
@@ -2615,7 +2615,7 @@ func (o ClusterPodsConfigFlannelConfigPtrOutput) MaxPodsPerNode() pulumi.IntPtrO
 	}).(pulumi.IntPtrOutput)
 }
 
-// Flannel 容器网络的 Pod CIDR。
+// Pod CIDR for Flannel container network.
 func (o ClusterPodsConfigFlannelConfigPtrOutput) PodCidrs() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterPodsConfigFlannelConfig) []string {
 		if v == nil {
@@ -2625,7 +2625,7 @@ func (o ClusterPodsConfigFlannelConfigPtrOutput) PodCidrs() pulumi.StringArrayOu
 	}).(pulumi.StringArrayOutput)
 }
 
-// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+// List of Pod subnet IDs for the Flannel container network model.
 func (o ClusterPodsConfigFlannelConfigPtrOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterPodsConfigFlannelConfig) []string {
 		if v == nil {
@@ -2636,9 +2636,9 @@ func (o ClusterPodsConfigFlannelConfigPtrOutput) SubnetIds() pulumi.StringArrayO
 }
 
 type ClusterPodsConfigVpcCniConfig struct {
-	// VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+	// List of Pod subnet IDs for the VPC-CNI container network model.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+	// Whether to enable Trunk mode for the VPC-CNI container network model
 	TrunkEniEnabled *bool `pulumi:"trunkEniEnabled"`
 }
 
@@ -2654,9 +2654,9 @@ type ClusterPodsConfigVpcCniConfigInput interface {
 }
 
 type ClusterPodsConfigVpcCniConfigArgs struct {
-	// VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+	// List of Pod subnet IDs for the VPC-CNI container network model.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
-	// 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+	// Whether to enable Trunk mode for the VPC-CNI container network model
 	TrunkEniEnabled pulumi.BoolPtrInput `pulumi:"trunkEniEnabled"`
 }
 
@@ -2737,12 +2737,12 @@ func (o ClusterPodsConfigVpcCniConfigOutput) ToClusterPodsConfigVpcCniConfigPtrO
 	}).(ClusterPodsConfigVpcCniConfigPtrOutput)
 }
 
-// VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+// List of Pod subnet IDs for the VPC-CNI container network model.
 func (o ClusterPodsConfigVpcCniConfigOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterPodsConfigVpcCniConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+// Whether to enable Trunk mode for the VPC-CNI container network model
 func (o ClusterPodsConfigVpcCniConfigOutput) TrunkEniEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterPodsConfigVpcCniConfig) *bool { return v.TrunkEniEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -2771,7 +2771,7 @@ func (o ClusterPodsConfigVpcCniConfigPtrOutput) Elem() ClusterPodsConfigVpcCniCo
 	}).(ClusterPodsConfigVpcCniConfigOutput)
 }
 
-// VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+// List of Pod subnet IDs for the VPC-CNI container network model.
 func (o ClusterPodsConfigVpcCniConfigPtrOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterPodsConfigVpcCniConfig) []string {
 		if v == nil {
@@ -2781,7 +2781,7 @@ func (o ClusterPodsConfigVpcCniConfigPtrOutput) SubnetIds() pulumi.StringArrayOu
 	}).(pulumi.StringArrayOutput)
 }
 
-// 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+// Whether to enable Trunk mode for the VPC-CNI container network model
 func (o ClusterPodsConfigVpcCniConfigPtrOutput) TrunkEniEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ClusterPodsConfigVpcCniConfig) *bool {
 		if v == nil {
@@ -2792,7 +2792,7 @@ func (o ClusterPodsConfigVpcCniConfigPtrOutput) TrunkEniEnabled() pulumi.BoolPtr
 }
 
 type ClusterServicesConfig struct {
-	// Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+	// IPv4 private network address exposed by Kubernetes Service.
 	ServiceCidrsv4s []string `pulumi:"serviceCidrsv4s"`
 }
 
@@ -2808,7 +2808,7 @@ type ClusterServicesConfigInput interface {
 }
 
 type ClusterServicesConfigArgs struct {
-	// Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+	// IPv4 private network address exposed by Kubernetes Service.
 	ServiceCidrsv4s pulumi.StringArrayInput `pulumi:"serviceCidrsv4s"`
 }
 
@@ -2889,7 +2889,7 @@ func (o ClusterServicesConfigOutput) ToClusterServicesConfigPtrOutputWithContext
 	}).(ClusterServicesConfigPtrOutput)
 }
 
-// Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+// IPv4 private network address exposed by Kubernetes Service.
 func (o ClusterServicesConfigOutput) ServiceCidrsv4s() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterServicesConfig) []string { return v.ServiceCidrsv4s }).(pulumi.StringArrayOutput)
 }
@@ -2918,7 +2918,7 @@ func (o ClusterServicesConfigPtrOutput) Elem() ClusterServicesConfigOutput {
 	}).(ClusterServicesConfigOutput)
 }
 
-// Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+// IPv4 private network address exposed by Kubernetes Service.
 func (o ClusterServicesConfigPtrOutput) ServiceCidrsv4s() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterServicesConfig) []string {
 		if v == nil {
@@ -2930,7 +2930,7 @@ func (o ClusterServicesConfigPtrOutput) ServiceCidrsv4s() pulumi.StringArrayOutp
 
 type ClusterStatus struct {
 	Conditions []ClusterStatusCondition `pulumi:"conditions"`
-	// 集群状态阶段
+	// Cluster status phase.
 	Phase *string `pulumi:"phase"`
 }
 
@@ -2947,7 +2947,7 @@ type ClusterStatusInput interface {
 
 type ClusterStatusArgs struct {
 	Conditions ClusterStatusConditionArrayInput `pulumi:"conditions"`
-	// 集群状态阶段
+	// Cluster status phase.
 	Phase pulumi.StringPtrInput `pulumi:"phase"`
 }
 
@@ -3032,7 +3032,7 @@ func (o ClusterStatusOutput) Conditions() ClusterStatusConditionArrayOutput {
 	return o.ApplyT(func(v ClusterStatus) []ClusterStatusCondition { return v.Conditions }).(ClusterStatusConditionArrayOutput)
 }
 
-// 集群状态阶段
+// Cluster status phase.
 func (o ClusterStatusOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterStatus) *string { return v.Phase }).(pulumi.StringPtrOutput)
 }
@@ -3070,7 +3070,7 @@ func (o ClusterStatusPtrOutput) Conditions() ClusterStatusConditionArrayOutput {
 	}).(ClusterStatusConditionArrayOutput)
 }
 
-// 集群状态阶段
+// Cluster status phase.
 func (o ClusterStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterStatus) *string {
 		if v == nil {
@@ -3081,7 +3081,7 @@ func (o ClusterStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 }
 
 type ClusterStatusCondition struct {
-	// 条件类型
+	// Condition type
 	Type *string `pulumi:"type"`
 }
 
@@ -3097,7 +3097,7 @@ type ClusterStatusConditionInput interface {
 }
 
 type ClusterStatusConditionArgs struct {
-	// 条件类型
+	// Condition type
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -3152,7 +3152,7 @@ func (o ClusterStatusConditionOutput) ToClusterStatusConditionOutputWithContext(
 	return o
 }
 
-// 条件类型
+// Condition type
 func (o ClusterStatusConditionOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterStatusCondition) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -3178,9 +3178,9 @@ func (o ClusterStatusConditionArrayOutput) Index(i pulumi.IntInput) ClusterStatu
 }
 
 type ClusterTag struct {
-	// 标签键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -3196,9 +3196,9 @@ type ClusterTagInput interface {
 }
 
 type ClusterTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3253,12 +3253,12 @@ func (o ClusterTagOutput) ToClusterTagOutputWithContext(ctx context.Context) Clu
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o ClusterTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o ClusterTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3284,19 +3284,19 @@ func (o ClusterTagArrayOutput) Index(i pulumi.IntInput) ClusterTagOutput {
 }
 
 type DefaultNodePoolAutoScaling struct {
-	// 配置节点池的期望节点数。
+	// Configure the desired number of nodes in the node pool.
 	DesiredReplicas *int `pulumi:"desiredReplicas"`
-	// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+	// Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
 	Enabled *bool `pulumi:"enabled"`
-	// 配置节点池的最大节点数。
+	// Configure the maximum number of nodes in the node pool
 	MaxReplicas *int `pulumi:"maxReplicas"`
-	// 配置节点池的最小节点数。
+	// Configure the minimum number of nodes in the node pool
 	MinReplicas *int `pulumi:"minReplicas"`
-	// 优先级。
+	// Priority
 	Priority *int `pulumi:"priority"`
-	// 伸缩组ID。
+	// Scaling group ID
 	ScalingGroupId *string `pulumi:"scalingGroupId"`
-	// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+	// Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
 	SubnetPolicy *string `pulumi:"subnetPolicy"`
 }
 
@@ -3312,19 +3312,19 @@ type DefaultNodePoolAutoScalingInput interface {
 }
 
 type DefaultNodePoolAutoScalingArgs struct {
-	// 配置节点池的期望节点数。
+	// Configure the desired number of nodes in the node pool.
 	DesiredReplicas pulumi.IntPtrInput `pulumi:"desiredReplicas"`
-	// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+	// Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// 配置节点池的最大节点数。
+	// Configure the maximum number of nodes in the node pool
 	MaxReplicas pulumi.IntPtrInput `pulumi:"maxReplicas"`
-	// 配置节点池的最小节点数。
+	// Configure the minimum number of nodes in the node pool
 	MinReplicas pulumi.IntPtrInput `pulumi:"minReplicas"`
-	// 优先级。
+	// Priority
 	Priority pulumi.IntPtrInput `pulumi:"priority"`
-	// 伸缩组ID。
+	// Scaling group ID
 	ScalingGroupId pulumi.StringPtrInput `pulumi:"scalingGroupId"`
-	// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+	// Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
 	SubnetPolicy pulumi.StringPtrInput `pulumi:"subnetPolicy"`
 }
 
@@ -3405,37 +3405,37 @@ func (o DefaultNodePoolAutoScalingOutput) ToDefaultNodePoolAutoScalingPtrOutputW
 	}).(DefaultNodePoolAutoScalingPtrOutput)
 }
 
-// 配置节点池的期望节点数。
+// Configure the desired number of nodes in the node pool.
 func (o DefaultNodePoolAutoScalingOutput) DesiredReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *int { return v.DesiredReplicas }).(pulumi.IntPtrOutput)
 }
 
-// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+// Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
 func (o DefaultNodePoolAutoScalingOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// 配置节点池的最大节点数。
+// Configure the maximum number of nodes in the node pool
 func (o DefaultNodePoolAutoScalingOutput) MaxReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *int { return v.MaxReplicas }).(pulumi.IntPtrOutput)
 }
 
-// 配置节点池的最小节点数。
+// Configure the minimum number of nodes in the node pool
 func (o DefaultNodePoolAutoScalingOutput) MinReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *int { return v.MinReplicas }).(pulumi.IntPtrOutput)
 }
 
-// 优先级。
+// Priority
 func (o DefaultNodePoolAutoScalingOutput) Priority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
-// 伸缩组ID。
+// Scaling group ID
 func (o DefaultNodePoolAutoScalingOutput) ScalingGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *string { return v.ScalingGroupId }).(pulumi.StringPtrOutput)
 }
 
-// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+// Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
 func (o DefaultNodePoolAutoScalingOutput) SubnetPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *string { return v.SubnetPolicy }).(pulumi.StringPtrOutput)
 }
@@ -3464,7 +3464,7 @@ func (o DefaultNodePoolAutoScalingPtrOutput) Elem() DefaultNodePoolAutoScalingOu
 	}).(DefaultNodePoolAutoScalingOutput)
 }
 
-// 配置节点池的期望节点数。
+// Configure the desired number of nodes in the node pool.
 func (o DefaultNodePoolAutoScalingPtrOutput) DesiredReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *int {
 		if v == nil {
@@ -3474,7 +3474,7 @@ func (o DefaultNodePoolAutoScalingPtrOutput) DesiredReplicas() pulumi.IntPtrOutp
 	}).(pulumi.IntPtrOutput)
 }
 
-// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+// Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
 func (o DefaultNodePoolAutoScalingPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *bool {
 		if v == nil {
@@ -3484,7 +3484,7 @@ func (o DefaultNodePoolAutoScalingPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 配置节点池的最大节点数。
+// Configure the maximum number of nodes in the node pool
 func (o DefaultNodePoolAutoScalingPtrOutput) MaxReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *int {
 		if v == nil {
@@ -3494,7 +3494,7 @@ func (o DefaultNodePoolAutoScalingPtrOutput) MaxReplicas() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 配置节点池的最小节点数。
+// Configure the minimum number of nodes in the node pool
 func (o DefaultNodePoolAutoScalingPtrOutput) MinReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *int {
 		if v == nil {
@@ -3504,7 +3504,7 @@ func (o DefaultNodePoolAutoScalingPtrOutput) MinReplicas() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 优先级。
+// Priority
 func (o DefaultNodePoolAutoScalingPtrOutput) Priority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *int {
 		if v == nil {
@@ -3514,7 +3514,7 @@ func (o DefaultNodePoolAutoScalingPtrOutput) Priority() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 伸缩组ID。
+// Scaling group ID
 func (o DefaultNodePoolAutoScalingPtrOutput) ScalingGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *string {
 		if v == nil {
@@ -3524,7 +3524,7 @@ func (o DefaultNodePoolAutoScalingPtrOutput) ScalingGroupId() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+// Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
 func (o DefaultNodePoolAutoScalingPtrOutput) SubnetPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *string {
 		if v == nil {
@@ -3535,18 +3535,18 @@ func (o DefaultNodePoolAutoScalingPtrOutput) SubnetPolicy() pulumi.StringPtrOutp
 }
 
 type DefaultNodePoolKubernetesConfig struct {
-	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+	// Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
 	AutoSyncDisabled *bool `pulumi:"autoSyncDisabled"`
-	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+	// Node blocking configuration. Parameter value description: false: not blocked. true: blocked
 	Cordon *bool `pulumi:"cordon"`
-	// Kubelet 组件的相关配置
+	// Kubelet component configuration
 	KubeletConfig *DefaultNodePoolKubernetesConfigKubeletConfig `pulumi:"kubeletConfig"`
 	Labels        []DefaultNodePoolKubernetesConfigLabel        `pulumi:"labels"`
-	// Kubernetes 中节点对象的元数据名称前缀。
+	// Prefix of the metadata name for node objects in Kubernetes.
 	NamePrefix *string `pulumi:"namePrefix"`
-	// Kubernetes 中节点对象的元数据名称后缀。
+	// Suffix of the metadata name for node objects in Kubernetes.
 	NameSuffix *string `pulumi:"nameSuffix"`
-	// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+	// Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
 	NameUseHostname *bool                                  `pulumi:"nameUseHostname"`
 	Taints          []DefaultNodePoolKubernetesConfigTaint `pulumi:"taints"`
 }
@@ -3563,18 +3563,18 @@ type DefaultNodePoolKubernetesConfigInput interface {
 }
 
 type DefaultNodePoolKubernetesConfigArgs struct {
-	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+	// Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
 	AutoSyncDisabled pulumi.BoolPtrInput `pulumi:"autoSyncDisabled"`
-	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+	// Node blocking configuration. Parameter value description: false: not blocked. true: blocked
 	Cordon pulumi.BoolPtrInput `pulumi:"cordon"`
-	// Kubelet 组件的相关配置
+	// Kubelet component configuration
 	KubeletConfig DefaultNodePoolKubernetesConfigKubeletConfigPtrInput `pulumi:"kubeletConfig"`
 	Labels        DefaultNodePoolKubernetesConfigLabelArrayInput       `pulumi:"labels"`
-	// Kubernetes 中节点对象的元数据名称前缀。
+	// Prefix of the metadata name for node objects in Kubernetes.
 	NamePrefix pulumi.StringPtrInput `pulumi:"namePrefix"`
-	// Kubernetes 中节点对象的元数据名称后缀。
+	// Suffix of the metadata name for node objects in Kubernetes.
 	NameSuffix pulumi.StringPtrInput `pulumi:"nameSuffix"`
-	// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+	// Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
 	NameUseHostname pulumi.BoolPtrInput                            `pulumi:"nameUseHostname"`
 	Taints          DefaultNodePoolKubernetesConfigTaintArrayInput `pulumi:"taints"`
 }
@@ -3656,17 +3656,17 @@ func (o DefaultNodePoolKubernetesConfigOutput) ToDefaultNodePoolKubernetesConfig
 	}).(DefaultNodePoolKubernetesConfigPtrOutput)
 }
 
-// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+// Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
 func (o DefaultNodePoolKubernetesConfigOutput) AutoSyncDisabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) *bool { return v.AutoSyncDisabled }).(pulumi.BoolPtrOutput)
 }
 
-// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+// Node blocking configuration. Parameter value description: false: not blocked. true: blocked
 func (o DefaultNodePoolKubernetesConfigOutput) Cordon() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) *bool { return v.Cordon }).(pulumi.BoolPtrOutput)
 }
 
-// Kubelet 组件的相关配置
+// Kubelet component configuration
 func (o DefaultNodePoolKubernetesConfigOutput) KubeletConfig() DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) *DefaultNodePoolKubernetesConfigKubeletConfig {
 		return v.KubeletConfig
@@ -3677,17 +3677,17 @@ func (o DefaultNodePoolKubernetesConfigOutput) Labels() DefaultNodePoolKubernete
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) []DefaultNodePoolKubernetesConfigLabel { return v.Labels }).(DefaultNodePoolKubernetesConfigLabelArrayOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称前缀。
+// Prefix of the metadata name for node objects in Kubernetes.
 func (o DefaultNodePoolKubernetesConfigOutput) NamePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) *string { return v.NamePrefix }).(pulumi.StringPtrOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称后缀。
+// Suffix of the metadata name for node objects in Kubernetes.
 func (o DefaultNodePoolKubernetesConfigOutput) NameSuffix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) *string { return v.NameSuffix }).(pulumi.StringPtrOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+// Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
 func (o DefaultNodePoolKubernetesConfigOutput) NameUseHostname() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) *bool { return v.NameUseHostname }).(pulumi.BoolPtrOutput)
 }
@@ -3720,7 +3720,7 @@ func (o DefaultNodePoolKubernetesConfigPtrOutput) Elem() DefaultNodePoolKubernet
 	}).(DefaultNodePoolKubernetesConfigOutput)
 }
 
-// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+// Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
 func (o DefaultNodePoolKubernetesConfigPtrOutput) AutoSyncDisabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) *bool {
 		if v == nil {
@@ -3730,7 +3730,7 @@ func (o DefaultNodePoolKubernetesConfigPtrOutput) AutoSyncDisabled() pulumi.Bool
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+// Node blocking configuration. Parameter value description: false: not blocked. true: blocked
 func (o DefaultNodePoolKubernetesConfigPtrOutput) Cordon() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) *bool {
 		if v == nil {
@@ -3740,7 +3740,7 @@ func (o DefaultNodePoolKubernetesConfigPtrOutput) Cordon() pulumi.BoolPtrOutput 
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Kubelet 组件的相关配置
+// Kubelet component configuration
 func (o DefaultNodePoolKubernetesConfigPtrOutput) KubeletConfig() DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) *DefaultNodePoolKubernetesConfigKubeletConfig {
 		if v == nil {
@@ -3759,7 +3759,7 @@ func (o DefaultNodePoolKubernetesConfigPtrOutput) Labels() DefaultNodePoolKubern
 	}).(DefaultNodePoolKubernetesConfigLabelArrayOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称前缀。
+// Prefix of the metadata name for node objects in Kubernetes.
 func (o DefaultNodePoolKubernetesConfigPtrOutput) NamePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) *string {
 		if v == nil {
@@ -3769,7 +3769,7 @@ func (o DefaultNodePoolKubernetesConfigPtrOutput) NamePrefix() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称后缀。
+// Suffix of the metadata name for node objects in Kubernetes.
 func (o DefaultNodePoolKubernetesConfigPtrOutput) NameSuffix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) *string {
 		if v == nil {
@@ -3779,7 +3779,7 @@ func (o DefaultNodePoolKubernetesConfigPtrOutput) NameSuffix() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+// Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
 func (o DefaultNodePoolKubernetesConfigPtrOutput) NameUseHostname() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) *bool {
 		if v == nil {
@@ -3799,27 +3799,27 @@ func (o DefaultNodePoolKubernetesConfigPtrOutput) Taints() DefaultNodePoolKubern
 }
 
 type DefaultNodePoolKubernetesConfigKubeletConfig struct {
-	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+	// Configure kubelet's CpuManagerPolicy. Includes none and static strategies
 	CpuManagerPolicy *string `pulumi:"cpuManagerPolicy"`
-	// 特性门控。
+	// Feature gate.
 	FeatureGates *DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates `pulumi:"featureGates"`
-	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+	// Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
 	KubeApiBurst *int `pulumi:"kubeApiBurst"`
-	// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+	// Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
 	KubeApiQps    *int                                                       `pulumi:"kubeApiQps"`
 	KubeReserveds []DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved `pulumi:"kubeReserveds"`
-	// 配置 kubelet 支持的最大 Pod 数量
+	// Configure the maximum number of Pods supported by kubelet
 	MaxPods *int `pulumi:"maxPods"`
-	// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+	// Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 	RegistryBurst *int `pulumi:"registryBurst"`
-	// 可用来限制镜像仓库的 QPS 上限
+	// Can be used to limit the QPS cap for the image repository
 	RegistryPullQps *int `pulumi:"registryPullQps"`
-	// 逐一拉取镜像。
+	// Pull images one by one
 	SerializeImagePulls *bool                                                        `pulumi:"serializeImagePulls"`
 	SystemReserveds     []DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved `pulumi:"systemReserveds"`
-	// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+	// Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
 	TopologyManagerPolicy *string `pulumi:"topologyManagerPolicy"`
-	// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+	// Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
 	TopologyManagerScope *string `pulumi:"topologyManagerScope"`
 }
 
@@ -3835,27 +3835,27 @@ type DefaultNodePoolKubernetesConfigKubeletConfigInput interface {
 }
 
 type DefaultNodePoolKubernetesConfigKubeletConfigArgs struct {
-	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+	// Configure kubelet's CpuManagerPolicy. Includes none and static strategies
 	CpuManagerPolicy pulumi.StringPtrInput `pulumi:"cpuManagerPolicy"`
-	// 特性门控。
+	// Feature gate.
 	FeatureGates DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrInput `pulumi:"featureGates"`
-	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+	// Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
 	KubeApiBurst pulumi.IntPtrInput `pulumi:"kubeApiBurst"`
-	// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+	// Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
 	KubeApiQps    pulumi.IntPtrInput                                                 `pulumi:"kubeApiQps"`
 	KubeReserveds DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput `pulumi:"kubeReserveds"`
-	// 配置 kubelet 支持的最大 Pod 数量
+	// Configure the maximum number of Pods supported by kubelet
 	MaxPods pulumi.IntPtrInput `pulumi:"maxPods"`
-	// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+	// Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 	RegistryBurst pulumi.IntPtrInput `pulumi:"registryBurst"`
-	// 可用来限制镜像仓库的 QPS 上限
+	// Can be used to limit the QPS cap for the image repository
 	RegistryPullQps pulumi.IntPtrInput `pulumi:"registryPullQps"`
-	// 逐一拉取镜像。
+	// Pull images one by one
 	SerializeImagePulls pulumi.BoolPtrInput                                                  `pulumi:"serializeImagePulls"`
 	SystemReserveds     DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput `pulumi:"systemReserveds"`
-	// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+	// Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
 	TopologyManagerPolicy pulumi.StringPtrInput `pulumi:"topologyManagerPolicy"`
-	// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+	// Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
 	TopologyManagerScope pulumi.StringPtrInput `pulumi:"topologyManagerScope"`
 }
 
@@ -3936,24 +3936,24 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) ToDefaultNodePoolKub
 	}).(DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput)
 }
 
-// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+// Configure kubelet's CpuManagerPolicy. Includes none and static strategies
 func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) CpuManagerPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *string { return v.CpuManagerPolicy }).(pulumi.StringPtrOutput)
 }
 
-// 特性门控。
+// Feature gate.
 func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) FeatureGates() DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates {
 		return v.FeatureGates
 	}).(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput)
 }
 
-// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+// Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
 func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) KubeApiBurst() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *int { return v.KubeApiBurst }).(pulumi.IntPtrOutput)
 }
 
-// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+// Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
 func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) KubeApiQps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *int { return v.KubeApiQps }).(pulumi.IntPtrOutput)
 }
@@ -3964,22 +3964,22 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) KubeReserveds() Defa
 	}).(DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
 }
 
-// 配置 kubelet 支持的最大 Pod 数量
+// Configure the maximum number of Pods supported by kubelet
 func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) MaxPods() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *int { return v.MaxPods }).(pulumi.IntPtrOutput)
 }
 
-// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+// Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) RegistryBurst() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *int { return v.RegistryBurst }).(pulumi.IntPtrOutput)
 }
 
-// 可用来限制镜像仓库的 QPS 上限
+// Can be used to limit the QPS cap for the image repository
 func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) RegistryPullQps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *int { return v.RegistryPullQps }).(pulumi.IntPtrOutput)
 }
 
-// 逐一拉取镜像。
+// Pull images one by one
 func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) SerializeImagePulls() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *bool { return v.SerializeImagePulls }).(pulumi.BoolPtrOutput)
 }
@@ -3990,12 +3990,12 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) SystemReserveds() De
 	}).(DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput)
 }
 
-// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+// Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
 func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *string { return v.TopologyManagerPolicy }).(pulumi.StringPtrOutput)
 }
 
-// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+// Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
 func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerScope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *string { return v.TopologyManagerScope }).(pulumi.StringPtrOutput)
 }
@@ -4024,7 +4024,7 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) Elem() DefaultNod
 	}).(DefaultNodePoolKubernetesConfigKubeletConfigOutput)
 }
 
-// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+// Configure kubelet's CpuManagerPolicy. Includes none and static strategies
 func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) CpuManagerPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *string {
 		if v == nil {
@@ -4034,7 +4034,7 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) CpuManagerPolicy(
 	}).(pulumi.StringPtrOutput)
 }
 
-// 特性门控。
+// Feature gate.
 func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) FeatureGates() DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates {
 		if v == nil {
@@ -4044,7 +4044,7 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) FeatureGates() De
 	}).(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput)
 }
 
-// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+// Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
 func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) KubeApiBurst() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -4054,7 +4054,7 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) KubeApiBurst() pu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+// Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
 func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) KubeApiQps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -4073,7 +4073,7 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) KubeReserveds() D
 	}).(DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
 }
 
-// 配置 kubelet 支持的最大 Pod 数量
+// Configure the maximum number of Pods supported by kubelet
 func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) MaxPods() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -4083,7 +4083,7 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) MaxPods() pulumi.
 	}).(pulumi.IntPtrOutput)
 }
 
-// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+// Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryBurst() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -4093,7 +4093,7 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryBurst() p
 	}).(pulumi.IntPtrOutput)
 }
 
-// 可用来限制镜像仓库的 QPS 上限
+// Can be used to limit the QPS cap for the image repository
 func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryPullQps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -4103,7 +4103,7 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryPullQps()
 	}).(pulumi.IntPtrOutput)
 }
 
-// 逐一拉取镜像。
+// Pull images one by one
 func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) SerializeImagePulls() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *bool {
 		if v == nil {
@@ -4122,7 +4122,7 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) SystemReserveds()
 	}).(DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput)
 }
 
-// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+// Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
 func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) TopologyManagerPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *string {
 		if v == nil {
@@ -4132,7 +4132,7 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) TopologyManagerPo
 	}).(pulumi.StringPtrOutput)
 }
 
-// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+// Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
 func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) TopologyManagerScope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *string {
 		if v == nil {
@@ -4143,9 +4143,9 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) TopologyManagerSc
 }
 
 type DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates struct {
-	// 是否开启特性开关本地垂直Pod伸缩
+	// Whether to enable the feature switch for local vertical Pod autoscaling
 	InPlacePodVerticalScaling *bool `pulumi:"inPlacePodVerticalScaling"`
-	// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+	// Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
 	QoSResourceManager *bool `pulumi:"qoSResourceManager"`
 }
 
@@ -4161,9 +4161,9 @@ type DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesInput interface {
 }
 
 type DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs struct {
-	// 是否开启特性开关本地垂直Pod伸缩
+	// Whether to enable the feature switch for local vertical Pod autoscaling
 	InPlacePodVerticalScaling pulumi.BoolPtrInput `pulumi:"inPlacePodVerticalScaling"`
-	// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+	// Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
 	QoSResourceManager pulumi.BoolPtrInput `pulumi:"qoSResourceManager"`
 }
 
@@ -4244,14 +4244,14 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ToDefaul
 	}).(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput)
 }
 
-// 是否开启特性开关本地垂直Pod伸缩
+// Whether to enable the feature switch for local vertical Pod autoscaling
 func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) InPlacePodVerticalScaling() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) *bool {
 		return v.InPlacePodVerticalScaling
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+// Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
 func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) QoSResourceManager() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) *bool { return v.QoSResourceManager }).(pulumi.BoolPtrOutput)
 }
@@ -4280,7 +4280,7 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) Elem(
 	}).(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput)
 }
 
-// 是否开启特性开关本地垂直Pod伸缩
+// Whether to enable the feature switch for local vertical Pod autoscaling
 func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) InPlacePodVerticalScaling() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) *bool {
 		if v == nil {
@@ -4290,7 +4290,7 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) InPla
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+// Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
 func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) QoSResourceManager() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) *bool {
 		if v == nil {
@@ -4301,9 +4301,9 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) QoSRe
 }
 
 type DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Values: cpu or memory
 	Name *string `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+	// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
 	Quantity *string `pulumi:"quantity"`
 }
 
@@ -4319,9 +4319,9 @@ type DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedInput interface {
 }
 
 type DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Values: cpu or memory
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+	// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
 	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 }
 
@@ -4376,12 +4376,12 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) ToDefaul
 	return o
 }
 
-// 资源名称，取值为 cpu 或 memory。
+// Resource name. Values: cpu or memory
 func (o DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
 func (o DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Quantity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
@@ -4407,9 +4407,9 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) Ind
 }
 
 type DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Values: cpu or memory.
 	Name *string `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+	// Resource quantity for the specified resource.   - For cpu, example value: 200m   - For memory, example value: 1G
 	Quantity *string `pulumi:"quantity"`
 }
 
@@ -4425,9 +4425,9 @@ type DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedInput interface {
 }
 
 type DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Values: cpu or memory.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+	// Resource quantity for the specified resource.   - For cpu, example value: 200m   - For memory, example value: 1G
 	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 }
 
@@ -4482,12 +4482,12 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) ToDefa
 	return o
 }
 
-// 资源名称，取值为 cpu 或 memory。
+// Resource name. Values: cpu or memory.
 func (o DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+// Resource quantity for the specified resource.   - For cpu, example value: 200m   - For memory, example value: 1G
 func (o DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Quantity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
@@ -4513,9 +4513,9 @@ func (o DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput) I
 }
 
 type DefaultNodePoolKubernetesConfigLabel struct {
-	// 标签键。
+	// Label key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Label value
 	Value *string `pulumi:"value"`
 }
 
@@ -4531,9 +4531,9 @@ type DefaultNodePoolKubernetesConfigLabelInput interface {
 }
 
 type DefaultNodePoolKubernetesConfigLabelArgs struct {
-	// 标签键。
+	// Label key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Label value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -4588,12 +4588,12 @@ func (o DefaultNodePoolKubernetesConfigLabelOutput) ToDefaultNodePoolKubernetesC
 	return o
 }
 
-// 标签键。
+// Label key.
 func (o DefaultNodePoolKubernetesConfigLabelOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Label value
 func (o DefaultNodePoolKubernetesConfigLabelOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -4619,11 +4619,11 @@ func (o DefaultNodePoolKubernetesConfigLabelArrayOutput) Index(i pulumi.IntInput
 }
 
 type DefaultNodePoolKubernetesConfigTaint struct {
-	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	// Taint effect. Values: NoSchedule (default): do not schedule. NoExecute: evict pods that do not tolerate the taint. PreferNoSchedule: avoid scheduling if possible.
 	Effect *string `pulumi:"effect"`
-	// 污点键。
+	// Taint key
 	Key *string `pulumi:"key"`
-	// 污点值。
+	// Taint value
 	Value *string `pulumi:"value"`
 }
 
@@ -4639,11 +4639,11 @@ type DefaultNodePoolKubernetesConfigTaintInput interface {
 }
 
 type DefaultNodePoolKubernetesConfigTaintArgs struct {
-	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	// Taint effect. Values: NoSchedule (default): do not schedule. NoExecute: evict pods that do not tolerate the taint. PreferNoSchedule: avoid scheduling if possible.
 	Effect pulumi.StringPtrInput `pulumi:"effect"`
-	// 污点键。
+	// Taint key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 污点值。
+	// Taint value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -4698,17 +4698,17 @@ func (o DefaultNodePoolKubernetesConfigTaintOutput) ToDefaultNodePoolKubernetesC
 	return o
 }
 
-// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+// Taint effect. Values: NoSchedule (default): do not schedule. NoExecute: evict pods that do not tolerate the taint. PreferNoSchedule: avoid scheduling if possible.
 func (o DefaultNodePoolKubernetesConfigTaintOutput) Effect() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigTaint) *string { return v.Effect }).(pulumi.StringPtrOutput)
 }
 
-// 污点键。
+// Taint key
 func (o DefaultNodePoolKubernetesConfigTaintOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigTaint) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 污点值。
+// Taint value
 func (o DefaultNodePoolKubernetesConfigTaintOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigTaint) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -4734,9 +4734,9 @@ func (o DefaultNodePoolKubernetesConfigTaintArrayOutput) Index(i pulumi.IntInput
 }
 
 type DefaultNodePoolManagement struct {
-	// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+	// Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
 	Enabled *bool `pulumi:"enabled"`
-	// 检查自愈配置。
+	// Check self-healing configuration.
 	RemedyConfig *DefaultNodePoolManagementRemedyConfig `pulumi:"remedyConfig"`
 }
 
@@ -4752,9 +4752,9 @@ type DefaultNodePoolManagementInput interface {
 }
 
 type DefaultNodePoolManagementArgs struct {
-	// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+	// Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// 检查自愈配置。
+	// Check self-healing configuration.
 	RemedyConfig DefaultNodePoolManagementRemedyConfigPtrInput `pulumi:"remedyConfig"`
 }
 
@@ -4835,12 +4835,12 @@ func (o DefaultNodePoolManagementOutput) ToDefaultNodePoolManagementPtrOutputWit
 	}).(DefaultNodePoolManagementPtrOutput)
 }
 
-// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+// Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
 func (o DefaultNodePoolManagementOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolManagement) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// 检查自愈配置。
+// Check self-healing configuration.
 func (o DefaultNodePoolManagementOutput) RemedyConfig() DefaultNodePoolManagementRemedyConfigPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolManagement) *DefaultNodePoolManagementRemedyConfig { return v.RemedyConfig }).(DefaultNodePoolManagementRemedyConfigPtrOutput)
 }
@@ -4869,7 +4869,7 @@ func (o DefaultNodePoolManagementPtrOutput) Elem() DefaultNodePoolManagementOutp
 	}).(DefaultNodePoolManagementOutput)
 }
 
-// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+// Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
 func (o DefaultNodePoolManagementPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolManagement) *bool {
 		if v == nil {
@@ -4879,7 +4879,7 @@ func (o DefaultNodePoolManagementPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 检查自愈配置。
+// Check self-healing configuration.
 func (o DefaultNodePoolManagementPtrOutput) RemedyConfig() DefaultNodePoolManagementRemedyConfigPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolManagement) *DefaultNodePoolManagementRemedyConfig {
 		if v == nil {
@@ -4890,9 +4890,9 @@ func (o DefaultNodePoolManagementPtrOutput) RemedyConfig() DefaultNodePoolManage
 }
 
 type DefaultNodePoolManagementRemedyConfig struct {
-	// 是否开启检查自愈。
+	// Enable self-healing check
 	Enabled *bool `pulumi:"enabled"`
-	// 检查自愈规则ID。
+	// Self-healing rule ID
 	RemedyId *string `pulumi:"remedyId"`
 }
 
@@ -4908,9 +4908,9 @@ type DefaultNodePoolManagementRemedyConfigInput interface {
 }
 
 type DefaultNodePoolManagementRemedyConfigArgs struct {
-	// 是否开启检查自愈。
+	// Enable self-healing check
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// 检查自愈规则ID。
+	// Self-healing rule ID
 	RemedyId pulumi.StringPtrInput `pulumi:"remedyId"`
 }
 
@@ -4991,12 +4991,12 @@ func (o DefaultNodePoolManagementRemedyConfigOutput) ToDefaultNodePoolManagement
 	}).(DefaultNodePoolManagementRemedyConfigPtrOutput)
 }
 
-// 是否开启检查自愈。
+// Enable self-healing check
 func (o DefaultNodePoolManagementRemedyConfigOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolManagementRemedyConfig) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// 检查自愈规则ID。
+// Self-healing rule ID
 func (o DefaultNodePoolManagementRemedyConfigOutput) RemedyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolManagementRemedyConfig) *string { return v.RemedyId }).(pulumi.StringPtrOutput)
 }
@@ -5025,7 +5025,7 @@ func (o DefaultNodePoolManagementRemedyConfigPtrOutput) Elem() DefaultNodePoolMa
 	}).(DefaultNodePoolManagementRemedyConfigOutput)
 }
 
-// 是否开启检查自愈。
+// Enable self-healing check
 func (o DefaultNodePoolManagementRemedyConfigPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolManagementRemedyConfig) *bool {
 		if v == nil {
@@ -5035,7 +5035,7 @@ func (o DefaultNodePoolManagementRemedyConfigPtrOutput) Enabled() pulumi.BoolPtr
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 检查自愈规则ID。
+// Self-healing rule ID
 func (o DefaultNodePoolManagementRemedyConfigPtrOutput) RemedyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolManagementRemedyConfig) *string {
 		if v == nil {
@@ -5046,54 +5046,54 @@ func (o DefaultNodePoolManagementRemedyConfigPtrOutput) RemedyId() pulumi.String
 }
 
 type DefaultNodePoolNodeConfig struct {
-	// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+	// Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
 	AdditionalContainerStorageEnabled *bool `pulumi:"additionalContainerStorageEnabled"`
-	// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 	AutoRenew *bool `pulumi:"autoRenew"`
-	// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+	// Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
 	AutoRenewPeriod *int                                  `pulumi:"autoRenewPeriod"`
 	DataVolumes     []DefaultNodePoolNodeConfigDataVolume `pulumi:"dataVolumes"`
-	// 实例在部署集中的分组号，0表示未设置
+	// Group number of the instance in the deployment set. 0 means not set
 	DeploymentSetGroupNumber *int `pulumi:"deploymentSetGroupNumber"`
-	// 实例需要加入的部署集ID
+	// Deployment set ID to be added to the instance
 	DeploymentSetId *string `pulumi:"deploymentSetId"`
-	// 节点对应的主机名称。
+	// Host name corresponding to the node
 	Hostname *string `pulumi:"hostname"`
-	// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+	// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 	HpcClusterIds []string `pulumi:"hpcClusterIds"`
-	// 节点对应云服务器所使用的镜像 ID。
+	// Image ID used by the cloud server corresponding to the node
 	ImageId *string `pulumi:"imageId"`
-	// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+	// Custom script executed after creating and initializing the node. Shell script in Base64 encoding
 	InitializeScript *string `pulumi:"initializeScript"`
-	// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+	// Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 	InstanceChargeType *string `pulumi:"instanceChargeType"`
-	// 节点（实例）名称。
+	// Node (instance) name
 	InstanceName *string `pulumi:"instanceName"`
-	// 节点对应的云服务器实例规格 ID 列表。
+	// List of cloud server instance type IDs corresponding to the node
 	InstanceTypeIds []string `pulumi:"instanceTypeIds"`
-	// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+	// Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
 	InstancesDistribution *DefaultNodePoolNodeConfigInstancesDistribution `pulumi:"instancesDistribution"`
-	// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+	// Node name prefix. An empty string or nil means the node name prefix policy is not enabled
 	NamePrefix *string `pulumi:"namePrefix"`
-	// 节点间的网络通讯模式。
+	// Network communication mode between nodes
 	NetworkTrafficMode *string `pulumi:"networkTrafficMode"`
-	// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
 	Period *int `pulumi:"period"`
-	// 部署节点前执行脚本。
+	// Script executed before deploying nodes
 	PreScript *string `pulumi:"preScript"`
-	// ECS所属项目，一个ECS只能归属于一个项目。
+	// The project to which the ECS belongs. Each ECS can only belong to one project.
 	ProjectName *string `pulumi:"projectName"`
-	// 节点自动开启公网访问的配置信息
+	// Configuration for automatic public network access for nodes
 	PublicAccessConfig *DefaultNodePoolNodeConfigPublicAccessConfig `pulumi:"publicAccessConfig"`
-	// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+	// Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
 	PublicAccessEnabled *bool `pulumi:"publicAccessEnabled"`
-	// 节点安全配置。
+	// Node security configuration.
 	Security *DefaultNodePoolNodeConfigSecurity `pulumi:"security"`
-	// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+	// Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
 	SpotStrategy *string `pulumi:"spotStrategy"`
-	// 节点网络所属的子网 ID 列表。
+	// List of subnet IDs to which the node network belongs.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 节点的系统盘配置。
+	// System disk configuration for the node
 	SystemVolume *DefaultNodePoolNodeConfigSystemVolume `pulumi:"systemVolume"`
 	Tags         []DefaultNodePoolNodeConfigTag         `pulumi:"tags"`
 }
@@ -5110,54 +5110,54 @@ type DefaultNodePoolNodeConfigInput interface {
 }
 
 type DefaultNodePoolNodeConfigArgs struct {
-	// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+	// Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
 	AdditionalContainerStorageEnabled pulumi.BoolPtrInput `pulumi:"additionalContainerStorageEnabled"`
-	// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
-	// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+	// Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
 	AutoRenewPeriod pulumi.IntPtrInput                            `pulumi:"autoRenewPeriod"`
 	DataVolumes     DefaultNodePoolNodeConfigDataVolumeArrayInput `pulumi:"dataVolumes"`
-	// 实例在部署集中的分组号，0表示未设置
+	// Group number of the instance in the deployment set. 0 means not set
 	DeploymentSetGroupNumber pulumi.IntPtrInput `pulumi:"deploymentSetGroupNumber"`
-	// 实例需要加入的部署集ID
+	// Deployment set ID to be added to the instance
 	DeploymentSetId pulumi.StringPtrInput `pulumi:"deploymentSetId"`
-	// 节点对应的主机名称。
+	// Host name corresponding to the node
 	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
-	// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+	// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 	HpcClusterIds pulumi.StringArrayInput `pulumi:"hpcClusterIds"`
-	// 节点对应云服务器所使用的镜像 ID。
+	// Image ID used by the cloud server corresponding to the node
 	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
-	// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+	// Custom script executed after creating and initializing the node. Shell script in Base64 encoding
 	InitializeScript pulumi.StringPtrInput `pulumi:"initializeScript"`
-	// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+	// Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 	InstanceChargeType pulumi.StringPtrInput `pulumi:"instanceChargeType"`
-	// 节点（实例）名称。
+	// Node (instance) name
 	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// 节点对应的云服务器实例规格 ID 列表。
+	// List of cloud server instance type IDs corresponding to the node
 	InstanceTypeIds pulumi.StringArrayInput `pulumi:"instanceTypeIds"`
-	// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+	// Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
 	InstancesDistribution DefaultNodePoolNodeConfigInstancesDistributionPtrInput `pulumi:"instancesDistribution"`
-	// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+	// Node name prefix. An empty string or nil means the node name prefix policy is not enabled
 	NamePrefix pulumi.StringPtrInput `pulumi:"namePrefix"`
-	// 节点间的网络通讯模式。
+	// Network communication mode between nodes
 	NetworkTrafficMode pulumi.StringPtrInput `pulumi:"networkTrafficMode"`
-	// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
 	Period pulumi.IntPtrInput `pulumi:"period"`
-	// 部署节点前执行脚本。
+	// Script executed before deploying nodes
 	PreScript pulumi.StringPtrInput `pulumi:"preScript"`
-	// ECS所属项目，一个ECS只能归属于一个项目。
+	// The project to which the ECS belongs. Each ECS can only belong to one project.
 	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
-	// 节点自动开启公网访问的配置信息
+	// Configuration for automatic public network access for nodes
 	PublicAccessConfig DefaultNodePoolNodeConfigPublicAccessConfigPtrInput `pulumi:"publicAccessConfig"`
-	// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+	// Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
 	PublicAccessEnabled pulumi.BoolPtrInput `pulumi:"publicAccessEnabled"`
-	// 节点安全配置。
+	// Node security configuration.
 	Security DefaultNodePoolNodeConfigSecurityPtrInput `pulumi:"security"`
-	// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+	// Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
 	SpotStrategy pulumi.StringPtrInput `pulumi:"spotStrategy"`
-	// 节点网络所属的子网 ID 列表。
+	// List of subnet IDs to which the node network belongs.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
-	// 节点的系统盘配置。
+	// System disk configuration for the node
 	SystemVolume DefaultNodePoolNodeConfigSystemVolumePtrInput `pulumi:"systemVolume"`
 	Tags         DefaultNodePoolNodeConfigTagArrayInput        `pulumi:"tags"`
 }
@@ -5239,17 +5239,17 @@ func (o DefaultNodePoolNodeConfigOutput) ToDefaultNodePoolNodeConfigPtrOutputWit
 	}).(DefaultNodePoolNodeConfigPtrOutput)
 }
 
-// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+// Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
 func (o DefaultNodePoolNodeConfigOutput) AdditionalContainerStorageEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *bool { return v.AdditionalContainerStorageEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+// Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 func (o DefaultNodePoolNodeConfigOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
 }
 
-// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+// Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
 func (o DefaultNodePoolNodeConfigOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *int { return v.AutoRenewPeriod }).(pulumi.IntPtrOutput)
 }
@@ -5258,111 +5258,111 @@ func (o DefaultNodePoolNodeConfigOutput) DataVolumes() DefaultNodePoolNodeConfig
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) []DefaultNodePoolNodeConfigDataVolume { return v.DataVolumes }).(DefaultNodePoolNodeConfigDataVolumeArrayOutput)
 }
 
-// 实例在部署集中的分组号，0表示未设置
+// Group number of the instance in the deployment set. 0 means not set
 func (o DefaultNodePoolNodeConfigOutput) DeploymentSetGroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *int { return v.DeploymentSetGroupNumber }).(pulumi.IntPtrOutput)
 }
 
-// 实例需要加入的部署集ID
+// Deployment set ID to be added to the instance
 func (o DefaultNodePoolNodeConfigOutput) DeploymentSetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.DeploymentSetId }).(pulumi.StringPtrOutput)
 }
 
-// 节点对应的主机名称。
+// Host name corresponding to the node
 func (o DefaultNodePoolNodeConfigOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
-// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 func (o DefaultNodePoolNodeConfigOutput) HpcClusterIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) []string { return v.HpcClusterIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点对应云服务器所使用的镜像 ID。
+// Image ID used by the cloud server corresponding to the node
 func (o DefaultNodePoolNodeConfigOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
-// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+// Custom script executed after creating and initializing the node. Shell script in Base64 encoding
 func (o DefaultNodePoolNodeConfigOutput) InitializeScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.InitializeScript }).(pulumi.StringPtrOutput)
 }
 
-// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+// Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 func (o DefaultNodePoolNodeConfigOutput) InstanceChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.InstanceChargeType }).(pulumi.StringPtrOutput)
 }
 
-// 节点（实例）名称。
+// Node (instance) name
 func (o DefaultNodePoolNodeConfigOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
 }
 
-// 节点对应的云服务器实例规格 ID 列表。
+// List of cloud server instance type IDs corresponding to the node
 func (o DefaultNodePoolNodeConfigOutput) InstanceTypeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) []string { return v.InstanceTypeIds }).(pulumi.StringArrayOutput)
 }
 
-// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+// Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
 func (o DefaultNodePoolNodeConfigOutput) InstancesDistribution() DefaultNodePoolNodeConfigInstancesDistributionPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigInstancesDistribution {
 		return v.InstancesDistribution
 	}).(DefaultNodePoolNodeConfigInstancesDistributionPtrOutput)
 }
 
-// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+// Node name prefix. An empty string or nil means the node name prefix policy is not enabled
 func (o DefaultNodePoolNodeConfigOutput) NamePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.NamePrefix }).(pulumi.StringPtrOutput)
 }
 
-// 节点间的网络通讯模式。
+// Network communication mode between nodes
 func (o DefaultNodePoolNodeConfigOutput) NetworkTrafficMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.NetworkTrafficMode }).(pulumi.StringPtrOutput)
 }
 
-// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+// Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
 func (o DefaultNodePoolNodeConfigOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *int { return v.Period }).(pulumi.IntPtrOutput)
 }
 
-// 部署节点前执行脚本。
+// Script executed before deploying nodes
 func (o DefaultNodePoolNodeConfigOutput) PreScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.PreScript }).(pulumi.StringPtrOutput)
 }
 
-// ECS所属项目，一个ECS只能归属于一个项目。
+// The project to which the ECS belongs. Each ECS can only belong to one project.
 func (o DefaultNodePoolNodeConfigOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
 }
 
-// 节点自动开启公网访问的配置信息
+// Configuration for automatic public network access for nodes
 func (o DefaultNodePoolNodeConfigOutput) PublicAccessConfig() DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigPublicAccessConfig {
 		return v.PublicAccessConfig
 	}).(DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput)
 }
 
-// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+// Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
 func (o DefaultNodePoolNodeConfigOutput) PublicAccessEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *bool { return v.PublicAccessEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// 节点安全配置。
+// Node security configuration.
 func (o DefaultNodePoolNodeConfigOutput) Security() DefaultNodePoolNodeConfigSecurityPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigSecurity { return v.Security }).(DefaultNodePoolNodeConfigSecurityPtrOutput)
 }
 
-// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+// Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
 func (o DefaultNodePoolNodeConfigOutput) SpotStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.SpotStrategy }).(pulumi.StringPtrOutput)
 }
 
-// 节点网络所属的子网 ID 列表。
+// List of subnet IDs to which the node network belongs.
 func (o DefaultNodePoolNodeConfigOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点的系统盘配置。
+// System disk configuration for the node
 func (o DefaultNodePoolNodeConfigOutput) SystemVolume() DefaultNodePoolNodeConfigSystemVolumePtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigSystemVolume { return v.SystemVolume }).(DefaultNodePoolNodeConfigSystemVolumePtrOutput)
 }
@@ -5395,7 +5395,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) Elem() DefaultNodePoolNodeConfigOutp
 	}).(DefaultNodePoolNodeConfigOutput)
 }
 
-// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+// Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
 func (o DefaultNodePoolNodeConfigPtrOutput) AdditionalContainerStorageEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *bool {
 		if v == nil {
@@ -5405,7 +5405,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) AdditionalContainerStorageEnabled() 
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+// Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 func (o DefaultNodePoolNodeConfigPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *bool {
 		if v == nil {
@@ -5415,7 +5415,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+// Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
 func (o DefaultNodePoolNodeConfigPtrOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *int {
 		if v == nil {
@@ -5434,7 +5434,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) DataVolumes() DefaultNodePoolNodeCon
 	}).(DefaultNodePoolNodeConfigDataVolumeArrayOutput)
 }
 
-// 实例在部署集中的分组号，0表示未设置
+// Group number of the instance in the deployment set. 0 means not set
 func (o DefaultNodePoolNodeConfigPtrOutput) DeploymentSetGroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *int {
 		if v == nil {
@@ -5444,7 +5444,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) DeploymentSetGroupNumber() pulumi.In
 	}).(pulumi.IntPtrOutput)
 }
 
-// 实例需要加入的部署集ID
+// Deployment set ID to be added to the instance
 func (o DefaultNodePoolNodeConfigPtrOutput) DeploymentSetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
 		if v == nil {
@@ -5454,7 +5454,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) DeploymentSetId() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点对应的主机名称。
+// Host name corresponding to the node
 func (o DefaultNodePoolNodeConfigPtrOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
 		if v == nil {
@@ -5464,7 +5464,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) Hostname() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 func (o DefaultNodePoolNodeConfigPtrOutput) HpcClusterIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) []string {
 		if v == nil {
@@ -5474,7 +5474,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) HpcClusterIds() pulumi.StringArrayOu
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点对应云服务器所使用的镜像 ID。
+// Image ID used by the cloud server corresponding to the node
 func (o DefaultNodePoolNodeConfigPtrOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
 		if v == nil {
@@ -5484,7 +5484,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) ImageId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+// Custom script executed after creating and initializing the node. Shell script in Base64 encoding
 func (o DefaultNodePoolNodeConfigPtrOutput) InitializeScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
 		if v == nil {
@@ -5494,7 +5494,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) InitializeScript() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+// Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 func (o DefaultNodePoolNodeConfigPtrOutput) InstanceChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
 		if v == nil {
@@ -5504,7 +5504,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) InstanceChargeType() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点（实例）名称。
+// Node (instance) name
 func (o DefaultNodePoolNodeConfigPtrOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
 		if v == nil {
@@ -5514,7 +5514,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) InstanceName() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点对应的云服务器实例规格 ID 列表。
+// List of cloud server instance type IDs corresponding to the node
 func (o DefaultNodePoolNodeConfigPtrOutput) InstanceTypeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) []string {
 		if v == nil {
@@ -5524,7 +5524,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) InstanceTypeIds() pulumi.StringArray
 	}).(pulumi.StringArrayOutput)
 }
 
-// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+// Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
 func (o DefaultNodePoolNodeConfigPtrOutput) InstancesDistribution() DefaultNodePoolNodeConfigInstancesDistributionPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigInstancesDistribution {
 		if v == nil {
@@ -5534,7 +5534,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) InstancesDistribution() DefaultNodeP
 	}).(DefaultNodePoolNodeConfigInstancesDistributionPtrOutput)
 }
 
-// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+// Node name prefix. An empty string or nil means the node name prefix policy is not enabled
 func (o DefaultNodePoolNodeConfigPtrOutput) NamePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
 		if v == nil {
@@ -5544,7 +5544,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) NamePrefix() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点间的网络通讯模式。
+// Network communication mode between nodes
 func (o DefaultNodePoolNodeConfigPtrOutput) NetworkTrafficMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
 		if v == nil {
@@ -5554,7 +5554,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) NetworkTrafficMode() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+// Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
 func (o DefaultNodePoolNodeConfigPtrOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *int {
 		if v == nil {
@@ -5564,7 +5564,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) Period() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 部署节点前执行脚本。
+// Script executed before deploying nodes
 func (o DefaultNodePoolNodeConfigPtrOutput) PreScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
 		if v == nil {
@@ -5574,7 +5574,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) PreScript() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// ECS所属项目，一个ECS只能归属于一个项目。
+// The project to which the ECS belongs. Each ECS can only belong to one project.
 func (o DefaultNodePoolNodeConfigPtrOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
 		if v == nil {
@@ -5584,7 +5584,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) ProjectName() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点自动开启公网访问的配置信息
+// Configuration for automatic public network access for nodes
 func (o DefaultNodePoolNodeConfigPtrOutput) PublicAccessConfig() DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigPublicAccessConfig {
 		if v == nil {
@@ -5594,7 +5594,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) PublicAccessConfig() DefaultNodePool
 	}).(DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput)
 }
 
-// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+// Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
 func (o DefaultNodePoolNodeConfigPtrOutput) PublicAccessEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *bool {
 		if v == nil {
@@ -5604,7 +5604,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) PublicAccessEnabled() pulumi.BoolPtr
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 节点安全配置。
+// Node security configuration.
 func (o DefaultNodePoolNodeConfigPtrOutput) Security() DefaultNodePoolNodeConfigSecurityPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigSecurity {
 		if v == nil {
@@ -5614,7 +5614,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) Security() DefaultNodePoolNodeConfig
 	}).(DefaultNodePoolNodeConfigSecurityPtrOutput)
 }
 
-// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+// Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
 func (o DefaultNodePoolNodeConfigPtrOutput) SpotStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
 		if v == nil {
@@ -5624,7 +5624,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) SpotStrategy() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点网络所属的子网 ID 列表。
+// List of subnet IDs to which the node network belongs.
 func (o DefaultNodePoolNodeConfigPtrOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) []string {
 		if v == nil {
@@ -5634,7 +5634,7 @@ func (o DefaultNodePoolNodeConfigPtrOutput) SubnetIds() pulumi.StringArrayOutput
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点的系统盘配置。
+// System disk configuration for the node
 func (o DefaultNodePoolNodeConfigPtrOutput) SystemVolume() DefaultNodePoolNodeConfigSystemVolumePtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigSystemVolume {
 		if v == nil {
@@ -5654,19 +5654,19 @@ func (o DefaultNodePoolNodeConfigPtrOutput) Tags() DefaultNodePoolNodeConfigTagA
 }
 
 type DefaultNodePoolNodeConfigDataVolume struct {
-	// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+	// File system. Options:   - Ext4 (default)   - Xfs
 	FileSystem *string `pulumi:"fileSystem"`
-	// 磁盘格式化后的目标挂载目录。
+	// Target mount directory after disk formatting.
 	MountPoint *string `pulumi:"mountPoint"`
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId *string `pulumi:"placementGroupId"`
-	// 磁盘容量，单位 GiB。
+	// Disk capacity, in GiB
 	Size *int `pulumi:"size"`
-	// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+	// Create a data disk using a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSD and efficient cloud disks support creating disks from snapshots. Only snapshots in 'available' status can be used to create new disks; snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks
 	SnapshotId *string `pulumi:"snapshotId"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber *int `pulumi:"subgroupNumber"`
-	// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Disk type: ESSD*PL0: ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD cloud disk with performance level PL1.
 	Type *string `pulumi:"type"`
 }
 
@@ -5682,19 +5682,19 @@ type DefaultNodePoolNodeConfigDataVolumeInput interface {
 }
 
 type DefaultNodePoolNodeConfigDataVolumeArgs struct {
-	// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+	// File system. Options:   - Ext4 (default)   - Xfs
 	FileSystem pulumi.StringPtrInput `pulumi:"fileSystem"`
-	// 磁盘格式化后的目标挂载目录。
+	// Target mount directory after disk formatting.
 	MountPoint pulumi.StringPtrInput `pulumi:"mountPoint"`
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId pulumi.StringPtrInput `pulumi:"placementGroupId"`
-	// 磁盘容量，单位 GiB。
+	// Disk capacity, in GiB
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+	// Create a data disk using a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSD and efficient cloud disks support creating disks from snapshots. Only snapshots in 'available' status can be used to create new disks; snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks
 	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber pulumi.IntPtrInput `pulumi:"subgroupNumber"`
-	// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Disk type: ESSD*PL0: ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD cloud disk with performance level PL1.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -5749,37 +5749,37 @@ func (o DefaultNodePoolNodeConfigDataVolumeOutput) ToDefaultNodePoolNodeConfigDa
 	return o
 }
 
-// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+// File system. Options:   - Ext4 (default)   - Xfs
 func (o DefaultNodePoolNodeConfigDataVolumeOutput) FileSystem() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *string { return v.FileSystem }).(pulumi.StringPtrOutput)
 }
 
-// 磁盘格式化后的目标挂载目录。
+// Target mount directory after disk formatting.
 func (o DefaultNodePoolNodeConfigDataVolumeOutput) MountPoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *string { return v.MountPoint }).(pulumi.StringPtrOutput)
 }
 
-// 放置组Id
+// Placement group ID
 func (o DefaultNodePoolNodeConfigDataVolumeOutput) PlacementGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *string { return v.PlacementGroupId }).(pulumi.StringPtrOutput)
 }
 
-// 磁盘容量，单位 GiB。
+// Disk capacity, in GiB
 func (o DefaultNodePoolNodeConfigDataVolumeOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+// Create a data disk using a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSD and efficient cloud disks support creating disks from snapshots. Only snapshots in 'available' status can be used to create new disks; snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks
 func (o DefaultNodePoolNodeConfigDataVolumeOutput) SnapshotId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
 }
 
-// 放置子组
+// Placement subgroup
 func (o DefaultNodePoolNodeConfigDataVolumeOutput) SubgroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *int { return v.SubgroupNumber }).(pulumi.IntPtrOutput)
 }
 
-// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+// Disk type: ESSD*PL0: ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD cloud disk with performance level PL1.
 func (o DefaultNodePoolNodeConfigDataVolumeOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -5805,13 +5805,13 @@ func (o DefaultNodePoolNodeConfigDataVolumeArrayOutput) Index(i pulumi.IntInput)
 }
 
 type DefaultNodePoolNodeConfigInstancesDistribution struct {
-	// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+	// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, a new preemptible instance is proactively created for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count.
 	CapacityRebalance *bool `pulumi:"capacityRebalance"`
-	// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+	// Pay-as-you-go instance fallback feature. Value range:   - true: enables this feature. If all preemptible instances fail to purchase due to insufficient inventory, pay-as-you-go instances will be attempted   - false (default): disables this feature. When scaling preemptible instances, only the configured preemptible instances are attempted
 	CompensateWithOnDemand *bool `pulumi:"compensateWithOnDemand"`
-	// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+	// Base capacity size. The base capacity is always pay-as-you-go instances. Value range: [0,500], default: 0
 	OnDemandBaseCapacity *int `pulumi:"onDemandBaseCapacity"`
-	// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+	// Proportion of pay-as-you-go instances for capacity exceeding the base capacity. Value range [0, 100]. 0 means only preemptible instances are produced for excess capacity; 100 means only pay-as-you-go instances are produced. Default is 0.
 	OnDemandPercentageAboveBaseCapacity *int `pulumi:"onDemandPercentageAboveBaseCapacity"`
 }
 
@@ -5827,13 +5827,13 @@ type DefaultNodePoolNodeConfigInstancesDistributionInput interface {
 }
 
 type DefaultNodePoolNodeConfigInstancesDistributionArgs struct {
-	// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+	// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, a new preemptible instance is proactively created for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count.
 	CapacityRebalance pulumi.BoolPtrInput `pulumi:"capacityRebalance"`
-	// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+	// Pay-as-you-go instance fallback feature. Value range:   - true: enables this feature. If all preemptible instances fail to purchase due to insufficient inventory, pay-as-you-go instances will be attempted   - false (default): disables this feature. When scaling preemptible instances, only the configured preemptible instances are attempted
 	CompensateWithOnDemand pulumi.BoolPtrInput `pulumi:"compensateWithOnDemand"`
-	// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+	// Base capacity size. The base capacity is always pay-as-you-go instances. Value range: [0,500], default: 0
 	OnDemandBaseCapacity pulumi.IntPtrInput `pulumi:"onDemandBaseCapacity"`
-	// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+	// Proportion of pay-as-you-go instances for capacity exceeding the base capacity. Value range [0, 100]. 0 means only preemptible instances are produced for excess capacity; 100 means only pay-as-you-go instances are produced. Default is 0.
 	OnDemandPercentageAboveBaseCapacity pulumi.IntPtrInput `pulumi:"onDemandPercentageAboveBaseCapacity"`
 }
 
@@ -5914,22 +5914,22 @@ func (o DefaultNodePoolNodeConfigInstancesDistributionOutput) ToDefaultNodePoolN
 	}).(DefaultNodePoolNodeConfigInstancesDistributionPtrOutput)
 }
 
-// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, a new preemptible instance is proactively created for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count.
 func (o DefaultNodePoolNodeConfigInstancesDistributionOutput) CapacityRebalance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigInstancesDistribution) *bool { return v.CapacityRebalance }).(pulumi.BoolPtrOutput)
 }
 
-// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+// Pay-as-you-go instance fallback feature. Value range:   - true: enables this feature. If all preemptible instances fail to purchase due to insufficient inventory, pay-as-you-go instances will be attempted   - false (default): disables this feature. When scaling preemptible instances, only the configured preemptible instances are attempted
 func (o DefaultNodePoolNodeConfigInstancesDistributionOutput) CompensateWithOnDemand() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigInstancesDistribution) *bool { return v.CompensateWithOnDemand }).(pulumi.BoolPtrOutput)
 }
 
-// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+// Base capacity size. The base capacity is always pay-as-you-go instances. Value range: [0,500], default: 0
 func (o DefaultNodePoolNodeConfigInstancesDistributionOutput) OnDemandBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigInstancesDistribution) *int { return v.OnDemandBaseCapacity }).(pulumi.IntPtrOutput)
 }
 
-// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+// Proportion of pay-as-you-go instances for capacity exceeding the base capacity. Value range [0, 100]. 0 means only preemptible instances are produced for excess capacity; 100 means only pay-as-you-go instances are produced. Default is 0.
 func (o DefaultNodePoolNodeConfigInstancesDistributionOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigInstancesDistribution) *int {
 		return v.OnDemandPercentageAboveBaseCapacity
@@ -5960,7 +5960,7 @@ func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) Elem() DefaultN
 	}).(DefaultNodePoolNodeConfigInstancesDistributionOutput)
 }
 
-// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, a new preemptible instance is proactively created for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count.
 func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) CapacityRebalance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigInstancesDistribution) *bool {
 		if v == nil {
@@ -5970,7 +5970,7 @@ func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) CapacityRebalan
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+// Pay-as-you-go instance fallback feature. Value range:   - true: enables this feature. If all preemptible instances fail to purchase due to insufficient inventory, pay-as-you-go instances will be attempted   - false (default): disables this feature. When scaling preemptible instances, only the configured preemptible instances are attempted
 func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) CompensateWithOnDemand() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigInstancesDistribution) *bool {
 		if v == nil {
@@ -5980,7 +5980,7 @@ func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) CompensateWithO
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+// Base capacity size. The base capacity is always pay-as-you-go instances. Value range: [0,500], default: 0
 func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigInstancesDistribution) *int {
 		if v == nil {
@@ -5990,7 +5990,7 @@ func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandBaseCap
 	}).(pulumi.IntPtrOutput)
 }
 
-// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+// Proportion of pay-as-you-go instances for capacity exceeding the base capacity. Value range [0, 100]. 0 means only preemptible instances are produced for excess capacity; 100 means only pay-as-you-go instances are produced. Default is 0.
 func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigInstancesDistribution) *int {
 		if v == nil {
@@ -6001,11 +6001,11 @@ func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandPercent
 }
 
 type DefaultNodePoolNodeConfigPublicAccessConfig struct {
-	// 公网 IP 的带宽峰值，单位：Mbps。
+	// Peak bandwidth for the public IP, unit: Mbps
 	Bandwidth *int `pulumi:"bandwidth"`
-	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 	BillingType *int `pulumi:"billingType"`
-	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	// Public IP line type. Parameter description: BGP: BGP (multi-line)
 	Isp *string `pulumi:"isp"`
 }
 
@@ -6021,11 +6021,11 @@ type DefaultNodePoolNodeConfigPublicAccessConfigInput interface {
 }
 
 type DefaultNodePoolNodeConfigPublicAccessConfigArgs struct {
-	// 公网 IP 的带宽峰值，单位：Mbps。
+	// Peak bandwidth for the public IP, unit: Mbps
 	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
-	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 	BillingType pulumi.IntPtrInput `pulumi:"billingType"`
-	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	// Public IP line type. Parameter description: BGP: BGP (multi-line)
 	Isp pulumi.StringPtrInput `pulumi:"isp"`
 }
 
@@ -6106,17 +6106,17 @@ func (o DefaultNodePoolNodeConfigPublicAccessConfigOutput) ToDefaultNodePoolNode
 	}).(DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput)
 }
 
-// 公网 IP 的带宽峰值，单位：Mbps。
+// Peak bandwidth for the public IP, unit: Mbps
 func (o DefaultNodePoolNodeConfigPublicAccessConfigOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigPublicAccessConfig) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
 }
 
-// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 func (o DefaultNodePoolNodeConfigPublicAccessConfigOutput) BillingType() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigPublicAccessConfig) *int { return v.BillingType }).(pulumi.IntPtrOutput)
 }
 
-// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+// Public IP line type. Parameter description: BGP: BGP (multi-line)
 func (o DefaultNodePoolNodeConfigPublicAccessConfigOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigPublicAccessConfig) *string { return v.Isp }).(pulumi.StringPtrOutput)
 }
@@ -6145,7 +6145,7 @@ func (o DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) Elem() DefaultNode
 	}).(DefaultNodePoolNodeConfigPublicAccessConfigOutput)
 }
 
-// 公网 IP 的带宽峰值，单位：Mbps。
+// Peak bandwidth for the public IP, unit: Mbps
 func (o DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigPublicAccessConfig) *int {
 		if v == nil {
@@ -6155,7 +6155,7 @@ func (o DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) Bandwidth() pulumi
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 func (o DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) BillingType() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigPublicAccessConfig) *int {
 		if v == nil {
@@ -6165,7 +6165,7 @@ func (o DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) BillingType() pulu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+// Public IP line type. Parameter description: BGP: BGP (multi-line)
 func (o DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigPublicAccessConfig) *string {
 		if v == nil {
@@ -6176,13 +6176,13 @@ func (o DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) Isp() pulumi.Strin
 }
 
 type DefaultNodePoolNodeConfigSecurity struct {
-	// 节点的访问方式配置。
+	// Node access configuration
 	Login *DefaultNodePoolNodeConfigSecurityLogin `pulumi:"login"`
-	// 节点网络所在的安全组 ID 列表。
+	// List of security group IDs for the node network
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 节点的安全策略，参数值说明：Hids：主机安全加固。
+	// Node security policy. Parameter value description: Hids: host security hardening
 	SecurityStrategies []string `pulumi:"securityStrategies"`
-	// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+	// Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
 	SecurityStrategyEnabled *bool `pulumi:"securityStrategyEnabled"`
 }
 
@@ -6198,13 +6198,13 @@ type DefaultNodePoolNodeConfigSecurityInput interface {
 }
 
 type DefaultNodePoolNodeConfigSecurityArgs struct {
-	// 节点的访问方式配置。
+	// Node access configuration
 	Login DefaultNodePoolNodeConfigSecurityLoginPtrInput `pulumi:"login"`
-	// 节点网络所在的安全组 ID 列表。
+	// List of security group IDs for the node network
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 节点的安全策略，参数值说明：Hids：主机安全加固。
+	// Node security policy. Parameter value description: Hids: host security hardening
 	SecurityStrategies pulumi.StringArrayInput `pulumi:"securityStrategies"`
-	// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+	// Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
 	SecurityStrategyEnabled pulumi.BoolPtrInput `pulumi:"securityStrategyEnabled"`
 }
 
@@ -6285,22 +6285,22 @@ func (o DefaultNodePoolNodeConfigSecurityOutput) ToDefaultNodePoolNodeConfigSecu
 	}).(DefaultNodePoolNodeConfigSecurityPtrOutput)
 }
 
-// 节点的访问方式配置。
+// Node access configuration
 func (o DefaultNodePoolNodeConfigSecurityOutput) Login() DefaultNodePoolNodeConfigSecurityLoginPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurity) *DefaultNodePoolNodeConfigSecurityLogin { return v.Login }).(DefaultNodePoolNodeConfigSecurityLoginPtrOutput)
 }
 
-// 节点网络所在的安全组 ID 列表。
+// List of security group IDs for the node network
 func (o DefaultNodePoolNodeConfigSecurityOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurity) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点的安全策略，参数值说明：Hids：主机安全加固。
+// Node security policy. Parameter value description: Hids: host security hardening
 func (o DefaultNodePoolNodeConfigSecurityOutput) SecurityStrategies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurity) []string { return v.SecurityStrategies }).(pulumi.StringArrayOutput)
 }
 
-// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+// Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
 func (o DefaultNodePoolNodeConfigSecurityOutput) SecurityStrategyEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurity) *bool { return v.SecurityStrategyEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -6329,7 +6329,7 @@ func (o DefaultNodePoolNodeConfigSecurityPtrOutput) Elem() DefaultNodePoolNodeCo
 	}).(DefaultNodePoolNodeConfigSecurityOutput)
 }
 
-// 节点的访问方式配置。
+// Node access configuration
 func (o DefaultNodePoolNodeConfigSecurityPtrOutput) Login() DefaultNodePoolNodeConfigSecurityLoginPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurity) *DefaultNodePoolNodeConfigSecurityLogin {
 		if v == nil {
@@ -6339,7 +6339,7 @@ func (o DefaultNodePoolNodeConfigSecurityPtrOutput) Login() DefaultNodePoolNodeC
 	}).(DefaultNodePoolNodeConfigSecurityLoginPtrOutput)
 }
 
-// 节点网络所在的安全组 ID 列表。
+// List of security group IDs for the node network
 func (o DefaultNodePoolNodeConfigSecurityPtrOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurity) []string {
 		if v == nil {
@@ -6349,7 +6349,7 @@ func (o DefaultNodePoolNodeConfigSecurityPtrOutput) SecurityGroupIds() pulumi.St
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点的安全策略，参数值说明：Hids：主机安全加固。
+// Node security policy. Parameter value description: Hids: host security hardening
 func (o DefaultNodePoolNodeConfigSecurityPtrOutput) SecurityStrategies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurity) []string {
 		if v == nil {
@@ -6359,7 +6359,7 @@ func (o DefaultNodePoolNodeConfigSecurityPtrOutput) SecurityStrategies() pulumi.
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+// Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
 func (o DefaultNodePoolNodeConfigSecurityPtrOutput) SecurityStrategyEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurity) *bool {
 		if v == nil {
@@ -6370,11 +6370,11 @@ func (o DefaultNodePoolNodeConfigSecurityPtrOutput) SecurityStrategyEnabled() pu
 }
 
 type DefaultNodePoolNodeConfigSecurityLogin struct {
-	// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+	// Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 	Password *string `pulumi:"password"`
-	// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+	// SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
 	SshKeyPairName *string `pulumi:"sshKeyPairName"`
-	// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+	// Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
 	Type *string `pulumi:"type"`
 }
 
@@ -6390,11 +6390,11 @@ type DefaultNodePoolNodeConfigSecurityLoginInput interface {
 }
 
 type DefaultNodePoolNodeConfigSecurityLoginArgs struct {
-	// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+	// Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 	Password pulumi.StringPtrInput `pulumi:"password"`
-	// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+	// SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
 	SshKeyPairName pulumi.StringPtrInput `pulumi:"sshKeyPairName"`
-	// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+	// Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -6475,17 +6475,17 @@ func (o DefaultNodePoolNodeConfigSecurityLoginOutput) ToDefaultNodePoolNodeConfi
 	}).(DefaultNodePoolNodeConfigSecurityLoginPtrOutput)
 }
 
-// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+// Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 func (o DefaultNodePoolNodeConfigSecurityLoginOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurityLogin) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
-// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+// SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
 func (o DefaultNodePoolNodeConfigSecurityLoginOutput) SshKeyPairName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurityLogin) *string { return v.SshKeyPairName }).(pulumi.StringPtrOutput)
 }
 
-// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+// Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
 func (o DefaultNodePoolNodeConfigSecurityLoginOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurityLogin) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -6514,7 +6514,7 @@ func (o DefaultNodePoolNodeConfigSecurityLoginPtrOutput) Elem() DefaultNodePoolN
 	}).(DefaultNodePoolNodeConfigSecurityLoginOutput)
 }
 
-// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+// Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 func (o DefaultNodePoolNodeConfigSecurityLoginPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurityLogin) *string {
 		if v == nil {
@@ -6524,7 +6524,7 @@ func (o DefaultNodePoolNodeConfigSecurityLoginPtrOutput) Password() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+// SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
 func (o DefaultNodePoolNodeConfigSecurityLoginPtrOutput) SshKeyPairName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurityLogin) *string {
 		if v == nil {
@@ -6534,7 +6534,7 @@ func (o DefaultNodePoolNodeConfigSecurityLoginPtrOutput) SshKeyPairName() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+// Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
 func (o DefaultNodePoolNodeConfigSecurityLoginPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurityLogin) *string {
 		if v == nil {
@@ -6545,13 +6545,13 @@ func (o DefaultNodePoolNodeConfigSecurityLoginPtrOutput) Type() pulumi.StringPtr
 }
 
 type DefaultNodePoolNodeConfigSystemVolume struct {
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId *string `pulumi:"placementGroupId"`
-	// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+	// Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 	Size *int `pulumi:"size"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber *int `pulumi:"subgroupNumber"`
-	// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
 	Type *string `pulumi:"type"`
 }
 
@@ -6567,13 +6567,13 @@ type DefaultNodePoolNodeConfigSystemVolumeInput interface {
 }
 
 type DefaultNodePoolNodeConfigSystemVolumeArgs struct {
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId pulumi.StringPtrInput `pulumi:"placementGroupId"`
-	// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+	// Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber pulumi.IntPtrInput `pulumi:"subgroupNumber"`
-	// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -6654,22 +6654,22 @@ func (o DefaultNodePoolNodeConfigSystemVolumeOutput) ToDefaultNodePoolNodeConfig
 	}).(DefaultNodePoolNodeConfigSystemVolumePtrOutput)
 }
 
-// 放置组Id
+// Placement group ID
 func (o DefaultNodePoolNodeConfigSystemVolumeOutput) PlacementGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigSystemVolume) *string { return v.PlacementGroupId }).(pulumi.StringPtrOutput)
 }
 
-// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+// Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 func (o DefaultNodePoolNodeConfigSystemVolumeOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigSystemVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 放置子组
+// Placement subgroup
 func (o DefaultNodePoolNodeConfigSystemVolumeOutput) SubgroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigSystemVolume) *int { return v.SubgroupNumber }).(pulumi.IntPtrOutput)
 }
 
-// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+// Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
 func (o DefaultNodePoolNodeConfigSystemVolumeOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigSystemVolume) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -6698,7 +6698,7 @@ func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) Elem() DefaultNodePoolNo
 	}).(DefaultNodePoolNodeConfigSystemVolumeOutput)
 }
 
-// 放置组Id
+// Placement group ID
 func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) PlacementGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSystemVolume) *string {
 		if v == nil {
@@ -6708,7 +6708,7 @@ func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) PlacementGroupId() pulum
 	}).(pulumi.StringPtrOutput)
 }
 
-// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+// Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSystemVolume) *int {
 		if v == nil {
@@ -6718,7 +6718,7 @@ func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) Size() pulumi.IntPtrOutp
 	}).(pulumi.IntPtrOutput)
 }
 
-// 放置子组
+// Placement subgroup
 func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) SubgroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSystemVolume) *int {
 		if v == nil {
@@ -6728,7 +6728,7 @@ func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) SubgroupNumber() pulumi.
 	}).(pulumi.IntPtrOutput)
 }
 
-// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+// Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
 func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSystemVolume) *string {
 		if v == nil {
@@ -6739,9 +6739,9 @@ func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) Type() pulumi.StringPtrO
 }
 
 type DefaultNodePoolNodeConfigTag struct {
-	// 标签键。
+	// Label key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -6757,9 +6757,9 @@ type DefaultNodePoolNodeConfigTagInput interface {
 }
 
 type DefaultNodePoolNodeConfigTagArgs struct {
-	// 标签键。
+	// Label key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -6814,12 +6814,12 @@ func (o DefaultNodePoolNodeConfigTagOutput) ToDefaultNodePoolNodeConfigTagOutput
 	return o
 }
 
-// 标签键。
+// Label key.
 func (o DefaultNodePoolNodeConfigTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o DefaultNodePoolNodeConfigTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeConfigTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -6845,17 +6845,17 @@ func (o DefaultNodePoolNodeConfigTagArrayOutput) Index(i pulumi.IntInput) Defaul
 }
 
 type DefaultNodePoolNodeStatistics struct {
-	// Phase=Creating的节点总数量。
+	// Total number of nodes with Phase=Creating.
 	CreatingCount *int `pulumi:"creatingCount"`
-	// Phase=Deleting的节点总数量。
+	// Total number of nodes with Phase=Deleting.
 	DeletingCount *int `pulumi:"deletingCount"`
-	// Phase=Failed的节点总数量。
+	// Total number of nodes with Phase=Failed
 	FailedCount *int `pulumi:"failedCount"`
-	// Phase=Running的节点总数量。
+	// Total number of nodes with Phase=Running
 	RunningCount *int `pulumi:"runningCount"`
-	// 节点池中的节点总数量。
+	// Total number of nodes in the node pool.
 	TotalCount *int `pulumi:"totalCount"`
-	// Phase=Updating的节点总数量。
+	// Total number of nodes with Phase=Updating
 	UpdatingCount *int `pulumi:"updatingCount"`
 }
 
@@ -6871,17 +6871,17 @@ type DefaultNodePoolNodeStatisticsInput interface {
 }
 
 type DefaultNodePoolNodeStatisticsArgs struct {
-	// Phase=Creating的节点总数量。
+	// Total number of nodes with Phase=Creating.
 	CreatingCount pulumi.IntPtrInput `pulumi:"creatingCount"`
-	// Phase=Deleting的节点总数量。
+	// Total number of nodes with Phase=Deleting.
 	DeletingCount pulumi.IntPtrInput `pulumi:"deletingCount"`
-	// Phase=Failed的节点总数量。
+	// Total number of nodes with Phase=Failed
 	FailedCount pulumi.IntPtrInput `pulumi:"failedCount"`
-	// Phase=Running的节点总数量。
+	// Total number of nodes with Phase=Running
 	RunningCount pulumi.IntPtrInput `pulumi:"runningCount"`
-	// 节点池中的节点总数量。
+	// Total number of nodes in the node pool.
 	TotalCount pulumi.IntPtrInput `pulumi:"totalCount"`
-	// Phase=Updating的节点总数量。
+	// Total number of nodes with Phase=Updating
 	UpdatingCount pulumi.IntPtrInput `pulumi:"updatingCount"`
 }
 
@@ -6962,32 +6962,32 @@ func (o DefaultNodePoolNodeStatisticsOutput) ToDefaultNodePoolNodeStatisticsPtrO
 	}).(DefaultNodePoolNodeStatisticsPtrOutput)
 }
 
-// Phase=Creating的节点总数量。
+// Total number of nodes with Phase=Creating.
 func (o DefaultNodePoolNodeStatisticsOutput) CreatingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeStatistics) *int { return v.CreatingCount }).(pulumi.IntPtrOutput)
 }
 
-// Phase=Deleting的节点总数量。
+// Total number of nodes with Phase=Deleting.
 func (o DefaultNodePoolNodeStatisticsOutput) DeletingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeStatistics) *int { return v.DeletingCount }).(pulumi.IntPtrOutput)
 }
 
-// Phase=Failed的节点总数量。
+// Total number of nodes with Phase=Failed
 func (o DefaultNodePoolNodeStatisticsOutput) FailedCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeStatistics) *int { return v.FailedCount }).(pulumi.IntPtrOutput)
 }
 
-// Phase=Running的节点总数量。
+// Total number of nodes with Phase=Running
 func (o DefaultNodePoolNodeStatisticsOutput) RunningCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeStatistics) *int { return v.RunningCount }).(pulumi.IntPtrOutput)
 }
 
-// 节点池中的节点总数量。
+// Total number of nodes in the node pool.
 func (o DefaultNodePoolNodeStatisticsOutput) TotalCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeStatistics) *int { return v.TotalCount }).(pulumi.IntPtrOutput)
 }
 
-// Phase=Updating的节点总数量。
+// Total number of nodes with Phase=Updating
 func (o DefaultNodePoolNodeStatisticsOutput) UpdatingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolNodeStatistics) *int { return v.UpdatingCount }).(pulumi.IntPtrOutput)
 }
@@ -7016,7 +7016,7 @@ func (o DefaultNodePoolNodeStatisticsPtrOutput) Elem() DefaultNodePoolNodeStatis
 	}).(DefaultNodePoolNodeStatisticsOutput)
 }
 
-// Phase=Creating的节点总数量。
+// Total number of nodes with Phase=Creating.
 func (o DefaultNodePoolNodeStatisticsPtrOutput) CreatingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeStatistics) *int {
 		if v == nil {
@@ -7026,7 +7026,7 @@ func (o DefaultNodePoolNodeStatisticsPtrOutput) CreatingCount() pulumi.IntPtrOut
 	}).(pulumi.IntPtrOutput)
 }
 
-// Phase=Deleting的节点总数量。
+// Total number of nodes with Phase=Deleting.
 func (o DefaultNodePoolNodeStatisticsPtrOutput) DeletingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeStatistics) *int {
 		if v == nil {
@@ -7036,7 +7036,7 @@ func (o DefaultNodePoolNodeStatisticsPtrOutput) DeletingCount() pulumi.IntPtrOut
 	}).(pulumi.IntPtrOutput)
 }
 
-// Phase=Failed的节点总数量。
+// Total number of nodes with Phase=Failed
 func (o DefaultNodePoolNodeStatisticsPtrOutput) FailedCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeStatistics) *int {
 		if v == nil {
@@ -7046,7 +7046,7 @@ func (o DefaultNodePoolNodeStatisticsPtrOutput) FailedCount() pulumi.IntPtrOutpu
 	}).(pulumi.IntPtrOutput)
 }
 
-// Phase=Running的节点总数量。
+// Total number of nodes with Phase=Running
 func (o DefaultNodePoolNodeStatisticsPtrOutput) RunningCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeStatistics) *int {
 		if v == nil {
@@ -7056,7 +7056,7 @@ func (o DefaultNodePoolNodeStatisticsPtrOutput) RunningCount() pulumi.IntPtrOutp
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点池中的节点总数量。
+// Total number of nodes in the node pool.
 func (o DefaultNodePoolNodeStatisticsPtrOutput) TotalCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeStatistics) *int {
 		if v == nil {
@@ -7066,7 +7066,7 @@ func (o DefaultNodePoolNodeStatisticsPtrOutput) TotalCount() pulumi.IntPtrOutput
 	}).(pulumi.IntPtrOutput)
 }
 
-// Phase=Updating的节点总数量。
+// Total number of nodes with Phase=Updating
 func (o DefaultNodePoolNodeStatisticsPtrOutput) UpdatingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolNodeStatistics) *int {
 		if v == nil {
@@ -7078,7 +7078,7 @@ func (o DefaultNodePoolNodeStatisticsPtrOutput) UpdatingCount() pulumi.IntPtrOut
 
 type DefaultNodePoolStatus struct {
 	Conditions []DefaultNodePoolStatusCondition `pulumi:"conditions"`
-	// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+	// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
 	Phase *string `pulumi:"phase"`
 }
 
@@ -7095,7 +7095,7 @@ type DefaultNodePoolStatusInput interface {
 
 type DefaultNodePoolStatusArgs struct {
 	Conditions DefaultNodePoolStatusConditionArrayInput `pulumi:"conditions"`
-	// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+	// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
 	Phase pulumi.StringPtrInput `pulumi:"phase"`
 }
 
@@ -7180,7 +7180,7 @@ func (o DefaultNodePoolStatusOutput) Conditions() DefaultNodePoolStatusCondition
 	return o.ApplyT(func(v DefaultNodePoolStatus) []DefaultNodePoolStatusCondition { return v.Conditions }).(DefaultNodePoolStatusConditionArrayOutput)
 }
 
-// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
 func (o DefaultNodePoolStatusOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolStatus) *string { return v.Phase }).(pulumi.StringPtrOutput)
 }
@@ -7218,7 +7218,7 @@ func (o DefaultNodePoolStatusPtrOutput) Conditions() DefaultNodePoolStatusCondit
 	}).(DefaultNodePoolStatusConditionArrayOutput)
 }
 
-// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
 func (o DefaultNodePoolStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DefaultNodePoolStatus) *string {
 		if v == nil {
@@ -7229,7 +7229,7 @@ func (o DefaultNodePoolStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 }
 
 type DefaultNodePoolStatusCondition struct {
-	// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+	// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
 	Type *string `pulumi:"type"`
 }
 
@@ -7245,7 +7245,7 @@ type DefaultNodePoolStatusConditionInput interface {
 }
 
 type DefaultNodePoolStatusConditionArgs struct {
-	// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+	// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -7300,7 +7300,7 @@ func (o DefaultNodePoolStatusConditionOutput) ToDefaultNodePoolStatusConditionOu
 	return o
 }
 
-// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
 func (o DefaultNodePoolStatusConditionOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolStatusCondition) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -7326,9 +7326,9 @@ func (o DefaultNodePoolStatusConditionArrayOutput) Index(i pulumi.IntInput) Defa
 }
 
 type DefaultNodePoolTag struct {
-	// 标签键。
+	// Label key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -7344,9 +7344,9 @@ type DefaultNodePoolTagInput interface {
 }
 
 type DefaultNodePoolTagArgs struct {
-	// 标签键。
+	// Label key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -7401,12 +7401,12 @@ func (o DefaultNodePoolTagOutput) ToDefaultNodePoolTagOutputWithContext(ctx cont
 	return o
 }
 
-// 标签键。
+// Label key.
 func (o DefaultNodePoolTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o DefaultNodePoolTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DefaultNodePoolTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -7432,7 +7432,7 @@ func (o DefaultNodePoolTagArrayOutput) Index(i pulumi.IntInput) DefaultNodePoolT
 }
 
 type NodeKubernetesConfig struct {
-	// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+	// Node lock configuration. Options: false (default): not locked; true: locked
 	Cordon *bool                       `pulumi:"cordon"`
 	Labels []NodeKubernetesConfigLabel `pulumi:"labels"`
 	Taints []NodeKubernetesConfigTaint `pulumi:"taints"`
@@ -7450,7 +7450,7 @@ type NodeKubernetesConfigInput interface {
 }
 
 type NodeKubernetesConfigArgs struct {
-	// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+	// Node lock configuration. Options: false (default): not locked; true: locked
 	Cordon pulumi.BoolPtrInput                 `pulumi:"cordon"`
 	Labels NodeKubernetesConfigLabelArrayInput `pulumi:"labels"`
 	Taints NodeKubernetesConfigTaintArrayInput `pulumi:"taints"`
@@ -7533,7 +7533,7 @@ func (o NodeKubernetesConfigOutput) ToNodeKubernetesConfigPtrOutputWithContext(c
 	}).(NodeKubernetesConfigPtrOutput)
 }
 
-// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+// Node lock configuration. Options: false (default): not locked; true: locked
 func (o NodeKubernetesConfigOutput) Cordon() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodeKubernetesConfig) *bool { return v.Cordon }).(pulumi.BoolPtrOutput)
 }
@@ -7570,7 +7570,7 @@ func (o NodeKubernetesConfigPtrOutput) Elem() NodeKubernetesConfigOutput {
 	}).(NodeKubernetesConfigOutput)
 }
 
-// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+// Node lock configuration. Options: false (default): not locked; true: locked
 func (o NodeKubernetesConfigPtrOutput) Cordon() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodeKubernetesConfig) *bool {
 		if v == nil {
@@ -7599,9 +7599,9 @@ func (o NodeKubernetesConfigPtrOutput) Taints() NodeKubernetesConfigTaintArrayOu
 }
 
 type NodeKubernetesConfigLabel struct {
-	// 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	// Label key. A valid label key consists of two parts: \n\n and \n\n, separated by a slash (/). \n\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
 	Key *string `pulumi:"key"`
-	// 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	// Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
 	Value *string `pulumi:"value"`
 }
 
@@ -7617,9 +7617,9 @@ type NodeKubernetesConfigLabelInput interface {
 }
 
 type NodeKubernetesConfigLabelArgs struct {
-	// 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	// Label key. A valid label key consists of two parts: \n\n and \n\n, separated by a slash (/). \n\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	// Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -7674,12 +7674,12 @@ func (o NodeKubernetesConfigLabelOutput) ToNodeKubernetesConfigLabelOutputWithCo
 	return o
 }
 
-// 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+// Label key. A valid label key consists of two parts: \n\n and \n\n, separated by a slash (/). \n\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
 func (o NodeKubernetesConfigLabelOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeKubernetesConfigLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+// Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
 func (o NodeKubernetesConfigLabelOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeKubernetesConfigLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -7705,11 +7705,11 @@ func (o NodeKubernetesConfigLabelArrayOutput) Index(i pulumi.IntInput) NodeKuber
 }
 
 type NodeKubernetesConfigTaint struct {
-	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	// Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
 	Effect *string `pulumi:"effect"`
-	// 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	// Taint key. A valid taint key has two segments: \n\n and \n\n, separated by a slash (/). \n\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
 	Key *string `pulumi:"key"`
-	// 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	// Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
 	Value *string `pulumi:"value"`
 }
 
@@ -7725,11 +7725,11 @@ type NodeKubernetesConfigTaintInput interface {
 }
 
 type NodeKubernetesConfigTaintArgs struct {
-	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	// Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
 	Effect pulumi.StringPtrInput `pulumi:"effect"`
-	// 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	// Taint key. A valid taint key has two segments: \n\n and \n\n, separated by a slash (/). \n\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	// Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -7784,17 +7784,17 @@ func (o NodeKubernetesConfigTaintOutput) ToNodeKubernetesConfigTaintOutputWithCo
 	return o
 }
 
-// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+// Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
 func (o NodeKubernetesConfigTaintOutput) Effect() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeKubernetesConfigTaint) *string { return v.Effect }).(pulumi.StringPtrOutput)
 }
 
-// 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+// Taint key. A valid taint key has two segments: \n\n and \n\n, separated by a slash (/). \n\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
 func (o NodeKubernetesConfigTaintOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeKubernetesConfigTaint) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+// Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
 func (o NodeKubernetesConfigTaintOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeKubernetesConfigTaint) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -7820,19 +7820,19 @@ func (o NodeKubernetesConfigTaintArrayOutput) Index(i pulumi.IntInput) NodeKuber
 }
 
 type NodePoolAutoScaling struct {
-	// 配置节点池的期望节点数。
+	// Configure the expected number of nodes in the node pool
 	DesiredReplicas *int `pulumi:"desiredReplicas"`
-	// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+	// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
 	Enabled *bool `pulumi:"enabled"`
-	// 配置节点池的最大节点数。
+	// Configure the maximum number of nodes in the node pool
 	MaxReplicas *int `pulumi:"maxReplicas"`
-	// 配置节点池的最小节点数。
+	// Minimum number of nodes configured for the node pool
 	MinReplicas *int `pulumi:"minReplicas"`
-	// 优先级。
+	// Priority
 	Priority *int `pulumi:"priority"`
-	// 伸缩组ID。
+	// Scaling group ID
 	ScalingGroupId *string `pulumi:"scalingGroupId"`
-	// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+	// Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
 	SubnetPolicy *string `pulumi:"subnetPolicy"`
 }
 
@@ -7848,19 +7848,19 @@ type NodePoolAutoScalingInput interface {
 }
 
 type NodePoolAutoScalingArgs struct {
-	// 配置节点池的期望节点数。
+	// Configure the expected number of nodes in the node pool
 	DesiredReplicas pulumi.IntPtrInput `pulumi:"desiredReplicas"`
-	// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+	// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// 配置节点池的最大节点数。
+	// Configure the maximum number of nodes in the node pool
 	MaxReplicas pulumi.IntPtrInput `pulumi:"maxReplicas"`
-	// 配置节点池的最小节点数。
+	// Minimum number of nodes configured for the node pool
 	MinReplicas pulumi.IntPtrInput `pulumi:"minReplicas"`
-	// 优先级。
+	// Priority
 	Priority pulumi.IntPtrInput `pulumi:"priority"`
-	// 伸缩组ID。
+	// Scaling group ID
 	ScalingGroupId pulumi.StringPtrInput `pulumi:"scalingGroupId"`
-	// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+	// Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
 	SubnetPolicy pulumi.StringPtrInput `pulumi:"subnetPolicy"`
 }
 
@@ -7941,37 +7941,37 @@ func (o NodePoolAutoScalingOutput) ToNodePoolAutoScalingPtrOutputWithContext(ctx
 	}).(NodePoolAutoScalingPtrOutput)
 }
 
-// 配置节点池的期望节点数。
+// Configure the expected number of nodes in the node pool
 func (o NodePoolAutoScalingOutput) DesiredReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolAutoScaling) *int { return v.DesiredReplicas }).(pulumi.IntPtrOutput)
 }
 
-// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
 func (o NodePoolAutoScalingOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolAutoScaling) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// 配置节点池的最大节点数。
+// Configure the maximum number of nodes in the node pool
 func (o NodePoolAutoScalingOutput) MaxReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolAutoScaling) *int { return v.MaxReplicas }).(pulumi.IntPtrOutput)
 }
 
-// 配置节点池的最小节点数。
+// Minimum number of nodes configured for the node pool
 func (o NodePoolAutoScalingOutput) MinReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolAutoScaling) *int { return v.MinReplicas }).(pulumi.IntPtrOutput)
 }
 
-// 优先级。
+// Priority
 func (o NodePoolAutoScalingOutput) Priority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolAutoScaling) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
-// 伸缩组ID。
+// Scaling group ID
 func (o NodePoolAutoScalingOutput) ScalingGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolAutoScaling) *string { return v.ScalingGroupId }).(pulumi.StringPtrOutput)
 }
 
-// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+// Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
 func (o NodePoolAutoScalingOutput) SubnetPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolAutoScaling) *string { return v.SubnetPolicy }).(pulumi.StringPtrOutput)
 }
@@ -8000,7 +8000,7 @@ func (o NodePoolAutoScalingPtrOutput) Elem() NodePoolAutoScalingOutput {
 	}).(NodePoolAutoScalingOutput)
 }
 
-// 配置节点池的期望节点数。
+// Configure the expected number of nodes in the node pool
 func (o NodePoolAutoScalingPtrOutput) DesiredReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolAutoScaling) *int {
 		if v == nil {
@@ -8010,7 +8010,7 @@ func (o NodePoolAutoScalingPtrOutput) DesiredReplicas() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
 func (o NodePoolAutoScalingPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolAutoScaling) *bool {
 		if v == nil {
@@ -8020,7 +8020,7 @@ func (o NodePoolAutoScalingPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 配置节点池的最大节点数。
+// Configure the maximum number of nodes in the node pool
 func (o NodePoolAutoScalingPtrOutput) MaxReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolAutoScaling) *int {
 		if v == nil {
@@ -8030,7 +8030,7 @@ func (o NodePoolAutoScalingPtrOutput) MaxReplicas() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 配置节点池的最小节点数。
+// Minimum number of nodes configured for the node pool
 func (o NodePoolAutoScalingPtrOutput) MinReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolAutoScaling) *int {
 		if v == nil {
@@ -8040,7 +8040,7 @@ func (o NodePoolAutoScalingPtrOutput) MinReplicas() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 优先级。
+// Priority
 func (o NodePoolAutoScalingPtrOutput) Priority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolAutoScaling) *int {
 		if v == nil {
@@ -8050,7 +8050,7 @@ func (o NodePoolAutoScalingPtrOutput) Priority() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 伸缩组ID。
+// Scaling group ID
 func (o NodePoolAutoScalingPtrOutput) ScalingGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolAutoScaling) *string {
 		if v == nil {
@@ -8060,7 +8060,7 @@ func (o NodePoolAutoScalingPtrOutput) ScalingGroupId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+// Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
 func (o NodePoolAutoScalingPtrOutput) SubnetPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolAutoScaling) *string {
 		if v == nil {
@@ -8071,20 +8071,20 @@ func (o NodePoolAutoScalingPtrOutput) SubnetPolicy() pulumi.StringPtrOutput {
 }
 
 type NodePoolKubernetesConfig struct {
-	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+	// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
 	AutoSyncDisabled *bool `pulumi:"autoSyncDisabled"`
-	// 节点池 Containerd 相关配置。
+	// Node pool Containerd configuration
 	ContainerdConfig *NodePoolKubernetesConfigContainerdConfig `pulumi:"containerdConfig"`
-	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+	// Node blocking configuration. Parameter values: false: not blocked; true: blocked
 	Cordon *bool `pulumi:"cordon"`
-	// Kubelet 组件的相关配置
+	// Kubelet component configuration
 	KubeletConfig *NodePoolKubernetesConfigKubeletConfig `pulumi:"kubeletConfig"`
 	Labels        []NodePoolKubernetesConfigLabel        `pulumi:"labels"`
-	// Kubernetes 中节点对象的元数据名称前缀。
+	// Prefix for node object metadata name in Kubernetes
 	NamePrefix *string `pulumi:"namePrefix"`
-	// Kubernetes 中节点对象的元数据名称后缀。
+	// Suffix for node object metadata name in Kubernetes
 	NameSuffix *string `pulumi:"nameSuffix"`
-	// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+	// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
 	NameUseHostname *bool                           `pulumi:"nameUseHostname"`
 	Taints          []NodePoolKubernetesConfigTaint `pulumi:"taints"`
 }
@@ -8101,20 +8101,20 @@ type NodePoolKubernetesConfigInput interface {
 }
 
 type NodePoolKubernetesConfigArgs struct {
-	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+	// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
 	AutoSyncDisabled pulumi.BoolPtrInput `pulumi:"autoSyncDisabled"`
-	// 节点池 Containerd 相关配置。
+	// Node pool Containerd configuration
 	ContainerdConfig NodePoolKubernetesConfigContainerdConfigPtrInput `pulumi:"containerdConfig"`
-	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+	// Node blocking configuration. Parameter values: false: not blocked; true: blocked
 	Cordon pulumi.BoolPtrInput `pulumi:"cordon"`
-	// Kubelet 组件的相关配置
+	// Kubelet component configuration
 	KubeletConfig NodePoolKubernetesConfigKubeletConfigPtrInput `pulumi:"kubeletConfig"`
 	Labels        NodePoolKubernetesConfigLabelArrayInput       `pulumi:"labels"`
-	// Kubernetes 中节点对象的元数据名称前缀。
+	// Prefix for node object metadata name in Kubernetes
 	NamePrefix pulumi.StringPtrInput `pulumi:"namePrefix"`
-	// Kubernetes 中节点对象的元数据名称后缀。
+	// Suffix for node object metadata name in Kubernetes
 	NameSuffix pulumi.StringPtrInput `pulumi:"nameSuffix"`
-	// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+	// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
 	NameUseHostname pulumi.BoolPtrInput                     `pulumi:"nameUseHostname"`
 	Taints          NodePoolKubernetesConfigTaintArrayInput `pulumi:"taints"`
 }
@@ -8196,22 +8196,22 @@ func (o NodePoolKubernetesConfigOutput) ToNodePoolKubernetesConfigPtrOutputWithC
 	}).(NodePoolKubernetesConfigPtrOutput)
 }
 
-// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
 func (o NodePoolKubernetesConfigOutput) AutoSyncDisabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *bool { return v.AutoSyncDisabled }).(pulumi.BoolPtrOutput)
 }
 
-// 节点池 Containerd 相关配置。
+// Node pool Containerd configuration
 func (o NodePoolKubernetesConfigOutput) ContainerdConfig() NodePoolKubernetesConfigContainerdConfigPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *NodePoolKubernetesConfigContainerdConfig { return v.ContainerdConfig }).(NodePoolKubernetesConfigContainerdConfigPtrOutput)
 }
 
-// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+// Node blocking configuration. Parameter values: false: not blocked; true: blocked
 func (o NodePoolKubernetesConfigOutput) Cordon() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *bool { return v.Cordon }).(pulumi.BoolPtrOutput)
 }
 
-// Kubelet 组件的相关配置
+// Kubelet component configuration
 func (o NodePoolKubernetesConfigOutput) KubeletConfig() NodePoolKubernetesConfigKubeletConfigPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *NodePoolKubernetesConfigKubeletConfig { return v.KubeletConfig }).(NodePoolKubernetesConfigKubeletConfigPtrOutput)
 }
@@ -8220,17 +8220,17 @@ func (o NodePoolKubernetesConfigOutput) Labels() NodePoolKubernetesConfigLabelAr
 	return o.ApplyT(func(v NodePoolKubernetesConfig) []NodePoolKubernetesConfigLabel { return v.Labels }).(NodePoolKubernetesConfigLabelArrayOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称前缀。
+// Prefix for node object metadata name in Kubernetes
 func (o NodePoolKubernetesConfigOutput) NamePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *string { return v.NamePrefix }).(pulumi.StringPtrOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称后缀。
+// Suffix for node object metadata name in Kubernetes
 func (o NodePoolKubernetesConfigOutput) NameSuffix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *string { return v.NameSuffix }).(pulumi.StringPtrOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
 func (o NodePoolKubernetesConfigOutput) NameUseHostname() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *bool { return v.NameUseHostname }).(pulumi.BoolPtrOutput)
 }
@@ -8263,7 +8263,7 @@ func (o NodePoolKubernetesConfigPtrOutput) Elem() NodePoolKubernetesConfigOutput
 	}).(NodePoolKubernetesConfigOutput)
 }
 
-// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
 func (o NodePoolKubernetesConfigPtrOutput) AutoSyncDisabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) *bool {
 		if v == nil {
@@ -8273,7 +8273,7 @@ func (o NodePoolKubernetesConfigPtrOutput) AutoSyncDisabled() pulumi.BoolPtrOutp
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 节点池 Containerd 相关配置。
+// Node pool Containerd configuration
 func (o NodePoolKubernetesConfigPtrOutput) ContainerdConfig() NodePoolKubernetesConfigContainerdConfigPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) *NodePoolKubernetesConfigContainerdConfig {
 		if v == nil {
@@ -8283,7 +8283,7 @@ func (o NodePoolKubernetesConfigPtrOutput) ContainerdConfig() NodePoolKubernetes
 	}).(NodePoolKubernetesConfigContainerdConfigPtrOutput)
 }
 
-// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+// Node blocking configuration. Parameter values: false: not blocked; true: blocked
 func (o NodePoolKubernetesConfigPtrOutput) Cordon() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) *bool {
 		if v == nil {
@@ -8293,7 +8293,7 @@ func (o NodePoolKubernetesConfigPtrOutput) Cordon() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Kubelet 组件的相关配置
+// Kubelet component configuration
 func (o NodePoolKubernetesConfigPtrOutput) KubeletConfig() NodePoolKubernetesConfigKubeletConfigPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) *NodePoolKubernetesConfigKubeletConfig {
 		if v == nil {
@@ -8312,7 +8312,7 @@ func (o NodePoolKubernetesConfigPtrOutput) Labels() NodePoolKubernetesConfigLabe
 	}).(NodePoolKubernetesConfigLabelArrayOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称前缀。
+// Prefix for node object metadata name in Kubernetes
 func (o NodePoolKubernetesConfigPtrOutput) NamePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) *string {
 		if v == nil {
@@ -8322,7 +8322,7 @@ func (o NodePoolKubernetesConfigPtrOutput) NamePrefix() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称后缀。
+// Suffix for node object metadata name in Kubernetes
 func (o NodePoolKubernetesConfigPtrOutput) NameSuffix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) *string {
 		if v == nil {
@@ -8332,7 +8332,7 @@ func (o NodePoolKubernetesConfigPtrOutput) NameSuffix() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
 func (o NodePoolKubernetesConfigPtrOutput) NameUseHostname() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) *bool {
 		if v == nil {
@@ -8352,7 +8352,7 @@ func (o NodePoolKubernetesConfigPtrOutput) Taints() NodePoolKubernetesConfigTain
 }
 
 type NodePoolKubernetesConfigContainerdConfig struct {
-	// 指定跳过证书认证的容器镜像仓库地址。
+	// Specify the container image repository address to skip certificate verification.
 	InsecureRegistries   []string                                                      `pulumi:"insecureRegistries"`
 	RegistryProxyConfigs []NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig `pulumi:"registryProxyConfigs"`
 }
@@ -8369,7 +8369,7 @@ type NodePoolKubernetesConfigContainerdConfigInput interface {
 }
 
 type NodePoolKubernetesConfigContainerdConfigArgs struct {
-	// 指定跳过证书认证的容器镜像仓库地址。
+	// Specify the container image repository address to skip certificate verification.
 	InsecureRegistries   pulumi.StringArrayInput                                               `pulumi:"insecureRegistries"`
 	RegistryProxyConfigs NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayInput `pulumi:"registryProxyConfigs"`
 }
@@ -8451,7 +8451,7 @@ func (o NodePoolKubernetesConfigContainerdConfigOutput) ToNodePoolKubernetesConf
 	}).(NodePoolKubernetesConfigContainerdConfigPtrOutput)
 }
 
-// 指定跳过证书认证的容器镜像仓库地址。
+// Specify the container image repository address to skip certificate verification.
 func (o NodePoolKubernetesConfigContainerdConfigOutput) InsecureRegistries() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigContainerdConfig) []string { return v.InsecureRegistries }).(pulumi.StringArrayOutput)
 }
@@ -8486,7 +8486,7 @@ func (o NodePoolKubernetesConfigContainerdConfigPtrOutput) Elem() NodePoolKubern
 	}).(NodePoolKubernetesConfigContainerdConfigOutput)
 }
 
-// 指定跳过证书认证的容器镜像仓库地址。
+// Specify the container image repository address to skip certificate verification.
 func (o NodePoolKubernetesConfigContainerdConfigPtrOutput) InsecureRegistries() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigContainerdConfig) []string {
 		if v == nil {
@@ -8506,9 +8506,9 @@ func (o NodePoolKubernetesConfigContainerdConfigPtrOutput) RegistryProxyConfigs(
 }
 
 type NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig struct {
-	// 代理地址。
+	// Proxy address.
 	ProxyEndpoints []string `pulumi:"proxyEndpoints"`
-	// 容器镜像仓库地址。
+	// Container image repository address.
 	Registry *string `pulumi:"registry"`
 }
 
@@ -8524,9 +8524,9 @@ type NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput interface 
 }
 
 type NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs struct {
-	// 代理地址。
+	// Proxy address.
 	ProxyEndpoints pulumi.StringArrayInput `pulumi:"proxyEndpoints"`
-	// 容器镜像仓库地址。
+	// Container image repository address.
 	Registry pulumi.StringPtrInput `pulumi:"registry"`
 }
 
@@ -8581,12 +8581,12 @@ func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ToNod
 	return o
 }
 
-// 代理地址。
+// Proxy address.
 func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ProxyEndpoints() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig) []string { return v.ProxyEndpoints }).(pulumi.StringArrayOutput)
 }
 
-// 容器镜像仓库地址。
+// Container image repository address.
 func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) Registry() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig) *string { return v.Registry }).(pulumi.StringPtrOutput)
 }
@@ -8612,28 +8612,28 @@ func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput) 
 }
 
 type NodePoolKubernetesConfigKubeletConfig struct {
-	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+	// Configure kubelet CpuManagerPolicy. Supports none and static policies
 	CpuManagerPolicy *string                                             `pulumi:"cpuManagerPolicy"`
 	EvictionHards    []NodePoolKubernetesConfigKubeletConfigEvictionHard `pulumi:"evictionHards"`
-	// 特性门控。
+	// Feature gate
 	FeatureGates *NodePoolKubernetesConfigKubeletConfigFeatureGates `pulumi:"featureGates"`
-	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+	// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
 	KubeApiBurst *int `pulumi:"kubeApiBurst"`
-	// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+	// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
 	KubeApiQps    *int                                                `pulumi:"kubeApiQps"`
 	KubeReserveds []NodePoolKubernetesConfigKubeletConfigKubeReserved `pulumi:"kubeReserveds"`
-	// 配置 kubelet 支持的最大 Pod 数量
+	// Configure the maximum number of Pods supported by kubelet
 	MaxPods *int `pulumi:"maxPods"`
-	// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+	// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 	RegistryBurst *int `pulumi:"registryBurst"`
-	// 可用来限制镜像仓库的 QPS 上限
+	// Used to limit the QPS cap for the image repository
 	RegistryPullQps *int `pulumi:"registryPullQps"`
-	// 逐一拉取镜像。
+	// Pull images sequentially
 	SerializeImagePulls *bool                                                 `pulumi:"serializeImagePulls"`
 	SystemReserveds     []NodePoolKubernetesConfigKubeletConfigSystemReserved `pulumi:"systemReserveds"`
-	// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+	// Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
 	TopologyManagerPolicy *string `pulumi:"topologyManagerPolicy"`
-	// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+	// Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
 	TopologyManagerScope *string `pulumi:"topologyManagerScope"`
 }
 
@@ -8649,28 +8649,28 @@ type NodePoolKubernetesConfigKubeletConfigInput interface {
 }
 
 type NodePoolKubernetesConfigKubeletConfigArgs struct {
-	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+	// Configure kubelet CpuManagerPolicy. Supports none and static policies
 	CpuManagerPolicy pulumi.StringPtrInput                                       `pulumi:"cpuManagerPolicy"`
 	EvictionHards    NodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput `pulumi:"evictionHards"`
-	// 特性门控。
+	// Feature gate
 	FeatureGates NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrInput `pulumi:"featureGates"`
-	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+	// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
 	KubeApiBurst pulumi.IntPtrInput `pulumi:"kubeApiBurst"`
-	// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+	// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
 	KubeApiQps    pulumi.IntPtrInput                                          `pulumi:"kubeApiQps"`
 	KubeReserveds NodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput `pulumi:"kubeReserveds"`
-	// 配置 kubelet 支持的最大 Pod 数量
+	// Configure the maximum number of Pods supported by kubelet
 	MaxPods pulumi.IntPtrInput `pulumi:"maxPods"`
-	// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+	// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 	RegistryBurst pulumi.IntPtrInput `pulumi:"registryBurst"`
-	// 可用来限制镜像仓库的 QPS 上限
+	// Used to limit the QPS cap for the image repository
 	RegistryPullQps pulumi.IntPtrInput `pulumi:"registryPullQps"`
-	// 逐一拉取镜像。
+	// Pull images sequentially
 	SerializeImagePulls pulumi.BoolPtrInput                                           `pulumi:"serializeImagePulls"`
 	SystemReserveds     NodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput `pulumi:"systemReserveds"`
-	// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+	// Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
 	TopologyManagerPolicy pulumi.StringPtrInput `pulumi:"topologyManagerPolicy"`
-	// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+	// Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
 	TopologyManagerScope pulumi.StringPtrInput `pulumi:"topologyManagerScope"`
 }
 
@@ -8751,7 +8751,7 @@ func (o NodePoolKubernetesConfigKubeletConfigOutput) ToNodePoolKubernetesConfigK
 	}).(NodePoolKubernetesConfigKubeletConfigPtrOutput)
 }
 
-// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+// Configure kubelet CpuManagerPolicy. Supports none and static policies
 func (o NodePoolKubernetesConfigKubeletConfigOutput) CpuManagerPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *string { return v.CpuManagerPolicy }).(pulumi.StringPtrOutput)
 }
@@ -8762,19 +8762,19 @@ func (o NodePoolKubernetesConfigKubeletConfigOutput) EvictionHards() NodePoolKub
 	}).(NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput)
 }
 
-// 特性门控。
+// Feature gate
 func (o NodePoolKubernetesConfigKubeletConfigOutput) FeatureGates() NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *NodePoolKubernetesConfigKubeletConfigFeatureGates {
 		return v.FeatureGates
 	}).(NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput)
 }
 
-// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
 func (o NodePoolKubernetesConfigKubeletConfigOutput) KubeApiBurst() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *int { return v.KubeApiBurst }).(pulumi.IntPtrOutput)
 }
 
-// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
 func (o NodePoolKubernetesConfigKubeletConfigOutput) KubeApiQps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *int { return v.KubeApiQps }).(pulumi.IntPtrOutput)
 }
@@ -8785,22 +8785,22 @@ func (o NodePoolKubernetesConfigKubeletConfigOutput) KubeReserveds() NodePoolKub
 	}).(NodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
 }
 
-// 配置 kubelet 支持的最大 Pod 数量
+// Configure the maximum number of Pods supported by kubelet
 func (o NodePoolKubernetesConfigKubeletConfigOutput) MaxPods() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *int { return v.MaxPods }).(pulumi.IntPtrOutput)
 }
 
-// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 func (o NodePoolKubernetesConfigKubeletConfigOutput) RegistryBurst() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *int { return v.RegistryBurst }).(pulumi.IntPtrOutput)
 }
 
-// 可用来限制镜像仓库的 QPS 上限
+// Used to limit the QPS cap for the image repository
 func (o NodePoolKubernetesConfigKubeletConfigOutput) RegistryPullQps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *int { return v.RegistryPullQps }).(pulumi.IntPtrOutput)
 }
 
-// 逐一拉取镜像。
+// Pull images sequentially
 func (o NodePoolKubernetesConfigKubeletConfigOutput) SerializeImagePulls() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *bool { return v.SerializeImagePulls }).(pulumi.BoolPtrOutput)
 }
@@ -8811,12 +8811,12 @@ func (o NodePoolKubernetesConfigKubeletConfigOutput) SystemReserveds() NodePoolK
 	}).(NodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput)
 }
 
-// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+// Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
 func (o NodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *string { return v.TopologyManagerPolicy }).(pulumi.StringPtrOutput)
 }
 
-// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+// Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
 func (o NodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerScope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *string { return v.TopologyManagerScope }).(pulumi.StringPtrOutput)
 }
@@ -8845,7 +8845,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) Elem() NodePoolKubernete
 	}).(NodePoolKubernetesConfigKubeletConfigOutput)
 }
 
-// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+// Configure kubelet CpuManagerPolicy. Supports none and static policies
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) CpuManagerPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *string {
 		if v == nil {
@@ -8864,7 +8864,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) EvictionHards() NodePool
 	}).(NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput)
 }
 
-// 特性门控。
+// Feature gate
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) FeatureGates() NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *NodePoolKubernetesConfigKubeletConfigFeatureGates {
 		if v == nil {
@@ -8874,7 +8874,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) FeatureGates() NodePoolK
 	}).(NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput)
 }
 
-// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) KubeApiBurst() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -8884,7 +8884,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) KubeApiBurst() pulumi.In
 	}).(pulumi.IntPtrOutput)
 }
 
-// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) KubeApiQps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -8903,7 +8903,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) KubeReserveds() NodePool
 	}).(NodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
 }
 
-// 配置 kubelet 支持的最大 Pod 数量
+// Configure the maximum number of Pods supported by kubelet
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) MaxPods() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -8913,7 +8913,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) MaxPods() pulumi.IntPtrO
 	}).(pulumi.IntPtrOutput)
 }
 
-// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryBurst() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -8923,7 +8923,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryBurst() pulumi.I
 	}).(pulumi.IntPtrOutput)
 }
 
-// 可用来限制镜像仓库的 QPS 上限
+// Used to limit the QPS cap for the image repository
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryPullQps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -8933,7 +8933,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryPullQps() pulumi
 	}).(pulumi.IntPtrOutput)
 }
 
-// 逐一拉取镜像。
+// Pull images sequentially
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) SerializeImagePulls() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *bool {
 		if v == nil {
@@ -8952,7 +8952,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) SystemReserveds() NodePo
 	}).(NodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput)
 }
 
-// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+// Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) TopologyManagerPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *string {
 		if v == nil {
@@ -8962,7 +8962,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) TopologyManagerPolicy() 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+// Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) TopologyManagerScope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *string {
 		if v == nil {
@@ -8973,9 +8973,9 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) TopologyManagerScope() p
 }
 
 type NodePoolKubernetesConfigKubeletConfigEvictionHard struct {
-	// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+	// Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
 	Key *string `pulumi:"key"`
-	// 硬性门限值。
+	// Hard threshold value.
 	Value *string `pulumi:"value"`
 }
 
@@ -8991,9 +8991,9 @@ type NodePoolKubernetesConfigKubeletConfigEvictionHardInput interface {
 }
 
 type NodePoolKubernetesConfigKubeletConfigEvictionHardArgs struct {
-	// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+	// Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 硬性门限值。
+	// Hard threshold value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -9048,12 +9048,12 @@ func (o NodePoolKubernetesConfigKubeletConfigEvictionHardOutput) ToNodePoolKuber
 	return o
 }
 
-// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+// Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
 func (o NodePoolKubernetesConfigKubeletConfigEvictionHardOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigEvictionHard) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 硬性门限值。
+// Hard threshold value.
 func (o NodePoolKubernetesConfigKubeletConfigEvictionHardOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigEvictionHard) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -9079,9 +9079,9 @@ func (o NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput) Index(i pu
 }
 
 type NodePoolKubernetesConfigKubeletConfigFeatureGates struct {
-	// 是否开启特性开关本地垂直Pod伸缩
+	// Enable local vertical Pod autoscaling feature toggle
 	InPlacePodVerticalScaling *bool `pulumi:"inPlacePodVerticalScaling"`
-	// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+	// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
 	QoSResourceManager *bool `pulumi:"qoSResourceManager"`
 }
 
@@ -9097,9 +9097,9 @@ type NodePoolKubernetesConfigKubeletConfigFeatureGatesInput interface {
 }
 
 type NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs struct {
-	// 是否开启特性开关本地垂直Pod伸缩
+	// Enable local vertical Pod autoscaling feature toggle
 	InPlacePodVerticalScaling pulumi.BoolPtrInput `pulumi:"inPlacePodVerticalScaling"`
-	// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+	// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
 	QoSResourceManager pulumi.BoolPtrInput `pulumi:"qoSResourceManager"`
 }
 
@@ -9180,12 +9180,12 @@ func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ToNodePoolKuber
 	}).(NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput)
 }
 
-// 是否开启特性开关本地垂直Pod伸缩
+// Enable local vertical Pod autoscaling feature toggle
 func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) InPlacePodVerticalScaling() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigFeatureGates) *bool { return v.InPlacePodVerticalScaling }).(pulumi.BoolPtrOutput)
 }
 
-// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
 func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) QoSResourceManager() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigFeatureGates) *bool { return v.QoSResourceManager }).(pulumi.BoolPtrOutput)
 }
@@ -9214,7 +9214,7 @@ func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) Elem() NodeP
 	}).(NodePoolKubernetesConfigKubeletConfigFeatureGatesOutput)
 }
 
-// 是否开启特性开关本地垂直Pod伸缩
+// Enable local vertical Pod autoscaling feature toggle
 func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) InPlacePodVerticalScaling() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfigFeatureGates) *bool {
 		if v == nil {
@@ -9224,7 +9224,7 @@ func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) InPlacePodVe
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
 func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) QoSResourceManager() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfigFeatureGates) *bool {
 		if v == nil {
@@ -9235,9 +9235,9 @@ func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) QoSResourceM
 }
 
 type NodePoolKubernetesConfigKubeletConfigKubeReserved struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Valid values: cpu or memory.
 	Name *string `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+	// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
 	Quantity *string `pulumi:"quantity"`
 }
 
@@ -9253,9 +9253,9 @@ type NodePoolKubernetesConfigKubeletConfigKubeReservedInput interface {
 }
 
 type NodePoolKubernetesConfigKubeletConfigKubeReservedArgs struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Valid values: cpu or memory.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+	// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
 	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 }
 
@@ -9310,12 +9310,12 @@ func (o NodePoolKubernetesConfigKubeletConfigKubeReservedOutput) ToNodePoolKuber
 	return o
 }
 
-// 资源名称，取值为 cpu 或 memory。
+// Resource name. Valid values: cpu or memory.
 func (o NodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigKubeReserved) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
 func (o NodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Quantity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigKubeReserved) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
@@ -9341,9 +9341,9 @@ func (o NodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) Index(i pu
 }
 
 type NodePoolKubernetesConfigKubeletConfigSystemReserved struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Valid values: cpu or memory.
 	Name *string `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+	// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
 	Quantity *string `pulumi:"quantity"`
 }
 
@@ -9359,9 +9359,9 @@ type NodePoolKubernetesConfigKubeletConfigSystemReservedInput interface {
 }
 
 type NodePoolKubernetesConfigKubeletConfigSystemReservedArgs struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Valid values: cpu or memory.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+	// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
 	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 }
 
@@ -9416,12 +9416,12 @@ func (o NodePoolKubernetesConfigKubeletConfigSystemReservedOutput) ToNodePoolKub
 	return o
 }
 
-// 资源名称，取值为 cpu 或 memory。
+// Resource name. Valid values: cpu or memory.
 func (o NodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigSystemReserved) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
 func (o NodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Quantity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigSystemReserved) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
@@ -9447,9 +9447,9 @@ func (o NodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput) Index(i 
 }
 
 type NodePoolKubernetesConfigLabel struct {
-	// 标签键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Label value.
 	Value *string `pulumi:"value"`
 }
 
@@ -9465,9 +9465,9 @@ type NodePoolKubernetesConfigLabelInput interface {
 }
 
 type NodePoolKubernetesConfigLabelArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Label value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -9522,12 +9522,12 @@ func (o NodePoolKubernetesConfigLabelOutput) ToNodePoolKubernetesConfigLabelOutp
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o NodePoolKubernetesConfigLabelOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Label value.
 func (o NodePoolKubernetesConfigLabelOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -9553,11 +9553,11 @@ func (o NodePoolKubernetesConfigLabelArrayOutput) Index(i pulumi.IntInput) NodeP
 }
 
 type NodePoolKubernetesConfigTaint struct {
-	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	// Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
 	Effect *string `pulumi:"effect"`
-	// 污点键。
+	// Taint key.
 	Key *string `pulumi:"key"`
-	// 污点值。
+	// Taint value
 	Value *string `pulumi:"value"`
 }
 
@@ -9573,11 +9573,11 @@ type NodePoolKubernetesConfigTaintInput interface {
 }
 
 type NodePoolKubernetesConfigTaintArgs struct {
-	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	// Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
 	Effect pulumi.StringPtrInput `pulumi:"effect"`
-	// 污点键。
+	// Taint key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 污点值。
+	// Taint value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -9632,17 +9632,17 @@ func (o NodePoolKubernetesConfigTaintOutput) ToNodePoolKubernetesConfigTaintOutp
 	return o
 }
 
-// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+// Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
 func (o NodePoolKubernetesConfigTaintOutput) Effect() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigTaint) *string { return v.Effect }).(pulumi.StringPtrOutput)
 }
 
-// 污点键。
+// Taint key.
 func (o NodePoolKubernetesConfigTaintOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigTaint) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 污点值。
+// Taint value
 func (o NodePoolKubernetesConfigTaintOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigTaint) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -9668,9 +9668,9 @@ func (o NodePoolKubernetesConfigTaintArrayOutput) Index(i pulumi.IntInput) NodeP
 }
 
 type NodePoolManagement struct {
-	// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+	// Enable managed mode for node pool. Options:   - true: on   - false: off
 	Enabled *bool `pulumi:"enabled"`
-	// 检查自愈配置。
+	// Check self-healing configuration.
 	RemedyConfig *NodePoolManagementRemedyConfig `pulumi:"remedyConfig"`
 }
 
@@ -9686,9 +9686,9 @@ type NodePoolManagementInput interface {
 }
 
 type NodePoolManagementArgs struct {
-	// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+	// Enable managed mode for node pool. Options:   - true: on   - false: off
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// 检查自愈配置。
+	// Check self-healing configuration.
 	RemedyConfig NodePoolManagementRemedyConfigPtrInput `pulumi:"remedyConfig"`
 }
 
@@ -9769,12 +9769,12 @@ func (o NodePoolManagementOutput) ToNodePoolManagementPtrOutputWithContext(ctx c
 	}).(NodePoolManagementPtrOutput)
 }
 
-// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+// Enable managed mode for node pool. Options:   - true: on   - false: off
 func (o NodePoolManagementOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolManagement) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// 检查自愈配置。
+// Check self-healing configuration.
 func (o NodePoolManagementOutput) RemedyConfig() NodePoolManagementRemedyConfigPtrOutput {
 	return o.ApplyT(func(v NodePoolManagement) *NodePoolManagementRemedyConfig { return v.RemedyConfig }).(NodePoolManagementRemedyConfigPtrOutput)
 }
@@ -9803,7 +9803,7 @@ func (o NodePoolManagementPtrOutput) Elem() NodePoolManagementOutput {
 	}).(NodePoolManagementOutput)
 }
 
-// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+// Enable managed mode for node pool. Options:   - true: on   - false: off
 func (o NodePoolManagementPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolManagement) *bool {
 		if v == nil {
@@ -9813,7 +9813,7 @@ func (o NodePoolManagementPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 检查自愈配置。
+// Check self-healing configuration.
 func (o NodePoolManagementPtrOutput) RemedyConfig() NodePoolManagementRemedyConfigPtrOutput {
 	return o.ApplyT(func(v *NodePoolManagement) *NodePoolManagementRemedyConfig {
 		if v == nil {
@@ -9824,9 +9824,9 @@ func (o NodePoolManagementPtrOutput) RemedyConfig() NodePoolManagementRemedyConf
 }
 
 type NodePoolManagementRemedyConfig struct {
-	// 是否开启检查自愈。
+	// Enable self-healing check
 	Enabled *bool `pulumi:"enabled"`
-	// 检查自愈规则ID。
+	// Self-healing rule ID
 	RemedyId *string `pulumi:"remedyId"`
 }
 
@@ -9842,9 +9842,9 @@ type NodePoolManagementRemedyConfigInput interface {
 }
 
 type NodePoolManagementRemedyConfigArgs struct {
-	// 是否开启检查自愈。
+	// Enable self-healing check
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// 检查自愈规则ID。
+	// Self-healing rule ID
 	RemedyId pulumi.StringPtrInput `pulumi:"remedyId"`
 }
 
@@ -9925,12 +9925,12 @@ func (o NodePoolManagementRemedyConfigOutput) ToNodePoolManagementRemedyConfigPt
 	}).(NodePoolManagementRemedyConfigPtrOutput)
 }
 
-// 是否开启检查自愈。
+// Enable self-healing check
 func (o NodePoolManagementRemedyConfigOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolManagementRemedyConfig) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// 检查自愈规则ID。
+// Self-healing rule ID
 func (o NodePoolManagementRemedyConfigOutput) RemedyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolManagementRemedyConfig) *string { return v.RemedyId }).(pulumi.StringPtrOutput)
 }
@@ -9959,7 +9959,7 @@ func (o NodePoolManagementRemedyConfigPtrOutput) Elem() NodePoolManagementRemedy
 	}).(NodePoolManagementRemedyConfigOutput)
 }
 
-// 是否开启检查自愈。
+// Enable self-healing check
 func (o NodePoolManagementRemedyConfigPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolManagementRemedyConfig) *bool {
 		if v == nil {
@@ -9969,7 +9969,7 @@ func (o NodePoolManagementRemedyConfigPtrOutput) Enabled() pulumi.BoolPtrOutput 
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 检查自愈规则ID。
+// Self-healing rule ID
 func (o NodePoolManagementRemedyConfigPtrOutput) RemedyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolManagementRemedyConfig) *string {
 		if v == nil {
@@ -9980,54 +9980,54 @@ func (o NodePoolManagementRemedyConfigPtrOutput) RemedyId() pulumi.StringPtrOutp
 }
 
 type NodePoolNodeConfig struct {
-	// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+	// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
 	AdditionalContainerStorageEnabled *bool `pulumi:"additionalContainerStorageEnabled"`
-	// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 	AutoRenew *bool `pulumi:"autoRenew"`
-	// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+	// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
 	AutoRenewPeriod *int                           `pulumi:"autoRenewPeriod"`
 	DataVolumes     []NodePoolNodeConfigDataVolume `pulumi:"dataVolumes"`
-	// 实例在部署集中的分组号，0表示未设置
+	// Group number of the instance in the deployment set; 0 means not set
 	DeploymentSetGroupNumber *int `pulumi:"deploymentSetGroupNumber"`
-	// 实例需要加入的部署集ID
+	// Deployment Set ID to be added to the instance
 	DeploymentSetId *string `pulumi:"deploymentSetId"`
-	// 节点对应的主机名称。
+	// The host name corresponding to the node.
 	Hostname *string `pulumi:"hostname"`
-	// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+	// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 	HpcClusterIds []string `pulumi:"hpcClusterIds"`
-	// 节点对应云服务器所使用的镜像 ID。
+	// Image ID used by the cloud server corresponding to the node
 	ImageId *string `pulumi:"imageId"`
-	// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+	// Custom script executed after node creation and initialization. Shell script in Base64 encoding
 	InitializeScript *string `pulumi:"initializeScript"`
-	// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+	// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 	InstanceChargeType *string `pulumi:"instanceChargeType"`
-	// 节点（实例）名称。
+	// Node (instance) name
 	InstanceName *string `pulumi:"instanceName"`
-	// 节点对应的云服务器实例规格 ID 列表。
+	// List of cloud server instance type IDs corresponding to the nodes
 	InstanceTypeIds []string `pulumi:"instanceTypeIds"`
-	// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+	// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 	InstancesDistribution *NodePoolNodeConfigInstancesDistribution `pulumi:"instancesDistribution"`
-	// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+	// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
 	NamePrefix *string `pulumi:"namePrefix"`
-	// 节点间的网络通讯模式。
+	// Network communication mode between nodes
 	NetworkTrafficMode *string `pulumi:"networkTrafficMode"`
-	// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
 	Period *int `pulumi:"period"`
-	// 部署节点前执行脚本。
+	// Script to execute before deploying the node
 	PreScript *string `pulumi:"preScript"`
-	// ECS所属项目，一个ECS只能归属于一个项目。
+	// Project to which the ECS belongs. Each ECS can only belong to one project.
 	ProjectName *string `pulumi:"projectName"`
-	// 节点自动开启公网访问的配置信息
+	// Configuration for automatic public network access for nodes
 	PublicAccessConfig *NodePoolNodeConfigPublicAccessConfig `pulumi:"publicAccessConfig"`
-	// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+	// Enable public network access for nodes automatically. Options:   - false: off   - true: on
 	PublicAccessEnabled *bool `pulumi:"publicAccessEnabled"`
-	// 节点安全配置。
+	// Node security configuration
 	Security *NodePoolNodeConfigSecurity `pulumi:"security"`
-	// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+	// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
 	SpotStrategy *string `pulumi:"spotStrategy"`
-	// 节点网络所属的子网 ID 列表。
+	// List of subnet IDs for the node network.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 节点的系统盘配置。
+	// System disk configuration for the node
 	SystemVolume *NodePoolNodeConfigSystemVolume `pulumi:"systemVolume"`
 	Tags         []NodePoolNodeConfigTag         `pulumi:"tags"`
 }
@@ -10044,54 +10044,54 @@ type NodePoolNodeConfigInput interface {
 }
 
 type NodePoolNodeConfigArgs struct {
-	// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+	// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
 	AdditionalContainerStorageEnabled pulumi.BoolPtrInput `pulumi:"additionalContainerStorageEnabled"`
-	// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
-	// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+	// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
 	AutoRenewPeriod pulumi.IntPtrInput                     `pulumi:"autoRenewPeriod"`
 	DataVolumes     NodePoolNodeConfigDataVolumeArrayInput `pulumi:"dataVolumes"`
-	// 实例在部署集中的分组号，0表示未设置
+	// Group number of the instance in the deployment set; 0 means not set
 	DeploymentSetGroupNumber pulumi.IntPtrInput `pulumi:"deploymentSetGroupNumber"`
-	// 实例需要加入的部署集ID
+	// Deployment Set ID to be added to the instance
 	DeploymentSetId pulumi.StringPtrInput `pulumi:"deploymentSetId"`
-	// 节点对应的主机名称。
+	// The host name corresponding to the node.
 	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
-	// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+	// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 	HpcClusterIds pulumi.StringArrayInput `pulumi:"hpcClusterIds"`
-	// 节点对应云服务器所使用的镜像 ID。
+	// Image ID used by the cloud server corresponding to the node
 	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
-	// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+	// Custom script executed after node creation and initialization. Shell script in Base64 encoding
 	InitializeScript pulumi.StringPtrInput `pulumi:"initializeScript"`
-	// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+	// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 	InstanceChargeType pulumi.StringPtrInput `pulumi:"instanceChargeType"`
-	// 节点（实例）名称。
+	// Node (instance) name
 	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// 节点对应的云服务器实例规格 ID 列表。
+	// List of cloud server instance type IDs corresponding to the nodes
 	InstanceTypeIds pulumi.StringArrayInput `pulumi:"instanceTypeIds"`
-	// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+	// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 	InstancesDistribution NodePoolNodeConfigInstancesDistributionPtrInput `pulumi:"instancesDistribution"`
-	// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+	// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
 	NamePrefix pulumi.StringPtrInput `pulumi:"namePrefix"`
-	// 节点间的网络通讯模式。
+	// Network communication mode between nodes
 	NetworkTrafficMode pulumi.StringPtrInput `pulumi:"networkTrafficMode"`
-	// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
 	Period pulumi.IntPtrInput `pulumi:"period"`
-	// 部署节点前执行脚本。
+	// Script to execute before deploying the node
 	PreScript pulumi.StringPtrInput `pulumi:"preScript"`
-	// ECS所属项目，一个ECS只能归属于一个项目。
+	// Project to which the ECS belongs. Each ECS can only belong to one project.
 	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
-	// 节点自动开启公网访问的配置信息
+	// Configuration for automatic public network access for nodes
 	PublicAccessConfig NodePoolNodeConfigPublicAccessConfigPtrInput `pulumi:"publicAccessConfig"`
-	// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+	// Enable public network access for nodes automatically. Options:   - false: off   - true: on
 	PublicAccessEnabled pulumi.BoolPtrInput `pulumi:"publicAccessEnabled"`
-	// 节点安全配置。
+	// Node security configuration
 	Security NodePoolNodeConfigSecurityPtrInput `pulumi:"security"`
-	// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+	// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
 	SpotStrategy pulumi.StringPtrInput `pulumi:"spotStrategy"`
-	// 节点网络所属的子网 ID 列表。
+	// List of subnet IDs for the node network.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
-	// 节点的系统盘配置。
+	// System disk configuration for the node
 	SystemVolume NodePoolNodeConfigSystemVolumePtrInput `pulumi:"systemVolume"`
 	Tags         NodePoolNodeConfigTagArrayInput        `pulumi:"tags"`
 }
@@ -10173,17 +10173,17 @@ func (o NodePoolNodeConfigOutput) ToNodePoolNodeConfigPtrOutputWithContext(ctx c
 	}).(NodePoolNodeConfigPtrOutput)
 }
 
-// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
 func (o NodePoolNodeConfigOutput) AdditionalContainerStorageEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *bool { return v.AdditionalContainerStorageEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 func (o NodePoolNodeConfigOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
 }
 
-// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
 func (o NodePoolNodeConfigOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *int { return v.AutoRenewPeriod }).(pulumi.IntPtrOutput)
 }
@@ -10192,107 +10192,107 @@ func (o NodePoolNodeConfigOutput) DataVolumes() NodePoolNodeConfigDataVolumeArra
 	return o.ApplyT(func(v NodePoolNodeConfig) []NodePoolNodeConfigDataVolume { return v.DataVolumes }).(NodePoolNodeConfigDataVolumeArrayOutput)
 }
 
-// 实例在部署集中的分组号，0表示未设置
+// Group number of the instance in the deployment set; 0 means not set
 func (o NodePoolNodeConfigOutput) DeploymentSetGroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *int { return v.DeploymentSetGroupNumber }).(pulumi.IntPtrOutput)
 }
 
-// 实例需要加入的部署集ID
+// Deployment Set ID to be added to the instance
 func (o NodePoolNodeConfigOutput) DeploymentSetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.DeploymentSetId }).(pulumi.StringPtrOutput)
 }
 
-// 节点对应的主机名称。
+// The host name corresponding to the node.
 func (o NodePoolNodeConfigOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
-// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 func (o NodePoolNodeConfigOutput) HpcClusterIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) []string { return v.HpcClusterIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点对应云服务器所使用的镜像 ID。
+// Image ID used by the cloud server corresponding to the node
 func (o NodePoolNodeConfigOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
-// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+// Custom script executed after node creation and initialization. Shell script in Base64 encoding
 func (o NodePoolNodeConfigOutput) InitializeScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.InitializeScript }).(pulumi.StringPtrOutput)
 }
 
-// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 func (o NodePoolNodeConfigOutput) InstanceChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.InstanceChargeType }).(pulumi.StringPtrOutput)
 }
 
-// 节点（实例）名称。
+// Node (instance) name
 func (o NodePoolNodeConfigOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
 }
 
-// 节点对应的云服务器实例规格 ID 列表。
+// List of cloud server instance type IDs corresponding to the nodes
 func (o NodePoolNodeConfigOutput) InstanceTypeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) []string { return v.InstanceTypeIds }).(pulumi.StringArrayOutput)
 }
 
-// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 func (o NodePoolNodeConfigOutput) InstancesDistribution() NodePoolNodeConfigInstancesDistributionPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *NodePoolNodeConfigInstancesDistribution { return v.InstancesDistribution }).(NodePoolNodeConfigInstancesDistributionPtrOutput)
 }
 
-// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
 func (o NodePoolNodeConfigOutput) NamePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.NamePrefix }).(pulumi.StringPtrOutput)
 }
 
-// 节点间的网络通讯模式。
+// Network communication mode between nodes
 func (o NodePoolNodeConfigOutput) NetworkTrafficMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.NetworkTrafficMode }).(pulumi.StringPtrOutput)
 }
 
-// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
 func (o NodePoolNodeConfigOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *int { return v.Period }).(pulumi.IntPtrOutput)
 }
 
-// 部署节点前执行脚本。
+// Script to execute before deploying the node
 func (o NodePoolNodeConfigOutput) PreScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.PreScript }).(pulumi.StringPtrOutput)
 }
 
-// ECS所属项目，一个ECS只能归属于一个项目。
+// Project to which the ECS belongs. Each ECS can only belong to one project.
 func (o NodePoolNodeConfigOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
 }
 
-// 节点自动开启公网访问的配置信息
+// Configuration for automatic public network access for nodes
 func (o NodePoolNodeConfigOutput) PublicAccessConfig() NodePoolNodeConfigPublicAccessConfigPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *NodePoolNodeConfigPublicAccessConfig { return v.PublicAccessConfig }).(NodePoolNodeConfigPublicAccessConfigPtrOutput)
 }
 
-// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+// Enable public network access for nodes automatically. Options:   - false: off   - true: on
 func (o NodePoolNodeConfigOutput) PublicAccessEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *bool { return v.PublicAccessEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// 节点安全配置。
+// Node security configuration
 func (o NodePoolNodeConfigOutput) Security() NodePoolNodeConfigSecurityPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *NodePoolNodeConfigSecurity { return v.Security }).(NodePoolNodeConfigSecurityPtrOutput)
 }
 
-// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
 func (o NodePoolNodeConfigOutput) SpotStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.SpotStrategy }).(pulumi.StringPtrOutput)
 }
 
-// 节点网络所属的子网 ID 列表。
+// List of subnet IDs for the node network.
 func (o NodePoolNodeConfigOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点的系统盘配置。
+// System disk configuration for the node
 func (o NodePoolNodeConfigOutput) SystemVolume() NodePoolNodeConfigSystemVolumePtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *NodePoolNodeConfigSystemVolume { return v.SystemVolume }).(NodePoolNodeConfigSystemVolumePtrOutput)
 }
@@ -10325,7 +10325,7 @@ func (o NodePoolNodeConfigPtrOutput) Elem() NodePoolNodeConfigOutput {
 	}).(NodePoolNodeConfigOutput)
 }
 
-// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
 func (o NodePoolNodeConfigPtrOutput) AdditionalContainerStorageEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *bool {
 		if v == nil {
@@ -10335,7 +10335,7 @@ func (o NodePoolNodeConfigPtrOutput) AdditionalContainerStorageEnabled() pulumi.
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 func (o NodePoolNodeConfigPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *bool {
 		if v == nil {
@@ -10345,7 +10345,7 @@ func (o NodePoolNodeConfigPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
 func (o NodePoolNodeConfigPtrOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *int {
 		if v == nil {
@@ -10364,7 +10364,7 @@ func (o NodePoolNodeConfigPtrOutput) DataVolumes() NodePoolNodeConfigDataVolumeA
 	}).(NodePoolNodeConfigDataVolumeArrayOutput)
 }
 
-// 实例在部署集中的分组号，0表示未设置
+// Group number of the instance in the deployment set; 0 means not set
 func (o NodePoolNodeConfigPtrOutput) DeploymentSetGroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *int {
 		if v == nil {
@@ -10374,7 +10374,7 @@ func (o NodePoolNodeConfigPtrOutput) DeploymentSetGroupNumber() pulumi.IntPtrOut
 	}).(pulumi.IntPtrOutput)
 }
 
-// 实例需要加入的部署集ID
+// Deployment Set ID to be added to the instance
 func (o NodePoolNodeConfigPtrOutput) DeploymentSetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10384,7 +10384,7 @@ func (o NodePoolNodeConfigPtrOutput) DeploymentSetId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点对应的主机名称。
+// The host name corresponding to the node.
 func (o NodePoolNodeConfigPtrOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10394,7 +10394,7 @@ func (o NodePoolNodeConfigPtrOutput) Hostname() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 func (o NodePoolNodeConfigPtrOutput) HpcClusterIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) []string {
 		if v == nil {
@@ -10404,7 +10404,7 @@ func (o NodePoolNodeConfigPtrOutput) HpcClusterIds() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点对应云服务器所使用的镜像 ID。
+// Image ID used by the cloud server corresponding to the node
 func (o NodePoolNodeConfigPtrOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10414,7 +10414,7 @@ func (o NodePoolNodeConfigPtrOutput) ImageId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+// Custom script executed after node creation and initialization. Shell script in Base64 encoding
 func (o NodePoolNodeConfigPtrOutput) InitializeScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10424,7 +10424,7 @@ func (o NodePoolNodeConfigPtrOutput) InitializeScript() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 func (o NodePoolNodeConfigPtrOutput) InstanceChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10434,7 +10434,7 @@ func (o NodePoolNodeConfigPtrOutput) InstanceChargeType() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点（实例）名称。
+// Node (instance) name
 func (o NodePoolNodeConfigPtrOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10444,7 +10444,7 @@ func (o NodePoolNodeConfigPtrOutput) InstanceName() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点对应的云服务器实例规格 ID 列表。
+// List of cloud server instance type IDs corresponding to the nodes
 func (o NodePoolNodeConfigPtrOutput) InstanceTypeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) []string {
 		if v == nil {
@@ -10454,7 +10454,7 @@ func (o NodePoolNodeConfigPtrOutput) InstanceTypeIds() pulumi.StringArrayOutput 
 	}).(pulumi.StringArrayOutput)
 }
 
-// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 func (o NodePoolNodeConfigPtrOutput) InstancesDistribution() NodePoolNodeConfigInstancesDistributionPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *NodePoolNodeConfigInstancesDistribution {
 		if v == nil {
@@ -10464,7 +10464,7 @@ func (o NodePoolNodeConfigPtrOutput) InstancesDistribution() NodePoolNodeConfigI
 	}).(NodePoolNodeConfigInstancesDistributionPtrOutput)
 }
 
-// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
 func (o NodePoolNodeConfigPtrOutput) NamePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10474,7 +10474,7 @@ func (o NodePoolNodeConfigPtrOutput) NamePrefix() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点间的网络通讯模式。
+// Network communication mode between nodes
 func (o NodePoolNodeConfigPtrOutput) NetworkTrafficMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10484,7 +10484,7 @@ func (o NodePoolNodeConfigPtrOutput) NetworkTrafficMode() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
 func (o NodePoolNodeConfigPtrOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *int {
 		if v == nil {
@@ -10494,7 +10494,7 @@ func (o NodePoolNodeConfigPtrOutput) Period() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 部署节点前执行脚本。
+// Script to execute before deploying the node
 func (o NodePoolNodeConfigPtrOutput) PreScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10504,7 +10504,7 @@ func (o NodePoolNodeConfigPtrOutput) PreScript() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// ECS所属项目，一个ECS只能归属于一个项目。
+// Project to which the ECS belongs. Each ECS can only belong to one project.
 func (o NodePoolNodeConfigPtrOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10514,7 +10514,7 @@ func (o NodePoolNodeConfigPtrOutput) ProjectName() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点自动开启公网访问的配置信息
+// Configuration for automatic public network access for nodes
 func (o NodePoolNodeConfigPtrOutput) PublicAccessConfig() NodePoolNodeConfigPublicAccessConfigPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *NodePoolNodeConfigPublicAccessConfig {
 		if v == nil {
@@ -10524,7 +10524,7 @@ func (o NodePoolNodeConfigPtrOutput) PublicAccessConfig() NodePoolNodeConfigPubl
 	}).(NodePoolNodeConfigPublicAccessConfigPtrOutput)
 }
 
-// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+// Enable public network access for nodes automatically. Options:   - false: off   - true: on
 func (o NodePoolNodeConfigPtrOutput) PublicAccessEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *bool {
 		if v == nil {
@@ -10534,7 +10534,7 @@ func (o NodePoolNodeConfigPtrOutput) PublicAccessEnabled() pulumi.BoolPtrOutput 
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 节点安全配置。
+// Node security configuration
 func (o NodePoolNodeConfigPtrOutput) Security() NodePoolNodeConfigSecurityPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *NodePoolNodeConfigSecurity {
 		if v == nil {
@@ -10544,7 +10544,7 @@ func (o NodePoolNodeConfigPtrOutput) Security() NodePoolNodeConfigSecurityPtrOut
 	}).(NodePoolNodeConfigSecurityPtrOutput)
 }
 
-// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
 func (o NodePoolNodeConfigPtrOutput) SpotStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10554,7 +10554,7 @@ func (o NodePoolNodeConfigPtrOutput) SpotStrategy() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点网络所属的子网 ID 列表。
+// List of subnet IDs for the node network.
 func (o NodePoolNodeConfigPtrOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) []string {
 		if v == nil {
@@ -10564,7 +10564,7 @@ func (o NodePoolNodeConfigPtrOutput) SubnetIds() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点的系统盘配置。
+// System disk configuration for the node
 func (o NodePoolNodeConfigPtrOutput) SystemVolume() NodePoolNodeConfigSystemVolumePtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *NodePoolNodeConfigSystemVolume {
 		if v == nil {
@@ -10584,19 +10584,19 @@ func (o NodePoolNodeConfigPtrOutput) Tags() NodePoolNodeConfigTagArrayOutput {
 }
 
 type NodePoolNodeConfigDataVolume struct {
-	// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+	// File system. Options:   - Ext4 (default)   - Xfs
 	FileSystem *string `pulumi:"fileSystem"`
-	// 磁盘格式化后的目标挂载目录。
+	// Target mount directory after disk formatting.
 	MountPoint *string `pulumi:"mountPoint"`
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId *string `pulumi:"placementGroupId"`
-	// 磁盘容量，单位 GiB。
+	// Disk capacity, in GiB.
 	Size *int `pulumi:"size"`
-	// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+	// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
 	SnapshotId *string `pulumi:"snapshotId"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber *int `pulumi:"subgroupNumber"`
-	// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
 	Type *string `pulumi:"type"`
 }
 
@@ -10612,19 +10612,19 @@ type NodePoolNodeConfigDataVolumeInput interface {
 }
 
 type NodePoolNodeConfigDataVolumeArgs struct {
-	// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+	// File system. Options:   - Ext4 (default)   - Xfs
 	FileSystem pulumi.StringPtrInput `pulumi:"fileSystem"`
-	// 磁盘格式化后的目标挂载目录。
+	// Target mount directory after disk formatting.
 	MountPoint pulumi.StringPtrInput `pulumi:"mountPoint"`
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId pulumi.StringPtrInput `pulumi:"placementGroupId"`
-	// 磁盘容量，单位 GiB。
+	// Disk capacity, in GiB.
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+	// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
 	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber pulumi.IntPtrInput `pulumi:"subgroupNumber"`
-	// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -10679,37 +10679,37 @@ func (o NodePoolNodeConfigDataVolumeOutput) ToNodePoolNodeConfigDataVolumeOutput
 	return o
 }
 
-// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+// File system. Options:   - Ext4 (default)   - Xfs
 func (o NodePoolNodeConfigDataVolumeOutput) FileSystem() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *string { return v.FileSystem }).(pulumi.StringPtrOutput)
 }
 
-// 磁盘格式化后的目标挂载目录。
+// Target mount directory after disk formatting.
 func (o NodePoolNodeConfigDataVolumeOutput) MountPoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *string { return v.MountPoint }).(pulumi.StringPtrOutput)
 }
 
-// 放置组Id
+// Placement group ID
 func (o NodePoolNodeConfigDataVolumeOutput) PlacementGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *string { return v.PlacementGroupId }).(pulumi.StringPtrOutput)
 }
 
-// 磁盘容量，单位 GiB。
+// Disk capacity, in GiB.
 func (o NodePoolNodeConfigDataVolumeOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
 func (o NodePoolNodeConfigDataVolumeOutput) SnapshotId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
 }
 
-// 放置子组
+// Placement subgroup
 func (o NodePoolNodeConfigDataVolumeOutput) SubgroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *int { return v.SubgroupNumber }).(pulumi.IntPtrOutput)
 }
 
-// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
 func (o NodePoolNodeConfigDataVolumeOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -10735,13 +10735,13 @@ func (o NodePoolNodeConfigDataVolumeArrayOutput) Index(i pulumi.IntInput) NodePo
 }
 
 type NodePoolNodeConfigInstancesDistribution struct {
-	// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+	// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
 	CapacityRebalance *bool `pulumi:"capacityRebalance"`
-	// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+	// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
 	CompensateWithOnDemand *bool `pulumi:"compensateWithOnDemand"`
-	// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+	// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
 	OnDemandBaseCapacity *int `pulumi:"onDemandBaseCapacity"`
-	// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+	// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
 	OnDemandPercentageAboveBaseCapacity *int `pulumi:"onDemandPercentageAboveBaseCapacity"`
 }
 
@@ -10757,13 +10757,13 @@ type NodePoolNodeConfigInstancesDistributionInput interface {
 }
 
 type NodePoolNodeConfigInstancesDistributionArgs struct {
-	// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+	// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
 	CapacityRebalance pulumi.BoolPtrInput `pulumi:"capacityRebalance"`
-	// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+	// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
 	CompensateWithOnDemand pulumi.BoolPtrInput `pulumi:"compensateWithOnDemand"`
-	// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+	// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
 	OnDemandBaseCapacity pulumi.IntPtrInput `pulumi:"onDemandBaseCapacity"`
-	// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+	// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
 	OnDemandPercentageAboveBaseCapacity pulumi.IntPtrInput `pulumi:"onDemandPercentageAboveBaseCapacity"`
 }
 
@@ -10844,22 +10844,22 @@ func (o NodePoolNodeConfigInstancesDistributionOutput) ToNodePoolNodeConfigInsta
 	}).(NodePoolNodeConfigInstancesDistributionPtrOutput)
 }
 
-// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
 func (o NodePoolNodeConfigInstancesDistributionOutput) CapacityRebalance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigInstancesDistribution) *bool { return v.CapacityRebalance }).(pulumi.BoolPtrOutput)
 }
 
-// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
 func (o NodePoolNodeConfigInstancesDistributionOutput) CompensateWithOnDemand() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigInstancesDistribution) *bool { return v.CompensateWithOnDemand }).(pulumi.BoolPtrOutput)
 }
 
-// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
 func (o NodePoolNodeConfigInstancesDistributionOutput) OnDemandBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigInstancesDistribution) *int { return v.OnDemandBaseCapacity }).(pulumi.IntPtrOutput)
 }
 
-// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
 func (o NodePoolNodeConfigInstancesDistributionOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigInstancesDistribution) *int { return v.OnDemandPercentageAboveBaseCapacity }).(pulumi.IntPtrOutput)
 }
@@ -10888,7 +10888,7 @@ func (o NodePoolNodeConfigInstancesDistributionPtrOutput) Elem() NodePoolNodeCon
 	}).(NodePoolNodeConfigInstancesDistributionOutput)
 }
 
-// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
 func (o NodePoolNodeConfigInstancesDistributionPtrOutput) CapacityRebalance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigInstancesDistribution) *bool {
 		if v == nil {
@@ -10898,7 +10898,7 @@ func (o NodePoolNodeConfigInstancesDistributionPtrOutput) CapacityRebalance() pu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
 func (o NodePoolNodeConfigInstancesDistributionPtrOutput) CompensateWithOnDemand() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigInstancesDistribution) *bool {
 		if v == nil {
@@ -10908,7 +10908,7 @@ func (o NodePoolNodeConfigInstancesDistributionPtrOutput) CompensateWithOnDemand
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
 func (o NodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigInstancesDistribution) *int {
 		if v == nil {
@@ -10918,7 +10918,7 @@ func (o NodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandBaseCapacity()
 	}).(pulumi.IntPtrOutput)
 }
 
-// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
 func (o NodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigInstancesDistribution) *int {
 		if v == nil {
@@ -10929,11 +10929,11 @@ func (o NodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandPercentageAbov
 }
 
 type NodePoolNodeConfigPublicAccessConfig struct {
-	// 公网 IP 的带宽峰值，单位：Mbps。
+	// Peak bandwidth for public IP, unit: Mbps
 	Bandwidth *int `pulumi:"bandwidth"`
-	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 	BillingType *int `pulumi:"billingType"`
-	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	// Public IP line type. Parameter description: BGP: BGP (multi-line)
 	Isp *string `pulumi:"isp"`
 }
 
@@ -10949,11 +10949,11 @@ type NodePoolNodeConfigPublicAccessConfigInput interface {
 }
 
 type NodePoolNodeConfigPublicAccessConfigArgs struct {
-	// 公网 IP 的带宽峰值，单位：Mbps。
+	// Peak bandwidth for public IP, unit: Mbps
 	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
-	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 	BillingType pulumi.IntPtrInput `pulumi:"billingType"`
-	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	// Public IP line type. Parameter description: BGP: BGP (multi-line)
 	Isp pulumi.StringPtrInput `pulumi:"isp"`
 }
 
@@ -11034,17 +11034,17 @@ func (o NodePoolNodeConfigPublicAccessConfigOutput) ToNodePoolNodeConfigPublicAc
 	}).(NodePoolNodeConfigPublicAccessConfigPtrOutput)
 }
 
-// 公网 IP 的带宽峰值，单位：Mbps。
+// Peak bandwidth for public IP, unit: Mbps
 func (o NodePoolNodeConfigPublicAccessConfigOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigPublicAccessConfig) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
 }
 
-// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 func (o NodePoolNodeConfigPublicAccessConfigOutput) BillingType() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigPublicAccessConfig) *int { return v.BillingType }).(pulumi.IntPtrOutput)
 }
 
-// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+// Public IP line type. Parameter description: BGP: BGP (multi-line)
 func (o NodePoolNodeConfigPublicAccessConfigOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigPublicAccessConfig) *string { return v.Isp }).(pulumi.StringPtrOutput)
 }
@@ -11073,7 +11073,7 @@ func (o NodePoolNodeConfigPublicAccessConfigPtrOutput) Elem() NodePoolNodeConfig
 	}).(NodePoolNodeConfigPublicAccessConfigOutput)
 }
 
-// 公网 IP 的带宽峰值，单位：Mbps。
+// Peak bandwidth for public IP, unit: Mbps
 func (o NodePoolNodeConfigPublicAccessConfigPtrOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigPublicAccessConfig) *int {
 		if v == nil {
@@ -11083,7 +11083,7 @@ func (o NodePoolNodeConfigPublicAccessConfigPtrOutput) Bandwidth() pulumi.IntPtr
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 func (o NodePoolNodeConfigPublicAccessConfigPtrOutput) BillingType() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigPublicAccessConfig) *int {
 		if v == nil {
@@ -11093,7 +11093,7 @@ func (o NodePoolNodeConfigPublicAccessConfigPtrOutput) BillingType() pulumi.IntP
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+// Public IP line type. Parameter description: BGP: BGP (multi-line)
 func (o NodePoolNodeConfigPublicAccessConfigPtrOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigPublicAccessConfig) *string {
 		if v == nil {
@@ -11104,13 +11104,13 @@ func (o NodePoolNodeConfigPublicAccessConfigPtrOutput) Isp() pulumi.StringPtrOut
 }
 
 type NodePoolNodeConfigSecurity struct {
-	// 节点的访问方式配置。
+	// Node access configuration.
 	Login *NodePoolNodeConfigSecurityLogin `pulumi:"login"`
-	// 节点网络所在的安全组 ID 列表。
+	// List of security group IDs for the node network
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 节点的安全策略，参数值说明：Hids：主机安全加固。
+	// Node security policy. Parameter description: Hids: Host security hardening.
 	SecurityStrategies []string `pulumi:"securityStrategies"`
-	// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+	// Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
 	SecurityStrategyEnabled *bool `pulumi:"securityStrategyEnabled"`
 }
 
@@ -11126,13 +11126,13 @@ type NodePoolNodeConfigSecurityInput interface {
 }
 
 type NodePoolNodeConfigSecurityArgs struct {
-	// 节点的访问方式配置。
+	// Node access configuration.
 	Login NodePoolNodeConfigSecurityLoginPtrInput `pulumi:"login"`
-	// 节点网络所在的安全组 ID 列表。
+	// List of security group IDs for the node network
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 节点的安全策略，参数值说明：Hids：主机安全加固。
+	// Node security policy. Parameter description: Hids: Host security hardening.
 	SecurityStrategies pulumi.StringArrayInput `pulumi:"securityStrategies"`
-	// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+	// Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
 	SecurityStrategyEnabled pulumi.BoolPtrInput `pulumi:"securityStrategyEnabled"`
 }
 
@@ -11213,22 +11213,22 @@ func (o NodePoolNodeConfigSecurityOutput) ToNodePoolNodeConfigSecurityPtrOutputW
 	}).(NodePoolNodeConfigSecurityPtrOutput)
 }
 
-// 节点的访问方式配置。
+// Node access configuration.
 func (o NodePoolNodeConfigSecurityOutput) Login() NodePoolNodeConfigSecurityLoginPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSecurity) *NodePoolNodeConfigSecurityLogin { return v.Login }).(NodePoolNodeConfigSecurityLoginPtrOutput)
 }
 
-// 节点网络所在的安全组 ID 列表。
+// List of security group IDs for the node network
 func (o NodePoolNodeConfigSecurityOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSecurity) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点的安全策略，参数值说明：Hids：主机安全加固。
+// Node security policy. Parameter description: Hids: Host security hardening.
 func (o NodePoolNodeConfigSecurityOutput) SecurityStrategies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSecurity) []string { return v.SecurityStrategies }).(pulumi.StringArrayOutput)
 }
 
-// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+// Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
 func (o NodePoolNodeConfigSecurityOutput) SecurityStrategyEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSecurity) *bool { return v.SecurityStrategyEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -11257,7 +11257,7 @@ func (o NodePoolNodeConfigSecurityPtrOutput) Elem() NodePoolNodeConfigSecurityOu
 	}).(NodePoolNodeConfigSecurityOutput)
 }
 
-// 节点的访问方式配置。
+// Node access configuration.
 func (o NodePoolNodeConfigSecurityPtrOutput) Login() NodePoolNodeConfigSecurityLoginPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSecurity) *NodePoolNodeConfigSecurityLogin {
 		if v == nil {
@@ -11267,7 +11267,7 @@ func (o NodePoolNodeConfigSecurityPtrOutput) Login() NodePoolNodeConfigSecurityL
 	}).(NodePoolNodeConfigSecurityLoginPtrOutput)
 }
 
-// 节点网络所在的安全组 ID 列表。
+// List of security group IDs for the node network
 func (o NodePoolNodeConfigSecurityPtrOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSecurity) []string {
 		if v == nil {
@@ -11277,7 +11277,7 @@ func (o NodePoolNodeConfigSecurityPtrOutput) SecurityGroupIds() pulumi.StringArr
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点的安全策略，参数值说明：Hids：主机安全加固。
+// Node security policy. Parameter description: Hids: Host security hardening.
 func (o NodePoolNodeConfigSecurityPtrOutput) SecurityStrategies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSecurity) []string {
 		if v == nil {
@@ -11287,7 +11287,7 @@ func (o NodePoolNodeConfigSecurityPtrOutput) SecurityStrategies() pulumi.StringA
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+// Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
 func (o NodePoolNodeConfigSecurityPtrOutput) SecurityStrategyEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSecurity) *bool {
 		if v == nil {
@@ -11298,11 +11298,11 @@ func (o NodePoolNodeConfigSecurityPtrOutput) SecurityStrategyEnabled() pulumi.Bo
 }
 
 type NodePoolNodeConfigSecurityLogin struct {
-	// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+	// Root user login password in Base64 encoding. Follow the cloud server's requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 	Password *string `pulumi:"password"`
-	// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+	// SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
 	SshKeyPairName *string `pulumi:"sshKeyPairName"`
-	// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+	// Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
 	Type *string `pulumi:"type"`
 }
 
@@ -11318,11 +11318,11 @@ type NodePoolNodeConfigSecurityLoginInput interface {
 }
 
 type NodePoolNodeConfigSecurityLoginArgs struct {
-	// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+	// Root user login password in Base64 encoding. Follow the cloud server's requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 	Password pulumi.StringPtrInput `pulumi:"password"`
-	// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+	// SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
 	SshKeyPairName pulumi.StringPtrInput `pulumi:"sshKeyPairName"`
-	// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+	// Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -11403,17 +11403,17 @@ func (o NodePoolNodeConfigSecurityLoginOutput) ToNodePoolNodeConfigSecurityLogin
 	}).(NodePoolNodeConfigSecurityLoginPtrOutput)
 }
 
-// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+// Root user login password in Base64 encoding. Follow the cloud server's requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 func (o NodePoolNodeConfigSecurityLoginOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSecurityLogin) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
-// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+// SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
 func (o NodePoolNodeConfigSecurityLoginOutput) SshKeyPairName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSecurityLogin) *string { return v.SshKeyPairName }).(pulumi.StringPtrOutput)
 }
 
-// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+// Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
 func (o NodePoolNodeConfigSecurityLoginOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSecurityLogin) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -11442,7 +11442,7 @@ func (o NodePoolNodeConfigSecurityLoginPtrOutput) Elem() NodePoolNodeConfigSecur
 	}).(NodePoolNodeConfigSecurityLoginOutput)
 }
 
-// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+// Root user login password in Base64 encoding. Follow the cloud server's requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 func (o NodePoolNodeConfigSecurityLoginPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSecurityLogin) *string {
 		if v == nil {
@@ -11452,7 +11452,7 @@ func (o NodePoolNodeConfigSecurityLoginPtrOutput) Password() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+// SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
 func (o NodePoolNodeConfigSecurityLoginPtrOutput) SshKeyPairName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSecurityLogin) *string {
 		if v == nil {
@@ -11462,7 +11462,7 @@ func (o NodePoolNodeConfigSecurityLoginPtrOutput) SshKeyPairName() pulumi.String
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+// Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
 func (o NodePoolNodeConfigSecurityLoginPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSecurityLogin) *string {
 		if v == nil {
@@ -11473,13 +11473,13 @@ func (o NodePoolNodeConfigSecurityLoginPtrOutput) Type() pulumi.StringPtrOutput 
 }
 
 type NodePoolNodeConfigSystemVolume struct {
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId *string `pulumi:"placementGroupId"`
-	// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+	// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 	Size *int `pulumi:"size"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber *int `pulumi:"subgroupNumber"`
-	// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
 	Type *string `pulumi:"type"`
 }
 
@@ -11495,13 +11495,13 @@ type NodePoolNodeConfigSystemVolumeInput interface {
 }
 
 type NodePoolNodeConfigSystemVolumeArgs struct {
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId pulumi.StringPtrInput `pulumi:"placementGroupId"`
-	// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+	// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber pulumi.IntPtrInput `pulumi:"subgroupNumber"`
-	// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -11582,22 +11582,22 @@ func (o NodePoolNodeConfigSystemVolumeOutput) ToNodePoolNodeConfigSystemVolumePt
 	}).(NodePoolNodeConfigSystemVolumePtrOutput)
 }
 
-// 放置组Id
+// Placement group ID
 func (o NodePoolNodeConfigSystemVolumeOutput) PlacementGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSystemVolume) *string { return v.PlacementGroupId }).(pulumi.StringPtrOutput)
 }
 
-// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 func (o NodePoolNodeConfigSystemVolumeOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSystemVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 放置子组
+// Placement subgroup
 func (o NodePoolNodeConfigSystemVolumeOutput) SubgroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSystemVolume) *int { return v.SubgroupNumber }).(pulumi.IntPtrOutput)
 }
 
-// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+// Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
 func (o NodePoolNodeConfigSystemVolumeOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSystemVolume) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -11626,7 +11626,7 @@ func (o NodePoolNodeConfigSystemVolumePtrOutput) Elem() NodePoolNodeConfigSystem
 	}).(NodePoolNodeConfigSystemVolumeOutput)
 }
 
-// 放置组Id
+// Placement group ID
 func (o NodePoolNodeConfigSystemVolumePtrOutput) PlacementGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSystemVolume) *string {
 		if v == nil {
@@ -11636,7 +11636,7 @@ func (o NodePoolNodeConfigSystemVolumePtrOutput) PlacementGroupId() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 func (o NodePoolNodeConfigSystemVolumePtrOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSystemVolume) *int {
 		if v == nil {
@@ -11646,7 +11646,7 @@ func (o NodePoolNodeConfigSystemVolumePtrOutput) Size() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 放置子组
+// Placement subgroup
 func (o NodePoolNodeConfigSystemVolumePtrOutput) SubgroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSystemVolume) *int {
 		if v == nil {
@@ -11656,7 +11656,7 @@ func (o NodePoolNodeConfigSystemVolumePtrOutput) SubgroupNumber() pulumi.IntPtrO
 	}).(pulumi.IntPtrOutput)
 }
 
-// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+// Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
 func (o NodePoolNodeConfigSystemVolumePtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSystemVolume) *string {
 		if v == nil {
@@ -11667,9 +11667,9 @@ func (o NodePoolNodeConfigSystemVolumePtrOutput) Type() pulumi.StringPtrOutput {
 }
 
 type NodePoolNodeConfigTag struct {
-	// 标签键。
+	// Label key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Label value.
 	Value *string `pulumi:"value"`
 }
 
@@ -11685,9 +11685,9 @@ type NodePoolNodeConfigTagInput interface {
 }
 
 type NodePoolNodeConfigTagArgs struct {
-	// 标签键。
+	// Label key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Label value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -11742,12 +11742,12 @@ func (o NodePoolNodeConfigTagOutput) ToNodePoolNodeConfigTagOutputWithContext(ct
 	return o
 }
 
-// 标签键。
+// Label key
 func (o NodePoolNodeConfigTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Label value.
 func (o NodePoolNodeConfigTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -11773,17 +11773,17 @@ func (o NodePoolNodeConfigTagArrayOutput) Index(i pulumi.IntInput) NodePoolNodeC
 }
 
 type NodePoolNodeStatistics struct {
-	// Phase=Creating的节点总数量。
+	// Total number of nodes in Phase=Creating.
 	CreatingCount *int `pulumi:"creatingCount"`
-	// Phase=Deleting的节点总数量。
+	// Total number of nodes with Phase=Deleting
 	DeletingCount *int `pulumi:"deletingCount"`
-	// Phase=Failed的节点总数量。
+	// Total number of nodes with Phase=Failed
 	FailedCount *int `pulumi:"failedCount"`
-	// Phase=Running的节点总数量。
+	// Total number of nodes with Phase=Running
 	RunningCount *int `pulumi:"runningCount"`
-	// 节点池中的节点总数量。
+	// Total number of nodes in the node pool
 	TotalCount *int `pulumi:"totalCount"`
-	// Phase=Updating的节点总数量。
+	// Total number of nodes with Phase=Updating
 	UpdatingCount *int `pulumi:"updatingCount"`
 }
 
@@ -11799,17 +11799,17 @@ type NodePoolNodeStatisticsInput interface {
 }
 
 type NodePoolNodeStatisticsArgs struct {
-	// Phase=Creating的节点总数量。
+	// Total number of nodes in Phase=Creating.
 	CreatingCount pulumi.IntPtrInput `pulumi:"creatingCount"`
-	// Phase=Deleting的节点总数量。
+	// Total number of nodes with Phase=Deleting
 	DeletingCount pulumi.IntPtrInput `pulumi:"deletingCount"`
-	// Phase=Failed的节点总数量。
+	// Total number of nodes with Phase=Failed
 	FailedCount pulumi.IntPtrInput `pulumi:"failedCount"`
-	// Phase=Running的节点总数量。
+	// Total number of nodes with Phase=Running
 	RunningCount pulumi.IntPtrInput `pulumi:"runningCount"`
-	// 节点池中的节点总数量。
+	// Total number of nodes in the node pool
 	TotalCount pulumi.IntPtrInput `pulumi:"totalCount"`
-	// Phase=Updating的节点总数量。
+	// Total number of nodes with Phase=Updating
 	UpdatingCount pulumi.IntPtrInput `pulumi:"updatingCount"`
 }
 
@@ -11890,32 +11890,32 @@ func (o NodePoolNodeStatisticsOutput) ToNodePoolNodeStatisticsPtrOutputWithConte
 	}).(NodePoolNodeStatisticsPtrOutput)
 }
 
-// Phase=Creating的节点总数量。
+// Total number of nodes in Phase=Creating.
 func (o NodePoolNodeStatisticsOutput) CreatingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeStatistics) *int { return v.CreatingCount }).(pulumi.IntPtrOutput)
 }
 
-// Phase=Deleting的节点总数量。
+// Total number of nodes with Phase=Deleting
 func (o NodePoolNodeStatisticsOutput) DeletingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeStatistics) *int { return v.DeletingCount }).(pulumi.IntPtrOutput)
 }
 
-// Phase=Failed的节点总数量。
+// Total number of nodes with Phase=Failed
 func (o NodePoolNodeStatisticsOutput) FailedCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeStatistics) *int { return v.FailedCount }).(pulumi.IntPtrOutput)
 }
 
-// Phase=Running的节点总数量。
+// Total number of nodes with Phase=Running
 func (o NodePoolNodeStatisticsOutput) RunningCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeStatistics) *int { return v.RunningCount }).(pulumi.IntPtrOutput)
 }
 
-// 节点池中的节点总数量。
+// Total number of nodes in the node pool
 func (o NodePoolNodeStatisticsOutput) TotalCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeStatistics) *int { return v.TotalCount }).(pulumi.IntPtrOutput)
 }
 
-// Phase=Updating的节点总数量。
+// Total number of nodes with Phase=Updating
 func (o NodePoolNodeStatisticsOutput) UpdatingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeStatistics) *int { return v.UpdatingCount }).(pulumi.IntPtrOutput)
 }
@@ -11944,7 +11944,7 @@ func (o NodePoolNodeStatisticsPtrOutput) Elem() NodePoolNodeStatisticsOutput {
 	}).(NodePoolNodeStatisticsOutput)
 }
 
-// Phase=Creating的节点总数量。
+// Total number of nodes in Phase=Creating.
 func (o NodePoolNodeStatisticsPtrOutput) CreatingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeStatistics) *int {
 		if v == nil {
@@ -11954,7 +11954,7 @@ func (o NodePoolNodeStatisticsPtrOutput) CreatingCount() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Phase=Deleting的节点总数量。
+// Total number of nodes with Phase=Deleting
 func (o NodePoolNodeStatisticsPtrOutput) DeletingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeStatistics) *int {
 		if v == nil {
@@ -11964,7 +11964,7 @@ func (o NodePoolNodeStatisticsPtrOutput) DeletingCount() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Phase=Failed的节点总数量。
+// Total number of nodes with Phase=Failed
 func (o NodePoolNodeStatisticsPtrOutput) FailedCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeStatistics) *int {
 		if v == nil {
@@ -11974,7 +11974,7 @@ func (o NodePoolNodeStatisticsPtrOutput) FailedCount() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Phase=Running的节点总数量。
+// Total number of nodes with Phase=Running
 func (o NodePoolNodeStatisticsPtrOutput) RunningCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeStatistics) *int {
 		if v == nil {
@@ -11984,7 +11984,7 @@ func (o NodePoolNodeStatisticsPtrOutput) RunningCount() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点池中的节点总数量。
+// Total number of nodes in the node pool
 func (o NodePoolNodeStatisticsPtrOutput) TotalCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeStatistics) *int {
 		if v == nil {
@@ -11994,7 +11994,7 @@ func (o NodePoolNodeStatisticsPtrOutput) TotalCount() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Phase=Updating的节点总数量。
+// Total number of nodes with Phase=Updating
 func (o NodePoolNodeStatisticsPtrOutput) UpdatingCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeStatistics) *int {
 		if v == nil {
@@ -12006,7 +12006,7 @@ func (o NodePoolNodeStatisticsPtrOutput) UpdatingCount() pulumi.IntPtrOutput {
 
 type NodePoolStatus struct {
 	Conditions []NodePoolStatusCondition `pulumi:"conditions"`
-	// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+	// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
 	Phase *string `pulumi:"phase"`
 }
 
@@ -12023,7 +12023,7 @@ type NodePoolStatusInput interface {
 
 type NodePoolStatusArgs struct {
 	Conditions NodePoolStatusConditionArrayInput `pulumi:"conditions"`
-	// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+	// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
 	Phase pulumi.StringPtrInput `pulumi:"phase"`
 }
 
@@ -12108,7 +12108,7 @@ func (o NodePoolStatusOutput) Conditions() NodePoolStatusConditionArrayOutput {
 	return o.ApplyT(func(v NodePoolStatus) []NodePoolStatusCondition { return v.Conditions }).(NodePoolStatusConditionArrayOutput)
 }
 
-// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
 func (o NodePoolStatusOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolStatus) *string { return v.Phase }).(pulumi.StringPtrOutput)
 }
@@ -12146,7 +12146,7 @@ func (o NodePoolStatusPtrOutput) Conditions() NodePoolStatusConditionArrayOutput
 	}).(NodePoolStatusConditionArrayOutput)
 }
 
-// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
 func (o NodePoolStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolStatus) *string {
 		if v == nil {
@@ -12157,7 +12157,7 @@ func (o NodePoolStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 }
 
 type NodePoolStatusCondition struct {
-	// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+	// Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
 	Type *string `pulumi:"type"`
 }
 
@@ -12173,7 +12173,7 @@ type NodePoolStatusConditionInput interface {
 }
 
 type NodePoolStatusConditionArgs struct {
-	// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+	// Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -12228,7 +12228,7 @@ func (o NodePoolStatusConditionOutput) ToNodePoolStatusConditionOutputWithContex
 	return o
 }
 
-// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+// Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
 func (o NodePoolStatusConditionOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolStatusCondition) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -12254,9 +12254,9 @@ func (o NodePoolStatusConditionArrayOutput) Index(i pulumi.IntInput) NodePoolSta
 }
 
 type NodePoolTag struct {
-	// 标签键。
+	// Label key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Label value.
 	Value *string `pulumi:"value"`
 }
 
@@ -12272,9 +12272,9 @@ type NodePoolTagInput interface {
 }
 
 type NodePoolTagArgs struct {
-	// 标签键。
+	// Label key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Label value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -12329,12 +12329,12 @@ func (o NodePoolTagOutput) ToNodePoolTagOutputWithContext(ctx context.Context) N
 	return o
 }
 
-// 标签键。
+// Label key
 func (o NodePoolTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Label value.
 func (o NodePoolTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -12361,7 +12361,7 @@ func (o NodePoolTagArrayOutput) Index(i pulumi.IntInput) NodePoolTagOutput {
 
 type NodeStatus struct {
 	Conditions []NodeStatusCondition `pulumi:"conditions"`
-	// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+	// Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
 	Phase *string `pulumi:"phase"`
 }
 
@@ -12378,7 +12378,7 @@ type NodeStatusInput interface {
 
 type NodeStatusArgs struct {
 	Conditions NodeStatusConditionArrayInput `pulumi:"conditions"`
-	// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+	// Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
 	Phase pulumi.StringPtrInput `pulumi:"phase"`
 }
 
@@ -12463,7 +12463,7 @@ func (o NodeStatusOutput) Conditions() NodeStatusConditionArrayOutput {
 	return o.ApplyT(func(v NodeStatus) []NodeStatusCondition { return v.Conditions }).(NodeStatusConditionArrayOutput)
 }
 
-// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+// Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
 func (o NodeStatusOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeStatus) *string { return v.Phase }).(pulumi.StringPtrOutput)
 }
@@ -12501,7 +12501,7 @@ func (o NodeStatusPtrOutput) Conditions() NodeStatusConditionArrayOutput {
 	}).(NodeStatusConditionArrayOutput)
 }
 
-// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+// Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
 func (o NodeStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodeStatus) *string {
 		if v == nil {
@@ -12512,7 +12512,7 @@ func (o NodeStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 }
 
 type NodeStatusCondition struct {
-	// 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+	// Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
 	Type *string `pulumi:"type"`
 }
 
@@ -12528,7 +12528,7 @@ type NodeStatusConditionInput interface {
 }
 
 type NodeStatusConditionArgs struct {
-	// 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+	// Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -12583,7 +12583,7 @@ func (o NodeStatusConditionOutput) ToNodeStatusConditionOutputWithContext(ctx co
 	return o
 }
 
-// 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+// Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
 func (o NodeStatusConditionOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeStatusCondition) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -12609,9 +12609,9 @@ func (o NodeStatusConditionArrayOutput) Index(i pulumi.IntInput) NodeStatusCondi
 }
 
 type GetAddonStatus struct {
-	// 组件当前主状态下的状态条件。
+	// Status conditions under the component's current primary state.
 	Conditions []GetAddonStatusCondition `pulumi:"conditions"`
-	// 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+	// Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
 	Phase string `pulumi:"phase"`
 }
 
@@ -12627,9 +12627,9 @@ type GetAddonStatusInput interface {
 }
 
 type GetAddonStatusArgs struct {
-	// 组件当前主状态下的状态条件。
+	// Status conditions under the component's current primary state.
 	Conditions GetAddonStatusConditionArrayInput `pulumi:"conditions"`
-	// 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+	// Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
 	Phase pulumi.StringInput `pulumi:"phase"`
 }
 
@@ -12659,18 +12659,18 @@ func (o GetAddonStatusOutput) ToGetAddonStatusOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 组件当前主状态下的状态条件。
+// Status conditions under the component's current primary state.
 func (o GetAddonStatusOutput) Conditions() GetAddonStatusConditionArrayOutput {
 	return o.ApplyT(func(v GetAddonStatus) []GetAddonStatusCondition { return v.Conditions }).(GetAddonStatusConditionArrayOutput)
 }
 
-// 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+// Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
 func (o GetAddonStatusOutput) Phase() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddonStatus) string { return v.Phase }).(pulumi.StringOutput)
 }
 
 type GetAddonStatusCondition struct {
-	// 组件当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
+	// Status conditions under the component's current primary state, indicating the reasons for entering this state. Multiple reasons are possible. Parameter values include: Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
 	Type string `pulumi:"type"`
 }
 
@@ -12686,7 +12686,7 @@ type GetAddonStatusConditionInput interface {
 }
 
 type GetAddonStatusConditionArgs struct {
-	// 组件当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
+	// Status conditions under the component's current primary state, indicating the reasons for entering this state. Multiple reasons are possible. Parameter values include: Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -12741,7 +12741,7 @@ func (o GetAddonStatusConditionOutput) ToGetAddonStatusConditionOutputWithContex
 	return o
 }
 
-// 组件当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
+// Status conditions under the component's current primary state, indicating the reasons for entering this state. Multiple reasons are possible. Parameter values include: Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
 func (o GetAddonStatusConditionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddonStatusCondition) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -12767,21 +12767,21 @@ func (o GetAddonStatusConditionArrayOutput) Index(i pulumi.IntInput) GetAddonSta
 }
 
 type GetClusterClusterConfig struct {
-	// 集群 API Server 访问的 IPv4 地址信息。
+	// Cluster API Server access IPv4 address information
 	ApiServerEndpoints GetClusterClusterConfigApiServerEndpoints `pulumi:"apiServerEndpoints"`
-	// 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+	// Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 	ApiServerPublicAccessConfig GetClusterClusterConfigApiServerPublicAccessConfig `pulumi:"apiServerPublicAccessConfig"`
-	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+	// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 	ApiServerPublicAccessEnabled bool `pulumi:"apiServerPublicAccessEnabled"`
-	// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+	// Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
 	IpFamily string `pulumi:"ipFamily"`
-	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+	// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 	ResourcePublicAccessDefaultEnabled bool `pulumi:"resourcePublicAccessDefaultEnabled"`
-	// 集群控制面及节点使用的的安全组。
+	// Security group used by the cluster control plane and nodes.
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 集群控制面在私有网络内通信的子网 ID。
+	// Subnet ID for cluster control plane communication within the private network.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+	// Private network (VPC) ID where the cluster control plane and some nodes are located.
 	VpcId string `pulumi:"vpcId"`
 }
 
@@ -12797,21 +12797,21 @@ type GetClusterClusterConfigInput interface {
 }
 
 type GetClusterClusterConfigArgs struct {
-	// 集群 API Server 访问的 IPv4 地址信息。
+	// Cluster API Server access IPv4 address information
 	ApiServerEndpoints GetClusterClusterConfigApiServerEndpointsInput `pulumi:"apiServerEndpoints"`
-	// 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+	// Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 	ApiServerPublicAccessConfig GetClusterClusterConfigApiServerPublicAccessConfigInput `pulumi:"apiServerPublicAccessConfig"`
-	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+	// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 	ApiServerPublicAccessEnabled pulumi.BoolInput `pulumi:"apiServerPublicAccessEnabled"`
-	// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+	// Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
 	IpFamily pulumi.StringInput `pulumi:"ipFamily"`
-	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+	// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 	ResourcePublicAccessDefaultEnabled pulumi.BoolInput `pulumi:"resourcePublicAccessDefaultEnabled"`
-	// 集群控制面及节点使用的的安全组。
+	// Security group used by the cluster control plane and nodes.
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 集群控制面在私有网络内通信的子网 ID。
+	// Subnet ID for cluster control plane communication within the private network.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
-	// 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+	// Private network (VPC) ID where the cluster control plane and some nodes are located.
 	VpcId pulumi.StringInput `pulumi:"vpcId"`
 }
 
@@ -12841,52 +12841,52 @@ func (o GetClusterClusterConfigOutput) ToGetClusterClusterConfigOutputWithContex
 	return o
 }
 
-// 集群 API Server 访问的 IPv4 地址信息。
+// Cluster API Server access IPv4 address information
 func (o GetClusterClusterConfigOutput) ApiServerEndpoints() GetClusterClusterConfigApiServerEndpointsOutput {
 	return o.ApplyT(func(v GetClusterClusterConfig) GetClusterClusterConfigApiServerEndpoints { return v.ApiServerEndpoints }).(GetClusterClusterConfigApiServerEndpointsOutput)
 }
 
-// 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+// Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 func (o GetClusterClusterConfigOutput) ApiServerPublicAccessConfig() GetClusterClusterConfigApiServerPublicAccessConfigOutput {
 	return o.ApplyT(func(v GetClusterClusterConfig) GetClusterClusterConfigApiServerPublicAccessConfig {
 		return v.ApiServerPublicAccessConfig
 	}).(GetClusterClusterConfigApiServerPublicAccessConfigOutput)
 }
 
-// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 func (o GetClusterClusterConfigOutput) ApiServerPublicAccessEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterClusterConfig) bool { return v.ApiServerPublicAccessEnabled }).(pulumi.BoolOutput)
 }
 
-// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+// Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
 func (o GetClusterClusterConfigOutput) IpFamily() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterClusterConfig) string { return v.IpFamily }).(pulumi.StringOutput)
 }
 
-// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
 func (o GetClusterClusterConfigOutput) ResourcePublicAccessDefaultEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterClusterConfig) bool { return v.ResourcePublicAccessDefaultEnabled }).(pulumi.BoolOutput)
 }
 
-// 集群控制面及节点使用的的安全组。
+// Security group used by the cluster control plane and nodes.
 func (o GetClusterClusterConfigOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterClusterConfig) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 集群控制面在私有网络内通信的子网 ID。
+// Subnet ID for cluster control plane communication within the private network.
 func (o GetClusterClusterConfigOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterClusterConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+// Private network (VPC) ID where the cluster control plane and some nodes are located.
 func (o GetClusterClusterConfigOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterClusterConfig) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
 type GetClusterClusterConfigApiServerEndpoints struct {
-	// 集群 API Server 私网的 IPv4 地址。
+	// Cluster API Server private IPv4 address.
 	PrivateIp GetClusterClusterConfigApiServerEndpointsPrivateIp `pulumi:"privateIp"`
-	// 集群 API Server 公网的 IPv4 地址。
+	// Cluster API Server public IPv4 address
 	PublicIp GetClusterClusterConfigApiServerEndpointsPublicIp `pulumi:"publicIp"`
 }
 
@@ -12902,9 +12902,9 @@ type GetClusterClusterConfigApiServerEndpointsInput interface {
 }
 
 type GetClusterClusterConfigApiServerEndpointsArgs struct {
-	// 集群 API Server 私网的 IPv4 地址。
+	// Cluster API Server private IPv4 address.
 	PrivateIp GetClusterClusterConfigApiServerEndpointsPrivateIpInput `pulumi:"privateIp"`
-	// 集群 API Server 公网的 IPv4 地址。
+	// Cluster API Server public IPv4 address
 	PublicIp GetClusterClusterConfigApiServerEndpointsPublicIpInput `pulumi:"publicIp"`
 }
 
@@ -12934,14 +12934,14 @@ func (o GetClusterClusterConfigApiServerEndpointsOutput) ToGetClusterClusterConf
 	return o
 }
 
-// 集群 API Server 私网的 IPv4 地址。
+// Cluster API Server private IPv4 address.
 func (o GetClusterClusterConfigApiServerEndpointsOutput) PrivateIp() GetClusterClusterConfigApiServerEndpointsPrivateIpOutput {
 	return o.ApplyT(func(v GetClusterClusterConfigApiServerEndpoints) GetClusterClusterConfigApiServerEndpointsPrivateIp {
 		return v.PrivateIp
 	}).(GetClusterClusterConfigApiServerEndpointsPrivateIpOutput)
 }
 
-// 集群 API Server 公网的 IPv4 地址。
+// Cluster API Server public IPv4 address
 func (o GetClusterClusterConfigApiServerEndpointsOutput) PublicIp() GetClusterClusterConfigApiServerEndpointsPublicIpOutput {
 	return o.ApplyT(func(v GetClusterClusterConfigApiServerEndpoints) GetClusterClusterConfigApiServerEndpointsPublicIp {
 		return v.PublicIp
@@ -12949,7 +12949,7 @@ func (o GetClusterClusterConfigApiServerEndpointsOutput) PublicIp() GetClusterCl
 }
 
 type GetClusterClusterConfigApiServerEndpointsPrivateIp struct {
-	// 私网 IP 的 IPv4 地址。
+	// IPv4 address of the private network IP.
 	Ipv4 string `pulumi:"ipv4"`
 }
 
@@ -12965,7 +12965,7 @@ type GetClusterClusterConfigApiServerEndpointsPrivateIpInput interface {
 }
 
 type GetClusterClusterConfigApiServerEndpointsPrivateIpArgs struct {
-	// 私网 IP 的 IPv4 地址。
+	// IPv4 address of the private network IP.
 	Ipv4 pulumi.StringInput `pulumi:"ipv4"`
 }
 
@@ -12995,13 +12995,13 @@ func (o GetClusterClusterConfigApiServerEndpointsPrivateIpOutput) ToGetClusterCl
 	return o
 }
 
-// 私网 IP 的 IPv4 地址。
+// IPv4 address of the private network IP.
 func (o GetClusterClusterConfigApiServerEndpointsPrivateIpOutput) Ipv4() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterClusterConfigApiServerEndpointsPrivateIp) string { return v.Ipv4 }).(pulumi.StringOutput)
 }
 
 type GetClusterClusterConfigApiServerEndpointsPublicIp struct {
-	// 公网 IP 的 IPv4 地址。
+	// IPv4 address of the public IP.
 	Ipv4 string `pulumi:"ipv4"`
 }
 
@@ -13017,7 +13017,7 @@ type GetClusterClusterConfigApiServerEndpointsPublicIpInput interface {
 }
 
 type GetClusterClusterConfigApiServerEndpointsPublicIpArgs struct {
-	// 公网 IP 的 IPv4 地址。
+	// IPv4 address of the public IP.
 	Ipv4 pulumi.StringInput `pulumi:"ipv4"`
 }
 
@@ -13047,13 +13047,13 @@ func (o GetClusterClusterConfigApiServerEndpointsPublicIpOutput) ToGetClusterClu
 	return o
 }
 
-// 公网 IP 的 IPv4 地址。
+// IPv4 address of the public IP.
 func (o GetClusterClusterConfigApiServerEndpointsPublicIpOutput) Ipv4() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterClusterConfigApiServerEndpointsPublicIp) string { return v.Ipv4 }).(pulumi.StringOutput)
 }
 
 type GetClusterClusterConfigApiServerPublicAccessConfig struct {
-	// 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+	// Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 	PublicAccessNetworkConfig GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig `pulumi:"publicAccessNetworkConfig"`
 }
 
@@ -13069,7 +13069,7 @@ type GetClusterClusterConfigApiServerPublicAccessConfigInput interface {
 }
 
 type GetClusterClusterConfigApiServerPublicAccessConfigArgs struct {
-	// 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+	// Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 	PublicAccessNetworkConfig GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigInput `pulumi:"publicAccessNetworkConfig"`
 }
 
@@ -13099,7 +13099,7 @@ func (o GetClusterClusterConfigApiServerPublicAccessConfigOutput) ToGetClusterCl
 	return o
 }
 
-// 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+// Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
 func (o GetClusterClusterConfigApiServerPublicAccessConfigOutput) PublicAccessNetworkConfig() GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigOutput {
 	return o.ApplyT(func(v GetClusterClusterConfigApiServerPublicAccessConfig) GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig {
 		return v.PublicAccessNetworkConfig
@@ -13107,11 +13107,11 @@ func (o GetClusterClusterConfigApiServerPublicAccessConfigOutput) PublicAccessNe
 }
 
 type GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig struct {
-	// 公网 IP 的带宽峰值，单位：Mbps。
+	// Peak bandwidth of the public IP, unit: Mbps
 	Bandwidth int `pulumi:"bandwidth"`
-	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 	BillingType int `pulumi:"billingType"`
-	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	// Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
 	Isp string `pulumi:"isp"`
 }
 
@@ -13127,11 +13127,11 @@ type GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig
 }
 
 type GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigArgs struct {
-	// 公网 IP 的带宽峰值，单位：Mbps。
+	// Peak bandwidth of the public IP, unit: Mbps
 	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
-	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 	BillingType pulumi.IntInput `pulumi:"billingType"`
-	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	// Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
 	Isp pulumi.StringInput `pulumi:"isp"`
 }
 
@@ -13161,21 +13161,21 @@ func (o GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkCon
 	return o
 }
 
-// 公网 IP 的带宽峰值，单位：Mbps。
+// Peak bandwidth of the public IP, unit: Mbps
 func (o GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigOutput) Bandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig) int {
 		return v.Bandwidth
 	}).(pulumi.IntOutput)
 }
 
-// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 func (o GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigOutput) BillingType() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig) int {
 		return v.BillingType
 	}).(pulumi.IntOutput)
 }
 
-// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+// Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
 func (o GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigOutput) Isp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig) string {
 		return v.Isp
@@ -13183,17 +13183,17 @@ func (o GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkCon
 }
 
 type GetClusterIrsaConfig struct {
-	// 接受令牌的标识符。
+	// Identifier for accepting tokens
 	Audience string `pulumi:"audience"`
-	// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+	// Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
 	Enabled bool `pulumi:"enabled"`
-	// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+	// OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
 	Issuer string `pulumi:"issuer"`
-	// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+	// JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
 	JwksUrl string `pulumi:"jwksUrl"`
-	// OIDC 提供商 TRN。
+	// OIDC provider TRN.
 	OidcTrn string `pulumi:"oidcTrn"`
-	// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+	// OIDC provider configuration document in JSON format, containing information about the OIDC provider.
 	OpenIdConfigUrl string `pulumi:"openIdConfigUrl"`
 }
 
@@ -13209,17 +13209,17 @@ type GetClusterIrsaConfigInput interface {
 }
 
 type GetClusterIrsaConfigArgs struct {
-	// 接受令牌的标识符。
+	// Identifier for accepting tokens
 	Audience pulumi.StringInput `pulumi:"audience"`
-	// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+	// Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+	// OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
 	Issuer pulumi.StringInput `pulumi:"issuer"`
-	// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+	// JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
 	JwksUrl pulumi.StringInput `pulumi:"jwksUrl"`
-	// OIDC 提供商 TRN。
+	// OIDC provider TRN.
 	OidcTrn pulumi.StringInput `pulumi:"oidcTrn"`
-	// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+	// OIDC provider configuration document in JSON format, containing information about the OIDC provider.
 	OpenIdConfigUrl pulumi.StringInput `pulumi:"openIdConfigUrl"`
 }
 
@@ -13249,40 +13249,40 @@ func (o GetClusterIrsaConfigOutput) ToGetClusterIrsaConfigOutputWithContext(ctx 
 	return o
 }
 
-// 接受令牌的标识符。
+// Identifier for accepting tokens
 func (o GetClusterIrsaConfigOutput) Audience() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterIrsaConfig) string { return v.Audience }).(pulumi.StringOutput)
 }
 
-// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+// Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
 func (o GetClusterIrsaConfigOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterIrsaConfig) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+// OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
 func (o GetClusterIrsaConfigOutput) Issuer() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterIrsaConfig) string { return v.Issuer }).(pulumi.StringOutput)
 }
 
-// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+// JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
 func (o GetClusterIrsaConfigOutput) JwksUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterIrsaConfig) string { return v.JwksUrl }).(pulumi.StringOutput)
 }
 
-// OIDC 提供商 TRN。
+// OIDC provider TRN.
 func (o GetClusterIrsaConfigOutput) OidcTrn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterIrsaConfig) string { return v.OidcTrn }).(pulumi.StringOutput)
 }
 
-// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+// OIDC provider configuration document in JSON format, containing information about the OIDC provider.
 func (o GetClusterIrsaConfigOutput) OpenIdConfigUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterIrsaConfig) string { return v.OpenIdConfigUrl }).(pulumi.StringOutput)
 }
 
 type GetClusterLoggingConfig struct {
-	// 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+	// Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
 	LogProjectId string `pulumi:"logProjectId"`
-	// 集群的日志选项信息。
+	// Cluster log option information.
 	LogSetups []GetClusterLoggingConfigLogSetup `pulumi:"logSetups"`
 }
 
@@ -13298,9 +13298,9 @@ type GetClusterLoggingConfigInput interface {
 }
 
 type GetClusterLoggingConfigArgs struct {
-	// 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+	// Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
 	LogProjectId pulumi.StringInput `pulumi:"logProjectId"`
-	// 集群的日志选项信息。
+	// Cluster log option information.
 	LogSetups GetClusterLoggingConfigLogSetupArrayInput `pulumi:"logSetups"`
 }
 
@@ -13330,24 +13330,24 @@ func (o GetClusterLoggingConfigOutput) ToGetClusterLoggingConfigOutputWithContex
 	return o
 }
 
-// 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+// Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
 func (o GetClusterLoggingConfigOutput) LogProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterLoggingConfig) string { return v.LogProjectId }).(pulumi.StringOutput)
 }
 
-// 集群的日志选项信息。
+// Cluster log option information.
 func (o GetClusterLoggingConfigOutput) LogSetups() GetClusterLoggingConfigLogSetupArrayOutput {
 	return o.ApplyT(func(v GetClusterLoggingConfig) []GetClusterLoggingConfigLogSetup { return v.LogSetups }).(GetClusterLoggingConfigLogSetupArrayOutput)
 }
 
 type GetClusterLoggingConfigLogSetup struct {
-	// 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+	// Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
 	Enabled bool `pulumi:"enabled"`
-	// 采集目标的TLS日志主题ID。 如果为空，表示对应日志的主题未被创建。
+	// TLS log topic ID for the collection target. If empty, the corresponding log topic has not been created.
 	LogTopicId string `pulumi:"logTopicId"`
-	// 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+	// Retention period of logs in log service, in days. 3650 days means permanent storage.
 	LogTtl int `pulumi:"logTtl"`
-	// 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+	// Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
 	LogType string `pulumi:"logType"`
 }
 
@@ -13363,13 +13363,13 @@ type GetClusterLoggingConfigLogSetupInput interface {
 }
 
 type GetClusterLoggingConfigLogSetupArgs struct {
-	// 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+	// Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// 采集目标的TLS日志主题ID。 如果为空，表示对应日志的主题未被创建。
+	// TLS log topic ID for the collection target. If empty, the corresponding log topic has not been created.
 	LogTopicId pulumi.StringInput `pulumi:"logTopicId"`
-	// 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+	// Retention period of logs in log service, in days. 3650 days means permanent storage.
 	LogTtl pulumi.IntInput `pulumi:"logTtl"`
-	// 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+	// Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
 	LogType pulumi.StringInput `pulumi:"logType"`
 }
 
@@ -13424,22 +13424,22 @@ func (o GetClusterLoggingConfigLogSetupOutput) ToGetClusterLoggingConfigLogSetup
 	return o
 }
 
-// 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+// Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
 func (o GetClusterLoggingConfigLogSetupOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterLoggingConfigLogSetup) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 采集目标的TLS日志主题ID。 如果为空，表示对应日志的主题未被创建。
+// TLS log topic ID for the collection target. If empty, the corresponding log topic has not been created.
 func (o GetClusterLoggingConfigLogSetupOutput) LogTopicId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterLoggingConfigLogSetup) string { return v.LogTopicId }).(pulumi.StringOutput)
 }
 
-// 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+// Retention period of logs in log service, in days. 3650 days means permanent storage.
 func (o GetClusterLoggingConfigLogSetupOutput) LogTtl() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterLoggingConfigLogSetup) int { return v.LogTtl }).(pulumi.IntOutput)
 }
 
-// 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+// Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
 func (o GetClusterLoggingConfigLogSetupOutput) LogType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterLoggingConfigLogSetup) string { return v.LogType }).(pulumi.StringOutput)
 }
@@ -13465,11 +13465,11 @@ func (o GetClusterLoggingConfigLogSetupArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetClusterMonitoringConfig struct {
-	// 监控组件的配置列表。
+	// List of monitoring component configurations.
 	ComponentConfigs []GetClusterMonitoringConfigComponentConfig `pulumi:"componentConfigs"`
-	// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+	// Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
 	EnableMetricsExternalCollection bool `pulumi:"enableMetricsExternalCollection"`
-	// 监控数据所属的工作区 ID。
+	// Workspace ID to which the monitoring data belongs.
 	WorkspaceId string `pulumi:"workspaceId"`
 }
 
@@ -13485,11 +13485,11 @@ type GetClusterMonitoringConfigInput interface {
 }
 
 type GetClusterMonitoringConfigArgs struct {
-	// 监控组件的配置列表。
+	// List of monitoring component configurations.
 	ComponentConfigs GetClusterMonitoringConfigComponentConfigArrayInput `pulumi:"componentConfigs"`
-	// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+	// Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
 	EnableMetricsExternalCollection pulumi.BoolInput `pulumi:"enableMetricsExternalCollection"`
-	// 监控数据所属的工作区 ID。
+	// Workspace ID to which the monitoring data belongs.
 	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
 }
 
@@ -13519,27 +13519,27 @@ func (o GetClusterMonitoringConfigOutput) ToGetClusterMonitoringConfigOutputWith
 	return o
 }
 
-// 监控组件的配置列表。
+// List of monitoring component configurations.
 func (o GetClusterMonitoringConfigOutput) ComponentConfigs() GetClusterMonitoringConfigComponentConfigArrayOutput {
 	return o.ApplyT(func(v GetClusterMonitoringConfig) []GetClusterMonitoringConfigComponentConfig {
 		return v.ComponentConfigs
 	}).(GetClusterMonitoringConfigComponentConfigArrayOutput)
 }
 
-// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+// Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
 func (o GetClusterMonitoringConfigOutput) EnableMetricsExternalCollection() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterMonitoringConfig) bool { return v.EnableMetricsExternalCollection }).(pulumi.BoolOutput)
 }
 
-// 监控数据所属的工作区 ID。
+// Workspace ID to which the monitoring data belongs.
 func (o GetClusterMonitoringConfigOutput) WorkspaceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterMonitoringConfig) string { return v.WorkspaceId }).(pulumi.StringOutput)
 }
 
 type GetClusterMonitoringConfigComponentConfig struct {
-	// 是否启用该监控组件，true 表示启用，false 表示禁用。
+	// Whether to enable this monitoring component. true means enabled; false means disabled.
 	Enabled bool `pulumi:"enabled"`
-	// 监控组件的名称，例如 'prometheus'、'grafana' 等。
+	// Name of the monitoring component, such as 'prometheus', 'grafana', etc.
 	Name string `pulumi:"name"`
 }
 
@@ -13555,9 +13555,9 @@ type GetClusterMonitoringConfigComponentConfigInput interface {
 }
 
 type GetClusterMonitoringConfigComponentConfigArgs struct {
-	// 是否启用该监控组件，true 表示启用，false 表示禁用。
+	// Whether to enable this monitoring component. true means enabled; false means disabled.
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// 监控组件的名称，例如 'prometheus'、'grafana' 等。
+	// Name of the monitoring component, such as 'prometheus', 'grafana', etc.
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -13612,12 +13612,12 @@ func (o GetClusterMonitoringConfigComponentConfigOutput) ToGetClusterMonitoringC
 	return o
 }
 
-// 是否启用该监控组件，true 表示启用，false 表示禁用。
+// Whether to enable this monitoring component. true means enabled; false means disabled.
 func (o GetClusterMonitoringConfigComponentConfigOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterMonitoringConfigComponentConfig) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 监控组件的名称，例如 'prometheus'、'grafana' 等。
+// Name of the monitoring component, such as 'prometheus', 'grafana', etc.
 func (o GetClusterMonitoringConfigComponentConfigOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterMonitoringConfigComponentConfig) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -13643,17 +13643,17 @@ func (o GetClusterMonitoringConfigComponentConfigArrayOutput) Index(i pulumi.Int
 }
 
 type GetClusterNodeStatistics struct {
-	// Phase=Creating的节点总数量。
+	// Total number of nodes in Phase=Creating.
 	CreatingCount int `pulumi:"creatingCount"`
-	// Phase=Deleting的节点总数量。
+	// Total number of nodes with Phase=Deleting.
 	DeletingCount int `pulumi:"deletingCount"`
-	// Phase=Failed的节点总数量。
+	// Total number of nodes with Phase=Failed.
 	FailedCount int `pulumi:"failedCount"`
-	// Phase=Running的节点总数量。
+	// Total number of nodes with Phase=Running.
 	RunningCount int `pulumi:"runningCount"`
-	// 节点总数量。
+	// Total number of nodes.
 	TotalCount int `pulumi:"totalCount"`
-	// Phase=Updating的节点总数量。
+	// Total number of nodes in Phase=Updating.
 	UpdatingCount int `pulumi:"updatingCount"`
 }
 
@@ -13669,17 +13669,17 @@ type GetClusterNodeStatisticsInput interface {
 }
 
 type GetClusterNodeStatisticsArgs struct {
-	// Phase=Creating的节点总数量。
+	// Total number of nodes in Phase=Creating.
 	CreatingCount pulumi.IntInput `pulumi:"creatingCount"`
-	// Phase=Deleting的节点总数量。
+	// Total number of nodes with Phase=Deleting.
 	DeletingCount pulumi.IntInput `pulumi:"deletingCount"`
-	// Phase=Failed的节点总数量。
+	// Total number of nodes with Phase=Failed.
 	FailedCount pulumi.IntInput `pulumi:"failedCount"`
-	// Phase=Running的节点总数量。
+	// Total number of nodes with Phase=Running.
 	RunningCount pulumi.IntInput `pulumi:"runningCount"`
-	// 节点总数量。
+	// Total number of nodes.
 	TotalCount pulumi.IntInput `pulumi:"totalCount"`
-	// Phase=Updating的节点总数量。
+	// Total number of nodes in Phase=Updating.
 	UpdatingCount pulumi.IntInput `pulumi:"updatingCount"`
 }
 
@@ -13709,42 +13709,42 @@ func (o GetClusterNodeStatisticsOutput) ToGetClusterNodeStatisticsOutputWithCont
 	return o
 }
 
-// Phase=Creating的节点总数量。
+// Total number of nodes in Phase=Creating.
 func (o GetClusterNodeStatisticsOutput) CreatingCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterNodeStatistics) int { return v.CreatingCount }).(pulumi.IntOutput)
 }
 
-// Phase=Deleting的节点总数量。
+// Total number of nodes with Phase=Deleting.
 func (o GetClusterNodeStatisticsOutput) DeletingCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterNodeStatistics) int { return v.DeletingCount }).(pulumi.IntOutput)
 }
 
-// Phase=Failed的节点总数量。
+// Total number of nodes with Phase=Failed.
 func (o GetClusterNodeStatisticsOutput) FailedCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterNodeStatistics) int { return v.FailedCount }).(pulumi.IntOutput)
 }
 
-// Phase=Running的节点总数量。
+// Total number of nodes with Phase=Running.
 func (o GetClusterNodeStatisticsOutput) RunningCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterNodeStatistics) int { return v.RunningCount }).(pulumi.IntOutput)
 }
 
-// 节点总数量。
+// Total number of nodes.
 func (o GetClusterNodeStatisticsOutput) TotalCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterNodeStatistics) int { return v.TotalCount }).(pulumi.IntOutput)
 }
 
-// Phase=Updating的节点总数量。
+// Total number of nodes in Phase=Updating.
 func (o GetClusterNodeStatisticsOutput) UpdatingCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterNodeStatistics) int { return v.UpdatingCount }).(pulumi.IntOutput)
 }
 
 type GetClusterPodsConfig struct {
-	// Flannel 网络配置。
+	// Flannel network configuration.
 	FlannelConfig GetClusterPodsConfigFlannelConfig `pulumi:"flannelConfig"`
-	// 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+	// Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
 	PodNetworkMode string `pulumi:"podNetworkMode"`
-	// VPC-CNI 网络配置。
+	// VPC-CNI network configuration.
 	VpcCniConfig GetClusterPodsConfigVpcCniConfig `pulumi:"vpcCniConfig"`
 }
 
@@ -13760,11 +13760,11 @@ type GetClusterPodsConfigInput interface {
 }
 
 type GetClusterPodsConfigArgs struct {
-	// Flannel 网络配置。
+	// Flannel network configuration.
 	FlannelConfig GetClusterPodsConfigFlannelConfigInput `pulumi:"flannelConfig"`
-	// 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+	// Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
 	PodNetworkMode pulumi.StringInput `pulumi:"podNetworkMode"`
-	// VPC-CNI 网络配置。
+	// VPC-CNI network configuration.
 	VpcCniConfig GetClusterPodsConfigVpcCniConfigInput `pulumi:"vpcCniConfig"`
 }
 
@@ -13794,27 +13794,27 @@ func (o GetClusterPodsConfigOutput) ToGetClusterPodsConfigOutputWithContext(ctx 
 	return o
 }
 
-// Flannel 网络配置。
+// Flannel network configuration.
 func (o GetClusterPodsConfigOutput) FlannelConfig() GetClusterPodsConfigFlannelConfigOutput {
 	return o.ApplyT(func(v GetClusterPodsConfig) GetClusterPodsConfigFlannelConfig { return v.FlannelConfig }).(GetClusterPodsConfigFlannelConfigOutput)
 }
 
-// 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+// Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
 func (o GetClusterPodsConfigOutput) PodNetworkMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterPodsConfig) string { return v.PodNetworkMode }).(pulumi.StringOutput)
 }
 
-// VPC-CNI 网络配置。
+// VPC-CNI network configuration.
 func (o GetClusterPodsConfigOutput) VpcCniConfig() GetClusterPodsConfigVpcCniConfigOutput {
 	return o.ApplyT(func(v GetClusterPodsConfig) GetClusterPodsConfigVpcCniConfig { return v.VpcCniConfig }).(GetClusterPodsConfigVpcCniConfigOutput)
 }
 
 type GetClusterPodsConfigFlannelConfig struct {
-	// Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+	// Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
 	MaxPodsPerNode int `pulumi:"maxPodsPerNode"`
-	// Flannel 容器网络的 Pod CIDR。
+	// Pod CIDR for Flannel container network.
 	PodCidrs []string `pulumi:"podCidrs"`
-	// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+	// List of Pod subnet IDs for the Flannel container network model.
 	SubnetIds []string `pulumi:"subnetIds"`
 }
 
@@ -13830,11 +13830,11 @@ type GetClusterPodsConfigFlannelConfigInput interface {
 }
 
 type GetClusterPodsConfigFlannelConfigArgs struct {
-	// Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+	// Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
 	MaxPodsPerNode pulumi.IntInput `pulumi:"maxPodsPerNode"`
-	// Flannel 容器网络的 Pod CIDR。
+	// Pod CIDR for Flannel container network.
 	PodCidrs pulumi.StringArrayInput `pulumi:"podCidrs"`
-	// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+	// List of Pod subnet IDs for the Flannel container network model.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
 }
 
@@ -13864,25 +13864,25 @@ func (o GetClusterPodsConfigFlannelConfigOutput) ToGetClusterPodsConfigFlannelCo
 	return o
 }
 
-// Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+// Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
 func (o GetClusterPodsConfigFlannelConfigOutput) MaxPodsPerNode() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterPodsConfigFlannelConfig) int { return v.MaxPodsPerNode }).(pulumi.IntOutput)
 }
 
-// Flannel 容器网络的 Pod CIDR。
+// Pod CIDR for Flannel container network.
 func (o GetClusterPodsConfigFlannelConfigOutput) PodCidrs() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterPodsConfigFlannelConfig) []string { return v.PodCidrs }).(pulumi.StringArrayOutput)
 }
 
-// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+// List of Pod subnet IDs for the Flannel container network model.
 func (o GetClusterPodsConfigFlannelConfigOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterPodsConfigFlannelConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
 type GetClusterPodsConfigVpcCniConfig struct {
-	// VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+	// List of Pod subnet IDs for the VPC-CNI container network model.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+	// Whether to enable Trunk mode for the VPC-CNI container network model
 	TrunkEniEnabled bool `pulumi:"trunkEniEnabled"`
 }
 
@@ -13898,9 +13898,9 @@ type GetClusterPodsConfigVpcCniConfigInput interface {
 }
 
 type GetClusterPodsConfigVpcCniConfigArgs struct {
-	// VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+	// List of Pod subnet IDs for the VPC-CNI container network model.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
-	// 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+	// Whether to enable Trunk mode for the VPC-CNI container network model
 	TrunkEniEnabled pulumi.BoolInput `pulumi:"trunkEniEnabled"`
 }
 
@@ -13930,18 +13930,18 @@ func (o GetClusterPodsConfigVpcCniConfigOutput) ToGetClusterPodsConfigVpcCniConf
 	return o
 }
 
-// VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+// List of Pod subnet IDs for the VPC-CNI container network model.
 func (o GetClusterPodsConfigVpcCniConfigOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterPodsConfigVpcCniConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+// Whether to enable Trunk mode for the VPC-CNI container network model
 func (o GetClusterPodsConfigVpcCniConfigOutput) TrunkEniEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterPodsConfigVpcCniConfig) bool { return v.TrunkEniEnabled }).(pulumi.BoolOutput)
 }
 
 type GetClusterServicesConfig struct {
-	// Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+	// IPv4 private network address exposed by Kubernetes Service.
 	ServiceCidrsv4s []string `pulumi:"serviceCidrsv4s"`
 }
 
@@ -13957,7 +13957,7 @@ type GetClusterServicesConfigInput interface {
 }
 
 type GetClusterServicesConfigArgs struct {
-	// Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+	// IPv4 private network address exposed by Kubernetes Service.
 	ServiceCidrsv4s pulumi.StringArrayInput `pulumi:"serviceCidrsv4s"`
 }
 
@@ -13987,15 +13987,15 @@ func (o GetClusterServicesConfigOutput) ToGetClusterServicesConfigOutputWithCont
 	return o
 }
 
-// Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+// IPv4 private network address exposed by Kubernetes Service.
 func (o GetClusterServicesConfigOutput) ServiceCidrsv4s() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterServicesConfig) []string { return v.ServiceCidrsv4s }).(pulumi.StringArrayOutput)
 }
 
 type GetClusterStatus struct {
-	// 状态条件列表
+	// Status condition list
 	Conditions []GetClusterStatusCondition `pulumi:"conditions"`
-	// 集群状态阶段
+	// Cluster status phase.
 	Phase string `pulumi:"phase"`
 }
 
@@ -14011,9 +14011,9 @@ type GetClusterStatusInput interface {
 }
 
 type GetClusterStatusArgs struct {
-	// 状态条件列表
+	// Status condition list
 	Conditions GetClusterStatusConditionArrayInput `pulumi:"conditions"`
-	// 集群状态阶段
+	// Cluster status phase.
 	Phase pulumi.StringInput `pulumi:"phase"`
 }
 
@@ -14043,18 +14043,18 @@ func (o GetClusterStatusOutput) ToGetClusterStatusOutputWithContext(ctx context.
 	return o
 }
 
-// 状态条件列表
+// Status condition list
 func (o GetClusterStatusOutput) Conditions() GetClusterStatusConditionArrayOutput {
 	return o.ApplyT(func(v GetClusterStatus) []GetClusterStatusCondition { return v.Conditions }).(GetClusterStatusConditionArrayOutput)
 }
 
-// 集群状态阶段
+// Cluster status phase.
 func (o GetClusterStatusOutput) Phase() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterStatus) string { return v.Phase }).(pulumi.StringOutput)
 }
 
 type GetClusterStatusCondition struct {
-	// 条件类型
+	// Condition type
 	Type string `pulumi:"type"`
 }
 
@@ -14070,7 +14070,7 @@ type GetClusterStatusConditionInput interface {
 }
 
 type GetClusterStatusConditionArgs struct {
-	// 条件类型
+	// Condition type
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -14125,7 +14125,7 @@ func (o GetClusterStatusConditionOutput) ToGetClusterStatusConditionOutputWithCo
 	return o
 }
 
-// 条件类型
+// Condition type
 func (o GetClusterStatusConditionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterStatusCondition) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -14151,9 +14151,9 @@ func (o GetClusterStatusConditionArrayOutput) Index(i pulumi.IntInput) GetCluste
 }
 
 type GetClusterTag struct {
-	// 标签键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -14169,9 +14169,9 @@ type GetClusterTagInput interface {
 }
 
 type GetClusterTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -14226,12 +14226,12 @@ func (o GetClusterTagOutput) ToGetClusterTagOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o GetClusterTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetClusterTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -14257,19 +14257,19 @@ func (o GetClusterTagArrayOutput) Index(i pulumi.IntInput) GetClusterTagOutput {
 }
 
 type GetDefaultNodePoolAutoScaling struct {
-	// 配置节点池的期望节点数。
+	// Configure the desired number of nodes in the node pool.
 	DesiredReplicas int `pulumi:"desiredReplicas"`
-	// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+	// Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
 	Enabled bool `pulumi:"enabled"`
-	// 配置节点池的最大节点数。
+	// Configure the maximum number of nodes in the node pool
 	MaxReplicas int `pulumi:"maxReplicas"`
-	// 配置节点池的最小节点数。
+	// Configure the minimum number of nodes in the node pool
 	MinReplicas int `pulumi:"minReplicas"`
-	// 优先级。
+	// Priority
 	Priority int `pulumi:"priority"`
-	// 伸缩组ID。
+	// Scaling group ID
 	ScalingGroupId string `pulumi:"scalingGroupId"`
-	// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+	// Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
 	SubnetPolicy string `pulumi:"subnetPolicy"`
 }
 
@@ -14285,19 +14285,19 @@ type GetDefaultNodePoolAutoScalingInput interface {
 }
 
 type GetDefaultNodePoolAutoScalingArgs struct {
-	// 配置节点池的期望节点数。
+	// Configure the desired number of nodes in the node pool.
 	DesiredReplicas pulumi.IntInput `pulumi:"desiredReplicas"`
-	// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+	// Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// 配置节点池的最大节点数。
+	// Configure the maximum number of nodes in the node pool
 	MaxReplicas pulumi.IntInput `pulumi:"maxReplicas"`
-	// 配置节点池的最小节点数。
+	// Configure the minimum number of nodes in the node pool
 	MinReplicas pulumi.IntInput `pulumi:"minReplicas"`
-	// 优先级。
+	// Priority
 	Priority pulumi.IntInput `pulumi:"priority"`
-	// 伸缩组ID。
+	// Scaling group ID
 	ScalingGroupId pulumi.StringInput `pulumi:"scalingGroupId"`
-	// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+	// Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
 	SubnetPolicy pulumi.StringInput `pulumi:"subnetPolicy"`
 }
 
@@ -14327,57 +14327,57 @@ func (o GetDefaultNodePoolAutoScalingOutput) ToGetDefaultNodePoolAutoScalingOutp
 	return o
 }
 
-// 配置节点池的期望节点数。
+// Configure the desired number of nodes in the node pool.
 func (o GetDefaultNodePoolAutoScalingOutput) DesiredReplicas() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) int { return v.DesiredReplicas }).(pulumi.IntOutput)
 }
 
-// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+// Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
 func (o GetDefaultNodePoolAutoScalingOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 配置节点池的最大节点数。
+// Configure the maximum number of nodes in the node pool
 func (o GetDefaultNodePoolAutoScalingOutput) MaxReplicas() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) int { return v.MaxReplicas }).(pulumi.IntOutput)
 }
 
-// 配置节点池的最小节点数。
+// Configure the minimum number of nodes in the node pool
 func (o GetDefaultNodePoolAutoScalingOutput) MinReplicas() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) int { return v.MinReplicas }).(pulumi.IntOutput)
 }
 
-// 优先级。
+// Priority
 func (o GetDefaultNodePoolAutoScalingOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// 伸缩组ID。
+// Scaling group ID
 func (o GetDefaultNodePoolAutoScalingOutput) ScalingGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) string { return v.ScalingGroupId }).(pulumi.StringOutput)
 }
 
-// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+// Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
 func (o GetDefaultNodePoolAutoScalingOutput) SubnetPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) string { return v.SubnetPolicy }).(pulumi.StringOutput)
 }
 
 type GetDefaultNodePoolKubernetesConfig struct {
-	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+	// Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
 	AutoSyncDisabled bool `pulumi:"autoSyncDisabled"`
-	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+	// Node blocking configuration. Parameter value description: false: not blocked. true: blocked
 	Cordon bool `pulumi:"cordon"`
-	// Kubelet 组件的相关配置
+	// Kubelet component configuration
 	KubeletConfig GetDefaultNodePoolKubernetesConfigKubeletConfig `pulumi:"kubeletConfig"`
-	// 节点池/节点的 Kubernetes 标签（Labels）信息。
+	// Kubernetes label information for node pool/node
 	Labels []GetDefaultNodePoolKubernetesConfigLabel `pulumi:"labels"`
-	// Kubernetes 中节点对象的元数据名称前缀。
+	// Prefix of the metadata name for node objects in Kubernetes.
 	NamePrefix string `pulumi:"namePrefix"`
-	// Kubernetes 中节点对象的元数据名称后缀。
+	// Suffix of the metadata name for node objects in Kubernetes.
 	NameSuffix string `pulumi:"nameSuffix"`
-	// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+	// Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
 	NameUseHostname bool `pulumi:"nameUseHostname"`
-	// 节点池/节点的 Kubernetes 污点（Taints）信息。
+	// Kubernetes taint information for the node pool/node
 	Taints []GetDefaultNodePoolKubernetesConfigTaint `pulumi:"taints"`
 }
 
@@ -14393,21 +14393,21 @@ type GetDefaultNodePoolKubernetesConfigInput interface {
 }
 
 type GetDefaultNodePoolKubernetesConfigArgs struct {
-	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+	// Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
 	AutoSyncDisabled pulumi.BoolInput `pulumi:"autoSyncDisabled"`
-	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+	// Node blocking configuration. Parameter value description: false: not blocked. true: blocked
 	Cordon pulumi.BoolInput `pulumi:"cordon"`
-	// Kubelet 组件的相关配置
+	// Kubelet component configuration
 	KubeletConfig GetDefaultNodePoolKubernetesConfigKubeletConfigInput `pulumi:"kubeletConfig"`
-	// 节点池/节点的 Kubernetes 标签（Labels）信息。
+	// Kubernetes label information for node pool/node
 	Labels GetDefaultNodePoolKubernetesConfigLabelArrayInput `pulumi:"labels"`
-	// Kubernetes 中节点对象的元数据名称前缀。
+	// Prefix of the metadata name for node objects in Kubernetes.
 	NamePrefix pulumi.StringInput `pulumi:"namePrefix"`
-	// Kubernetes 中节点对象的元数据名称后缀。
+	// Suffix of the metadata name for node objects in Kubernetes.
 	NameSuffix pulumi.StringInput `pulumi:"nameSuffix"`
-	// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+	// Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
 	NameUseHostname pulumi.BoolInput `pulumi:"nameUseHostname"`
-	// 节点池/节点的 Kubernetes 污点（Taints）信息。
+	// Kubernetes taint information for the node pool/node
 	Taints GetDefaultNodePoolKubernetesConfigTaintArrayInput `pulumi:"taints"`
 }
 
@@ -14437,72 +14437,72 @@ func (o GetDefaultNodePoolKubernetesConfigOutput) ToGetDefaultNodePoolKubernetes
 	return o
 }
 
-// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+// Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
 func (o GetDefaultNodePoolKubernetesConfigOutput) AutoSyncDisabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) bool { return v.AutoSyncDisabled }).(pulumi.BoolOutput)
 }
 
-// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+// Node blocking configuration. Parameter value description: false: not blocked. true: blocked
 func (o GetDefaultNodePoolKubernetesConfigOutput) Cordon() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) bool { return v.Cordon }).(pulumi.BoolOutput)
 }
 
-// Kubelet 组件的相关配置
+// Kubelet component configuration
 func (o GetDefaultNodePoolKubernetesConfigOutput) KubeletConfig() GetDefaultNodePoolKubernetesConfigKubeletConfigOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) GetDefaultNodePoolKubernetesConfigKubeletConfig {
 		return v.KubeletConfig
 	}).(GetDefaultNodePoolKubernetesConfigKubeletConfigOutput)
 }
 
-// 节点池/节点的 Kubernetes 标签（Labels）信息。
+// Kubernetes label information for node pool/node
 func (o GetDefaultNodePoolKubernetesConfigOutput) Labels() GetDefaultNodePoolKubernetesConfigLabelArrayOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) []GetDefaultNodePoolKubernetesConfigLabel { return v.Labels }).(GetDefaultNodePoolKubernetesConfigLabelArrayOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称前缀。
+// Prefix of the metadata name for node objects in Kubernetes.
 func (o GetDefaultNodePoolKubernetesConfigOutput) NamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) string { return v.NamePrefix }).(pulumi.StringOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称后缀。
+// Suffix of the metadata name for node objects in Kubernetes.
 func (o GetDefaultNodePoolKubernetesConfigOutput) NameSuffix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) string { return v.NameSuffix }).(pulumi.StringOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+// Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
 func (o GetDefaultNodePoolKubernetesConfigOutput) NameUseHostname() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) bool { return v.NameUseHostname }).(pulumi.BoolOutput)
 }
 
-// 节点池/节点的 Kubernetes 污点（Taints）信息。
+// Kubernetes taint information for the node pool/node
 func (o GetDefaultNodePoolKubernetesConfigOutput) Taints() GetDefaultNodePoolKubernetesConfigTaintArrayOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) []GetDefaultNodePoolKubernetesConfigTaint { return v.Taints }).(GetDefaultNodePoolKubernetesConfigTaintArrayOutput)
 }
 
 type GetDefaultNodePoolKubernetesConfigKubeletConfig struct {
-	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+	// Configure kubelet's CpuManagerPolicy. Includes none and static strategies
 	CpuManagerPolicy string `pulumi:"cpuManagerPolicy"`
-	// 特性门控。
+	// Feature gate.
 	FeatureGates GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGates `pulumi:"featureGates"`
-	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+	// Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
 	KubeApiBurst int `pulumi:"kubeApiBurst"`
-	// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+	// Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
 	KubeApiQps int `pulumi:"kubeApiQps"`
-	// 节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+	// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
 	KubeReserveds []GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved `pulumi:"kubeReserveds"`
-	// 配置 kubelet 支持的最大 Pod 数量
+	// Configure the maximum number of Pods supported by kubelet
 	MaxPods int `pulumi:"maxPods"`
-	// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+	// Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 	RegistryBurst int `pulumi:"registryBurst"`
-	// 可用来限制镜像仓库的 QPS 上限
+	// Can be used to limit the QPS cap for the image repository
 	RegistryPullQps int `pulumi:"registryPullQps"`
-	// 逐一拉取镜像。
+	// Pull images one by one
 	SerializeImagePulls bool `pulumi:"serializeImagePulls"`
-	// 节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+	// Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
 	SystemReserveds []GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved `pulumi:"systemReserveds"`
-	// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+	// Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
 	TopologyManagerPolicy string `pulumi:"topologyManagerPolicy"`
-	// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+	// Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
 	TopologyManagerScope string `pulumi:"topologyManagerScope"`
 }
 
@@ -14518,29 +14518,29 @@ type GetDefaultNodePoolKubernetesConfigKubeletConfigInput interface {
 }
 
 type GetDefaultNodePoolKubernetesConfigKubeletConfigArgs struct {
-	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+	// Configure kubelet's CpuManagerPolicy. Includes none and static strategies
 	CpuManagerPolicy pulumi.StringInput `pulumi:"cpuManagerPolicy"`
-	// 特性门控。
+	// Feature gate.
 	FeatureGates GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesInput `pulumi:"featureGates"`
-	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+	// Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
 	KubeApiBurst pulumi.IntInput `pulumi:"kubeApiBurst"`
-	// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+	// Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
 	KubeApiQps pulumi.IntInput `pulumi:"kubeApiQps"`
-	// 节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+	// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
 	KubeReserveds GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput `pulumi:"kubeReserveds"`
-	// 配置 kubelet 支持的最大 Pod 数量
+	// Configure the maximum number of Pods supported by kubelet
 	MaxPods pulumi.IntInput `pulumi:"maxPods"`
-	// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+	// Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 	RegistryBurst pulumi.IntInput `pulumi:"registryBurst"`
-	// 可用来限制镜像仓库的 QPS 上限
+	// Can be used to limit the QPS cap for the image repository
 	RegistryPullQps pulumi.IntInput `pulumi:"registryPullQps"`
-	// 逐一拉取镜像。
+	// Pull images one by one
 	SerializeImagePulls pulumi.BoolInput `pulumi:"serializeImagePulls"`
-	// 节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+	// Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
 	SystemReserveds GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput `pulumi:"systemReserveds"`
-	// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+	// Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
 	TopologyManagerPolicy pulumi.StringInput `pulumi:"topologyManagerPolicy"`
-	// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+	// Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
 	TopologyManagerScope pulumi.StringInput `pulumi:"topologyManagerScope"`
 }
 
@@ -14570,76 +14570,76 @@ func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) ToGetDefaultNodeP
 	return o
 }
 
-// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+// Configure kubelet's CpuManagerPolicy. Includes none and static strategies
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) CpuManagerPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) string { return v.CpuManagerPolicy }).(pulumi.StringOutput)
 }
 
-// 特性门控。
+// Feature gate.
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) FeatureGates() GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGates {
 		return v.FeatureGates
 	}).(GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput)
 }
 
-// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+// Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) KubeApiBurst() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) int { return v.KubeApiBurst }).(pulumi.IntOutput)
 }
 
-// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+// Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) KubeApiQps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) int { return v.KubeApiQps }).(pulumi.IntOutput)
 }
 
-// 节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) KubeReserveds() GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) []GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved {
 		return v.KubeReserveds
 	}).(GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
 }
 
-// 配置 kubelet 支持的最大 Pod 数量
+// Configure the maximum number of Pods supported by kubelet
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) MaxPods() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) int { return v.MaxPods }).(pulumi.IntOutput)
 }
 
-// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+// Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) RegistryBurst() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) int { return v.RegistryBurst }).(pulumi.IntOutput)
 }
 
-// 可用来限制镜像仓库的 QPS 上限
+// Can be used to limit the QPS cap for the image repository
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) RegistryPullQps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) int { return v.RegistryPullQps }).(pulumi.IntOutput)
 }
 
-// 逐一拉取镜像。
+// Pull images one by one
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) SerializeImagePulls() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) bool { return v.SerializeImagePulls }).(pulumi.BoolOutput)
 }
 
-// 节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+// Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) SystemReserveds() GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) []GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved {
 		return v.SystemReserveds
 	}).(GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput)
 }
 
-// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+// Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) string { return v.TopologyManagerPolicy }).(pulumi.StringOutput)
 }
 
-// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+// Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerScope() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) string { return v.TopologyManagerScope }).(pulumi.StringOutput)
 }
 
 type GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGates struct {
-	// 是否开启特性开关本地垂直Pod伸缩
+	// Whether to enable the feature switch for local vertical Pod autoscaling
 	InPlacePodVerticalScaling bool `pulumi:"inPlacePodVerticalScaling"`
-	// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+	// Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
 	QoSResourceManager bool `pulumi:"qoSResourceManager"`
 }
 
@@ -14655,9 +14655,9 @@ type GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesInput interface 
 }
 
 type GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs struct {
-	// 是否开启特性开关本地垂直Pod伸缩
+	// Whether to enable the feature switch for local vertical Pod autoscaling
 	InPlacePodVerticalScaling pulumi.BoolInput `pulumi:"inPlacePodVerticalScaling"`
-	// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+	// Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
 	QoSResourceManager pulumi.BoolInput `pulumi:"qoSResourceManager"`
 }
 
@@ -14687,22 +14687,22 @@ func (o GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ToGet
 	return o
 }
 
-// 是否开启特性开关本地垂直Pod伸缩
+// Whether to enable the feature switch for local vertical Pod autoscaling
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) InPlacePodVerticalScaling() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) bool {
 		return v.InPlacePodVerticalScaling
 	}).(pulumi.BoolOutput)
 }
 
-// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+// Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) QoSResourceManager() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) bool { return v.QoSResourceManager }).(pulumi.BoolOutput)
 }
 
 type GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Values: cpu or memory
 	Name string `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+	// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
 	Quantity string `pulumi:"quantity"`
 }
 
@@ -14718,9 +14718,9 @@ type GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedInput interface 
 }
 
 type GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Values: cpu or memory
 	Name pulumi.StringInput `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+	// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
 	Quantity pulumi.StringInput `pulumi:"quantity"`
 }
 
@@ -14775,12 +14775,12 @@ func (o GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) ToGet
 	return o
 }
 
-// 资源名称，取值为 cpu 或 memory。
+// Resource name. Values: cpu or memory
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Quantity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved) string { return v.Quantity }).(pulumi.StringOutput)
 }
@@ -14806,9 +14806,9 @@ func (o GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) 
 }
 
 type GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Values: cpu or memory.
 	Name string `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+	// Resource quantity for the specified resource.   - For cpu, example value: 200m   - For memory, example value: 1G
 	Quantity string `pulumi:"quantity"`
 }
 
@@ -14824,9 +14824,9 @@ type GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedInput interfac
 }
 
 type GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Values: cpu or memory.
 	Name pulumi.StringInput `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+	// Resource quantity for the specified resource.   - For cpu, example value: 200m   - For memory, example value: 1G
 	Quantity pulumi.StringInput `pulumi:"quantity"`
 }
 
@@ -14881,12 +14881,12 @@ func (o GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) ToG
 	return o
 }
 
-// 资源名称，取值为 cpu 或 memory。
+// Resource name. Values: cpu or memory.
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+// Resource quantity for the specified resource.   - For cpu, example value: 200m   - For memory, example value: 1G
 func (o GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Quantity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved) string { return v.Quantity }).(pulumi.StringOutput)
 }
@@ -14912,9 +14912,9 @@ func (o GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput
 }
 
 type GetDefaultNodePoolKubernetesConfigLabel struct {
-	// 标签键。
+	// Label key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Label value
 	Value string `pulumi:"value"`
 }
 
@@ -14930,9 +14930,9 @@ type GetDefaultNodePoolKubernetesConfigLabelInput interface {
 }
 
 type GetDefaultNodePoolKubernetesConfigLabelArgs struct {
-	// 标签键。
+	// Label key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Label value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -14987,12 +14987,12 @@ func (o GetDefaultNodePoolKubernetesConfigLabelOutput) ToGetDefaultNodePoolKuber
 	return o
 }
 
-// 标签键。
+// Label key.
 func (o GetDefaultNodePoolKubernetesConfigLabelOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigLabel) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Label value
 func (o GetDefaultNodePoolKubernetesConfigLabelOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigLabel) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -15018,11 +15018,11 @@ func (o GetDefaultNodePoolKubernetesConfigLabelArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetDefaultNodePoolKubernetesConfigTaint struct {
-	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	// Taint effect. Values: NoSchedule (default): do not schedule. NoExecute: evict pods that do not tolerate the taint. PreferNoSchedule: avoid scheduling if possible.
 	Effect string `pulumi:"effect"`
-	// 污点键。
+	// Taint key
 	Key string `pulumi:"key"`
-	// 污点值。
+	// Taint value
 	Value string `pulumi:"value"`
 }
 
@@ -15038,11 +15038,11 @@ type GetDefaultNodePoolKubernetesConfigTaintInput interface {
 }
 
 type GetDefaultNodePoolKubernetesConfigTaintArgs struct {
-	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	// Taint effect. Values: NoSchedule (default): do not schedule. NoExecute: evict pods that do not tolerate the taint. PreferNoSchedule: avoid scheduling if possible.
 	Effect pulumi.StringInput `pulumi:"effect"`
-	// 污点键。
+	// Taint key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 污点值。
+	// Taint value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -15097,17 +15097,17 @@ func (o GetDefaultNodePoolKubernetesConfigTaintOutput) ToGetDefaultNodePoolKuber
 	return o
 }
 
-// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+// Taint effect. Values: NoSchedule (default): do not schedule. NoExecute: evict pods that do not tolerate the taint. PreferNoSchedule: avoid scheduling if possible.
 func (o GetDefaultNodePoolKubernetesConfigTaintOutput) Effect() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigTaint) string { return v.Effect }).(pulumi.StringOutput)
 }
 
-// 污点键。
+// Taint key
 func (o GetDefaultNodePoolKubernetesConfigTaintOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigTaint) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 污点值。
+// Taint value
 func (o GetDefaultNodePoolKubernetesConfigTaintOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigTaint) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -15133,9 +15133,9 @@ func (o GetDefaultNodePoolKubernetesConfigTaintArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetDefaultNodePoolManagement struct {
-	// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+	// Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
 	Enabled bool `pulumi:"enabled"`
-	// 检查自愈配置。
+	// Check self-healing configuration.
 	RemedyConfig GetDefaultNodePoolManagementRemedyConfig `pulumi:"remedyConfig"`
 }
 
@@ -15151,9 +15151,9 @@ type GetDefaultNodePoolManagementInput interface {
 }
 
 type GetDefaultNodePoolManagementArgs struct {
-	// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+	// Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// 检查自愈配置。
+	// Check self-healing configuration.
 	RemedyConfig GetDefaultNodePoolManagementRemedyConfigInput `pulumi:"remedyConfig"`
 }
 
@@ -15183,20 +15183,20 @@ func (o GetDefaultNodePoolManagementOutput) ToGetDefaultNodePoolManagementOutput
 	return o
 }
 
-// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+// Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
 func (o GetDefaultNodePoolManagementOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolManagement) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 检查自愈配置。
+// Check self-healing configuration.
 func (o GetDefaultNodePoolManagementOutput) RemedyConfig() GetDefaultNodePoolManagementRemedyConfigOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolManagement) GetDefaultNodePoolManagementRemedyConfig { return v.RemedyConfig }).(GetDefaultNodePoolManagementRemedyConfigOutput)
 }
 
 type GetDefaultNodePoolManagementRemedyConfig struct {
-	// 是否开启检查自愈。
+	// Enable self-healing check
 	Enabled bool `pulumi:"enabled"`
-	// 检查自愈规则ID。
+	// Self-healing rule ID
 	RemedyId string `pulumi:"remedyId"`
 }
 
@@ -15212,9 +15212,9 @@ type GetDefaultNodePoolManagementRemedyConfigInput interface {
 }
 
 type GetDefaultNodePoolManagementRemedyConfigArgs struct {
-	// 是否开启检查自愈。
+	// Enable self-healing check
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// 检查自愈规则ID。
+	// Self-healing rule ID
 	RemedyId pulumi.StringInput `pulumi:"remedyId"`
 }
 
@@ -15244,68 +15244,68 @@ func (o GetDefaultNodePoolManagementRemedyConfigOutput) ToGetDefaultNodePoolMana
 	return o
 }
 
-// 是否开启检查自愈。
+// Enable self-healing check
 func (o GetDefaultNodePoolManagementRemedyConfigOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolManagementRemedyConfig) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 检查自愈规则ID。
+// Self-healing rule ID
 func (o GetDefaultNodePoolManagementRemedyConfigOutput) RemedyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolManagementRemedyConfig) string { return v.RemedyId }).(pulumi.StringOutput)
 }
 
 type GetDefaultNodePoolNodeConfig struct {
-	// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+	// Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
 	AdditionalContainerStorageEnabled bool `pulumi:"additionalContainerStorageEnabled"`
-	// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 	AutoRenew bool `pulumi:"autoRenew"`
-	// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+	// Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
 	AutoRenewPeriod int `pulumi:"autoRenewPeriod"`
-	// 节点的数据盘配置。
+	// Data disk configuration for the node
 	DataVolumes []GetDefaultNodePoolNodeConfigDataVolume `pulumi:"dataVolumes"`
-	// 实例在部署集中的分组号，0表示未设置
+	// Group number of the instance in the deployment set. 0 means not set
 	DeploymentSetGroupNumber int `pulumi:"deploymentSetGroupNumber"`
-	// 实例需要加入的部署集ID
+	// Deployment set ID to be added to the instance
 	DeploymentSetId string `pulumi:"deploymentSetId"`
-	// 节点对应的主机名称。
+	// Host name corresponding to the node
 	Hostname string `pulumi:"hostname"`
-	// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+	// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 	HpcClusterIds []string `pulumi:"hpcClusterIds"`
-	// 节点对应云服务器所使用的镜像 ID。
+	// Image ID used by the cloud server corresponding to the node
 	ImageId string `pulumi:"imageId"`
-	// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+	// Custom script executed after creating and initializing the node. Shell script in Base64 encoding
 	InitializeScript string `pulumi:"initializeScript"`
-	// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+	// Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 	InstanceChargeType string `pulumi:"instanceChargeType"`
-	// 节点（实例）名称。
+	// Node (instance) name
 	InstanceName string `pulumi:"instanceName"`
-	// 节点对应的云服务器实例规格 ID 列表。
+	// List of cloud server instance type IDs corresponding to the node
 	InstanceTypeIds []string `pulumi:"instanceTypeIds"`
-	// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+	// Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
 	InstancesDistribution GetDefaultNodePoolNodeConfigInstancesDistribution `pulumi:"instancesDistribution"`
-	// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+	// Node name prefix. An empty string or nil means the node name prefix policy is not enabled
 	NamePrefix string `pulumi:"namePrefix"`
-	// 节点间的网络通讯模式。
+	// Network communication mode between nodes
 	NetworkTrafficMode string `pulumi:"networkTrafficMode"`
-	// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
 	Period int `pulumi:"period"`
-	// 部署节点前执行脚本。
+	// Script executed before deploying nodes
 	PreScript string `pulumi:"preScript"`
-	// ECS所属项目，一个ECS只能归属于一个项目。
+	// The project to which the ECS belongs. Each ECS can only belong to one project.
 	ProjectName string `pulumi:"projectName"`
-	// 节点自动开启公网访问的配置信息
+	// Configuration for automatic public network access for nodes
 	PublicAccessConfig GetDefaultNodePoolNodeConfigPublicAccessConfig `pulumi:"publicAccessConfig"`
-	// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+	// Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
 	PublicAccessEnabled bool `pulumi:"publicAccessEnabled"`
-	// 节点安全配置。
+	// Node security configuration.
 	Security GetDefaultNodePoolNodeConfigSecurity `pulumi:"security"`
-	// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+	// Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
 	SpotStrategy string `pulumi:"spotStrategy"`
-	// 节点网络所属的子网 ID 列表。
+	// List of subnet IDs to which the node network belongs.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 节点的系统盘配置。
+	// System disk configuration for the node
 	SystemVolume GetDefaultNodePoolNodeConfigSystemVolume `pulumi:"systemVolume"`
-	// 节点池配置的标签信息
+	// Label information configured for the node pool
 	Tags []GetDefaultNodePoolNodeConfigTag `pulumi:"tags"`
 }
 
@@ -15321,57 +15321,57 @@ type GetDefaultNodePoolNodeConfigInput interface {
 }
 
 type GetDefaultNodePoolNodeConfigArgs struct {
-	// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+	// Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
 	AdditionalContainerStorageEnabled pulumi.BoolInput `pulumi:"additionalContainerStorageEnabled"`
-	// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
-	// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+	// Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
 	AutoRenewPeriod pulumi.IntInput `pulumi:"autoRenewPeriod"`
-	// 节点的数据盘配置。
+	// Data disk configuration for the node
 	DataVolumes GetDefaultNodePoolNodeConfigDataVolumeArrayInput `pulumi:"dataVolumes"`
-	// 实例在部署集中的分组号，0表示未设置
+	// Group number of the instance in the deployment set. 0 means not set
 	DeploymentSetGroupNumber pulumi.IntInput `pulumi:"deploymentSetGroupNumber"`
-	// 实例需要加入的部署集ID
+	// Deployment set ID to be added to the instance
 	DeploymentSetId pulumi.StringInput `pulumi:"deploymentSetId"`
-	// 节点对应的主机名称。
+	// Host name corresponding to the node
 	Hostname pulumi.StringInput `pulumi:"hostname"`
-	// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+	// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 	HpcClusterIds pulumi.StringArrayInput `pulumi:"hpcClusterIds"`
-	// 节点对应云服务器所使用的镜像 ID。
+	// Image ID used by the cloud server corresponding to the node
 	ImageId pulumi.StringInput `pulumi:"imageId"`
-	// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+	// Custom script executed after creating and initializing the node. Shell script in Base64 encoding
 	InitializeScript pulumi.StringInput `pulumi:"initializeScript"`
-	// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+	// Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 	InstanceChargeType pulumi.StringInput `pulumi:"instanceChargeType"`
-	// 节点（实例）名称。
+	// Node (instance) name
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
-	// 节点对应的云服务器实例规格 ID 列表。
+	// List of cloud server instance type IDs corresponding to the node
 	InstanceTypeIds pulumi.StringArrayInput `pulumi:"instanceTypeIds"`
-	// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+	// Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
 	InstancesDistribution GetDefaultNodePoolNodeConfigInstancesDistributionInput `pulumi:"instancesDistribution"`
-	// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+	// Node name prefix. An empty string or nil means the node name prefix policy is not enabled
 	NamePrefix pulumi.StringInput `pulumi:"namePrefix"`
-	// 节点间的网络通讯模式。
+	// Network communication mode between nodes
 	NetworkTrafficMode pulumi.StringInput `pulumi:"networkTrafficMode"`
-	// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
 	Period pulumi.IntInput `pulumi:"period"`
-	// 部署节点前执行脚本。
+	// Script executed before deploying nodes
 	PreScript pulumi.StringInput `pulumi:"preScript"`
-	// ECS所属项目，一个ECS只能归属于一个项目。
+	// The project to which the ECS belongs. Each ECS can only belong to one project.
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
-	// 节点自动开启公网访问的配置信息
+	// Configuration for automatic public network access for nodes
 	PublicAccessConfig GetDefaultNodePoolNodeConfigPublicAccessConfigInput `pulumi:"publicAccessConfig"`
-	// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+	// Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
 	PublicAccessEnabled pulumi.BoolInput `pulumi:"publicAccessEnabled"`
-	// 节点安全配置。
+	// Node security configuration.
 	Security GetDefaultNodePoolNodeConfigSecurityInput `pulumi:"security"`
-	// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+	// Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
 	SpotStrategy pulumi.StringInput `pulumi:"spotStrategy"`
-	// 节点网络所属的子网 ID 列表。
+	// List of subnet IDs to which the node network belongs.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
-	// 节点的系统盘配置。
+	// System disk configuration for the node
 	SystemVolume GetDefaultNodePoolNodeConfigSystemVolumeInput `pulumi:"systemVolume"`
-	// 节点池配置的标签信息
+	// Label information configured for the node pool
 	Tags GetDefaultNodePoolNodeConfigTagArrayInput `pulumi:"tags"`
 }
 
@@ -15401,154 +15401,154 @@ func (o GetDefaultNodePoolNodeConfigOutput) ToGetDefaultNodePoolNodeConfigOutput
 	return o
 }
 
-// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+// Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
 func (o GetDefaultNodePoolNodeConfigOutput) AdditionalContainerStorageEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) bool { return v.AdditionalContainerStorageEnabled }).(pulumi.BoolOutput)
 }
 
-// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+// Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 func (o GetDefaultNodePoolNodeConfigOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) bool { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+// Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
 func (o GetDefaultNodePoolNodeConfigOutput) AutoRenewPeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) int { return v.AutoRenewPeriod }).(pulumi.IntOutput)
 }
 
-// 节点的数据盘配置。
+// Data disk configuration for the node
 func (o GetDefaultNodePoolNodeConfigOutput) DataVolumes() GetDefaultNodePoolNodeConfigDataVolumeArrayOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) []GetDefaultNodePoolNodeConfigDataVolume { return v.DataVolumes }).(GetDefaultNodePoolNodeConfigDataVolumeArrayOutput)
 }
 
-// 实例在部署集中的分组号，0表示未设置
+// Group number of the instance in the deployment set. 0 means not set
 func (o GetDefaultNodePoolNodeConfigOutput) DeploymentSetGroupNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) int { return v.DeploymentSetGroupNumber }).(pulumi.IntOutput)
 }
 
-// 实例需要加入的部署集ID
+// Deployment set ID to be added to the instance
 func (o GetDefaultNodePoolNodeConfigOutput) DeploymentSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.DeploymentSetId }).(pulumi.StringOutput)
 }
 
-// 节点对应的主机名称。
+// Host name corresponding to the node
 func (o GetDefaultNodePoolNodeConfigOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
-// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 func (o GetDefaultNodePoolNodeConfigOutput) HpcClusterIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) []string { return v.HpcClusterIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点对应云服务器所使用的镜像 ID。
+// Image ID used by the cloud server corresponding to the node
 func (o GetDefaultNodePoolNodeConfigOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+// Custom script executed after creating and initializing the node. Shell script in Base64 encoding
 func (o GetDefaultNodePoolNodeConfigOutput) InitializeScript() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.InitializeScript }).(pulumi.StringOutput)
 }
 
-// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+// Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 func (o GetDefaultNodePoolNodeConfigOutput) InstanceChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.InstanceChargeType }).(pulumi.StringOutput)
 }
 
-// 节点（实例）名称。
+// Node (instance) name
 func (o GetDefaultNodePoolNodeConfigOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 节点对应的云服务器实例规格 ID 列表。
+// List of cloud server instance type IDs corresponding to the node
 func (o GetDefaultNodePoolNodeConfigOutput) InstanceTypeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) []string { return v.InstanceTypeIds }).(pulumi.StringArrayOutput)
 }
 
-// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+// Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
 func (o GetDefaultNodePoolNodeConfigOutput) InstancesDistribution() GetDefaultNodePoolNodeConfigInstancesDistributionOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) GetDefaultNodePoolNodeConfigInstancesDistribution {
 		return v.InstancesDistribution
 	}).(GetDefaultNodePoolNodeConfigInstancesDistributionOutput)
 }
 
-// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+// Node name prefix. An empty string or nil means the node name prefix policy is not enabled
 func (o GetDefaultNodePoolNodeConfigOutput) NamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.NamePrefix }).(pulumi.StringOutput)
 }
 
-// 节点间的网络通讯模式。
+// Network communication mode between nodes
 func (o GetDefaultNodePoolNodeConfigOutput) NetworkTrafficMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.NetworkTrafficMode }).(pulumi.StringOutput)
 }
 
-// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+// Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
 func (o GetDefaultNodePoolNodeConfigOutput) Period() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) int { return v.Period }).(pulumi.IntOutput)
 }
 
-// 部署节点前执行脚本。
+// Script executed before deploying nodes
 func (o GetDefaultNodePoolNodeConfigOutput) PreScript() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.PreScript }).(pulumi.StringOutput)
 }
 
-// ECS所属项目，一个ECS只能归属于一个项目。
+// The project to which the ECS belongs. Each ECS can only belong to one project.
 func (o GetDefaultNodePoolNodeConfigOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 节点自动开启公网访问的配置信息
+// Configuration for automatic public network access for nodes
 func (o GetDefaultNodePoolNodeConfigOutput) PublicAccessConfig() GetDefaultNodePoolNodeConfigPublicAccessConfigOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) GetDefaultNodePoolNodeConfigPublicAccessConfig {
 		return v.PublicAccessConfig
 	}).(GetDefaultNodePoolNodeConfigPublicAccessConfigOutput)
 }
 
-// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+// Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
 func (o GetDefaultNodePoolNodeConfigOutput) PublicAccessEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) bool { return v.PublicAccessEnabled }).(pulumi.BoolOutput)
 }
 
-// 节点安全配置。
+// Node security configuration.
 func (o GetDefaultNodePoolNodeConfigOutput) Security() GetDefaultNodePoolNodeConfigSecurityOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) GetDefaultNodePoolNodeConfigSecurity { return v.Security }).(GetDefaultNodePoolNodeConfigSecurityOutput)
 }
 
-// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+// Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
 func (o GetDefaultNodePoolNodeConfigOutput) SpotStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.SpotStrategy }).(pulumi.StringOutput)
 }
 
-// 节点网络所属的子网 ID 列表。
+// List of subnet IDs to which the node network belongs.
 func (o GetDefaultNodePoolNodeConfigOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点的系统盘配置。
+// System disk configuration for the node
 func (o GetDefaultNodePoolNodeConfigOutput) SystemVolume() GetDefaultNodePoolNodeConfigSystemVolumeOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) GetDefaultNodePoolNodeConfigSystemVolume { return v.SystemVolume }).(GetDefaultNodePoolNodeConfigSystemVolumeOutput)
 }
 
-// 节点池配置的标签信息
+// Label information configured for the node pool
 func (o GetDefaultNodePoolNodeConfigOutput) Tags() GetDefaultNodePoolNodeConfigTagArrayOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) []GetDefaultNodePoolNodeConfigTag { return v.Tags }).(GetDefaultNodePoolNodeConfigTagArrayOutput)
 }
 
 type GetDefaultNodePoolNodeConfigDataVolume struct {
-	// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+	// File system. Options:   - Ext4 (default)   - Xfs
 	FileSystem string `pulumi:"fileSystem"`
-	// 磁盘格式化后的目标挂载目录。
+	// Target mount directory after disk formatting.
 	MountPoint string `pulumi:"mountPoint"`
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId string `pulumi:"placementGroupId"`
-	// 磁盘容量，单位 GiB。
+	// Disk capacity, in GiB
 	Size int `pulumi:"size"`
-	// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+	// Create a data disk using a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSD and efficient cloud disks support creating disks from snapshots. Only snapshots in 'available' status can be used to create new disks; snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks
 	SnapshotId string `pulumi:"snapshotId"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber int `pulumi:"subgroupNumber"`
-	// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Disk type: ESSD*PL0: ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD cloud disk with performance level PL1.
 	Type string `pulumi:"type"`
 }
 
@@ -15564,19 +15564,19 @@ type GetDefaultNodePoolNodeConfigDataVolumeInput interface {
 }
 
 type GetDefaultNodePoolNodeConfigDataVolumeArgs struct {
-	// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+	// File system. Options:   - Ext4 (default)   - Xfs
 	FileSystem pulumi.StringInput `pulumi:"fileSystem"`
-	// 磁盘格式化后的目标挂载目录。
+	// Target mount directory after disk formatting.
 	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId pulumi.StringInput `pulumi:"placementGroupId"`
-	// 磁盘容量，单位 GiB。
+	// Disk capacity, in GiB
 	Size pulumi.IntInput `pulumi:"size"`
-	// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+	// Create a data disk using a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSD and efficient cloud disks support creating disks from snapshots. Only snapshots in 'available' status can be used to create new disks; snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks
 	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber pulumi.IntInput `pulumi:"subgroupNumber"`
-	// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Disk type: ESSD*PL0: ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD cloud disk with performance level PL1.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -15631,37 +15631,37 @@ func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) ToGetDefaultNodePoolNodeCo
 	return o
 }
 
-// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+// File system. Options:   - Ext4 (default)   - Xfs
 func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) FileSystem() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) string { return v.FileSystem }).(pulumi.StringOutput)
 }
 
-// 磁盘格式化后的目标挂载目录。
+// Target mount directory after disk formatting.
 func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) MountPoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) string { return v.MountPoint }).(pulumi.StringOutput)
 }
 
-// 放置组Id
+// Placement group ID
 func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) PlacementGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) string { return v.PlacementGroupId }).(pulumi.StringOutput)
 }
 
-// 磁盘容量，单位 GiB。
+// Disk capacity, in GiB
 func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+// Create a data disk using a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSD and efficient cloud disks support creating disks from snapshots. Only snapshots in 'available' status can be used to create new disks; snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks
 func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) SnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) string { return v.SnapshotId }).(pulumi.StringOutput)
 }
 
-// 放置子组
+// Placement subgroup
 func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) SubgroupNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) int { return v.SubgroupNumber }).(pulumi.IntOutput)
 }
 
-// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+// Disk type: ESSD*PL0: ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD cloud disk with performance level PL1.
 func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -15687,13 +15687,13 @@ func (o GetDefaultNodePoolNodeConfigDataVolumeArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetDefaultNodePoolNodeConfigInstancesDistribution struct {
-	// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+	// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, a new preemptible instance is proactively created for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count.
 	CapacityRebalance bool `pulumi:"capacityRebalance"`
-	// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+	// Pay-as-you-go instance fallback feature. Value range:   - true: enables this feature. If all preemptible instances fail to purchase due to insufficient inventory, pay-as-you-go instances will be attempted   - false (default): disables this feature. When scaling preemptible instances, only the configured preemptible instances are attempted
 	CompensateWithOnDemand bool `pulumi:"compensateWithOnDemand"`
-	// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+	// Base capacity size. The base capacity is always pay-as-you-go instances. Value range: [0,500], default: 0
 	OnDemandBaseCapacity int `pulumi:"onDemandBaseCapacity"`
-	// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+	// Proportion of pay-as-you-go instances for capacity exceeding the base capacity. Value range [0, 100]. 0 means only preemptible instances are produced for excess capacity; 100 means only pay-as-you-go instances are produced. Default is 0.
 	OnDemandPercentageAboveBaseCapacity int `pulumi:"onDemandPercentageAboveBaseCapacity"`
 }
 
@@ -15709,13 +15709,13 @@ type GetDefaultNodePoolNodeConfigInstancesDistributionInput interface {
 }
 
 type GetDefaultNodePoolNodeConfigInstancesDistributionArgs struct {
-	// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+	// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, a new preemptible instance is proactively created for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count.
 	CapacityRebalance pulumi.BoolInput `pulumi:"capacityRebalance"`
-	// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+	// Pay-as-you-go instance fallback feature. Value range:   - true: enables this feature. If all preemptible instances fail to purchase due to insufficient inventory, pay-as-you-go instances will be attempted   - false (default): disables this feature. When scaling preemptible instances, only the configured preemptible instances are attempted
 	CompensateWithOnDemand pulumi.BoolInput `pulumi:"compensateWithOnDemand"`
-	// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+	// Base capacity size. The base capacity is always pay-as-you-go instances. Value range: [0,500], default: 0
 	OnDemandBaseCapacity pulumi.IntInput `pulumi:"onDemandBaseCapacity"`
-	// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+	// Proportion of pay-as-you-go instances for capacity exceeding the base capacity. Value range [0, 100]. 0 means only preemptible instances are produced for excess capacity; 100 means only pay-as-you-go instances are produced. Default is 0.
 	OnDemandPercentageAboveBaseCapacity pulumi.IntInput `pulumi:"onDemandPercentageAboveBaseCapacity"`
 }
 
@@ -15745,22 +15745,22 @@ func (o GetDefaultNodePoolNodeConfigInstancesDistributionOutput) ToGetDefaultNod
 	return o
 }
 
-// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, a new preemptible instance is proactively created for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count.
 func (o GetDefaultNodePoolNodeConfigInstancesDistributionOutput) CapacityRebalance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigInstancesDistribution) bool { return v.CapacityRebalance }).(pulumi.BoolOutput)
 }
 
-// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+// Pay-as-you-go instance fallback feature. Value range:   - true: enables this feature. If all preemptible instances fail to purchase due to insufficient inventory, pay-as-you-go instances will be attempted   - false (default): disables this feature. When scaling preemptible instances, only the configured preemptible instances are attempted
 func (o GetDefaultNodePoolNodeConfigInstancesDistributionOutput) CompensateWithOnDemand() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigInstancesDistribution) bool { return v.CompensateWithOnDemand }).(pulumi.BoolOutput)
 }
 
-// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+// Base capacity size. The base capacity is always pay-as-you-go instances. Value range: [0,500], default: 0
 func (o GetDefaultNodePoolNodeConfigInstancesDistributionOutput) OnDemandBaseCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigInstancesDistribution) int { return v.OnDemandBaseCapacity }).(pulumi.IntOutput)
 }
 
-// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+// Proportion of pay-as-you-go instances for capacity exceeding the base capacity. Value range [0, 100]. 0 means only preemptible instances are produced for excess capacity; 100 means only pay-as-you-go instances are produced. Default is 0.
 func (o GetDefaultNodePoolNodeConfigInstancesDistributionOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigInstancesDistribution) int {
 		return v.OnDemandPercentageAboveBaseCapacity
@@ -15768,11 +15768,11 @@ func (o GetDefaultNodePoolNodeConfigInstancesDistributionOutput) OnDemandPercent
 }
 
 type GetDefaultNodePoolNodeConfigPublicAccessConfig struct {
-	// 公网 IP 的带宽峰值，单位：Mbps。
+	// Peak bandwidth for the public IP, unit: Mbps
 	Bandwidth int `pulumi:"bandwidth"`
-	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 	BillingType int `pulumi:"billingType"`
-	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	// Public IP line type. Parameter description: BGP: BGP (multi-line)
 	Isp string `pulumi:"isp"`
 }
 
@@ -15788,11 +15788,11 @@ type GetDefaultNodePoolNodeConfigPublicAccessConfigInput interface {
 }
 
 type GetDefaultNodePoolNodeConfigPublicAccessConfigArgs struct {
-	// 公网 IP 的带宽峰值，单位：Mbps。
+	// Peak bandwidth for the public IP, unit: Mbps
 	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
-	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 	BillingType pulumi.IntInput `pulumi:"billingType"`
-	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	// Public IP line type. Parameter description: BGP: BGP (multi-line)
 	Isp pulumi.StringInput `pulumi:"isp"`
 }
 
@@ -15822,29 +15822,29 @@ func (o GetDefaultNodePoolNodeConfigPublicAccessConfigOutput) ToGetDefaultNodePo
 	return o
 }
 
-// 公网 IP 的带宽峰值，单位：Mbps。
+// Peak bandwidth for the public IP, unit: Mbps
 func (o GetDefaultNodePoolNodeConfigPublicAccessConfigOutput) Bandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigPublicAccessConfig) int { return v.Bandwidth }).(pulumi.IntOutput)
 }
 
-// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
 func (o GetDefaultNodePoolNodeConfigPublicAccessConfigOutput) BillingType() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigPublicAccessConfig) int { return v.BillingType }).(pulumi.IntOutput)
 }
 
-// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+// Public IP line type. Parameter description: BGP: BGP (multi-line)
 func (o GetDefaultNodePoolNodeConfigPublicAccessConfigOutput) Isp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigPublicAccessConfig) string { return v.Isp }).(pulumi.StringOutput)
 }
 
 type GetDefaultNodePoolNodeConfigSecurity struct {
-	// 节点的访问方式配置。
+	// Node access configuration
 	Login GetDefaultNodePoolNodeConfigSecurityLogin `pulumi:"login"`
-	// 节点网络所在的安全组 ID 列表。
+	// List of security group IDs for the node network
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 节点的安全策略，参数值说明：Hids：主机安全加固。
+	// Node security policy. Parameter value description: Hids: host security hardening
 	SecurityStrategies []string `pulumi:"securityStrategies"`
-	// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+	// Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
 	SecurityStrategyEnabled bool `pulumi:"securityStrategyEnabled"`
 }
 
@@ -15860,13 +15860,13 @@ type GetDefaultNodePoolNodeConfigSecurityInput interface {
 }
 
 type GetDefaultNodePoolNodeConfigSecurityArgs struct {
-	// 节点的访问方式配置。
+	// Node access configuration
 	Login GetDefaultNodePoolNodeConfigSecurityLoginInput `pulumi:"login"`
-	// 节点网络所在的安全组 ID 列表。
+	// List of security group IDs for the node network
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 节点的安全策略，参数值说明：Hids：主机安全加固。
+	// Node security policy. Parameter value description: Hids: host security hardening
 	SecurityStrategies pulumi.StringArrayInput `pulumi:"securityStrategies"`
-	// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+	// Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
 	SecurityStrategyEnabled pulumi.BoolInput `pulumi:"securityStrategyEnabled"`
 }
 
@@ -15896,32 +15896,32 @@ func (o GetDefaultNodePoolNodeConfigSecurityOutput) ToGetDefaultNodePoolNodeConf
 	return o
 }
 
-// 节点的访问方式配置。
+// Node access configuration
 func (o GetDefaultNodePoolNodeConfigSecurityOutput) Login() GetDefaultNodePoolNodeConfigSecurityLoginOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurity) GetDefaultNodePoolNodeConfigSecurityLogin { return v.Login }).(GetDefaultNodePoolNodeConfigSecurityLoginOutput)
 }
 
-// 节点网络所在的安全组 ID 列表。
+// List of security group IDs for the node network
 func (o GetDefaultNodePoolNodeConfigSecurityOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurity) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点的安全策略，参数值说明：Hids：主机安全加固。
+// Node security policy. Parameter value description: Hids: host security hardening
 func (o GetDefaultNodePoolNodeConfigSecurityOutput) SecurityStrategies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurity) []string { return v.SecurityStrategies }).(pulumi.StringArrayOutput)
 }
 
-// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+// Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
 func (o GetDefaultNodePoolNodeConfigSecurityOutput) SecurityStrategyEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurity) bool { return v.SecurityStrategyEnabled }).(pulumi.BoolOutput)
 }
 
 type GetDefaultNodePoolNodeConfigSecurityLogin struct {
-	// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+	// Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 	Password string `pulumi:"password"`
-	// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+	// SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
 	SshKeyPairName string `pulumi:"sshKeyPairName"`
-	// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+	// Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
 	Type string `pulumi:"type"`
 }
 
@@ -15937,11 +15937,11 @@ type GetDefaultNodePoolNodeConfigSecurityLoginInput interface {
 }
 
 type GetDefaultNodePoolNodeConfigSecurityLoginArgs struct {
-	// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+	// Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 	Password pulumi.StringInput `pulumi:"password"`
-	// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+	// SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
 	SshKeyPairName pulumi.StringInput `pulumi:"sshKeyPairName"`
-	// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+	// Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -15971,29 +15971,29 @@ func (o GetDefaultNodePoolNodeConfigSecurityLoginOutput) ToGetDefaultNodePoolNod
 	return o
 }
 
-// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+// Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 func (o GetDefaultNodePoolNodeConfigSecurityLoginOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurityLogin) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+// SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
 func (o GetDefaultNodePoolNodeConfigSecurityLoginOutput) SshKeyPairName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurityLogin) string { return v.SshKeyPairName }).(pulumi.StringOutput)
 }
 
-// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+// Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
 func (o GetDefaultNodePoolNodeConfigSecurityLoginOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurityLogin) string { return v.Type }).(pulumi.StringOutput)
 }
 
 type GetDefaultNodePoolNodeConfigSystemVolume struct {
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId string `pulumi:"placementGroupId"`
-	// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+	// Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 	Size int `pulumi:"size"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber int `pulumi:"subgroupNumber"`
-	// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
 	Type string `pulumi:"type"`
 }
 
@@ -16009,13 +16009,13 @@ type GetDefaultNodePoolNodeConfigSystemVolumeInput interface {
 }
 
 type GetDefaultNodePoolNodeConfigSystemVolumeArgs struct {
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId pulumi.StringInput `pulumi:"placementGroupId"`
-	// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+	// Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 	Size pulumi.IntInput `pulumi:"size"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber pulumi.IntInput `pulumi:"subgroupNumber"`
-	// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -16045,30 +16045,30 @@ func (o GetDefaultNodePoolNodeConfigSystemVolumeOutput) ToGetDefaultNodePoolNode
 	return o
 }
 
-// 放置组Id
+// Placement group ID
 func (o GetDefaultNodePoolNodeConfigSystemVolumeOutput) PlacementGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSystemVolume) string { return v.PlacementGroupId }).(pulumi.StringOutput)
 }
 
-// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+// Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 func (o GetDefaultNodePoolNodeConfigSystemVolumeOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSystemVolume) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 放置子组
+// Placement subgroup
 func (o GetDefaultNodePoolNodeConfigSystemVolumeOutput) SubgroupNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSystemVolume) int { return v.SubgroupNumber }).(pulumi.IntOutput)
 }
 
-// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+// Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
 func (o GetDefaultNodePoolNodeConfigSystemVolumeOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSystemVolume) string { return v.Type }).(pulumi.StringOutput)
 }
 
 type GetDefaultNodePoolNodeConfigTag struct {
-	// 标签键。
+	// Label key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -16084,9 +16084,9 @@ type GetDefaultNodePoolNodeConfigTagInput interface {
 }
 
 type GetDefaultNodePoolNodeConfigTagArgs struct {
-	// 标签键。
+	// Label key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -16141,12 +16141,12 @@ func (o GetDefaultNodePoolNodeConfigTagOutput) ToGetDefaultNodePoolNodeConfigTag
 	return o
 }
 
-// 标签键。
+// Label key.
 func (o GetDefaultNodePoolNodeConfigTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetDefaultNodePoolNodeConfigTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -16172,17 +16172,17 @@ func (o GetDefaultNodePoolNodeConfigTagArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetDefaultNodePoolNodeStatistics struct {
-	// Phase=Creating的节点总数量。
+	// Total number of nodes with Phase=Creating.
 	CreatingCount int `pulumi:"creatingCount"`
-	// Phase=Deleting的节点总数量。
+	// Total number of nodes with Phase=Deleting.
 	DeletingCount int `pulumi:"deletingCount"`
-	// Phase=Failed的节点总数量。
+	// Total number of nodes with Phase=Failed
 	FailedCount int `pulumi:"failedCount"`
-	// Phase=Running的节点总数量。
+	// Total number of nodes with Phase=Running
 	RunningCount int `pulumi:"runningCount"`
-	// 节点池中的节点总数量。
+	// Total number of nodes in the node pool.
 	TotalCount int `pulumi:"totalCount"`
-	// Phase=Updating的节点总数量。
+	// Total number of nodes with Phase=Updating
 	UpdatingCount int `pulumi:"updatingCount"`
 }
 
@@ -16198,17 +16198,17 @@ type GetDefaultNodePoolNodeStatisticsInput interface {
 }
 
 type GetDefaultNodePoolNodeStatisticsArgs struct {
-	// Phase=Creating的节点总数量。
+	// Total number of nodes with Phase=Creating.
 	CreatingCount pulumi.IntInput `pulumi:"creatingCount"`
-	// Phase=Deleting的节点总数量。
+	// Total number of nodes with Phase=Deleting.
 	DeletingCount pulumi.IntInput `pulumi:"deletingCount"`
-	// Phase=Failed的节点总数量。
+	// Total number of nodes with Phase=Failed
 	FailedCount pulumi.IntInput `pulumi:"failedCount"`
-	// Phase=Running的节点总数量。
+	// Total number of nodes with Phase=Running
 	RunningCount pulumi.IntInput `pulumi:"runningCount"`
-	// 节点池中的节点总数量。
+	// Total number of nodes in the node pool.
 	TotalCount pulumi.IntInput `pulumi:"totalCount"`
-	// Phase=Updating的节点总数量。
+	// Total number of nodes with Phase=Updating
 	UpdatingCount pulumi.IntInput `pulumi:"updatingCount"`
 }
 
@@ -16238,40 +16238,40 @@ func (o GetDefaultNodePoolNodeStatisticsOutput) ToGetDefaultNodePoolNodeStatisti
 	return o
 }
 
-// Phase=Creating的节点总数量。
+// Total number of nodes with Phase=Creating.
 func (o GetDefaultNodePoolNodeStatisticsOutput) CreatingCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeStatistics) int { return v.CreatingCount }).(pulumi.IntOutput)
 }
 
-// Phase=Deleting的节点总数量。
+// Total number of nodes with Phase=Deleting.
 func (o GetDefaultNodePoolNodeStatisticsOutput) DeletingCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeStatistics) int { return v.DeletingCount }).(pulumi.IntOutput)
 }
 
-// Phase=Failed的节点总数量。
+// Total number of nodes with Phase=Failed
 func (o GetDefaultNodePoolNodeStatisticsOutput) FailedCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeStatistics) int { return v.FailedCount }).(pulumi.IntOutput)
 }
 
-// Phase=Running的节点总数量。
+// Total number of nodes with Phase=Running
 func (o GetDefaultNodePoolNodeStatisticsOutput) RunningCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeStatistics) int { return v.RunningCount }).(pulumi.IntOutput)
 }
 
-// 节点池中的节点总数量。
+// Total number of nodes in the node pool.
 func (o GetDefaultNodePoolNodeStatisticsOutput) TotalCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeStatistics) int { return v.TotalCount }).(pulumi.IntOutput)
 }
 
-// Phase=Updating的节点总数量。
+// Total number of nodes with Phase=Updating
 func (o GetDefaultNodePoolNodeStatisticsOutput) UpdatingCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolNodeStatistics) int { return v.UpdatingCount }).(pulumi.IntOutput)
 }
 
 type GetDefaultNodePoolStatus struct {
-	// 节点池当前主状态下的状态条件，即进入该主状态的原因。
+	// Status conditions of the node pool in its current primary state, indicating the reason for entering this state
 	Conditions []GetDefaultNodePoolStatusCondition `pulumi:"conditions"`
-	// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+	// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
 	Phase string `pulumi:"phase"`
 }
 
@@ -16287,9 +16287,9 @@ type GetDefaultNodePoolStatusInput interface {
 }
 
 type GetDefaultNodePoolStatusArgs struct {
-	// 节点池当前主状态下的状态条件，即进入该主状态的原因。
+	// Status conditions of the node pool in its current primary state, indicating the reason for entering this state
 	Conditions GetDefaultNodePoolStatusConditionArrayInput `pulumi:"conditions"`
-	// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+	// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
 	Phase pulumi.StringInput `pulumi:"phase"`
 }
 
@@ -16319,18 +16319,18 @@ func (o GetDefaultNodePoolStatusOutput) ToGetDefaultNodePoolStatusOutputWithCont
 	return o
 }
 
-// 节点池当前主状态下的状态条件，即进入该主状态的原因。
+// Status conditions of the node pool in its current primary state, indicating the reason for entering this state
 func (o GetDefaultNodePoolStatusOutput) Conditions() GetDefaultNodePoolStatusConditionArrayOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolStatus) []GetDefaultNodePoolStatusCondition { return v.Conditions }).(GetDefaultNodePoolStatusConditionArrayOutput)
 }
 
-// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
 func (o GetDefaultNodePoolStatusOutput) Phase() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolStatus) string { return v.Phase }).(pulumi.StringOutput)
 }
 
 type GetDefaultNodePoolStatusCondition struct {
-	// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+	// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
 	Type string `pulumi:"type"`
 }
 
@@ -16346,7 +16346,7 @@ type GetDefaultNodePoolStatusConditionInput interface {
 }
 
 type GetDefaultNodePoolStatusConditionArgs struct {
-	// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+	// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -16401,7 +16401,7 @@ func (o GetDefaultNodePoolStatusConditionOutput) ToGetDefaultNodePoolStatusCondi
 	return o
 }
 
-// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
 func (o GetDefaultNodePoolStatusConditionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolStatusCondition) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -16427,9 +16427,9 @@ func (o GetDefaultNodePoolStatusConditionArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetDefaultNodePoolTag struct {
-	// 标签键。
+	// Label key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -16445,9 +16445,9 @@ type GetDefaultNodePoolTagInput interface {
 }
 
 type GetDefaultNodePoolTagArgs struct {
-	// 标签键。
+	// Label key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -16502,12 +16502,12 @@ func (o GetDefaultNodePoolTagOutput) ToGetDefaultNodePoolTagOutputWithContext(ct
 	return o
 }
 
-// 标签键。
+// Label key.
 func (o GetDefaultNodePoolTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetDefaultNodePoolTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultNodePoolTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -16533,11 +16533,11 @@ func (o GetDefaultNodePoolTagArrayOutput) Index(i pulumi.IntInput) GetDefaultNod
 }
 
 type GetNodeKubernetesConfig struct {
-	// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+	// Node lock configuration. Options: false (default): not locked; true: locked
 	Cordon bool `pulumi:"cordon"`
-	// 节点池/节点的 Kubernetes 标签（Labels）信息。最多可传入 20 个标签。
+	// Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
 	Labels []GetNodeKubernetesConfigLabel `pulumi:"labels"`
-	// 节点池/节点的 Kubernetes 污点（Taints）信息。最多可传入 20 个污点。
+	// Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
 	Taints []GetNodeKubernetesConfigTaint `pulumi:"taints"`
 }
 
@@ -16553,11 +16553,11 @@ type GetNodeKubernetesConfigInput interface {
 }
 
 type GetNodeKubernetesConfigArgs struct {
-	// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+	// Node lock configuration. Options: false (default): not locked; true: locked
 	Cordon pulumi.BoolInput `pulumi:"cordon"`
-	// 节点池/节点的 Kubernetes 标签（Labels）信息。最多可传入 20 个标签。
+	// Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
 	Labels GetNodeKubernetesConfigLabelArrayInput `pulumi:"labels"`
-	// 节点池/节点的 Kubernetes 污点（Taints）信息。最多可传入 20 个污点。
+	// Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
 	Taints GetNodeKubernetesConfigTaintArrayInput `pulumi:"taints"`
 }
 
@@ -16587,25 +16587,25 @@ func (o GetNodeKubernetesConfigOutput) ToGetNodeKubernetesConfigOutputWithContex
 	return o
 }
 
-// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+// Node lock configuration. Options: false (default): not locked; true: locked
 func (o GetNodeKubernetesConfigOutput) Cordon() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodeKubernetesConfig) bool { return v.Cordon }).(pulumi.BoolOutput)
 }
 
-// 节点池/节点的 Kubernetes 标签（Labels）信息。最多可传入 20 个标签。
+// Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
 func (o GetNodeKubernetesConfigOutput) Labels() GetNodeKubernetesConfigLabelArrayOutput {
 	return o.ApplyT(func(v GetNodeKubernetesConfig) []GetNodeKubernetesConfigLabel { return v.Labels }).(GetNodeKubernetesConfigLabelArrayOutput)
 }
 
-// 节点池/节点的 Kubernetes 污点（Taints）信息。最多可传入 20 个污点。
+// Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
 func (o GetNodeKubernetesConfigOutput) Taints() GetNodeKubernetesConfigTaintArrayOutput {
 	return o.ApplyT(func(v GetNodeKubernetesConfig) []GetNodeKubernetesConfigTaint { return v.Taints }).(GetNodeKubernetesConfigTaintArrayOutput)
 }
 
 type GetNodeKubernetesConfigLabel struct {
-	// 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	// Label key. A valid label key consists of two parts: \n\n and \n\n, separated by a slash (/). \n\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
 	Key string `pulumi:"key"`
-	// 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	// Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
 	Value string `pulumi:"value"`
 }
 
@@ -16621,9 +16621,9 @@ type GetNodeKubernetesConfigLabelInput interface {
 }
 
 type GetNodeKubernetesConfigLabelArgs struct {
-	// 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	// Label key. A valid label key consists of two parts: \n\n and \n\n, separated by a slash (/). \n\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	// Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -16678,12 +16678,12 @@ func (o GetNodeKubernetesConfigLabelOutput) ToGetNodeKubernetesConfigLabelOutput
 	return o
 }
 
-// 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+// Label key. A valid label key consists of two parts: \n\n and \n\n, separated by a slash (/). \n\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
 func (o GetNodeKubernetesConfigLabelOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeKubernetesConfigLabel) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+// Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
 func (o GetNodeKubernetesConfigLabelOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeKubernetesConfigLabel) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -16709,11 +16709,11 @@ func (o GetNodeKubernetesConfigLabelArrayOutput) Index(i pulumi.IntInput) GetNod
 }
 
 type GetNodeKubernetesConfigTaint struct {
-	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	// Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
 	Effect string `pulumi:"effect"`
-	// 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	// Taint key. A valid taint key has two segments: \n\n and \n\n, separated by a slash (/). \n\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
 	Key string `pulumi:"key"`
-	// 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	// Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
 	Value string `pulumi:"value"`
 }
 
@@ -16729,11 +16729,11 @@ type GetNodeKubernetesConfigTaintInput interface {
 }
 
 type GetNodeKubernetesConfigTaintArgs struct {
-	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	// Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
 	Effect pulumi.StringInput `pulumi:"effect"`
-	// 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	// Taint key. A valid taint key has two segments: \n\n and \n\n, separated by a slash (/). \n\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	// Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -16788,17 +16788,17 @@ func (o GetNodeKubernetesConfigTaintOutput) ToGetNodeKubernetesConfigTaintOutput
 	return o
 }
 
-// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+// Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
 func (o GetNodeKubernetesConfigTaintOutput) Effect() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeKubernetesConfigTaint) string { return v.Effect }).(pulumi.StringOutput)
 }
 
-// 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+// Taint key. A valid taint key has two segments: \n\n and \n\n, separated by a slash (/). \n\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
 func (o GetNodeKubernetesConfigTaintOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeKubernetesConfigTaint) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+// Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
 func (o GetNodeKubernetesConfigTaintOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeKubernetesConfigTaint) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -16824,19 +16824,19 @@ func (o GetNodeKubernetesConfigTaintArrayOutput) Index(i pulumi.IntInput) GetNod
 }
 
 type GetNodePoolAutoScaling struct {
-	// 配置节点池的期望节点数。
+	// Configure the expected number of nodes in the node pool
 	DesiredReplicas int `pulumi:"desiredReplicas"`
-	// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+	// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
 	Enabled bool `pulumi:"enabled"`
-	// 配置节点池的最大节点数。
+	// Configure the maximum number of nodes in the node pool
 	MaxReplicas int `pulumi:"maxReplicas"`
-	// 配置节点池的最小节点数。
+	// Minimum number of nodes configured for the node pool
 	MinReplicas int `pulumi:"minReplicas"`
-	// 优先级。
+	// Priority
 	Priority int `pulumi:"priority"`
-	// 伸缩组ID。
+	// Scaling group ID
 	ScalingGroupId string `pulumi:"scalingGroupId"`
-	// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+	// Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
 	SubnetPolicy string `pulumi:"subnetPolicy"`
 }
 
@@ -16852,19 +16852,19 @@ type GetNodePoolAutoScalingInput interface {
 }
 
 type GetNodePoolAutoScalingArgs struct {
-	// 配置节点池的期望节点数。
+	// Configure the expected number of nodes in the node pool
 	DesiredReplicas pulumi.IntInput `pulumi:"desiredReplicas"`
-	// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+	// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// 配置节点池的最大节点数。
+	// Configure the maximum number of nodes in the node pool
 	MaxReplicas pulumi.IntInput `pulumi:"maxReplicas"`
-	// 配置节点池的最小节点数。
+	// Minimum number of nodes configured for the node pool
 	MinReplicas pulumi.IntInput `pulumi:"minReplicas"`
-	// 优先级。
+	// Priority
 	Priority pulumi.IntInput `pulumi:"priority"`
-	// 伸缩组ID。
+	// Scaling group ID
 	ScalingGroupId pulumi.StringInput `pulumi:"scalingGroupId"`
-	// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+	// Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
 	SubnetPolicy pulumi.StringInput `pulumi:"subnetPolicy"`
 }
 
@@ -16894,59 +16894,59 @@ func (o GetNodePoolAutoScalingOutput) ToGetNodePoolAutoScalingOutputWithContext(
 	return o
 }
 
-// 配置节点池的期望节点数。
+// Configure the expected number of nodes in the node pool
 func (o GetNodePoolAutoScalingOutput) DesiredReplicas() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolAutoScaling) int { return v.DesiredReplicas }).(pulumi.IntOutput)
 }
 
-// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
 func (o GetNodePoolAutoScalingOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolAutoScaling) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 配置节点池的最大节点数。
+// Configure the maximum number of nodes in the node pool
 func (o GetNodePoolAutoScalingOutput) MaxReplicas() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolAutoScaling) int { return v.MaxReplicas }).(pulumi.IntOutput)
 }
 
-// 配置节点池的最小节点数。
+// Minimum number of nodes configured for the node pool
 func (o GetNodePoolAutoScalingOutput) MinReplicas() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolAutoScaling) int { return v.MinReplicas }).(pulumi.IntOutput)
 }
 
-// 优先级。
+// Priority
 func (o GetNodePoolAutoScalingOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolAutoScaling) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// 伸缩组ID。
+// Scaling group ID
 func (o GetNodePoolAutoScalingOutput) ScalingGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolAutoScaling) string { return v.ScalingGroupId }).(pulumi.StringOutput)
 }
 
-// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+// Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
 func (o GetNodePoolAutoScalingOutput) SubnetPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolAutoScaling) string { return v.SubnetPolicy }).(pulumi.StringOutput)
 }
 
 type GetNodePoolKubernetesConfig struct {
-	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+	// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
 	AutoSyncDisabled bool `pulumi:"autoSyncDisabled"`
-	// 节点池 Containerd 相关配置。
+	// Node pool Containerd configuration
 	ContainerdConfig GetNodePoolKubernetesConfigContainerdConfig `pulumi:"containerdConfig"`
-	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+	// Node blocking configuration. Parameter values: false: not blocked; true: blocked
 	Cordon bool `pulumi:"cordon"`
-	// Kubelet 组件的相关配置
+	// Kubelet component configuration
 	KubeletConfig GetNodePoolKubernetesConfigKubeletConfig `pulumi:"kubeletConfig"`
-	// 节点池/节点的 Kubernetes 标签（Labels）信息。
+	// Kubernetes label information for node pools/nodes
 	Labels []GetNodePoolKubernetesConfigLabel `pulumi:"labels"`
-	// Kubernetes 中节点对象的元数据名称前缀。
+	// Prefix for node object metadata name in Kubernetes
 	NamePrefix string `pulumi:"namePrefix"`
-	// Kubernetes 中节点对象的元数据名称后缀。
+	// Suffix for node object metadata name in Kubernetes
 	NameSuffix string `pulumi:"nameSuffix"`
-	// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+	// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
 	NameUseHostname bool `pulumi:"nameUseHostname"`
-	// 节点池/节点的 Kubernetes 污点（Taints）信息。
+	// Kubernetes taint information for node pools/nodes
 	Taints []GetNodePoolKubernetesConfigTaint `pulumi:"taints"`
 }
 
@@ -16962,23 +16962,23 @@ type GetNodePoolKubernetesConfigInput interface {
 }
 
 type GetNodePoolKubernetesConfigArgs struct {
-	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+	// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
 	AutoSyncDisabled pulumi.BoolInput `pulumi:"autoSyncDisabled"`
-	// 节点池 Containerd 相关配置。
+	// Node pool Containerd configuration
 	ContainerdConfig GetNodePoolKubernetesConfigContainerdConfigInput `pulumi:"containerdConfig"`
-	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+	// Node blocking configuration. Parameter values: false: not blocked; true: blocked
 	Cordon pulumi.BoolInput `pulumi:"cordon"`
-	// Kubelet 组件的相关配置
+	// Kubelet component configuration
 	KubeletConfig GetNodePoolKubernetesConfigKubeletConfigInput `pulumi:"kubeletConfig"`
-	// 节点池/节点的 Kubernetes 标签（Labels）信息。
+	// Kubernetes label information for node pools/nodes
 	Labels GetNodePoolKubernetesConfigLabelArrayInput `pulumi:"labels"`
-	// Kubernetes 中节点对象的元数据名称前缀。
+	// Prefix for node object metadata name in Kubernetes
 	NamePrefix pulumi.StringInput `pulumi:"namePrefix"`
-	// Kubernetes 中节点对象的元数据名称后缀。
+	// Suffix for node object metadata name in Kubernetes
 	NameSuffix pulumi.StringInput `pulumi:"nameSuffix"`
-	// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+	// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
 	NameUseHostname pulumi.BoolInput `pulumi:"nameUseHostname"`
-	// 节点池/节点的 Kubernetes 污点（Taints）信息。
+	// Kubernetes taint information for node pools/nodes
 	Taints GetNodePoolKubernetesConfigTaintArrayInput `pulumi:"taints"`
 }
 
@@ -17008,57 +17008,57 @@ func (o GetNodePoolKubernetesConfigOutput) ToGetNodePoolKubernetesConfigOutputWi
 	return o
 }
 
-// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
 func (o GetNodePoolKubernetesConfigOutput) AutoSyncDisabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) bool { return v.AutoSyncDisabled }).(pulumi.BoolOutput)
 }
 
-// 节点池 Containerd 相关配置。
+// Node pool Containerd configuration
 func (o GetNodePoolKubernetesConfigOutput) ContainerdConfig() GetNodePoolKubernetesConfigContainerdConfigOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) GetNodePoolKubernetesConfigContainerdConfig {
 		return v.ContainerdConfig
 	}).(GetNodePoolKubernetesConfigContainerdConfigOutput)
 }
 
-// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+// Node blocking configuration. Parameter values: false: not blocked; true: blocked
 func (o GetNodePoolKubernetesConfigOutput) Cordon() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) bool { return v.Cordon }).(pulumi.BoolOutput)
 }
 
-// Kubelet 组件的相关配置
+// Kubelet component configuration
 func (o GetNodePoolKubernetesConfigOutput) KubeletConfig() GetNodePoolKubernetesConfigKubeletConfigOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) GetNodePoolKubernetesConfigKubeletConfig { return v.KubeletConfig }).(GetNodePoolKubernetesConfigKubeletConfigOutput)
 }
 
-// 节点池/节点的 Kubernetes 标签（Labels）信息。
+// Kubernetes label information for node pools/nodes
 func (o GetNodePoolKubernetesConfigOutput) Labels() GetNodePoolKubernetesConfigLabelArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) []GetNodePoolKubernetesConfigLabel { return v.Labels }).(GetNodePoolKubernetesConfigLabelArrayOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称前缀。
+// Prefix for node object metadata name in Kubernetes
 func (o GetNodePoolKubernetesConfigOutput) NamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) string { return v.NamePrefix }).(pulumi.StringOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称后缀。
+// Suffix for node object metadata name in Kubernetes
 func (o GetNodePoolKubernetesConfigOutput) NameSuffix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) string { return v.NameSuffix }).(pulumi.StringOutput)
 }
 
-// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
 func (o GetNodePoolKubernetesConfigOutput) NameUseHostname() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) bool { return v.NameUseHostname }).(pulumi.BoolOutput)
 }
 
-// 节点池/节点的 Kubernetes 污点（Taints）信息。
+// Kubernetes taint information for node pools/nodes
 func (o GetNodePoolKubernetesConfigOutput) Taints() GetNodePoolKubernetesConfigTaintArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) []GetNodePoolKubernetesConfigTaint { return v.Taints }).(GetNodePoolKubernetesConfigTaintArrayOutput)
 }
 
 type GetNodePoolKubernetesConfigContainerdConfig struct {
-	// 指定跳过证书认证的容器镜像仓库地址。
+	// Specify the container image repository address to skip certificate verification.
 	InsecureRegistries []string `pulumi:"insecureRegistries"`
-	// 容器镜像仓库代理配置。
+	// Container image repository proxy configuration
 	RegistryProxyConfigs []GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig `pulumi:"registryProxyConfigs"`
 }
 
@@ -17074,9 +17074,9 @@ type GetNodePoolKubernetesConfigContainerdConfigInput interface {
 }
 
 type GetNodePoolKubernetesConfigContainerdConfigArgs struct {
-	// 指定跳过证书认证的容器镜像仓库地址。
+	// Specify the container image repository address to skip certificate verification.
 	InsecureRegistries pulumi.StringArrayInput `pulumi:"insecureRegistries"`
-	// 容器镜像仓库代理配置。
+	// Container image repository proxy configuration
 	RegistryProxyConfigs GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayInput `pulumi:"registryProxyConfigs"`
 }
 
@@ -17106,12 +17106,12 @@ func (o GetNodePoolKubernetesConfigContainerdConfigOutput) ToGetNodePoolKubernet
 	return o
 }
 
-// 指定跳过证书认证的容器镜像仓库地址。
+// Specify the container image repository address to skip certificate verification.
 func (o GetNodePoolKubernetesConfigContainerdConfigOutput) InsecureRegistries() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigContainerdConfig) []string { return v.InsecureRegistries }).(pulumi.StringArrayOutput)
 }
 
-// 容器镜像仓库代理配置。
+// Container image repository proxy configuration
 func (o GetNodePoolKubernetesConfigContainerdConfigOutput) RegistryProxyConfigs() GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigContainerdConfig) []GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig {
 		return v.RegistryProxyConfigs
@@ -17119,9 +17119,9 @@ func (o GetNodePoolKubernetesConfigContainerdConfigOutput) RegistryProxyConfigs(
 }
 
 type GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig struct {
-	// 代理地址。
+	// Proxy address.
 	ProxyEndpoints []string `pulumi:"proxyEndpoints"`
-	// 容器镜像仓库地址。
+	// Container image repository address.
 	Registry string `pulumi:"registry"`
 }
 
@@ -17137,9 +17137,9 @@ type GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput interfa
 }
 
 type GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs struct {
-	// 代理地址。
+	// Proxy address.
 	ProxyEndpoints pulumi.StringArrayInput `pulumi:"proxyEndpoints"`
-	// 容器镜像仓库地址。
+	// Container image repository address.
 	Registry pulumi.StringInput `pulumi:"registry"`
 }
 
@@ -17194,14 +17194,14 @@ func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) To
 	return o
 }
 
-// 代理地址。
+// Proxy address.
 func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ProxyEndpoints() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig) []string {
 		return v.ProxyEndpoints
 	}).(pulumi.StringArrayOutput)
 }
 
-// 容器镜像仓库地址。
+// Container image repository address.
 func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) Registry() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig) string { return v.Registry }).(pulumi.StringOutput)
 }
@@ -17227,31 +17227,31 @@ func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutpu
 }
 
 type GetNodePoolKubernetesConfigKubeletConfig struct {
-	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+	// Configure kubelet CpuManagerPolicy. Supports none and static policies
 	CpuManagerPolicy string `pulumi:"cpuManagerPolicy"`
-	// 触发 Pod 驱逐操作的一组硬性门限。
+	// Set of hard thresholds for triggering Pod eviction
 	EvictionHards []GetNodePoolKubernetesConfigKubeletConfigEvictionHard `pulumi:"evictionHards"`
-	// 特性门控。
+	// Feature gate
 	FeatureGates GetNodePoolKubernetesConfigKubeletConfigFeatureGates `pulumi:"featureGates"`
-	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+	// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
 	KubeApiBurst int `pulumi:"kubeApiBurst"`
-	// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+	// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
 	KubeApiQps int `pulumi:"kubeApiQps"`
-	// 节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+	// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
 	KubeReserveds []GetNodePoolKubernetesConfigKubeletConfigKubeReserved `pulumi:"kubeReserveds"`
-	// 配置 kubelet 支持的最大 Pod 数量
+	// Configure the maximum number of Pods supported by kubelet
 	MaxPods int `pulumi:"maxPods"`
-	// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+	// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 	RegistryBurst int `pulumi:"registryBurst"`
-	// 可用来限制镜像仓库的 QPS 上限
+	// Used to limit the QPS cap for the image repository
 	RegistryPullQps int `pulumi:"registryPullQps"`
-	// 逐一拉取镜像。
+	// Pull images sequentially
 	SerializeImagePulls bool `pulumi:"serializeImagePulls"`
-	// 节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+	// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
 	SystemReserveds []GetNodePoolKubernetesConfigKubeletConfigSystemReserved `pulumi:"systemReserveds"`
-	// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+	// Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
 	TopologyManagerPolicy string `pulumi:"topologyManagerPolicy"`
-	// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+	// Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
 	TopologyManagerScope string `pulumi:"topologyManagerScope"`
 }
 
@@ -17267,31 +17267,31 @@ type GetNodePoolKubernetesConfigKubeletConfigInput interface {
 }
 
 type GetNodePoolKubernetesConfigKubeletConfigArgs struct {
-	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+	// Configure kubelet CpuManagerPolicy. Supports none and static policies
 	CpuManagerPolicy pulumi.StringInput `pulumi:"cpuManagerPolicy"`
-	// 触发 Pod 驱逐操作的一组硬性门限。
+	// Set of hard thresholds for triggering Pod eviction
 	EvictionHards GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput `pulumi:"evictionHards"`
-	// 特性门控。
+	// Feature gate
 	FeatureGates GetNodePoolKubernetesConfigKubeletConfigFeatureGatesInput `pulumi:"featureGates"`
-	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+	// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
 	KubeApiBurst pulumi.IntInput `pulumi:"kubeApiBurst"`
-	// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+	// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
 	KubeApiQps pulumi.IntInput `pulumi:"kubeApiQps"`
-	// 节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+	// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
 	KubeReserveds GetNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput `pulumi:"kubeReserveds"`
-	// 配置 kubelet 支持的最大 Pod 数量
+	// Configure the maximum number of Pods supported by kubelet
 	MaxPods pulumi.IntInput `pulumi:"maxPods"`
-	// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+	// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 	RegistryBurst pulumi.IntInput `pulumi:"registryBurst"`
-	// 可用来限制镜像仓库的 QPS 上限
+	// Used to limit the QPS cap for the image repository
 	RegistryPullQps pulumi.IntInput `pulumi:"registryPullQps"`
-	// 逐一拉取镜像。
+	// Pull images sequentially
 	SerializeImagePulls pulumi.BoolInput `pulumi:"serializeImagePulls"`
-	// 节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+	// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
 	SystemReserveds GetNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput `pulumi:"systemReserveds"`
-	// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+	// Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
 	TopologyManagerPolicy pulumi.StringInput `pulumi:"topologyManagerPolicy"`
-	// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+	// Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
 	TopologyManagerScope pulumi.StringInput `pulumi:"topologyManagerScope"`
 }
 
@@ -17321,83 +17321,83 @@ func (o GetNodePoolKubernetesConfigKubeletConfigOutput) ToGetNodePoolKubernetesC
 	return o
 }
 
-// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+// Configure kubelet CpuManagerPolicy. Supports none and static policies
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) CpuManagerPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) string { return v.CpuManagerPolicy }).(pulumi.StringOutput)
 }
 
-// 触发 Pod 驱逐操作的一组硬性门限。
+// Set of hard thresholds for triggering Pod eviction
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) EvictionHards() GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) []GetNodePoolKubernetesConfigKubeletConfigEvictionHard {
 		return v.EvictionHards
 	}).(GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput)
 }
 
-// 特性门控。
+// Feature gate
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) FeatureGates() GetNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) GetNodePoolKubernetesConfigKubeletConfigFeatureGates {
 		return v.FeatureGates
 	}).(GetNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput)
 }
 
-// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) KubeApiBurst() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) int { return v.KubeApiBurst }).(pulumi.IntOutput)
 }
 
-// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) KubeApiQps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) int { return v.KubeApiQps }).(pulumi.IntOutput)
 }
 
-// 节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) KubeReserveds() GetNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) []GetNodePoolKubernetesConfigKubeletConfigKubeReserved {
 		return v.KubeReserveds
 	}).(GetNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
 }
 
-// 配置 kubelet 支持的最大 Pod 数量
+// Configure the maximum number of Pods supported by kubelet
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) MaxPods() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) int { return v.MaxPods }).(pulumi.IntOutput)
 }
 
-// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) RegistryBurst() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) int { return v.RegistryBurst }).(pulumi.IntOutput)
 }
 
-// 可用来限制镜像仓库的 QPS 上限
+// Used to limit the QPS cap for the image repository
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) RegistryPullQps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) int { return v.RegistryPullQps }).(pulumi.IntOutput)
 }
 
-// 逐一拉取镜像。
+// Pull images sequentially
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) SerializeImagePulls() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) bool { return v.SerializeImagePulls }).(pulumi.BoolOutput)
 }
 
-// 节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) SystemReserveds() GetNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) []GetNodePoolKubernetesConfigKubeletConfigSystemReserved {
 		return v.SystemReserveds
 	}).(GetNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput)
 }
 
-// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+// Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) string { return v.TopologyManagerPolicy }).(pulumi.StringOutput)
 }
 
-// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+// Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerScope() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) string { return v.TopologyManagerScope }).(pulumi.StringOutput)
 }
 
 type GetNodePoolKubernetesConfigKubeletConfigEvictionHard struct {
-	// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+	// Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
 	Key string `pulumi:"key"`
-	// 硬性门限值。
+	// Hard threshold value.
 	Value string `pulumi:"value"`
 }
 
@@ -17413,9 +17413,9 @@ type GetNodePoolKubernetesConfigKubeletConfigEvictionHardInput interface {
 }
 
 type GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs struct {
-	// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+	// Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
 	Key pulumi.StringInput `pulumi:"key"`
-	// 硬性门限值。
+	// Hard threshold value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -17470,12 +17470,12 @@ func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput) ToGetNodePoo
 	return o
 }
 
-// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+// Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
 func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigEvictionHard) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 硬性门限值。
+// Hard threshold value.
 func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigEvictionHard) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -17501,9 +17501,9 @@ func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput) Index(i
 }
 
 type GetNodePoolKubernetesConfigKubeletConfigFeatureGates struct {
-	// 是否开启特性开关本地垂直Pod伸缩
+	// Enable local vertical Pod autoscaling feature toggle
 	InPlacePodVerticalScaling bool `pulumi:"inPlacePodVerticalScaling"`
-	// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+	// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
 	QoSResourceManager bool `pulumi:"qoSResourceManager"`
 }
 
@@ -17519,9 +17519,9 @@ type GetNodePoolKubernetesConfigKubeletConfigFeatureGatesInput interface {
 }
 
 type GetNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs struct {
-	// 是否开启特性开关本地垂直Pod伸缩
+	// Enable local vertical Pod autoscaling feature toggle
 	InPlacePodVerticalScaling pulumi.BoolInput `pulumi:"inPlacePodVerticalScaling"`
-	// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+	// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
 	QoSResourceManager pulumi.BoolInput `pulumi:"qoSResourceManager"`
 }
 
@@ -17551,20 +17551,20 @@ func (o GetNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ToGetNodePoo
 	return o
 }
 
-// 是否开启特性开关本地垂直Pod伸缩
+// Enable local vertical Pod autoscaling feature toggle
 func (o GetNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) InPlacePodVerticalScaling() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigFeatureGates) bool { return v.InPlacePodVerticalScaling }).(pulumi.BoolOutput)
 }
 
-// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
 func (o GetNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) QoSResourceManager() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigFeatureGates) bool { return v.QoSResourceManager }).(pulumi.BoolOutput)
 }
 
 type GetNodePoolKubernetesConfigKubeletConfigKubeReserved struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Valid values: cpu or memory.
 	Name string `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+	// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
 	Quantity string `pulumi:"quantity"`
 }
 
@@ -17580,9 +17580,9 @@ type GetNodePoolKubernetesConfigKubeletConfigKubeReservedInput interface {
 }
 
 type GetNodePoolKubernetesConfigKubeletConfigKubeReservedArgs struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Valid values: cpu or memory.
 	Name pulumi.StringInput `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+	// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
 	Quantity pulumi.StringInput `pulumi:"quantity"`
 }
 
@@ -17637,12 +17637,12 @@ func (o GetNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) ToGetNodePoo
 	return o
 }
 
-// 资源名称，取值为 cpu 或 memory。
+// Resource name. Valid values: cpu or memory.
 func (o GetNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigKubeReserved) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
 func (o GetNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Quantity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigKubeReserved) string { return v.Quantity }).(pulumi.StringOutput)
 }
@@ -17668,9 +17668,9 @@ func (o GetNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) Index(i
 }
 
 type GetNodePoolKubernetesConfigKubeletConfigSystemReserved struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Valid values: cpu or memory.
 	Name string `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+	// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
 	Quantity string `pulumi:"quantity"`
 }
 
@@ -17686,9 +17686,9 @@ type GetNodePoolKubernetesConfigKubeletConfigSystemReservedInput interface {
 }
 
 type GetNodePoolKubernetesConfigKubeletConfigSystemReservedArgs struct {
-	// 资源名称，取值为 cpu 或 memory。
+	// Resource name. Valid values: cpu or memory.
 	Name pulumi.StringInput `pulumi:"name"`
-	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+	// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
 	Quantity pulumi.StringInput `pulumi:"quantity"`
 }
 
@@ -17743,12 +17743,12 @@ func (o GetNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) ToGetNodeP
 	return o
 }
 
-// 资源名称，取值为 cpu 或 memory。
+// Resource name. Valid values: cpu or memory.
 func (o GetNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigSystemReserved) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
 func (o GetNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Quantity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigSystemReserved) string { return v.Quantity }).(pulumi.StringOutput)
 }
@@ -17774,9 +17774,9 @@ func (o GetNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput) Index
 }
 
 type GetNodePoolKubernetesConfigLabel struct {
-	// 标签键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Label value.
 	Value string `pulumi:"value"`
 }
 
@@ -17792,9 +17792,9 @@ type GetNodePoolKubernetesConfigLabelInput interface {
 }
 
 type GetNodePoolKubernetesConfigLabelArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Label value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -17849,12 +17849,12 @@ func (o GetNodePoolKubernetesConfigLabelOutput) ToGetNodePoolKubernetesConfigLab
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o GetNodePoolKubernetesConfigLabelOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigLabel) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Label value.
 func (o GetNodePoolKubernetesConfigLabelOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigLabel) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -17880,11 +17880,11 @@ func (o GetNodePoolKubernetesConfigLabelArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetNodePoolKubernetesConfigTaint struct {
-	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	// Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
 	Effect string `pulumi:"effect"`
-	// 污点键。
+	// Taint key.
 	Key string `pulumi:"key"`
-	// 污点值。
+	// Taint value
 	Value string `pulumi:"value"`
 }
 
@@ -17900,11 +17900,11 @@ type GetNodePoolKubernetesConfigTaintInput interface {
 }
 
 type GetNodePoolKubernetesConfigTaintArgs struct {
-	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	// Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
 	Effect pulumi.StringInput `pulumi:"effect"`
-	// 污点键。
+	// Taint key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 污点值。
+	// Taint value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -17959,17 +17959,17 @@ func (o GetNodePoolKubernetesConfigTaintOutput) ToGetNodePoolKubernetesConfigTai
 	return o
 }
 
-// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+// Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
 func (o GetNodePoolKubernetesConfigTaintOutput) Effect() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigTaint) string { return v.Effect }).(pulumi.StringOutput)
 }
 
-// 污点键。
+// Taint key.
 func (o GetNodePoolKubernetesConfigTaintOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigTaint) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 污点值。
+// Taint value
 func (o GetNodePoolKubernetesConfigTaintOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigTaint) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -17995,9 +17995,9 @@ func (o GetNodePoolKubernetesConfigTaintArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetNodePoolManagement struct {
-	// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+	// Enable managed mode for node pool. Options:   - true: on   - false: off
 	Enabled bool `pulumi:"enabled"`
-	// 检查自愈配置。
+	// Check self-healing configuration.
 	RemedyConfig GetNodePoolManagementRemedyConfig `pulumi:"remedyConfig"`
 }
 
@@ -18013,9 +18013,9 @@ type GetNodePoolManagementInput interface {
 }
 
 type GetNodePoolManagementArgs struct {
-	// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+	// Enable managed mode for node pool. Options:   - true: on   - false: off
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// 检查自愈配置。
+	// Check self-healing configuration.
 	RemedyConfig GetNodePoolManagementRemedyConfigInput `pulumi:"remedyConfig"`
 }
 
@@ -18045,20 +18045,20 @@ func (o GetNodePoolManagementOutput) ToGetNodePoolManagementOutputWithContext(ct
 	return o
 }
 
-// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+// Enable managed mode for node pool. Options:   - true: on   - false: off
 func (o GetNodePoolManagementOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolManagement) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 检查自愈配置。
+// Check self-healing configuration.
 func (o GetNodePoolManagementOutput) RemedyConfig() GetNodePoolManagementRemedyConfigOutput {
 	return o.ApplyT(func(v GetNodePoolManagement) GetNodePoolManagementRemedyConfig { return v.RemedyConfig }).(GetNodePoolManagementRemedyConfigOutput)
 }
 
 type GetNodePoolManagementRemedyConfig struct {
-	// 是否开启检查自愈。
+	// Enable self-healing check
 	Enabled bool `pulumi:"enabled"`
-	// 检查自愈规则ID。
+	// Self-healing rule ID
 	RemedyId string `pulumi:"remedyId"`
 }
 
@@ -18074,9 +18074,9 @@ type GetNodePoolManagementRemedyConfigInput interface {
 }
 
 type GetNodePoolManagementRemedyConfigArgs struct {
-	// 是否开启检查自愈。
+	// Enable self-healing check
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// 检查自愈规则ID。
+	// Self-healing rule ID
 	RemedyId pulumi.StringInput `pulumi:"remedyId"`
 }
 
@@ -18106,68 +18106,68 @@ func (o GetNodePoolManagementRemedyConfigOutput) ToGetNodePoolManagementRemedyCo
 	return o
 }
 
-// 是否开启检查自愈。
+// Enable self-healing check
 func (o GetNodePoolManagementRemedyConfigOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolManagementRemedyConfig) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 检查自愈规则ID。
+// Self-healing rule ID
 func (o GetNodePoolManagementRemedyConfigOutput) RemedyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolManagementRemedyConfig) string { return v.RemedyId }).(pulumi.StringOutput)
 }
 
 type GetNodePoolNodeConfig struct {
-	// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+	// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
 	AdditionalContainerStorageEnabled bool `pulumi:"additionalContainerStorageEnabled"`
-	// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 	AutoRenew bool `pulumi:"autoRenew"`
-	// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+	// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
 	AutoRenewPeriod int `pulumi:"autoRenewPeriod"`
-	// 节点的数据盘配置。
+	// Node data disk configuration.
 	DataVolumes []GetNodePoolNodeConfigDataVolume `pulumi:"dataVolumes"`
-	// 实例在部署集中的分组号，0表示未设置
+	// Group number of the instance in the deployment set; 0 means not set
 	DeploymentSetGroupNumber int `pulumi:"deploymentSetGroupNumber"`
-	// 实例需要加入的部署集ID
+	// Deployment Set ID to be added to the instance
 	DeploymentSetId string `pulumi:"deploymentSetId"`
-	// 节点对应的主机名称。
+	// The host name corresponding to the node.
 	Hostname string `pulumi:"hostname"`
-	// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+	// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 	HpcClusterIds []string `pulumi:"hpcClusterIds"`
-	// 节点对应云服务器所使用的镜像 ID。
+	// Image ID used by the cloud server corresponding to the node
 	ImageId string `pulumi:"imageId"`
-	// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+	// Custom script executed after node creation and initialization. Shell script in Base64 encoding
 	InitializeScript string `pulumi:"initializeScript"`
-	// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+	// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 	InstanceChargeType string `pulumi:"instanceChargeType"`
-	// 节点（实例）名称。
+	// Node (instance) name
 	InstanceName string `pulumi:"instanceName"`
-	// 节点对应的云服务器实例规格 ID 列表。
+	// List of cloud server instance type IDs corresponding to the nodes
 	InstanceTypeIds []string `pulumi:"instanceTypeIds"`
-	// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+	// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 	InstancesDistribution GetNodePoolNodeConfigInstancesDistribution `pulumi:"instancesDistribution"`
-	// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+	// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
 	NamePrefix string `pulumi:"namePrefix"`
-	// 节点间的网络通讯模式。
+	// Network communication mode between nodes
 	NetworkTrafficMode string `pulumi:"networkTrafficMode"`
-	// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
 	Period int `pulumi:"period"`
-	// 部署节点前执行脚本。
+	// Script to execute before deploying the node
 	PreScript string `pulumi:"preScript"`
-	// ECS所属项目，一个ECS只能归属于一个项目。
+	// Project to which the ECS belongs. Each ECS can only belong to one project.
 	ProjectName string `pulumi:"projectName"`
-	// 节点自动开启公网访问的配置信息
+	// Configuration for automatic public network access for nodes
 	PublicAccessConfig GetNodePoolNodeConfigPublicAccessConfig `pulumi:"publicAccessConfig"`
-	// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+	// Enable public network access for nodes automatically. Options:   - false: off   - true: on
 	PublicAccessEnabled bool `pulumi:"publicAccessEnabled"`
-	// 节点安全配置。
+	// Node security configuration
 	Security GetNodePoolNodeConfigSecurity `pulumi:"security"`
-	// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+	// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
 	SpotStrategy string `pulumi:"spotStrategy"`
-	// 节点网络所属的子网 ID 列表。
+	// List of subnet IDs for the node network.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 节点的系统盘配置。
+	// System disk configuration for the node
 	SystemVolume GetNodePoolNodeConfigSystemVolume `pulumi:"systemVolume"`
-	// 节点池配置的标签信息
+	// Label information configured for the node pool
 	Tags []GetNodePoolNodeConfigTag `pulumi:"tags"`
 }
 
@@ -18183,57 +18183,57 @@ type GetNodePoolNodeConfigInput interface {
 }
 
 type GetNodePoolNodeConfigArgs struct {
-	// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+	// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
 	AdditionalContainerStorageEnabled pulumi.BoolInput `pulumi:"additionalContainerStorageEnabled"`
-	// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
-	// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+	// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
 	AutoRenewPeriod pulumi.IntInput `pulumi:"autoRenewPeriod"`
-	// 节点的数据盘配置。
+	// Node data disk configuration.
 	DataVolumes GetNodePoolNodeConfigDataVolumeArrayInput `pulumi:"dataVolumes"`
-	// 实例在部署集中的分组号，0表示未设置
+	// Group number of the instance in the deployment set; 0 means not set
 	DeploymentSetGroupNumber pulumi.IntInput `pulumi:"deploymentSetGroupNumber"`
-	// 实例需要加入的部署集ID
+	// Deployment Set ID to be added to the instance
 	DeploymentSetId pulumi.StringInput `pulumi:"deploymentSetId"`
-	// 节点对应的主机名称。
+	// The host name corresponding to the node.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
-	// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+	// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 	HpcClusterIds pulumi.StringArrayInput `pulumi:"hpcClusterIds"`
-	// 节点对应云服务器所使用的镜像 ID。
+	// Image ID used by the cloud server corresponding to the node
 	ImageId pulumi.StringInput `pulumi:"imageId"`
-	// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+	// Custom script executed after node creation and initialization. Shell script in Base64 encoding
 	InitializeScript pulumi.StringInput `pulumi:"initializeScript"`
-	// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+	// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 	InstanceChargeType pulumi.StringInput `pulumi:"instanceChargeType"`
-	// 节点（实例）名称。
+	// Node (instance) name
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
-	// 节点对应的云服务器实例规格 ID 列表。
+	// List of cloud server instance type IDs corresponding to the nodes
 	InstanceTypeIds pulumi.StringArrayInput `pulumi:"instanceTypeIds"`
-	// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+	// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 	InstancesDistribution GetNodePoolNodeConfigInstancesDistributionInput `pulumi:"instancesDistribution"`
-	// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+	// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
 	NamePrefix pulumi.StringInput `pulumi:"namePrefix"`
-	// 节点间的网络通讯模式。
+	// Network communication mode between nodes
 	NetworkTrafficMode pulumi.StringInput `pulumi:"networkTrafficMode"`
-	// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+	// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
 	Period pulumi.IntInput `pulumi:"period"`
-	// 部署节点前执行脚本。
+	// Script to execute before deploying the node
 	PreScript pulumi.StringInput `pulumi:"preScript"`
-	// ECS所属项目，一个ECS只能归属于一个项目。
+	// Project to which the ECS belongs. Each ECS can only belong to one project.
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
-	// 节点自动开启公网访问的配置信息
+	// Configuration for automatic public network access for nodes
 	PublicAccessConfig GetNodePoolNodeConfigPublicAccessConfigInput `pulumi:"publicAccessConfig"`
-	// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+	// Enable public network access for nodes automatically. Options:   - false: off   - true: on
 	PublicAccessEnabled pulumi.BoolInput `pulumi:"publicAccessEnabled"`
-	// 节点安全配置。
+	// Node security configuration
 	Security GetNodePoolNodeConfigSecurityInput `pulumi:"security"`
-	// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+	// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
 	SpotStrategy pulumi.StringInput `pulumi:"spotStrategy"`
-	// 节点网络所属的子网 ID 列表。
+	// List of subnet IDs for the node network.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
-	// 节点的系统盘配置。
+	// System disk configuration for the node
 	SystemVolume GetNodePoolNodeConfigSystemVolumeInput `pulumi:"systemVolume"`
-	// 节点池配置的标签信息
+	// Label information configured for the node pool
 	Tags GetNodePoolNodeConfigTagArrayInput `pulumi:"tags"`
 }
 
@@ -18263,152 +18263,152 @@ func (o GetNodePoolNodeConfigOutput) ToGetNodePoolNodeConfigOutputWithContext(ct
 	return o
 }
 
-// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
 func (o GetNodePoolNodeConfigOutput) AdditionalContainerStorageEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) bool { return v.AdditionalContainerStorageEnabled }).(pulumi.BoolOutput)
 }
 
-// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
 func (o GetNodePoolNodeConfigOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) bool { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
 func (o GetNodePoolNodeConfigOutput) AutoRenewPeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) int { return v.AutoRenewPeriod }).(pulumi.IntOutput)
 }
 
-// 节点的数据盘配置。
+// Node data disk configuration.
 func (o GetNodePoolNodeConfigOutput) DataVolumes() GetNodePoolNodeConfigDataVolumeArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) []GetNodePoolNodeConfigDataVolume { return v.DataVolumes }).(GetNodePoolNodeConfigDataVolumeArrayOutput)
 }
 
-// 实例在部署集中的分组号，0表示未设置
+// Group number of the instance in the deployment set; 0 means not set
 func (o GetNodePoolNodeConfigOutput) DeploymentSetGroupNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) int { return v.DeploymentSetGroupNumber }).(pulumi.IntOutput)
 }
 
-// 实例需要加入的部署集ID
+// Deployment Set ID to be added to the instance
 func (o GetNodePoolNodeConfigOutput) DeploymentSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.DeploymentSetId }).(pulumi.StringOutput)
 }
 
-// 节点对应的主机名称。
+// The host name corresponding to the node.
 func (o GetNodePoolNodeConfigOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
-// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
 func (o GetNodePoolNodeConfigOutput) HpcClusterIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) []string { return v.HpcClusterIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点对应云服务器所使用的镜像 ID。
+// Image ID used by the cloud server corresponding to the node
 func (o GetNodePoolNodeConfigOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+// Custom script executed after node creation and initialization. Shell script in Base64 encoding
 func (o GetNodePoolNodeConfigOutput) InitializeScript() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.InitializeScript }).(pulumi.StringOutput)
 }
 
-// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
 func (o GetNodePoolNodeConfigOutput) InstanceChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.InstanceChargeType }).(pulumi.StringOutput)
 }
 
-// 节点（实例）名称。
+// Node (instance) name
 func (o GetNodePoolNodeConfigOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 节点对应的云服务器实例规格 ID 列表。
+// List of cloud server instance type IDs corresponding to the nodes
 func (o GetNodePoolNodeConfigOutput) InstanceTypeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) []string { return v.InstanceTypeIds }).(pulumi.StringArrayOutput)
 }
 
-// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 func (o GetNodePoolNodeConfigOutput) InstancesDistribution() GetNodePoolNodeConfigInstancesDistributionOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) GetNodePoolNodeConfigInstancesDistribution {
 		return v.InstancesDistribution
 	}).(GetNodePoolNodeConfigInstancesDistributionOutput)
 }
 
-// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
 func (o GetNodePoolNodeConfigOutput) NamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.NamePrefix }).(pulumi.StringOutput)
 }
 
-// 节点间的网络通讯模式。
+// Network communication mode between nodes
 func (o GetNodePoolNodeConfigOutput) NetworkTrafficMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.NetworkTrafficMode }).(pulumi.StringOutput)
 }
 
-// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
 func (o GetNodePoolNodeConfigOutput) Period() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) int { return v.Period }).(pulumi.IntOutput)
 }
 
-// 部署节点前执行脚本。
+// Script to execute before deploying the node
 func (o GetNodePoolNodeConfigOutput) PreScript() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.PreScript }).(pulumi.StringOutput)
 }
 
-// ECS所属项目，一个ECS只能归属于一个项目。
+// Project to which the ECS belongs. Each ECS can only belong to one project.
 func (o GetNodePoolNodeConfigOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 节点自动开启公网访问的配置信息
+// Configuration for automatic public network access for nodes
 func (o GetNodePoolNodeConfigOutput) PublicAccessConfig() GetNodePoolNodeConfigPublicAccessConfigOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) GetNodePoolNodeConfigPublicAccessConfig { return v.PublicAccessConfig }).(GetNodePoolNodeConfigPublicAccessConfigOutput)
 }
 
-// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+// Enable public network access for nodes automatically. Options:   - false: off   - true: on
 func (o GetNodePoolNodeConfigOutput) PublicAccessEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) bool { return v.PublicAccessEnabled }).(pulumi.BoolOutput)
 }
 
-// 节点安全配置。
+// Node security configuration
 func (o GetNodePoolNodeConfigOutput) Security() GetNodePoolNodeConfigSecurityOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) GetNodePoolNodeConfigSecurity { return v.Security }).(GetNodePoolNodeConfigSecurityOutput)
 }
 
-// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
 func (o GetNodePoolNodeConfigOutput) SpotStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.SpotStrategy }).(pulumi.StringOutput)
 }
 
-// 节点网络所属的子网 ID 列表。
+// List of subnet IDs for the node network.
 func (o GetNodePoolNodeConfigOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点的系统盘配置。
+// System disk configuration for the node
 func (o GetNodePoolNodeConfigOutput) SystemVolume() GetNodePoolNodeConfigSystemVolumeOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) GetNodePoolNodeConfigSystemVolume { return v.SystemVolume }).(GetNodePoolNodeConfigSystemVolumeOutput)
 }
 
-// 节点池配置的标签信息
+// Label information configured for the node pool
 func (o GetNodePoolNodeConfigOutput) Tags() GetNodePoolNodeConfigTagArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) []GetNodePoolNodeConfigTag { return v.Tags }).(GetNodePoolNodeConfigTagArrayOutput)
 }
 
 type GetNodePoolNodeConfigDataVolume struct {
-	// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+	// File system. Options:   - Ext4 (default)   - Xfs
 	FileSystem string `pulumi:"fileSystem"`
-	// 磁盘格式化后的目标挂载目录。
+	// Target mount directory after disk formatting.
 	MountPoint string `pulumi:"mountPoint"`
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId string `pulumi:"placementGroupId"`
-	// 磁盘容量，单位 GiB。
+	// Disk capacity, in GiB.
 	Size int `pulumi:"size"`
-	// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+	// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
 	SnapshotId string `pulumi:"snapshotId"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber int `pulumi:"subgroupNumber"`
-	// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
 	Type string `pulumi:"type"`
 }
 
@@ -18424,19 +18424,19 @@ type GetNodePoolNodeConfigDataVolumeInput interface {
 }
 
 type GetNodePoolNodeConfigDataVolumeArgs struct {
-	// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+	// File system. Options:   - Ext4 (default)   - Xfs
 	FileSystem pulumi.StringInput `pulumi:"fileSystem"`
-	// 磁盘格式化后的目标挂载目录。
+	// Target mount directory after disk formatting.
 	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId pulumi.StringInput `pulumi:"placementGroupId"`
-	// 磁盘容量，单位 GiB。
+	// Disk capacity, in GiB.
 	Size pulumi.IntInput `pulumi:"size"`
-	// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+	// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
 	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber pulumi.IntInput `pulumi:"subgroupNumber"`
-	// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -18491,37 +18491,37 @@ func (o GetNodePoolNodeConfigDataVolumeOutput) ToGetNodePoolNodeConfigDataVolume
 	return o
 }
 
-// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+// File system. Options:   - Ext4 (default)   - Xfs
 func (o GetNodePoolNodeConfigDataVolumeOutput) FileSystem() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) string { return v.FileSystem }).(pulumi.StringOutput)
 }
 
-// 磁盘格式化后的目标挂载目录。
+// Target mount directory after disk formatting.
 func (o GetNodePoolNodeConfigDataVolumeOutput) MountPoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) string { return v.MountPoint }).(pulumi.StringOutput)
 }
 
-// 放置组Id
+// Placement group ID
 func (o GetNodePoolNodeConfigDataVolumeOutput) PlacementGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) string { return v.PlacementGroupId }).(pulumi.StringOutput)
 }
 
-// 磁盘容量，单位 GiB。
+// Disk capacity, in GiB.
 func (o GetNodePoolNodeConfigDataVolumeOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
 func (o GetNodePoolNodeConfigDataVolumeOutput) SnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) string { return v.SnapshotId }).(pulumi.StringOutput)
 }
 
-// 放置子组
+// Placement subgroup
 func (o GetNodePoolNodeConfigDataVolumeOutput) SubgroupNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) int { return v.SubgroupNumber }).(pulumi.IntOutput)
 }
 
-// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
 func (o GetNodePoolNodeConfigDataVolumeOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -18547,13 +18547,13 @@ func (o GetNodePoolNodeConfigDataVolumeArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetNodePoolNodeConfigInstancesDistribution struct {
-	// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+	// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
 	CapacityRebalance bool `pulumi:"capacityRebalance"`
-	// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+	// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
 	CompensateWithOnDemand bool `pulumi:"compensateWithOnDemand"`
-	// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+	// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
 	OnDemandBaseCapacity int `pulumi:"onDemandBaseCapacity"`
-	// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+	// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
 	OnDemandPercentageAboveBaseCapacity int `pulumi:"onDemandPercentageAboveBaseCapacity"`
 }
 
@@ -18569,13 +18569,13 @@ type GetNodePoolNodeConfigInstancesDistributionInput interface {
 }
 
 type GetNodePoolNodeConfigInstancesDistributionArgs struct {
-	// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+	// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
 	CapacityRebalance pulumi.BoolInput `pulumi:"capacityRebalance"`
-	// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+	// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
 	CompensateWithOnDemand pulumi.BoolInput `pulumi:"compensateWithOnDemand"`
-	// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+	// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
 	OnDemandBaseCapacity pulumi.IntInput `pulumi:"onDemandBaseCapacity"`
-	// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+	// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
 	OnDemandPercentageAboveBaseCapacity pulumi.IntInput `pulumi:"onDemandPercentageAboveBaseCapacity"`
 }
 
@@ -18605,32 +18605,32 @@ func (o GetNodePoolNodeConfigInstancesDistributionOutput) ToGetNodePoolNodeConfi
 	return o
 }
 
-// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
 func (o GetNodePoolNodeConfigInstancesDistributionOutput) CapacityRebalance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigInstancesDistribution) bool { return v.CapacityRebalance }).(pulumi.BoolOutput)
 }
 
-// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
 func (o GetNodePoolNodeConfigInstancesDistributionOutput) CompensateWithOnDemand() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigInstancesDistribution) bool { return v.CompensateWithOnDemand }).(pulumi.BoolOutput)
 }
 
-// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
 func (o GetNodePoolNodeConfigInstancesDistributionOutput) OnDemandBaseCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigInstancesDistribution) int { return v.OnDemandBaseCapacity }).(pulumi.IntOutput)
 }
 
-// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
 func (o GetNodePoolNodeConfigInstancesDistributionOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigInstancesDistribution) int { return v.OnDemandPercentageAboveBaseCapacity }).(pulumi.IntOutput)
 }
 
 type GetNodePoolNodeConfigPublicAccessConfig struct {
-	// 公网 IP 的带宽峰值，单位：Mbps。
+	// Peak bandwidth for public IP, unit: Mbps
 	Bandwidth int `pulumi:"bandwidth"`
-	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 	BillingType int `pulumi:"billingType"`
-	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	// Public IP line type. Parameter description: BGP: BGP (multi-line)
 	Isp string `pulumi:"isp"`
 }
 
@@ -18646,11 +18646,11 @@ type GetNodePoolNodeConfigPublicAccessConfigInput interface {
 }
 
 type GetNodePoolNodeConfigPublicAccessConfigArgs struct {
-	// 公网 IP 的带宽峰值，单位：Mbps。
+	// Peak bandwidth for public IP, unit: Mbps
 	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
-	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 	BillingType pulumi.IntInput `pulumi:"billingType"`
-	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	// Public IP line type. Parameter description: BGP: BGP (multi-line)
 	Isp pulumi.StringInput `pulumi:"isp"`
 }
 
@@ -18680,29 +18680,29 @@ func (o GetNodePoolNodeConfigPublicAccessConfigOutput) ToGetNodePoolNodeConfigPu
 	return o
 }
 
-// 公网 IP 的带宽峰值，单位：Mbps。
+// Peak bandwidth for public IP, unit: Mbps
 func (o GetNodePoolNodeConfigPublicAccessConfigOutput) Bandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigPublicAccessConfig) int { return v.Bandwidth }).(pulumi.IntOutput)
 }
 
-// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 func (o GetNodePoolNodeConfigPublicAccessConfigOutput) BillingType() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigPublicAccessConfig) int { return v.BillingType }).(pulumi.IntOutput)
 }
 
-// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+// Public IP line type. Parameter description: BGP: BGP (multi-line)
 func (o GetNodePoolNodeConfigPublicAccessConfigOutput) Isp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigPublicAccessConfig) string { return v.Isp }).(pulumi.StringOutput)
 }
 
 type GetNodePoolNodeConfigSecurity struct {
-	// 节点的访问方式配置。
+	// Node access configuration.
 	Login GetNodePoolNodeConfigSecurityLogin `pulumi:"login"`
-	// 节点网络所在的安全组 ID 列表。
+	// List of security group IDs for the node network
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 节点的安全策略，参数值说明：Hids：主机安全加固。
+	// Node security policy. Parameter description: Hids: Host security hardening.
 	SecurityStrategies []string `pulumi:"securityStrategies"`
-	// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+	// Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
 	SecurityStrategyEnabled bool `pulumi:"securityStrategyEnabled"`
 }
 
@@ -18718,13 +18718,13 @@ type GetNodePoolNodeConfigSecurityInput interface {
 }
 
 type GetNodePoolNodeConfigSecurityArgs struct {
-	// 节点的访问方式配置。
+	// Node access configuration.
 	Login GetNodePoolNodeConfigSecurityLoginInput `pulumi:"login"`
-	// 节点网络所在的安全组 ID 列表。
+	// List of security group IDs for the node network
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 节点的安全策略，参数值说明：Hids：主机安全加固。
+	// Node security policy. Parameter description: Hids: Host security hardening.
 	SecurityStrategies pulumi.StringArrayInput `pulumi:"securityStrategies"`
-	// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+	// Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
 	SecurityStrategyEnabled pulumi.BoolInput `pulumi:"securityStrategyEnabled"`
 }
 
@@ -18754,32 +18754,32 @@ func (o GetNodePoolNodeConfigSecurityOutput) ToGetNodePoolNodeConfigSecurityOutp
 	return o
 }
 
-// 节点的访问方式配置。
+// Node access configuration.
 func (o GetNodePoolNodeConfigSecurityOutput) Login() GetNodePoolNodeConfigSecurityLoginOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSecurity) GetNodePoolNodeConfigSecurityLogin { return v.Login }).(GetNodePoolNodeConfigSecurityLoginOutput)
 }
 
-// 节点网络所在的安全组 ID 列表。
+// List of security group IDs for the node network
 func (o GetNodePoolNodeConfigSecurityOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSecurity) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点的安全策略，参数值说明：Hids：主机安全加固。
+// Node security policy. Parameter description: Hids: Host security hardening.
 func (o GetNodePoolNodeConfigSecurityOutput) SecurityStrategies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSecurity) []string { return v.SecurityStrategies }).(pulumi.StringArrayOutput)
 }
 
-// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+// Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
 func (o GetNodePoolNodeConfigSecurityOutput) SecurityStrategyEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSecurity) bool { return v.SecurityStrategyEnabled }).(pulumi.BoolOutput)
 }
 
 type GetNodePoolNodeConfigSecurityLogin struct {
-	// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+	// Root user login password in Base64 encoding. Follow the cloud server's requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 	Password string `pulumi:"password"`
-	// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+	// SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
 	SshKeyPairName string `pulumi:"sshKeyPairName"`
-	// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+	// Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
 	Type string `pulumi:"type"`
 }
 
@@ -18795,11 +18795,11 @@ type GetNodePoolNodeConfigSecurityLoginInput interface {
 }
 
 type GetNodePoolNodeConfigSecurityLoginArgs struct {
-	// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+	// Root user login password in Base64 encoding. Follow the cloud server's requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 	Password pulumi.StringInput `pulumi:"password"`
-	// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+	// SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
 	SshKeyPairName pulumi.StringInput `pulumi:"sshKeyPairName"`
-	// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+	// Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -18829,29 +18829,29 @@ func (o GetNodePoolNodeConfigSecurityLoginOutput) ToGetNodePoolNodeConfigSecurit
 	return o
 }
 
-// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+// Root user login password in Base64 encoding. Follow the cloud server's requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
 func (o GetNodePoolNodeConfigSecurityLoginOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSecurityLogin) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+// SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
 func (o GetNodePoolNodeConfigSecurityLoginOutput) SshKeyPairName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSecurityLogin) string { return v.SshKeyPairName }).(pulumi.StringOutput)
 }
 
-// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+// Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
 func (o GetNodePoolNodeConfigSecurityLoginOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSecurityLogin) string { return v.Type }).(pulumi.StringOutput)
 }
 
 type GetNodePoolNodeConfigSystemVolume struct {
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId string `pulumi:"placementGroupId"`
-	// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+	// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 	Size int `pulumi:"size"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber int `pulumi:"subgroupNumber"`
-	// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
 	Type string `pulumi:"type"`
 }
 
@@ -18867,13 +18867,13 @@ type GetNodePoolNodeConfigSystemVolumeInput interface {
 }
 
 type GetNodePoolNodeConfigSystemVolumeArgs struct {
-	// 放置组Id
+	// Placement group ID
 	PlacementGroupId pulumi.StringInput `pulumi:"placementGroupId"`
-	// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+	// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 	Size pulumi.IntInput `pulumi:"size"`
-	// 放置子组
+	// Placement subgroup
 	SubgroupNumber pulumi.IntInput `pulumi:"subgroupNumber"`
-	// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	// Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -18903,30 +18903,30 @@ func (o GetNodePoolNodeConfigSystemVolumeOutput) ToGetNodePoolNodeConfigSystemVo
 	return o
 }
 
-// 放置组Id
+// Placement group ID
 func (o GetNodePoolNodeConfigSystemVolumeOutput) PlacementGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSystemVolume) string { return v.PlacementGroupId }).(pulumi.StringOutput)
 }
 
-// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
 func (o GetNodePoolNodeConfigSystemVolumeOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSystemVolume) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 放置子组
+// Placement subgroup
 func (o GetNodePoolNodeConfigSystemVolumeOutput) SubgroupNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSystemVolume) int { return v.SubgroupNumber }).(pulumi.IntOutput)
 }
 
-// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+// Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
 func (o GetNodePoolNodeConfigSystemVolumeOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSystemVolume) string { return v.Type }).(pulumi.StringOutput)
 }
 
 type GetNodePoolNodeConfigTag struct {
-	// 标签键。
+	// Label key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Label value.
 	Value string `pulumi:"value"`
 }
 
@@ -18942,9 +18942,9 @@ type GetNodePoolNodeConfigTagInput interface {
 }
 
 type GetNodePoolNodeConfigTagArgs struct {
-	// 标签键。
+	// Label key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Label value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -18999,12 +18999,12 @@ func (o GetNodePoolNodeConfigTagOutput) ToGetNodePoolNodeConfigTagOutputWithCont
 	return o
 }
 
-// 标签键。
+// Label key
 func (o GetNodePoolNodeConfigTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Label value.
 func (o GetNodePoolNodeConfigTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -19030,17 +19030,17 @@ func (o GetNodePoolNodeConfigTagArrayOutput) Index(i pulumi.IntInput) GetNodePoo
 }
 
 type GetNodePoolNodeStatistics struct {
-	// Phase=Creating的节点总数量。
+	// Total number of nodes in Phase=Creating.
 	CreatingCount int `pulumi:"creatingCount"`
-	// Phase=Deleting的节点总数量。
+	// Total number of nodes with Phase=Deleting
 	DeletingCount int `pulumi:"deletingCount"`
-	// Phase=Failed的节点总数量。
+	// Total number of nodes with Phase=Failed
 	FailedCount int `pulumi:"failedCount"`
-	// Phase=Running的节点总数量。
+	// Total number of nodes with Phase=Running
 	RunningCount int `pulumi:"runningCount"`
-	// 节点池中的节点总数量。
+	// Total number of nodes in the node pool
 	TotalCount int `pulumi:"totalCount"`
-	// Phase=Updating的节点总数量。
+	// Total number of nodes with Phase=Updating
 	UpdatingCount int `pulumi:"updatingCount"`
 }
 
@@ -19056,17 +19056,17 @@ type GetNodePoolNodeStatisticsInput interface {
 }
 
 type GetNodePoolNodeStatisticsArgs struct {
-	// Phase=Creating的节点总数量。
+	// Total number of nodes in Phase=Creating.
 	CreatingCount pulumi.IntInput `pulumi:"creatingCount"`
-	// Phase=Deleting的节点总数量。
+	// Total number of nodes with Phase=Deleting
 	DeletingCount pulumi.IntInput `pulumi:"deletingCount"`
-	// Phase=Failed的节点总数量。
+	// Total number of nodes with Phase=Failed
 	FailedCount pulumi.IntInput `pulumi:"failedCount"`
-	// Phase=Running的节点总数量。
+	// Total number of nodes with Phase=Running
 	RunningCount pulumi.IntInput `pulumi:"runningCount"`
-	// 节点池中的节点总数量。
+	// Total number of nodes in the node pool
 	TotalCount pulumi.IntInput `pulumi:"totalCount"`
-	// Phase=Updating的节点总数量。
+	// Total number of nodes with Phase=Updating
 	UpdatingCount pulumi.IntInput `pulumi:"updatingCount"`
 }
 
@@ -19096,40 +19096,40 @@ func (o GetNodePoolNodeStatisticsOutput) ToGetNodePoolNodeStatisticsOutputWithCo
 	return o
 }
 
-// Phase=Creating的节点总数量。
+// Total number of nodes in Phase=Creating.
 func (o GetNodePoolNodeStatisticsOutput) CreatingCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeStatistics) int { return v.CreatingCount }).(pulumi.IntOutput)
 }
 
-// Phase=Deleting的节点总数量。
+// Total number of nodes with Phase=Deleting
 func (o GetNodePoolNodeStatisticsOutput) DeletingCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeStatistics) int { return v.DeletingCount }).(pulumi.IntOutput)
 }
 
-// Phase=Failed的节点总数量。
+// Total number of nodes with Phase=Failed
 func (o GetNodePoolNodeStatisticsOutput) FailedCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeStatistics) int { return v.FailedCount }).(pulumi.IntOutput)
 }
 
-// Phase=Running的节点总数量。
+// Total number of nodes with Phase=Running
 func (o GetNodePoolNodeStatisticsOutput) RunningCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeStatistics) int { return v.RunningCount }).(pulumi.IntOutput)
 }
 
-// 节点池中的节点总数量。
+// Total number of nodes in the node pool
 func (o GetNodePoolNodeStatisticsOutput) TotalCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeStatistics) int { return v.TotalCount }).(pulumi.IntOutput)
 }
 
-// Phase=Updating的节点总数量。
+// Total number of nodes with Phase=Updating
 func (o GetNodePoolNodeStatisticsOutput) UpdatingCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeStatistics) int { return v.UpdatingCount }).(pulumi.IntOutput)
 }
 
 type GetNodePoolStatus struct {
-	// 节点池当前主状态下的状态条件，即进入该主状态的原因。
+	// Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
 	Conditions []GetNodePoolStatusCondition `pulumi:"conditions"`
-	// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+	// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
 	Phase string `pulumi:"phase"`
 }
 
@@ -19145,9 +19145,9 @@ type GetNodePoolStatusInput interface {
 }
 
 type GetNodePoolStatusArgs struct {
-	// 节点池当前主状态下的状态条件，即进入该主状态的原因。
+	// Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
 	Conditions GetNodePoolStatusConditionArrayInput `pulumi:"conditions"`
-	// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+	// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
 	Phase pulumi.StringInput `pulumi:"phase"`
 }
 
@@ -19177,18 +19177,18 @@ func (o GetNodePoolStatusOutput) ToGetNodePoolStatusOutputWithContext(ctx contex
 	return o
 }
 
-// 节点池当前主状态下的状态条件，即进入该主状态的原因。
+// Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
 func (o GetNodePoolStatusOutput) Conditions() GetNodePoolStatusConditionArrayOutput {
 	return o.ApplyT(func(v GetNodePoolStatus) []GetNodePoolStatusCondition { return v.Conditions }).(GetNodePoolStatusConditionArrayOutput)
 }
 
-// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
 func (o GetNodePoolStatusOutput) Phase() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolStatus) string { return v.Phase }).(pulumi.StringOutput)
 }
 
 type GetNodePoolStatusCondition struct {
-	// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+	// Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
 	Type string `pulumi:"type"`
 }
 
@@ -19204,7 +19204,7 @@ type GetNodePoolStatusConditionInput interface {
 }
 
 type GetNodePoolStatusConditionArgs struct {
-	// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+	// Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -19259,7 +19259,7 @@ func (o GetNodePoolStatusConditionOutput) ToGetNodePoolStatusConditionOutputWith
 	return o
 }
 
-// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+// Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
 func (o GetNodePoolStatusConditionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolStatusCondition) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -19285,9 +19285,9 @@ func (o GetNodePoolStatusConditionArrayOutput) Index(i pulumi.IntInput) GetNodeP
 }
 
 type GetNodePoolTag struct {
-	// 标签键。
+	// Label key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Label value.
 	Value string `pulumi:"value"`
 }
 
@@ -19303,9 +19303,9 @@ type GetNodePoolTagInput interface {
 }
 
 type GetNodePoolTagArgs struct {
-	// 标签键。
+	// Label key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Label value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -19360,12 +19360,12 @@ func (o GetNodePoolTagOutput) ToGetNodePoolTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 标签键。
+// Label key
 func (o GetNodePoolTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Label value.
 func (o GetNodePoolTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -19391,9 +19391,9 @@ func (o GetNodePoolTagArrayOutput) Index(i pulumi.IntInput) GetNodePoolTagOutput
 }
 
 type GetNodeStatus struct {
-	// 节点当前主状态下的状态条件，即进入该主状态的原因。
+	// Status condition under the node's current primary state, indicating the reason for entering this primary state.
 	Conditions []GetNodeStatusCondition `pulumi:"conditions"`
-	// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+	// Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
 	Phase string `pulumi:"phase"`
 }
 
@@ -19409,9 +19409,9 @@ type GetNodeStatusInput interface {
 }
 
 type GetNodeStatusArgs struct {
-	// 节点当前主状态下的状态条件，即进入该主状态的原因。
+	// Status condition under the node's current primary state, indicating the reason for entering this primary state.
 	Conditions GetNodeStatusConditionArrayInput `pulumi:"conditions"`
-	// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+	// Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
 	Phase pulumi.StringInput `pulumi:"phase"`
 }
 
@@ -19441,18 +19441,18 @@ func (o GetNodeStatusOutput) ToGetNodeStatusOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 节点当前主状态下的状态条件，即进入该主状态的原因。
+// Status condition under the node's current primary state, indicating the reason for entering this primary state.
 func (o GetNodeStatusOutput) Conditions() GetNodeStatusConditionArrayOutput {
 	return o.ApplyT(func(v GetNodeStatus) []GetNodeStatusCondition { return v.Conditions }).(GetNodeStatusConditionArrayOutput)
 }
 
-// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+// Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
 func (o GetNodeStatusOutput) Phase() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeStatus) string { return v.Phase }).(pulumi.StringOutput)
 }
 
 type GetNodeStatusCondition struct {
-	// 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+	// Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
 	Type string `pulumi:"type"`
 }
 
@@ -19468,7 +19468,7 @@ type GetNodeStatusConditionInput interface {
 }
 
 type GetNodeStatusConditionArgs struct {
-	// 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+	// Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -19523,7 +19523,7 @@ func (o GetNodeStatusConditionOutput) ToGetNodeStatusConditionOutputWithContext(
 	return o
 }
 
-// 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+// Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
 func (o GetNodeStatusConditionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeStatusCondition) string { return v.Type }).(pulumi.StringOutput)
 }

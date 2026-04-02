@@ -130,7 +130,7 @@ class GetInstanceResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.str:
         """
-        账户ID。
+        Account ID.
         """
         return pulumi.get(self, "account_id")
 
@@ -138,7 +138,7 @@ class GetInstanceResult:
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        vePFS 文件系统吞吐上限。
+        VePFS file system throughput limit.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -146,7 +146,7 @@ class GetInstanceResult:
     @pulumi.getter
     def capacity(self) -> builtins.int:
         """
-        文件系统容量，单位为 TiB。
+        File system capacity, unit: TiB.
         """
         return pulumi.get(self, "capacity")
 
@@ -154,7 +154,7 @@ class GetInstanceResult:
     @pulumi.getter(name="capacityInfo")
     def capacity_info(self) -> 'outputs.GetInstanceCapacityInfoResult':
         """
-        容量信息。
+        Capacity information.
         """
         return pulumi.get(self, "capacity_info")
 
@@ -162,7 +162,7 @@ class GetInstanceResult:
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> builtins.str:
         """
-        计费状态，默认为 Normal，表示正常计费。
+        Billing status. Default is Normal, indicating standard billing.
         """
         return pulumi.get(self, "charge_status")
 
@@ -170,7 +170,7 @@ class GetInstanceResult:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        计费类型。取值说明如下：PayAsYouGo：按量计费。
+        Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
         """
         return pulumi.get(self, "charge_type")
 
@@ -178,7 +178,7 @@ class GetInstanceResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -186,7 +186,7 @@ class GetInstanceResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        文件系统描述信息。
+        File system description.
         """
         return pulumi.get(self, "description")
 
@@ -194,7 +194,7 @@ class GetInstanceResult:
     @pulumi.getter(name="enableRestripe")
     def enable_restripe(self) -> builtins.bool:
         """
-        扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+        Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
         """
         return pulumi.get(self, "enable_restripe")
 
@@ -202,7 +202,7 @@ class GetInstanceResult:
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> builtins.str:
         """
-        过期时间。
+        Expiration time.
         """
         return pulumi.get(self, "expire_time")
 
@@ -210,7 +210,7 @@ class GetInstanceResult:
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> builtins.str:
         """
-        文件系统 ID。
+        File system ID.
         """
         return pulumi.get(self, "file_system_id")
 
@@ -218,7 +218,7 @@ class GetInstanceResult:
     @pulumi.getter(name="fileSystemName")
     def file_system_name(self) -> builtins.str:
         """
-        文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+        File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "file_system_name")
 
@@ -226,7 +226,7 @@ class GetInstanceResult:
     @pulumi.getter(name="fileSystemType")
     def file_system_type(self) -> builtins.str:
         """
-        文件系统类型，默认为 VePFS。
+        File system type. Default is VePFS.
         """
         return pulumi.get(self, "file_system_type")
 
@@ -234,7 +234,7 @@ class GetInstanceResult:
     @pulumi.getter(name="freeTime")
     def free_time(self) -> builtins.str:
         """
-        文件系统释放时间。
+        File system release time.
         """
         return pulumi.get(self, "free_time")
 
@@ -250,7 +250,7 @@ class GetInstanceResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        文件系统所属项目，默认为 default。
+        Project to which the file system belongs. Default is default.
         """
         return pulumi.get(self, "project_name")
 
@@ -258,7 +258,7 @@ class GetInstanceResult:
     @pulumi.getter(name="protocolType")
     def protocol_type(self) -> builtins.str:
         """
-        协议类型，默认为 VePFS。
+        Protocol type. Default is VePFS.
         """
         return pulumi.get(self, "protocol_type")
 
@@ -266,7 +266,7 @@ class GetInstanceResult:
     @pulumi.getter(name="readBandwidth")
     def read_bandwidth(self) -> builtins.int:
         """
-        读带宽值, 单位MB/s。
+        Read bandwidth value, unit: MB/s.
         """
         return pulumi.get(self, "read_bandwidth")
 
@@ -274,7 +274,7 @@ class GetInstanceResult:
     @pulumi.getter(name="securityGroupId")
     def security_group_id(self) -> builtins.str:
         """
-        生成的辅助网卡所在的安全组ID。
+        Security group ID for the generated auxiliary NIC.
         """
         return pulumi.get(self, "security_group_id")
 
@@ -282,7 +282,7 @@ class GetInstanceResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
+        File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
         """
         return pulumi.get(self, "status")
 
@@ -290,7 +290,7 @@ class GetInstanceResult:
     @pulumi.getter(name="stopServiceTime")
     def stop_service_time(self) -> builtins.str:
         """
-        文件系统关停时间。
+        File system shutdown time.
         """
         return pulumi.get(self, "stop_service_time")
 
@@ -298,7 +298,7 @@ class GetInstanceResult:
     @pulumi.getter(name="storeType")
     def store_type(self) -> builtins.str:
         """
-        文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+        File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
         """
         return pulumi.get(self, "store_type")
 
@@ -306,7 +306,7 @@ class GetInstanceResult:
     @pulumi.getter(name="storeTypeCn")
     def store_type_cn(self) -> builtins.str:
         """
-        文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
+        File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
         """
         return pulumi.get(self, "store_type_cn")
 
@@ -314,7 +314,7 @@ class GetInstanceResult:
     @pulumi.getter(name="storeTypeEn")
     def store_type_en(self) -> builtins.str:
         """
-        存储类型英文名。
+        Storage type English name.
         """
         return pulumi.get(self, "store_type_en")
 
@@ -322,7 +322,7 @@ class GetInstanceResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        子网 ID。子网必须属于所选的可用区。
+        Subnet ID. The subnet must belong to the selected availability zone.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -330,7 +330,7 @@ class GetInstanceResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetInstanceTagResult']:
         """
-        标签列表。
+        Tag list.
         """
         return pulumi.get(self, "tags")
 
@@ -338,7 +338,7 @@ class GetInstanceResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        文件系统更新时间。
+        File system update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -346,7 +346,7 @@ class GetInstanceResult:
     @pulumi.getter(name="versionNumber")
     def version_number(self) -> builtins.str:
         """
-        文件系统版本号。
+        File system version number.
         """
         return pulumi.get(self, "version_number")
 
@@ -354,7 +354,7 @@ class GetInstanceResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        私有网络 ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -362,7 +362,7 @@ class GetInstanceResult:
     @pulumi.getter(name="writeBandwidth")
     def write_bandwidth(self) -> builtins.int:
         """
-        写带宽值, 单位MB/s。
+        Write bandwidth value, measured in MB/s.
         """
         return pulumi.get(self, "write_bandwidth")
 
@@ -370,7 +370,7 @@ class GetInstanceResult:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        可用区 ID。
+        Availability zone ID.
         """
         return pulumi.get(self, "zone_id")
 
@@ -378,7 +378,7 @@ class GetInstanceResult:
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> builtins.str:
         """
-        可用区名称。
+        Availability zone name.
         """
         return pulumi.get(self, "zone_name")
 

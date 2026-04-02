@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas.Outputs
     public sealed class GetSandboxInstanceTosMountConfigResult
     {
         /// <summary>
-        /// 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+        /// Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
         /// </summary>
         public readonly bool Enable;
         /// <summary>
-        /// 启用了实例级别 TOS 挂载的沙箱实例具体 TOS 挂载目录信息。
+        /// Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSandboxInstanceTosMountConfigTosMountPointResult> TosMountPoints;
 

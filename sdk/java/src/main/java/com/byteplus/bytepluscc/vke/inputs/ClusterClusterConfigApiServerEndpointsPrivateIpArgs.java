@@ -16,14 +16,14 @@ public final class ClusterClusterConfigApiServerEndpointsPrivateIpArgs extends c
     public static final ClusterClusterConfigApiServerEndpointsPrivateIpArgs Empty = new ClusterClusterConfigApiServerEndpointsPrivateIpArgs();
 
     /**
-     * 私网 IP 的 IPv4 地址。
+     * IPv4 address of the private network IP.
      * 
      */
     @Import(name="ipv4")
     private @Nullable Output<String> ipv4;
 
     /**
-     * @return 私网 IP 的 IPv4 地址。
+     * @return IPv4 address of the private network IP.
      * 
      */
     public Optional<Output<String>> ipv4() {
@@ -55,7 +55,7 @@ public final class ClusterClusterConfigApiServerEndpointsPrivateIpArgs extends c
         }
 
         /**
-         * @param ipv4 私网 IP 的 IPv4 地址。
+         * @param ipv4 IPv4 address of the private network IP.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class ClusterClusterConfigApiServerEndpointsPrivateIpArgs extends c
         }
 
         /**
-         * @param ipv4 私网 IP 的 IPv4 地址。
+         * @param ipv4 IPv4 address of the private network IP.
          * 
          * @return builder
          * 

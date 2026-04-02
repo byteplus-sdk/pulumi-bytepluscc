@@ -15,43 +15,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainHttpsResult
     {
         /// <summary>
-        /// 表示 "访问双向认证" 特性的配置模块。要配置 "访问双向认证"。
+        /// Indicates the configuration module for the 'mutual authentication' feature. To configure 'mutual authentication'.
         /// </summary>
         public readonly Outputs.GetDomainHttpsCertCheckResult CertCheck;
         /// <summary>
-        /// 表示要与加速域名关联的单本证书。
+        /// Indicates the single certificate to be associated with the acceleration domain name.
         /// </summary>
         public readonly Outputs.GetDomainHttpsCertInfoResult CertInfo;
         /// <summary>
-        /// 表示要与加速域名关联的双证书。
+        /// Indicates the dual certificate to be associated with the acceleration domain name.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainHttpsCertInfoListResult> CertInfoLists;
         /// <summary>
-        /// 表示是否允许请求 URL 中 Scheme 是 HTTP 的请求。该参数有以下取值：true：表示允许 Scheme 是 HTTP 的请求。false：表示不允许 Scheme 是 HTTP 的请求。该参数的默认值是 false。
+        /// Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
         /// </summary>
         public readonly bool DisableHttp;
         /// <summary>
-        /// 表示 "HTTP 强制跳转到 HTTPS" 特性的配置模块。该特性默认是禁用。
+        /// Indicates the configuration module for the 'HTTP Forced Redirect to HTTPS' feature. This feature is disabled by default.
         /// </summary>
         public readonly Outputs.GetDomainHttpsForcedRedirectResult ForcedRedirect;
         /// <summary>
-        /// 表示 HSTS 特性的配置模块。该特性默认是禁用。
+        /// Indicates the configuration module for the HSTS feature. This feature is disabled by default.
         /// </summary>
         public readonly Outputs.GetDomainHttpsHstsResult Hsts;
         /// <summary>
-        /// HTTP/2 配置开关。该参数有以下取值：true：表示启用 HTTP/2。false：表示禁用 HTTP/2。要启用 HTTP/2，您必须先启用 HTTPS。该功能默认是禁用。但是在以下场景中，HTTP/2 默认是启用的：加速域名的业务类型是网页，也就是 ServiceType 是 web。加速域名已经启用了 HTTPS。
+        /// HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
         /// </summary>
         public readonly bool Http2;
         /// <summary>
-        /// 指定是否启用 OCSP 装订。该参数有以下取值：true：表示启用 OCSP 装订。false：表示禁用 OCSP 装订。要启用 OCSP 装订，您必须先启用 HTTPS。该参数的默认值是 false。
+        /// Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
         /// </summary>
         public readonly bool Ocsp;
         /// <summary>
-        /// 表示是否启用 HTTPS 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。如果 Switch 是 true，您必须指定证书。如果您指定的是单本证书，您需要指定 CertInfo。如果您指定的是双证书，您需要指定 CertInfoList。您指定的证书可以是托管在证书中心，也可以是托管在内容分发网络。
+        /// Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
         /// </summary>
         public readonly bool Switch;
         /// <summary>
-        /// 表示 "TLS 版本" 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
+        /// Indicates the configuration module for the "TLS Version" feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
         /// </summary>
         public readonly ImmutableArray<string> TlsVersions;
 

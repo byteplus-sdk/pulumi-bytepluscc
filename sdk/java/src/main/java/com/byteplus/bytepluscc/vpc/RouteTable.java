@@ -18,7 +18,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 路由表由一系列路由条目组成，为私有网络的流量指定下一跳的云资源，每个子网必须且仅支持关联一个路由表，使子网内的资源通过路由表转发流量。
+ * A route table consists of a series of route entries that specify the next hop cloud resource for private network traffic. Each subnet must be associated with only one route table, allowing resources within the subnet to forward traffic via the route table
  * 
  * ## Example Usage
  * 
@@ -35,42 +35,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/routeTable:RouteTable")
 public class RouteTable extends com.pulumi.resources.CustomResource {
     /**
-     * 路由表所属账号的ID。
+     * Account ID owning the route table
      * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
-     * @return 路由表所属账号的ID。
+     * @return Account ID owning the route table
      * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
-     * 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+     * Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
      * 
      */
     @Export(name="associateType", refs={String.class}, tree="[0]")
     private Output<String> associateType;
 
     /**
-     * @return 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+     * @return Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
      * 
      */
     public Output<String> associateType() {
         return this.associateType;
     }
     /**
-     * 路由表创建时间。
+     * Route Table Creation Time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 路由表创建时间。
+     * @return Route Table Creation Time
      * 
      */
     public Output<String> createdTime() {
@@ -83,112 +83,112 @@ public class RouteTable extends com.pulumi.resources.CustomResource {
         return this.customRouteEntries;
     }
     /**
-     * 路由表描述信息。
+     * Route Table Description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 路由表描述信息。
+     * @return Route Table Description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 关联路由表的IPv4网关ID。
+     * IPv4 Gateway ID associated with the route table
      * 
      */
     @Export(name="ipv4GatewayId", refs={String.class}, tree="[0]")
     private Output<String> ipv4GatewayId;
 
     /**
-     * @return 关联路由表的IPv4网关ID。
+     * @return IPv4 Gateway ID associated with the route table
      * 
      */
     public Output<String> ipv4GatewayId() {
         return this.ipv4GatewayId;
     }
     /**
-     * 关联路由表的IPv6网关ID。
+     * IPv6 Gateway ID associated with the route table
      * 
      */
     @Export(name="ipv6GatewayId", refs={String.class}, tree="[0]")
     private Output<String> ipv6GatewayId;
 
     /**
-     * @return 关联路由表的IPv6网关ID。
+     * @return IPv6 Gateway ID associated with the route table
      * 
      */
     public Output<String> ipv6GatewayId() {
         return this.ipv6GatewayId;
     }
     /**
-     * 路由表所属项目的名称。
+     * Name of the project owning the route table
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 路由表所属项目的名称。
+     * @return Name of the project owning the route table
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 路由表ID。
+     * Route Table ID
      * 
      */
     @Export(name="routeTableId", refs={String.class}, tree="[0]")
     private Output<String> routeTableId;
 
     /**
-     * @return 路由表ID。
+     * @return Route Table ID
      * 
      */
     public Output<String> routeTableId() {
         return this.routeTableId;
     }
     /**
-     * 路由表名称。
+     * Route Table Name
      * 
      */
     @Export(name="routeTableName", refs={String.class}, tree="[0]")
     private Output<String> routeTableName;
 
     /**
-     * @return 路由表名称。
+     * @return Route Table Name
      * 
      */
     public Output<String> routeTableName() {
         return this.routeTableName;
     }
     /**
-     * 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+     * Route table type. 1. Custom: Custom route table 2. System: System route table
      * 
      */
     @Export(name="routeTableType", refs={String.class}, tree="[0]")
     private Output<String> routeTableType;
 
     /**
-     * @return 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+     * @return Route table type. 1. Custom: Custom route table 2. System: System route table
      * 
      */
     public Output<String> routeTableType() {
         return this.routeTableType;
     }
     /**
-     * 关联的子网的ID列表。
+     * List of associated subnet IDs
      * 
      */
     @Export(name="subnetIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subnetIds;
 
     /**
-     * @return 关联的子网的ID列表。
+     * @return List of associated subnet IDs
      * 
      */
     public Output<List<String>> subnetIds() {
@@ -207,42 +207,42 @@ public class RouteTable extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 路由表更新时间。
+     * Route Table Last Updated Time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 路由表更新时间。
+     * @return Route Table Last Updated Time
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 路由表所属VPC的ID。
+     * ID of the VPC owning the route table
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 路由表所属VPC的ID。
+     * @return ID of the VPC owning the route table
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * VPC的名称。
+     * VPC Name
      * 
      */
     @Export(name="vpcName", refs={String.class}, tree="[0]")
     private Output<String> vpcName;
 
     /**
-     * @return VPC的名称。
+     * @return VPC Name
      * 
      */
     public Output<String> vpcName() {

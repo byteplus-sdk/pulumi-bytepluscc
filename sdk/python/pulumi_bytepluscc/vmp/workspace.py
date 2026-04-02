@@ -24,24 +24,42 @@ class WorkspaceArgs:
     def __init__(__self__, *,
                  instance_type_id: pulumi.Input[builtins.str],
                  name: pulumi.Input[builtins.str],
+                 auth_type: Optional[pulumi.Input[builtins.str]] = None,
+                 bearer_token: Optional[pulumi.Input[builtins.str]] = None,
                  delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  password: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 public_access_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 public_query_bandwidth: Optional[pulumi.Input[builtins.int]] = None,
+                 public_write_bandwidth: Optional[pulumi.Input[builtins.int]] = None,
+                 quota: Optional[pulumi.Input['WorkspaceQuotaArgs']] = None,
+                 search_latency_offset: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceTagArgs']]]] = None,
                  username: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Workspace resource.
-        :param pulumi.Input[builtins.str] instance_type_id: 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
-        :param pulumi.Input[builtins.str] name: 工作区名称，字符串形式，长度限制为 1～100。
-        :param pulumi.Input[builtins.bool] delete_protection_enabled: 是否开启工作区删除保护,true：开启，false：关闭。
-        :param pulumi.Input[builtins.str] description: 工作区描述信息，字符串形式，长度限制为 0～200。
-        :param pulumi.Input[builtins.str] password: 工作区 BasicAuth 密码。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input[builtins.str] username: 工作区 BasicAuth 用户名。
+        :param pulumi.Input[builtins.str] instance_type_id: Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
+        :param pulumi.Input[builtins.str] name: Workspace name, string, length limit 1–100
+        :param pulumi.Input[builtins.str] auth_type: Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+        :param pulumi.Input[builtins.str] bearer_token: Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+        :param pulumi.Input[builtins.bool] delete_protection_enabled: Enable workspace deletion protection: true for enabled, false for disabled
+        :param pulumi.Input[builtins.str] description: Workspace description, string, length limit 0–200
+        :param pulumi.Input[builtins.str] password: Workspace BasicAuth password
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[builtins.bool] public_access_enabled: Whether to enable workspace public access capability. true: enabled, false: disabled.
+        :param pulumi.Input[builtins.int] public_query_bandwidth: Workspace public Query bandwidth (Mbps).
+        :param pulumi.Input[builtins.int] public_write_bandwidth: Workspace public RemoteWrite bandwidth (Mbps).
+        :param pulumi.Input['WorkspaceQuotaArgs'] quota: Workspace quota details
+        :param pulumi.Input[builtins.str] search_latency_offset: Workspace public Query search latency offset.
+        :param pulumi.Input[builtins.str] username: Workspace BasicAuth username
         """
         pulumi.set(__self__, "instance_type_id", instance_type_id)
         pulumi.set(__self__, "name", name)
+        if auth_type is not None:
+            pulumi.set(__self__, "auth_type", auth_type)
+        if bearer_token is not None:
+            pulumi.set(__self__, "bearer_token", bearer_token)
         if delete_protection_enabled is not None:
             pulumi.set(__self__, "delete_protection_enabled", delete_protection_enabled)
         if description is not None:
@@ -50,6 +68,16 @@ class WorkspaceArgs:
             pulumi.set(__self__, "password", password)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
+        if public_access_enabled is not None:
+            pulumi.set(__self__, "public_access_enabled", public_access_enabled)
+        if public_query_bandwidth is not None:
+            pulumi.set(__self__, "public_query_bandwidth", public_query_bandwidth)
+        if public_write_bandwidth is not None:
+            pulumi.set(__self__, "public_write_bandwidth", public_write_bandwidth)
+        if quota is not None:
+            pulumi.set(__self__, "quota", quota)
+        if search_latency_offset is not None:
+            pulumi.set(__self__, "search_latency_offset", search_latency_offset)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
         if username is not None:
@@ -59,7 +87,7 @@ class WorkspaceArgs:
     @pulumi.getter(name="instanceTypeId")
     def instance_type_id(self) -> pulumi.Input[builtins.str]:
         """
-        工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+        Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
         """
         return pulumi.get(self, "instance_type_id")
 
@@ -71,7 +99,7 @@ class WorkspaceArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        工作区名称，字符串形式，长度限制为 1～100。
+        Workspace name, string, length limit 1–100
         """
         return pulumi.get(self, "name")
 
@@ -80,10 +108,34 @@ class WorkspaceArgs:
         pulumi.set(self, "name", value)
 
     @property
+    @pulumi.getter(name="authType")
+    def auth_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+        """
+        return pulumi.get(self, "auth_type")
+
+    @auth_type.setter
+    def auth_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "auth_type", value)
+
+    @property
+    @pulumi.getter(name="bearerToken")
+    def bearer_token(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+        """
+        return pulumi.get(self, "bearer_token")
+
+    @bearer_token.setter
+    def bearer_token(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "bearer_token", value)
+
+    @property
     @pulumi.getter(name="deleteProtectionEnabled")
     def delete_protection_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启工作区删除保护,true：开启，false：关闭。
+        Enable workspace deletion protection: true for enabled, false for disabled
         """
         return pulumi.get(self, "delete_protection_enabled")
 
@@ -95,7 +147,7 @@ class WorkspaceArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区描述信息，字符串形式，长度限制为 0～200。
+        Workspace description, string, length limit 0–200
         """
         return pulumi.get(self, "description")
 
@@ -107,7 +159,7 @@ class WorkspaceArgs:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区 BasicAuth 密码。
+        Workspace BasicAuth password
         """
         return pulumi.get(self, "password")
 
@@ -119,13 +171,73 @@ class WorkspaceArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
     @project_name.setter
     def project_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "project_name", value)
+
+    @property
+    @pulumi.getter(name="publicAccessEnabled")
+    def public_access_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to enable workspace public access capability. true: enabled, false: disabled.
+        """
+        return pulumi.get(self, "public_access_enabled")
+
+    @public_access_enabled.setter
+    def public_access_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "public_access_enabled", value)
+
+    @property
+    @pulumi.getter(name="publicQueryBandwidth")
+    def public_query_bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Workspace public Query bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_query_bandwidth")
+
+    @public_query_bandwidth.setter
+    def public_query_bandwidth(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "public_query_bandwidth", value)
+
+    @property
+    @pulumi.getter(name="publicWriteBandwidth")
+    def public_write_bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Workspace public RemoteWrite bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_write_bandwidth")
+
+    @public_write_bandwidth.setter
+    def public_write_bandwidth(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "public_write_bandwidth", value)
+
+    @property
+    @pulumi.getter
+    def quota(self) -> Optional[pulumi.Input['WorkspaceQuotaArgs']]:
+        """
+        Workspace quota details
+        """
+        return pulumi.get(self, "quota")
+
+    @quota.setter
+    def quota(self, value: Optional[pulumi.Input['WorkspaceQuotaArgs']]):
+        pulumi.set(self, "quota", value)
+
+    @property
+    @pulumi.getter(name="searchLatencyOffset")
+    def search_latency_offset(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Workspace public Query search latency offset.
+        """
+        return pulumi.get(self, "search_latency_offset")
+
+    @search_latency_offset.setter
+    def search_latency_offset(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "search_latency_offset", value)
 
     @property
     @pulumi.getter
@@ -140,7 +252,7 @@ class WorkspaceArgs:
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区 BasicAuth 用户名。
+        Workspace BasicAuth username
         """
         return pulumi.get(self, "username")
 
@@ -152,6 +264,8 @@ class WorkspaceArgs:
 @pulumi.input_type
 class _WorkspaceState:
     def __init__(__self__, *,
+                 auth_type: Optional[pulumi.Input[builtins.str]] = None,
+                 bearer_token: Optional[pulumi.Input[builtins.str]] = None,
                  create_time: Optional[pulumi.Input[builtins.str]] = None,
                  delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
@@ -161,10 +275,17 @@ class _WorkspaceState:
                  overdue_reclaim_time: Optional[pulumi.Input[builtins.str]] = None,
                  password: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 prometheus_push_endpoint: Optional[pulumi.Input[builtins.str]] = None,
                  prometheus_push_intranet_endpoint: Optional[pulumi.Input[builtins.str]] = None,
+                 prometheus_query_endpoint: Optional[pulumi.Input[builtins.str]] = None,
                  prometheus_query_intranet_endpoint: Optional[pulumi.Input[builtins.str]] = None,
+                 prometheus_write_endpoint: Optional[pulumi.Input[builtins.str]] = None,
                  prometheus_write_intranet_endpoint: Optional[pulumi.Input[builtins.str]] = None,
+                 public_access_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 public_query_bandwidth: Optional[pulumi.Input[builtins.int]] = None,
+                 public_write_bandwidth: Optional[pulumi.Input[builtins.int]] = None,
                  quota: Optional[pulumi.Input['WorkspaceQuotaArgs']] = None,
+                 search_latency_offset: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceTagArgs']]]] = None,
                  usage: Optional[pulumi.Input['WorkspaceUsageArgs']] = None,
@@ -172,24 +293,37 @@ class _WorkspaceState:
                  workspace_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Workspace resources.
-        :param pulumi.Input[builtins.str] create_time: 工作区创建时间，RFC3339 格式。
-        :param pulumi.Input[builtins.bool] delete_protection_enabled: 是否开启工作区删除保护,true：开启，false：关闭。
-        :param pulumi.Input[builtins.str] description: 工作区描述信息，字符串形式，长度限制为 0～200。
-        :param pulumi.Input['WorkspaceInstanceTypeArgs'] instance_type: 工作区规格详情。
-        :param pulumi.Input[builtins.str] instance_type_id: 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
-        :param pulumi.Input[builtins.str] name: 工作区名称，字符串形式，长度限制为 1～100。
-        :param pulumi.Input[builtins.str] overdue_reclaim_time: 工作区预期欠费回收时间，RFC3339 格式。
-        :param pulumi.Input[builtins.str] password: 工作区 BasicAuth 密码。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input[builtins.str] prometheus_push_intranet_endpoint: 工作区 Push Gateway URL 地址。
-        :param pulumi.Input[builtins.str] prometheus_query_intranet_endpoint: 工作区 Query URL 地址。
-        :param pulumi.Input[builtins.str] prometheus_write_intranet_endpoint: 工作区 RemoteWrite URL 地址。
-        :param pulumi.Input['WorkspaceQuotaArgs'] quota: 工作区配额详情。
-        :param pulumi.Input[builtins.str] status: 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
-        :param pulumi.Input['WorkspaceUsageArgs'] usage: 工作区用量。
-        :param pulumi.Input[builtins.str] username: 工作区 BasicAuth 用户名。
-        :param pulumi.Input[builtins.str] workspace_id: 工作区Id。
+        :param pulumi.Input[builtins.str] auth_type: Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+        :param pulumi.Input[builtins.str] bearer_token: Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+        :param pulumi.Input[builtins.str] create_time: Workspace creation time, RFC3339 format
+        :param pulumi.Input[builtins.bool] delete_protection_enabled: Enable workspace deletion protection: true for enabled, false for disabled
+        :param pulumi.Input[builtins.str] description: Workspace description, string, length limit 0–200
+        :param pulumi.Input['WorkspaceInstanceTypeArgs'] instance_type: Workspace specification details
+        :param pulumi.Input[builtins.str] instance_type_id: Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
+        :param pulumi.Input[builtins.str] name: Workspace name, string, length limit 1–100
+        :param pulumi.Input[builtins.str] overdue_reclaim_time: Workspace expected overdue recovery time, RFC3339 format
+        :param pulumi.Input[builtins.str] password: Workspace BasicAuth password
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[builtins.str] prometheus_push_endpoint: Workspace public Push Gateway URL address.
+        :param pulumi.Input[builtins.str] prometheus_push_intranet_endpoint: Workspace Push Gateway URL address
+        :param pulumi.Input[builtins.str] prometheus_query_endpoint: Workspace public Query URL address.
+        :param pulumi.Input[builtins.str] prometheus_query_intranet_endpoint: Workspace Query URL address
+        :param pulumi.Input[builtins.str] prometheus_write_endpoint: Workspace public RemoteWrite URL address.
+        :param pulumi.Input[builtins.str] prometheus_write_intranet_endpoint: Workspace RemoteWrite URL address
+        :param pulumi.Input[builtins.bool] public_access_enabled: Whether to enable workspace public access capability. true: enabled, false: disabled.
+        :param pulumi.Input[builtins.int] public_query_bandwidth: Workspace public Query bandwidth (Mbps).
+        :param pulumi.Input[builtins.int] public_write_bandwidth: Workspace public RemoteWrite bandwidth (Mbps).
+        :param pulumi.Input['WorkspaceQuotaArgs'] quota: Workspace quota details
+        :param pulumi.Input[builtins.str] search_latency_offset: Workspace public Query search latency offset.
+        :param pulumi.Input[builtins.str] status: Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
+        :param pulumi.Input['WorkspaceUsageArgs'] usage: Workspace usage
+        :param pulumi.Input[builtins.str] username: Workspace BasicAuth username
+        :param pulumi.Input[builtins.str] workspace_id: Workspace ID
         """
+        if auth_type is not None:
+            pulumi.set(__self__, "auth_type", auth_type)
+        if bearer_token is not None:
+            pulumi.set(__self__, "bearer_token", bearer_token)
         if create_time is not None:
             pulumi.set(__self__, "create_time", create_time)
         if delete_protection_enabled is not None:
@@ -208,14 +342,28 @@ class _WorkspaceState:
             pulumi.set(__self__, "password", password)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
+        if prometheus_push_endpoint is not None:
+            pulumi.set(__self__, "prometheus_push_endpoint", prometheus_push_endpoint)
         if prometheus_push_intranet_endpoint is not None:
             pulumi.set(__self__, "prometheus_push_intranet_endpoint", prometheus_push_intranet_endpoint)
+        if prometheus_query_endpoint is not None:
+            pulumi.set(__self__, "prometheus_query_endpoint", prometheus_query_endpoint)
         if prometheus_query_intranet_endpoint is not None:
             pulumi.set(__self__, "prometheus_query_intranet_endpoint", prometheus_query_intranet_endpoint)
+        if prometheus_write_endpoint is not None:
+            pulumi.set(__self__, "prometheus_write_endpoint", prometheus_write_endpoint)
         if prometheus_write_intranet_endpoint is not None:
             pulumi.set(__self__, "prometheus_write_intranet_endpoint", prometheus_write_intranet_endpoint)
+        if public_access_enabled is not None:
+            pulumi.set(__self__, "public_access_enabled", public_access_enabled)
+        if public_query_bandwidth is not None:
+            pulumi.set(__self__, "public_query_bandwidth", public_query_bandwidth)
+        if public_write_bandwidth is not None:
+            pulumi.set(__self__, "public_write_bandwidth", public_write_bandwidth)
         if quota is not None:
             pulumi.set(__self__, "quota", quota)
+        if search_latency_offset is not None:
+            pulumi.set(__self__, "search_latency_offset", search_latency_offset)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if tags is not None:
@@ -228,10 +376,34 @@ class _WorkspaceState:
             pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
+    @pulumi.getter(name="authType")
+    def auth_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+        """
+        return pulumi.get(self, "auth_type")
+
+    @auth_type.setter
+    def auth_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "auth_type", value)
+
+    @property
+    @pulumi.getter(name="bearerToken")
+    def bearer_token(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+        """
+        return pulumi.get(self, "bearer_token")
+
+    @bearer_token.setter
+    def bearer_token(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "bearer_token", value)
+
+    @property
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区创建时间，RFC3339 格式。
+        Workspace creation time, RFC3339 format
         """
         return pulumi.get(self, "create_time")
 
@@ -243,7 +415,7 @@ class _WorkspaceState:
     @pulumi.getter(name="deleteProtectionEnabled")
     def delete_protection_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启工作区删除保护,true：开启，false：关闭。
+        Enable workspace deletion protection: true for enabled, false for disabled
         """
         return pulumi.get(self, "delete_protection_enabled")
 
@@ -255,7 +427,7 @@ class _WorkspaceState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区描述信息，字符串形式，长度限制为 0～200。
+        Workspace description, string, length limit 0–200
         """
         return pulumi.get(self, "description")
 
@@ -267,7 +439,7 @@ class _WorkspaceState:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[pulumi.Input['WorkspaceInstanceTypeArgs']]:
         """
-        工作区规格详情。
+        Workspace specification details
         """
         return pulumi.get(self, "instance_type")
 
@@ -279,7 +451,7 @@ class _WorkspaceState:
     @pulumi.getter(name="instanceTypeId")
     def instance_type_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+        Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
         """
         return pulumi.get(self, "instance_type_id")
 
@@ -291,7 +463,7 @@ class _WorkspaceState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区名称，字符串形式，长度限制为 1～100。
+        Workspace name, string, length limit 1–100
         """
         return pulumi.get(self, "name")
 
@@ -303,7 +475,7 @@ class _WorkspaceState:
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区预期欠费回收时间，RFC3339 格式。
+        Workspace expected overdue recovery time, RFC3339 format
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -315,7 +487,7 @@ class _WorkspaceState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区 BasicAuth 密码。
+        Workspace BasicAuth password
         """
         return pulumi.get(self, "password")
 
@@ -327,7 +499,7 @@ class _WorkspaceState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -336,10 +508,22 @@ class _WorkspaceState:
         pulumi.set(self, "project_name", value)
 
     @property
+    @pulumi.getter(name="prometheusPushEndpoint")
+    def prometheus_push_endpoint(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Workspace public Push Gateway URL address.
+        """
+        return pulumi.get(self, "prometheus_push_endpoint")
+
+    @prometheus_push_endpoint.setter
+    def prometheus_push_endpoint(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "prometheus_push_endpoint", value)
+
+    @property
     @pulumi.getter(name="prometheusPushIntranetEndpoint")
     def prometheus_push_intranet_endpoint(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区 Push Gateway URL 地址。
+        Workspace Push Gateway URL address
         """
         return pulumi.get(self, "prometheus_push_intranet_endpoint")
 
@@ -348,10 +532,22 @@ class _WorkspaceState:
         pulumi.set(self, "prometheus_push_intranet_endpoint", value)
 
     @property
+    @pulumi.getter(name="prometheusQueryEndpoint")
+    def prometheus_query_endpoint(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Workspace public Query URL address.
+        """
+        return pulumi.get(self, "prometheus_query_endpoint")
+
+    @prometheus_query_endpoint.setter
+    def prometheus_query_endpoint(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "prometheus_query_endpoint", value)
+
+    @property
     @pulumi.getter(name="prometheusQueryIntranetEndpoint")
     def prometheus_query_intranet_endpoint(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区 Query URL 地址。
+        Workspace Query URL address
         """
         return pulumi.get(self, "prometheus_query_intranet_endpoint")
 
@@ -360,10 +556,22 @@ class _WorkspaceState:
         pulumi.set(self, "prometheus_query_intranet_endpoint", value)
 
     @property
+    @pulumi.getter(name="prometheusWriteEndpoint")
+    def prometheus_write_endpoint(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Workspace public RemoteWrite URL address.
+        """
+        return pulumi.get(self, "prometheus_write_endpoint")
+
+    @prometheus_write_endpoint.setter
+    def prometheus_write_endpoint(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "prometheus_write_endpoint", value)
+
+    @property
     @pulumi.getter(name="prometheusWriteIntranetEndpoint")
     def prometheus_write_intranet_endpoint(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区 RemoteWrite URL 地址。
+        Workspace RemoteWrite URL address
         """
         return pulumi.get(self, "prometheus_write_intranet_endpoint")
 
@@ -372,10 +580,46 @@ class _WorkspaceState:
         pulumi.set(self, "prometheus_write_intranet_endpoint", value)
 
     @property
+    @pulumi.getter(name="publicAccessEnabled")
+    def public_access_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to enable workspace public access capability. true: enabled, false: disabled.
+        """
+        return pulumi.get(self, "public_access_enabled")
+
+    @public_access_enabled.setter
+    def public_access_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "public_access_enabled", value)
+
+    @property
+    @pulumi.getter(name="publicQueryBandwidth")
+    def public_query_bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Workspace public Query bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_query_bandwidth")
+
+    @public_query_bandwidth.setter
+    def public_query_bandwidth(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "public_query_bandwidth", value)
+
+    @property
+    @pulumi.getter(name="publicWriteBandwidth")
+    def public_write_bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Workspace public RemoteWrite bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_write_bandwidth")
+
+    @public_write_bandwidth.setter
+    def public_write_bandwidth(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "public_write_bandwidth", value)
+
+    @property
     @pulumi.getter
     def quota(self) -> Optional[pulumi.Input['WorkspaceQuotaArgs']]:
         """
-        工作区配额详情。
+        Workspace quota details
         """
         return pulumi.get(self, "quota")
 
@@ -384,10 +628,22 @@ class _WorkspaceState:
         pulumi.set(self, "quota", value)
 
     @property
+    @pulumi.getter(name="searchLatencyOffset")
+    def search_latency_offset(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Workspace public Query search latency offset.
+        """
+        return pulumi.get(self, "search_latency_offset")
+
+    @search_latency_offset.setter
+    def search_latency_offset(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "search_latency_offset", value)
+
+    @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+        Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
         """
         return pulumi.get(self, "status")
 
@@ -408,7 +664,7 @@ class _WorkspaceState:
     @pulumi.getter
     def usage(self) -> Optional[pulumi.Input['WorkspaceUsageArgs']]:
         """
-        工作区用量。
+        Workspace usage
         """
         return pulumi.get(self, "usage")
 
@@ -420,7 +676,7 @@ class _WorkspaceState:
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区 BasicAuth 用户名。
+        Workspace BasicAuth username
         """
         return pulumi.get(self, "username")
 
@@ -432,7 +688,7 @@ class _WorkspaceState:
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        工作区Id。
+        Workspace ID
         """
         return pulumi.get(self, "workspace_id")
 
@@ -447,17 +703,24 @@ class Workspace(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 auth_type: Optional[pulumi.Input[builtins.str]] = None,
+                 bearer_token: Optional[pulumi.Input[builtins.str]] = None,
                  delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  instance_type_id: Optional[pulumi.Input[builtins.str]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  password: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 public_access_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 public_query_bandwidth: Optional[pulumi.Input[builtins.int]] = None,
+                 public_write_bandwidth: Optional[pulumi.Input[builtins.int]] = None,
+                 quota: Optional[pulumi.Input[Union['WorkspaceQuotaArgs', 'WorkspaceQuotaArgsDict']]] = None,
+                 search_latency_offset: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTagArgs', 'WorkspaceTagArgsDict']]]]] = None,
                  username: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        工作区（Workspace）是 VMP 服务中采集数据和规则的抽象整合，为用户提供物理隔离或逻辑隔离的 Prometheus 能力。在 VMP 服务中可创建不同的工作区，不同工作区中的数据彼此隔离。
+        Workspace is an abstract integration of data collection and rules in the VMP service, providing users with physical or logical isolation for Prometheus capabilities. You can create different workspaces in the VMP service, and data in different workspaces is isolated from each other
 
         ## Example Usage
 
@@ -466,13 +729,17 @@ class Workspace(pulumi.CustomResource):
         import pulumi_bytepluscc as bytepluscc
 
         workspace_demo = bytepluscc.vmp.Workspace("WorkspaceDemo",
-            username="WorkspaceDemo",
-            password="***********",
-            name="WorkspaceDemo",
-            description="WorkspaceDemo",
+            auth_type="BearerToken",
+            bearer_token="M3cSN7gssM09-6wO8vdqo_xxxxxxxx",
             delete_protection_enabled=False,
-            instance_type_id="vmp.standard.xxx",
+            description="test workspace",
+            instance_type_id="vmp.standard.30d",
+            name="terraform_test_BearerToken",
             project_name="default",
+            public_access_enabled=True,
+            public_query_bandwidth=2,
+            public_write_bandwidth=50,
+            search_latency_offset="32s",
             tags=[{
                 "key": "env",
                 "value": "test",
@@ -487,13 +754,20 @@ class Workspace(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.bool] delete_protection_enabled: 是否开启工作区删除保护,true：开启，false：关闭。
-        :param pulumi.Input[builtins.str] description: 工作区描述信息，字符串形式，长度限制为 0～200。
-        :param pulumi.Input[builtins.str] instance_type_id: 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
-        :param pulumi.Input[builtins.str] name: 工作区名称，字符串形式，长度限制为 1～100。
-        :param pulumi.Input[builtins.str] password: 工作区 BasicAuth 密码。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input[builtins.str] username: 工作区 BasicAuth 用户名。
+        :param pulumi.Input[builtins.str] auth_type: Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+        :param pulumi.Input[builtins.str] bearer_token: Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+        :param pulumi.Input[builtins.bool] delete_protection_enabled: Enable workspace deletion protection: true for enabled, false for disabled
+        :param pulumi.Input[builtins.str] description: Workspace description, string, length limit 0–200
+        :param pulumi.Input[builtins.str] instance_type_id: Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
+        :param pulumi.Input[builtins.str] name: Workspace name, string, length limit 1–100
+        :param pulumi.Input[builtins.str] password: Workspace BasicAuth password
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[builtins.bool] public_access_enabled: Whether to enable workspace public access capability. true: enabled, false: disabled.
+        :param pulumi.Input[builtins.int] public_query_bandwidth: Workspace public Query bandwidth (Mbps).
+        :param pulumi.Input[builtins.int] public_write_bandwidth: Workspace public RemoteWrite bandwidth (Mbps).
+        :param pulumi.Input[Union['WorkspaceQuotaArgs', 'WorkspaceQuotaArgsDict']] quota: Workspace quota details
+        :param pulumi.Input[builtins.str] search_latency_offset: Workspace public Query search latency offset.
+        :param pulumi.Input[builtins.str] username: Workspace BasicAuth username
         """
         ...
     @overload
@@ -502,7 +776,7 @@ class Workspace(pulumi.CustomResource):
                  args: WorkspaceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        工作区（Workspace）是 VMP 服务中采集数据和规则的抽象整合，为用户提供物理隔离或逻辑隔离的 Prometheus 能力。在 VMP 服务中可创建不同的工作区，不同工作区中的数据彼此隔离。
+        Workspace is an abstract integration of data collection and rules in the VMP service, providing users with physical or logical isolation for Prometheus capabilities. You can create different workspaces in the VMP service, and data in different workspaces is isolated from each other
 
         ## Example Usage
 
@@ -511,13 +785,17 @@ class Workspace(pulumi.CustomResource):
         import pulumi_bytepluscc as bytepluscc
 
         workspace_demo = bytepluscc.vmp.Workspace("WorkspaceDemo",
-            username="WorkspaceDemo",
-            password="***********",
-            name="WorkspaceDemo",
-            description="WorkspaceDemo",
+            auth_type="BearerToken",
+            bearer_token="M3cSN7gssM09-6wO8vdqo_xxxxxxxx",
             delete_protection_enabled=False,
-            instance_type_id="vmp.standard.xxx",
+            description="test workspace",
+            instance_type_id="vmp.standard.30d",
+            name="terraform_test_BearerToken",
             project_name="default",
+            public_access_enabled=True,
+            public_query_bandwidth=2,
+            public_write_bandwidth=50,
+            search_latency_offset="32s",
             tags=[{
                 "key": "env",
                 "value": "test",
@@ -545,12 +823,19 @@ class Workspace(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 auth_type: Optional[pulumi.Input[builtins.str]] = None,
+                 bearer_token: Optional[pulumi.Input[builtins.str]] = None,
                  delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  instance_type_id: Optional[pulumi.Input[builtins.str]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  password: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 public_access_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 public_query_bandwidth: Optional[pulumi.Input[builtins.int]] = None,
+                 public_write_bandwidth: Optional[pulumi.Input[builtins.int]] = None,
+                 quota: Optional[pulumi.Input[Union['WorkspaceQuotaArgs', 'WorkspaceQuotaArgsDict']]] = None,
+                 search_latency_offset: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTagArgs', 'WorkspaceTagArgsDict']]]]] = None,
                  username: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -562,6 +847,8 @@ class Workspace(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = WorkspaceArgs.__new__(WorkspaceArgs)
 
+            __props__.__dict__["auth_type"] = auth_type
+            __props__.__dict__["bearer_token"] = bearer_token
             __props__.__dict__["delete_protection_enabled"] = delete_protection_enabled
             __props__.__dict__["description"] = description
             if instance_type_id is None and not opts.urn:
@@ -572,15 +859,22 @@ class Workspace(pulumi.CustomResource):
             __props__.__dict__["name"] = name
             __props__.__dict__["password"] = password
             __props__.__dict__["project_name"] = project_name
+            __props__.__dict__["public_access_enabled"] = public_access_enabled
+            __props__.__dict__["public_query_bandwidth"] = public_query_bandwidth
+            __props__.__dict__["public_write_bandwidth"] = public_write_bandwidth
+            __props__.__dict__["quota"] = quota
+            __props__.__dict__["search_latency_offset"] = search_latency_offset
             __props__.__dict__["tags"] = tags
             __props__.__dict__["username"] = username
             __props__.__dict__["create_time"] = None
             __props__.__dict__["instance_type"] = None
             __props__.__dict__["overdue_reclaim_time"] = None
+            __props__.__dict__["prometheus_push_endpoint"] = None
             __props__.__dict__["prometheus_push_intranet_endpoint"] = None
+            __props__.__dict__["prometheus_query_endpoint"] = None
             __props__.__dict__["prometheus_query_intranet_endpoint"] = None
+            __props__.__dict__["prometheus_write_endpoint"] = None
             __props__.__dict__["prometheus_write_intranet_endpoint"] = None
-            __props__.__dict__["quota"] = None
             __props__.__dict__["status"] = None
             __props__.__dict__["usage"] = None
             __props__.__dict__["workspace_id"] = None
@@ -594,6 +888,8 @@ class Workspace(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            auth_type: Optional[pulumi.Input[builtins.str]] = None,
+            bearer_token: Optional[pulumi.Input[builtins.str]] = None,
             create_time: Optional[pulumi.Input[builtins.str]] = None,
             delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
@@ -603,10 +899,17 @@ class Workspace(pulumi.CustomResource):
             overdue_reclaim_time: Optional[pulumi.Input[builtins.str]] = None,
             password: Optional[pulumi.Input[builtins.str]] = None,
             project_name: Optional[pulumi.Input[builtins.str]] = None,
+            prometheus_push_endpoint: Optional[pulumi.Input[builtins.str]] = None,
             prometheus_push_intranet_endpoint: Optional[pulumi.Input[builtins.str]] = None,
+            prometheus_query_endpoint: Optional[pulumi.Input[builtins.str]] = None,
             prometheus_query_intranet_endpoint: Optional[pulumi.Input[builtins.str]] = None,
+            prometheus_write_endpoint: Optional[pulumi.Input[builtins.str]] = None,
             prometheus_write_intranet_endpoint: Optional[pulumi.Input[builtins.str]] = None,
+            public_access_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+            public_query_bandwidth: Optional[pulumi.Input[builtins.int]] = None,
+            public_write_bandwidth: Optional[pulumi.Input[builtins.int]] = None,
             quota: Optional[pulumi.Input[Union['WorkspaceQuotaArgs', 'WorkspaceQuotaArgsDict']]] = None,
+            search_latency_offset: Optional[pulumi.Input[builtins.str]] = None,
             status: Optional[pulumi.Input[builtins.str]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTagArgs', 'WorkspaceTagArgsDict']]]]] = None,
             usage: Optional[pulumi.Input[Union['WorkspaceUsageArgs', 'WorkspaceUsageArgsDict']]] = None,
@@ -619,28 +922,39 @@ class Workspace(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] create_time: 工作区创建时间，RFC3339 格式。
-        :param pulumi.Input[builtins.bool] delete_protection_enabled: 是否开启工作区删除保护,true：开启，false：关闭。
-        :param pulumi.Input[builtins.str] description: 工作区描述信息，字符串形式，长度限制为 0～200。
-        :param pulumi.Input[Union['WorkspaceInstanceTypeArgs', 'WorkspaceInstanceTypeArgsDict']] instance_type: 工作区规格详情。
-        :param pulumi.Input[builtins.str] instance_type_id: 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
-        :param pulumi.Input[builtins.str] name: 工作区名称，字符串形式，长度限制为 1～100。
-        :param pulumi.Input[builtins.str] overdue_reclaim_time: 工作区预期欠费回收时间，RFC3339 格式。
-        :param pulumi.Input[builtins.str] password: 工作区 BasicAuth 密码。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input[builtins.str] prometheus_push_intranet_endpoint: 工作区 Push Gateway URL 地址。
-        :param pulumi.Input[builtins.str] prometheus_query_intranet_endpoint: 工作区 Query URL 地址。
-        :param pulumi.Input[builtins.str] prometheus_write_intranet_endpoint: 工作区 RemoteWrite URL 地址。
-        :param pulumi.Input[Union['WorkspaceQuotaArgs', 'WorkspaceQuotaArgsDict']] quota: 工作区配额详情。
-        :param pulumi.Input[builtins.str] status: 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
-        :param pulumi.Input[Union['WorkspaceUsageArgs', 'WorkspaceUsageArgsDict']] usage: 工作区用量。
-        :param pulumi.Input[builtins.str] username: 工作区 BasicAuth 用户名。
-        :param pulumi.Input[builtins.str] workspace_id: 工作区Id。
+        :param pulumi.Input[builtins.str] auth_type: Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+        :param pulumi.Input[builtins.str] bearer_token: Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+        :param pulumi.Input[builtins.str] create_time: Workspace creation time, RFC3339 format
+        :param pulumi.Input[builtins.bool] delete_protection_enabled: Enable workspace deletion protection: true for enabled, false for disabled
+        :param pulumi.Input[builtins.str] description: Workspace description, string, length limit 0–200
+        :param pulumi.Input[Union['WorkspaceInstanceTypeArgs', 'WorkspaceInstanceTypeArgsDict']] instance_type: Workspace specification details
+        :param pulumi.Input[builtins.str] instance_type_id: Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
+        :param pulumi.Input[builtins.str] name: Workspace name, string, length limit 1–100
+        :param pulumi.Input[builtins.str] overdue_reclaim_time: Workspace expected overdue recovery time, RFC3339 format
+        :param pulumi.Input[builtins.str] password: Workspace BasicAuth password
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[builtins.str] prometheus_push_endpoint: Workspace public Push Gateway URL address.
+        :param pulumi.Input[builtins.str] prometheus_push_intranet_endpoint: Workspace Push Gateway URL address
+        :param pulumi.Input[builtins.str] prometheus_query_endpoint: Workspace public Query URL address.
+        :param pulumi.Input[builtins.str] prometheus_query_intranet_endpoint: Workspace Query URL address
+        :param pulumi.Input[builtins.str] prometheus_write_endpoint: Workspace public RemoteWrite URL address.
+        :param pulumi.Input[builtins.str] prometheus_write_intranet_endpoint: Workspace RemoteWrite URL address
+        :param pulumi.Input[builtins.bool] public_access_enabled: Whether to enable workspace public access capability. true: enabled, false: disabled.
+        :param pulumi.Input[builtins.int] public_query_bandwidth: Workspace public Query bandwidth (Mbps).
+        :param pulumi.Input[builtins.int] public_write_bandwidth: Workspace public RemoteWrite bandwidth (Mbps).
+        :param pulumi.Input[Union['WorkspaceQuotaArgs', 'WorkspaceQuotaArgsDict']] quota: Workspace quota details
+        :param pulumi.Input[builtins.str] search_latency_offset: Workspace public Query search latency offset.
+        :param pulumi.Input[builtins.str] status: Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
+        :param pulumi.Input[Union['WorkspaceUsageArgs', 'WorkspaceUsageArgsDict']] usage: Workspace usage
+        :param pulumi.Input[builtins.str] username: Workspace BasicAuth username
+        :param pulumi.Input[builtins.str] workspace_id: Workspace ID
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _WorkspaceState.__new__(_WorkspaceState)
 
+        __props__.__dict__["auth_type"] = auth_type
+        __props__.__dict__["bearer_token"] = bearer_token
         __props__.__dict__["create_time"] = create_time
         __props__.__dict__["delete_protection_enabled"] = delete_protection_enabled
         __props__.__dict__["description"] = description
@@ -650,10 +964,17 @@ class Workspace(pulumi.CustomResource):
         __props__.__dict__["overdue_reclaim_time"] = overdue_reclaim_time
         __props__.__dict__["password"] = password
         __props__.__dict__["project_name"] = project_name
+        __props__.__dict__["prometheus_push_endpoint"] = prometheus_push_endpoint
         __props__.__dict__["prometheus_push_intranet_endpoint"] = prometheus_push_intranet_endpoint
+        __props__.__dict__["prometheus_query_endpoint"] = prometheus_query_endpoint
         __props__.__dict__["prometheus_query_intranet_endpoint"] = prometheus_query_intranet_endpoint
+        __props__.__dict__["prometheus_write_endpoint"] = prometheus_write_endpoint
         __props__.__dict__["prometheus_write_intranet_endpoint"] = prometheus_write_intranet_endpoint
+        __props__.__dict__["public_access_enabled"] = public_access_enabled
+        __props__.__dict__["public_query_bandwidth"] = public_query_bandwidth
+        __props__.__dict__["public_write_bandwidth"] = public_write_bandwidth
         __props__.__dict__["quota"] = quota
+        __props__.__dict__["search_latency_offset"] = search_latency_offset
         __props__.__dict__["status"] = status
         __props__.__dict__["tags"] = tags
         __props__.__dict__["usage"] = usage
@@ -662,10 +983,26 @@ class Workspace(pulumi.CustomResource):
         return Workspace(resource_name, opts=opts, __props__=__props__)
 
     @property
+    @pulumi.getter(name="authType")
+    def auth_type(self) -> pulumi.Output[builtins.str]:
+        """
+        Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+        """
+        return pulumi.get(self, "auth_type")
+
+    @property
+    @pulumi.getter(name="bearerToken")
+    def bearer_token(self) -> pulumi.Output[builtins.str]:
+        """
+        Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+        """
+        return pulumi.get(self, "bearer_token")
+
+    @property
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[builtins.str]:
         """
-        工作区创建时间，RFC3339 格式。
+        Workspace creation time, RFC3339 format
         """
         return pulumi.get(self, "create_time")
 
@@ -673,7 +1010,7 @@ class Workspace(pulumi.CustomResource):
     @pulumi.getter(name="deleteProtectionEnabled")
     def delete_protection_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启工作区删除保护,true：开启，false：关闭。
+        Enable workspace deletion protection: true for enabled, false for disabled
         """
         return pulumi.get(self, "delete_protection_enabled")
 
@@ -681,7 +1018,7 @@ class Workspace(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        工作区描述信息，字符串形式，长度限制为 0～200。
+        Workspace description, string, length limit 0–200
         """
         return pulumi.get(self, "description")
 
@@ -689,7 +1026,7 @@ class Workspace(pulumi.CustomResource):
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> pulumi.Output['outputs.WorkspaceInstanceType']:
         """
-        工作区规格详情。
+        Workspace specification details
         """
         return pulumi.get(self, "instance_type")
 
@@ -697,7 +1034,7 @@ class Workspace(pulumi.CustomResource):
     @pulumi.getter(name="instanceTypeId")
     def instance_type_id(self) -> pulumi.Output[builtins.str]:
         """
-        工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+        Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
         """
         return pulumi.get(self, "instance_type_id")
 
@@ -705,7 +1042,7 @@ class Workspace(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        工作区名称，字符串形式，长度限制为 1～100。
+        Workspace name, string, length limit 1–100
         """
         return pulumi.get(self, "name")
 
@@ -713,7 +1050,7 @@ class Workspace(pulumi.CustomResource):
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> pulumi.Output[builtins.str]:
         """
-        工作区预期欠费回收时间，RFC3339 格式。
+        Workspace expected overdue recovery time, RFC3339 format
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -721,7 +1058,7 @@ class Workspace(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output[builtins.str]:
         """
-        工作区 BasicAuth 密码。
+        Workspace BasicAuth password
         """
         return pulumi.get(self, "password")
 
@@ -729,47 +1066,103 @@ class Workspace(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
+
+    @property
+    @pulumi.getter(name="prometheusPushEndpoint")
+    def prometheus_push_endpoint(self) -> pulumi.Output[builtins.str]:
+        """
+        Workspace public Push Gateway URL address.
+        """
+        return pulumi.get(self, "prometheus_push_endpoint")
 
     @property
     @pulumi.getter(name="prometheusPushIntranetEndpoint")
     def prometheus_push_intranet_endpoint(self) -> pulumi.Output[builtins.str]:
         """
-        工作区 Push Gateway URL 地址。
+        Workspace Push Gateway URL address
         """
         return pulumi.get(self, "prometheus_push_intranet_endpoint")
+
+    @property
+    @pulumi.getter(name="prometheusQueryEndpoint")
+    def prometheus_query_endpoint(self) -> pulumi.Output[builtins.str]:
+        """
+        Workspace public Query URL address.
+        """
+        return pulumi.get(self, "prometheus_query_endpoint")
 
     @property
     @pulumi.getter(name="prometheusQueryIntranetEndpoint")
     def prometheus_query_intranet_endpoint(self) -> pulumi.Output[builtins.str]:
         """
-        工作区 Query URL 地址。
+        Workspace Query URL address
         """
         return pulumi.get(self, "prometheus_query_intranet_endpoint")
+
+    @property
+    @pulumi.getter(name="prometheusWriteEndpoint")
+    def prometheus_write_endpoint(self) -> pulumi.Output[builtins.str]:
+        """
+        Workspace public RemoteWrite URL address.
+        """
+        return pulumi.get(self, "prometheus_write_endpoint")
 
     @property
     @pulumi.getter(name="prometheusWriteIntranetEndpoint")
     def prometheus_write_intranet_endpoint(self) -> pulumi.Output[builtins.str]:
         """
-        工作区 RemoteWrite URL 地址。
+        Workspace RemoteWrite URL address
         """
         return pulumi.get(self, "prometheus_write_intranet_endpoint")
+
+    @property
+    @pulumi.getter(name="publicAccessEnabled")
+    def public_access_enabled(self) -> pulumi.Output[builtins.bool]:
+        """
+        Whether to enable workspace public access capability. true: enabled, false: disabled.
+        """
+        return pulumi.get(self, "public_access_enabled")
+
+    @property
+    @pulumi.getter(name="publicQueryBandwidth")
+    def public_query_bandwidth(self) -> pulumi.Output[builtins.int]:
+        """
+        Workspace public Query bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_query_bandwidth")
+
+    @property
+    @pulumi.getter(name="publicWriteBandwidth")
+    def public_write_bandwidth(self) -> pulumi.Output[builtins.int]:
+        """
+        Workspace public RemoteWrite bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_write_bandwidth")
 
     @property
     @pulumi.getter
     def quota(self) -> pulumi.Output['outputs.WorkspaceQuota']:
         """
-        工作区配额详情。
+        Workspace quota details
         """
         return pulumi.get(self, "quota")
+
+    @property
+    @pulumi.getter(name="searchLatencyOffset")
+    def search_latency_offset(self) -> pulumi.Output[builtins.str]:
+        """
+        Workspace public Query search latency offset.
+        """
+        return pulumi.get(self, "search_latency_offset")
 
     @property
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+        Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
         """
         return pulumi.get(self, "status")
 
@@ -782,7 +1175,7 @@ class Workspace(pulumi.CustomResource):
     @pulumi.getter
     def usage(self) -> pulumi.Output['outputs.WorkspaceUsage']:
         """
-        工作区用量。
+        Workspace usage
         """
         return pulumi.get(self, "usage")
 
@@ -790,7 +1183,7 @@ class Workspace(pulumi.CustomResource):
     @pulumi.getter
     def username(self) -> pulumi.Output[builtins.str]:
         """
-        工作区 BasicAuth 用户名。
+        Workspace BasicAuth username
         """
         return pulumi.get(self, "username")
 
@@ -798,7 +1191,7 @@ class Workspace(pulumi.CustomResource):
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> pulumi.Output[builtins.str]:
         """
-        工作区Id。
+        Workspace ID
         """
         return pulumi.get(self, "workspace_id")
 

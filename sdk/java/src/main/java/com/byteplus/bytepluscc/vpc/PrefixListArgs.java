@@ -21,14 +21,14 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
     public static final PrefixListArgs Empty = new PrefixListArgs();
 
     /**
-     * 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     public Optional<Output<String>> description() {
@@ -36,14 +36,14 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+     * IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
      * 
      */
     @Import(name="ipVersion")
     private @Nullable Output<String> ipVersion;
 
     /**
-     * @return IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+     * @return IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
      * 
      */
     public Optional<Output<String>> ipVersion() {
@@ -51,14 +51,14 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+     * Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
      * 
      */
     @Import(name="maxEntries", required=true)
     private Output<Integer> maxEntries;
 
     /**
-     * @return 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+     * @return Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
      * 
      */
     public Output<Integer> maxEntries() {
@@ -73,14 +73,14 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+     * Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
      * 
      */
     @Import(name="prefixListName")
     private @Nullable Output<String> prefixListName;
 
     /**
-     * @return 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+     * @return Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
      * 
      */
     public Optional<Output<String>> prefixListName() {
@@ -88,14 +88,14 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 前缀列表所属项目的名称，不填默认加入default项目。
+     * Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 前缀列表所属项目的名称，不填默认加入default项目。
+     * @return Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -140,7 +140,7 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipVersion IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+         * @param ipVersion IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipVersion IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+         * @param ipVersion IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxEntries 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+         * @param maxEntries Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxEntries 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+         * @param maxEntries Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prefixListName 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+         * @param prefixListName Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prefixListName 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+         * @param prefixListName Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 前缀列表所属项目的名称，不填默认加入default项目。
+         * @param projectName Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 前缀列表所属项目的名称，不填默认加入default项目。
+         * @param projectName Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
          * 
          * @return builder
          * 

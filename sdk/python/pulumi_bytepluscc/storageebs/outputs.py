@@ -34,8 +34,8 @@ class SnapshotTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
-        :param builtins.str value: 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        :param builtins.str key: User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
+        :param builtins.str value: User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -46,7 +46,7 @@ class SnapshotTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "key")
 
@@ -54,7 +54,7 @@ class SnapshotTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
         """
         return pulumi.get(self, "value")
 
@@ -65,8 +65,8 @@ class VolumeBaselinePerformance(dict):
                  iops: Optional[builtins.float] = None,
                  throughput: Optional[builtins.float] = None):
         """
-        :param builtins.float iops: 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
-        :param builtins.float throughput: 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+        :param builtins.float iops: Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
+        :param builtins.float throughput: The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
         """
         if iops is not None:
             pulumi.set(__self__, "iops", iops)
@@ -77,7 +77,7 @@ class VolumeBaselinePerformance(dict):
     @pulumi.getter
     def iops(self) -> Optional[builtins.float]:
         """
-        云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+        Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
         """
         return pulumi.get(self, "iops")
 
@@ -85,7 +85,7 @@ class VolumeBaselinePerformance(dict):
     @pulumi.getter
     def throughput(self) -> Optional[builtins.float]:
         """
-        云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+        The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
         """
         return pulumi.get(self, "throughput")
 
@@ -114,9 +114,9 @@ class VolumeExtraPerformance(dict):
                  iops: Optional[builtins.float] = None,
                  throughput: Optional[builtins.float] = None):
         """
-        :param builtins.str extra_performance_type_id: 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
-        :param builtins.float iops: 云盘的额外IOPS。
-        :param builtins.float throughput: 云盘的额外吞吐量。
+        :param builtins.str extra_performance_type_id: Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
+        :param builtins.float iops: Extra IOPS of the disk.
+        :param builtins.float throughput: Extra throughput of the disk.
         """
         if extra_performance_type_id is not None:
             pulumi.set(__self__, "extra_performance_type_id", extra_performance_type_id)
@@ -129,7 +129,7 @@ class VolumeExtraPerformance(dict):
     @pulumi.getter(name="extraPerformanceTypeId")
     def extra_performance_type_id(self) -> Optional[builtins.str]:
         """
-        额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+        Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
         """
         return pulumi.get(self, "extra_performance_type_id")
 
@@ -137,7 +137,7 @@ class VolumeExtraPerformance(dict):
     @pulumi.getter
     def iops(self) -> Optional[builtins.float]:
         """
-        云盘的额外IOPS。
+        Extra IOPS of the disk.
         """
         return pulumi.get(self, "iops")
 
@@ -145,7 +145,7 @@ class VolumeExtraPerformance(dict):
     @pulumi.getter
     def throughput(self) -> Optional[builtins.float]:
         """
-        云盘的额外吞吐量。
+        Extra throughput of the disk.
         """
         return pulumi.get(self, "throughput")
 
@@ -156,8 +156,8 @@ class VolumeTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -168,7 +168,7 @@ class VolumeTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -176,7 +176,7 @@ class VolumeTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -187,8 +187,8 @@ class VolumeTotalPerformance(dict):
                  iops: Optional[builtins.float] = None,
                  throughput: Optional[builtins.float] = None):
         """
-        :param builtins.float iops: 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
-        :param builtins.float throughput: 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+        :param builtins.float iops: Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
+        :param builtins.float throughput: The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
         """
         if iops is not None:
             pulumi.set(__self__, "iops", iops)
@@ -199,7 +199,7 @@ class VolumeTotalPerformance(dict):
     @pulumi.getter
     def iops(self) -> Optional[builtins.float]:
         """
-        云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+        Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
         """
         return pulumi.get(self, "iops")
 
@@ -207,7 +207,7 @@ class VolumeTotalPerformance(dict):
     @pulumi.getter
     def throughput(self) -> Optional[builtins.float]:
         """
-        云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+        The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
         """
         return pulumi.get(self, "throughput")
 
@@ -218,8 +218,8 @@ class GetSnapshotTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
-        :param builtins.str value: 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        :param builtins.str key: User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
+        :param builtins.str value: User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -228,7 +228,7 @@ class GetSnapshotTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "key")
 
@@ -236,7 +236,7 @@ class GetSnapshotTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
         """
         return pulumi.get(self, "value")
 
@@ -247,8 +247,8 @@ class GetVolumeBaselinePerformanceResult(dict):
                  iops: builtins.float,
                  throughput: builtins.float):
         """
-        :param builtins.float iops: 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
-        :param builtins.float throughput: 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+        :param builtins.float iops: Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
+        :param builtins.float throughput: The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
         """
         pulumi.set(__self__, "iops", iops)
         pulumi.set(__self__, "throughput", throughput)
@@ -257,7 +257,7 @@ class GetVolumeBaselinePerformanceResult(dict):
     @pulumi.getter
     def iops(self) -> builtins.float:
         """
-        云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+        Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
         """
         return pulumi.get(self, "iops")
 
@@ -265,7 +265,7 @@ class GetVolumeBaselinePerformanceResult(dict):
     @pulumi.getter
     def throughput(self) -> builtins.float:
         """
-        云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+        The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
         """
         return pulumi.get(self, "throughput")
 
@@ -277,9 +277,9 @@ class GetVolumeExtraPerformanceResult(dict):
                  iops: builtins.float,
                  throughput: builtins.float):
         """
-        :param builtins.str extra_performance_type_id: 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
-        :param builtins.float iops: 云盘的额外IOPS。
-        :param builtins.float throughput: 云盘的额外吞吐量。
+        :param builtins.str extra_performance_type_id: Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
+        :param builtins.float iops: Extra IOPS of the disk.
+        :param builtins.float throughput: Extra throughput of the disk.
         """
         pulumi.set(__self__, "extra_performance_type_id", extra_performance_type_id)
         pulumi.set(__self__, "iops", iops)
@@ -289,7 +289,7 @@ class GetVolumeExtraPerformanceResult(dict):
     @pulumi.getter(name="extraPerformanceTypeId")
     def extra_performance_type_id(self) -> builtins.str:
         """
-        额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+        Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
         """
         return pulumi.get(self, "extra_performance_type_id")
 
@@ -297,7 +297,7 @@ class GetVolumeExtraPerformanceResult(dict):
     @pulumi.getter
     def iops(self) -> builtins.float:
         """
-        云盘的额外IOPS。
+        Extra IOPS of the disk.
         """
         return pulumi.get(self, "iops")
 
@@ -305,7 +305,7 @@ class GetVolumeExtraPerformanceResult(dict):
     @pulumi.getter
     def throughput(self) -> builtins.float:
         """
-        云盘的额外吞吐量。
+        Extra throughput of the disk.
         """
         return pulumi.get(self, "throughput")
 
@@ -316,8 +316,8 @@ class GetVolumeTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -326,7 +326,7 @@ class GetVolumeTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -334,7 +334,7 @@ class GetVolumeTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -345,8 +345,8 @@ class GetVolumeTotalPerformanceResult(dict):
                  iops: builtins.float,
                  throughput: builtins.float):
         """
-        :param builtins.float iops: 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
-        :param builtins.float throughput: 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+        :param builtins.float iops: Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
+        :param builtins.float throughput: The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
         """
         pulumi.set(__self__, "iops", iops)
         pulumi.set(__self__, "throughput", throughput)
@@ -355,7 +355,7 @@ class GetVolumeTotalPerformanceResult(dict):
     @pulumi.getter
     def iops(self) -> builtins.float:
         """
-        云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+        Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
         """
         return pulumi.get(self, "iops")
 
@@ -363,7 +363,7 @@ class GetVolumeTotalPerformanceResult(dict):
     @pulumi.getter
     def throughput(self) -> builtins.float:
         """
-        云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+        The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
         """
         return pulumi.get(self, "throughput")
 

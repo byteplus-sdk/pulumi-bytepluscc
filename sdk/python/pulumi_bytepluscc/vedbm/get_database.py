@@ -52,7 +52,7 @@ class GetDatabaseResult:
     @pulumi.getter(name="characterSetName")
     def character_set_name(self) -> builtins.str:
         """
-        数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+        Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
         """
         return pulumi.get(self, "character_set_name")
 
@@ -60,7 +60,7 @@ class GetDatabaseResult:
     @pulumi.getter(name="databasesPrivileges")
     def databases_privileges(self) -> Sequence['outputs.GetDatabaseDatabasesPrivilegeResult']:
         """
-        数据库的权限信息
+        Database permission information
         """
         return pulumi.get(self, "databases_privileges")
 
@@ -68,7 +68,7 @@ class GetDatabaseResult:
     @pulumi.getter(name="dbDesc")
     def db_desc(self) -> builtins.str:
         """
-        数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+        Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
         """
         return pulumi.get(self, "db_desc")
 
@@ -76,7 +76,7 @@ class GetDatabaseResult:
     @pulumi.getter(name="dbName")
     def db_name(self) -> builtins.str:
         """
-        数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+        Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
         """
         return pulumi.get(self, "db_name")
 
@@ -92,7 +92,7 @@ class GetDatabaseResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 

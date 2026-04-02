@@ -12,62 +12,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceRdmaNetworkInterfaceDetail {
     /**
-     * @return 网关地址。
+     * @return Gateway address.
      * 
      */
     private @Nullable String gateway;
     /**
-     * @return IP地址。
+     * @return IP address
      * 
      */
     private @Nullable String ip;
     /**
-     * @return 子网掩码。
+     * @return Subnet mask.
      * 
      */
     private @Nullable String mask;
     /**
-     * @return 交换机名称。
+     * @return Switch name.
      * 
      */
     private @Nullable String switchName;
     /**
-     * @return 交换机端口。
+     * @return Switch port.
      * 
      */
     private @Nullable String switchPort;
 
     private InstanceRdmaNetworkInterfaceDetail() {}
     /**
-     * @return 网关地址。
+     * @return Gateway address.
      * 
      */
     public Optional<String> gateway() {
         return Optional.ofNullable(this.gateway);
     }
     /**
-     * @return IP地址。
+     * @return IP address
      * 
      */
     public Optional<String> ip() {
         return Optional.ofNullable(this.ip);
     }
     /**
-     * @return 子网掩码。
+     * @return Subnet mask.
      * 
      */
     public Optional<String> mask() {
         return Optional.ofNullable(this.mask);
     }
     /**
-     * @return 交换机名称。
+     * @return Switch name.
      * 
      */
     public Optional<String> switchName() {
         return Optional.ofNullable(this.switchName);
     }
     /**
-     * @return 交换机端口。
+     * @return Switch port.
      * 
      */
     public Optional<String> switchPort() {

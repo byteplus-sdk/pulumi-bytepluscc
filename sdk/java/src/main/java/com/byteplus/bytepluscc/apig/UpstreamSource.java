@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * API 网关支持基于容器服务（VKE）集和容器服务的注册集群功能，将集群导入到 API 网关实例，将其作为网关的 Upstream 来源，以便网关获取集群中的 Service 列表。
+ * The API Gateway supports cluster registration based on container services (VKE) and container service clusters. Import clusters into the API Gateway instance to use them as Upstream sources, allowing the gateway to retrieve the Service list from the cluster
  * 
  * ## Example Usage
  * 
@@ -34,154 +34,154 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:apig/upstreamSource:UpstreamSource")
 public class UpstreamSource extends com.pulumi.resources.CustomResource {
     /**
-     * 备注，长度限制为0~253个字符。
+     * Remarks, length limit: 0–253 characters
      * 
      */
     @Export(name="comments", refs={String.class}, tree="[0]")
     private Output<String> comments;
 
     /**
-     * @return 备注，长度限制为0~253个字符。
+     * @return Remarks, length limit: 0–253 characters
      * 
      */
     public Output<String> comments() {
         return this.comments;
     }
     /**
-     * 创建时间。
+     * Creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 网关实例ID。
+     * Gateway instance ID
      * 
      */
     @Export(name="gatewayId", refs={String.class}, tree="[0]")
     private Output<String> gatewayId;
 
     /**
-     * @return 网关实例ID。
+     * @return Gateway instance ID
      * 
      */
     public Output<String> gatewayId() {
         return this.gatewayId;
     }
     /**
-     * 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+     * Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
      * 
      */
     @Export(name="ingressSettings", refs={UpstreamSourceIngressSettings.class}, tree="[0]")
     private Output<UpstreamSourceIngressSettings> ingressSettings;
 
     /**
-     * @return 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+     * @return Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
      * 
      */
     public Output<UpstreamSourceIngressSettings> ingressSettings() {
         return this.ingressSettings;
     }
     /**
-     * Upstream来源配置。
+     * Upstream source configuration
      * 
      */
     @Export(name="sourceSpec", refs={UpstreamSourceSourceSpec.class}, tree="[0]")
     private Output<UpstreamSourceSourceSpec> sourceSpec;
 
     /**
-     * @return Upstream来源配置。
+     * @return Upstream source configuration
      * 
      */
     public Output<UpstreamSourceSourceSpec> sourceSpec() {
         return this.sourceSpec;
     }
     /**
-     * Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+     * Upstream source type. Options: K8S: Container cluster. Nacos: Registry
      * 
      */
     @Export(name="sourceType", refs={String.class}, tree="[0]")
     private Output<String> sourceType;
 
     /**
-     * @return Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+     * @return Upstream source type. Options: K8S: Container cluster. Nacos: Registry
      * 
      */
     public Output<String> sourceType() {
         return this.sourceType;
     }
     /**
-     * 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+     * Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+     * @return Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+     * Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
      * 
      */
     @Export(name="statusMessage", refs={String.class}, tree="[0]")
     private Output<String> statusMessage;
 
     /**
-     * @return 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+     * @return Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
      * 
      */
     public Output<String> statusMessage() {
         return this.statusMessage;
     }
     /**
-     * 更新时间。
+     * Update time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * Upstream来源ID。
+     * Upstream source ID
      * 
      */
     @Export(name="upstreamSourceId", refs={String.class}, tree="[0]")
     private Output<String> upstreamSourceId;
 
     /**
-     * @return Upstream来源ID。
+     * @return Upstream source ID
      * 
      */
     public Output<String> upstreamSourceId() {
         return this.upstreamSourceId;
     }
     /**
-     * 指定命名空间。
+     * Specify namespace
      * 
      */
     @Export(name="watchNamespaces", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> watchNamespaces;
 
     /**
-     * @return 指定命名空间。
+     * @return Specify namespace
      * 
      */
     public Output<List<String>> watchNamespaces() {

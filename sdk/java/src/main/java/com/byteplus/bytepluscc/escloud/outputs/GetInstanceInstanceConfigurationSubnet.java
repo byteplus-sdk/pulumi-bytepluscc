@@ -16,7 +16,7 @@ public final class GetInstanceInstanceConfigurationSubnet {
      */
     private String subnetId;
     /**
-     * @return Subnet 名称。
+     * @return Subnet name
      * 
      */
     private String subnetName;
@@ -30,7 +30,7 @@ public final class GetInstanceInstanceConfigurationSubnet {
         return this.subnetId;
     }
     /**
-     * @return Subnet 名称。
+     * @return Subnet name
      * 
      */
     public String subnetName() {

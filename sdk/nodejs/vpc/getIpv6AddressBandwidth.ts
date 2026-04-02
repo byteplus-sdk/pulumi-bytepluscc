@@ -31,31 +31,31 @@ export interface GetIpv6AddressBandwidthArgs {
  */
 export interface GetIpv6AddressBandwidthResult {
     /**
-     * IPv6公网带宽的ID。
+     * IPv6 public bandwidth ID
      */
     readonly allocationId: string;
     /**
-     * IPv6公网带宽的带宽上限。
+     * IPv6 public bandwidth cap
      */
     readonly bandwidth: number;
     /**
-     * IPv6共享带宽包的ID。
+     * IPv6 shared bandwidth package ID
      */
     readonly bandwidthPackageId: string;
     /**
-     * IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
      */
     readonly billingType: number;
     /**
-     * IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+     * Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
      */
     readonly businessStatus: string;
     /**
-     * IPv6公网带宽的开通时间。
+     * IPv6 public bandwidth activation time
      */
     readonly createdTime: string;
     /**
-     * IPv6公网带宽的删除时间。
+     * IPv6 public bandwidth deletion time
      */
     readonly deletedTime: string;
     /**
@@ -63,55 +63,55 @@ export interface GetIpv6AddressBandwidthResult {
      */
     readonly id: string;
     /**
-     * IPv6公网带宽关联的实例ID。
+     * Instance ID associated with IPv6 public bandwidth
      */
     readonly instanceId: string;
     /**
-     * IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+     * Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
      */
     readonly instanceType: string;
     /**
-     * IPv6地址。
+     * IPv6 address
      */
     readonly ipv6Address: string;
     /**
-     * IPv6网关的ID。
+     * IPv6 gateway ID
      */
     readonly ipv6GatewayId: string;
     /**
-     * IPv6公网带宽的线路类型。BGP：BGP（多线）。
+     * IPv6 public bandwidth line type. BGP: BGP (multi-line).
      */
     readonly isp: string;
     /**
-     * IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+     * Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
      */
     readonly lockReason: string;
     /**
-     * IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+     * IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
      */
     readonly networkType: string;
     /**
-     * IPv6公网带宽欠费关停的时间。
+     * IPv6 public bandwidth deactivation time due to overdue payment
      */
     readonly overdueTime: string;
     /**
-     * IPv6公网带宽的项目。
+     * IPv6 public bandwidth project
      */
     readonly projectName: string;
     /**
-     * 是否为服务托管。
+     * Service hosting status
      */
     readonly serviceManaged: boolean;
     /**
-     * IPv6公网带宽的状态。Creating：创建中。Available：可用。
+     * IPv6 public bandwidth status. Creating: Creating. Available: Available.
      */
     readonly status: string;
     /**
-     * 标签信息
+     * Tag information
      */
     readonly tags: outputs.vpc.GetIpv6AddressBandwidthTag[];
     /**
-     * IPv6公网带宽的最近操作时间。
+     * IPv6 public bandwidth last operation time
      */
     readonly updatedTime: string;
 }

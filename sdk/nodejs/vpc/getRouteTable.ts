@@ -31,23 +31,23 @@ export interface GetRouteTableArgs {
  */
 export interface GetRouteTableResult {
     /**
-     * 路由表所属账号的ID。
+     * Account ID owning the route table
      */
     readonly accountId: string;
     /**
-     * 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+     * Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
      */
     readonly associateType: string;
     /**
-     * 路由表创建时间。
+     * Route Table Creation Time
      */
     readonly createdTime: string;
     /**
-     * 路由表关联的自定义路由条目列表。
+     * List of custom route entries associated with the route table
      */
     readonly customRouteEntries: outputs.vpc.GetRouteTableCustomRouteEntry[];
     /**
-     * 路由表描述信息。
+     * Route Table Description
      */
     readonly description: string;
     /**
@@ -55,51 +55,51 @@ export interface GetRouteTableResult {
      */
     readonly id: string;
     /**
-     * 关联路由表的IPv4网关ID。
+     * IPv4 Gateway ID associated with the route table
      */
     readonly ipv4GatewayId: string;
     /**
-     * 关联路由表的IPv6网关ID。
+     * IPv6 Gateway ID associated with the route table
      */
     readonly ipv6GatewayId: string;
     /**
-     * 路由表所属项目的名称。
+     * Name of the project owning the route table
      */
     readonly projectName: string;
     /**
-     * 路由表ID。
+     * Route Table ID
      */
     readonly routeTableId: string;
     /**
-     * 路由表名称。
+     * Route Table Name
      */
     readonly routeTableName: string;
     /**
-     * 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+     * Route table type. 1. Custom: Custom route table 2. System: System route table
      */
     readonly routeTableType: string;
     /**
-     * 关联的子网的ID列表。
+     * List of associated subnet IDs
      */
     readonly subnetIds: string[];
     /**
-     * 路由表关联的系统默认路由条目列表。
+     * List of system default route entries associated with the route table
      */
     readonly systemRouteEntries: outputs.vpc.GetRouteTableSystemRouteEntry[];
     /**
-     * 标签列表。
+     * Tag List
      */
     readonly tags: outputs.vpc.GetRouteTableTag[];
     /**
-     * 路由表更新时间。
+     * Route Table Last Updated Time
      */
     readonly updatedTime: string;
     /**
-     * 路由表所属VPC的ID。
+     * ID of the VPC owning the route table
      */
     readonly vpcId: string;
     /**
-     * VPC的名称。
+     * VPC Name
      */
     readonly vpcName: string;
 }

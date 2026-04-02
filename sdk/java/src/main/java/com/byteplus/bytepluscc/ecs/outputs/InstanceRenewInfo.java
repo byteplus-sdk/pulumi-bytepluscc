@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceRenewInfo {
     /**
-     * @return 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+     * @return Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
      * 
      */
     private @Nullable Integer period;
     /**
-     * @return 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+     * @return Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
      * 
      */
     private @Nullable String periodUnit;
 
     private InstanceRenewInfo() {}
     /**
-     * @return 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+     * @return Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
      * 
      */
     public Optional<Integer> period() {
         return Optional.ofNullable(this.period);
     }
     /**
-     * @return 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+     * @return Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
      * 
      */
     public Optional<String> periodUnit() {

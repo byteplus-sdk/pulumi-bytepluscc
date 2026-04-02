@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainConditionalOriginOriginRuleActions {
     /**
-     * @return 表示一个源站配置列表。当前，列表中只能包含一个源站配置。
+     * @return Indicates a list of origin configurations. Currently, the list can contain only one origin configuration.
      * 
      */
     private List<GetDomainConditionalOriginOriginRuleActionsOriginLine> originLines;
 
     private GetDomainConditionalOriginOriginRuleActions() {}
     /**
-     * @return 表示一个源站配置列表。当前，列表中只能包含一个源站配置。
+     * @return Indicates a list of origin configurations. Currently, the list can contain only one origin configuration.
      * 
      */
     public List<GetDomainConditionalOriginOriginRuleActionsOriginLine> originLines() {

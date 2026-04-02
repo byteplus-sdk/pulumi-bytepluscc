@@ -13,27 +13,27 @@ import java.util.Objects;
 @CustomType
 public final class GetGroupResult {
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     private String createdTime;
     /**
-     * @return 描述。
+     * @return Description
      * 
      */
     private String description;
     /**
-     * @return 显示名。
+     * @return Display Name
      * 
      */
     private String displayName;
     /**
-     * @return 用户组id。
+     * @return User Group ID
      * 
      */
     private String groupId;
     /**
-     * @return 用户组名称。
+     * @return User Group Name
      * 
      */
     private String groupName;
@@ -43,57 +43,57 @@ public final class GetGroupResult {
      */
     private String id;
     /**
-     * @return 用户组类型。
+     * @return User Group Type
      * 
      */
     private String joinType;
     /**
-     * @return 用户组成员列表
+     * @return User Group Member List
      * 
      */
     private List<GetGroupMember> members;
     /**
-     * @return 用户组来源。
+     * @return User Group Source
      * 
      */
     private String source;
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     private String updatedTime;
 
     private GetGroupResult() {}
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 描述。
+     * @return Description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 显示名。
+     * @return Display Name
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return 用户组id。
+     * @return User Group ID
      * 
      */
     public String groupId() {
         return this.groupId;
     }
     /**
-     * @return 用户组名称。
+     * @return User Group Name
      * 
      */
     public String groupName() {
@@ -107,28 +107,28 @@ public final class GetGroupResult {
         return this.id;
     }
     /**
-     * @return 用户组类型。
+     * @return User Group Type
      * 
      */
     public String joinType() {
         return this.joinType;
     }
     /**
-     * @return 用户组成员列表
+     * @return User Group Member List
      * 
      */
     public List<GetGroupMember> members() {
         return this.members;
     }
     /**
-     * @return 用户组来源。
+     * @return User Group Source
      * 
      */
     public String source() {
         return this.source;
     }
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     public String updatedTime() {

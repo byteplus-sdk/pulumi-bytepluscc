@@ -18,14 +18,14 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
     public static final DomainOriginAccessRuleArgs Empty = new DomainOriginAccessRuleArgs();
 
     /**
-     * 表示用户请求头的 Origin 头部为空（&#34;&#34;）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+     * Specifies whether requests are allowed when the Origin header in the user request is empty (&#34;&#34;). The parameter values are: true: allow; false: do not allow. The default value is false.
      * 
      */
     @Import(name="allowEmpty")
     private @Nullable Output<Boolean> allowEmpty;
 
     /**
-     * @return 表示用户请求头的 Origin 头部为空（&#34;&#34;）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+     * @return Specifies whether requests are allowed when the Origin header in the user request is empty (&#34;&#34;). The parameter values are: true: allow; false: do not allow. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> allowEmpty() {
@@ -33,14 +33,14 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
+     * Indicates whether Origin is case sensitive. This parameter has the following values: true: Origin is case insensitive; false: Origin is case sensitive. The default value is true.
      * 
      */
     @Import(name="ignoreCase")
     private @Nullable Output<Boolean> ignoreCase;
 
     /**
-     * @return 表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
+     * @return Indicates whether Origin is case sensitive. This parameter has the following values: true: Origin is case insensitive; false: Origin is case sensitive. The default value is true.
      * 
      */
     public Optional<Output<Boolean>> ignoreCase() {
@@ -48,14 +48,14 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+     * The address list corresponding to RuleType. When Switch is true, this parameter is required. You can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domain names. Domain names can be second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 100 addresses. When entering domain names, you do not need to include http:// or https://. The value length cannot exceed 3,000 characters.
      * 
      */
     @Import(name="origins")
     private @Nullable Output<List<String>> origins;
 
     /**
-     * @return RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+     * @return The address list corresponding to RuleType. When Switch is true, this parameter is required. You can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domain names. Domain names can be second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 100 addresses. When entering domain names, you do not need to include http:// or https://. The value length cannot exceed 3,000 characters.
      * 
      */
     public Optional<Output<List<String>>> origins() {
@@ -63,14 +63,14 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+     * Origin list configuration type. When Switch is true, this parameter is required. The parameter has the following values: allow: indicates allowlist. deny: indicates denylist.
      * 
      */
     @Import(name="ruleType")
     private @Nullable Output<String> ruleType;
 
     /**
-     * @return Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+     * @return Origin list configuration type. When Switch is true, this parameter is required. The parameter has the following values: allow: indicates allowlist. deny: indicates denylist.
      * 
      */
     public Optional<Output<String>> ruleType() {
@@ -78,14 +78,14 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -121,7 +121,7 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param allowEmpty 表示用户请求头的 Origin 头部为空（&#34;&#34;）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+         * @param allowEmpty Specifies whether requests are allowed when the Origin header in the user request is empty (&#34;&#34;). The parameter values are: true: allow; false: do not allow. The default value is false.
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param allowEmpty 表示用户请求头的 Origin 头部为空（&#34;&#34;）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+         * @param allowEmpty Specifies whether requests are allowed when the Origin header in the user request is empty (&#34;&#34;). The parameter values are: true: allow; false: do not allow. The default value is false.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param ignoreCase 表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
+         * @param ignoreCase Indicates whether Origin is case sensitive. This parameter has the following values: true: Origin is case insensitive; false: Origin is case sensitive. The default value is true.
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param ignoreCase 表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
+         * @param ignoreCase Indicates whether Origin is case sensitive. This parameter has the following values: true: Origin is case insensitive; false: Origin is case sensitive. The default value is true.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param origins RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+         * @param origins The address list corresponding to RuleType. When Switch is true, this parameter is required. You can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domain names. Domain names can be second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 100 addresses. When entering domain names, you do not need to include http:// or https://. The value length cannot exceed 3,000 characters.
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param origins RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+         * @param origins The address list corresponding to RuleType. When Switch is true, this parameter is required. You can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domain names. Domain names can be second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 100 addresses. When entering domain names, you do not need to include http:// or https://. The value length cannot exceed 3,000 characters.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param origins RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+         * @param origins The address list corresponding to RuleType. When Switch is true, this parameter is required. You can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domain names. Domain names can be second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 100 addresses. When entering domain names, you do not need to include http:// or https://. The value length cannot exceed 3,000 characters.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param ruleType Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+         * @param ruleType Origin list configuration type. When Switch is true, this parameter is required. The parameter has the following values: allow: indicates allowlist. deny: indicates denylist.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param ruleType Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+         * @param ruleType Origin list configuration type. When Switch is true, this parameter is required. The parameter has the following values: allow: indicates allowlist. deny: indicates denylist.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * @param switch_ Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class DomainOriginAccessRuleArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * @param switch_ Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
          * 
          * @return builder
          * 

@@ -30,21 +30,21 @@ type LookupPermissionSetProvisioningArgs struct {
 
 // A collection of values returned by getPermissionSetProvisioning.
 type LookupPermissionSetProvisioningResult struct {
-	// 创建时间。
+	// Creation time
 	CreatedTime string `pulumi:"createdTime"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 权限集 ID。
+	// Permission set ID
 	PermissionSetId string `pulumi:"permissionSetId"`
-	// 权限集名。
+	// Permission set name
 	PermissionSetName string `pulumi:"permissionSetName"`
-	// 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+	// Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
 	ProvisioningStatus string `pulumi:"provisioningStatus"`
-	// 授权的账号 ID。
+	// Authorized account ID
 	TargetId string `pulumi:"targetId"`
-	// 账号名。
+	// Account name
 	TargetName string `pulumi:"targetName"`
-	// 更新时间。
+	// Update time
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -82,7 +82,7 @@ func (o LookupPermissionSetProvisioningResultOutput) ToLookupPermissionSetProvis
 	return o
 }
 
-// 创建时间。
+// Creation time
 func (o LookupPermissionSetProvisioningResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetProvisioningResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
@@ -92,32 +92,32 @@ func (o LookupPermissionSetProvisioningResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetProvisioningResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 权限集 ID。
+// Permission set ID
 func (o LookupPermissionSetProvisioningResultOutput) PermissionSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetProvisioningResult) string { return v.PermissionSetId }).(pulumi.StringOutput)
 }
 
-// 权限集名。
+// Permission set name
 func (o LookupPermissionSetProvisioningResultOutput) PermissionSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetProvisioningResult) string { return v.PermissionSetName }).(pulumi.StringOutput)
 }
 
-// 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+// Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
 func (o LookupPermissionSetProvisioningResultOutput) ProvisioningStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetProvisioningResult) string { return v.ProvisioningStatus }).(pulumi.StringOutput)
 }
 
-// 授权的账号 ID。
+// Authorized account ID
 func (o LookupPermissionSetProvisioningResultOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetProvisioningResult) string { return v.TargetId }).(pulumi.StringOutput)
 }
 
-// 账号名。
+// Account name
 func (o LookupPermissionSetProvisioningResultOutput) TargetName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetProvisioningResult) string { return v.TargetName }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update time
 func (o LookupPermissionSetProvisioningResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetProvisioningResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

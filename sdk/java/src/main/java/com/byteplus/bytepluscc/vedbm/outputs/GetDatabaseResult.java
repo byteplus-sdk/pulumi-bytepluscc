@@ -13,22 +13,22 @@ import java.util.Objects;
 @CustomType
 public final class GetDatabaseResult {
     /**
-     * @return 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+     * @return Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
      * 
      */
     private String characterSetName;
     /**
-     * @return 数据库的权限信息
+     * @return Database permission information
      * 
      */
     private List<GetDatabaseDatabasesPrivilege> databasesPrivileges;
     /**
-     * @return 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+     * @return Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
      * 
      */
     private String dbDesc;
     /**
-     * @return 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+     * @return Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
      * 
      */
     private String dbName;
@@ -38,35 +38,35 @@ public final class GetDatabaseResult {
      */
     private String id;
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     private String instanceId;
 
     private GetDatabaseResult() {}
     /**
-     * @return 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+     * @return Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
      * 
      */
     public String characterSetName() {
         return this.characterSetName;
     }
     /**
-     * @return 数据库的权限信息
+     * @return Database permission information
      * 
      */
     public List<GetDatabaseDatabasesPrivilege> databasesPrivileges() {
         return this.databasesPrivileges;
     }
     /**
-     * @return 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+     * @return Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
      * 
      */
     public String dbDesc() {
         return this.dbDesc;
     }
     /**
-     * @return 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+     * @return Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
      * 
      */
     public String dbName() {
@@ -80,7 +80,7 @@ public final class GetDatabaseResult {
         return this.id;
     }
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     public String instanceId() {

@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class DomainOriginCondition {
     private @Nullable List<DomainOriginConditionConditionRule> conditionRules;
     /**
-     * @return 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 &#34;AND&#34;。OR：表示逻辑关系是 &#34;OR&#34;。该参数的默认值是 OR。
+     * @return Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
      * 
      */
     private @Nullable String connective;
@@ -25,7 +25,7 @@ public final class DomainOriginCondition {
         return this.conditionRules == null ? List.of() : this.conditionRules;
     }
     /**
-     * @return 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 &#34;AND&#34;。OR：表示逻辑关系是 &#34;OR&#34;。该参数的默认值是 OR。
+     * @return Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
      * 
      */
     public Optional<String> connective() {

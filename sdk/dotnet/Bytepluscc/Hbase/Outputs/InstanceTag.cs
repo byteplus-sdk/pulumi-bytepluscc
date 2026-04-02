@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Hbase.Outputs
     public sealed class InstanceTag
     {
         /// <summary>
-        /// 实例所绑定标签的标签键。
+        /// Tag key of the tags bound to the instance
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 实例所绑定标签的标签值。
+        /// Tag values bound to the instance.
         /// </summary>
         public readonly string? Value;
 

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class DefaultNodePoolNodeConfigTagGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 标签键。
+        /// Label key.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 标签值。
+        /// Tag value
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

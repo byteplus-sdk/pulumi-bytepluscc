@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 路由表由一系列路由条目组成，为私有网络的流量指定下一跳的云资源，每个子网必须且仅支持关联一个路由表，使子网内的资源通过路由表转发流量。
+ * A route table consists of a series of route entries that specify the next hop cloud resource for private network traffic. Each subnet must be associated with only one route table, allowing resources within the subnet to forward traffic via the route table
  *
  * ## Import
  *
@@ -44,62 +44,62 @@ export class RouteTable extends pulumi.CustomResource {
     }
 
     /**
-     * 路由表所属账号的ID。
+     * Account ID owning the route table
      */
     public /*out*/ readonly accountId!: pulumi.Output<string>;
     /**
-     * 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+     * Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
      */
     public readonly associateType!: pulumi.Output<string>;
     /**
-     * 路由表创建时间。
+     * Route Table Creation Time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     public readonly customRouteEntries!: pulumi.Output<outputs.vpc.RouteTableCustomRouteEntry[]>;
     /**
-     * 路由表描述信息。
+     * Route Table Description
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 关联路由表的IPv4网关ID。
+     * IPv4 Gateway ID associated with the route table
      */
     public readonly ipv4GatewayId!: pulumi.Output<string>;
     /**
-     * 关联路由表的IPv6网关ID。
+     * IPv6 Gateway ID associated with the route table
      */
     public readonly ipv6GatewayId!: pulumi.Output<string>;
     /**
-     * 路由表所属项目的名称。
+     * Name of the project owning the route table
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 路由表ID。
+     * Route Table ID
      */
     public /*out*/ readonly routeTableId!: pulumi.Output<string>;
     /**
-     * 路由表名称。
+     * Route Table Name
      */
     public readonly routeTableName!: pulumi.Output<string>;
     /**
-     * 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+     * Route table type. 1. Custom: Custom route table 2. System: System route table
      */
     public /*out*/ readonly routeTableType!: pulumi.Output<string>;
     /**
-     * 关联的子网的ID列表。
+     * List of associated subnet IDs
      */
     public readonly subnetIds!: pulumi.Output<string[]>;
     public /*out*/ readonly systemRouteEntries!: pulumi.Output<outputs.vpc.RouteTableSystemRouteEntry[]>;
     public readonly tags!: pulumi.Output<outputs.vpc.RouteTableTag[]>;
     /**
-     * 路由表更新时间。
+     * Route Table Last Updated Time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * 路由表所属VPC的ID。
+     * ID of the VPC owning the route table
      */
     public readonly vpcId!: pulumi.Output<string>;
     /**
-     * VPC的名称。
+     * VPC Name
      */
     public /*out*/ readonly vpcName!: pulumi.Output<string>;
 
@@ -166,62 +166,62 @@ export class RouteTable extends pulumi.CustomResource {
  */
 export interface RouteTableState {
     /**
-     * 路由表所属账号的ID。
+     * Account ID owning the route table
      */
     accountId?: pulumi.Input<string>;
     /**
-     * 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+     * Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
      */
     associateType?: pulumi.Input<string>;
     /**
-     * 路由表创建时间。
+     * Route Table Creation Time
      */
     createdTime?: pulumi.Input<string>;
     customRouteEntries?: pulumi.Input<pulumi.Input<inputs.vpc.RouteTableCustomRouteEntry>[]>;
     /**
-     * 路由表描述信息。
+     * Route Table Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 关联路由表的IPv4网关ID。
+     * IPv4 Gateway ID associated with the route table
      */
     ipv4GatewayId?: pulumi.Input<string>;
     /**
-     * 关联路由表的IPv6网关ID。
+     * IPv6 Gateway ID associated with the route table
      */
     ipv6GatewayId?: pulumi.Input<string>;
     /**
-     * 路由表所属项目的名称。
+     * Name of the project owning the route table
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 路由表ID。
+     * Route Table ID
      */
     routeTableId?: pulumi.Input<string>;
     /**
-     * 路由表名称。
+     * Route Table Name
      */
     routeTableName?: pulumi.Input<string>;
     /**
-     * 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+     * Route table type. 1. Custom: Custom route table 2. System: System route table
      */
     routeTableType?: pulumi.Input<string>;
     /**
-     * 关联的子网的ID列表。
+     * List of associated subnet IDs
      */
     subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
     systemRouteEntries?: pulumi.Input<pulumi.Input<inputs.vpc.RouteTableSystemRouteEntry>[]>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.RouteTableTag>[]>;
     /**
-     * 路由表更新时间。
+     * Route Table Last Updated Time
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * 路由表所属VPC的ID。
+     * ID of the VPC owning the route table
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * VPC的名称。
+     * VPC Name
      */
     vpcName?: pulumi.Input<string>;
 }
@@ -231,37 +231,37 @@ export interface RouteTableState {
  */
 export interface RouteTableArgs {
     /**
-     * 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+     * Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
      */
     associateType?: pulumi.Input<string>;
     customRouteEntries?: pulumi.Input<pulumi.Input<inputs.vpc.RouteTableCustomRouteEntry>[]>;
     /**
-     * 路由表描述信息。
+     * Route Table Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 关联路由表的IPv4网关ID。
+     * IPv4 Gateway ID associated with the route table
      */
     ipv4GatewayId?: pulumi.Input<string>;
     /**
-     * 关联路由表的IPv6网关ID。
+     * IPv6 Gateway ID associated with the route table
      */
     ipv6GatewayId?: pulumi.Input<string>;
     /**
-     * 路由表所属项目的名称。
+     * Name of the project owning the route table
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 路由表名称。
+     * Route Table Name
      */
     routeTableName?: pulumi.Input<string>;
     /**
-     * 关联的子网的ID列表。
+     * List of associated subnet IDs
      */
     subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.RouteTableTag>[]>;
     /**
-     * 路由表所属VPC的ID。
+     * ID of the VPC owning the route table
      */
     vpcId: pulumi.Input<string>;
 }

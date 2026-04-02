@@ -16,14 +16,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     public static final AccesskeyState Empty = new AccesskeyState();
 
     /**
-     * 密钥ID（Access Key Id）。
+     * Access Key Id.
      * 
      */
     @Import(name="accessKeyId")
     private @Nullable Output<String> accessKeyId;
 
     /**
-     * @return 密钥ID（Access Key Id）。
+     * @return Access Key Id.
      * 
      */
     public Optional<Output<String>> accessKeyId() {
@@ -31,14 +31,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥创建时间。时间格式为ISO8601。
+     * Key creation time. The time format is ISO8601.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 密钥创建时间。时间格式为ISO8601。
+     * @return Key creation time. The time format is ISO8601.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -46,14 +46,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 最后登录时间。
+     * Last login time.
      * 
      */
     @Import(name="lastLoginDate")
     private @Nullable Output<String> lastLoginDate;
 
     /**
-     * @return 最后登录时间。
+     * @return Last login time.
      * 
      */
     public Optional<Output<String>> lastLoginDate() {
@@ -61,14 +61,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * API密钥最后访问的地域。
+     * The last region accessed by the API key.
      * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
-     * @return API密钥最后访问的地域。
+     * @return The last region accessed by the API key.
      * 
      */
     public Optional<Output<String>> region() {
@@ -76,14 +76,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * API密钥的最后使用的时间。
+     * The last time the API key was used.
      * 
      */
     @Import(name="requestTime")
     private @Nullable Output<String> requestTime;
 
     /**
-     * @return API密钥的最后使用的时间。
+     * @return The last time the API key was used.
      * 
      */
     public Optional<Output<String>> requestTime() {
@@ -91,14 +91,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 私有密钥（Secret Access Key）。
+     * Secret Access Key.
      * 
      */
     @Import(name="secretAccessKey")
     private @Nullable Output<String> secretAccessKey;
 
     /**
-     * @return 私有密钥（Secret Access Key）。
+     * @return Secret Access Key.
      * 
      */
     public Optional<Output<String>> secretAccessKey() {
@@ -106,14 +106,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * API密钥最后访问的服务的英文简称。
+     * The English abbreviation of the last service accessed by the API key.
      * 
      */
     @Import(name="service")
     private @Nullable Output<String> service;
 
     /**
-     * @return API密钥最后访问的服务的英文简称。
+     * @return The English abbreviation of the last service accessed by the API key.
      * 
      */
     public Optional<Output<String>> service() {
@@ -121,14 +121,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥状态。active代表启用状态，inactive代表禁用状态。
+     * Key status. active means enabled, inactive means disabled.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 密钥状态。active代表启用状态，inactive代表禁用状态。
+     * @return Key status. active means enabled, inactive means disabled.
      * 
      */
     public Optional<Output<String>> status() {
@@ -136,14 +136,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥更新时间。时间格式为ISO8601。
+     * Key update time. The time format is ISO8601.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 密钥更新时间。时间格式为ISO8601。
+     * @return Key update time. The time format is ISO8601.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -151,14 +151,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户名。用于给指定的IAM用户创建密钥，未指定用户名时则为当前请求身份创建密钥（即主账号请求时为主账号自身创建密钥，IAM用户请求时为IAM用户自身创建密钥。注意：角色不支持为自身创建密钥）。当IAM用户拥有密钥自管理权限时（AccessKeySelfManageAccess），如需为自身创建密钥则需要在请求中传递自身的UserName。
+     * User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
      * 
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
-     * @return 用户名。用于给指定的IAM用户创建密钥，未指定用户名时则为当前请求身份创建密钥（即主账号请求时为主账号自身创建密钥，IAM用户请求时为IAM用户自身创建密钥。注意：角色不支持为自身创建密钥）。当IAM用户拥有密钥自管理权限时（AccessKeySelfManageAccess），如需为自身创建密钥则需要在请求中传递自身的UserName。
+     * @return User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
      * 
      */
     public Optional<Output<String>> userName() {
@@ -199,7 +199,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessKeyId 密钥ID（Access Key Id）。
+         * @param accessKeyId Access Key Id.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessKeyId 密钥ID（Access Key Id）。
+         * @param accessKeyId Access Key Id.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 密钥创建时间。时间格式为ISO8601。
+         * @param createdTime Key creation time. The time format is ISO8601.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 密钥创建时间。时间格式为ISO8601。
+         * @param createdTime Key creation time. The time format is ISO8601.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lastLoginDate 最后登录时间。
+         * @param lastLoginDate Last login time.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lastLoginDate 最后登录时间。
+         * @param lastLoginDate Last login time.
          * 
          * @return builder
          * 
@@ -262,7 +262,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param region API密钥最后访问的地域。
+         * @param region The last region accessed by the API key.
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param region API密钥最后访问的地域。
+         * @param region The last region accessed by the API key.
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param requestTime API密钥的最后使用的时间。
+         * @param requestTime The last time the API key was used.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param requestTime API密钥的最后使用的时间。
+         * @param requestTime The last time the API key was used.
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secretAccessKey 私有密钥（Secret Access Key）。
+         * @param secretAccessKey Secret Access Key.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secretAccessKey 私有密钥（Secret Access Key）。
+         * @param secretAccessKey Secret Access Key.
          * 
          * @return builder
          * 
@@ -325,7 +325,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param service API密钥最后访问的服务的英文简称。
+         * @param service The English abbreviation of the last service accessed by the API key.
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param service API密钥最后访问的服务的英文简称。
+         * @param service The English abbreviation of the last service accessed by the API key.
          * 
          * @return builder
          * 
@@ -346,7 +346,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 密钥状态。active代表启用状态，inactive代表禁用状态。
+         * @param status Key status. active means enabled, inactive means disabled.
          * 
          * @return builder
          * 
@@ -357,7 +357,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 密钥状态。active代表启用状态，inactive代表禁用状态。
+         * @param status Key status. active means enabled, inactive means disabled.
          * 
          * @return builder
          * 
@@ -367,7 +367,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 密钥更新时间。时间格式为ISO8601。
+         * @param updatedTime Key update time. The time format is ISO8601.
          * 
          * @return builder
          * 
@@ -378,7 +378,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 密钥更新时间。时间格式为ISO8601。
+         * @param updatedTime Key update time. The time format is ISO8601.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 用户名。用于给指定的IAM用户创建密钥，未指定用户名时则为当前请求身份创建密钥（即主账号请求时为主账号自身创建密钥，IAM用户请求时为IAM用户自身创建密钥。注意：角色不支持为自身创建密钥）。当IAM用户拥有密钥自管理权限时（AccessKeySelfManageAccess），如需为自身创建密钥则需要在请求中传递自身的UserName。
+         * @param userName User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 用户名。用于给指定的IAM用户创建密钥，未指定用户名时则为当前请求身份创建密钥（即主账号请求时为主账号自身创建密钥，IAM用户请求时为IAM用户自身创建密钥。注意：角色不支持为自身创建密钥）。当IAM用户拥有密钥自管理权限时（AccessKeySelfManageAccess），如需为自身创建密钥则需要在请求中传递自身的UserName。
+         * @param userName User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
          * 
          * @return builder
          * 

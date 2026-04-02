@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Organization
 {
     /// <summary>
-    /// 企业组织的创建者管理员账号可以新建组织单元来搭建企业的组织结构，对账号进行分组织单元管理。组织单元可以分多个组织单元层级，管理员账号也可属于任意层级的任意组织单元节点。
+    /// The administrator account that created the enterprise organization can create organizational units to build the enterprise's organizational structure and manage accounts by organizational unit. Organizational units can have multiple hierarchical levels, and administrator accounts can belong to any organizational unit node at any level.
     /// 
     /// ## Example Usage
     /// 
@@ -43,73 +43,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
     public partial class Unit : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 删除标识。
+        /// Deletion flag.
         /// </summary>
         [Output("deleteUk")]
         public Output<string> DeleteUk { get; private set; } = null!;
 
         /// <summary>
-        /// 删除时间。
+        /// Deletion time.
         /// </summary>
         [Output("deletedTime")]
         public Output<string> DeletedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 深度。
+        /// Depth.
         /// </summary>
         [Output("depth")]
         public Output<int> Depth { get; private set; } = null!;
 
         /// <summary>
-        /// 描述。
+        /// Description.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 组织单元名称。
+        /// Organizational unit name.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 组织ID。
+        /// Organization ID.
         /// </summary>
         [Output("orgId")]
         public Output<string> OrgId { get; private set; } = null!;
 
         /// <summary>
-        /// 组织类型。企业组织： 1
+        /// Organization type. Enterprise organization: 1
         /// </summary>
         [Output("orgType")]
         public Output<int> OrgType { get; private set; } = null!;
 
         /// <summary>
-        /// 组织单元ID。
+        /// Organizational unit ID.
         /// </summary>
         [Output("orgUnitId")]
         public Output<string> OrgUnitId { get; private set; } = null!;
 
         /// <summary>
-        /// 管理员ID。
+        /// Administrator ID.
         /// </summary>
         [Output("owner")]
         public Output<string> Owner { get; private set; } = null!;
 
         /// <summary>
-        /// 父单元Id。
+        /// Parent unit ID.
         /// </summary>
         [Output("parentId")]
         public Output<string> ParentId { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update time.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -162,19 +162,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
     public sealed class UnitArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 描述。
+        /// Description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 组织单元名称。
+        /// Organizational unit name.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// 父单元Id。
+        /// Parent unit ID.
         /// </summary>
         [Input("parentId", required: true)]
         public Input<string> ParentId { get; set; } = null!;
@@ -188,73 +188,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
     public sealed class UnitState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 删除标识。
+        /// Deletion flag.
         /// </summary>
         [Input("deleteUk")]
         public Input<string>? DeleteUk { get; set; }
 
         /// <summary>
-        /// 删除时间。
+        /// Deletion time.
         /// </summary>
         [Input("deletedTime")]
         public Input<string>? DeletedTime { get; set; }
 
         /// <summary>
-        /// 深度。
+        /// Depth.
         /// </summary>
         [Input("depth")]
         public Input<int>? Depth { get; set; }
 
         /// <summary>
-        /// 描述。
+        /// Description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 组织单元名称。
+        /// Organizational unit name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 组织ID。
+        /// Organization ID.
         /// </summary>
         [Input("orgId")]
         public Input<string>? OrgId { get; set; }
 
         /// <summary>
-        /// 组织类型。企业组织： 1
+        /// Organization type. Enterprise organization: 1
         /// </summary>
         [Input("orgType")]
         public Input<int>? OrgType { get; set; }
 
         /// <summary>
-        /// 组织单元ID。
+        /// Organizational unit ID.
         /// </summary>
         [Input("orgUnitId")]
         public Input<string>? OrgUnitId { get; set; }
 
         /// <summary>
-        /// 管理员ID。
+        /// Administrator ID.
         /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
 
         /// <summary>
-        /// 父单元Id。
+        /// Parent unit ID.
         /// </summary>
         [Input("parentId")]
         public Input<string>? ParentId { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update time.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

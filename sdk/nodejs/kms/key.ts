@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 密钥管理服务（Key Management Service）是火山引擎上一站式的密钥管理和数据加密服务平台。提供简单易用的加密接口，KMS 帮助用户轻松管理密钥、保护云上核心数据的安全。同时极大降低用户自行部署密码基础设施的采购、研发成本。帮助业务轻松满足监管和合规需求。
+ * Key Management Service (KMS) is a one-stop key management and data encryption platform on Volcano Engine. It provides easy-to-use encryption interfaces. KMS helps users easily manage keys and protect the security of core cloud data. It also greatly reduces the procurement and development costs for users to deploy their own cryptographic infrastructure. KMS helps businesses easily meet regulatory and compliance requirements.
  *
  * ## Import
  *
@@ -44,96 +44,96 @@ export class Key extends pulumi.CustomResource {
     }
 
     /**
-     * 密钥创建时间。
+     * Key creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<number>;
     /**
-     * 密钥描述:长度为 0   - 8192 个字符。
+     * Key description: Length 0–8192 characters.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * User master key archive operation (enter 1 to archive, 2 to unarchive).
      */
     public readonly keyArchiveOperation!: pulumi.Output<number>;
     /**
-     * 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * User master key enable operation (enter 1 to enable, 2 to disable).
      */
     public readonly keyEnableOperation!: pulumi.Output<number>;
     /**
-     * 密钥唯一标识符，UUID形式。
+     * Key unique identifier in UUID format.
      */
     public /*out*/ readonly keyId!: pulumi.Output<string>;
     /**
-     * 密钥材料过期时间，当值为空时表示不会过期。
+     * Key material expiration time. If empty, the key does not expire.
      */
     public /*out*/ readonly keyMaterialExpireTime!: pulumi.Output<string>;
     /**
-     * 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      */
     public readonly keyName!: pulumi.Output<string>;
     /**
-     * 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * User master key rotation operation (enter 1 to enable, 2 to disable).
      */
     public readonly keyRotationOperation!: pulumi.Output<number>;
     /**
-     * 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+     * Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
      */
     public readonly keySpec!: pulumi.Output<string>;
     /**
-     * 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
+     * Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
      */
     public /*out*/ readonly keyState!: pulumi.Output<string>;
     /**
-     * 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+     * Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
      */
     public readonly keyUsage!: pulumi.Output<string>;
     /**
-     * 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      */
     public readonly keyringName!: pulumi.Output<string>;
     /**
-     * 密钥最后轮转时间。
+     * Key last rotation time.
      */
     public /*out*/ readonly lastRotationTime!: pulumi.Output<string>;
     /**
-     * 是否为 Multi-region 类型的主密钥。
+     * Is this a multi-region type master key.
      */
     public readonly multiRegion!: pulumi.Output<boolean>;
     /**
-     * Multi-region key 配置信息。
+     * Multi-region key configuration information.
      */
     public /*out*/ readonly multiRegionConfiguration!: pulumi.Output<outputs.kms.KeyMultiRegionConfiguration>;
     /**
-     * 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+     * Key source. Options: CloudKMS, External, ExternalKeyStore.
      */
     public readonly origin!: pulumi.Output<string>;
     /**
-     * 密钥保护级别，取值：SOFTWARE，HSM。
+     * Key protection level. Options: SOFTWARE, HSM.
      */
     public readonly protectionLevel!: pulumi.Output<string>;
     /**
-     * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * Key rotation period (days). Range: [90, 2560].
      */
     public readonly rotateInterval!: pulumi.Output<number>;
     /**
-     * 密钥轮转状态，取值：Enable，Disable。
+     * Key rotation status. Options: Enable, Disable.
      */
     public /*out*/ readonly rotateState!: pulumi.Output<string>;
     /**
-     * 密钥删除时间。
+     * Key deletion time.
      */
     public /*out*/ readonly scheduleDeleteTime!: pulumi.Output<string>;
     /**
-     * 密钥轮转时间。
+     * Key rotation time.
      */
     public /*out*/ readonly scheduleRotationTime!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.kms.KeyTag[]>;
     /**
-     * 资源名称，格式应为 trn:${Service}:${Region}:${AccountID}:${ResourcePath}。
+     * Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
      */
     public /*out*/ readonly trn!: pulumi.Output<string>;
     /**
-     * 密钥更新时间。
+     * Key update time.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<number>;
 
@@ -217,96 +217,96 @@ export class Key extends pulumi.CustomResource {
  */
 export interface KeyState {
     /**
-     * 密钥创建时间。
+     * Key creation time.
      */
     createdTime?: pulumi.Input<number>;
     /**
-     * 密钥描述:长度为 0   - 8192 个字符。
+     * Key description: Length 0–8192 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * User master key archive operation (enter 1 to archive, 2 to unarchive).
      */
     keyArchiveOperation?: pulumi.Input<number>;
     /**
-     * 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * User master key enable operation (enter 1 to enable, 2 to disable).
      */
     keyEnableOperation?: pulumi.Input<number>;
     /**
-     * 密钥唯一标识符，UUID形式。
+     * Key unique identifier in UUID format.
      */
     keyId?: pulumi.Input<string>;
     /**
-     * 密钥材料过期时间，当值为空时表示不会过期。
+     * Key material expiration time. If empty, the key does not expire.
      */
     keyMaterialExpireTime?: pulumi.Input<string>;
     /**
-     * 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      */
     keyName?: pulumi.Input<string>;
     /**
-     * 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * User master key rotation operation (enter 1 to enable, 2 to disable).
      */
     keyRotationOperation?: pulumi.Input<number>;
     /**
-     * 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+     * Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
      */
     keySpec?: pulumi.Input<string>;
     /**
-     * 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
+     * Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
      */
     keyState?: pulumi.Input<string>;
     /**
-     * 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+     * Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
      */
     keyUsage?: pulumi.Input<string>;
     /**
-     * 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      */
     keyringName?: pulumi.Input<string>;
     /**
-     * 密钥最后轮转时间。
+     * Key last rotation time.
      */
     lastRotationTime?: pulumi.Input<string>;
     /**
-     * 是否为 Multi-region 类型的主密钥。
+     * Is this a multi-region type master key.
      */
     multiRegion?: pulumi.Input<boolean>;
     /**
-     * Multi-region key 配置信息。
+     * Multi-region key configuration information.
      */
     multiRegionConfiguration?: pulumi.Input<inputs.kms.KeyMultiRegionConfiguration>;
     /**
-     * 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+     * Key source. Options: CloudKMS, External, ExternalKeyStore.
      */
     origin?: pulumi.Input<string>;
     /**
-     * 密钥保护级别，取值：SOFTWARE，HSM。
+     * Key protection level. Options: SOFTWARE, HSM.
      */
     protectionLevel?: pulumi.Input<string>;
     /**
-     * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * Key rotation period (days). Range: [90, 2560].
      */
     rotateInterval?: pulumi.Input<number>;
     /**
-     * 密钥轮转状态，取值：Enable，Disable。
+     * Key rotation status. Options: Enable, Disable.
      */
     rotateState?: pulumi.Input<string>;
     /**
-     * 密钥删除时间。
+     * Key deletion time.
      */
     scheduleDeleteTime?: pulumi.Input<string>;
     /**
-     * 密钥轮转时间。
+     * Key rotation time.
      */
     scheduleRotationTime?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.kms.KeyTag>[]>;
     /**
-     * 资源名称，格式应为 trn:${Service}:${Region}:${AccountID}:${ResourcePath}。
+     * Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
      */
     trn?: pulumi.Input<string>;
     /**
-     * 密钥更新时间。
+     * Key update time.
      */
     updatedTime?: pulumi.Input<number>;
 }
@@ -316,51 +316,51 @@ export interface KeyState {
  */
 export interface KeyArgs {
     /**
-     * 密钥描述:长度为 0   - 8192 个字符。
+     * Key description: Length 0–8192 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * User master key archive operation (enter 1 to archive, 2 to unarchive).
      */
     keyArchiveOperation?: pulumi.Input<number>;
     /**
-     * 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * User master key enable operation (enter 1 to enable, 2 to disable).
      */
     keyEnableOperation?: pulumi.Input<number>;
     /**
-     * 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      */
     keyName: pulumi.Input<string>;
     /**
-     * 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * User master key rotation operation (enter 1 to enable, 2 to disable).
      */
     keyRotationOperation?: pulumi.Input<number>;
     /**
-     * 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+     * Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
      */
     keySpec?: pulumi.Input<string>;
     /**
-     * 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+     * Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
      */
     keyUsage?: pulumi.Input<string>;
     /**
-     * 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      */
     keyringName: pulumi.Input<string>;
     /**
-     * 是否为 Multi-region 类型的主密钥。
+     * Is this a multi-region type master key.
      */
     multiRegion?: pulumi.Input<boolean>;
     /**
-     * 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+     * Key source. Options: CloudKMS, External, ExternalKeyStore.
      */
     origin?: pulumi.Input<string>;
     /**
-     * 密钥保护级别，取值：SOFTWARE，HSM。
+     * Key protection level. Options: SOFTWARE, HSM.
      */
     protectionLevel?: pulumi.Input<string>;
     /**
-     * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * Key rotation period (days). Range: [90, 2560].
      */
     rotateInterval?: pulumi.Input<number>;
     tags?: pulumi.Input<pulumi.Input<inputs.kms.KeyTag>[]>;

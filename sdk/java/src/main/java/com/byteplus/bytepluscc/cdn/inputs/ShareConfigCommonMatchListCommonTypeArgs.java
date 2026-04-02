@@ -18,14 +18,14 @@ public final class ShareConfigCommonMatchListCommonTypeArgs extends com.pulumi.r
     public static final ShareConfigCommonMatchListCommonTypeArgs Empty = new ShareConfigCommonMatchListCommonTypeArgs();
 
     /**
-     * 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+     * Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
      * 
      */
     @Import(name="ignoreCase")
     private @Nullable Output<Boolean> ignoreCase;
 
     /**
-     * @return 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+     * @return Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
      * 
      */
     public Optional<Output<Boolean>> ignoreCase() {
@@ -33,14 +33,14 @@ public final class ShareConfigCommonMatchListCommonTypeArgs extends com.pulumi.r
     }
 
     /**
-     * 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+     * Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
      * 
      */
     @Import(name="rules")
     private @Nullable Output<List<String>> rules;
 
     /**
-     * @return 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+     * @return Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
      * 
      */
     public Optional<Output<List<String>>> rules() {
@@ -73,7 +73,7 @@ public final class ShareConfigCommonMatchListCommonTypeArgs extends com.pulumi.r
         }
 
         /**
-         * @param ignoreCase 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+         * @param ignoreCase Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class ShareConfigCommonMatchListCommonTypeArgs extends com.pulumi.r
         }
 
         /**
-         * @param ignoreCase 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+         * @param ignoreCase Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
          * 
          * @return builder
          * 
@@ -94,7 +94,7 @@ public final class ShareConfigCommonMatchListCommonTypeArgs extends com.pulumi.r
         }
 
         /**
-         * @param rules 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+         * @param rules Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
          * 
          * @return builder
          * 
@@ -105,7 +105,7 @@ public final class ShareConfigCommonMatchListCommonTypeArgs extends com.pulumi.r
         }
 
         /**
-         * @param rules 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+         * @param rules Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class ShareConfigCommonMatchListCommonTypeArgs extends com.pulumi.r
         }
 
         /**
-         * @param rules 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+         * @param rules Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
          * 
          * @return builder
          * 

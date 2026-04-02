@@ -16,14 +16,14 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
     public static final PermissionSetAssignmentState Empty = new PermissionSetAssignmentState();
 
     /**
-     * 授权创建时间。
+     * Authorization creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 授权创建时间。
+     * @return Authorization creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -31,14 +31,14 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
     }
 
     /**
-     * 权限集 ID。
+     * Permission set ID
      * 
      */
     @Import(name="permissionSetId")
     private @Nullable Output<String> permissionSetId;
 
     /**
-     * @return 权限集 ID。
+     * @return Permission set ID
      * 
      */
     public Optional<Output<String>> permissionSetId() {
@@ -46,14 +46,14 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
     }
 
     /**
-     * 权限集名称。
+     * Permission set name
      * 
      */
     @Import(name="permissionSetName")
     private @Nullable Output<String> permissionSetName;
 
     /**
-     * @return 权限集名称。
+     * @return Permission set name
      * 
      */
     public Optional<Output<String>> permissionSetName() {
@@ -61,14 +61,14 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
     }
 
     /**
-     * 云身份中心对象 ID
+     * Cloud Identity Center object ID
      * 
      */
     @Import(name="principalId")
     private @Nullable Output<String> principalId;
 
     /**
-     * @return 云身份中心对象 ID
+     * @return Cloud Identity Center object ID
      * 
      */
     public Optional<Output<String>> principalId() {
@@ -76,14 +76,14 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
     }
 
     /**
-     * 云身份中心对象名。
+     * Cloud Identity Center object name
      * 
      */
     @Import(name="principalName")
     private @Nullable Output<String> principalName;
 
     /**
-     * @return 云身份中心对象名。
+     * @return Cloud Identity Center object name
      * 
      */
     public Optional<Output<String>> principalName() {
@@ -91,14 +91,14 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
     }
 
     /**
-     * 云身份中心对象类型，User 或者 Group。
+     * Cloud Identity Center object type: User or Group
      * 
      */
     @Import(name="principalType")
     private @Nullable Output<String> principalType;
 
     /**
-     * @return 云身份中心对象类型，User 或者 Group。
+     * @return Cloud Identity Center object type: User or Group
      * 
      */
     public Optional<Output<String>> principalType() {
@@ -106,14 +106,14 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
     }
 
     /**
-     * 授权账号 ID。
+     * Authorized account ID
      * 
      */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
     /**
-     * @return 授权账号 ID。
+     * @return Authorized account ID
      * 
      */
     public Optional<Output<String>> targetId() {
@@ -121,14 +121,14 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
     }
 
     /**
-     * 授权账号名。
+     * Authorized account name
      * 
      */
     @Import(name="targetName")
     private @Nullable Output<String> targetName;
 
     /**
-     * @return 授权账号名。
+     * @return Authorized account name
      * 
      */
     public Optional<Output<String>> targetName() {
@@ -167,7 +167,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param createdTime 授权创建时间。
+         * @param createdTime Authorization creation time
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param createdTime 授权创建时间。
+         * @param createdTime Authorization creation time
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param permissionSetId 权限集 ID。
+         * @param permissionSetId Permission set ID
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param permissionSetId 权限集 ID。
+         * @param permissionSetId Permission set ID
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param permissionSetName 权限集名称。
+         * @param permissionSetName Permission set name
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param permissionSetName 权限集名称。
+         * @param permissionSetName Permission set name
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param principalId 云身份中心对象 ID
+         * @param principalId Cloud Identity Center object ID
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param principalId 云身份中心对象 ID
+         * @param principalId Cloud Identity Center object ID
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param principalName 云身份中心对象名。
+         * @param principalName Cloud Identity Center object name
          * 
          * @return builder
          * 
@@ -262,7 +262,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param principalName 云身份中心对象名。
+         * @param principalName Cloud Identity Center object name
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param principalType 云身份中心对象类型，User 或者 Group。
+         * @param principalType Cloud Identity Center object type: User or Group
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param principalType 云身份中心对象类型，User 或者 Group。
+         * @param principalType Cloud Identity Center object type: User or Group
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param targetId 授权账号 ID。
+         * @param targetId Authorized account ID
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param targetId 授权账号 ID。
+         * @param targetId Authorized account ID
          * 
          * @return builder
          * 
@@ -314,7 +314,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param targetName 授权账号名。
+         * @param targetName Authorized account name
          * 
          * @return builder
          * 
@@ -325,7 +325,7 @@ public final class PermissionSetAssignmentState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param targetName 授权账号名。
+         * @param targetName Authorized account name
          * 
          * @return builder
          * 

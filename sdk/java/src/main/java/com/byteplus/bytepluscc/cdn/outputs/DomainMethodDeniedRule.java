@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainMethodDeniedRule {
     /**
-     * @return 表示被禁用的一个或多个 HTTP 请求方法。当 Switch 是 true 时，该参数为必填。多个方法使用逗号（,）分隔。该参数有以下取值：get：表示禁用 GET 请求方法。post：表示禁用 POST 请求方法。delete：表示禁用 DELETE 请求方法。put：表示禁用 PUT 请求方法。head：表示禁用 HEAD 请求方法。patch：表示 PATCH 请求方法。connect：表示 CONNECT 请求方法。options：表示 OPTIONS 请求方法。
+     * @return Indicates one or more HTTP request methods that are disabled. When Switch is true, this parameter is required. Use commas (,) to separate multiple methods. The parameter values are: get: disables the GET request method. post: disables the POST request method. delete: disables the DELETE request method. put: disables the PUT request method. head: disables the HEAD request method. patch: disables the PATCH request method. connect: disables the CONNECT request method. options: disables the OPTIONS request method.
      * 
      */
     private @Nullable String methods;
     /**
-     * @return 配置开关 禁用方法，多个用逗号,分割，开启时必填. choices: [get, post, head, delete, put]
+     * @return Configuration switch for disabling methods. Use commas to separate multiple methods. Required when enabled. choices: [get, post, head, delete, put]
      * 
      */
     private @Nullable Boolean switch_;
 
     private DomainMethodDeniedRule() {}
     /**
-     * @return 表示被禁用的一个或多个 HTTP 请求方法。当 Switch 是 true 时，该参数为必填。多个方法使用逗号（,）分隔。该参数有以下取值：get：表示禁用 GET 请求方法。post：表示禁用 POST 请求方法。delete：表示禁用 DELETE 请求方法。put：表示禁用 PUT 请求方法。head：表示禁用 HEAD 请求方法。patch：表示 PATCH 请求方法。connect：表示 CONNECT 请求方法。options：表示 OPTIONS 请求方法。
+     * @return Indicates one or more HTTP request methods that are disabled. When Switch is true, this parameter is required. Use commas (,) to separate multiple methods. The parameter values are: get: disables the GET request method. post: disables the POST request method. delete: disables the DELETE request method. put: disables the PUT request method. head: disables the HEAD request method. patch: disables the PATCH request method. connect: disables the CONNECT request method. options: disables the OPTIONS request method.
      * 
      */
     public Optional<String> methods() {
         return Optional.ofNullable(this.methods);
     }
     /**
-     * @return 配置开关 禁用方法，多个用逗号,分割，开启时必填. choices: [get, post, head, delete, put]
+     * @return Configuration switch for disabling methods. Use commas to separate multiple methods. Required when enabled. choices: [get, post, head, delete, put]
      * 
      */
     public Optional<Boolean> switch_() {

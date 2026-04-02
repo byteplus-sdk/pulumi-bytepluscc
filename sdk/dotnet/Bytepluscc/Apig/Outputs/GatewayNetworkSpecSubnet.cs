@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GatewayNetworkSpecSubnet
     {
         /// <summary>
-        /// 可用区。
+        /// Availability zone
         /// </summary>
         public readonly string? Az;
         /// <summary>
-        /// 子网ID。
+        /// Subnet ID
         /// </summary>
         public readonly string? SubnetId;
         /// <summary>
-        /// 子网名称。
+        /// Subnet name
         /// </summary>
         public readonly string? SubnetName;
 

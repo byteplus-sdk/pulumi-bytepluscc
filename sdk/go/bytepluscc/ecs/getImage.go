@@ -30,67 +30,75 @@ type LookupImageArgs struct {
 
 // A collection of values returned by getImage.
 type LookupImageResult struct {
-	// 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+	// Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
 	Architecture string `pulumi:"architecture"`
-	// 镜像的启动模式。可以选择BIOS、UEFI类型。
+	// Image boot mode. You can select BIOS or UEFI
 	BootMode string `pulumi:"bootMode"`
-	// 镜像创建时间
+	// Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+	CreateWholeImage bool `pulumi:"createWholeImage"`
+	// Image creation time
 	CreatedAt string `pulumi:"createdAt"`
-	// 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+	// Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
 	Description string `pulumi:"description"`
-	// 镜像的检测结果。
+	// Image check result.
 	DetectionResults GetImageDetectionResults `pulumi:"detectionResults"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 镜像ID。
+	// Image ID
 	ImageId string `pulumi:"imageId"`
-	// 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+	// Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
 	ImageName string `pulumi:"imageName"`
-	// 镜像所属的账号ID。
+	// Account ID to which the image belongs.
 	ImageOwnerId string `pulumi:"imageOwnerId"`
-	// 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+	// Imported image information
+	ImportImage GetImageImportImage `pulumi:"importImage"`
+	// Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
 	InstanceId string `pulumi:"instanceId"`
-	// 镜像中是否安装了云助手Agent。
+	// Whether Cloud Assistant Agent is installed in the image
 	IsInstallRunCommandAgent bool `pulumi:"isInstallRunCommandAgent"`
-	// 公共镜像是否长期维护。
+	// Whether the public image is maintained long-term.
 	IsLts bool `pulumi:"isLts"`
-	// 镜像是否支持Cloud-init。
+	// Whether the image supports Cloud-init.
 	IsSupportCloudInit bool `pulumi:"isSupportCloudInit"`
-	// 镜像的内核版本。
+	// Image kernel version.
 	Kernel string `pulumi:"kernel"`
-	// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+	// Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
 	LicenseType string `pulumi:"licenseType"`
-	// 镜像操作系统的名称。
+	// Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+	NeedDetection bool `pulumi:"needDetection"`
+	// Name of the image operating system.
 	OsName string `pulumi:"osName"`
-	// 操作系统类型。
+	// Operating system type
 	OsType string `pulumi:"osType"`
-	// 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+	// Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
 	Platform string `pulumi:"platform"`
-	// 镜像的发行版本。
+	// Image release version.
 	PlatformVersion string `pulumi:"platformVersion"`
-	// 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+	// Product code for marketplace image
+	ProductCode string `pulumi:"productCode"`
+	// Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
 	ProjectName string `pulumi:"projectName"`
-	// 镜像共享的账户
+	// Accounts with which the image is shared
 	SharePermissions []string `pulumi:"sharePermissions"`
-	// 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+	// Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
 	ShareStatus string `pulumi:"shareStatus"`
-	// 镜像大小，单位为GiB。
+	// Image size, in GiB.
 	Size int `pulumi:"size"`
-	// 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+	// Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
 	SnapshotGroupId string `pulumi:"snapshotGroupId"`
-	// 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+	// System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
 	SnapshotId string `pulumi:"snapshotId"`
-	// 镜像关联快照的信息。
+	// Information about snapshots associated with the image.
 	Snapshots []GetImageSnapshot `pulumi:"snapshots"`
-	// 镜像的状态。
+	// Image status.
 	Status string `pulumi:"status"`
-	// 镜像绑定的标签列表。
+	// List of tags bound to the image.
 	Tags []GetImageTag `pulumi:"tags"`
-	// 镜像更新时间
+	// Image update time
 	UpdatedAt string `pulumi:"updatedAt"`
-	// 镜像大小，单位为Byte。
+	// Image size, in Bytes.
 	VirtualSize float64 `pulumi:"virtualSize"`
-	// 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+	// Image visibility. public: Public image. private: Private image. shared: Shared image.
 	Visibility string `pulumi:"visibility"`
 }
 
@@ -128,27 +136,32 @@ func (o LookupImageResultOutput) ToLookupImageResultOutputWithContext(ctx contex
 	return o
 }
 
-// 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+// Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
 func (o LookupImageResultOutput) Architecture() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.Architecture }).(pulumi.StringOutput)
 }
 
-// 镜像的启动模式。可以选择BIOS、UEFI类型。
+// Image boot mode. You can select BIOS or UEFI
 func (o LookupImageResultOutput) BootMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.BootMode }).(pulumi.StringOutput)
 }
 
-// 镜像创建时间
+// Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+func (o LookupImageResultOutput) CreateWholeImage() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupImageResult) bool { return v.CreateWholeImage }).(pulumi.BoolOutput)
+}
+
+// Image creation time
 func (o LookupImageResultOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+// Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
 func (o LookupImageResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 镜像的检测结果。
+// Image check result.
 func (o LookupImageResultOutput) DetectionResults() GetImageDetectionResultsOutput {
 	return o.ApplyT(func(v LookupImageResult) GetImageDetectionResults { return v.DetectionResults }).(GetImageDetectionResultsOutput)
 }
@@ -158,127 +171,142 @@ func (o LookupImageResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 镜像ID。
+// Image ID
 func (o LookupImageResultOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+// Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
 func (o LookupImageResultOutput) ImageName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.ImageName }).(pulumi.StringOutput)
 }
 
-// 镜像所属的账号ID。
+// Account ID to which the image belongs.
 func (o LookupImageResultOutput) ImageOwnerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.ImageOwnerId }).(pulumi.StringOutput)
 }
 
-// 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+// Imported image information
+func (o LookupImageResultOutput) ImportImage() GetImageImportImageOutput {
+	return o.ApplyT(func(v LookupImageResult) GetImageImportImage { return v.ImportImage }).(GetImageImportImageOutput)
+}
+
+// Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
 func (o LookupImageResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 镜像中是否安装了云助手Agent。
+// Whether Cloud Assistant Agent is installed in the image
 func (o LookupImageResultOutput) IsInstallRunCommandAgent() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupImageResult) bool { return v.IsInstallRunCommandAgent }).(pulumi.BoolOutput)
 }
 
-// 公共镜像是否长期维护。
+// Whether the public image is maintained long-term.
 func (o LookupImageResultOutput) IsLts() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupImageResult) bool { return v.IsLts }).(pulumi.BoolOutput)
 }
 
-// 镜像是否支持Cloud-init。
+// Whether the image supports Cloud-init.
 func (o LookupImageResultOutput) IsSupportCloudInit() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupImageResult) bool { return v.IsSupportCloudInit }).(pulumi.BoolOutput)
 }
 
-// 镜像的内核版本。
+// Image kernel version.
 func (o LookupImageResultOutput) Kernel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.Kernel }).(pulumi.StringOutput)
 }
 
-// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+// Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
 func (o LookupImageResultOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.LicenseType }).(pulumi.StringOutput)
 }
 
-// 镜像操作系统的名称。
+// Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+func (o LookupImageResultOutput) NeedDetection() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupImageResult) bool { return v.NeedDetection }).(pulumi.BoolOutput)
+}
+
+// Name of the image operating system.
 func (o LookupImageResultOutput) OsName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.OsName }).(pulumi.StringOutput)
 }
 
-// 操作系统类型。
+// Operating system type
 func (o LookupImageResultOutput) OsType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.OsType }).(pulumi.StringOutput)
 }
 
-// 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+// Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
 func (o LookupImageResultOutput) Platform() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.Platform }).(pulumi.StringOutput)
 }
 
-// 镜像的发行版本。
+// Image release version.
 func (o LookupImageResultOutput) PlatformVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.PlatformVersion }).(pulumi.StringOutput)
 }
 
-// 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+// Product code for marketplace image
+func (o LookupImageResultOutput) ProductCode() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupImageResult) string { return v.ProductCode }).(pulumi.StringOutput)
+}
+
+// Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
 func (o LookupImageResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 镜像共享的账户
+// Accounts with which the image is shared
 func (o LookupImageResultOutput) SharePermissions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupImageResult) []string { return v.SharePermissions }).(pulumi.StringArrayOutput)
 }
 
-// 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+// Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
 func (o LookupImageResultOutput) ShareStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.ShareStatus }).(pulumi.StringOutput)
 }
 
-// 镜像大小，单位为GiB。
+// Image size, in GiB.
 func (o LookupImageResultOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupImageResult) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+// Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
 func (o LookupImageResultOutput) SnapshotGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.SnapshotGroupId }).(pulumi.StringOutput)
 }
 
-// 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+// System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
 func (o LookupImageResultOutput) SnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.SnapshotId }).(pulumi.StringOutput)
 }
 
-// 镜像关联快照的信息。
+// Information about snapshots associated with the image.
 func (o LookupImageResultOutput) Snapshots() GetImageSnapshotArrayOutput {
 	return o.ApplyT(func(v LookupImageResult) []GetImageSnapshot { return v.Snapshots }).(GetImageSnapshotArrayOutput)
 }
 
-// 镜像的状态。
+// Image status.
 func (o LookupImageResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 镜像绑定的标签列表。
+// List of tags bound to the image.
 func (o LookupImageResultOutput) Tags() GetImageTagArrayOutput {
 	return o.ApplyT(func(v LookupImageResult) []GetImageTag { return v.Tags }).(GetImageTagArrayOutput)
 }
 
-// 镜像更新时间
+// Image update time
 func (o LookupImageResultOutput) UpdatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.UpdatedAt }).(pulumi.StringOutput)
 }
 
-// 镜像大小，单位为Byte。
+// Image size, in Bytes.
 func (o LookupImageResultOutput) VirtualSize() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupImageResult) float64 { return v.VirtualSize }).(pulumi.Float64Output)
 }
 
-// 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+// Image visibility. public: Public image. private: Private image. shared: Shared image.
 func (o LookupImageResultOutput) Visibility() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.Visibility }).(pulumi.StringOutput)
 }

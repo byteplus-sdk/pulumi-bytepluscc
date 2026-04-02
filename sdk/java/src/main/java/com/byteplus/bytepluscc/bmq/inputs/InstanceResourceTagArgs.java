@@ -25,14 +25,14 @@ public final class InstanceResourceTagArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+     * Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+     * @return Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
      * 
      */
     public Optional<Output<String>> type() {
@@ -78,7 +78,7 @@ public final class InstanceResourceTagArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param type 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+         * @param type Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class InstanceResourceTagArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param type 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+         * @param type Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
          * 
          * @return builder
          * 

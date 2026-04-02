@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Apig
 {
     /// <summary>
-    /// API 网关支持基于容器服务（VKE）集和容器服务的注册集群功能，将集群导入到 API 网关实例，将其作为网关的 Upstream 来源，以便网关获取集群中的 Service 列表。
+    /// The API Gateway supports cluster registration based on container services (VKE) and container service clusters. Import clusters into the API Gateway instance to use them as Upstream sources, allowing the gateway to retrieve the Service list from the cluster
     /// 
     /// ## Import
     /// 
@@ -23,67 +23,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public partial class UpstreamSource : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 备注，长度限制为0~253个字符。
+        /// Remarks, length limit: 0–253 characters
         /// </summary>
         [Output("comments")]
         public Output<string> Comments { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 网关实例ID。
+        /// Gateway instance ID
         /// </summary>
         [Output("gatewayId")]
         public Output<string> GatewayId { get; private set; } = null!;
 
         /// <summary>
-        /// 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+        /// Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
         /// </summary>
         [Output("ingressSettings")]
         public Output<Outputs.UpstreamSourceIngressSettings> IngressSettings { get; private set; } = null!;
 
         /// <summary>
-        /// Upstream来源配置。
+        /// Upstream source configuration
         /// </summary>
         [Output("sourceSpec")]
         public Output<Outputs.UpstreamSourceSourceSpec> SourceSpec { get; private set; } = null!;
 
         /// <summary>
-        /// Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+        /// Upstream source type. Options: K8S: Container cluster. Nacos: Registry
         /// </summary>
         [Output("sourceType")]
         public Output<string> SourceType { get; private set; } = null!;
 
         /// <summary>
-        /// 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+        /// Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+        /// Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
         /// </summary>
         [Output("statusMessage")]
         public Output<string> StatusMessage { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// Upstream来源ID。
+        /// Upstream source ID
         /// </summary>
         [Output("upstreamSourceId")]
         public Output<string> UpstreamSourceId { get; private set; } = null!;
 
         /// <summary>
-        /// 指定命名空间。
+        /// Specify namespace
         /// </summary>
         [Output("watchNamespaces")]
         public Output<ImmutableArray<string>> WatchNamespaces { get; private set; } = null!;
@@ -136,31 +136,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public sealed class UpstreamSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 备注，长度限制为0~253个字符。
+        /// Remarks, length limit: 0–253 characters
         /// </summary>
         [Input("comments")]
         public Input<string>? Comments { get; set; }
 
         /// <summary>
-        /// 网关实例ID。
+        /// Gateway instance ID
         /// </summary>
         [Input("gatewayId", required: true)]
         public Input<string> GatewayId { get; set; } = null!;
 
         /// <summary>
-        /// 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+        /// Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
         /// </summary>
         [Input("ingressSettings")]
         public Input<Inputs.UpstreamSourceIngressSettingsArgs>? IngressSettings { get; set; }
 
         /// <summary>
-        /// Upstream来源配置。
+        /// Upstream source configuration
         /// </summary>
         [Input("sourceSpec", required: true)]
         public Input<Inputs.UpstreamSourceSourceSpecArgs> SourceSpec { get; set; } = null!;
 
         /// <summary>
-        /// Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+        /// Upstream source type. Options: K8S: Container cluster. Nacos: Registry
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;
@@ -169,7 +169,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         private InputList<string>? _watchNamespaces;
 
         /// <summary>
-        /// 指定命名空间。
+        /// Specify namespace
         /// </summary>
         public InputList<string> WatchNamespaces
         {
@@ -186,61 +186,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public sealed class UpstreamSourceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 备注，长度限制为0~253个字符。
+        /// Remarks, length limit: 0–253 characters
         /// </summary>
         [Input("comments")]
         public Input<string>? Comments { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 网关实例ID。
+        /// Gateway instance ID
         /// </summary>
         [Input("gatewayId")]
         public Input<string>? GatewayId { get; set; }
 
         /// <summary>
-        /// 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+        /// Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
         /// </summary>
         [Input("ingressSettings")]
         public Input<Inputs.UpstreamSourceIngressSettingsGetArgs>? IngressSettings { get; set; }
 
         /// <summary>
-        /// Upstream来源配置。
+        /// Upstream source configuration
         /// </summary>
         [Input("sourceSpec")]
         public Input<Inputs.UpstreamSourceSourceSpecGetArgs>? SourceSpec { get; set; }
 
         /// <summary>
-        /// Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+        /// Upstream source type. Options: K8S: Container cluster. Nacos: Registry
         /// </summary>
         [Input("sourceType")]
         public Input<string>? SourceType { get; set; }
 
         /// <summary>
-        /// 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+        /// Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+        /// Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
         /// </summary>
         [Input("statusMessage")]
         public Input<string>? StatusMessage { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// Upstream来源ID。
+        /// Upstream source ID
         /// </summary>
         [Input("upstreamSourceId")]
         public Input<string>? UpstreamSourceId { get; set; }
@@ -249,7 +249,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         private InputList<string>? _watchNamespaces;
 
         /// <summary>
-        /// 指定命名空间。
+        /// Specify namespace
         /// </summary>
         public InputList<string> WatchNamespaces
         {

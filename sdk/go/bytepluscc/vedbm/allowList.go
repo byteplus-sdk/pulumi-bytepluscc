@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// vedbm访问白名单。
+// vedbm access allowlist.
 //
 // ## Import
 //
@@ -22,24 +22,24 @@ import (
 type AllowList struct {
 	pulumi.CustomResourceState
 
-	// IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+	// IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
 	AllowList pulumi.StringOutput `pulumi:"allowList"`
-	// 白名单描述。
+	// Allowlist description.
 	AllowListDesc pulumi.StringOutput `pulumi:"allowListDesc"`
-	// 白名单的id。
+	// Allowlist ID.
 	AllowListId pulumi.StringOutput `pulumi:"allowListId"`
-	// 白名单内的 IP 地址（或地址段）总数。
+	// Total number of IP addresses (or address ranges) in the allowlist.
 	AllowListIpNum pulumi.IntOutput `pulumi:"allowListIpNum"`
-	// 白名单名称。
+	// Allowlist name.
 	AllowListName pulumi.StringOutput `pulumi:"allowListName"`
-	// 白名单内的IP地址类型，当前仅支持IPv4。
+	// IP address type in the allowlist. Only IPv4 is currently supported.
 	AllowListType pulumi.StringOutput `pulumi:"allowListType"`
-	// 白名单下绑定的实例总数
+	// Total number of instances bound to the allowlist.
 	AssociatedInstanceNum pulumi.IntOutput                       `pulumi:"associatedInstanceNum"`
 	AssociatedInstances   AllowListAssociatedInstanceArrayOutput `pulumi:"associatedInstances"`
-	// 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+	// How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
 	ModifyMode pulumi.StringOutput `pulumi:"modifyMode"`
-	// 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+	// Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
 }
 
@@ -76,46 +76,46 @@ func GetAllowList(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AllowList resources.
 type allowListState struct {
-	// IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+	// IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
 	AllowList *string `pulumi:"allowList"`
-	// 白名单描述。
+	// Allowlist description.
 	AllowListDesc *string `pulumi:"allowListDesc"`
-	// 白名单的id。
+	// Allowlist ID.
 	AllowListId *string `pulumi:"allowListId"`
-	// 白名单内的 IP 地址（或地址段）总数。
+	// Total number of IP addresses (or address ranges) in the allowlist.
 	AllowListIpNum *int `pulumi:"allowListIpNum"`
-	// 白名单名称。
+	// Allowlist name.
 	AllowListName *string `pulumi:"allowListName"`
-	// 白名单内的IP地址类型，当前仅支持IPv4。
+	// IP address type in the allowlist. Only IPv4 is currently supported.
 	AllowListType *string `pulumi:"allowListType"`
-	// 白名单下绑定的实例总数
+	// Total number of instances bound to the allowlist.
 	AssociatedInstanceNum *int                          `pulumi:"associatedInstanceNum"`
 	AssociatedInstances   []AllowListAssociatedInstance `pulumi:"associatedInstances"`
-	// 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+	// How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
 	ModifyMode *string `pulumi:"modifyMode"`
-	// 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+	// Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
 	ProjectName *string `pulumi:"projectName"`
 }
 
 type AllowListState struct {
-	// IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+	// IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
 	AllowList pulumi.StringPtrInput
-	// 白名单描述。
+	// Allowlist description.
 	AllowListDesc pulumi.StringPtrInput
-	// 白名单的id。
+	// Allowlist ID.
 	AllowListId pulumi.StringPtrInput
-	// 白名单内的 IP 地址（或地址段）总数。
+	// Total number of IP addresses (or address ranges) in the allowlist.
 	AllowListIpNum pulumi.IntPtrInput
-	// 白名单名称。
+	// Allowlist name.
 	AllowListName pulumi.StringPtrInput
-	// 白名单内的IP地址类型，当前仅支持IPv4。
+	// IP address type in the allowlist. Only IPv4 is currently supported.
 	AllowListType pulumi.StringPtrInput
-	// 白名单下绑定的实例总数
+	// Total number of instances bound to the allowlist.
 	AssociatedInstanceNum pulumi.IntPtrInput
 	AssociatedInstances   AllowListAssociatedInstanceArrayInput
-	// 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+	// How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
 	ModifyMode pulumi.StringPtrInput
-	// 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+	// Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
 	ProjectName pulumi.StringPtrInput
 }
 
@@ -124,35 +124,35 @@ func (AllowListState) ElementType() reflect.Type {
 }
 
 type allowListArgs struct {
-	// IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+	// IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
 	AllowList *string `pulumi:"allowList"`
-	// 白名单描述。
+	// Allowlist description.
 	AllowListDesc *string `pulumi:"allowListDesc"`
-	// 白名单名称。
+	// Allowlist name.
 	AllowListName string `pulumi:"allowListName"`
-	// 白名单内的IP地址类型，当前仅支持IPv4。
+	// IP address type in the allowlist. Only IPv4 is currently supported.
 	AllowListType       *string                       `pulumi:"allowListType"`
 	AssociatedInstances []AllowListAssociatedInstance `pulumi:"associatedInstances"`
-	// 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+	// How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
 	ModifyMode *string `pulumi:"modifyMode"`
-	// 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+	// Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
 	ProjectName *string `pulumi:"projectName"`
 }
 
 // The set of arguments for constructing a AllowList resource.
 type AllowListArgs struct {
-	// IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+	// IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
 	AllowList pulumi.StringPtrInput
-	// 白名单描述。
+	// Allowlist description.
 	AllowListDesc pulumi.StringPtrInput
-	// 白名单名称。
+	// Allowlist name.
 	AllowListName pulumi.StringInput
-	// 白名单内的IP地址类型，当前仅支持IPv4。
+	// IP address type in the allowlist. Only IPv4 is currently supported.
 	AllowListType       pulumi.StringPtrInput
 	AssociatedInstances AllowListAssociatedInstanceArrayInput
-	// 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+	// How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
 	ModifyMode pulumi.StringPtrInput
-	// 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+	// Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
 	ProjectName pulumi.StringPtrInput
 }
 
@@ -243,37 +243,37 @@ func (o AllowListOutput) ToAllowListOutputWithContext(ctx context.Context) Allow
 	return o
 }
 
-// IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+// IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
 func (o AllowListOutput) AllowList() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowList }).(pulumi.StringOutput)
 }
 
-// 白名单描述。
+// Allowlist description.
 func (o AllowListOutput) AllowListDesc() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowListDesc }).(pulumi.StringOutput)
 }
 
-// 白名单的id。
+// Allowlist ID.
 func (o AllowListOutput) AllowListId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowListId }).(pulumi.StringOutput)
 }
 
-// 白名单内的 IP 地址（或地址段）总数。
+// Total number of IP addresses (or address ranges) in the allowlist.
 func (o AllowListOutput) AllowListIpNum() pulumi.IntOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.IntOutput { return v.AllowListIpNum }).(pulumi.IntOutput)
 }
 
-// 白名单名称。
+// Allowlist name.
 func (o AllowListOutput) AllowListName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowListName }).(pulumi.StringOutput)
 }
 
-// 白名单内的IP地址类型，当前仅支持IPv4。
+// IP address type in the allowlist. Only IPv4 is currently supported.
 func (o AllowListOutput) AllowListType() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowListType }).(pulumi.StringOutput)
 }
 
-// 白名单下绑定的实例总数
+// Total number of instances bound to the allowlist.
 func (o AllowListOutput) AssociatedInstanceNum() pulumi.IntOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.IntOutput { return v.AssociatedInstanceNum }).(pulumi.IntOutput)
 }
@@ -282,12 +282,12 @@ func (o AllowListOutput) AssociatedInstances() AllowListAssociatedInstanceArrayO
 	return o.ApplyT(func(v *AllowList) AllowListAssociatedInstanceArrayOutput { return v.AssociatedInstances }).(AllowListAssociatedInstanceArrayOutput)
 }
 
-// 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+// How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
 func (o AllowListOutput) ModifyMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.ModifyMode }).(pulumi.StringOutput)
 }
 
-// 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+// Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
 func (o AllowListOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }

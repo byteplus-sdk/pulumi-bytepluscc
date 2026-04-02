@@ -12,74 +12,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DefaultNodePoolNodeStatistics {
     /**
-     * @return Phase=Creating的节点总数量。
+     * @return Total number of nodes with Phase=Creating.
      * 
      */
     private @Nullable Integer creatingCount;
     /**
-     * @return Phase=Deleting的节点总数量。
+     * @return Total number of nodes with Phase=Deleting.
      * 
      */
     private @Nullable Integer deletingCount;
     /**
-     * @return Phase=Failed的节点总数量。
+     * @return Total number of nodes with Phase=Failed
      * 
      */
     private @Nullable Integer failedCount;
     /**
-     * @return Phase=Running的节点总数量。
+     * @return Total number of nodes with Phase=Running
      * 
      */
     private @Nullable Integer runningCount;
     /**
-     * @return 节点池中的节点总数量。
+     * @return Total number of nodes in the node pool.
      * 
      */
     private @Nullable Integer totalCount;
     /**
-     * @return Phase=Updating的节点总数量。
+     * @return Total number of nodes with Phase=Updating
      * 
      */
     private @Nullable Integer updatingCount;
 
     private DefaultNodePoolNodeStatistics() {}
     /**
-     * @return Phase=Creating的节点总数量。
+     * @return Total number of nodes with Phase=Creating.
      * 
      */
     public Optional<Integer> creatingCount() {
         return Optional.ofNullable(this.creatingCount);
     }
     /**
-     * @return Phase=Deleting的节点总数量。
+     * @return Total number of nodes with Phase=Deleting.
      * 
      */
     public Optional<Integer> deletingCount() {
         return Optional.ofNullable(this.deletingCount);
     }
     /**
-     * @return Phase=Failed的节点总数量。
+     * @return Total number of nodes with Phase=Failed
      * 
      */
     public Optional<Integer> failedCount() {
         return Optional.ofNullable(this.failedCount);
     }
     /**
-     * @return Phase=Running的节点总数量。
+     * @return Total number of nodes with Phase=Running
      * 
      */
     public Optional<Integer> runningCount() {
         return Optional.ofNullable(this.runningCount);
     }
     /**
-     * @return 节点池中的节点总数量。
+     * @return Total number of nodes in the node pool.
      * 
      */
     public Optional<Integer> totalCount() {
         return Optional.ofNullable(this.totalCount);
     }
     /**
-     * @return Phase=Updating的节点总数量。
+     * @return Total number of nodes with Phase=Updating
      * 
      */
     public Optional<Integer> updatingCount() {

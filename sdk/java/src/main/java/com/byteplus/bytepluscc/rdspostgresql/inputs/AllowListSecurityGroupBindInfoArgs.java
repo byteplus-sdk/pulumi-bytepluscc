@@ -17,14 +17,14 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
     public static final AllowListSecurityGroupBindInfoArgs Empty = new AllowListSecurityGroupBindInfoArgs();
 
     /**
-     * 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+     * Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
      * 
      */
     @Import(name="bindMode")
     private @Nullable Output<String> bindMode;
 
     /**
-     * @return 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+     * @return Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
      * 
      */
     public Optional<Output<String>> bindMode() {
@@ -32,14 +32,14 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
     }
 
     /**
-     * 安全组中的 IP 列表。
+     * IP address list in the security group.
      * 
      */
     @Import(name="ipLists")
     private @Nullable Output<List<String>> ipLists;
 
     /**
-     * @return 安全组中的 IP 列表。
+     * @return IP address list in the security group.
      * 
      */
     public Optional<Output<List<String>>> ipLists() {
@@ -47,14 +47,14 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
     }
 
     /**
-     * 安全组 ID。
+     * Security group ID.
      * 
      */
     @Import(name="securityGroupId")
     private @Nullable Output<String> securityGroupId;
 
     /**
-     * @return 安全组 ID。
+     * @return Security group ID.
      * 
      */
     public Optional<Output<String>> securityGroupId() {
@@ -62,14 +62,14 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
     }
 
     /**
-     * 安全组名称。
+     * Security group name.
      * 
      */
     @Import(name="securityGroupName")
     private @Nullable Output<String> securityGroupName;
 
     /**
-     * @return 安全组名称。
+     * @return Security group name.
      * 
      */
     public Optional<Output<String>> securityGroupName() {
@@ -104,7 +104,7 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param bindMode 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+         * @param bindMode Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param bindMode 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+         * @param bindMode Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param ipLists 安全组中的 IP 列表。
+         * @param ipLists IP address list in the security group.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param ipLists 安全组中的 IP 列表。
+         * @param ipLists IP address list in the security group.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param ipLists 安全组中的 IP 列表。
+         * @param ipLists IP address list in the security group.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param securityGroupId 安全组 ID。
+         * @param securityGroupId Security group ID.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param securityGroupId 安全组 ID。
+         * @param securityGroupId Security group ID.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param securityGroupName 安全组名称。
+         * @param securityGroupName Security group name.
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param securityGroupName 安全组名称。
+         * @param securityGroupName Security group name.
          * 
          * @return builder
          * 

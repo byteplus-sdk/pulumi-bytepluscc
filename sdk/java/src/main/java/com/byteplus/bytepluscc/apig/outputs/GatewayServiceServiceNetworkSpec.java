@@ -14,38 +14,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GatewayServiceServiceNetworkSpec {
     /**
-     * @return 开启私网。
+     * @return Enable private network.
      * 
      */
     private @Nullable Boolean enablePrivateNetwork;
     /**
-     * @return 开启公网。
+     * @return Enable public network.
      * 
      */
     private @Nullable Boolean enablePublicNetwork;
     /**
-     * @return 私网域名解析的目标IP。
+     * @return Target IP for private network domain resolution.
      * 
      */
     private @Nullable List<String> privateNetworkIps;
 
     private GatewayServiceServiceNetworkSpec() {}
     /**
-     * @return 开启私网。
+     * @return Enable private network.
      * 
      */
     public Optional<Boolean> enablePrivateNetwork() {
         return Optional.ofNullable(this.enablePrivateNetwork);
     }
     /**
-     * @return 开启公网。
+     * @return Enable public network.
      * 
      */
     public Optional<Boolean> enablePublicNetwork() {
         return Optional.ofNullable(this.enablePublicNetwork);
     }
     /**
-     * @return 私网域名解析的目标IP。
+     * @return Target IP for private network domain resolution.
      * 
      */
     public List<String> privateNetworkIps() {

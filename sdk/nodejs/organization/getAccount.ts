@@ -31,39 +31,39 @@ export interface GetAccountArgs {
  */
 export interface GetAccountResult {
     /**
-     * 火山账号ID。
+     * Volcano account ID
      */
     readonly accountId: string;
     /**
-     * 账户名称。5-20个字符。
+     * Account name. 5–20 characters
      */
     readonly accountName: string;
     /**
-     * 允许控制台访问，1: 允许，2: 不允许。
+     * Allow console access: 1. Allowed, 2. Not allowed
      */
     readonly allowConsole: number;
     /**
-     * 允许退出，1: 允许，2: 不允许。
+     * Allow exit: 1. Allowed, 2. Not allowed
      */
     readonly allowExit: number;
     /**
-     * 创建时间。
+     * Creation time
      */
     readonly createdTime: string;
     /**
-     * 删除标记。
+     * Deletion flag
      */
     readonly deleteUk: string;
     /**
-     * 删除时间。
+     * Deletion time
      */
     readonly deletedTime: string;
     /**
-     * 描述。
+     * Description
      */
     readonly description: string;
     /**
-     * IAM角色名称。
+     * IAM role name
      */
     readonly iamRole: string;
     /**
@@ -71,67 +71,67 @@ export interface GetAccountResult {
      */
     readonly id: string;
     /**
-     * 是否是管理员，0.非管理员，1.管理员。
+     * Administrator status: 0. Non-administrator, 1. Administrator
      */
     readonly isOwner: number;
     /**
-     * 加入类型，1: 创建，2: 邀请。
+     * Join type: 1. Create, 2. Invite
      */
     readonly joinType: number;
     /**
-     * 主体名称。
+     * Subject name
      */
     readonly mainName: string;
     /**
-     * 组织成员账号ID。
+     * Organization member account ID
      */
     readonly memberAccountId: string;
     /**
-     * 组织ID。
+     * Organization ID
      */
     readonly orgId: string;
     /**
-     * 组织类型，1.企业组织。
+     * Organization type: 1. Enterprise organization
      */
     readonly orgType: number;
     /**
-     * 组织单元ID。传入 0 加入到 root 单元。
+     * Organizational unit ID. Enter 0 to join the root unit
      */
     readonly orgUnitId: string;
     /**
-     * 组织单元名称。
+     * Organizational unit name
      */
     readonly orgUnitName: string;
     /**
-     * 认证主体ID。
+     * Authentication subject ID
      */
     readonly orgVerificationId: string;
     /**
-     * 管理员ID。
+     * Administrator ID
      */
     readonly owner: string;
     /**
-     * 账户密码。
+     * Account password
      */
     readonly password: string;
     /**
-     * 安全联系信息。
+     * Security contact information
      */
     readonly secureContactInfo: outputs.organization.GetAccountSecureContactInfo;
     /**
-     * 显示名称。
+     * Display name
      */
     readonly showName: string;
     /**
-     * 标签列表。
+     * Tag list
      */
     readonly tags: outputs.organization.GetAccountTag[];
     /**
-     * 更新时间。
+     * Update time
      */
     readonly updatedTime: string;
     /**
-     * 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+     * Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
      */
     readonly verificationRelationId: string;
 }

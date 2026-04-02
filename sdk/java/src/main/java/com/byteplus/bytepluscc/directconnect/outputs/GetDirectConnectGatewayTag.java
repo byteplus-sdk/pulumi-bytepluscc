@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDirectConnectGatewayTag {
     /**
-     * @return 用户标签的标签键。长度取值范围为1~128字符。
+     * @return User label tag key. Length must be between 1 and 128 characters.
      * 
      */
     private String key;
     /**
-     * @return 用户标签的标签值。长度取值范围为0~256字符。
+     * @return User label tag value. Length must be between 0 and 256 characters.
      * 
      */
     private String value;
 
     private GetDirectConnectGatewayTag() {}
     /**
-     * @return 用户标签的标签键。长度取值范围为1~128字符。
+     * @return User label tag key. Length must be between 1 and 128 characters.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 用户标签的标签值。长度取值范围为0~256字符。
+     * @return User label tag value. Length must be between 0 and 256 characters.
      * 
      */
     public String value() {

@@ -16,14 +16,14 @@ public final class UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs extend
     public static final UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs Empty = new UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs();
 
     /**
-     * 密码。
+     * Password
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return 密码。
+     * @return Password
      * 
      */
     public Optional<Output<String>> password() {
@@ -31,14 +31,14 @@ public final class UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs extend
     }
 
     /**
-     * 用户名。
+     * Username
      * 
      */
     @Import(name="username")
     private @Nullable Output<String> username;
 
     /**
-     * @return 用户名。
+     * @return Username
      * 
      */
     public Optional<Output<String>> username() {
@@ -71,7 +71,7 @@ public final class UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs extend
         }
 
         /**
-         * @param password 密码。
+         * @param password Password
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs extend
         }
 
         /**
-         * @param password 密码。
+         * @param password Password
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs extend
         }
 
         /**
-         * @param username 用户名。
+         * @param username Username
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs extend
         }
 
         /**
-         * @param username 用户名。
+         * @param username Username
          * 
          * @return builder
          * 

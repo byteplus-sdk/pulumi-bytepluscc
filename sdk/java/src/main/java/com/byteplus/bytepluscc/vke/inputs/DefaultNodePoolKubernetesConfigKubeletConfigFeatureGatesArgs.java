@@ -16,14 +16,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs 
     public static final DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs Empty = new DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs();
 
     /**
-     * 是否开启特性开关本地垂直Pod伸缩
+     * Whether to enable the feature switch for local vertical Pod autoscaling
      * 
      */
     @Import(name="inPlacePodVerticalScaling")
     private @Nullable Output<Boolean> inPlacePodVerticalScaling;
 
     /**
-     * @return 是否开启特性开关本地垂直Pod伸缩
+     * @return Whether to enable the feature switch for local vertical Pod autoscaling
      * 
      */
     public Optional<Output<Boolean>> inPlacePodVerticalScaling() {
@@ -31,14 +31,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs 
     }
 
     /**
-     * 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+     * Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
      * 
      */
     @Import(name="qoSResourceManager")
     private @Nullable Output<Boolean> qoSResourceManager;
 
     /**
-     * @return 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+     * @return Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
      * 
      */
     public Optional<Output<Boolean>> qoSResourceManager() {
@@ -71,7 +71,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs 
         }
 
         /**
-         * @param inPlacePodVerticalScaling 是否开启特性开关本地垂直Pod伸缩
+         * @param inPlacePodVerticalScaling Whether to enable the feature switch for local vertical Pod autoscaling
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs 
         }
 
         /**
-         * @param inPlacePodVerticalScaling 是否开启特性开关本地垂直Pod伸缩
+         * @param inPlacePodVerticalScaling Whether to enable the feature switch for local vertical Pod autoscaling
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs 
         }
 
         /**
-         * @param qoSResourceManager 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+         * @param qoSResourceManager Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs 
         }
 
         /**
-         * @param qoSResourceManager 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+         * @param qoSResourceManager Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
          * 
          * @return builder
          * 

@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainPageOptimization {
     /**
-     * @return 表示优化的对象。该参数有以下取值：html: 表示 HTML 页面。js: 表示 Javascript 代码。css: 表示 CSS 代码。该参数的默认值是 html。如果您指定了 js 或者 js，html 也必须指定。
+     * @return Specifies the optimization target. This parameter has the following values: html: HTML page. js: JavaScript code. css: CSS code. The default value is html. If you specify js or css, html must also be specified.
      * 
      */
     private List<String> optimizationTypes;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether this feature is enabled. The parameter values are: true: The feature is enabled. false: The feature is disabled.
      * 
      */
     private Boolean switch_;
 
     private GetDomainPageOptimization() {}
     /**
-     * @return 表示优化的对象。该参数有以下取值：html: 表示 HTML 页面。js: 表示 Javascript 代码。css: 表示 CSS 代码。该参数的默认值是 html。如果您指定了 js 或者 js，html 也必须指定。
+     * @return Specifies the optimization target. This parameter has the following values: html: HTML page. js: JavaScript code. css: CSS code. The default value is html. If you specify js or css, html must also be specified.
      * 
      */
     public List<String> optimizationTypes() {
         return this.optimizationTypes;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether this feature is enabled. The parameter values are: true: The feature is enabled. false: The feature is disabled.
      * 
      */
     public Boolean switch_() {

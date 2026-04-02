@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GatewayBackendSpec {
     /**
-     * @return 是否支持VKE Flannel CNI。
+     * @return Whether VKE Flannel CNI is supported
      * 
      */
     private @Nullable Boolean isVkeWithFlannelCniSupported;
@@ -25,7 +25,7 @@ public final class GatewayBackendSpec {
 
     private GatewayBackendSpec() {}
     /**
-     * @return 是否支持VKE Flannel CNI。
+     * @return Whether VKE Flannel CNI is supported
      * 
      */
     public Optional<Boolean> isVkeWithFlannelCniSupported() {

@@ -65,15 +65,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     public sealed class GetDatabaseResult
     {
         /// <summary>
-        /// 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+        /// Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
         /// </summary>
         public readonly string CharacterSetName;
         /// <summary>
-        /// 授权数据库权限信息。
+        /// Database privilege authorization information.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseDatabasePrivilegeResult> DatabasePrivileges;
         /// <summary>
-        /// 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+        /// Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -81,15 +81,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 数据库实例 ID。
+        /// Database instance ID.
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+        /// Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 数据库状态。取值为：Unavailable：不可用。Available：可用。
+        /// Database status. Values: Unavailable (not available), Available (available).
         /// </summary>
         public readonly string Status;
 

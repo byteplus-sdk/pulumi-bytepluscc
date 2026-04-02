@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PolicyPolicyUserPolicyScope {
     /**
-     * @return 项目名。
+     * @return Project name.
      * 
      */
     private @Nullable String projectName;
 
     private PolicyPolicyUserPolicyScope() {}
     /**
-     * @return 项目名。
+     * @return Project name.
      * 
      */
     public Optional<String> projectName() {

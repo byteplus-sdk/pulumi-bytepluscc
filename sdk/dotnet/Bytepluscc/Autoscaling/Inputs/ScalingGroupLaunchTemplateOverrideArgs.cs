@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling.Inputs
     public sealed class ScalingGroupLaunchTemplateOverrideArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+        /// Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
         /// </summary>
         [Input("instanceType")]
         public Input<string>? InstanceType { get; set; }
 
         /// <summary>
-        /// 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+        /// Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template's billing mode is SpotWithPriceLimit.
         /// </summary>
         [Input("priceLimit")]
         public Input<double>? PriceLimit { get; set; }

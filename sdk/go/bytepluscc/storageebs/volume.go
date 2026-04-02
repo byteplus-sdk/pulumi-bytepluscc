@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 云盘是高可用、高可靠、高性能、弹性扩展的块存储设备，可以作为云服务器和弹性容器服务的可扩展硬盘使用。
+// Cloud disk is a block storage device with high availability, high reliability, high performance, and elastic scalability. It can be used as a scalable disk for cloud servers and elastic container services.
 //
 // ## Example Usage
 //
@@ -51,64 +51,64 @@ import (
 type Volume struct {
 	pulumi.CustomResourceState
 
-	// 自动快照策略ID。
+	// Automatic snapshot policy ID.
 	AutoSnapshotPolicyId pulumi.StringOutput `pulumi:"autoSnapshotPolicyId"`
-	// 自动快照策略名称。
+	// Automatic snapshot policy name.
 	AutoSnapshotPolicyName pulumi.StringOutput `pulumi:"autoSnapshotPolicyName"`
-	// 基本性能。
+	// Baseline performance.
 	BaselinePerformance VolumeBaselinePerformanceOutput `pulumi:"baselinePerformance"`
-	// 云盘创建时间。
+	// Disk creation time.
 	CreatedAt pulumi.StringOutput `pulumi:"createdAt"`
-	// 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+	// When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
 	DeleteWithInstance pulumi.BoolOutput `pulumi:"deleteWithInstance"`
-	// 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+	// Disk description. Default is empty. Length must be between 1 and 255 characters.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 设备名称
+	// Device name
 	DeviceName pulumi.StringOutput `pulumi:"deviceName"`
-	// 具体错误
+	// Specific error
 	ErrorDetail pulumi.StringOutput `pulumi:"errorDetail"`
-	// 包年包月到期时间。
+	// Expiration time for yearly/monthly subscription.
 	ExpiredTime pulumi.StringOutput `pulumi:"expiredTime"`
-	// 额外性能。
+	// Extra performance.
 	ExtraPerformance VolumeExtraPerformanceOutput `pulumi:"extraPerformance"`
-	// 云盘中的镜像ID。
+	// Image ID in the disk.
 	ImageId pulumi.StringOutput `pulumi:"imageId"`
-	// 创建云盘的同时挂载的ECS实例ID。
+	// ECS instance ID mounted when creating the cloud disk.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
-	// 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+	// Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
 	Kind pulumi.StringOutput `pulumi:"kind"`
-	// 云盘欠费回收时间。
+	// Disk overdue reclamation time.
 	OverdueReclaimTime pulumi.StringOutput `pulumi:"overdueReclaimTime"`
-	// 云盘欠费关停时间。
+	// Disk overdue shutdown time.
 	OverdueTime pulumi.StringOutput `pulumi:"overdueTime"`
-	// 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+	// Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
 	PayType pulumi.StringOutput `pulumi:"payType"`
-	// 云盘所要加入的Project（项目）名称。
+	// Project name to which the disk will be added.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+	// Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
 	RenewType pulumi.Float64Output `pulumi:"renewType"`
-	// Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+	// Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
 	Size pulumi.Float64Output `pulumi:"size"`
-	// 快照计数
+	// Snapshot count.
 	SnapshotCount pulumi.Float64Output `pulumi:"snapshotCount"`
-	// 源快照。
+	// Source snapshot.
 	SourceSnapshotId pulumi.StringOutput `pulumi:"sourceSnapshotId"`
-	// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+	// Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
 	Status pulumi.StringOutput  `pulumi:"status"`
 	Tags   VolumeTagArrayOutput `pulumi:"tags"`
-	// 总性能。
+	// Total performance.
 	TotalPerformance VolumeTotalPerformanceOutput `pulumi:"totalPerformance"`
-	// 交易状态 0：创建中 1：运行中 2：创建失败
+	// Transaction status 0: Creating 1: Running 2: Creation failed
 	TradeStatus pulumi.Float64Output `pulumi:"tradeStatus"`
-	// 云盘更新时间。
+	// Disk update time.
 	UpdatedAt pulumi.StringOutput `pulumi:"updatedAt"`
-	// 云盘id。
+	// Disk ID.
 	VolumeId pulumi.StringOutput `pulumi:"volumeId"`
-	// 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+	// Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
 	VolumeName pulumi.StringOutput `pulumi:"volumeName"`
-	// 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+	// Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
 	VolumeType pulumi.StringOutput `pulumi:"volumeType"`
-	// 可用区ID。
+	// Availability zone ID.
 	ZoneId pulumi.StringOutput `pulumi:"zoneId"`
 }
 
@@ -154,126 +154,126 @@ func GetVolume(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Volume resources.
 type volumeState struct {
-	// 自动快照策略ID。
+	// Automatic snapshot policy ID.
 	AutoSnapshotPolicyId *string `pulumi:"autoSnapshotPolicyId"`
-	// 自动快照策略名称。
+	// Automatic snapshot policy name.
 	AutoSnapshotPolicyName *string `pulumi:"autoSnapshotPolicyName"`
-	// 基本性能。
+	// Baseline performance.
 	BaselinePerformance *VolumeBaselinePerformance `pulumi:"baselinePerformance"`
-	// 云盘创建时间。
+	// Disk creation time.
 	CreatedAt *string `pulumi:"createdAt"`
-	// 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+	// When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
 	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
-	// 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+	// Disk description. Default is empty. Length must be between 1 and 255 characters.
 	Description *string `pulumi:"description"`
-	// 设备名称
+	// Device name
 	DeviceName *string `pulumi:"deviceName"`
-	// 具体错误
+	// Specific error
 	ErrorDetail *string `pulumi:"errorDetail"`
-	// 包年包月到期时间。
+	// Expiration time for yearly/monthly subscription.
 	ExpiredTime *string `pulumi:"expiredTime"`
-	// 额外性能。
+	// Extra performance.
 	ExtraPerformance *VolumeExtraPerformance `pulumi:"extraPerformance"`
-	// 云盘中的镜像ID。
+	// Image ID in the disk.
 	ImageId *string `pulumi:"imageId"`
-	// 创建云盘的同时挂载的ECS实例ID。
+	// ECS instance ID mounted when creating the cloud disk.
 	InstanceId *string `pulumi:"instanceId"`
-	// 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+	// Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
 	Kind *string `pulumi:"kind"`
-	// 云盘欠费回收时间。
+	// Disk overdue reclamation time.
 	OverdueReclaimTime *string `pulumi:"overdueReclaimTime"`
-	// 云盘欠费关停时间。
+	// Disk overdue shutdown time.
 	OverdueTime *string `pulumi:"overdueTime"`
-	// 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+	// Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
 	PayType *string `pulumi:"payType"`
-	// 云盘所要加入的Project（项目）名称。
+	// Project name to which the disk will be added.
 	ProjectName *string `pulumi:"projectName"`
-	// 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+	// Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
 	RenewType *float64 `pulumi:"renewType"`
-	// Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+	// Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
 	Size *float64 `pulumi:"size"`
-	// 快照计数
+	// Snapshot count.
 	SnapshotCount *float64 `pulumi:"snapshotCount"`
-	// 源快照。
+	// Source snapshot.
 	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
-	// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+	// Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
 	Status *string     `pulumi:"status"`
 	Tags   []VolumeTag `pulumi:"tags"`
-	// 总性能。
+	// Total performance.
 	TotalPerformance *VolumeTotalPerformance `pulumi:"totalPerformance"`
-	// 交易状态 0：创建中 1：运行中 2：创建失败
+	// Transaction status 0: Creating 1: Running 2: Creation failed
 	TradeStatus *float64 `pulumi:"tradeStatus"`
-	// 云盘更新时间。
+	// Disk update time.
 	UpdatedAt *string `pulumi:"updatedAt"`
-	// 云盘id。
+	// Disk ID.
 	VolumeId *string `pulumi:"volumeId"`
-	// 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+	// Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
 	VolumeName *string `pulumi:"volumeName"`
-	// 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+	// Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
 	VolumeType *string `pulumi:"volumeType"`
-	// 可用区ID。
+	// Availability zone ID.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
 type VolumeState struct {
-	// 自动快照策略ID。
+	// Automatic snapshot policy ID.
 	AutoSnapshotPolicyId pulumi.StringPtrInput
-	// 自动快照策略名称。
+	// Automatic snapshot policy name.
 	AutoSnapshotPolicyName pulumi.StringPtrInput
-	// 基本性能。
+	// Baseline performance.
 	BaselinePerformance VolumeBaselinePerformancePtrInput
-	// 云盘创建时间。
+	// Disk creation time.
 	CreatedAt pulumi.StringPtrInput
-	// 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+	// When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
 	DeleteWithInstance pulumi.BoolPtrInput
-	// 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+	// Disk description. Default is empty. Length must be between 1 and 255 characters.
 	Description pulumi.StringPtrInput
-	// 设备名称
+	// Device name
 	DeviceName pulumi.StringPtrInput
-	// 具体错误
+	// Specific error
 	ErrorDetail pulumi.StringPtrInput
-	// 包年包月到期时间。
+	// Expiration time for yearly/monthly subscription.
 	ExpiredTime pulumi.StringPtrInput
-	// 额外性能。
+	// Extra performance.
 	ExtraPerformance VolumeExtraPerformancePtrInput
-	// 云盘中的镜像ID。
+	// Image ID in the disk.
 	ImageId pulumi.StringPtrInput
-	// 创建云盘的同时挂载的ECS实例ID。
+	// ECS instance ID mounted when creating the cloud disk.
 	InstanceId pulumi.StringPtrInput
-	// 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+	// Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
 	Kind pulumi.StringPtrInput
-	// 云盘欠费回收时间。
+	// Disk overdue reclamation time.
 	OverdueReclaimTime pulumi.StringPtrInput
-	// 云盘欠费关停时间。
+	// Disk overdue shutdown time.
 	OverdueTime pulumi.StringPtrInput
-	// 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+	// Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
 	PayType pulumi.StringPtrInput
-	// 云盘所要加入的Project（项目）名称。
+	// Project name to which the disk will be added.
 	ProjectName pulumi.StringPtrInput
-	// 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+	// Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
 	RenewType pulumi.Float64PtrInput
-	// Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+	// Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
 	Size pulumi.Float64PtrInput
-	// 快照计数
+	// Snapshot count.
 	SnapshotCount pulumi.Float64PtrInput
-	// 源快照。
+	// Source snapshot.
 	SourceSnapshotId pulumi.StringPtrInput
-	// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+	// Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
 	Status pulumi.StringPtrInput
 	Tags   VolumeTagArrayInput
-	// 总性能。
+	// Total performance.
 	TotalPerformance VolumeTotalPerformancePtrInput
-	// 交易状态 0：创建中 1：运行中 2：创建失败
+	// Transaction status 0: Creating 1: Running 2: Creation failed
 	TradeStatus pulumi.Float64PtrInput
-	// 云盘更新时间。
+	// Disk update time.
 	UpdatedAt pulumi.StringPtrInput
-	// 云盘id。
+	// Disk ID.
 	VolumeId pulumi.StringPtrInput
-	// 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+	// Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
 	VolumeName pulumi.StringPtrInput
-	// 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+	// Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
 	VolumeType pulumi.StringPtrInput
-	// 可用区ID。
+	// Availability zone ID.
 	ZoneId pulumi.StringPtrInput
 }
 
@@ -282,63 +282,63 @@ func (VolumeState) ElementType() reflect.Type {
 }
 
 type volumeArgs struct {
-	// 自动快照策略ID。
+	// Automatic snapshot policy ID.
 	AutoSnapshotPolicyId *string `pulumi:"autoSnapshotPolicyId"`
-	// 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+	// When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
 	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
-	// 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+	// Disk description. Default is empty. Length must be between 1 and 255 characters.
 	Description *string `pulumi:"description"`
-	// 额外性能。
+	// Extra performance.
 	ExtraPerformance *VolumeExtraPerformance `pulumi:"extraPerformance"`
-	// 创建云盘的同时挂载的ECS实例ID。
+	// ECS instance ID mounted when creating the cloud disk.
 	InstanceId *string `pulumi:"instanceId"`
-	// 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+	// Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
 	Kind *string `pulumi:"kind"`
-	// 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+	// Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
 	PayType *string `pulumi:"payType"`
-	// 云盘所要加入的Project（项目）名称。
+	// Project name to which the disk will be added.
 	ProjectName *string `pulumi:"projectName"`
-	// Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+	// Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
 	Size float64 `pulumi:"size"`
-	// 源快照。
+	// Source snapshot.
 	SourceSnapshotId *string     `pulumi:"sourceSnapshotId"`
 	Tags             []VolumeTag `pulumi:"tags"`
-	// 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+	// Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
 	VolumeName string `pulumi:"volumeName"`
-	// 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+	// Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
 	VolumeType string `pulumi:"volumeType"`
-	// 可用区ID。
+	// Availability zone ID.
 	ZoneId string `pulumi:"zoneId"`
 }
 
 // The set of arguments for constructing a Volume resource.
 type VolumeArgs struct {
-	// 自动快照策略ID。
+	// Automatic snapshot policy ID.
 	AutoSnapshotPolicyId pulumi.StringPtrInput
-	// 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+	// When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
 	DeleteWithInstance pulumi.BoolPtrInput
-	// 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+	// Disk description. Default is empty. Length must be between 1 and 255 characters.
 	Description pulumi.StringPtrInput
-	// 额外性能。
+	// Extra performance.
 	ExtraPerformance VolumeExtraPerformancePtrInput
-	// 创建云盘的同时挂载的ECS实例ID。
+	// ECS instance ID mounted when creating the cloud disk.
 	InstanceId pulumi.StringPtrInput
-	// 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+	// Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
 	Kind pulumi.StringPtrInput
-	// 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+	// Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
 	PayType pulumi.StringPtrInput
-	// 云盘所要加入的Project（项目）名称。
+	// Project name to which the disk will be added.
 	ProjectName pulumi.StringPtrInput
-	// Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+	// Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
 	Size pulumi.Float64Input
-	// 源快照。
+	// Source snapshot.
 	SourceSnapshotId pulumi.StringPtrInput
 	Tags             VolumeTagArrayInput
-	// 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+	// Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
 	VolumeName pulumi.StringInput
-	// 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+	// Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
 	VolumeType pulumi.StringInput
-	// 可用区ID。
+	// Availability zone ID.
 	ZoneId pulumi.StringInput
 }
 
@@ -429,112 +429,112 @@ func (o VolumeOutput) ToVolumeOutputWithContext(ctx context.Context) VolumeOutpu
 	return o
 }
 
-// 自动快照策略ID。
+// Automatic snapshot policy ID.
 func (o VolumeOutput) AutoSnapshotPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.AutoSnapshotPolicyId }).(pulumi.StringOutput)
 }
 
-// 自动快照策略名称。
+// Automatic snapshot policy name.
 func (o VolumeOutput) AutoSnapshotPolicyName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.AutoSnapshotPolicyName }).(pulumi.StringOutput)
 }
 
-// 基本性能。
+// Baseline performance.
 func (o VolumeOutput) BaselinePerformance() VolumeBaselinePerformanceOutput {
 	return o.ApplyT(func(v *Volume) VolumeBaselinePerformanceOutput { return v.BaselinePerformance }).(VolumeBaselinePerformanceOutput)
 }
 
-// 云盘创建时间。
+// Disk creation time.
 func (o VolumeOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+// When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
 func (o VolumeOutput) DeleteWithInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Volume) pulumi.BoolOutput { return v.DeleteWithInstance }).(pulumi.BoolOutput)
 }
 
-// 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+// Disk description. Default is empty. Length must be between 1 and 255 characters.
 func (o VolumeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 设备名称
+// Device name
 func (o VolumeOutput) DeviceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.DeviceName }).(pulumi.StringOutput)
 }
 
-// 具体错误
+// Specific error
 func (o VolumeOutput) ErrorDetail() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.ErrorDetail }).(pulumi.StringOutput)
 }
 
-// 包年包月到期时间。
+// Expiration time for yearly/monthly subscription.
 func (o VolumeOutput) ExpiredTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.ExpiredTime }).(pulumi.StringOutput)
 }
 
-// 额外性能。
+// Extra performance.
 func (o VolumeOutput) ExtraPerformance() VolumeExtraPerformanceOutput {
 	return o.ApplyT(func(v *Volume) VolumeExtraPerformanceOutput { return v.ExtraPerformance }).(VolumeExtraPerformanceOutput)
 }
 
-// 云盘中的镜像ID。
+// Image ID in the disk.
 func (o VolumeOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// 创建云盘的同时挂载的ECS实例ID。
+// ECS instance ID mounted when creating the cloud disk.
 func (o VolumeOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+// Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
 func (o VolumeOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.Kind }).(pulumi.StringOutput)
 }
 
-// 云盘欠费回收时间。
+// Disk overdue reclamation time.
 func (o VolumeOutput) OverdueReclaimTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.OverdueReclaimTime }).(pulumi.StringOutput)
 }
 
-// 云盘欠费关停时间。
+// Disk overdue shutdown time.
 func (o VolumeOutput) OverdueTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.OverdueTime }).(pulumi.StringOutput)
 }
 
-// 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+// Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
 func (o VolumeOutput) PayType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.PayType }).(pulumi.StringOutput)
 }
 
-// 云盘所要加入的Project（项目）名称。
+// Project name to which the disk will be added.
 func (o VolumeOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+// Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
 func (o VolumeOutput) RenewType() pulumi.Float64Output {
 	return o.ApplyT(func(v *Volume) pulumi.Float64Output { return v.RenewType }).(pulumi.Float64Output)
 }
 
-// Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+// Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
 func (o VolumeOutput) Size() pulumi.Float64Output {
 	return o.ApplyT(func(v *Volume) pulumi.Float64Output { return v.Size }).(pulumi.Float64Output)
 }
 
-// 快照计数
+// Snapshot count.
 func (o VolumeOutput) SnapshotCount() pulumi.Float64Output {
 	return o.ApplyT(func(v *Volume) pulumi.Float64Output { return v.SnapshotCount }).(pulumi.Float64Output)
 }
 
-// 源快照。
+// Source snapshot.
 func (o VolumeOutput) SourceSnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.SourceSnapshotId }).(pulumi.StringOutput)
 }
 
-// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+// Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
 func (o VolumeOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -543,37 +543,37 @@ func (o VolumeOutput) Tags() VolumeTagArrayOutput {
 	return o.ApplyT(func(v *Volume) VolumeTagArrayOutput { return v.Tags }).(VolumeTagArrayOutput)
 }
 
-// 总性能。
+// Total performance.
 func (o VolumeOutput) TotalPerformance() VolumeTotalPerformanceOutput {
 	return o.ApplyT(func(v *Volume) VolumeTotalPerformanceOutput { return v.TotalPerformance }).(VolumeTotalPerformanceOutput)
 }
 
-// 交易状态 0：创建中 1：运行中 2：创建失败
+// Transaction status 0: Creating 1: Running 2: Creation failed
 func (o VolumeOutput) TradeStatus() pulumi.Float64Output {
 	return o.ApplyT(func(v *Volume) pulumi.Float64Output { return v.TradeStatus }).(pulumi.Float64Output)
 }
 
-// 云盘更新时间。
+// Disk update time.
 func (o VolumeOutput) UpdatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.UpdatedAt }).(pulumi.StringOutput)
 }
 
-// 云盘id。
+// Disk ID.
 func (o VolumeOutput) VolumeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.VolumeId }).(pulumi.StringOutput)
 }
 
-// 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+// Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
 func (o VolumeOutput) VolumeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.VolumeName }).(pulumi.StringOutput)
 }
 
-// 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+// Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
 func (o VolumeOutput) VolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.VolumeType }).(pulumi.StringOutput)
 }
 
-// 可用区ID。
+// Availability zone ID.
 func (o VolumeOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.ZoneId }).(pulumi.StringOutput)
 }

@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesResult
     {
         /// <summary>
-        /// 表示一个变量列表。
+        /// Indicates a variable list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceResult> CustomVariableInstances;
 

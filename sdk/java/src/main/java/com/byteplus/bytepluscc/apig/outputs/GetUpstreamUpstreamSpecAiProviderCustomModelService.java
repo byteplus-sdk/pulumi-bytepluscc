@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamUpstreamSpecAiProviderCustomModelService {
     /**
-     * @return 模型服务名称。
+     * @return Model Service Name
      * 
      */
     private String name;
     /**
-     * @return 命名空间。
+     * @return Namespace
      * 
      */
     private String namespace;
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     private Integer port;
 
     private GetUpstreamUpstreamSpecAiProviderCustomModelService() {}
     /**
-     * @return 模型服务名称。
+     * @return Model Service Name
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 命名空间。
+     * @return Namespace
      * 
      */
     public String namespace() {
         return this.namespace;
     }
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     public Integer port() {

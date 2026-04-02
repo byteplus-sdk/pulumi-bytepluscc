@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainRedirectionRewriteRedirectionRule
     {
         /// <summary>
-        /// 表示一个 URL 重定向改写的规则。
+        /// Indicates a URL redirect rewrite rule
         /// </summary>
         public readonly Outputs.DomainRedirectionRewriteRedirectionRuleRedirectionAction? RedirectionAction;
 

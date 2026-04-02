@@ -18,27 +18,27 @@ import java.util.Objects;
 @CustomType
 public final class GetNetworkAclResult {
     /**
-     * @return 网络ACL的创建时间。
+     * @return Creation time of the network ACL.
      * 
      */
     private String createdTime;
     /**
-     * @return 默认出向ACL规则列表。
+     * @return Default outbound ACL rule list.
      * 
      */
     private List<GetNetworkAclDefaultEgressAclEntry> defaultEgressAclEntries;
     /**
-     * @return 默认入向ACL规则列表。
+     * @return Default inbound ACL rule list.
      * 
      */
     private List<GetNetworkAclDefaultIngressAclEntry> defaultIngressAclEntries;
     /**
-     * @return 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     private String description;
     /**
-     * @return 出向ACL规则列表。
+     * @return Outbound ACL rule list.
      * 
      */
     private List<GetNetworkAclEgressAclEntry> egressAclEntries;
@@ -48,82 +48,82 @@ public final class GetNetworkAclResult {
      */
     private String id;
     /**
-     * @return 入向ACL规则列表。
+     * @return Inbound ACL rule list.
      * 
      */
     private List<GetNetworkAclIngressAclEntry> ingressAclEntries;
     /**
-     * @return 网络ACL的ID。
+     * @return Network ACL ID.
      * 
      */
     private String networkAclId;
     /**
-     * @return 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * @return Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
      * 
      */
     private String networkAclName;
     /**
-     * @return 网络ACL所属项目的名称。不填默认加入default项目。
+     * @return Name of the project associated with the network ACL. If not specified, added to the default project.
      * 
      */
     private String projectName;
     /**
-     * @return 关联资源列表。
+     * @return Associated resource list.
      * 
      */
     private List<GetNetworkAclResource> resources;
     /**
-     * @return 网络ACL的状态。Available：可用，Creating：创建中
+     * @return Status of the network ACL. Available: Available. Creating: Creating.
      * 
      */
     private String status;
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     private List<GetNetworkAclTag> tags;
     /**
-     * @return 网络ACL的更新时间。
+     * @return Last updated time of the network ACL.
      * 
      */
     private String updatedTime;
     /**
-     * @return 网络ACL所属VPC的ID。
+     * @return ID of the VPC associated with the network ACL.
      * 
      */
     private String vpcId;
 
     private GetNetworkAclResult() {}
     /**
-     * @return 网络ACL的创建时间。
+     * @return Creation time of the network ACL.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 默认出向ACL规则列表。
+     * @return Default outbound ACL rule list.
      * 
      */
     public List<GetNetworkAclDefaultEgressAclEntry> defaultEgressAclEntries() {
         return this.defaultEgressAclEntries;
     }
     /**
-     * @return 默认入向ACL规则列表。
+     * @return Default inbound ACL rule list.
      * 
      */
     public List<GetNetworkAclDefaultIngressAclEntry> defaultIngressAclEntries() {
         return this.defaultIngressAclEntries;
     }
     /**
-     * @return 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 出向ACL规则列表。
+     * @return Outbound ACL rule list.
      * 
      */
     public List<GetNetworkAclEgressAclEntry> egressAclEntries() {
@@ -137,63 +137,63 @@ public final class GetNetworkAclResult {
         return this.id;
     }
     /**
-     * @return 入向ACL规则列表。
+     * @return Inbound ACL rule list.
      * 
      */
     public List<GetNetworkAclIngressAclEntry> ingressAclEntries() {
         return this.ingressAclEntries;
     }
     /**
-     * @return 网络ACL的ID。
+     * @return Network ACL ID.
      * 
      */
     public String networkAclId() {
         return this.networkAclId;
     }
     /**
-     * @return 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * @return Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
      * 
      */
     public String networkAclName() {
         return this.networkAclName;
     }
     /**
-     * @return 网络ACL所属项目的名称。不填默认加入default项目。
+     * @return Name of the project associated with the network ACL. If not specified, added to the default project.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 关联资源列表。
+     * @return Associated resource list.
      * 
      */
     public List<GetNetworkAclResource> resources() {
         return this.resources;
     }
     /**
-     * @return 网络ACL的状态。Available：可用，Creating：创建中
+     * @return Status of the network ACL. Available: Available. Creating: Creating.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     public List<GetNetworkAclTag> tags() {
         return this.tags;
     }
     /**
-     * @return 网络ACL的更新时间。
+     * @return Last updated time of the network ACL.
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 网络ACL所属VPC的ID。
+     * @return ID of the VPC associated with the network ACL.
      * 
      */
     public String vpcId() {

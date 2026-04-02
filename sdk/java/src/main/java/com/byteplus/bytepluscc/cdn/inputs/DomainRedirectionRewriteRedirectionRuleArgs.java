@@ -16,14 +16,14 @@ public final class DomainRedirectionRewriteRedirectionRuleArgs extends com.pulum
     public static final DomainRedirectionRewriteRedirectionRuleArgs Empty = new DomainRedirectionRewriteRedirectionRuleArgs();
 
     /**
-     * 表示一个 URL 重定向改写的规则。
+     * Indicates a URL redirect rewrite rule
      * 
      */
     @Import(name="redirectionAction")
     private @Nullable Output<DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs> redirectionAction;
 
     /**
-     * @return 表示一个 URL 重定向改写的规则。
+     * @return Indicates a URL redirect rewrite rule
      * 
      */
     public Optional<Output<DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs>> redirectionAction() {
@@ -55,7 +55,7 @@ public final class DomainRedirectionRewriteRedirectionRuleArgs extends com.pulum
         }
 
         /**
-         * @param redirectionAction 表示一个 URL 重定向改写的规则。
+         * @param redirectionAction Indicates a URL redirect rewrite rule
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DomainRedirectionRewriteRedirectionRuleArgs extends com.pulum
         }
 
         /**
-         * @param redirectionAction 表示一个 URL 重定向改写的规则。
+         * @param redirectionAction Indicates a URL redirect rewrite rule
          * 
          * @return builder
          * 

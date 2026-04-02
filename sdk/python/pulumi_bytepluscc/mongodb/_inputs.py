@@ -40,19 +40,19 @@ if not MYPY:
     class AllowListAssociatedInstanceArgsDict(TypedDict):
         instance_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        已绑定当前白名单的实例 ID。
+        Instance ID bound to the current allowlist.
         """
         instance_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        已绑定当前白名单的实例名称。
+        Instance name bound to the current allowlist.
         """
         project_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例所属的项目名称。
+        Project name of the instance.
         """
         vpc: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例所属的私有网络 ID。
+        Private network ID of the instance.
         """
 elif False:
     AllowListAssociatedInstanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -65,10 +65,10 @@ class AllowListAssociatedInstanceArgs:
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  vpc: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] instance_id: 已绑定当前白名单的实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: 已绑定当前白名单的实例名称。
-        :param pulumi.Input[builtins.str] project_name: 实例所属的项目名称。
-        :param pulumi.Input[builtins.str] vpc: 实例所属的私有网络 ID。
+        :param pulumi.Input[builtins.str] instance_id: Instance ID bound to the current allowlist.
+        :param pulumi.Input[builtins.str] instance_name: Instance name bound to the current allowlist.
+        :param pulumi.Input[builtins.str] project_name: Project name of the instance.
+        :param pulumi.Input[builtins.str] vpc: Private network ID of the instance.
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
@@ -83,7 +83,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        已绑定当前白名单的实例 ID。
+        Instance ID bound to the current allowlist.
         """
         return pulumi.get(self, "instance_id")
 
@@ -95,7 +95,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        已绑定当前白名单的实例名称。
+        Instance name bound to the current allowlist.
         """
         return pulumi.get(self, "instance_name")
 
@@ -107,7 +107,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的项目名称。
+        Project name of the instance.
         """
         return pulumi.get(self, "project_name")
 
@@ -119,7 +119,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter
     def vpc(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的私有网络 ID。
+        Private network ID of the instance.
         """
         return pulumi.get(self, "vpc")
 
@@ -132,35 +132,35 @@ if not MYPY:
     class InstanceConfigServerArgsDict(TypedDict):
         config_server_node_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        ConfigServer 的节点 ID。
+        ConfigServer node ID
         """
         node_role: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+        Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
         """
         node_status: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点状态。
+        Node status.
         """
         total_memory_gb: NotRequired[pulumi.Input[builtins.float]]
         """
-        总内存。单位：GiB。
+        Total memory. Unit: GiB.
         """
         totalv_cpu: NotRequired[pulumi.Input[builtins.float]]
         """
-        总核数。
+        Total cores.
         """
         used_memory_gb: NotRequired[pulumi.Input[builtins.float]]
         """
-        已用内存。单位：GiB。
+        Used memory. Unit: GiB.
         """
         usedv_cpu: NotRequired[pulumi.Input[builtins.float]]
         """
-        已用核数。
+        Used cores.
         """
         zone_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        当前节点所属的可用区 ID。
+        Availability zone ID of the current node.
         """
 elif False:
     InstanceConfigServerArgsDict: TypeAlias = Mapping[str, Any]
@@ -177,14 +177,14 @@ class InstanceConfigServerArgs:
                  usedv_cpu: Optional[pulumi.Input[builtins.float]] = None,
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] config_server_node_id: ConfigServer 的节点 ID。
-        :param pulumi.Input[builtins.str] node_role: 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
-        :param pulumi.Input[builtins.str] node_status: 节点状态。
-        :param pulumi.Input[builtins.float] total_memory_gb: 总内存。单位：GiB。
-        :param pulumi.Input[builtins.float] totalv_cpu: 总核数。
-        :param pulumi.Input[builtins.float] used_memory_gb: 已用内存。单位：GiB。
-        :param pulumi.Input[builtins.float] usedv_cpu: 已用核数。
-        :param pulumi.Input[builtins.str] zone_id: 当前节点所属的可用区 ID。
+        :param pulumi.Input[builtins.str] config_server_node_id: ConfigServer node ID
+        :param pulumi.Input[builtins.str] node_role: Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
+        :param pulumi.Input[builtins.str] node_status: Node status.
+        :param pulumi.Input[builtins.float] total_memory_gb: Total memory. Unit: GiB.
+        :param pulumi.Input[builtins.float] totalv_cpu: Total cores.
+        :param pulumi.Input[builtins.float] used_memory_gb: Used memory. Unit: GiB.
+        :param pulumi.Input[builtins.float] usedv_cpu: Used cores.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID of the current node.
         """
         if config_server_node_id is not None:
             pulumi.set(__self__, "config_server_node_id", config_server_node_id)
@@ -207,7 +207,7 @@ class InstanceConfigServerArgs:
     @pulumi.getter(name="configServerNodeId")
     def config_server_node_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        ConfigServer 的节点 ID。
+        ConfigServer node ID
         """
         return pulumi.get(self, "config_server_node_id")
 
@@ -219,7 +219,7 @@ class InstanceConfigServerArgs:
     @pulumi.getter(name="nodeRole")
     def node_role(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+        Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
         """
         return pulumi.get(self, "node_role")
 
@@ -231,7 +231,7 @@ class InstanceConfigServerArgs:
     @pulumi.getter(name="nodeStatus")
     def node_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点状态。
+        Node status.
         """
         return pulumi.get(self, "node_status")
 
@@ -243,7 +243,7 @@ class InstanceConfigServerArgs:
     @pulumi.getter(name="totalMemoryGb")
     def total_memory_gb(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        总内存。单位：GiB。
+        Total memory. Unit: GiB.
         """
         return pulumi.get(self, "total_memory_gb")
 
@@ -255,7 +255,7 @@ class InstanceConfigServerArgs:
     @pulumi.getter(name="totalvCpu")
     def totalv_cpu(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        总核数。
+        Total cores.
         """
         return pulumi.get(self, "totalv_cpu")
 
@@ -267,7 +267,7 @@ class InstanceConfigServerArgs:
     @pulumi.getter(name="usedMemoryGb")
     def used_memory_gb(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        已用内存。单位：GiB。
+        Used memory. Unit: GiB.
         """
         return pulumi.get(self, "used_memory_gb")
 
@@ -279,7 +279,7 @@ class InstanceConfigServerArgs:
     @pulumi.getter(name="usedvCpu")
     def usedv_cpu(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        已用核数。
+        Used cores.
         """
         return pulumi.get(self, "usedv_cpu")
 
@@ -291,7 +291,7 @@ class InstanceConfigServerArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当前节点所属的可用区 ID。
+        Availability zone ID of the current node.
         """
         return pulumi.get(self, "zone_id")
 
@@ -304,35 +304,35 @@ if not MYPY:
     class InstanceMongoArgsDict(TypedDict):
         mongos_node_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        Mongos 的节点 ID。
+        Mongos node ID
         """
         node_spec: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点规格。
+        Node specification.
         """
         node_status: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点状态。
+        Node status.
         """
         total_memory_gb: NotRequired[pulumi.Input[builtins.float]]
         """
-        总内存。单位：GiB。
+        Total memory. Unit: GiB.
         """
         totalv_cpu: NotRequired[pulumi.Input[builtins.float]]
         """
-        总核数。
+        Total cores.
         """
         used_memory_gb: NotRequired[pulumi.Input[builtins.float]]
         """
-        已用内存。单位：GiB。
+        Used memory. Unit: GiB.
         """
         usedv_cpu: NotRequired[pulumi.Input[builtins.float]]
         """
-        已用核数。
+        Used cores.
         """
         zone_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        当前节点所属的可用区 ID。
+        Availability zone ID of the current node.
         """
 elif False:
     InstanceMongoArgsDict: TypeAlias = Mapping[str, Any]
@@ -349,14 +349,14 @@ class InstanceMongoArgs:
                  usedv_cpu: Optional[pulumi.Input[builtins.float]] = None,
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] mongos_node_id: Mongos 的节点 ID。
-        :param pulumi.Input[builtins.str] node_spec: 节点规格。
-        :param pulumi.Input[builtins.str] node_status: 节点状态。
-        :param pulumi.Input[builtins.float] total_memory_gb: 总内存。单位：GiB。
-        :param pulumi.Input[builtins.float] totalv_cpu: 总核数。
-        :param pulumi.Input[builtins.float] used_memory_gb: 已用内存。单位：GiB。
-        :param pulumi.Input[builtins.float] usedv_cpu: 已用核数。
-        :param pulumi.Input[builtins.str] zone_id: 当前节点所属的可用区 ID。
+        :param pulumi.Input[builtins.str] mongos_node_id: Mongos node ID
+        :param pulumi.Input[builtins.str] node_spec: Node specification.
+        :param pulumi.Input[builtins.str] node_status: Node status.
+        :param pulumi.Input[builtins.float] total_memory_gb: Total memory. Unit: GiB.
+        :param pulumi.Input[builtins.float] totalv_cpu: Total cores.
+        :param pulumi.Input[builtins.float] used_memory_gb: Used memory. Unit: GiB.
+        :param pulumi.Input[builtins.float] usedv_cpu: Used cores.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID of the current node.
         """
         if mongos_node_id is not None:
             pulumi.set(__self__, "mongos_node_id", mongos_node_id)
@@ -379,7 +379,7 @@ class InstanceMongoArgs:
     @pulumi.getter(name="mongosNodeId")
     def mongos_node_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Mongos 的节点 ID。
+        Mongos node ID
         """
         return pulumi.get(self, "mongos_node_id")
 
@@ -391,7 +391,7 @@ class InstanceMongoArgs:
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点规格。
+        Node specification.
         """
         return pulumi.get(self, "node_spec")
 
@@ -403,7 +403,7 @@ class InstanceMongoArgs:
     @pulumi.getter(name="nodeStatus")
     def node_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点状态。
+        Node status.
         """
         return pulumi.get(self, "node_status")
 
@@ -415,7 +415,7 @@ class InstanceMongoArgs:
     @pulumi.getter(name="totalMemoryGb")
     def total_memory_gb(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        总内存。单位：GiB。
+        Total memory. Unit: GiB.
         """
         return pulumi.get(self, "total_memory_gb")
 
@@ -427,7 +427,7 @@ class InstanceMongoArgs:
     @pulumi.getter(name="totalvCpu")
     def totalv_cpu(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        总核数。
+        Total cores.
         """
         return pulumi.get(self, "totalv_cpu")
 
@@ -439,7 +439,7 @@ class InstanceMongoArgs:
     @pulumi.getter(name="usedMemoryGb")
     def used_memory_gb(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        已用内存。单位：GiB。
+        Used memory. Unit: GiB.
         """
         return pulumi.get(self, "used_memory_gb")
 
@@ -451,7 +451,7 @@ class InstanceMongoArgs:
     @pulumi.getter(name="usedvCpu")
     def usedv_cpu(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        已用核数。
+        Used cores.
         """
         return pulumi.get(self, "usedv_cpu")
 
@@ -463,7 +463,7 @@ class InstanceMongoArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当前节点所属的可用区 ID。
+        Availability zone ID of the current node.
         """
         return pulumi.get(self, "zone_id")
 
@@ -476,51 +476,51 @@ if not MYPY:
     class InstanceNodeArgsDict(TypedDict):
         node_delay_time: NotRequired[pulumi.Input[builtins.int]]
         """
-        节点延迟时间。单位：秒。
+        Node latency. Unit: seconds.
         """
         node_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点 ID。
+        Node ID.
         """
         node_role: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+        Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
         """
         node_spec: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点规格。
+        Node specification.
         """
         node_status: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点状态。
+        Node status.
         """
         total_memory_gb: NotRequired[pulumi.Input[builtins.float]]
         """
-        总内存。单位：GiB。
+        Total memory. Unit: GiB.
         """
         total_storage_gb: NotRequired[pulumi.Input[builtins.float]]
         """
-        该节点的总存储空间。单位：GiB。
+        Total storage space for this node. Unit: GiB.
         """
         totalv_cpu: NotRequired[pulumi.Input[builtins.float]]
         """
-        总核数。
+        Total cores.
         """
         used_memory_gb: NotRequired[pulumi.Input[builtins.float]]
         """
-        已用内存。单位：GiB。
+        Used memory. Unit: GiB.
         """
         used_storage_gb: NotRequired[pulumi.Input[builtins.float]]
         """
-        该节点已用的存储空间。单位：GiB。
+        Storage space used by this node. Unit: GiB.
         """
         usedv_cpu: NotRequired[pulumi.Input[builtins.float]]
         """
-        已用核数。
+        Used cores.
         """
         zone_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        当前节点所属的可用区 ID。
+        Availability zone ID of the current node.
         """
 elif False:
     InstanceNodeArgsDict: TypeAlias = Mapping[str, Any]
@@ -541,18 +541,18 @@ class InstanceNodeArgs:
                  usedv_cpu: Optional[pulumi.Input[builtins.float]] = None,
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.int] node_delay_time: 节点延迟时间。单位：秒。
-        :param pulumi.Input[builtins.str] node_id: 节点 ID。
-        :param pulumi.Input[builtins.str] node_role: 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
-        :param pulumi.Input[builtins.str] node_spec: 节点规格。
-        :param pulumi.Input[builtins.str] node_status: 节点状态。
-        :param pulumi.Input[builtins.float] total_memory_gb: 总内存。单位：GiB。
-        :param pulumi.Input[builtins.float] total_storage_gb: 该节点的总存储空间。单位：GiB。
-        :param pulumi.Input[builtins.float] totalv_cpu: 总核数。
-        :param pulumi.Input[builtins.float] used_memory_gb: 已用内存。单位：GiB。
-        :param pulumi.Input[builtins.float] used_storage_gb: 该节点已用的存储空间。单位：GiB。
-        :param pulumi.Input[builtins.float] usedv_cpu: 已用核数。
-        :param pulumi.Input[builtins.str] zone_id: 当前节点所属的可用区 ID。
+        :param pulumi.Input[builtins.int] node_delay_time: Node latency. Unit: seconds.
+        :param pulumi.Input[builtins.str] node_id: Node ID.
+        :param pulumi.Input[builtins.str] node_role: Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
+        :param pulumi.Input[builtins.str] node_spec: Node specification.
+        :param pulumi.Input[builtins.str] node_status: Node status.
+        :param pulumi.Input[builtins.float] total_memory_gb: Total memory. Unit: GiB.
+        :param pulumi.Input[builtins.float] total_storage_gb: Total storage space for this node. Unit: GiB.
+        :param pulumi.Input[builtins.float] totalv_cpu: Total cores.
+        :param pulumi.Input[builtins.float] used_memory_gb: Used memory. Unit: GiB.
+        :param pulumi.Input[builtins.float] used_storage_gb: Storage space used by this node. Unit: GiB.
+        :param pulumi.Input[builtins.float] usedv_cpu: Used cores.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID of the current node.
         """
         if node_delay_time is not None:
             pulumi.set(__self__, "node_delay_time", node_delay_time)
@@ -583,7 +583,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="nodeDelayTime")
     def node_delay_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        节点延迟时间。单位：秒。
+        Node latency. Unit: seconds.
         """
         return pulumi.get(self, "node_delay_time")
 
@@ -595,7 +595,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="nodeId")
     def node_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点 ID。
+        Node ID.
         """
         return pulumi.get(self, "node_id")
 
@@ -607,7 +607,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="nodeRole")
     def node_role(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+        Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
         """
         return pulumi.get(self, "node_role")
 
@@ -619,7 +619,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点规格。
+        Node specification.
         """
         return pulumi.get(self, "node_spec")
 
@@ -631,7 +631,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="nodeStatus")
     def node_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点状态。
+        Node status.
         """
         return pulumi.get(self, "node_status")
 
@@ -643,7 +643,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="totalMemoryGb")
     def total_memory_gb(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        总内存。单位：GiB。
+        Total memory. Unit: GiB.
         """
         return pulumi.get(self, "total_memory_gb")
 
@@ -655,7 +655,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="totalStorageGb")
     def total_storage_gb(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        该节点的总存储空间。单位：GiB。
+        Total storage space for this node. Unit: GiB.
         """
         return pulumi.get(self, "total_storage_gb")
 
@@ -667,7 +667,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="totalvCpu")
     def totalv_cpu(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        总核数。
+        Total cores.
         """
         return pulumi.get(self, "totalv_cpu")
 
@@ -679,7 +679,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="usedMemoryGb")
     def used_memory_gb(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        已用内存。单位：GiB。
+        Used memory. Unit: GiB.
         """
         return pulumi.get(self, "used_memory_gb")
 
@@ -691,7 +691,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="usedStorageGb")
     def used_storage_gb(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        该节点已用的存储空间。单位：GiB。
+        Storage space used by this node. Unit: GiB.
         """
         return pulumi.get(self, "used_storage_gb")
 
@@ -703,7 +703,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="usedvCpu")
     def usedv_cpu(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        已用核数。
+        Used cores.
         """
         return pulumi.get(self, "usedv_cpu")
 
@@ -715,7 +715,7 @@ class InstanceNodeArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当前节点所属的可用区 ID。
+        Availability zone ID of the current node.
         """
         return pulumi.get(self, "zone_id")
 
@@ -728,11 +728,11 @@ if not MYPY:
     class InstanceNodeAvailabilityZoneArgsDict(TypedDict):
         node_number: NotRequired[pulumi.Input[builtins.int]]
         """
-        当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
+        Number of read-only nodes to add in the current availability zone. Currently, only replica set instances and Shard nodes in sharded cluster instances support adding read-only nodes. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this value indicates the total number of read-only nodes in a single replica set instance. Each replica set instance supports up to 5 read-only nodes. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this value indicates the number of read-only nodes per Shard node. Each Shard node supports up to 5 read-only nodes.
         """
         zone_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        只读节点所在的可用区。
+        Availability zone of the read-only node.
         """
 elif False:
     InstanceNodeAvailabilityZoneArgsDict: TypeAlias = Mapping[str, Any]
@@ -743,8 +743,8 @@ class InstanceNodeAvailabilityZoneArgs:
                  node_number: Optional[pulumi.Input[builtins.int]] = None,
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.int] node_number: 当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
-        :param pulumi.Input[builtins.str] zone_id: 只读节点所在的可用区。
+        :param pulumi.Input[builtins.int] node_number: Number of read-only nodes to add in the current availability zone. Currently, only replica set instances and Shard nodes in sharded cluster instances support adding read-only nodes. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this value indicates the total number of read-only nodes in a single replica set instance. Each replica set instance supports up to 5 read-only nodes. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this value indicates the number of read-only nodes per Shard node. Each Shard node supports up to 5 read-only nodes.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone of the read-only node.
         """
         if node_number is not None:
             pulumi.set(__self__, "node_number", node_number)
@@ -755,7 +755,7 @@ class InstanceNodeAvailabilityZoneArgs:
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
+        Number of read-only nodes to add in the current availability zone. Currently, only replica set instances and Shard nodes in sharded cluster instances support adding read-only nodes. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this value indicates the total number of read-only nodes in a single replica set instance. Each replica set instance supports up to 5 read-only nodes. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this value indicates the number of read-only nodes per Shard node. Each Shard node supports up to 5 read-only nodes.
         """
         return pulumi.get(self, "node_number")
 
@@ -767,7 +767,7 @@ class InstanceNodeAvailabilityZoneArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        只读节点所在的可用区。
+        Availability zone of the read-only node.
         """
         return pulumi.get(self, "zone_id")
 
@@ -781,7 +781,7 @@ if not MYPY:
         nodes: NotRequired[pulumi.Input[Sequence[pulumi.Input['InstanceShardNodeArgsDict']]]]
         shard_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        Shard 节点的 ID。
+        Shard node ID.
         """
 elif False:
     InstanceShardArgsDict: TypeAlias = Mapping[str, Any]
@@ -792,7 +792,7 @@ class InstanceShardArgs:
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceShardNodeArgs']]]] = None,
                  shard_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] shard_id: Shard 节点的 ID。
+        :param pulumi.Input[builtins.str] shard_id: Shard node ID.
         """
         if nodes is not None:
             pulumi.set(__self__, "nodes", nodes)
@@ -812,7 +812,7 @@ class InstanceShardArgs:
     @pulumi.getter(name="shardId")
     def shard_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Shard 节点的 ID。
+        Shard node ID.
         """
         return pulumi.get(self, "shard_id")
 
@@ -825,51 +825,51 @@ if not MYPY:
     class InstanceShardNodeArgsDict(TypedDict):
         node_delay_time: NotRequired[pulumi.Input[builtins.int]]
         """
-        节点延迟时间。单位：秒。
+        Node latency. Unit: seconds.
         """
         node_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点 ID。
+        Node ID.
         """
         node_role: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+        Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
         """
         node_spec: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点规格。
+        Node specification.
         """
         node_status: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点状态。
+        Node status.
         """
         total_memory_gb: NotRequired[pulumi.Input[builtins.float]]
         """
-        总内存。单位：GiB。
+        Total memory. Unit: GiB.
         """
         total_storage_gb: NotRequired[pulumi.Input[builtins.float]]
         """
-        该节点的总存储空间。单位：GiB。
+        Total storage space for this node. Unit: GiB.
         """
         totalv_cpu: NotRequired[pulumi.Input[builtins.float]]
         """
-        总核数。
+        Total cores.
         """
         used_memory_gb: NotRequired[pulumi.Input[builtins.float]]
         """
-        已用内存。单位：GiB。
+        Used memory. Unit: GiB.
         """
         used_storage_gb: NotRequired[pulumi.Input[builtins.float]]
         """
-        该节点已用的存储空间。单位：GiB。
+        Storage space used by this node. Unit: GiB.
         """
         usedv_cpu: NotRequired[pulumi.Input[builtins.float]]
         """
-        已用核数。
+        Used cores.
         """
         zone_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        当前节点所属的可用区 ID。
+        Availability zone ID of the current node.
         """
 elif False:
     InstanceShardNodeArgsDict: TypeAlias = Mapping[str, Any]
@@ -890,18 +890,18 @@ class InstanceShardNodeArgs:
                  usedv_cpu: Optional[pulumi.Input[builtins.float]] = None,
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.int] node_delay_time: 节点延迟时间。单位：秒。
-        :param pulumi.Input[builtins.str] node_id: 节点 ID。
-        :param pulumi.Input[builtins.str] node_role: 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
-        :param pulumi.Input[builtins.str] node_spec: 节点规格。
-        :param pulumi.Input[builtins.str] node_status: 节点状态。
-        :param pulumi.Input[builtins.float] total_memory_gb: 总内存。单位：GiB。
-        :param pulumi.Input[builtins.float] total_storage_gb: 该节点的总存储空间。单位：GiB。
-        :param pulumi.Input[builtins.float] totalv_cpu: 总核数。
-        :param pulumi.Input[builtins.float] used_memory_gb: 已用内存。单位：GiB。
-        :param pulumi.Input[builtins.float] used_storage_gb: 该节点已用的存储空间。单位：GiB。
-        :param pulumi.Input[builtins.float] usedv_cpu: 已用核数。
-        :param pulumi.Input[builtins.str] zone_id: 当前节点所属的可用区 ID。
+        :param pulumi.Input[builtins.int] node_delay_time: Node latency. Unit: seconds.
+        :param pulumi.Input[builtins.str] node_id: Node ID.
+        :param pulumi.Input[builtins.str] node_role: Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
+        :param pulumi.Input[builtins.str] node_spec: Node specification.
+        :param pulumi.Input[builtins.str] node_status: Node status.
+        :param pulumi.Input[builtins.float] total_memory_gb: Total memory. Unit: GiB.
+        :param pulumi.Input[builtins.float] total_storage_gb: Total storage space for this node. Unit: GiB.
+        :param pulumi.Input[builtins.float] totalv_cpu: Total cores.
+        :param pulumi.Input[builtins.float] used_memory_gb: Used memory. Unit: GiB.
+        :param pulumi.Input[builtins.float] used_storage_gb: Storage space used by this node. Unit: GiB.
+        :param pulumi.Input[builtins.float] usedv_cpu: Used cores.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID of the current node.
         """
         if node_delay_time is not None:
             pulumi.set(__self__, "node_delay_time", node_delay_time)
@@ -932,7 +932,7 @@ class InstanceShardNodeArgs:
     @pulumi.getter(name="nodeDelayTime")
     def node_delay_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        节点延迟时间。单位：秒。
+        Node latency. Unit: seconds.
         """
         return pulumi.get(self, "node_delay_time")
 
@@ -944,7 +944,7 @@ class InstanceShardNodeArgs:
     @pulumi.getter(name="nodeId")
     def node_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点 ID。
+        Node ID.
         """
         return pulumi.get(self, "node_id")
 
@@ -956,7 +956,7 @@ class InstanceShardNodeArgs:
     @pulumi.getter(name="nodeRole")
     def node_role(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+        Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
         """
         return pulumi.get(self, "node_role")
 
@@ -968,7 +968,7 @@ class InstanceShardNodeArgs:
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点规格。
+        Node specification.
         """
         return pulumi.get(self, "node_spec")
 
@@ -980,7 +980,7 @@ class InstanceShardNodeArgs:
     @pulumi.getter(name="nodeStatus")
     def node_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点状态。
+        Node status.
         """
         return pulumi.get(self, "node_status")
 
@@ -992,7 +992,7 @@ class InstanceShardNodeArgs:
     @pulumi.getter(name="totalMemoryGb")
     def total_memory_gb(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        总内存。单位：GiB。
+        Total memory. Unit: GiB.
         """
         return pulumi.get(self, "total_memory_gb")
 
@@ -1004,7 +1004,7 @@ class InstanceShardNodeArgs:
     @pulumi.getter(name="totalStorageGb")
     def total_storage_gb(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        该节点的总存储空间。单位：GiB。
+        Total storage space for this node. Unit: GiB.
         """
         return pulumi.get(self, "total_storage_gb")
 
@@ -1016,7 +1016,7 @@ class InstanceShardNodeArgs:
     @pulumi.getter(name="totalvCpu")
     def totalv_cpu(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        总核数。
+        Total cores.
         """
         return pulumi.get(self, "totalv_cpu")
 
@@ -1028,7 +1028,7 @@ class InstanceShardNodeArgs:
     @pulumi.getter(name="usedMemoryGb")
     def used_memory_gb(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        已用内存。单位：GiB。
+        Used memory. Unit: GiB.
         """
         return pulumi.get(self, "used_memory_gb")
 
@@ -1040,7 +1040,7 @@ class InstanceShardNodeArgs:
     @pulumi.getter(name="usedStorageGb")
     def used_storage_gb(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        该节点已用的存储空间。单位：GiB。
+        Storage space used by this node. Unit: GiB.
         """
         return pulumi.get(self, "used_storage_gb")
 
@@ -1052,7 +1052,7 @@ class InstanceShardNodeArgs:
     @pulumi.getter(name="usedvCpu")
     def usedv_cpu(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        已用核数。
+        Used cores.
         """
         return pulumi.get(self, "usedv_cpu")
 
@@ -1064,7 +1064,7 @@ class InstanceShardNodeArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当前节点所属的可用区 ID。
+        Availability zone ID of the current node.
         """
         return pulumi.get(self, "zone_id")
 
@@ -1077,11 +1077,11 @@ if not MYPY:
     class InstanceTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Tag key
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value.
         """
 elif False:
     InstanceTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -1092,8 +1092,8 @@ class InstanceTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1104,7 +1104,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -1116,7 +1116,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 

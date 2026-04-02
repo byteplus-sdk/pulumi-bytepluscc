@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 解析记录是域名与 VPC 内资源信息的映射。
+ * A DNS record maps a domain name to resource information within a VPC.
  *
  * ## Example Usage
  *
@@ -61,59 +61,59 @@ export class Record extends pulumi.CustomResource {
     }
 
     /**
-     * 解析记录的创建时间。
+     * Creation time of the DNS record.
      */
     public /*out*/ readonly createdAt!: pulumi.Output<string>;
     /**
-     * 解析记录是否被启用。
+     * Indicates whether the DNS record is enabled.
      */
     public readonly enable!: pulumi.Output<boolean>;
     /**
-     * 子域名的域名前缀。
+     * Domain prefix for the subdomain.
      */
     public readonly host!: pulumi.Output<string>;
     /**
-     * 最近一次更新解析记录的账号 ID。
+     * Account ID of the most recent update to the DNS record.
      */
     public /*out*/ readonly lastOperator!: pulumi.Output<string>;
     /**
-     * 解析记录的线路，只能是默认线路 default。
+     * DNS record route, only the default route 'default' is supported.
      */
     public readonly line!: pulumi.Output<string>;
     /**
-     * 解析记录 ID。
+     * DNS record ID.
      */
     public /*out*/ readonly recordId!: pulumi.Output<string>;
     /**
-     * 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+     * Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      */
     public readonly remark!: pulumi.Output<string>;
     /**
-     * 解析记录的过期时间。单位为秒。默认值为 600。
+     * DNS record TTL (time to live), in seconds. Default is 600.
      */
     public readonly ttl!: pulumi.Output<number>;
     /**
-     * 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+     * DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
      */
     public readonly type!: pulumi.Output<string>;
     /**
-     * 解析记录最近一次的更新时间。
+     * Last update time of the DNS record.
      */
     public /*out*/ readonly updatedAt!: pulumi.Output<string>;
     /**
-     * 记录值。
+     * Record value.
      */
     public readonly value!: pulumi.Output<string>;
     /**
-     * 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+     * Record weight. The weight takes effect only when load balancing is enabled for the domain name.
      */
     public readonly weight!: pulumi.Output<number>;
     /**
-     * 该记录集是否开启了负载均衡。
+     * Indicates whether load balancing is enabled for this record set.
      */
     public readonly weightEnabled!: pulumi.Output<boolean>;
     /**
-     * 域名 ID。
+     * Domain name ID.
      */
     public readonly zid!: pulumi.Output<number>;
 
@@ -183,59 +183,59 @@ export class Record extends pulumi.CustomResource {
  */
 export interface RecordState {
     /**
-     * 解析记录的创建时间。
+     * Creation time of the DNS record.
      */
     createdAt?: pulumi.Input<string>;
     /**
-     * 解析记录是否被启用。
+     * Indicates whether the DNS record is enabled.
      */
     enable?: pulumi.Input<boolean>;
     /**
-     * 子域名的域名前缀。
+     * Domain prefix for the subdomain.
      */
     host?: pulumi.Input<string>;
     /**
-     * 最近一次更新解析记录的账号 ID。
+     * Account ID of the most recent update to the DNS record.
      */
     lastOperator?: pulumi.Input<string>;
     /**
-     * 解析记录的线路，只能是默认线路 default。
+     * DNS record route, only the default route 'default' is supported.
      */
     line?: pulumi.Input<string>;
     /**
-     * 解析记录 ID。
+     * DNS record ID.
      */
     recordId?: pulumi.Input<string>;
     /**
-     * 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+     * Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      */
     remark?: pulumi.Input<string>;
     /**
-     * 解析记录的过期时间。单位为秒。默认值为 600。
+     * DNS record TTL (time to live), in seconds. Default is 600.
      */
     ttl?: pulumi.Input<number>;
     /**
-     * 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+     * DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
      */
     type?: pulumi.Input<string>;
     /**
-     * 解析记录最近一次的更新时间。
+     * Last update time of the DNS record.
      */
     updatedAt?: pulumi.Input<string>;
     /**
-     * 记录值。
+     * Record value.
      */
     value?: pulumi.Input<string>;
     /**
-     * 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+     * Record weight. The weight takes effect only when load balancing is enabled for the domain name.
      */
     weight?: pulumi.Input<number>;
     /**
-     * 该记录集是否开启了负载均衡。
+     * Indicates whether load balancing is enabled for this record set.
      */
     weightEnabled?: pulumi.Input<boolean>;
     /**
-     * 域名 ID。
+     * Domain name ID.
      */
     zid?: pulumi.Input<number>;
 }
@@ -245,43 +245,43 @@ export interface RecordState {
  */
 export interface RecordArgs {
     /**
-     * 解析记录是否被启用。
+     * Indicates whether the DNS record is enabled.
      */
     enable?: pulumi.Input<boolean>;
     /**
-     * 子域名的域名前缀。
+     * Domain prefix for the subdomain.
      */
     host: pulumi.Input<string>;
     /**
-     * 解析记录的线路，只能是默认线路 default。
+     * DNS record route, only the default route 'default' is supported.
      */
     line?: pulumi.Input<string>;
     /**
-     * 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+     * Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      */
     remark?: pulumi.Input<string>;
     /**
-     * 解析记录的过期时间。单位为秒。默认值为 600。
+     * DNS record TTL (time to live), in seconds. Default is 600.
      */
     ttl?: pulumi.Input<number>;
     /**
-     * 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+     * DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
      */
     type: pulumi.Input<string>;
     /**
-     * 记录值。
+     * Record value.
      */
     value: pulumi.Input<string>;
     /**
-     * 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+     * Record weight. The weight takes effect only when load balancing is enabled for the domain name.
      */
     weight?: pulumi.Input<number>;
     /**
-     * 该记录集是否开启了负载均衡。
+     * Indicates whether load balancing is enabled for this record set.
      */
     weightEnabled?: pulumi.Input<boolean>;
     /**
-     * 域名 ID。
+     * Domain name ID.
      */
     zid: pulumi.Input<number>;
 }

@@ -30,47 +30,47 @@ type LookupNodeGroupArgs struct {
 
 // A collection of values returned by getNodeGroup.
 type LookupNodeGroupResult struct {
-	// 当前节点组可布局的组件名称列表。
+	// List of component names that can be deployed in the current node group.
 	ApplicationLayouts []GetNodeGroupApplicationLayout `pulumi:"applicationLayouts"`
-	// 包周期付费配置。
+	// Subscription payment configuration.
 	ChargePreConfig GetNodeGroupChargePreConfig `pulumi:"chargePreConfig"`
-	// 付费类型。PRE表示包月，POST表示按量计费。
+	// Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
 	ChargeType string `pulumi:"chargeType"`
-	// 集群ID。
+	// Cluster ID.
 	ClusterId string `pulumi:"clusterId"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime int `pulumi:"createdTime"`
-	// 数据盘配置。
+	// Data disk configuration.
 	DataDisks []GetNodeGroupDataDisk `pulumi:"dataDisks"`
-	// ECS实例规格列表。当前修改仅支持单个实例规格。
+	// ECS instance specification list. Currently, only a single instance specification can be modified.
 	EcsInstanceTypes []string `pulumi:"ecsInstanceTypes"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 返回的节点组组件的自定义配置参数列表。
+	// Custom configuration parameter list for the returned node group components.
 	LayoutComponentNames []string `pulumi:"layoutComponentNames"`
-	// 节点数量。取值范围：1~1000。
+	// Node count. Value range: 1~1000.
 	NodeCount int `pulumi:"nodeCount"`
-	// 节点组ID。
+	// Node group ID.
 	NodeGroupId string `pulumi:"nodeGroupId"`
-	// 节点组名称。
+	// Node group name.
 	NodeGroupName string `pulumi:"nodeGroupName"`
-	// 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+	// Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
 	NodeGroupState string `pulumi:"nodeGroupState"`
-	// 节点组类型。
+	// Node group type.
 	NodeGroupType string `pulumi:"nodeGroupType"`
-	// 节点列表。
+	// Node list.
 	Nodes []GetNodeGroupNode `pulumi:"nodes"`
-	// 子网ID列表。
+	// Subnet ID list.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 系统盘。
+	// System disk.
 	SystemDisk GetNodeGroupSystemDisk `pulumi:"systemDisk"`
-	// 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+	// Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
 	TargetDiskSize int `pulumi:"targetDiskSize"`
-	// 集群终止时间。
+	// Cluster termination time.
 	TerminateTime string `pulumi:"terminateTime"`
-	// ECS是否附带公网IP。
+	// Whether the ECS instance includes a public IP.
 	WithPublicIp bool `pulumi:"withPublicIp"`
-	// zoneId，为空时默认复用集群的zoneId。
+	// zoneId. If empty, the cluster's zoneId is reused by default.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -108,37 +108,37 @@ func (o LookupNodeGroupResultOutput) ToLookupNodeGroupResultOutputWithContext(ct
 	return o
 }
 
-// 当前节点组可布局的组件名称列表。
+// List of component names that can be deployed in the current node group.
 func (o LookupNodeGroupResultOutput) ApplicationLayouts() GetNodeGroupApplicationLayoutArrayOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) []GetNodeGroupApplicationLayout { return v.ApplicationLayouts }).(GetNodeGroupApplicationLayoutArrayOutput)
 }
 
-// 包周期付费配置。
+// Subscription payment configuration.
 func (o LookupNodeGroupResultOutput) ChargePreConfig() GetNodeGroupChargePreConfigOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) GetNodeGroupChargePreConfig { return v.ChargePreConfig }).(GetNodeGroupChargePreConfigOutput)
 }
 
-// 付费类型。PRE表示包月，POST表示按量计费。
+// Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
 func (o LookupNodeGroupResultOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 集群ID。
+// Cluster ID.
 func (o LookupNodeGroupResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 创建时间。
+// Creation time.
 func (o LookupNodeGroupResultOutput) CreatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) int { return v.CreatedTime }).(pulumi.IntOutput)
 }
 
-// 数据盘配置。
+// Data disk configuration.
 func (o LookupNodeGroupResultOutput) DataDisks() GetNodeGroupDataDiskArrayOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) []GetNodeGroupDataDisk { return v.DataDisks }).(GetNodeGroupDataDiskArrayOutput)
 }
 
-// ECS实例规格列表。当前修改仅支持单个实例规格。
+// ECS instance specification list. Currently, only a single instance specification can be modified.
 func (o LookupNodeGroupResultOutput) EcsInstanceTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) []string { return v.EcsInstanceTypes }).(pulumi.StringArrayOutput)
 }
@@ -148,67 +148,67 @@ func (o LookupNodeGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 返回的节点组组件的自定义配置参数列表。
+// Custom configuration parameter list for the returned node group components.
 func (o LookupNodeGroupResultOutput) LayoutComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) []string { return v.LayoutComponentNames }).(pulumi.StringArrayOutput)
 }
 
-// 节点数量。取值范围：1~1000。
+// Node count. Value range: 1~1000.
 func (o LookupNodeGroupResultOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) int { return v.NodeCount }).(pulumi.IntOutput)
 }
 
-// 节点组ID。
+// Node group ID.
 func (o LookupNodeGroupResultOutput) NodeGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) string { return v.NodeGroupId }).(pulumi.StringOutput)
 }
 
-// 节点组名称。
+// Node group name.
 func (o LookupNodeGroupResultOutput) NodeGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) string { return v.NodeGroupName }).(pulumi.StringOutput)
 }
 
-// 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+// Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
 func (o LookupNodeGroupResultOutput) NodeGroupState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) string { return v.NodeGroupState }).(pulumi.StringOutput)
 }
 
-// 节点组类型。
+// Node group type.
 func (o LookupNodeGroupResultOutput) NodeGroupType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) string { return v.NodeGroupType }).(pulumi.StringOutput)
 }
 
-// 节点列表。
+// Node list.
 func (o LookupNodeGroupResultOutput) Nodes() GetNodeGroupNodeArrayOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) []GetNodeGroupNode { return v.Nodes }).(GetNodeGroupNodeArrayOutput)
 }
 
-// 子网ID列表。
+// Subnet ID list.
 func (o LookupNodeGroupResultOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 系统盘。
+// System disk.
 func (o LookupNodeGroupResultOutput) SystemDisk() GetNodeGroupSystemDiskOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) GetNodeGroupSystemDisk { return v.SystemDisk }).(GetNodeGroupSystemDiskOutput)
 }
 
-// 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+// Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
 func (o LookupNodeGroupResultOutput) TargetDiskSize() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) int { return v.TargetDiskSize }).(pulumi.IntOutput)
 }
 
-// 集群终止时间。
+// Cluster termination time.
 func (o LookupNodeGroupResultOutput) TerminateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) string { return v.TerminateTime }).(pulumi.StringOutput)
 }
 
-// ECS是否附带公网IP。
+// Whether the ECS instance includes a public IP.
 func (o LookupNodeGroupResultOutput) WithPublicIp() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) bool { return v.WithPublicIp }).(pulumi.BoolOutput)
 }
 
-// zoneId，为空时默认复用集群的zoneId。
+// zoneId. If empty, the cluster's zoneId is reused by default.
 func (o LookupNodeGroupResultOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodeGroupResult) string { return v.ZoneId }).(pulumi.StringOutput)
 }

@@ -22,7 +22,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+        /// Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
         /// </summary>
         [Input("phase")]
         public Input<string>? Phase { get; set; }

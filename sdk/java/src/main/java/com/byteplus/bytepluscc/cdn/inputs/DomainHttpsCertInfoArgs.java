@@ -18,14 +18,14 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
     public static final DomainHttpsCertInfoArgs Empty = new DomainHttpsCertInfoArgs();
 
     /**
-     * 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+     * Represents the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
      * 
      */
     @Import(name="certId")
     private @Nullable Output<String> certId;
 
     /**
-     * @return 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+     * @return Represents the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
      * 
      */
     public Optional<Output<String>> certId() {
@@ -33,14 +33,14 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+     * Indicates the content of the Common Name (CN) field in the CA certificate.
      * 
      */
     @Import(name="certName")
     private @Nullable Output<String> certName;
 
     /**
-     * @return 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+     * @return Indicates the content of the Common Name (CN) field in the CA certificate.
      * 
      */
     public Optional<Output<String>> certName() {
@@ -48,14 +48,14 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+     * Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the CDN.
      * 
      */
     @Import(name="certificate")
     private @Nullable Output<DomainHttpsCertInfoCertificateArgs> certificate;
 
     /**
-     * @return 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+     * @return Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the CDN.
      * 
      */
     public Optional<Output<DomainHttpsCertInfoCertificateArgs>> certificate() {
@@ -63,14 +63,14 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 表示该证书的签发时间，单位是 Unix 时间戳。
+     * Indicates the issuance time of the certificate, in Unix timestamp.
      * 
      */
     @Import(name="effectiveTime")
     private @Nullable Output<Integer> effectiveTime;
 
     /**
-     * @return 表示该证书的签发时间，单位是 Unix 时间戳。
+     * @return Indicates the issuance time of the certificate, in Unix timestamp.
      * 
      */
     public Optional<Output<Integer>> effectiveTime() {
@@ -78,14 +78,14 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+     * Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
      * 
      */
     @Import(name="encryType")
     private @Nullable Output<String> encryType;
 
     /**
-     * @return 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+     * @return Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
      * 
      */
     public Optional<Output<String>> encryType() {
@@ -93,14 +93,14 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 表示该证书的到期时间，单位是 Unix 时间戳。
+     * Indicates the expiration time of the certificate, in Unix timestamp.
      * 
      */
     @Import(name="expireTime")
     private @Nullable Output<Integer> expireTime;
 
     /**
-     * @return 表示该证书的到期时间，单位是 Unix 时间戳。
+     * @return Indicates the expiration time of the certificate, in Unix timestamp.
      * 
      */
     public Optional<Output<Integer>> expireTime() {
@@ -108,14 +108,14 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+     * Indicates the location where the certificate is hosted. This parameter has the following values: volc*cert*center: Certificate Center. cdn*cert*hosting: Content Delivery Network.
      * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
 
     /**
-     * @return 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+     * @return Indicates the location where the certificate is hosted. This parameter has the following values: volc*cert*center: Certificate Center. cdn*cert*hosting: Content Delivery Network.
      * 
      */
     public Optional<Output<String>> source() {
@@ -153,7 +153,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param certId 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+         * @param certId Represents the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param certId 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+         * @param certId Represents the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param certName 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+         * @param certName Indicates the content of the Common Name (CN) field in the CA certificate.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param certName 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+         * @param certName Indicates the content of the Common Name (CN) field in the CA certificate.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param certificate 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+         * @param certificate Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the CDN.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param certificate 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+         * @param certificate Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the CDN.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param effectiveTime 表示该证书的签发时间，单位是 Unix 时间戳。
+         * @param effectiveTime Indicates the issuance time of the certificate, in Unix timestamp.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param effectiveTime 表示该证书的签发时间，单位是 Unix 时间戳。
+         * @param effectiveTime Indicates the issuance time of the certificate, in Unix timestamp.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param encryType 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+         * @param encryType Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param encryType 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+         * @param encryType Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param expireTime 表示该证书的到期时间，单位是 Unix 时间戳。
+         * @param expireTime Indicates the expiration time of the certificate, in Unix timestamp.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param expireTime 表示该证书的到期时间，单位是 Unix 时间戳。
+         * @param expireTime Indicates the expiration time of the certificate, in Unix timestamp.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param source 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+         * @param source Indicates the location where the certificate is hosted. This parameter has the following values: volc*cert*center: Certificate Center. cdn*cert*hosting: Content Delivery Network.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class DomainHttpsCertInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param source 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+         * @param source Indicates the location where the certificate is hosted. This parameter has the following values: volc*cert*center: Certificate Center. cdn*cert*hosting: Content Delivery Network.
          * 
          * @return builder
          * 

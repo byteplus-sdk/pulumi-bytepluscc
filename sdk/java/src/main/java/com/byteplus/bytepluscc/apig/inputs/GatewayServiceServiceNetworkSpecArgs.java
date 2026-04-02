@@ -18,14 +18,14 @@ public final class GatewayServiceServiceNetworkSpecArgs extends com.pulumi.resou
     public static final GatewayServiceServiceNetworkSpecArgs Empty = new GatewayServiceServiceNetworkSpecArgs();
 
     /**
-     * 开启私网。
+     * Enable private network.
      * 
      */
     @Import(name="enablePrivateNetwork")
     private @Nullable Output<Boolean> enablePrivateNetwork;
 
     /**
-     * @return 开启私网。
+     * @return Enable private network.
      * 
      */
     public Optional<Output<Boolean>> enablePrivateNetwork() {
@@ -33,14 +33,14 @@ public final class GatewayServiceServiceNetworkSpecArgs extends com.pulumi.resou
     }
 
     /**
-     * 开启公网。
+     * Enable public network.
      * 
      */
     @Import(name="enablePublicNetwork")
     private @Nullable Output<Boolean> enablePublicNetwork;
 
     /**
-     * @return 开启公网。
+     * @return Enable public network.
      * 
      */
     public Optional<Output<Boolean>> enablePublicNetwork() {
@@ -48,14 +48,14 @@ public final class GatewayServiceServiceNetworkSpecArgs extends com.pulumi.resou
     }
 
     /**
-     * 私网域名解析的目标IP。
+     * Target IP for private network domain resolution.
      * 
      */
     @Import(name="privateNetworkIps")
     private @Nullable Output<List<String>> privateNetworkIps;
 
     /**
-     * @return 私网域名解析的目标IP。
+     * @return Target IP for private network domain resolution.
      * 
      */
     public Optional<Output<List<String>>> privateNetworkIps() {
@@ -89,7 +89,7 @@ public final class GatewayServiceServiceNetworkSpecArgs extends com.pulumi.resou
         }
 
         /**
-         * @param enablePrivateNetwork 开启私网。
+         * @param enablePrivateNetwork Enable private network.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class GatewayServiceServiceNetworkSpecArgs extends com.pulumi.resou
         }
 
         /**
-         * @param enablePrivateNetwork 开启私网。
+         * @param enablePrivateNetwork Enable private network.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class GatewayServiceServiceNetworkSpecArgs extends com.pulumi.resou
         }
 
         /**
-         * @param enablePublicNetwork 开启公网。
+         * @param enablePublicNetwork Enable public network.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class GatewayServiceServiceNetworkSpecArgs extends com.pulumi.resou
         }
 
         /**
-         * @param enablePublicNetwork 开启公网。
+         * @param enablePublicNetwork Enable public network.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class GatewayServiceServiceNetworkSpecArgs extends com.pulumi.resou
         }
 
         /**
-         * @param privateNetworkIps 私网域名解析的目标IP。
+         * @param privateNetworkIps Target IP for private network domain resolution.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class GatewayServiceServiceNetworkSpecArgs extends com.pulumi.resou
         }
 
         /**
-         * @param privateNetworkIps 私网域名解析的目标IP。
+         * @param privateNetworkIps Target IP for private network domain resolution.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class GatewayServiceServiceNetworkSpecArgs extends com.pulumi.resou
         }
 
         /**
-         * @param privateNetworkIps 私网域名解析的目标IP。
+         * @param privateNetworkIps Target IP for private network domain resolution.
          * 
          * @return builder
          * 

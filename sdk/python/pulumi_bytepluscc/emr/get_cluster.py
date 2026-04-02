@@ -127,7 +127,7 @@ class GetClusterResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.int:
         """
-        账号ID。
+        Account ID.
         """
         return pulumi.get(self, "account_id")
 
@@ -135,7 +135,7 @@ class GetClusterResult:
     @pulumi.getter(name="applicationExtras")
     def application_extras(self) -> Sequence['outputs.GetClusterApplicationExtraResult']:
         """
-        集群服务的扩展信息列表，包括服务的自定义配置项、服务组件的自定义部署拓扑设置，以及服务的元数据连接配置信息。
+        Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
         """
         return pulumi.get(self, "application_extras")
 
@@ -143,7 +143,7 @@ class GetClusterResult:
     @pulumi.getter(name="applicationNames")
     def application_names(self) -> Sequence[builtins.str]:
         """
-        集群安装的服务名称列表。创建字段。
+        List of service names installed in the cluster. Creation-related field.
         """
         return pulumi.get(self, "application_names")
 
@@ -151,7 +151,7 @@ class GetClusterResult:
     @pulumi.getter
     def applications(self) -> Sequence['outputs.GetClusterApplicationResult']:
         """
-        集群安装的服务列表。只读字段。
+        Installed service list for cluster. Read-only field.
         """
         return pulumi.get(self, "applications")
 
@@ -159,7 +159,7 @@ class GetClusterResult:
     @pulumi.getter(name="bootstrapScripts")
     def bootstrap_scripts(self) -> Sequence['outputs.GetClusterBootstrapScriptResult']:
         """
-        集群的引导脚本列表。
+        Cluster bootstrap script list.
         """
         return pulumi.get(self, "bootstrap_scripts")
 
@@ -167,7 +167,7 @@ class GetClusterResult:
     @pulumi.getter(name="chargePreConfig")
     def charge_pre_config(self) -> 'outputs.GetClusterChargePreConfigResult':
         """
-        包月的配置参数，当chargeType=PRE时，必选。
+        Monthly subscription configuration parameters. Required when chargeType=PRE.
         """
         return pulumi.get(self, "charge_pre_config")
 
@@ -175,7 +175,7 @@ class GetClusterResult:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        付费类型，PRE表示包月，POST表示按量计费。
+        Payment type. PRE means monthly subscription, POST means pay-as-you-go.
         """
         return pulumi.get(self, "charge_type")
 
@@ -183,7 +183,7 @@ class GetClusterResult:
     @pulumi.getter(name="clusterDomainNames")
     def cluster_domain_names(self) -> Sequence[builtins.str]:
         """
-        集群dns域名后缀列表。
+        Cluster DNS domain suffix list.
         """
         return pulumi.get(self, "cluster_domain_names")
 
@@ -191,7 +191,7 @@ class GetClusterResult:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> builtins.str:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -199,7 +199,7 @@ class GetClusterResult:
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> builtins.str:
         """
-        集群名称。
+        Cluster name.
         """
         return pulumi.get(self, "cluster_name")
 
@@ -207,7 +207,7 @@ class GetClusterResult:
     @pulumi.getter(name="clusterState")
     def cluster_state(self) -> builtins.str:
         """
-        集群状态。
+        Cluster status.
         """
         return pulumi.get(self, "cluster_state")
 
@@ -215,7 +215,7 @@ class GetClusterResult:
     @pulumi.getter(name="clusterType")
     def cluster_type(self) -> builtins.str:
         """
-        集群类型。
+        Cluster type.
         """
         return pulumi.get(self, "cluster_type")
 
@@ -223,7 +223,7 @@ class GetClusterResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.int:
         """
-        集群创建时间。
+        Cluster creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -231,7 +231,7 @@ class GetClusterResult:
     @pulumi.getter(name="creatorId")
     def creator_id(self) -> builtins.int:
         """
-        创建者ID。
+        Creator ID.
         """
         return pulumi.get(self, "creator_id")
 
@@ -239,7 +239,7 @@ class GetClusterResult:
     @pulumi.getter(name="creatorName")
     def creator_name(self) -> builtins.str:
         """
-        创建者名称。
+        Creator name.
         """
         return pulumi.get(self, "creator_name")
 
@@ -247,7 +247,7 @@ class GetClusterResult:
     @pulumi.getter(name="deployMode")
     def deploy_mode(self) -> builtins.str:
         """
-        部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+        Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
         """
         return pulumi.get(self, "deploy_mode")
 
@@ -255,7 +255,7 @@ class GetClusterResult:
     @pulumi.getter(name="ecsImageId")
     def ecs_image_id(self) -> builtins.str:
         """
-        ECS镜像ID。
+        ECS image ID.
         """
         return pulumi.get(self, "ecs_image_id")
 
@@ -263,7 +263,7 @@ class GetClusterResult:
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> builtins.int:
         """
-        集群过期时间。
+        Cluster expiration time.
         """
         return pulumi.get(self, "expire_time")
 
@@ -271,7 +271,7 @@ class GetClusterResult:
     @pulumi.getter(name="historyServerMode")
     def history_server_mode(self) -> builtins.str:
         """
-        HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+        HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
         """
         return pulumi.get(self, "history_server_mode")
 
@@ -287,7 +287,7 @@ class GetClusterResult:
     @pulumi.getter(name="nodeAttribute")
     def node_attribute(self) -> 'outputs.GetClusterNodeAttributeResult':
         """
-        集群全局的节点信息。
+        Cluster global node information.
         """
         return pulumi.get(self, "node_attribute")
 
@@ -295,7 +295,7 @@ class GetClusterResult:
     @pulumi.getter(name="nodeGroupAttributes")
     def node_group_attributes(self) -> Sequence['outputs.GetClusterNodeGroupAttributeResult']:
         """
-        节点组属性列表。
+        Node group property list.
         """
         return pulumi.get(self, "node_group_attributes")
 
@@ -303,7 +303,7 @@ class GetClusterResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
         """
         return pulumi.get(self, "project_name")
 
@@ -311,7 +311,7 @@ class GetClusterResult:
     @pulumi.getter(name="readyTime")
     def ready_time(self) -> builtins.int:
         """
-        集群创建完成时间。
+        Cluster creation completion time.
         """
         return pulumi.get(self, "ready_time")
 
@@ -319,7 +319,7 @@ class GetClusterResult:
     @pulumi.getter(name="releaseVersion")
     def release_version(self) -> builtins.str:
         """
-        集群版本。
+        Cluster version.
         """
         return pulumi.get(self, "release_version")
 
@@ -327,7 +327,7 @@ class GetClusterResult:
     @pulumi.getter(name="securityGroupId")
     def security_group_id(self) -> builtins.str:
         """
-        集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+        Cluster global security group ID. All ECS in node groups will join this security group.
         """
         return pulumi.get(self, "security_group_id")
 
@@ -335,7 +335,7 @@ class GetClusterResult:
     @pulumi.getter(name="securityMode")
     def security_mode(self) -> builtins.str:
         """
-        安全模式。
+        Security mode.
         """
         return pulumi.get(self, "security_mode")
 
@@ -343,7 +343,7 @@ class GetClusterResult:
     @pulumi.getter(name="stateChangeReason")
     def state_change_reason(self) -> 'outputs.GetClusterStateChangeReasonResult':
         """
-        状态变更原因。
+        Status change reason.
         """
         return pulumi.get(self, "state_change_reason")
 
@@ -351,7 +351,7 @@ class GetClusterResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetClusterTagResult']:
         """
-        标签列表。
+        Tag list.
         """
         return pulumi.get(self, "tags")
 
@@ -359,7 +359,7 @@ class GetClusterResult:
     @pulumi.getter(name="terminateTime")
     def terminate_time(self) -> builtins.int:
         """
-        集群终止时间。
+        Cluster termination time.
         """
         return pulumi.get(self, "terminate_time")
 

@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodeGroupSystemDisk {
     /**
-     * @return 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+     * @return System disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
      * 
      */
     private Integer size;
     /**
-     * @return 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+     * @return Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
      * 
      */
     private String volumeType;
 
     private GetNodeGroupSystemDisk() {}
     /**
-     * @return 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+     * @return System disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
      * 
      */
     public Integer size() {
         return this.size;
     }
     /**
-     * @return 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+     * @return Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
      * 
      */
     public String volumeType() {

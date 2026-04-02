@@ -14,10 +14,10 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type DomainBackendGroup struct {
-	// 接入的端口号。
+	// Access port number.
 	AccessPorts []int                       `pulumi:"accessPorts"`
 	Backends    []DomainBackendGroupBackend `pulumi:"backends"`
-	// 源站组名称。
+	// Origin group name.
 	Name *string `pulumi:"name"`
 }
 
@@ -33,10 +33,10 @@ type DomainBackendGroupInput interface {
 }
 
 type DomainBackendGroupArgs struct {
-	// 接入的端口号。
+	// Access port number.
 	AccessPorts pulumi.IntArrayInput                `pulumi:"accessPorts"`
 	Backends    DomainBackendGroupBackendArrayInput `pulumi:"backends"`
-	// 源站组名称。
+	// Origin group name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -91,7 +91,7 @@ func (o DomainBackendGroupOutput) ToDomainBackendGroupOutputWithContext(ctx cont
 	return o
 }
 
-// 接入的端口号。
+// Access port number.
 func (o DomainBackendGroupOutput) AccessPorts() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v DomainBackendGroup) []int { return v.AccessPorts }).(pulumi.IntArrayOutput)
 }
@@ -100,7 +100,7 @@ func (o DomainBackendGroupOutput) Backends() DomainBackendGroupBackendArrayOutpu
 	return o.ApplyT(func(v DomainBackendGroup) []DomainBackendGroupBackend { return v.Backends }).(DomainBackendGroupBackendArrayOutput)
 }
 
-// 源站组名称。
+// Origin group name.
 func (o DomainBackendGroupOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainBackendGroup) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -126,13 +126,13 @@ func (o DomainBackendGroupArrayOutput) Index(i pulumi.IntInput) DomainBackendGro
 }
 
 type DomainBackendGroupBackend struct {
-	// 源站 IP 地址。
+	// Origin IP address
 	Ip *string `pulumi:"ip"`
-	// 源站端口。
+	// Origin port
 	Port *int `pulumi:"port"`
-	// 源站协议。
+	// Origin protocol.
 	Protocol *string `pulumi:"protocol"`
-	// 源站权重。
+	// Origin weight
 	Weight *int `pulumi:"weight"`
 }
 
@@ -148,13 +148,13 @@ type DomainBackendGroupBackendInput interface {
 }
 
 type DomainBackendGroupBackendArgs struct {
-	// 源站 IP 地址。
+	// Origin IP address
 	Ip pulumi.StringPtrInput `pulumi:"ip"`
-	// 源站端口。
+	// Origin port
 	Port pulumi.IntPtrInput `pulumi:"port"`
-	// 源站协议。
+	// Origin protocol.
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
-	// 源站权重。
+	// Origin weight
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
@@ -209,22 +209,22 @@ func (o DomainBackendGroupBackendOutput) ToDomainBackendGroupBackendOutputWithCo
 	return o
 }
 
-// 源站 IP 地址。
+// Origin IP address
 func (o DomainBackendGroupBackendOutput) Ip() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainBackendGroupBackend) *string { return v.Ip }).(pulumi.StringPtrOutput)
 }
 
-// 源站端口。
+// Origin port
 func (o DomainBackendGroupBackendOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DomainBackendGroupBackend) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
-// 源站协议。
+// Origin protocol.
 func (o DomainBackendGroupBackendOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainBackendGroupBackend) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
-// 源站权重。
+// Origin weight
 func (o DomainBackendGroupBackendOutput) Weight() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DomainBackendGroupBackend) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
@@ -250,21 +250,21 @@ func (o DomainBackendGroupBackendArrayOutput) Index(i pulumi.IntInput) DomainBac
 }
 
 type DomainCloudAccessConfig struct {
-	// 接入协议类型。
+	// Access protocol type
 	AccessProtocol *string `pulumi:"accessProtocol"`
-	// 防护模式。
+	// Protection mode
 	DefenceMode *int `pulumi:"defenceMode"`
-	// 负载均衡实例 ID。
+	// Load balancing instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 负载均衡实例名称。
+	// Load balancer instance name.
 	InstanceName *string `pulumi:"instanceName"`
-	// 负载均衡监听器 ID。
+	// Load balancing listener ID.
 	ListenerId *string `pulumi:"listenerId"`
-	// 是否从 ALB 中丢失关联。
+	// Disassociated from ALB
 	LostAssociationFromAlb *int `pulumi:"lostAssociationFromAlb"`
-	// 监听器转发规则的端口号。
+	// Listener forwarding rule port number
 	Port *string `pulumi:"port"`
-	// 监听器转发规则的协议类型。
+	// Protocol type for listener forwarding rules.
 	Protocol *string `pulumi:"protocol"`
 }
 
@@ -280,21 +280,21 @@ type DomainCloudAccessConfigInput interface {
 }
 
 type DomainCloudAccessConfigArgs struct {
-	// 接入协议类型。
+	// Access protocol type
 	AccessProtocol pulumi.StringPtrInput `pulumi:"accessProtocol"`
-	// 防护模式。
+	// Protection mode
 	DefenceMode pulumi.IntPtrInput `pulumi:"defenceMode"`
-	// 负载均衡实例 ID。
+	// Load balancing instance ID.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// 负载均衡实例名称。
+	// Load balancer instance name.
 	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// 负载均衡监听器 ID。
+	// Load balancing listener ID.
 	ListenerId pulumi.StringPtrInput `pulumi:"listenerId"`
-	// 是否从 ALB 中丢失关联。
+	// Disassociated from ALB
 	LostAssociationFromAlb pulumi.IntPtrInput `pulumi:"lostAssociationFromAlb"`
-	// 监听器转发规则的端口号。
+	// Listener forwarding rule port number
 	Port pulumi.StringPtrInput `pulumi:"port"`
-	// 监听器转发规则的协议类型。
+	// Protocol type for listener forwarding rules.
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 }
 
@@ -349,42 +349,42 @@ func (o DomainCloudAccessConfigOutput) ToDomainCloudAccessConfigOutputWithContex
 	return o
 }
 
-// 接入协议类型。
+// Access protocol type
 func (o DomainCloudAccessConfigOutput) AccessProtocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainCloudAccessConfig) *string { return v.AccessProtocol }).(pulumi.StringPtrOutput)
 }
 
-// 防护模式。
+// Protection mode
 func (o DomainCloudAccessConfigOutput) DefenceMode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DomainCloudAccessConfig) *int { return v.DefenceMode }).(pulumi.IntPtrOutput)
 }
 
-// 负载均衡实例 ID。
+// Load balancing instance ID.
 func (o DomainCloudAccessConfigOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainCloudAccessConfig) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 负载均衡实例名称。
+// Load balancer instance name.
 func (o DomainCloudAccessConfigOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainCloudAccessConfig) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
 }
 
-// 负载均衡监听器 ID。
+// Load balancing listener ID.
 func (o DomainCloudAccessConfigOutput) ListenerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainCloudAccessConfig) *string { return v.ListenerId }).(pulumi.StringPtrOutput)
 }
 
-// 是否从 ALB 中丢失关联。
+// Disassociated from ALB
 func (o DomainCloudAccessConfigOutput) LostAssociationFromAlb() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DomainCloudAccessConfig) *int { return v.LostAssociationFromAlb }).(pulumi.IntPtrOutput)
 }
 
-// 监听器转发规则的端口号。
+// Listener forwarding rule port number
 func (o DomainCloudAccessConfigOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainCloudAccessConfig) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
-// 监听器转发规则的协议类型。
+// Protocol type for listener forwarding rules.
 func (o DomainCloudAccessConfigOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainCloudAccessConfig) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
@@ -410,9 +410,9 @@ func (o DomainCloudAccessConfigArrayOutput) Index(i pulumi.IntInput) DomainCloud
 }
 
 type DomainProtocolPorts struct {
-	// HTTP 协议的端口号。
+	// HTTP protocol port number
 	Http []int `pulumi:"http"`
-	// HTTPS 协议的端口号。
+	// HTTPS protocol port number
 	Https []int `pulumi:"https"`
 }
 
@@ -428,9 +428,9 @@ type DomainProtocolPortsInput interface {
 }
 
 type DomainProtocolPortsArgs struct {
-	// HTTP 协议的端口号。
+	// HTTP protocol port number
 	Http pulumi.IntArrayInput `pulumi:"http"`
-	// HTTPS 协议的端口号。
+	// HTTPS protocol port number
 	Https pulumi.IntArrayInput `pulumi:"https"`
 }
 
@@ -511,12 +511,12 @@ func (o DomainProtocolPortsOutput) ToDomainProtocolPortsPtrOutputWithContext(ctx
 	}).(DomainProtocolPortsPtrOutput)
 }
 
-// HTTP 协议的端口号。
+// HTTP protocol port number
 func (o DomainProtocolPortsOutput) Http() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v DomainProtocolPorts) []int { return v.Http }).(pulumi.IntArrayOutput)
 }
 
-// HTTPS 协议的端口号。
+// HTTPS protocol port number
 func (o DomainProtocolPortsOutput) Https() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v DomainProtocolPorts) []int { return v.Https }).(pulumi.IntArrayOutput)
 }
@@ -545,7 +545,7 @@ func (o DomainProtocolPortsPtrOutput) Elem() DomainProtocolPortsOutput {
 	}).(DomainProtocolPortsOutput)
 }
 
-// HTTP 协议的端口号。
+// HTTP protocol port number
 func (o DomainProtocolPortsPtrOutput) Http() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v *DomainProtocolPorts) []int {
 		if v == nil {
@@ -555,7 +555,7 @@ func (o DomainProtocolPortsPtrOutput) Http() pulumi.IntArrayOutput {
 	}).(pulumi.IntArrayOutput)
 }
 
-// HTTPS 协议的端口号。
+// HTTPS protocol port number
 func (o DomainProtocolPortsPtrOutput) Https() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v *DomainProtocolPorts) []int {
 		if v == nil {
@@ -566,21 +566,21 @@ func (o DomainProtocolPortsPtrOutput) Https() pulumi.IntArrayOutput {
 }
 
 type DomainTcpListenerConfig struct {
-	// 接入协议类型。
+	// Access protocol type
 	AccessProtocol *string `pulumi:"accessProtocol"`
-	// 防护模式。
+	// Protection mode
 	DefenceMode *int `pulumi:"defenceMode"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name.
 	InstanceName *string `pulumi:"instanceName"`
-	// 监听器 ID。
+	// Listener ID.
 	ListenerId *string `pulumi:"listenerId"`
-	// 是否从 ALB 中丢失关联。
+	// Disassociated from ALB
 	LostAssociationFromAlb *int `pulumi:"lostAssociationFromAlb"`
-	// 监听器的端口号。
+	// Listener port number
 	Port *string `pulumi:"port"`
-	// 监听器协议类型。
+	// Listener protocol type.
 	Protocol *string `pulumi:"protocol"`
 }
 
@@ -596,21 +596,21 @@ type DomainTcpListenerConfigInput interface {
 }
 
 type DomainTcpListenerConfigArgs struct {
-	// 接入协议类型。
+	// Access protocol type
 	AccessProtocol pulumi.StringPtrInput `pulumi:"accessProtocol"`
-	// 防护模式。
+	// Protection mode
 	DefenceMode pulumi.IntPtrInput `pulumi:"defenceMode"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name.
 	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// 监听器 ID。
+	// Listener ID.
 	ListenerId pulumi.StringPtrInput `pulumi:"listenerId"`
-	// 是否从 ALB 中丢失关联。
+	// Disassociated from ALB
 	LostAssociationFromAlb pulumi.IntPtrInput `pulumi:"lostAssociationFromAlb"`
-	// 监听器的端口号。
+	// Listener port number
 	Port pulumi.StringPtrInput `pulumi:"port"`
-	// 监听器协议类型。
+	// Listener protocol type.
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 }
 
@@ -665,42 +665,42 @@ func (o DomainTcpListenerConfigOutput) ToDomainTcpListenerConfigOutputWithContex
 	return o
 }
 
-// 接入协议类型。
+// Access protocol type
 func (o DomainTcpListenerConfigOutput) AccessProtocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainTcpListenerConfig) *string { return v.AccessProtocol }).(pulumi.StringPtrOutput)
 }
 
-// 防护模式。
+// Protection mode
 func (o DomainTcpListenerConfigOutput) DefenceMode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DomainTcpListenerConfig) *int { return v.DefenceMode }).(pulumi.IntPtrOutput)
 }
 
-// 实例 ID。
+// Instance ID.
 func (o DomainTcpListenerConfigOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainTcpListenerConfig) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 实例名称。
+// Instance name.
 func (o DomainTcpListenerConfigOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainTcpListenerConfig) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
 }
 
-// 监听器 ID。
+// Listener ID.
 func (o DomainTcpListenerConfigOutput) ListenerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainTcpListenerConfig) *string { return v.ListenerId }).(pulumi.StringPtrOutput)
 }
 
-// 是否从 ALB 中丢失关联。
+// Disassociated from ALB
 func (o DomainTcpListenerConfigOutput) LostAssociationFromAlb() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DomainTcpListenerConfig) *int { return v.LostAssociationFromAlb }).(pulumi.IntPtrOutput)
 }
 
-// 监听器的端口号。
+// Listener port number
 func (o DomainTcpListenerConfigOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainTcpListenerConfig) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
-// 监听器协议类型。
+// Listener protocol type.
 func (o DomainTcpListenerConfigOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DomainTcpListenerConfig) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
@@ -859,11 +859,11 @@ func (o DomainTlsFieldsConfigPtrOutput) HeadersConfig() DomainTlsFieldsConfigHea
 }
 
 type DomainTlsFieldsConfigHeadersConfig struct {
-	// 是否记录全量 header。
+	// Record all header fields
 	Enable *int `pulumi:"enable"`
-	// 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+	// Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
 	ExcludedKeyLists []string `pulumi:"excludedKeyLists"`
-	// 统计 header 字段，将对应字段用于日志统计分析和告警。
+	// Statistics header fields. Use the specified fields for log analysis and alerts.
 	StatisticalKeyLists []string `pulumi:"statisticalKeyLists"`
 }
 
@@ -879,11 +879,11 @@ type DomainTlsFieldsConfigHeadersConfigInput interface {
 }
 
 type DomainTlsFieldsConfigHeadersConfigArgs struct {
-	// 是否记录全量 header。
+	// Record all header fields
 	Enable pulumi.IntPtrInput `pulumi:"enable"`
-	// 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+	// Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
 	ExcludedKeyLists pulumi.StringArrayInput `pulumi:"excludedKeyLists"`
-	// 统计 header 字段，将对应字段用于日志统计分析和告警。
+	// Statistics header fields. Use the specified fields for log analysis and alerts.
 	StatisticalKeyLists pulumi.StringArrayInput `pulumi:"statisticalKeyLists"`
 }
 
@@ -964,17 +964,17 @@ func (o DomainTlsFieldsConfigHeadersConfigOutput) ToDomainTlsFieldsConfigHeaders
 	}).(DomainTlsFieldsConfigHeadersConfigPtrOutput)
 }
 
-// 是否记录全量 header。
+// Record all header fields
 func (o DomainTlsFieldsConfigHeadersConfigOutput) Enable() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DomainTlsFieldsConfigHeadersConfig) *int { return v.Enable }).(pulumi.IntPtrOutput)
 }
 
-// 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+// Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
 func (o DomainTlsFieldsConfigHeadersConfigOutput) ExcludedKeyLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DomainTlsFieldsConfigHeadersConfig) []string { return v.ExcludedKeyLists }).(pulumi.StringArrayOutput)
 }
 
-// 统计 header 字段，将对应字段用于日志统计分析和告警。
+// Statistics header fields. Use the specified fields for log analysis and alerts.
 func (o DomainTlsFieldsConfigHeadersConfigOutput) StatisticalKeyLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DomainTlsFieldsConfigHeadersConfig) []string { return v.StatisticalKeyLists }).(pulumi.StringArrayOutput)
 }
@@ -1003,7 +1003,7 @@ func (o DomainTlsFieldsConfigHeadersConfigPtrOutput) Elem() DomainTlsFieldsConfi
 	}).(DomainTlsFieldsConfigHeadersConfigOutput)
 }
 
-// 是否记录全量 header。
+// Record all header fields
 func (o DomainTlsFieldsConfigHeadersConfigPtrOutput) Enable() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DomainTlsFieldsConfigHeadersConfig) *int {
 		if v == nil {
@@ -1013,7 +1013,7 @@ func (o DomainTlsFieldsConfigHeadersConfigPtrOutput) Enable() pulumi.IntPtrOutpu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+// Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
 func (o DomainTlsFieldsConfigHeadersConfigPtrOutput) ExcludedKeyLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainTlsFieldsConfigHeadersConfig) []string {
 		if v == nil {
@@ -1023,7 +1023,7 @@ func (o DomainTlsFieldsConfigHeadersConfigPtrOutput) ExcludedKeyLists() pulumi.S
 	}).(pulumi.StringArrayOutput)
 }
 
-// 统计 header 字段，将对应字段用于日志统计分析和告警。
+// Statistics header fields. Use the specified fields for log analysis and alerts.
 func (o DomainTlsFieldsConfigHeadersConfigPtrOutput) StatisticalKeyLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainTlsFieldsConfigHeadersConfig) []string {
 		if v == nil {
@@ -1034,11 +1034,11 @@ func (o DomainTlsFieldsConfigHeadersConfigPtrOutput) StatisticalKeyLists() pulum
 }
 
 type GetDomainBackendGroup struct {
-	// 接入的端口号。
+	// Access port number.
 	AccessPorts []int `pulumi:"accessPorts"`
-	// 源站组详情。
+	// Origin group details.
 	Backends []GetDomainBackendGroupBackend `pulumi:"backends"`
-	// 源站组名称。
+	// Origin group name.
 	Name string `pulumi:"name"`
 }
 
@@ -1054,11 +1054,11 @@ type GetDomainBackendGroupInput interface {
 }
 
 type GetDomainBackendGroupArgs struct {
-	// 接入的端口号。
+	// Access port number.
 	AccessPorts pulumi.IntArrayInput `pulumi:"accessPorts"`
-	// 源站组详情。
+	// Origin group details.
 	Backends GetDomainBackendGroupBackendArrayInput `pulumi:"backends"`
-	// 源站组名称。
+	// Origin group name.
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -1113,17 +1113,17 @@ func (o GetDomainBackendGroupOutput) ToGetDomainBackendGroupOutputWithContext(ct
 	return o
 }
 
-// 接入的端口号。
+// Access port number.
 func (o GetDomainBackendGroupOutput) AccessPorts() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v GetDomainBackendGroup) []int { return v.AccessPorts }).(pulumi.IntArrayOutput)
 }
 
-// 源站组详情。
+// Origin group details.
 func (o GetDomainBackendGroupOutput) Backends() GetDomainBackendGroupBackendArrayOutput {
 	return o.ApplyT(func(v GetDomainBackendGroup) []GetDomainBackendGroupBackend { return v.Backends }).(GetDomainBackendGroupBackendArrayOutput)
 }
 
-// 源站组名称。
+// Origin group name.
 func (o GetDomainBackendGroupOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainBackendGroup) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -1149,13 +1149,13 @@ func (o GetDomainBackendGroupArrayOutput) Index(i pulumi.IntInput) GetDomainBack
 }
 
 type GetDomainBackendGroupBackend struct {
-	// 源站 IP 地址。
+	// Origin IP address
 	Ip string `pulumi:"ip"`
-	// 源站端口。
+	// Origin port
 	Port int `pulumi:"port"`
-	// 源站协议。
+	// Origin protocol.
 	Protocol string `pulumi:"protocol"`
-	// 源站权重。
+	// Origin weight
 	Weight int `pulumi:"weight"`
 }
 
@@ -1171,13 +1171,13 @@ type GetDomainBackendGroupBackendInput interface {
 }
 
 type GetDomainBackendGroupBackendArgs struct {
-	// 源站 IP 地址。
+	// Origin IP address
 	Ip pulumi.StringInput `pulumi:"ip"`
-	// 源站端口。
+	// Origin port
 	Port pulumi.IntInput `pulumi:"port"`
-	// 源站协议。
+	// Origin protocol.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
-	// 源站权重。
+	// Origin weight
 	Weight pulumi.IntInput `pulumi:"weight"`
 }
 
@@ -1232,22 +1232,22 @@ func (o GetDomainBackendGroupBackendOutput) ToGetDomainBackendGroupBackendOutput
 	return o
 }
 
-// 源站 IP 地址。
+// Origin IP address
 func (o GetDomainBackendGroupBackendOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainBackendGroupBackend) string { return v.Ip }).(pulumi.StringOutput)
 }
 
-// 源站端口。
+// Origin port
 func (o GetDomainBackendGroupBackendOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDomainBackendGroupBackend) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// 源站协议。
+// Origin protocol.
 func (o GetDomainBackendGroupBackendOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainBackendGroupBackend) string { return v.Protocol }).(pulumi.StringOutput)
 }
 
-// 源站权重。
+// Origin weight
 func (o GetDomainBackendGroupBackendOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDomainBackendGroupBackend) int { return v.Weight }).(pulumi.IntOutput)
 }
@@ -1273,21 +1273,21 @@ func (o GetDomainBackendGroupBackendArrayOutput) Index(i pulumi.IntInput) GetDom
 }
 
 type GetDomainCloudAccessConfig struct {
-	// 接入协议类型。
+	// Access protocol type
 	AccessProtocol string `pulumi:"accessProtocol"`
-	// 防护模式。
+	// Protection mode
 	DefenceMode int `pulumi:"defenceMode"`
-	// 负载均衡实例 ID。
+	// Load balancing instance ID.
 	InstanceId string `pulumi:"instanceId"`
-	// 负载均衡实例名称。
+	// Load balancer instance name.
 	InstanceName string `pulumi:"instanceName"`
-	// 负载均衡监听器 ID。
+	// Load balancing listener ID.
 	ListenerId string `pulumi:"listenerId"`
-	// 是否从 ALB 中丢失关联。
+	// Disassociated from ALB
 	LostAssociationFromAlb int `pulumi:"lostAssociationFromAlb"`
-	// 监听器转发规则的端口号。
+	// Listener forwarding rule port number
 	Port string `pulumi:"port"`
-	// 监听器转发规则的协议类型。
+	// Protocol type for listener forwarding rules.
 	Protocol string `pulumi:"protocol"`
 }
 
@@ -1303,21 +1303,21 @@ type GetDomainCloudAccessConfigInput interface {
 }
 
 type GetDomainCloudAccessConfigArgs struct {
-	// 接入协议类型。
+	// Access protocol type
 	AccessProtocol pulumi.StringInput `pulumi:"accessProtocol"`
-	// 防护模式。
+	// Protection mode
 	DefenceMode pulumi.IntInput `pulumi:"defenceMode"`
-	// 负载均衡实例 ID。
+	// Load balancing instance ID.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 负载均衡实例名称。
+	// Load balancer instance name.
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
-	// 负载均衡监听器 ID。
+	// Load balancing listener ID.
 	ListenerId pulumi.StringInput `pulumi:"listenerId"`
-	// 是否从 ALB 中丢失关联。
+	// Disassociated from ALB
 	LostAssociationFromAlb pulumi.IntInput `pulumi:"lostAssociationFromAlb"`
-	// 监听器转发规则的端口号。
+	// Listener forwarding rule port number
 	Port pulumi.StringInput `pulumi:"port"`
-	// 监听器转发规则的协议类型。
+	// Protocol type for listener forwarding rules.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 }
 
@@ -1372,42 +1372,42 @@ func (o GetDomainCloudAccessConfigOutput) ToGetDomainCloudAccessConfigOutputWith
 	return o
 }
 
-// 接入协议类型。
+// Access protocol type
 func (o GetDomainCloudAccessConfigOutput) AccessProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainCloudAccessConfig) string { return v.AccessProtocol }).(pulumi.StringOutput)
 }
 
-// 防护模式。
+// Protection mode
 func (o GetDomainCloudAccessConfigOutput) DefenceMode() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDomainCloudAccessConfig) int { return v.DefenceMode }).(pulumi.IntOutput)
 }
 
-// 负载均衡实例 ID。
+// Load balancing instance ID.
 func (o GetDomainCloudAccessConfigOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainCloudAccessConfig) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例名称。
+// Load balancer instance name.
 func (o GetDomainCloudAccessConfigOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainCloudAccessConfig) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 负载均衡监听器 ID。
+// Load balancing listener ID.
 func (o GetDomainCloudAccessConfigOutput) ListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainCloudAccessConfig) string { return v.ListenerId }).(pulumi.StringOutput)
 }
 
-// 是否从 ALB 中丢失关联。
+// Disassociated from ALB
 func (o GetDomainCloudAccessConfigOutput) LostAssociationFromAlb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDomainCloudAccessConfig) int { return v.LostAssociationFromAlb }).(pulumi.IntOutput)
 }
 
-// 监听器转发规则的端口号。
+// Listener forwarding rule port number
 func (o GetDomainCloudAccessConfigOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainCloudAccessConfig) string { return v.Port }).(pulumi.StringOutput)
 }
 
-// 监听器转发规则的协议类型。
+// Protocol type for listener forwarding rules.
 func (o GetDomainCloudAccessConfigOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainCloudAccessConfig) string { return v.Protocol }).(pulumi.StringOutput)
 }
@@ -1433,9 +1433,9 @@ func (o GetDomainCloudAccessConfigArrayOutput) Index(i pulumi.IntInput) GetDomai
 }
 
 type GetDomainProtocolPorts struct {
-	// HTTP 协议的端口号。
+	// HTTP protocol port number
 	Http []int `pulumi:"http"`
-	// HTTPS 协议的端口号。
+	// HTTPS protocol port number
 	Https []int `pulumi:"https"`
 }
 
@@ -1451,9 +1451,9 @@ type GetDomainProtocolPortsInput interface {
 }
 
 type GetDomainProtocolPortsArgs struct {
-	// HTTP 协议的端口号。
+	// HTTP protocol port number
 	Http pulumi.IntArrayInput `pulumi:"http"`
-	// HTTPS 协议的端口号。
+	// HTTPS protocol port number
 	Https pulumi.IntArrayInput `pulumi:"https"`
 }
 
@@ -1483,32 +1483,32 @@ func (o GetDomainProtocolPortsOutput) ToGetDomainProtocolPortsOutputWithContext(
 	return o
 }
 
-// HTTP 协议的端口号。
+// HTTP protocol port number
 func (o GetDomainProtocolPortsOutput) Http() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v GetDomainProtocolPorts) []int { return v.Http }).(pulumi.IntArrayOutput)
 }
 
-// HTTPS 协议的端口号。
+// HTTPS protocol port number
 func (o GetDomainProtocolPortsOutput) Https() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v GetDomainProtocolPorts) []int { return v.Https }).(pulumi.IntArrayOutput)
 }
 
 type GetDomainTcpListenerConfig struct {
-	// 接入协议类型。
+	// Access protocol type
 	AccessProtocol string `pulumi:"accessProtocol"`
-	// 防护模式。
+	// Protection mode
 	DefenceMode int `pulumi:"defenceMode"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId string `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name.
 	InstanceName string `pulumi:"instanceName"`
-	// 监听器 ID。
+	// Listener ID.
 	ListenerId string `pulumi:"listenerId"`
-	// 是否从 ALB 中丢失关联。
+	// Disassociated from ALB
 	LostAssociationFromAlb int `pulumi:"lostAssociationFromAlb"`
-	// 监听器的端口号。
+	// Listener port number
 	Port string `pulumi:"port"`
-	// 监听器协议类型。
+	// Listener protocol type.
 	Protocol string `pulumi:"protocol"`
 }
 
@@ -1524,21 +1524,21 @@ type GetDomainTcpListenerConfigInput interface {
 }
 
 type GetDomainTcpListenerConfigArgs struct {
-	// 接入协议类型。
+	// Access protocol type
 	AccessProtocol pulumi.StringInput `pulumi:"accessProtocol"`
-	// 防护模式。
+	// Protection mode
 	DefenceMode pulumi.IntInput `pulumi:"defenceMode"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name.
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
-	// 监听器 ID。
+	// Listener ID.
 	ListenerId pulumi.StringInput `pulumi:"listenerId"`
-	// 是否从 ALB 中丢失关联。
+	// Disassociated from ALB
 	LostAssociationFromAlb pulumi.IntInput `pulumi:"lostAssociationFromAlb"`
-	// 监听器的端口号。
+	// Listener port number
 	Port pulumi.StringInput `pulumi:"port"`
-	// 监听器协议类型。
+	// Listener protocol type.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 }
 
@@ -1593,42 +1593,42 @@ func (o GetDomainTcpListenerConfigOutput) ToGetDomainTcpListenerConfigOutputWith
 	return o
 }
 
-// 接入协议类型。
+// Access protocol type
 func (o GetDomainTcpListenerConfigOutput) AccessProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainTcpListenerConfig) string { return v.AccessProtocol }).(pulumi.StringOutput)
 }
 
-// 防护模式。
+// Protection mode
 func (o GetDomainTcpListenerConfigOutput) DefenceMode() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDomainTcpListenerConfig) int { return v.DefenceMode }).(pulumi.IntOutput)
 }
 
-// 实例 ID。
+// Instance ID.
 func (o GetDomainTcpListenerConfigOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainTcpListenerConfig) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 实例名称。
+// Instance name.
 func (o GetDomainTcpListenerConfigOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainTcpListenerConfig) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 监听器 ID。
+// Listener ID.
 func (o GetDomainTcpListenerConfigOutput) ListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainTcpListenerConfig) string { return v.ListenerId }).(pulumi.StringOutput)
 }
 
-// 是否从 ALB 中丢失关联。
+// Disassociated from ALB
 func (o GetDomainTcpListenerConfigOutput) LostAssociationFromAlb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDomainTcpListenerConfig) int { return v.LostAssociationFromAlb }).(pulumi.IntOutput)
 }
 
-// 监听器的端口号。
+// Listener port number
 func (o GetDomainTcpListenerConfigOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainTcpListenerConfig) string { return v.Port }).(pulumi.StringOutput)
 }
 
-// 监听器协议类型。
+// Listener protocol type.
 func (o GetDomainTcpListenerConfigOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainTcpListenerConfig) string { return v.Protocol }).(pulumi.StringOutput)
 }
@@ -1703,11 +1703,11 @@ func (o GetDomainTlsFieldsConfigOutput) HeadersConfig() GetDomainTlsFieldsConfig
 }
 
 type GetDomainTlsFieldsConfigHeadersConfig struct {
-	// 是否记录全量 header。
+	// Record all header fields
 	Enable int `pulumi:"enable"`
-	// 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+	// Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
 	ExcludedKeyLists []string `pulumi:"excludedKeyLists"`
-	// 统计 header 字段，将对应字段用于日志统计分析和告警。
+	// Statistics header fields. Use the specified fields for log analysis and alerts.
 	StatisticalKeyLists []string `pulumi:"statisticalKeyLists"`
 }
 
@@ -1723,11 +1723,11 @@ type GetDomainTlsFieldsConfigHeadersConfigInput interface {
 }
 
 type GetDomainTlsFieldsConfigHeadersConfigArgs struct {
-	// 是否记录全量 header。
+	// Record all header fields
 	Enable pulumi.IntInput `pulumi:"enable"`
-	// 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+	// Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
 	ExcludedKeyLists pulumi.StringArrayInput `pulumi:"excludedKeyLists"`
-	// 统计 header 字段，将对应字段用于日志统计分析和告警。
+	// Statistics header fields. Use the specified fields for log analysis and alerts.
 	StatisticalKeyLists pulumi.StringArrayInput `pulumi:"statisticalKeyLists"`
 }
 
@@ -1757,17 +1757,17 @@ func (o GetDomainTlsFieldsConfigHeadersConfigOutput) ToGetDomainTlsFieldsConfigH
 	return o
 }
 
-// 是否记录全量 header。
+// Record all header fields
 func (o GetDomainTlsFieldsConfigHeadersConfigOutput) Enable() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDomainTlsFieldsConfigHeadersConfig) int { return v.Enable }).(pulumi.IntOutput)
 }
 
-// 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+// Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
 func (o GetDomainTlsFieldsConfigHeadersConfigOutput) ExcludedKeyLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainTlsFieldsConfigHeadersConfig) []string { return v.ExcludedKeyLists }).(pulumi.StringArrayOutput)
 }
 
-// 统计 header 字段，将对应字段用于日志统计分析和告警。
+// Statistics header fields. Use the specified fields for log analysis and alerts.
 func (o GetDomainTlsFieldsConfigHeadersConfigOutput) StatisticalKeyLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainTlsFieldsConfigHeadersConfig) []string { return v.StatisticalKeyLists }).(pulumi.StringArrayOutput)
 }

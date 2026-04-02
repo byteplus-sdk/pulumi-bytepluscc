@@ -25,14 +25,14 @@ public final class DomainRedirectionRewriteArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+     * Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+     * @return Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -78,7 +78,7 @@ public final class DomainRedirectionRewriteArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param switch_ 表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+         * @param switch_ Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class DomainRedirectionRewriteArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param switch_ 表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+         * @param switch_ Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
          * 
          * @return builder
          * 

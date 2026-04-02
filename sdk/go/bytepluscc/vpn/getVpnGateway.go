@@ -30,71 +30,71 @@ type LookupVpnGatewayArgs struct {
 
 // A collection of values returned by getVpnGateway.
 type LookupVpnGatewayResult struct {
-	// VPN网关的ASN。
+	// ASN of the VPN gateway.
 	Asn int `pulumi:"asn"`
-	// VPN网关的带宽规格。
+	// VPN gateway bandwidth specification.
 	Bandwidth int `pulumi:"bandwidth"`
-	// VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+	// VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
 	BillingType int `pulumi:"billingType"`
-	// VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+	// VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
 	BusinessStatus string `pulumi:"businessStatus"`
-	// VPN网关关联IPsec连接的数量。
+	// Number of IPsec connections associated with the VPN gateway.
 	ConnectionCount int `pulumi:"connectionCount"`
-	// 创建VPN网关的时间。
+	// Time when the VPN gateway was created.
 	CreateTime string `pulumi:"createTime"`
-	// 预期资源强制回收时间。
+	// Expected resource forced reclaim time.
 	DeletedTime string `pulumi:"deletedTime"`
-	// VPN网关的描述。
+	// Description of the VPN gateway.
 	Description string `pulumi:"description"`
-	// VPN网关是否开启双隧道模式。true：开启false：关闭
+	// Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
 	DualTunnelEnabled bool `pulumi:"dualTunnelEnabled"`
-	// VPN网关的到期时间。
+	// VPN gateway expiration time.
 	ExpiredTime string `pulumi:"expiredTime"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// VPN网关的公网IP地址。
+	// VPN gateway public IP address.
 	IpAddress string `pulumi:"ipAddress"`
-	// VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+	// VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
 	IpStackType string `pulumi:"ipStackType"`
-	// VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+	// IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
 	IpVersion string `pulumi:"ipVersion"`
-	// 是否开启IPSec功能。true：开启false：关闭。
+	// Enable IPSec feature. true: enabled false: disabled
 	IpsecEnabled bool `pulumi:"ipsecEnabled"`
-	// 当前资源的状态是否被封禁。true：封禁false：未封禁。
+	// Whether the current resource is banned. true: Banned false: Not banned.
 	IsBlocked bool `pulumi:"isBlocked"`
-	// VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+	// VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
 	LockReason string `pulumi:"lockReason"`
-	// 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+	// Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
 	OverdueTime string `pulumi:"overdueTime"`
-	// 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+	// Subscription VPN gateway purchase duration, default is '1'. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
 	Period int `pulumi:"period"`
-	// 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+	// Unit for the purchase duration of subscription-based VPN gateways. Default is 'Month'. Month: month Year: year
 	PeriodUnit string `pulumi:"periodUnit"`
-	// VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+	// Project to which the VPN gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
 	ProjectName string `pulumi:"projectName"`
-	// VPN网关的路由条目数量。
+	// Number of route entries for the VPN gateway.
 	RouteCount int `pulumi:"routeCount"`
-	// VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+	// Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
 	SecondaryIpAddress string `pulumi:"secondaryIpAddress"`
-	// VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+	// ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
 	SecondarySubnetId string `pulumi:"secondarySubnetId"`
-	// 是否开启SSL VPN功能。true：开启false：关闭
+	// Enable SSL VPN feature. true: enabled false: disabled
 	SslEnabled bool `pulumi:"sslEnabled"`
-	// VPN网关的最大SSL连接数。
+	// Maximum SSL connections for the VPN gateway.
 	SslMaxConnections int `pulumi:"sslMaxConnections"`
-	// VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+	// Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
 	Status string `pulumi:"status"`
-	// VPN网关使用的端口所属子网的ID。
+	// ID of the subnet to which the port used by the VPN gateway belongs.
 	SubnetId string `pulumi:"subnetId"`
-	// VPN网关已添加的全部标签信息。
+	// All tag information added to the VPN gateway.
 	Tags []GetVpnGatewayTag `pulumi:"tags"`
-	// 更新VPN网关的时间。
+	// VPN gateway update time.
 	UpdateTime string `pulumi:"updateTime"`
-	// VPN网关所在VPC的ID。
+	// VPC ID where the VPN gateway is located.
 	VpcId string `pulumi:"vpcId"`
-	// VPN网关的ID。
+	// ID of the VPN gateway.
 	VpnGatewayId string `pulumi:"vpnGatewayId"`
-	// VPN网关的名称。
+	// Name of the VPN gateway.
 	VpnGatewayName string `pulumi:"vpnGatewayName"`
 }
 
@@ -132,52 +132,52 @@ func (o LookupVpnGatewayResultOutput) ToLookupVpnGatewayResultOutputWithContext(
 	return o
 }
 
-// VPN网关的ASN。
+// ASN of the VPN gateway.
 func (o LookupVpnGatewayResultOutput) Asn() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) int { return v.Asn }).(pulumi.IntOutput)
 }
 
-// VPN网关的带宽规格。
+// VPN gateway bandwidth specification.
 func (o LookupVpnGatewayResultOutput) Bandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) int { return v.Bandwidth }).(pulumi.IntOutput)
 }
 
-// VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+// VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
 func (o LookupVpnGatewayResultOutput) BillingType() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) int { return v.BillingType }).(pulumi.IntOutput)
 }
 
-// VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+// VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
 func (o LookupVpnGatewayResultOutput) BusinessStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.BusinessStatus }).(pulumi.StringOutput)
 }
 
-// VPN网关关联IPsec连接的数量。
+// Number of IPsec connections associated with the VPN gateway.
 func (o LookupVpnGatewayResultOutput) ConnectionCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) int { return v.ConnectionCount }).(pulumi.IntOutput)
 }
 
-// 创建VPN网关的时间。
+// Time when the VPN gateway was created.
 func (o LookupVpnGatewayResultOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 预期资源强制回收时间。
+// Expected resource forced reclaim time.
 func (o LookupVpnGatewayResultOutput) DeletedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.DeletedTime }).(pulumi.StringOutput)
 }
 
-// VPN网关的描述。
+// Description of the VPN gateway.
 func (o LookupVpnGatewayResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// VPN网关是否开启双隧道模式。true：开启false：关闭
+// Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
 func (o LookupVpnGatewayResultOutput) DualTunnelEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) bool { return v.DualTunnelEnabled }).(pulumi.BoolOutput)
 }
 
-// VPN网关的到期时间。
+// VPN gateway expiration time.
 func (o LookupVpnGatewayResultOutput) ExpiredTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.ExpiredTime }).(pulumi.StringOutput)
 }
@@ -187,112 +187,112 @@ func (o LookupVpnGatewayResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// VPN网关的公网IP地址。
+// VPN gateway public IP address.
 func (o LookupVpnGatewayResultOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+// VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
 func (o LookupVpnGatewayResultOutput) IpStackType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.IpStackType }).(pulumi.StringOutput)
 }
 
-// VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+// IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
 func (o LookupVpnGatewayResultOutput) IpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.IpVersion }).(pulumi.StringOutput)
 }
 
-// 是否开启IPSec功能。true：开启false：关闭。
+// Enable IPSec feature. true: enabled false: disabled
 func (o LookupVpnGatewayResultOutput) IpsecEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) bool { return v.IpsecEnabled }).(pulumi.BoolOutput)
 }
 
-// 当前资源的状态是否被封禁。true：封禁false：未封禁。
+// Whether the current resource is banned. true: Banned false: Not banned.
 func (o LookupVpnGatewayResultOutput) IsBlocked() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) bool { return v.IsBlocked }).(pulumi.BoolOutput)
 }
 
-// VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+// VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
 func (o LookupVpnGatewayResultOutput) LockReason() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.LockReason }).(pulumi.StringOutput)
 }
 
-// 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+// Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
 func (o LookupVpnGatewayResultOutput) OverdueTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.OverdueTime }).(pulumi.StringOutput)
 }
 
-// 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+// Subscription VPN gateway purchase duration, default is '1'. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
 func (o LookupVpnGatewayResultOutput) Period() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) int { return v.Period }).(pulumi.IntOutput)
 }
 
-// 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+// Unit for the purchase duration of subscription-based VPN gateways. Default is 'Month'. Month: month Year: year
 func (o LookupVpnGatewayResultOutput) PeriodUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.PeriodUnit }).(pulumi.StringOutput)
 }
 
-// VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+// Project to which the VPN gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
 func (o LookupVpnGatewayResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// VPN网关的路由条目数量。
+// Number of route entries for the VPN gateway.
 func (o LookupVpnGatewayResultOutput) RouteCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) int { return v.RouteCount }).(pulumi.IntOutput)
 }
 
-// VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+// Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
 func (o LookupVpnGatewayResultOutput) SecondaryIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.SecondaryIpAddress }).(pulumi.StringOutput)
 }
 
-// VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+// ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
 func (o LookupVpnGatewayResultOutput) SecondarySubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.SecondarySubnetId }).(pulumi.StringOutput)
 }
 
-// 是否开启SSL VPN功能。true：开启false：关闭
+// Enable SSL VPN feature. true: enabled false: disabled
 func (o LookupVpnGatewayResultOutput) SslEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) bool { return v.SslEnabled }).(pulumi.BoolOutput)
 }
 
-// VPN网关的最大SSL连接数。
+// Maximum SSL connections for the VPN gateway.
 func (o LookupVpnGatewayResultOutput) SslMaxConnections() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) int { return v.SslMaxConnections }).(pulumi.IntOutput)
 }
 
-// VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+// Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
 func (o LookupVpnGatewayResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// VPN网关使用的端口所属子网的ID。
+// ID of the subnet to which the port used by the VPN gateway belongs.
 func (o LookupVpnGatewayResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// VPN网关已添加的全部标签信息。
+// All tag information added to the VPN gateway.
 func (o LookupVpnGatewayResultOutput) Tags() GetVpnGatewayTagArrayOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) []GetVpnGatewayTag { return v.Tags }).(GetVpnGatewayTagArrayOutput)
 }
 
-// 更新VPN网关的时间。
+// VPN gateway update time.
 func (o LookupVpnGatewayResultOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.UpdateTime }).(pulumi.StringOutput)
 }
 
-// VPN网关所在VPC的ID。
+// VPC ID where the VPN gateway is located.
 func (o LookupVpnGatewayResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// VPN网关的ID。
+// ID of the VPN gateway.
 func (o LookupVpnGatewayResultOutput) VpnGatewayId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.VpnGatewayId }).(pulumi.StringOutput)
 }
 
-// VPN网关的名称。
+// Name of the VPN gateway.
 func (o LookupVpnGatewayResultOutput) VpnGatewayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpnGatewayResult) string { return v.VpnGatewayName }).(pulumi.StringOutput)
 }

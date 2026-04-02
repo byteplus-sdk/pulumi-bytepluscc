@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceEndpointReadOnlyNodeWeight {
     /**
-     * @return 只读节点需要传入 NodeId，主节点无需传入。
+     * @return Read-only nodes require NodeId. Primary nodes do not require it
      * 
      */
     private @Nullable String nodeId;
     /**
-     * @return 节点类型。Primary：主节点。ReadOnly：只读节点。
+     * @return Node type. Primary: primary node. ReadOnly: read-only node
      * 
      */
     private @Nullable String nodeType;
     /**
-     * @return 节点的读权重，以 100 递增，最大值为 10000。
+     * @return Node read weight, increments of 100, maximum value is 10000.
      * 
      */
     private @Nullable Integer weight;
 
     private InstanceEndpointReadOnlyNodeWeight() {}
     /**
-     * @return 只读节点需要传入 NodeId，主节点无需传入。
+     * @return Read-only nodes require NodeId. Primary nodes do not require it
      * 
      */
     public Optional<String> nodeId() {
         return Optional.ofNullable(this.nodeId);
     }
     /**
-     * @return 节点类型。Primary：主节点。ReadOnly：只读节点。
+     * @return Node type. Primary: primary node. ReadOnly: read-only node
      * 
      */
     public Optional<String> nodeType() {
         return Optional.ofNullable(this.nodeType);
     }
     /**
-     * @return 节点的读权重，以 100 递增，最大值为 10000。
+     * @return Node read weight, increments of 100, maximum value is 10000.
      * 
      */
     public Optional<Integer> weight() {

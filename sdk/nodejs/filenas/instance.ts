@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 文件系统通过标准的 NFS 协议为您提供文件存储服务，用于网络文件远程访问，通过管理控制台创建挂载地址后，即可按需在客户端中通过标准的 POSIX 接口对文件系统进行访问。
+ * The file system provides file storage services through the standard NFS protocol for remote network file access. After creating a mount point in the management console, you can access the file system on your client as needed using the standard POSIX interface
  *
  * ## Example Usage
  *
@@ -62,72 +62,72 @@ export class Instance extends pulumi.CustomResource {
     }
 
     /**
-     * 缓存型性能信息。
+     * Cache performance information
      */
     public readonly cachePerformance!: pulumi.Output<outputs.filenas.InstanceCachePerformance>;
     /**
-     * 文件系统容量。
+     * File system capacity
      */
     public readonly capacity!: pulumi.Output<outputs.filenas.InstanceCapacity>;
     /**
-     * 计费类型，取值 PayAsYouGo，表示按量计费。
+     * Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
      */
     public readonly chargeType!: pulumi.Output<string>;
     /**
-     * 创建时间
+     * Creation time
      */
     public /*out*/ readonly createTime!: pulumi.Output<string>;
     /**
-     * 描述信息。
+     * Description
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 文件系统 ID。
+     * File system ID
      */
     public /*out*/ readonly fileSystemId!: pulumi.Output<string>;
     /**
-     * 文件系统名称。
+     * File system name
      */
     public readonly fileSystemName!: pulumi.Output<string>;
     /**
-     * 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+     * File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
      */
     public readonly fileSystemType!: pulumi.Output<string>;
     /**
-     * 所属项目，默认值为 default 项目。
+     * Project, default value is the Default project
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+     * File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
      */
     public readonly protocolType!: pulumi.Output<string>;
     /**
-     * 快照数量
+     * Number of snapshots
      */
     public /*out*/ readonly snapshotCount!: pulumi.Output<number>;
     /**
-     * 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+     * Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
      */
     public readonly snapshotId!: pulumi.Output<string>;
     /**
-     * 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+     * File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 存储类型，取值Standard，表示标准型。
+     * Storage type. Value: Standard, indicates standard type
      */
     public readonly storageType!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.filenas.InstanceTag[]>;
     /**
-     * 更新时间
+     * Update time
      */
     public /*out*/ readonly updateTime!: pulumi.Output<string>;
     /**
-     * 可用区 ID。
+     * Availability Zone ID
      */
     public readonly zoneId!: pulumi.Output<string>;
     /**
-     * 可用区名称。
+     * Availability Zone name
      */
     public /*out*/ readonly zoneName!: pulumi.Output<string>;
 
@@ -208,72 +208,72 @@ export class Instance extends pulumi.CustomResource {
  */
 export interface InstanceState {
     /**
-     * 缓存型性能信息。
+     * Cache performance information
      */
     cachePerformance?: pulumi.Input<inputs.filenas.InstanceCachePerformance>;
     /**
-     * 文件系统容量。
+     * File system capacity
      */
     capacity?: pulumi.Input<inputs.filenas.InstanceCapacity>;
     /**
-     * 计费类型，取值 PayAsYouGo，表示按量计费。
+     * Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
      */
     chargeType?: pulumi.Input<string>;
     /**
-     * 创建时间
+     * Creation time
      */
     createTime?: pulumi.Input<string>;
     /**
-     * 描述信息。
+     * Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 文件系统 ID。
+     * File system ID
      */
     fileSystemId?: pulumi.Input<string>;
     /**
-     * 文件系统名称。
+     * File system name
      */
     fileSystemName?: pulumi.Input<string>;
     /**
-     * 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+     * File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
      */
     fileSystemType?: pulumi.Input<string>;
     /**
-     * 所属项目，默认值为 default 项目。
+     * Project, default value is the Default project
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+     * File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
      */
     protocolType?: pulumi.Input<string>;
     /**
-     * 快照数量
+     * Number of snapshots
      */
     snapshotCount?: pulumi.Input<number>;
     /**
-     * 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+     * Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
      */
     snapshotId?: pulumi.Input<string>;
     /**
-     * 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+     * File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
      */
     status?: pulumi.Input<string>;
     /**
-     * 存储类型，取值Standard，表示标准型。
+     * Storage type. Value: Standard, indicates standard type
      */
     storageType?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.filenas.InstanceTag>[]>;
     /**
-     * 更新时间
+     * Update time
      */
     updateTime?: pulumi.Input<string>;
     /**
-     * 可用区 ID。
+     * Availability Zone ID
      */
     zoneId?: pulumi.Input<string>;
     /**
-     * 可用区名称。
+     * Availability Zone name
      */
     zoneName?: pulumi.Input<string>;
 }
@@ -283,48 +283,48 @@ export interface InstanceState {
  */
 export interface InstanceArgs {
     /**
-     * 缓存型性能信息。
+     * Cache performance information
      */
     cachePerformance?: pulumi.Input<inputs.filenas.InstanceCachePerformance>;
     /**
-     * 文件系统容量。
+     * File system capacity
      */
     capacity?: pulumi.Input<inputs.filenas.InstanceCapacity>;
     /**
-     * 计费类型，取值 PayAsYouGo，表示按量计费。
+     * Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
      */
     chargeType: pulumi.Input<string>;
     /**
-     * 描述信息。
+     * Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 文件系统名称。
+     * File system name
      */
     fileSystemName: pulumi.Input<string>;
     /**
-     * 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+     * File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
      */
     fileSystemType: pulumi.Input<string>;
     /**
-     * 所属项目，默认值为 default 项目。
+     * Project, default value is the Default project
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+     * File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
      */
     protocolType: pulumi.Input<string>;
     /**
-     * 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+     * Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
      */
     snapshotId?: pulumi.Input<string>;
     /**
-     * 存储类型，取值Standard，表示标准型。
+     * Storage type. Value: Standard, indicates standard type
      */
     storageType?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.filenas.InstanceTag>[]>;
     /**
-     * 可用区 ID。
+     * Availability Zone ID
      */
     zoneId: pulumi.Input<string>;
 }

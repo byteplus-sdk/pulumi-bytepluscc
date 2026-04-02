@@ -17,14 +17,14 @@ public final class RuleDimensionConditionsMetaConditionMetaArgs extends com.pulu
     public static final RuleDimensionConditionsMetaConditionMetaArgs Empty = new RuleDimensionConditionsMetaConditionMetaArgs();
 
     /**
-     * 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+     * Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
      * 
      */
     @Import(name="comparator")
     private @Nullable Output<String> comparator;
 
     /**
-     * @return 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+     * @return Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
      * 
      */
     public Optional<Output<String>> comparator() {
@@ -32,14 +32,14 @@ public final class RuleDimensionConditionsMetaConditionMetaArgs extends com.pulu
     }
 
     /**
-     * 标签键。
+     * Tag key.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 标签键。
+     * @return Tag key.
      * 
      */
     public Optional<Output<String>> key() {
@@ -47,14 +47,14 @@ public final class RuleDimensionConditionsMetaConditionMetaArgs extends com.pulu
     }
 
     /**
-     * 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+     * Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+     * @return Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
      * 
      */
     public Optional<Output<List<String>>> values() {
@@ -88,7 +88,7 @@ public final class RuleDimensionConditionsMetaConditionMetaArgs extends com.pulu
         }
 
         /**
-         * @param comparator 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+         * @param comparator Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class RuleDimensionConditionsMetaConditionMetaArgs extends com.pulu
         }
 
         /**
-         * @param comparator 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+         * @param comparator Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class RuleDimensionConditionsMetaConditionMetaArgs extends com.pulu
         }
 
         /**
-         * @param key 标签键。
+         * @param key Tag key.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class RuleDimensionConditionsMetaConditionMetaArgs extends com.pulu
         }
 
         /**
-         * @param key 标签键。
+         * @param key Tag key.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class RuleDimensionConditionsMetaConditionMetaArgs extends com.pulu
         }
 
         /**
-         * @param values 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+         * @param values Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class RuleDimensionConditionsMetaConditionMetaArgs extends com.pulu
         }
 
         /**
-         * @param values 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+         * @param values Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class RuleDimensionConditionsMetaConditionMetaArgs extends com.pulu
         }
 
         /**
-         * @param values 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+         * @param values Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
          * 
          * @return builder
          * 

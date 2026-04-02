@@ -171,7 +171,7 @@ class AddonStatus(dict):
                  conditions: Optional[Sequence['outputs.AddonStatusCondition']] = None,
                  phase: Optional[builtins.str] = None):
         """
-        :param builtins.str phase: 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+        :param builtins.str phase: Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
         """
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
@@ -187,7 +187,7 @@ class AddonStatus(dict):
     @pulumi.getter
     def phase(self) -> Optional[builtins.str]:
         """
-        组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+        Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
         """
         return pulumi.get(self, "phase")
 
@@ -241,14 +241,14 @@ class ClusterClusterConfig(dict):
                  subnet_ids: Optional[Sequence[builtins.str]] = None,
                  vpc_id: Optional[builtins.str] = None):
         """
-        :param 'ClusterClusterConfigApiServerEndpointsArgs' api_server_endpoints: 集群 API Server 访问的 IPv4 地址信息。
-        :param 'ClusterClusterConfigApiServerPublicAccessConfigArgs' api_server_public_access_config: 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
-        :param builtins.bool api_server_public_access_enabled: 节点公网访问配置，参数值说明：false：未开启。true：已开启。
-        :param builtins.str ip_family: 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
-        :param builtins.bool resource_public_access_default_enabled: 节点公网访问配置，参数值说明：false：未开启。true：已开启。
-        :param Sequence[builtins.str] security_group_ids: 集群控制面及节点使用的的安全组。
-        :param Sequence[builtins.str] subnet_ids: 集群控制面在私有网络内通信的子网 ID。
-        :param builtins.str vpc_id: 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+        :param 'ClusterClusterConfigApiServerEndpointsArgs' api_server_endpoints: Cluster API Server access IPv4 address information
+        :param 'ClusterClusterConfigApiServerPublicAccessConfigArgs' api_server_public_access_config: Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
+        :param builtins.bool api_server_public_access_enabled: Node public access configuration. Parameter value description: false: Disabled. true: Enabled
+        :param builtins.str ip_family: Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
+        :param builtins.bool resource_public_access_default_enabled: Node public access configuration. Parameter value description: false: Disabled. true: Enabled
+        :param Sequence[builtins.str] security_group_ids: Security group used by the cluster control plane and nodes.
+        :param Sequence[builtins.str] subnet_ids: Subnet ID for cluster control plane communication within the private network.
+        :param builtins.str vpc_id: Private network (VPC) ID where the cluster control plane and some nodes are located.
         """
         if api_server_endpoints is not None:
             pulumi.set(__self__, "api_server_endpoints", api_server_endpoints)
@@ -271,7 +271,7 @@ class ClusterClusterConfig(dict):
     @pulumi.getter(name="apiServerEndpoints")
     def api_server_endpoints(self) -> Optional['outputs.ClusterClusterConfigApiServerEndpoints']:
         """
-        集群 API Server 访问的 IPv4 地址信息。
+        Cluster API Server access IPv4 address information
         """
         return pulumi.get(self, "api_server_endpoints")
 
@@ -279,7 +279,7 @@ class ClusterClusterConfig(dict):
     @pulumi.getter(name="apiServerPublicAccessConfig")
     def api_server_public_access_config(self) -> Optional['outputs.ClusterClusterConfigApiServerPublicAccessConfig']:
         """
-        集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+        Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
         """
         return pulumi.get(self, "api_server_public_access_config")
 
@@ -287,7 +287,7 @@ class ClusterClusterConfig(dict):
     @pulumi.getter(name="apiServerPublicAccessEnabled")
     def api_server_public_access_enabled(self) -> Optional[builtins.bool]:
         """
-        节点公网访问配置，参数值说明：false：未开启。true：已开启。
+        Node public access configuration. Parameter value description: false: Disabled. true: Enabled
         """
         return pulumi.get(self, "api_server_public_access_enabled")
 
@@ -295,7 +295,7 @@ class ClusterClusterConfig(dict):
     @pulumi.getter(name="ipFamily")
     def ip_family(self) -> Optional[builtins.str]:
         """
-        集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+        Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
         """
         return pulumi.get(self, "ip_family")
 
@@ -303,7 +303,7 @@ class ClusterClusterConfig(dict):
     @pulumi.getter(name="resourcePublicAccessDefaultEnabled")
     def resource_public_access_default_enabled(self) -> Optional[builtins.bool]:
         """
-        节点公网访问配置，参数值说明：false：未开启。true：已开启。
+        Node public access configuration. Parameter value description: false: Disabled. true: Enabled
         """
         return pulumi.get(self, "resource_public_access_default_enabled")
 
@@ -311,7 +311,7 @@ class ClusterClusterConfig(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        集群控制面及节点使用的的安全组。
+        Security group used by the cluster control plane and nodes.
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -319,7 +319,7 @@ class ClusterClusterConfig(dict):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        集群控制面在私有网络内通信的子网 ID。
+        Subnet ID for cluster control plane communication within the private network.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -327,7 +327,7 @@ class ClusterClusterConfig(dict):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[builtins.str]:
         """
-        集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+        Private network (VPC) ID where the cluster control plane and some nodes are located.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -357,8 +357,8 @@ class ClusterClusterConfigApiServerEndpoints(dict):
                  private_ip: Optional['outputs.ClusterClusterConfigApiServerEndpointsPrivateIp'] = None,
                  public_ip: Optional['outputs.ClusterClusterConfigApiServerEndpointsPublicIp'] = None):
         """
-        :param 'ClusterClusterConfigApiServerEndpointsPrivateIpArgs' private_ip: 集群 API Server 私网的 IPv4 地址。
-        :param 'ClusterClusterConfigApiServerEndpointsPublicIpArgs' public_ip: 集群 API Server 公网的 IPv4 地址。
+        :param 'ClusterClusterConfigApiServerEndpointsPrivateIpArgs' private_ip: Cluster API Server private IPv4 address.
+        :param 'ClusterClusterConfigApiServerEndpointsPublicIpArgs' public_ip: Cluster API Server public IPv4 address
         """
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
@@ -369,7 +369,7 @@ class ClusterClusterConfigApiServerEndpoints(dict):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional['outputs.ClusterClusterConfigApiServerEndpointsPrivateIp']:
         """
-        集群 API Server 私网的 IPv4 地址。
+        Cluster API Server private IPv4 address.
         """
         return pulumi.get(self, "private_ip")
 
@@ -377,7 +377,7 @@ class ClusterClusterConfigApiServerEndpoints(dict):
     @pulumi.getter(name="publicIp")
     def public_ip(self) -> Optional['outputs.ClusterClusterConfigApiServerEndpointsPublicIp']:
         """
-        集群 API Server 公网的 IPv4 地址。
+        Cluster API Server public IPv4 address
         """
         return pulumi.get(self, "public_ip")
 
@@ -387,7 +387,7 @@ class ClusterClusterConfigApiServerEndpointsPrivateIp(dict):
     def __init__(__self__, *,
                  ipv4: Optional[builtins.str] = None):
         """
-        :param builtins.str ipv4: 私网 IP 的 IPv4 地址。
+        :param builtins.str ipv4: IPv4 address of the private network IP.
         """
         if ipv4 is not None:
             pulumi.set(__self__, "ipv4", ipv4)
@@ -396,7 +396,7 @@ class ClusterClusterConfigApiServerEndpointsPrivateIp(dict):
     @pulumi.getter
     def ipv4(self) -> Optional[builtins.str]:
         """
-        私网 IP 的 IPv4 地址。
+        IPv4 address of the private network IP.
         """
         return pulumi.get(self, "ipv4")
 
@@ -406,7 +406,7 @@ class ClusterClusterConfigApiServerEndpointsPublicIp(dict):
     def __init__(__self__, *,
                  ipv4: Optional[builtins.str] = None):
         """
-        :param builtins.str ipv4: 公网 IP 的 IPv4 地址。
+        :param builtins.str ipv4: IPv4 address of the public IP.
         """
         if ipv4 is not None:
             pulumi.set(__self__, "ipv4", ipv4)
@@ -415,7 +415,7 @@ class ClusterClusterConfigApiServerEndpointsPublicIp(dict):
     @pulumi.getter
     def ipv4(self) -> Optional[builtins.str]:
         """
-        公网 IP 的 IPv4 地址。
+        IPv4 address of the public IP.
         """
         return pulumi.get(self, "ipv4")
 
@@ -442,7 +442,7 @@ class ClusterClusterConfigApiServerPublicAccessConfig(dict):
     def __init__(__self__, *,
                  public_access_network_config: Optional['outputs.ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig'] = None):
         """
-        :param 'ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigArgs' public_access_network_config: 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+        :param 'ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigArgs' public_access_network_config: Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
         """
         if public_access_network_config is not None:
             pulumi.set(__self__, "public_access_network_config", public_access_network_config)
@@ -451,7 +451,7 @@ class ClusterClusterConfigApiServerPublicAccessConfig(dict):
     @pulumi.getter(name="publicAccessNetworkConfig")
     def public_access_network_config(self) -> Optional['outputs.ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig']:
         """
-        公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+        Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
         """
         return pulumi.get(self, "public_access_network_config")
 
@@ -480,9 +480,9 @@ class ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig(d
                  billing_type: Optional[builtins.int] = None,
                  isp: Optional[builtins.str] = None):
         """
-        :param builtins.int bandwidth: 公网 IP 的带宽峰值，单位：Mbps。
-        :param builtins.int billing_type: 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
-        :param builtins.str isp: 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+        :param builtins.int bandwidth: Peak bandwidth of the public IP, unit: Mbps
+        :param builtins.int billing_type: Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
+        :param builtins.str isp: Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
         """
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
@@ -495,7 +495,7 @@ class ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig(d
     @pulumi.getter
     def bandwidth(self) -> Optional[builtins.int]:
         """
-        公网 IP 的带宽峰值，单位：Mbps。
+        Peak bandwidth of the public IP, unit: Mbps
         """
         return pulumi.get(self, "bandwidth")
 
@@ -503,7 +503,7 @@ class ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig(d
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[builtins.int]:
         """
-        公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+        Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
         """
         return pulumi.get(self, "billing_type")
 
@@ -511,7 +511,7 @@ class ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig(d
     @pulumi.getter
     def isp(self) -> Optional[builtins.str]:
         """
-        公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+        Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
         """
         return pulumi.get(self, "isp")
 
@@ -547,12 +547,12 @@ class ClusterIrsaConfig(dict):
                  oidc_trn: Optional[builtins.str] = None,
                  open_id_config_url: Optional[builtins.str] = None):
         """
-        :param builtins.str audience: 接受令牌的标识符。
-        :param builtins.bool enabled: 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
-        :param builtins.str issuer: OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
-        :param builtins.str jwks_url: JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
-        :param builtins.str oidc_trn: OIDC 提供商 TRN。
-        :param builtins.str open_id_config_url: OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+        :param builtins.str audience: Identifier for accepting tokens
+        :param builtins.bool enabled: Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
+        :param builtins.str issuer: OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
+        :param builtins.str jwks_url: JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
+        :param builtins.str oidc_trn: OIDC provider TRN.
+        :param builtins.str open_id_config_url: OIDC provider configuration document in JSON format, containing information about the OIDC provider.
         """
         if audience is not None:
             pulumi.set(__self__, "audience", audience)
@@ -571,7 +571,7 @@ class ClusterIrsaConfig(dict):
     @pulumi.getter
     def audience(self) -> Optional[builtins.str]:
         """
-        接受令牌的标识符。
+        Identifier for accepting tokens
         """
         return pulumi.get(self, "audience")
 
@@ -579,7 +579,7 @@ class ClusterIrsaConfig(dict):
     @pulumi.getter
     def enabled(self) -> Optional[builtins.bool]:
         """
-        是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+        Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -587,7 +587,7 @@ class ClusterIrsaConfig(dict):
     @pulumi.getter
     def issuer(self) -> Optional[builtins.str]:
         """
-        OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+        OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
         """
         return pulumi.get(self, "issuer")
 
@@ -595,7 +595,7 @@ class ClusterIrsaConfig(dict):
     @pulumi.getter(name="jwksUrl")
     def jwks_url(self) -> Optional[builtins.str]:
         """
-        JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+        JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
         """
         return pulumi.get(self, "jwks_url")
 
@@ -603,7 +603,7 @@ class ClusterIrsaConfig(dict):
     @pulumi.getter(name="oidcTrn")
     def oidc_trn(self) -> Optional[builtins.str]:
         """
-        OIDC 提供商 TRN。
+        OIDC provider TRN.
         """
         return pulumi.get(self, "oidc_trn")
 
@@ -611,7 +611,7 @@ class ClusterIrsaConfig(dict):
     @pulumi.getter(name="openIdConfigUrl")
     def open_id_config_url(self) -> Optional[builtins.str]:
         """
-        OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+        OIDC provider configuration document in JSON format, containing information about the OIDC provider.
         """
         return pulumi.get(self, "open_id_config_url")
 
@@ -641,7 +641,7 @@ class ClusterLoggingConfig(dict):
                  log_project_id: Optional[builtins.str] = None,
                  log_setups: Optional[Sequence['outputs.ClusterLoggingConfigLogSetup']] = None):
         """
-        :param builtins.str log_project_id: 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+        :param builtins.str log_project_id: Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
         """
         if log_project_id is not None:
             pulumi.set(__self__, "log_project_id", log_project_id)
@@ -652,7 +652,7 @@ class ClusterLoggingConfig(dict):
     @pulumi.getter(name="logProjectId")
     def log_project_id(self) -> Optional[builtins.str]:
         """
-        集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+        Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
         """
         return pulumi.get(self, "log_project_id")
 
@@ -688,9 +688,9 @@ class ClusterLoggingConfigLogSetup(dict):
                  log_ttl: Optional[builtins.int] = None,
                  log_type: Optional[builtins.str] = None):
         """
-        :param builtins.bool enabled: 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
-        :param builtins.int log_ttl: 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
-        :param builtins.str log_type: 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+        :param builtins.bool enabled: Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
+        :param builtins.int log_ttl: Retention period of logs in log service, in days. 3650 days means permanent storage.
+        :param builtins.str log_type: Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -703,7 +703,7 @@ class ClusterLoggingConfigLogSetup(dict):
     @pulumi.getter
     def enabled(self) -> Optional[builtins.bool]:
         """
-        是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+        Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -711,7 +711,7 @@ class ClusterLoggingConfigLogSetup(dict):
     @pulumi.getter(name="logTtl")
     def log_ttl(self) -> Optional[builtins.int]:
         """
-        日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+        Retention period of logs in log service, in days. 3650 days means permanent storage.
         """
         return pulumi.get(self, "log_ttl")
 
@@ -719,7 +719,7 @@ class ClusterLoggingConfigLogSetup(dict):
     @pulumi.getter(name="logType")
     def log_type(self) -> Optional[builtins.str]:
         """
-        当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+        Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
         """
         return pulumi.get(self, "log_type")
 
@@ -752,8 +752,8 @@ class ClusterMonitoringConfig(dict):
                  enable_metrics_external_collection: Optional[builtins.bool] = None,
                  workspace_id: Optional[builtins.str] = None):
         """
-        :param builtins.bool enable_metrics_external_collection: 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
-        :param builtins.str workspace_id: 监控数据所属的工作区 ID。
+        :param builtins.bool enable_metrics_external_collection: Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
+        :param builtins.str workspace_id: Workspace ID to which the monitoring data belongs.
         """
         if component_configs is not None:
             pulumi.set(__self__, "component_configs", component_configs)
@@ -771,7 +771,7 @@ class ClusterMonitoringConfig(dict):
     @pulumi.getter(name="enableMetricsExternalCollection")
     def enable_metrics_external_collection(self) -> Optional[builtins.bool]:
         """
-        是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+        Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
         """
         return pulumi.get(self, "enable_metrics_external_collection")
 
@@ -779,7 +779,7 @@ class ClusterMonitoringConfig(dict):
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> Optional[builtins.str]:
         """
-        监控数据所属的工作区 ID。
+        Workspace ID to which the monitoring data belongs.
         """
         return pulumi.get(self, "workspace_id")
 
@@ -790,8 +790,8 @@ class ClusterMonitoringConfigComponentConfig(dict):
                  enabled: Optional[builtins.bool] = None,
                  name: Optional[builtins.str] = None):
         """
-        :param builtins.bool enabled: 是否启用该监控组件，true 表示启用，false 表示禁用。
-        :param builtins.str name: 监控组件的名称，例如 'prometheus'、'grafana' 等。
+        :param builtins.bool enabled: Whether to enable this monitoring component. true means enabled; false means disabled.
+        :param builtins.str name: Name of the monitoring component, such as 'prometheus', 'grafana', etc.
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -802,7 +802,7 @@ class ClusterMonitoringConfigComponentConfig(dict):
     @pulumi.getter
     def enabled(self) -> Optional[builtins.bool]:
         """
-        是否启用该监控组件，true 表示启用，false 表示禁用。
+        Whether to enable this monitoring component. true means enabled; false means disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -810,7 +810,7 @@ class ClusterMonitoringConfigComponentConfig(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        监控组件的名称，例如 'prometheus'、'grafana' 等。
+        Name of the monitoring component, such as 'prometheus', 'grafana', etc.
         """
         return pulumi.get(self, "name")
 
@@ -852,12 +852,12 @@ class ClusterNodeStatistics(dict):
                  total_count: Optional[builtins.int] = None,
                  updating_count: Optional[builtins.int] = None):
         """
-        :param builtins.int creating_count: Phase=Creating的节点总数量。
-        :param builtins.int deleting_count: Phase=Deleting的节点总数量。
-        :param builtins.int failed_count: Phase=Failed的节点总数量。
-        :param builtins.int running_count: Phase=Running的节点总数量。
-        :param builtins.int total_count: 节点总数量。
-        :param builtins.int updating_count: Phase=Updating的节点总数量。
+        :param builtins.int creating_count: Total number of nodes in Phase=Creating.
+        :param builtins.int deleting_count: Total number of nodes with Phase=Deleting.
+        :param builtins.int failed_count: Total number of nodes with Phase=Failed.
+        :param builtins.int running_count: Total number of nodes with Phase=Running.
+        :param builtins.int total_count: Total number of nodes.
+        :param builtins.int updating_count: Total number of nodes in Phase=Updating.
         """
         if creating_count is not None:
             pulumi.set(__self__, "creating_count", creating_count)
@@ -876,7 +876,7 @@ class ClusterNodeStatistics(dict):
     @pulumi.getter(name="creatingCount")
     def creating_count(self) -> Optional[builtins.int]:
         """
-        Phase=Creating的节点总数量。
+        Total number of nodes in Phase=Creating.
         """
         return pulumi.get(self, "creating_count")
 
@@ -884,7 +884,7 @@ class ClusterNodeStatistics(dict):
     @pulumi.getter(name="deletingCount")
     def deleting_count(self) -> Optional[builtins.int]:
         """
-        Phase=Deleting的节点总数量。
+        Total number of nodes with Phase=Deleting.
         """
         return pulumi.get(self, "deleting_count")
 
@@ -892,7 +892,7 @@ class ClusterNodeStatistics(dict):
     @pulumi.getter(name="failedCount")
     def failed_count(self) -> Optional[builtins.int]:
         """
-        Phase=Failed的节点总数量。
+        Total number of nodes with Phase=Failed.
         """
         return pulumi.get(self, "failed_count")
 
@@ -900,7 +900,7 @@ class ClusterNodeStatistics(dict):
     @pulumi.getter(name="runningCount")
     def running_count(self) -> Optional[builtins.int]:
         """
-        Phase=Running的节点总数量。
+        Total number of nodes with Phase=Running.
         """
         return pulumi.get(self, "running_count")
 
@@ -908,7 +908,7 @@ class ClusterNodeStatistics(dict):
     @pulumi.getter(name="totalCount")
     def total_count(self) -> Optional[builtins.int]:
         """
-        节点总数量。
+        Total number of nodes.
         """
         return pulumi.get(self, "total_count")
 
@@ -916,7 +916,7 @@ class ClusterNodeStatistics(dict):
     @pulumi.getter(name="updatingCount")
     def updating_count(self) -> Optional[builtins.int]:
         """
-        Phase=Updating的节点总数量。
+        Total number of nodes in Phase=Updating.
         """
         return pulumi.get(self, "updating_count")
 
@@ -949,9 +949,9 @@ class ClusterPodsConfig(dict):
                  pod_network_mode: Optional[builtins.str] = None,
                  vpc_cni_config: Optional['outputs.ClusterPodsConfigVpcCniConfig'] = None):
         """
-        :param 'ClusterPodsConfigFlannelConfigArgs' flannel_config: Flannel 网络配置。
-        :param builtins.str pod_network_mode: 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
-        :param 'ClusterPodsConfigVpcCniConfigArgs' vpc_cni_config: VPC-CNI 网络配置。
+        :param 'ClusterPodsConfigFlannelConfigArgs' flannel_config: Flannel network configuration.
+        :param builtins.str pod_network_mode: Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
+        :param 'ClusterPodsConfigVpcCniConfigArgs' vpc_cni_config: VPC-CNI network configuration.
         """
         if flannel_config is not None:
             pulumi.set(__self__, "flannel_config", flannel_config)
@@ -964,7 +964,7 @@ class ClusterPodsConfig(dict):
     @pulumi.getter(name="flannelConfig")
     def flannel_config(self) -> Optional['outputs.ClusterPodsConfigFlannelConfig']:
         """
-        Flannel 网络配置。
+        Flannel network configuration.
         """
         return pulumi.get(self, "flannel_config")
 
@@ -972,7 +972,7 @@ class ClusterPodsConfig(dict):
     @pulumi.getter(name="podNetworkMode")
     def pod_network_mode(self) -> Optional[builtins.str]:
         """
-        容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+        Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
         """
         return pulumi.get(self, "pod_network_mode")
 
@@ -980,7 +980,7 @@ class ClusterPodsConfig(dict):
     @pulumi.getter(name="vpcCniConfig")
     def vpc_cni_config(self) -> Optional['outputs.ClusterPodsConfigVpcCniConfig']:
         """
-        VPC-CNI 网络配置。
+        VPC-CNI network configuration.
         """
         return pulumi.get(self, "vpc_cni_config")
 
@@ -1013,9 +1013,9 @@ class ClusterPodsConfigFlannelConfig(dict):
                  pod_cidrs: Optional[Sequence[builtins.str]] = None,
                  subnet_ids: Optional[Sequence[builtins.str]] = None):
         """
-        :param builtins.int max_pods_per_node: Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
-        :param Sequence[builtins.str] pod_cidrs: Flannel 容器网络的 Pod CIDR。
-        :param Sequence[builtins.str] subnet_ids: Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+        :param builtins.int max_pods_per_node: Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
+        :param Sequence[builtins.str] pod_cidrs: Pod CIDR for Flannel container network.
+        :param Sequence[builtins.str] subnet_ids: List of Pod subnet IDs for the Flannel container network model.
         """
         if max_pods_per_node is not None:
             pulumi.set(__self__, "max_pods_per_node", max_pods_per_node)
@@ -1028,7 +1028,7 @@ class ClusterPodsConfigFlannelConfig(dict):
     @pulumi.getter(name="maxPodsPerNode")
     def max_pods_per_node(self) -> Optional[builtins.int]:
         """
-        Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+        Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
         """
         return pulumi.get(self, "max_pods_per_node")
 
@@ -1036,7 +1036,7 @@ class ClusterPodsConfigFlannelConfig(dict):
     @pulumi.getter(name="podCidrs")
     def pod_cidrs(self) -> Optional[Sequence[builtins.str]]:
         """
-        Flannel 容器网络的 Pod CIDR。
+        Pod CIDR for Flannel container network.
         """
         return pulumi.get(self, "pod_cidrs")
 
@@ -1044,7 +1044,7 @@ class ClusterPodsConfigFlannelConfig(dict):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+        List of Pod subnet IDs for the Flannel container network model.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -1074,8 +1074,8 @@ class ClusterPodsConfigVpcCniConfig(dict):
                  subnet_ids: Optional[Sequence[builtins.str]] = None,
                  trunk_eni_enabled: Optional[builtins.bool] = None):
         """
-        :param Sequence[builtins.str] subnet_ids: VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
-        :param builtins.bool trunk_eni_enabled: 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+        :param Sequence[builtins.str] subnet_ids: List of Pod subnet IDs for the VPC-CNI container network model.
+        :param builtins.bool trunk_eni_enabled: Whether to enable Trunk mode for the VPC-CNI container network model
         """
         if subnet_ids is not None:
             pulumi.set(__self__, "subnet_ids", subnet_ids)
@@ -1086,7 +1086,7 @@ class ClusterPodsConfigVpcCniConfig(dict):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+        List of Pod subnet IDs for the VPC-CNI container network model.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -1094,7 +1094,7 @@ class ClusterPodsConfigVpcCniConfig(dict):
     @pulumi.getter(name="trunkEniEnabled")
     def trunk_eni_enabled(self) -> Optional[builtins.bool]:
         """
-        是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+        Whether to enable Trunk mode for the VPC-CNI container network model
         """
         return pulumi.get(self, "trunk_eni_enabled")
 
@@ -1121,7 +1121,7 @@ class ClusterServicesConfig(dict):
     def __init__(__self__, *,
                  service_cidrsv4s: Optional[Sequence[builtins.str]] = None):
         """
-        :param Sequence[builtins.str] service_cidrsv4s: Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+        :param Sequence[builtins.str] service_cidrsv4s: IPv4 private network address exposed by Kubernetes Service.
         """
         if service_cidrsv4s is not None:
             pulumi.set(__self__, "service_cidrsv4s", service_cidrsv4s)
@@ -1130,7 +1130,7 @@ class ClusterServicesConfig(dict):
     @pulumi.getter(name="serviceCidrsv4s")
     def service_cidrsv4s(self) -> Optional[Sequence[builtins.str]]:
         """
-        Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+        IPv4 private network address exposed by Kubernetes Service.
         """
         return pulumi.get(self, "service_cidrsv4s")
 
@@ -1141,7 +1141,7 @@ class ClusterStatus(dict):
                  conditions: Optional[Sequence['outputs.ClusterStatusCondition']] = None,
                  phase: Optional[builtins.str] = None):
         """
-        :param builtins.str phase: 集群状态阶段
+        :param builtins.str phase: Cluster status phase.
         """
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
@@ -1157,7 +1157,7 @@ class ClusterStatus(dict):
     @pulumi.getter
     def phase(self) -> Optional[builtins.str]:
         """
-        集群状态阶段
+        Cluster status phase.
         """
         return pulumi.get(self, "phase")
 
@@ -1167,7 +1167,7 @@ class ClusterStatusCondition(dict):
     def __init__(__self__, *,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str type: 条件类型
+        :param builtins.str type: Condition type
         """
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -1176,7 +1176,7 @@ class ClusterStatusCondition(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        条件类型
+        Condition type
         """
         return pulumi.get(self, "type")
 
@@ -1187,8 +1187,8 @@ class ClusterTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1199,7 +1199,7 @@ class ClusterTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -1207,7 +1207,7 @@ class ClusterTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -1248,13 +1248,13 @@ class DefaultNodePoolAutoScaling(dict):
                  scaling_group_id: Optional[builtins.str] = None,
                  subnet_policy: Optional[builtins.str] = None):
         """
-        :param builtins.int desired_replicas: 配置节点池的期望节点数。
-        :param builtins.bool enabled: 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
-        :param builtins.int max_replicas: 配置节点池的最大节点数。
-        :param builtins.int min_replicas: 配置节点池的最小节点数。
-        :param builtins.int priority: 优先级。
-        :param builtins.str scaling_group_id: 伸缩组ID。
-        :param builtins.str subnet_policy: 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+        :param builtins.int desired_replicas: Configure the desired number of nodes in the node pool.
+        :param builtins.bool enabled: Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
+        :param builtins.int max_replicas: Configure the maximum number of nodes in the node pool
+        :param builtins.int min_replicas: Configure the minimum number of nodes in the node pool
+        :param builtins.int priority: Priority
+        :param builtins.str scaling_group_id: Scaling group ID
+        :param builtins.str subnet_policy: Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
         """
         if desired_replicas is not None:
             pulumi.set(__self__, "desired_replicas", desired_replicas)
@@ -1275,7 +1275,7 @@ class DefaultNodePoolAutoScaling(dict):
     @pulumi.getter(name="desiredReplicas")
     def desired_replicas(self) -> Optional[builtins.int]:
         """
-        配置节点池的期望节点数。
+        Configure the desired number of nodes in the node pool.
         """
         return pulumi.get(self, "desired_replicas")
 
@@ -1283,7 +1283,7 @@ class DefaultNodePoolAutoScaling(dict):
     @pulumi.getter
     def enabled(self) -> Optional[builtins.bool]:
         """
-        配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+        Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
         """
         return pulumi.get(self, "enabled")
 
@@ -1291,7 +1291,7 @@ class DefaultNodePoolAutoScaling(dict):
     @pulumi.getter(name="maxReplicas")
     def max_replicas(self) -> Optional[builtins.int]:
         """
-        配置节点池的最大节点数。
+        Configure the maximum number of nodes in the node pool
         """
         return pulumi.get(self, "max_replicas")
 
@@ -1299,7 +1299,7 @@ class DefaultNodePoolAutoScaling(dict):
     @pulumi.getter(name="minReplicas")
     def min_replicas(self) -> Optional[builtins.int]:
         """
-        配置节点池的最小节点数。
+        Configure the minimum number of nodes in the node pool
         """
         return pulumi.get(self, "min_replicas")
 
@@ -1307,7 +1307,7 @@ class DefaultNodePoolAutoScaling(dict):
     @pulumi.getter
     def priority(self) -> Optional[builtins.int]:
         """
-        优先级。
+        Priority
         """
         return pulumi.get(self, "priority")
 
@@ -1315,7 +1315,7 @@ class DefaultNodePoolAutoScaling(dict):
     @pulumi.getter(name="scalingGroupId")
     def scaling_group_id(self) -> Optional[builtins.str]:
         """
-        伸缩组ID。
+        Scaling group ID
         """
         return pulumi.get(self, "scaling_group_id")
 
@@ -1323,7 +1323,7 @@ class DefaultNodePoolAutoScaling(dict):
     @pulumi.getter(name="subnetPolicy")
     def subnet_policy(self) -> Optional[builtins.str]:
         """
-        节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+        Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
         """
         return pulumi.get(self, "subnet_policy")
 
@@ -1365,12 +1365,12 @@ class DefaultNodePoolKubernetesConfig(dict):
                  name_use_hostname: Optional[builtins.bool] = None,
                  taints: Optional[Sequence['outputs.DefaultNodePoolKubernetesConfigTaint']] = None):
         """
-        :param builtins.bool auto_sync_disabled: 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
-        :param builtins.bool cordon: 封锁节点配置，参数值说明：false：不封锁。true：封锁。
-        :param 'DefaultNodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Kubelet 组件的相关配置
-        :param builtins.str name_prefix: Kubernetes 中节点对象的元数据名称前缀。
-        :param builtins.str name_suffix: Kubernetes 中节点对象的元数据名称后缀。
-        :param builtins.bool name_use_hostname: Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+        :param builtins.bool auto_sync_disabled: Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
+        :param builtins.bool cordon: Node blocking configuration. Parameter value description: false: not blocked. true: blocked
+        :param 'DefaultNodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Kubelet component configuration
+        :param builtins.str name_prefix: Prefix of the metadata name for node objects in Kubernetes.
+        :param builtins.str name_suffix: Suffix of the metadata name for node objects in Kubernetes.
+        :param builtins.bool name_use_hostname: Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
         """
         if auto_sync_disabled is not None:
             pulumi.set(__self__, "auto_sync_disabled", auto_sync_disabled)
@@ -1393,7 +1393,7 @@ class DefaultNodePoolKubernetesConfig(dict):
     @pulumi.getter(name="autoSyncDisabled")
     def auto_sync_disabled(self) -> Optional[builtins.bool]:
         """
-        是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+        Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
         """
         return pulumi.get(self, "auto_sync_disabled")
 
@@ -1401,7 +1401,7 @@ class DefaultNodePoolKubernetesConfig(dict):
     @pulumi.getter
     def cordon(self) -> Optional[builtins.bool]:
         """
-        封锁节点配置，参数值说明：false：不封锁。true：封锁。
+        Node blocking configuration. Parameter value description: false: not blocked. true: blocked
         """
         return pulumi.get(self, "cordon")
 
@@ -1409,7 +1409,7 @@ class DefaultNodePoolKubernetesConfig(dict):
     @pulumi.getter(name="kubeletConfig")
     def kubelet_config(self) -> Optional['outputs.DefaultNodePoolKubernetesConfigKubeletConfig']:
         """
-        Kubelet 组件的相关配置
+        Kubelet component configuration
         """
         return pulumi.get(self, "kubelet_config")
 
@@ -1422,7 +1422,7 @@ class DefaultNodePoolKubernetesConfig(dict):
     @pulumi.getter(name="namePrefix")
     def name_prefix(self) -> Optional[builtins.str]:
         """
-        Kubernetes 中节点对象的元数据名称前缀。
+        Prefix of the metadata name for node objects in Kubernetes.
         """
         return pulumi.get(self, "name_prefix")
 
@@ -1430,7 +1430,7 @@ class DefaultNodePoolKubernetesConfig(dict):
     @pulumi.getter(name="nameSuffix")
     def name_suffix(self) -> Optional[builtins.str]:
         """
-        Kubernetes 中节点对象的元数据名称后缀。
+        Suffix of the metadata name for node objects in Kubernetes.
         """
         return pulumi.get(self, "name_suffix")
 
@@ -1438,7 +1438,7 @@ class DefaultNodePoolKubernetesConfig(dict):
     @pulumi.getter(name="nameUseHostname")
     def name_use_hostname(self) -> Optional[builtins.bool]:
         """
-        Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+        Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
         """
         return pulumi.get(self, "name_use_hostname")
 
@@ -1503,16 +1503,16 @@ class DefaultNodePoolKubernetesConfigKubeletConfig(dict):
                  topology_manager_policy: Optional[builtins.str] = None,
                  topology_manager_scope: Optional[builtins.str] = None):
         """
-        :param builtins.str cpu_manager_policy: 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
-        :param 'DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs' feature_gates: 特性门控。
-        :param builtins.int kube_api_burst: 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
-        :param builtins.int kube_api_qps: 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
-        :param builtins.int max_pods: 配置 kubelet 支持的最大 Pod 数量
-        :param builtins.int registry_burst: 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
-        :param builtins.int registry_pull_qps: 可用来限制镜像仓库的 QPS 上限
-        :param builtins.bool serialize_image_pulls: 逐一拉取镜像。
-        :param builtins.str topology_manager_policy: 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
-        :param builtins.str topology_manager_scope: 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+        :param builtins.str cpu_manager_policy: Configure kubelet's CpuManagerPolicy. Includes none and static strategies
+        :param 'DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs' feature_gates: Feature gate.
+        :param builtins.int kube_api_burst: Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
+        :param builtins.int kube_api_qps: Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
+        :param builtins.int max_pods: Configure the maximum number of Pods supported by kubelet
+        :param builtins.int registry_burst: Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+        :param builtins.int registry_pull_qps: Can be used to limit the QPS cap for the image repository
+        :param builtins.bool serialize_image_pulls: Pull images one by one
+        :param builtins.str topology_manager_policy: Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
+        :param builtins.str topology_manager_scope: Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
         """
         if cpu_manager_policy is not None:
             pulumi.set(__self__, "cpu_manager_policy", cpu_manager_policy)
@@ -1543,7 +1543,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="cpuManagerPolicy")
     def cpu_manager_policy(self) -> Optional[builtins.str]:
         """
-        配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+        Configure kubelet's CpuManagerPolicy. Includes none and static strategies
         """
         return pulumi.get(self, "cpu_manager_policy")
 
@@ -1551,7 +1551,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="featureGates")
     def feature_gates(self) -> Optional['outputs.DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates']:
         """
-        特性门控。
+        Feature gate.
         """
         return pulumi.get(self, "feature_gates")
 
@@ -1559,7 +1559,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="kubeApiBurst")
     def kube_api_burst(self) -> Optional[builtins.int]:
         """
-        每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+        Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
         """
         return pulumi.get(self, "kube_api_burst")
 
@@ -1567,7 +1567,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="kubeApiQps")
     def kube_api_qps(self) -> Optional[builtins.int]:
         """
-        与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+        Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
         """
         return pulumi.get(self, "kube_api_qps")
 
@@ -1580,7 +1580,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="maxPods")
     def max_pods(self) -> Optional[builtins.int]:
         """
-        配置 kubelet 支持的最大 Pod 数量
+        Configure the maximum number of Pods supported by kubelet
         """
         return pulumi.get(self, "max_pods")
 
@@ -1588,7 +1588,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="registryBurst")
     def registry_burst(self) -> Optional[builtins.int]:
         """
-        设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+        Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
         """
         return pulumi.get(self, "registry_burst")
 
@@ -1596,7 +1596,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="registryPullQps")
     def registry_pull_qps(self) -> Optional[builtins.int]:
         """
-        可用来限制镜像仓库的 QPS 上限
+        Can be used to limit the QPS cap for the image repository
         """
         return pulumi.get(self, "registry_pull_qps")
 
@@ -1604,7 +1604,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="serializeImagePulls")
     def serialize_image_pulls(self) -> Optional[builtins.bool]:
         """
-        逐一拉取镜像。
+        Pull images one by one
         """
         return pulumi.get(self, "serialize_image_pulls")
 
@@ -1617,7 +1617,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="topologyManagerPolicy")
     def topology_manager_policy(self) -> Optional[builtins.str]:
         """
-        拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+        Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
         """
         return pulumi.get(self, "topology_manager_policy")
 
@@ -1625,7 +1625,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="topologyManagerScope")
     def topology_manager_scope(self) -> Optional[builtins.str]:
         """
-        拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+        Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
         """
         return pulumi.get(self, "topology_manager_scope")
 
@@ -1655,8 +1655,8 @@ class DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates(dict):
                  in_place_pod_vertical_scaling: Optional[builtins.bool] = None,
                  qo_s_resource_manager: Optional[builtins.bool] = None):
         """
-        :param builtins.bool in_place_pod_vertical_scaling: 是否开启特性开关本地垂直Pod伸缩
-        :param builtins.bool qo_s_resource_manager: 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+        :param builtins.bool in_place_pod_vertical_scaling: Whether to enable the feature switch for local vertical Pod autoscaling
+        :param builtins.bool qo_s_resource_manager: Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
         """
         if in_place_pod_vertical_scaling is not None:
             pulumi.set(__self__, "in_place_pod_vertical_scaling", in_place_pod_vertical_scaling)
@@ -1667,7 +1667,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates(dict):
     @pulumi.getter(name="inPlacePodVerticalScaling")
     def in_place_pod_vertical_scaling(self) -> Optional[builtins.bool]:
         """
-        是否开启特性开关本地垂直Pod伸缩
+        Whether to enable the feature switch for local vertical Pod autoscaling
         """
         return pulumi.get(self, "in_place_pod_vertical_scaling")
 
@@ -1675,7 +1675,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates(dict):
     @pulumi.getter(name="qoSResourceManager")
     def qo_s_resource_manager(self) -> Optional[builtins.bool]:
         """
-        是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+        Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
         """
         return pulumi.get(self, "qo_s_resource_manager")
 
@@ -1686,8 +1686,8 @@ class DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved(dict):
                  name: Optional[builtins.str] = None,
                  quantity: Optional[builtins.str] = None):
         """
-        :param builtins.str name: 资源名称，取值为 cpu 或 memory。
-        :param builtins.str quantity: 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+        :param builtins.str name: Resource name. Values: cpu or memory
+        :param builtins.str quantity: Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1698,7 +1698,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        资源名称，取值为 cpu 或 memory。
+        Resource name. Values: cpu or memory
         """
         return pulumi.get(self, "name")
 
@@ -1706,7 +1706,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved(dict):
     @pulumi.getter
     def quantity(self) -> Optional[builtins.str]:
         """
-        指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+        Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
         """
         return pulumi.get(self, "quantity")
 
@@ -1717,8 +1717,8 @@ class DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved(dict):
                  name: Optional[builtins.str] = None,
                  quantity: Optional[builtins.str] = None):
         """
-        :param builtins.str name: 资源名称，取值为 cpu 或 memory。
-        :param builtins.str quantity: 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+        :param builtins.str name: Resource name. Values: cpu or memory.
+        :param builtins.str quantity: Resource quantity for the specified resource.   - For cpu, example value: 200m   - For memory, example value: 1G
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1729,7 +1729,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        资源名称，取值为 cpu 或 memory。
+        Resource name. Values: cpu or memory.
         """
         return pulumi.get(self, "name")
 
@@ -1737,7 +1737,7 @@ class DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved(dict):
     @pulumi.getter
     def quantity(self) -> Optional[builtins.str]:
         """
-        指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+        Resource quantity for the specified resource.   - For cpu, example value: 200m   - For memory, example value: 1G
         """
         return pulumi.get(self, "quantity")
 
@@ -1748,8 +1748,8 @@ class DefaultNodePoolKubernetesConfigLabel(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Label key.
+        :param builtins.str value: Label value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1760,7 +1760,7 @@ class DefaultNodePoolKubernetesConfigLabel(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Label key.
         """
         return pulumi.get(self, "key")
 
@@ -1768,7 +1768,7 @@ class DefaultNodePoolKubernetesConfigLabel(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Label value
         """
         return pulumi.get(self, "value")
 
@@ -1780,9 +1780,9 @@ class DefaultNodePoolKubernetesConfigTaint(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str effect: 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
-        :param builtins.str key: 污点键。
-        :param builtins.str value: 污点值。
+        :param builtins.str effect: Taint effect. Values: NoSchedule (default): do not schedule. NoExecute: evict pods that do not tolerate the taint. PreferNoSchedule: avoid scheduling if possible.
+        :param builtins.str key: Taint key
+        :param builtins.str value: Taint value
         """
         if effect is not None:
             pulumi.set(__self__, "effect", effect)
@@ -1795,7 +1795,7 @@ class DefaultNodePoolKubernetesConfigTaint(dict):
     @pulumi.getter
     def effect(self) -> Optional[builtins.str]:
         """
-        污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+        Taint effect. Values: NoSchedule (default): do not schedule. NoExecute: evict pods that do not tolerate the taint. PreferNoSchedule: avoid scheduling if possible.
         """
         return pulumi.get(self, "effect")
 
@@ -1803,7 +1803,7 @@ class DefaultNodePoolKubernetesConfigTaint(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        污点键。
+        Taint key
         """
         return pulumi.get(self, "key")
 
@@ -1811,7 +1811,7 @@ class DefaultNodePoolKubernetesConfigTaint(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        污点值。
+        Taint value
         """
         return pulumi.get(self, "value")
 
@@ -1839,8 +1839,8 @@ class DefaultNodePoolManagement(dict):
                  enabled: Optional[builtins.bool] = None,
                  remedy_config: Optional['outputs.DefaultNodePoolManagementRemedyConfig'] = None):
         """
-        :param builtins.bool enabled: 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
-        :param 'DefaultNodePoolManagementRemedyConfigArgs' remedy_config: 检查自愈配置。
+        :param builtins.bool enabled: Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
+        :param 'DefaultNodePoolManagementRemedyConfigArgs' remedy_config: Check self-healing configuration.
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -1851,7 +1851,7 @@ class DefaultNodePoolManagement(dict):
     @pulumi.getter
     def enabled(self) -> Optional[builtins.bool]:
         """
-        节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+        Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
         """
         return pulumi.get(self, "enabled")
 
@@ -1859,7 +1859,7 @@ class DefaultNodePoolManagement(dict):
     @pulumi.getter(name="remedyConfig")
     def remedy_config(self) -> Optional['outputs.DefaultNodePoolManagementRemedyConfig']:
         """
-        检查自愈配置。
+        Check self-healing configuration.
         """
         return pulumi.get(self, "remedy_config")
 
@@ -1887,8 +1887,8 @@ class DefaultNodePoolManagementRemedyConfig(dict):
                  enabled: Optional[builtins.bool] = None,
                  remedy_id: Optional[builtins.str] = None):
         """
-        :param builtins.bool enabled: 是否开启检查自愈。
-        :param builtins.str remedy_id: 检查自愈规则ID。
+        :param builtins.bool enabled: Enable self-healing check
+        :param builtins.str remedy_id: Self-healing rule ID
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -1899,7 +1899,7 @@ class DefaultNodePoolManagementRemedyConfig(dict):
     @pulumi.getter
     def enabled(self) -> Optional[builtins.bool]:
         """
-        是否开启检查自愈。
+        Enable self-healing check
         """
         return pulumi.get(self, "enabled")
 
@@ -1907,7 +1907,7 @@ class DefaultNodePoolManagementRemedyConfig(dict):
     @pulumi.getter(name="remedyId")
     def remedy_id(self) -> Optional[builtins.str]:
         """
-        检查自愈规则ID。
+        Self-healing rule ID
         """
         return pulumi.get(self, "remedy_id")
 
@@ -2001,30 +2001,30 @@ class DefaultNodePoolNodeConfig(dict):
                  system_volume: Optional['outputs.DefaultNodePoolNodeConfigSystemVolume'] = None,
                  tags: Optional[Sequence['outputs.DefaultNodePoolNodeConfigTag']] = None):
         """
-        :param builtins.bool additional_container_storage_enabled: 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
-        :param builtins.bool auto_renew: 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
-        :param builtins.int auto_renew_period: 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
-        :param builtins.int deployment_set_group_number: 实例在部署集中的分组号，0表示未设置
-        :param builtins.str deployment_set_id: 实例需要加入的部署集ID
-        :param builtins.str hostname: 节点对应的主机名称。
-        :param Sequence[builtins.str] hpc_cluster_ids: 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
-        :param builtins.str image_id: 节点对应云服务器所使用的镜像 ID。
-        :param builtins.str initialize_script: 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
-        :param builtins.str instance_charge_type: 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
-        :param builtins.str instance_name: 节点（实例）名称。
-        :param Sequence[builtins.str] instance_type_ids: 节点对应的云服务器实例规格 ID 列表。
-        :param 'DefaultNodePoolNodeConfigInstancesDistributionArgs' instances_distribution: 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
-        :param builtins.str name_prefix: 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
-        :param builtins.str network_traffic_mode: 节点间的网络通讯模式。
-        :param builtins.int period: 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
-        :param builtins.str pre_script: 部署节点前执行脚本。
-        :param builtins.str project_name: ECS所属项目，一个ECS只能归属于一个项目。
-        :param 'DefaultNodePoolNodeConfigPublicAccessConfigArgs' public_access_config: 节点自动开启公网访问的配置信息
-        :param builtins.bool public_access_enabled: 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
-        :param 'DefaultNodePoolNodeConfigSecurityArgs' security: 节点安全配置。
-        :param builtins.str spot_strategy: 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
-        :param Sequence[builtins.str] subnet_ids: 节点网络所属的子网 ID 列表。
-        :param 'DefaultNodePoolNodeConfigSystemVolumeArgs' system_volume: 节点的系统盘配置。
+        :param builtins.bool additional_container_storage_enabled: Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
+        :param builtins.bool auto_renew: Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+        :param builtins.int auto_renew_period: Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
+        :param builtins.int deployment_set_group_number: Group number of the instance in the deployment set. 0 means not set
+        :param builtins.str deployment_set_id: Deployment set ID to be added to the instance
+        :param builtins.str hostname: Host name corresponding to the node
+        :param Sequence[builtins.str] hpc_cluster_ids: High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+        :param builtins.str image_id: Image ID used by the cloud server corresponding to the node
+        :param builtins.str initialize_script: Custom script executed after creating and initializing the node. Shell script in Base64 encoding
+        :param builtins.str instance_charge_type: Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+        :param builtins.str instance_name: Node (instance) name
+        :param Sequence[builtins.str] instance_type_ids: List of cloud server instance type IDs corresponding to the node
+        :param 'DefaultNodePoolNodeConfigInstancesDistributionArgs' instances_distribution: Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
+        :param builtins.str name_prefix: Node name prefix. An empty string or nil means the node name prefix policy is not enabled
+        :param builtins.str network_traffic_mode: Network communication mode between nodes
+        :param builtins.int period: Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
+        :param builtins.str pre_script: Script executed before deploying nodes
+        :param builtins.str project_name: The project to which the ECS belongs. Each ECS can only belong to one project.
+        :param 'DefaultNodePoolNodeConfigPublicAccessConfigArgs' public_access_config: Configuration for automatic public network access for nodes
+        :param builtins.bool public_access_enabled: Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
+        :param 'DefaultNodePoolNodeConfigSecurityArgs' security: Node security configuration.
+        :param builtins.str spot_strategy: Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
+        :param Sequence[builtins.str] subnet_ids: List of subnet IDs to which the node network belongs.
+        :param 'DefaultNodePoolNodeConfigSystemVolumeArgs' system_volume: System disk configuration for the node
         """
         if additional_container_storage_enabled is not None:
             pulumi.set(__self__, "additional_container_storage_enabled", additional_container_storage_enabled)
@@ -2083,7 +2083,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="additionalContainerStorageEnabled")
     def additional_container_storage_enabled(self) -> Optional[builtins.bool]:
         """
-        节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+        Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
         """
         return pulumi.get(self, "additional_container_storage_enabled")
 
@@ -2091,7 +2091,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[builtins.bool]:
         """
-        云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+        Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -2099,7 +2099,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="autoRenewPeriod")
     def auto_renew_period(self) -> Optional[builtins.int]:
         """
-        云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+        Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
         """
         return pulumi.get(self, "auto_renew_period")
 
@@ -2112,7 +2112,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> Optional[builtins.int]:
         """
-        实例在部署集中的分组号，0表示未设置
+        Group number of the instance in the deployment set. 0 means not set
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -2120,7 +2120,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> Optional[builtins.str]:
         """
-        实例需要加入的部署集ID
+        Deployment set ID to be added to the instance
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -2128,7 +2128,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter
     def hostname(self) -> Optional[builtins.str]:
         """
-        节点对应的主机名称。
+        Host name corresponding to the node
         """
         return pulumi.get(self, "hostname")
 
@@ -2136,7 +2136,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="hpcClusterIds")
     def hpc_cluster_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+        High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
         """
         return pulumi.get(self, "hpc_cluster_ids")
 
@@ -2144,7 +2144,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[builtins.str]:
         """
-        节点对应云服务器所使用的镜像 ID。
+        Image ID used by the cloud server corresponding to the node
         """
         return pulumi.get(self, "image_id")
 
@@ -2152,7 +2152,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="initializeScript")
     def initialize_script(self) -> Optional[builtins.str]:
         """
-        创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+        Custom script executed after creating and initializing the node. Shell script in Base64 encoding
         """
         return pulumi.get(self, "initialize_script")
 
@@ -2160,7 +2160,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> Optional[builtins.str]:
         """
-        云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+        Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -2168,7 +2168,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[builtins.str]:
         """
-        节点（实例）名称。
+        Node (instance) name
         """
         return pulumi.get(self, "instance_name")
 
@@ -2176,7 +2176,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="instanceTypeIds")
     def instance_type_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        节点对应的云服务器实例规格 ID 列表。
+        List of cloud server instance type IDs corresponding to the node
         """
         return pulumi.get(self, "instance_type_ids")
 
@@ -2184,7 +2184,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="instancesDistribution")
     def instances_distribution(self) -> Optional['outputs.DefaultNodePoolNodeConfigInstancesDistribution']:
         """
-        设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+        Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
         """
         return pulumi.get(self, "instances_distribution")
 
@@ -2192,7 +2192,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="namePrefix")
     def name_prefix(self) -> Optional[builtins.str]:
         """
-        节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+        Node name prefix. An empty string or nil means the node name prefix policy is not enabled
         """
         return pulumi.get(self, "name_prefix")
 
@@ -2200,7 +2200,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="networkTrafficMode")
     def network_traffic_mode(self) -> Optional[builtins.str]:
         """
-        节点间的网络通讯模式。
+        Network communication mode between nodes
         """
         return pulumi.get(self, "network_traffic_mode")
 
@@ -2208,7 +2208,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter
     def period(self) -> Optional[builtins.int]:
         """
-        云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+        Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
         """
         return pulumi.get(self, "period")
 
@@ -2216,7 +2216,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="preScript")
     def pre_script(self) -> Optional[builtins.str]:
         """
-        部署节点前执行脚本。
+        Script executed before deploying nodes
         """
         return pulumi.get(self, "pre_script")
 
@@ -2224,7 +2224,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[builtins.str]:
         """
-        ECS所属项目，一个ECS只能归属于一个项目。
+        The project to which the ECS belongs. Each ECS can only belong to one project.
         """
         return pulumi.get(self, "project_name")
 
@@ -2232,7 +2232,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="publicAccessConfig")
     def public_access_config(self) -> Optional['outputs.DefaultNodePoolNodeConfigPublicAccessConfig']:
         """
-        节点自动开启公网访问的配置信息
+        Configuration for automatic public network access for nodes
         """
         return pulumi.get(self, "public_access_config")
 
@@ -2240,7 +2240,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="publicAccessEnabled")
     def public_access_enabled(self) -> Optional[builtins.bool]:
         """
-        节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+        Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
         """
         return pulumi.get(self, "public_access_enabled")
 
@@ -2248,7 +2248,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter
     def security(self) -> Optional['outputs.DefaultNodePoolNodeConfigSecurity']:
         """
-        节点安全配置。
+        Node security configuration.
         """
         return pulumi.get(self, "security")
 
@@ -2256,7 +2256,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> Optional[builtins.str]:
         """
-        按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+        Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -2264,7 +2264,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        节点网络所属的子网 ID 列表。
+        List of subnet IDs to which the node network belongs.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -2272,7 +2272,7 @@ class DefaultNodePoolNodeConfig(dict):
     @pulumi.getter(name="systemVolume")
     def system_volume(self) -> Optional['outputs.DefaultNodePoolNodeConfigSystemVolume']:
         """
-        节点的系统盘配置。
+        System disk configuration for the node
         """
         return pulumi.get(self, "system_volume")
 
@@ -2318,13 +2318,13 @@ class DefaultNodePoolNodeConfigDataVolume(dict):
                  subgroup_number: Optional[builtins.int] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str file_system: 文件系统，取值：  - Ext4 (默认值)  - Xfs
-        :param builtins.str mount_point: 磁盘格式化后的目标挂载目录。
-        :param builtins.str placement_group_id: 放置组Id
-        :param builtins.int size: 磁盘容量，单位 GiB。
-        :param builtins.str snapshot_id: 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
-        :param builtins.int subgroup_number: 放置子组
-        :param builtins.str type: 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        :param builtins.str file_system: File system. Options:   - Ext4 (default)   - Xfs
+        :param builtins.str mount_point: Target mount directory after disk formatting.
+        :param builtins.str placement_group_id: Placement group ID
+        :param builtins.int size: Disk capacity, in GiB
+        :param builtins.str snapshot_id: Create a data disk using a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSD and efficient cloud disks support creating disks from snapshots. Only snapshots in 'available' status can be used to create new disks; snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks
+        :param builtins.int subgroup_number: Placement subgroup
+        :param builtins.str type: Disk type: ESSD*PL0: ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD cloud disk with performance level PL1.
         """
         if file_system is not None:
             pulumi.set(__self__, "file_system", file_system)
@@ -2345,7 +2345,7 @@ class DefaultNodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="fileSystem")
     def file_system(self) -> Optional[builtins.str]:
         """
-        文件系统，取值：  - Ext4 (默认值)  - Xfs
+        File system. Options:   - Ext4 (default)   - Xfs
         """
         return pulumi.get(self, "file_system")
 
@@ -2353,7 +2353,7 @@ class DefaultNodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="mountPoint")
     def mount_point(self) -> Optional[builtins.str]:
         """
-        磁盘格式化后的目标挂载目录。
+        Target mount directory after disk formatting.
         """
         return pulumi.get(self, "mount_point")
 
@@ -2361,7 +2361,7 @@ class DefaultNodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="placementGroupId")
     def placement_group_id(self) -> Optional[builtins.str]:
         """
-        放置组Id
+        Placement group ID
         """
         return pulumi.get(self, "placement_group_id")
 
@@ -2369,7 +2369,7 @@ class DefaultNodePoolNodeConfigDataVolume(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        磁盘容量，单位 GiB。
+        Disk capacity, in GiB
         """
         return pulumi.get(self, "size")
 
@@ -2377,7 +2377,7 @@ class DefaultNodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[builtins.str]:
         """
-        使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+        Create a data disk using a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSD and efficient cloud disks support creating disks from snapshots. Only snapshots in 'available' status can be used to create new disks; snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -2385,7 +2385,7 @@ class DefaultNodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="subgroupNumber")
     def subgroup_number(self) -> Optional[builtins.int]:
         """
-        放置子组
+        Placement subgroup
         """
         return pulumi.get(self, "subgroup_number")
 
@@ -2393,7 +2393,7 @@ class DefaultNodePoolNodeConfigDataVolume(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        Disk type: ESSD*PL0: ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD cloud disk with performance level PL1.
         """
         return pulumi.get(self, "type")
 
@@ -2429,10 +2429,10 @@ class DefaultNodePoolNodeConfigInstancesDistribution(dict):
                  on_demand_base_capacity: Optional[builtins.int] = None,
                  on_demand_percentage_above_base_capacity: Optional[builtins.int] = None):
         """
-        :param builtins.bool capacity_rebalance: 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
-        :param builtins.bool compensate_with_on_demand: 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
-        :param builtins.int on_demand_base_capacity: 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
-        :param builtins.int on_demand_percentage_above_base_capacity: 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+        :param builtins.bool capacity_rebalance: Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, a new preemptible instance is proactively created for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count.
+        :param builtins.bool compensate_with_on_demand: Pay-as-you-go instance fallback feature. Value range:   - true: enables this feature. If all preemptible instances fail to purchase due to insufficient inventory, pay-as-you-go instances will be attempted   - false (default): disables this feature. When scaling preemptible instances, only the configured preemptible instances are attempted
+        :param builtins.int on_demand_base_capacity: Base capacity size. The base capacity is always pay-as-you-go instances. Value range: [0,500], default: 0
+        :param builtins.int on_demand_percentage_above_base_capacity: Proportion of pay-as-you-go instances for capacity exceeding the base capacity. Value range [0, 100]. 0 means only preemptible instances are produced for excess capacity; 100 means only pay-as-you-go instances are produced. Default is 0.
         """
         if capacity_rebalance is not None:
             pulumi.set(__self__, "capacity_rebalance", capacity_rebalance)
@@ -2447,7 +2447,7 @@ class DefaultNodePoolNodeConfigInstancesDistribution(dict):
     @pulumi.getter(name="capacityRebalance")
     def capacity_rebalance(self) -> Optional[builtins.bool]:
         """
-        容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+        Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, a new preemptible instance is proactively created for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count.
         """
         return pulumi.get(self, "capacity_rebalance")
 
@@ -2455,7 +2455,7 @@ class DefaultNodePoolNodeConfigInstancesDistribution(dict):
     @pulumi.getter(name="compensateWithOnDemand")
     def compensate_with_on_demand(self) -> Optional[builtins.bool]:
         """
-        按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+        Pay-as-you-go instance fallback feature. Value range:   - true: enables this feature. If all preemptible instances fail to purchase due to insufficient inventory, pay-as-you-go instances will be attempted   - false (default): disables this feature. When scaling preemptible instances, only the configured preemptible instances are attempted
         """
         return pulumi.get(self, "compensate_with_on_demand")
 
@@ -2463,7 +2463,7 @@ class DefaultNodePoolNodeConfigInstancesDistribution(dict):
     @pulumi.getter(name="onDemandBaseCapacity")
     def on_demand_base_capacity(self) -> Optional[builtins.int]:
         """
-        基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+        Base capacity size. The base capacity is always pay-as-you-go instances. Value range: [0,500], default: 0
         """
         return pulumi.get(self, "on_demand_base_capacity")
 
@@ -2471,7 +2471,7 @@ class DefaultNodePoolNodeConfigInstancesDistribution(dict):
     @pulumi.getter(name="onDemandPercentageAboveBaseCapacity")
     def on_demand_percentage_above_base_capacity(self) -> Optional[builtins.int]:
         """
-        超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+        Proportion of pay-as-you-go instances for capacity exceeding the base capacity. Value range [0, 100]. 0 means only preemptible instances are produced for excess capacity; 100 means only pay-as-you-go instances are produced. Default is 0.
         """
         return pulumi.get(self, "on_demand_percentage_above_base_capacity")
 
@@ -2500,9 +2500,9 @@ class DefaultNodePoolNodeConfigPublicAccessConfig(dict):
                  billing_type: Optional[builtins.int] = None,
                  isp: Optional[builtins.str] = None):
         """
-        :param builtins.int bandwidth: 公网 IP 的带宽峰值，单位：Mbps。
-        :param builtins.int billing_type: 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
-        :param builtins.str isp: 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+        :param builtins.int bandwidth: Peak bandwidth for the public IP, unit: Mbps
+        :param builtins.int billing_type: Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
+        :param builtins.str isp: Public IP line type. Parameter description: BGP: BGP (multi-line)
         """
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
@@ -2515,7 +2515,7 @@ class DefaultNodePoolNodeConfigPublicAccessConfig(dict):
     @pulumi.getter
     def bandwidth(self) -> Optional[builtins.int]:
         """
-        公网 IP 的带宽峰值，单位：Mbps。
+        Peak bandwidth for the public IP, unit: Mbps
         """
         return pulumi.get(self, "bandwidth")
 
@@ -2523,7 +2523,7 @@ class DefaultNodePoolNodeConfigPublicAccessConfig(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[builtins.int]:
         """
-        公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+        Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
         """
         return pulumi.get(self, "billing_type")
 
@@ -2531,7 +2531,7 @@ class DefaultNodePoolNodeConfigPublicAccessConfig(dict):
     @pulumi.getter
     def isp(self) -> Optional[builtins.str]:
         """
-        公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+        Public IP line type. Parameter description: BGP: BGP (multi-line)
         """
         return pulumi.get(self, "isp")
 
@@ -2565,10 +2565,10 @@ class DefaultNodePoolNodeConfigSecurity(dict):
                  security_strategies: Optional[Sequence[builtins.str]] = None,
                  security_strategy_enabled: Optional[builtins.bool] = None):
         """
-        :param 'DefaultNodePoolNodeConfigSecurityLoginArgs' login: 节点的访问方式配置。
-        :param Sequence[builtins.str] security_group_ids: 节点网络所在的安全组 ID 列表。
-        :param Sequence[builtins.str] security_strategies: 节点的安全策略，参数值说明：Hids：主机安全加固。
-        :param builtins.bool security_strategy_enabled: 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+        :param 'DefaultNodePoolNodeConfigSecurityLoginArgs' login: Node access configuration
+        :param Sequence[builtins.str] security_group_ids: List of security group IDs for the node network
+        :param Sequence[builtins.str] security_strategies: Node security policy. Parameter value description: Hids: host security hardening
+        :param builtins.bool security_strategy_enabled: Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
         """
         if login is not None:
             pulumi.set(__self__, "login", login)
@@ -2583,7 +2583,7 @@ class DefaultNodePoolNodeConfigSecurity(dict):
     @pulumi.getter
     def login(self) -> Optional['outputs.DefaultNodePoolNodeConfigSecurityLogin']:
         """
-        节点的访问方式配置。
+        Node access configuration
         """
         return pulumi.get(self, "login")
 
@@ -2591,7 +2591,7 @@ class DefaultNodePoolNodeConfigSecurity(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        节点网络所在的安全组 ID 列表。
+        List of security group IDs for the node network
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -2599,7 +2599,7 @@ class DefaultNodePoolNodeConfigSecurity(dict):
     @pulumi.getter(name="securityStrategies")
     def security_strategies(self) -> Optional[Sequence[builtins.str]]:
         """
-        节点的安全策略，参数值说明：Hids：主机安全加固。
+        Node security policy. Parameter value description: Hids: host security hardening
         """
         return pulumi.get(self, "security_strategies")
 
@@ -2607,7 +2607,7 @@ class DefaultNodePoolNodeConfigSecurity(dict):
     @pulumi.getter(name="securityStrategyEnabled")
     def security_strategy_enabled(self) -> Optional[builtins.bool]:
         """
-        节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+        Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
         """
         return pulumi.get(self, "security_strategy_enabled")
 
@@ -2636,9 +2636,9 @@ class DefaultNodePoolNodeConfigSecurityLogin(dict):
                  ssh_key_pair_name: Optional[builtins.str] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str password: Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
-        :param builtins.str ssh_key_pair_name: SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
-        :param builtins.str type: 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+        :param builtins.str password: Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+        :param builtins.str ssh_key_pair_name: SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
+        :param builtins.str type: Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
         """
         if password is not None:
             pulumi.set(__self__, "password", password)
@@ -2651,7 +2651,7 @@ class DefaultNodePoolNodeConfigSecurityLogin(dict):
     @pulumi.getter
     def password(self) -> Optional[builtins.str]:
         """
-        Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+        Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
         """
         return pulumi.get(self, "password")
 
@@ -2659,7 +2659,7 @@ class DefaultNodePoolNodeConfigSecurityLogin(dict):
     @pulumi.getter(name="sshKeyPairName")
     def ssh_key_pair_name(self) -> Optional[builtins.str]:
         """
-        SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+        SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
         """
         return pulumi.get(self, "ssh_key_pair_name")
 
@@ -2667,7 +2667,7 @@ class DefaultNodePoolNodeConfigSecurityLogin(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+        Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
         """
         return pulumi.get(self, "type")
 
@@ -2699,10 +2699,10 @@ class DefaultNodePoolNodeConfigSystemVolume(dict):
                  subgroup_number: Optional[builtins.int] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str placement_group_id: 放置组Id
-        :param builtins.int size: 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
-        :param builtins.int subgroup_number: 放置子组
-        :param builtins.str type: 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        :param builtins.str placement_group_id: Placement group ID
+        :param builtins.int size: Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+        :param builtins.int subgroup_number: Placement subgroup
+        :param builtins.str type: Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
         """
         if placement_group_id is not None:
             pulumi.set(__self__, "placement_group_id", placement_group_id)
@@ -2717,7 +2717,7 @@ class DefaultNodePoolNodeConfigSystemVolume(dict):
     @pulumi.getter(name="placementGroupId")
     def placement_group_id(self) -> Optional[builtins.str]:
         """
-        放置组Id
+        Placement group ID
         """
         return pulumi.get(self, "placement_group_id")
 
@@ -2725,7 +2725,7 @@ class DefaultNodePoolNodeConfigSystemVolume(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+        Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
         """
         return pulumi.get(self, "size")
 
@@ -2733,7 +2733,7 @@ class DefaultNodePoolNodeConfigSystemVolume(dict):
     @pulumi.getter(name="subgroupNumber")
     def subgroup_number(self) -> Optional[builtins.int]:
         """
-        放置子组
+        Placement subgroup
         """
         return pulumi.get(self, "subgroup_number")
 
@@ -2741,7 +2741,7 @@ class DefaultNodePoolNodeConfigSystemVolume(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
         """
         return pulumi.get(self, "type")
 
@@ -2752,8 +2752,8 @@ class DefaultNodePoolNodeConfigTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Label key.
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2764,7 +2764,7 @@ class DefaultNodePoolNodeConfigTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Label key.
         """
         return pulumi.get(self, "key")
 
@@ -2772,7 +2772,7 @@ class DefaultNodePoolNodeConfigTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -2814,12 +2814,12 @@ class DefaultNodePoolNodeStatistics(dict):
                  total_count: Optional[builtins.int] = None,
                  updating_count: Optional[builtins.int] = None):
         """
-        :param builtins.int creating_count: Phase=Creating的节点总数量。
-        :param builtins.int deleting_count: Phase=Deleting的节点总数量。
-        :param builtins.int failed_count: Phase=Failed的节点总数量。
-        :param builtins.int running_count: Phase=Running的节点总数量。
-        :param builtins.int total_count: 节点池中的节点总数量。
-        :param builtins.int updating_count: Phase=Updating的节点总数量。
+        :param builtins.int creating_count: Total number of nodes with Phase=Creating.
+        :param builtins.int deleting_count: Total number of nodes with Phase=Deleting.
+        :param builtins.int failed_count: Total number of nodes with Phase=Failed
+        :param builtins.int running_count: Total number of nodes with Phase=Running
+        :param builtins.int total_count: Total number of nodes in the node pool.
+        :param builtins.int updating_count: Total number of nodes with Phase=Updating
         """
         if creating_count is not None:
             pulumi.set(__self__, "creating_count", creating_count)
@@ -2838,7 +2838,7 @@ class DefaultNodePoolNodeStatistics(dict):
     @pulumi.getter(name="creatingCount")
     def creating_count(self) -> Optional[builtins.int]:
         """
-        Phase=Creating的节点总数量。
+        Total number of nodes with Phase=Creating.
         """
         return pulumi.get(self, "creating_count")
 
@@ -2846,7 +2846,7 @@ class DefaultNodePoolNodeStatistics(dict):
     @pulumi.getter(name="deletingCount")
     def deleting_count(self) -> Optional[builtins.int]:
         """
-        Phase=Deleting的节点总数量。
+        Total number of nodes with Phase=Deleting.
         """
         return pulumi.get(self, "deleting_count")
 
@@ -2854,7 +2854,7 @@ class DefaultNodePoolNodeStatistics(dict):
     @pulumi.getter(name="failedCount")
     def failed_count(self) -> Optional[builtins.int]:
         """
-        Phase=Failed的节点总数量。
+        Total number of nodes with Phase=Failed
         """
         return pulumi.get(self, "failed_count")
 
@@ -2862,7 +2862,7 @@ class DefaultNodePoolNodeStatistics(dict):
     @pulumi.getter(name="runningCount")
     def running_count(self) -> Optional[builtins.int]:
         """
-        Phase=Running的节点总数量。
+        Total number of nodes with Phase=Running
         """
         return pulumi.get(self, "running_count")
 
@@ -2870,7 +2870,7 @@ class DefaultNodePoolNodeStatistics(dict):
     @pulumi.getter(name="totalCount")
     def total_count(self) -> Optional[builtins.int]:
         """
-        节点池中的节点总数量。
+        Total number of nodes in the node pool.
         """
         return pulumi.get(self, "total_count")
 
@@ -2878,7 +2878,7 @@ class DefaultNodePoolNodeStatistics(dict):
     @pulumi.getter(name="updatingCount")
     def updating_count(self) -> Optional[builtins.int]:
         """
-        Phase=Updating的节点总数量。
+        Total number of nodes with Phase=Updating
         """
         return pulumi.get(self, "updating_count")
 
@@ -2889,7 +2889,7 @@ class DefaultNodePoolStatus(dict):
                  conditions: Optional[Sequence['outputs.DefaultNodePoolStatusCondition']] = None,
                  phase: Optional[builtins.str] = None):
         """
-        :param builtins.str phase: 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+        :param builtins.str phase: Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
         """
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
@@ -2905,7 +2905,7 @@ class DefaultNodePoolStatus(dict):
     @pulumi.getter
     def phase(self) -> Optional[builtins.str]:
         """
-        节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+        Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
         """
         return pulumi.get(self, "phase")
 
@@ -2915,7 +2915,7 @@ class DefaultNodePoolStatusCondition(dict):
     def __init__(__self__, *,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str type: 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+        :param builtins.str type: Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
         """
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -2924,7 +2924,7 @@ class DefaultNodePoolStatusCondition(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+        Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
         """
         return pulumi.get(self, "type")
 
@@ -2935,8 +2935,8 @@ class DefaultNodePoolTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Label key.
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2947,7 +2947,7 @@ class DefaultNodePoolTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Label key.
         """
         return pulumi.get(self, "key")
 
@@ -2955,7 +2955,7 @@ class DefaultNodePoolTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -2967,7 +2967,7 @@ class NodeKubernetesConfig(dict):
                  labels: Optional[Sequence['outputs.NodeKubernetesConfigLabel']] = None,
                  taints: Optional[Sequence['outputs.NodeKubernetesConfigTaint']] = None):
         """
-        :param builtins.bool cordon: 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+        :param builtins.bool cordon: Node lock configuration. Options: false (default): not locked; true: locked
         """
         if cordon is not None:
             pulumi.set(__self__, "cordon", cordon)
@@ -2980,7 +2980,7 @@ class NodeKubernetesConfig(dict):
     @pulumi.getter
     def cordon(self) -> Optional[builtins.bool]:
         """
-        封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+        Node lock configuration. Options: false (default): not locked; true: locked
         """
         return pulumi.get(self, "cordon")
 
@@ -3001,8 +3001,8 @@ class NodeKubernetesConfigLabel(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
-        :param builtins.str value: 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+        :param builtins.str key: Label key. A valid label key consists of two parts: \\n\\n and \\n\\n, separated by a slash (/). \\n\\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \\n\\n is optional. If specified, \\n\\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \\n\\n and \\n\\n must not exceed 82 characters.
+        :param builtins.str value: Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -3013,7 +3013,7 @@ class NodeKubernetesConfigLabel(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+        Label key. A valid label key consists of two parts: \\n\\n and \\n\\n, separated by a slash (/). \\n\\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \\n\\n is optional. If specified, \\n\\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \\n\\n and \\n\\n must not exceed 82 characters.
         """
         return pulumi.get(self, "key")
 
@@ -3021,7 +3021,7 @@ class NodeKubernetesConfigLabel(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+        Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
         """
         return pulumi.get(self, "value")
 
@@ -3033,9 +3033,9 @@ class NodeKubernetesConfigTaint(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str effect: 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
-        :param builtins.str key: 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
-        :param builtins.str value: 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+        :param builtins.str effect: Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
+        :param builtins.str key: Taint key. A valid taint key has two segments: \\n\\n and \\n\\n, separated by a slash (/). \\n\\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \\n\\n is optional. If specified, \\n\\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \\n\\n and \\n\\n must not exceed 82 characters.
+        :param builtins.str value: Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
         """
         if effect is not None:
             pulumi.set(__self__, "effect", effect)
@@ -3048,7 +3048,7 @@ class NodeKubernetesConfigTaint(dict):
     @pulumi.getter
     def effect(self) -> Optional[builtins.str]:
         """
-        污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+        Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
         """
         return pulumi.get(self, "effect")
 
@@ -3056,7 +3056,7 @@ class NodeKubernetesConfigTaint(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+        Taint key. A valid taint key has two segments: \\n\\n and \\n\\n, separated by a slash (/). \\n\\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \\n\\n is optional. If specified, \\n\\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \\n\\n and \\n\\n must not exceed 82 characters.
         """
         return pulumi.get(self, "key")
 
@@ -3064,7 +3064,7 @@ class NodeKubernetesConfigTaint(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+        Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
         """
         return pulumi.get(self, "value")
 
@@ -3105,13 +3105,13 @@ class NodePoolAutoScaling(dict):
                  scaling_group_id: Optional[builtins.str] = None,
                  subnet_policy: Optional[builtins.str] = None):
         """
-        :param builtins.int desired_replicas: 配置节点池的期望节点数。
-        :param builtins.bool enabled: 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
-        :param builtins.int max_replicas: 配置节点池的最大节点数。
-        :param builtins.int min_replicas: 配置节点池的最小节点数。
-        :param builtins.int priority: 优先级。
-        :param builtins.str scaling_group_id: 伸缩组ID。
-        :param builtins.str subnet_policy: 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+        :param builtins.int desired_replicas: Configure the expected number of nodes in the node pool
+        :param builtins.bool enabled: Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+        :param builtins.int max_replicas: Configure the maximum number of nodes in the node pool
+        :param builtins.int min_replicas: Minimum number of nodes configured for the node pool
+        :param builtins.int priority: Priority
+        :param builtins.str scaling_group_id: Scaling group ID
+        :param builtins.str subnet_policy: Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
         """
         if desired_replicas is not None:
             pulumi.set(__self__, "desired_replicas", desired_replicas)
@@ -3132,7 +3132,7 @@ class NodePoolAutoScaling(dict):
     @pulumi.getter(name="desiredReplicas")
     def desired_replicas(self) -> Optional[builtins.int]:
         """
-        配置节点池的期望节点数。
+        Configure the expected number of nodes in the node pool
         """
         return pulumi.get(self, "desired_replicas")
 
@@ -3140,7 +3140,7 @@ class NodePoolAutoScaling(dict):
     @pulumi.getter
     def enabled(self) -> Optional[builtins.bool]:
         """
-        配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+        Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -3148,7 +3148,7 @@ class NodePoolAutoScaling(dict):
     @pulumi.getter(name="maxReplicas")
     def max_replicas(self) -> Optional[builtins.int]:
         """
-        配置节点池的最大节点数。
+        Configure the maximum number of nodes in the node pool
         """
         return pulumi.get(self, "max_replicas")
 
@@ -3156,7 +3156,7 @@ class NodePoolAutoScaling(dict):
     @pulumi.getter(name="minReplicas")
     def min_replicas(self) -> Optional[builtins.int]:
         """
-        配置节点池的最小节点数。
+        Minimum number of nodes configured for the node pool
         """
         return pulumi.get(self, "min_replicas")
 
@@ -3164,7 +3164,7 @@ class NodePoolAutoScaling(dict):
     @pulumi.getter
     def priority(self) -> Optional[builtins.int]:
         """
-        优先级。
+        Priority
         """
         return pulumi.get(self, "priority")
 
@@ -3172,7 +3172,7 @@ class NodePoolAutoScaling(dict):
     @pulumi.getter(name="scalingGroupId")
     def scaling_group_id(self) -> Optional[builtins.str]:
         """
-        伸缩组ID。
+        Scaling group ID
         """
         return pulumi.get(self, "scaling_group_id")
 
@@ -3180,7 +3180,7 @@ class NodePoolAutoScaling(dict):
     @pulumi.getter(name="subnetPolicy")
     def subnet_policy(self) -> Optional[builtins.str]:
         """
-        节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+        Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
         """
         return pulumi.get(self, "subnet_policy")
 
@@ -3225,13 +3225,13 @@ class NodePoolKubernetesConfig(dict):
                  name_use_hostname: Optional[builtins.bool] = None,
                  taints: Optional[Sequence['outputs.NodePoolKubernetesConfigTaint']] = None):
         """
-        :param builtins.bool auto_sync_disabled: 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
-        :param 'NodePoolKubernetesConfigContainerdConfigArgs' containerd_config: 节点池 Containerd 相关配置。
-        :param builtins.bool cordon: 封锁节点配置，参数值说明：false：不封锁。true：封锁。
-        :param 'NodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Kubelet 组件的相关配置
-        :param builtins.str name_prefix: Kubernetes 中节点对象的元数据名称前缀。
-        :param builtins.str name_suffix: Kubernetes 中节点对象的元数据名称后缀。
-        :param builtins.bool name_use_hostname: Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+        :param builtins.bool auto_sync_disabled: Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+        :param 'NodePoolKubernetesConfigContainerdConfigArgs' containerd_config: Node pool Containerd configuration
+        :param builtins.bool cordon: Node blocking configuration. Parameter values: false: not blocked; true: blocked
+        :param 'NodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Kubelet component configuration
+        :param builtins.str name_prefix: Prefix for node object metadata name in Kubernetes
+        :param builtins.str name_suffix: Suffix for node object metadata name in Kubernetes
+        :param builtins.bool name_use_hostname: Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
         """
         if auto_sync_disabled is not None:
             pulumi.set(__self__, "auto_sync_disabled", auto_sync_disabled)
@@ -3256,7 +3256,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter(name="autoSyncDisabled")
     def auto_sync_disabled(self) -> Optional[builtins.bool]:
         """
-        是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+        Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
         """
         return pulumi.get(self, "auto_sync_disabled")
 
@@ -3264,7 +3264,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter(name="containerdConfig")
     def containerd_config(self) -> Optional['outputs.NodePoolKubernetesConfigContainerdConfig']:
         """
-        节点池 Containerd 相关配置。
+        Node pool Containerd configuration
         """
         return pulumi.get(self, "containerd_config")
 
@@ -3272,7 +3272,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter
     def cordon(self) -> Optional[builtins.bool]:
         """
-        封锁节点配置，参数值说明：false：不封锁。true：封锁。
+        Node blocking configuration. Parameter values: false: not blocked; true: blocked
         """
         return pulumi.get(self, "cordon")
 
@@ -3280,7 +3280,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter(name="kubeletConfig")
     def kubelet_config(self) -> Optional['outputs.NodePoolKubernetesConfigKubeletConfig']:
         """
-        Kubelet 组件的相关配置
+        Kubelet component configuration
         """
         return pulumi.get(self, "kubelet_config")
 
@@ -3293,7 +3293,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter(name="namePrefix")
     def name_prefix(self) -> Optional[builtins.str]:
         """
-        Kubernetes 中节点对象的元数据名称前缀。
+        Prefix for node object metadata name in Kubernetes
         """
         return pulumi.get(self, "name_prefix")
 
@@ -3301,7 +3301,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter(name="nameSuffix")
     def name_suffix(self) -> Optional[builtins.str]:
         """
-        Kubernetes 中节点对象的元数据名称后缀。
+        Suffix for node object metadata name in Kubernetes
         """
         return pulumi.get(self, "name_suffix")
 
@@ -3309,7 +3309,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter(name="nameUseHostname")
     def name_use_hostname(self) -> Optional[builtins.bool]:
         """
-        Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+        Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
         """
         return pulumi.get(self, "name_use_hostname")
 
@@ -3344,7 +3344,7 @@ class NodePoolKubernetesConfigContainerdConfig(dict):
                  insecure_registries: Optional[Sequence[builtins.str]] = None,
                  registry_proxy_configs: Optional[Sequence['outputs.NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig']] = None):
         """
-        :param Sequence[builtins.str] insecure_registries: 指定跳过证书认证的容器镜像仓库地址。
+        :param Sequence[builtins.str] insecure_registries: Specify the container image repository address to skip certificate verification.
         """
         if insecure_registries is not None:
             pulumi.set(__self__, "insecure_registries", insecure_registries)
@@ -3355,7 +3355,7 @@ class NodePoolKubernetesConfigContainerdConfig(dict):
     @pulumi.getter(name="insecureRegistries")
     def insecure_registries(self) -> Optional[Sequence[builtins.str]]:
         """
-        指定跳过证书认证的容器镜像仓库地址。
+        Specify the container image repository address to skip certificate verification.
         """
         return pulumi.get(self, "insecure_registries")
 
@@ -3388,8 +3388,8 @@ class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig(dict):
                  proxy_endpoints: Optional[Sequence[builtins.str]] = None,
                  registry: Optional[builtins.str] = None):
         """
-        :param Sequence[builtins.str] proxy_endpoints: 代理地址。
-        :param builtins.str registry: 容器镜像仓库地址。
+        :param Sequence[builtins.str] proxy_endpoints: Proxy address.
+        :param builtins.str registry: Container image repository address.
         """
         if proxy_endpoints is not None:
             pulumi.set(__self__, "proxy_endpoints", proxy_endpoints)
@@ -3400,7 +3400,7 @@ class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig(dict):
     @pulumi.getter(name="proxyEndpoints")
     def proxy_endpoints(self) -> Optional[Sequence[builtins.str]]:
         """
-        代理地址。
+        Proxy address.
         """
         return pulumi.get(self, "proxy_endpoints")
 
@@ -3408,7 +3408,7 @@ class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig(dict):
     @pulumi.getter
     def registry(self) -> Optional[builtins.str]:
         """
-        容器镜像仓库地址。
+        Container image repository address.
         """
         return pulumi.get(self, "registry")
 
@@ -3471,16 +3471,16 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
                  topology_manager_policy: Optional[builtins.str] = None,
                  topology_manager_scope: Optional[builtins.str] = None):
         """
-        :param builtins.str cpu_manager_policy: 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
-        :param 'NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs' feature_gates: 特性门控。
-        :param builtins.int kube_api_burst: 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
-        :param builtins.int kube_api_qps: 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
-        :param builtins.int max_pods: 配置 kubelet 支持的最大 Pod 数量
-        :param builtins.int registry_burst: 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
-        :param builtins.int registry_pull_qps: 可用来限制镜像仓库的 QPS 上限
-        :param builtins.bool serialize_image_pulls: 逐一拉取镜像。
-        :param builtins.str topology_manager_policy: 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
-        :param builtins.str topology_manager_scope: 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+        :param builtins.str cpu_manager_policy: Configure kubelet CpuManagerPolicy. Supports none and static policies
+        :param 'NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs' feature_gates: Feature gate
+        :param builtins.int kube_api_burst: Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+        :param builtins.int kube_api_qps: Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+        :param builtins.int max_pods: Configure the maximum number of Pods supported by kubelet
+        :param builtins.int registry_burst: Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+        :param builtins.int registry_pull_qps: Used to limit the QPS cap for the image repository
+        :param builtins.bool serialize_image_pulls: Pull images sequentially
+        :param builtins.str topology_manager_policy: Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
+        :param builtins.str topology_manager_scope: Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
         """
         if cpu_manager_policy is not None:
             pulumi.set(__self__, "cpu_manager_policy", cpu_manager_policy)
@@ -3513,7 +3513,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="cpuManagerPolicy")
     def cpu_manager_policy(self) -> Optional[builtins.str]:
         """
-        配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+        Configure kubelet CpuManagerPolicy. Supports none and static policies
         """
         return pulumi.get(self, "cpu_manager_policy")
 
@@ -3526,7 +3526,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="featureGates")
     def feature_gates(self) -> Optional['outputs.NodePoolKubernetesConfigKubeletConfigFeatureGates']:
         """
-        特性门控。
+        Feature gate
         """
         return pulumi.get(self, "feature_gates")
 
@@ -3534,7 +3534,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="kubeApiBurst")
     def kube_api_burst(self) -> Optional[builtins.int]:
         """
-        每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+        Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
         """
         return pulumi.get(self, "kube_api_burst")
 
@@ -3542,7 +3542,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="kubeApiQps")
     def kube_api_qps(self) -> Optional[builtins.int]:
         """
-        与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+        Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
         """
         return pulumi.get(self, "kube_api_qps")
 
@@ -3555,7 +3555,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="maxPods")
     def max_pods(self) -> Optional[builtins.int]:
         """
-        配置 kubelet 支持的最大 Pod 数量
+        Configure the maximum number of Pods supported by kubelet
         """
         return pulumi.get(self, "max_pods")
 
@@ -3563,7 +3563,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="registryBurst")
     def registry_burst(self) -> Optional[builtins.int]:
         """
-        设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+        Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
         """
         return pulumi.get(self, "registry_burst")
 
@@ -3571,7 +3571,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="registryPullQps")
     def registry_pull_qps(self) -> Optional[builtins.int]:
         """
-        可用来限制镜像仓库的 QPS 上限
+        Used to limit the QPS cap for the image repository
         """
         return pulumi.get(self, "registry_pull_qps")
 
@@ -3579,7 +3579,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="serializeImagePulls")
     def serialize_image_pulls(self) -> Optional[builtins.bool]:
         """
-        逐一拉取镜像。
+        Pull images sequentially
         """
         return pulumi.get(self, "serialize_image_pulls")
 
@@ -3592,7 +3592,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="topologyManagerPolicy")
     def topology_manager_policy(self) -> Optional[builtins.str]:
         """
-        拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+        Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
         """
         return pulumi.get(self, "topology_manager_policy")
 
@@ -3600,7 +3600,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="topologyManagerScope")
     def topology_manager_scope(self) -> Optional[builtins.str]:
         """
-        拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+        Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
         """
         return pulumi.get(self, "topology_manager_scope")
 
@@ -3611,8 +3611,8 @@ class NodePoolKubernetesConfigKubeletConfigEvictionHard(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
-        :param builtins.str value: 硬性门限值。
+        :param builtins.str key: Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
+        :param builtins.str value: Hard threshold value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -3623,7 +3623,7 @@ class NodePoolKubernetesConfigKubeletConfigEvictionHard(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+        Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
         """
         return pulumi.get(self, "key")
 
@@ -3631,7 +3631,7 @@ class NodePoolKubernetesConfigKubeletConfigEvictionHard(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        硬性门限值。
+        Hard threshold value.
         """
         return pulumi.get(self, "value")
 
@@ -3661,8 +3661,8 @@ class NodePoolKubernetesConfigKubeletConfigFeatureGates(dict):
                  in_place_pod_vertical_scaling: Optional[builtins.bool] = None,
                  qo_s_resource_manager: Optional[builtins.bool] = None):
         """
-        :param builtins.bool in_place_pod_vertical_scaling: 是否开启特性开关本地垂直Pod伸缩
-        :param builtins.bool qo_s_resource_manager: 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+        :param builtins.bool in_place_pod_vertical_scaling: Enable local vertical Pod autoscaling feature toggle
+        :param builtins.bool qo_s_resource_manager: Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
         """
         if in_place_pod_vertical_scaling is not None:
             pulumi.set(__self__, "in_place_pod_vertical_scaling", in_place_pod_vertical_scaling)
@@ -3673,7 +3673,7 @@ class NodePoolKubernetesConfigKubeletConfigFeatureGates(dict):
     @pulumi.getter(name="inPlacePodVerticalScaling")
     def in_place_pod_vertical_scaling(self) -> Optional[builtins.bool]:
         """
-        是否开启特性开关本地垂直Pod伸缩
+        Enable local vertical Pod autoscaling feature toggle
         """
         return pulumi.get(self, "in_place_pod_vertical_scaling")
 
@@ -3681,7 +3681,7 @@ class NodePoolKubernetesConfigKubeletConfigFeatureGates(dict):
     @pulumi.getter(name="qoSResourceManager")
     def qo_s_resource_manager(self) -> Optional[builtins.bool]:
         """
-        是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+        Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
         """
         return pulumi.get(self, "qo_s_resource_manager")
 
@@ -3692,8 +3692,8 @@ class NodePoolKubernetesConfigKubeletConfigKubeReserved(dict):
                  name: Optional[builtins.str] = None,
                  quantity: Optional[builtins.str] = None):
         """
-        :param builtins.str name: 资源名称，取值为 cpu 或 memory。
-        :param builtins.str quantity: 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+        :param builtins.str name: Resource name. Valid values: cpu or memory.
+        :param builtins.str quantity: Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -3704,7 +3704,7 @@ class NodePoolKubernetesConfigKubeletConfigKubeReserved(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        资源名称，取值为 cpu 或 memory。
+        Resource name. Valid values: cpu or memory.
         """
         return pulumi.get(self, "name")
 
@@ -3712,7 +3712,7 @@ class NodePoolKubernetesConfigKubeletConfigKubeReserved(dict):
     @pulumi.getter
     def quantity(self) -> Optional[builtins.str]:
         """
-        指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+        Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
         """
         return pulumi.get(self, "quantity")
 
@@ -3723,8 +3723,8 @@ class NodePoolKubernetesConfigKubeletConfigSystemReserved(dict):
                  name: Optional[builtins.str] = None,
                  quantity: Optional[builtins.str] = None):
         """
-        :param builtins.str name: 资源名称，取值为 cpu 或 memory。
-        :param builtins.str quantity: 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+        :param builtins.str name: Resource name. Valid values: cpu or memory.
+        :param builtins.str quantity: Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -3735,7 +3735,7 @@ class NodePoolKubernetesConfigKubeletConfigSystemReserved(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        资源名称，取值为 cpu 或 memory。
+        Resource name. Valid values: cpu or memory.
         """
         return pulumi.get(self, "name")
 
@@ -3743,7 +3743,7 @@ class NodePoolKubernetesConfigKubeletConfigSystemReserved(dict):
     @pulumi.getter
     def quantity(self) -> Optional[builtins.str]:
         """
-        指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+        Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
         """
         return pulumi.get(self, "quantity")
 
@@ -3754,8 +3754,8 @@ class NodePoolKubernetesConfigLabel(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Label value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -3766,7 +3766,7 @@ class NodePoolKubernetesConfigLabel(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -3774,7 +3774,7 @@ class NodePoolKubernetesConfigLabel(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Label value.
         """
         return pulumi.get(self, "value")
 
@@ -3786,9 +3786,9 @@ class NodePoolKubernetesConfigTaint(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str effect: 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
-        :param builtins.str key: 污点键。
-        :param builtins.str value: 污点值。
+        :param builtins.str effect: Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
+        :param builtins.str key: Taint key.
+        :param builtins.str value: Taint value
         """
         if effect is not None:
             pulumi.set(__self__, "effect", effect)
@@ -3801,7 +3801,7 @@ class NodePoolKubernetesConfigTaint(dict):
     @pulumi.getter
     def effect(self) -> Optional[builtins.str]:
         """
-        污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+        Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
         """
         return pulumi.get(self, "effect")
 
@@ -3809,7 +3809,7 @@ class NodePoolKubernetesConfigTaint(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        污点键。
+        Taint key.
         """
         return pulumi.get(self, "key")
 
@@ -3817,7 +3817,7 @@ class NodePoolKubernetesConfigTaint(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        污点值。
+        Taint value
         """
         return pulumi.get(self, "value")
 
@@ -3845,8 +3845,8 @@ class NodePoolManagement(dict):
                  enabled: Optional[builtins.bool] = None,
                  remedy_config: Optional['outputs.NodePoolManagementRemedyConfig'] = None):
         """
-        :param builtins.bool enabled: 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
-        :param 'NodePoolManagementRemedyConfigArgs' remedy_config: 检查自愈配置。
+        :param builtins.bool enabled: Enable managed mode for node pool. Options:   - true: on   - false: off
+        :param 'NodePoolManagementRemedyConfigArgs' remedy_config: Check self-healing configuration.
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -3857,7 +3857,7 @@ class NodePoolManagement(dict):
     @pulumi.getter
     def enabled(self) -> Optional[builtins.bool]:
         """
-        节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+        Enable managed mode for node pool. Options:   - true: on   - false: off
         """
         return pulumi.get(self, "enabled")
 
@@ -3865,7 +3865,7 @@ class NodePoolManagement(dict):
     @pulumi.getter(name="remedyConfig")
     def remedy_config(self) -> Optional['outputs.NodePoolManagementRemedyConfig']:
         """
-        检查自愈配置。
+        Check self-healing configuration.
         """
         return pulumi.get(self, "remedy_config")
 
@@ -3893,8 +3893,8 @@ class NodePoolManagementRemedyConfig(dict):
                  enabled: Optional[builtins.bool] = None,
                  remedy_id: Optional[builtins.str] = None):
         """
-        :param builtins.bool enabled: 是否开启检查自愈。
-        :param builtins.str remedy_id: 检查自愈规则ID。
+        :param builtins.bool enabled: Enable self-healing check
+        :param builtins.str remedy_id: Self-healing rule ID
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -3905,7 +3905,7 @@ class NodePoolManagementRemedyConfig(dict):
     @pulumi.getter
     def enabled(self) -> Optional[builtins.bool]:
         """
-        是否开启检查自愈。
+        Enable self-healing check
         """
         return pulumi.get(self, "enabled")
 
@@ -3913,7 +3913,7 @@ class NodePoolManagementRemedyConfig(dict):
     @pulumi.getter(name="remedyId")
     def remedy_id(self) -> Optional[builtins.str]:
         """
-        检查自愈规则ID。
+        Self-healing rule ID
         """
         return pulumi.get(self, "remedy_id")
 
@@ -4007,30 +4007,30 @@ class NodePoolNodeConfig(dict):
                  system_volume: Optional['outputs.NodePoolNodeConfigSystemVolume'] = None,
                  tags: Optional[Sequence['outputs.NodePoolNodeConfigTag']] = None):
         """
-        :param builtins.bool additional_container_storage_enabled: 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
-        :param builtins.bool auto_renew: 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
-        :param builtins.int auto_renew_period: 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
-        :param builtins.int deployment_set_group_number: 实例在部署集中的分组号，0表示未设置
-        :param builtins.str deployment_set_id: 实例需要加入的部署集ID
-        :param builtins.str hostname: 节点对应的主机名称。
-        :param Sequence[builtins.str] hpc_cluster_ids: 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
-        :param builtins.str image_id: 节点对应云服务器所使用的镜像 ID。
-        :param builtins.str initialize_script: 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
-        :param builtins.str instance_charge_type: 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
-        :param builtins.str instance_name: 节点（实例）名称。
-        :param Sequence[builtins.str] instance_type_ids: 节点对应的云服务器实例规格 ID 列表。
-        :param 'NodePoolNodeConfigInstancesDistributionArgs' instances_distribution: 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
-        :param builtins.str name_prefix: 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
-        :param builtins.str network_traffic_mode: 节点间的网络通讯模式。
-        :param builtins.int period: 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
-        :param builtins.str pre_script: 部署节点前执行脚本。
-        :param builtins.str project_name: ECS所属项目，一个ECS只能归属于一个项目。
-        :param 'NodePoolNodeConfigPublicAccessConfigArgs' public_access_config: 节点自动开启公网访问的配置信息
-        :param builtins.bool public_access_enabled: 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
-        :param 'NodePoolNodeConfigSecurityArgs' security: 节点安全配置。
-        :param builtins.str spot_strategy: 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
-        :param Sequence[builtins.str] subnet_ids: 节点网络所属的子网 ID 列表。
-        :param 'NodePoolNodeConfigSystemVolumeArgs' system_volume: 节点的系统盘配置。
+        :param builtins.bool additional_container_storage_enabled: Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
+        :param builtins.bool auto_renew: Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+        :param builtins.int auto_renew_period: Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
+        :param builtins.int deployment_set_group_number: Group number of the instance in the deployment set; 0 means not set
+        :param builtins.str deployment_set_id: Deployment Set ID to be added to the instance
+        :param builtins.str hostname: The host name corresponding to the node.
+        :param Sequence[builtins.str] hpc_cluster_ids: High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+        :param builtins.str image_id: Image ID used by the cloud server corresponding to the node
+        :param builtins.str initialize_script: Custom script executed after node creation and initialization. Shell script in Base64 encoding
+        :param builtins.str instance_charge_type: Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+        :param builtins.str instance_name: Node (instance) name
+        :param Sequence[builtins.str] instance_type_ids: List of cloud server instance type IDs corresponding to the nodes
+        :param 'NodePoolNodeConfigInstancesDistributionArgs' instances_distribution: Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+        :param builtins.str name_prefix: Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
+        :param builtins.str network_traffic_mode: Network communication mode between nodes
+        :param builtins.int period: Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
+        :param builtins.str pre_script: Script to execute before deploying the node
+        :param builtins.str project_name: Project to which the ECS belongs. Each ECS can only belong to one project.
+        :param 'NodePoolNodeConfigPublicAccessConfigArgs' public_access_config: Configuration for automatic public network access for nodes
+        :param builtins.bool public_access_enabled: Enable public network access for nodes automatically. Options:   - false: off   - true: on
+        :param 'NodePoolNodeConfigSecurityArgs' security: Node security configuration
+        :param builtins.str spot_strategy: Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
+        :param Sequence[builtins.str] subnet_ids: List of subnet IDs for the node network.
+        :param 'NodePoolNodeConfigSystemVolumeArgs' system_volume: System disk configuration for the node
         """
         if additional_container_storage_enabled is not None:
             pulumi.set(__self__, "additional_container_storage_enabled", additional_container_storage_enabled)
@@ -4089,7 +4089,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="additionalContainerStorageEnabled")
     def additional_container_storage_enabled(self) -> Optional[builtins.bool]:
         """
-        节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+        Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
         """
         return pulumi.get(self, "additional_container_storage_enabled")
 
@@ -4097,7 +4097,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[builtins.bool]:
         """
-        云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+        Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -4105,7 +4105,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="autoRenewPeriod")
     def auto_renew_period(self) -> Optional[builtins.int]:
         """
-        云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+        Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
         """
         return pulumi.get(self, "auto_renew_period")
 
@@ -4118,7 +4118,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> Optional[builtins.int]:
         """
-        实例在部署集中的分组号，0表示未设置
+        Group number of the instance in the deployment set; 0 means not set
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -4126,7 +4126,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> Optional[builtins.str]:
         """
-        实例需要加入的部署集ID
+        Deployment Set ID to be added to the instance
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -4134,7 +4134,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter
     def hostname(self) -> Optional[builtins.str]:
         """
-        节点对应的主机名称。
+        The host name corresponding to the node.
         """
         return pulumi.get(self, "hostname")
 
@@ -4142,7 +4142,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="hpcClusterIds")
     def hpc_cluster_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+        High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
         """
         return pulumi.get(self, "hpc_cluster_ids")
 
@@ -4150,7 +4150,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[builtins.str]:
         """
-        节点对应云服务器所使用的镜像 ID。
+        Image ID used by the cloud server corresponding to the node
         """
         return pulumi.get(self, "image_id")
 
@@ -4158,7 +4158,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="initializeScript")
     def initialize_script(self) -> Optional[builtins.str]:
         """
-        创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+        Custom script executed after node creation and initialization. Shell script in Base64 encoding
         """
         return pulumi.get(self, "initialize_script")
 
@@ -4166,7 +4166,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> Optional[builtins.str]:
         """
-        云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+        Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -4174,7 +4174,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[builtins.str]:
         """
-        节点（实例）名称。
+        Node (instance) name
         """
         return pulumi.get(self, "instance_name")
 
@@ -4182,7 +4182,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="instanceTypeIds")
     def instance_type_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        节点对应的云服务器实例规格 ID 列表。
+        List of cloud server instance type IDs corresponding to the nodes
         """
         return pulumi.get(self, "instance_type_ids")
 
@@ -4190,7 +4190,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="instancesDistribution")
     def instances_distribution(self) -> Optional['outputs.NodePoolNodeConfigInstancesDistribution']:
         """
-        设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+        Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
         """
         return pulumi.get(self, "instances_distribution")
 
@@ -4198,7 +4198,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="namePrefix")
     def name_prefix(self) -> Optional[builtins.str]:
         """
-        节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+        Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
         """
         return pulumi.get(self, "name_prefix")
 
@@ -4206,7 +4206,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="networkTrafficMode")
     def network_traffic_mode(self) -> Optional[builtins.str]:
         """
-        节点间的网络通讯模式。
+        Network communication mode between nodes
         """
         return pulumi.get(self, "network_traffic_mode")
 
@@ -4214,7 +4214,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter
     def period(self) -> Optional[builtins.int]:
         """
-        云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+        Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
         """
         return pulumi.get(self, "period")
 
@@ -4222,7 +4222,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="preScript")
     def pre_script(self) -> Optional[builtins.str]:
         """
-        部署节点前执行脚本。
+        Script to execute before deploying the node
         """
         return pulumi.get(self, "pre_script")
 
@@ -4230,7 +4230,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[builtins.str]:
         """
-        ECS所属项目，一个ECS只能归属于一个项目。
+        Project to which the ECS belongs. Each ECS can only belong to one project.
         """
         return pulumi.get(self, "project_name")
 
@@ -4238,7 +4238,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="publicAccessConfig")
     def public_access_config(self) -> Optional['outputs.NodePoolNodeConfigPublicAccessConfig']:
         """
-        节点自动开启公网访问的配置信息
+        Configuration for automatic public network access for nodes
         """
         return pulumi.get(self, "public_access_config")
 
@@ -4246,7 +4246,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="publicAccessEnabled")
     def public_access_enabled(self) -> Optional[builtins.bool]:
         """
-        节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+        Enable public network access for nodes automatically. Options:   - false: off   - true: on
         """
         return pulumi.get(self, "public_access_enabled")
 
@@ -4254,7 +4254,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter
     def security(self) -> Optional['outputs.NodePoolNodeConfigSecurity']:
         """
-        节点安全配置。
+        Node security configuration
         """
         return pulumi.get(self, "security")
 
@@ -4262,7 +4262,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> Optional[builtins.str]:
         """
-        按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+        Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -4270,7 +4270,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        节点网络所属的子网 ID 列表。
+        List of subnet IDs for the node network.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -4278,7 +4278,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="systemVolume")
     def system_volume(self) -> Optional['outputs.NodePoolNodeConfigSystemVolume']:
         """
-        节点的系统盘配置。
+        System disk configuration for the node
         """
         return pulumi.get(self, "system_volume")
 
@@ -4324,13 +4324,13 @@ class NodePoolNodeConfigDataVolume(dict):
                  subgroup_number: Optional[builtins.int] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str file_system: 文件系统，取值：  - Ext4 (默认值)  - Xfs
-        :param builtins.str mount_point: 磁盘格式化后的目标挂载目录。
-        :param builtins.str placement_group_id: 放置组Id
-        :param builtins.int size: 磁盘容量，单位 GiB。
-        :param builtins.str snapshot_id: 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
-        :param builtins.int subgroup_number: 放置子组
-        :param builtins.str type: 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        :param builtins.str file_system: File system. Options:   - Ext4 (default)   - Xfs
+        :param builtins.str mount_point: Target mount directory after disk formatting.
+        :param builtins.str placement_group_id: Placement group ID
+        :param builtins.int size: Disk capacity, in GiB.
+        :param builtins.str snapshot_id: Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
+        :param builtins.int subgroup_number: Placement subgroup
+        :param builtins.str type: Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
         """
         if file_system is not None:
             pulumi.set(__self__, "file_system", file_system)
@@ -4351,7 +4351,7 @@ class NodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="fileSystem")
     def file_system(self) -> Optional[builtins.str]:
         """
-        文件系统，取值：  - Ext4 (默认值)  - Xfs
+        File system. Options:   - Ext4 (default)   - Xfs
         """
         return pulumi.get(self, "file_system")
 
@@ -4359,7 +4359,7 @@ class NodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="mountPoint")
     def mount_point(self) -> Optional[builtins.str]:
         """
-        磁盘格式化后的目标挂载目录。
+        Target mount directory after disk formatting.
         """
         return pulumi.get(self, "mount_point")
 
@@ -4367,7 +4367,7 @@ class NodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="placementGroupId")
     def placement_group_id(self) -> Optional[builtins.str]:
         """
-        放置组Id
+        Placement group ID
         """
         return pulumi.get(self, "placement_group_id")
 
@@ -4375,7 +4375,7 @@ class NodePoolNodeConfigDataVolume(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        磁盘容量，单位 GiB。
+        Disk capacity, in GiB.
         """
         return pulumi.get(self, "size")
 
@@ -4383,7 +4383,7 @@ class NodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[builtins.str]:
         """
-        使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+        Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -4391,7 +4391,7 @@ class NodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="subgroupNumber")
     def subgroup_number(self) -> Optional[builtins.int]:
         """
-        放置子组
+        Placement subgroup
         """
         return pulumi.get(self, "subgroup_number")
 
@@ -4399,7 +4399,7 @@ class NodePoolNodeConfigDataVolume(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
         """
         return pulumi.get(self, "type")
 
@@ -4435,10 +4435,10 @@ class NodePoolNodeConfigInstancesDistribution(dict):
                  on_demand_base_capacity: Optional[builtins.int] = None,
                  on_demand_percentage_above_base_capacity: Optional[builtins.int] = None):
         """
-        :param builtins.bool capacity_rebalance: 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
-        :param builtins.bool compensate_with_on_demand: 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
-        :param builtins.int on_demand_base_capacity: 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
-        :param builtins.int on_demand_percentage_above_base_capacity: 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+        :param builtins.bool capacity_rebalance: Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
+        :param builtins.bool compensate_with_on_demand: On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
+        :param builtins.int on_demand_base_capacity: Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
+        :param builtins.int on_demand_percentage_above_base_capacity: Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
         """
         if capacity_rebalance is not None:
             pulumi.set(__self__, "capacity_rebalance", capacity_rebalance)
@@ -4453,7 +4453,7 @@ class NodePoolNodeConfigInstancesDistribution(dict):
     @pulumi.getter(name="capacityRebalance")
     def capacity_rebalance(self) -> Optional[builtins.bool]:
         """
-        容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+        Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
         """
         return pulumi.get(self, "capacity_rebalance")
 
@@ -4461,7 +4461,7 @@ class NodePoolNodeConfigInstancesDistribution(dict):
     @pulumi.getter(name="compensateWithOnDemand")
     def compensate_with_on_demand(self) -> Optional[builtins.bool]:
         """
-        按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+        On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
         """
         return pulumi.get(self, "compensate_with_on_demand")
 
@@ -4469,7 +4469,7 @@ class NodePoolNodeConfigInstancesDistribution(dict):
     @pulumi.getter(name="onDemandBaseCapacity")
     def on_demand_base_capacity(self) -> Optional[builtins.int]:
         """
-        基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+        Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
         """
         return pulumi.get(self, "on_demand_base_capacity")
 
@@ -4477,7 +4477,7 @@ class NodePoolNodeConfigInstancesDistribution(dict):
     @pulumi.getter(name="onDemandPercentageAboveBaseCapacity")
     def on_demand_percentage_above_base_capacity(self) -> Optional[builtins.int]:
         """
-        超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+        Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
         """
         return pulumi.get(self, "on_demand_percentage_above_base_capacity")
 
@@ -4506,9 +4506,9 @@ class NodePoolNodeConfigPublicAccessConfig(dict):
                  billing_type: Optional[builtins.int] = None,
                  isp: Optional[builtins.str] = None):
         """
-        :param builtins.int bandwidth: 公网 IP 的带宽峰值，单位：Mbps。
-        :param builtins.int billing_type: 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
-        :param builtins.str isp: 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+        :param builtins.int bandwidth: Peak bandwidth for public IP, unit: Mbps
+        :param builtins.int billing_type: Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+        :param builtins.str isp: Public IP line type. Parameter description: BGP: BGP (multi-line)
         """
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
@@ -4521,7 +4521,7 @@ class NodePoolNodeConfigPublicAccessConfig(dict):
     @pulumi.getter
     def bandwidth(self) -> Optional[builtins.int]:
         """
-        公网 IP 的带宽峰值，单位：Mbps。
+        Peak bandwidth for public IP, unit: Mbps
         """
         return pulumi.get(self, "bandwidth")
 
@@ -4529,7 +4529,7 @@ class NodePoolNodeConfigPublicAccessConfig(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[builtins.int]:
         """
-        公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+        Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
         """
         return pulumi.get(self, "billing_type")
 
@@ -4537,7 +4537,7 @@ class NodePoolNodeConfigPublicAccessConfig(dict):
     @pulumi.getter
     def isp(self) -> Optional[builtins.str]:
         """
-        公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+        Public IP line type. Parameter description: BGP: BGP (multi-line)
         """
         return pulumi.get(self, "isp")
 
@@ -4571,10 +4571,10 @@ class NodePoolNodeConfigSecurity(dict):
                  security_strategies: Optional[Sequence[builtins.str]] = None,
                  security_strategy_enabled: Optional[builtins.bool] = None):
         """
-        :param 'NodePoolNodeConfigSecurityLoginArgs' login: 节点的访问方式配置。
-        :param Sequence[builtins.str] security_group_ids: 节点网络所在的安全组 ID 列表。
-        :param Sequence[builtins.str] security_strategies: 节点的安全策略，参数值说明：Hids：主机安全加固。
-        :param builtins.bool security_strategy_enabled: 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+        :param 'NodePoolNodeConfigSecurityLoginArgs' login: Node access configuration.
+        :param Sequence[builtins.str] security_group_ids: List of security group IDs for the node network
+        :param Sequence[builtins.str] security_strategies: Node security policy. Parameter description: Hids: Host security hardening.
+        :param builtins.bool security_strategy_enabled: Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
         """
         if login is not None:
             pulumi.set(__self__, "login", login)
@@ -4589,7 +4589,7 @@ class NodePoolNodeConfigSecurity(dict):
     @pulumi.getter
     def login(self) -> Optional['outputs.NodePoolNodeConfigSecurityLogin']:
         """
-        节点的访问方式配置。
+        Node access configuration.
         """
         return pulumi.get(self, "login")
 
@@ -4597,7 +4597,7 @@ class NodePoolNodeConfigSecurity(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        节点网络所在的安全组 ID 列表。
+        List of security group IDs for the node network
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -4605,7 +4605,7 @@ class NodePoolNodeConfigSecurity(dict):
     @pulumi.getter(name="securityStrategies")
     def security_strategies(self) -> Optional[Sequence[builtins.str]]:
         """
-        节点的安全策略，参数值说明：Hids：主机安全加固。
+        Node security policy. Parameter description: Hids: Host security hardening.
         """
         return pulumi.get(self, "security_strategies")
 
@@ -4613,7 +4613,7 @@ class NodePoolNodeConfigSecurity(dict):
     @pulumi.getter(name="securityStrategyEnabled")
     def security_strategy_enabled(self) -> Optional[builtins.bool]:
         """
-        节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+        Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
         """
         return pulumi.get(self, "security_strategy_enabled")
 
@@ -4642,9 +4642,9 @@ class NodePoolNodeConfigSecurityLogin(dict):
                  ssh_key_pair_name: Optional[builtins.str] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str password: Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
-        :param builtins.str ssh_key_pair_name: SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
-        :param builtins.str type: 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+        :param builtins.str password: Root user login password in Base64 encoding. Follow the cloud server's requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+        :param builtins.str ssh_key_pair_name: SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
+        :param builtins.str type: Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
         """
         if password is not None:
             pulumi.set(__self__, "password", password)
@@ -4657,7 +4657,7 @@ class NodePoolNodeConfigSecurityLogin(dict):
     @pulumi.getter
     def password(self) -> Optional[builtins.str]:
         """
-        Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+        Root user login password in Base64 encoding. Follow the cloud server's requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
         """
         return pulumi.get(self, "password")
 
@@ -4665,7 +4665,7 @@ class NodePoolNodeConfigSecurityLogin(dict):
     @pulumi.getter(name="sshKeyPairName")
     def ssh_key_pair_name(self) -> Optional[builtins.str]:
         """
-        SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+        SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
         """
         return pulumi.get(self, "ssh_key_pair_name")
 
@@ -4673,7 +4673,7 @@ class NodePoolNodeConfigSecurityLogin(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+        Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
         """
         return pulumi.get(self, "type")
 
@@ -4705,10 +4705,10 @@ class NodePoolNodeConfigSystemVolume(dict):
                  subgroup_number: Optional[builtins.int] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str placement_group_id: 放置组Id
-        :param builtins.int size: 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
-        :param builtins.int subgroup_number: 放置子组
-        :param builtins.str type: 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        :param builtins.str placement_group_id: Placement group ID
+        :param builtins.int size: Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+        :param builtins.int subgroup_number: Placement subgroup
+        :param builtins.str type: Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
         """
         if placement_group_id is not None:
             pulumi.set(__self__, "placement_group_id", placement_group_id)
@@ -4723,7 +4723,7 @@ class NodePoolNodeConfigSystemVolume(dict):
     @pulumi.getter(name="placementGroupId")
     def placement_group_id(self) -> Optional[builtins.str]:
         """
-        放置组Id
+        Placement group ID
         """
         return pulumi.get(self, "placement_group_id")
 
@@ -4731,7 +4731,7 @@ class NodePoolNodeConfigSystemVolume(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+        Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
         """
         return pulumi.get(self, "size")
 
@@ -4739,7 +4739,7 @@ class NodePoolNodeConfigSystemVolume(dict):
     @pulumi.getter(name="subgroupNumber")
     def subgroup_number(self) -> Optional[builtins.int]:
         """
-        放置子组
+        Placement subgroup
         """
         return pulumi.get(self, "subgroup_number")
 
@@ -4747,7 +4747,7 @@ class NodePoolNodeConfigSystemVolume(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
         """
         return pulumi.get(self, "type")
 
@@ -4758,8 +4758,8 @@ class NodePoolNodeConfigTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Label key
+        :param builtins.str value: Label value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -4770,7 +4770,7 @@ class NodePoolNodeConfigTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Label key
         """
         return pulumi.get(self, "key")
 
@@ -4778,7 +4778,7 @@ class NodePoolNodeConfigTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Label value.
         """
         return pulumi.get(self, "value")
 
@@ -4820,12 +4820,12 @@ class NodePoolNodeStatistics(dict):
                  total_count: Optional[builtins.int] = None,
                  updating_count: Optional[builtins.int] = None):
         """
-        :param builtins.int creating_count: Phase=Creating的节点总数量。
-        :param builtins.int deleting_count: Phase=Deleting的节点总数量。
-        :param builtins.int failed_count: Phase=Failed的节点总数量。
-        :param builtins.int running_count: Phase=Running的节点总数量。
-        :param builtins.int total_count: 节点池中的节点总数量。
-        :param builtins.int updating_count: Phase=Updating的节点总数量。
+        :param builtins.int creating_count: Total number of nodes in Phase=Creating.
+        :param builtins.int deleting_count: Total number of nodes with Phase=Deleting
+        :param builtins.int failed_count: Total number of nodes with Phase=Failed
+        :param builtins.int running_count: Total number of nodes with Phase=Running
+        :param builtins.int total_count: Total number of nodes in the node pool
+        :param builtins.int updating_count: Total number of nodes with Phase=Updating
         """
         if creating_count is not None:
             pulumi.set(__self__, "creating_count", creating_count)
@@ -4844,7 +4844,7 @@ class NodePoolNodeStatistics(dict):
     @pulumi.getter(name="creatingCount")
     def creating_count(self) -> Optional[builtins.int]:
         """
-        Phase=Creating的节点总数量。
+        Total number of nodes in Phase=Creating.
         """
         return pulumi.get(self, "creating_count")
 
@@ -4852,7 +4852,7 @@ class NodePoolNodeStatistics(dict):
     @pulumi.getter(name="deletingCount")
     def deleting_count(self) -> Optional[builtins.int]:
         """
-        Phase=Deleting的节点总数量。
+        Total number of nodes with Phase=Deleting
         """
         return pulumi.get(self, "deleting_count")
 
@@ -4860,7 +4860,7 @@ class NodePoolNodeStatistics(dict):
     @pulumi.getter(name="failedCount")
     def failed_count(self) -> Optional[builtins.int]:
         """
-        Phase=Failed的节点总数量。
+        Total number of nodes with Phase=Failed
         """
         return pulumi.get(self, "failed_count")
 
@@ -4868,7 +4868,7 @@ class NodePoolNodeStatistics(dict):
     @pulumi.getter(name="runningCount")
     def running_count(self) -> Optional[builtins.int]:
         """
-        Phase=Running的节点总数量。
+        Total number of nodes with Phase=Running
         """
         return pulumi.get(self, "running_count")
 
@@ -4876,7 +4876,7 @@ class NodePoolNodeStatistics(dict):
     @pulumi.getter(name="totalCount")
     def total_count(self) -> Optional[builtins.int]:
         """
-        节点池中的节点总数量。
+        Total number of nodes in the node pool
         """
         return pulumi.get(self, "total_count")
 
@@ -4884,7 +4884,7 @@ class NodePoolNodeStatistics(dict):
     @pulumi.getter(name="updatingCount")
     def updating_count(self) -> Optional[builtins.int]:
         """
-        Phase=Updating的节点总数量。
+        Total number of nodes with Phase=Updating
         """
         return pulumi.get(self, "updating_count")
 
@@ -4895,7 +4895,7 @@ class NodePoolStatus(dict):
                  conditions: Optional[Sequence['outputs.NodePoolStatusCondition']] = None,
                  phase: Optional[builtins.str] = None):
         """
-        :param builtins.str phase: 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+        :param builtins.str phase: Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
         """
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
@@ -4911,7 +4911,7 @@ class NodePoolStatus(dict):
     @pulumi.getter
     def phase(self) -> Optional[builtins.str]:
         """
-        节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+        Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
         """
         return pulumi.get(self, "phase")
 
@@ -4921,7 +4921,7 @@ class NodePoolStatusCondition(dict):
     def __init__(__self__, *,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str type: 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+        :param builtins.str type: Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
         """
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -4930,7 +4930,7 @@ class NodePoolStatusCondition(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+        Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
         """
         return pulumi.get(self, "type")
 
@@ -4941,8 +4941,8 @@ class NodePoolTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Label key
+        :param builtins.str value: Label value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -4953,7 +4953,7 @@ class NodePoolTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Label key
         """
         return pulumi.get(self, "key")
 
@@ -4961,7 +4961,7 @@ class NodePoolTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Label value.
         """
         return pulumi.get(self, "value")
 
@@ -4972,7 +4972,7 @@ class NodeStatus(dict):
                  conditions: Optional[Sequence['outputs.NodeStatusCondition']] = None,
                  phase: Optional[builtins.str] = None):
         """
-        :param builtins.str phase: 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+        :param builtins.str phase: Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
         """
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
@@ -4988,7 +4988,7 @@ class NodeStatus(dict):
     @pulumi.getter
     def phase(self) -> Optional[builtins.str]:
         """
-        节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+        Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
         """
         return pulumi.get(self, "phase")
 
@@ -4998,7 +4998,7 @@ class NodeStatusCondition(dict):
     def __init__(__self__, *,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str type: 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+        :param builtins.str type: Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
         """
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -5007,7 +5007,7 @@ class NodeStatusCondition(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+        Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
         """
         return pulumi.get(self, "type")
 
@@ -5018,8 +5018,8 @@ class GetAddonStatusResult(dict):
                  conditions: Sequence['outputs.GetAddonStatusConditionResult'],
                  phase: builtins.str):
         """
-        :param Sequence['GetAddonStatusConditionArgs'] conditions: 组件当前主状态下的状态条件。
-        :param builtins.str phase: 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+        :param Sequence['GetAddonStatusConditionArgs'] conditions: Status conditions under the component's current primary state.
+        :param builtins.str phase: Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
         """
         pulumi.set(__self__, "conditions", conditions)
         pulumi.set(__self__, "phase", phase)
@@ -5028,7 +5028,7 @@ class GetAddonStatusResult(dict):
     @pulumi.getter
     def conditions(self) -> Sequence['outputs.GetAddonStatusConditionResult']:
         """
-        组件当前主状态下的状态条件。
+        Status conditions under the component's current primary state.
         """
         return pulumi.get(self, "conditions")
 
@@ -5036,7 +5036,7 @@ class GetAddonStatusResult(dict):
     @pulumi.getter
     def phase(self) -> builtins.str:
         """
-        组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+        Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
         """
         return pulumi.get(self, "phase")
 
@@ -5046,7 +5046,7 @@ class GetAddonStatusConditionResult(dict):
     def __init__(__self__, *,
                  type: builtins.str):
         """
-        :param builtins.str type: 组件当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
+        :param builtins.str type: Status conditions under the component's current primary state, indicating the reasons for entering this state. Multiple reasons are possible. Parameter values include: Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
         """
         pulumi.set(__self__, "type", type)
 
@@ -5054,7 +5054,7 @@ class GetAddonStatusConditionResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        组件当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
+        Status conditions under the component's current primary state, indicating the reasons for entering this state. Multiple reasons are possible. Parameter values include: Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
         """
         return pulumi.get(self, "type")
 
@@ -5071,14 +5071,14 @@ class GetClusterClusterConfigResult(dict):
                  subnet_ids: Sequence[builtins.str],
                  vpc_id: builtins.str):
         """
-        :param 'GetClusterClusterConfigApiServerEndpointsArgs' api_server_endpoints: 集群 API Server 访问的 IPv4 地址信息。
-        :param 'GetClusterClusterConfigApiServerPublicAccessConfigArgs' api_server_public_access_config: 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
-        :param builtins.bool api_server_public_access_enabled: 节点公网访问配置，参数值说明：false：未开启。true：已开启。
-        :param builtins.str ip_family: 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
-        :param builtins.bool resource_public_access_default_enabled: 节点公网访问配置，参数值说明：false：未开启。true：已开启。
-        :param Sequence[builtins.str] security_group_ids: 集群控制面及节点使用的的安全组。
-        :param Sequence[builtins.str] subnet_ids: 集群控制面在私有网络内通信的子网 ID。
-        :param builtins.str vpc_id: 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+        :param 'GetClusterClusterConfigApiServerEndpointsArgs' api_server_endpoints: Cluster API Server access IPv4 address information
+        :param 'GetClusterClusterConfigApiServerPublicAccessConfigArgs' api_server_public_access_config: Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
+        :param builtins.bool api_server_public_access_enabled: Node public access configuration. Parameter value description: false: Disabled. true: Enabled
+        :param builtins.str ip_family: Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
+        :param builtins.bool resource_public_access_default_enabled: Node public access configuration. Parameter value description: false: Disabled. true: Enabled
+        :param Sequence[builtins.str] security_group_ids: Security group used by the cluster control plane and nodes.
+        :param Sequence[builtins.str] subnet_ids: Subnet ID for cluster control plane communication within the private network.
+        :param builtins.str vpc_id: Private network (VPC) ID where the cluster control plane and some nodes are located.
         """
         pulumi.set(__self__, "api_server_endpoints", api_server_endpoints)
         pulumi.set(__self__, "api_server_public_access_config", api_server_public_access_config)
@@ -5093,7 +5093,7 @@ class GetClusterClusterConfigResult(dict):
     @pulumi.getter(name="apiServerEndpoints")
     def api_server_endpoints(self) -> 'outputs.GetClusterClusterConfigApiServerEndpointsResult':
         """
-        集群 API Server 访问的 IPv4 地址信息。
+        Cluster API Server access IPv4 address information
         """
         return pulumi.get(self, "api_server_endpoints")
 
@@ -5101,7 +5101,7 @@ class GetClusterClusterConfigResult(dict):
     @pulumi.getter(name="apiServerPublicAccessConfig")
     def api_server_public_access_config(self) -> 'outputs.GetClusterClusterConfigApiServerPublicAccessConfigResult':
         """
-        集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+        Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
         """
         return pulumi.get(self, "api_server_public_access_config")
 
@@ -5109,7 +5109,7 @@ class GetClusterClusterConfigResult(dict):
     @pulumi.getter(name="apiServerPublicAccessEnabled")
     def api_server_public_access_enabled(self) -> builtins.bool:
         """
-        节点公网访问配置，参数值说明：false：未开启。true：已开启。
+        Node public access configuration. Parameter value description: false: Disabled. true: Enabled
         """
         return pulumi.get(self, "api_server_public_access_enabled")
 
@@ -5117,7 +5117,7 @@ class GetClusterClusterConfigResult(dict):
     @pulumi.getter(name="ipFamily")
     def ip_family(self) -> builtins.str:
         """
-        集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+        Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
         """
         return pulumi.get(self, "ip_family")
 
@@ -5125,7 +5125,7 @@ class GetClusterClusterConfigResult(dict):
     @pulumi.getter(name="resourcePublicAccessDefaultEnabled")
     def resource_public_access_default_enabled(self) -> builtins.bool:
         """
-        节点公网访问配置，参数值说明：false：未开启。true：已开启。
+        Node public access configuration. Parameter value description: false: Disabled. true: Enabled
         """
         return pulumi.get(self, "resource_public_access_default_enabled")
 
@@ -5133,7 +5133,7 @@ class GetClusterClusterConfigResult(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Sequence[builtins.str]:
         """
-        集群控制面及节点使用的的安全组。
+        Security group used by the cluster control plane and nodes.
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -5141,7 +5141,7 @@ class GetClusterClusterConfigResult(dict):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Sequence[builtins.str]:
         """
-        集群控制面在私有网络内通信的子网 ID。
+        Subnet ID for cluster control plane communication within the private network.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -5149,7 +5149,7 @@ class GetClusterClusterConfigResult(dict):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+        Private network (VPC) ID where the cluster control plane and some nodes are located.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -5160,8 +5160,8 @@ class GetClusterClusterConfigApiServerEndpointsResult(dict):
                  private_ip: 'outputs.GetClusterClusterConfigApiServerEndpointsPrivateIpResult',
                  public_ip: 'outputs.GetClusterClusterConfigApiServerEndpointsPublicIpResult'):
         """
-        :param 'GetClusterClusterConfigApiServerEndpointsPrivateIpArgs' private_ip: 集群 API Server 私网的 IPv4 地址。
-        :param 'GetClusterClusterConfigApiServerEndpointsPublicIpArgs' public_ip: 集群 API Server 公网的 IPv4 地址。
+        :param 'GetClusterClusterConfigApiServerEndpointsPrivateIpArgs' private_ip: Cluster API Server private IPv4 address.
+        :param 'GetClusterClusterConfigApiServerEndpointsPublicIpArgs' public_ip: Cluster API Server public IPv4 address
         """
         pulumi.set(__self__, "private_ip", private_ip)
         pulumi.set(__self__, "public_ip", public_ip)
@@ -5170,7 +5170,7 @@ class GetClusterClusterConfigApiServerEndpointsResult(dict):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> 'outputs.GetClusterClusterConfigApiServerEndpointsPrivateIpResult':
         """
-        集群 API Server 私网的 IPv4 地址。
+        Cluster API Server private IPv4 address.
         """
         return pulumi.get(self, "private_ip")
 
@@ -5178,7 +5178,7 @@ class GetClusterClusterConfigApiServerEndpointsResult(dict):
     @pulumi.getter(name="publicIp")
     def public_ip(self) -> 'outputs.GetClusterClusterConfigApiServerEndpointsPublicIpResult':
         """
-        集群 API Server 公网的 IPv4 地址。
+        Cluster API Server public IPv4 address
         """
         return pulumi.get(self, "public_ip")
 
@@ -5188,7 +5188,7 @@ class GetClusterClusterConfigApiServerEndpointsPrivateIpResult(dict):
     def __init__(__self__, *,
                  ipv4: builtins.str):
         """
-        :param builtins.str ipv4: 私网 IP 的 IPv4 地址。
+        :param builtins.str ipv4: IPv4 address of the private network IP.
         """
         pulumi.set(__self__, "ipv4", ipv4)
 
@@ -5196,7 +5196,7 @@ class GetClusterClusterConfigApiServerEndpointsPrivateIpResult(dict):
     @pulumi.getter
     def ipv4(self) -> builtins.str:
         """
-        私网 IP 的 IPv4 地址。
+        IPv4 address of the private network IP.
         """
         return pulumi.get(self, "ipv4")
 
@@ -5206,7 +5206,7 @@ class GetClusterClusterConfigApiServerEndpointsPublicIpResult(dict):
     def __init__(__self__, *,
                  ipv4: builtins.str):
         """
-        :param builtins.str ipv4: 公网 IP 的 IPv4 地址。
+        :param builtins.str ipv4: IPv4 address of the public IP.
         """
         pulumi.set(__self__, "ipv4", ipv4)
 
@@ -5214,7 +5214,7 @@ class GetClusterClusterConfigApiServerEndpointsPublicIpResult(dict):
     @pulumi.getter
     def ipv4(self) -> builtins.str:
         """
-        公网 IP 的 IPv4 地址。
+        IPv4 address of the public IP.
         """
         return pulumi.get(self, "ipv4")
 
@@ -5224,7 +5224,7 @@ class GetClusterClusterConfigApiServerPublicAccessConfigResult(dict):
     def __init__(__self__, *,
                  public_access_network_config: 'outputs.GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigResult'):
         """
-        :param 'GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigArgs' public_access_network_config: 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+        :param 'GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigArgs' public_access_network_config: Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
         """
         pulumi.set(__self__, "public_access_network_config", public_access_network_config)
 
@@ -5232,7 +5232,7 @@ class GetClusterClusterConfigApiServerPublicAccessConfigResult(dict):
     @pulumi.getter(name="publicAccessNetworkConfig")
     def public_access_network_config(self) -> 'outputs.GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigResult':
         """
-        公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+        Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
         """
         return pulumi.get(self, "public_access_network_config")
 
@@ -5244,9 +5244,9 @@ class GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfi
                  billing_type: builtins.int,
                  isp: builtins.str):
         """
-        :param builtins.int bandwidth: 公网 IP 的带宽峰值，单位：Mbps。
-        :param builtins.int billing_type: 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
-        :param builtins.str isp: 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+        :param builtins.int bandwidth: Peak bandwidth of the public IP, unit: Mbps
+        :param builtins.int billing_type: Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
+        :param builtins.str isp: Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
         """
         pulumi.set(__self__, "bandwidth", bandwidth)
         pulumi.set(__self__, "billing_type", billing_type)
@@ -5256,7 +5256,7 @@ class GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfi
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        公网 IP 的带宽峰值，单位：Mbps。
+        Peak bandwidth of the public IP, unit: Mbps
         """
         return pulumi.get(self, "bandwidth")
 
@@ -5264,7 +5264,7 @@ class GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfi
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.int:
         """
-        公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+        Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
         """
         return pulumi.get(self, "billing_type")
 
@@ -5272,7 +5272,7 @@ class GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfi
     @pulumi.getter
     def isp(self) -> builtins.str:
         """
-        公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+        Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
         """
         return pulumi.get(self, "isp")
 
@@ -5287,12 +5287,12 @@ class GetClusterIrsaConfigResult(dict):
                  oidc_trn: builtins.str,
                  open_id_config_url: builtins.str):
         """
-        :param builtins.str audience: 接受令牌的标识符。
-        :param builtins.bool enabled: 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
-        :param builtins.str issuer: OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
-        :param builtins.str jwks_url: JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
-        :param builtins.str oidc_trn: OIDC 提供商 TRN。
-        :param builtins.str open_id_config_url: OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+        :param builtins.str audience: Identifier for accepting tokens
+        :param builtins.bool enabled: Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
+        :param builtins.str issuer: OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
+        :param builtins.str jwks_url: JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
+        :param builtins.str oidc_trn: OIDC provider TRN.
+        :param builtins.str open_id_config_url: OIDC provider configuration document in JSON format, containing information about the OIDC provider.
         """
         pulumi.set(__self__, "audience", audience)
         pulumi.set(__self__, "enabled", enabled)
@@ -5305,7 +5305,7 @@ class GetClusterIrsaConfigResult(dict):
     @pulumi.getter
     def audience(self) -> builtins.str:
         """
-        接受令牌的标识符。
+        Identifier for accepting tokens
         """
         return pulumi.get(self, "audience")
 
@@ -5313,7 +5313,7 @@ class GetClusterIrsaConfigResult(dict):
     @pulumi.getter
     def enabled(self) -> builtins.bool:
         """
-        是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+        Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -5321,7 +5321,7 @@ class GetClusterIrsaConfigResult(dict):
     @pulumi.getter
     def issuer(self) -> builtins.str:
         """
-        OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+        OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
         """
         return pulumi.get(self, "issuer")
 
@@ -5329,7 +5329,7 @@ class GetClusterIrsaConfigResult(dict):
     @pulumi.getter(name="jwksUrl")
     def jwks_url(self) -> builtins.str:
         """
-        JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+        JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
         """
         return pulumi.get(self, "jwks_url")
 
@@ -5337,7 +5337,7 @@ class GetClusterIrsaConfigResult(dict):
     @pulumi.getter(name="oidcTrn")
     def oidc_trn(self) -> builtins.str:
         """
-        OIDC 提供商 TRN。
+        OIDC provider TRN.
         """
         return pulumi.get(self, "oidc_trn")
 
@@ -5345,7 +5345,7 @@ class GetClusterIrsaConfigResult(dict):
     @pulumi.getter(name="openIdConfigUrl")
     def open_id_config_url(self) -> builtins.str:
         """
-        OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+        OIDC provider configuration document in JSON format, containing information about the OIDC provider.
         """
         return pulumi.get(self, "open_id_config_url")
 
@@ -5356,8 +5356,8 @@ class GetClusterLoggingConfigResult(dict):
                  log_project_id: builtins.str,
                  log_setups: Sequence['outputs.GetClusterLoggingConfigLogSetupResult']):
         """
-        :param builtins.str log_project_id: 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
-        :param Sequence['GetClusterLoggingConfigLogSetupArgs'] log_setups: 集群的日志选项信息。
+        :param builtins.str log_project_id: Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
+        :param Sequence['GetClusterLoggingConfigLogSetupArgs'] log_setups: Cluster log option information.
         """
         pulumi.set(__self__, "log_project_id", log_project_id)
         pulumi.set(__self__, "log_setups", log_setups)
@@ -5366,7 +5366,7 @@ class GetClusterLoggingConfigResult(dict):
     @pulumi.getter(name="logProjectId")
     def log_project_id(self) -> builtins.str:
         """
-        集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+        Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
         """
         return pulumi.get(self, "log_project_id")
 
@@ -5374,7 +5374,7 @@ class GetClusterLoggingConfigResult(dict):
     @pulumi.getter(name="logSetups")
     def log_setups(self) -> Sequence['outputs.GetClusterLoggingConfigLogSetupResult']:
         """
-        集群的日志选项信息。
+        Cluster log option information.
         """
         return pulumi.get(self, "log_setups")
 
@@ -5387,10 +5387,10 @@ class GetClusterLoggingConfigLogSetupResult(dict):
                  log_ttl: builtins.int,
                  log_type: builtins.str):
         """
-        :param builtins.bool enabled: 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
-        :param builtins.str log_topic_id: 采集目标的TLS日志主题ID。 如果为空，表示对应日志的主题未被创建。
-        :param builtins.int log_ttl: 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
-        :param builtins.str log_type: 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+        :param builtins.bool enabled: Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
+        :param builtins.str log_topic_id: TLS log topic ID for the collection target. If empty, the corresponding log topic has not been created.
+        :param builtins.int log_ttl: Retention period of logs in log service, in days. 3650 days means permanent storage.
+        :param builtins.str log_type: Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "log_topic_id", log_topic_id)
@@ -5401,7 +5401,7 @@ class GetClusterLoggingConfigLogSetupResult(dict):
     @pulumi.getter
     def enabled(self) -> builtins.bool:
         """
-        是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+        Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -5409,7 +5409,7 @@ class GetClusterLoggingConfigLogSetupResult(dict):
     @pulumi.getter(name="logTopicId")
     def log_topic_id(self) -> builtins.str:
         """
-        采集目标的TLS日志主题ID。 如果为空，表示对应日志的主题未被创建。
+        TLS log topic ID for the collection target. If empty, the corresponding log topic has not been created.
         """
         return pulumi.get(self, "log_topic_id")
 
@@ -5417,7 +5417,7 @@ class GetClusterLoggingConfigLogSetupResult(dict):
     @pulumi.getter(name="logTtl")
     def log_ttl(self) -> builtins.int:
         """
-        日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+        Retention period of logs in log service, in days. 3650 days means permanent storage.
         """
         return pulumi.get(self, "log_ttl")
 
@@ -5425,7 +5425,7 @@ class GetClusterLoggingConfigLogSetupResult(dict):
     @pulumi.getter(name="logType")
     def log_type(self) -> builtins.str:
         """
-        当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+        Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
         """
         return pulumi.get(self, "log_type")
 
@@ -5437,9 +5437,9 @@ class GetClusterMonitoringConfigResult(dict):
                  enable_metrics_external_collection: builtins.bool,
                  workspace_id: builtins.str):
         """
-        :param Sequence['GetClusterMonitoringConfigComponentConfigArgs'] component_configs: 监控组件的配置列表。
-        :param builtins.bool enable_metrics_external_collection: 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
-        :param builtins.str workspace_id: 监控数据所属的工作区 ID。
+        :param Sequence['GetClusterMonitoringConfigComponentConfigArgs'] component_configs: List of monitoring component configurations.
+        :param builtins.bool enable_metrics_external_collection: Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
+        :param builtins.str workspace_id: Workspace ID to which the monitoring data belongs.
         """
         pulumi.set(__self__, "component_configs", component_configs)
         pulumi.set(__self__, "enable_metrics_external_collection", enable_metrics_external_collection)
@@ -5449,7 +5449,7 @@ class GetClusterMonitoringConfigResult(dict):
     @pulumi.getter(name="componentConfigs")
     def component_configs(self) -> Sequence['outputs.GetClusterMonitoringConfigComponentConfigResult']:
         """
-        监控组件的配置列表。
+        List of monitoring component configurations.
         """
         return pulumi.get(self, "component_configs")
 
@@ -5457,7 +5457,7 @@ class GetClusterMonitoringConfigResult(dict):
     @pulumi.getter(name="enableMetricsExternalCollection")
     def enable_metrics_external_collection(self) -> builtins.bool:
         """
-        是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+        Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
         """
         return pulumi.get(self, "enable_metrics_external_collection")
 
@@ -5465,7 +5465,7 @@ class GetClusterMonitoringConfigResult(dict):
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> builtins.str:
         """
-        监控数据所属的工作区 ID。
+        Workspace ID to which the monitoring data belongs.
         """
         return pulumi.get(self, "workspace_id")
 
@@ -5476,8 +5476,8 @@ class GetClusterMonitoringConfigComponentConfigResult(dict):
                  enabled: builtins.bool,
                  name: builtins.str):
         """
-        :param builtins.bool enabled: 是否启用该监控组件，true 表示启用，false 表示禁用。
-        :param builtins.str name: 监控组件的名称，例如 'prometheus'、'grafana' 等。
+        :param builtins.bool enabled: Whether to enable this monitoring component. true means enabled; false means disabled.
+        :param builtins.str name: Name of the monitoring component, such as 'prometheus', 'grafana', etc.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "name", name)
@@ -5486,7 +5486,7 @@ class GetClusterMonitoringConfigComponentConfigResult(dict):
     @pulumi.getter
     def enabled(self) -> builtins.bool:
         """
-        是否启用该监控组件，true 表示启用，false 表示禁用。
+        Whether to enable this monitoring component. true means enabled; false means disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -5494,7 +5494,7 @@ class GetClusterMonitoringConfigComponentConfigResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        监控组件的名称，例如 'prometheus'、'grafana' 等。
+        Name of the monitoring component, such as 'prometheus', 'grafana', etc.
         """
         return pulumi.get(self, "name")
 
@@ -5509,12 +5509,12 @@ class GetClusterNodeStatisticsResult(dict):
                  total_count: builtins.int,
                  updating_count: builtins.int):
         """
-        :param builtins.int creating_count: Phase=Creating的节点总数量。
-        :param builtins.int deleting_count: Phase=Deleting的节点总数量。
-        :param builtins.int failed_count: Phase=Failed的节点总数量。
-        :param builtins.int running_count: Phase=Running的节点总数量。
-        :param builtins.int total_count: 节点总数量。
-        :param builtins.int updating_count: Phase=Updating的节点总数量。
+        :param builtins.int creating_count: Total number of nodes in Phase=Creating.
+        :param builtins.int deleting_count: Total number of nodes with Phase=Deleting.
+        :param builtins.int failed_count: Total number of nodes with Phase=Failed.
+        :param builtins.int running_count: Total number of nodes with Phase=Running.
+        :param builtins.int total_count: Total number of nodes.
+        :param builtins.int updating_count: Total number of nodes in Phase=Updating.
         """
         pulumi.set(__self__, "creating_count", creating_count)
         pulumi.set(__self__, "deleting_count", deleting_count)
@@ -5527,7 +5527,7 @@ class GetClusterNodeStatisticsResult(dict):
     @pulumi.getter(name="creatingCount")
     def creating_count(self) -> builtins.int:
         """
-        Phase=Creating的节点总数量。
+        Total number of nodes in Phase=Creating.
         """
         return pulumi.get(self, "creating_count")
 
@@ -5535,7 +5535,7 @@ class GetClusterNodeStatisticsResult(dict):
     @pulumi.getter(name="deletingCount")
     def deleting_count(self) -> builtins.int:
         """
-        Phase=Deleting的节点总数量。
+        Total number of nodes with Phase=Deleting.
         """
         return pulumi.get(self, "deleting_count")
 
@@ -5543,7 +5543,7 @@ class GetClusterNodeStatisticsResult(dict):
     @pulumi.getter(name="failedCount")
     def failed_count(self) -> builtins.int:
         """
-        Phase=Failed的节点总数量。
+        Total number of nodes with Phase=Failed.
         """
         return pulumi.get(self, "failed_count")
 
@@ -5551,7 +5551,7 @@ class GetClusterNodeStatisticsResult(dict):
     @pulumi.getter(name="runningCount")
     def running_count(self) -> builtins.int:
         """
-        Phase=Running的节点总数量。
+        Total number of nodes with Phase=Running.
         """
         return pulumi.get(self, "running_count")
 
@@ -5559,7 +5559,7 @@ class GetClusterNodeStatisticsResult(dict):
     @pulumi.getter(name="totalCount")
     def total_count(self) -> builtins.int:
         """
-        节点总数量。
+        Total number of nodes.
         """
         return pulumi.get(self, "total_count")
 
@@ -5567,7 +5567,7 @@ class GetClusterNodeStatisticsResult(dict):
     @pulumi.getter(name="updatingCount")
     def updating_count(self) -> builtins.int:
         """
-        Phase=Updating的节点总数量。
+        Total number of nodes in Phase=Updating.
         """
         return pulumi.get(self, "updating_count")
 
@@ -5579,9 +5579,9 @@ class GetClusterPodsConfigResult(dict):
                  pod_network_mode: builtins.str,
                  vpc_cni_config: 'outputs.GetClusterPodsConfigVpcCniConfigResult'):
         """
-        :param 'GetClusterPodsConfigFlannelConfigArgs' flannel_config: Flannel 网络配置。
-        :param builtins.str pod_network_mode: 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
-        :param 'GetClusterPodsConfigVpcCniConfigArgs' vpc_cni_config: VPC-CNI 网络配置。
+        :param 'GetClusterPodsConfigFlannelConfigArgs' flannel_config: Flannel network configuration.
+        :param builtins.str pod_network_mode: Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
+        :param 'GetClusterPodsConfigVpcCniConfigArgs' vpc_cni_config: VPC-CNI network configuration.
         """
         pulumi.set(__self__, "flannel_config", flannel_config)
         pulumi.set(__self__, "pod_network_mode", pod_network_mode)
@@ -5591,7 +5591,7 @@ class GetClusterPodsConfigResult(dict):
     @pulumi.getter(name="flannelConfig")
     def flannel_config(self) -> 'outputs.GetClusterPodsConfigFlannelConfigResult':
         """
-        Flannel 网络配置。
+        Flannel network configuration.
         """
         return pulumi.get(self, "flannel_config")
 
@@ -5599,7 +5599,7 @@ class GetClusterPodsConfigResult(dict):
     @pulumi.getter(name="podNetworkMode")
     def pod_network_mode(self) -> builtins.str:
         """
-        容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+        Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
         """
         return pulumi.get(self, "pod_network_mode")
 
@@ -5607,7 +5607,7 @@ class GetClusterPodsConfigResult(dict):
     @pulumi.getter(name="vpcCniConfig")
     def vpc_cni_config(self) -> 'outputs.GetClusterPodsConfigVpcCniConfigResult':
         """
-        VPC-CNI 网络配置。
+        VPC-CNI network configuration.
         """
         return pulumi.get(self, "vpc_cni_config")
 
@@ -5619,9 +5619,9 @@ class GetClusterPodsConfigFlannelConfigResult(dict):
                  pod_cidrs: Sequence[builtins.str],
                  subnet_ids: Sequence[builtins.str]):
         """
-        :param builtins.int max_pods_per_node: Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
-        :param Sequence[builtins.str] pod_cidrs: Flannel 容器网络的 Pod CIDR。
-        :param Sequence[builtins.str] subnet_ids: Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+        :param builtins.int max_pods_per_node: Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
+        :param Sequence[builtins.str] pod_cidrs: Pod CIDR for Flannel container network.
+        :param Sequence[builtins.str] subnet_ids: List of Pod subnet IDs for the Flannel container network model.
         """
         pulumi.set(__self__, "max_pods_per_node", max_pods_per_node)
         pulumi.set(__self__, "pod_cidrs", pod_cidrs)
@@ -5631,7 +5631,7 @@ class GetClusterPodsConfigFlannelConfigResult(dict):
     @pulumi.getter(name="maxPodsPerNode")
     def max_pods_per_node(self) -> builtins.int:
         """
-        Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+        Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
         """
         return pulumi.get(self, "max_pods_per_node")
 
@@ -5639,7 +5639,7 @@ class GetClusterPodsConfigFlannelConfigResult(dict):
     @pulumi.getter(name="podCidrs")
     def pod_cidrs(self) -> Sequence[builtins.str]:
         """
-        Flannel 容器网络的 Pod CIDR。
+        Pod CIDR for Flannel container network.
         """
         return pulumi.get(self, "pod_cidrs")
 
@@ -5647,7 +5647,7 @@ class GetClusterPodsConfigFlannelConfigResult(dict):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Sequence[builtins.str]:
         """
-        Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+        List of Pod subnet IDs for the Flannel container network model.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -5658,8 +5658,8 @@ class GetClusterPodsConfigVpcCniConfigResult(dict):
                  subnet_ids: Sequence[builtins.str],
                  trunk_eni_enabled: builtins.bool):
         """
-        :param Sequence[builtins.str] subnet_ids: VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
-        :param builtins.bool trunk_eni_enabled: 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+        :param Sequence[builtins.str] subnet_ids: List of Pod subnet IDs for the VPC-CNI container network model.
+        :param builtins.bool trunk_eni_enabled: Whether to enable Trunk mode for the VPC-CNI container network model
         """
         pulumi.set(__self__, "subnet_ids", subnet_ids)
         pulumi.set(__self__, "trunk_eni_enabled", trunk_eni_enabled)
@@ -5668,7 +5668,7 @@ class GetClusterPodsConfigVpcCniConfigResult(dict):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Sequence[builtins.str]:
         """
-        VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+        List of Pod subnet IDs for the VPC-CNI container network model.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -5676,7 +5676,7 @@ class GetClusterPodsConfigVpcCniConfigResult(dict):
     @pulumi.getter(name="trunkEniEnabled")
     def trunk_eni_enabled(self) -> builtins.bool:
         """
-        是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+        Whether to enable Trunk mode for the VPC-CNI container network model
         """
         return pulumi.get(self, "trunk_eni_enabled")
 
@@ -5686,7 +5686,7 @@ class GetClusterServicesConfigResult(dict):
     def __init__(__self__, *,
                  service_cidrsv4s: Sequence[builtins.str]):
         """
-        :param Sequence[builtins.str] service_cidrsv4s: Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+        :param Sequence[builtins.str] service_cidrsv4s: IPv4 private network address exposed by Kubernetes Service.
         """
         pulumi.set(__self__, "service_cidrsv4s", service_cidrsv4s)
 
@@ -5694,7 +5694,7 @@ class GetClusterServicesConfigResult(dict):
     @pulumi.getter(name="serviceCidrsv4s")
     def service_cidrsv4s(self) -> Sequence[builtins.str]:
         """
-        Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+        IPv4 private network address exposed by Kubernetes Service.
         """
         return pulumi.get(self, "service_cidrsv4s")
 
@@ -5705,8 +5705,8 @@ class GetClusterStatusResult(dict):
                  conditions: Sequence['outputs.GetClusterStatusConditionResult'],
                  phase: builtins.str):
         """
-        :param Sequence['GetClusterStatusConditionArgs'] conditions: 状态条件列表
-        :param builtins.str phase: 集群状态阶段
+        :param Sequence['GetClusterStatusConditionArgs'] conditions: Status condition list
+        :param builtins.str phase: Cluster status phase.
         """
         pulumi.set(__self__, "conditions", conditions)
         pulumi.set(__self__, "phase", phase)
@@ -5715,7 +5715,7 @@ class GetClusterStatusResult(dict):
     @pulumi.getter
     def conditions(self) -> Sequence['outputs.GetClusterStatusConditionResult']:
         """
-        状态条件列表
+        Status condition list
         """
         return pulumi.get(self, "conditions")
 
@@ -5723,7 +5723,7 @@ class GetClusterStatusResult(dict):
     @pulumi.getter
     def phase(self) -> builtins.str:
         """
-        集群状态阶段
+        Cluster status phase.
         """
         return pulumi.get(self, "phase")
 
@@ -5733,7 +5733,7 @@ class GetClusterStatusConditionResult(dict):
     def __init__(__self__, *,
                  type: builtins.str):
         """
-        :param builtins.str type: 条件类型
+        :param builtins.str type: Condition type
         """
         pulumi.set(__self__, "type", type)
 
@@ -5741,7 +5741,7 @@ class GetClusterStatusConditionResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        条件类型
+        Condition type
         """
         return pulumi.get(self, "type")
 
@@ -5752,8 +5752,8 @@ class GetClusterTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -5762,7 +5762,7 @@ class GetClusterTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -5770,7 +5770,7 @@ class GetClusterTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -5786,13 +5786,13 @@ class GetDefaultNodePoolAutoScalingResult(dict):
                  scaling_group_id: builtins.str,
                  subnet_policy: builtins.str):
         """
-        :param builtins.int desired_replicas: 配置节点池的期望节点数。
-        :param builtins.bool enabled: 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
-        :param builtins.int max_replicas: 配置节点池的最大节点数。
-        :param builtins.int min_replicas: 配置节点池的最小节点数。
-        :param builtins.int priority: 优先级。
-        :param builtins.str scaling_group_id: 伸缩组ID。
-        :param builtins.str subnet_policy: 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+        :param builtins.int desired_replicas: Configure the desired number of nodes in the node pool.
+        :param builtins.bool enabled: Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
+        :param builtins.int max_replicas: Configure the maximum number of nodes in the node pool
+        :param builtins.int min_replicas: Configure the minimum number of nodes in the node pool
+        :param builtins.int priority: Priority
+        :param builtins.str scaling_group_id: Scaling group ID
+        :param builtins.str subnet_policy: Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
         """
         pulumi.set(__self__, "desired_replicas", desired_replicas)
         pulumi.set(__self__, "enabled", enabled)
@@ -5806,7 +5806,7 @@ class GetDefaultNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="desiredReplicas")
     def desired_replicas(self) -> builtins.int:
         """
-        配置节点池的期望节点数。
+        Configure the desired number of nodes in the node pool.
         """
         return pulumi.get(self, "desired_replicas")
 
@@ -5814,7 +5814,7 @@ class GetDefaultNodePoolAutoScalingResult(dict):
     @pulumi.getter
     def enabled(self) -> builtins.bool:
         """
-        配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+        Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
         """
         return pulumi.get(self, "enabled")
 
@@ -5822,7 +5822,7 @@ class GetDefaultNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="maxReplicas")
     def max_replicas(self) -> builtins.int:
         """
-        配置节点池的最大节点数。
+        Configure the maximum number of nodes in the node pool
         """
         return pulumi.get(self, "max_replicas")
 
@@ -5830,7 +5830,7 @@ class GetDefaultNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="minReplicas")
     def min_replicas(self) -> builtins.int:
         """
-        配置节点池的最小节点数。
+        Configure the minimum number of nodes in the node pool
         """
         return pulumi.get(self, "min_replicas")
 
@@ -5838,7 +5838,7 @@ class GetDefaultNodePoolAutoScalingResult(dict):
     @pulumi.getter
     def priority(self) -> builtins.int:
         """
-        优先级。
+        Priority
         """
         return pulumi.get(self, "priority")
 
@@ -5846,7 +5846,7 @@ class GetDefaultNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="scalingGroupId")
     def scaling_group_id(self) -> builtins.str:
         """
-        伸缩组ID。
+        Scaling group ID
         """
         return pulumi.get(self, "scaling_group_id")
 
@@ -5854,7 +5854,7 @@ class GetDefaultNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="subnetPolicy")
     def subnet_policy(self) -> builtins.str:
         """
-        节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+        Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
         """
         return pulumi.get(self, "subnet_policy")
 
@@ -5871,14 +5871,14 @@ class GetDefaultNodePoolKubernetesConfigResult(dict):
                  name_use_hostname: builtins.bool,
                  taints: Sequence['outputs.GetDefaultNodePoolKubernetesConfigTaintResult']):
         """
-        :param builtins.bool auto_sync_disabled: 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
-        :param builtins.bool cordon: 封锁节点配置，参数值说明：false：不封锁。true：封锁。
-        :param 'GetDefaultNodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Kubelet 组件的相关配置
-        :param Sequence['GetDefaultNodePoolKubernetesConfigLabelArgs'] labels: 节点池/节点的 Kubernetes 标签（Labels）信息。
-        :param builtins.str name_prefix: Kubernetes 中节点对象的元数据名称前缀。
-        :param builtins.str name_suffix: Kubernetes 中节点对象的元数据名称后缀。
-        :param builtins.bool name_use_hostname: Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
-        :param Sequence['GetDefaultNodePoolKubernetesConfigTaintArgs'] taints: 节点池/节点的 Kubernetes 污点（Taints）信息。
+        :param builtins.bool auto_sync_disabled: Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
+        :param builtins.bool cordon: Node blocking configuration. Parameter value description: false: not blocked. true: blocked
+        :param 'GetDefaultNodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Kubelet component configuration
+        :param Sequence['GetDefaultNodePoolKubernetesConfigLabelArgs'] labels: Kubernetes label information for node pool/node
+        :param builtins.str name_prefix: Prefix of the metadata name for node objects in Kubernetes.
+        :param builtins.str name_suffix: Suffix of the metadata name for node objects in Kubernetes.
+        :param builtins.bool name_use_hostname: Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
+        :param Sequence['GetDefaultNodePoolKubernetesConfigTaintArgs'] taints: Kubernetes taint information for the node pool/node
         """
         pulumi.set(__self__, "auto_sync_disabled", auto_sync_disabled)
         pulumi.set(__self__, "cordon", cordon)
@@ -5893,7 +5893,7 @@ class GetDefaultNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="autoSyncDisabled")
     def auto_sync_disabled(self) -> builtins.bool:
         """
-        是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+        Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
         """
         return pulumi.get(self, "auto_sync_disabled")
 
@@ -5901,7 +5901,7 @@ class GetDefaultNodePoolKubernetesConfigResult(dict):
     @pulumi.getter
     def cordon(self) -> builtins.bool:
         """
-        封锁节点配置，参数值说明：false：不封锁。true：封锁。
+        Node blocking configuration. Parameter value description: false: not blocked. true: blocked
         """
         return pulumi.get(self, "cordon")
 
@@ -5909,7 +5909,7 @@ class GetDefaultNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="kubeletConfig")
     def kubelet_config(self) -> 'outputs.GetDefaultNodePoolKubernetesConfigKubeletConfigResult':
         """
-        Kubelet 组件的相关配置
+        Kubelet component configuration
         """
         return pulumi.get(self, "kubelet_config")
 
@@ -5917,7 +5917,7 @@ class GetDefaultNodePoolKubernetesConfigResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence['outputs.GetDefaultNodePoolKubernetesConfigLabelResult']:
         """
-        节点池/节点的 Kubernetes 标签（Labels）信息。
+        Kubernetes label information for node pool/node
         """
         return pulumi.get(self, "labels")
 
@@ -5925,7 +5925,7 @@ class GetDefaultNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="namePrefix")
     def name_prefix(self) -> builtins.str:
         """
-        Kubernetes 中节点对象的元数据名称前缀。
+        Prefix of the metadata name for node objects in Kubernetes.
         """
         return pulumi.get(self, "name_prefix")
 
@@ -5933,7 +5933,7 @@ class GetDefaultNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="nameSuffix")
     def name_suffix(self) -> builtins.str:
         """
-        Kubernetes 中节点对象的元数据名称后缀。
+        Suffix of the metadata name for node objects in Kubernetes.
         """
         return pulumi.get(self, "name_suffix")
 
@@ -5941,7 +5941,7 @@ class GetDefaultNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="nameUseHostname")
     def name_use_hostname(self) -> builtins.bool:
         """
-        Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+        Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
         """
         return pulumi.get(self, "name_use_hostname")
 
@@ -5949,7 +5949,7 @@ class GetDefaultNodePoolKubernetesConfigResult(dict):
     @pulumi.getter
     def taints(self) -> Sequence['outputs.GetDefaultNodePoolKubernetesConfigTaintResult']:
         """
-        节点池/节点的 Kubernetes 污点（Taints）信息。
+        Kubernetes taint information for the node pool/node
         """
         return pulumi.get(self, "taints")
 
@@ -5970,18 +5970,18 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigResult(dict):
                  topology_manager_policy: builtins.str,
                  topology_manager_scope: builtins.str):
         """
-        :param builtins.str cpu_manager_policy: 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
-        :param 'GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs' feature_gates: 特性门控。
-        :param builtins.int kube_api_burst: 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
-        :param builtins.int kube_api_qps: 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
-        :param Sequence['GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs'] kube_reserveds: 节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
-        :param builtins.int max_pods: 配置 kubelet 支持的最大 Pod 数量
-        :param builtins.int registry_burst: 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
-        :param builtins.int registry_pull_qps: 可用来限制镜像仓库的 QPS 上限
-        :param builtins.bool serialize_image_pulls: 逐一拉取镜像。
-        :param Sequence['GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs'] system_reserveds: 节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
-        :param builtins.str topology_manager_policy: 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
-        :param builtins.str topology_manager_scope: 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+        :param builtins.str cpu_manager_policy: Configure kubelet's CpuManagerPolicy. Includes none and static strategies
+        :param 'GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs' feature_gates: Feature gate.
+        :param builtins.int kube_api_burst: Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
+        :param builtins.int kube_api_qps: Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
+        :param Sequence['GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs'] kube_reserveds: Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
+        :param builtins.int max_pods: Configure the maximum number of Pods supported by kubelet
+        :param builtins.int registry_burst: Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+        :param builtins.int registry_pull_qps: Can be used to limit the QPS cap for the image repository
+        :param builtins.bool serialize_image_pulls: Pull images one by one
+        :param Sequence['GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs'] system_reserveds: Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
+        :param builtins.str topology_manager_policy: Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
+        :param builtins.str topology_manager_scope: Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
         """
         pulumi.set(__self__, "cpu_manager_policy", cpu_manager_policy)
         pulumi.set(__self__, "feature_gates", feature_gates)
@@ -6000,7 +6000,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="cpuManagerPolicy")
     def cpu_manager_policy(self) -> builtins.str:
         """
-        配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+        Configure kubelet's CpuManagerPolicy. Includes none and static strategies
         """
         return pulumi.get(self, "cpu_manager_policy")
 
@@ -6008,7 +6008,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="featureGates")
     def feature_gates(self) -> 'outputs.GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesResult':
         """
-        特性门控。
+        Feature gate.
         """
         return pulumi.get(self, "feature_gates")
 
@@ -6016,7 +6016,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="kubeApiBurst")
     def kube_api_burst(self) -> builtins.int:
         """
-        每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+        Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
         """
         return pulumi.get(self, "kube_api_burst")
 
@@ -6024,7 +6024,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="kubeApiQps")
     def kube_api_qps(self) -> builtins.int:
         """
-        与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+        Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
         """
         return pulumi.get(self, "kube_api_qps")
 
@@ -6032,7 +6032,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="kubeReserveds")
     def kube_reserveds(self) -> Sequence['outputs.GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedResult']:
         """
-        节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+        Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
         """
         return pulumi.get(self, "kube_reserveds")
 
@@ -6040,7 +6040,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="maxPods")
     def max_pods(self) -> builtins.int:
         """
-        配置 kubelet 支持的最大 Pod 数量
+        Configure the maximum number of Pods supported by kubelet
         """
         return pulumi.get(self, "max_pods")
 
@@ -6048,7 +6048,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="registryBurst")
     def registry_burst(self) -> builtins.int:
         """
-        设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+        Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
         """
         return pulumi.get(self, "registry_burst")
 
@@ -6056,7 +6056,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="registryPullQps")
     def registry_pull_qps(self) -> builtins.int:
         """
-        可用来限制镜像仓库的 QPS 上限
+        Can be used to limit the QPS cap for the image repository
         """
         return pulumi.get(self, "registry_pull_qps")
 
@@ -6064,7 +6064,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="serializeImagePulls")
     def serialize_image_pulls(self) -> builtins.bool:
         """
-        逐一拉取镜像。
+        Pull images one by one
         """
         return pulumi.get(self, "serialize_image_pulls")
 
@@ -6072,7 +6072,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="systemReserveds")
     def system_reserveds(self) -> Sequence['outputs.GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedResult']:
         """
-        节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+        Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
         """
         return pulumi.get(self, "system_reserveds")
 
@@ -6080,7 +6080,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="topologyManagerPolicy")
     def topology_manager_policy(self) -> builtins.str:
         """
-        拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+        Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
         """
         return pulumi.get(self, "topology_manager_policy")
 
@@ -6088,7 +6088,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="topologyManagerScope")
     def topology_manager_scope(self) -> builtins.str:
         """
-        拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+        Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
         """
         return pulumi.get(self, "topology_manager_scope")
 
@@ -6099,8 +6099,8 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesResult(dict):
                  in_place_pod_vertical_scaling: builtins.bool,
                  qo_s_resource_manager: builtins.bool):
         """
-        :param builtins.bool in_place_pod_vertical_scaling: 是否开启特性开关本地垂直Pod伸缩
-        :param builtins.bool qo_s_resource_manager: 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+        :param builtins.bool in_place_pod_vertical_scaling: Whether to enable the feature switch for local vertical Pod autoscaling
+        :param builtins.bool qo_s_resource_manager: Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
         """
         pulumi.set(__self__, "in_place_pod_vertical_scaling", in_place_pod_vertical_scaling)
         pulumi.set(__self__, "qo_s_resource_manager", qo_s_resource_manager)
@@ -6109,7 +6109,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesResult(dict):
     @pulumi.getter(name="inPlacePodVerticalScaling")
     def in_place_pod_vertical_scaling(self) -> builtins.bool:
         """
-        是否开启特性开关本地垂直Pod伸缩
+        Whether to enable the feature switch for local vertical Pod autoscaling
         """
         return pulumi.get(self, "in_place_pod_vertical_scaling")
 
@@ -6117,7 +6117,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesResult(dict):
     @pulumi.getter(name="qoSResourceManager")
     def qo_s_resource_manager(self) -> builtins.bool:
         """
-        是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+        Enable QoSResourceManager feature switch. Options:   - true to enable   - false to disable
         """
         return pulumi.get(self, "qo_s_resource_manager")
 
@@ -6128,8 +6128,8 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedResult(dict):
                  name: builtins.str,
                  quantity: builtins.str):
         """
-        :param builtins.str name: 资源名称，取值为 cpu 或 memory。
-        :param builtins.str quantity: 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+        :param builtins.str name: Resource name. Values: cpu or memory
+        :param builtins.str quantity: Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "quantity", quantity)
@@ -6138,7 +6138,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        资源名称，取值为 cpu 或 memory。
+        Resource name. Values: cpu or memory
         """
         return pulumi.get(self, "name")
 
@@ -6146,7 +6146,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedResult(dict):
     @pulumi.getter
     def quantity(self) -> builtins.str:
         """
-        指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+        Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
         """
         return pulumi.get(self, "quantity")
 
@@ -6157,8 +6157,8 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedResult(dict):
                  name: builtins.str,
                  quantity: builtins.str):
         """
-        :param builtins.str name: 资源名称，取值为 cpu 或 memory。
-        :param builtins.str quantity: 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+        :param builtins.str name: Resource name. Values: cpu or memory.
+        :param builtins.str quantity: Resource quantity for the specified resource.   - For cpu, example value: 200m   - For memory, example value: 1G
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "quantity", quantity)
@@ -6167,7 +6167,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        资源名称，取值为 cpu 或 memory。
+        Resource name. Values: cpu or memory.
         """
         return pulumi.get(self, "name")
 
@@ -6175,7 +6175,7 @@ class GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedResult(dict):
     @pulumi.getter
     def quantity(self) -> builtins.str:
         """
-        指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+        Resource quantity for the specified resource.   - For cpu, example value: 200m   - For memory, example value: 1G
         """
         return pulumi.get(self, "quantity")
 
@@ -6186,8 +6186,8 @@ class GetDefaultNodePoolKubernetesConfigLabelResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Label key.
+        :param builtins.str value: Label value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -6196,7 +6196,7 @@ class GetDefaultNodePoolKubernetesConfigLabelResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Label key.
         """
         return pulumi.get(self, "key")
 
@@ -6204,7 +6204,7 @@ class GetDefaultNodePoolKubernetesConfigLabelResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Label value
         """
         return pulumi.get(self, "value")
 
@@ -6216,9 +6216,9 @@ class GetDefaultNodePoolKubernetesConfigTaintResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str effect: 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
-        :param builtins.str key: 污点键。
-        :param builtins.str value: 污点值。
+        :param builtins.str effect: Taint effect. Values: NoSchedule (default): do not schedule. NoExecute: evict pods that do not tolerate the taint. PreferNoSchedule: avoid scheduling if possible.
+        :param builtins.str key: Taint key
+        :param builtins.str value: Taint value
         """
         pulumi.set(__self__, "effect", effect)
         pulumi.set(__self__, "key", key)
@@ -6228,7 +6228,7 @@ class GetDefaultNodePoolKubernetesConfigTaintResult(dict):
     @pulumi.getter
     def effect(self) -> builtins.str:
         """
-        污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+        Taint effect. Values: NoSchedule (default): do not schedule. NoExecute: evict pods that do not tolerate the taint. PreferNoSchedule: avoid scheduling if possible.
         """
         return pulumi.get(self, "effect")
 
@@ -6236,7 +6236,7 @@ class GetDefaultNodePoolKubernetesConfigTaintResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        污点键。
+        Taint key
         """
         return pulumi.get(self, "key")
 
@@ -6244,7 +6244,7 @@ class GetDefaultNodePoolKubernetesConfigTaintResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        污点值。
+        Taint value
         """
         return pulumi.get(self, "value")
 
@@ -6255,8 +6255,8 @@ class GetDefaultNodePoolManagementResult(dict):
                  enabled: builtins.bool,
                  remedy_config: 'outputs.GetDefaultNodePoolManagementRemedyConfigResult'):
         """
-        :param builtins.bool enabled: 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
-        :param 'GetDefaultNodePoolManagementRemedyConfigArgs' remedy_config: 检查自愈配置。
+        :param builtins.bool enabled: Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
+        :param 'GetDefaultNodePoolManagementRemedyConfigArgs' remedy_config: Check self-healing configuration.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "remedy_config", remedy_config)
@@ -6265,7 +6265,7 @@ class GetDefaultNodePoolManagementResult(dict):
     @pulumi.getter
     def enabled(self) -> builtins.bool:
         """
-        节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+        Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
         """
         return pulumi.get(self, "enabled")
 
@@ -6273,7 +6273,7 @@ class GetDefaultNodePoolManagementResult(dict):
     @pulumi.getter(name="remedyConfig")
     def remedy_config(self) -> 'outputs.GetDefaultNodePoolManagementRemedyConfigResult':
         """
-        检查自愈配置。
+        Check self-healing configuration.
         """
         return pulumi.get(self, "remedy_config")
 
@@ -6284,8 +6284,8 @@ class GetDefaultNodePoolManagementRemedyConfigResult(dict):
                  enabled: builtins.bool,
                  remedy_id: builtins.str):
         """
-        :param builtins.bool enabled: 是否开启检查自愈。
-        :param builtins.str remedy_id: 检查自愈规则ID。
+        :param builtins.bool enabled: Enable self-healing check
+        :param builtins.str remedy_id: Self-healing rule ID
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "remedy_id", remedy_id)
@@ -6294,7 +6294,7 @@ class GetDefaultNodePoolManagementRemedyConfigResult(dict):
     @pulumi.getter
     def enabled(self) -> builtins.bool:
         """
-        是否开启检查自愈。
+        Enable self-healing check
         """
         return pulumi.get(self, "enabled")
 
@@ -6302,7 +6302,7 @@ class GetDefaultNodePoolManagementRemedyConfigResult(dict):
     @pulumi.getter(name="remedyId")
     def remedy_id(self) -> builtins.str:
         """
-        检查自愈规则ID。
+        Self-healing rule ID
         """
         return pulumi.get(self, "remedy_id")
 
@@ -6337,32 +6337,32 @@ class GetDefaultNodePoolNodeConfigResult(dict):
                  system_volume: 'outputs.GetDefaultNodePoolNodeConfigSystemVolumeResult',
                  tags: Sequence['outputs.GetDefaultNodePoolNodeConfigTagResult']):
         """
-        :param builtins.bool additional_container_storage_enabled: 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
-        :param builtins.bool auto_renew: 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
-        :param builtins.int auto_renew_period: 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
-        :param Sequence['GetDefaultNodePoolNodeConfigDataVolumeArgs'] data_volumes: 节点的数据盘配置。
-        :param builtins.int deployment_set_group_number: 实例在部署集中的分组号，0表示未设置
-        :param builtins.str deployment_set_id: 实例需要加入的部署集ID
-        :param builtins.str hostname: 节点对应的主机名称。
-        :param Sequence[builtins.str] hpc_cluster_ids: 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
-        :param builtins.str image_id: 节点对应云服务器所使用的镜像 ID。
-        :param builtins.str initialize_script: 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
-        :param builtins.str instance_charge_type: 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
-        :param builtins.str instance_name: 节点（实例）名称。
-        :param Sequence[builtins.str] instance_type_ids: 节点对应的云服务器实例规格 ID 列表。
-        :param 'GetDefaultNodePoolNodeConfigInstancesDistributionArgs' instances_distribution: 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
-        :param builtins.str name_prefix: 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
-        :param builtins.str network_traffic_mode: 节点间的网络通讯模式。
-        :param builtins.int period: 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
-        :param builtins.str pre_script: 部署节点前执行脚本。
-        :param builtins.str project_name: ECS所属项目，一个ECS只能归属于一个项目。
-        :param 'GetDefaultNodePoolNodeConfigPublicAccessConfigArgs' public_access_config: 节点自动开启公网访问的配置信息
-        :param builtins.bool public_access_enabled: 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
-        :param 'GetDefaultNodePoolNodeConfigSecurityArgs' security: 节点安全配置。
-        :param builtins.str spot_strategy: 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
-        :param Sequence[builtins.str] subnet_ids: 节点网络所属的子网 ID 列表。
-        :param 'GetDefaultNodePoolNodeConfigSystemVolumeArgs' system_volume: 节点的系统盘配置。
-        :param Sequence['GetDefaultNodePoolNodeConfigTagArgs'] tags: 节点池配置的标签信息
+        :param builtins.bool additional_container_storage_enabled: Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
+        :param builtins.bool auto_renew: Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+        :param builtins.int auto_renew_period: Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
+        :param Sequence['GetDefaultNodePoolNodeConfigDataVolumeArgs'] data_volumes: Data disk configuration for the node
+        :param builtins.int deployment_set_group_number: Group number of the instance in the deployment set. 0 means not set
+        :param builtins.str deployment_set_id: Deployment set ID to be added to the instance
+        :param builtins.str hostname: Host name corresponding to the node
+        :param Sequence[builtins.str] hpc_cluster_ids: High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+        :param builtins.str image_id: Image ID used by the cloud server corresponding to the node
+        :param builtins.str initialize_script: Custom script executed after creating and initializing the node. Shell script in Base64 encoding
+        :param builtins.str instance_charge_type: Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+        :param builtins.str instance_name: Node (instance) name
+        :param Sequence[builtins.str] instance_type_ids: List of cloud server instance type IDs corresponding to the node
+        :param 'GetDefaultNodePoolNodeConfigInstancesDistributionArgs' instances_distribution: Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
+        :param builtins.str name_prefix: Node name prefix. An empty string or nil means the node name prefix policy is not enabled
+        :param builtins.str network_traffic_mode: Network communication mode between nodes
+        :param builtins.int period: Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
+        :param builtins.str pre_script: Script executed before deploying nodes
+        :param builtins.str project_name: The project to which the ECS belongs. Each ECS can only belong to one project.
+        :param 'GetDefaultNodePoolNodeConfigPublicAccessConfigArgs' public_access_config: Configuration for automatic public network access for nodes
+        :param builtins.bool public_access_enabled: Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
+        :param 'GetDefaultNodePoolNodeConfigSecurityArgs' security: Node security configuration.
+        :param builtins.str spot_strategy: Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
+        :param Sequence[builtins.str] subnet_ids: List of subnet IDs to which the node network belongs.
+        :param 'GetDefaultNodePoolNodeConfigSystemVolumeArgs' system_volume: System disk configuration for the node
+        :param Sequence['GetDefaultNodePoolNodeConfigTagArgs'] tags: Label information configured for the node pool
         """
         pulumi.set(__self__, "additional_container_storage_enabled", additional_container_storage_enabled)
         pulumi.set(__self__, "auto_renew", auto_renew)
@@ -6395,7 +6395,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="additionalContainerStorageEnabled")
     def additional_container_storage_enabled(self) -> builtins.bool:
         """
-        节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+        Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
         """
         return pulumi.get(self, "additional_container_storage_enabled")
 
@@ -6403,7 +6403,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> builtins.bool:
         """
-        云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+        Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -6411,7 +6411,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="autoRenewPeriod")
     def auto_renew_period(self) -> builtins.int:
         """
-        云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+        Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
         """
         return pulumi.get(self, "auto_renew_period")
 
@@ -6419,7 +6419,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="dataVolumes")
     def data_volumes(self) -> Sequence['outputs.GetDefaultNodePoolNodeConfigDataVolumeResult']:
         """
-        节点的数据盘配置。
+        Data disk configuration for the node
         """
         return pulumi.get(self, "data_volumes")
 
@@ -6427,7 +6427,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> builtins.int:
         """
-        实例在部署集中的分组号，0表示未设置
+        Group number of the instance in the deployment set. 0 means not set
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -6435,7 +6435,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> builtins.str:
         """
-        实例需要加入的部署集ID
+        Deployment set ID to be added to the instance
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -6443,7 +6443,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter
     def hostname(self) -> builtins.str:
         """
-        节点对应的主机名称。
+        Host name corresponding to the node
         """
         return pulumi.get(self, "hostname")
 
@@ -6451,7 +6451,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="hpcClusterIds")
     def hpc_cluster_ids(self) -> Sequence[builtins.str]:
         """
-        高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+        High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
         """
         return pulumi.get(self, "hpc_cluster_ids")
 
@@ -6459,7 +6459,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> builtins.str:
         """
-        节点对应云服务器所使用的镜像 ID。
+        Image ID used by the cloud server corresponding to the node
         """
         return pulumi.get(self, "image_id")
 
@@ -6467,7 +6467,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="initializeScript")
     def initialize_script(self) -> builtins.str:
         """
-        创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+        Custom script executed after creating and initializing the node. Shell script in Base64 encoding
         """
         return pulumi.get(self, "initialize_script")
 
@@ -6475,7 +6475,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> builtins.str:
         """
-        云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+        Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -6483,7 +6483,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> builtins.str:
         """
-        节点（实例）名称。
+        Node (instance) name
         """
         return pulumi.get(self, "instance_name")
 
@@ -6491,7 +6491,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="instanceTypeIds")
     def instance_type_ids(self) -> Sequence[builtins.str]:
         """
-        节点对应的云服务器实例规格 ID 列表。
+        List of cloud server instance type IDs corresponding to the node
         """
         return pulumi.get(self, "instance_type_ids")
 
@@ -6499,7 +6499,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="instancesDistribution")
     def instances_distribution(self) -> 'outputs.GetDefaultNodePoolNodeConfigInstancesDistributionResult':
         """
-        设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+        Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
         """
         return pulumi.get(self, "instances_distribution")
 
@@ -6507,7 +6507,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="namePrefix")
     def name_prefix(self) -> builtins.str:
         """
-        节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+        Node name prefix. An empty string or nil means the node name prefix policy is not enabled
         """
         return pulumi.get(self, "name_prefix")
 
@@ -6515,7 +6515,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="networkTrafficMode")
     def network_traffic_mode(self) -> builtins.str:
         """
-        节点间的网络通讯模式。
+        Network communication mode between nodes
         """
         return pulumi.get(self, "network_traffic_mode")
 
@@ -6523,7 +6523,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter
     def period(self) -> builtins.int:
         """
-        云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+        Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
         """
         return pulumi.get(self, "period")
 
@@ -6531,7 +6531,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="preScript")
     def pre_script(self) -> builtins.str:
         """
-        部署节点前执行脚本。
+        Script executed before deploying nodes
         """
         return pulumi.get(self, "pre_script")
 
@@ -6539,7 +6539,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        ECS所属项目，一个ECS只能归属于一个项目。
+        The project to which the ECS belongs. Each ECS can only belong to one project.
         """
         return pulumi.get(self, "project_name")
 
@@ -6547,7 +6547,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="publicAccessConfig")
     def public_access_config(self) -> 'outputs.GetDefaultNodePoolNodeConfigPublicAccessConfigResult':
         """
-        节点自动开启公网访问的配置信息
+        Configuration for automatic public network access for nodes
         """
         return pulumi.get(self, "public_access_config")
 
@@ -6555,7 +6555,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="publicAccessEnabled")
     def public_access_enabled(self) -> builtins.bool:
         """
-        节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+        Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
         """
         return pulumi.get(self, "public_access_enabled")
 
@@ -6563,7 +6563,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter
     def security(self) -> 'outputs.GetDefaultNodePoolNodeConfigSecurityResult':
         """
-        节点安全配置。
+        Node security configuration.
         """
         return pulumi.get(self, "security")
 
@@ -6571,7 +6571,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> builtins.str:
         """
-        按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+        Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -6579,7 +6579,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Sequence[builtins.str]:
         """
-        节点网络所属的子网 ID 列表。
+        List of subnet IDs to which the node network belongs.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -6587,7 +6587,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="systemVolume")
     def system_volume(self) -> 'outputs.GetDefaultNodePoolNodeConfigSystemVolumeResult':
         """
-        节点的系统盘配置。
+        System disk configuration for the node
         """
         return pulumi.get(self, "system_volume")
 
@@ -6595,7 +6595,7 @@ class GetDefaultNodePoolNodeConfigResult(dict):
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetDefaultNodePoolNodeConfigTagResult']:
         """
-        节点池配置的标签信息
+        Label information configured for the node pool
         """
         return pulumi.get(self, "tags")
 
@@ -6611,13 +6611,13 @@ class GetDefaultNodePoolNodeConfigDataVolumeResult(dict):
                  subgroup_number: builtins.int,
                  type: builtins.str):
         """
-        :param builtins.str file_system: 文件系统，取值：  - Ext4 (默认值)  - Xfs
-        :param builtins.str mount_point: 磁盘格式化后的目标挂载目录。
-        :param builtins.str placement_group_id: 放置组Id
-        :param builtins.int size: 磁盘容量，单位 GiB。
-        :param builtins.str snapshot_id: 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
-        :param builtins.int subgroup_number: 放置子组
-        :param builtins.str type: 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        :param builtins.str file_system: File system. Options:   - Ext4 (default)   - Xfs
+        :param builtins.str mount_point: Target mount directory after disk formatting.
+        :param builtins.str placement_group_id: Placement group ID
+        :param builtins.int size: Disk capacity, in GiB
+        :param builtins.str snapshot_id: Create a data disk using a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSD and efficient cloud disks support creating disks from snapshots. Only snapshots in 'available' status can be used to create new disks; snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks
+        :param builtins.int subgroup_number: Placement subgroup
+        :param builtins.str type: Disk type: ESSD*PL0: ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD cloud disk with performance level PL1.
         """
         pulumi.set(__self__, "file_system", file_system)
         pulumi.set(__self__, "mount_point", mount_point)
@@ -6631,7 +6631,7 @@ class GetDefaultNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="fileSystem")
     def file_system(self) -> builtins.str:
         """
-        文件系统，取值：  - Ext4 (默认值)  - Xfs
+        File system. Options:   - Ext4 (default)   - Xfs
         """
         return pulumi.get(self, "file_system")
 
@@ -6639,7 +6639,7 @@ class GetDefaultNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="mountPoint")
     def mount_point(self) -> builtins.str:
         """
-        磁盘格式化后的目标挂载目录。
+        Target mount directory after disk formatting.
         """
         return pulumi.get(self, "mount_point")
 
@@ -6647,7 +6647,7 @@ class GetDefaultNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="placementGroupId")
     def placement_group_id(self) -> builtins.str:
         """
-        放置组Id
+        Placement group ID
         """
         return pulumi.get(self, "placement_group_id")
 
@@ -6655,7 +6655,7 @@ class GetDefaultNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        磁盘容量，单位 GiB。
+        Disk capacity, in GiB
         """
         return pulumi.get(self, "size")
 
@@ -6663,7 +6663,7 @@ class GetDefaultNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> builtins.str:
         """
-        使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+        Create a data disk using a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSD and efficient cloud disks support creating disks from snapshots. Only snapshots in 'available' status can be used to create new disks; snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -6671,7 +6671,7 @@ class GetDefaultNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="subgroupNumber")
     def subgroup_number(self) -> builtins.int:
         """
-        放置子组
+        Placement subgroup
         """
         return pulumi.get(self, "subgroup_number")
 
@@ -6679,7 +6679,7 @@ class GetDefaultNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        Disk type: ESSD*PL0: ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD cloud disk with performance level PL1.
         """
         return pulumi.get(self, "type")
 
@@ -6692,10 +6692,10 @@ class GetDefaultNodePoolNodeConfigInstancesDistributionResult(dict):
                  on_demand_base_capacity: builtins.int,
                  on_demand_percentage_above_base_capacity: builtins.int):
         """
-        :param builtins.bool capacity_rebalance: 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
-        :param builtins.bool compensate_with_on_demand: 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
-        :param builtins.int on_demand_base_capacity: 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
-        :param builtins.int on_demand_percentage_above_base_capacity: 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+        :param builtins.bool capacity_rebalance: Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, a new preemptible instance is proactively created for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count.
+        :param builtins.bool compensate_with_on_demand: Pay-as-you-go instance fallback feature. Value range:   - true: enables this feature. If all preemptible instances fail to purchase due to insufficient inventory, pay-as-you-go instances will be attempted   - false (default): disables this feature. When scaling preemptible instances, only the configured preemptible instances are attempted
+        :param builtins.int on_demand_base_capacity: Base capacity size. The base capacity is always pay-as-you-go instances. Value range: [0,500], default: 0
+        :param builtins.int on_demand_percentage_above_base_capacity: Proportion of pay-as-you-go instances for capacity exceeding the base capacity. Value range [0, 100]. 0 means only preemptible instances are produced for excess capacity; 100 means only pay-as-you-go instances are produced. Default is 0.
         """
         pulumi.set(__self__, "capacity_rebalance", capacity_rebalance)
         pulumi.set(__self__, "compensate_with_on_demand", compensate_with_on_demand)
@@ -6706,7 +6706,7 @@ class GetDefaultNodePoolNodeConfigInstancesDistributionResult(dict):
     @pulumi.getter(name="capacityRebalance")
     def capacity_rebalance(self) -> builtins.bool:
         """
-        容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+        Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, a new preemptible instance is proactively created for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count.
         """
         return pulumi.get(self, "capacity_rebalance")
 
@@ -6714,7 +6714,7 @@ class GetDefaultNodePoolNodeConfigInstancesDistributionResult(dict):
     @pulumi.getter(name="compensateWithOnDemand")
     def compensate_with_on_demand(self) -> builtins.bool:
         """
-        按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+        Pay-as-you-go instance fallback feature. Value range:   - true: enables this feature. If all preemptible instances fail to purchase due to insufficient inventory, pay-as-you-go instances will be attempted   - false (default): disables this feature. When scaling preemptible instances, only the configured preemptible instances are attempted
         """
         return pulumi.get(self, "compensate_with_on_demand")
 
@@ -6722,7 +6722,7 @@ class GetDefaultNodePoolNodeConfigInstancesDistributionResult(dict):
     @pulumi.getter(name="onDemandBaseCapacity")
     def on_demand_base_capacity(self) -> builtins.int:
         """
-        基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+        Base capacity size. The base capacity is always pay-as-you-go instances. Value range: [0,500], default: 0
         """
         return pulumi.get(self, "on_demand_base_capacity")
 
@@ -6730,7 +6730,7 @@ class GetDefaultNodePoolNodeConfigInstancesDistributionResult(dict):
     @pulumi.getter(name="onDemandPercentageAboveBaseCapacity")
     def on_demand_percentage_above_base_capacity(self) -> builtins.int:
         """
-        超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+        Proportion of pay-as-you-go instances for capacity exceeding the base capacity. Value range [0, 100]. 0 means only preemptible instances are produced for excess capacity; 100 means only pay-as-you-go instances are produced. Default is 0.
         """
         return pulumi.get(self, "on_demand_percentage_above_base_capacity")
 
@@ -6742,9 +6742,9 @@ class GetDefaultNodePoolNodeConfigPublicAccessConfigResult(dict):
                  billing_type: builtins.int,
                  isp: builtins.str):
         """
-        :param builtins.int bandwidth: 公网 IP 的带宽峰值，单位：Mbps。
-        :param builtins.int billing_type: 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
-        :param builtins.str isp: 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+        :param builtins.int bandwidth: Peak bandwidth for the public IP, unit: Mbps
+        :param builtins.int billing_type: Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
+        :param builtins.str isp: Public IP line type. Parameter description: BGP: BGP (multi-line)
         """
         pulumi.set(__self__, "bandwidth", bandwidth)
         pulumi.set(__self__, "billing_type", billing_type)
@@ -6754,7 +6754,7 @@ class GetDefaultNodePoolNodeConfigPublicAccessConfigResult(dict):
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        公网 IP 的带宽峰值，单位：Mbps。
+        Peak bandwidth for the public IP, unit: Mbps
         """
         return pulumi.get(self, "bandwidth")
 
@@ -6762,7 +6762,7 @@ class GetDefaultNodePoolNodeConfigPublicAccessConfigResult(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.int:
         """
-        公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+        Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
         """
         return pulumi.get(self, "billing_type")
 
@@ -6770,7 +6770,7 @@ class GetDefaultNodePoolNodeConfigPublicAccessConfigResult(dict):
     @pulumi.getter
     def isp(self) -> builtins.str:
         """
-        公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+        Public IP line type. Parameter description: BGP: BGP (multi-line)
         """
         return pulumi.get(self, "isp")
 
@@ -6783,10 +6783,10 @@ class GetDefaultNodePoolNodeConfigSecurityResult(dict):
                  security_strategies: Sequence[builtins.str],
                  security_strategy_enabled: builtins.bool):
         """
-        :param 'GetDefaultNodePoolNodeConfigSecurityLoginArgs' login: 节点的访问方式配置。
-        :param Sequence[builtins.str] security_group_ids: 节点网络所在的安全组 ID 列表。
-        :param Sequence[builtins.str] security_strategies: 节点的安全策略，参数值说明：Hids：主机安全加固。
-        :param builtins.bool security_strategy_enabled: 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+        :param 'GetDefaultNodePoolNodeConfigSecurityLoginArgs' login: Node access configuration
+        :param Sequence[builtins.str] security_group_ids: List of security group IDs for the node network
+        :param Sequence[builtins.str] security_strategies: Node security policy. Parameter value description: Hids: host security hardening
+        :param builtins.bool security_strategy_enabled: Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
         """
         pulumi.set(__self__, "login", login)
         pulumi.set(__self__, "security_group_ids", security_group_ids)
@@ -6797,7 +6797,7 @@ class GetDefaultNodePoolNodeConfigSecurityResult(dict):
     @pulumi.getter
     def login(self) -> 'outputs.GetDefaultNodePoolNodeConfigSecurityLoginResult':
         """
-        节点的访问方式配置。
+        Node access configuration
         """
         return pulumi.get(self, "login")
 
@@ -6805,7 +6805,7 @@ class GetDefaultNodePoolNodeConfigSecurityResult(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Sequence[builtins.str]:
         """
-        节点网络所在的安全组 ID 列表。
+        List of security group IDs for the node network
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -6813,7 +6813,7 @@ class GetDefaultNodePoolNodeConfigSecurityResult(dict):
     @pulumi.getter(name="securityStrategies")
     def security_strategies(self) -> Sequence[builtins.str]:
         """
-        节点的安全策略，参数值说明：Hids：主机安全加固。
+        Node security policy. Parameter value description: Hids: host security hardening
         """
         return pulumi.get(self, "security_strategies")
 
@@ -6821,7 +6821,7 @@ class GetDefaultNodePoolNodeConfigSecurityResult(dict):
     @pulumi.getter(name="securityStrategyEnabled")
     def security_strategy_enabled(self) -> builtins.bool:
         """
-        节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+        Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
         """
         return pulumi.get(self, "security_strategy_enabled")
 
@@ -6833,9 +6833,9 @@ class GetDefaultNodePoolNodeConfigSecurityLoginResult(dict):
                  ssh_key_pair_name: builtins.str,
                  type: builtins.str):
         """
-        :param builtins.str password: Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
-        :param builtins.str ssh_key_pair_name: SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
-        :param builtins.str type: 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+        :param builtins.str password: Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+        :param builtins.str ssh_key_pair_name: SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
+        :param builtins.str type: Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
         """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "ssh_key_pair_name", ssh_key_pair_name)
@@ -6845,7 +6845,7 @@ class GetDefaultNodePoolNodeConfigSecurityLoginResult(dict):
     @pulumi.getter
     def password(self) -> builtins.str:
         """
-        Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+        Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
         """
         return pulumi.get(self, "password")
 
@@ -6853,7 +6853,7 @@ class GetDefaultNodePoolNodeConfigSecurityLoginResult(dict):
     @pulumi.getter(name="sshKeyPairName")
     def ssh_key_pair_name(self) -> builtins.str:
         """
-        SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+        SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
         """
         return pulumi.get(self, "ssh_key_pair_name")
 
@@ -6861,7 +6861,7 @@ class GetDefaultNodePoolNodeConfigSecurityLoginResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+        Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
         """
         return pulumi.get(self, "type")
 
@@ -6874,10 +6874,10 @@ class GetDefaultNodePoolNodeConfigSystemVolumeResult(dict):
                  subgroup_number: builtins.int,
                  type: builtins.str):
         """
-        :param builtins.str placement_group_id: 放置组Id
-        :param builtins.int size: 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
-        :param builtins.int subgroup_number: 放置子组
-        :param builtins.str type: 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        :param builtins.str placement_group_id: Placement group ID
+        :param builtins.int size: Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+        :param builtins.int subgroup_number: Placement subgroup
+        :param builtins.str type: Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
         """
         pulumi.set(__self__, "placement_group_id", placement_group_id)
         pulumi.set(__self__, "size", size)
@@ -6888,7 +6888,7 @@ class GetDefaultNodePoolNodeConfigSystemVolumeResult(dict):
     @pulumi.getter(name="placementGroupId")
     def placement_group_id(self) -> builtins.str:
         """
-        放置组Id
+        Placement group ID
         """
         return pulumi.get(self, "placement_group_id")
 
@@ -6896,7 +6896,7 @@ class GetDefaultNodePoolNodeConfigSystemVolumeResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+        Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
         """
         return pulumi.get(self, "size")
 
@@ -6904,7 +6904,7 @@ class GetDefaultNodePoolNodeConfigSystemVolumeResult(dict):
     @pulumi.getter(name="subgroupNumber")
     def subgroup_number(self) -> builtins.int:
         """
-        放置子组
+        Placement subgroup
         """
         return pulumi.get(self, "subgroup_number")
 
@@ -6912,7 +6912,7 @@ class GetDefaultNodePoolNodeConfigSystemVolumeResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
         """
         return pulumi.get(self, "type")
 
@@ -6923,8 +6923,8 @@ class GetDefaultNodePoolNodeConfigTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Label key.
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -6933,7 +6933,7 @@ class GetDefaultNodePoolNodeConfigTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Label key.
         """
         return pulumi.get(self, "key")
 
@@ -6941,7 +6941,7 @@ class GetDefaultNodePoolNodeConfigTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -6956,12 +6956,12 @@ class GetDefaultNodePoolNodeStatisticsResult(dict):
                  total_count: builtins.int,
                  updating_count: builtins.int):
         """
-        :param builtins.int creating_count: Phase=Creating的节点总数量。
-        :param builtins.int deleting_count: Phase=Deleting的节点总数量。
-        :param builtins.int failed_count: Phase=Failed的节点总数量。
-        :param builtins.int running_count: Phase=Running的节点总数量。
-        :param builtins.int total_count: 节点池中的节点总数量。
-        :param builtins.int updating_count: Phase=Updating的节点总数量。
+        :param builtins.int creating_count: Total number of nodes with Phase=Creating.
+        :param builtins.int deleting_count: Total number of nodes with Phase=Deleting.
+        :param builtins.int failed_count: Total number of nodes with Phase=Failed
+        :param builtins.int running_count: Total number of nodes with Phase=Running
+        :param builtins.int total_count: Total number of nodes in the node pool.
+        :param builtins.int updating_count: Total number of nodes with Phase=Updating
         """
         pulumi.set(__self__, "creating_count", creating_count)
         pulumi.set(__self__, "deleting_count", deleting_count)
@@ -6974,7 +6974,7 @@ class GetDefaultNodePoolNodeStatisticsResult(dict):
     @pulumi.getter(name="creatingCount")
     def creating_count(self) -> builtins.int:
         """
-        Phase=Creating的节点总数量。
+        Total number of nodes with Phase=Creating.
         """
         return pulumi.get(self, "creating_count")
 
@@ -6982,7 +6982,7 @@ class GetDefaultNodePoolNodeStatisticsResult(dict):
     @pulumi.getter(name="deletingCount")
     def deleting_count(self) -> builtins.int:
         """
-        Phase=Deleting的节点总数量。
+        Total number of nodes with Phase=Deleting.
         """
         return pulumi.get(self, "deleting_count")
 
@@ -6990,7 +6990,7 @@ class GetDefaultNodePoolNodeStatisticsResult(dict):
     @pulumi.getter(name="failedCount")
     def failed_count(self) -> builtins.int:
         """
-        Phase=Failed的节点总数量。
+        Total number of nodes with Phase=Failed
         """
         return pulumi.get(self, "failed_count")
 
@@ -6998,7 +6998,7 @@ class GetDefaultNodePoolNodeStatisticsResult(dict):
     @pulumi.getter(name="runningCount")
     def running_count(self) -> builtins.int:
         """
-        Phase=Running的节点总数量。
+        Total number of nodes with Phase=Running
         """
         return pulumi.get(self, "running_count")
 
@@ -7006,7 +7006,7 @@ class GetDefaultNodePoolNodeStatisticsResult(dict):
     @pulumi.getter(name="totalCount")
     def total_count(self) -> builtins.int:
         """
-        节点池中的节点总数量。
+        Total number of nodes in the node pool.
         """
         return pulumi.get(self, "total_count")
 
@@ -7014,7 +7014,7 @@ class GetDefaultNodePoolNodeStatisticsResult(dict):
     @pulumi.getter(name="updatingCount")
     def updating_count(self) -> builtins.int:
         """
-        Phase=Updating的节点总数量。
+        Total number of nodes with Phase=Updating
         """
         return pulumi.get(self, "updating_count")
 
@@ -7025,8 +7025,8 @@ class GetDefaultNodePoolStatusResult(dict):
                  conditions: Sequence['outputs.GetDefaultNodePoolStatusConditionResult'],
                  phase: builtins.str):
         """
-        :param Sequence['GetDefaultNodePoolStatusConditionArgs'] conditions: 节点池当前主状态下的状态条件，即进入该主状态的原因。
-        :param builtins.str phase: 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+        :param Sequence['GetDefaultNodePoolStatusConditionArgs'] conditions: Status conditions of the node pool in its current primary state, indicating the reason for entering this state
+        :param builtins.str phase: Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
         """
         pulumi.set(__self__, "conditions", conditions)
         pulumi.set(__self__, "phase", phase)
@@ -7035,7 +7035,7 @@ class GetDefaultNodePoolStatusResult(dict):
     @pulumi.getter
     def conditions(self) -> Sequence['outputs.GetDefaultNodePoolStatusConditionResult']:
         """
-        节点池当前主状态下的状态条件，即进入该主状态的原因。
+        Status conditions of the node pool in its current primary state, indicating the reason for entering this state
         """
         return pulumi.get(self, "conditions")
 
@@ -7043,7 +7043,7 @@ class GetDefaultNodePoolStatusResult(dict):
     @pulumi.getter
     def phase(self) -> builtins.str:
         """
-        节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+        Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
         """
         return pulumi.get(self, "phase")
 
@@ -7053,7 +7053,7 @@ class GetDefaultNodePoolStatusConditionResult(dict):
     def __init__(__self__, *,
                  type: builtins.str):
         """
-        :param builtins.str type: 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+        :param builtins.str type: Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
         """
         pulumi.set(__self__, "type", type)
 
@@ -7061,7 +7061,7 @@ class GetDefaultNodePoolStatusConditionResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+        Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
         """
         return pulumi.get(self, "type")
 
@@ -7072,8 +7072,8 @@ class GetDefaultNodePoolTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Label key.
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -7082,7 +7082,7 @@ class GetDefaultNodePoolTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Label key.
         """
         return pulumi.get(self, "key")
 
@@ -7090,7 +7090,7 @@ class GetDefaultNodePoolTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -7102,9 +7102,9 @@ class GetNodeKubernetesConfigResult(dict):
                  labels: Sequence['outputs.GetNodeKubernetesConfigLabelResult'],
                  taints: Sequence['outputs.GetNodeKubernetesConfigTaintResult']):
         """
-        :param builtins.bool cordon: 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
-        :param Sequence['GetNodeKubernetesConfigLabelArgs'] labels: 节点池/节点的 Kubernetes 标签（Labels）信息。最多可传入 20 个标签。
-        :param Sequence['GetNodeKubernetesConfigTaintArgs'] taints: 节点池/节点的 Kubernetes 污点（Taints）信息。最多可传入 20 个污点。
+        :param builtins.bool cordon: Node lock configuration. Options: false (default): not locked; true: locked
+        :param Sequence['GetNodeKubernetesConfigLabelArgs'] labels: Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
+        :param Sequence['GetNodeKubernetesConfigTaintArgs'] taints: Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
         """
         pulumi.set(__self__, "cordon", cordon)
         pulumi.set(__self__, "labels", labels)
@@ -7114,7 +7114,7 @@ class GetNodeKubernetesConfigResult(dict):
     @pulumi.getter
     def cordon(self) -> builtins.bool:
         """
-        封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+        Node lock configuration. Options: false (default): not locked; true: locked
         """
         return pulumi.get(self, "cordon")
 
@@ -7122,7 +7122,7 @@ class GetNodeKubernetesConfigResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence['outputs.GetNodeKubernetesConfigLabelResult']:
         """
-        节点池/节点的 Kubernetes 标签（Labels）信息。最多可传入 20 个标签。
+        Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
         """
         return pulumi.get(self, "labels")
 
@@ -7130,7 +7130,7 @@ class GetNodeKubernetesConfigResult(dict):
     @pulumi.getter
     def taints(self) -> Sequence['outputs.GetNodeKubernetesConfigTaintResult']:
         """
-        节点池/节点的 Kubernetes 污点（Taints）信息。最多可传入 20 个污点。
+        Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
         """
         return pulumi.get(self, "taints")
 
@@ -7141,8 +7141,8 @@ class GetNodeKubernetesConfigLabelResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
-        :param builtins.str value: 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+        :param builtins.str key: Label key. A valid label key consists of two parts: \\n\\n and \\n\\n, separated by a slash (/). \\n\\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \\n\\n is optional. If specified, \\n\\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \\n\\n and \\n\\n must not exceed 82 characters.
+        :param builtins.str value: Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -7151,7 +7151,7 @@ class GetNodeKubernetesConfigLabelResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+        Label key. A valid label key consists of two parts: \\n\\n and \\n\\n, separated by a slash (/). \\n\\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \\n\\n is optional. If specified, \\n\\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \\n\\n and \\n\\n must not exceed 82 characters.
         """
         return pulumi.get(self, "key")
 
@@ -7159,7 +7159,7 @@ class GetNodeKubernetesConfigLabelResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+        Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
         """
         return pulumi.get(self, "value")
 
@@ -7171,9 +7171,9 @@ class GetNodeKubernetesConfigTaintResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str effect: 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
-        :param builtins.str key: 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
-        :param builtins.str value: 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+        :param builtins.str effect: Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
+        :param builtins.str key: Taint key. A valid taint key has two segments: \\n\\n and \\n\\n, separated by a slash (/). \\n\\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \\n\\n is optional. If specified, \\n\\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \\n\\n and \\n\\n must not exceed 82 characters.
+        :param builtins.str value: Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
         """
         pulumi.set(__self__, "effect", effect)
         pulumi.set(__self__, "key", key)
@@ -7183,7 +7183,7 @@ class GetNodeKubernetesConfigTaintResult(dict):
     @pulumi.getter
     def effect(self) -> builtins.str:
         """
-        污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+        Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
         """
         return pulumi.get(self, "effect")
 
@@ -7191,7 +7191,7 @@ class GetNodeKubernetesConfigTaintResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+        Taint key. A valid taint key has two segments: \\n\\n and \\n\\n, separated by a slash (/). \\n\\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \\n\\n is optional. If specified, \\n\\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \\n\\n and \\n\\n must not exceed 82 characters.
         """
         return pulumi.get(self, "key")
 
@@ -7199,7 +7199,7 @@ class GetNodeKubernetesConfigTaintResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+        Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
         """
         return pulumi.get(self, "value")
 
@@ -7215,13 +7215,13 @@ class GetNodePoolAutoScalingResult(dict):
                  scaling_group_id: builtins.str,
                  subnet_policy: builtins.str):
         """
-        :param builtins.int desired_replicas: 配置节点池的期望节点数。
-        :param builtins.bool enabled: 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
-        :param builtins.int max_replicas: 配置节点池的最大节点数。
-        :param builtins.int min_replicas: 配置节点池的最小节点数。
-        :param builtins.int priority: 优先级。
-        :param builtins.str scaling_group_id: 伸缩组ID。
-        :param builtins.str subnet_policy: 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+        :param builtins.int desired_replicas: Configure the expected number of nodes in the node pool
+        :param builtins.bool enabled: Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+        :param builtins.int max_replicas: Configure the maximum number of nodes in the node pool
+        :param builtins.int min_replicas: Minimum number of nodes configured for the node pool
+        :param builtins.int priority: Priority
+        :param builtins.str scaling_group_id: Scaling group ID
+        :param builtins.str subnet_policy: Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
         """
         pulumi.set(__self__, "desired_replicas", desired_replicas)
         pulumi.set(__self__, "enabled", enabled)
@@ -7235,7 +7235,7 @@ class GetNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="desiredReplicas")
     def desired_replicas(self) -> builtins.int:
         """
-        配置节点池的期望节点数。
+        Configure the expected number of nodes in the node pool
         """
         return pulumi.get(self, "desired_replicas")
 
@@ -7243,7 +7243,7 @@ class GetNodePoolAutoScalingResult(dict):
     @pulumi.getter
     def enabled(self) -> builtins.bool:
         """
-        配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+        Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -7251,7 +7251,7 @@ class GetNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="maxReplicas")
     def max_replicas(self) -> builtins.int:
         """
-        配置节点池的最大节点数。
+        Configure the maximum number of nodes in the node pool
         """
         return pulumi.get(self, "max_replicas")
 
@@ -7259,7 +7259,7 @@ class GetNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="minReplicas")
     def min_replicas(self) -> builtins.int:
         """
-        配置节点池的最小节点数。
+        Minimum number of nodes configured for the node pool
         """
         return pulumi.get(self, "min_replicas")
 
@@ -7267,7 +7267,7 @@ class GetNodePoolAutoScalingResult(dict):
     @pulumi.getter
     def priority(self) -> builtins.int:
         """
-        优先级。
+        Priority
         """
         return pulumi.get(self, "priority")
 
@@ -7275,7 +7275,7 @@ class GetNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="scalingGroupId")
     def scaling_group_id(self) -> builtins.str:
         """
-        伸缩组ID。
+        Scaling group ID
         """
         return pulumi.get(self, "scaling_group_id")
 
@@ -7283,7 +7283,7 @@ class GetNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="subnetPolicy")
     def subnet_policy(self) -> builtins.str:
         """
-        节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+        Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
         """
         return pulumi.get(self, "subnet_policy")
 
@@ -7301,15 +7301,15 @@ class GetNodePoolKubernetesConfigResult(dict):
                  name_use_hostname: builtins.bool,
                  taints: Sequence['outputs.GetNodePoolKubernetesConfigTaintResult']):
         """
-        :param builtins.bool auto_sync_disabled: 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
-        :param 'GetNodePoolKubernetesConfigContainerdConfigArgs' containerd_config: 节点池 Containerd 相关配置。
-        :param builtins.bool cordon: 封锁节点配置，参数值说明：false：不封锁。true：封锁。
-        :param 'GetNodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Kubelet 组件的相关配置
-        :param Sequence['GetNodePoolKubernetesConfigLabelArgs'] labels: 节点池/节点的 Kubernetes 标签（Labels）信息。
-        :param builtins.str name_prefix: Kubernetes 中节点对象的元数据名称前缀。
-        :param builtins.str name_suffix: Kubernetes 中节点对象的元数据名称后缀。
-        :param builtins.bool name_use_hostname: Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
-        :param Sequence['GetNodePoolKubernetesConfigTaintArgs'] taints: 节点池/节点的 Kubernetes 污点（Taints）信息。
+        :param builtins.bool auto_sync_disabled: Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+        :param 'GetNodePoolKubernetesConfigContainerdConfigArgs' containerd_config: Node pool Containerd configuration
+        :param builtins.bool cordon: Node blocking configuration. Parameter values: false: not blocked; true: blocked
+        :param 'GetNodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Kubelet component configuration
+        :param Sequence['GetNodePoolKubernetesConfigLabelArgs'] labels: Kubernetes label information for node pools/nodes
+        :param builtins.str name_prefix: Prefix for node object metadata name in Kubernetes
+        :param builtins.str name_suffix: Suffix for node object metadata name in Kubernetes
+        :param builtins.bool name_use_hostname: Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+        :param Sequence['GetNodePoolKubernetesConfigTaintArgs'] taints: Kubernetes taint information for node pools/nodes
         """
         pulumi.set(__self__, "auto_sync_disabled", auto_sync_disabled)
         pulumi.set(__self__, "containerd_config", containerd_config)
@@ -7325,7 +7325,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="autoSyncDisabled")
     def auto_sync_disabled(self) -> builtins.bool:
         """
-        是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+        Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
         """
         return pulumi.get(self, "auto_sync_disabled")
 
@@ -7333,7 +7333,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="containerdConfig")
     def containerd_config(self) -> 'outputs.GetNodePoolKubernetesConfigContainerdConfigResult':
         """
-        节点池 Containerd 相关配置。
+        Node pool Containerd configuration
         """
         return pulumi.get(self, "containerd_config")
 
@@ -7341,7 +7341,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter
     def cordon(self) -> builtins.bool:
         """
-        封锁节点配置，参数值说明：false：不封锁。true：封锁。
+        Node blocking configuration. Parameter values: false: not blocked; true: blocked
         """
         return pulumi.get(self, "cordon")
 
@@ -7349,7 +7349,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="kubeletConfig")
     def kubelet_config(self) -> 'outputs.GetNodePoolKubernetesConfigKubeletConfigResult':
         """
-        Kubelet 组件的相关配置
+        Kubelet component configuration
         """
         return pulumi.get(self, "kubelet_config")
 
@@ -7357,7 +7357,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence['outputs.GetNodePoolKubernetesConfigLabelResult']:
         """
-        节点池/节点的 Kubernetes 标签（Labels）信息。
+        Kubernetes label information for node pools/nodes
         """
         return pulumi.get(self, "labels")
 
@@ -7365,7 +7365,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="namePrefix")
     def name_prefix(self) -> builtins.str:
         """
-        Kubernetes 中节点对象的元数据名称前缀。
+        Prefix for node object metadata name in Kubernetes
         """
         return pulumi.get(self, "name_prefix")
 
@@ -7373,7 +7373,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="nameSuffix")
     def name_suffix(self) -> builtins.str:
         """
-        Kubernetes 中节点对象的元数据名称后缀。
+        Suffix for node object metadata name in Kubernetes
         """
         return pulumi.get(self, "name_suffix")
 
@@ -7381,7 +7381,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="nameUseHostname")
     def name_use_hostname(self) -> builtins.bool:
         """
-        Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+        Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
         """
         return pulumi.get(self, "name_use_hostname")
 
@@ -7389,7 +7389,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter
     def taints(self) -> Sequence['outputs.GetNodePoolKubernetesConfigTaintResult']:
         """
-        节点池/节点的 Kubernetes 污点（Taints）信息。
+        Kubernetes taint information for node pools/nodes
         """
         return pulumi.get(self, "taints")
 
@@ -7400,8 +7400,8 @@ class GetNodePoolKubernetesConfigContainerdConfigResult(dict):
                  insecure_registries: Sequence[builtins.str],
                  registry_proxy_configs: Sequence['outputs.GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult']):
         """
-        :param Sequence[builtins.str] insecure_registries: 指定跳过证书认证的容器镜像仓库地址。
-        :param Sequence['GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs'] registry_proxy_configs: 容器镜像仓库代理配置。
+        :param Sequence[builtins.str] insecure_registries: Specify the container image repository address to skip certificate verification.
+        :param Sequence['GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs'] registry_proxy_configs: Container image repository proxy configuration
         """
         pulumi.set(__self__, "insecure_registries", insecure_registries)
         pulumi.set(__self__, "registry_proxy_configs", registry_proxy_configs)
@@ -7410,7 +7410,7 @@ class GetNodePoolKubernetesConfigContainerdConfigResult(dict):
     @pulumi.getter(name="insecureRegistries")
     def insecure_registries(self) -> Sequence[builtins.str]:
         """
-        指定跳过证书认证的容器镜像仓库地址。
+        Specify the container image repository address to skip certificate verification.
         """
         return pulumi.get(self, "insecure_registries")
 
@@ -7418,7 +7418,7 @@ class GetNodePoolKubernetesConfigContainerdConfigResult(dict):
     @pulumi.getter(name="registryProxyConfigs")
     def registry_proxy_configs(self) -> Sequence['outputs.GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult']:
         """
-        容器镜像仓库代理配置。
+        Container image repository proxy configuration
         """
         return pulumi.get(self, "registry_proxy_configs")
 
@@ -7429,8 +7429,8 @@ class GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult(dict)
                  proxy_endpoints: Sequence[builtins.str],
                  registry: builtins.str):
         """
-        :param Sequence[builtins.str] proxy_endpoints: 代理地址。
-        :param builtins.str registry: 容器镜像仓库地址。
+        :param Sequence[builtins.str] proxy_endpoints: Proxy address.
+        :param builtins.str registry: Container image repository address.
         """
         pulumi.set(__self__, "proxy_endpoints", proxy_endpoints)
         pulumi.set(__self__, "registry", registry)
@@ -7439,7 +7439,7 @@ class GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult(dict)
     @pulumi.getter(name="proxyEndpoints")
     def proxy_endpoints(self) -> Sequence[builtins.str]:
         """
-        代理地址。
+        Proxy address.
         """
         return pulumi.get(self, "proxy_endpoints")
 
@@ -7447,7 +7447,7 @@ class GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult(dict)
     @pulumi.getter
     def registry(self) -> builtins.str:
         """
-        容器镜像仓库地址。
+        Container image repository address.
         """
         return pulumi.get(self, "registry")
 
@@ -7469,19 +7469,19 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
                  topology_manager_policy: builtins.str,
                  topology_manager_scope: builtins.str):
         """
-        :param builtins.str cpu_manager_policy: 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
-        :param Sequence['GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs'] eviction_hards: 触发 Pod 驱逐操作的一组硬性门限。
-        :param 'GetNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs' feature_gates: 特性门控。
-        :param builtins.int kube_api_burst: 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
-        :param builtins.int kube_api_qps: 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
-        :param Sequence['GetNodePoolKubernetesConfigKubeletConfigKubeReservedArgs'] kube_reserveds: 节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
-        :param builtins.int max_pods: 配置 kubelet 支持的最大 Pod 数量
-        :param builtins.int registry_burst: 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
-        :param builtins.int registry_pull_qps: 可用来限制镜像仓库的 QPS 上限
-        :param builtins.bool serialize_image_pulls: 逐一拉取镜像。
-        :param Sequence['GetNodePoolKubernetesConfigKubeletConfigSystemReservedArgs'] system_reserveds: 节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
-        :param builtins.str topology_manager_policy: 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
-        :param builtins.str topology_manager_scope: 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+        :param builtins.str cpu_manager_policy: Configure kubelet CpuManagerPolicy. Supports none and static policies
+        :param Sequence['GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs'] eviction_hards: Set of hard thresholds for triggering Pod eviction
+        :param 'GetNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs' feature_gates: Feature gate
+        :param builtins.int kube_api_burst: Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+        :param builtins.int kube_api_qps: Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+        :param Sequence['GetNodePoolKubernetesConfigKubeletConfigKubeReservedArgs'] kube_reserveds: Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+        :param builtins.int max_pods: Configure the maximum number of Pods supported by kubelet
+        :param builtins.int registry_burst: Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+        :param builtins.int registry_pull_qps: Used to limit the QPS cap for the image repository
+        :param builtins.bool serialize_image_pulls: Pull images sequentially
+        :param Sequence['GetNodePoolKubernetesConfigKubeletConfigSystemReservedArgs'] system_reserveds: Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+        :param builtins.str topology_manager_policy: Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
+        :param builtins.str topology_manager_scope: Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
         """
         pulumi.set(__self__, "cpu_manager_policy", cpu_manager_policy)
         pulumi.set(__self__, "eviction_hards", eviction_hards)
@@ -7501,7 +7501,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="cpuManagerPolicy")
     def cpu_manager_policy(self) -> builtins.str:
         """
-        配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+        Configure kubelet CpuManagerPolicy. Supports none and static policies
         """
         return pulumi.get(self, "cpu_manager_policy")
 
@@ -7509,7 +7509,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="evictionHards")
     def eviction_hards(self) -> Sequence['outputs.GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult']:
         """
-        触发 Pod 驱逐操作的一组硬性门限。
+        Set of hard thresholds for triggering Pod eviction
         """
         return pulumi.get(self, "eviction_hards")
 
@@ -7517,7 +7517,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="featureGates")
     def feature_gates(self) -> 'outputs.GetNodePoolKubernetesConfigKubeletConfigFeatureGatesResult':
         """
-        特性门控。
+        Feature gate
         """
         return pulumi.get(self, "feature_gates")
 
@@ -7525,7 +7525,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="kubeApiBurst")
     def kube_api_burst(self) -> builtins.int:
         """
-        每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+        Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
         """
         return pulumi.get(self, "kube_api_burst")
 
@@ -7533,7 +7533,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="kubeApiQps")
     def kube_api_qps(self) -> builtins.int:
         """
-        与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+        Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
         """
         return pulumi.get(self, "kube_api_qps")
 
@@ -7541,7 +7541,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="kubeReserveds")
     def kube_reserveds(self) -> Sequence['outputs.GetNodePoolKubernetesConfigKubeletConfigKubeReservedResult']:
         """
-        节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+        Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
         """
         return pulumi.get(self, "kube_reserveds")
 
@@ -7549,7 +7549,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="maxPods")
     def max_pods(self) -> builtins.int:
         """
-        配置 kubelet 支持的最大 Pod 数量
+        Configure the maximum number of Pods supported by kubelet
         """
         return pulumi.get(self, "max_pods")
 
@@ -7557,7 +7557,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="registryBurst")
     def registry_burst(self) -> builtins.int:
         """
-        设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+        Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
         """
         return pulumi.get(self, "registry_burst")
 
@@ -7565,7 +7565,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="registryPullQps")
     def registry_pull_qps(self) -> builtins.int:
         """
-        可用来限制镜像仓库的 QPS 上限
+        Used to limit the QPS cap for the image repository
         """
         return pulumi.get(self, "registry_pull_qps")
 
@@ -7573,7 +7573,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="serializeImagePulls")
     def serialize_image_pulls(self) -> builtins.bool:
         """
-        逐一拉取镜像。
+        Pull images sequentially
         """
         return pulumi.get(self, "serialize_image_pulls")
 
@@ -7581,7 +7581,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="systemReserveds")
     def system_reserveds(self) -> Sequence['outputs.GetNodePoolKubernetesConfigKubeletConfigSystemReservedResult']:
         """
-        节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+        Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
         """
         return pulumi.get(self, "system_reserveds")
 
@@ -7589,7 +7589,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="topologyManagerPolicy")
     def topology_manager_policy(self) -> builtins.str:
         """
-        拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+        Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
         """
         return pulumi.get(self, "topology_manager_policy")
 
@@ -7597,7 +7597,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="topologyManagerScope")
     def topology_manager_scope(self) -> builtins.str:
         """
-        拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+        Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
         """
         return pulumi.get(self, "topology_manager_scope")
 
@@ -7608,8 +7608,8 @@ class GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
-        :param builtins.str value: 硬性门限值。
+        :param builtins.str key: Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
+        :param builtins.str value: Hard threshold value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -7618,7 +7618,7 @@ class GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+        Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
         """
         return pulumi.get(self, "key")
 
@@ -7626,7 +7626,7 @@ class GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        硬性门限值。
+        Hard threshold value.
         """
         return pulumi.get(self, "value")
 
@@ -7637,8 +7637,8 @@ class GetNodePoolKubernetesConfigKubeletConfigFeatureGatesResult(dict):
                  in_place_pod_vertical_scaling: builtins.bool,
                  qo_s_resource_manager: builtins.bool):
         """
-        :param builtins.bool in_place_pod_vertical_scaling: 是否开启特性开关本地垂直Pod伸缩
-        :param builtins.bool qo_s_resource_manager: 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+        :param builtins.bool in_place_pod_vertical_scaling: Enable local vertical Pod autoscaling feature toggle
+        :param builtins.bool qo_s_resource_manager: Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
         """
         pulumi.set(__self__, "in_place_pod_vertical_scaling", in_place_pod_vertical_scaling)
         pulumi.set(__self__, "qo_s_resource_manager", qo_s_resource_manager)
@@ -7647,7 +7647,7 @@ class GetNodePoolKubernetesConfigKubeletConfigFeatureGatesResult(dict):
     @pulumi.getter(name="inPlacePodVerticalScaling")
     def in_place_pod_vertical_scaling(self) -> builtins.bool:
         """
-        是否开启特性开关本地垂直Pod伸缩
+        Enable local vertical Pod autoscaling feature toggle
         """
         return pulumi.get(self, "in_place_pod_vertical_scaling")
 
@@ -7655,7 +7655,7 @@ class GetNodePoolKubernetesConfigKubeletConfigFeatureGatesResult(dict):
     @pulumi.getter(name="qoSResourceManager")
     def qo_s_resource_manager(self) -> builtins.bool:
         """
-        是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+        Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
         """
         return pulumi.get(self, "qo_s_resource_manager")
 
@@ -7666,8 +7666,8 @@ class GetNodePoolKubernetesConfigKubeletConfigKubeReservedResult(dict):
                  name: builtins.str,
                  quantity: builtins.str):
         """
-        :param builtins.str name: 资源名称，取值为 cpu 或 memory。
-        :param builtins.str quantity: 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+        :param builtins.str name: Resource name. Valid values: cpu or memory.
+        :param builtins.str quantity: Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "quantity", quantity)
@@ -7676,7 +7676,7 @@ class GetNodePoolKubernetesConfigKubeletConfigKubeReservedResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        资源名称，取值为 cpu 或 memory。
+        Resource name. Valid values: cpu or memory.
         """
         return pulumi.get(self, "name")
 
@@ -7684,7 +7684,7 @@ class GetNodePoolKubernetesConfigKubeletConfigKubeReservedResult(dict):
     @pulumi.getter
     def quantity(self) -> builtins.str:
         """
-        指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+        Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
         """
         return pulumi.get(self, "quantity")
 
@@ -7695,8 +7695,8 @@ class GetNodePoolKubernetesConfigKubeletConfigSystemReservedResult(dict):
                  name: builtins.str,
                  quantity: builtins.str):
         """
-        :param builtins.str name: 资源名称，取值为 cpu 或 memory。
-        :param builtins.str quantity: 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+        :param builtins.str name: Resource name. Valid values: cpu or memory.
+        :param builtins.str quantity: Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "quantity", quantity)
@@ -7705,7 +7705,7 @@ class GetNodePoolKubernetesConfigKubeletConfigSystemReservedResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        资源名称，取值为 cpu 或 memory。
+        Resource name. Valid values: cpu or memory.
         """
         return pulumi.get(self, "name")
 
@@ -7713,7 +7713,7 @@ class GetNodePoolKubernetesConfigKubeletConfigSystemReservedResult(dict):
     @pulumi.getter
     def quantity(self) -> builtins.str:
         """
-        指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+        Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
         """
         return pulumi.get(self, "quantity")
 
@@ -7724,8 +7724,8 @@ class GetNodePoolKubernetesConfigLabelResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Label value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -7734,7 +7734,7 @@ class GetNodePoolKubernetesConfigLabelResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -7742,7 +7742,7 @@ class GetNodePoolKubernetesConfigLabelResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Label value.
         """
         return pulumi.get(self, "value")
 
@@ -7754,9 +7754,9 @@ class GetNodePoolKubernetesConfigTaintResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str effect: 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
-        :param builtins.str key: 污点键。
-        :param builtins.str value: 污点值。
+        :param builtins.str effect: Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
+        :param builtins.str key: Taint key.
+        :param builtins.str value: Taint value
         """
         pulumi.set(__self__, "effect", effect)
         pulumi.set(__self__, "key", key)
@@ -7766,7 +7766,7 @@ class GetNodePoolKubernetesConfigTaintResult(dict):
     @pulumi.getter
     def effect(self) -> builtins.str:
         """
-        污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+        Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
         """
         return pulumi.get(self, "effect")
 
@@ -7774,7 +7774,7 @@ class GetNodePoolKubernetesConfigTaintResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        污点键。
+        Taint key.
         """
         return pulumi.get(self, "key")
 
@@ -7782,7 +7782,7 @@ class GetNodePoolKubernetesConfigTaintResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        污点值。
+        Taint value
         """
         return pulumi.get(self, "value")
 
@@ -7793,8 +7793,8 @@ class GetNodePoolManagementResult(dict):
                  enabled: builtins.bool,
                  remedy_config: 'outputs.GetNodePoolManagementRemedyConfigResult'):
         """
-        :param builtins.bool enabled: 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
-        :param 'GetNodePoolManagementRemedyConfigArgs' remedy_config: 检查自愈配置。
+        :param builtins.bool enabled: Enable managed mode for node pool. Options:   - true: on   - false: off
+        :param 'GetNodePoolManagementRemedyConfigArgs' remedy_config: Check self-healing configuration.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "remedy_config", remedy_config)
@@ -7803,7 +7803,7 @@ class GetNodePoolManagementResult(dict):
     @pulumi.getter
     def enabled(self) -> builtins.bool:
         """
-        节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+        Enable managed mode for node pool. Options:   - true: on   - false: off
         """
         return pulumi.get(self, "enabled")
 
@@ -7811,7 +7811,7 @@ class GetNodePoolManagementResult(dict):
     @pulumi.getter(name="remedyConfig")
     def remedy_config(self) -> 'outputs.GetNodePoolManagementRemedyConfigResult':
         """
-        检查自愈配置。
+        Check self-healing configuration.
         """
         return pulumi.get(self, "remedy_config")
 
@@ -7822,8 +7822,8 @@ class GetNodePoolManagementRemedyConfigResult(dict):
                  enabled: builtins.bool,
                  remedy_id: builtins.str):
         """
-        :param builtins.bool enabled: 是否开启检查自愈。
-        :param builtins.str remedy_id: 检查自愈规则ID。
+        :param builtins.bool enabled: Enable self-healing check
+        :param builtins.str remedy_id: Self-healing rule ID
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "remedy_id", remedy_id)
@@ -7832,7 +7832,7 @@ class GetNodePoolManagementRemedyConfigResult(dict):
     @pulumi.getter
     def enabled(self) -> builtins.bool:
         """
-        是否开启检查自愈。
+        Enable self-healing check
         """
         return pulumi.get(self, "enabled")
 
@@ -7840,7 +7840,7 @@ class GetNodePoolManagementRemedyConfigResult(dict):
     @pulumi.getter(name="remedyId")
     def remedy_id(self) -> builtins.str:
         """
-        检查自愈规则ID。
+        Self-healing rule ID
         """
         return pulumi.get(self, "remedy_id")
 
@@ -7875,32 +7875,32 @@ class GetNodePoolNodeConfigResult(dict):
                  system_volume: 'outputs.GetNodePoolNodeConfigSystemVolumeResult',
                  tags: Sequence['outputs.GetNodePoolNodeConfigTagResult']):
         """
-        :param builtins.bool additional_container_storage_enabled: 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
-        :param builtins.bool auto_renew: 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
-        :param builtins.int auto_renew_period: 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
-        :param Sequence['GetNodePoolNodeConfigDataVolumeArgs'] data_volumes: 节点的数据盘配置。
-        :param builtins.int deployment_set_group_number: 实例在部署集中的分组号，0表示未设置
-        :param builtins.str deployment_set_id: 实例需要加入的部署集ID
-        :param builtins.str hostname: 节点对应的主机名称。
-        :param Sequence[builtins.str] hpc_cluster_ids: 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
-        :param builtins.str image_id: 节点对应云服务器所使用的镜像 ID。
-        :param builtins.str initialize_script: 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
-        :param builtins.str instance_charge_type: 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
-        :param builtins.str instance_name: 节点（实例）名称。
-        :param Sequence[builtins.str] instance_type_ids: 节点对应的云服务器实例规格 ID 列表。
-        :param 'GetNodePoolNodeConfigInstancesDistributionArgs' instances_distribution: 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
-        :param builtins.str name_prefix: 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
-        :param builtins.str network_traffic_mode: 节点间的网络通讯模式。
-        :param builtins.int period: 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
-        :param builtins.str pre_script: 部署节点前执行脚本。
-        :param builtins.str project_name: ECS所属项目，一个ECS只能归属于一个项目。
-        :param 'GetNodePoolNodeConfigPublicAccessConfigArgs' public_access_config: 节点自动开启公网访问的配置信息
-        :param builtins.bool public_access_enabled: 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
-        :param 'GetNodePoolNodeConfigSecurityArgs' security: 节点安全配置。
-        :param builtins.str spot_strategy: 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
-        :param Sequence[builtins.str] subnet_ids: 节点网络所属的子网 ID 列表。
-        :param 'GetNodePoolNodeConfigSystemVolumeArgs' system_volume: 节点的系统盘配置。
-        :param Sequence['GetNodePoolNodeConfigTagArgs'] tags: 节点池配置的标签信息
+        :param builtins.bool additional_container_storage_enabled: Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
+        :param builtins.bool auto_renew: Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+        :param builtins.int auto_renew_period: Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
+        :param Sequence['GetNodePoolNodeConfigDataVolumeArgs'] data_volumes: Node data disk configuration.
+        :param builtins.int deployment_set_group_number: Group number of the instance in the deployment set; 0 means not set
+        :param builtins.str deployment_set_id: Deployment Set ID to be added to the instance
+        :param builtins.str hostname: The host name corresponding to the node.
+        :param Sequence[builtins.str] hpc_cluster_ids: High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+        :param builtins.str image_id: Image ID used by the cloud server corresponding to the node
+        :param builtins.str initialize_script: Custom script executed after node creation and initialization. Shell script in Base64 encoding
+        :param builtins.str instance_charge_type: Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+        :param builtins.str instance_name: Node (instance) name
+        :param Sequence[builtins.str] instance_type_ids: List of cloud server instance type IDs corresponding to the nodes
+        :param 'GetNodePoolNodeConfigInstancesDistributionArgs' instances_distribution: Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+        :param builtins.str name_prefix: Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
+        :param builtins.str network_traffic_mode: Network communication mode between nodes
+        :param builtins.int period: Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
+        :param builtins.str pre_script: Script to execute before deploying the node
+        :param builtins.str project_name: Project to which the ECS belongs. Each ECS can only belong to one project.
+        :param 'GetNodePoolNodeConfigPublicAccessConfigArgs' public_access_config: Configuration for automatic public network access for nodes
+        :param builtins.bool public_access_enabled: Enable public network access for nodes automatically. Options:   - false: off   - true: on
+        :param 'GetNodePoolNodeConfigSecurityArgs' security: Node security configuration
+        :param builtins.str spot_strategy: Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
+        :param Sequence[builtins.str] subnet_ids: List of subnet IDs for the node network.
+        :param 'GetNodePoolNodeConfigSystemVolumeArgs' system_volume: System disk configuration for the node
+        :param Sequence['GetNodePoolNodeConfigTagArgs'] tags: Label information configured for the node pool
         """
         pulumi.set(__self__, "additional_container_storage_enabled", additional_container_storage_enabled)
         pulumi.set(__self__, "auto_renew", auto_renew)
@@ -7933,7 +7933,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="additionalContainerStorageEnabled")
     def additional_container_storage_enabled(self) -> builtins.bool:
         """
-        节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+        Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
         """
         return pulumi.get(self, "additional_container_storage_enabled")
 
@@ -7941,7 +7941,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> builtins.bool:
         """
-        云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+        Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -7949,7 +7949,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="autoRenewPeriod")
     def auto_renew_period(self) -> builtins.int:
         """
-        云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+        Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
         """
         return pulumi.get(self, "auto_renew_period")
 
@@ -7957,7 +7957,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="dataVolumes")
     def data_volumes(self) -> Sequence['outputs.GetNodePoolNodeConfigDataVolumeResult']:
         """
-        节点的数据盘配置。
+        Node data disk configuration.
         """
         return pulumi.get(self, "data_volumes")
 
@@ -7965,7 +7965,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> builtins.int:
         """
-        实例在部署集中的分组号，0表示未设置
+        Group number of the instance in the deployment set; 0 means not set
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -7973,7 +7973,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> builtins.str:
         """
-        实例需要加入的部署集ID
+        Deployment Set ID to be added to the instance
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -7981,7 +7981,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter
     def hostname(self) -> builtins.str:
         """
-        节点对应的主机名称。
+        The host name corresponding to the node.
         """
         return pulumi.get(self, "hostname")
 
@@ -7989,7 +7989,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="hpcClusterIds")
     def hpc_cluster_ids(self) -> Sequence[builtins.str]:
         """
-        高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+        High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
         """
         return pulumi.get(self, "hpc_cluster_ids")
 
@@ -7997,7 +7997,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> builtins.str:
         """
-        节点对应云服务器所使用的镜像 ID。
+        Image ID used by the cloud server corresponding to the node
         """
         return pulumi.get(self, "image_id")
 
@@ -8005,7 +8005,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="initializeScript")
     def initialize_script(self) -> builtins.str:
         """
-        创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+        Custom script executed after node creation and initialization. Shell script in Base64 encoding
         """
         return pulumi.get(self, "initialize_script")
 
@@ -8013,7 +8013,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> builtins.str:
         """
-        云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+        Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -8021,7 +8021,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> builtins.str:
         """
-        节点（实例）名称。
+        Node (instance) name
         """
         return pulumi.get(self, "instance_name")
 
@@ -8029,7 +8029,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="instanceTypeIds")
     def instance_type_ids(self) -> Sequence[builtins.str]:
         """
-        节点对应的云服务器实例规格 ID 列表。
+        List of cloud server instance type IDs corresponding to the nodes
         """
         return pulumi.get(self, "instance_type_ids")
 
@@ -8037,7 +8037,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="instancesDistribution")
     def instances_distribution(self) -> 'outputs.GetNodePoolNodeConfigInstancesDistributionResult':
         """
-        设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+        Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
         """
         return pulumi.get(self, "instances_distribution")
 
@@ -8045,7 +8045,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="namePrefix")
     def name_prefix(self) -> builtins.str:
         """
-        节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+        Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
         """
         return pulumi.get(self, "name_prefix")
 
@@ -8053,7 +8053,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="networkTrafficMode")
     def network_traffic_mode(self) -> builtins.str:
         """
-        节点间的网络通讯模式。
+        Network communication mode between nodes
         """
         return pulumi.get(self, "network_traffic_mode")
 
@@ -8061,7 +8061,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter
     def period(self) -> builtins.int:
         """
-        云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+        Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
         """
         return pulumi.get(self, "period")
 
@@ -8069,7 +8069,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="preScript")
     def pre_script(self) -> builtins.str:
         """
-        部署节点前执行脚本。
+        Script to execute before deploying the node
         """
         return pulumi.get(self, "pre_script")
 
@@ -8077,7 +8077,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        ECS所属项目，一个ECS只能归属于一个项目。
+        Project to which the ECS belongs. Each ECS can only belong to one project.
         """
         return pulumi.get(self, "project_name")
 
@@ -8085,7 +8085,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="publicAccessConfig")
     def public_access_config(self) -> 'outputs.GetNodePoolNodeConfigPublicAccessConfigResult':
         """
-        节点自动开启公网访问的配置信息
+        Configuration for automatic public network access for nodes
         """
         return pulumi.get(self, "public_access_config")
 
@@ -8093,7 +8093,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="publicAccessEnabled")
     def public_access_enabled(self) -> builtins.bool:
         """
-        节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+        Enable public network access for nodes automatically. Options:   - false: off   - true: on
         """
         return pulumi.get(self, "public_access_enabled")
 
@@ -8101,7 +8101,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter
     def security(self) -> 'outputs.GetNodePoolNodeConfigSecurityResult':
         """
-        节点安全配置。
+        Node security configuration
         """
         return pulumi.get(self, "security")
 
@@ -8109,7 +8109,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> builtins.str:
         """
-        按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+        Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -8117,7 +8117,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Sequence[builtins.str]:
         """
-        节点网络所属的子网 ID 列表。
+        List of subnet IDs for the node network.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -8125,7 +8125,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="systemVolume")
     def system_volume(self) -> 'outputs.GetNodePoolNodeConfigSystemVolumeResult':
         """
-        节点的系统盘配置。
+        System disk configuration for the node
         """
         return pulumi.get(self, "system_volume")
 
@@ -8133,7 +8133,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetNodePoolNodeConfigTagResult']:
         """
-        节点池配置的标签信息
+        Label information configured for the node pool
         """
         return pulumi.get(self, "tags")
 
@@ -8149,13 +8149,13 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
                  subgroup_number: builtins.int,
                  type: builtins.str):
         """
-        :param builtins.str file_system: 文件系统，取值：  - Ext4 (默认值)  - Xfs
-        :param builtins.str mount_point: 磁盘格式化后的目标挂载目录。
-        :param builtins.str placement_group_id: 放置组Id
-        :param builtins.int size: 磁盘容量，单位 GiB。
-        :param builtins.str snapshot_id: 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
-        :param builtins.int subgroup_number: 放置子组
-        :param builtins.str type: 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        :param builtins.str file_system: File system. Options:   - Ext4 (default)   - Xfs
+        :param builtins.str mount_point: Target mount directory after disk formatting.
+        :param builtins.str placement_group_id: Placement group ID
+        :param builtins.int size: Disk capacity, in GiB.
+        :param builtins.str snapshot_id: Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
+        :param builtins.int subgroup_number: Placement subgroup
+        :param builtins.str type: Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
         """
         pulumi.set(__self__, "file_system", file_system)
         pulumi.set(__self__, "mount_point", mount_point)
@@ -8169,7 +8169,7 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="fileSystem")
     def file_system(self) -> builtins.str:
         """
-        文件系统，取值：  - Ext4 (默认值)  - Xfs
+        File system. Options:   - Ext4 (default)   - Xfs
         """
         return pulumi.get(self, "file_system")
 
@@ -8177,7 +8177,7 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="mountPoint")
     def mount_point(self) -> builtins.str:
         """
-        磁盘格式化后的目标挂载目录。
+        Target mount directory after disk formatting.
         """
         return pulumi.get(self, "mount_point")
 
@@ -8185,7 +8185,7 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="placementGroupId")
     def placement_group_id(self) -> builtins.str:
         """
-        放置组Id
+        Placement group ID
         """
         return pulumi.get(self, "placement_group_id")
 
@@ -8193,7 +8193,7 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        磁盘容量，单位 GiB。
+        Disk capacity, in GiB.
         """
         return pulumi.get(self, "size")
 
@@ -8201,7 +8201,7 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> builtins.str:
         """
-        使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+        Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -8209,7 +8209,7 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="subgroupNumber")
     def subgroup_number(self) -> builtins.int:
         """
-        放置子组
+        Placement subgroup
         """
         return pulumi.get(self, "subgroup_number")
 
@@ -8217,7 +8217,7 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
         """
         return pulumi.get(self, "type")
 
@@ -8230,10 +8230,10 @@ class GetNodePoolNodeConfigInstancesDistributionResult(dict):
                  on_demand_base_capacity: builtins.int,
                  on_demand_percentage_above_base_capacity: builtins.int):
         """
-        :param builtins.bool capacity_rebalance: 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
-        :param builtins.bool compensate_with_on_demand: 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
-        :param builtins.int on_demand_base_capacity: 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
-        :param builtins.int on_demand_percentage_above_base_capacity: 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+        :param builtins.bool capacity_rebalance: Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
+        :param builtins.bool compensate_with_on_demand: On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
+        :param builtins.int on_demand_base_capacity: Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
+        :param builtins.int on_demand_percentage_above_base_capacity: Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
         """
         pulumi.set(__self__, "capacity_rebalance", capacity_rebalance)
         pulumi.set(__self__, "compensate_with_on_demand", compensate_with_on_demand)
@@ -8244,7 +8244,7 @@ class GetNodePoolNodeConfigInstancesDistributionResult(dict):
     @pulumi.getter(name="capacityRebalance")
     def capacity_rebalance(self) -> builtins.bool:
         """
-        容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+        Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
         """
         return pulumi.get(self, "capacity_rebalance")
 
@@ -8252,7 +8252,7 @@ class GetNodePoolNodeConfigInstancesDistributionResult(dict):
     @pulumi.getter(name="compensateWithOnDemand")
     def compensate_with_on_demand(self) -> builtins.bool:
         """
-        按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+        On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
         """
         return pulumi.get(self, "compensate_with_on_demand")
 
@@ -8260,7 +8260,7 @@ class GetNodePoolNodeConfigInstancesDistributionResult(dict):
     @pulumi.getter(name="onDemandBaseCapacity")
     def on_demand_base_capacity(self) -> builtins.int:
         """
-        基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+        Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
         """
         return pulumi.get(self, "on_demand_base_capacity")
 
@@ -8268,7 +8268,7 @@ class GetNodePoolNodeConfigInstancesDistributionResult(dict):
     @pulumi.getter(name="onDemandPercentageAboveBaseCapacity")
     def on_demand_percentage_above_base_capacity(self) -> builtins.int:
         """
-        超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+        Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
         """
         return pulumi.get(self, "on_demand_percentage_above_base_capacity")
 
@@ -8280,9 +8280,9 @@ class GetNodePoolNodeConfigPublicAccessConfigResult(dict):
                  billing_type: builtins.int,
                  isp: builtins.str):
         """
-        :param builtins.int bandwidth: 公网 IP 的带宽峰值，单位：Mbps。
-        :param builtins.int billing_type: 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
-        :param builtins.str isp: 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+        :param builtins.int bandwidth: Peak bandwidth for public IP, unit: Mbps
+        :param builtins.int billing_type: Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+        :param builtins.str isp: Public IP line type. Parameter description: BGP: BGP (multi-line)
         """
         pulumi.set(__self__, "bandwidth", bandwidth)
         pulumi.set(__self__, "billing_type", billing_type)
@@ -8292,7 +8292,7 @@ class GetNodePoolNodeConfigPublicAccessConfigResult(dict):
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        公网 IP 的带宽峰值，单位：Mbps。
+        Peak bandwidth for public IP, unit: Mbps
         """
         return pulumi.get(self, "bandwidth")
 
@@ -8300,7 +8300,7 @@ class GetNodePoolNodeConfigPublicAccessConfigResult(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.int:
         """
-        公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+        Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
         """
         return pulumi.get(self, "billing_type")
 
@@ -8308,7 +8308,7 @@ class GetNodePoolNodeConfigPublicAccessConfigResult(dict):
     @pulumi.getter
     def isp(self) -> builtins.str:
         """
-        公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+        Public IP line type. Parameter description: BGP: BGP (multi-line)
         """
         return pulumi.get(self, "isp")
 
@@ -8321,10 +8321,10 @@ class GetNodePoolNodeConfigSecurityResult(dict):
                  security_strategies: Sequence[builtins.str],
                  security_strategy_enabled: builtins.bool):
         """
-        :param 'GetNodePoolNodeConfigSecurityLoginArgs' login: 节点的访问方式配置。
-        :param Sequence[builtins.str] security_group_ids: 节点网络所在的安全组 ID 列表。
-        :param Sequence[builtins.str] security_strategies: 节点的安全策略，参数值说明：Hids：主机安全加固。
-        :param builtins.bool security_strategy_enabled: 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+        :param 'GetNodePoolNodeConfigSecurityLoginArgs' login: Node access configuration.
+        :param Sequence[builtins.str] security_group_ids: List of security group IDs for the node network
+        :param Sequence[builtins.str] security_strategies: Node security policy. Parameter description: Hids: Host security hardening.
+        :param builtins.bool security_strategy_enabled: Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
         """
         pulumi.set(__self__, "login", login)
         pulumi.set(__self__, "security_group_ids", security_group_ids)
@@ -8335,7 +8335,7 @@ class GetNodePoolNodeConfigSecurityResult(dict):
     @pulumi.getter
     def login(self) -> 'outputs.GetNodePoolNodeConfigSecurityLoginResult':
         """
-        节点的访问方式配置。
+        Node access configuration.
         """
         return pulumi.get(self, "login")
 
@@ -8343,7 +8343,7 @@ class GetNodePoolNodeConfigSecurityResult(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Sequence[builtins.str]:
         """
-        节点网络所在的安全组 ID 列表。
+        List of security group IDs for the node network
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -8351,7 +8351,7 @@ class GetNodePoolNodeConfigSecurityResult(dict):
     @pulumi.getter(name="securityStrategies")
     def security_strategies(self) -> Sequence[builtins.str]:
         """
-        节点的安全策略，参数值说明：Hids：主机安全加固。
+        Node security policy. Parameter description: Hids: Host security hardening.
         """
         return pulumi.get(self, "security_strategies")
 
@@ -8359,7 +8359,7 @@ class GetNodePoolNodeConfigSecurityResult(dict):
     @pulumi.getter(name="securityStrategyEnabled")
     def security_strategy_enabled(self) -> builtins.bool:
         """
-        节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+        Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
         """
         return pulumi.get(self, "security_strategy_enabled")
 
@@ -8371,9 +8371,9 @@ class GetNodePoolNodeConfigSecurityLoginResult(dict):
                  ssh_key_pair_name: builtins.str,
                  type: builtins.str):
         """
-        :param builtins.str password: Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
-        :param builtins.str ssh_key_pair_name: SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
-        :param builtins.str type: 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+        :param builtins.str password: Root user login password in Base64 encoding. Follow the cloud server's requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+        :param builtins.str ssh_key_pair_name: SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
+        :param builtins.str type: Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
         """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "ssh_key_pair_name", ssh_key_pair_name)
@@ -8383,7 +8383,7 @@ class GetNodePoolNodeConfigSecurityLoginResult(dict):
     @pulumi.getter
     def password(self) -> builtins.str:
         """
-        Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+        Root user login password in Base64 encoding. Follow the cloud server's requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
         """
         return pulumi.get(self, "password")
 
@@ -8391,7 +8391,7 @@ class GetNodePoolNodeConfigSecurityLoginResult(dict):
     @pulumi.getter(name="sshKeyPairName")
     def ssh_key_pair_name(self) -> builtins.str:
         """
-        SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+        SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
         """
         return pulumi.get(self, "ssh_key_pair_name")
 
@@ -8399,7 +8399,7 @@ class GetNodePoolNodeConfigSecurityLoginResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+        Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
         """
         return pulumi.get(self, "type")
 
@@ -8412,10 +8412,10 @@ class GetNodePoolNodeConfigSystemVolumeResult(dict):
                  subgroup_number: builtins.int,
                  type: builtins.str):
         """
-        :param builtins.str placement_group_id: 放置组Id
-        :param builtins.int size: 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
-        :param builtins.int subgroup_number: 放置子组
-        :param builtins.str type: 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        :param builtins.str placement_group_id: Placement group ID
+        :param builtins.int size: Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+        :param builtins.int subgroup_number: Placement subgroup
+        :param builtins.str type: Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
         """
         pulumi.set(__self__, "placement_group_id", placement_group_id)
         pulumi.set(__self__, "size", size)
@@ -8426,7 +8426,7 @@ class GetNodePoolNodeConfigSystemVolumeResult(dict):
     @pulumi.getter(name="placementGroupId")
     def placement_group_id(self) -> builtins.str:
         """
-        放置组Id
+        Placement group ID
         """
         return pulumi.get(self, "placement_group_id")
 
@@ -8434,7 +8434,7 @@ class GetNodePoolNodeConfigSystemVolumeResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+        Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
         """
         return pulumi.get(self, "size")
 
@@ -8442,7 +8442,7 @@ class GetNodePoolNodeConfigSystemVolumeResult(dict):
     @pulumi.getter(name="subgroupNumber")
     def subgroup_number(self) -> builtins.int:
         """
-        放置子组
+        Placement subgroup
         """
         return pulumi.get(self, "subgroup_number")
 
@@ -8450,7 +8450,7 @@ class GetNodePoolNodeConfigSystemVolumeResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
         """
         return pulumi.get(self, "type")
 
@@ -8461,8 +8461,8 @@ class GetNodePoolNodeConfigTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Label key
+        :param builtins.str value: Label value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -8471,7 +8471,7 @@ class GetNodePoolNodeConfigTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Label key
         """
         return pulumi.get(self, "key")
 
@@ -8479,7 +8479,7 @@ class GetNodePoolNodeConfigTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Label value.
         """
         return pulumi.get(self, "value")
 
@@ -8494,12 +8494,12 @@ class GetNodePoolNodeStatisticsResult(dict):
                  total_count: builtins.int,
                  updating_count: builtins.int):
         """
-        :param builtins.int creating_count: Phase=Creating的节点总数量。
-        :param builtins.int deleting_count: Phase=Deleting的节点总数量。
-        :param builtins.int failed_count: Phase=Failed的节点总数量。
-        :param builtins.int running_count: Phase=Running的节点总数量。
-        :param builtins.int total_count: 节点池中的节点总数量。
-        :param builtins.int updating_count: Phase=Updating的节点总数量。
+        :param builtins.int creating_count: Total number of nodes in Phase=Creating.
+        :param builtins.int deleting_count: Total number of nodes with Phase=Deleting
+        :param builtins.int failed_count: Total number of nodes with Phase=Failed
+        :param builtins.int running_count: Total number of nodes with Phase=Running
+        :param builtins.int total_count: Total number of nodes in the node pool
+        :param builtins.int updating_count: Total number of nodes with Phase=Updating
         """
         pulumi.set(__self__, "creating_count", creating_count)
         pulumi.set(__self__, "deleting_count", deleting_count)
@@ -8512,7 +8512,7 @@ class GetNodePoolNodeStatisticsResult(dict):
     @pulumi.getter(name="creatingCount")
     def creating_count(self) -> builtins.int:
         """
-        Phase=Creating的节点总数量。
+        Total number of nodes in Phase=Creating.
         """
         return pulumi.get(self, "creating_count")
 
@@ -8520,7 +8520,7 @@ class GetNodePoolNodeStatisticsResult(dict):
     @pulumi.getter(name="deletingCount")
     def deleting_count(self) -> builtins.int:
         """
-        Phase=Deleting的节点总数量。
+        Total number of nodes with Phase=Deleting
         """
         return pulumi.get(self, "deleting_count")
 
@@ -8528,7 +8528,7 @@ class GetNodePoolNodeStatisticsResult(dict):
     @pulumi.getter(name="failedCount")
     def failed_count(self) -> builtins.int:
         """
-        Phase=Failed的节点总数量。
+        Total number of nodes with Phase=Failed
         """
         return pulumi.get(self, "failed_count")
 
@@ -8536,7 +8536,7 @@ class GetNodePoolNodeStatisticsResult(dict):
     @pulumi.getter(name="runningCount")
     def running_count(self) -> builtins.int:
         """
-        Phase=Running的节点总数量。
+        Total number of nodes with Phase=Running
         """
         return pulumi.get(self, "running_count")
 
@@ -8544,7 +8544,7 @@ class GetNodePoolNodeStatisticsResult(dict):
     @pulumi.getter(name="totalCount")
     def total_count(self) -> builtins.int:
         """
-        节点池中的节点总数量。
+        Total number of nodes in the node pool
         """
         return pulumi.get(self, "total_count")
 
@@ -8552,7 +8552,7 @@ class GetNodePoolNodeStatisticsResult(dict):
     @pulumi.getter(name="updatingCount")
     def updating_count(self) -> builtins.int:
         """
-        Phase=Updating的节点总数量。
+        Total number of nodes with Phase=Updating
         """
         return pulumi.get(self, "updating_count")
 
@@ -8563,8 +8563,8 @@ class GetNodePoolStatusResult(dict):
                  conditions: Sequence['outputs.GetNodePoolStatusConditionResult'],
                  phase: builtins.str):
         """
-        :param Sequence['GetNodePoolStatusConditionArgs'] conditions: 节点池当前主状态下的状态条件，即进入该主状态的原因。
-        :param builtins.str phase: 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+        :param Sequence['GetNodePoolStatusConditionArgs'] conditions: Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
+        :param builtins.str phase: Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
         """
         pulumi.set(__self__, "conditions", conditions)
         pulumi.set(__self__, "phase", phase)
@@ -8573,7 +8573,7 @@ class GetNodePoolStatusResult(dict):
     @pulumi.getter
     def conditions(self) -> Sequence['outputs.GetNodePoolStatusConditionResult']:
         """
-        节点池当前主状态下的状态条件，即进入该主状态的原因。
+        Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
         """
         return pulumi.get(self, "conditions")
 
@@ -8581,7 +8581,7 @@ class GetNodePoolStatusResult(dict):
     @pulumi.getter
     def phase(self) -> builtins.str:
         """
-        节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+        Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
         """
         return pulumi.get(self, "phase")
 
@@ -8591,7 +8591,7 @@ class GetNodePoolStatusConditionResult(dict):
     def __init__(__self__, *,
                  type: builtins.str):
         """
-        :param builtins.str type: 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+        :param builtins.str type: Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
         """
         pulumi.set(__self__, "type", type)
 
@@ -8599,7 +8599,7 @@ class GetNodePoolStatusConditionResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+        Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
         """
         return pulumi.get(self, "type")
 
@@ -8610,8 +8610,8 @@ class GetNodePoolTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Label key
+        :param builtins.str value: Label value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -8620,7 +8620,7 @@ class GetNodePoolTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Label key
         """
         return pulumi.get(self, "key")
 
@@ -8628,7 +8628,7 @@ class GetNodePoolTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Label value.
         """
         return pulumi.get(self, "value")
 
@@ -8639,8 +8639,8 @@ class GetNodeStatusResult(dict):
                  conditions: Sequence['outputs.GetNodeStatusConditionResult'],
                  phase: builtins.str):
         """
-        :param Sequence['GetNodeStatusConditionArgs'] conditions: 节点当前主状态下的状态条件，即进入该主状态的原因。
-        :param builtins.str phase: 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+        :param Sequence['GetNodeStatusConditionArgs'] conditions: Status condition under the node's current primary state, indicating the reason for entering this primary state.
+        :param builtins.str phase: Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
         """
         pulumi.set(__self__, "conditions", conditions)
         pulumi.set(__self__, "phase", phase)
@@ -8649,7 +8649,7 @@ class GetNodeStatusResult(dict):
     @pulumi.getter
     def conditions(self) -> Sequence['outputs.GetNodeStatusConditionResult']:
         """
-        节点当前主状态下的状态条件，即进入该主状态的原因。
+        Status condition under the node's current primary state, indicating the reason for entering this primary state.
         """
         return pulumi.get(self, "conditions")
 
@@ -8657,7 +8657,7 @@ class GetNodeStatusResult(dict):
     @pulumi.getter
     def phase(self) -> builtins.str:
         """
-        节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+        Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
         """
         return pulumi.get(self, "phase")
 
@@ -8667,7 +8667,7 @@ class GetNodeStatusConditionResult(dict):
     def __init__(__self__, *,
                  type: builtins.str):
         """
-        :param builtins.str type: 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+        :param builtins.str type: Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
         """
         pulumi.set(__self__, "type", type)
 
@@ -8675,7 +8675,7 @@ class GetNodeStatusConditionResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+        Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
         """
         return pulumi.get(self, "type")
 

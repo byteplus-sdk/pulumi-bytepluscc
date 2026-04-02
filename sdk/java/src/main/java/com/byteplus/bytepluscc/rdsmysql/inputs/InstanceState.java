@@ -36,14 +36,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+     * Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
      * 
      */
     @Import(name="allowListIds")
     private @Nullable Output<List<String>> allowListIds;
 
     /**
-     * @return 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+     * @return Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
      * 
      */
     public Optional<Output<List<String>>> allowListIds() {
@@ -51,14 +51,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单版本。
+     * Allowlist version
      * 
      */
     @Import(name="allowListVersion")
     private @Nullable Output<String> allowListVersion;
 
     /**
-     * @return 白名单版本。
+     * @return Allowlist version
      * 
      */
     public Optional<Output<String>> allowListVersion() {
@@ -66,14 +66,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自动扩容配置。
+     * Auto scaling configuration
      * 
      */
     @Import(name="autoStorageScalingConfig")
     private @Nullable Output<InstanceAutoStorageScalingConfigArgs> autoStorageScalingConfig;
 
     /**
-     * @return 自动扩容配置。
+     * @return Auto scaling configuration
      * 
      */
     public Optional<Output<InstanceAutoStorageScalingConfigArgs>> autoStorageScalingConfig() {
@@ -81,14 +81,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+     * Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
      * 
      */
     @Import(name="autoUpgradeMinorVersion")
     private @Nullable Output<String> autoUpgradeMinorVersion;
 
     /**
-     * @return 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+     * @return Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
      * 
      */
     public Optional<Output<String>> autoUpgradeMinorVersion() {
@@ -96,14 +96,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份中审计日志使用的空间。
+     * Space used by audit logs in backup.
      * 
      */
     @Import(name="backupAuditLogSize")
     private @Nullable Output<Integer> backupAuditLogSize;
 
     /**
-     * @return 备份中审计日志使用的空间。
+     * @return Space used by audit logs in backup.
      * 
      */
     public Optional<Output<Integer>> backupAuditLogSize() {
@@ -111,14 +111,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份中 Binlog 日志使用的空间。
+     * Space used by binlog logs in backup.
      * 
      */
     @Import(name="backupBinLogSize")
     private @Nullable Output<Integer> backupBinLogSize;
 
     /**
-     * @return 备份中 Binlog 日志使用的空间。
+     * @return Space used by binlog logs in backup.
      * 
      */
     public Optional<Output<Integer>> backupBinLogSize() {
@@ -126,14 +126,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份中数据使用的空间。
+     * Space used by data in backup.
      * 
      */
     @Import(name="backupDataSize")
     private @Nullable Output<Integer> backupDataSize;
 
     /**
-     * @return 备份中数据使用的空间。
+     * @return Space used by data in backup.
      * 
      */
     public Optional<Output<Integer>> backupDataSize() {
@@ -141,14 +141,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份中错误日志使用的空间。
+     * Space used by error logs in backups.
      * 
      */
     @Import(name="backupErrorLogSize")
     private @Nullable Output<Integer> backupErrorLogSize;
 
     /**
-     * @return 备份中错误日志使用的空间。
+     * @return Space used by error logs in backups.
      * 
      */
     public Optional<Output<Integer>> backupErrorLogSize() {
@@ -156,14 +156,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 免费的备份存储空间，单位为 GB。
+     * Free backup storage space, in GB
      * 
      */
     @Import(name="backupFreeQuotaSize")
     private @Nullable Output<Integer> backupFreeQuotaSize;
 
     /**
-     * @return 免费的备份存储空间，单位为 GB。
+     * @return Free backup storage space, in GB
      * 
      */
     public Optional<Output<Integer>> backupFreeQuotaSize() {
@@ -171,14 +171,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份中日志使用的空间。
+     * Space used by logs in backups.
      * 
      */
     @Import(name="backupLogSize")
     private @Nullable Output<Integer> backupLogSize;
 
     /**
-     * @return 备份中日志使用的空间。
+     * @return Space used by logs in backups.
      * 
      */
     public Optional<Output<Integer>> backupLogSize() {
@@ -186,14 +186,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份中慢日志使用的空间。
+     * Space used by slow logs in backups.
      * 
      */
     @Import(name="backupSlowLogSize")
     private @Nullable Output<Integer> backupSlowLogSize;
 
     /**
-     * @return 备份中慢日志使用的空间。
+     * @return Space used by slow logs in backups.
      * 
      */
     public Optional<Output<Integer>> backupSlowLogSize() {
@@ -201,14 +201,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的备份已使用的空间，单位为 GB。
+     * Backup space used by the instance, in GB
      * 
      */
     @Import(name="backupUse")
     private @Nullable Output<Double> backupUse;
 
     /**
-     * @return 实例的备份已使用的空间，单位为 GB。
+     * @return Backup space used by the instance, in GB
      * 
      */
     public Optional<Output<Double>> backupUse() {
@@ -216,14 +216,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 基础备份中 Binlog 日志使用的空间。
+     * Space used by Binlog logs in basic backups.
      * 
      */
     @Import(name="basicBackupBinlogSize")
     private @Nullable Output<Integer> basicBackupBinlogSize;
 
     /**
-     * @return 基础备份中 Binlog 日志使用的空间。
+     * @return Space used by Binlog logs in basic backups.
      * 
      */
     public Optional<Output<Integer>> basicBackupBinlogSize() {
@@ -231,14 +231,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 基础备份中数据使用的空间。
+     * Space used by data in the base backup
      * 
      */
     @Import(name="basicBackupDataSize")
     private @Nullable Output<Integer> basicBackupDataSize;
 
     /**
-     * @return 基础备份中数据使用的空间。
+     * @return Space used by data in the base backup
      * 
      */
     public Optional<Output<Integer>> basicBackupDataSize() {
@@ -246,14 +246,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 付费方式。
+     * Billing method
      * 
      */
     @Import(name="chargeDetail")
     private @Nullable Output<InstanceChargeDetailArgs> chargeDetail;
 
     /**
-     * @return 付费方式。
+     * @return Billing method
      * 
      */
     public Optional<Output<InstanceChargeDetailArgs>> chargeDetail() {
@@ -261,14 +261,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例数据库代理服务的 CPU 核数。
+     * Number of CPU cores for the database proxy service of the instance
      * 
      */
     @Import(name="cpuNum")
     private @Nullable Output<Integer> cpuNum;
 
     /**
-     * @return 实例数据库代理服务的 CPU 核数。
+     * @return Number of CPU cores for the database proxy service of the instance
      * 
      */
     public Optional<Output<Integer>> cpuNum() {
@@ -276,14 +276,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例创建本地时间。
+     * Instance creation local time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 实例创建本地时间。
+     * @return Instance creation local time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -291,14 +291,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的内核小版本。
+     * Instance kernel minor version.
      * 
      */
     @Import(name="currentKernelVersion")
     private @Nullable Output<String> currentKernelVersion;
 
     /**
-     * @return 实例的内核小版本。
+     * @return Instance kernel minor version.
      * 
      */
     public Optional<Output<String>> currentKernelVersion() {
@@ -306,14 +306,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
      * 
      */
     @Import(name="dbEngineVersion")
     private @Nullable Output<String> dbEngineVersion;
 
     /**
-     * @return 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * @return Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
      * 
      */
     public Optional<Output<String>> dbEngineVersion() {
@@ -321,14 +321,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+     * Parameter template ID. Default value is the default parameter template for the database engine version
      * 
      */
     @Import(name="dbParamGroupId")
     private @Nullable Output<String> dbParamGroupId;
 
     /**
-     * @return 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+     * @return Parameter template ID. Default value is the default parameter template for the database engine version
      * 
      */
     public Optional<Output<String>> dbParamGroupId() {
@@ -336,14 +336,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+     * Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
      * 
      */
     @Import(name="dbTimeZone")
     private @Nullable Output<String> dbTimeZone;
 
     /**
-     * @return 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+     * @return Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
      * 
      */
     public Optional<Output<String>> dbTimeZone() {
@@ -351,14 +351,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+     * Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
      * 
      */
     @Import(name="deletionProtection")
     private @Nullable Output<String> deletionProtection;
 
     /**
-     * @return 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+     * @return Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
      * 
      */
     public Optional<Output<String>> deletionProtection() {
@@ -373,14 +373,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+     * ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
      * 
      */
     @Import(name="drDtsTaskId")
     private @Nullable Output<String> drDtsTaskId;
 
     /**
-     * @return 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+     * @return ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
      * 
      */
     public Optional<Output<String>> drDtsTaskId() {
@@ -388,14 +388,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 主实例与灾备实例之间同步任务的名称。
+     * Name of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     @Import(name="drDtsTaskName")
     private @Nullable Output<String> drDtsTaskName;
 
     /**
-     * @return 主实例与灾备实例之间同步任务的名称。
+     * @return Name of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     public Optional<Output<String>> drDtsTaskName() {
@@ -403,14 +403,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 主实例与灾备实例之间同步任务的状态。
+     * Status of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     @Import(name="drDtsTaskStatus")
     private @Nullable Output<String> drDtsTaskStatus;
 
     /**
-     * @return 主实例与灾备实例之间同步任务的状态。
+     * @return Status of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     public Optional<Output<String>> drDtsTaskStatus() {
@@ -418,14 +418,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 灾备实例与主实例之间的时延。
+     * Latency between the disaster recovery instance and the primary instance.
      * 
      */
     @Import(name="drSecondsBehindMaster")
     private @Nullable Output<Integer> drSecondsBehindMaster;
 
     /**
-     * @return 灾备实例与主实例之间的时延。
+     * @return Latency between the disaster recovery instance and the primary instance.
      * 
      */
     public Optional<Output<Integer>> drSecondsBehindMaster() {
@@ -440,14 +440,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+     * Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      * 
      */
     @Import(name="globalReadOnly")
     private @Nullable Output<Boolean> globalReadOnly;
 
     /**
-     * @return 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+     * @return Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      * 
      */
     public Optional<Output<Boolean>> globalReadOnly() {
@@ -455,14 +455,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例是否有灾备实例。取值：true：是。false：否。
+     * Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
      * 
      */
     @Import(name="hasDisasterRecoveryInstances")
     private @Nullable Output<Boolean> hasDisasterRecoveryInstances;
 
     /**
-     * @return 实例是否有灾备实例。取值：true：是。false：否。
+     * @return Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
      * 
      */
     public Optional<Output<Boolean>> hasDisasterRecoveryInstances() {
@@ -470,14 +470,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例是否处于蓝绿部署中。取值：true：是。false：否。
+     * Is the instance in blue-green deployment? Values: true: yes. false: no.
      * 
      */
     @Import(name="hasGreenInstance")
     private @Nullable Output<Boolean> hasGreenInstance;
 
     /**
-     * @return 实例是否处于蓝绿部署中。取值：true：是。false：否。
+     * @return Is the instance in blue-green deployment? Values: true: yes. false: no.
      * 
      */
     public Optional<Output<Boolean>> hasGreenInstance() {
@@ -485,14 +485,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID。
+     * Instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -500,14 +500,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例名称。
+     * Instance name.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 实例名称。
+     * @return Instance name.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -515,14 +515,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例状态。
+     * Instance status.
      * 
      */
     @Import(name="instanceStatus")
     private @Nullable Output<String> instanceStatus;
 
     /**
-     * @return 实例状态。
+     * @return Instance status.
      * 
      */
     public Optional<Output<String>> instanceStatus() {
@@ -530,14 +530,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+     * Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
-     * @return 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+     * @return Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
      * 
      */
     public Optional<Output<String>> instanceType() {
@@ -545,14 +545,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+     * Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
      * 
      */
     @Import(name="lowerCaseTableNames")
     private @Nullable Output<String> lowerCaseTableNames;
 
     /**
-     * @return 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+     * @return Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
      * 
      */
     public Optional<Output<String>> lowerCaseTableNames() {
@@ -560,14 +560,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+     * Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
      * 
      */
     @Import(name="maintenanceWindow")
     private @Nullable Output<InstanceMaintenanceWindowArgs> maintenanceWindow;
 
     /**
-     * @return 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+     * @return Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
      * 
      */
     public Optional<Output<InstanceMaintenanceWindowArgs>> maintenanceWindow() {
@@ -575,14 +575,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 主实例的 ID。
+     * Primary instance ID
      * 
      */
     @Import(name="masterInstanceId")
     private @Nullable Output<String> masterInstanceId;
 
     /**
-     * @return 主实例的 ID。
+     * @return Primary instance ID
      * 
      */
     public Optional<Output<String>> masterInstanceId() {
@@ -590,14 +590,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 主实例的名称。
+     * Primary instance name.
      * 
      */
     @Import(name="masterInstanceName")
     private @Nullable Output<String> masterInstanceName;
 
     /**
-     * @return 主实例的名称。
+     * @return Primary instance name.
      * 
      */
     public Optional<Output<String>> masterInstanceName() {
@@ -605,14 +605,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 内存大小。单位：GB。
+     * Memory size. Unit: GB.
      * 
      */
     @Import(name="memory")
     private @Nullable Output<Integer> memory;
 
     /**
-     * @return 内存大小。单位：GB。
+     * @return Memory size. Unit: GB.
      * 
      */
     public Optional<Output<Integer>> memory() {
@@ -620,14 +620,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例主节点 CPU 使用率近一分钟的平均值。
+     * Average CPU usage of the primary node in the instance over the past minute.
      * 
      */
     @Import(name="nodeCpuUsedPercentage")
     private @Nullable Output<Double> nodeCpuUsedPercentage;
 
     /**
-     * @return 实例主节点 CPU 使用率近一分钟的平均值。
+     * @return Average CPU usage of the primary node in the instance over the past minute.
      * 
      */
     public Optional<Output<Double>> nodeCpuUsedPercentage() {
@@ -635,14 +635,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例主节点内存使用率近一分钟的平均值。
+     * Average memory usage of the primary node over the past minute
      * 
      */
     @Import(name="nodeMemoryUsedPercentage")
     private @Nullable Output<Double> nodeMemoryUsedPercentage;
 
     /**
-     * @return 实例主节点内存使用率近一分钟的平均值。
+     * @return Average memory usage of the primary node over the past minute
      * 
      */
     public Optional<Output<Double>> nodeMemoryUsedPercentage() {
@@ -650,14 +650,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点数量。
+     * Number of nodes.
      * 
      */
     @Import(name="nodeNumber")
     private @Nullable Output<String> nodeNumber;
 
     /**
-     * @return 节点数量。
+     * @return Number of nodes.
      * 
      */
     public Optional<Output<String>> nodeNumber() {
@@ -665,14 +665,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例主节点磁盘使用率近一分钟的平均值。
+     * Average disk usage of the primary node over the past minute
      * 
      */
     @Import(name="nodeSpaceUsedPercentage")
     private @Nullable Output<Double> nodeSpaceUsedPercentage;
 
     /**
-     * @return 实例主节点磁盘使用率近一分钟的平均值。
+     * @return Average disk usage of the primary node over the past minute
      * 
      */
     public Optional<Output<Double>> nodeSpaceUsedPercentage() {
@@ -680,14 +680,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点规格。
+     * Node specifications.
      * 
      */
     @Import(name="nodeSpec")
     private @Nullable Output<String> nodeSpec;
 
     /**
-     * @return 节点规格。
+     * @return Node specifications.
      * 
      */
     public Optional<Output<String>> nodeSpec() {
@@ -702,14 +702,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+     * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+     * @return Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -717,14 +717,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 所属项目。
+     * Project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 所属项目。
+     * @return Project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -732,14 +732,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * proxy信息
+     * proxy information
      * 
      */
     @Import(name="proxyDetail")
     private @Nullable Output<InstanceProxyDetailArgs> proxyDetail;
 
     /**
-     * @return proxy信息
+     * @return proxy information
      * 
      */
     public Optional<Output<InstanceProxyDetailArgs>> proxyDetail() {
@@ -747,14 +747,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例存储空间中审计日志使用的空间。
+     * Space used by audit logs in instance storage
      * 
      */
     @Import(name="storageAuditLogSize")
     private @Nullable Output<Integer> storageAuditLogSize;
 
     /**
-     * @return 实例存储空间中审计日志使用的空间。
+     * @return Space used by audit logs in instance storage
      * 
      */
     public Optional<Output<Integer>> storageAuditLogSize() {
@@ -762,14 +762,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例存储空间中 Binlog 使用的空间。
+     * Binlog space usage in the instance storage
      * 
      */
     @Import(name="storageBinLogSize")
     private @Nullable Output<Integer> storageBinLogSize;
 
     /**
-     * @return 实例存储空间中 Binlog 使用的空间。
+     * @return Binlog space usage in the instance storage
      * 
      */
     public Optional<Output<Integer>> storageBinLogSize() {
@@ -777,14 +777,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例存储空间中数据使用的空间。
+     * Space used by data in instance storage.
      * 
      */
     @Import(name="storageDataSize")
     private @Nullable Output<Integer> storageDataSize;
 
     /**
-     * @return 实例存储空间中数据使用的空间。
+     * @return Space used by data in instance storage.
      * 
      */
     public Optional<Output<Integer>> storageDataSize() {
@@ -792,14 +792,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例存储空间中错误日志使用的空间。
+     * Space used by error logs in instance storage.
      * 
      */
     @Import(name="storageErrorLogSize")
     private @Nullable Output<Integer> storageErrorLogSize;
 
     /**
-     * @return 实例存储空间中错误日志使用的空间。
+     * @return Space used by error logs in instance storage.
      * 
      */
     public Optional<Output<Integer>> storageErrorLogSize() {
@@ -807,14 +807,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例存储空间中日志使用的空间。
+     * Space used by logs in the instance storage
      * 
      */
     @Import(name="storageLogSize")
     private @Nullable Output<Integer> storageLogSize;
 
     /**
-     * @return 实例存储空间中日志使用的空间。
+     * @return Space used by logs in the instance storage
      * 
      */
     public Optional<Output<Integer>> storageLogSize() {
@@ -822,14 +822,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例存储空间中慢日志使用的空间。
+     * Space used by slow logs in instance storage
      * 
      */
     @Import(name="storageSlowLogSize")
     private @Nullable Output<Integer> storageSlowLogSize;
 
     /**
-     * @return 实例存储空间中慢日志使用的空间。
+     * @return Space used by slow logs in instance storage
      * 
      */
     public Optional<Output<Integer>> storageSlowLogSize() {
@@ -837,14 +837,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例总存储空间。单位为 GB。
+     * Total storage space of the instance, in GB
      * 
      */
     @Import(name="storageSpace")
     private @Nullable Output<Integer> storageSpace;
 
     /**
-     * @return 实例总存储空间。单位为 GB。
+     * @return Total storage space of the instance, in GB
      * 
      */
     public Optional<Output<Integer>> storageSpace() {
@@ -852,14 +852,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+     * Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
      * 
      */
     @Import(name="storageType")
     private @Nullable Output<String> storageType;
 
     /**
-     * @return 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+     * @return Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
      * 
      */
     public Optional<Output<String>> storageType() {
@@ -867,14 +867,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例已使用用存储空间，单位为 GB。
+     * Storage space used by the instance, in GB
      * 
      */
     @Import(name="storageUse")
     private @Nullable Output<Double> storageUse;
 
     /**
-     * @return 实例已使用用存储空间，单位为 GB。
+     * @return Storage space used by the instance, in GB
      * 
      */
     public Optional<Output<Double>> storageUse() {
@@ -882,14 +882,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网 ID。
+     * Subnet ID.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 子网 ID。
+     * @return Subnet ID.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -897,14 +897,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 高权限账号名称。不传此参数默认不创建高权限账号。
+     * High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
      * 
      */
     @Import(name="superAccountName")
     private @Nullable Output<String> superAccountName;
 
     /**
-     * @return 高权限账号名称。不传此参数默认不创建高权限账号。
+     * @return High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
      * 
      */
     public Optional<Output<String>> superAccountName() {
@@ -912,14 +912,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+     * Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
      * 
      */
     @Import(name="superAccountPassword")
     private @Nullable Output<String> superAccountPassword;
 
     /**
-     * @return 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+     * @return Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
      * 
      */
     public Optional<Output<String>> superAccountPassword() {
@@ -927,14 +927,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据同步方式：SemiSync：半同步。Async：异步。
+     * Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
      * 
      */
     @Import(name="syncMode")
     private @Nullable Output<String> syncMode;
 
     /**
-     * @return 数据同步方式：SemiSync：半同步。Async：异步。
+     * @return Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
      * 
      */
     public Optional<Output<String>> syncMode() {
@@ -949,14 +949,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 时区。
+     * Time zone
      * 
      */
     @Import(name="timeZone")
     private @Nullable Output<String> timeZone;
 
     /**
-     * @return 时区。
+     * @return Time zone
      * 
      */
     public Optional<Output<String>> timeZone() {
@@ -964,14 +964,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例更新本地时间。
+     * Instance updates local time.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 实例更新本地时间。
+     * @return Instance updates local time.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -979,14 +979,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CPU 大小。例如：1 表示 1U。
+     * CPU size. For example: 1 means 1U.
      * 
      */
     @Import(name="vcpu")
     private @Nullable Output<Integer> vcpu;
 
     /**
-     * @return CPU 大小。例如：1 表示 1U。
+     * @return CPU size. For example: 1 means 1U.
      * 
      */
     public Optional<Output<Integer>> vcpu() {
@@ -994,14 +994,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 专有网络（VPC） ID。
+     * VPC (Virtual Private Cloud) ID.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 专有网络（VPC） ID。
+     * @return VPC (Virtual Private Cloud) ID.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -1009,14 +1009,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例主节点所在可用区。
+     * Availability zone of the instance&#39;s primary node.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 实例主节点所在可用区。
+     * @return Availability zone of the instance&#39;s primary node.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -1024,14 +1024,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例各节点所在的可用区列表。
+     * List of availability zones for each node in the instance.
      * 
      */
     @Import(name="zoneIds")
     private @Nullable Output<List<String>> zoneIds;
 
     /**
-     * @return 实例各节点所在的可用区列表。
+     * @return List of availability zones for each node in the instance.
      * 
      */
     public Optional<Output<List<String>>> zoneIds() {
@@ -1145,7 +1145,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIds 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+         * @param allowListIds Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
          * 
          * @return builder
          * 
@@ -1156,7 +1156,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIds 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+         * @param allowListIds Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
          * 
          * @return builder
          * 
@@ -1166,7 +1166,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIds 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+         * @param allowListIds Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
          * 
          * @return builder
          * 
@@ -1176,7 +1176,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListVersion 白名单版本。
+         * @param allowListVersion Allowlist version
          * 
          * @return builder
          * 
@@ -1187,7 +1187,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListVersion 白名单版本。
+         * @param allowListVersion Allowlist version
          * 
          * @return builder
          * 
@@ -1197,7 +1197,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoStorageScalingConfig 自动扩容配置。
+         * @param autoStorageScalingConfig Auto scaling configuration
          * 
          * @return builder
          * 
@@ -1208,7 +1208,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoStorageScalingConfig 自动扩容配置。
+         * @param autoStorageScalingConfig Auto scaling configuration
          * 
          * @return builder
          * 
@@ -1218,7 +1218,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoUpgradeMinorVersion 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+         * @param autoUpgradeMinorVersion Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
          * 
          * @return builder
          * 
@@ -1229,7 +1229,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoUpgradeMinorVersion 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+         * @param autoUpgradeMinorVersion Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
          * 
          * @return builder
          * 
@@ -1239,7 +1239,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupAuditLogSize 备份中审计日志使用的空间。
+         * @param backupAuditLogSize Space used by audit logs in backup.
          * 
          * @return builder
          * 
@@ -1250,7 +1250,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupAuditLogSize 备份中审计日志使用的空间。
+         * @param backupAuditLogSize Space used by audit logs in backup.
          * 
          * @return builder
          * 
@@ -1260,7 +1260,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupBinLogSize 备份中 Binlog 日志使用的空间。
+         * @param backupBinLogSize Space used by binlog logs in backup.
          * 
          * @return builder
          * 
@@ -1271,7 +1271,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupBinLogSize 备份中 Binlog 日志使用的空间。
+         * @param backupBinLogSize Space used by binlog logs in backup.
          * 
          * @return builder
          * 
@@ -1281,7 +1281,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupDataSize 备份中数据使用的空间。
+         * @param backupDataSize Space used by data in backup.
          * 
          * @return builder
          * 
@@ -1292,7 +1292,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupDataSize 备份中数据使用的空间。
+         * @param backupDataSize Space used by data in backup.
          * 
          * @return builder
          * 
@@ -1302,7 +1302,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupErrorLogSize 备份中错误日志使用的空间。
+         * @param backupErrorLogSize Space used by error logs in backups.
          * 
          * @return builder
          * 
@@ -1313,7 +1313,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupErrorLogSize 备份中错误日志使用的空间。
+         * @param backupErrorLogSize Space used by error logs in backups.
          * 
          * @return builder
          * 
@@ -1323,7 +1323,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupFreeQuotaSize 免费的备份存储空间，单位为 GB。
+         * @param backupFreeQuotaSize Free backup storage space, in GB
          * 
          * @return builder
          * 
@@ -1334,7 +1334,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupFreeQuotaSize 免费的备份存储空间，单位为 GB。
+         * @param backupFreeQuotaSize Free backup storage space, in GB
          * 
          * @return builder
          * 
@@ -1344,7 +1344,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupLogSize 备份中日志使用的空间。
+         * @param backupLogSize Space used by logs in backups.
          * 
          * @return builder
          * 
@@ -1355,7 +1355,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupLogSize 备份中日志使用的空间。
+         * @param backupLogSize Space used by logs in backups.
          * 
          * @return builder
          * 
@@ -1365,7 +1365,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupSlowLogSize 备份中慢日志使用的空间。
+         * @param backupSlowLogSize Space used by slow logs in backups.
          * 
          * @return builder
          * 
@@ -1376,7 +1376,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupSlowLogSize 备份中慢日志使用的空间。
+         * @param backupSlowLogSize Space used by slow logs in backups.
          * 
          * @return builder
          * 
@@ -1386,7 +1386,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupUse 实例的备份已使用的空间，单位为 GB。
+         * @param backupUse Backup space used by the instance, in GB
          * 
          * @return builder
          * 
@@ -1397,7 +1397,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupUse 实例的备份已使用的空间，单位为 GB。
+         * @param backupUse Backup space used by the instance, in GB
          * 
          * @return builder
          * 
@@ -1407,7 +1407,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param basicBackupBinlogSize 基础备份中 Binlog 日志使用的空间。
+         * @param basicBackupBinlogSize Space used by Binlog logs in basic backups.
          * 
          * @return builder
          * 
@@ -1418,7 +1418,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param basicBackupBinlogSize 基础备份中 Binlog 日志使用的空间。
+         * @param basicBackupBinlogSize Space used by Binlog logs in basic backups.
          * 
          * @return builder
          * 
@@ -1428,7 +1428,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param basicBackupDataSize 基础备份中数据使用的空间。
+         * @param basicBackupDataSize Space used by data in the base backup
          * 
          * @return builder
          * 
@@ -1439,7 +1439,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param basicBackupDataSize 基础备份中数据使用的空间。
+         * @param basicBackupDataSize Space used by data in the base backup
          * 
          * @return builder
          * 
@@ -1449,7 +1449,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeDetail 付费方式。
+         * @param chargeDetail Billing method
          * 
          * @return builder
          * 
@@ -1460,7 +1460,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeDetail 付费方式。
+         * @param chargeDetail Billing method
          * 
          * @return builder
          * 
@@ -1470,7 +1470,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cpuNum 实例数据库代理服务的 CPU 核数。
+         * @param cpuNum Number of CPU cores for the database proxy service of the instance
          * 
          * @return builder
          * 
@@ -1481,7 +1481,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cpuNum 实例数据库代理服务的 CPU 核数。
+         * @param cpuNum Number of CPU cores for the database proxy service of the instance
          * 
          * @return builder
          * 
@@ -1491,7 +1491,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 实例创建本地时间。
+         * @param createdTime Instance creation local time.
          * 
          * @return builder
          * 
@@ -1502,7 +1502,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 实例创建本地时间。
+         * @param createdTime Instance creation local time.
          * 
          * @return builder
          * 
@@ -1512,7 +1512,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param currentKernelVersion 实例的内核小版本。
+         * @param currentKernelVersion Instance kernel minor version.
          * 
          * @return builder
          * 
@@ -1523,7 +1523,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param currentKernelVersion 实例的内核小版本。
+         * @param currentKernelVersion Instance kernel minor version.
          * 
          * @return builder
          * 
@@ -1533,7 +1533,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersion 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+         * @param dbEngineVersion Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
          * 
          * @return builder
          * 
@@ -1544,7 +1544,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersion 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+         * @param dbEngineVersion Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
          * 
          * @return builder
          * 
@@ -1554,7 +1554,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbParamGroupId 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+         * @param dbParamGroupId Parameter template ID. Default value is the default parameter template for the database engine version
          * 
          * @return builder
          * 
@@ -1565,7 +1565,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbParamGroupId 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+         * @param dbParamGroupId Parameter template ID. Default value is the default parameter template for the database engine version
          * 
          * @return builder
          * 
@@ -1575,7 +1575,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbTimeZone 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+         * @param dbTimeZone Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
          * 
          * @return builder
          * 
@@ -1586,7 +1586,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbTimeZone 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+         * @param dbTimeZone Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
          * 
          * @return builder
          * 
@@ -1596,7 +1596,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletionProtection 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+         * @param deletionProtection Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
          * 
          * @return builder
          * 
@@ -1607,7 +1607,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletionProtection 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+         * @param deletionProtection Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
          * 
          * @return builder
          * 
@@ -1630,7 +1630,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drDtsTaskId 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+         * @param drDtsTaskId ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
          * 
          * @return builder
          * 
@@ -1641,7 +1641,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drDtsTaskId 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+         * @param drDtsTaskId ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
          * 
          * @return builder
          * 
@@ -1651,7 +1651,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drDtsTaskName 主实例与灾备实例之间同步任务的名称。
+         * @param drDtsTaskName Name of synchronization tasks between primary and disaster recovery instances.
          * 
          * @return builder
          * 
@@ -1662,7 +1662,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drDtsTaskName 主实例与灾备实例之间同步任务的名称。
+         * @param drDtsTaskName Name of synchronization tasks between primary and disaster recovery instances.
          * 
          * @return builder
          * 
@@ -1672,7 +1672,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drDtsTaskStatus 主实例与灾备实例之间同步任务的状态。
+         * @param drDtsTaskStatus Status of synchronization tasks between primary and disaster recovery instances.
          * 
          * @return builder
          * 
@@ -1683,7 +1683,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drDtsTaskStatus 主实例与灾备实例之间同步任务的状态。
+         * @param drDtsTaskStatus Status of synchronization tasks between primary and disaster recovery instances.
          * 
          * @return builder
          * 
@@ -1693,7 +1693,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drSecondsBehindMaster 灾备实例与主实例之间的时延。
+         * @param drSecondsBehindMaster Latency between the disaster recovery instance and the primary instance.
          * 
          * @return builder
          * 
@@ -1704,7 +1704,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drSecondsBehindMaster 灾备实例与主实例之间的时延。
+         * @param drSecondsBehindMaster Latency between the disaster recovery instance and the primary instance.
          * 
          * @return builder
          * 
@@ -1727,7 +1727,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param globalReadOnly 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+         * @param globalReadOnly Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
          * 
          * @return builder
          * 
@@ -1738,7 +1738,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param globalReadOnly 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+         * @param globalReadOnly Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
          * 
          * @return builder
          * 
@@ -1748,7 +1748,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hasDisasterRecoveryInstances 实例是否有灾备实例。取值：true：是。false：否。
+         * @param hasDisasterRecoveryInstances Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
          * 
          * @return builder
          * 
@@ -1759,7 +1759,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hasDisasterRecoveryInstances 实例是否有灾备实例。取值：true：是。false：否。
+         * @param hasDisasterRecoveryInstances Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
          * 
          * @return builder
          * 
@@ -1769,7 +1769,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hasGreenInstance 实例是否处于蓝绿部署中。取值：true：是。false：否。
+         * @param hasGreenInstance Is the instance in blue-green deployment? Values: true: yes. false: no.
          * 
          * @return builder
          * 
@@ -1780,7 +1780,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hasGreenInstance 实例是否处于蓝绿部署中。取值：true：是。false：否。
+         * @param hasGreenInstance Is the instance in blue-green deployment? Values: true: yes. false: no.
          * 
          * @return builder
          * 
@@ -1790,7 +1790,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -1801,7 +1801,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -1811,7 +1811,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName 实例名称。
+         * @param instanceName Instance name.
          * 
          * @return builder
          * 
@@ -1822,7 +1822,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName 实例名称。
+         * @param instanceName Instance name.
          * 
          * @return builder
          * 
@@ -1832,7 +1832,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceStatus 实例状态。
+         * @param instanceStatus Instance status.
          * 
          * @return builder
          * 
@@ -1843,7 +1843,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceStatus 实例状态。
+         * @param instanceStatus Instance status.
          * 
          * @return builder
          * 
@@ -1853,7 +1853,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+         * @param instanceType Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
          * 
          * @return builder
          * 
@@ -1864,7 +1864,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+         * @param instanceType Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
          * 
          * @return builder
          * 
@@ -1874,7 +1874,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lowerCaseTableNames 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+         * @param lowerCaseTableNames Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
          * 
          * @return builder
          * 
@@ -1885,7 +1885,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lowerCaseTableNames 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+         * @param lowerCaseTableNames Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
          * 
          * @return builder
          * 
@@ -1895,7 +1895,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceWindow 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+         * @param maintenanceWindow Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
          * 
          * @return builder
          * 
@@ -1906,7 +1906,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceWindow 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+         * @param maintenanceWindow Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
          * 
          * @return builder
          * 
@@ -1916,7 +1916,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterInstanceId 主实例的 ID。
+         * @param masterInstanceId Primary instance ID
          * 
          * @return builder
          * 
@@ -1927,7 +1927,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterInstanceId 主实例的 ID。
+         * @param masterInstanceId Primary instance ID
          * 
          * @return builder
          * 
@@ -1937,7 +1937,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterInstanceName 主实例的名称。
+         * @param masterInstanceName Primary instance name.
          * 
          * @return builder
          * 
@@ -1948,7 +1948,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterInstanceName 主实例的名称。
+         * @param masterInstanceName Primary instance name.
          * 
          * @return builder
          * 
@@ -1958,7 +1958,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param memory 内存大小。单位：GB。
+         * @param memory Memory size. Unit: GB.
          * 
          * @return builder
          * 
@@ -1969,7 +1969,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param memory 内存大小。单位：GB。
+         * @param memory Memory size. Unit: GB.
          * 
          * @return builder
          * 
@@ -1979,7 +1979,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeCpuUsedPercentage 实例主节点 CPU 使用率近一分钟的平均值。
+         * @param nodeCpuUsedPercentage Average CPU usage of the primary node in the instance over the past minute.
          * 
          * @return builder
          * 
@@ -1990,7 +1990,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeCpuUsedPercentage 实例主节点 CPU 使用率近一分钟的平均值。
+         * @param nodeCpuUsedPercentage Average CPU usage of the primary node in the instance over the past minute.
          * 
          * @return builder
          * 
@@ -2000,7 +2000,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeMemoryUsedPercentage 实例主节点内存使用率近一分钟的平均值。
+         * @param nodeMemoryUsedPercentage Average memory usage of the primary node over the past minute
          * 
          * @return builder
          * 
@@ -2011,7 +2011,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeMemoryUsedPercentage 实例主节点内存使用率近一分钟的平均值。
+         * @param nodeMemoryUsedPercentage Average memory usage of the primary node over the past minute
          * 
          * @return builder
          * 
@@ -2021,7 +2021,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeNumber 节点数量。
+         * @param nodeNumber Number of nodes.
          * 
          * @return builder
          * 
@@ -2032,7 +2032,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeNumber 节点数量。
+         * @param nodeNumber Number of nodes.
          * 
          * @return builder
          * 
@@ -2042,7 +2042,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpaceUsedPercentage 实例主节点磁盘使用率近一分钟的平均值。
+         * @param nodeSpaceUsedPercentage Average disk usage of the primary node over the past minute
          * 
          * @return builder
          * 
@@ -2053,7 +2053,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpaceUsedPercentage 实例主节点磁盘使用率近一分钟的平均值。
+         * @param nodeSpaceUsedPercentage Average disk usage of the primary node over the past minute
          * 
          * @return builder
          * 
@@ -2063,7 +2063,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpec 节点规格。
+         * @param nodeSpec Node specifications.
          * 
          * @return builder
          * 
@@ -2074,7 +2074,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpec 节点规格。
+         * @param nodeSpec Node specifications.
          * 
          * @return builder
          * 
@@ -2097,7 +2097,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+         * @param port Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
          * 
          * @return builder
          * 
@@ -2108,7 +2108,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+         * @param port Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
          * 
          * @return builder
          * 
@@ -2118,7 +2118,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 所属项目。
+         * @param projectName Project.
          * 
          * @return builder
          * 
@@ -2129,7 +2129,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 所属项目。
+         * @param projectName Project.
          * 
          * @return builder
          * 
@@ -2139,7 +2139,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyDetail proxy信息
+         * @param proxyDetail proxy information
          * 
          * @return builder
          * 
@@ -2150,7 +2150,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyDetail proxy信息
+         * @param proxyDetail proxy information
          * 
          * @return builder
          * 
@@ -2160,7 +2160,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageAuditLogSize 实例存储空间中审计日志使用的空间。
+         * @param storageAuditLogSize Space used by audit logs in instance storage
          * 
          * @return builder
          * 
@@ -2171,7 +2171,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageAuditLogSize 实例存储空间中审计日志使用的空间。
+         * @param storageAuditLogSize Space used by audit logs in instance storage
          * 
          * @return builder
          * 
@@ -2181,7 +2181,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageBinLogSize 实例存储空间中 Binlog 使用的空间。
+         * @param storageBinLogSize Binlog space usage in the instance storage
          * 
          * @return builder
          * 
@@ -2192,7 +2192,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageBinLogSize 实例存储空间中 Binlog 使用的空间。
+         * @param storageBinLogSize Binlog space usage in the instance storage
          * 
          * @return builder
          * 
@@ -2202,7 +2202,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageDataSize 实例存储空间中数据使用的空间。
+         * @param storageDataSize Space used by data in instance storage.
          * 
          * @return builder
          * 
@@ -2213,7 +2213,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageDataSize 实例存储空间中数据使用的空间。
+         * @param storageDataSize Space used by data in instance storage.
          * 
          * @return builder
          * 
@@ -2223,7 +2223,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageErrorLogSize 实例存储空间中错误日志使用的空间。
+         * @param storageErrorLogSize Space used by error logs in instance storage.
          * 
          * @return builder
          * 
@@ -2234,7 +2234,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageErrorLogSize 实例存储空间中错误日志使用的空间。
+         * @param storageErrorLogSize Space used by error logs in instance storage.
          * 
          * @return builder
          * 
@@ -2244,7 +2244,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageLogSize 实例存储空间中日志使用的空间。
+         * @param storageLogSize Space used by logs in the instance storage
          * 
          * @return builder
          * 
@@ -2255,7 +2255,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageLogSize 实例存储空间中日志使用的空间。
+         * @param storageLogSize Space used by logs in the instance storage
          * 
          * @return builder
          * 
@@ -2265,7 +2265,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageSlowLogSize 实例存储空间中慢日志使用的空间。
+         * @param storageSlowLogSize Space used by slow logs in instance storage
          * 
          * @return builder
          * 
@@ -2276,7 +2276,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageSlowLogSize 实例存储空间中慢日志使用的空间。
+         * @param storageSlowLogSize Space used by slow logs in instance storage
          * 
          * @return builder
          * 
@@ -2286,7 +2286,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageSpace 实例总存储空间。单位为 GB。
+         * @param storageSpace Total storage space of the instance, in GB
          * 
          * @return builder
          * 
@@ -2297,7 +2297,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageSpace 实例总存储空间。单位为 GB。
+         * @param storageSpace Total storage space of the instance, in GB
          * 
          * @return builder
          * 
@@ -2307,7 +2307,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageType 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+         * @param storageType Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
          * 
          * @return builder
          * 
@@ -2318,7 +2318,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageType 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+         * @param storageType Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
          * 
          * @return builder
          * 
@@ -2328,7 +2328,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageUse 实例已使用用存储空间，单位为 GB。
+         * @param storageUse Storage space used by the instance, in GB
          * 
          * @return builder
          * 
@@ -2339,7 +2339,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageUse 实例已使用用存储空间，单位为 GB。
+         * @param storageUse Storage space used by the instance, in GB
          * 
          * @return builder
          * 
@@ -2349,7 +2349,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。
+         * @param subnetId Subnet ID.
          * 
          * @return builder
          * 
@@ -2360,7 +2360,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。
+         * @param subnetId Subnet ID.
          * 
          * @return builder
          * 
@@ -2370,7 +2370,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountName 高权限账号名称。不传此参数默认不创建高权限账号。
+         * @param superAccountName High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
          * 
          * @return builder
          * 
@@ -2381,7 +2381,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountName 高权限账号名称。不传此参数默认不创建高权限账号。
+         * @param superAccountName High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
          * 
          * @return builder
          * 
@@ -2391,7 +2391,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountPassword 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+         * @param superAccountPassword Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
          * 
          * @return builder
          * 
@@ -2402,7 +2402,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountPassword 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+         * @param superAccountPassword Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
          * 
          * @return builder
          * 
@@ -2412,7 +2412,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param syncMode 数据同步方式：SemiSync：半同步。Async：异步。
+         * @param syncMode Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
          * 
          * @return builder
          * 
@@ -2423,7 +2423,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param syncMode 数据同步方式：SemiSync：半同步。Async：异步。
+         * @param syncMode Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
          * 
          * @return builder
          * 
@@ -2446,7 +2446,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeZone 时区。
+         * @param timeZone Time zone
          * 
          * @return builder
          * 
@@ -2457,7 +2457,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeZone 时区。
+         * @param timeZone Time zone
          * 
          * @return builder
          * 
@@ -2467,7 +2467,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 实例更新本地时间。
+         * @param updatedTime Instance updates local time.
          * 
          * @return builder
          * 
@@ -2478,7 +2478,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 实例更新本地时间。
+         * @param updatedTime Instance updates local time.
          * 
          * @return builder
          * 
@@ -2488,7 +2488,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vcpu CPU 大小。例如：1 表示 1U。
+         * @param vcpu CPU size. For example: 1 means 1U.
          * 
          * @return builder
          * 
@@ -2499,7 +2499,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vcpu CPU 大小。例如：1 表示 1U。
+         * @param vcpu CPU size. For example: 1 means 1U.
          * 
          * @return builder
          * 
@@ -2509,7 +2509,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 专有网络（VPC） ID。
+         * @param vpcId VPC (Virtual Private Cloud) ID.
          * 
          * @return builder
          * 
@@ -2520,7 +2520,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 专有网络（VPC） ID。
+         * @param vpcId VPC (Virtual Private Cloud) ID.
          * 
          * @return builder
          * 
@@ -2530,7 +2530,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 实例主节点所在可用区。
+         * @param zoneId Availability zone of the instance&#39;s primary node.
          * 
          * @return builder
          * 
@@ -2541,7 +2541,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 实例主节点所在可用区。
+         * @param zoneId Availability zone of the instance&#39;s primary node.
          * 
          * @return builder
          * 
@@ -2551,7 +2551,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIds 实例各节点所在的可用区列表。
+         * @param zoneIds List of availability zones for each node in the instance.
          * 
          * @return builder
          * 
@@ -2562,7 +2562,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIds 实例各节点所在的可用区列表。
+         * @param zoneIds List of availability zones for each node in the instance.
          * 
          * @return builder
          * 
@@ -2572,7 +2572,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIds 实例各节点所在的可用区列表。
+         * @param zoneIds List of availability zones for each node in the instance.
          * 
          * @return builder
          * 

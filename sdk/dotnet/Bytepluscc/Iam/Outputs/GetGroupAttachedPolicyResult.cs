@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
     public sealed class GetGroupAttachedPolicyResult
     {
         /// <summary>
-        /// 策略绑定时间。
+        /// Policy binding time.
         /// </summary>
         public readonly string AttachTime;
         /// <summary>
-        /// 策略描述。
+        /// Policy description.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 策略名。
+        /// Policy name.
         /// </summary>
         public readonly string PolicyName;
         /// <summary>
-        /// 策略授权的作用范围，特指项目范围。
+        /// Scope of policy authorization, specifically the project scope.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGroupAttachedPolicyPolicyScopeResult> PolicyScopes;
         /// <summary>
-        /// 策略TRN。
+        /// Policy TRN.
         /// </summary>
         public readonly string PolicyTrn;
         /// <summary>
-        /// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+        /// Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
         /// </summary>
         public readonly string PolicyType;
 

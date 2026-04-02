@@ -17,14 +17,14 @@ public final class DbEndpointReadOnlyNodeWeightArgs extends com.pulumi.resources
     public static final DbEndpointReadOnlyNodeWeightArgs Empty = new DbEndpointReadOnlyNodeWeightArgs();
 
     /**
-     * 只读节点需要传入 NodeId。
+     * Read-only nodes require the NodeId to be provided.
      * 
      */
     @Import(name="nodeId")
     private @Nullable Output<String> nodeId;
 
     /**
-     * @return 只读节点需要传入 NodeId。
+     * @return Read-only nodes require the NodeId to be provided.
      * 
      */
     public Optional<Output<String>> nodeId() {
@@ -32,14 +32,14 @@ public final class DbEndpointReadOnlyNodeWeightArgs extends com.pulumi.resources
     }
 
     /**
-     * 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+     * Node type. Values: Primary: primary node. ReadOnly: read-only node.
      * 
      */
     @Import(name="nodeType")
     private @Nullable Output<String> nodeType;
 
     /**
-     * @return 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+     * @return Node type. Values: Primary: primary node. ReadOnly: read-only node.
      * 
      */
     public Optional<Output<String>> nodeType() {
@@ -47,14 +47,14 @@ public final class DbEndpointReadOnlyNodeWeightArgs extends com.pulumi.resources
     }
 
     /**
-     * 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+     * Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
      * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
-     * @return 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+     * @return Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
      * 
      */
     public Optional<Output<Integer>> weight() {
@@ -88,7 +88,7 @@ public final class DbEndpointReadOnlyNodeWeightArgs extends com.pulumi.resources
         }
 
         /**
-         * @param nodeId 只读节点需要传入 NodeId。
+         * @param nodeId Read-only nodes require the NodeId to be provided.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class DbEndpointReadOnlyNodeWeightArgs extends com.pulumi.resources
         }
 
         /**
-         * @param nodeId 只读节点需要传入 NodeId。
+         * @param nodeId Read-only nodes require the NodeId to be provided.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class DbEndpointReadOnlyNodeWeightArgs extends com.pulumi.resources
         }
 
         /**
-         * @param nodeType 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+         * @param nodeType Node type. Values: Primary: primary node. ReadOnly: read-only node.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class DbEndpointReadOnlyNodeWeightArgs extends com.pulumi.resources
         }
 
         /**
-         * @param nodeType 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+         * @param nodeType Node type. Values: Primary: primary node. ReadOnly: read-only node.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class DbEndpointReadOnlyNodeWeightArgs extends com.pulumi.resources
         }
 
         /**
-         * @param weight 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+         * @param weight Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class DbEndpointReadOnlyNodeWeightArgs extends com.pulumi.resources
         }
 
         /**
-         * @param weight 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+         * @param weight Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
          * 
          * @return builder
          * 

@@ -24,162 +24,162 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceResult {
     /**
-     * @return 默认终端的连接信息。
+     * @return Connection information for the default endpoint
      * 
      */
     private List<GetInstanceAddressObject> addressObjects;
     /**
-     * @return 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+     * @return Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
      * 
      */
     private List<String> allowListIds;
     /**
-     * @return 白名单版本。
+     * @return Allowlist version
      * 
      */
     private String allowListVersion;
     /**
-     * @return 自动扩容配置。
+     * @return Auto scaling configuration
      * 
      */
     private GetInstanceAutoStorageScalingConfig autoStorageScalingConfig;
     /**
-     * @return 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+     * @return Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
      * 
      */
     private String autoUpgradeMinorVersion;
     /**
-     * @return 备份中审计日志使用的空间。
+     * @return Space used by audit logs in backup.
      * 
      */
     private Integer backupAuditLogSize;
     /**
-     * @return 备份中 Binlog 日志使用的空间。
+     * @return Space used by binlog logs in backup.
      * 
      */
     private Integer backupBinLogSize;
     /**
-     * @return 备份中数据使用的空间。
+     * @return Space used by data in backup.
      * 
      */
     private Integer backupDataSize;
     /**
-     * @return 备份中错误日志使用的空间。
+     * @return Space used by error logs in backups.
      * 
      */
     private Integer backupErrorLogSize;
     /**
-     * @return 免费的备份存储空间，单位为 GB。
+     * @return Free backup storage space, in GB
      * 
      */
     private Integer backupFreeQuotaSize;
     /**
-     * @return 备份中日志使用的空间。
+     * @return Space used by logs in backups.
      * 
      */
     private Integer backupLogSize;
     /**
-     * @return 备份中慢日志使用的空间。
+     * @return Space used by slow logs in backups.
      * 
      */
     private Integer backupSlowLogSize;
     /**
-     * @return 实例的备份已使用的空间，单位为 GB。
+     * @return Backup space used by the instance, in GB
      * 
      */
     private Double backupUse;
     /**
-     * @return 基础备份中 Binlog 日志使用的空间。
+     * @return Space used by Binlog logs in basic backups.
      * 
      */
     private Integer basicBackupBinlogSize;
     /**
-     * @return 基础备份中数据使用的空间。
+     * @return Space used by data in the base backup
      * 
      */
     private Integer basicBackupDataSize;
     /**
-     * @return 付费方式。
+     * @return Billing method
      * 
      */
     private GetInstanceChargeDetail chargeDetail;
     /**
-     * @return 实例数据库代理服务的 CPU 核数。
+     * @return Number of CPU cores for the database proxy service of the instance
      * 
      */
     private Integer cpuNum;
     /**
-     * @return 实例创建本地时间。
+     * @return Instance creation local time.
      * 
      */
     private String createdTime;
     /**
-     * @return 实例的内核小版本。
+     * @return Instance kernel minor version.
      * 
      */
     private String currentKernelVersion;
     /**
-     * @return 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * @return Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
      * 
      */
     private String dbEngineVersion;
     /**
-     * @return 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+     * @return Parameter template ID. Default value is the default parameter template for the database engine version
      * 
      */
     private String dbParamGroupId;
     /**
-     * @return 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+     * @return Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
      * 
      */
     private String dbTimeZone;
     /**
-     * @return 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+     * @return Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
      * 
      */
     private String deletionProtection;
     /**
-     * @return 实例的灾备实例的信息。
+     * @return Disaster recovery instance information for the instance.
      * 
      */
     private List<GetInstanceDisasterRecoveryInstance> disasterRecoveryInstances;
     /**
-     * @return 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+     * @return ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
      * 
      */
     private String drDtsTaskId;
     /**
-     * @return 主实例与灾备实例之间同步任务的名称。
+     * @return Name of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     private String drDtsTaskName;
     /**
-     * @return 主实例与灾备实例之间同步任务的状态。
+     * @return Status of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     private String drDtsTaskStatus;
     /**
-     * @return 灾备实例与主实例之间的时延。
+     * @return Latency between the disaster recovery instance and the primary instance.
      * 
      */
     private Integer drSecondsBehindMaster;
     /**
-     * @return 实例的连接信息。
+     * @return Instance connection information.
      * 
      */
     private List<GetInstanceEndpoint> endpoints;
     /**
-     * @return 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+     * @return Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      * 
      */
     private Boolean globalReadOnly;
     /**
-     * @return 实例是否有灾备实例。取值：true：是。false：否。
+     * @return Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
      * 
      */
     private Boolean hasDisasterRecoveryInstances;
     /**
-     * @return 实例是否处于蓝绿部署中。取值：true：是。false：否。
+     * @return Is the instance in blue-green deployment? Values: true: yes. false: no.
      * 
      */
     private Boolean hasGreenInstance;
@@ -189,416 +189,416 @@ public final class GetInstanceResult {
      */
     private String id;
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return 实例名称。
+     * @return Instance name.
      * 
      */
     private String instanceName;
     /**
-     * @return 实例状态。
+     * @return Instance status.
      * 
      */
     private String instanceStatus;
     /**
-     * @return 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+     * @return Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
      * 
      */
     private String instanceType;
     /**
-     * @return 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+     * @return Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
      * 
      */
     private String lowerCaseTableNames;
     /**
-     * @return 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+     * @return Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
      * 
      */
     private GetInstanceMaintenanceWindow maintenanceWindow;
     /**
-     * @return 主实例的 ID。
+     * @return Primary instance ID
      * 
      */
     private String masterInstanceId;
     /**
-     * @return 主实例的名称。
+     * @return Primary instance name.
      * 
      */
     private String masterInstanceName;
     /**
-     * @return 内存大小。单位：GB。
+     * @return Memory size. Unit: GB.
      * 
      */
     private Integer memory;
     /**
-     * @return 实例主节点 CPU 使用率近一分钟的平均值。
+     * @return Average CPU usage of the primary node in the instance over the past minute.
      * 
      */
     private Double nodeCpuUsedPercentage;
     /**
-     * @return 实例主节点内存使用率近一分钟的平均值。
+     * @return Average memory usage of the primary node over the past minute
      * 
      */
     private Double nodeMemoryUsedPercentage;
     /**
-     * @return 节点数量。
+     * @return Number of nodes.
      * 
      */
     private String nodeNumber;
     /**
-     * @return 实例主节点磁盘使用率近一分钟的平均值。
+     * @return Average disk usage of the primary node over the past minute
      * 
      */
     private Double nodeSpaceUsedPercentage;
     /**
-     * @return 节点规格。
+     * @return Node specifications.
      * 
      */
     private String nodeSpec;
     /**
-     * @return 实例节点信息。
+     * @return Instance node information.
      * 
      */
     private List<GetInstanceNode> nodes;
     /**
-     * @return 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+     * @return Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      * 
      */
     private Integer port;
     /**
-     * @return 所属项目。
+     * @return Project.
      * 
      */
     private String projectName;
     /**
-     * @return proxy信息
+     * @return proxy information
      * 
      */
     private GetInstanceProxyDetail proxyDetail;
     /**
-     * @return 实例存储空间中审计日志使用的空间。
+     * @return Space used by audit logs in instance storage
      * 
      */
     private Integer storageAuditLogSize;
     /**
-     * @return 实例存储空间中 Binlog 使用的空间。
+     * @return Binlog space usage in the instance storage
      * 
      */
     private Integer storageBinLogSize;
     /**
-     * @return 实例存储空间中数据使用的空间。
+     * @return Space used by data in instance storage.
      * 
      */
     private Integer storageDataSize;
     /**
-     * @return 实例存储空间中错误日志使用的空间。
+     * @return Space used by error logs in instance storage.
      * 
      */
     private Integer storageErrorLogSize;
     /**
-     * @return 实例存储空间中日志使用的空间。
+     * @return Space used by logs in the instance storage
      * 
      */
     private Integer storageLogSize;
     /**
-     * @return 实例存储空间中慢日志使用的空间。
+     * @return Space used by slow logs in instance storage
      * 
      */
     private Integer storageSlowLogSize;
     /**
-     * @return 实例总存储空间。单位为 GB。
+     * @return Total storage space of the instance, in GB
      * 
      */
     private Integer storageSpace;
     /**
-     * @return 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+     * @return Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
      * 
      */
     private String storageType;
     /**
-     * @return 实例已使用用存储空间，单位为 GB。
+     * @return Storage space used by the instance, in GB
      * 
      */
     private Double storageUse;
     /**
-     * @return 子网 ID。
+     * @return Subnet ID.
      * 
      */
     private String subnetId;
     /**
-     * @return 高权限账号名称。不传此参数默认不创建高权限账号。
+     * @return High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
      * 
      */
     private String superAccountName;
     /**
-     * @return 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+     * @return Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
      * 
      */
     private String superAccountPassword;
     /**
-     * @return 数据同步方式：SemiSync：半同步。Async：异步。
+     * @return Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
      * 
      */
     private String syncMode;
     /**
-     * @return RDS MySQL 实例的标签信息
+     * @return RDS MySQL instance tag information
      * 
      */
     private List<GetInstanceTag> tags;
     /**
-     * @return 时区。
+     * @return Time zone
      * 
      */
     private String timeZone;
     /**
-     * @return 实例更新本地时间。
+     * @return Instance updates local time.
      * 
      */
     private String updatedTime;
     /**
-     * @return CPU 大小。例如：1 表示 1U。
+     * @return CPU size. For example: 1 means 1U.
      * 
      */
     private Integer vcpu;
     /**
-     * @return 专有网络（VPC） ID。
+     * @return VPC (Virtual Private Cloud) ID.
      * 
      */
     private String vpcId;
     /**
-     * @return 实例主节点所在可用区。
+     * @return Availability zone of the instance&#39;s primary node.
      * 
      */
     private String zoneId;
     /**
-     * @return 实例各节点所在的可用区列表。
+     * @return List of availability zones for each node in the instance.
      * 
      */
     private List<String> zoneIds;
 
     private GetInstanceResult() {}
     /**
-     * @return 默认终端的连接信息。
+     * @return Connection information for the default endpoint
      * 
      */
     public List<GetInstanceAddressObject> addressObjects() {
         return this.addressObjects;
     }
     /**
-     * @return 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+     * @return Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
      * 
      */
     public List<String> allowListIds() {
         return this.allowListIds;
     }
     /**
-     * @return 白名单版本。
+     * @return Allowlist version
      * 
      */
     public String allowListVersion() {
         return this.allowListVersion;
     }
     /**
-     * @return 自动扩容配置。
+     * @return Auto scaling configuration
      * 
      */
     public GetInstanceAutoStorageScalingConfig autoStorageScalingConfig() {
         return this.autoStorageScalingConfig;
     }
     /**
-     * @return 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+     * @return Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
      * 
      */
     public String autoUpgradeMinorVersion() {
         return this.autoUpgradeMinorVersion;
     }
     /**
-     * @return 备份中审计日志使用的空间。
+     * @return Space used by audit logs in backup.
      * 
      */
     public Integer backupAuditLogSize() {
         return this.backupAuditLogSize;
     }
     /**
-     * @return 备份中 Binlog 日志使用的空间。
+     * @return Space used by binlog logs in backup.
      * 
      */
     public Integer backupBinLogSize() {
         return this.backupBinLogSize;
     }
     /**
-     * @return 备份中数据使用的空间。
+     * @return Space used by data in backup.
      * 
      */
     public Integer backupDataSize() {
         return this.backupDataSize;
     }
     /**
-     * @return 备份中错误日志使用的空间。
+     * @return Space used by error logs in backups.
      * 
      */
     public Integer backupErrorLogSize() {
         return this.backupErrorLogSize;
     }
     /**
-     * @return 免费的备份存储空间，单位为 GB。
+     * @return Free backup storage space, in GB
      * 
      */
     public Integer backupFreeQuotaSize() {
         return this.backupFreeQuotaSize;
     }
     /**
-     * @return 备份中日志使用的空间。
+     * @return Space used by logs in backups.
      * 
      */
     public Integer backupLogSize() {
         return this.backupLogSize;
     }
     /**
-     * @return 备份中慢日志使用的空间。
+     * @return Space used by slow logs in backups.
      * 
      */
     public Integer backupSlowLogSize() {
         return this.backupSlowLogSize;
     }
     /**
-     * @return 实例的备份已使用的空间，单位为 GB。
+     * @return Backup space used by the instance, in GB
      * 
      */
     public Double backupUse() {
         return this.backupUse;
     }
     /**
-     * @return 基础备份中 Binlog 日志使用的空间。
+     * @return Space used by Binlog logs in basic backups.
      * 
      */
     public Integer basicBackupBinlogSize() {
         return this.basicBackupBinlogSize;
     }
     /**
-     * @return 基础备份中数据使用的空间。
+     * @return Space used by data in the base backup
      * 
      */
     public Integer basicBackupDataSize() {
         return this.basicBackupDataSize;
     }
     /**
-     * @return 付费方式。
+     * @return Billing method
      * 
      */
     public GetInstanceChargeDetail chargeDetail() {
         return this.chargeDetail;
     }
     /**
-     * @return 实例数据库代理服务的 CPU 核数。
+     * @return Number of CPU cores for the database proxy service of the instance
      * 
      */
     public Integer cpuNum() {
         return this.cpuNum;
     }
     /**
-     * @return 实例创建本地时间。
+     * @return Instance creation local time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 实例的内核小版本。
+     * @return Instance kernel minor version.
      * 
      */
     public String currentKernelVersion() {
         return this.currentKernelVersion;
     }
     /**
-     * @return 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * @return Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
      * 
      */
     public String dbEngineVersion() {
         return this.dbEngineVersion;
     }
     /**
-     * @return 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+     * @return Parameter template ID. Default value is the default parameter template for the database engine version
      * 
      */
     public String dbParamGroupId() {
         return this.dbParamGroupId;
     }
     /**
-     * @return 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+     * @return Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
      * 
      */
     public String dbTimeZone() {
         return this.dbTimeZone;
     }
     /**
-     * @return 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+     * @return Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
      * 
      */
     public String deletionProtection() {
         return this.deletionProtection;
     }
     /**
-     * @return 实例的灾备实例的信息。
+     * @return Disaster recovery instance information for the instance.
      * 
      */
     public List<GetInstanceDisasterRecoveryInstance> disasterRecoveryInstances() {
         return this.disasterRecoveryInstances;
     }
     /**
-     * @return 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+     * @return ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
      * 
      */
     public String drDtsTaskId() {
         return this.drDtsTaskId;
     }
     /**
-     * @return 主实例与灾备实例之间同步任务的名称。
+     * @return Name of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     public String drDtsTaskName() {
         return this.drDtsTaskName;
     }
     /**
-     * @return 主实例与灾备实例之间同步任务的状态。
+     * @return Status of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     public String drDtsTaskStatus() {
         return this.drDtsTaskStatus;
     }
     /**
-     * @return 灾备实例与主实例之间的时延。
+     * @return Latency between the disaster recovery instance and the primary instance.
      * 
      */
     public Integer drSecondsBehindMaster() {
         return this.drSecondsBehindMaster;
     }
     /**
-     * @return 实例的连接信息。
+     * @return Instance connection information.
      * 
      */
     public List<GetInstanceEndpoint> endpoints() {
         return this.endpoints;
     }
     /**
-     * @return 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+     * @return Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      * 
      */
     public Boolean globalReadOnly() {
         return this.globalReadOnly;
     }
     /**
-     * @return 实例是否有灾备实例。取值：true：是。false：否。
+     * @return Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
      * 
      */
     public Boolean hasDisasterRecoveryInstances() {
         return this.hasDisasterRecoveryInstances;
     }
     /**
-     * @return 实例是否处于蓝绿部署中。取值：true：是。false：否。
+     * @return Is the instance in blue-green deployment? Values: true: yes. false: no.
      * 
      */
     public Boolean hasGreenInstance() {
@@ -612,266 +612,266 @@ public final class GetInstanceResult {
         return this.id;
     }
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 实例名称。
+     * @return Instance name.
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 实例状态。
+     * @return Instance status.
      * 
      */
     public String instanceStatus() {
         return this.instanceStatus;
     }
     /**
-     * @return 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+     * @return Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
      * 
      */
     public String instanceType() {
         return this.instanceType;
     }
     /**
-     * @return 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+     * @return Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
      * 
      */
     public String lowerCaseTableNames() {
         return this.lowerCaseTableNames;
     }
     /**
-     * @return 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+     * @return Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
      * 
      */
     public GetInstanceMaintenanceWindow maintenanceWindow() {
         return this.maintenanceWindow;
     }
     /**
-     * @return 主实例的 ID。
+     * @return Primary instance ID
      * 
      */
     public String masterInstanceId() {
         return this.masterInstanceId;
     }
     /**
-     * @return 主实例的名称。
+     * @return Primary instance name.
      * 
      */
     public String masterInstanceName() {
         return this.masterInstanceName;
     }
     /**
-     * @return 内存大小。单位：GB。
+     * @return Memory size. Unit: GB.
      * 
      */
     public Integer memory() {
         return this.memory;
     }
     /**
-     * @return 实例主节点 CPU 使用率近一分钟的平均值。
+     * @return Average CPU usage of the primary node in the instance over the past minute.
      * 
      */
     public Double nodeCpuUsedPercentage() {
         return this.nodeCpuUsedPercentage;
     }
     /**
-     * @return 实例主节点内存使用率近一分钟的平均值。
+     * @return Average memory usage of the primary node over the past minute
      * 
      */
     public Double nodeMemoryUsedPercentage() {
         return this.nodeMemoryUsedPercentage;
     }
     /**
-     * @return 节点数量。
+     * @return Number of nodes.
      * 
      */
     public String nodeNumber() {
         return this.nodeNumber;
     }
     /**
-     * @return 实例主节点磁盘使用率近一分钟的平均值。
+     * @return Average disk usage of the primary node over the past minute
      * 
      */
     public Double nodeSpaceUsedPercentage() {
         return this.nodeSpaceUsedPercentage;
     }
     /**
-     * @return 节点规格。
+     * @return Node specifications.
      * 
      */
     public String nodeSpec() {
         return this.nodeSpec;
     }
     /**
-     * @return 实例节点信息。
+     * @return Instance node information.
      * 
      */
     public List<GetInstanceNode> nodes() {
         return this.nodes;
     }
     /**
-     * @return 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+     * @return Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      * 
      */
     public Integer port() {
         return this.port;
     }
     /**
-     * @return 所属项目。
+     * @return Project.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return proxy信息
+     * @return proxy information
      * 
      */
     public GetInstanceProxyDetail proxyDetail() {
         return this.proxyDetail;
     }
     /**
-     * @return 实例存储空间中审计日志使用的空间。
+     * @return Space used by audit logs in instance storage
      * 
      */
     public Integer storageAuditLogSize() {
         return this.storageAuditLogSize;
     }
     /**
-     * @return 实例存储空间中 Binlog 使用的空间。
+     * @return Binlog space usage in the instance storage
      * 
      */
     public Integer storageBinLogSize() {
         return this.storageBinLogSize;
     }
     /**
-     * @return 实例存储空间中数据使用的空间。
+     * @return Space used by data in instance storage.
      * 
      */
     public Integer storageDataSize() {
         return this.storageDataSize;
     }
     /**
-     * @return 实例存储空间中错误日志使用的空间。
+     * @return Space used by error logs in instance storage.
      * 
      */
     public Integer storageErrorLogSize() {
         return this.storageErrorLogSize;
     }
     /**
-     * @return 实例存储空间中日志使用的空间。
+     * @return Space used by logs in the instance storage
      * 
      */
     public Integer storageLogSize() {
         return this.storageLogSize;
     }
     /**
-     * @return 实例存储空间中慢日志使用的空间。
+     * @return Space used by slow logs in instance storage
      * 
      */
     public Integer storageSlowLogSize() {
         return this.storageSlowLogSize;
     }
     /**
-     * @return 实例总存储空间。单位为 GB。
+     * @return Total storage space of the instance, in GB
      * 
      */
     public Integer storageSpace() {
         return this.storageSpace;
     }
     /**
-     * @return 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+     * @return Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
      * 
      */
     public String storageType() {
         return this.storageType;
     }
     /**
-     * @return 实例已使用用存储空间，单位为 GB。
+     * @return Storage space used by the instance, in GB
      * 
      */
     public Double storageUse() {
         return this.storageUse;
     }
     /**
-     * @return 子网 ID。
+     * @return Subnet ID.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return 高权限账号名称。不传此参数默认不创建高权限账号。
+     * @return High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
      * 
      */
     public String superAccountName() {
         return this.superAccountName;
     }
     /**
-     * @return 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+     * @return Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
      * 
      */
     public String superAccountPassword() {
         return this.superAccountPassword;
     }
     /**
-     * @return 数据同步方式：SemiSync：半同步。Async：异步。
+     * @return Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
      * 
      */
     public String syncMode() {
         return this.syncMode;
     }
     /**
-     * @return RDS MySQL 实例的标签信息
+     * @return RDS MySQL instance tag information
      * 
      */
     public List<GetInstanceTag> tags() {
         return this.tags;
     }
     /**
-     * @return 时区。
+     * @return Time zone
      * 
      */
     public String timeZone() {
         return this.timeZone;
     }
     /**
-     * @return 实例更新本地时间。
+     * @return Instance updates local time.
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return CPU 大小。例如：1 表示 1U。
+     * @return CPU size. For example: 1 means 1U.
      * 
      */
     public Integer vcpu() {
         return this.vcpu;
     }
     /**
-     * @return 专有网络（VPC） ID。
+     * @return VPC (Virtual Private Cloud) ID.
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return 实例主节点所在可用区。
+     * @return Availability zone of the instance&#39;s primary node.
      * 
      */
     public String zoneId() {
         return this.zoneId;
     }
     /**
-     * @return 实例各节点所在的可用区列表。
+     * @return List of availability zones for each node in the instance.
      * 
      */
     public List<String> zoneIds() {

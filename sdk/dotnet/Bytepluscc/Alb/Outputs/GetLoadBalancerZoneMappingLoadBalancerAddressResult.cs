@@ -15,35 +15,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetLoadBalancerZoneMappingLoadBalancerAddressResult
     {
         /// <summary>
-        /// 弹性公网IP（EIP）的详细信息。
+        /// Detailed information of the Elastic Public IP (EIP).
         /// </summary>
         public readonly Outputs.GetLoadBalancerZoneMappingLoadBalancerAddressEipResult Eip;
         /// <summary>
-        /// 绑定的弹性公网IP（EIP）的地址。
+        /// Address of the bound Elastic Public IP (EIP).
         /// </summary>
         public readonly string EipAddress;
         /// <summary>
-        /// 绑定的弹性公网IP（EIP）的ID。
+        /// ID of the bound Elastic IP (EIP).
         /// </summary>
         public readonly string EipId;
         /// <summary>
-        /// 弹性网卡（ENI）上的私网IP地址。
+        /// Private IP address on the Elastic Network Interface (ENI).
         /// </summary>
         public readonly string EniAddress;
         /// <summary>
-        /// IP地址所属的弹性网卡（ENI）的ID。
+        /// ID of the Elastic Network Interface (ENI) to which the IP address belongs.
         /// </summary>
         public readonly string EniId;
         /// <summary>
-        /// 弹性网卡（ENI）上的IPv6私网地址。
+        /// IPv6 private address on the Elastic Network Interface (ENI).
         /// </summary>
         public readonly string EniIpv6Address;
         /// <summary>
-        /// IPv6弹性公网IP的详细信息。
+        /// Detailed information about the IPv6 Elastic Public IP.
         /// </summary>
         public readonly Outputs.GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipResult Ipv6Eip;
         /// <summary>
-        /// 绑定的IPv6 EIP的ID。
+        /// ID of the bound IPv6 EIP.
         /// </summary>
         public readonly string Ipv6EipId;
 

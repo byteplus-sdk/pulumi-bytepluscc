@@ -30,11 +30,11 @@ class TransitRouterArgs:
                  transit_router_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a TransitRouter resource.
-        :param pulumi.Input[builtins.int] asn: 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
-        :param pulumi.Input[builtins.str] description: 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.bool] multicast_enabled: 中转路由器是否开启组播。true：开启。false（默认值）：不开启
-        :param pulumi.Input[builtins.str] project_name: 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
-        :param pulumi.Input[builtins.str] transit_router_name: 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+        :param pulumi.Input[builtins.int] asn: ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
+        :param pulumi.Input[builtins.str] description: Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
+        :param pulumi.Input[builtins.bool] multicast_enabled: Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is 'default'
+        :param pulumi.Input[builtins.str] transit_router_name: Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
         """
         if asn is not None:
             pulumi.set(__self__, "asn", asn)
@@ -53,7 +53,7 @@ class TransitRouterArgs:
     @pulumi.getter
     def asn(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+        ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
         """
         return pulumi.get(self, "asn")
 
@@ -65,7 +65,7 @@ class TransitRouterArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
         """
         return pulumi.get(self, "description")
 
@@ -77,7 +77,7 @@ class TransitRouterArgs:
     @pulumi.getter(name="multicastEnabled")
     def multicast_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        中转路由器是否开启组播。true：开启。false（默认值）：不开启
+        Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
         """
         return pulumi.get(self, "multicast_enabled")
 
@@ -89,7 +89,7 @@ class TransitRouterArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+        Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is 'default'
         """
         return pulumi.get(self, "project_name")
 
@@ -110,7 +110,7 @@ class TransitRouterArgs:
     @pulumi.getter(name="transitRouterName")
     def transit_router_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+        Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
         """
         return pulumi.get(self, "transit_router_name")
 
@@ -140,20 +140,20 @@ class _TransitRouterState:
                  update_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering TransitRouter resources.
-        :param pulumi.Input[builtins.int] asn: 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
-        :param pulumi.Input[builtins.str] business_status: 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
-        :param pulumi.Input[builtins.str] creation_time: 网络实例连接的创建时间。
-        :param pulumi.Input[builtins.str] deleted_time: 网络实例连接的删除时间。
-        :param pulumi.Input[builtins.str] description: 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] grant_source_type: 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
-        :param pulumi.Input[builtins.str] grant_status: 实例共享的状态。Accepted：已接受。Initial：待接受。
-        :param pulumi.Input[builtins.bool] multicast_enabled: 中转路由器是否开启组播。true：开启。false（默认值）：不开启
-        :param pulumi.Input[builtins.str] overdue_time: 中转路由器实例的欠费关停时间。
-        :param pulumi.Input[builtins.str] project_name: 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
-        :param pulumi.Input[builtins.str] status: 中转路由器实例的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID。
-        :param pulumi.Input[builtins.str] transit_router_name: 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
-        :param pulumi.Input[builtins.str] update_time: 中转路由器实例的最近操作时间。
+        :param pulumi.Input[builtins.int] asn: ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
+        :param pulumi.Input[builtins.str] business_status: Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
+        :param pulumi.Input[builtins.str] creation_time: Creation time of the network instance connection.
+        :param pulumi.Input[builtins.str] deleted_time: Deletion time of the network instance connection.
+        :param pulumi.Input[builtins.str] description: Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
+        :param pulumi.Input[builtins.str] grant_source_type: Sharing method of the transit router instance. rs: Shared via platform resource sharing. tr: Shared via transit router instance sharing
+        :param pulumi.Input[builtins.str] grant_status: Instance sharing status. Accepted: Received. Initial: Pending acceptance.
+        :param pulumi.Input[builtins.bool] multicast_enabled: Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
+        :param pulumi.Input[builtins.str] overdue_time: Shutdown time due to overdue payment for the transit router instance
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is 'default'
+        :param pulumi.Input[builtins.str] status: Status of the transit router instance. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
+        :param pulumi.Input[builtins.str] transit_router_id: Transit router instance ID.
+        :param pulumi.Input[builtins.str] transit_router_name: Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
+        :param pulumi.Input[builtins.str] update_time: Last operation time of the transit router instance
         """
         if asn is not None:
             pulumi.set(__self__, "asn", asn)
@@ -192,7 +192,7 @@ class _TransitRouterState:
     @pulumi.getter
     def asn(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+        ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
         """
         return pulumi.get(self, "asn")
 
@@ -213,7 +213,7 @@ class _TransitRouterState:
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+        Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
         """
         return pulumi.get(self, "business_status")
 
@@ -225,7 +225,7 @@ class _TransitRouterState:
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的创建时间。
+        Creation time of the network instance connection.
         """
         return pulumi.get(self, "creation_time")
 
@@ -237,7 +237,7 @@ class _TransitRouterState:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的删除时间。
+        Deletion time of the network instance connection.
         """
         return pulumi.get(self, "deleted_time")
 
@@ -249,7 +249,7 @@ class _TransitRouterState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
         """
         return pulumi.get(self, "description")
 
@@ -261,7 +261,7 @@ class _TransitRouterState:
     @pulumi.getter(name="grantSourceType")
     def grant_source_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+        Sharing method of the transit router instance. rs: Shared via platform resource sharing. tr: Shared via transit router instance sharing
         """
         return pulumi.get(self, "grant_source_type")
 
@@ -273,7 +273,7 @@ class _TransitRouterState:
     @pulumi.getter(name="grantStatus")
     def grant_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例共享的状态。Accepted：已接受。Initial：待接受。
+        Instance sharing status. Accepted: Received. Initial: Pending acceptance.
         """
         return pulumi.get(self, "grant_status")
 
@@ -285,7 +285,7 @@ class _TransitRouterState:
     @pulumi.getter(name="multicastEnabled")
     def multicast_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        中转路由器是否开启组播。true：开启。false（默认值）：不开启
+        Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
         """
         return pulumi.get(self, "multicast_enabled")
 
@@ -297,7 +297,7 @@ class _TransitRouterState:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例的欠费关停时间。
+        Shutdown time due to overdue payment for the transit router instance
         """
         return pulumi.get(self, "overdue_time")
 
@@ -309,7 +309,7 @@ class _TransitRouterState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+        Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is 'default'
         """
         return pulumi.get(self, "project_name")
 
@@ -321,7 +321,7 @@ class _TransitRouterState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        Status of the transit router instance. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
         """
         return pulumi.get(self, "status")
 
@@ -342,7 +342,7 @@ class _TransitRouterState:
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例的ID。
+        Transit router instance ID.
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -354,7 +354,7 @@ class _TransitRouterState:
     @pulumi.getter(name="transitRouterName")
     def transit_router_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+        Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
         """
         return pulumi.get(self, "transit_router_name")
 
@@ -366,7 +366,7 @@ class _TransitRouterState:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例的最近操作时间。
+        Last operation time of the transit router instance
         """
         return pulumi.get(self, "update_time")
 
@@ -389,7 +389,7 @@ class TransitRouter(pulumi.CustomResource):
                  transit_router_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        中转路由器服务的运行载体。接受来自网络实例的流量，并根据关联转发路由表进行转发。
+        Platform on which the transit router service runs. Receives traffic from network instances and forwards it according to the associated forwarding route table
 
         ## Example Usage
 
@@ -416,11 +416,11 @@ class TransitRouter(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] asn: 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
-        :param pulumi.Input[builtins.str] description: 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.bool] multicast_enabled: 中转路由器是否开启组播。true：开启。false（默认值）：不开启
-        :param pulumi.Input[builtins.str] project_name: 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
-        :param pulumi.Input[builtins.str] transit_router_name: 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+        :param pulumi.Input[builtins.int] asn: ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
+        :param pulumi.Input[builtins.str] description: Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
+        :param pulumi.Input[builtins.bool] multicast_enabled: Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is 'default'
+        :param pulumi.Input[builtins.str] transit_router_name: Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
         """
         ...
     @overload
@@ -429,7 +429,7 @@ class TransitRouter(pulumi.CustomResource):
                  args: Optional[TransitRouterArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        中转路由器服务的运行载体。接受来自网络实例的流量，并根据关联转发路由表进行转发。
+        Platform on which the transit router service runs. Receives traffic from network instances and forwards it according to the associated forwarding route table
 
         ## Example Usage
 
@@ -533,20 +533,20 @@ class TransitRouter(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] asn: 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
-        :param pulumi.Input[builtins.str] business_status: 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
-        :param pulumi.Input[builtins.str] creation_time: 网络实例连接的创建时间。
-        :param pulumi.Input[builtins.str] deleted_time: 网络实例连接的删除时间。
-        :param pulumi.Input[builtins.str] description: 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] grant_source_type: 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
-        :param pulumi.Input[builtins.str] grant_status: 实例共享的状态。Accepted：已接受。Initial：待接受。
-        :param pulumi.Input[builtins.bool] multicast_enabled: 中转路由器是否开启组播。true：开启。false（默认值）：不开启
-        :param pulumi.Input[builtins.str] overdue_time: 中转路由器实例的欠费关停时间。
-        :param pulumi.Input[builtins.str] project_name: 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
-        :param pulumi.Input[builtins.str] status: 中转路由器实例的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID。
-        :param pulumi.Input[builtins.str] transit_router_name: 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
-        :param pulumi.Input[builtins.str] update_time: 中转路由器实例的最近操作时间。
+        :param pulumi.Input[builtins.int] asn: ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
+        :param pulumi.Input[builtins.str] business_status: Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
+        :param pulumi.Input[builtins.str] creation_time: Creation time of the network instance connection.
+        :param pulumi.Input[builtins.str] deleted_time: Deletion time of the network instance connection.
+        :param pulumi.Input[builtins.str] description: Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
+        :param pulumi.Input[builtins.str] grant_source_type: Sharing method of the transit router instance. rs: Shared via platform resource sharing. tr: Shared via transit router instance sharing
+        :param pulumi.Input[builtins.str] grant_status: Instance sharing status. Accepted: Received. Initial: Pending acceptance.
+        :param pulumi.Input[builtins.bool] multicast_enabled: Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
+        :param pulumi.Input[builtins.str] overdue_time: Shutdown time due to overdue payment for the transit router instance
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is 'default'
+        :param pulumi.Input[builtins.str] status: Status of the transit router instance. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
+        :param pulumi.Input[builtins.str] transit_router_id: Transit router instance ID.
+        :param pulumi.Input[builtins.str] transit_router_name: Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
+        :param pulumi.Input[builtins.str] update_time: Last operation time of the transit router instance
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -574,7 +574,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter
     def asn(self) -> pulumi.Output[builtins.int]:
         """
-        中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+        ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
         """
         return pulumi.get(self, "asn")
 
@@ -587,7 +587,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> pulumi.Output[builtins.str]:
         """
-        网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+        Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
         """
         return pulumi.get(self, "business_status")
 
@@ -595,7 +595,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> pulumi.Output[builtins.str]:
         """
-        网络实例连接的创建时间。
+        Creation time of the network instance connection.
         """
         return pulumi.get(self, "creation_time")
 
@@ -603,7 +603,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> pulumi.Output[builtins.str]:
         """
-        网络实例连接的删除时间。
+        Deletion time of the network instance connection.
         """
         return pulumi.get(self, "deleted_time")
 
@@ -611,7 +611,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
         """
         return pulumi.get(self, "description")
 
@@ -619,7 +619,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter(name="grantSourceType")
     def grant_source_type(self) -> pulumi.Output[builtins.str]:
         """
-        中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+        Sharing method of the transit router instance. rs: Shared via platform resource sharing. tr: Shared via transit router instance sharing
         """
         return pulumi.get(self, "grant_source_type")
 
@@ -627,7 +627,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter(name="grantStatus")
     def grant_status(self) -> pulumi.Output[builtins.str]:
         """
-        实例共享的状态。Accepted：已接受。Initial：待接受。
+        Instance sharing status. Accepted: Received. Initial: Pending acceptance.
         """
         return pulumi.get(self, "grant_status")
 
@@ -635,7 +635,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter(name="multicastEnabled")
     def multicast_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        中转路由器是否开启组播。true：开启。false（默认值）：不开启
+        Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
         """
         return pulumi.get(self, "multicast_enabled")
 
@@ -643,7 +643,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> pulumi.Output[builtins.str]:
         """
-        中转路由器实例的欠费关停时间。
+        Shutdown time due to overdue payment for the transit router instance
         """
         return pulumi.get(self, "overdue_time")
 
@@ -651,7 +651,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+        Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is 'default'
         """
         return pulumi.get(self, "project_name")
 
@@ -659,7 +659,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        中转路由器实例的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        Status of the transit router instance. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
         """
         return pulumi.get(self, "status")
 
@@ -672,7 +672,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> pulumi.Output[builtins.str]:
         """
-        中转路由器实例的ID。
+        Transit router instance ID.
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -680,7 +680,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterName")
     def transit_router_name(self) -> pulumi.Output[builtins.str]:
         """
-        中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+        Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
         """
         return pulumi.get(self, "transit_router_name")
 
@@ -688,7 +688,7 @@ class TransitRouter(pulumi.CustomResource):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> pulumi.Output[builtins.str]:
         """
-        中转路由器实例的最近操作时间。
+        Last operation time of the transit router instance
         """
         return pulumi.get(self, "update_time")
 

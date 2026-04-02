@@ -21,7 +21,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 在使用大语言模型进行推理服务时，推理接入点（Endpoint）是模型调用的关键入口。开发者只需通过指定的 ID 即可向大模型发起 API / SDK 推理请求，实现快速接入与灵活调用。系统提供统一的 API 调用方式、调用监控、限流策略与安全保障机制，确保推理过程的稳定性与安全性。
+ * When using large language models for inference services, the inference endpoint is the key entry point for model invocation. Developers can initiate API/SDK inference requests to the large model simply by specifying the ID, enabling quick access and flexible invocation. The system provides a unified API invocation method, call monitoring, rate limiting strategies, and security mechanisms to ensure stability and security during inference
  * 
  * ## Example Usage
  * 
@@ -38,252 +38,252 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:ark/endpoint:Endpoint")
 public class Endpoint extends com.pulumi.resources.CustomResource {
     /**
-     * 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+     * Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
      * 
      */
     @Export(name="batchOnly", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> batchOnly;
 
     /**
-     * @return 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+     * @return Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
      * 
      */
     public Output<Boolean> batchOnly() {
         return this.batchOnly;
     }
     /**
-     * 证书信息。
+     * Certificate information
      * 
      */
     @Export(name="certificate", refs={EndpointCertificate.class}, tree="[0]")
     private Output<EndpointCertificate> certificate;
 
     /**
-     * @return 证书信息。
+     * @return Certificate information
      * 
      */
     public Output<EndpointCertificate> certificate() {
         return this.certificate;
     }
     /**
-     * 接入点创建时间，RFC3339格式。
+     * Endpoint creation time, RFC3339 format
      * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
-     * @return 接入点创建时间，RFC3339格式。
+     * @return Endpoint creation time, RFC3339 format
      * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
-     * 接入点描述。
+     * Endpoint description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 接入点描述。
+     * @return Endpoint description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 推理接入点的ID。
+     * Inference access point ID.
      * 
      */
     @Export(name="endpointId", refs={String.class}, tree="[0]")
     private Output<String> endpointId;
 
     /**
-     * @return 推理接入点的ID。
+     * @return Inference access point ID.
      * 
      */
     public Output<String> endpointId() {
         return this.endpointId;
     }
     /**
-     * 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+     * Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
      * 
      */
     @Export(name="endpointModelType", refs={String.class}, tree="[0]")
     private Output<String> endpointModelType;
 
     /**
-     * @return 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+     * @return Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
      * 
      */
     public Output<String> endpointModelType() {
         return this.endpointModelType;
     }
     /**
-     * 接入点接入模型。
+     * Endpoint access model
      * 
      */
     @Export(name="modelReference", refs={EndpointModelReference.class}, tree="[0]")
     private Output<EndpointModelReference> modelReference;
 
     /**
-     * @return 接入点接入模型。
+     * @return Endpoint access model
      * 
      */
     public Output<EndpointModelReference> modelReference() {
         return this.modelReference;
     }
     /**
-     * 模型单元，为空表示后付费；否则预付费。
+     * Model unit. If empty, indicates postpaid; otherwise, prepaid.
      * 
      */
     @Export(name="modelUnitId", refs={String.class}, tree="[0]")
     private Output<String> modelUnitId;
 
     /**
-     * @return 模型单元，为空表示后付费；否则预付费。
+     * @return Model unit. If empty, indicates postpaid; otherwise, prepaid.
      * 
      */
     public Output<String> modelUnitId() {
         return this.modelUnitId;
     }
     /**
-     * 内容护栏方案。
+     * Content guardrail scheme
      * 
      */
     @Export(name="moderation", refs={EndpointModeration.class}, tree="[0]")
     private Output<EndpointModeration> moderation;
 
     /**
-     * @return 内容护栏方案。
+     * @return Content guardrail scheme
      * 
      */
     public Output<EndpointModeration> moderation() {
         return this.moderation;
     }
     /**
-     * 接入点名称。
+     * Endpoint name
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 接入点名称。
+     * @return Endpoint name
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 资源所属的项目名称，默认值为default。
+     * Project name the resource belongs to; default value is &#34;default&#34;
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 资源所属的项目名称，默认值为default。
+     * @return Project name the resource belongs to; default value is &#34;default&#34;
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 接入点限流。
+     * Endpoint rate limiting
      * 
      */
     @Export(name="rateLimit", refs={EndpointRateLimit.class}, tree="[0]")
     private Output<EndpointRateLimit> rateLimit;
 
     /**
-     * @return 接入点限流。
+     * @return Endpoint rate limiting
      * 
      */
     public Output<EndpointRateLimit> rateLimit() {
         return this.rateLimit;
     }
     /**
-     * 接入点切换的Id。
+     * Endpoint switch ID
      * 
      */
     @Export(name="rollingId", refs={String.class}, tree="[0]")
     private Output<String> rollingId;
 
     /**
-     * @return 接入点切换的Id。
+     * @return Endpoint switch ID
      * 
      */
     public Output<String> rollingId() {
         return this.rollingId;
     }
     /**
-     * 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+     * If a TPM protection package exists, this is the TPM protection package ID.
      * 
      */
     @Export(name="scaleTierId", refs={String.class}, tree="[0]")
     private Output<String> scaleTierId;
 
     /**
-     * @return 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+     * @return If a TPM protection package exists, this is the TPM protection package ID.
      * 
      */
     public Output<String> scaleTierId() {
         return this.scaleTierId;
     }
     /**
-     * 接入点状态。
+     * Endpoint status
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 接入点状态。
+     * @return Endpoint status
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 状态附加说明信息。
+     * Additional status information
      * 
      */
     @Export(name="statusReason", refs={String.class}, tree="[0]")
     private Output<String> statusReason;
 
     /**
-     * @return 状态附加说明信息。
+     * @return Additional status information
      * 
      */
     public Output<String> statusReason() {
         return this.statusReason;
     }
     /**
-     * 是否支持接入点切换模型版本。
+     * Whether endpoint supports switching model versions
      * 
      */
     @Export(name="supportRolling", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> supportRolling;
 
     /**
-     * @return 是否支持接入点切换模型版本。
+     * @return Whether endpoint supports switching model versions
      * 
      */
     public Output<Boolean> supportRolling() {
         return this.supportRolling;
     }
     /**
-     * 是否支持TPM保障包。
+     * Whether TPM protection package is supported
      * 
      */
     @Export(name="supportScaleTier", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> supportScaleTier;
 
     /**
-     * @return 是否支持TPM保障包。
+     * @return Whether TPM protection package is supported
      * 
      */
     public Output<Boolean> supportScaleTier() {
@@ -296,14 +296,14 @@ public class Endpoint extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 接入点更新时间，RFC3339格式。
+     * Endpoint update time, RFC3339 format
      * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
-     * @return 接入点更新时间，RFC3339格式。
+     * @return Endpoint update time, RFC3339 format
      * 
      */
     public Output<String> updateTime() {

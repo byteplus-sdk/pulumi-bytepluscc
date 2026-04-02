@@ -19,14 +19,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     public static final CertificateState Empty = new CertificateState();
 
     /**
-     * 证书的ID。
+     * Certificate ID.
      * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
-     * @return 证书的ID。
+     * @return Certificate ID.
      * 
      */
     public Optional<Output<String>> certificateId() {
@@ -34,14 +34,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+     * Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
      * 
      */
     @Import(name="certificateName")
     private @Nullable Output<String> certificateName;
 
     /**
-     * @return 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+     * @return Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
      * 
      */
     public Optional<Output<String>> certificateName() {
@@ -49,14 +49,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书的创建时间。
+     * Certificate creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 证书的创建时间。
+     * @return Certificate creation time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -64,14 +64,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * @return Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -79,14 +79,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书的主域名。
+     * Certificate primary domain name.
      * 
      */
     @Import(name="domainName")
     private @Nullable Output<String> domainName;
 
     /**
-     * @return 证书的主域名。
+     * @return Certificate primary domain name.
      * 
      */
     public Optional<Output<String>> domainName() {
@@ -94,14 +94,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书的过期时间。
+     * Certificate expiration time.
      * 
      */
     @Import(name="expiredAt")
     private @Nullable Output<String> expiredAt;
 
     /**
-     * @return 证书的过期时间。
+     * @return Certificate expiration time.
      * 
      */
     public Optional<Output<String>> expiredAt() {
@@ -109,14 +109,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书关联的监听器的ID。
+     * ID of the listener associated with the certificate.
      * 
      */
     @Import(name="listeners")
     private @Nullable Output<List<String>> listeners;
 
     /**
-     * @return 证书关联的监听器的ID。
+     * @return ID of the listener associated with the certificate.
      * 
      */
     public Optional<Output<List<String>>> listeners() {
@@ -124,14 +124,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书的私钥。
+     * Certificate private key.
      * 
      */
     @Import(name="privateKey")
     private @Nullable Output<String> privateKey;
 
     /**
-     * @return 证书的私钥。
+     * @return Certificate private key.
      * 
      */
     public Optional<Output<String>> privateKey() {
@@ -139,14 +139,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书所属项目的名称。不填默认为default。
+     * Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 证书所属项目的名称。不填默认为default。
+     * @return Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -154,14 +154,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书的公钥。
+     * Certificate public key.
      * 
      */
     @Import(name="publicKey")
     private @Nullable Output<String> publicKey;
 
     /**
-     * @return 证书的公钥。
+     * @return Certificate public key.
      * 
      */
     public Optional<Output<String>> publicKey() {
@@ -169,14 +169,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否为托管资源。true：托管资源。false：非托管资源。
+     * Managed resource status. true: managed resource. false: unmanaged resource.
      * 
      */
     @Import(name="serviceManaged")
     private @Nullable Output<Boolean> serviceManaged;
 
     /**
-     * @return 是否为托管资源。true：托管资源。false：非托管资源。
+     * @return Managed resource status. true: managed resource. false: unmanaged resource.
      * 
      */
     public Optional<Output<Boolean>> serviceManaged() {
@@ -184,14 +184,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书的备用域名列表。
+     * List of alternate domain names for the certificate.
      * 
      */
     @Import(name="subjectAlternativeNames")
     private @Nullable Output<List<String>> subjectAlternativeNames;
 
     /**
-     * @return 证书的备用域名列表。
+     * @return List of alternate domain names for the certificate.
      * 
      */
     public Optional<Output<List<String>>> subjectAlternativeNames() {
@@ -242,7 +242,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId 证书的ID。
+         * @param certificateId Certificate ID.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId 证书的ID。
+         * @param certificateId Certificate ID.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateName 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+         * @param certificateName Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateName 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+         * @param certificateName Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 证书的创建时间。
+         * @param createdTime Certificate creation time.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 证书的创建时间。
+         * @param createdTime Certificate creation time.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+         * @param description Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+         * @param description Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domainName 证书的主域名。
+         * @param domainName Certificate primary domain name.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domainName 证书的主域名。
+         * @param domainName Certificate primary domain name.
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredAt 证书的过期时间。
+         * @param expiredAt Certificate expiration time.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredAt 证书的过期时间。
+         * @param expiredAt Certificate expiration time.
          * 
          * @return builder
          * 
@@ -368,7 +368,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listeners 证书关联的监听器的ID。
+         * @param listeners ID of the listener associated with the certificate.
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listeners 证书关联的监听器的ID。
+         * @param listeners ID of the listener associated with the certificate.
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listeners 证书关联的监听器的ID。
+         * @param listeners ID of the listener associated with the certificate.
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKey 证书的私钥。
+         * @param privateKey Certificate private key.
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKey 证书的私钥。
+         * @param privateKey Certificate private key.
          * 
          * @return builder
          * 
@@ -420,7 +420,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 证书所属项目的名称。不填默认为default。
+         * @param projectName Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
          * 
          * @return builder
          * 
@@ -431,7 +431,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 证书所属项目的名称。不填默认为default。
+         * @param projectName Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
          * 
          * @return builder
          * 
@@ -441,7 +441,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicKey 证书的公钥。
+         * @param publicKey Certificate public key.
          * 
          * @return builder
          * 
@@ -452,7 +452,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicKey 证书的公钥。
+         * @param publicKey Certificate public key.
          * 
          * @return builder
          * 
@@ -462,7 +462,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceManaged 是否为托管资源。true：托管资源。false：非托管资源。
+         * @param serviceManaged Managed resource status. true: managed resource. false: unmanaged resource.
          * 
          * @return builder
          * 
@@ -473,7 +473,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceManaged 是否为托管资源。true：托管资源。false：非托管资源。
+         * @param serviceManaged Managed resource status. true: managed resource. false: unmanaged resource.
          * 
          * @return builder
          * 
@@ -483,7 +483,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subjectAlternativeNames 证书的备用域名列表。
+         * @param subjectAlternativeNames List of alternate domain names for the certificate.
          * 
          * @return builder
          * 
@@ -494,7 +494,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subjectAlternativeNames 证书的备用域名列表。
+         * @param subjectAlternativeNames List of alternate domain names for the certificate.
          * 
          * @return builder
          * 
@@ -504,7 +504,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subjectAlternativeNames 证书的备用域名列表。
+         * @param subjectAlternativeNames List of alternate domain names for the certificate.
          * 
          * @return builder
          * 

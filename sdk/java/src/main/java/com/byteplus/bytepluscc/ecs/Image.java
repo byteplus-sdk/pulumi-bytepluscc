@@ -7,6 +7,7 @@ import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.ecs.ImageArgs;
 import com.byteplus.bytepluscc.ecs.inputs.ImageState;
 import com.byteplus.bytepluscc.ecs.outputs.ImageDetectionResults;
+import com.byteplus.bytepluscc.ecs.outputs.ImageImportImage;
 import com.byteplus.bytepluscc.ecs.outputs.ImageSnapshot;
 import com.byteplus.bytepluscc.ecs.outputs.ImageTag;
 import com.pulumi.core.Output;
@@ -21,7 +22,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
+ * An image is a special file containing the basic operating system and application data required for a cloud server instance. You must select an image when creating an instance.
  * 
  * ## Example Usage
  * 
@@ -77,336 +78,392 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:ecs/image:Image")
 public class Image extends com.pulumi.resources.CustomResource {
     /**
-     * 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+     * Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
      * 
      */
     @Export(name="architecture", refs={String.class}, tree="[0]")
     private Output<String> architecture;
 
     /**
-     * @return 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+     * @return Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
      * 
      */
     public Output<String> architecture() {
         return this.architecture;
     }
     /**
-     * 镜像的启动模式。可以选择BIOS、UEFI类型。
+     * Image boot mode. You can select BIOS or UEFI
      * 
      */
     @Export(name="bootMode", refs={String.class}, tree="[0]")
     private Output<String> bootMode;
 
     /**
-     * @return 镜像的启动模式。可以选择BIOS、UEFI类型。
+     * @return Image boot mode. You can select BIOS or UEFI
      * 
      */
     public Output<String> bootMode() {
         return this.bootMode;
     }
     /**
-     * 镜像创建时间
+     * Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+     * 
+     */
+    @Export(name="createWholeImage", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> createWholeImage;
+
+    /**
+     * @return Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+     * 
+     */
+    public Output<Boolean> createWholeImage() {
+        return this.createWholeImage;
+    }
+    /**
+     * Image creation time
      * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
-     * @return 镜像创建时间
+     * @return Image creation time
      * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
-     * 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+     * Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+     * @return Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 镜像的检测结果。
+     * Image check result.
      * 
      */
     @Export(name="detectionResults", refs={ImageDetectionResults.class}, tree="[0]")
     private Output<ImageDetectionResults> detectionResults;
 
     /**
-     * @return 镜像的检测结果。
+     * @return Image check result.
      * 
      */
     public Output<ImageDetectionResults> detectionResults() {
         return this.detectionResults;
     }
     /**
-     * 镜像ID。
+     * Image ID
      * 
      */
     @Export(name="imageId", refs={String.class}, tree="[0]")
     private Output<String> imageId;
 
     /**
-     * @return 镜像ID。
+     * @return Image ID
      * 
      */
     public Output<String> imageId() {
         return this.imageId;
     }
     /**
-     * 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+     * Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
      * 
      */
     @Export(name="imageName", refs={String.class}, tree="[0]")
     private Output<String> imageName;
 
     /**
-     * @return 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+     * @return Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
      * 
      */
     public Output<String> imageName() {
         return this.imageName;
     }
     /**
-     * 镜像所属的账号ID。
+     * Account ID to which the image belongs.
      * 
      */
     @Export(name="imageOwnerId", refs={String.class}, tree="[0]")
     private Output<String> imageOwnerId;
 
     /**
-     * @return 镜像所属的账号ID。
+     * @return Account ID to which the image belongs.
      * 
      */
     public Output<String> imageOwnerId() {
         return this.imageOwnerId;
     }
     /**
-     * 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+     * Imported image information
+     * 
+     */
+    @Export(name="importImage", refs={ImageImportImage.class}, tree="[0]")
+    private Output<ImageImportImage> importImage;
+
+    /**
+     * @return Imported image information
+     * 
+     */
+    public Output<ImageImportImage> importImage() {
+        return this.importImage;
+    }
+    /**
+     * Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+     * @return Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * 镜像中是否安装了云助手Agent。
+     * Whether Cloud Assistant Agent is installed in the image
      * 
      */
     @Export(name="isInstallRunCommandAgent", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isInstallRunCommandAgent;
 
     /**
-     * @return 镜像中是否安装了云助手Agent。
+     * @return Whether Cloud Assistant Agent is installed in the image
      * 
      */
     public Output<Boolean> isInstallRunCommandAgent() {
         return this.isInstallRunCommandAgent;
     }
     /**
-     * 公共镜像是否长期维护。
+     * Whether the public image is maintained long-term.
      * 
      */
     @Export(name="isLts", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLts;
 
     /**
-     * @return 公共镜像是否长期维护。
+     * @return Whether the public image is maintained long-term.
      * 
      */
     public Output<Boolean> isLts() {
         return this.isLts;
     }
     /**
-     * 镜像是否支持Cloud-init。
+     * Whether the image supports Cloud-init.
      * 
      */
     @Export(name="isSupportCloudInit", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSupportCloudInit;
 
     /**
-     * @return 镜像是否支持Cloud-init。
+     * @return Whether the image supports Cloud-init.
      * 
      */
     public Output<Boolean> isSupportCloudInit() {
         return this.isSupportCloudInit;
     }
     /**
-     * 镜像的内核版本。
+     * Image kernel version.
      * 
      */
     @Export(name="kernel", refs={String.class}, tree="[0]")
     private Output<String> kernel;
 
     /**
-     * @return 镜像的内核版本。
+     * @return Image kernel version.
      * 
      */
     public Output<String> kernel() {
         return this.kernel;
     }
     /**
-     * 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+     * Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
      * 
      */
     @Export(name="licenseType", refs={String.class}, tree="[0]")
     private Output<String> licenseType;
 
     /**
-     * @return 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+     * @return Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
      * 
      */
     public Output<String> licenseType() {
         return this.licenseType;
     }
     /**
-     * 镜像操作系统的名称。
+     * Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+     * 
+     */
+    @Export(name="needDetection", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> needDetection;
+
+    /**
+     * @return Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+     * 
+     */
+    public Output<Boolean> needDetection() {
+        return this.needDetection;
+    }
+    /**
+     * Name of the image operating system.
      * 
      */
     @Export(name="osName", refs={String.class}, tree="[0]")
     private Output<String> osName;
 
     /**
-     * @return 镜像操作系统的名称。
+     * @return Name of the image operating system.
      * 
      */
     public Output<String> osName() {
         return this.osName;
     }
     /**
-     * 操作系统类型。
+     * Operating system type
      * 
      */
     @Export(name="osType", refs={String.class}, tree="[0]")
     private Output<String> osType;
 
     /**
-     * @return 操作系统类型。
+     * @return Operating system type
      * 
      */
     public Output<String> osType() {
         return this.osType;
     }
     /**
-     * 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+     * Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
      * 
      */
     @Export(name="platform", refs={String.class}, tree="[0]")
     private Output<String> platform;
 
     /**
-     * @return 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+     * @return Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
      * 
      */
     public Output<String> platform() {
         return this.platform;
     }
     /**
-     * 镜像的发行版本。
+     * Image release version.
      * 
      */
     @Export(name="platformVersion", refs={String.class}, tree="[0]")
     private Output<String> platformVersion;
 
     /**
-     * @return 镜像的发行版本。
+     * @return Image release version.
      * 
      */
     public Output<String> platformVersion() {
         return this.platformVersion;
     }
     /**
-     * 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+     * Product code for marketplace image
+     * 
+     */
+    @Export(name="productCode", refs={String.class}, tree="[0]")
+    private Output<String> productCode;
+
+    /**
+     * @return Product code for marketplace image
+     * 
+     */
+    public Output<String> productCode() {
+        return this.productCode;
+    }
+    /**
+     * Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+     * @return Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 镜像共享的账户
+     * Accounts with which the image is shared
      * 
      */
     @Export(name="sharePermissions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sharePermissions;
 
     /**
-     * @return 镜像共享的账户
+     * @return Accounts with which the image is shared
      * 
      */
     public Output<List<String>> sharePermissions() {
         return this.sharePermissions;
     }
     /**
-     * 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+     * Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
      * 
      */
     @Export(name="shareStatus", refs={String.class}, tree="[0]")
     private Output<String> shareStatus;
 
     /**
-     * @return 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+     * @return Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
      * 
      */
     public Output<String> shareStatus() {
         return this.shareStatus;
     }
     /**
-     * 镜像大小，单位为GiB。
+     * Image size, in GiB.
      * 
      */
     @Export(name="size", refs={Integer.class}, tree="[0]")
     private Output<Integer> size;
 
     /**
-     * @return 镜像大小，单位为GiB。
+     * @return Image size, in GiB.
      * 
      */
     public Output<Integer> size() {
         return this.size;
     }
     /**
-     * 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+     * Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
      * 
      */
     @Export(name="snapshotGroupId", refs={String.class}, tree="[0]")
     private Output<String> snapshotGroupId;
 
     /**
-     * @return 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+     * @return Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
      * 
      */
     public Output<String> snapshotGroupId() {
         return this.snapshotGroupId;
     }
     /**
-     * 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+     * System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     @Export(name="snapshotId", refs={String.class}, tree="[0]")
     private Output<String> snapshotId;
 
     /**
-     * @return 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+     * @return System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     public Output<String> snapshotId() {
@@ -419,14 +476,14 @@ public class Image extends com.pulumi.resources.CustomResource {
         return this.snapshots;
     }
     /**
-     * 镜像的状态。
+     * Image status.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 镜像的状态。
+     * @return Image status.
      * 
      */
     public Output<String> status() {
@@ -439,42 +496,42 @@ public class Image extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 镜像更新时间
+     * Image update time
      * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
-     * @return 镜像更新时间
+     * @return Image update time
      * 
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
-     * 镜像大小，单位为Byte。
+     * Image size, in Bytes.
      * 
      */
     @Export(name="virtualSize", refs={Double.class}, tree="[0]")
     private Output<Double> virtualSize;
 
     /**
-     * @return 镜像大小，单位为Byte。
+     * @return Image size, in Bytes.
      * 
      */
     public Output<Double> virtualSize() {
         return this.virtualSize;
     }
     /**
-     * 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+     * Image visibility. public: Public image. private: Private image. shared: Shared image.
      * 
      */
     @Export(name="visibility", refs={String.class}, tree="[0]")
     private Output<String> visibility;
 
     /**
-     * @return 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+     * @return Image visibility. public: Public image. private: Private image. shared: Shared image.
      * 
      */
     public Output<String> visibility() {

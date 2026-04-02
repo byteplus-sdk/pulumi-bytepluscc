@@ -18,7 +18,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 快照是一种备份方式，每个快照都是云盘数据在某个时间点的备份文件。当数据丢失或故障时，您可以通过快照回滚云盘数据，找回丢失的数据。
+ * A snapshot is a backup method. Each snapshot is a backup file of cloud disk data at a specific point in time. When data is lost or a failure occurs, you can roll back cloud disk data using the snapshot to recover lost data.
  * 
  * ## Example Usage
  * 
@@ -73,182 +73,182 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:storageebs/snapshot:Snapshot")
 public class Snapshot extends com.pulumi.resources.CustomResource {
     /**
-     * 快照创建时间。
+     * Snapshot creation time.
      * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
-     * @return 快照创建时间。
+     * @return Snapshot creation time.
      * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
-     * 快照描述信息，默认为空，长度限制为0~255个字符。
+     * Snapshot description. Default is empty. Length must be between 0 and 255 characters.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 快照描述信息，默认为空，长度限制为0~255个字符。
+     * @return Snapshot description. Default is empty. Length must be between 0 and 255 characters.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 镜像ID
+     * Image ID
      * 
      */
     @Export(name="imageId", refs={String.class}, tree="[0]")
     private Output<String> imageId;
 
     /**
-     * @return 镜像ID
+     * @return Image ID
      * 
      */
     public Output<String> imageId() {
         return this.imageId;
     }
     /**
-     * 快照是否开启极速可用能力，取值说明如下：true：已开启极速可用能力。false：未开启极速可用能力。
+     * Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
      * 
      */
     @Export(name="instantAccess", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> instantAccess;
 
     /**
-     * @return 快照是否开启极速可用能力，取值说明如下：true：已开启极速可用能力。false：未开启极速可用能力。
+     * @return Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
      * 
      */
     public Output<Boolean> instantAccess() {
         return this.instantAccess;
     }
     /**
-     * 快照转储进度。
+     * Snapshot dump progress.
      * 
      */
     @Export(name="progress", refs={Integer.class}, tree="[0]")
     private Output<Integer> progress;
 
     /**
-     * @return 快照转储进度。
+     * @return Snapshot dump progress.
      * 
      */
     public Output<Integer> progress() {
         return this.progress;
     }
     /**
-     * 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+     * Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+     * @return Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+     * Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
      * 
      */
     @Export(name="retentionDays", refs={Integer.class}, tree="[0]")
     private Output<Integer> retentionDays;
 
     /**
-     * @return 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+     * @return Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
      * 
      */
     public Output<Integer> retentionDays() {
         return this.retentionDays;
     }
     /**
-     * 快照是否共享。
+     * Whether the snapshot is shared.
      * 
      */
     @Export(name="shared", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shared;
 
     /**
-     * @return 快照是否共享。
+     * @return Whether the snapshot is shared.
      * 
      */
     public Output<Boolean> shared() {
         return this.shared;
     }
     /**
-     * 快照一致性组ID。
+     * Snapshot consistency group ID.
      * 
      */
     @Export(name="snapshotGroupId", refs={String.class}, tree="[0]")
     private Output<String> snapshotGroupId;
 
     /**
-     * @return 快照一致性组ID。
+     * @return Snapshot consistency group ID.
      * 
      */
     public Output<String> snapshotGroupId() {
         return this.snapshotGroupId;
     }
     /**
-     * 快照ID。
+     * Snapshot ID.
      * 
      */
     @Export(name="snapshotId", refs={String.class}, tree="[0]")
     private Output<String> snapshotId;
 
     /**
-     * @return 快照ID。
+     * @return Snapshot ID.
      * 
      */
     public Output<String> snapshotId() {
         return this.snapshotId;
     }
     /**
-     * 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+     * Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
      * 
      */
     @Export(name="snapshotName", refs={String.class}, tree="[0]")
     private Output<String> snapshotName;
 
     /**
-     * @return 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+     * @return Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
      * 
      */
     public Output<String> snapshotName() {
         return this.snapshotName;
     }
     /**
-     * 快照类型，取值说明如下：user：查询手动快照。auto：查询自动快照。share：查询共享快照。默认查询所有快照。
+     * Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
      * 
      */
     @Export(name="snapshotType", refs={String.class}, tree="[0]")
     private Output<String> snapshotType;
 
     /**
-     * @return 快照类型，取值说明如下：user：查询手动快照。auto：查询自动快照。share：查询共享快照。默认查询所有快照。
+     * @return Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
      * 
      */
     public Output<String> snapshotType() {
         return this.snapshotType;
     }
     /**
-     * 快照状态，取值说明如下：available：可用。creating：创建中。rollbacking：回滚中。deleted：已删除。failed：错误。
+     * Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 快照状态，取值说明如下：available：可用。creating：创建中。rollbacking：回滚中。deleted：已删除。failed：错误。
+     * @return Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
      * 
      */
     public Output<String> status() {
@@ -261,98 +261,98 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 快照相关的云盘ID。
+     * Cloud disk ID associated with the snapshot.
      * 
      */
     @Export(name="volumeId", refs={String.class}, tree="[0]")
     private Output<String> volumeId;
 
     /**
-     * @return 快照相关的云盘ID。
+     * @return Cloud disk ID associated with the snapshot.
      * 
      */
     public Output<String> volumeId() {
         return this.volumeId;
     }
     /**
-     * 云盘种类，取值说明如下：system：系统盘。data：数据盘。
+     * Cloud disk category. Value options: system: system disk. data: data disk.
      * 
      */
     @Export(name="volumeKind", refs={String.class}, tree="[0]")
     private Output<String> volumeKind;
 
     /**
-     * @return 云盘种类，取值说明如下：system：系统盘。data：数据盘。
+     * @return Cloud disk category. Value options: system: system disk. data: data disk.
      * 
      */
     public Output<String> volumeKind() {
         return this.volumeKind;
     }
     /**
-     * 云盘名称。
+     * Cloud disk name.
      * 
      */
     @Export(name="volumeName", refs={String.class}, tree="[0]")
     private Output<String> volumeName;
 
     /**
-     * @return 云盘名称。
+     * @return Cloud disk name.
      * 
      */
     public Output<String> volumeName() {
         return this.volumeName;
     }
     /**
-     * 云盘大小，单位为GiB。
+     * Cloud disk size, in GiB.
      * 
      */
     @Export(name="volumeSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> volumeSize;
 
     /**
-     * @return 云盘大小，单位为GiB。
+     * @return Cloud disk size, in GiB.
      * 
      */
     public Output<Integer> volumeSize() {
         return this.volumeSize;
     }
     /**
-     * 云盘状态，取值说明如下：available：可用, attaching：挂载中, attached：已挂载, detaching：卸载中, creating：创建中, deleting：删除中, error：错误, extending：扩容中, &#34;&#34;：云盘被删除。
+     * Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, &#34;&#34;: cloud disk deleted.
      * 
      */
     @Export(name="volumeStatus", refs={String.class}, tree="[0]")
     private Output<String> volumeStatus;
 
     /**
-     * @return 云盘状态，取值说明如下：available：可用, attaching：挂载中, attached：已挂载, detaching：卸载中, creating：创建中, deleting：删除中, error：错误, extending：扩容中, &#34;&#34;：云盘被删除。
+     * @return Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, &#34;&#34;: cloud disk deleted.
      * 
      */
     public Output<String> volumeStatus() {
         return this.volumeStatus;
     }
     /**
-     * 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL：极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘
+     * Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
      * 
      */
     @Export(name="volumeType", refs={String.class}, tree="[0]")
     private Output<String> volumeType;
 
     /**
-     * @return 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL：极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘
+     * @return Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
      * 
      */
     public Output<String> volumeType() {
         return this.volumeType;
     }
     /**
-     * 快照所在的可用区ID。
+     * Availability zone ID where the snapshot is located.
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
-     * @return 快照所在的可用区ID。
+     * @return Availability zone ID where the snapshot is located.
      * 
      */
     public Output<String> zoneId() {

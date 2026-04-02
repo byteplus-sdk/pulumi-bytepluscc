@@ -17,14 +17,14 @@ public final class ClusterServicesConfigArgs extends com.pulumi.resources.Resour
     public static final ClusterServicesConfigArgs Empty = new ClusterServicesConfigArgs();
 
     /**
-     * Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+     * IPv4 private network address exposed by Kubernetes Service.
      * 
      */
     @Import(name="serviceCidrsv4s")
     private @Nullable Output<List<String>> serviceCidrsv4s;
 
     /**
-     * @return Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+     * @return IPv4 private network address exposed by Kubernetes Service.
      * 
      */
     public Optional<Output<List<String>>> serviceCidrsv4s() {
@@ -56,7 +56,7 @@ public final class ClusterServicesConfigArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param serviceCidrsv4s Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+         * @param serviceCidrsv4s IPv4 private network address exposed by Kubernetes Service.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class ClusterServicesConfigArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param serviceCidrsv4s Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+         * @param serviceCidrsv4s IPv4 private network address exposed by Kubernetes Service.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class ClusterServicesConfigArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param serviceCidrsv4s Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+         * @param serviceCidrsv4s IPv4 private network address exposed by Kubernetes Service.
          * 
          * @return builder
          * 

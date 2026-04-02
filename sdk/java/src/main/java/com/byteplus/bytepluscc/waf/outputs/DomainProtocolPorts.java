@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainProtocolPorts {
     /**
-     * @return HTTP 协议的端口号。
+     * @return HTTP protocol port number
      * 
      */
     private @Nullable List<Integer> http;
     /**
-     * @return HTTPS 协议的端口号。
+     * @return HTTPS protocol port number
      * 
      */
     private @Nullable List<Integer> https;
 
     private DomainProtocolPorts() {}
     /**
-     * @return HTTP 协议的端口号。
+     * @return HTTP protocol port number
      * 
      */
     public List<Integer> http() {
         return this.http == null ? List.of() : this.http;
     }
     /**
-     * @return HTTPS 协议的端口号。
+     * @return HTTPS protocol port number
      * 
      */
     public List<Integer> https() {

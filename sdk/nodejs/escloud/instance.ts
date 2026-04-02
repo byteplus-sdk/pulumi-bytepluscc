@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 云搜索服务（Cloud Search）是提供的全托管一站式信息检索和分析平台，兼容 Elasticsearch、OpenSearch、Kibana、Dashboards、Cerebro 以及常用的开源插件，可应用于全文搜索、向量搜索、混合搜索、AI 搜索、时空检索等场景。使用云搜索服务，您可以实现一键部署、弹性扩缩、简化运维，快速构建日志分析、信息检索分析等实际业务。
+ * Cloud Search Service is a fully managed, one-stop information retrieval and analytics platform compatible with Elasticsearch, OpenSearch, Kibana, Dashboards, Cerebro, and common open-source plugins. It supports scenarios such as full-text search, vector search, hybrid search, AI search, and spatiotemporal retrieval. With Cloud Search Service, you can deploy with one click, scale elastically, simplify operations, and quickly build log analysis and information retrieval analytics for real-world business.
  *
  * ## Import
  *
@@ -44,176 +44,176 @@ export class Instance extends pulumi.CustomResource {
     }
 
     /**
-     * 是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+     * Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
      */
     public /*out*/ readonly cerebroEnabled!: pulumi.Output<boolean>;
     /**
-     * cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+     * Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
      */
     public /*out*/ readonly cerebroPrivateDomain!: pulumi.Output<string>;
     /**
-     * erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
      */
     public /*out*/ readonly cerebroPublicDomain!: pulumi.Output<string>;
     /**
-     * 实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+     * Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
      */
     public /*out*/ readonly chargeEnabled!: pulumi.Output<boolean>;
     /**
-     * 实例所属集群的 ID。
+     * ID of the cluster to which the instance belongs.
      */
     public /*out*/ readonly clusterId!: pulumi.Output<string>;
     /**
-     * 实例的创建时间。
+     * Instance creation time.
      */
     public /*out*/ readonly createTime!: pulumi.Output<string>;
     /**
-     * 实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      */
     public /*out*/ readonly enableEsPrivateDomainPublic!: pulumi.Output<boolean>;
     /**
-     * 实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+     * Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
      */
     public /*out*/ readonly enableEsPrivateNetwork!: pulumi.Output<boolean>;
     /**
-     * 实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+     * Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
      */
     public /*out*/ readonly enableEsPublicNetwork!: pulumi.Output<boolean>;
     /**
-     * Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      */
     public /*out*/ readonly enableKibanaPrivateDomainPublic!: pulumi.Output<boolean>;
     /**
-     * Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+     * Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
      */
     public /*out*/ readonly enableKibanaPrivateNetwork!: pulumi.Output<boolean>;
     /**
-     * Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+     * Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
      */
     public /*out*/ readonly enableKibanaPublicNetwork!: pulumi.Output<boolean>;
     /**
-     * 实例所绑定的 EIP。
+     * EIP bound to the instance.
      */
     public /*out*/ readonly esEip!: pulumi.Output<string>;
     /**
-     * 实例所绑定的 EIP 的 ID。
+     * ID of the EIP bound to the instance
      */
     public /*out*/ readonly esEipId!: pulumi.Output<string>;
     /**
-     * 实例私网访问地址。
+     * Instance private network access address.
      */
     public /*out*/ readonly esPrivateEndpoint!: pulumi.Output<string>;
     /**
-     * 实例私网地址访问白名单。同 ESPrivateIpWhitelist
+     * Instance private network address access allowlist. Same as ESPrivateIpWhitelist
      */
     public /*out*/ readonly esPrivateIpAllowList!: pulumi.Output<string>;
     /**
-     * 实例私网地址访问白名单。
+     * Instance private network address access allowlist
      */
     public /*out*/ readonly esPrivateIpWhitelist!: pulumi.Output<string>;
     /**
-     * ES公网带宽，单位:Mbps。
+     * ES public network bandwidth, unit: Mbps.
      */
     public /*out*/ readonly esPubBandwidth!: pulumi.Output<number>;
     /**
-     * 实例公网访问地址。
+     * Instance public access address
      */
     public /*out*/ readonly esPublicEndpoint!: pulumi.Output<string>;
     /**
-     * 实例公网地址访问白名单。同 ESPublicIpWhitelist
+     * Instance public IP address access allowlist. Same as ESPublicIpWhitelist
      */
     public /*out*/ readonly esPublicIpAllowList!: pulumi.Output<string>;
     /**
-     * 实例公网地址访问白名单。
+     * Allowlist for instance public network address access.
      */
     public /*out*/ readonly esPublicIpWhitelist!: pulumi.Output<string>;
     /**
-     * 包年包月实例的付费过期时间。
+     * Expiration time for subscription instance payment
      */
     public /*out*/ readonly expireDate!: pulumi.Output<string>;
     /**
-     * 实例配置详情信息。
+     * Instance configuration details
      */
     public readonly instanceConfiguration!: pulumi.Output<outputs.escloud.InstanceInstanceConfiguration>;
     /**
-     * 实例 ID。
+     * Instance ID
      */
     public /*out*/ readonly instanceId!: pulumi.Output<string>;
     /**
-     * Kibana 参数配置。
+     * Kibana parameter configuration
      */
     public /*out*/ readonly kibanaConfig!: pulumi.Output<outputs.escloud.InstanceKibanaConfig>;
     /**
-     * Kibana 所绑定的 EIP。
+     * EIP bound to Kibana
      */
     public /*out*/ readonly kibanaEip!: pulumi.Output<string>;
     /**
-     * Kibana 所绑定的 EIP 的 ID。
+     * ID of the EIP bound to Kibana.
      */
     public /*out*/ readonly kibanaEipId!: pulumi.Output<string>;
     /**
-     * Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
      */
     public /*out*/ readonly kibanaPrivateDomain!: pulumi.Output<string>;
     /**
-     * Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+     * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
      */
     public /*out*/ readonly kibanaPrivateIpAllowList!: pulumi.Output<string>;
     /**
-     * Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+     * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
      */
     public /*out*/ readonly kibanaPrivateIpWhitelist!: pulumi.Output<string>;
     /**
-     * Kibana公网带宽，单位: Mbps
+     * Kibana public network bandwidth, unit: Mbps
      */
     public /*out*/ readonly kibanaPubBandwidth!: pulumi.Output<number>;
     /**
-     * Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
      */
     public /*out*/ readonly kibanaPublicDomain!: pulumi.Output<string>;
     /**
-     * Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+     * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
      */
     public /*out*/ readonly kibanaPublicIpAllowList!: pulumi.Output<string>;
     /**
-     * Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+     * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
      */
     public /*out*/ readonly kibanaPublicIpWhitelist!: pulumi.Output<string>;
     /**
-     * 主可用区
+     * Primary availability zone
      */
     public /*out*/ readonly mainZoneId!: pulumi.Output<string>;
     /**
-     * 实例的可维护日期。
+     * Instance maintenance date.
      */
     public readonly maintenanceDays!: pulumi.Output<string[]>;
     /**
-     * 实例的可维护时间段。
+     * Instance maintenance window.
      */
     public readonly maintenanceTime!: pulumi.Output<string>;
     /**
-     * 实例当前状态。
+     * Current instance status
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 子实例开启情况。
+     * Sub-instance activation status
      */
     public /*out*/ readonly subInstanceEnable!: pulumi.Output<string>;
     public /*out*/ readonly subInstances!: pulumi.Output<outputs.escloud.InstanceSubInstance[]>;
     /**
-     * 是否支持冷节点。
+     * Whether cold nodes are supported
      */
     public /*out*/ readonly supportColdNode!: pulumi.Output<boolean>;
     /**
-     * 实例的总节点数。
+     * Total number of nodes in the instance
      */
     public /*out*/ readonly totalNodes!: pulumi.Output<number>;
     /**
-     * 数据迁移任务信息。
+     * Data migration task information
      */
     public /*out*/ readonly transferInfo!: pulumi.Output<outputs.escloud.InstanceTransferInfo>;
     /**
-     * 实例所有者的用户 ID。
+     * Instance owner's user ID
      */
     public /*out*/ readonly userId!: pulumi.Output<string>;
 
@@ -334,176 +334,176 @@ export class Instance extends pulumi.CustomResource {
  */
 export interface InstanceState {
     /**
-     * 是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+     * Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
      */
     cerebroEnabled?: pulumi.Input<boolean>;
     /**
-     * cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+     * Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
      */
     cerebroPrivateDomain?: pulumi.Input<string>;
     /**
-     * erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
      */
     cerebroPublicDomain?: pulumi.Input<string>;
     /**
-     * 实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+     * Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
      */
     chargeEnabled?: pulumi.Input<boolean>;
     /**
-     * 实例所属集群的 ID。
+     * ID of the cluster to which the instance belongs.
      */
     clusterId?: pulumi.Input<string>;
     /**
-     * 实例的创建时间。
+     * Instance creation time.
      */
     createTime?: pulumi.Input<string>;
     /**
-     * 实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      */
     enableEsPrivateDomainPublic?: pulumi.Input<boolean>;
     /**
-     * 实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+     * Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
      */
     enableEsPrivateNetwork?: pulumi.Input<boolean>;
     /**
-     * 实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+     * Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
      */
     enableEsPublicNetwork?: pulumi.Input<boolean>;
     /**
-     * Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      */
     enableKibanaPrivateDomainPublic?: pulumi.Input<boolean>;
     /**
-     * Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+     * Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
      */
     enableKibanaPrivateNetwork?: pulumi.Input<boolean>;
     /**
-     * Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+     * Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
      */
     enableKibanaPublicNetwork?: pulumi.Input<boolean>;
     /**
-     * 实例所绑定的 EIP。
+     * EIP bound to the instance.
      */
     esEip?: pulumi.Input<string>;
     /**
-     * 实例所绑定的 EIP 的 ID。
+     * ID of the EIP bound to the instance
      */
     esEipId?: pulumi.Input<string>;
     /**
-     * 实例私网访问地址。
+     * Instance private network access address.
      */
     esPrivateEndpoint?: pulumi.Input<string>;
     /**
-     * 实例私网地址访问白名单。同 ESPrivateIpWhitelist
+     * Instance private network address access allowlist. Same as ESPrivateIpWhitelist
      */
     esPrivateIpAllowList?: pulumi.Input<string>;
     /**
-     * 实例私网地址访问白名单。
+     * Instance private network address access allowlist
      */
     esPrivateIpWhitelist?: pulumi.Input<string>;
     /**
-     * ES公网带宽，单位:Mbps。
+     * ES public network bandwidth, unit: Mbps.
      */
     esPubBandwidth?: pulumi.Input<number>;
     /**
-     * 实例公网访问地址。
+     * Instance public access address
      */
     esPublicEndpoint?: pulumi.Input<string>;
     /**
-     * 实例公网地址访问白名单。同 ESPublicIpWhitelist
+     * Instance public IP address access allowlist. Same as ESPublicIpWhitelist
      */
     esPublicIpAllowList?: pulumi.Input<string>;
     /**
-     * 实例公网地址访问白名单。
+     * Allowlist for instance public network address access.
      */
     esPublicIpWhitelist?: pulumi.Input<string>;
     /**
-     * 包年包月实例的付费过期时间。
+     * Expiration time for subscription instance payment
      */
     expireDate?: pulumi.Input<string>;
     /**
-     * 实例配置详情信息。
+     * Instance configuration details
      */
     instanceConfiguration?: pulumi.Input<inputs.escloud.InstanceInstanceConfiguration>;
     /**
-     * 实例 ID。
+     * Instance ID
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * Kibana 参数配置。
+     * Kibana parameter configuration
      */
     kibanaConfig?: pulumi.Input<inputs.escloud.InstanceKibanaConfig>;
     /**
-     * Kibana 所绑定的 EIP。
+     * EIP bound to Kibana
      */
     kibanaEip?: pulumi.Input<string>;
     /**
-     * Kibana 所绑定的 EIP 的 ID。
+     * ID of the EIP bound to Kibana.
      */
     kibanaEipId?: pulumi.Input<string>;
     /**
-     * Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
      */
     kibanaPrivateDomain?: pulumi.Input<string>;
     /**
-     * Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+     * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
      */
     kibanaPrivateIpAllowList?: pulumi.Input<string>;
     /**
-     * Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+     * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
      */
     kibanaPrivateIpWhitelist?: pulumi.Input<string>;
     /**
-     * Kibana公网带宽，单位: Mbps
+     * Kibana public network bandwidth, unit: Mbps
      */
     kibanaPubBandwidth?: pulumi.Input<number>;
     /**
-     * Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
      */
     kibanaPublicDomain?: pulumi.Input<string>;
     /**
-     * Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+     * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
      */
     kibanaPublicIpAllowList?: pulumi.Input<string>;
     /**
-     * Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+     * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
      */
     kibanaPublicIpWhitelist?: pulumi.Input<string>;
     /**
-     * 主可用区
+     * Primary availability zone
      */
     mainZoneId?: pulumi.Input<string>;
     /**
-     * 实例的可维护日期。
+     * Instance maintenance date.
      */
     maintenanceDays?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 实例的可维护时间段。
+     * Instance maintenance window.
      */
     maintenanceTime?: pulumi.Input<string>;
     /**
-     * 实例当前状态。
+     * Current instance status
      */
     status?: pulumi.Input<string>;
     /**
-     * 子实例开启情况。
+     * Sub-instance activation status
      */
     subInstanceEnable?: pulumi.Input<string>;
     subInstances?: pulumi.Input<pulumi.Input<inputs.escloud.InstanceSubInstance>[]>;
     /**
-     * 是否支持冷节点。
+     * Whether cold nodes are supported
      */
     supportColdNode?: pulumi.Input<boolean>;
     /**
-     * 实例的总节点数。
+     * Total number of nodes in the instance
      */
     totalNodes?: pulumi.Input<number>;
     /**
-     * 数据迁移任务信息。
+     * Data migration task information
      */
     transferInfo?: pulumi.Input<inputs.escloud.InstanceTransferInfo>;
     /**
-     * 实例所有者的用户 ID。
+     * Instance owner's user ID
      */
     userId?: pulumi.Input<string>;
 }
@@ -513,15 +513,15 @@ export interface InstanceState {
  */
 export interface InstanceArgs {
     /**
-     * 实例配置详情信息。
+     * Instance configuration details
      */
     instanceConfiguration: pulumi.Input<inputs.escloud.InstanceInstanceConfiguration>;
     /**
-     * 实例的可维护日期。
+     * Instance maintenance date.
      */
     maintenanceDays?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 实例的可维护时间段。
+     * Instance maintenance window.
      */
     maintenanceTime?: pulumi.Input<string>;
 }

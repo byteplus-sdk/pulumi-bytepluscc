@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         [Input("condition")]
         public Input<Inputs.DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs>? Condition { get; set; }
 
         /// <summary>
-        /// 表示限速配置。
+        /// Indicates the rate limiting configuration.
         /// </summary>
         [Input("downloadSpeedLimitAction")]
         public Input<Inputs.DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs>? DownloadSpeedLimitAction { get; set; }

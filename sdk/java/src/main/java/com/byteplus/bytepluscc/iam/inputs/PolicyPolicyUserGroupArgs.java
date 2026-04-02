@@ -18,14 +18,14 @@ public final class PolicyPolicyUserGroupArgs extends com.pulumi.resources.Resour
     public static final PolicyPolicyUserGroupArgs Empty = new PolicyPolicyUserGroupArgs();
 
     /**
-     * 对应用户、角色、用户组的名称。
+     * Name of the corresponding user, role, or user group.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 对应用户、角色、用户组的名称。
+     * @return Name of the corresponding user, role, or user group.
      * 
      */
     public Optional<Output<String>> name() {
@@ -65,7 +65,7 @@ public final class PolicyPolicyUserGroupArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param name 对应用户、角色、用户组的名称。
+         * @param name Name of the corresponding user, role, or user group.
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class PolicyPolicyUserGroupArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param name 对应用户、角色、用户组的名称。
+         * @param name Name of the corresponding user, role, or user group.
          * 
          * @return builder
          * 

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class GatewayCustomLogRequestHeaderGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 字段别名。
+        /// Field alias
         /// </summary>
         [Input("aliasesInLog")]
         public Input<string>? AliasesInLog { get; set; }
 
         /// <summary>
-        /// 请求头键。
+        /// Request header key
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }

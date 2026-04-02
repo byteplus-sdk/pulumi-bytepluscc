@@ -29,11 +29,11 @@ class MountPointArgs:
                  vpc_id: pulumi.Input[builtins.str]):
         """
         The set of arguments for constructing a MountPoint resource.
-        :param pulumi.Input[builtins.str] file_system_id: 文件系统 ID。
-        :param pulumi.Input[builtins.str] mount_point_name: 挂载点名称。
-        :param pulumi.Input[builtins.str] permission_group_id: 权限组 ID。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。
+        :param pulumi.Input[builtins.str] file_system_id: File system ID.
+        :param pulumi.Input[builtins.str] mount_point_name: Mount point name.
+        :param pulumi.Input[builtins.str] permission_group_id: Permission group ID.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID.
         """
         pulumi.set(__self__, "file_system_id", file_system_id)
         pulumi.set(__self__, "mount_point_name", mount_point_name)
@@ -45,7 +45,7 @@ class MountPointArgs:
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> pulumi.Input[builtins.str]:
         """
-        文件系统 ID。
+        File system ID.
         """
         return pulumi.get(self, "file_system_id")
 
@@ -57,7 +57,7 @@ class MountPointArgs:
     @pulumi.getter(name="mountPointName")
     def mount_point_name(self) -> pulumi.Input[builtins.str]:
         """
-        挂载点名称。
+        Mount point name.
         """
         return pulumi.get(self, "mount_point_name")
 
@@ -69,7 +69,7 @@ class MountPointArgs:
     @pulumi.getter(name="permissionGroupId")
     def permission_group_id(self) -> pulumi.Input[builtins.str]:
         """
-        权限组 ID。
+        Permission group ID.
         """
         return pulumi.get(self, "permission_group_id")
 
@@ -81,7 +81,7 @@ class MountPointArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[builtins.str]:
         """
-        子网 ID。
+        Subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -93,7 +93,7 @@ class MountPointArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        私有网络 ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -122,20 +122,20 @@ class _MountPointState:
                  vpc_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering MountPoint resources.
-        :param pulumi.Input[builtins.str] created_time: 挂载点创建时间。
-        :param pulumi.Input[builtins.str] domain: DNS 地址。
-        :param pulumi.Input[builtins.str] file_system_id: 文件系统 ID。
-        :param pulumi.Input[builtins.str] ip: 挂载点地址。
-        :param pulumi.Input[builtins.str] mount_point_id: 挂载点 ID。
-        :param pulumi.Input[builtins.str] mount_point_name: 挂载点名称。
-        :param pulumi.Input['MountPointPermissionGroupArgs'] permission_group: 挂载点绑定的权限组信息。
-        :param pulumi.Input[builtins.str] permission_group_id: 权限组 ID。
-        :param pulumi.Input[builtins.str] status: 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。
-        :param pulumi.Input[builtins.str] subnet_name: 子网名称。
-        :param pulumi.Input[builtins.str] updated_time: 挂载点更新时间。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。
-        :param pulumi.Input[builtins.str] vpc_name: 私有网络名称。
+        :param pulumi.Input[builtins.str] created_time: Mount point creation time.
+        :param pulumi.Input[builtins.str] domain: DNS address.
+        :param pulumi.Input[builtins.str] file_system_id: File system ID.
+        :param pulumi.Input[builtins.str] ip: Mount point address.
+        :param pulumi.Input[builtins.str] mount_point_id: Mount point ID.
+        :param pulumi.Input[builtins.str] mount_point_name: Mount point name.
+        :param pulumi.Input['MountPointPermissionGroupArgs'] permission_group: Permission group information bound to the mount point.
+        :param pulumi.Input[builtins.str] permission_group_id: Permission group ID.
+        :param pulumi.Input[builtins.str] status: Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID.
+        :param pulumi.Input[builtins.str] subnet_name: Subnet name.
+        :param pulumi.Input[builtins.str] updated_time: Mount point update time.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID.
+        :param pulumi.Input[builtins.str] vpc_name: Private network name.
         """
         if clients is not None:
             pulumi.set(__self__, "clients", clients)
@@ -181,7 +181,7 @@ class _MountPointState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        挂载点创建时间。
+        Mount point creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -193,7 +193,7 @@ class _MountPointState:
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        DNS 地址。
+        DNS address.
         """
         return pulumi.get(self, "domain")
 
@@ -205,7 +205,7 @@ class _MountPointState:
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统 ID。
+        File system ID.
         """
         return pulumi.get(self, "file_system_id")
 
@@ -217,7 +217,7 @@ class _MountPointState:
     @pulumi.getter
     def ip(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        挂载点地址。
+        Mount point address.
         """
         return pulumi.get(self, "ip")
 
@@ -229,7 +229,7 @@ class _MountPointState:
     @pulumi.getter(name="mountPointId")
     def mount_point_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        挂载点 ID。
+        Mount point ID.
         """
         return pulumi.get(self, "mount_point_id")
 
@@ -241,7 +241,7 @@ class _MountPointState:
     @pulumi.getter(name="mountPointName")
     def mount_point_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        挂载点名称。
+        Mount point name.
         """
         return pulumi.get(self, "mount_point_name")
 
@@ -253,7 +253,7 @@ class _MountPointState:
     @pulumi.getter(name="permissionGroup")
     def permission_group(self) -> Optional[pulumi.Input['MountPointPermissionGroupArgs']]:
         """
-        挂载点绑定的权限组信息。
+        Permission group information bound to the mount point.
         """
         return pulumi.get(self, "permission_group")
 
@@ -265,7 +265,7 @@ class _MountPointState:
     @pulumi.getter(name="permissionGroupId")
     def permission_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限组 ID。
+        Permission group ID.
         """
         return pulumi.get(self, "permission_group_id")
 
@@ -277,7 +277,7 @@ class _MountPointState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+        Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
         """
         return pulumi.get(self, "status")
 
@@ -289,7 +289,7 @@ class _MountPointState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网 ID。
+        Subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -301,7 +301,7 @@ class _MountPointState:
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网名称。
+        Subnet name.
         """
         return pulumi.get(self, "subnet_name")
 
@@ -313,7 +313,7 @@ class _MountPointState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        挂载点更新时间。
+        Mount point update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -325,7 +325,7 @@ class _MountPointState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私有网络 ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -337,7 +337,7 @@ class _MountPointState:
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私有网络名称。
+        Private network name.
         """
         return pulumi.get(self, "vpc_name")
 
@@ -359,7 +359,7 @@ class MountPoint(pulumi.CustomResource):
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        挂载点是 NAS 文件系统在网络环境中的连接点。NAS 文件系统需要挂载在计算节点中才能完成数据的访问与存储。挂载是将计算节点与 NAS 文件系统相连接的操作。
+        Mount point is the connection point for the NAS file system in a network environment. The NAS file system must be mounted on a compute node to enable data access and storage. Mounting is the operation that connects the compute node to the NAS file system.
 
         ## Example Usage
 
@@ -383,11 +383,11 @@ class MountPoint(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] file_system_id: 文件系统 ID。
-        :param pulumi.Input[builtins.str] mount_point_name: 挂载点名称。
-        :param pulumi.Input[builtins.str] permission_group_id: 权限组 ID。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。
+        :param pulumi.Input[builtins.str] file_system_id: File system ID.
+        :param pulumi.Input[builtins.str] mount_point_name: Mount point name.
+        :param pulumi.Input[builtins.str] permission_group_id: Permission group ID.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID.
         """
         ...
     @overload
@@ -396,7 +396,7 @@ class MountPoint(pulumi.CustomResource):
                  args: MountPointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        挂载点是 NAS 文件系统在网络环境中的连接点。NAS 文件系统需要挂载在计算节点中才能完成数据的访问与存储。挂载是将计算节点与 NAS 文件系统相连接的操作。
+        Mount point is the connection point for the NAS file system in a network environment. The NAS file system must be mounted on a compute node to enable data access and storage. Mounting is the operation that connects the compute node to the NAS file system.
 
         ## Example Usage
 
@@ -504,20 +504,20 @@ class MountPoint(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 挂载点创建时间。
-        :param pulumi.Input[builtins.str] domain: DNS 地址。
-        :param pulumi.Input[builtins.str] file_system_id: 文件系统 ID。
-        :param pulumi.Input[builtins.str] ip: 挂载点地址。
-        :param pulumi.Input[builtins.str] mount_point_id: 挂载点 ID。
-        :param pulumi.Input[builtins.str] mount_point_name: 挂载点名称。
-        :param pulumi.Input[Union['MountPointPermissionGroupArgs', 'MountPointPermissionGroupArgsDict']] permission_group: 挂载点绑定的权限组信息。
-        :param pulumi.Input[builtins.str] permission_group_id: 权限组 ID。
-        :param pulumi.Input[builtins.str] status: 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。
-        :param pulumi.Input[builtins.str] subnet_name: 子网名称。
-        :param pulumi.Input[builtins.str] updated_time: 挂载点更新时间。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。
-        :param pulumi.Input[builtins.str] vpc_name: 私有网络名称。
+        :param pulumi.Input[builtins.str] created_time: Mount point creation time.
+        :param pulumi.Input[builtins.str] domain: DNS address.
+        :param pulumi.Input[builtins.str] file_system_id: File system ID.
+        :param pulumi.Input[builtins.str] ip: Mount point address.
+        :param pulumi.Input[builtins.str] mount_point_id: Mount point ID.
+        :param pulumi.Input[builtins.str] mount_point_name: Mount point name.
+        :param pulumi.Input[Union['MountPointPermissionGroupArgs', 'MountPointPermissionGroupArgsDict']] permission_group: Permission group information bound to the mount point.
+        :param pulumi.Input[builtins.str] permission_group_id: Permission group ID.
+        :param pulumi.Input[builtins.str] status: Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID.
+        :param pulumi.Input[builtins.str] subnet_name: Subnet name.
+        :param pulumi.Input[builtins.str] updated_time: Mount point update time.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID.
+        :param pulumi.Input[builtins.str] vpc_name: Private network name.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -549,7 +549,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        挂载点创建时间。
+        Mount point creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -557,7 +557,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter
     def domain(self) -> pulumi.Output[builtins.str]:
         """
-        DNS 地址。
+        DNS address.
         """
         return pulumi.get(self, "domain")
 
@@ -565,7 +565,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统 ID。
+        File system ID.
         """
         return pulumi.get(self, "file_system_id")
 
@@ -573,7 +573,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter
     def ip(self) -> pulumi.Output[builtins.str]:
         """
-        挂载点地址。
+        Mount point address.
         """
         return pulumi.get(self, "ip")
 
@@ -581,7 +581,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter(name="mountPointId")
     def mount_point_id(self) -> pulumi.Output[builtins.str]:
         """
-        挂载点 ID。
+        Mount point ID.
         """
         return pulumi.get(self, "mount_point_id")
 
@@ -589,7 +589,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter(name="mountPointName")
     def mount_point_name(self) -> pulumi.Output[builtins.str]:
         """
-        挂载点名称。
+        Mount point name.
         """
         return pulumi.get(self, "mount_point_name")
 
@@ -597,7 +597,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter(name="permissionGroup")
     def permission_group(self) -> pulumi.Output['outputs.MountPointPermissionGroup']:
         """
-        挂载点绑定的权限组信息。
+        Permission group information bound to the mount point.
         """
         return pulumi.get(self, "permission_group")
 
@@ -605,7 +605,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter(name="permissionGroupId")
     def permission_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        权限组 ID。
+        Permission group ID.
         """
         return pulumi.get(self, "permission_group_id")
 
@@ -613,7 +613,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+        Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
         """
         return pulumi.get(self, "status")
 
@@ -621,7 +621,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        子网 ID。
+        Subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -629,7 +629,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> pulumi.Output[builtins.str]:
         """
-        子网名称。
+        Subnet name.
         """
         return pulumi.get(self, "subnet_name")
 
@@ -637,7 +637,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        挂载点更新时间。
+        Mount point update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -645,7 +645,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        私有网络 ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -653,7 +653,7 @@ class MountPoint(pulumi.CustomResource):
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> pulumi.Output[builtins.str]:
         """
-        私有网络名称。
+        Private network name.
         """
         return pulumi.get(self, "vpc_name")
 

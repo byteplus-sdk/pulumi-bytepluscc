@@ -19,7 +19,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 域名黑名单访问控制策略。
+ * Domain denylist access control policy.
  * 
  * ## Example Usage
  * 
@@ -36,70 +36,70 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:fwcenter/dnsControlPolicy:DnsControlPolicy")
 public class DnsControlPolicy extends com.pulumi.resources.CustomResource {
     /**
-     * 用户的唯一标识ID。
+     * User&#39;s unique identifier.
      * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
-     * @return 用户的唯一标识ID。
+     * @return User&#39;s unique identifier.
      * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
-     * 策略的描述信息。
+     * Policy description information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 策略的描述信息。
+     * @return Policy description information.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+     * Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
      * 
      */
     @Export(name="destination", refs={String.class}, tree="[0]")
     private Output<String> destination;
 
     /**
-     * @return 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+     * @return Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
      * 
      */
     public Output<String> destination() {
         return this.destination;
     }
     /**
-     * 域名地址簿名称列表。
+     * Domain address book name list.
      * 
      */
     @Export(name="destinationGroupLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> destinationGroupLists;
 
     /**
-     * @return 域名地址簿名称列表。
+     * @return Domain address book name list.
      * 
      */
     public Output<List<String>> destinationGroupLists() {
         return this.destinationGroupLists;
     }
     /**
-     * 访问目的的类型。domain：域名；group：域名地址簿。
+     * Type of access target. domain: domain; group: domain address book.
      * 
      */
     @Export(name="destinationType", refs={String.class}, tree="[0]")
     private Output<String> destinationType;
 
     /**
-     * @return 访问目的的类型。domain：域名；group：域名地址簿。
+     * @return Type of access target. domain: domain; group: domain address book.
      * 
      */
     public Output<String> destinationType() {
@@ -112,70 +112,70 @@ public class DnsControlPolicy extends com.pulumi.resources.CustomResource {
         return this.domainListV1s;
     }
     /**
-     * 域名列表。
+     * Domain list.
      * 
      */
     @Export(name="domainLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> domainLists;
 
     /**
-     * @return 域名列表。
+     * @return Domain list.
      * 
      */
     public Output<List<String>> domainLists() {
         return this.domainLists;
     }
     /**
-     * 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+     * Hit count, indicating the number of times the domain denylist access control policy was triggered.
      * 
      */
     @Export(name="hitCnt", refs={Integer.class}, tree="[0]")
     private Output<Integer> hitCnt;
 
     /**
-     * @return 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+     * @return Hit count, indicating the number of times the domain denylist access control policy was triggered.
      * 
      */
     public Output<Integer> hitCnt() {
         return this.hitCnt;
     }
     /**
-     * 互联网边界防火墙实例ID。
+     * Internet border firewall instance ID.
      * 
      */
     @Export(name="internetFirewallId", refs={String.class}, tree="[0]")
     private Output<String> internetFirewallId;
 
     /**
-     * @return 互联网边界防火墙实例ID。
+     * @return Internet border firewall instance ID.
      * 
      */
     public Output<String> internetFirewallId() {
         return this.internetFirewallId;
     }
     /**
-     * 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+     * Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
      * 
      */
     @Export(name="lastHitTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> lastHitTime;
 
     /**
-     * @return 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+     * @return Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
      * 
      */
     public Output<Integer> lastHitTime() {
         return this.lastHitTime;
     }
     /**
-     * 访问控制策略的唯一标识ID。
+     * Unique identifier of the access control policy.
      * 
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
-     * @return 访问控制策略的唯一标识ID。
+     * @return Unique identifier of the access control policy.
      * 
      */
     public Output<String> ruleId() {
@@ -188,28 +188,28 @@ public class DnsControlPolicy extends com.pulumi.resources.CustomResource {
         return this.sources;
     }
     /**
-     * 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+     * Switch status of the domain denylist access control policy. false: Off; true: On.
      * 
      */
     @Export(name="status", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> status;
 
     /**
-     * @return 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+     * @return Switch status of the domain denylist access control policy. false: Off; true: On.
      * 
      */
     public Output<Boolean> status() {
         return this.status;
     }
     /**
-     * 该域名黑名单访问控制策略占用的策略数量。
+     * Number of policies occupied by this domain denylist access control policy.
      * 
      */
     @Export(name="useCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> useCount;
 
     /**
-     * @return 该域名黑名单访问控制策略占用的策略数量。
+     * @return Number of policies occupied by this domain denylist access control policy.
      * 
      */
     public Output<Integer> useCount() {

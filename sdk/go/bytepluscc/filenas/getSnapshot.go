@@ -30,35 +30,35 @@ type LookupSnapshotArgs struct {
 
 // A collection of values returned by getSnapshot.
 type LookupSnapshotResult struct {
-	// 快照创建时间。
+	// Snapshot Creation Time
 	CreatedTime string `pulumi:"createdTime"`
-	// 快照描述信息。
+	// Snapshot Description
 	Description string `pulumi:"description"`
-	// 文件系统 ID。
+	// File System ID
 	FileSystemId string `pulumi:"fileSystemId"`
-	// 文件系统名称。
+	// File System Name
 	FileSystemName string `pulumi:"fileSystemName"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 是否加密，当前仅支持false，即不加密。
+	// Is encryption enabled. Currently only false is supported (not encrypted)
 	IsEncrypt bool `pulumi:"isEncrypt"`
-	// 快照创建进度。
+	// Snapshot Creation Progress
 	Progress string `pulumi:"progress"`
-	// 快照保留时间，默认为2147483647，即永久保留。
+	// Snapshot Retention Period. Default is 2147483647 (permanent retention)
 	RetentionDays int `pulumi:"retentionDays"`
-	// 快照 ID。
+	// Snapshot ID
 	SnapshotId string `pulumi:"snapshotId"`
-	// 快照名称。
+	// Snapshot Name
 	SnapshotName string `pulumi:"snapshotName"`
-	// 快照类型，默认为Manual，即手动快照。
+	// Snapshot Type. Default is Manual (manual snapshot)
 	SnapshotType string `pulumi:"snapshotType"`
-	// 文件系统容量，单位为 GiB。
+	// File System Capacity (GiB)
 	SourceSize int `pulumi:"sourceSize"`
-	// 文件系统版本。
+	// File System Version
 	SourceVersion string `pulumi:"sourceVersion"`
-	// 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+	// Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
 	Status string `pulumi:"status"`
-	// 可用区 ID。
+	// Availability Zone ID
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -96,22 +96,22 @@ func (o LookupSnapshotResultOutput) ToLookupSnapshotResultOutputWithContext(ctx 
 	return o
 }
 
-// 快照创建时间。
+// Snapshot Creation Time
 func (o LookupSnapshotResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 快照描述信息。
+// Snapshot Description
 func (o LookupSnapshotResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 文件系统 ID。
+// File System ID
 func (o LookupSnapshotResultOutput) FileSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.FileSystemId }).(pulumi.StringOutput)
 }
 
-// 文件系统名称。
+// File System Name
 func (o LookupSnapshotResultOutput) FileSystemName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.FileSystemName }).(pulumi.StringOutput)
 }
@@ -121,52 +121,52 @@ func (o LookupSnapshotResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 是否加密，当前仅支持false，即不加密。
+// Is encryption enabled. Currently only false is supported (not encrypted)
 func (o LookupSnapshotResultOutput) IsEncrypt() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) bool { return v.IsEncrypt }).(pulumi.BoolOutput)
 }
 
-// 快照创建进度。
+// Snapshot Creation Progress
 func (o LookupSnapshotResultOutput) Progress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.Progress }).(pulumi.StringOutput)
 }
 
-// 快照保留时间，默认为2147483647，即永久保留。
+// Snapshot Retention Period. Default is 2147483647 (permanent retention)
 func (o LookupSnapshotResultOutput) RetentionDays() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) int { return v.RetentionDays }).(pulumi.IntOutput)
 }
 
-// 快照 ID。
+// Snapshot ID
 func (o LookupSnapshotResultOutput) SnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.SnapshotId }).(pulumi.StringOutput)
 }
 
-// 快照名称。
+// Snapshot Name
 func (o LookupSnapshotResultOutput) SnapshotName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.SnapshotName }).(pulumi.StringOutput)
 }
 
-// 快照类型，默认为Manual，即手动快照。
+// Snapshot Type. Default is Manual (manual snapshot)
 func (o LookupSnapshotResultOutput) SnapshotType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.SnapshotType }).(pulumi.StringOutput)
 }
 
-// 文件系统容量，单位为 GiB。
+// File System Capacity (GiB)
 func (o LookupSnapshotResultOutput) SourceSize() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) int { return v.SourceSize }).(pulumi.IntOutput)
 }
 
-// 文件系统版本。
+// File System Version
 func (o LookupSnapshotResultOutput) SourceVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.SourceVersion }).(pulumi.StringOutput)
 }
 
-// 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+// Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
 func (o LookupSnapshotResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 可用区 ID。
+// Availability Zone ID
 func (o LookupSnapshotResultOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.ZoneId }).(pulumi.StringOutput)
 }

@@ -18,7 +18,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 用户组是用户的集合。当用户组被关联上策略后，同一用户组里的所有用户会拥有对应的策略权限，同一个用户可存在于多个用户组中，可同时拥有多个用户组的权限。
+ * A user group is a collection of users. When a user group is associated with a policy, all users in the group gain the corresponding policy permissions. A user can belong to multiple user groups and have permissions from each group.
  * 
  * ## Example Usage
  * 
@@ -35,14 +35,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:iam/group:Group")
 public class Group extends com.pulumi.resources.CustomResource {
     /**
-     * 用户组所属主账号的ID。
+     * ID of the primary account to which the user group belongs.
      * 
      */
     @Export(name="accountId", refs={Integer.class}, tree="[0]")
     private Output<Integer> accountId;
 
     /**
-     * @return 用户组所属主账号的ID。
+     * @return ID of the primary account to which the user group belongs.
      * 
      */
     public Output<Integer> accountId() {
@@ -55,84 +55,84 @@ public class Group extends com.pulumi.resources.CustomResource {
         return this.attachedPolicies;
     }
     /**
-     * 用户组的创建时间。
+     * User group creation time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 用户组的创建时间。
+     * @return User group creation time.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 用户组描述信息。长度不超过128。
+     * User group description. Maximum length: 128 characters.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 用户组描述信息。长度不超过128。
+     * @return User group description. Maximum length: 128 characters.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 用户组显示名称。长度不超过64。
+     * User group display name. Maximum length: 64 characters.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return 用户组显示名称。长度不超过64。
+     * @return User group display name. Maximum length: 64 characters.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * 用户组的更新时间。
+     * User group update time.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 用户组的更新时间。
+     * @return User group update time.
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 用户组ID。
+     * User group ID.
      * 
      */
     @Export(name="userGroupId", refs={Integer.class}, tree="[0]")
     private Output<Integer> userGroupId;
 
     /**
-     * @return 用户组ID。
+     * @return User group ID.
      * 
      */
     public Output<Integer> userGroupId() {
         return this.userGroupId;
     }
     /**
-     * 用户组名称。长度1~64，支持英文、数字和.-_符号。
+     * User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
      * 
      */
     @Export(name="userGroupName", refs={String.class}, tree="[0]")
     private Output<String> userGroupName;
 
     /**
-     * @return 用户组名称。长度1~64，支持英文、数字和.-_符号。
+     * @return User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
      * 
      */
     public Output<String> userGroupName() {

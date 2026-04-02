@@ -15,22 +15,22 @@ import java.util.Objects;
 @CustomType
 public final class GetScalingPolicyResult {
     /**
-     * @return 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+     * @return Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
      * 
      */
     private String adjustmentType;
     /**
-     * @return 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+     * @return Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
      * 
      */
     private Integer adjustmentValue;
     /**
-     * @return 报警任务的详细信息。
+     * @return Detailed information about the alarm task.
      * 
      */
     private GetScalingPolicyAlarmPolicy alarmPolicy;
     /**
-     * @return 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+     * @return Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group&#39;s cooldown time is used by default.
      * 
      */
     private Integer cooldown;
@@ -40,65 +40,65 @@ public final class GetScalingPolicyResult {
      */
     private String id;
     /**
-     * @return 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+     * @return Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
      * 
      */
     private Boolean isEnabledPolicy;
     /**
-     * @return 伸缩组ID。
+     * @return Scaling group ID.
      * 
      */
     private String scalingGroupId;
     /**
-     * @return 伸缩规则ID。
+     * @return Scaling rule ID.
      * 
      */
     private String scalingPolicyId;
     /**
-     * @return 伸缩规则名称。
+     * @return Name of the scaling rule.
      * 
      */
     private String scalingPolicyName;
     /**
-     * @return 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+     * @return Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
      * 
      */
     private String scalingPolicyType;
     /**
-     * @return 定时任务/周期任务的详细信息。
+     * @return Detailed information for scheduled/recurring tasks.
      * 
      */
     private GetScalingPolicyScheduledPolicy scheduledPolicy;
     /**
-     * @return 伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+     * @return Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
      * 
      */
     private String status;
 
     private GetScalingPolicyResult() {}
     /**
-     * @return 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+     * @return Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
      * 
      */
     public String adjustmentType() {
         return this.adjustmentType;
     }
     /**
-     * @return 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+     * @return Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
      * 
      */
     public Integer adjustmentValue() {
         return this.adjustmentValue;
     }
     /**
-     * @return 报警任务的详细信息。
+     * @return Detailed information about the alarm task.
      * 
      */
     public GetScalingPolicyAlarmPolicy alarmPolicy() {
         return this.alarmPolicy;
     }
     /**
-     * @return 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+     * @return Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group&#39;s cooldown time is used by default.
      * 
      */
     public Integer cooldown() {
@@ -112,49 +112,49 @@ public final class GetScalingPolicyResult {
         return this.id;
     }
     /**
-     * @return 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+     * @return Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
      * 
      */
     public Boolean isEnabledPolicy() {
         return this.isEnabledPolicy;
     }
     /**
-     * @return 伸缩组ID。
+     * @return Scaling group ID.
      * 
      */
     public String scalingGroupId() {
         return this.scalingGroupId;
     }
     /**
-     * @return 伸缩规则ID。
+     * @return Scaling rule ID.
      * 
      */
     public String scalingPolicyId() {
         return this.scalingPolicyId;
     }
     /**
-     * @return 伸缩规则名称。
+     * @return Name of the scaling rule.
      * 
      */
     public String scalingPolicyName() {
         return this.scalingPolicyName;
     }
     /**
-     * @return 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+     * @return Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
      * 
      */
     public String scalingPolicyType() {
         return this.scalingPolicyType;
     }
     /**
-     * @return 定时任务/周期任务的详细信息。
+     * @return Detailed information for scheduled/recurring tasks.
      * 
      */
     public GetScalingPolicyScheduledPolicy scheduledPolicy() {
         return this.scheduledPolicy;
     }
     /**
-     * @return 伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+     * @return Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
      * 
      */
     public String status() {

@@ -48,28 +48,28 @@ class InstanceArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]]] = None):
         """
         The set of arguments for constructing a Instance resource.
-        :param pulumi.Input[builtins.str] engine_version: 数据库版本号。
-        :param pulumi.Input[builtins.str] multi_az: 设置实例的可用区部署方案。
-        :param pulumi.Input[builtins.int] node_number: 每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
-        :param pulumi.Input[builtins.int] shard_capacity: 实例中每个分片的内存容量。单位：MiB。
-        :param pulumi.Input[builtins.int] sharded_cluster: 是否启用分片集群。取值范围如下：0：不启用。1：启用。
-        :param pulumi.Input[builtins.str] subnet_id: 设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
-        :param pulumi.Input[builtins.str] vpc_id: 设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
-        :param pulumi.Input[builtins.bool] auto_renew: 是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
-        :param pulumi.Input[builtins.str] backup_point_name: 为变更前创建的全量备份设置备份名称。
-        :param pulumi.Input[builtins.str] charge_type: 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
-        :param pulumi.Input[builtins.bool] create_backup: 是否在变更前创建备份。
-        :param pulumi.Input[builtins.str] deletion_protection: 开启或关闭实例删除保护功能。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
-        :param pulumi.Input[builtins.str] no_auth_mode: 为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
-        :param pulumi.Input[builtins.str] parameter_group_id: 需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
-        :param pulumi.Input[builtins.str] password: 设置默认数据库 default 账号的密码。
-        :param pulumi.Input[builtins.int] port: 自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
-        :param pulumi.Input[builtins.str] project_name: 实例所属的项目。
-        :param pulumi.Input[builtins.int] purchase_months: 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
-        :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: 设置是否保留额外带宽
-        :param pulumi.Input[builtins.int] shard_number: 实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
+        :param pulumi.Input[builtins.str] engine_version: Database version number.
+        :param pulumi.Input[builtins.str] multi_az: Set the deployment scheme for the instance's availability zone.
+        :param pulumi.Input[builtins.int] node_number: Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
+        :param pulumi.Input[builtins.int] shard_capacity: Memory capacity of each shard in the instance. Unit: MiB.
+        :param pulumi.Input[builtins.int] sharded_cluster: Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
+        :param pulumi.Input[builtins.str] subnet_id: Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
+        :param pulumi.Input[builtins.str] vpc_id: Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
+        :param pulumi.Input[builtins.bool] auto_renew: Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
+        :param pulumi.Input[builtins.str] backup_point_name: Set a backup name for the full backup created before changes.
+        :param pulumi.Input[builtins.str] charge_type: Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
+        :param pulumi.Input[builtins.bool] create_backup: Whether to create a backup before making changes.
+        :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection.
+        :param pulumi.Input[builtins.str] instance_name: Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
+        :param pulumi.Input[builtins.str] no_auth_mode: Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
+        :param pulumi.Input[builtins.str] parameter_group_id: The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version's system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
+        :param pulumi.Input[builtins.str] password: Set the password for the default account of the default database.
+        :param pulumi.Input[builtins.int] port: Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
+        :param pulumi.Input[builtins.str] project_name: Project to which the instance belongs.
+        :param pulumi.Input[builtins.int] purchase_months: Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
+        :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: Set whether to reserve additional bandwidth
+        :param pulumi.Input[builtins.int] shard_number: Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
         """
         pulumi.set(__self__, "configure_nodes", configure_nodes)
         pulumi.set(__self__, "engine_version", engine_version)
@@ -125,7 +125,7 @@ class InstanceArgs:
     @pulumi.getter(name="engineVersion")
     def engine_version(self) -> pulumi.Input[builtins.str]:
         """
-        数据库版本号。
+        Database version number.
         """
         return pulumi.get(self, "engine_version")
 
@@ -137,7 +137,7 @@ class InstanceArgs:
     @pulumi.getter(name="multiAz")
     def multi_az(self) -> pulumi.Input[builtins.str]:
         """
-        设置实例的可用区部署方案。
+        Set the deployment scheme for the instance's availability zone.
         """
         return pulumi.get(self, "multi_az")
 
@@ -149,7 +149,7 @@ class InstanceArgs:
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> pulumi.Input[builtins.int]:
         """
-        每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
+        Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
         """
         return pulumi.get(self, "node_number")
 
@@ -161,7 +161,7 @@ class InstanceArgs:
     @pulumi.getter(name="shardCapacity")
     def shard_capacity(self) -> pulumi.Input[builtins.int]:
         """
-        实例中每个分片的内存容量。单位：MiB。
+        Memory capacity of each shard in the instance. Unit: MiB.
         """
         return pulumi.get(self, "shard_capacity")
 
@@ -173,7 +173,7 @@ class InstanceArgs:
     @pulumi.getter(name="shardedCluster")
     def sharded_cluster(self) -> pulumi.Input[builtins.int]:
         """
-        是否启用分片集群。取值范围如下：0：不启用。1：启用。
+        Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
         """
         return pulumi.get(self, "sharded_cluster")
 
@@ -185,7 +185,7 @@ class InstanceArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[builtins.str]:
         """
-        设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
+        Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -197,7 +197,7 @@ class InstanceArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
+        Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -209,7 +209,7 @@ class InstanceArgs:
     @pulumi.getter(name="allowListIds")
     def allow_list_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
+        Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
         """
         return pulumi.get(self, "allow_list_ids")
 
@@ -221,7 +221,7 @@ class InstanceArgs:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
+        Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -233,7 +233,7 @@ class InstanceArgs:
     @pulumi.getter(name="backupPointName")
     def backup_point_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        为变更前创建的全量备份设置备份名称。
+        Set a backup name for the full backup created before changes.
         """
         return pulumi.get(self, "backup_point_name")
 
@@ -245,7 +245,7 @@ class InstanceArgs:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
+        Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
         """
         return pulumi.get(self, "charge_type")
 
@@ -257,7 +257,7 @@ class InstanceArgs:
     @pulumi.getter(name="createBackup")
     def create_backup(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否在变更前创建备份。
+        Whether to create a backup before making changes.
         """
         return pulumi.get(self, "create_backup")
 
@@ -269,7 +269,7 @@ class InstanceArgs:
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        开启或关闭实例删除保护功能。
+        Enable or disable instance deletion protection.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -281,7 +281,7 @@ class InstanceArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
+        Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -293,7 +293,7 @@ class InstanceArgs:
     @pulumi.getter(name="noAuthMode")
     def no_auth_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
+        Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
         """
         return pulumi.get(self, "no_auth_mode")
 
@@ -305,7 +305,7 @@ class InstanceArgs:
     @pulumi.getter(name="parameterGroupId")
     def parameter_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
+        The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version's system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
         """
         return pulumi.get(self, "parameter_group_id")
 
@@ -317,7 +317,7 @@ class InstanceArgs:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        设置默认数据库 default 账号的密码。
+        Set the password for the default account of the default database.
         """
         return pulumi.get(self, "password")
 
@@ -329,7 +329,7 @@ class InstanceArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
+        Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
         """
         return pulumi.get(self, "port")
 
@@ -341,7 +341,7 @@ class InstanceArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的项目。
+        Project to which the instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -353,7 +353,7 @@ class InstanceArgs:
     @pulumi.getter(name="purchaseMonths")
     def purchase_months(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
+        Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
         """
         return pulumi.get(self, "purchase_months")
 
@@ -365,7 +365,7 @@ class InstanceArgs:
     @pulumi.getter(name="reserveAdditionalBandwidth")
     def reserve_additional_bandwidth(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        设置是否保留额外带宽
+        Set whether to reserve additional bandwidth
         """
         return pulumi.get(self, "reserve_additional_bandwidth")
 
@@ -377,7 +377,7 @@ class InstanceArgs:
     @pulumi.getter(name="shardNumber")
     def shard_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
+        Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
         """
         return pulumi.get(self, "shard_number")
 
@@ -444,46 +444,46 @@ class _InstanceState:
                  zone_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
-        :param pulumi.Input[builtins.bool] auto_renew: 是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
-        :param pulumi.Input[builtins.str] backup_point_name: 为变更前创建的全量备份设置备份名称。
-        :param pulumi.Input[builtins.str] blue_green_role: 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
-        :param pulumi.Input['InstanceCapacityArgs'] capacity: 实例的容量信息。
-        :param pulumi.Input[builtins.str] charge_type: 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
-        :param pulumi.Input[builtins.bool] create_backup: 是否在变更前创建备份。
-        :param pulumi.Input[builtins.str] create_time: 实例的创建时间。
-        :param pulumi.Input[builtins.str] data_layout: 实例的数据存储形态。该参数仅对企业版（即ServiceType为Enterprise）实例有意义；社区版（即ServiceType为Basic）实例不涉及数据存储形态，DataLayout取值固定为RAM。若该参数留空，表示不使用数据存储形态进行筛选。
-        :param pulumi.Input[builtins.str] deletion_protection: 开启或关闭实例删除保护功能。
-        :param pulumi.Input[builtins.str] engine_version: 数据库版本号。
-        :param pulumi.Input[builtins.str] expired_time: 实例到期时间。
-        :param pulumi.Input[builtins.str] instance_class: Redis 实例的类型。取值范围如下：PrimarySecondary：主备实例；Standalone：单节点实例。若该参数留空，表示不使用实例类型条件进行筛选。关于实例类型的更多信息，请参见产品架构。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
-        :param pulumi.Input[builtins.str] maintenance_time: 实例的可维护时间段，格式为HH:mm-HH:mm（UTC+8）。
-        :param pulumi.Input[builtins.int] max_connections: 实例当前单分片最大连接数。每分片的默认连接数为10000，您也可以根据业务需要调用ModifyDBInstanceMaxConn接口修改单分片的最大连接数。
-        :param pulumi.Input[builtins.str] multi_az: 设置实例的可用区部署方案。
-        :param pulumi.Input[builtins.str] no_auth_mode: 为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: Proxy 和 Server 节点 ID 列表。
-        :param pulumi.Input[builtins.int] node_number: 每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
-        :param pulumi.Input[builtins.str] parameter_group_id: 需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
-        :param pulumi.Input[builtins.str] password: 设置默认数据库 default 账号的密码。
-        :param pulumi.Input[builtins.int] port: 自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
-        :param pulumi.Input[builtins.str] private_address: 实例私网连接地址的域名。
-        :param pulumi.Input[builtins.str] private_port: 实例私网连接地址的端口号。
-        :param pulumi.Input[builtins.str] project_name: 实例所属的项目。
-        :param pulumi.Input[builtins.int] purchase_months: 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
-        :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: 设置是否保留额外带宽
-        :param pulumi.Input[builtins.str] service_type: 实例的服务类型
-        :param pulumi.Input[builtins.int] shard_capacity: 实例中每个分片的内存容量。单位：MiB。
-        :param pulumi.Input[builtins.int] shard_number: 实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
-        :param pulumi.Input[builtins.int] sharded_cluster: 是否启用分片集群。取值范围如下：0：不启用。1：启用。
-        :param pulumi.Input[builtins.str] status: 实例的服务类型，取值范围如下：Basic（默认值）：社区版；Enterprise：企业版。
-        :param pulumi.Input[builtins.str] subnet_id: 设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
-        :param pulumi.Input[builtins.str] vi_pv6: 实例私网连接地址所对应的 IPv6 地址。仅当实例使用了 IPv6 地址时才会返回该参数。
-        :param pulumi.Input[builtins.str] vip: 实例私网连接地址所对应的 IPv4 地址。
-        :param pulumi.Input[builtins.str] vpc_auth_mode: 开启或关闭免密访问功能。取值范围如下：open：开启免密访问；close：关闭免密访问。参数取值不区分大小写。
-        :param pulumi.Input[builtins.str] vpc_id: 设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_ids: 实例所在的可用区列表。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
+        :param pulumi.Input[builtins.bool] auto_renew: Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
+        :param pulumi.Input[builtins.str] backup_point_name: Set a backup name for the full backup created before changes.
+        :param pulumi.Input[builtins.str] blue_green_role: Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
+        :param pulumi.Input['InstanceCapacityArgs'] capacity: Capacity information of the instance.
+        :param pulumi.Input[builtins.str] charge_type: Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
+        :param pulumi.Input[builtins.bool] create_backup: Whether to create a backup before making changes.
+        :param pulumi.Input[builtins.str] create_time: Creation time of the instance.
+        :param pulumi.Input[builtins.str] data_layout: Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
+        :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection.
+        :param pulumi.Input[builtins.str] engine_version: Database version number.
+        :param pulumi.Input[builtins.str] expired_time: Instance expiration time.
+        :param pulumi.Input[builtins.str] instance_class: Type of Redis instance. Valid values: PrimarySecondary: primary-secondary instance; Standalone: single-node instance. If this parameter is left empty, instance type is not used as a filter. For more information about instance types, see Product Architecture.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] instance_name: Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
+        :param pulumi.Input[builtins.str] maintenance_time: Maintenance window for the instance, format: HH:mm-HH:mm (UTC+8).
+        :param pulumi.Input[builtins.int] max_connections: Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
+        :param pulumi.Input[builtins.str] multi_az: Set the deployment scheme for the instance's availability zone.
+        :param pulumi.Input[builtins.str] no_auth_mode: Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: List of Proxy and Server node IDs.
+        :param pulumi.Input[builtins.int] node_number: Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
+        :param pulumi.Input[builtins.str] parameter_group_id: The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version's system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
+        :param pulumi.Input[builtins.str] password: Set the password for the default account of the default database.
+        :param pulumi.Input[builtins.int] port: Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
+        :param pulumi.Input[builtins.str] private_address: The domain name for the instance's private network connection address.
+        :param pulumi.Input[builtins.str] private_port: Port number for the instance's private network connection address.
+        :param pulumi.Input[builtins.str] project_name: Project to which the instance belongs.
+        :param pulumi.Input[builtins.int] purchase_months: Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
+        :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: Set whether to reserve additional bandwidth
+        :param pulumi.Input[builtins.str] service_type: Service type of the instance
+        :param pulumi.Input[builtins.int] shard_capacity: Memory capacity of each shard in the instance. Unit: MiB.
+        :param pulumi.Input[builtins.int] shard_number: Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
+        :param pulumi.Input[builtins.int] sharded_cluster: Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
+        :param pulumi.Input[builtins.str] status: Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+        :param pulumi.Input[builtins.str] subnet_id: Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
+        :param pulumi.Input[builtins.str] vi_pv6: The IPv6 address corresponding to the instance's private network connection address. This parameter is returned only if the instance uses an IPv6 address.
+        :param pulumi.Input[builtins.str] vip: IPv4 address corresponding to the instance's private network connection address.
+        :param pulumi.Input[builtins.str] vpc_auth_mode: Enable or disable password-free access. Valid values: open: enable password-free access; close: disable password-free access. Values are case-insensitive.
+        :param pulumi.Input[builtins.str] vpc_id: Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_ids: List of available zones where the instance is located.
         """
         if allow_list_ids is not None:
             pulumi.set(__self__, "allow_list_ids", allow_list_ids)
@@ -578,7 +578,7 @@ class _InstanceState:
     @pulumi.getter(name="allowListIds")
     def allow_list_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
+        Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
         """
         return pulumi.get(self, "allow_list_ids")
 
@@ -590,7 +590,7 @@ class _InstanceState:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
+        Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -602,7 +602,7 @@ class _InstanceState:
     @pulumi.getter(name="backupPointName")
     def backup_point_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        为变更前创建的全量备份设置备份名称。
+        Set a backup name for the full backup created before changes.
         """
         return pulumi.get(self, "backup_point_name")
 
@@ -614,7 +614,7 @@ class _InstanceState:
     @pulumi.getter(name="blueGreenRole")
     def blue_green_role(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+        Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
         """
         return pulumi.get(self, "blue_green_role")
 
@@ -626,7 +626,7 @@ class _InstanceState:
     @pulumi.getter
     def capacity(self) -> Optional[pulumi.Input['InstanceCapacityArgs']]:
         """
-        实例的容量信息。
+        Capacity information of the instance.
         """
         return pulumi.get(self, "capacity")
 
@@ -638,7 +638,7 @@ class _InstanceState:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
+        Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
         """
         return pulumi.get(self, "charge_type")
 
@@ -659,7 +659,7 @@ class _InstanceState:
     @pulumi.getter(name="createBackup")
     def create_backup(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否在变更前创建备份。
+        Whether to create a backup before making changes.
         """
         return pulumi.get(self, "create_backup")
 
@@ -671,7 +671,7 @@ class _InstanceState:
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的创建时间。
+        Creation time of the instance.
         """
         return pulumi.get(self, "create_time")
 
@@ -683,7 +683,7 @@ class _InstanceState:
     @pulumi.getter(name="dataLayout")
     def data_layout(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的数据存储形态。该参数仅对企业版（即ServiceType为Enterprise）实例有意义；社区版（即ServiceType为Basic）实例不涉及数据存储形态，DataLayout取值固定为RAM。若该参数留空，表示不使用数据存储形态进行筛选。
+        Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
         """
         return pulumi.get(self, "data_layout")
 
@@ -695,7 +695,7 @@ class _InstanceState:
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        开启或关闭实例删除保护功能。
+        Enable or disable instance deletion protection.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -707,7 +707,7 @@ class _InstanceState:
     @pulumi.getter(name="engineVersion")
     def engine_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库版本号。
+        Database version number.
         """
         return pulumi.get(self, "engine_version")
 
@@ -719,7 +719,7 @@ class _InstanceState:
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例到期时间。
+        Instance expiration time.
         """
         return pulumi.get(self, "expired_time")
 
@@ -731,7 +731,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceClass")
     def instance_class(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Redis 实例的类型。取值范围如下：PrimarySecondary：主备实例；Standalone：单节点实例。若该参数留空，表示不使用实例类型条件进行筛选。关于实例类型的更多信息，请参见产品架构。
+        Type of Redis instance. Valid values: PrimarySecondary: primary-secondary instance; Standalone: single-node instance. If this parameter is left empty, instance type is not used as a filter. For more information about instance types, see Product Architecture.
         """
         return pulumi.get(self, "instance_class")
 
@@ -743,7 +743,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -755,7 +755,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
+        Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -776,7 +776,7 @@ class _InstanceState:
     @pulumi.getter(name="maintenanceTime")
     def maintenance_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的可维护时间段，格式为HH:mm-HH:mm（UTC+8）。
+        Maintenance window for the instance, format: HH:mm-HH:mm (UTC+8).
         """
         return pulumi.get(self, "maintenance_time")
 
@@ -788,7 +788,7 @@ class _InstanceState:
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例当前单分片最大连接数。每分片的默认连接数为10000，您也可以根据业务需要调用ModifyDBInstanceMaxConn接口修改单分片的最大连接数。
+        Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
         """
         return pulumi.get(self, "max_connections")
 
@@ -800,7 +800,7 @@ class _InstanceState:
     @pulumi.getter(name="multiAz")
     def multi_az(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        设置实例的可用区部署方案。
+        Set the deployment scheme for the instance's availability zone.
         """
         return pulumi.get(self, "multi_az")
 
@@ -812,7 +812,7 @@ class _InstanceState:
     @pulumi.getter(name="noAuthMode")
     def no_auth_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
+        Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
         """
         return pulumi.get(self, "no_auth_mode")
 
@@ -824,7 +824,7 @@ class _InstanceState:
     @pulumi.getter(name="nodeIds")
     def node_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        Proxy 和 Server 节点 ID 列表。
+        List of Proxy and Server node IDs.
         """
         return pulumi.get(self, "node_ids")
 
@@ -836,7 +836,7 @@ class _InstanceState:
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
+        Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
         """
         return pulumi.get(self, "node_number")
 
@@ -848,7 +848,7 @@ class _InstanceState:
     @pulumi.getter(name="parameterGroupId")
     def parameter_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
+        The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version's system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
         """
         return pulumi.get(self, "parameter_group_id")
 
@@ -860,7 +860,7 @@ class _InstanceState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        设置默认数据库 default 账号的密码。
+        Set the password for the default account of the default database.
         """
         return pulumi.get(self, "password")
 
@@ -872,7 +872,7 @@ class _InstanceState:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
+        Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
         """
         return pulumi.get(self, "port")
 
@@ -884,7 +884,7 @@ class _InstanceState:
     @pulumi.getter(name="privateAddress")
     def private_address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例私网连接地址的域名。
+        The domain name for the instance's private network connection address.
         """
         return pulumi.get(self, "private_address")
 
@@ -896,7 +896,7 @@ class _InstanceState:
     @pulumi.getter(name="privatePort")
     def private_port(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例私网连接地址的端口号。
+        Port number for the instance's private network connection address.
         """
         return pulumi.get(self, "private_port")
 
@@ -908,7 +908,7 @@ class _InstanceState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的项目。
+        Project to which the instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -920,7 +920,7 @@ class _InstanceState:
     @pulumi.getter(name="purchaseMonths")
     def purchase_months(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
+        Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
         """
         return pulumi.get(self, "purchase_months")
 
@@ -932,7 +932,7 @@ class _InstanceState:
     @pulumi.getter(name="reserveAdditionalBandwidth")
     def reserve_additional_bandwidth(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        设置是否保留额外带宽
+        Set whether to reserve additional bandwidth
         """
         return pulumi.get(self, "reserve_additional_bandwidth")
 
@@ -944,7 +944,7 @@ class _InstanceState:
     @pulumi.getter(name="serviceType")
     def service_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的服务类型
+        Service type of the instance
         """
         return pulumi.get(self, "service_type")
 
@@ -956,7 +956,7 @@ class _InstanceState:
     @pulumi.getter(name="shardCapacity")
     def shard_capacity(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例中每个分片的内存容量。单位：MiB。
+        Memory capacity of each shard in the instance. Unit: MiB.
         """
         return pulumi.get(self, "shard_capacity")
 
@@ -968,7 +968,7 @@ class _InstanceState:
     @pulumi.getter(name="shardNumber")
     def shard_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
+        Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
         """
         return pulumi.get(self, "shard_number")
 
@@ -980,7 +980,7 @@ class _InstanceState:
     @pulumi.getter(name="shardedCluster")
     def sharded_cluster(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        是否启用分片集群。取值范围如下：0：不启用。1：启用。
+        Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
         """
         return pulumi.get(self, "sharded_cluster")
 
@@ -992,7 +992,7 @@ class _InstanceState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的服务类型，取值范围如下：Basic（默认值）：社区版；Enterprise：企业版。
+        Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
         """
         return pulumi.get(self, "status")
 
@@ -1004,7 +1004,7 @@ class _InstanceState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
+        Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1025,7 +1025,7 @@ class _InstanceState:
     @pulumi.getter(name="viPv6")
     def vi_pv6(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例私网连接地址所对应的 IPv6 地址。仅当实例使用了 IPv6 地址时才会返回该参数。
+        The IPv6 address corresponding to the instance's private network connection address. This parameter is returned only if the instance uses an IPv6 address.
         """
         return pulumi.get(self, "vi_pv6")
 
@@ -1037,7 +1037,7 @@ class _InstanceState:
     @pulumi.getter
     def vip(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例私网连接地址所对应的 IPv4 地址。
+        IPv4 address corresponding to the instance's private network connection address.
         """
         return pulumi.get(self, "vip")
 
@@ -1058,7 +1058,7 @@ class _InstanceState:
     @pulumi.getter(name="vpcAuthMode")
     def vpc_auth_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        开启或关闭免密访问功能。取值范围如下：open：开启免密访问；close：关闭免密访问。参数取值不区分大小写。
+        Enable or disable password-free access. Valid values: open: enable password-free access; close: disable password-free access. Values are case-insensitive.
         """
         return pulumi.get(self, "vpc_auth_mode")
 
@@ -1070,7 +1070,7 @@ class _InstanceState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
+        Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1082,7 +1082,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneIds")
     def zone_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        实例所在的可用区列表。
+        List of available zones where the instance is located.
         """
         return pulumi.get(self, "zone_ids")
 
@@ -1123,7 +1123,7 @@ class Instance(pulumi.CustomResource):
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        缓存数据库 Redis 版的基本单位是实例。实例是独立的、虚拟化的数据库运行环境，是多个数据节点与代理节点的集合，数据节点上运行 Redis 引擎。
+        The basic unit of Redis cache database is the instance. An instance is an independent, virtualized database runtime environment, consisting of multiple data nodes and proxy nodes. The Redis engine runs on the data nodes.
 
         ## Example Usage
 
@@ -1168,28 +1168,28 @@ class Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
-        :param pulumi.Input[builtins.bool] auto_renew: 是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
-        :param pulumi.Input[builtins.str] backup_point_name: 为变更前创建的全量备份设置备份名称。
-        :param pulumi.Input[builtins.str] charge_type: 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
-        :param pulumi.Input[builtins.bool] create_backup: 是否在变更前创建备份。
-        :param pulumi.Input[builtins.str] deletion_protection: 开启或关闭实例删除保护功能。
-        :param pulumi.Input[builtins.str] engine_version: 数据库版本号。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
-        :param pulumi.Input[builtins.str] multi_az: 设置实例的可用区部署方案。
-        :param pulumi.Input[builtins.str] no_auth_mode: 为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
-        :param pulumi.Input[builtins.int] node_number: 每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
-        :param pulumi.Input[builtins.str] parameter_group_id: 需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
-        :param pulumi.Input[builtins.str] password: 设置默认数据库 default 账号的密码。
-        :param pulumi.Input[builtins.int] port: 自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
-        :param pulumi.Input[builtins.str] project_name: 实例所属的项目。
-        :param pulumi.Input[builtins.int] purchase_months: 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
-        :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: 设置是否保留额外带宽
-        :param pulumi.Input[builtins.int] shard_capacity: 实例中每个分片的内存容量。单位：MiB。
-        :param pulumi.Input[builtins.int] shard_number: 实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
-        :param pulumi.Input[builtins.int] sharded_cluster: 是否启用分片集群。取值范围如下：0：不启用。1：启用。
-        :param pulumi.Input[builtins.str] subnet_id: 设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
-        :param pulumi.Input[builtins.str] vpc_id: 设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
+        :param pulumi.Input[builtins.bool] auto_renew: Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
+        :param pulumi.Input[builtins.str] backup_point_name: Set a backup name for the full backup created before changes.
+        :param pulumi.Input[builtins.str] charge_type: Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
+        :param pulumi.Input[builtins.bool] create_backup: Whether to create a backup before making changes.
+        :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection.
+        :param pulumi.Input[builtins.str] engine_version: Database version number.
+        :param pulumi.Input[builtins.str] instance_name: Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
+        :param pulumi.Input[builtins.str] multi_az: Set the deployment scheme for the instance's availability zone.
+        :param pulumi.Input[builtins.str] no_auth_mode: Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
+        :param pulumi.Input[builtins.int] node_number: Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
+        :param pulumi.Input[builtins.str] parameter_group_id: The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version's system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
+        :param pulumi.Input[builtins.str] password: Set the password for the default account of the default database.
+        :param pulumi.Input[builtins.int] port: Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
+        :param pulumi.Input[builtins.str] project_name: Project to which the instance belongs.
+        :param pulumi.Input[builtins.int] purchase_months: Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
+        :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: Set whether to reserve additional bandwidth
+        :param pulumi.Input[builtins.int] shard_capacity: Memory capacity of each shard in the instance. Unit: MiB.
+        :param pulumi.Input[builtins.int] shard_number: Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
+        :param pulumi.Input[builtins.int] sharded_cluster: Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
+        :param pulumi.Input[builtins.str] subnet_id: Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
+        :param pulumi.Input[builtins.str] vpc_id: Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
         """
         ...
     @overload
@@ -1198,7 +1198,7 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        缓存数据库 Redis 版的基本单位是实例。实例是独立的、虚拟化的数据库运行环境，是多个数据节点与代理节点的集合，数据节点上运行 Redis 引擎。
+        The basic unit of Redis cache database is the instance. An instance is an independent, virtualized database runtime environment, consisting of multiple data nodes and proxy nodes. The Redis engine runs on the data nodes.
 
         ## Example Usage
 
@@ -1410,46 +1410,46 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
-        :param pulumi.Input[builtins.bool] auto_renew: 是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
-        :param pulumi.Input[builtins.str] backup_point_name: 为变更前创建的全量备份设置备份名称。
-        :param pulumi.Input[builtins.str] blue_green_role: 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
-        :param pulumi.Input[Union['InstanceCapacityArgs', 'InstanceCapacityArgsDict']] capacity: 实例的容量信息。
-        :param pulumi.Input[builtins.str] charge_type: 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
-        :param pulumi.Input[builtins.bool] create_backup: 是否在变更前创建备份。
-        :param pulumi.Input[builtins.str] create_time: 实例的创建时间。
-        :param pulumi.Input[builtins.str] data_layout: 实例的数据存储形态。该参数仅对企业版（即ServiceType为Enterprise）实例有意义；社区版（即ServiceType为Basic）实例不涉及数据存储形态，DataLayout取值固定为RAM。若该参数留空，表示不使用数据存储形态进行筛选。
-        :param pulumi.Input[builtins.str] deletion_protection: 开启或关闭实例删除保护功能。
-        :param pulumi.Input[builtins.str] engine_version: 数据库版本号。
-        :param pulumi.Input[builtins.str] expired_time: 实例到期时间。
-        :param pulumi.Input[builtins.str] instance_class: Redis 实例的类型。取值范围如下：PrimarySecondary：主备实例；Standalone：单节点实例。若该参数留空，表示不使用实例类型条件进行筛选。关于实例类型的更多信息，请参见产品架构。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
-        :param pulumi.Input[builtins.str] maintenance_time: 实例的可维护时间段，格式为HH:mm-HH:mm（UTC+8）。
-        :param pulumi.Input[builtins.int] max_connections: 实例当前单分片最大连接数。每分片的默认连接数为10000，您也可以根据业务需要调用ModifyDBInstanceMaxConn接口修改单分片的最大连接数。
-        :param pulumi.Input[builtins.str] multi_az: 设置实例的可用区部署方案。
-        :param pulumi.Input[builtins.str] no_auth_mode: 为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: Proxy 和 Server 节点 ID 列表。
-        :param pulumi.Input[builtins.int] node_number: 每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
-        :param pulumi.Input[builtins.str] parameter_group_id: 需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
-        :param pulumi.Input[builtins.str] password: 设置默认数据库 default 账号的密码。
-        :param pulumi.Input[builtins.int] port: 自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
-        :param pulumi.Input[builtins.str] private_address: 实例私网连接地址的域名。
-        :param pulumi.Input[builtins.str] private_port: 实例私网连接地址的端口号。
-        :param pulumi.Input[builtins.str] project_name: 实例所属的项目。
-        :param pulumi.Input[builtins.int] purchase_months: 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
-        :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: 设置是否保留额外带宽
-        :param pulumi.Input[builtins.str] service_type: 实例的服务类型
-        :param pulumi.Input[builtins.int] shard_capacity: 实例中每个分片的内存容量。单位：MiB。
-        :param pulumi.Input[builtins.int] shard_number: 实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
-        :param pulumi.Input[builtins.int] sharded_cluster: 是否启用分片集群。取值范围如下：0：不启用。1：启用。
-        :param pulumi.Input[builtins.str] status: 实例的服务类型，取值范围如下：Basic（默认值）：社区版；Enterprise：企业版。
-        :param pulumi.Input[builtins.str] subnet_id: 设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
-        :param pulumi.Input[builtins.str] vi_pv6: 实例私网连接地址所对应的 IPv6 地址。仅当实例使用了 IPv6 地址时才会返回该参数。
-        :param pulumi.Input[builtins.str] vip: 实例私网连接地址所对应的 IPv4 地址。
-        :param pulumi.Input[builtins.str] vpc_auth_mode: 开启或关闭免密访问功能。取值范围如下：open：开启免密访问；close：关闭免密访问。参数取值不区分大小写。
-        :param pulumi.Input[builtins.str] vpc_id: 设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_ids: 实例所在的可用区列表。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
+        :param pulumi.Input[builtins.bool] auto_renew: Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
+        :param pulumi.Input[builtins.str] backup_point_name: Set a backup name for the full backup created before changes.
+        :param pulumi.Input[builtins.str] blue_green_role: Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
+        :param pulumi.Input[Union['InstanceCapacityArgs', 'InstanceCapacityArgsDict']] capacity: Capacity information of the instance.
+        :param pulumi.Input[builtins.str] charge_type: Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
+        :param pulumi.Input[builtins.bool] create_backup: Whether to create a backup before making changes.
+        :param pulumi.Input[builtins.str] create_time: Creation time of the instance.
+        :param pulumi.Input[builtins.str] data_layout: Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
+        :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection.
+        :param pulumi.Input[builtins.str] engine_version: Database version number.
+        :param pulumi.Input[builtins.str] expired_time: Instance expiration time.
+        :param pulumi.Input[builtins.str] instance_class: Type of Redis instance. Valid values: PrimarySecondary: primary-secondary instance; Standalone: single-node instance. If this parameter is left empty, instance type is not used as a filter. For more information about instance types, see Product Architecture.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] instance_name: Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
+        :param pulumi.Input[builtins.str] maintenance_time: Maintenance window for the instance, format: HH:mm-HH:mm (UTC+8).
+        :param pulumi.Input[builtins.int] max_connections: Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
+        :param pulumi.Input[builtins.str] multi_az: Set the deployment scheme for the instance's availability zone.
+        :param pulumi.Input[builtins.str] no_auth_mode: Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: List of Proxy and Server node IDs.
+        :param pulumi.Input[builtins.int] node_number: Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
+        :param pulumi.Input[builtins.str] parameter_group_id: The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version's system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
+        :param pulumi.Input[builtins.str] password: Set the password for the default account of the default database.
+        :param pulumi.Input[builtins.int] port: Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
+        :param pulumi.Input[builtins.str] private_address: The domain name for the instance's private network connection address.
+        :param pulumi.Input[builtins.str] private_port: Port number for the instance's private network connection address.
+        :param pulumi.Input[builtins.str] project_name: Project to which the instance belongs.
+        :param pulumi.Input[builtins.int] purchase_months: Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
+        :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: Set whether to reserve additional bandwidth
+        :param pulumi.Input[builtins.str] service_type: Service type of the instance
+        :param pulumi.Input[builtins.int] shard_capacity: Memory capacity of each shard in the instance. Unit: MiB.
+        :param pulumi.Input[builtins.int] shard_number: Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
+        :param pulumi.Input[builtins.int] sharded_cluster: Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
+        :param pulumi.Input[builtins.str] status: Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+        :param pulumi.Input[builtins.str] subnet_id: Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
+        :param pulumi.Input[builtins.str] vi_pv6: The IPv6 address corresponding to the instance's private network connection address. This parameter is returned only if the instance uses an IPv6 address.
+        :param pulumi.Input[builtins.str] vip: IPv4 address corresponding to the instance's private network connection address.
+        :param pulumi.Input[builtins.str] vpc_auth_mode: Enable or disable password-free access. Valid values: open: enable password-free access; close: disable password-free access. Values are case-insensitive.
+        :param pulumi.Input[builtins.str] vpc_id: Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_ids: List of available zones where the instance is located.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1505,7 +1505,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="allowListIds")
     def allow_list_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
+        Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
         """
         return pulumi.get(self, "allow_list_ids")
 
@@ -1513,7 +1513,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
+        Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -1521,7 +1521,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="backupPointName")
     def backup_point_name(self) -> pulumi.Output[builtins.str]:
         """
-        为变更前创建的全量备份设置备份名称。
+        Set a backup name for the full backup created before changes.
         """
         return pulumi.get(self, "backup_point_name")
 
@@ -1529,7 +1529,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="blueGreenRole")
     def blue_green_role(self) -> pulumi.Output[builtins.str]:
         """
-        实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+        Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
         """
         return pulumi.get(self, "blue_green_role")
 
@@ -1537,7 +1537,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def capacity(self) -> pulumi.Output['outputs.InstanceCapacity']:
         """
-        实例的容量信息。
+        Capacity information of the instance.
         """
         return pulumi.get(self, "capacity")
 
@@ -1545,7 +1545,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Output[builtins.str]:
         """
-        实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
+        Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
         """
         return pulumi.get(self, "charge_type")
 
@@ -1558,7 +1558,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="createBackup")
     def create_backup(self) -> pulumi.Output[builtins.bool]:
         """
-        是否在变更前创建备份。
+        Whether to create a backup before making changes.
         """
         return pulumi.get(self, "create_backup")
 
@@ -1566,7 +1566,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例的创建时间。
+        Creation time of the instance.
         """
         return pulumi.get(self, "create_time")
 
@@ -1574,7 +1574,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="dataLayout")
     def data_layout(self) -> pulumi.Output[builtins.str]:
         """
-        实例的数据存储形态。该参数仅对企业版（即ServiceType为Enterprise）实例有意义；社区版（即ServiceType为Basic）实例不涉及数据存储形态，DataLayout取值固定为RAM。若该参数留空，表示不使用数据存储形态进行筛选。
+        Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
         """
         return pulumi.get(self, "data_layout")
 
@@ -1582,7 +1582,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> pulumi.Output[builtins.str]:
         """
-        开启或关闭实例删除保护功能。
+        Enable or disable instance deletion protection.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -1590,7 +1590,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="engineVersion")
     def engine_version(self) -> pulumi.Output[builtins.str]:
         """
-        数据库版本号。
+        Database version number.
         """
         return pulumi.get(self, "engine_version")
 
@@ -1598,7 +1598,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例到期时间。
+        Instance expiration time.
         """
         return pulumi.get(self, "expired_time")
 
@@ -1606,7 +1606,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceClass")
     def instance_class(self) -> pulumi.Output[builtins.str]:
         """
-        Redis 实例的类型。取值范围如下：PrimarySecondary：主备实例；Standalone：单节点实例。若该参数留空，表示不使用实例类型条件进行筛选。关于实例类型的更多信息，请参见产品架构。
+        Type of Redis instance. Valid values: PrimarySecondary: primary-secondary instance; Standalone: single-node instance. If this parameter is left empty, instance type is not used as a filter. For more information about instance types, see Product Architecture.
         """
         return pulumi.get(self, "instance_class")
 
@@ -1614,7 +1614,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -1622,7 +1622,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
+        Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -1635,7 +1635,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="maintenanceTime")
     def maintenance_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例的可维护时间段，格式为HH:mm-HH:mm（UTC+8）。
+        Maintenance window for the instance, format: HH:mm-HH:mm (UTC+8).
         """
         return pulumi.get(self, "maintenance_time")
 
@@ -1643,7 +1643,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> pulumi.Output[builtins.int]:
         """
-        实例当前单分片最大连接数。每分片的默认连接数为10000，您也可以根据业务需要调用ModifyDBInstanceMaxConn接口修改单分片的最大连接数。
+        Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
         """
         return pulumi.get(self, "max_connections")
 
@@ -1651,7 +1651,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="multiAz")
     def multi_az(self) -> pulumi.Output[builtins.str]:
         """
-        设置实例的可用区部署方案。
+        Set the deployment scheme for the instance's availability zone.
         """
         return pulumi.get(self, "multi_az")
 
@@ -1659,7 +1659,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="noAuthMode")
     def no_auth_mode(self) -> pulumi.Output[builtins.str]:
         """
-        为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
+        Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
         """
         return pulumi.get(self, "no_auth_mode")
 
@@ -1667,7 +1667,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="nodeIds")
     def node_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        Proxy 和 Server 节点 ID 列表。
+        List of Proxy and Server node IDs.
         """
         return pulumi.get(self, "node_ids")
 
@@ -1675,7 +1675,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> pulumi.Output[builtins.int]:
         """
-        每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
+        Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
         """
         return pulumi.get(self, "node_number")
 
@@ -1683,7 +1683,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="parameterGroupId")
     def parameter_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
+        The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version's system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
         """
         return pulumi.get(self, "parameter_group_id")
 
@@ -1691,7 +1691,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output[builtins.str]:
         """
-        设置默认数据库 default 账号的密码。
+        Set the password for the default account of the default database.
         """
         return pulumi.get(self, "password")
 
@@ -1699,7 +1699,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def port(self) -> pulumi.Output[builtins.int]:
         """
-        自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
+        Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
         """
         return pulumi.get(self, "port")
 
@@ -1707,7 +1707,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="privateAddress")
     def private_address(self) -> pulumi.Output[builtins.str]:
         """
-        实例私网连接地址的域名。
+        The domain name for the instance's private network connection address.
         """
         return pulumi.get(self, "private_address")
 
@@ -1715,7 +1715,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="privatePort")
     def private_port(self) -> pulumi.Output[builtins.str]:
         """
-        实例私网连接地址的端口号。
+        Port number for the instance's private network connection address.
         """
         return pulumi.get(self, "private_port")
 
@@ -1723,7 +1723,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例所属的项目。
+        Project to which the instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -1731,7 +1731,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="purchaseMonths")
     def purchase_months(self) -> pulumi.Output[builtins.int]:
         """
-        购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
+        Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
         """
         return pulumi.get(self, "purchase_months")
 
@@ -1739,7 +1739,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="reserveAdditionalBandwidth")
     def reserve_additional_bandwidth(self) -> pulumi.Output[builtins.bool]:
         """
-        设置是否保留额外带宽
+        Set whether to reserve additional bandwidth
         """
         return pulumi.get(self, "reserve_additional_bandwidth")
 
@@ -1747,7 +1747,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="serviceType")
     def service_type(self) -> pulumi.Output[builtins.str]:
         """
-        实例的服务类型
+        Service type of the instance
         """
         return pulumi.get(self, "service_type")
 
@@ -1755,7 +1755,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="shardCapacity")
     def shard_capacity(self) -> pulumi.Output[builtins.int]:
         """
-        实例中每个分片的内存容量。单位：MiB。
+        Memory capacity of each shard in the instance. Unit: MiB.
         """
         return pulumi.get(self, "shard_capacity")
 
@@ -1763,7 +1763,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="shardNumber")
     def shard_number(self) -> pulumi.Output[builtins.int]:
         """
-        实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
+        Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
         """
         return pulumi.get(self, "shard_number")
 
@@ -1771,7 +1771,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="shardedCluster")
     def sharded_cluster(self) -> pulumi.Output[builtins.int]:
         """
-        是否启用分片集群。取值范围如下：0：不启用。1：启用。
+        Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
         """
         return pulumi.get(self, "sharded_cluster")
 
@@ -1779,7 +1779,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        实例的服务类型，取值范围如下：Basic（默认值）：社区版；Enterprise：企业版。
+        Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
         """
         return pulumi.get(self, "status")
 
@@ -1787,7 +1787,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
+        Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1800,7 +1800,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="viPv6")
     def vi_pv6(self) -> pulumi.Output[builtins.str]:
         """
-        实例私网连接地址所对应的 IPv6 地址。仅当实例使用了 IPv6 地址时才会返回该参数。
+        The IPv6 address corresponding to the instance's private network connection address. This parameter is returned only if the instance uses an IPv6 address.
         """
         return pulumi.get(self, "vi_pv6")
 
@@ -1808,7 +1808,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def vip(self) -> pulumi.Output[builtins.str]:
         """
-        实例私网连接地址所对应的 IPv4 地址。
+        IPv4 address corresponding to the instance's private network connection address.
         """
         return pulumi.get(self, "vip")
 
@@ -1821,7 +1821,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="vpcAuthMode")
     def vpc_auth_mode(self) -> pulumi.Output[builtins.str]:
         """
-        开启或关闭免密访问功能。取值范围如下：open：开启免密访问；close：关闭免密访问。参数取值不区分大小写。
+        Enable or disable password-free access. Valid values: open: enable password-free access; close: disable password-free access. Values are case-insensitive.
         """
         return pulumi.get(self, "vpc_auth_mode")
 
@@ -1829,7 +1829,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
+        Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1837,7 +1837,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneIds")
     def zone_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        实例所在的可用区列表。
+        List of available zones where the instance is located.
         """
         return pulumi.get(self, "zone_ids")
 

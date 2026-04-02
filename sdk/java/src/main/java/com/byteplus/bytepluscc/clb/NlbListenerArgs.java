@@ -22,14 +22,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     public static final NlbListenerArgs Empty = new NlbListenerArgs();
 
     /**
-     * TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+     * TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
      * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
-     * @return TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+     * @return TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
      * 
      */
     public Optional<Output<String>> certificateId() {
@@ -37,14 +37,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的连接超时时间（秒）。
+     * Listener connection timeout (seconds)
      * 
      */
     @Import(name="connectionTimeout")
     private @Nullable Output<Integer> connectionTimeout;
 
     /**
-     * @return 监听器的连接超时时间（秒）。
+     * @return Listener connection timeout (seconds)
      * 
      */
     public Optional<Output<Integer>> connectionTimeout() {
@@ -52,14 +52,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器描述信息。
+     * Listener description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 监听器描述信息。
+     * @return Listener description
      * 
      */
     public Optional<Output<String>> description() {
@@ -67,14 +67,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否启用监听器。true：开启；false：关闭。
+     * Listener enabled: true (enabled); false (disabled)
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return 是否启用监听器。true：开启；false：关闭。
+     * @return Listener enabled: true (enabled); false (disabled)
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -82,14 +82,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 全端口监听的结束端口，仅当Port为0时有效。
+     * End port for all-port listening. Valid only when Port is 0.
      * 
      */
     @Import(name="endPort")
     private @Nullable Output<Integer> endPort;
 
     /**
-     * @return 全端口监听的结束端口，仅当Port为0时有效。
+     * @return End port for all-port listening. Valid only when Port is 0.
      * 
      */
     public Optional<Output<Integer>> endPort() {
@@ -104,14 +104,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器名称。
+     * Listener name
      * 
      */
     @Import(name="listenerName")
     private @Nullable Output<String> listenerName;
 
     /**
-     * @return 监听器名称。
+     * @return Listener name
      * 
      */
     public Optional<Output<String>> listenerName() {
@@ -119,14 +119,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡实例ID。
+     * Load balancer instance ID
      * 
      */
     @Import(name="loadBalancerId", required=true)
     private Output<String> loadBalancerId;
 
     /**
-     * @return 负载均衡实例ID。
+     * @return Load balancer instance ID
      * 
      */
     public Output<String> loadBalancerId() {
@@ -134,14 +134,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器接收请求的端口，0表示启用全端口监听。
+     * Port on which the listener receives requests. 0 indicates all-port listening is enabled.
      * 
      */
     @Import(name="port", required=true)
     private Output<Integer> port;
 
     /**
-     * @return 监听器接收请求的端口，0表示启用全端口监听。
+     * @return Port on which the listener receives requests. 0 indicates all-port listening is enabled.
      * 
      */
     public Output<Integer> port() {
@@ -149,14 +149,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听协议类型。TCP,UDP,TLS
+     * Listener protocol type: TCP, UDP, TLS
      * 
      */
     @Import(name="protocol", required=true)
     private Output<String> protocol;
 
     /**
-     * @return 监听协议类型。TCP,UDP,TLS
+     * @return Listener protocol type: TCP, UDP, TLS
      * 
      */
     public Output<String> protocol() {
@@ -164,14 +164,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+     * TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+     * @return TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -179,14 +179,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器关联的服务器组ID。
+     * Server group ID associated with the listener
      * 
      */
     @Import(name="serverGroupId", required=true)
     private Output<String> serverGroupId;
 
     /**
-     * @return 监听器关联的服务器组ID。
+     * @return Server group ID associated with the listener
      * 
      */
     public Output<String> serverGroupId() {
@@ -194,14 +194,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 全端口监听的起始端口，仅当Port为0时有效。
+     * Start port for all-port listening. Valid only when Port is 0.
      * 
      */
     @Import(name="startPort")
     private @Nullable Output<Integer> startPort;
 
     /**
-     * @return 全端口监听的起始端口，仅当Port为0时有效。
+     * @return Start port for all-port listening. Valid only when Port is 0.
      * 
      */
     public Optional<Output<Integer>> startPort() {
@@ -253,7 +253,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+         * @param certificateId TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+         * @param certificateId TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionTimeout 监听器的连接超时时间（秒）。
+         * @param connectionTimeout Listener connection timeout (seconds)
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionTimeout 监听器的连接超时时间（秒）。
+         * @param connectionTimeout Listener connection timeout (seconds)
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 监听器描述信息。
+         * @param description Listener description
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 监听器描述信息。
+         * @param description Listener description
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enabled 是否启用监听器。true：开启；false：关闭。
+         * @param enabled Listener enabled: true (enabled); false (disabled)
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enabled 是否启用监听器。true：开启；false：关闭。
+         * @param enabled Listener enabled: true (enabled); false (disabled)
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endPort 全端口监听的结束端口，仅当Port为0时有效。
+         * @param endPort End port for all-port listening. Valid only when Port is 0.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endPort 全端口监听的结束端口，仅当Port为0时有效。
+         * @param endPort End port for all-port listening. Valid only when Port is 0.
          * 
          * @return builder
          * 
@@ -371,7 +371,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerName 监听器名称。
+         * @param listenerName Listener name
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerName 监听器名称。
+         * @param listenerName Listener name
          * 
          * @return builder
          * 
@@ -392,7 +392,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerId 负载均衡实例ID。
+         * @param loadBalancerId Load balancer instance ID
          * 
          * @return builder
          * 
@@ -403,7 +403,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerId 负载均衡实例ID。
+         * @param loadBalancerId Load balancer instance ID
          * 
          * @return builder
          * 
@@ -413,7 +413,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 监听器接收请求的端口，0表示启用全端口监听。
+         * @param port Port on which the listener receives requests. 0 indicates all-port listening is enabled.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 监听器接收请求的端口，0表示启用全端口监听。
+         * @param port Port on which the listener receives requests. 0 indicates all-port listening is enabled.
          * 
          * @return builder
          * 
@@ -434,7 +434,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 监听协议类型。TCP,UDP,TLS
+         * @param protocol Listener protocol type: TCP, UDP, TLS
          * 
          * @return builder
          * 
@@ -445,7 +445,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 监听协议类型。TCP,UDP,TLS
+         * @param protocol Listener protocol type: TCP, UDP, TLS
          * 
          * @return builder
          * 
@@ -455,7 +455,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityPolicyId TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+         * @param securityPolicyId TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityPolicyId TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+         * @param securityPolicyId TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
          * 
          * @return builder
          * 
@@ -476,7 +476,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupId 监听器关联的服务器组ID。
+         * @param serverGroupId Server group ID associated with the listener
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupId 监听器关联的服务器组ID。
+         * @param serverGroupId Server group ID associated with the listener
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param startPort 全端口监听的起始端口，仅当Port为0时有效。
+         * @param startPort Start port for all-port listening. Valid only when Port is 0.
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param startPort 全端口监听的起始端口，仅当Port为0时有效。
+         * @param startPort Start port for all-port listening. Valid only when Port is 0.
          * 
          * @return builder
          * 

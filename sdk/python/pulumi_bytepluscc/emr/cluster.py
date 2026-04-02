@@ -41,19 +41,19 @@ class ClusterArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterTagArgs']]]] = None):
         """
         The set of arguments for constructing a Cluster resource.
-        :param pulumi.Input[builtins.str] charge_type: 付费类型，PRE表示包月，POST表示按量计费。
-        :param pulumi.Input[builtins.str] cluster_name: 集群名称。
-        :param pulumi.Input[builtins.str] cluster_type: 集群类型。
-        :param pulumi.Input['ClusterNodeAttributeArgs'] node_attribute: 集群全局的节点信息。
-        :param pulumi.Input[builtins.str] release_version: 集群版本。
-        :param pulumi.Input[builtins.str] security_group_id: 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+        :param pulumi.Input[builtins.str] charge_type: Payment type. PRE means monthly subscription, POST means pay-as-you-go.
+        :param pulumi.Input[builtins.str] cluster_name: Cluster name.
+        :param pulumi.Input[builtins.str] cluster_type: Cluster type.
+        :param pulumi.Input['ClusterNodeAttributeArgs'] node_attribute: Cluster global node information.
+        :param pulumi.Input[builtins.str] release_version: Cluster version.
+        :param pulumi.Input[builtins.str] security_group_id: Cluster global security group ID. All ECS in node groups will join this security group.
         :param pulumi.Input[builtins.str] vpc_id: Vpc ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] application_names: 集群安装的服务名称列表。创建字段。
-        :param pulumi.Input['ClusterChargePreConfigArgs'] charge_pre_config: 包月的配置参数，当chargeType=PRE时，必选。
-        :param pulumi.Input[builtins.str] deploy_mode: 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
-        :param pulumi.Input[builtins.str] history_server_mode: HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
-        :param pulumi.Input[builtins.str] security_mode: 安全模式。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] application_names: List of service names installed in the cluster. Creation-related field.
+        :param pulumi.Input['ClusterChargePreConfigArgs'] charge_pre_config: Monthly subscription configuration parameters. Required when chargeType=PRE.
+        :param pulumi.Input[builtins.str] deploy_mode: Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
+        :param pulumi.Input[builtins.str] history_server_mode: HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
+        :param pulumi.Input[builtins.str] security_mode: Security mode.
         """
         pulumi.set(__self__, "charge_type", charge_type)
         pulumi.set(__self__, "cluster_name", cluster_name)
@@ -87,7 +87,7 @@ class ClusterArgs:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Input[builtins.str]:
         """
-        付费类型，PRE表示包月，POST表示按量计费。
+        Payment type. PRE means monthly subscription, POST means pay-as-you-go.
         """
         return pulumi.get(self, "charge_type")
 
@@ -99,7 +99,7 @@ class ClusterArgs:
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> pulumi.Input[builtins.str]:
         """
-        集群名称。
+        Cluster name.
         """
         return pulumi.get(self, "cluster_name")
 
@@ -111,7 +111,7 @@ class ClusterArgs:
     @pulumi.getter(name="clusterType")
     def cluster_type(self) -> pulumi.Input[builtins.str]:
         """
-        集群类型。
+        Cluster type.
         """
         return pulumi.get(self, "cluster_type")
 
@@ -123,7 +123,7 @@ class ClusterArgs:
     @pulumi.getter(name="nodeAttribute")
     def node_attribute(self) -> pulumi.Input['ClusterNodeAttributeArgs']:
         """
-        集群全局的节点信息。
+        Cluster global node information.
         """
         return pulumi.get(self, "node_attribute")
 
@@ -135,7 +135,7 @@ class ClusterArgs:
     @pulumi.getter(name="releaseVersion")
     def release_version(self) -> pulumi.Input[builtins.str]:
         """
-        集群版本。
+        Cluster version.
         """
         return pulumi.get(self, "release_version")
 
@@ -147,7 +147,7 @@ class ClusterArgs:
     @pulumi.getter(name="securityGroupId")
     def security_group_id(self) -> pulumi.Input[builtins.str]:
         """
-        集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+        Cluster global security group ID. All ECS in node groups will join this security group.
         """
         return pulumi.get(self, "security_group_id")
 
@@ -180,7 +180,7 @@ class ClusterArgs:
     @pulumi.getter(name="applicationNames")
     def application_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        集群安装的服务名称列表。创建字段。
+        List of service names installed in the cluster. Creation-related field.
         """
         return pulumi.get(self, "application_names")
 
@@ -201,7 +201,7 @@ class ClusterArgs:
     @pulumi.getter(name="chargePreConfig")
     def charge_pre_config(self) -> Optional[pulumi.Input['ClusterChargePreConfigArgs']]:
         """
-        包月的配置参数，当chargeType=PRE时，必选。
+        Monthly subscription configuration parameters. Required when chargeType=PRE.
         """
         return pulumi.get(self, "charge_pre_config")
 
@@ -213,7 +213,7 @@ class ClusterArgs:
     @pulumi.getter(name="deployMode")
     def deploy_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+        Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
         """
         return pulumi.get(self, "deploy_mode")
 
@@ -225,7 +225,7 @@ class ClusterArgs:
     @pulumi.getter(name="historyServerMode")
     def history_server_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+        HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
         """
         return pulumi.get(self, "history_server_mode")
 
@@ -246,7 +246,7 @@ class ClusterArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
         """
         return pulumi.get(self, "project_name")
 
@@ -258,7 +258,7 @@ class ClusterArgs:
     @pulumi.getter(name="securityMode")
     def security_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全模式。
+        Security mode.
         """
         return pulumi.get(self, "security_mode")
 
@@ -311,30 +311,30 @@ class _ClusterState:
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Cluster resources.
-        :param pulumi.Input[builtins.int] account_id: 账号ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] application_names: 集群安装的服务名称列表。创建字段。
-        :param pulumi.Input['ClusterChargePreConfigArgs'] charge_pre_config: 包月的配置参数，当chargeType=PRE时，必选。
-        :param pulumi.Input[builtins.str] charge_type: 付费类型，PRE表示包月，POST表示按量计费。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] cluster_domain_names: 集群dns域名后缀列表。
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[builtins.str] cluster_name: 集群名称。
-        :param pulumi.Input[builtins.str] cluster_state: 集群状态。
-        :param pulumi.Input[builtins.str] cluster_type: 集群类型。
-        :param pulumi.Input[builtins.int] created_time: 集群创建时间。
-        :param pulumi.Input[builtins.int] creator_id: 创建者ID。
-        :param pulumi.Input[builtins.str] creator_name: 创建者名称。
-        :param pulumi.Input[builtins.str] deploy_mode: 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
-        :param pulumi.Input[builtins.str] ecs_image_id: ECS镜像ID。
-        :param pulumi.Input[builtins.int] expire_time: 集群过期时间。
-        :param pulumi.Input[builtins.str] history_server_mode: HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
-        :param pulumi.Input['ClusterNodeAttributeArgs'] node_attribute: 集群全局的节点信息。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
-        :param pulumi.Input[builtins.int] ready_time: 集群创建完成时间。
-        :param pulumi.Input[builtins.str] release_version: 集群版本。
-        :param pulumi.Input[builtins.str] security_group_id: 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
-        :param pulumi.Input[builtins.str] security_mode: 安全模式。
-        :param pulumi.Input['ClusterStateChangeReasonArgs'] state_change_reason: 状态变更原因。
-        :param pulumi.Input[builtins.int] terminate_time: 集群终止时间。
+        :param pulumi.Input[builtins.int] account_id: Account ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] application_names: List of service names installed in the cluster. Creation-related field.
+        :param pulumi.Input['ClusterChargePreConfigArgs'] charge_pre_config: Monthly subscription configuration parameters. Required when chargeType=PRE.
+        :param pulumi.Input[builtins.str] charge_type: Payment type. PRE means monthly subscription, POST means pay-as-you-go.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] cluster_domain_names: Cluster DNS domain suffix list.
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.str] cluster_name: Cluster name.
+        :param pulumi.Input[builtins.str] cluster_state: Cluster status.
+        :param pulumi.Input[builtins.str] cluster_type: Cluster type.
+        :param pulumi.Input[builtins.int] created_time: Cluster creation time.
+        :param pulumi.Input[builtins.int] creator_id: Creator ID.
+        :param pulumi.Input[builtins.str] creator_name: Creator name.
+        :param pulumi.Input[builtins.str] deploy_mode: Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
+        :param pulumi.Input[builtins.str] ecs_image_id: ECS image ID.
+        :param pulumi.Input[builtins.int] expire_time: Cluster expiration time.
+        :param pulumi.Input[builtins.str] history_server_mode: HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
+        :param pulumi.Input['ClusterNodeAttributeArgs'] node_attribute: Cluster global node information.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
+        :param pulumi.Input[builtins.int] ready_time: Cluster creation completion time.
+        :param pulumi.Input[builtins.str] release_version: Cluster version.
+        :param pulumi.Input[builtins.str] security_group_id: Cluster global security group ID. All ECS in node groups will join this security group.
+        :param pulumi.Input[builtins.str] security_mode: Security mode.
+        :param pulumi.Input['ClusterStateChangeReasonArgs'] state_change_reason: Status change reason.
+        :param pulumi.Input[builtins.int] terminate_time: Cluster termination time.
         :param pulumi.Input[builtins.str] vpc_id: Vpc ID。
         """
         if account_id is not None:
@@ -402,7 +402,7 @@ class _ClusterState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        账号ID。
+        Account ID.
         """
         return pulumi.get(self, "account_id")
 
@@ -423,7 +423,7 @@ class _ClusterState:
     @pulumi.getter(name="applicationNames")
     def application_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        集群安装的服务名称列表。创建字段。
+        List of service names installed in the cluster. Creation-related field.
         """
         return pulumi.get(self, "application_names")
 
@@ -453,7 +453,7 @@ class _ClusterState:
     @pulumi.getter(name="chargePreConfig")
     def charge_pre_config(self) -> Optional[pulumi.Input['ClusterChargePreConfigArgs']]:
         """
-        包月的配置参数，当chargeType=PRE时，必选。
+        Monthly subscription configuration parameters. Required when chargeType=PRE.
         """
         return pulumi.get(self, "charge_pre_config")
 
@@ -465,7 +465,7 @@ class _ClusterState:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        付费类型，PRE表示包月，POST表示按量计费。
+        Payment type. PRE means monthly subscription, POST means pay-as-you-go.
         """
         return pulumi.get(self, "charge_type")
 
@@ -477,7 +477,7 @@ class _ClusterState:
     @pulumi.getter(name="clusterDomainNames")
     def cluster_domain_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        集群dns域名后缀列表。
+        Cluster DNS domain suffix list.
         """
         return pulumi.get(self, "cluster_domain_names")
 
@@ -489,7 +489,7 @@ class _ClusterState:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -501,7 +501,7 @@ class _ClusterState:
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群名称。
+        Cluster name.
         """
         return pulumi.get(self, "cluster_name")
 
@@ -513,7 +513,7 @@ class _ClusterState:
     @pulumi.getter(name="clusterState")
     def cluster_state(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群状态。
+        Cluster status.
         """
         return pulumi.get(self, "cluster_state")
 
@@ -525,7 +525,7 @@ class _ClusterState:
     @pulumi.getter(name="clusterType")
     def cluster_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群类型。
+        Cluster type.
         """
         return pulumi.get(self, "cluster_type")
 
@@ -537,7 +537,7 @@ class _ClusterState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        集群创建时间。
+        Cluster creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -549,7 +549,7 @@ class _ClusterState:
     @pulumi.getter(name="creatorId")
     def creator_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        创建者ID。
+        Creator ID.
         """
         return pulumi.get(self, "creator_id")
 
@@ -561,7 +561,7 @@ class _ClusterState:
     @pulumi.getter(name="creatorName")
     def creator_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建者名称。
+        Creator name.
         """
         return pulumi.get(self, "creator_name")
 
@@ -573,7 +573,7 @@ class _ClusterState:
     @pulumi.getter(name="deployMode")
     def deploy_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+        Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
         """
         return pulumi.get(self, "deploy_mode")
 
@@ -585,7 +585,7 @@ class _ClusterState:
     @pulumi.getter(name="ecsImageId")
     def ecs_image_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        ECS镜像ID。
+        ECS image ID.
         """
         return pulumi.get(self, "ecs_image_id")
 
@@ -597,7 +597,7 @@ class _ClusterState:
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        集群过期时间。
+        Cluster expiration time.
         """
         return pulumi.get(self, "expire_time")
 
@@ -609,7 +609,7 @@ class _ClusterState:
     @pulumi.getter(name="historyServerMode")
     def history_server_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+        HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
         """
         return pulumi.get(self, "history_server_mode")
 
@@ -621,7 +621,7 @@ class _ClusterState:
     @pulumi.getter(name="nodeAttribute")
     def node_attribute(self) -> Optional[pulumi.Input['ClusterNodeAttributeArgs']]:
         """
-        集群全局的节点信息。
+        Cluster global node information.
         """
         return pulumi.get(self, "node_attribute")
 
@@ -642,7 +642,7 @@ class _ClusterState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
         """
         return pulumi.get(self, "project_name")
 
@@ -654,7 +654,7 @@ class _ClusterState:
     @pulumi.getter(name="readyTime")
     def ready_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        集群创建完成时间。
+        Cluster creation completion time.
         """
         return pulumi.get(self, "ready_time")
 
@@ -666,7 +666,7 @@ class _ClusterState:
     @pulumi.getter(name="releaseVersion")
     def release_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群版本。
+        Cluster version.
         """
         return pulumi.get(self, "release_version")
 
@@ -678,7 +678,7 @@ class _ClusterState:
     @pulumi.getter(name="securityGroupId")
     def security_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+        Cluster global security group ID. All ECS in node groups will join this security group.
         """
         return pulumi.get(self, "security_group_id")
 
@@ -690,7 +690,7 @@ class _ClusterState:
     @pulumi.getter(name="securityMode")
     def security_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全模式。
+        Security mode.
         """
         return pulumi.get(self, "security_mode")
 
@@ -702,7 +702,7 @@ class _ClusterState:
     @pulumi.getter(name="stateChangeReason")
     def state_change_reason(self) -> Optional[pulumi.Input['ClusterStateChangeReasonArgs']]:
         """
-        状态变更原因。
+        Status change reason.
         """
         return pulumi.get(self, "state_change_reason")
 
@@ -723,7 +723,7 @@ class _ClusterState:
     @pulumi.getter(name="terminateTime")
     def terminate_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        集群终止时间。
+        Cluster termination time.
         """
         return pulumi.get(self, "terminate_time")
 
@@ -769,7 +769,7 @@ class Cluster(pulumi.CustomResource):
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        E-MapReduce（EMR）是开源 Hadoop 生态的企业级大数据分析系统，完全兼容开源，为您提供 Hadoop、Spark、Hive、Hudi、Iceberg 等生态组件集成和管理。
+        E-MapReduce (EMR) is an enterprise-grade big data analytics system based on the open-source Hadoop ecosystem. It is fully compatible with open source and provides integration and management for ecosystem components such as Hadoop, Spark, Hive, Hudi, and Iceberg.
 
         ## Import
 
@@ -779,18 +779,18 @@ class Cluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] application_names: 集群安装的服务名称列表。创建字段。
-        :param pulumi.Input[Union['ClusterChargePreConfigArgs', 'ClusterChargePreConfigArgsDict']] charge_pre_config: 包月的配置参数，当chargeType=PRE时，必选。
-        :param pulumi.Input[builtins.str] charge_type: 付费类型，PRE表示包月，POST表示按量计费。
-        :param pulumi.Input[builtins.str] cluster_name: 集群名称。
-        :param pulumi.Input[builtins.str] cluster_type: 集群类型。
-        :param pulumi.Input[builtins.str] deploy_mode: 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
-        :param pulumi.Input[builtins.str] history_server_mode: HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
-        :param pulumi.Input[Union['ClusterNodeAttributeArgs', 'ClusterNodeAttributeArgsDict']] node_attribute: 集群全局的节点信息。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
-        :param pulumi.Input[builtins.str] release_version: 集群版本。
-        :param pulumi.Input[builtins.str] security_group_id: 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
-        :param pulumi.Input[builtins.str] security_mode: 安全模式。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] application_names: List of service names installed in the cluster. Creation-related field.
+        :param pulumi.Input[Union['ClusterChargePreConfigArgs', 'ClusterChargePreConfigArgsDict']] charge_pre_config: Monthly subscription configuration parameters. Required when chargeType=PRE.
+        :param pulumi.Input[builtins.str] charge_type: Payment type. PRE means monthly subscription, POST means pay-as-you-go.
+        :param pulumi.Input[builtins.str] cluster_name: Cluster name.
+        :param pulumi.Input[builtins.str] cluster_type: Cluster type.
+        :param pulumi.Input[builtins.str] deploy_mode: Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
+        :param pulumi.Input[builtins.str] history_server_mode: HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
+        :param pulumi.Input[Union['ClusterNodeAttributeArgs', 'ClusterNodeAttributeArgsDict']] node_attribute: Cluster global node information.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
+        :param pulumi.Input[builtins.str] release_version: Cluster version.
+        :param pulumi.Input[builtins.str] security_group_id: Cluster global security group ID. All ECS in node groups will join this security group.
+        :param pulumi.Input[builtins.str] security_mode: Security mode.
         :param pulumi.Input[builtins.str] vpc_id: Vpc ID。
         """
         ...
@@ -800,7 +800,7 @@ class Cluster(pulumi.CustomResource):
                  args: ClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        E-MapReduce（EMR）是开源 Hadoop 生态的企业级大数据分析系统，完全兼容开源，为您提供 Hadoop、Spark、Hive、Hudi、Iceberg 等生态组件集成和管理。
+        E-MapReduce (EMR) is an enterprise-grade big data analytics system based on the open-source Hadoop ecosystem. It is fully compatible with open source and provides integration and management for ecosystem components such as Hadoop, Spark, Hive, Hudi, and Iceberg.
 
         ## Import
 
@@ -940,30 +940,30 @@ class Cluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] account_id: 账号ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] application_names: 集群安装的服务名称列表。创建字段。
-        :param pulumi.Input[Union['ClusterChargePreConfigArgs', 'ClusterChargePreConfigArgsDict']] charge_pre_config: 包月的配置参数，当chargeType=PRE时，必选。
-        :param pulumi.Input[builtins.str] charge_type: 付费类型，PRE表示包月，POST表示按量计费。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] cluster_domain_names: 集群dns域名后缀列表。
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[builtins.str] cluster_name: 集群名称。
-        :param pulumi.Input[builtins.str] cluster_state: 集群状态。
-        :param pulumi.Input[builtins.str] cluster_type: 集群类型。
-        :param pulumi.Input[builtins.int] created_time: 集群创建时间。
-        :param pulumi.Input[builtins.int] creator_id: 创建者ID。
-        :param pulumi.Input[builtins.str] creator_name: 创建者名称。
-        :param pulumi.Input[builtins.str] deploy_mode: 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
-        :param pulumi.Input[builtins.str] ecs_image_id: ECS镜像ID。
-        :param pulumi.Input[builtins.int] expire_time: 集群过期时间。
-        :param pulumi.Input[builtins.str] history_server_mode: HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
-        :param pulumi.Input[Union['ClusterNodeAttributeArgs', 'ClusterNodeAttributeArgsDict']] node_attribute: 集群全局的节点信息。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
-        :param pulumi.Input[builtins.int] ready_time: 集群创建完成时间。
-        :param pulumi.Input[builtins.str] release_version: 集群版本。
-        :param pulumi.Input[builtins.str] security_group_id: 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
-        :param pulumi.Input[builtins.str] security_mode: 安全模式。
-        :param pulumi.Input[Union['ClusterStateChangeReasonArgs', 'ClusterStateChangeReasonArgsDict']] state_change_reason: 状态变更原因。
-        :param pulumi.Input[builtins.int] terminate_time: 集群终止时间。
+        :param pulumi.Input[builtins.int] account_id: Account ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] application_names: List of service names installed in the cluster. Creation-related field.
+        :param pulumi.Input[Union['ClusterChargePreConfigArgs', 'ClusterChargePreConfigArgsDict']] charge_pre_config: Monthly subscription configuration parameters. Required when chargeType=PRE.
+        :param pulumi.Input[builtins.str] charge_type: Payment type. PRE means monthly subscription, POST means pay-as-you-go.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] cluster_domain_names: Cluster DNS domain suffix list.
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.str] cluster_name: Cluster name.
+        :param pulumi.Input[builtins.str] cluster_state: Cluster status.
+        :param pulumi.Input[builtins.str] cluster_type: Cluster type.
+        :param pulumi.Input[builtins.int] created_time: Cluster creation time.
+        :param pulumi.Input[builtins.int] creator_id: Creator ID.
+        :param pulumi.Input[builtins.str] creator_name: Creator name.
+        :param pulumi.Input[builtins.str] deploy_mode: Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
+        :param pulumi.Input[builtins.str] ecs_image_id: ECS image ID.
+        :param pulumi.Input[builtins.int] expire_time: Cluster expiration time.
+        :param pulumi.Input[builtins.str] history_server_mode: HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
+        :param pulumi.Input[Union['ClusterNodeAttributeArgs', 'ClusterNodeAttributeArgsDict']] node_attribute: Cluster global node information.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
+        :param pulumi.Input[builtins.int] ready_time: Cluster creation completion time.
+        :param pulumi.Input[builtins.str] release_version: Cluster version.
+        :param pulumi.Input[builtins.str] security_group_id: Cluster global security group ID. All ECS in node groups will join this security group.
+        :param pulumi.Input[builtins.str] security_mode: Security mode.
+        :param pulumi.Input[Union['ClusterStateChangeReasonArgs', 'ClusterStateChangeReasonArgsDict']] state_change_reason: Status change reason.
+        :param pulumi.Input[builtins.int] terminate_time: Cluster termination time.
         :param pulumi.Input[builtins.str] vpc_id: Vpc ID。
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -1006,7 +1006,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.int]:
         """
-        账号ID。
+        Account ID.
         """
         return pulumi.get(self, "account_id")
 
@@ -1019,7 +1019,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="applicationNames")
     def application_names(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        集群安装的服务名称列表。创建字段。
+        List of service names installed in the cluster. Creation-related field.
         """
         return pulumi.get(self, "application_names")
 
@@ -1037,7 +1037,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="chargePreConfig")
     def charge_pre_config(self) -> pulumi.Output['outputs.ClusterChargePreConfig']:
         """
-        包月的配置参数，当chargeType=PRE时，必选。
+        Monthly subscription configuration parameters. Required when chargeType=PRE.
         """
         return pulumi.get(self, "charge_pre_config")
 
@@ -1045,7 +1045,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Output[builtins.str]:
         """
-        付费类型，PRE表示包月，POST表示按量计费。
+        Payment type. PRE means monthly subscription, POST means pay-as-you-go.
         """
         return pulumi.get(self, "charge_type")
 
@@ -1053,7 +1053,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="clusterDomainNames")
     def cluster_domain_names(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        集群dns域名后缀列表。
+        Cluster DNS domain suffix list.
         """
         return pulumi.get(self, "cluster_domain_names")
 
@@ -1061,7 +1061,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[builtins.str]:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -1069,7 +1069,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> pulumi.Output[builtins.str]:
         """
-        集群名称。
+        Cluster name.
         """
         return pulumi.get(self, "cluster_name")
 
@@ -1077,7 +1077,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="clusterState")
     def cluster_state(self) -> pulumi.Output[builtins.str]:
         """
-        集群状态。
+        Cluster status.
         """
         return pulumi.get(self, "cluster_state")
 
@@ -1085,7 +1085,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="clusterType")
     def cluster_type(self) -> pulumi.Output[builtins.str]:
         """
-        集群类型。
+        Cluster type.
         """
         return pulumi.get(self, "cluster_type")
 
@@ -1093,7 +1093,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.int]:
         """
-        集群创建时间。
+        Cluster creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -1101,7 +1101,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="creatorId")
     def creator_id(self) -> pulumi.Output[builtins.int]:
         """
-        创建者ID。
+        Creator ID.
         """
         return pulumi.get(self, "creator_id")
 
@@ -1109,7 +1109,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="creatorName")
     def creator_name(self) -> pulumi.Output[builtins.str]:
         """
-        创建者名称。
+        Creator name.
         """
         return pulumi.get(self, "creator_name")
 
@@ -1117,7 +1117,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="deployMode")
     def deploy_mode(self) -> pulumi.Output[builtins.str]:
         """
-        部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+        Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
         """
         return pulumi.get(self, "deploy_mode")
 
@@ -1125,7 +1125,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="ecsImageId")
     def ecs_image_id(self) -> pulumi.Output[builtins.str]:
         """
-        ECS镜像ID。
+        ECS image ID.
         """
         return pulumi.get(self, "ecs_image_id")
 
@@ -1133,7 +1133,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> pulumi.Output[builtins.int]:
         """
-        集群过期时间。
+        Cluster expiration time.
         """
         return pulumi.get(self, "expire_time")
 
@@ -1141,7 +1141,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="historyServerMode")
     def history_server_mode(self) -> pulumi.Output[builtins.str]:
         """
-        HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+        HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
         """
         return pulumi.get(self, "history_server_mode")
 
@@ -1149,7 +1149,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="nodeAttribute")
     def node_attribute(self) -> pulumi.Output['outputs.ClusterNodeAttribute']:
         """
-        集群全局的节点信息。
+        Cluster global node information.
         """
         return pulumi.get(self, "node_attribute")
 
@@ -1162,7 +1162,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
         """
         return pulumi.get(self, "project_name")
 
@@ -1170,7 +1170,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="readyTime")
     def ready_time(self) -> pulumi.Output[builtins.int]:
         """
-        集群创建完成时间。
+        Cluster creation completion time.
         """
         return pulumi.get(self, "ready_time")
 
@@ -1178,7 +1178,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="releaseVersion")
     def release_version(self) -> pulumi.Output[builtins.str]:
         """
-        集群版本。
+        Cluster version.
         """
         return pulumi.get(self, "release_version")
 
@@ -1186,7 +1186,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="securityGroupId")
     def security_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+        Cluster global security group ID. All ECS in node groups will join this security group.
         """
         return pulumi.get(self, "security_group_id")
 
@@ -1194,7 +1194,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="securityMode")
     def security_mode(self) -> pulumi.Output[builtins.str]:
         """
-        安全模式。
+        Security mode.
         """
         return pulumi.get(self, "security_mode")
 
@@ -1202,7 +1202,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="stateChangeReason")
     def state_change_reason(self) -> pulumi.Output['outputs.ClusterStateChangeReason']:
         """
-        状态变更原因。
+        Status change reason.
         """
         return pulumi.get(self, "state_change_reason")
 
@@ -1215,7 +1215,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="terminateTime")
     def terminate_time(self) -> pulumi.Output[builtins.int]:
         """
-        集群终止时间。
+        Cluster termination time.
         """
         return pulumi.get(self, "terminate_time")
 

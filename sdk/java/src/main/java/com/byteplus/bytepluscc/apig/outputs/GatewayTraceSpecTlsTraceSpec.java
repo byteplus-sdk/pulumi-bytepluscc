@@ -22,7 +22,7 @@ public final class GatewayTraceSpecTlsTraceSpec {
      */
     private @Nullable String iamUserSk;
     /**
-     * @return 日志项目ID。
+     * @return Log project ID
      * 
      */
     private @Nullable String projectId;
@@ -48,7 +48,7 @@ public final class GatewayTraceSpecTlsTraceSpec {
         return Optional.ofNullable(this.iamUserSk);
     }
     /**
-     * @return 日志项目ID。
+     * @return Log project ID
      * 
      */
     public Optional<String> projectId() {

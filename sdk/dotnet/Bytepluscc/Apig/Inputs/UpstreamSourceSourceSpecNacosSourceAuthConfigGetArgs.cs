@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamSourceSourceSpecNacosSourceAuthConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Basic认证。
+        /// Basic authentication
         /// </summary>
         [Input("basic")]
         public Input<Inputs.UpstreamSourceSourceSpecNacosSourceAuthConfigBasicGetArgs>? Basic { get; set; }

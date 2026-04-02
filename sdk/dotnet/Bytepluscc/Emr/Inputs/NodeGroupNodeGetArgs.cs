@@ -14,61 +14,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
     public sealed class NodeGroupNodeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 节点创建时间。
+        /// Node creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<int>? CreatedTime { get; set; }
 
         /// <summary>
-        /// ecs实例规格。
+        /// ecs instance specification.
         /// </summary>
         [Input("ecsInstanceType")]
         public Input<string>? EcsInstanceType { get; set; }
 
         /// <summary>
-        /// 节点FQDN。
+        /// Node FQDN.
         /// </summary>
         [Input("nodeFqdn")]
         public Input<string>? NodeFqdn { get; set; }
 
         /// <summary>
-        /// 节点ID。
+        /// Node ID.
         /// </summary>
         [Input("nodeId")]
         public Input<string>? NodeId { get; set; }
 
         /// <summary>
-        /// 节点名称。
+        /// Node name.
         /// </summary>
         [Input("nodeName")]
         public Input<string>? NodeName { get; set; }
 
         /// <summary>
-        /// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+        /// Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
         /// </summary>
         [Input("nodeState")]
         public Input<string>? NodeState { get; set; }
 
         /// <summary>
-        /// 私有IP。
+        /// Private IP.
         /// </summary>
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }
 
         /// <summary>
-        /// 公网IP。
+        /// Public IP.
         /// </summary>
         [Input("publicIp")]
         public Input<string>? PublicIp { get; set; }
 
         /// <summary>
-        /// 准备完毕时间。
+        /// Ready time.
         /// </summary>
         [Input("readyTime")]
         public Input<int>? ReadyTime { get; set; }
 
         /// <summary>
-        /// 集群终止时间。
+        /// Cluster termination time.
         /// </summary>
         [Input("terminateTime")]
         public Input<int>? TerminateTime { get; set; }

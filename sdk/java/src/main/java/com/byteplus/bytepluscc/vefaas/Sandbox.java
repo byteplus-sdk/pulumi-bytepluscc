@@ -21,7 +21,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 沙箱实例是云沙箱中实际执行沙箱镜像的安全且隔离的容器运行环境。
+ * A sandbox instance is a secure and isolated container runtime environment that actually runs the sandbox image in the cloud sandbox
  * 
  * ## Example Usage
  * 
@@ -38,42 +38,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vefaas/sandbox:Sandbox")
 public class Sandbox extends com.pulumi.resources.CustomResource {
     /**
-     * 沙箱实例所在可用区 ID。
+     * Availability zone ID of the sandbox instance
      * 
      */
     @Export(name="availabilityZone", refs={String.class}, tree="[0]")
     private Output<String> availabilityZone;
 
     /**
-     * @return 沙箱实例所在可用区 ID。
+     * @return Availability zone ID of the sandbox instance
      * 
      */
     public Output<String> availabilityZone() {
         return this.availabilityZone;
     }
     /**
-     * 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+     * Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
      * 
      */
     @Export(name="cpuMilli", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuMilli;
 
     /**
-     * @return 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+     * @return Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
      * 
      */
     public Output<Integer> cpuMilli() {
         return this.cpuMilli;
     }
     /**
-     * 沙箱实例创建时间。
+     * Sandbox instance creation time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 沙箱实例创建时间。
+     * @return Sandbox instance creation time.
      * 
      */
     public Output<String> createdTime() {
@@ -86,126 +86,126 @@ public class Sandbox extends com.pulumi.resources.CustomResource {
         return this.envs;
     }
     /**
-     * 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+     * Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
      * 
      */
     @Export(name="errorCode", refs={String.class}, tree="[0]")
     private Output<String> errorCode;
 
     /**
-     * @return 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+     * @return Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
      * 
      */
     public Output<String> errorCode() {
         return this.errorCode;
     }
     /**
-     * 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+     * Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
      * 
      */
     @Export(name="errorMessage", refs={String.class}, tree="[0]")
     private Output<String> errorMessage;
 
     /**
-     * @return 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+     * @return Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
      * 
      */
     public Output<String> errorMessage() {
         return this.errorMessage;
     }
     /**
-     * 沙箱实例存活时长。
+     * Sandbox instance uptime.
      * 
      */
     @Export(name="expireAt", refs={String.class}, tree="[0]")
     private Output<String> expireAt;
 
     /**
-     * @return 沙箱实例存活时长。
+     * @return Sandbox instance uptime.
      * 
      */
     public Output<String> expireAt() {
         return this.expireAt;
     }
     /**
-     * 沙箱实例所属的沙箱应用 ID。
+     * Sandbox application ID to which the sandbox instance belongs
      * 
      */
     @Export(name="functionId", refs={String.class}, tree="[0]")
     private Output<String> functionId;
 
     /**
-     * @return 沙箱实例所属的沙箱应用 ID。
+     * @return Sandbox application ID to which the sandbox instance belongs
      * 
      */
     public Output<String> functionId() {
         return this.functionId;
     }
     /**
-     * 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+     * Sandbox instance image information, including image address, startup command, and listening port.
      * 
      */
     @Export(name="instanceImageInfo", refs={SandboxInstanceImageInfo.class}, tree="[0]")
     private Output<SandboxInstanceImageInfo> instanceImageInfo;
 
     /**
-     * @return 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+     * @return Sandbox instance image information, including image address, startup command, and listening port.
      * 
      */
     public Output<SandboxInstanceImageInfo> instanceImageInfo() {
         return this.instanceImageInfo;
     }
     /**
-     * 沙箱实例级别对象存储（TOS）存储挂载配置。
+     * Instance-level object storage (TOS) mount configuration for the sandbox instance
      * 
      */
     @Export(name="instanceTosMountConfig", refs={SandboxInstanceTosMountConfig.class}, tree="[0]")
     private Output<SandboxInstanceTosMountConfig> instanceTosMountConfig;
 
     /**
-     * @return 沙箱实例级别对象存储（TOS）存储挂载配置。
+     * @return Instance-level object storage (TOS) mount configuration for the sandbox instance
      * 
      */
     public Output<SandboxInstanceTosMountConfig> instanceTosMountConfig() {
         return this.instanceTosMountConfig;
     }
     /**
-     * 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+     * Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
      * 
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
-     * @return 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+     * @return Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
      * 
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
-     * 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+     * Maximum concurrent requests per instance: range: 10~1000, default: 100
      * 
      */
     @Export(name="maxConcurrency", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxConcurrency;
 
     /**
-     * @return 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+     * @return Maximum concurrent requests per instance: range: 10~1000, default: 100
      * 
      */
     public Output<Integer> maxConcurrency() {
         return this.maxConcurrency;
     }
     /**
-     * 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+     * Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
      * 
      */
     @Export(name="memoryMb", refs={Integer.class}, tree="[0]")
     private Output<Integer> memoryMb;
 
     /**
-     * @return 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+     * @return Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
      * 
      */
     public Output<Integer> memoryMb() {
@@ -218,84 +218,84 @@ public class Sandbox extends com.pulumi.resources.CustomResource {
         return this.metadatas;
     }
     /**
-     * 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+     * Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
      * 
      */
     @Export(name="pending", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> pending;
 
     /**
-     * @return 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+     * @return Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
      * 
      */
     public Output<Boolean> pending() {
         return this.pending;
     }
     /**
-     * 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+     * Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
      * 
      */
     @Export(name="requestTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> requestTimeout;
 
     /**
-     * @return 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+     * @return Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
      * 
      */
     public Output<Integer> requestTimeout() {
         return this.requestTimeout;
     }
     /**
-     * 函数实例版本编号。
+     * Function instance version number
      * 
      */
     @Export(name="revisionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> revisionNumber;
 
     /**
-     * @return 函数实例版本编号。
+     * @return Function instance version number
      * 
      */
     public Output<Integer> revisionNumber() {
         return this.revisionNumber;
     }
     /**
-     * 沙箱实例 ID。
+     * Sandbox instance ID
      * 
      */
     @Export(name="sandboxId", refs={String.class}, tree="[0]")
     private Output<String> sandboxId;
 
     /**
-     * @return 沙箱实例 ID。
+     * @return Sandbox instance ID
      * 
      */
     public Output<String> sandboxId() {
         return this.sandboxId;
     }
     /**
-     * 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+     * Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+     * @return Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+     * Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
      * 
      */
     @Export(name="timeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeout;
 
     /**
-     * @return 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+     * @return Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
      * 
      */
     public Output<Integer> timeout() {

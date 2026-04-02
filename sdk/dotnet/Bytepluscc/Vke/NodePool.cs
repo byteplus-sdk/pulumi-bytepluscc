@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vke
 {
     /// <summary>
-    /// 节点池是集群中具有相同配置的一组节点，一个节点池包含一个节点或多个节点。节点池的配置包含节点的属性，例如节点规格、可用区、标签、污点等。这些属性可以在创建节点池时指定，也可以在创建完成后进行编辑修改。
+    /// A node pool is a group of nodes in a cluster with the same configuration. A node pool can contain one or more nodes. The node pool configuration includes node attributes such as node specifications, availability zones, labels, taints, and more. These attributes can be specified when creating the node pool or edited after creation.
     /// 
     /// ## Import
     /// 
@@ -23,67 +23,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public partial class NodePool : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 节点池伸缩策略配置。
+        /// Node pool scaling policy configuration.
         /// </summary>
         [Output("autoScaling")]
         public Output<Outputs.NodePoolAutoScaling> AutoScaling { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池所在集群的 ID。
+        /// ID of the cluster where the node pool is located
         /// </summary>
         [Output("clusterId")]
         public Output<string> ClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// 创建节点池的时间。
+        /// Node pool creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池 Kubernetes 相关配置。
+        /// Kubernetes-related configuration for the node pool
         /// </summary>
         [Output("kubernetesConfig")]
         public Output<Outputs.NodePoolKubernetesConfig> KubernetesConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 托管节点池配置。
+        /// Managed node pool configuration
         /// </summary>
         [Output("management")]
         public Output<Outputs.NodePoolManagement> Management { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        /// Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池中云服务器（ECS）实例配置。
+        /// Cloud server (ECS) instance configuration in the node pool
         /// </summary>
         [Output("nodeConfig")]
         public Output<Outputs.NodePoolNodeConfig> NodeConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池 ID 。
+        /// Node pool ID
         /// </summary>
         [Output("nodePoolId")]
         public Output<string> NodePoolId { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池中的节点统计。
+        /// Node statistics in the node pool.
         /// </summary>
         [Output("nodeStatistics")]
         public Output<Outputs.NodePoolNodeStatistics> NodeStatistics { get; private set; } = null!;
 
         /// <summary>
-        /// 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+        /// When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
         /// </summary>
         [Output("retainResources")]
         public Output<ImmutableArray<string>> RetainResources { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池状态。
+        /// Node pool status
         /// </summary>
         [Output("status")]
         public Output<Outputs.NodePoolStatus> Status { get; private set; } = null!;
@@ -92,7 +92,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         public Output<ImmutableArray<Outputs.NodePoolTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 更新节点池的时间。
+        /// Node pool update time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -145,37 +145,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public sealed class NodePoolArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 节点池伸缩策略配置。
+        /// Node pool scaling policy configuration.
         /// </summary>
         [Input("autoScaling")]
         public Input<Inputs.NodePoolAutoScalingArgs>? AutoScaling { get; set; }
 
         /// <summary>
-        /// 节点池所在集群的 ID。
+        /// ID of the cluster where the node pool is located
         /// </summary>
         [Input("clusterId", required: true)]
         public Input<string> ClusterId { get; set; } = null!;
 
         /// <summary>
-        /// 节点池 Kubernetes 相关配置。
+        /// Kubernetes-related configuration for the node pool
         /// </summary>
         [Input("kubernetesConfig")]
         public Input<Inputs.NodePoolKubernetesConfigArgs>? KubernetesConfig { get; set; }
 
         /// <summary>
-        /// 托管节点池配置。
+        /// Managed node pool configuration
         /// </summary>
         [Input("management")]
         public Input<Inputs.NodePoolManagementArgs>? Management { get; set; }
 
         /// <summary>
-        /// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        /// Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 节点池中云服务器（ECS）实例配置。
+        /// Cloud server (ECS) instance configuration in the node pool
         /// </summary>
         [Input("nodeConfig")]
         public Input<Inputs.NodePoolNodeConfigArgs>? NodeConfig { get; set; }
@@ -184,7 +184,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         private InputList<string>? _retainResources;
 
         /// <summary>
-        /// 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+        /// When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
         /// </summary>
         public InputList<string> RetainResources
         {
@@ -209,55 +209,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public sealed class NodePoolState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 节点池伸缩策略配置。
+        /// Node pool scaling policy configuration.
         /// </summary>
         [Input("autoScaling")]
         public Input<Inputs.NodePoolAutoScalingGetArgs>? AutoScaling { get; set; }
 
         /// <summary>
-        /// 节点池所在集群的 ID。
+        /// ID of the cluster where the node pool is located
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// 创建节点池的时间。
+        /// Node pool creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 节点池 Kubernetes 相关配置。
+        /// Kubernetes-related configuration for the node pool
         /// </summary>
         [Input("kubernetesConfig")]
         public Input<Inputs.NodePoolKubernetesConfigGetArgs>? KubernetesConfig { get; set; }
 
         /// <summary>
-        /// 托管节点池配置。
+        /// Managed node pool configuration
         /// </summary>
         [Input("management")]
         public Input<Inputs.NodePoolManagementGetArgs>? Management { get; set; }
 
         /// <summary>
-        /// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        /// Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 节点池中云服务器（ECS）实例配置。
+        /// Cloud server (ECS) instance configuration in the node pool
         /// </summary>
         [Input("nodeConfig")]
         public Input<Inputs.NodePoolNodeConfigGetArgs>? NodeConfig { get; set; }
 
         /// <summary>
-        /// 节点池 ID 。
+        /// Node pool ID
         /// </summary>
         [Input("nodePoolId")]
         public Input<string>? NodePoolId { get; set; }
 
         /// <summary>
-        /// 节点池中的节点统计。
+        /// Node statistics in the node pool.
         /// </summary>
         [Input("nodeStatistics")]
         public Input<Inputs.NodePoolNodeStatisticsGetArgs>? NodeStatistics { get; set; }
@@ -266,7 +266,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         private InputList<string>? _retainResources;
 
         /// <summary>
-        /// 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+        /// When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
         /// </summary>
         public InputList<string> RetainResources
         {
@@ -275,7 +275,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         }
 
         /// <summary>
-        /// 节点池状态。
+        /// Node pool status
         /// </summary>
         [Input("status")]
         public Input<Inputs.NodePoolStatusGetArgs>? Status { get; set; }
@@ -289,7 +289,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         }
 
         /// <summary>
-        /// 更新节点池的时间。
+        /// Node pool update time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

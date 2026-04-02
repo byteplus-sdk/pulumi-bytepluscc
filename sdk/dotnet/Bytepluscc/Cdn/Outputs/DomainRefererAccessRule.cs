@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainRefererAccessRule
     {
         /// <summary>
-        /// 表示用户请求头的 Referer 头部为空（""）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+        /// Specifies whether the content delivery network accepts a request when the Referer header in the user's request is empty (""). This parameter has the following values: true: accepts the request; false: rejects the request. The default value is false.
         /// </summary>
         public readonly bool? AllowEmpty;
         /// <summary>
-        /// 表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+        /// Indicates a list of Referers. The input requirements for this parameter are consistent with those for Referers under the CommonType of ReferersType. We recommend using ReferersType to specify the Referer list. If you specify SharedConfig, you cannot specify this parameter.
         /// </summary>
         public readonly ImmutableArray<string> Referers;
         /// <summary>
-        /// 表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+        /// Indicates a ReferersType object. It contains a CommonType object and a RegularType object, representing a standard Referer list and a Referer regular expression list, respectively. If you specify SharedConfig, you cannot specify this parameter.
         /// </summary>
         public readonly Outputs.DomainRefererAccessRuleReferersType? ReferersType;
         /// <summary>
-        /// 表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+        /// Indicates the type of Referer list. This parameter is required when Switch is true. This parameter has the following values: allow: indicates Allowlist. deny: indicates Denylist.
         /// </summary>
         public readonly string? RuleType;
         /// <summary>
-        /// 表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+        /// Represents a global configuration. If you specify this parameter, you cannot specify Referers or ReferersType.
         /// </summary>
         public readonly Outputs.DomainRefererAccessRuleSharedConfig? SharedConfig;
         /// <summary>
-        /// 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        /// Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         /// </summary>
         public readonly bool? Switch;
 

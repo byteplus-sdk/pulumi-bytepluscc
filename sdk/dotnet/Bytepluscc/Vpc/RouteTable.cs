@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// 路由表由一系列路由条目组成，为私有网络的流量指定下一跳的云资源，每个子网必须且仅支持关联一个路由表，使子网内的资源通过路由表转发流量。
+    /// A route table consists of a series of route entries that specify the next hop cloud resource for private network traffic. Each subnet must be associated with only one route table, allowing resources within the subnet to forward traffic via the route table
     /// 
     /// ## Import
     /// 
@@ -23,19 +23,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class RouteTable : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 路由表所属账号的ID。
+        /// Account ID owning the route table
         /// </summary>
         [Output("accountId")]
         public Output<string> AccountId { get; private set; } = null!;
 
         /// <summary>
-        /// 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+        /// Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
         /// </summary>
         [Output("associateType")]
         public Output<string> AssociateType { get; private set; } = null!;
 
         /// <summary>
-        /// 路由表创建时间。
+        /// Route Table Creation Time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
@@ -44,49 +44,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.RouteTableCustomRouteEntry>> CustomRouteEntries { get; private set; } = null!;
 
         /// <summary>
-        /// 路由表描述信息。
+        /// Route Table Description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 关联路由表的IPv4网关ID。
+        /// IPv4 Gateway ID associated with the route table
         /// </summary>
         [Output("ipv4GatewayId")]
         public Output<string> Ipv4GatewayId { get; private set; } = null!;
 
         /// <summary>
-        /// 关联路由表的IPv6网关ID。
+        /// IPv6 Gateway ID associated with the route table
         /// </summary>
         [Output("ipv6GatewayId")]
         public Output<string> Ipv6GatewayId { get; private set; } = null!;
 
         /// <summary>
-        /// 路由表所属项目的名称。
+        /// Name of the project owning the route table
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 路由表ID。
+        /// Route Table ID
         /// </summary>
         [Output("routeTableId")]
         public Output<string> RouteTableId { get; private set; } = null!;
 
         /// <summary>
-        /// 路由表名称。
+        /// Route Table Name
         /// </summary>
         [Output("routeTableName")]
         public Output<string> RouteTableName { get; private set; } = null!;
 
         /// <summary>
-        /// 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+        /// Route table type. 1. Custom: Custom route table 2. System: System route table
         /// </summary>
         [Output("routeTableType")]
         public Output<string> RouteTableType { get; private set; } = null!;
 
         /// <summary>
-        /// 关联的子网的ID列表。
+        /// List of associated subnet IDs
         /// </summary>
         [Output("subnetIds")]
         public Output<ImmutableArray<string>> SubnetIds { get; private set; } = null!;
@@ -98,19 +98,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.RouteTableTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 路由表更新时间。
+        /// Route Table Last Updated Time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 路由表所属VPC的ID。
+        /// ID of the VPC owning the route table
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// VPC的名称。
+        /// VPC Name
         /// </summary>
         [Output("vpcName")]
         public Output<string> VpcName { get; private set; } = null!;
@@ -163,7 +163,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class RouteTableArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+        /// Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
         /// </summary>
         [Input("associateType")]
         public Input<string>? AssociateType { get; set; }
@@ -177,31 +177,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 路由表描述信息。
+        /// Route Table Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 关联路由表的IPv4网关ID。
+        /// IPv4 Gateway ID associated with the route table
         /// </summary>
         [Input("ipv4GatewayId")]
         public Input<string>? Ipv4GatewayId { get; set; }
 
         /// <summary>
-        /// 关联路由表的IPv6网关ID。
+        /// IPv6 Gateway ID associated with the route table
         /// </summary>
         [Input("ipv6GatewayId")]
         public Input<string>? Ipv6GatewayId { get; set; }
 
         /// <summary>
-        /// 路由表所属项目的名称。
+        /// Name of the project owning the route table
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 路由表名称。
+        /// Route Table Name
         /// </summary>
         [Input("routeTableName")]
         public Input<string>? RouteTableName { get; set; }
@@ -210,7 +210,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         private InputList<string>? _subnetIds;
 
         /// <summary>
-        /// 关联的子网的ID列表。
+        /// List of associated subnet IDs
         /// </summary>
         public InputList<string> SubnetIds
         {
@@ -227,7 +227,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 路由表所属VPC的ID。
+        /// ID of the VPC owning the route table
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
@@ -241,19 +241,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class RouteTableState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 路由表所属账号的ID。
+        /// Account ID owning the route table
         /// </summary>
         [Input("accountId")]
         public Input<string>? AccountId { get; set; }
 
         /// <summary>
-        /// 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+        /// Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
         /// </summary>
         [Input("associateType")]
         public Input<string>? AssociateType { get; set; }
 
         /// <summary>
-        /// 路由表创建时间。
+        /// Route Table Creation Time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
@@ -267,43 +267,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 路由表描述信息。
+        /// Route Table Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 关联路由表的IPv4网关ID。
+        /// IPv4 Gateway ID associated with the route table
         /// </summary>
         [Input("ipv4GatewayId")]
         public Input<string>? Ipv4GatewayId { get; set; }
 
         /// <summary>
-        /// 关联路由表的IPv6网关ID。
+        /// IPv6 Gateway ID associated with the route table
         /// </summary>
         [Input("ipv6GatewayId")]
         public Input<string>? Ipv6GatewayId { get; set; }
 
         /// <summary>
-        /// 路由表所属项目的名称。
+        /// Name of the project owning the route table
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 路由表ID。
+        /// Route Table ID
         /// </summary>
         [Input("routeTableId")]
         public Input<string>? RouteTableId { get; set; }
 
         /// <summary>
-        /// 路由表名称。
+        /// Route Table Name
         /// </summary>
         [Input("routeTableName")]
         public Input<string>? RouteTableName { get; set; }
 
         /// <summary>
-        /// 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+        /// Route table type. 1. Custom: Custom route table 2. System: System route table
         /// </summary>
         [Input("routeTableType")]
         public Input<string>? RouteTableType { get; set; }
@@ -312,7 +312,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         private InputList<string>? _subnetIds;
 
         /// <summary>
-        /// 关联的子网的ID列表。
+        /// List of associated subnet IDs
         /// </summary>
         public InputList<string> SubnetIds
         {
@@ -337,19 +337,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 路由表更新时间。
+        /// Route Table Last Updated Time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 路由表所属VPC的ID。
+        /// ID of the VPC owning the route table
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// VPC的名称。
+        /// VPC Name
         /// </summary>
         [Input("vpcName")]
         public Input<string>? VpcName { get; set; }

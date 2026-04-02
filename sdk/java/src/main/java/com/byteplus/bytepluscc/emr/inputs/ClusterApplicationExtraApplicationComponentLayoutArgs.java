@@ -17,14 +17,14 @@ public final class ClusterApplicationExtraApplicationComponentLayoutArgs extends
     public static final ClusterApplicationExtraApplicationComponentLayoutArgs Empty = new ClusterApplicationExtraApplicationComponentLayoutArgs();
 
     /**
-     * 组件名称。
+     * Component name.
      * 
      */
     @Import(name="componentName")
     private @Nullable Output<String> componentName;
 
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     public Optional<Output<String>> componentName() {
@@ -32,14 +32,14 @@ public final class ClusterApplicationExtraApplicationComponentLayoutArgs extends
     }
 
     /**
-     * 组件的布局范围。
+     * Component layout scope.
      * 
      */
     @Import(name="effectiveScope")
     private @Nullable Output<ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs> effectiveScope;
 
     /**
-     * @return 组件的布局范围。
+     * @return Component layout scope.
      * 
      */
     public Optional<Output<ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs>> effectiveScope() {
@@ -72,7 +72,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutArgs extends
         }
 
         /**
-         * @param componentName 组件名称。
+         * @param componentName Component name.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutArgs extends
         }
 
         /**
-         * @param componentName 组件名称。
+         * @param componentName Component name.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutArgs extends
         }
 
         /**
-         * @param effectiveScope 组件的布局范围。
+         * @param effectiveScope Component layout scope.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutArgs extends
         }
 
         /**
-         * @param effectiveScope 组件的布局范围。
+         * @param effectiveScope Component layout scope.
          * 
          * @return builder
          * 

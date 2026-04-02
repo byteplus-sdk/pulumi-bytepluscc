@@ -15,37 +15,37 @@ import java.util.Objects;
 @CustomType
 public final class GetFlowLogResult {
     /**
-     * @return 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+     * @return Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
      * 
      */
     private Integer aggregationInterval;
     /**
-     * @return 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * @return Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
      * 
      */
     private String businessStatus;
     /**
-     * @return 流日志的创建时间。
+     * @return Creation time of the flow log.
      * 
      */
     private String createdAt;
     /**
-     * @return 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     private String description;
     /**
-     * @return 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+     * @return Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
      * 
      */
     private Boolean enableIndex;
     /**
-     * @return 流日志的ID。
+     * @return Stream log ID.
      * 
      */
     private String flowLogId;
     /**
-     * @return 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+     * @return Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
      * 
      */
     private String flowLogName;
@@ -55,116 +55,116 @@ public final class GetFlowLogResult {
      */
     private String id;
     /**
-     * @return 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * @return Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
      * 
      */
     private String lockReason;
     /**
-     * @return 流日志项目的ID。
+     * @return Flow log project ID.
      * 
      */
     private String logProjectId;
     /**
-     * @return 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * @return Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      * 
      */
     private String logProjectName;
     /**
-     * @return 流日志主题的ID。
+     * @return Flow log topic ID.
      * 
      */
     private String logTopicId;
     /**
-     * @return 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * @return Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      * 
      */
     private String logTopicName;
     /**
-     * @return 流流日志所属项目的名称。
+     * @return Name of the project to which the flow log belongs.
      * 
      */
     private String projectName;
     /**
-     * @return 要捕获流量的资源ID。
+     * @return Resource ID for traffic capture.
      * 
      */
     private String resourceId;
     /**
-     * @return 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+     * @return Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
      * 
      */
     private String resourceType;
     /**
-     * @return 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+     * @return Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
      * 
      */
     private String status;
     /**
-     * @return 流日志的标签信息。
+     * @return Tag information for the flow log.
      * 
      */
     private List<GetFlowLogTag> tags;
     /**
-     * @return 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+     * @return Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
      * 
      */
     private String trafficType;
     /**
-     * @return 更新流日志的时间。
+     * @return Time when the stream log was updated.
      * 
      */
     private String updatedAt;
     /**
-     * @return 流日志的VPC的ID。
+     * @return VPC ID for the flow log.
      * 
      */
     private String vpcId;
 
     private GetFlowLogResult() {}
     /**
-     * @return 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+     * @return Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
      * 
      */
     public Integer aggregationInterval() {
         return this.aggregationInterval;
     }
     /**
-     * @return 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * @return Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
      * 
      */
     public String businessStatus() {
         return this.businessStatus;
     }
     /**
-     * @return 流日志的创建时间。
+     * @return Creation time of the flow log.
      * 
      */
     public String createdAt() {
         return this.createdAt;
     }
     /**
-     * @return 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+     * @return Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
      * 
      */
     public Boolean enableIndex() {
         return this.enableIndex;
     }
     /**
-     * @return 流日志的ID。
+     * @return Stream log ID.
      * 
      */
     public String flowLogId() {
         return this.flowLogId;
     }
     /**
-     * @return 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+     * @return Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
      * 
      */
     public String flowLogName() {
@@ -178,91 +178,91 @@ public final class GetFlowLogResult {
         return this.id;
     }
     /**
-     * @return 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * @return Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
      * 
      */
     public String lockReason() {
         return this.lockReason;
     }
     /**
-     * @return 流日志项目的ID。
+     * @return Flow log project ID.
      * 
      */
     public String logProjectId() {
         return this.logProjectId;
     }
     /**
-     * @return 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * @return Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      * 
      */
     public String logProjectName() {
         return this.logProjectName;
     }
     /**
-     * @return 流日志主题的ID。
+     * @return Flow log topic ID.
      * 
      */
     public String logTopicId() {
         return this.logTopicId;
     }
     /**
-     * @return 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * @return Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      * 
      */
     public String logTopicName() {
         return this.logTopicName;
     }
     /**
-     * @return 流流日志所属项目的名称。
+     * @return Name of the project to which the flow log belongs.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 要捕获流量的资源ID。
+     * @return Resource ID for traffic capture.
      * 
      */
     public String resourceId() {
         return this.resourceId;
     }
     /**
-     * @return 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+     * @return Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
      * 
      */
     public String resourceType() {
         return this.resourceType;
     }
     /**
-     * @return 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+     * @return Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 流日志的标签信息。
+     * @return Tag information for the flow log.
      * 
      */
     public List<GetFlowLogTag> tags() {
         return this.tags;
     }
     /**
-     * @return 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+     * @return Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
      * 
      */
     public String trafficType() {
         return this.trafficType;
     }
     /**
-     * @return 更新流日志的时间。
+     * @return Time when the stream log was updated.
      * 
      */
     public String updatedAt() {
         return this.updatedAt;
     }
     /**
-     * @return 流日志的VPC的ID。
+     * @return VPC ID for the flow log.
      * 
      */
     public String vpcId() {

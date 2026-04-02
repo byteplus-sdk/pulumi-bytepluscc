@@ -24,14 +24,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     public static final InstanceState Empty = new InstanceState();
 
     /**
-     * 需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{&#34;Key&#34;:&#34;Value&#34;}
+     * Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {&#34;Key&#34;:&#34;Value&#34;}
      * 
      */
     @Import(name="advancedFeatures")
     private @Nullable Output<String> advancedFeatures;
 
     /**
-     * @return 需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{&#34;Key&#34;:&#34;Value&#34;}
+     * @return Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {&#34;Key&#34;:&#34;Value&#34;}
      * 
      */
     public Optional<Output<String>> advancedFeatures() {
@@ -39,14 +39,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 允许访问的白名单ID列表。
+     * Allowlist ID list permitted for access.
      * 
      */
     @Import(name="allowListIds")
     private @Nullable Output<List<String>> allowListIds;
 
     /**
-     * @return 允许访问的白名单ID列表。
+     * @return Allowlist ID list permitted for access.
      * 
      */
     public Optional<Output<List<String>>> allowListIds() {
@@ -54,14 +54,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例已用备份空间。单位：GiB。
+     * Used backup space for the instance, in GiB.
      * 
      */
     @Import(name="backupUse")
     private @Nullable Output<Double> backupUse;
 
     /**
-     * @return 实例已用备份空间。单位：GiB。
+     * @return Used backup space for the instance, in GiB.
      * 
      */
     public Optional<Output<Double>> backupUse() {
@@ -69,14 +69,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 付费方式。
+     * Payment method.
      * 
      */
     @Import(name="chargeInfo")
     private @Nullable Output<InstanceChargeInfoArgs> chargeInfo;
 
     /**
-     * @return 付费方式。
+     * @return Payment method.
      * 
      */
     public Optional<Output<InstanceChargeInfoArgs>> chargeInfo() {
@@ -91,14 +91,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建时间。
+     * Creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -106,14 +106,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+     * Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
      * 
      */
     @Import(name="dbEngineVersion")
     private @Nullable Output<String> dbEngineVersion;
 
     /**
-     * @return 兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+     * @return Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
      * 
      */
     public Optional<Output<String>> dbEngineVersion() {
@@ -121,14 +121,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 内核版本号。
+     * Kernel version number.
      * 
      */
     @Import(name="innerVersion")
     private @Nullable Output<String> innerVersion;
 
     /**
-     * @return 内核版本号。
+     * @return Kernel version number.
      * 
      */
     public Optional<Output<String>> innerVersion() {
@@ -136,14 +136,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例分类。取值：Primary：主实例。ReadOnly：只读实例。
+     * Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
      * 
      */
     @Import(name="instanceCategory")
     private @Nullable Output<String> instanceCategory;
 
     /**
-     * @return 实例分类。取值：Primary：主实例。ReadOnly：只读实例。
+     * @return Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
      * 
      */
     public Optional<Output<String>> instanceCategory() {
@@ -151,14 +151,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例ID。
+     * Instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例ID。
+     * @return Instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -166,14 +166,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+     * Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+     * @return Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -181,14 +181,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例状态，取值：Running：运行中。Creating：创建中。CreateFailed：创建失败。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主节点切换中。Error：错误。
+     * Instance status. Values: Running: running. Creating: creating. CreateFailed: creation failed. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: primary node switching. Error: error.
      * 
      */
     @Import(name="instanceStatus")
     private @Nullable Output<String> instanceStatus;
 
     /**
-     * @return 实例状态，取值：Running：运行中。Creating：创建中。CreateFailed：创建失败。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主节点切换中。Error：错误。
+     * @return Instance status. Values: Running: running. Creating: creating. CreateFailed: creation failed. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: primary node switching. Error: error.
      * 
      */
     public Optional<Output<String>> instanceStatus() {
@@ -196,14 +196,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+     * Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
-     * @return 实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+     * @return Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
      * 
      */
     public Optional<Output<String>> instanceType() {
@@ -211,14 +211,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+     * Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
      * 
      */
     @Import(name="maintenanceTime")
     private @Nullable Output<String> maintenanceTime;
 
     /**
-     * @return 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+     * @return Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
      * 
      */
     public Optional<Output<String>> maintenanceTime() {
@@ -226,14 +226,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 主节点ID。手动切换主备节点时，该参数为必填项。
+     * Primary node ID. This parameter is required when manually switching master and standby nodes.
      * 
      */
     @Import(name="masterNodeId")
     private @Nullable Output<String> masterNodeId;
 
     /**
-     * @return 主节点ID。手动切换主备节点时，该参数为必填项。
+     * @return Primary node ID. This parameter is required when manually switching master and standby nodes.
      * 
      */
     public Optional<Output<String>> masterNodeId() {
@@ -241,14 +241,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 内存大小，单位为 GiB。
+     * Memory size, in GiB.
      * 
      */
     @Import(name="memory")
     private @Nullable Output<Integer> memory;
 
     /**
-     * @return 内存大小，单位为 GiB。
+     * @return Memory size, in GiB.
      * 
      */
     public Optional<Output<Integer>> memory() {
@@ -263,14 +263,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例规格代码。
+     * Instance specification code.
      * 
      */
     @Import(name="nodeSpec")
     private @Nullable Output<String> nodeSpec;
 
     /**
-     * @return 实例规格代码。
+     * @return Instance specification code.
      * 
      */
     public Optional<Output<String>> nodeSpec() {
@@ -278,14 +278,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 端口
+     * Port.
      * 
      */
     @Import(name="port")
     private @Nullable Output<String> port;
 
     /**
-     * @return 端口
+     * @return Port.
      * 
      */
     public Optional<Output<String>> port() {
@@ -293,14 +293,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 主实例ID。如果为空说明它是主实例。
+     * Primary instance ID. If this field is empty, this instance is the primary instance.
      * 
      */
     @Import(name="primaryInstanceId")
     private @Nullable Output<String> primaryInstanceId;
 
     /**
-     * @return 主实例ID。如果为空说明它是主实例。
+     * @return Primary instance ID. If this field is empty, this instance is the primary instance.
      * 
      */
     public Optional<Output<String>> primaryInstanceId() {
@@ -308,14 +308,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 所属项目。
+     * Project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 所属项目。
+     * @return Project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -323,14 +323,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 只读实例数量。
+     * Number of read-only instances.
      * 
      */
     @Import(name="readOnlyNumber")
     private @Nullable Output<Integer> readOnlyNumber;
 
     /**
-     * @return 只读实例数量。
+     * @return Number of read-only instances.
      * 
      */
     public Optional<Output<Integer>> readOnlyNumber() {
@@ -338,14 +338,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+     * Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
      * 
      */
     @Import(name="serverCollation")
     private @Nullable Output<String> serverCollation;
 
     /**
-     * @return 实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+     * @return Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
      * 
      */
     public Optional<Output<String>> serverCollation() {
@@ -353,14 +353,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示是否开启慢日志，取值如下：true：表示开启慢日志。false：表示不开启慢日志。
+     * Indicates whether slow logs are enabled. Available values: true: slow logs enabled. false: slow logs disabled.
      * 
      */
     @Import(name="slowQueryEnable")
     private @Nullable Output<Boolean> slowQueryEnable;
 
     /**
-     * @return 表示是否开启慢日志，取值如下：true：表示开启慢日志。false：表示不开启慢日志。
+     * @return Indicates whether slow logs are enabled. Available values: true: slow logs enabled. false: slow logs disabled.
      * 
      */
     public Optional<Output<Boolean>> slowQueryEnable() {
@@ -368,14 +368,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 慢日志的阈值，取值范围为 [1~10]，单位：秒（s）。
+     * Slow log threshold. Range: [1~10], unit: seconds (s).
      * 
      */
     @Import(name="slowQueryTime")
     private @Nullable Output<String> slowQueryTime;
 
     /**
-     * @return 慢日志的阈值，取值范围为 [1~10]，单位：秒（s）。
+     * @return Slow log threshold. Range: [1~10], unit: seconds (s).
      * 
      */
     public Optional<Output<String>> slowQueryTime() {
@@ -383,14 +383,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+     * Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
      * 
      */
     @Import(name="storageSpace")
     private @Nullable Output<Integer> storageSpace;
 
     /**
-     * @return 存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+     * @return Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
      * 
      */
     public Optional<Output<Integer>> storageSpace() {
@@ -398,14 +398,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例存储类型。
+     * Instance storage type.
      * 
      */
     @Import(name="storageType")
     private @Nullable Output<String> storageType;
 
     /**
-     * @return 实例存储类型。
+     * @return Instance storage type.
      * 
      */
     public Optional<Output<String>> storageType() {
@@ -413,14 +413,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例已用储空间。单位：GiB。
+     * Used storage space for the instance. Unit: GiB.
      * 
      */
     @Import(name="storageUse")
     private @Nullable Output<Double> storageUse;
 
     /**
-     * @return 实例已用储空间。单位：GiB。
+     * @return Used storage space for the instance. Unit: GiB.
      * 
      */
     public Optional<Output<Double>> storageUse() {
@@ -428,14 +428,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+     * Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+     * @return Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -443,14 +443,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=。
+     * Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=.
      * 
      */
     @Import(name="superAccountPassword")
     private @Nullable Output<String> superAccountPassword;
 
     /**
-     * @return 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=。
+     * @return Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=.
      * 
      */
     public Optional<Output<String>> superAccountPassword() {
@@ -465,14 +465,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 时区。
+     * Time zone.
      * 
      */
     @Import(name="timeZone")
     private @Nullable Output<String> timeZone;
 
     /**
-     * @return 时区。
+     * @return Time zone.
      * 
      */
     public Optional<Output<String>> timeZone() {
@@ -480,14 +480,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新时间。
+     * Update time.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -495,14 +495,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CPU 大小。例如：1 表示 1核。
+     * CPU size. For example: 1 means 1 core.
      * 
      */
     @Import(name="vcpu")
     private @Nullable Output<Integer> vcpu;
 
     /**
-     * @return CPU 大小。例如：1 表示 1核。
+     * @return CPU size. For example: 1 means 1 core.
      * 
      */
     public Optional<Output<Integer>> vcpu() {
@@ -525,14 +525,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+     * Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node&#39;s zone by default, the second is the standby node&#39;s zone.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+     * @return Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node&#39;s zone by default, the second is the standby node&#39;s zone.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -599,7 +599,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param advancedFeatures 需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{&#34;Key&#34;:&#34;Value&#34;}
+         * @param advancedFeatures Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {&#34;Key&#34;:&#34;Value&#34;}
          * 
          * @return builder
          * 
@@ -610,7 +610,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param advancedFeatures 需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{&#34;Key&#34;:&#34;Value&#34;}
+         * @param advancedFeatures Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {&#34;Key&#34;:&#34;Value&#34;}
          * 
          * @return builder
          * 
@@ -620,7 +620,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIds 允许访问的白名单ID列表。
+         * @param allowListIds Allowlist ID list permitted for access.
          * 
          * @return builder
          * 
@@ -631,7 +631,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIds 允许访问的白名单ID列表。
+         * @param allowListIds Allowlist ID list permitted for access.
          * 
          * @return builder
          * 
@@ -641,7 +641,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIds 允许访问的白名单ID列表。
+         * @param allowListIds Allowlist ID list permitted for access.
          * 
          * @return builder
          * 
@@ -651,7 +651,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupUse 实例已用备份空间。单位：GiB。
+         * @param backupUse Used backup space for the instance, in GiB.
          * 
          * @return builder
          * 
@@ -662,7 +662,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupUse 实例已用备份空间。单位：GiB。
+         * @param backupUse Used backup space for the instance, in GiB.
          * 
          * @return builder
          * 
@@ -672,7 +672,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeInfo 付费方式。
+         * @param chargeInfo Payment method.
          * 
          * @return builder
          * 
@@ -683,7 +683,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeInfo 付费方式。
+         * @param chargeInfo Payment method.
          * 
          * @return builder
          * 
@@ -706,7 +706,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time.
          * 
          * @return builder
          * 
@@ -717,7 +717,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time.
          * 
          * @return builder
          * 
@@ -727,7 +727,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersion 兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+         * @param dbEngineVersion Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
          * 
          * @return builder
          * 
@@ -738,7 +738,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersion 兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+         * @param dbEngineVersion Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
          * 
          * @return builder
          * 
@@ -748,7 +748,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param innerVersion 内核版本号。
+         * @param innerVersion Kernel version number.
          * 
          * @return builder
          * 
@@ -759,7 +759,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param innerVersion 内核版本号。
+         * @param innerVersion Kernel version number.
          * 
          * @return builder
          * 
@@ -769,7 +769,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceCategory 实例分类。取值：Primary：主实例。ReadOnly：只读实例。
+         * @param instanceCategory Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
          * 
          * @return builder
          * 
@@ -780,7 +780,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceCategory 实例分类。取值：Primary：主实例。ReadOnly：只读实例。
+         * @param instanceCategory Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
          * 
          * @return builder
          * 
@@ -790,7 +790,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -801,7 +801,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -811,7 +811,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName 实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+         * @param instanceName Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -822,7 +822,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName 实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+         * @param instanceName Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -832,7 +832,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceStatus 实例状态，取值：Running：运行中。Creating：创建中。CreateFailed：创建失败。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主节点切换中。Error：错误。
+         * @param instanceStatus Instance status. Values: Running: running. Creating: creating. CreateFailed: creation failed. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: primary node switching. Error: error.
          * 
          * @return builder
          * 
@@ -843,7 +843,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceStatus 实例状态，取值：Running：运行中。Creating：创建中。CreateFailed：创建失败。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主节点切换中。Error：错误。
+         * @param instanceStatus Instance status. Values: Running: running. Creating: creating. CreateFailed: creation failed. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: primary node switching. Error: error.
          * 
          * @return builder
          * 
@@ -853,7 +853,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+         * @param instanceType Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
          * 
          * @return builder
          * 
@@ -864,7 +864,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+         * @param instanceType Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
          * 
          * @return builder
          * 
@@ -874,7 +874,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceTime 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+         * @param maintenanceTime Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
          * 
          * @return builder
          * 
@@ -885,7 +885,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceTime 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+         * @param maintenanceTime Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
          * 
          * @return builder
          * 
@@ -895,7 +895,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterNodeId 主节点ID。手动切换主备节点时，该参数为必填项。
+         * @param masterNodeId Primary node ID. This parameter is required when manually switching master and standby nodes.
          * 
          * @return builder
          * 
@@ -906,7 +906,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterNodeId 主节点ID。手动切换主备节点时，该参数为必填项。
+         * @param masterNodeId Primary node ID. This parameter is required when manually switching master and standby nodes.
          * 
          * @return builder
          * 
@@ -916,7 +916,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param memory 内存大小，单位为 GiB。
+         * @param memory Memory size, in GiB.
          * 
          * @return builder
          * 
@@ -927,7 +927,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param memory 内存大小，单位为 GiB。
+         * @param memory Memory size, in GiB.
          * 
          * @return builder
          * 
@@ -950,7 +950,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpec 实例规格代码。
+         * @param nodeSpec Instance specification code.
          * 
          * @return builder
          * 
@@ -961,7 +961,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpec 实例规格代码。
+         * @param nodeSpec Instance specification code.
          * 
          * @return builder
          * 
@@ -971,7 +971,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 端口
+         * @param port Port.
          * 
          * @return builder
          * 
@@ -982,7 +982,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 端口
+         * @param port Port.
          * 
          * @return builder
          * 
@@ -992,7 +992,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param primaryInstanceId 主实例ID。如果为空说明它是主实例。
+         * @param primaryInstanceId Primary instance ID. If this field is empty, this instance is the primary instance.
          * 
          * @return builder
          * 
@@ -1003,7 +1003,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param primaryInstanceId 主实例ID。如果为空说明它是主实例。
+         * @param primaryInstanceId Primary instance ID. If this field is empty, this instance is the primary instance.
          * 
          * @return builder
          * 
@@ -1013,7 +1013,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 所属项目。
+         * @param projectName Project.
          * 
          * @return builder
          * 
@@ -1024,7 +1024,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 所属项目。
+         * @param projectName Project.
          * 
          * @return builder
          * 
@@ -1034,7 +1034,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readOnlyNumber 只读实例数量。
+         * @param readOnlyNumber Number of read-only instances.
          * 
          * @return builder
          * 
@@ -1045,7 +1045,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readOnlyNumber 只读实例数量。
+         * @param readOnlyNumber Number of read-only instances.
          * 
          * @return builder
          * 
@@ -1055,7 +1055,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverCollation 实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+         * @param serverCollation Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
          * 
          * @return builder
          * 
@@ -1066,7 +1066,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverCollation 实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+         * @param serverCollation Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
          * 
          * @return builder
          * 
@@ -1076,7 +1076,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param slowQueryEnable 表示是否开启慢日志，取值如下：true：表示开启慢日志。false：表示不开启慢日志。
+         * @param slowQueryEnable Indicates whether slow logs are enabled. Available values: true: slow logs enabled. false: slow logs disabled.
          * 
          * @return builder
          * 
@@ -1087,7 +1087,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param slowQueryEnable 表示是否开启慢日志，取值如下：true：表示开启慢日志。false：表示不开启慢日志。
+         * @param slowQueryEnable Indicates whether slow logs are enabled. Available values: true: slow logs enabled. false: slow logs disabled.
          * 
          * @return builder
          * 
@@ -1097,7 +1097,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param slowQueryTime 慢日志的阈值，取值范围为 [1~10]，单位：秒（s）。
+         * @param slowQueryTime Slow log threshold. Range: [1~10], unit: seconds (s).
          * 
          * @return builder
          * 
@@ -1108,7 +1108,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param slowQueryTime 慢日志的阈值，取值范围为 [1~10]，单位：秒（s）。
+         * @param slowQueryTime Slow log threshold. Range: [1~10], unit: seconds (s).
          * 
          * @return builder
          * 
@@ -1118,7 +1118,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageSpace 存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+         * @param storageSpace Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
          * 
          * @return builder
          * 
@@ -1129,7 +1129,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageSpace 存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+         * @param storageSpace Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
          * 
          * @return builder
          * 
@@ -1139,7 +1139,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageType 实例存储类型。
+         * @param storageType Instance storage type.
          * 
          * @return builder
          * 
@@ -1150,7 +1150,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageType 实例存储类型。
+         * @param storageType Instance storage type.
          * 
          * @return builder
          * 
@@ -1160,7 +1160,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageUse 实例已用储空间。单位：GiB。
+         * @param storageUse Used storage space for the instance. Unit: GiB.
          * 
          * @return builder
          * 
@@ -1171,7 +1171,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageUse 实例已用储空间。单位：GiB。
+         * @param storageUse Used storage space for the instance. Unit: GiB.
          * 
          * @return builder
          * 
@@ -1181,7 +1181,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+         * @param subnetId Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
          * 
          * @return builder
          * 
@@ -1192,7 +1192,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+         * @param subnetId Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
          * 
          * @return builder
          * 
@@ -1202,7 +1202,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountPassword 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=。
+         * @param superAccountPassword Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=.
          * 
          * @return builder
          * 
@@ -1213,7 +1213,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountPassword 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=。
+         * @param superAccountPassword Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=.
          * 
          * @return builder
          * 
@@ -1236,7 +1236,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeZone 时区。
+         * @param timeZone Time zone.
          * 
          * @return builder
          * 
@@ -1247,7 +1247,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeZone 时区。
+         * @param timeZone Time zone.
          * 
          * @return builder
          * 
@@ -1257,7 +1257,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time.
          * 
          * @return builder
          * 
@@ -1268,7 +1268,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time.
          * 
          * @return builder
          * 
@@ -1278,7 +1278,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vcpu CPU 大小。例如：1 表示 1核。
+         * @param vcpu CPU size. For example: 1 means 1 core.
          * 
          * @return builder
          * 
@@ -1289,7 +1289,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vcpu CPU 大小。例如：1 表示 1核。
+         * @param vcpu CPU size. For example: 1 means 1 core.
          * 
          * @return builder
          * 
@@ -1320,7 +1320,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+         * @param zoneId Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node&#39;s zone by default, the second is the standby node&#39;s zone.
          * 
          * @return builder
          * 
@@ -1331,7 +1331,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+         * @param zoneId Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node&#39;s zone by default, the second is the standby node&#39;s zone.
          * 
          * @return builder
          * 

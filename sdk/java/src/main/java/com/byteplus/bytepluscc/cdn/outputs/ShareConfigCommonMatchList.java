@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ShareConfigCommonMatchList {
     /**
-     * @return 表示该通用列表的内容。
+     * @return Specifies the contents of the common list.
      * 
      */
     private @Nullable ShareConfigCommonMatchListCommonType commonType;
 
     private ShareConfigCommonMatchList() {}
     /**
-     * @return 表示该通用列表的内容。
+     * @return Specifies the contents of the common list.
      * 
      */
     public Optional<ShareConfigCommonMatchListCommonType> commonType() {

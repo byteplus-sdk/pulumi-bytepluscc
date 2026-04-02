@@ -17,47 +17,47 @@ import java.util.Objects;
 @CustomType
 public final class GetNlbResult {
     /**
-     * @return NLB实例的访问日志信息。
+     * @return Access log information of the NLB instance.
      * 
      */
     private GetNlbAccessLog accessLog;
     /**
-     * @return NLB实例所属的账号ID。
+     * @return Account ID to which the NLB instance belongs.
      * 
      */
     private String accountId;
     /**
-     * @return NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
+     * @return Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
      * 
      */
     private String billingStatus;
     /**
-     * @return NLB实例的计费类型。3：按使用量计费
+     * @return Billing type of the NLB instance. 3: pay-as-you-go
      * 
      */
     private Integer billingType;
     /**
-     * @return NLB实例的创建时间。
+     * @return Creation time of the NLB instance.
      * 
      */
     private String createdTime;
     /**
-     * @return NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+     * @return Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
      * 
      */
     private Boolean crossZoneEnabled;
     /**
-     * @return NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+     * @return Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
      * 
      */
     private String description;
     /**
-     * @return NLB实例的DNS地址。
+     * @return DNS address of the NLB instance.
      * 
      */
     private String dnsName;
     /**
-     * @return NLB实例欠费关停时间。
+     * @return Time when the NLB instance is suspended due to overdue payment.
      * 
      */
     private String expectedOverdueTime;
@@ -67,155 +67,155 @@ public final class GetNlbResult {
      */
     private String id;
     /**
-     * @return NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+     * @return IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
      * 
      */
     private String ipAddressVersion;
     /**
-     * @return IPv4类型的共享带宽包ID。
+     * @return Shared bandwidth package ID for IPv4 type.
      * 
      */
     private String ipv4BandwidthPackageId;
     /**
-     * @return NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+     * @return IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
      * 
      */
     private String ipv4NetworkType;
     /**
-     * @return IPv6类型的共享带宽包ID。
+     * @return Shared bandwidth package ID for IPv6 type.
      * 
      */
     private String ipv6BandwidthPackageId;
     /**
-     * @return NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+     * @return IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
      * 
      */
     private String ipv6NetworkType;
     /**
-     * @return NLB实例ID。
+     * @return NLB instance ID.
      * 
      */
     private String loadBalancerId;
     /**
-     * @return NLB实例的名称。
+     * @return Name of the NLB instance.
      * 
      */
     private String loadBalancerName;
     /**
-     * @return 系统为NLB实例自动关联的托管安全组ID。
+     * @return Managed security group ID automatically associated with the NLB instance by the system.
      * 
      */
     private String managedSecurityGroupId;
     /**
-     * @return NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+     * @return Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
      * 
      */
     private String modificationProtectionStatus;
     /**
-     * @return NLB实例被锁定的时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+     * @return Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
      * 
      */
     private String overdueTime;
     /**
-     * @return NLB实例所属项目的名称。
+     * @return Name of the project to which the NLB instance belongs.
      * 
      */
     private String projectName;
     /**
-     * @return NLB实例的预期回收时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+     * @return Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
      * 
      */
     private String reclaimedTime;
     /**
-     * @return NLB实例关联的安全组ID列表。
+     * @return List of security group IDs associated with the NLB instance.
      * 
      */
     private List<String> securityGroupIds;
     /**
-     * @return NLB 实例的状态。Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。仅调用API创建NLB实例时存在该状态。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+     * @return Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
      * 
      */
     private String status;
     /**
-     * @return NLB实例的标签信息。
+     * @return Tag information of the NLB instance.
      * 
      */
     private List<GetNlbTag> tags;
     /**
-     * @return NLB实例的更新时间。
+     * @return Update time of the NLB instance.
      * 
      */
     private String updatedTime;
     /**
-     * @return NLB实例所属的VPC ID。
+     * @return VPC ID to which the NLB instance belongs.
      * 
      */
     private String vpcId;
     /**
-     * @return NLB实例的可用区信息。
+     * @return Availability zone information for the NLB instance.
      * 
      */
     private List<GetNlbZoneMapping> zoneMappings;
 
     private GetNlbResult() {}
     /**
-     * @return NLB实例的访问日志信息。
+     * @return Access log information of the NLB instance.
      * 
      */
     public GetNlbAccessLog accessLog() {
         return this.accessLog;
     }
     /**
-     * @return NLB实例所属的账号ID。
+     * @return Account ID to which the NLB instance belongs.
      * 
      */
     public String accountId() {
         return this.accountId;
     }
     /**
-     * @return NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
+     * @return Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
      * 
      */
     public String billingStatus() {
         return this.billingStatus;
     }
     /**
-     * @return NLB实例的计费类型。3：按使用量计费
+     * @return Billing type of the NLB instance. 3: pay-as-you-go
      * 
      */
     public Integer billingType() {
         return this.billingType;
     }
     /**
-     * @return NLB实例的创建时间。
+     * @return Creation time of the NLB instance.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+     * @return Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
      * 
      */
     public Boolean crossZoneEnabled() {
         return this.crossZoneEnabled;
     }
     /**
-     * @return NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+     * @return Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return NLB实例的DNS地址。
+     * @return DNS address of the NLB instance.
      * 
      */
     public String dnsName() {
         return this.dnsName;
     }
     /**
-     * @return NLB实例欠费关停时间。
+     * @return Time when the NLB instance is suspended due to overdue payment.
      * 
      */
     public String expectedOverdueTime() {
@@ -229,126 +229,126 @@ public final class GetNlbResult {
         return this.id;
     }
     /**
-     * @return NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+     * @return IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
      * 
      */
     public String ipAddressVersion() {
         return this.ipAddressVersion;
     }
     /**
-     * @return IPv4类型的共享带宽包ID。
+     * @return Shared bandwidth package ID for IPv4 type.
      * 
      */
     public String ipv4BandwidthPackageId() {
         return this.ipv4BandwidthPackageId;
     }
     /**
-     * @return NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+     * @return IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
      * 
      */
     public String ipv4NetworkType() {
         return this.ipv4NetworkType;
     }
     /**
-     * @return IPv6类型的共享带宽包ID。
+     * @return Shared bandwidth package ID for IPv6 type.
      * 
      */
     public String ipv6BandwidthPackageId() {
         return this.ipv6BandwidthPackageId;
     }
     /**
-     * @return NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+     * @return IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
      * 
      */
     public String ipv6NetworkType() {
         return this.ipv6NetworkType;
     }
     /**
-     * @return NLB实例ID。
+     * @return NLB instance ID.
      * 
      */
     public String loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
-     * @return NLB实例的名称。
+     * @return Name of the NLB instance.
      * 
      */
     public String loadBalancerName() {
         return this.loadBalancerName;
     }
     /**
-     * @return 系统为NLB实例自动关联的托管安全组ID。
+     * @return Managed security group ID automatically associated with the NLB instance by the system.
      * 
      */
     public String managedSecurityGroupId() {
         return this.managedSecurityGroupId;
     }
     /**
-     * @return NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+     * @return Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
      * 
      */
     public String modificationProtectionStatus() {
         return this.modificationProtectionStatus;
     }
     /**
-     * @return NLB实例被锁定的时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+     * @return Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
      * 
      */
     public String overdueTime() {
         return this.overdueTime;
     }
     /**
-     * @return NLB实例所属项目的名称。
+     * @return Name of the project to which the NLB instance belongs.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return NLB实例的预期回收时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+     * @return Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
      * 
      */
     public String reclaimedTime() {
         return this.reclaimedTime;
     }
     /**
-     * @return NLB实例关联的安全组ID列表。
+     * @return List of security group IDs associated with the NLB instance.
      * 
      */
     public List<String> securityGroupIds() {
         return this.securityGroupIds;
     }
     /**
-     * @return NLB 实例的状态。Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。仅调用API创建NLB实例时存在该状态。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+     * @return Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return NLB实例的标签信息。
+     * @return Tag information of the NLB instance.
      * 
      */
     public List<GetNlbTag> tags() {
         return this.tags;
     }
     /**
-     * @return NLB实例的更新时间。
+     * @return Update time of the NLB instance.
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return NLB实例所属的VPC ID。
+     * @return VPC ID to which the NLB instance belongs.
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return NLB实例的可用区信息。
+     * @return Availability zone information for the NLB instance.
      * 
      */
     public List<GetNlbZoneMapping> zoneMappings() {

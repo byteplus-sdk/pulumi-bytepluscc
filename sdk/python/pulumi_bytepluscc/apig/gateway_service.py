@@ -33,14 +33,14 @@ class GatewayServiceArgs:
                  service_type: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a GatewayService resource.
-        :param pulumi.Input['GatewayServiceAuthSpecArgs'] auth_spec: 认证配置。
-        :param pulumi.Input[builtins.str] gateway_id: 网关ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
-        :param pulumi.Input[builtins.str] service_name: 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
-        :param pulumi.Input[builtins.str] comments: 备注，长度限制为0~253个字符。
-        :param pulumi.Input[builtins.str] domain_type: 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
-        :param pulumi.Input['GatewayServiceServiceNetworkSpecArgs'] service_network_spec: 服务默认域名网络配置。。
-        :param pulumi.Input[builtins.str] service_type: 服务类型，取值：AIProvider：AI模型代理。
+        :param pulumi.Input['GatewayServiceAuthSpecArgs'] auth_spec: Authentication configuration.
+        :param pulumi.Input[builtins.str] gateway_id: Gateway ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
+        :param pulumi.Input[builtins.str] service_name: Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
+        :param pulumi.Input[builtins.str] comments: Remarks. Length must be 0–253 characters.
+        :param pulumi.Input[builtins.str] domain_type: Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
+        :param pulumi.Input['GatewayServiceServiceNetworkSpecArgs'] service_network_spec: Default domain network configuration..
+        :param pulumi.Input[builtins.str] service_type: Service type. Options: AIProvider: AI model proxy.
         """
         pulumi.set(__self__, "auth_spec", auth_spec)
         pulumi.set(__self__, "gateway_id", gateway_id)
@@ -61,7 +61,7 @@ class GatewayServiceArgs:
     @pulumi.getter(name="authSpec")
     def auth_spec(self) -> pulumi.Input['GatewayServiceAuthSpecArgs']:
         """
-        认证配置。
+        Authentication configuration.
         """
         return pulumi.get(self, "auth_spec")
 
@@ -73,7 +73,7 @@ class GatewayServiceArgs:
     @pulumi.getter(name="gatewayId")
     def gateway_id(self) -> pulumi.Input[builtins.str]:
         """
-        网关ID。
+        Gateway ID.
         """
         return pulumi.get(self, "gateway_id")
 
@@ -85,7 +85,7 @@ class GatewayServiceArgs:
     @pulumi.getter
     def protocols(self) -> pulumi.Input[Sequence[pulumi.Input[builtins.str]]]:
         """
-        服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+        Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
         """
         return pulumi.get(self, "protocols")
 
@@ -97,7 +97,7 @@ class GatewayServiceArgs:
     @pulumi.getter(name="serviceName")
     def service_name(self) -> pulumi.Input[builtins.str]:
         """
-        服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+        Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
         """
         return pulumi.get(self, "service_name")
 
@@ -109,7 +109,7 @@ class GatewayServiceArgs:
     @pulumi.getter
     def comments(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备注，长度限制为0~253个字符。
+        Remarks. Length must be 0–253 characters.
         """
         return pulumi.get(self, "comments")
 
@@ -130,7 +130,7 @@ class GatewayServiceArgs:
     @pulumi.getter(name="domainType")
     def domain_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+        Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
         """
         return pulumi.get(self, "domain_type")
 
@@ -142,7 +142,7 @@ class GatewayServiceArgs:
     @pulumi.getter(name="serviceNetworkSpec")
     def service_network_spec(self) -> Optional[pulumi.Input['GatewayServiceServiceNetworkSpecArgs']]:
         """
-        服务默认域名网络配置。。
+        Default domain network configuration..
         """
         return pulumi.get(self, "service_network_spec")
 
@@ -154,7 +154,7 @@ class GatewayServiceArgs:
     @pulumi.getter(name="serviceType")
     def service_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        服务类型，取值：AIProvider：AI模型代理。
+        Service type. Options: AIProvider: AI model proxy.
         """
         return pulumi.get(self, "service_type")
 
@@ -184,20 +184,20 @@ class _GatewayServiceState:
                  status: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering GatewayService resources.
-        :param pulumi.Input['GatewayServiceAuthSpecArgs'] auth_spec: 认证配置。
-        :param pulumi.Input[builtins.str] comments: 备注，长度限制为0~253个字符。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input['GatewayServiceDomainSpecArgs'] domain_spec: 域名详情。
-        :param pulumi.Input[builtins.str] domain_type: 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
-        :param pulumi.Input[builtins.str] gateway_id: 网关ID。
-        :param pulumi.Input[builtins.str] gateway_name: 网关名称。
-        :param pulumi.Input[builtins.str] message: 服务创建失败、删除失败或异常时的错误信息。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
-        :param pulumi.Input[builtins.str] service_id: 服务ID。
-        :param pulumi.Input[builtins.str] service_name: 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
-        :param pulumi.Input['GatewayServiceServiceNetworkSpecArgs'] service_network_spec: 服务默认域名网络配置。。
-        :param pulumi.Input[builtins.str] service_type: 服务类型，取值：AIProvider：AI模型代理。
-        :param pulumi.Input[builtins.str] status: Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+        :param pulumi.Input['GatewayServiceAuthSpecArgs'] auth_spec: Authentication configuration.
+        :param pulumi.Input[builtins.str] comments: Remarks. Length must be 0–253 characters.
+        :param pulumi.Input[builtins.str] created_time: Creation time.
+        :param pulumi.Input['GatewayServiceDomainSpecArgs'] domain_spec: Domain details.
+        :param pulumi.Input[builtins.str] domain_type: Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
+        :param pulumi.Input[builtins.str] gateway_id: Gateway ID.
+        :param pulumi.Input[builtins.str] gateway_name: Gateway name.
+        :param pulumi.Input[builtins.str] message: Error message for service creation failure, deletion failure, or abnormal status.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
+        :param pulumi.Input[builtins.str] service_id: Service ID.
+        :param pulumi.Input[builtins.str] service_name: Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
+        :param pulumi.Input['GatewayServiceServiceNetworkSpecArgs'] service_network_spec: Default domain network configuration..
+        :param pulumi.Input[builtins.str] service_type: Service type. Options: AIProvider: AI model proxy.
+        :param pulumi.Input[builtins.str] status: Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
         """
         if auth_spec is not None:
             pulumi.set(__self__, "auth_spec", auth_spec)
@@ -236,7 +236,7 @@ class _GatewayServiceState:
     @pulumi.getter(name="authSpec")
     def auth_spec(self) -> Optional[pulumi.Input['GatewayServiceAuthSpecArgs']]:
         """
-        认证配置。
+        Authentication configuration.
         """
         return pulumi.get(self, "auth_spec")
 
@@ -248,7 +248,7 @@ class _GatewayServiceState:
     @pulumi.getter
     def comments(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备注，长度限制为0~253个字符。
+        Remarks. Length must be 0–253 characters.
         """
         return pulumi.get(self, "comments")
 
@@ -260,7 +260,7 @@ class _GatewayServiceState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -281,7 +281,7 @@ class _GatewayServiceState:
     @pulumi.getter(name="domainSpec")
     def domain_spec(self) -> Optional[pulumi.Input['GatewayServiceDomainSpecArgs']]:
         """
-        域名详情。
+        Domain details.
         """
         return pulumi.get(self, "domain_spec")
 
@@ -293,7 +293,7 @@ class _GatewayServiceState:
     @pulumi.getter(name="domainType")
     def domain_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+        Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
         """
         return pulumi.get(self, "domain_type")
 
@@ -314,7 +314,7 @@ class _GatewayServiceState:
     @pulumi.getter(name="gatewayId")
     def gateway_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关ID。
+        Gateway ID.
         """
         return pulumi.get(self, "gateway_id")
 
@@ -326,7 +326,7 @@ class _GatewayServiceState:
     @pulumi.getter(name="gatewayName")
     def gateway_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关名称。
+        Gateway name.
         """
         return pulumi.get(self, "gateway_name")
 
@@ -338,7 +338,7 @@ class _GatewayServiceState:
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        服务创建失败、删除失败或异常时的错误信息。
+        Error message for service creation failure, deletion failure, or abnormal status.
         """
         return pulumi.get(self, "message")
 
@@ -350,7 +350,7 @@ class _GatewayServiceState:
     @pulumi.getter
     def protocols(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+        Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
         """
         return pulumi.get(self, "protocols")
 
@@ -362,7 +362,7 @@ class _GatewayServiceState:
     @pulumi.getter(name="serviceId")
     def service_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        服务ID。
+        Service ID.
         """
         return pulumi.get(self, "service_id")
 
@@ -374,7 +374,7 @@ class _GatewayServiceState:
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+        Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
         """
         return pulumi.get(self, "service_name")
 
@@ -386,7 +386,7 @@ class _GatewayServiceState:
     @pulumi.getter(name="serviceNetworkSpec")
     def service_network_spec(self) -> Optional[pulumi.Input['GatewayServiceServiceNetworkSpecArgs']]:
         """
-        服务默认域名网络配置。。
+        Default domain network configuration..
         """
         return pulumi.get(self, "service_network_spec")
 
@@ -398,7 +398,7 @@ class _GatewayServiceState:
     @pulumi.getter(name="serviceType")
     def service_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        服务类型，取值：AIProvider：AI模型代理。
+        Service type. Options: AIProvider: AI model proxy.
         """
         return pulumi.get(self, "service_type")
 
@@ -410,7 +410,7 @@ class _GatewayServiceState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+        Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
         """
         return pulumi.get(self, "status")
 
@@ -436,7 +436,7 @@ class GatewayService(pulumi.CustomResource):
                  service_type: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        服务是一组路由对外暴露的入口，用于区分流量的来源和协议，实现业务、环境、逻辑租户隔离。服务可以绑定独立的访问域名，以域名维度访问业务。
+        A service is a set of routes exposed as entry points to distinguish traffic sources and protocols, enabling business, environment, and logical tenant isolation. Services can bind independent access domains, allowing access by domain.
 
         ## Import
 
@@ -446,14 +446,14 @@ class GatewayService(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['GatewayServiceAuthSpecArgs', 'GatewayServiceAuthSpecArgsDict']] auth_spec: 认证配置。
-        :param pulumi.Input[builtins.str] comments: 备注，长度限制为0~253个字符。
-        :param pulumi.Input[builtins.str] domain_type: 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
-        :param pulumi.Input[builtins.str] gateway_id: 网关ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
-        :param pulumi.Input[builtins.str] service_name: 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
-        :param pulumi.Input[Union['GatewayServiceServiceNetworkSpecArgs', 'GatewayServiceServiceNetworkSpecArgsDict']] service_network_spec: 服务默认域名网络配置。。
-        :param pulumi.Input[builtins.str] service_type: 服务类型，取值：AIProvider：AI模型代理。
+        :param pulumi.Input[Union['GatewayServiceAuthSpecArgs', 'GatewayServiceAuthSpecArgsDict']] auth_spec: Authentication configuration.
+        :param pulumi.Input[builtins.str] comments: Remarks. Length must be 0–253 characters.
+        :param pulumi.Input[builtins.str] domain_type: Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
+        :param pulumi.Input[builtins.str] gateway_id: Gateway ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
+        :param pulumi.Input[builtins.str] service_name: Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
+        :param pulumi.Input[Union['GatewayServiceServiceNetworkSpecArgs', 'GatewayServiceServiceNetworkSpecArgsDict']] service_network_spec: Default domain network configuration..
+        :param pulumi.Input[builtins.str] service_type: Service type. Options: AIProvider: AI model proxy.
         """
         ...
     @overload
@@ -462,7 +462,7 @@ class GatewayService(pulumi.CustomResource):
                  args: GatewayServiceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        服务是一组路由对外暴露的入口，用于区分流量的来源和协议，实现业务、环境、逻辑租户隔离。服务可以绑定独立的访问域名，以域名维度访问业务。
+        A service is a set of routes exposed as entry points to distinguish traffic sources and protocols, enabling business, environment, and logical tenant isolation. Services can bind independent access domains, allowing access by domain.
 
         ## Import
 
@@ -560,20 +560,20 @@ class GatewayService(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['GatewayServiceAuthSpecArgs', 'GatewayServiceAuthSpecArgsDict']] auth_spec: 认证配置。
-        :param pulumi.Input[builtins.str] comments: 备注，长度限制为0~253个字符。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[Union['GatewayServiceDomainSpecArgs', 'GatewayServiceDomainSpecArgsDict']] domain_spec: 域名详情。
-        :param pulumi.Input[builtins.str] domain_type: 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
-        :param pulumi.Input[builtins.str] gateway_id: 网关ID。
-        :param pulumi.Input[builtins.str] gateway_name: 网关名称。
-        :param pulumi.Input[builtins.str] message: 服务创建失败、删除失败或异常时的错误信息。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
-        :param pulumi.Input[builtins.str] service_id: 服务ID。
-        :param pulumi.Input[builtins.str] service_name: 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
-        :param pulumi.Input[Union['GatewayServiceServiceNetworkSpecArgs', 'GatewayServiceServiceNetworkSpecArgsDict']] service_network_spec: 服务默认域名网络配置。。
-        :param pulumi.Input[builtins.str] service_type: 服务类型，取值：AIProvider：AI模型代理。
-        :param pulumi.Input[builtins.str] status: Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+        :param pulumi.Input[Union['GatewayServiceAuthSpecArgs', 'GatewayServiceAuthSpecArgsDict']] auth_spec: Authentication configuration.
+        :param pulumi.Input[builtins.str] comments: Remarks. Length must be 0–253 characters.
+        :param pulumi.Input[builtins.str] created_time: Creation time.
+        :param pulumi.Input[Union['GatewayServiceDomainSpecArgs', 'GatewayServiceDomainSpecArgsDict']] domain_spec: Domain details.
+        :param pulumi.Input[builtins.str] domain_type: Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
+        :param pulumi.Input[builtins.str] gateway_id: Gateway ID.
+        :param pulumi.Input[builtins.str] gateway_name: Gateway name.
+        :param pulumi.Input[builtins.str] message: Error message for service creation failure, deletion failure, or abnormal status.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
+        :param pulumi.Input[builtins.str] service_id: Service ID.
+        :param pulumi.Input[builtins.str] service_name: Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
+        :param pulumi.Input[Union['GatewayServiceServiceNetworkSpecArgs', 'GatewayServiceServiceNetworkSpecArgsDict']] service_network_spec: Default domain network configuration..
+        :param pulumi.Input[builtins.str] service_type: Service type. Options: AIProvider: AI model proxy.
+        :param pulumi.Input[builtins.str] status: Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -601,7 +601,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter(name="authSpec")
     def auth_spec(self) -> pulumi.Output['outputs.GatewayServiceAuthSpec']:
         """
-        认证配置。
+        Authentication configuration.
         """
         return pulumi.get(self, "auth_spec")
 
@@ -609,7 +609,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter
     def comments(self) -> pulumi.Output[builtins.str]:
         """
-        备注，长度限制为0~253个字符。
+        Remarks. Length must be 0–253 characters.
         """
         return pulumi.get(self, "comments")
 
@@ -617,7 +617,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -630,7 +630,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter(name="domainSpec")
     def domain_spec(self) -> pulumi.Output['outputs.GatewayServiceDomainSpec']:
         """
-        域名详情。
+        Domain details.
         """
         return pulumi.get(self, "domain_spec")
 
@@ -638,7 +638,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter(name="domainType")
     def domain_type(self) -> pulumi.Output[builtins.str]:
         """
-        域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+        Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
         """
         return pulumi.get(self, "domain_type")
 
@@ -651,7 +651,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter(name="gatewayId")
     def gateway_id(self) -> pulumi.Output[builtins.str]:
         """
-        网关ID。
+        Gateway ID.
         """
         return pulumi.get(self, "gateway_id")
 
@@ -659,7 +659,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter(name="gatewayName")
     def gateway_name(self) -> pulumi.Output[builtins.str]:
         """
-        网关名称。
+        Gateway name.
         """
         return pulumi.get(self, "gateway_name")
 
@@ -667,7 +667,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter
     def message(self) -> pulumi.Output[builtins.str]:
         """
-        服务创建失败、删除失败或异常时的错误信息。
+        Error message for service creation failure, deletion failure, or abnormal status.
         """
         return pulumi.get(self, "message")
 
@@ -675,7 +675,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter
     def protocols(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+        Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
         """
         return pulumi.get(self, "protocols")
 
@@ -683,7 +683,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter(name="serviceId")
     def service_id(self) -> pulumi.Output[builtins.str]:
         """
-        服务ID。
+        Service ID.
         """
         return pulumi.get(self, "service_id")
 
@@ -691,7 +691,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter(name="serviceName")
     def service_name(self) -> pulumi.Output[builtins.str]:
         """
-        服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+        Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
         """
         return pulumi.get(self, "service_name")
 
@@ -699,7 +699,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter(name="serviceNetworkSpec")
     def service_network_spec(self) -> pulumi.Output['outputs.GatewayServiceServiceNetworkSpec']:
         """
-        服务默认域名网络配置。。
+        Default domain network configuration..
         """
         return pulumi.get(self, "service_network_spec")
 
@@ -707,7 +707,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter(name="serviceType")
     def service_type(self) -> pulumi.Output[builtins.str]:
         """
-        服务类型，取值：AIProvider：AI模型代理。
+        Service type. Options: AIProvider: AI model proxy.
         """
         return pulumi.get(self, "service_type")
 
@@ -715,7 +715,7 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+        Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
         """
         return pulumi.get(self, "status")
 

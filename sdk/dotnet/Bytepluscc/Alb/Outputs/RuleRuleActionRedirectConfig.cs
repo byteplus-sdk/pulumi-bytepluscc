@@ -15,23 +15,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class RuleRuleActionRedirectConfig
     {
         /// <summary>
-        /// 重定向域名，仅支持精确域名。
+        /// Redirect domain. Only exact domains are supported.
         /// </summary>
         public readonly string? Host;
         /// <summary>
-        /// 重定向状态码，支持301，302，307，308。
+        /// Redirect status codes supported: 301, 302, 307, 308.
         /// </summary>
         public readonly string? HttpCode;
         /// <summary>
-        /// 重定向 URI。。
+        /// Redirect URI..
         /// </summary>
         public readonly string? Path;
         /// <summary>
-        /// 重定向端口。
+        /// Redirect port.
         /// </summary>
         public readonly string? Port;
         /// <summary>
-        /// 重定向使用的协议，支持HTTP，HTTPS。
+        /// Protocol used for redirect. Supports HTTP and HTTPS.
         /// </summary>
         public readonly string? Protocol;
 

@@ -14,17 +14,17 @@ import java.util.Objects;
 @CustomType
 public final class GetTrafficMirrorSessionResult {
     /**
-     * @return 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+     * @return Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
      * 
      */
     private String businessStatus;
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     private String createdTime;
     /**
-     * @return 镜像会话实例描述。
+     * @return Mirror session instance description
      * 
      */
     private String description;
@@ -34,88 +34,88 @@ public final class GetTrafficMirrorSessionResult {
      */
     private String id;
     /**
-     * @return 锁定原因。
+     * @return Lock reason
      * 
      */
     private String lockReason;
     /**
-     * @return 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+     * @return Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
      * 
      */
     private String networkInterfaceId;
     /**
-     * @return 镜像会话MTU，超过被截断，取值范围：64～9600。
+     * @return Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
      * 
      */
     private Integer packetLength;
     /**
-     * @return 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+     * @return Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
      * 
      */
     private Integer priority;
     /**
-     * @return 所属项目的名称
+     * @return Name of the associated project
      * 
      */
     private String projectName;
     /**
-     * @return 会话状态。
+     * @return Session status
      * 
      */
     private String status;
     /**
-     * @return 标签信息。
+     * @return Tag information
      * 
      */
     private List<GetTrafficMirrorSessionTag> tags;
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     private String trafficMirrorFilterId;
     /**
-     * @return 镜像会话实例ID。
+     * @return Mirror session instance ID
      * 
      */
     private String trafficMirrorSessionId;
     /**
-     * @return 镜像会话名称。
+     * @return Mirror session name
      * 
      */
     private String trafficMirrorSessionName;
     /**
-     * @return 镜像源实例列表。
+     * @return Mirror source instance list
      * 
      */
     private List<String> trafficMirrorSourceIds;
     /**
-     * @return 镜像目的实例ID。
+     * @return Mirror destination instance ID
      * 
      */
     private String trafficMirrorTargetId;
     /**
-     * @return 镜像会话VNI，取值范围1 ～ 16777215。
+     * @return Mirror session VNI. Range: 1–16777215
      * 
      */
     private Integer virtualNetworkId;
 
     private GetTrafficMirrorSessionResult() {}
     /**
-     * @return 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+     * @return Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
      * 
      */
     public String businessStatus() {
         return this.businessStatus;
     }
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 镜像会话实例描述。
+     * @return Mirror session instance description
      * 
      */
     public String description() {
@@ -129,91 +129,91 @@ public final class GetTrafficMirrorSessionResult {
         return this.id;
     }
     /**
-     * @return 锁定原因。
+     * @return Lock reason
      * 
      */
     public String lockReason() {
         return this.lockReason;
     }
     /**
-     * @return 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+     * @return Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
      * 
      */
     public String networkInterfaceId() {
         return this.networkInterfaceId;
     }
     /**
-     * @return 镜像会话MTU，超过被截断，取值范围：64～9600。
+     * @return Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
      * 
      */
     public Integer packetLength() {
         return this.packetLength;
     }
     /**
-     * @return 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+     * @return Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
      * 
      */
     public Integer priority() {
         return this.priority;
     }
     /**
-     * @return 所属项目的名称
+     * @return Name of the associated project
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 会话状态。
+     * @return Session status
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 标签信息。
+     * @return Tag information
      * 
      */
     public List<GetTrafficMirrorSessionTag> tags() {
         return this.tags;
     }
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     public String trafficMirrorFilterId() {
         return this.trafficMirrorFilterId;
     }
     /**
-     * @return 镜像会话实例ID。
+     * @return Mirror session instance ID
      * 
      */
     public String trafficMirrorSessionId() {
         return this.trafficMirrorSessionId;
     }
     /**
-     * @return 镜像会话名称。
+     * @return Mirror session name
      * 
      */
     public String trafficMirrorSessionName() {
         return this.trafficMirrorSessionName;
     }
     /**
-     * @return 镜像源实例列表。
+     * @return Mirror source instance list
      * 
      */
     public List<String> trafficMirrorSourceIds() {
         return this.trafficMirrorSourceIds;
     }
     /**
-     * @return 镜像目的实例ID。
+     * @return Mirror destination instance ID
      * 
      */
     public String trafficMirrorTargetId() {
         return this.trafficMirrorTargetId;
     }
     /**
-     * @return 镜像会话VNI，取值范围1 ～ 16777215。
+     * @return Mirror session VNI. Range: 1–16777215
      * 
      */
     public Integer virtualNetworkId() {

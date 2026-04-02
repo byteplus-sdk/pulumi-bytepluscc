@@ -14,42 +14,42 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type TransitRouterAttachment struct {
-	// 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+	// Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
 	AutoPublishRouteEnabled *bool `pulumi:"autoPublishRouteEnabled"`
-	// 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+	// Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
 	BusinessStatus *string `pulumi:"businessStatus"`
-	// 网络实例连接的创建时间。
+	// Creation time of the network instance connection.
 	CreationTime *string `pulumi:"creationTime"`
-	// 网络实例连接的删除时间。
+	// Deletion time of the network instance connection.
 	DeletedTime *string `pulumi:"deletedTime"`
-	// 网络实例连接的描述信息。
+	// Description of the network instance connection.
 	Description *string `pulumi:"description"`
-	// 是否开启IPv6功能。true：是。false：否。
+	// Whether IPv6 is enabled. true: yes. false: no
 	Ipv6Enabled *bool `pulumi:"ipv6Enabled"`
-	// 网络实例连接的欠费关停时间。
+	// Shutdown time due to overdue payment for the network instance connection
 	OverdueTime *string `pulumi:"overdueTime"`
-	// 网络实例的ID。
+	// ID of the network instance
 	ResourceId *string `pulumi:"resourceId"`
-	// 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+	// Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
 	ResourceType *string `pulumi:"resourceType"`
-	// 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+	// Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
 	Status *string                      `pulumi:"status"`
 	Tags   []TransitRouterAttachmentTag `pulumi:"tags"`
-	// 网络实例连接的ID。
+	// Network instance connection ID.
 	TransitRouterAttachmentId *string `pulumi:"transitRouterAttachmentId"`
-	// 网络实例连接的名称。
+	// Name of the network instance connection
 	TransitRouterAttachmentName *string `pulumi:"transitRouterAttachmentName"`
-	// 跨地域连接关联的转发策略的ID。
+	// ID of the forwarding policy associated with the cross-region connection
 	TransitRouterForwardPolicyTableId *string `pulumi:"transitRouterForwardPolicyTableId"`
-	// 中转路由器实例的ID。
+	// Transit router instance ID.
 	TransitRouterId *string `pulumi:"transitRouterId"`
-	// 网络实例连接关联转发的路由表ID。
+	// Route table ID associated with the forwarding of the network instance connection.
 	TransitRouterRouteTableId *string `pulumi:"transitRouterRouteTableId"`
-	// 跨地域连接关联的流标记策略的ID。
+	// ID of the flow marking policy associated with the cross-region connection
 	TransitRouterTrafficQosMarkingPolicyId *string `pulumi:"transitRouterTrafficQosMarkingPolicyId"`
-	// 跨地域连接关联的流队列策略的ID。
+	// ID of the flow queue policy associated with the cross-region connection
 	TransitRouterTrafficQosQueuePolicyId *string `pulumi:"transitRouterTrafficQosQueuePolicyId"`
-	// 网络实例连接的最近操作时间。
+	// Last operation time of the network instance connection
 	UpdateTime *string `pulumi:"updateTime"`
 }
 
@@ -65,42 +65,42 @@ type TransitRouterAttachmentInput interface {
 }
 
 type TransitRouterAttachmentArgs struct {
-	// 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+	// Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
 	AutoPublishRouteEnabled pulumi.BoolPtrInput `pulumi:"autoPublishRouteEnabled"`
-	// 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+	// Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
 	BusinessStatus pulumi.StringPtrInput `pulumi:"businessStatus"`
-	// 网络实例连接的创建时间。
+	// Creation time of the network instance connection.
 	CreationTime pulumi.StringPtrInput `pulumi:"creationTime"`
-	// 网络实例连接的删除时间。
+	// Deletion time of the network instance connection.
 	DeletedTime pulumi.StringPtrInput `pulumi:"deletedTime"`
-	// 网络实例连接的描述信息。
+	// Description of the network instance connection.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 是否开启IPv6功能。true：是。false：否。
+	// Whether IPv6 is enabled. true: yes. false: no
 	Ipv6Enabled pulumi.BoolPtrInput `pulumi:"ipv6Enabled"`
-	// 网络实例连接的欠费关停时间。
+	// Shutdown time due to overdue payment for the network instance connection
 	OverdueTime pulumi.StringPtrInput `pulumi:"overdueTime"`
-	// 网络实例的ID。
+	// ID of the network instance
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
-	// 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+	// Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
-	// 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+	// Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
 	Status pulumi.StringPtrInput                `pulumi:"status"`
 	Tags   TransitRouterAttachmentTagArrayInput `pulumi:"tags"`
-	// 网络实例连接的ID。
+	// Network instance connection ID.
 	TransitRouterAttachmentId pulumi.StringPtrInput `pulumi:"transitRouterAttachmentId"`
-	// 网络实例连接的名称。
+	// Name of the network instance connection
 	TransitRouterAttachmentName pulumi.StringPtrInput `pulumi:"transitRouterAttachmentName"`
-	// 跨地域连接关联的转发策略的ID。
+	// ID of the forwarding policy associated with the cross-region connection
 	TransitRouterForwardPolicyTableId pulumi.StringPtrInput `pulumi:"transitRouterForwardPolicyTableId"`
-	// 中转路由器实例的ID。
+	// Transit router instance ID.
 	TransitRouterId pulumi.StringPtrInput `pulumi:"transitRouterId"`
-	// 网络实例连接关联转发的路由表ID。
+	// Route table ID associated with the forwarding of the network instance connection.
 	TransitRouterRouteTableId pulumi.StringPtrInput `pulumi:"transitRouterRouteTableId"`
-	// 跨地域连接关联的流标记策略的ID。
+	// ID of the flow marking policy associated with the cross-region connection
 	TransitRouterTrafficQosMarkingPolicyId pulumi.StringPtrInput `pulumi:"transitRouterTrafficQosMarkingPolicyId"`
-	// 跨地域连接关联的流队列策略的ID。
+	// ID of the flow queue policy associated with the cross-region connection
 	TransitRouterTrafficQosQueuePolicyId pulumi.StringPtrInput `pulumi:"transitRouterTrafficQosQueuePolicyId"`
-	// 网络实例连接的最近操作时间。
+	// Last operation time of the network instance connection
 	UpdateTime pulumi.StringPtrInput `pulumi:"updateTime"`
 }
 
@@ -155,52 +155,52 @@ func (o TransitRouterAttachmentOutput) ToTransitRouterAttachmentOutputWithContex
 	return o
 }
 
-// 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+// Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
 func (o TransitRouterAttachmentOutput) AutoPublishRouteEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *bool { return v.AutoPublishRouteEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+// Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
 func (o TransitRouterAttachmentOutput) BusinessStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.BusinessStatus }).(pulumi.StringPtrOutput)
 }
 
-// 网络实例连接的创建时间。
+// Creation time of the network instance connection.
 func (o TransitRouterAttachmentOutput) CreationTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.CreationTime }).(pulumi.StringPtrOutput)
 }
 
-// 网络实例连接的删除时间。
+// Deletion time of the network instance connection.
 func (o TransitRouterAttachmentOutput) DeletedTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.DeletedTime }).(pulumi.StringPtrOutput)
 }
 
-// 网络实例连接的描述信息。
+// Description of the network instance connection.
 func (o TransitRouterAttachmentOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 是否开启IPv6功能。true：是。false：否。
+// Whether IPv6 is enabled. true: yes. false: no
 func (o TransitRouterAttachmentOutput) Ipv6Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *bool { return v.Ipv6Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// 网络实例连接的欠费关停时间。
+// Shutdown time due to overdue payment for the network instance connection
 func (o TransitRouterAttachmentOutput) OverdueTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.OverdueTime }).(pulumi.StringPtrOutput)
 }
 
-// 网络实例的ID。
+// ID of the network instance
 func (o TransitRouterAttachmentOutput) ResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
-// 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+// Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
 func (o TransitRouterAttachmentOutput) ResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
-// 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+// Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
 func (o TransitRouterAttachmentOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
@@ -209,42 +209,42 @@ func (o TransitRouterAttachmentOutput) Tags() TransitRouterAttachmentTagArrayOut
 	return o.ApplyT(func(v TransitRouterAttachment) []TransitRouterAttachmentTag { return v.Tags }).(TransitRouterAttachmentTagArrayOutput)
 }
 
-// 网络实例连接的ID。
+// Network instance connection ID.
 func (o TransitRouterAttachmentOutput) TransitRouterAttachmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.TransitRouterAttachmentId }).(pulumi.StringPtrOutput)
 }
 
-// 网络实例连接的名称。
+// Name of the network instance connection
 func (o TransitRouterAttachmentOutput) TransitRouterAttachmentName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.TransitRouterAttachmentName }).(pulumi.StringPtrOutput)
 }
 
-// 跨地域连接关联的转发策略的ID。
+// ID of the forwarding policy associated with the cross-region connection
 func (o TransitRouterAttachmentOutput) TransitRouterForwardPolicyTableId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.TransitRouterForwardPolicyTableId }).(pulumi.StringPtrOutput)
 }
 
-// 中转路由器实例的ID。
+// Transit router instance ID.
 func (o TransitRouterAttachmentOutput) TransitRouterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.TransitRouterId }).(pulumi.StringPtrOutput)
 }
 
-// 网络实例连接关联转发的路由表ID。
+// Route table ID associated with the forwarding of the network instance connection.
 func (o TransitRouterAttachmentOutput) TransitRouterRouteTableId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.TransitRouterRouteTableId }).(pulumi.StringPtrOutput)
 }
 
-// 跨地域连接关联的流标记策略的ID。
+// ID of the flow marking policy associated with the cross-region connection
 func (o TransitRouterAttachmentOutput) TransitRouterTrafficQosMarkingPolicyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.TransitRouterTrafficQosMarkingPolicyId }).(pulumi.StringPtrOutput)
 }
 
-// 跨地域连接关联的流队列策略的ID。
+// ID of the flow queue policy associated with the cross-region connection
 func (o TransitRouterAttachmentOutput) TransitRouterTrafficQosQueuePolicyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.TransitRouterTrafficQosQueuePolicyId }).(pulumi.StringPtrOutput)
 }
 
-// 网络实例连接的最近操作时间。
+// Last operation time of the network instance connection
 func (o TransitRouterAttachmentOutput) UpdateTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachment) *string { return v.UpdateTime }).(pulumi.StringPtrOutput)
 }
@@ -270,9 +270,9 @@ func (o TransitRouterAttachmentArrayOutput) Index(i pulumi.IntInput) TransitRout
 }
 
 type TransitRouterAttachmentTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -288,9 +288,9 @@ type TransitRouterAttachmentTagInput interface {
 }
 
 type TransitRouterAttachmentTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -345,12 +345,12 @@ func (o TransitRouterAttachmentTagOutput) ToTransitRouterAttachmentTagOutputWith
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o TransitRouterAttachmentTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachmentTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o TransitRouterAttachmentTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterAttachmentTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -376,9 +376,9 @@ func (o TransitRouterAttachmentTagArrayOutput) Index(i pulumi.IntInput) TransitR
 }
 
 type TransitRouterRouteTableTag struct {
-	// 标签键
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -394,9 +394,9 @@ type TransitRouterRouteTableTagInput interface {
 }
 
 type TransitRouterRouteTableTagArgs struct {
-	// 标签键
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -451,12 +451,12 @@ func (o TransitRouterRouteTableTagOutput) ToTransitRouterRouteTableTagOutputWith
 	return o
 }
 
-// 标签键
+// Tag key
 func (o TransitRouterRouteTableTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterRouteTableTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值
+// Tag value
 func (o TransitRouterRouteTableTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterRouteTableTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -482,9 +482,9 @@ func (o TransitRouterRouteTableTagArrayOutput) Index(i pulumi.IntInput) TransitR
 }
 
 type TransitRouterTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -500,9 +500,9 @@ type TransitRouterTagInput interface {
 }
 
 type TransitRouterTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -557,12 +557,12 @@ func (o TransitRouterTagOutput) ToTransitRouterTagOutputWithContext(ctx context.
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o TransitRouterTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o TransitRouterTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TransitRouterTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -588,9 +588,9 @@ func (o TransitRouterTagArrayOutput) Index(i pulumi.IntInput) TransitRouterTagOu
 }
 
 type VpcAttachmentAttachPoint struct {
-	// 连接点的子网ID。
+	// Subnet ID of the connection point.
 	SubnetId string `pulumi:"subnetId"`
-	// 连接点的可用区ID。
+	// Availability zone ID of the connection point.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -606,9 +606,9 @@ type VpcAttachmentAttachPointInput interface {
 }
 
 type VpcAttachmentAttachPointArgs struct {
-	// 连接点的子网ID。
+	// Subnet ID of the connection point.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// 连接点的可用区ID。
+	// Availability zone ID of the connection point.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -663,12 +663,12 @@ func (o VpcAttachmentAttachPointOutput) ToVpcAttachmentAttachPointOutputWithCont
 	return o
 }
 
-// 连接点的子网ID。
+// Subnet ID of the connection point.
 func (o VpcAttachmentAttachPointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v VpcAttachmentAttachPoint) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 连接点的可用区ID。
+// Availability zone ID of the connection point.
 func (o VpcAttachmentAttachPointOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v VpcAttachmentAttachPoint) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -694,9 +694,9 @@ func (o VpcAttachmentAttachPointArrayOutput) Index(i pulumi.IntInput) VpcAttachm
 }
 
 type VpcAttachmentTag struct {
-	// 用户标签的标签键。
+	// Tag key for user tag.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for user tag.
 	Value *string `pulumi:"value"`
 }
 
@@ -712,9 +712,9 @@ type VpcAttachmentTagInput interface {
 }
 
 type VpcAttachmentTagArgs struct {
-	// 用户标签的标签键。
+	// Tag key for user tag.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for user tag.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -769,12 +769,12 @@ func (o VpcAttachmentTagOutput) ToVpcAttachmentTagOutputWithContext(ctx context.
 	return o
 }
 
-// 用户标签的标签键。
+// Tag key for user tag.
 func (o VpcAttachmentTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VpcAttachmentTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// Tag value for user tag.
 func (o VpcAttachmentTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VpcAttachmentTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -800,9 +800,9 @@ func (o VpcAttachmentTagArrayOutput) Index(i pulumi.IntInput) VpcAttachmentTagOu
 }
 
 type VpnAttachmentTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -818,9 +818,9 @@ type VpnAttachmentTagInput interface {
 }
 
 type VpnAttachmentTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -875,12 +875,12 @@ func (o VpnAttachmentTagOutput) ToVpnAttachmentTagOutputWithContext(ctx context.
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o VpnAttachmentTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VpnAttachmentTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o VpnAttachmentTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VpnAttachmentTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -906,43 +906,43 @@ func (o VpnAttachmentTagArrayOutput) Index(i pulumi.IntInput) VpnAttachmentTagOu
 }
 
 type GetTransitRouterAttachment struct {
-	// 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+	// Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
 	AutoPublishRouteEnabled bool `pulumi:"autoPublishRouteEnabled"`
-	// 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+	// Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
 	BusinessStatus string `pulumi:"businessStatus"`
-	// 网络实例连接的创建时间。
+	// Creation time of the network instance connection.
 	CreationTime string `pulumi:"creationTime"`
-	// 网络实例连接的删除时间。
+	// Deletion time of the network instance connection.
 	DeletedTime string `pulumi:"deletedTime"`
-	// 网络实例连接的描述信息。
+	// Description of the network instance connection.
 	Description string `pulumi:"description"`
-	// 是否开启IPv6功能。true：是。false：否。
+	// Whether IPv6 is enabled. true: yes. false: no
 	Ipv6Enabled bool `pulumi:"ipv6Enabled"`
-	// 网络实例连接的欠费关停时间。
+	// Shutdown time due to overdue payment for the network instance connection
 	OverdueTime string `pulumi:"overdueTime"`
-	// 网络实例的ID。
+	// ID of the network instance
 	ResourceId string `pulumi:"resourceId"`
-	// 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+	// Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
 	ResourceType string `pulumi:"resourceType"`
-	// 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+	// Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
 	Status string `pulumi:"status"`
-	// 网络实例连接的标签信息
+	// Tag information of the network instance connection
 	Tags []GetTransitRouterAttachmentTag `pulumi:"tags"`
-	// 网络实例连接的ID。
+	// Network instance connection ID.
 	TransitRouterAttachmentId string `pulumi:"transitRouterAttachmentId"`
-	// 网络实例连接的名称。
+	// Name of the network instance connection
 	TransitRouterAttachmentName string `pulumi:"transitRouterAttachmentName"`
-	// 跨地域连接关联的转发策略的ID。
+	// ID of the forwarding policy associated with the cross-region connection
 	TransitRouterForwardPolicyTableId string `pulumi:"transitRouterForwardPolicyTableId"`
-	// 中转路由器实例的ID。
+	// Transit router instance ID.
 	TransitRouterId string `pulumi:"transitRouterId"`
-	// 网络实例连接关联转发的路由表ID。
+	// Route table ID associated with the forwarding of the network instance connection.
 	TransitRouterRouteTableId string `pulumi:"transitRouterRouteTableId"`
-	// 跨地域连接关联的流标记策略的ID。
+	// ID of the flow marking policy associated with the cross-region connection
 	TransitRouterTrafficQosMarkingPolicyId string `pulumi:"transitRouterTrafficQosMarkingPolicyId"`
-	// 跨地域连接关联的流队列策略的ID。
+	// ID of the flow queue policy associated with the cross-region connection
 	TransitRouterTrafficQosQueuePolicyId string `pulumi:"transitRouterTrafficQosQueuePolicyId"`
-	// 网络实例连接的最近操作时间。
+	// Last operation time of the network instance connection
 	UpdateTime string `pulumi:"updateTime"`
 }
 
@@ -958,43 +958,43 @@ type GetTransitRouterAttachmentInput interface {
 }
 
 type GetTransitRouterAttachmentArgs struct {
-	// 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+	// Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
 	AutoPublishRouteEnabled pulumi.BoolInput `pulumi:"autoPublishRouteEnabled"`
-	// 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+	// Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
 	BusinessStatus pulumi.StringInput `pulumi:"businessStatus"`
-	// 网络实例连接的创建时间。
+	// Creation time of the network instance connection.
 	CreationTime pulumi.StringInput `pulumi:"creationTime"`
-	// 网络实例连接的删除时间。
+	// Deletion time of the network instance connection.
 	DeletedTime pulumi.StringInput `pulumi:"deletedTime"`
-	// 网络实例连接的描述信息。
+	// Description of the network instance connection.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 是否开启IPv6功能。true：是。false：否。
+	// Whether IPv6 is enabled. true: yes. false: no
 	Ipv6Enabled pulumi.BoolInput `pulumi:"ipv6Enabled"`
-	// 网络实例连接的欠费关停时间。
+	// Shutdown time due to overdue payment for the network instance connection
 	OverdueTime pulumi.StringInput `pulumi:"overdueTime"`
-	// 网络实例的ID。
+	// ID of the network instance
 	ResourceId pulumi.StringInput `pulumi:"resourceId"`
-	// 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+	// Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
-	// 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+	// Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
 	Status pulumi.StringInput `pulumi:"status"`
-	// 网络实例连接的标签信息
+	// Tag information of the network instance connection
 	Tags GetTransitRouterAttachmentTagArrayInput `pulumi:"tags"`
-	// 网络实例连接的ID。
+	// Network instance connection ID.
 	TransitRouterAttachmentId pulumi.StringInput `pulumi:"transitRouterAttachmentId"`
-	// 网络实例连接的名称。
+	// Name of the network instance connection
 	TransitRouterAttachmentName pulumi.StringInput `pulumi:"transitRouterAttachmentName"`
-	// 跨地域连接关联的转发策略的ID。
+	// ID of the forwarding policy associated with the cross-region connection
 	TransitRouterForwardPolicyTableId pulumi.StringInput `pulumi:"transitRouterForwardPolicyTableId"`
-	// 中转路由器实例的ID。
+	// Transit router instance ID.
 	TransitRouterId pulumi.StringInput `pulumi:"transitRouterId"`
-	// 网络实例连接关联转发的路由表ID。
+	// Route table ID associated with the forwarding of the network instance connection.
 	TransitRouterRouteTableId pulumi.StringInput `pulumi:"transitRouterRouteTableId"`
-	// 跨地域连接关联的流标记策略的ID。
+	// ID of the flow marking policy associated with the cross-region connection
 	TransitRouterTrafficQosMarkingPolicyId pulumi.StringInput `pulumi:"transitRouterTrafficQosMarkingPolicyId"`
-	// 跨地域连接关联的流队列策略的ID。
+	// ID of the flow queue policy associated with the cross-region connection
 	TransitRouterTrafficQosQueuePolicyId pulumi.StringInput `pulumi:"transitRouterTrafficQosQueuePolicyId"`
-	// 网络实例连接的最近操作时间。
+	// Last operation time of the network instance connection
 	UpdateTime pulumi.StringInput `pulumi:"updateTime"`
 }
 
@@ -1049,97 +1049,97 @@ func (o GetTransitRouterAttachmentOutput) ToGetTransitRouterAttachmentOutputWith
 	return o
 }
 
-// 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+// Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
 func (o GetTransitRouterAttachmentOutput) AutoPublishRouteEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) bool { return v.AutoPublishRouteEnabled }).(pulumi.BoolOutput)
 }
 
-// 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+// Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
 func (o GetTransitRouterAttachmentOutput) BusinessStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.BusinessStatus }).(pulumi.StringOutput)
 }
 
-// 网络实例连接的创建时间。
+// Creation time of the network instance connection.
 func (o GetTransitRouterAttachmentOutput) CreationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
-// 网络实例连接的删除时间。
+// Deletion time of the network instance connection.
 func (o GetTransitRouterAttachmentOutput) DeletedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.DeletedTime }).(pulumi.StringOutput)
 }
 
-// 网络实例连接的描述信息。
+// Description of the network instance connection.
 func (o GetTransitRouterAttachmentOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 是否开启IPv6功能。true：是。false：否。
+// Whether IPv6 is enabled. true: yes. false: no
 func (o GetTransitRouterAttachmentOutput) Ipv6Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) bool { return v.Ipv6Enabled }).(pulumi.BoolOutput)
 }
 
-// 网络实例连接的欠费关停时间。
+// Shutdown time due to overdue payment for the network instance connection
 func (o GetTransitRouterAttachmentOutput) OverdueTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.OverdueTime }).(pulumi.StringOutput)
 }
 
-// 网络实例的ID。
+// ID of the network instance
 func (o GetTransitRouterAttachmentOutput) ResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.ResourceId }).(pulumi.StringOutput)
 }
 
-// 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+// Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
 func (o GetTransitRouterAttachmentOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
-// 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+// Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
 func (o GetTransitRouterAttachmentOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 网络实例连接的标签信息
+// Tag information of the network instance connection
 func (o GetTransitRouterAttachmentOutput) Tags() GetTransitRouterAttachmentTagArrayOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) []GetTransitRouterAttachmentTag { return v.Tags }).(GetTransitRouterAttachmentTagArrayOutput)
 }
 
-// 网络实例连接的ID。
+// Network instance connection ID.
 func (o GetTransitRouterAttachmentOutput) TransitRouterAttachmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.TransitRouterAttachmentId }).(pulumi.StringOutput)
 }
 
-// 网络实例连接的名称。
+// Name of the network instance connection
 func (o GetTransitRouterAttachmentOutput) TransitRouterAttachmentName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.TransitRouterAttachmentName }).(pulumi.StringOutput)
 }
 
-// 跨地域连接关联的转发策略的ID。
+// ID of the forwarding policy associated with the cross-region connection
 func (o GetTransitRouterAttachmentOutput) TransitRouterForwardPolicyTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.TransitRouterForwardPolicyTableId }).(pulumi.StringOutput)
 }
 
-// 中转路由器实例的ID。
+// Transit router instance ID.
 func (o GetTransitRouterAttachmentOutput) TransitRouterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.TransitRouterId }).(pulumi.StringOutput)
 }
 
-// 网络实例连接关联转发的路由表ID。
+// Route table ID associated with the forwarding of the network instance connection.
 func (o GetTransitRouterAttachmentOutput) TransitRouterRouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.TransitRouterRouteTableId }).(pulumi.StringOutput)
 }
 
-// 跨地域连接关联的流标记策略的ID。
+// ID of the flow marking policy associated with the cross-region connection
 func (o GetTransitRouterAttachmentOutput) TransitRouterTrafficQosMarkingPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.TransitRouterTrafficQosMarkingPolicyId }).(pulumi.StringOutput)
 }
 
-// 跨地域连接关联的流队列策略的ID。
+// ID of the flow queue policy associated with the cross-region connection
 func (o GetTransitRouterAttachmentOutput) TransitRouterTrafficQosQueuePolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.TransitRouterTrafficQosQueuePolicyId }).(pulumi.StringOutput)
 }
 
-// 网络实例连接的最近操作时间。
+// Last operation time of the network instance connection
 func (o GetTransitRouterAttachmentOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachment) string { return v.UpdateTime }).(pulumi.StringOutput)
 }
@@ -1165,9 +1165,9 @@ func (o GetTransitRouterAttachmentArrayOutput) Index(i pulumi.IntInput) GetTrans
 }
 
 type GetTransitRouterAttachmentTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -1183,9 +1183,9 @@ type GetTransitRouterAttachmentTagInput interface {
 }
 
 type GetTransitRouterAttachmentTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1240,12 +1240,12 @@ func (o GetTransitRouterAttachmentTagOutput) ToGetTransitRouterAttachmentTagOutp
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetTransitRouterAttachmentTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachmentTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetTransitRouterAttachmentTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterAttachmentTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1271,9 +1271,9 @@ func (o GetTransitRouterAttachmentTagArrayOutput) Index(i pulumi.IntInput) GetTr
 }
 
 type GetTransitRouterRouteTableTag struct {
-	// 标签键
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -1289,9 +1289,9 @@ type GetTransitRouterRouteTableTagInput interface {
 }
 
 type GetTransitRouterRouteTableTagArgs struct {
-	// 标签键
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1346,12 +1346,12 @@ func (o GetTransitRouterRouteTableTagOutput) ToGetTransitRouterRouteTableTagOutp
 	return o
 }
 
-// 标签键
+// Tag key
 func (o GetTransitRouterRouteTableTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterRouteTableTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值
+// Tag value
 func (o GetTransitRouterRouteTableTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterRouteTableTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1377,9 +1377,9 @@ func (o GetTransitRouterRouteTableTagArrayOutput) Index(i pulumi.IntInput) GetTr
 }
 
 type GetTransitRouterTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -1395,9 +1395,9 @@ type GetTransitRouterTagInput interface {
 }
 
 type GetTransitRouterTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1452,12 +1452,12 @@ func (o GetTransitRouterTagOutput) ToGetTransitRouterTagOutputWithContext(ctx co
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetTransitRouterTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetTransitRouterTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTransitRouterTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1483,11 +1483,11 @@ func (o GetTransitRouterTagArrayOutput) Index(i pulumi.IntInput) GetTransitRoute
 }
 
 type GetVpcAttachmentAttachPoint struct {
-	// 连接点的网卡ID。
+	// Network interface card ID of the connection point.
 	NetworkInterfaceId string `pulumi:"networkInterfaceId"`
-	// 连接点的子网ID。
+	// Subnet ID of the connection point.
 	SubnetId string `pulumi:"subnetId"`
-	// 连接点的可用区ID。
+	// Availability zone ID of the connection point.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -1503,11 +1503,11 @@ type GetVpcAttachmentAttachPointInput interface {
 }
 
 type GetVpcAttachmentAttachPointArgs struct {
-	// 连接点的网卡ID。
+	// Network interface card ID of the connection point.
 	NetworkInterfaceId pulumi.StringInput `pulumi:"networkInterfaceId"`
-	// 连接点的子网ID。
+	// Subnet ID of the connection point.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// 连接点的可用区ID。
+	// Availability zone ID of the connection point.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -1562,17 +1562,17 @@ func (o GetVpcAttachmentAttachPointOutput) ToGetVpcAttachmentAttachPointOutputWi
 	return o
 }
 
-// 连接点的网卡ID。
+// Network interface card ID of the connection point.
 func (o GetVpcAttachmentAttachPointOutput) NetworkInterfaceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpcAttachmentAttachPoint) string { return v.NetworkInterfaceId }).(pulumi.StringOutput)
 }
 
-// 连接点的子网ID。
+// Subnet ID of the connection point.
 func (o GetVpcAttachmentAttachPointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpcAttachmentAttachPoint) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 连接点的可用区ID。
+// Availability zone ID of the connection point.
 func (o GetVpcAttachmentAttachPointOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpcAttachmentAttachPoint) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -1598,9 +1598,9 @@ func (o GetVpcAttachmentAttachPointArrayOutput) Index(i pulumi.IntInput) GetVpcA
 }
 
 type GetVpcAttachmentTag struct {
-	// 用户标签的标签键。
+	// Tag key for user tag.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for user tag.
 	Value string `pulumi:"value"`
 }
 
@@ -1616,9 +1616,9 @@ type GetVpcAttachmentTagInput interface {
 }
 
 type GetVpcAttachmentTagArgs struct {
-	// 用户标签的标签键。
+	// Tag key for user tag.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for user tag.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1673,12 +1673,12 @@ func (o GetVpcAttachmentTagOutput) ToGetVpcAttachmentTagOutputWithContext(ctx co
 	return o
 }
 
-// 用户标签的标签键。
+// Tag key for user tag.
 func (o GetVpcAttachmentTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpcAttachmentTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// Tag value for user tag.
 func (o GetVpcAttachmentTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpcAttachmentTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1704,9 +1704,9 @@ func (o GetVpcAttachmentTagArrayOutput) Index(i pulumi.IntInput) GetVpcAttachmen
 }
 
 type GetVpnAttachmentTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -1722,9 +1722,9 @@ type GetVpnAttachmentTagInput interface {
 }
 
 type GetVpnAttachmentTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1779,12 +1779,12 @@ func (o GetVpnAttachmentTagOutput) ToGetVpnAttachmentTagOutputWithContext(ctx co
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o GetVpnAttachmentTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpnAttachmentTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o GetVpnAttachmentTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpnAttachmentTag) string { return v.Value }).(pulumi.StringOutput)
 }

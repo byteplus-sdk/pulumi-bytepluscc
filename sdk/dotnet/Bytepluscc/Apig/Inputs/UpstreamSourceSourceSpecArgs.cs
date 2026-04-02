@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamSourceSourceSpecArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 容器集群来源。
+        /// Container cluster source
         /// </summary>
         [Input("k8SSource")]
         public Input<Inputs.UpstreamSourceSourceSpecK8SSourceArgs>? K8SSource { get; set; }
 
         /// <summary>
-        /// 注册中心来源。
+        /// Registry source
         /// </summary>
         [Input("nacosSource")]
         public Input<Inputs.UpstreamSourceSourceSpecNacosSourceArgs>? NacosSource { get; set; }

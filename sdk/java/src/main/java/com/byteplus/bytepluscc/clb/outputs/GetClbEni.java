@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetClbEni {
     /**
-     * @return 负载均衡实例的私网IP地址。
+     * @return Private IP address of the load balancer instance
      * 
      */
     private String eniAddress;
     /**
-     * @return 负载均衡实例占用的网卡ID。
+     * @return Network interface ID occupied by the load balancer instance
      * 
      */
     private String eniId;
 
     private GetClbEni() {}
     /**
-     * @return 负载均衡实例的私网IP地址。
+     * @return Private IP address of the load balancer instance
      * 
      */
     public String eniAddress() {
         return this.eniAddress;
     }
     /**
-     * @return 负载均衡实例占用的网卡ID。
+     * @return Network interface ID occupied by the load balancer instance
      * 
      */
     public String eniId() {

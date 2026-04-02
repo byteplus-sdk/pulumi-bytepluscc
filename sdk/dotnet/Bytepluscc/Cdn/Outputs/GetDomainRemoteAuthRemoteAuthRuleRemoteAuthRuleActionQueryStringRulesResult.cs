@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesResult
     {
         /// <summary>
-        /// 表示鉴权请求参数的设置策略。
+        /// Indicates the strategy for setting authentication request parameters.
         /// </summary>
         public readonly Outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsResult QueryStringComponents;
         /// <summary>
-        /// 表示鉴权请求中额外的参数设置。您最多可以设置 50 个参数。
+        /// Indicates additional parameter settings in the authentication request. You can set up to 50 parameters.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceResult> QueryStringInstances;
 

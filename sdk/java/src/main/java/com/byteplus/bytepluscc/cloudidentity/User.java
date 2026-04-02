@@ -15,7 +15,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 云身份中心用户，与企业员工身份一一映射。云身份中心用户是一种身份类型，可与某个账号下的IAM用户身份进行唯一关联并单点登录。云身份中心提供企业员工身份全生命周期管理、权限管理能力，推荐您在本产品内统一管理员工身份。
+ * Cloud Identity Center users are mapped one-to-one with enterprise employee identities. A Cloud Identity Center user is an identity type that can be uniquely linked to an IAM user under an account for single sign-on. Cloud Identity Center provides full lifecycle management and permission management for enterprise employee identities. We recommend that you centrally manage employee identities within this product.
  * 
  * ## Example Usage
  * 
@@ -68,168 +68,168 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:cloudidentity/user:User")
 public class User extends com.pulumi.resources.CustomResource {
     /**
-     * 创建时间。
+     * Creation Time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation Time.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 用户描述。
+     * User Description.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 用户描述。
+     * @return User Description.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 用户显示名。
+     * User Display Name.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return 用户显示名。
+     * @return User Display Name.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * 邮箱。
+     * Email.
      * 
      */
     @Export(name="email", refs={String.class}, tree="[0]")
     private Output<String> email;
 
     /**
-     * @return 邮箱。
+     * @return Email.
      * 
      */
     public Output<String> email() {
         return this.email;
     }
     /**
-     * 身份类型。
+     * Identity Type.
      * 
      */
     @Export(name="identityType", refs={String.class}, tree="[0]")
     private Output<String> identityType;
 
     /**
-     * @return 身份类型。
+     * @return Identity Type.
      * 
      */
     public Output<String> identityType() {
         return this.identityType;
     }
     /**
-     * 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+     * Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      * 
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
-     * @return 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+     * @return Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      * 
      */
     public Output<String> password() {
         return this.password;
     }
     /**
-     * 首次登陆需不需要重置密码。
+     * Is password reset required on first login?
      * 
      */
     @Export(name="passwordResetRequired", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> passwordResetRequired;
 
     /**
-     * @return 首次登陆需不需要重置密码。
+     * @return Is password reset required on first login?
      * 
      */
     public Output<Boolean> passwordResetRequired() {
         return this.passwordResetRequired;
     }
     /**
-     * 手机号。
+     * Mobile Number.
      * 
      */
     @Export(name="phone", refs={String.class}, tree="[0]")
     private Output<String> phone;
 
     /**
-     * @return 手机号。
+     * @return Mobile Number.
      * 
      */
     public Output<String> phone() {
         return this.phone;
     }
     /**
-     * 用户来源。
+     * User Source.
      * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
-     * @return 用户来源。
+     * @return User Source.
      * 
      */
     public Output<String> source() {
         return this.source;
     }
     /**
-     * 更新时间。
+     * Update Time.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update Time.
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 用户id。
+     * User ID.
      * 
      */
     @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**
-     * @return 用户id。
+     * @return User ID.
      * 
      */
     public Output<String> userId() {
         return this.userId;
     }
     /**
-     * 用户名。
+     * Username.
      * 
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
-     * @return 用户名。
+     * @return Username.
      * 
      */
     public Output<String> userName() {

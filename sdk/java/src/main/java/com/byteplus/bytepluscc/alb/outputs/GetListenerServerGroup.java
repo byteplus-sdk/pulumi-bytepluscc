@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetListenerServerGroup {
     /**
-     * @return 服务器组 ID 。
+     * @return Server group ID.
      * 
      */
     private String serverGroupId;
     /**
-     * @return 服务器组名称。
+     * @return Server group name.
      * 
      */
     private String serverGroupName;
 
     private GetListenerServerGroup() {}
     /**
-     * @return 服务器组 ID 。
+     * @return Server group ID.
      * 
      */
     public String serverGroupId() {
         return this.serverGroupId;
     }
     /**
-     * @return 服务器组名称。
+     * @return Server group name.
      * 
      */
     public String serverGroupName() {

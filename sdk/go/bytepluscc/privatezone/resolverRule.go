@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 转发规则详细信息
+// Forwarding rule details
 //
 // ## Import
 //
@@ -22,30 +22,30 @@ import (
 type ResolverRule struct {
 	pulumi.CustomResourceState
 
-	// 转发规则的创建时间
+	// Creation time of the forwarding rule
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 转发规则是否被启用。true：启用。false：禁用。
+	// Whether the forwarding rule is enabled. true: enabled. false: disabled
 	Enable pulumi.BoolOutput `pulumi:"enable"`
-	// 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+	// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
 	EndpointId pulumi.IntOutput                 `pulumi:"endpointId"`
 	ForwardIPs ResolverRuleForwardIPArrayOutput `pulumi:"forwardIPs"`
-	// 最近一次更新转发规则的账号的 ID
+	// Account ID of the last update to the forwarding rule
 	LastOperator pulumi.StringOutput `pulumi:"lastOperator"`
-	// 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+	// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
 	Line pulumi.StringOutput `pulumi:"line"`
-	// 转发规则的名称。支持 UTF-8 格式。
+	// Name of the forwarding rule. Supports UTF-8 format
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 转发规则所属的项目名称。默认为 default。
+	// Project name associated with the forwarding rule. Default is default
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 转发规则的 ID。
+	// Forwarding rule ID
 	RuleId pulumi.StringOutput        `pulumi:"ruleId"`
 	Tags   ResolverRuleTagArrayOutput `pulumi:"tags"`
-	// 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+	// Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
 	Type pulumi.StringOutput `pulumi:"type"`
-	// 转发规则的更新时间
+	// Update time of the forwarding rule
 	UpdatedTime pulumi.StringOutput        `pulumi:"updatedTime"`
 	VpCs        ResolverRuleVpCArrayOutput `pulumi:"vpCs"`
-	// 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+	// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 	ZoneName pulumi.StringOutput `pulumi:"zoneName"`
 }
 
@@ -85,58 +85,58 @@ func GetResolverRule(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ResolverRule resources.
 type resolverRuleState struct {
-	// 转发规则的创建时间
+	// Creation time of the forwarding rule
 	CreatedTime *string `pulumi:"createdTime"`
-	// 转发规则是否被启用。true：启用。false：禁用。
+	// Whether the forwarding rule is enabled. true: enabled. false: disabled
 	Enable *bool `pulumi:"enable"`
-	// 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+	// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
 	EndpointId *int                    `pulumi:"endpointId"`
 	ForwardIPs []ResolverRuleForwardIP `pulumi:"forwardIPs"`
-	// 最近一次更新转发规则的账号的 ID
+	// Account ID of the last update to the forwarding rule
 	LastOperator *string `pulumi:"lastOperator"`
-	// 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+	// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
 	Line *string `pulumi:"line"`
-	// 转发规则的名称。支持 UTF-8 格式。
+	// Name of the forwarding rule. Supports UTF-8 format
 	Name *string `pulumi:"name"`
-	// 转发规则所属的项目名称。默认为 default。
+	// Project name associated with the forwarding rule. Default is default
 	ProjectName *string `pulumi:"projectName"`
-	// 转发规则的 ID。
+	// Forwarding rule ID
 	RuleId *string           `pulumi:"ruleId"`
 	Tags   []ResolverRuleTag `pulumi:"tags"`
-	// 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+	// Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
 	Type *string `pulumi:"type"`
-	// 转发规则的更新时间
+	// Update time of the forwarding rule
 	UpdatedTime *string           `pulumi:"updatedTime"`
 	VpCs        []ResolverRuleVpC `pulumi:"vpCs"`
-	// 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+	// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 	ZoneName *string `pulumi:"zoneName"`
 }
 
 type ResolverRuleState struct {
-	// 转发规则的创建时间
+	// Creation time of the forwarding rule
 	CreatedTime pulumi.StringPtrInput
-	// 转发规则是否被启用。true：启用。false：禁用。
+	// Whether the forwarding rule is enabled. true: enabled. false: disabled
 	Enable pulumi.BoolPtrInput
-	// 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+	// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
 	EndpointId pulumi.IntPtrInput
 	ForwardIPs ResolverRuleForwardIPArrayInput
-	// 最近一次更新转发规则的账号的 ID
+	// Account ID of the last update to the forwarding rule
 	LastOperator pulumi.StringPtrInput
-	// 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+	// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
 	Line pulumi.StringPtrInput
-	// 转发规则的名称。支持 UTF-8 格式。
+	// Name of the forwarding rule. Supports UTF-8 format
 	Name pulumi.StringPtrInput
-	// 转发规则所属的项目名称。默认为 default。
+	// Project name associated with the forwarding rule. Default is default
 	ProjectName pulumi.StringPtrInput
-	// 转发规则的 ID。
+	// Forwarding rule ID
 	RuleId pulumi.StringPtrInput
 	Tags   ResolverRuleTagArrayInput
-	// 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+	// Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
 	Type pulumi.StringPtrInput
-	// 转发规则的更新时间
+	// Update time of the forwarding rule
 	UpdatedTime pulumi.StringPtrInput
 	VpCs        ResolverRuleVpCArrayInput
-	// 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+	// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 	ZoneName pulumi.StringPtrInput
 }
 
@@ -145,39 +145,39 @@ func (ResolverRuleState) ElementType() reflect.Type {
 }
 
 type resolverRuleArgs struct {
-	// 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+	// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
 	EndpointId *int                    `pulumi:"endpointId"`
 	ForwardIPs []ResolverRuleForwardIP `pulumi:"forwardIPs"`
-	// 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+	// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
 	Line *string `pulumi:"line"`
-	// 转发规则的名称。支持 UTF-8 格式。
+	// Name of the forwarding rule. Supports UTF-8 format
 	Name string `pulumi:"name"`
-	// 转发规则所属的项目名称。默认为 default。
+	// Project name associated with the forwarding rule. Default is default
 	ProjectName *string           `pulumi:"projectName"`
 	Tags        []ResolverRuleTag `pulumi:"tags"`
-	// 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+	// Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
 	Type string            `pulumi:"type"`
 	VpCs []ResolverRuleVpC `pulumi:"vpCs"`
-	// 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+	// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 	ZoneName *string `pulumi:"zoneName"`
 }
 
 // The set of arguments for constructing a ResolverRule resource.
 type ResolverRuleArgs struct {
-	// 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+	// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
 	EndpointId pulumi.IntPtrInput
 	ForwardIPs ResolverRuleForwardIPArrayInput
-	// 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+	// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
 	Line pulumi.StringPtrInput
-	// 转发规则的名称。支持 UTF-8 格式。
+	// Name of the forwarding rule. Supports UTF-8 format
 	Name pulumi.StringInput
-	// 转发规则所属的项目名称。默认为 default。
+	// Project name associated with the forwarding rule. Default is default
 	ProjectName pulumi.StringPtrInput
 	Tags        ResolverRuleTagArrayInput
-	// 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+	// Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
 	Type pulumi.StringInput
 	VpCs ResolverRuleVpCArrayInput
-	// 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+	// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 	ZoneName pulumi.StringPtrInput
 }
 
@@ -268,17 +268,17 @@ func (o ResolverRuleOutput) ToResolverRuleOutputWithContext(ctx context.Context)
 	return o
 }
 
-// 转发规则的创建时间
+// Creation time of the forwarding rule
 func (o ResolverRuleOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResolverRule) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 转发规则是否被启用。true：启用。false：禁用。
+// Whether the forwarding rule is enabled. true: enabled. false: disabled
 func (o ResolverRuleOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ResolverRule) pulumi.BoolOutput { return v.Enable }).(pulumi.BoolOutput)
 }
 
-// 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
 func (o ResolverRuleOutput) EndpointId() pulumi.IntOutput {
 	return o.ApplyT(func(v *ResolverRule) pulumi.IntOutput { return v.EndpointId }).(pulumi.IntOutput)
 }
@@ -287,27 +287,27 @@ func (o ResolverRuleOutput) ForwardIPs() ResolverRuleForwardIPArrayOutput {
 	return o.ApplyT(func(v *ResolverRule) ResolverRuleForwardIPArrayOutput { return v.ForwardIPs }).(ResolverRuleForwardIPArrayOutput)
 }
 
-// 最近一次更新转发规则的账号的 ID
+// Account ID of the last update to the forwarding rule
 func (o ResolverRuleOutput) LastOperator() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResolverRule) pulumi.StringOutput { return v.LastOperator }).(pulumi.StringOutput)
 }
 
-// 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
 func (o ResolverRuleOutput) Line() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResolverRule) pulumi.StringOutput { return v.Line }).(pulumi.StringOutput)
 }
 
-// 转发规则的名称。支持 UTF-8 格式。
+// Name of the forwarding rule. Supports UTF-8 format
 func (o ResolverRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResolverRule) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 转发规则所属的项目名称。默认为 default。
+// Project name associated with the forwarding rule. Default is default
 func (o ResolverRuleOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResolverRule) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 转发规则的 ID。
+// Forwarding rule ID
 func (o ResolverRuleOutput) RuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResolverRule) pulumi.StringOutput { return v.RuleId }).(pulumi.StringOutput)
 }
@@ -316,12 +316,12 @@ func (o ResolverRuleOutput) Tags() ResolverRuleTagArrayOutput {
 	return o.ApplyT(func(v *ResolverRule) ResolverRuleTagArrayOutput { return v.Tags }).(ResolverRuleTagArrayOutput)
 }
 
-// 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+// Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
 func (o ResolverRuleOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResolverRule) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-// 转发规则的更新时间
+// Update time of the forwarding rule
 func (o ResolverRuleOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResolverRule) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
@@ -330,7 +330,7 @@ func (o ResolverRuleOutput) VpCs() ResolverRuleVpCArrayOutput {
 	return o.ApplyT(func(v *ResolverRule) ResolverRuleVpCArrayOutput { return v.VpCs }).(ResolverRuleVpCArrayOutput)
 }
 
-// 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 func (o ResolverRuleOutput) ZoneName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResolverRule) pulumi.StringOutput { return v.ZoneName }).(pulumi.StringOutput)
 }

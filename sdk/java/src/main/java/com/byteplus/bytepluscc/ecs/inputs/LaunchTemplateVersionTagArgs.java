@@ -16,14 +16,14 @@ public final class LaunchTemplateVersionTagArgs extends com.pulumi.resources.Res
     public static final LaunchTemplateVersionTagArgs Empty = new LaunchTemplateVersionTagArgs();
 
     /**
-     * 给资源添加的用户标签的标签键。
+     * Tag key for user tags added to the resource.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 给资源添加的用户标签的标签键。
+     * @return Tag key for user tags added to the resource.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class LaunchTemplateVersionTagArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 给资源添加的用户标签的标签值。
+     * Tag value for user tags added to the resource
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 给资源添加的用户标签的标签值。
+     * @return Tag value for user tags added to the resource
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class LaunchTemplateVersionTagArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param key 给资源添加的用户标签的标签键。
+         * @param key Tag key for user tags added to the resource.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class LaunchTemplateVersionTagArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param key 给资源添加的用户标签的标签键。
+         * @param key Tag key for user tags added to the resource.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class LaunchTemplateVersionTagArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param value 给资源添加的用户标签的标签值。
+         * @param value Tag value for user tags added to the resource
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class LaunchTemplateVersionTagArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param value 给资源添加的用户标签的标签值。
+         * @param value Tag value for user tags added to the resource
          * 
          * @return builder
          * 

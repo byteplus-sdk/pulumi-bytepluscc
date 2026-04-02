@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity.Outputs
     public sealed class GetPermissionSetPermissionPolicyResult
     {
         /// <summary>
-        /// 策略创建时间。
+        /// Policy Creation Time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 策略语法内容。语法可参考 策略语法说明。
+        /// Policy syntax content. Refer to policy syntax documentation
         /// </summary>
         public readonly string PermissionPolicyDocument;
         /// <summary>
-        /// 策略名称。
+        /// Policy Name
         /// </summary>
         public readonly string PermissionPolicyName;
         /// <summary>
-        /// 策略类型，System or Inline。
+        /// Policy Type: System or Inline
         /// </summary>
         public readonly string PermissionPolicyType;
 

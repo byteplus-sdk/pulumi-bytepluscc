@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetRuleRuleConditionPathConfigResult
     {
         /// <summary>
-        /// 转发规则的URL，仅支持绝对路径。
+        /// Forwarding rule URL. Only absolute paths are supported.
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

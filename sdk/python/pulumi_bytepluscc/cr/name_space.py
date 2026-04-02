@@ -25,9 +25,9 @@ class NameSpaceArgs:
                  project: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a NameSpace resource.
-        :param pulumi.Input[builtins.str] name: 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
-        :param pulumi.Input[builtins.str] registry: 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
-        :param pulumi.Input[builtins.str] project: 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+        :param pulumi.Input[builtins.str] name: Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
+        :param pulumi.Input[builtins.str] registry: Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
+        :param pulumi.Input[builtins.str] project: Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "registry", registry)
@@ -38,7 +38,7 @@ class NameSpaceArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+        Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
         """
         return pulumi.get(self, "name")
 
@@ -50,7 +50,7 @@ class NameSpaceArgs:
     @pulumi.getter
     def registry(self) -> pulumi.Input[builtins.str]:
         """
-        指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+        Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
         """
         return pulumi.get(self, "registry")
 
@@ -62,7 +62,7 @@ class NameSpaceArgs:
     @pulumi.getter
     def project(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+        Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
         """
         return pulumi.get(self, "project")
 
@@ -80,10 +80,10 @@ class _NameSpaceState:
                  registry: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering NameSpace resources.
-        :param pulumi.Input[builtins.str] created_time: 命名空间的创建时间。
-        :param pulumi.Input[builtins.str] name: 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
-        :param pulumi.Input[builtins.str] project: 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
-        :param pulumi.Input[builtins.str] registry: 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+        :param pulumi.Input[builtins.str] created_time: Namespace creation time.
+        :param pulumi.Input[builtins.str] name: Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
+        :param pulumi.Input[builtins.str] project: Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
+        :param pulumi.Input[builtins.str] registry: Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -98,7 +98,7 @@ class _NameSpaceState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        命名空间的创建时间。
+        Namespace creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -110,7 +110,7 @@ class _NameSpaceState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+        Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
         """
         return pulumi.get(self, "name")
 
@@ -122,7 +122,7 @@ class _NameSpaceState:
     @pulumi.getter
     def project(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+        Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
         """
         return pulumi.get(self, "project")
 
@@ -134,7 +134,7 @@ class _NameSpaceState:
     @pulumi.getter
     def registry(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+        Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
         """
         return pulumi.get(self, "registry")
 
@@ -154,7 +154,7 @@ class NameSpace(pulumi.CustomResource):
                  registry: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        命名空间是 OCI 制品仓库的集合，管理多个具有关联属性的 OCI 制品仓库。命名空间的名称通常为企业内部的组织团队名称、产品项目名称或个人自定义名称。
+        A namespace is a collection of OCI artifact repositories that share related attributes. Namespace names are typically organization team names, product project names, or custom names within an enterprise.
 
         ## Example Usage
 
@@ -176,9 +176,9 @@ class NameSpace(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] name: 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
-        :param pulumi.Input[builtins.str] project: 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
-        :param pulumi.Input[builtins.str] registry: 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+        :param pulumi.Input[builtins.str] name: Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
+        :param pulumi.Input[builtins.str] project: Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
+        :param pulumi.Input[builtins.str] registry: Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
         """
         ...
     @overload
@@ -187,7 +187,7 @@ class NameSpace(pulumi.CustomResource):
                  args: NameSpaceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        命名空间是 OCI 制品仓库的集合，管理多个具有关联属性的 OCI 制品仓库。命名空间的名称通常为企业内部的组织团队名称、产品项目名称或个人自定义名称。
+        A namespace is a collection of OCI artifact repositories that share related attributes. Namespace names are typically organization team names, product project names, or custom names within an enterprise.
 
         ## Example Usage
 
@@ -263,10 +263,10 @@ class NameSpace(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 命名空间的创建时间。
-        :param pulumi.Input[builtins.str] name: 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
-        :param pulumi.Input[builtins.str] project: 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
-        :param pulumi.Input[builtins.str] registry: 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+        :param pulumi.Input[builtins.str] created_time: Namespace creation time.
+        :param pulumi.Input[builtins.str] name: Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
+        :param pulumi.Input[builtins.str] project: Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
+        :param pulumi.Input[builtins.str] registry: Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -282,7 +282,7 @@ class NameSpace(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        命名空间的创建时间。
+        Namespace creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -290,7 +290,7 @@ class NameSpace(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+        Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
         """
         return pulumi.get(self, "name")
 
@@ -298,7 +298,7 @@ class NameSpace(pulumi.CustomResource):
     @pulumi.getter
     def project(self) -> pulumi.Output[builtins.str]:
         """
-        命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+        Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
         """
         return pulumi.get(self, "project")
 
@@ -306,7 +306,7 @@ class NameSpace(pulumi.CustomResource):
     @pulumi.getter
     def registry(self) -> pulumi.Output[builtins.str]:
         """
-        指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+        Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
         """
         return pulumi.get(self, "registry")
 

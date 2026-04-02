@@ -14,10 +14,10 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type GroupAttachedPolicy struct {
-	// 策略名。
+	// Policy name.
 	PolicyName   *string                          `pulumi:"policyName"`
 	PolicyScopes []GroupAttachedPolicyPolicyScope `pulumi:"policyScopes"`
-	// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
 	PolicyType *string `pulumi:"policyType"`
 }
 
@@ -33,10 +33,10 @@ type GroupAttachedPolicyInput interface {
 }
 
 type GroupAttachedPolicyArgs struct {
-	// 策略名。
+	// Policy name.
 	PolicyName   pulumi.StringPtrInput                    `pulumi:"policyName"`
 	PolicyScopes GroupAttachedPolicyPolicyScopeArrayInput `pulumi:"policyScopes"`
-	// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
 	PolicyType pulumi.StringPtrInput `pulumi:"policyType"`
 }
 
@@ -91,7 +91,7 @@ func (o GroupAttachedPolicyOutput) ToGroupAttachedPolicyOutputWithContext(ctx co
 	return o
 }
 
-// 策略名。
+// Policy name.
 func (o GroupAttachedPolicyOutput) PolicyName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupAttachedPolicy) *string { return v.PolicyName }).(pulumi.StringPtrOutput)
 }
@@ -100,7 +100,7 @@ func (o GroupAttachedPolicyOutput) PolicyScopes() GroupAttachedPolicyPolicyScope
 	return o.ApplyT(func(v GroupAttachedPolicy) []GroupAttachedPolicyPolicyScope { return v.PolicyScopes }).(GroupAttachedPolicyPolicyScopeArrayOutput)
 }
 
-// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+// Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
 func (o GroupAttachedPolicyOutput) PolicyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupAttachedPolicy) *string { return v.PolicyType }).(pulumi.StringPtrOutput)
 }
@@ -126,13 +126,13 @@ func (o GroupAttachedPolicyArrayOutput) Index(i pulumi.IntInput) GroupAttachedPo
 }
 
 type GroupAttachedPolicyPolicyScope struct {
-	// 项目授权时间。
+	// Project authorization time.
 	AttachTime *string `pulumi:"attachTime"`
-	// 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+	// Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
 	PolicyScopeType *string `pulumi:"policyScopeType"`
-	// 按项目授权时的项目显示名。
+	// Project display name for project-based authorization.
 	ProjectDisplayName *string `pulumi:"projectDisplayName"`
-	// 按项目授权时的项目名。
+	// Project name for project-based authorization.
 	ProjectName *string `pulumi:"projectName"`
 }
 
@@ -148,13 +148,13 @@ type GroupAttachedPolicyPolicyScopeInput interface {
 }
 
 type GroupAttachedPolicyPolicyScopeArgs struct {
-	// 项目授权时间。
+	// Project authorization time.
 	AttachTime pulumi.StringPtrInput `pulumi:"attachTime"`
-	// 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+	// Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
 	PolicyScopeType pulumi.StringPtrInput `pulumi:"policyScopeType"`
-	// 按项目授权时的项目显示名。
+	// Project display name for project-based authorization.
 	ProjectDisplayName pulumi.StringPtrInput `pulumi:"projectDisplayName"`
-	// 按项目授权时的项目名。
+	// Project name for project-based authorization.
 	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
 }
 
@@ -209,22 +209,22 @@ func (o GroupAttachedPolicyPolicyScopeOutput) ToGroupAttachedPolicyPolicyScopeOu
 	return o
 }
 
-// 项目授权时间。
+// Project authorization time.
 func (o GroupAttachedPolicyPolicyScopeOutput) AttachTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupAttachedPolicyPolicyScope) *string { return v.AttachTime }).(pulumi.StringPtrOutput)
 }
 
-// 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+// Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
 func (o GroupAttachedPolicyPolicyScopeOutput) PolicyScopeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupAttachedPolicyPolicyScope) *string { return v.PolicyScopeType }).(pulumi.StringPtrOutput)
 }
 
-// 按项目授权时的项目显示名。
+// Project display name for project-based authorization.
 func (o GroupAttachedPolicyPolicyScopeOutput) ProjectDisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupAttachedPolicyPolicyScope) *string { return v.ProjectDisplayName }).(pulumi.StringPtrOutput)
 }
 
-// 按项目授权时的项目名。
+// Project name for project-based authorization.
 func (o GroupAttachedPolicyPolicyScopeOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupAttachedPolicyPolicyScope) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
 }
@@ -250,7 +250,7 @@ func (o GroupAttachedPolicyPolicyScopeArrayOutput) Index(i pulumi.IntInput) Grou
 }
 
 type GroupUser struct {
-	// 用户名。
+	// Username.
 	UserName *string `pulumi:"userName"`
 }
 
@@ -266,7 +266,7 @@ type GroupUserInput interface {
 }
 
 type GroupUserArgs struct {
-	// 用户名。
+	// Username.
 	UserName pulumi.StringPtrInput `pulumi:"userName"`
 }
 
@@ -321,7 +321,7 @@ func (o GroupUserOutput) ToGroupUserOutputWithContext(ctx context.Context) Group
 	return o
 }
 
-// 用户名。
+// Username.
 func (o GroupUserOutput) UserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupUser) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
@@ -347,7 +347,7 @@ func (o GroupUserArrayOutput) Index(i pulumi.IntInput) GroupUserOutput {
 }
 
 type PolicyPolicyRole struct {
-	// 对应用户、角色、用户组的名称。
+	// Name of the corresponding user, role, or user group.
 	Name         *string                       `pulumi:"name"`
 	PolicyScopes []PolicyPolicyRolePolicyScope `pulumi:"policyScopes"`
 }
@@ -364,7 +364,7 @@ type PolicyPolicyRoleInput interface {
 }
 
 type PolicyPolicyRoleArgs struct {
-	// 对应用户、角色、用户组的名称。
+	// Name of the corresponding user, role, or user group.
 	Name         pulumi.StringPtrInput                 `pulumi:"name"`
 	PolicyScopes PolicyPolicyRolePolicyScopeArrayInput `pulumi:"policyScopes"`
 }
@@ -420,7 +420,7 @@ func (o PolicyPolicyRoleOutput) ToPolicyPolicyRoleOutputWithContext(ctx context.
 	return o
 }
 
-// 对应用户、角色、用户组的名称。
+// Name of the corresponding user, role, or user group.
 func (o PolicyPolicyRoleOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyPolicyRole) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -450,7 +450,7 @@ func (o PolicyPolicyRoleArrayOutput) Index(i pulumi.IntInput) PolicyPolicyRoleOu
 }
 
 type PolicyPolicyRolePolicyScope struct {
-	// 项目名。
+	// Project name.
 	ProjectName *string `pulumi:"projectName"`
 }
 
@@ -466,7 +466,7 @@ type PolicyPolicyRolePolicyScopeInput interface {
 }
 
 type PolicyPolicyRolePolicyScopeArgs struct {
-	// 项目名。
+	// Project name.
 	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
 }
 
@@ -521,7 +521,7 @@ func (o PolicyPolicyRolePolicyScopeOutput) ToPolicyPolicyRolePolicyScopeOutputWi
 	return o
 }
 
-// 项目名。
+// Project name.
 func (o PolicyPolicyRolePolicyScopeOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyPolicyRolePolicyScope) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
 }
@@ -547,7 +547,7 @@ func (o PolicyPolicyRolePolicyScopeArrayOutput) Index(i pulumi.IntInput) PolicyP
 }
 
 type PolicyPolicyUser struct {
-	// 对应用户、角色、用户组的名称。
+	// Name of the corresponding user, role, or user group.
 	Name         *string                       `pulumi:"name"`
 	PolicyScopes []PolicyPolicyUserPolicyScope `pulumi:"policyScopes"`
 }
@@ -564,7 +564,7 @@ type PolicyPolicyUserInput interface {
 }
 
 type PolicyPolicyUserArgs struct {
-	// 对应用户、角色、用户组的名称。
+	// Name of the corresponding user, role, or user group.
 	Name         pulumi.StringPtrInput                 `pulumi:"name"`
 	PolicyScopes PolicyPolicyUserPolicyScopeArrayInput `pulumi:"policyScopes"`
 }
@@ -620,7 +620,7 @@ func (o PolicyPolicyUserOutput) ToPolicyPolicyUserOutputWithContext(ctx context.
 	return o
 }
 
-// 对应用户、角色、用户组的名称。
+// Name of the corresponding user, role, or user group.
 func (o PolicyPolicyUserOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyPolicyUser) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -650,7 +650,7 @@ func (o PolicyPolicyUserArrayOutput) Index(i pulumi.IntInput) PolicyPolicyUserOu
 }
 
 type PolicyPolicyUserGroup struct {
-	// 对应用户、角色、用户组的名称。
+	// Name of the corresponding user, role, or user group.
 	Name         *string                            `pulumi:"name"`
 	PolicyScopes []PolicyPolicyUserGroupPolicyScope `pulumi:"policyScopes"`
 }
@@ -667,7 +667,7 @@ type PolicyPolicyUserGroupInput interface {
 }
 
 type PolicyPolicyUserGroupArgs struct {
-	// 对应用户、角色、用户组的名称。
+	// Name of the corresponding user, role, or user group.
 	Name         pulumi.StringPtrInput                      `pulumi:"name"`
 	PolicyScopes PolicyPolicyUserGroupPolicyScopeArrayInput `pulumi:"policyScopes"`
 }
@@ -723,7 +723,7 @@ func (o PolicyPolicyUserGroupOutput) ToPolicyPolicyUserGroupOutputWithContext(ct
 	return o
 }
 
-// 对应用户、角色、用户组的名称。
+// Name of the corresponding user, role, or user group.
 func (o PolicyPolicyUserGroupOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyPolicyUserGroup) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -753,7 +753,7 @@ func (o PolicyPolicyUserGroupArrayOutput) Index(i pulumi.IntInput) PolicyPolicyU
 }
 
 type PolicyPolicyUserGroupPolicyScope struct {
-	// 项目名。
+	// Project name.
 	ProjectName *string `pulumi:"projectName"`
 }
 
@@ -769,7 +769,7 @@ type PolicyPolicyUserGroupPolicyScopeInput interface {
 }
 
 type PolicyPolicyUserGroupPolicyScopeArgs struct {
-	// 项目名。
+	// Project name.
 	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
 }
 
@@ -824,7 +824,7 @@ func (o PolicyPolicyUserGroupPolicyScopeOutput) ToPolicyPolicyUserGroupPolicySco
 	return o
 }
 
-// 项目名。
+// Project name.
 func (o PolicyPolicyUserGroupPolicyScopeOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyPolicyUserGroupPolicyScope) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
 }
@@ -850,7 +850,7 @@ func (o PolicyPolicyUserGroupPolicyScopeArrayOutput) Index(i pulumi.IntInput) Po
 }
 
 type PolicyPolicyUserPolicyScope struct {
-	// 项目名。
+	// Project name.
 	ProjectName *string `pulumi:"projectName"`
 }
 
@@ -866,7 +866,7 @@ type PolicyPolicyUserPolicyScopeInput interface {
 }
 
 type PolicyPolicyUserPolicyScopeArgs struct {
-	// 项目名。
+	// Project name.
 	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
 }
 
@@ -921,7 +921,7 @@ func (o PolicyPolicyUserPolicyScopeOutput) ToPolicyPolicyUserPolicyScopeOutputWi
 	return o
 }
 
-// 项目名。
+// Project name.
 func (o PolicyPolicyUserPolicyScopeOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyPolicyUserPolicyScope) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
 }
@@ -947,9 +947,9 @@ func (o PolicyPolicyUserPolicyScopeArrayOutput) Index(i pulumi.IntInput) PolicyP
 }
 
 type RolePolicy struct {
-	// 策略名。
+	// Policy name
 	PolicyName *string `pulumi:"policyName"`
-	// 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 	PolicyType *string `pulumi:"policyType"`
 }
 
@@ -965,9 +965,9 @@ type RolePolicyInput interface {
 }
 
 type RolePolicyArgs struct {
-	// 策略名。
+	// Policy name
 	PolicyName pulumi.StringPtrInput `pulumi:"policyName"`
-	// 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 	PolicyType pulumi.StringPtrInput `pulumi:"policyType"`
 }
 
@@ -1022,12 +1022,12 @@ func (o RolePolicyOutput) ToRolePolicyOutputWithContext(ctx context.Context) Rol
 	return o
 }
 
-// 策略名。
+// Policy name
 func (o RolePolicyOutput) PolicyName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RolePolicy) *string { return v.PolicyName }).(pulumi.StringPtrOutput)
 }
 
-// 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+// Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 func (o RolePolicyOutput) PolicyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RolePolicy) *string { return v.PolicyType }).(pulumi.StringPtrOutput)
 }
@@ -1053,9 +1053,9 @@ func (o RolePolicyArrayOutput) Index(i pulumi.IntInput) RolePolicyOutput {
 }
 
 type RoleTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -1071,9 +1071,9 @@ type RoleTagInput interface {
 }
 
 type RoleTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1128,12 +1128,12 @@ func (o RoleTagOutput) ToRoleTagOutputWithContext(ctx context.Context) RoleTagOu
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o RoleTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RoleTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o RoleTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RoleTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1159,21 +1159,21 @@ func (o RoleTagArrayOutput) Index(i pulumi.IntInput) RoleTagOutput {
 }
 
 type UserAccessKey struct {
-	// 访问密钥ID。
+	// Access key ID.
 	AccessKeyId *string `pulumi:"accessKeyId"`
-	// 访问密钥创建时间。
+	// Access key creation time.
 	CreateDate *string `pulumi:"createDate"`
-	// 最近一次使用的服务区域。
+	// Most recently used service region.
 	Region *string `pulumi:"region"`
-	// 访问密钥最近一次使用时间。
+	// Last used time of the access key.
 	RequestTime *string `pulumi:"requestTime"`
-	// 最近一次使用的服务名称。
+	// Name of the most recently used service.
 	Service *string `pulumi:"service"`
-	// 访问密钥状态。Active代表启用，Inactive代表禁用。
+	// Access key status. 'Active' means enabled, 'Inactive' means disabled.
 	Status *string `pulumi:"status"`
-	// 访问密钥更新时间。
+	// Access key update time.
 	UpdateDate *string `pulumi:"updateDate"`
-	// 访问密钥Secret。
+	// Access key Secret.
 	UserName *string `pulumi:"userName"`
 }
 
@@ -1189,21 +1189,21 @@ type UserAccessKeyInput interface {
 }
 
 type UserAccessKeyArgs struct {
-	// 访问密钥ID。
+	// Access key ID.
 	AccessKeyId pulumi.StringPtrInput `pulumi:"accessKeyId"`
-	// 访问密钥创建时间。
+	// Access key creation time.
 	CreateDate pulumi.StringPtrInput `pulumi:"createDate"`
-	// 最近一次使用的服务区域。
+	// Most recently used service region.
 	Region pulumi.StringPtrInput `pulumi:"region"`
-	// 访问密钥最近一次使用时间。
+	// Last used time of the access key.
 	RequestTime pulumi.StringPtrInput `pulumi:"requestTime"`
-	// 最近一次使用的服务名称。
+	// Name of the most recently used service.
 	Service pulumi.StringPtrInput `pulumi:"service"`
-	// 访问密钥状态。Active代表启用，Inactive代表禁用。
+	// Access key status. 'Active' means enabled, 'Inactive' means disabled.
 	Status pulumi.StringPtrInput `pulumi:"status"`
-	// 访问密钥更新时间。
+	// Access key update time.
 	UpdateDate pulumi.StringPtrInput `pulumi:"updateDate"`
-	// 访问密钥Secret。
+	// Access key Secret.
 	UserName pulumi.StringPtrInput `pulumi:"userName"`
 }
 
@@ -1258,42 +1258,42 @@ func (o UserAccessKeyOutput) ToUserAccessKeyOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 访问密钥ID。
+// Access key ID.
 func (o UserAccessKeyOutput) AccessKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserAccessKey) *string { return v.AccessKeyId }).(pulumi.StringPtrOutput)
 }
 
-// 访问密钥创建时间。
+// Access key creation time.
 func (o UserAccessKeyOutput) CreateDate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserAccessKey) *string { return v.CreateDate }).(pulumi.StringPtrOutput)
 }
 
-// 最近一次使用的服务区域。
+// Most recently used service region.
 func (o UserAccessKeyOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserAccessKey) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
-// 访问密钥最近一次使用时间。
+// Last used time of the access key.
 func (o UserAccessKeyOutput) RequestTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserAccessKey) *string { return v.RequestTime }).(pulumi.StringPtrOutput)
 }
 
-// 最近一次使用的服务名称。
+// Name of the most recently used service.
 func (o UserAccessKeyOutput) Service() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserAccessKey) *string { return v.Service }).(pulumi.StringPtrOutput)
 }
 
-// 访问密钥状态。Active代表启用，Inactive代表禁用。
+// Access key status. 'Active' means enabled, 'Inactive' means disabled.
 func (o UserAccessKeyOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserAccessKey) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
-// 访问密钥更新时间。
+// Access key update time.
 func (o UserAccessKeyOutput) UpdateDate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserAccessKey) *string { return v.UpdateDate }).(pulumi.StringPtrOutput)
 }
 
-// 访问密钥Secret。
+// Access key Secret.
 func (o UserAccessKeyOutput) UserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserAccessKey) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
@@ -1319,35 +1319,35 @@ func (o UserAccessKeyArrayOutput) Index(i pulumi.IntInput) UserAccessKeyOutput {
 }
 
 type UserLoginProfile struct {
-	// 登录配置创建时间。
+	// Login configuration creation time.
 	CreateDate *string `pulumi:"createDate"`
-	// 上次登录时间。
+	// Last login time.
 	LastLoginDate *string `pulumi:"lastLoginDate"`
-	// 上次登录IP。
+	// Last login IP.
 	LastLoginIp *string `pulumi:"lastLoginIp"`
-	// 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
-	LastResetPasswordTime *float64 `pulumi:"lastResetPasswordTime"`
-	// 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+	// Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
+	LastResetPasswordTime *int `pulumi:"lastResetPasswordTime"`
+	// Whether login is allowed. 'true' means allowed, 'false' means not allowed. Default is 'false'.
 	LoginAllowed *bool `pulumi:"loginAllowed"`
-	// 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+	// Whether login is locked. 'true' means locked, 'false' means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
 	LoginLocked *bool `pulumi:"loginLocked"`
-	// 登录密码。
+	// Login password.
 	Password *string `pulumi:"password"`
-	// 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
-	PasswordExpireAt *float64 `pulumi:"passwordExpireAt"`
-	// 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+	// Password expiration time. '0' means never expires; non-zero means the expiration timestamp.
+	PasswordExpireAt *int `pulumi:"passwordExpireAt"`
+	// Whether password reset is required on next login. Whether password reset is required on next login. 'true' means password reset is required, 'false' means not required. Default is 'false'.
 	PasswordResetRequired *bool `pulumi:"passwordResetRequired"`
-	// 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+	// Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
 	SafeAuthExemptDuration *float64 `pulumi:"safeAuthExemptDuration"`
-	// 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+	// Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
 	SafeAuthExemptRequired *float64 `pulumi:"safeAuthExemptRequired"`
-	// 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+	// Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
 	SafeAuthExemptUnit *float64 `pulumi:"safeAuthExemptUnit"`
-	// 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+	// Whether login protection is enabled. 'true' means enabled, 'false' means disabled. Default is 'false'.
 	SafeAuthFlag *bool `pulumi:"safeAuthFlag"`
-	// 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+	// Login protection type. Login protection type. 'phone' represents mobile verification, 'email' represents email verification, 'vmfa' represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
 	SafeAuthType *string `pulumi:"safeAuthType"`
-	// 登录配置更新时间。
+	// Login configuration update time.
 	UpdateDate *string `pulumi:"updateDate"`
 }
 
@@ -1363,35 +1363,35 @@ type UserLoginProfileInput interface {
 }
 
 type UserLoginProfileArgs struct {
-	// 登录配置创建时间。
+	// Login configuration creation time.
 	CreateDate pulumi.StringPtrInput `pulumi:"createDate"`
-	// 上次登录时间。
+	// Last login time.
 	LastLoginDate pulumi.StringPtrInput `pulumi:"lastLoginDate"`
-	// 上次登录IP。
+	// Last login IP.
 	LastLoginIp pulumi.StringPtrInput `pulumi:"lastLoginIp"`
-	// 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
-	LastResetPasswordTime pulumi.Float64PtrInput `pulumi:"lastResetPasswordTime"`
-	// 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+	// Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
+	LastResetPasswordTime pulumi.IntPtrInput `pulumi:"lastResetPasswordTime"`
+	// Whether login is allowed. 'true' means allowed, 'false' means not allowed. Default is 'false'.
 	LoginAllowed pulumi.BoolPtrInput `pulumi:"loginAllowed"`
-	// 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+	// Whether login is locked. 'true' means locked, 'false' means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
 	LoginLocked pulumi.BoolPtrInput `pulumi:"loginLocked"`
-	// 登录密码。
+	// Login password.
 	Password pulumi.StringPtrInput `pulumi:"password"`
-	// 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
-	PasswordExpireAt pulumi.Float64PtrInput `pulumi:"passwordExpireAt"`
-	// 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+	// Password expiration time. '0' means never expires; non-zero means the expiration timestamp.
+	PasswordExpireAt pulumi.IntPtrInput `pulumi:"passwordExpireAt"`
+	// Whether password reset is required on next login. Whether password reset is required on next login. 'true' means password reset is required, 'false' means not required. Default is 'false'.
 	PasswordResetRequired pulumi.BoolPtrInput `pulumi:"passwordResetRequired"`
-	// 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+	// Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
 	SafeAuthExemptDuration pulumi.Float64PtrInput `pulumi:"safeAuthExemptDuration"`
-	// 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+	// Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
 	SafeAuthExemptRequired pulumi.Float64PtrInput `pulumi:"safeAuthExemptRequired"`
-	// 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+	// Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
 	SafeAuthExemptUnit pulumi.Float64PtrInput `pulumi:"safeAuthExemptUnit"`
-	// 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+	// Whether login protection is enabled. 'true' means enabled, 'false' means disabled. Default is 'false'.
 	SafeAuthFlag pulumi.BoolPtrInput `pulumi:"safeAuthFlag"`
-	// 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+	// Login protection type. Login protection type. 'phone' represents mobile verification, 'email' represents email verification, 'vmfa' represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
 	SafeAuthType pulumi.StringPtrInput `pulumi:"safeAuthType"`
-	// 登录配置更新时间。
+	// Login configuration update time.
 	UpdateDate pulumi.StringPtrInput `pulumi:"updateDate"`
 }
 
@@ -1472,77 +1472,77 @@ func (o UserLoginProfileOutput) ToUserLoginProfilePtrOutputWithContext(ctx conte
 	}).(UserLoginProfilePtrOutput)
 }
 
-// 登录配置创建时间。
+// Login configuration creation time.
 func (o UserLoginProfileOutput) CreateDate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserLoginProfile) *string { return v.CreateDate }).(pulumi.StringPtrOutput)
 }
 
-// 上次登录时间。
+// Last login time.
 func (o UserLoginProfileOutput) LastLoginDate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserLoginProfile) *string { return v.LastLoginDate }).(pulumi.StringPtrOutput)
 }
 
-// 上次登录IP。
+// Last login IP.
 func (o UserLoginProfileOutput) LastLoginIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserLoginProfile) *string { return v.LastLoginIp }).(pulumi.StringPtrOutput)
 }
 
-// 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
-func (o UserLoginProfileOutput) LastResetPasswordTime() pulumi.Float64PtrOutput {
-	return o.ApplyT(func(v UserLoginProfile) *float64 { return v.LastResetPasswordTime }).(pulumi.Float64PtrOutput)
+// Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
+func (o UserLoginProfileOutput) LastResetPasswordTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v UserLoginProfile) *int { return v.LastResetPasswordTime }).(pulumi.IntPtrOutput)
 }
 
-// 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+// Whether login is allowed. 'true' means allowed, 'false' means not allowed. Default is 'false'.
 func (o UserLoginProfileOutput) LoginAllowed() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UserLoginProfile) *bool { return v.LoginAllowed }).(pulumi.BoolPtrOutput)
 }
 
-// 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+// Whether login is locked. 'true' means locked, 'false' means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
 func (o UserLoginProfileOutput) LoginLocked() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UserLoginProfile) *bool { return v.LoginLocked }).(pulumi.BoolPtrOutput)
 }
 
-// 登录密码。
+// Login password.
 func (o UserLoginProfileOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserLoginProfile) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
-// 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
-func (o UserLoginProfileOutput) PasswordExpireAt() pulumi.Float64PtrOutput {
-	return o.ApplyT(func(v UserLoginProfile) *float64 { return v.PasswordExpireAt }).(pulumi.Float64PtrOutput)
+// Password expiration time. '0' means never expires; non-zero means the expiration timestamp.
+func (o UserLoginProfileOutput) PasswordExpireAt() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v UserLoginProfile) *int { return v.PasswordExpireAt }).(pulumi.IntPtrOutput)
 }
 
-// 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+// Whether password reset is required on next login. Whether password reset is required on next login. 'true' means password reset is required, 'false' means not required. Default is 'false'.
 func (o UserLoginProfileOutput) PasswordResetRequired() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UserLoginProfile) *bool { return v.PasswordResetRequired }).(pulumi.BoolPtrOutput)
 }
 
-// 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+// Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
 func (o UserLoginProfileOutput) SafeAuthExemptDuration() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v UserLoginProfile) *float64 { return v.SafeAuthExemptDuration }).(pulumi.Float64PtrOutput)
 }
 
-// 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+// Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
 func (o UserLoginProfileOutput) SafeAuthExemptRequired() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v UserLoginProfile) *float64 { return v.SafeAuthExemptRequired }).(pulumi.Float64PtrOutput)
 }
 
-// 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+// Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
 func (o UserLoginProfileOutput) SafeAuthExemptUnit() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v UserLoginProfile) *float64 { return v.SafeAuthExemptUnit }).(pulumi.Float64PtrOutput)
 }
 
-// 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+// Whether login protection is enabled. 'true' means enabled, 'false' means disabled. Default is 'false'.
 func (o UserLoginProfileOutput) SafeAuthFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UserLoginProfile) *bool { return v.SafeAuthFlag }).(pulumi.BoolPtrOutput)
 }
 
-// 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+// Login protection type. Login protection type. 'phone' represents mobile verification, 'email' represents email verification, 'vmfa' represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
 func (o UserLoginProfileOutput) SafeAuthType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserLoginProfile) *string { return v.SafeAuthType }).(pulumi.StringPtrOutput)
 }
 
-// 登录配置更新时间。
+// Login configuration update time.
 func (o UserLoginProfileOutput) UpdateDate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserLoginProfile) *string { return v.UpdateDate }).(pulumi.StringPtrOutput)
 }
@@ -1571,7 +1571,7 @@ func (o UserLoginProfilePtrOutput) Elem() UserLoginProfileOutput {
 	}).(UserLoginProfileOutput)
 }
 
-// 登录配置创建时间。
+// Login configuration creation time.
 func (o UserLoginProfilePtrOutput) CreateDate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UserLoginProfile) *string {
 		if v == nil {
@@ -1581,7 +1581,7 @@ func (o UserLoginProfilePtrOutput) CreateDate() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 上次登录时间。
+// Last login time.
 func (o UserLoginProfilePtrOutput) LastLoginDate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UserLoginProfile) *string {
 		if v == nil {
@@ -1591,7 +1591,7 @@ func (o UserLoginProfilePtrOutput) LastLoginDate() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 上次登录IP。
+// Last login IP.
 func (o UserLoginProfilePtrOutput) LastLoginIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UserLoginProfile) *string {
 		if v == nil {
@@ -1601,17 +1601,17 @@ func (o UserLoginProfilePtrOutput) LastLoginIp() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
-func (o UserLoginProfilePtrOutput) LastResetPasswordTime() pulumi.Float64PtrOutput {
-	return o.ApplyT(func(v *UserLoginProfile) *float64 {
+// Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
+func (o UserLoginProfilePtrOutput) LastResetPasswordTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *UserLoginProfile) *int {
 		if v == nil {
 			return nil
 		}
 		return v.LastResetPasswordTime
-	}).(pulumi.Float64PtrOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
-// 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+// Whether login is allowed. 'true' means allowed, 'false' means not allowed. Default is 'false'.
 func (o UserLoginProfilePtrOutput) LoginAllowed() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UserLoginProfile) *bool {
 		if v == nil {
@@ -1621,7 +1621,7 @@ func (o UserLoginProfilePtrOutput) LoginAllowed() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+// Whether login is locked. 'true' means locked, 'false' means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
 func (o UserLoginProfilePtrOutput) LoginLocked() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UserLoginProfile) *bool {
 		if v == nil {
@@ -1631,7 +1631,7 @@ func (o UserLoginProfilePtrOutput) LoginLocked() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 登录密码。
+// Login password.
 func (o UserLoginProfilePtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UserLoginProfile) *string {
 		if v == nil {
@@ -1641,17 +1641,17 @@ func (o UserLoginProfilePtrOutput) Password() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
-func (o UserLoginProfilePtrOutput) PasswordExpireAt() pulumi.Float64PtrOutput {
-	return o.ApplyT(func(v *UserLoginProfile) *float64 {
+// Password expiration time. '0' means never expires; non-zero means the expiration timestamp.
+func (o UserLoginProfilePtrOutput) PasswordExpireAt() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *UserLoginProfile) *int {
 		if v == nil {
 			return nil
 		}
 		return v.PasswordExpireAt
-	}).(pulumi.Float64PtrOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
-// 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+// Whether password reset is required on next login. Whether password reset is required on next login. 'true' means password reset is required, 'false' means not required. Default is 'false'.
 func (o UserLoginProfilePtrOutput) PasswordResetRequired() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UserLoginProfile) *bool {
 		if v == nil {
@@ -1661,7 +1661,7 @@ func (o UserLoginProfilePtrOutput) PasswordResetRequired() pulumi.BoolPtrOutput 
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+// Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
 func (o UserLoginProfilePtrOutput) SafeAuthExemptDuration() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *UserLoginProfile) *float64 {
 		if v == nil {
@@ -1671,7 +1671,7 @@ func (o UserLoginProfilePtrOutput) SafeAuthExemptDuration() pulumi.Float64PtrOut
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+// Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
 func (o UserLoginProfilePtrOutput) SafeAuthExemptRequired() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *UserLoginProfile) *float64 {
 		if v == nil {
@@ -1681,7 +1681,7 @@ func (o UserLoginProfilePtrOutput) SafeAuthExemptRequired() pulumi.Float64PtrOut
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+// Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
 func (o UserLoginProfilePtrOutput) SafeAuthExemptUnit() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *UserLoginProfile) *float64 {
 		if v == nil {
@@ -1691,7 +1691,7 @@ func (o UserLoginProfilePtrOutput) SafeAuthExemptUnit() pulumi.Float64PtrOutput 
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+// Whether login protection is enabled. 'true' means enabled, 'false' means disabled. Default is 'false'.
 func (o UserLoginProfilePtrOutput) SafeAuthFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UserLoginProfile) *bool {
 		if v == nil {
@@ -1701,7 +1701,7 @@ func (o UserLoginProfilePtrOutput) SafeAuthFlag() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+// Login protection type. Login protection type. 'phone' represents mobile verification, 'email' represents email verification, 'vmfa' represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
 func (o UserLoginProfilePtrOutput) SafeAuthType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UserLoginProfile) *string {
 		if v == nil {
@@ -1711,7 +1711,7 @@ func (o UserLoginProfilePtrOutput) SafeAuthType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 登录配置更新时间。
+// Login configuration update time.
 func (o UserLoginProfilePtrOutput) UpdateDate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UserLoginProfile) *string {
 		if v == nil {
@@ -1722,9 +1722,9 @@ func (o UserLoginProfilePtrOutput) UpdateDate() pulumi.StringPtrOutput {
 }
 
 type UserPolicy struct {
-	// 权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
+	// Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 	PolicyName *string `pulumi:"policyName"`
-	// 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Permission policy type. 'System' indicates system preset policy, 'Custom' indicates custom policy.
 	PolicyType *string `pulumi:"policyType"`
 }
 
@@ -1740,9 +1740,9 @@ type UserPolicyInput interface {
 }
 
 type UserPolicyArgs struct {
-	// 权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
+	// Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 	PolicyName pulumi.StringPtrInput `pulumi:"policyName"`
-	// 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Permission policy type. 'System' indicates system preset policy, 'Custom' indicates custom policy.
 	PolicyType pulumi.StringPtrInput `pulumi:"policyType"`
 }
 
@@ -1797,12 +1797,12 @@ func (o UserPolicyOutput) ToUserPolicyOutputWithContext(ctx context.Context) Use
 	return o
 }
 
-// 权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
+// Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 func (o UserPolicyOutput) PolicyName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserPolicy) *string { return v.PolicyName }).(pulumi.StringPtrOutput)
 }
 
-// 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+// Permission policy type. 'System' indicates system preset policy, 'Custom' indicates custom policy.
 func (o UserPolicyOutput) PolicyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserPolicy) *string { return v.PolicyType }).(pulumi.StringPtrOutput)
 }
@@ -1828,11 +1828,11 @@ func (o UserPolicyArrayOutput) Index(i pulumi.IntInput) UserPolicyOutput {
 }
 
 type UserSecurityConfig struct {
-	// 是否开启操作保护。0代表开启，1代表关闭。
+	// Whether operation protection is enabled. 0 means enabled, 1 means disabled.
 	SafeAuthClose *float64 `pulumi:"safeAuthClose"`
-	// 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+	// Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
 	SafeAuthExemptDuration *float64 `pulumi:"safeAuthExemptDuration"`
-	// 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+	// Operation protection type. 'phone' indicates phone verification, 'email' indicates email verification, 'vmfa' indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
 	SafeAuthType *string `pulumi:"safeAuthType"`
 }
 
@@ -1848,11 +1848,11 @@ type UserSecurityConfigInput interface {
 }
 
 type UserSecurityConfigArgs struct {
-	// 是否开启操作保护。0代表开启，1代表关闭。
+	// Whether operation protection is enabled. 0 means enabled, 1 means disabled.
 	SafeAuthClose pulumi.Float64PtrInput `pulumi:"safeAuthClose"`
-	// 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+	// Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
 	SafeAuthExemptDuration pulumi.Float64PtrInput `pulumi:"safeAuthExemptDuration"`
-	// 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+	// Operation protection type. 'phone' indicates phone verification, 'email' indicates email verification, 'vmfa' indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
 	SafeAuthType pulumi.StringPtrInput `pulumi:"safeAuthType"`
 }
 
@@ -1933,17 +1933,17 @@ func (o UserSecurityConfigOutput) ToUserSecurityConfigPtrOutputWithContext(ctx c
 	}).(UserSecurityConfigPtrOutput)
 }
 
-// 是否开启操作保护。0代表开启，1代表关闭。
+// Whether operation protection is enabled. 0 means enabled, 1 means disabled.
 func (o UserSecurityConfigOutput) SafeAuthClose() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v UserSecurityConfig) *float64 { return v.SafeAuthClose }).(pulumi.Float64PtrOutput)
 }
 
-// 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+// Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
 func (o UserSecurityConfigOutput) SafeAuthExemptDuration() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v UserSecurityConfig) *float64 { return v.SafeAuthExemptDuration }).(pulumi.Float64PtrOutput)
 }
 
-// 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+// Operation protection type. 'phone' indicates phone verification, 'email' indicates email verification, 'vmfa' indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
 func (o UserSecurityConfigOutput) SafeAuthType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserSecurityConfig) *string { return v.SafeAuthType }).(pulumi.StringPtrOutput)
 }
@@ -1972,7 +1972,7 @@ func (o UserSecurityConfigPtrOutput) Elem() UserSecurityConfigOutput {
 	}).(UserSecurityConfigOutput)
 }
 
-// 是否开启操作保护。0代表开启，1代表关闭。
+// Whether operation protection is enabled. 0 means enabled, 1 means disabled.
 func (o UserSecurityConfigPtrOutput) SafeAuthClose() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *UserSecurityConfig) *float64 {
 		if v == nil {
@@ -1982,7 +1982,7 @@ func (o UserSecurityConfigPtrOutput) SafeAuthClose() pulumi.Float64PtrOutput {
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+// Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
 func (o UserSecurityConfigPtrOutput) SafeAuthExemptDuration() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *UserSecurityConfig) *float64 {
 		if v == nil {
@@ -1992,7 +1992,7 @@ func (o UserSecurityConfigPtrOutput) SafeAuthExemptDuration() pulumi.Float64PtrO
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+// Operation protection type. 'phone' indicates phone verification, 'email' indicates email verification, 'vmfa' indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
 func (o UserSecurityConfigPtrOutput) SafeAuthType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UserSecurityConfig) *string {
 		if v == nil {
@@ -2003,9 +2003,9 @@ func (o UserSecurityConfigPtrOutput) SafeAuthType() pulumi.StringPtrOutput {
 }
 
 type UserTag struct {
-	// 标签键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -2021,9 +2021,9 @@ type UserTagInput interface {
 }
 
 type UserTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -2078,12 +2078,12 @@ func (o UserTagOutput) ToUserTagOutputWithContext(ctx context.Context) UserTagOu
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o UserTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o UserTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -2109,17 +2109,17 @@ func (o UserTagArrayOutput) Index(i pulumi.IntInput) UserTagOutput {
 }
 
 type GetGroupAttachedPolicy struct {
-	// 策略绑定时间。
+	// Policy binding time.
 	AttachTime string `pulumi:"attachTime"`
-	// 策略描述。
+	// Policy description.
 	Description string `pulumi:"description"`
-	// 策略名。
+	// Policy name.
 	PolicyName string `pulumi:"policyName"`
-	// 策略授权的作用范围，特指项目范围。
+	// Scope of policy authorization, specifically the project scope.
 	PolicyScopes []GetGroupAttachedPolicyPolicyScope `pulumi:"policyScopes"`
-	// 策略TRN。
+	// Policy TRN.
 	PolicyTrn string `pulumi:"policyTrn"`
-	// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
 	PolicyType string `pulumi:"policyType"`
 }
 
@@ -2135,17 +2135,17 @@ type GetGroupAttachedPolicyInput interface {
 }
 
 type GetGroupAttachedPolicyArgs struct {
-	// 策略绑定时间。
+	// Policy binding time.
 	AttachTime pulumi.StringInput `pulumi:"attachTime"`
-	// 策略描述。
+	// Policy description.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 策略名。
+	// Policy name.
 	PolicyName pulumi.StringInput `pulumi:"policyName"`
-	// 策略授权的作用范围，特指项目范围。
+	// Scope of policy authorization, specifically the project scope.
 	PolicyScopes GetGroupAttachedPolicyPolicyScopeArrayInput `pulumi:"policyScopes"`
-	// 策略TRN。
+	// Policy TRN.
 	PolicyTrn pulumi.StringInput `pulumi:"policyTrn"`
-	// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
 }
 
@@ -2200,32 +2200,32 @@ func (o GetGroupAttachedPolicyOutput) ToGetGroupAttachedPolicyOutputWithContext(
 	return o
 }
 
-// 策略绑定时间。
+// Policy binding time.
 func (o GetGroupAttachedPolicyOutput) AttachTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupAttachedPolicy) string { return v.AttachTime }).(pulumi.StringOutput)
 }
 
-// 策略描述。
+// Policy description.
 func (o GetGroupAttachedPolicyOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupAttachedPolicy) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 策略名。
+// Policy name.
 func (o GetGroupAttachedPolicyOutput) PolicyName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupAttachedPolicy) string { return v.PolicyName }).(pulumi.StringOutput)
 }
 
-// 策略授权的作用范围，特指项目范围。
+// Scope of policy authorization, specifically the project scope.
 func (o GetGroupAttachedPolicyOutput) PolicyScopes() GetGroupAttachedPolicyPolicyScopeArrayOutput {
 	return o.ApplyT(func(v GetGroupAttachedPolicy) []GetGroupAttachedPolicyPolicyScope { return v.PolicyScopes }).(GetGroupAttachedPolicyPolicyScopeArrayOutput)
 }
 
-// 策略TRN。
+// Policy TRN.
 func (o GetGroupAttachedPolicyOutput) PolicyTrn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupAttachedPolicy) string { return v.PolicyTrn }).(pulumi.StringOutput)
 }
 
-// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+// Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
 func (o GetGroupAttachedPolicyOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupAttachedPolicy) string { return v.PolicyType }).(pulumi.StringOutput)
 }
@@ -2251,13 +2251,13 @@ func (o GetGroupAttachedPolicyArrayOutput) Index(i pulumi.IntInput) GetGroupAtta
 }
 
 type GetGroupAttachedPolicyPolicyScope struct {
-	// 项目授权时间。
+	// Project authorization time.
 	AttachTime string `pulumi:"attachTime"`
-	// 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+	// Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
 	PolicyScopeType string `pulumi:"policyScopeType"`
-	// 按项目授权时的项目显示名。
+	// Project display name for project-based authorization.
 	ProjectDisplayName string `pulumi:"projectDisplayName"`
-	// 按项目授权时的项目名。
+	// Project name for project-based authorization.
 	ProjectName string `pulumi:"projectName"`
 }
 
@@ -2273,13 +2273,13 @@ type GetGroupAttachedPolicyPolicyScopeInput interface {
 }
 
 type GetGroupAttachedPolicyPolicyScopeArgs struct {
-	// 项目授权时间。
+	// Project authorization time.
 	AttachTime pulumi.StringInput `pulumi:"attachTime"`
-	// 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+	// Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
 	PolicyScopeType pulumi.StringInput `pulumi:"policyScopeType"`
-	// 按项目授权时的项目显示名。
+	// Project display name for project-based authorization.
 	ProjectDisplayName pulumi.StringInput `pulumi:"projectDisplayName"`
-	// 按项目授权时的项目名。
+	// Project name for project-based authorization.
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
 }
 
@@ -2334,22 +2334,22 @@ func (o GetGroupAttachedPolicyPolicyScopeOutput) ToGetGroupAttachedPolicyPolicyS
 	return o
 }
 
-// 项目授权时间。
+// Project authorization time.
 func (o GetGroupAttachedPolicyPolicyScopeOutput) AttachTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupAttachedPolicyPolicyScope) string { return v.AttachTime }).(pulumi.StringOutput)
 }
 
-// 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+// Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
 func (o GetGroupAttachedPolicyPolicyScopeOutput) PolicyScopeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupAttachedPolicyPolicyScope) string { return v.PolicyScopeType }).(pulumi.StringOutput)
 }
 
-// 按项目授权时的项目显示名。
+// Project display name for project-based authorization.
 func (o GetGroupAttachedPolicyPolicyScopeOutput) ProjectDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupAttachedPolicyPolicyScope) string { return v.ProjectDisplayName }).(pulumi.StringOutput)
 }
 
-// 按项目授权时的项目名。
+// Project name for project-based authorization.
 func (o GetGroupAttachedPolicyPolicyScopeOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupAttachedPolicyPolicyScope) string { return v.ProjectName }).(pulumi.StringOutput)
 }
@@ -2375,15 +2375,15 @@ func (o GetGroupAttachedPolicyPolicyScopeArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetGroupUser struct {
-	// 用户描述。
+	// User description.
 	Description string `pulumi:"description"`
-	// 用户显示名。
+	// User display name.
 	DisplayName string `pulumi:"displayName"`
-	// 用户加入用户组的时间。
+	// Time when the user joined the user group.
 	JoinTime string `pulumi:"joinTime"`
-	// 用户ID。
+	// User ID.
 	UserId int `pulumi:"userId"`
-	// 用户名。
+	// Username.
 	UserName string `pulumi:"userName"`
 }
 
@@ -2399,15 +2399,15 @@ type GetGroupUserInput interface {
 }
 
 type GetGroupUserArgs struct {
-	// 用户描述。
+	// User description.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 用户显示名。
+	// User display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 用户加入用户组的时间。
+	// Time when the user joined the user group.
 	JoinTime pulumi.StringInput `pulumi:"joinTime"`
-	// 用户ID。
+	// User ID.
 	UserId pulumi.IntInput `pulumi:"userId"`
-	// 用户名。
+	// Username.
 	UserName pulumi.StringInput `pulumi:"userName"`
 }
 
@@ -2462,27 +2462,27 @@ func (o GetGroupUserOutput) ToGetGroupUserOutputWithContext(ctx context.Context)
 	return o
 }
 
-// 用户描述。
+// User description.
 func (o GetGroupUserOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupUser) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 用户显示名。
+// User display name.
 func (o GetGroupUserOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupUser) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 用户加入用户组的时间。
+// Time when the user joined the user group.
 func (o GetGroupUserOutput) JoinTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupUser) string { return v.JoinTime }).(pulumi.StringOutput)
 }
 
-// 用户ID。
+// User ID.
 func (o GetGroupUserOutput) UserId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupUser) int { return v.UserId }).(pulumi.IntOutput)
 }
 
-// 用户名。
+// Username.
 func (o GetGroupUserOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupUser) string { return v.UserName }).(pulumi.StringOutput)
 }
@@ -2508,17 +2508,17 @@ func (o GetGroupUserArrayOutput) Index(i pulumi.IntInput) GetGroupUserOutput {
 }
 
 type GetPolicyPolicyRole struct {
-	// 策略绑定时间。
+	// Policy binding time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 策略描述。
+	// Policy description.
 	Description string `pulumi:"description"`
-	// 显示名称。
+	// Display name.
 	DisplayName string `pulumi:"displayName"`
-	// 唯一标识。
+	// Unique identifier.
 	EntitiesId int `pulumi:"entitiesId"`
-	// 对应用户、角色、用户组的名称。
+	// Name of the corresponding user, role, or user group.
 	Name string `pulumi:"name"`
-	// 策略绑定的项目列表。
+	// List of projects bound to the policy.
 	PolicyScopes []GetPolicyPolicyRolePolicyScope `pulumi:"policyScopes"`
 }
 
@@ -2534,17 +2534,17 @@ type GetPolicyPolicyRoleInput interface {
 }
 
 type GetPolicyPolicyRoleArgs struct {
-	// 策略绑定时间。
+	// Policy binding time.
 	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
-	// 策略描述。
+	// Policy description.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 显示名称。
+	// Display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 唯一标识。
+	// Unique identifier.
 	EntitiesId pulumi.IntInput `pulumi:"entitiesId"`
-	// 对应用户、角色、用户组的名称。
+	// Name of the corresponding user, role, or user group.
 	Name pulumi.StringInput `pulumi:"name"`
-	// 策略绑定的项目列表。
+	// List of projects bound to the policy.
 	PolicyScopes GetPolicyPolicyRolePolicyScopeArrayInput `pulumi:"policyScopes"`
 }
 
@@ -2599,32 +2599,32 @@ func (o GetPolicyPolicyRoleOutput) ToGetPolicyPolicyRoleOutputWithContext(ctx co
 	return o
 }
 
-// 策略绑定时间。
+// Policy binding time.
 func (o GetPolicyPolicyRoleOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyRole) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 策略描述。
+// Policy description.
 func (o GetPolicyPolicyRoleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyRole) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 显示名称。
+// Display name.
 func (o GetPolicyPolicyRoleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyRole) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 唯一标识。
+// Unique identifier.
 func (o GetPolicyPolicyRoleOutput) EntitiesId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetPolicyPolicyRole) int { return v.EntitiesId }).(pulumi.IntOutput)
 }
 
-// 对应用户、角色、用户组的名称。
+// Name of the corresponding user, role, or user group.
 func (o GetPolicyPolicyRoleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyRole) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 策略绑定的项目列表。
+// List of projects bound to the policy.
 func (o GetPolicyPolicyRoleOutput) PolicyScopes() GetPolicyPolicyRolePolicyScopeArrayOutput {
 	return o.ApplyT(func(v GetPolicyPolicyRole) []GetPolicyPolicyRolePolicyScope { return v.PolicyScopes }).(GetPolicyPolicyRolePolicyScopeArrayOutput)
 }
@@ -2650,13 +2650,13 @@ func (o GetPolicyPolicyRoleArrayOutput) Index(i pulumi.IntInput) GetPolicyPolicy
 }
 
 type GetPolicyPolicyRolePolicyScope struct {
-	// 项目授权时间。
+	// Project authorization time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 授权类型。Global代表全局授权，Project代表按项目授权。
+	// Authorization type. Global indicates global authorization; Project indicates project-based authorization.
 	PolicyScopeType string `pulumi:"policyScopeType"`
-	// 项目显示名。
+	// Project display name.
 	ProjectDisplayName string `pulumi:"projectDisplayName"`
-	// 项目名。
+	// Project name.
 	ProjectName string `pulumi:"projectName"`
 }
 
@@ -2672,13 +2672,13 @@ type GetPolicyPolicyRolePolicyScopeInput interface {
 }
 
 type GetPolicyPolicyRolePolicyScopeArgs struct {
-	// 项目授权时间。
+	// Project authorization time.
 	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
-	// 授权类型。Global代表全局授权，Project代表按项目授权。
+	// Authorization type. Global indicates global authorization; Project indicates project-based authorization.
 	PolicyScopeType pulumi.StringInput `pulumi:"policyScopeType"`
-	// 项目显示名。
+	// Project display name.
 	ProjectDisplayName pulumi.StringInput `pulumi:"projectDisplayName"`
-	// 项目名。
+	// Project name.
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
 }
 
@@ -2733,22 +2733,22 @@ func (o GetPolicyPolicyRolePolicyScopeOutput) ToGetPolicyPolicyRolePolicyScopeOu
 	return o
 }
 
-// 项目授权时间。
+// Project authorization time.
 func (o GetPolicyPolicyRolePolicyScopeOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyRolePolicyScope) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 授权类型。Global代表全局授权，Project代表按项目授权。
+// Authorization type. Global indicates global authorization; Project indicates project-based authorization.
 func (o GetPolicyPolicyRolePolicyScopeOutput) PolicyScopeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyRolePolicyScope) string { return v.PolicyScopeType }).(pulumi.StringOutput)
 }
 
-// 项目显示名。
+// Project display name.
 func (o GetPolicyPolicyRolePolicyScopeOutput) ProjectDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyRolePolicyScope) string { return v.ProjectDisplayName }).(pulumi.StringOutput)
 }
 
-// 项目名。
+// Project name.
 func (o GetPolicyPolicyRolePolicyScopeOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyRolePolicyScope) string { return v.ProjectName }).(pulumi.StringOutput)
 }
@@ -2774,17 +2774,17 @@ func (o GetPolicyPolicyRolePolicyScopeArrayOutput) Index(i pulumi.IntInput) GetP
 }
 
 type GetPolicyPolicyUser struct {
-	// 策略绑定时间。
+	// Policy binding time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 策略描述。
+	// Policy description.
 	Description string `pulumi:"description"`
-	// 显示名称。
+	// Display name.
 	DisplayName string `pulumi:"displayName"`
-	// 唯一标识。
+	// Unique identifier.
 	EntitiesId int `pulumi:"entitiesId"`
-	// 对应用户、角色、用户组的名称。
+	// Name of the corresponding user, role, or user group.
 	Name string `pulumi:"name"`
-	// 策略绑定的项目列表。
+	// List of projects bound to the policy.
 	PolicyScopes []GetPolicyPolicyUserPolicyScope `pulumi:"policyScopes"`
 }
 
@@ -2800,17 +2800,17 @@ type GetPolicyPolicyUserInput interface {
 }
 
 type GetPolicyPolicyUserArgs struct {
-	// 策略绑定时间。
+	// Policy binding time.
 	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
-	// 策略描述。
+	// Policy description.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 显示名称。
+	// Display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 唯一标识。
+	// Unique identifier.
 	EntitiesId pulumi.IntInput `pulumi:"entitiesId"`
-	// 对应用户、角色、用户组的名称。
+	// Name of the corresponding user, role, or user group.
 	Name pulumi.StringInput `pulumi:"name"`
-	// 策略绑定的项目列表。
+	// List of projects bound to the policy.
 	PolicyScopes GetPolicyPolicyUserPolicyScopeArrayInput `pulumi:"policyScopes"`
 }
 
@@ -2865,32 +2865,32 @@ func (o GetPolicyPolicyUserOutput) ToGetPolicyPolicyUserOutputWithContext(ctx co
 	return o
 }
 
-// 策略绑定时间。
+// Policy binding time.
 func (o GetPolicyPolicyUserOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUser) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 策略描述。
+// Policy description.
 func (o GetPolicyPolicyUserOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUser) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 显示名称。
+// Display name.
 func (o GetPolicyPolicyUserOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUser) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 唯一标识。
+// Unique identifier.
 func (o GetPolicyPolicyUserOutput) EntitiesId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUser) int { return v.EntitiesId }).(pulumi.IntOutput)
 }
 
-// 对应用户、角色、用户组的名称。
+// Name of the corresponding user, role, or user group.
 func (o GetPolicyPolicyUserOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUser) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 策略绑定的项目列表。
+// List of projects bound to the policy.
 func (o GetPolicyPolicyUserOutput) PolicyScopes() GetPolicyPolicyUserPolicyScopeArrayOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUser) []GetPolicyPolicyUserPolicyScope { return v.PolicyScopes }).(GetPolicyPolicyUserPolicyScopeArrayOutput)
 }
@@ -2916,17 +2916,17 @@ func (o GetPolicyPolicyUserArrayOutput) Index(i pulumi.IntInput) GetPolicyPolicy
 }
 
 type GetPolicyPolicyUserGroup struct {
-	// 策略绑定时间。
+	// Policy binding time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 策略描述。
+	// Policy description.
 	Description string `pulumi:"description"`
-	// 显示名称。
+	// Display name.
 	DisplayName string `pulumi:"displayName"`
-	// 唯一标识。
+	// Unique identifier.
 	EntitiesId int `pulumi:"entitiesId"`
-	// 对应用户、角色、用户组的名称。
+	// Name of the corresponding user, role, or user group.
 	Name string `pulumi:"name"`
-	// 策略绑定的项目列表。
+	// List of projects bound to the policy.
 	PolicyScopes []GetPolicyPolicyUserGroupPolicyScope `pulumi:"policyScopes"`
 }
 
@@ -2942,17 +2942,17 @@ type GetPolicyPolicyUserGroupInput interface {
 }
 
 type GetPolicyPolicyUserGroupArgs struct {
-	// 策略绑定时间。
+	// Policy binding time.
 	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
-	// 策略描述。
+	// Policy description.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 显示名称。
+	// Display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 唯一标识。
+	// Unique identifier.
 	EntitiesId pulumi.IntInput `pulumi:"entitiesId"`
-	// 对应用户、角色、用户组的名称。
+	// Name of the corresponding user, role, or user group.
 	Name pulumi.StringInput `pulumi:"name"`
-	// 策略绑定的项目列表。
+	// List of projects bound to the policy.
 	PolicyScopes GetPolicyPolicyUserGroupPolicyScopeArrayInput `pulumi:"policyScopes"`
 }
 
@@ -3007,32 +3007,32 @@ func (o GetPolicyPolicyUserGroupOutput) ToGetPolicyPolicyUserGroupOutputWithCont
 	return o
 }
 
-// 策略绑定时间。
+// Policy binding time.
 func (o GetPolicyPolicyUserGroupOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserGroup) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 策略描述。
+// Policy description.
 func (o GetPolicyPolicyUserGroupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserGroup) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 显示名称。
+// Display name.
 func (o GetPolicyPolicyUserGroupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserGroup) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 唯一标识。
+// Unique identifier.
 func (o GetPolicyPolicyUserGroupOutput) EntitiesId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserGroup) int { return v.EntitiesId }).(pulumi.IntOutput)
 }
 
-// 对应用户、角色、用户组的名称。
+// Name of the corresponding user, role, or user group.
 func (o GetPolicyPolicyUserGroupOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserGroup) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 策略绑定的项目列表。
+// List of projects bound to the policy.
 func (o GetPolicyPolicyUserGroupOutput) PolicyScopes() GetPolicyPolicyUserGroupPolicyScopeArrayOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserGroup) []GetPolicyPolicyUserGroupPolicyScope { return v.PolicyScopes }).(GetPolicyPolicyUserGroupPolicyScopeArrayOutput)
 }
@@ -3058,13 +3058,13 @@ func (o GetPolicyPolicyUserGroupArrayOutput) Index(i pulumi.IntInput) GetPolicyP
 }
 
 type GetPolicyPolicyUserGroupPolicyScope struct {
-	// 项目授权时间。
+	// Project authorization time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 授权类型。Global代表全局授权，Project代表按项目授权。
+	// Authorization type. Global indicates global authorization; Project indicates project-based authorization.
 	PolicyScopeType string `pulumi:"policyScopeType"`
-	// 项目显示名。
+	// Project display name.
 	ProjectDisplayName string `pulumi:"projectDisplayName"`
-	// 项目名。
+	// Project name.
 	ProjectName string `pulumi:"projectName"`
 }
 
@@ -3080,13 +3080,13 @@ type GetPolicyPolicyUserGroupPolicyScopeInput interface {
 }
 
 type GetPolicyPolicyUserGroupPolicyScopeArgs struct {
-	// 项目授权时间。
+	// Project authorization time.
 	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
-	// 授权类型。Global代表全局授权，Project代表按项目授权。
+	// Authorization type. Global indicates global authorization; Project indicates project-based authorization.
 	PolicyScopeType pulumi.StringInput `pulumi:"policyScopeType"`
-	// 项目显示名。
+	// Project display name.
 	ProjectDisplayName pulumi.StringInput `pulumi:"projectDisplayName"`
-	// 项目名。
+	// Project name.
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
 }
 
@@ -3141,22 +3141,22 @@ func (o GetPolicyPolicyUserGroupPolicyScopeOutput) ToGetPolicyPolicyUserGroupPol
 	return o
 }
 
-// 项目授权时间。
+// Project authorization time.
 func (o GetPolicyPolicyUserGroupPolicyScopeOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserGroupPolicyScope) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 授权类型。Global代表全局授权，Project代表按项目授权。
+// Authorization type. Global indicates global authorization; Project indicates project-based authorization.
 func (o GetPolicyPolicyUserGroupPolicyScopeOutput) PolicyScopeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserGroupPolicyScope) string { return v.PolicyScopeType }).(pulumi.StringOutput)
 }
 
-// 项目显示名。
+// Project display name.
 func (o GetPolicyPolicyUserGroupPolicyScopeOutput) ProjectDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserGroupPolicyScope) string { return v.ProjectDisplayName }).(pulumi.StringOutput)
 }
 
-// 项目名。
+// Project name.
 func (o GetPolicyPolicyUserGroupPolicyScopeOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserGroupPolicyScope) string { return v.ProjectName }).(pulumi.StringOutput)
 }
@@ -3182,13 +3182,13 @@ func (o GetPolicyPolicyUserGroupPolicyScopeArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetPolicyPolicyUserPolicyScope struct {
-	// 项目授权时间。
+	// Project authorization time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 授权类型。Global代表全局授权，Project代表按项目授权。
+	// Authorization type. Global indicates global authorization; Project indicates project-based authorization.
 	PolicyScopeType string `pulumi:"policyScopeType"`
-	// 项目显示名。
+	// Project display name.
 	ProjectDisplayName string `pulumi:"projectDisplayName"`
-	// 项目名。
+	// Project name.
 	ProjectName string `pulumi:"projectName"`
 }
 
@@ -3204,13 +3204,13 @@ type GetPolicyPolicyUserPolicyScopeInput interface {
 }
 
 type GetPolicyPolicyUserPolicyScopeArgs struct {
-	// 项目授权时间。
+	// Project authorization time.
 	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
-	// 授权类型。Global代表全局授权，Project代表按项目授权。
+	// Authorization type. Global indicates global authorization; Project indicates project-based authorization.
 	PolicyScopeType pulumi.StringInput `pulumi:"policyScopeType"`
-	// 项目显示名。
+	// Project display name.
 	ProjectDisplayName pulumi.StringInput `pulumi:"projectDisplayName"`
-	// 项目名。
+	// Project name.
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
 }
 
@@ -3265,22 +3265,22 @@ func (o GetPolicyPolicyUserPolicyScopeOutput) ToGetPolicyPolicyUserPolicyScopeOu
 	return o
 }
 
-// 项目授权时间。
+// Project authorization time.
 func (o GetPolicyPolicyUserPolicyScopeOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserPolicyScope) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 授权类型。Global代表全局授权，Project代表按项目授权。
+// Authorization type. Global indicates global authorization; Project indicates project-based authorization.
 func (o GetPolicyPolicyUserPolicyScopeOutput) PolicyScopeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserPolicyScope) string { return v.PolicyScopeType }).(pulumi.StringOutput)
 }
 
-// 项目显示名。
+// Project display name.
 func (o GetPolicyPolicyUserPolicyScopeOutput) ProjectDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserPolicyScope) string { return v.ProjectDisplayName }).(pulumi.StringOutput)
 }
 
-// 项目名。
+// Project name.
 func (o GetPolicyPolicyUserPolicyScopeOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPolicyPolicyUserPolicyScope) string { return v.ProjectName }).(pulumi.StringOutput)
 }
@@ -3306,9 +3306,9 @@ func (o GetPolicyPolicyUserPolicyScopeArrayOutput) Index(i pulumi.IntInput) GetP
 }
 
 type GetRolePolicy struct {
-	// 策略名。
+	// Policy name
 	PolicyName string `pulumi:"policyName"`
-	// 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 	PolicyType string `pulumi:"policyType"`
 }
 
@@ -3324,9 +3324,9 @@ type GetRolePolicyInput interface {
 }
 
 type GetRolePolicyArgs struct {
-	// 策略名。
+	// Policy name
 	PolicyName pulumi.StringInput `pulumi:"policyName"`
-	// 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
 }
 
@@ -3381,12 +3381,12 @@ func (o GetRolePolicyOutput) ToGetRolePolicyOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 策略名。
+// Policy name
 func (o GetRolePolicyOutput) PolicyName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRolePolicy) string { return v.PolicyName }).(pulumi.StringOutput)
 }
 
-// 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+// Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 func (o GetRolePolicyOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRolePolicy) string { return v.PolicyType }).(pulumi.StringOutput)
 }
@@ -3412,9 +3412,9 @@ func (o GetRolePolicyArrayOutput) Index(i pulumi.IntInput) GetRolePolicyOutput {
 }
 
 type GetRoleTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -3430,9 +3430,9 @@ type GetRoleTagInput interface {
 }
 
 type GetRoleTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -3487,12 +3487,12 @@ func (o GetRoleTagOutput) ToGetRoleTagOutputWithContext(ctx context.Context) Get
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetRoleTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRoleTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetRoleTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRoleTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -3518,21 +3518,21 @@ func (o GetRoleTagArrayOutput) Index(i pulumi.IntInput) GetRoleTagOutput {
 }
 
 type GetUserAccessKey struct {
-	// 访问密钥ID。
+	// Access key ID.
 	AccessKeyId string `pulumi:"accessKeyId"`
-	// 访问密钥创建时间。
+	// Access key creation time.
 	CreateDate string `pulumi:"createDate"`
-	// 最近一次使用的服务区域。
+	// Most recently used service region.
 	Region string `pulumi:"region"`
-	// 访问密钥最近一次使用时间。
+	// Last used time of the access key.
 	RequestTime string `pulumi:"requestTime"`
-	// 最近一次使用的服务名称。
+	// Name of the most recently used service.
 	Service string `pulumi:"service"`
-	// 访问密钥状态。Active代表启用，Inactive代表禁用。
+	// Access key status. 'Active' means enabled, 'Inactive' means disabled.
 	Status string `pulumi:"status"`
-	// 访问密钥更新时间。
+	// Access key update time.
 	UpdateDate string `pulumi:"updateDate"`
-	// 访问密钥Secret。
+	// Access key Secret.
 	UserName string `pulumi:"userName"`
 }
 
@@ -3548,21 +3548,21 @@ type GetUserAccessKeyInput interface {
 }
 
 type GetUserAccessKeyArgs struct {
-	// 访问密钥ID。
+	// Access key ID.
 	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
-	// 访问密钥创建时间。
+	// Access key creation time.
 	CreateDate pulumi.StringInput `pulumi:"createDate"`
-	// 最近一次使用的服务区域。
+	// Most recently used service region.
 	Region pulumi.StringInput `pulumi:"region"`
-	// 访问密钥最近一次使用时间。
+	// Last used time of the access key.
 	RequestTime pulumi.StringInput `pulumi:"requestTime"`
-	// 最近一次使用的服务名称。
+	// Name of the most recently used service.
 	Service pulumi.StringInput `pulumi:"service"`
-	// 访问密钥状态。Active代表启用，Inactive代表禁用。
+	// Access key status. 'Active' means enabled, 'Inactive' means disabled.
 	Status pulumi.StringInput `pulumi:"status"`
-	// 访问密钥更新时间。
+	// Access key update time.
 	UpdateDate pulumi.StringInput `pulumi:"updateDate"`
-	// 访问密钥Secret。
+	// Access key Secret.
 	UserName pulumi.StringInput `pulumi:"userName"`
 }
 
@@ -3617,42 +3617,42 @@ func (o GetUserAccessKeyOutput) ToGetUserAccessKeyOutputWithContext(ctx context.
 	return o
 }
 
-// 访问密钥ID。
+// Access key ID.
 func (o GetUserAccessKeyOutput) AccessKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAccessKey) string { return v.AccessKeyId }).(pulumi.StringOutput)
 }
 
-// 访问密钥创建时间。
+// Access key creation time.
 func (o GetUserAccessKeyOutput) CreateDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAccessKey) string { return v.CreateDate }).(pulumi.StringOutput)
 }
 
-// 最近一次使用的服务区域。
+// Most recently used service region.
 func (o GetUserAccessKeyOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAccessKey) string { return v.Region }).(pulumi.StringOutput)
 }
 
-// 访问密钥最近一次使用时间。
+// Last used time of the access key.
 func (o GetUserAccessKeyOutput) RequestTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAccessKey) string { return v.RequestTime }).(pulumi.StringOutput)
 }
 
-// 最近一次使用的服务名称。
+// Name of the most recently used service.
 func (o GetUserAccessKeyOutput) Service() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAccessKey) string { return v.Service }).(pulumi.StringOutput)
 }
 
-// 访问密钥状态。Active代表启用，Inactive代表禁用。
+// Access key status. 'Active' means enabled, 'Inactive' means disabled.
 func (o GetUserAccessKeyOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAccessKey) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 访问密钥更新时间。
+// Access key update time.
 func (o GetUserAccessKeyOutput) UpdateDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAccessKey) string { return v.UpdateDate }).(pulumi.StringOutput)
 }
 
-// 访问密钥Secret。
+// Access key Secret.
 func (o GetUserAccessKeyOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAccessKey) string { return v.UserName }).(pulumi.StringOutput)
 }
@@ -3678,35 +3678,35 @@ func (o GetUserAccessKeyArrayOutput) Index(i pulumi.IntInput) GetUserAccessKeyOu
 }
 
 type GetUserLoginProfile struct {
-	// 登录配置创建时间。
+	// Login configuration creation time.
 	CreateDate string `pulumi:"createDate"`
-	// 上次登录时间。
+	// Last login time.
 	LastLoginDate string `pulumi:"lastLoginDate"`
-	// 上次登录IP。
+	// Last login IP.
 	LastLoginIp string `pulumi:"lastLoginIp"`
-	// 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
-	LastResetPasswordTime float64 `pulumi:"lastResetPasswordTime"`
-	// 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+	// Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
+	LastResetPasswordTime int `pulumi:"lastResetPasswordTime"`
+	// Whether login is allowed. 'true' means allowed, 'false' means not allowed. Default is 'false'.
 	LoginAllowed bool `pulumi:"loginAllowed"`
-	// 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+	// Whether login is locked. 'true' means locked, 'false' means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
 	LoginLocked bool `pulumi:"loginLocked"`
-	// 登录密码。
+	// Login password.
 	Password string `pulumi:"password"`
-	// 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
-	PasswordExpireAt float64 `pulumi:"passwordExpireAt"`
-	// 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+	// Password expiration time. '0' means never expires; non-zero means the expiration timestamp.
+	PasswordExpireAt int `pulumi:"passwordExpireAt"`
+	// Whether password reset is required on next login. Whether password reset is required on next login. 'true' means password reset is required, 'false' means not required. Default is 'false'.
 	PasswordResetRequired bool `pulumi:"passwordResetRequired"`
-	// 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+	// Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
 	SafeAuthExemptDuration float64 `pulumi:"safeAuthExemptDuration"`
-	// 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+	// Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
 	SafeAuthExemptRequired float64 `pulumi:"safeAuthExemptRequired"`
-	// 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+	// Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
 	SafeAuthExemptUnit float64 `pulumi:"safeAuthExemptUnit"`
-	// 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+	// Whether login protection is enabled. 'true' means enabled, 'false' means disabled. Default is 'false'.
 	SafeAuthFlag bool `pulumi:"safeAuthFlag"`
-	// 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+	// Login protection type. Login protection type. 'phone' represents mobile verification, 'email' represents email verification, 'vmfa' represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
 	SafeAuthType string `pulumi:"safeAuthType"`
-	// 登录配置更新时间。
+	// Login configuration update time.
 	UpdateDate string `pulumi:"updateDate"`
 }
 
@@ -3722,35 +3722,35 @@ type GetUserLoginProfileInput interface {
 }
 
 type GetUserLoginProfileArgs struct {
-	// 登录配置创建时间。
+	// Login configuration creation time.
 	CreateDate pulumi.StringInput `pulumi:"createDate"`
-	// 上次登录时间。
+	// Last login time.
 	LastLoginDate pulumi.StringInput `pulumi:"lastLoginDate"`
-	// 上次登录IP。
+	// Last login IP.
 	LastLoginIp pulumi.StringInput `pulumi:"lastLoginIp"`
-	// 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
-	LastResetPasswordTime pulumi.Float64Input `pulumi:"lastResetPasswordTime"`
-	// 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+	// Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
+	LastResetPasswordTime pulumi.IntInput `pulumi:"lastResetPasswordTime"`
+	// Whether login is allowed. 'true' means allowed, 'false' means not allowed. Default is 'false'.
 	LoginAllowed pulumi.BoolInput `pulumi:"loginAllowed"`
-	// 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+	// Whether login is locked. 'true' means locked, 'false' means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
 	LoginLocked pulumi.BoolInput `pulumi:"loginLocked"`
-	// 登录密码。
+	// Login password.
 	Password pulumi.StringInput `pulumi:"password"`
-	// 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
-	PasswordExpireAt pulumi.Float64Input `pulumi:"passwordExpireAt"`
-	// 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+	// Password expiration time. '0' means never expires; non-zero means the expiration timestamp.
+	PasswordExpireAt pulumi.IntInput `pulumi:"passwordExpireAt"`
+	// Whether password reset is required on next login. Whether password reset is required on next login. 'true' means password reset is required, 'false' means not required. Default is 'false'.
 	PasswordResetRequired pulumi.BoolInput `pulumi:"passwordResetRequired"`
-	// 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+	// Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
 	SafeAuthExemptDuration pulumi.Float64Input `pulumi:"safeAuthExemptDuration"`
-	// 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+	// Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
 	SafeAuthExemptRequired pulumi.Float64Input `pulumi:"safeAuthExemptRequired"`
-	// 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+	// Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
 	SafeAuthExemptUnit pulumi.Float64Input `pulumi:"safeAuthExemptUnit"`
-	// 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+	// Whether login protection is enabled. 'true' means enabled, 'false' means disabled. Default is 'false'.
 	SafeAuthFlag pulumi.BoolInput `pulumi:"safeAuthFlag"`
-	// 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+	// Login protection type. Login protection type. 'phone' represents mobile verification, 'email' represents email verification, 'vmfa' represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
 	SafeAuthType pulumi.StringInput `pulumi:"safeAuthType"`
-	// 登录配置更新时间。
+	// Login configuration update time.
 	UpdateDate pulumi.StringInput `pulumi:"updateDate"`
 }
 
@@ -3780,85 +3780,85 @@ func (o GetUserLoginProfileOutput) ToGetUserLoginProfileOutputWithContext(ctx co
 	return o
 }
 
-// 登录配置创建时间。
+// Login configuration creation time.
 func (o GetUserLoginProfileOutput) CreateDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserLoginProfile) string { return v.CreateDate }).(pulumi.StringOutput)
 }
 
-// 上次登录时间。
+// Last login time.
 func (o GetUserLoginProfileOutput) LastLoginDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserLoginProfile) string { return v.LastLoginDate }).(pulumi.StringOutput)
 }
 
-// 上次登录IP。
+// Last login IP.
 func (o GetUserLoginProfileOutput) LastLoginIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserLoginProfile) string { return v.LastLoginIp }).(pulumi.StringOutput)
 }
 
-// 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
-func (o GetUserLoginProfileOutput) LastResetPasswordTime() pulumi.Float64Output {
-	return o.ApplyT(func(v GetUserLoginProfile) float64 { return v.LastResetPasswordTime }).(pulumi.Float64Output)
+// Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
+func (o GetUserLoginProfileOutput) LastResetPasswordTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUserLoginProfile) int { return v.LastResetPasswordTime }).(pulumi.IntOutput)
 }
 
-// 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+// Whether login is allowed. 'true' means allowed, 'false' means not allowed. Default is 'false'.
 func (o GetUserLoginProfileOutput) LoginAllowed() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUserLoginProfile) bool { return v.LoginAllowed }).(pulumi.BoolOutput)
 }
 
-// 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+// Whether login is locked. 'true' means locked, 'false' means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
 func (o GetUserLoginProfileOutput) LoginLocked() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUserLoginProfile) bool { return v.LoginLocked }).(pulumi.BoolOutput)
 }
 
-// 登录密码。
+// Login password.
 func (o GetUserLoginProfileOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserLoginProfile) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
-func (o GetUserLoginProfileOutput) PasswordExpireAt() pulumi.Float64Output {
-	return o.ApplyT(func(v GetUserLoginProfile) float64 { return v.PasswordExpireAt }).(pulumi.Float64Output)
+// Password expiration time. '0' means never expires; non-zero means the expiration timestamp.
+func (o GetUserLoginProfileOutput) PasswordExpireAt() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUserLoginProfile) int { return v.PasswordExpireAt }).(pulumi.IntOutput)
 }
 
-// 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+// Whether password reset is required on next login. Whether password reset is required on next login. 'true' means password reset is required, 'false' means not required. Default is 'false'.
 func (o GetUserLoginProfileOutput) PasswordResetRequired() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUserLoginProfile) bool { return v.PasswordResetRequired }).(pulumi.BoolOutput)
 }
 
-// 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+// Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
 func (o GetUserLoginProfileOutput) SafeAuthExemptDuration() pulumi.Float64Output {
 	return o.ApplyT(func(v GetUserLoginProfile) float64 { return v.SafeAuthExemptDuration }).(pulumi.Float64Output)
 }
 
-// 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+// Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
 func (o GetUserLoginProfileOutput) SafeAuthExemptRequired() pulumi.Float64Output {
 	return o.ApplyT(func(v GetUserLoginProfile) float64 { return v.SafeAuthExemptRequired }).(pulumi.Float64Output)
 }
 
-// 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+// Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
 func (o GetUserLoginProfileOutput) SafeAuthExemptUnit() pulumi.Float64Output {
 	return o.ApplyT(func(v GetUserLoginProfile) float64 { return v.SafeAuthExemptUnit }).(pulumi.Float64Output)
 }
 
-// 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+// Whether login protection is enabled. 'true' means enabled, 'false' means disabled. Default is 'false'.
 func (o GetUserLoginProfileOutput) SafeAuthFlag() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUserLoginProfile) bool { return v.SafeAuthFlag }).(pulumi.BoolOutput)
 }
 
-// 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+// Login protection type. Login protection type. 'phone' represents mobile verification, 'email' represents email verification, 'vmfa' represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
 func (o GetUserLoginProfileOutput) SafeAuthType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserLoginProfile) string { return v.SafeAuthType }).(pulumi.StringOutput)
 }
 
-// 登录配置更新时间。
+// Login configuration update time.
 func (o GetUserLoginProfileOutput) UpdateDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserLoginProfile) string { return v.UpdateDate }).(pulumi.StringOutput)
 }
 
 type GetUserPolicy struct {
-	// 权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
+	// Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 	PolicyName string `pulumi:"policyName"`
-	// 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Permission policy type. 'System' indicates system preset policy, 'Custom' indicates custom policy.
 	PolicyType string `pulumi:"policyType"`
 }
 
@@ -3874,9 +3874,9 @@ type GetUserPolicyInput interface {
 }
 
 type GetUserPolicyArgs struct {
-	// 权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
+	// Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 	PolicyName pulumi.StringInput `pulumi:"policyName"`
-	// 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Permission policy type. 'System' indicates system preset policy, 'Custom' indicates custom policy.
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
 }
 
@@ -3931,12 +3931,12 @@ func (o GetUserPolicyOutput) ToGetUserPolicyOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
+// Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 func (o GetUserPolicyOutput) PolicyName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserPolicy) string { return v.PolicyName }).(pulumi.StringOutput)
 }
 
-// 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+// Permission policy type. 'System' indicates system preset policy, 'Custom' indicates custom policy.
 func (o GetUserPolicyOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserPolicy) string { return v.PolicyType }).(pulumi.StringOutput)
 }
@@ -3962,11 +3962,11 @@ func (o GetUserPolicyArrayOutput) Index(i pulumi.IntInput) GetUserPolicyOutput {
 }
 
 type GetUserSecurityConfig struct {
-	// 是否开启操作保护。0代表开启，1代表关闭。
+	// Whether operation protection is enabled. 0 means enabled, 1 means disabled.
 	SafeAuthClose float64 `pulumi:"safeAuthClose"`
-	// 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+	// Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
 	SafeAuthExemptDuration float64 `pulumi:"safeAuthExemptDuration"`
-	// 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+	// Operation protection type. 'phone' indicates phone verification, 'email' indicates email verification, 'vmfa' indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
 	SafeAuthType string `pulumi:"safeAuthType"`
 }
 
@@ -3982,11 +3982,11 @@ type GetUserSecurityConfigInput interface {
 }
 
 type GetUserSecurityConfigArgs struct {
-	// 是否开启操作保护。0代表开启，1代表关闭。
+	// Whether operation protection is enabled. 0 means enabled, 1 means disabled.
 	SafeAuthClose pulumi.Float64Input `pulumi:"safeAuthClose"`
-	// 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+	// Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
 	SafeAuthExemptDuration pulumi.Float64Input `pulumi:"safeAuthExemptDuration"`
-	// 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+	// Operation protection type. 'phone' indicates phone verification, 'email' indicates email verification, 'vmfa' indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
 	SafeAuthType pulumi.StringInput `pulumi:"safeAuthType"`
 }
 
@@ -4016,25 +4016,25 @@ func (o GetUserSecurityConfigOutput) ToGetUserSecurityConfigOutputWithContext(ct
 	return o
 }
 
-// 是否开启操作保护。0代表开启，1代表关闭。
+// Whether operation protection is enabled. 0 means enabled, 1 means disabled.
 func (o GetUserSecurityConfigOutput) SafeAuthClose() pulumi.Float64Output {
 	return o.ApplyT(func(v GetUserSecurityConfig) float64 { return v.SafeAuthClose }).(pulumi.Float64Output)
 }
 
-// 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+// Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
 func (o GetUserSecurityConfigOutput) SafeAuthExemptDuration() pulumi.Float64Output {
 	return o.ApplyT(func(v GetUserSecurityConfig) float64 { return v.SafeAuthExemptDuration }).(pulumi.Float64Output)
 }
 
-// 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+// Operation protection type. 'phone' indicates phone verification, 'email' indicates email verification, 'vmfa' indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
 func (o GetUserSecurityConfigOutput) SafeAuthType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserSecurityConfig) string { return v.SafeAuthType }).(pulumi.StringOutput)
 }
 
 type GetUserTag struct {
-	// 标签键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -4050,9 +4050,9 @@ type GetUserTagInput interface {
 }
 
 type GetUserTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -4107,12 +4107,12 @@ func (o GetUserTagOutput) ToGetUserTagOutputWithContext(ctx context.Context) Get
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o GetUserTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetUserTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserTag) string { return v.Value }).(pulumi.StringOutput)
 }

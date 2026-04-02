@@ -16,14 +16,14 @@ public final class InstanceResourceTagTagKvArgs extends com.pulumi.resources.Res
     public static final InstanceResourceTagTagKvArgs Empty = new InstanceResourceTagTagKvArgs();
 
     /**
-     * 标签键。
+     * Tag key
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 标签键。
+     * @return Tag key
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class InstanceResourceTagTagKvArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+     * Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+     * @return Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
      * 
      */
     public Optional<Output<String>> type() {
@@ -46,14 +46,14 @@ public final class InstanceResourceTagTagKvArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 标签值。
+     * Tag value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 标签值。
+     * @return Tag value
      * 
      */
     public Optional<Output<String>> value() {
@@ -87,7 +87,7 @@ public final class InstanceResourceTagTagKvArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param key 标签键。
+         * @param key Tag key
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class InstanceResourceTagTagKvArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param key 标签键。
+         * @param key Tag key
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class InstanceResourceTagTagKvArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param type 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+         * @param type Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class InstanceResourceTagTagKvArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param type 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+         * @param type Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class InstanceResourceTagTagKvArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param value 标签值。
+         * @param value Tag value
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class InstanceResourceTagTagKvArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param value 标签值。
+         * @param value Tag value
          * 
          * @return builder
          * 

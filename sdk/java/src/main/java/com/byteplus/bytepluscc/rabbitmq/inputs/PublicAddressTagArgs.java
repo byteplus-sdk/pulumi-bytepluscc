@@ -16,14 +16,14 @@ public final class PublicAddressTagArgs extends com.pulumi.resources.ResourceArg
     public static final PublicAddressTagArgs Empty = new PublicAddressTagArgs();
 
     /**
-     * 标签的键。
+     * Tag key.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 标签的键。
+     * @return Tag key.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class PublicAddressTagArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 标签的值。
+     * Tag value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 标签的值。
+     * @return Tag value.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class PublicAddressTagArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param key 标签的键。
+         * @param key Tag key.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class PublicAddressTagArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param key 标签的键。
+         * @param key Tag key.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class PublicAddressTagArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param value 标签的值。
+         * @param value Tag value.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class PublicAddressTagArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param value 标签的值。
+         * @param value Tag value.
          * 
          * @return builder
          * 

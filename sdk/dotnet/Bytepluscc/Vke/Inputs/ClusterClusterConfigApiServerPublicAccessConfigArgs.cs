@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class ClusterClusterConfigApiServerPublicAccessConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+        /// Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
         /// </summary>
         [Input("publicAccessNetworkConfig")]
         public Input<Inputs.ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigArgs>? PublicAccessNetworkConfig { get; set; }

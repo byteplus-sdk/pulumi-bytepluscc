@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 伸缩规则用于定义触发扩缩容行为的条件和方式，包括规则类型、触发时间、伸缩行为、冷却时间等。在同一个伸缩组中，您可以启用多条伸缩规则，满足任意类型时均会执行伸缩动作。但当同一时间满足多个类型时，将优先执行手动触发的伸缩行为。
+// Scaling rules define the conditions and methods for triggering scaling actions, including rule type, trigger time, scaling action, cooldown time. You can enable multiple scaling rules within the same scaling group. Scaling actions are executed when any rule type is met. If multiple rule types are met at the same time, manual scaling actions take priority.
 //
 // ## Import
 //
@@ -22,27 +22,27 @@ import (
 type ScalingPolicy struct {
 	pulumi.CustomResourceState
 
-	// 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+	// Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
 	AdjustmentType pulumi.StringOutput `pulumi:"adjustmentType"`
-	// 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+	// Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
 	AdjustmentValue pulumi.IntOutput `pulumi:"adjustmentValue"`
-	// 报警任务的详细信息。
+	// Detailed information about the alarm task.
 	AlarmPolicy ScalingPolicyAlarmPolicyOutput `pulumi:"alarmPolicy"`
-	// 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+	// Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
 	Cooldown pulumi.IntOutput `pulumi:"cooldown"`
-	// 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+	// Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
 	IsEnabledPolicy pulumi.BoolOutput `pulumi:"isEnabledPolicy"`
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId pulumi.StringOutput `pulumi:"scalingGroupId"`
-	// 伸缩规则ID。
+	// Scaling rule ID.
 	ScalingPolicyId pulumi.StringOutput `pulumi:"scalingPolicyId"`
-	// 伸缩规则名称。
+	// Name of the scaling rule.
 	ScalingPolicyName pulumi.StringOutput `pulumi:"scalingPolicyName"`
-	// 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+	// Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
 	ScalingPolicyType pulumi.StringOutput `pulumi:"scalingPolicyType"`
-	// 定时任务/周期任务的详细信息。
+	// Detailed information for scheduled/recurring tasks.
 	ScheduledPolicy ScalingPolicyScheduledPolicyOutput `pulumi:"scheduledPolicy"`
-	// 伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+	// Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
 	Status pulumi.StringOutput `pulumi:"status"`
 }
 
@@ -85,52 +85,52 @@ func GetScalingPolicy(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ScalingPolicy resources.
 type scalingPolicyState struct {
-	// 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+	// Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
 	AdjustmentType *string `pulumi:"adjustmentType"`
-	// 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+	// Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
 	AdjustmentValue *int `pulumi:"adjustmentValue"`
-	// 报警任务的详细信息。
+	// Detailed information about the alarm task.
 	AlarmPolicy *ScalingPolicyAlarmPolicy `pulumi:"alarmPolicy"`
-	// 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+	// Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
 	Cooldown *int `pulumi:"cooldown"`
-	// 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+	// Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
 	IsEnabledPolicy *bool `pulumi:"isEnabledPolicy"`
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId *string `pulumi:"scalingGroupId"`
-	// 伸缩规则ID。
+	// Scaling rule ID.
 	ScalingPolicyId *string `pulumi:"scalingPolicyId"`
-	// 伸缩规则名称。
+	// Name of the scaling rule.
 	ScalingPolicyName *string `pulumi:"scalingPolicyName"`
-	// 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+	// Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
 	ScalingPolicyType *string `pulumi:"scalingPolicyType"`
-	// 定时任务/周期任务的详细信息。
+	// Detailed information for scheduled/recurring tasks.
 	ScheduledPolicy *ScalingPolicyScheduledPolicy `pulumi:"scheduledPolicy"`
-	// 伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+	// Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
 	Status *string `pulumi:"status"`
 }
 
 type ScalingPolicyState struct {
-	// 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+	// Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
 	AdjustmentType pulumi.StringPtrInput
-	// 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+	// Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
 	AdjustmentValue pulumi.IntPtrInput
-	// 报警任务的详细信息。
+	// Detailed information about the alarm task.
 	AlarmPolicy ScalingPolicyAlarmPolicyPtrInput
-	// 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+	// Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
 	Cooldown pulumi.IntPtrInput
-	// 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+	// Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
 	IsEnabledPolicy pulumi.BoolPtrInput
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId pulumi.StringPtrInput
-	// 伸缩规则ID。
+	// Scaling rule ID.
 	ScalingPolicyId pulumi.StringPtrInput
-	// 伸缩规则名称。
+	// Name of the scaling rule.
 	ScalingPolicyName pulumi.StringPtrInput
-	// 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+	// Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
 	ScalingPolicyType pulumi.StringPtrInput
-	// 定时任务/周期任务的详细信息。
+	// Detailed information for scheduled/recurring tasks.
 	ScheduledPolicy ScalingPolicyScheduledPolicyPtrInput
-	// 伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+	// Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
 	Status pulumi.StringPtrInput
 }
 
@@ -139,45 +139,45 @@ func (ScalingPolicyState) ElementType() reflect.Type {
 }
 
 type scalingPolicyArgs struct {
-	// 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+	// Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
 	AdjustmentType *string `pulumi:"adjustmentType"`
-	// 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+	// Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
 	AdjustmentValue *int `pulumi:"adjustmentValue"`
-	// 报警任务的详细信息。
+	// Detailed information about the alarm task.
 	AlarmPolicy *ScalingPolicyAlarmPolicy `pulumi:"alarmPolicy"`
-	// 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+	// Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
 	Cooldown *int `pulumi:"cooldown"`
-	// 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+	// Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
 	IsEnabledPolicy *bool `pulumi:"isEnabledPolicy"`
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId string `pulumi:"scalingGroupId"`
-	// 伸缩规则名称。
+	// Name of the scaling rule.
 	ScalingPolicyName string `pulumi:"scalingPolicyName"`
-	// 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+	// Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
 	ScalingPolicyType string `pulumi:"scalingPolicyType"`
-	// 定时任务/周期任务的详细信息。
+	// Detailed information for scheduled/recurring tasks.
 	ScheduledPolicy *ScalingPolicyScheduledPolicy `pulumi:"scheduledPolicy"`
 }
 
 // The set of arguments for constructing a ScalingPolicy resource.
 type ScalingPolicyArgs struct {
-	// 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+	// Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
 	AdjustmentType pulumi.StringPtrInput
-	// 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+	// Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
 	AdjustmentValue pulumi.IntPtrInput
-	// 报警任务的详细信息。
+	// Detailed information about the alarm task.
 	AlarmPolicy ScalingPolicyAlarmPolicyPtrInput
-	// 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+	// Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
 	Cooldown pulumi.IntPtrInput
-	// 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+	// Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
 	IsEnabledPolicy pulumi.BoolPtrInput
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId pulumi.StringInput
-	// 伸缩规则名称。
+	// Name of the scaling rule.
 	ScalingPolicyName pulumi.StringInput
-	// 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+	// Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
 	ScalingPolicyType pulumi.StringInput
-	// 定时任务/周期任务的详细信息。
+	// Detailed information for scheduled/recurring tasks.
 	ScheduledPolicy ScalingPolicyScheduledPolicyPtrInput
 }
 
@@ -268,57 +268,57 @@ func (o ScalingPolicyOutput) ToScalingPolicyOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+// Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
 func (o ScalingPolicyOutput) AdjustmentType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingPolicy) pulumi.StringOutput { return v.AdjustmentType }).(pulumi.StringOutput)
 }
 
-// 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+// Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
 func (o ScalingPolicyOutput) AdjustmentValue() pulumi.IntOutput {
 	return o.ApplyT(func(v *ScalingPolicy) pulumi.IntOutput { return v.AdjustmentValue }).(pulumi.IntOutput)
 }
 
-// 报警任务的详细信息。
+// Detailed information about the alarm task.
 func (o ScalingPolicyOutput) AlarmPolicy() ScalingPolicyAlarmPolicyOutput {
 	return o.ApplyT(func(v *ScalingPolicy) ScalingPolicyAlarmPolicyOutput { return v.AlarmPolicy }).(ScalingPolicyAlarmPolicyOutput)
 }
 
-// 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+// Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
 func (o ScalingPolicyOutput) Cooldown() pulumi.IntOutput {
 	return o.ApplyT(func(v *ScalingPolicy) pulumi.IntOutput { return v.Cooldown }).(pulumi.IntOutput)
 }
 
-// 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+// Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
 func (o ScalingPolicyOutput) IsEnabledPolicy() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ScalingPolicy) pulumi.BoolOutput { return v.IsEnabledPolicy }).(pulumi.BoolOutput)
 }
 
-// 伸缩组ID。
+// Scaling group ID.
 func (o ScalingPolicyOutput) ScalingGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingPolicy) pulumi.StringOutput { return v.ScalingGroupId }).(pulumi.StringOutput)
 }
 
-// 伸缩规则ID。
+// Scaling rule ID.
 func (o ScalingPolicyOutput) ScalingPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingPolicy) pulumi.StringOutput { return v.ScalingPolicyId }).(pulumi.StringOutput)
 }
 
-// 伸缩规则名称。
+// Name of the scaling rule.
 func (o ScalingPolicyOutput) ScalingPolicyName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingPolicy) pulumi.StringOutput { return v.ScalingPolicyName }).(pulumi.StringOutput)
 }
 
-// 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+// Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
 func (o ScalingPolicyOutput) ScalingPolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingPolicy) pulumi.StringOutput { return v.ScalingPolicyType }).(pulumi.StringOutput)
 }
 
-// 定时任务/周期任务的详细信息。
+// Detailed information for scheduled/recurring tasks.
 func (o ScalingPolicyOutput) ScheduledPolicy() ScalingPolicyScheduledPolicyOutput {
 	return o.ApplyT(func(v *ScalingPolicy) ScalingPolicyScheduledPolicyOutput { return v.ScheduledPolicy }).(ScalingPolicyScheduledPolicyOutput)
 }
 
-// 伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+// Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
 func (o ScalingPolicyOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingPolicy) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }

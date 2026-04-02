@@ -11,74 +11,74 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolNodeStatistics {
     /**
-     * @return Phase=Creating的节点总数量。
+     * @return Total number of nodes in Phase=Creating.
      * 
      */
     private Integer creatingCount;
     /**
-     * @return Phase=Deleting的节点总数量。
+     * @return Total number of nodes with Phase=Deleting
      * 
      */
     private Integer deletingCount;
     /**
-     * @return Phase=Failed的节点总数量。
+     * @return Total number of nodes with Phase=Failed
      * 
      */
     private Integer failedCount;
     /**
-     * @return Phase=Running的节点总数量。
+     * @return Total number of nodes with Phase=Running
      * 
      */
     private Integer runningCount;
     /**
-     * @return 节点池中的节点总数量。
+     * @return Total number of nodes in the node pool
      * 
      */
     private Integer totalCount;
     /**
-     * @return Phase=Updating的节点总数量。
+     * @return Total number of nodes with Phase=Updating
      * 
      */
     private Integer updatingCount;
 
     private GetNodePoolNodeStatistics() {}
     /**
-     * @return Phase=Creating的节点总数量。
+     * @return Total number of nodes in Phase=Creating.
      * 
      */
     public Integer creatingCount() {
         return this.creatingCount;
     }
     /**
-     * @return Phase=Deleting的节点总数量。
+     * @return Total number of nodes with Phase=Deleting
      * 
      */
     public Integer deletingCount() {
         return this.deletingCount;
     }
     /**
-     * @return Phase=Failed的节点总数量。
+     * @return Total number of nodes with Phase=Failed
      * 
      */
     public Integer failedCount() {
         return this.failedCount;
     }
     /**
-     * @return Phase=Running的节点总数量。
+     * @return Total number of nodes with Phase=Running
      * 
      */
     public Integer runningCount() {
         return this.runningCount;
     }
     /**
-     * @return 节点池中的节点总数量。
+     * @return Total number of nodes in the node pool
      * 
      */
     public Integer totalCount() {
         return this.totalCount;
     }
     /**
-     * @return Phase=Updating的节点总数量。
+     * @return Total number of nodes with Phase=Updating
      * 
      */
     public Integer updatingCount() {

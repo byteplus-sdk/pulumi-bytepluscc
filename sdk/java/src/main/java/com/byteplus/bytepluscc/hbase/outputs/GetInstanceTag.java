@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceTag {
     /**
-     * @return 实例所绑定标签的标签键。
+     * @return Tag key of the tags bound to the instance
      * 
      */
     private String key;
     /**
-     * @return 实例所绑定标签的标签值。
+     * @return Tag values bound to the instance.
      * 
      */
     private String value;
 
     private GetInstanceTag() {}
     /**
-     * @return 实例所绑定标签的标签键。
+     * @return Tag key of the tags bound to the instance
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 实例所绑定标签的标签值。
+     * @return Tag values bound to the instance.
      * 
      */
     public String value() {

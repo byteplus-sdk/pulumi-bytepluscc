@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark.Outputs
     public sealed class GetEndpointRateLimitResult
     {
         /// <summary>
-        /// Requests Per Minute，每分钟请求数。
+        /// Requests Per Minute, number of requests per minute
         /// </summary>
         public readonly int Rpm;
         /// <summary>
-        /// Tokens Per Minute，每分钟请求 token 数。
+        /// Tokens Per Minute, number of tokens requested per minute
         /// </summary>
         public readonly int Tpm;
 

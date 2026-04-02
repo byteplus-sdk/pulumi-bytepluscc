@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter.Inputs
     public sealed class VpcAttachmentAttachPointGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 连接点的子网ID。
+        /// Subnet ID of the connection point.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
 
         /// <summary>
-        /// 连接点的可用区ID。
+        /// Availability zone ID of the connection point.
         /// </summary>
         [Input("zoneId", required: true)]
         public Input<string> ZoneId { get; set; } = null!;

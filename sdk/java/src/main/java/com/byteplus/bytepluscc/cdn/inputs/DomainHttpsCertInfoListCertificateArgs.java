@@ -16,14 +16,14 @@ public final class DomainHttpsCertInfoListCertificateArgs extends com.pulumi.res
     public static final DomainHttpsCertInfoListCertificateArgs Empty = new DomainHttpsCertInfoListCertificateArgs();
 
     /**
-     * 表示证书文件的内容。内容中的换行必须使用 \r\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+     * Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
      * 
      */
     @Import(name="certificate")
     private @Nullable Output<String> certificate;
 
     /**
-     * @return 表示证书文件的内容。内容中的换行必须使用 \r\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+     * @return Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
      * 
      */
     public Optional<Output<String>> certificate() {
@@ -31,14 +31,14 @@ public final class DomainHttpsCertInfoListCertificateArgs extends com.pulumi.res
     }
 
     /**
-     * 表示国密证书的证书文件的内容。内容中的换行必须使用 \r\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+     * Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
      * 
      */
     @Import(name="encryptionCert")
     private @Nullable Output<String> encryptionCert;
 
     /**
-     * @return 表示国密证书的证书文件的内容。内容中的换行必须使用 \r\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+     * @return Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
      * 
      */
     public Optional<Output<String>> encryptionCert() {
@@ -46,14 +46,14 @@ public final class DomainHttpsCertInfoListCertificateArgs extends com.pulumi.res
     }
 
     /**
-     * 表示国密证书的私钥文件的内容。内容中的换行必须使用 \r\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 &lt;domain&gt;_encrypt.key。
+     * Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to &lt;domain&gt;_encrypt.key.
      * 
      */
     @Import(name="encryptionKey")
     private @Nullable Output<String> encryptionKey;
 
     /**
-     * @return 表示国密证书的私钥文件的内容。内容中的换行必须使用 \r\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 &lt;domain&gt;_encrypt.key。
+     * @return Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to &lt;domain&gt;_encrypt.key.
      * 
      */
     public Optional<Output<String>> encryptionKey() {
@@ -61,14 +61,14 @@ public final class DomainHttpsCertInfoListCertificateArgs extends com.pulumi.res
     }
 
     /**
-     * 表示私钥文件的内容。内容中的换行必须使用 \r\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 &lt;domain&gt;.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 &lt;domain&gt;_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+     * Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to &lt;domain&gt;.key. The private key contained in this file is used to verify the server&#39;s signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to &lt;domain&gt;_sign.key. The private key contained in this file is used to verify the server&#39;s signature. For certificates to be uploaded, this parameter is required.
      * 
      */
     @Import(name="privateKey")
     private @Nullable Output<String> privateKey;
 
     /**
-     * @return 表示私钥文件的内容。内容中的换行必须使用 \r\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 &lt;domain&gt;.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 &lt;domain&gt;_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+     * @return Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to &lt;domain&gt;.key. The private key contained in this file is used to verify the server&#39;s signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to &lt;domain&gt;_sign.key. The private key contained in this file is used to verify the server&#39;s signature. For certificates to be uploaded, this parameter is required.
      * 
      */
     public Optional<Output<String>> privateKey() {
@@ -103,7 +103,7 @@ public final class DomainHttpsCertInfoListCertificateArgs extends com.pulumi.res
         }
 
         /**
-         * @param certificate 表示证书文件的内容。内容中的换行必须使用 \r\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+         * @param certificate Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class DomainHttpsCertInfoListCertificateArgs extends com.pulumi.res
         }
 
         /**
-         * @param certificate 表示证书文件的内容。内容中的换行必须使用 \r\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+         * @param certificate Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class DomainHttpsCertInfoListCertificateArgs extends com.pulumi.res
         }
 
         /**
-         * @param encryptionCert 表示国密证书的证书文件的内容。内容中的换行必须使用 \r\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+         * @param encryptionCert Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class DomainHttpsCertInfoListCertificateArgs extends com.pulumi.res
         }
 
         /**
-         * @param encryptionCert 表示国密证书的证书文件的内容。内容中的换行必须使用 \r\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+         * @param encryptionCert Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class DomainHttpsCertInfoListCertificateArgs extends com.pulumi.res
         }
 
         /**
-         * @param encryptionKey 表示国密证书的私钥文件的内容。内容中的换行必须使用 \r\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 &lt;domain&gt;_encrypt.key。
+         * @param encryptionKey Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to &lt;domain&gt;_encrypt.key.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class DomainHttpsCertInfoListCertificateArgs extends com.pulumi.res
         }
 
         /**
-         * @param encryptionKey 表示国密证书的私钥文件的内容。内容中的换行必须使用 \r\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 &lt;domain&gt;_encrypt.key。
+         * @param encryptionKey Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to &lt;domain&gt;_encrypt.key.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class DomainHttpsCertInfoListCertificateArgs extends com.pulumi.res
         }
 
         /**
-         * @param privateKey 表示私钥文件的内容。内容中的换行必须使用 \r\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 &lt;domain&gt;.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 &lt;domain&gt;_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+         * @param privateKey Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to &lt;domain&gt;.key. The private key contained in this file is used to verify the server&#39;s signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to &lt;domain&gt;_sign.key. The private key contained in this file is used to verify the server&#39;s signature. For certificates to be uploaded, this parameter is required.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class DomainHttpsCertInfoListCertificateArgs extends com.pulumi.res
         }
 
         /**
-         * @param privateKey 表示私钥文件的内容。内容中的换行必须使用 \r\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 &lt;domain&gt;.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 &lt;domain&gt;_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+         * @param privateKey Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to &lt;domain&gt;.key. The private key contained in this file is used to verify the server&#39;s signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to &lt;domain&gt;_sign.key. The private key contained in this file is used to verify the server&#39;s signature. For certificates to be uploaded, this parameter is required.
          * 
          * @return builder
          * 

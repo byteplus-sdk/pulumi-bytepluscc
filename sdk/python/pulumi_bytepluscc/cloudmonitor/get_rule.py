@@ -136,7 +136,7 @@ class GetRuleResult:
     @pulumi.getter(name="alertMethods")
     def alert_methods(self) -> Sequence[builtins.str]:
         """
-        告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+        Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
         """
         return pulumi.get(self, "alert_methods")
 
@@ -144,7 +144,7 @@ class GetRuleResult:
     @pulumi.getter(name="alertState")
     def alert_state(self) -> builtins.str:
         """
-        告警状态。 alerting：告警中 normal：正常。
+        Alert status. alerting: In alert; normal: Normal.
         """
         return pulumi.get(self, "alert_state")
 
@@ -152,7 +152,7 @@ class GetRuleResult:
     @pulumi.getter(name="conditionOperator")
     def condition_operator(self) -> builtins.str:
         """
-        多指标判定条件。&&：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+        Multi-metric determination condition. &&: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
         """
         return pulumi.get(self, "condition_operator")
 
@@ -160,7 +160,7 @@ class GetRuleResult:
     @pulumi.getter
     def conditions(self) -> Sequence['outputs.GetRuleConditionResult']:
         """
-        告警条件。数组形式，支持填写多个指标判断语句，最多 10 个。
+        Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
         """
         return pulumi.get(self, "conditions")
 
@@ -168,7 +168,7 @@ class GetRuleResult:
     @pulumi.getter(name="contactGroupIds")
     def contact_group_ids(self) -> Sequence[builtins.str]:
         """
-        告警策略绑定的告警通知组 ID。
+        Alert notification group ID bound to the alert policy.
         """
         return pulumi.get(self, "contact_group_ids")
 
@@ -176,7 +176,7 @@ class GetRuleResult:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> builtins.str:
         """
-        告警策略创建时间，时间戳格式。
+        Alert policy creation time, in timestamp format.
         """
         return pulumi.get(self, "created_at")
 
@@ -184,7 +184,7 @@ class GetRuleResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        告警策略描述信息。
+        Alert policy description.
         """
         return pulumi.get(self, "description")
 
@@ -192,7 +192,7 @@ class GetRuleResult:
     @pulumi.getter(name="dimensionConditions")
     def dimension_conditions(self) -> 'outputs.GetRuleDimensionConditionsResult':
         """
-        Dimension 配置。
+        Dimension configuration.
         """
         return pulumi.get(self, "dimension_conditions")
 
@@ -200,7 +200,7 @@ class GetRuleResult:
     @pulumi.getter(name="effectEndAt")
     def effect_end_at(self) -> builtins.str:
         """
-        策略生效的截止时间，格式为HH:MM。
+        Policy expiration time, in HH:MM format.
         """
         return pulumi.get(self, "effect_end_at")
 
@@ -208,7 +208,7 @@ class GetRuleResult:
     @pulumi.getter(name="effectStartAt")
     def effect_start_at(self) -> builtins.str:
         """
-        告警策略生效的开始时间，格式为HH:MM。
+        Policy start time, in HH:MM format.
         """
         return pulumi.get(self, "effect_start_at")
 
@@ -216,7 +216,7 @@ class GetRuleResult:
     @pulumi.getter(name="enableState")
     def enable_state(self) -> builtins.str:
         """
-        告警策略的开启状态。,enable：开启,disable：禁用
+        Alert policy status. enable: enabled, disable: disabled
         """
         return pulumi.get(self, "enable_state")
 
@@ -224,7 +224,7 @@ class GetRuleResult:
     @pulumi.getter(name="evaluationCount")
     def evaluation_count(self) -> builtins.int:
         """
-        触发告警需要持续的周期。单位为分钟。
+        Duration required to trigger an alert, in minutes.
         """
         return pulumi.get(self, "evaluation_count")
 
@@ -240,7 +240,7 @@ class GetRuleResult:
     @pulumi.getter
     def level(self) -> builtins.str:
         """
-        告警级别。critical：严重,warning：警告,notice：通知
+        Alert level. critical: critical, warning: warning, notice: notification
         """
         return pulumi.get(self, "level")
 
@@ -248,7 +248,7 @@ class GetRuleResult:
     @pulumi.getter(name="levelConditions")
     def level_conditions(self) -> Sequence['outputs.GetRuleLevelConditionResult']:
         """
-        告警分级配置。
+        Alert severity configuration.
         """
         return pulumi.get(self, "level_conditions")
 
@@ -256,7 +256,7 @@ class GetRuleResult:
     @pulumi.getter(name="multipleConditions")
     def multiple_conditions(self) -> builtins.bool:
         """
-        告警策略是否用多指标。true：多指标,false：单指标（默认）。
+        Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
         """
         return pulumi.get(self, "multiple_conditions")
 
@@ -264,7 +264,7 @@ class GetRuleResult:
     @pulumi.getter
     def namespace(self) -> builtins.str:
         """
-        监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+        Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
         """
         return pulumi.get(self, "namespace")
 
@@ -272,7 +272,7 @@ class GetRuleResult:
     @pulumi.getter(name="noData")
     def no_data(self) -> 'outputs.GetRuleNoDataResult':
         """
-        无数据告警。
+        No data alert.
         """
         return pulumi.get(self, "no_data")
 
@@ -280,7 +280,7 @@ class GetRuleResult:
     @pulumi.getter(name="notificationId")
     def notification_id(self) -> builtins.str:
         """
-        通知策略 ID。
+        Notification policy ID.
         """
         return pulumi.get(self, "notification_id")
 
@@ -288,7 +288,7 @@ class GetRuleResult:
     @pulumi.getter(name="notifyTemplates")
     def notify_templates(self) -> Sequence['outputs.GetRuleNotifyTemplateResult']:
         """
-        通知模版配置。
+        Notification template configuration.
         """
         return pulumi.get(self, "notify_templates")
 
@@ -296,7 +296,7 @@ class GetRuleResult:
     @pulumi.getter(name="originalDimensions")
     def original_dimensions(self) -> 'outputs.GetRuleOriginalDimensionsResult':
         """
-        告警策略检测的资源 ID。
+        Resource ID detected by the alert policy.
         """
         return pulumi.get(self, "original_dimensions")
 
@@ -304,7 +304,7 @@ class GetRuleResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        告警策略所属项目。
+        Project to which the alert policy belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -312,7 +312,7 @@ class GetRuleResult:
     @pulumi.getter(name="recoveryNotify")
     def recovery_notify(self) -> 'outputs.GetRuleRecoveryNotifyResult':
         """
-        告警恢复通知。
+        Alert recovery notification.
         """
         return pulumi.get(self, "recovery_notify")
 
@@ -320,7 +320,7 @@ class GetRuleResult:
     @pulumi.getter
     def regions(self) -> Sequence[builtins.str]:
         """
-        云产品所属可用区 ID。
+        Availability zone ID of the cloud product.
         """
         return pulumi.get(self, "regions")
 
@@ -328,7 +328,7 @@ class GetRuleResult:
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> builtins.str:
         """
-        告警策略检测的资源类型。
+        Resource type detected by the alert policy.
         """
         return pulumi.get(self, "resource_type")
 
@@ -336,7 +336,7 @@ class GetRuleResult:
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> builtins.str:
         """
-        告警策略 ID。
+        Alarm policy ID.
         """
         return pulumi.get(self, "rule_id")
 
@@ -344,7 +344,7 @@ class GetRuleResult:
     @pulumi.getter(name="ruleName")
     def rule_name(self) -> builtins.str:
         """
-        告警策略名称。
+        Alert policy name.
         """
         return pulumi.get(self, "rule_name")
 
@@ -352,7 +352,7 @@ class GetRuleResult:
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> builtins.str:
         """
-        告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+        Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
         """
         return pulumi.get(self, "rule_type")
 
@@ -360,7 +360,7 @@ class GetRuleResult:
     @pulumi.getter(name="silenceTime")
     def silence_time(self) -> builtins.int:
         """
-        告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+        Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
         """
         return pulumi.get(self, "silence_time")
 
@@ -368,7 +368,7 @@ class GetRuleResult:
     @pulumi.getter(name="subNamespace")
     def sub_namespace(self) -> builtins.str:
         """
-        此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+        Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
         """
         return pulumi.get(self, "sub_namespace")
 
@@ -376,7 +376,7 @@ class GetRuleResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetRuleTagResult']:
         """
-        告警策略绑定 Tag。
+        Bind alert policy to Tag.
         """
         return pulumi.get(self, "tags")
 
@@ -384,7 +384,7 @@ class GetRuleResult:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> builtins.str:
         """
-        告警策略更新时间，时间戳格式。
+        Alarm policy update time, in timestamp format.
         """
         return pulumi.get(self, "updated_at")
 
@@ -392,7 +392,7 @@ class GetRuleResult:
     @pulumi.getter
     def webhook(self) -> builtins.str:
         """
-        告警策略绑定的告警回调 URL 地址。
+        Alarm callback URL bound to the alarm policy.
         """
         return pulumi.get(self, "webhook")
 
@@ -400,7 +400,7 @@ class GetRuleResult:
     @pulumi.getter(name="webhookIds")
     def webhook_ids(self) -> Sequence[builtins.str]:
         """
-        告警发生时告警回调 ID 列表。
+        Alarm callback ID list when an alarm occurs.
         """
         return pulumi.get(self, "webhook_ids")
 

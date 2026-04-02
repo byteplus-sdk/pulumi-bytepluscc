@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 企业组织管理
+// Enterprise Organization Management
 //
 // ## Example Usage
 //
@@ -45,11 +45,11 @@ import (
 type Organization struct {
 	pulumi.CustomResourceState
 
-	// 组织详情
+	// Organization Details
 	Organization OrganizationOrganizationOutput `pulumi:"organization"`
-	// 组织ID
+	// Organization ID
 	OrganizationId pulumi.StringOutput `pulumi:"organizationId"`
-	// 管理员详情
+	// Administrator Details
 	Owner OrganizationOwnerOutput `pulumi:"owner"`
 }
 
@@ -83,20 +83,20 @@ func GetOrganization(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Organization resources.
 type organizationState struct {
-	// 组织详情
+	// Organization Details
 	Organization *OrganizationOrganization `pulumi:"organization"`
-	// 组织ID
+	// Organization ID
 	OrganizationId *string `pulumi:"organizationId"`
-	// 管理员详情
+	// Administrator Details
 	Owner *OrganizationOwner `pulumi:"owner"`
 }
 
 type OrganizationState struct {
-	// 组织详情
+	// Organization Details
 	Organization OrganizationOrganizationPtrInput
-	// 组织ID
+	// Organization ID
 	OrganizationId pulumi.StringPtrInput
-	// 管理员详情
+	// Administrator Details
 	Owner OrganizationOwnerPtrInput
 }
 
@@ -105,17 +105,17 @@ func (OrganizationState) ElementType() reflect.Type {
 }
 
 type organizationArgs struct {
-	// 组织详情
+	// Organization Details
 	Organization *OrganizationOrganization `pulumi:"organization"`
-	// 管理员详情
+	// Administrator Details
 	Owner *OrganizationOwner `pulumi:"owner"`
 }
 
 // The set of arguments for constructing a Organization resource.
 type OrganizationArgs struct {
-	// 组织详情
+	// Organization Details
 	Organization OrganizationOrganizationPtrInput
-	// 管理员详情
+	// Administrator Details
 	Owner OrganizationOwnerPtrInput
 }
 
@@ -206,17 +206,17 @@ func (o OrganizationOutput) ToOrganizationOutputWithContext(ctx context.Context)
 	return o
 }
 
-// 组织详情
+// Organization Details
 func (o OrganizationOutput) Organization() OrganizationOrganizationOutput {
 	return o.ApplyT(func(v *Organization) OrganizationOrganizationOutput { return v.Organization }).(OrganizationOrganizationOutput)
 }
 
-// 组织ID
+// Organization ID
 func (o OrganizationOutput) OrganizationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Organization) pulumi.StringOutput { return v.OrganizationId }).(pulumi.StringOutput)
 }
 
-// 管理员详情
+// Administrator Details
 func (o OrganizationOutput) Owner() OrganizationOwnerOutput {
 	return o.ApplyT(func(v *Organization) OrganizationOwnerOutput { return v.Owner }).(OrganizationOwnerOutput)
 }

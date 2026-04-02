@@ -12,98 +12,98 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceAddressObject {
     /**
-     * @return false：私网解析（默认）。true：私网以及公网解析。
+     * @return false: private network resolution (default). true: private and public network resolution.
      * 
      */
     private Boolean dnsVisibility;
     /**
-     * @return 连接域名。
+     * @return Connection domain name
      * 
      */
     private String domain;
     /**
-     * @return EIP 的 ID，仅对 Public 地址有效。
+     * @return EIP ID, valid only for Public addresses.
      * 
      */
     private String eipId;
     /**
-     * @return IP 协议版本。取值为 IPv4。
+     * @return IP protocol version. Value: IPv4.
      * 
      */
     private String internetProtocol;
     /**
-     * @return IP 地址。
+     * @return IP address.
      * 
      */
     private String ipAddress;
     /**
-     * @return 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+     * @return Network address type. Values: Private: private address. Public: public address
      * 
      */
     private String networkType;
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     private String port;
     /**
-     * @return 子网 ID，仅对 Private 地址有效。
+     * @return Subnet ID, valid only for Private addresses
      * 
      */
     private String subnetId;
 
     private GetInstanceAddressObject() {}
     /**
-     * @return false：私网解析（默认）。true：私网以及公网解析。
+     * @return false: private network resolution (default). true: private and public network resolution.
      * 
      */
     public Boolean dnsVisibility() {
         return this.dnsVisibility;
     }
     /**
-     * @return 连接域名。
+     * @return Connection domain name
      * 
      */
     public String domain() {
         return this.domain;
     }
     /**
-     * @return EIP 的 ID，仅对 Public 地址有效。
+     * @return EIP ID, valid only for Public addresses.
      * 
      */
     public String eipId() {
         return this.eipId;
     }
     /**
-     * @return IP 协议版本。取值为 IPv4。
+     * @return IP protocol version. Value: IPv4.
      * 
      */
     public String internetProtocol() {
         return this.internetProtocol;
     }
     /**
-     * @return IP 地址。
+     * @return IP address.
      * 
      */
     public String ipAddress() {
         return this.ipAddress;
     }
     /**
-     * @return 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+     * @return Network address type. Values: Private: private address. Public: public address
      * 
      */
     public String networkType() {
         return this.networkType;
     }
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     public String port() {
         return this.port;
     }
     /**
-     * @return 子网 ID，仅对 Private 地址有效。
+     * @return Subnet ID, valid only for Private addresses
      * 
      */
     public String subnetId() {

@@ -27,14 +27,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 是否允许自动加入新节点，取值：true：是。false：否。
+     * Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
      * 
      */
     @Import(name="autoAddNewNodes")
     private @Nullable Output<Boolean> autoAddNewNodes;
 
     /**
-     * @return 是否允许自动加入新节点，取值：true：是。false：否。
+     * @return Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
      * 
      */
     public Optional<Output<Boolean>> autoAddNewNodes() {
@@ -42,14 +42,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 一致性级别，仅对读写模式的连接终端有效。取值：Eventual：最终一致性。Session：会话一致性。Global：全局一致性。
+     * Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
      * 
      */
     @Import(name="consistLevel")
     private @Nullable Output<String> consistLevel;
 
     /**
-     * @return 一致性级别，仅对读写模式的连接终端有效。取值：Eventual：最终一致性。Session：会话一致性。Global：全局一致性。
+     * @return Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
      * 
      */
     public Optional<Output<String>> consistLevel() {
@@ -57,14 +57,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 延迟很大时，只读节点同步最新数据的超时时间，单位为 us，取值范围为 1us~100000000us。
+     * When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
      * 
      */
     @Import(name="consistTimeout")
     private @Nullable Output<Integer> consistTimeout;
 
     /**
-     * @return 延迟很大时，只读节点同步最新数据的超时时间，单位为 us，取值范围为 1us~100000000us。
+     * @return When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
      * 
      */
     public Optional<Output<Integer>> consistTimeout() {
@@ -72,14 +72,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 只读节点同步数据超时后的超时策略，支持以下两种策略：ReturnError：返回 SQL 报错（wait replication complete timeout, please retry）。ReadMaster：发送请求到主节点。
+     * Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
      * 
      */
     @Import(name="consistTimeoutAction")
     private @Nullable Output<String> consistTimeoutAction;
 
     /**
-     * @return 只读节点同步数据超时后的超时策略，支持以下两种策略：ReturnError：返回 SQL 报错（wait replication complete timeout, please retry）。ReadMaster：发送请求到主节点。
+     * @return Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
      * 
      */
     public Optional<Output<String>> consistTimeoutAction() {
@@ -87,14 +87,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 地址描述。
+     * Address description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 地址描述。
+     * @return Address description
      * 
      */
     public Optional<Output<String>> description() {
@@ -102,14 +102,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 是否开启事务拆分，仅对读写模式的连接终端有效。取值：true：是。false：否。
+     * Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
      * 
      */
     @Import(name="distributedTransaction")
     private @Nullable Output<Boolean> distributedTransaction;
 
     /**
-     * @return 是否开启事务拆分，仅对读写模式的连接终端有效。取值：true：是。false：否。
+     * @return Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
      * 
      */
     public Optional<Output<Boolean>> distributedTransaction() {
@@ -117,14 +117,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 实例连接终端 ID。
+     * Instance connection endpoint ID.
      * 
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
-     * @return 实例连接终端 ID。
+     * @return Instance connection endpoint ID.
      * 
      */
     public Optional<Output<String>> endpointId() {
@@ -132,14 +132,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 实例连接终端名称。
+     * Instance connection endpoint name.
      * 
      */
     @Import(name="endpointName")
     private @Nullable Output<String> endpointName;
 
     /**
-     * @return 实例连接终端名称。
+     * @return Instance connection endpoint name.
      * 
      */
     public Optional<Output<String>> endpointName() {
@@ -147,14 +147,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 连接终端类型，取值：Cluster：默认终端。Primary：主节点终端。Custom：自定义终端。
+     * Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
      * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
-     * @return 连接终端类型，取值：Cluster：默认终端。Primary：主节点终端。Custom：自定义终端。
+     * @return Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
      * 
      */
     public Optional<Output<String>> endpointType() {
@@ -162,14 +162,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 主节点是否接受读请求。仅对读写模式的连接终端有效。true：是。false：否。
+     * Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
      * 
      */
     @Import(name="masterAcceptReadRequests")
     private @Nullable Output<Boolean> masterAcceptReadRequests;
 
     /**
-     * @return 主节点是否接受读请求。仅对读写模式的连接终端有效。true：是。false：否。
+     * @return Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
      * 
      */
     public Optional<Output<Boolean>> masterAcceptReadRequests() {
@@ -177,14 +177,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 连接终端配置的节点列表。
+     * Node list configured for the connection endpoint.
      * 
      */
     @Import(name="nodeIds")
     private @Nullable Output<List<String>> nodeIds;
 
     /**
-     * @return 连接终端配置的节点列表。
+     * @return Node list configured for the connection endpoint.
      * 
      */
     public Optional<Output<List<String>>> nodeIds() {
@@ -192,14 +192,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 连接终端的读写模式，取值：ReadWrite: 读写。ReadOnly: 只读。
+     * Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
      * 
      */
     @Import(name="readWriteMode")
     private @Nullable Output<String> readWriteMode;
 
     /**
-     * @return 连接终端的读写模式，取值：ReadWrite: 读写。ReadOnly: 只读。
+     * @return Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
      * 
      */
     public Optional<Output<String>> readWriteMode() {
@@ -256,7 +256,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param autoAddNewNodes 是否允许自动加入新节点，取值：true：是。false：否。
+         * @param autoAddNewNodes Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param autoAddNewNodes 是否允许自动加入新节点，取值：true：是。false：否。
+         * @param autoAddNewNodes Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param consistLevel 一致性级别，仅对读写模式的连接终端有效。取值：Eventual：最终一致性。Session：会话一致性。Global：全局一致性。
+         * @param consistLevel Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param consistLevel 一致性级别，仅对读写模式的连接终端有效。取值：Eventual：最终一致性。Session：会话一致性。Global：全局一致性。
+         * @param consistLevel Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param consistTimeout 延迟很大时，只读节点同步最新数据的超时时间，单位为 us，取值范围为 1us~100000000us。
+         * @param consistTimeout When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
          * 
          * @return builder
          * 
@@ -309,7 +309,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param consistTimeout 延迟很大时，只读节点同步最新数据的超时时间，单位为 us，取值范围为 1us~100000000us。
+         * @param consistTimeout When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
          * 
          * @return builder
          * 
@@ -319,7 +319,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param consistTimeoutAction 只读节点同步数据超时后的超时策略，支持以下两种策略：ReturnError：返回 SQL 报错（wait replication complete timeout, please retry）。ReadMaster：发送请求到主节点。
+         * @param consistTimeoutAction Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
          * 
          * @return builder
          * 
@@ -330,7 +330,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param consistTimeoutAction 只读节点同步数据超时后的超时策略，支持以下两种策略：ReturnError：返回 SQL 报错（wait replication complete timeout, please retry）。ReadMaster：发送请求到主节点。
+         * @param consistTimeoutAction Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
          * 
          * @return builder
          * 
@@ -340,7 +340,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description 地址描述。
+         * @param description Address description
          * 
          * @return builder
          * 
@@ -351,7 +351,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description 地址描述。
+         * @param description Address description
          * 
          * @return builder
          * 
@@ -361,7 +361,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param distributedTransaction 是否开启事务拆分，仅对读写模式的连接终端有效。取值：true：是。false：否。
+         * @param distributedTransaction Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
          * 
          * @return builder
          * 
@@ -372,7 +372,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param distributedTransaction 是否开启事务拆分，仅对读写模式的连接终端有效。取值：true：是。false：否。
+         * @param distributedTransaction Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param endpointId 实例连接终端 ID。
+         * @param endpointId Instance connection endpoint ID.
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param endpointId 实例连接终端 ID。
+         * @param endpointId Instance connection endpoint ID.
          * 
          * @return builder
          * 
@@ -403,7 +403,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param endpointName 实例连接终端名称。
+         * @param endpointName Instance connection endpoint name.
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param endpointName 实例连接终端名称。
+         * @param endpointName Instance connection endpoint name.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param endpointType 连接终端类型，取值：Cluster：默认终端。Primary：主节点终端。Custom：自定义终端。
+         * @param endpointType Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
          * 
          * @return builder
          * 
@@ -435,7 +435,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param endpointType 连接终端类型，取值：Cluster：默认终端。Primary：主节点终端。Custom：自定义终端。
+         * @param endpointType Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
          * 
          * @return builder
          * 
@@ -445,7 +445,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param masterAcceptReadRequests 主节点是否接受读请求。仅对读写模式的连接终端有效。true：是。false：否。
+         * @param masterAcceptReadRequests Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param masterAcceptReadRequests 主节点是否接受读请求。仅对读写模式的连接终端有效。true：是。false：否。
+         * @param masterAcceptReadRequests Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param nodeIds 连接终端配置的节点列表。
+         * @param nodeIds Node list configured for the connection endpoint.
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param nodeIds 连接终端配置的节点列表。
+         * @param nodeIds Node list configured for the connection endpoint.
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param nodeIds 连接终端配置的节点列表。
+         * @param nodeIds Node list configured for the connection endpoint.
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param readWriteMode 连接终端的读写模式，取值：ReadWrite: 读写。ReadOnly: 只读。
+         * @param readWriteMode Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param readWriteMode 连接终端的读写模式，取值：ReadWrite: 读写。ReadOnly: 只读。
+         * @param readWriteMode Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
          * 
          * @return builder
          * 

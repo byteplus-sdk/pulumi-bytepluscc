@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Outputs
     public sealed class GetPrefixListAssociationsRouteTableResult
     {
         /// <summary>
-        /// 关联资源的ID。
+        /// ID of the associated resource.
         /// </summary>
         public readonly string ResourceId;
         /// <summary>
-        /// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        /// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
         /// </summary>
         public readonly string ResourceType;
 

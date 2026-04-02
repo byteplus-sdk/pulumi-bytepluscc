@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Inputs
     public sealed class InstanceInstanceConfigurationNetworkSpecArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 公网IP的带宽上限，默认为“1”，单位：Mbps。
+        /// Public IP bandwidth limit. Default is '1', unit: Mbps.
         /// </summary>
         [Input("bandwidth")]
         public Input<int>? Bandwidth { get; set; }
 
         /// <summary>
-        /// 开启/关闭
+        /// Enable/Disable
         /// </summary>
         [Input("isOpen")]
         public Input<bool>? IsOpen { get; set; }
 
         /// <summary>
-        /// 实例公网资源规格名称
+        /// Instance public resource specification name
         /// </summary>
         [Input("specName")]
         public Input<string>? SpecName { get; set; }
 
         /// <summary>
-        /// 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+        /// Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

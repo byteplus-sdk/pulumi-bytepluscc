@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
     public sealed class RuleDimensionConditionsTagCondition
     {
         /// <summary>
-        /// 判断条件。and：全部满足。or：任意满足。
+        /// Condition. and: All conditions met. or: Any condition met.
         /// </summary>
         public readonly string? Condition;
         public readonly ImmutableArray<Outputs.RuleDimensionConditionsTagConditionTag> Tags;

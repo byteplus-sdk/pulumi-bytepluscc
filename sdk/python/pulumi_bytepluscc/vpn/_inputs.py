@@ -18,6 +18,24 @@ from .. import _utilities
 __all__ = [
     'CustomerGatewayTagArgs',
     'CustomerGatewayTagArgsDict',
+    'VpnConnectionBgpInfoArgs',
+    'VpnConnectionBgpInfoArgsDict',
+    'VpnConnectionHealthCheckerArgs',
+    'VpnConnectionHealthCheckerArgsDict',
+    'VpnConnectionIkeConfigArgs',
+    'VpnConnectionIkeConfigArgsDict',
+    'VpnConnectionIpsecConfigArgs',
+    'VpnConnectionIpsecConfigArgsDict',
+    'VpnConnectionTagArgs',
+    'VpnConnectionTagArgsDict',
+    'VpnConnectionTunnelOptionArgs',
+    'VpnConnectionTunnelOptionArgsDict',
+    'VpnConnectionTunnelOptionIkeConfigArgs',
+    'VpnConnectionTunnelOptionIkeConfigArgsDict',
+    'VpnConnectionTunnelOptionIpsecConfigArgs',
+    'VpnConnectionTunnelOptionIpsecConfigArgsDict',
+    'VpnConnectionTunnelOptionTunnelBgpInfoArgs',
+    'VpnConnectionTunnelOptionTunnelBgpInfoArgsDict',
     'VpnGatewayTagArgs',
     'VpnGatewayTagArgsDict',
 ]
@@ -28,11 +46,11 @@ if not MYPY:
     class CustomerGatewayTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签键。
+        Tag key for user tag
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签值。
+        Tag value for user tag
         """
 elif False:
     CustomerGatewayTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -43,8 +61,8 @@ class CustomerGatewayTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 用户标签的标签键。
-        :param pulumi.Input[builtins.str] value: 用户标签的标签值。
+        :param pulumi.Input[builtins.str] key: Tag key for user tag
+        :param pulumi.Input[builtins.str] value: Tag value for user tag
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -55,7 +73,7 @@ class CustomerGatewayTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签键。
+        Tag key for user tag
         """
         return pulumi.get(self, "key")
 
@@ -67,7 +85,7 @@ class CustomerGatewayTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签值。
+        Tag value for user tag
         """
         return pulumi.get(self, "value")
 
@@ -77,14 +95,1182 @@ class CustomerGatewayTagArgs:
 
 
 if not MYPY:
-    class VpnGatewayTagArgsDict(TypedDict):
+    class VpnConnectionBgpInfoArgsDict(TypedDict):
+        enable_bgp: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+        """
+        local_asn: NotRequired[pulumi.Input[builtins.int]]
+        """
+        The ASN of the VPN gateway.
+        """
+        local_bgp_ip: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The local tunnel IP, which is the BGP address configured on the VPN gateway and defaults to the first host address of BgpConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel subnet. If BgpConfig.EnableBgp is set to true, this parameter must be provided.
+        """
+        peer_asn: NotRequired[pulumi.Input[builtins.int]]
+        """
+        ASN of the customer gateway.
+        """
+        peer_bgp_ip: NotRequired[pulumi.Input[builtins.str]]
+        """
+        BGP peer IP, that is, the BGP address on the customer gateway side.
+        """
+        session_status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+        """
+        tunnel_cidr: NotRequired[pulumi.Input[builtins.str]]
+        """
+        CIDR address range for the local and peer IPs of the BGP session.
+        """
+elif False:
+    VpnConnectionBgpInfoArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpnConnectionBgpInfoArgs:
+    def __init__(__self__, *,
+                 enable_bgp: Optional[pulumi.Input[builtins.bool]] = None,
+                 local_asn: Optional[pulumi.Input[builtins.int]] = None,
+                 local_bgp_ip: Optional[pulumi.Input[builtins.str]] = None,
+                 peer_asn: Optional[pulumi.Input[builtins.int]] = None,
+                 peer_bgp_ip: Optional[pulumi.Input[builtins.str]] = None,
+                 session_status: Optional[pulumi.Input[builtins.str]] = None,
+                 tunnel_cidr: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] enable_bgp: Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+        :param pulumi.Input[builtins.int] local_asn: The ASN of the VPN gateway.
+        :param pulumi.Input[builtins.str] local_bgp_ip: The local tunnel IP, which is the BGP address configured on the VPN gateway and defaults to the first host address of BgpConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel subnet. If BgpConfig.EnableBgp is set to true, this parameter must be provided.
+        :param pulumi.Input[builtins.int] peer_asn: ASN of the customer gateway.
+        :param pulumi.Input[builtins.str] peer_bgp_ip: BGP peer IP, that is, the BGP address on the customer gateway side.
+        :param pulumi.Input[builtins.str] session_status: Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+        :param pulumi.Input[builtins.str] tunnel_cidr: CIDR address range for the local and peer IPs of the BGP session.
+        """
+        if enable_bgp is not None:
+            pulumi.set(__self__, "enable_bgp", enable_bgp)
+        if local_asn is not None:
+            pulumi.set(__self__, "local_asn", local_asn)
+        if local_bgp_ip is not None:
+            pulumi.set(__self__, "local_bgp_ip", local_bgp_ip)
+        if peer_asn is not None:
+            pulumi.set(__self__, "peer_asn", peer_asn)
+        if peer_bgp_ip is not None:
+            pulumi.set(__self__, "peer_bgp_ip", peer_bgp_ip)
+        if session_status is not None:
+            pulumi.set(__self__, "session_status", session_status)
+        if tunnel_cidr is not None:
+            pulumi.set(__self__, "tunnel_cidr", tunnel_cidr)
+
+    @property
+    @pulumi.getter(name="enableBgp")
+    def enable_bgp(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+        """
+        return pulumi.get(self, "enable_bgp")
+
+    @enable_bgp.setter
+    def enable_bgp(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_bgp", value)
+
+    @property
+    @pulumi.getter(name="localAsn")
+    def local_asn(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        The ASN of the VPN gateway.
+        """
+        return pulumi.get(self, "local_asn")
+
+    @local_asn.setter
+    def local_asn(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "local_asn", value)
+
+    @property
+    @pulumi.getter(name="localBgpIp")
+    def local_bgp_ip(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The local tunnel IP, which is the BGP address configured on the VPN gateway and defaults to the first host address of BgpConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel subnet. If BgpConfig.EnableBgp is set to true, this parameter must be provided.
+        """
+        return pulumi.get(self, "local_bgp_ip")
+
+    @local_bgp_ip.setter
+    def local_bgp_ip(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "local_bgp_ip", value)
+
+    @property
+    @pulumi.getter(name="peerAsn")
+    def peer_asn(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        ASN of the customer gateway.
+        """
+        return pulumi.get(self, "peer_asn")
+
+    @peer_asn.setter
+    def peer_asn(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "peer_asn", value)
+
+    @property
+    @pulumi.getter(name="peerBgpIp")
+    def peer_bgp_ip(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        BGP peer IP, that is, the BGP address on the customer gateway side.
+        """
+        return pulumi.get(self, "peer_bgp_ip")
+
+    @peer_bgp_ip.setter
+    def peer_bgp_ip(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "peer_bgp_ip", value)
+
+    @property
+    @pulumi.getter(name="sessionStatus")
+    def session_status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+        """
+        return pulumi.get(self, "session_status")
+
+    @session_status.setter
+    def session_status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "session_status", value)
+
+    @property
+    @pulumi.getter(name="tunnelCidr")
+    def tunnel_cidr(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        CIDR address range for the local and peer IPs of the BGP session.
+        """
+        return pulumi.get(self, "tunnel_cidr")
+
+    @tunnel_cidr.setter
+    def tunnel_cidr(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "tunnel_cidr", value)
+
+
+if not MYPY:
+    class VpnConnectionHealthCheckerArgsDict(TypedDict):
+        check_interval: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Interval for performing health checks
+        """
+        check_result: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Health check result. Up: Normal. Down: Abnormal.
+        """
+        checker_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        ID of the IPsec connection health check
+        """
+        down_time: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Health check unhealthy threshold. If the health check result is 'abnormal' for the specified number of consecutive times, the IPsec connection is considered unhealthy.
+        """
+        local_ip: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Health check source IP.
+        """
+        remote_ip: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Health check target IP.
+        """
+        timeout: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Health check response timeout. If the IPsec connection does not respond correctly within the specified response time, it is considered 'abnormal' for health check.
+        """
+        up_time: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Health check threshold. If the specified number of consecutive health checks are all 'healthy', the IPsec connection is considered 'healthy' by health check.
+        """
+elif False:
+    VpnConnectionHealthCheckerArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpnConnectionHealthCheckerArgs:
+    def __init__(__self__, *,
+                 check_interval: Optional[pulumi.Input[builtins.int]] = None,
+                 check_result: Optional[pulumi.Input[builtins.str]] = None,
+                 checker_id: Optional[pulumi.Input[builtins.str]] = None,
+                 down_time: Optional[pulumi.Input[builtins.int]] = None,
+                 local_ip: Optional[pulumi.Input[builtins.str]] = None,
+                 remote_ip: Optional[pulumi.Input[builtins.str]] = None,
+                 timeout: Optional[pulumi.Input[builtins.int]] = None,
+                 up_time: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.int] check_interval: Interval for performing health checks
+        :param pulumi.Input[builtins.str] check_result: Health check result. Up: Normal. Down: Abnormal.
+        :param pulumi.Input[builtins.str] checker_id: ID of the IPsec connection health check
+        :param pulumi.Input[builtins.int] down_time: Health check unhealthy threshold. If the health check result is 'abnormal' for the specified number of consecutive times, the IPsec connection is considered unhealthy.
+        :param pulumi.Input[builtins.str] local_ip: Health check source IP.
+        :param pulumi.Input[builtins.str] remote_ip: Health check target IP.
+        :param pulumi.Input[builtins.int] timeout: Health check response timeout. If the IPsec connection does not respond correctly within the specified response time, it is considered 'abnormal' for health check.
+        :param pulumi.Input[builtins.int] up_time: Health check threshold. If the specified number of consecutive health checks are all 'healthy', the IPsec connection is considered 'healthy' by health check.
+        """
+        if check_interval is not None:
+            pulumi.set(__self__, "check_interval", check_interval)
+        if check_result is not None:
+            pulumi.set(__self__, "check_result", check_result)
+        if checker_id is not None:
+            pulumi.set(__self__, "checker_id", checker_id)
+        if down_time is not None:
+            pulumi.set(__self__, "down_time", down_time)
+        if local_ip is not None:
+            pulumi.set(__self__, "local_ip", local_ip)
+        if remote_ip is not None:
+            pulumi.set(__self__, "remote_ip", remote_ip)
+        if timeout is not None:
+            pulumi.set(__self__, "timeout", timeout)
+        if up_time is not None:
+            pulumi.set(__self__, "up_time", up_time)
+
+    @property
+    @pulumi.getter(name="checkInterval")
+    def check_interval(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Interval for performing health checks
+        """
+        return pulumi.get(self, "check_interval")
+
+    @check_interval.setter
+    def check_interval(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "check_interval", value)
+
+    @property
+    @pulumi.getter(name="checkResult")
+    def check_result(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Health check result. Up: Normal. Down: Abnormal.
+        """
+        return pulumi.get(self, "check_result")
+
+    @check_result.setter
+    def check_result(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "check_result", value)
+
+    @property
+    @pulumi.getter(name="checkerId")
+    def checker_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        ID of the IPsec connection health check
+        """
+        return pulumi.get(self, "checker_id")
+
+    @checker_id.setter
+    def checker_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "checker_id", value)
+
+    @property
+    @pulumi.getter(name="downTime")
+    def down_time(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Health check unhealthy threshold. If the health check result is 'abnormal' for the specified number of consecutive times, the IPsec connection is considered unhealthy.
+        """
+        return pulumi.get(self, "down_time")
+
+    @down_time.setter
+    def down_time(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "down_time", value)
+
+    @property
+    @pulumi.getter(name="localIp")
+    def local_ip(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Health check source IP.
+        """
+        return pulumi.get(self, "local_ip")
+
+    @local_ip.setter
+    def local_ip(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "local_ip", value)
+
+    @property
+    @pulumi.getter(name="remoteIp")
+    def remote_ip(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Health check target IP.
+        """
+        return pulumi.get(self, "remote_ip")
+
+    @remote_ip.setter
+    def remote_ip(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "remote_ip", value)
+
+    @property
+    @pulumi.getter
+    def timeout(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Health check response timeout. If the IPsec connection does not respond correctly within the specified response time, it is considered 'abnormal' for health check.
+        """
+        return pulumi.get(self, "timeout")
+
+    @timeout.setter
+    def timeout(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "timeout", value)
+
+    @property
+    @pulumi.getter(name="upTime")
+    def up_time(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Health check threshold. If the specified number of consecutive health checks are all 'healthy', the IPsec connection is considered 'healthy' by health check.
+        """
+        return pulumi.get(self, "up_time")
+
+    @up_time.setter
+    def up_time(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "up_time", value)
+
+
+if not MYPY:
+    class VpnConnectionIkeConfigArgsDict(TypedDict):
+        auth_alg: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Authentication algorithm for phase one.
+        """
+        dh_group: NotRequired[pulumi.Input[builtins.str]]
+        """
+        DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+        """
+        enc_alg: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Encryption algorithm for phase 1 negotiation.
+        """
+        lifetime: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+        """
+        local_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ; and digits are allowed.
+        """
+        mode: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+        """
+        psk: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ;, and numbers.
+        """
+        remote_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ;, and digits are allowed.
+        """
+        version: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+        """
+elif False:
+    VpnConnectionIkeConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpnConnectionIkeConfigArgs:
+    def __init__(__self__, *,
+                 auth_alg: Optional[pulumi.Input[builtins.str]] = None,
+                 dh_group: Optional[pulumi.Input[builtins.str]] = None,
+                 enc_alg: Optional[pulumi.Input[builtins.str]] = None,
+                 lifetime: Optional[pulumi.Input[builtins.int]] = None,
+                 local_id: Optional[pulumi.Input[builtins.str]] = None,
+                 mode: Optional[pulumi.Input[builtins.str]] = None,
+                 psk: Optional[pulumi.Input[builtins.str]] = None,
+                 remote_id: Optional[pulumi.Input[builtins.str]] = None,
+                 version: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] auth_alg: Authentication algorithm for phase one.
+        :param pulumi.Input[builtins.str] dh_group: DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+        :param pulumi.Input[builtins.str] enc_alg: Encryption algorithm for phase 1 negotiation.
+        :param pulumi.Input[builtins.int] lifetime: Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+        :param pulumi.Input[builtins.str] local_id: Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ; and digits are allowed.
+        :param pulumi.Input[builtins.str] mode: Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+        :param pulumi.Input[builtins.str] psk: Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ;, and numbers.
+        :param pulumi.Input[builtins.str] remote_id: Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ;, and digits are allowed.
+        :param pulumi.Input[builtins.str] version: Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+        """
+        if auth_alg is not None:
+            pulumi.set(__self__, "auth_alg", auth_alg)
+        if dh_group is not None:
+            pulumi.set(__self__, "dh_group", dh_group)
+        if enc_alg is not None:
+            pulumi.set(__self__, "enc_alg", enc_alg)
+        if lifetime is not None:
+            pulumi.set(__self__, "lifetime", lifetime)
+        if local_id is not None:
+            pulumi.set(__self__, "local_id", local_id)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if psk is not None:
+            pulumi.set(__self__, "psk", psk)
+        if remote_id is not None:
+            pulumi.set(__self__, "remote_id", remote_id)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="authAlg")
+    def auth_alg(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Authentication algorithm for phase one.
+        """
+        return pulumi.get(self, "auth_alg")
+
+    @auth_alg.setter
+    def auth_alg(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "auth_alg", value)
+
+    @property
+    @pulumi.getter(name="dhGroup")
+    def dh_group(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+        """
+        return pulumi.get(self, "dh_group")
+
+    @dh_group.setter
+    def dh_group(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "dh_group", value)
+
+    @property
+    @pulumi.getter(name="encAlg")
+    def enc_alg(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Encryption algorithm for phase 1 negotiation.
+        """
+        return pulumi.get(self, "enc_alg")
+
+    @enc_alg.setter
+    def enc_alg(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "enc_alg", value)
+
+    @property
+    @pulumi.getter
+    def lifetime(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+        """
+        return pulumi.get(self, "lifetime")
+
+    @lifetime.setter
+    def lifetime(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "lifetime", value)
+
+    @property
+    @pulumi.getter(name="localId")
+    def local_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ; and digits are allowed.
+        """
+        return pulumi.get(self, "local_id")
+
+    @local_id.setter
+    def local_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "local_id", value)
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+        """
+        return pulumi.get(self, "mode")
+
+    @mode.setter
+    def mode(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "mode", value)
+
+    @property
+    @pulumi.getter
+    def psk(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ;, and numbers.
+        """
+        return pulumi.get(self, "psk")
+
+    @psk.setter
+    def psk(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "psk", value)
+
+    @property
+    @pulumi.getter(name="remoteId")
+    def remote_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ;, and digits are allowed.
+        """
+        return pulumi.get(self, "remote_id")
+
+    @remote_id.setter
+    def remote_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "remote_id", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
+if not MYPY:
+    class VpnConnectionIpsecConfigArgsDict(TypedDict):
+        auth_alg: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Authentication algorithm for phase 2 negotiation
+        """
+        dh_group: NotRequired[pulumi.Input[builtins.str]]
+        """
+        DH (Diffie-Hellman) key exchange algorithm used in phase 2
+        """
+        enc_alg: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Encryption algorithm for phase 2 negotiation
+        """
+        lifetime: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+        """
+elif False:
+    VpnConnectionIpsecConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpnConnectionIpsecConfigArgs:
+    def __init__(__self__, *,
+                 auth_alg: Optional[pulumi.Input[builtins.str]] = None,
+                 dh_group: Optional[pulumi.Input[builtins.str]] = None,
+                 enc_alg: Optional[pulumi.Input[builtins.str]] = None,
+                 lifetime: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.str] auth_alg: Authentication algorithm for phase 2 negotiation
+        :param pulumi.Input[builtins.str] dh_group: DH (Diffie-Hellman) key exchange algorithm used in phase 2
+        :param pulumi.Input[builtins.str] enc_alg: Encryption algorithm for phase 2 negotiation
+        :param pulumi.Input[builtins.int] lifetime: Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+        """
+        if auth_alg is not None:
+            pulumi.set(__self__, "auth_alg", auth_alg)
+        if dh_group is not None:
+            pulumi.set(__self__, "dh_group", dh_group)
+        if enc_alg is not None:
+            pulumi.set(__self__, "enc_alg", enc_alg)
+        if lifetime is not None:
+            pulumi.set(__self__, "lifetime", lifetime)
+
+    @property
+    @pulumi.getter(name="authAlg")
+    def auth_alg(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Authentication algorithm for phase 2 negotiation
+        """
+        return pulumi.get(self, "auth_alg")
+
+    @auth_alg.setter
+    def auth_alg(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "auth_alg", value)
+
+    @property
+    @pulumi.getter(name="dhGroup")
+    def dh_group(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        DH (Diffie-Hellman) key exchange algorithm used in phase 2
+        """
+        return pulumi.get(self, "dh_group")
+
+    @dh_group.setter
+    def dh_group(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "dh_group", value)
+
+    @property
+    @pulumi.getter(name="encAlg")
+    def enc_alg(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Encryption algorithm for phase 2 negotiation
+        """
+        return pulumi.get(self, "enc_alg")
+
+    @enc_alg.setter
+    def enc_alg(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "enc_alg", value)
+
+    @property
+    @pulumi.getter
+    def lifetime(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+        """
+        return pulumi.get(self, "lifetime")
+
+    @lifetime.setter
+    def lifetime(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "lifetime", value)
+
+
+if not MYPY:
+    class VpnConnectionTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
+        Tag key.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        VPN网关标签的标签值（Value）。参数   - N：表示标签值的序号，取值范围：1～20。多个标签值之间用&分隔。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。大小写敏感，不能以空格开头或结尾。说明传入Tags.N.Value则必须传入Tags.N.Key。
+        Tag value
+        """
+elif False:
+    VpnConnectionTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpnConnectionTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key.
+        :param pulumi.Input[builtins.str] value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class VpnConnectionTunnelOptionArgsDict(TypedDict):
+        customer_gateway_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        ID of the customer gateway associated with the IPsec connection.
+        """
+        dpd_action: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Status of the DPD feature.
+        """
+        ike_config: NotRequired[pulumi.Input['VpnConnectionTunnelOptionIkeConfigArgsDict']]
+        """
+        IKE configuration information for the IPsec connection.
+        """
+        ipsec_config: NotRequired[pulumi.Input['VpnConnectionTunnelOptionIpsecConfigArgsDict']]
+        """
+        Information about the IPsec configuration in the IPsec connection.
+        """
+        nat_traversal: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether to enable NAT traversal
+        """
+        role: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The role of the tunnel.
+        """
+        tunnel_bgp_info: NotRequired[pulumi.Input['VpnConnectionTunnelOptionTunnelBgpInfoArgsDict']]
+        """
+        BGP session information.
+        """
+        tunnel_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tunnel ID of the IPsec connection.
+        """
+elif False:
+    VpnConnectionTunnelOptionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpnConnectionTunnelOptionArgs:
+    def __init__(__self__, *,
+                 customer_gateway_id: Optional[pulumi.Input[builtins.str]] = None,
+                 dpd_action: Optional[pulumi.Input[builtins.str]] = None,
+                 ike_config: Optional[pulumi.Input['VpnConnectionTunnelOptionIkeConfigArgs']] = None,
+                 ipsec_config: Optional[pulumi.Input['VpnConnectionTunnelOptionIpsecConfigArgs']] = None,
+                 nat_traversal: Optional[pulumi.Input[builtins.bool]] = None,
+                 role: Optional[pulumi.Input[builtins.str]] = None,
+                 tunnel_bgp_info: Optional[pulumi.Input['VpnConnectionTunnelOptionTunnelBgpInfoArgs']] = None,
+                 tunnel_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] customer_gateway_id: ID of the customer gateway associated with the IPsec connection.
+        :param pulumi.Input[builtins.str] dpd_action: Status of the DPD feature.
+        :param pulumi.Input['VpnConnectionTunnelOptionIkeConfigArgs'] ike_config: IKE configuration information for the IPsec connection.
+        :param pulumi.Input['VpnConnectionTunnelOptionIpsecConfigArgs'] ipsec_config: Information about the IPsec configuration in the IPsec connection.
+        :param pulumi.Input[builtins.bool] nat_traversal: Whether to enable NAT traversal
+        :param pulumi.Input[builtins.str] role: The role of the tunnel.
+        :param pulumi.Input['VpnConnectionTunnelOptionTunnelBgpInfoArgs'] tunnel_bgp_info: BGP session information.
+        :param pulumi.Input[builtins.str] tunnel_id: Tunnel ID of the IPsec connection.
+        """
+        if customer_gateway_id is not None:
+            pulumi.set(__self__, "customer_gateway_id", customer_gateway_id)
+        if dpd_action is not None:
+            pulumi.set(__self__, "dpd_action", dpd_action)
+        if ike_config is not None:
+            pulumi.set(__self__, "ike_config", ike_config)
+        if ipsec_config is not None:
+            pulumi.set(__self__, "ipsec_config", ipsec_config)
+        if nat_traversal is not None:
+            pulumi.set(__self__, "nat_traversal", nat_traversal)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if tunnel_bgp_info is not None:
+            pulumi.set(__self__, "tunnel_bgp_info", tunnel_bgp_info)
+        if tunnel_id is not None:
+            pulumi.set(__self__, "tunnel_id", tunnel_id)
+
+    @property
+    @pulumi.getter(name="customerGatewayId")
+    def customer_gateway_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        ID of the customer gateway associated with the IPsec connection.
+        """
+        return pulumi.get(self, "customer_gateway_id")
+
+    @customer_gateway_id.setter
+    def customer_gateway_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "customer_gateway_id", value)
+
+    @property
+    @pulumi.getter(name="dpdAction")
+    def dpd_action(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Status of the DPD feature.
+        """
+        return pulumi.get(self, "dpd_action")
+
+    @dpd_action.setter
+    def dpd_action(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "dpd_action", value)
+
+    @property
+    @pulumi.getter(name="ikeConfig")
+    def ike_config(self) -> Optional[pulumi.Input['VpnConnectionTunnelOptionIkeConfigArgs']]:
+        """
+        IKE configuration information for the IPsec connection.
+        """
+        return pulumi.get(self, "ike_config")
+
+    @ike_config.setter
+    def ike_config(self, value: Optional[pulumi.Input['VpnConnectionTunnelOptionIkeConfigArgs']]):
+        pulumi.set(self, "ike_config", value)
+
+    @property
+    @pulumi.getter(name="ipsecConfig")
+    def ipsec_config(self) -> Optional[pulumi.Input['VpnConnectionTunnelOptionIpsecConfigArgs']]:
+        """
+        Information about the IPsec configuration in the IPsec connection.
+        """
+        return pulumi.get(self, "ipsec_config")
+
+    @ipsec_config.setter
+    def ipsec_config(self, value: Optional[pulumi.Input['VpnConnectionTunnelOptionIpsecConfigArgs']]):
+        pulumi.set(self, "ipsec_config", value)
+
+    @property
+    @pulumi.getter(name="natTraversal")
+    def nat_traversal(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to enable NAT traversal
+        """
+        return pulumi.get(self, "nat_traversal")
+
+    @nat_traversal.setter
+    def nat_traversal(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "nat_traversal", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The role of the tunnel.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="tunnelBgpInfo")
+    def tunnel_bgp_info(self) -> Optional[pulumi.Input['VpnConnectionTunnelOptionTunnelBgpInfoArgs']]:
+        """
+        BGP session information.
+        """
+        return pulumi.get(self, "tunnel_bgp_info")
+
+    @tunnel_bgp_info.setter
+    def tunnel_bgp_info(self, value: Optional[pulumi.Input['VpnConnectionTunnelOptionTunnelBgpInfoArgs']]):
+        pulumi.set(self, "tunnel_bgp_info", value)
+
+    @property
+    @pulumi.getter(name="tunnelId")
+    def tunnel_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tunnel ID of the IPsec connection.
+        """
+        return pulumi.get(self, "tunnel_id")
+
+    @tunnel_id.setter
+    def tunnel_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "tunnel_id", value)
+
+
+if not MYPY:
+    class VpnConnectionTunnelOptionIkeConfigArgsDict(TypedDict):
+        auth_alg: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Authentication algorithm for phase one.
+        """
+        dh_group: NotRequired[pulumi.Input[builtins.str]]
+        """
+        DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+        """
+        enc_alg: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Encryption algorithm for phase 1 negotiation.
+        """
+        lifetime: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+        """
+        local_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ; and digits are allowed.
+        """
+        mode: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+        """
+        psk: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ;, and numbers.
+        """
+        remote_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ;, and digits are allowed.
+        """
+        version: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+        """
+elif False:
+    VpnConnectionTunnelOptionIkeConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpnConnectionTunnelOptionIkeConfigArgs:
+    def __init__(__self__, *,
+                 auth_alg: Optional[pulumi.Input[builtins.str]] = None,
+                 dh_group: Optional[pulumi.Input[builtins.str]] = None,
+                 enc_alg: Optional[pulumi.Input[builtins.str]] = None,
+                 lifetime: Optional[pulumi.Input[builtins.int]] = None,
+                 local_id: Optional[pulumi.Input[builtins.str]] = None,
+                 mode: Optional[pulumi.Input[builtins.str]] = None,
+                 psk: Optional[pulumi.Input[builtins.str]] = None,
+                 remote_id: Optional[pulumi.Input[builtins.str]] = None,
+                 version: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] auth_alg: Authentication algorithm for phase one.
+        :param pulumi.Input[builtins.str] dh_group: DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+        :param pulumi.Input[builtins.str] enc_alg: Encryption algorithm for phase 1 negotiation.
+        :param pulumi.Input[builtins.int] lifetime: Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+        :param pulumi.Input[builtins.str] local_id: Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ; and digits are allowed.
+        :param pulumi.Input[builtins.str] mode: Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+        :param pulumi.Input[builtins.str] psk: Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ;, and numbers.
+        :param pulumi.Input[builtins.str] remote_id: Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ;, and digits are allowed.
+        :param pulumi.Input[builtins.str] version: Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+        """
+        if auth_alg is not None:
+            pulumi.set(__self__, "auth_alg", auth_alg)
+        if dh_group is not None:
+            pulumi.set(__self__, "dh_group", dh_group)
+        if enc_alg is not None:
+            pulumi.set(__self__, "enc_alg", enc_alg)
+        if lifetime is not None:
+            pulumi.set(__self__, "lifetime", lifetime)
+        if local_id is not None:
+            pulumi.set(__self__, "local_id", local_id)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if psk is not None:
+            pulumi.set(__self__, "psk", psk)
+        if remote_id is not None:
+            pulumi.set(__self__, "remote_id", remote_id)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="authAlg")
+    def auth_alg(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Authentication algorithm for phase one.
+        """
+        return pulumi.get(self, "auth_alg")
+
+    @auth_alg.setter
+    def auth_alg(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "auth_alg", value)
+
+    @property
+    @pulumi.getter(name="dhGroup")
+    def dh_group(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+        """
+        return pulumi.get(self, "dh_group")
+
+    @dh_group.setter
+    def dh_group(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "dh_group", value)
+
+    @property
+    @pulumi.getter(name="encAlg")
+    def enc_alg(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Encryption algorithm for phase 1 negotiation.
+        """
+        return pulumi.get(self, "enc_alg")
+
+    @enc_alg.setter
+    def enc_alg(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "enc_alg", value)
+
+    @property
+    @pulumi.getter
+    def lifetime(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+        """
+        return pulumi.get(self, "lifetime")
+
+    @lifetime.setter
+    def lifetime(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "lifetime", value)
+
+    @property
+    @pulumi.getter(name="localId")
+    def local_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ; and digits are allowed.
+        """
+        return pulumi.get(self, "local_id")
+
+    @local_id.setter
+    def local_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "local_id", value)
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+        """
+        return pulumi.get(self, "mode")
+
+    @mode.setter
+    def mode(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "mode", value)
+
+    @property
+    @pulumi.getter
+    def psk(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ;, and numbers.
+        """
+        return pulumi.get(self, "psk")
+
+    @psk.setter
+    def psk(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "psk", value)
+
+    @property
+    @pulumi.getter(name="remoteId")
+    def remote_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \\ , . / : ;, and digits are allowed.
+        """
+        return pulumi.get(self, "remote_id")
+
+    @remote_id.setter
+    def remote_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "remote_id", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
+if not MYPY:
+    class VpnConnectionTunnelOptionIpsecConfigArgsDict(TypedDict):
+        auth_alg: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Authentication algorithm for phase 2 negotiation
+        """
+        dh_group: NotRequired[pulumi.Input[builtins.str]]
+        """
+        DH (Diffie-Hellman) key exchange algorithm used in phase 2
+        """
+        enc_alg: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Encryption algorithm for phase 2 negotiation
+        """
+        lifetime: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+        """
+elif False:
+    VpnConnectionTunnelOptionIpsecConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpnConnectionTunnelOptionIpsecConfigArgs:
+    def __init__(__self__, *,
+                 auth_alg: Optional[pulumi.Input[builtins.str]] = None,
+                 dh_group: Optional[pulumi.Input[builtins.str]] = None,
+                 enc_alg: Optional[pulumi.Input[builtins.str]] = None,
+                 lifetime: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.str] auth_alg: Authentication algorithm for phase 2 negotiation
+        :param pulumi.Input[builtins.str] dh_group: DH (Diffie-Hellman) key exchange algorithm used in phase 2
+        :param pulumi.Input[builtins.str] enc_alg: Encryption algorithm for phase 2 negotiation
+        :param pulumi.Input[builtins.int] lifetime: Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+        """
+        if auth_alg is not None:
+            pulumi.set(__self__, "auth_alg", auth_alg)
+        if dh_group is not None:
+            pulumi.set(__self__, "dh_group", dh_group)
+        if enc_alg is not None:
+            pulumi.set(__self__, "enc_alg", enc_alg)
+        if lifetime is not None:
+            pulumi.set(__self__, "lifetime", lifetime)
+
+    @property
+    @pulumi.getter(name="authAlg")
+    def auth_alg(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Authentication algorithm for phase 2 negotiation
+        """
+        return pulumi.get(self, "auth_alg")
+
+    @auth_alg.setter
+    def auth_alg(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "auth_alg", value)
+
+    @property
+    @pulumi.getter(name="dhGroup")
+    def dh_group(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        DH (Diffie-Hellman) key exchange algorithm used in phase 2
+        """
+        return pulumi.get(self, "dh_group")
+
+    @dh_group.setter
+    def dh_group(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "dh_group", value)
+
+    @property
+    @pulumi.getter(name="encAlg")
+    def enc_alg(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Encryption algorithm for phase 2 negotiation
+        """
+        return pulumi.get(self, "enc_alg")
+
+    @enc_alg.setter
+    def enc_alg(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "enc_alg", value)
+
+    @property
+    @pulumi.getter
+    def lifetime(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+        """
+        return pulumi.get(self, "lifetime")
+
+    @lifetime.setter
+    def lifetime(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "lifetime", value)
+
+
+if not MYPY:
+    class VpnConnectionTunnelOptionTunnelBgpInfoArgsDict(TypedDict):
+        local_bgp_ip: NotRequired[pulumi.Input[builtins.str]]
+        """
+        BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
+        """
+        tunnel_cidr: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
+        """
+elif False:
+    VpnConnectionTunnelOptionTunnelBgpInfoArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpnConnectionTunnelOptionTunnelBgpInfoArgs:
+    def __init__(__self__, *,
+                 local_bgp_ip: Optional[pulumi.Input[builtins.str]] = None,
+                 tunnel_cidr: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] local_bgp_ip: BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
+        :param pulumi.Input[builtins.str] tunnel_cidr: The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
+        """
+        if local_bgp_ip is not None:
+            pulumi.set(__self__, "local_bgp_ip", local_bgp_ip)
+        if tunnel_cidr is not None:
+            pulumi.set(__self__, "tunnel_cidr", tunnel_cidr)
+
+    @property
+    @pulumi.getter(name="localBgpIp")
+    def local_bgp_ip(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
+        """
+        return pulumi.get(self, "local_bgp_ip")
+
+    @local_bgp_ip.setter
+    def local_bgp_ip(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "local_bgp_ip", value)
+
+    @property
+    @pulumi.getter(name="tunnelCidr")
+    def tunnel_cidr(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
+        """
+        return pulumi.get(self, "tunnel_cidr")
+
+    @tunnel_cidr.setter
+    def tunnel_cidr(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "tunnel_cidr", value)
+
+
+if not MYPY:
+    class VpnGatewayTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        VPN gateway tag value (Value). Parameter   - N: Indicates the sequence number of the tag value, value range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length limit: 0–256 characters. Case-sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
         """
 elif False:
     VpnGatewayTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -95,8 +1281,8 @@ class VpnGatewayTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
-        :param pulumi.Input[builtins.str] value: VPN网关标签的标签值（Value）。参数   - N：表示标签值的序号，取值范围：1～20。多个标签值之间用&分隔。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。大小写敏感，不能以空格开头或结尾。说明传入Tags.N.Value则必须传入Tags.N.Key。
+        :param pulumi.Input[builtins.str] key: VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
+        :param pulumi.Input[builtins.str] value: VPN gateway tag value (Value). Parameter   - N: Indicates the sequence number of the tag value, value range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length limit: 0–256 characters. Case-sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -107,7 +1293,7 @@ class VpnGatewayTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
+        VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
         """
         return pulumi.get(self, "key")
 
@@ -119,7 +1305,7 @@ class VpnGatewayTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关标签的标签值（Value）。参数   - N：表示标签值的序号，取值范围：1～20。多个标签值之间用&分隔。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。大小写敏感，不能以空格开头或结尾。说明传入Tags.N.Value则必须传入Tags.N.Key。
+        VPN gateway tag value (Value). Parameter   - N: Indicates the sequence number of the tag value, value range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length limit: 0–256 characters. Case-sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
         """
         return pulumi.get(self, "value")
 

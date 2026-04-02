@@ -67,7 +67,7 @@ class GetTrafficMirrorTargetResult:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> builtins.str:
         """
-        镜像会话的创建时间。
+        Creation time of the mirror session.
         """
         return pulumi.get(self, "created_at")
 
@@ -75,7 +75,7 @@ class GetTrafficMirrorTargetResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+        Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -91,7 +91,7 @@ class GetTrafficMirrorTargetResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        镜像目的的资源ID。
+        Resource ID of the mirror target.
         """
         return pulumi.get(self, "instance_id")
 
@@ -99,7 +99,7 @@ class GetTrafficMirrorTargetResult:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> builtins.str:
         """
-        镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+        Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
         """
         return pulumi.get(self, "instance_type")
 
@@ -107,7 +107,7 @@ class GetTrafficMirrorTargetResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        镜像目的所属项目的名称。不填默认加入default项目。
+        Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -115,7 +115,7 @@ class GetTrafficMirrorTargetResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        镜像目的状态。Available：可用。Creating：创建中。
+        Status of the mirror target. Available: Available. Creating: Creating.
         """
         return pulumi.get(self, "status")
 
@@ -123,7 +123,7 @@ class GetTrafficMirrorTargetResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetTrafficMirrorTargetTagResult']:
         """
-        镜像目的的标签信息。
+        Tag information of the mirror target.
         """
         return pulumi.get(self, "tags")
 
@@ -131,7 +131,7 @@ class GetTrafficMirrorTargetResult:
     @pulumi.getter(name="trafficMirrorTargetId")
     def traffic_mirror_target_id(self) -> builtins.str:
         """
-        镜像目的的ID。
+        ID of the mirror target.
         """
         return pulumi.get(self, "traffic_mirror_target_id")
 
@@ -139,7 +139,7 @@ class GetTrafficMirrorTargetResult:
     @pulumi.getter(name="trafficMirrorTargetName")
     def traffic_mirror_target_name(self) -> builtins.str:
         """
-        监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+        Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is 'protocol-port' as the listener name.
         """
         return pulumi.get(self, "traffic_mirror_target_name")
 
@@ -147,7 +147,7 @@ class GetTrafficMirrorTargetResult:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> builtins.str:
         """
-        镜像会话的更新时间。
+        Update time of the mirror session.
         """
         return pulumi.get(self, "updated_at")
 

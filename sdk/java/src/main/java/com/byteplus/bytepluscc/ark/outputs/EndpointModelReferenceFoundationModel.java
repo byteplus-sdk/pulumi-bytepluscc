@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class EndpointModelReferenceFoundationModel {
     /**
-     * @return 基础模型版本。
+     * @return Base model version
      * 
      */
     private @Nullable String modelVersion;
     /**
-     * @return 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为&#34;doubao-1-5-**&#34;。
+     * @return Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is &#34;doubao-1-5-**&#34;.
      * 
      */
     private @Nullable String name;
 
     private EndpointModelReferenceFoundationModel() {}
     /**
-     * @return 基础模型版本。
+     * @return Base model version
      * 
      */
     public Optional<String> modelVersion() {
         return Optional.ofNullable(this.modelVersion);
     }
     /**
-     * @return 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为&#34;doubao-1-5-**&#34;。
+     * @return Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is &#34;doubao-1-5-**&#34;.
      * 
      */
     public Optional<String> name() {

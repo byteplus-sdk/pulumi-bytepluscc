@@ -13,50 +13,50 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamLoadBalancerSettings {
     /**
-     * @return 一致性哈希负载均衡。
+     * @return Consistent Hash Load Balancing
      * 
      */
     private GetUpstreamLoadBalancerSettingsConsistentHashLb consistentHashLb;
     /**
-     * @return 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+     * @return Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
      * 
      */
     private String lbPolicy;
     /**
-     * @return 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+     * @return Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
      * 
      */
     private String simpleLb;
     /**
-     * @return 预热时间。单位为秒。
+     * @return Warm-up time (seconds)
      * 
      */
     private Integer warmupDuration;
 
     private GetUpstreamLoadBalancerSettings() {}
     /**
-     * @return 一致性哈希负载均衡。
+     * @return Consistent Hash Load Balancing
      * 
      */
     public GetUpstreamLoadBalancerSettingsConsistentHashLb consistentHashLb() {
         return this.consistentHashLb;
     }
     /**
-     * @return 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+     * @return Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
      * 
      */
     public String lbPolicy() {
         return this.lbPolicy;
     }
     /**
-     * @return 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+     * @return Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
      * 
      */
     public String simpleLb() {
         return this.simpleLb;
     }
     /**
-     * @return 预热时间。单位为秒。
+     * @return Warm-up time (seconds)
      * 
      */
     public Integer warmupDuration() {

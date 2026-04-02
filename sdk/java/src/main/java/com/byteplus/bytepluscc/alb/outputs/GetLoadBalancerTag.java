@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetLoadBalancerTag {
     /**
-     * @return 标签的键，用于标识标签的类别。
+     * @return Tag key, used to identify the tag category.
      * 
      */
     private String key;
     /**
-     * @return 标签的值，用于标识具体的标签内容。
+     * @return Tag value used to identify the specific tag content.
      * 
      */
     private String value;
 
     private GetLoadBalancerTag() {}
     /**
-     * @return 标签的键，用于标识标签的类别。
+     * @return Tag key, used to identify the tag category.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 标签的值，用于标识具体的标签内容。
+     * @return Tag value used to identify the specific tag content.
      * 
      */
     public String value() {

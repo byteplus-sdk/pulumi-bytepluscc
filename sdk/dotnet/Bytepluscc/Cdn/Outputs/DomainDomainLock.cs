@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainDomainLock
     {
         /// <summary>
-        /// 表示该加速域名被锁定的原因。如果 Status 是 on，该参数值表示原因的描述。如果 Status 是 off，该参数值是空（""）。
+        /// Indicates the reason why the acceleration domain is locked. If Status is on, this parameter provides a description of the reason. If Status is off, this parameter is empty ("")
         /// </summary>
         public readonly string? Remark;
         /// <summary>
-        /// 表示该加速域名的锁定状态。该参数有以下取值：on：表示该加速域名已被锁定。off：表示该加速域名未被锁定。
+        /// Indicates the lock status of the acceleration domain name. The parameter has the following values: on: the acceleration domain name is locked. off: the acceleration domain name is not locked.
         /// </summary>
         public readonly string? Status;
 

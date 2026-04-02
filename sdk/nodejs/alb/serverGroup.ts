@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 服务器组是后端服务器的逻辑集合。ALB 实例按照您配置的转发规则确定客户端请求将被转发到的服务器组。然后，ALB 实例根据您配置的负载均衡策略，将请求分发给服务器组内的后端服务器。后端服务器接收并处理请求。
+ * A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your configured forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your configured load balancing policy. Backend servers receive and process the requests.
  *
  * ## Import
  *
@@ -44,70 +44,70 @@ export class ServerGroup extends pulumi.CustomResource {
     }
 
     /**
-     * 后端服务器组的创建时间。
+     * Creation time of the backend server group.
      */
     public /*out*/ readonly createTime!: pulumi.Output<string>;
     /**
-     * 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     * Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
      */
     public readonly crossZoneEnabled!: pulumi.Output<string>;
     /**
-     * 后端服务器组的描述。
+     * Description of the backend server group.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 服务器组健康检查配置信息。
+     * Server group health check configuration information.
      */
     public readonly healthCheck!: pulumi.Output<outputs.alb.ServerGroupHealthCheck>;
     /**
-     * 服务器组的IP地址类型。目前只支持 IPv4
+     * IP address type of the server group. Only IPv4 is supported.
      */
     public readonly ipAddressType!: pulumi.Output<string>;
     public /*out*/ readonly listeners!: pulumi.Output<outputs.alb.ServerGroupListener[]>;
     /**
-     * 后端服务器组所属项目名称。
+     * Name of the project to which the backend server group belongs.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 后端协议：HTTP，HTTPS。
+     * Backend protocol: HTTP, HTTPS.
      */
     public readonly protocol!: pulumi.Output<string>;
     /**
-     * 调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+     * Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
      */
     public readonly scheduler!: pulumi.Output<string>;
     /**
-     * 服务器组内后端服务器的个数。
+     * Number of backend servers in the server group.
      */
     public /*out*/ readonly serverCount!: pulumi.Output<number>;
     /**
-     * 后端服务器组的ID。
+     * ID of the backend server group.
      */
     public /*out*/ readonly serverGroupId!: pulumi.Output<string>;
     /**
-     * 后端服务器组的名称。
+     * Name of the backend server group.
      */
     public readonly serverGroupName!: pulumi.Output<string>;
     /**
-     * 后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
+     * Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
      */
     public readonly serverGroupType!: pulumi.Output<string>;
     public readonly servers!: pulumi.Output<outputs.alb.ServerGroupServer[]>;
     /**
-     * 服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
+     * Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
      */
     public readonly status!: pulumi.Output<string>;
     /**
-     * 会话保持功能的参数信息。
+     * Session persistence parameter information.
      */
     public readonly stickySessionConfig!: pulumi.Output<outputs.alb.ServerGroupStickySessionConfig>;
     public readonly tags!: pulumi.Output<outputs.alb.ServerGroupTag[]>;
     /**
-     * 后端服务器组的最近操作时间。
+     * Last operation time of the backend server group.
      */
     public /*out*/ readonly updateTime!: pulumi.Output<string>;
     /**
-     * 后端服务器组所属 Vpc 的 ID。
+     * ID of the VPC to which the backend server group belongs.
      */
     public readonly vpcId!: pulumi.Output<string>;
 
@@ -178,70 +178,70 @@ export class ServerGroup extends pulumi.CustomResource {
  */
 export interface ServerGroupState {
     /**
-     * 后端服务器组的创建时间。
+     * Creation time of the backend server group.
      */
     createTime?: pulumi.Input<string>;
     /**
-     * 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     * Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
      */
     crossZoneEnabled?: pulumi.Input<string>;
     /**
-     * 后端服务器组的描述。
+     * Description of the backend server group.
      */
     description?: pulumi.Input<string>;
     /**
-     * 服务器组健康检查配置信息。
+     * Server group health check configuration information.
      */
     healthCheck?: pulumi.Input<inputs.alb.ServerGroupHealthCheck>;
     /**
-     * 服务器组的IP地址类型。目前只支持 IPv4
+     * IP address type of the server group. Only IPv4 is supported.
      */
     ipAddressType?: pulumi.Input<string>;
     listeners?: pulumi.Input<pulumi.Input<inputs.alb.ServerGroupListener>[]>;
     /**
-     * 后端服务器组所属项目名称。
+     * Name of the project to which the backend server group belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 后端协议：HTTP，HTTPS。
+     * Backend protocol: HTTP, HTTPS.
      */
     protocol?: pulumi.Input<string>;
     /**
-     * 调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+     * Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
      */
     scheduler?: pulumi.Input<string>;
     /**
-     * 服务器组内后端服务器的个数。
+     * Number of backend servers in the server group.
      */
     serverCount?: pulumi.Input<number>;
     /**
-     * 后端服务器组的ID。
+     * ID of the backend server group.
      */
     serverGroupId?: pulumi.Input<string>;
     /**
-     * 后端服务器组的名称。
+     * Name of the backend server group.
      */
     serverGroupName?: pulumi.Input<string>;
     /**
-     * 后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
+     * Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
      */
     serverGroupType?: pulumi.Input<string>;
     servers?: pulumi.Input<pulumi.Input<inputs.alb.ServerGroupServer>[]>;
     /**
-     * 服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
+     * Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
      */
     status?: pulumi.Input<string>;
     /**
-     * 会话保持功能的参数信息。
+     * Session persistence parameter information.
      */
     stickySessionConfig?: pulumi.Input<inputs.alb.ServerGroupStickySessionConfig>;
     tags?: pulumi.Input<pulumi.Input<inputs.alb.ServerGroupTag>[]>;
     /**
-     * 后端服务器组的最近操作时间。
+     * Last operation time of the backend server group.
      */
     updateTime?: pulumi.Input<string>;
     /**
-     * 后端服务器组所属 Vpc 的 ID。
+     * ID of the VPC to which the backend server group belongs.
      */
     vpcId?: pulumi.Input<string>;
 }
@@ -251,53 +251,53 @@ export interface ServerGroupState {
  */
 export interface ServerGroupArgs {
     /**
-     * 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     * Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
      */
     crossZoneEnabled?: pulumi.Input<string>;
     /**
-     * 后端服务器组的描述。
+     * Description of the backend server group.
      */
     description?: pulumi.Input<string>;
     /**
-     * 服务器组健康检查配置信息。
+     * Server group health check configuration information.
      */
     healthCheck?: pulumi.Input<inputs.alb.ServerGroupHealthCheck>;
     /**
-     * 服务器组的IP地址类型。目前只支持 IPv4
+     * IP address type of the server group. Only IPv4 is supported.
      */
     ipAddressType?: pulumi.Input<string>;
     /**
-     * 后端服务器组所属项目名称。
+     * Name of the project to which the backend server group belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 后端协议：HTTP，HTTPS。
+     * Backend protocol: HTTP, HTTPS.
      */
     protocol?: pulumi.Input<string>;
     /**
-     * 调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+     * Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
      */
     scheduler?: pulumi.Input<string>;
     /**
-     * 后端服务器组的名称。
+     * Name of the backend server group.
      */
     serverGroupName?: pulumi.Input<string>;
     /**
-     * 后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
+     * Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
      */
     serverGroupType?: pulumi.Input<string>;
     servers?: pulumi.Input<pulumi.Input<inputs.alb.ServerGroupServer>[]>;
     /**
-     * 服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
+     * Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
      */
     status?: pulumi.Input<string>;
     /**
-     * 会话保持功能的参数信息。
+     * Session persistence parameter information.
      */
     stickySessionConfig?: pulumi.Input<inputs.alb.ServerGroupStickySessionConfig>;
     tags?: pulumi.Input<pulumi.Input<inputs.alb.ServerGroupTag>[]>;
     /**
-     * 后端服务器组所属 Vpc 的 ID。
+     * ID of the VPC to which the backend server group belongs.
      */
     vpcId: pulumi.Input<string>;
 }

@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type AllowListAssociatedInstance struct {
-	// 实例ID。
+	// Instance ID
 	InstanceId *string `pulumi:"instanceId"`
 }
 
@@ -30,7 +30,7 @@ type AllowListAssociatedInstanceInput interface {
 }
 
 type AllowListAssociatedInstanceArgs struct {
-	// 实例ID。
+	// Instance ID
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
 }
 
@@ -85,7 +85,7 @@ func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutputWi
 	return o
 }
 
-// 实例ID。
+// Instance ID
 func (o AllowListAssociatedInstanceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
@@ -111,23 +111,23 @@ func (o AllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) AllowLi
 }
 
 type InstanceChargeInfo struct {
-	// 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+	// Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
 	AutoRenew *bool `pulumi:"autoRenew"`
-	// 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	ChargeEndTime *string `pulumi:"chargeEndTime"`
-	// 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	ChargeStartTime *string `pulumi:"chargeStartTime"`
-	// 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+	// Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
 	ChargeStatus *string `pulumi:"chargeStatus"`
-	// 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+	// Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
 	ChargeType *string `pulumi:"chargeType"`
-	// 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	OverdueReclaimTime *string `pulumi:"overdueReclaimTime"`
-	// 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	OverdueTime *string `pulumi:"overdueTime"`
-	// 预付费场景下的购买时长。默认值：1。
+	// Purchase duration for prepaid scenarios. Default: 1 month.
 	Period *int `pulumi:"period"`
-	// 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+	// Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
 	PeriodUnit *string `pulumi:"periodUnit"`
 }
 
@@ -143,23 +143,23 @@ type InstanceChargeInfoInput interface {
 }
 
 type InstanceChargeInfoArgs struct {
-	// 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+	// Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
 	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
-	// 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	ChargeEndTime pulumi.StringPtrInput `pulumi:"chargeEndTime"`
-	// 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	ChargeStartTime pulumi.StringPtrInput `pulumi:"chargeStartTime"`
-	// 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+	// Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
 	ChargeStatus pulumi.StringPtrInput `pulumi:"chargeStatus"`
-	// 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+	// Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
 	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
-	// 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	OverdueReclaimTime pulumi.StringPtrInput `pulumi:"overdueReclaimTime"`
-	// 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	OverdueTime pulumi.StringPtrInput `pulumi:"overdueTime"`
-	// 预付费场景下的购买时长。默认值：1。
+	// Purchase duration for prepaid scenarios. Default: 1 month.
 	Period pulumi.IntPtrInput `pulumi:"period"`
-	// 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+	// Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
 	PeriodUnit pulumi.StringPtrInput `pulumi:"periodUnit"`
 }
 
@@ -240,47 +240,47 @@ func (o InstanceChargeInfoOutput) ToInstanceChargeInfoPtrOutputWithContext(ctx c
 	}).(InstanceChargeInfoPtrOutput)
 }
 
-// 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+// Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
 func (o InstanceChargeInfoOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
 }
 
-// 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 func (o InstanceChargeInfoOutput) ChargeEndTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.ChargeEndTime }).(pulumi.StringPtrOutput)
 }
 
-// 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 func (o InstanceChargeInfoOutput) ChargeStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.ChargeStartTime }).(pulumi.StringPtrOutput)
 }
 
-// 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+// Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
 func (o InstanceChargeInfoOutput) ChargeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.ChargeStatus }).(pulumi.StringPtrOutput)
 }
 
-// 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+// Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
 func (o InstanceChargeInfoOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
 }
 
-// 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
 func (o InstanceChargeInfoOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.OverdueReclaimTime }).(pulumi.StringPtrOutput)
 }
 
-// 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 func (o InstanceChargeInfoOutput) OverdueTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.OverdueTime }).(pulumi.StringPtrOutput)
 }
 
-// 预付费场景下的购买时长。默认值：1。
+// Purchase duration for prepaid scenarios. Default: 1 month.
 func (o InstanceChargeInfoOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *int { return v.Period }).(pulumi.IntPtrOutput)
 }
 
-// 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+// Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
 func (o InstanceChargeInfoOutput) PeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.PeriodUnit }).(pulumi.StringPtrOutput)
 }
@@ -309,7 +309,7 @@ func (o InstanceChargeInfoPtrOutput) Elem() InstanceChargeInfoOutput {
 	}).(InstanceChargeInfoOutput)
 }
 
-// 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+// Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
 func (o InstanceChargeInfoPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *bool {
 		if v == nil {
@@ -319,7 +319,7 @@ func (o InstanceChargeInfoPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 func (o InstanceChargeInfoPtrOutput) ChargeEndTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -329,7 +329,7 @@ func (o InstanceChargeInfoPtrOutput) ChargeEndTime() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 func (o InstanceChargeInfoPtrOutput) ChargeStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -339,7 +339,7 @@ func (o InstanceChargeInfoPtrOutput) ChargeStartTime() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+// Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
 func (o InstanceChargeInfoPtrOutput) ChargeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -349,7 +349,7 @@ func (o InstanceChargeInfoPtrOutput) ChargeStatus() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+// Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
 func (o InstanceChargeInfoPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -359,7 +359,7 @@ func (o InstanceChargeInfoPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
 func (o InstanceChargeInfoPtrOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -369,7 +369,7 @@ func (o InstanceChargeInfoPtrOutput) OverdueReclaimTime() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 func (o InstanceChargeInfoPtrOutput) OverdueTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -379,7 +379,7 @@ func (o InstanceChargeInfoPtrOutput) OverdueTime() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 预付费场景下的购买时长。默认值：1。
+// Purchase duration for prepaid scenarios. Default: 1 month.
 func (o InstanceChargeInfoPtrOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *int {
 		if v == nil {
@@ -389,7 +389,7 @@ func (o InstanceChargeInfoPtrOutput) Period() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+// Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
 func (o InstanceChargeInfoPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -401,13 +401,13 @@ func (o InstanceChargeInfoPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
 
 type InstanceConnectionInfo struct {
 	Addresses []InstanceConnectionInfoAddress `pulumi:"addresses"`
-	// 描述信息。
+	// Description.
 	Description *string `pulumi:"description"`
-	// 终端 ID。
+	// Terminal ID.
 	EndpointId *string `pulumi:"endpointId"`
-	// 终端名称。
+	// Terminal name.
 	EndpointName *string `pulumi:"endpointName"`
-	// 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+	// Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
 	EndpointType *string `pulumi:"endpointType"`
 }
 
@@ -424,13 +424,13 @@ type InstanceConnectionInfoInput interface {
 
 type InstanceConnectionInfoArgs struct {
 	Addresses InstanceConnectionInfoAddressArrayInput `pulumi:"addresses"`
-	// 描述信息。
+	// Description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 终端 ID。
+	// Terminal ID.
 	EndpointId pulumi.StringPtrInput `pulumi:"endpointId"`
-	// 终端名称。
+	// Terminal name.
 	EndpointName pulumi.StringPtrInput `pulumi:"endpointName"`
-	// 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+	// Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
 	EndpointType pulumi.StringPtrInput `pulumi:"endpointType"`
 }
 
@@ -489,22 +489,22 @@ func (o InstanceConnectionInfoOutput) Addresses() InstanceConnectionInfoAddressA
 	return o.ApplyT(func(v InstanceConnectionInfo) []InstanceConnectionInfoAddress { return v.Addresses }).(InstanceConnectionInfoAddressArrayOutput)
 }
 
-// 描述信息。
+// Description.
 func (o InstanceConnectionInfoOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfo) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 终端 ID。
+// Terminal ID.
 func (o InstanceConnectionInfoOutput) EndpointId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfo) *string { return v.EndpointId }).(pulumi.StringPtrOutput)
 }
 
-// 终端名称。
+// Terminal name.
 func (o InstanceConnectionInfoOutput) EndpointName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfo) *string { return v.EndpointName }).(pulumi.StringPtrOutput)
 }
 
-// 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+// Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
 func (o InstanceConnectionInfoOutput) EndpointType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfo) *string { return v.EndpointType }).(pulumi.StringPtrOutput)
 }
@@ -530,19 +530,19 @@ func (o InstanceConnectionInfoArrayOutput) Index(i pulumi.IntInput) InstanceConn
 }
 
 type InstanceConnectionInfoAddress struct {
-	// 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+	// Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
 	DnsVisibility *bool `pulumi:"dnsVisibility"`
-	// 域名。
+	// Domain name.
 	Domain *string `pulumi:"domain"`
-	// EIP的ID，仅对公网地址有效。
+	// EIP ID, valid only for public addresses.
 	EipId *string `pulumi:"eipId"`
-	// IP地址。
+	// IP address.
 	IpAddress *string `pulumi:"ipAddress"`
-	// 网络地址类型。取值：Private：私网类型。Public：公网类型。
+	// Network address type. Possible values: Private: private network type. Public: public network type.
 	NetworkType *string `pulumi:"networkType"`
-	// 端口。
+	// Port.
 	Port *string `pulumi:"port"`
-	// 子网 ID，仅对私网地址有效。
+	// Subnet ID, valid only for private network addresses.
 	SubnetId *string `pulumi:"subnetId"`
 }
 
@@ -558,19 +558,19 @@ type InstanceConnectionInfoAddressInput interface {
 }
 
 type InstanceConnectionInfoAddressArgs struct {
-	// 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+	// Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
 	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
-	// 域名。
+	// Domain name.
 	Domain pulumi.StringPtrInput `pulumi:"domain"`
-	// EIP的ID，仅对公网地址有效。
+	// EIP ID, valid only for public addresses.
 	EipId pulumi.StringPtrInput `pulumi:"eipId"`
-	// IP地址。
+	// IP address.
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
-	// 网络地址类型。取值：Private：私网类型。Public：公网类型。
+	// Network address type. Possible values: Private: private network type. Public: public network type.
 	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
-	// 端口。
+	// Port.
 	Port pulumi.StringPtrInput `pulumi:"port"`
-	// 子网 ID，仅对私网地址有效。
+	// Subnet ID, valid only for private network addresses.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
@@ -625,37 +625,37 @@ func (o InstanceConnectionInfoAddressOutput) ToInstanceConnectionInfoAddressOutp
 	return o
 }
 
-// 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+// Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
 func (o InstanceConnectionInfoAddressOutput) DnsVisibility() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfoAddress) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
 }
 
-// 域名。
+// Domain name.
 func (o InstanceConnectionInfoAddressOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfoAddress) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
-// EIP的ID，仅对公网地址有效。
+// EIP ID, valid only for public addresses.
 func (o InstanceConnectionInfoAddressOutput) EipId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfoAddress) *string { return v.EipId }).(pulumi.StringPtrOutput)
 }
 
-// IP地址。
+// IP address.
 func (o InstanceConnectionInfoAddressOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfoAddress) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
-// 网络地址类型。取值：Private：私网类型。Public：公网类型。
+// Network address type. Possible values: Private: private network type. Public: public network type.
 func (o InstanceConnectionInfoAddressOutput) NetworkType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfoAddress) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
 }
 
-// 端口。
+// Port.
 func (o InstanceConnectionInfoAddressOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfoAddress) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
-// 子网 ID，仅对私网地址有效。
+// Subnet ID, valid only for private network addresses.
 func (o InstanceConnectionInfoAddressOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfoAddress) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
@@ -681,31 +681,31 @@ func (o InstanceConnectionInfoAddressArrayOutput) Index(i pulumi.IntInput) Insta
 }
 
 type InstanceNodeDetailInfo struct {
-	// 节点的创建时间。
+	// Node creation time.
 	CreateTime *string `pulumi:"createTime"`
-	// 节点主机名。
+	// Node hostname.
 	HostName *string `pulumi:"hostName"`
-	// 实例ID。
+	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 内存大小，单位为 GiB。
+	// Memory size, in GiB.
 	Memory *int `pulumi:"memory"`
-	// 节点ID。
+	// Node ID.
 	NodeId *string `pulumi:"nodeId"`
-	// 节点IP。
+	// Node IP.
 	NodeIp *string `pulumi:"nodeIp"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec *string `pulumi:"nodeSpec"`
-	// 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+	// Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
 	NodeStatus *string `pulumi:"nodeStatus"`
-	// 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+	// Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
 	NodeType *string `pulumi:"nodeType"`
-	// 区域ID。
+	// Region ID.
 	RegionId *string `pulumi:"regionId"`
-	// 更新时间。
+	// Update time.
 	UpdateTime *string `pulumi:"updateTime"`
-	// vCPU 数量。
+	// vCPU count.
 	Vcpu *int `pulumi:"vcpu"`
-	// 可用区ID。
+	// Availability zone ID.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -721,31 +721,31 @@ type InstanceNodeDetailInfoInput interface {
 }
 
 type InstanceNodeDetailInfoArgs struct {
-	// 节点的创建时间。
+	// Node creation time.
 	CreateTime pulumi.StringPtrInput `pulumi:"createTime"`
-	// 节点主机名。
+	// Node hostname.
 	HostName pulumi.StringPtrInput `pulumi:"hostName"`
-	// 实例ID。
+	// Instance ID.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// 内存大小，单位为 GiB。
+	// Memory size, in GiB.
 	Memory pulumi.IntPtrInput `pulumi:"memory"`
-	// 节点ID。
+	// Node ID.
 	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
-	// 节点IP。
+	// Node IP.
 	NodeIp pulumi.StringPtrInput `pulumi:"nodeIp"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec pulumi.StringPtrInput `pulumi:"nodeSpec"`
-	// 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+	// Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
 	NodeStatus pulumi.StringPtrInput `pulumi:"nodeStatus"`
-	// 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+	// Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
 	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
-	// 区域ID。
+	// Region ID.
 	RegionId pulumi.StringPtrInput `pulumi:"regionId"`
-	// 更新时间。
+	// Update time.
 	UpdateTime pulumi.StringPtrInput `pulumi:"updateTime"`
-	// vCPU 数量。
+	// vCPU count.
 	Vcpu pulumi.IntPtrInput `pulumi:"vcpu"`
-	// 可用区ID。
+	// Availability zone ID.
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -800,67 +800,67 @@ func (o InstanceNodeDetailInfoOutput) ToInstanceNodeDetailInfoOutputWithContext(
 	return o
 }
 
-// 节点的创建时间。
+// Node creation time.
 func (o InstanceNodeDetailInfoOutput) CreateTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNodeDetailInfo) *string { return v.CreateTime }).(pulumi.StringPtrOutput)
 }
 
-// 节点主机名。
+// Node hostname.
 func (o InstanceNodeDetailInfoOutput) HostName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNodeDetailInfo) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
-// 实例ID。
+// Instance ID.
 func (o InstanceNodeDetailInfoOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNodeDetailInfo) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 内存大小，单位为 GiB。
+// Memory size, in GiB.
 func (o InstanceNodeDetailInfoOutput) Memory() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceNodeDetailInfo) *int { return v.Memory }).(pulumi.IntPtrOutput)
 }
 
-// 节点ID。
+// Node ID.
 func (o InstanceNodeDetailInfoOutput) NodeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNodeDetailInfo) *string { return v.NodeId }).(pulumi.StringPtrOutput)
 }
 
-// 节点IP。
+// Node IP.
 func (o InstanceNodeDetailInfoOutput) NodeIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNodeDetailInfo) *string { return v.NodeIp }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格。
+// Node specification.
 func (o InstanceNodeDetailInfoOutput) NodeSpec() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNodeDetailInfo) *string { return v.NodeSpec }).(pulumi.StringPtrOutput)
 }
 
-// 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+// Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
 func (o InstanceNodeDetailInfoOutput) NodeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNodeDetailInfo) *string { return v.NodeStatus }).(pulumi.StringPtrOutput)
 }
 
-// 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+// Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
 func (o InstanceNodeDetailInfoOutput) NodeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNodeDetailInfo) *string { return v.NodeType }).(pulumi.StringPtrOutput)
 }
 
-// 区域ID。
+// Region ID.
 func (o InstanceNodeDetailInfoOutput) RegionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNodeDetailInfo) *string { return v.RegionId }).(pulumi.StringPtrOutput)
 }
 
-// 更新时间。
+// Update time.
 func (o InstanceNodeDetailInfoOutput) UpdateTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNodeDetailInfo) *string { return v.UpdateTime }).(pulumi.StringPtrOutput)
 }
 
-// vCPU 数量。
+// vCPU count.
 func (o InstanceNodeDetailInfoOutput) Vcpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceNodeDetailInfo) *int { return v.Vcpu }).(pulumi.IntPtrOutput)
 }
 
-// 可用区ID。
+// Availability zone ID.
 func (o InstanceNodeDetailInfoOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNodeDetailInfo) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -886,9 +886,9 @@ func (o InstanceNodeDetailInfoArrayOutput) Index(i pulumi.IntInput) InstanceNode
 }
 
 type InstanceTag struct {
-	// 用户标签的标签键。
+	// Tag key for user tags.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -904,9 +904,9 @@ type InstanceTagInput interface {
 }
 
 type InstanceTagArgs struct {
-	// 用户标签的标签键。
+	// Tag key for user tags.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -961,12 +961,12 @@ func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) I
 	return o
 }
 
-// 用户标签的标签键。
+// Tag key for user tags.
 func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -992,17 +992,17 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 }
 
 type GetAllowListAssociatedInstance struct {
-	// 实例ID。
+	// Instance ID
 	InstanceId string `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name
 	InstanceName string `pulumi:"instanceName"`
-	// 实例状态。
+	// Instance status
 	InstanceStatus string `pulumi:"instanceStatus"`
-	// 是否同步最新白名单 IP
+	// Sync latest allowlist IP
 	IsLatest bool `pulumi:"isLatest"`
-	// 实例所属项目名称。
+	// Project name of the instance
 	ProjectName string `pulumi:"projectName"`
-	// 实例所属VPC ID。
+	// VPC ID of the instance
 	Vpc string `pulumi:"vpc"`
 }
 
@@ -1018,17 +1018,17 @@ type GetAllowListAssociatedInstanceInput interface {
 }
 
 type GetAllowListAssociatedInstanceArgs struct {
-	// 实例ID。
+	// Instance ID
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
-	// 实例状态。
+	// Instance status
 	InstanceStatus pulumi.StringInput `pulumi:"instanceStatus"`
-	// 是否同步最新白名单 IP
+	// Sync latest allowlist IP
 	IsLatest pulumi.BoolInput `pulumi:"isLatest"`
-	// 实例所属项目名称。
+	// Project name of the instance
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
-	// 实例所属VPC ID。
+	// VPC ID of the instance
 	Vpc pulumi.StringInput `pulumi:"vpc"`
 }
 
@@ -1083,32 +1083,32 @@ func (o GetAllowListAssociatedInstanceOutput) ToGetAllowListAssociatedInstanceOu
 	return o
 }
 
-// 实例ID。
+// Instance ID
 func (o GetAllowListAssociatedInstanceOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 实例名称。
+// Instance name
 func (o GetAllowListAssociatedInstanceOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 实例状态。
+// Instance status
 func (o GetAllowListAssociatedInstanceOutput) InstanceStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceStatus }).(pulumi.StringOutput)
 }
 
-// 是否同步最新白名单 IP
+// Sync latest allowlist IP
 func (o GetAllowListAssociatedInstanceOutput) IsLatest() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) bool { return v.IsLatest }).(pulumi.BoolOutput)
 }
 
-// 实例所属项目名称。
+// Project name of the instance
 func (o GetAllowListAssociatedInstanceOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 实例所属VPC ID。
+// VPC ID of the instance
 func (o GetAllowListAssociatedInstanceOutput) Vpc() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.Vpc }).(pulumi.StringOutput)
 }
@@ -1134,23 +1134,23 @@ func (o GetAllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) GetA
 }
 
 type GetInstanceChargeInfo struct {
-	// 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+	// Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
 	AutoRenew bool `pulumi:"autoRenew"`
-	// 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	ChargeEndTime string `pulumi:"chargeEndTime"`
-	// 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	ChargeStartTime string `pulumi:"chargeStartTime"`
-	// 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+	// Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
 	ChargeStatus string `pulumi:"chargeStatus"`
-	// 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+	// Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
 	ChargeType string `pulumi:"chargeType"`
-	// 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	OverdueReclaimTime string `pulumi:"overdueReclaimTime"`
-	// 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	OverdueTime string `pulumi:"overdueTime"`
-	// 预付费场景下的购买时长。默认值：1。
+	// Purchase duration for prepaid scenarios. Default: 1 month.
 	Period int `pulumi:"period"`
-	// 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+	// Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
 	PeriodUnit string `pulumi:"periodUnit"`
 }
 
@@ -1166,23 +1166,23 @@ type GetInstanceChargeInfoInput interface {
 }
 
 type GetInstanceChargeInfoArgs struct {
-	// 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+	// Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
 	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
-	// 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	ChargeEndTime pulumi.StringInput `pulumi:"chargeEndTime"`
-	// 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	ChargeStartTime pulumi.StringInput `pulumi:"chargeStartTime"`
-	// 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+	// Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
 	ChargeStatus pulumi.StringInput `pulumi:"chargeStatus"`
-	// 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+	// Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
 	ChargeType pulumi.StringInput `pulumi:"chargeType"`
-	// 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	OverdueReclaimTime pulumi.StringInput `pulumi:"overdueReclaimTime"`
-	// 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 	OverdueTime pulumi.StringInput `pulumi:"overdueTime"`
-	// 预付费场景下的购买时长。默认值：1。
+	// Purchase duration for prepaid scenarios. Default: 1 month.
 	Period pulumi.IntInput `pulumi:"period"`
-	// 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+	// Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
 	PeriodUnit pulumi.StringInput `pulumi:"periodUnit"`
 }
 
@@ -1212,61 +1212,61 @@ func (o GetInstanceChargeInfoOutput) ToGetInstanceChargeInfoOutputWithContext(ct
 	return o
 }
 
-// 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+// Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
 func (o GetInstanceChargeInfoOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) bool { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 func (o GetInstanceChargeInfoOutput) ChargeEndTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.ChargeEndTime }).(pulumi.StringOutput)
 }
 
-// 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 func (o GetInstanceChargeInfoOutput) ChargeStartTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.ChargeStartTime }).(pulumi.StringOutput)
 }
 
-// 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+// Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
 func (o GetInstanceChargeInfoOutput) ChargeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.ChargeStatus }).(pulumi.StringOutput)
 }
 
-// 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+// Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
 func (o GetInstanceChargeInfoOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
 func (o GetInstanceChargeInfoOutput) OverdueReclaimTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.OverdueReclaimTime }).(pulumi.StringOutput)
 }
 
-// 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
 func (o GetInstanceChargeInfoOutput) OverdueTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.OverdueTime }).(pulumi.StringOutput)
 }
 
-// 预付费场景下的购买时长。默认值：1。
+// Purchase duration for prepaid scenarios. Default: 1 month.
 func (o GetInstanceChargeInfoOutput) Period() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) int { return v.Period }).(pulumi.IntOutput)
 }
 
-// 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+// Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
 func (o GetInstanceChargeInfoOutput) PeriodUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.PeriodUnit }).(pulumi.StringOutput)
 }
 
 type GetInstanceConnectionInfo struct {
-	// 地址列表。
+	// Address list.
 	Addresses []GetInstanceConnectionInfoAddress `pulumi:"addresses"`
-	// 描述信息。
+	// Description.
 	Description string `pulumi:"description"`
-	// 终端 ID。
+	// Terminal ID.
 	EndpointId string `pulumi:"endpointId"`
-	// 终端名称。
+	// Terminal name.
 	EndpointName string `pulumi:"endpointName"`
-	// 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+	// Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
 	EndpointType string `pulumi:"endpointType"`
 }
 
@@ -1282,15 +1282,15 @@ type GetInstanceConnectionInfoInput interface {
 }
 
 type GetInstanceConnectionInfoArgs struct {
-	// 地址列表。
+	// Address list.
 	Addresses GetInstanceConnectionInfoAddressArrayInput `pulumi:"addresses"`
-	// 描述信息。
+	// Description.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 终端 ID。
+	// Terminal ID.
 	EndpointId pulumi.StringInput `pulumi:"endpointId"`
-	// 终端名称。
+	// Terminal name.
 	EndpointName pulumi.StringInput `pulumi:"endpointName"`
-	// 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+	// Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
 	EndpointType pulumi.StringInput `pulumi:"endpointType"`
 }
 
@@ -1345,27 +1345,27 @@ func (o GetInstanceConnectionInfoOutput) ToGetInstanceConnectionInfoOutputWithCo
 	return o
 }
 
-// 地址列表。
+// Address list.
 func (o GetInstanceConnectionInfoOutput) Addresses() GetInstanceConnectionInfoAddressArrayOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfo) []GetInstanceConnectionInfoAddress { return v.Addresses }).(GetInstanceConnectionInfoAddressArrayOutput)
 }
 
-// 描述信息。
+// Description.
 func (o GetInstanceConnectionInfoOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfo) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 终端 ID。
+// Terminal ID.
 func (o GetInstanceConnectionInfoOutput) EndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfo) string { return v.EndpointId }).(pulumi.StringOutput)
 }
 
-// 终端名称。
+// Terminal name.
 func (o GetInstanceConnectionInfoOutput) EndpointName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfo) string { return v.EndpointName }).(pulumi.StringOutput)
 }
 
-// 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+// Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
 func (o GetInstanceConnectionInfoOutput) EndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfo) string { return v.EndpointType }).(pulumi.StringOutput)
 }
@@ -1391,19 +1391,19 @@ func (o GetInstanceConnectionInfoArrayOutput) Index(i pulumi.IntInput) GetInstan
 }
 
 type GetInstanceConnectionInfoAddress struct {
-	// 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+	// Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
 	DnsVisibility bool `pulumi:"dnsVisibility"`
-	// 域名。
+	// Domain name.
 	Domain string `pulumi:"domain"`
-	// EIP的ID，仅对公网地址有效。
+	// EIP ID, valid only for public addresses.
 	EipId string `pulumi:"eipId"`
-	// IP地址。
+	// IP address.
 	IpAddress string `pulumi:"ipAddress"`
-	// 网络地址类型。取值：Private：私网类型。Public：公网类型。
+	// Network address type. Possible values: Private: private network type. Public: public network type.
 	NetworkType string `pulumi:"networkType"`
-	// 端口。
+	// Port.
 	Port string `pulumi:"port"`
-	// 子网 ID，仅对私网地址有效。
+	// Subnet ID, valid only for private network addresses.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -1419,19 +1419,19 @@ type GetInstanceConnectionInfoAddressInput interface {
 }
 
 type GetInstanceConnectionInfoAddressArgs struct {
-	// 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+	// Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
 	DnsVisibility pulumi.BoolInput `pulumi:"dnsVisibility"`
-	// 域名。
+	// Domain name.
 	Domain pulumi.StringInput `pulumi:"domain"`
-	// EIP的ID，仅对公网地址有效。
+	// EIP ID, valid only for public addresses.
 	EipId pulumi.StringInput `pulumi:"eipId"`
-	// IP地址。
+	// IP address.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// 网络地址类型。取值：Private：私网类型。Public：公网类型。
+	// Network address type. Possible values: Private: private network type. Public: public network type.
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
-	// 端口。
+	// Port.
 	Port pulumi.StringInput `pulumi:"port"`
-	// 子网 ID，仅对私网地址有效。
+	// Subnet ID, valid only for private network addresses.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -1486,37 +1486,37 @@ func (o GetInstanceConnectionInfoAddressOutput) ToGetInstanceConnectionInfoAddre
 	return o
 }
 
-// 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+// Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
 func (o GetInstanceConnectionInfoAddressOutput) DnsVisibility() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfoAddress) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
 }
 
-// 域名。
+// Domain name.
 func (o GetInstanceConnectionInfoAddressOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfoAddress) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// EIP的ID，仅对公网地址有效。
+// EIP ID, valid only for public addresses.
 func (o GetInstanceConnectionInfoAddressOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfoAddress) string { return v.EipId }).(pulumi.StringOutput)
 }
 
-// IP地址。
+// IP address.
 func (o GetInstanceConnectionInfoAddressOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfoAddress) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// 网络地址类型。取值：Private：私网类型。Public：公网类型。
+// Network address type. Possible values: Private: private network type. Public: public network type.
 func (o GetInstanceConnectionInfoAddressOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfoAddress) string { return v.NetworkType }).(pulumi.StringOutput)
 }
 
-// 端口。
+// Port.
 func (o GetInstanceConnectionInfoAddressOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfoAddress) string { return v.Port }).(pulumi.StringOutput)
 }
 
-// 子网 ID，仅对私网地址有效。
+// Subnet ID, valid only for private network addresses.
 func (o GetInstanceConnectionInfoAddressOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfoAddress) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -1542,31 +1542,31 @@ func (o GetInstanceConnectionInfoAddressArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetInstanceNodeDetailInfo struct {
-	// 节点的创建时间。
+	// Node creation time.
 	CreateTime string `pulumi:"createTime"`
-	// 节点主机名。
+	// Node hostname.
 	HostName string `pulumi:"hostName"`
-	// 实例ID。
+	// Instance ID.
 	InstanceId string `pulumi:"instanceId"`
-	// 内存大小，单位为 GiB。
+	// Memory size, in GiB.
 	Memory int `pulumi:"memory"`
-	// 节点ID。
+	// Node ID.
 	NodeId string `pulumi:"nodeId"`
-	// 节点IP。
+	// Node IP.
 	NodeIp string `pulumi:"nodeIp"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec string `pulumi:"nodeSpec"`
-	// 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+	// Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
 	NodeStatus string `pulumi:"nodeStatus"`
-	// 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+	// Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
 	NodeType string `pulumi:"nodeType"`
-	// 区域ID。
+	// Region ID.
 	RegionId string `pulumi:"regionId"`
-	// 更新时间。
+	// Update time.
 	UpdateTime string `pulumi:"updateTime"`
-	// vCPU 数量。
+	// vCPU count.
 	Vcpu int `pulumi:"vcpu"`
-	// 可用区ID。
+	// Availability zone ID.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -1582,31 +1582,31 @@ type GetInstanceNodeDetailInfoInput interface {
 }
 
 type GetInstanceNodeDetailInfoArgs struct {
-	// 节点的创建时间。
+	// Node creation time.
 	CreateTime pulumi.StringInput `pulumi:"createTime"`
-	// 节点主机名。
+	// Node hostname.
 	HostName pulumi.StringInput `pulumi:"hostName"`
-	// 实例ID。
+	// Instance ID.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 内存大小，单位为 GiB。
+	// Memory size, in GiB.
 	Memory pulumi.IntInput `pulumi:"memory"`
-	// 节点ID。
+	// Node ID.
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// 节点IP。
+	// Node IP.
 	NodeIp pulumi.StringInput `pulumi:"nodeIp"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec pulumi.StringInput `pulumi:"nodeSpec"`
-	// 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+	// Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
 	NodeStatus pulumi.StringInput `pulumi:"nodeStatus"`
-	// 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+	// Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
 	NodeType pulumi.StringInput `pulumi:"nodeType"`
-	// 区域ID。
+	// Region ID.
 	RegionId pulumi.StringInput `pulumi:"regionId"`
-	// 更新时间。
+	// Update time.
 	UpdateTime pulumi.StringInput `pulumi:"updateTime"`
-	// vCPU 数量。
+	// vCPU count.
 	Vcpu pulumi.IntInput `pulumi:"vcpu"`
-	// 可用区ID。
+	// Availability zone ID.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -1661,67 +1661,67 @@ func (o GetInstanceNodeDetailInfoOutput) ToGetInstanceNodeDetailInfoOutputWithCo
 	return o
 }
 
-// 节点的创建时间。
+// Node creation time.
 func (o GetInstanceNodeDetailInfoOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNodeDetailInfo) string { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 节点主机名。
+// Node hostname.
 func (o GetInstanceNodeDetailInfoOutput) HostName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNodeDetailInfo) string { return v.HostName }).(pulumi.StringOutput)
 }
 
-// 实例ID。
+// Instance ID.
 func (o GetInstanceNodeDetailInfoOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNodeDetailInfo) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 内存大小，单位为 GiB。
+// Memory size, in GiB.
 func (o GetInstanceNodeDetailInfoOutput) Memory() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceNodeDetailInfo) int { return v.Memory }).(pulumi.IntOutput)
 }
 
-// 节点ID。
+// Node ID.
 func (o GetInstanceNodeDetailInfoOutput) NodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNodeDetailInfo) string { return v.NodeId }).(pulumi.StringOutput)
 }
 
-// 节点IP。
+// Node IP.
 func (o GetInstanceNodeDetailInfoOutput) NodeIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNodeDetailInfo) string { return v.NodeIp }).(pulumi.StringOutput)
 }
 
-// 节点规格。
+// Node specification.
 func (o GetInstanceNodeDetailInfoOutput) NodeSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNodeDetailInfo) string { return v.NodeSpec }).(pulumi.StringOutput)
 }
 
-// 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+// Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
 func (o GetInstanceNodeDetailInfoOutput) NodeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNodeDetailInfo) string { return v.NodeStatus }).(pulumi.StringOutput)
 }
 
-// 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+// Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
 func (o GetInstanceNodeDetailInfoOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNodeDetailInfo) string { return v.NodeType }).(pulumi.StringOutput)
 }
 
-// 区域ID。
+// Region ID.
 func (o GetInstanceNodeDetailInfoOutput) RegionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNodeDetailInfo) string { return v.RegionId }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update time.
 func (o GetInstanceNodeDetailInfoOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNodeDetailInfo) string { return v.UpdateTime }).(pulumi.StringOutput)
 }
 
-// vCPU 数量。
+// vCPU count.
 func (o GetInstanceNodeDetailInfoOutput) Vcpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceNodeDetailInfo) int { return v.Vcpu }).(pulumi.IntOutput)
 }
 
-// 可用区ID。
+// Availability zone ID.
 func (o GetInstanceNodeDetailInfoOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNodeDetailInfo) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -1747,9 +1747,9 @@ func (o GetInstanceNodeDetailInfoArrayOutput) Index(i pulumi.IntInput) GetInstan
 }
 
 type GetInstanceTag struct {
-	// 用户标签的标签键。
+	// Tag key for user tags.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -1765,9 +1765,9 @@ type GetInstanceTagInput interface {
 }
 
 type GetInstanceTagArgs struct {
-	// 用户标签的标签键。
+	// Tag key for user tags.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1822,12 +1822,12 @@ func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 用户标签的标签键。
+// Tag key for user tags.
 func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
 }

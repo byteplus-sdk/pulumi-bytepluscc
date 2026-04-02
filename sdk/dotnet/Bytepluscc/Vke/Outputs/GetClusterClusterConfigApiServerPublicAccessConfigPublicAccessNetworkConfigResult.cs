@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigResult
     {
         /// <summary>
-        /// 公网 IP 的带宽峰值，单位：Mbps。
+        /// Peak bandwidth of the public IP, unit: Mbps
         /// </summary>
         public readonly int Bandwidth;
         /// <summary>
-        /// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+        /// Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
         /// </summary>
         public readonly int BillingType;
         /// <summary>
-        /// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+        /// Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
         /// </summary>
         public readonly string Isp;
 

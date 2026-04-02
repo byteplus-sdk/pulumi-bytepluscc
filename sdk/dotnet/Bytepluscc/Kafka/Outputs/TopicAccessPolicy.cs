@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka.Outputs
     public sealed class TopicAccessPolicy
     {
         /// <summary>
-        /// SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+        /// SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
         /// </summary>
         public readonly string? AccessPolicy;
         /// <summary>
-        /// SASL 用户名称。
+        /// SASL username.
         /// </summary>
         public readonly string? UserName;
 

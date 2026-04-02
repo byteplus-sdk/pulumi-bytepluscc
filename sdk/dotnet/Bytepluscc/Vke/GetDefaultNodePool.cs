@@ -65,15 +65,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public sealed class GetDefaultNodePoolResult
     {
         /// <summary>
-        /// 节点池伸缩策略配置。
+        /// Node pool scaling policy configuration
         /// </summary>
         public readonly Outputs.GetDefaultNodePoolAutoScalingResult AutoScaling;
         /// <summary>
-        /// 节点池所在集群的 ID。
+        /// Cluster ID where the node pool is located
         /// </summary>
         public readonly string ClusterId;
         /// <summary>
-        /// 创建节点池的时间。
+        /// Node pool creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
@@ -81,39 +81,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 节点池 Kubernetes 相关配置。
+        /// Kubernetes-related configuration for the node pool
         /// </summary>
         public readonly Outputs.GetDefaultNodePoolKubernetesConfigResult KubernetesConfig;
         /// <summary>
-        /// 托管节点池配置。
+        /// Managed node pool configuration
         /// </summary>
         public readonly Outputs.GetDefaultNodePoolManagementResult Management;
         /// <summary>
-        /// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        /// Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 节点池中云服务器（ECS）实例配置。
+        /// Cloud server (ECS) instance configuration in the node pool
         /// </summary>
         public readonly Outputs.GetDefaultNodePoolNodeConfigResult NodeConfig;
         /// <summary>
-        /// 节点池 ID 。
+        /// Node pool ID
         /// </summary>
         public readonly string NodePoolId;
         /// <summary>
-        /// 节点池中的节点统计。
+        /// Node statistics in the node pool.
         /// </summary>
         public readonly Outputs.GetDefaultNodePoolNodeStatisticsResult NodeStatistics;
         /// <summary>
-        /// 节点池状态。
+        /// Node pool status
         /// </summary>
         public readonly Outputs.GetDefaultNodePoolStatusResult Status;
         /// <summary>
-        /// 节点池的标签信息
+        /// Node pool tag information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDefaultNodePoolTagResult> Tags;
         /// <summary>
-        /// 更新节点池的时间。
+        /// Time when the node pool was updated
         /// </summary>
         public readonly string UpdatedTime;
 

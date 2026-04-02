@@ -34,14 +34,14 @@ public final class InstanceTransferInfoArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 资源信息。
+     * Resource information
      * 
      */
     @Import(name="reduceSpecConfig")
     private @Nullable Output<InstanceTransferInfoReduceSpecConfigArgs> reduceSpecConfig;
 
     /**
-     * @return 资源信息。
+     * @return Resource information
      * 
      */
     public Optional<Output<InstanceTransferInfoReduceSpecConfigArgs>> reduceSpecConfig() {
@@ -49,14 +49,14 @@ public final class InstanceTransferInfoArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 数据迁移任务进度，百分制。
+     * Data migration task progress, percentage
      * 
      */
     @Import(name="transferProgress")
     private @Nullable Output<Double> transferProgress;
 
     /**
-     * @return 数据迁移任务进度，百分制。
+     * @return Data migration task progress, percentage
      * 
      */
     public Optional<Output<Double>> transferProgress() {
@@ -64,14 +64,14 @@ public final class InstanceTransferInfoArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 数据迁移任务状态。
+     * Data migration task status
      * 
      */
     @Import(name="transferStatus")
     private @Nullable Output<String> transferStatus;
 
     /**
-     * @return 数据迁移任务状态。
+     * @return Data migration task status
      * 
      */
     public Optional<Output<String>> transferStatus() {
@@ -79,14 +79,14 @@ public final class InstanceTransferInfoArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 数据迁移任务 ID。
+     * Data migration task ID
      * 
      */
     @Import(name="transferTaskId")
     private @Nullable Output<String> transferTaskId;
 
     /**
-     * @return 数据迁移任务 ID。
+     * @return Data migration task ID
      * 
      */
     public Optional<Output<String>> transferTaskId() {
@@ -143,7 +143,7 @@ public final class InstanceTransferInfoArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param reduceSpecConfig 资源信息。
+         * @param reduceSpecConfig Resource information
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class InstanceTransferInfoArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param reduceSpecConfig 资源信息。
+         * @param reduceSpecConfig Resource information
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class InstanceTransferInfoArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param transferProgress 数据迁移任务进度，百分制。
+         * @param transferProgress Data migration task progress, percentage
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class InstanceTransferInfoArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param transferProgress 数据迁移任务进度，百分制。
+         * @param transferProgress Data migration task progress, percentage
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class InstanceTransferInfoArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param transferStatus 数据迁移任务状态。
+         * @param transferStatus Data migration task status
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class InstanceTransferInfoArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param transferStatus 数据迁移任务状态。
+         * @param transferStatus Data migration task status
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class InstanceTransferInfoArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param transferTaskId 数据迁移任务 ID。
+         * @param transferTaskId Data migration task ID
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class InstanceTransferInfoArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param transferTaskId 数据迁移任务 ID。
+         * @param transferTaskId Data migration task ID
          * 
          * @return builder
          * 

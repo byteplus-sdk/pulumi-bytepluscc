@@ -16,14 +16,14 @@ public final class ImageTagArgs extends com.pulumi.resources.ResourceArgs {
     public static final ImageTagArgs Empty = new ImageTagArgs();
 
     /**
-     * 镜像标签的标签键。
+     * Tag key for the image label.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 镜像标签的标签键。
+     * @return Tag key for the image label.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class ImageTagArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像标签的值。
+     * Image tag value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 镜像标签的值。
+     * @return Image tag value
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class ImageTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 镜像标签的标签键。
+         * @param key Tag key for the image label.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ImageTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 镜像标签的标签键。
+         * @param key Tag key for the image label.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ImageTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 镜像标签的值。
+         * @param value Image tag value
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ImageTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 镜像标签的值。
+         * @param value Image tag value
          * 
          * @return builder
          * 

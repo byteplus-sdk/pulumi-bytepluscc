@@ -14,62 +14,62 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterApplicationExtra {
     /**
-     * @return 服务组件的自定义部署拓扑列表。
+     * @return Custom deployment topology list for service components.
      * 
      */
     private List<GetClusterApplicationExtraApplicationComponentLayout> applicationComponentLayouts;
     /**
-     * @return 服务的自定义配置参数列表。
+     * @return Custom configuration parameter list for services.
      * 
      */
     private List<GetClusterApplicationExtraApplicationConfig> applicationConfigs;
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     private String applicationName;
     /**
-     * @return 元数据连接id。
+     * @return Metadata connection ID.
      * 
      */
     private String connectionId;
     /**
-     * @return 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+     * @return Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
      * 
      */
     private String connectionType;
 
     private GetClusterApplicationExtra() {}
     /**
-     * @return 服务组件的自定义部署拓扑列表。
+     * @return Custom deployment topology list for service components.
      * 
      */
     public List<GetClusterApplicationExtraApplicationComponentLayout> applicationComponentLayouts() {
         return this.applicationComponentLayouts;
     }
     /**
-     * @return 服务的自定义配置参数列表。
+     * @return Custom configuration parameter list for services.
      * 
      */
     public List<GetClusterApplicationExtraApplicationConfig> applicationConfigs() {
         return this.applicationConfigs;
     }
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     public String applicationName() {
         return this.applicationName;
     }
     /**
-     * @return 元数据连接id。
+     * @return Metadata connection ID.
      * 
      */
     public String connectionId() {
         return this.connectionId;
     }
     /**
-     * @return 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+     * @return Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
      * 
      */
     public String connectionType() {

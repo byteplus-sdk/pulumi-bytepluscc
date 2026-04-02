@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 {
     /// <summary>
-    /// 白名单是数据库连接的安全防控手段，只有白名单内的 IP 地址才能访问数据库。
+    /// The allowlist is a security measure for database connections. Only IP addresses in the allowlist can access the database.
     /// 
     /// ## Import
     /// 
@@ -23,49 +23,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     public partial class AllowList : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 白名单分类。取值：Ordinary：普通白名单。Default：默认白名单。说明该参数作为请求参数时，默认值为 Ordinary。
+        /// Allowlist category. Values: Ordinary: Ordinary allowlist. Default: Default allowlist. Note: When used as a request parameter, the default value is Ordinary.
         /// </summary>
         [Output("allowListCategory")]
         public Output<string> AllowListCategory { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单的备注。
+        /// Allowlist remarks.
         /// </summary>
         [Output("allowListDesc")]
         public Output<string> AllowListDesc { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单 ID 。
+        /// Allowlist ID.
         /// </summary>
         [Output("allowListId")]
         public Output<string> AllowListId { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单内的 IP 地址（或地址段）总数。
+        /// Total number of IP addresses (or ranges) in the allowlist.
         /// </summary>
         [Output("allowListIpNum")]
         public Output<int> AllowListIpNum { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单名称。
+        /// Allowlist name.
         /// </summary>
         [Output("allowListName")]
         public Output<string> AllowListName { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+        /// IP address types in the allowlist. Only IPv4 addresses are currently supported.
         /// </summary>
         [Output("allowListType")]
         public Output<string> AllowListType { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单内的 IP 地址列表
+        /// IP address list in the allowlist
         /// </summary>
         [Output("allowLists")]
         public Output<ImmutableArray<string>> AllowListValue { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单下绑定的实例总数。
+        /// Total number of instances bound to the allowlist.
         /// </summary>
         [Output("associatedInstanceNum")]
         public Output<int> AssociatedInstanceNum { get; private set; } = null!;
@@ -74,31 +74,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<ImmutableArray<Outputs.AllowListAssociatedInstance>> AssociatedInstances { get; private set; } = null!;
 
         /// <summary>
-        /// 是否忽略实例状态校验。取值：true：是。false：否。默认值。
+        /// Ignore instance status check. Values: true: Yes. false: No. Default value.
         /// </summary>
         [Output("ignoreInstanceStatus")]
         public Output<bool> IgnoreInstanceStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单包含的 IP 地址和 IP 地址段的列表。在请求参数 WithIpList 取值为 true 时返回，在取值为 false 或不为其传值时返回为 null。
+        /// List of IP addresses and IP ranges included in the allowlist. Returned when the WithIpList request parameter is set to true; returns null when set to false or not specified.
         /// </summary>
         [Output("ipLists")]
         public Output<ImmutableArray<string>> IpLists { get; private set; } = null!;
 
         /// <summary>
-        /// 修改方式，取值范围如下：Cover（默认值）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+        /// Modification method. Available values: Cover (default): Overwrite the original allowlist with the values from the AllowList parameter. Append: Add the IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove the IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
         /// </summary>
         [Output("modifyMode")]
         public Output<string> ModifyMode { get; private set; } = null!;
 
         /// <summary>
-        /// 所属的项目。说明如您调用接口使用的 AK/SK 属于某个子账号，且该子账号只拥有某个项目的权限，需要传入该请求参数。
+        /// Project. Note: If the AK/SK used to call the API belongs to a sub-account that only has permission for a specific project, you need to provide this request parameter.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
@@ -107,19 +107,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<ImmutableArray<Outputs.AllowListSecurityGroupBindInfo>> SecurityGroupBindInfos { get; private set; } = null!;
 
         /// <summary>
-        /// 需要关联的安全组 ID 列表。说明您可以调用 DescribeSecurityGroups 接口查询安全组信息，包括安全组 ID。单个白名单单次最多可选择添加 10 个安全组。该字段不能与 SecurityGroupBindInfos 同时使用。
+        /// List of security group IDs to associate. Note: You can call the DescribeSecurityGroups API to query security group information, including security group IDs. A single allowlist can add up to 10 security groups at a time. This field cannot be used together with SecurityGroupBindInfos.
         /// </summary>
         [Output("securityGroupIds")]
         public Output<ImmutableArray<string>> SecurityGroupIds { get; private set; } = null!;
 
         /// <summary>
-        /// 是否更新白名单所绑定的安全组。true：更新。false：不更新。默认值。说明该字段仅在白名单已绑定了安全组时生效。可调用 DescribeAllowLists 接口查询白名单是否绑定了安全组。
+        /// Whether to update the security group bound to the allowlist. true: update. false: do not update. Default value. This field is effective only when the allowlist is already bound to a security group. You can call the DescribeAllowLists API to check if the allowlist is bound to a security group.
         /// </summary>
         [Output("updateSecurityGroup")]
         public Output<bool> UpdateSecurityGroup { get; private set; } = null!;
 
         /// <summary>
-        /// 该名单中由用户输入的 IP 地址。AllowList 字段中的 IP 为 UserAllowList 和 SecurityGroupBindInfos 包含的 IP 的并集。
+        /// IP addresses entered by the user in this list. The IPs in the AllowList field are the union of IPs included in UserAllowList and SecurityGroupBindInfos.
         /// </summary>
         [Output("userAllowLists")]
         public Output<ImmutableArray<string>> UserAllowLists { get; private set; } = null!;
@@ -172,25 +172,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     public sealed class AllowListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 白名单分类。取值：Ordinary：普通白名单。Default：默认白名单。说明该参数作为请求参数时，默认值为 Ordinary。
+        /// Allowlist category. Values: Ordinary: Ordinary allowlist. Default: Default allowlist. Note: When used as a request parameter, the default value is Ordinary.
         /// </summary>
         [Input("allowListCategory")]
         public Input<string>? AllowListCategory { get; set; }
 
         /// <summary>
-        /// 白名单的备注。
+        /// Allowlist remarks.
         /// </summary>
         [Input("allowListDesc")]
         public Input<string>? AllowListDesc { get; set; }
 
         /// <summary>
-        /// 白名单名称。
+        /// Allowlist name.
         /// </summary>
         [Input("allowListName")]
         public Input<string>? AllowListName { get; set; }
 
         /// <summary>
-        /// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+        /// IP address types in the allowlist. Only IPv4 addresses are currently supported.
         /// </summary>
         [Input("allowListType")]
         public Input<string>? AllowListType { get; set; }
@@ -199,7 +199,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         private InputList<string>? _allowLists;
 
         /// <summary>
-        /// 白名单内的 IP 地址列表
+        /// IP address list in the allowlist
         /// </summary>
         public InputList<string> AllowListValue
         {
@@ -208,31 +208,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 白名单下绑定的实例总数。
+        /// Total number of instances bound to the allowlist.
         /// </summary>
         [Input("associatedInstanceNum")]
         public Input<int>? AssociatedInstanceNum { get; set; }
 
         /// <summary>
-        /// 是否忽略实例状态校验。取值：true：是。false：否。默认值。
+        /// Ignore instance status check. Values: true: Yes. false: No. Default value.
         /// </summary>
         [Input("ignoreInstanceStatus")]
         public Input<bool>? IgnoreInstanceStatus { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 修改方式，取值范围如下：Cover（默认值）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+        /// Modification method. Available values: Cover (default): Overwrite the original allowlist with the values from the AllowList parameter. Append: Add the IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove the IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
         /// </summary>
         [Input("modifyMode")]
         public Input<string>? ModifyMode { get; set; }
 
         /// <summary>
-        /// 所属的项目。说明如您调用接口使用的 AK/SK 属于某个子账号，且该子账号只拥有某个项目的权限，需要传入该请求参数。
+        /// Project. Note: If the AK/SK used to call the API belongs to a sub-account that only has permission for a specific project, you need to provide this request parameter.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -249,7 +249,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         private InputList<string>? _securityGroupIds;
 
         /// <summary>
-        /// 需要关联的安全组 ID 列表。说明您可以调用 DescribeSecurityGroups 接口查询安全组信息，包括安全组 ID。单个白名单单次最多可选择添加 10 个安全组。该字段不能与 SecurityGroupBindInfos 同时使用。
+        /// List of security group IDs to associate. Note: You can call the DescribeSecurityGroups API to query security group information, including security group IDs. A single allowlist can add up to 10 security groups at a time. This field cannot be used together with SecurityGroupBindInfos.
         /// </summary>
         public InputList<string> SecurityGroupIds
         {
@@ -258,7 +258,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 是否更新白名单所绑定的安全组。true：更新。false：不更新。默认值。说明该字段仅在白名单已绑定了安全组时生效。可调用 DescribeAllowLists 接口查询白名单是否绑定了安全组。
+        /// Whether to update the security group bound to the allowlist. true: update. false: do not update. Default value. This field is effective only when the allowlist is already bound to a security group. You can call the DescribeAllowLists API to check if the allowlist is bound to a security group.
         /// </summary>
         [Input("updateSecurityGroup")]
         public Input<bool>? UpdateSecurityGroup { get; set; }
@@ -267,7 +267,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         private InputList<string>? _userAllowLists;
 
         /// <summary>
-        /// 该名单中由用户输入的 IP 地址。AllowList 字段中的 IP 为 UserAllowList 和 SecurityGroupBindInfos 包含的 IP 的并集。
+        /// IP addresses entered by the user in this list. The IPs in the AllowList field are the union of IPs included in UserAllowList and SecurityGroupBindInfos.
         /// </summary>
         public InputList<string> UserAllowLists
         {
@@ -284,37 +284,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     public sealed class AllowListState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 白名单分类。取值：Ordinary：普通白名单。Default：默认白名单。说明该参数作为请求参数时，默认值为 Ordinary。
+        /// Allowlist category. Values: Ordinary: Ordinary allowlist. Default: Default allowlist. Note: When used as a request parameter, the default value is Ordinary.
         /// </summary>
         [Input("allowListCategory")]
         public Input<string>? AllowListCategory { get; set; }
 
         /// <summary>
-        /// 白名单的备注。
+        /// Allowlist remarks.
         /// </summary>
         [Input("allowListDesc")]
         public Input<string>? AllowListDesc { get; set; }
 
         /// <summary>
-        /// 白名单 ID 。
+        /// Allowlist ID.
         /// </summary>
         [Input("allowListId")]
         public Input<string>? AllowListId { get; set; }
 
         /// <summary>
-        /// 白名单内的 IP 地址（或地址段）总数。
+        /// Total number of IP addresses (or ranges) in the allowlist.
         /// </summary>
         [Input("allowListIpNum")]
         public Input<int>? AllowListIpNum { get; set; }
 
         /// <summary>
-        /// 白名单名称。
+        /// Allowlist name.
         /// </summary>
         [Input("allowListName")]
         public Input<string>? AllowListName { get; set; }
 
         /// <summary>
-        /// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+        /// IP address types in the allowlist. Only IPv4 addresses are currently supported.
         /// </summary>
         [Input("allowListType")]
         public Input<string>? AllowListType { get; set; }
@@ -323,7 +323,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         private InputList<string>? _allowLists;
 
         /// <summary>
-        /// 白名单内的 IP 地址列表
+        /// IP address list in the allowlist
         /// </summary>
         public InputList<string> AllowListValue
         {
@@ -332,7 +332,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 白名单下绑定的实例总数。
+        /// Total number of instances bound to the allowlist.
         /// </summary>
         [Input("associatedInstanceNum")]
         public Input<int>? AssociatedInstanceNum { get; set; }
@@ -346,13 +346,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 是否忽略实例状态校验。取值：true：是。false：否。默认值。
+        /// Ignore instance status check. Values: true: Yes. false: No. Default value.
         /// </summary>
         [Input("ignoreInstanceStatus")]
         public Input<bool>? IgnoreInstanceStatus { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
@@ -361,7 +361,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         private InputList<string>? _ipLists;
 
         /// <summary>
-        /// 白名单包含的 IP 地址和 IP 地址段的列表。在请求参数 WithIpList 取值为 true 时返回，在取值为 false 或不为其传值时返回为 null。
+        /// List of IP addresses and IP ranges included in the allowlist. Returned when the WithIpList request parameter is set to true; returns null when set to false or not specified.
         /// </summary>
         public InputList<string> IpLists
         {
@@ -370,13 +370,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 修改方式，取值范围如下：Cover（默认值）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+        /// Modification method. Available values: Cover (default): Overwrite the original allowlist with the values from the AllowList parameter. Append: Add the IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove the IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
         /// </summary>
         [Input("modifyMode")]
         public Input<string>? ModifyMode { get; set; }
 
         /// <summary>
-        /// 所属的项目。说明如您调用接口使用的 AK/SK 属于某个子账号，且该子账号只拥有某个项目的权限，需要传入该请求参数。
+        /// Project. Note: If the AK/SK used to call the API belongs to a sub-account that only has permission for a specific project, you need to provide this request parameter.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -393,7 +393,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         private InputList<string>? _securityGroupIds;
 
         /// <summary>
-        /// 需要关联的安全组 ID 列表。说明您可以调用 DescribeSecurityGroups 接口查询安全组信息，包括安全组 ID。单个白名单单次最多可选择添加 10 个安全组。该字段不能与 SecurityGroupBindInfos 同时使用。
+        /// List of security group IDs to associate. Note: You can call the DescribeSecurityGroups API to query security group information, including security group IDs. A single allowlist can add up to 10 security groups at a time. This field cannot be used together with SecurityGroupBindInfos.
         /// </summary>
         public InputList<string> SecurityGroupIds
         {
@@ -402,7 +402,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 是否更新白名单所绑定的安全组。true：更新。false：不更新。默认值。说明该字段仅在白名单已绑定了安全组时生效。可调用 DescribeAllowLists 接口查询白名单是否绑定了安全组。
+        /// Whether to update the security group bound to the allowlist. true: update. false: do not update. Default value. This field is effective only when the allowlist is already bound to a security group. You can call the DescribeAllowLists API to check if the allowlist is bound to a security group.
         /// </summary>
         [Input("updateSecurityGroup")]
         public Input<bool>? UpdateSecurityGroup { get; set; }
@@ -411,7 +411,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         private InputList<string>? _userAllowLists;
 
         /// <summary>
-        /// 该名单中由用户输入的 IP 地址。AllowList 字段中的 IP 为 UserAllowList 和 SecurityGroupBindInfos 包含的 IP 的并集。
+        /// IP addresses entered by the user in this list. The IPs in the AllowList field are the union of IPs included in UserAllowList and SecurityGroupBindInfos.
         /// </summary>
         public InputList<string> UserAllowLists
         {

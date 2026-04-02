@@ -17,14 +17,14 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
     public static final UnitState Empty = new UnitState();
 
     /**
-     * 创建时间。
+     * Creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -32,14 +32,14 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 删除标识。
+     * Deletion flag.
      * 
      */
     @Import(name="deleteUk")
     private @Nullable Output<String> deleteUk;
 
     /**
-     * @return 删除标识。
+     * @return Deletion flag.
      * 
      */
     public Optional<Output<String>> deleteUk() {
@@ -47,14 +47,14 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 删除时间。
+     * Deletion time.
      * 
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
-     * @return 删除时间。
+     * @return Deletion time.
      * 
      */
     public Optional<Output<String>> deletedTime() {
@@ -62,14 +62,14 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 深度。
+     * Depth.
      * 
      */
     @Import(name="depth")
     private @Nullable Output<Integer> depth;
 
     /**
-     * @return 深度。
+     * @return Depth.
      * 
      */
     public Optional<Output<Integer>> depth() {
@@ -77,14 +77,14 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 描述。
+     * Description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 描述。
+     * @return Description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -92,14 +92,14 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组织单元名称。
+     * Organizational unit name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 组织单元名称。
+     * @return Organizational unit name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -107,14 +107,14 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组织ID。
+     * Organization ID.
      * 
      */
     @Import(name="orgId")
     private @Nullable Output<String> orgId;
 
     /**
-     * @return 组织ID。
+     * @return Organization ID.
      * 
      */
     public Optional<Output<String>> orgId() {
@@ -122,14 +122,14 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组织类型。企业组织： 1
+     * Organization type. Enterprise organization: 1
      * 
      */
     @Import(name="orgType")
     private @Nullable Output<Integer> orgType;
 
     /**
-     * @return 组织类型。企业组织： 1
+     * @return Organization type. Enterprise organization: 1
      * 
      */
     public Optional<Output<Integer>> orgType() {
@@ -137,14 +137,14 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组织单元ID。
+     * Organizational unit ID.
      * 
      */
     @Import(name="orgUnitId")
     private @Nullable Output<String> orgUnitId;
 
     /**
-     * @return 组织单元ID。
+     * @return Organizational unit ID.
      * 
      */
     public Optional<Output<String>> orgUnitId() {
@@ -152,14 +152,14 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 管理员ID。
+     * Administrator ID.
      * 
      */
     @Import(name="owner")
     private @Nullable Output<String> owner;
 
     /**
-     * @return 管理员ID。
+     * @return Administrator ID.
      * 
      */
     public Optional<Output<String>> owner() {
@@ -167,14 +167,14 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 父单元Id。
+     * Parent unit ID.
      * 
      */
     @Import(name="parentId")
     private @Nullable Output<String> parentId;
 
     /**
-     * @return 父单元Id。
+     * @return Parent unit ID.
      * 
      */
     public Optional<Output<String>> parentId() {
@@ -182,14 +182,14 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新时间。
+     * Update time.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -232,7 +232,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteUk 删除标识。
+         * @param deleteUk Deletion flag.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteUk 删除标识。
+         * @param deleteUk Deletion flag.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletedTime 删除时间。
+         * @param deletedTime Deletion time.
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletedTime 删除时间。
+         * @param deletedTime Deletion time.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param depth 深度。
+         * @param depth Depth.
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param depth 深度。
+         * @param depth Depth.
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述。
+         * @param description Description.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述。
+         * @param description Description.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 组织单元名称。
+         * @param name Organizational unit name.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 组织单元名称。
+         * @param name Organizational unit name.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgId 组织ID。
+         * @param orgId Organization ID.
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgId 组织ID。
+         * @param orgId Organization ID.
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgType 组织类型。企业组织： 1
+         * @param orgType Organization type. Enterprise organization: 1
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgType 组织类型。企业组织： 1
+         * @param orgType Organization type. Enterprise organization: 1
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgUnitId 组织单元ID。
+         * @param orgUnitId Organizational unit ID.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgUnitId 组织单元ID。
+         * @param orgUnitId Organizational unit ID.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param owner 管理员ID。
+         * @param owner Administrator ID.
          * 
          * @return builder
          * 
@@ -432,7 +432,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param owner 管理员ID。
+         * @param owner Administrator ID.
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parentId 父单元Id。
+         * @param parentId Parent unit ID.
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parentId 父单元Id。
+         * @param parentId Parent unit ID.
          * 
          * @return builder
          * 
@@ -463,7 +463,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time.
          * 
          * @return builder
          * 
@@ -474,7 +474,7 @@ public final class UnitState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time.
          * 
          * @return builder
          * 

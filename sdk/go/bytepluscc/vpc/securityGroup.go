@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 安全组是一个逻辑意义上的分组，为同一个私有网络内具有相同安全保护需求并相互信任的网卡提供访问策略。您可以通过配置安全组规则，控制安全组关联网卡的出入流量。
+// A security group is a logical grouping that provides access policies for NICs within the same private network that share security requirements and mutual trust. You can control inbound and outbound traffic for associated NICs by configuring security group rules
 //
 // ## Import
 //
@@ -22,26 +22,26 @@ import (
 type SecurityGroup struct {
 	pulumi.CustomResourceState
 
-	// 安全组创建时间。
+	// Security group creation time
 	CreationTime pulumi.StringOutput `pulumi:"creationTime"`
-	// 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+	// Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
 	Description        pulumi.StringOutput                       `pulumi:"description"`
 	EgressPermissions  SecurityGroupEgressPermissionArrayOutput  `pulumi:"egressPermissions"`
 	IngressPermissions SecurityGroupIngressPermissionArrayOutput `pulumi:"ingressPermissions"`
-	// 安全组所属项目名称。不填默认项目为default。
+	// Project name to which the security group belongs. Default project is 'default' if not specified
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 安全组ID。
+	// Security group ID
 	SecurityGroupId pulumi.StringOutput `pulumi:"securityGroupId"`
-	// 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+	// Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
 	SecurityGroupName pulumi.StringOutput `pulumi:"securityGroupName"`
-	// 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+	// Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
 	ServiceManaged pulumi.BoolOutput `pulumi:"serviceManaged"`
-	// 安全组状态。Available为可用，Creating为创建中。
+	// Security group status. Available means available for use, Creating means being created
 	Status pulumi.StringOutput         `pulumi:"status"`
 	Tags   SecurityGroupTagArrayOutput `pulumi:"tags"`
-	// 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+	// Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
 	Type pulumi.StringOutput `pulumi:"type"`
-	// 安全组所属的VPC ID。
+	// VPC ID to which the security group belongs
 	VpcId pulumi.StringOutput `pulumi:"vpcId"`
 }
 
@@ -78,50 +78,50 @@ func GetSecurityGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SecurityGroup resources.
 type securityGroupState struct {
-	// 安全组创建时间。
+	// Security group creation time
 	CreationTime *string `pulumi:"creationTime"`
-	// 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+	// Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
 	Description        *string                          `pulumi:"description"`
 	EgressPermissions  []SecurityGroupEgressPermission  `pulumi:"egressPermissions"`
 	IngressPermissions []SecurityGroupIngressPermission `pulumi:"ingressPermissions"`
-	// 安全组所属项目名称。不填默认项目为default。
+	// Project name to which the security group belongs. Default project is 'default' if not specified
 	ProjectName *string `pulumi:"projectName"`
-	// 安全组ID。
+	// Security group ID
 	SecurityGroupId *string `pulumi:"securityGroupId"`
-	// 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+	// Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
 	SecurityGroupName *string `pulumi:"securityGroupName"`
-	// 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+	// Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
 	ServiceManaged *bool `pulumi:"serviceManaged"`
-	// 安全组状态。Available为可用，Creating为创建中。
+	// Security group status. Available means available for use, Creating means being created
 	Status *string            `pulumi:"status"`
 	Tags   []SecurityGroupTag `pulumi:"tags"`
-	// 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+	// Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
 	Type *string `pulumi:"type"`
-	// 安全组所属的VPC ID。
+	// VPC ID to which the security group belongs
 	VpcId *string `pulumi:"vpcId"`
 }
 
 type SecurityGroupState struct {
-	// 安全组创建时间。
+	// Security group creation time
 	CreationTime pulumi.StringPtrInput
-	// 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+	// Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
 	Description        pulumi.StringPtrInput
 	EgressPermissions  SecurityGroupEgressPermissionArrayInput
 	IngressPermissions SecurityGroupIngressPermissionArrayInput
-	// 安全组所属项目名称。不填默认项目为default。
+	// Project name to which the security group belongs. Default project is 'default' if not specified
 	ProjectName pulumi.StringPtrInput
-	// 安全组ID。
+	// Security group ID
 	SecurityGroupId pulumi.StringPtrInput
-	// 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+	// Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
 	SecurityGroupName pulumi.StringPtrInput
-	// 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+	// Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
 	ServiceManaged pulumi.BoolPtrInput
-	// 安全组状态。Available为可用，Creating为创建中。
+	// Security group status. Available means available for use, Creating means being created
 	Status pulumi.StringPtrInput
 	Tags   SecurityGroupTagArrayInput
-	// 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+	// Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
 	Type pulumi.StringPtrInput
-	// 安全组所属的VPC ID。
+	// VPC ID to which the security group belongs
 	VpcId pulumi.StringPtrInput
 }
 
@@ -130,31 +130,31 @@ func (SecurityGroupState) ElementType() reflect.Type {
 }
 
 type securityGroupArgs struct {
-	// 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+	// Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
 	Description        *string                          `pulumi:"description"`
 	EgressPermissions  []SecurityGroupEgressPermission  `pulumi:"egressPermissions"`
 	IngressPermissions []SecurityGroupIngressPermission `pulumi:"ingressPermissions"`
-	// 安全组所属项目名称。不填默认项目为default。
+	// Project name to which the security group belongs. Default project is 'default' if not specified
 	ProjectName *string `pulumi:"projectName"`
-	// 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+	// Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
 	SecurityGroupName *string            `pulumi:"securityGroupName"`
 	Tags              []SecurityGroupTag `pulumi:"tags"`
-	// 安全组所属的VPC ID。
+	// VPC ID to which the security group belongs
 	VpcId string `pulumi:"vpcId"`
 }
 
 // The set of arguments for constructing a SecurityGroup resource.
 type SecurityGroupArgs struct {
-	// 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+	// Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
 	Description        pulumi.StringPtrInput
 	EgressPermissions  SecurityGroupEgressPermissionArrayInput
 	IngressPermissions SecurityGroupIngressPermissionArrayInput
-	// 安全组所属项目名称。不填默认项目为default。
+	// Project name to which the security group belongs. Default project is 'default' if not specified
 	ProjectName pulumi.StringPtrInput
-	// 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+	// Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
 	SecurityGroupName pulumi.StringPtrInput
 	Tags              SecurityGroupTagArrayInput
-	// 安全组所属的VPC ID。
+	// VPC ID to which the security group belongs
 	VpcId pulumi.StringInput
 }
 
@@ -245,12 +245,12 @@ func (o SecurityGroupOutput) ToSecurityGroupOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 安全组创建时间。
+// Security group creation time
 func (o SecurityGroupOutput) CreationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityGroup) pulumi.StringOutput { return v.CreationTime }).(pulumi.StringOutput)
 }
 
-// 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+// Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
 func (o SecurityGroupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityGroup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -263,27 +263,27 @@ func (o SecurityGroupOutput) IngressPermissions() SecurityGroupIngressPermission
 	return o.ApplyT(func(v *SecurityGroup) SecurityGroupIngressPermissionArrayOutput { return v.IngressPermissions }).(SecurityGroupIngressPermissionArrayOutput)
 }
 
-// 安全组所属项目名称。不填默认项目为default。
+// Project name to which the security group belongs. Default project is 'default' if not specified
 func (o SecurityGroupOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityGroup) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 安全组ID。
+// Security group ID
 func (o SecurityGroupOutput) SecurityGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityGroup) pulumi.StringOutput { return v.SecurityGroupId }).(pulumi.StringOutput)
 }
 
-// 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+// Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
 func (o SecurityGroupOutput) SecurityGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityGroup) pulumi.StringOutput { return v.SecurityGroupName }).(pulumi.StringOutput)
 }
 
-// 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+// Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
 func (o SecurityGroupOutput) ServiceManaged() pulumi.BoolOutput {
 	return o.ApplyT(func(v *SecurityGroup) pulumi.BoolOutput { return v.ServiceManaged }).(pulumi.BoolOutput)
 }
 
-// 安全组状态。Available为可用，Creating为创建中。
+// Security group status. Available means available for use, Creating means being created
 func (o SecurityGroupOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityGroup) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -292,12 +292,12 @@ func (o SecurityGroupOutput) Tags() SecurityGroupTagArrayOutput {
 	return o.ApplyT(func(v *SecurityGroup) SecurityGroupTagArrayOutput { return v.Tags }).(SecurityGroupTagArrayOutput)
 }
 
-// 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+// Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
 func (o SecurityGroupOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityGroup) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-// 安全组所属的VPC ID。
+// VPC ID to which the security group belongs
 func (o SecurityGroupOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityGroup) pulumi.StringOutput { return v.VpcId }).(pulumi.StringOutput)
 }

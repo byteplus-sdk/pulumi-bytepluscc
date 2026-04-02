@@ -31,27 +31,27 @@ export interface GetAclArgs {
  */
 export interface GetAclResult {
     /**
-     * 访问控制策略组中IP条目的详细信息。
+     * Details of IP entries in the access control policy group
      */
     readonly aclEntries: outputs.alb.GetAclAclEntry[];
     /**
-     * 访问控制策略组包含的IP条目数量。
+     * Number of IP entries in the access control policy group
      */
     readonly aclEntryCount: number;
     /**
-     * 访问控制策略组的ID。
+     * Access control policy group ID
      */
     readonly aclId: string;
     /**
-     * 访问控制策略组的名字。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。不填默认为访问控制策略组ID。
+     * Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
      */
     readonly aclName: string;
     /**
-     * 访问控制策略组的创建时间。
+     * Creation time of the access control policy group
      */
     readonly createdTime: string;
     /**
-     * 访问控制策略组的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
      */
     readonly description: string;
     /**
@@ -59,23 +59,23 @@ export interface GetAclResult {
      */
     readonly id: string;
     /**
-     * 访问控制策略组关联的监听器详细信息。
+     * Details of listeners associated with the access control policy group
      */
     readonly listeners: outputs.alb.GetAclListener[];
     /**
-     * 访问控制策略组所属项目名称。
+     * Project name to which the access control policy group belongs
      */
     readonly projectName: string;
     /**
-     * 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+     * Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
      */
     readonly status: string;
     /**
-     * 访问控制策略组绑定的标签。
+     * Tags bound to the access control policy group
      */
     readonly tags: outputs.alb.GetAclTag[];
     /**
-     * 访问控制策略组的最近操作时间。
+     * Last operation time of the access control policy group
      */
     readonly updatedTime: string;
 }

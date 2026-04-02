@@ -12,22 +12,22 @@ import java.util.Objects;
 @CustomType
 public final class GetUserResult {
     /**
-     * @return 创建时间。
+     * @return Creation Time.
      * 
      */
     private String createdTime;
     /**
-     * @return 用户描述。
+     * @return User Description.
      * 
      */
     private String description;
     /**
-     * @return 用户显示名。
+     * @return User Display Name.
      * 
      */
     private String displayName;
     /**
-     * @return 邮箱。
+     * @return Email.
      * 
      */
     private String email;
@@ -37,70 +37,70 @@ public final class GetUserResult {
      */
     private String id;
     /**
-     * @return 身份类型。
+     * @return Identity Type.
      * 
      */
     private String identityType;
     /**
-     * @return 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+     * @return Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      * 
      */
     private String password;
     /**
-     * @return 首次登陆需不需要重置密码。
+     * @return Is password reset required on first login?
      * 
      */
     private Boolean passwordResetRequired;
     /**
-     * @return 手机号。
+     * @return Mobile Number.
      * 
      */
     private String phone;
     /**
-     * @return 用户来源。
+     * @return User Source.
      * 
      */
     private String source;
     /**
-     * @return 更新时间。
+     * @return Update Time.
      * 
      */
     private String updatedTime;
     /**
-     * @return 用户id。
+     * @return User ID.
      * 
      */
     private String userId;
     /**
-     * @return 用户名。
+     * @return Username.
      * 
      */
     private String userName;
 
     private GetUserResult() {}
     /**
-     * @return 创建时间。
+     * @return Creation Time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 用户描述。
+     * @return User Description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 用户显示名。
+     * @return User Display Name.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return 邮箱。
+     * @return Email.
      * 
      */
     public String email() {
@@ -114,56 +114,56 @@ public final class GetUserResult {
         return this.id;
     }
     /**
-     * @return 身份类型。
+     * @return Identity Type.
      * 
      */
     public String identityType() {
         return this.identityType;
     }
     /**
-     * @return 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+     * @return Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      * 
      */
     public String password() {
         return this.password;
     }
     /**
-     * @return 首次登陆需不需要重置密码。
+     * @return Is password reset required on first login?
      * 
      */
     public Boolean passwordResetRequired() {
         return this.passwordResetRequired;
     }
     /**
-     * @return 手机号。
+     * @return Mobile Number.
      * 
      */
     public String phone() {
         return this.phone;
     }
     /**
-     * @return 用户来源。
+     * @return User Source.
      * 
      */
     public String source() {
         return this.source;
     }
     /**
-     * @return 更新时间。
+     * @return Update Time.
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 用户id。
+     * @return User ID.
      * 
      */
     public String userId() {
         return this.userId;
     }
     /**
-     * @return 用户名。
+     * @return Username.
      * 
      */
     public String userName() {

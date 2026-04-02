@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 云身份中心用户，与企业员工身份一一映射。云身份中心用户是一种身份类型，可与某个账号下的IAM用户身份进行唯一关联并单点登录。云身份中心提供企业员工身份全生命周期管理、权限管理能力，推荐您在本产品内统一管理员工身份。
+// Cloud Identity Center users are mapped one-to-one with enterprise employee identities. A Cloud Identity Center user is an identity type that can be uniquely linked to an IAM user under an account for single sign-on. Cloud Identity Center provides full lifecycle management and permission management for enterprise employee identities. We recommend that you centrally manage employee identities within this product.
 //
 // ## Example Usage
 //
@@ -53,29 +53,29 @@ import (
 type User struct {
 	pulumi.CustomResourceState
 
-	// 创建时间。
+	// Creation Time.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 用户描述。
+	// User Description.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 用户显示名。
+	// User Display Name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// 邮箱。
+	// Email.
 	Email pulumi.StringOutput `pulumi:"email"`
-	// 身份类型。
+	// Identity Type.
 	IdentityType pulumi.StringOutput `pulumi:"identityType"`
-	// 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+	// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
 	Password pulumi.StringOutput `pulumi:"password"`
-	// 首次登陆需不需要重置密码。
+	// Is password reset required on first login?
 	PasswordResetRequired pulumi.BoolOutput `pulumi:"passwordResetRequired"`
-	// 手机号。
+	// Mobile Number.
 	Phone pulumi.StringOutput `pulumi:"phone"`
-	// 用户来源。
+	// User Source.
 	Source pulumi.StringOutput `pulumi:"source"`
-	// 更新时间。
+	// Update Time.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
-	// 用户id。
+	// User ID.
 	UserId pulumi.StringOutput `pulumi:"userId"`
-	// 用户名。
+	// Username.
 	UserName pulumi.StringOutput `pulumi:"userName"`
 }
 
@@ -109,56 +109,56 @@ func GetUser(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering User resources.
 type userState struct {
-	// 创建时间。
+	// Creation Time.
 	CreatedTime *string `pulumi:"createdTime"`
-	// 用户描述。
+	// User Description.
 	Description *string `pulumi:"description"`
-	// 用户显示名。
+	// User Display Name.
 	DisplayName *string `pulumi:"displayName"`
-	// 邮箱。
+	// Email.
 	Email *string `pulumi:"email"`
-	// 身份类型。
+	// Identity Type.
 	IdentityType *string `pulumi:"identityType"`
-	// 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+	// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
 	Password *string `pulumi:"password"`
-	// 首次登陆需不需要重置密码。
+	// Is password reset required on first login?
 	PasswordResetRequired *bool `pulumi:"passwordResetRequired"`
-	// 手机号。
+	// Mobile Number.
 	Phone *string `pulumi:"phone"`
-	// 用户来源。
+	// User Source.
 	Source *string `pulumi:"source"`
-	// 更新时间。
+	// Update Time.
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// 用户id。
+	// User ID.
 	UserId *string `pulumi:"userId"`
-	// 用户名。
+	// Username.
 	UserName *string `pulumi:"userName"`
 }
 
 type UserState struct {
-	// 创建时间。
+	// Creation Time.
 	CreatedTime pulumi.StringPtrInput
-	// 用户描述。
+	// User Description.
 	Description pulumi.StringPtrInput
-	// 用户显示名。
+	// User Display Name.
 	DisplayName pulumi.StringPtrInput
-	// 邮箱。
+	// Email.
 	Email pulumi.StringPtrInput
-	// 身份类型。
+	// Identity Type.
 	IdentityType pulumi.StringPtrInput
-	// 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+	// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
 	Password pulumi.StringPtrInput
-	// 首次登陆需不需要重置密码。
+	// Is password reset required on first login?
 	PasswordResetRequired pulumi.BoolPtrInput
-	// 手机号。
+	// Mobile Number.
 	Phone pulumi.StringPtrInput
-	// 用户来源。
+	// User Source.
 	Source pulumi.StringPtrInput
-	// 更新时间。
+	// Update Time.
 	UpdatedTime pulumi.StringPtrInput
-	// 用户id。
+	// User ID.
 	UserId pulumi.StringPtrInput
-	// 用户名。
+	// Username.
 	UserName pulumi.StringPtrInput
 }
 
@@ -167,37 +167,37 @@ func (UserState) ElementType() reflect.Type {
 }
 
 type userArgs struct {
-	// 用户描述。
+	// User Description.
 	Description *string `pulumi:"description"`
-	// 用户显示名。
+	// User Display Name.
 	DisplayName *string `pulumi:"displayName"`
-	// 邮箱。
+	// Email.
 	Email *string `pulumi:"email"`
-	// 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+	// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
 	Password *string `pulumi:"password"`
-	// 首次登陆需不需要重置密码。
+	// Is password reset required on first login?
 	PasswordResetRequired *bool `pulumi:"passwordResetRequired"`
-	// 手机号。
+	// Mobile Number.
 	Phone *string `pulumi:"phone"`
-	// 用户名。
+	// Username.
 	UserName *string `pulumi:"userName"`
 }
 
 // The set of arguments for constructing a User resource.
 type UserArgs struct {
-	// 用户描述。
+	// User Description.
 	Description pulumi.StringPtrInput
-	// 用户显示名。
+	// User Display Name.
 	DisplayName pulumi.StringPtrInput
-	// 邮箱。
+	// Email.
 	Email pulumi.StringPtrInput
-	// 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+	// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
 	Password pulumi.StringPtrInput
-	// 首次登陆需不需要重置密码。
+	// Is password reset required on first login?
 	PasswordResetRequired pulumi.BoolPtrInput
-	// 手机号。
+	// Mobile Number.
 	Phone pulumi.StringPtrInput
-	// 用户名。
+	// Username.
 	UserName pulumi.StringPtrInput
 }
 
@@ -288,62 +288,62 @@ func (o UserOutput) ToUserOutputWithContext(ctx context.Context) UserOutput {
 	return o
 }
 
-// 创建时间。
+// Creation Time.
 func (o UserOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 用户描述。
+// User Description.
 func (o UserOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 用户显示名。
+// User Display Name.
 func (o UserOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 邮箱。
+// Email.
 func (o UserOutput) Email() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.Email }).(pulumi.StringOutput)
 }
 
-// 身份类型。
+// Identity Type.
 func (o UserOutput) IdentityType() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.IdentityType }).(pulumi.StringOutput)
 }
 
-// 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
 func (o UserOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
 }
 
-// 首次登陆需不需要重置密码。
+// Is password reset required on first login?
 func (o UserOutput) PasswordResetRequired() pulumi.BoolOutput {
 	return o.ApplyT(func(v *User) pulumi.BoolOutput { return v.PasswordResetRequired }).(pulumi.BoolOutput)
 }
 
-// 手机号。
+// Mobile Number.
 func (o UserOutput) Phone() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.Phone }).(pulumi.StringOutput)
 }
 
-// 用户来源。
+// User Source.
 func (o UserOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update Time.
 func (o UserOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 用户id。
+// User ID.
 func (o UserOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
 }
 
-// 用户名。
+// Username.
 func (o UserOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.UserName }).(pulumi.StringOutput)
 }

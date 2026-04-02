@@ -17,14 +17,14 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs extends co
     public static final DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs Empty = new DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs();
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs>> condition() {
@@ -32,14 +32,14 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs extends co
     }
 
     /**
-     * 表示限速配置。
+     * Indicates the rate limiting configuration.
      * 
      */
     @Import(name="downloadSpeedLimitAction")
     private @Nullable Output<DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs> downloadSpeedLimitAction;
 
     /**
-     * @return 表示限速配置。
+     * @return Indicates the rate limiting configuration.
      * 
      */
     public Optional<Output<DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs>> downloadSpeedLimitAction() {
@@ -72,7 +72,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs extends co
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs extends co
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs extends co
         }
 
         /**
-         * @param downloadSpeedLimitAction 表示限速配置。
+         * @param downloadSpeedLimitAction Indicates the rate limiting configuration.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs extends co
         }
 
         /**
-         * @param downloadSpeedLimitAction 表示限速配置。
+         * @param downloadSpeedLimitAction Indicates the rate limiting configuration.
          * 
          * @return builder
          * 

@@ -17,14 +17,14 @@ public final class UserSecurityConfigArgs extends com.pulumi.resources.ResourceA
     public static final UserSecurityConfigArgs Empty = new UserSecurityConfigArgs();
 
     /**
-     * 是否开启操作保护。0代表开启，1代表关闭。
+     * Whether operation protection is enabled. 0 means enabled, 1 means disabled.
      * 
      */
     @Import(name="safeAuthClose")
     private @Nullable Output<Double> safeAuthClose;
 
     /**
-     * @return 是否开启操作保护。0代表开启，1代表关闭。
+     * @return Whether operation protection is enabled. 0 means enabled, 1 means disabled.
      * 
      */
     public Optional<Output<Double>> safeAuthClose() {
@@ -32,14 +32,14 @@ public final class UserSecurityConfigArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+     * Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
      * 
      */
     @Import(name="safeAuthExemptDuration")
     private @Nullable Output<Double> safeAuthExemptDuration;
 
     /**
-     * @return 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+     * @return Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
      * 
      */
     public Optional<Output<Double>> safeAuthExemptDuration() {
@@ -47,14 +47,14 @@ public final class UserSecurityConfigArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+     * Operation protection type. &#39;phone&#39; indicates phone verification, &#39;email&#39; indicates email verification, &#39;vmfa&#39; indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
      * 
      */
     @Import(name="safeAuthType")
     private @Nullable Output<String> safeAuthType;
 
     /**
-     * @return 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+     * @return Operation protection type. &#39;phone&#39; indicates phone verification, &#39;email&#39; indicates email verification, &#39;vmfa&#39; indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
      * 
      */
     public Optional<Output<String>> safeAuthType() {
@@ -88,7 +88,7 @@ public final class UserSecurityConfigArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param safeAuthClose 是否开启操作保护。0代表开启，1代表关闭。
+         * @param safeAuthClose Whether operation protection is enabled. 0 means enabled, 1 means disabled.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class UserSecurityConfigArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param safeAuthClose 是否开启操作保护。0代表开启，1代表关闭。
+         * @param safeAuthClose Whether operation protection is enabled. 0 means enabled, 1 means disabled.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class UserSecurityConfigArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param safeAuthExemptDuration 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+         * @param safeAuthExemptDuration Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class UserSecurityConfigArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param safeAuthExemptDuration 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+         * @param safeAuthExemptDuration Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class UserSecurityConfigArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param safeAuthType 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+         * @param safeAuthType Operation protection type. &#39;phone&#39; indicates phone verification, &#39;email&#39; indicates email verification, &#39;vmfa&#39; indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class UserSecurityConfigArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param safeAuthType 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+         * @param safeAuthType Operation protection type. &#39;phone&#39; indicates phone verification, &#39;email&#39; indicates email verification, &#39;vmfa&#39; indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
          * 
          * @return builder
          * 

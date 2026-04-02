@@ -29,10 +29,10 @@ class HpcClusterArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['HpcClusterTagArgs']]]] = None):
         """
         The set of arguments for constructing a HpcCluster resource.
-        :param pulumi.Input[builtins.str] name: 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
-        :param pulumi.Input[builtins.str] zone_id: 高性能计算集群所属可用区ID。
-        :param pulumi.Input[builtins.str] description: 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
+        :param pulumi.Input[builtins.str] name: High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID of the high performance compute cluster
+        :param pulumi.Input[builtins.str] description: High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
+        :param pulumi.Input[builtins.str] project_name: Project name
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "zone_id", zone_id)
@@ -47,7 +47,7 @@ class HpcClusterArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+        High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
         """
         return pulumi.get(self, "name")
 
@@ -59,7 +59,7 @@ class HpcClusterArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[builtins.str]:
         """
-        高性能计算集群所属可用区ID。
+        Availability zone ID of the high performance compute cluster
         """
         return pulumi.get(self, "zone_id")
 
@@ -71,7 +71,7 @@ class HpcClusterArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+        High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
         """
         return pulumi.get(self, "description")
 
@@ -83,7 +83,7 @@ class HpcClusterArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -115,14 +115,14 @@ class _HpcClusterState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering HpcCluster resources.
-        :param pulumi.Input[builtins.str] created_time: 创建时间，格式满足RFC3339。
-        :param pulumi.Input[builtins.str] description: 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 高性能计算集群ID。
-        :param pulumi.Input[builtins.str] name: 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间，格式满足RFC3339。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络ID。
-        :param pulumi.Input[builtins.str] zone_id: 高性能计算集群所属可用区ID。
+        :param pulumi.Input[builtins.str] created_time: Creation time, formatted according to RFC3339
+        :param pulumi.Input[builtins.str] description: High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
+        :param pulumi.Input[builtins.str] hpc_cluster_id: High performance compute cluster ID
+        :param pulumi.Input[builtins.str] name: High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[builtins.str] updated_time: Update time, formatted according to RFC3339
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID of the high performance compute cluster
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -147,7 +147,7 @@ class _HpcClusterState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间，格式满足RFC3339。
+        Creation time, formatted according to RFC3339
         """
         return pulumi.get(self, "created_time")
 
@@ -159,7 +159,7 @@ class _HpcClusterState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+        High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
         """
         return pulumi.get(self, "description")
 
@@ -171,7 +171,7 @@ class _HpcClusterState:
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        高性能计算集群ID。
+        High performance compute cluster ID
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -183,7 +183,7 @@ class _HpcClusterState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+        High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
         """
         return pulumi.get(self, "name")
 
@@ -195,7 +195,7 @@ class _HpcClusterState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -216,7 +216,7 @@ class _HpcClusterState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间，格式满足RFC3339。
+        Update time, formatted according to RFC3339
         """
         return pulumi.get(self, "updated_time")
 
@@ -228,7 +228,7 @@ class _HpcClusterState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私有网络ID。
+        Private network ID
         """
         return pulumi.get(self, "vpc_id")
 
@@ -240,7 +240,7 @@ class _HpcClusterState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        高性能计算集群所属可用区ID。
+        Availability zone ID of the high performance compute cluster
         """
         return pulumi.get(self, "zone_id")
 
@@ -262,7 +262,7 @@ class HpcCluster(pulumi.CustomResource):
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        高性能计算集群（High Performance Compute Cluster，HPC集群）是一种用于处理大规模计算任务的集群计算环境，通常由大量的计算节点组成，这些节点通过RDMA（Remote Direct Memory Access）高速网络互联，并协同工作以处理复杂的计算任务。高性能计算集群可以提供强大的计算能力、大内存、高速存储和高速网络，以满足对计算密集型、数据密集型或两者结合的工作负载的需求。
+        A high performance compute cluster (HPC cluster) is a cluster computing environment designed for large-scale computational tasks. It typically consists of numerous compute nodes interconnected via RDMA (Remote Direct Memory Access) high-speed networks, working together to handle complex computational workloads. High performance compute clusters provide powerful computing capabilities, large memory, high-speed storage, and high-speed networking to meet the demands of compute-intensive, data-intensive, or combined workloads
 
         ## Example Usage
 
@@ -289,10 +289,10 @@ class HpcCluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
-        :param pulumi.Input[builtins.str] name: 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input[builtins.str] zone_id: 高性能计算集群所属可用区ID。
+        :param pulumi.Input[builtins.str] description: High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
+        :param pulumi.Input[builtins.str] name: High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID of the high performance compute cluster
         """
         ...
     @overload
@@ -301,7 +301,7 @@ class HpcCluster(pulumi.CustomResource):
                  args: HpcClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        高性能计算集群（High Performance Compute Cluster，HPC集群）是一种用于处理大规模计算任务的集群计算环境，通常由大量的计算节点组成，这些节点通过RDMA（Remote Direct Memory Access）高速网络互联，并协同工作以处理复杂的计算任务。高性能计算集群可以提供强大的计算能力、大内存、高速存储和高速网络，以满足对计算密集型、数据密集型或两者结合的工作负载的需求。
+        A high performance compute cluster (HPC cluster) is a cluster computing environment designed for large-scale computational tasks. It typically consists of numerous compute nodes interconnected via RDMA (Remote Direct Memory Access) high-speed networks, working together to handle complex computational workloads. High performance compute clusters provide powerful computing capabilities, large memory, high-speed storage, and high-speed networking to meet the demands of compute-intensive, data-intensive, or combined workloads
 
         ## Example Usage
 
@@ -394,14 +394,14 @@ class HpcCluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 创建时间，格式满足RFC3339。
-        :param pulumi.Input[builtins.str] description: 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 高性能计算集群ID。
-        :param pulumi.Input[builtins.str] name: 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间，格式满足RFC3339。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络ID。
-        :param pulumi.Input[builtins.str] zone_id: 高性能计算集群所属可用区ID。
+        :param pulumi.Input[builtins.str] created_time: Creation time, formatted according to RFC3339
+        :param pulumi.Input[builtins.str] description: High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
+        :param pulumi.Input[builtins.str] hpc_cluster_id: High performance compute cluster ID
+        :param pulumi.Input[builtins.str] name: High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[builtins.str] updated_time: Update time, formatted according to RFC3339
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID of the high performance compute cluster
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -422,7 +422,7 @@ class HpcCluster(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间，格式满足RFC3339。
+        Creation time, formatted according to RFC3339
         """
         return pulumi.get(self, "created_time")
 
@@ -430,7 +430,7 @@ class HpcCluster(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+        High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
         """
         return pulumi.get(self, "description")
 
@@ -438,7 +438,7 @@ class HpcCluster(pulumi.CustomResource):
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> pulumi.Output[builtins.str]:
         """
-        高性能计算集群ID。
+        High performance compute cluster ID
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -446,7 +446,7 @@ class HpcCluster(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+        High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
         """
         return pulumi.get(self, "name")
 
@@ -454,7 +454,7 @@ class HpcCluster(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -467,7 +467,7 @@ class HpcCluster(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间，格式满足RFC3339。
+        Update time, formatted according to RFC3339
         """
         return pulumi.get(self, "updated_time")
 
@@ -475,7 +475,7 @@ class HpcCluster(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        私有网络ID。
+        Private network ID
         """
         return pulumi.get(self, "vpc_id")
 
@@ -483,7 +483,7 @@ class HpcCluster(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        高性能计算集群所属可用区ID。
+        Availability zone ID of the high performance compute cluster
         """
         return pulumi.get(self, "zone_id")
 

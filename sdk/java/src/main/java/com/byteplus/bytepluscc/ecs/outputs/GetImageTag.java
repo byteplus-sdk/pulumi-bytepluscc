@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetImageTag {
     /**
-     * @return 镜像标签的标签键。
+     * @return Tag key for the image label.
      * 
      */
     private String key;
     /**
-     * @return 镜像标签的值。
+     * @return Image tag value
      * 
      */
     private String value;
 
     private GetImageTag() {}
     /**
-     * @return 镜像标签的标签键。
+     * @return Tag key for the image label.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 镜像标签的值。
+     * @return Image tag value
      * 
      */
     public String value() {

@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceMaintenanceWindow {
     /**
-     * @return 可维护周期粒度，取值为 Week，周。
+     * @return Maintenance cycle granularity. Value: Week.
      * 
      */
     private @Nullable String dayKind;
     /**
-     * @return 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+     * @return Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
      * 
      */
     private @Nullable List<String> dayOfWeeks;
     /**
-     * @return 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+     * @return Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
      * 
      */
     private @Nullable String maintenanceTime;
 
     private InstanceMaintenanceWindow() {}
     /**
-     * @return 可维护周期粒度，取值为 Week，周。
+     * @return Maintenance cycle granularity. Value: Week.
      * 
      */
     public Optional<String> dayKind() {
         return Optional.ofNullable(this.dayKind);
     }
     /**
-     * @return 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+     * @return Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
      * 
      */
     public List<String> dayOfWeeks() {
         return this.dayOfWeeks == null ? List.of() : this.dayOfWeeks;
     }
     /**
-     * @return 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+     * @return Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
      * 
      */
     public Optional<String> maintenanceTime() {

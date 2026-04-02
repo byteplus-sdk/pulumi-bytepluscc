@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetServerGroupTag {
     /**
-     * @return 绑定的标签键信息。
+     * @return Information about bound tag keys.
      * 
      */
     private String key;
     /**
-     * @return 绑定的标签值信息。
+     * @return Bound tag value information.
      * 
      */
     private String value;
 
     private GetServerGroupTag() {}
     /**
-     * @return 绑定的标签键信息。
+     * @return Information about bound tag keys.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 绑定的标签值信息。
+     * @return Bound tag value information.
      * 
      */
     public String value() {

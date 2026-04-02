@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RegistryTag {
     /**
-     * @return 标签的 Key 值。
+     * @return Tag key values
      * 
      */
     private @Nullable String key;
     /**
-     * @return 标签的 Value 值列表。
+     * @return List of tag values
      * 
      */
     private @Nullable String value;
 
     private RegistryTag() {}
     /**
-     * @return 标签的 Key 值。
+     * @return Tag key values
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 标签的 Value 值列表。
+     * @return List of tag values
      * 
      */
     public Optional<String> value() {

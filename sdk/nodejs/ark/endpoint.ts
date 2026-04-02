@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 在使用大语言模型进行推理服务时，推理接入点（Endpoint）是模型调用的关键入口。开发者只需通过指定的 ID 即可向大模型发起 API / SDK 推理请求，实现快速接入与灵活调用。系统提供统一的 API 调用方式、调用监控、限流策略与安全保障机制，确保推理过程的稳定性与安全性。
+ * When using large language models for inference services, the inference endpoint is the key entry point for model invocation. Developers can initiate API/SDK inference requests to the large model simply by specifying the ID, enabling quick access and flexible invocation. The system provides a unified API invocation method, call monitoring, rate limiting strategies, and security mechanisms to ensure stability and security during inference
  *
  * ## Import
  *
@@ -44,80 +44,80 @@ export class Endpoint extends pulumi.CustomResource {
     }
 
     /**
-     * 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+     * Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
      */
     public /*out*/ readonly batchOnly!: pulumi.Output<boolean>;
     /**
-     * 证书信息。
+     * Certificate information
      */
     public /*out*/ readonly certificate!: pulumi.Output<outputs.ark.EndpointCertificate>;
     /**
-     * 接入点创建时间，RFC3339格式。
+     * Endpoint creation time, RFC3339 format
      */
     public /*out*/ readonly createTime!: pulumi.Output<string>;
     /**
-     * 接入点描述。
+     * Endpoint description
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 推理接入点的ID。
+     * Inference access point ID.
      */
     public /*out*/ readonly endpointId!: pulumi.Output<string>;
     /**
-     * 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+     * Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
      */
     public /*out*/ readonly endpointModelType!: pulumi.Output<string>;
     /**
-     * 接入点接入模型。
+     * Endpoint access model
      */
     public readonly modelReference!: pulumi.Output<outputs.ark.EndpointModelReference>;
     /**
-     * 模型单元，为空表示后付费；否则预付费。
+     * Model unit. If empty, indicates postpaid; otherwise, prepaid.
      */
     public readonly modelUnitId!: pulumi.Output<string>;
     /**
-     * 内容护栏方案。
+     * Content guardrail scheme
      */
     public readonly moderation!: pulumi.Output<outputs.ark.EndpointModeration>;
     /**
-     * 接入点名称。
+     * Endpoint name
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * 资源所属的项目名称，默认值为default。
+     * Project name the resource belongs to; default value is "default"
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 接入点限流。
+     * Endpoint rate limiting
      */
     public readonly rateLimit!: pulumi.Output<outputs.ark.EndpointRateLimit>;
     /**
-     * 接入点切换的Id。
+     * Endpoint switch ID
      */
     public /*out*/ readonly rollingId!: pulumi.Output<string>;
     /**
-     * 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+     * If a TPM protection package exists, this is the TPM protection package ID.
      */
     public /*out*/ readonly scaleTierId!: pulumi.Output<string>;
     /**
-     * 接入点状态。
+     * Endpoint status
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 状态附加说明信息。
+     * Additional status information
      */
     public /*out*/ readonly statusReason!: pulumi.Output<string>;
     /**
-     * 是否支持接入点切换模型版本。
+     * Whether endpoint supports switching model versions
      */
     public /*out*/ readonly supportRolling!: pulumi.Output<boolean>;
     /**
-     * 是否支持TPM保障包。
+     * Whether TPM protection package is supported
      */
     public /*out*/ readonly supportScaleTier!: pulumi.Output<boolean>;
     public readonly tags!: pulumi.Output<outputs.ark.EndpointTag[]>;
     /**
-     * 接入点更新时间，RFC3339格式。
+     * Endpoint update time, RFC3339 format
      */
     public /*out*/ readonly updateTime!: pulumi.Output<string>;
 
@@ -193,80 +193,80 @@ export class Endpoint extends pulumi.CustomResource {
  */
 export interface EndpointState {
     /**
-     * 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+     * Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
      */
     batchOnly?: pulumi.Input<boolean>;
     /**
-     * 证书信息。
+     * Certificate information
      */
     certificate?: pulumi.Input<inputs.ark.EndpointCertificate>;
     /**
-     * 接入点创建时间，RFC3339格式。
+     * Endpoint creation time, RFC3339 format
      */
     createTime?: pulumi.Input<string>;
     /**
-     * 接入点描述。
+     * Endpoint description
      */
     description?: pulumi.Input<string>;
     /**
-     * 推理接入点的ID。
+     * Inference access point ID.
      */
     endpointId?: pulumi.Input<string>;
     /**
-     * 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+     * Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
      */
     endpointModelType?: pulumi.Input<string>;
     /**
-     * 接入点接入模型。
+     * Endpoint access model
      */
     modelReference?: pulumi.Input<inputs.ark.EndpointModelReference>;
     /**
-     * 模型单元，为空表示后付费；否则预付费。
+     * Model unit. If empty, indicates postpaid; otherwise, prepaid.
      */
     modelUnitId?: pulumi.Input<string>;
     /**
-     * 内容护栏方案。
+     * Content guardrail scheme
      */
     moderation?: pulumi.Input<inputs.ark.EndpointModeration>;
     /**
-     * 接入点名称。
+     * Endpoint name
      */
     name?: pulumi.Input<string>;
     /**
-     * 资源所属的项目名称，默认值为default。
+     * Project name the resource belongs to; default value is "default"
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 接入点限流。
+     * Endpoint rate limiting
      */
     rateLimit?: pulumi.Input<inputs.ark.EndpointRateLimit>;
     /**
-     * 接入点切换的Id。
+     * Endpoint switch ID
      */
     rollingId?: pulumi.Input<string>;
     /**
-     * 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+     * If a TPM protection package exists, this is the TPM protection package ID.
      */
     scaleTierId?: pulumi.Input<string>;
     /**
-     * 接入点状态。
+     * Endpoint status
      */
     status?: pulumi.Input<string>;
     /**
-     * 状态附加说明信息。
+     * Additional status information
      */
     statusReason?: pulumi.Input<string>;
     /**
-     * 是否支持接入点切换模型版本。
+     * Whether endpoint supports switching model versions
      */
     supportRolling?: pulumi.Input<boolean>;
     /**
-     * 是否支持TPM保障包。
+     * Whether TPM protection package is supported
      */
     supportScaleTier?: pulumi.Input<boolean>;
     tags?: pulumi.Input<pulumi.Input<inputs.ark.EndpointTag>[]>;
     /**
-     * 接入点更新时间，RFC3339格式。
+     * Endpoint update time, RFC3339 format
      */
     updateTime?: pulumi.Input<string>;
 }
@@ -276,31 +276,31 @@ export interface EndpointState {
  */
 export interface EndpointArgs {
     /**
-     * 接入点描述。
+     * Endpoint description
      */
     description?: pulumi.Input<string>;
     /**
-     * 接入点接入模型。
+     * Endpoint access model
      */
     modelReference: pulumi.Input<inputs.ark.EndpointModelReference>;
     /**
-     * 模型单元，为空表示后付费；否则预付费。
+     * Model unit. If empty, indicates postpaid; otherwise, prepaid.
      */
     modelUnitId?: pulumi.Input<string>;
     /**
-     * 内容护栏方案。
+     * Content guardrail scheme
      */
     moderation?: pulumi.Input<inputs.ark.EndpointModeration>;
     /**
-     * 接入点名称。
+     * Endpoint name
      */
     name: pulumi.Input<string>;
     /**
-     * 资源所属的项目名称，默认值为default。
+     * Project name the resource belongs to; default value is "default"
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 接入点限流。
+     * Endpoint rate limiting
      */
     rateLimit?: pulumi.Input<inputs.ark.EndpointRateLimit>;
     tags?: pulumi.Input<pulumi.Input<inputs.ark.EndpointTag>[]>;

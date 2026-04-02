@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * IPv6公网流量的带宽，决定IPv6地址的公网通信能力。IPv6地址若未开通IPv6公网带宽，则仅支持私网互通，您可以按需为IPv6地址开通IPv6公网带宽，使该IPv6地址具备与公网互通的能力。
+ * IPv6 public traffic bandwidth determines the public communication capability of the IPv6 address. If the IPv6 address does not have IPv6 public bandwidth enabled, it only supports private network communication. You can enable IPv6 public bandwidth for the IPv6 address as needed to allow public network communication.
  *
  * ## Example Usage
  *
@@ -63,80 +63,80 @@ export class Ipv6AddressBandwidth extends pulumi.CustomResource {
     }
 
     /**
-     * IPv6公网带宽的ID。
+     * IPv6 public bandwidth ID
      */
     public /*out*/ readonly allocationId!: pulumi.Output<string>;
     /**
-     * IPv6公网带宽的带宽上限。
+     * IPv6 public bandwidth cap
      */
     public readonly bandwidth!: pulumi.Output<number>;
     /**
-     * IPv6共享带宽包的ID。
+     * IPv6 shared bandwidth package ID
      */
     public readonly bandwidthPackageId!: pulumi.Output<string>;
     /**
-     * IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
      */
     public readonly billingType!: pulumi.Output<number>;
     /**
-     * IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+     * Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
      */
     public /*out*/ readonly businessStatus!: pulumi.Output<string>;
     /**
-     * IPv6公网带宽的开通时间。
+     * IPv6 public bandwidth activation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * IPv6公网带宽的删除时间。
+     * IPv6 public bandwidth deletion time
      */
     public /*out*/ readonly deletedTime!: pulumi.Output<string>;
     /**
-     * IPv6公网带宽关联的实例ID。
+     * Instance ID associated with IPv6 public bandwidth
      */
     public /*out*/ readonly instanceId!: pulumi.Output<string>;
     /**
-     * IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+     * Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
      */
     public /*out*/ readonly instanceType!: pulumi.Output<string>;
     /**
-     * IPv6地址。
+     * IPv6 address
      */
     public readonly ipv6Address!: pulumi.Output<string>;
     /**
-     * IPv6网关的ID。
+     * IPv6 gateway ID
      */
     public /*out*/ readonly ipv6GatewayId!: pulumi.Output<string>;
     /**
-     * IPv6公网带宽的线路类型。BGP：BGP（多线）。
+     * IPv6 public bandwidth line type. BGP: BGP (multi-line).
      */
     public /*out*/ readonly isp!: pulumi.Output<string>;
     /**
-     * IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+     * Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
      */
     public /*out*/ readonly lockReason!: pulumi.Output<string>;
     /**
-     * IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+     * IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
      */
     public /*out*/ readonly networkType!: pulumi.Output<string>;
     /**
-     * IPv6公网带宽欠费关停的时间。
+     * IPv6 public bandwidth deactivation time due to overdue payment
      */
     public /*out*/ readonly overdueTime!: pulumi.Output<string>;
     /**
-     * IPv6公网带宽的项目。
+     * IPv6 public bandwidth project
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 是否为服务托管。
+     * Service hosting status
      */
     public /*out*/ readonly serviceManaged!: pulumi.Output<boolean>;
     /**
-     * IPv6公网带宽的状态。Creating：创建中。Available：可用。
+     * IPv6 public bandwidth status. Creating: Creating. Available: Available.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.vpc.Ipv6AddressBandwidthTag[]>;
     /**
-     * IPv6公网带宽的最近操作时间。
+     * IPv6 public bandwidth last operation time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -212,80 +212,80 @@ export class Ipv6AddressBandwidth extends pulumi.CustomResource {
  */
 export interface Ipv6AddressBandwidthState {
     /**
-     * IPv6公网带宽的ID。
+     * IPv6 public bandwidth ID
      */
     allocationId?: pulumi.Input<string>;
     /**
-     * IPv6公网带宽的带宽上限。
+     * IPv6 public bandwidth cap
      */
     bandwidth?: pulumi.Input<number>;
     /**
-     * IPv6共享带宽包的ID。
+     * IPv6 shared bandwidth package ID
      */
     bandwidthPackageId?: pulumi.Input<string>;
     /**
-     * IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
      */
     billingType?: pulumi.Input<number>;
     /**
-     * IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+     * Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
      */
     businessStatus?: pulumi.Input<string>;
     /**
-     * IPv6公网带宽的开通时间。
+     * IPv6 public bandwidth activation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * IPv6公网带宽的删除时间。
+     * IPv6 public bandwidth deletion time
      */
     deletedTime?: pulumi.Input<string>;
     /**
-     * IPv6公网带宽关联的实例ID。
+     * Instance ID associated with IPv6 public bandwidth
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+     * Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
      */
     instanceType?: pulumi.Input<string>;
     /**
-     * IPv6地址。
+     * IPv6 address
      */
     ipv6Address?: pulumi.Input<string>;
     /**
-     * IPv6网关的ID。
+     * IPv6 gateway ID
      */
     ipv6GatewayId?: pulumi.Input<string>;
     /**
-     * IPv6公网带宽的线路类型。BGP：BGP（多线）。
+     * IPv6 public bandwidth line type. BGP: BGP (multi-line).
      */
     isp?: pulumi.Input<string>;
     /**
-     * IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+     * Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
      */
     lockReason?: pulumi.Input<string>;
     /**
-     * IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+     * IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
      */
     networkType?: pulumi.Input<string>;
     /**
-     * IPv6公网带宽欠费关停的时间。
+     * IPv6 public bandwidth deactivation time due to overdue payment
      */
     overdueTime?: pulumi.Input<string>;
     /**
-     * IPv6公网带宽的项目。
+     * IPv6 public bandwidth project
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 是否为服务托管。
+     * Service hosting status
      */
     serviceManaged?: pulumi.Input<boolean>;
     /**
-     * IPv6公网带宽的状态。Creating：创建中。Available：可用。
+     * IPv6 public bandwidth status. Creating: Creating. Available: Available.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.Ipv6AddressBandwidthTag>[]>;
     /**
-     * IPv6公网带宽的最近操作时间。
+     * IPv6 public bandwidth last operation time
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -295,23 +295,23 @@ export interface Ipv6AddressBandwidthState {
  */
 export interface Ipv6AddressBandwidthArgs {
     /**
-     * IPv6公网带宽的带宽上限。
+     * IPv6 public bandwidth cap
      */
     bandwidth?: pulumi.Input<number>;
     /**
-     * IPv6共享带宽包的ID。
+     * IPv6 shared bandwidth package ID
      */
     bandwidthPackageId?: pulumi.Input<string>;
     /**
-     * IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
      */
     billingType: pulumi.Input<number>;
     /**
-     * IPv6地址。
+     * IPv6 address
      */
     ipv6Address: pulumi.Input<string>;
     /**
-     * IPv6公网带宽的项目。
+     * IPv6 public bandwidth project
      */
     projectName?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.Ipv6AddressBandwidthTag>[]>;

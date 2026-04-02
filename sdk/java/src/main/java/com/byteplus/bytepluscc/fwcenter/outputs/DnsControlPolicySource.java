@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DnsControlPolicySource {
     /**
-     * @return VPC地域信息。
+     * @return VPC region information.
      * 
      */
     private @Nullable String region;
@@ -24,7 +24,7 @@ public final class DnsControlPolicySource {
 
     private DnsControlPolicySource() {}
     /**
-     * @return VPC地域信息。
+     * @return VPC region information.
      * 
      */
     public Optional<String> region() {

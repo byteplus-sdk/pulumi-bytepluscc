@@ -17,14 +17,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     public static final AllowListAssociatedInstanceArgs Empty = new AllowListAssociatedInstanceArgs();
 
     /**
-     * 已绑定当前白名单的实例 ID。
+     * Instance ID bound to the current allowlist.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 已绑定当前白名单的实例 ID。
+     * @return Instance ID bound to the current allowlist.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -32,14 +32,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     }
 
     /**
-     * 已绑定当前白名单的实例名称。
+     * Instance name bound to the current allowlist.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 已绑定当前白名单的实例名称。
+     * @return Instance name bound to the current allowlist.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -47,14 +47,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     }
 
     /**
-     * 实例状态。
+     * Instance status.
      * 
      */
     @Import(name="instanceStatus")
     private @Nullable Output<String> instanceStatus;
 
     /**
-     * @return 实例状态。
+     * @return Instance status.
      * 
      */
     public Optional<Output<String>> instanceStatus() {
@@ -62,14 +62,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     }
 
     /**
-     * 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+     * Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
      * 
      */
     @Import(name="isLatest")
     private @Nullable Output<Boolean> isLatest;
 
     /**
-     * @return 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+     * @return Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
      * 
      */
     public Optional<Output<Boolean>> isLatest() {
@@ -77,14 +77,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     }
 
     /**
-     * 实例所属的私有网络 ID。
+     * Private network ID of the instance.
      * 
      */
     @Import(name="vpc")
     private @Nullable Output<String> vpc;
 
     /**
-     * @return 实例所属的私有网络 ID。
+     * @return Private network ID of the instance.
      * 
      */
     public Optional<Output<String>> vpc() {
@@ -120,7 +120,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceId 已绑定当前白名单的实例 ID。
+         * @param instanceId Instance ID bound to the current allowlist.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceId 已绑定当前白名单的实例 ID。
+         * @param instanceId Instance ID bound to the current allowlist.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceName 已绑定当前白名单的实例名称。
+         * @param instanceName Instance name bound to the current allowlist.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceName 已绑定当前白名单的实例名称。
+         * @param instanceName Instance name bound to the current allowlist.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceStatus 实例状态。
+         * @param instanceStatus Instance status.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceStatus 实例状态。
+         * @param instanceStatus Instance status.
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param isLatest 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+         * @param isLatest Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param isLatest 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+         * @param isLatest Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param vpc 实例所属的私有网络 ID。
+         * @param vpc Private network ID of the instance.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param vpc 实例所属的私有网络 ID。
+         * @param vpc Private network ID of the instance.
          * 
          * @return builder
          * 

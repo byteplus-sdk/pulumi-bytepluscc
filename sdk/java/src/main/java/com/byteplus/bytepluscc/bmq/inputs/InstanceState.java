@@ -22,14 +22,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     public static final InstanceState Empty = new InstanceState();
 
     /**
-     * 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+     * Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
      * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<String> autoRenew;
 
     /**
-     * @return 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+     * @return Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
      * 
      */
     public Optional<Output<String>> autoRenew() {
@@ -37,14 +37,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+     * Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
      * 
      */
     @Import(name="billingPeriod")
     private @Nullable Output<String> billingPeriod;
 
     /**
-     * @return 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+     * @return Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
      * 
      */
     public Optional<Output<String>> billingPeriod() {
@@ -52,14 +52,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+     * Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
      * 
      */
     @Import(name="billingType")
     private @Nullable Output<String> billingType;
 
     /**
-     * @return 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+     * @return Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
      * 
      */
     public Optional<Output<String>> billingType() {
@@ -67,14 +67,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的创建时间。
+     * Instance creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 实例的创建时间。
+     * @return Instance creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -82,14 +82,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的描述语句。
+     * Instance description statement
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 实例的描述语句。
+     * @return Instance description statement
      * 
      */
     public Optional<Output<String>> description() {
@@ -97,14 +97,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+     * Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
      * 
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
-     * @return 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+     * @return Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
      * 
      */
     public Optional<Output<String>> eipId() {
@@ -112,14 +112,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所有接入点响应数据。
+     * Response data for all instance endpoints
      * 
      */
     @Import(name="endpoints")
     private @Nullable Output<InstanceEndpointsArgs> endpoints;
 
     /**
-     * @return 实例所有接入点响应数据。
+     * @return Response data for all instance endpoints
      * 
      */
     public Optional<Output<InstanceEndpointsArgs>> endpoints() {
@@ -127,14 +127,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例过期时间。
+     * Instance expiration time
      * 
      */
     @Import(name="expirationTime")
     private @Nullable Output<String> expirationTime;
 
     /**
-     * @return 实例过期时间。
+     * @return Instance expiration time
      * 
      */
     public Optional<Output<String>> expirationTime() {
@@ -142,14 +142,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例消费组数量上限。
+     * Maximum number of consumer groups per instance
      * 
      */
     @Import(name="groupLimit")
     private @Nullable Output<Integer> groupLimit;
 
     /**
-     * @return 实例消费组数量上限。
+     * @return Maximum number of consumer groups per instance
      * 
      */
     public Optional<Output<Integer>> groupLimit() {
@@ -157,14 +157,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例ID。
+     * Instance ID
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -172,14 +172,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例下所有 Topic 的消息保留时长，单位为小时。
+     * Message retention period for all topics under the instance, in hours
      * 
      */
     @Import(name="messageRetention")
     private @Nullable Output<Integer> messageRetention;
 
     /**
-     * @return 实例下所有 Topic 的消息保留时长，单位为小时。
+     * @return Message retention period for all topics under the instance, in hours
      * 
      */
     public Optional<Output<Integer>> messageRetention() {
@@ -187,14 +187,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+     * Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+     * @return Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     public Optional<Output<String>> name() {
@@ -202,14 +202,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例分区数量上限。
+     * Maximum number of partitions per instance
      * 
      */
     @Import(name="partitionLimit")
     private @Nullable Output<Integer> partitionLimit;
 
     /**
-     * @return 实例分区数量上限。
+     * @return Maximum number of partitions per instance
      * 
      */
     public Optional<Output<Integer>> partitionLimit() {
@@ -217,14 +217,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所属项目名称。
+     * Project name to which the instance belongs
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 实例所属项目名称。
+     * @return Project name to which the instance belongs
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -239,14 +239,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例资源统计响应数据。
+     * Instance resource statistics response data
      * 
      */
     @Import(name="resources")
     private @Nullable Output<InstanceResourcesArgs> resources;
 
     /**
-     * @return 实例资源统计响应数据。
+     * @return Instance resource statistics response data
      * 
      */
     public Optional<Output<InstanceResourcesArgs>> resources() {
@@ -254,14 +254,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例使用安全组列表。
+     * List of security groups used by the instance
      * 
      */
     @Import(name="securityGroupIdLists")
     private @Nullable Output<List<String>> securityGroupIdLists;
 
     /**
-     * @return 实例使用安全组列表。
+     * @return List of security groups used by the instance
      * 
      */
     public Optional<Output<List<String>>> securityGroupIdLists() {
@@ -269,14 +269,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例规格。
+     * Instance specification
      * 
      */
     @Import(name="specification")
     private @Nullable Output<String> specification;
 
     /**
-     * @return 实例规格。
+     * @return Instance specification
      * 
      */
     public Optional<Output<String>> specification() {
@@ -284,14 +284,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+     * Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+     * @return Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
      * 
      */
     public Optional<Output<String>> status() {
@@ -299,14 +299,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例使用的子网列表。
+     * List of subnets used by the instance
      * 
      */
     @Import(name="subnetIdLists")
     private @Nullable Output<List<String>> subnetIdLists;
 
     /**
-     * @return 实例使用的子网列表。
+     * @return List of subnets used by the instance
      * 
      */
     public Optional<Output<List<String>>> subnetIdLists() {
@@ -321,14 +321,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 包年包月类型实例的购买时长，单位为月。
+     * Purchase duration for subscription instances, in months
      * 
      */
     @Import(name="times")
     private @Nullable Output<Integer> times;
 
     /**
-     * @return 包年包月类型实例的购买时长，单位为月。
+     * @return Purchase duration for subscription instances, in months
      * 
      */
     public Optional<Output<Integer>> times() {
@@ -336,14 +336,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例Topic数量上限。
+     * Maximum number of topics per instance
      * 
      */
     @Import(name="topicLimit")
     private @Nullable Output<Integer> topicLimit;
 
     /**
-     * @return 实例Topic数量上限。
+     * @return Maximum number of topics per instance
      * 
      */
     public Optional<Output<Integer>> topicLimit() {
@@ -351,14 +351,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所在VPC ID。
+     * VPC ID where the instance is located
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 实例所在VPC ID。
+     * @return VPC ID where the instance is located
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -366,14 +366,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所在可用区列表。
+     * List of availability zones where the instance is located
      * 
      */
     @Import(name="zoneIdLists")
     private @Nullable Output<List<String>> zoneIdLists;
 
     /**
-     * @return 实例所在可用区列表。
+     * @return List of availability zones where the instance is located
      * 
      */
     public Optional<Output<List<String>>> zoneIdLists() {
@@ -429,7 +429,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenew 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+         * @param autoRenew Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenew 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+         * @param autoRenew Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingPeriod 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+         * @param billingPeriod Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
          * 
          * @return builder
          * 
@@ -461,7 +461,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingPeriod 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+         * @param billingPeriod Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+         * @param billingType Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+         * @param billingType Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 实例的创建时间。
+         * @param createdTime Instance creation time
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 实例的创建时间。
+         * @param createdTime Instance creation time
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 实例的描述语句。
+         * @param description Instance description statement
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 实例的描述语句。
+         * @param description Instance description statement
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+         * @param eipId Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+         * @param eipId Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
          * 
          * @return builder
          * 
@@ -555,7 +555,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoints 实例所有接入点响应数据。
+         * @param endpoints Response data for all instance endpoints
          * 
          * @return builder
          * 
@@ -566,7 +566,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoints 实例所有接入点响应数据。
+         * @param endpoints Response data for all instance endpoints
          * 
          * @return builder
          * 
@@ -576,7 +576,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expirationTime 实例过期时间。
+         * @param expirationTime Instance expiration time
          * 
          * @return builder
          * 
@@ -587,7 +587,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expirationTime 实例过期时间。
+         * @param expirationTime Instance expiration time
          * 
          * @return builder
          * 
@@ -597,7 +597,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupLimit 实例消费组数量上限。
+         * @param groupLimit Maximum number of consumer groups per instance
          * 
          * @return builder
          * 
@@ -608,7 +608,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupLimit 实例消费组数量上限。
+         * @param groupLimit Maximum number of consumer groups per instance
          * 
          * @return builder
          * 
@@ -618,7 +618,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -629,7 +629,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -639,7 +639,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param messageRetention 实例下所有 Topic 的消息保留时长，单位为小时。
+         * @param messageRetention Message retention period for all topics under the instance, in hours
          * 
          * @return builder
          * 
@@ -650,7 +650,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param messageRetention 实例下所有 Topic 的消息保留时长，单位为小时。
+         * @param messageRetention Message retention period for all topics under the instance, in hours
          * 
          * @return builder
          * 
@@ -660,7 +660,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+         * @param name Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
          * 
          * @return builder
          * 
@@ -671,7 +671,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+         * @param name Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
          * 
          * @return builder
          * 
@@ -681,7 +681,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param partitionLimit 实例分区数量上限。
+         * @param partitionLimit Maximum number of partitions per instance
          * 
          * @return builder
          * 
@@ -692,7 +692,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param partitionLimit 实例分区数量上限。
+         * @param partitionLimit Maximum number of partitions per instance
          * 
          * @return builder
          * 
@@ -702,7 +702,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属项目名称。
+         * @param projectName Project name to which the instance belongs
          * 
          * @return builder
          * 
@@ -713,7 +713,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属项目名称。
+         * @param projectName Project name to which the instance belongs
          * 
          * @return builder
          * 
@@ -736,7 +736,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resources 实例资源统计响应数据。
+         * @param resources Instance resource statistics response data
          * 
          * @return builder
          * 
@@ -747,7 +747,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resources 实例资源统计响应数据。
+         * @param resources Instance resource statistics response data
          * 
          * @return builder
          * 
@@ -757,7 +757,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIdLists 实例使用安全组列表。
+         * @param securityGroupIdLists List of security groups used by the instance
          * 
          * @return builder
          * 
@@ -768,7 +768,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIdLists 实例使用安全组列表。
+         * @param securityGroupIdLists List of security groups used by the instance
          * 
          * @return builder
          * 
@@ -778,7 +778,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIdLists 实例使用安全组列表。
+         * @param securityGroupIdLists List of security groups used by the instance
          * 
          * @return builder
          * 
@@ -788,7 +788,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param specification 实例规格。
+         * @param specification Instance specification
          * 
          * @return builder
          * 
@@ -799,7 +799,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param specification 实例规格。
+         * @param specification Instance specification
          * 
          * @return builder
          * 
@@ -809,7 +809,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+         * @param status Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
          * 
          * @return builder
          * 
@@ -820,7 +820,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+         * @param status Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
          * 
          * @return builder
          * 
@@ -830,7 +830,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIdLists 实例使用的子网列表。
+         * @param subnetIdLists List of subnets used by the instance
          * 
          * @return builder
          * 
@@ -841,7 +841,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIdLists 实例使用的子网列表。
+         * @param subnetIdLists List of subnets used by the instance
          * 
          * @return builder
          * 
@@ -851,7 +851,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIdLists 实例使用的子网列表。
+         * @param subnetIdLists List of subnets used by the instance
          * 
          * @return builder
          * 
@@ -874,7 +874,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param times 包年包月类型实例的购买时长，单位为月。
+         * @param times Purchase duration for subscription instances, in months
          * 
          * @return builder
          * 
@@ -885,7 +885,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param times 包年包月类型实例的购买时长，单位为月。
+         * @param times Purchase duration for subscription instances, in months
          * 
          * @return builder
          * 
@@ -895,7 +895,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicLimit 实例Topic数量上限。
+         * @param topicLimit Maximum number of topics per instance
          * 
          * @return builder
          * 
@@ -906,7 +906,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicLimit 实例Topic数量上限。
+         * @param topicLimit Maximum number of topics per instance
          * 
          * @return builder
          * 
@@ -916,7 +916,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 实例所在VPC ID。
+         * @param vpcId VPC ID where the instance is located
          * 
          * @return builder
          * 
@@ -927,7 +927,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 实例所在VPC ID。
+         * @param vpcId VPC ID where the instance is located
          * 
          * @return builder
          * 
@@ -937,7 +937,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIdLists 实例所在可用区列表。
+         * @param zoneIdLists List of availability zones where the instance is located
          * 
          * @return builder
          * 
@@ -948,7 +948,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIdLists 实例所在可用区列表。
+         * @param zoneIdLists List of availability zones where the instance is located
          * 
          * @return builder
          * 
@@ -958,7 +958,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIdLists 实例所在可用区列表。
+         * @param zoneIdLists List of availability zones where the instance is located
          * 
          * @return builder
          * 

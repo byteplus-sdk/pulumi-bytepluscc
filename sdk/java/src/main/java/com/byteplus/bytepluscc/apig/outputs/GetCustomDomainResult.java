@@ -13,27 +13,27 @@ import java.util.Objects;
 @CustomType
 public final class GetCustomDomainResult {
     /**
-     * @return 自定义域名证书ID。
+     * @return Custom Domain Certificate ID
      * 
      */
     private String certificateId;
     /**
-     * @return 备注。
+     * @return Remarks
      * 
      */
     private String comments;
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     private String createdTime;
     /**
-     * @return 自定义域名ID。
+     * @return Custom Domain ID
      * 
      */
     private String customDomainId;
     /**
-     * @return 自定义域名。
+     * @return Custom Domain
      * 
      */
     private String domain;
@@ -43,62 +43,62 @@ public final class GetCustomDomainResult {
      */
     private String id;
     /**
-     * @return 协议，取值：HTTP。HTTPS。
+     * @return Protocol. Values: HTTP, HTTPS
      * 
      */
     private List<String> protocols;
     /**
-     * @return 服务ID。
+     * @return Service ID
      * 
      */
     private String serviceId;
     /**
-     * @return 重定向到HTTPS。
+     * @return Redirect to HTTPS
      * 
      */
     private Boolean sslRedirect;
     /**
-     * @return 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+     * @return Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
      * 
      */
     private String status;
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     private String updatedTime;
 
     private GetCustomDomainResult() {}
     /**
-     * @return 自定义域名证书ID。
+     * @return Custom Domain Certificate ID
      * 
      */
     public String certificateId() {
         return this.certificateId;
     }
     /**
-     * @return 备注。
+     * @return Remarks
      * 
      */
     public String comments() {
         return this.comments;
     }
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 自定义域名ID。
+     * @return Custom Domain ID
      * 
      */
     public String customDomainId() {
         return this.customDomainId;
     }
     /**
-     * @return 自定义域名。
+     * @return Custom Domain
      * 
      */
     public String domain() {
@@ -112,35 +112,35 @@ public final class GetCustomDomainResult {
         return this.id;
     }
     /**
-     * @return 协议，取值：HTTP。HTTPS。
+     * @return Protocol. Values: HTTP, HTTPS
      * 
      */
     public List<String> protocols() {
         return this.protocols;
     }
     /**
-     * @return 服务ID。
+     * @return Service ID
      * 
      */
     public String serviceId() {
         return this.serviceId;
     }
     /**
-     * @return 重定向到HTTPS。
+     * @return Redirect to HTTPS
      * 
      */
     public Boolean sslRedirect() {
         return this.sslRedirect;
     }
     /**
-     * @return 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+     * @return Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     public String updatedTime() {

@@ -20,14 +20,14 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
     public static final CustomerGatewayArgs Empty = new CustomerGatewayArgs();
 
     /**
-     * 用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
+     * User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
      * 
      */
     @Import(name="asn")
     private @Nullable Output<Integer> asn;
 
     /**
-     * @return 用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
+     * @return User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
      * 
      */
     public Optional<Output<Integer>> asn() {
@@ -35,14 +35,14 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
+     * User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
      * 
      */
     @Import(name="customerGatewayName")
     private @Nullable Output<String> customerGatewayName;
 
     /**
-     * @return 用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
+     * @return User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
      * 
      */
     public Optional<Output<String>> customerGatewayName() {
@@ -50,14 +50,14 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
+     * Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
+     * @return Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
      * 
      */
     public Optional<Output<String>> description() {
@@ -65,14 +65,14 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
+     * Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
      * 
      */
     @Import(name="ipAddress", required=true)
     private Output<String> ipAddress;
 
     /**
-     * @return 对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
+     * @return Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
      * 
      */
     public Output<String> ipAddress() {
@@ -80,14 +80,14 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
+     * IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
      * 
      */
     @Import(name="ipVersion")
     private @Nullable Output<String> ipVersion;
 
     /**
-     * @return VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
+     * @return IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
      * 
      */
     public Optional<Output<String>> ipVersion() {
@@ -95,14 +95,14 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
+     * Project to which the user gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
+     * @return Project to which the user gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -147,7 +147,7 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param asn 用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
+         * @param asn User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param asn 用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
+         * @param asn User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param customerGatewayName 用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
+         * @param customerGatewayName User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param customerGatewayName 用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
+         * @param customerGatewayName User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description 用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
+         * @param description Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description 用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
+         * @param description Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ipAddress 对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
+         * @param ipAddress Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ipAddress 对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
+         * @param ipAddress Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ipVersion VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
+         * @param ipVersion IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ipVersion VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
+         * @param ipVersion IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param projectName 用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
+         * @param projectName Project to which the user gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param projectName 用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
+         * @param projectName Project to which the user gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project
          * 
          * @return builder
          * 

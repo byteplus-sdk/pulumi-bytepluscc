@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
     public sealed class ClusterNodeAttributeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// ECS实例角色。
+        /// ECS instance role.
         /// </summary>
         [Input("ecsIamRole")]
         public Input<string>? EcsIamRole { get; set; }
 
         /// <summary>
-        /// 可用区ID。
+        /// Zone ID.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

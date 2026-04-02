@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GatewayBackendSpec
     {
         /// <summary>
-        /// 是否支持VKE Flannel CNI。
+        /// Whether VKE Flannel CNI is supported
         /// </summary>
         public readonly bool? IsVkeWithFlannelCniSupported;
         /// <summary>

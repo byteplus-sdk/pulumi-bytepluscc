@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Filenas
 {
     /// <summary>
-    /// 快照是一种备份方式，每个快照都是文件存储在某个时间点的备份。当数据丢失或故障时，您可以通过快照恢复文件存储数据，找回丢失的数据。
+    /// A snapshot is a backup method. Each snapshot is a backup of file storage at a specific point in time. If data is lost or a failure occurs, you can use snapshots to restore file storage and recover lost data
     /// 
     /// ## Example Usage
     /// 
@@ -43,85 +43,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
     public partial class Snapshot : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 快照创建时间。
+        /// Snapshot Creation Time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 快照描述信息。
+        /// Snapshot Description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统 ID。
+        /// File System ID
         /// </summary>
         [Output("fileSystemId")]
         public Output<string> FileSystemId { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统名称。
+        /// File System Name
         /// </summary>
         [Output("fileSystemName")]
         public Output<string> FileSystemName { get; private set; } = null!;
 
         /// <summary>
-        /// 是否加密，当前仅支持false，即不加密。
+        /// Is encryption enabled. Currently only false is supported (not encrypted)
         /// </summary>
         [Output("isEncrypt")]
         public Output<bool> IsEncrypt { get; private set; } = null!;
 
         /// <summary>
-        /// 快照创建进度。
+        /// Snapshot Creation Progress
         /// </summary>
         [Output("progress")]
         public Output<string> Progress { get; private set; } = null!;
 
         /// <summary>
-        /// 快照保留时间，默认为2147483647，即永久保留。
+        /// Snapshot Retention Period. Default is 2147483647 (permanent retention)
         /// </summary>
         [Output("retentionDays")]
         public Output<int> RetentionDays { get; private set; } = null!;
 
         /// <summary>
-        /// 快照 ID。
+        /// Snapshot ID
         /// </summary>
         [Output("snapshotId")]
         public Output<string> SnapshotId { get; private set; } = null!;
 
         /// <summary>
-        /// 快照名称。
+        /// Snapshot Name
         /// </summary>
         [Output("snapshotName")]
         public Output<string> SnapshotName { get; private set; } = null!;
 
         /// <summary>
-        /// 快照类型，默认为Manual，即手动快照。
+        /// Snapshot Type. Default is Manual (manual snapshot)
         /// </summary>
         [Output("snapshotType")]
         public Output<string> SnapshotType { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统容量，单位为 GiB。
+        /// File System Capacity (GiB)
         /// </summary>
         [Output("sourceSize")]
         public Output<int> SourceSize { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统版本。
+        /// File System Version
         /// </summary>
         [Output("sourceVersion")]
         public Output<string> SourceVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+        /// Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 可用区 ID。
+        /// Availability Zone ID
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
@@ -174,19 +174,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
     public sealed class SnapshotArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 快照描述信息。
+        /// Snapshot Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 文件系统 ID。
+        /// File System ID
         /// </summary>
         [Input("fileSystemId", required: true)]
         public Input<string> FileSystemId { get; set; } = null!;
 
         /// <summary>
-        /// 快照名称。
+        /// Snapshot Name
         /// </summary>
         [Input("snapshotName", required: true)]
         public Input<string> SnapshotName { get; set; } = null!;
@@ -200,85 +200,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
     public sealed class SnapshotState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 快照创建时间。
+        /// Snapshot Creation Time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 快照描述信息。
+        /// Snapshot Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 文件系统 ID。
+        /// File System ID
         /// </summary>
         [Input("fileSystemId")]
         public Input<string>? FileSystemId { get; set; }
 
         /// <summary>
-        /// 文件系统名称。
+        /// File System Name
         /// </summary>
         [Input("fileSystemName")]
         public Input<string>? FileSystemName { get; set; }
 
         /// <summary>
-        /// 是否加密，当前仅支持false，即不加密。
+        /// Is encryption enabled. Currently only false is supported (not encrypted)
         /// </summary>
         [Input("isEncrypt")]
         public Input<bool>? IsEncrypt { get; set; }
 
         /// <summary>
-        /// 快照创建进度。
+        /// Snapshot Creation Progress
         /// </summary>
         [Input("progress")]
         public Input<string>? Progress { get; set; }
 
         /// <summary>
-        /// 快照保留时间，默认为2147483647，即永久保留。
+        /// Snapshot Retention Period. Default is 2147483647 (permanent retention)
         /// </summary>
         [Input("retentionDays")]
         public Input<int>? RetentionDays { get; set; }
 
         /// <summary>
-        /// 快照 ID。
+        /// Snapshot ID
         /// </summary>
         [Input("snapshotId")]
         public Input<string>? SnapshotId { get; set; }
 
         /// <summary>
-        /// 快照名称。
+        /// Snapshot Name
         /// </summary>
         [Input("snapshotName")]
         public Input<string>? SnapshotName { get; set; }
 
         /// <summary>
-        /// 快照类型，默认为Manual，即手动快照。
+        /// Snapshot Type. Default is Manual (manual snapshot)
         /// </summary>
         [Input("snapshotType")]
         public Input<string>? SnapshotType { get; set; }
 
         /// <summary>
-        /// 文件系统容量，单位为 GiB。
+        /// File System Capacity (GiB)
         /// </summary>
         [Input("sourceSize")]
         public Input<int>? SourceSize { get; set; }
 
         /// <summary>
-        /// 文件系统版本。
+        /// File System Version
         /// </summary>
         [Input("sourceVersion")]
         public Input<string>? SourceVersion { get; set; }
 
         /// <summary>
-        /// 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+        /// Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 可用区 ID。
+        /// Availability Zone ID
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

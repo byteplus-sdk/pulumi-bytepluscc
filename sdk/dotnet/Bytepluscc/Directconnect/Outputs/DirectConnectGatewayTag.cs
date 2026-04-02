@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Directconnect.Outputs
     public sealed class DirectConnectGatewayTag
     {
         /// <summary>
-        /// 用户标签的标签键。长度取值范围为1~128字符。
+        /// User label tag key. Length must be between 1 and 128 characters.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 用户标签的标签值。长度取值范围为0~256字符。
+        /// User label tag value. Length must be between 0 and 256 characters.
         /// </summary>
         public readonly string? Value;
 

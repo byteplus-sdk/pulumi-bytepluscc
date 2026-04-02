@@ -118,7 +118,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.str:
         """
-        账号ID。
+        Account ID
         """
         return pulumi.get(self, "account_id")
 
@@ -126,7 +126,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="anyPortEnabled")
     def any_port_enabled(self) -> builtins.bool:
         """
-        是否开启全端口转发。
+        Enable all-port forwarding
         """
         return pulumi.get(self, "any_port_enabled")
 
@@ -134,7 +134,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="bypassSecurityGroupEnabled")
     def bypass_security_group_enabled(self) -> builtins.bool:
         """
-        是否开启放通后端安全组功能。仅参数Type为“instance”时，可以配置此参数。
+        Enable backend security group pass-through. This parameter can only be configured when Type is 'instance'.
         """
         return pulumi.get(self, "bypass_security_group_enabled")
 
@@ -142,7 +142,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="connectionDrainEnabled")
     def connection_drain_enabled(self) -> builtins.bool:
         """
-        是否开启连接优雅中断。
+        Enable graceful connection termination.
         """
         return pulumi.get(self, "connection_drain_enabled")
 
@@ -150,7 +150,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="connectionDrainTimeout")
     def connection_drain_timeout(self) -> builtins.int:
         """
-        连接优雅中断超时时间，取值范围为0～900秒。参数ConnectionDrainEnabled为“true”时，该参数为必填。
+        Connection graceful shutdown timeout, range: 0–900 seconds. If ConnectionDrainEnabled is 'true', this parameter is required.
         """
         return pulumi.get(self, "connection_drain_timeout")
 
@@ -158,7 +158,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        后端服务器组的创建时间。
+        Backend server group creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -166,7 +166,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        后端服务器组的描述,服务器组的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+        Description of the backend server group, description of the server group. Must start with a letter, number, or Chinese character, and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period（。）. Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -174,7 +174,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="healthCheck")
     def health_check(self) -> 'outputs.GetNlbServerGroupHealthCheckResult':
         """
-        健康检查相关参数。
+        Health check parameters
         """
         return pulumi.get(self, "health_check")
 
@@ -190,7 +190,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="ipAddressVersion")
     def ip_address_version(self) -> builtins.str:
         """
-        服务器组的IP地址类型。取值如下：ipv4（默认值）：表示该服务器组仅支持添加IPv4类型的后端服务器。ipv6：表示该服务器组仅支持添加IPv6类型的后端服务器。
+        IP address type of the server group. Options: ipv4 (default): The server group only supports adding IPv4 type backend servers. ipv6: The server group only supports adding IPv6 type backend servers.
         """
         return pulumi.get(self, "ip_address_version")
 
@@ -198,7 +198,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="preserveClientIpEnabled")
     def preserve_client_ip_enabled(self) -> builtins.bool:
         """
-        是否开启源地址保持。
+        Enable source address persistence
         """
         return pulumi.get(self, "preserve_client_ip_enabled")
 
@@ -206,7 +206,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -214,7 +214,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        NLB转发流量到后端服务器时使用的通信协议。取值如下：TCP。UDP。
+        Communication protocol used by NLB to forward traffic to backend servers. Options: TCP. UDP.
         """
         return pulumi.get(self, "protocol")
 
@@ -222,7 +222,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="proxyProtocolType")
     def proxy_protocol_type(self) -> builtins.str:
         """
-        是否开启Proxy-Protocol协议。取值如下：off（默认值）：关闭。standard：开启。NLB将通过Proxy-Protocol协议携带客户端源IP地址转发至后端服务器，还需要在后端服务器上配置Proxy-Protocol。
+        Enable Proxy-Protocol. Available values: off (default): disabled. standard: enabled. NLB forwards the client source IP address to the backend server via Proxy-Protocol. Proxy-Protocol must also be configured on the backend server.
         """
         return pulumi.get(self, "proxy_protocol_type")
 
@@ -230,7 +230,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="relatedLoadBalancerIds")
     def related_load_balancer_ids(self) -> Sequence[builtins.str]:
         """
-        服务器组关联的NLB实例。
+        NLB instance associated with the server group.
         """
         return pulumi.get(self, "related_load_balancer_ids")
 
@@ -238,7 +238,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter
     def scheduler(self) -> builtins.str:
         """
-        NLB转发流量时遵循的规则。取值如下：wrr（默认值）：加权轮询，权重值越高的后端服务器，被轮询到的次数（概率）越高。wlc：加权最小连接数，在最少连接数的基础上，根据后端服务器的不同处理能力，给每个服务器分配不同的权重，使其能够接受相应权值数的服务请求。sh：源地址哈希，基于源IP地址的一致性哈希，相同的源地址会调度到相同的后端服务器。
+        Rules followed by NLB when forwarding traffic. Options: wrr (default): Weighted round robin. Backend servers with higher weights are selected more frequently (higher probability). wlc: Weighted least connections. Based on the least number of connections, assigns different weights to backend servers according to their processing capabilities, allowing each server to handle a corresponding number of service requests. sh: Source address hash. Uses consistent hashing based on the source IP address; requests from the same source address are routed to the same backend server.
         """
         return pulumi.get(self, "scheduler")
 
@@ -246,7 +246,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="serverCount")
     def server_count(self) -> builtins.int:
         """
-        服务器组中后端服务器的数量。
+        Number of backend servers in the server group.
         """
         return pulumi.get(self, "server_count")
 
@@ -254,7 +254,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> builtins.str:
         """
-        服务器组ID。
+        Server group ID
         """
         return pulumi.get(self, "server_group_id")
 
@@ -262,7 +262,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="serverGroupName")
     def server_group_name(self) -> builtins.str:
         """
-        服务器组名称, 必须以字母、数字或中文开头，可包含以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。该参数不传入，则默认为服务器组ID。
+        Server group name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the server group ID
         """
         return pulumi.get(self, "server_group_name")
 
@@ -270,7 +270,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter
     def servers(self) -> Sequence['outputs.GetNlbServerGroupServerResult']:
         """
-        服务器组中待添加后端服务器的信息。
+        Information about backend servers to be added to the server group
         """
         return pulumi.get(self, "servers")
 
@@ -278,7 +278,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="sessionPersistenceEnabled")
     def session_persistence_enabled(self) -> builtins.bool:
         """
-        是否开启会话保持。
+        Enable session persistence.
         """
         return pulumi.get(self, "session_persistence_enabled")
 
@@ -286,7 +286,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="sessionPersistenceTimeout")
     def session_persistence_timeout(self) -> builtins.int:
         """
-        会话保持的超时时间，取值范围为1～3600秒，默认1000秒。
+        Session persistence timeout. Range: 1–3600 seconds, default: 1000 seconds
         """
         return pulumi.get(self, "session_persistence_timeout")
 
@@ -294,7 +294,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        服务器组的状态。
+        Server group status
         """
         return pulumi.get(self, "status")
 
@@ -302,7 +302,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetNlbServerGroupTagResult']:
         """
-        标签。
+        Tag
         """
         return pulumi.get(self, "tags")
 
@@ -310,7 +310,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="timestampRemoveEnabled")
     def timestamp_remove_enabled(self) -> builtins.bool:
         """
-        是否开启清除TCP/HTTP/HTTPS报文的timestamp（即时间戳）的功能。
+        Enable removal of TCP/HTTP/HTTPS packet timestamps
         """
         return pulumi.get(self, "timestamp_remove_enabled")
 
@@ -318,7 +318,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        服务器组的类型。取值如下：instance（默认值）：服务器类型。支持添加云服务器实例和已绑定云服务器实例的辅助网卡作为后端服务器。ip：IP地址类型。支持添加任何网络可达的VPC或IDC中的服务器作为后端服务器。
+        Server group type. Available values: instance (default): server type. Supports adding cloud server instances and auxiliary network interfaces bound to cloud server instances as backend servers. ip: IP address type. Supports adding any network-accessible server in a VPC or IDC as a backend server.
         """
         return pulumi.get(self, "type")
 
@@ -326,7 +326,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        后端服务器组的更新时间。
+        Last update time of the backend server group.
         """
         return pulumi.get(self, "updated_time")
 
@@ -334,7 +334,7 @@ class GetNlbServerGroupResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        服务器组所属私有网络的ID。
+        ID of the private network to which the server group belongs
         """
         return pulumi.get(self, "vpc_id")
 

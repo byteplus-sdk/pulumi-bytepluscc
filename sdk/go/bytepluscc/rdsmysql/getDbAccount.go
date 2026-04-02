@@ -30,29 +30,29 @@ type LookupDbAccountArgs struct {
 
 // A collection of values returned by getDbAccount.
 type LookupDbAccountResult struct {
-	// 账号信息描述信息，长度不超过 256 个字符。
+	// Account information description, maximum length 256 characters.
 	AccountDesc string `pulumi:"accountDesc"`
-	// 数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
+	// Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
 	AccountName string `pulumi:"accountName"`
-	// 数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+	// Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=,.&?|/.
 	AccountPassword string `pulumi:"accountPassword"`
-	// 账号的指定数据库权限信息。说明当 AccountType 取值为 Super 时，无需为 AccountPrivileges 传值
+	// Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
 	AccountPrivileges []GetDbAccountAccountPrivilege `pulumi:"accountPrivileges"`
-	// 账号的指定数据库权限信息的 SQL 语句。
+	// SQL statement for the account's specified database permission information.
 	AccountPrivilegesSqls []string `pulumi:"accountPrivilegesSqls"`
-	// 账号状态，取值为：Unavailable：不可用。Available：可用。
+	// Account status. Values: Unavailable: unavailable. Available: available.
 	AccountStatus string `pulumi:"accountStatus"`
-	// 账号类型，取值范围：Super：高权限账号。Normal：普通账号。
+	// Account type. Value options: Super: high-privilege account. Normal: regular account.
 	AccountType string `pulumi:"accountType"`
-	// 账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
+	// The database to which the account's table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
 	HasTableColumnPrivilegeDbNames []string `pulumi:"hasTableColumnPrivilegeDbNames"`
-	// 指定的数据库账号可以访问数据库的 IP 地址。
+	// IP address from which the specified database account can access the database.
 	Host string `pulumi:"host"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId string `pulumi:"instanceId"`
-	// 账号的表列权限设置。
+	// Account table column permission settings.
 	TableColumnPrivileges []GetDbAccountTableColumnPrivilege `pulumi:"tableColumnPrivileges"`
 }
 
@@ -90,47 +90,47 @@ func (o LookupDbAccountResultOutput) ToLookupDbAccountResultOutputWithContext(ct
 	return o
 }
 
-// 账号信息描述信息，长度不超过 256 个字符。
+// Account information description, maximum length 256 characters.
 func (o LookupDbAccountResultOutput) AccountDesc() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.AccountDesc }).(pulumi.StringOutput)
 }
 
-// 数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
+// Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
 func (o LookupDbAccountResultOutput) AccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.AccountName }).(pulumi.StringOutput)
 }
 
-// 数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+// Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=,.&?|/.
 func (o LookupDbAccountResultOutput) AccountPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.AccountPassword }).(pulumi.StringOutput)
 }
 
-// 账号的指定数据库权限信息。说明当 AccountType 取值为 Super 时，无需为 AccountPrivileges 传值
+// Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
 func (o LookupDbAccountResultOutput) AccountPrivileges() GetDbAccountAccountPrivilegeArrayOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) []GetDbAccountAccountPrivilege { return v.AccountPrivileges }).(GetDbAccountAccountPrivilegeArrayOutput)
 }
 
-// 账号的指定数据库权限信息的 SQL 语句。
+// SQL statement for the account's specified database permission information.
 func (o LookupDbAccountResultOutput) AccountPrivilegesSqls() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) []string { return v.AccountPrivilegesSqls }).(pulumi.StringArrayOutput)
 }
 
-// 账号状态，取值为：Unavailable：不可用。Available：可用。
+// Account status. Values: Unavailable: unavailable. Available: available.
 func (o LookupDbAccountResultOutput) AccountStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.AccountStatus }).(pulumi.StringOutput)
 }
 
-// 账号类型，取值范围：Super：高权限账号。Normal：普通账号。
+// Account type. Value options: Super: high-privilege account. Normal: regular account.
 func (o LookupDbAccountResultOutput) AccountType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.AccountType }).(pulumi.StringOutput)
 }
 
-// 账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
+// The database to which the account's table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
 func (o LookupDbAccountResultOutput) HasTableColumnPrivilegeDbNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) []string { return v.HasTableColumnPrivilegeDbNames }).(pulumi.StringArrayOutput)
 }
 
-// 指定的数据库账号可以访问数据库的 IP 地址。
+// IP address from which the specified database account can access the database.
 func (o LookupDbAccountResultOutput) Host() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.Host }).(pulumi.StringOutput)
 }
@@ -140,12 +140,12 @@ func (o LookupDbAccountResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 实例 ID。
+// Instance ID.
 func (o LookupDbAccountResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 账号的表列权限设置。
+// Account table column permission settings.
 func (o LookupDbAccountResultOutput) TableColumnPrivileges() GetDbAccountTableColumnPrivilegeArrayOutput {
 	return o.ApplyT(func(v LookupDbAccountResult) []GetDbAccountTableColumnPrivilege { return v.TableColumnPrivileges }).(GetDbAccountTableColumnPrivilegeArrayOutput)
 }

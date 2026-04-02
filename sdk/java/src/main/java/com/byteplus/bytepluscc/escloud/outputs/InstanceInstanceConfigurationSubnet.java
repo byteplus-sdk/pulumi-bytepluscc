@@ -17,7 +17,7 @@ public final class InstanceInstanceConfigurationSubnet {
      */
     private @Nullable String subnetId;
     /**
-     * @return Subnet 名称。
+     * @return Subnet name
      * 
      */
     private @Nullable String subnetName;
@@ -31,7 +31,7 @@ public final class InstanceInstanceConfigurationSubnet {
         return Optional.ofNullable(this.subnetId);
     }
     /**
-     * @return Subnet 名称。
+     * @return Subnet name
      * 
      */
     public Optional<String> subnetName() {

@@ -13,19 +13,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
     public static class GetAllowList
     {
         /// <summary>
-        /// Data Source schema for Byteplus::RDSMsSQL::Allowlist
+        /// Data Source schema for Byteplus::RDSMsSQL::AllowList
         /// </summary>
         public static Task<GetAllowListResult> InvokeAsync(GetAllowListArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAllowListResult>("bytepluscc:rdsmssql/getAllowList:getAllowList", args ?? new GetAllowListArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Data Source schema for Byteplus::RDSMsSQL::Allowlist
+        /// Data Source schema for Byteplus::RDSMsSQL::AllowList
         /// </summary>
         public static Output<GetAllowListResult> Invoke(GetAllowListInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAllowListResult>("bytepluscc:rdsmssql/getAllowList:getAllowList", args ?? new GetAllowListInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Data Source schema for Byteplus::RDSMsSQL::Allowlist
+        /// Data Source schema for Byteplus::RDSMsSQL::AllowList
         /// </summary>
         public static Output<GetAllowListResult> Invoke(GetAllowListInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAllowListResult>("bytepluscc:rdsmssql/getAllowList:getAllowList", args ?? new GetAllowListInvokeArgs(), options.WithDefaults());
@@ -65,39 +65,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
     public sealed class GetAllowListResult
     {
         /// <summary>
-        /// IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+        /// IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
         /// </summary>
         public readonly string AllowList;
         /// <summary>
-        /// 白名单分类。
+        /// Allowlist category
         /// </summary>
         public readonly string AllowListCategory;
         /// <summary>
-        /// 白名单描述。
+        /// Allowlist description
         /// </summary>
         public readonly string AllowListDesc;
         /// <summary>
-        /// 白名单的id。
+        /// Allowlist ID
         /// </summary>
         public readonly string AllowListId;
         /// <summary>
-        /// AllowListIP数量。
+        /// Allowlist IP count
         /// </summary>
         public readonly int AllowListIpNum;
         /// <summary>
-        /// 白名单名称。
+        /// Allowlist name
         /// </summary>
         public readonly string AllowListName;
         /// <summary>
-        /// 白名单内的IP地址类型，当前仅支持IPv4。
+        /// IP address type in the allowlist. Only IPv4 is supported
         /// </summary>
         public readonly string AllowListType;
         /// <summary>
-        /// 绑定的实例数量。解绑实例的白名单时必传。
+        /// Number of bound instances. Required when unbinding an instance from the allowlist
         /// </summary>
         public readonly int AssociatedInstanceNum;
         /// <summary>
-        /// 绑定的实例列表。
+        /// Bound instance list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAllowListAssociatedInstanceResult> AssociatedInstances;
         /// <summary>
@@ -105,15 +105,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+        /// IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
         /// </summary>
         public readonly string UserAllowList;
 

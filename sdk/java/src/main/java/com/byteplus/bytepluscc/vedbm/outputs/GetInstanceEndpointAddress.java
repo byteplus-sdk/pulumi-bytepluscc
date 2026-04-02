@@ -12,86 +12,86 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceEndpointAddress {
     /**
-     * @return 解析方式。当前返回值只能为 false。
+     * @return Parsing method. The current return value can only be false.
      * 
      */
     private Boolean dnsVisibility;
     /**
-     * @return 实例内网访问域名。
+     * @return Instance private access domain name.
      * 
      */
     private String domain;
     /**
-     * @return 公网 ID。
+     * @return Public network ID.
      * 
      */
     private String eipId;
     /**
-     * @return IP 地址。
+     * @return IP address.
      * 
      */
     private String ipAddress;
     /**
-     * @return 网络类型：Private：私有网络 VPC。Public：公网访问。
+     * @return Network type: Private: private network VPC. Public: public access.
      * 
      */
     private String networkType;
     /**
-     * @return 实例内网访问端口。
+     * @return Instance private network access port.
      * 
      */
     private String port;
     /**
-     * @return 子网 ID。子网必须属于所选的可用区。
+     * @return Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     private String subnetId;
 
     private GetInstanceEndpointAddress() {}
     /**
-     * @return 解析方式。当前返回值只能为 false。
+     * @return Parsing method. The current return value can only be false.
      * 
      */
     public Boolean dnsVisibility() {
         return this.dnsVisibility;
     }
     /**
-     * @return 实例内网访问域名。
+     * @return Instance private access domain name.
      * 
      */
     public String domain() {
         return this.domain;
     }
     /**
-     * @return 公网 ID。
+     * @return Public network ID.
      * 
      */
     public String eipId() {
         return this.eipId;
     }
     /**
-     * @return IP 地址。
+     * @return IP address.
      * 
      */
     public String ipAddress() {
         return this.ipAddress;
     }
     /**
-     * @return 网络类型：Private：私有网络 VPC。Public：公网访问。
+     * @return Network type: Private: private network VPC. Public: public access.
      * 
      */
     public String networkType() {
         return this.networkType;
     }
     /**
-     * @return 实例内网访问端口。
+     * @return Instance private network access port.
      * 
      */
     public String port() {
         return this.port;
     }
     /**
-     * @return 子网 ID。子网必须属于所选的可用区。
+     * @return Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     public String subnetId() {

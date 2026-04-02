@@ -17,14 +17,14 @@ public final class ResolverRuleForwardIPArgs extends com.pulumi.resources.Resour
     public static final ResolverRuleForwardIPArgs Empty = new ResolverRuleForwardIPArgs();
 
     /**
-     * VPC 外部的 DNS 服务器的 IP 地址。
+     * IP address of the external DNS server for the VPC
      * 
      */
     @Import(name="ip")
     private @Nullable Output<String> ip;
 
     /**
-     * @return VPC 外部的 DNS 服务器的 IP 地址。
+     * @return IP address of the external DNS server for the VPC
      * 
      */
     public Optional<Output<String>> ip() {
@@ -32,14 +32,14 @@ public final class ResolverRuleForwardIPArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * VPC 外部的 DNS 服务器的端口。
+     * Port of the external DNS server for the VPC
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return VPC 外部的 DNS 服务器的端口。
+     * @return Port of the external DNS server for the VPC
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -72,7 +72,7 @@ public final class ResolverRuleForwardIPArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ip VPC 外部的 DNS 服务器的 IP 地址。
+         * @param ip IP address of the external DNS server for the VPC
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class ResolverRuleForwardIPArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ip VPC 外部的 DNS 服务器的 IP 地址。
+         * @param ip IP address of the external DNS server for the VPC
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class ResolverRuleForwardIPArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param port VPC 外部的 DNS 服务器的端口。
+         * @param port Port of the external DNS server for the VPC
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class ResolverRuleForwardIPArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param port VPC 外部的 DNS 服务器的端口。
+         * @param port Port of the external DNS server for the VPC
          * 
          * @return builder
          * 

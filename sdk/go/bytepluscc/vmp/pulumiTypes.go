@@ -14,25 +14,26 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type WorkspaceInstanceType struct {
-	// 最大活跃时序数。
+	// Maximum active time series count
 	ActiveSeries *int `pulumi:"activeSeries"`
-	// 可用区（az）数。
-	AvailabilityZoneReplicas *int `pulumi:"availabilityZoneReplicas"`
-	// 降采样策略。
+	// Number of availability zones (az)
+	AvailabilityZoneReplicas *int                                       `pulumi:"availabilityZoneReplicas"`
+	CalculatePriceParams     []WorkspaceInstanceTypeCalculatePriceParam `pulumi:"calculatePriceParams"`
+	// Downsampling policy
 	DownsamplingPeriods []string `pulumi:"downsamplingPeriods"`
-	// 最大每秒写入样本数。
+	// Maximum samples written per second
 	IngestSamplesPerSecond *int `pulumi:"ingestSamplesPerSecond"`
-	// 最大查询并发数。
+	// Maximum query concurrency
 	QueryConcurrency *int `pulumi:"queryConcurrency"`
-	// 最大查询 QPS。
+	// Maximum query QPS
 	QueryPerSecond *int `pulumi:"queryPerSecond"`
-	// 每个可用区（az）的数据副本数。
+	// Number of data replicas per availability zone (az)
 	ReplicasPerZone *int `pulumi:"replicasPerZone"`
-	// 最长数据保留时间。
+	// Maximum data retention period
 	RetentionPeriod *string `pulumi:"retentionPeriod"`
-	// 最大每秒扫描样本数。
+	// Maximum samples scanned per second
 	ScanSamplesPerSecond *int `pulumi:"scanSamplesPerSecond"`
-	// 最大每秒扫描时序数。
+	// Maximum time series scanned per second
 	ScanSeriesPerSecond *int `pulumi:"scanSeriesPerSecond"`
 }
 
@@ -48,25 +49,26 @@ type WorkspaceInstanceTypeInput interface {
 }
 
 type WorkspaceInstanceTypeArgs struct {
-	// 最大活跃时序数。
+	// Maximum active time series count
 	ActiveSeries pulumi.IntPtrInput `pulumi:"activeSeries"`
-	// 可用区（az）数。
-	AvailabilityZoneReplicas pulumi.IntPtrInput `pulumi:"availabilityZoneReplicas"`
-	// 降采样策略。
+	// Number of availability zones (az)
+	AvailabilityZoneReplicas pulumi.IntPtrInput                                 `pulumi:"availabilityZoneReplicas"`
+	CalculatePriceParams     WorkspaceInstanceTypeCalculatePriceParamArrayInput `pulumi:"calculatePriceParams"`
+	// Downsampling policy
 	DownsamplingPeriods pulumi.StringArrayInput `pulumi:"downsamplingPeriods"`
-	// 最大每秒写入样本数。
+	// Maximum samples written per second
 	IngestSamplesPerSecond pulumi.IntPtrInput `pulumi:"ingestSamplesPerSecond"`
-	// 最大查询并发数。
+	// Maximum query concurrency
 	QueryConcurrency pulumi.IntPtrInput `pulumi:"queryConcurrency"`
-	// 最大查询 QPS。
+	// Maximum query QPS
 	QueryPerSecond pulumi.IntPtrInput `pulumi:"queryPerSecond"`
-	// 每个可用区（az）的数据副本数。
+	// Number of data replicas per availability zone (az)
 	ReplicasPerZone pulumi.IntPtrInput `pulumi:"replicasPerZone"`
-	// 最长数据保留时间。
+	// Maximum data retention period
 	RetentionPeriod pulumi.StringPtrInput `pulumi:"retentionPeriod"`
-	// 最大每秒扫描样本数。
+	// Maximum samples scanned per second
 	ScanSamplesPerSecond pulumi.IntPtrInput `pulumi:"scanSamplesPerSecond"`
-	// 最大每秒扫描时序数。
+	// Maximum time series scanned per second
 	ScanSeriesPerSecond pulumi.IntPtrInput `pulumi:"scanSeriesPerSecond"`
 }
 
@@ -147,52 +149,58 @@ func (o WorkspaceInstanceTypeOutput) ToWorkspaceInstanceTypePtrOutputWithContext
 	}).(WorkspaceInstanceTypePtrOutput)
 }
 
-// 最大活跃时序数。
+// Maximum active time series count
 func (o WorkspaceInstanceTypeOutput) ActiveSeries() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceInstanceType) *int { return v.ActiveSeries }).(pulumi.IntPtrOutput)
 }
 
-// 可用区（az）数。
+// Number of availability zones (az)
 func (o WorkspaceInstanceTypeOutput) AvailabilityZoneReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceInstanceType) *int { return v.AvailabilityZoneReplicas }).(pulumi.IntPtrOutput)
 }
 
-// 降采样策略。
+func (o WorkspaceInstanceTypeOutput) CalculatePriceParams() WorkspaceInstanceTypeCalculatePriceParamArrayOutput {
+	return o.ApplyT(func(v WorkspaceInstanceType) []WorkspaceInstanceTypeCalculatePriceParam {
+		return v.CalculatePriceParams
+	}).(WorkspaceInstanceTypeCalculatePriceParamArrayOutput)
+}
+
+// Downsampling policy
 func (o WorkspaceInstanceTypeOutput) DownsamplingPeriods() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v WorkspaceInstanceType) []string { return v.DownsamplingPeriods }).(pulumi.StringArrayOutput)
 }
 
-// 最大每秒写入样本数。
+// Maximum samples written per second
 func (o WorkspaceInstanceTypeOutput) IngestSamplesPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceInstanceType) *int { return v.IngestSamplesPerSecond }).(pulumi.IntPtrOutput)
 }
 
-// 最大查询并发数。
+// Maximum query concurrency
 func (o WorkspaceInstanceTypeOutput) QueryConcurrency() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceInstanceType) *int { return v.QueryConcurrency }).(pulumi.IntPtrOutput)
 }
 
-// 最大查询 QPS。
+// Maximum query QPS
 func (o WorkspaceInstanceTypeOutput) QueryPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceInstanceType) *int { return v.QueryPerSecond }).(pulumi.IntPtrOutput)
 }
 
-// 每个可用区（az）的数据副本数。
+// Number of data replicas per availability zone (az)
 func (o WorkspaceInstanceTypeOutput) ReplicasPerZone() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceInstanceType) *int { return v.ReplicasPerZone }).(pulumi.IntPtrOutput)
 }
 
-// 最长数据保留时间。
+// Maximum data retention period
 func (o WorkspaceInstanceTypeOutput) RetentionPeriod() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceInstanceType) *string { return v.RetentionPeriod }).(pulumi.StringPtrOutput)
 }
 
-// 最大每秒扫描样本数。
+// Maximum samples scanned per second
 func (o WorkspaceInstanceTypeOutput) ScanSamplesPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceInstanceType) *int { return v.ScanSamplesPerSecond }).(pulumi.IntPtrOutput)
 }
 
-// 最大每秒扫描时序数。
+// Maximum time series scanned per second
 func (o WorkspaceInstanceTypeOutput) ScanSeriesPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceInstanceType) *int { return v.ScanSeriesPerSecond }).(pulumi.IntPtrOutput)
 }
@@ -221,7 +229,7 @@ func (o WorkspaceInstanceTypePtrOutput) Elem() WorkspaceInstanceTypeOutput {
 	}).(WorkspaceInstanceTypeOutput)
 }
 
-// 最大活跃时序数。
+// Maximum active time series count
 func (o WorkspaceInstanceTypePtrOutput) ActiveSeries() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceInstanceType) *int {
 		if v == nil {
@@ -231,7 +239,7 @@ func (o WorkspaceInstanceTypePtrOutput) ActiveSeries() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 可用区（az）数。
+// Number of availability zones (az)
 func (o WorkspaceInstanceTypePtrOutput) AvailabilityZoneReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceInstanceType) *int {
 		if v == nil {
@@ -241,7 +249,16 @@ func (o WorkspaceInstanceTypePtrOutput) AvailabilityZoneReplicas() pulumi.IntPtr
 	}).(pulumi.IntPtrOutput)
 }
 
-// 降采样策略。
+func (o WorkspaceInstanceTypePtrOutput) CalculatePriceParams() WorkspaceInstanceTypeCalculatePriceParamArrayOutput {
+	return o.ApplyT(func(v *WorkspaceInstanceType) []WorkspaceInstanceTypeCalculatePriceParam {
+		if v == nil {
+			return nil
+		}
+		return v.CalculatePriceParams
+	}).(WorkspaceInstanceTypeCalculatePriceParamArrayOutput)
+}
+
+// Downsampling policy
 func (o WorkspaceInstanceTypePtrOutput) DownsamplingPeriods() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *WorkspaceInstanceType) []string {
 		if v == nil {
@@ -251,7 +268,7 @@ func (o WorkspaceInstanceTypePtrOutput) DownsamplingPeriods() pulumi.StringArray
 	}).(pulumi.StringArrayOutput)
 }
 
-// 最大每秒写入样本数。
+// Maximum samples written per second
 func (o WorkspaceInstanceTypePtrOutput) IngestSamplesPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceInstanceType) *int {
 		if v == nil {
@@ -261,7 +278,7 @@ func (o WorkspaceInstanceTypePtrOutput) IngestSamplesPerSecond() pulumi.IntPtrOu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 最大查询并发数。
+// Maximum query concurrency
 func (o WorkspaceInstanceTypePtrOutput) QueryConcurrency() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceInstanceType) *int {
 		if v == nil {
@@ -271,7 +288,7 @@ func (o WorkspaceInstanceTypePtrOutput) QueryConcurrency() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 最大查询 QPS。
+// Maximum query QPS
 func (o WorkspaceInstanceTypePtrOutput) QueryPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceInstanceType) *int {
 		if v == nil {
@@ -281,7 +298,7 @@ func (o WorkspaceInstanceTypePtrOutput) QueryPerSecond() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 每个可用区（az）的数据副本数。
+// Number of data replicas per availability zone (az)
 func (o WorkspaceInstanceTypePtrOutput) ReplicasPerZone() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceInstanceType) *int {
 		if v == nil {
@@ -291,7 +308,7 @@ func (o WorkspaceInstanceTypePtrOutput) ReplicasPerZone() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 最长数据保留时间。
+// Maximum data retention period
 func (o WorkspaceInstanceTypePtrOutput) RetentionPeriod() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceInstanceType) *string {
 		if v == nil {
@@ -301,7 +318,7 @@ func (o WorkspaceInstanceTypePtrOutput) RetentionPeriod() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 最大每秒扫描样本数。
+// Maximum samples scanned per second
 func (o WorkspaceInstanceTypePtrOutput) ScanSamplesPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceInstanceType) *int {
 		if v == nil {
@@ -311,7 +328,7 @@ func (o WorkspaceInstanceTypePtrOutput) ScanSamplesPerSecond() pulumi.IntPtrOutp
 	}).(pulumi.IntPtrOutput)
 }
 
-// 最大每秒扫描时序数。
+// Maximum time series scanned per second
 func (o WorkspaceInstanceTypePtrOutput) ScanSeriesPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceInstanceType) *int {
 		if v == nil {
@@ -321,16 +338,240 @@ func (o WorkspaceInstanceTypePtrOutput) ScanSeriesPerSecond() pulumi.IntPtrOutpu
 	}).(pulumi.IntPtrOutput)
 }
 
+type WorkspaceInstanceTypeCalculatePriceParam struct {
+	CalChargeItemLists []WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList `pulumi:"calChargeItemLists"`
+	// Configuration item code.
+	ConfigurationCode *string `pulumi:"configurationCode"`
+	// Billing cycle.
+	Period *string `pulumi:"period"`
+}
+
+// WorkspaceInstanceTypeCalculatePriceParamInput is an input type that accepts WorkspaceInstanceTypeCalculatePriceParamArgs and WorkspaceInstanceTypeCalculatePriceParamOutput values.
+// You can construct a concrete instance of `WorkspaceInstanceTypeCalculatePriceParamInput` via:
+//
+//	WorkspaceInstanceTypeCalculatePriceParamArgs{...}
+type WorkspaceInstanceTypeCalculatePriceParamInput interface {
+	pulumi.Input
+
+	ToWorkspaceInstanceTypeCalculatePriceParamOutput() WorkspaceInstanceTypeCalculatePriceParamOutput
+	ToWorkspaceInstanceTypeCalculatePriceParamOutputWithContext(context.Context) WorkspaceInstanceTypeCalculatePriceParamOutput
+}
+
+type WorkspaceInstanceTypeCalculatePriceParamArgs struct {
+	CalChargeItemLists WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayInput `pulumi:"calChargeItemLists"`
+	// Configuration item code.
+	ConfigurationCode pulumi.StringPtrInput `pulumi:"configurationCode"`
+	// Billing cycle.
+	Period pulumi.StringPtrInput `pulumi:"period"`
+}
+
+func (WorkspaceInstanceTypeCalculatePriceParamArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceInstanceTypeCalculatePriceParam)(nil)).Elem()
+}
+
+func (i WorkspaceInstanceTypeCalculatePriceParamArgs) ToWorkspaceInstanceTypeCalculatePriceParamOutput() WorkspaceInstanceTypeCalculatePriceParamOutput {
+	return i.ToWorkspaceInstanceTypeCalculatePriceParamOutputWithContext(context.Background())
+}
+
+func (i WorkspaceInstanceTypeCalculatePriceParamArgs) ToWorkspaceInstanceTypeCalculatePriceParamOutputWithContext(ctx context.Context) WorkspaceInstanceTypeCalculatePriceParamOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceInstanceTypeCalculatePriceParamOutput)
+}
+
+// WorkspaceInstanceTypeCalculatePriceParamArrayInput is an input type that accepts WorkspaceInstanceTypeCalculatePriceParamArray and WorkspaceInstanceTypeCalculatePriceParamArrayOutput values.
+// You can construct a concrete instance of `WorkspaceInstanceTypeCalculatePriceParamArrayInput` via:
+//
+//	WorkspaceInstanceTypeCalculatePriceParamArray{ WorkspaceInstanceTypeCalculatePriceParamArgs{...} }
+type WorkspaceInstanceTypeCalculatePriceParamArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceInstanceTypeCalculatePriceParamArrayOutput() WorkspaceInstanceTypeCalculatePriceParamArrayOutput
+	ToWorkspaceInstanceTypeCalculatePriceParamArrayOutputWithContext(context.Context) WorkspaceInstanceTypeCalculatePriceParamArrayOutput
+}
+
+type WorkspaceInstanceTypeCalculatePriceParamArray []WorkspaceInstanceTypeCalculatePriceParamInput
+
+func (WorkspaceInstanceTypeCalculatePriceParamArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceInstanceTypeCalculatePriceParam)(nil)).Elem()
+}
+
+func (i WorkspaceInstanceTypeCalculatePriceParamArray) ToWorkspaceInstanceTypeCalculatePriceParamArrayOutput() WorkspaceInstanceTypeCalculatePriceParamArrayOutput {
+	return i.ToWorkspaceInstanceTypeCalculatePriceParamArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceInstanceTypeCalculatePriceParamArray) ToWorkspaceInstanceTypeCalculatePriceParamArrayOutputWithContext(ctx context.Context) WorkspaceInstanceTypeCalculatePriceParamArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceInstanceTypeCalculatePriceParamArrayOutput)
+}
+
+type WorkspaceInstanceTypeCalculatePriceParamOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceInstanceTypeCalculatePriceParamOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceInstanceTypeCalculatePriceParam)(nil)).Elem()
+}
+
+func (o WorkspaceInstanceTypeCalculatePriceParamOutput) ToWorkspaceInstanceTypeCalculatePriceParamOutput() WorkspaceInstanceTypeCalculatePriceParamOutput {
+	return o
+}
+
+func (o WorkspaceInstanceTypeCalculatePriceParamOutput) ToWorkspaceInstanceTypeCalculatePriceParamOutputWithContext(ctx context.Context) WorkspaceInstanceTypeCalculatePriceParamOutput {
+	return o
+}
+
+func (o WorkspaceInstanceTypeCalculatePriceParamOutput) CalChargeItemLists() WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput {
+	return o.ApplyT(func(v WorkspaceInstanceTypeCalculatePriceParam) []WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList {
+		return v.CalChargeItemLists
+	}).(WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput)
+}
+
+// Configuration item code.
+func (o WorkspaceInstanceTypeCalculatePriceParamOutput) ConfigurationCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceInstanceTypeCalculatePriceParam) *string { return v.ConfigurationCode }).(pulumi.StringPtrOutput)
+}
+
+// Billing cycle.
+func (o WorkspaceInstanceTypeCalculatePriceParamOutput) Period() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceInstanceTypeCalculatePriceParam) *string { return v.Period }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceInstanceTypeCalculatePriceParamArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceInstanceTypeCalculatePriceParamArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceInstanceTypeCalculatePriceParam)(nil)).Elem()
+}
+
+func (o WorkspaceInstanceTypeCalculatePriceParamArrayOutput) ToWorkspaceInstanceTypeCalculatePriceParamArrayOutput() WorkspaceInstanceTypeCalculatePriceParamArrayOutput {
+	return o
+}
+
+func (o WorkspaceInstanceTypeCalculatePriceParamArrayOutput) ToWorkspaceInstanceTypeCalculatePriceParamArrayOutputWithContext(ctx context.Context) WorkspaceInstanceTypeCalculatePriceParamArrayOutput {
+	return o
+}
+
+func (o WorkspaceInstanceTypeCalculatePriceParamArrayOutput) Index(i pulumi.IntInput) WorkspaceInstanceTypeCalculatePriceParamOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceInstanceTypeCalculatePriceParam {
+		return vs[0].([]WorkspaceInstanceTypeCalculatePriceParam)[vs[1].(int)]
+	}).(WorkspaceInstanceTypeCalculatePriceParamOutput)
+}
+
+type WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList struct {
+	// Billing item attribute value.
+	AttrValue *string `pulumi:"attrValue"`
+	// Billing item code.
+	ChargeItemCode *string `pulumi:"chargeItemCode"`
+}
+
+// WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListInput is an input type that accepts WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs and WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput values.
+// You can construct a concrete instance of `WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListInput` via:
+//
+//	WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs{...}
+type WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListInput interface {
+	pulumi.Input
+
+	ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput() WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput
+	ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutputWithContext(context.Context) WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput
+}
+
+type WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs struct {
+	// Billing item attribute value.
+	AttrValue pulumi.StringPtrInput `pulumi:"attrValue"`
+	// Billing item code.
+	ChargeItemCode pulumi.StringPtrInput `pulumi:"chargeItemCode"`
+}
+
+func (WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList)(nil)).Elem()
+}
+
+func (i WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs) ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput() WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput {
+	return i.ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutputWithContext(context.Background())
+}
+
+func (i WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs) ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutputWithContext(ctx context.Context) WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput)
+}
+
+// WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayInput is an input type that accepts WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray and WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput values.
+// You can construct a concrete instance of `WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayInput` via:
+//
+//	WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray{ WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs{...} }
+type WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput() WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput
+	ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutputWithContext(context.Context) WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput
+}
+
+type WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray []WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListInput
+
+func (WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList)(nil)).Elem()
+}
+
+func (i WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray) ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput() WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput {
+	return i.ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray) ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutputWithContext(ctx context.Context) WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput)
+}
+
+type WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList)(nil)).Elem()
+}
+
+func (o WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput) ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput() WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput {
+	return o
+}
+
+func (o WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput) ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutputWithContext(ctx context.Context) WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput {
+	return o
+}
+
+// Billing item attribute value.
+func (o WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput) AttrValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList) *string { return v.AttrValue }).(pulumi.StringPtrOutput)
+}
+
+// Billing item code.
+func (o WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput) ChargeItemCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList) *string { return v.ChargeItemCode }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList)(nil)).Elem()
+}
+
+func (o WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput) ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput() WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput {
+	return o
+}
+
+func (o WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput) ToWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutputWithContext(ctx context.Context) WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput {
+	return o
+}
+
+func (o WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput) Index(i pulumi.IntInput) WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList {
+		return vs[0].([]WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList)[vs[1].(int)]
+	}).(WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput)
+}
+
 type WorkspaceQuota struct {
-	// 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+	// Maximum active time series count. Integer, default range is 1–50000000
 	ActiveSeries *int `pulumi:"activeSeries"`
-	// 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+	// Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
 	IngestSamplesPerSecond *int `pulumi:"ingestSamplesPerSecond"`
-	// 最大查询 QPS。整数形式，默认取值范围为 1～500。
+	// Workspace public Query bandwidth (Mbps).
+	PublicQueryBandwidth *int `pulumi:"publicQueryBandwidth"`
+	// Workspace public RemoteWrite bandwidth (Mbps).
+	PublicWriteBandwidth *int `pulumi:"publicWriteBandwidth"`
+	// Maximum query QPS. Integer, default range is 1–500
 	QueryPerSecond *int `pulumi:"queryPerSecond"`
-	// 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+	// Maximum samples scanned per second. Integer, default range is 1–1000000000
 	ScanSamplesPerSecond *int `pulumi:"scanSamplesPerSecond"`
-	// 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+	// Maximum time series scanned per second. Integer, default range is 1–200000
 	ScanSeriesPerSecond *int `pulumi:"scanSeriesPerSecond"`
 }
 
@@ -346,15 +587,19 @@ type WorkspaceQuotaInput interface {
 }
 
 type WorkspaceQuotaArgs struct {
-	// 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+	// Maximum active time series count. Integer, default range is 1–50000000
 	ActiveSeries pulumi.IntPtrInput `pulumi:"activeSeries"`
-	// 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+	// Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
 	IngestSamplesPerSecond pulumi.IntPtrInput `pulumi:"ingestSamplesPerSecond"`
-	// 最大查询 QPS。整数形式，默认取值范围为 1～500。
+	// Workspace public Query bandwidth (Mbps).
+	PublicQueryBandwidth pulumi.IntPtrInput `pulumi:"publicQueryBandwidth"`
+	// Workspace public RemoteWrite bandwidth (Mbps).
+	PublicWriteBandwidth pulumi.IntPtrInput `pulumi:"publicWriteBandwidth"`
+	// Maximum query QPS. Integer, default range is 1–500
 	QueryPerSecond pulumi.IntPtrInput `pulumi:"queryPerSecond"`
-	// 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+	// Maximum samples scanned per second. Integer, default range is 1–1000000000
 	ScanSamplesPerSecond pulumi.IntPtrInput `pulumi:"scanSamplesPerSecond"`
-	// 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+	// Maximum time series scanned per second. Integer, default range is 1–200000
 	ScanSeriesPerSecond pulumi.IntPtrInput `pulumi:"scanSeriesPerSecond"`
 }
 
@@ -435,27 +680,37 @@ func (o WorkspaceQuotaOutput) ToWorkspaceQuotaPtrOutputWithContext(ctx context.C
 	}).(WorkspaceQuotaPtrOutput)
 }
 
-// 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+// Maximum active time series count. Integer, default range is 1–50000000
 func (o WorkspaceQuotaOutput) ActiveSeries() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceQuota) *int { return v.ActiveSeries }).(pulumi.IntPtrOutput)
 }
 
-// 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+// Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
 func (o WorkspaceQuotaOutput) IngestSamplesPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceQuota) *int { return v.IngestSamplesPerSecond }).(pulumi.IntPtrOutput)
 }
 
-// 最大查询 QPS。整数形式，默认取值范围为 1～500。
+// Workspace public Query bandwidth (Mbps).
+func (o WorkspaceQuotaOutput) PublicQueryBandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceQuota) *int { return v.PublicQueryBandwidth }).(pulumi.IntPtrOutput)
+}
+
+// Workspace public RemoteWrite bandwidth (Mbps).
+func (o WorkspaceQuotaOutput) PublicWriteBandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceQuota) *int { return v.PublicWriteBandwidth }).(pulumi.IntPtrOutput)
+}
+
+// Maximum query QPS. Integer, default range is 1–500
 func (o WorkspaceQuotaOutput) QueryPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceQuota) *int { return v.QueryPerSecond }).(pulumi.IntPtrOutput)
 }
 
-// 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+// Maximum samples scanned per second. Integer, default range is 1–1000000000
 func (o WorkspaceQuotaOutput) ScanSamplesPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceQuota) *int { return v.ScanSamplesPerSecond }).(pulumi.IntPtrOutput)
 }
 
-// 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+// Maximum time series scanned per second. Integer, default range is 1–200000
 func (o WorkspaceQuotaOutput) ScanSeriesPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceQuota) *int { return v.ScanSeriesPerSecond }).(pulumi.IntPtrOutput)
 }
@@ -484,7 +739,7 @@ func (o WorkspaceQuotaPtrOutput) Elem() WorkspaceQuotaOutput {
 	}).(WorkspaceQuotaOutput)
 }
 
-// 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+// Maximum active time series count. Integer, default range is 1–50000000
 func (o WorkspaceQuotaPtrOutput) ActiveSeries() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceQuota) *int {
 		if v == nil {
@@ -494,7 +749,7 @@ func (o WorkspaceQuotaPtrOutput) ActiveSeries() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+// Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
 func (o WorkspaceQuotaPtrOutput) IngestSamplesPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceQuota) *int {
 		if v == nil {
@@ -504,7 +759,27 @@ func (o WorkspaceQuotaPtrOutput) IngestSamplesPerSecond() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 最大查询 QPS。整数形式，默认取值范围为 1～500。
+// Workspace public Query bandwidth (Mbps).
+func (o WorkspaceQuotaPtrOutput) PublicQueryBandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceQuota) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PublicQueryBandwidth
+	}).(pulumi.IntPtrOutput)
+}
+
+// Workspace public RemoteWrite bandwidth (Mbps).
+func (o WorkspaceQuotaPtrOutput) PublicWriteBandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceQuota) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PublicWriteBandwidth
+	}).(pulumi.IntPtrOutput)
+}
+
+// Maximum query QPS. Integer, default range is 1–500
 func (o WorkspaceQuotaPtrOutput) QueryPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceQuota) *int {
 		if v == nil {
@@ -514,7 +789,7 @@ func (o WorkspaceQuotaPtrOutput) QueryPerSecond() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+// Maximum samples scanned per second. Integer, default range is 1–1000000000
 func (o WorkspaceQuotaPtrOutput) ScanSamplesPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceQuota) *int {
 		if v == nil {
@@ -524,7 +799,7 @@ func (o WorkspaceQuotaPtrOutput) ScanSamplesPerSecond() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+// Maximum time series scanned per second. Integer, default range is 1–200000
 func (o WorkspaceQuotaPtrOutput) ScanSeriesPerSecond() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceQuota) *int {
 		if v == nil {
@@ -535,9 +810,9 @@ func (o WorkspaceQuotaPtrOutput) ScanSeriesPerSecond() pulumi.IntPtrOutput {
 }
 
 type WorkspaceTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -553,9 +828,9 @@ type WorkspaceTagInput interface {
 }
 
 type WorkspaceTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -610,12 +885,12 @@ func (o WorkspaceTagOutput) ToWorkspaceTagOutputWithContext(ctx context.Context)
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o WorkspaceTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o WorkspaceTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -641,9 +916,9 @@ func (o WorkspaceTagArrayOutput) Index(i pulumi.IntInput) WorkspaceTagOutput {
 }
 
 type WorkspaceUsage struct {
-	// 活跃时序数。
+	// Active time series count
 	ActiveSeries *int `pulumi:"activeSeries"`
-	// 每秒写入样本数。
+	// Samples written per second
 	IngestedSamplesPerSecond *float64 `pulumi:"ingestedSamplesPerSecond"`
 }
 
@@ -659,9 +934,9 @@ type WorkspaceUsageInput interface {
 }
 
 type WorkspaceUsageArgs struct {
-	// 活跃时序数。
+	// Active time series count
 	ActiveSeries pulumi.IntPtrInput `pulumi:"activeSeries"`
-	// 每秒写入样本数。
+	// Samples written per second
 	IngestedSamplesPerSecond pulumi.Float64PtrInput `pulumi:"ingestedSamplesPerSecond"`
 }
 
@@ -742,12 +1017,12 @@ func (o WorkspaceUsageOutput) ToWorkspaceUsagePtrOutputWithContext(ctx context.C
 	}).(WorkspaceUsagePtrOutput)
 }
 
-// 活跃时序数。
+// Active time series count
 func (o WorkspaceUsageOutput) ActiveSeries() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceUsage) *int { return v.ActiveSeries }).(pulumi.IntPtrOutput)
 }
 
-// 每秒写入样本数。
+// Samples written per second
 func (o WorkspaceUsageOutput) IngestedSamplesPerSecond() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v WorkspaceUsage) *float64 { return v.IngestedSamplesPerSecond }).(pulumi.Float64PtrOutput)
 }
@@ -776,7 +1051,7 @@ func (o WorkspaceUsagePtrOutput) Elem() WorkspaceUsageOutput {
 	}).(WorkspaceUsageOutput)
 }
 
-// 活跃时序数。
+// Active time series count
 func (o WorkspaceUsagePtrOutput) ActiveSeries() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceUsage) *int {
 		if v == nil {
@@ -786,7 +1061,7 @@ func (o WorkspaceUsagePtrOutput) ActiveSeries() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 每秒写入样本数。
+// Samples written per second
 func (o WorkspaceUsagePtrOutput) IngestedSamplesPerSecond() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *WorkspaceUsage) *float64 {
 		if v == nil {
@@ -797,25 +1072,27 @@ func (o WorkspaceUsagePtrOutput) IngestedSamplesPerSecond() pulumi.Float64PtrOut
 }
 
 type GetWorkspaceInstanceType struct {
-	// 最大活跃时序数。
+	// Maximum active time series count
 	ActiveSeries int `pulumi:"activeSeries"`
-	// 可用区（az）数。
+	// Number of availability zones (az)
 	AvailabilityZoneReplicas int `pulumi:"availabilityZoneReplicas"`
-	// 降采样策略。
+	// Billing parameter list.
+	CalculatePriceParams []GetWorkspaceInstanceTypeCalculatePriceParam `pulumi:"calculatePriceParams"`
+	// Downsampling policy
 	DownsamplingPeriods []string `pulumi:"downsamplingPeriods"`
-	// 最大每秒写入样本数。
+	// Maximum samples written per second
 	IngestSamplesPerSecond int `pulumi:"ingestSamplesPerSecond"`
-	// 最大查询并发数。
+	// Maximum query concurrency
 	QueryConcurrency int `pulumi:"queryConcurrency"`
-	// 最大查询 QPS。
+	// Maximum query QPS
 	QueryPerSecond int `pulumi:"queryPerSecond"`
-	// 每个可用区（az）的数据副本数。
+	// Number of data replicas per availability zone (az)
 	ReplicasPerZone int `pulumi:"replicasPerZone"`
-	// 最长数据保留时间。
+	// Maximum data retention period
 	RetentionPeriod string `pulumi:"retentionPeriod"`
-	// 最大每秒扫描样本数。
+	// Maximum samples scanned per second
 	ScanSamplesPerSecond int `pulumi:"scanSamplesPerSecond"`
-	// 最大每秒扫描时序数。
+	// Maximum time series scanned per second
 	ScanSeriesPerSecond int `pulumi:"scanSeriesPerSecond"`
 }
 
@@ -831,25 +1108,27 @@ type GetWorkspaceInstanceTypeInput interface {
 }
 
 type GetWorkspaceInstanceTypeArgs struct {
-	// 最大活跃时序数。
+	// Maximum active time series count
 	ActiveSeries pulumi.IntInput `pulumi:"activeSeries"`
-	// 可用区（az）数。
+	// Number of availability zones (az)
 	AvailabilityZoneReplicas pulumi.IntInput `pulumi:"availabilityZoneReplicas"`
-	// 降采样策略。
+	// Billing parameter list.
+	CalculatePriceParams GetWorkspaceInstanceTypeCalculatePriceParamArrayInput `pulumi:"calculatePriceParams"`
+	// Downsampling policy
 	DownsamplingPeriods pulumi.StringArrayInput `pulumi:"downsamplingPeriods"`
-	// 最大每秒写入样本数。
+	// Maximum samples written per second
 	IngestSamplesPerSecond pulumi.IntInput `pulumi:"ingestSamplesPerSecond"`
-	// 最大查询并发数。
+	// Maximum query concurrency
 	QueryConcurrency pulumi.IntInput `pulumi:"queryConcurrency"`
-	// 最大查询 QPS。
+	// Maximum query QPS
 	QueryPerSecond pulumi.IntInput `pulumi:"queryPerSecond"`
-	// 每个可用区（az）的数据副本数。
+	// Number of data replicas per availability zone (az)
 	ReplicasPerZone pulumi.IntInput `pulumi:"replicasPerZone"`
-	// 最长数据保留时间。
+	// Maximum data retention period
 	RetentionPeriod pulumi.StringInput `pulumi:"retentionPeriod"`
-	// 最大每秒扫描样本数。
+	// Maximum samples scanned per second
 	ScanSamplesPerSecond pulumi.IntInput `pulumi:"scanSamplesPerSecond"`
-	// 最大每秒扫描时序数。
+	// Maximum time series scanned per second
 	ScanSeriesPerSecond pulumi.IntInput `pulumi:"scanSeriesPerSecond"`
 }
 
@@ -879,66 +1158,300 @@ func (o GetWorkspaceInstanceTypeOutput) ToGetWorkspaceInstanceTypeOutputWithCont
 	return o
 }
 
-// 最大活跃时序数。
+// Maximum active time series count
 func (o GetWorkspaceInstanceTypeOutput) ActiveSeries() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceInstanceType) int { return v.ActiveSeries }).(pulumi.IntOutput)
 }
 
-// 可用区（az）数。
+// Number of availability zones (az)
 func (o GetWorkspaceInstanceTypeOutput) AvailabilityZoneReplicas() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceInstanceType) int { return v.AvailabilityZoneReplicas }).(pulumi.IntOutput)
 }
 
-// 降采样策略。
+// Billing parameter list.
+func (o GetWorkspaceInstanceTypeOutput) CalculatePriceParams() GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceInstanceType) []GetWorkspaceInstanceTypeCalculatePriceParam {
+		return v.CalculatePriceParams
+	}).(GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput)
+}
+
+// Downsampling policy
 func (o GetWorkspaceInstanceTypeOutput) DownsamplingPeriods() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetWorkspaceInstanceType) []string { return v.DownsamplingPeriods }).(pulumi.StringArrayOutput)
 }
 
-// 最大每秒写入样本数。
+// Maximum samples written per second
 func (o GetWorkspaceInstanceTypeOutput) IngestSamplesPerSecond() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceInstanceType) int { return v.IngestSamplesPerSecond }).(pulumi.IntOutput)
 }
 
-// 最大查询并发数。
+// Maximum query concurrency
 func (o GetWorkspaceInstanceTypeOutput) QueryConcurrency() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceInstanceType) int { return v.QueryConcurrency }).(pulumi.IntOutput)
 }
 
-// 最大查询 QPS。
+// Maximum query QPS
 func (o GetWorkspaceInstanceTypeOutput) QueryPerSecond() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceInstanceType) int { return v.QueryPerSecond }).(pulumi.IntOutput)
 }
 
-// 每个可用区（az）的数据副本数。
+// Number of data replicas per availability zone (az)
 func (o GetWorkspaceInstanceTypeOutput) ReplicasPerZone() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceInstanceType) int { return v.ReplicasPerZone }).(pulumi.IntOutput)
 }
 
-// 最长数据保留时间。
+// Maximum data retention period
 func (o GetWorkspaceInstanceTypeOutput) RetentionPeriod() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWorkspaceInstanceType) string { return v.RetentionPeriod }).(pulumi.StringOutput)
 }
 
-// 最大每秒扫描样本数。
+// Maximum samples scanned per second
 func (o GetWorkspaceInstanceTypeOutput) ScanSamplesPerSecond() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceInstanceType) int { return v.ScanSamplesPerSecond }).(pulumi.IntOutput)
 }
 
-// 最大每秒扫描时序数。
+// Maximum time series scanned per second
 func (o GetWorkspaceInstanceTypeOutput) ScanSeriesPerSecond() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceInstanceType) int { return v.ScanSeriesPerSecond }).(pulumi.IntOutput)
 }
 
+type GetWorkspaceInstanceTypeCalculatePriceParam struct {
+	// Billing item list.
+	CalChargeItemLists []GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemList `pulumi:"calChargeItemLists"`
+	// Configuration item code.
+	ConfigurationCode string `pulumi:"configurationCode"`
+	// Billing cycle.
+	Period string `pulumi:"period"`
+}
+
+// GetWorkspaceInstanceTypeCalculatePriceParamInput is an input type that accepts GetWorkspaceInstanceTypeCalculatePriceParamArgs and GetWorkspaceInstanceTypeCalculatePriceParamOutput values.
+// You can construct a concrete instance of `GetWorkspaceInstanceTypeCalculatePriceParamInput` via:
+//
+//	GetWorkspaceInstanceTypeCalculatePriceParamArgs{...}
+type GetWorkspaceInstanceTypeCalculatePriceParamInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceInstanceTypeCalculatePriceParamOutput() GetWorkspaceInstanceTypeCalculatePriceParamOutput
+	ToGetWorkspaceInstanceTypeCalculatePriceParamOutputWithContext(context.Context) GetWorkspaceInstanceTypeCalculatePriceParamOutput
+}
+
+type GetWorkspaceInstanceTypeCalculatePriceParamArgs struct {
+	// Billing item list.
+	CalChargeItemLists GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayInput `pulumi:"calChargeItemLists"`
+	// Configuration item code.
+	ConfigurationCode pulumi.StringInput `pulumi:"configurationCode"`
+	// Billing cycle.
+	Period pulumi.StringInput `pulumi:"period"`
+}
+
+func (GetWorkspaceInstanceTypeCalculatePriceParamArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceInstanceTypeCalculatePriceParam)(nil)).Elem()
+}
+
+func (i GetWorkspaceInstanceTypeCalculatePriceParamArgs) ToGetWorkspaceInstanceTypeCalculatePriceParamOutput() GetWorkspaceInstanceTypeCalculatePriceParamOutput {
+	return i.ToGetWorkspaceInstanceTypeCalculatePriceParamOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceInstanceTypeCalculatePriceParamArgs) ToGetWorkspaceInstanceTypeCalculatePriceParamOutputWithContext(ctx context.Context) GetWorkspaceInstanceTypeCalculatePriceParamOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceInstanceTypeCalculatePriceParamOutput)
+}
+
+// GetWorkspaceInstanceTypeCalculatePriceParamArrayInput is an input type that accepts GetWorkspaceInstanceTypeCalculatePriceParamArray and GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceInstanceTypeCalculatePriceParamArrayInput` via:
+//
+//	GetWorkspaceInstanceTypeCalculatePriceParamArray{ GetWorkspaceInstanceTypeCalculatePriceParamArgs{...} }
+type GetWorkspaceInstanceTypeCalculatePriceParamArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceInstanceTypeCalculatePriceParamArrayOutput() GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput
+	ToGetWorkspaceInstanceTypeCalculatePriceParamArrayOutputWithContext(context.Context) GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput
+}
+
+type GetWorkspaceInstanceTypeCalculatePriceParamArray []GetWorkspaceInstanceTypeCalculatePriceParamInput
+
+func (GetWorkspaceInstanceTypeCalculatePriceParamArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceInstanceTypeCalculatePriceParam)(nil)).Elem()
+}
+
+func (i GetWorkspaceInstanceTypeCalculatePriceParamArray) ToGetWorkspaceInstanceTypeCalculatePriceParamArrayOutput() GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput {
+	return i.ToGetWorkspaceInstanceTypeCalculatePriceParamArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceInstanceTypeCalculatePriceParamArray) ToGetWorkspaceInstanceTypeCalculatePriceParamArrayOutputWithContext(ctx context.Context) GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput)
+}
+
+type GetWorkspaceInstanceTypeCalculatePriceParamOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceInstanceTypeCalculatePriceParamOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceInstanceTypeCalculatePriceParam)(nil)).Elem()
+}
+
+func (o GetWorkspaceInstanceTypeCalculatePriceParamOutput) ToGetWorkspaceInstanceTypeCalculatePriceParamOutput() GetWorkspaceInstanceTypeCalculatePriceParamOutput {
+	return o
+}
+
+func (o GetWorkspaceInstanceTypeCalculatePriceParamOutput) ToGetWorkspaceInstanceTypeCalculatePriceParamOutputWithContext(ctx context.Context) GetWorkspaceInstanceTypeCalculatePriceParamOutput {
+	return o
+}
+
+// Billing item list.
+func (o GetWorkspaceInstanceTypeCalculatePriceParamOutput) CalChargeItemLists() GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceInstanceTypeCalculatePriceParam) []GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemList {
+		return v.CalChargeItemLists
+	}).(GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput)
+}
+
+// Configuration item code.
+func (o GetWorkspaceInstanceTypeCalculatePriceParamOutput) ConfigurationCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceInstanceTypeCalculatePriceParam) string { return v.ConfigurationCode }).(pulumi.StringOutput)
+}
+
+// Billing cycle.
+func (o GetWorkspaceInstanceTypeCalculatePriceParamOutput) Period() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceInstanceTypeCalculatePriceParam) string { return v.Period }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceInstanceTypeCalculatePriceParam)(nil)).Elem()
+}
+
+func (o GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput) ToGetWorkspaceInstanceTypeCalculatePriceParamArrayOutput() GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput) ToGetWorkspaceInstanceTypeCalculatePriceParamArrayOutputWithContext(ctx context.Context) GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput) Index(i pulumi.IntInput) GetWorkspaceInstanceTypeCalculatePriceParamOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceInstanceTypeCalculatePriceParam {
+		return vs[0].([]GetWorkspaceInstanceTypeCalculatePriceParam)[vs[1].(int)]
+	}).(GetWorkspaceInstanceTypeCalculatePriceParamOutput)
+}
+
+type GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemList struct {
+	// Billing item attribute value.
+	AttrValue string `pulumi:"attrValue"`
+	// Billing item code.
+	ChargeItemCode string `pulumi:"chargeItemCode"`
+}
+
+// GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListInput is an input type that accepts GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs and GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput values.
+// You can construct a concrete instance of `GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListInput` via:
+//
+//	GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs{...}
+type GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput() GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput
+	ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutputWithContext(context.Context) GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput
+}
+
+type GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs struct {
+	// Billing item attribute value.
+	AttrValue pulumi.StringInput `pulumi:"attrValue"`
+	// Billing item code.
+	ChargeItemCode pulumi.StringInput `pulumi:"chargeItemCode"`
+}
+
+func (GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemList)(nil)).Elem()
+}
+
+func (i GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs) ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput() GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput {
+	return i.ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs) ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutputWithContext(ctx context.Context) GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput)
+}
+
+// GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayInput is an input type that accepts GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray and GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayInput` via:
+//
+//	GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray{ GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs{...} }
+type GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput() GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput
+	ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutputWithContext(context.Context) GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput
+}
+
+type GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray []GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListInput
+
+func (GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemList)(nil)).Elem()
+}
+
+func (i GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray) ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput() GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput {
+	return i.ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray) ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutputWithContext(ctx context.Context) GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput)
+}
+
+type GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemList)(nil)).Elem()
+}
+
+func (o GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput) ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput() GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput {
+	return o
+}
+
+func (o GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput) ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutputWithContext(ctx context.Context) GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput {
+	return o
+}
+
+// Billing item attribute value.
+func (o GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput) AttrValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemList) string { return v.AttrValue }).(pulumi.StringOutput)
+}
+
+// Billing item code.
+func (o GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput) ChargeItemCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemList) string { return v.ChargeItemCode }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemList)(nil)).Elem()
+}
+
+func (o GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput) ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput() GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput) ToGetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutputWithContext(ctx context.Context) GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemList {
+		return vs[0].([]GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemList)[vs[1].(int)]
+	}).(GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput)
+}
+
 type GetWorkspaceQuota struct {
-	// 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+	// Maximum active time series count. Integer, default range is 1–50000000
 	ActiveSeries int `pulumi:"activeSeries"`
-	// 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+	// Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
 	IngestSamplesPerSecond int `pulumi:"ingestSamplesPerSecond"`
-	// 最大查询 QPS。整数形式，默认取值范围为 1～500。
+	// Workspace public Query bandwidth (Mbps).
+	PublicQueryBandwidth int `pulumi:"publicQueryBandwidth"`
+	// Workspace public RemoteWrite bandwidth (Mbps).
+	PublicWriteBandwidth int `pulumi:"publicWriteBandwidth"`
+	// Maximum query QPS. Integer, default range is 1–500
 	QueryPerSecond int `pulumi:"queryPerSecond"`
-	// 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+	// Maximum samples scanned per second. Integer, default range is 1–1000000000
 	ScanSamplesPerSecond int `pulumi:"scanSamplesPerSecond"`
-	// 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+	// Maximum time series scanned per second. Integer, default range is 1–200000
 	ScanSeriesPerSecond int `pulumi:"scanSeriesPerSecond"`
 }
 
@@ -954,15 +1467,19 @@ type GetWorkspaceQuotaInput interface {
 }
 
 type GetWorkspaceQuotaArgs struct {
-	// 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+	// Maximum active time series count. Integer, default range is 1–50000000
 	ActiveSeries pulumi.IntInput `pulumi:"activeSeries"`
-	// 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+	// Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
 	IngestSamplesPerSecond pulumi.IntInput `pulumi:"ingestSamplesPerSecond"`
-	// 最大查询 QPS。整数形式，默认取值范围为 1～500。
+	// Workspace public Query bandwidth (Mbps).
+	PublicQueryBandwidth pulumi.IntInput `pulumi:"publicQueryBandwidth"`
+	// Workspace public RemoteWrite bandwidth (Mbps).
+	PublicWriteBandwidth pulumi.IntInput `pulumi:"publicWriteBandwidth"`
+	// Maximum query QPS. Integer, default range is 1–500
 	QueryPerSecond pulumi.IntInput `pulumi:"queryPerSecond"`
-	// 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+	// Maximum samples scanned per second. Integer, default range is 1–1000000000
 	ScanSamplesPerSecond pulumi.IntInput `pulumi:"scanSamplesPerSecond"`
-	// 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+	// Maximum time series scanned per second. Integer, default range is 1–200000
 	ScanSeriesPerSecond pulumi.IntInput `pulumi:"scanSeriesPerSecond"`
 }
 
@@ -992,35 +1509,45 @@ func (o GetWorkspaceQuotaOutput) ToGetWorkspaceQuotaOutputWithContext(ctx contex
 	return o
 }
 
-// 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+// Maximum active time series count. Integer, default range is 1–50000000
 func (o GetWorkspaceQuotaOutput) ActiveSeries() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceQuota) int { return v.ActiveSeries }).(pulumi.IntOutput)
 }
 
-// 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+// Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
 func (o GetWorkspaceQuotaOutput) IngestSamplesPerSecond() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceQuota) int { return v.IngestSamplesPerSecond }).(pulumi.IntOutput)
 }
 
-// 最大查询 QPS。整数形式，默认取值范围为 1～500。
+// Workspace public Query bandwidth (Mbps).
+func (o GetWorkspaceQuotaOutput) PublicQueryBandwidth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceQuota) int { return v.PublicQueryBandwidth }).(pulumi.IntOutput)
+}
+
+// Workspace public RemoteWrite bandwidth (Mbps).
+func (o GetWorkspaceQuotaOutput) PublicWriteBandwidth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceQuota) int { return v.PublicWriteBandwidth }).(pulumi.IntOutput)
+}
+
+// Maximum query QPS. Integer, default range is 1–500
 func (o GetWorkspaceQuotaOutput) QueryPerSecond() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceQuota) int { return v.QueryPerSecond }).(pulumi.IntOutput)
 }
 
-// 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+// Maximum samples scanned per second. Integer, default range is 1–1000000000
 func (o GetWorkspaceQuotaOutput) ScanSamplesPerSecond() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceQuota) int { return v.ScanSamplesPerSecond }).(pulumi.IntOutput)
 }
 
-// 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+// Maximum time series scanned per second. Integer, default range is 1–200000
 func (o GetWorkspaceQuotaOutput) ScanSeriesPerSecond() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceQuota) int { return v.ScanSeriesPerSecond }).(pulumi.IntOutput)
 }
 
 type GetWorkspaceTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -1036,9 +1563,9 @@ type GetWorkspaceTagInput interface {
 }
 
 type GetWorkspaceTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1093,12 +1620,12 @@ func (o GetWorkspaceTagOutput) ToGetWorkspaceTagOutputWithContext(ctx context.Co
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetWorkspaceTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWorkspaceTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetWorkspaceTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWorkspaceTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1124,9 +1651,9 @@ func (o GetWorkspaceTagArrayOutput) Index(i pulumi.IntInput) GetWorkspaceTagOutp
 }
 
 type GetWorkspaceUsage struct {
-	// 活跃时序数。
+	// Active time series count
 	ActiveSeries int `pulumi:"activeSeries"`
-	// 每秒写入样本数。
+	// Samples written per second
 	IngestedSamplesPerSecond float64 `pulumi:"ingestedSamplesPerSecond"`
 }
 
@@ -1142,9 +1669,9 @@ type GetWorkspaceUsageInput interface {
 }
 
 type GetWorkspaceUsageArgs struct {
-	// 活跃时序数。
+	// Active time series count
 	ActiveSeries pulumi.IntInput `pulumi:"activeSeries"`
-	// 每秒写入样本数。
+	// Samples written per second
 	IngestedSamplesPerSecond pulumi.Float64Input `pulumi:"ingestedSamplesPerSecond"`
 }
 
@@ -1174,12 +1701,12 @@ func (o GetWorkspaceUsageOutput) ToGetWorkspaceUsageOutputWithContext(ctx contex
 	return o
 }
 
-// 活跃时序数。
+// Active time series count
 func (o GetWorkspaceUsageOutput) ActiveSeries() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceUsage) int { return v.ActiveSeries }).(pulumi.IntOutput)
 }
 
-// 每秒写入样本数。
+// Samples written per second
 func (o GetWorkspaceUsageOutput) IngestedSamplesPerSecond() pulumi.Float64Output {
 	return o.ApplyT(func(v GetWorkspaceUsage) float64 { return v.IngestedSamplesPerSecond }).(pulumi.Float64Output)
 }
@@ -1187,6 +1714,10 @@ func (o GetWorkspaceUsageOutput) IngestedSamplesPerSecond() pulumi.Float64Output
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceInstanceTypeInput)(nil)).Elem(), WorkspaceInstanceTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceInstanceTypePtrInput)(nil)).Elem(), WorkspaceInstanceTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceInstanceTypeCalculatePriceParamInput)(nil)).Elem(), WorkspaceInstanceTypeCalculatePriceParamArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceInstanceTypeCalculatePriceParamArrayInput)(nil)).Elem(), WorkspaceInstanceTypeCalculatePriceParamArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListInput)(nil)).Elem(), WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayInput)(nil)).Elem(), WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceQuotaInput)(nil)).Elem(), WorkspaceQuotaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceQuotaPtrInput)(nil)).Elem(), WorkspaceQuotaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceTagInput)(nil)).Elem(), WorkspaceTagArgs{})
@@ -1194,12 +1725,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceUsageInput)(nil)).Elem(), WorkspaceUsageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceUsagePtrInput)(nil)).Elem(), WorkspaceUsageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceInstanceTypeInput)(nil)).Elem(), GetWorkspaceInstanceTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceInstanceTypeCalculatePriceParamInput)(nil)).Elem(), GetWorkspaceInstanceTypeCalculatePriceParamArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceInstanceTypeCalculatePriceParamArrayInput)(nil)).Elem(), GetWorkspaceInstanceTypeCalculatePriceParamArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListInput)(nil)).Elem(), GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayInput)(nil)).Elem(), GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceQuotaInput)(nil)).Elem(), GetWorkspaceQuotaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceTagInput)(nil)).Elem(), GetWorkspaceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceTagArrayInput)(nil)).Elem(), GetWorkspaceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceUsageInput)(nil)).Elem(), GetWorkspaceUsageArgs{})
 	pulumi.RegisterOutputType(WorkspaceInstanceTypeOutput{})
 	pulumi.RegisterOutputType(WorkspaceInstanceTypePtrOutput{})
+	pulumi.RegisterOutputType(WorkspaceInstanceTypeCalculatePriceParamOutput{})
+	pulumi.RegisterOutputType(WorkspaceInstanceTypeCalculatePriceParamArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput{})
+	pulumi.RegisterOutputType(WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput{})
 	pulumi.RegisterOutputType(WorkspaceQuotaOutput{})
 	pulumi.RegisterOutputType(WorkspaceQuotaPtrOutput{})
 	pulumi.RegisterOutputType(WorkspaceTagOutput{})
@@ -1207,6 +1746,10 @@ func init() {
 	pulumi.RegisterOutputType(WorkspaceUsageOutput{})
 	pulumi.RegisterOutputType(WorkspaceUsagePtrOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceInstanceTypeOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceInstanceTypeCalculatePriceParamOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceQuotaOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceTagOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceTagArrayOutput{})

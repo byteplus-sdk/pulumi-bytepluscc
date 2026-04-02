@@ -41,7 +41,7 @@ public final class GetRuleRuleAction {
      */
     private GetRuleRuleActionTrafficLimitConfig trafficLimitConfig;
     /**
-     * @return 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+     * @return Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
      * 
      */
     private String type;
@@ -83,7 +83,7 @@ public final class GetRuleRuleAction {
         return this.trafficLimitConfig;
     }
     /**
-     * @return 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+     * @return Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
      * 
      */
     public String type() {

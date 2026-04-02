@@ -30,15 +30,15 @@ if not MYPY:
     class DirectConnectGatewayAssociateCenArgsDict(TypedDict):
         cen_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        CEN的ID。
+        ID of CEN.
         """
         cen_owner_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        CEN的用户ID。
+        User ID of CEN.
         """
         cen_status: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+        Status of the instance in CEN. Attaching: attaching. Attached: attached.
         """
 elif False:
     DirectConnectGatewayAssociateCenArgsDict: TypeAlias = Mapping[str, Any]
@@ -50,9 +50,9 @@ class DirectConnectGatewayAssociateCenArgs:
                  cen_owner_id: Optional[pulumi.Input[builtins.str]] = None,
                  cen_status: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] cen_id: CEN的ID。
-        :param pulumi.Input[builtins.str] cen_owner_id: CEN的用户ID。
-        :param pulumi.Input[builtins.str] cen_status: 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+        :param pulumi.Input[builtins.str] cen_id: ID of CEN.
+        :param pulumi.Input[builtins.str] cen_owner_id: User ID of CEN.
+        :param pulumi.Input[builtins.str] cen_status: Status of the instance in CEN. Attaching: attaching. Attached: attached.
         """
         if cen_id is not None:
             pulumi.set(__self__, "cen_id", cen_id)
@@ -65,7 +65,7 @@ class DirectConnectGatewayAssociateCenArgs:
     @pulumi.getter(name="cenId")
     def cen_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CEN的ID。
+        ID of CEN.
         """
         return pulumi.get(self, "cen_id")
 
@@ -77,7 +77,7 @@ class DirectConnectGatewayAssociateCenArgs:
     @pulumi.getter(name="cenOwnerId")
     def cen_owner_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CEN的用户ID。
+        User ID of CEN.
         """
         return pulumi.get(self, "cen_owner_id")
 
@@ -89,7 +89,7 @@ class DirectConnectGatewayAssociateCenArgs:
     @pulumi.getter(name="cenStatus")
     def cen_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+        Status of the instance in CEN. Attaching: attaching. Attached: attached.
         """
         return pulumi.get(self, "cen_status")
 
@@ -102,15 +102,15 @@ if not MYPY:
     class DirectConnectGatewayAssociateEicArgsDict(TypedDict):
         eic_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        EIC的ID。
+        ID of EIC.
         """
         eic_owner_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        EIC的用户ID。
+        User ID of EIC.
         """
         eic_status: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例在EIC中的状态。
+        Status of the instance in EIC.
         """
 elif False:
     DirectConnectGatewayAssociateEicArgsDict: TypeAlias = Mapping[str, Any]
@@ -122,9 +122,9 @@ class DirectConnectGatewayAssociateEicArgs:
                  eic_owner_id: Optional[pulumi.Input[builtins.str]] = None,
                  eic_status: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] eic_id: EIC的ID。
-        :param pulumi.Input[builtins.str] eic_owner_id: EIC的用户ID。
-        :param pulumi.Input[builtins.str] eic_status: 实例在EIC中的状态。
+        :param pulumi.Input[builtins.str] eic_id: ID of EIC.
+        :param pulumi.Input[builtins.str] eic_owner_id: User ID of EIC.
+        :param pulumi.Input[builtins.str] eic_status: Status of the instance in EIC.
         """
         if eic_id is not None:
             pulumi.set(__self__, "eic_id", eic_id)
@@ -137,7 +137,7 @@ class DirectConnectGatewayAssociateEicArgs:
     @pulumi.getter(name="eicId")
     def eic_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        EIC的ID。
+        ID of EIC.
         """
         return pulumi.get(self, "eic_id")
 
@@ -149,7 +149,7 @@ class DirectConnectGatewayAssociateEicArgs:
     @pulumi.getter(name="eicOwnerId")
     def eic_owner_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        EIC的用户ID。
+        User ID of EIC.
         """
         return pulumi.get(self, "eic_owner_id")
 
@@ -161,7 +161,7 @@ class DirectConnectGatewayAssociateEicArgs:
     @pulumi.getter(name="eicStatus")
     def eic_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例在EIC中的状态。
+        Status of the instance in EIC.
         """
         return pulumi.get(self, "eic_status")
 
@@ -174,11 +174,11 @@ if not MYPY:
     class DirectConnectGatewayTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签键。长度取值范围为1~128字符。
+        User label tag key. Length must be between 1 and 128 characters.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签值。长度取值范围为0~256字符。
+        User label tag value. Length must be between 0 and 256 characters.
         """
 elif False:
     DirectConnectGatewayTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -189,8 +189,8 @@ class DirectConnectGatewayTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 用户标签的标签键。长度取值范围为1~128字符。
-        :param pulumi.Input[builtins.str] value: 用户标签的标签值。长度取值范围为0~256字符。
+        :param pulumi.Input[builtins.str] key: User label tag key. Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] value: User label tag value. Length must be between 0 and 256 characters.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -201,7 +201,7 @@ class DirectConnectGatewayTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签键。长度取值范围为1~128字符。
+        User label tag key. Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "key")
 
@@ -213,7 +213,7 @@ class DirectConnectGatewayTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签值。长度取值范围为0~256字符。
+        User label tag value. Length must be between 0 and 256 characters.
         """
         return pulumi.get(self, "value")
 

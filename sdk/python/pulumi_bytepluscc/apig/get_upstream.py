@@ -82,7 +82,7 @@ class GetUpstreamResult:
     @pulumi.getter(name="backendTargets")
     def backend_targets(self) -> Sequence['outputs.GetUpstreamBackendTargetResult']:
         """
-        后端节点，Upstream来源类型为VeFaas时无效。
+        Backend node. Not valid when the upstream source type is VeFaas
         """
         return pulumi.get(self, "backend_targets")
 
@@ -90,7 +90,7 @@ class GetUpstreamResult:
     @pulumi.getter(name="circuitBreakingSettings")
     def circuit_breaking_settings(self) -> 'outputs.GetUpstreamCircuitBreakingSettingsResult':
         """
-        服务熔断配置。
+        Service circuit breaking configuration
         """
         return pulumi.get(self, "circuit_breaking_settings")
 
@@ -98,7 +98,7 @@ class GetUpstreamResult:
     @pulumi.getter
     def comments(self) -> builtins.str:
         """
-        备注。
+        Remarks
         """
         return pulumi.get(self, "comments")
 
@@ -106,7 +106,7 @@ class GetUpstreamResult:
     @pulumi.getter(name="connectionPoolSettings")
     def connection_pool_settings(self) -> 'outputs.GetUpstreamConnectionPoolSettingsResult':
         """
-        连接池配置。
+        Connection Pool Configuration
         """
         return pulumi.get(self, "connection_pool_settings")
 
@@ -114,7 +114,7 @@ class GetUpstreamResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        Upstream创建时间。
+        Upstream creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -122,7 +122,7 @@ class GetUpstreamResult:
     @pulumi.getter(name="gatewayId")
     def gateway_id(self) -> builtins.str:
         """
-        网关实例ID。
+        Gateway Instance ID
         """
         return pulumi.get(self, "gateway_id")
 
@@ -138,7 +138,7 @@ class GetUpstreamResult:
     @pulumi.getter(name="loadBalancerSettings")
     def load_balancer_settings(self) -> 'outputs.GetUpstreamLoadBalancerSettingsResult':
         """
-        负载均衡配置。
+        Load Balancing Configuration
         """
         return pulumi.get(self, "load_balancer_settings")
 
@@ -146,7 +146,7 @@ class GetUpstreamResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        Upstream名称。
+        Upstream name
         """
         return pulumi.get(self, "name")
 
@@ -154,7 +154,7 @@ class GetUpstreamResult:
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+        Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
         """
         return pulumi.get(self, "protocol")
 
@@ -162,7 +162,7 @@ class GetUpstreamResult:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> builtins.str:
         """
-        Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+        Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
         """
         return pulumi.get(self, "source_type")
 
@@ -170,7 +170,7 @@ class GetUpstreamResult:
     @pulumi.getter(name="tlsSettings")
     def tls_settings(self) -> 'outputs.GetUpstreamTlsSettingsResult':
         """
-        TLS配置。
+        TLS Configuration
         """
         return pulumi.get(self, "tls_settings")
 
@@ -178,7 +178,7 @@ class GetUpstreamResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        Upstream更新时间。
+        Upstream update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -194,7 +194,7 @@ class GetUpstreamResult:
     @pulumi.getter(name="upstreamSpec")
     def upstream_spec(self) -> 'outputs.GetUpstreamUpstreamSpecResult':
         """
-        Upstream配置。
+        Upstream Configuration
         """
         return pulumi.get(self, "upstream_spec")
 
@@ -202,7 +202,7 @@ class GetUpstreamResult:
     @pulumi.getter(name="versionDetails")
     def version_details(self) -> Sequence['outputs.GetUpstreamVersionDetailResult']:
         """
-        Upstream版本，仅在Upstream来源类型为K8S时有效。
+        Upstream version, only valid when the upstream source type is K8S
         """
         return pulumi.get(self, "version_details")
 

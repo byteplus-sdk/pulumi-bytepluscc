@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 查看和管理您组织内的所有账号。每个账号可以直接放在根节点中，也可以移动到您创建的任意组织节点层级结构中，每个账号只能归属于一个节点。您可以分层树状结构管理您的组织结构以及成员账号。
+ * View and manage all accounts in your organization. Each account can be placed directly in the root node or moved to any organizational node hierarchy you create. Each account can belong to only one node. You can manage your organizational structure and member accounts in a layered tree structure
  *
  * ## Import
  *
@@ -44,100 +44,100 @@ export class Account extends pulumi.CustomResource {
     }
 
     /**
-     * 火山账号ID。
+     * Volcano account ID
      */
     public /*out*/ readonly accountId!: pulumi.Output<string>;
     /**
-     * 账户名称。5-20个字符。
+     * Account name. 5–20 characters
      */
     public readonly accountName!: pulumi.Output<string>;
     /**
-     * 允许控制台访问，1: 允许，2: 不允许。
+     * Allow console access: 1. Allowed, 2. Not allowed
      */
     public readonly allowConsole!: pulumi.Output<number>;
     /**
-     * 允许退出，1: 允许，2: 不允许。
+     * Allow exit: 1. Allowed, 2. Not allowed
      */
     public readonly allowExit!: pulumi.Output<number>;
     /**
-     * 创建时间。
+     * Creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 删除标记。
+     * Deletion flag
      */
     public readonly deleteUk!: pulumi.Output<string>;
     /**
-     * 删除时间。
+     * Deletion time
      */
     public /*out*/ readonly deletedTime!: pulumi.Output<string>;
     /**
-     * 描述。
+     * Description
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * IAM角色名称。
+     * IAM role name
      */
     public /*out*/ readonly iamRole!: pulumi.Output<string>;
     /**
-     * 是否是管理员，0.非管理员，1.管理员。
+     * Administrator status: 0. Non-administrator, 1. Administrator
      */
     public /*out*/ readonly isOwner!: pulumi.Output<number>;
     /**
-     * 加入类型，1: 创建，2: 邀请。
+     * Join type: 1. Create, 2. Invite
      */
     public /*out*/ readonly joinType!: pulumi.Output<number>;
     /**
-     * 主体名称。
+     * Subject name
      */
     public /*out*/ readonly mainName!: pulumi.Output<string>;
     /**
-     * 组织成员账号ID。
+     * Organization member account ID
      */
     public /*out*/ readonly memberAccountId!: pulumi.Output<string>;
     /**
-     * 组织ID。
+     * Organization ID
      */
     public /*out*/ readonly orgId!: pulumi.Output<string>;
     /**
-     * 组织类型，1.企业组织。
+     * Organization type: 1. Enterprise organization
      */
     public /*out*/ readonly orgType!: pulumi.Output<number>;
     /**
-     * 组织单元ID。传入 0 加入到 root 单元。
+     * Organizational unit ID. Enter 0 to join the root unit
      */
     public readonly orgUnitId!: pulumi.Output<string>;
     /**
-     * 组织单元名称。
+     * Organizational unit name
      */
     public /*out*/ readonly orgUnitName!: pulumi.Output<string>;
     /**
-     * 认证主体ID。
+     * Authentication subject ID
      */
     public /*out*/ readonly orgVerificationId!: pulumi.Output<string>;
     /**
-     * 管理员ID。
+     * Administrator ID
      */
     public /*out*/ readonly owner!: pulumi.Output<string>;
     /**
-     * 账户密码。
+     * Account password
      */
     public readonly password!: pulumi.Output<string>;
     /**
-     * 安全联系信息。
+     * Security contact information
      */
     public readonly secureContactInfo!: pulumi.Output<outputs.organization.AccountSecureContactInfo>;
     /**
-     * 显示名称。
+     * Display name
      */
     public readonly showName!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.organization.AccountTag[]>;
     /**
-     * 更新时间。
+     * Update time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+     * Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
      */
     public readonly verificationRelationId!: pulumi.Output<string>;
 
@@ -223,100 +223,100 @@ export class Account extends pulumi.CustomResource {
  */
 export interface AccountState {
     /**
-     * 火山账号ID。
+     * Volcano account ID
      */
     accountId?: pulumi.Input<string>;
     /**
-     * 账户名称。5-20个字符。
+     * Account name. 5–20 characters
      */
     accountName?: pulumi.Input<string>;
     /**
-     * 允许控制台访问，1: 允许，2: 不允许。
+     * Allow console access: 1. Allowed, 2. Not allowed
      */
     allowConsole?: pulumi.Input<number>;
     /**
-     * 允许退出，1: 允许，2: 不允许。
+     * Allow exit: 1. Allowed, 2. Not allowed
      */
     allowExit?: pulumi.Input<number>;
     /**
-     * 创建时间。
+     * Creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 删除标记。
+     * Deletion flag
      */
     deleteUk?: pulumi.Input<string>;
     /**
-     * 删除时间。
+     * Deletion time
      */
     deletedTime?: pulumi.Input<string>;
     /**
-     * 描述。
+     * Description
      */
     description?: pulumi.Input<string>;
     /**
-     * IAM角色名称。
+     * IAM role name
      */
     iamRole?: pulumi.Input<string>;
     /**
-     * 是否是管理员，0.非管理员，1.管理员。
+     * Administrator status: 0. Non-administrator, 1. Administrator
      */
     isOwner?: pulumi.Input<number>;
     /**
-     * 加入类型，1: 创建，2: 邀请。
+     * Join type: 1. Create, 2. Invite
      */
     joinType?: pulumi.Input<number>;
     /**
-     * 主体名称。
+     * Subject name
      */
     mainName?: pulumi.Input<string>;
     /**
-     * 组织成员账号ID。
+     * Organization member account ID
      */
     memberAccountId?: pulumi.Input<string>;
     /**
-     * 组织ID。
+     * Organization ID
      */
     orgId?: pulumi.Input<string>;
     /**
-     * 组织类型，1.企业组织。
+     * Organization type: 1. Enterprise organization
      */
     orgType?: pulumi.Input<number>;
     /**
-     * 组织单元ID。传入 0 加入到 root 单元。
+     * Organizational unit ID. Enter 0 to join the root unit
      */
     orgUnitId?: pulumi.Input<string>;
     /**
-     * 组织单元名称。
+     * Organizational unit name
      */
     orgUnitName?: pulumi.Input<string>;
     /**
-     * 认证主体ID。
+     * Authentication subject ID
      */
     orgVerificationId?: pulumi.Input<string>;
     /**
-     * 管理员ID。
+     * Administrator ID
      */
     owner?: pulumi.Input<string>;
     /**
-     * 账户密码。
+     * Account password
      */
     password?: pulumi.Input<string>;
     /**
-     * 安全联系信息。
+     * Security contact information
      */
     secureContactInfo?: pulumi.Input<inputs.organization.AccountSecureContactInfo>;
     /**
-     * 显示名称。
+     * Display name
      */
     showName?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.organization.AccountTag>[]>;
     /**
-     * 更新时间。
+     * Update time
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+     * Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
      */
     verificationRelationId?: pulumi.Input<string>;
 }
@@ -326,44 +326,44 @@ export interface AccountState {
  */
 export interface AccountArgs {
     /**
-     * 账户名称。5-20个字符。
+     * Account name. 5–20 characters
      */
     accountName: pulumi.Input<string>;
     /**
-     * 允许控制台访问，1: 允许，2: 不允许。
+     * Allow console access: 1. Allowed, 2. Not allowed
      */
     allowConsole?: pulumi.Input<number>;
     /**
-     * 允许退出，1: 允许，2: 不允许。
+     * Allow exit: 1. Allowed, 2. Not allowed
      */
     allowExit?: pulumi.Input<number>;
     /**
-     * 删除标记。
+     * Deletion flag
      */
     deleteUk?: pulumi.Input<string>;
     /**
-     * 描述。
+     * Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 组织单元ID。传入 0 加入到 root 单元。
+     * Organizational unit ID. Enter 0 to join the root unit
      */
     orgUnitId?: pulumi.Input<string>;
     /**
-     * 账户密码。
+     * Account password
      */
     password?: pulumi.Input<string>;
     /**
-     * 安全联系信息。
+     * Security contact information
      */
     secureContactInfo?: pulumi.Input<inputs.organization.AccountSecureContactInfo>;
     /**
-     * 显示名称。
+     * Display name
      */
     showName: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.organization.AccountTag>[]>;
     /**
-     * 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+     * Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
      */
     verificationRelationId?: pulumi.Input<string>;
 }

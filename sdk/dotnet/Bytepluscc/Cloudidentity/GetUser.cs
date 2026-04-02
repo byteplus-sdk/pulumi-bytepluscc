@@ -65,19 +65,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class GetUserResult
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation Time.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 用户描述。
+        /// User Description.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 用户显示名。
+        /// User Display Name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// 邮箱。
+        /// Email.
         /// </summary>
         public readonly string Email;
         /// <summary>
@@ -85,35 +85,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 身份类型。
+        /// Identity Type.
         /// </summary>
         public readonly string IdentityType;
         /// <summary>
-        /// 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+        /// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
         /// </summary>
         public readonly string Password;
         /// <summary>
-        /// 首次登陆需不需要重置密码。
+        /// Is password reset required on first login?
         /// </summary>
         public readonly bool PasswordResetRequired;
         /// <summary>
-        /// 手机号。
+        /// Mobile Number.
         /// </summary>
         public readonly string Phone;
         /// <summary>
-        /// 用户来源。
+        /// User Source.
         /// </summary>
         public readonly string Source;
         /// <summary>
-        /// 更新时间。
+        /// Update Time.
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// 用户id。
+        /// User ID.
         /// </summary>
         public readonly string UserId;
         /// <summary>
-        /// 用户名。
+        /// Username.
         /// </summary>
         public readonly string UserName;
 

@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+// Plural Data Source schema for Byteplus::ECS::LaunchTemplateVersion
 func GetLaunchTemplateVersions(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetLaunchTemplateVersionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLaunchTemplateVersionsResult

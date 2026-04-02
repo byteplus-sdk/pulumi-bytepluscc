@@ -48,7 +48,7 @@ class GetClusterUserGroupResult:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> builtins.str:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -56,7 +56,7 @@ class GetClusterUserGroupResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        用户组描述。
+        User group description.
         """
         return pulumi.get(self, "description")
 
@@ -72,7 +72,7 @@ class GetClusterUserGroupResult:
     @pulumi.getter
     def members(self) -> Sequence[builtins.str]:
         """
-        用户组成员。不支持操作特殊用户，如admin等。
+        Operations on special users, such as admin, are not supported.
         """
         return pulumi.get(self, "members")
 
@@ -80,7 +80,7 @@ class GetClusterUserGroupResult:
     @pulumi.getter(name="userGroupName")
     def user_group_name(self) -> builtins.str:
         """
-        用户组名称。
+        User group name.
         """
         return pulumi.get(self, "user_group_name")
 

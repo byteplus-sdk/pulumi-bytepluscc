@@ -13,50 +13,50 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceMaintenanceWindow {
     /**
-     * @return 可维护周期粒度，默认取值为：Week（周）。
+     * @return Maintenance cycle granularity. Default value: Week.
      * 
      */
     private String dayKind;
     /**
-     * @return 指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+     * @return Specify which day of the month is the maintenance window. Default is empty, meaning every day is specified.
      * 
      */
     private List<Integer> dayOfMonths;
     /**
-     * @return 每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+     * @return Which day of the week is the maintenance window. Default value is every day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
      * 
      */
     private List<String> dayOfWeeks;
     /**
-     * @return 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * @return Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time).
      * 
      */
     private String maintenanceTime;
 
     private GetInstanceMaintenanceWindow() {}
     /**
-     * @return 可维护周期粒度，默认取值为：Week（周）。
+     * @return Maintenance cycle granularity. Default value: Week.
      * 
      */
     public String dayKind() {
         return this.dayKind;
     }
     /**
-     * @return 指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+     * @return Specify which day of the month is the maintenance window. Default is empty, meaning every day is specified.
      * 
      */
     public List<Integer> dayOfMonths() {
         return this.dayOfMonths;
     }
     /**
-     * @return 每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+     * @return Which day of the week is the maintenance window. Default value is every day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
      * 
      */
     public List<String> dayOfWeeks() {
         return this.dayOfWeeks;
     }
     /**
-     * @return 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * @return Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time).
      * 
      */
     public String maintenanceTime() {

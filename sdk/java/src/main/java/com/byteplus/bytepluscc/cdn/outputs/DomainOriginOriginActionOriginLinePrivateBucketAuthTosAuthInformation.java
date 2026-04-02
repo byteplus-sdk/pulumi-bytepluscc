@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformation {
     /**
-     * @return 表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+     * @return Specifies the AccessKey ID for your Alibaba Cloud account, SecretId for your Tencent Cloud account, or access key ID for your AWS account.
      * 
      */
     private @Nullable String accessKeyId;
     /**
-     * @return 表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+     * @return Indicates the AccessKey Secret for your Alibaba Cloud account, the SecretKey for your Tencent Cloud account, or the secret access key for your AWS account.
      * 
      */
     private @Nullable String accessKeySecret;
 
     private DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformation() {}
     /**
-     * @return 表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+     * @return Specifies the AccessKey ID for your Alibaba Cloud account, SecretId for your Tencent Cloud account, or access key ID for your AWS account.
      * 
      */
     public Optional<String> accessKeyId() {
         return Optional.ofNullable(this.accessKeyId);
     }
     /**
-     * @return 表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+     * @return Indicates the AccessKey Secret for your Alibaba Cloud account, the SecretKey for your Tencent Cloud account, or the secret access key for your AWS account.
      * 
      */
     public Optional<String> accessKeySecret() {

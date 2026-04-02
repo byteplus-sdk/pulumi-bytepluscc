@@ -27,6 +27,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ResolverEndpoint{}
 	case "bytepluscc:privatezone/resolverRule:ResolverRule":
 		r = &ResolverRule{}
+	case "bytepluscc:privatezone/userVpcAuthorization:UserVpcAuthorization":
+		r = &UserVpcAuthorization{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -53,6 +55,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"privatezone/resolverRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"privatezone/userVpcAuthorization",
 		&module{version},
 	)
 }

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// 网络ACL用于控制子网的出入流量，其基于白名单原理设计，出入子网的流量必须被网络ACL规则允许才能放通。
+    /// The network ACL controls inbound and outbound traffic for subnets. It is designed based on the allowlist principle: traffic entering or leaving a subnet must be permitted by a network ACL rule to pass through.
     /// 
     /// ## Import
     /// 
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class NetworkAcl : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 网络ACL的创建时间。
+        /// Creation time of the network ACL.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
@@ -35,7 +35,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.NetworkAclDefaultIngressAclEntry>> DefaultIngressAclEntries { get; private set; } = null!;
 
         /// <summary>
-        /// 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -47,19 +47,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.NetworkAclIngressAclEntry>> IngressAclEntries { get; private set; } = null!;
 
         /// <summary>
-        /// 网络ACL的ID。
+        /// Network ACL ID.
         /// </summary>
         [Output("networkAclId")]
         public Output<string> NetworkAclId { get; private set; } = null!;
 
         /// <summary>
-        /// 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+        /// Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
         /// </summary>
         [Output("networkAclName")]
         public Output<string> NetworkAclName { get; private set; } = null!;
 
         /// <summary>
-        /// 网络ACL所属项目的名称。不填默认加入default项目。
+        /// Name of the project associated with the network ACL. If not specified, added to the default project.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
@@ -68,7 +68,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.NetworkAclResource>> Resources { get; private set; } = null!;
 
         /// <summary>
-        /// 网络ACL的状态。Available：可用，Creating：创建中
+        /// Status of the network ACL. Available: Available. Creating: Creating.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -77,13 +77,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.NetworkAclTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 网络ACL的更新时间。
+        /// Last updated time of the network ACL.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 网络ACL所属VPC的ID。
+        /// ID of the VPC associated with the network ACL.
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
@@ -136,7 +136,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class NetworkAclArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -158,13 +158,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+        /// Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
         /// </summary>
         [Input("networkAclName")]
         public Input<string>? NetworkAclName { get; set; }
 
         /// <summary>
-        /// 网络ACL所属项目的名称。不填默认加入default项目。
+        /// Name of the project associated with the network ACL. If not specified, added to the default project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -186,7 +186,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 网络ACL所属VPC的ID。
+        /// ID of the VPC associated with the network ACL.
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
@@ -200,7 +200,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class NetworkAclState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 网络ACL的创建时间。
+        /// Creation time of the network ACL.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
@@ -222,7 +222,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -244,19 +244,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 网络ACL的ID。
+        /// Network ACL ID.
         /// </summary>
         [Input("networkAclId")]
         public Input<string>? NetworkAclId { get; set; }
 
         /// <summary>
-        /// 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+        /// Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
         /// </summary>
         [Input("networkAclName")]
         public Input<string>? NetworkAclName { get; set; }
 
         /// <summary>
-        /// 网络ACL所属项目的名称。不填默认加入default项目。
+        /// Name of the project associated with the network ACL. If not specified, added to the default project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -270,7 +270,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 网络ACL的状态。Available：可用，Creating：创建中
+        /// Status of the network ACL. Available: Available. Creating: Creating.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -284,13 +284,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 网络ACL的更新时间。
+        /// Last updated time of the network ACL.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 网络ACL所属VPC的ID。
+        /// ID of the VPC associated with the network ACL.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }

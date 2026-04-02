@@ -29,10 +29,10 @@ class AllowListArgs:
                  associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input['AllowListAssociatedInstanceArgs']]]] = None):
         """
         The set of arguments for constructing a AllowList resource.
-        :param pulumi.Input[builtins.str] allow_list: 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
-        :param pulumi.Input[builtins.str] allow_list_name: 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
-        :param pulumi.Input[builtins.str] allow_list_desc: 白名单描述。长度不超过200个字符。
-        :param pulumi.Input[builtins.int] apply_instance_num: 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+        :param pulumi.Input[builtins.str] allow_list: Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
+        :param pulumi.Input[builtins.str] allow_list_name: Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
+        :param pulumi.Input[builtins.str] allow_list_desc: Allowlist description. Maximum length: 200 characters
+        :param pulumi.Input[builtins.int] apply_instance_num: Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
         """
         pulumi.set(__self__, "allow_list", allow_list)
         pulumi.set(__self__, "allow_list_name", allow_list_name)
@@ -47,7 +47,7 @@ class AllowListArgs:
     @pulumi.getter(name="allowList")
     def allow_list(self) -> pulumi.Input[builtins.str]:
         """
-        白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+        Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
         """
         return pulumi.get(self, "allow_list")
 
@@ -59,7 +59,7 @@ class AllowListArgs:
     @pulumi.getter(name="allowListName")
     def allow_list_name(self) -> pulumi.Input[builtins.str]:
         """
-        白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+        Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
         """
         return pulumi.get(self, "allow_list_name")
 
@@ -71,7 +71,7 @@ class AllowListArgs:
     @pulumi.getter(name="allowListDesc")
     def allow_list_desc(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单描述。长度不超过200个字符。
+        Allowlist description. Maximum length: 200 characters
         """
         return pulumi.get(self, "allow_list_desc")
 
@@ -83,7 +83,7 @@ class AllowListArgs:
     @pulumi.getter(name="applyInstanceNum")
     def apply_instance_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+        Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
         """
         return pulumi.get(self, "apply_instance_num")
 
@@ -114,13 +114,13 @@ class _AllowListState:
                  associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input['AllowListAssociatedInstanceArgs']]]] = None):
         """
         Input properties used for looking up and filtering AllowList resources.
-        :param pulumi.Input[builtins.str] allow_list: 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
-        :param pulumi.Input[builtins.str] allow_list_desc: 白名单描述。长度不超过200个字符。
-        :param pulumi.Input[builtins.str] allow_list_id: 白名单 ID。
-        :param pulumi.Input[builtins.int] allow_list_ip_num: 白名单指定的规则个数。
-        :param pulumi.Input[builtins.str] allow_list_name: 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
-        :param pulumi.Input[builtins.int] apply_instance_num: 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
-        :param pulumi.Input[builtins.int] associated_instance_num: 白名单绑定的实例个数。
+        :param pulumi.Input[builtins.str] allow_list: Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
+        :param pulumi.Input[builtins.str] allow_list_desc: Allowlist description. Maximum length: 200 characters
+        :param pulumi.Input[builtins.str] allow_list_id: Allowlist ID
+        :param pulumi.Input[builtins.int] allow_list_ip_num: Number of rules specified in the allowlist
+        :param pulumi.Input[builtins.str] allow_list_name: Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
+        :param pulumi.Input[builtins.int] apply_instance_num: Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
+        :param pulumi.Input[builtins.int] associated_instance_num: Number of instances bound to the allowlist
         """
         if allow_list is not None:
             pulumi.set(__self__, "allow_list", allow_list)
@@ -143,7 +143,7 @@ class _AllowListState:
     @pulumi.getter(name="allowList")
     def allow_list(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+        Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
         """
         return pulumi.get(self, "allow_list")
 
@@ -155,7 +155,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListDesc")
     def allow_list_desc(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单描述。长度不超过200个字符。
+        Allowlist description. Maximum length: 200 characters
         """
         return pulumi.get(self, "allow_list_desc")
 
@@ -167,7 +167,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListId")
     def allow_list_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单 ID。
+        Allowlist ID
         """
         return pulumi.get(self, "allow_list_id")
 
@@ -179,7 +179,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListIpNum")
     def allow_list_ip_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        白名单指定的规则个数。
+        Number of rules specified in the allowlist
         """
         return pulumi.get(self, "allow_list_ip_num")
 
@@ -191,7 +191,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListName")
     def allow_list_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+        Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
         """
         return pulumi.get(self, "allow_list_name")
 
@@ -203,7 +203,7 @@ class _AllowListState:
     @pulumi.getter(name="applyInstanceNum")
     def apply_instance_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+        Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
         """
         return pulumi.get(self, "apply_instance_num")
 
@@ -215,7 +215,7 @@ class _AllowListState:
     @pulumi.getter(name="associatedInstanceNum")
     def associated_instance_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        白名单绑定的实例个数。
+        Number of instances bound to the allowlist
         """
         return pulumi.get(self, "associated_instance_num")
 
@@ -246,7 +246,7 @@ class AllowList(pulumi.CustomResource):
                  associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AllowListAssociatedInstanceArgs', 'AllowListAssociatedInstanceArgsDict']]]]] = None,
                  __props__=None):
         """
-        创建 Kafka 实例时，可以按需为其绑定白名单，绑定白名单与 Kafka 实例之后，仅配置在白名单中的 IP 地址与地址段才能访问消息队列 Kafka版实例。安全起见，建议您创建白名单，并将客户端的 IP 地址或 IP 地址段添加到 Kafka 实例的白名单中。建议您定期维护和管理白名单，提高 Kafka 实例访问的安全性。
+        When creating a Kafka instance, you can bind an allowlist as needed. After binding the allowlist to the Kafka instance, only IP addresses and address ranges specified in the allowlist can access the Kafka message queue instance. For security, we recommend creating an allowlist and adding the client IP address or IP address range to the Kafka instance's allowlist. Regularly maintain and manage the allowlist to enhance the security of Kafka instance access
 
         ## Example Usage
 
@@ -277,10 +277,10 @@ class AllowList(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] allow_list: 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
-        :param pulumi.Input[builtins.str] allow_list_desc: 白名单描述。长度不超过200个字符。
-        :param pulumi.Input[builtins.str] allow_list_name: 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
-        :param pulumi.Input[builtins.int] apply_instance_num: 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+        :param pulumi.Input[builtins.str] allow_list: Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
+        :param pulumi.Input[builtins.str] allow_list_desc: Allowlist description. Maximum length: 200 characters
+        :param pulumi.Input[builtins.str] allow_list_name: Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
+        :param pulumi.Input[builtins.int] apply_instance_num: Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
         """
         ...
     @overload
@@ -289,7 +289,7 @@ class AllowList(pulumi.CustomResource):
                  args: AllowListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        创建 Kafka 实例时，可以按需为其绑定白名单，绑定白名单与 Kafka 实例之后，仅配置在白名单中的 IP 地址与地址段才能访问消息队列 Kafka版实例。安全起见，建议您创建白名单，并将客户端的 IP 地址或 IP 地址段添加到 Kafka 实例的白名单中。建议您定期维护和管理白名单，提高 Kafka 实例访问的安全性。
+        When creating a Kafka instance, you can bind an allowlist as needed. After binding the allowlist to the Kafka instance, only IP addresses and address ranges specified in the allowlist can access the Kafka message queue instance. For security, we recommend creating an allowlist and adding the client IP address or IP address range to the Kafka instance's allowlist. Regularly maintain and manage the allowlist to enhance the security of Kafka instance access
 
         ## Example Usage
 
@@ -384,13 +384,13 @@ class AllowList(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] allow_list: 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
-        :param pulumi.Input[builtins.str] allow_list_desc: 白名单描述。长度不超过200个字符。
-        :param pulumi.Input[builtins.str] allow_list_id: 白名单 ID。
-        :param pulumi.Input[builtins.int] allow_list_ip_num: 白名单指定的规则个数。
-        :param pulumi.Input[builtins.str] allow_list_name: 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
-        :param pulumi.Input[builtins.int] apply_instance_num: 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
-        :param pulumi.Input[builtins.int] associated_instance_num: 白名单绑定的实例个数。
+        :param pulumi.Input[builtins.str] allow_list: Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
+        :param pulumi.Input[builtins.str] allow_list_desc: Allowlist description. Maximum length: 200 characters
+        :param pulumi.Input[builtins.str] allow_list_id: Allowlist ID
+        :param pulumi.Input[builtins.int] allow_list_ip_num: Number of rules specified in the allowlist
+        :param pulumi.Input[builtins.str] allow_list_name: Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
+        :param pulumi.Input[builtins.int] apply_instance_num: Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
+        :param pulumi.Input[builtins.int] associated_instance_num: Number of instances bound to the allowlist
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -410,7 +410,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowList")
     def allow_list(self) -> pulumi.Output[builtins.str]:
         """
-        白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+        Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
         """
         return pulumi.get(self, "allow_list")
 
@@ -418,7 +418,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListDesc")
     def allow_list_desc(self) -> pulumi.Output[builtins.str]:
         """
-        白名单描述。长度不超过200个字符。
+        Allowlist description. Maximum length: 200 characters
         """
         return pulumi.get(self, "allow_list_desc")
 
@@ -426,7 +426,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListId")
     def allow_list_id(self) -> pulumi.Output[builtins.str]:
         """
-        白名单 ID。
+        Allowlist ID
         """
         return pulumi.get(self, "allow_list_id")
 
@@ -434,7 +434,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListIpNum")
     def allow_list_ip_num(self) -> pulumi.Output[builtins.int]:
         """
-        白名单指定的规则个数。
+        Number of rules specified in the allowlist
         """
         return pulumi.get(self, "allow_list_ip_num")
 
@@ -442,7 +442,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListName")
     def allow_list_name(self) -> pulumi.Output[builtins.str]:
         """
-        白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+        Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
         """
         return pulumi.get(self, "allow_list_name")
 
@@ -450,7 +450,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="applyInstanceNum")
     def apply_instance_num(self) -> pulumi.Output[builtins.int]:
         """
-        此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+        Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
         """
         return pulumi.get(self, "apply_instance_num")
 
@@ -458,7 +458,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="associatedInstanceNum")
     def associated_instance_num(self) -> pulumi.Output[builtins.int]:
         """
-        白名单绑定的实例个数。
+        Number of instances bound to the allowlist
         """
         return pulumi.get(self, "associated_instance_num")
 

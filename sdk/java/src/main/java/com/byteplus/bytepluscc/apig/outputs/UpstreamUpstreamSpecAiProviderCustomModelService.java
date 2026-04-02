@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamUpstreamSpecAiProviderCustomModelService {
     /**
-     * @return 模型服务名称。
+     * @return Model Service Name
      * 
      */
     private @Nullable String name;
     /**
-     * @return 命名空间。
+     * @return Namespace
      * 
      */
     private @Nullable String namespace;
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     private @Nullable Integer port;
 
     private UpstreamUpstreamSpecAiProviderCustomModelService() {}
     /**
-     * @return 模型服务名称。
+     * @return Model Service Name
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return 命名空间。
+     * @return Namespace
      * 
      */
     public Optional<String> namespace() {
         return Optional.ofNullable(this.namespace);
     }
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     public Optional<Integer> port() {

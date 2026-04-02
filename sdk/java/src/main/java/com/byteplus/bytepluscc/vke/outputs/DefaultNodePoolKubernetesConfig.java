@@ -17,33 +17,33 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DefaultNodePoolKubernetesConfig {
     /**
-     * @return 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+     * @return Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
      * 
      */
     private @Nullable Boolean autoSyncDisabled;
     /**
-     * @return 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+     * @return Node blocking configuration. Parameter value description: false: not blocked. true: blocked
      * 
      */
     private @Nullable Boolean cordon;
     /**
-     * @return Kubelet 组件的相关配置
+     * @return Kubelet component configuration
      * 
      */
     private @Nullable DefaultNodePoolKubernetesConfigKubeletConfig kubeletConfig;
     private @Nullable List<DefaultNodePoolKubernetesConfigLabel> labels;
     /**
-     * @return Kubernetes 中节点对象的元数据名称前缀。
+     * @return Prefix of the metadata name for node objects in Kubernetes.
      * 
      */
     private @Nullable String namePrefix;
     /**
-     * @return Kubernetes 中节点对象的元数据名称后缀。
+     * @return Suffix of the metadata name for node objects in Kubernetes.
      * 
      */
     private @Nullable String nameSuffix;
     /**
-     * @return Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+     * @return Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
      * 
      */
     private @Nullable Boolean nameUseHostname;
@@ -51,21 +51,21 @@ public final class DefaultNodePoolKubernetesConfig {
 
     private DefaultNodePoolKubernetesConfig() {}
     /**
-     * @return 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+     * @return Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
      * 
      */
     public Optional<Boolean> autoSyncDisabled() {
         return Optional.ofNullable(this.autoSyncDisabled);
     }
     /**
-     * @return 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+     * @return Node blocking configuration. Parameter value description: false: not blocked. true: blocked
      * 
      */
     public Optional<Boolean> cordon() {
         return Optional.ofNullable(this.cordon);
     }
     /**
-     * @return Kubelet 组件的相关配置
+     * @return Kubelet component configuration
      * 
      */
     public Optional<DefaultNodePoolKubernetesConfigKubeletConfig> kubeletConfig() {
@@ -75,21 +75,21 @@ public final class DefaultNodePoolKubernetesConfig {
         return this.labels == null ? List.of() : this.labels;
     }
     /**
-     * @return Kubernetes 中节点对象的元数据名称前缀。
+     * @return Prefix of the metadata name for node objects in Kubernetes.
      * 
      */
     public Optional<String> namePrefix() {
         return Optional.ofNullable(this.namePrefix);
     }
     /**
-     * @return Kubernetes 中节点对象的元数据名称后缀。
+     * @return Suffix of the metadata name for node objects in Kubernetes.
      * 
      */
     public Optional<String> nameSuffix() {
         return Optional.ofNullable(this.nameSuffix);
     }
     /**
-     * @return Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+     * @return Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
      * 
      */
     public Optional<Boolean> nameUseHostname() {

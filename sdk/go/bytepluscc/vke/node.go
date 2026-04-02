@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 对应 Kubernetes 中的 Node，是容器服务集群组成的基本元素。节点主要包括：Master 节点（控制节点）和 Worker 节点（计算节点/工作节点）。应用实际部署在 Worker 节点上，支持通过配置随机部署在 Worker 节点上或部署在指定的 Worker 节点上。容器服务中的 节点 一般指 Worker 节点。
+// Corresponds to Node in Kubernetes, which is the basic element of a Container Service cluster. Nodes mainly include: Master nodes (control nodes) and Worker nodes (compute nodes/worker nodes). Applications are actually deployed on Worker nodes, supporting random deployment on Worker nodes or deployment on specified Worker nodes through configuration. In Container Service, node generally refers to Worker node.
 //
 // ## Example Usage
 //
@@ -53,40 +53,40 @@ import (
 type Node struct {
 	pulumi.CustomResourceState
 
-	// 选择配置节点的数据盘并格式化挂载作为容器镜像和日志的存储目录，取值：false：（默认值）关闭。默认节点池：表示不挂载数据盘。自定义节点池：使用节点池的数据盘配置进行挂载，被添加到节点池的 ECS 实例数据盘必须包含目标节点池指定了挂载的数据盘（含本地盘），且盘类型和大小完全一致。true: 开启。此时必须同时配置 ContainerStoragePath 参数。节点通过 ContainerStoragePath参数中的配置进行挂载，而忽略节点池的数据盘配置，对被添加到节点池的 ECS 实例数据盘无特殊要求。
+	// Select the data disk for the node, format and mount it as the storage directory for container images and logs. Values: false (default): Disabled. Default node pool: indicates no data disk is mounted. Custom node pool: mounts according to the node pool's data disk configuration. ECS instance data disks added to the node pool must include the data disk specified for mounting by the target node pool (including local disks), and the disk type and size must match exactly. true: Enabled. You must also configure the ContainerStoragePath parameter. The node mounts according to the configuration in the ContainerStoragePath parameter and ignores the node pool's data disk configuration. There are no special requirements for ECS instance data disks added to the node pool.
 	AdditionalContainerStorageEnabled pulumi.BoolOutput `pulumi:"additionalContainerStorageEnabled"`
-	// 集群的 ID。
+	// Cluster ID.
 	ClusterId pulumi.StringOutput `pulumi:"clusterId"`
-	// 使用该数据盘设备挂载容器和镜像存储目录/var/lib/containerd。
-	// 仅当AdditionalContainerStorageEnabled=true时有效，且不能为空。须满足以下条件，否则将初始化失败：仅支持已挂载数据盘的 ECS 实例。指定数据盘设备名时，请确保该数据盘设备存在，否则会初始化失败。指定数据盘分区或逻辑卷名时，请确保该分区或逻辑卷存在，且为 ext4 文件系统。
+	// Use this data disk device to mount the container and image storage directory /var/lib/containerd.
+	// Valid only when AdditionalContainerStorageEnabled=true and cannot be empty. The following conditions must be met, otherwise initialization will fail: Only ECS instances with mounted data disks are supported. When specifying a data disk device name, ensure the device exists, otherwise initialization will fail. When specifying a data disk partition or logical volume name, ensure the partition or logical volume exists and uses the ext4 file system.
 	ContainerStoragePath pulumi.StringOutput `pulumi:"containerStoragePath"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 节点对应的 ECS 实例使用的镜像 ID。
+	// Image ID used by the ECS instance corresponding to the node.
 	ImageId pulumi.StringOutput `pulumi:"imageId"`
-	// 创建 ECS 节点并完成 Kubernetes 组件部署后执行的脚本。支持 Shell 格式，Base64 编码后长度不超过 1 KB。为空时，节点继承使用默认节点池配置的初始化脚本NodeConfig.InitializeScript。自定义填写脚本内容后，使用自定义的脚本，忽略默认节点池配置的初始化脚本。
+	// Script executed after creating ECS nodes and deploying Kubernetes components. Supports Shell format. Base64-encoded length must not exceed 1 KB. If left empty, the node inherits the default node pool initialization script NodeConfig.InitializeScript. If you enter a custom script, the custom script will be used and the default node pool initialization script will be ignored.
 	InitializeScript pulumi.StringOutput `pulumi:"initializeScript"`
-	// 节点对应的云服务器实例 ID。
+	// Cloud server instance ID corresponding to the node.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
-	// 是否为虚拟节点，参数值说明：false：否 true：是。
+	// Is it a virtual node? Parameter value description: false: No, true: Yes.
 	IsVirtual pulumi.BoolOutput `pulumi:"isVirtual"`
-	// 是否保留原 ECS 实例名称，取值：false：（默认值）不保留原 ECS 实例名称，由容器服务自动为其命名。true：保留原 ECS 实例名称。
+	// Whether to retain the original ECS instance name. Options: false (default): do not retain the original ECS instance name; Container Service automatically assigns a name. true: retain the original ECS instance name.
 	KeepInstanceName pulumi.BoolOutput `pulumi:"keepInstanceName"`
-	// 节点 Kubernetes 相关配置。为空时，节点继承使用默认节点池的 Kubernetes 配置KubernetesConfig.Labels/Taints/Cordon。自定义填写配置后，使用自定义配置内容，忽略默认节点池的 Kubernetes 配置。
+	// Kubernetes-related configuration for the node. If empty, the node inherits the default node pool's Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool's Kubernetes configuration.
 	KubernetesConfig NodeKubernetesConfigOutput `pulumi:"kubernetesConfig"`
-	// 节点名称。
+	// Node name.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 节点 ID。
+	// Node ID.
 	NodeId pulumi.StringOutput `pulumi:"nodeId"`
-	// 节点池 ID。不传入参数值：表示将已有 ECS 实例添加到默认节点池。传入参数值：表示将已有 ECS 实例添加到自定义节点池。
+	// Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
 	NodePoolId pulumi.StringOutput `pulumi:"nodePoolId"`
-	// 节点角色，参数值说明：Worker：Worker节点。
+	// Node role. Parameter value description: Worker: Worker node.
 	Roles pulumi.StringArrayOutput `pulumi:"roles"`
-	// 节点状态。
+	// Node status.
 	Status NodeStatusOutput `pulumi:"status"`
-	// 更新时间。
+	// Update time.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
-	// 可用区 ID。
+	// Availability zone ID.
 	ZoneId pulumi.StringOutput `pulumi:"zoneId"`
 }
 
@@ -126,78 +126,78 @@ func GetNode(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Node resources.
 type nodeState struct {
-	// 选择配置节点的数据盘并格式化挂载作为容器镜像和日志的存储目录，取值：false：（默认值）关闭。默认节点池：表示不挂载数据盘。自定义节点池：使用节点池的数据盘配置进行挂载，被添加到节点池的 ECS 实例数据盘必须包含目标节点池指定了挂载的数据盘（含本地盘），且盘类型和大小完全一致。true: 开启。此时必须同时配置 ContainerStoragePath 参数。节点通过 ContainerStoragePath参数中的配置进行挂载，而忽略节点池的数据盘配置，对被添加到节点池的 ECS 实例数据盘无特殊要求。
+	// Select the data disk for the node, format and mount it as the storage directory for container images and logs. Values: false (default): Disabled. Default node pool: indicates no data disk is mounted. Custom node pool: mounts according to the node pool's data disk configuration. ECS instance data disks added to the node pool must include the data disk specified for mounting by the target node pool (including local disks), and the disk type and size must match exactly. true: Enabled. You must also configure the ContainerStoragePath parameter. The node mounts according to the configuration in the ContainerStoragePath parameter and ignores the node pool's data disk configuration. There are no special requirements for ECS instance data disks added to the node pool.
 	AdditionalContainerStorageEnabled *bool `pulumi:"additionalContainerStorageEnabled"`
-	// 集群的 ID。
+	// Cluster ID.
 	ClusterId *string `pulumi:"clusterId"`
-	// 使用该数据盘设备挂载容器和镜像存储目录/var/lib/containerd。
-	// 仅当AdditionalContainerStorageEnabled=true时有效，且不能为空。须满足以下条件，否则将初始化失败：仅支持已挂载数据盘的 ECS 实例。指定数据盘设备名时，请确保该数据盘设备存在，否则会初始化失败。指定数据盘分区或逻辑卷名时，请确保该分区或逻辑卷存在，且为 ext4 文件系统。
+	// Use this data disk device to mount the container and image storage directory /var/lib/containerd.
+	// Valid only when AdditionalContainerStorageEnabled=true and cannot be empty. The following conditions must be met, otherwise initialization will fail: Only ECS instances with mounted data disks are supported. When specifying a data disk device name, ensure the device exists, otherwise initialization will fail. When specifying a data disk partition or logical volume name, ensure the partition or logical volume exists and uses the ext4 file system.
 	ContainerStoragePath *string `pulumi:"containerStoragePath"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime *string `pulumi:"createdTime"`
-	// 节点对应的 ECS 实例使用的镜像 ID。
+	// Image ID used by the ECS instance corresponding to the node.
 	ImageId *string `pulumi:"imageId"`
-	// 创建 ECS 节点并完成 Kubernetes 组件部署后执行的脚本。支持 Shell 格式，Base64 编码后长度不超过 1 KB。为空时，节点继承使用默认节点池配置的初始化脚本NodeConfig.InitializeScript。自定义填写脚本内容后，使用自定义的脚本，忽略默认节点池配置的初始化脚本。
+	// Script executed after creating ECS nodes and deploying Kubernetes components. Supports Shell format. Base64-encoded length must not exceed 1 KB. If left empty, the node inherits the default node pool initialization script NodeConfig.InitializeScript. If you enter a custom script, the custom script will be used and the default node pool initialization script will be ignored.
 	InitializeScript *string `pulumi:"initializeScript"`
-	// 节点对应的云服务器实例 ID。
+	// Cloud server instance ID corresponding to the node.
 	InstanceId *string `pulumi:"instanceId"`
-	// 是否为虚拟节点，参数值说明：false：否 true：是。
+	// Is it a virtual node? Parameter value description: false: No, true: Yes.
 	IsVirtual *bool `pulumi:"isVirtual"`
-	// 是否保留原 ECS 实例名称，取值：false：（默认值）不保留原 ECS 实例名称，由容器服务自动为其命名。true：保留原 ECS 实例名称。
+	// Whether to retain the original ECS instance name. Options: false (default): do not retain the original ECS instance name; Container Service automatically assigns a name. true: retain the original ECS instance name.
 	KeepInstanceName *bool `pulumi:"keepInstanceName"`
-	// 节点 Kubernetes 相关配置。为空时，节点继承使用默认节点池的 Kubernetes 配置KubernetesConfig.Labels/Taints/Cordon。自定义填写配置后，使用自定义配置内容，忽略默认节点池的 Kubernetes 配置。
+	// Kubernetes-related configuration for the node. If empty, the node inherits the default node pool's Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool's Kubernetes configuration.
 	KubernetesConfig *NodeKubernetesConfig `pulumi:"kubernetesConfig"`
-	// 节点名称。
+	// Node name.
 	Name *string `pulumi:"name"`
-	// 节点 ID。
+	// Node ID.
 	NodeId *string `pulumi:"nodeId"`
-	// 节点池 ID。不传入参数值：表示将已有 ECS 实例添加到默认节点池。传入参数值：表示将已有 ECS 实例添加到自定义节点池。
+	// Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
 	NodePoolId *string `pulumi:"nodePoolId"`
-	// 节点角色，参数值说明：Worker：Worker节点。
+	// Node role. Parameter value description: Worker: Worker node.
 	Roles []string `pulumi:"roles"`
-	// 节点状态。
+	// Node status.
 	Status *NodeStatus `pulumi:"status"`
-	// 更新时间。
+	// Update time.
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// 可用区 ID。
+	// Availability zone ID.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
 type NodeState struct {
-	// 选择配置节点的数据盘并格式化挂载作为容器镜像和日志的存储目录，取值：false：（默认值）关闭。默认节点池：表示不挂载数据盘。自定义节点池：使用节点池的数据盘配置进行挂载，被添加到节点池的 ECS 实例数据盘必须包含目标节点池指定了挂载的数据盘（含本地盘），且盘类型和大小完全一致。true: 开启。此时必须同时配置 ContainerStoragePath 参数。节点通过 ContainerStoragePath参数中的配置进行挂载，而忽略节点池的数据盘配置，对被添加到节点池的 ECS 实例数据盘无特殊要求。
+	// Select the data disk for the node, format and mount it as the storage directory for container images and logs. Values: false (default): Disabled. Default node pool: indicates no data disk is mounted. Custom node pool: mounts according to the node pool's data disk configuration. ECS instance data disks added to the node pool must include the data disk specified for mounting by the target node pool (including local disks), and the disk type and size must match exactly. true: Enabled. You must also configure the ContainerStoragePath parameter. The node mounts according to the configuration in the ContainerStoragePath parameter and ignores the node pool's data disk configuration. There are no special requirements for ECS instance data disks added to the node pool.
 	AdditionalContainerStorageEnabled pulumi.BoolPtrInput
-	// 集群的 ID。
+	// Cluster ID.
 	ClusterId pulumi.StringPtrInput
-	// 使用该数据盘设备挂载容器和镜像存储目录/var/lib/containerd。
-	// 仅当AdditionalContainerStorageEnabled=true时有效，且不能为空。须满足以下条件，否则将初始化失败：仅支持已挂载数据盘的 ECS 实例。指定数据盘设备名时，请确保该数据盘设备存在，否则会初始化失败。指定数据盘分区或逻辑卷名时，请确保该分区或逻辑卷存在，且为 ext4 文件系统。
+	// Use this data disk device to mount the container and image storage directory /var/lib/containerd.
+	// Valid only when AdditionalContainerStorageEnabled=true and cannot be empty. The following conditions must be met, otherwise initialization will fail: Only ECS instances with mounted data disks are supported. When specifying a data disk device name, ensure the device exists, otherwise initialization will fail. When specifying a data disk partition or logical volume name, ensure the partition or logical volume exists and uses the ext4 file system.
 	ContainerStoragePath pulumi.StringPtrInput
-	// 创建时间。
+	// Creation time.
 	CreatedTime pulumi.StringPtrInput
-	// 节点对应的 ECS 实例使用的镜像 ID。
+	// Image ID used by the ECS instance corresponding to the node.
 	ImageId pulumi.StringPtrInput
-	// 创建 ECS 节点并完成 Kubernetes 组件部署后执行的脚本。支持 Shell 格式，Base64 编码后长度不超过 1 KB。为空时，节点继承使用默认节点池配置的初始化脚本NodeConfig.InitializeScript。自定义填写脚本内容后，使用自定义的脚本，忽略默认节点池配置的初始化脚本。
+	// Script executed after creating ECS nodes and deploying Kubernetes components. Supports Shell format. Base64-encoded length must not exceed 1 KB. If left empty, the node inherits the default node pool initialization script NodeConfig.InitializeScript. If you enter a custom script, the custom script will be used and the default node pool initialization script will be ignored.
 	InitializeScript pulumi.StringPtrInput
-	// 节点对应的云服务器实例 ID。
+	// Cloud server instance ID corresponding to the node.
 	InstanceId pulumi.StringPtrInput
-	// 是否为虚拟节点，参数值说明：false：否 true：是。
+	// Is it a virtual node? Parameter value description: false: No, true: Yes.
 	IsVirtual pulumi.BoolPtrInput
-	// 是否保留原 ECS 实例名称，取值：false：（默认值）不保留原 ECS 实例名称，由容器服务自动为其命名。true：保留原 ECS 实例名称。
+	// Whether to retain the original ECS instance name. Options: false (default): do not retain the original ECS instance name; Container Service automatically assigns a name. true: retain the original ECS instance name.
 	KeepInstanceName pulumi.BoolPtrInput
-	// 节点 Kubernetes 相关配置。为空时，节点继承使用默认节点池的 Kubernetes 配置KubernetesConfig.Labels/Taints/Cordon。自定义填写配置后，使用自定义配置内容，忽略默认节点池的 Kubernetes 配置。
+	// Kubernetes-related configuration for the node. If empty, the node inherits the default node pool's Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool's Kubernetes configuration.
 	KubernetesConfig NodeKubernetesConfigPtrInput
-	// 节点名称。
+	// Node name.
 	Name pulumi.StringPtrInput
-	// 节点 ID。
+	// Node ID.
 	NodeId pulumi.StringPtrInput
-	// 节点池 ID。不传入参数值：表示将已有 ECS 实例添加到默认节点池。传入参数值：表示将已有 ECS 实例添加到自定义节点池。
+	// Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
 	NodePoolId pulumi.StringPtrInput
-	// 节点角色，参数值说明：Worker：Worker节点。
+	// Node role. Parameter value description: Worker: Worker node.
 	Roles pulumi.StringArrayInput
-	// 节点状态。
+	// Node status.
 	Status NodeStatusPtrInput
-	// 更新时间。
+	// Update time.
 	UpdatedTime pulumi.StringPtrInput
-	// 可用区 ID。
+	// Availability zone ID.
 	ZoneId pulumi.StringPtrInput
 }
 
@@ -206,47 +206,47 @@ func (NodeState) ElementType() reflect.Type {
 }
 
 type nodeArgs struct {
-	// 选择配置节点的数据盘并格式化挂载作为容器镜像和日志的存储目录，取值：false：（默认值）关闭。默认节点池：表示不挂载数据盘。自定义节点池：使用节点池的数据盘配置进行挂载，被添加到节点池的 ECS 实例数据盘必须包含目标节点池指定了挂载的数据盘（含本地盘），且盘类型和大小完全一致。true: 开启。此时必须同时配置 ContainerStoragePath 参数。节点通过 ContainerStoragePath参数中的配置进行挂载，而忽略节点池的数据盘配置，对被添加到节点池的 ECS 实例数据盘无特殊要求。
+	// Select the data disk for the node, format and mount it as the storage directory for container images and logs. Values: false (default): Disabled. Default node pool: indicates no data disk is mounted. Custom node pool: mounts according to the node pool's data disk configuration. ECS instance data disks added to the node pool must include the data disk specified for mounting by the target node pool (including local disks), and the disk type and size must match exactly. true: Enabled. You must also configure the ContainerStoragePath parameter. The node mounts according to the configuration in the ContainerStoragePath parameter and ignores the node pool's data disk configuration. There are no special requirements for ECS instance data disks added to the node pool.
 	AdditionalContainerStorageEnabled *bool `pulumi:"additionalContainerStorageEnabled"`
-	// 集群的 ID。
+	// Cluster ID.
 	ClusterId string `pulumi:"clusterId"`
-	// 使用该数据盘设备挂载容器和镜像存储目录/var/lib/containerd。
-	// 仅当AdditionalContainerStorageEnabled=true时有效，且不能为空。须满足以下条件，否则将初始化失败：仅支持已挂载数据盘的 ECS 实例。指定数据盘设备名时，请确保该数据盘设备存在，否则会初始化失败。指定数据盘分区或逻辑卷名时，请确保该分区或逻辑卷存在，且为 ext4 文件系统。
+	// Use this data disk device to mount the container and image storage directory /var/lib/containerd.
+	// Valid only when AdditionalContainerStorageEnabled=true and cannot be empty. The following conditions must be met, otherwise initialization will fail: Only ECS instances with mounted data disks are supported. When specifying a data disk device name, ensure the device exists, otherwise initialization will fail. When specifying a data disk partition or logical volume name, ensure the partition or logical volume exists and uses the ext4 file system.
 	ContainerStoragePath *string `pulumi:"containerStoragePath"`
-	// 节点对应的 ECS 实例使用的镜像 ID。
+	// Image ID used by the ECS instance corresponding to the node.
 	ImageId *string `pulumi:"imageId"`
-	// 创建 ECS 节点并完成 Kubernetes 组件部署后执行的脚本。支持 Shell 格式，Base64 编码后长度不超过 1 KB。为空时，节点继承使用默认节点池配置的初始化脚本NodeConfig.InitializeScript。自定义填写脚本内容后，使用自定义的脚本，忽略默认节点池配置的初始化脚本。
+	// Script executed after creating ECS nodes and deploying Kubernetes components. Supports Shell format. Base64-encoded length must not exceed 1 KB. If left empty, the node inherits the default node pool initialization script NodeConfig.InitializeScript. If you enter a custom script, the custom script will be used and the default node pool initialization script will be ignored.
 	InitializeScript *string `pulumi:"initializeScript"`
-	// 节点对应的云服务器实例 ID。
+	// Cloud server instance ID corresponding to the node.
 	InstanceId *string `pulumi:"instanceId"`
-	// 是否保留原 ECS 实例名称，取值：false：（默认值）不保留原 ECS 实例名称，由容器服务自动为其命名。true：保留原 ECS 实例名称。
+	// Whether to retain the original ECS instance name. Options: false (default): do not retain the original ECS instance name; Container Service automatically assigns a name. true: retain the original ECS instance name.
 	KeepInstanceName *bool `pulumi:"keepInstanceName"`
-	// 节点 Kubernetes 相关配置。为空时，节点继承使用默认节点池的 Kubernetes 配置KubernetesConfig.Labels/Taints/Cordon。自定义填写配置后，使用自定义配置内容，忽略默认节点池的 Kubernetes 配置。
+	// Kubernetes-related configuration for the node. If empty, the node inherits the default node pool's Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool's Kubernetes configuration.
 	KubernetesConfig *NodeKubernetesConfig `pulumi:"kubernetesConfig"`
-	// 节点池 ID。不传入参数值：表示将已有 ECS 实例添加到默认节点池。传入参数值：表示将已有 ECS 实例添加到自定义节点池。
+	// Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
 	NodePoolId string `pulumi:"nodePoolId"`
 }
 
 // The set of arguments for constructing a Node resource.
 type NodeArgs struct {
-	// 选择配置节点的数据盘并格式化挂载作为容器镜像和日志的存储目录，取值：false：（默认值）关闭。默认节点池：表示不挂载数据盘。自定义节点池：使用节点池的数据盘配置进行挂载，被添加到节点池的 ECS 实例数据盘必须包含目标节点池指定了挂载的数据盘（含本地盘），且盘类型和大小完全一致。true: 开启。此时必须同时配置 ContainerStoragePath 参数。节点通过 ContainerStoragePath参数中的配置进行挂载，而忽略节点池的数据盘配置，对被添加到节点池的 ECS 实例数据盘无特殊要求。
+	// Select the data disk for the node, format and mount it as the storage directory for container images and logs. Values: false (default): Disabled. Default node pool: indicates no data disk is mounted. Custom node pool: mounts according to the node pool's data disk configuration. ECS instance data disks added to the node pool must include the data disk specified for mounting by the target node pool (including local disks), and the disk type and size must match exactly. true: Enabled. You must also configure the ContainerStoragePath parameter. The node mounts according to the configuration in the ContainerStoragePath parameter and ignores the node pool's data disk configuration. There are no special requirements for ECS instance data disks added to the node pool.
 	AdditionalContainerStorageEnabled pulumi.BoolPtrInput
-	// 集群的 ID。
+	// Cluster ID.
 	ClusterId pulumi.StringInput
-	// 使用该数据盘设备挂载容器和镜像存储目录/var/lib/containerd。
-	// 仅当AdditionalContainerStorageEnabled=true时有效，且不能为空。须满足以下条件，否则将初始化失败：仅支持已挂载数据盘的 ECS 实例。指定数据盘设备名时，请确保该数据盘设备存在，否则会初始化失败。指定数据盘分区或逻辑卷名时，请确保该分区或逻辑卷存在，且为 ext4 文件系统。
+	// Use this data disk device to mount the container and image storage directory /var/lib/containerd.
+	// Valid only when AdditionalContainerStorageEnabled=true and cannot be empty. The following conditions must be met, otherwise initialization will fail: Only ECS instances with mounted data disks are supported. When specifying a data disk device name, ensure the device exists, otherwise initialization will fail. When specifying a data disk partition or logical volume name, ensure the partition or logical volume exists and uses the ext4 file system.
 	ContainerStoragePath pulumi.StringPtrInput
-	// 节点对应的 ECS 实例使用的镜像 ID。
+	// Image ID used by the ECS instance corresponding to the node.
 	ImageId pulumi.StringPtrInput
-	// 创建 ECS 节点并完成 Kubernetes 组件部署后执行的脚本。支持 Shell 格式，Base64 编码后长度不超过 1 KB。为空时，节点继承使用默认节点池配置的初始化脚本NodeConfig.InitializeScript。自定义填写脚本内容后，使用自定义的脚本，忽略默认节点池配置的初始化脚本。
+	// Script executed after creating ECS nodes and deploying Kubernetes components. Supports Shell format. Base64-encoded length must not exceed 1 KB. If left empty, the node inherits the default node pool initialization script NodeConfig.InitializeScript. If you enter a custom script, the custom script will be used and the default node pool initialization script will be ignored.
 	InitializeScript pulumi.StringPtrInput
-	// 节点对应的云服务器实例 ID。
+	// Cloud server instance ID corresponding to the node.
 	InstanceId pulumi.StringPtrInput
-	// 是否保留原 ECS 实例名称，取值：false：（默认值）不保留原 ECS 实例名称，由容器服务自动为其命名。true：保留原 ECS 实例名称。
+	// Whether to retain the original ECS instance name. Options: false (default): do not retain the original ECS instance name; Container Service automatically assigns a name. true: retain the original ECS instance name.
 	KeepInstanceName pulumi.BoolPtrInput
-	// 节点 Kubernetes 相关配置。为空时，节点继承使用默认节点池的 Kubernetes 配置KubernetesConfig.Labels/Taints/Cordon。自定义填写配置后，使用自定义配置内容，忽略默认节点池的 Kubernetes 配置。
+	// Kubernetes-related configuration for the node. If empty, the node inherits the default node pool's Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool's Kubernetes configuration.
 	KubernetesConfig NodeKubernetesConfigPtrInput
-	// 节点池 ID。不传入参数值：表示将已有 ECS 实例添加到默认节点池。传入参数值：表示将已有 ECS 实例添加到自定义节点池。
+	// Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
 	NodePoolId pulumi.StringInput
 }
 
@@ -337,88 +337,88 @@ func (o NodeOutput) ToNodeOutputWithContext(ctx context.Context) NodeOutput {
 	return o
 }
 
-// 选择配置节点的数据盘并格式化挂载作为容器镜像和日志的存储目录，取值：false：（默认值）关闭。默认节点池：表示不挂载数据盘。自定义节点池：使用节点池的数据盘配置进行挂载，被添加到节点池的 ECS 实例数据盘必须包含目标节点池指定了挂载的数据盘（含本地盘），且盘类型和大小完全一致。true: 开启。此时必须同时配置 ContainerStoragePath 参数。节点通过 ContainerStoragePath参数中的配置进行挂载，而忽略节点池的数据盘配置，对被添加到节点池的 ECS 实例数据盘无特殊要求。
+// Select the data disk for the node, format and mount it as the storage directory for container images and logs. Values: false (default): Disabled. Default node pool: indicates no data disk is mounted. Custom node pool: mounts according to the node pool's data disk configuration. ECS instance data disks added to the node pool must include the data disk specified for mounting by the target node pool (including local disks), and the disk type and size must match exactly. true: Enabled. You must also configure the ContainerStoragePath parameter. The node mounts according to the configuration in the ContainerStoragePath parameter and ignores the node pool's data disk configuration. There are no special requirements for ECS instance data disks added to the node pool.
 func (o NodeOutput) AdditionalContainerStorageEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Node) pulumi.BoolOutput { return v.AdditionalContainerStorageEnabled }).(pulumi.BoolOutput)
 }
 
-// 集群的 ID。
+// Cluster ID.
 func (o NodeOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Node) pulumi.StringOutput { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 使用该数据盘设备挂载容器和镜像存储目录/var/lib/containerd。
-// 仅当AdditionalContainerStorageEnabled=true时有效，且不能为空。须满足以下条件，否则将初始化失败：仅支持已挂载数据盘的 ECS 实例。指定数据盘设备名时，请确保该数据盘设备存在，否则会初始化失败。指定数据盘分区或逻辑卷名时，请确保该分区或逻辑卷存在，且为 ext4 文件系统。
+// Use this data disk device to mount the container and image storage directory /var/lib/containerd.
+// Valid only when AdditionalContainerStorageEnabled=true and cannot be empty. The following conditions must be met, otherwise initialization will fail: Only ECS instances with mounted data disks are supported. When specifying a data disk device name, ensure the device exists, otherwise initialization will fail. When specifying a data disk partition or logical volume name, ensure the partition or logical volume exists and uses the ext4 file system.
 func (o NodeOutput) ContainerStoragePath() pulumi.StringOutput {
 	return o.ApplyT(func(v *Node) pulumi.StringOutput { return v.ContainerStoragePath }).(pulumi.StringOutput)
 }
 
-// 创建时间。
+// Creation time.
 func (o NodeOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Node) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 节点对应的 ECS 实例使用的镜像 ID。
+// Image ID used by the ECS instance corresponding to the node.
 func (o NodeOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Node) pulumi.StringOutput { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// 创建 ECS 节点并完成 Kubernetes 组件部署后执行的脚本。支持 Shell 格式，Base64 编码后长度不超过 1 KB。为空时，节点继承使用默认节点池配置的初始化脚本NodeConfig.InitializeScript。自定义填写脚本内容后，使用自定义的脚本，忽略默认节点池配置的初始化脚本。
+// Script executed after creating ECS nodes and deploying Kubernetes components. Supports Shell format. Base64-encoded length must not exceed 1 KB. If left empty, the node inherits the default node pool initialization script NodeConfig.InitializeScript. If you enter a custom script, the custom script will be used and the default node pool initialization script will be ignored.
 func (o NodeOutput) InitializeScript() pulumi.StringOutput {
 	return o.ApplyT(func(v *Node) pulumi.StringOutput { return v.InitializeScript }).(pulumi.StringOutput)
 }
 
-// 节点对应的云服务器实例 ID。
+// Cloud server instance ID corresponding to the node.
 func (o NodeOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Node) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 是否为虚拟节点，参数值说明：false：否 true：是。
+// Is it a virtual node? Parameter value description: false: No, true: Yes.
 func (o NodeOutput) IsVirtual() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Node) pulumi.BoolOutput { return v.IsVirtual }).(pulumi.BoolOutput)
 }
 
-// 是否保留原 ECS 实例名称，取值：false：（默认值）不保留原 ECS 实例名称，由容器服务自动为其命名。true：保留原 ECS 实例名称。
+// Whether to retain the original ECS instance name. Options: false (default): do not retain the original ECS instance name; Container Service automatically assigns a name. true: retain the original ECS instance name.
 func (o NodeOutput) KeepInstanceName() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Node) pulumi.BoolOutput { return v.KeepInstanceName }).(pulumi.BoolOutput)
 }
 
-// 节点 Kubernetes 相关配置。为空时，节点继承使用默认节点池的 Kubernetes 配置KubernetesConfig.Labels/Taints/Cordon。自定义填写配置后，使用自定义配置内容，忽略默认节点池的 Kubernetes 配置。
+// Kubernetes-related configuration for the node. If empty, the node inherits the default node pool's Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool's Kubernetes configuration.
 func (o NodeOutput) KubernetesConfig() NodeKubernetesConfigOutput {
 	return o.ApplyT(func(v *Node) NodeKubernetesConfigOutput { return v.KubernetesConfig }).(NodeKubernetesConfigOutput)
 }
 
-// 节点名称。
+// Node name.
 func (o NodeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Node) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 节点 ID。
+// Node ID.
 func (o NodeOutput) NodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Node) pulumi.StringOutput { return v.NodeId }).(pulumi.StringOutput)
 }
 
-// 节点池 ID。不传入参数值：表示将已有 ECS 实例添加到默认节点池。传入参数值：表示将已有 ECS 实例添加到自定义节点池。
+// Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
 func (o NodeOutput) NodePoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Node) pulumi.StringOutput { return v.NodePoolId }).(pulumi.StringOutput)
 }
 
-// 节点角色，参数值说明：Worker：Worker节点。
+// Node role. Parameter value description: Worker: Worker node.
 func (o NodeOutput) Roles() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Node) pulumi.StringArrayOutput { return v.Roles }).(pulumi.StringArrayOutput)
 }
 
-// 节点状态。
+// Node status.
 func (o NodeOutput) Status() NodeStatusOutput {
 	return o.ApplyT(func(v *Node) NodeStatusOutput { return v.Status }).(NodeStatusOutput)
 }
 
-// 更新时间。
+// Update time.
 func (o NodeOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Node) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 可用区 ID。
+// Availability zone ID.
 func (o NodeOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Node) pulumi.StringOutput { return v.ZoneId }).(pulumi.StringOutput)
 }

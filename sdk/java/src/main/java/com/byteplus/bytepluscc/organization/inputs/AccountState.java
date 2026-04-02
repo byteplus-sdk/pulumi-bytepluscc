@@ -20,14 +20,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     public static final AccountState Empty = new AccountState();
 
     /**
-     * 火山账号ID。
+     * Volcano account ID
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
-     * @return 火山账号ID。
+     * @return Volcano account ID
      * 
      */
     public Optional<Output<String>> accountId() {
@@ -35,14 +35,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 账户名称。5-20个字符。
+     * Account name. 5–20 characters
      * 
      */
     @Import(name="accountName")
     private @Nullable Output<String> accountName;
 
     /**
-     * @return 账户名称。5-20个字符。
+     * @return Account name. 5–20 characters
      * 
      */
     public Optional<Output<String>> accountName() {
@@ -50,14 +50,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 允许控制台访问，1: 允许，2: 不允许。
+     * Allow console access: 1. Allowed, 2. Not allowed
      * 
      */
     @Import(name="allowConsole")
     private @Nullable Output<Integer> allowConsole;
 
     /**
-     * @return 允许控制台访问，1: 允许，2: 不允许。
+     * @return Allow console access: 1. Allowed, 2. Not allowed
      * 
      */
     public Optional<Output<Integer>> allowConsole() {
@@ -65,14 +65,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 允许退出，1: 允许，2: 不允许。
+     * Allow exit: 1. Allowed, 2. Not allowed
      * 
      */
     @Import(name="allowExit")
     private @Nullable Output<Integer> allowExit;
 
     /**
-     * @return 允许退出，1: 允许，2: 不允许。
+     * @return Allow exit: 1. Allowed, 2. Not allowed
      * 
      */
     public Optional<Output<Integer>> allowExit() {
@@ -80,14 +80,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建时间。
+     * Creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -95,14 +95,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 删除标记。
+     * Deletion flag
      * 
      */
     @Import(name="deleteUk")
     private @Nullable Output<String> deleteUk;
 
     /**
-     * @return 删除标记。
+     * @return Deletion flag
      * 
      */
     public Optional<Output<String>> deleteUk() {
@@ -110,14 +110,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 删除时间。
+     * Deletion time
      * 
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
-     * @return 删除时间。
+     * @return Deletion time
      * 
      */
     public Optional<Output<String>> deletedTime() {
@@ -125,14 +125,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 描述。
+     * Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 描述。
+     * @return Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -140,14 +140,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IAM角色名称。
+     * IAM role name
      * 
      */
     @Import(name="iamRole")
     private @Nullable Output<String> iamRole;
 
     /**
-     * @return IAM角色名称。
+     * @return IAM role name
      * 
      */
     public Optional<Output<String>> iamRole() {
@@ -155,14 +155,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否是管理员，0.非管理员，1.管理员。
+     * Administrator status: 0. Non-administrator, 1. Administrator
      * 
      */
     @Import(name="isOwner")
     private @Nullable Output<Integer> isOwner;
 
     /**
-     * @return 是否是管理员，0.非管理员，1.管理员。
+     * @return Administrator status: 0. Non-administrator, 1. Administrator
      * 
      */
     public Optional<Output<Integer>> isOwner() {
@@ -170,14 +170,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 加入类型，1: 创建，2: 邀请。
+     * Join type: 1. Create, 2. Invite
      * 
      */
     @Import(name="joinType")
     private @Nullable Output<Integer> joinType;
 
     /**
-     * @return 加入类型，1: 创建，2: 邀请。
+     * @return Join type: 1. Create, 2. Invite
      * 
      */
     public Optional<Output<Integer>> joinType() {
@@ -185,14 +185,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 主体名称。
+     * Subject name
      * 
      */
     @Import(name="mainName")
     private @Nullable Output<String> mainName;
 
     /**
-     * @return 主体名称。
+     * @return Subject name
      * 
      */
     public Optional<Output<String>> mainName() {
@@ -200,14 +200,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组织成员账号ID。
+     * Organization member account ID
      * 
      */
     @Import(name="memberAccountId")
     private @Nullable Output<String> memberAccountId;
 
     /**
-     * @return 组织成员账号ID。
+     * @return Organization member account ID
      * 
      */
     public Optional<Output<String>> memberAccountId() {
@@ -215,14 +215,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组织ID。
+     * Organization ID
      * 
      */
     @Import(name="orgId")
     private @Nullable Output<String> orgId;
 
     /**
-     * @return 组织ID。
+     * @return Organization ID
      * 
      */
     public Optional<Output<String>> orgId() {
@@ -230,14 +230,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组织类型，1.企业组织。
+     * Organization type: 1. Enterprise organization
      * 
      */
     @Import(name="orgType")
     private @Nullable Output<Integer> orgType;
 
     /**
-     * @return 组织类型，1.企业组织。
+     * @return Organization type: 1. Enterprise organization
      * 
      */
     public Optional<Output<Integer>> orgType() {
@@ -245,14 +245,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组织单元ID。传入 0 加入到 root 单元。
+     * Organizational unit ID. Enter 0 to join the root unit
      * 
      */
     @Import(name="orgUnitId")
     private @Nullable Output<String> orgUnitId;
 
     /**
-     * @return 组织单元ID。传入 0 加入到 root 单元。
+     * @return Organizational unit ID. Enter 0 to join the root unit
      * 
      */
     public Optional<Output<String>> orgUnitId() {
@@ -260,14 +260,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组织单元名称。
+     * Organizational unit name
      * 
      */
     @Import(name="orgUnitName")
     private @Nullable Output<String> orgUnitName;
 
     /**
-     * @return 组织单元名称。
+     * @return Organizational unit name
      * 
      */
     public Optional<Output<String>> orgUnitName() {
@@ -275,14 +275,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 认证主体ID。
+     * Authentication subject ID
      * 
      */
     @Import(name="orgVerificationId")
     private @Nullable Output<String> orgVerificationId;
 
     /**
-     * @return 认证主体ID。
+     * @return Authentication subject ID
      * 
      */
     public Optional<Output<String>> orgVerificationId() {
@@ -290,14 +290,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 管理员ID。
+     * Administrator ID
      * 
      */
     @Import(name="owner")
     private @Nullable Output<String> owner;
 
     /**
-     * @return 管理员ID。
+     * @return Administrator ID
      * 
      */
     public Optional<Output<String>> owner() {
@@ -305,14 +305,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 账户密码。
+     * Account password
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return 账户密码。
+     * @return Account password
      * 
      */
     public Optional<Output<String>> password() {
@@ -320,14 +320,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 安全联系信息。
+     * Security contact information
      * 
      */
     @Import(name="secureContactInfo")
     private @Nullable Output<AccountSecureContactInfoArgs> secureContactInfo;
 
     /**
-     * @return 安全联系信息。
+     * @return Security contact information
      * 
      */
     public Optional<Output<AccountSecureContactInfoArgs>> secureContactInfo() {
@@ -335,14 +335,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 显示名称。
+     * Display name
      * 
      */
     @Import(name="showName")
     private @Nullable Output<String> showName;
 
     /**
-     * @return 显示名称。
+     * @return Display name
      * 
      */
     public Optional<Output<String>> showName() {
@@ -357,14 +357,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新时间。
+     * Update time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -372,14 +372,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+     * Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
      * 
      */
     @Import(name="verificationRelationId")
     private @Nullable Output<String> verificationRelationId;
 
     /**
-     * @return 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+     * @return Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
      * 
      */
     public Optional<Output<String>> verificationRelationId() {
@@ -435,7 +435,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 火山账号ID。
+         * @param accountId Volcano account ID
          * 
          * @return builder
          * 
@@ -446,7 +446,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 火山账号ID。
+         * @param accountId Volcano account ID
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountName 账户名称。5-20个字符。
+         * @param accountName Account name. 5–20 characters
          * 
          * @return builder
          * 
@@ -467,7 +467,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountName 账户名称。5-20个字符。
+         * @param accountName Account name. 5–20 characters
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowConsole 允许控制台访问，1: 允许，2: 不允许。
+         * @param allowConsole Allow console access: 1. Allowed, 2. Not allowed
          * 
          * @return builder
          * 
@@ -488,7 +488,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowConsole 允许控制台访问，1: 允许，2: 不允许。
+         * @param allowConsole Allow console access: 1. Allowed, 2. Not allowed
          * 
          * @return builder
          * 
@@ -498,7 +498,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowExit 允许退出，1: 允许，2: 不允许。
+         * @param allowExit Allow exit: 1. Allowed, 2. Not allowed
          * 
          * @return builder
          * 
@@ -509,7 +509,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowExit 允许退出，1: 允许，2: 不允许。
+         * @param allowExit Allow exit: 1. Allowed, 2. Not allowed
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time
          * 
          * @return builder
          * 
@@ -530,7 +530,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time
          * 
          * @return builder
          * 
@@ -540,7 +540,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteUk 删除标记。
+         * @param deleteUk Deletion flag
          * 
          * @return builder
          * 
@@ -551,7 +551,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteUk 删除标记。
+         * @param deleteUk Deletion flag
          * 
          * @return builder
          * 
@@ -561,7 +561,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletedTime 删除时间。
+         * @param deletedTime Deletion time
          * 
          * @return builder
          * 
@@ -572,7 +572,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletedTime 删除时间。
+         * @param deletedTime Deletion time
          * 
          * @return builder
          * 
@@ -582,7 +582,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述。
+         * @param description Description
          * 
          * @return builder
          * 
@@ -593,7 +593,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述。
+         * @param description Description
          * 
          * @return builder
          * 
@@ -603,7 +603,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param iamRole IAM角色名称。
+         * @param iamRole IAM role name
          * 
          * @return builder
          * 
@@ -614,7 +614,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param iamRole IAM角色名称。
+         * @param iamRole IAM role name
          * 
          * @return builder
          * 
@@ -624,7 +624,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isOwner 是否是管理员，0.非管理员，1.管理员。
+         * @param isOwner Administrator status: 0. Non-administrator, 1. Administrator
          * 
          * @return builder
          * 
@@ -635,7 +635,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isOwner 是否是管理员，0.非管理员，1.管理员。
+         * @param isOwner Administrator status: 0. Non-administrator, 1. Administrator
          * 
          * @return builder
          * 
@@ -645,7 +645,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param joinType 加入类型，1: 创建，2: 邀请。
+         * @param joinType Join type: 1. Create, 2. Invite
          * 
          * @return builder
          * 
@@ -656,7 +656,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param joinType 加入类型，1: 创建，2: 邀请。
+         * @param joinType Join type: 1. Create, 2. Invite
          * 
          * @return builder
          * 
@@ -666,7 +666,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mainName 主体名称。
+         * @param mainName Subject name
          * 
          * @return builder
          * 
@@ -677,7 +677,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mainName 主体名称。
+         * @param mainName Subject name
          * 
          * @return builder
          * 
@@ -687,7 +687,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param memberAccountId 组织成员账号ID。
+         * @param memberAccountId Organization member account ID
          * 
          * @return builder
          * 
@@ -698,7 +698,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param memberAccountId 组织成员账号ID。
+         * @param memberAccountId Organization member account ID
          * 
          * @return builder
          * 
@@ -708,7 +708,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgId 组织ID。
+         * @param orgId Organization ID
          * 
          * @return builder
          * 
@@ -719,7 +719,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgId 组织ID。
+         * @param orgId Organization ID
          * 
          * @return builder
          * 
@@ -729,7 +729,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgType 组织类型，1.企业组织。
+         * @param orgType Organization type: 1. Enterprise organization
          * 
          * @return builder
          * 
@@ -740,7 +740,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgType 组织类型，1.企业组织。
+         * @param orgType Organization type: 1. Enterprise organization
          * 
          * @return builder
          * 
@@ -750,7 +750,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgUnitId 组织单元ID。传入 0 加入到 root 单元。
+         * @param orgUnitId Organizational unit ID. Enter 0 to join the root unit
          * 
          * @return builder
          * 
@@ -761,7 +761,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgUnitId 组织单元ID。传入 0 加入到 root 单元。
+         * @param orgUnitId Organizational unit ID. Enter 0 to join the root unit
          * 
          * @return builder
          * 
@@ -771,7 +771,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgUnitName 组织单元名称。
+         * @param orgUnitName Organizational unit name
          * 
          * @return builder
          * 
@@ -782,7 +782,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgUnitName 组织单元名称。
+         * @param orgUnitName Organizational unit name
          * 
          * @return builder
          * 
@@ -792,7 +792,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgVerificationId 认证主体ID。
+         * @param orgVerificationId Authentication subject ID
          * 
          * @return builder
          * 
@@ -803,7 +803,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgVerificationId 认证主体ID。
+         * @param orgVerificationId Authentication subject ID
          * 
          * @return builder
          * 
@@ -813,7 +813,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param owner 管理员ID。
+         * @param owner Administrator ID
          * 
          * @return builder
          * 
@@ -824,7 +824,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param owner 管理员ID。
+         * @param owner Administrator ID
          * 
          * @return builder
          * 
@@ -834,7 +834,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 账户密码。
+         * @param password Account password
          * 
          * @return builder
          * 
@@ -845,7 +845,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 账户密码。
+         * @param password Account password
          * 
          * @return builder
          * 
@@ -855,7 +855,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secureContactInfo 安全联系信息。
+         * @param secureContactInfo Security contact information
          * 
          * @return builder
          * 
@@ -866,7 +866,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secureContactInfo 安全联系信息。
+         * @param secureContactInfo Security contact information
          * 
          * @return builder
          * 
@@ -876,7 +876,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param showName 显示名称。
+         * @param showName Display name
          * 
          * @return builder
          * 
@@ -887,7 +887,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param showName 显示名称。
+         * @param showName Display name
          * 
          * @return builder
          * 
@@ -910,7 +910,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time
          * 
          * @return builder
          * 
@@ -921,7 +921,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time
          * 
          * @return builder
          * 
@@ -931,7 +931,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param verificationRelationId 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+         * @param verificationRelationId Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
          * 
          * @return builder
          * 
@@ -942,7 +942,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param verificationRelationId 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+         * @param verificationRelationId Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
          * 
          * @return builder
          * 

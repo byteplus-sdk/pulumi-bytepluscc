@@ -20,14 +20,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     public static final RouteTableState Empty = new RouteTableState();
 
     /**
-     * 路由表所属账号的ID。
+     * Account ID owning the route table
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
-     * @return 路由表所属账号的ID。
+     * @return Account ID owning the route table
      * 
      */
     public Optional<Output<String>> accountId() {
@@ -35,14 +35,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+     * Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
      * 
      */
     @Import(name="associateType")
     private @Nullable Output<String> associateType;
 
     /**
-     * @return 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+     * @return Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
      * 
      */
     public Optional<Output<String>> associateType() {
@@ -50,14 +50,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 路由表创建时间。
+     * Route Table Creation Time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 路由表创建时间。
+     * @return Route Table Creation Time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -72,14 +72,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 路由表描述信息。
+     * Route Table Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 路由表描述信息。
+     * @return Route Table Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -87,14 +87,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 关联路由表的IPv4网关ID。
+     * IPv4 Gateway ID associated with the route table
      * 
      */
     @Import(name="ipv4GatewayId")
     private @Nullable Output<String> ipv4GatewayId;
 
     /**
-     * @return 关联路由表的IPv4网关ID。
+     * @return IPv4 Gateway ID associated with the route table
      * 
      */
     public Optional<Output<String>> ipv4GatewayId() {
@@ -102,14 +102,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 关联路由表的IPv6网关ID。
+     * IPv6 Gateway ID associated with the route table
      * 
      */
     @Import(name="ipv6GatewayId")
     private @Nullable Output<String> ipv6GatewayId;
 
     /**
-     * @return 关联路由表的IPv6网关ID。
+     * @return IPv6 Gateway ID associated with the route table
      * 
      */
     public Optional<Output<String>> ipv6GatewayId() {
@@ -117,14 +117,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 路由表所属项目的名称。
+     * Name of the project owning the route table
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 路由表所属项目的名称。
+     * @return Name of the project owning the route table
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -132,14 +132,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 路由表ID。
+     * Route Table ID
      * 
      */
     @Import(name="routeTableId")
     private @Nullable Output<String> routeTableId;
 
     /**
-     * @return 路由表ID。
+     * @return Route Table ID
      * 
      */
     public Optional<Output<String>> routeTableId() {
@@ -147,14 +147,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 路由表名称。
+     * Route Table Name
      * 
      */
     @Import(name="routeTableName")
     private @Nullable Output<String> routeTableName;
 
     /**
-     * @return 路由表名称。
+     * @return Route Table Name
      * 
      */
     public Optional<Output<String>> routeTableName() {
@@ -162,14 +162,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+     * Route table type. 1. Custom: Custom route table 2. System: System route table
      * 
      */
     @Import(name="routeTableType")
     private @Nullable Output<String> routeTableType;
 
     /**
-     * @return 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+     * @return Route table type. 1. Custom: Custom route table 2. System: System route table
      * 
      */
     public Optional<Output<String>> routeTableType() {
@@ -177,14 +177,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 关联的子网的ID列表。
+     * List of associated subnet IDs
      * 
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
-     * @return 关联的子网的ID列表。
+     * @return List of associated subnet IDs
      * 
      */
     public Optional<Output<List<String>>> subnetIds() {
@@ -206,14 +206,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 路由表更新时间。
+     * Route Table Last Updated Time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 路由表更新时间。
+     * @return Route Table Last Updated Time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -221,14 +221,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 路由表所属VPC的ID。
+     * ID of the VPC owning the route table
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 路由表所属VPC的ID。
+     * @return ID of the VPC owning the route table
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -236,14 +236,14 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC的名称。
+     * VPC Name
      * 
      */
     @Import(name="vpcName")
     private @Nullable Output<String> vpcName;
 
     /**
-     * @return VPC的名称。
+     * @return VPC Name
      * 
      */
     public Optional<Output<String>> vpcName() {
@@ -291,7 +291,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 路由表所属账号的ID。
+         * @param accountId Account ID owning the route table
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 路由表所属账号的ID。
+         * @param accountId Account ID owning the route table
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associateType 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+         * @param associateType Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associateType 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+         * @param associateType Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 路由表创建时间。
+         * @param createdTime Route Table Creation Time
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 路由表创建时间。
+         * @param createdTime Route Table Creation Time
          * 
          * @return builder
          * 
@@ -367,7 +367,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 路由表描述信息。
+         * @param description Route Table Description
          * 
          * @return builder
          * 
@@ -378,7 +378,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 路由表描述信息。
+         * @param description Route Table Description
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv4GatewayId 关联路由表的IPv4网关ID。
+         * @param ipv4GatewayId IPv4 Gateway ID associated with the route table
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv4GatewayId 关联路由表的IPv4网关ID。
+         * @param ipv4GatewayId IPv4 Gateway ID associated with the route table
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6GatewayId 关联路由表的IPv6网关ID。
+         * @param ipv6GatewayId IPv6 Gateway ID associated with the route table
          * 
          * @return builder
          * 
@@ -420,7 +420,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6GatewayId 关联路由表的IPv6网关ID。
+         * @param ipv6GatewayId IPv6 Gateway ID associated with the route table
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 路由表所属项目的名称。
+         * @param projectName Name of the project owning the route table
          * 
          * @return builder
          * 
@@ -441,7 +441,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 路由表所属项目的名称。
+         * @param projectName Name of the project owning the route table
          * 
          * @return builder
          * 
@@ -451,7 +451,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableId 路由表ID。
+         * @param routeTableId Route Table ID
          * 
          * @return builder
          * 
@@ -462,7 +462,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableId 路由表ID。
+         * @param routeTableId Route Table ID
          * 
          * @return builder
          * 
@@ -472,7 +472,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableName 路由表名称。
+         * @param routeTableName Route Table Name
          * 
          * @return builder
          * 
@@ -483,7 +483,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableName 路由表名称。
+         * @param routeTableName Route Table Name
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableType 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+         * @param routeTableType Route table type. 1. Custom: Custom route table 2. System: System route table
          * 
          * @return builder
          * 
@@ -504,7 +504,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableType 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+         * @param routeTableType Route table type. 1. Custom: Custom route table 2. System: System route table
          * 
          * @return builder
          * 
@@ -514,7 +514,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds 关联的子网的ID列表。
+         * @param subnetIds List of associated subnet IDs
          * 
          * @return builder
          * 
@@ -525,7 +525,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds 关联的子网的ID列表。
+         * @param subnetIds List of associated subnet IDs
          * 
          * @return builder
          * 
@@ -535,7 +535,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds 关联的子网的ID列表。
+         * @param subnetIds List of associated subnet IDs
          * 
          * @return builder
          * 
@@ -571,7 +571,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 路由表更新时间。
+         * @param updatedTime Route Table Last Updated Time
          * 
          * @return builder
          * 
@@ -582,7 +582,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 路由表更新时间。
+         * @param updatedTime Route Table Last Updated Time
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 路由表所属VPC的ID。
+         * @param vpcId ID of the VPC owning the route table
          * 
          * @return builder
          * 
@@ -603,7 +603,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 路由表所属VPC的ID。
+         * @param vpcId ID of the VPC owning the route table
          * 
          * @return builder
          * 
@@ -613,7 +613,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcName VPC的名称。
+         * @param vpcName VPC Name
          * 
          * @return builder
          * 
@@ -624,7 +624,7 @@ public final class RouteTableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcName VPC的名称。
+         * @param vpcName VPC Name
          * 
          * @return builder
          * 

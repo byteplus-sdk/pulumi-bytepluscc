@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
     public sealed class InstanceResourcesStorageGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 资源大小。
+        /// Resource size
         /// </summary>
         [Input("size")]
         public Input<int>? Size { get; set; }
 
         /// <summary>
-        /// 资源单位。
+        /// Resource unit
         /// </summary>
         [Input("unit")]
         public Input<string>? Unit { get; set; }

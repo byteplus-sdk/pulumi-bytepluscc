@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 高性能计算集群（High Performance Compute Cluster，HPC集群）是一种用于处理大规模计算任务的集群计算环境，通常由大量的计算节点组成，这些节点通过RDMA（Remote Direct Memory Access）高速网络互联，并协同工作以处理复杂的计算任务。高性能计算集群可以提供强大的计算能力、大内存、高速存储和高速网络，以满足对计算密集型、数据密集型或两者结合的工作负载的需求。
+// A high performance compute cluster (HPC cluster) is a cluster computing environment designed for large-scale computational tasks. It typically consists of numerous compute nodes interconnected via RDMA (Remote Direct Memory Access) high-speed networks, working together to handle complex computational workloads. High performance compute clusters provide powerful computing capabilities, large memory, high-speed storage, and high-speed networking to meet the demands of compute-intensive, data-intensive, or combined workloads
 //
 // ## Example Usage
 //
@@ -57,22 +57,22 @@ import (
 type HpcCluster struct {
 	pulumi.CustomResourceState
 
-	// 创建时间，格式满足RFC3339。
+	// Creation time, formatted according to RFC3339
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+	// High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 高性能计算集群ID。
+	// High performance compute cluster ID
 	HpcClusterId pulumi.StringOutput `pulumi:"hpcClusterId"`
-	// 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+	// High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 项目名称。
+	// Project name
 	ProjectName pulumi.StringOutput      `pulumi:"projectName"`
 	Tags        HpcClusterTagArrayOutput `pulumi:"tags"`
-	// 更新时间，格式满足RFC3339。
+	// Update time, formatted according to RFC3339
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
-	// 私有网络ID。
+	// Private network ID
 	VpcId pulumi.StringOutput `pulumi:"vpcId"`
-	// 高性能计算集群所属可用区ID。
+	// Availability zone ID of the high performance compute cluster
 	ZoneId pulumi.StringOutput `pulumi:"zoneId"`
 }
 
@@ -112,42 +112,42 @@ func GetHpcCluster(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering HpcCluster resources.
 type hpcClusterState struct {
-	// 创建时间，格式满足RFC3339。
+	// Creation time, formatted according to RFC3339
 	CreatedTime *string `pulumi:"createdTime"`
-	// 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+	// High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
 	Description *string `pulumi:"description"`
-	// 高性能计算集群ID。
+	// High performance compute cluster ID
 	HpcClusterId *string `pulumi:"hpcClusterId"`
-	// 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+	// High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
 	Name *string `pulumi:"name"`
-	// 项目名称。
+	// Project name
 	ProjectName *string         `pulumi:"projectName"`
 	Tags        []HpcClusterTag `pulumi:"tags"`
-	// 更新时间，格式满足RFC3339。
+	// Update time, formatted according to RFC3339
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// 私有网络ID。
+	// Private network ID
 	VpcId *string `pulumi:"vpcId"`
-	// 高性能计算集群所属可用区ID。
+	// Availability zone ID of the high performance compute cluster
 	ZoneId *string `pulumi:"zoneId"`
 }
 
 type HpcClusterState struct {
-	// 创建时间，格式满足RFC3339。
+	// Creation time, formatted according to RFC3339
 	CreatedTime pulumi.StringPtrInput
-	// 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+	// High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
 	Description pulumi.StringPtrInput
-	// 高性能计算集群ID。
+	// High performance compute cluster ID
 	HpcClusterId pulumi.StringPtrInput
-	// 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+	// High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
 	Name pulumi.StringPtrInput
-	// 项目名称。
+	// Project name
 	ProjectName pulumi.StringPtrInput
 	Tags        HpcClusterTagArrayInput
-	// 更新时间，格式满足RFC3339。
+	// Update time, formatted according to RFC3339
 	UpdatedTime pulumi.StringPtrInput
-	// 私有网络ID。
+	// Private network ID
 	VpcId pulumi.StringPtrInput
-	// 高性能计算集群所属可用区ID。
+	// Availability zone ID of the high performance compute cluster
 	ZoneId pulumi.StringPtrInput
 }
 
@@ -156,27 +156,27 @@ func (HpcClusterState) ElementType() reflect.Type {
 }
 
 type hpcClusterArgs struct {
-	// 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+	// High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
 	Description *string `pulumi:"description"`
-	// 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+	// High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
 	Name string `pulumi:"name"`
-	// 项目名称。
+	// Project name
 	ProjectName *string         `pulumi:"projectName"`
 	Tags        []HpcClusterTag `pulumi:"tags"`
-	// 高性能计算集群所属可用区ID。
+	// Availability zone ID of the high performance compute cluster
 	ZoneId string `pulumi:"zoneId"`
 }
 
 // The set of arguments for constructing a HpcCluster resource.
 type HpcClusterArgs struct {
-	// 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+	// High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
 	Description pulumi.StringPtrInput
-	// 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+	// High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
 	Name pulumi.StringInput
-	// 项目名称。
+	// Project name
 	ProjectName pulumi.StringPtrInput
 	Tags        HpcClusterTagArrayInput
-	// 高性能计算集群所属可用区ID。
+	// Availability zone ID of the high performance compute cluster
 	ZoneId pulumi.StringInput
 }
 
@@ -267,27 +267,27 @@ func (o HpcClusterOutput) ToHpcClusterOutputWithContext(ctx context.Context) Hpc
 	return o
 }
 
-// 创建时间，格式满足RFC3339。
+// Creation time, formatted according to RFC3339
 func (o HpcClusterOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *HpcCluster) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+// High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
 func (o HpcClusterOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *HpcCluster) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 高性能计算集群ID。
+// High performance compute cluster ID
 func (o HpcClusterOutput) HpcClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *HpcCluster) pulumi.StringOutput { return v.HpcClusterId }).(pulumi.StringOutput)
 }
 
-// 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+// High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
 func (o HpcClusterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *HpcCluster) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 项目名称。
+// Project name
 func (o HpcClusterOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *HpcCluster) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
@@ -296,17 +296,17 @@ func (o HpcClusterOutput) Tags() HpcClusterTagArrayOutput {
 	return o.ApplyT(func(v *HpcCluster) HpcClusterTagArrayOutput { return v.Tags }).(HpcClusterTagArrayOutput)
 }
 
-// 更新时间，格式满足RFC3339。
+// Update time, formatted according to RFC3339
 func (o HpcClusterOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *HpcCluster) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 私有网络ID。
+// Private network ID
 func (o HpcClusterOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v *HpcCluster) pulumi.StringOutput { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 高性能计算集群所属可用区ID。
+// Availability zone ID of the high performance compute cluster
 func (o HpcClusterOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *HpcCluster) pulumi.StringOutput { return v.ZoneId }).(pulumi.StringOutput)
 }

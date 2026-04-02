@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Outputs
     public sealed class ClbServerGroup
     {
         /// <summary>
-        /// 负载均衡实例中后端服务器组的ID。
+        /// ID of the backend server group in the load balancer instance
         /// </summary>
         public readonly string? ServerGroupId;
         /// <summary>
-        /// 负载均衡实例中后端服务器组的名称。
+        /// Name of the backend server group in the load balancer instance
         /// </summary>
         public readonly string? ServerGroupName;
 

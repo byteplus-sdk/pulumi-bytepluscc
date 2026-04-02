@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class GetInstanceDisasterRecoveryInstanceResult
     {
         /// <summary>
-        /// 主实例与灾备实例之间同步任务的 ID。
+        /// ID of synchronization tasks between primary and disaster recovery instances.
         /// </summary>
         public readonly string DtsTaskId;
         /// <summary>
-        /// 主实例与灾备实例之间同步任务的名称。
+        /// Name of the synchronization task between the primary instance and the disaster recovery instance
         /// </summary>
         public readonly string DtsTaskName;
         /// <summary>
-        /// 主实例与灾备实例之间同步任务的状态。
+        /// Status of synchronization tasks between the primary instance and the disaster recovery instance
         /// </summary>
         public readonly string DtsTaskStatus;
         /// <summary>
-        /// 灾备实例的 ID。
+        /// Disaster recovery instance ID.
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// 灾备实例的名称。
+        /// Name of disaster recovery instance.
         /// </summary>
         public readonly string InstanceName;
         /// <summary>
-        /// 灾备实例与主实例之间的时延。
+        /// Latency between the disaster recovery instance and the primary instance.
         /// </summary>
         public readonly int SecondsBehindMaster;
 

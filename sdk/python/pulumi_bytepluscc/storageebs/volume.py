@@ -38,19 +38,19 @@ class VolumeArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeTagArgs']]]] = None):
         """
         The set of arguments for constructing a Volume resource.
-        :param pulumi.Input[builtins.float] size: Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
-        :param pulumi.Input[builtins.str] volume_name: 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
-        :param pulumi.Input[builtins.str] volume_type: 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
-        :param pulumi.Input[builtins.str] zone_id: 可用区ID。
-        :param pulumi.Input[builtins.str] auto_snapshot_policy_id: 自动快照策略ID。
-        :param pulumi.Input[builtins.bool] delete_with_instance: 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
-        :param pulumi.Input[builtins.str] description: 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
-        :param pulumi.Input['VolumeExtraPerformanceArgs'] extra_performance: 额外性能。
-        :param pulumi.Input[builtins.str] instance_id: 创建云盘的同时挂载的ECS实例ID。
-        :param pulumi.Input[builtins.str] kind: 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
-        :param pulumi.Input[builtins.str] pay_type: 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
-        :param pulumi.Input[builtins.str] project_name: 云盘所要加入的Project（项目）名称。
-        :param pulumi.Input[builtins.str] source_snapshot_id: 源快照。
+        :param pulumi.Input[builtins.float] size: Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
+        :param pulumi.Input[builtins.str] volume_name: Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] volume_type: Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID.
+        :param pulumi.Input[builtins.str] auto_snapshot_policy_id: Automatic snapshot policy ID.
+        :param pulumi.Input[builtins.bool] delete_with_instance: When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
+        :param pulumi.Input[builtins.str] description: Disk description. Default is empty. Length must be between 1 and 255 characters.
+        :param pulumi.Input['VolumeExtraPerformanceArgs'] extra_performance: Extra performance.
+        :param pulumi.Input[builtins.str] instance_id: ECS instance ID mounted when creating the cloud disk.
+        :param pulumi.Input[builtins.str] kind: Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
+        :param pulumi.Input[builtins.str] pay_type: Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
+        :param pulumi.Input[builtins.str] project_name: Project name to which the disk will be added.
+        :param pulumi.Input[builtins.str] source_snapshot_id: Source snapshot.
         """
         pulumi.set(__self__, "size", size)
         pulumi.set(__self__, "volume_name", volume_name)
@@ -81,7 +81,7 @@ class VolumeArgs:
     @pulumi.getter
     def size(self) -> pulumi.Input[builtins.float]:
         """
-        Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+        Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
         """
         return pulumi.get(self, "size")
 
@@ -93,7 +93,7 @@ class VolumeArgs:
     @pulumi.getter(name="volumeName")
     def volume_name(self) -> pulumi.Input[builtins.str]:
         """
-        云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+        Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "volume_name")
 
@@ -105,7 +105,7 @@ class VolumeArgs:
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> pulumi.Input[builtins.str]:
         """
-        云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+        Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
         """
         return pulumi.get(self, "volume_type")
 
@@ -117,7 +117,7 @@ class VolumeArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[builtins.str]:
         """
-        可用区ID。
+        Availability zone ID.
         """
         return pulumi.get(self, "zone_id")
 
@@ -129,7 +129,7 @@ class VolumeArgs:
     @pulumi.getter(name="autoSnapshotPolicyId")
     def auto_snapshot_policy_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        自动快照策略ID。
+        Automatic snapshot policy ID.
         """
         return pulumi.get(self, "auto_snapshot_policy_id")
 
@@ -141,7 +141,7 @@ class VolumeArgs:
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+        When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -153,7 +153,7 @@ class VolumeArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+        Disk description. Default is empty. Length must be between 1 and 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -165,7 +165,7 @@ class VolumeArgs:
     @pulumi.getter(name="extraPerformance")
     def extra_performance(self) -> Optional[pulumi.Input['VolumeExtraPerformanceArgs']]:
         """
-        额外性能。
+        Extra performance.
         """
         return pulumi.get(self, "extra_performance")
 
@@ -177,7 +177,7 @@ class VolumeArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建云盘的同时挂载的ECS实例ID。
+        ECS instance ID mounted when creating the cloud disk.
         """
         return pulumi.get(self, "instance_id")
 
@@ -189,7 +189,7 @@ class VolumeArgs:
     @pulumi.getter
     def kind(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+        Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
         """
         return pulumi.get(self, "kind")
 
@@ -201,7 +201,7 @@ class VolumeArgs:
     @pulumi.getter(name="payType")
     def pay_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+        Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
         """
         return pulumi.get(self, "pay_type")
 
@@ -213,7 +213,7 @@ class VolumeArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘所要加入的Project（项目）名称。
+        Project name to which the disk will be added.
         """
         return pulumi.get(self, "project_name")
 
@@ -225,7 +225,7 @@ class VolumeArgs:
     @pulumi.getter(name="sourceSnapshotId")
     def source_snapshot_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        源快照。
+        Source snapshot.
         """
         return pulumi.get(self, "source_snapshot_id")
 
@@ -278,35 +278,35 @@ class _VolumeState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Volume resources.
-        :param pulumi.Input[builtins.str] auto_snapshot_policy_id: 自动快照策略ID。
-        :param pulumi.Input[builtins.str] auto_snapshot_policy_name: 自动快照策略名称。
-        :param pulumi.Input['VolumeBaselinePerformanceArgs'] baseline_performance: 基本性能。
-        :param pulumi.Input[builtins.str] created_at: 云盘创建时间。
-        :param pulumi.Input[builtins.bool] delete_with_instance: 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
-        :param pulumi.Input[builtins.str] description: 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
-        :param pulumi.Input[builtins.str] device_name: 设备名称
-        :param pulumi.Input[builtins.str] error_detail: 具体错误
-        :param pulumi.Input[builtins.str] expired_time: 包年包月到期时间。
-        :param pulumi.Input['VolumeExtraPerformanceArgs'] extra_performance: 额外性能。
-        :param pulumi.Input[builtins.str] image_id: 云盘中的镜像ID。
-        :param pulumi.Input[builtins.str] instance_id: 创建云盘的同时挂载的ECS实例ID。
-        :param pulumi.Input[builtins.str] kind: 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
-        :param pulumi.Input[builtins.str] overdue_reclaim_time: 云盘欠费回收时间。
-        :param pulumi.Input[builtins.str] overdue_time: 云盘欠费关停时间。
-        :param pulumi.Input[builtins.str] pay_type: 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
-        :param pulumi.Input[builtins.str] project_name: 云盘所要加入的Project（项目）名称。
-        :param pulumi.Input[builtins.float] renew_type: 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
-        :param pulumi.Input[builtins.float] size: Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
-        :param pulumi.Input[builtins.float] snapshot_count: 快照计数
-        :param pulumi.Input[builtins.str] source_snapshot_id: 源快照。
-        :param pulumi.Input[builtins.str] status: 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
-        :param pulumi.Input['VolumeTotalPerformanceArgs'] total_performance: 总性能。
-        :param pulumi.Input[builtins.float] trade_status: 交易状态 0：创建中 1：运行中 2：创建失败
-        :param pulumi.Input[builtins.str] updated_at: 云盘更新时间。
-        :param pulumi.Input[builtins.str] volume_id: 云盘id。
-        :param pulumi.Input[builtins.str] volume_name: 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
-        :param pulumi.Input[builtins.str] volume_type: 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
-        :param pulumi.Input[builtins.str] zone_id: 可用区ID。
+        :param pulumi.Input[builtins.str] auto_snapshot_policy_id: Automatic snapshot policy ID.
+        :param pulumi.Input[builtins.str] auto_snapshot_policy_name: Automatic snapshot policy name.
+        :param pulumi.Input['VolumeBaselinePerformanceArgs'] baseline_performance: Baseline performance.
+        :param pulumi.Input[builtins.str] created_at: Disk creation time.
+        :param pulumi.Input[builtins.bool] delete_with_instance: When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
+        :param pulumi.Input[builtins.str] description: Disk description. Default is empty. Length must be between 1 and 255 characters.
+        :param pulumi.Input[builtins.str] device_name: Device name
+        :param pulumi.Input[builtins.str] error_detail: Specific error
+        :param pulumi.Input[builtins.str] expired_time: Expiration time for yearly/monthly subscription.
+        :param pulumi.Input['VolumeExtraPerformanceArgs'] extra_performance: Extra performance.
+        :param pulumi.Input[builtins.str] image_id: Image ID in the disk.
+        :param pulumi.Input[builtins.str] instance_id: ECS instance ID mounted when creating the cloud disk.
+        :param pulumi.Input[builtins.str] kind: Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
+        :param pulumi.Input[builtins.str] overdue_reclaim_time: Disk overdue reclamation time.
+        :param pulumi.Input[builtins.str] overdue_time: Disk overdue shutdown time.
+        :param pulumi.Input[builtins.str] pay_type: Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
+        :param pulumi.Input[builtins.str] project_name: Project name to which the disk will be added.
+        :param pulumi.Input[builtins.float] renew_type: Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
+        :param pulumi.Input[builtins.float] size: Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
+        :param pulumi.Input[builtins.float] snapshot_count: Snapshot count.
+        :param pulumi.Input[builtins.str] source_snapshot_id: Source snapshot.
+        :param pulumi.Input[builtins.str] status: Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
+        :param pulumi.Input['VolumeTotalPerformanceArgs'] total_performance: Total performance.
+        :param pulumi.Input[builtins.float] trade_status: Transaction status 0: Creating 1: Running 2: Creation failed
+        :param pulumi.Input[builtins.str] updated_at: Disk update time.
+        :param pulumi.Input[builtins.str] volume_id: Disk ID.
+        :param pulumi.Input[builtins.str] volume_name: Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] volume_type: Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID.
         """
         if auto_snapshot_policy_id is not None:
             pulumi.set(__self__, "auto_snapshot_policy_id", auto_snapshot_policy_id)
@@ -373,7 +373,7 @@ class _VolumeState:
     @pulumi.getter(name="autoSnapshotPolicyId")
     def auto_snapshot_policy_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        自动快照策略ID。
+        Automatic snapshot policy ID.
         """
         return pulumi.get(self, "auto_snapshot_policy_id")
 
@@ -385,7 +385,7 @@ class _VolumeState:
     @pulumi.getter(name="autoSnapshotPolicyName")
     def auto_snapshot_policy_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        自动快照策略名称。
+        Automatic snapshot policy name.
         """
         return pulumi.get(self, "auto_snapshot_policy_name")
 
@@ -397,7 +397,7 @@ class _VolumeState:
     @pulumi.getter(name="baselinePerformance")
     def baseline_performance(self) -> Optional[pulumi.Input['VolumeBaselinePerformanceArgs']]:
         """
-        基本性能。
+        Baseline performance.
         """
         return pulumi.get(self, "baseline_performance")
 
@@ -409,7 +409,7 @@ class _VolumeState:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘创建时间。
+        Disk creation time.
         """
         return pulumi.get(self, "created_at")
 
@@ -421,7 +421,7 @@ class _VolumeState:
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+        When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -433,7 +433,7 @@ class _VolumeState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+        Disk description. Default is empty. Length must be between 1 and 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -445,7 +445,7 @@ class _VolumeState:
     @pulumi.getter(name="deviceName")
     def device_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        设备名称
+        Device name
         """
         return pulumi.get(self, "device_name")
 
@@ -457,7 +457,7 @@ class _VolumeState:
     @pulumi.getter(name="errorDetail")
     def error_detail(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        具体错误
+        Specific error
         """
         return pulumi.get(self, "error_detail")
 
@@ -469,7 +469,7 @@ class _VolumeState:
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        包年包月到期时间。
+        Expiration time for yearly/monthly subscription.
         """
         return pulumi.get(self, "expired_time")
 
@@ -481,7 +481,7 @@ class _VolumeState:
     @pulumi.getter(name="extraPerformance")
     def extra_performance(self) -> Optional[pulumi.Input['VolumeExtraPerformanceArgs']]:
         """
-        额外性能。
+        Extra performance.
         """
         return pulumi.get(self, "extra_performance")
 
@@ -493,7 +493,7 @@ class _VolumeState:
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘中的镜像ID。
+        Image ID in the disk.
         """
         return pulumi.get(self, "image_id")
 
@@ -505,7 +505,7 @@ class _VolumeState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建云盘的同时挂载的ECS实例ID。
+        ECS instance ID mounted when creating the cloud disk.
         """
         return pulumi.get(self, "instance_id")
 
@@ -517,7 +517,7 @@ class _VolumeState:
     @pulumi.getter
     def kind(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+        Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
         """
         return pulumi.get(self, "kind")
 
@@ -529,7 +529,7 @@ class _VolumeState:
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘欠费回收时间。
+        Disk overdue reclamation time.
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -541,7 +541,7 @@ class _VolumeState:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘欠费关停时间。
+        Disk overdue shutdown time.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -553,7 +553,7 @@ class _VolumeState:
     @pulumi.getter(name="payType")
     def pay_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+        Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
         """
         return pulumi.get(self, "pay_type")
 
@@ -565,7 +565,7 @@ class _VolumeState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘所要加入的Project（项目）名称。
+        Project name to which the disk will be added.
         """
         return pulumi.get(self, "project_name")
 
@@ -577,7 +577,7 @@ class _VolumeState:
     @pulumi.getter(name="renewType")
     def renew_type(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+        Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
         """
         return pulumi.get(self, "renew_type")
 
@@ -589,7 +589,7 @@ class _VolumeState:
     @pulumi.getter
     def size(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+        Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
         """
         return pulumi.get(self, "size")
 
@@ -601,7 +601,7 @@ class _VolumeState:
     @pulumi.getter(name="snapshotCount")
     def snapshot_count(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        快照计数
+        Snapshot count.
         """
         return pulumi.get(self, "snapshot_count")
 
@@ -613,7 +613,7 @@ class _VolumeState:
     @pulumi.getter(name="sourceSnapshotId")
     def source_snapshot_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        源快照。
+        Source snapshot.
         """
         return pulumi.get(self, "source_snapshot_id")
 
@@ -625,7 +625,7 @@ class _VolumeState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+        Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
         """
         return pulumi.get(self, "status")
 
@@ -646,7 +646,7 @@ class _VolumeState:
     @pulumi.getter(name="totalPerformance")
     def total_performance(self) -> Optional[pulumi.Input['VolumeTotalPerformanceArgs']]:
         """
-        总性能。
+        Total performance.
         """
         return pulumi.get(self, "total_performance")
 
@@ -658,7 +658,7 @@ class _VolumeState:
     @pulumi.getter(name="tradeStatus")
     def trade_status(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        交易状态 0：创建中 1：运行中 2：创建失败
+        Transaction status 0: Creating 1: Running 2: Creation failed
         """
         return pulumi.get(self, "trade_status")
 
@@ -670,7 +670,7 @@ class _VolumeState:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘更新时间。
+        Disk update time.
         """
         return pulumi.get(self, "updated_at")
 
@@ -682,7 +682,7 @@ class _VolumeState:
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘id。
+        Disk ID.
         """
         return pulumi.get(self, "volume_id")
 
@@ -694,7 +694,7 @@ class _VolumeState:
     @pulumi.getter(name="volumeName")
     def volume_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+        Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "volume_name")
 
@@ -706,7 +706,7 @@ class _VolumeState:
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+        Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
         """
         return pulumi.get(self, "volume_type")
 
@@ -718,7 +718,7 @@ class _VolumeState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        可用区ID。
+        Availability zone ID.
         """
         return pulumi.get(self, "zone_id")
 
@@ -749,7 +749,7 @@ class Volume(pulumi.CustomResource):
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        云盘是高可用、高可靠、高性能、弹性扩展的块存储设备，可以作为云服务器和弹性容器服务的可扩展硬盘使用。
+        Cloud disk is a block storage device with high availability, high reliability, high performance, and elastic scalability. It can be used as a scalable disk for cloud servers and elastic container services.
 
         ## Example Usage
 
@@ -772,19 +772,19 @@ class Volume(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] auto_snapshot_policy_id: 自动快照策略ID。
-        :param pulumi.Input[builtins.bool] delete_with_instance: 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
-        :param pulumi.Input[builtins.str] description: 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
-        :param pulumi.Input[Union['VolumeExtraPerformanceArgs', 'VolumeExtraPerformanceArgsDict']] extra_performance: 额外性能。
-        :param pulumi.Input[builtins.str] instance_id: 创建云盘的同时挂载的ECS实例ID。
-        :param pulumi.Input[builtins.str] kind: 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
-        :param pulumi.Input[builtins.str] pay_type: 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
-        :param pulumi.Input[builtins.str] project_name: 云盘所要加入的Project（项目）名称。
-        :param pulumi.Input[builtins.float] size: Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
-        :param pulumi.Input[builtins.str] source_snapshot_id: 源快照。
-        :param pulumi.Input[builtins.str] volume_name: 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
-        :param pulumi.Input[builtins.str] volume_type: 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
-        :param pulumi.Input[builtins.str] zone_id: 可用区ID。
+        :param pulumi.Input[builtins.str] auto_snapshot_policy_id: Automatic snapshot policy ID.
+        :param pulumi.Input[builtins.bool] delete_with_instance: When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
+        :param pulumi.Input[builtins.str] description: Disk description. Default is empty. Length must be between 1 and 255 characters.
+        :param pulumi.Input[Union['VolumeExtraPerformanceArgs', 'VolumeExtraPerformanceArgsDict']] extra_performance: Extra performance.
+        :param pulumi.Input[builtins.str] instance_id: ECS instance ID mounted when creating the cloud disk.
+        :param pulumi.Input[builtins.str] kind: Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
+        :param pulumi.Input[builtins.str] pay_type: Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
+        :param pulumi.Input[builtins.str] project_name: Project name to which the disk will be added.
+        :param pulumi.Input[builtins.float] size: Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
+        :param pulumi.Input[builtins.str] source_snapshot_id: Source snapshot.
+        :param pulumi.Input[builtins.str] volume_name: Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] volume_type: Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID.
         """
         ...
     @overload
@@ -793,7 +793,7 @@ class Volume(pulumi.CustomResource):
                  args: VolumeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        云盘是高可用、高可靠、高性能、弹性扩展的块存储设备，可以作为云服务器和弹性容器服务的可扩展硬盘使用。
+        Cloud disk is a block storage device with high availability, high reliability, high performance, and elastic scalability. It can be used as a scalable disk for cloud servers and elastic container services.
 
         ## Example Usage
 
@@ -937,35 +937,35 @@ class Volume(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] auto_snapshot_policy_id: 自动快照策略ID。
-        :param pulumi.Input[builtins.str] auto_snapshot_policy_name: 自动快照策略名称。
-        :param pulumi.Input[Union['VolumeBaselinePerformanceArgs', 'VolumeBaselinePerformanceArgsDict']] baseline_performance: 基本性能。
-        :param pulumi.Input[builtins.str] created_at: 云盘创建时间。
-        :param pulumi.Input[builtins.bool] delete_with_instance: 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
-        :param pulumi.Input[builtins.str] description: 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
-        :param pulumi.Input[builtins.str] device_name: 设备名称
-        :param pulumi.Input[builtins.str] error_detail: 具体错误
-        :param pulumi.Input[builtins.str] expired_time: 包年包月到期时间。
-        :param pulumi.Input[Union['VolumeExtraPerformanceArgs', 'VolumeExtraPerformanceArgsDict']] extra_performance: 额外性能。
-        :param pulumi.Input[builtins.str] image_id: 云盘中的镜像ID。
-        :param pulumi.Input[builtins.str] instance_id: 创建云盘的同时挂载的ECS实例ID。
-        :param pulumi.Input[builtins.str] kind: 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
-        :param pulumi.Input[builtins.str] overdue_reclaim_time: 云盘欠费回收时间。
-        :param pulumi.Input[builtins.str] overdue_time: 云盘欠费关停时间。
-        :param pulumi.Input[builtins.str] pay_type: 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
-        :param pulumi.Input[builtins.str] project_name: 云盘所要加入的Project（项目）名称。
-        :param pulumi.Input[builtins.float] renew_type: 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
-        :param pulumi.Input[builtins.float] size: Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
-        :param pulumi.Input[builtins.float] snapshot_count: 快照计数
-        :param pulumi.Input[builtins.str] source_snapshot_id: 源快照。
-        :param pulumi.Input[builtins.str] status: 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
-        :param pulumi.Input[Union['VolumeTotalPerformanceArgs', 'VolumeTotalPerformanceArgsDict']] total_performance: 总性能。
-        :param pulumi.Input[builtins.float] trade_status: 交易状态 0：创建中 1：运行中 2：创建失败
-        :param pulumi.Input[builtins.str] updated_at: 云盘更新时间。
-        :param pulumi.Input[builtins.str] volume_id: 云盘id。
-        :param pulumi.Input[builtins.str] volume_name: 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
-        :param pulumi.Input[builtins.str] volume_type: 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
-        :param pulumi.Input[builtins.str] zone_id: 可用区ID。
+        :param pulumi.Input[builtins.str] auto_snapshot_policy_id: Automatic snapshot policy ID.
+        :param pulumi.Input[builtins.str] auto_snapshot_policy_name: Automatic snapshot policy name.
+        :param pulumi.Input[Union['VolumeBaselinePerformanceArgs', 'VolumeBaselinePerformanceArgsDict']] baseline_performance: Baseline performance.
+        :param pulumi.Input[builtins.str] created_at: Disk creation time.
+        :param pulumi.Input[builtins.bool] delete_with_instance: When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
+        :param pulumi.Input[builtins.str] description: Disk description. Default is empty. Length must be between 1 and 255 characters.
+        :param pulumi.Input[builtins.str] device_name: Device name
+        :param pulumi.Input[builtins.str] error_detail: Specific error
+        :param pulumi.Input[builtins.str] expired_time: Expiration time for yearly/monthly subscription.
+        :param pulumi.Input[Union['VolumeExtraPerformanceArgs', 'VolumeExtraPerformanceArgsDict']] extra_performance: Extra performance.
+        :param pulumi.Input[builtins.str] image_id: Image ID in the disk.
+        :param pulumi.Input[builtins.str] instance_id: ECS instance ID mounted when creating the cloud disk.
+        :param pulumi.Input[builtins.str] kind: Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
+        :param pulumi.Input[builtins.str] overdue_reclaim_time: Disk overdue reclamation time.
+        :param pulumi.Input[builtins.str] overdue_time: Disk overdue shutdown time.
+        :param pulumi.Input[builtins.str] pay_type: Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
+        :param pulumi.Input[builtins.str] project_name: Project name to which the disk will be added.
+        :param pulumi.Input[builtins.float] renew_type: Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
+        :param pulumi.Input[builtins.float] size: Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
+        :param pulumi.Input[builtins.float] snapshot_count: Snapshot count.
+        :param pulumi.Input[builtins.str] source_snapshot_id: Source snapshot.
+        :param pulumi.Input[builtins.str] status: Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
+        :param pulumi.Input[Union['VolumeTotalPerformanceArgs', 'VolumeTotalPerformanceArgsDict']] total_performance: Total performance.
+        :param pulumi.Input[builtins.float] trade_status: Transaction status 0: Creating 1: Running 2: Creation failed
+        :param pulumi.Input[builtins.str] updated_at: Disk update time.
+        :param pulumi.Input[builtins.str] volume_id: Disk ID.
+        :param pulumi.Input[builtins.str] volume_name: Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] volume_type: Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1007,7 +1007,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="autoSnapshotPolicyId")
     def auto_snapshot_policy_id(self) -> pulumi.Output[builtins.str]:
         """
-        自动快照策略ID。
+        Automatic snapshot policy ID.
         """
         return pulumi.get(self, "auto_snapshot_policy_id")
 
@@ -1015,7 +1015,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="autoSnapshotPolicyName")
     def auto_snapshot_policy_name(self) -> pulumi.Output[builtins.str]:
         """
-        自动快照策略名称。
+        Automatic snapshot policy name.
         """
         return pulumi.get(self, "auto_snapshot_policy_name")
 
@@ -1023,7 +1023,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="baselinePerformance")
     def baseline_performance(self) -> pulumi.Output['outputs.VolumeBaselinePerformance']:
         """
-        基本性能。
+        Baseline performance.
         """
         return pulumi.get(self, "baseline_performance")
 
@@ -1031,7 +1031,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="createdAt")
     def created_at(self) -> pulumi.Output[builtins.str]:
         """
-        云盘创建时间。
+        Disk creation time.
         """
         return pulumi.get(self, "created_at")
 
@@ -1039,7 +1039,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> pulumi.Output[builtins.bool]:
         """
-        释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+        When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -1047,7 +1047,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+        Disk description. Default is empty. Length must be between 1 and 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -1055,7 +1055,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="deviceName")
     def device_name(self) -> pulumi.Output[builtins.str]:
         """
-        设备名称
+        Device name
         """
         return pulumi.get(self, "device_name")
 
@@ -1063,7 +1063,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="errorDetail")
     def error_detail(self) -> pulumi.Output[builtins.str]:
         """
-        具体错误
+        Specific error
         """
         return pulumi.get(self, "error_detail")
 
@@ -1071,7 +1071,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> pulumi.Output[builtins.str]:
         """
-        包年包月到期时间。
+        Expiration time for yearly/monthly subscription.
         """
         return pulumi.get(self, "expired_time")
 
@@ -1079,7 +1079,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="extraPerformance")
     def extra_performance(self) -> pulumi.Output['outputs.VolumeExtraPerformance']:
         """
-        额外性能。
+        Extra performance.
         """
         return pulumi.get(self, "extra_performance")
 
@@ -1087,7 +1087,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="imageId")
     def image_id(self) -> pulumi.Output[builtins.str]:
         """
-        云盘中的镜像ID。
+        Image ID in the disk.
         """
         return pulumi.get(self, "image_id")
 
@@ -1095,7 +1095,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        创建云盘的同时挂载的ECS实例ID。
+        ECS instance ID mounted when creating the cloud disk.
         """
         return pulumi.get(self, "instance_id")
 
@@ -1103,7 +1103,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter
     def kind(self) -> pulumi.Output[builtins.str]:
         """
-        云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+        Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
         """
         return pulumi.get(self, "kind")
 
@@ -1111,7 +1111,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> pulumi.Output[builtins.str]:
         """
-        云盘欠费回收时间。
+        Disk overdue reclamation time.
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -1119,7 +1119,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> pulumi.Output[builtins.str]:
         """
-        云盘欠费关停时间。
+        Disk overdue shutdown time.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -1127,7 +1127,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="payType")
     def pay_type(self) -> pulumi.Output[builtins.str]:
         """
-        付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+        Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
         """
         return pulumi.get(self, "pay_type")
 
@@ -1135,7 +1135,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        云盘所要加入的Project（项目）名称。
+        Project name to which the disk will be added.
         """
         return pulumi.get(self, "project_name")
 
@@ -1143,7 +1143,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="renewType")
     def renew_type(self) -> pulumi.Output[builtins.float]:
         """
-        续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+        Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
         """
         return pulumi.get(self, "renew_type")
 
@@ -1151,7 +1151,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter
     def size(self) -> pulumi.Output[builtins.float]:
         """
-        Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+        Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
         """
         return pulumi.get(self, "size")
 
@@ -1159,7 +1159,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="snapshotCount")
     def snapshot_count(self) -> pulumi.Output[builtins.float]:
         """
-        快照计数
+        Snapshot count.
         """
         return pulumi.get(self, "snapshot_count")
 
@@ -1167,7 +1167,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="sourceSnapshotId")
     def source_snapshot_id(self) -> pulumi.Output[builtins.str]:
         """
-        源快照。
+        Source snapshot.
         """
         return pulumi.get(self, "source_snapshot_id")
 
@@ -1175,7 +1175,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+        Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
         """
         return pulumi.get(self, "status")
 
@@ -1188,7 +1188,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="totalPerformance")
     def total_performance(self) -> pulumi.Output['outputs.VolumeTotalPerformance']:
         """
-        总性能。
+        Total performance.
         """
         return pulumi.get(self, "total_performance")
 
@@ -1196,7 +1196,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="tradeStatus")
     def trade_status(self) -> pulumi.Output[builtins.float]:
         """
-        交易状态 0：创建中 1：运行中 2：创建失败
+        Transaction status 0: Creating 1: Running 2: Creation failed
         """
         return pulumi.get(self, "trade_status")
 
@@ -1204,7 +1204,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> pulumi.Output[builtins.str]:
         """
-        云盘更新时间。
+        Disk update time.
         """
         return pulumi.get(self, "updated_at")
 
@@ -1212,7 +1212,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> pulumi.Output[builtins.str]:
         """
-        云盘id。
+        Disk ID.
         """
         return pulumi.get(self, "volume_id")
 
@@ -1220,7 +1220,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="volumeName")
     def volume_name(self) -> pulumi.Output[builtins.str]:
         """
-        云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+        Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "volume_name")
 
@@ -1228,7 +1228,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> pulumi.Output[builtins.str]:
         """
-        云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+        Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
         """
         return pulumi.get(self, "volume_type")
 
@@ -1236,7 +1236,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        可用区ID。
+        Availability zone ID.
         """
         return pulumi.get(self, "zone_id")
 

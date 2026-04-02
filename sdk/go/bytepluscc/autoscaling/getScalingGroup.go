@@ -30,65 +30,69 @@ type LookupScalingGroupArgs struct {
 
 // A collection of values returned by getScalingGroup.
 type LookupScalingGroupResult struct {
-	// 伸缩组绑定的伸缩配置的ID。
+	// ID of the scaling configuration bound to the scaling group
 	ActiveScalingConfigurationId string `pulumi:"activeScalingConfigurationId"`
-	// 伸缩组创建时间。
+	// Scaling group creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// RDS数据库实例的ID。
+	// ID of the RDS database instance.
 	DbInstanceIds []string `pulumi:"dbInstanceIds"`
-	// 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+	// Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
 	DefaultCooldown int `pulumi:"defaultCooldown"`
-	// 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+	// Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
 	DesireInstanceNumber int `pulumi:"desireInstanceNumber"`
-	// 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
+	// Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
 	HealthCheckType string `pulumi:"healthCheckType"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
+	// Instance removal policy
+	InstanceRemovePolicies []GetScalingGroupInstanceRemovePolicy `pulumi:"instanceRemovePolicies"`
+	// Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
 	InstanceTerminatePolicy string `pulumi:"instanceTerminatePolicy"`
-	// 实例分布策略。
+	// Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+	Instances []GetScalingGroupInstance `pulumi:"instances"`
+	// Instance distribution policy.
 	InstancesDistribution GetScalingGroupInstancesDistribution `pulumi:"instancesDistribution"`
-	// 是否启用伸缩组。true：启用。false：停止
+	// Whether to enable the scaling group. true: enabled. false: stopped
 	IsEnableScalingGroup bool `pulumi:"isEnableScalingGroup"`
-	// 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+	// Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
 	LaunchTemplateId string `pulumi:"launchTemplateId"`
-	// 实例启动模版信息。
+	// Instance launch template information
 	LaunchTemplateOverrides []GetScalingGroupLaunchTemplateOverride `pulumi:"launchTemplateOverrides"`
-	// 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+	// Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
 	LaunchTemplateVersion string `pulumi:"launchTemplateVersion"`
-	// 伸缩组的状态。Active：已启用。InActive：未激活。Deleting：删除中。Locked: 已锁定。CoolingDown: 冷却中。Unknown: 未知状态。
+	// Status of the scaling group. Active: enabled. InActive: not activated. Deleting: deleting. Locked: locked. CoolingDown: cooling down. Unknown: unknown status.
 	LifecycleState string `pulumi:"lifecycleState"`
-	// 伸缩组实例CLB健康状况检查宽限期。
+	// Grace period for CLB health checks on scaling group instances
 	LoadBalancerHealthCheckGracePeriod int `pulumi:"loadBalancerHealthCheckGracePeriod"`
-	// 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+	// Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
 	MaxInstanceNumber int `pulumi:"maxInstanceNumber"`
-	// 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+	// Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
 	MinInstanceNumber int `pulumi:"minInstanceNumber"`
-	// 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+	// Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
 	MultiAzPolicy string `pulumi:"multiAzPolicy"`
-	// 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+	// Project to which the scaling group belongs. Default is 'default'. A resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length: 64 characters.
 	ProjectName string `pulumi:"projectName"`
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId string `pulumi:"scalingGroupId"`
-	// 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+	// Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
 	ScalingGroupName string `pulumi:"scalingGroupName"`
-	// 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+	// Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
 	ScalingMode string `pulumi:"scalingMode"`
-	// 伸缩组关联的负载均衡信息。
+	// Load balancer information associated with the scaling group.
 	ServerGroupAttributes []GetScalingGroupServerGroupAttribute `pulumi:"serverGroupAttributes"`
-	// 伸缩组内处于停用中状态的实例数量。
+	// Number of instances in the scaling group that are in the disabled state.
 	StoppedInstanceCount int `pulumi:"stoppedInstanceCount"`
-	// 伸缩组中实例主网卡的子网ID列表。
+	// List of subnet IDs for the primary network interface of instances in the scaling group
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+	// Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
 	SuspendedProcesses []string `pulumi:"suspendedProcesses"`
-	// 标签列表。
+	// Tag list.
 	Tags []GetScalingGroupTag `pulumi:"tags"`
-	// 当前伸缩组内实例的个数。
+	// Number of instances currently in the scaling group
 	TotalInstanceCount int `pulumi:"totalInstanceCount"`
-	// 伸缩组更新时间。
+	// Scaling group update time.
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 伸缩组所属私有网络ID。
+	// VPC ID to which the scaling group belongs
 	VpcId string `pulumi:"vpcId"`
 }
 
@@ -126,32 +130,32 @@ func (o LookupScalingGroupResultOutput) ToLookupScalingGroupResultOutputWithCont
 	return o
 }
 
-// 伸缩组绑定的伸缩配置的ID。
+// ID of the scaling configuration bound to the scaling group
 func (o LookupScalingGroupResultOutput) ActiveScalingConfigurationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.ActiveScalingConfigurationId }).(pulumi.StringOutput)
 }
 
-// 伸缩组创建时间。
+// Scaling group creation time
 func (o LookupScalingGroupResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// RDS数据库实例的ID。
+// ID of the RDS database instance.
 func (o LookupScalingGroupResultOutput) DbInstanceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) []string { return v.DbInstanceIds }).(pulumi.StringArrayOutput)
 }
 
-// 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+// Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
 func (o LookupScalingGroupResultOutput) DefaultCooldown() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) int { return v.DefaultCooldown }).(pulumi.IntOutput)
 }
 
-// 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+// Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
 func (o LookupScalingGroupResultOutput) DesireInstanceNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) int { return v.DesireInstanceNumber }).(pulumi.IntOutput)
 }
 
-// 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
+// Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
 func (o LookupScalingGroupResultOutput) HealthCheckType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.HealthCheckType }).(pulumi.StringOutput)
 }
@@ -161,119 +165,131 @@ func (o LookupScalingGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
+// Instance removal policy
+func (o LookupScalingGroupResultOutput) InstanceRemovePolicies() GetScalingGroupInstanceRemovePolicyArrayOutput {
+	return o.ApplyT(func(v LookupScalingGroupResult) []GetScalingGroupInstanceRemovePolicy {
+		return v.InstanceRemovePolicies
+	}).(GetScalingGroupInstanceRemovePolicyArrayOutput)
+}
+
+// Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
 func (o LookupScalingGroupResultOutput) InstanceTerminatePolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.InstanceTerminatePolicy }).(pulumi.StringOutput)
 }
 
-// 实例分布策略。
+// Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+func (o LookupScalingGroupResultOutput) Instances() GetScalingGroupInstanceArrayOutput {
+	return o.ApplyT(func(v LookupScalingGroupResult) []GetScalingGroupInstance { return v.Instances }).(GetScalingGroupInstanceArrayOutput)
+}
+
+// Instance distribution policy.
 func (o LookupScalingGroupResultOutput) InstancesDistribution() GetScalingGroupInstancesDistributionOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) GetScalingGroupInstancesDistribution { return v.InstancesDistribution }).(GetScalingGroupInstancesDistributionOutput)
 }
 
-// 是否启用伸缩组。true：启用。false：停止
+// Whether to enable the scaling group. true: enabled. false: stopped
 func (o LookupScalingGroupResultOutput) IsEnableScalingGroup() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) bool { return v.IsEnableScalingGroup }).(pulumi.BoolOutput)
 }
 
-// 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+// Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
 func (o LookupScalingGroupResultOutput) LaunchTemplateId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.LaunchTemplateId }).(pulumi.StringOutput)
 }
 
-// 实例启动模版信息。
+// Instance launch template information
 func (o LookupScalingGroupResultOutput) LaunchTemplateOverrides() GetScalingGroupLaunchTemplateOverrideArrayOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) []GetScalingGroupLaunchTemplateOverride {
 		return v.LaunchTemplateOverrides
 	}).(GetScalingGroupLaunchTemplateOverrideArrayOutput)
 }
 
-// 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+// Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
 func (o LookupScalingGroupResultOutput) LaunchTemplateVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.LaunchTemplateVersion }).(pulumi.StringOutput)
 }
 
-// 伸缩组的状态。Active：已启用。InActive：未激活。Deleting：删除中。Locked: 已锁定。CoolingDown: 冷却中。Unknown: 未知状态。
+// Status of the scaling group. Active: enabled. InActive: not activated. Deleting: deleting. Locked: locked. CoolingDown: cooling down. Unknown: unknown status.
 func (o LookupScalingGroupResultOutput) LifecycleState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.LifecycleState }).(pulumi.StringOutput)
 }
 
-// 伸缩组实例CLB健康状况检查宽限期。
+// Grace period for CLB health checks on scaling group instances
 func (o LookupScalingGroupResultOutput) LoadBalancerHealthCheckGracePeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) int { return v.LoadBalancerHealthCheckGracePeriod }).(pulumi.IntOutput)
 }
 
-// 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+// Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
 func (o LookupScalingGroupResultOutput) MaxInstanceNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) int { return v.MaxInstanceNumber }).(pulumi.IntOutput)
 }
 
-// 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+// Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
 func (o LookupScalingGroupResultOutput) MinInstanceNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) int { return v.MinInstanceNumber }).(pulumi.IntOutput)
 }
 
-// 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+// Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
 func (o LookupScalingGroupResultOutput) MultiAzPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.MultiAzPolicy }).(pulumi.StringOutput)
 }
 
-// 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+// Project to which the scaling group belongs. Default is 'default'. A resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length: 64 characters.
 func (o LookupScalingGroupResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 伸缩组ID。
+// Scaling group ID.
 func (o LookupScalingGroupResultOutput) ScalingGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.ScalingGroupId }).(pulumi.StringOutput)
 }
 
-// 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+// Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
 func (o LookupScalingGroupResultOutput) ScalingGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.ScalingGroupName }).(pulumi.StringOutput)
 }
 
-// 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+// Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
 func (o LookupScalingGroupResultOutput) ScalingMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.ScalingMode }).(pulumi.StringOutput)
 }
 
-// 伸缩组关联的负载均衡信息。
+// Load balancer information associated with the scaling group.
 func (o LookupScalingGroupResultOutput) ServerGroupAttributes() GetScalingGroupServerGroupAttributeArrayOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) []GetScalingGroupServerGroupAttribute { return v.ServerGroupAttributes }).(GetScalingGroupServerGroupAttributeArrayOutput)
 }
 
-// 伸缩组内处于停用中状态的实例数量。
+// Number of instances in the scaling group that are in the disabled state.
 func (o LookupScalingGroupResultOutput) StoppedInstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) int { return v.StoppedInstanceCount }).(pulumi.IntOutput)
 }
 
-// 伸缩组中实例主网卡的子网ID列表。
+// List of subnet IDs for the primary network interface of instances in the scaling group
 func (o LookupScalingGroupResultOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+// Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
 func (o LookupScalingGroupResultOutput) SuspendedProcesses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) []string { return v.SuspendedProcesses }).(pulumi.StringArrayOutput)
 }
 
-// 标签列表。
+// Tag list.
 func (o LookupScalingGroupResultOutput) Tags() GetScalingGroupTagArrayOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) []GetScalingGroupTag { return v.Tags }).(GetScalingGroupTagArrayOutput)
 }
 
-// 当前伸缩组内实例的个数。
+// Number of instances currently in the scaling group
 func (o LookupScalingGroupResultOutput) TotalInstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) int { return v.TotalInstanceCount }).(pulumi.IntOutput)
 }
 
-// 伸缩组更新时间。
+// Scaling group update time.
 func (o LookupScalingGroupResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 伸缩组所属私有网络ID。
+// VPC ID to which the scaling group belongs
 func (o LookupScalingGroupResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingGroupResult) string { return v.VpcId }).(pulumi.StringOutput)
 }

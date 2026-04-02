@@ -31,11 +31,11 @@ class PrefixListArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['PrefixListTagArgs']]]] = None):
         """
         The set of arguments for constructing a PrefixList resource.
-        :param pulumi.Input[builtins.int] max_entries: 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
-        :param pulumi.Input[builtins.str] description: 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
-        :param pulumi.Input[builtins.str] ip_version: IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
-        :param pulumi.Input[builtins.str] prefix_list_name: 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
-        :param pulumi.Input[builtins.str] project_name: 前缀列表所属项目的名称，不填默认加入default项目。
+        :param pulumi.Input[builtins.int] max_entries: Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
+        :param pulumi.Input[builtins.str] description: Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
+        :param pulumi.Input[builtins.str] ip_version: IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
+        :param pulumi.Input[builtins.str] prefix_list_name: Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
         """
         pulumi.set(__self__, "max_entries", max_entries)
         if description is not None:
@@ -55,7 +55,7 @@ class PrefixListArgs:
     @pulumi.getter(name="maxEntries")
     def max_entries(self) -> pulumi.Input[builtins.int]:
         """
-        最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+        Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
         """
         return pulumi.get(self, "max_entries")
 
@@ -67,7 +67,7 @@ class PrefixListArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         """
         return pulumi.get(self, "description")
 
@@ -79,7 +79,7 @@ class PrefixListArgs:
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+        IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
         """
         return pulumi.get(self, "ip_version")
 
@@ -100,7 +100,7 @@ class PrefixListArgs:
     @pulumi.getter(name="prefixListName")
     def prefix_list_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+        Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "prefix_list_name")
 
@@ -112,7 +112,7 @@ class PrefixListArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        前缀列表所属项目的名称，不填默认加入default项目。
+        Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -149,16 +149,16 @@ class _PrefixListState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering PrefixList resources.
-        :param pulumi.Input[builtins.int] association_count: 前缀列表关联的资源数量。
-        :param pulumi.Input[builtins.str] created_time: 前缀列表的创建时间。
-        :param pulumi.Input[builtins.str] description: 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
-        :param pulumi.Input[builtins.str] ip_version: IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
-        :param pulumi.Input[builtins.int] max_entries: 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
-        :param pulumi.Input[builtins.str] prefix_list_id: 前缀列表的ID。
-        :param pulumi.Input[builtins.str] prefix_list_name: 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
-        :param pulumi.Input[builtins.str] project_name: 前缀列表所属项目的名称，不填默认加入default项目。
-        :param pulumi.Input[builtins.str] status: 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
-        :param pulumi.Input[builtins.str] updated_time: 前缀列表的最近一次修改时间。
+        :param pulumi.Input[builtins.int] association_count: Number of resources associated with the prefix list.
+        :param pulumi.Input[builtins.str] created_time: Creation time of the prefix list.
+        :param pulumi.Input[builtins.str] description: Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
+        :param pulumi.Input[builtins.str] ip_version: IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
+        :param pulumi.Input[builtins.int] max_entries: Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
+        :param pulumi.Input[builtins.str] prefix_list_id: Prefix list ID.
+        :param pulumi.Input[builtins.str] prefix_list_name: Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
+        :param pulumi.Input[builtins.str] status: Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
+        :param pulumi.Input[builtins.str] updated_time: Last modification time of the prefix list.
         """
         if association_count is not None:
             pulumi.set(__self__, "association_count", association_count)
@@ -193,7 +193,7 @@ class _PrefixListState:
     @pulumi.getter(name="associationCount")
     def association_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        前缀列表关联的资源数量。
+        Number of resources associated with the prefix list.
         """
         return pulumi.get(self, "association_count")
 
@@ -223,7 +223,7 @@ class _PrefixListState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        前缀列表的创建时间。
+        Creation time of the prefix list.
         """
         return pulumi.get(self, "created_time")
 
@@ -235,7 +235,7 @@ class _PrefixListState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         """
         return pulumi.get(self, "description")
 
@@ -247,7 +247,7 @@ class _PrefixListState:
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+        IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
         """
         return pulumi.get(self, "ip_version")
 
@@ -259,7 +259,7 @@ class _PrefixListState:
     @pulumi.getter(name="maxEntries")
     def max_entries(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+        Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
         """
         return pulumi.get(self, "max_entries")
 
@@ -280,7 +280,7 @@ class _PrefixListState:
     @pulumi.getter(name="prefixListId")
     def prefix_list_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        前缀列表的ID。
+        Prefix list ID.
         """
         return pulumi.get(self, "prefix_list_id")
 
@@ -292,7 +292,7 @@ class _PrefixListState:
     @pulumi.getter(name="prefixListName")
     def prefix_list_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+        Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "prefix_list_name")
 
@@ -304,7 +304,7 @@ class _PrefixListState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        前缀列表所属项目的名称，不填默认加入default项目。
+        Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -316,7 +316,7 @@ class _PrefixListState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+        Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
         """
         return pulumi.get(self, "status")
 
@@ -337,7 +337,7 @@ class _PrefixListState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        前缀列表的最近一次修改时间。
+        Last modification time of the prefix list.
         """
         return pulumi.get(self, "updated_time")
 
@@ -361,7 +361,7 @@ class PrefixList(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PrefixListTagArgs', 'PrefixListTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        前缀列表是一组CIDR地址块的集合，用于简化安全组规则、路由表条目的配置。当前缀列表修改时，所有关联它的资源均会同步修改。
+        A prefix list is a collection of CIDR blocks used to simplify the configuration of security group rules and route table entries. When the prefix list is modified, all associated resources are updated synchronously.
 
         ## Example Usage
 
@@ -393,11 +393,11 @@ class PrefixList(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
-        :param pulumi.Input[builtins.str] ip_version: IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
-        :param pulumi.Input[builtins.int] max_entries: 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
-        :param pulumi.Input[builtins.str] prefix_list_name: 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
-        :param pulumi.Input[builtins.str] project_name: 前缀列表所属项目的名称，不填默认加入default项目。
+        :param pulumi.Input[builtins.str] description: Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
+        :param pulumi.Input[builtins.str] ip_version: IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
+        :param pulumi.Input[builtins.int] max_entries: Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
+        :param pulumi.Input[builtins.str] prefix_list_name: Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
         """
         ...
     @overload
@@ -406,7 +406,7 @@ class PrefixList(pulumi.CustomResource):
                  args: PrefixListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        前缀列表是一组CIDR地址块的集合，用于简化安全组规则、路由表条目的配置。当前缀列表修改时，所有关联它的资源均会同步修改。
+        A prefix list is a collection of CIDR blocks used to simplify the configuration of security group rules and route table entries. When the prefix list is modified, all associated resources are updated synchronously.
 
         ## Example Usage
 
@@ -514,16 +514,16 @@ class PrefixList(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] association_count: 前缀列表关联的资源数量。
-        :param pulumi.Input[builtins.str] created_time: 前缀列表的创建时间。
-        :param pulumi.Input[builtins.str] description: 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
-        :param pulumi.Input[builtins.str] ip_version: IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
-        :param pulumi.Input[builtins.int] max_entries: 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
-        :param pulumi.Input[builtins.str] prefix_list_id: 前缀列表的ID。
-        :param pulumi.Input[builtins.str] prefix_list_name: 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
-        :param pulumi.Input[builtins.str] project_name: 前缀列表所属项目的名称，不填默认加入default项目。
-        :param pulumi.Input[builtins.str] status: 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
-        :param pulumi.Input[builtins.str] updated_time: 前缀列表的最近一次修改时间。
+        :param pulumi.Input[builtins.int] association_count: Number of resources associated with the prefix list.
+        :param pulumi.Input[builtins.str] created_time: Creation time of the prefix list.
+        :param pulumi.Input[builtins.str] description: Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
+        :param pulumi.Input[builtins.str] ip_version: IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
+        :param pulumi.Input[builtins.int] max_entries: Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
+        :param pulumi.Input[builtins.str] prefix_list_id: Prefix list ID.
+        :param pulumi.Input[builtins.str] prefix_list_name: Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
+        :param pulumi.Input[builtins.str] status: Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
+        :param pulumi.Input[builtins.str] updated_time: Last modification time of the prefix list.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -549,7 +549,7 @@ class PrefixList(pulumi.CustomResource):
     @pulumi.getter(name="associationCount")
     def association_count(self) -> pulumi.Output[builtins.int]:
         """
-        前缀列表关联的资源数量。
+        Number of resources associated with the prefix list.
         """
         return pulumi.get(self, "association_count")
 
@@ -567,7 +567,7 @@ class PrefixList(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        前缀列表的创建时间。
+        Creation time of the prefix list.
         """
         return pulumi.get(self, "created_time")
 
@@ -575,7 +575,7 @@ class PrefixList(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         """
         return pulumi.get(self, "description")
 
@@ -583,7 +583,7 @@ class PrefixList(pulumi.CustomResource):
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> pulumi.Output[builtins.str]:
         """
-        IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+        IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
         """
         return pulumi.get(self, "ip_version")
 
@@ -591,7 +591,7 @@ class PrefixList(pulumi.CustomResource):
     @pulumi.getter(name="maxEntries")
     def max_entries(self) -> pulumi.Output[builtins.int]:
         """
-        最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+        Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
         """
         return pulumi.get(self, "max_entries")
 
@@ -604,7 +604,7 @@ class PrefixList(pulumi.CustomResource):
     @pulumi.getter(name="prefixListId")
     def prefix_list_id(self) -> pulumi.Output[builtins.str]:
         """
-        前缀列表的ID。
+        Prefix list ID.
         """
         return pulumi.get(self, "prefix_list_id")
 
@@ -612,7 +612,7 @@ class PrefixList(pulumi.CustomResource):
     @pulumi.getter(name="prefixListName")
     def prefix_list_name(self) -> pulumi.Output[builtins.str]:
         """
-        前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+        Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "prefix_list_name")
 
@@ -620,7 +620,7 @@ class PrefixList(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        前缀列表所属项目的名称，不填默认加入default项目。
+        Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -628,7 +628,7 @@ class PrefixList(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+        Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
         """
         return pulumi.get(self, "status")
 
@@ -641,7 +641,7 @@ class PrefixList(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        前缀列表的最近一次修改时间。
+        Last modification time of the prefix list.
         """
         return pulumi.get(self, "updated_time")
 

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示该规则中的黑名单或者白名单的配置。
+        /// Indicates the configuration of the denylist or allowlist in this rule.
         /// </summary>
         [Input("accessAction")]
         public Input<Inputs.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs>? AccessAction { get; set; }
 
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         [Input("condition")]
         public Input<Inputs.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionArgs>? Condition { get; set; }

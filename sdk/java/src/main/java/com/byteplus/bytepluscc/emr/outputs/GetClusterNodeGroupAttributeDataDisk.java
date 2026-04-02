@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterNodeGroupAttributeDataDisk {
     /**
-     * @return 磁盘块数，默认值4，最大15，最小1。
+     * @return Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
      * 
      */
     private Integer count;
     /**
-     * @return 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+     * @return Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
      * 
      */
     private Integer size;
     /**
-     * @return 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+     * @return Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
      * 
      */
     private String volumeType;
 
     private GetClusterNodeGroupAttributeDataDisk() {}
     /**
-     * @return 磁盘块数，默认值4，最大15，最小1。
+     * @return Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
      * 
      */
     public Integer count() {
         return this.count;
     }
     /**
-     * @return 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+     * @return Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
      * 
      */
     public Integer size() {
         return this.size;
     }
     /**
-     * @return 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+     * @return Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
      * 
      */
     public String volumeType() {

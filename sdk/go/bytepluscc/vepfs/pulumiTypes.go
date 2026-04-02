@@ -14,9 +14,9 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type InstanceCapacityInfo struct {
-	// 文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
+	// Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
 	TotalTiB *int `pulumi:"totalTiB"`
-	// 已使用容量（GiB）。
+	// Used capacity (GiB).
 	UsedGiB *int `pulumi:"usedGiB"`
 }
 
@@ -32,9 +32,9 @@ type InstanceCapacityInfoInput interface {
 }
 
 type InstanceCapacityInfoArgs struct {
-	// 文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
+	// Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
 	TotalTiB pulumi.IntPtrInput `pulumi:"totalTiB"`
-	// 已使用容量（GiB）。
+	// Used capacity (GiB).
 	UsedGiB pulumi.IntPtrInput `pulumi:"usedGiB"`
 }
 
@@ -115,12 +115,12 @@ func (o InstanceCapacityInfoOutput) ToInstanceCapacityInfoPtrOutputWithContext(c
 	}).(InstanceCapacityInfoPtrOutput)
 }
 
-// 文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
+// Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
 func (o InstanceCapacityInfoOutput) TotalTiB() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceCapacityInfo) *int { return v.TotalTiB }).(pulumi.IntPtrOutput)
 }
 
-// 已使用容量（GiB）。
+// Used capacity (GiB).
 func (o InstanceCapacityInfoOutput) UsedGiB() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceCapacityInfo) *int { return v.UsedGiB }).(pulumi.IntPtrOutput)
 }
@@ -149,7 +149,7 @@ func (o InstanceCapacityInfoPtrOutput) Elem() InstanceCapacityInfoOutput {
 	}).(InstanceCapacityInfoOutput)
 }
 
-// 文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
+// Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
 func (o InstanceCapacityInfoPtrOutput) TotalTiB() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceCapacityInfo) *int {
 		if v == nil {
@@ -159,7 +159,7 @@ func (o InstanceCapacityInfoPtrOutput) TotalTiB() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 已使用容量（GiB）。
+// Used capacity (GiB).
 func (o InstanceCapacityInfoPtrOutput) UsedGiB() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceCapacityInfo) *int {
 		if v == nil {
@@ -170,9 +170,9 @@ func (o InstanceCapacityInfoPtrOutput) UsedGiB() pulumi.IntPtrOutput {
 }
 
 type InstanceTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -188,9 +188,9 @@ type InstanceTagInput interface {
 }
 
 type InstanceTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -245,12 +245,12 @@ func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) I
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -276,9 +276,9 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 }
 
 type GetInstanceCapacityInfo struct {
-	// 文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
+	// Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
 	TotalTiB int `pulumi:"totalTiB"`
-	// 已使用容量（GiB）。
+	// Used capacity (GiB).
 	UsedGiB int `pulumi:"usedGiB"`
 }
 
@@ -294,9 +294,9 @@ type GetInstanceCapacityInfoInput interface {
 }
 
 type GetInstanceCapacityInfoArgs struct {
-	// 文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
+	// Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
 	TotalTiB pulumi.IntInput `pulumi:"totalTiB"`
-	// 已使用容量（GiB）。
+	// Used capacity (GiB).
 	UsedGiB pulumi.IntInput `pulumi:"usedGiB"`
 }
 
@@ -326,22 +326,22 @@ func (o GetInstanceCapacityInfoOutput) ToGetInstanceCapacityInfoOutputWithContex
 	return o
 }
 
-// 文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
+// Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
 func (o GetInstanceCapacityInfoOutput) TotalTiB() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceCapacityInfo) int { return v.TotalTiB }).(pulumi.IntOutput)
 }
 
-// 已使用容量（GiB）。
+// Used capacity (GiB).
 func (o GetInstanceCapacityInfoOutput) UsedGiB() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceCapacityInfo) int { return v.UsedGiB }).(pulumi.IntOutput)
 }
 
 type GetInstanceTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key string `pulumi:"key"`
-	// 标签类型，说明如下：Custom: 用户自定义标签。System: 系统标签。
+	// Tag type. Descriptions are as follows: Custom: User-defined tag. System: System tag.
 	Type string `pulumi:"type"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -357,11 +357,11 @@ type GetInstanceTagInput interface {
 }
 
 type GetInstanceTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签类型，说明如下：Custom: 用户自定义标签。System: 系统标签。
+	// Tag type. Descriptions are as follows: Custom: User-defined tag. System: System tag.
 	Type pulumi.StringInput `pulumi:"type"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -416,17 +416,17 @@ func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签类型，说明如下：Custom: 用户自定义标签。System: 系统标签。
+// Tag type. Descriptions are as follows: Custom: User-defined tag. System: System tag.
 func (o GetInstanceTagOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
 }

@@ -21,14 +21,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
     public static final ClusterNodeGroupAttributeArgs Empty = new ClusterNodeGroupAttributeArgs();
 
     /**
-     * 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+     * Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
      * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
-     * @return 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+     * @return Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
      * 
      */
     public Optional<Output<Integer>> bandwidth() {
@@ -36,14 +36,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+     * Node group billing type. If empty, reuses the cluster&#39;s chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster&#39;s chargeType is PRE, the task node group&#39;s chargeType can be set to POST. When the cluster&#39;s chargeType is POST, the node group&#39;s chargeType defaults to POST, and this parameter setting on the node group is invalid.
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+     * @return Node group billing type. If empty, reuses the cluster&#39;s chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster&#39;s chargeType is PRE, the task node group&#39;s chargeType can be set to POST. When the cluster&#39;s chargeType is POST, the node group&#39;s chargeType defaults to POST, and this parameter setting on the node group is invalid.
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -58,14 +58,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+     * Node group&#39;s ECS instance type list. Only one instance type can be set. The list length is limited to 1.
      * 
      */
     @Import(name="ecsInstanceTypes")
     private @Nullable Output<List<String>> ecsInstanceTypes;
 
     /**
-     * @return 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+     * @return Node group&#39;s ECS instance type list. Only one instance type can be set. The list length is limited to 1.
      * 
      */
     public Optional<Output<List<String>>> ecsInstanceTypes() {
@@ -73,14 +73,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * ecs的密钥对名称。
+     * ECS key pair name.
      * 
      */
     @Import(name="ecsKeyPairName")
     private @Nullable Output<String> ecsKeyPairName;
 
     /**
-     * @return ecs的密钥对名称。
+     * @return ECS key pair name.
      * 
      */
     public Optional<Output<String>> ecsKeyPairName() {
@@ -88,14 +88,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * Ecs root账号的密码。
+     * Password for ECS root account.
      * 
      */
     @Import(name="ecsPassword")
     private @Nullable Output<String> ecsPassword;
 
     /**
-     * @return Ecs root账号的密码。
+     * @return Password for ECS root account.
      * 
      */
     public Optional<Output<String>> ecsPassword() {
@@ -103,14 +103,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点组当前期望购买的节点数量。
+     * Current expected number of nodes to purchase for the node group.
      * 
      */
     @Import(name="nodeCount")
     private @Nullable Output<Integer> nodeCount;
 
     /**
-     * @return 节点组当前期望购买的节点数量。
+     * @return Current expected number of nodes to purchase for the node group.
      * 
      */
     public Optional<Output<Integer>> nodeCount() {
@@ -118,14 +118,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+     * Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
      * 
      */
     @Import(name="nodeGroupName")
     private @Nullable Output<String> nodeGroupName;
 
     /**
-     * @return 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+     * @return Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
      * 
      */
     public Optional<Output<String>> nodeGroupName() {
@@ -133,14 +133,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点组类型。
+     * Node group type.
      * 
      */
     @Import(name="nodeGroupType")
     private @Nullable Output<String> nodeGroupType;
 
     /**
-     * @return 节点组类型。
+     * @return Node group type.
      * 
      */
     public Optional<Output<String>> nodeGroupType() {
@@ -148,14 +148,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+     * Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
      * 
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
-     * @return 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+     * @return Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
      * 
      */
     public Optional<Output<List<String>>> subnetIds() {
@@ -163,14 +163,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 系统盘配置。
+     * System disk configuration.
      * 
      */
     @Import(name="systemDisk")
     private @Nullable Output<ClusterNodeGroupAttributeSystemDiskArgs> systemDisk;
 
     /**
-     * @return 系统盘配置。
+     * @return System disk configuration.
      * 
      */
     public Optional<Output<ClusterNodeGroupAttributeSystemDiskArgs>> systemDisk() {
@@ -178,14 +178,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 是否挂载公网ip。
+     * Whether to attach public IP.
      * 
      */
     @Import(name="withPublicIp")
     private @Nullable Output<Boolean> withPublicIp;
 
     /**
-     * @return 是否挂载公网ip。
+     * @return Whether to attach public IP.
      * 
      */
     public Optional<Output<Boolean>> withPublicIp() {
@@ -193,14 +193,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 可用区ID。
+     * Availability zone ID.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 可用区ID。
+     * @return Availability zone ID.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -244,7 +244,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param bandwidth 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+         * @param bandwidth Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
          * 
          * @return builder
          * 
@@ -255,7 +255,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param bandwidth 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+         * @param bandwidth Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param chargeType 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+         * @param chargeType Node group billing type. If empty, reuses the cluster&#39;s chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster&#39;s chargeType is PRE, the task node group&#39;s chargeType can be set to POST. When the cluster&#39;s chargeType is POST, the node group&#39;s chargeType defaults to POST, and this parameter setting on the node group is invalid.
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param chargeType 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+         * @param chargeType Node group billing type. If empty, reuses the cluster&#39;s chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster&#39;s chargeType is PRE, the task node group&#39;s chargeType can be set to POST. When the cluster&#39;s chargeType is POST, the node group&#39;s chargeType defaults to POST, and this parameter setting on the node group is invalid.
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ecsInstanceTypes 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+         * @param ecsInstanceTypes Node group&#39;s ECS instance type list. Only one instance type can be set. The list length is limited to 1.
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ecsInstanceTypes 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+         * @param ecsInstanceTypes Node group&#39;s ECS instance type list. Only one instance type can be set. The list length is limited to 1.
          * 
          * @return builder
          * 
@@ -320,7 +320,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ecsInstanceTypes 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+         * @param ecsInstanceTypes Node group&#39;s ECS instance type list. Only one instance type can be set. The list length is limited to 1.
          * 
          * @return builder
          * 
@@ -330,7 +330,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ecsKeyPairName ecs的密钥对名称。
+         * @param ecsKeyPairName ECS key pair name.
          * 
          * @return builder
          * 
@@ -341,7 +341,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ecsKeyPairName ecs的密钥对名称。
+         * @param ecsKeyPairName ECS key pair name.
          * 
          * @return builder
          * 
@@ -351,7 +351,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ecsPassword Ecs root账号的密码。
+         * @param ecsPassword Password for ECS root account.
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ecsPassword Ecs root账号的密码。
+         * @param ecsPassword Password for ECS root account.
          * 
          * @return builder
          * 
@@ -372,7 +372,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nodeCount 节点组当前期望购买的节点数量。
+         * @param nodeCount Current expected number of nodes to purchase for the node group.
          * 
          * @return builder
          * 
@@ -383,7 +383,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nodeCount 节点组当前期望购买的节点数量。
+         * @param nodeCount Current expected number of nodes to purchase for the node group.
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nodeGroupName 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+         * @param nodeGroupName Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
          * 
          * @return builder
          * 
@@ -404,7 +404,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nodeGroupName 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+         * @param nodeGroupName Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nodeGroupType 节点组类型。
+         * @param nodeGroupType Node group type.
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nodeGroupType 节点组类型。
+         * @param nodeGroupType Node group type.
          * 
          * @return builder
          * 
@@ -435,7 +435,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param subnetIds 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+         * @param subnetIds Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
          * 
          * @return builder
          * 
@@ -446,7 +446,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param subnetIds 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+         * @param subnetIds Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param subnetIds 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+         * @param subnetIds Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param systemDisk 系统盘配置。
+         * @param systemDisk System disk configuration.
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param systemDisk 系统盘配置。
+         * @param systemDisk System disk configuration.
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param withPublicIp 是否挂载公网ip。
+         * @param withPublicIp Whether to attach public IP.
          * 
          * @return builder
          * 
@@ -498,7 +498,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param withPublicIp 是否挂载公网ip。
+         * @param withPublicIp Whether to attach public IP.
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param zoneId 可用区ID。
+         * @param zoneId Availability zone ID.
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param zoneId 可用区ID。
+         * @param zoneId Availability zone ID.
          * 
          * @return builder
          * 

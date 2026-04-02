@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodeStatus {
     /**
-     * @return 节点当前主状态下的状态条件，即进入该主状态的原因。
+     * @return Status condition under the node&#39;s current primary state, indicating the reason for entering this primary state.
      * 
      */
     private List<GetNodeStatusCondition> conditions;
     /**
-     * @return 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+     * @return Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
      * 
      */
     private String phase;
 
     private GetNodeStatus() {}
     /**
-     * @return 节点当前主状态下的状态条件，即进入该主状态的原因。
+     * @return Status condition under the node&#39;s current primary state, indicating the reason for entering this primary state.
      * 
      */
     public List<GetNodeStatusCondition> conditions() {
         return this.conditions;
     }
     /**
-     * @return 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+     * @return Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
      * 
      */
     public String phase() {

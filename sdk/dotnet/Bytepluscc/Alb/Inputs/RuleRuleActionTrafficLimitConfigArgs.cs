@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class RuleRuleActionTrafficLimitConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 每秒请求数。
+        /// Requests per second.
         /// </summary>
         [Input("qps")]
         public Input<int>? Qps { get; set; }

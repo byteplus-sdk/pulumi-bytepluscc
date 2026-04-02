@@ -29,7 +29,7 @@ export interface GetPermissionSetProvisioningArgs {
  */
 export interface GetPermissionSetProvisioningResult {
     /**
-     * 创建时间。
+     * Creation time
      */
     readonly createdTime: string;
     /**
@@ -37,27 +37,27 @@ export interface GetPermissionSetProvisioningResult {
      */
     readonly id: string;
     /**
-     * 权限集 ID。
+     * Permission set ID
      */
     readonly permissionSetId: string;
     /**
-     * 权限集名。
+     * Permission set name
      */
     readonly permissionSetName: string;
     /**
-     * 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+     * Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
      */
     readonly provisioningStatus: string;
     /**
-     * 授权的账号 ID。
+     * Authorized account ID
      */
     readonly targetId: string;
     /**
-     * 账号名。
+     * Account name
      */
     readonly targetName: string;
     /**
-     * 更新时间。
+     * Update time
      */
     readonly updatedTime: string;
 }

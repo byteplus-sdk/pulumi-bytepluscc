@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示鉴权请求头的设置策略。
+        /// Indicates the configuration policy for authentication request headers.
         /// </summary>
         [Input("requestHeaderComponents")]
         public Input<Inputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsArgs>? RequestHeaderComponents { get; set; }
@@ -28,7 +28,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
         }
 
         /// <summary>
-        /// 表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+        /// Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
         /// </summary>
         [Input("requestHost")]
         public Input<string>? RequestHost { get; set; }

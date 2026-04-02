@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
     public sealed class InstanceProxyDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+        /// Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
         /// </summary>
         [Input("dbProxyStatus")]
         public Input<string>? DbProxyStatus { get; set; }
 
         /// <summary>
-        /// 实例的数据库代理服务的资源信息。
+        /// Resource information for the instance's database proxy service
         /// </summary>
         [Input("proxyResourceInfo")]
         public Input<Inputs.InstanceProxyDetailProxyResourceInfoGetArgs>? ProxyResourceInfo { get; set; }

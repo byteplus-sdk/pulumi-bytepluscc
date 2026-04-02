@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class EndpointServiceResource {
     /**
-     * @return 终端节点服务ID。
+     * @return Endpoint service ID.
      * 
      */
     private @Nullable String instanceId;
     /**
-     * @return 待添加到终端节点服务中的服务资源ID。
+     * @return Service resource ID to be added to the endpoint service.
      * 
      */
     private @Nullable String resourceId;
     /**
-     * @return 负载均衡提供服务的可用区。
+     * @return Availability zone where the load balancer provides service.
      * 
      */
     private @Nullable List<String> zoneIds;
 
     private EndpointServiceResource() {}
     /**
-     * @return 终端节点服务ID。
+     * @return Endpoint service ID.
      * 
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
     }
     /**
-     * @return 待添加到终端节点服务中的服务资源ID。
+     * @return Service resource ID to be added to the endpoint service.
      * 
      */
     public Optional<String> resourceId() {
         return Optional.ofNullable(this.resourceId);
     }
     /**
-     * @return 负载均衡提供服务的可用区。
+     * @return Availability zone where the load balancer provides service.
      * 
      */
     public List<String> zoneIds() {

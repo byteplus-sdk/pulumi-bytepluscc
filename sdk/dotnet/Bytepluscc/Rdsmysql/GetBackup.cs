@@ -65,79 +65,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     public sealed class GetBackupResult
     {
         /// <summary>
-        /// 备份创建结束时间（UTC）。
+        /// Backup creation end time (UTC)
         /// </summary>
         public readonly string BackupEndTime;
         /// <summary>
-        /// 备份文件名。
+        /// Backup file name
         /// </summary>
         public readonly string BackupFileName;
         /// <summary>
-        /// 备份文件大小，单位为字节。
+        /// Backup file size (bytes)
         /// </summary>
         public readonly int BackupFileSize;
         /// <summary>
-        /// 备份 ID。
+        /// Backup ID
         /// </summary>
         public readonly string BackupId;
         /// <summary>
-        /// 创建逻辑备份类型的库表备份时，用于指定要备份的库表信息。
+        /// When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackupBackupMetaResult> BackupMetas;
         /// <summary>
-        /// 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+        /// Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
         /// </summary>
         public readonly string BackupMethod;
         /// <summary>
-        /// 备份的名称。
+        /// Backup name
         /// </summary>
         public readonly string BackupName;
         /// <summary>
-        /// 备份所在区域。
+        /// Backup region
         /// </summary>
         public readonly string BackupRegion;
         /// <summary>
-        /// 备份创建开始时间（UTC）。
+        /// Backup creation start time (UTC)
         /// </summary>
         public readonly string BackupStartTime;
         /// <summary>
-        /// 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+        /// Backup status. Values: Success, Failed, Running
         /// </summary>
         public readonly string BackupStatus;
         /// <summary>
-        /// 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+        /// Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
         /// </summary>
         public readonly string BackupType;
         /// <summary>
-        /// 一致性时间点。
+        /// Consistency time point
         /// </summary>
         public readonly string ConsistentTime;
         /// <summary>
-        /// 备份创建者，取值：System（系统）、User（用户）。
+        /// Backup creator. Values: System (system), User (user)
         /// </summary>
         public readonly string CreateType;
         /// <summary>
-        /// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+        /// Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
         /// </summary>
         public readonly string DbEngineVersion;
         /// <summary>
-        /// 库表信息列表。
+        /// Database and table information list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackupDbTableInfoResult> DbTableInfos;
         /// <summary>
-        /// 下载状态。
+        /// Download status
         /// </summary>
         public readonly string DownloadStatus;
         /// <summary>
-        /// 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+        /// Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
         /// </summary>
         public readonly string EngineType;
         /// <summary>
-        /// 备份失败的错误信息。
+        /// Error message for backup failure
         /// </summary>
         public readonly string ErrorMessage;
         /// <summary>
-        /// 备份过期时间（UTC）。
+        /// Backup expiration time (UTC)
         /// </summary>
         public readonly string ExpiredTime;
         /// <summary>
@@ -145,15 +145,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// 是否加密。
+        /// Whether encrypted
         /// </summary>
         public readonly bool IsEncrypted;
         /// <summary>
-        /// 是否已过期。
+        /// Whether expired
         /// </summary>
         public readonly bool IsExpired;
 

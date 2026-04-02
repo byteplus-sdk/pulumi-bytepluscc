@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolKubernetesConfigLabel {
     /**
-     * @return 标签键。
+     * @return Tag key.
      * 
      */
     private String key;
     /**
-     * @return 标签值。
+     * @return Label value.
      * 
      */
     private String value;
 
     private GetNodePoolKubernetesConfigLabel() {}
     /**
-     * @return 标签键。
+     * @return Tag key.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 标签值。
+     * @return Label value.
      * 
      */
     public String value() {

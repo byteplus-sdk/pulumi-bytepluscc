@@ -65,55 +65,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     public sealed class GetBackupResult
     {
         /// <summary>
-        /// 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         /// </summary>
         public readonly string BackupEndTime;
         /// <summary>
-        /// 备份文件大小，单位为 KiB。
+        /// Backup file size, unit: KiB
         /// </summary>
         public readonly int BackupFileSize;
         /// <summary>
-        /// 备份 ID。
+        /// Backup ID
         /// </summary>
         public readonly string BackupId;
         /// <summary>
-        /// 备份方式，目前仅支持物理备份。
+        /// Backup method, currently only physical backup is supported
         /// </summary>
         public readonly string BackupMethod;
         /// <summary>
-        /// 数据备份保留天数。
+        /// Data backup retention days
         /// </summary>
         public readonly int BackupRetentionPeriod;
         /// <summary>
-        /// 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         /// </summary>
         public readonly string BackupStartTime;
         /// <summary>
-        /// 备份状态。
+        /// Backup status
         /// </summary>
         public readonly string BackupStatus;
         /// <summary>
-        /// 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+        /// Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
         /// </summary>
         public readonly string BackupTime;
         /// <summary>
-        /// 备份类型，目前仅支持全量备份。
+        /// Backup type, currently only full backup is supported
         /// </summary>
         public readonly string BackupType;
         /// <summary>
-        /// 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         /// </summary>
         public readonly string ConsistentTime;
         /// <summary>
-        /// 是否开启持续备份，取值固定为 true。
+        /// Enable continuous backup, value is always true
         /// </summary>
         public readonly bool ContinueBackup;
         /// <summary>
-        /// 创建类型。
+        /// Creation type
         /// </summary>
         public readonly string CreateType;
         /// <summary>
-        /// 全量备份周期，多个取值用英文逗号（,）隔开。
+        /// Full backup cycle, use commas (,) to separate multiple values
         /// </summary>
         public readonly string FullBackupPeriod;
         /// <summary>
@@ -121,7 +121,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         public readonly string InstanceId;
 

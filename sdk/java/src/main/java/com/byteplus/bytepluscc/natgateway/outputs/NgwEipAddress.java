@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NgwEipAddress {
     /**
-     * @return 公网IP的ID。
+     * @return Public IP ID
      * 
      */
     private @Nullable String allocationId;
     /**
-     * @return 公网IP的地址。
+     * @return Public IP address
      * 
      */
     private @Nullable String eipAddress;
     /**
-     * @return 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+     * @return Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
      * 
      */
     private @Nullable String usingStatus;
 
     private NgwEipAddress() {}
     /**
-     * @return 公网IP的ID。
+     * @return Public IP ID
      * 
      */
     public Optional<String> allocationId() {
         return Optional.ofNullable(this.allocationId);
     }
     /**
-     * @return 公网IP的地址。
+     * @return Public IP address
      * 
      */
     public Optional<String> eipAddress() {
         return Optional.ofNullable(this.eipAddress);
     }
     /**
-     * @return 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+     * @return Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
      * 
      */
     public Optional<String> usingStatus() {

@@ -18,14 +18,14 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
     public static final NlbServerGroupHealthCheckArgs Empty = new NlbServerGroupHealthCheckArgs();
 
     /**
-     * 健康检查的域名。
+     * Health check domain name
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return 健康检查的域名。
+     * @return Health check domain name
      * 
      */
     public Optional<Output<String>> domain() {
@@ -33,14 +33,14 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 是否开启健康检查。
+     * Enable health check
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return 是否开启健康检查。
+     * @return Enable health check
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -48,14 +48,14 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+     * Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with &#39;normal&#39; results, it is considered health check &#39;normal&#39;
      * 
      */
     @Import(name="healthyThreshold")
     private @Nullable Output<Integer> healthyThreshold;
 
     /**
-     * @return 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+     * @return Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with &#39;normal&#39; results, it is considered health check &#39;normal&#39;
      * 
      */
     public Optional<Output<Integer>> healthyThreshold() {
@@ -63,14 +63,14 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 健康检查正常的HTTP状态码。
+     * HTTP status codes indicating a healthy health check.
      * 
      */
     @Import(name="httpCode")
     private @Nullable Output<String> httpCode;
 
     /**
-     * @return 健康检查正常的HTTP状态码。
+     * @return HTTP status codes indicating a healthy health check.
      * 
      */
     public Optional<Output<String>> httpCode() {
@@ -78,14 +78,14 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+     * Health check interval, range: 1–300 seconds, default: 10 seconds.
      * 
      */
     @Import(name="interval")
     private @Nullable Output<Integer> interval;
 
     /**
-     * @return 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+     * @return Health check interval, range: 1–300 seconds, default: 10 seconds.
      * 
      */
     public Optional<Output<Integer>> interval() {
@@ -93,14 +93,14 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 健康检查的请求方法。
+     * Health check request method
      * 
      */
     @Import(name="method")
     private @Nullable Output<String> method;
 
     /**
-     * @return 健康检查的请求方法。
+     * @return Health check request method
      * 
      */
     public Optional<Output<String>> method() {
@@ -108,14 +108,14 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+     * Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server&#39;s port is used for health checks. If full port forwarding is enabled, this parameter must be specified
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+     * @return Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server&#39;s port is used for health checks. If full port forwarding is enabled, this parameter must be specified
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -123,14 +123,14 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+     * Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check &#39;abnormal&#39;
      * 
      */
     @Import(name="timeout")
     private @Nullable Output<Integer> timeout;
 
     /**
-     * @return 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+     * @return Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check &#39;abnormal&#39;
      * 
      */
     public Optional<Output<Integer>> timeout() {
@@ -138,14 +138,14 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+     * Health check protocol type. Options: TCP (default), HTTP, UDP
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+     * @return Health check protocol type. Options: TCP (default), HTTP, UDP
      * 
      */
     public Optional<Output<String>> type() {
@@ -153,14 +153,14 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+     * UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
      * 
      */
     @Import(name="udpExpect")
     private @Nullable Output<String> udpExpect;
 
     /**
-     * @return UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+     * @return UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
      * 
      */
     public Optional<Output<String>> udpExpect() {
@@ -168,14 +168,14 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * UDP健康检查的预期响应字符串。
+     * Expected response string for UDP health check
      * 
      */
     @Import(name="udpRequest")
     private @Nullable Output<String> udpRequest;
 
     /**
-     * @return UDP健康检查的预期响应字符串。
+     * @return Expected response string for UDP health check
      * 
      */
     public Optional<Output<String>> udpRequest() {
@@ -183,14 +183,14 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+     * Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with &#39;abnormal&#39; results, it is considered health check abnormal
      * 
      */
     @Import(name="unhealthyThreshold")
     private @Nullable Output<Integer> unhealthyThreshold;
 
     /**
-     * @return 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+     * @return Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with &#39;abnormal&#39; results, it is considered health check abnormal
      * 
      */
     public Optional<Output<Integer>> unhealthyThreshold() {
@@ -198,14 +198,14 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 健康检查的路径。
+     * Health check path
      * 
      */
     @Import(name="uri")
     private @Nullable Output<String> uri;
 
     /**
-     * @return 健康检查的路径。
+     * @return Health check path
      * 
      */
     public Optional<Output<String>> uri() {
@@ -249,7 +249,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param domain 健康检查的域名。
+         * @param domain Health check domain name
          * 
          * @return builder
          * 
@@ -260,7 +260,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param domain 健康检查的域名。
+         * @param domain Health check domain name
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param enabled 是否开启健康检查。
+         * @param enabled Enable health check
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param enabled 是否开启健康检查。
+         * @param enabled Enable health check
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param healthyThreshold 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+         * @param healthyThreshold Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with &#39;normal&#39; results, it is considered health check &#39;normal&#39;
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param healthyThreshold 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+         * @param healthyThreshold Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with &#39;normal&#39; results, it is considered health check &#39;normal&#39;
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param httpCode 健康检查正常的HTTP状态码。
+         * @param httpCode HTTP status codes indicating a healthy health check.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param httpCode 健康检查正常的HTTP状态码。
+         * @param httpCode HTTP status codes indicating a healthy health check.
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param interval 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+         * @param interval Health check interval, range: 1–300 seconds, default: 10 seconds.
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param interval 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+         * @param interval Health check interval, range: 1–300 seconds, default: 10 seconds.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param method 健康检查的请求方法。
+         * @param method Health check request method
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param method 健康检查的请求方法。
+         * @param method Health check request method
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param port 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+         * @param port Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server&#39;s port is used for health checks. If full port forwarding is enabled, this parameter must be specified
          * 
          * @return builder
          * 
@@ -386,7 +386,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param port 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+         * @param port Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server&#39;s port is used for health checks. If full port forwarding is enabled, this parameter must be specified
          * 
          * @return builder
          * 
@@ -396,7 +396,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param timeout 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+         * @param timeout Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check &#39;abnormal&#39;
          * 
          * @return builder
          * 
@@ -407,7 +407,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param timeout 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+         * @param timeout Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check &#39;abnormal&#39;
          * 
          * @return builder
          * 
@@ -417,7 +417,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param type 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+         * @param type Health check protocol type. Options: TCP (default), HTTP, UDP
          * 
          * @return builder
          * 
@@ -428,7 +428,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param type 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+         * @param type Health check protocol type. Options: TCP (default), HTTP, UDP
          * 
          * @return builder
          * 
@@ -438,7 +438,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param udpExpect UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+         * @param udpExpect UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
          * 
          * @return builder
          * 
@@ -449,7 +449,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param udpExpect UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+         * @param udpExpect UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
          * 
          * @return builder
          * 
@@ -459,7 +459,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param udpRequest UDP健康检查的预期响应字符串。
+         * @param udpRequest Expected response string for UDP health check
          * 
          * @return builder
          * 
@@ -470,7 +470,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param udpRequest UDP健康检查的预期响应字符串。
+         * @param udpRequest Expected response string for UDP health check
          * 
          * @return builder
          * 
@@ -480,7 +480,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param unhealthyThreshold 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+         * @param unhealthyThreshold Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with &#39;abnormal&#39; results, it is considered health check abnormal
          * 
          * @return builder
          * 
@@ -491,7 +491,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param unhealthyThreshold 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+         * @param unhealthyThreshold Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with &#39;abnormal&#39; results, it is considered health check abnormal
          * 
          * @return builder
          * 
@@ -501,7 +501,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param uri 健康检查的路径。
+         * @param uri Health check path
          * 
          * @return builder
          * 
@@ -512,7 +512,7 @@ public final class NlbServerGroupHealthCheckArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param uri 健康检查的路径。
+         * @param uri Health check path
          * 
          * @return builder
          * 

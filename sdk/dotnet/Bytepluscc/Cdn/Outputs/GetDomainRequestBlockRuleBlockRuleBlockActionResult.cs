@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainRequestBlockRuleBlockRuleBlockActionResult
     {
         /// <summary>
-        /// 表示内容分发网络如何拦截匹配的请求。该参数有以下取值：refuse：表示内容分发网络拒绝请求并响应一个 4xx 的错误码。错误码在 StatusCode 中指定。redirect：表示内容分发网络将请求重定向到 RedirectUrl 中指定的 URL。
+        /// Specifies how the content delivery network intercepts matching requests. This parameter has the following values: refuse: The content delivery network rejects the request and returns a 4xx error code. The error code is specified in StatusCode. redirect: The content delivery network redirects the request to the URL specified in RedirectUrl.
         /// </summary>
         public readonly string Action;
         /// <summary>
-        /// 当 Action 是 refuse 时，该参数是可选的，说明如下：如果指定该参数，该参数表示全局配置下的一个自定义响应页面的名称。也就是说，当内容分发网络拒绝请求时，返回该自定义页面。需要留意的是，"全局配置" 是一个白名单功能。要使用该功能，请 提交工单。如果不指定该参数，表示内容分发网络使用 StatusCode 中指定错误码的标准响应正文。当 Action 是 redirect 时，该参数无效，可以不指定。
+        /// When Action is refuse, this parameter is optional, as explained below: If specified, this parameter indicates the name of a custom response page under global configuration. When the content delivery network refuses a request, it returns this custom page. Note that 'global configuration' is an Allowlist feature. To use this feature, submit a ticket. If this parameter is not specified, the content delivery network uses the standard response body for the error code specified in StatusCode. When Action is redirect, this parameter is invalid and can be omitted.
         /// </summary>
         public readonly string ErrorPage;
         /// <summary>
-        /// 当 Action 是 redirect 时，该参数必填，表示重定向 URL。URL 必须以 http:// 或 https:// 开头，长度不能超过 1,024 个字符。当 Action 是 refuse 时，该参数无效，可以不指定。
+        /// When Action is redirect, this parameter is required and specifies the redirect URL. The URL must start with http:// or https:// and cannot exceed 1,024 characters. When Action is refuse, this parameter is invalid and can be omitted.
         /// </summary>
         public readonly string RedirectUrl;
         /// <summary>
-        /// 表示对于拦截的请求，内容分发网络的响应状态码。当 Action 是 refuse 时，该参数表示一个 400-499 范围内的错误码。当 Action 是 redirect 时，该参数有以下取值：301：表示响应状态码是 301。302：表示响应状态码是 302。
+        /// Represents the response status code from the content delivery network for intercepted requests. When Action is refuse, this parameter specifies an error code in the range 400–499. When Action is redirect, this parameter can be: 301: The response status code is 301. 302: The response status code is 302.
         /// </summary>
         public readonly string StatusCode;
 

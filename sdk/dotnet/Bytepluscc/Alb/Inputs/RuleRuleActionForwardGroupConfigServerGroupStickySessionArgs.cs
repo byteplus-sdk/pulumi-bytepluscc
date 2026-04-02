@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启组间会话保持。on：开启。off：不开启。
+        /// Whether to enable inter-group session persistence. on: enabled. off: disabled.
         /// </summary>
         [Input("enabled")]
         public Input<string>? Enabled { get; set; }
 
         /// <summary>
-        /// 组件回话保持的超时时间。单位：秒。
+        /// Component session stickiness timeout. Unit: seconds.
         /// </summary>
         [Input("timeout")]
         public Input<int>? Timeout { get; set; }

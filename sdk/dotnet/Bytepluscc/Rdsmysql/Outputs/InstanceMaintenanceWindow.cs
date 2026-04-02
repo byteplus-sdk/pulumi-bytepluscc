@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class InstanceMaintenanceWindow
     {
         /// <summary>
-        /// 可维护周期粒度，取值为 Week，周。
+        /// Maintenance cycle granularity. Value: Week.
         /// </summary>
         public readonly string? DayKind;
         /// <summary>
-        /// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+        /// Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
         /// </summary>
         public readonly ImmutableArray<string> DayOfWeeks;
         /// <summary>
-        /// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+        /// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
         /// </summary>
         public readonly string? MaintenanceTime;
 

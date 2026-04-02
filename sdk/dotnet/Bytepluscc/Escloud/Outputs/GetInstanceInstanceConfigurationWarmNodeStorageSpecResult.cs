@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Outputs
     public sealed class GetInstanceInstanceConfigurationWarmNodeStorageSpecResult
     {
         /// <summary>
-        /// 存储规格的描述信息
+        /// Description of storage specification.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 存储规格的显示名称
+        /// Display name of storage specification.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// 存储规格的最大值，单位为 GiB
+        /// Maximum storage specification, measured in GiB
         /// </summary>
         public readonly int MaxSize;
         /// <summary>
-        /// 存储规格最小值，单位为 GiB
+        /// Minimum value for storage specification, unit: GiB.
         /// </summary>
         public readonly int MinSize;
         /// <summary>
-        /// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+        /// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 当前存储规格值，单位为 GiB
+        /// Current storage specification value, in GiB.
         /// </summary>
         public readonly int Size;
 

@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamConnectionPoolSettings {
     /**
-     * @return 开启。
+     * @return Enable
      * 
      */
     private Boolean enable;
     /**
-     * @return HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+     * @return Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
      * 
      */
     private Integer http1MaxPendingRequests;
     /**
-     * @return 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+     * @return Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
      * 
      */
     private Integer idleTimeout;
     /**
-     * @return TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+     * @return Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
      * 
      */
     private Integer maxConnections;
 
     private GetUpstreamConnectionPoolSettings() {}
     /**
-     * @return 开启。
+     * @return Enable
      * 
      */
     public Boolean enable() {
         return this.enable;
     }
     /**
-     * @return HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+     * @return Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
      * 
      */
     public Integer http1MaxPendingRequests() {
         return this.http1MaxPendingRequests;
     }
     /**
-     * @return 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+     * @return Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
      * 
      */
     public Integer idleTimeout() {
         return this.idleTimeout;
     }
     /**
-     * @return TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+     * @return Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
      * 
      */
     public Integer maxConnections() {

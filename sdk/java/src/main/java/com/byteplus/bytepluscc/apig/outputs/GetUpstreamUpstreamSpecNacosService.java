@@ -11,62 +11,62 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamUpstreamSpecNacosService {
     /**
-     * @return 分组。
+     * @return Group
      * 
      */
     private String group;
     /**
-     * @return 命名空间。
+     * @return Namespace
      * 
      */
     private String namespace;
     /**
-     * @return 命名空间ID。
+     * @return Namespace ID
      * 
      */
     private String namespaceId;
     /**
-     * @return 服务。
+     * @return Service
      * 
      */
     private String service;
     /**
-     * @return Upstream来源ID。
+     * @return Upstream source ID
      * 
      */
     private String upstreamSourceId;
 
     private GetUpstreamUpstreamSpecNacosService() {}
     /**
-     * @return 分组。
+     * @return Group
      * 
      */
     public String group() {
         return this.group;
     }
     /**
-     * @return 命名空间。
+     * @return Namespace
      * 
      */
     public String namespace() {
         return this.namespace;
     }
     /**
-     * @return 命名空间ID。
+     * @return Namespace ID
      * 
      */
     public String namespaceId() {
         return this.namespaceId;
     }
     /**
-     * @return 服务。
+     * @return Service
      * 
      */
     public String service() {
         return this.service;
     }
     /**
-     * @return Upstream来源ID。
+     * @return Upstream source ID
      * 
      */
     public String upstreamSourceId() {

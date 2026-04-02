@@ -65,35 +65,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public sealed class GetUserResult
     {
         /// <summary>
-        /// 子用户的访问密钥。
+        /// Sub-user's access key.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUserAccessKeyResult> AccessKeys;
         /// <summary>
-        /// 子用户归属的主账号。
+        /// Main account to which the sub-user belongs.
         /// </summary>
         public readonly double AccountId;
         /// <summary>
-        /// 子用户对应的创建时间。
+        /// Sub-user's creation time.
         /// </summary>
         public readonly string CreateDate;
         /// <summary>
-        /// 子用户对应的描述信息，长度不超过255。
+        /// Description for the sub-user, up to 255 characters.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+        /// Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// 子用户对应的电子邮件地址。
+        /// Sub-user's email address.
         /// </summary>
         public readonly string Email;
         /// <summary>
-        /// 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+        /// Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
         /// </summary>
         public readonly bool EmailIsVerify;
         /// <summary>
-        /// 子用户归属的用户组。
+        /// User group to which the sub-user belongs.
         /// </summary>
         public readonly ImmutableArray<string> Groups;
         /// <summary>
@@ -101,43 +101,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 子用户的登录配置。
+        /// Login configuration for the sub-user.
         /// </summary>
         public readonly Outputs.GetUserLoginProfileResult LoginProfile;
         /// <summary>
-        /// 子用户对应的手机号。
+        /// Sub-user's mobile number.
         /// </summary>
         public readonly string MobilePhone;
         /// <summary>
-        /// 子用户手机号是否已验证。true代表已验证，false代表未验证。
+        /// Whether the sub-user's phone number is verified. 'true' means verified, 'false' means not verified.
         /// </summary>
         public readonly bool MobilePhoneIsVerify;
         /// <summary>
-        /// 子用户对应的权限策略。
+        /// Sub-user's permission policy.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUserPolicyResult> Policies;
         /// <summary>
-        /// 子用户的操作保护配置。
+        /// Operation protection configuration for the sub-user.
         /// </summary>
         public readonly Outputs.GetUserSecurityConfigResult SecurityConfig;
         /// <summary>
-        /// 子用户对应的资源标签。
+        /// Sub-user's resource tags.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUserTagResult> Tags;
         /// <summary>
-        /// 子用户对应的Trn表达式。
+        /// TRN expression for the sub-user.
         /// </summary>
         public readonly string Trn;
         /// <summary>
-        /// 子用户对应的更新时间。
+        /// Update time for the sub-user.
         /// </summary>
         public readonly string UpdateDate;
         /// <summary>
-        /// 子用户的ID。
+        /// Sub-user's ID.
         /// </summary>
         public readonly int UserId;
         /// <summary>
-        /// 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+        /// Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
         /// </summary>
         public readonly string UserName;
 

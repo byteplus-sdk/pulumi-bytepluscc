@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.ecs.inputs;
 
 import com.byteplus.bytepluscc.ecs.inputs.ImageDetectionResultsArgs;
+import com.byteplus.bytepluscc.ecs.inputs.ImageImportImageArgs;
 import com.byteplus.bytepluscc.ecs.inputs.ImageSnapshotArgs;
 import com.byteplus.bytepluscc.ecs.inputs.ImageTagArgs;
 import com.pulumi.core.Output;
@@ -23,14 +24,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     public static final ImageState Empty = new ImageState();
 
     /**
-     * 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+     * Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
      * 
      */
     @Import(name="architecture")
     private @Nullable Output<String> architecture;
 
     /**
-     * @return 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+     * @return Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
      * 
      */
     public Optional<Output<String>> architecture() {
@@ -38,14 +39,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像的启动模式。可以选择BIOS、UEFI类型。
+     * Image boot mode. You can select BIOS or UEFI
      * 
      */
     @Import(name="bootMode")
     private @Nullable Output<String> bootMode;
 
     /**
-     * @return 镜像的启动模式。可以选择BIOS、UEFI类型。
+     * @return Image boot mode. You can select BIOS or UEFI
      * 
      */
     public Optional<Output<String>> bootMode() {
@@ -53,14 +54,29 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像创建时间
+     * Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+     * 
+     */
+    @Import(name="createWholeImage")
+    private @Nullable Output<Boolean> createWholeImage;
+
+    /**
+     * @return Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+     * 
+     */
+    public Optional<Output<Boolean>> createWholeImage() {
+        return Optional.ofNullable(this.createWholeImage);
+    }
+
+    /**
+     * Image creation time
      * 
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
-     * @return 镜像创建时间
+     * @return Image creation time
      * 
      */
     public Optional<Output<String>> createdAt() {
@@ -68,14 +84,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+     * Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+     * @return Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
      * 
      */
     public Optional<Output<String>> description() {
@@ -83,14 +99,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像的检测结果。
+     * Image check result.
      * 
      */
     @Import(name="detectionResults")
     private @Nullable Output<ImageDetectionResultsArgs> detectionResults;
 
     /**
-     * @return 镜像的检测结果。
+     * @return Image check result.
      * 
      */
     public Optional<Output<ImageDetectionResultsArgs>> detectionResults() {
@@ -98,14 +114,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像ID。
+     * Image ID
      * 
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
-     * @return 镜像ID。
+     * @return Image ID
      * 
      */
     public Optional<Output<String>> imageId() {
@@ -113,14 +129,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+     * Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
      * 
      */
     @Import(name="imageName")
     private @Nullable Output<String> imageName;
 
     /**
-     * @return 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+     * @return Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
      * 
      */
     public Optional<Output<String>> imageName() {
@@ -128,14 +144,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像所属的账号ID。
+     * Account ID to which the image belongs.
      * 
      */
     @Import(name="imageOwnerId")
     private @Nullable Output<String> imageOwnerId;
 
     /**
-     * @return 镜像所属的账号ID。
+     * @return Account ID to which the image belongs.
      * 
      */
     public Optional<Output<String>> imageOwnerId() {
@@ -143,14 +159,29 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+     * Imported image information
+     * 
+     */
+    @Import(name="importImage")
+    private @Nullable Output<ImageImportImageArgs> importImage;
+
+    /**
+     * @return Imported image information
+     * 
+     */
+    public Optional<Output<ImageImportImageArgs>> importImage() {
+        return Optional.ofNullable(this.importImage);
+    }
+
+    /**
+     * Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+     * @return Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -158,14 +189,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像中是否安装了云助手Agent。
+     * Whether Cloud Assistant Agent is installed in the image
      * 
      */
     @Import(name="isInstallRunCommandAgent")
     private @Nullable Output<Boolean> isInstallRunCommandAgent;
 
     /**
-     * @return 镜像中是否安装了云助手Agent。
+     * @return Whether Cloud Assistant Agent is installed in the image
      * 
      */
     public Optional<Output<Boolean>> isInstallRunCommandAgent() {
@@ -173,14 +204,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公共镜像是否长期维护。
+     * Whether the public image is maintained long-term.
      * 
      */
     @Import(name="isLts")
     private @Nullable Output<Boolean> isLts;
 
     /**
-     * @return 公共镜像是否长期维护。
+     * @return Whether the public image is maintained long-term.
      * 
      */
     public Optional<Output<Boolean>> isLts() {
@@ -188,14 +219,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像是否支持Cloud-init。
+     * Whether the image supports Cloud-init.
      * 
      */
     @Import(name="isSupportCloudInit")
     private @Nullable Output<Boolean> isSupportCloudInit;
 
     /**
-     * @return 镜像是否支持Cloud-init。
+     * @return Whether the image supports Cloud-init.
      * 
      */
     public Optional<Output<Boolean>> isSupportCloudInit() {
@@ -203,14 +234,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像的内核版本。
+     * Image kernel version.
      * 
      */
     @Import(name="kernel")
     private @Nullable Output<String> kernel;
 
     /**
-     * @return 镜像的内核版本。
+     * @return Image kernel version.
      * 
      */
     public Optional<Output<String>> kernel() {
@@ -218,14 +249,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+     * Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
      * 
      */
     @Import(name="licenseType")
     private @Nullable Output<String> licenseType;
 
     /**
-     * @return 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+     * @return Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
      * 
      */
     public Optional<Output<String>> licenseType() {
@@ -233,14 +264,29 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像操作系统的名称。
+     * Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+     * 
+     */
+    @Import(name="needDetection")
+    private @Nullable Output<Boolean> needDetection;
+
+    /**
+     * @return Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+     * 
+     */
+    public Optional<Output<Boolean>> needDetection() {
+        return Optional.ofNullable(this.needDetection);
+    }
+
+    /**
+     * Name of the image operating system.
      * 
      */
     @Import(name="osName")
     private @Nullable Output<String> osName;
 
     /**
-     * @return 镜像操作系统的名称。
+     * @return Name of the image operating system.
      * 
      */
     public Optional<Output<String>> osName() {
@@ -248,14 +294,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 操作系统类型。
+     * Operating system type
      * 
      */
     @Import(name="osType")
     private @Nullable Output<String> osType;
 
     /**
-     * @return 操作系统类型。
+     * @return Operating system type
      * 
      */
     public Optional<Output<String>> osType() {
@@ -263,14 +309,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+     * Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
      * 
      */
     @Import(name="platform")
     private @Nullable Output<String> platform;
 
     /**
-     * @return 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+     * @return Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
      * 
      */
     public Optional<Output<String>> platform() {
@@ -278,14 +324,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像的发行版本。
+     * Image release version.
      * 
      */
     @Import(name="platformVersion")
     private @Nullable Output<String> platformVersion;
 
     /**
-     * @return 镜像的发行版本。
+     * @return Image release version.
      * 
      */
     public Optional<Output<String>> platformVersion() {
@@ -293,14 +339,29 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+     * Product code for marketplace image
+     * 
+     */
+    @Import(name="productCode")
+    private @Nullable Output<String> productCode;
+
+    /**
+     * @return Product code for marketplace image
+     * 
+     */
+    public Optional<Output<String>> productCode() {
+        return Optional.ofNullable(this.productCode);
+    }
+
+    /**
+     * Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+     * @return Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -308,14 +369,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像共享的账户
+     * Accounts with which the image is shared
      * 
      */
     @Import(name="sharePermissions")
     private @Nullable Output<List<String>> sharePermissions;
 
     /**
-     * @return 镜像共享的账户
+     * @return Accounts with which the image is shared
      * 
      */
     public Optional<Output<List<String>>> sharePermissions() {
@@ -323,14 +384,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+     * Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
      * 
      */
     @Import(name="shareStatus")
     private @Nullable Output<String> shareStatus;
 
     /**
-     * @return 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+     * @return Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
      * 
      */
     public Optional<Output<String>> shareStatus() {
@@ -338,14 +399,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像大小，单位为GiB。
+     * Image size, in GiB.
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return 镜像大小，单位为GiB。
+     * @return Image size, in GiB.
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -353,14 +414,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+     * Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
      * 
      */
     @Import(name="snapshotGroupId")
     private @Nullable Output<String> snapshotGroupId;
 
     /**
-     * @return 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+     * @return Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
      * 
      */
     public Optional<Output<String>> snapshotGroupId() {
@@ -368,14 +429,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+     * System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     @Import(name="snapshotId")
     private @Nullable Output<String> snapshotId;
 
     /**
-     * @return 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+     * @return System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     public Optional<Output<String>> snapshotId() {
@@ -390,14 +451,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像的状态。
+     * Image status.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 镜像的状态。
+     * @return Image status.
      * 
      */
     public Optional<Output<String>> status() {
@@ -412,14 +473,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像更新时间
+     * Image update time
      * 
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
-     * @return 镜像更新时间
+     * @return Image update time
      * 
      */
     public Optional<Output<String>> updatedAt() {
@@ -427,14 +488,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像大小，单位为Byte。
+     * Image size, in Bytes.
      * 
      */
     @Import(name="virtualSize")
     private @Nullable Output<Double> virtualSize;
 
     /**
-     * @return 镜像大小，单位为Byte。
+     * @return Image size, in Bytes.
      * 
      */
     public Optional<Output<Double>> virtualSize() {
@@ -442,14 +503,14 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+     * Image visibility. public: Public image. private: Private image. shared: Shared image.
      * 
      */
     @Import(name="visibility")
     private @Nullable Output<String> visibility;
 
     /**
-     * @return 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+     * @return Image visibility. public: Public image. private: Private image. shared: Shared image.
      * 
      */
     public Optional<Output<String>> visibility() {
@@ -461,22 +522,26 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
     private ImageState(ImageState $) {
         this.architecture = $.architecture;
         this.bootMode = $.bootMode;
+        this.createWholeImage = $.createWholeImage;
         this.createdAt = $.createdAt;
         this.description = $.description;
         this.detectionResults = $.detectionResults;
         this.imageId = $.imageId;
         this.imageName = $.imageName;
         this.imageOwnerId = $.imageOwnerId;
+        this.importImage = $.importImage;
         this.instanceId = $.instanceId;
         this.isInstallRunCommandAgent = $.isInstallRunCommandAgent;
         this.isLts = $.isLts;
         this.isSupportCloudInit = $.isSupportCloudInit;
         this.kernel = $.kernel;
         this.licenseType = $.licenseType;
+        this.needDetection = $.needDetection;
         this.osName = $.osName;
         this.osType = $.osType;
         this.platform = $.platform;
         this.platformVersion = $.platformVersion;
+        this.productCode = $.productCode;
         this.projectName = $.projectName;
         this.sharePermissions = $.sharePermissions;
         this.shareStatus = $.shareStatus;
@@ -510,7 +575,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param architecture 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+         * @param architecture Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
          * 
          * @return builder
          * 
@@ -521,7 +586,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param architecture 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+         * @param architecture Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
          * 
          * @return builder
          * 
@@ -531,7 +596,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bootMode 镜像的启动模式。可以选择BIOS、UEFI类型。
+         * @param bootMode Image boot mode. You can select BIOS or UEFI
          * 
          * @return builder
          * 
@@ -542,7 +607,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bootMode 镜像的启动模式。可以选择BIOS、UEFI类型。
+         * @param bootMode Image boot mode. You can select BIOS or UEFI
          * 
          * @return builder
          * 
@@ -552,7 +617,28 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdAt 镜像创建时间
+         * @param createWholeImage Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createWholeImage(@Nullable Output<Boolean> createWholeImage) {
+            $.createWholeImage = createWholeImage;
+            return this;
+        }
+
+        /**
+         * @param createWholeImage Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createWholeImage(Boolean createWholeImage) {
+            return createWholeImage(Output.of(createWholeImage));
+        }
+
+        /**
+         * @param createdAt Image creation time
          * 
          * @return builder
          * 
@@ -563,7 +649,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdAt 镜像创建时间
+         * @param createdAt Image creation time
          * 
          * @return builder
          * 
@@ -573,7 +659,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+         * @param description Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
          * 
          * @return builder
          * 
@@ -584,7 +670,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+         * @param description Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
          * 
          * @return builder
          * 
@@ -594,7 +680,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param detectionResults 镜像的检测结果。
+         * @param detectionResults Image check result.
          * 
          * @return builder
          * 
@@ -605,7 +691,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param detectionResults 镜像的检测结果。
+         * @param detectionResults Image check result.
          * 
          * @return builder
          * 
@@ -615,7 +701,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageId 镜像ID。
+         * @param imageId Image ID
          * 
          * @return builder
          * 
@@ -626,7 +712,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageId 镜像ID。
+         * @param imageId Image ID
          * 
          * @return builder
          * 
@@ -636,7 +722,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageName 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+         * @param imageName Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
          * 
          * @return builder
          * 
@@ -647,7 +733,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageName 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+         * @param imageName Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
          * 
          * @return builder
          * 
@@ -657,7 +743,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageOwnerId 镜像所属的账号ID。
+         * @param imageOwnerId Account ID to which the image belongs.
          * 
          * @return builder
          * 
@@ -668,7 +754,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageOwnerId 镜像所属的账号ID。
+         * @param imageOwnerId Account ID to which the image belongs.
          * 
          * @return builder
          * 
@@ -678,7 +764,28 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+         * @param importImage Imported image information
+         * 
+         * @return builder
+         * 
+         */
+        public Builder importImage(@Nullable Output<ImageImportImageArgs> importImage) {
+            $.importImage = importImage;
+            return this;
+        }
+
+        /**
+         * @param importImage Imported image information
+         * 
+         * @return builder
+         * 
+         */
+        public Builder importImage(ImageImportImageArgs importImage) {
+            return importImage(Output.of(importImage));
+        }
+
+        /**
+         * @param instanceId Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
          * 
          * @return builder
          * 
@@ -689,7 +796,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+         * @param instanceId Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
          * 
          * @return builder
          * 
@@ -699,7 +806,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isInstallRunCommandAgent 镜像中是否安装了云助手Agent。
+         * @param isInstallRunCommandAgent Whether Cloud Assistant Agent is installed in the image
          * 
          * @return builder
          * 
@@ -710,7 +817,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isInstallRunCommandAgent 镜像中是否安装了云助手Agent。
+         * @param isInstallRunCommandAgent Whether Cloud Assistant Agent is installed in the image
          * 
          * @return builder
          * 
@@ -720,7 +827,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isLts 公共镜像是否长期维护。
+         * @param isLts Whether the public image is maintained long-term.
          * 
          * @return builder
          * 
@@ -731,7 +838,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isLts 公共镜像是否长期维护。
+         * @param isLts Whether the public image is maintained long-term.
          * 
          * @return builder
          * 
@@ -741,7 +848,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isSupportCloudInit 镜像是否支持Cloud-init。
+         * @param isSupportCloudInit Whether the image supports Cloud-init.
          * 
          * @return builder
          * 
@@ -752,7 +859,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isSupportCloudInit 镜像是否支持Cloud-init。
+         * @param isSupportCloudInit Whether the image supports Cloud-init.
          * 
          * @return builder
          * 
@@ -762,7 +869,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kernel 镜像的内核版本。
+         * @param kernel Image kernel version.
          * 
          * @return builder
          * 
@@ -773,7 +880,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kernel 镜像的内核版本。
+         * @param kernel Image kernel version.
          * 
          * @return builder
          * 
@@ -783,7 +890,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param licenseType 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+         * @param licenseType Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
          * 
          * @return builder
          * 
@@ -794,7 +901,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param licenseType 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+         * @param licenseType Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
          * 
          * @return builder
          * 
@@ -804,7 +911,28 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param osName 镜像操作系统的名称。
+         * @param needDetection Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder needDetection(@Nullable Output<Boolean> needDetection) {
+            $.needDetection = needDetection;
+            return this;
+        }
+
+        /**
+         * @param needDetection Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder needDetection(Boolean needDetection) {
+            return needDetection(Output.of(needDetection));
+        }
+
+        /**
+         * @param osName Name of the image operating system.
          * 
          * @return builder
          * 
@@ -815,7 +943,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param osName 镜像操作系统的名称。
+         * @param osName Name of the image operating system.
          * 
          * @return builder
          * 
@@ -825,7 +953,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param osType 操作系统类型。
+         * @param osType Operating system type
          * 
          * @return builder
          * 
@@ -836,7 +964,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param osType 操作系统类型。
+         * @param osType Operating system type
          * 
          * @return builder
          * 
@@ -846,7 +974,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param platform 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+         * @param platform Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
          * 
          * @return builder
          * 
@@ -857,7 +985,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param platform 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+         * @param platform Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
          * 
          * @return builder
          * 
@@ -867,7 +995,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param platformVersion 镜像的发行版本。
+         * @param platformVersion Image release version.
          * 
          * @return builder
          * 
@@ -878,7 +1006,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param platformVersion 镜像的发行版本。
+         * @param platformVersion Image release version.
          * 
          * @return builder
          * 
@@ -888,7 +1016,28 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+         * @param productCode Product code for marketplace image
+         * 
+         * @return builder
+         * 
+         */
+        public Builder productCode(@Nullable Output<String> productCode) {
+            $.productCode = productCode;
+            return this;
+        }
+
+        /**
+         * @param productCode Product code for marketplace image
+         * 
+         * @return builder
+         * 
+         */
+        public Builder productCode(String productCode) {
+            return productCode(Output.of(productCode));
+        }
+
+        /**
+         * @param projectName Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
          * 
          * @return builder
          * 
@@ -899,7 +1048,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+         * @param projectName Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
          * 
          * @return builder
          * 
@@ -909,7 +1058,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sharePermissions 镜像共享的账户
+         * @param sharePermissions Accounts with which the image is shared
          * 
          * @return builder
          * 
@@ -920,7 +1069,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sharePermissions 镜像共享的账户
+         * @param sharePermissions Accounts with which the image is shared
          * 
          * @return builder
          * 
@@ -930,7 +1079,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sharePermissions 镜像共享的账户
+         * @param sharePermissions Accounts with which the image is shared
          * 
          * @return builder
          * 
@@ -940,7 +1089,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shareStatus 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+         * @param shareStatus Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
          * 
          * @return builder
          * 
@@ -951,7 +1100,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shareStatus 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+         * @param shareStatus Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
          * 
          * @return builder
          * 
@@ -961,7 +1110,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param size 镜像大小，单位为GiB。
+         * @param size Image size, in GiB.
          * 
          * @return builder
          * 
@@ -972,7 +1121,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param size 镜像大小，单位为GiB。
+         * @param size Image size, in GiB.
          * 
          * @return builder
          * 
@@ -982,7 +1131,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotGroupId 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+         * @param snapshotGroupId Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
          * 
          * @return builder
          * 
@@ -993,7 +1142,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotGroupId 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+         * @param snapshotGroupId Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
          * 
          * @return builder
          * 
@@ -1003,7 +1152,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotId 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+         * @param snapshotId System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
          * 
          * @return builder
          * 
@@ -1014,7 +1163,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotId 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+         * @param snapshotId System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
          * 
          * @return builder
          * 
@@ -1037,7 +1186,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 镜像的状态。
+         * @param status Image status.
          * 
          * @return builder
          * 
@@ -1048,7 +1197,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 镜像的状态。
+         * @param status Image status.
          * 
          * @return builder
          * 
@@ -1071,7 +1220,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedAt 镜像更新时间
+         * @param updatedAt Image update time
          * 
          * @return builder
          * 
@@ -1082,7 +1231,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedAt 镜像更新时间
+         * @param updatedAt Image update time
          * 
          * @return builder
          * 
@@ -1092,7 +1241,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param virtualSize 镜像大小，单位为Byte。
+         * @param virtualSize Image size, in Bytes.
          * 
          * @return builder
          * 
@@ -1103,7 +1252,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param virtualSize 镜像大小，单位为Byte。
+         * @param virtualSize Image size, in Bytes.
          * 
          * @return builder
          * 
@@ -1113,7 +1262,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param visibility 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+         * @param visibility Image visibility. public: Public image. private: Private image. shared: Shared image.
          * 
          * @return builder
          * 
@@ -1124,7 +1273,7 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param visibility 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+         * @param visibility Image visibility. public: Public image. private: Private image. shared: Shared image.
          * 
          * @return builder
          * 

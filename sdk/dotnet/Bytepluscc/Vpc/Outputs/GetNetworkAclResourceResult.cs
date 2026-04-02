@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Outputs
     public sealed class GetNetworkAclResourceResult
     {
         /// <summary>
-        /// 关联资源的ID。
+        /// Associated resource ID.
         /// </summary>
         public readonly string ResourceId;
         /// <summary>
-        /// 网络ACL关联资源的状态。BINDED：已绑定。BINDING：绑定中。UNBINDING：解绑中。
+        /// Status of resources associated with the network ACL. BINDED: Bound. BINDING: Binding. UNBINDING: Unbinding.
         /// </summary>
         public readonly string Status;
 

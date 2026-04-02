@@ -22,84 +22,84 @@ import java.util.concurrent.CompletableFuture;
 
 public final class RdsmssqlFunctions {
     /**
-     * Data Source schema for Byteplus::RDSMsSQL::Allowlist
+     * Data Source schema for Byteplus::RDSMsSQL::AllowList
      * 
      */
     public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args) {
         return getAllowList(args, InvokeOptions.Empty);
     }
     /**
-     * Data Source schema for Byteplus::RDSMsSQL::Allowlist
+     * Data Source schema for Byteplus::RDSMsSQL::AllowList
      * 
      */
     public static CompletableFuture<GetAllowListResult> getAllowListPlain(GetAllowListPlainArgs args) {
         return getAllowListPlain(args, InvokeOptions.Empty);
     }
     /**
-     * Data Source schema for Byteplus::RDSMsSQL::Allowlist
+     * Data Source schema for Byteplus::RDSMsSQL::AllowList
      * 
      */
     public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:rdsmssql/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Data Source schema for Byteplus::RDSMsSQL::Allowlist
+     * Data Source schema for Byteplus::RDSMsSQL::AllowList
      * 
      */
     public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:rdsmssql/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Data Source schema for Byteplus::RDSMsSQL::Allowlist
+     * Data Source schema for Byteplus::RDSMsSQL::AllowList
      * 
      */
     public static CompletableFuture<GetAllowListResult> getAllowListPlain(GetAllowListPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:rdsmssql/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Byteplus::RDSMsSQL::Allowlist
+     * Plural Data Source schema for Byteplus::RDSMsSQL::AllowList
      * 
      */
     public static Output<GetAllowListsResult> getAllowLists() {
         return getAllowLists(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Byteplus::RDSMsSQL::Allowlist
+     * Plural Data Source schema for Byteplus::RDSMsSQL::AllowList
      * 
      */
     public static CompletableFuture<GetAllowListsResult> getAllowListsPlain() {
         return getAllowListsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Byteplus::RDSMsSQL::Allowlist
+     * Plural Data Source schema for Byteplus::RDSMsSQL::AllowList
      * 
      */
     public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args) {
         return getAllowLists(args, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Byteplus::RDSMsSQL::Allowlist
+     * Plural Data Source schema for Byteplus::RDSMsSQL::AllowList
      * 
      */
     public static CompletableFuture<GetAllowListsResult> getAllowListsPlain(InvokeArgs args) {
         return getAllowListsPlain(args, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Byteplus::RDSMsSQL::Allowlist
+     * Plural Data Source schema for Byteplus::RDSMsSQL::AllowList
      * 
      */
     public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:rdsmssql/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Byteplus::RDSMsSQL::Allowlist
+     * Plural Data Source schema for Byteplus::RDSMsSQL::AllowList
      * 
      */
     public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:rdsmssql/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Byteplus::RDSMsSQL::Allowlist
+     * Plural Data Source schema for Byteplus::RDSMsSQL::AllowList
      * 
      */
     public static CompletableFuture<GetAllowListsResult> getAllowListsPlain(InvokeArgs args, InvokeOptions options) {

@@ -14,26 +14,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainOrigin {
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private @Nullable DomainOriginCondition condition;
     /**
-     * @return 表示源站配置。
+     * @return Indicates origin configuration.
      * 
      */
     private DomainOriginOriginAction originAction;
 
     private DomainOrigin() {}
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<DomainOriginCondition> condition() {
         return Optional.ofNullable(this.condition);
     }
     /**
-     * @return 表示源站配置。
+     * @return Indicates origin configuration.
      * 
      */
     public DomainOriginOriginAction originAction() {

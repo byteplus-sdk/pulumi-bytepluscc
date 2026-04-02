@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleNotifyTemplate {
     /**
-     * @return 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+     * @return Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
      * 
      */
     private @Nullable String channel;
     /**
-     * @return 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+     * @return Notification template ID. Note: Each notification channel supports only one notification template ID.
      * 
      */
     private @Nullable String notifyTemplateId;
 
     private RuleNotifyTemplate() {}
     /**
-     * @return 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+     * @return Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
      * 
      */
     public Optional<String> channel() {
         return Optional.ofNullable(this.channel);
     }
     /**
-     * @return 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+     * @return Notification template ID. Note: Each notification channel supports only one notification template ID.
      * 
      */
     public Optional<String> notifyTemplateId() {

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class LoadBalancerZoneMappingGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 可用区内提供服务的子网ID。
+        /// Subnet ID providing services within the availability zone.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
         /// <summary>
-        /// 可用区的唯一标识符。
+        /// Unique identifier of the availability zone.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

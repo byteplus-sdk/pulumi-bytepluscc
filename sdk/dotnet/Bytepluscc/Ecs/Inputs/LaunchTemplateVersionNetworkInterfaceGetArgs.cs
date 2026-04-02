@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         private InputList<string>? _securityGroupIds;
 
         /// <summary>
-        /// 网卡关联的安全组ID。
+        /// Security group ID associated with the network interface.
         /// </summary>
         public InputList<string> SecurityGroupIds
         {
@@ -26,7 +26,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         }
 
         /// <summary>
-        /// 实例的私有网络子网ID。
+        /// Private network subnet ID of the instance.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

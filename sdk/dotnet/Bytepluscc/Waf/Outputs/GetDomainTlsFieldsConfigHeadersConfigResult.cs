@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Outputs
     public sealed class GetDomainTlsFieldsConfigHeadersConfigResult
     {
         /// <summary>
-        /// 是否记录全量 header。
+        /// Record all header fields
         /// </summary>
         public readonly int Enable;
         /// <summary>
-        /// 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+        /// Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
         /// </summary>
         public readonly ImmutableArray<string> ExcludedKeyLists;
         /// <summary>
-        /// 统计 header 字段，将对应字段用于日志统计分析和告警。
+        /// Statistics header fields. Use the specified fields for log analysis and alerts.
         /// </summary>
         public readonly ImmutableArray<string> StatisticalKeyLists;
 

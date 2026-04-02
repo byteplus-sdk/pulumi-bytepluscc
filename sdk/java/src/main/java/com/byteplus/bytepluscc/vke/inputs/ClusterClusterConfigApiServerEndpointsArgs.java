@@ -17,14 +17,14 @@ public final class ClusterClusterConfigApiServerEndpointsArgs extends com.pulumi
     public static final ClusterClusterConfigApiServerEndpointsArgs Empty = new ClusterClusterConfigApiServerEndpointsArgs();
 
     /**
-     * 集群 API Server 私网的 IPv4 地址。
+     * Cluster API Server private IPv4 address.
      * 
      */
     @Import(name="privateIp")
     private @Nullable Output<ClusterClusterConfigApiServerEndpointsPrivateIpArgs> privateIp;
 
     /**
-     * @return 集群 API Server 私网的 IPv4 地址。
+     * @return Cluster API Server private IPv4 address.
      * 
      */
     public Optional<Output<ClusterClusterConfigApiServerEndpointsPrivateIpArgs>> privateIp() {
@@ -32,14 +32,14 @@ public final class ClusterClusterConfigApiServerEndpointsArgs extends com.pulumi
     }
 
     /**
-     * 集群 API Server 公网的 IPv4 地址。
+     * Cluster API Server public IPv4 address
      * 
      */
     @Import(name="publicIp")
     private @Nullable Output<ClusterClusterConfigApiServerEndpointsPublicIpArgs> publicIp;
 
     /**
-     * @return 集群 API Server 公网的 IPv4 地址。
+     * @return Cluster API Server public IPv4 address
      * 
      */
     public Optional<Output<ClusterClusterConfigApiServerEndpointsPublicIpArgs>> publicIp() {
@@ -72,7 +72,7 @@ public final class ClusterClusterConfigApiServerEndpointsArgs extends com.pulumi
         }
 
         /**
-         * @param privateIp 集群 API Server 私网的 IPv4 地址。
+         * @param privateIp Cluster API Server private IPv4 address.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class ClusterClusterConfigApiServerEndpointsArgs extends com.pulumi
         }
 
         /**
-         * @param privateIp 集群 API Server 私网的 IPv4 地址。
+         * @param privateIp Cluster API Server private IPv4 address.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class ClusterClusterConfigApiServerEndpointsArgs extends com.pulumi
         }
 
         /**
-         * @param publicIp 集群 API Server 公网的 IPv4 地址。
+         * @param publicIp Cluster API Server public IPv4 address
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class ClusterClusterConfigApiServerEndpointsArgs extends com.pulumi
         }
 
         /**
-         * @param publicIp 集群 API Server 公网的 IPv4 地址。
+         * @param publicIp Cluster API Server public IPv4 address
          * 
          * @return builder
          * 

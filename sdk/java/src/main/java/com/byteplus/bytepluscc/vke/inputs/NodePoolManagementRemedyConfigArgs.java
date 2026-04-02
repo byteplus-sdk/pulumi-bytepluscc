@@ -17,14 +17,14 @@ public final class NodePoolManagementRemedyConfigArgs extends com.pulumi.resourc
     public static final NodePoolManagementRemedyConfigArgs Empty = new NodePoolManagementRemedyConfigArgs();
 
     /**
-     * 是否开启检查自愈。
+     * Enable self-healing check
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return 是否开启检查自愈。
+     * @return Enable self-healing check
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -32,14 +32,14 @@ public final class NodePoolManagementRemedyConfigArgs extends com.pulumi.resourc
     }
 
     /**
-     * 检查自愈规则ID。
+     * Self-healing rule ID
      * 
      */
     @Import(name="remedyId")
     private @Nullable Output<String> remedyId;
 
     /**
-     * @return 检查自愈规则ID。
+     * @return Self-healing rule ID
      * 
      */
     public Optional<Output<String>> remedyId() {
@@ -72,7 +72,7 @@ public final class NodePoolManagementRemedyConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param enabled 是否开启检查自愈。
+         * @param enabled Enable self-healing check
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class NodePoolManagementRemedyConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param enabled 是否开启检查自愈。
+         * @param enabled Enable self-healing check
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class NodePoolManagementRemedyConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param remedyId 检查自愈规则ID。
+         * @param remedyId Self-healing rule ID
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class NodePoolManagementRemedyConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param remedyId 检查自愈规则ID。
+         * @param remedyId Self-healing rule ID
          * 
          * @return builder
          * 

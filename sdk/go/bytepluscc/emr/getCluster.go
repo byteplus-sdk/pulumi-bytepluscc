@@ -30,65 +30,65 @@ type LookupClusterArgs struct {
 
 // A collection of values returned by getCluster.
 type LookupClusterResult struct {
-	// 账号ID。
+	// Account ID.
 	AccountId int `pulumi:"accountId"`
-	// 集群服务的扩展信息列表，包括服务的自定义配置项、服务组件的自定义部署拓扑设置，以及服务的元数据连接配置信息。
+	// Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
 	ApplicationExtras []GetClusterApplicationExtra `pulumi:"applicationExtras"`
-	// 集群安装的服务名称列表。创建字段。
+	// List of service names installed in the cluster. Creation-related field.
 	ApplicationNames []string `pulumi:"applicationNames"`
-	// 集群安装的服务列表。只读字段。
+	// Installed service list for cluster. Read-only field.
 	Applications []GetClusterApplication `pulumi:"applications"`
-	// 集群的引导脚本列表。
+	// Cluster bootstrap script list.
 	BootstrapScripts []GetClusterBootstrapScript `pulumi:"bootstrapScripts"`
-	// 包月的配置参数，当chargeType=PRE时，必选。
+	// Monthly subscription configuration parameters. Required when chargeType=PRE.
 	ChargePreConfig GetClusterChargePreConfig `pulumi:"chargePreConfig"`
-	// 付费类型，PRE表示包月，POST表示按量计费。
+	// Payment type. PRE means monthly subscription, POST means pay-as-you-go.
 	ChargeType string `pulumi:"chargeType"`
-	// 集群dns域名后缀列表。
+	// Cluster DNS domain suffix list.
 	ClusterDomainNames []string `pulumi:"clusterDomainNames"`
-	// 集群ID。
+	// Cluster ID.
 	ClusterId string `pulumi:"clusterId"`
-	// 集群名称。
+	// Cluster name.
 	ClusterName string `pulumi:"clusterName"`
-	// 集群状态。
+	// Cluster status.
 	ClusterState string `pulumi:"clusterState"`
-	// 集群类型。
+	// Cluster type.
 	ClusterType string `pulumi:"clusterType"`
-	// 集群创建时间。
+	// Cluster creation time.
 	CreatedTime int `pulumi:"createdTime"`
-	// 创建者ID。
+	// Creator ID.
 	CreatorId int `pulumi:"creatorId"`
-	// 创建者名称。
+	// Creator name.
 	CreatorName string `pulumi:"creatorName"`
-	// 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+	// Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
 	DeployMode string `pulumi:"deployMode"`
-	// ECS镜像ID。
+	// ECS image ID.
 	EcsImageId string `pulumi:"ecsImageId"`
-	// 集群过期时间。
+	// Cluster expiration time.
 	ExpireTime int `pulumi:"expireTime"`
-	// HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+	// HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
 	HistoryServerMode string `pulumi:"historyServerMode"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 集群全局的节点信息。
+	// Cluster global node information.
 	NodeAttribute GetClusterNodeAttribute `pulumi:"nodeAttribute"`
-	// 节点组属性列表。
+	// Node group property list.
 	NodeGroupAttributes []GetClusterNodeGroupAttribute `pulumi:"nodeGroupAttributes"`
-	// 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+	// Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
 	ProjectName string `pulumi:"projectName"`
-	// 集群创建完成时间。
+	// Cluster creation completion time.
 	ReadyTime int `pulumi:"readyTime"`
-	// 集群版本。
+	// Cluster version.
 	ReleaseVersion string `pulumi:"releaseVersion"`
-	// 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+	// Cluster global security group ID. All ECS in node groups will join this security group.
 	SecurityGroupId string `pulumi:"securityGroupId"`
-	// 安全模式。
+	// Security mode.
 	SecurityMode string `pulumi:"securityMode"`
-	// 状态变更原因。
+	// Status change reason.
 	StateChangeReason GetClusterStateChangeReason `pulumi:"stateChangeReason"`
-	// 标签列表。
+	// Tag list.
 	Tags []GetClusterTag `pulumi:"tags"`
-	// 集群终止时间。
+	// Cluster termination time.
 	TerminateTime int `pulumi:"terminateTime"`
 	// Vpc ID。
 	VpcId string `pulumi:"vpcId"`
@@ -128,97 +128,97 @@ func (o LookupClusterResultOutput) ToLookupClusterResultOutputWithContext(ctx co
 	return o
 }
 
-// 账号ID。
+// Account ID.
 func (o LookupClusterResultOutput) AccountId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupClusterResult) int { return v.AccountId }).(pulumi.IntOutput)
 }
 
-// 集群服务的扩展信息列表，包括服务的自定义配置项、服务组件的自定义部署拓扑设置，以及服务的元数据连接配置信息。
+// Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
 func (o LookupClusterResultOutput) ApplicationExtras() GetClusterApplicationExtraArrayOutput {
 	return o.ApplyT(func(v LookupClusterResult) []GetClusterApplicationExtra { return v.ApplicationExtras }).(GetClusterApplicationExtraArrayOutput)
 }
 
-// 集群安装的服务名称列表。创建字段。
+// List of service names installed in the cluster. Creation-related field.
 func (o LookupClusterResultOutput) ApplicationNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupClusterResult) []string { return v.ApplicationNames }).(pulumi.StringArrayOutput)
 }
 
-// 集群安装的服务列表。只读字段。
+// Installed service list for cluster. Read-only field.
 func (o LookupClusterResultOutput) Applications() GetClusterApplicationArrayOutput {
 	return o.ApplyT(func(v LookupClusterResult) []GetClusterApplication { return v.Applications }).(GetClusterApplicationArrayOutput)
 }
 
-// 集群的引导脚本列表。
+// Cluster bootstrap script list.
 func (o LookupClusterResultOutput) BootstrapScripts() GetClusterBootstrapScriptArrayOutput {
 	return o.ApplyT(func(v LookupClusterResult) []GetClusterBootstrapScript { return v.BootstrapScripts }).(GetClusterBootstrapScriptArrayOutput)
 }
 
-// 包月的配置参数，当chargeType=PRE时，必选。
+// Monthly subscription configuration parameters. Required when chargeType=PRE.
 func (o LookupClusterResultOutput) ChargePreConfig() GetClusterChargePreConfigOutput {
 	return o.ApplyT(func(v LookupClusterResult) GetClusterChargePreConfig { return v.ChargePreConfig }).(GetClusterChargePreConfigOutput)
 }
 
-// 付费类型，PRE表示包月，POST表示按量计费。
+// Payment type. PRE means monthly subscription, POST means pay-as-you-go.
 func (o LookupClusterResultOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 集群dns域名后缀列表。
+// Cluster DNS domain suffix list.
 func (o LookupClusterResultOutput) ClusterDomainNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupClusterResult) []string { return v.ClusterDomainNames }).(pulumi.StringArrayOutput)
 }
 
-// 集群ID。
+// Cluster ID.
 func (o LookupClusterResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 集群名称。
+// Cluster name.
 func (o LookupClusterResultOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.ClusterName }).(pulumi.StringOutput)
 }
 
-// 集群状态。
+// Cluster status.
 func (o LookupClusterResultOutput) ClusterState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.ClusterState }).(pulumi.StringOutput)
 }
 
-// 集群类型。
+// Cluster type.
 func (o LookupClusterResultOutput) ClusterType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.ClusterType }).(pulumi.StringOutput)
 }
 
-// 集群创建时间。
+// Cluster creation time.
 func (o LookupClusterResultOutput) CreatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupClusterResult) int { return v.CreatedTime }).(pulumi.IntOutput)
 }
 
-// 创建者ID。
+// Creator ID.
 func (o LookupClusterResultOutput) CreatorId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupClusterResult) int { return v.CreatorId }).(pulumi.IntOutput)
 }
 
-// 创建者名称。
+// Creator name.
 func (o LookupClusterResultOutput) CreatorName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.CreatorName }).(pulumi.StringOutput)
 }
 
-// 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+// Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
 func (o LookupClusterResultOutput) DeployMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.DeployMode }).(pulumi.StringOutput)
 }
 
-// ECS镜像ID。
+// ECS image ID.
 func (o LookupClusterResultOutput) EcsImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.EcsImageId }).(pulumi.StringOutput)
 }
 
-// 集群过期时间。
+// Cluster expiration time.
 func (o LookupClusterResultOutput) ExpireTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupClusterResult) int { return v.ExpireTime }).(pulumi.IntOutput)
 }
 
-// HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+// HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
 func (o LookupClusterResultOutput) HistoryServerMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.HistoryServerMode }).(pulumi.StringOutput)
 }
@@ -228,52 +228,52 @@ func (o LookupClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 集群全局的节点信息。
+// Cluster global node information.
 func (o LookupClusterResultOutput) NodeAttribute() GetClusterNodeAttributeOutput {
 	return o.ApplyT(func(v LookupClusterResult) GetClusterNodeAttribute { return v.NodeAttribute }).(GetClusterNodeAttributeOutput)
 }
 
-// 节点组属性列表。
+// Node group property list.
 func (o LookupClusterResultOutput) NodeGroupAttributes() GetClusterNodeGroupAttributeArrayOutput {
 	return o.ApplyT(func(v LookupClusterResult) []GetClusterNodeGroupAttribute { return v.NodeGroupAttributes }).(GetClusterNodeGroupAttributeArrayOutput)
 }
 
-// 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+// Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
 func (o LookupClusterResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 集群创建完成时间。
+// Cluster creation completion time.
 func (o LookupClusterResultOutput) ReadyTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupClusterResult) int { return v.ReadyTime }).(pulumi.IntOutput)
 }
 
-// 集群版本。
+// Cluster version.
 func (o LookupClusterResultOutput) ReleaseVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.ReleaseVersion }).(pulumi.StringOutput)
 }
 
-// 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+// Cluster global security group ID. All ECS in node groups will join this security group.
 func (o LookupClusterResultOutput) SecurityGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.SecurityGroupId }).(pulumi.StringOutput)
 }
 
-// 安全模式。
+// Security mode.
 func (o LookupClusterResultOutput) SecurityMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.SecurityMode }).(pulumi.StringOutput)
 }
 
-// 状态变更原因。
+// Status change reason.
 func (o LookupClusterResultOutput) StateChangeReason() GetClusterStateChangeReasonOutput {
 	return o.ApplyT(func(v LookupClusterResult) GetClusterStateChangeReason { return v.StateChangeReason }).(GetClusterStateChangeReasonOutput)
 }
 
-// 标签列表。
+// Tag list.
 func (o LookupClusterResultOutput) Tags() GetClusterTagArrayOutput {
 	return o.ApplyT(func(v LookupClusterResult) []GetClusterTag { return v.Tags }).(GetClusterTagArrayOutput)
 }
 
-// 集群终止时间。
+// Cluster termination time.
 func (o LookupClusterResultOutput) TerminateTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupClusterResult) int { return v.TerminateTime }).(pulumi.IntOutput)
 }

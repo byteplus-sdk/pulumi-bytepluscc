@@ -65,23 +65,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public sealed class GetAddonResult
     {
         /// <summary>
-        /// 组件所在集群 ID。
+        /// Cluster ID where the component is located.
         /// </summary>
         public readonly string ClusterId;
         /// <summary>
-        /// 组件配置。
+        /// Component configuration.
         /// </summary>
         public readonly string Config;
         /// <summary>
-        /// 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+        /// Component installation time. Standard RFC3339 format, UTC+0 time.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+        /// Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
         /// </summary>
         public readonly string DeployMode;
         /// <summary>
-        /// 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+        /// Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
         /// </summary>
         public readonly string DeployNodeType;
         /// <summary>
@@ -89,19 +89,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 组件名称。
+        /// Component name.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 组件状态。
+        /// Component status.
         /// </summary>
         public readonly Outputs.GetAddonStatusResult Status;
         /// <summary>
-        /// 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+        /// Component update time. Standard RFC3339 format, UTC+0 time.
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// 组件版本。
+        /// Component version.
         /// </summary>
         public readonly string Version;
 

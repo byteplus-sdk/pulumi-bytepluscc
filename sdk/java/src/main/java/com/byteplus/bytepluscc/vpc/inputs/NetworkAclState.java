@@ -23,14 +23,14 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
     public static final NetworkAclState Empty = new NetworkAclState();
 
     /**
-     * 网络ACL的创建时间。
+     * Creation time of the network ACL.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 网络ACL的创建时间。
+     * @return Creation time of the network ACL.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -52,14 +52,14 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     public Optional<Output<String>> description() {
@@ -81,14 +81,14 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网络ACL的ID。
+     * Network ACL ID.
      * 
      */
     @Import(name="networkAclId")
     private @Nullable Output<String> networkAclId;
 
     /**
-     * @return 网络ACL的ID。
+     * @return Network ACL ID.
      * 
      */
     public Optional<Output<String>> networkAclId() {
@@ -96,14 +96,14 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
      * 
      */
     @Import(name="networkAclName")
     private @Nullable Output<String> networkAclName;
 
     /**
-     * @return 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * @return Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
      * 
      */
     public Optional<Output<String>> networkAclName() {
@@ -111,14 +111,14 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网络ACL所属项目的名称。不填默认加入default项目。
+     * Name of the project associated with the network ACL. If not specified, added to the default project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 网络ACL所属项目的名称。不填默认加入default项目。
+     * @return Name of the project associated with the network ACL. If not specified, added to the default project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -133,14 +133,14 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网络ACL的状态。Available：可用，Creating：创建中
+     * Status of the network ACL. Available: Available. Creating: Creating.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 网络ACL的状态。Available：可用，Creating：创建中
+     * @return Status of the network ACL. Available: Available. Creating: Creating.
      * 
      */
     public Optional<Output<String>> status() {
@@ -155,14 +155,14 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网络ACL的更新时间。
+     * Last updated time of the network ACL.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 网络ACL的更新时间。
+     * @return Last updated time of the network ACL.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -170,14 +170,14 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网络ACL所属VPC的ID。
+     * ID of the VPC associated with the network ACL.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 网络ACL所属VPC的ID。
+     * @return ID of the VPC associated with the network ACL.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -222,7 +222,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 网络ACL的创建时间。
+         * @param createdTime Creation time of the network ACL.
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 网络ACL的创建时间。
+         * @param createdTime Creation time of the network ACL.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkAclId 网络ACL的ID。
+         * @param networkAclId Network ACL ID.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkAclId 网络ACL的ID。
+         * @param networkAclId Network ACL ID.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkAclName 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+         * @param networkAclName Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkAclName 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+         * @param networkAclName Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 网络ACL所属项目的名称。不填默认加入default项目。
+         * @param projectName Name of the project associated with the network ACL. If not specified, added to the default project.
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 网络ACL所属项目的名称。不填默认加入default项目。
+         * @param projectName Name of the project associated with the network ACL. If not specified, added to the default project.
          * 
          * @return builder
          * 
@@ -392,7 +392,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 网络ACL的状态。Available：可用，Creating：创建中
+         * @param status Status of the network ACL. Available: Available. Creating: Creating.
          * 
          * @return builder
          * 
@@ -403,7 +403,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 网络ACL的状态。Available：可用，Creating：创建中
+         * @param status Status of the network ACL. Available: Available. Creating: Creating.
          * 
          * @return builder
          * 
@@ -426,7 +426,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 网络ACL的更新时间。
+         * @param updatedTime Last updated time of the network ACL.
          * 
          * @return builder
          * 
@@ -437,7 +437,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 网络ACL的更新时间。
+         * @param updatedTime Last updated time of the network ACL.
          * 
          * @return builder
          * 
@@ -447,7 +447,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 网络ACL所属VPC的ID。
+         * @param vpcId ID of the VPC associated with the network ACL.
          * 
          * @return builder
          * 
@@ -458,7 +458,7 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 网络ACL所属VPC的ID。
+         * @param vpcId ID of the VPC associated with the network ACL.
          * 
          * @return builder
          * 

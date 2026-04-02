@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetGroupAttachedPolicyPolicyScope {
     /**
-     * @return 项目授权时间。
+     * @return Project authorization time.
      * 
      */
     private String attachTime;
     /**
-     * @return 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+     * @return Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
      * 
      */
     private String policyScopeType;
     /**
-     * @return 按项目授权时的项目显示名。
+     * @return Project display name for project-based authorization.
      * 
      */
     private String projectDisplayName;
     /**
-     * @return 按项目授权时的项目名。
+     * @return Project name for project-based authorization.
      * 
      */
     private String projectName;
 
     private GetGroupAttachedPolicyPolicyScope() {}
     /**
-     * @return 项目授权时间。
+     * @return Project authorization time.
      * 
      */
     public String attachTime() {
         return this.attachTime;
     }
     /**
-     * @return 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+     * @return Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
      * 
      */
     public String policyScopeType() {
         return this.policyScopeType;
     }
     /**
-     * @return 按项目授权时的项目显示名。
+     * @return Project display name for project-based authorization.
      * 
      */
     public String projectDisplayName() {
         return this.projectDisplayName;
     }
     /**
-     * @return 按项目授权时的项目名。
+     * @return Project name for project-based authorization.
      * 
      */
     public String projectName() {

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp.Outputs
     public sealed class GetWorkspaceUsageResult
     {
         /// <summary>
-        /// 活跃时序数。
+        /// Active time series count
         /// </summary>
         public readonly int ActiveSeries;
         /// <summary>
-        /// 每秒写入样本数。
+        /// Samples written per second
         /// </summary>
         public readonly double IngestedSamplesPerSecond;
 

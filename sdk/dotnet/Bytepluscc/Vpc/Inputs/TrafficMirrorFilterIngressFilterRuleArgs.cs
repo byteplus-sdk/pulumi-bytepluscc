@@ -14,79 +14,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Inputs
     public sealed class TrafficMirrorFilterIngressFilterRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 筛选规则实例描述。
+        /// Filter rule instance description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 筛选规则目的地址。
+        /// Filter rule destination address
         /// </summary>
         [Input("destinationCidrBlock")]
         public Input<string>? DestinationCidrBlock { get; set; }
 
         /// <summary>
-        /// 筛选规则目的端口范围。
+        /// Filter rule destination port range
         /// </summary>
         [Input("destinationPortRange")]
         public Input<string>? DestinationPortRange { get; set; }
 
         /// <summary>
-        /// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+        /// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
         /// </summary>
         [Input("policy")]
         public Input<string>? Policy { get; set; }
 
         /// <summary>
-        /// 筛选规则优先级。
+        /// Filter rule priority
         /// </summary>
         [Input("priority")]
         public Input<int>? Priority { get; set; }
 
         /// <summary>
-        /// 所属项目的名称。
+        /// Project name
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 筛选规则协议类型。
+        /// Filter rule protocol type
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
 
         /// <summary>
-        /// 筛选规则源地址。
+        /// Filter rule source address
         /// </summary>
         [Input("sourceCidrBlock")]
         public Input<string>? SourceCidrBlock { get; set; }
 
         /// <summary>
-        /// 筛选规则源端口范围。
+        /// Filter rule source port range
         /// </summary>
         [Input("sourcePortRange")]
         public Input<string>? SourcePortRange { get; set; }
 
         /// <summary>
-        /// 筛选规则状态。
+        /// Filter rule status
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 筛选规则方向。egress：出方向。ingress：入方向。
+        /// Filter rule direction. egress: Outbound. ingress: Inbound
         /// </summary>
         [Input("trafficDirection")]
         public Input<string>? TrafficDirection { get; set; }
 
         /// <summary>
-        /// 筛选条件实例ID。
+        /// Filter condition instance ID
         /// </summary>
         [Input("trafficMirrorFilterId")]
         public Input<string>? TrafficMirrorFilterId { get; set; }
 
         /// <summary>
-        /// 筛选规则实例ID。
+        /// Filter rule instance ID
         /// </summary>
         [Input("trafficMirrorFilterRuleId")]
         public Input<string>? TrafficMirrorFilterRuleId { get; set; }

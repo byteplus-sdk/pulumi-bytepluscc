@@ -16,7 +16,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 云数据库 veDB备份管理
+ * Cloud Database veDB Backup Management
  * 
  * ## Example Usage
  * 
@@ -68,196 +68,196 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vedbm/backup:Backup")
 public class Backup extends com.pulumi.resources.CustomResource {
     /**
-     * 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     @Export(name="backupEndTime", refs={String.class}, tree="[0]")
     private Output<String> backupEndTime;
 
     /**
-     * @return 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     public Output<String> backupEndTime() {
         return this.backupEndTime;
     }
     /**
-     * 备份文件大小，单位为 KiB。
+     * Backup file size, unit: KiB
      * 
      */
     @Export(name="backupFileSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupFileSize;
 
     /**
-     * @return 备份文件大小，单位为 KiB。
+     * @return Backup file size, unit: KiB
      * 
      */
     public Output<Integer> backupFileSize() {
         return this.backupFileSize;
     }
     /**
-     * 备份 ID。
+     * Backup ID
      * 
      */
     @Export(name="backupId", refs={String.class}, tree="[0]")
     private Output<String> backupId;
 
     /**
-     * @return 备份 ID。
+     * @return Backup ID
      * 
      */
     public Output<String> backupId() {
         return this.backupId;
     }
     /**
-     * 备份方式，目前仅支持物理备份。
+     * Backup method, currently only physical backup is supported
      * 
      */
     @Export(name="backupMethod", refs={String.class}, tree="[0]")
     private Output<String> backupMethod;
 
     /**
-     * @return 备份方式，目前仅支持物理备份。
+     * @return Backup method, currently only physical backup is supported
      * 
      */
     public Output<String> backupMethod() {
         return this.backupMethod;
     }
     /**
-     * 数据备份保留天数。
+     * Data backup retention days
      * 
      */
     @Export(name="backupRetentionPeriod", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupRetentionPeriod;
 
     /**
-     * @return 数据备份保留天数。
+     * @return Data backup retention days
      * 
      */
     public Output<Integer> backupRetentionPeriod() {
         return this.backupRetentionPeriod;
     }
     /**
-     * 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     @Export(name="backupStartTime", refs={String.class}, tree="[0]")
     private Output<String> backupStartTime;
 
     /**
-     * @return 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     public Output<String> backupStartTime() {
         return this.backupStartTime;
     }
     /**
-     * 备份状态。
+     * Backup status
      * 
      */
     @Export(name="backupStatus", refs={String.class}, tree="[0]")
     private Output<String> backupStatus;
 
     /**
-     * @return 备份状态。
+     * @return Backup status
      * 
      */
     public Output<String> backupStatus() {
         return this.backupStatus;
     }
     /**
-     * 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
      * 
      */
     @Export(name="backupTime", refs={String.class}, tree="[0]")
     private Output<String> backupTime;
 
     /**
-     * @return 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * @return Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
      * 
      */
     public Output<String> backupTime() {
         return this.backupTime;
     }
     /**
-     * 备份类型，目前仅支持全量备份。
+     * Backup type, currently only full backup is supported
      * 
      */
     @Export(name="backupType", refs={String.class}, tree="[0]")
     private Output<String> backupType;
 
     /**
-     * @return 备份类型，目前仅支持全量备份。
+     * @return Backup type, currently only full backup is supported
      * 
      */
     public Output<String> backupType() {
         return this.backupType;
     }
     /**
-     * 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     @Export(name="consistentTime", refs={String.class}, tree="[0]")
     private Output<String> consistentTime;
 
     /**
-     * @return 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     public Output<String> consistentTime() {
         return this.consistentTime;
     }
     /**
-     * 是否开启持续备份，取值固定为 true。
+     * Enable continuous backup, value is always true
      * 
      */
     @Export(name="continueBackup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> continueBackup;
 
     /**
-     * @return 是否开启持续备份，取值固定为 true。
+     * @return Enable continuous backup, value is always true
      * 
      */
     public Output<Boolean> continueBackup() {
         return this.continueBackup;
     }
     /**
-     * 创建类型。
+     * Creation type
      * 
      */
     @Export(name="createType", refs={String.class}, tree="[0]")
     private Output<String> createType;
 
     /**
-     * @return 创建类型。
+     * @return Creation type
      * 
      */
     public Output<String> createType() {
         return this.createType;
     }
     /**
-     * 全量备份周期，多个取值用英文逗号（,）隔开。
+     * Full backup cycle, use commas (,) to separate multiple values
      * 
      */
     @Export(name="fullBackupPeriod", refs={String.class}, tree="[0]")
     private Output<String> fullBackupPeriod;
 
     /**
-     * @return 全量备份周期，多个取值用英文逗号（,）隔开。
+     * @return Full backup cycle, use commas (,) to separate multiple values
      * 
      */
     public Output<String> fullBackupPeriod() {
         return this.fullBackupPeriod;
     }
     /**
-     * 实例ID。
+     * Instance ID
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     public Output<String> instanceId() {

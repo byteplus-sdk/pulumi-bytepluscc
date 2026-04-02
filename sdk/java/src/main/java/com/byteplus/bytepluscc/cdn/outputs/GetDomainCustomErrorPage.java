@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainCustomErrorPage {
     /**
-     * @return 表示一个配置规则的集合。您最多可以添加 50 条规则。
+     * @return Indicates a set of configuration rules. You can add up to 50 rules.
      * 
      */
     private List<GetDomainCustomErrorPageErrorPageRule> errorPageRules;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
      * 
      */
     private Boolean switch_;
 
     private GetDomainCustomErrorPage() {}
     /**
-     * @return 表示一个配置规则的集合。您最多可以添加 50 条规则。
+     * @return Indicates a set of configuration rules. You can add up to 50 rules.
      * 
      */
     public List<GetDomainCustomErrorPageErrorPageRule> errorPageRules() {
         return this.errorPageRules;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
      * 
      */
     public Boolean switch_() {

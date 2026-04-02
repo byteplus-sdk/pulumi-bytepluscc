@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas.Inputs
     public sealed class MountPointPermissionGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 权限组创建时间。
+        /// Permission group creation time.
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// 权限组描述信息。
+        /// Permission group description information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 关联该权限组的文件系统数量。
+        /// Number of file systems associated with this permission group.
         /// </summary>
         [Input("fileSystemCount")]
         public Input<int>? FileSystemCount { get; set; }
 
         /// <summary>
-        /// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+        /// File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
         /// </summary>
         [Input("fileSystemType")]
         public Input<string>? FileSystemType { get; set; }
@@ -46,13 +46,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas.Inputs
         }
 
         /// <summary>
-        /// 权限组名称。
+        /// Permission group name.
         /// </summary>
         [Input("permissionGroupName")]
         public Input<string>? PermissionGroupName { get; set; }
 
         /// <summary>
-        /// 权限规则数量。
+        /// Number of permission rules.
         /// </summary>
         [Input("permissionRuleCount")]
         public Input<int>? PermissionRuleCount { get; set; }

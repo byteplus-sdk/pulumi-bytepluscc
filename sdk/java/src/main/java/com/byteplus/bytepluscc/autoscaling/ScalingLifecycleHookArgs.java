@@ -19,14 +19,14 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
     public static final ScalingLifecycleHookArgs Empty = new ScalingLifecycleHookArgs();
 
     /**
-     * 云助手相关命令信息。
+     * Cloud Assistant command information.
      * 
      */
     @Import(name="lifecycleCommand")
     private @Nullable Output<ScalingLifecycleHookLifecycleCommandArgs> lifecycleCommand;
 
     /**
-     * @return 云助手相关命令信息。
+     * @return Cloud Assistant command information.
      * 
      */
     public Optional<Output<ScalingLifecycleHookLifecycleCommandArgs>> lifecycleCommand() {
@@ -34,14 +34,14 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 生命周期挂钩名称，创建后不可修改。取值：不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1 ~ 128个字符之间。
+     * Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="lifecycleHookName", required=true)
     private Output<String> lifecycleHookName;
 
     /**
-     * @return 生命周期挂钩名称，创建后不可修改。取值：不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1 ~ 128个字符之间。
+     * @return Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
      * 
      */
     public Output<String> lifecycleHookName() {
@@ -49,14 +49,14 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 实例挂起状态结束后执行的策略。取值：CONTINUE：继续执行。REJECT：中止后续操作。ROLLBACK：针对弹性收缩活动，会拒绝释放ECS实例，进行回滚；针对弹性扩张活动，效果同REJECT一样。
+     * Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
      * 
      */
     @Import(name="lifecycleHookPolicy", required=true)
     private Output<String> lifecycleHookPolicy;
 
     /**
-     * @return 实例挂起状态结束后执行的策略。取值：CONTINUE：继续执行。REJECT：中止后续操作。ROLLBACK：针对弹性收缩活动，会拒绝释放ECS实例，进行回滚；针对弹性扩张活动，效果同REJECT一样。
+     * @return Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
      * 
      */
     public Output<String> lifecycleHookPolicy() {
@@ -64,14 +64,14 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * ECS实例保持挂起状态的时间，超时后，自动结束挂起状态，根据执行策略继续执行扩缩容行为。 请您评估自定义操作的处理时间后，设置合适的超时时间。取值：30 ～ 21600（6小时），单位 s，且必须为整数。
+     * Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
      * 
      */
     @Import(name="lifecycleHookTimeout", required=true)
     private Output<Integer> lifecycleHookTimeout;
 
     /**
-     * @return ECS实例保持挂起状态的时间，超时后，自动结束挂起状态，根据执行策略继续执行扩缩容行为。 请您评估自定义操作的处理时间后，设置合适的超时时间。取值：30 ～ 21600（6小时），单位 s，且必须为整数。
+     * @return Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
      * 
      */
     public Output<Integer> lifecycleHookTimeout() {
@@ -79,14 +79,14 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 伸缩活动的类型，发生指定类型的伸缩活动时，生命周期挂钩会被触发并挂起ECS实例。取值：SCALE*IN：弹性收缩活动。SCALE*OUT：弹性扩张活动。
+     * Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
      * 
      */
     @Import(name="lifecycleHookType", required=true)
     private Output<String> lifecycleHookType;
 
     /**
-     * @return 伸缩活动的类型，发生指定类型的伸缩活动时，生命周期挂钩会被触发并挂起ECS实例。取值：SCALE*IN：弹性收缩活动。SCALE*OUT：弹性扩张活动。
+     * @return Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
      * 
      */
     public Output<String> lifecycleHookType() {
@@ -94,14 +94,14 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 伸缩组ID。
+     * Scaling group ID.
      * 
      */
     @Import(name="scalingGroupId", required=true)
     private Output<String> scalingGroupId;
 
     /**
-     * @return 伸缩组ID。
+     * @return Scaling group ID.
      * 
      */
     public Output<String> scalingGroupId() {
@@ -138,7 +138,7 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleCommand 云助手相关命令信息。
+         * @param lifecycleCommand Cloud Assistant command information.
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleCommand 云助手相关命令信息。
+         * @param lifecycleCommand Cloud Assistant command information.
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleHookName 生命周期挂钩名称，创建后不可修改。取值：不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1 ~ 128个字符之间。
+         * @param lifecycleHookName Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleHookName 生命周期挂钩名称，创建后不可修改。取值：不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1 ~ 128个字符之间。
+         * @param lifecycleHookName Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleHookPolicy 实例挂起状态结束后执行的策略。取值：CONTINUE：继续执行。REJECT：中止后续操作。ROLLBACK：针对弹性收缩活动，会拒绝释放ECS实例，进行回滚；针对弹性扩张活动，效果同REJECT一样。
+         * @param lifecycleHookPolicy Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleHookPolicy 实例挂起状态结束后执行的策略。取值：CONTINUE：继续执行。REJECT：中止后续操作。ROLLBACK：针对弹性收缩活动，会拒绝释放ECS实例，进行回滚；针对弹性扩张活动，效果同REJECT一样。
+         * @param lifecycleHookPolicy Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleHookTimeout ECS实例保持挂起状态的时间，超时后，自动结束挂起状态，根据执行策略继续执行扩缩容行为。 请您评估自定义操作的处理时间后，设置合适的超时时间。取值：30 ～ 21600（6小时），单位 s，且必须为整数。
+         * @param lifecycleHookTimeout Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleHookTimeout ECS实例保持挂起状态的时间，超时后，自动结束挂起状态，根据执行策略继续执行扩缩容行为。 请您评估自定义操作的处理时间后，设置合适的超时时间。取值：30 ～ 21600（6小时），单位 s，且必须为整数。
+         * @param lifecycleHookTimeout Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleHookType 伸缩活动的类型，发生指定类型的伸缩活动时，生命周期挂钩会被触发并挂起ECS实例。取值：SCALE*IN：弹性收缩活动。SCALE*OUT：弹性扩张活动。
+         * @param lifecycleHookType Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleHookType 伸缩活动的类型，发生指定类型的伸缩活动时，生命周期挂钩会被触发并挂起ECS实例。取值：SCALE*IN：弹性收缩活动。SCALE*OUT：弹性扩张活动。
+         * @param lifecycleHookType Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param scalingGroupId 伸缩组ID。
+         * @param scalingGroupId Scaling group ID.
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class ScalingLifecycleHookArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param scalingGroupId 伸缩组ID。
+         * @param scalingGroupId Scaling group ID.
          * 
          * @return builder
          * 

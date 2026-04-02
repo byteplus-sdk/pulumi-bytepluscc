@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// E-MapReduce（EMR）集群中的用户分为普通用户和系统用户两类。其中:普通用户是您在用户管理模块手动通过导入、创建操作向集群中添加的用户；系统用户则是集群在初始化过程中为每个组件内置的管理用户，不支持编辑和删除操作。
+// Users in an E-MapReduce (EMR) cluster are divided into regular users and system users. Regular users are added to the cluster manually through import or creation in the user management module. System users are built-in management users for each component created during cluster initialization and cannot be edited or deleted.
 //
 // ## Example Usage
 //
@@ -55,23 +55,23 @@ import (
 type ClusterUser struct {
 	pulumi.CustomResourceState
 
-	// 集群ID。
+	// Cluster ID.
 	ClusterId pulumi.StringOutput `pulumi:"clusterId"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime pulumi.IntOutput `pulumi:"createdTime"`
-	// 创建者用户名。
+	// Creator username.
 	CreatorName pulumi.StringOutput `pulumi:"creatorName"`
-	// 用户组描述。
+	// User group description.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 旧的用户的登录密码。修改密码时必填。
+	// Old user login password. Required when changing password.
 	OldPassword pulumi.StringOutput `pulumi:"oldPassword"`
-	// 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+	// New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
 	Password pulumi.StringOutput `pulumi:"password"`
-	// 更新时间。
+	// Last updated time.
 	UpdatedTime pulumi.IntOutput `pulumi:"updatedTime"`
-	// 所属用户组名称。
+	// User group name.
 	UserGroupNames pulumi.StringArrayOutput `pulumi:"userGroupNames"`
-	// 集群用户名。仅支持小写字母。
+	// Cluster username. Only lowercase letters are supported.
 	UserName pulumi.StringOutput `pulumi:"userName"`
 }
 
@@ -114,44 +114,44 @@ func GetClusterUser(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ClusterUser resources.
 type clusterUserState struct {
-	// 集群ID。
+	// Cluster ID.
 	ClusterId *string `pulumi:"clusterId"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime *int `pulumi:"createdTime"`
-	// 创建者用户名。
+	// Creator username.
 	CreatorName *string `pulumi:"creatorName"`
-	// 用户组描述。
+	// User group description.
 	Description *string `pulumi:"description"`
-	// 旧的用户的登录密码。修改密码时必填。
+	// Old user login password. Required when changing password.
 	OldPassword *string `pulumi:"oldPassword"`
-	// 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+	// New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
 	Password *string `pulumi:"password"`
-	// 更新时间。
+	// Last updated time.
 	UpdatedTime *int `pulumi:"updatedTime"`
-	// 所属用户组名称。
+	// User group name.
 	UserGroupNames []string `pulumi:"userGroupNames"`
-	// 集群用户名。仅支持小写字母。
+	// Cluster username. Only lowercase letters are supported.
 	UserName *string `pulumi:"userName"`
 }
 
 type ClusterUserState struct {
-	// 集群ID。
+	// Cluster ID.
 	ClusterId pulumi.StringPtrInput
-	// 创建时间。
+	// Creation time.
 	CreatedTime pulumi.IntPtrInput
-	// 创建者用户名。
+	// Creator username.
 	CreatorName pulumi.StringPtrInput
-	// 用户组描述。
+	// User group description.
 	Description pulumi.StringPtrInput
-	// 旧的用户的登录密码。修改密码时必填。
+	// Old user login password. Required when changing password.
 	OldPassword pulumi.StringPtrInput
-	// 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+	// New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
 	Password pulumi.StringPtrInput
-	// 更新时间。
+	// Last updated time.
 	UpdatedTime pulumi.IntPtrInput
-	// 所属用户组名称。
+	// User group name.
 	UserGroupNames pulumi.StringArrayInput
-	// 集群用户名。仅支持小写字母。
+	// Cluster username. Only lowercase letters are supported.
 	UserName pulumi.StringPtrInput
 }
 
@@ -160,33 +160,33 @@ func (ClusterUserState) ElementType() reflect.Type {
 }
 
 type clusterUserArgs struct {
-	// 集群ID。
+	// Cluster ID.
 	ClusterId string `pulumi:"clusterId"`
-	// 用户组描述。
+	// User group description.
 	Description *string `pulumi:"description"`
-	// 旧的用户的登录密码。修改密码时必填。
+	// Old user login password. Required when changing password.
 	OldPassword *string `pulumi:"oldPassword"`
-	// 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+	// New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
 	Password string `pulumi:"password"`
-	// 所属用户组名称。
+	// User group name.
 	UserGroupNames []string `pulumi:"userGroupNames"`
-	// 集群用户名。仅支持小写字母。
+	// Cluster username. Only lowercase letters are supported.
 	UserName string `pulumi:"userName"`
 }
 
 // The set of arguments for constructing a ClusterUser resource.
 type ClusterUserArgs struct {
-	// 集群ID。
+	// Cluster ID.
 	ClusterId pulumi.StringInput
-	// 用户组描述。
+	// User group description.
 	Description pulumi.StringPtrInput
-	// 旧的用户的登录密码。修改密码时必填。
+	// Old user login password. Required when changing password.
 	OldPassword pulumi.StringPtrInput
-	// 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+	// New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
 	Password pulumi.StringInput
-	// 所属用户组名称。
+	// User group name.
 	UserGroupNames pulumi.StringArrayInput
-	// 集群用户名。仅支持小写字母。
+	// Cluster username. Only lowercase letters are supported.
 	UserName pulumi.StringInput
 }
 
@@ -277,47 +277,47 @@ func (o ClusterUserOutput) ToClusterUserOutputWithContext(ctx context.Context) C
 	return o
 }
 
-// 集群ID。
+// Cluster ID.
 func (o ClusterUserOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterUser) pulumi.StringOutput { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 创建时间。
+// Creation time.
 func (o ClusterUserOutput) CreatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v *ClusterUser) pulumi.IntOutput { return v.CreatedTime }).(pulumi.IntOutput)
 }
 
-// 创建者用户名。
+// Creator username.
 func (o ClusterUserOutput) CreatorName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterUser) pulumi.StringOutput { return v.CreatorName }).(pulumi.StringOutput)
 }
 
-// 用户组描述。
+// User group description.
 func (o ClusterUserOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterUser) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 旧的用户的登录密码。修改密码时必填。
+// Old user login password. Required when changing password.
 func (o ClusterUserOutput) OldPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterUser) pulumi.StringOutput { return v.OldPassword }).(pulumi.StringOutput)
 }
 
-// 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+// New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
 func (o ClusterUserOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterUser) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Last updated time.
 func (o ClusterUserOutput) UpdatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v *ClusterUser) pulumi.IntOutput { return v.UpdatedTime }).(pulumi.IntOutput)
 }
 
-// 所属用户组名称。
+// User group name.
 func (o ClusterUserOutput) UserGroupNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterUser) pulumi.StringArrayOutput { return v.UserGroupNames }).(pulumi.StringArrayOutput)
 }
 
-// 集群用户名。仅支持小写字母。
+// Cluster username. Only lowercase letters are supported.
 func (o ClusterUserOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterUser) pulumi.StringOutput { return v.UserName }).(pulumi.StringOutput)
 }

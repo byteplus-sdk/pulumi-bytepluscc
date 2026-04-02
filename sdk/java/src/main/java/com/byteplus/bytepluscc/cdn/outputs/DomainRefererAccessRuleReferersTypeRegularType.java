@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainRefererAccessRuleReferersTypeRegularType {
     /**
-     * @return 表示一个 Referer 正则表达式的列表。该参数值的长度不能超过 30,000 个字符。
+     * @return Indicates a list of Referer regular expressions. The value of this parameter cannot exceed 30,000 characters.
      * 
      */
     private @Nullable List<String> referers;
 
     private DomainRefererAccessRuleReferersTypeRegularType() {}
     /**
-     * @return 表示一个 Referer 正则表达式的列表。该参数值的长度不能超过 30,000 个字符。
+     * @return Indicates a list of Referer regular expressions. The value of this parameter cannot exceed 30,000 characters.
      * 
      */
     public List<String> referers() {

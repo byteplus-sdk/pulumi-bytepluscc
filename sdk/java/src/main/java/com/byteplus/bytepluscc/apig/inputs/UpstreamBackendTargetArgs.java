@@ -17,14 +17,14 @@ public final class UpstreamBackendTargetArgs extends com.pulumi.resources.Resour
     public static final UpstreamBackendTargetArgs Empty = new UpstreamBackendTargetArgs();
 
     /**
-     * 健康检查状态。
+     * Health Check Status
      * 
      */
     @Import(name="healthStatus")
     private @Nullable Output<String> healthStatus;
 
     /**
-     * @return 健康检查状态。
+     * @return Health Check Status
      * 
      */
     public Optional<Output<String>> healthStatus() {
@@ -32,14 +32,14 @@ public final class UpstreamBackendTargetArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 后端节点IP。
+     * Backend node IP
      * 
      */
     @Import(name="ip")
     private @Nullable Output<String> ip;
 
     /**
-     * @return 后端节点IP。
+     * @return Backend node IP
      * 
      */
     public Optional<Output<String>> ip() {
@@ -47,14 +47,14 @@ public final class UpstreamBackendTargetArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 后端节点端口。
+     * Backend node port
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 后端节点端口。
+     * @return Backend node port
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -88,7 +88,7 @@ public final class UpstreamBackendTargetArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param healthStatus 健康检查状态。
+         * @param healthStatus Health Check Status
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class UpstreamBackendTargetArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param healthStatus 健康检查状态。
+         * @param healthStatus Health Check Status
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class UpstreamBackendTargetArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ip 后端节点IP。
+         * @param ip Backend node IP
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class UpstreamBackendTargetArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ip 后端节点IP。
+         * @param ip Backend node IP
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class UpstreamBackendTargetArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param port 后端节点端口。
+         * @param port Backend node port
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class UpstreamBackendTargetArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param port 后端节点端口。
+         * @param port Backend node port
          * 
          * @return builder
          * 

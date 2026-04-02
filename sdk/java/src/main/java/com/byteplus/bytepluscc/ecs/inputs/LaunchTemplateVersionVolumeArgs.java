@@ -18,14 +18,14 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
     public static final LaunchTemplateVersionVolumeArgs Empty = new LaunchTemplateVersionVolumeArgs();
 
     /**
-     * 云盘是否随实例释放。
+     * Whether the disk is released with the instance
      * 
      */
     @Import(name="deleteWithInstance")
     private @Nullable Output<Boolean> deleteWithInstance;
 
     /**
-     * @return 云盘是否随实例释放。
+     * @return Whether the disk is released with the instance
      * 
      */
     public Optional<Output<Boolean>> deleteWithInstance() {
@@ -33,14 +33,14 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
     }
 
     /**
-     * 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+     * Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
      * 
      */
     @Import(name="extraPerformanceIops")
     private @Nullable Output<Integer> extraPerformanceIops;
 
     /**
-     * @return 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+     * @return Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
      * 
      */
     public Optional<Output<Integer>> extraPerformanceIops() {
@@ -48,14 +48,14 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
     }
 
     /**
-     * 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+     * Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
      * 
      */
     @Import(name="extraPerformanceThroughputMb")
     private @Nullable Output<Integer> extraPerformanceThroughputMb;
 
     /**
-     * @return 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+     * @return Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
      * 
      */
     public Optional<Output<Integer>> extraPerformanceThroughputMb() {
@@ -63,14 +63,14 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
     }
 
     /**
-     * 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+     * Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
      * 
      */
     @Import(name="extraPerformanceTypeId")
     private @Nullable Output<String> extraPerformanceTypeId;
 
     /**
-     * @return 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+     * @return Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
      * 
      */
     public Optional<Output<String>> extraPerformanceTypeId() {
@@ -78,14 +78,14 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
     }
 
     /**
-     * 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+     * Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+     * @return Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -93,14 +93,14 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
     }
 
     /**
-     * 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+     * Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
      * 
      */
     @Import(name="snapshotId")
     private @Nullable Output<String> snapshotId;
 
     /**
-     * @return 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+     * @return Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
      * 
      */
     public Optional<Output<String>> snapshotId() {
@@ -108,14 +108,14 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
     }
 
     /**
-     * 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+     * Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
      * 
      */
     @Import(name="volumeType")
     private @Nullable Output<String> volumeType;
 
     /**
-     * @return 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+     * @return Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
      * 
      */
     public Optional<Output<String>> volumeType() {
@@ -153,7 +153,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param deleteWithInstance 云盘是否随实例释放。
+         * @param deleteWithInstance Whether the disk is released with the instance
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param deleteWithInstance 云盘是否随实例释放。
+         * @param deleteWithInstance Whether the disk is released with the instance
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param extraPerformanceIops 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+         * @param extraPerformanceIops Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param extraPerformanceIops 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+         * @param extraPerformanceIops Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param extraPerformanceThroughputMb 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+         * @param extraPerformanceThroughputMb Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param extraPerformanceThroughputMb 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+         * @param extraPerformanceThroughputMb Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param extraPerformanceTypeId 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+         * @param extraPerformanceTypeId Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param extraPerformanceTypeId 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+         * @param extraPerformanceTypeId Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param size 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+         * @param size Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param size 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+         * @param size Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param snapshotId 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+         * @param snapshotId Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param snapshotId 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+         * @param snapshotId Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param volumeType 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+         * @param volumeType Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class LaunchTemplateVersionVolumeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param volumeType 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+         * @param volumeType Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
          * 
          * @return builder
          * 

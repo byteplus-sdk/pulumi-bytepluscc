@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleRuleActionForwardGroupConfigServerGroupStickySession {
     /**
-     * @return 是否开启组间会话保持。on：开启。off：不开启。
+     * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
      * 
      */
     private @Nullable String enabled;
     /**
-     * @return 组件回话保持的超时时间。单位：秒。
+     * @return Component session stickiness timeout. Unit: seconds.
      * 
      */
     private @Nullable Integer timeout;
 
     private RuleRuleActionForwardGroupConfigServerGroupStickySession() {}
     /**
-     * @return 是否开启组间会话保持。on：开启。off：不开启。
+     * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
      * 
      */
     public Optional<String> enabled() {
         return Optional.ofNullable(this.enabled);
     }
     /**
-     * @return 组件回话保持的超时时间。单位：秒。
+     * @return Component session stickiness timeout. Unit: seconds.
      * 
      */
     public Optional<Integer> timeout() {

@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Inputs
     public sealed class DomainBackendGroupBackendArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 源站 IP 地址。
+        /// Origin IP address
         /// </summary>
         [Input("ip")]
         public Input<string>? Ip { get; set; }
 
         /// <summary>
-        /// 源站端口。
+        /// Origin port
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// 源站协议。
+        /// Origin protocol.
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
 
         /// <summary>
-        /// 源站权重。
+        /// Origin weight
         /// </summary>
         [Input("weight")]
         public Input<int>? Weight { get; set; }

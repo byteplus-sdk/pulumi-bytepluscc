@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetShareConfigCommonMatchList {
     /**
-     * @return 表示该通用列表的内容。
+     * @return Specifies the contents of the common list.
      * 
      */
     private GetShareConfigCommonMatchListCommonType commonType;
 
     private GetShareConfigCommonMatchList() {}
     /**
-     * @return 表示该通用列表的内容。
+     * @return Specifies the contents of the common list.
      * 
      */
     public GetShareConfigCommonMatchListCommonType commonType() {

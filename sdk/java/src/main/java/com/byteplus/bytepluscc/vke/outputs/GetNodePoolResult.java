@@ -19,17 +19,17 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolResult {
     /**
-     * @return 节点池伸缩策略配置。
+     * @return Node pool scaling policy configuration.
      * 
      */
     private GetNodePoolAutoScaling autoScaling;
     /**
-     * @return 节点池所在集群的 ID。
+     * @return ID of the cluster where the node pool is located
      * 
      */
     private String clusterId;
     /**
-     * @return 创建节点池的时间。
+     * @return Node pool creation time
      * 
      */
     private String createdTime;
@@ -39,73 +39,73 @@ public final class GetNodePoolResult {
      */
     private String id;
     /**
-     * @return 节点池 Kubernetes 相关配置。
+     * @return Kubernetes-related configuration for the node pool
      * 
      */
     private GetNodePoolKubernetesConfig kubernetesConfig;
     /**
-     * @return 托管节点池配置。
+     * @return Managed node pool configuration
      * 
      */
     private GetNodePoolManagement management;
     /**
-     * @return 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * @return Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
      * 
      */
     private String name;
     /**
-     * @return 节点池中云服务器（ECS）实例配置。
+     * @return Cloud server (ECS) instance configuration in the node pool
      * 
      */
     private GetNodePoolNodeConfig nodeConfig;
     /**
-     * @return 节点池 ID 。
+     * @return Node pool ID
      * 
      */
     private String nodePoolId;
     /**
-     * @return 节点池中的节点统计。
+     * @return Node statistics in the node pool.
      * 
      */
     private GetNodePoolNodeStatistics nodeStatistics;
     /**
-     * @return 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+     * @return When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
      * 
      */
     private List<String> retainResources;
     /**
-     * @return 节点池状态。
+     * @return Node pool status
      * 
      */
     private GetNodePoolStatus status;
     /**
-     * @return 节点池的标签信息
+     * @return Node pool tag information
      * 
      */
     private List<GetNodePoolTag> tags;
     /**
-     * @return 更新节点池的时间。
+     * @return Node pool update time
      * 
      */
     private String updatedTime;
 
     private GetNodePoolResult() {}
     /**
-     * @return 节点池伸缩策略配置。
+     * @return Node pool scaling policy configuration.
      * 
      */
     public GetNodePoolAutoScaling autoScaling() {
         return this.autoScaling;
     }
     /**
-     * @return 节点池所在集群的 ID。
+     * @return ID of the cluster where the node pool is located
      * 
      */
     public String clusterId() {
         return this.clusterId;
     }
     /**
-     * @return 创建节点池的时间。
+     * @return Node pool creation time
      * 
      */
     public String createdTime() {
@@ -119,70 +119,70 @@ public final class GetNodePoolResult {
         return this.id;
     }
     /**
-     * @return 节点池 Kubernetes 相关配置。
+     * @return Kubernetes-related configuration for the node pool
      * 
      */
     public GetNodePoolKubernetesConfig kubernetesConfig() {
         return this.kubernetesConfig;
     }
     /**
-     * @return 托管节点池配置。
+     * @return Managed node pool configuration
      * 
      */
     public GetNodePoolManagement management() {
         return this.management;
     }
     /**
-     * @return 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * @return Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 节点池中云服务器（ECS）实例配置。
+     * @return Cloud server (ECS) instance configuration in the node pool
      * 
      */
     public GetNodePoolNodeConfig nodeConfig() {
         return this.nodeConfig;
     }
     /**
-     * @return 节点池 ID 。
+     * @return Node pool ID
      * 
      */
     public String nodePoolId() {
         return this.nodePoolId;
     }
     /**
-     * @return 节点池中的节点统计。
+     * @return Node statistics in the node pool.
      * 
      */
     public GetNodePoolNodeStatistics nodeStatistics() {
         return this.nodeStatistics;
     }
     /**
-     * @return 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+     * @return When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
      * 
      */
     public List<String> retainResources() {
         return this.retainResources;
     }
     /**
-     * @return 节点池状态。
+     * @return Node pool status
      * 
      */
     public GetNodePoolStatus status() {
         return this.status;
     }
     /**
-     * @return 节点池的标签信息
+     * @return Node pool tag information
      * 
      */
     public List<GetNodePoolTag> tags() {
         return this.tags;
     }
     /**
-     * @return 更新节点池的时间。
+     * @return Node pool update time
      * 
      */
     public String updatedTime() {

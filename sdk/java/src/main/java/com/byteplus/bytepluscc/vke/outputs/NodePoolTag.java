@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolTag {
     /**
-     * @return 标签键。
+     * @return Label key
      * 
      */
     private @Nullable String key;
     /**
-     * @return 标签值。
+     * @return Label value.
      * 
      */
     private @Nullable String value;
 
     private NodePoolTag() {}
     /**
-     * @return 标签键。
+     * @return Label key
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 标签值。
+     * @return Label value.
      * 
      */
     public Optional<String> value() {

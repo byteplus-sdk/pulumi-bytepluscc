@@ -19,14 +19,14 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
     public static final MountPointPermissionGroupArgs Empty = new MountPointPermissionGroupArgs();
 
     /**
-     * 权限组创建时间。
+     * Permission group creation time.
      * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
-     * @return 权限组创建时间。
+     * @return Permission group creation time.
      * 
      */
     public Optional<Output<String>> createTime() {
@@ -34,14 +34,14 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 权限组描述信息。
+     * Permission group description information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 权限组描述信息。
+     * @return Permission group description information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -49,14 +49,14 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 关联该权限组的文件系统数量。
+     * Number of file systems associated with this permission group.
      * 
      */
     @Import(name="fileSystemCount")
     private @Nullable Output<Integer> fileSystemCount;
 
     /**
-     * @return 关联该权限组的文件系统数量。
+     * @return Number of file systems associated with this permission group.
      * 
      */
     public Optional<Output<Integer>> fileSystemCount() {
@@ -64,14 +64,14 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+     * File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
      * 
      */
     @Import(name="fileSystemType")
     private @Nullable Output<String> fileSystemType;
 
     /**
-     * @return 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+     * @return File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
      * 
      */
     public Optional<Output<String>> fileSystemType() {
@@ -86,14 +86,14 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 权限组名称。
+     * Permission group name.
      * 
      */
     @Import(name="permissionGroupName")
     private @Nullable Output<String> permissionGroupName;
 
     /**
-     * @return 权限组名称。
+     * @return Permission group name.
      * 
      */
     public Optional<Output<String>> permissionGroupName() {
@@ -101,14 +101,14 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 权限规则数量。
+     * Number of permission rules.
      * 
      */
     @Import(name="permissionRuleCount")
     private @Nullable Output<Integer> permissionRuleCount;
 
     /**
-     * @return 权限规则数量。
+     * @return Number of permission rules.
      * 
      */
     public Optional<Output<Integer>> permissionRuleCount() {
@@ -146,7 +146,7 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param createTime 权限组创建时间。
+         * @param createTime Permission group creation time.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param createTime 权限组创建时间。
+         * @param createTime Permission group creation time.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param description 权限组描述信息。
+         * @param description Permission group description information.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param description 权限组描述信息。
+         * @param description Permission group description information.
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param fileSystemCount 关联该权限组的文件系统数量。
+         * @param fileSystemCount Number of file systems associated with this permission group.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param fileSystemCount 关联该权限组的文件系统数量。
+         * @param fileSystemCount Number of file systems associated with this permission group.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param fileSystemType 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+         * @param fileSystemType File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param fileSystemType 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+         * @param fileSystemType File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param permissionGroupName 权限组名称。
+         * @param permissionGroupName Permission group name.
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param permissionGroupName 权限组名称。
+         * @param permissionGroupName Permission group name.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param permissionRuleCount 权限规则数量。
+         * @param permissionRuleCount Number of permission rules.
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param permissionRuleCount 权限规则数量。
+         * @param permissionRuleCount Number of permission rules.
          * 
          * @return builder
          * 

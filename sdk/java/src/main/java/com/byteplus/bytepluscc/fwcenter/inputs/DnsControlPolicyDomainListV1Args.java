@@ -16,14 +16,14 @@ public final class DnsControlPolicyDomainListV1Args extends com.pulumi.resources
     public static final DnsControlPolicyDomainListV1Args Empty = new DnsControlPolicyDomainListV1Args();
 
     /**
-     * 具体地址信息。
+     * Specific address information.
      * 
      */
     @Import(name="address")
     private @Nullable Output<String> address;
 
     /**
-     * @return 具体地址信息。
+     * @return Specific address information.
      * 
      */
     public Optional<Output<String>> address() {
@@ -31,14 +31,14 @@ public final class DnsControlPolicyDomainListV1Args extends com.pulumi.resources
     }
 
     /**
-     * 描述信息。
+     * Description information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 描述信息。
+     * @return Description information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -46,14 +46,14 @@ public final class DnsControlPolicyDomainListV1Args extends com.pulumi.resources
     }
 
     /**
-     * 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+     * Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+     * @return Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
      * 
      */
     public Optional<Output<String>> type() {
@@ -87,7 +87,7 @@ public final class DnsControlPolicyDomainListV1Args extends com.pulumi.resources
         }
 
         /**
-         * @param address 具体地址信息。
+         * @param address Specific address information.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DnsControlPolicyDomainListV1Args extends com.pulumi.resources
         }
 
         /**
-         * @param address 具体地址信息。
+         * @param address Specific address information.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class DnsControlPolicyDomainListV1Args extends com.pulumi.resources
         }
 
         /**
-         * @param description 描述信息。
+         * @param description Description information.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DnsControlPolicyDomainListV1Args extends com.pulumi.resources
         }
 
         /**
-         * @param description 描述信息。
+         * @param description Description information.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class DnsControlPolicyDomainListV1Args extends com.pulumi.resources
         }
 
         /**
-         * @param type 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+         * @param type Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DnsControlPolicyDomainListV1Args extends com.pulumi.resources
         }
 
         /**
-         * @param type 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+         * @param type Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
          * 
          * @return builder
          * 

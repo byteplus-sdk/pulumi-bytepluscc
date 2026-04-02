@@ -65,39 +65,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
     public sealed class GetAccountResult
     {
         /// <summary>
-        /// 火山账号ID。
+        /// Volcano account ID
         /// </summary>
         public readonly string AccountId;
         /// <summary>
-        /// 账户名称。5-20个字符。
+        /// Account name. 5–20 characters
         /// </summary>
         public readonly string AccountName;
         /// <summary>
-        /// 允许控制台访问，1: 允许，2: 不允许。
+        /// Allow console access: 1. Allowed, 2. Not allowed
         /// </summary>
         public readonly int AllowConsole;
         /// <summary>
-        /// 允许退出，1: 允许，2: 不允许。
+        /// Allow exit: 1. Allowed, 2. Not allowed
         /// </summary>
         public readonly int AllowExit;
         /// <summary>
-        /// 创建时间。
+        /// Creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 删除标记。
+        /// Deletion flag
         /// </summary>
         public readonly string DeleteUk;
         /// <summary>
-        /// 删除时间。
+        /// Deletion time
         /// </summary>
         public readonly string DeletedTime;
         /// <summary>
-        /// 描述。
+        /// Description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// IAM角色名称。
+        /// IAM role name
         /// </summary>
         public readonly string IamRole;
         /// <summary>
@@ -105,67 +105,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 是否是管理员，0.非管理员，1.管理员。
+        /// Administrator status: 0. Non-administrator, 1. Administrator
         /// </summary>
         public readonly int IsOwner;
         /// <summary>
-        /// 加入类型，1: 创建，2: 邀请。
+        /// Join type: 1. Create, 2. Invite
         /// </summary>
         public readonly int JoinType;
         /// <summary>
-        /// 主体名称。
+        /// Subject name
         /// </summary>
         public readonly string MainName;
         /// <summary>
-        /// 组织成员账号ID。
+        /// Organization member account ID
         /// </summary>
         public readonly string MemberAccountId;
         /// <summary>
-        /// 组织ID。
+        /// Organization ID
         /// </summary>
         public readonly string OrgId;
         /// <summary>
-        /// 组织类型，1.企业组织。
+        /// Organization type: 1. Enterprise organization
         /// </summary>
         public readonly int OrgType;
         /// <summary>
-        /// 组织单元ID。传入 0 加入到 root 单元。
+        /// Organizational unit ID. Enter 0 to join the root unit
         /// </summary>
         public readonly string OrgUnitId;
         /// <summary>
-        /// 组织单元名称。
+        /// Organizational unit name
         /// </summary>
         public readonly string OrgUnitName;
         /// <summary>
-        /// 认证主体ID。
+        /// Authentication subject ID
         /// </summary>
         public readonly string OrgVerificationId;
         /// <summary>
-        /// 管理员ID。
+        /// Administrator ID
         /// </summary>
         public readonly string Owner;
         /// <summary>
-        /// 账户密码。
+        /// Account password
         /// </summary>
         public readonly string Password;
         /// <summary>
-        /// 安全联系信息。
+        /// Security contact information
         /// </summary>
         public readonly Outputs.GetAccountSecureContactInfoResult SecureContactInfo;
         /// <summary>
-        /// 显示名称。
+        /// Display name
         /// </summary>
         public readonly string ShowName;
         /// <summary>
-        /// 标签列表。
+        /// Tag list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAccountTagResult> Tags;
         /// <summary>
-        /// 更新时间。
+        /// Update time
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+        /// Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
         /// </summary>
         public readonly string VerificationRelationId;
 

@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class DefaultNodePoolStatus {
     private @Nullable List<DefaultNodePoolStatusCondition> conditions;
     /**
-     * @return 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+     * @return Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
      * 
      */
     private @Nullable String phase;
@@ -25,7 +25,7 @@ public final class DefaultNodePoolStatus {
         return this.conditions == null ? List.of() : this.conditions;
     }
     /**
-     * @return 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+     * @return Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
      * 
      */
     public Optional<String> phase() {

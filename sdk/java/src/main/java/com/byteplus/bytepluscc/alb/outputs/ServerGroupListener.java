@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ServerGroupListener {
     /**
-     * @return 监听器的ID。
+     * @return Listener ID.
      * 
      */
     private @Nullable String listenerId;
 
     private ServerGroupListener() {}
     /**
-     * @return 监听器的ID。
+     * @return Listener ID.
      * 
      */
     public Optional<String> listenerId() {

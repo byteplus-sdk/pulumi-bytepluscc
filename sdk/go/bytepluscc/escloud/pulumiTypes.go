@@ -14,76 +14,76 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type InstanceInstanceConfiguration struct {
-	// 管理员密码。
+	// Administrator password.
 	AdminPassword *string `pulumi:"adminPassword"`
-	// 管理员用户名。
+	// Administrator username.
 	AdminUserName *string `pulumi:"adminUserName"`
-	// 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+	// Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
 	AutoRenew *bool `pulumi:"autoRenew"`
-	// 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+	// Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
 	ChargeType *string `pulumi:"chargeType"`
-	// 冷节点数量。
+	// Number of cold nodes.
 	ColdNodeNumber *int `pulumi:"coldNodeNumber"`
-	// 冷节点的节点规格配置详情。
+	// Node specification details for cold nodes
 	ColdNodeResourceSpec *InstanceInstanceConfigurationColdNodeResourceSpec `pulumi:"coldNodeResourceSpec"`
-	// 冷节点的存储规格配置详情。
+	// Details of cold node storage specification configuration
 	ColdNodeStorageSpec *InstanceInstanceConfigurationColdNodeStorageSpec `pulumi:"coldNodeStorageSpec"`
-	// 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+	// Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
 	ConfigurationCode *string `pulumi:"configurationCode"`
-	// 协调节点数量。
+	// Coordinator node count
 	CoordinatorNodeNumber *int `pulumi:"coordinatorNodeNumber"`
-	// 协调节点的节点规格配置详情。
+	// Node specification configuration details for coordinator node.
 	CoordinatorNodeResourceSpec *InstanceInstanceConfigurationCoordinatorNodeResourceSpec `pulumi:"coordinatorNodeResourceSpec"`
-	// 协调节点的存储规格配置详情。
+	// Storage specification configuration details for coordinator node.
 	CoordinatorNodeStorageSpec *InstanceInstanceConfigurationCoordinatorNodeStorageSpec `pulumi:"coordinatorNodeStorageSpec"`
-	// 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+	// Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
 	DeletionProtection *bool `pulumi:"deletionProtection"`
-	// 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+	// Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
 	EnableHttps *bool `pulumi:"enableHttps"`
-	// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+	// Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
 	EnablePureMaster *bool `pulumi:"enablePureMaster"`
-	// 数据节点数量。
+	// Number of data nodes
 	HotNodeNumber *int `pulumi:"hotNodeNumber"`
-	// 数据节点的节点规格配置详情。
+	// Node specification configuration details for data node.
 	HotNodeResourceSpec *InstanceInstanceConfigurationHotNodeResourceSpec `pulumi:"hotNodeResourceSpec"`
-	// 数据节点的存储规格配置详情。
+	// Data node storage specification configuration details
 	HotNodeStorageSpec *InstanceInstanceConfigurationHotNodeStorageSpec `pulumi:"hotNodeStorageSpec"`
-	// 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+	// Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
 	InstanceName *string `pulumi:"instanceName"`
-	// kibana 节点数量。
+	// Number of Kibana nodes
 	KibanaNodeNumber *int `pulumi:"kibanaNodeNumber"`
-	// Kibana 节点的节点规格配置详情。
+	// Kibana node specification configuration details
 	KibanaNodeResourceSpec *InstanceInstanceConfigurationKibanaNodeResourceSpec `pulumi:"kibanaNodeResourceSpec"`
-	// master 节点数量。
+	// Number of master nodes.
 	MasterNodeNumber *int `pulumi:"masterNodeNumber"`
-	// Master 节点的节点规格配置详情。
+	// Master node specification configuration details
 	MasterNodeResourceSpec *InstanceInstanceConfigurationMasterNodeResourceSpec `pulumi:"masterNodeResourceSpec"`
-	// Master 节点的存储规格配置详情。
+	// Storage specification details for master node
 	MasterNodeStorageSpec *InstanceInstanceConfigurationMasterNodeStorageSpec `pulumi:"masterNodeStorageSpec"`
 	NetworkSpecs          []InstanceInstanceConfigurationNetworkSpec          `pulumi:"networkSpecs"`
 	NodeSpecsAssigns      []InstanceInstanceConfigurationNodeSpecsAssign      `pulumi:"nodeSpecsAssigns"`
-	// 包年包月实例的购买时长，单位：月。
+	// Subscription instance purchase duration, in months.
 	Period *int `pulumi:"period"`
-	// 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+	// Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
 	ProjectName *string `pulumi:"projectName"`
-	// 实例所在区域。
+	// Instance region
 	RegionId *string `pulumi:"regionId"`
-	// 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+	// Set subnet information for the instance. Note: The subnet must be in the primary zone.
 	Subnet *InstanceInstanceConfigurationSubnet `pulumi:"subnet"`
 	Tags   []InstanceInstanceConfigurationTag   `pulumi:"tags"`
-	// API的版本，取值：2023-01-01。
+	// API version. Value: 2023-01-01.
 	Version *string `pulumi:"version"`
-	// 设置实例的私有网络 VPC 信息。
+	// Set VPC information for the instance
 	Vpc *InstanceInstanceConfigurationVpc `pulumi:"vpc"`
-	// 温节点数量。
+	// Warm node count.
 	WarmNodeNumber *int `pulumi:"warmNodeNumber"`
-	// 温节点的节点规格配置详情。
+	// Warm node specification configuration details.
 	WarmNodeResourceSpec *InstanceInstanceConfigurationWarmNodeResourceSpec `pulumi:"warmNodeResourceSpec"`
-	// 温节点的存储规格配置详情。
+	// Storage specification details for warm nodes
 	WarmNodeStorageSpec *InstanceInstanceConfigurationWarmNodeStorageSpec `pulumi:"warmNodeStorageSpec"`
-	// 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+	// Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
 	ZoneId *string `pulumi:"zoneId"`
-	// 实例的可用区数量。
+	// Number of instance availability zones.
 	ZoneNumber *int `pulumi:"zoneNumber"`
 }
 
@@ -99,76 +99,76 @@ type InstanceInstanceConfigurationInput interface {
 }
 
 type InstanceInstanceConfigurationArgs struct {
-	// 管理员密码。
+	// Administrator password.
 	AdminPassword pulumi.StringPtrInput `pulumi:"adminPassword"`
-	// 管理员用户名。
+	// Administrator username.
 	AdminUserName pulumi.StringPtrInput `pulumi:"adminUserName"`
-	// 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+	// Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
 	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
-	// 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+	// Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
 	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
-	// 冷节点数量。
+	// Number of cold nodes.
 	ColdNodeNumber pulumi.IntPtrInput `pulumi:"coldNodeNumber"`
-	// 冷节点的节点规格配置详情。
+	// Node specification details for cold nodes
 	ColdNodeResourceSpec InstanceInstanceConfigurationColdNodeResourceSpecPtrInput `pulumi:"coldNodeResourceSpec"`
-	// 冷节点的存储规格配置详情。
+	// Details of cold node storage specification configuration
 	ColdNodeStorageSpec InstanceInstanceConfigurationColdNodeStorageSpecPtrInput `pulumi:"coldNodeStorageSpec"`
-	// 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+	// Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
 	ConfigurationCode pulumi.StringPtrInput `pulumi:"configurationCode"`
-	// 协调节点数量。
+	// Coordinator node count
 	CoordinatorNodeNumber pulumi.IntPtrInput `pulumi:"coordinatorNodeNumber"`
-	// 协调节点的节点规格配置详情。
+	// Node specification configuration details for coordinator node.
 	CoordinatorNodeResourceSpec InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrInput `pulumi:"coordinatorNodeResourceSpec"`
-	// 协调节点的存储规格配置详情。
+	// Storage specification configuration details for coordinator node.
 	CoordinatorNodeStorageSpec InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrInput `pulumi:"coordinatorNodeStorageSpec"`
-	// 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+	// Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
 	DeletionProtection pulumi.BoolPtrInput `pulumi:"deletionProtection"`
-	// 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+	// Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
 	EnableHttps pulumi.BoolPtrInput `pulumi:"enableHttps"`
-	// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+	// Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
 	EnablePureMaster pulumi.BoolPtrInput `pulumi:"enablePureMaster"`
-	// 数据节点数量。
+	// Number of data nodes
 	HotNodeNumber pulumi.IntPtrInput `pulumi:"hotNodeNumber"`
-	// 数据节点的节点规格配置详情。
+	// Node specification configuration details for data node.
 	HotNodeResourceSpec InstanceInstanceConfigurationHotNodeResourceSpecPtrInput `pulumi:"hotNodeResourceSpec"`
-	// 数据节点的存储规格配置详情。
+	// Data node storage specification configuration details
 	HotNodeStorageSpec InstanceInstanceConfigurationHotNodeStorageSpecPtrInput `pulumi:"hotNodeStorageSpec"`
-	// 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+	// Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
 	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// kibana 节点数量。
+	// Number of Kibana nodes
 	KibanaNodeNumber pulumi.IntPtrInput `pulumi:"kibanaNodeNumber"`
-	// Kibana 节点的节点规格配置详情。
+	// Kibana node specification configuration details
 	KibanaNodeResourceSpec InstanceInstanceConfigurationKibanaNodeResourceSpecPtrInput `pulumi:"kibanaNodeResourceSpec"`
-	// master 节点数量。
+	// Number of master nodes.
 	MasterNodeNumber pulumi.IntPtrInput `pulumi:"masterNodeNumber"`
-	// Master 节点的节点规格配置详情。
+	// Master node specification configuration details
 	MasterNodeResourceSpec InstanceInstanceConfigurationMasterNodeResourceSpecPtrInput `pulumi:"masterNodeResourceSpec"`
-	// Master 节点的存储规格配置详情。
+	// Storage specification details for master node
 	MasterNodeStorageSpec InstanceInstanceConfigurationMasterNodeStorageSpecPtrInput `pulumi:"masterNodeStorageSpec"`
 	NetworkSpecs          InstanceInstanceConfigurationNetworkSpecArrayInput         `pulumi:"networkSpecs"`
 	NodeSpecsAssigns      InstanceInstanceConfigurationNodeSpecsAssignArrayInput     `pulumi:"nodeSpecsAssigns"`
-	// 包年包月实例的购买时长，单位：月。
+	// Subscription instance purchase duration, in months.
 	Period pulumi.IntPtrInput `pulumi:"period"`
-	// 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+	// Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
 	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
-	// 实例所在区域。
+	// Instance region
 	RegionId pulumi.StringPtrInput `pulumi:"regionId"`
-	// 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+	// Set subnet information for the instance. Note: The subnet must be in the primary zone.
 	Subnet InstanceInstanceConfigurationSubnetPtrInput `pulumi:"subnet"`
 	Tags   InstanceInstanceConfigurationTagArrayInput  `pulumi:"tags"`
-	// API的版本，取值：2023-01-01。
+	// API version. Value: 2023-01-01.
 	Version pulumi.StringPtrInput `pulumi:"version"`
-	// 设置实例的私有网络 VPC 信息。
+	// Set VPC information for the instance
 	Vpc InstanceInstanceConfigurationVpcPtrInput `pulumi:"vpc"`
-	// 温节点数量。
+	// Warm node count.
 	WarmNodeNumber pulumi.IntPtrInput `pulumi:"warmNodeNumber"`
-	// 温节点的节点规格配置详情。
+	// Warm node specification configuration details.
 	WarmNodeResourceSpec InstanceInstanceConfigurationWarmNodeResourceSpecPtrInput `pulumi:"warmNodeResourceSpec"`
-	// 温节点的存储规格配置详情。
+	// Storage specification details for warm nodes
 	WarmNodeStorageSpec InstanceInstanceConfigurationWarmNodeStorageSpecPtrInput `pulumi:"warmNodeStorageSpec"`
-	// 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+	// Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
-	// 实例的可用区数量。
+	// Number of instance availability zones.
 	ZoneNumber pulumi.IntPtrInput `pulumi:"zoneNumber"`
 }
 
@@ -249,133 +249,133 @@ func (o InstanceInstanceConfigurationOutput) ToInstanceInstanceConfigurationPtrO
 	}).(InstanceInstanceConfigurationPtrOutput)
 }
 
-// 管理员密码。
+// Administrator password.
 func (o InstanceInstanceConfigurationOutput) AdminPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *string { return v.AdminPassword }).(pulumi.StringPtrOutput)
 }
 
-// 管理员用户名。
+// Administrator username.
 func (o InstanceInstanceConfigurationOutput) AdminUserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *string { return v.AdminUserName }).(pulumi.StringPtrOutput)
 }
 
-// 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+// Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
 func (o InstanceInstanceConfigurationOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
 }
 
-// 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+// Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
 func (o InstanceInstanceConfigurationOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
 }
 
-// 冷节点数量。
+// Number of cold nodes.
 func (o InstanceInstanceConfigurationOutput) ColdNodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *int { return v.ColdNodeNumber }).(pulumi.IntPtrOutput)
 }
 
-// 冷节点的节点规格配置详情。
+// Node specification details for cold nodes
 func (o InstanceInstanceConfigurationOutput) ColdNodeResourceSpec() InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *InstanceInstanceConfigurationColdNodeResourceSpec {
 		return v.ColdNodeResourceSpec
 	}).(InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput)
 }
 
-// 冷节点的存储规格配置详情。
+// Details of cold node storage specification configuration
 func (o InstanceInstanceConfigurationOutput) ColdNodeStorageSpec() InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *InstanceInstanceConfigurationColdNodeStorageSpec {
 		return v.ColdNodeStorageSpec
 	}).(InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput)
 }
 
-// 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+// Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
 func (o InstanceInstanceConfigurationOutput) ConfigurationCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *string { return v.ConfigurationCode }).(pulumi.StringPtrOutput)
 }
 
-// 协调节点数量。
+// Coordinator node count
 func (o InstanceInstanceConfigurationOutput) CoordinatorNodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *int { return v.CoordinatorNodeNumber }).(pulumi.IntPtrOutput)
 }
 
-// 协调节点的节点规格配置详情。
+// Node specification configuration details for coordinator node.
 func (o InstanceInstanceConfigurationOutput) CoordinatorNodeResourceSpec() InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *InstanceInstanceConfigurationCoordinatorNodeResourceSpec {
 		return v.CoordinatorNodeResourceSpec
 	}).(InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput)
 }
 
-// 协调节点的存储规格配置详情。
+// Storage specification configuration details for coordinator node.
 func (o InstanceInstanceConfigurationOutput) CoordinatorNodeStorageSpec() InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *InstanceInstanceConfigurationCoordinatorNodeStorageSpec {
 		return v.CoordinatorNodeStorageSpec
 	}).(InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput)
 }
 
-// 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+// Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
 func (o InstanceInstanceConfigurationOutput) DeletionProtection() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *bool { return v.DeletionProtection }).(pulumi.BoolPtrOutput)
 }
 
-// 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+// Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
 func (o InstanceInstanceConfigurationOutput) EnableHttps() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *bool { return v.EnableHttps }).(pulumi.BoolPtrOutput)
 }
 
-// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+// Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
 func (o InstanceInstanceConfigurationOutput) EnablePureMaster() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *bool { return v.EnablePureMaster }).(pulumi.BoolPtrOutput)
 }
 
-// 数据节点数量。
+// Number of data nodes
 func (o InstanceInstanceConfigurationOutput) HotNodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *int { return v.HotNodeNumber }).(pulumi.IntPtrOutput)
 }
 
-// 数据节点的节点规格配置详情。
+// Node specification configuration details for data node.
 func (o InstanceInstanceConfigurationOutput) HotNodeResourceSpec() InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *InstanceInstanceConfigurationHotNodeResourceSpec {
 		return v.HotNodeResourceSpec
 	}).(InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput)
 }
 
-// 数据节点的存储规格配置详情。
+// Data node storage specification configuration details
 func (o InstanceInstanceConfigurationOutput) HotNodeStorageSpec() InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *InstanceInstanceConfigurationHotNodeStorageSpec {
 		return v.HotNodeStorageSpec
 	}).(InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput)
 }
 
-// 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+// Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
 func (o InstanceInstanceConfigurationOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
 }
 
-// kibana 节点数量。
+// Number of Kibana nodes
 func (o InstanceInstanceConfigurationOutput) KibanaNodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *int { return v.KibanaNodeNumber }).(pulumi.IntPtrOutput)
 }
 
-// Kibana 节点的节点规格配置详情。
+// Kibana node specification configuration details
 func (o InstanceInstanceConfigurationOutput) KibanaNodeResourceSpec() InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *InstanceInstanceConfigurationKibanaNodeResourceSpec {
 		return v.KibanaNodeResourceSpec
 	}).(InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput)
 }
 
-// master 节点数量。
+// Number of master nodes.
 func (o InstanceInstanceConfigurationOutput) MasterNodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *int { return v.MasterNodeNumber }).(pulumi.IntPtrOutput)
 }
 
-// Master 节点的节点规格配置详情。
+// Master node specification configuration details
 func (o InstanceInstanceConfigurationOutput) MasterNodeResourceSpec() InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *InstanceInstanceConfigurationMasterNodeResourceSpec {
 		return v.MasterNodeResourceSpec
 	}).(InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput)
 }
 
-// Master 节点的存储规格配置详情。
+// Storage specification details for master node
 func (o InstanceInstanceConfigurationOutput) MasterNodeStorageSpec() InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *InstanceInstanceConfigurationMasterNodeStorageSpec {
 		return v.MasterNodeStorageSpec
@@ -394,22 +394,22 @@ func (o InstanceInstanceConfigurationOutput) NodeSpecsAssigns() InstanceInstance
 	}).(InstanceInstanceConfigurationNodeSpecsAssignArrayOutput)
 }
 
-// 包年包月实例的购买时长，单位：月。
+// Subscription instance purchase duration, in months.
 func (o InstanceInstanceConfigurationOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *int { return v.Period }).(pulumi.IntPtrOutput)
 }
 
-// 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+// Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
 func (o InstanceInstanceConfigurationOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
 }
 
-// 实例所在区域。
+// Instance region
 func (o InstanceInstanceConfigurationOutput) RegionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *string { return v.RegionId }).(pulumi.StringPtrOutput)
 }
 
-// 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+// Set subnet information for the instance. Note: The subnet must be in the primary zone.
 func (o InstanceInstanceConfigurationOutput) Subnet() InstanceInstanceConfigurationSubnetPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *InstanceInstanceConfigurationSubnet { return v.Subnet }).(InstanceInstanceConfigurationSubnetPtrOutput)
 }
@@ -418,41 +418,41 @@ func (o InstanceInstanceConfigurationOutput) Tags() InstanceInstanceConfiguratio
 	return o.ApplyT(func(v InstanceInstanceConfiguration) []InstanceInstanceConfigurationTag { return v.Tags }).(InstanceInstanceConfigurationTagArrayOutput)
 }
 
-// API的版本，取值：2023-01-01。
+// API version. Value: 2023-01-01.
 func (o InstanceInstanceConfigurationOutput) Version() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
-// 设置实例的私有网络 VPC 信息。
+// Set VPC information for the instance
 func (o InstanceInstanceConfigurationOutput) Vpc() InstanceInstanceConfigurationVpcPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *InstanceInstanceConfigurationVpc { return v.Vpc }).(InstanceInstanceConfigurationVpcPtrOutput)
 }
 
-// 温节点数量。
+// Warm node count.
 func (o InstanceInstanceConfigurationOutput) WarmNodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *int { return v.WarmNodeNumber }).(pulumi.IntPtrOutput)
 }
 
-// 温节点的节点规格配置详情。
+// Warm node specification configuration details.
 func (o InstanceInstanceConfigurationOutput) WarmNodeResourceSpec() InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *InstanceInstanceConfigurationWarmNodeResourceSpec {
 		return v.WarmNodeResourceSpec
 	}).(InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput)
 }
 
-// 温节点的存储规格配置详情。
+// Storage specification details for warm nodes
 func (o InstanceInstanceConfigurationOutput) WarmNodeStorageSpec() InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *InstanceInstanceConfigurationWarmNodeStorageSpec {
 		return v.WarmNodeStorageSpec
 	}).(InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput)
 }
 
-// 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+// Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
 func (o InstanceInstanceConfigurationOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
 
-// 实例的可用区数量。
+// Number of instance availability zones.
 func (o InstanceInstanceConfigurationOutput) ZoneNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfiguration) *int { return v.ZoneNumber }).(pulumi.IntPtrOutput)
 }
@@ -481,7 +481,7 @@ func (o InstanceInstanceConfigurationPtrOutput) Elem() InstanceInstanceConfigura
 	}).(InstanceInstanceConfigurationOutput)
 }
 
-// 管理员密码。
+// Administrator password.
 func (o InstanceInstanceConfigurationPtrOutput) AdminPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *string {
 		if v == nil {
@@ -491,7 +491,7 @@ func (o InstanceInstanceConfigurationPtrOutput) AdminPassword() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// 管理员用户名。
+// Administrator username.
 func (o InstanceInstanceConfigurationPtrOutput) AdminUserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *string {
 		if v == nil {
@@ -501,7 +501,7 @@ func (o InstanceInstanceConfigurationPtrOutput) AdminUserName() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+// Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
 func (o InstanceInstanceConfigurationPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *bool {
 		if v == nil {
@@ -511,7 +511,7 @@ func (o InstanceInstanceConfigurationPtrOutput) AutoRenew() pulumi.BoolPtrOutput
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+// Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
 func (o InstanceInstanceConfigurationPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *string {
 		if v == nil {
@@ -521,7 +521,7 @@ func (o InstanceInstanceConfigurationPtrOutput) ChargeType() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// 冷节点数量。
+// Number of cold nodes.
 func (o InstanceInstanceConfigurationPtrOutput) ColdNodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *int {
 		if v == nil {
@@ -531,7 +531,7 @@ func (o InstanceInstanceConfigurationPtrOutput) ColdNodeNumber() pulumi.IntPtrOu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 冷节点的节点规格配置详情。
+// Node specification details for cold nodes
 func (o InstanceInstanceConfigurationPtrOutput) ColdNodeResourceSpec() InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *InstanceInstanceConfigurationColdNodeResourceSpec {
 		if v == nil {
@@ -541,7 +541,7 @@ func (o InstanceInstanceConfigurationPtrOutput) ColdNodeResourceSpec() InstanceI
 	}).(InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput)
 }
 
-// 冷节点的存储规格配置详情。
+// Details of cold node storage specification configuration
 func (o InstanceInstanceConfigurationPtrOutput) ColdNodeStorageSpec() InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *InstanceInstanceConfigurationColdNodeStorageSpec {
 		if v == nil {
@@ -551,7 +551,7 @@ func (o InstanceInstanceConfigurationPtrOutput) ColdNodeStorageSpec() InstanceIn
 	}).(InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput)
 }
 
-// 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+// Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
 func (o InstanceInstanceConfigurationPtrOutput) ConfigurationCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *string {
 		if v == nil {
@@ -561,7 +561,7 @@ func (o InstanceInstanceConfigurationPtrOutput) ConfigurationCode() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// 协调节点数量。
+// Coordinator node count
 func (o InstanceInstanceConfigurationPtrOutput) CoordinatorNodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *int {
 		if v == nil {
@@ -571,7 +571,7 @@ func (o InstanceInstanceConfigurationPtrOutput) CoordinatorNodeNumber() pulumi.I
 	}).(pulumi.IntPtrOutput)
 }
 
-// 协调节点的节点规格配置详情。
+// Node specification configuration details for coordinator node.
 func (o InstanceInstanceConfigurationPtrOutput) CoordinatorNodeResourceSpec() InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *InstanceInstanceConfigurationCoordinatorNodeResourceSpec {
 		if v == nil {
@@ -581,7 +581,7 @@ func (o InstanceInstanceConfigurationPtrOutput) CoordinatorNodeResourceSpec() In
 	}).(InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput)
 }
 
-// 协调节点的存储规格配置详情。
+// Storage specification configuration details for coordinator node.
 func (o InstanceInstanceConfigurationPtrOutput) CoordinatorNodeStorageSpec() InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *InstanceInstanceConfigurationCoordinatorNodeStorageSpec {
 		if v == nil {
@@ -591,7 +591,7 @@ func (o InstanceInstanceConfigurationPtrOutput) CoordinatorNodeStorageSpec() Ins
 	}).(InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput)
 }
 
-// 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+// Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
 func (o InstanceInstanceConfigurationPtrOutput) DeletionProtection() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *bool {
 		if v == nil {
@@ -601,7 +601,7 @@ func (o InstanceInstanceConfigurationPtrOutput) DeletionProtection() pulumi.Bool
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+// Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
 func (o InstanceInstanceConfigurationPtrOutput) EnableHttps() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *bool {
 		if v == nil {
@@ -611,7 +611,7 @@ func (o InstanceInstanceConfigurationPtrOutput) EnableHttps() pulumi.BoolPtrOutp
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+// Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
 func (o InstanceInstanceConfigurationPtrOutput) EnablePureMaster() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *bool {
 		if v == nil {
@@ -621,7 +621,7 @@ func (o InstanceInstanceConfigurationPtrOutput) EnablePureMaster() pulumi.BoolPt
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 数据节点数量。
+// Number of data nodes
 func (o InstanceInstanceConfigurationPtrOutput) HotNodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *int {
 		if v == nil {
@@ -631,7 +631,7 @@ func (o InstanceInstanceConfigurationPtrOutput) HotNodeNumber() pulumi.IntPtrOut
 	}).(pulumi.IntPtrOutput)
 }
 
-// 数据节点的节点规格配置详情。
+// Node specification configuration details for data node.
 func (o InstanceInstanceConfigurationPtrOutput) HotNodeResourceSpec() InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *InstanceInstanceConfigurationHotNodeResourceSpec {
 		if v == nil {
@@ -641,7 +641,7 @@ func (o InstanceInstanceConfigurationPtrOutput) HotNodeResourceSpec() InstanceIn
 	}).(InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput)
 }
 
-// 数据节点的存储规格配置详情。
+// Data node storage specification configuration details
 func (o InstanceInstanceConfigurationPtrOutput) HotNodeStorageSpec() InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *InstanceInstanceConfigurationHotNodeStorageSpec {
 		if v == nil {
@@ -651,7 +651,7 @@ func (o InstanceInstanceConfigurationPtrOutput) HotNodeStorageSpec() InstanceIns
 	}).(InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput)
 }
 
-// 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+// Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
 func (o InstanceInstanceConfigurationPtrOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *string {
 		if v == nil {
@@ -661,7 +661,7 @@ func (o InstanceInstanceConfigurationPtrOutput) InstanceName() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// kibana 节点数量。
+// Number of Kibana nodes
 func (o InstanceInstanceConfigurationPtrOutput) KibanaNodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *int {
 		if v == nil {
@@ -671,7 +671,7 @@ func (o InstanceInstanceConfigurationPtrOutput) KibanaNodeNumber() pulumi.IntPtr
 	}).(pulumi.IntPtrOutput)
 }
 
-// Kibana 节点的节点规格配置详情。
+// Kibana node specification configuration details
 func (o InstanceInstanceConfigurationPtrOutput) KibanaNodeResourceSpec() InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *InstanceInstanceConfigurationKibanaNodeResourceSpec {
 		if v == nil {
@@ -681,7 +681,7 @@ func (o InstanceInstanceConfigurationPtrOutput) KibanaNodeResourceSpec() Instanc
 	}).(InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput)
 }
 
-// master 节点数量。
+// Number of master nodes.
 func (o InstanceInstanceConfigurationPtrOutput) MasterNodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *int {
 		if v == nil {
@@ -691,7 +691,7 @@ func (o InstanceInstanceConfigurationPtrOutput) MasterNodeNumber() pulumi.IntPtr
 	}).(pulumi.IntPtrOutput)
 }
 
-// Master 节点的节点规格配置详情。
+// Master node specification configuration details
 func (o InstanceInstanceConfigurationPtrOutput) MasterNodeResourceSpec() InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *InstanceInstanceConfigurationMasterNodeResourceSpec {
 		if v == nil {
@@ -701,7 +701,7 @@ func (o InstanceInstanceConfigurationPtrOutput) MasterNodeResourceSpec() Instanc
 	}).(InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput)
 }
 
-// Master 节点的存储规格配置详情。
+// Storage specification details for master node
 func (o InstanceInstanceConfigurationPtrOutput) MasterNodeStorageSpec() InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *InstanceInstanceConfigurationMasterNodeStorageSpec {
 		if v == nil {
@@ -729,7 +729,7 @@ func (o InstanceInstanceConfigurationPtrOutput) NodeSpecsAssigns() InstanceInsta
 	}).(InstanceInstanceConfigurationNodeSpecsAssignArrayOutput)
 }
 
-// 包年包月实例的购买时长，单位：月。
+// Subscription instance purchase duration, in months.
 func (o InstanceInstanceConfigurationPtrOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *int {
 		if v == nil {
@@ -739,7 +739,7 @@ func (o InstanceInstanceConfigurationPtrOutput) Period() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+// Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
 func (o InstanceInstanceConfigurationPtrOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *string {
 		if v == nil {
@@ -749,7 +749,7 @@ func (o InstanceInstanceConfigurationPtrOutput) ProjectName() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例所在区域。
+// Instance region
 func (o InstanceInstanceConfigurationPtrOutput) RegionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *string {
 		if v == nil {
@@ -759,7 +759,7 @@ func (o InstanceInstanceConfigurationPtrOutput) RegionId() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+// Set subnet information for the instance. Note: The subnet must be in the primary zone.
 func (o InstanceInstanceConfigurationPtrOutput) Subnet() InstanceInstanceConfigurationSubnetPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *InstanceInstanceConfigurationSubnet {
 		if v == nil {
@@ -778,7 +778,7 @@ func (o InstanceInstanceConfigurationPtrOutput) Tags() InstanceInstanceConfigura
 	}).(InstanceInstanceConfigurationTagArrayOutput)
 }
 
-// API的版本，取值：2023-01-01。
+// API version. Value: 2023-01-01.
 func (o InstanceInstanceConfigurationPtrOutput) Version() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *string {
 		if v == nil {
@@ -788,7 +788,7 @@ func (o InstanceInstanceConfigurationPtrOutput) Version() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 设置实例的私有网络 VPC 信息。
+// Set VPC information for the instance
 func (o InstanceInstanceConfigurationPtrOutput) Vpc() InstanceInstanceConfigurationVpcPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *InstanceInstanceConfigurationVpc {
 		if v == nil {
@@ -798,7 +798,7 @@ func (o InstanceInstanceConfigurationPtrOutput) Vpc() InstanceInstanceConfigurat
 	}).(InstanceInstanceConfigurationVpcPtrOutput)
 }
 
-// 温节点数量。
+// Warm node count.
 func (o InstanceInstanceConfigurationPtrOutput) WarmNodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *int {
 		if v == nil {
@@ -808,7 +808,7 @@ func (o InstanceInstanceConfigurationPtrOutput) WarmNodeNumber() pulumi.IntPtrOu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 温节点的节点规格配置详情。
+// Warm node specification configuration details.
 func (o InstanceInstanceConfigurationPtrOutput) WarmNodeResourceSpec() InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *InstanceInstanceConfigurationWarmNodeResourceSpec {
 		if v == nil {
@@ -818,7 +818,7 @@ func (o InstanceInstanceConfigurationPtrOutput) WarmNodeResourceSpec() InstanceI
 	}).(InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput)
 }
 
-// 温节点的存储规格配置详情。
+// Storage specification details for warm nodes
 func (o InstanceInstanceConfigurationPtrOutput) WarmNodeStorageSpec() InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *InstanceInstanceConfigurationWarmNodeStorageSpec {
 		if v == nil {
@@ -828,7 +828,7 @@ func (o InstanceInstanceConfigurationPtrOutput) WarmNodeStorageSpec() InstanceIn
 	}).(InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput)
 }
 
-// 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+// Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
 func (o InstanceInstanceConfigurationPtrOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *string {
 		if v == nil {
@@ -838,7 +838,7 @@ func (o InstanceInstanceConfigurationPtrOutput) ZoneId() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的可用区数量。
+// Number of instance availability zones.
 func (o InstanceInstanceConfigurationPtrOutput) ZoneNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfiguration) *int {
 		if v == nil {
@@ -849,15 +849,15 @@ func (o InstanceInstanceConfigurationPtrOutput) ZoneNumber() pulumi.IntPtrOutput
 }
 
 type InstanceInstanceConfigurationColdNodeResourceSpec struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources for node specification, measured in cores.
 	Cpu *int `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description *string `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName *string `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity for node specification, measured in GiB
 	Memory *int `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For details on node specification types and details.
 	Name *string `pulumi:"name"`
 }
 
@@ -873,15 +873,15 @@ type InstanceInstanceConfigurationColdNodeResourceSpecInput interface {
 }
 
 type InstanceInstanceConfigurationColdNodeResourceSpecArgs struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources for node specification, measured in cores.
 	Cpu pulumi.IntPtrInput `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity for node specification, measured in GiB
 	Memory pulumi.IntPtrInput `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For details on node specification types and details.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -962,27 +962,27 @@ func (o InstanceInstanceConfigurationColdNodeResourceSpecOutput) ToInstanceInsta
 	}).(InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput)
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources for node specification, measured in cores.
 func (o InstanceInstanceConfigurationColdNodeResourceSpecOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationColdNodeResourceSpec) *int { return v.Cpu }).(pulumi.IntPtrOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specifications
 func (o InstanceInstanceConfigurationColdNodeResourceSpecOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationColdNodeResourceSpec) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification.
 func (o InstanceInstanceConfigurationColdNodeResourceSpecOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationColdNodeResourceSpec) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity for node specification, measured in GiB
 func (o InstanceInstanceConfigurationColdNodeResourceSpecOutput) Memory() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationColdNodeResourceSpec) *int { return v.Memory }).(pulumi.IntPtrOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For details on node specification types and details.
 func (o InstanceInstanceConfigurationColdNodeResourceSpecOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationColdNodeResourceSpec) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -1011,7 +1011,7 @@ func (o InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput) Elem() Insta
 	}).(InstanceInstanceConfigurationColdNodeResourceSpecOutput)
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources for node specification, measured in cores.
 func (o InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationColdNodeResourceSpec) *int {
 		if v == nil {
@@ -1021,7 +1021,7 @@ func (o InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput) Cpu() pulumi
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specifications
 func (o InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationColdNodeResourceSpec) *string {
 		if v == nil {
@@ -1031,7 +1031,7 @@ func (o InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput) Description(
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification.
 func (o InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationColdNodeResourceSpec) *string {
 		if v == nil {
@@ -1041,7 +1041,7 @@ func (o InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput) DisplayName(
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity for node specification, measured in GiB
 func (o InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput) Memory() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationColdNodeResourceSpec) *int {
 		if v == nil {
@@ -1051,7 +1051,7 @@ func (o InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput) Memory() pul
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For details on node specification types and details.
 func (o InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationColdNodeResourceSpec) *string {
 		if v == nil {
@@ -1062,17 +1062,17 @@ func (o InstanceInstanceConfigurationColdNodeResourceSpecPtrOutput) Name() pulum
 }
 
 type InstanceInstanceConfigurationColdNodeStorageSpec struct {
-	// 存储规格的描述信息
+	// Description of storage specification
 	Description *string `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification
 	DisplayName *string `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, measured in GiB
 	MaxSize *int `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum storage specification, measured in GiB
 	MinSize *int `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name *string `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size *int `pulumi:"size"`
 }
 
@@ -1088,17 +1088,17 @@ type InstanceInstanceConfigurationColdNodeStorageSpecInput interface {
 }
 
 type InstanceInstanceConfigurationColdNodeStorageSpecArgs struct {
-	// 存储规格的描述信息
+	// Description of storage specification
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, measured in GiB
 	MaxSize pulumi.IntPtrInput `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum storage specification, measured in GiB
 	MinSize pulumi.IntPtrInput `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size pulumi.IntPtrInput `pulumi:"size"`
 }
 
@@ -1179,32 +1179,32 @@ func (o InstanceInstanceConfigurationColdNodeStorageSpecOutput) ToInstanceInstan
 	}).(InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput)
 }
 
-// 存储规格的描述信息
+// Description of storage specification
 func (o InstanceInstanceConfigurationColdNodeStorageSpecOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationColdNodeStorageSpec) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的显示名称
+// Display name of storage specification
 func (o InstanceInstanceConfigurationColdNodeStorageSpecOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationColdNodeStorageSpec) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的最大值，单位为 GiB
+// Maximum storage specification, measured in GiB
 func (o InstanceInstanceConfigurationColdNodeStorageSpecOutput) MaxSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationColdNodeStorageSpec) *int { return v.MaxSize }).(pulumi.IntPtrOutput)
 }
 
-// 存储规格最小值，单位为 GiB
+// Minimum storage specification, measured in GiB
 func (o InstanceInstanceConfigurationColdNodeStorageSpecOutput) MinSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationColdNodeStorageSpec) *int { return v.MinSize }).(pulumi.IntPtrOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o InstanceInstanceConfigurationColdNodeStorageSpecOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationColdNodeStorageSpec) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 当前存储规格值，单位为 GiB
+// Current storage specification value, in GiB.
 func (o InstanceInstanceConfigurationColdNodeStorageSpecOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationColdNodeStorageSpec) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
@@ -1233,7 +1233,7 @@ func (o InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput) Elem() Instan
 	}).(InstanceInstanceConfigurationColdNodeStorageSpecOutput)
 }
 
-// 存储规格的描述信息
+// Description of storage specification
 func (o InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationColdNodeStorageSpec) *string {
 		if v == nil {
@@ -1243,7 +1243,7 @@ func (o InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput) Description()
 	}).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的显示名称
+// Display name of storage specification
 func (o InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationColdNodeStorageSpec) *string {
 		if v == nil {
@@ -1253,7 +1253,7 @@ func (o InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput) DisplayName()
 	}).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的最大值，单位为 GiB
+// Maximum storage specification, measured in GiB
 func (o InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput) MaxSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationColdNodeStorageSpec) *int {
 		if v == nil {
@@ -1263,7 +1263,7 @@ func (o InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput) MaxSize() pul
 	}).(pulumi.IntPtrOutput)
 }
 
-// 存储规格最小值，单位为 GiB
+// Minimum storage specification, measured in GiB
 func (o InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput) MinSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationColdNodeStorageSpec) *int {
 		if v == nil {
@@ -1273,7 +1273,7 @@ func (o InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput) MinSize() pul
 	}).(pulumi.IntPtrOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationColdNodeStorageSpec) *string {
 		if v == nil {
@@ -1283,7 +1283,7 @@ func (o InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput) Name() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// 当前存储规格值，单位为 GiB
+// Current storage specification value, in GiB.
 func (o InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationColdNodeStorageSpec) *int {
 		if v == nil {
@@ -1294,15 +1294,15 @@ func (o InstanceInstanceConfigurationColdNodeStorageSpecPtrOutput) Size() pulumi
 }
 
 type InstanceInstanceConfigurationCoordinatorNodeResourceSpec struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources of node specification, unit: cores.
 	Cpu *int `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description *string `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName *string `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity of node specification, unit: GiB.
 	Memory *int `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For details on node specification types and details.
 	Name *string `pulumi:"name"`
 }
 
@@ -1318,15 +1318,15 @@ type InstanceInstanceConfigurationCoordinatorNodeResourceSpecInput interface {
 }
 
 type InstanceInstanceConfigurationCoordinatorNodeResourceSpecArgs struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources of node specification, unit: cores.
 	Cpu pulumi.IntPtrInput `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity of node specification, unit: GiB.
 	Memory pulumi.IntPtrInput `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For details on node specification types and details.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -1407,27 +1407,27 @@ func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput) ToInstan
 	}).(InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput)
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources of node specification, unit: cores.
 func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationCoordinatorNodeResourceSpec) *int { return v.Cpu }).(pulumi.IntPtrOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specifications
 func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationCoordinatorNodeResourceSpec) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification.
 func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationCoordinatorNodeResourceSpec) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity of node specification, unit: GiB.
 func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput) Memory() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationCoordinatorNodeResourceSpec) *int { return v.Memory }).(pulumi.IntPtrOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For details on node specification types and details.
 func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationCoordinatorNodeResourceSpec) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -1456,7 +1456,7 @@ func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput) Elem(
 	}).(InstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput)
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources of node specification, unit: cores.
 func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationCoordinatorNodeResourceSpec) *int {
 		if v == nil {
@@ -1466,7 +1466,7 @@ func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput) Cpu()
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specifications
 func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationCoordinatorNodeResourceSpec) *string {
 		if v == nil {
@@ -1476,7 +1476,7 @@ func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput) Descr
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification.
 func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationCoordinatorNodeResourceSpec) *string {
 		if v == nil {
@@ -1486,7 +1486,7 @@ func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput) Displ
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity of node specification, unit: GiB.
 func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput) Memory() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationCoordinatorNodeResourceSpec) *int {
 		if v == nil {
@@ -1496,7 +1496,7 @@ func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput) Memor
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For details on node specification types and details.
 func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationCoordinatorNodeResourceSpec) *string {
 		if v == nil {
@@ -1507,17 +1507,17 @@ func (o InstanceInstanceConfigurationCoordinatorNodeResourceSpecPtrOutput) Name(
 }
 
 type InstanceInstanceConfigurationCoordinatorNodeStorageSpec struct {
-	// 存储规格的描述信息
+	// Description of storage specification.
 	Description *string `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification
 	DisplayName *string `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, in GiB
 	MaxSize *int `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum value for storage specification, unit: GiB.
 	MinSize *int `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name *string `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size *int `pulumi:"size"`
 }
 
@@ -1533,17 +1533,17 @@ type InstanceInstanceConfigurationCoordinatorNodeStorageSpecInput interface {
 }
 
 type InstanceInstanceConfigurationCoordinatorNodeStorageSpecArgs struct {
-	// 存储规格的描述信息
+	// Description of storage specification.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, in GiB
 	MaxSize pulumi.IntPtrInput `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum value for storage specification, unit: GiB.
 	MinSize pulumi.IntPtrInput `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size pulumi.IntPtrInput `pulumi:"size"`
 }
 
@@ -1624,32 +1624,32 @@ func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) ToInstanc
 	}).(InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput)
 }
 
-// 存储规格的描述信息
+// Description of storage specification.
 func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationCoordinatorNodeStorageSpec) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的显示名称
+// Display name of storage specification
 func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationCoordinatorNodeStorageSpec) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的最大值，单位为 GiB
+// Maximum storage specification, in GiB
 func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) MaxSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationCoordinatorNodeStorageSpec) *int { return v.MaxSize }).(pulumi.IntPtrOutput)
 }
 
-// 存储规格最小值，单位为 GiB
+// Minimum value for storage specification, unit: GiB.
 func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) MinSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationCoordinatorNodeStorageSpec) *int { return v.MinSize }).(pulumi.IntPtrOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationCoordinatorNodeStorageSpec) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 当前存储规格值，单位为 GiB
+// Current storage specification value, in GiB.
 func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationCoordinatorNodeStorageSpec) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
@@ -1678,7 +1678,7 @@ func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput) Elem()
 	}).(InstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput)
 }
 
-// 存储规格的描述信息
+// Description of storage specification.
 func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationCoordinatorNodeStorageSpec) *string {
 		if v == nil {
@@ -1688,7 +1688,7 @@ func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput) Descri
 	}).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的显示名称
+// Display name of storage specification
 func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationCoordinatorNodeStorageSpec) *string {
 		if v == nil {
@@ -1698,7 +1698,7 @@ func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput) Displa
 	}).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的最大值，单位为 GiB
+// Maximum storage specification, in GiB
 func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput) MaxSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationCoordinatorNodeStorageSpec) *int {
 		if v == nil {
@@ -1708,7 +1708,7 @@ func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput) MaxSiz
 	}).(pulumi.IntPtrOutput)
 }
 
-// 存储规格最小值，单位为 GiB
+// Minimum value for storage specification, unit: GiB.
 func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput) MinSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationCoordinatorNodeStorageSpec) *int {
 		if v == nil {
@@ -1718,7 +1718,7 @@ func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput) MinSiz
 	}).(pulumi.IntPtrOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationCoordinatorNodeStorageSpec) *string {
 		if v == nil {
@@ -1728,7 +1728,7 @@ func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput) Name()
 	}).(pulumi.StringPtrOutput)
 }
 
-// 当前存储规格值，单位为 GiB
+// Current storage specification value, in GiB.
 func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationCoordinatorNodeStorageSpec) *int {
 		if v == nil {
@@ -1739,15 +1739,15 @@ func (o InstanceInstanceConfigurationCoordinatorNodeStorageSpecPtrOutput) Size()
 }
 
 type InstanceInstanceConfigurationHotNodeResourceSpec struct {
-	// 节点规格的 CPU 资源，单位为核（Core）。
+	// CPU resources of node specification, measured in cores
 	Cpu *int `pulumi:"cpu"`
-	// 节点规格的描述信息。
+	// Description of node specification.
 	Description *string `pulumi:"description"`
-	// 节点规格的显示名称。
+	// Display name of node specification.
 	DisplayName *string `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB。
+	// Memory capacity for node specification, measured in GiB.
 	Memory *int `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+	// Node specification. For details on node specification types and details, see Product Specifications.
 	Name *string `pulumi:"name"`
 }
 
@@ -1763,15 +1763,15 @@ type InstanceInstanceConfigurationHotNodeResourceSpecInput interface {
 }
 
 type InstanceInstanceConfigurationHotNodeResourceSpecArgs struct {
-	// 节点规格的 CPU 资源，单位为核（Core）。
+	// CPU resources of node specification, measured in cores
 	Cpu pulumi.IntPtrInput `pulumi:"cpu"`
-	// 节点规格的描述信息。
+	// Description of node specification.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 节点规格的显示名称。
+	// Display name of node specification.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB。
+	// Memory capacity for node specification, measured in GiB.
 	Memory pulumi.IntPtrInput `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+	// Node specification. For details on node specification types and details, see Product Specifications.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -1852,27 +1852,27 @@ func (o InstanceInstanceConfigurationHotNodeResourceSpecOutput) ToInstanceInstan
 	}).(InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput)
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）。
+// CPU resources of node specification, measured in cores
 func (o InstanceInstanceConfigurationHotNodeResourceSpecOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationHotNodeResourceSpec) *int { return v.Cpu }).(pulumi.IntPtrOutput)
 }
 
-// 节点规格的描述信息。
+// Description of node specification.
 func (o InstanceInstanceConfigurationHotNodeResourceSpecOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationHotNodeResourceSpec) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的显示名称。
+// Display name of node specification.
 func (o InstanceInstanceConfigurationHotNodeResourceSpecOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationHotNodeResourceSpec) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的内存容量，单位 GiB。
+// Memory capacity for node specification, measured in GiB.
 func (o InstanceInstanceConfigurationHotNodeResourceSpecOutput) Memory() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationHotNodeResourceSpec) *int { return v.Memory }).(pulumi.IntPtrOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+// Node specification. For details on node specification types and details, see Product Specifications.
 func (o InstanceInstanceConfigurationHotNodeResourceSpecOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationHotNodeResourceSpec) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -1901,7 +1901,7 @@ func (o InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput) Elem() Instan
 	}).(InstanceInstanceConfigurationHotNodeResourceSpecOutput)
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）。
+// CPU resources of node specification, measured in cores
 func (o InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationHotNodeResourceSpec) *int {
 		if v == nil {
@@ -1911,7 +1911,7 @@ func (o InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput) Cpu() pulumi.
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点规格的描述信息。
+// Description of node specification.
 func (o InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationHotNodeResourceSpec) *string {
 		if v == nil {
@@ -1921,7 +1921,7 @@ func (o InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput) Description()
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的显示名称。
+// Display name of node specification.
 func (o InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationHotNodeResourceSpec) *string {
 		if v == nil {
@@ -1931,7 +1931,7 @@ func (o InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput) DisplayName()
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的内存容量，单位 GiB。
+// Memory capacity for node specification, measured in GiB.
 func (o InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput) Memory() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationHotNodeResourceSpec) *int {
 		if v == nil {
@@ -1941,7 +1941,7 @@ func (o InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput) Memory() pulu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+// Node specification. For details on node specification types and details, see Product Specifications.
 func (o InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationHotNodeResourceSpec) *string {
 		if v == nil {
@@ -1952,17 +1952,17 @@ func (o InstanceInstanceConfigurationHotNodeResourceSpecPtrOutput) Name() pulumi
 }
 
 type InstanceInstanceConfigurationHotNodeStorageSpec struct {
-	// 存储规格的描述信息。
+	// Description of storage specification
 	Description *string `pulumi:"description"`
-	// 存储规格的显示名称。
+	// Display name of storage specification.
 	DisplayName *string `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB。
+	// Maximum storage specification, in GiB
 	MaxSize *int `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB。
+	// Minimum storage specification, measured in GiB.
 	MinSize *int `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name *string `pulumi:"name"`
-	// 配置的可用磁盘空间大小。
+	// Configured available disk space size
 	Size *int `pulumi:"size"`
 }
 
@@ -1978,17 +1978,17 @@ type InstanceInstanceConfigurationHotNodeStorageSpecInput interface {
 }
 
 type InstanceInstanceConfigurationHotNodeStorageSpecArgs struct {
-	// 存储规格的描述信息。
+	// Description of storage specification
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 存储规格的显示名称。
+	// Display name of storage specification.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB。
+	// Maximum storage specification, in GiB
 	MaxSize pulumi.IntPtrInput `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB。
+	// Minimum storage specification, measured in GiB.
 	MinSize pulumi.IntPtrInput `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 配置的可用磁盘空间大小。
+	// Configured available disk space size
 	Size pulumi.IntPtrInput `pulumi:"size"`
 }
 
@@ -2069,32 +2069,32 @@ func (o InstanceInstanceConfigurationHotNodeStorageSpecOutput) ToInstanceInstanc
 	}).(InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput)
 }
 
-// 存储规格的描述信息。
+// Description of storage specification
 func (o InstanceInstanceConfigurationHotNodeStorageSpecOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationHotNodeStorageSpec) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的显示名称。
+// Display name of storage specification.
 func (o InstanceInstanceConfigurationHotNodeStorageSpecOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationHotNodeStorageSpec) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的最大值，单位为 GiB。
+// Maximum storage specification, in GiB
 func (o InstanceInstanceConfigurationHotNodeStorageSpecOutput) MaxSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationHotNodeStorageSpec) *int { return v.MaxSize }).(pulumi.IntPtrOutput)
 }
 
-// 存储规格最小值，单位为 GiB。
+// Minimum storage specification, measured in GiB.
 func (o InstanceInstanceConfigurationHotNodeStorageSpecOutput) MinSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationHotNodeStorageSpec) *int { return v.MinSize }).(pulumi.IntPtrOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o InstanceInstanceConfigurationHotNodeStorageSpecOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationHotNodeStorageSpec) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 配置的可用磁盘空间大小。
+// Configured available disk space size
 func (o InstanceInstanceConfigurationHotNodeStorageSpecOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationHotNodeStorageSpec) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
@@ -2123,7 +2123,7 @@ func (o InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput) Elem() Instanc
 	}).(InstanceInstanceConfigurationHotNodeStorageSpecOutput)
 }
 
-// 存储规格的描述信息。
+// Description of storage specification
 func (o InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationHotNodeStorageSpec) *string {
 		if v == nil {
@@ -2133,7 +2133,7 @@ func (o InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput) Description() 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的显示名称。
+// Display name of storage specification.
 func (o InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationHotNodeStorageSpec) *string {
 		if v == nil {
@@ -2143,7 +2143,7 @@ func (o InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput) DisplayName() 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的最大值，单位为 GiB。
+// Maximum storage specification, in GiB
 func (o InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput) MaxSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationHotNodeStorageSpec) *int {
 		if v == nil {
@@ -2153,7 +2153,7 @@ func (o InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput) MaxSize() pulu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 存储规格最小值，单位为 GiB。
+// Minimum storage specification, measured in GiB.
 func (o InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput) MinSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationHotNodeStorageSpec) *int {
 		if v == nil {
@@ -2163,7 +2163,7 @@ func (o InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput) MinSize() pulu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationHotNodeStorageSpec) *string {
 		if v == nil {
@@ -2173,7 +2173,7 @@ func (o InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput) Name() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
-// 配置的可用磁盘空间大小。
+// Configured available disk space size
 func (o InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationHotNodeStorageSpec) *int {
 		if v == nil {
@@ -2184,15 +2184,15 @@ func (o InstanceInstanceConfigurationHotNodeStorageSpecPtrOutput) Size() pulumi.
 }
 
 type InstanceInstanceConfigurationKibanaNodeResourceSpec struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources for node specification, measured in cores.
 	Cpu *int `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description *string `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName *string `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity for node specification, measured in GiB
 	Memory *int `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For information about node specification types and details, please refer to the documentation.
 	Name *string `pulumi:"name"`
 }
 
@@ -2208,15 +2208,15 @@ type InstanceInstanceConfigurationKibanaNodeResourceSpecInput interface {
 }
 
 type InstanceInstanceConfigurationKibanaNodeResourceSpecArgs struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources for node specification, measured in cores.
 	Cpu pulumi.IntPtrInput `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity for node specification, measured in GiB
 	Memory pulumi.IntPtrInput `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For information about node specification types and details, please refer to the documentation.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -2297,27 +2297,27 @@ func (o InstanceInstanceConfigurationKibanaNodeResourceSpecOutput) ToInstanceIns
 	}).(InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput)
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources for node specification, measured in cores.
 func (o InstanceInstanceConfigurationKibanaNodeResourceSpecOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationKibanaNodeResourceSpec) *int { return v.Cpu }).(pulumi.IntPtrOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specifications
 func (o InstanceInstanceConfigurationKibanaNodeResourceSpecOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationKibanaNodeResourceSpec) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification.
 func (o InstanceInstanceConfigurationKibanaNodeResourceSpecOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationKibanaNodeResourceSpec) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity for node specification, measured in GiB
 func (o InstanceInstanceConfigurationKibanaNodeResourceSpecOutput) Memory() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationKibanaNodeResourceSpec) *int { return v.Memory }).(pulumi.IntPtrOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For information about node specification types and details, please refer to the documentation.
 func (o InstanceInstanceConfigurationKibanaNodeResourceSpecOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationKibanaNodeResourceSpec) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -2346,7 +2346,7 @@ func (o InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput) Elem() Ins
 	}).(InstanceInstanceConfigurationKibanaNodeResourceSpecOutput)
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources for node specification, measured in cores.
 func (o InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationKibanaNodeResourceSpec) *int {
 		if v == nil {
@@ -2356,7 +2356,7 @@ func (o InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput) Cpu() pulu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specifications
 func (o InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationKibanaNodeResourceSpec) *string {
 		if v == nil {
@@ -2366,7 +2366,7 @@ func (o InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput) Descriptio
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification.
 func (o InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationKibanaNodeResourceSpec) *string {
 		if v == nil {
@@ -2376,7 +2376,7 @@ func (o InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput) DisplayNam
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity for node specification, measured in GiB
 func (o InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput) Memory() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationKibanaNodeResourceSpec) *int {
 		if v == nil {
@@ -2386,7 +2386,7 @@ func (o InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput) Memory() p
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For information about node specification types and details, please refer to the documentation.
 func (o InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationKibanaNodeResourceSpec) *string {
 		if v == nil {
@@ -2397,15 +2397,15 @@ func (o InstanceInstanceConfigurationKibanaNodeResourceSpecPtrOutput) Name() pul
 }
 
 type InstanceInstanceConfigurationMasterNodeResourceSpec struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources of node specification, unit: cores.
 	Cpu *int `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description *string `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification
 	DisplayName *string `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity of node specification, unit: GiB.
 	Memory *int `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For information about node specification types and details, please refer to the documentation.
 	Name *string `pulumi:"name"`
 }
 
@@ -2421,15 +2421,15 @@ type InstanceInstanceConfigurationMasterNodeResourceSpecInput interface {
 }
 
 type InstanceInstanceConfigurationMasterNodeResourceSpecArgs struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources of node specification, unit: cores.
 	Cpu pulumi.IntPtrInput `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity of node specification, unit: GiB.
 	Memory pulumi.IntPtrInput `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For information about node specification types and details, please refer to the documentation.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -2510,27 +2510,27 @@ func (o InstanceInstanceConfigurationMasterNodeResourceSpecOutput) ToInstanceIns
 	}).(InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput)
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources of node specification, unit: cores.
 func (o InstanceInstanceConfigurationMasterNodeResourceSpecOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationMasterNodeResourceSpec) *int { return v.Cpu }).(pulumi.IntPtrOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specifications
 func (o InstanceInstanceConfigurationMasterNodeResourceSpecOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationMasterNodeResourceSpec) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification
 func (o InstanceInstanceConfigurationMasterNodeResourceSpecOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationMasterNodeResourceSpec) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity of node specification, unit: GiB.
 func (o InstanceInstanceConfigurationMasterNodeResourceSpecOutput) Memory() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationMasterNodeResourceSpec) *int { return v.Memory }).(pulumi.IntPtrOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For information about node specification types and details, please refer to the documentation.
 func (o InstanceInstanceConfigurationMasterNodeResourceSpecOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationMasterNodeResourceSpec) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -2559,7 +2559,7 @@ func (o InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput) Elem() Ins
 	}).(InstanceInstanceConfigurationMasterNodeResourceSpecOutput)
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources of node specification, unit: cores.
 func (o InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationMasterNodeResourceSpec) *int {
 		if v == nil {
@@ -2569,7 +2569,7 @@ func (o InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput) Cpu() pulu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specifications
 func (o InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationMasterNodeResourceSpec) *string {
 		if v == nil {
@@ -2579,7 +2579,7 @@ func (o InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput) Descriptio
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification
 func (o InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationMasterNodeResourceSpec) *string {
 		if v == nil {
@@ -2589,7 +2589,7 @@ func (o InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput) DisplayNam
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity of node specification, unit: GiB.
 func (o InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput) Memory() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationMasterNodeResourceSpec) *int {
 		if v == nil {
@@ -2599,7 +2599,7 @@ func (o InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput) Memory() p
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For information about node specification types and details, please refer to the documentation.
 func (o InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationMasterNodeResourceSpec) *string {
 		if v == nil {
@@ -2610,17 +2610,17 @@ func (o InstanceInstanceConfigurationMasterNodeResourceSpecPtrOutput) Name() pul
 }
 
 type InstanceInstanceConfigurationMasterNodeStorageSpec struct {
-	// 存储规格的描述信息
+	// Description of storage specification.
 	Description *string `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification.
 	DisplayName *string `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, measured in GiB
 	MaxSize *int `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum value for storage specification, unit: GiB.
 	MinSize *int `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name *string `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size *int `pulumi:"size"`
 }
 
@@ -2636,17 +2636,17 @@ type InstanceInstanceConfigurationMasterNodeStorageSpecInput interface {
 }
 
 type InstanceInstanceConfigurationMasterNodeStorageSpecArgs struct {
-	// 存储规格的描述信息
+	// Description of storage specification.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, measured in GiB
 	MaxSize pulumi.IntPtrInput `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum value for storage specification, unit: GiB.
 	MinSize pulumi.IntPtrInput `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size pulumi.IntPtrInput `pulumi:"size"`
 }
 
@@ -2727,32 +2727,32 @@ func (o InstanceInstanceConfigurationMasterNodeStorageSpecOutput) ToInstanceInst
 	}).(InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput)
 }
 
-// 存储规格的描述信息
+// Description of storage specification.
 func (o InstanceInstanceConfigurationMasterNodeStorageSpecOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationMasterNodeStorageSpec) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的显示名称
+// Display name of storage specification.
 func (o InstanceInstanceConfigurationMasterNodeStorageSpecOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationMasterNodeStorageSpec) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的最大值，单位为 GiB
+// Maximum storage specification, measured in GiB
 func (o InstanceInstanceConfigurationMasterNodeStorageSpecOutput) MaxSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationMasterNodeStorageSpec) *int { return v.MaxSize }).(pulumi.IntPtrOutput)
 }
 
-// 存储规格最小值，单位为 GiB
+// Minimum value for storage specification, unit: GiB.
 func (o InstanceInstanceConfigurationMasterNodeStorageSpecOutput) MinSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationMasterNodeStorageSpec) *int { return v.MinSize }).(pulumi.IntPtrOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o InstanceInstanceConfigurationMasterNodeStorageSpecOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationMasterNodeStorageSpec) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 当前存储规格值，单位为 GiB
+// Current storage specification value, in GiB.
 func (o InstanceInstanceConfigurationMasterNodeStorageSpecOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationMasterNodeStorageSpec) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
@@ -2781,7 +2781,7 @@ func (o InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput) Elem() Inst
 	}).(InstanceInstanceConfigurationMasterNodeStorageSpecOutput)
 }
 
-// 存储规格的描述信息
+// Description of storage specification.
 func (o InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationMasterNodeStorageSpec) *string {
 		if v == nil {
@@ -2791,7 +2791,7 @@ func (o InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput) Description
 	}).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的显示名称
+// Display name of storage specification.
 func (o InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationMasterNodeStorageSpec) *string {
 		if v == nil {
@@ -2801,7 +2801,7 @@ func (o InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput) DisplayName
 	}).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的最大值，单位为 GiB
+// Maximum storage specification, measured in GiB
 func (o InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput) MaxSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationMasterNodeStorageSpec) *int {
 		if v == nil {
@@ -2811,7 +2811,7 @@ func (o InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput) MaxSize() p
 	}).(pulumi.IntPtrOutput)
 }
 
-// 存储规格最小值，单位为 GiB
+// Minimum value for storage specification, unit: GiB.
 func (o InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput) MinSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationMasterNodeStorageSpec) *int {
 		if v == nil {
@@ -2821,7 +2821,7 @@ func (o InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput) MinSize() p
 	}).(pulumi.IntPtrOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationMasterNodeStorageSpec) *string {
 		if v == nil {
@@ -2831,7 +2831,7 @@ func (o InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput) Name() pulu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 当前存储规格值，单位为 GiB
+// Current storage specification value, in GiB.
 func (o InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationMasterNodeStorageSpec) *int {
 		if v == nil {
@@ -2842,13 +2842,13 @@ func (o InstanceInstanceConfigurationMasterNodeStorageSpecPtrOutput) Size() pulu
 }
 
 type InstanceInstanceConfigurationNetworkSpec struct {
-	// 公网IP的带宽上限，默认为“1”，单位：Mbps。
+	// Public IP bandwidth limit. Default is '1', unit: Mbps.
 	Bandwidth *int `pulumi:"bandwidth"`
-	// 开启/关闭
+	// Enable/Disable
 	IsOpen *bool `pulumi:"isOpen"`
-	// 实例公网资源规格名称
+	// Instance public resource specification name
 	SpecName *string `pulumi:"specName"`
-	// 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+	// Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
 	Type *string `pulumi:"type"`
 }
 
@@ -2864,13 +2864,13 @@ type InstanceInstanceConfigurationNetworkSpecInput interface {
 }
 
 type InstanceInstanceConfigurationNetworkSpecArgs struct {
-	// 公网IP的带宽上限，默认为“1”，单位：Mbps。
+	// Public IP bandwidth limit. Default is '1', unit: Mbps.
 	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
-	// 开启/关闭
+	// Enable/Disable
 	IsOpen pulumi.BoolPtrInput `pulumi:"isOpen"`
-	// 实例公网资源规格名称
+	// Instance public resource specification name
 	SpecName pulumi.StringPtrInput `pulumi:"specName"`
-	// 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+	// Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -2925,22 +2925,22 @@ func (o InstanceInstanceConfigurationNetworkSpecOutput) ToInstanceInstanceConfig
 	return o
 }
 
-// 公网IP的带宽上限，默认为“1”，单位：Mbps。
+// Public IP bandwidth limit. Default is '1', unit: Mbps.
 func (o InstanceInstanceConfigurationNetworkSpecOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationNetworkSpec) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
 }
 
-// 开启/关闭
+// Enable/Disable
 func (o InstanceInstanceConfigurationNetworkSpecOutput) IsOpen() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationNetworkSpec) *bool { return v.IsOpen }).(pulumi.BoolPtrOutput)
 }
 
-// 实例公网资源规格名称
+// Instance public resource specification name
 func (o InstanceInstanceConfigurationNetworkSpecOutput) SpecName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationNetworkSpec) *string { return v.SpecName }).(pulumi.StringPtrOutput)
 }
 
-// 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+// Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
 func (o InstanceInstanceConfigurationNetworkSpecOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationNetworkSpec) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -2966,17 +2966,17 @@ func (o InstanceInstanceConfigurationNetworkSpecArrayOutput) Index(i pulumi.IntI
 }
 
 type InstanceInstanceConfigurationNodeSpecsAssign struct {
-	// 磁盘额外性能包相关配置。
+	// Disk extra performance package configuration.
 	ExtraPerformance *InstanceInstanceConfigurationNodeSpecsAssignExtraPerformance `pulumi:"extraPerformance"`
-	// 节点数量。配置数据节点数量时，在不同部署方式下，需要注意以下信息：单可用区部署：建议生产环境至少配置 3 个数据节点，配置 2 个节点时存在脑裂风险。如果启用专有主节点，2 个数据节点不会脑裂。双可用区部署，默认启用专有主节点：建议生产环境至少配置 4 个数据节点，即每个可用区两个数据节点。三可用区部署，默认启用专有主节点：建议生产环境至少配置 6 个数据节点，即每个可用区两个数据节点。数据节点数量可设范围为 1~100，如果有更多数据节点的需求，可申请开白提升配额到 200。配置 Master 节点：如果没有启用专有主节点，那么 Master 节点的配置和数据节点相同，否则 Master 配置是独立的。配置专有主节点，如需启用专有主节点，数量默认配置为 3。配置 Kibana 节点，数量固定为 1。配置协调节点，如需启用，生产环境建议至少 2 个协调节点，可配范围为 2~50。温数据节点：如需启用，生产环境建议至少 3 个温数据节点，最多可配置 100 个。冷数据节点：如需启用，生产环境建议至少 2 个温数据节点，最多可配置 100 个。
+	// Node count. When configuring the number of data nodes, note the following based on deployment mode: Single availability zone deployment: For production environments, configure at least 3 data nodes. Configuring 2 nodes poses a split-brain risk. If dedicated master nodes are enabled, 2 data nodes will not result in split-brain. Dual availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 4 data nodes—2 per availability zone. Triple availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 6 data nodes—2 per availability zone. You can set the number of data nodes from 1 to 100. If you need more, apply to increase the quota to 200. Master node configuration: If dedicated master nodes are not enabled, master node configuration matches data nodes; otherwise, master node configuration is independent. Dedicated master node configuration: If you need to enable dedicated master nodes, the default number is 3. Kibana node configuration: The number is fixed at 1. Coordinator node configuration: If enabled, configure at least 2 coordinator nodes for production environments. The configurable range is 2–50. Warm data nodes: If enabled, configure at least 3 warm data nodes for production environments, up to 100. Cold data nodes: If enabled, configure at least 2 cold data nodes for production environments, up to 100.
 	Number *int `pulumi:"number"`
-	// 计算资源规格名称。您可以通过调用DescribeNodeAvailableSpecs接口获取可用的节点规格列表。如需了解规格详情，请参见V2 实例规格
+	// Compute resource specification name. You can call the DescribeNodeAvailableSpecs API to get the list of available node specifications. For details, see V2 instance specifications.
 	ResourceSpecName *string `pulumi:"resourceSpecName"`
-	// 存储容量，单位为 GiB。默认值为 100GiB，调整步长为 10GiB。说明Kibana 节点的 StorageSize 设置为0，即"StorageSize": 0。专有主节点和协调节点的 StorageSize 默认是 20。
+	// Storage capacity, measured in GiB. Default value is 100 GiB, adjustment step is 10 GiB. Note: StorageSize for Kibana nodes is set to 0, i.e., "StorageSize": 0. StorageSize for dedicated master and coordinator nodes defaults to 20
 	StorageSize *int `pulumi:"storageSize"`
-	// 存储规格名称，当前支持的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0。es.volume.essd.flexpl-standard：标准版-高性能云盘-flexpl。说明Kibana 节点的 StorageSpecName 设置为空，即"StorageSpecName": ""。
+	// Storage specification name. Currently supported specifications: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0. es.volume.essd.flexpl-standard: Standard Edition   - High Performance Cloud Disk   - flexpl. Note: StorageSpecName for Kibana nodes is set to empty, i.e., "StorageSpecName": ""
 	StorageSpecName *string `pulumi:"storageSpecName"`
-	// 节点类型。请先了解节点类型的作用，然后结合业务判断是否需要创建，详情请参见节点类型。Master：Master 节点。Hot：数据节点。Cold：冷数据节点。Warm：温数据节点。Kibana：Kibana 节点。Coordinator：协调节点。
+	// Node type. Please understand the function of each node type first, then determine whether to create based on your business needs. For details, see node types. Master: Master node. Hot: Data node. Cold: Cold data node. Warm: Warm data node. Kibana: Kibana node. Coordinator: Coordinator node
 	Type *string `pulumi:"type"`
 }
 
@@ -2992,17 +2992,17 @@ type InstanceInstanceConfigurationNodeSpecsAssignInput interface {
 }
 
 type InstanceInstanceConfigurationNodeSpecsAssignArgs struct {
-	// 磁盘额外性能包相关配置。
+	// Disk extra performance package configuration.
 	ExtraPerformance InstanceInstanceConfigurationNodeSpecsAssignExtraPerformancePtrInput `pulumi:"extraPerformance"`
-	// 节点数量。配置数据节点数量时，在不同部署方式下，需要注意以下信息：单可用区部署：建议生产环境至少配置 3 个数据节点，配置 2 个节点时存在脑裂风险。如果启用专有主节点，2 个数据节点不会脑裂。双可用区部署，默认启用专有主节点：建议生产环境至少配置 4 个数据节点，即每个可用区两个数据节点。三可用区部署，默认启用专有主节点：建议生产环境至少配置 6 个数据节点，即每个可用区两个数据节点。数据节点数量可设范围为 1~100，如果有更多数据节点的需求，可申请开白提升配额到 200。配置 Master 节点：如果没有启用专有主节点，那么 Master 节点的配置和数据节点相同，否则 Master 配置是独立的。配置专有主节点，如需启用专有主节点，数量默认配置为 3。配置 Kibana 节点，数量固定为 1。配置协调节点，如需启用，生产环境建议至少 2 个协调节点，可配范围为 2~50。温数据节点：如需启用，生产环境建议至少 3 个温数据节点，最多可配置 100 个。冷数据节点：如需启用，生产环境建议至少 2 个温数据节点，最多可配置 100 个。
+	// Node count. When configuring the number of data nodes, note the following based on deployment mode: Single availability zone deployment: For production environments, configure at least 3 data nodes. Configuring 2 nodes poses a split-brain risk. If dedicated master nodes are enabled, 2 data nodes will not result in split-brain. Dual availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 4 data nodes—2 per availability zone. Triple availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 6 data nodes—2 per availability zone. You can set the number of data nodes from 1 to 100. If you need more, apply to increase the quota to 200. Master node configuration: If dedicated master nodes are not enabled, master node configuration matches data nodes; otherwise, master node configuration is independent. Dedicated master node configuration: If you need to enable dedicated master nodes, the default number is 3. Kibana node configuration: The number is fixed at 1. Coordinator node configuration: If enabled, configure at least 2 coordinator nodes for production environments. The configurable range is 2–50. Warm data nodes: If enabled, configure at least 3 warm data nodes for production environments, up to 100. Cold data nodes: If enabled, configure at least 2 cold data nodes for production environments, up to 100.
 	Number pulumi.IntPtrInput `pulumi:"number"`
-	// 计算资源规格名称。您可以通过调用DescribeNodeAvailableSpecs接口获取可用的节点规格列表。如需了解规格详情，请参见V2 实例规格
+	// Compute resource specification name. You can call the DescribeNodeAvailableSpecs API to get the list of available node specifications. For details, see V2 instance specifications.
 	ResourceSpecName pulumi.StringPtrInput `pulumi:"resourceSpecName"`
-	// 存储容量，单位为 GiB。默认值为 100GiB，调整步长为 10GiB。说明Kibana 节点的 StorageSize 设置为0，即"StorageSize": 0。专有主节点和协调节点的 StorageSize 默认是 20。
+	// Storage capacity, measured in GiB. Default value is 100 GiB, adjustment step is 10 GiB. Note: StorageSize for Kibana nodes is set to 0, i.e., "StorageSize": 0. StorageSize for dedicated master and coordinator nodes defaults to 20
 	StorageSize pulumi.IntPtrInput `pulumi:"storageSize"`
-	// 存储规格名称，当前支持的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0。es.volume.essd.flexpl-standard：标准版-高性能云盘-flexpl。说明Kibana 节点的 StorageSpecName 设置为空，即"StorageSpecName": ""。
+	// Storage specification name. Currently supported specifications: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0. es.volume.essd.flexpl-standard: Standard Edition   - High Performance Cloud Disk   - flexpl. Note: StorageSpecName for Kibana nodes is set to empty, i.e., "StorageSpecName": ""
 	StorageSpecName pulumi.StringPtrInput `pulumi:"storageSpecName"`
-	// 节点类型。请先了解节点类型的作用，然后结合业务判断是否需要创建，详情请参见节点类型。Master：Master 节点。Hot：数据节点。Cold：冷数据节点。Warm：温数据节点。Kibana：Kibana 节点。Coordinator：协调节点。
+	// Node type. Please understand the function of each node type first, then determine whether to create based on your business needs. For details, see node types. Master: Master node. Hot: Data node. Cold: Cold data node. Warm: Warm data node. Kibana: Kibana node. Coordinator: Coordinator node
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -3057,34 +3057,34 @@ func (o InstanceInstanceConfigurationNodeSpecsAssignOutput) ToInstanceInstanceCo
 	return o
 }
 
-// 磁盘额外性能包相关配置。
+// Disk extra performance package configuration.
 func (o InstanceInstanceConfigurationNodeSpecsAssignOutput) ExtraPerformance() InstanceInstanceConfigurationNodeSpecsAssignExtraPerformancePtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationNodeSpecsAssign) *InstanceInstanceConfigurationNodeSpecsAssignExtraPerformance {
 		return v.ExtraPerformance
 	}).(InstanceInstanceConfigurationNodeSpecsAssignExtraPerformancePtrOutput)
 }
 
-// 节点数量。配置数据节点数量时，在不同部署方式下，需要注意以下信息：单可用区部署：建议生产环境至少配置 3 个数据节点，配置 2 个节点时存在脑裂风险。如果启用专有主节点，2 个数据节点不会脑裂。双可用区部署，默认启用专有主节点：建议生产环境至少配置 4 个数据节点，即每个可用区两个数据节点。三可用区部署，默认启用专有主节点：建议生产环境至少配置 6 个数据节点，即每个可用区两个数据节点。数据节点数量可设范围为 1~100，如果有更多数据节点的需求，可申请开白提升配额到 200。配置 Master 节点：如果没有启用专有主节点，那么 Master 节点的配置和数据节点相同，否则 Master 配置是独立的。配置专有主节点，如需启用专有主节点，数量默认配置为 3。配置 Kibana 节点，数量固定为 1。配置协调节点，如需启用，生产环境建议至少 2 个协调节点，可配范围为 2~50。温数据节点：如需启用，生产环境建议至少 3 个温数据节点，最多可配置 100 个。冷数据节点：如需启用，生产环境建议至少 2 个温数据节点，最多可配置 100 个。
+// Node count. When configuring the number of data nodes, note the following based on deployment mode: Single availability zone deployment: For production environments, configure at least 3 data nodes. Configuring 2 nodes poses a split-brain risk. If dedicated master nodes are enabled, 2 data nodes will not result in split-brain. Dual availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 4 data nodes—2 per availability zone. Triple availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 6 data nodes—2 per availability zone. You can set the number of data nodes from 1 to 100. If you need more, apply to increase the quota to 200. Master node configuration: If dedicated master nodes are not enabled, master node configuration matches data nodes; otherwise, master node configuration is independent. Dedicated master node configuration: If you need to enable dedicated master nodes, the default number is 3. Kibana node configuration: The number is fixed at 1. Coordinator node configuration: If enabled, configure at least 2 coordinator nodes for production environments. The configurable range is 2–50. Warm data nodes: If enabled, configure at least 3 warm data nodes for production environments, up to 100. Cold data nodes: If enabled, configure at least 2 cold data nodes for production environments, up to 100.
 func (o InstanceInstanceConfigurationNodeSpecsAssignOutput) Number() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationNodeSpecsAssign) *int { return v.Number }).(pulumi.IntPtrOutput)
 }
 
-// 计算资源规格名称。您可以通过调用DescribeNodeAvailableSpecs接口获取可用的节点规格列表。如需了解规格详情，请参见V2 实例规格
+// Compute resource specification name. You can call the DescribeNodeAvailableSpecs API to get the list of available node specifications. For details, see V2 instance specifications.
 func (o InstanceInstanceConfigurationNodeSpecsAssignOutput) ResourceSpecName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationNodeSpecsAssign) *string { return v.ResourceSpecName }).(pulumi.StringPtrOutput)
 }
 
-// 存储容量，单位为 GiB。默认值为 100GiB，调整步长为 10GiB。说明Kibana 节点的 StorageSize 设置为0，即"StorageSize": 0。专有主节点和协调节点的 StorageSize 默认是 20。
+// Storage capacity, measured in GiB. Default value is 100 GiB, adjustment step is 10 GiB. Note: StorageSize for Kibana nodes is set to 0, i.e., "StorageSize": 0. StorageSize for dedicated master and coordinator nodes defaults to 20
 func (o InstanceInstanceConfigurationNodeSpecsAssignOutput) StorageSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationNodeSpecsAssign) *int { return v.StorageSize }).(pulumi.IntPtrOutput)
 }
 
-// 存储规格名称，当前支持的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0。es.volume.essd.flexpl-standard：标准版-高性能云盘-flexpl。说明Kibana 节点的 StorageSpecName 设置为空，即"StorageSpecName": ""。
+// Storage specification name. Currently supported specifications: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0. es.volume.essd.flexpl-standard: Standard Edition   - High Performance Cloud Disk   - flexpl. Note: StorageSpecName for Kibana nodes is set to empty, i.e., "StorageSpecName": ""
 func (o InstanceInstanceConfigurationNodeSpecsAssignOutput) StorageSpecName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationNodeSpecsAssign) *string { return v.StorageSpecName }).(pulumi.StringPtrOutput)
 }
 
-// 节点类型。请先了解节点类型的作用，然后结合业务判断是否需要创建，详情请参见节点类型。Master：Master 节点。Hot：数据节点。Cold：冷数据节点。Warm：温数据节点。Kibana：Kibana 节点。Coordinator：协调节点。
+// Node type. Please understand the function of each node type first, then determine whether to create based on your business needs. For details, see node types. Master: Master node. Hot: Data node. Cold: Cold data node. Warm: Warm data node. Kibana: Kibana node. Coordinator: Coordinator node
 func (o InstanceInstanceConfigurationNodeSpecsAssignOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationNodeSpecsAssign) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -3110,7 +3110,7 @@ func (o InstanceInstanceConfigurationNodeSpecsAssignArrayOutput) Index(i pulumi.
 }
 
 type InstanceInstanceConfigurationNodeSpecsAssignExtraPerformance struct {
-	// 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+	// When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
 	Throughput *int `pulumi:"throughput"`
 }
 
@@ -3126,7 +3126,7 @@ type InstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceInput interface
 }
 
 type InstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceArgs struct {
-	// 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+	// When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
 	Throughput pulumi.IntPtrInput `pulumi:"throughput"`
 }
 
@@ -3207,7 +3207,7 @@ func (o InstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceOutput) ToIn
 	}).(InstanceInstanceConfigurationNodeSpecsAssignExtraPerformancePtrOutput)
 }
 
-// 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+// When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
 func (o InstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceOutput) Throughput() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationNodeSpecsAssignExtraPerformance) *int { return v.Throughput }).(pulumi.IntPtrOutput)
 }
@@ -3236,7 +3236,7 @@ func (o InstanceInstanceConfigurationNodeSpecsAssignExtraPerformancePtrOutput) E
 	}).(InstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceOutput)
 }
 
-// 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+// When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
 func (o InstanceInstanceConfigurationNodeSpecsAssignExtraPerformancePtrOutput) Throughput() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationNodeSpecsAssignExtraPerformance) *int {
 		if v == nil {
@@ -3249,7 +3249,7 @@ func (o InstanceInstanceConfigurationNodeSpecsAssignExtraPerformancePtrOutput) T
 type InstanceInstanceConfigurationSubnet struct {
 	// Subnet ID。
 	SubnetId *string `pulumi:"subnetId"`
-	// Subnet 名称。
+	// Subnet name
 	SubnetName *string `pulumi:"subnetName"`
 }
 
@@ -3267,7 +3267,7 @@ type InstanceInstanceConfigurationSubnetInput interface {
 type InstanceInstanceConfigurationSubnetArgs struct {
 	// Subnet ID。
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
-	// Subnet 名称。
+	// Subnet name
 	SubnetName pulumi.StringPtrInput `pulumi:"subnetName"`
 }
 
@@ -3353,7 +3353,7 @@ func (o InstanceInstanceConfigurationSubnetOutput) SubnetId() pulumi.StringPtrOu
 	return o.ApplyT(func(v InstanceInstanceConfigurationSubnet) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
-// Subnet 名称。
+// Subnet name
 func (o InstanceInstanceConfigurationSubnetOutput) SubnetName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationSubnet) *string { return v.SubnetName }).(pulumi.StringPtrOutput)
 }
@@ -3392,7 +3392,7 @@ func (o InstanceInstanceConfigurationSubnetPtrOutput) SubnetId() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// Subnet 名称。
+// Subnet name
 func (o InstanceInstanceConfigurationSubnetPtrOutput) SubnetName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationSubnet) *string {
 		if v == nil {
@@ -3403,9 +3403,9 @@ func (o InstanceInstanceConfigurationSubnetPtrOutput) SubnetName() pulumi.String
 }
 
 type InstanceInstanceConfigurationTag struct {
-	// 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+	// Tag key for user labels. Length limit: 1–128 characters. Case-sensitive. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and @ are allowed. Duplicate tag keys are not allowed for the same resource
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+	// Tag value for user tag. Length limit: 0–256 characters. Case-sensitive, cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscore (_), period (.), colon (:), slash (/), equals (=), plus (+), minus (-), and @
 	Value *string `pulumi:"value"`
 }
 
@@ -3421,9 +3421,9 @@ type InstanceInstanceConfigurationTagInput interface {
 }
 
 type InstanceInstanceConfigurationTagArgs struct {
-	// 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+	// Tag key for user labels. Length limit: 1–128 characters. Case-sensitive. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and @ are allowed. Duplicate tag keys are not allowed for the same resource
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+	// Tag value for user tag. Length limit: 0–256 characters. Case-sensitive, cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscore (_), period (.), colon (:), slash (/), equals (=), plus (+), minus (-), and @
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3478,12 +3478,12 @@ func (o InstanceInstanceConfigurationTagOutput) ToInstanceInstanceConfigurationT
 	return o
 }
 
-// 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+// Tag key for user labels. Length limit: 1–128 characters. Case-sensitive. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and @ are allowed. Duplicate tag keys are not allowed for the same resource
 func (o InstanceInstanceConfigurationTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+// Tag value for user tag. Length limit: 0–256 characters. Case-sensitive, cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscore (_), period (.), colon (:), slash (/), equals (=), plus (+), minus (-), and @
 func (o InstanceInstanceConfigurationTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3511,7 +3511,7 @@ func (o InstanceInstanceConfigurationTagArrayOutput) Index(i pulumi.IntInput) In
 type InstanceInstanceConfigurationVpc struct {
 	// VPC ID。
 	VpcId *string `pulumi:"vpcId"`
-	// VPC 名称。
+	// VPC name
 	VpcName *string `pulumi:"vpcName"`
 }
 
@@ -3529,7 +3529,7 @@ type InstanceInstanceConfigurationVpcInput interface {
 type InstanceInstanceConfigurationVpcArgs struct {
 	// VPC ID。
 	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
-	// VPC 名称。
+	// VPC name
 	VpcName pulumi.StringPtrInput `pulumi:"vpcName"`
 }
 
@@ -3615,7 +3615,7 @@ func (o InstanceInstanceConfigurationVpcOutput) VpcId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationVpc) *string { return v.VpcId }).(pulumi.StringPtrOutput)
 }
 
-// VPC 名称。
+// VPC name
 func (o InstanceInstanceConfigurationVpcOutput) VpcName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationVpc) *string { return v.VpcName }).(pulumi.StringPtrOutput)
 }
@@ -3654,7 +3654,7 @@ func (o InstanceInstanceConfigurationVpcPtrOutput) VpcId() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// VPC 名称。
+// VPC name
 func (o InstanceInstanceConfigurationVpcPtrOutput) VpcName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationVpc) *string {
 		if v == nil {
@@ -3665,15 +3665,15 @@ func (o InstanceInstanceConfigurationVpcPtrOutput) VpcName() pulumi.StringPtrOut
 }
 
 type InstanceInstanceConfigurationWarmNodeResourceSpec struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources for node specification, measured in cores.
 	Cpu *int `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specification
 	Description *string `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName *string `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity for node specification, measured in GiB
 	Memory *int `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For details on node specification types and details.
 	Name *string `pulumi:"name"`
 }
 
@@ -3689,15 +3689,15 @@ type InstanceInstanceConfigurationWarmNodeResourceSpecInput interface {
 }
 
 type InstanceInstanceConfigurationWarmNodeResourceSpecArgs struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources for node specification, measured in cores.
 	Cpu pulumi.IntPtrInput `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specification
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity for node specification, measured in GiB
 	Memory pulumi.IntPtrInput `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For details on node specification types and details.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -3778,27 +3778,27 @@ func (o InstanceInstanceConfigurationWarmNodeResourceSpecOutput) ToInstanceInsta
 	}).(InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput)
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources for node specification, measured in cores.
 func (o InstanceInstanceConfigurationWarmNodeResourceSpecOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationWarmNodeResourceSpec) *int { return v.Cpu }).(pulumi.IntPtrOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specification
 func (o InstanceInstanceConfigurationWarmNodeResourceSpecOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationWarmNodeResourceSpec) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification.
 func (o InstanceInstanceConfigurationWarmNodeResourceSpecOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationWarmNodeResourceSpec) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity for node specification, measured in GiB
 func (o InstanceInstanceConfigurationWarmNodeResourceSpecOutput) Memory() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationWarmNodeResourceSpec) *int { return v.Memory }).(pulumi.IntPtrOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For details on node specification types and details.
 func (o InstanceInstanceConfigurationWarmNodeResourceSpecOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationWarmNodeResourceSpec) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -3827,7 +3827,7 @@ func (o InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput) Elem() Insta
 	}).(InstanceInstanceConfigurationWarmNodeResourceSpecOutput)
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources for node specification, measured in cores.
 func (o InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationWarmNodeResourceSpec) *int {
 		if v == nil {
@@ -3837,7 +3837,7 @@ func (o InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput) Cpu() pulumi
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specification
 func (o InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationWarmNodeResourceSpec) *string {
 		if v == nil {
@@ -3847,7 +3847,7 @@ func (o InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput) Description(
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification.
 func (o InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationWarmNodeResourceSpec) *string {
 		if v == nil {
@@ -3857,7 +3857,7 @@ func (o InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput) DisplayName(
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity for node specification, measured in GiB
 func (o InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput) Memory() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationWarmNodeResourceSpec) *int {
 		if v == nil {
@@ -3867,7 +3867,7 @@ func (o InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput) Memory() pul
 	}).(pulumi.IntPtrOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For details on node specification types and details.
 func (o InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationWarmNodeResourceSpec) *string {
 		if v == nil {
@@ -3878,17 +3878,17 @@ func (o InstanceInstanceConfigurationWarmNodeResourceSpecPtrOutput) Name() pulum
 }
 
 type InstanceInstanceConfigurationWarmNodeStorageSpec struct {
-	// 存储规格的描述信息
+	// Description of storage specification.
 	Description *string `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification.
 	DisplayName *string `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, measured in GiB
 	MaxSize *int `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum value for storage specification, unit: GiB.
 	MinSize *int `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name *string `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size *int `pulumi:"size"`
 }
 
@@ -3904,17 +3904,17 @@ type InstanceInstanceConfigurationWarmNodeStorageSpecInput interface {
 }
 
 type InstanceInstanceConfigurationWarmNodeStorageSpecArgs struct {
-	// 存储规格的描述信息
+	// Description of storage specification.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, measured in GiB
 	MaxSize pulumi.IntPtrInput `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum value for storage specification, unit: GiB.
 	MinSize pulumi.IntPtrInput `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size pulumi.IntPtrInput `pulumi:"size"`
 }
 
@@ -3995,32 +3995,32 @@ func (o InstanceInstanceConfigurationWarmNodeStorageSpecOutput) ToInstanceInstan
 	}).(InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput)
 }
 
-// 存储规格的描述信息
+// Description of storage specification.
 func (o InstanceInstanceConfigurationWarmNodeStorageSpecOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationWarmNodeStorageSpec) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的显示名称
+// Display name of storage specification.
 func (o InstanceInstanceConfigurationWarmNodeStorageSpecOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationWarmNodeStorageSpec) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的最大值，单位为 GiB
+// Maximum storage specification, measured in GiB
 func (o InstanceInstanceConfigurationWarmNodeStorageSpecOutput) MaxSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationWarmNodeStorageSpec) *int { return v.MaxSize }).(pulumi.IntPtrOutput)
 }
 
-// 存储规格最小值，单位为 GiB
+// Minimum value for storage specification, unit: GiB.
 func (o InstanceInstanceConfigurationWarmNodeStorageSpecOutput) MinSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationWarmNodeStorageSpec) *int { return v.MinSize }).(pulumi.IntPtrOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o InstanceInstanceConfigurationWarmNodeStorageSpecOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationWarmNodeStorageSpec) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 当前存储规格值，单位为 GiB
+// Current storage specification value, in GiB.
 func (o InstanceInstanceConfigurationWarmNodeStorageSpecOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceConfigurationWarmNodeStorageSpec) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
@@ -4049,7 +4049,7 @@ func (o InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput) Elem() Instan
 	}).(InstanceInstanceConfigurationWarmNodeStorageSpecOutput)
 }
 
-// 存储规格的描述信息
+// Description of storage specification.
 func (o InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationWarmNodeStorageSpec) *string {
 		if v == nil {
@@ -4059,7 +4059,7 @@ func (o InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput) Description()
 	}).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的显示名称
+// Display name of storage specification.
 func (o InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationWarmNodeStorageSpec) *string {
 		if v == nil {
@@ -4069,7 +4069,7 @@ func (o InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput) DisplayName()
 	}).(pulumi.StringPtrOutput)
 }
 
-// 存储规格的最大值，单位为 GiB
+// Maximum storage specification, measured in GiB
 func (o InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput) MaxSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationWarmNodeStorageSpec) *int {
 		if v == nil {
@@ -4079,7 +4079,7 @@ func (o InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput) MaxSize() pul
 	}).(pulumi.IntPtrOutput)
 }
 
-// 存储规格最小值，单位为 GiB
+// Minimum value for storage specification, unit: GiB.
 func (o InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput) MinSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationWarmNodeStorageSpec) *int {
 		if v == nil {
@@ -4089,7 +4089,7 @@ func (o InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput) MinSize() pul
 	}).(pulumi.IntPtrOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationWarmNodeStorageSpec) *string {
 		if v == nil {
@@ -4099,7 +4099,7 @@ func (o InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput) Name() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// 当前存储规格值，单位为 GiB
+// Current storage specification value, in GiB.
 func (o InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceInstanceConfigurationWarmNodeStorageSpec) *int {
 		if v == nil {
@@ -4110,11 +4110,11 @@ func (o InstanceInstanceConfigurationWarmNodeStorageSpecPtrOutput) Size() pulumi
 }
 
 type InstanceKibanaConfig struct {
-	// 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+	// API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
 	RequestTimeout *int `pulumi:"requestTimeout"`
-	// 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+	// Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
 	SessionKeepAlive *bool `pulumi:"sessionKeepAlive"`
-	// 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+	// Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
 	SessionTtl *int `pulumi:"sessionTtl"`
 }
 
@@ -4130,11 +4130,11 @@ type InstanceKibanaConfigInput interface {
 }
 
 type InstanceKibanaConfigArgs struct {
-	// 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+	// API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
 	RequestTimeout pulumi.IntPtrInput `pulumi:"requestTimeout"`
-	// 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+	// Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
 	SessionKeepAlive pulumi.BoolPtrInput `pulumi:"sessionKeepAlive"`
-	// 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+	// Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
 	SessionTtl pulumi.IntPtrInput `pulumi:"sessionTtl"`
 }
 
@@ -4215,17 +4215,17 @@ func (o InstanceKibanaConfigOutput) ToInstanceKibanaConfigPtrOutputWithContext(c
 	}).(InstanceKibanaConfigPtrOutput)
 }
 
-// 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+// API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
 func (o InstanceKibanaConfigOutput) RequestTimeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceKibanaConfig) *int { return v.RequestTimeout }).(pulumi.IntPtrOutput)
 }
 
-// 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+// Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
 func (o InstanceKibanaConfigOutput) SessionKeepAlive() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceKibanaConfig) *bool { return v.SessionKeepAlive }).(pulumi.BoolPtrOutput)
 }
 
-// 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+// Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
 func (o InstanceKibanaConfigOutput) SessionTtl() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceKibanaConfig) *int { return v.SessionTtl }).(pulumi.IntPtrOutput)
 }
@@ -4254,7 +4254,7 @@ func (o InstanceKibanaConfigPtrOutput) Elem() InstanceKibanaConfigOutput {
 	}).(InstanceKibanaConfigOutput)
 }
 
-// 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+// API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
 func (o InstanceKibanaConfigPtrOutput) RequestTimeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceKibanaConfig) *int {
 		if v == nil {
@@ -4264,7 +4264,7 @@ func (o InstanceKibanaConfigPtrOutput) RequestTimeout() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+// Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
 func (o InstanceKibanaConfigPtrOutput) SessionKeepAlive() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceKibanaConfig) *bool {
 		if v == nil {
@@ -4274,7 +4274,7 @@ func (o InstanceKibanaConfigPtrOutput) SessionKeepAlive() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+// Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
 func (o InstanceKibanaConfigPtrOutput) SessionTtl() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceKibanaConfig) *int {
 		if v == nil {
@@ -4285,11 +4285,11 @@ func (o InstanceKibanaConfigPtrOutput) SessionTtl() pulumi.IntPtrOutput {
 }
 
 type InstanceSubInstance struct {
-	// 企业级 SQL 分析实例 ID。
+	// Enterprise-level SQL analysis instance ID.
 	SubInstanceId *string `pulumi:"subInstanceId"`
-	// 实例状态。
+	// Instance status
 	SubInstanceStatus *string `pulumi:"subInstanceStatus"`
-	// 实例类型。
+	// Instance type
 	SubInstanceType *string `pulumi:"subInstanceType"`
 }
 
@@ -4305,11 +4305,11 @@ type InstanceSubInstanceInput interface {
 }
 
 type InstanceSubInstanceArgs struct {
-	// 企业级 SQL 分析实例 ID。
+	// Enterprise-level SQL analysis instance ID.
 	SubInstanceId pulumi.StringPtrInput `pulumi:"subInstanceId"`
-	// 实例状态。
+	// Instance status
 	SubInstanceStatus pulumi.StringPtrInput `pulumi:"subInstanceStatus"`
-	// 实例类型。
+	// Instance type
 	SubInstanceType pulumi.StringPtrInput `pulumi:"subInstanceType"`
 }
 
@@ -4364,17 +4364,17 @@ func (o InstanceSubInstanceOutput) ToInstanceSubInstanceOutputWithContext(ctx co
 	return o
 }
 
-// 企业级 SQL 分析实例 ID。
+// Enterprise-level SQL analysis instance ID.
 func (o InstanceSubInstanceOutput) SubInstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceSubInstance) *string { return v.SubInstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 实例状态。
+// Instance status
 func (o InstanceSubInstanceOutput) SubInstanceStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceSubInstance) *string { return v.SubInstanceStatus }).(pulumi.StringPtrOutput)
 }
 
-// 实例类型。
+// Instance type
 func (o InstanceSubInstanceOutput) SubInstanceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceSubInstance) *string { return v.SubInstanceType }).(pulumi.StringPtrOutput)
 }
@@ -4402,13 +4402,13 @@ func (o InstanceSubInstanceArrayOutput) Index(i pulumi.IntInput) InstanceSubInst
 type InstanceTransferInfo struct {
 	// ForbidStop
 	ForbidStop *bool `pulumi:"forbidStop"`
-	// 资源信息。
+	// Resource information
 	ReduceSpecConfig *InstanceTransferInfoReduceSpecConfig `pulumi:"reduceSpecConfig"`
-	// 数据迁移任务进度，百分制。
+	// Data migration task progress, percentage
 	TransferProgress *float64 `pulumi:"transferProgress"`
-	// 数据迁移任务状态。
+	// Data migration task status
 	TransferStatus *string `pulumi:"transferStatus"`
-	// 数据迁移任务 ID。
+	// Data migration task ID
 	TransferTaskId *string `pulumi:"transferTaskId"`
 }
 
@@ -4426,13 +4426,13 @@ type InstanceTransferInfoInput interface {
 type InstanceTransferInfoArgs struct {
 	// ForbidStop
 	ForbidStop pulumi.BoolPtrInput `pulumi:"forbidStop"`
-	// 资源信息。
+	// Resource information
 	ReduceSpecConfig InstanceTransferInfoReduceSpecConfigPtrInput `pulumi:"reduceSpecConfig"`
-	// 数据迁移任务进度，百分制。
+	// Data migration task progress, percentage
 	TransferProgress pulumi.Float64PtrInput `pulumi:"transferProgress"`
-	// 数据迁移任务状态。
+	// Data migration task status
 	TransferStatus pulumi.StringPtrInput `pulumi:"transferStatus"`
-	// 数据迁移任务 ID。
+	// Data migration task ID
 	TransferTaskId pulumi.StringPtrInput `pulumi:"transferTaskId"`
 }
 
@@ -4518,22 +4518,22 @@ func (o InstanceTransferInfoOutput) ForbidStop() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceTransferInfo) *bool { return v.ForbidStop }).(pulumi.BoolPtrOutput)
 }
 
-// 资源信息。
+// Resource information
 func (o InstanceTransferInfoOutput) ReduceSpecConfig() InstanceTransferInfoReduceSpecConfigPtrOutput {
 	return o.ApplyT(func(v InstanceTransferInfo) *InstanceTransferInfoReduceSpecConfig { return v.ReduceSpecConfig }).(InstanceTransferInfoReduceSpecConfigPtrOutput)
 }
 
-// 数据迁移任务进度，百分制。
+// Data migration task progress, percentage
 func (o InstanceTransferInfoOutput) TransferProgress() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceTransferInfo) *float64 { return v.TransferProgress }).(pulumi.Float64PtrOutput)
 }
 
-// 数据迁移任务状态。
+// Data migration task status
 func (o InstanceTransferInfoOutput) TransferStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTransferInfo) *string { return v.TransferStatus }).(pulumi.StringPtrOutput)
 }
 
-// 数据迁移任务 ID。
+// Data migration task ID
 func (o InstanceTransferInfoOutput) TransferTaskId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTransferInfo) *string { return v.TransferTaskId }).(pulumi.StringPtrOutput)
 }
@@ -4572,7 +4572,7 @@ func (o InstanceTransferInfoPtrOutput) ForbidStop() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 资源信息。
+// Resource information
 func (o InstanceTransferInfoPtrOutput) ReduceSpecConfig() InstanceTransferInfoReduceSpecConfigPtrOutput {
 	return o.ApplyT(func(v *InstanceTransferInfo) *InstanceTransferInfoReduceSpecConfig {
 		if v == nil {
@@ -4582,7 +4582,7 @@ func (o InstanceTransferInfoPtrOutput) ReduceSpecConfig() InstanceTransferInfoRe
 	}).(InstanceTransferInfoReduceSpecConfigPtrOutput)
 }
 
-// 数据迁移任务进度，百分制。
+// Data migration task progress, percentage
 func (o InstanceTransferInfoPtrOutput) TransferProgress() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *InstanceTransferInfo) *float64 {
 		if v == nil {
@@ -4592,7 +4592,7 @@ func (o InstanceTransferInfoPtrOutput) TransferProgress() pulumi.Float64PtrOutpu
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 数据迁移任务状态。
+// Data migration task status
 func (o InstanceTransferInfoPtrOutput) TransferStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceTransferInfo) *string {
 		if v == nil {
@@ -4602,7 +4602,7 @@ func (o InstanceTransferInfoPtrOutput) TransferStatus() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 数据迁移任务 ID。
+// Data migration task ID
 func (o InstanceTransferInfoPtrOutput) TransferTaskId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceTransferInfo) *string {
 		if v == nil {
@@ -4613,15 +4613,15 @@ func (o InstanceTransferInfoPtrOutput) TransferTaskId() pulumi.StringPtrOutput {
 }
 
 type InstanceTransferInfoReduceSpecConfig struct {
-	// 冷节点数量。
+	// Number of cold nodes.
 	ColdNodeNum *int `pulumi:"coldNodeNum"`
-	// 数据节点数量。
+	// Number of data nodes
 	DataNodeNum *int `pulumi:"dataNodeNum"`
-	// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+	// Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
 	EnablePureMaster *bool `pulumi:"enablePureMaster"`
-	// Master 节点数量。
+	// Number of master nodes.
 	MasterNodeNum *int `pulumi:"masterNodeNum"`
-	// 温节点数量。
+	// Number of warm nodes
 	WarmNodeNum *int `pulumi:"warmNodeNum"`
 }
 
@@ -4637,15 +4637,15 @@ type InstanceTransferInfoReduceSpecConfigInput interface {
 }
 
 type InstanceTransferInfoReduceSpecConfigArgs struct {
-	// 冷节点数量。
+	// Number of cold nodes.
 	ColdNodeNum pulumi.IntPtrInput `pulumi:"coldNodeNum"`
-	// 数据节点数量。
+	// Number of data nodes
 	DataNodeNum pulumi.IntPtrInput `pulumi:"dataNodeNum"`
-	// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+	// Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
 	EnablePureMaster pulumi.BoolPtrInput `pulumi:"enablePureMaster"`
-	// Master 节点数量。
+	// Number of master nodes.
 	MasterNodeNum pulumi.IntPtrInput `pulumi:"masterNodeNum"`
-	// 温节点数量。
+	// Number of warm nodes
 	WarmNodeNum pulumi.IntPtrInput `pulumi:"warmNodeNum"`
 }
 
@@ -4726,27 +4726,27 @@ func (o InstanceTransferInfoReduceSpecConfigOutput) ToInstanceTransferInfoReduce
 	}).(InstanceTransferInfoReduceSpecConfigPtrOutput)
 }
 
-// 冷节点数量。
+// Number of cold nodes.
 func (o InstanceTransferInfoReduceSpecConfigOutput) ColdNodeNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceTransferInfoReduceSpecConfig) *int { return v.ColdNodeNum }).(pulumi.IntPtrOutput)
 }
 
-// 数据节点数量。
+// Number of data nodes
 func (o InstanceTransferInfoReduceSpecConfigOutput) DataNodeNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceTransferInfoReduceSpecConfig) *int { return v.DataNodeNum }).(pulumi.IntPtrOutput)
 }
 
-// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+// Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
 func (o InstanceTransferInfoReduceSpecConfigOutput) EnablePureMaster() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceTransferInfoReduceSpecConfig) *bool { return v.EnablePureMaster }).(pulumi.BoolPtrOutput)
 }
 
-// Master 节点数量。
+// Number of master nodes.
 func (o InstanceTransferInfoReduceSpecConfigOutput) MasterNodeNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceTransferInfoReduceSpecConfig) *int { return v.MasterNodeNum }).(pulumi.IntPtrOutput)
 }
 
-// 温节点数量。
+// Number of warm nodes
 func (o InstanceTransferInfoReduceSpecConfigOutput) WarmNodeNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceTransferInfoReduceSpecConfig) *int { return v.WarmNodeNum }).(pulumi.IntPtrOutput)
 }
@@ -4775,7 +4775,7 @@ func (o InstanceTransferInfoReduceSpecConfigPtrOutput) Elem() InstanceTransferIn
 	}).(InstanceTransferInfoReduceSpecConfigOutput)
 }
 
-// 冷节点数量。
+// Number of cold nodes.
 func (o InstanceTransferInfoReduceSpecConfigPtrOutput) ColdNodeNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceTransferInfoReduceSpecConfig) *int {
 		if v == nil {
@@ -4785,7 +4785,7 @@ func (o InstanceTransferInfoReduceSpecConfigPtrOutput) ColdNodeNum() pulumi.IntP
 	}).(pulumi.IntPtrOutput)
 }
 
-// 数据节点数量。
+// Number of data nodes
 func (o InstanceTransferInfoReduceSpecConfigPtrOutput) DataNodeNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceTransferInfoReduceSpecConfig) *int {
 		if v == nil {
@@ -4795,7 +4795,7 @@ func (o InstanceTransferInfoReduceSpecConfigPtrOutput) DataNodeNum() pulumi.IntP
 	}).(pulumi.IntPtrOutput)
 }
 
-// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+// Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
 func (o InstanceTransferInfoReduceSpecConfigPtrOutput) EnablePureMaster() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceTransferInfoReduceSpecConfig) *bool {
 		if v == nil {
@@ -4805,7 +4805,7 @@ func (o InstanceTransferInfoReduceSpecConfigPtrOutput) EnablePureMaster() pulumi
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Master 节点数量。
+// Number of master nodes.
 func (o InstanceTransferInfoReduceSpecConfigPtrOutput) MasterNodeNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceTransferInfoReduceSpecConfig) *int {
 		if v == nil {
@@ -4815,7 +4815,7 @@ func (o InstanceTransferInfoReduceSpecConfigPtrOutput) MasterNodeNum() pulumi.In
 	}).(pulumi.IntPtrOutput)
 }
 
-// 温节点数量。
+// Number of warm nodes
 func (o InstanceTransferInfoReduceSpecConfigPtrOutput) WarmNodeNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceTransferInfoReduceSpecConfig) *int {
 		if v == nil {
@@ -4826,79 +4826,79 @@ func (o InstanceTransferInfoReduceSpecConfigPtrOutput) WarmNodeNum() pulumi.IntP
 }
 
 type GetInstanceInstanceConfiguration struct {
-	// 管理员密码。
+	// Administrator password.
 	AdminPassword string `pulumi:"adminPassword"`
-	// 管理员用户名。
+	// Administrator username.
 	AdminUserName string `pulumi:"adminUserName"`
-	// 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+	// Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
 	AutoRenew bool `pulumi:"autoRenew"`
-	// 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+	// Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
 	ChargeType string `pulumi:"chargeType"`
-	// 冷节点数量。
+	// Number of cold nodes.
 	ColdNodeNumber int `pulumi:"coldNodeNumber"`
-	// 冷节点的节点规格配置详情。
+	// Node specification details for cold nodes
 	ColdNodeResourceSpec GetInstanceInstanceConfigurationColdNodeResourceSpec `pulumi:"coldNodeResourceSpec"`
-	// 冷节点的存储规格配置详情。
+	// Details of cold node storage specification configuration
 	ColdNodeStorageSpec GetInstanceInstanceConfigurationColdNodeStorageSpec `pulumi:"coldNodeStorageSpec"`
-	// 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+	// Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
 	ConfigurationCode string `pulumi:"configurationCode"`
-	// 协调节点数量。
+	// Coordinator node count
 	CoordinatorNodeNumber int `pulumi:"coordinatorNodeNumber"`
-	// 协调节点的节点规格配置详情。
+	// Node specification configuration details for coordinator node.
 	CoordinatorNodeResourceSpec GetInstanceInstanceConfigurationCoordinatorNodeResourceSpec `pulumi:"coordinatorNodeResourceSpec"`
-	// 协调节点的存储规格配置详情。
+	// Storage specification configuration details for coordinator node.
 	CoordinatorNodeStorageSpec GetInstanceInstanceConfigurationCoordinatorNodeStorageSpec `pulumi:"coordinatorNodeStorageSpec"`
-	// 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+	// Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
 	DeletionProtection bool `pulumi:"deletionProtection"`
-	// 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+	// Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
 	EnableHttps bool `pulumi:"enableHttps"`
-	// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+	// Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
 	EnablePureMaster bool `pulumi:"enablePureMaster"`
-	// 数据节点数量。
+	// Number of data nodes
 	HotNodeNumber int `pulumi:"hotNodeNumber"`
-	// 数据节点的节点规格配置详情。
+	// Node specification configuration details for data node.
 	HotNodeResourceSpec GetInstanceInstanceConfigurationHotNodeResourceSpec `pulumi:"hotNodeResourceSpec"`
-	// 数据节点的存储规格配置详情。
+	// Data node storage specification configuration details
 	HotNodeStorageSpec GetInstanceInstanceConfigurationHotNodeStorageSpec `pulumi:"hotNodeStorageSpec"`
-	// 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+	// Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
 	InstanceName string `pulumi:"instanceName"`
-	// kibana 节点数量。
+	// Number of Kibana nodes
 	KibanaNodeNumber int `pulumi:"kibanaNodeNumber"`
-	// Kibana 节点的节点规格配置详情。
+	// Kibana node specification configuration details
 	KibanaNodeResourceSpec GetInstanceInstanceConfigurationKibanaNodeResourceSpec `pulumi:"kibanaNodeResourceSpec"`
-	// master 节点数量。
+	// Number of master nodes.
 	MasterNodeNumber int `pulumi:"masterNodeNumber"`
-	// Master 节点的节点规格配置详情。
+	// Master node specification configuration details
 	MasterNodeResourceSpec GetInstanceInstanceConfigurationMasterNodeResourceSpec `pulumi:"masterNodeResourceSpec"`
-	// Master 节点的存储规格配置详情。
+	// Storage specification details for master node
 	MasterNodeStorageSpec GetInstanceInstanceConfigurationMasterNodeStorageSpec `pulumi:"masterNodeStorageSpec"`
-	// 实例公网规格配置。
+	// Instance public network specification configuration
 	NetworkSpecs []GetInstanceInstanceConfigurationNetworkSpec `pulumi:"networkSpecs"`
-	// 实例中各种节点的数量和规格配置。
+	// Configuration of node counts and specifications in the instance
 	NodeSpecsAssigns []GetInstanceInstanceConfigurationNodeSpecsAssign `pulumi:"nodeSpecsAssigns"`
-	// 包年包月实例的购买时长，单位：月。
+	// Subscription instance purchase duration, in months.
 	Period int `pulumi:"period"`
-	// 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+	// Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
 	ProjectName string `pulumi:"projectName"`
-	// 实例所在区域。
+	// Instance region
 	RegionId string `pulumi:"regionId"`
-	// 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+	// Set subnet information for the instance. Note: The subnet must be in the primary zone.
 	Subnet GetInstanceInstanceConfigurationSubnet `pulumi:"subnet"`
-	// 标签信息。
+	// Tag information
 	Tags []GetInstanceInstanceConfigurationTag `pulumi:"tags"`
-	// API的版本，取值：2023-01-01。
+	// API version. Value: 2023-01-01.
 	Version string `pulumi:"version"`
-	// 设置实例的私有网络 VPC 信息。
+	// Set VPC information for the instance
 	Vpc GetInstanceInstanceConfigurationVpc `pulumi:"vpc"`
-	// 温节点数量。
+	// Warm node count.
 	WarmNodeNumber int `pulumi:"warmNodeNumber"`
-	// 温节点的节点规格配置详情。
+	// Warm node specification configuration details.
 	WarmNodeResourceSpec GetInstanceInstanceConfigurationWarmNodeResourceSpec `pulumi:"warmNodeResourceSpec"`
-	// 温节点的存储规格配置详情。
+	// Storage specification details for warm nodes
 	WarmNodeStorageSpec GetInstanceInstanceConfigurationWarmNodeStorageSpec `pulumi:"warmNodeStorageSpec"`
-	// 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+	// Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
 	ZoneId string `pulumi:"zoneId"`
-	// 实例的可用区数量。
+	// Number of instance availability zones.
 	ZoneNumber int `pulumi:"zoneNumber"`
 }
 
@@ -4914,79 +4914,79 @@ type GetInstanceInstanceConfigurationInput interface {
 }
 
 type GetInstanceInstanceConfigurationArgs struct {
-	// 管理员密码。
+	// Administrator password.
 	AdminPassword pulumi.StringInput `pulumi:"adminPassword"`
-	// 管理员用户名。
+	// Administrator username.
 	AdminUserName pulumi.StringInput `pulumi:"adminUserName"`
-	// 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+	// Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
 	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
-	// 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+	// Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
 	ChargeType pulumi.StringInput `pulumi:"chargeType"`
-	// 冷节点数量。
+	// Number of cold nodes.
 	ColdNodeNumber pulumi.IntInput `pulumi:"coldNodeNumber"`
-	// 冷节点的节点规格配置详情。
+	// Node specification details for cold nodes
 	ColdNodeResourceSpec GetInstanceInstanceConfigurationColdNodeResourceSpecInput `pulumi:"coldNodeResourceSpec"`
-	// 冷节点的存储规格配置详情。
+	// Details of cold node storage specification configuration
 	ColdNodeStorageSpec GetInstanceInstanceConfigurationColdNodeStorageSpecInput `pulumi:"coldNodeStorageSpec"`
-	// 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+	// Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
 	ConfigurationCode pulumi.StringInput `pulumi:"configurationCode"`
-	// 协调节点数量。
+	// Coordinator node count
 	CoordinatorNodeNumber pulumi.IntInput `pulumi:"coordinatorNodeNumber"`
-	// 协调节点的节点规格配置详情。
+	// Node specification configuration details for coordinator node.
 	CoordinatorNodeResourceSpec GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecInput `pulumi:"coordinatorNodeResourceSpec"`
-	// 协调节点的存储规格配置详情。
+	// Storage specification configuration details for coordinator node.
 	CoordinatorNodeStorageSpec GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecInput `pulumi:"coordinatorNodeStorageSpec"`
-	// 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+	// Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
 	DeletionProtection pulumi.BoolInput `pulumi:"deletionProtection"`
-	// 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+	// Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
 	EnableHttps pulumi.BoolInput `pulumi:"enableHttps"`
-	// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+	// Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
 	EnablePureMaster pulumi.BoolInput `pulumi:"enablePureMaster"`
-	// 数据节点数量。
+	// Number of data nodes
 	HotNodeNumber pulumi.IntInput `pulumi:"hotNodeNumber"`
-	// 数据节点的节点规格配置详情。
+	// Node specification configuration details for data node.
 	HotNodeResourceSpec GetInstanceInstanceConfigurationHotNodeResourceSpecInput `pulumi:"hotNodeResourceSpec"`
-	// 数据节点的存储规格配置详情。
+	// Data node storage specification configuration details
 	HotNodeStorageSpec GetInstanceInstanceConfigurationHotNodeStorageSpecInput `pulumi:"hotNodeStorageSpec"`
-	// 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+	// Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
-	// kibana 节点数量。
+	// Number of Kibana nodes
 	KibanaNodeNumber pulumi.IntInput `pulumi:"kibanaNodeNumber"`
-	// Kibana 节点的节点规格配置详情。
+	// Kibana node specification configuration details
 	KibanaNodeResourceSpec GetInstanceInstanceConfigurationKibanaNodeResourceSpecInput `pulumi:"kibanaNodeResourceSpec"`
-	// master 节点数量。
+	// Number of master nodes.
 	MasterNodeNumber pulumi.IntInput `pulumi:"masterNodeNumber"`
-	// Master 节点的节点规格配置详情。
+	// Master node specification configuration details
 	MasterNodeResourceSpec GetInstanceInstanceConfigurationMasterNodeResourceSpecInput `pulumi:"masterNodeResourceSpec"`
-	// Master 节点的存储规格配置详情。
+	// Storage specification details for master node
 	MasterNodeStorageSpec GetInstanceInstanceConfigurationMasterNodeStorageSpecInput `pulumi:"masterNodeStorageSpec"`
-	// 实例公网规格配置。
+	// Instance public network specification configuration
 	NetworkSpecs GetInstanceInstanceConfigurationNetworkSpecArrayInput `pulumi:"networkSpecs"`
-	// 实例中各种节点的数量和规格配置。
+	// Configuration of node counts and specifications in the instance
 	NodeSpecsAssigns GetInstanceInstanceConfigurationNodeSpecsAssignArrayInput `pulumi:"nodeSpecsAssigns"`
-	// 包年包月实例的购买时长，单位：月。
+	// Subscription instance purchase duration, in months.
 	Period pulumi.IntInput `pulumi:"period"`
-	// 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+	// Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
-	// 实例所在区域。
+	// Instance region
 	RegionId pulumi.StringInput `pulumi:"regionId"`
-	// 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+	// Set subnet information for the instance. Note: The subnet must be in the primary zone.
 	Subnet GetInstanceInstanceConfigurationSubnetInput `pulumi:"subnet"`
-	// 标签信息。
+	// Tag information
 	Tags GetInstanceInstanceConfigurationTagArrayInput `pulumi:"tags"`
-	// API的版本，取值：2023-01-01。
+	// API version. Value: 2023-01-01.
 	Version pulumi.StringInput `pulumi:"version"`
-	// 设置实例的私有网络 VPC 信息。
+	// Set VPC information for the instance
 	Vpc GetInstanceInstanceConfigurationVpcInput `pulumi:"vpc"`
-	// 温节点数量。
+	// Warm node count.
 	WarmNodeNumber pulumi.IntInput `pulumi:"warmNodeNumber"`
-	// 温节点的节点规格配置详情。
+	// Warm node specification configuration details.
 	WarmNodeResourceSpec GetInstanceInstanceConfigurationWarmNodeResourceSpecInput `pulumi:"warmNodeResourceSpec"`
-	// 温节点的存储规格配置详情。
+	// Storage specification details for warm nodes
 	WarmNodeStorageSpec GetInstanceInstanceConfigurationWarmNodeStorageSpecInput `pulumi:"warmNodeStorageSpec"`
-	// 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+	// Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
-	// 实例的可用区数量。
+	// Number of instance availability zones.
 	ZoneNumber pulumi.IntInput `pulumi:"zoneNumber"`
 }
 
@@ -5016,227 +5016,227 @@ func (o GetInstanceInstanceConfigurationOutput) ToGetInstanceInstanceConfigurati
 	return o
 }
 
-// 管理员密码。
+// Administrator password.
 func (o GetInstanceInstanceConfigurationOutput) AdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) string { return v.AdminPassword }).(pulumi.StringOutput)
 }
 
-// 管理员用户名。
+// Administrator username.
 func (o GetInstanceInstanceConfigurationOutput) AdminUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) string { return v.AdminUserName }).(pulumi.StringOutput)
 }
 
-// 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+// Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
 func (o GetInstanceInstanceConfigurationOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) bool { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+// Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
 func (o GetInstanceInstanceConfigurationOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 冷节点数量。
+// Number of cold nodes.
 func (o GetInstanceInstanceConfigurationOutput) ColdNodeNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) int { return v.ColdNodeNumber }).(pulumi.IntOutput)
 }
 
-// 冷节点的节点规格配置详情。
+// Node specification details for cold nodes
 func (o GetInstanceInstanceConfigurationOutput) ColdNodeResourceSpec() GetInstanceInstanceConfigurationColdNodeResourceSpecOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) GetInstanceInstanceConfigurationColdNodeResourceSpec {
 		return v.ColdNodeResourceSpec
 	}).(GetInstanceInstanceConfigurationColdNodeResourceSpecOutput)
 }
 
-// 冷节点的存储规格配置详情。
+// Details of cold node storage specification configuration
 func (o GetInstanceInstanceConfigurationOutput) ColdNodeStorageSpec() GetInstanceInstanceConfigurationColdNodeStorageSpecOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) GetInstanceInstanceConfigurationColdNodeStorageSpec {
 		return v.ColdNodeStorageSpec
 	}).(GetInstanceInstanceConfigurationColdNodeStorageSpecOutput)
 }
 
-// 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+// Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
 func (o GetInstanceInstanceConfigurationOutput) ConfigurationCode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) string { return v.ConfigurationCode }).(pulumi.StringOutput)
 }
 
-// 协调节点数量。
+// Coordinator node count
 func (o GetInstanceInstanceConfigurationOutput) CoordinatorNodeNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) int { return v.CoordinatorNodeNumber }).(pulumi.IntOutput)
 }
 
-// 协调节点的节点规格配置详情。
+// Node specification configuration details for coordinator node.
 func (o GetInstanceInstanceConfigurationOutput) CoordinatorNodeResourceSpec() GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) GetInstanceInstanceConfigurationCoordinatorNodeResourceSpec {
 		return v.CoordinatorNodeResourceSpec
 	}).(GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput)
 }
 
-// 协调节点的存储规格配置详情。
+// Storage specification configuration details for coordinator node.
 func (o GetInstanceInstanceConfigurationOutput) CoordinatorNodeStorageSpec() GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) GetInstanceInstanceConfigurationCoordinatorNodeStorageSpec {
 		return v.CoordinatorNodeStorageSpec
 	}).(GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput)
 }
 
-// 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+// Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
 func (o GetInstanceInstanceConfigurationOutput) DeletionProtection() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) bool { return v.DeletionProtection }).(pulumi.BoolOutput)
 }
 
-// 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+// Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
 func (o GetInstanceInstanceConfigurationOutput) EnableHttps() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) bool { return v.EnableHttps }).(pulumi.BoolOutput)
 }
 
-// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+// Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
 func (o GetInstanceInstanceConfigurationOutput) EnablePureMaster() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) bool { return v.EnablePureMaster }).(pulumi.BoolOutput)
 }
 
-// 数据节点数量。
+// Number of data nodes
 func (o GetInstanceInstanceConfigurationOutput) HotNodeNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) int { return v.HotNodeNumber }).(pulumi.IntOutput)
 }
 
-// 数据节点的节点规格配置详情。
+// Node specification configuration details for data node.
 func (o GetInstanceInstanceConfigurationOutput) HotNodeResourceSpec() GetInstanceInstanceConfigurationHotNodeResourceSpecOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) GetInstanceInstanceConfigurationHotNodeResourceSpec {
 		return v.HotNodeResourceSpec
 	}).(GetInstanceInstanceConfigurationHotNodeResourceSpecOutput)
 }
 
-// 数据节点的存储规格配置详情。
+// Data node storage specification configuration details
 func (o GetInstanceInstanceConfigurationOutput) HotNodeStorageSpec() GetInstanceInstanceConfigurationHotNodeStorageSpecOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) GetInstanceInstanceConfigurationHotNodeStorageSpec {
 		return v.HotNodeStorageSpec
 	}).(GetInstanceInstanceConfigurationHotNodeStorageSpecOutput)
 }
 
-// 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+// Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
 func (o GetInstanceInstanceConfigurationOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// kibana 节点数量。
+// Number of Kibana nodes
 func (o GetInstanceInstanceConfigurationOutput) KibanaNodeNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) int { return v.KibanaNodeNumber }).(pulumi.IntOutput)
 }
 
-// Kibana 节点的节点规格配置详情。
+// Kibana node specification configuration details
 func (o GetInstanceInstanceConfigurationOutput) KibanaNodeResourceSpec() GetInstanceInstanceConfigurationKibanaNodeResourceSpecOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) GetInstanceInstanceConfigurationKibanaNodeResourceSpec {
 		return v.KibanaNodeResourceSpec
 	}).(GetInstanceInstanceConfigurationKibanaNodeResourceSpecOutput)
 }
 
-// master 节点数量。
+// Number of master nodes.
 func (o GetInstanceInstanceConfigurationOutput) MasterNodeNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) int { return v.MasterNodeNumber }).(pulumi.IntOutput)
 }
 
-// Master 节点的节点规格配置详情。
+// Master node specification configuration details
 func (o GetInstanceInstanceConfigurationOutput) MasterNodeResourceSpec() GetInstanceInstanceConfigurationMasterNodeResourceSpecOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) GetInstanceInstanceConfigurationMasterNodeResourceSpec {
 		return v.MasterNodeResourceSpec
 	}).(GetInstanceInstanceConfigurationMasterNodeResourceSpecOutput)
 }
 
-// Master 节点的存储规格配置详情。
+// Storage specification details for master node
 func (o GetInstanceInstanceConfigurationOutput) MasterNodeStorageSpec() GetInstanceInstanceConfigurationMasterNodeStorageSpecOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) GetInstanceInstanceConfigurationMasterNodeStorageSpec {
 		return v.MasterNodeStorageSpec
 	}).(GetInstanceInstanceConfigurationMasterNodeStorageSpecOutput)
 }
 
-// 实例公网规格配置。
+// Instance public network specification configuration
 func (o GetInstanceInstanceConfigurationOutput) NetworkSpecs() GetInstanceInstanceConfigurationNetworkSpecArrayOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) []GetInstanceInstanceConfigurationNetworkSpec {
 		return v.NetworkSpecs
 	}).(GetInstanceInstanceConfigurationNetworkSpecArrayOutput)
 }
 
-// 实例中各种节点的数量和规格配置。
+// Configuration of node counts and specifications in the instance
 func (o GetInstanceInstanceConfigurationOutput) NodeSpecsAssigns() GetInstanceInstanceConfigurationNodeSpecsAssignArrayOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) []GetInstanceInstanceConfigurationNodeSpecsAssign {
 		return v.NodeSpecsAssigns
 	}).(GetInstanceInstanceConfigurationNodeSpecsAssignArrayOutput)
 }
 
-// 包年包月实例的购买时长，单位：月。
+// Subscription instance purchase duration, in months.
 func (o GetInstanceInstanceConfigurationOutput) Period() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) int { return v.Period }).(pulumi.IntOutput)
 }
 
-// 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+// Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
 func (o GetInstanceInstanceConfigurationOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 实例所在区域。
+// Instance region
 func (o GetInstanceInstanceConfigurationOutput) RegionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) string { return v.RegionId }).(pulumi.StringOutput)
 }
 
-// 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+// Set subnet information for the instance. Note: The subnet must be in the primary zone.
 func (o GetInstanceInstanceConfigurationOutput) Subnet() GetInstanceInstanceConfigurationSubnetOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) GetInstanceInstanceConfigurationSubnet { return v.Subnet }).(GetInstanceInstanceConfigurationSubnetOutput)
 }
 
-// 标签信息。
+// Tag information
 func (o GetInstanceInstanceConfigurationOutput) Tags() GetInstanceInstanceConfigurationTagArrayOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) []GetInstanceInstanceConfigurationTag { return v.Tags }).(GetInstanceInstanceConfigurationTagArrayOutput)
 }
 
-// API的版本，取值：2023-01-01。
+// API version. Value: 2023-01-01.
 func (o GetInstanceInstanceConfigurationOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) string { return v.Version }).(pulumi.StringOutput)
 }
 
-// 设置实例的私有网络 VPC 信息。
+// Set VPC information for the instance
 func (o GetInstanceInstanceConfigurationOutput) Vpc() GetInstanceInstanceConfigurationVpcOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) GetInstanceInstanceConfigurationVpc { return v.Vpc }).(GetInstanceInstanceConfigurationVpcOutput)
 }
 
-// 温节点数量。
+// Warm node count.
 func (o GetInstanceInstanceConfigurationOutput) WarmNodeNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) int { return v.WarmNodeNumber }).(pulumi.IntOutput)
 }
 
-// 温节点的节点规格配置详情。
+// Warm node specification configuration details.
 func (o GetInstanceInstanceConfigurationOutput) WarmNodeResourceSpec() GetInstanceInstanceConfigurationWarmNodeResourceSpecOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) GetInstanceInstanceConfigurationWarmNodeResourceSpec {
 		return v.WarmNodeResourceSpec
 	}).(GetInstanceInstanceConfigurationWarmNodeResourceSpecOutput)
 }
 
-// 温节点的存储规格配置详情。
+// Storage specification details for warm nodes
 func (o GetInstanceInstanceConfigurationOutput) WarmNodeStorageSpec() GetInstanceInstanceConfigurationWarmNodeStorageSpecOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) GetInstanceInstanceConfigurationWarmNodeStorageSpec {
 		return v.WarmNodeStorageSpec
 	}).(GetInstanceInstanceConfigurationWarmNodeStorageSpecOutput)
 }
 
-// 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+// Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
 func (o GetInstanceInstanceConfigurationOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) string { return v.ZoneId }).(pulumi.StringOutput)
 }
 
-// 实例的可用区数量。
+// Number of instance availability zones.
 func (o GetInstanceInstanceConfigurationOutput) ZoneNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfiguration) int { return v.ZoneNumber }).(pulumi.IntOutput)
 }
 
 type GetInstanceInstanceConfigurationColdNodeResourceSpec struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources for node specification, measured in cores.
 	Cpu int `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description string `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName string `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity for node specification, measured in GiB
 	Memory int `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For details on node specification types and details.
 	Name string `pulumi:"name"`
 }
 
@@ -5252,15 +5252,15 @@ type GetInstanceInstanceConfigurationColdNodeResourceSpecInput interface {
 }
 
 type GetInstanceInstanceConfigurationColdNodeResourceSpecArgs struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources for node specification, measured in cores.
 	Cpu pulumi.IntInput `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description pulumi.StringInput `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity for node specification, measured in GiB
 	Memory pulumi.IntInput `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For details on node specification types and details.
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -5290,43 +5290,43 @@ func (o GetInstanceInstanceConfigurationColdNodeResourceSpecOutput) ToGetInstanc
 	return o
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources for node specification, measured in cores.
 func (o GetInstanceInstanceConfigurationColdNodeResourceSpecOutput) Cpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationColdNodeResourceSpec) int { return v.Cpu }).(pulumi.IntOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specifications
 func (o GetInstanceInstanceConfigurationColdNodeResourceSpecOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationColdNodeResourceSpec) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification.
 func (o GetInstanceInstanceConfigurationColdNodeResourceSpecOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationColdNodeResourceSpec) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity for node specification, measured in GiB
 func (o GetInstanceInstanceConfigurationColdNodeResourceSpecOutput) Memory() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationColdNodeResourceSpec) int { return v.Memory }).(pulumi.IntOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For details on node specification types and details.
 func (o GetInstanceInstanceConfigurationColdNodeResourceSpecOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationColdNodeResourceSpec) string { return v.Name }).(pulumi.StringOutput)
 }
 
 type GetInstanceInstanceConfigurationColdNodeStorageSpec struct {
-	// 存储规格的描述信息
+	// Description of storage specification
 	Description string `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification
 	DisplayName string `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, measured in GiB
 	MaxSize int `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum storage specification, measured in GiB
 	MinSize int `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name string `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size int `pulumi:"size"`
 }
 
@@ -5342,17 +5342,17 @@ type GetInstanceInstanceConfigurationColdNodeStorageSpecInput interface {
 }
 
 type GetInstanceInstanceConfigurationColdNodeStorageSpecArgs struct {
-	// 存储规格的描述信息
+	// Description of storage specification
 	Description pulumi.StringInput `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, measured in GiB
 	MaxSize pulumi.IntInput `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum storage specification, measured in GiB
 	MinSize pulumi.IntInput `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name pulumi.StringInput `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size pulumi.IntInput `pulumi:"size"`
 }
 
@@ -5382,46 +5382,46 @@ func (o GetInstanceInstanceConfigurationColdNodeStorageSpecOutput) ToGetInstance
 	return o
 }
 
-// 存储规格的描述信息
+// Description of storage specification
 func (o GetInstanceInstanceConfigurationColdNodeStorageSpecOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationColdNodeStorageSpec) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 存储规格的显示名称
+// Display name of storage specification
 func (o GetInstanceInstanceConfigurationColdNodeStorageSpecOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationColdNodeStorageSpec) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 存储规格的最大值，单位为 GiB
+// Maximum storage specification, measured in GiB
 func (o GetInstanceInstanceConfigurationColdNodeStorageSpecOutput) MaxSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationColdNodeStorageSpec) int { return v.MaxSize }).(pulumi.IntOutput)
 }
 
-// 存储规格最小值，单位为 GiB
+// Minimum storage specification, measured in GiB
 func (o GetInstanceInstanceConfigurationColdNodeStorageSpecOutput) MinSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationColdNodeStorageSpec) int { return v.MinSize }).(pulumi.IntOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o GetInstanceInstanceConfigurationColdNodeStorageSpecOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationColdNodeStorageSpec) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 当前存储规格值，单位为 GiB
+// Current storage specification value, in GiB.
 func (o GetInstanceInstanceConfigurationColdNodeStorageSpecOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationColdNodeStorageSpec) int { return v.Size }).(pulumi.IntOutput)
 }
 
 type GetInstanceInstanceConfigurationCoordinatorNodeResourceSpec struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources of node specification, unit: cores.
 	Cpu int `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description string `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName string `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity of node specification, unit: GiB.
 	Memory int `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For details on node specification types and details.
 	Name string `pulumi:"name"`
 }
 
@@ -5437,15 +5437,15 @@ type GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecInput interface 
 }
 
 type GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecArgs struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources of node specification, unit: cores.
 	Cpu pulumi.IntInput `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description pulumi.StringInput `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity of node specification, unit: GiB.
 	Memory pulumi.IntInput `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For details on node specification types and details.
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -5475,43 +5475,43 @@ func (o GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput) ToGet
 	return o
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources of node specification, unit: cores.
 func (o GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput) Cpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationCoordinatorNodeResourceSpec) int { return v.Cpu }).(pulumi.IntOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specifications
 func (o GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationCoordinatorNodeResourceSpec) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification.
 func (o GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationCoordinatorNodeResourceSpec) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity of node specification, unit: GiB.
 func (o GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput) Memory() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationCoordinatorNodeResourceSpec) int { return v.Memory }).(pulumi.IntOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For details on node specification types and details.
 func (o GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationCoordinatorNodeResourceSpec) string { return v.Name }).(pulumi.StringOutput)
 }
 
 type GetInstanceInstanceConfigurationCoordinatorNodeStorageSpec struct {
-	// 存储规格的描述信息
+	// Description of storage specification.
 	Description string `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification
 	DisplayName string `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, in GiB
 	MaxSize int `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum value for storage specification, unit: GiB.
 	MinSize int `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name string `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size int `pulumi:"size"`
 }
 
@@ -5527,17 +5527,17 @@ type GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecInput interface {
 }
 
 type GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecArgs struct {
-	// 存储规格的描述信息
+	// Description of storage specification.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, in GiB
 	MaxSize pulumi.IntInput `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum value for storage specification, unit: GiB.
 	MinSize pulumi.IntInput `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name pulumi.StringInput `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size pulumi.IntInput `pulumi:"size"`
 }
 
@@ -5567,46 +5567,46 @@ func (o GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) ToGetI
 	return o
 }
 
-// 存储规格的描述信息
+// Description of storage specification.
 func (o GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationCoordinatorNodeStorageSpec) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 存储规格的显示名称
+// Display name of storage specification
 func (o GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationCoordinatorNodeStorageSpec) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 存储规格的最大值，单位为 GiB
+// Maximum storage specification, in GiB
 func (o GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) MaxSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationCoordinatorNodeStorageSpec) int { return v.MaxSize }).(pulumi.IntOutput)
 }
 
-// 存储规格最小值，单位为 GiB
+// Minimum value for storage specification, unit: GiB.
 func (o GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) MinSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationCoordinatorNodeStorageSpec) int { return v.MinSize }).(pulumi.IntOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationCoordinatorNodeStorageSpec) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 当前存储规格值，单位为 GiB
+// Current storage specification value, in GiB.
 func (o GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationCoordinatorNodeStorageSpec) int { return v.Size }).(pulumi.IntOutput)
 }
 
 type GetInstanceInstanceConfigurationHotNodeResourceSpec struct {
-	// 节点规格的 CPU 资源，单位为核（Core）。
+	// CPU resources of node specification, measured in cores
 	Cpu int `pulumi:"cpu"`
-	// 节点规格的描述信息。
+	// Description of node specification.
 	Description string `pulumi:"description"`
-	// 节点规格的显示名称。
+	// Display name of node specification.
 	DisplayName string `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB。
+	// Memory capacity for node specification, measured in GiB.
 	Memory int `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+	// Node specification. For details on node specification types and details, see Product Specifications.
 	Name string `pulumi:"name"`
 }
 
@@ -5622,15 +5622,15 @@ type GetInstanceInstanceConfigurationHotNodeResourceSpecInput interface {
 }
 
 type GetInstanceInstanceConfigurationHotNodeResourceSpecArgs struct {
-	// 节点规格的 CPU 资源，单位为核（Core）。
+	// CPU resources of node specification, measured in cores
 	Cpu pulumi.IntInput `pulumi:"cpu"`
-	// 节点规格的描述信息。
+	// Description of node specification.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 节点规格的显示名称。
+	// Display name of node specification.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB。
+	// Memory capacity for node specification, measured in GiB.
 	Memory pulumi.IntInput `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+	// Node specification. For details on node specification types and details, see Product Specifications.
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -5660,43 +5660,43 @@ func (o GetInstanceInstanceConfigurationHotNodeResourceSpecOutput) ToGetInstance
 	return o
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）。
+// CPU resources of node specification, measured in cores
 func (o GetInstanceInstanceConfigurationHotNodeResourceSpecOutput) Cpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationHotNodeResourceSpec) int { return v.Cpu }).(pulumi.IntOutput)
 }
 
-// 节点规格的描述信息。
+// Description of node specification.
 func (o GetInstanceInstanceConfigurationHotNodeResourceSpecOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationHotNodeResourceSpec) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 节点规格的显示名称。
+// Display name of node specification.
 func (o GetInstanceInstanceConfigurationHotNodeResourceSpecOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationHotNodeResourceSpec) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 节点规格的内存容量，单位 GiB。
+// Memory capacity for node specification, measured in GiB.
 func (o GetInstanceInstanceConfigurationHotNodeResourceSpecOutput) Memory() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationHotNodeResourceSpec) int { return v.Memory }).(pulumi.IntOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+// Node specification. For details on node specification types and details, see Product Specifications.
 func (o GetInstanceInstanceConfigurationHotNodeResourceSpecOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationHotNodeResourceSpec) string { return v.Name }).(pulumi.StringOutput)
 }
 
 type GetInstanceInstanceConfigurationHotNodeStorageSpec struct {
-	// 存储规格的描述信息。
+	// Description of storage specification
 	Description string `pulumi:"description"`
-	// 存储规格的显示名称。
+	// Display name of storage specification.
 	DisplayName string `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB。
+	// Maximum storage specification, in GiB
 	MaxSize int `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB。
+	// Minimum storage specification, measured in GiB.
 	MinSize int `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name string `pulumi:"name"`
-	// 配置的可用磁盘空间大小。
+	// Configured available disk space size
 	Size int `pulumi:"size"`
 }
 
@@ -5712,17 +5712,17 @@ type GetInstanceInstanceConfigurationHotNodeStorageSpecInput interface {
 }
 
 type GetInstanceInstanceConfigurationHotNodeStorageSpecArgs struct {
-	// 存储规格的描述信息。
+	// Description of storage specification
 	Description pulumi.StringInput `pulumi:"description"`
-	// 存储规格的显示名称。
+	// Display name of storage specification.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB。
+	// Maximum storage specification, in GiB
 	MaxSize pulumi.IntInput `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB。
+	// Minimum storage specification, measured in GiB.
 	MinSize pulumi.IntInput `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name pulumi.StringInput `pulumi:"name"`
-	// 配置的可用磁盘空间大小。
+	// Configured available disk space size
 	Size pulumi.IntInput `pulumi:"size"`
 }
 
@@ -5752,46 +5752,46 @@ func (o GetInstanceInstanceConfigurationHotNodeStorageSpecOutput) ToGetInstanceI
 	return o
 }
 
-// 存储规格的描述信息。
+// Description of storage specification
 func (o GetInstanceInstanceConfigurationHotNodeStorageSpecOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationHotNodeStorageSpec) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 存储规格的显示名称。
+// Display name of storage specification.
 func (o GetInstanceInstanceConfigurationHotNodeStorageSpecOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationHotNodeStorageSpec) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 存储规格的最大值，单位为 GiB。
+// Maximum storage specification, in GiB
 func (o GetInstanceInstanceConfigurationHotNodeStorageSpecOutput) MaxSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationHotNodeStorageSpec) int { return v.MaxSize }).(pulumi.IntOutput)
 }
 
-// 存储规格最小值，单位为 GiB。
+// Minimum storage specification, measured in GiB.
 func (o GetInstanceInstanceConfigurationHotNodeStorageSpecOutput) MinSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationHotNodeStorageSpec) int { return v.MinSize }).(pulumi.IntOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o GetInstanceInstanceConfigurationHotNodeStorageSpecOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationHotNodeStorageSpec) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 配置的可用磁盘空间大小。
+// Configured available disk space size
 func (o GetInstanceInstanceConfigurationHotNodeStorageSpecOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationHotNodeStorageSpec) int { return v.Size }).(pulumi.IntOutput)
 }
 
 type GetInstanceInstanceConfigurationKibanaNodeResourceSpec struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources for node specification, measured in cores.
 	Cpu int `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description string `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName string `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity for node specification, measured in GiB
 	Memory int `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For information about node specification types and details, please refer to the documentation.
 	Name string `pulumi:"name"`
 }
 
@@ -5807,15 +5807,15 @@ type GetInstanceInstanceConfigurationKibanaNodeResourceSpecInput interface {
 }
 
 type GetInstanceInstanceConfigurationKibanaNodeResourceSpecArgs struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources for node specification, measured in cores.
 	Cpu pulumi.IntInput `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description pulumi.StringInput `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity for node specification, measured in GiB
 	Memory pulumi.IntInput `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For information about node specification types and details, please refer to the documentation.
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -5845,41 +5845,41 @@ func (o GetInstanceInstanceConfigurationKibanaNodeResourceSpecOutput) ToGetInsta
 	return o
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources for node specification, measured in cores.
 func (o GetInstanceInstanceConfigurationKibanaNodeResourceSpecOutput) Cpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationKibanaNodeResourceSpec) int { return v.Cpu }).(pulumi.IntOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specifications
 func (o GetInstanceInstanceConfigurationKibanaNodeResourceSpecOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationKibanaNodeResourceSpec) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification.
 func (o GetInstanceInstanceConfigurationKibanaNodeResourceSpecOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationKibanaNodeResourceSpec) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity for node specification, measured in GiB
 func (o GetInstanceInstanceConfigurationKibanaNodeResourceSpecOutput) Memory() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationKibanaNodeResourceSpec) int { return v.Memory }).(pulumi.IntOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For information about node specification types and details, please refer to the documentation.
 func (o GetInstanceInstanceConfigurationKibanaNodeResourceSpecOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationKibanaNodeResourceSpec) string { return v.Name }).(pulumi.StringOutput)
 }
 
 type GetInstanceInstanceConfigurationMasterNodeResourceSpec struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources of node specification, unit: cores.
 	Cpu int `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description string `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification
 	DisplayName string `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity of node specification, unit: GiB.
 	Memory int `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For information about node specification types and details, please refer to the documentation.
 	Name string `pulumi:"name"`
 }
 
@@ -5895,15 +5895,15 @@ type GetInstanceInstanceConfigurationMasterNodeResourceSpecInput interface {
 }
 
 type GetInstanceInstanceConfigurationMasterNodeResourceSpecArgs struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources of node specification, unit: cores.
 	Cpu pulumi.IntInput `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specifications
 	Description pulumi.StringInput `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity of node specification, unit: GiB.
 	Memory pulumi.IntInput `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For information about node specification types and details, please refer to the documentation.
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -5933,43 +5933,43 @@ func (o GetInstanceInstanceConfigurationMasterNodeResourceSpecOutput) ToGetInsta
 	return o
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources of node specification, unit: cores.
 func (o GetInstanceInstanceConfigurationMasterNodeResourceSpecOutput) Cpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationMasterNodeResourceSpec) int { return v.Cpu }).(pulumi.IntOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specifications
 func (o GetInstanceInstanceConfigurationMasterNodeResourceSpecOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationMasterNodeResourceSpec) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification
 func (o GetInstanceInstanceConfigurationMasterNodeResourceSpecOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationMasterNodeResourceSpec) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity of node specification, unit: GiB.
 func (o GetInstanceInstanceConfigurationMasterNodeResourceSpecOutput) Memory() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationMasterNodeResourceSpec) int { return v.Memory }).(pulumi.IntOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For information about node specification types and details, please refer to the documentation.
 func (o GetInstanceInstanceConfigurationMasterNodeResourceSpecOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationMasterNodeResourceSpec) string { return v.Name }).(pulumi.StringOutput)
 }
 
 type GetInstanceInstanceConfigurationMasterNodeStorageSpec struct {
-	// 存储规格的描述信息
+	// Description of storage specification.
 	Description string `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification.
 	DisplayName string `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, measured in GiB
 	MaxSize int `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum value for storage specification, unit: GiB.
 	MinSize int `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name string `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size int `pulumi:"size"`
 }
 
@@ -5985,17 +5985,17 @@ type GetInstanceInstanceConfigurationMasterNodeStorageSpecInput interface {
 }
 
 type GetInstanceInstanceConfigurationMasterNodeStorageSpecArgs struct {
-	// 存储规格的描述信息
+	// Description of storage specification.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, measured in GiB
 	MaxSize pulumi.IntInput `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum value for storage specification, unit: GiB.
 	MinSize pulumi.IntInput `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name pulumi.StringInput `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size pulumi.IntInput `pulumi:"size"`
 }
 
@@ -6025,44 +6025,44 @@ func (o GetInstanceInstanceConfigurationMasterNodeStorageSpecOutput) ToGetInstan
 	return o
 }
 
-// 存储规格的描述信息
+// Description of storage specification.
 func (o GetInstanceInstanceConfigurationMasterNodeStorageSpecOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationMasterNodeStorageSpec) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 存储规格的显示名称
+// Display name of storage specification.
 func (o GetInstanceInstanceConfigurationMasterNodeStorageSpecOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationMasterNodeStorageSpec) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 存储规格的最大值，单位为 GiB
+// Maximum storage specification, measured in GiB
 func (o GetInstanceInstanceConfigurationMasterNodeStorageSpecOutput) MaxSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationMasterNodeStorageSpec) int { return v.MaxSize }).(pulumi.IntOutput)
 }
 
-// 存储规格最小值，单位为 GiB
+// Minimum value for storage specification, unit: GiB.
 func (o GetInstanceInstanceConfigurationMasterNodeStorageSpecOutput) MinSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationMasterNodeStorageSpec) int { return v.MinSize }).(pulumi.IntOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o GetInstanceInstanceConfigurationMasterNodeStorageSpecOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationMasterNodeStorageSpec) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 当前存储规格值，单位为 GiB
+// Current storage specification value, in GiB.
 func (o GetInstanceInstanceConfigurationMasterNodeStorageSpecOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationMasterNodeStorageSpec) int { return v.Size }).(pulumi.IntOutput)
 }
 
 type GetInstanceInstanceConfigurationNetworkSpec struct {
-	// 公网IP的带宽上限，默认为“1”，单位：Mbps。
+	// Public IP bandwidth limit. Default is '1', unit: Mbps.
 	Bandwidth int `pulumi:"bandwidth"`
-	// 开启/关闭
+	// Enable/Disable
 	IsOpen bool `pulumi:"isOpen"`
-	// 实例公网资源规格名称
+	// Instance public resource specification name
 	SpecName string `pulumi:"specName"`
-	// 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+	// Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
 	Type string `pulumi:"type"`
 }
 
@@ -6078,13 +6078,13 @@ type GetInstanceInstanceConfigurationNetworkSpecInput interface {
 }
 
 type GetInstanceInstanceConfigurationNetworkSpecArgs struct {
-	// 公网IP的带宽上限，默认为“1”，单位：Mbps。
+	// Public IP bandwidth limit. Default is '1', unit: Mbps.
 	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
-	// 开启/关闭
+	// Enable/Disable
 	IsOpen pulumi.BoolInput `pulumi:"isOpen"`
-	// 实例公网资源规格名称
+	// Instance public resource specification name
 	SpecName pulumi.StringInput `pulumi:"specName"`
-	// 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+	// Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -6139,22 +6139,22 @@ func (o GetInstanceInstanceConfigurationNetworkSpecOutput) ToGetInstanceInstance
 	return o
 }
 
-// 公网IP的带宽上限，默认为“1”，单位：Mbps。
+// Public IP bandwidth limit. Default is '1', unit: Mbps.
 func (o GetInstanceInstanceConfigurationNetworkSpecOutput) Bandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationNetworkSpec) int { return v.Bandwidth }).(pulumi.IntOutput)
 }
 
-// 开启/关闭
+// Enable/Disable
 func (o GetInstanceInstanceConfigurationNetworkSpecOutput) IsOpen() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationNetworkSpec) bool { return v.IsOpen }).(pulumi.BoolOutput)
 }
 
-// 实例公网资源规格名称
+// Instance public resource specification name
 func (o GetInstanceInstanceConfigurationNetworkSpecOutput) SpecName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationNetworkSpec) string { return v.SpecName }).(pulumi.StringOutput)
 }
 
-// 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+// Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
 func (o GetInstanceInstanceConfigurationNetworkSpecOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationNetworkSpec) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -6180,17 +6180,17 @@ func (o GetInstanceInstanceConfigurationNetworkSpecArrayOutput) Index(i pulumi.I
 }
 
 type GetInstanceInstanceConfigurationNodeSpecsAssign struct {
-	// 磁盘额外性能包相关配置。
+	// Disk extra performance package configuration.
 	ExtraPerformance GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformance `pulumi:"extraPerformance"`
-	// 节点数量。配置数据节点数量时，在不同部署方式下，需要注意以下信息：单可用区部署：建议生产环境至少配置 3 个数据节点，配置 2 个节点时存在脑裂风险。如果启用专有主节点，2 个数据节点不会脑裂。双可用区部署，默认启用专有主节点：建议生产环境至少配置 4 个数据节点，即每个可用区两个数据节点。三可用区部署，默认启用专有主节点：建议生产环境至少配置 6 个数据节点，即每个可用区两个数据节点。数据节点数量可设范围为 1~100，如果有更多数据节点的需求，可申请开白提升配额到 200。配置 Master 节点：如果没有启用专有主节点，那么 Master 节点的配置和数据节点相同，否则 Master 配置是独立的。配置专有主节点，如需启用专有主节点，数量默认配置为 3。配置 Kibana 节点，数量固定为 1。配置协调节点，如需启用，生产环境建议至少 2 个协调节点，可配范围为 2~50。温数据节点：如需启用，生产环境建议至少 3 个温数据节点，最多可配置 100 个。冷数据节点：如需启用，生产环境建议至少 2 个温数据节点，最多可配置 100 个。
+	// Node count. When configuring the number of data nodes, note the following based on deployment mode: Single availability zone deployment: For production environments, configure at least 3 data nodes. Configuring 2 nodes poses a split-brain risk. If dedicated master nodes are enabled, 2 data nodes will not result in split-brain. Dual availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 4 data nodes—2 per availability zone. Triple availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 6 data nodes—2 per availability zone. You can set the number of data nodes from 1 to 100. If you need more, apply to increase the quota to 200. Master node configuration: If dedicated master nodes are not enabled, master node configuration matches data nodes; otherwise, master node configuration is independent. Dedicated master node configuration: If you need to enable dedicated master nodes, the default number is 3. Kibana node configuration: The number is fixed at 1. Coordinator node configuration: If enabled, configure at least 2 coordinator nodes for production environments. The configurable range is 2–50. Warm data nodes: If enabled, configure at least 3 warm data nodes for production environments, up to 100. Cold data nodes: If enabled, configure at least 2 cold data nodes for production environments, up to 100.
 	Number int `pulumi:"number"`
-	// 计算资源规格名称。您可以通过调用DescribeNodeAvailableSpecs接口获取可用的节点规格列表。如需了解规格详情，请参见V2 实例规格
+	// Compute resource specification name. You can call the DescribeNodeAvailableSpecs API to get the list of available node specifications. For details, see V2 instance specifications.
 	ResourceSpecName string `pulumi:"resourceSpecName"`
-	// 存储容量，单位为 GiB。默认值为 100GiB，调整步长为 10GiB。说明Kibana 节点的 StorageSize 设置为0，即"StorageSize": 0。专有主节点和协调节点的 StorageSize 默认是 20。
+	// Storage capacity, measured in GiB. Default value is 100 GiB, adjustment step is 10 GiB. Note: StorageSize for Kibana nodes is set to 0, i.e., "StorageSize": 0. StorageSize for dedicated master and coordinator nodes defaults to 20
 	StorageSize int `pulumi:"storageSize"`
-	// 存储规格名称，当前支持的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0。es.volume.essd.flexpl-standard：标准版-高性能云盘-flexpl。说明Kibana 节点的 StorageSpecName 设置为空，即"StorageSpecName": ""。
+	// Storage specification name. Currently supported specifications: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0. es.volume.essd.flexpl-standard: Standard Edition   - High Performance Cloud Disk   - flexpl. Note: StorageSpecName for Kibana nodes is set to empty, i.e., "StorageSpecName": ""
 	StorageSpecName string `pulumi:"storageSpecName"`
-	// 节点类型。请先了解节点类型的作用，然后结合业务判断是否需要创建，详情请参见节点类型。Master：Master 节点。Hot：数据节点。Cold：冷数据节点。Warm：温数据节点。Kibana：Kibana 节点。Coordinator：协调节点。
+	// Node type. Please understand the function of each node type first, then determine whether to create based on your business needs. For details, see node types. Master: Master node. Hot: Data node. Cold: Cold data node. Warm: Warm data node. Kibana: Kibana node. Coordinator: Coordinator node
 	Type string `pulumi:"type"`
 }
 
@@ -6206,17 +6206,17 @@ type GetInstanceInstanceConfigurationNodeSpecsAssignInput interface {
 }
 
 type GetInstanceInstanceConfigurationNodeSpecsAssignArgs struct {
-	// 磁盘额外性能包相关配置。
+	// Disk extra performance package configuration.
 	ExtraPerformance GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceInput `pulumi:"extraPerformance"`
-	// 节点数量。配置数据节点数量时，在不同部署方式下，需要注意以下信息：单可用区部署：建议生产环境至少配置 3 个数据节点，配置 2 个节点时存在脑裂风险。如果启用专有主节点，2 个数据节点不会脑裂。双可用区部署，默认启用专有主节点：建议生产环境至少配置 4 个数据节点，即每个可用区两个数据节点。三可用区部署，默认启用专有主节点：建议生产环境至少配置 6 个数据节点，即每个可用区两个数据节点。数据节点数量可设范围为 1~100，如果有更多数据节点的需求，可申请开白提升配额到 200。配置 Master 节点：如果没有启用专有主节点，那么 Master 节点的配置和数据节点相同，否则 Master 配置是独立的。配置专有主节点，如需启用专有主节点，数量默认配置为 3。配置 Kibana 节点，数量固定为 1。配置协调节点，如需启用，生产环境建议至少 2 个协调节点，可配范围为 2~50。温数据节点：如需启用，生产环境建议至少 3 个温数据节点，最多可配置 100 个。冷数据节点：如需启用，生产环境建议至少 2 个温数据节点，最多可配置 100 个。
+	// Node count. When configuring the number of data nodes, note the following based on deployment mode: Single availability zone deployment: For production environments, configure at least 3 data nodes. Configuring 2 nodes poses a split-brain risk. If dedicated master nodes are enabled, 2 data nodes will not result in split-brain. Dual availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 4 data nodes—2 per availability zone. Triple availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 6 data nodes—2 per availability zone. You can set the number of data nodes from 1 to 100. If you need more, apply to increase the quota to 200. Master node configuration: If dedicated master nodes are not enabled, master node configuration matches data nodes; otherwise, master node configuration is independent. Dedicated master node configuration: If you need to enable dedicated master nodes, the default number is 3. Kibana node configuration: The number is fixed at 1. Coordinator node configuration: If enabled, configure at least 2 coordinator nodes for production environments. The configurable range is 2–50. Warm data nodes: If enabled, configure at least 3 warm data nodes for production environments, up to 100. Cold data nodes: If enabled, configure at least 2 cold data nodes for production environments, up to 100.
 	Number pulumi.IntInput `pulumi:"number"`
-	// 计算资源规格名称。您可以通过调用DescribeNodeAvailableSpecs接口获取可用的节点规格列表。如需了解规格详情，请参见V2 实例规格
+	// Compute resource specification name. You can call the DescribeNodeAvailableSpecs API to get the list of available node specifications. For details, see V2 instance specifications.
 	ResourceSpecName pulumi.StringInput `pulumi:"resourceSpecName"`
-	// 存储容量，单位为 GiB。默认值为 100GiB，调整步长为 10GiB。说明Kibana 节点的 StorageSize 设置为0，即"StorageSize": 0。专有主节点和协调节点的 StorageSize 默认是 20。
+	// Storage capacity, measured in GiB. Default value is 100 GiB, adjustment step is 10 GiB. Note: StorageSize for Kibana nodes is set to 0, i.e., "StorageSize": 0. StorageSize for dedicated master and coordinator nodes defaults to 20
 	StorageSize pulumi.IntInput `pulumi:"storageSize"`
-	// 存储规格名称，当前支持的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0。es.volume.essd.flexpl-standard：标准版-高性能云盘-flexpl。说明Kibana 节点的 StorageSpecName 设置为空，即"StorageSpecName": ""。
+	// Storage specification name. Currently supported specifications: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0. es.volume.essd.flexpl-standard: Standard Edition   - High Performance Cloud Disk   - flexpl. Note: StorageSpecName for Kibana nodes is set to empty, i.e., "StorageSpecName": ""
 	StorageSpecName pulumi.StringInput `pulumi:"storageSpecName"`
-	// 节点类型。请先了解节点类型的作用，然后结合业务判断是否需要创建，详情请参见节点类型。Master：Master 节点。Hot：数据节点。Cold：冷数据节点。Warm：温数据节点。Kibana：Kibana 节点。Coordinator：协调节点。
+	// Node type. Please understand the function of each node type first, then determine whether to create based on your business needs. For details, see node types. Master: Master node. Hot: Data node. Cold: Cold data node. Warm: Warm data node. Kibana: Kibana node. Coordinator: Coordinator node
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -6271,34 +6271,34 @@ func (o GetInstanceInstanceConfigurationNodeSpecsAssignOutput) ToGetInstanceInst
 	return o
 }
 
-// 磁盘额外性能包相关配置。
+// Disk extra performance package configuration.
 func (o GetInstanceInstanceConfigurationNodeSpecsAssignOutput) ExtraPerformance() GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationNodeSpecsAssign) GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformance {
 		return v.ExtraPerformance
 	}).(GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceOutput)
 }
 
-// 节点数量。配置数据节点数量时，在不同部署方式下，需要注意以下信息：单可用区部署：建议生产环境至少配置 3 个数据节点，配置 2 个节点时存在脑裂风险。如果启用专有主节点，2 个数据节点不会脑裂。双可用区部署，默认启用专有主节点：建议生产环境至少配置 4 个数据节点，即每个可用区两个数据节点。三可用区部署，默认启用专有主节点：建议生产环境至少配置 6 个数据节点，即每个可用区两个数据节点。数据节点数量可设范围为 1~100，如果有更多数据节点的需求，可申请开白提升配额到 200。配置 Master 节点：如果没有启用专有主节点，那么 Master 节点的配置和数据节点相同，否则 Master 配置是独立的。配置专有主节点，如需启用专有主节点，数量默认配置为 3。配置 Kibana 节点，数量固定为 1。配置协调节点，如需启用，生产环境建议至少 2 个协调节点，可配范围为 2~50。温数据节点：如需启用，生产环境建议至少 3 个温数据节点，最多可配置 100 个。冷数据节点：如需启用，生产环境建议至少 2 个温数据节点，最多可配置 100 个。
+// Node count. When configuring the number of data nodes, note the following based on deployment mode: Single availability zone deployment: For production environments, configure at least 3 data nodes. Configuring 2 nodes poses a split-brain risk. If dedicated master nodes are enabled, 2 data nodes will not result in split-brain. Dual availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 4 data nodes—2 per availability zone. Triple availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 6 data nodes—2 per availability zone. You can set the number of data nodes from 1 to 100. If you need more, apply to increase the quota to 200. Master node configuration: If dedicated master nodes are not enabled, master node configuration matches data nodes; otherwise, master node configuration is independent. Dedicated master node configuration: If you need to enable dedicated master nodes, the default number is 3. Kibana node configuration: The number is fixed at 1. Coordinator node configuration: If enabled, configure at least 2 coordinator nodes for production environments. The configurable range is 2–50. Warm data nodes: If enabled, configure at least 3 warm data nodes for production environments, up to 100. Cold data nodes: If enabled, configure at least 2 cold data nodes for production environments, up to 100.
 func (o GetInstanceInstanceConfigurationNodeSpecsAssignOutput) Number() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationNodeSpecsAssign) int { return v.Number }).(pulumi.IntOutput)
 }
 
-// 计算资源规格名称。您可以通过调用DescribeNodeAvailableSpecs接口获取可用的节点规格列表。如需了解规格详情，请参见V2 实例规格
+// Compute resource specification name. You can call the DescribeNodeAvailableSpecs API to get the list of available node specifications. For details, see V2 instance specifications.
 func (o GetInstanceInstanceConfigurationNodeSpecsAssignOutput) ResourceSpecName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationNodeSpecsAssign) string { return v.ResourceSpecName }).(pulumi.StringOutput)
 }
 
-// 存储容量，单位为 GiB。默认值为 100GiB，调整步长为 10GiB。说明Kibana 节点的 StorageSize 设置为0，即"StorageSize": 0。专有主节点和协调节点的 StorageSize 默认是 20。
+// Storage capacity, measured in GiB. Default value is 100 GiB, adjustment step is 10 GiB. Note: StorageSize for Kibana nodes is set to 0, i.e., "StorageSize": 0. StorageSize for dedicated master and coordinator nodes defaults to 20
 func (o GetInstanceInstanceConfigurationNodeSpecsAssignOutput) StorageSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationNodeSpecsAssign) int { return v.StorageSize }).(pulumi.IntOutput)
 }
 
-// 存储规格名称，当前支持的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0。es.volume.essd.flexpl-standard：标准版-高性能云盘-flexpl。说明Kibana 节点的 StorageSpecName 设置为空，即"StorageSpecName": ""。
+// Storage specification name. Currently supported specifications: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0. es.volume.essd.flexpl-standard: Standard Edition   - High Performance Cloud Disk   - flexpl. Note: StorageSpecName for Kibana nodes is set to empty, i.e., "StorageSpecName": ""
 func (o GetInstanceInstanceConfigurationNodeSpecsAssignOutput) StorageSpecName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationNodeSpecsAssign) string { return v.StorageSpecName }).(pulumi.StringOutput)
 }
 
-// 节点类型。请先了解节点类型的作用，然后结合业务判断是否需要创建，详情请参见节点类型。Master：Master 节点。Hot：数据节点。Cold：冷数据节点。Warm：温数据节点。Kibana：Kibana 节点。Coordinator：协调节点。
+// Node type. Please understand the function of each node type first, then determine whether to create based on your business needs. For details, see node types. Master: Master node. Hot: Data node. Cold: Cold data node. Warm: Warm data node. Kibana: Kibana node. Coordinator: Coordinator node
 func (o GetInstanceInstanceConfigurationNodeSpecsAssignOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationNodeSpecsAssign) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -6324,7 +6324,7 @@ func (o GetInstanceInstanceConfigurationNodeSpecsAssignArrayOutput) Index(i pulu
 }
 
 type GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformance struct {
-	// 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+	// When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
 	Throughput int `pulumi:"throughput"`
 }
 
@@ -6340,7 +6340,7 @@ type GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceInput interf
 }
 
 type GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceArgs struct {
-	// 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+	// When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
 	Throughput pulumi.IntInput `pulumi:"throughput"`
 }
 
@@ -6370,7 +6370,7 @@ func (o GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceOutput) T
 	return o
 }
 
-// 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+// When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
 func (o GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceOutput) Throughput() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformance) int { return v.Throughput }).(pulumi.IntOutput)
 }
@@ -6378,7 +6378,7 @@ func (o GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceOutput) T
 type GetInstanceInstanceConfigurationSubnet struct {
 	// Subnet ID。
 	SubnetId string `pulumi:"subnetId"`
-	// Subnet 名称。
+	// Subnet name
 	SubnetName string `pulumi:"subnetName"`
 }
 
@@ -6396,7 +6396,7 @@ type GetInstanceInstanceConfigurationSubnetInput interface {
 type GetInstanceInstanceConfigurationSubnetArgs struct {
 	// Subnet ID。
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// Subnet 名称。
+	// Subnet name
 	SubnetName pulumi.StringInput `pulumi:"subnetName"`
 }
 
@@ -6431,15 +6431,15 @@ func (o GetInstanceInstanceConfigurationSubnetOutput) SubnetId() pulumi.StringOu
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationSubnet) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// Subnet 名称。
+// Subnet name
 func (o GetInstanceInstanceConfigurationSubnetOutput) SubnetName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationSubnet) string { return v.SubnetName }).(pulumi.StringOutput)
 }
 
 type GetInstanceInstanceConfigurationTag struct {
-	// 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+	// Tag key for user labels. Length limit: 1–128 characters. Case-sensitive. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and @ are allowed. Duplicate tag keys are not allowed for the same resource
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+	// Tag value for user tag. Length limit: 0–256 characters. Case-sensitive, cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscore (_), period (.), colon (:), slash (/), equals (=), plus (+), minus (-), and @
 	Value string `pulumi:"value"`
 }
 
@@ -6455,9 +6455,9 @@ type GetInstanceInstanceConfigurationTagInput interface {
 }
 
 type GetInstanceInstanceConfigurationTagArgs struct {
-	// 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+	// Tag key for user labels. Length limit: 1–128 characters. Case-sensitive. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and @ are allowed. Duplicate tag keys are not allowed for the same resource
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+	// Tag value for user tag. Length limit: 0–256 characters. Case-sensitive, cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscore (_), period (.), colon (:), slash (/), equals (=), plus (+), minus (-), and @
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -6512,12 +6512,12 @@ func (o GetInstanceInstanceConfigurationTagOutput) ToGetInstanceInstanceConfigur
 	return o
 }
 
-// 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+// Tag key for user labels. Length limit: 1–128 characters. Case-sensitive. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and @ are allowed. Duplicate tag keys are not allowed for the same resource
 func (o GetInstanceInstanceConfigurationTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+// Tag value for user tag. Length limit: 0–256 characters. Case-sensitive, cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscore (_), period (.), colon (:), slash (/), equals (=), plus (+), minus (-), and @
 func (o GetInstanceInstanceConfigurationTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -6545,7 +6545,7 @@ func (o GetInstanceInstanceConfigurationTagArrayOutput) Index(i pulumi.IntInput)
 type GetInstanceInstanceConfigurationVpc struct {
 	// VPC ID。
 	VpcId string `pulumi:"vpcId"`
-	// VPC 名称。
+	// VPC name
 	VpcName string `pulumi:"vpcName"`
 }
 
@@ -6563,7 +6563,7 @@ type GetInstanceInstanceConfigurationVpcInput interface {
 type GetInstanceInstanceConfigurationVpcArgs struct {
 	// VPC ID。
 	VpcId pulumi.StringInput `pulumi:"vpcId"`
-	// VPC 名称。
+	// VPC name
 	VpcName pulumi.StringInput `pulumi:"vpcName"`
 }
 
@@ -6598,21 +6598,21 @@ func (o GetInstanceInstanceConfigurationVpcOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationVpc) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// VPC 名称。
+// VPC name
 func (o GetInstanceInstanceConfigurationVpcOutput) VpcName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationVpc) string { return v.VpcName }).(pulumi.StringOutput)
 }
 
 type GetInstanceInstanceConfigurationWarmNodeResourceSpec struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources for node specification, measured in cores.
 	Cpu int `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specification
 	Description string `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName string `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity for node specification, measured in GiB
 	Memory int `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For details on node specification types and details.
 	Name string `pulumi:"name"`
 }
 
@@ -6628,15 +6628,15 @@ type GetInstanceInstanceConfigurationWarmNodeResourceSpecInput interface {
 }
 
 type GetInstanceInstanceConfigurationWarmNodeResourceSpecArgs struct {
-	// 节点规格的 CPU 资源，单位为核（Core）
+	// CPU resources for node specification, measured in cores.
 	Cpu pulumi.IntInput `pulumi:"cpu"`
-	// 节点规格的描述信息
+	// Description of node specification
 	Description pulumi.StringInput `pulumi:"description"`
-	// 节点规格的显示名称
+	// Display name of node specification.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 节点规格的内存容量，单位 GiB
+	// Memory capacity for node specification, measured in GiB
 	Memory pulumi.IntInput `pulumi:"memory"`
-	// 节点规格。如需了解节点规格类型和详情
+	// Node specification. For details on node specification types and details.
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -6666,43 +6666,43 @@ func (o GetInstanceInstanceConfigurationWarmNodeResourceSpecOutput) ToGetInstanc
 	return o
 }
 
-// 节点规格的 CPU 资源，单位为核（Core）
+// CPU resources for node specification, measured in cores.
 func (o GetInstanceInstanceConfigurationWarmNodeResourceSpecOutput) Cpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationWarmNodeResourceSpec) int { return v.Cpu }).(pulumi.IntOutput)
 }
 
-// 节点规格的描述信息
+// Description of node specification
 func (o GetInstanceInstanceConfigurationWarmNodeResourceSpecOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationWarmNodeResourceSpec) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 节点规格的显示名称
+// Display name of node specification.
 func (o GetInstanceInstanceConfigurationWarmNodeResourceSpecOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationWarmNodeResourceSpec) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 节点规格的内存容量，单位 GiB
+// Memory capacity for node specification, measured in GiB
 func (o GetInstanceInstanceConfigurationWarmNodeResourceSpecOutput) Memory() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationWarmNodeResourceSpec) int { return v.Memory }).(pulumi.IntOutput)
 }
 
-// 节点规格。如需了解节点规格类型和详情
+// Node specification. For details on node specification types and details.
 func (o GetInstanceInstanceConfigurationWarmNodeResourceSpecOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationWarmNodeResourceSpec) string { return v.Name }).(pulumi.StringOutput)
 }
 
 type GetInstanceInstanceConfigurationWarmNodeStorageSpec struct {
-	// 存储规格的描述信息
+	// Description of storage specification.
 	Description string `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification.
 	DisplayName string `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, measured in GiB
 	MaxSize int `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum value for storage specification, unit: GiB.
 	MinSize int `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name string `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size int `pulumi:"size"`
 }
 
@@ -6718,17 +6718,17 @@ type GetInstanceInstanceConfigurationWarmNodeStorageSpecInput interface {
 }
 
 type GetInstanceInstanceConfigurationWarmNodeStorageSpecArgs struct {
-	// 存储规格的描述信息
+	// Description of storage specification.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 存储规格的显示名称
+	// Display name of storage specification.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 存储规格的最大值，单位为 GiB
+	// Maximum storage specification, measured in GiB
 	MaxSize pulumi.IntInput `pulumi:"maxSize"`
-	// 存储规格最小值，单位为 GiB
+	// Minimum value for storage specification, unit: GiB.
 	MinSize pulumi.IntInput `pulumi:"minSize"`
-	// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+	// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 	Name pulumi.StringInput `pulumi:"name"`
-	// 当前存储规格值，单位为 GiB
+	// Current storage specification value, in GiB.
 	Size pulumi.IntInput `pulumi:"size"`
 }
 
@@ -6758,42 +6758,42 @@ func (o GetInstanceInstanceConfigurationWarmNodeStorageSpecOutput) ToGetInstance
 	return o
 }
 
-// 存储规格的描述信息
+// Description of storage specification.
 func (o GetInstanceInstanceConfigurationWarmNodeStorageSpecOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationWarmNodeStorageSpec) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 存储规格的显示名称
+// Display name of storage specification.
 func (o GetInstanceInstanceConfigurationWarmNodeStorageSpecOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationWarmNodeStorageSpec) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 存储规格的最大值，单位为 GiB
+// Maximum storage specification, measured in GiB
 func (o GetInstanceInstanceConfigurationWarmNodeStorageSpecOutput) MaxSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationWarmNodeStorageSpec) int { return v.MaxSize }).(pulumi.IntOutput)
 }
 
-// 存储规格最小值，单位为 GiB
+// Minimum value for storage specification, unit: GiB.
 func (o GetInstanceInstanceConfigurationWarmNodeStorageSpecOutput) MinSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationWarmNodeStorageSpec) int { return v.MinSize }).(pulumi.IntOutput)
 }
 
-// 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+// Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
 func (o GetInstanceInstanceConfigurationWarmNodeStorageSpecOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationWarmNodeStorageSpec) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 当前存储规格值，单位为 GiB
+// Current storage specification value, in GiB.
 func (o GetInstanceInstanceConfigurationWarmNodeStorageSpecOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceConfigurationWarmNodeStorageSpec) int { return v.Size }).(pulumi.IntOutput)
 }
 
 type GetInstanceKibanaConfig struct {
-	// 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+	// API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
 	RequestTimeout int `pulumi:"requestTimeout"`
-	// 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+	// Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
 	SessionKeepAlive bool `pulumi:"sessionKeepAlive"`
-	// 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+	// Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
 	SessionTtl int `pulumi:"sessionTtl"`
 }
 
@@ -6809,11 +6809,11 @@ type GetInstanceKibanaConfigInput interface {
 }
 
 type GetInstanceKibanaConfigArgs struct {
-	// 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+	// API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
 	RequestTimeout pulumi.IntInput `pulumi:"requestTimeout"`
-	// 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+	// Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
 	SessionKeepAlive pulumi.BoolInput `pulumi:"sessionKeepAlive"`
-	// 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+	// Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
 	SessionTtl pulumi.IntInput `pulumi:"sessionTtl"`
 }
 
@@ -6843,27 +6843,27 @@ func (o GetInstanceKibanaConfigOutput) ToGetInstanceKibanaConfigOutputWithContex
 	return o
 }
 
-// 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+// API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
 func (o GetInstanceKibanaConfigOutput) RequestTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceKibanaConfig) int { return v.RequestTimeout }).(pulumi.IntOutput)
 }
 
-// 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+// Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
 func (o GetInstanceKibanaConfigOutput) SessionKeepAlive() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceKibanaConfig) bool { return v.SessionKeepAlive }).(pulumi.BoolOutput)
 }
 
-// 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+// Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
 func (o GetInstanceKibanaConfigOutput) SessionTtl() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceKibanaConfig) int { return v.SessionTtl }).(pulumi.IntOutput)
 }
 
 type GetInstanceSubInstance struct {
-	// 企业级 SQL 分析实例 ID。
+	// Enterprise-level SQL analysis instance ID.
 	SubInstanceId string `pulumi:"subInstanceId"`
-	// 实例状态。
+	// Instance status
 	SubInstanceStatus string `pulumi:"subInstanceStatus"`
-	// 实例类型。
+	// Instance type
 	SubInstanceType string `pulumi:"subInstanceType"`
 }
 
@@ -6879,11 +6879,11 @@ type GetInstanceSubInstanceInput interface {
 }
 
 type GetInstanceSubInstanceArgs struct {
-	// 企业级 SQL 分析实例 ID。
+	// Enterprise-level SQL analysis instance ID.
 	SubInstanceId pulumi.StringInput `pulumi:"subInstanceId"`
-	// 实例状态。
+	// Instance status
 	SubInstanceStatus pulumi.StringInput `pulumi:"subInstanceStatus"`
-	// 实例类型。
+	// Instance type
 	SubInstanceType pulumi.StringInput `pulumi:"subInstanceType"`
 }
 
@@ -6938,17 +6938,17 @@ func (o GetInstanceSubInstanceOutput) ToGetInstanceSubInstanceOutputWithContext(
 	return o
 }
 
-// 企业级 SQL 分析实例 ID。
+// Enterprise-level SQL analysis instance ID.
 func (o GetInstanceSubInstanceOutput) SubInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceSubInstance) string { return v.SubInstanceId }).(pulumi.StringOutput)
 }
 
-// 实例状态。
+// Instance status
 func (o GetInstanceSubInstanceOutput) SubInstanceStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceSubInstance) string { return v.SubInstanceStatus }).(pulumi.StringOutput)
 }
 
-// 实例类型。
+// Instance type
 func (o GetInstanceSubInstanceOutput) SubInstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceSubInstance) string { return v.SubInstanceType }).(pulumi.StringOutput)
 }
@@ -6976,13 +6976,13 @@ func (o GetInstanceSubInstanceArrayOutput) Index(i pulumi.IntInput) GetInstanceS
 type GetInstanceTransferInfo struct {
 	// ForbidStop
 	ForbidStop bool `pulumi:"forbidStop"`
-	// 资源信息。
+	// Resource information
 	ReduceSpecConfig GetInstanceTransferInfoReduceSpecConfig `pulumi:"reduceSpecConfig"`
-	// 数据迁移任务进度，百分制。
+	// Data migration task progress, percentage
 	TransferProgress float64 `pulumi:"transferProgress"`
-	// 数据迁移任务状态。
+	// Data migration task status
 	TransferStatus string `pulumi:"transferStatus"`
-	// 数据迁移任务 ID。
+	// Data migration task ID
 	TransferTaskId string `pulumi:"transferTaskId"`
 }
 
@@ -7000,13 +7000,13 @@ type GetInstanceTransferInfoInput interface {
 type GetInstanceTransferInfoArgs struct {
 	// ForbidStop
 	ForbidStop pulumi.BoolInput `pulumi:"forbidStop"`
-	// 资源信息。
+	// Resource information
 	ReduceSpecConfig GetInstanceTransferInfoReduceSpecConfigInput `pulumi:"reduceSpecConfig"`
-	// 数据迁移任务进度，百分制。
+	// Data migration task progress, percentage
 	TransferProgress pulumi.Float64Input `pulumi:"transferProgress"`
-	// 数据迁移任务状态。
+	// Data migration task status
 	TransferStatus pulumi.StringInput `pulumi:"transferStatus"`
-	// 数据迁移任务 ID。
+	// Data migration task ID
 	TransferTaskId pulumi.StringInput `pulumi:"transferTaskId"`
 }
 
@@ -7041,36 +7041,36 @@ func (o GetInstanceTransferInfoOutput) ForbidStop() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceTransferInfo) bool { return v.ForbidStop }).(pulumi.BoolOutput)
 }
 
-// 资源信息。
+// Resource information
 func (o GetInstanceTransferInfoOutput) ReduceSpecConfig() GetInstanceTransferInfoReduceSpecConfigOutput {
 	return o.ApplyT(func(v GetInstanceTransferInfo) GetInstanceTransferInfoReduceSpecConfig { return v.ReduceSpecConfig }).(GetInstanceTransferInfoReduceSpecConfigOutput)
 }
 
-// 数据迁移任务进度，百分制。
+// Data migration task progress, percentage
 func (o GetInstanceTransferInfoOutput) TransferProgress() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceTransferInfo) float64 { return v.TransferProgress }).(pulumi.Float64Output)
 }
 
-// 数据迁移任务状态。
+// Data migration task status
 func (o GetInstanceTransferInfoOutput) TransferStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTransferInfo) string { return v.TransferStatus }).(pulumi.StringOutput)
 }
 
-// 数据迁移任务 ID。
+// Data migration task ID
 func (o GetInstanceTransferInfoOutput) TransferTaskId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTransferInfo) string { return v.TransferTaskId }).(pulumi.StringOutput)
 }
 
 type GetInstanceTransferInfoReduceSpecConfig struct {
-	// 冷节点数量。
+	// Number of cold nodes.
 	ColdNodeNum int `pulumi:"coldNodeNum"`
-	// 数据节点数量。
+	// Number of data nodes
 	DataNodeNum int `pulumi:"dataNodeNum"`
-	// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+	// Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
 	EnablePureMaster bool `pulumi:"enablePureMaster"`
-	// Master 节点数量。
+	// Number of master nodes.
 	MasterNodeNum int `pulumi:"masterNodeNum"`
-	// 温节点数量。
+	// Number of warm nodes
 	WarmNodeNum int `pulumi:"warmNodeNum"`
 }
 
@@ -7086,15 +7086,15 @@ type GetInstanceTransferInfoReduceSpecConfigInput interface {
 }
 
 type GetInstanceTransferInfoReduceSpecConfigArgs struct {
-	// 冷节点数量。
+	// Number of cold nodes.
 	ColdNodeNum pulumi.IntInput `pulumi:"coldNodeNum"`
-	// 数据节点数量。
+	// Number of data nodes
 	DataNodeNum pulumi.IntInput `pulumi:"dataNodeNum"`
-	// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+	// Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
 	EnablePureMaster pulumi.BoolInput `pulumi:"enablePureMaster"`
-	// Master 节点数量。
+	// Number of master nodes.
 	MasterNodeNum pulumi.IntInput `pulumi:"masterNodeNum"`
-	// 温节点数量。
+	// Number of warm nodes
 	WarmNodeNum pulumi.IntInput `pulumi:"warmNodeNum"`
 }
 
@@ -7124,27 +7124,27 @@ func (o GetInstanceTransferInfoReduceSpecConfigOutput) ToGetInstanceTransferInfo
 	return o
 }
 
-// 冷节点数量。
+// Number of cold nodes.
 func (o GetInstanceTransferInfoReduceSpecConfigOutput) ColdNodeNum() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceTransferInfoReduceSpecConfig) int { return v.ColdNodeNum }).(pulumi.IntOutput)
 }
 
-// 数据节点数量。
+// Number of data nodes
 func (o GetInstanceTransferInfoReduceSpecConfigOutput) DataNodeNum() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceTransferInfoReduceSpecConfig) int { return v.DataNodeNum }).(pulumi.IntOutput)
 }
 
-// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+// Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
 func (o GetInstanceTransferInfoReduceSpecConfigOutput) EnablePureMaster() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceTransferInfoReduceSpecConfig) bool { return v.EnablePureMaster }).(pulumi.BoolOutput)
 }
 
-// Master 节点数量。
+// Number of master nodes.
 func (o GetInstanceTransferInfoReduceSpecConfigOutput) MasterNodeNum() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceTransferInfoReduceSpecConfig) int { return v.MasterNodeNum }).(pulumi.IntOutput)
 }
 
-// 温节点数量。
+// Number of warm nodes
 func (o GetInstanceTransferInfoReduceSpecConfigOutput) WarmNodeNum() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceTransferInfoReduceSpecConfig) int { return v.WarmNodeNum }).(pulumi.IntOutput)
 }

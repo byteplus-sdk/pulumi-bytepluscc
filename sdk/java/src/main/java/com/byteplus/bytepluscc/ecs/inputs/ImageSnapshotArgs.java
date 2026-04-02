@@ -17,14 +17,14 @@ public final class ImageSnapshotArgs extends com.pulumi.resources.ResourceArgs {
     public static final ImageSnapshotArgs Empty = new ImageSnapshotArgs();
 
     /**
-     * 快照大小。单位为GiB。
+     * Snapshot size (GiB)
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return 快照大小。单位为GiB。
+     * @return Snapshot size (GiB)
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -32,14 +32,14 @@ public final class ImageSnapshotArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照ID。
+     * Snapshot ID
      * 
      */
     @Import(name="snapshotId")
     private @Nullable Output<String> snapshotId;
 
     /**
-     * @return 快照ID。
+     * @return Snapshot ID
      * 
      */
     public Optional<Output<String>> snapshotId() {
@@ -47,14 +47,14 @@ public final class ImageSnapshotArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘种类。system：系统盘。data：数据盘。
+     * Cloud disk type. system: System disk. data: Data disk.
      * 
      */
     @Import(name="volumeKind")
     private @Nullable Output<String> volumeKind;
 
     /**
-     * @return 云盘种类。system：系统盘。data：数据盘。
+     * @return Cloud disk type. system: System disk. data: Data disk.
      * 
      */
     public Optional<Output<String>> volumeKind() {
@@ -88,7 +88,7 @@ public final class ImageSnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param size 快照大小。单位为GiB。
+         * @param size Snapshot size (GiB)
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class ImageSnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param size 快照大小。单位为GiB。
+         * @param size Snapshot size (GiB)
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class ImageSnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotId 快照ID。
+         * @param snapshotId Snapshot ID
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class ImageSnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotId 快照ID。
+         * @param snapshotId Snapshot ID
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class ImageSnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeKind 云盘种类。system：系统盘。data：数据盘。
+         * @param volumeKind Cloud disk type. system: System disk. data: Data disk.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class ImageSnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeKind 云盘种类。system：系统盘。data：数据盘。
+         * @param volumeKind Cloud disk type. system: System disk. data: Data disk.
          * 
          * @return builder
          * 

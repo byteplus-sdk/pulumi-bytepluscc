@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetScheduleSqlTaskRequestCycle {
     /**
-     * @return Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+     * @return Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
      * 
      */
     private String cronTab;
     /**
-     * @return 设置 Type 为 Cron 时，还需设置时区。
+     * @return If Type is set to Cron, you must also set the time zone.
      * 
      */
     private String cronTimeZone;
     /**
-     * @return 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+     * @return Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
      * 
      */
     private Integer time;
     /**
-     * @return 调度周期类型。可选值：Period、Fixed、Cron。
+     * @return Scheduling period type. Options: Period, Fixed, Cron.
      * 
      */
     private String type;
 
     private GetScheduleSqlTaskRequestCycle() {}
     /**
-     * @return Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+     * @return Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
      * 
      */
     public String cronTab() {
         return this.cronTab;
     }
     /**
-     * @return 设置 Type 为 Cron 时，还需设置时区。
+     * @return If Type is set to Cron, you must also set the time zone.
      * 
      */
     public String cronTimeZone() {
         return this.cronTimeZone;
     }
     /**
-     * @return 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+     * @return Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
      * 
      */
     public Integer time() {
         return this.time;
     }
     /**
-     * @return 调度周期类型。可选值：Period、Fixed、Cron。
+     * @return Scheduling period type. Options: Period, Fixed, Cron.
      * 
      */
     public String type() {

@@ -17,14 +17,14 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
     public static final EndpointCertificateArgs Empty = new EndpointCertificateArgs();
 
     /**
-     * X509私有证书过期的时间。使用秒级时间戳表示。
+     * X509 private certificate expiration time, represented as a timestamp in seconds
      * 
      */
     @Import(name="notAfter")
     private @Nullable Output<Integer> notAfter;
 
     /**
-     * @return X509私有证书过期的时间。使用秒级时间戳表示。
+     * @return X509 private certificate expiration time, represented as a timestamp in seconds
      * 
      */
     public Optional<Output<Integer>> notAfter() {
@@ -32,14 +32,14 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * X509私有证书开始生效的时间。使用秒级时间戳表示。
+     * X509 private certificate activation time, represented as a timestamp in seconds
      * 
      */
     @Import(name="notBefore")
     private @Nullable Output<Integer> notBefore;
 
     /**
-     * @return X509私有证书开始生效的时间。使用秒级时间戳表示。
+     * @return X509 private certificate activation time, represented as a timestamp in seconds
      * 
      */
     public Optional<Output<Integer>> notBefore() {
@@ -47,14 +47,14 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 证书方。
+     * Certificate subject
      * 
      */
     @Import(name="pcaHost")
     private @Nullable Output<String> pcaHost;
 
     /**
-     * @return 证书方。
+     * @return Certificate subject
      * 
      */
     public Optional<Output<String>> pcaHost() {
@@ -62,14 +62,14 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * PEM 格式的叶子证书。
+     * PEM format leaf certificate
      * 
      */
     @Import(name="pcaInstanceCertificate")
     private @Nullable Output<String> pcaInstanceCertificate;
 
     /**
-     * @return PEM 格式的叶子证书。
+     * @return PEM format leaf certificate
      * 
      */
     public Optional<Output<String>> pcaInstanceCertificate() {
@@ -77,14 +77,14 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 证书名称。
+     * Certificate name
      * 
      */
     @Import(name="pcaName")
     private @Nullable Output<String> pcaName;
 
     /**
-     * @return 证书名称。
+     * @return Certificate name
      * 
      */
     public Optional<Output<String>> pcaName() {
@@ -92,14 +92,14 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * PEM 格式的根证书。
+     * PEM format root certificate
      * 
      */
     @Import(name="pcaRootCaCertificate")
     private @Nullable Output<String> pcaRootCaCertificate;
 
     /**
-     * @return PEM 格式的根证书。
+     * @return PEM format root certificate
      * 
      */
     public Optional<Output<String>> pcaRootCaCertificate() {
@@ -107,14 +107,14 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * PEM 格式的中间根证书和根证书。
+     * Intermediate certificate and root certificate in PEM format
      * 
      */
     @Import(name="pcaSubCaCertificate")
     private @Nullable Output<String> pcaSubCaCertificate;
 
     /**
-     * @return PEM 格式的中间根证书和根证书。
+     * @return Intermediate certificate and root certificate in PEM format
      * 
      */
     public Optional<Output<String>> pcaSubCaCertificate() {
@@ -152,7 +152,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param notAfter X509私有证书过期的时间。使用秒级时间戳表示。
+         * @param notAfter X509 private certificate expiration time, represented as a timestamp in seconds
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param notAfter X509私有证书过期的时间。使用秒级时间戳表示。
+         * @param notAfter X509 private certificate expiration time, represented as a timestamp in seconds
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param notBefore X509私有证书开始生效的时间。使用秒级时间戳表示。
+         * @param notBefore X509 private certificate activation time, represented as a timestamp in seconds
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param notBefore X509私有证书开始生效的时间。使用秒级时间戳表示。
+         * @param notBefore X509 private certificate activation time, represented as a timestamp in seconds
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param pcaHost 证书方。
+         * @param pcaHost Certificate subject
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param pcaHost 证书方。
+         * @param pcaHost Certificate subject
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param pcaInstanceCertificate PEM 格式的叶子证书。
+         * @param pcaInstanceCertificate PEM format leaf certificate
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param pcaInstanceCertificate PEM 格式的叶子证书。
+         * @param pcaInstanceCertificate PEM format leaf certificate
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param pcaName 证书名称。
+         * @param pcaName Certificate name
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param pcaName 证书名称。
+         * @param pcaName Certificate name
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param pcaRootCaCertificate PEM 格式的根证书。
+         * @param pcaRootCaCertificate PEM format root certificate
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param pcaRootCaCertificate PEM 格式的根证书。
+         * @param pcaRootCaCertificate PEM format root certificate
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param pcaSubCaCertificate PEM 格式的中间根证书和根证书。
+         * @param pcaSubCaCertificate Intermediate certificate and root certificate in PEM format
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class EndpointCertificateArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param pcaSubCaCertificate PEM 格式的中间根证书和根证书。
+         * @param pcaSubCaCertificate Intermediate certificate and root certificate in PEM format
          * 
          * @return builder
          * 

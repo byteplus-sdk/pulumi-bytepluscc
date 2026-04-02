@@ -17,14 +17,14 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
     public static final ListenerHealthCheckArgs Empty = new ListenerHealthCheckArgs();
 
     /**
-     * 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+     * Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+     * @return Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
      * 
      */
     public Optional<Output<String>> domain() {
@@ -32,14 +32,14 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+     * Whether health check is enabled for the listener. on (default): enabled. off: disabled.
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<String> enabled;
 
     /**
-     * @return 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+     * @return Whether health check is enabled for the listener. on (default): enabled. off: disabled.
      * 
      */
     public Optional<Output<String>> enabled() {
@@ -47,14 +47,14 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+     * Health threshold, i.e., the number of consecutive successful health checks. Range: 2–10, default is 3, unit: times.
      * 
      */
     @Import(name="healthyThreshold")
     private @Nullable Output<Integer> healthyThreshold;
 
     /**
-     * @return 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+     * @return Health threshold, i.e., the number of consecutive successful health checks. Range: 2–10, default is 3, unit: times.
      * 
      */
     public Optional<Output<Integer>> healthyThreshold() {
@@ -62,14 +62,14 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+     * HTTP status codes for healthy checks. This parameter is effective when Protocol is HTTP or HTTPS and HealthCheck.Enabled is on. Values: http*2xx (default), http*3xx, http*4xx, http*5xx. Separate multiple status codes with a comma (,).
      * 
      */
     @Import(name="httpCode")
     private @Nullable Output<String> httpCode;
 
     /**
-     * @return 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+     * @return HTTP status codes for healthy checks. This parameter is effective when Protocol is HTTP or HTTPS and HealthCheck.Enabled is on. Values: http*2xx (default), http*3xx, http*4xx, http*5xx. Separate multiple status codes with a comma (,).
      * 
      */
     public Optional<Output<String>> httpCode() {
@@ -77,14 +77,14 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+     * Interval for performing health checks. Range: 1–300, default is 2, in seconds.
      * 
      */
     @Import(name="interval")
     private @Nullable Output<Integer> interval;
 
     /**
-     * @return 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+     * @return Interval for performing health checks. Range: 1–300, default is 2, in seconds.
      * 
      */
     public Optional<Output<Integer>> interval() {
@@ -92,14 +92,14 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+     * Listener health check method. GET: server must support the GET method. HEAD: server returns only HEAD header information, which reduces backend overhead, but requires server support for the HEAD method.
      * 
      */
     @Import(name="method")
     private @Nullable Output<String> method;
 
     /**
-     * @return 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+     * @return Listener health check method. GET: server must support the GET method. HEAD: server returns only HEAD header information, which reduces backend overhead, but requires server support for the HEAD method.
      * 
      */
     public Optional<Output<String>> method() {
@@ -107,14 +107,14 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 健康检查的端口，取值范围为1-65535。
+     * Health check port. Value range: 1–65535.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 健康检查的端口，取值范围为1-65535。
+     * @return Health check port. Value range: 1–65535.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -122,14 +122,14 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+     * Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered &#39;abnormal&#39;. Value range: 1 to 60. Default: 2. Unit: seconds.
      * 
      */
     @Import(name="timeout")
     private @Nullable Output<Integer> timeout;
 
     /**
-     * @return 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+     * @return Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered &#39;abnormal&#39;. Value range: 1 to 60. Default: 2. Unit: seconds.
      * 
      */
     public Optional<Output<Integer>> timeout() {
@@ -137,14 +137,14 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+     * Expected response string for health check. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
      * 
      */
     @Import(name="udpExpect")
     private @Nullable Output<String> udpExpect;
 
     /**
-     * @return 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+     * @return Expected response string for health check. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
      * 
      */
     public Optional<Output<String>> udpExpect() {
@@ -152,14 +152,14 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+     * Request string for performing health checks. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. The values of HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
      * 
      */
     @Import(name="udpRequest")
     private @Nullable Output<String> udpRequest;
 
     /**
-     * @return 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+     * @return Request string for performing health checks. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. The values of HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
      * 
      */
     public Optional<Output<String>> udpRequest() {
@@ -167,14 +167,14 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+     * Unhealthy threshold, which is the number of consecutive health check failures. Value range: 2–10. Default: 3. Unit: occurrences.
      * 
      */
     @Import(name="unhealthyThreshold")
     private @Nullable Output<Integer> unhealthyThreshold;
 
     /**
-     * @return 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+     * @return Unhealthy threshold, which is the number of consecutive health check failures. Value range: 2–10. Default: 3. Unit: occurrences.
      * 
      */
     public Optional<Output<Integer>> unhealthyThreshold() {
@@ -182,14 +182,14 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&amp;、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+     * Health check path. Must be configured as the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must start with &#39;/&#39;. Only letters, digits, hyphens (-), underscores (_), slashes (/), periods (.), percent signs (%), question marks (?), #, &amp;, and equals signs (=) are allowed. Length: 1–128 characters. If not specified or no value is provided, the default is &#39;/&#39;.
      * 
      */
     @Import(name="uri")
     private @Nullable Output<String> uri;
 
     /**
-     * @return 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&amp;、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+     * @return Health check path. Must be configured as the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must start with &#39;/&#39;. Only letters, digits, hyphens (-), underscores (_), slashes (/), periods (.), percent signs (%), question marks (?), #, &amp;, and equals signs (=) are allowed. Length: 1–128 characters. If not specified or no value is provided, the default is &#39;/&#39;.
      * 
      */
     public Optional<Output<String>> uri() {
@@ -232,7 +232,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param domain 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+         * @param domain Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param domain 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+         * @param domain Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param enabled 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+         * @param enabled Whether health check is enabled for the listener. on (default): enabled. off: disabled.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param enabled 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+         * @param enabled Whether health check is enabled for the listener. on (default): enabled. off: disabled.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param healthyThreshold 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+         * @param healthyThreshold Health threshold, i.e., the number of consecutive successful health checks. Range: 2–10, default is 3, unit: times.
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param healthyThreshold 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+         * @param healthyThreshold Health threshold, i.e., the number of consecutive successful health checks. Range: 2–10, default is 3, unit: times.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param httpCode 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+         * @param httpCode HTTP status codes for healthy checks. This parameter is effective when Protocol is HTTP or HTTPS and HealthCheck.Enabled is on. Values: http*2xx (default), http*3xx, http*4xx, http*5xx. Separate multiple status codes with a comma (,).
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param httpCode 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+         * @param httpCode HTTP status codes for healthy checks. This parameter is effective when Protocol is HTTP or HTTPS and HealthCheck.Enabled is on. Values: http*2xx (default), http*3xx, http*4xx, http*5xx. Separate multiple status codes with a comma (,).
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param interval 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+         * @param interval Interval for performing health checks. Range: 1–300, default is 2, in seconds.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param interval 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+         * @param interval Interval for performing health checks. Range: 1–300, default is 2, in seconds.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param method 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+         * @param method Listener health check method. GET: server must support the GET method. HEAD: server returns only HEAD header information, which reduces backend overhead, but requires server support for the HEAD method.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param method 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+         * @param method Listener health check method. GET: server must support the GET method. HEAD: server returns only HEAD header information, which reduces backend overhead, but requires server support for the HEAD method.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param port 健康检查的端口，取值范围为1-65535。
+         * @param port Health check port. Value range: 1–65535.
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param port 健康检查的端口，取值范围为1-65535。
+         * @param port Health check port. Value range: 1–65535.
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param timeout 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+         * @param timeout Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered &#39;abnormal&#39;. Value range: 1 to 60. Default: 2. Unit: seconds.
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param timeout 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+         * @param timeout Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered &#39;abnormal&#39;. Value range: 1 to 60. Default: 2. Unit: seconds.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param udpExpect 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+         * @param udpExpect Expected response string for health check. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param udpExpect 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+         * @param udpExpect Expected response string for health check. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param udpRequest 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+         * @param udpRequest Request string for performing health checks. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. The values of HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
          * 
          * @return builder
          * 
@@ -432,7 +432,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param udpRequest 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+         * @param udpRequest Request string for performing health checks. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. The values of HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param unhealthyThreshold 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+         * @param unhealthyThreshold Unhealthy threshold, which is the number of consecutive health check failures. Value range: 2–10. Default: 3. Unit: occurrences.
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param unhealthyThreshold 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+         * @param unhealthyThreshold Unhealthy threshold, which is the number of consecutive health check failures. Value range: 2–10. Default: 3. Unit: occurrences.
          * 
          * @return builder
          * 
@@ -463,7 +463,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param uri 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&amp;、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+         * @param uri Health check path. Must be configured as the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must start with &#39;/&#39;. Only letters, digits, hyphens (-), underscores (_), slashes (/), periods (.), percent signs (%), question marks (?), #, &amp;, and equals signs (=) are allowed. Length: 1–128 characters. If not specified or no value is provided, the default is &#39;/&#39;.
          * 
          * @return builder
          * 
@@ -474,7 +474,7 @@ public final class ListenerHealthCheckArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param uri 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&amp;、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+         * @param uri Health check path. Must be configured as the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must start with &#39;/&#39;. Only letters, digits, hyphens (-), underscores (_), slashes (/), periods (.), percent signs (%), question marks (?), #, &amp;, and equals signs (=) are allowed. Length: 1–128 characters. If not specified or no value is provided, the default is &#39;/&#39;.
          * 
          * @return builder
          * 

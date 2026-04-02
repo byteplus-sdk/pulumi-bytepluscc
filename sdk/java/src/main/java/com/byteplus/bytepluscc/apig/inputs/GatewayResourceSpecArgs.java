@@ -18,14 +18,14 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
     public static final GatewayResourceSpecArgs Empty = new GatewayResourceSpecArgs();
 
     /**
-     * CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+     * CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
      * 
      */
     @Import(name="clbSpecCode")
     private @Nullable Output<String> clbSpecCode;
 
     /**
-     * @return CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+     * @return CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
      * 
      */
     public Optional<Output<String>> clbSpecCode() {
@@ -33,14 +33,14 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+     * Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
      * 
      */
     @Import(name="instanceSpecCode")
     private @Nullable Output<String> instanceSpecCode;
 
     /**
-     * @return 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+     * @return Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
      * 
      */
     public Optional<Output<String>> instanceSpecCode() {
@@ -48,14 +48,14 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 网络类型。默认值为开启公网，开启私网。
+     * Network type. Default value: enable public network, enable private network
      * 
      */
     @Import(name="networkType")
     private @Nullable Output<GatewayResourceSpecNetworkTypeArgs> networkType;
 
     /**
-     * @return 网络类型。默认值为开启公网，开启私网。
+     * @return Network type. Default value: enable public network, enable private network
      * 
      */
     public Optional<Output<GatewayResourceSpecNetworkTypeArgs>> networkType() {
@@ -63,14 +63,14 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+     * Public network bandwidth limit. This field is only used for the &#39;bandwidth limit billing&#39; public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
      * 
      */
     @Import(name="publicNetworkBandwidth")
     private @Nullable Output<Integer> publicNetworkBandwidth;
 
     /**
-     * @return 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+     * @return Public network bandwidth limit. This field is only used for the &#39;bandwidth limit billing&#39; public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
      * 
      */
     public Optional<Output<Integer>> publicNetworkBandwidth() {
@@ -78,14 +78,14 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+     * Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
      * 
      */
     @Import(name="publicNetworkBillingType")
     private @Nullable Output<String> publicNetworkBillingType;
 
     /**
-     * @return 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+     * @return Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
      * 
      */
     public Optional<Output<String>> publicNetworkBillingType() {
@@ -93,14 +93,14 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 节点数量。取值限制为2~100。
+     * Node count. Value range: 2–100
      * 
      */
     @Import(name="replicas")
     private @Nullable Output<Integer> replicas;
 
     /**
-     * @return 节点数量。取值限制为2~100。
+     * @return Node count. Value range: 2–100
      * 
      */
     public Optional<Output<Integer>> replicas() {
@@ -137,7 +137,7 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param clbSpecCode CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+         * @param clbSpecCode CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param clbSpecCode CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+         * @param clbSpecCode CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param instanceSpecCode 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+         * @param instanceSpecCode Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param instanceSpecCode 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+         * @param instanceSpecCode Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param networkType 网络类型。默认值为开启公网，开启私网。
+         * @param networkType Network type. Default value: enable public network, enable private network
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param networkType 网络类型。默认值为开启公网，开启私网。
+         * @param networkType Network type. Default value: enable public network, enable private network
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param publicNetworkBandwidth 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+         * @param publicNetworkBandwidth Public network bandwidth limit. This field is only used for the &#39;bandwidth limit billing&#39; public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param publicNetworkBandwidth 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+         * @param publicNetworkBandwidth Public network bandwidth limit. This field is only used for the &#39;bandwidth limit billing&#39; public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param publicNetworkBillingType 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+         * @param publicNetworkBillingType Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param publicNetworkBillingType 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+         * @param publicNetworkBillingType Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param replicas 节点数量。取值限制为2~100。
+         * @param replicas Node count. Value range: 2–100
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class GatewayResourceSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param replicas 节点数量。取值限制为2~100。
+         * @param replicas Node count. Value range: 2–100
          * 
          * @return builder
          * 

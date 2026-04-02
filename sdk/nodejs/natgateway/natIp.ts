@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 从私网NAT网关所属子网分配，用于IP地址转换。
+ * Allocated from the subnet associated with the private NAT gateway for IP address translation.
  *
  * ## Example Usage
  *
@@ -56,35 +56,35 @@ export class NatIp extends pulumi.CustomResource {
     }
 
     /**
-     * 是否为默认中转IP。true：是。false：否。
+     * Whether this is the default transit IP. true: Yes. false: No.
      */
     public /*out*/ readonly isDefault!: pulumi.Output<boolean>;
     /**
-     * 私网NAT网关ID。
+     * Private NAT gateway ID.
      */
     public readonly natGatewayId!: pulumi.Output<string>;
     /**
-     * 中转IP的地址。若不填，则系统自动从私网NAT网关所在子网随机分配一个空闲的IP地址。
+     * Transit IP address. If not specified, the system automatically randomly assigns an available IP address from the subnet of the private NAT gateway.
      */
     public readonly natIp!: pulumi.Output<string>;
     /**
-     * 中转IP的描述。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the transit IP. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      */
     public readonly natIpDescription!: pulumi.Output<string>;
     /**
-     * 中转IP的ID。
+     * Transit IP ID.
      */
     public /*out*/ readonly natIpId!: pulumi.Output<string>;
     /**
-     * 中转IP的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。不填默认为中转IP的ID。
+     * Name of the transit IP. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number; can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the transit IP ID.
      */
     public readonly natIpName!: pulumi.Output<string>;
     /**
-     * 中转IP的状态。Creating：创建中。Available：可用。Deleting：删除中。Deleted：已删除。
+     * Status of the transit IP. Creating: Being created. Available: Available. Deleting: Being deleted. Deleted: Deleted.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 中转IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+     * Usage status of the transit IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
      */
     public /*out*/ readonly usingStatus!: pulumi.Output<string>;
 
@@ -133,35 +133,35 @@ export class NatIp extends pulumi.CustomResource {
  */
 export interface NatIpState {
     /**
-     * 是否为默认中转IP。true：是。false：否。
+     * Whether this is the default transit IP. true: Yes. false: No.
      */
     isDefault?: pulumi.Input<boolean>;
     /**
-     * 私网NAT网关ID。
+     * Private NAT gateway ID.
      */
     natGatewayId?: pulumi.Input<string>;
     /**
-     * 中转IP的地址。若不填，则系统自动从私网NAT网关所在子网随机分配一个空闲的IP地址。
+     * Transit IP address. If not specified, the system automatically randomly assigns an available IP address from the subnet of the private NAT gateway.
      */
     natIp?: pulumi.Input<string>;
     /**
-     * 中转IP的描述。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the transit IP. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      */
     natIpDescription?: pulumi.Input<string>;
     /**
-     * 中转IP的ID。
+     * Transit IP ID.
      */
     natIpId?: pulumi.Input<string>;
     /**
-     * 中转IP的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。不填默认为中转IP的ID。
+     * Name of the transit IP. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number; can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the transit IP ID.
      */
     natIpName?: pulumi.Input<string>;
     /**
-     * 中转IP的状态。Creating：创建中。Available：可用。Deleting：删除中。Deleted：已删除。
+     * Status of the transit IP. Creating: Being created. Available: Available. Deleting: Being deleted. Deleted: Deleted.
      */
     status?: pulumi.Input<string>;
     /**
-     * 中转IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+     * Usage status of the transit IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
      */
     usingStatus?: pulumi.Input<string>;
 }
@@ -171,19 +171,19 @@ export interface NatIpState {
  */
 export interface NatIpArgs {
     /**
-     * 私网NAT网关ID。
+     * Private NAT gateway ID.
      */
     natGatewayId: pulumi.Input<string>;
     /**
-     * 中转IP的地址。若不填，则系统自动从私网NAT网关所在子网随机分配一个空闲的IP地址。
+     * Transit IP address. If not specified, the system automatically randomly assigns an available IP address from the subnet of the private NAT gateway.
      */
     natIp?: pulumi.Input<string>;
     /**
-     * 中转IP的描述。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the transit IP. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      */
     natIpDescription?: pulumi.Input<string>;
     /**
-     * 中转IP的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。不填默认为中转IP的ID。
+     * Name of the transit IP. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number; can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the transit IP ID.
      */
     natIpName?: pulumi.Input<string>;
 }

@@ -30,37 +30,37 @@ type LookupMountPointArgs struct {
 
 // A collection of values returned by getMountPoint.
 type LookupMountPointResult struct {
-	// 客户端信息。
+	// Client information.
 	Clients []GetMountPointClient `pulumi:"clients"`
-	// 挂载点创建时间。
+	// Mount point creation time.
 	CreatedTime string `pulumi:"createdTime"`
-	// DNS 地址。
+	// DNS address.
 	Domain string `pulumi:"domain"`
-	// 文件系统 ID。
+	// File system ID.
 	FileSystemId string `pulumi:"fileSystemId"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 挂载点地址。
+	// Mount point address.
 	Ip string `pulumi:"ip"`
-	// 挂载点 ID。
+	// Mount point ID.
 	MountPointId string `pulumi:"mountPointId"`
-	// 挂载点名称。
+	// Mount point name.
 	MountPointName string `pulumi:"mountPointName"`
-	// 挂载点绑定的权限组信息。
+	// Permission group information bound to the mount point.
 	PermissionGroup GetMountPointPermissionGroup `pulumi:"permissionGroup"`
-	// 权限组 ID。
+	// Permission group ID.
 	PermissionGroupId string `pulumi:"permissionGroupId"`
-	// 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+	// Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
 	Status string `pulumi:"status"`
-	// 子网 ID。
+	// Subnet ID.
 	SubnetId string `pulumi:"subnetId"`
-	// 子网名称。
+	// Subnet name.
 	SubnetName string `pulumi:"subnetName"`
-	// 挂载点更新时间。
+	// Mount point update time.
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 私有网络 ID。
+	// Private network ID.
 	VpcId string `pulumi:"vpcId"`
-	// 私有网络名称。
+	// Private network name.
 	VpcName string `pulumi:"vpcName"`
 }
 
@@ -98,22 +98,22 @@ func (o LookupMountPointResultOutput) ToLookupMountPointResultOutputWithContext(
 	return o
 }
 
-// 客户端信息。
+// Client information.
 func (o LookupMountPointResultOutput) Clients() GetMountPointClientArrayOutput {
 	return o.ApplyT(func(v LookupMountPointResult) []GetMountPointClient { return v.Clients }).(GetMountPointClientArrayOutput)
 }
 
-// 挂载点创建时间。
+// Mount point creation time.
 func (o LookupMountPointResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// DNS 地址。
+// DNS address.
 func (o LookupMountPointResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 文件系统 ID。
+// File system ID.
 func (o LookupMountPointResultOutput) FileSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.FileSystemId }).(pulumi.StringOutput)
 }
@@ -123,57 +123,57 @@ func (o LookupMountPointResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 挂载点地址。
+// Mount point address.
 func (o LookupMountPointResultOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.Ip }).(pulumi.StringOutput)
 }
 
-// 挂载点 ID。
+// Mount point ID.
 func (o LookupMountPointResultOutput) MountPointId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.MountPointId }).(pulumi.StringOutput)
 }
 
-// 挂载点名称。
+// Mount point name.
 func (o LookupMountPointResultOutput) MountPointName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.MountPointName }).(pulumi.StringOutput)
 }
 
-// 挂载点绑定的权限组信息。
+// Permission group information bound to the mount point.
 func (o LookupMountPointResultOutput) PermissionGroup() GetMountPointPermissionGroupOutput {
 	return o.ApplyT(func(v LookupMountPointResult) GetMountPointPermissionGroup { return v.PermissionGroup }).(GetMountPointPermissionGroupOutput)
 }
 
-// 权限组 ID。
+// Permission group ID.
 func (o LookupMountPointResultOutput) PermissionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.PermissionGroupId }).(pulumi.StringOutput)
 }
 
-// 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+// Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
 func (o LookupMountPointResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 子网 ID。
+// Subnet ID.
 func (o LookupMountPointResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 子网名称。
+// Subnet name.
 func (o LookupMountPointResultOutput) SubnetName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.SubnetName }).(pulumi.StringOutput)
 }
 
-// 挂载点更新时间。
+// Mount point update time.
 func (o LookupMountPointResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 私有网络 ID。
+// Private network ID.
 func (o LookupMountPointResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 私有网络名称。
+// Private network name.
 func (o LookupMountPointResultOutput) VpcName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMountPointResult) string { return v.VpcName }).(pulumi.StringOutput)
 }

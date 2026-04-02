@@ -12,158 +12,158 @@ import java.util.Objects;
 @CustomType
 public final class GetTrafficMirrorFilterEgressFilterRule {
     /**
-     * @return 筛选规则实例描述。
+     * @return Filter rule instance description
      * 
      */
     private String description;
     /**
-     * @return 筛选规则目的地址。
+     * @return Filter rule destination address
      * 
      */
     private String destinationCidrBlock;
     /**
-     * @return 筛选规则目的端口范围。
+     * @return Filter rule destination port range
      * 
      */
     private String destinationPortRange;
     /**
-     * @return 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+     * @return Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
      * 
      */
     private String policy;
     /**
-     * @return 筛选规则优先级。
+     * @return Filter rule priority
      * 
      */
     private Integer priority;
     /**
-     * @return 所属项目的名称。
+     * @return Project name
      * 
      */
     private String projectName;
     /**
-     * @return 筛选规则协议类型。
+     * @return Filter rule protocol type
      * 
      */
     private String protocol;
     /**
-     * @return 筛选规则源地址。
+     * @return Filter rule source address
      * 
      */
     private String sourceCidrBlock;
     /**
-     * @return 筛选规则源端口范围。
+     * @return Filter rule source port range
      * 
      */
     private String sourcePortRange;
     /**
-     * @return 筛选规则状态。
+     * @return Filter rule status
      * 
      */
     private String status;
     /**
-     * @return 筛选规则方向。egress：出方向。ingress：入方向。
+     * @return Filter rule direction. egress: Outbound. ingress: Inbound
      * 
      */
     private String trafficDirection;
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     private String trafficMirrorFilterId;
     /**
-     * @return 筛选规则实例ID。
+     * @return Filter rule instance ID
      * 
      */
     private String trafficMirrorFilterRuleId;
 
     private GetTrafficMirrorFilterEgressFilterRule() {}
     /**
-     * @return 筛选规则实例描述。
+     * @return Filter rule instance description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 筛选规则目的地址。
+     * @return Filter rule destination address
      * 
      */
     public String destinationCidrBlock() {
         return this.destinationCidrBlock;
     }
     /**
-     * @return 筛选规则目的端口范围。
+     * @return Filter rule destination port range
      * 
      */
     public String destinationPortRange() {
         return this.destinationPortRange;
     }
     /**
-     * @return 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+     * @return Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
      * 
      */
     public String policy() {
         return this.policy;
     }
     /**
-     * @return 筛选规则优先级。
+     * @return Filter rule priority
      * 
      */
     public Integer priority() {
         return this.priority;
     }
     /**
-     * @return 所属项目的名称。
+     * @return Project name
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 筛选规则协议类型。
+     * @return Filter rule protocol type
      * 
      */
     public String protocol() {
         return this.protocol;
     }
     /**
-     * @return 筛选规则源地址。
+     * @return Filter rule source address
      * 
      */
     public String sourceCidrBlock() {
         return this.sourceCidrBlock;
     }
     /**
-     * @return 筛选规则源端口范围。
+     * @return Filter rule source port range
      * 
      */
     public String sourcePortRange() {
         return this.sourcePortRange;
     }
     /**
-     * @return 筛选规则状态。
+     * @return Filter rule status
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 筛选规则方向。egress：出方向。ingress：入方向。
+     * @return Filter rule direction. egress: Outbound. ingress: Inbound
      * 
      */
     public String trafficDirection() {
         return this.trafficDirection;
     }
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     public String trafficMirrorFilterId() {
         return this.trafficMirrorFilterId;
     }
     /**
-     * @return 筛选规则实例ID。
+     * @return Filter rule instance ID
      * 
      */
     public String trafficMirrorFilterRuleId() {

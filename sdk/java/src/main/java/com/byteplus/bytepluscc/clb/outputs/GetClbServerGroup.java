@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetClbServerGroup {
     /**
-     * @return 负载均衡实例中后端服务器组的ID。
+     * @return ID of the backend server group in the load balancer instance
      * 
      */
     private String serverGroupId;
     /**
-     * @return 负载均衡实例中后端服务器组的名称。
+     * @return Name of the backend server group in the load balancer instance
      * 
      */
     private String serverGroupName;
 
     private GetClbServerGroup() {}
     /**
-     * @return 负载均衡实例中后端服务器组的ID。
+     * @return ID of the backend server group in the load balancer instance
      * 
      */
     public String serverGroupId() {
         return this.serverGroupId;
     }
     /**
-     * @return 负载均衡实例中后端服务器组的名称。
+     * @return Name of the backend server group in the load balancer instance
      * 
      */
     public String serverGroupName() {

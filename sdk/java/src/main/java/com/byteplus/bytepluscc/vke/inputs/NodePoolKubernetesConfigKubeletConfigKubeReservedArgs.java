@@ -16,14 +16,14 @@ public final class NodePoolKubernetesConfigKubeletConfigKubeReservedArgs extends
     public static final NodePoolKubernetesConfigKubeletConfigKubeReservedArgs Empty = new NodePoolKubernetesConfigKubeletConfigKubeReservedArgs();
 
     /**
-     * 资源名称，取值为 cpu 或 memory。
+     * Resource name. Valid values: cpu or memory.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 资源名称，取值为 cpu 或 memory。
+     * @return Resource name. Valid values: cpu or memory.
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +31,14 @@ public final class NodePoolKubernetesConfigKubeletConfigKubeReservedArgs extends
     }
 
     /**
-     * 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+     * Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
      * 
      */
     @Import(name="quantity")
     private @Nullable Output<String> quantity;
 
     /**
-     * @return 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+     * @return Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
      * 
      */
     public Optional<Output<String>> quantity() {
@@ -71,7 +71,7 @@ public final class NodePoolKubernetesConfigKubeletConfigKubeReservedArgs extends
         }
 
         /**
-         * @param name 资源名称，取值为 cpu 或 memory。
+         * @param name Resource name. Valid values: cpu or memory.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class NodePoolKubernetesConfigKubeletConfigKubeReservedArgs extends
         }
 
         /**
-         * @param name 资源名称，取值为 cpu 或 memory。
+         * @param name Resource name. Valid values: cpu or memory.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class NodePoolKubernetesConfigKubeletConfigKubeReservedArgs extends
         }
 
         /**
-         * @param quantity 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+         * @param quantity Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class NodePoolKubernetesConfigKubeletConfigKubeReservedArgs extends
         }
 
         /**
-         * @param quantity 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+         * @param quantity Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
          * 
          * @return builder
          * 

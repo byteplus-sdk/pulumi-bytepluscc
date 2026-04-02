@@ -14,37 +14,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization.Inputs
     public sealed class AccountSecureContactInfoArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 安全邮箱。
+        /// Security email
         /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
 
         /// <summary>
-        /// 安全邮箱是否验证，1: 未验证，2: 已验证。
+        /// Security email verification status: 1. Not verified, 2. Verified
         /// </summary>
         [Input("emailVerified")]
         public Input<int>? EmailVerified { get; set; }
 
         /// <summary>
-        /// 变更中的新邮箱。
+        /// New email being changed
         /// </summary>
         [Input("newEmail")]
         public Input<string>? NewEmail { get; set; }
 
         /// <summary>
-        /// 变更中的新手机号。
+        /// New mobile number being changed
         /// </summary>
         [Input("newPhone")]
         public Input<string>? NewPhone { get; set; }
 
         /// <summary>
-        /// 安全手机号。
+        /// Security mobile number
         /// </summary>
         [Input("phone")]
         public Input<string>? Phone { get; set; }
 
         /// <summary>
-        /// 安全手机号是否验证，1: 未验证，2: 已验证。
+        /// Security mobile number verification status: 1. Not verified, 2. Verified
         /// </summary>
         [Input("phoneVerified")]
         public Input<int>? PhoneVerified { get; set; }

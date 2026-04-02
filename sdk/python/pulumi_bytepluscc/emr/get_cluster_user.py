@@ -63,7 +63,7 @@ class GetClusterUserResult:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> builtins.str:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -71,7 +71,7 @@ class GetClusterUserResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.int:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -79,7 +79,7 @@ class GetClusterUserResult:
     @pulumi.getter(name="creatorName")
     def creator_name(self) -> builtins.str:
         """
-        创建者用户名。
+        Creator username.
         """
         return pulumi.get(self, "creator_name")
 
@@ -87,7 +87,7 @@ class GetClusterUserResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        用户组描述。
+        User group description.
         """
         return pulumi.get(self, "description")
 
@@ -103,7 +103,7 @@ class GetClusterUserResult:
     @pulumi.getter(name="oldPassword")
     def old_password(self) -> builtins.str:
         """
-        旧的用户的登录密码。修改密码时必填。
+        Old user login password. Required when changing password.
         """
         return pulumi.get(self, "old_password")
 
@@ -111,7 +111,7 @@ class GetClusterUserResult:
     @pulumi.getter
     def password(self) -> builtins.str:
         """
-        新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+        New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
         """
         return pulumi.get(self, "password")
 
@@ -119,7 +119,7 @@ class GetClusterUserResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.int:
         """
-        更新时间。
+        Last updated time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -127,7 +127,7 @@ class GetClusterUserResult:
     @pulumi.getter(name="userGroupNames")
     def user_group_names(self) -> Sequence[builtins.str]:
         """
-        所属用户组名称。
+        User group name.
         """
         return pulumi.get(self, "user_group_names")
 
@@ -135,7 +135,7 @@ class GetClusterUserResult:
     @pulumi.getter(name="userName")
     def user_name(self) -> builtins.str:
         """
-        集群用户名。仅支持小写字母。
+        Cluster username. Only lowercase letters are supported.
         """
         return pulumi.get(self, "user_name")
 

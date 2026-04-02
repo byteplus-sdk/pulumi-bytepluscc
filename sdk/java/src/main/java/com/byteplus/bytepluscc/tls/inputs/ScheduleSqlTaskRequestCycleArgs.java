@@ -18,14 +18,14 @@ public final class ScheduleSqlTaskRequestCycleArgs extends com.pulumi.resources.
     public static final ScheduleSqlTaskRequestCycleArgs Empty = new ScheduleSqlTaskRequestCycleArgs();
 
     /**
-     * Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+     * Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
      * 
      */
     @Import(name="cronTab")
     private @Nullable Output<String> cronTab;
 
     /**
-     * @return Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+     * @return Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
      * 
      */
     public Optional<Output<String>> cronTab() {
@@ -33,14 +33,14 @@ public final class ScheduleSqlTaskRequestCycleArgs extends com.pulumi.resources.
     }
 
     /**
-     * 设置 Type 为 Cron 时，还需设置时区。
+     * If Type is set to Cron, you must also set the time zone.
      * 
      */
     @Import(name="cronTimeZone")
     private @Nullable Output<String> cronTimeZone;
 
     /**
-     * @return 设置 Type 为 Cron 时，还需设置时区。
+     * @return If Type is set to Cron, you must also set the time zone.
      * 
      */
     public Optional<Output<String>> cronTimeZone() {
@@ -48,14 +48,14 @@ public final class ScheduleSqlTaskRequestCycleArgs extends com.pulumi.resources.
     }
 
     /**
-     * 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+     * Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
      * 
      */
     @Import(name="time", required=true)
     private Output<Integer> time;
 
     /**
-     * @return 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+     * @return Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
      * 
      */
     public Output<Integer> time() {
@@ -63,14 +63,14 @@ public final class ScheduleSqlTaskRequestCycleArgs extends com.pulumi.resources.
     }
 
     /**
-     * 调度周期类型。可选值：Period、Fixed、Cron。
+     * Scheduling period type. Options: Period, Fixed, Cron.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return 调度周期类型。可选值：Period、Fixed、Cron。
+     * @return Scheduling period type. Options: Period, Fixed, Cron.
      * 
      */
     public Output<String> type() {
@@ -105,7 +105,7 @@ public final class ScheduleSqlTaskRequestCycleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param cronTab Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+         * @param cronTab Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class ScheduleSqlTaskRequestCycleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param cronTab Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+         * @param cronTab Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class ScheduleSqlTaskRequestCycleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param cronTimeZone 设置 Type 为 Cron 时，还需设置时区。
+         * @param cronTimeZone If Type is set to Cron, you must also set the time zone.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class ScheduleSqlTaskRequestCycleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param cronTimeZone 设置 Type 为 Cron 时，还需设置时区。
+         * @param cronTimeZone If Type is set to Cron, you must also set the time zone.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class ScheduleSqlTaskRequestCycleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param time 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+         * @param time Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class ScheduleSqlTaskRequestCycleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param time 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+         * @param time Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class ScheduleSqlTaskRequestCycleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param type 调度周期类型。可选值：Period、Fixed、Cron。
+         * @param type Scheduling period type. Options: Period, Fixed, Cron.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class ScheduleSqlTaskRequestCycleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param type 调度周期类型。可选值：Period、Fixed、Cron。
+         * @param type Scheduling period type. Options: Period, Fixed, Cron.
          * 
          * @return builder
          * 

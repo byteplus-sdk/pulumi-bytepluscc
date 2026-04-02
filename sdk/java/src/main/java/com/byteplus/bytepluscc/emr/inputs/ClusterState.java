@@ -26,14 +26,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     public static final ClusterState Empty = new ClusterState();
 
     /**
-     * 账号ID。
+     * Account ID.
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<Integer> accountId;
 
     /**
-     * @return 账号ID。
+     * @return Account ID.
      * 
      */
     public Optional<Output<Integer>> accountId() {
@@ -48,14 +48,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群安装的服务名称列表。创建字段。
+     * List of service names installed in the cluster. Creation-related field.
      * 
      */
     @Import(name="applicationNames")
     private @Nullable Output<List<String>> applicationNames;
 
     /**
-     * @return 集群安装的服务名称列表。创建字段。
+     * @return List of service names installed in the cluster. Creation-related field.
      * 
      */
     public Optional<Output<List<String>>> applicationNames() {
@@ -77,14 +77,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 包月的配置参数，当chargeType=PRE时，必选。
+     * Monthly subscription configuration parameters. Required when chargeType=PRE.
      * 
      */
     @Import(name="chargePreConfig")
     private @Nullable Output<ClusterChargePreConfigArgs> chargePreConfig;
 
     /**
-     * @return 包月的配置参数，当chargeType=PRE时，必选。
+     * @return Monthly subscription configuration parameters. Required when chargeType=PRE.
      * 
      */
     public Optional<Output<ClusterChargePreConfigArgs>> chargePreConfig() {
@@ -92,14 +92,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 付费类型，PRE表示包月，POST表示按量计费。
+     * Payment type. PRE means monthly subscription, POST means pay-as-you-go.
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return 付费类型，PRE表示包月，POST表示按量计费。
+     * @return Payment type. PRE means monthly subscription, POST means pay-as-you-go.
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -107,14 +107,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群dns域名后缀列表。
+     * Cluster DNS domain suffix list.
      * 
      */
     @Import(name="clusterDomainNames")
     private @Nullable Output<List<String>> clusterDomainNames;
 
     /**
-     * @return 集群dns域名后缀列表。
+     * @return Cluster DNS domain suffix list.
      * 
      */
     public Optional<Output<List<String>>> clusterDomainNames() {
@@ -122,14 +122,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群ID。
+     * Cluster ID.
      * 
      */
     @Import(name="clusterId")
     private @Nullable Output<String> clusterId;
 
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     public Optional<Output<String>> clusterId() {
@@ -137,14 +137,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群名称。
+     * Cluster name.
      * 
      */
     @Import(name="clusterName")
     private @Nullable Output<String> clusterName;
 
     /**
-     * @return 集群名称。
+     * @return Cluster name.
      * 
      */
     public Optional<Output<String>> clusterName() {
@@ -152,14 +152,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群状态。
+     * Cluster status.
      * 
      */
     @Import(name="clusterState")
     private @Nullable Output<String> clusterState;
 
     /**
-     * @return 集群状态。
+     * @return Cluster status.
      * 
      */
     public Optional<Output<String>> clusterState() {
@@ -167,14 +167,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群类型。
+     * Cluster type.
      * 
      */
     @Import(name="clusterType")
     private @Nullable Output<String> clusterType;
 
     /**
-     * @return 集群类型。
+     * @return Cluster type.
      * 
      */
     public Optional<Output<String>> clusterType() {
@@ -182,14 +182,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群创建时间。
+     * Cluster creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<Integer> createdTime;
 
     /**
-     * @return 集群创建时间。
+     * @return Cluster creation time.
      * 
      */
     public Optional<Output<Integer>> createdTime() {
@@ -197,14 +197,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建者ID。
+     * Creator ID.
      * 
      */
     @Import(name="creatorId")
     private @Nullable Output<Integer> creatorId;
 
     /**
-     * @return 创建者ID。
+     * @return Creator ID.
      * 
      */
     public Optional<Output<Integer>> creatorId() {
@@ -212,14 +212,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建者名称。
+     * Creator name.
      * 
      */
     @Import(name="creatorName")
     private @Nullable Output<String> creatorName;
 
     /**
-     * @return 创建者名称。
+     * @return Creator name.
      * 
      */
     public Optional<Output<String>> creatorName() {
@@ -227,14 +227,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+     * Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
      * 
      */
     @Import(name="deployMode")
     private @Nullable Output<String> deployMode;
 
     /**
-     * @return 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+     * @return Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
      * 
      */
     public Optional<Output<String>> deployMode() {
@@ -242,14 +242,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ECS镜像ID。
+     * ECS image ID.
      * 
      */
     @Import(name="ecsImageId")
     private @Nullable Output<String> ecsImageId;
 
     /**
-     * @return ECS镜像ID。
+     * @return ECS image ID.
      * 
      */
     public Optional<Output<String>> ecsImageId() {
@@ -257,14 +257,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群过期时间。
+     * Cluster expiration time.
      * 
      */
     @Import(name="expireTime")
     private @Nullable Output<Integer> expireTime;
 
     /**
-     * @return 集群过期时间。
+     * @return Cluster expiration time.
      * 
      */
     public Optional<Output<Integer>> expireTime() {
@@ -272,14 +272,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+     * HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
      * 
      */
     @Import(name="historyServerMode")
     private @Nullable Output<String> historyServerMode;
 
     /**
-     * @return HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+     * @return HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
      * 
      */
     public Optional<Output<String>> historyServerMode() {
@@ -287,14 +287,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群全局的节点信息。
+     * Cluster global node information.
      * 
      */
     @Import(name="nodeAttribute")
     private @Nullable Output<ClusterNodeAttributeArgs> nodeAttribute;
 
     /**
-     * @return 集群全局的节点信息。
+     * @return Cluster global node information.
      * 
      */
     public Optional<Output<ClusterNodeAttributeArgs>> nodeAttribute() {
@@ -309,14 +309,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * @return Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -324,14 +324,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群创建完成时间。
+     * Cluster creation completion time.
      * 
      */
     @Import(name="readyTime")
     private @Nullable Output<Integer> readyTime;
 
     /**
-     * @return 集群创建完成时间。
+     * @return Cluster creation completion time.
      * 
      */
     public Optional<Output<Integer>> readyTime() {
@@ -339,14 +339,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群版本。
+     * Cluster version.
      * 
      */
     @Import(name="releaseVersion")
     private @Nullable Output<String> releaseVersion;
 
     /**
-     * @return 集群版本。
+     * @return Cluster version.
      * 
      */
     public Optional<Output<String>> releaseVersion() {
@@ -354,14 +354,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+     * Cluster global security group ID. All ECS in node groups will join this security group.
      * 
      */
     @Import(name="securityGroupId")
     private @Nullable Output<String> securityGroupId;
 
     /**
-     * @return 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+     * @return Cluster global security group ID. All ECS in node groups will join this security group.
      * 
      */
     public Optional<Output<String>> securityGroupId() {
@@ -369,14 +369,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 安全模式。
+     * Security mode.
      * 
      */
     @Import(name="securityMode")
     private @Nullable Output<String> securityMode;
 
     /**
-     * @return 安全模式。
+     * @return Security mode.
      * 
      */
     public Optional<Output<String>> securityMode() {
@@ -384,14 +384,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 状态变更原因。
+     * Status change reason.
      * 
      */
     @Import(name="stateChangeReason")
     private @Nullable Output<ClusterStateChangeReasonArgs> stateChangeReason;
 
     /**
-     * @return 状态变更原因。
+     * @return Status change reason.
      * 
      */
     public Optional<Output<ClusterStateChangeReasonArgs>> stateChangeReason() {
@@ -406,14 +406,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群终止时间。
+     * Cluster termination time.
      * 
      */
     @Import(name="terminateTime")
     private @Nullable Output<Integer> terminateTime;
 
     /**
-     * @return 集群终止时间。
+     * @return Cluster termination time.
      * 
      */
     public Optional<Output<Integer>> terminateTime() {
@@ -489,7 +489,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 账号ID。
+         * @param accountId Account ID.
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 账号ID。
+         * @param accountId Account ID.
          * 
          * @return builder
          * 
@@ -523,7 +523,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param applicationNames 集群安装的服务名称列表。创建字段。
+         * @param applicationNames List of service names installed in the cluster. Creation-related field.
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param applicationNames 集群安装的服务名称列表。创建字段。
+         * @param applicationNames List of service names installed in the cluster. Creation-related field.
          * 
          * @return builder
          * 
@@ -544,7 +544,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param applicationNames 集群安装的服务名称列表。创建字段。
+         * @param applicationNames List of service names installed in the cluster. Creation-related field.
          * 
          * @return builder
          * 
@@ -580,7 +580,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargePreConfig 包月的配置参数，当chargeType=PRE时，必选。
+         * @param chargePreConfig Monthly subscription configuration parameters. Required when chargeType=PRE.
          * 
          * @return builder
          * 
@@ -591,7 +591,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargePreConfig 包月的配置参数，当chargeType=PRE时，必选。
+         * @param chargePreConfig Monthly subscription configuration parameters. Required when chargeType=PRE.
          * 
          * @return builder
          * 
@@ -601,7 +601,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 付费类型，PRE表示包月，POST表示按量计费。
+         * @param chargeType Payment type. PRE means monthly subscription, POST means pay-as-you-go.
          * 
          * @return builder
          * 
@@ -612,7 +612,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 付费类型，PRE表示包月，POST表示按量计费。
+         * @param chargeType Payment type. PRE means monthly subscription, POST means pay-as-you-go.
          * 
          * @return builder
          * 
@@ -622,7 +622,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterDomainNames 集群dns域名后缀列表。
+         * @param clusterDomainNames Cluster DNS domain suffix list.
          * 
          * @return builder
          * 
@@ -633,7 +633,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterDomainNames 集群dns域名后缀列表。
+         * @param clusterDomainNames Cluster DNS domain suffix list.
          * 
          * @return builder
          * 
@@ -643,7 +643,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterDomainNames 集群dns域名后缀列表。
+         * @param clusterDomainNames Cluster DNS domain suffix list.
          * 
          * @return builder
          * 
@@ -653,7 +653,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 集群ID。
+         * @param clusterId Cluster ID.
          * 
          * @return builder
          * 
@@ -664,7 +664,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 集群ID。
+         * @param clusterId Cluster ID.
          * 
          * @return builder
          * 
@@ -674,7 +674,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterName 集群名称。
+         * @param clusterName Cluster name.
          * 
          * @return builder
          * 
@@ -685,7 +685,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterName 集群名称。
+         * @param clusterName Cluster name.
          * 
          * @return builder
          * 
@@ -695,7 +695,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterState 集群状态。
+         * @param clusterState Cluster status.
          * 
          * @return builder
          * 
@@ -706,7 +706,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterState 集群状态。
+         * @param clusterState Cluster status.
          * 
          * @return builder
          * 
@@ -716,7 +716,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterType 集群类型。
+         * @param clusterType Cluster type.
          * 
          * @return builder
          * 
@@ -727,7 +727,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterType 集群类型。
+         * @param clusterType Cluster type.
          * 
          * @return builder
          * 
@@ -737,7 +737,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 集群创建时间。
+         * @param createdTime Cluster creation time.
          * 
          * @return builder
          * 
@@ -748,7 +748,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 集群创建时间。
+         * @param createdTime Cluster creation time.
          * 
          * @return builder
          * 
@@ -758,7 +758,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param creatorId 创建者ID。
+         * @param creatorId Creator ID.
          * 
          * @return builder
          * 
@@ -769,7 +769,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param creatorId 创建者ID。
+         * @param creatorId Creator ID.
          * 
          * @return builder
          * 
@@ -779,7 +779,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param creatorName 创建者名称。
+         * @param creatorName Creator name.
          * 
          * @return builder
          * 
@@ -790,7 +790,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param creatorName 创建者名称。
+         * @param creatorName Creator name.
          * 
          * @return builder
          * 
@@ -800,7 +800,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deployMode 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+         * @param deployMode Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
          * 
          * @return builder
          * 
@@ -811,7 +811,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deployMode 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+         * @param deployMode Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
          * 
          * @return builder
          * 
@@ -821,7 +821,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ecsImageId ECS镜像ID。
+         * @param ecsImageId ECS image ID.
          * 
          * @return builder
          * 
@@ -832,7 +832,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ecsImageId ECS镜像ID。
+         * @param ecsImageId ECS image ID.
          * 
          * @return builder
          * 
@@ -842,7 +842,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expireTime 集群过期时间。
+         * @param expireTime Cluster expiration time.
          * 
          * @return builder
          * 
@@ -853,7 +853,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expireTime 集群过期时间。
+         * @param expireTime Cluster expiration time.
          * 
          * @return builder
          * 
@@ -863,7 +863,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param historyServerMode HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+         * @param historyServerMode HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
          * 
          * @return builder
          * 
@@ -874,7 +874,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param historyServerMode HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+         * @param historyServerMode HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
          * 
          * @return builder
          * 
@@ -884,7 +884,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeAttribute 集群全局的节点信息。
+         * @param nodeAttribute Cluster global node information.
          * 
          * @return builder
          * 
@@ -895,7 +895,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeAttribute 集群全局的节点信息。
+         * @param nodeAttribute Cluster global node information.
          * 
          * @return builder
          * 
@@ -918,7 +918,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+         * @param projectName Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
          * 
          * @return builder
          * 
@@ -929,7 +929,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+         * @param projectName Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
          * 
          * @return builder
          * 
@@ -939,7 +939,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readyTime 集群创建完成时间。
+         * @param readyTime Cluster creation completion time.
          * 
          * @return builder
          * 
@@ -950,7 +950,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readyTime 集群创建完成时间。
+         * @param readyTime Cluster creation completion time.
          * 
          * @return builder
          * 
@@ -960,7 +960,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param releaseVersion 集群版本。
+         * @param releaseVersion Cluster version.
          * 
          * @return builder
          * 
@@ -971,7 +971,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param releaseVersion 集群版本。
+         * @param releaseVersion Cluster version.
          * 
          * @return builder
          * 
@@ -981,7 +981,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupId 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+         * @param securityGroupId Cluster global security group ID. All ECS in node groups will join this security group.
          * 
          * @return builder
          * 
@@ -992,7 +992,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupId 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+         * @param securityGroupId Cluster global security group ID. All ECS in node groups will join this security group.
          * 
          * @return builder
          * 
@@ -1002,7 +1002,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityMode 安全模式。
+         * @param securityMode Security mode.
          * 
          * @return builder
          * 
@@ -1013,7 +1013,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityMode 安全模式。
+         * @param securityMode Security mode.
          * 
          * @return builder
          * 
@@ -1023,7 +1023,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param stateChangeReason 状态变更原因。
+         * @param stateChangeReason Status change reason.
          * 
          * @return builder
          * 
@@ -1034,7 +1034,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param stateChangeReason 状态变更原因。
+         * @param stateChangeReason Status change reason.
          * 
          * @return builder
          * 
@@ -1057,7 +1057,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param terminateTime 集群终止时间。
+         * @param terminateTime Cluster termination time.
          * 
          * @return builder
          * 
@@ -1068,7 +1068,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param terminateTime 集群终止时间。
+         * @param terminateTime Cluster termination time.
          * 
          * @return builder
          * 

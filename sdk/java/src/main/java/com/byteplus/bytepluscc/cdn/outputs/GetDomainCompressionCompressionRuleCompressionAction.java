@@ -13,62 +13,62 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainCompressionCompressionRuleCompressionAction {
     /**
-     * @return 如果匹配条件是基于 Content-Type 头部（此时，Condition 是 null 或不指定），该参数用来指定 Content-Type 的匹配条件，有以下取值：default: 表示匹配条件是 Content-Type 头部匹配默认 Content-Type 列表中包含的文件类型。customize：表示匹配条件是 Content-Type 头部匹配自定义的文件类型。如果 Conditon 不为 null，表示匹配条件是在 ConditionRule 中定义的。此时，该参数必须设置为 all。
+     * @return If the matching condition is based on the Content-Type header (when Condition is null or not specified), this parameter specifies the matching criteria for Content-Type. The values are as follows: default: matches file types included in the default Content-Type list. customize: matches custom file types in the Content-Type header. If Condition is not null, the matching criteria are defined in ConditionRule. In this case, this parameter must be set to all.
      * 
      */
     private String compressionFormat;
     /**
-     * @return 指定压缩的文件类型。该参数的说明如下：如果 CompressionFormat 为 default，该参数必须设置为 *，表示默认的 Content-Type 列表。该列表包含以下文件类型：text/html、text/xml、text/plain、text/css、application/javascript、application/x-javascript、application/rss+xml、text/javascript、image/tiff、image/svg+xml、application/json、application/xml、text/plain; charset=utf-8。如果 CompressionFormat 为 customize，需要指定一个或者多个文件类型。多个文件类型以逗号（,）分隔。如果 CompressionFormat 为 all，该参数必须设置为 *。
+     * @return Specifies the file types to compress. The parameter is described as follows: If CompressionFormat is default, this parameter must be set to *, indicating the default Content-Type list. The list includes the following file types: text/html, text/xml, text/plain, text/css, application/javascript, application/x-javascript, application/rss+xml, text/javascript, image/tiff, image/svg+xml, application/json, application/xml, text/plain; charset=utf-8. If CompressionFormat is customize, you need to specify one or more file types. Multiple file types are separated by commas (,). If CompressionFormat is all, this parameter must be set to *.
      * 
      */
     private String compressionTarget;
     /**
-     * @return 压缩算法，gzip,br 指定类型压缩，default：默认所有文件压缩，次数Target为*；customize：自定义文件类型压缩. choices: [default, customize]
+     * @return Compression algorithm: gzip and br specify the compression type. default: compresses all files by default, with the target count as *. customize: compresses custom file types. Choices: [default, customize]
      * 
      */
     private List<String> compressionTypes;
     /**
-     * @return 表示文件大小范围的最小值，CDN 仅对大小在 MinFileSizeKB 和 MaxFileSizeKB 所表示的范围内的文件进行压缩。该参数的取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。该参数的默认值是 0。
+     * @return Indicates the minimum value for the file size range. CDN only compresses files within the range specified by MinFileSizeKB and MaxFileSizeKB. The parameter value range is 0   - 2,147,483,647, the unit is KB, and the base is 1,024. The default value is 0.
      * 
      */
     private Integer maxFileSizeKb;
     /**
-     * @return 表示文件大小范围的最大值，取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。如果不指定该参数，表示您不限制文件大小的上限。
+     * @return Indicates the maximum value for the file size range. The value range is 0   - 2,147,483,647, in KB, using a base of 1,024. If this parameter is not specified, there is no upper limit for file size.
      * 
      */
     private Integer minFileSizeKb;
 
     private GetDomainCompressionCompressionRuleCompressionAction() {}
     /**
-     * @return 如果匹配条件是基于 Content-Type 头部（此时，Condition 是 null 或不指定），该参数用来指定 Content-Type 的匹配条件，有以下取值：default: 表示匹配条件是 Content-Type 头部匹配默认 Content-Type 列表中包含的文件类型。customize：表示匹配条件是 Content-Type 头部匹配自定义的文件类型。如果 Conditon 不为 null，表示匹配条件是在 ConditionRule 中定义的。此时，该参数必须设置为 all。
+     * @return If the matching condition is based on the Content-Type header (when Condition is null or not specified), this parameter specifies the matching criteria for Content-Type. The values are as follows: default: matches file types included in the default Content-Type list. customize: matches custom file types in the Content-Type header. If Condition is not null, the matching criteria are defined in ConditionRule. In this case, this parameter must be set to all.
      * 
      */
     public String compressionFormat() {
         return this.compressionFormat;
     }
     /**
-     * @return 指定压缩的文件类型。该参数的说明如下：如果 CompressionFormat 为 default，该参数必须设置为 *，表示默认的 Content-Type 列表。该列表包含以下文件类型：text/html、text/xml、text/plain、text/css、application/javascript、application/x-javascript、application/rss+xml、text/javascript、image/tiff、image/svg+xml、application/json、application/xml、text/plain; charset=utf-8。如果 CompressionFormat 为 customize，需要指定一个或者多个文件类型。多个文件类型以逗号（,）分隔。如果 CompressionFormat 为 all，该参数必须设置为 *。
+     * @return Specifies the file types to compress. The parameter is described as follows: If CompressionFormat is default, this parameter must be set to *, indicating the default Content-Type list. The list includes the following file types: text/html, text/xml, text/plain, text/css, application/javascript, application/x-javascript, application/rss+xml, text/javascript, image/tiff, image/svg+xml, application/json, application/xml, text/plain; charset=utf-8. If CompressionFormat is customize, you need to specify one or more file types. Multiple file types are separated by commas (,). If CompressionFormat is all, this parameter must be set to *.
      * 
      */
     public String compressionTarget() {
         return this.compressionTarget;
     }
     /**
-     * @return 压缩算法，gzip,br 指定类型压缩，default：默认所有文件压缩，次数Target为*；customize：自定义文件类型压缩. choices: [default, customize]
+     * @return Compression algorithm: gzip and br specify the compression type. default: compresses all files by default, with the target count as *. customize: compresses custom file types. Choices: [default, customize]
      * 
      */
     public List<String> compressionTypes() {
         return this.compressionTypes;
     }
     /**
-     * @return 表示文件大小范围的最小值，CDN 仅对大小在 MinFileSizeKB 和 MaxFileSizeKB 所表示的范围内的文件进行压缩。该参数的取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。该参数的默认值是 0。
+     * @return Indicates the minimum value for the file size range. CDN only compresses files within the range specified by MinFileSizeKB and MaxFileSizeKB. The parameter value range is 0   - 2,147,483,647, the unit is KB, and the base is 1,024. The default value is 0.
      * 
      */
     public Integer maxFileSizeKb() {
         return this.maxFileSizeKb;
     }
     /**
-     * @return 表示文件大小范围的最大值，取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。如果不指定该参数，表示您不限制文件大小的上限。
+     * @return Indicates the maximum value for the file size range. The value range is 0   - 2,147,483,647, in KB, using a base of 1,024. If this parameter is not specified, there is no upper limit for file size.
      * 
      */
     public Integer minFileSizeKb() {

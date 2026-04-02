@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Storageebs
 {
     /// <summary>
-    /// 云盘是高可用、高可靠、高性能、弹性扩展的块存储设备，可以作为云服务器和弹性容器服务的可扩展硬盘使用。
+    /// Cloud disk is a block storage device with high availability, high reliability, high performance, and elastic scalability. It can be used as a scalable disk for cloud servers and elastic container services.
     /// 
     /// ## Example Usage
     /// 
@@ -44,133 +44,133 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
     public partial class Volume : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 自动快照策略ID。
+        /// Automatic snapshot policy ID.
         /// </summary>
         [Output("autoSnapshotPolicyId")]
         public Output<string> AutoSnapshotPolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// 自动快照策略名称。
+        /// Automatic snapshot policy name.
         /// </summary>
         [Output("autoSnapshotPolicyName")]
         public Output<string> AutoSnapshotPolicyName { get; private set; } = null!;
 
         /// <summary>
-        /// 基本性能。
+        /// Baseline performance.
         /// </summary>
         [Output("baselinePerformance")]
         public Output<Outputs.VolumeBaselinePerformance> BaselinePerformance { get; private set; } = null!;
 
         /// <summary>
-        /// 云盘创建时间。
+        /// Disk creation time.
         /// </summary>
         [Output("createdAt")]
         public Output<string> CreatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+        /// When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
         /// </summary>
         [Output("deleteWithInstance")]
         public Output<bool> DeleteWithInstance { get; private set; } = null!;
 
         /// <summary>
-        /// 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+        /// Disk description. Default is empty. Length must be between 1 and 255 characters.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 设备名称
+        /// Device name
         /// </summary>
         [Output("deviceName")]
         public Output<string> DeviceName { get; private set; } = null!;
 
         /// <summary>
-        /// 具体错误
+        /// Specific error
         /// </summary>
         [Output("errorDetail")]
         public Output<string> ErrorDetail { get; private set; } = null!;
 
         /// <summary>
-        /// 包年包月到期时间。
+        /// Expiration time for yearly/monthly subscription.
         /// </summary>
         [Output("expiredTime")]
         public Output<string> ExpiredTime { get; private set; } = null!;
 
         /// <summary>
-        /// 额外性能。
+        /// Extra performance.
         /// </summary>
         [Output("extraPerformance")]
         public Output<Outputs.VolumeExtraPerformance> ExtraPerformance { get; private set; } = null!;
 
         /// <summary>
-        /// 云盘中的镜像ID。
+        /// Image ID in the disk.
         /// </summary>
         [Output("imageId")]
         public Output<string> ImageId { get; private set; } = null!;
 
         /// <summary>
-        /// 创建云盘的同时挂载的ECS实例ID。
+        /// ECS instance ID mounted when creating the cloud disk.
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+        /// Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
         /// </summary>
         [Output("kind")]
         public Output<string> Kind { get; private set; } = null!;
 
         /// <summary>
-        /// 云盘欠费回收时间。
+        /// Disk overdue reclamation time.
         /// </summary>
         [Output("overdueReclaimTime")]
         public Output<string> OverdueReclaimTime { get; private set; } = null!;
 
         /// <summary>
-        /// 云盘欠费关停时间。
+        /// Disk overdue shutdown time.
         /// </summary>
         [Output("overdueTime")]
         public Output<string> OverdueTime { get; private set; } = null!;
 
         /// <summary>
-        /// 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+        /// Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
         /// </summary>
         [Output("payType")]
         public Output<string> PayType { get; private set; } = null!;
 
         /// <summary>
-        /// 云盘所要加入的Project（项目）名称。
+        /// Project name to which the disk will be added.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+        /// Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
         /// </summary>
         [Output("renewType")]
         public Output<double> RenewType { get; private set; } = null!;
 
         /// <summary>
-        /// Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+        /// Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
         /// </summary>
         [Output("size")]
         public Output<double> Size { get; private set; } = null!;
 
         /// <summary>
-        /// 快照计数
+        /// Snapshot count.
         /// </summary>
         [Output("snapshotCount")]
         public Output<double> SnapshotCount { get; private set; } = null!;
 
         /// <summary>
-        /// 源快照。
+        /// Source snapshot.
         /// </summary>
         [Output("sourceSnapshotId")]
         public Output<string> SourceSnapshotId { get; private set; } = null!;
 
         /// <summary>
-        /// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+        /// Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -179,43 +179,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
         public Output<ImmutableArray<Outputs.VolumeTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 总性能。
+        /// Total performance.
         /// </summary>
         [Output("totalPerformance")]
         public Output<Outputs.VolumeTotalPerformance> TotalPerformance { get; private set; } = null!;
 
         /// <summary>
-        /// 交易状态 0：创建中 1：运行中 2：创建失败
+        /// Transaction status 0: Creating 1: Running 2: Creation failed
         /// </summary>
         [Output("tradeStatus")]
         public Output<double> TradeStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 云盘更新时间。
+        /// Disk update time.
         /// </summary>
         [Output("updatedAt")]
         public Output<string> UpdatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 云盘id。
+        /// Disk ID.
         /// </summary>
         [Output("volumeId")]
         public Output<string> VolumeId { get; private set; } = null!;
 
         /// <summary>
-        /// 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+        /// Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
         /// </summary>
         [Output("volumeName")]
         public Output<string> VolumeName { get; private set; } = null!;
 
         /// <summary>
-        /// 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+        /// Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
         /// </summary>
         [Output("volumeType")]
         public Output<string> VolumeType { get; private set; } = null!;
 
         /// <summary>
-        /// 可用区ID。
+        /// Availability zone ID.
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
@@ -268,61 +268,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
     public sealed class VolumeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 自动快照策略ID。
+        /// Automatic snapshot policy ID.
         /// </summary>
         [Input("autoSnapshotPolicyId")]
         public Input<string>? AutoSnapshotPolicyId { get; set; }
 
         /// <summary>
-        /// 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+        /// When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
         /// </summary>
         [Input("deleteWithInstance")]
         public Input<bool>? DeleteWithInstance { get; set; }
 
         /// <summary>
-        /// 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+        /// Disk description. Default is empty. Length must be between 1 and 255 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 额外性能。
+        /// Extra performance.
         /// </summary>
         [Input("extraPerformance")]
         public Input<Inputs.VolumeExtraPerformanceArgs>? ExtraPerformance { get; set; }
 
         /// <summary>
-        /// 创建云盘的同时挂载的ECS实例ID。
+        /// ECS instance ID mounted when creating the cloud disk.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+        /// Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
         /// </summary>
         [Input("kind")]
         public Input<string>? Kind { get; set; }
 
         /// <summary>
-        /// 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+        /// Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
         /// </summary>
         [Input("payType")]
         public Input<string>? PayType { get; set; }
 
         /// <summary>
-        /// 云盘所要加入的Project（项目）名称。
+        /// Project name to which the disk will be added.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+        /// Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
         /// </summary>
         [Input("size", required: true)]
         public Input<double> Size { get; set; } = null!;
 
         /// <summary>
-        /// 源快照。
+        /// Source snapshot.
         /// </summary>
         [Input("sourceSnapshotId")]
         public Input<string>? SourceSnapshotId { get; set; }
@@ -336,19 +336,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
         }
 
         /// <summary>
-        /// 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+        /// Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
         /// </summary>
         [Input("volumeName", required: true)]
         public Input<string> VolumeName { get; set; } = null!;
 
         /// <summary>
-        /// 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+        /// Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
         /// </summary>
         [Input("volumeType", required: true)]
         public Input<string> VolumeType { get; set; } = null!;
 
         /// <summary>
-        /// 可用区ID。
+        /// Availability zone ID.
         /// </summary>
         [Input("zoneId", required: true)]
         public Input<string> ZoneId { get; set; } = null!;
@@ -362,133 +362,133 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
     public sealed class VolumeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 自动快照策略ID。
+        /// Automatic snapshot policy ID.
         /// </summary>
         [Input("autoSnapshotPolicyId")]
         public Input<string>? AutoSnapshotPolicyId { get; set; }
 
         /// <summary>
-        /// 自动快照策略名称。
+        /// Automatic snapshot policy name.
         /// </summary>
         [Input("autoSnapshotPolicyName")]
         public Input<string>? AutoSnapshotPolicyName { get; set; }
 
         /// <summary>
-        /// 基本性能。
+        /// Baseline performance.
         /// </summary>
         [Input("baselinePerformance")]
         public Input<Inputs.VolumeBaselinePerformanceGetArgs>? BaselinePerformance { get; set; }
 
         /// <summary>
-        /// 云盘创建时间。
+        /// Disk creation time.
         /// </summary>
         [Input("createdAt")]
         public Input<string>? CreatedAt { get; set; }
 
         /// <summary>
-        /// 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+        /// When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
         /// </summary>
         [Input("deleteWithInstance")]
         public Input<bool>? DeleteWithInstance { get; set; }
 
         /// <summary>
-        /// 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+        /// Disk description. Default is empty. Length must be between 1 and 255 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 设备名称
+        /// Device name
         /// </summary>
         [Input("deviceName")]
         public Input<string>? DeviceName { get; set; }
 
         /// <summary>
-        /// 具体错误
+        /// Specific error
         /// </summary>
         [Input("errorDetail")]
         public Input<string>? ErrorDetail { get; set; }
 
         /// <summary>
-        /// 包年包月到期时间。
+        /// Expiration time for yearly/monthly subscription.
         /// </summary>
         [Input("expiredTime")]
         public Input<string>? ExpiredTime { get; set; }
 
         /// <summary>
-        /// 额外性能。
+        /// Extra performance.
         /// </summary>
         [Input("extraPerformance")]
         public Input<Inputs.VolumeExtraPerformanceGetArgs>? ExtraPerformance { get; set; }
 
         /// <summary>
-        /// 云盘中的镜像ID。
+        /// Image ID in the disk.
         /// </summary>
         [Input("imageId")]
         public Input<string>? ImageId { get; set; }
 
         /// <summary>
-        /// 创建云盘的同时挂载的ECS实例ID。
+        /// ECS instance ID mounted when creating the cloud disk.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+        /// Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
         /// </summary>
         [Input("kind")]
         public Input<string>? Kind { get; set; }
 
         /// <summary>
-        /// 云盘欠费回收时间。
+        /// Disk overdue reclamation time.
         /// </summary>
         [Input("overdueReclaimTime")]
         public Input<string>? OverdueReclaimTime { get; set; }
 
         /// <summary>
-        /// 云盘欠费关停时间。
+        /// Disk overdue shutdown time.
         /// </summary>
         [Input("overdueTime")]
         public Input<string>? OverdueTime { get; set; }
 
         /// <summary>
-        /// 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+        /// Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
         /// </summary>
         [Input("payType")]
         public Input<string>? PayType { get; set; }
 
         /// <summary>
-        /// 云盘所要加入的Project（项目）名称。
+        /// Project name to which the disk will be added.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+        /// Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
         /// </summary>
         [Input("renewType")]
         public Input<double>? RenewType { get; set; }
 
         /// <summary>
-        /// Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+        /// Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
         /// </summary>
         [Input("size")]
         public Input<double>? Size { get; set; }
 
         /// <summary>
-        /// 快照计数
+        /// Snapshot count.
         /// </summary>
         [Input("snapshotCount")]
         public Input<double>? SnapshotCount { get; set; }
 
         /// <summary>
-        /// 源快照。
+        /// Source snapshot.
         /// </summary>
         [Input("sourceSnapshotId")]
         public Input<string>? SourceSnapshotId { get; set; }
 
         /// <summary>
-        /// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+        /// Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -502,43 +502,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
         }
 
         /// <summary>
-        /// 总性能。
+        /// Total performance.
         /// </summary>
         [Input("totalPerformance")]
         public Input<Inputs.VolumeTotalPerformanceGetArgs>? TotalPerformance { get; set; }
 
         /// <summary>
-        /// 交易状态 0：创建中 1：运行中 2：创建失败
+        /// Transaction status 0: Creating 1: Running 2: Creation failed
         /// </summary>
         [Input("tradeStatus")]
         public Input<double>? TradeStatus { get; set; }
 
         /// <summary>
-        /// 云盘更新时间。
+        /// Disk update time.
         /// </summary>
         [Input("updatedAt")]
         public Input<string>? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 云盘id。
+        /// Disk ID.
         /// </summary>
         [Input("volumeId")]
         public Input<string>? VolumeId { get; set; }
 
         /// <summary>
-        /// 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+        /// Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
         /// </summary>
         [Input("volumeName")]
         public Input<string>? VolumeName { get; set; }
 
         /// <summary>
-        /// 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+        /// Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
         /// </summary>
         [Input("volumeType")]
         public Input<string>? VolumeType { get; set; }
 
         /// <summary>
-        /// 可用区ID。
+        /// Availability zone ID.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamUpstreamSpecEcsInstance {
     /**
-     * @return 云服务器ID。
+     * @return Cloud server ID
      * 
      */
     private String ecsId;
     /**
-     * @return IP地址。
+     * @return IP address
      * 
      */
     private String ip;
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     private Integer port;
 
     private GetUpstreamUpstreamSpecEcsInstance() {}
     /**
-     * @return 云服务器ID。
+     * @return Cloud server ID
      * 
      */
     public String ecsId() {
         return this.ecsId;
     }
     /**
-     * @return IP地址。
+     * @return IP address
      * 
      */
     public String ip() {
         return this.ip;
     }
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     public Integer port() {

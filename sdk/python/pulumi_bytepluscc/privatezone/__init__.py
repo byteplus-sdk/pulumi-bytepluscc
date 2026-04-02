@@ -12,8 +12,11 @@ from .get_resolver_endpoint import *
 from .get_resolver_endpoints import *
 from .get_resolver_rule import *
 from .get_resolver_rules import *
+from .get_user_vpc_authorization import *
+from .get_user_vpc_authorizations import *
 from .record import *
 from .resolver_endpoint import *
 from .resolver_rule import *
+from .user_vpc_authorization import *
 from ._inputs import *
 from . import outputs

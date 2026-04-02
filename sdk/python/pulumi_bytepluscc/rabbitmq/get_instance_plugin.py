@@ -63,7 +63,7 @@ class GetInstancePluginResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        插件描述。
+        Plugin description
         """
         return pulumi.get(self, "description")
 
@@ -71,7 +71,7 @@ class GetInstancePluginResult:
     @pulumi.getter(name="disablePrompt")
     def disable_prompt(self) -> builtins.str:
         """
-        关闭此插件的注意事项说明。
+        Notes for disabling this plugin
         """
         return pulumi.get(self, "disable_prompt")
 
@@ -79,7 +79,7 @@ class GetInstancePluginResult:
     @pulumi.getter(name="enablePrompt")
     def enable_prompt(self) -> builtins.str:
         """
-        开启此插件的注意事项说明。
+        Notes for enabling this plugin
         """
         return pulumi.get(self, "enable_prompt")
 
@@ -87,7 +87,7 @@ class GetInstancePluginResult:
     @pulumi.getter
     def enabled(self) -> builtins.bool:
         """
-        是否已开启插件。true：插件已开启。false：插件已关闭。
+        Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
         """
         return pulumi.get(self, "enabled")
 
@@ -103,7 +103,7 @@ class GetInstancePluginResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例 ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -111,7 +111,7 @@ class GetInstancePluginResult:
     @pulumi.getter(name="needRebootOnChange")
     def need_reboot_on_change(self) -> builtins.bool:
         """
-        开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+        Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
         """
         return pulumi.get(self, "need_reboot_on_change")
 
@@ -119,7 +119,7 @@ class GetInstancePluginResult:
     @pulumi.getter(name="pluginName")
     def plugin_name(self) -> builtins.str:
         """
-        插件名称。
+        Plugin name
         """
         return pulumi.get(self, "plugin_name")
 
@@ -127,7 +127,7 @@ class GetInstancePluginResult:
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        插件监听的端口。
+        Plugin listening port
         """
         return pulumi.get(self, "port")
 
@@ -135,7 +135,7 @@ class GetInstancePluginResult:
     @pulumi.getter
     def version(self) -> builtins.str:
         """
-        插件版本。
+        Plugin version
         """
         return pulumi.get(self, "version")
 

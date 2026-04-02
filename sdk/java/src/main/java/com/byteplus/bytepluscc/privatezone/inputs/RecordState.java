@@ -18,14 +18,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     public static final RecordState Empty = new RecordState();
 
     /**
-     * 解析记录的创建时间。
+     * Creation time of the DNS record.
      * 
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
-     * @return 解析记录的创建时间。
+     * @return Creation time of the DNS record.
      * 
      */
     public Optional<Output<String>> createdAt() {
@@ -33,14 +33,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 解析记录是否被启用。
+     * Indicates whether the DNS record is enabled.
      * 
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
-     * @return 解析记录是否被启用。
+     * @return Indicates whether the DNS record is enabled.
      * 
      */
     public Optional<Output<Boolean>> enable() {
@@ -48,14 +48,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子域名的域名前缀。
+     * Domain prefix for the subdomain.
      * 
      */
     @Import(name="host")
     private @Nullable Output<String> host;
 
     /**
-     * @return 子域名的域名前缀。
+     * @return Domain prefix for the subdomain.
      * 
      */
     public Optional<Output<String>> host() {
@@ -63,14 +63,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 最近一次更新解析记录的账号 ID。
+     * Account ID of the most recent update to the DNS record.
      * 
      */
     @Import(name="lastOperator")
     private @Nullable Output<String> lastOperator;
 
     /**
-     * @return 最近一次更新解析记录的账号 ID。
+     * @return Account ID of the most recent update to the DNS record.
      * 
      */
     public Optional<Output<String>> lastOperator() {
@@ -78,14 +78,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 解析记录的线路，只能是默认线路 default。
+     * DNS record route, only the default route &#39;default&#39; is supported.
      * 
      */
     @Import(name="line")
     private @Nullable Output<String> line;
 
     /**
-     * @return 解析记录的线路，只能是默认线路 default。
+     * @return DNS record route, only the default route &#39;default&#39; is supported.
      * 
      */
     public Optional<Output<String>> line() {
@@ -93,14 +93,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 解析记录 ID。
+     * DNS record ID.
      * 
      */
     @Import(name="recordId")
     private @Nullable Output<String> recordId;
 
     /**
-     * @return 解析记录 ID。
+     * @return DNS record ID.
      * 
      */
     public Optional<Output<String>> recordId() {
@@ -108,14 +108,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+     * Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      * 
      */
     @Import(name="remark")
     private @Nullable Output<String> remark;
 
     /**
-     * @return 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+     * @return Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      * 
      */
     public Optional<Output<String>> remark() {
@@ -123,14 +123,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 解析记录的过期时间。单位为秒。默认值为 600。
+     * DNS record TTL (time to live), in seconds. Default is 600.
      * 
      */
     @Import(name="ttl")
     private @Nullable Output<Integer> ttl;
 
     /**
-     * @return 解析记录的过期时间。单位为秒。默认值为 600。
+     * @return DNS record TTL (time to live), in seconds. Default is 600.
      * 
      */
     public Optional<Output<Integer>> ttl() {
@@ -138,14 +138,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+     * DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+     * @return DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
      * 
      */
     public Optional<Output<String>> type() {
@@ -153,14 +153,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 解析记录最近一次的更新时间。
+     * Last update time of the DNS record.
      * 
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
-     * @return 解析记录最近一次的更新时间。
+     * @return Last update time of the DNS record.
      * 
      */
     public Optional<Output<String>> updatedAt() {
@@ -168,14 +168,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 记录值。
+     * Record value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 记录值。
+     * @return Record value.
      * 
      */
     public Optional<Output<String>> value() {
@@ -183,14 +183,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+     * Record weight. The weight takes effect only when load balancing is enabled for the domain name.
      * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
-     * @return 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+     * @return Record weight. The weight takes effect only when load balancing is enabled for the domain name.
      * 
      */
     public Optional<Output<Integer>> weight() {
@@ -198,14 +198,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 该记录集是否开启了负载均衡。
+     * Indicates whether load balancing is enabled for this record set.
      * 
      */
     @Import(name="weightEnabled")
     private @Nullable Output<Boolean> weightEnabled;
 
     /**
-     * @return 该记录集是否开启了负载均衡。
+     * @return Indicates whether load balancing is enabled for this record set.
      * 
      */
     public Optional<Output<Boolean>> weightEnabled() {
@@ -213,14 +213,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 域名 ID。
+     * Domain name ID.
      * 
      */
     @Import(name="zid")
     private @Nullable Output<Integer> zid;
 
     /**
-     * @return 域名 ID。
+     * @return Domain name ID.
      * 
      */
     public Optional<Output<Integer>> zid() {
@@ -265,7 +265,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdAt 解析记录的创建时间。
+         * @param createdAt Creation time of the DNS record.
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdAt 解析记录的创建时间。
+         * @param createdAt Creation time of the DNS record.
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enable 解析记录是否被启用。
+         * @param enable Indicates whether the DNS record is enabled.
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enable 解析记录是否被启用。
+         * @param enable Indicates whether the DNS record is enabled.
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param host 子域名的域名前缀。
+         * @param host Domain prefix for the subdomain.
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param host 子域名的域名前缀。
+         * @param host Domain prefix for the subdomain.
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lastOperator 最近一次更新解析记录的账号 ID。
+         * @param lastOperator Account ID of the most recent update to the DNS record.
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lastOperator 最近一次更新解析记录的账号 ID。
+         * @param lastOperator Account ID of the most recent update to the DNS record.
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param line 解析记录的线路，只能是默认线路 default。
+         * @param line DNS record route, only the default route &#39;default&#39; is supported.
          * 
          * @return builder
          * 
@@ -360,7 +360,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param line 解析记录的线路，只能是默认线路 default。
+         * @param line DNS record route, only the default route &#39;default&#39; is supported.
          * 
          * @return builder
          * 
@@ -370,7 +370,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recordId 解析记录 ID。
+         * @param recordId DNS record ID.
          * 
          * @return builder
          * 
@@ -381,7 +381,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recordId 解析记录 ID。
+         * @param recordId DNS record ID.
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param remark 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+         * @param remark Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
          * 
          * @return builder
          * 
@@ -402,7 +402,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param remark 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+         * @param remark Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
          * 
          * @return builder
          * 
@@ -412,7 +412,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ttl 解析记录的过期时间。单位为秒。默认值为 600。
+         * @param ttl DNS record TTL (time to live), in seconds. Default is 600.
          * 
          * @return builder
          * 
@@ -423,7 +423,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ttl 解析记录的过期时间。单位为秒。默认值为 600。
+         * @param ttl DNS record TTL (time to live), in seconds. Default is 600.
          * 
          * @return builder
          * 
@@ -433,7 +433,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+         * @param type DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
          * 
          * @return builder
          * 
@@ -444,7 +444,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+         * @param type DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
          * 
          * @return builder
          * 
@@ -454,7 +454,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedAt 解析记录最近一次的更新时间。
+         * @param updatedAt Last update time of the DNS record.
          * 
          * @return builder
          * 
@@ -465,7 +465,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedAt 解析记录最近一次的更新时间。
+         * @param updatedAt Last update time of the DNS record.
          * 
          * @return builder
          * 
@@ -475,7 +475,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 记录值。
+         * @param value Record value.
          * 
          * @return builder
          * 
@@ -486,7 +486,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 记录值。
+         * @param value Record value.
          * 
          * @return builder
          * 
@@ -496,7 +496,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param weight 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+         * @param weight Record weight. The weight takes effect only when load balancing is enabled for the domain name.
          * 
          * @return builder
          * 
@@ -507,7 +507,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param weight 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+         * @param weight Record weight. The weight takes effect only when load balancing is enabled for the domain name.
          * 
          * @return builder
          * 
@@ -517,7 +517,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param weightEnabled 该记录集是否开启了负载均衡。
+         * @param weightEnabled Indicates whether load balancing is enabled for this record set.
          * 
          * @return builder
          * 
@@ -528,7 +528,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param weightEnabled 该记录集是否开启了负载均衡。
+         * @param weightEnabled Indicates whether load balancing is enabled for this record set.
          * 
          * @return builder
          * 
@@ -538,7 +538,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zid 域名 ID。
+         * @param zid Domain name ID.
          * 
          * @return builder
          * 
@@ -549,7 +549,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zid 域名 ID。
+         * @param zid Domain name ID.
          * 
          * @return builder
          * 

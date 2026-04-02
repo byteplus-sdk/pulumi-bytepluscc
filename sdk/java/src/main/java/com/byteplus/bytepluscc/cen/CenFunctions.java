@@ -6,8 +6,12 @@ package com.byteplus.bytepluscc.cen;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.cen.inputs.GetCenArgs;
 import com.byteplus.bytepluscc.cen.inputs.GetCenPlainArgs;
+import com.byteplus.bytepluscc.cen.inputs.GetGrantInstanceArgs;
+import com.byteplus.bytepluscc.cen.inputs.GetGrantInstancePlainArgs;
 import com.byteplus.bytepluscc.cen.outputs.GetCenResult;
 import com.byteplus.bytepluscc.cen.outputs.GetCensResult;
+import com.byteplus.bytepluscc.cen.outputs.GetGrantInstanceResult;
+import com.byteplus.bytepluscc.cen.outputs.GetGrantInstancesResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -100,5 +104,89 @@ public final class CenFunctions {
      */
     public static CompletableFuture<GetCensResult> getCensPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:cen/getCens:getCens", TypeShape.of(GetCensResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::GrantInstance
+     * 
+     */
+    public static Output<GetGrantInstanceResult> getGrantInstance(GetGrantInstanceArgs args) {
+        return getGrantInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::GrantInstance
+     * 
+     */
+    public static CompletableFuture<GetGrantInstanceResult> getGrantInstancePlain(GetGrantInstancePlainArgs args) {
+        return getGrantInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::GrantInstance
+     * 
+     */
+    public static Output<GetGrantInstanceResult> getGrantInstance(GetGrantInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getGrantInstance:getGrantInstance", TypeShape.of(GetGrantInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::GrantInstance
+     * 
+     */
+    public static Output<GetGrantInstanceResult> getGrantInstance(GetGrantInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getGrantInstance:getGrantInstance", TypeShape.of(GetGrantInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::GrantInstance
+     * 
+     */
+    public static CompletableFuture<GetGrantInstanceResult> getGrantInstancePlain(GetGrantInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cen/getGrantInstance:getGrantInstance", TypeShape.of(GetGrantInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::GrantInstance
+     * 
+     */
+    public static Output<GetGrantInstancesResult> getGrantInstances() {
+        return getGrantInstances(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::GrantInstance
+     * 
+     */
+    public static CompletableFuture<GetGrantInstancesResult> getGrantInstancesPlain() {
+        return getGrantInstancesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::GrantInstance
+     * 
+     */
+    public static Output<GetGrantInstancesResult> getGrantInstances(InvokeArgs args) {
+        return getGrantInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::GrantInstance
+     * 
+     */
+    public static CompletableFuture<GetGrantInstancesResult> getGrantInstancesPlain(InvokeArgs args) {
+        return getGrantInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::GrantInstance
+     * 
+     */
+    public static Output<GetGrantInstancesResult> getGrantInstances(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getGrantInstances:getGrantInstances", TypeShape.of(GetGrantInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::GrantInstance
+     * 
+     */
+    public static Output<GetGrantInstancesResult> getGrantInstances(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getGrantInstances:getGrantInstances", TypeShape.of(GetGrantInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::GrantInstance
+     * 
+     */
+    public static CompletableFuture<GetGrantInstancesResult> getGrantInstancesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cen/getGrantInstances:getGrantInstances", TypeShape.of(GetGrantInstancesResult.class), args, Utilities.withVersion(options));
     }
 }

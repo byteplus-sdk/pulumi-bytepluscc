@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization.Outputs
     public sealed class OrganizationOwner
     {
         /// <summary>
-        /// 账号ID
+        /// Account ID
         /// </summary>
         public readonly int? AccountId;
         /// <summary>
-        /// 账号名称
+        /// Account Name
         /// </summary>
         public readonly string? AccountName;
         /// <summary>
-        /// 主体名称
+        /// Entity Name
         /// </summary>
         public readonly string? MainName;
 

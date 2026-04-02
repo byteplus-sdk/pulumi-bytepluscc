@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 当您需要批量为云身份中心用户进行SSO授权时，您可以先通过用户组进行批量的用户管理。
+// When you need to grant SSO authorization to Cloud Identity Center users in bulk, you can first manage users in bulk through user groups
 //
 // ## Import
 //
@@ -22,22 +22,22 @@ import (
 type Group struct {
 	pulumi.CustomResourceState
 
-	// 创建时间。
+	// Creation Time
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 描述。
+	// Description
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 显示名。
+	// Display Name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// 用户组id。
+	// User Group ID
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
-	// 用户组名称。
+	// User Group Name
 	GroupName pulumi.StringOutput `pulumi:"groupName"`
-	// 用户组类型。
+	// User Group Type
 	JoinType pulumi.StringOutput    `pulumi:"joinType"`
 	Members  GroupMemberArrayOutput `pulumi:"members"`
-	// 用户组来源。
+	// User Group Source
 	Source pulumi.StringOutput `pulumi:"source"`
-	// 更新时间。
+	// Update Time
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -77,42 +77,42 @@ func GetGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Group resources.
 type groupState struct {
-	// 创建时间。
+	// Creation Time
 	CreatedTime *string `pulumi:"createdTime"`
-	// 描述。
+	// Description
 	Description *string `pulumi:"description"`
-	// 显示名。
+	// Display Name
 	DisplayName *string `pulumi:"displayName"`
-	// 用户组id。
+	// User Group ID
 	GroupId *string `pulumi:"groupId"`
-	// 用户组名称。
+	// User Group Name
 	GroupName *string `pulumi:"groupName"`
-	// 用户组类型。
+	// User Group Type
 	JoinType *string       `pulumi:"joinType"`
 	Members  []GroupMember `pulumi:"members"`
-	// 用户组来源。
+	// User Group Source
 	Source *string `pulumi:"source"`
-	// 更新时间。
+	// Update Time
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type GroupState struct {
-	// 创建时间。
+	// Creation Time
 	CreatedTime pulumi.StringPtrInput
-	// 描述。
+	// Description
 	Description pulumi.StringPtrInput
-	// 显示名。
+	// Display Name
 	DisplayName pulumi.StringPtrInput
-	// 用户组id。
+	// User Group ID
 	GroupId pulumi.StringPtrInput
-	// 用户组名称。
+	// User Group Name
 	GroupName pulumi.StringPtrInput
-	// 用户组类型。
+	// User Group Type
 	JoinType pulumi.StringPtrInput
 	Members  GroupMemberArrayInput
-	// 用户组来源。
+	// User Group Source
 	Source pulumi.StringPtrInput
-	// 更新时间。
+	// Update Time
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -121,26 +121,26 @@ func (GroupState) ElementType() reflect.Type {
 }
 
 type groupArgs struct {
-	// 描述。
+	// Description
 	Description *string `pulumi:"description"`
-	// 显示名。
+	// Display Name
 	DisplayName *string `pulumi:"displayName"`
-	// 用户组名称。
+	// User Group Name
 	GroupName string `pulumi:"groupName"`
-	// 用户组类型。
+	// User Group Type
 	JoinType string        `pulumi:"joinType"`
 	Members  []GroupMember `pulumi:"members"`
 }
 
 // The set of arguments for constructing a Group resource.
 type GroupArgs struct {
-	// 描述。
+	// Description
 	Description pulumi.StringPtrInput
-	// 显示名。
+	// Display Name
 	DisplayName pulumi.StringPtrInput
-	// 用户组名称。
+	// User Group Name
 	GroupName pulumi.StringInput
-	// 用户组类型。
+	// User Group Type
 	JoinType pulumi.StringInput
 	Members  GroupMemberArrayInput
 }
@@ -232,32 +232,32 @@ func (o GroupOutput) ToGroupOutputWithContext(ctx context.Context) GroupOutput {
 	return o
 }
 
-// 创建时间。
+// Creation Time
 func (o GroupOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 描述。
+// Description
 func (o GroupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 显示名。
+// Display Name
 func (o GroupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 用户组id。
+// User Group ID
 func (o GroupOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// 用户组名称。
+// User Group Name
 func (o GroupOutput) GroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.GroupName }).(pulumi.StringOutput)
 }
 
-// 用户组类型。
+// User Group Type
 func (o GroupOutput) JoinType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.JoinType }).(pulumi.StringOutput)
 }
@@ -266,12 +266,12 @@ func (o GroupOutput) Members() GroupMemberArrayOutput {
 	return o.ApplyT(func(v *Group) GroupMemberArrayOutput { return v.Members }).(GroupMemberArrayOutput)
 }
 
-// 用户组来源。
+// User Group Source
 func (o GroupOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update Time
 func (o GroupOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

@@ -20,7 +20,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 转发规则详细信息
+ * Forwarding rule details
  * 
  * ## Example Usage
  * 
@@ -37,42 +37,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:privatezone/resolverRule:ResolverRule")
 public class ResolverRule extends com.pulumi.resources.CustomResource {
     /**
-     * 转发规则的创建时间
+     * Creation time of the forwarding rule
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 转发规则的创建时间
+     * @return Creation time of the forwarding rule
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 转发规则是否被启用。true：启用。false：禁用。
+     * Whether the forwarding rule is enabled. true: enabled. false: disabled
      * 
      */
     @Export(name="enable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enable;
 
     /**
-     * @return 转发规则是否被启用。true：启用。false：禁用。
+     * @return Whether the forwarding rule is enabled. true: enabled. false: disabled
      * 
      */
     public Output<Boolean> enable() {
         return this.enable;
     }
     /**
-     * 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+     * Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
      * 
      */
     @Export(name="endpointId", refs={Integer.class}, tree="[0]")
     private Output<Integer> endpointId;
 
     /**
-     * @return 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+     * @return Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
      * 
      */
     public Output<Integer> endpointId() {
@@ -85,70 +85,70 @@ public class ResolverRule extends com.pulumi.resources.CustomResource {
         return this.forwardIPs;
     }
     /**
-     * 最近一次更新转发规则的账号的 ID
+     * Account ID of the last update to the forwarding rule
      * 
      */
     @Export(name="lastOperator", refs={String.class}, tree="[0]")
     private Output<String> lastOperator;
 
     /**
-     * @return 最近一次更新转发规则的账号的 ID
+     * @return Account ID of the last update to the forwarding rule
      * 
      */
     public Output<String> lastOperator() {
         return this.lastOperator;
     }
     /**
-     * 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+     * Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
      * 
      */
     @Export(name="line", refs={String.class}, tree="[0]")
     private Output<String> line;
 
     /**
-     * @return 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+     * @return Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
      * 
      */
     public Output<String> line() {
         return this.line;
     }
     /**
-     * 转发规则的名称。支持 UTF-8 格式。
+     * Name of the forwarding rule. Supports UTF-8 format
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 转发规则的名称。支持 UTF-8 格式。
+     * @return Name of the forwarding rule. Supports UTF-8 format
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 转发规则所属的项目名称。默认为 default。
+     * Project name associated with the forwarding rule. Default is default
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 转发规则所属的项目名称。默认为 default。
+     * @return Project name associated with the forwarding rule. Default is default
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 转发规则的 ID。
+     * Forwarding rule ID
      * 
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
-     * @return 转发规则的 ID。
+     * @return Forwarding rule ID
      * 
      */
     public Output<String> ruleId() {
@@ -161,28 +161,28 @@ public class ResolverRule extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+     * Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+     * @return Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
      * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
-     * 转发规则的更新时间
+     * Update time of the forwarding rule
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 转发规则的更新时间
+     * @return Update time of the forwarding rule
      * 
      */
     public Output<String> updatedTime() {
@@ -195,14 +195,14 @@ public class ResolverRule extends com.pulumi.resources.CustomResource {
         return this.vpCs;
     }
     /**
-     * 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+     * Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
      * 
      */
     @Export(name="zoneName", refs={String.class}, tree="[0]")
     private Output<String> zoneName;
 
     /**
-     * @return 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+     * @return Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
      * 
      */
     public Output<String> zoneName() {

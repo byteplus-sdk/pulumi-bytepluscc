@@ -17,47 +17,47 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayServiceResult {
     /**
-     * @return 认证配置。
+     * @return Authentication configuration.
      * 
      */
     private GetGatewayServiceAuthSpec authSpec;
     /**
-     * @return 备注，长度限制为0~253个字符。
+     * @return Remarks. Length must be 0–253 characters.
      * 
      */
     private String comments;
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     private String createdTime;
     /**
-     * @return 自定义域名列表。
+     * @return Custom domain list.
      * 
      */
     private List<GetGatewayServiceCustomDomain> customDomains;
     /**
-     * @return 域名详情。
+     * @return Domain details.
      * 
      */
     private GetGatewayServiceDomainSpec domainSpec;
     /**
-     * @return 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * @return Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
      * 
      */
     private String domainType;
     /**
-     * @return 默认域名。
+     * @return Default domain.
      * 
      */
     private List<GetGatewayServiceDomain> domains;
     /**
-     * @return 网关ID。
+     * @return Gateway ID.
      * 
      */
     private String gatewayId;
     /**
-     * @return 网关名称。
+     * @return Gateway name.
      * 
      */
     private String gatewayName;
@@ -67,100 +67,100 @@ public final class GetGatewayServiceResult {
      */
     private String id;
     /**
-     * @return 服务创建失败、删除失败或异常时的错误信息。
+     * @return Error message for service creation failure, deletion failure, or abnormal status.
      * 
      */
     private String message;
     /**
-     * @return 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+     * @return Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
      * 
      */
     private List<String> protocols;
     /**
-     * @return 服务ID。
+     * @return Service ID.
      * 
      */
     private String serviceId;
     /**
-     * @return 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+     * @return Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
      * 
      */
     private String serviceName;
     /**
-     * @return 服务默认域名网络配置。。
+     * @return Default domain network configuration..
      * 
      */
     private GetGatewayServiceServiceNetworkSpec serviceNetworkSpec;
     /**
-     * @return 服务类型，取值：AIProvider：AI模型代理。
+     * @return Service type. Options: AIProvider: AI model proxy.
      * 
      */
     private String serviceType;
     /**
-     * @return Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+     * @return Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
      * 
      */
     private String status;
 
     private GetGatewayServiceResult() {}
     /**
-     * @return 认证配置。
+     * @return Authentication configuration.
      * 
      */
     public GetGatewayServiceAuthSpec authSpec() {
         return this.authSpec;
     }
     /**
-     * @return 备注，长度限制为0~253个字符。
+     * @return Remarks. Length must be 0–253 characters.
      * 
      */
     public String comments() {
         return this.comments;
     }
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 自定义域名列表。
+     * @return Custom domain list.
      * 
      */
     public List<GetGatewayServiceCustomDomain> customDomains() {
         return this.customDomains;
     }
     /**
-     * @return 域名详情。
+     * @return Domain details.
      * 
      */
     public GetGatewayServiceDomainSpec domainSpec() {
         return this.domainSpec;
     }
     /**
-     * @return 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * @return Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
      * 
      */
     public String domainType() {
         return this.domainType;
     }
     /**
-     * @return 默认域名。
+     * @return Default domain.
      * 
      */
     public List<GetGatewayServiceDomain> domains() {
         return this.domains;
     }
     /**
-     * @return 网关ID。
+     * @return Gateway ID.
      * 
      */
     public String gatewayId() {
         return this.gatewayId;
     }
     /**
-     * @return 网关名称。
+     * @return Gateway name.
      * 
      */
     public String gatewayName() {
@@ -174,49 +174,49 @@ public final class GetGatewayServiceResult {
         return this.id;
     }
     /**
-     * @return 服务创建失败、删除失败或异常时的错误信息。
+     * @return Error message for service creation failure, deletion failure, or abnormal status.
      * 
      */
     public String message() {
         return this.message;
     }
     /**
-     * @return 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+     * @return Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
      * 
      */
     public List<String> protocols() {
         return this.protocols;
     }
     /**
-     * @return 服务ID。
+     * @return Service ID.
      * 
      */
     public String serviceId() {
         return this.serviceId;
     }
     /**
-     * @return 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+     * @return Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
      * 
      */
     public String serviceName() {
         return this.serviceName;
     }
     /**
-     * @return 服务默认域名网络配置。。
+     * @return Default domain network configuration..
      * 
      */
     public GetGatewayServiceServiceNetworkSpec serviceNetworkSpec() {
         return this.serviceNetworkSpec;
     }
     /**
-     * @return 服务类型，取值：AIProvider：AI模型代理。
+     * @return Service type. Options: AIProvider: AI model proxy.
      * 
      */
     public String serviceType() {
         return this.serviceType;
     }
     /**
-     * @return Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+     * @return Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
      * 
      */
     public String status() {

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class ImageTag
     {
         /// <summary>
-        /// 镜像标签的标签键。
+        /// Tag key for the image label.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 镜像标签的值。
+        /// Image tag value
         /// </summary>
         public readonly string? Value;
 

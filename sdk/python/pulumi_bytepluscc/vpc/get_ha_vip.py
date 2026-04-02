@@ -85,7 +85,7 @@ class GetHaVipResult:
     @pulumi.getter(name="associatedEipAddress")
     def associated_eip_address(self) -> builtins.str:
         """
-        HAVIP绑定的公网IP的IP地址。
+        IP address of the public IP bound to the HAVIP
         """
         return pulumi.get(self, "associated_eip_address")
 
@@ -93,7 +93,7 @@ class GetHaVipResult:
     @pulumi.getter(name="associatedEipId")
     def associated_eip_id(self) -> builtins.str:
         """
-        HAVIP绑定的公网IP的ID。
+        ID of the public IP bound to the HAVIP
         """
         return pulumi.get(self, "associated_eip_id")
 
@@ -101,7 +101,7 @@ class GetHaVipResult:
     @pulumi.getter(name="associatedInstanceIds")
     def associated_instance_ids(self) -> Sequence[builtins.str]:
         """
-        绑定HAVIP的实例ID列表。
+        List of instance IDs bound to the HAVIP
         """
         return pulumi.get(self, "associated_instance_ids")
 
@@ -109,7 +109,7 @@ class GetHaVipResult:
     @pulumi.getter(name="associatedInstanceType")
     def associated_instance_type(self) -> builtins.str:
         """
-        绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+        Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
         """
         return pulumi.get(self, "associated_instance_type")
 
@@ -117,7 +117,7 @@ class GetHaVipResult:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> builtins.str:
         """
-        HAVIP的创建时间。
+        Creation time of the HAVIP
         """
         return pulumi.get(self, "created_at")
 
@@ -125,7 +125,7 @@ class GetHaVipResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        HAVIP的描述。长度限制为0～255个字符。
+        Description of the HAVIP. Length limit: 0–255 characters
         """
         return pulumi.get(self, "description")
 
@@ -133,7 +133,7 @@ class GetHaVipResult:
     @pulumi.getter(name="haVipId")
     def ha_vip_id(self) -> builtins.str:
         """
-        HAVIP的ID。
+        ID of the HAVIP
         """
         return pulumi.get(self, "ha_vip_id")
 
@@ -141,7 +141,7 @@ class GetHaVipResult:
     @pulumi.getter(name="haVipName")
     def ha_vip_name(self) -> builtins.str:
         """
-        HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+        Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
         """
         return pulumi.get(self, "ha_vip_name")
 
@@ -157,7 +157,7 @@ class GetHaVipResult:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> builtins.str:
         """
-        HAVIP的IP地址。
+        IP address of the HAVIP
         """
         return pulumi.get(self, "ip_address")
 
@@ -165,7 +165,7 @@ class GetHaVipResult:
     @pulumi.getter(name="masterInstanceId")
     def master_instance_id(self) -> builtins.str:
         """
-        与HAVIP绑定的主实例的ID。
+        ID of the primary instance bound to the HAVIP
         """
         return pulumi.get(self, "master_instance_id")
 
@@ -173,7 +173,7 @@ class GetHaVipResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        HAVIP的项目名称。
+        Project name of the HAVIP
         """
         return pulumi.get(self, "project_name")
 
@@ -181,7 +181,7 @@ class GetHaVipResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        HAVIP的状态。Available：可用。Creating：创建中。InUse：使用中。Deleting：删除中。
+        Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
         """
         return pulumi.get(self, "status")
 
@@ -189,7 +189,7 @@ class GetHaVipResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        HAVIP所属的子网 ID。
+        Subnet ID to which the HAVIP belongs
         """
         return pulumi.get(self, "subnet_id")
 
@@ -197,7 +197,7 @@ class GetHaVipResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetHaVipTagResult']:
         """
-        HAVIP所属标签。
+        Tags associated with the HAVIP
         """
         return pulumi.get(self, "tags")
 
@@ -205,7 +205,7 @@ class GetHaVipResult:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> builtins.str:
         """
-        HAVIP最近一次的修改时间。
+        Last modification time of the HAVIP
         """
         return pulumi.get(self, "updated_at")
 
@@ -213,7 +213,7 @@ class GetHaVipResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        HAVIP所属的VPC ID。
+        VPC ID to which the HAVIP belongs
         """
         return pulumi.get(self, "vpc_id")
 

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Organization
 {
     /// <summary>
-    /// 查看和管理您组织内的所有账号。每个账号可以直接放在根节点中，也可以移动到您创建的任意组织节点层级结构中，每个账号只能归属于一个节点。您可以分层树状结构管理您的组织结构以及成员账号。
+    /// View and manage all accounts in your organization. Each account can be placed directly in the root node or moved to any organizational node hierarchy you create. Each account can belong to only one node. You can manage your organizational structure and member accounts in a layered tree structure
     /// 
     /// ## Import
     /// 
@@ -23,133 +23,133 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
     public partial class Account : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 火山账号ID。
+        /// Volcano account ID
         /// </summary>
         [Output("accountId")]
         public Output<string> AccountId { get; private set; } = null!;
 
         /// <summary>
-        /// 账户名称。5-20个字符。
+        /// Account name. 5–20 characters
         /// </summary>
         [Output("accountName")]
         public Output<string> AccountName { get; private set; } = null!;
 
         /// <summary>
-        /// 允许控制台访问，1: 允许，2: 不允许。
+        /// Allow console access: 1. Allowed, 2. Not allowed
         /// </summary>
         [Output("allowConsole")]
         public Output<int> AllowConsole { get; private set; } = null!;
 
         /// <summary>
-        /// 允许退出，1: 允许，2: 不允许。
+        /// Allow exit: 1. Allowed, 2. Not allowed
         /// </summary>
         [Output("allowExit")]
         public Output<int> AllowExit { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 删除标记。
+        /// Deletion flag
         /// </summary>
         [Output("deleteUk")]
         public Output<string> DeleteUk { get; private set; } = null!;
 
         /// <summary>
-        /// 删除时间。
+        /// Deletion time
         /// </summary>
         [Output("deletedTime")]
         public Output<string> DeletedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 描述。
+        /// Description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// IAM角色名称。
+        /// IAM role name
         /// </summary>
         [Output("iamRole")]
         public Output<string> IamRole { get; private set; } = null!;
 
         /// <summary>
-        /// 是否是管理员，0.非管理员，1.管理员。
+        /// Administrator status: 0. Non-administrator, 1. Administrator
         /// </summary>
         [Output("isOwner")]
         public Output<int> IsOwner { get; private set; } = null!;
 
         /// <summary>
-        /// 加入类型，1: 创建，2: 邀请。
+        /// Join type: 1. Create, 2. Invite
         /// </summary>
         [Output("joinType")]
         public Output<int> JoinType { get; private set; } = null!;
 
         /// <summary>
-        /// 主体名称。
+        /// Subject name
         /// </summary>
         [Output("mainName")]
         public Output<string> MainName { get; private set; } = null!;
 
         /// <summary>
-        /// 组织成员账号ID。
+        /// Organization member account ID
         /// </summary>
         [Output("memberAccountId")]
         public Output<string> MemberAccountId { get; private set; } = null!;
 
         /// <summary>
-        /// 组织ID。
+        /// Organization ID
         /// </summary>
         [Output("orgId")]
         public Output<string> OrgId { get; private set; } = null!;
 
         /// <summary>
-        /// 组织类型，1.企业组织。
+        /// Organization type: 1. Enterprise organization
         /// </summary>
         [Output("orgType")]
         public Output<int> OrgType { get; private set; } = null!;
 
         /// <summary>
-        /// 组织单元ID。传入 0 加入到 root 单元。
+        /// Organizational unit ID. Enter 0 to join the root unit
         /// </summary>
         [Output("orgUnitId")]
         public Output<string> OrgUnitId { get; private set; } = null!;
 
         /// <summary>
-        /// 组织单元名称。
+        /// Organizational unit name
         /// </summary>
         [Output("orgUnitName")]
         public Output<string> OrgUnitName { get; private set; } = null!;
 
         /// <summary>
-        /// 认证主体ID。
+        /// Authentication subject ID
         /// </summary>
         [Output("orgVerificationId")]
         public Output<string> OrgVerificationId { get; private set; } = null!;
 
         /// <summary>
-        /// 管理员ID。
+        /// Administrator ID
         /// </summary>
         [Output("owner")]
         public Output<string> Owner { get; private set; } = null!;
 
         /// <summary>
-        /// 账户密码。
+        /// Account password
         /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
 
         /// <summary>
-        /// 安全联系信息。
+        /// Security contact information
         /// </summary>
         [Output("secureContactInfo")]
         public Output<Outputs.AccountSecureContactInfo> SecureContactInfo { get; private set; } = null!;
 
         /// <summary>
-        /// 显示名称。
+        /// Display name
         /// </summary>
         [Output("showName")]
         public Output<string> ShowName { get; private set; } = null!;
@@ -158,13 +158,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
         public Output<ImmutableArray<Outputs.AccountTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+        /// Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
         /// </summary>
         [Output("verificationRelationId")]
         public Output<string> VerificationRelationId { get; private set; } = null!;
@@ -217,55 +217,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
     public sealed class AccountArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 账户名称。5-20个字符。
+        /// Account name. 5–20 characters
         /// </summary>
         [Input("accountName", required: true)]
         public Input<string> AccountName { get; set; } = null!;
 
         /// <summary>
-        /// 允许控制台访问，1: 允许，2: 不允许。
+        /// Allow console access: 1. Allowed, 2. Not allowed
         /// </summary>
         [Input("allowConsole")]
         public Input<int>? AllowConsole { get; set; }
 
         /// <summary>
-        /// 允许退出，1: 允许，2: 不允许。
+        /// Allow exit: 1. Allowed, 2. Not allowed
         /// </summary>
         [Input("allowExit")]
         public Input<int>? AllowExit { get; set; }
 
         /// <summary>
-        /// 删除标记。
+        /// Deletion flag
         /// </summary>
         [Input("deleteUk")]
         public Input<string>? DeleteUk { get; set; }
 
         /// <summary>
-        /// 描述。
+        /// Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 组织单元ID。传入 0 加入到 root 单元。
+        /// Organizational unit ID. Enter 0 to join the root unit
         /// </summary>
         [Input("orgUnitId")]
         public Input<string>? OrgUnitId { get; set; }
 
         /// <summary>
-        /// 账户密码。
+        /// Account password
         /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// 安全联系信息。
+        /// Security contact information
         /// </summary>
         [Input("secureContactInfo")]
         public Input<Inputs.AccountSecureContactInfoArgs>? SecureContactInfo { get; set; }
 
         /// <summary>
-        /// 显示名称。
+        /// Display name
         /// </summary>
         [Input("showName", required: true)]
         public Input<string> ShowName { get; set; } = null!;
@@ -279,7 +279,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
         }
 
         /// <summary>
-        /// 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+        /// Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
         /// </summary>
         [Input("verificationRelationId")]
         public Input<string>? VerificationRelationId { get; set; }
@@ -293,133 +293,133 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
     public sealed class AccountState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 火山账号ID。
+        /// Volcano account ID
         /// </summary>
         [Input("accountId")]
         public Input<string>? AccountId { get; set; }
 
         /// <summary>
-        /// 账户名称。5-20个字符。
+        /// Account name. 5–20 characters
         /// </summary>
         [Input("accountName")]
         public Input<string>? AccountName { get; set; }
 
         /// <summary>
-        /// 允许控制台访问，1: 允许，2: 不允许。
+        /// Allow console access: 1. Allowed, 2. Not allowed
         /// </summary>
         [Input("allowConsole")]
         public Input<int>? AllowConsole { get; set; }
 
         /// <summary>
-        /// 允许退出，1: 允许，2: 不允许。
+        /// Allow exit: 1. Allowed, 2. Not allowed
         /// </summary>
         [Input("allowExit")]
         public Input<int>? AllowExit { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 删除标记。
+        /// Deletion flag
         /// </summary>
         [Input("deleteUk")]
         public Input<string>? DeleteUk { get; set; }
 
         /// <summary>
-        /// 删除时间。
+        /// Deletion time
         /// </summary>
         [Input("deletedTime")]
         public Input<string>? DeletedTime { get; set; }
 
         /// <summary>
-        /// 描述。
+        /// Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// IAM角色名称。
+        /// IAM role name
         /// </summary>
         [Input("iamRole")]
         public Input<string>? IamRole { get; set; }
 
         /// <summary>
-        /// 是否是管理员，0.非管理员，1.管理员。
+        /// Administrator status: 0. Non-administrator, 1. Administrator
         /// </summary>
         [Input("isOwner")]
         public Input<int>? IsOwner { get; set; }
 
         /// <summary>
-        /// 加入类型，1: 创建，2: 邀请。
+        /// Join type: 1. Create, 2. Invite
         /// </summary>
         [Input("joinType")]
         public Input<int>? JoinType { get; set; }
 
         /// <summary>
-        /// 主体名称。
+        /// Subject name
         /// </summary>
         [Input("mainName")]
         public Input<string>? MainName { get; set; }
 
         /// <summary>
-        /// 组织成员账号ID。
+        /// Organization member account ID
         /// </summary>
         [Input("memberAccountId")]
         public Input<string>? MemberAccountId { get; set; }
 
         /// <summary>
-        /// 组织ID。
+        /// Organization ID
         /// </summary>
         [Input("orgId")]
         public Input<string>? OrgId { get; set; }
 
         /// <summary>
-        /// 组织类型，1.企业组织。
+        /// Organization type: 1. Enterprise organization
         /// </summary>
         [Input("orgType")]
         public Input<int>? OrgType { get; set; }
 
         /// <summary>
-        /// 组织单元ID。传入 0 加入到 root 单元。
+        /// Organizational unit ID. Enter 0 to join the root unit
         /// </summary>
         [Input("orgUnitId")]
         public Input<string>? OrgUnitId { get; set; }
 
         /// <summary>
-        /// 组织单元名称。
+        /// Organizational unit name
         /// </summary>
         [Input("orgUnitName")]
         public Input<string>? OrgUnitName { get; set; }
 
         /// <summary>
-        /// 认证主体ID。
+        /// Authentication subject ID
         /// </summary>
         [Input("orgVerificationId")]
         public Input<string>? OrgVerificationId { get; set; }
 
         /// <summary>
-        /// 管理员ID。
+        /// Administrator ID
         /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
 
         /// <summary>
-        /// 账户密码。
+        /// Account password
         /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// 安全联系信息。
+        /// Security contact information
         /// </summary>
         [Input("secureContactInfo")]
         public Input<Inputs.AccountSecureContactInfoGetArgs>? SecureContactInfo { get; set; }
 
         /// <summary>
-        /// 显示名称。
+        /// Display name
         /// </summary>
         [Input("showName")]
         public Input<string>? ShowName { get; set; }
@@ -433,13 +433,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
         }
 
         /// <summary>
-        /// 更新时间。
+        /// Update time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+        /// Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
         /// </summary>
         [Input("verificationRelationId")]
         public Input<string>? VerificationRelationId { get; set; }

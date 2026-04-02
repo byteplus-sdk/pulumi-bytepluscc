@@ -20,7 +20,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 前缀列表是一组CIDR地址块的集合，用于简化安全组规则、路由表条目的配置。当前缀列表修改时，所有关联它的资源均会同步修改。
+ * A prefix list is a collection of CIDR blocks used to simplify the configuration of security group rules and route table entries. When the prefix list is modified, all associated resources are updated synchronously.
  * 
  * ## Example Usage
  * 
@@ -81,14 +81,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/prefixList:PrefixList")
 public class PrefixList extends com.pulumi.resources.CustomResource {
     /**
-     * 前缀列表关联的资源数量。
+     * Number of resources associated with the prefix list.
      * 
      */
     @Export(name="associationCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> associationCount;
 
     /**
-     * @return 前缀列表关联的资源数量。
+     * @return Number of resources associated with the prefix list.
      * 
      */
     public Output<Integer> associationCount() {
@@ -107,56 +107,56 @@ public class PrefixList extends com.pulumi.resources.CustomResource {
         return this.associationsSecurityGroups;
     }
     /**
-     * 前缀列表的创建时间。
+     * Creation time of the prefix list.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 前缀列表的创建时间。
+     * @return Creation time of the prefix list.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+     * IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
      * 
      */
     @Export(name="ipVersion", refs={String.class}, tree="[0]")
     private Output<String> ipVersion;
 
     /**
-     * @return IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+     * @return IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
      * 
      */
     public Output<String> ipVersion() {
         return this.ipVersion;
     }
     /**
-     * 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+     * Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
      * 
      */
     @Export(name="maxEntries", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxEntries;
 
     /**
-     * @return 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+     * @return Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
      * 
      */
     public Output<Integer> maxEntries() {
@@ -169,56 +169,56 @@ public class PrefixList extends com.pulumi.resources.CustomResource {
         return this.prefixListEntries;
     }
     /**
-     * 前缀列表的ID。
+     * Prefix list ID.
      * 
      */
     @Export(name="prefixListId", refs={String.class}, tree="[0]")
     private Output<String> prefixListId;
 
     /**
-     * @return 前缀列表的ID。
+     * @return Prefix list ID.
      * 
      */
     public Output<String> prefixListId() {
         return this.prefixListId;
     }
     /**
-     * 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+     * Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
      * 
      */
     @Export(name="prefixListName", refs={String.class}, tree="[0]")
     private Output<String> prefixListName;
 
     /**
-     * @return 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+     * @return Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
      * 
      */
     public Output<String> prefixListName() {
         return this.prefixListName;
     }
     /**
-     * 前缀列表所属项目的名称，不填默认加入default项目。
+     * Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 前缀列表所属项目的名称，不填默认加入default项目。
+     * @return Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+     * Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+     * @return Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
      * 
      */
     public Output<String> status() {
@@ -231,14 +231,14 @@ public class PrefixList extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 前缀列表的最近一次修改时间。
+     * Last modification time of the prefix list.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 前缀列表的最近一次修改时间。
+     * @return Last modification time of the prefix list.
      * 
      */
     public Output<String> updatedTime() {

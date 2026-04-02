@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleDimensionConditionsTagCondition {
     /**
-     * @return 判断条件。and：全部满足。or：任意满足。
+     * @return Condition. and: All conditions met. or: Any condition met.
      * 
      */
     private @Nullable String condition;
@@ -22,7 +22,7 @@ public final class RuleDimensionConditionsTagCondition {
 
     private RuleDimensionConditionsTagCondition() {}
     /**
-     * @return 判断条件。and：全部满足。or：任意满足。
+     * @return Condition. and: All conditions met. or: Any condition met.
      * 
      */
     public Optional<String> condition() {

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
     public sealed class InstanceEndpointsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例私网访问接入点响应数据。
+        /// Instance private network access endpoint response data
         /// </summary>
         [Input("overlay")]
         public Input<Inputs.InstanceEndpointsOverlayGetArgs>? Overlay { get; set; }
 
         /// <summary>
-        /// 实例公网访问接入点响应数据。
+        /// Instance public access endpoint response data
         /// </summary>
         [Input("public")]
         public Input<Inputs.InstanceEndpointsPublicGetArgs>? Public { get; set; }

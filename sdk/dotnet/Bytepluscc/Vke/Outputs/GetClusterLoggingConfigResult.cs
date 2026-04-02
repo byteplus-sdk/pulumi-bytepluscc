@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetClusterLoggingConfigResult
     {
         /// <summary>
-        /// 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+        /// Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
         /// </summary>
         public readonly string LogProjectId;
         /// <summary>
-        /// 集群的日志选项信息。
+        /// Cluster log option information.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterLoggingConfigLogSetupResult> LogSetups;
 

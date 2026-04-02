@@ -29,23 +29,23 @@ export interface GetProjectArgs {
  */
 export interface GetProjectResult {
     /**
-     * 账号ID
+     * Account ID
      */
     readonly accountId: number;
     /**
-     * 创建时间
+     * Creation Time
      */
     readonly createdTime: string;
     /**
-     * 描述
+     * Description
      */
     readonly description: string;
     /**
-     * 展示名
+     * Display Name
      */
     readonly displayName: string;
     /**
-     * 是否可见
+     * Visible
      */
     readonly hasPermission: boolean;
     /**
@@ -53,23 +53,23 @@ export interface GetProjectResult {
      */
     readonly id: string;
     /**
-     * 父项目名称
+     * Parent Project Name
      */
     readonly parentProjectName: string;
     /**
-     * 项目路径
+     * Project Path
      */
     readonly path: string;
     /**
-     * 项目名称
+     * Project Name
      */
     readonly projectName: string;
     /**
-     * 启用状态
+     * Enabled Status
      */
     readonly status: string;
     /**
-     * 更新时间
+     * Update Time
      */
     readonly updatedTime: string;
 }

@@ -24,14 +24,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     public static final RuleArgs Empty = new RuleArgs();
 
     /**
-     * 转发规则的描述。
+     * Forwarding rule description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 转发规则的描述。
+     * @return Forwarding rule description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -39,14 +39,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则的域名。
+     * Domain name of the forwarding rule.
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return 转发规则的域名。
+     * @return Domain name of the forwarding rule.
      * 
      */
     public Optional<Output<String>> domain() {
@@ -54,14 +54,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则服务器组配置
+     * Forwarding rule server group configuration.
      * 
      */
     @Import(name="forwardGroupConfig")
     private @Nullable Output<RuleForwardGroupConfigArgs> forwardGroupConfig;
 
     /**
-     * @return 转发规则服务器组配置
+     * @return Forwarding rule server group configuration.
      * 
      */
     public Optional<Output<RuleForwardGroupConfigArgs>> forwardGroupConfig() {
@@ -69,14 +69,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器ID。
+     * Listener ID.
      * 
      */
     @Import(name="listenerId", required=true)
     private Output<String> listenerId;
 
     /**
-     * @return 监听器ID。
+     * @return Listener ID.
      * 
      */
     public Output<String> listenerId() {
@@ -84,14 +84,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 标准版转发规则优先级。
+     * Standard edition forwarding rule priority.
      * 
      */
     @Import(name="priority")
     private @Nullable Output<Integer> priority;
 
     /**
-     * @return 标准版转发规则优先级。
+     * @return Standard edition forwarding rule priority.
      * 
      */
     public Optional<Output<Integer>> priority() {
@@ -99,14 +99,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 重定向相关配置信息。
+     * Redirect-related configuration information.
      * 
      */
     @Import(name="redirectConfig")
     private @Nullable Output<RuleRedirectConfigArgs> redirectConfig;
 
     /**
-     * @return 重定向相关配置信息。
+     * @return Redirect-related configuration information.
      * 
      */
     public Optional<Output<RuleRedirectConfigArgs>> redirectConfig() {
@@ -114,14 +114,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 重定向相关配置信息。
+     * Redirect-related configuration information.
      * 
      */
     @Import(name="rewriteConfig")
     private @Nullable Output<RuleRewriteConfigArgs> rewriteConfig;
 
     /**
-     * @return 重定向相关配置信息。
+     * @return Redirect-related configuration information.
      * 
      */
     public Optional<Output<RuleRewriteConfigArgs>> rewriteConfig() {
@@ -129,14 +129,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则重写配置开关。on：开启。off：关闭。
+     * Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
      * 
      */
     @Import(name="rewriteEnabled")
     private @Nullable Output<String> rewriteEnabled;
 
     /**
-     * @return 转发规则重写配置开关。on：开启。off：关闭。
+     * @return Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
      * 
      */
     public Optional<Output<String>> rewriteEnabled() {
@@ -144,14 +144,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+     * Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
      * 
      */
     @Import(name="ruleAction")
     private @Nullable Output<String> ruleAction;
 
     /**
-     * @return 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+     * @return Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
      * 
      */
     public Optional<Output<String>> ruleAction() {
@@ -173,14 +173,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则关联的后端服务器组ID。
+     * Backend server group ID associated with the forwarding rule.
      * 
      */
     @Import(name="serverGroupId")
     private @Nullable Output<String> serverGroupId;
 
     /**
-     * @return 转发规则关联的后端服务器组ID。
+     * @return Backend server group ID associated with the forwarding rule.
      * 
      */
     public Optional<Output<String>> serverGroupId() {
@@ -188,14 +188,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则 QPS 限速开关。on：开启。off：关闭。
+     * Forwarding rule QPS throttling switch. on: enabled. off: disabled.
      * 
      */
     @Import(name="trafficLimitEnabled")
     private @Nullable Output<String> trafficLimitEnabled;
 
     /**
-     * @return 转发规则 QPS 限速开关。on：开启。off：关闭。
+     * @return Forwarding rule QPS throttling switch. on: enabled. off: disabled.
      * 
      */
     public Optional<Output<String>> trafficLimitEnabled() {
@@ -203,14 +203,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 每秒请求数。取值范围：100～100000。
+     * Requests per second. Range: 100–100000.
      * 
      */
     @Import(name="trafficLimitQps")
     private @Nullable Output<Integer> trafficLimitQps;
 
     /**
-     * @return 每秒请求数。取值范围：100～100000。
+     * @return Requests per second. Range: 100–100000.
      * 
      */
     public Optional<Output<Integer>> trafficLimitQps() {
@@ -218,14 +218,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则的URL。
+     * Forwarding rule URL.
      * 
      */
     @Import(name="url")
     private @Nullable Output<String> url;
 
     /**
-     * @return 转发规则的URL。
+     * @return Forwarding rule URL.
      * 
      */
     public Optional<Output<String>> url() {
@@ -271,7 +271,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 转发规则的描述。
+         * @param description Forwarding rule description.
          * 
          * @return builder
          * 
@@ -282,7 +282,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 转发规则的描述。
+         * @param description Forwarding rule description.
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain 转发规则的域名。
+         * @param domain Domain name of the forwarding rule.
          * 
          * @return builder
          * 
@@ -303,7 +303,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain 转发规则的域名。
+         * @param domain Domain name of the forwarding rule.
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param forwardGroupConfig 转发规则服务器组配置
+         * @param forwardGroupConfig Forwarding rule server group configuration.
          * 
          * @return builder
          * 
@@ -324,7 +324,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param forwardGroupConfig 转发规则服务器组配置
+         * @param forwardGroupConfig Forwarding rule server group configuration.
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerId 监听器ID。
+         * @param listenerId Listener ID.
          * 
          * @return builder
          * 
@@ -345,7 +345,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerId 监听器ID。
+         * @param listenerId Listener ID.
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param priority 标准版转发规则优先级。
+         * @param priority Standard edition forwarding rule priority.
          * 
          * @return builder
          * 
@@ -366,7 +366,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param priority 标准版转发规则优先级。
+         * @param priority Standard edition forwarding rule priority.
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param redirectConfig 重定向相关配置信息。
+         * @param redirectConfig Redirect-related configuration information.
          * 
          * @return builder
          * 
@@ -387,7 +387,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param redirectConfig 重定向相关配置信息。
+         * @param redirectConfig Redirect-related configuration information.
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rewriteConfig 重定向相关配置信息。
+         * @param rewriteConfig Redirect-related configuration information.
          * 
          * @return builder
          * 
@@ -408,7 +408,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rewriteConfig 重定向相关配置信息。
+         * @param rewriteConfig Redirect-related configuration information.
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rewriteEnabled 转发规则重写配置开关。on：开启。off：关闭。
+         * @param rewriteEnabled Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rewriteEnabled 转发规则重写配置开关。on：开启。off：关闭。
+         * @param rewriteEnabled Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleAction 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+         * @param ruleAction Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleAction 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+         * @param ruleAction Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
          * 
          * @return builder
          * 
@@ -486,7 +486,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupId 转发规则关联的后端服务器组ID。
+         * @param serverGroupId Backend server group ID associated with the forwarding rule.
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupId 转发规则关联的后端服务器组ID。
+         * @param serverGroupId Backend server group ID associated with the forwarding rule.
          * 
          * @return builder
          * 
@@ -507,7 +507,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trafficLimitEnabled 转发规则 QPS 限速开关。on：开启。off：关闭。
+         * @param trafficLimitEnabled Forwarding rule QPS throttling switch. on: enabled. off: disabled.
          * 
          * @return builder
          * 
@@ -518,7 +518,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trafficLimitEnabled 转发规则 QPS 限速开关。on：开启。off：关闭。
+         * @param trafficLimitEnabled Forwarding rule QPS throttling switch. on: enabled. off: disabled.
          * 
          * @return builder
          * 
@@ -528,7 +528,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trafficLimitQps 每秒请求数。取值范围：100～100000。
+         * @param trafficLimitQps Requests per second. Range: 100–100000.
          * 
          * @return builder
          * 
@@ -539,7 +539,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trafficLimitQps 每秒请求数。取值范围：100～100000。
+         * @param trafficLimitQps Requests per second. Range: 100–100000.
          * 
          * @return builder
          * 
@@ -549,7 +549,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param url 转发规则的URL。
+         * @param url Forwarding rule URL.
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param url 转发规则的URL。
+         * @param url Forwarding rule URL.
          * 
          * @return builder
          * 

@@ -17,14 +17,14 @@ public final class DomainRefererAccessRuleReferersTypeArgs extends com.pulumi.re
     public static final DomainRefererAccessRuleReferersTypeArgs Empty = new DomainRefererAccessRuleReferersTypeArgs();
 
     /**
-     * 表示一个 CommonType 对象，其包含一个常规 Referer 的列表。
+     * Indicates a CommonType object that contains a list of standard Referers.
      * 
      */
     @Import(name="commonType")
     private @Nullable Output<DomainRefererAccessRuleReferersTypeCommonTypeArgs> commonType;
 
     /**
-     * @return 表示一个 CommonType 对象，其包含一个常规 Referer 的列表。
+     * @return Indicates a CommonType object that contains a list of standard Referers.
      * 
      */
     public Optional<Output<DomainRefererAccessRuleReferersTypeCommonTypeArgs>> commonType() {
@@ -32,14 +32,14 @@ public final class DomainRefererAccessRuleReferersTypeArgs extends com.pulumi.re
     }
 
     /**
-     * 表示一个 RegularType 对象，其包含一个正则表达式列表用来匹配请求的 Referer 头部值。该参数为白名单功能。要使用该参数，请提交工单。需要注意的是，如果请求的 Referer 头部值匹配 CommonType 下的 Referers 名单或者 RegularType 下的 Referers 名单，内容分发网络就认为是匹配。
+     * Specifies a RegularType object, which contains a list of regular expressions used to match the Referer header value in requests This parameter provides the allowlist feature To use this parameter, submit a ticket Note that if the Referer header value in a request matches the Referers list under CommonType or the Referers list under RegularType, the content delivery network considers it a match
      * 
      */
     @Import(name="regularType")
     private @Nullable Output<DomainRefererAccessRuleReferersTypeRegularTypeArgs> regularType;
 
     /**
-     * @return 表示一个 RegularType 对象，其包含一个正则表达式列表用来匹配请求的 Referer 头部值。该参数为白名单功能。要使用该参数，请提交工单。需要注意的是，如果请求的 Referer 头部值匹配 CommonType 下的 Referers 名单或者 RegularType 下的 Referers 名单，内容分发网络就认为是匹配。
+     * @return Specifies a RegularType object, which contains a list of regular expressions used to match the Referer header value in requests This parameter provides the allowlist feature To use this parameter, submit a ticket Note that if the Referer header value in a request matches the Referers list under CommonType or the Referers list under RegularType, the content delivery network considers it a match
      * 
      */
     public Optional<Output<DomainRefererAccessRuleReferersTypeRegularTypeArgs>> regularType() {
@@ -72,7 +72,7 @@ public final class DomainRefererAccessRuleReferersTypeArgs extends com.pulumi.re
         }
 
         /**
-         * @param commonType 表示一个 CommonType 对象，其包含一个常规 Referer 的列表。
+         * @param commonType Indicates a CommonType object that contains a list of standard Referers.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainRefererAccessRuleReferersTypeArgs extends com.pulumi.re
         }
 
         /**
-         * @param commonType 表示一个 CommonType 对象，其包含一个常规 Referer 的列表。
+         * @param commonType Indicates a CommonType object that contains a list of standard Referers.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainRefererAccessRuleReferersTypeArgs extends com.pulumi.re
         }
 
         /**
-         * @param regularType 表示一个 RegularType 对象，其包含一个正则表达式列表用来匹配请求的 Referer 头部值。该参数为白名单功能。要使用该参数，请提交工单。需要注意的是，如果请求的 Referer 头部值匹配 CommonType 下的 Referers 名单或者 RegularType 下的 Referers 名单，内容分发网络就认为是匹配。
+         * @param regularType Specifies a RegularType object, which contains a list of regular expressions used to match the Referer header value in requests This parameter provides the allowlist feature To use this parameter, submit a ticket Note that if the Referer header value in a request matches the Referers list under CommonType or the Referers list under RegularType, the content delivery network considers it a match
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainRefererAccessRuleReferersTypeArgs extends com.pulumi.re
         }
 
         /**
-         * @param regularType 表示一个 RegularType 对象，其包含一个正则表达式列表用来匹配请求的 Referer 头部值。该参数为白名单功能。要使用该参数，请提交工单。需要注意的是，如果请求的 Referer 头部值匹配 CommonType 下的 Referers 名单或者 RegularType 下的 Referers 名单，内容分发网络就认为是匹配。
+         * @param regularType Specifies a RegularType object, which contains a list of regular expressions used to match the Referer header value in requests This parameter provides the allowlist feature To use this parameter, submit a ticket Note that if the Referer header value in a request matches the Referers list under CommonType or the Referers list under RegularType, the content delivery network considers it a match
          * 
          * @return builder
          * 

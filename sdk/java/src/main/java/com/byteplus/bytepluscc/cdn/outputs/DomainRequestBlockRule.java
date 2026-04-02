@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class DomainRequestBlockRule {
     private @Nullable List<DomainRequestBlockRuleBlockRule> blockRules;
     /**
-     * @return 表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+     * @return Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
      * 
      */
     private @Nullable Boolean switch_;
@@ -25,7 +25,7 @@ public final class DomainRequestBlockRule {
         return this.blockRules == null ? List.of() : this.blockRules;
     }
     /**
-     * @return 表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+     * @return Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
      * 
      */
     public Optional<Boolean> switch_() {

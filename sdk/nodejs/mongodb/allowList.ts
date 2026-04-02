@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 文档数据库 MongoDB 版实例创建成功后，您可以为实例设置白名单，以允许外部设备访问该实例。本文介绍如何通过控制台设置白名单。
+ * After you create a MongoDB document database instance, you can set an allowlist for the instance to permit external devices to access it. This article describes how to set an allowlist in the console.
  *
  * ## Import
  *
@@ -44,40 +44,40 @@ export class AllowList extends pulumi.CustomResource {
     }
 
     /**
-     * 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+     * Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
      */
     public readonly allowListCategory!: pulumi.Output<string>;
     /**
-     * 白名单的备注信息，长度不可超过 200 个字符。
+     * Allowlist remarks. Maximum length: 200 characters.
      */
     public readonly allowListDesc!: pulumi.Output<string>;
     /**
-     * 白名单 ID。
+     * Allowlist ID.
      */
     public /*out*/ readonly allowListId!: pulumi.Output<string>;
     /**
-     * 白名单内的 IP 地址（或地址段）总数。
+     * Total number of IP addresses (or address ranges) in the allowlist.
      */
     public /*out*/ readonly allowListIpNum!: pulumi.Output<number>;
     /**
-     * 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+     * Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
      */
     public readonly allowListName!: pulumi.Output<string>;
     /**
-     * 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+     * IP address type in the allowlist. Only IPv4 addresses are currently supported.
      */
     public readonly allowListType!: pulumi.Output<string>;
     /**
-     * 输入 IP 地址或 CIDR 格式的 IP 地址段。
+     * Enter an IP address or a CIDR-format IP address range.
      */
     public readonly allowLists!: pulumi.Output<string[]>;
     /**
-     * 已绑定当前白名单的实例总数。
+     * Total number of instances bound to the current allowlist.
      */
     public /*out*/ readonly associatedInstanceNum!: pulumi.Output<number>;
     public readonly associatedInstances!: pulumi.Output<outputs.mongodb.AllowListAssociatedInstance[]>;
     /**
-     * 当前白名单所属的项目。
+     * Project to which the current allowlist belongs.
      */
     public readonly projectName!: pulumi.Output<string>;
 
@@ -133,40 +133,40 @@ export class AllowList extends pulumi.CustomResource {
  */
 export interface AllowListState {
     /**
-     * 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+     * Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
      */
     allowListCategory?: pulumi.Input<string>;
     /**
-     * 白名单的备注信息，长度不可超过 200 个字符。
+     * Allowlist remarks. Maximum length: 200 characters.
      */
     allowListDesc?: pulumi.Input<string>;
     /**
-     * 白名单 ID。
+     * Allowlist ID.
      */
     allowListId?: pulumi.Input<string>;
     /**
-     * 白名单内的 IP 地址（或地址段）总数。
+     * Total number of IP addresses (or address ranges) in the allowlist.
      */
     allowListIpNum?: pulumi.Input<number>;
     /**
-     * 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+     * Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
      */
     allowListName?: pulumi.Input<string>;
     /**
-     * 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+     * IP address type in the allowlist. Only IPv4 addresses are currently supported.
      */
     allowListType?: pulumi.Input<string>;
     /**
-     * 输入 IP 地址或 CIDR 格式的 IP 地址段。
+     * Enter an IP address or a CIDR-format IP address range.
      */
     allowLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 已绑定当前白名单的实例总数。
+     * Total number of instances bound to the current allowlist.
      */
     associatedInstanceNum?: pulumi.Input<number>;
     associatedInstances?: pulumi.Input<pulumi.Input<inputs.mongodb.AllowListAssociatedInstance>[]>;
     /**
-     * 当前白名单所属的项目。
+     * Project to which the current allowlist belongs.
      */
     projectName?: pulumi.Input<string>;
 }
@@ -176,28 +176,28 @@ export interface AllowListState {
  */
 export interface AllowListArgs {
     /**
-     * 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+     * Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
      */
     allowListCategory?: pulumi.Input<string>;
     /**
-     * 白名单的备注信息，长度不可超过 200 个字符。
+     * Allowlist remarks. Maximum length: 200 characters.
      */
     allowListDesc?: pulumi.Input<string>;
     /**
-     * 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+     * Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
      */
     allowListName: pulumi.Input<string>;
     /**
-     * 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+     * IP address type in the allowlist. Only IPv4 addresses are currently supported.
      */
     allowListType?: pulumi.Input<string>;
     /**
-     * 输入 IP 地址或 CIDR 格式的 IP 地址段。
+     * Enter an IP address or a CIDR-format IP address range.
      */
     allowLists: pulumi.Input<pulumi.Input<string>[]>;
     associatedInstances?: pulumi.Input<pulumi.Input<inputs.mongodb.AllowListAssociatedInstance>[]>;
     /**
-     * 当前白名单所属的项目。
+     * Project to which the current allowlist belongs.
      */
     projectName?: pulumi.Input<string>;
 }

@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone.Outputs
     public sealed class GetResolverRuleVpCResult
     {
         /// <summary>
-        /// 创建该 VPC 的账号 ID。
+        /// Account ID that created the VPC
         /// </summary>
         public readonly string AccountId;
         /// <summary>
-        /// VPC 的地域。
+        /// Region of the VPC
         /// </summary>
         public readonly string Region;
         /// <summary>
-        /// VPC 的地域的名称。
+        /// Name of the VPC region
         /// </summary>
         public readonly string RegionName;
         /// <summary>
-        /// VPC 的 ID。
+        /// VPC ID
         /// </summary>
         public readonly string VpcId;
 

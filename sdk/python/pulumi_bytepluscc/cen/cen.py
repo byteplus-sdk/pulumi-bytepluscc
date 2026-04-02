@@ -29,9 +29,9 @@ class CenArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['CenTagArgs']]]] = None):
         """
         The set of arguments for constructing a Cen resource.
-        :param pulumi.Input[builtins.str] cen_name: CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
-        :param pulumi.Input[builtins.str] description: CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
-        :param pulumi.Input[builtins.str] project_name: CEN实例所属项目的名称。不填则默认为default。
+        :param pulumi.Input[builtins.str] cen_name: Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
+        :param pulumi.Input[builtins.str] description: Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
         """
         if cen_name is not None:
             pulumi.set(__self__, "cen_name", cen_name)
@@ -48,7 +48,7 @@ class CenArgs:
     @pulumi.getter(name="cenName")
     def cen_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+        Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
         """
         return pulumi.get(self, "cen_name")
 
@@ -60,7 +60,7 @@ class CenArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+        Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
         """
         return pulumi.get(self, "description")
 
@@ -81,7 +81,7 @@ class CenArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CEN实例所属项目的名称。不填则默认为default。
+        Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
         """
         return pulumi.get(self, "project_name")
 
@@ -115,15 +115,15 @@ class _CenState:
                  update_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Cen resources.
-        :param pulumi.Input[builtins.str] account_id: CEN实例所属的账号ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] cen_bandwidth_package_ids: 带宽包ID。
-        :param pulumi.Input[builtins.str] cen_id: CEN实例的ID。
-        :param pulumi.Input[builtins.str] cen_name: CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
-        :param pulumi.Input[builtins.str] creation_time: 创建CEN实例的时间。
-        :param pulumi.Input[builtins.str] description: CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
-        :param pulumi.Input[builtins.str] project_name: CEN实例所属项目的名称。不填则默认为default。
-        :param pulumi.Input[builtins.str] status: CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
-        :param pulumi.Input[builtins.str] update_time: 更新CEN实例的时间。
+        :param pulumi.Input[builtins.str] account_id: Account ID to which the CEN instance belongs
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] cen_bandwidth_package_ids: Bandwidth package ID
+        :param pulumi.Input[builtins.str] cen_id: CEN instance ID
+        :param pulumi.Input[builtins.str] cen_name: Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
+        :param pulumi.Input[builtins.str] creation_time: Time when the CEN instance was created
+        :param pulumi.Input[builtins.str] description: Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
+        :param pulumi.Input[builtins.str] status: Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
+        :param pulumi.Input[builtins.str] update_time: Time when the CEN instance was updated
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -152,7 +152,7 @@ class _CenState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CEN实例所属的账号ID。
+        Account ID to which the CEN instance belongs
         """
         return pulumi.get(self, "account_id")
 
@@ -164,7 +164,7 @@ class _CenState:
     @pulumi.getter(name="cenBandwidthPackageIds")
     def cen_bandwidth_package_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        带宽包ID。
+        Bandwidth package ID
         """
         return pulumi.get(self, "cen_bandwidth_package_ids")
 
@@ -176,7 +176,7 @@ class _CenState:
     @pulumi.getter(name="cenId")
     def cen_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CEN实例的ID。
+        CEN instance ID
         """
         return pulumi.get(self, "cen_id")
 
@@ -188,7 +188,7 @@ class _CenState:
     @pulumi.getter(name="cenName")
     def cen_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+        Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
         """
         return pulumi.get(self, "cen_name")
 
@@ -200,7 +200,7 @@ class _CenState:
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建CEN实例的时间。
+        Time when the CEN instance was created
         """
         return pulumi.get(self, "creation_time")
 
@@ -212,7 +212,7 @@ class _CenState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+        Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
         """
         return pulumi.get(self, "description")
 
@@ -233,7 +233,7 @@ class _CenState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CEN实例所属项目的名称。不填则默认为default。
+        Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
         """
         return pulumi.get(self, "project_name")
 
@@ -245,7 +245,7 @@ class _CenState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+        Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
         """
         return pulumi.get(self, "status")
 
@@ -266,7 +266,7 @@ class _CenState:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新CEN实例的时间。
+        Time when the CEN instance was updated
         """
         return pulumi.get(self, "update_time")
 
@@ -288,7 +288,7 @@ class Cen(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CenTagArgs', 'CenTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        云企业网（Cloud Enterprise Network，CEN）提供一种能够快速构建跨地域私有网络（VPC）与云下数据中心（IDC）之间高速、优质、稳定的网络能力，帮助您打造一张具有企业级规模和通信能力的全球云上网络。
+        Cloud Enterprise Network (CEN) provides fast, high-quality, and stable networking capabilities to quickly build private networks (VPC) across regions and between on-premises data centers (IDC), helping you create a global cloud network with enterprise-scale and communication capabilities
 
         ## Import
 
@@ -298,9 +298,9 @@ class Cen(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] cen_name: CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
-        :param pulumi.Input[builtins.str] description: CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
-        :param pulumi.Input[builtins.str] project_name: CEN实例所属项目的名称。不填则默认为default。
+        :param pulumi.Input[builtins.str] cen_name: Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
+        :param pulumi.Input[builtins.str] description: Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
         """
         ...
     @overload
@@ -309,7 +309,7 @@ class Cen(pulumi.CustomResource):
                  args: Optional[CenArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        云企业网（Cloud Enterprise Network，CEN）提供一种能够快速构建跨地域私有网络（VPC）与云下数据中心（IDC）之间高速、优质、稳定的网络能力，帮助您打造一张具有企业级规模和通信能力的全球云上网络。
+        Cloud Enterprise Network (CEN) provides fast, high-quality, and stable networking capabilities to quickly build private networks (VPC) across regions and between on-premises data centers (IDC), helping you create a global cloud network with enterprise-scale and communication capabilities
 
         ## Import
 
@@ -385,15 +385,15 @@ class Cen(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_id: CEN实例所属的账号ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] cen_bandwidth_package_ids: 带宽包ID。
-        :param pulumi.Input[builtins.str] cen_id: CEN实例的ID。
-        :param pulumi.Input[builtins.str] cen_name: CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
-        :param pulumi.Input[builtins.str] creation_time: 创建CEN实例的时间。
-        :param pulumi.Input[builtins.str] description: CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
-        :param pulumi.Input[builtins.str] project_name: CEN实例所属项目的名称。不填则默认为default。
-        :param pulumi.Input[builtins.str] status: CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
-        :param pulumi.Input[builtins.str] update_time: 更新CEN实例的时间。
+        :param pulumi.Input[builtins.str] account_id: Account ID to which the CEN instance belongs
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] cen_bandwidth_package_ids: Bandwidth package ID
+        :param pulumi.Input[builtins.str] cen_id: CEN instance ID
+        :param pulumi.Input[builtins.str] cen_name: Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
+        :param pulumi.Input[builtins.str] creation_time: Time when the CEN instance was created
+        :param pulumi.Input[builtins.str] description: Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
+        :param pulumi.Input[builtins.str] status: Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
+        :param pulumi.Input[builtins.str] update_time: Time when the CEN instance was updated
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -416,7 +416,7 @@ class Cen(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        CEN实例所属的账号ID。
+        Account ID to which the CEN instance belongs
         """
         return pulumi.get(self, "account_id")
 
@@ -424,7 +424,7 @@ class Cen(pulumi.CustomResource):
     @pulumi.getter(name="cenBandwidthPackageIds")
     def cen_bandwidth_package_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        带宽包ID。
+        Bandwidth package ID
         """
         return pulumi.get(self, "cen_bandwidth_package_ids")
 
@@ -432,7 +432,7 @@ class Cen(pulumi.CustomResource):
     @pulumi.getter(name="cenId")
     def cen_id(self) -> pulumi.Output[builtins.str]:
         """
-        CEN实例的ID。
+        CEN instance ID
         """
         return pulumi.get(self, "cen_id")
 
@@ -440,7 +440,7 @@ class Cen(pulumi.CustomResource):
     @pulumi.getter(name="cenName")
     def cen_name(self) -> pulumi.Output[builtins.str]:
         """
-        CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+        Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
         """
         return pulumi.get(self, "cen_name")
 
@@ -448,7 +448,7 @@ class Cen(pulumi.CustomResource):
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建CEN实例的时间。
+        Time when the CEN instance was created
         """
         return pulumi.get(self, "creation_time")
 
@@ -456,7 +456,7 @@ class Cen(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+        Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
         """
         return pulumi.get(self, "description")
 
@@ -469,7 +469,7 @@ class Cen(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        CEN实例所属项目的名称。不填则默认为default。
+        Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
         """
         return pulumi.get(self, "project_name")
 
@@ -477,7 +477,7 @@ class Cen(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+        Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
         """
         return pulumi.get(self, "status")
 
@@ -490,7 +490,7 @@ class Cen(pulumi.CustomResource):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新CEN实例的时间。
+        Time when the CEN instance was updated
         """
         return pulumi.get(self, "update_time")
 

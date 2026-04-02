@@ -16,14 +16,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     public static final AllowListAssociatedInstanceArgs Empty = new AllowListAssociatedInstanceArgs();
 
     /**
-     * 实例 ID。
+     * Instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -31,14 +31,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     }
 
     /**
-     * 实例名称。
+     * Instance name.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 实例名称。
+     * @return Instance name.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -46,14 +46,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     }
 
     /**
-     * 实例所属的 VPC ID。
+     * VPC ID to which the instance belongs.
      * 
      */
     @Import(name="vpc")
     private @Nullable Output<String> vpc;
 
     /**
-     * @return 实例所属的 VPC ID。
+     * @return VPC ID to which the instance belongs.
      * 
      */
     public Optional<Output<String>> vpc() {
@@ -87,7 +87,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceName 实例名称。
+         * @param instanceName Instance name.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceName 实例名称。
+         * @param instanceName Instance name.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param vpc 实例所属的 VPC ID。
+         * @param vpc VPC ID to which the instance belongs.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param vpc 实例所属的 VPC ID。
+         * @param vpc VPC ID to which the instance belongs.
          * 
          * @return builder
          * 

@@ -17,22 +17,22 @@ import java.util.Objects;
 @CustomType
 public final class GetScalingConfigurationResult {
     /**
-     * @return 资源创建时间(UTC时间)
+     * @return Resource creation time (UTC)
      * 
      */
     private String createdAt;
     /**
-     * @return 公网IP。
+     * @return Public IP.
      * 
      */
     private GetScalingConfigurationEip eip;
     /**
-     * @return 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+     * @return Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens &#39;-&#39;. Cannot start or end with a period &#39;.&#39; or hyphen &#39;-&#39;, and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens &#39;-&#39;, but cannot be entirely numeric. Cannot start or end with a hyphen &#39;-&#39;, and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID &#39;i-&#39;. Windows: extracts the last 12 characters after instance ID &#39;i-&#39;
      * 
      */
     private String hostName;
     /**
-     * @return 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+     * @return ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as &#39;High-Performance Computing GPU&#39;.
      * 
      */
     private String hpcClusterId;
@@ -42,142 +42,142 @@ public final class GetScalingConfigurationResult {
      */
     private String id;
     /**
-     * @return 镜像ID，伸缩组自动创建实例时使用的镜像资源。
+     * @return Image ID. The image resource used when the scaling group automatically creates an instance
      * 
      */
     private String imageId;
     /**
-     * @return 实例计费类型。取值：PrePaid（包年包月）/PostPaid（按量付费）
+     * @return Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
      * 
      */
     private String instanceChargeType;
     /**
-     * @return 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+     * @return Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
      * 
      */
     private String instanceDescription;
     /**
-     * @return 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+     * @return Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore &#34;_&#34;, hyphen &#34;-&#34;, and period &#34;.&#34;. Length: 1–128 characters.
      * 
      */
     private String instanceName;
     /**
-     * @return 抢占式实例的规格信息。
+     * @return Specification information for preemptible instances
      * 
      */
     private List<GetScalingConfigurationInstanceTypeOverride> instanceTypeOverrides;
     /**
-     * @return 实例的计算规格列表。
+     * @return List of compute specifications for the instance
      * 
      */
     private List<String> instanceTypes;
     /**
-     * @return 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+     * @return Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
      * 
      */
     private Integer ipv6AddressCount;
     /**
-     * @return 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * @return Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
      * 
      */
     private String keyPairName;
     /**
-     * @return 生命周期状态。取值：Active（活跃）/InActive（非活跃）
+     * @return Lifecycle status. Values: Active (active) / InActive (inactive)
      * 
      */
     private String lifecycleState;
     /**
-     * @return 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&amp;*()_-+= |，不能以“/”和“$6$”开头
+     * @return When logging in to the instance using the &#39;Password&#39; method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with &#39;/&#39; or &#39;$6$&#39;
      * 
      */
     private String password;
     /**
-     * @return 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-     * 只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-     * 长度限制在64个字符以内。
+     * @return The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+     * Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed.
+     * Maximum length: 64 characters
      * 
      */
     private String projectName;
     /**
-     * @return 伸缩配置ID。
+     * @return Scaling configuration ID
      * 
      */
     private String scalingConfigurationId;
     /**
-     * @return 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+     * @return Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
      * 
      */
     private String scalingConfigurationName;
     /**
-     * @return 伸缩配置所属的伸缩组ID。
+     * @return Scaling group ID to which the scaling configuration belongs
      * 
      */
     private String scalingGroupId;
     /**
-     * @return 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+     * @return Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
      * 
      */
     private String securityEnhancementStrategy;
     /**
-     * @return 实例主网卡关联的安全组ID。
+     * @return Security group ID associated with the instance&#39;s primary network interface
      * 
      */
     private List<String> securityGroupIds;
     /**
-     * @return 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+     * @return Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
      * 
      */
     private String spotStrategy;
     /**
-     * @return 标签键值对。
+     * @return Tag key-value pairs
      * 
      */
     private List<GetScalingConfigurationTag> tags;
     /**
-     * @return 资源更新时间(UTC时间)
+     * @return Resource update time (UTC)
      * 
      */
     private String updatedAt;
     /**
-     * @return 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+     * @return Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
      * 
      */
     private String userData;
     /**
-     * @return 云盘。
+     * @return Cloud disk
      * 
      */
     private List<GetScalingConfigurationVolume> volumes;
     /**
-     * @return 伸缩配置可用区ID。
+     * @return Availability zone ID for the scaling configuration
      * 
      */
     private String zoneId;
 
     private GetScalingConfigurationResult() {}
     /**
-     * @return 资源创建时间(UTC时间)
+     * @return Resource creation time (UTC)
      * 
      */
     public String createdAt() {
         return this.createdAt;
     }
     /**
-     * @return 公网IP。
+     * @return Public IP.
      * 
      */
     public GetScalingConfigurationEip eip() {
         return this.eip;
     }
     /**
-     * @return 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+     * @return Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens &#39;-&#39;. Cannot start or end with a period &#39;.&#39; or hyphen &#39;-&#39;, and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens &#39;-&#39;, but cannot be entirely numeric. Cannot start or end with a hyphen &#39;-&#39;, and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID &#39;i-&#39;. Windows: extracts the last 12 characters after instance ID &#39;i-&#39;
      * 
      */
     public String hostName() {
         return this.hostName;
     }
     /**
-     * @return 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+     * @return ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as &#39;High-Performance Computing GPU&#39;.
      * 
      */
     public String hpcClusterId() {
@@ -191,156 +191,156 @@ public final class GetScalingConfigurationResult {
         return this.id;
     }
     /**
-     * @return 镜像ID，伸缩组自动创建实例时使用的镜像资源。
+     * @return Image ID. The image resource used when the scaling group automatically creates an instance
      * 
      */
     public String imageId() {
         return this.imageId;
     }
     /**
-     * @return 实例计费类型。取值：PrePaid（包年包月）/PostPaid（按量付费）
+     * @return Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
      * 
      */
     public String instanceChargeType() {
         return this.instanceChargeType;
     }
     /**
-     * @return 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+     * @return Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
      * 
      */
     public String instanceDescription() {
         return this.instanceDescription;
     }
     /**
-     * @return 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+     * @return Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore &#34;_&#34;, hyphen &#34;-&#34;, and period &#34;.&#34;. Length: 1–128 characters.
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 抢占式实例的规格信息。
+     * @return Specification information for preemptible instances
      * 
      */
     public List<GetScalingConfigurationInstanceTypeOverride> instanceTypeOverrides() {
         return this.instanceTypeOverrides;
     }
     /**
-     * @return 实例的计算规格列表。
+     * @return List of compute specifications for the instance
      * 
      */
     public List<String> instanceTypes() {
         return this.instanceTypes;
     }
     /**
-     * @return 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+     * @return Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
      * 
      */
     public Integer ipv6AddressCount() {
         return this.ipv6AddressCount;
     }
     /**
-     * @return 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * @return Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
      * 
      */
     public String keyPairName() {
         return this.keyPairName;
     }
     /**
-     * @return 生命周期状态。取值：Active（活跃）/InActive（非活跃）
+     * @return Lifecycle status. Values: Active (active) / InActive (inactive)
      * 
      */
     public String lifecycleState() {
         return this.lifecycleState;
     }
     /**
-     * @return 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&amp;*()_-+= |，不能以“/”和“$6$”开头
+     * @return When logging in to the instance using the &#39;Password&#39; method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with &#39;/&#39; or &#39;$6$&#39;
      * 
      */
     public String password() {
         return this.password;
     }
     /**
-     * @return 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-     * 只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-     * 长度限制在64个字符以内。
+     * @return The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+     * Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed.
+     * Maximum length: 64 characters
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 伸缩配置ID。
+     * @return Scaling configuration ID
      * 
      */
     public String scalingConfigurationId() {
         return this.scalingConfigurationId;
     }
     /**
-     * @return 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+     * @return Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
      * 
      */
     public String scalingConfigurationName() {
         return this.scalingConfigurationName;
     }
     /**
-     * @return 伸缩配置所属的伸缩组ID。
+     * @return Scaling group ID to which the scaling configuration belongs
      * 
      */
     public String scalingGroupId() {
         return this.scalingGroupId;
     }
     /**
-     * @return 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+     * @return Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
      * 
      */
     public String securityEnhancementStrategy() {
         return this.securityEnhancementStrategy;
     }
     /**
-     * @return 实例主网卡关联的安全组ID。
+     * @return Security group ID associated with the instance&#39;s primary network interface
      * 
      */
     public List<String> securityGroupIds() {
         return this.securityGroupIds;
     }
     /**
-     * @return 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+     * @return Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
      * 
      */
     public String spotStrategy() {
         return this.spotStrategy;
     }
     /**
-     * @return 标签键值对。
+     * @return Tag key-value pairs
      * 
      */
     public List<GetScalingConfigurationTag> tags() {
         return this.tags;
     }
     /**
-     * @return 资源更新时间(UTC时间)
+     * @return Resource update time (UTC)
      * 
      */
     public String updatedAt() {
         return this.updatedAt;
     }
     /**
-     * @return 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+     * @return Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
      * 
      */
     public String userData() {
         return this.userData;
     }
     /**
-     * @return 云盘。
+     * @return Cloud disk
      * 
      */
     public List<GetScalingConfigurationVolume> volumes() {
         return this.volumes;
     }
     /**
-     * @return 伸缩配置可用区ID。
+     * @return Availability zone ID for the scaling configuration
      * 
      */
     public String zoneId() {

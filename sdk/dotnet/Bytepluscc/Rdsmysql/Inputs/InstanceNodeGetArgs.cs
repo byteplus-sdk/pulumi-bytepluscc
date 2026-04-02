@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
     public sealed class InstanceNodeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 节点规格。
+        /// Node specification.
         /// </summary>
         [Input("nodeSpec", required: true)]
         public Input<string> NodeSpec { get; set; } = null!;
 
         /// <summary>
-        /// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+        /// Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
         /// </summary>
         [Input("nodeType", required: true)]
         public Input<string> NodeType { get; set; } = null!;
 
         /// <summary>
-        /// 可用区 ID。
+        /// Availability zone ID
         /// </summary>
         [Input("zoneId", required: true)]
         public Input<string> ZoneId { get; set; } = null!;

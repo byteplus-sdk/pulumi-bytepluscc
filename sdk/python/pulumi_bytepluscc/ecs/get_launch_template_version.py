@@ -124,7 +124,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> builtins.int:
         """
-        当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+        When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -132,7 +132,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> builtins.str:
         """
-        实例需要加入的部署集ID。
+        Deployment set ID to join for the instance.
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -140,7 +140,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        实例的描述。
+        Instance description.
         """
         return pulumi.get(self, "description")
 
@@ -148,7 +148,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter
     def eip(self) -> 'outputs.GetLaunchTemplateVersionEipResult':
         """
-        实例绑定的公网IP信息。
+        Public IP information bound to the instance.
         """
         return pulumi.get(self, "eip")
 
@@ -156,7 +156,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="hostName")
     def host_name(self) -> builtins.str:
         """
-        实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+        Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
         """
         return pulumi.get(self, "host_name")
 
@@ -164,7 +164,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> builtins.str:
         """
-        当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+        Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -180,7 +180,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="imageId")
     def image_id(self) -> builtins.str:
         """
-        镜像ID。
+        Image ID
         """
         return pulumi.get(self, "image_id")
 
@@ -188,7 +188,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="imageName")
     def image_name(self) -> builtins.str:
         """
-        镜像名称。
+        Image name.
         """
         return pulumi.get(self, "image_name")
 
@@ -196,7 +196,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> builtins.str:
         """
-        实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+        Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -204,7 +204,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> builtins.str:
         """
-        实例的名称。
+        Instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -212,7 +212,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="instanceTypeId")
     def instance_type_id(self) -> builtins.str:
         """
-        实例的规格。
+        Instance specifications
         """
         return pulumi.get(self, "instance_type_id")
 
@@ -220,7 +220,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="keepImageCredential")
     def keep_image_credential(self) -> builtins.bool:
         """
-        是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+        Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
         """
         return pulumi.get(self, "keep_image_credential")
 
@@ -228,7 +228,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> builtins.str:
         """
-        实例绑定的密钥对。
+        Key pair bound to the instance.
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -236,7 +236,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="launchTemplateId")
     def launch_template_id(self) -> builtins.str:
         """
-        实例启动模板 ID。
+        Instance launch template ID.
         """
         return pulumi.get(self, "launch_template_id")
 
@@ -244,7 +244,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="networkInterfaces")
     def network_interfaces(self) -> Sequence['outputs.GetLaunchTemplateVersionNetworkInterfaceResult']:
         """
-        实例挂载的网卡信息。
+        Network interface information attached to the instance
         """
         return pulumi.get(self, "network_interfaces")
 
@@ -252,7 +252,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        实例所属项目。
+        Project to which the instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -260,7 +260,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="scheduledInstance")
     def scheduled_instance(self) -> 'outputs.GetLaunchTemplateVersionScheduledInstanceResult':
         """
-        弹性预约单信息。
+        Elastic reservation order information
         """
         return pulumi.get(self, "scheduled_instance")
 
@@ -268,7 +268,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="securityEnhancementStrategy")
     def security_enhancement_strategy(self) -> builtins.str:
         """
-        是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+        Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
         """
         return pulumi.get(self, "security_enhancement_strategy")
 
@@ -276,7 +276,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="spotPriceLimit")
     def spot_price_limit(self) -> builtins.float:
         """
-        抢占式实例的每小时最高价格。
+        Maximum hourly price for preemptible instances.
         """
         return pulumi.get(self, "spot_price_limit")
 
@@ -284,7 +284,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> builtins.str:
         """
-        按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+        Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -292,7 +292,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="suffixIndex")
     def suffix_index(self) -> builtins.int:
         """
-        有序后缀的起始序号。
+        Starting sequence number for the ordered suffix.
         """
         return pulumi.get(self, "suffix_index")
 
@@ -300,7 +300,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetLaunchTemplateVersionTagResult']:
         """
-        实例的标签信息。
+        Instance tag information
         """
         return pulumi.get(self, "tags")
 
@@ -308,7 +308,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="uniqueSuffix")
     def unique_suffix(self) -> builtins.bool:
         """
-        表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+        Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
         """
         return pulumi.get(self, "unique_suffix")
 
@@ -316,7 +316,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="userData")
     def user_data(self) -> builtins.str:
         """
-        实例的自定义数据。
+        Custom data for the instance.
         """
         return pulumi.get(self, "user_data")
 
@@ -324,7 +324,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="versionDescription")
     def version_description(self) -> builtins.str:
         """
-        模版版本描述。
+        Template version description.
         """
         return pulumi.get(self, "version_description")
 
@@ -332,7 +332,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="versionNumber")
     def version_number(self) -> builtins.str:
         """
-        模板版本号。
+        Template version number.
         """
         return pulumi.get(self, "version_number")
 
@@ -340,7 +340,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter
     def volumes(self) -> Sequence['outputs.GetLaunchTemplateVersionVolumeResult']:
         """
-        实例绑定的云盘信息。
+        Disk information bound to the instance
         """
         return pulumi.get(self, "volumes")
 
@@ -348,7 +348,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        私有网络ID。
+        Private network ID
         """
         return pulumi.get(self, "vpc_id")
 
@@ -356,7 +356,7 @@ class GetLaunchTemplateVersionResult:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        实例所属可用区ID。
+        Availability zone ID of the instance
         """
         return pulumi.get(self, "zone_id")
 
@@ -402,7 +402,7 @@ class AwaitableGetLaunchTemplateVersionResult(GetLaunchTemplateVersionResult):
 def get_launch_template_version(id: Optional[builtins.str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLaunchTemplateVersionResult:
     """
-    Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+    Data Source schema for Byteplus::ECS::LaunchTemplateVersion
 
 
     :param builtins.str id: Uniquely identifies the resource.
@@ -446,7 +446,7 @@ def get_launch_template_version(id: Optional[builtins.str] = None,
 def get_launch_template_version_output(id: Optional[pulumi.Input[builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLaunchTemplateVersionResult]:
     """
-    Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+    Data Source schema for Byteplus::ECS::LaunchTemplateVersion
 
 
     :param builtins.str id: Uniquely identifies the resource.

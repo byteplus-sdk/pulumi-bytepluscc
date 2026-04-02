@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
 {
     /// <summary>
-    /// 如果您需要监控某一云产品资源的数据状态，则可以创建云监控告警策略。当被监控的云产品资源数据达到告警的触发条件时，系统会通过您指定的方式推送告警通知，便于您及时发现存在异常数据的资源。
+    /// If you need to monitor the data status of a cloud product resource, you can create a cloud monitoring alert policy. When the monitored resource data meets the alert trigger conditions, the system will send alert notifications using your specified method, helping you quickly identify resources with abnormal data.
     /// 
     /// ## Import
     /// 
@@ -23,19 +23,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
     public partial class Rule : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+        /// Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
         /// </summary>
         [Output("alertMethods")]
         public Output<ImmutableArray<string>> AlertMethods { get; private set; } = null!;
 
         /// <summary>
-        /// 告警状态。 alerting：告警中 normal：正常。
+        /// Alert status. alerting: In alert; normal: Normal.
         /// </summary>
         [Output("alertState")]
         public Output<string> AlertState { get; private set; } = null!;
 
         /// <summary>
-        /// 多指标判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+        /// Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
         /// </summary>
         [Output("conditionOperator")]
         public Output<string> ConditionOperator { get; private set; } = null!;
@@ -44,55 +44,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         public Output<ImmutableArray<Outputs.RuleCondition>> Conditions { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略绑定的告警通知组 ID。
+        /// Alert notification group ID bound to the alert policy.
         /// </summary>
         [Output("contactGroupIds")]
         public Output<ImmutableArray<string>> ContactGroupIds { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略创建时间，时间戳格式。
+        /// Alert policy creation time, in timestamp format.
         /// </summary>
         [Output("createdAt")]
         public Output<string> CreatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略描述信息。
+        /// Alert policy description.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Dimension 配置。
+        /// Dimension configuration.
         /// </summary>
         [Output("dimensionConditions")]
         public Output<Outputs.RuleDimensionConditions> DimensionConditions { get; private set; } = null!;
 
         /// <summary>
-        /// 策略生效的截止时间，格式为HH:MM。
+        /// Policy expiration time, in HH:MM format.
         /// </summary>
         [Output("effectEndAt")]
         public Output<string> EffectEndAt { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略生效的开始时间，格式为HH:MM。
+        /// Policy start time, in HH:MM format.
         /// </summary>
         [Output("effectStartAt")]
         public Output<string> EffectStartAt { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略的开启状态。,enable：开启,disable：禁用
+        /// Alert policy status. enable: enabled, disable: disabled
         /// </summary>
         [Output("enableState")]
         public Output<string> EnableState { get; private set; } = null!;
 
         /// <summary>
-        /// 触发告警需要持续的周期。单位为分钟。
+        /// Duration required to trigger an alert, in minutes.
         /// </summary>
         [Output("evaluationCount")]
         public Output<int> EvaluationCount { get; private set; } = null!;
 
         /// <summary>
-        /// 告警级别。critical：严重,warning：警告,notice：通知
+        /// Alert level. critical: critical, warning: warning, notice: notification
         /// </summary>
         [Output("level")]
         public Output<string> Level { get; private set; } = null!;
@@ -101,25 +101,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         public Output<ImmutableArray<Outputs.RuleLevelCondition>> LevelConditions { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+        /// Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
         /// </summary>
         [Output("multipleConditions")]
         public Output<bool> MultipleConditions { get; private set; } = null!;
 
         /// <summary>
-        /// 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+        /// Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
         /// </summary>
         [Output("namespace")]
         public Output<string> Namespace { get; private set; } = null!;
 
         /// <summary>
-        /// 无数据告警。
+        /// No data alert.
         /// </summary>
         [Output("noData")]
         public Output<Outputs.RuleNoData> NoData { get; private set; } = null!;
 
         /// <summary>
-        /// 通知策略 ID。
+        /// Notification policy ID.
         /// </summary>
         [Output("notificationId")]
         public Output<string> NotificationId { get; private set; } = null!;
@@ -128,61 +128,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         public Output<ImmutableArray<Outputs.RuleNotifyTemplate>> NotifyTemplates { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略检测的资源 ID。
+        /// Resource ID detected by the alert policy.
         /// </summary>
         [Output("originalDimensions")]
         public Output<Outputs.RuleOriginalDimensions> OriginalDimensions { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略所属项目。
+        /// Project to which the alert policy belongs.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 告警恢复通知。
+        /// Alert recovery notification.
         /// </summary>
         [Output("recoveryNotify")]
         public Output<Outputs.RuleRecoveryNotify> RecoveryNotify { get; private set; } = null!;
 
         /// <summary>
-        /// 云产品所属可用区 ID。
+        /// Availability zone ID of the cloud product.
         /// </summary>
         [Output("regions")]
         public Output<ImmutableArray<string>> Regions { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略检测的资源类型。
+        /// Resource type detected by the alert policy.
         /// </summary>
         [Output("resourceType")]
         public Output<string> ResourceType { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略 ID。
+        /// Alarm policy ID.
         /// </summary>
         [Output("ruleId")]
         public Output<string> RuleId { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略名称。
+        /// Alert policy name.
         /// </summary>
         [Output("ruleName")]
         public Output<string> RuleName { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+        /// Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
         /// </summary>
         [Output("ruleType")]
         public Output<string> RuleType { get; private set; } = null!;
 
         /// <summary>
-        /// 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+        /// Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
         /// </summary>
         [Output("silenceTime")]
         public Output<int> SilenceTime { get; private set; } = null!;
 
         /// <summary>
-        /// 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+        /// Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
         /// </summary>
         [Output("subNamespace")]
         public Output<string> SubNamespace { get; private set; } = null!;
@@ -191,19 +191,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         public Output<ImmutableArray<Outputs.RuleTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略更新时间，时间戳格式。
+        /// Alarm policy update time, in timestamp format.
         /// </summary>
         [Output("updatedAt")]
         public Output<string> UpdatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 告警策略绑定的告警回调 URL 地址。
+        /// Alarm callback URL bound to the alarm policy.
         /// </summary>
         [Output("webhook")]
         public Output<string> Webhook { get; private set; } = null!;
 
         /// <summary>
-        /// 告警发生时告警回调 ID 列表。
+        /// Alarm callback ID list when an alarm occurs.
         /// </summary>
         [Output("webhookIds")]
         public Output<ImmutableArray<string>> WebhookIds { get; private set; } = null!;
@@ -259,7 +259,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         private InputList<string>? _alertMethods;
 
         /// <summary>
-        /// 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+        /// Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
         /// </summary>
         public InputList<string> AlertMethods
         {
@@ -268,7 +268,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 多指标判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+        /// Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
         /// </summary>
         [Input("conditionOperator")]
         public Input<string>? ConditionOperator { get; set; }
@@ -285,7 +285,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         private InputList<string>? _contactGroupIds;
 
         /// <summary>
-        /// 告警策略绑定的告警通知组 ID。
+        /// Alert notification group ID bound to the alert policy.
         /// </summary>
         public InputList<string> ContactGroupIds
         {
@@ -294,43 +294,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 告警策略描述信息。
+        /// Alert policy description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Dimension 配置。
+        /// Dimension configuration.
         /// </summary>
         [Input("dimensionConditions")]
         public Input<Inputs.RuleDimensionConditionsArgs>? DimensionConditions { get; set; }
 
         /// <summary>
-        /// 策略生效的截止时间，格式为HH:MM。
+        /// Policy expiration time, in HH:MM format.
         /// </summary>
         [Input("effectEndAt", required: true)]
         public Input<string> EffectEndAt { get; set; } = null!;
 
         /// <summary>
-        /// 告警策略生效的开始时间，格式为HH:MM。
+        /// Policy start time, in HH:MM format.
         /// </summary>
         [Input("effectStartAt", required: true)]
         public Input<string> EffectStartAt { get; set; } = null!;
 
         /// <summary>
-        /// 告警策略的开启状态。,enable：开启,disable：禁用
+        /// Alert policy status. enable: enabled, disable: disabled
         /// </summary>
         [Input("enableState", required: true)]
         public Input<string> EnableState { get; set; } = null!;
 
         /// <summary>
-        /// 触发告警需要持续的周期。单位为分钟。
+        /// Duration required to trigger an alert, in minutes.
         /// </summary>
         [Input("evaluationCount", required: true)]
         public Input<int> EvaluationCount { get; set; } = null!;
 
         /// <summary>
-        /// 告警级别。critical：严重,warning：警告,notice：通知
+        /// Alert level. critical: critical, warning: warning, notice: notification
         /// </summary>
         [Input("level", required: true)]
         public Input<string> Level { get; set; } = null!;
@@ -344,25 +344,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+        /// Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
         /// </summary>
         [Input("multipleConditions")]
         public Input<bool>? MultipleConditions { get; set; }
 
         /// <summary>
-        /// 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+        /// Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
 
         /// <summary>
-        /// 无数据告警。
+        /// No data alert.
         /// </summary>
         [Input("noData")]
         public Input<Inputs.RuleNoDataArgs>? NoData { get; set; }
 
         /// <summary>
-        /// 通知策略 ID。
+        /// Notification policy ID.
         /// </summary>
         [Input("notificationId")]
         public Input<string>? NotificationId { get; set; }
@@ -376,19 +376,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 告警策略检测的资源 ID。
+        /// Resource ID detected by the alert policy.
         /// </summary>
         [Input("originalDimensions")]
         public Input<Inputs.RuleOriginalDimensionsArgs>? OriginalDimensions { get; set; }
 
         /// <summary>
-        /// 告警策略所属项目。
+        /// Project to which the alert policy belongs.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 告警恢复通知。
+        /// Alert recovery notification.
         /// </summary>
         [Input("recoveryNotify")]
         public Input<Inputs.RuleRecoveryNotifyArgs>? RecoveryNotify { get; set; }
@@ -397,7 +397,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         private InputList<string>? _regions;
 
         /// <summary>
-        /// 云产品所属可用区 ID。
+        /// Availability zone ID of the cloud product.
         /// </summary>
         public InputList<string> Regions
         {
@@ -406,25 +406,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 告警策略名称。
+        /// Alert policy name.
         /// </summary>
         [Input("ruleName", required: true)]
         public Input<string> RuleName { get; set; } = null!;
 
         /// <summary>
-        /// 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+        /// Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
         /// </summary>
         [Input("ruleType", required: true)]
         public Input<string> RuleType { get; set; } = null!;
 
         /// <summary>
-        /// 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+        /// Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
         /// </summary>
         [Input("silenceTime", required: true)]
         public Input<int> SilenceTime { get; set; } = null!;
 
         /// <summary>
-        /// 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+        /// Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
         /// </summary>
         [Input("subNamespace", required: true)]
         public Input<string> SubNamespace { get; set; } = null!;
@@ -438,7 +438,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 告警策略绑定的告警回调 URL 地址。
+        /// Alarm callback URL bound to the alarm policy.
         /// </summary>
         [Input("webhook")]
         public Input<string>? Webhook { get; set; }
@@ -447,7 +447,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         private InputList<string>? _webhookIds;
 
         /// <summary>
-        /// 告警发生时告警回调 ID 列表。
+        /// Alarm callback ID list when an alarm occurs.
         /// </summary>
         public InputList<string> WebhookIds
         {
@@ -467,7 +467,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         private InputList<string>? _alertMethods;
 
         /// <summary>
-        /// 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+        /// Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
         /// </summary>
         public InputList<string> AlertMethods
         {
@@ -476,13 +476,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 告警状态。 alerting：告警中 normal：正常。
+        /// Alert status. alerting: In alert; normal: Normal.
         /// </summary>
         [Input("alertState")]
         public Input<string>? AlertState { get; set; }
 
         /// <summary>
-        /// 多指标判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+        /// Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
         /// </summary>
         [Input("conditionOperator")]
         public Input<string>? ConditionOperator { get; set; }
@@ -499,7 +499,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         private InputList<string>? _contactGroupIds;
 
         /// <summary>
-        /// 告警策略绑定的告警通知组 ID。
+        /// Alert notification group ID bound to the alert policy.
         /// </summary>
         public InputList<string> ContactGroupIds
         {
@@ -508,49 +508,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 告警策略创建时间，时间戳格式。
+        /// Alert policy creation time, in timestamp format.
         /// </summary>
         [Input("createdAt")]
         public Input<string>? CreatedAt { get; set; }
 
         /// <summary>
-        /// 告警策略描述信息。
+        /// Alert policy description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Dimension 配置。
+        /// Dimension configuration.
         /// </summary>
         [Input("dimensionConditions")]
         public Input<Inputs.RuleDimensionConditionsGetArgs>? DimensionConditions { get; set; }
 
         /// <summary>
-        /// 策略生效的截止时间，格式为HH:MM。
+        /// Policy expiration time, in HH:MM format.
         /// </summary>
         [Input("effectEndAt")]
         public Input<string>? EffectEndAt { get; set; }
 
         /// <summary>
-        /// 告警策略生效的开始时间，格式为HH:MM。
+        /// Policy start time, in HH:MM format.
         /// </summary>
         [Input("effectStartAt")]
         public Input<string>? EffectStartAt { get; set; }
 
         /// <summary>
-        /// 告警策略的开启状态。,enable：开启,disable：禁用
+        /// Alert policy status. enable: enabled, disable: disabled
         /// </summary>
         [Input("enableState")]
         public Input<string>? EnableState { get; set; }
 
         /// <summary>
-        /// 触发告警需要持续的周期。单位为分钟。
+        /// Duration required to trigger an alert, in minutes.
         /// </summary>
         [Input("evaluationCount")]
         public Input<int>? EvaluationCount { get; set; }
 
         /// <summary>
-        /// 告警级别。critical：严重,warning：警告,notice：通知
+        /// Alert level. critical: critical, warning: warning, notice: notification
         /// </summary>
         [Input("level")]
         public Input<string>? Level { get; set; }
@@ -564,25 +564,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+        /// Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
         /// </summary>
         [Input("multipleConditions")]
         public Input<bool>? MultipleConditions { get; set; }
 
         /// <summary>
-        /// 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+        /// Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
         /// <summary>
-        /// 无数据告警。
+        /// No data alert.
         /// </summary>
         [Input("noData")]
         public Input<Inputs.RuleNoDataGetArgs>? NoData { get; set; }
 
         /// <summary>
-        /// 通知策略 ID。
+        /// Notification policy ID.
         /// </summary>
         [Input("notificationId")]
         public Input<string>? NotificationId { get; set; }
@@ -596,19 +596,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 告警策略检测的资源 ID。
+        /// Resource ID detected by the alert policy.
         /// </summary>
         [Input("originalDimensions")]
         public Input<Inputs.RuleOriginalDimensionsGetArgs>? OriginalDimensions { get; set; }
 
         /// <summary>
-        /// 告警策略所属项目。
+        /// Project to which the alert policy belongs.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 告警恢复通知。
+        /// Alert recovery notification.
         /// </summary>
         [Input("recoveryNotify")]
         public Input<Inputs.RuleRecoveryNotifyGetArgs>? RecoveryNotify { get; set; }
@@ -617,7 +617,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         private InputList<string>? _regions;
 
         /// <summary>
-        /// 云产品所属可用区 ID。
+        /// Availability zone ID of the cloud product.
         /// </summary>
         public InputList<string> Regions
         {
@@ -626,37 +626,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 告警策略检测的资源类型。
+        /// Resource type detected by the alert policy.
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }
 
         /// <summary>
-        /// 告警策略 ID。
+        /// Alarm policy ID.
         /// </summary>
         [Input("ruleId")]
         public Input<string>? RuleId { get; set; }
 
         /// <summary>
-        /// 告警策略名称。
+        /// Alert policy name.
         /// </summary>
         [Input("ruleName")]
         public Input<string>? RuleName { get; set; }
 
         /// <summary>
-        /// 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+        /// Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
         /// </summary>
         [Input("ruleType")]
         public Input<string>? RuleType { get; set; }
 
         /// <summary>
-        /// 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+        /// Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
         /// </summary>
         [Input("silenceTime")]
         public Input<int>? SilenceTime { get; set; }
 
         /// <summary>
-        /// 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+        /// Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
         /// </summary>
         [Input("subNamespace")]
         public Input<string>? SubNamespace { get; set; }
@@ -670,13 +670,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 告警策略更新时间，时间戳格式。
+        /// Alarm policy update time, in timestamp format.
         /// </summary>
         [Input("updatedAt")]
         public Input<string>? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 告警策略绑定的告警回调 URL 地址。
+        /// Alarm callback URL bound to the alarm policy.
         /// </summary>
         [Input("webhook")]
         public Input<string>? Webhook { get; set; }
@@ -685,7 +685,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         private InputList<string>? _webhookIds;
 
         /// <summary>
-        /// 告警发生时告警回调 ID 列表。
+        /// Alarm callback ID list when an alarm occurs.
         /// </summary>
         public InputList<string> WebhookIds
         {

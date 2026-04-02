@@ -65,39 +65,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     public sealed class GetInstanceResult
     {
         /// <summary>
-        /// 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+        /// Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
         /// </summary>
         public readonly string AutoRenew;
         /// <summary>
-        /// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+        /// Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
         /// </summary>
         public readonly string BillingPeriod;
         /// <summary>
-        /// 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+        /// Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
         /// </summary>
         public readonly string BillingType;
         /// <summary>
-        /// 实例的创建时间。
+        /// Instance creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 实例的描述语句。
+        /// Instance description statement
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+        /// Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
         /// </summary>
         public readonly string EipId;
         /// <summary>
-        /// 实例所有接入点响应数据。
+        /// Response data for all instance endpoints
         /// </summary>
         public readonly Outputs.GetInstanceEndpointsResult Endpoints;
         /// <summary>
-        /// 实例过期时间。
+        /// Instance expiration time
         /// </summary>
         public readonly string ExpirationTime;
         /// <summary>
-        /// 实例消费组数量上限。
+        /// Maximum number of consumer groups per instance
         /// </summary>
         public readonly int GroupLimit;
         /// <summary>
@@ -105,67 +105,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// 实例下所有 Topic 的消息保留时长，单位为小时。
+        /// Message retention period for all topics under the instance, in hours
         /// </summary>
         public readonly int MessageRetention;
         /// <summary>
-        /// 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+        /// Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 实例分区数量上限。
+        /// Maximum number of partitions per instance
         /// </summary>
         public readonly int PartitionLimit;
         /// <summary>
-        /// 实例所属项目名称。
+        /// Project name to which the instance belongs
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 实例资源标签列表。
+        /// Instance resource tag list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceResourceTagResult> ResourceTags;
         /// <summary>
-        /// 实例资源统计响应数据。
+        /// Instance resource statistics response data
         /// </summary>
         public readonly Outputs.GetInstanceResourcesResult Resources;
         /// <summary>
-        /// 实例使用安全组列表。
+        /// List of security groups used by the instance
         /// </summary>
         public readonly ImmutableArray<string> SecurityGroupIdLists;
         /// <summary>
-        /// 实例规格。
+        /// Instance specification
         /// </summary>
         public readonly string Specification;
         /// <summary>
-        /// 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+        /// Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 实例使用的子网列表。
+        /// List of subnets used by the instance
         /// </summary>
         public readonly ImmutableArray<string> SubnetIdLists;
         /// <summary>
-        /// 实例资源标签列表。
+        /// Instance resource tag list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceTagResult> Tags;
         /// <summary>
-        /// 包年包月类型实例的购买时长，单位为月。
+        /// Purchase duration for subscription instances, in months
         /// </summary>
         public readonly int Times;
         /// <summary>
-        /// 实例Topic数量上限。
+        /// Maximum number of topics per instance
         /// </summary>
         public readonly int TopicLimit;
         /// <summary>
-        /// 实例所在VPC ID。
+        /// VPC ID where the instance is located
         /// </summary>
         public readonly string VpcId;
         /// <summary>
-        /// 实例所在可用区列表。
+        /// List of availability zones where the instance is located
         /// </summary>
         public readonly ImmutableArray<string> ZoneIdLists;
 

@@ -109,7 +109,7 @@ class GetKeyResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.int:
         """
-        密钥创建时间。
+        Key creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -117,7 +117,7 @@ class GetKeyResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        密钥描述:长度为 0   - 8192 个字符。
+        Key description: Length 0–8192 characters.
         """
         return pulumi.get(self, "description")
 
@@ -133,7 +133,7 @@ class GetKeyResult:
     @pulumi.getter(name="keyArchiveOperation")
     def key_archive_operation(self) -> builtins.int:
         """
-        用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        User master key archive operation (enter 1 to archive, 2 to unarchive).
         """
         return pulumi.get(self, "key_archive_operation")
 
@@ -141,7 +141,7 @@ class GetKeyResult:
     @pulumi.getter(name="keyEnableOperation")
     def key_enable_operation(self) -> builtins.int:
         """
-        用户主密钥启用操作（用户输入1=启用，2=禁用）
+        User master key enable operation (enter 1 to enable, 2 to disable).
         """
         return pulumi.get(self, "key_enable_operation")
 
@@ -149,7 +149,7 @@ class GetKeyResult:
     @pulumi.getter(name="keyId")
     def key_id(self) -> builtins.str:
         """
-        密钥唯一标识符，UUID形式。
+        Key unique identifier in UUID format.
         """
         return pulumi.get(self, "key_id")
 
@@ -157,7 +157,7 @@ class GetKeyResult:
     @pulumi.getter(name="keyMaterialExpireTime")
     def key_material_expire_time(self) -> builtins.str:
         """
-        密钥材料过期时间，当值为空时表示不会过期。
+        Key material expiration time. If empty, the key does not expire.
         """
         return pulumi.get(self, "key_material_expire_time")
 
@@ -165,7 +165,7 @@ class GetKeyResult:
     @pulumi.getter(name="keyName")
     def key_name(self) -> builtins.str:
         """
-        主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+        Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
         """
         return pulumi.get(self, "key_name")
 
@@ -173,7 +173,7 @@ class GetKeyResult:
     @pulumi.getter(name="keyRotationOperation")
     def key_rotation_operation(self) -> builtins.int:
         """
-        用户主密钥轮转操作（用户输入1=开启，2=关闭）
+        User master key rotation operation (enter 1 to enable, 2 to disable).
         """
         return pulumi.get(self, "key_rotation_operation")
 
@@ -181,7 +181,7 @@ class GetKeyResult:
     @pulumi.getter(name="keySpec")
     def key_spec(self) -> builtins.str:
         """
-        对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+        Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
         """
         return pulumi.get(self, "key_spec")
 
@@ -189,7 +189,7 @@ class GetKeyResult:
     @pulumi.getter(name="keyState")
     def key_state(self) -> builtins.str:
         """
-        密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
+        Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
         """
         return pulumi.get(self, "key_state")
 
@@ -197,7 +197,7 @@ class GetKeyResult:
     @pulumi.getter(name="keyUsage")
     def key_usage(self) -> builtins.str:
         """
-        密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+        Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
         """
         return pulumi.get(self, "key_usage")
 
@@ -205,7 +205,7 @@ class GetKeyResult:
     @pulumi.getter(name="keyringName")
     def keyring_name(self) -> builtins.str:
         """
-        密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+        Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
         """
         return pulumi.get(self, "keyring_name")
 
@@ -213,7 +213,7 @@ class GetKeyResult:
     @pulumi.getter(name="lastRotationTime")
     def last_rotation_time(self) -> builtins.str:
         """
-        密钥最后轮转时间。
+        Key last rotation time.
         """
         return pulumi.get(self, "last_rotation_time")
 
@@ -221,7 +221,7 @@ class GetKeyResult:
     @pulumi.getter(name="multiRegion")
     def multi_region(self) -> builtins.bool:
         """
-        是否为 Multi-region 类型的主密钥。
+        Is this a multi-region type master key.
         """
         return pulumi.get(self, "multi_region")
 
@@ -229,7 +229,7 @@ class GetKeyResult:
     @pulumi.getter(name="multiRegionConfiguration")
     def multi_region_configuration(self) -> 'outputs.GetKeyMultiRegionConfigurationResult':
         """
-        Multi-region key 配置信息。
+        Multi-region key configuration information.
         """
         return pulumi.get(self, "multi_region_configuration")
 
@@ -237,7 +237,7 @@ class GetKeyResult:
     @pulumi.getter
     def origin(self) -> builtins.str:
         """
-        密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+        Key source. Options: CloudKMS, External, ExternalKeyStore.
         """
         return pulumi.get(self, "origin")
 
@@ -245,7 +245,7 @@ class GetKeyResult:
     @pulumi.getter(name="protectionLevel")
     def protection_level(self) -> builtins.str:
         """
-        密钥保护级别，取值：SOFTWARE，HSM。
+        Key protection level. Options: SOFTWARE, HSM.
         """
         return pulumi.get(self, "protection_level")
 
@@ -253,7 +253,7 @@ class GetKeyResult:
     @pulumi.getter(name="rotateInterval")
     def rotate_interval(self) -> builtins.int:
         """
-        密钥轮转周期，单位：天；取值范围：[90, 2560]。
+        Key rotation period (days). Range: [90, 2560].
         """
         return pulumi.get(self, "rotate_interval")
 
@@ -261,7 +261,7 @@ class GetKeyResult:
     @pulumi.getter(name="rotateState")
     def rotate_state(self) -> builtins.str:
         """
-        密钥轮转状态，取值：Enable，Disable。
+        Key rotation status. Options: Enable, Disable.
         """
         return pulumi.get(self, "rotate_state")
 
@@ -269,7 +269,7 @@ class GetKeyResult:
     @pulumi.getter(name="scheduleDeleteTime")
     def schedule_delete_time(self) -> builtins.str:
         """
-        密钥删除时间。
+        Key deletion time.
         """
         return pulumi.get(self, "schedule_delete_time")
 
@@ -277,7 +277,7 @@ class GetKeyResult:
     @pulumi.getter(name="scheduleRotationTime")
     def schedule_rotation_time(self) -> builtins.str:
         """
-        密钥轮转时间。
+        Key rotation time.
         """
         return pulumi.get(self, "schedule_rotation_time")
 
@@ -285,7 +285,7 @@ class GetKeyResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetKeyTagResult']:
         """
-        KMS密钥的标签信息
+        KMS key label information.
         """
         return pulumi.get(self, "tags")
 
@@ -293,7 +293,7 @@ class GetKeyResult:
     @pulumi.getter
     def trn(self) -> builtins.str:
         """
-        资源名称，格式应为 trn:${Service}:${Region}:${AccountID}:${ResourcePath}。
+        Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
         """
         return pulumi.get(self, "trn")
 
@@ -301,7 +301,7 @@ class GetKeyResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.int:
         """
-        密钥更新时间。
+        Key update time.
         """
         return pulumi.get(self, "updated_time")
 

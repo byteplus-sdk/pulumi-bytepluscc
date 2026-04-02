@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka.Inputs
     public sealed class AllowListAssociatedInstanceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 白名单绑定的实例ID。
+        /// ID of the instance bound to the allowlist
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }

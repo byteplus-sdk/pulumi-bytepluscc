@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Outputs
     public sealed class GetEniPrimaryIpAddressResult
     {
         /// <summary>
-        /// 网卡主私网IPv4关联的公网IP的信息。
+        /// Information about the public IP associated with the primary private IPv4 address of the network interface.
         /// </summary>
         public readonly Outputs.GetEniPrimaryIpAddressAssociatedElasticIpResult AssociatedElasticIp;
         /// <summary>
-        /// 是否为主私网IPv4地址。
+        /// Indicates whether this is the primary private IPv4 address.
         /// </summary>
         public readonly bool Primary;
         /// <summary>
-        /// 网卡的私网IP地址。
+        /// Private IP address of the network interface.
         /// </summary>
         public readonly string PrivateIpAddress;
 

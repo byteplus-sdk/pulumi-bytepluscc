@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class IndexFullText {
     /**
-     * @return 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+     * @return Case sensitivity. true: Case sensitive. false: Not case sensitive.
      * 
      */
     private @Nullable Boolean caseSensitive;
     /**
-     * @return 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+     * @return Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
      * 
      */
     private @Nullable String delimiter;
     /**
-     * @return 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+     * @return When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
      * 
      */
     private @Nullable Boolean includeChinese;
 
     private IndexFullText() {}
     /**
-     * @return 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+     * @return Case sensitivity. true: Case sensitive. false: Not case sensitive.
      * 
      */
     public Optional<Boolean> caseSensitive() {
         return Optional.ofNullable(this.caseSensitive);
     }
     /**
-     * @return 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+     * @return Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
      * 
      */
     public Optional<String> delimiter() {
         return Optional.ofNullable(this.delimiter);
     }
     /**
-     * @return 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+     * @return When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
      * 
      */
     public Optional<Boolean> includeChinese() {

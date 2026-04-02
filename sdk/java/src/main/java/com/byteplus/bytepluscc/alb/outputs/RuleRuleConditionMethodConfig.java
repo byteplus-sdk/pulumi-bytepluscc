@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleRuleConditionMethodConfig {
     /**
-     * @return 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+     * @return Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
      * 
      */
     private @Nullable List<String> values;
 
     private RuleRuleConditionMethodConfig() {}
     /**
-     * @return 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+     * @return Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
      * 
      */
     public List<String> values() {

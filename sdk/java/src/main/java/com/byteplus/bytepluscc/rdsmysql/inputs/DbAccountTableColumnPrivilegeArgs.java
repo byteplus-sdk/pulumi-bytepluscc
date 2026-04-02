@@ -26,14 +26,14 @@ public final class DbAccountTableColumnPrivilegeArgs extends com.pulumi.resource
     }
 
     /**
-     * 对账号进行权限设置的表所属的数据库的名称。
+     * Name of the database to which the table belongs for setting permissions for the account.
      * 
      */
     @Import(name="dbName")
     private @Nullable Output<String> dbName;
 
     /**
-     * @return 对账号进行权限设置的表所属的数据库的名称。
+     * @return Name of the database to which the table belongs for setting permissions for the account.
      * 
      */
     public Optional<Output<String>> dbName() {
@@ -87,7 +87,7 @@ public final class DbAccountTableColumnPrivilegeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param dbName 对账号进行权限设置的表所属的数据库的名称。
+         * @param dbName Name of the database to which the table belongs for setting permissions for the account.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DbAccountTableColumnPrivilegeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param dbName 对账号进行权限设置的表所属的数据库的名称。
+         * @param dbName Name of the database to which the table belongs for setting permissions for the account.
          * 
          * @return builder
          * 

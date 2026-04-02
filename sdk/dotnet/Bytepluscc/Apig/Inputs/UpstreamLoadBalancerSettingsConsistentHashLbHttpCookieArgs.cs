@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+        /// Name. Supports printable ASCII characters. Length: 0~256 characters
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+        /// Path. Supports printable ASCII characters. Length: 1~256 characters
         /// </summary>
         [Input("path")]
         public Input<string>? Path { get; set; }
 
         /// <summary>
-        /// 有效期。单位为秒。
+        /// Validity period, in seconds
         /// </summary>
         [Input("ttl")]
         public Input<int>? Ttl { get; set; }

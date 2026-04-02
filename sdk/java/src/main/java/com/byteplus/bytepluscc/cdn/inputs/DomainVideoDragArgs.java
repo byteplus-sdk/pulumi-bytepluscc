@@ -16,14 +16,14 @@ public final class DomainVideoDragArgs extends com.pulumi.resources.ResourceArgs
     public static final DomainVideoDragArgs Empty = new DomainVideoDragArgs();
 
     /**
-     * 智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+     * Smart compression configuration switch. The parameter has the following options: true: enable video seeking. false: disable video seeking.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+     * @return Smart compression configuration switch. The parameter has the following options: true: enable video seeking. false: disable video seeking.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -55,7 +55,7 @@ public final class DomainVideoDragArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param switch_ 智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+         * @param switch_ Smart compression configuration switch. The parameter has the following options: true: enable video seeking. false: disable video seeking.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DomainVideoDragArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param switch_ 智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+         * @param switch_ Smart compression configuration switch. The parameter has the following options: true: enable video seeking. false: disable video seeking.
          * 
          * @return builder
          * 

@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Inputs
     public sealed class EniPrimaryIpAddressAssociatedElasticIpGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 公网IP的ID。
+        /// Public IP ID
         /// </summary>
         [Input("allocationId")]
         public Input<string>? AllocationId { get; set; }
 
         /// <summary>
-        /// 公网IP的地址。
+        /// Public IP address
         /// </summary>
         [Input("eipAddress")]
         public Input<string>? EipAddress { get; set; }
 
         /// <summary>
-        /// 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+        /// Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
         /// </summary>
         [Input("releaseWithInstance")]
         public Input<bool>? ReleaseWithInstance { get; set; }

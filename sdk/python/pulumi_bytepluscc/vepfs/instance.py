@@ -38,19 +38,19 @@ class InstanceArgs:
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Instance resource.
-        :param pulumi.Input[builtins.int] capacity: 文件系统容量，单位为 TiB。
-        :param pulumi.Input[builtins.str] file_system_name: 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
-        :param pulumi.Input[builtins.str] store_type: 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
-        :param pulumi.Input[builtins.str] zone_id: 可用区 ID。
-        :param pulumi.Input[builtins.str] charge_type: 计费类型。取值说明如下：PayAsYouGo：按量计费。
-        :param pulumi.Input[builtins.str] description: 文件系统描述信息。
-        :param pulumi.Input[builtins.bool] enable_restripe: 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
-        :param pulumi.Input[builtins.str] file_system_type: 文件系统类型，默认为 VePFS。
-        :param pulumi.Input[builtins.str] project_name: 文件系统所属项目，默认为 default。
-        :param pulumi.Input[builtins.str] protocol_type: 协议类型，默认为 VePFS。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。子网必须属于所选的可用区。
-        :param pulumi.Input[builtins.str] version_number: 文件系统版本号。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。
+        :param pulumi.Input[builtins.int] capacity: File system capacity, unit: TiB.
+        :param pulumi.Input[builtins.str] file_system_name: File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] store_type: File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID.
+        :param pulumi.Input[builtins.str] charge_type: Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
+        :param pulumi.Input[builtins.str] description: File system description.
+        :param pulumi.Input[builtins.bool] enable_restripe: Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
+        :param pulumi.Input[builtins.str] file_system_type: File system type. Default is VePFS.
+        :param pulumi.Input[builtins.str] project_name: Project to which the file system belongs. Default is default.
+        :param pulumi.Input[builtins.str] protocol_type: Protocol type. Default is VePFS.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID. The subnet must belong to the selected availability zone.
+        :param pulumi.Input[builtins.str] version_number: File system version number.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID.
         """
         pulumi.set(__self__, "capacity", capacity)
         pulumi.set(__self__, "file_system_name", file_system_name)
@@ -81,7 +81,7 @@ class InstanceArgs:
     @pulumi.getter
     def capacity(self) -> pulumi.Input[builtins.int]:
         """
-        文件系统容量，单位为 TiB。
+        File system capacity, unit: TiB.
         """
         return pulumi.get(self, "capacity")
 
@@ -93,7 +93,7 @@ class InstanceArgs:
     @pulumi.getter(name="fileSystemName")
     def file_system_name(self) -> pulumi.Input[builtins.str]:
         """
-        文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+        File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "file_system_name")
 
@@ -105,7 +105,7 @@ class InstanceArgs:
     @pulumi.getter(name="storeType")
     def store_type(self) -> pulumi.Input[builtins.str]:
         """
-        文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+        File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
         """
         return pulumi.get(self, "store_type")
 
@@ -117,7 +117,7 @@ class InstanceArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[builtins.str]:
         """
-        可用区 ID。
+        Availability zone ID.
         """
         return pulumi.get(self, "zone_id")
 
@@ -129,7 +129,7 @@ class InstanceArgs:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        计费类型。取值说明如下：PayAsYouGo：按量计费。
+        Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
         """
         return pulumi.get(self, "charge_type")
 
@@ -141,7 +141,7 @@ class InstanceArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统描述信息。
+        File system description.
         """
         return pulumi.get(self, "description")
 
@@ -153,7 +153,7 @@ class InstanceArgs:
     @pulumi.getter(name="enableRestripe")
     def enable_restripe(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+        Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
         """
         return pulumi.get(self, "enable_restripe")
 
@@ -165,7 +165,7 @@ class InstanceArgs:
     @pulumi.getter(name="fileSystemType")
     def file_system_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统类型，默认为 VePFS。
+        File system type. Default is VePFS.
         """
         return pulumi.get(self, "file_system_type")
 
@@ -177,7 +177,7 @@ class InstanceArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统所属项目，默认为 default。
+        Project to which the file system belongs. Default is default.
         """
         return pulumi.get(self, "project_name")
 
@@ -189,7 +189,7 @@ class InstanceArgs:
     @pulumi.getter(name="protocolType")
     def protocol_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        协议类型，默认为 VePFS。
+        Protocol type. Default is VePFS.
         """
         return pulumi.get(self, "protocol_type")
 
@@ -201,7 +201,7 @@ class InstanceArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网 ID。子网必须属于所选的可用区。
+        Subnet ID. The subnet must belong to the selected availability zone.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -222,7 +222,7 @@ class InstanceArgs:
     @pulumi.getter(name="versionNumber")
     def version_number(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统版本号。
+        File system version number.
         """
         return pulumi.get(self, "version_number")
 
@@ -234,7 +234,7 @@ class InstanceArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私有网络 ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -279,36 +279,36 @@ class _InstanceState:
                  zone_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
-        :param pulumi.Input[builtins.str] account_id: 账户ID。
-        :param pulumi.Input[builtins.int] bandwidth: vePFS 文件系统吞吐上限。
-        :param pulumi.Input[builtins.int] capacity: 文件系统容量，单位为 TiB。
-        :param pulumi.Input['InstanceCapacityInfoArgs'] capacity_info: 容量信息。
-        :param pulumi.Input[builtins.str] charge_status: 计费状态，默认为 Normal，表示正常计费。
-        :param pulumi.Input[builtins.str] charge_type: 计费类型。取值说明如下：PayAsYouGo：按量计费。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 文件系统描述信息。
-        :param pulumi.Input[builtins.bool] enable_restripe: 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
-        :param pulumi.Input[builtins.str] expire_time: 过期时间。
-        :param pulumi.Input[builtins.str] file_system_id: 文件系统 ID。
-        :param pulumi.Input[builtins.str] file_system_name: 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
-        :param pulumi.Input[builtins.str] file_system_type: 文件系统类型，默认为 VePFS。
-        :param pulumi.Input[builtins.str] free_time: 文件系统释放时间。
-        :param pulumi.Input[builtins.str] project_name: 文件系统所属项目，默认为 default。
-        :param pulumi.Input[builtins.str] protocol_type: 协议类型，默认为 VePFS。
-        :param pulumi.Input[builtins.int] read_bandwidth: 读带宽值, 单位MB/s。
-        :param pulumi.Input[builtins.str] security_group_id: 生成的辅助网卡所在的安全组ID。
-        :param pulumi.Input[builtins.str] status: 文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
-        :param pulumi.Input[builtins.str] stop_service_time: 文件系统关停时间。
-        :param pulumi.Input[builtins.str] store_type: 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
-        :param pulumi.Input[builtins.str] store_type_cn: 文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
-        :param pulumi.Input[builtins.str] store_type_en: 存储类型英文名。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。子网必须属于所选的可用区。
-        :param pulumi.Input[builtins.str] updated_time: 文件系统更新时间。
-        :param pulumi.Input[builtins.str] version_number: 文件系统版本号。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。
-        :param pulumi.Input[builtins.int] write_bandwidth: 写带宽值, 单位MB/s。
-        :param pulumi.Input[builtins.str] zone_id: 可用区 ID。
-        :param pulumi.Input[builtins.str] zone_name: 可用区名称。
+        :param pulumi.Input[builtins.str] account_id: Account ID.
+        :param pulumi.Input[builtins.int] bandwidth: VePFS file system throughput limit.
+        :param pulumi.Input[builtins.int] capacity: File system capacity, unit: TiB.
+        :param pulumi.Input['InstanceCapacityInfoArgs'] capacity_info: Capacity information.
+        :param pulumi.Input[builtins.str] charge_status: Billing status. Default is Normal, indicating standard billing.
+        :param pulumi.Input[builtins.str] charge_type: Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
+        :param pulumi.Input[builtins.str] created_time: Creation time.
+        :param pulumi.Input[builtins.str] description: File system description.
+        :param pulumi.Input[builtins.bool] enable_restripe: Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
+        :param pulumi.Input[builtins.str] expire_time: Expiration time.
+        :param pulumi.Input[builtins.str] file_system_id: File system ID.
+        :param pulumi.Input[builtins.str] file_system_name: File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] file_system_type: File system type. Default is VePFS.
+        :param pulumi.Input[builtins.str] free_time: File system release time.
+        :param pulumi.Input[builtins.str] project_name: Project to which the file system belongs. Default is default.
+        :param pulumi.Input[builtins.str] protocol_type: Protocol type. Default is VePFS.
+        :param pulumi.Input[builtins.int] read_bandwidth: Read bandwidth value, unit: MB/s.
+        :param pulumi.Input[builtins.str] security_group_id: Security group ID for the generated auxiliary NIC.
+        :param pulumi.Input[builtins.str] status: File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
+        :param pulumi.Input[builtins.str] stop_service_time: File system shutdown time.
+        :param pulumi.Input[builtins.str] store_type: File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
+        :param pulumi.Input[builtins.str] store_type_cn: File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
+        :param pulumi.Input[builtins.str] store_type_en: Storage type English name.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID. The subnet must belong to the selected availability zone.
+        :param pulumi.Input[builtins.str] updated_time: File system update time.
+        :param pulumi.Input[builtins.str] version_number: File system version number.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID.
+        :param pulumi.Input[builtins.int] write_bandwidth: Write bandwidth value, measured in MB/s.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID.
+        :param pulumi.Input[builtins.str] zone_name: Availability zone name.
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -377,7 +377,7 @@ class _InstanceState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账户ID。
+        Account ID.
         """
         return pulumi.get(self, "account_id")
 
@@ -389,7 +389,7 @@ class _InstanceState:
     @pulumi.getter
     def bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        vePFS 文件系统吞吐上限。
+        VePFS file system throughput limit.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -401,7 +401,7 @@ class _InstanceState:
     @pulumi.getter
     def capacity(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        文件系统容量，单位为 TiB。
+        File system capacity, unit: TiB.
         """
         return pulumi.get(self, "capacity")
 
@@ -413,7 +413,7 @@ class _InstanceState:
     @pulumi.getter(name="capacityInfo")
     def capacity_info(self) -> Optional[pulumi.Input['InstanceCapacityInfoArgs']]:
         """
-        容量信息。
+        Capacity information.
         """
         return pulumi.get(self, "capacity_info")
 
@@ -425,7 +425,7 @@ class _InstanceState:
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        计费状态，默认为 Normal，表示正常计费。
+        Billing status. Default is Normal, indicating standard billing.
         """
         return pulumi.get(self, "charge_status")
 
@@ -437,7 +437,7 @@ class _InstanceState:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        计费类型。取值说明如下：PayAsYouGo：按量计费。
+        Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
         """
         return pulumi.get(self, "charge_type")
 
@@ -449,7 +449,7 @@ class _InstanceState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -461,7 +461,7 @@ class _InstanceState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统描述信息。
+        File system description.
         """
         return pulumi.get(self, "description")
 
@@ -473,7 +473,7 @@ class _InstanceState:
     @pulumi.getter(name="enableRestripe")
     def enable_restripe(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+        Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
         """
         return pulumi.get(self, "enable_restripe")
 
@@ -485,7 +485,7 @@ class _InstanceState:
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        过期时间。
+        Expiration time.
         """
         return pulumi.get(self, "expire_time")
 
@@ -497,7 +497,7 @@ class _InstanceState:
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统 ID。
+        File system ID.
         """
         return pulumi.get(self, "file_system_id")
 
@@ -509,7 +509,7 @@ class _InstanceState:
     @pulumi.getter(name="fileSystemName")
     def file_system_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+        File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "file_system_name")
 
@@ -521,7 +521,7 @@ class _InstanceState:
     @pulumi.getter(name="fileSystemType")
     def file_system_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统类型，默认为 VePFS。
+        File system type. Default is VePFS.
         """
         return pulumi.get(self, "file_system_type")
 
@@ -533,7 +533,7 @@ class _InstanceState:
     @pulumi.getter(name="freeTime")
     def free_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统释放时间。
+        File system release time.
         """
         return pulumi.get(self, "free_time")
 
@@ -545,7 +545,7 @@ class _InstanceState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统所属项目，默认为 default。
+        Project to which the file system belongs. Default is default.
         """
         return pulumi.get(self, "project_name")
 
@@ -557,7 +557,7 @@ class _InstanceState:
     @pulumi.getter(name="protocolType")
     def protocol_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        协议类型，默认为 VePFS。
+        Protocol type. Default is VePFS.
         """
         return pulumi.get(self, "protocol_type")
 
@@ -569,7 +569,7 @@ class _InstanceState:
     @pulumi.getter(name="readBandwidth")
     def read_bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        读带宽值, 单位MB/s。
+        Read bandwidth value, unit: MB/s.
         """
         return pulumi.get(self, "read_bandwidth")
 
@@ -581,7 +581,7 @@ class _InstanceState:
     @pulumi.getter(name="securityGroupId")
     def security_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        生成的辅助网卡所在的安全组ID。
+        Security group ID for the generated auxiliary NIC.
         """
         return pulumi.get(self, "security_group_id")
 
@@ -593,7 +593,7 @@ class _InstanceState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
+        File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
         """
         return pulumi.get(self, "status")
 
@@ -605,7 +605,7 @@ class _InstanceState:
     @pulumi.getter(name="stopServiceTime")
     def stop_service_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统关停时间。
+        File system shutdown time.
         """
         return pulumi.get(self, "stop_service_time")
 
@@ -617,7 +617,7 @@ class _InstanceState:
     @pulumi.getter(name="storeType")
     def store_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+        File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
         """
         return pulumi.get(self, "store_type")
 
@@ -629,7 +629,7 @@ class _InstanceState:
     @pulumi.getter(name="storeTypeCn")
     def store_type_cn(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
+        File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
         """
         return pulumi.get(self, "store_type_cn")
 
@@ -641,7 +641,7 @@ class _InstanceState:
     @pulumi.getter(name="storeTypeEn")
     def store_type_en(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        存储类型英文名。
+        Storage type English name.
         """
         return pulumi.get(self, "store_type_en")
 
@@ -653,7 +653,7 @@ class _InstanceState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网 ID。子网必须属于所选的可用区。
+        Subnet ID. The subnet must belong to the selected availability zone.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -674,7 +674,7 @@ class _InstanceState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统更新时间。
+        File system update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -686,7 +686,7 @@ class _InstanceState:
     @pulumi.getter(name="versionNumber")
     def version_number(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统版本号。
+        File system version number.
         """
         return pulumi.get(self, "version_number")
 
@@ -698,7 +698,7 @@ class _InstanceState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私有网络 ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -710,7 +710,7 @@ class _InstanceState:
     @pulumi.getter(name="writeBandwidth")
     def write_bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        写带宽值, 单位MB/s。
+        Write bandwidth value, measured in MB/s.
         """
         return pulumi.get(self, "write_bandwidth")
 
@@ -722,7 +722,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        可用区 ID。
+        Availability zone ID.
         """
         return pulumi.get(self, "zone_id")
 
@@ -734,7 +734,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        可用区名称。
+        Availability zone name.
         """
         return pulumi.get(self, "zone_name")
 
@@ -765,7 +765,7 @@ class Instance(pulumi.CustomResource):
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        文件存储 vePFS 是推出的一种高吞吐、低延时、可扩展并行的文件系统服务，满足高性能计算场景下高吞吐低延时的数据读写需求，可广泛应用于 HPC 高性能计算、AI 人工智能训练或推理、能源勘探、工业仿真、影视渲染、生命科学、气象分析等场景。同时，vePFS 提供一键化部署及配套监控报警能力，免去部署、维护费用的同时，最大化提升您的业务效率。
+        File storage vePFS is a newly launched high-throughput, low-latency, scalable parallel file system service designed to meet the high-throughput and low-latency data read/write requirements in high-performance computing scenarios. It can be widely used in HPC (high-performance computing), AI training or inference, energy exploration, industrial simulation, film rendering, life sciences, meteorological analysis, and other scenarios. vePFS also provides one-click deployment and integrated monitoring and alerting capabilities, eliminating deployment and maintenance costs while maximizing your business efficiency.
 
         ## Example Usage
 
@@ -800,19 +800,19 @@ class Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] capacity: 文件系统容量，单位为 TiB。
-        :param pulumi.Input[builtins.str] charge_type: 计费类型。取值说明如下：PayAsYouGo：按量计费。
-        :param pulumi.Input[builtins.str] description: 文件系统描述信息。
-        :param pulumi.Input[builtins.bool] enable_restripe: 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
-        :param pulumi.Input[builtins.str] file_system_name: 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
-        :param pulumi.Input[builtins.str] file_system_type: 文件系统类型，默认为 VePFS。
-        :param pulumi.Input[builtins.str] project_name: 文件系统所属项目，默认为 default。
-        :param pulumi.Input[builtins.str] protocol_type: 协议类型，默认为 VePFS。
-        :param pulumi.Input[builtins.str] store_type: 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。子网必须属于所选的可用区。
-        :param pulumi.Input[builtins.str] version_number: 文件系统版本号。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。
-        :param pulumi.Input[builtins.str] zone_id: 可用区 ID。
+        :param pulumi.Input[builtins.int] capacity: File system capacity, unit: TiB.
+        :param pulumi.Input[builtins.str] charge_type: Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
+        :param pulumi.Input[builtins.str] description: File system description.
+        :param pulumi.Input[builtins.bool] enable_restripe: Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
+        :param pulumi.Input[builtins.str] file_system_name: File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] file_system_type: File system type. Default is VePFS.
+        :param pulumi.Input[builtins.str] project_name: Project to which the file system belongs. Default is default.
+        :param pulumi.Input[builtins.str] protocol_type: Protocol type. Default is VePFS.
+        :param pulumi.Input[builtins.str] store_type: File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID. The subnet must belong to the selected availability zone.
+        :param pulumi.Input[builtins.str] version_number: File system version number.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID.
         """
         ...
     @overload
@@ -821,7 +821,7 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        文件存储 vePFS 是推出的一种高吞吐、低延时、可扩展并行的文件系统服务，满足高性能计算场景下高吞吐低延时的数据读写需求，可广泛应用于 HPC 高性能计算、AI 人工智能训练或推理、能源勘探、工业仿真、影视渲染、生命科学、气象分析等场景。同时，vePFS 提供一键化部署及配套监控报警能力，免去部署、维护费用的同时，最大化提升您的业务效率。
+        File storage vePFS is a newly launched high-throughput, low-latency, scalable parallel file system service designed to meet the high-throughput and low-latency data read/write requirements in high-performance computing scenarios. It can be widely used in HPC (high-performance computing), AI training or inference, energy exploration, industrial simulation, film rendering, life sciences, meteorological analysis, and other scenarios. vePFS also provides one-click deployment and integrated monitoring and alerting capabilities, eliminating deployment and maintenance costs while maximizing your business efficiency.
 
         ## Example Usage
 
@@ -979,36 +979,36 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_id: 账户ID。
-        :param pulumi.Input[builtins.int] bandwidth: vePFS 文件系统吞吐上限。
-        :param pulumi.Input[builtins.int] capacity: 文件系统容量，单位为 TiB。
-        :param pulumi.Input[Union['InstanceCapacityInfoArgs', 'InstanceCapacityInfoArgsDict']] capacity_info: 容量信息。
-        :param pulumi.Input[builtins.str] charge_status: 计费状态，默认为 Normal，表示正常计费。
-        :param pulumi.Input[builtins.str] charge_type: 计费类型。取值说明如下：PayAsYouGo：按量计费。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 文件系统描述信息。
-        :param pulumi.Input[builtins.bool] enable_restripe: 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
-        :param pulumi.Input[builtins.str] expire_time: 过期时间。
-        :param pulumi.Input[builtins.str] file_system_id: 文件系统 ID。
-        :param pulumi.Input[builtins.str] file_system_name: 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
-        :param pulumi.Input[builtins.str] file_system_type: 文件系统类型，默认为 VePFS。
-        :param pulumi.Input[builtins.str] free_time: 文件系统释放时间。
-        :param pulumi.Input[builtins.str] project_name: 文件系统所属项目，默认为 default。
-        :param pulumi.Input[builtins.str] protocol_type: 协议类型，默认为 VePFS。
-        :param pulumi.Input[builtins.int] read_bandwidth: 读带宽值, 单位MB/s。
-        :param pulumi.Input[builtins.str] security_group_id: 生成的辅助网卡所在的安全组ID。
-        :param pulumi.Input[builtins.str] status: 文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
-        :param pulumi.Input[builtins.str] stop_service_time: 文件系统关停时间。
-        :param pulumi.Input[builtins.str] store_type: 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
-        :param pulumi.Input[builtins.str] store_type_cn: 文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
-        :param pulumi.Input[builtins.str] store_type_en: 存储类型英文名。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。子网必须属于所选的可用区。
-        :param pulumi.Input[builtins.str] updated_time: 文件系统更新时间。
-        :param pulumi.Input[builtins.str] version_number: 文件系统版本号。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。
-        :param pulumi.Input[builtins.int] write_bandwidth: 写带宽值, 单位MB/s。
-        :param pulumi.Input[builtins.str] zone_id: 可用区 ID。
-        :param pulumi.Input[builtins.str] zone_name: 可用区名称。
+        :param pulumi.Input[builtins.str] account_id: Account ID.
+        :param pulumi.Input[builtins.int] bandwidth: VePFS file system throughput limit.
+        :param pulumi.Input[builtins.int] capacity: File system capacity, unit: TiB.
+        :param pulumi.Input[Union['InstanceCapacityInfoArgs', 'InstanceCapacityInfoArgsDict']] capacity_info: Capacity information.
+        :param pulumi.Input[builtins.str] charge_status: Billing status. Default is Normal, indicating standard billing.
+        :param pulumi.Input[builtins.str] charge_type: Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
+        :param pulumi.Input[builtins.str] created_time: Creation time.
+        :param pulumi.Input[builtins.str] description: File system description.
+        :param pulumi.Input[builtins.bool] enable_restripe: Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
+        :param pulumi.Input[builtins.str] expire_time: Expiration time.
+        :param pulumi.Input[builtins.str] file_system_id: File system ID.
+        :param pulumi.Input[builtins.str] file_system_name: File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] file_system_type: File system type. Default is VePFS.
+        :param pulumi.Input[builtins.str] free_time: File system release time.
+        :param pulumi.Input[builtins.str] project_name: Project to which the file system belongs. Default is default.
+        :param pulumi.Input[builtins.str] protocol_type: Protocol type. Default is VePFS.
+        :param pulumi.Input[builtins.int] read_bandwidth: Read bandwidth value, unit: MB/s.
+        :param pulumi.Input[builtins.str] security_group_id: Security group ID for the generated auxiliary NIC.
+        :param pulumi.Input[builtins.str] status: File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
+        :param pulumi.Input[builtins.str] stop_service_time: File system shutdown time.
+        :param pulumi.Input[builtins.str] store_type: File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
+        :param pulumi.Input[builtins.str] store_type_cn: File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
+        :param pulumi.Input[builtins.str] store_type_en: Storage type English name.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID. The subnet must belong to the selected availability zone.
+        :param pulumi.Input[builtins.str] updated_time: File system update time.
+        :param pulumi.Input[builtins.str] version_number: File system version number.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID.
+        :param pulumi.Input[builtins.int] write_bandwidth: Write bandwidth value, measured in MB/s.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID.
+        :param pulumi.Input[builtins.str] zone_name: Availability zone name.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1051,7 +1051,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        账户ID。
+        Account ID.
         """
         return pulumi.get(self, "account_id")
 
@@ -1059,7 +1059,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def bandwidth(self) -> pulumi.Output[builtins.int]:
         """
-        vePFS 文件系统吞吐上限。
+        VePFS file system throughput limit.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -1067,7 +1067,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def capacity(self) -> pulumi.Output[builtins.int]:
         """
-        文件系统容量，单位为 TiB。
+        File system capacity, unit: TiB.
         """
         return pulumi.get(self, "capacity")
 
@@ -1075,7 +1075,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="capacityInfo")
     def capacity_info(self) -> pulumi.Output['outputs.InstanceCapacityInfo']:
         """
-        容量信息。
+        Capacity information.
         """
         return pulumi.get(self, "capacity_info")
 
@@ -1083,7 +1083,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> pulumi.Output[builtins.str]:
         """
-        计费状态，默认为 Normal，表示正常计费。
+        Billing status. Default is Normal, indicating standard billing.
         """
         return pulumi.get(self, "charge_status")
 
@@ -1091,7 +1091,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Output[builtins.str]:
         """
-        计费类型。取值说明如下：PayAsYouGo：按量计费。
+        Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
         """
         return pulumi.get(self, "charge_type")
 
@@ -1099,7 +1099,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -1107,7 +1107,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统描述信息。
+        File system description.
         """
         return pulumi.get(self, "description")
 
@@ -1115,7 +1115,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="enableRestripe")
     def enable_restripe(self) -> pulumi.Output[builtins.bool]:
         """
-        扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+        Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
         """
         return pulumi.get(self, "enable_restripe")
 
@@ -1123,7 +1123,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> pulumi.Output[builtins.str]:
         """
-        过期时间。
+        Expiration time.
         """
         return pulumi.get(self, "expire_time")
 
@@ -1131,7 +1131,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统 ID。
+        File system ID.
         """
         return pulumi.get(self, "file_system_id")
 
@@ -1139,7 +1139,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="fileSystemName")
     def file_system_name(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+        File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "file_system_name")
 
@@ -1147,7 +1147,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="fileSystemType")
     def file_system_type(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统类型，默认为 VePFS。
+        File system type. Default is VePFS.
         """
         return pulumi.get(self, "file_system_type")
 
@@ -1155,7 +1155,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="freeTime")
     def free_time(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统释放时间。
+        File system release time.
         """
         return pulumi.get(self, "free_time")
 
@@ -1163,7 +1163,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统所属项目，默认为 default。
+        Project to which the file system belongs. Default is default.
         """
         return pulumi.get(self, "project_name")
 
@@ -1171,7 +1171,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="protocolType")
     def protocol_type(self) -> pulumi.Output[builtins.str]:
         """
-        协议类型，默认为 VePFS。
+        Protocol type. Default is VePFS.
         """
         return pulumi.get(self, "protocol_type")
 
@@ -1179,7 +1179,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="readBandwidth")
     def read_bandwidth(self) -> pulumi.Output[builtins.int]:
         """
-        读带宽值, 单位MB/s。
+        Read bandwidth value, unit: MB/s.
         """
         return pulumi.get(self, "read_bandwidth")
 
@@ -1187,7 +1187,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="securityGroupId")
     def security_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        生成的辅助网卡所在的安全组ID。
+        Security group ID for the generated auxiliary NIC.
         """
         return pulumi.get(self, "security_group_id")
 
@@ -1195,7 +1195,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
+        File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
         """
         return pulumi.get(self, "status")
 
@@ -1203,7 +1203,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="stopServiceTime")
     def stop_service_time(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统关停时间。
+        File system shutdown time.
         """
         return pulumi.get(self, "stop_service_time")
 
@@ -1211,7 +1211,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storeType")
     def store_type(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+        File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
         """
         return pulumi.get(self, "store_type")
 
@@ -1219,7 +1219,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storeTypeCn")
     def store_type_cn(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
+        File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
         """
         return pulumi.get(self, "store_type_cn")
 
@@ -1227,7 +1227,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storeTypeEn")
     def store_type_en(self) -> pulumi.Output[builtins.str]:
         """
-        存储类型英文名。
+        Storage type English name.
         """
         return pulumi.get(self, "store_type_en")
 
@@ -1235,7 +1235,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        子网 ID。子网必须属于所选的可用区。
+        Subnet ID. The subnet must belong to the selected availability zone.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1248,7 +1248,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统更新时间。
+        File system update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -1256,7 +1256,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="versionNumber")
     def version_number(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统版本号。
+        File system version number.
         """
         return pulumi.get(self, "version_number")
 
@@ -1264,7 +1264,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        私有网络 ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1272,7 +1272,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="writeBandwidth")
     def write_bandwidth(self) -> pulumi.Output[builtins.int]:
         """
-        写带宽值, 单位MB/s。
+        Write bandwidth value, measured in MB/s.
         """
         return pulumi.get(self, "write_bandwidth")
 
@@ -1280,7 +1280,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        可用区 ID。
+        Availability zone ID.
         """
         return pulumi.get(self, "zone_id")
 
@@ -1288,7 +1288,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> pulumi.Output[builtins.str]:
         """
-        可用区名称。
+        Availability zone name.
         """
         return pulumi.get(self, "zone_name")
 

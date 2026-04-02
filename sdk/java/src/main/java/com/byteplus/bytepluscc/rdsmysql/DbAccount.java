@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 数据库账号
+ * Database account.
  * 
  * ## Example Usage
  * 
@@ -34,42 +34,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:rdsmysql/dbAccount:DbAccount")
 public class DbAccount extends com.pulumi.resources.CustomResource {
     /**
-     * 账号信息描述信息，长度不超过 256 个字符。
+     * Account information description, maximum length 256 characters.
      * 
      */
     @Export(name="accountDesc", refs={String.class}, tree="[0]")
     private Output<String> accountDesc;
 
     /**
-     * @return 账号信息描述信息，长度不超过 256 个字符。
+     * @return Account information description, maximum length 256 characters.
      * 
      */
     public Output<String> accountDesc() {
         return this.accountDesc;
     }
     /**
-     * 数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
+     * Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
      * 
      */
     @Export(name="accountName", refs={String.class}, tree="[0]")
     private Output<String> accountName;
 
     /**
-     * @return 数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
+     * @return Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
      * 
      */
     public Output<String> accountName() {
         return this.accountName;
     }
     /**
-     * 数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+     * Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
      * 
      */
     @Export(name="accountPassword", refs={String.class}, tree="[0]")
     private Output<String> accountPassword;
 
     /**
-     * @return 数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+     * @return Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
      * 
      */
     public Output<String> accountPassword() {
@@ -82,84 +82,84 @@ public class DbAccount extends com.pulumi.resources.CustomResource {
         return this.accountPrivileges;
     }
     /**
-     * 账号的指定数据库权限信息的 SQL 语句。
+     * SQL statement for the account&#39;s specified database permission information.
      * 
      */
     @Export(name="accountPrivilegesSqls", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> accountPrivilegesSqls;
 
     /**
-     * @return 账号的指定数据库权限信息的 SQL 语句。
+     * @return SQL statement for the account&#39;s specified database permission information.
      * 
      */
     public Output<List<String>> accountPrivilegesSqls() {
         return this.accountPrivilegesSqls;
     }
     /**
-     * 账号状态，取值为：Unavailable：不可用。Available：可用。
+     * Account status. Values: Unavailable: unavailable. Available: available.
      * 
      */
     @Export(name="accountStatus", refs={String.class}, tree="[0]")
     private Output<String> accountStatus;
 
     /**
-     * @return 账号状态，取值为：Unavailable：不可用。Available：可用。
+     * @return Account status. Values: Unavailable: unavailable. Available: available.
      * 
      */
     public Output<String> accountStatus() {
         return this.accountStatus;
     }
     /**
-     * 账号类型，取值范围：Super：高权限账号。Normal：普通账号。
+     * Account type. Value options: Super: high-privilege account. Normal: regular account.
      * 
      */
     @Export(name="accountType", refs={String.class}, tree="[0]")
     private Output<String> accountType;
 
     /**
-     * @return 账号类型，取值范围：Super：高权限账号。Normal：普通账号。
+     * @return Account type. Value options: Super: high-privilege account. Normal: regular account.
      * 
      */
     public Output<String> accountType() {
         return this.accountType;
     }
     /**
-     * 账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
+     * The database to which the account&#39;s table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
      * 
      */
     @Export(name="hasTableColumnPrivilegeDbNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> hasTableColumnPrivilegeDbNames;
 
     /**
-     * @return 账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
+     * @return The database to which the account&#39;s table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
      * 
      */
     public Output<List<String>> hasTableColumnPrivilegeDbNames() {
         return this.hasTableColumnPrivilegeDbNames;
     }
     /**
-     * 指定的数据库账号可以访问数据库的 IP 地址。
+     * IP address from which the specified database account can access the database.
      * 
      */
     @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
-     * @return 指定的数据库账号可以访问数据库的 IP 地址。
+     * @return IP address from which the specified database account can access the database.
      * 
      */
     public Output<String> host() {
         return this.host;
     }
     /**
-     * 实例 ID。
+     * Instance ID.
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public Output<String> instanceId() {

@@ -19,14 +19,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
     public static final RuleState Empty = new RuleState();
 
     /**
-     * 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+     * Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
      * 
      */
     @Import(name="actionType")
     private @Nullable Output<String> actionType;
 
     /**
-     * @return 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+     * @return Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
      * 
      */
     public Optional<Output<String>> actionType() {
@@ -34,14 +34,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * @return Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -49,14 +49,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则的域名。
+     * Domain name of the forwarding rule.
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return 转发规则的域名。
+     * @return Domain name of the forwarding rule.
      * 
      */
     public Optional<Output<String>> domain() {
@@ -64,14 +64,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器ID。
+     * Listener ID.
      * 
      */
     @Import(name="listenerId")
     private @Nullable Output<String> listenerId;
 
     /**
-     * @return 监听器ID。
+     * @return Listener ID.
      * 
      */
     public Optional<Output<String>> listenerId() {
@@ -79,14 +79,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 重定向相关配置信息。
+     * Redirection-related configuration information.
      * 
      */
     @Import(name="redirectConfig")
     private @Nullable Output<RuleRedirectConfigArgs> redirectConfig;
 
     /**
-     * @return 重定向相关配置信息。
+     * @return Redirection-related configuration information.
      * 
      */
     public Optional<Output<RuleRedirectConfigArgs>> redirectConfig() {
@@ -94,14 +94,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则ID。
+     * Forwarding rule ID.
      * 
      */
     @Import(name="ruleId")
     private @Nullable Output<String> ruleId;
 
     /**
-     * @return 转发规则ID。
+     * @return Forwarding rule ID.
      * 
      */
     public Optional<Output<String>> ruleId() {
@@ -109,14 +109,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则关联的后端服务器组的ID。
+     * ID of the backend server group associated with the forwarding rule.
      * 
      */
     @Import(name="serverGroupId")
     private @Nullable Output<String> serverGroupId;
 
     /**
-     * @return 转发规则关联的后端服务器组的ID。
+     * @return ID of the backend server group associated with the forwarding rule.
      * 
      */
     public Optional<Output<String>> serverGroupId() {
@@ -131,14 +131,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 转发规则的URL。
+     * URL of the forwarding rule.
      * 
      */
     @Import(name="url")
     private @Nullable Output<String> url;
 
     /**
-     * @return 转发规则的URL。
+     * @return URL of the forwarding rule.
      * 
      */
     public Optional<Output<String>> url() {
@@ -178,7 +178,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actionType 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+         * @param actionType Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actionType 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+         * @param actionType Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+         * @param description Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+         * @param description Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain 转发规则的域名。
+         * @param domain Domain name of the forwarding rule.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain 转发规则的域名。
+         * @param domain Domain name of the forwarding rule.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerId 监听器ID。
+         * @param listenerId Listener ID.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerId 监听器ID。
+         * @param listenerId Listener ID.
          * 
          * @return builder
          * 
@@ -262,7 +262,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param redirectConfig 重定向相关配置信息。
+         * @param redirectConfig Redirection-related configuration information.
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param redirectConfig 重定向相关配置信息。
+         * @param redirectConfig Redirection-related configuration information.
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleId 转发规则ID。
+         * @param ruleId Forwarding rule ID.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleId 转发规则ID。
+         * @param ruleId Forwarding rule ID.
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupId 转发规则关联的后端服务器组的ID。
+         * @param serverGroupId ID of the backend server group associated with the forwarding rule.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupId 转发规则关联的后端服务器组的ID。
+         * @param serverGroupId ID of the backend server group associated with the forwarding rule.
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param url 转发规则的URL。
+         * @param url URL of the forwarding rule.
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param url 转发规则的URL。
+         * @param url URL of the forwarding rule.
          * 
          * @return builder
          * 

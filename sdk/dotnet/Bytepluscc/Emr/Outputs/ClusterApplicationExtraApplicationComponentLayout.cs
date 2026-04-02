@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Outputs
     public sealed class ClusterApplicationExtraApplicationComponentLayout
     {
         /// <summary>
-        /// 组件名称。
+        /// Component name.
         /// </summary>
         public readonly string? ComponentName;
         /// <summary>
-        /// 组件的布局范围。
+        /// Component layout scope.
         /// </summary>
         public readonly Outputs.ClusterApplicationExtraApplicationComponentLayoutEffectiveScope? EffectiveScope;
 

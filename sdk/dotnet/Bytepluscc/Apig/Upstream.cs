@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Apig
 {
     /// <summary>
-    /// Upstream 是对 API 网关实例后端的抽象。您可以将具有相同功能的后端应用抽象为一个 Upstream，实现路由和后端应用解耦，更灵活地支持后端应用的灰度发布、多版本管理等场景。本文为您介绍 Upstream 的概念及作用。
+    /// Upstream is an abstraction of the backend for API gateway instances. You can group backend applications with the same functionality into an upstream, which decouples routing from backend applications and provides flexible support for scenarios such as canary releases and multi-version management. This article introduces the concept and purpose of upstream
     /// 
     /// ## Import
     /// 
@@ -26,67 +26,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         public Output<ImmutableArray<Outputs.UpstreamBackendTarget>> BackendTargets { get; private set; } = null!;
 
         /// <summary>
-        /// 服务熔断配置。
+        /// Service circuit breaking configuration
         /// </summary>
         [Output("circuitBreakingSettings")]
         public Output<Outputs.UpstreamCircuitBreakingSettings> CircuitBreakingSettings { get; private set; } = null!;
 
         /// <summary>
-        /// 备注。
+        /// Remarks
         /// </summary>
         [Output("comments")]
         public Output<string> Comments { get; private set; } = null!;
 
         /// <summary>
-        /// 连接池配置。
+        /// Connection Pool Configuration
         /// </summary>
         [Output("connectionPoolSettings")]
         public Output<Outputs.UpstreamConnectionPoolSettings> ConnectionPoolSettings { get; private set; } = null!;
 
         /// <summary>
-        /// Upstream创建时间。
+        /// Upstream creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 网关实例ID。
+        /// Gateway Instance ID
         /// </summary>
         [Output("gatewayId")]
         public Output<string> GatewayId { get; private set; } = null!;
 
         /// <summary>
-        /// 负载均衡配置。
+        /// Load Balancing Configuration
         /// </summary>
         [Output("loadBalancerSettings")]
         public Output<Outputs.UpstreamLoadBalancerSettings> LoadBalancerSettings { get; private set; } = null!;
 
         /// <summary>
-        /// Upstream名称。
+        /// Upstream name
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+        /// Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
         /// </summary>
         [Output("protocol")]
         public Output<string> Protocol { get; private set; } = null!;
 
         /// <summary>
-        /// Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+        /// Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
         /// </summary>
         [Output("sourceType")]
         public Output<string> SourceType { get; private set; } = null!;
 
         /// <summary>
-        /// TLS配置。
+        /// TLS Configuration
         /// </summary>
         [Output("tlsSettings")]
         public Output<Outputs.UpstreamTlsSettings> TlsSettings { get; private set; } = null!;
 
         /// <summary>
-        /// Upstream更新时间。
+        /// Upstream update time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -98,7 +98,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         public Output<string> UpstreamId { get; private set; } = null!;
 
         /// <summary>
-        /// Upstream配置。
+        /// Upstream Configuration
         /// </summary>
         [Output("upstreamSpec")]
         public Output<Outputs.UpstreamUpstreamSpec> UpstreamSpec { get; private set; } = null!;
@@ -154,61 +154,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public sealed class UpstreamArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 服务熔断配置。
+        /// Service circuit breaking configuration
         /// </summary>
         [Input("circuitBreakingSettings")]
         public Input<Inputs.UpstreamCircuitBreakingSettingsArgs>? CircuitBreakingSettings { get; set; }
 
         /// <summary>
-        /// 备注。
+        /// Remarks
         /// </summary>
         [Input("comments")]
         public Input<string>? Comments { get; set; }
 
         /// <summary>
-        /// 连接池配置。
+        /// Connection Pool Configuration
         /// </summary>
         [Input("connectionPoolSettings")]
         public Input<Inputs.UpstreamConnectionPoolSettingsArgs>? ConnectionPoolSettings { get; set; }
 
         /// <summary>
-        /// 网关实例ID。
+        /// Gateway Instance ID
         /// </summary>
         [Input("gatewayId", required: true)]
         public Input<string> GatewayId { get; set; } = null!;
 
         /// <summary>
-        /// 负载均衡配置。
+        /// Load Balancing Configuration
         /// </summary>
         [Input("loadBalancerSettings")]
         public Input<Inputs.UpstreamLoadBalancerSettingsArgs>? LoadBalancerSettings { get; set; }
 
         /// <summary>
-        /// Upstream名称。
+        /// Upstream name
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+        /// Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
 
         /// <summary>
-        /// Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+        /// Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;
 
         /// <summary>
-        /// TLS配置。
+        /// TLS Configuration
         /// </summary>
         [Input("tlsSettings")]
         public Input<Inputs.UpstreamTlsSettingsArgs>? TlsSettings { get; set; }
 
         /// <summary>
-        /// Upstream配置。
+        /// Upstream Configuration
         /// </summary>
         [Input("upstreamSpec", required: true)]
         public Input<Inputs.UpstreamUpstreamSpecArgs> UpstreamSpec { get; set; } = null!;
@@ -230,67 +230,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         }
 
         /// <summary>
-        /// 服务熔断配置。
+        /// Service circuit breaking configuration
         /// </summary>
         [Input("circuitBreakingSettings")]
         public Input<Inputs.UpstreamCircuitBreakingSettingsGetArgs>? CircuitBreakingSettings { get; set; }
 
         /// <summary>
-        /// 备注。
+        /// Remarks
         /// </summary>
         [Input("comments")]
         public Input<string>? Comments { get; set; }
 
         /// <summary>
-        /// 连接池配置。
+        /// Connection Pool Configuration
         /// </summary>
         [Input("connectionPoolSettings")]
         public Input<Inputs.UpstreamConnectionPoolSettingsGetArgs>? ConnectionPoolSettings { get; set; }
 
         /// <summary>
-        /// Upstream创建时间。
+        /// Upstream creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 网关实例ID。
+        /// Gateway Instance ID
         /// </summary>
         [Input("gatewayId")]
         public Input<string>? GatewayId { get; set; }
 
         /// <summary>
-        /// 负载均衡配置。
+        /// Load Balancing Configuration
         /// </summary>
         [Input("loadBalancerSettings")]
         public Input<Inputs.UpstreamLoadBalancerSettingsGetArgs>? LoadBalancerSettings { get; set; }
 
         /// <summary>
-        /// Upstream名称。
+        /// Upstream name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+        /// Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
 
         /// <summary>
-        /// Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+        /// Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
         /// </summary>
         [Input("sourceType")]
         public Input<string>? SourceType { get; set; }
 
         /// <summary>
-        /// TLS配置。
+        /// TLS Configuration
         /// </summary>
         [Input("tlsSettings")]
         public Input<Inputs.UpstreamTlsSettingsGetArgs>? TlsSettings { get; set; }
 
         /// <summary>
-        /// Upstream更新时间。
+        /// Upstream update time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
@@ -302,7 +302,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         public Input<string>? UpstreamId { get; set; }
 
         /// <summary>
-        /// Upstream配置。
+        /// Upstream Configuration
         /// </summary>
         [Input("upstreamSpec")]
         public Input<Inputs.UpstreamUpstreamSpecGetArgs>? UpstreamSpec { get; set; }

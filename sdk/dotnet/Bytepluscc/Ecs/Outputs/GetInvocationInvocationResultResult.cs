@@ -15,51 +15,51 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class GetInvocationInvocationResultResult
     {
         /// <summary>
-        /// 命令ID。
+        /// Command ID.
         /// </summary>
         public readonly string CommandId;
         /// <summary>
-        /// 命令执行的完成时间。
+        /// Command execution completion time.
         /// </summary>
         public readonly string EndTime;
         /// <summary>
-        /// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+        /// Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
         /// </summary>
         public readonly string ErrorCode;
         /// <summary>
-        /// 命令执行失败的错误信息。
+        /// Error message for command execution failure.
         /// </summary>
         public readonly string ErrorMessage;
         /// <summary>
-        /// 脚本执行后的退出状态码。
+        /// Exit status code after script execution.
         /// </summary>
         public readonly int ExitCode;
         /// <summary>
-        /// 实例ID。
+        /// Instance ID.
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// 任务执行ID。
+        /// Task execution ID.
         /// </summary>
         public readonly string InvocationId;
         /// <summary>
-        /// 任务执行结果ID。
+        /// Task execution result ID.
         /// </summary>
         public readonly string InvocationResultId;
         /// <summary>
-        /// 单台实例的命令进度状态。
+        /// Command progress status for a single instance.
         /// </summary>
         public readonly string InvocationResultStatus;
         /// <summary>
-        /// 经过Base64编码的命令执行后输出信息。
+        /// Output information after command execution, encoded in Base64.
         /// </summary>
         public readonly string Output;
         /// <summary>
-        /// 命令在实例中开始执行的时间。
+        /// Time when the command starts executing in the instance.
         /// </summary>
         public readonly string StartTime;
         /// <summary>
-        /// 在实例中执行命令的用户名称。
+        /// User name for executing the command in the instance.
         /// </summary>
         public readonly string Username;
 

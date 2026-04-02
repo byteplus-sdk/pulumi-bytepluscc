@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+        /// Specifies the AccessKey ID for your Alibaba Cloud account, SecretId for your Tencent Cloud account, or access key ID for your AWS account.
         /// </summary>
         [Input("accessKeyId")]
         public Input<string>? AccessKeyId { get; set; }
 
         /// <summary>
-        /// 表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+        /// Indicates the AccessKey Secret for your Alibaba Cloud account, the SecretKey for your Tencent Cloud account, or the secret access key for your AWS account.
         /// </summary>
         [Input("accessKeySecret")]
         public Input<string>? AccessKeySecret { get; set; }

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpn
 {
     /// <summary>
-    /// 当您需要通过VPN连接实现私有网络与本地数据中心或其他私有网络之间的通信，您需要先创建一个VPN网关。
+    /// To enable communication between your private network and a local data center or another private network via a VPN connection, you must first create a VPN gateway.
     /// 
     /// ## Example Usage
     /// 
@@ -53,163 +53,163 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
     public partial class VpnGateway : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// VPN网关的ASN。
+        /// ASN of the VPN gateway.
         /// </summary>
         [Output("asn")]
         public Output<int> Asn { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的带宽规格。
+        /// VPN gateway bandwidth specification.
         /// </summary>
         [Output("bandwidth")]
         public Output<int> Bandwidth { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+        /// VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
         /// </summary>
         [Output("billingType")]
         public Output<int> BillingType { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+        /// VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
         /// </summary>
         [Output("businessStatus")]
         public Output<string> BusinessStatus { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关关联IPsec连接的数量。
+        /// Number of IPsec connections associated with the VPN gateway.
         /// </summary>
         [Output("connectionCount")]
         public Output<int> ConnectionCount { get; private set; } = null!;
 
         /// <summary>
-        /// 创建VPN网关的时间。
+        /// Time when the VPN gateway was created.
         /// </summary>
         [Output("createTime")]
         public Output<string> CreateTime { get; private set; } = null!;
 
         /// <summary>
-        /// 预期资源强制回收时间。
+        /// Expected resource forced reclaim time.
         /// </summary>
         [Output("deletedTime")]
         public Output<string> DeletedTime { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的描述。
+        /// Description of the VPN gateway.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关是否开启双隧道模式。true：开启false：关闭
+        /// Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
         /// </summary>
         [Output("dualTunnelEnabled")]
         public Output<bool> DualTunnelEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的到期时间。
+        /// VPN gateway expiration time.
         /// </summary>
         [Output("expiredTime")]
         public Output<string> ExpiredTime { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的公网IP地址。
+        /// VPN gateway public IP address.
         /// </summary>
         [Output("ipAddress")]
         public Output<string> IpAddress { get; private set; } = null!;
 
         /// <summary>
-        /// VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+        /// VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
         /// </summary>
         [Output("ipStackType")]
         public Output<string> IpStackType { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+        /// IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
         /// </summary>
         [Output("ipVersion")]
         public Output<string> IpVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启IPSec功能。true：开启false：关闭。
+        /// Enable IPSec feature. true: enabled false: disabled
         /// </summary>
         [Output("ipsecEnabled")]
         public Output<bool> IpsecEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 当前资源的状态是否被封禁。true：封禁false：未封禁。
+        /// Whether the current resource is banned. true: Banned false: Not banned.
         /// </summary>
         [Output("isBlocked")]
         public Output<bool> IsBlocked { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+        /// VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
         /// </summary>
         [Output("lockReason")]
         public Output<string> LockReason { get; private set; } = null!;
 
         /// <summary>
-        /// 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+        /// Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
         /// </summary>
         [Output("overdueTime")]
         public Output<string> OverdueTime { get; private set; } = null!;
 
         /// <summary>
-        /// 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+        /// Subscription VPN gateway purchase duration, default is '1'. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
         /// </summary>
         [Output("period")]
         public Output<int> Period { get; private set; } = null!;
 
         /// <summary>
-        /// 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+        /// Unit for the purchase duration of subscription-based VPN gateways. Default is 'Month'. Month: month Year: year
         /// </summary>
         [Output("periodUnit")]
         public Output<string> PeriodUnit { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+        /// Project to which the VPN gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的路由条目数量。
+        /// Number of route entries for the VPN gateway.
         /// </summary>
         [Output("routeCount")]
         public Output<int> RouteCount { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+        /// Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
         /// </summary>
         [Output("secondaryIpAddress")]
         public Output<string> SecondaryIpAddress { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+        /// ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
         /// </summary>
         [Output("secondarySubnetId")]
         public Output<string> SecondarySubnetId { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启SSL VPN功能。true：开启false：关闭
+        /// Enable SSL VPN feature. true: enabled false: disabled
         /// </summary>
         [Output("sslEnabled")]
         public Output<bool> SslEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的最大SSL连接数。
+        /// Maximum SSL connections for the VPN gateway.
         /// </summary>
         [Output("sslMaxConnections")]
         public Output<int> SslMaxConnections { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+        /// Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关使用的端口所属子网的ID。
+        /// ID of the subnet to which the port used by the VPN gateway belongs.
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -218,25 +218,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
         public Output<ImmutableArray<Outputs.VpnGatewayTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 更新VPN网关的时间。
+        /// VPN gateway update time.
         /// </summary>
         [Output("updateTime")]
         public Output<string> UpdateTime { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关所在VPC的ID。
+        /// VPC ID where the VPN gateway is located.
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的ID。
+        /// ID of the VPN gateway.
         /// </summary>
         [Output("vpnGatewayId")]
         public Output<string> VpnGatewayId { get; private set; } = null!;
 
         /// <summary>
-        /// VPN网关的名称。
+        /// Name of the VPN gateway.
         /// </summary>
         [Output("vpnGatewayName")]
         public Output<string> VpnGatewayName { get; private set; } = null!;
@@ -289,91 +289,91 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
     public sealed class VpnGatewayArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// VPN网关的ASN。
+        /// ASN of the VPN gateway.
         /// </summary>
         [Input("asn")]
         public Input<int>? Asn { get; set; }
 
         /// <summary>
-        /// VPN网关的带宽规格。
+        /// VPN gateway bandwidth specification.
         /// </summary>
         [Input("bandwidth", required: true)]
         public Input<int> Bandwidth { get; set; } = null!;
 
         /// <summary>
-        /// VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+        /// VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
         /// </summary>
         [Input("billingType")]
         public Input<int>? BillingType { get; set; }
 
         /// <summary>
-        /// VPN网关的描述。
+        /// Description of the VPN gateway.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// VPN网关是否开启双隧道模式。true：开启false：关闭
+        /// Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
         /// </summary>
         [Input("dualTunnelEnabled")]
         public Input<bool>? DualTunnelEnabled { get; set; }
 
         /// <summary>
-        /// VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+        /// VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
         /// </summary>
         [Input("ipStackType")]
         public Input<string>? IpStackType { get; set; }
 
         /// <summary>
-        /// VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+        /// IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
         /// </summary>
         [Input("ipVersion")]
         public Input<string>? IpVersion { get; set; }
 
         /// <summary>
-        /// 是否开启IPSec功能。true：开启false：关闭。
+        /// Enable IPSec feature. true: enabled false: disabled
         /// </summary>
         [Input("ipsecEnabled")]
         public Input<bool>? IpsecEnabled { get; set; }
 
         /// <summary>
-        /// 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+        /// Subscription VPN gateway purchase duration, default is '1'. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
         /// </summary>
         [Input("period")]
         public Input<int>? Period { get; set; }
 
         /// <summary>
-        /// 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+        /// Unit for the purchase duration of subscription-based VPN gateways. Default is 'Month'. Month: month Year: year
         /// </summary>
         [Input("periodUnit")]
         public Input<string>? PeriodUnit { get; set; }
 
         /// <summary>
-        /// VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+        /// Project to which the VPN gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+        /// ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
         /// </summary>
         [Input("secondarySubnetId")]
         public Input<string>? SecondarySubnetId { get; set; }
 
         /// <summary>
-        /// 是否开启SSL VPN功能。true：开启false：关闭
+        /// Enable SSL VPN feature. true: enabled false: disabled
         /// </summary>
         [Input("sslEnabled")]
         public Input<bool>? SslEnabled { get; set; }
 
         /// <summary>
-        /// VPN网关的最大SSL连接数。
+        /// Maximum SSL connections for the VPN gateway.
         /// </summary>
         [Input("sslMaxConnections")]
         public Input<int>? SslMaxConnections { get; set; }
 
         /// <summary>
-        /// VPN网关使用的端口所属子网的ID。
+        /// ID of the subnet to which the port used by the VPN gateway belongs.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
@@ -387,13 +387,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
         }
 
         /// <summary>
-        /// VPN网关所在VPC的ID。
+        /// VPC ID where the VPN gateway is located.
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
 
         /// <summary>
-        /// VPN网关的名称。
+        /// Name of the VPN gateway.
         /// </summary>
         [Input("vpnGatewayName")]
         public Input<string>? VpnGatewayName { get; set; }
@@ -407,163 +407,163 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
     public sealed class VpnGatewayState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// VPN网关的ASN。
+        /// ASN of the VPN gateway.
         /// </summary>
         [Input("asn")]
         public Input<int>? Asn { get; set; }
 
         /// <summary>
-        /// VPN网关的带宽规格。
+        /// VPN gateway bandwidth specification.
         /// </summary>
         [Input("bandwidth")]
         public Input<int>? Bandwidth { get; set; }
 
         /// <summary>
-        /// VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+        /// VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
         /// </summary>
         [Input("billingType")]
         public Input<int>? BillingType { get; set; }
 
         /// <summary>
-        /// VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+        /// VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
         /// </summary>
         [Input("businessStatus")]
         public Input<string>? BusinessStatus { get; set; }
 
         /// <summary>
-        /// VPN网关关联IPsec连接的数量。
+        /// Number of IPsec connections associated with the VPN gateway.
         /// </summary>
         [Input("connectionCount")]
         public Input<int>? ConnectionCount { get; set; }
 
         /// <summary>
-        /// 创建VPN网关的时间。
+        /// Time when the VPN gateway was created.
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// 预期资源强制回收时间。
+        /// Expected resource forced reclaim time.
         /// </summary>
         [Input("deletedTime")]
         public Input<string>? DeletedTime { get; set; }
 
         /// <summary>
-        /// VPN网关的描述。
+        /// Description of the VPN gateway.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// VPN网关是否开启双隧道模式。true：开启false：关闭
+        /// Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
         /// </summary>
         [Input("dualTunnelEnabled")]
         public Input<bool>? DualTunnelEnabled { get; set; }
 
         /// <summary>
-        /// VPN网关的到期时间。
+        /// VPN gateway expiration time.
         /// </summary>
         [Input("expiredTime")]
         public Input<string>? ExpiredTime { get; set; }
 
         /// <summary>
-        /// VPN网关的公网IP地址。
+        /// VPN gateway public IP address.
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+        /// VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
         /// </summary>
         [Input("ipStackType")]
         public Input<string>? IpStackType { get; set; }
 
         /// <summary>
-        /// VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+        /// IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
         /// </summary>
         [Input("ipVersion")]
         public Input<string>? IpVersion { get; set; }
 
         /// <summary>
-        /// 是否开启IPSec功能。true：开启false：关闭。
+        /// Enable IPSec feature. true: enabled false: disabled
         /// </summary>
         [Input("ipsecEnabled")]
         public Input<bool>? IpsecEnabled { get; set; }
 
         /// <summary>
-        /// 当前资源的状态是否被封禁。true：封禁false：未封禁。
+        /// Whether the current resource is banned. true: Banned false: Not banned.
         /// </summary>
         [Input("isBlocked")]
         public Input<bool>? IsBlocked { get; set; }
 
         /// <summary>
-        /// VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+        /// VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
         /// </summary>
         [Input("lockReason")]
         public Input<string>? LockReason { get; set; }
 
         /// <summary>
-        /// 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+        /// Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
         /// </summary>
         [Input("overdueTime")]
         public Input<string>? OverdueTime { get; set; }
 
         /// <summary>
-        /// 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+        /// Subscription VPN gateway purchase duration, default is '1'. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
         /// </summary>
         [Input("period")]
         public Input<int>? Period { get; set; }
 
         /// <summary>
-        /// 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+        /// Unit for the purchase duration of subscription-based VPN gateways. Default is 'Month'. Month: month Year: year
         /// </summary>
         [Input("periodUnit")]
         public Input<string>? PeriodUnit { get; set; }
 
         /// <summary>
-        /// VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+        /// Project to which the VPN gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// VPN网关的路由条目数量。
+        /// Number of route entries for the VPN gateway.
         /// </summary>
         [Input("routeCount")]
         public Input<int>? RouteCount { get; set; }
 
         /// <summary>
-        /// VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+        /// Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
         /// </summary>
         [Input("secondaryIpAddress")]
         public Input<string>? SecondaryIpAddress { get; set; }
 
         /// <summary>
-        /// VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+        /// ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
         /// </summary>
         [Input("secondarySubnetId")]
         public Input<string>? SecondarySubnetId { get; set; }
 
         /// <summary>
-        /// 是否开启SSL VPN功能。true：开启false：关闭
+        /// Enable SSL VPN feature. true: enabled false: disabled
         /// </summary>
         [Input("sslEnabled")]
         public Input<bool>? SslEnabled { get; set; }
 
         /// <summary>
-        /// VPN网关的最大SSL连接数。
+        /// Maximum SSL connections for the VPN gateway.
         /// </summary>
         [Input("sslMaxConnections")]
         public Input<int>? SslMaxConnections { get; set; }
 
         /// <summary>
-        /// VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+        /// Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// VPN网关使用的端口所属子网的ID。
+        /// ID of the subnet to which the port used by the VPN gateway belongs.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
@@ -577,25 +577,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
         }
 
         /// <summary>
-        /// 更新VPN网关的时间。
+        /// VPN gateway update time.
         /// </summary>
         [Input("updateTime")]
         public Input<string>? UpdateTime { get; set; }
 
         /// <summary>
-        /// VPN网关所在VPC的ID。
+        /// VPC ID where the VPN gateway is located.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// VPN网关的ID。
+        /// ID of the VPN gateway.
         /// </summary>
         [Input("vpnGatewayId")]
         public Input<string>? VpnGatewayId { get; set; }
 
         /// <summary>
-        /// VPN网关的名称。
+        /// Name of the VPN gateway.
         /// </summary>
         [Input("vpnGatewayName")]
         public Input<string>? VpnGatewayName { get; set; }

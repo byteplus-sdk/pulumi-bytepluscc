@@ -16,7 +16,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * E-MapReduce（EMR）集群中的用户分为普通用户和系统用户两类。其中:普通用户是您在用户管理模块手动通过导入、创建操作向集群中添加的用户；系统用户则是集群在初始化过程中为每个组件内置的管理用户，不支持编辑和删除操作。
+ * Users in an E-MapReduce (EMR) cluster are divided into regular users and system users. Regular users are added to the cluster manually through import or creation in the user management module. System users are built-in management users for each component created during cluster initialization and cannot be edited or deleted.
  * 
  * ## Example Usage
  * 
@@ -69,126 +69,126 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:emr/clusterUser:ClusterUser")
 public class ClusterUser extends com.pulumi.resources.CustomResource {
     /**
-     * 集群ID。
+     * Cluster ID.
      * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
-     * 创建时间。
+     * Creation time.
      * 
      */
     @Export(name="createdTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public Output<Integer> createdTime() {
         return this.createdTime;
     }
     /**
-     * 创建者用户名。
+     * Creator username.
      * 
      */
     @Export(name="creatorName", refs={String.class}, tree="[0]")
     private Output<String> creatorName;
 
     /**
-     * @return 创建者用户名。
+     * @return Creator username.
      * 
      */
     public Output<String> creatorName() {
         return this.creatorName;
     }
     /**
-     * 用户组描述。
+     * User group description.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 用户组描述。
+     * @return User group description.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 旧的用户的登录密码。修改密码时必填。
+     * Old user login password. Required when changing password.
      * 
      */
     @Export(name="oldPassword", refs={String.class}, tree="[0]")
     private Output<String> oldPassword;
 
     /**
-     * @return 旧的用户的登录密码。修改密码时必填。
+     * @return Old user login password. Required when changing password.
      * 
      */
     public Output<String> oldPassword() {
         return this.oldPassword;
     }
     /**
-     * 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+     * New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
      * 
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
-     * @return 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+     * @return New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
      * 
      */
     public Output<String> password() {
         return this.password;
     }
     /**
-     * 更新时间。
+     * Last updated time.
      * 
      */
     @Export(name="updatedTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Last updated time.
      * 
      */
     public Output<Integer> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 所属用户组名称。
+     * User group name.
      * 
      */
     @Export(name="userGroupNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> userGroupNames;
 
     /**
-     * @return 所属用户组名称。
+     * @return User group name.
      * 
      */
     public Output<List<String>> userGroupNames() {
         return this.userGroupNames;
     }
     /**
-     * 集群用户名。仅支持小写字母。
+     * Cluster username. Only lowercase letters are supported.
      * 
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
-     * @return 集群用户名。仅支持小写字母。
+     * @return Cluster username. Only lowercase letters are supported.
      * 
      */
     public Output<String> userName() {

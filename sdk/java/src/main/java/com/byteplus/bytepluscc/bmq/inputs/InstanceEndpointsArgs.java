@@ -17,14 +17,14 @@ public final class InstanceEndpointsArgs extends com.pulumi.resources.ResourceAr
     public static final InstanceEndpointsArgs Empty = new InstanceEndpointsArgs();
 
     /**
-     * 实例私网访问接入点响应数据。
+     * Instance private network access endpoint response data
      * 
      */
     @Import(name="overlay")
     private @Nullable Output<InstanceEndpointsOverlayArgs> overlay;
 
     /**
-     * @return 实例私网访问接入点响应数据。
+     * @return Instance private network access endpoint response data
      * 
      */
     public Optional<Output<InstanceEndpointsOverlayArgs>> overlay() {
@@ -32,14 +32,14 @@ public final class InstanceEndpointsArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 实例公网访问接入点响应数据。
+     * Instance public access endpoint response data
      * 
      */
     @Import(name="public")
     private @Nullable Output<InstanceEndpointsPublicArgs> public_;
 
     /**
-     * @return 实例公网访问接入点响应数据。
+     * @return Instance public access endpoint response data
      * 
      */
     public Optional<Output<InstanceEndpointsPublicArgs>> public_() {
@@ -72,7 +72,7 @@ public final class InstanceEndpointsArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param overlay 实例私网访问接入点响应数据。
+         * @param overlay Instance private network access endpoint response data
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class InstanceEndpointsArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param overlay 实例私网访问接入点响应数据。
+         * @param overlay Instance private network access endpoint response data
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class InstanceEndpointsArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param public_ 实例公网访问接入点响应数据。
+         * @param public_ Instance public access endpoint response data
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class InstanceEndpointsArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param public_ 实例公网访问接入点响应数据。
+         * @param public_ Instance public access endpoint response data
          * 
          * @return builder
          * 

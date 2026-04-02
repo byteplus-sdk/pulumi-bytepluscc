@@ -30,43 +30,43 @@ type LookupUserArgs struct {
 
 // A collection of values returned by getUser.
 type LookupUserResult struct {
-	// 子用户的访问密钥。
+	// Sub-user's access key.
 	AccessKeys []GetUserAccessKey `pulumi:"accessKeys"`
-	// 子用户归属的主账号。
+	// Main account to which the sub-user belongs.
 	AccountId float64 `pulumi:"accountId"`
-	// 子用户对应的创建时间。
+	// Sub-user's creation time.
 	CreateDate string `pulumi:"createDate"`
-	// 子用户对应的描述信息，长度不超过255。
+	// Description for the sub-user, up to 255 characters.
 	Description string `pulumi:"description"`
-	// 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+	// Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
 	DisplayName string `pulumi:"displayName"`
-	// 子用户对应的电子邮件地址。
+	// Sub-user's email address.
 	Email string `pulumi:"email"`
-	// 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+	// Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
 	EmailIsVerify bool `pulumi:"emailIsVerify"`
-	// 子用户归属的用户组。
+	// User group to which the sub-user belongs.
 	Groups []string `pulumi:"groups"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 子用户的登录配置。
+	// Login configuration for the sub-user.
 	LoginProfile GetUserLoginProfile `pulumi:"loginProfile"`
-	// 子用户对应的手机号。
+	// Sub-user's mobile number.
 	MobilePhone string `pulumi:"mobilePhone"`
-	// 子用户手机号是否已验证。true代表已验证，false代表未验证。
+	// Whether the sub-user's phone number is verified. 'true' means verified, 'false' means not verified.
 	MobilePhoneIsVerify bool `pulumi:"mobilePhoneIsVerify"`
-	// 子用户对应的权限策略。
+	// Sub-user's permission policy.
 	Policies []GetUserPolicy `pulumi:"policies"`
-	// 子用户的操作保护配置。
+	// Operation protection configuration for the sub-user.
 	SecurityConfig GetUserSecurityConfig `pulumi:"securityConfig"`
-	// 子用户对应的资源标签。
+	// Sub-user's resource tags.
 	Tags []GetUserTag `pulumi:"tags"`
-	// 子用户对应的Trn表达式。
+	// TRN expression for the sub-user.
 	Trn string `pulumi:"trn"`
-	// 子用户对应的更新时间。
+	// Update time for the sub-user.
 	UpdateDate string `pulumi:"updateDate"`
-	// 子用户的ID。
+	// Sub-user's ID.
 	UserId int `pulumi:"userId"`
-	// 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+	// Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
 	UserName string `pulumi:"userName"`
 }
 
@@ -104,42 +104,42 @@ func (o LookupUserResultOutput) ToLookupUserResultOutputWithContext(ctx context.
 	return o
 }
 
-// 子用户的访问密钥。
+// Sub-user's access key.
 func (o LookupUserResultOutput) AccessKeys() GetUserAccessKeyArrayOutput {
 	return o.ApplyT(func(v LookupUserResult) []GetUserAccessKey { return v.AccessKeys }).(GetUserAccessKeyArrayOutput)
 }
 
-// 子用户归属的主账号。
+// Main account to which the sub-user belongs.
 func (o LookupUserResultOutput) AccountId() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupUserResult) float64 { return v.AccountId }).(pulumi.Float64Output)
 }
 
-// 子用户对应的创建时间。
+// Sub-user's creation time.
 func (o LookupUserResultOutput) CreateDate() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.CreateDate }).(pulumi.StringOutput)
 }
 
-// 子用户对应的描述信息，长度不超过255。
+// Description for the sub-user, up to 255 characters.
 func (o LookupUserResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+// Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
 func (o LookupUserResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 子用户对应的电子邮件地址。
+// Sub-user's email address.
 func (o LookupUserResultOutput) Email() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.Email }).(pulumi.StringOutput)
 }
 
-// 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+// Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
 func (o LookupUserResultOutput) EmailIsVerify() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupUserResult) bool { return v.EmailIsVerify }).(pulumi.BoolOutput)
 }
 
-// 子用户归属的用户组。
+// User group to which the sub-user belongs.
 func (o LookupUserResultOutput) Groups() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupUserResult) []string { return v.Groups }).(pulumi.StringArrayOutput)
 }
@@ -149,52 +149,52 @@ func (o LookupUserResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 子用户的登录配置。
+// Login configuration for the sub-user.
 func (o LookupUserResultOutput) LoginProfile() GetUserLoginProfileOutput {
 	return o.ApplyT(func(v LookupUserResult) GetUserLoginProfile { return v.LoginProfile }).(GetUserLoginProfileOutput)
 }
 
-// 子用户对应的手机号。
+// Sub-user's mobile number.
 func (o LookupUserResultOutput) MobilePhone() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.MobilePhone }).(pulumi.StringOutput)
 }
 
-// 子用户手机号是否已验证。true代表已验证，false代表未验证。
+// Whether the sub-user's phone number is verified. 'true' means verified, 'false' means not verified.
 func (o LookupUserResultOutput) MobilePhoneIsVerify() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupUserResult) bool { return v.MobilePhoneIsVerify }).(pulumi.BoolOutput)
 }
 
-// 子用户对应的权限策略。
+// Sub-user's permission policy.
 func (o LookupUserResultOutput) Policies() GetUserPolicyArrayOutput {
 	return o.ApplyT(func(v LookupUserResult) []GetUserPolicy { return v.Policies }).(GetUserPolicyArrayOutput)
 }
 
-// 子用户的操作保护配置。
+// Operation protection configuration for the sub-user.
 func (o LookupUserResultOutput) SecurityConfig() GetUserSecurityConfigOutput {
 	return o.ApplyT(func(v LookupUserResult) GetUserSecurityConfig { return v.SecurityConfig }).(GetUserSecurityConfigOutput)
 }
 
-// 子用户对应的资源标签。
+// Sub-user's resource tags.
 func (o LookupUserResultOutput) Tags() GetUserTagArrayOutput {
 	return o.ApplyT(func(v LookupUserResult) []GetUserTag { return v.Tags }).(GetUserTagArrayOutput)
 }
 
-// 子用户对应的Trn表达式。
+// TRN expression for the sub-user.
 func (o LookupUserResultOutput) Trn() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.Trn }).(pulumi.StringOutput)
 }
 
-// 子用户对应的更新时间。
+// Update time for the sub-user.
 func (o LookupUserResultOutput) UpdateDate() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.UpdateDate }).(pulumi.StringOutput)
 }
 
-// 子用户的ID。
+// Sub-user's ID.
 func (o LookupUserResultOutput) UserId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupUserResult) int { return v.UserId }).(pulumi.IntOutput)
 }
 
-// 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+// Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
 func (o LookupUserResultOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.UserName }).(pulumi.StringOutput)
 }

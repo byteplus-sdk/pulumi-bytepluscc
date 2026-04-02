@@ -16,14 +16,14 @@ public final class DomainTimeoutTimeoutRuleTimeoutActionArgs extends com.pulumi.
     public static final DomainTimeoutTimeoutRuleTimeoutActionArgs Empty = new DomainTimeoutTimeoutRuleTimeoutActionArgs();
 
     /**
-     * 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+     * Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
      * 
      */
     @Import(name="httpTimeout")
     private @Nullable Output<Integer> httpTimeout;
 
     /**
-     * @return 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+     * @return Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
      * 
      */
     public Optional<Output<Integer>> httpTimeout() {
@@ -31,14 +31,14 @@ public final class DomainTimeoutTimeoutRuleTimeoutActionArgs extends com.pulumi.
     }
 
     /**
-     * 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+     * Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
      * 
      */
     @Import(name="tcpTimeout")
     private @Nullable Output<Integer> tcpTimeout;
 
     /**
-     * @return 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+     * @return Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
      * 
      */
     public Optional<Output<Integer>> tcpTimeout() {
@@ -71,7 +71,7 @@ public final class DomainTimeoutTimeoutRuleTimeoutActionArgs extends com.pulumi.
         }
 
         /**
-         * @param httpTimeout 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+         * @param httpTimeout Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class DomainTimeoutTimeoutRuleTimeoutActionArgs extends com.pulumi.
         }
 
         /**
-         * @param httpTimeout 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+         * @param httpTimeout Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class DomainTimeoutTimeoutRuleTimeoutActionArgs extends com.pulumi.
         }
 
         /**
-         * @param tcpTimeout 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+         * @param tcpTimeout Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class DomainTimeoutTimeoutRuleTimeoutActionArgs extends com.pulumi.
         }
 
         /**
-         * @param tcpTimeout 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+         * @param tcpTimeout Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
          * 
          * @return builder
          * 

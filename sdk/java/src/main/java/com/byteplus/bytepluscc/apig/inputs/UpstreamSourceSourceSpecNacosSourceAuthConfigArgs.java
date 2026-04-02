@@ -16,14 +16,14 @@ public final class UpstreamSourceSourceSpecNacosSourceAuthConfigArgs extends com
     public static final UpstreamSourceSourceSpecNacosSourceAuthConfigArgs Empty = new UpstreamSourceSourceSpecNacosSourceAuthConfigArgs();
 
     /**
-     * Basic认证。
+     * Basic authentication
      * 
      */
     @Import(name="basic")
     private @Nullable Output<UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs> basic;
 
     /**
-     * @return Basic认证。
+     * @return Basic authentication
      * 
      */
     public Optional<Output<UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs>> basic() {
@@ -55,7 +55,7 @@ public final class UpstreamSourceSourceSpecNacosSourceAuthConfigArgs extends com
         }
 
         /**
-         * @param basic Basic认证。
+         * @param basic Basic authentication
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class UpstreamSourceSourceSpecNacosSourceAuthConfigArgs extends com
         }
 
         /**
-         * @param basic Basic认证。
+         * @param basic Basic authentication
          * 
          * @return builder
          * 

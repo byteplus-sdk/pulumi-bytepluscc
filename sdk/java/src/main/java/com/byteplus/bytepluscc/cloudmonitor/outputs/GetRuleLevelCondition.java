@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleLevelCondition {
     /**
-     * @return 告警分级配置。
+     * @return Alert severity configuration.
      * 
      */
     private List<GetRuleLevelConditionCondition> conditions;
     /**
-     * @return 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+     * @return Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
      * 
      */
     private String level;
 
     private GetRuleLevelCondition() {}
     /**
-     * @return 告警分级配置。
+     * @return Alert severity configuration.
      * 
      */
     public List<GetRuleLevelConditionCondition> conditions() {
         return this.conditions;
     }
     /**
-     * @return 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+     * @return Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
      * 
      */
     public String level() {

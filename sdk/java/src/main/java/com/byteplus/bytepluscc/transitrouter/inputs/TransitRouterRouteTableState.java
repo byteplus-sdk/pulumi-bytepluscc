@@ -18,14 +18,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
     public static final TransitRouterRouteTableState Empty = new TransitRouterRouteTableState();
 
     /**
-     * TR路由表的创建时间
+     * Creation time of the TR routing table
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return TR路由表的创建时间
+     * @return Creation time of the TR routing table
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -33,14 +33,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
     }
 
     /**
-     * TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * @return Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -48,14 +48,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
     }
 
     /**
-     * TR路由表关联的收方向路由策略的ID
+     * ID of the inbound routing policy associated with the TR routing table
      * 
      */
     @Import(name="inRoutePolicyTableId")
     private @Nullable Output<String> inRoutePolicyTableId;
 
     /**
-     * @return TR路由表关联的收方向路由策略的ID
+     * @return ID of the inbound routing policy associated with the TR routing table
      * 
      */
     public Optional<Output<String>> inRoutePolicyTableId() {
@@ -63,14 +63,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
     }
 
     /**
-     * TR路由表关联的发方向路由策略的ID
+     * ID of the outbound routing policy associated with the TR routing table
      * 
      */
     @Import(name="outRoutePolicyTableId")
     private @Nullable Output<String> outRoutePolicyTableId;
 
     /**
-     * @return TR路由表关联的发方向路由策略的ID
+     * @return ID of the outbound routing policy associated with the TR routing table
      * 
      */
     public Optional<Output<String>> outRoutePolicyTableId() {
@@ -78,14 +78,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
     }
 
     /**
-     * TR路由表的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用
+     * Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return TR路由表的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用
+     * @return Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     public Optional<Output<String>> status() {
@@ -100,14 +100,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
     }
 
     /**
-     * 中转路由器实例的ID
+     * Transit Router instance ID
      * 
      */
     @Import(name="transitRouterId")
     private @Nullable Output<String> transitRouterId;
 
     /**
-     * @return 中转路由器实例的ID
+     * @return Transit Router instance ID
      * 
      */
     public Optional<Output<String>> transitRouterId() {
@@ -115,14 +115,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
     }
 
     /**
-     * TR路由表的ID
+     * TR routing table ID
      * 
      */
     @Import(name="transitRouterRouteTableId")
     private @Nullable Output<String> transitRouterRouteTableId;
 
     /**
-     * @return TR路由表的ID
+     * @return TR routing table ID
      * 
      */
     public Optional<Output<String>> transitRouterRouteTableId() {
@@ -130,14 +130,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
     }
 
     /**
-     * TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+     * Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
      * 
      */
     @Import(name="transitRouterRouteTableName")
     private @Nullable Output<String> transitRouterRouteTableName;
 
     /**
-     * @return TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+     * @return Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
      * 
      */
     public Optional<Output<String>> transitRouterRouteTableName() {
@@ -145,14 +145,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
     }
 
     /**
-     * TR路由表的类型。System：系统路由表。Custom：自定义路由表。
+     * Type of TR routing table. System: system routing table. Custom: custom routing table.
      * 
      */
     @Import(name="transitRouterRouteTableType")
     private @Nullable Output<String> transitRouterRouteTableType;
 
     /**
-     * @return TR路由表的类型。System：系统路由表。Custom：自定义路由表。
+     * @return Type of TR routing table. System: system routing table. Custom: custom routing table.
      * 
      */
     public Optional<Output<String>> transitRouterRouteTableType() {
@@ -160,14 +160,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
     }
 
     /**
-     * TR路由表的最近操作时间
+     * Last operation time of the TR routing table
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return TR路由表的最近操作时间
+     * @return Last operation time of the TR routing table
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -209,7 +209,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param createdTime TR路由表的创建时间
+         * @param createdTime Creation time of the TR routing table
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param createdTime TR路由表的创建时间
+         * @param createdTime Creation time of the TR routing table
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param description TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+         * @param description Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param description TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+         * @param description Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param inRoutePolicyTableId TR路由表关联的收方向路由策略的ID
+         * @param inRoutePolicyTableId ID of the inbound routing policy associated with the TR routing table
          * 
          * @return builder
          * 
@@ -262,7 +262,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param inRoutePolicyTableId TR路由表关联的收方向路由策略的ID
+         * @param inRoutePolicyTableId ID of the inbound routing policy associated with the TR routing table
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param outRoutePolicyTableId TR路由表关联的发方向路由策略的ID
+         * @param outRoutePolicyTableId ID of the outbound routing policy associated with the TR routing table
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param outRoutePolicyTableId TR路由表关联的发方向路由策略的ID
+         * @param outRoutePolicyTableId ID of the outbound routing policy associated with the TR routing table
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param status TR路由表的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用
+         * @param status Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param status TR路由表的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用
+         * @param status Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param transitRouterId 中转路由器实例的ID
+         * @param transitRouterId Transit Router instance ID
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param transitRouterId 中转路由器实例的ID
+         * @param transitRouterId Transit Router instance ID
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param transitRouterRouteTableId TR路由表的ID
+         * @param transitRouterRouteTableId TR routing table ID
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param transitRouterRouteTableId TR路由表的ID
+         * @param transitRouterRouteTableId TR routing table ID
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param transitRouterRouteTableName TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+         * @param transitRouterRouteTableName Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param transitRouterRouteTableName TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+         * @param transitRouterRouteTableName Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param transitRouterRouteTableType TR路由表的类型。System：系统路由表。Custom：自定义路由表。
+         * @param transitRouterRouteTableType Type of TR routing table. System: system routing table. Custom: custom routing table.
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param transitRouterRouteTableType TR路由表的类型。System：系统路由表。Custom：自定义路由表。
+         * @param transitRouterRouteTableType Type of TR routing table. System: system routing table. Custom: custom routing table.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param updatedTime TR路由表的最近操作时间
+         * @param updatedTime Last operation time of the TR routing table
          * 
          * @return builder
          * 
@@ -422,7 +422,7 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param updatedTime TR路由表的最近操作时间
+         * @param updatedTime Last operation time of the TR routing table
          * 
          * @return builder
          * 

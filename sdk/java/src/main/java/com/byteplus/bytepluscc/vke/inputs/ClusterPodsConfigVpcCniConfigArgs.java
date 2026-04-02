@@ -18,14 +18,14 @@ public final class ClusterPodsConfigVpcCniConfigArgs extends com.pulumi.resource
     public static final ClusterPodsConfigVpcCniConfigArgs Empty = new ClusterPodsConfigVpcCniConfigArgs();
 
     /**
-     * VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+     * List of Pod subnet IDs for the VPC-CNI container network model.
      * 
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
-     * @return VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+     * @return List of Pod subnet IDs for the VPC-CNI container network model.
      * 
      */
     public Optional<Output<List<String>>> subnetIds() {
@@ -33,14 +33,14 @@ public final class ClusterPodsConfigVpcCniConfigArgs extends com.pulumi.resource
     }
 
     /**
-     * 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+     * Whether to enable Trunk mode for the VPC-CNI container network model
      * 
      */
     @Import(name="trunkEniEnabled")
     private @Nullable Output<Boolean> trunkEniEnabled;
 
     /**
-     * @return 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+     * @return Whether to enable Trunk mode for the VPC-CNI container network model
      * 
      */
     public Optional<Output<Boolean>> trunkEniEnabled() {
@@ -73,7 +73,7 @@ public final class ClusterPodsConfigVpcCniConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param subnetIds VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+         * @param subnetIds List of Pod subnet IDs for the VPC-CNI container network model.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class ClusterPodsConfigVpcCniConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param subnetIds VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+         * @param subnetIds List of Pod subnet IDs for the VPC-CNI container network model.
          * 
          * @return builder
          * 
@@ -94,7 +94,7 @@ public final class ClusterPodsConfigVpcCniConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param subnetIds VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+         * @param subnetIds List of Pod subnet IDs for the VPC-CNI container network model.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class ClusterPodsConfigVpcCniConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param trunkEniEnabled 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+         * @param trunkEniEnabled Whether to enable Trunk mode for the VPC-CNI container network model
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class ClusterPodsConfigVpcCniConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param trunkEniEnabled 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+         * @param trunkEniEnabled Whether to enable Trunk mode for the VPC-CNI container network model
          * 
          * @return builder
          * 

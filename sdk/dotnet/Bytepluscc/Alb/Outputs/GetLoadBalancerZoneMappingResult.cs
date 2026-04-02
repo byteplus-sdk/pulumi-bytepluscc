@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetLoadBalancerZoneMappingResult
     {
         /// <summary>
-        /// 该可用区下负载均衡提供的IP地址列表。
+        /// List of IP addresses provided by the load balancer in this availability zone.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLoadBalancerZoneMappingLoadBalancerAddressResult> LoadBalancerAddresses;
         /// <summary>
-        /// 可用区内提供服务的子网ID。
+        /// Subnet ID providing services within the availability zone.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
-        /// 可用区的唯一标识符。
+        /// Unique identifier of the availability zone.
         /// </summary>
         public readonly string ZoneId;
 

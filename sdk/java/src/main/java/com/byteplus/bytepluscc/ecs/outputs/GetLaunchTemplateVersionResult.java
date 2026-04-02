@@ -20,32 +20,32 @@ import java.util.Objects;
 @CustomType
 public final class GetLaunchTemplateVersionResult {
     /**
-     * @return 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+     * @return When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
      * 
      */
     private Integer deploymentSetGroupNumber;
     /**
-     * @return 实例需要加入的部署集ID。
+     * @return Deployment set ID to join for the instance.
      * 
      */
     private String deploymentSetId;
     /**
-     * @return 实例的描述。
+     * @return Instance description.
      * 
      */
     private String description;
     /**
-     * @return 实例绑定的公网IP信息。
+     * @return Public IP information bound to the instance.
      * 
      */
     private GetLaunchTemplateVersionEip eip;
     /**
-     * @return 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+     * @return Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
      * 
      */
     private String hostName;
     /**
-     * @return 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+     * @return Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
      * 
      */
     private String hpcClusterId;
@@ -55,159 +55,159 @@ public final class GetLaunchTemplateVersionResult {
      */
     private String id;
     /**
-     * @return 镜像ID。
+     * @return Image ID
      * 
      */
     private String imageId;
     /**
-     * @return 镜像名称。
+     * @return Image name.
      * 
      */
     private String imageName;
     /**
-     * @return 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+     * @return Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
      * 
      */
     private String instanceChargeType;
     /**
-     * @return 实例的名称。
+     * @return Instance name.
      * 
      */
     private String instanceName;
     /**
-     * @return 实例的规格。
+     * @return Instance specifications
      * 
      */
     private String instanceTypeId;
     /**
-     * @return 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+     * @return Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
      * 
      */
     private Boolean keepImageCredential;
     /**
-     * @return 实例绑定的密钥对。
+     * @return Key pair bound to the instance.
      * 
      */
     private String keyPairName;
     /**
-     * @return 实例启动模板 ID。
+     * @return Instance launch template ID.
      * 
      */
     private String launchTemplateId;
     /**
-     * @return 实例挂载的网卡信息。
+     * @return Network interface information attached to the instance
      * 
      */
     private List<GetLaunchTemplateVersionNetworkInterface> networkInterfaces;
     /**
-     * @return 实例所属项目。
+     * @return Project to which the instance belongs.
      * 
      */
     private String projectName;
     /**
-     * @return 弹性预约单信息。
+     * @return Elastic reservation order information
      * 
      */
     private GetLaunchTemplateVersionScheduledInstance scheduledInstance;
     /**
-     * @return 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+     * @return Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
      * 
      */
     private String securityEnhancementStrategy;
     /**
-     * @return 抢占式实例的每小时最高价格。
+     * @return Maximum hourly price for preemptible instances.
      * 
      */
     private Double spotPriceLimit;
     /**
-     * @return 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+     * @return Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
      * 
      */
     private String spotStrategy;
     /**
-     * @return 有序后缀的起始序号。
+     * @return Starting sequence number for the ordered suffix.
      * 
      */
     private Integer suffixIndex;
     /**
-     * @return 实例的标签信息。
+     * @return Instance tag information
      * 
      */
     private List<GetLaunchTemplateVersionTag> tags;
     /**
-     * @return 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+     * @return Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
      * 
      */
     private Boolean uniqueSuffix;
     /**
-     * @return 实例的自定义数据。
+     * @return Custom data for the instance.
      * 
      */
     private String userData;
     /**
-     * @return 模版版本描述。
+     * @return Template version description.
      * 
      */
     private String versionDescription;
     /**
-     * @return 模板版本号。
+     * @return Template version number.
      * 
      */
     private String versionNumber;
     /**
-     * @return 实例绑定的云盘信息。
+     * @return Disk information bound to the instance
      * 
      */
     private List<GetLaunchTemplateVersionVolume> volumes;
     /**
-     * @return 私有网络ID。
+     * @return Private network ID
      * 
      */
     private String vpcId;
     /**
-     * @return 实例所属可用区ID。
+     * @return Availability zone ID of the instance
      * 
      */
     private String zoneId;
 
     private GetLaunchTemplateVersionResult() {}
     /**
-     * @return 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+     * @return When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
      * 
      */
     public Integer deploymentSetGroupNumber() {
         return this.deploymentSetGroupNumber;
     }
     /**
-     * @return 实例需要加入的部署集ID。
+     * @return Deployment set ID to join for the instance.
      * 
      */
     public String deploymentSetId() {
         return this.deploymentSetId;
     }
     /**
-     * @return 实例的描述。
+     * @return Instance description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 实例绑定的公网IP信息。
+     * @return Public IP information bound to the instance.
      * 
      */
     public GetLaunchTemplateVersionEip eip() {
         return this.eip;
     }
     /**
-     * @return 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+     * @return Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
      * 
      */
     public String hostName() {
         return this.hostName;
     }
     /**
-     * @return 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+     * @return Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
      * 
      */
     public String hpcClusterId() {
@@ -221,161 +221,161 @@ public final class GetLaunchTemplateVersionResult {
         return this.id;
     }
     /**
-     * @return 镜像ID。
+     * @return Image ID
      * 
      */
     public String imageId() {
         return this.imageId;
     }
     /**
-     * @return 镜像名称。
+     * @return Image name.
      * 
      */
     public String imageName() {
         return this.imageName;
     }
     /**
-     * @return 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+     * @return Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
      * 
      */
     public String instanceChargeType() {
         return this.instanceChargeType;
     }
     /**
-     * @return 实例的名称。
+     * @return Instance name.
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 实例的规格。
+     * @return Instance specifications
      * 
      */
     public String instanceTypeId() {
         return this.instanceTypeId;
     }
     /**
-     * @return 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+     * @return Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
      * 
      */
     public Boolean keepImageCredential() {
         return this.keepImageCredential;
     }
     /**
-     * @return 实例绑定的密钥对。
+     * @return Key pair bound to the instance.
      * 
      */
     public String keyPairName() {
         return this.keyPairName;
     }
     /**
-     * @return 实例启动模板 ID。
+     * @return Instance launch template ID.
      * 
      */
     public String launchTemplateId() {
         return this.launchTemplateId;
     }
     /**
-     * @return 实例挂载的网卡信息。
+     * @return Network interface information attached to the instance
      * 
      */
     public List<GetLaunchTemplateVersionNetworkInterface> networkInterfaces() {
         return this.networkInterfaces;
     }
     /**
-     * @return 实例所属项目。
+     * @return Project to which the instance belongs.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 弹性预约单信息。
+     * @return Elastic reservation order information
      * 
      */
     public GetLaunchTemplateVersionScheduledInstance scheduledInstance() {
         return this.scheduledInstance;
     }
     /**
-     * @return 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+     * @return Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
      * 
      */
     public String securityEnhancementStrategy() {
         return this.securityEnhancementStrategy;
     }
     /**
-     * @return 抢占式实例的每小时最高价格。
+     * @return Maximum hourly price for preemptible instances.
      * 
      */
     public Double spotPriceLimit() {
         return this.spotPriceLimit;
     }
     /**
-     * @return 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+     * @return Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
      * 
      */
     public String spotStrategy() {
         return this.spotStrategy;
     }
     /**
-     * @return 有序后缀的起始序号。
+     * @return Starting sequence number for the ordered suffix.
      * 
      */
     public Integer suffixIndex() {
         return this.suffixIndex;
     }
     /**
-     * @return 实例的标签信息。
+     * @return Instance tag information
      * 
      */
     public List<GetLaunchTemplateVersionTag> tags() {
         return this.tags;
     }
     /**
-     * @return 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+     * @return Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
      * 
      */
     public Boolean uniqueSuffix() {
         return this.uniqueSuffix;
     }
     /**
-     * @return 实例的自定义数据。
+     * @return Custom data for the instance.
      * 
      */
     public String userData() {
         return this.userData;
     }
     /**
-     * @return 模版版本描述。
+     * @return Template version description.
      * 
      */
     public String versionDescription() {
         return this.versionDescription;
     }
     /**
-     * @return 模板版本号。
+     * @return Template version number.
      * 
      */
     public String versionNumber() {
         return this.versionNumber;
     }
     /**
-     * @return 实例绑定的云盘信息。
+     * @return Disk information bound to the instance
      * 
      */
     public List<GetLaunchTemplateVersionVolume> volumes() {
         return this.volumes;
     }
     /**
-     * @return 私有网络ID。
+     * @return Private network ID
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return 实例所属可用区ID。
+     * @return Availability zone ID of the instance
      * 
      */
     public String zoneId() {

@@ -14,43 +14,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark.Inputs
     public sealed class EndpointCertificateGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// X509私有证书过期的时间。使用秒级时间戳表示。
+        /// X509 private certificate expiration time, represented as a timestamp in seconds
         /// </summary>
         [Input("notAfter")]
         public Input<int>? NotAfter { get; set; }
 
         /// <summary>
-        /// X509私有证书开始生效的时间。使用秒级时间戳表示。
+        /// X509 private certificate activation time, represented as a timestamp in seconds
         /// </summary>
         [Input("notBefore")]
         public Input<int>? NotBefore { get; set; }
 
         /// <summary>
-        /// 证书方。
+        /// Certificate subject
         /// </summary>
         [Input("pcaHost")]
         public Input<string>? PcaHost { get; set; }
 
         /// <summary>
-        /// PEM 格式的叶子证书。
+        /// PEM format leaf certificate
         /// </summary>
         [Input("pcaInstanceCertificate")]
         public Input<string>? PcaInstanceCertificate { get; set; }
 
         /// <summary>
-        /// 证书名称。
+        /// Certificate name
         /// </summary>
         [Input("pcaName")]
         public Input<string>? PcaName { get; set; }
 
         /// <summary>
-        /// PEM 格式的根证书。
+        /// PEM format root certificate
         /// </summary>
         [Input("pcaRootCaCertificate")]
         public Input<string>? PcaRootCaCertificate { get; set; }
 
         /// <summary>
-        /// PEM 格式的中间根证书和根证书。
+        /// Intermediate certificate and root certificate in PEM format
         /// </summary>
         [Input("pcaSubCaCertificate")]
         public Input<string>? PcaSubCaCertificate { get; set; }

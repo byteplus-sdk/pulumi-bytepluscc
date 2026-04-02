@@ -13,27 +13,27 @@ import java.util.Objects;
 @CustomType
 public final class GetProjectResult {
     /**
-     * @return 账号ID
+     * @return Account ID
      * 
      */
     private Integer accountId;
     /**
-     * @return 创建时间
+     * @return Creation Time
      * 
      */
     private String createdTime;
     /**
-     * @return 描述
+     * @return Description
      * 
      */
     private String description;
     /**
-     * @return 展示名
+     * @return Display Name
      * 
      */
     private String displayName;
     /**
-     * @return 是否可见
+     * @return Visible
      * 
      */
     private Boolean hasPermission;
@@ -43,62 +43,62 @@ public final class GetProjectResult {
      */
     private String id;
     /**
-     * @return 父项目名称
+     * @return Parent Project Name
      * 
      */
     private String parentProjectName;
     /**
-     * @return 项目路径
+     * @return Project Path
      * 
      */
     private String path;
     /**
-     * @return 项目名称
+     * @return Project Name
      * 
      */
     private String projectName;
     /**
-     * @return 启用状态
+     * @return Enabled Status
      * 
      */
     private String status;
     /**
-     * @return 更新时间
+     * @return Update Time
      * 
      */
     private String updatedTime;
 
     private GetProjectResult() {}
     /**
-     * @return 账号ID
+     * @return Account ID
      * 
      */
     public Integer accountId() {
         return this.accountId;
     }
     /**
-     * @return 创建时间
+     * @return Creation Time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 描述
+     * @return Description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 展示名
+     * @return Display Name
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return 是否可见
+     * @return Visible
      * 
      */
     public Boolean hasPermission() {
@@ -112,35 +112,35 @@ public final class GetProjectResult {
         return this.id;
     }
     /**
-     * @return 父项目名称
+     * @return Parent Project Name
      * 
      */
     public String parentProjectName() {
         return this.parentProjectName;
     }
     /**
-     * @return 项目路径
+     * @return Project Path
      * 
      */
     public String path() {
         return this.path;
     }
     /**
-     * @return 项目名称
+     * @return Project Name
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 启用状态
+     * @return Enabled Status
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 更新时间
+     * @return Update Time
      * 
      */
     public String updatedTime() {

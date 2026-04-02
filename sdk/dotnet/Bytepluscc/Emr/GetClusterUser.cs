@@ -65,19 +65,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     public sealed class GetClusterUserResult
     {
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         public readonly string ClusterId;
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         public readonly int CreatedTime;
         /// <summary>
-        /// 创建者用户名。
+        /// Creator username.
         /// </summary>
         public readonly string CreatorName;
         /// <summary>
-        /// 用户组描述。
+        /// User group description.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -85,23 +85,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 旧的用户的登录密码。修改密码时必填。
+        /// Old user login password. Required when changing password.
         /// </summary>
         public readonly string OldPassword;
         /// <summary>
-        /// 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+        /// New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
         /// </summary>
         public readonly string Password;
         /// <summary>
-        /// 更新时间。
+        /// Last updated time.
         /// </summary>
         public readonly int UpdatedTime;
         /// <summary>
-        /// 所属用户组名称。
+        /// User group name.
         /// </summary>
         public readonly ImmutableArray<string> UserGroupNames;
         /// <summary>
-        /// 集群用户名。仅支持小写字母。
+        /// Cluster username. Only lowercase letters are supported.
         /// </summary>
         public readonly string UserName;
 

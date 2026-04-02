@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 资源项目（Project）是提供的一种资源分组管理的机制，帮助您达成逻辑层面的资源隔离，您能够通过资源项目进行项目制授权和分账等操作。
+// Resource project (Project) provides a mechanism for resource group management, helping you achieve logical resource isolation. You can use resource projects for project-based authorization, billing, and other operations.
 //
 // ## Example Usage
 //
@@ -51,25 +51,25 @@ import (
 type Project struct {
 	pulumi.CustomResourceState
 
-	// 账号ID
+	// Account ID
 	AccountId pulumi.IntOutput `pulumi:"accountId"`
-	// 创建时间
+	// Creation Time
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 描述
+	// Description
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 展示名
+	// Display Name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// 是否可见
+	// Visible
 	HasPermission pulumi.BoolOutput `pulumi:"hasPermission"`
-	// 父项目名称
+	// Parent Project Name
 	ParentProjectName pulumi.StringOutput `pulumi:"parentProjectName"`
-	// 项目路径
+	// Project Path
 	Path pulumi.StringOutput `pulumi:"path"`
-	// 项目名称
+	// Project Name
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 启用状态
+	// Enabled Status
 	Status pulumi.StringOutput `pulumi:"status"`
-	// 更新时间
+	// Update Time
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -106,48 +106,48 @@ func GetProject(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Project resources.
 type projectState struct {
-	// 账号ID
+	// Account ID
 	AccountId *int `pulumi:"accountId"`
-	// 创建时间
+	// Creation Time
 	CreatedTime *string `pulumi:"createdTime"`
-	// 描述
+	// Description
 	Description *string `pulumi:"description"`
-	// 展示名
+	// Display Name
 	DisplayName *string `pulumi:"displayName"`
-	// 是否可见
+	// Visible
 	HasPermission *bool `pulumi:"hasPermission"`
-	// 父项目名称
+	// Parent Project Name
 	ParentProjectName *string `pulumi:"parentProjectName"`
-	// 项目路径
+	// Project Path
 	Path *string `pulumi:"path"`
-	// 项目名称
+	// Project Name
 	ProjectName *string `pulumi:"projectName"`
-	// 启用状态
+	// Enabled Status
 	Status *string `pulumi:"status"`
-	// 更新时间
+	// Update Time
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type ProjectState struct {
-	// 账号ID
+	// Account ID
 	AccountId pulumi.IntPtrInput
-	// 创建时间
+	// Creation Time
 	CreatedTime pulumi.StringPtrInput
-	// 描述
+	// Description
 	Description pulumi.StringPtrInput
-	// 展示名
+	// Display Name
 	DisplayName pulumi.StringPtrInput
-	// 是否可见
+	// Visible
 	HasPermission pulumi.BoolPtrInput
-	// 父项目名称
+	// Parent Project Name
 	ParentProjectName pulumi.StringPtrInput
-	// 项目路径
+	// Project Path
 	Path pulumi.StringPtrInput
-	// 项目名称
+	// Project Name
 	ProjectName pulumi.StringPtrInput
-	// 启用状态
+	// Enabled Status
 	Status pulumi.StringPtrInput
-	// 更新时间
+	// Update Time
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -156,25 +156,25 @@ func (ProjectState) ElementType() reflect.Type {
 }
 
 type projectArgs struct {
-	// 描述
+	// Description
 	Description *string `pulumi:"description"`
-	// 展示名
+	// Display Name
 	DisplayName *string `pulumi:"displayName"`
-	// 父项目名称
+	// Parent Project Name
 	ParentProjectName *string `pulumi:"parentProjectName"`
-	// 项目名称
+	// Project Name
 	ProjectName string `pulumi:"projectName"`
 }
 
 // The set of arguments for constructing a Project resource.
 type ProjectArgs struct {
-	// 描述
+	// Description
 	Description pulumi.StringPtrInput
-	// 展示名
+	// Display Name
 	DisplayName pulumi.StringPtrInput
-	// 父项目名称
+	// Parent Project Name
 	ParentProjectName pulumi.StringPtrInput
-	// 项目名称
+	// Project Name
 	ProjectName pulumi.StringInput
 }
 
@@ -265,52 +265,52 @@ func (o ProjectOutput) ToProjectOutputWithContext(ctx context.Context) ProjectOu
 	return o
 }
 
-// 账号ID
+// Account ID
 func (o ProjectOutput) AccountId() pulumi.IntOutput {
 	return o.ApplyT(func(v *Project) pulumi.IntOutput { return v.AccountId }).(pulumi.IntOutput)
 }
 
-// 创建时间
+// Creation Time
 func (o ProjectOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 描述
+// Description
 func (o ProjectOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 展示名
+// Display Name
 func (o ProjectOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 是否可见
+// Visible
 func (o ProjectOutput) HasPermission() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Project) pulumi.BoolOutput { return v.HasPermission }).(pulumi.BoolOutput)
 }
 
-// 父项目名称
+// Parent Project Name
 func (o ProjectOutput) ParentProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.ParentProjectName }).(pulumi.StringOutput)
 }
 
-// 项目路径
+// Project Path
 func (o ProjectOutput) Path() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.Path }).(pulumi.StringOutput)
 }
 
-// 项目名称
+// Project Name
 func (o ProjectOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 启用状态
+// Enabled Status
 func (o ProjectOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// 更新时间
+// Update Time
 func (o ProjectOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

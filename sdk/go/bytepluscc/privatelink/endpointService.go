@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 终端节点服务是可以与其他VPC通过终端节点建立私网连接的服务。
+// The endpoint service enables private network connections between VPCs via endpoints.
 //
 // ## Import
 //
@@ -21,55 +21,55 @@ import (
 type EndpointService struct {
 	pulumi.CustomResourceState
 
-	// 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+	// Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
 	AutoAcceptEnabled pulumi.BoolOutput `pulumi:"autoAcceptEnabled"`
-	// 终端节点服务的计费类型。0：不计费。3：按量计费。
+	// Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
 	BillingType pulumi.IntOutput `pulumi:"billingType"`
-	// 终端节点服务是否被锁定。Normal：正常。FinancialLocked：被锁定。说明该参数返回为空时，表示终端节点服务未锁定。
+	// Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
 	BusinessStatus pulumi.StringOutput `pulumi:"businessStatus"`
-	// 终端节点服务的创建时间。
+	// Creation time of the endpoint service.
 	CreateTime pulumi.StringOutput `pulumi:"createTime"`
-	// 终端节点服务的描述信息。
+	// Description of the endpoint service.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+	// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
 	IpAddressVersions pulumi.StringArrayOutput `pulumi:"ipAddressVersions"`
-	// 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
 	Payer pulumi.StringOutput `pulumi:"payer"`
-	// 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+	// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 	PrivateDnsEnabled pulumi.BoolOutput `pulumi:"privateDnsEnabled"`
-	// 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+	// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
 	PrivateDnsName pulumi.StringOutput `pulumi:"privateDnsName"`
-	// 终端节点服务私有DNS名称的配置信息。说明PrivateDNSType为private时，不返回该参数。
+	// Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
 	PrivateDnsNameConfiguration EndpointServicePrivateDnsNameConfigurationOutput `pulumi:"privateDnsNameConfiguration"`
-	// 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+	// Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
 	PrivateDnsType pulumi.StringOutput `pulumi:"privateDnsType"`
-	// 终端节点服务所属的项目名称。
+	// Project name to which the endpoint service belongs.
 	ProjectName pulumi.StringOutput                `pulumi:"projectName"`
 	Resources   EndpointServiceResourceArrayOutput `pulumi:"resources"`
-	// 终端节点服务的服务域名。
+	// Service domain name of the endpoint service.
 	ServiceDomain pulumi.StringOutput `pulumi:"serviceDomain"`
-	// 终端节点服务的ID。
+	// Endpoint service ID.
 	ServiceId pulumi.StringOutput `pulumi:"serviceId"`
-	// 终端节点服务的名称。
+	// Name of the endpoint service.
 	ServiceName pulumi.StringOutput `pulumi:"serviceName"`
-	// 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+	// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
 	ServiceNameManaged pulumi.StringOutput `pulumi:"serviceNameManaged"`
-	// 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.<地域ID>.<名称后缀>的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+	// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
 	ServiceNameSuffix pulumi.StringOutput `pulumi:"serviceNameSuffix"`
-	// 当前服务主体。
+	// Current service principal.
 	ServiceOwner pulumi.StringOutput `pulumi:"serviceOwner"`
-	// 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+	// Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
 	ServiceResourceType pulumi.StringOutput `pulumi:"serviceResourceType"`
-	// 终端节点服务的类型。Interface：接口终端节点服务。
+	// Type of the endpoint service. Interface: Interface endpoint service.
 	ServiceType pulumi.StringOutput `pulumi:"serviceType"`
-	// 终端节点服务的状态。Creating：创建中。Pending：配置修改中。Available：可用。Deleting：删除中。
+	// Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
 	Status pulumi.StringOutput           `pulumi:"status"`
 	Tags   EndpointServiceTagArrayOutput `pulumi:"tags"`
-	// 终端节点服务的最近操作时间。
+	// Most recent operation time of the endpoint service.
 	UpdateTime pulumi.StringOutput `pulumi:"updateTime"`
-	// 是否启用通配符域名。true：启用。false：未启用。
+	// Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
 	WildcardDomainEnabled pulumi.BoolOutput `pulumi:"wildcardDomainEnabled"`
-	// 终端节点服务提供服务的可用区。说明参数ServiceResourceType返回值为RDSMySQL时，该参数返回空值。
+	// Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
 	ZoneIds pulumi.StringArrayOutput `pulumi:"zoneIds"`
 }
 
@@ -103,108 +103,108 @@ func GetEndpointService(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering EndpointService resources.
 type endpointServiceState struct {
-	// 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+	// Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
 	AutoAcceptEnabled *bool `pulumi:"autoAcceptEnabled"`
-	// 终端节点服务的计费类型。0：不计费。3：按量计费。
+	// Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
 	BillingType *int `pulumi:"billingType"`
-	// 终端节点服务是否被锁定。Normal：正常。FinancialLocked：被锁定。说明该参数返回为空时，表示终端节点服务未锁定。
+	// Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
 	BusinessStatus *string `pulumi:"businessStatus"`
-	// 终端节点服务的创建时间。
+	// Creation time of the endpoint service.
 	CreateTime *string `pulumi:"createTime"`
-	// 终端节点服务的描述信息。
+	// Description of the endpoint service.
 	Description *string `pulumi:"description"`
-	// 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+	// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
 	IpAddressVersions []string `pulumi:"ipAddressVersions"`
-	// 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
 	Payer *string `pulumi:"payer"`
-	// 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+	// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 	PrivateDnsEnabled *bool `pulumi:"privateDnsEnabled"`
-	// 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+	// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
 	PrivateDnsName *string `pulumi:"privateDnsName"`
-	// 终端节点服务私有DNS名称的配置信息。说明PrivateDNSType为private时，不返回该参数。
+	// Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
 	PrivateDnsNameConfiguration *EndpointServicePrivateDnsNameConfiguration `pulumi:"privateDnsNameConfiguration"`
-	// 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+	// Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
 	PrivateDnsType *string `pulumi:"privateDnsType"`
-	// 终端节点服务所属的项目名称。
+	// Project name to which the endpoint service belongs.
 	ProjectName *string                   `pulumi:"projectName"`
 	Resources   []EndpointServiceResource `pulumi:"resources"`
-	// 终端节点服务的服务域名。
+	// Service domain name of the endpoint service.
 	ServiceDomain *string `pulumi:"serviceDomain"`
-	// 终端节点服务的ID。
+	// Endpoint service ID.
 	ServiceId *string `pulumi:"serviceId"`
-	// 终端节点服务的名称。
+	// Name of the endpoint service.
 	ServiceName *string `pulumi:"serviceName"`
-	// 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+	// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
 	ServiceNameManaged *string `pulumi:"serviceNameManaged"`
-	// 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.<地域ID>.<名称后缀>的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+	// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
 	ServiceNameSuffix *string `pulumi:"serviceNameSuffix"`
-	// 当前服务主体。
+	// Current service principal.
 	ServiceOwner *string `pulumi:"serviceOwner"`
-	// 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+	// Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
 	ServiceResourceType *string `pulumi:"serviceResourceType"`
-	// 终端节点服务的类型。Interface：接口终端节点服务。
+	// Type of the endpoint service. Interface: Interface endpoint service.
 	ServiceType *string `pulumi:"serviceType"`
-	// 终端节点服务的状态。Creating：创建中。Pending：配置修改中。Available：可用。Deleting：删除中。
+	// Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
 	Status *string              `pulumi:"status"`
 	Tags   []EndpointServiceTag `pulumi:"tags"`
-	// 终端节点服务的最近操作时间。
+	// Most recent operation time of the endpoint service.
 	UpdateTime *string `pulumi:"updateTime"`
-	// 是否启用通配符域名。true：启用。false：未启用。
+	// Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
 	WildcardDomainEnabled *bool `pulumi:"wildcardDomainEnabled"`
-	// 终端节点服务提供服务的可用区。说明参数ServiceResourceType返回值为RDSMySQL时，该参数返回空值。
+	// Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
 	ZoneIds []string `pulumi:"zoneIds"`
 }
 
 type EndpointServiceState struct {
-	// 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+	// Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
 	AutoAcceptEnabled pulumi.BoolPtrInput
-	// 终端节点服务的计费类型。0：不计费。3：按量计费。
+	// Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
 	BillingType pulumi.IntPtrInput
-	// 终端节点服务是否被锁定。Normal：正常。FinancialLocked：被锁定。说明该参数返回为空时，表示终端节点服务未锁定。
+	// Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
 	BusinessStatus pulumi.StringPtrInput
-	// 终端节点服务的创建时间。
+	// Creation time of the endpoint service.
 	CreateTime pulumi.StringPtrInput
-	// 终端节点服务的描述信息。
+	// Description of the endpoint service.
 	Description pulumi.StringPtrInput
-	// 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+	// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
 	IpAddressVersions pulumi.StringArrayInput
-	// 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
 	Payer pulumi.StringPtrInput
-	// 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+	// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 	PrivateDnsEnabled pulumi.BoolPtrInput
-	// 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+	// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
 	PrivateDnsName pulumi.StringPtrInput
-	// 终端节点服务私有DNS名称的配置信息。说明PrivateDNSType为private时，不返回该参数。
+	// Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
 	PrivateDnsNameConfiguration EndpointServicePrivateDnsNameConfigurationPtrInput
-	// 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+	// Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
 	PrivateDnsType pulumi.StringPtrInput
-	// 终端节点服务所属的项目名称。
+	// Project name to which the endpoint service belongs.
 	ProjectName pulumi.StringPtrInput
 	Resources   EndpointServiceResourceArrayInput
-	// 终端节点服务的服务域名。
+	// Service domain name of the endpoint service.
 	ServiceDomain pulumi.StringPtrInput
-	// 终端节点服务的ID。
+	// Endpoint service ID.
 	ServiceId pulumi.StringPtrInput
-	// 终端节点服务的名称。
+	// Name of the endpoint service.
 	ServiceName pulumi.StringPtrInput
-	// 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+	// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
 	ServiceNameManaged pulumi.StringPtrInput
-	// 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.<地域ID>.<名称后缀>的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+	// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
 	ServiceNameSuffix pulumi.StringPtrInput
-	// 当前服务主体。
+	// Current service principal.
 	ServiceOwner pulumi.StringPtrInput
-	// 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+	// Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
 	ServiceResourceType pulumi.StringPtrInput
-	// 终端节点服务的类型。Interface：接口终端节点服务。
+	// Type of the endpoint service. Interface: Interface endpoint service.
 	ServiceType pulumi.StringPtrInput
-	// 终端节点服务的状态。Creating：创建中。Pending：配置修改中。Available：可用。Deleting：删除中。
+	// Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
 	Status pulumi.StringPtrInput
 	Tags   EndpointServiceTagArrayInput
-	// 终端节点服务的最近操作时间。
+	// Most recent operation time of the endpoint service.
 	UpdateTime pulumi.StringPtrInput
-	// 是否启用通配符域名。true：启用。false：未启用。
+	// Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
 	WildcardDomainEnabled pulumi.BoolPtrInput
-	// 终端节点服务提供服务的可用区。说明参数ServiceResourceType返回值为RDSMySQL时，该参数返回空值。
+	// Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
 	ZoneIds pulumi.StringArrayInput
 }
 
@@ -213,69 +213,69 @@ func (EndpointServiceState) ElementType() reflect.Type {
 }
 
 type endpointServiceArgs struct {
-	// 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+	// Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
 	AutoAcceptEnabled *bool `pulumi:"autoAcceptEnabled"`
-	// 终端节点服务的描述信息。
+	// Description of the endpoint service.
 	Description *string `pulumi:"description"`
-	// 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+	// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
 	IpAddressVersions []string `pulumi:"ipAddressVersions"`
-	// 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
 	Payer *string `pulumi:"payer"`
-	// 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+	// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 	PrivateDnsEnabled *bool `pulumi:"privateDnsEnabled"`
-	// 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+	// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
 	PrivateDnsName *string `pulumi:"privateDnsName"`
-	// 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+	// Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
 	PrivateDnsType *string `pulumi:"privateDnsType"`
-	// 终端节点服务所属的项目名称。
+	// Project name to which the endpoint service belongs.
 	ProjectName *string                   `pulumi:"projectName"`
 	Resources   []EndpointServiceResource `pulumi:"resources"`
-	// 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+	// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
 	ServiceNameManaged *string `pulumi:"serviceNameManaged"`
-	// 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.<地域ID>.<名称后缀>的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+	// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
 	ServiceNameSuffix *string `pulumi:"serviceNameSuffix"`
-	// 当前服务主体。
+	// Current service principal.
 	ServiceOwner *string `pulumi:"serviceOwner"`
-	// 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+	// Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
 	ServiceResourceType *string `pulumi:"serviceResourceType"`
-	// 终端节点服务的类型。Interface：接口终端节点服务。
+	// Type of the endpoint service. Interface: Interface endpoint service.
 	ServiceType *string              `pulumi:"serviceType"`
 	Tags        []EndpointServiceTag `pulumi:"tags"`
-	// 是否启用通配符域名。true：启用。false：未启用。
+	// Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
 	WildcardDomainEnabled *bool `pulumi:"wildcardDomainEnabled"`
 }
 
 // The set of arguments for constructing a EndpointService resource.
 type EndpointServiceArgs struct {
-	// 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+	// Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
 	AutoAcceptEnabled pulumi.BoolPtrInput
-	// 终端节点服务的描述信息。
+	// Description of the endpoint service.
 	Description pulumi.StringPtrInput
-	// 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+	// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
 	IpAddressVersions pulumi.StringArrayInput
-	// 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
 	Payer pulumi.StringPtrInput
-	// 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+	// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 	PrivateDnsEnabled pulumi.BoolPtrInput
-	// 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+	// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
 	PrivateDnsName pulumi.StringPtrInput
-	// 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+	// Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
 	PrivateDnsType pulumi.StringPtrInput
-	// 终端节点服务所属的项目名称。
+	// Project name to which the endpoint service belongs.
 	ProjectName pulumi.StringPtrInput
 	Resources   EndpointServiceResourceArrayInput
-	// 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+	// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
 	ServiceNameManaged pulumi.StringPtrInput
-	// 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.<地域ID>.<名称后缀>的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+	// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
 	ServiceNameSuffix pulumi.StringPtrInput
-	// 当前服务主体。
+	// Current service principal.
 	ServiceOwner pulumi.StringPtrInput
-	// 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+	// Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
 	ServiceResourceType pulumi.StringPtrInput
-	// 终端节点服务的类型。Interface：接口终端节点服务。
+	// Type of the endpoint service. Interface: Interface endpoint service.
 	ServiceType pulumi.StringPtrInput
 	Tags        EndpointServiceTagArrayInput
-	// 是否启用通配符域名。true：启用。false：未启用。
+	// Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
 	WildcardDomainEnabled pulumi.BoolPtrInput
 }
 
@@ -366,64 +366,64 @@ func (o EndpointServiceOutput) ToEndpointServiceOutputWithContext(ctx context.Co
 	return o
 }
 
-// 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+// Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
 func (o EndpointServiceOutput) AutoAcceptEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.BoolOutput { return v.AutoAcceptEnabled }).(pulumi.BoolOutput)
 }
 
-// 终端节点服务的计费类型。0：不计费。3：按量计费。
+// Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
 func (o EndpointServiceOutput) BillingType() pulumi.IntOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.IntOutput { return v.BillingType }).(pulumi.IntOutput)
 }
 
-// 终端节点服务是否被锁定。Normal：正常。FinancialLocked：被锁定。说明该参数返回为空时，表示终端节点服务未锁定。
+// Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
 func (o EndpointServiceOutput) BusinessStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.BusinessStatus }).(pulumi.StringOutput)
 }
 
-// 终端节点服务的创建时间。
+// Creation time of the endpoint service.
 func (o EndpointServiceOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 终端节点服务的描述信息。
+// Description of the endpoint service.
 func (o EndpointServiceOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
 func (o EndpointServiceOutput) IpAddressVersions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringArrayOutput { return v.IpAddressVersions }).(pulumi.StringArrayOutput)
 }
 
-// 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
 func (o EndpointServiceOutput) Payer() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.Payer }).(pulumi.StringOutput)
 }
 
-// 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 func (o EndpointServiceOutput) PrivateDnsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.BoolOutput { return v.PrivateDnsEnabled }).(pulumi.BoolOutput)
 }
 
-// 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
 func (o EndpointServiceOutput) PrivateDnsName() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.PrivateDnsName }).(pulumi.StringOutput)
 }
 
-// 终端节点服务私有DNS名称的配置信息。说明PrivateDNSType为private时，不返回该参数。
+// Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
 func (o EndpointServiceOutput) PrivateDnsNameConfiguration() EndpointServicePrivateDnsNameConfigurationOutput {
 	return o.ApplyT(func(v *EndpointService) EndpointServicePrivateDnsNameConfigurationOutput {
 		return v.PrivateDnsNameConfiguration
 	}).(EndpointServicePrivateDnsNameConfigurationOutput)
 }
 
-// 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+// Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
 func (o EndpointServiceOutput) PrivateDnsType() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.PrivateDnsType }).(pulumi.StringOutput)
 }
 
-// 终端节点服务所属的项目名称。
+// Project name to which the endpoint service belongs.
 func (o EndpointServiceOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
@@ -432,47 +432,47 @@ func (o EndpointServiceOutput) Resources() EndpointServiceResourceArrayOutput {
 	return o.ApplyT(func(v *EndpointService) EndpointServiceResourceArrayOutput { return v.Resources }).(EndpointServiceResourceArrayOutput)
 }
 
-// 终端节点服务的服务域名。
+// Service domain name of the endpoint service.
 func (o EndpointServiceOutput) ServiceDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.ServiceDomain }).(pulumi.StringOutput)
 }
 
-// 终端节点服务的ID。
+// Endpoint service ID.
 func (o EndpointServiceOutput) ServiceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.ServiceId }).(pulumi.StringOutput)
 }
 
-// 终端节点服务的名称。
+// Name of the endpoint service.
 func (o EndpointServiceOutput) ServiceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.ServiceName }).(pulumi.StringOutput)
 }
 
-// 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
 func (o EndpointServiceOutput) ServiceNameManaged() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.ServiceNameManaged }).(pulumi.StringOutput)
 }
 
-// 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.<地域ID>.<名称后缀>的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
 func (o EndpointServiceOutput) ServiceNameSuffix() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.ServiceNameSuffix }).(pulumi.StringOutput)
 }
 
-// 当前服务主体。
+// Current service principal.
 func (o EndpointServiceOutput) ServiceOwner() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.ServiceOwner }).(pulumi.StringOutput)
 }
 
-// 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+// Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
 func (o EndpointServiceOutput) ServiceResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.ServiceResourceType }).(pulumi.StringOutput)
 }
 
-// 终端节点服务的类型。Interface：接口终端节点服务。
+// Type of the endpoint service. Interface: Interface endpoint service.
 func (o EndpointServiceOutput) ServiceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.ServiceType }).(pulumi.StringOutput)
 }
 
-// 终端节点服务的状态。Creating：创建中。Pending：配置修改中。Available：可用。Deleting：删除中。
+// Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
 func (o EndpointServiceOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -481,17 +481,17 @@ func (o EndpointServiceOutput) Tags() EndpointServiceTagArrayOutput {
 	return o.ApplyT(func(v *EndpointService) EndpointServiceTagArrayOutput { return v.Tags }).(EndpointServiceTagArrayOutput)
 }
 
-// 终端节点服务的最近操作时间。
+// Most recent operation time of the endpoint service.
 func (o EndpointServiceOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.UpdateTime }).(pulumi.StringOutput)
 }
 
-// 是否启用通配符域名。true：启用。false：未启用。
+// Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
 func (o EndpointServiceOutput) WildcardDomainEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.BoolOutput { return v.WildcardDomainEnabled }).(pulumi.BoolOutput)
 }
 
-// 终端节点服务提供服务的可用区。说明参数ServiceResourceType返回值为RDSMySQL时，该参数返回空值。
+// Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
 func (o EndpointServiceOutput) ZoneIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringArrayOutput { return v.ZoneIds }).(pulumi.StringArrayOutput)
 }

@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 云企业网（Cloud Enterprise Network，CEN）提供一种能够快速构建跨地域私有网络（VPC）与云下数据中心（IDC）之间高速、优质、稳定的网络能力，帮助您打造一张具有企业级规模和通信能力的全球云上网络。
+// Cloud Enterprise Network (CEN) provides fast, high-quality, and stable networking capabilities to quickly build private networks (VPC) across regions and between on-premises data centers (IDC), helping you create a global cloud network with enterprise-scale and communication capabilities
 //
 // ## Import
 //
@@ -21,25 +21,25 @@ import (
 type Cen struct {
 	pulumi.CustomResourceState
 
-	// CEN实例所属的账号ID。
+	// Account ID to which the CEN instance belongs
 	AccountId pulumi.StringOutput `pulumi:"accountId"`
-	// 带宽包ID。
+	// Bandwidth package ID
 	CenBandwidthPackageIds pulumi.StringArrayOutput `pulumi:"cenBandwidthPackageIds"`
-	// CEN实例的ID。
+	// CEN instance ID
 	CenId pulumi.StringOutput `pulumi:"cenId"`
-	// CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+	// Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
 	CenName pulumi.StringOutput `pulumi:"cenName"`
-	// 创建CEN实例的时间。
+	// Time when the CEN instance was created
 	CreationTime pulumi.StringOutput `pulumi:"creationTime"`
-	// CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+	// Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
 	Description pulumi.StringOutput    `pulumi:"description"`
 	Instances   CenInstanceArrayOutput `pulumi:"instances"`
-	// CEN实例所属项目的名称。不填则默认为default。
+	// Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+	// Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
 	Status pulumi.StringOutput `pulumi:"status"`
 	Tags   CenTagArrayOutput   `pulumi:"tags"`
-	// 更新CEN实例的时间。
+	// Time when the CEN instance was updated
 	UpdateTime pulumi.StringOutput `pulumi:"updateTime"`
 }
 
@@ -73,48 +73,48 @@ func GetCen(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Cen resources.
 type cenState struct {
-	// CEN实例所属的账号ID。
+	// Account ID to which the CEN instance belongs
 	AccountId *string `pulumi:"accountId"`
-	// 带宽包ID。
+	// Bandwidth package ID
 	CenBandwidthPackageIds []string `pulumi:"cenBandwidthPackageIds"`
-	// CEN实例的ID。
+	// CEN instance ID
 	CenId *string `pulumi:"cenId"`
-	// CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+	// Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
 	CenName *string `pulumi:"cenName"`
-	// 创建CEN实例的时间。
+	// Time when the CEN instance was created
 	CreationTime *string `pulumi:"creationTime"`
-	// CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+	// Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
 	Description *string       `pulumi:"description"`
 	Instances   []CenInstance `pulumi:"instances"`
-	// CEN实例所属项目的名称。不填则默认为default。
+	// Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
 	ProjectName *string `pulumi:"projectName"`
-	// CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+	// Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
 	Status *string  `pulumi:"status"`
 	Tags   []CenTag `pulumi:"tags"`
-	// 更新CEN实例的时间。
+	// Time when the CEN instance was updated
 	UpdateTime *string `pulumi:"updateTime"`
 }
 
 type CenState struct {
-	// CEN实例所属的账号ID。
+	// Account ID to which the CEN instance belongs
 	AccountId pulumi.StringPtrInput
-	// 带宽包ID。
+	// Bandwidth package ID
 	CenBandwidthPackageIds pulumi.StringArrayInput
-	// CEN实例的ID。
+	// CEN instance ID
 	CenId pulumi.StringPtrInput
-	// CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+	// Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
 	CenName pulumi.StringPtrInput
-	// 创建CEN实例的时间。
+	// Time when the CEN instance was created
 	CreationTime pulumi.StringPtrInput
-	// CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+	// Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
 	Description pulumi.StringPtrInput
 	Instances   CenInstanceArrayInput
-	// CEN实例所属项目的名称。不填则默认为default。
+	// Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
 	ProjectName pulumi.StringPtrInput
-	// CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+	// Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
 	Status pulumi.StringPtrInput
 	Tags   CenTagArrayInput
-	// 更新CEN实例的时间。
+	// Time when the CEN instance was updated
 	UpdateTime pulumi.StringPtrInput
 }
 
@@ -123,24 +123,24 @@ func (CenState) ElementType() reflect.Type {
 }
 
 type cenArgs struct {
-	// CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+	// Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
 	CenName *string `pulumi:"cenName"`
-	// CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+	// Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
 	Description *string       `pulumi:"description"`
 	Instances   []CenInstance `pulumi:"instances"`
-	// CEN实例所属项目的名称。不填则默认为default。
+	// Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
 	ProjectName *string  `pulumi:"projectName"`
 	Tags        []CenTag `pulumi:"tags"`
 }
 
 // The set of arguments for constructing a Cen resource.
 type CenArgs struct {
-	// CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+	// Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
 	CenName pulumi.StringPtrInput
-	// CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+	// Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
 	Description pulumi.StringPtrInput
 	Instances   CenInstanceArrayInput
-	// CEN实例所属项目的名称。不填则默认为default。
+	// Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
 	ProjectName pulumi.StringPtrInput
 	Tags        CenTagArrayInput
 }
@@ -232,32 +232,32 @@ func (o CenOutput) ToCenOutputWithContext(ctx context.Context) CenOutput {
 	return o
 }
 
-// CEN实例所属的账号ID。
+// Account ID to which the CEN instance belongs
 func (o CenOutput) AccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cen) pulumi.StringOutput { return v.AccountId }).(pulumi.StringOutput)
 }
 
-// 带宽包ID。
+// Bandwidth package ID
 func (o CenOutput) CenBandwidthPackageIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Cen) pulumi.StringArrayOutput { return v.CenBandwidthPackageIds }).(pulumi.StringArrayOutput)
 }
 
-// CEN实例的ID。
+// CEN instance ID
 func (o CenOutput) CenId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cen) pulumi.StringOutput { return v.CenId }).(pulumi.StringOutput)
 }
 
-// CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+// Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
 func (o CenOutput) CenName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cen) pulumi.StringOutput { return v.CenName }).(pulumi.StringOutput)
 }
 
-// 创建CEN实例的时间。
+// Time when the CEN instance was created
 func (o CenOutput) CreationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cen) pulumi.StringOutput { return v.CreationTime }).(pulumi.StringOutput)
 }
 
-// CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+// Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
 func (o CenOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cen) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -266,12 +266,12 @@ func (o CenOutput) Instances() CenInstanceArrayOutput {
 	return o.ApplyT(func(v *Cen) CenInstanceArrayOutput { return v.Instances }).(CenInstanceArrayOutput)
 }
 
-// CEN实例所属项目的名称。不填则默认为default。
+// Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
 func (o CenOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cen) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+// Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
 func (o CenOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cen) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -280,7 +280,7 @@ func (o CenOutput) Tags() CenTagArrayOutput {
 	return o.ApplyT(func(v *Cen) CenTagArrayOutput { return v.Tags }).(CenTagArrayOutput)
 }
 
-// 更新CEN实例的时间。
+// Time when the CEN instance was updated
 func (o CenOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cen) pulumi.StringOutput { return v.UpdateTime }).(pulumi.StringOutput)
 }

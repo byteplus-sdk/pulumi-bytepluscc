@@ -12,86 +12,86 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolNodeConfigDataVolume {
     /**
-     * @return 文件系统，取值：  - Ext4 (默认值)  - Xfs
+     * @return File system. Options:   - Ext4 (default)   - Xfs
      * 
      */
     private String fileSystem;
     /**
-     * @return 磁盘格式化后的目标挂载目录。
+     * @return Target mount directory after disk formatting.
      * 
      */
     private String mountPoint;
     /**
-     * @return 放置组Id
+     * @return Placement group ID
      * 
      */
     private String placementGroupId;
     /**
-     * @return 磁盘容量，单位 GiB。
+     * @return Disk capacity, in GiB.
      * 
      */
     private Integer size;
     /**
-     * @return 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+     * @return Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the &#39;available&#39; status can be used to create new disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; status cannot be used to create new disks.
      * 
      */
     private String snapshotId;
     /**
-     * @return 放置子组
+     * @return Placement subgroup
      * 
      */
     private Integer subgroupNumber;
     /**
-     * @return 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+     * @return Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
      * 
      */
     private String type;
 
     private GetNodePoolNodeConfigDataVolume() {}
     /**
-     * @return 文件系统，取值：  - Ext4 (默认值)  - Xfs
+     * @return File system. Options:   - Ext4 (default)   - Xfs
      * 
      */
     public String fileSystem() {
         return this.fileSystem;
     }
     /**
-     * @return 磁盘格式化后的目标挂载目录。
+     * @return Target mount directory after disk formatting.
      * 
      */
     public String mountPoint() {
         return this.mountPoint;
     }
     /**
-     * @return 放置组Id
+     * @return Placement group ID
      * 
      */
     public String placementGroupId() {
         return this.placementGroupId;
     }
     /**
-     * @return 磁盘容量，单位 GiB。
+     * @return Disk capacity, in GiB.
      * 
      */
     public Integer size() {
         return this.size;
     }
     /**
-     * @return 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+     * @return Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the &#39;available&#39; status can be used to create new disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; status cannot be used to create new disks.
      * 
      */
     public String snapshotId() {
         return this.snapshotId;
     }
     /**
-     * @return 放置子组
+     * @return Placement subgroup
      * 
      */
     public Integer subgroupNumber() {
         return this.subgroupNumber;
     }
     /**
-     * @return 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+     * @return Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
      * 
      */
     public String type() {

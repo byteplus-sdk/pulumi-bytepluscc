@@ -17,14 +17,14 @@ public final class RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs 
     public static final RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs Empty = new RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs();
 
     /**
-     * 是否开启组间会话保持。on：开启。off：不开启。
+     * Whether to enable inter-group session persistence. on: enabled. off: disabled.
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<String> enabled;
 
     /**
-     * @return 是否开启组间会话保持。on：开启。off：不开启。
+     * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
      * 
      */
     public Optional<Output<String>> enabled() {
@@ -32,14 +32,14 @@ public final class RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs 
     }
 
     /**
-     * 组件回话保持的超时时间。单位：秒。
+     * Component session stickiness timeout. Unit: seconds.
      * 
      */
     @Import(name="timeout")
     private @Nullable Output<Integer> timeout;
 
     /**
-     * @return 组件回话保持的超时时间。单位：秒。
+     * @return Component session stickiness timeout. Unit: seconds.
      * 
      */
     public Optional<Output<Integer>> timeout() {
@@ -72,7 +72,7 @@ public final class RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs 
         }
 
         /**
-         * @param enabled 是否开启组间会话保持。on：开启。off：不开启。
+         * @param enabled Whether to enable inter-group session persistence. on: enabled. off: disabled.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs 
         }
 
         /**
-         * @param enabled 是否开启组间会话保持。on：开启。off：不开启。
+         * @param enabled Whether to enable inter-group session persistence. on: enabled. off: disabled.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs 
         }
 
         /**
-         * @param timeout 组件回话保持的超时时间。单位：秒。
+         * @param timeout Component session stickiness timeout. Unit: seconds.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs 
         }
 
         /**
-         * @param timeout 组件回话保持的超时时间。单位：秒。
+         * @param timeout Component session stickiness timeout. Unit: seconds.
          * 
          * @return builder
          * 

@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb.Inputs
     public sealed class AllowListAssociatedInstanceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 已绑定当前白名单的实例 ID。
+        /// Instance ID bound to the current allowlist.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 已绑定当前白名单的实例名称。
+        /// Instance name bound to the current allowlist.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 实例所属的项目名称。
+        /// Project name of the instance.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 实例所属的私有网络 ID。
+        /// Private network ID of the instance.
         /// </summary>
         [Input("vpc")]
         public Input<string>? Vpc { get; set; }

@@ -15,7 +15,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 集群中支持安装多种类型的组件，包括 网络、存储、监控、DNS、安全、镜像、GPU 等，满足您多种业务场景需求。您可按需部署、升级或卸载组件。
+ * The cluster supports installation of various types of components, including network, storage, monitoring, DNS, security, image, GPU, and more, to meet your diverse business needs. You can deploy, upgrade, or uninstall components as needed.
  * 
  * ## Example Usage
  * 
@@ -67,126 +67,126 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vke/addon:Addon")
 public class Addon extends com.pulumi.resources.CustomResource {
     /**
-     * 组件所在集群 ID。
+     * Cluster ID where the component is located.
      * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
-     * @return 组件所在集群 ID。
+     * @return Cluster ID where the component is located.
      * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
-     * 组件配置。
+     * Component configuration.
      * 
      */
     @Export(name="config", refs={String.class}, tree="[0]")
     private Output<String> config;
 
     /**
-     * @return 组件配置。
+     * @return Component configuration.
      * 
      */
     public Output<String> config() {
         return this.config;
     }
     /**
-     * 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Component installation time. Standard RFC3339 format, UTC+0 time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Component installation time. Standard RFC3339 format, UTC+0 time.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+     * Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
      * 
      */
     @Export(name="deployMode", refs={String.class}, tree="[0]")
     private Output<String> deployMode;
 
     /**
-     * @return 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+     * @return Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
      * 
      */
     public Output<String> deployMode() {
         return this.deployMode;
     }
     /**
-     * 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+     * Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
      * 
      */
     @Export(name="deployNodeType", refs={String.class}, tree="[0]")
     private Output<String> deployNodeType;
 
     /**
-     * @return 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+     * @return Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
      * 
      */
     public Output<String> deployNodeType() {
         return this.deployNodeType;
     }
     /**
-     * 组件名称。
+     * Component name.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 组件状态。
+     * Component status.
      * 
      */
     @Export(name="status", refs={AddonStatus.class}, tree="[0]")
     private Output<AddonStatus> status;
 
     /**
-     * @return 组件状态。
+     * @return Component status.
      * 
      */
     public Output<AddonStatus> status() {
         return this.status;
     }
     /**
-     * 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Component update time. Standard RFC3339 format, UTC+0 time.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Component update time. Standard RFC3339 format, UTC+0 time.
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 组件版本。
+     * Component version.
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
-     * @return 组件版本。
+     * @return Component version.
      * 
      */
     public Output<String> version() {

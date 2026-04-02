@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class ServerGroupListener
     {
         /// <summary>
-        /// 监听器的ID。
+        /// Listener ID.
         /// </summary>
         public readonly string? ListenerId;
 

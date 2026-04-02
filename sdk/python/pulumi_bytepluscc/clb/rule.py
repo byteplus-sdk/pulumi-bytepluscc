@@ -32,13 +32,13 @@ class RuleArgs:
                  url: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Rule resource.
-        :param pulumi.Input[builtins.str] listener_id: 监听器ID。
-        :param pulumi.Input[builtins.str] action_type: 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
-        :param pulumi.Input[builtins.str] description: 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
-        :param pulumi.Input[builtins.str] domain: 转发规则的域名。
-        :param pulumi.Input['RuleRedirectConfigArgs'] redirect_config: 重定向相关配置信息。
-        :param pulumi.Input[builtins.str] server_group_id: 转发规则关联的后端服务器组的ID。
-        :param pulumi.Input[builtins.str] url: 转发规则的URL。
+        :param pulumi.Input[builtins.str] listener_id: Listener ID.
+        :param pulumi.Input[builtins.str] action_type: Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
+        :param pulumi.Input[builtins.str] description: Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
+        :param pulumi.Input[builtins.str] domain: Domain name of the forwarding rule.
+        :param pulumi.Input['RuleRedirectConfigArgs'] redirect_config: Redirection-related configuration information.
+        :param pulumi.Input[builtins.str] server_group_id: ID of the backend server group associated with the forwarding rule.
+        :param pulumi.Input[builtins.str] url: URL of the forwarding rule.
         """
         pulumi.set(__self__, "listener_id", listener_id)
         if action_type is not None:
@@ -60,7 +60,7 @@ class RuleArgs:
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> pulumi.Input[builtins.str]:
         """
-        监听器ID。
+        Listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -72,7 +72,7 @@ class RuleArgs:
     @pulumi.getter(name="actionType")
     def action_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+        Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
         """
         return pulumi.get(self, "action_type")
 
@@ -84,7 +84,7 @@ class RuleArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -96,7 +96,7 @@ class RuleArgs:
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则的域名。
+        Domain name of the forwarding rule.
         """
         return pulumi.get(self, "domain")
 
@@ -108,7 +108,7 @@ class RuleArgs:
     @pulumi.getter(name="redirectConfig")
     def redirect_config(self) -> Optional[pulumi.Input['RuleRedirectConfigArgs']]:
         """
-        重定向相关配置信息。
+        Redirection-related configuration information.
         """
         return pulumi.get(self, "redirect_config")
 
@@ -120,7 +120,7 @@ class RuleArgs:
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则关联的后端服务器组的ID。
+        ID of the backend server group associated with the forwarding rule.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -141,7 +141,7 @@ class RuleArgs:
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则的URL。
+        URL of the forwarding rule.
         """
         return pulumi.get(self, "url")
 
@@ -164,14 +164,14 @@ class _RuleState:
                  url: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Rule resources.
-        :param pulumi.Input[builtins.str] action_type: 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
-        :param pulumi.Input[builtins.str] description: 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
-        :param pulumi.Input[builtins.str] domain: 转发规则的域名。
-        :param pulumi.Input[builtins.str] listener_id: 监听器ID。
-        :param pulumi.Input['RuleRedirectConfigArgs'] redirect_config: 重定向相关配置信息。
-        :param pulumi.Input[builtins.str] rule_id: 转发规则ID。
-        :param pulumi.Input[builtins.str] server_group_id: 转发规则关联的后端服务器组的ID。
-        :param pulumi.Input[builtins.str] url: 转发规则的URL。
+        :param pulumi.Input[builtins.str] action_type: Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
+        :param pulumi.Input[builtins.str] description: Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
+        :param pulumi.Input[builtins.str] domain: Domain name of the forwarding rule.
+        :param pulumi.Input[builtins.str] listener_id: Listener ID.
+        :param pulumi.Input['RuleRedirectConfigArgs'] redirect_config: Redirection-related configuration information.
+        :param pulumi.Input[builtins.str] rule_id: Forwarding rule ID.
+        :param pulumi.Input[builtins.str] server_group_id: ID of the backend server group associated with the forwarding rule.
+        :param pulumi.Input[builtins.str] url: URL of the forwarding rule.
         """
         if action_type is not None:
             pulumi.set(__self__, "action_type", action_type)
@@ -196,7 +196,7 @@ class _RuleState:
     @pulumi.getter(name="actionType")
     def action_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+        Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
         """
         return pulumi.get(self, "action_type")
 
@@ -208,7 +208,7 @@ class _RuleState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -220,7 +220,7 @@ class _RuleState:
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则的域名。
+        Domain name of the forwarding rule.
         """
         return pulumi.get(self, "domain")
 
@@ -232,7 +232,7 @@ class _RuleState:
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器ID。
+        Listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -244,7 +244,7 @@ class _RuleState:
     @pulumi.getter(name="redirectConfig")
     def redirect_config(self) -> Optional[pulumi.Input['RuleRedirectConfigArgs']]:
         """
-        重定向相关配置信息。
+        Redirection-related configuration information.
         """
         return pulumi.get(self, "redirect_config")
 
@@ -256,7 +256,7 @@ class _RuleState:
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则ID。
+        Forwarding rule ID.
         """
         return pulumi.get(self, "rule_id")
 
@@ -268,7 +268,7 @@ class _RuleState:
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则关联的后端服务器组的ID。
+        ID of the backend server group associated with the forwarding rule.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -289,7 +289,7 @@ class _RuleState:
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则的URL。
+        URL of the forwarding rule.
         """
         return pulumi.get(self, "url")
 
@@ -314,7 +314,7 @@ class Rule(pulumi.CustomResource):
                  url: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        转发规则用于将指定域名和URL的请求引流至指定的后端服务器组。
+        The forwarding rule directs requests for specified domain names and URLs to the designated backend server group.
 
         ## Example Usage
 
@@ -343,13 +343,13 @@ class Rule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] action_type: 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
-        :param pulumi.Input[builtins.str] description: 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
-        :param pulumi.Input[builtins.str] domain: 转发规则的域名。
-        :param pulumi.Input[builtins.str] listener_id: 监听器ID。
-        :param pulumi.Input[Union['RuleRedirectConfigArgs', 'RuleRedirectConfigArgsDict']] redirect_config: 重定向相关配置信息。
-        :param pulumi.Input[builtins.str] server_group_id: 转发规则关联的后端服务器组的ID。
-        :param pulumi.Input[builtins.str] url: 转发规则的URL。
+        :param pulumi.Input[builtins.str] action_type: Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
+        :param pulumi.Input[builtins.str] description: Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
+        :param pulumi.Input[builtins.str] domain: Domain name of the forwarding rule.
+        :param pulumi.Input[builtins.str] listener_id: Listener ID.
+        :param pulumi.Input[Union['RuleRedirectConfigArgs', 'RuleRedirectConfigArgsDict']] redirect_config: Redirection-related configuration information.
+        :param pulumi.Input[builtins.str] server_group_id: ID of the backend server group associated with the forwarding rule.
+        :param pulumi.Input[builtins.str] url: URL of the forwarding rule.
         """
         ...
     @overload
@@ -358,7 +358,7 @@ class Rule(pulumi.CustomResource):
                  args: RuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        转发规则用于将指定域名和URL的请求引流至指定的后端服务器组。
+        The forwarding rule directs requests for specified domain names and URLs to the designated backend server group.
 
         ## Example Usage
 
@@ -454,14 +454,14 @@ class Rule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] action_type: 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
-        :param pulumi.Input[builtins.str] description: 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
-        :param pulumi.Input[builtins.str] domain: 转发规则的域名。
-        :param pulumi.Input[builtins.str] listener_id: 监听器ID。
-        :param pulumi.Input[Union['RuleRedirectConfigArgs', 'RuleRedirectConfigArgsDict']] redirect_config: 重定向相关配置信息。
-        :param pulumi.Input[builtins.str] rule_id: 转发规则ID。
-        :param pulumi.Input[builtins.str] server_group_id: 转发规则关联的后端服务器组的ID。
-        :param pulumi.Input[builtins.str] url: 转发规则的URL。
+        :param pulumi.Input[builtins.str] action_type: Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
+        :param pulumi.Input[builtins.str] description: Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
+        :param pulumi.Input[builtins.str] domain: Domain name of the forwarding rule.
+        :param pulumi.Input[builtins.str] listener_id: Listener ID.
+        :param pulumi.Input[Union['RuleRedirectConfigArgs', 'RuleRedirectConfigArgsDict']] redirect_config: Redirection-related configuration information.
+        :param pulumi.Input[builtins.str] rule_id: Forwarding rule ID.
+        :param pulumi.Input[builtins.str] server_group_id: ID of the backend server group associated with the forwarding rule.
+        :param pulumi.Input[builtins.str] url: URL of the forwarding rule.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -482,7 +482,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter(name="actionType")
     def action_type(self) -> pulumi.Output[builtins.str]:
         """
-        转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+        Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
         """
         return pulumi.get(self, "action_type")
 
@@ -490,7 +490,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -498,7 +498,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter
     def domain(self) -> pulumi.Output[builtins.str]:
         """
-        转发规则的域名。
+        Domain name of the forwarding rule.
         """
         return pulumi.get(self, "domain")
 
@@ -506,7 +506,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> pulumi.Output[builtins.str]:
         """
-        监听器ID。
+        Listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -514,7 +514,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter(name="redirectConfig")
     def redirect_config(self) -> pulumi.Output['outputs.RuleRedirectConfig']:
         """
-        重定向相关配置信息。
+        Redirection-related configuration information.
         """
         return pulumi.get(self, "redirect_config")
 
@@ -522,7 +522,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> pulumi.Output[builtins.str]:
         """
-        转发规则ID。
+        Forwarding rule ID.
         """
         return pulumi.get(self, "rule_id")
 
@@ -530,7 +530,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        转发规则关联的后端服务器组的ID。
+        ID of the backend server group associated with the forwarding rule.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -543,7 +543,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter
     def url(self) -> pulumi.Output[builtins.str]:
         """
-        转发规则的URL。
+        URL of the forwarding rule.
         """
         return pulumi.get(self, "url")
 

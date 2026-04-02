@@ -16,14 +16,14 @@ public final class BandwidthPackageEipAddressArgs extends com.pulumi.resources.R
     public static final BandwidthPackageEipAddressArgs Empty = new BandwidthPackageEipAddressArgs();
 
     /**
-     * 分配ID
+     * Allocation ID
      * 
      */
     @Import(name="allocationId")
     private @Nullable Output<String> allocationId;
 
     /**
-     * @return 分配ID
+     * @return Allocation ID
      * 
      */
     public Optional<Output<String>> allocationId() {
@@ -55,7 +55,7 @@ public final class BandwidthPackageEipAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param allocationId 分配ID
+         * @param allocationId Allocation ID
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class BandwidthPackageEipAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param allocationId 分配ID
+         * @param allocationId Allocation ID
          * 
          * @return builder
          * 

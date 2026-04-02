@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayServiceCustomDomain {
     /**
-     * @return 自定义域名。
+     * @return Custom domain.
      * 
      */
     private String domain;
     /**
-     * @return 自定义域名ID。
+     * @return Custom domain ID.
      * 
      */
     private String domainId;
 
     private GetGatewayServiceCustomDomain() {}
     /**
-     * @return 自定义域名。
+     * @return Custom domain.
      * 
      */
     public String domain() {
         return this.domain;
     }
     /**
-     * @return 自定义域名ID。
+     * @return Custom domain ID.
      * 
      */
     public String domainId() {

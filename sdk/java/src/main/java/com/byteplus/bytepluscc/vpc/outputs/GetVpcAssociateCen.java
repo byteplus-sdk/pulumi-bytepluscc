@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetVpcAssociateCen {
     /**
-     * @return CEN的ID。
+     * @return ID of the CEN.
      * 
      */
     private String cenId;
     /**
-     * @return CEN的用户ID。
+     * @return User ID of the CEN.
      * 
      */
     private String cenOwnerId;
     /**
-     * @return VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+     * @return Status of the VPC in the CEN. Loading: loading, Loaded: loaded
      * 
      */
     private String cenStatus;
 
     private GetVpcAssociateCen() {}
     /**
-     * @return CEN的ID。
+     * @return ID of the CEN.
      * 
      */
     public String cenId() {
         return this.cenId;
     }
     /**
-     * @return CEN的用户ID。
+     * @return User ID of the CEN.
      * 
      */
     public String cenOwnerId() {
         return this.cenOwnerId;
     }
     /**
-     * @return VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+     * @return Status of the VPC in the CEN. Loading: loading, Loaded: loaded
      * 
      */
     public String cenStatus() {

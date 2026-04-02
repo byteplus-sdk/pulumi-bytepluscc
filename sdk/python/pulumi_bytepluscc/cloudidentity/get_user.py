@@ -72,7 +72,7 @@ class GetUserResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间。
+        Creation Time.
         """
         return pulumi.get(self, "created_time")
 
@@ -80,7 +80,7 @@ class GetUserResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        用户描述。
+        User Description.
         """
         return pulumi.get(self, "description")
 
@@ -88,7 +88,7 @@ class GetUserResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        用户显示名。
+        User Display Name.
         """
         return pulumi.get(self, "display_name")
 
@@ -96,7 +96,7 @@ class GetUserResult:
     @pulumi.getter
     def email(self) -> builtins.str:
         """
-        邮箱。
+        Email.
         """
         return pulumi.get(self, "email")
 
@@ -112,7 +112,7 @@ class GetUserResult:
     @pulumi.getter(name="identityType")
     def identity_type(self) -> builtins.str:
         """
-        身份类型。
+        Identity Type.
         """
         return pulumi.get(self, "identity_type")
 
@@ -120,7 +120,7 @@ class GetUserResult:
     @pulumi.getter
     def password(self) -> builtins.str:
         """
-        密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+        Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
         """
         return pulumi.get(self, "password")
 
@@ -128,7 +128,7 @@ class GetUserResult:
     @pulumi.getter(name="passwordResetRequired")
     def password_reset_required(self) -> builtins.bool:
         """
-        首次登陆需不需要重置密码。
+        Is password reset required on first login?
         """
         return pulumi.get(self, "password_reset_required")
 
@@ -136,7 +136,7 @@ class GetUserResult:
     @pulumi.getter
     def phone(self) -> builtins.str:
         """
-        手机号。
+        Mobile Number.
         """
         return pulumi.get(self, "phone")
 
@@ -144,7 +144,7 @@ class GetUserResult:
     @pulumi.getter
     def source(self) -> builtins.str:
         """
-        用户来源。
+        User Source.
         """
         return pulumi.get(self, "source")
 
@@ -152,7 +152,7 @@ class GetUserResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间。
+        Update Time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -160,7 +160,7 @@ class GetUserResult:
     @pulumi.getter(name="userId")
     def user_id(self) -> builtins.str:
         """
-        用户id。
+        User ID.
         """
         return pulumi.get(self, "user_id")
 
@@ -168,7 +168,7 @@ class GetUserResult:
     @pulumi.getter(name="userName")
     def user_name(self) -> builtins.str:
         """
-        用户名。
+        Username.
         """
         return pulumi.get(self, "user_name")
 

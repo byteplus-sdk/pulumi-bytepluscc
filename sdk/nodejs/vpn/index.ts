@@ -20,6 +20,16 @@ export const getCustomerGateways: typeof import("./getCustomerGateways").getCust
 export const getCustomerGatewaysOutput: typeof import("./getCustomerGateways").getCustomerGatewaysOutput = null as any;
 utilities.lazyLoad(exports, ["getCustomerGateways","getCustomerGatewaysOutput"], () => require("./getCustomerGateways"));
 
+export { GetVpnConnectionArgs, GetVpnConnectionResult, GetVpnConnectionOutputArgs } from "./getVpnConnection";
+export const getVpnConnection: typeof import("./getVpnConnection").getVpnConnection = null as any;
+export const getVpnConnectionOutput: typeof import("./getVpnConnection").getVpnConnectionOutput = null as any;
+utilities.lazyLoad(exports, ["getVpnConnection","getVpnConnectionOutput"], () => require("./getVpnConnection"));
+
+export { GetVpnConnectionsResult } from "./getVpnConnections";
+export const getVpnConnections: typeof import("./getVpnConnections").getVpnConnections = null as any;
+export const getVpnConnectionsOutput: typeof import("./getVpnConnections").getVpnConnectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getVpnConnections","getVpnConnectionsOutput"], () => require("./getVpnConnections"));
+
 export { GetVpnGatewayArgs, GetVpnGatewayResult, GetVpnGatewayOutputArgs } from "./getVpnGateway";
 export const getVpnGateway: typeof import("./getVpnGateway").getVpnGateway = null as any;
 export const getVpnGatewayOutput: typeof import("./getVpnGateway").getVpnGatewayOutput = null as any;
@@ -29,6 +39,11 @@ export { GetVpnGatewaysResult } from "./getVpnGateways";
 export const getVpnGateways: typeof import("./getVpnGateways").getVpnGateways = null as any;
 export const getVpnGatewaysOutput: typeof import("./getVpnGateways").getVpnGatewaysOutput = null as any;
 utilities.lazyLoad(exports, ["getVpnGateways","getVpnGatewaysOutput"], () => require("./getVpnGateways"));
+
+export { VpnConnectionArgs, VpnConnectionState } from "./vpnConnection";
+export type VpnConnection = import("./vpnConnection").VpnConnection;
+export const VpnConnection: typeof import("./vpnConnection").VpnConnection = null as any;
+utilities.lazyLoad(exports, ["VpnConnection"], () => require("./vpnConnection"));
 
 export { VpnGatewayArgs, VpnGatewayState } from "./vpnGateway";
 export type VpnGateway = import("./vpnGateway").VpnGateway;
@@ -42,6 +57,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:vpn/customerGateway:CustomerGateway":
                 return new CustomerGateway(name, <any>undefined, { urn })
+            case "bytepluscc:vpn/vpnConnection:VpnConnection":
+                return new VpnConnection(name, <any>undefined, { urn })
             case "bytepluscc:vpn/vpnGateway:VpnGateway":
                 return new VpnGateway(name, <any>undefined, { urn })
             default:
@@ -50,4 +67,5 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "vpn/customerGateway", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpn/vpnConnection", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpn/vpnGateway", _module)

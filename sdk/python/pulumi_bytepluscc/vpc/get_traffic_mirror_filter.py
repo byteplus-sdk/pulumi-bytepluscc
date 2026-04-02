@@ -64,7 +64,7 @@ class GetTrafficMirrorFilterResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        筛选条件的创建时间。
+        Filter condition creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -72,7 +72,7 @@ class GetTrafficMirrorFilterResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        筛选条件实例描述。
+        Filter condition instance description
         """
         return pulumi.get(self, "description")
 
@@ -80,7 +80,7 @@ class GetTrafficMirrorFilterResult:
     @pulumi.getter(name="egressFilterRules")
     def egress_filter_rules(self) -> Sequence['outputs.GetTrafficMirrorFilterEgressFilterRuleResult']:
         """
-        出方向筛选规则的详细信息。
+        Outbound filter rule details
         """
         return pulumi.get(self, "egress_filter_rules")
 
@@ -96,7 +96,7 @@ class GetTrafficMirrorFilterResult:
     @pulumi.getter(name="ingressFilterRules")
     def ingress_filter_rules(self) -> Sequence['outputs.GetTrafficMirrorFilterIngressFilterRuleResult']:
         """
-        入方向筛选规则的详细信息。
+        Inbound filter rule details
         """
         return pulumi.get(self, "ingress_filter_rules")
 
@@ -104,7 +104,7 @@ class GetTrafficMirrorFilterResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        筛选条件所属项目的名称。
+        Project name of the filter condition
         """
         return pulumi.get(self, "project_name")
 
@@ -112,7 +112,7 @@ class GetTrafficMirrorFilterResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        筛选条件状态。
+        Filter condition status
         """
         return pulumi.get(self, "status")
 
@@ -120,7 +120,7 @@ class GetTrafficMirrorFilterResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetTrafficMirrorFilterTagResult']:
         """
-        标签信息
+        Tag information
         """
         return pulumi.get(self, "tags")
 
@@ -128,7 +128,7 @@ class GetTrafficMirrorFilterResult:
     @pulumi.getter(name="trafficMirrorFilterId")
     def traffic_mirror_filter_id(self) -> builtins.str:
         """
-        筛选条件实例ID。
+        Filter condition instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_id")
 
@@ -136,7 +136,7 @@ class GetTrafficMirrorFilterResult:
     @pulumi.getter(name="trafficMirrorFilterName")
     def traffic_mirror_filter_name(self) -> builtins.str:
         """
-        筛选条件名称。
+        Filter condition name
         """
         return pulumi.get(self, "traffic_mirror_filter_name")
 

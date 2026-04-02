@@ -169,7 +169,7 @@ class GetInstanceResult:
     @pulumi.getter(name="cerebroEnabled")
     def cerebro_enabled(self) -> builtins.bool:
         """
-        是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+        Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
         """
         return pulumi.get(self, "cerebro_enabled")
 
@@ -177,7 +177,7 @@ class GetInstanceResult:
     @pulumi.getter(name="cerebroPrivateDomain")
     def cerebro_private_domain(self) -> builtins.str:
         """
-        cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+        Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
         """
         return pulumi.get(self, "cerebro_private_domain")
 
@@ -185,7 +185,7 @@ class GetInstanceResult:
     @pulumi.getter(name="cerebroPublicDomain")
     def cerebro_public_domain(self) -> builtins.str:
         """
-        erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+        Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
         """
         return pulumi.get(self, "cerebro_public_domain")
 
@@ -193,7 +193,7 @@ class GetInstanceResult:
     @pulumi.getter(name="chargeEnabled")
     def charge_enabled(self) -> builtins.bool:
         """
-        实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+        Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
         """
         return pulumi.get(self, "charge_enabled")
 
@@ -201,7 +201,7 @@ class GetInstanceResult:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> builtins.str:
         """
-        实例所属集群的 ID。
+        ID of the cluster to which the instance belongs.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -209,7 +209,7 @@ class GetInstanceResult:
     @pulumi.getter(name="createTime")
     def create_time(self) -> builtins.str:
         """
-        实例的创建时间。
+        Instance creation time.
         """
         return pulumi.get(self, "create_time")
 
@@ -217,7 +217,7 @@ class GetInstanceResult:
     @pulumi.getter(name="enableEsPrivateDomainPublic")
     def enable_es_private_domain_public(self) -> builtins.bool:
         """
-        实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+        Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
         """
         return pulumi.get(self, "enable_es_private_domain_public")
 
@@ -225,7 +225,7 @@ class GetInstanceResult:
     @pulumi.getter(name="enableEsPrivateNetwork")
     def enable_es_private_network(self) -> builtins.bool:
         """
-        实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+        Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
         """
         return pulumi.get(self, "enable_es_private_network")
 
@@ -233,7 +233,7 @@ class GetInstanceResult:
     @pulumi.getter(name="enableEsPublicNetwork")
     def enable_es_public_network(self) -> builtins.bool:
         """
-        实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+        Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
         """
         return pulumi.get(self, "enable_es_public_network")
 
@@ -241,7 +241,7 @@ class GetInstanceResult:
     @pulumi.getter(name="enableKibanaPrivateDomainPublic")
     def enable_kibana_private_domain_public(self) -> builtins.bool:
         """
-        Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+        Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
         """
         return pulumi.get(self, "enable_kibana_private_domain_public")
 
@@ -249,7 +249,7 @@ class GetInstanceResult:
     @pulumi.getter(name="enableKibanaPrivateNetwork")
     def enable_kibana_private_network(self) -> builtins.bool:
         """
-        Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+        Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
         """
         return pulumi.get(self, "enable_kibana_private_network")
 
@@ -257,7 +257,7 @@ class GetInstanceResult:
     @pulumi.getter(name="enableKibanaPublicNetwork")
     def enable_kibana_public_network(self) -> builtins.bool:
         """
-        Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+        Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
         """
         return pulumi.get(self, "enable_kibana_public_network")
 
@@ -265,7 +265,7 @@ class GetInstanceResult:
     @pulumi.getter(name="esEip")
     def es_eip(self) -> builtins.str:
         """
-        实例所绑定的 EIP。
+        EIP bound to the instance.
         """
         return pulumi.get(self, "es_eip")
 
@@ -273,7 +273,7 @@ class GetInstanceResult:
     @pulumi.getter(name="esEipId")
     def es_eip_id(self) -> builtins.str:
         """
-        实例所绑定的 EIP 的 ID。
+        ID of the EIP bound to the instance
         """
         return pulumi.get(self, "es_eip_id")
 
@@ -281,7 +281,7 @@ class GetInstanceResult:
     @pulumi.getter(name="esPrivateEndpoint")
     def es_private_endpoint(self) -> builtins.str:
         """
-        实例私网访问地址。
+        Instance private network access address.
         """
         return pulumi.get(self, "es_private_endpoint")
 
@@ -289,7 +289,7 @@ class GetInstanceResult:
     @pulumi.getter(name="esPrivateIpAllowList")
     def es_private_ip_allow_list(self) -> builtins.str:
         """
-        实例私网地址访问白名单。同 ESPrivateIpWhitelist
+        Instance private network address access allowlist. Same as ESPrivateIpWhitelist
         """
         return pulumi.get(self, "es_private_ip_allow_list")
 
@@ -297,7 +297,7 @@ class GetInstanceResult:
     @pulumi.getter(name="esPrivateIpWhitelist")
     def es_private_ip_whitelist(self) -> builtins.str:
         """
-        实例私网地址访问白名单。
+        Instance private network address access allowlist
         """
         return pulumi.get(self, "es_private_ip_whitelist")
 
@@ -305,7 +305,7 @@ class GetInstanceResult:
     @pulumi.getter(name="esPubBandwidth")
     def es_pub_bandwidth(self) -> builtins.int:
         """
-        ES公网带宽，单位:Mbps。
+        ES public network bandwidth, unit: Mbps.
         """
         return pulumi.get(self, "es_pub_bandwidth")
 
@@ -313,7 +313,7 @@ class GetInstanceResult:
     @pulumi.getter(name="esPublicEndpoint")
     def es_public_endpoint(self) -> builtins.str:
         """
-        实例公网访问地址。
+        Instance public access address
         """
         return pulumi.get(self, "es_public_endpoint")
 
@@ -321,7 +321,7 @@ class GetInstanceResult:
     @pulumi.getter(name="esPublicIpAllowList")
     def es_public_ip_allow_list(self) -> builtins.str:
         """
-        实例公网地址访问白名单。同 ESPublicIpWhitelist
+        Instance public IP address access allowlist. Same as ESPublicIpWhitelist
         """
         return pulumi.get(self, "es_public_ip_allow_list")
 
@@ -329,7 +329,7 @@ class GetInstanceResult:
     @pulumi.getter(name="esPublicIpWhitelist")
     def es_public_ip_whitelist(self) -> builtins.str:
         """
-        实例公网地址访问白名单。
+        Allowlist for instance public network address access.
         """
         return pulumi.get(self, "es_public_ip_whitelist")
 
@@ -337,7 +337,7 @@ class GetInstanceResult:
     @pulumi.getter(name="expireDate")
     def expire_date(self) -> builtins.str:
         """
-        包年包月实例的付费过期时间。
+        Expiration time for subscription instance payment
         """
         return pulumi.get(self, "expire_date")
 
@@ -353,7 +353,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceConfiguration")
     def instance_configuration(self) -> 'outputs.GetInstanceInstanceConfigurationResult':
         """
-        实例配置详情信息。
+        Instance configuration details
         """
         return pulumi.get(self, "instance_configuration")
 
@@ -361,7 +361,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例 ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -369,7 +369,7 @@ class GetInstanceResult:
     @pulumi.getter(name="kibanaConfig")
     def kibana_config(self) -> 'outputs.GetInstanceKibanaConfigResult':
         """
-        Kibana 参数配置。
+        Kibana parameter configuration
         """
         return pulumi.get(self, "kibana_config")
 
@@ -377,7 +377,7 @@ class GetInstanceResult:
     @pulumi.getter(name="kibanaEip")
     def kibana_eip(self) -> builtins.str:
         """
-        Kibana 所绑定的 EIP。
+        EIP bound to Kibana
         """
         return pulumi.get(self, "kibana_eip")
 
@@ -385,7 +385,7 @@ class GetInstanceResult:
     @pulumi.getter(name="kibanaEipId")
     def kibana_eip_id(self) -> builtins.str:
         """
-        Kibana 所绑定的 EIP 的 ID。
+        ID of the EIP bound to Kibana.
         """
         return pulumi.get(self, "kibana_eip_id")
 
@@ -393,7 +393,7 @@ class GetInstanceResult:
     @pulumi.getter(name="kibanaPrivateDomain")
     def kibana_private_domain(self) -> builtins.str:
         """
-        Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+        Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
         """
         return pulumi.get(self, "kibana_private_domain")
 
@@ -401,7 +401,7 @@ class GetInstanceResult:
     @pulumi.getter(name="kibanaPrivateIpAllowList")
     def kibana_private_ip_allow_list(self) -> builtins.str:
         """
-        Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+        Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
         """
         return pulumi.get(self, "kibana_private_ip_allow_list")
 
@@ -409,7 +409,7 @@ class GetInstanceResult:
     @pulumi.getter(name="kibanaPrivateIpWhitelist")
     def kibana_private_ip_whitelist(self) -> builtins.str:
         """
-        Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+        Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
         """
         return pulumi.get(self, "kibana_private_ip_whitelist")
 
@@ -417,7 +417,7 @@ class GetInstanceResult:
     @pulumi.getter(name="kibanaPubBandwidth")
     def kibana_pub_bandwidth(self) -> builtins.int:
         """
-        Kibana公网带宽，单位: Mbps
+        Kibana public network bandwidth, unit: Mbps
         """
         return pulumi.get(self, "kibana_pub_bandwidth")
 
@@ -425,7 +425,7 @@ class GetInstanceResult:
     @pulumi.getter(name="kibanaPublicDomain")
     def kibana_public_domain(self) -> builtins.str:
         """
-        Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+        Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
         """
         return pulumi.get(self, "kibana_public_domain")
 
@@ -433,7 +433,7 @@ class GetInstanceResult:
     @pulumi.getter(name="kibanaPublicIpAllowList")
     def kibana_public_ip_allow_list(self) -> builtins.str:
         """
-        Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+        Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
         """
         return pulumi.get(self, "kibana_public_ip_allow_list")
 
@@ -441,7 +441,7 @@ class GetInstanceResult:
     @pulumi.getter(name="kibanaPublicIpWhitelist")
     def kibana_public_ip_whitelist(self) -> builtins.str:
         """
-        Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+        Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
         """
         return pulumi.get(self, "kibana_public_ip_whitelist")
 
@@ -449,7 +449,7 @@ class GetInstanceResult:
     @pulumi.getter(name="mainZoneId")
     def main_zone_id(self) -> builtins.str:
         """
-        主可用区
+        Primary availability zone
         """
         return pulumi.get(self, "main_zone_id")
 
@@ -457,7 +457,7 @@ class GetInstanceResult:
     @pulumi.getter(name="maintenanceDays")
     def maintenance_days(self) -> Sequence[builtins.str]:
         """
-        实例的可维护日期。
+        Instance maintenance date.
         """
         return pulumi.get(self, "maintenance_days")
 
@@ -465,7 +465,7 @@ class GetInstanceResult:
     @pulumi.getter(name="maintenanceTime")
     def maintenance_time(self) -> builtins.str:
         """
-        实例的可维护时间段。
+        Instance maintenance window.
         """
         return pulumi.get(self, "maintenance_time")
 
@@ -473,7 +473,7 @@ class GetInstanceResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        实例当前状态。
+        Current instance status
         """
         return pulumi.get(self, "status")
 
@@ -481,7 +481,7 @@ class GetInstanceResult:
     @pulumi.getter(name="subInstanceEnable")
     def sub_instance_enable(self) -> builtins.str:
         """
-        子实例开启情况。
+        Sub-instance activation status
         """
         return pulumi.get(self, "sub_instance_enable")
 
@@ -489,7 +489,7 @@ class GetInstanceResult:
     @pulumi.getter(name="subInstances")
     def sub_instances(self) -> Sequence['outputs.GetInstanceSubInstanceResult']:
         """
-        企业级 SQL 分析实例配置信息。
+        Enterprise SQL analytics instance configuration information
         """
         return pulumi.get(self, "sub_instances")
 
@@ -497,7 +497,7 @@ class GetInstanceResult:
     @pulumi.getter(name="supportColdNode")
     def support_cold_node(self) -> builtins.bool:
         """
-        是否支持冷节点。
+        Whether cold nodes are supported
         """
         return pulumi.get(self, "support_cold_node")
 
@@ -505,7 +505,7 @@ class GetInstanceResult:
     @pulumi.getter(name="totalNodes")
     def total_nodes(self) -> builtins.int:
         """
-        实例的总节点数。
+        Total number of nodes in the instance
         """
         return pulumi.get(self, "total_nodes")
 
@@ -513,7 +513,7 @@ class GetInstanceResult:
     @pulumi.getter(name="transferInfo")
     def transfer_info(self) -> 'outputs.GetInstanceTransferInfoResult':
         """
-        数据迁移任务信息。
+        Data migration task information
         """
         return pulumi.get(self, "transfer_info")
 
@@ -521,7 +521,7 @@ class GetInstanceResult:
     @pulumi.getter(name="userId")
     def user_id(self) -> builtins.str:
         """
-        实例所有者的用户 ID。
+        Instance owner's user ID
         """
         return pulumi.get(self, "user_id")
 

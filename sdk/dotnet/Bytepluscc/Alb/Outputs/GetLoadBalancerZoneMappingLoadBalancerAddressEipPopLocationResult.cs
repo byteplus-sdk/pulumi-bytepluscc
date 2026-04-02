@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationResult
     {
         /// <summary>
-        /// 接入点（PoP）的唯一ID。
+        /// Unique ID of the access point (PoP).
         /// </summary>
         public readonly string PopId;
         /// <summary>
-        /// 接入点（PoP）的名称。
+        /// Name of the access point (PoP).
         /// </summary>
         public readonly string PopName;
 

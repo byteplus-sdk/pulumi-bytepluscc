@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
     public sealed class ClusterApplicationExtraApplicationComponentLayoutArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 组件名称。
+        /// Component name.
         /// </summary>
         [Input("componentName")]
         public Input<string>? ComponentName { get; set; }
 
         /// <summary>
-        /// 组件的布局范围。
+        /// Component layout scope.
         /// </summary>
         [Input("effectiveScope")]
         public Input<Inputs.ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs>? EffectiveScope { get; set; }

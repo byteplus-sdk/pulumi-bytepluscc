@@ -14,22 +14,22 @@ import java.util.Objects;
 @CustomType
 public final class GetResolverEndpointResult {
     /**
-     * @return 创建时间
+     * @return Creation time
      * 
      */
     private String createdTime;
     /**
-     * @return 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+     * @return DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
      * 
      */
     private String direction;
     /**
-     * @return 终端节点的 ID。
+     * @return Endpoint ID
      * 
      */
     private String endpointId;
     /**
-     * @return 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+     * @return Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
      * 
      */
     private String endpointType;
@@ -39,75 +39,75 @@ public final class GetResolverEndpointResult {
      */
     private String id;
     /**
-     * @return 终端节点的可用区、子网和 IP 配置。
+     * @return Availability zone, subnet, and IP configuration for the endpoint
      * 
      */
     private List<GetResolverEndpointIpConfig> ipConfigs;
     /**
-     * @return 终端节点的名称。支持 UTF-8 格式。
+     * @return Endpoint name. Supports UTF-8 format
      * 
      */
     private String name;
     /**
-     * @return 终端节点所属的项目名称。默认为 default。
+     * @return Project name to which the endpoint belongs. Default is default
      * 
      */
     private String projectName;
     /**
-     * @return 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+     * @return Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
      * 
      */
     private String securityGroupId;
     /**
-     * @return 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+     * @return Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
      * 
      */
     private String status;
     /**
-     * @return 标签列表。
+     * @return Tag list
      * 
      */
     private List<GetResolverEndpointTag> tags;
     /**
-     * @return 更新时间
+     * @return Update time
      * 
      */
     private String updatedTime;
     /**
-     * @return 终端节点所在的 VPC 的 ID。
+     * @return VPC ID where the endpoint is located
      * 
      */
     private String vpcId;
     /**
-     * @return 终端节点所在的 VPC 的地域。
+     * @return Region of the VPC where the endpoint is located
      * 
      */
     private String vpcRegion;
 
     private GetResolverEndpointResult() {}
     /**
-     * @return 创建时间
+     * @return Creation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+     * @return DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
      * 
      */
     public String direction() {
         return this.direction;
     }
     /**
-     * @return 终端节点的 ID。
+     * @return Endpoint ID
      * 
      */
     public String endpointId() {
         return this.endpointId;
     }
     /**
-     * @return 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+     * @return Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
      * 
      */
     public String endpointType() {
@@ -121,63 +121,63 @@ public final class GetResolverEndpointResult {
         return this.id;
     }
     /**
-     * @return 终端节点的可用区、子网和 IP 配置。
+     * @return Availability zone, subnet, and IP configuration for the endpoint
      * 
      */
     public List<GetResolverEndpointIpConfig> ipConfigs() {
         return this.ipConfigs;
     }
     /**
-     * @return 终端节点的名称。支持 UTF-8 格式。
+     * @return Endpoint name. Supports UTF-8 format
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 终端节点所属的项目名称。默认为 default。
+     * @return Project name to which the endpoint belongs. Default is default
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+     * @return Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
      * 
      */
     public String securityGroupId() {
         return this.securityGroupId;
     }
     /**
-     * @return 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+     * @return Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 标签列表。
+     * @return Tag list
      * 
      */
     public List<GetResolverEndpointTag> tags() {
         return this.tags;
     }
     /**
-     * @return 更新时间
+     * @return Update time
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 终端节点所在的 VPC 的 ID。
+     * @return VPC ID where the endpoint is located
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return 终端节点所在的 VPC 的地域。
+     * @return Region of the VPC where the endpoint is located
      * 
      */
     public String vpcRegion() {

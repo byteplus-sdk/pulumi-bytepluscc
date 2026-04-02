@@ -17,14 +17,14 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
     public static final InstanceNodeDetailInfoArgs Empty = new InstanceNodeDetailInfoArgs();
 
     /**
-     * 节点的创建时间。
+     * Node creation time.
      * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
-     * @return 节点的创建时间。
+     * @return Node creation time.
      * 
      */
     public Optional<Output<String>> createTime() {
@@ -32,14 +32,14 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 节点主机名。
+     * Node hostname.
      * 
      */
     @Import(name="hostName")
     private @Nullable Output<String> hostName;
 
     /**
-     * @return 节点主机名。
+     * @return Node hostname.
      * 
      */
     public Optional<Output<String>> hostName() {
@@ -47,14 +47,14 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 实例ID。
+     * Instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例ID。
+     * @return Instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -62,14 +62,14 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 内存大小，单位为 GiB。
+     * Memory size, in GiB.
      * 
      */
     @Import(name="memory")
     private @Nullable Output<Integer> memory;
 
     /**
-     * @return 内存大小，单位为 GiB。
+     * @return Memory size, in GiB.
      * 
      */
     public Optional<Output<Integer>> memory() {
@@ -77,14 +77,14 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 节点ID。
+     * Node ID.
      * 
      */
     @Import(name="nodeId")
     private @Nullable Output<String> nodeId;
 
     /**
-     * @return 节点ID。
+     * @return Node ID.
      * 
      */
     public Optional<Output<String>> nodeId() {
@@ -92,14 +92,14 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 节点IP。
+     * Node IP.
      * 
      */
     @Import(name="nodeIp")
     private @Nullable Output<String> nodeIp;
 
     /**
-     * @return 节点IP。
+     * @return Node IP.
      * 
      */
     public Optional<Output<String>> nodeIp() {
@@ -107,14 +107,14 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 节点规格。
+     * Node specification.
      * 
      */
     @Import(name="nodeSpec")
     private @Nullable Output<String> nodeSpec;
 
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     public Optional<Output<String>> nodeSpec() {
@@ -122,14 +122,14 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+     * Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
      * 
      */
     @Import(name="nodeStatus")
     private @Nullable Output<String> nodeStatus;
 
     /**
-     * @return 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+     * @return Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
      * 
      */
     public Optional<Output<String>> nodeStatus() {
@@ -137,14 +137,14 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+     * Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
      * 
      */
     @Import(name="nodeType")
     private @Nullable Output<String> nodeType;
 
     /**
-     * @return 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+     * @return Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
      * 
      */
     public Optional<Output<String>> nodeType() {
@@ -152,14 +152,14 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 区域ID。
+     * Region ID.
      * 
      */
     @Import(name="regionId")
     private @Nullable Output<String> regionId;
 
     /**
-     * @return 区域ID。
+     * @return Region ID.
      * 
      */
     public Optional<Output<String>> regionId() {
@@ -167,14 +167,14 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 更新时间。
+     * Update time.
      * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     public Optional<Output<String>> updateTime() {
@@ -182,14 +182,14 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * vCPU 数量。
+     * vCPU count.
      * 
      */
     @Import(name="vcpu")
     private @Nullable Output<Integer> vcpu;
 
     /**
-     * @return vCPU 数量。
+     * @return vCPU count.
      * 
      */
     public Optional<Output<Integer>> vcpu() {
@@ -197,14 +197,14 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 可用区ID。
+     * Availability zone ID.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 可用区ID。
+     * @return Availability zone ID.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -248,7 +248,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param createTime 节点的创建时间。
+         * @param createTime Node creation time.
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param createTime 节点的创建时间。
+         * @param createTime Node creation time.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param hostName 节点主机名。
+         * @param hostName Node hostname.
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param hostName 节点主机名。
+         * @param hostName Node hostname.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param memory 内存大小，单位为 GiB。
+         * @param memory Memory size, in GiB.
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param memory 内存大小，单位为 GiB。
+         * @param memory Memory size, in GiB.
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nodeId 节点ID。
+         * @param nodeId Node ID.
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nodeId 节点ID。
+         * @param nodeId Node ID.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nodeIp 节点IP。
+         * @param nodeIp Node IP.
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nodeIp 节点IP。
+         * @param nodeIp Node IP.
          * 
          * @return builder
          * 
@@ -374,7 +374,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nodeSpec 节点规格。
+         * @param nodeSpec Node specification.
          * 
          * @return builder
          * 
@@ -385,7 +385,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nodeSpec 节点规格。
+         * @param nodeSpec Node specification.
          * 
          * @return builder
          * 
@@ -395,7 +395,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nodeStatus 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+         * @param nodeStatus Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
          * 
          * @return builder
          * 
@@ -406,7 +406,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nodeStatus 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+         * @param nodeStatus Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
          * 
          * @return builder
          * 
@@ -416,7 +416,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nodeType 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+         * @param nodeType Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
          * 
          * @return builder
          * 
@@ -427,7 +427,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nodeType 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+         * @param nodeType Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
          * 
          * @return builder
          * 
@@ -437,7 +437,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param regionId 区域ID。
+         * @param regionId Region ID.
          * 
          * @return builder
          * 
@@ -448,7 +448,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param regionId 区域ID。
+         * @param regionId Region ID.
          * 
          * @return builder
          * 
@@ -458,7 +458,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param updateTime 更新时间。
+         * @param updateTime Update time.
          * 
          * @return builder
          * 
@@ -469,7 +469,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param updateTime 更新时间。
+         * @param updateTime Update time.
          * 
          * @return builder
          * 
@@ -479,7 +479,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param vcpu vCPU 数量。
+         * @param vcpu vCPU count.
          * 
          * @return builder
          * 
@@ -490,7 +490,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param vcpu vCPU 数量。
+         * @param vcpu vCPU count.
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param zoneId 可用区ID。
+         * @param zoneId Availability zone ID.
          * 
          * @return builder
          * 
@@ -511,7 +511,7 @@ public final class InstanceNodeDetailInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param zoneId 可用区ID。
+         * @param zoneId Availability zone ID.
          * 
          * @return builder
          * 

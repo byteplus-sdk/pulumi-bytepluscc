@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 云盘是高可用、高可靠、高性能、弹性扩展的块存储设备，可以作为云服务器和弹性容器服务的可扩展硬盘使用。
+ * Cloud disk is a block storage device with high availability, high reliability, high performance, and elastic scalability. It can be used as a scalable disk for cloud servers and elastic container services.
  *
  * ## Example Usage
  *
@@ -58,120 +58,120 @@ export class Volume extends pulumi.CustomResource {
     }
 
     /**
-     * 自动快照策略ID。
+     * Automatic snapshot policy ID.
      */
     public readonly autoSnapshotPolicyId!: pulumi.Output<string>;
     /**
-     * 自动快照策略名称。
+     * Automatic snapshot policy name.
      */
     public /*out*/ readonly autoSnapshotPolicyName!: pulumi.Output<string>;
     /**
-     * 基本性能。
+     * Baseline performance.
      */
     public /*out*/ readonly baselinePerformance!: pulumi.Output<outputs.storageebs.VolumeBaselinePerformance>;
     /**
-     * 云盘创建时间。
+     * Disk creation time.
      */
     public /*out*/ readonly createdAt!: pulumi.Output<string>;
     /**
-     * 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+     * When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
      */
     public readonly deleteWithInstance!: pulumi.Output<boolean>;
     /**
-     * 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+     * Disk description. Default is empty. Length must be between 1 and 255 characters.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 设备名称
+     * Device name
      */
     public /*out*/ readonly deviceName!: pulumi.Output<string>;
     /**
-     * 具体错误
+     * Specific error
      */
     public /*out*/ readonly errorDetail!: pulumi.Output<string>;
     /**
-     * 包年包月到期时间。
+     * Expiration time for yearly/monthly subscription.
      */
     public /*out*/ readonly expiredTime!: pulumi.Output<string>;
     /**
-     * 额外性能。
+     * Extra performance.
      */
     public readonly extraPerformance!: pulumi.Output<outputs.storageebs.VolumeExtraPerformance>;
     /**
-     * 云盘中的镜像ID。
+     * Image ID in the disk.
      */
     public /*out*/ readonly imageId!: pulumi.Output<string>;
     /**
-     * 创建云盘的同时挂载的ECS实例ID。
+     * ECS instance ID mounted when creating the cloud disk.
      */
     public readonly instanceId!: pulumi.Output<string>;
     /**
-     * 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+     * Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
      */
     public readonly kind!: pulumi.Output<string>;
     /**
-     * 云盘欠费回收时间。
+     * Disk overdue reclamation time.
      */
     public /*out*/ readonly overdueReclaimTime!: pulumi.Output<string>;
     /**
-     * 云盘欠费关停时间。
+     * Disk overdue shutdown time.
      */
     public /*out*/ readonly overdueTime!: pulumi.Output<string>;
     /**
-     * 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+     * Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
      */
     public readonly payType!: pulumi.Output<string>;
     /**
-     * 云盘所要加入的Project（项目）名称。
+     * Project name to which the disk will be added.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+     * Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
      */
     public /*out*/ readonly renewType!: pulumi.Output<number>;
     /**
-     * Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+     * Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
      */
     public readonly size!: pulumi.Output<number>;
     /**
-     * 快照计数
+     * Snapshot count.
      */
     public /*out*/ readonly snapshotCount!: pulumi.Output<number>;
     /**
-     * 源快照。
+     * Source snapshot.
      */
     public readonly sourceSnapshotId!: pulumi.Output<string>;
     /**
-     * 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+     * Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.storageebs.VolumeTag[]>;
     /**
-     * 总性能。
+     * Total performance.
      */
     public /*out*/ readonly totalPerformance!: pulumi.Output<outputs.storageebs.VolumeTotalPerformance>;
     /**
-     * 交易状态 0：创建中 1：运行中 2：创建失败
+     * Transaction status 0: Creating 1: Running 2: Creation failed
      */
     public /*out*/ readonly tradeStatus!: pulumi.Output<number>;
     /**
-     * 云盘更新时间。
+     * Disk update time.
      */
     public /*out*/ readonly updatedAt!: pulumi.Output<string>;
     /**
-     * 云盘id。
+     * Disk ID.
      */
     public /*out*/ readonly volumeId!: pulumi.Output<string>;
     /**
-     * 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+     * Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
      */
     public readonly volumeName!: pulumi.Output<string>;
     /**
-     * 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+     * Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
      */
     public readonly volumeType!: pulumi.Output<string>;
     /**
-     * 可用区ID。
+     * Availability zone ID.
      */
     public readonly zoneId!: pulumi.Output<string>;
 
@@ -273,120 +273,120 @@ export class Volume extends pulumi.CustomResource {
  */
 export interface VolumeState {
     /**
-     * 自动快照策略ID。
+     * Automatic snapshot policy ID.
      */
     autoSnapshotPolicyId?: pulumi.Input<string>;
     /**
-     * 自动快照策略名称。
+     * Automatic snapshot policy name.
      */
     autoSnapshotPolicyName?: pulumi.Input<string>;
     /**
-     * 基本性能。
+     * Baseline performance.
      */
     baselinePerformance?: pulumi.Input<inputs.storageebs.VolumeBaselinePerformance>;
     /**
-     * 云盘创建时间。
+     * Disk creation time.
      */
     createdAt?: pulumi.Input<string>;
     /**
-     * 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+     * When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
      */
     deleteWithInstance?: pulumi.Input<boolean>;
     /**
-     * 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+     * Disk description. Default is empty. Length must be between 1 and 255 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 设备名称
+     * Device name
      */
     deviceName?: pulumi.Input<string>;
     /**
-     * 具体错误
+     * Specific error
      */
     errorDetail?: pulumi.Input<string>;
     /**
-     * 包年包月到期时间。
+     * Expiration time for yearly/monthly subscription.
      */
     expiredTime?: pulumi.Input<string>;
     /**
-     * 额外性能。
+     * Extra performance.
      */
     extraPerformance?: pulumi.Input<inputs.storageebs.VolumeExtraPerformance>;
     /**
-     * 云盘中的镜像ID。
+     * Image ID in the disk.
      */
     imageId?: pulumi.Input<string>;
     /**
-     * 创建云盘的同时挂载的ECS实例ID。
+     * ECS instance ID mounted when creating the cloud disk.
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+     * Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
      */
     kind?: pulumi.Input<string>;
     /**
-     * 云盘欠费回收时间。
+     * Disk overdue reclamation time.
      */
     overdueReclaimTime?: pulumi.Input<string>;
     /**
-     * 云盘欠费关停时间。
+     * Disk overdue shutdown time.
      */
     overdueTime?: pulumi.Input<string>;
     /**
-     * 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+     * Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
      */
     payType?: pulumi.Input<string>;
     /**
-     * 云盘所要加入的Project（项目）名称。
+     * Project name to which the disk will be added.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+     * Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
      */
     renewType?: pulumi.Input<number>;
     /**
-     * Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+     * Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
      */
     size?: pulumi.Input<number>;
     /**
-     * 快照计数
+     * Snapshot count.
      */
     snapshotCount?: pulumi.Input<number>;
     /**
-     * 源快照。
+     * Source snapshot.
      */
     sourceSnapshotId?: pulumi.Input<string>;
     /**
-     * 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+     * Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.storageebs.VolumeTag>[]>;
     /**
-     * 总性能。
+     * Total performance.
      */
     totalPerformance?: pulumi.Input<inputs.storageebs.VolumeTotalPerformance>;
     /**
-     * 交易状态 0：创建中 1：运行中 2：创建失败
+     * Transaction status 0: Creating 1: Running 2: Creation failed
      */
     tradeStatus?: pulumi.Input<number>;
     /**
-     * 云盘更新时间。
+     * Disk update time.
      */
     updatedAt?: pulumi.Input<string>;
     /**
-     * 云盘id。
+     * Disk ID.
      */
     volumeId?: pulumi.Input<string>;
     /**
-     * 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+     * Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
      */
     volumeName?: pulumi.Input<string>;
     /**
-     * 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+     * Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
      */
     volumeType?: pulumi.Input<string>;
     /**
-     * 可用区ID。
+     * Availability zone ID.
      */
     zoneId?: pulumi.Input<string>;
 }
@@ -396,56 +396,56 @@ export interface VolumeState {
  */
 export interface VolumeArgs {
     /**
-     * 自动快照策略ID。
+     * Automatic snapshot policy ID.
      */
     autoSnapshotPolicyId?: pulumi.Input<string>;
     /**
-     * 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+     * When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
      */
     deleteWithInstance?: pulumi.Input<boolean>;
     /**
-     * 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+     * Disk description. Default is empty. Length must be between 1 and 255 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 额外性能。
+     * Extra performance.
      */
     extraPerformance?: pulumi.Input<inputs.storageebs.VolumeExtraPerformance>;
     /**
-     * 创建云盘的同时挂载的ECS实例ID。
+     * ECS instance ID mounted when creating the cloud disk.
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+     * Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
      */
     kind?: pulumi.Input<string>;
     /**
-     * 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+     * Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
      */
     payType?: pulumi.Input<string>;
     /**
-     * 云盘所要加入的Project（项目）名称。
+     * Project name to which the disk will be added.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+     * Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
      */
     size: pulumi.Input<number>;
     /**
-     * 源快照。
+     * Source snapshot.
      */
     sourceSnapshotId?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.storageebs.VolumeTag>[]>;
     /**
-     * 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+     * Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
      */
     volumeName: pulumi.Input<string>;
     /**
-     * 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+     * Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
      */
     volumeType: pulumi.Input<string>;
     /**
-     * 可用区ID。
+     * Availability zone ID.
      */
     zoneId: pulumi.Input<string>;
 }

@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetMountPointPermissionGroupMountPoint {
     /**
-     * @return 文件系统 ID。
+     * @return File system ID.
      * 
      */
     private String fileSystemId;
     /**
-     * @return 挂载点 ID。
+     * @return Mount point ID.
      * 
      */
     private String mountPointId;
     /**
-     * @return 挂载点名称。
+     * @return Mount point name.
      * 
      */
     private String mountPointName;
 
     private GetMountPointPermissionGroupMountPoint() {}
     /**
-     * @return 文件系统 ID。
+     * @return File system ID.
      * 
      */
     public String fileSystemId() {
         return this.fileSystemId;
     }
     /**
-     * @return 挂载点 ID。
+     * @return Mount point ID.
      * 
      */
     public String mountPointId() {
         return this.mountPointId;
     }
     /**
-     * @return 挂载点名称。
+     * @return Mount point name.
      * 
      */
     public String mountPointName() {

@@ -23,14 +23,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     public static final InstanceState Empty = new InstanceState();
 
     /**
-     * 是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+     * Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
      * 
      */
     @Import(name="cerebroEnabled")
     private @Nullable Output<Boolean> cerebroEnabled;
 
     /**
-     * @return 是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+     * @return Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
      * 
      */
     public Optional<Output<Boolean>> cerebroEnabled() {
@@ -38,14 +38,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+     * Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     @Import(name="cerebroPrivateDomain")
     private @Nullable Output<String> cerebroPrivateDomain;
 
     /**
-     * @return cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+     * @return Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     public Optional<Output<String>> cerebroPrivateDomain() {
@@ -53,14 +53,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     @Import(name="cerebroPublicDomain")
     private @Nullable Output<String> cerebroPublicDomain;
 
     /**
-     * @return erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * @return Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     public Optional<Output<String>> cerebroPublicDomain() {
@@ -68,14 +68,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+     * Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
      * 
      */
     @Import(name="chargeEnabled")
     private @Nullable Output<Boolean> chargeEnabled;
 
     /**
-     * @return 实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+     * @return Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
      * 
      */
     public Optional<Output<Boolean>> chargeEnabled() {
@@ -83,14 +83,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所属集群的 ID。
+     * ID of the cluster to which the instance belongs.
      * 
      */
     @Import(name="clusterId")
     private @Nullable Output<String> clusterId;
 
     /**
-     * @return 实例所属集群的 ID。
+     * @return ID of the cluster to which the instance belongs.
      * 
      */
     public Optional<Output<String>> clusterId() {
@@ -98,14 +98,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的创建时间。
+     * Instance creation time.
      * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
-     * @return 实例的创建时间。
+     * @return Instance creation time.
      * 
      */
     public Optional<Output<String>> createTime() {
@@ -113,14 +113,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      * 
      */
     @Import(name="enableEsPrivateDomainPublic")
     private @Nullable Output<Boolean> enableEsPrivateDomainPublic;
 
     /**
-     * @return 实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * @return Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      * 
      */
     public Optional<Output<Boolean>> enableEsPrivateDomainPublic() {
@@ -128,14 +128,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+     * Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
      * 
      */
     @Import(name="enableEsPrivateNetwork")
     private @Nullable Output<Boolean> enableEsPrivateNetwork;
 
     /**
-     * @return 实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+     * @return Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
      * 
      */
     public Optional<Output<Boolean>> enableEsPrivateNetwork() {
@@ -143,14 +143,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+     * Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
      * 
      */
     @Import(name="enableEsPublicNetwork")
     private @Nullable Output<Boolean> enableEsPublicNetwork;
 
     /**
-     * @return 实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+     * @return Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
      * 
      */
     public Optional<Output<Boolean>> enableEsPublicNetwork() {
@@ -158,14 +158,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      * 
      */
     @Import(name="enableKibanaPrivateDomainPublic")
     private @Nullable Output<Boolean> enableKibanaPrivateDomainPublic;
 
     /**
-     * @return Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * @return Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      * 
      */
     public Optional<Output<Boolean>> enableKibanaPrivateDomainPublic() {
@@ -173,14 +173,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+     * Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
      * 
      */
     @Import(name="enableKibanaPrivateNetwork")
     private @Nullable Output<Boolean> enableKibanaPrivateNetwork;
 
     /**
-     * @return Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+     * @return Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
      * 
      */
     public Optional<Output<Boolean>> enableKibanaPrivateNetwork() {
@@ -188,14 +188,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+     * Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
      * 
      */
     @Import(name="enableKibanaPublicNetwork")
     private @Nullable Output<Boolean> enableKibanaPublicNetwork;
 
     /**
-     * @return Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+     * @return Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
      * 
      */
     public Optional<Output<Boolean>> enableKibanaPublicNetwork() {
@@ -203,14 +203,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所绑定的 EIP。
+     * EIP bound to the instance.
      * 
      */
     @Import(name="esEip")
     private @Nullable Output<String> esEip;
 
     /**
-     * @return 实例所绑定的 EIP。
+     * @return EIP bound to the instance.
      * 
      */
     public Optional<Output<String>> esEip() {
@@ -218,14 +218,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所绑定的 EIP 的 ID。
+     * ID of the EIP bound to the instance
      * 
      */
     @Import(name="esEipId")
     private @Nullable Output<String> esEipId;
 
     /**
-     * @return 实例所绑定的 EIP 的 ID。
+     * @return ID of the EIP bound to the instance
      * 
      */
     public Optional<Output<String>> esEipId() {
@@ -233,14 +233,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例私网访问地址。
+     * Instance private network access address.
      * 
      */
     @Import(name="esPrivateEndpoint")
     private @Nullable Output<String> esPrivateEndpoint;
 
     /**
-     * @return 实例私网访问地址。
+     * @return Instance private network access address.
      * 
      */
     public Optional<Output<String>> esPrivateEndpoint() {
@@ -248,14 +248,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例私网地址访问白名单。同 ESPrivateIpWhitelist
+     * Instance private network address access allowlist. Same as ESPrivateIpWhitelist
      * 
      */
     @Import(name="esPrivateIpAllowList")
     private @Nullable Output<String> esPrivateIpAllowList;
 
     /**
-     * @return 实例私网地址访问白名单。同 ESPrivateIpWhitelist
+     * @return Instance private network address access allowlist. Same as ESPrivateIpWhitelist
      * 
      */
     public Optional<Output<String>> esPrivateIpAllowList() {
@@ -263,14 +263,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例私网地址访问白名单。
+     * Instance private network address access allowlist
      * 
      */
     @Import(name="esPrivateIpWhitelist")
     private @Nullable Output<String> esPrivateIpWhitelist;
 
     /**
-     * @return 实例私网地址访问白名单。
+     * @return Instance private network address access allowlist
      * 
      */
     public Optional<Output<String>> esPrivateIpWhitelist() {
@@ -278,14 +278,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ES公网带宽，单位:Mbps。
+     * ES public network bandwidth, unit: Mbps.
      * 
      */
     @Import(name="esPubBandwidth")
     private @Nullable Output<Integer> esPubBandwidth;
 
     /**
-     * @return ES公网带宽，单位:Mbps。
+     * @return ES public network bandwidth, unit: Mbps.
      * 
      */
     public Optional<Output<Integer>> esPubBandwidth() {
@@ -293,14 +293,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例公网访问地址。
+     * Instance public access address
      * 
      */
     @Import(name="esPublicEndpoint")
     private @Nullable Output<String> esPublicEndpoint;
 
     /**
-     * @return 实例公网访问地址。
+     * @return Instance public access address
      * 
      */
     public Optional<Output<String>> esPublicEndpoint() {
@@ -308,14 +308,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例公网地址访问白名单。同 ESPublicIpWhitelist
+     * Instance public IP address access allowlist. Same as ESPublicIpWhitelist
      * 
      */
     @Import(name="esPublicIpAllowList")
     private @Nullable Output<String> esPublicIpAllowList;
 
     /**
-     * @return 实例公网地址访问白名单。同 ESPublicIpWhitelist
+     * @return Instance public IP address access allowlist. Same as ESPublicIpWhitelist
      * 
      */
     public Optional<Output<String>> esPublicIpAllowList() {
@@ -323,14 +323,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例公网地址访问白名单。
+     * Allowlist for instance public network address access.
      * 
      */
     @Import(name="esPublicIpWhitelist")
     private @Nullable Output<String> esPublicIpWhitelist;
 
     /**
-     * @return 实例公网地址访问白名单。
+     * @return Allowlist for instance public network address access.
      * 
      */
     public Optional<Output<String>> esPublicIpWhitelist() {
@@ -338,14 +338,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 包年包月实例的付费过期时间。
+     * Expiration time for subscription instance payment
      * 
      */
     @Import(name="expireDate")
     private @Nullable Output<String> expireDate;
 
     /**
-     * @return 包年包月实例的付费过期时间。
+     * @return Expiration time for subscription instance payment
      * 
      */
     public Optional<Output<String>> expireDate() {
@@ -353,14 +353,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例配置详情信息。
+     * Instance configuration details
      * 
      */
     @Import(name="instanceConfiguration")
     private @Nullable Output<InstanceInstanceConfigurationArgs> instanceConfiguration;
 
     /**
-     * @return 实例配置详情信息。
+     * @return Instance configuration details
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationArgs>> instanceConfiguration() {
@@ -368,14 +368,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID。
+     * Instance ID
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -383,14 +383,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kibana 参数配置。
+     * Kibana parameter configuration
      * 
      */
     @Import(name="kibanaConfig")
     private @Nullable Output<InstanceKibanaConfigArgs> kibanaConfig;
 
     /**
-     * @return Kibana 参数配置。
+     * @return Kibana parameter configuration
      * 
      */
     public Optional<Output<InstanceKibanaConfigArgs>> kibanaConfig() {
@@ -398,14 +398,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kibana 所绑定的 EIP。
+     * EIP bound to Kibana
      * 
      */
     @Import(name="kibanaEip")
     private @Nullable Output<String> kibanaEip;
 
     /**
-     * @return Kibana 所绑定的 EIP。
+     * @return EIP bound to Kibana
      * 
      */
     public Optional<Output<String>> kibanaEip() {
@@ -413,14 +413,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kibana 所绑定的 EIP 的 ID。
+     * ID of the EIP bound to Kibana.
      * 
      */
     @Import(name="kibanaEipId")
     private @Nullable Output<String> kibanaEipId;
 
     /**
-     * @return Kibana 所绑定的 EIP 的 ID。
+     * @return ID of the EIP bound to Kibana.
      * 
      */
     public Optional<Output<String>> kibanaEipId() {
@@ -428,14 +428,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
      * 
      */
     @Import(name="kibanaPrivateDomain")
     private @Nullable Output<String> kibanaPrivateDomain;
 
     /**
-     * @return Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * @return Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
      * 
      */
     public Optional<Output<String>> kibanaPrivateDomain() {
@@ -443,14 +443,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+     * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
      * 
      */
     @Import(name="kibanaPrivateIpAllowList")
     private @Nullable Output<String> kibanaPrivateIpAllowList;
 
     /**
-     * @return Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+     * @return Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
      * 
      */
     public Optional<Output<String>> kibanaPrivateIpAllowList() {
@@ -458,14 +458,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+     * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
      * 
      */
     @Import(name="kibanaPrivateIpWhitelist")
     private @Nullable Output<String> kibanaPrivateIpWhitelist;
 
     /**
-     * @return Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+     * @return Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
      * 
      */
     public Optional<Output<String>> kibanaPrivateIpWhitelist() {
@@ -473,14 +473,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kibana公网带宽，单位: Mbps
+     * Kibana public network bandwidth, unit: Mbps
      * 
      */
     @Import(name="kibanaPubBandwidth")
     private @Nullable Output<Integer> kibanaPubBandwidth;
 
     /**
-     * @return Kibana公网带宽，单位: Mbps
+     * @return Kibana public network bandwidth, unit: Mbps
      * 
      */
     public Optional<Output<Integer>> kibanaPubBandwidth() {
@@ -488,14 +488,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     @Import(name="kibanaPublicDomain")
     private @Nullable Output<String> kibanaPublicDomain;
 
     /**
-     * @return Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * @return Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     public Optional<Output<String>> kibanaPublicDomain() {
@@ -503,14 +503,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+     * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
      * 
      */
     @Import(name="kibanaPublicIpAllowList")
     private @Nullable Output<String> kibanaPublicIpAllowList;
 
     /**
-     * @return Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+     * @return Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
      * 
      */
     public Optional<Output<String>> kibanaPublicIpAllowList() {
@@ -518,14 +518,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+     * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
      * 
      */
     @Import(name="kibanaPublicIpWhitelist")
     private @Nullable Output<String> kibanaPublicIpWhitelist;
 
     /**
-     * @return Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+     * @return Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
      * 
      */
     public Optional<Output<String>> kibanaPublicIpWhitelist() {
@@ -533,14 +533,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 主可用区
+     * Primary availability zone
      * 
      */
     @Import(name="mainZoneId")
     private @Nullable Output<String> mainZoneId;
 
     /**
-     * @return 主可用区
+     * @return Primary availability zone
      * 
      */
     public Optional<Output<String>> mainZoneId() {
@@ -548,14 +548,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的可维护日期。
+     * Instance maintenance date.
      * 
      */
     @Import(name="maintenanceDays")
     private @Nullable Output<List<String>> maintenanceDays;
 
     /**
-     * @return 实例的可维护日期。
+     * @return Instance maintenance date.
      * 
      */
     public Optional<Output<List<String>>> maintenanceDays() {
@@ -563,14 +563,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的可维护时间段。
+     * Instance maintenance window.
      * 
      */
     @Import(name="maintenanceTime")
     private @Nullable Output<String> maintenanceTime;
 
     /**
-     * @return 实例的可维护时间段。
+     * @return Instance maintenance window.
      * 
      */
     public Optional<Output<String>> maintenanceTime() {
@@ -578,14 +578,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例当前状态。
+     * Current instance status
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 实例当前状态。
+     * @return Current instance status
      * 
      */
     public Optional<Output<String>> status() {
@@ -593,14 +593,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子实例开启情况。
+     * Sub-instance activation status
      * 
      */
     @Import(name="subInstanceEnable")
     private @Nullable Output<String> subInstanceEnable;
 
     /**
-     * @return 子实例开启情况。
+     * @return Sub-instance activation status
      * 
      */
     public Optional<Output<String>> subInstanceEnable() {
@@ -615,14 +615,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否支持冷节点。
+     * Whether cold nodes are supported
      * 
      */
     @Import(name="supportColdNode")
     private @Nullable Output<Boolean> supportColdNode;
 
     /**
-     * @return 是否支持冷节点。
+     * @return Whether cold nodes are supported
      * 
      */
     public Optional<Output<Boolean>> supportColdNode() {
@@ -630,14 +630,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的总节点数。
+     * Total number of nodes in the instance
      * 
      */
     @Import(name="totalNodes")
     private @Nullable Output<Integer> totalNodes;
 
     /**
-     * @return 实例的总节点数。
+     * @return Total number of nodes in the instance
      * 
      */
     public Optional<Output<Integer>> totalNodes() {
@@ -645,14 +645,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据迁移任务信息。
+     * Data migration task information
      * 
      */
     @Import(name="transferInfo")
     private @Nullable Output<InstanceTransferInfoArgs> transferInfo;
 
     /**
-     * @return 数据迁移任务信息。
+     * @return Data migration task information
      * 
      */
     public Optional<Output<InstanceTransferInfoArgs>> transferInfo() {
@@ -660,14 +660,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所有者的用户 ID。
+     * Instance owner&#39;s user ID
      * 
      */
     @Import(name="userId")
     private @Nullable Output<String> userId;
 
     /**
-     * @return 实例所有者的用户 ID。
+     * @return Instance owner&#39;s user ID
      * 
      */
     public Optional<Output<String>> userId() {
@@ -742,7 +742,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cerebroEnabled 是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+         * @param cerebroEnabled Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
          * 
          * @return builder
          * 
@@ -753,7 +753,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cerebroEnabled 是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+         * @param cerebroEnabled Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
          * 
          * @return builder
          * 
@@ -763,7 +763,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cerebroPrivateDomain cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+         * @param cerebroPrivateDomain Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
          * 
          * @return builder
          * 
@@ -774,7 +774,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cerebroPrivateDomain cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+         * @param cerebroPrivateDomain Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
          * 
          * @return builder
          * 
@@ -784,7 +784,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cerebroPublicDomain erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+         * @param cerebroPublicDomain Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
          * 
          * @return builder
          * 
@@ -795,7 +795,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cerebroPublicDomain erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+         * @param cerebroPublicDomain Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
          * 
          * @return builder
          * 
@@ -805,7 +805,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeEnabled 实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+         * @param chargeEnabled Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
          * 
          * @return builder
          * 
@@ -816,7 +816,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeEnabled 实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+         * @param chargeEnabled Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
          * 
          * @return builder
          * 
@@ -826,7 +826,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 实例所属集群的 ID。
+         * @param clusterId ID of the cluster to which the instance belongs.
          * 
          * @return builder
          * 
@@ -837,7 +837,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 实例所属集群的 ID。
+         * @param clusterId ID of the cluster to which the instance belongs.
          * 
          * @return builder
          * 
@@ -847,7 +847,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 实例的创建时间。
+         * @param createTime Instance creation time.
          * 
          * @return builder
          * 
@@ -858,7 +858,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 实例的创建时间。
+         * @param createTime Instance creation time.
          * 
          * @return builder
          * 
@@ -868,7 +868,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableEsPrivateDomainPublic 实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+         * @param enableEsPrivateDomainPublic Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
          * 
          * @return builder
          * 
@@ -879,7 +879,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableEsPrivateDomainPublic 实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+         * @param enableEsPrivateDomainPublic Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
          * 
          * @return builder
          * 
@@ -889,7 +889,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableEsPrivateNetwork 实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+         * @param enableEsPrivateNetwork Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
          * 
          * @return builder
          * 
@@ -900,7 +900,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableEsPrivateNetwork 实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+         * @param enableEsPrivateNetwork Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
          * 
          * @return builder
          * 
@@ -910,7 +910,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableEsPublicNetwork 实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+         * @param enableEsPublicNetwork Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
          * 
          * @return builder
          * 
@@ -921,7 +921,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableEsPublicNetwork 实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+         * @param enableEsPublicNetwork Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
          * 
          * @return builder
          * 
@@ -931,7 +931,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableKibanaPrivateDomainPublic Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+         * @param enableKibanaPrivateDomainPublic Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
          * 
          * @return builder
          * 
@@ -942,7 +942,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableKibanaPrivateDomainPublic Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+         * @param enableKibanaPrivateDomainPublic Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
          * 
          * @return builder
          * 
@@ -952,7 +952,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableKibanaPrivateNetwork Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+         * @param enableKibanaPrivateNetwork Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
          * 
          * @return builder
          * 
@@ -963,7 +963,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableKibanaPrivateNetwork Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+         * @param enableKibanaPrivateNetwork Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
          * 
          * @return builder
          * 
@@ -973,7 +973,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableKibanaPublicNetwork Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+         * @param enableKibanaPublicNetwork Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
          * 
          * @return builder
          * 
@@ -984,7 +984,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableKibanaPublicNetwork Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+         * @param enableKibanaPublicNetwork Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
          * 
          * @return builder
          * 
@@ -994,7 +994,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esEip 实例所绑定的 EIP。
+         * @param esEip EIP bound to the instance.
          * 
          * @return builder
          * 
@@ -1005,7 +1005,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esEip 实例所绑定的 EIP。
+         * @param esEip EIP bound to the instance.
          * 
          * @return builder
          * 
@@ -1015,7 +1015,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esEipId 实例所绑定的 EIP 的 ID。
+         * @param esEipId ID of the EIP bound to the instance
          * 
          * @return builder
          * 
@@ -1026,7 +1026,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esEipId 实例所绑定的 EIP 的 ID。
+         * @param esEipId ID of the EIP bound to the instance
          * 
          * @return builder
          * 
@@ -1036,7 +1036,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPrivateEndpoint 实例私网访问地址。
+         * @param esPrivateEndpoint Instance private network access address.
          * 
          * @return builder
          * 
@@ -1047,7 +1047,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPrivateEndpoint 实例私网访问地址。
+         * @param esPrivateEndpoint Instance private network access address.
          * 
          * @return builder
          * 
@@ -1057,7 +1057,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPrivateIpAllowList 实例私网地址访问白名单。同 ESPrivateIpWhitelist
+         * @param esPrivateIpAllowList Instance private network address access allowlist. Same as ESPrivateIpWhitelist
          * 
          * @return builder
          * 
@@ -1068,7 +1068,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPrivateIpAllowList 实例私网地址访问白名单。同 ESPrivateIpWhitelist
+         * @param esPrivateIpAllowList Instance private network address access allowlist. Same as ESPrivateIpWhitelist
          * 
          * @return builder
          * 
@@ -1078,7 +1078,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPrivateIpWhitelist 实例私网地址访问白名单。
+         * @param esPrivateIpWhitelist Instance private network address access allowlist
          * 
          * @return builder
          * 
@@ -1089,7 +1089,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPrivateIpWhitelist 实例私网地址访问白名单。
+         * @param esPrivateIpWhitelist Instance private network address access allowlist
          * 
          * @return builder
          * 
@@ -1099,7 +1099,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPubBandwidth ES公网带宽，单位:Mbps。
+         * @param esPubBandwidth ES public network bandwidth, unit: Mbps.
          * 
          * @return builder
          * 
@@ -1110,7 +1110,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPubBandwidth ES公网带宽，单位:Mbps。
+         * @param esPubBandwidth ES public network bandwidth, unit: Mbps.
          * 
          * @return builder
          * 
@@ -1120,7 +1120,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPublicEndpoint 实例公网访问地址。
+         * @param esPublicEndpoint Instance public access address
          * 
          * @return builder
          * 
@@ -1131,7 +1131,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPublicEndpoint 实例公网访问地址。
+         * @param esPublicEndpoint Instance public access address
          * 
          * @return builder
          * 
@@ -1141,7 +1141,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPublicIpAllowList 实例公网地址访问白名单。同 ESPublicIpWhitelist
+         * @param esPublicIpAllowList Instance public IP address access allowlist. Same as ESPublicIpWhitelist
          * 
          * @return builder
          * 
@@ -1152,7 +1152,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPublicIpAllowList 实例公网地址访问白名单。同 ESPublicIpWhitelist
+         * @param esPublicIpAllowList Instance public IP address access allowlist. Same as ESPublicIpWhitelist
          * 
          * @return builder
          * 
@@ -1162,7 +1162,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPublicIpWhitelist 实例公网地址访问白名单。
+         * @param esPublicIpWhitelist Allowlist for instance public network address access.
          * 
          * @return builder
          * 
@@ -1173,7 +1173,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esPublicIpWhitelist 实例公网地址访问白名单。
+         * @param esPublicIpWhitelist Allowlist for instance public network address access.
          * 
          * @return builder
          * 
@@ -1183,7 +1183,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expireDate 包年包月实例的付费过期时间。
+         * @param expireDate Expiration time for subscription instance payment
          * 
          * @return builder
          * 
@@ -1194,7 +1194,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expireDate 包年包月实例的付费过期时间。
+         * @param expireDate Expiration time for subscription instance payment
          * 
          * @return builder
          * 
@@ -1204,7 +1204,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceConfiguration 实例配置详情信息。
+         * @param instanceConfiguration Instance configuration details
          * 
          * @return builder
          * 
@@ -1215,7 +1215,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceConfiguration 实例配置详情信息。
+         * @param instanceConfiguration Instance configuration details
          * 
          * @return builder
          * 
@@ -1225,7 +1225,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -1236,7 +1236,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -1246,7 +1246,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaConfig Kibana 参数配置。
+         * @param kibanaConfig Kibana parameter configuration
          * 
          * @return builder
          * 
@@ -1257,7 +1257,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaConfig Kibana 参数配置。
+         * @param kibanaConfig Kibana parameter configuration
          * 
          * @return builder
          * 
@@ -1267,7 +1267,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaEip Kibana 所绑定的 EIP。
+         * @param kibanaEip EIP bound to Kibana
          * 
          * @return builder
          * 
@@ -1278,7 +1278,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaEip Kibana 所绑定的 EIP。
+         * @param kibanaEip EIP bound to Kibana
          * 
          * @return builder
          * 
@@ -1288,7 +1288,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaEipId Kibana 所绑定的 EIP 的 ID。
+         * @param kibanaEipId ID of the EIP bound to Kibana.
          * 
          * @return builder
          * 
@@ -1299,7 +1299,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaEipId Kibana 所绑定的 EIP 的 ID。
+         * @param kibanaEipId ID of the EIP bound to Kibana.
          * 
          * @return builder
          * 
@@ -1309,7 +1309,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPrivateDomain Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+         * @param kibanaPrivateDomain Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
          * 
          * @return builder
          * 
@@ -1320,7 +1320,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPrivateDomain Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+         * @param kibanaPrivateDomain Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
          * 
          * @return builder
          * 
@@ -1330,7 +1330,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPrivateIpAllowList Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+         * @param kibanaPrivateIpAllowList Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
          * 
          * @return builder
          * 
@@ -1341,7 +1341,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPrivateIpAllowList Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+         * @param kibanaPrivateIpAllowList Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
          * 
          * @return builder
          * 
@@ -1351,7 +1351,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPrivateIpWhitelist Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+         * @param kibanaPrivateIpWhitelist Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
          * 
          * @return builder
          * 
@@ -1362,7 +1362,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPrivateIpWhitelist Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+         * @param kibanaPrivateIpWhitelist Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
          * 
          * @return builder
          * 
@@ -1372,7 +1372,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPubBandwidth Kibana公网带宽，单位: Mbps
+         * @param kibanaPubBandwidth Kibana public network bandwidth, unit: Mbps
          * 
          * @return builder
          * 
@@ -1383,7 +1383,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPubBandwidth Kibana公网带宽，单位: Mbps
+         * @param kibanaPubBandwidth Kibana public network bandwidth, unit: Mbps
          * 
          * @return builder
          * 
@@ -1393,7 +1393,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPublicDomain Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+         * @param kibanaPublicDomain Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
          * 
          * @return builder
          * 
@@ -1404,7 +1404,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPublicDomain Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+         * @param kibanaPublicDomain Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
          * 
          * @return builder
          * 
@@ -1414,7 +1414,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPublicIpAllowList Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+         * @param kibanaPublicIpAllowList Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
          * 
          * @return builder
          * 
@@ -1425,7 +1425,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPublicIpAllowList Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+         * @param kibanaPublicIpAllowList Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
          * 
          * @return builder
          * 
@@ -1435,7 +1435,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPublicIpWhitelist Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+         * @param kibanaPublicIpWhitelist Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
          * 
          * @return builder
          * 
@@ -1446,7 +1446,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kibanaPublicIpWhitelist Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+         * @param kibanaPublicIpWhitelist Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
          * 
          * @return builder
          * 
@@ -1456,7 +1456,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mainZoneId 主可用区
+         * @param mainZoneId Primary availability zone
          * 
          * @return builder
          * 
@@ -1467,7 +1467,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mainZoneId 主可用区
+         * @param mainZoneId Primary availability zone
          * 
          * @return builder
          * 
@@ -1477,7 +1477,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceDays 实例的可维护日期。
+         * @param maintenanceDays Instance maintenance date.
          * 
          * @return builder
          * 
@@ -1488,7 +1488,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceDays 实例的可维护日期。
+         * @param maintenanceDays Instance maintenance date.
          * 
          * @return builder
          * 
@@ -1498,7 +1498,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceDays 实例的可维护日期。
+         * @param maintenanceDays Instance maintenance date.
          * 
          * @return builder
          * 
@@ -1508,7 +1508,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceTime 实例的可维护时间段。
+         * @param maintenanceTime Instance maintenance window.
          * 
          * @return builder
          * 
@@ -1519,7 +1519,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceTime 实例的可维护时间段。
+         * @param maintenanceTime Instance maintenance window.
          * 
          * @return builder
          * 
@@ -1529,7 +1529,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 实例当前状态。
+         * @param status Current instance status
          * 
          * @return builder
          * 
@@ -1540,7 +1540,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 实例当前状态。
+         * @param status Current instance status
          * 
          * @return builder
          * 
@@ -1550,7 +1550,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subInstanceEnable 子实例开启情况。
+         * @param subInstanceEnable Sub-instance activation status
          * 
          * @return builder
          * 
@@ -1561,7 +1561,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subInstanceEnable 子实例开启情况。
+         * @param subInstanceEnable Sub-instance activation status
          * 
          * @return builder
          * 
@@ -1584,7 +1584,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param supportColdNode 是否支持冷节点。
+         * @param supportColdNode Whether cold nodes are supported
          * 
          * @return builder
          * 
@@ -1595,7 +1595,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param supportColdNode 是否支持冷节点。
+         * @param supportColdNode Whether cold nodes are supported
          * 
          * @return builder
          * 
@@ -1605,7 +1605,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param totalNodes 实例的总节点数。
+         * @param totalNodes Total number of nodes in the instance
          * 
          * @return builder
          * 
@@ -1616,7 +1616,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param totalNodes 实例的总节点数。
+         * @param totalNodes Total number of nodes in the instance
          * 
          * @return builder
          * 
@@ -1626,7 +1626,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param transferInfo 数据迁移任务信息。
+         * @param transferInfo Data migration task information
          * 
          * @return builder
          * 
@@ -1637,7 +1637,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param transferInfo 数据迁移任务信息。
+         * @param transferInfo Data migration task information
          * 
          * @return builder
          * 
@@ -1647,7 +1647,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userId 实例所有者的用户 ID。
+         * @param userId Instance owner&#39;s user ID
          * 
          * @return builder
          * 
@@ -1658,7 +1658,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userId 实例所有者的用户 ID。
+         * @param userId Instance owner&#39;s user ID
          * 
          * @return builder
          * 

@@ -17,14 +17,14 @@ public final class DomainNegativeCachArgs extends com.pulumi.resources.ResourceA
     public static final DomainNegativeCachArgs Empty = new DomainNegativeCachArgs();
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainNegativeCachConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainNegativeCachConditionArgs>> condition() {
@@ -32,14 +32,14 @@ public final class DomainNegativeCachArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 表示一个列表。该列表的每个元素是一个状态码缓存规则。
+     * Represents a list. Each element in the list is a status code cache rule.
      * 
      */
     @Import(name="negativeCacheRule")
     private @Nullable Output<DomainNegativeCachNegativeCacheRuleArgs> negativeCacheRule;
 
     /**
-     * @return 表示一个列表。该列表的每个元素是一个状态码缓存规则。
+     * @return Represents a list. Each element in the list is a status code cache rule.
      * 
      */
     public Optional<Output<DomainNegativeCachNegativeCacheRuleArgs>> negativeCacheRule() {
@@ -72,7 +72,7 @@ public final class DomainNegativeCachArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainNegativeCachArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainNegativeCachArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param negativeCacheRule 表示一个列表。该列表的每个元素是一个状态码缓存规则。
+         * @param negativeCacheRule Represents a list. Each element in the list is a status code cache rule.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainNegativeCachArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param negativeCacheRule 表示一个列表。该列表的每个元素是一个状态码缓存规则。
+         * @param negativeCacheRule Represents a list. Each element in the list is a status code cache rule.
          * 
          * @return builder
          * 

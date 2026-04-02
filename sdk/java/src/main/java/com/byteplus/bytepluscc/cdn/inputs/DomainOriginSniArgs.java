@@ -17,14 +17,14 @@ public final class DomainOriginSniArgs extends com.pulumi.resources.ResourceArgs
     public static final DomainOriginSniArgs Empty = new DomainOriginSniArgs();
 
     /**
-     * 指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
+     * Specifies the domain name for origin SNI. When Switch is true, this parameter is required. The value cannot exceed 1,024 characters.
      * 
      */
     @Import(name="sniDomain")
     private @Nullable Output<String> sniDomain;
 
     /**
-     * @return 指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
+     * @return Specifies the domain name for origin SNI. When Switch is true, this parameter is required. The value cannot exceed 1,024 characters.
      * 
      */
     public Optional<Output<String>> sniDomain() {
@@ -32,14 +32,14 @@ public final class DomainOriginSniArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -72,7 +72,7 @@ public final class DomainOriginSniArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sniDomain 指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
+         * @param sniDomain Specifies the domain name for origin SNI. When Switch is true, this parameter is required. The value cannot exceed 1,024 characters.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainOriginSniArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sniDomain 指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
+         * @param sniDomain Specifies the domain name for origin SNI. When Switch is true, this parameter is required. The value cannot exceed 1,024 characters.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainOriginSniArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param switch_ Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainOriginSniArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param switch_ Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
          * 
          * @return builder
          * 

@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolManagement {
     /**
-     * @return 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+     * @return Enable managed mode for node pool. Options:   - true: on   - false: off
      * 
      */
     private @Nullable Boolean enabled;
     /**
-     * @return 检查自愈配置。
+     * @return Check self-healing configuration.
      * 
      */
     private @Nullable NodePoolManagementRemedyConfig remedyConfig;
 
     private NodePoolManagement() {}
     /**
-     * @return 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+     * @return Enable managed mode for node pool. Options:   - true: on   - false: off
      * 
      */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
     /**
-     * @return 检查自愈配置。
+     * @return Check self-healing configuration.
      * 
      */
     public Optional<NodePoolManagementRemedyConfig> remedyConfig() {

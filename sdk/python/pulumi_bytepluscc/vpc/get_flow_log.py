@@ -97,7 +97,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="aggregationInterval")
     def aggregation_interval(self) -> builtins.int:
         """
-        流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+        Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
         """
         return pulumi.get(self, "aggregation_interval")
 
@@ -105,7 +105,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> builtins.str:
         """
-        流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+        Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
         """
         return pulumi.get(self, "business_status")
 
@@ -113,7 +113,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> builtins.str:
         """
-        流日志的创建时间。
+        Creation time of the flow log.
         """
         return pulumi.get(self, "created_at")
 
@@ -121,7 +121,7 @@ class GetFlowLogResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
         """
         return pulumi.get(self, "description")
 
@@ -129,7 +129,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="enableIndex")
     def enable_index(self) -> builtins.bool:
         """
-        是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+        Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
         """
         return pulumi.get(self, "enable_index")
 
@@ -137,7 +137,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="flowLogId")
     def flow_log_id(self) -> builtins.str:
         """
-        流日志的ID。
+        Stream log ID.
         """
         return pulumi.get(self, "flow_log_id")
 
@@ -145,7 +145,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="flowLogName")
     def flow_log_name(self) -> builtins.str:
         """
-        流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+        Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
         """
         return pulumi.get(self, "flow_log_name")
 
@@ -161,7 +161,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> builtins.str:
         """
-        流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+        Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
         """
         return pulumi.get(self, "lock_reason")
 
@@ -169,7 +169,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="logProjectId")
     def log_project_id(self) -> builtins.str:
         """
-        流日志项目的ID。
+        Flow log project ID.
         """
         return pulumi.get(self, "log_project_id")
 
@@ -177,7 +177,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="logProjectName")
     def log_project_name(self) -> builtins.str:
         """
-        流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+        Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
         """
         return pulumi.get(self, "log_project_name")
 
@@ -185,7 +185,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="logTopicId")
     def log_topic_id(self) -> builtins.str:
         """
-        流日志主题的ID。
+        Flow log topic ID.
         """
         return pulumi.get(self, "log_topic_id")
 
@@ -193,7 +193,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="logTopicName")
     def log_topic_name(self) -> builtins.str:
         """
-        流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+        Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
         """
         return pulumi.get(self, "log_topic_name")
 
@@ -201,7 +201,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        流流日志所属项目的名称。
+        Name of the project to which the flow log belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -209,7 +209,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> builtins.str:
         """
-        要捕获流量的资源ID。
+        Resource ID for traffic capture.
         """
         return pulumi.get(self, "resource_id")
 
@@ -217,7 +217,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> builtins.str:
         """
-        要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+        Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
         """
         return pulumi.get(self, "resource_type")
 
@@ -225,7 +225,7 @@ class GetFlowLogResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+        Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
         """
         return pulumi.get(self, "status")
 
@@ -233,7 +233,7 @@ class GetFlowLogResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetFlowLogTagResult']:
         """
-        流日志的标签信息。
+        Tag information for the flow log.
         """
         return pulumi.get(self, "tags")
 
@@ -241,7 +241,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="trafficType")
     def traffic_type(self) -> builtins.str:
         """
-        采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+        Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
         """
         return pulumi.get(self, "traffic_type")
 
@@ -249,7 +249,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> builtins.str:
         """
-        更新流日志的时间。
+        Time when the stream log was updated.
         """
         return pulumi.get(self, "updated_at")
 
@@ -257,7 +257,7 @@ class GetFlowLogResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        流日志的VPC的ID。
+        VPC ID for the flow log.
         """
         return pulumi.get(self, "vpc_id")
 

@@ -169,7 +169,7 @@ class GetInstanceResult:
     @pulumi.getter(name="allowListIds")
     def allow_list_ids(self) -> Sequence[builtins.str]:
         """
-        白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
+        Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
         """
         return pulumi.get(self, "allow_list_ids")
 
@@ -177,7 +177,7 @@ class GetInstanceResult:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> builtins.bool:
         """
-        是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
+        Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -185,7 +185,7 @@ class GetInstanceResult:
     @pulumi.getter(name="backupPointName")
     def backup_point_name(self) -> builtins.str:
         """
-        为变更前创建的全量备份设置备份名称。
+        Set a backup name for the full backup created before changes.
         """
         return pulumi.get(self, "backup_point_name")
 
@@ -193,7 +193,7 @@ class GetInstanceResult:
     @pulumi.getter(name="blueGreenRole")
     def blue_green_role(self) -> builtins.str:
         """
-        实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+        Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
         """
         return pulumi.get(self, "blue_green_role")
 
@@ -201,7 +201,7 @@ class GetInstanceResult:
     @pulumi.getter
     def capacity(self) -> 'outputs.GetInstanceCapacityResult':
         """
-        实例的容量信息。
+        Capacity information of the instance.
         """
         return pulumi.get(self, "capacity")
 
@@ -209,7 +209,7 @@ class GetInstanceResult:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
+        Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
         """
         return pulumi.get(self, "charge_type")
 
@@ -217,7 +217,7 @@ class GetInstanceResult:
     @pulumi.getter(name="configureNodes")
     def configure_nodes(self) -> Sequence['outputs.GetInstanceConfigureNodeResult']:
         """
-        设置节点所属的可用区列表。
+        Set the list of availability zones to which the node belongs.
         """
         return pulumi.get(self, "configure_nodes")
 
@@ -225,7 +225,7 @@ class GetInstanceResult:
     @pulumi.getter(name="createBackup")
     def create_backup(self) -> builtins.bool:
         """
-        是否在变更前创建备份。
+        Whether to create a backup before making changes.
         """
         return pulumi.get(self, "create_backup")
 
@@ -233,7 +233,7 @@ class GetInstanceResult:
     @pulumi.getter(name="createTime")
     def create_time(self) -> builtins.str:
         """
-        实例的创建时间。
+        Creation time of the instance.
         """
         return pulumi.get(self, "create_time")
 
@@ -241,7 +241,7 @@ class GetInstanceResult:
     @pulumi.getter(name="dataLayout")
     def data_layout(self) -> builtins.str:
         """
-        实例的数据存储形态。该参数仅对企业版（即ServiceType为Enterprise）实例有意义；社区版（即ServiceType为Basic）实例不涉及数据存储形态，DataLayout取值固定为RAM。若该参数留空，表示不使用数据存储形态进行筛选。
+        Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
         """
         return pulumi.get(self, "data_layout")
 
@@ -249,7 +249,7 @@ class GetInstanceResult:
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> builtins.str:
         """
-        开启或关闭实例删除保护功能。
+        Enable or disable instance deletion protection.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -257,7 +257,7 @@ class GetInstanceResult:
     @pulumi.getter(name="engineVersion")
     def engine_version(self) -> builtins.str:
         """
-        数据库版本号。
+        Database version number.
         """
         return pulumi.get(self, "engine_version")
 
@@ -265,7 +265,7 @@ class GetInstanceResult:
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> builtins.str:
         """
-        实例到期时间。
+        Instance expiration time.
         """
         return pulumi.get(self, "expired_time")
 
@@ -281,7 +281,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceClass")
     def instance_class(self) -> builtins.str:
         """
-        Redis 实例的类型。取值范围如下：PrimarySecondary：主备实例；Standalone：单节点实例。若该参数留空，表示不使用实例类型条件进行筛选。关于实例类型的更多信息，请参见产品架构。
+        Type of Redis instance. Valid values: PrimarySecondary: primary-secondary instance; Standalone: single-node instance. If this parameter is left empty, instance type is not used as a filter. For more information about instance types, see Product Architecture.
         """
         return pulumi.get(self, "instance_class")
 
@@ -289,7 +289,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -297,7 +297,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> builtins.str:
         """
-        实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
+        Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -305,7 +305,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceShards")
     def instance_shards(self) -> Sequence['outputs.GetInstanceInstanceShardResult']:
         """
-        实例中所有 Shard 分片的详情列表。
+        Detailed list of all shards in the instance.
         """
         return pulumi.get(self, "instance_shards")
 
@@ -313,7 +313,7 @@ class GetInstanceResult:
     @pulumi.getter(name="maintenanceTime")
     def maintenance_time(self) -> builtins.str:
         """
-        实例的可维护时间段，格式为HH:mm-HH:mm（UTC+8）。
+        Maintenance window for the instance, format: HH:mm-HH:mm (UTC+8).
         """
         return pulumi.get(self, "maintenance_time")
 
@@ -321,7 +321,7 @@ class GetInstanceResult:
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> builtins.int:
         """
-        实例当前单分片最大连接数。每分片的默认连接数为10000，您也可以根据业务需要调用ModifyDBInstanceMaxConn接口修改单分片的最大连接数。
+        Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
         """
         return pulumi.get(self, "max_connections")
 
@@ -329,7 +329,7 @@ class GetInstanceResult:
     @pulumi.getter(name="multiAz")
     def multi_az(self) -> builtins.str:
         """
-        设置实例的可用区部署方案。
+        Set the deployment scheme for the instance's availability zone.
         """
         return pulumi.get(self, "multi_az")
 
@@ -337,7 +337,7 @@ class GetInstanceResult:
     @pulumi.getter(name="noAuthMode")
     def no_auth_mode(self) -> builtins.str:
         """
-        为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
+        Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
         """
         return pulumi.get(self, "no_auth_mode")
 
@@ -345,7 +345,7 @@ class GetInstanceResult:
     @pulumi.getter(name="nodeIds")
     def node_ids(self) -> Sequence[builtins.str]:
         """
-        Proxy 和 Server 节点 ID 列表。
+        List of Proxy and Server node IDs.
         """
         return pulumi.get(self, "node_ids")
 
@@ -353,7 +353,7 @@ class GetInstanceResult:
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> builtins.int:
         """
-        每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
+        Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
         """
         return pulumi.get(self, "node_number")
 
@@ -361,7 +361,7 @@ class GetInstanceResult:
     @pulumi.getter(name="parameterGroupId")
     def parameter_group_id(self) -> builtins.str:
         """
-        需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
+        The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version's system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
         """
         return pulumi.get(self, "parameter_group_id")
 
@@ -369,7 +369,7 @@ class GetInstanceResult:
     @pulumi.getter
     def password(self) -> builtins.str:
         """
-        设置默认数据库 default 账号的密码。
+        Set the password for the default account of the default database.
         """
         return pulumi.get(self, "password")
 
@@ -377,7 +377,7 @@ class GetInstanceResult:
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
+        Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
         """
         return pulumi.get(self, "port")
 
@@ -385,7 +385,7 @@ class GetInstanceResult:
     @pulumi.getter(name="privateAddress")
     def private_address(self) -> builtins.str:
         """
-        实例私网连接地址的域名。
+        The domain name for the instance's private network connection address.
         """
         return pulumi.get(self, "private_address")
 
@@ -393,7 +393,7 @@ class GetInstanceResult:
     @pulumi.getter(name="privatePort")
     def private_port(self) -> builtins.str:
         """
-        实例私网连接地址的端口号。
+        Port number for the instance's private network connection address.
         """
         return pulumi.get(self, "private_port")
 
@@ -401,7 +401,7 @@ class GetInstanceResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        实例所属的项目。
+        Project to which the instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -409,7 +409,7 @@ class GetInstanceResult:
     @pulumi.getter(name="purchaseMonths")
     def purchase_months(self) -> builtins.int:
         """
-        购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
+        Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
         """
         return pulumi.get(self, "purchase_months")
 
@@ -417,7 +417,7 @@ class GetInstanceResult:
     @pulumi.getter(name="reserveAdditionalBandwidth")
     def reserve_additional_bandwidth(self) -> builtins.bool:
         """
-        设置是否保留额外带宽
+        Set whether to reserve additional bandwidth
         """
         return pulumi.get(self, "reserve_additional_bandwidth")
 
@@ -425,7 +425,7 @@ class GetInstanceResult:
     @pulumi.getter(name="serviceType")
     def service_type(self) -> builtins.str:
         """
-        实例的服务类型
+        Service type of the instance
         """
         return pulumi.get(self, "service_type")
 
@@ -433,7 +433,7 @@ class GetInstanceResult:
     @pulumi.getter(name="shardCapacity")
     def shard_capacity(self) -> builtins.int:
         """
-        实例中每个分片的内存容量。单位：MiB。
+        Memory capacity of each shard in the instance. Unit: MiB.
         """
         return pulumi.get(self, "shard_capacity")
 
@@ -441,7 +441,7 @@ class GetInstanceResult:
     @pulumi.getter(name="shardNumber")
     def shard_number(self) -> builtins.int:
         """
-        实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
+        Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
         """
         return pulumi.get(self, "shard_number")
 
@@ -449,7 +449,7 @@ class GetInstanceResult:
     @pulumi.getter(name="shardedCluster")
     def sharded_cluster(self) -> builtins.int:
         """
-        是否启用分片集群。取值范围如下：0：不启用。1：启用。
+        Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
         """
         return pulumi.get(self, "sharded_cluster")
 
@@ -457,7 +457,7 @@ class GetInstanceResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        实例的服务类型，取值范围如下：Basic（默认值）：社区版；Enterprise：企业版。
+        Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
         """
         return pulumi.get(self, "status")
 
@@ -465,7 +465,7 @@ class GetInstanceResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
+        Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -473,7 +473,7 @@ class GetInstanceResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetInstanceTagResult']:
         """
-        设置实例的标签列表。
+        Set the tag list for the instance.
         """
         return pulumi.get(self, "tags")
 
@@ -481,7 +481,7 @@ class GetInstanceResult:
     @pulumi.getter(name="viPv6")
     def vi_pv6(self) -> builtins.str:
         """
-        实例私网连接地址所对应的 IPv6 地址。仅当实例使用了 IPv6 地址时才会返回该参数。
+        The IPv6 address corresponding to the instance's private network connection address. This parameter is returned only if the instance uses an IPv6 address.
         """
         return pulumi.get(self, "vi_pv6")
 
@@ -489,7 +489,7 @@ class GetInstanceResult:
     @pulumi.getter
     def vip(self) -> builtins.str:
         """
-        实例私网连接地址所对应的 IPv4 地址。
+        IPv4 address corresponding to the instance's private network connection address.
         """
         return pulumi.get(self, "vip")
 
@@ -497,7 +497,7 @@ class GetInstanceResult:
     @pulumi.getter(name="visitAddrs")
     def visit_addrs(self) -> Sequence['outputs.GetInstanceVisitAddrResult']:
         """
-        连接地址信息。
+        Connection address information.
         """
         return pulumi.get(self, "visit_addrs")
 
@@ -505,7 +505,7 @@ class GetInstanceResult:
     @pulumi.getter(name="vpcAuthMode")
     def vpc_auth_mode(self) -> builtins.str:
         """
-        开启或关闭免密访问功能。取值范围如下：open：开启免密访问；close：关闭免密访问。参数取值不区分大小写。
+        Enable or disable password-free access. Valid values: open: enable password-free access; close: disable password-free access. Values are case-insensitive.
         """
         return pulumi.get(self, "vpc_auth_mode")
 
@@ -513,7 +513,7 @@ class GetInstanceResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
+        Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -521,7 +521,7 @@ class GetInstanceResult:
     @pulumi.getter(name="zoneIds")
     def zone_ids(self) -> Sequence[builtins.str]:
         """
-        实例所在的可用区列表。
+        List of available zones where the instance is located.
         """
         return pulumi.get(self, "zone_ids")
 

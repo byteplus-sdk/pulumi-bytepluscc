@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainCacheHost {
     /**
-     * @return 表示一组共享缓存 HOST 的配置。当前您只能只能创建一个配置。当 Switch 是 true 时，该参数为必填。
+     * @return Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
      * 
      */
     private List<GetDomainCacheHostCacheHostRule> cacheHostRules;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
      * 
      */
     private Boolean switch_;
 
     private GetDomainCacheHost() {}
     /**
-     * @return 表示一组共享缓存 HOST 的配置。当前您只能只能创建一个配置。当 Switch 是 true 时，该参数为必填。
+     * @return Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
      * 
      */
     public List<GetDomainCacheHostCacheHostRule> cacheHostRules() {
         return this.cacheHostRules;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
      * 
      */
     public Boolean switch_() {

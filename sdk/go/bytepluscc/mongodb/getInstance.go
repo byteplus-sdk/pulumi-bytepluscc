@@ -30,95 +30,95 @@ type LookupInstanceArgs struct {
 
 // A collection of values returned by getInstance.
 type LookupInstanceResult struct {
-	// 白名单 ID 列表。新建实例会被绑定到指定白名单。
+	// Allowlist ID list. New instances are bound to the specified allowlist.
 	AllowListIds []string `pulumi:"allowListIds"`
-	// 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+	// Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
 	AutoRenew bool `pulumi:"autoRenew"`
-	// 实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+	// Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
 	ChargeStatus string `pulumi:"chargeStatus"`
-	// 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+	// Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
 	ChargeType string `pulumi:"chargeType"`
-	// 计划关停时间（UTC）。
+	// Scheduled shutdown time (UTC).
 	ClosedTime string `pulumi:"closedTime"`
-	// 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+	// ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
 	ConfigServerNodeSpec string `pulumi:"configServerNodeSpec"`
-	// 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+	// ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
 	ConfigServerStorageSpaceGb int `pulumi:"configServerStorageSpaceGb"`
-	// ConfigServers 的信息列表。
+	// ConfigServer information list.
 	ConfigServers []GetInstanceConfigServer `pulumi:"configServers"`
-	// ConfigServer 的 ID。
+	// ConfigServer ID
 	ConfigServersId string `pulumi:"configServersId"`
-	// 实例创建时间（UTC）。
+	// Instance creation time (UTC).
 	CreatedTime string `pulumi:"createdTime"`
-	// 数据库引擎。取值固定为 MongoDB
+	// Database engine. The value is fixed as MongoDB
 	DbEngine string `pulumi:"dbEngine"`
-	// 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+	// Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
 	DbEngineVersion string `pulumi:"dbEngineVersion"`
-	// 数据库引擎版本的字符串。
+	// Database engine version string
 	DbEngineVersionStr string `pulumi:"dbEngineVersionStr"`
-	// 实例到期时间（UTC）。
+	// Instance expiration time (UTC).
 	ExpiredTime string `pulumi:"expiredTime"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+	// Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
 	InstanceCount int `pulumi:"instanceCount"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId string `pulumi:"instanceId"`
-	// 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+	// Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
 	InstanceName string `pulumi:"instanceName"`
-	// 实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+	// Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
 	InstanceStatus string `pulumi:"instanceStatus"`
-	// MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+	// MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
 	InstanceType string `pulumi:"instanceType"`
-	// Mongos 的信息列表。
+	// Mongos information list
 	Mongos []GetInstanceMongo `pulumi:"mongos"`
-	// Mongos 的 ID。
+	// Mongos ID.
 	MongosId string `pulumi:"mongosId"`
-	// 分片集群中 Mongos 节点的数量。取值范围：2~32。
+	// Number of Mongos nodes in the sharded cluster. Range: 2~32.
 	MongosNodeNumber int `pulumi:"mongosNodeNumber"`
-	// 分片集群中 Mongos 节点的规格码。
+	// Specification code for Mongos nodes in a sharded cluster.
 	MongosNodeSpec string `pulumi:"mongosNodeSpec"`
-	// 添加只读节点信息，包括只读节点所在的可用区和数量。
+	// Add read-only node information, including the availability zone and quantity of read-only nodes.
 	NodeAvailabilityZones []GetInstanceNodeAvailabilityZone `pulumi:"nodeAvailabilityZones"`
-	// 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+	// Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
 	NodeNumber int `pulumi:"nodeNumber"`
-	// 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+	// Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
 	NodeSpec string `pulumi:"nodeSpec"`
-	// 副本集实例中各节点或分片集群 Shard 分片中各节点的信息列表。
+	// Information list for each node in the replica set instance or each node in the sharded cluster shard
 	Nodes []GetInstanceNode `pulumi:"nodes"`
-	// 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+	// Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
 	Period int `pulumi:"period"`
-	// 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+	// Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
 	PeriodUnit string `pulumi:"periodUnit"`
-	// 实例私网连接地址的字符串信息。
+	// String information for the instance's private network connection address.
 	PrivateEndpoint string `pulumi:"privateEndpoint"`
-	// 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+	// Select the project for the instance. If left blank, the new instance will be added to the default project.
 	ProjectName string `pulumi:"projectName"`
-	// 实例的只读节点数量。
+	// Number of read-only nodes in the instance
 	ReadOnlyNodeNumber int `pulumi:"readOnlyNodeNumber"`
-	// 实例的计划回收时间（UTC）。
+	// Scheduled recycle time for the instance (UTC)
 	ReclaimTime string `pulumi:"reclaimTime"`
-	// 分片集群中 Shard 分片的数量。取值范围：2~32。
+	// Number of shards in the sharded cluster. Range: 2–32.
 	ShardNumber int `pulumi:"shardNumber"`
-	// Shards 的信息列表。
+	// Shard information list
 	Shards []GetInstanceShard `pulumi:"shards"`
-	// 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+	// Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
 	StorageSpaceGb int `pulumi:"storageSpaceGb"`
-	// 实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+	// Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
 	StorageType string `pulumi:"storageType"`
-	// 子网 ID。
+	// Subnet ID.
 	SubnetId string `pulumi:"subnetId"`
-	// 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+	// Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
 	SuperAccountName string `pulumi:"superAccountName"`
-	// root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
+	// Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
 	SuperAccountPassword string `pulumi:"superAccountPassword"`
-	// MongoDB实例的标签信息
+	// MongoDB instance tag information
 	Tags []GetInstanceTag `pulumi:"tags"`
-	// 实例的更新时间（UTC）。
+	// Instance update time (UTC).
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 私有网络 ID。
+	// Private network ID.
 	VpcId string `pulumi:"vpcId"`
-	// 实例所在可用区的 ID。
+	// Availability zone ID where the instance is located.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -156,72 +156,72 @@ func (o LookupInstanceResultOutput) ToLookupInstanceResultOutputWithContext(ctx 
 	return o
 }
 
-// 白名单 ID 列表。新建实例会被绑定到指定白名单。
+// Allowlist ID list. New instances are bound to the specified allowlist.
 func (o LookupInstanceResultOutput) AllowListIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []string { return v.AllowListIds }).(pulumi.StringArrayOutput)
 }
 
-// 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+// Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
 func (o LookupInstanceResultOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupInstanceResult) bool { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// 实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+// Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
 func (o LookupInstanceResultOutput) ChargeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ChargeStatus }).(pulumi.StringOutput)
 }
 
-// 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+// Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
 func (o LookupInstanceResultOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 计划关停时间（UTC）。
+// Scheduled shutdown time (UTC).
 func (o LookupInstanceResultOutput) ClosedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ClosedTime }).(pulumi.StringOutput)
 }
 
-// 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+// ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
 func (o LookupInstanceResultOutput) ConfigServerNodeSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ConfigServerNodeSpec }).(pulumi.StringOutput)
 }
 
-// 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+// ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
 func (o LookupInstanceResultOutput) ConfigServerStorageSpaceGb() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.ConfigServerStorageSpaceGb }).(pulumi.IntOutput)
 }
 
-// ConfigServers 的信息列表。
+// ConfigServer information list.
 func (o LookupInstanceResultOutput) ConfigServers() GetInstanceConfigServerArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceConfigServer { return v.ConfigServers }).(GetInstanceConfigServerArrayOutput)
 }
 
-// ConfigServer 的 ID。
+// ConfigServer ID
 func (o LookupInstanceResultOutput) ConfigServersId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ConfigServersId }).(pulumi.StringOutput)
 }
 
-// 实例创建时间（UTC）。
+// Instance creation time (UTC).
 func (o LookupInstanceResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 数据库引擎。取值固定为 MongoDB
+// Database engine. The value is fixed as MongoDB
 func (o LookupInstanceResultOutput) DbEngine() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.DbEngine }).(pulumi.StringOutput)
 }
 
-// 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+// Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
 func (o LookupInstanceResultOutput) DbEngineVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.DbEngineVersion }).(pulumi.StringOutput)
 }
 
-// 数据库引擎版本的字符串。
+// Database engine version string
 func (o LookupInstanceResultOutput) DbEngineVersionStr() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.DbEngineVersionStr }).(pulumi.StringOutput)
 }
 
-// 实例到期时间（UTC）。
+// Instance expiration time (UTC).
 func (o LookupInstanceResultOutput) ExpiredTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ExpiredTime }).(pulumi.StringOutput)
 }
@@ -231,152 +231,152 @@ func (o LookupInstanceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+// Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
 func (o LookupInstanceResultOutput) InstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.InstanceCount }).(pulumi.IntOutput)
 }
 
-// 实例 ID。
+// Instance ID.
 func (o LookupInstanceResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+// Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
 func (o LookupInstanceResultOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+// Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
 func (o LookupInstanceResultOutput) InstanceStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceStatus }).(pulumi.StringOutput)
 }
 
-// MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+// MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
 func (o LookupInstanceResultOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceType }).(pulumi.StringOutput)
 }
 
-// Mongos 的信息列表。
+// Mongos information list
 func (o LookupInstanceResultOutput) Mongos() GetInstanceMongoArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceMongo { return v.Mongos }).(GetInstanceMongoArrayOutput)
 }
 
-// Mongos 的 ID。
+// Mongos ID.
 func (o LookupInstanceResultOutput) MongosId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.MongosId }).(pulumi.StringOutput)
 }
 
-// 分片集群中 Mongos 节点的数量。取值范围：2~32。
+// Number of Mongos nodes in the sharded cluster. Range: 2~32.
 func (o LookupInstanceResultOutput) MongosNodeNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.MongosNodeNumber }).(pulumi.IntOutput)
 }
 
-// 分片集群中 Mongos 节点的规格码。
+// Specification code for Mongos nodes in a sharded cluster.
 func (o LookupInstanceResultOutput) MongosNodeSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.MongosNodeSpec }).(pulumi.StringOutput)
 }
 
-// 添加只读节点信息，包括只读节点所在的可用区和数量。
+// Add read-only node information, including the availability zone and quantity of read-only nodes.
 func (o LookupInstanceResultOutput) NodeAvailabilityZones() GetInstanceNodeAvailabilityZoneArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceNodeAvailabilityZone { return v.NodeAvailabilityZones }).(GetInstanceNodeAvailabilityZoneArrayOutput)
 }
 
-// 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+// Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
 func (o LookupInstanceResultOutput) NodeNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.NodeNumber }).(pulumi.IntOutput)
 }
 
-// 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+// Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
 func (o LookupInstanceResultOutput) NodeSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.NodeSpec }).(pulumi.StringOutput)
 }
 
-// 副本集实例中各节点或分片集群 Shard 分片中各节点的信息列表。
+// Information list for each node in the replica set instance or each node in the sharded cluster shard
 func (o LookupInstanceResultOutput) Nodes() GetInstanceNodeArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceNode { return v.Nodes }).(GetInstanceNodeArrayOutput)
 }
 
-// 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+// Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
 func (o LookupInstanceResultOutput) Period() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.Period }).(pulumi.IntOutput)
 }
 
-// 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+// Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
 func (o LookupInstanceResultOutput) PeriodUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.PeriodUnit }).(pulumi.StringOutput)
 }
 
-// 实例私网连接地址的字符串信息。
+// String information for the instance's private network connection address.
 func (o LookupInstanceResultOutput) PrivateEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.PrivateEndpoint }).(pulumi.StringOutput)
 }
 
-// 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+// Select the project for the instance. If left blank, the new instance will be added to the default project.
 func (o LookupInstanceResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 实例的只读节点数量。
+// Number of read-only nodes in the instance
 func (o LookupInstanceResultOutput) ReadOnlyNodeNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.ReadOnlyNodeNumber }).(pulumi.IntOutput)
 }
 
-// 实例的计划回收时间（UTC）。
+// Scheduled recycle time for the instance (UTC)
 func (o LookupInstanceResultOutput) ReclaimTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ReclaimTime }).(pulumi.StringOutput)
 }
 
-// 分片集群中 Shard 分片的数量。取值范围：2~32。
+// Number of shards in the sharded cluster. Range: 2–32.
 func (o LookupInstanceResultOutput) ShardNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.ShardNumber }).(pulumi.IntOutput)
 }
 
-// Shards 的信息列表。
+// Shard information list
 func (o LookupInstanceResultOutput) Shards() GetInstanceShardArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceShard { return v.Shards }).(GetInstanceShardArrayOutput)
 }
 
-// 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+// Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
 func (o LookupInstanceResultOutput) StorageSpaceGb() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.StorageSpaceGb }).(pulumi.IntOutput)
 }
 
-// 实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+// Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
 func (o LookupInstanceResultOutput) StorageType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.StorageType }).(pulumi.StringOutput)
 }
 
-// 子网 ID。
+// Subnet ID.
 func (o LookupInstanceResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+// Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
 func (o LookupInstanceResultOutput) SuperAccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.SuperAccountName }).(pulumi.StringOutput)
 }
 
-// root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
+// Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
 func (o LookupInstanceResultOutput) SuperAccountPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.SuperAccountPassword }).(pulumi.StringOutput)
 }
 
-// MongoDB实例的标签信息
+// MongoDB instance tag information
 func (o LookupInstanceResultOutput) Tags() GetInstanceTagArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceTag { return v.Tags }).(GetInstanceTagArrayOutput)
 }
 
-// 实例的更新时间（UTC）。
+// Instance update time (UTC).
 func (o LookupInstanceResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 私有网络 ID。
+// Private network ID.
 func (o LookupInstanceResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 实例所在可用区的 ID。
+// Availability zone ID where the instance is located.
 func (o LookupInstanceResultOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ZoneId }).(pulumi.StringOutput)
 }

@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleRewriteConfig {
     /**
-     * @return 重写路径。
+     * @return Rewrite path.
      * 
      */
     private @Nullable String rewritePath;
 
     private RuleRewriteConfig() {}
     /**
-     * @return 重写路径。
+     * @return Rewrite path.
      * 
      */
     public Optional<String> rewritePath() {

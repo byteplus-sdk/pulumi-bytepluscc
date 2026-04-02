@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq.Outputs
     public sealed class GetInstanceTagResult
     {
         /// <summary>
-        /// 标签的键。
+        /// Tag key.
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// 标签的值。
+        /// Tag value.
         /// </summary>
         public readonly string Value;
 

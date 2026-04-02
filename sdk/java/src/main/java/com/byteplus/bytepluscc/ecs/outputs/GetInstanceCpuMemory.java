@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceCpuMemory {
     /**
-     * @return 实例的核数。
+     * @return Number of instance cores.
      * 
      */
     private Integer coreCount;
     /**
-     * @return 实例的CPU数量。
+     * @return Number of vCPUs for the instance.
      * 
      */
     private Integer cpuNumber;
     /**
-     * @return 实例的内存大小，单位MB。
+     * @return Instance memory size (MB).
      * 
      */
     private Integer memorySize;
     /**
-     * @return 实例的每核线程数。
+     * @return Threads per core for the instance.
      * 
      */
     private Integer threadsPerCore;
 
     private GetInstanceCpuMemory() {}
     /**
-     * @return 实例的核数。
+     * @return Number of instance cores.
      * 
      */
     public Integer coreCount() {
         return this.coreCount;
     }
     /**
-     * @return 实例的CPU数量。
+     * @return Number of vCPUs for the instance.
      * 
      */
     public Integer cpuNumber() {
         return this.cpuNumber;
     }
     /**
-     * @return 实例的内存大小，单位MB。
+     * @return Instance memory size (MB).
      * 
      */
     public Integer memorySize() {
         return this.memorySize;
     }
     /**
-     * @return 实例的每核线程数。
+     * @return Threads per core for the instance.
      * 
      */
     public Integer threadsPerCore() {

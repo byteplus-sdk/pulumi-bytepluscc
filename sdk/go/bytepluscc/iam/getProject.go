@@ -30,27 +30,27 @@ type LookupProjectArgs struct {
 
 // A collection of values returned by getProject.
 type LookupProjectResult struct {
-	// 账号ID
+	// Account ID
 	AccountId int `pulumi:"accountId"`
-	// 创建时间
+	// Creation Time
 	CreatedTime string `pulumi:"createdTime"`
-	// 描述
+	// Description
 	Description string `pulumi:"description"`
-	// 展示名
+	// Display Name
 	DisplayName string `pulumi:"displayName"`
-	// 是否可见
+	// Visible
 	HasPermission bool `pulumi:"hasPermission"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 父项目名称
+	// Parent Project Name
 	ParentProjectName string `pulumi:"parentProjectName"`
-	// 项目路径
+	// Project Path
 	Path string `pulumi:"path"`
-	// 项目名称
+	// Project Name
 	ProjectName string `pulumi:"projectName"`
-	// 启用状态
+	// Enabled Status
 	Status string `pulumi:"status"`
-	// 更新时间
+	// Update Time
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -88,27 +88,27 @@ func (o LookupProjectResultOutput) ToLookupProjectResultOutputWithContext(ctx co
 	return o
 }
 
-// 账号ID
+// Account ID
 func (o LookupProjectResultOutput) AccountId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupProjectResult) int { return v.AccountId }).(pulumi.IntOutput)
 }
 
-// 创建时间
+// Creation Time
 func (o LookupProjectResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 描述
+// Description
 func (o LookupProjectResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 展示名
+// Display Name
 func (o LookupProjectResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 是否可见
+// Visible
 func (o LookupProjectResultOutput) HasPermission() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupProjectResult) bool { return v.HasPermission }).(pulumi.BoolOutput)
 }
@@ -118,27 +118,27 @@ func (o LookupProjectResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 父项目名称
+// Parent Project Name
 func (o LookupProjectResultOutput) ParentProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.ParentProjectName }).(pulumi.StringOutput)
 }
 
-// 项目路径
+// Project Path
 func (o LookupProjectResultOutput) Path() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.Path }).(pulumi.StringOutput)
 }
 
-// 项目名称
+// Project Name
 func (o LookupProjectResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 启用状态
+// Enabled Status
 func (o LookupProjectResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 更新时间
+// Update Time
 func (o LookupProjectResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

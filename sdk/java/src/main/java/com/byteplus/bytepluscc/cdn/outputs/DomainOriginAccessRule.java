@@ -14,62 +14,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainOriginAccessRule {
     /**
-     * @return 表示用户请求头的 Origin 头部为空（&#34;&#34;）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+     * @return Specifies whether requests are allowed when the Origin header in the user request is empty (&#34;&#34;). The parameter values are: true: allow; false: do not allow. The default value is false.
      * 
      */
     private @Nullable Boolean allowEmpty;
     /**
-     * @return 表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
+     * @return Indicates whether Origin is case sensitive. This parameter has the following values: true: Origin is case insensitive; false: Origin is case sensitive. The default value is true.
      * 
      */
     private @Nullable Boolean ignoreCase;
     /**
-     * @return RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+     * @return The address list corresponding to RuleType. When Switch is true, this parameter is required. You can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domain names. Domain names can be second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 100 addresses. When entering domain names, you do not need to include http:// or https://. The value length cannot exceed 3,000 characters.
      * 
      */
     private @Nullable List<String> origins;
     /**
-     * @return Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+     * @return Origin list configuration type. When Switch is true, this parameter is required. The parameter has the following values: allow: indicates allowlist. deny: indicates denylist.
      * 
      */
     private @Nullable String ruleType;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
      * 
      */
     private @Nullable Boolean switch_;
 
     private DomainOriginAccessRule() {}
     /**
-     * @return 表示用户请求头的 Origin 头部为空（&#34;&#34;）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+     * @return Specifies whether requests are allowed when the Origin header in the user request is empty (&#34;&#34;). The parameter values are: true: allow; false: do not allow. The default value is false.
      * 
      */
     public Optional<Boolean> allowEmpty() {
         return Optional.ofNullable(this.allowEmpty);
     }
     /**
-     * @return 表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
+     * @return Indicates whether Origin is case sensitive. This parameter has the following values: true: Origin is case insensitive; false: Origin is case sensitive. The default value is true.
      * 
      */
     public Optional<Boolean> ignoreCase() {
         return Optional.ofNullable(this.ignoreCase);
     }
     /**
-     * @return RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+     * @return The address list corresponding to RuleType. When Switch is true, this parameter is required. You can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domain names. Domain names can be second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 100 addresses. When entering domain names, you do not need to include http:// or https://. The value length cannot exceed 3,000 characters.
      * 
      */
     public List<String> origins() {
         return this.origins == null ? List.of() : this.origins;
     }
     /**
-     * @return Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+     * @return Origin list configuration type. When Switch is true, this parameter is required. The parameter has the following values: allow: indicates allowlist. deny: indicates denylist.
      * 
      */
     public Optional<String> ruleType() {
         return Optional.ofNullable(this.ruleType);
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
      * 
      */
     public Optional<Boolean> switch_() {

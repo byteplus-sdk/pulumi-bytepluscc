@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation {
     /**
-     * @return 接入点（PoP）的唯一ID。
+     * @return Unique ID of the access point (PoP).
      * 
      */
     private String popId;
     /**
-     * @return 接入点（PoP）的名称。
+     * @return Name of the access point (PoP).
      * 
      */
     private String popName;
 
     private GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation() {}
     /**
-     * @return 接入点（PoP）的唯一ID。
+     * @return Unique ID of the access point (PoP).
      * 
      */
     public String popId() {
         return this.popId;
     }
     /**
-     * @return 接入点（PoP）的名称。
+     * @return Name of the access point (PoP).
      * 
      */
     public String popName() {

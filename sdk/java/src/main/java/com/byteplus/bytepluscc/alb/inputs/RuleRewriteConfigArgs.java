@@ -16,14 +16,14 @@ public final class RuleRewriteConfigArgs extends com.pulumi.resources.ResourceAr
     public static final RuleRewriteConfigArgs Empty = new RuleRewriteConfigArgs();
 
     /**
-     * 重写路径。
+     * Rewrite path.
      * 
      */
     @Import(name="rewritePath")
     private @Nullable Output<String> rewritePath;
 
     /**
-     * @return 重写路径。
+     * @return Rewrite path.
      * 
      */
     public Optional<Output<String>> rewritePath() {
@@ -55,7 +55,7 @@ public final class RuleRewriteConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param rewritePath 重写路径。
+         * @param rewritePath Rewrite path.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class RuleRewriteConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param rewritePath 重写路径。
+         * @param rewritePath Rewrite path.
          * 
          * @return builder
          * 

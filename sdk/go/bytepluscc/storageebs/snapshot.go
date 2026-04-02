@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 快照是一种备份方式，每个快照都是云盘数据在某个时间点的备份文件。当数据丢失或故障时，您可以通过快照回滚云盘数据，找回丢失的数据。
+// A snapshot is a backup method. Each snapshot is a backup file of cloud disk data at a specific point in time. When data is lost or a failure occurs, you can roll back cloud disk data using the snapshot to recover lost data.
 //
 // ## Example Usage
 //
@@ -57,46 +57,46 @@ import (
 type Snapshot struct {
 	pulumi.CustomResourceState
 
-	// 快照创建时间。
+	// Snapshot creation time.
 	CreationTime pulumi.StringOutput `pulumi:"creationTime"`
-	// 快照描述信息，默认为空，长度限制为0~255个字符。
+	// Snapshot description. Default is empty. Length must be between 0 and 255 characters.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 镜像ID
+	// Image ID
 	ImageId pulumi.StringOutput `pulumi:"imageId"`
-	// 快照是否开启极速可用能力，取值说明如下：true：已开启极速可用能力。false：未开启极速可用能力。
+	// Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
 	InstantAccess pulumi.BoolOutput `pulumi:"instantAccess"`
-	// 快照转储进度。
+	// Snapshot dump progress.
 	Progress pulumi.IntOutput `pulumi:"progress"`
-	// 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+	// Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+	// Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
 	RetentionDays pulumi.IntOutput `pulumi:"retentionDays"`
-	// 快照是否共享。
+	// Whether the snapshot is shared.
 	Shared pulumi.BoolOutput `pulumi:"shared"`
-	// 快照一致性组ID。
+	// Snapshot consistency group ID.
 	SnapshotGroupId pulumi.StringOutput `pulumi:"snapshotGroupId"`
-	// 快照ID。
+	// Snapshot ID.
 	SnapshotId pulumi.StringOutput `pulumi:"snapshotId"`
-	// 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+	// Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with 'auto'.
 	SnapshotName pulumi.StringOutput `pulumi:"snapshotName"`
-	// 快照类型，取值说明如下：user：查询手动快照。auto：查询自动快照。share：查询共享快照。默认查询所有快照。
+	// Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
 	SnapshotType pulumi.StringOutput `pulumi:"snapshotType"`
-	// 快照状态，取值说明如下：available：可用。creating：创建中。rollbacking：回滚中。deleted：已删除。failed：错误。
+	// Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
 	Status pulumi.StringOutput    `pulumi:"status"`
 	Tags   SnapshotTagArrayOutput `pulumi:"tags"`
-	// 快照相关的云盘ID。
+	// Cloud disk ID associated with the snapshot.
 	VolumeId pulumi.StringOutput `pulumi:"volumeId"`
-	// 云盘种类，取值说明如下：system：系统盘。data：数据盘。
+	// Cloud disk category. Value options: system: system disk. data: data disk.
 	VolumeKind pulumi.StringOutput `pulumi:"volumeKind"`
-	// 云盘名称。
+	// Cloud disk name.
 	VolumeName pulumi.StringOutput `pulumi:"volumeName"`
-	// 云盘大小，单位为GiB。
+	// Cloud disk size, in GiB.
 	VolumeSize pulumi.IntOutput `pulumi:"volumeSize"`
-	// 云盘状态，取值说明如下：available：可用, attaching：挂载中, attached：已挂载, detaching：卸载中, creating：创建中, deleting：删除中, error：错误, extending：扩容中, ""：云盘被删除。
+	// Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, "": cloud disk deleted.
 	VolumeStatus pulumi.StringOutput `pulumi:"volumeStatus"`
-	// 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL：极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘
+	// Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
 	VolumeType pulumi.StringOutput `pulumi:"volumeType"`
-	// 快照所在的可用区ID。
+	// Availability zone ID where the snapshot is located.
 	ZoneId pulumi.StringOutput `pulumi:"zoneId"`
 }
 
@@ -136,90 +136,90 @@ func GetSnapshot(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Snapshot resources.
 type snapshotState struct {
-	// 快照创建时间。
+	// Snapshot creation time.
 	CreationTime *string `pulumi:"creationTime"`
-	// 快照描述信息，默认为空，长度限制为0~255个字符。
+	// Snapshot description. Default is empty. Length must be between 0 and 255 characters.
 	Description *string `pulumi:"description"`
-	// 镜像ID
+	// Image ID
 	ImageId *string `pulumi:"imageId"`
-	// 快照是否开启极速可用能力，取值说明如下：true：已开启极速可用能力。false：未开启极速可用能力。
+	// Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
 	InstantAccess *bool `pulumi:"instantAccess"`
-	// 快照转储进度。
+	// Snapshot dump progress.
 	Progress *int `pulumi:"progress"`
-	// 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+	// Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
 	ProjectName *string `pulumi:"projectName"`
-	// 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+	// Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
 	RetentionDays *int `pulumi:"retentionDays"`
-	// 快照是否共享。
+	// Whether the snapshot is shared.
 	Shared *bool `pulumi:"shared"`
-	// 快照一致性组ID。
+	// Snapshot consistency group ID.
 	SnapshotGroupId *string `pulumi:"snapshotGroupId"`
-	// 快照ID。
+	// Snapshot ID.
 	SnapshotId *string `pulumi:"snapshotId"`
-	// 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+	// Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with 'auto'.
 	SnapshotName *string `pulumi:"snapshotName"`
-	// 快照类型，取值说明如下：user：查询手动快照。auto：查询自动快照。share：查询共享快照。默认查询所有快照。
+	// Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
 	SnapshotType *string `pulumi:"snapshotType"`
-	// 快照状态，取值说明如下：available：可用。creating：创建中。rollbacking：回滚中。deleted：已删除。failed：错误。
+	// Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
 	Status *string       `pulumi:"status"`
 	Tags   []SnapshotTag `pulumi:"tags"`
-	// 快照相关的云盘ID。
+	// Cloud disk ID associated with the snapshot.
 	VolumeId *string `pulumi:"volumeId"`
-	// 云盘种类，取值说明如下：system：系统盘。data：数据盘。
+	// Cloud disk category. Value options: system: system disk. data: data disk.
 	VolumeKind *string `pulumi:"volumeKind"`
-	// 云盘名称。
+	// Cloud disk name.
 	VolumeName *string `pulumi:"volumeName"`
-	// 云盘大小，单位为GiB。
+	// Cloud disk size, in GiB.
 	VolumeSize *int `pulumi:"volumeSize"`
-	// 云盘状态，取值说明如下：available：可用, attaching：挂载中, attached：已挂载, detaching：卸载中, creating：创建中, deleting：删除中, error：错误, extending：扩容中, ""：云盘被删除。
+	// Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, "": cloud disk deleted.
 	VolumeStatus *string `pulumi:"volumeStatus"`
-	// 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL：极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘
+	// Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
 	VolumeType *string `pulumi:"volumeType"`
-	// 快照所在的可用区ID。
+	// Availability zone ID where the snapshot is located.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
 type SnapshotState struct {
-	// 快照创建时间。
+	// Snapshot creation time.
 	CreationTime pulumi.StringPtrInput
-	// 快照描述信息，默认为空，长度限制为0~255个字符。
+	// Snapshot description. Default is empty. Length must be between 0 and 255 characters.
 	Description pulumi.StringPtrInput
-	// 镜像ID
+	// Image ID
 	ImageId pulumi.StringPtrInput
-	// 快照是否开启极速可用能力，取值说明如下：true：已开启极速可用能力。false：未开启极速可用能力。
+	// Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
 	InstantAccess pulumi.BoolPtrInput
-	// 快照转储进度。
+	// Snapshot dump progress.
 	Progress pulumi.IntPtrInput
-	// 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+	// Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
 	ProjectName pulumi.StringPtrInput
-	// 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+	// Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
 	RetentionDays pulumi.IntPtrInput
-	// 快照是否共享。
+	// Whether the snapshot is shared.
 	Shared pulumi.BoolPtrInput
-	// 快照一致性组ID。
+	// Snapshot consistency group ID.
 	SnapshotGroupId pulumi.StringPtrInput
-	// 快照ID。
+	// Snapshot ID.
 	SnapshotId pulumi.StringPtrInput
-	// 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+	// Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with 'auto'.
 	SnapshotName pulumi.StringPtrInput
-	// 快照类型，取值说明如下：user：查询手动快照。auto：查询自动快照。share：查询共享快照。默认查询所有快照。
+	// Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
 	SnapshotType pulumi.StringPtrInput
-	// 快照状态，取值说明如下：available：可用。creating：创建中。rollbacking：回滚中。deleted：已删除。failed：错误。
+	// Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
 	Status pulumi.StringPtrInput
 	Tags   SnapshotTagArrayInput
-	// 快照相关的云盘ID。
+	// Cloud disk ID associated with the snapshot.
 	VolumeId pulumi.StringPtrInput
-	// 云盘种类，取值说明如下：system：系统盘。data：数据盘。
+	// Cloud disk category. Value options: system: system disk. data: data disk.
 	VolumeKind pulumi.StringPtrInput
-	// 云盘名称。
+	// Cloud disk name.
 	VolumeName pulumi.StringPtrInput
-	// 云盘大小，单位为GiB。
+	// Cloud disk size, in GiB.
 	VolumeSize pulumi.IntPtrInput
-	// 云盘状态，取值说明如下：available：可用, attaching：挂载中, attached：已挂载, detaching：卸载中, creating：创建中, deleting：删除中, error：错误, extending：扩容中, ""：云盘被删除。
+	// Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, "": cloud disk deleted.
 	VolumeStatus pulumi.StringPtrInput
-	// 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL：极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘
+	// Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
 	VolumeType pulumi.StringPtrInput
-	// 快照所在的可用区ID。
+	// Availability zone ID where the snapshot is located.
 	ZoneId pulumi.StringPtrInput
 }
 
@@ -228,31 +228,31 @@ func (SnapshotState) ElementType() reflect.Type {
 }
 
 type snapshotArgs struct {
-	// 快照描述信息，默认为空，长度限制为0~255个字符。
+	// Snapshot description. Default is empty. Length must be between 0 and 255 characters.
 	Description *string `pulumi:"description"`
-	// 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+	// Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
 	ProjectName *string `pulumi:"projectName"`
-	// 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+	// Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
 	RetentionDays *int `pulumi:"retentionDays"`
-	// 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+	// Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with 'auto'.
 	SnapshotName string        `pulumi:"snapshotName"`
 	Tags         []SnapshotTag `pulumi:"tags"`
-	// 快照相关的云盘ID。
+	// Cloud disk ID associated with the snapshot.
 	VolumeId string `pulumi:"volumeId"`
 }
 
 // The set of arguments for constructing a Snapshot resource.
 type SnapshotArgs struct {
-	// 快照描述信息，默认为空，长度限制为0~255个字符。
+	// Snapshot description. Default is empty. Length must be between 0 and 255 characters.
 	Description pulumi.StringPtrInput
-	// 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+	// Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
 	ProjectName pulumi.StringPtrInput
-	// 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+	// Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
 	RetentionDays pulumi.IntPtrInput
-	// 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+	// Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with 'auto'.
 	SnapshotName pulumi.StringInput
 	Tags         SnapshotTagArrayInput
-	// 快照相关的云盘ID。
+	// Cloud disk ID associated with the snapshot.
 	VolumeId pulumi.StringInput
 }
 
@@ -343,67 +343,67 @@ func (o SnapshotOutput) ToSnapshotOutputWithContext(ctx context.Context) Snapsho
 	return o
 }
 
-// 快照创建时间。
+// Snapshot creation time.
 func (o SnapshotOutput) CreationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.CreationTime }).(pulumi.StringOutput)
 }
 
-// 快照描述信息，默认为空，长度限制为0~255个字符。
+// Snapshot description. Default is empty. Length must be between 0 and 255 characters.
 func (o SnapshotOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 镜像ID
+// Image ID
 func (o SnapshotOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// 快照是否开启极速可用能力，取值说明如下：true：已开启极速可用能力。false：未开启极速可用能力。
+// Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
 func (o SnapshotOutput) InstantAccess() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.BoolOutput { return v.InstantAccess }).(pulumi.BoolOutput)
 }
 
-// 快照转储进度。
+// Snapshot dump progress.
 func (o SnapshotOutput) Progress() pulumi.IntOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.IntOutput { return v.Progress }).(pulumi.IntOutput)
 }
 
-// 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+// Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
 func (o SnapshotOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+// Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
 func (o SnapshotOutput) RetentionDays() pulumi.IntOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.IntOutput { return v.RetentionDays }).(pulumi.IntOutput)
 }
 
-// 快照是否共享。
+// Whether the snapshot is shared.
 func (o SnapshotOutput) Shared() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.BoolOutput { return v.Shared }).(pulumi.BoolOutput)
 }
 
-// 快照一致性组ID。
+// Snapshot consistency group ID.
 func (o SnapshotOutput) SnapshotGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.SnapshotGroupId }).(pulumi.StringOutput)
 }
 
-// 快照ID。
+// Snapshot ID.
 func (o SnapshotOutput) SnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.SnapshotId }).(pulumi.StringOutput)
 }
 
-// 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+// Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with 'auto'.
 func (o SnapshotOutput) SnapshotName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.SnapshotName }).(pulumi.StringOutput)
 }
 
-// 快照类型，取值说明如下：user：查询手动快照。auto：查询自动快照。share：查询共享快照。默认查询所有快照。
+// Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
 func (o SnapshotOutput) SnapshotType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.SnapshotType }).(pulumi.StringOutput)
 }
 
-// 快照状态，取值说明如下：available：可用。creating：创建中。rollbacking：回滚中。deleted：已删除。failed：错误。
+// Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
 func (o SnapshotOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -412,37 +412,37 @@ func (o SnapshotOutput) Tags() SnapshotTagArrayOutput {
 	return o.ApplyT(func(v *Snapshot) SnapshotTagArrayOutput { return v.Tags }).(SnapshotTagArrayOutput)
 }
 
-// 快照相关的云盘ID。
+// Cloud disk ID associated with the snapshot.
 func (o SnapshotOutput) VolumeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.VolumeId }).(pulumi.StringOutput)
 }
 
-// 云盘种类，取值说明如下：system：系统盘。data：数据盘。
+// Cloud disk category. Value options: system: system disk. data: data disk.
 func (o SnapshotOutput) VolumeKind() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.VolumeKind }).(pulumi.StringOutput)
 }
 
-// 云盘名称。
+// Cloud disk name.
 func (o SnapshotOutput) VolumeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.VolumeName }).(pulumi.StringOutput)
 }
 
-// 云盘大小，单位为GiB。
+// Cloud disk size, in GiB.
 func (o SnapshotOutput) VolumeSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.IntOutput { return v.VolumeSize }).(pulumi.IntOutput)
 }
 
-// 云盘状态，取值说明如下：available：可用, attaching：挂载中, attached：已挂载, detaching：卸载中, creating：创建中, deleting：删除中, error：错误, extending：扩容中, ""：云盘被删除。
+// Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, "": cloud disk deleted.
 func (o SnapshotOutput) VolumeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.VolumeStatus }).(pulumi.StringOutput)
 }
 
-// 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL：极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘
+// Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
 func (o SnapshotOutput) VolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.VolumeType }).(pulumi.StringOutput)
 }
 
-// 快照所在的可用区ID。
+// Availability zone ID where the snapshot is located.
 func (o SnapshotOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.ZoneId }).(pulumi.StringOutput)
 }

@@ -18,17 +18,17 @@ public final class GetOrganizationResult {
      */
     private String id;
     /**
-     * @return 组织详情
+     * @return Organization Details
      * 
      */
     private GetOrganizationOrganization organization;
     /**
-     * @return 组织ID
+     * @return Organization ID
      * 
      */
     private String organizationId;
     /**
-     * @return 管理员详情
+     * @return Administrator Details
      * 
      */
     private GetOrganizationOwner owner;
@@ -42,21 +42,21 @@ public final class GetOrganizationResult {
         return this.id;
     }
     /**
-     * @return 组织详情
+     * @return Organization Details
      * 
      */
     public GetOrganizationOrganization organization() {
         return this.organization;
     }
     /**
-     * @return 组织ID
+     * @return Organization ID
      * 
      */
     public String organizationId() {
         return this.organizationId;
     }
     /**
-     * @return 管理员详情
+     * @return Administrator Details
      * 
      */
     public GetOrganizationOwner owner() {

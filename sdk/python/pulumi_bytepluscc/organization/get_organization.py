@@ -54,7 +54,7 @@ class GetOrganizationResult:
     @pulumi.getter
     def organization(self) -> 'outputs.GetOrganizationOrganizationResult':
         """
-        组织详情
+        Organization Details
         """
         return pulumi.get(self, "organization")
 
@@ -62,7 +62,7 @@ class GetOrganizationResult:
     @pulumi.getter(name="organizationId")
     def organization_id(self) -> builtins.str:
         """
-        组织ID
+        Organization ID
         """
         return pulumi.get(self, "organization_id")
 
@@ -70,7 +70,7 @@ class GetOrganizationResult:
     @pulumi.getter
     def owner(self) -> 'outputs.GetOrganizationOwnerResult':
         """
-        管理员详情
+        Administrator Details
         """
         return pulumi.get(self, "owner")
 

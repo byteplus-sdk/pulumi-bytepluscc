@@ -14,122 +14,122 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceEndpointsOverlay {
     /**
-     * @return 域名映射地址。
+     * @return Domain mapping address
      * 
      */
     private @Nullable String address;
     /**
-     * @return 实例绑定的EIP的ID。
+     * @return ID of the EIP bound to the instance
      * 
      */
     private @Nullable String eipId;
     /**
-     * @return 私网Plain接入点。
+     * @return Private network Plain endpoint
      * 
      */
     private @Nullable String plain;
     /**
-     * @return 普通接入点端口。
+     * @return Standard endpoint port
      * 
      */
     private @Nullable Integer plainPort;
     /**
-     * @return 私网SASL认证接入点。
+     * @return Private network SASL authentication endpoint
      * 
      */
     private @Nullable String sasl;
     /**
-     * @return 认证接入点端口。
+     * @return Authentication endpoint port
      * 
      */
     private @Nullable Integer saslPort;
     /**
-     * @return 加密接入点。
+     * @return Encrypted endpoint
      * 
      */
     private @Nullable String ssl;
     /**
-     * @return 加密接入点端口。
+     * @return Encrypted endpoint port
      * 
      */
     private @Nullable Integer sslPort;
     /**
-     * @return 接入点状态。
+     * @return Endpoint status
      * 
      */
     private @Nullable String status;
     /**
-     * @return 售卖区网络关联的VPC ID列表。
+     * @return List of VPC IDs associated with the sales zone network
      * 
      */
     private @Nullable List<String> vpcIds;
 
     private InstanceEndpointsOverlay() {}
     /**
-     * @return 域名映射地址。
+     * @return Domain mapping address
      * 
      */
     public Optional<String> address() {
         return Optional.ofNullable(this.address);
     }
     /**
-     * @return 实例绑定的EIP的ID。
+     * @return ID of the EIP bound to the instance
      * 
      */
     public Optional<String> eipId() {
         return Optional.ofNullable(this.eipId);
     }
     /**
-     * @return 私网Plain接入点。
+     * @return Private network Plain endpoint
      * 
      */
     public Optional<String> plain() {
         return Optional.ofNullable(this.plain);
     }
     /**
-     * @return 普通接入点端口。
+     * @return Standard endpoint port
      * 
      */
     public Optional<Integer> plainPort() {
         return Optional.ofNullable(this.plainPort);
     }
     /**
-     * @return 私网SASL认证接入点。
+     * @return Private network SASL authentication endpoint
      * 
      */
     public Optional<String> sasl() {
         return Optional.ofNullable(this.sasl);
     }
     /**
-     * @return 认证接入点端口。
+     * @return Authentication endpoint port
      * 
      */
     public Optional<Integer> saslPort() {
         return Optional.ofNullable(this.saslPort);
     }
     /**
-     * @return 加密接入点。
+     * @return Encrypted endpoint
      * 
      */
     public Optional<String> ssl() {
         return Optional.ofNullable(this.ssl);
     }
     /**
-     * @return 加密接入点端口。
+     * @return Encrypted endpoint port
      * 
      */
     public Optional<Integer> sslPort() {
         return Optional.ofNullable(this.sslPort);
     }
     /**
-     * @return 接入点状态。
+     * @return Endpoint status
      * 
      */
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
     /**
-     * @return 售卖区网络关联的VPC ID列表。
+     * @return List of VPC IDs associated with the sales zone network
      * 
      */
     public List<String> vpcIds() {

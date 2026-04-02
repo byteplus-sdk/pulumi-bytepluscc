@@ -14,17 +14,17 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type AccountSecureContactInfo struct {
-	// 安全邮箱。
+	// Security email
 	Email *string `pulumi:"email"`
-	// 安全邮箱是否验证，1: 未验证，2: 已验证。
+	// Security email verification status: 1. Not verified, 2. Verified
 	EmailVerified *int `pulumi:"emailVerified"`
-	// 变更中的新邮箱。
+	// New email being changed
 	NewEmail *string `pulumi:"newEmail"`
-	// 变更中的新手机号。
+	// New mobile number being changed
 	NewPhone *string `pulumi:"newPhone"`
-	// 安全手机号。
+	// Security mobile number
 	Phone *string `pulumi:"phone"`
-	// 安全手机号是否验证，1: 未验证，2: 已验证。
+	// Security mobile number verification status: 1. Not verified, 2. Verified
 	PhoneVerified *int `pulumi:"phoneVerified"`
 }
 
@@ -40,17 +40,17 @@ type AccountSecureContactInfoInput interface {
 }
 
 type AccountSecureContactInfoArgs struct {
-	// 安全邮箱。
+	// Security email
 	Email pulumi.StringPtrInput `pulumi:"email"`
-	// 安全邮箱是否验证，1: 未验证，2: 已验证。
+	// Security email verification status: 1. Not verified, 2. Verified
 	EmailVerified pulumi.IntPtrInput `pulumi:"emailVerified"`
-	// 变更中的新邮箱。
+	// New email being changed
 	NewEmail pulumi.StringPtrInput `pulumi:"newEmail"`
-	// 变更中的新手机号。
+	// New mobile number being changed
 	NewPhone pulumi.StringPtrInput `pulumi:"newPhone"`
-	// 安全手机号。
+	// Security mobile number
 	Phone pulumi.StringPtrInput `pulumi:"phone"`
-	// 安全手机号是否验证，1: 未验证，2: 已验证。
+	// Security mobile number verification status: 1. Not verified, 2. Verified
 	PhoneVerified pulumi.IntPtrInput `pulumi:"phoneVerified"`
 }
 
@@ -131,32 +131,32 @@ func (o AccountSecureContactInfoOutput) ToAccountSecureContactInfoPtrOutputWithC
 	}).(AccountSecureContactInfoPtrOutput)
 }
 
-// 安全邮箱。
+// Security email
 func (o AccountSecureContactInfoOutput) Email() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AccountSecureContactInfo) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
-// 安全邮箱是否验证，1: 未验证，2: 已验证。
+// Security email verification status: 1. Not verified, 2. Verified
 func (o AccountSecureContactInfoOutput) EmailVerified() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AccountSecureContactInfo) *int { return v.EmailVerified }).(pulumi.IntPtrOutput)
 }
 
-// 变更中的新邮箱。
+// New email being changed
 func (o AccountSecureContactInfoOutput) NewEmail() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AccountSecureContactInfo) *string { return v.NewEmail }).(pulumi.StringPtrOutput)
 }
 
-// 变更中的新手机号。
+// New mobile number being changed
 func (o AccountSecureContactInfoOutput) NewPhone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AccountSecureContactInfo) *string { return v.NewPhone }).(pulumi.StringPtrOutput)
 }
 
-// 安全手机号。
+// Security mobile number
 func (o AccountSecureContactInfoOutput) Phone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AccountSecureContactInfo) *string { return v.Phone }).(pulumi.StringPtrOutput)
 }
 
-// 安全手机号是否验证，1: 未验证，2: 已验证。
+// Security mobile number verification status: 1. Not verified, 2. Verified
 func (o AccountSecureContactInfoOutput) PhoneVerified() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AccountSecureContactInfo) *int { return v.PhoneVerified }).(pulumi.IntPtrOutput)
 }
@@ -185,7 +185,7 @@ func (o AccountSecureContactInfoPtrOutput) Elem() AccountSecureContactInfoOutput
 	}).(AccountSecureContactInfoOutput)
 }
 
-// 安全邮箱。
+// Security email
 func (o AccountSecureContactInfoPtrOutput) Email() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AccountSecureContactInfo) *string {
 		if v == nil {
@@ -195,7 +195,7 @@ func (o AccountSecureContactInfoPtrOutput) Email() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 安全邮箱是否验证，1: 未验证，2: 已验证。
+// Security email verification status: 1. Not verified, 2. Verified
 func (o AccountSecureContactInfoPtrOutput) EmailVerified() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AccountSecureContactInfo) *int {
 		if v == nil {
@@ -205,7 +205,7 @@ func (o AccountSecureContactInfoPtrOutput) EmailVerified() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 变更中的新邮箱。
+// New email being changed
 func (o AccountSecureContactInfoPtrOutput) NewEmail() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AccountSecureContactInfo) *string {
 		if v == nil {
@@ -215,7 +215,7 @@ func (o AccountSecureContactInfoPtrOutput) NewEmail() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 变更中的新手机号。
+// New mobile number being changed
 func (o AccountSecureContactInfoPtrOutput) NewPhone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AccountSecureContactInfo) *string {
 		if v == nil {
@@ -225,7 +225,7 @@ func (o AccountSecureContactInfoPtrOutput) NewPhone() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 安全手机号。
+// Security mobile number
 func (o AccountSecureContactInfoPtrOutput) Phone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AccountSecureContactInfo) *string {
 		if v == nil {
@@ -235,7 +235,7 @@ func (o AccountSecureContactInfoPtrOutput) Phone() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 安全手机号是否验证，1: 未验证，2: 已验证。
+// Security mobile number verification status: 1. Not verified, 2. Verified
 func (o AccountSecureContactInfoPtrOutput) PhoneVerified() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AccountSecureContactInfo) *int {
 		if v == nil {
@@ -246,9 +246,9 @@ func (o AccountSecureContactInfoPtrOutput) PhoneVerified() pulumi.IntPtrOutput {
 }
 
 type AccountTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -264,9 +264,9 @@ type AccountTagInput interface {
 }
 
 type AccountTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -321,12 +321,12 @@ func (o AccountTagOutput) ToAccountTagOutputWithContext(ctx context.Context) Acc
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o AccountTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AccountTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o AccountTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AccountTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -352,19 +352,19 @@ func (o AccountTagArrayOutput) Index(i pulumi.IntInput) AccountTagOutput {
 }
 
 type OrganizationOrganization struct {
-	// 创建时间
+	// Creation Time
 	CreatedTime *string `pulumi:"createdTime"`
-	// 描述
+	// Description
 	Description *string `pulumi:"description"`
-	// 组织名称
+	// Organization Name
 	Name *string `pulumi:"name"`
-	// 管理员ID
+	// Administrator ID
 	Owner *string `pulumi:"owner"`
-	// 状态
+	// Status
 	Status *int `pulumi:"status"`
-	// 组织类型，企业组织固定是 1
+	// Organization type, enterprise organization is always 1
 	Type *int `pulumi:"type"`
-	// 更新时间
+	// Last Updated
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
@@ -380,19 +380,19 @@ type OrganizationOrganizationInput interface {
 }
 
 type OrganizationOrganizationArgs struct {
-	// 创建时间
+	// Creation Time
 	CreatedTime pulumi.StringPtrInput `pulumi:"createdTime"`
-	// 描述
+	// Description
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 组织名称
+	// Organization Name
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 管理员ID
+	// Administrator ID
 	Owner pulumi.StringPtrInput `pulumi:"owner"`
-	// 状态
+	// Status
 	Status pulumi.IntPtrInput `pulumi:"status"`
-	// 组织类型，企业组织固定是 1
+	// Organization type, enterprise organization is always 1
 	Type pulumi.IntPtrInput `pulumi:"type"`
-	// 更新时间
+	// Last Updated
 	UpdatedTime pulumi.StringPtrInput `pulumi:"updatedTime"`
 }
 
@@ -473,37 +473,37 @@ func (o OrganizationOrganizationOutput) ToOrganizationOrganizationPtrOutputWithC
 	}).(OrganizationOrganizationPtrOutput)
 }
 
-// 创建时间
+// Creation Time
 func (o OrganizationOrganizationOutput) CreatedTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OrganizationOrganization) *string { return v.CreatedTime }).(pulumi.StringPtrOutput)
 }
 
-// 描述
+// Description
 func (o OrganizationOrganizationOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OrganizationOrganization) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 组织名称
+// Organization Name
 func (o OrganizationOrganizationOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OrganizationOrganization) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 管理员ID
+// Administrator ID
 func (o OrganizationOrganizationOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OrganizationOrganization) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
-// 状态
+// Status
 func (o OrganizationOrganizationOutput) Status() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v OrganizationOrganization) *int { return v.Status }).(pulumi.IntPtrOutput)
 }
 
-// 组织类型，企业组织固定是 1
+// Organization type, enterprise organization is always 1
 func (o OrganizationOrganizationOutput) Type() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v OrganizationOrganization) *int { return v.Type }).(pulumi.IntPtrOutput)
 }
 
-// 更新时间
+// Last Updated
 func (o OrganizationOrganizationOutput) UpdatedTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OrganizationOrganization) *string { return v.UpdatedTime }).(pulumi.StringPtrOutput)
 }
@@ -532,7 +532,7 @@ func (o OrganizationOrganizationPtrOutput) Elem() OrganizationOrganizationOutput
 	}).(OrganizationOrganizationOutput)
 }
 
-// 创建时间
+// Creation Time
 func (o OrganizationOrganizationPtrOutput) CreatedTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OrganizationOrganization) *string {
 		if v == nil {
@@ -542,7 +542,7 @@ func (o OrganizationOrganizationPtrOutput) CreatedTime() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 描述
+// Description
 func (o OrganizationOrganizationPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OrganizationOrganization) *string {
 		if v == nil {
@@ -552,7 +552,7 @@ func (o OrganizationOrganizationPtrOutput) Description() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 组织名称
+// Organization Name
 func (o OrganizationOrganizationPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OrganizationOrganization) *string {
 		if v == nil {
@@ -562,7 +562,7 @@ func (o OrganizationOrganizationPtrOutput) Name() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 管理员ID
+// Administrator ID
 func (o OrganizationOrganizationPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OrganizationOrganization) *string {
 		if v == nil {
@@ -572,7 +572,7 @@ func (o OrganizationOrganizationPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 状态
+// Status
 func (o OrganizationOrganizationPtrOutput) Status() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *OrganizationOrganization) *int {
 		if v == nil {
@@ -582,7 +582,7 @@ func (o OrganizationOrganizationPtrOutput) Status() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 组织类型，企业组织固定是 1
+// Organization type, enterprise organization is always 1
 func (o OrganizationOrganizationPtrOutput) Type() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *OrganizationOrganization) *int {
 		if v == nil {
@@ -592,7 +592,7 @@ func (o OrganizationOrganizationPtrOutput) Type() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 更新时间
+// Last Updated
 func (o OrganizationOrganizationPtrOutput) UpdatedTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OrganizationOrganization) *string {
 		if v == nil {
@@ -603,11 +603,11 @@ func (o OrganizationOrganizationPtrOutput) UpdatedTime() pulumi.StringPtrOutput 
 }
 
 type OrganizationOwner struct {
-	// 账号ID
+	// Account ID
 	AccountId *int `pulumi:"accountId"`
-	// 账号名称
+	// Account Name
 	AccountName *string `pulumi:"accountName"`
-	// 主体名称
+	// Entity Name
 	MainName *string `pulumi:"mainName"`
 }
 
@@ -623,11 +623,11 @@ type OrganizationOwnerInput interface {
 }
 
 type OrganizationOwnerArgs struct {
-	// 账号ID
+	// Account ID
 	AccountId pulumi.IntPtrInput `pulumi:"accountId"`
-	// 账号名称
+	// Account Name
 	AccountName pulumi.StringPtrInput `pulumi:"accountName"`
-	// 主体名称
+	// Entity Name
 	MainName pulumi.StringPtrInput `pulumi:"mainName"`
 }
 
@@ -708,17 +708,17 @@ func (o OrganizationOwnerOutput) ToOrganizationOwnerPtrOutputWithContext(ctx con
 	}).(OrganizationOwnerPtrOutput)
 }
 
-// 账号ID
+// Account ID
 func (o OrganizationOwnerOutput) AccountId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v OrganizationOwner) *int { return v.AccountId }).(pulumi.IntPtrOutput)
 }
 
-// 账号名称
+// Account Name
 func (o OrganizationOwnerOutput) AccountName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OrganizationOwner) *string { return v.AccountName }).(pulumi.StringPtrOutput)
 }
 
-// 主体名称
+// Entity Name
 func (o OrganizationOwnerOutput) MainName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OrganizationOwner) *string { return v.MainName }).(pulumi.StringPtrOutput)
 }
@@ -747,7 +747,7 @@ func (o OrganizationOwnerPtrOutput) Elem() OrganizationOwnerOutput {
 	}).(OrganizationOwnerOutput)
 }
 
-// 账号ID
+// Account ID
 func (o OrganizationOwnerPtrOutput) AccountId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *OrganizationOwner) *int {
 		if v == nil {
@@ -757,7 +757,7 @@ func (o OrganizationOwnerPtrOutput) AccountId() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 账号名称
+// Account Name
 func (o OrganizationOwnerPtrOutput) AccountName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OrganizationOwner) *string {
 		if v == nil {
@@ -767,7 +767,7 @@ func (o OrganizationOwnerPtrOutput) AccountName() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 主体名称
+// Entity Name
 func (o OrganizationOwnerPtrOutput) MainName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OrganizationOwner) *string {
 		if v == nil {
@@ -778,17 +778,17 @@ func (o OrganizationOwnerPtrOutput) MainName() pulumi.StringPtrOutput {
 }
 
 type GetAccountSecureContactInfo struct {
-	// 安全邮箱。
+	// Security email
 	Email string `pulumi:"email"`
-	// 安全邮箱是否验证，1: 未验证，2: 已验证。
+	// Security email verification status: 1. Not verified, 2. Verified
 	EmailVerified int `pulumi:"emailVerified"`
-	// 变更中的新邮箱。
+	// New email being changed
 	NewEmail string `pulumi:"newEmail"`
-	// 变更中的新手机号。
+	// New mobile number being changed
 	NewPhone string `pulumi:"newPhone"`
-	// 安全手机号。
+	// Security mobile number
 	Phone string `pulumi:"phone"`
-	// 安全手机号是否验证，1: 未验证，2: 已验证。
+	// Security mobile number verification status: 1. Not verified, 2. Verified
 	PhoneVerified int `pulumi:"phoneVerified"`
 }
 
@@ -804,17 +804,17 @@ type GetAccountSecureContactInfoInput interface {
 }
 
 type GetAccountSecureContactInfoArgs struct {
-	// 安全邮箱。
+	// Security email
 	Email pulumi.StringInput `pulumi:"email"`
-	// 安全邮箱是否验证，1: 未验证，2: 已验证。
+	// Security email verification status: 1. Not verified, 2. Verified
 	EmailVerified pulumi.IntInput `pulumi:"emailVerified"`
-	// 变更中的新邮箱。
+	// New email being changed
 	NewEmail pulumi.StringInput `pulumi:"newEmail"`
-	// 变更中的新手机号。
+	// New mobile number being changed
 	NewPhone pulumi.StringInput `pulumi:"newPhone"`
-	// 安全手机号。
+	// Security mobile number
 	Phone pulumi.StringInput `pulumi:"phone"`
-	// 安全手机号是否验证，1: 未验证，2: 已验证。
+	// Security mobile number verification status: 1. Not verified, 2. Verified
 	PhoneVerified pulumi.IntInput `pulumi:"phoneVerified"`
 }
 
@@ -844,40 +844,40 @@ func (o GetAccountSecureContactInfoOutput) ToGetAccountSecureContactInfoOutputWi
 	return o
 }
 
-// 安全邮箱。
+// Security email
 func (o GetAccountSecureContactInfoOutput) Email() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccountSecureContactInfo) string { return v.Email }).(pulumi.StringOutput)
 }
 
-// 安全邮箱是否验证，1: 未验证，2: 已验证。
+// Security email verification status: 1. Not verified, 2. Verified
 func (o GetAccountSecureContactInfoOutput) EmailVerified() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAccountSecureContactInfo) int { return v.EmailVerified }).(pulumi.IntOutput)
 }
 
-// 变更中的新邮箱。
+// New email being changed
 func (o GetAccountSecureContactInfoOutput) NewEmail() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccountSecureContactInfo) string { return v.NewEmail }).(pulumi.StringOutput)
 }
 
-// 变更中的新手机号。
+// New mobile number being changed
 func (o GetAccountSecureContactInfoOutput) NewPhone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccountSecureContactInfo) string { return v.NewPhone }).(pulumi.StringOutput)
 }
 
-// 安全手机号。
+// Security mobile number
 func (o GetAccountSecureContactInfoOutput) Phone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccountSecureContactInfo) string { return v.Phone }).(pulumi.StringOutput)
 }
 
-// 安全手机号是否验证，1: 未验证，2: 已验证。
+// Security mobile number verification status: 1. Not verified, 2. Verified
 func (o GetAccountSecureContactInfoOutput) PhoneVerified() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAccountSecureContactInfo) int { return v.PhoneVerified }).(pulumi.IntOutput)
 }
 
 type GetAccountTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -893,9 +893,9 @@ type GetAccountTagInput interface {
 }
 
 type GetAccountTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -950,12 +950,12 @@ func (o GetAccountTagOutput) ToGetAccountTagOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetAccountTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccountTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetAccountTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccountTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -981,19 +981,19 @@ func (o GetAccountTagArrayOutput) Index(i pulumi.IntInput) GetAccountTagOutput {
 }
 
 type GetOrganizationOrganization struct {
-	// 创建时间
+	// Creation Time
 	CreatedTime string `pulumi:"createdTime"`
-	// 描述
+	// Description
 	Description string `pulumi:"description"`
-	// 组织名称
+	// Organization Name
 	Name string `pulumi:"name"`
-	// 管理员ID
+	// Administrator ID
 	Owner string `pulumi:"owner"`
-	// 状态
+	// Status
 	Status int `pulumi:"status"`
-	// 组织类型，企业组织固定是 1
+	// Organization type, enterprise organization is always 1
 	Type int `pulumi:"type"`
-	// 更新时间
+	// Last Updated
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -1009,19 +1009,19 @@ type GetOrganizationOrganizationInput interface {
 }
 
 type GetOrganizationOrganizationArgs struct {
-	// 创建时间
+	// Creation Time
 	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
-	// 描述
+	// Description
 	Description pulumi.StringInput `pulumi:"description"`
-	// 组织名称
+	// Organization Name
 	Name pulumi.StringInput `pulumi:"name"`
-	// 管理员ID
+	// Administrator ID
 	Owner pulumi.StringInput `pulumi:"owner"`
-	// 状态
+	// Status
 	Status pulumi.IntInput `pulumi:"status"`
-	// 组织类型，企业组织固定是 1
+	// Organization type, enterprise organization is always 1
 	Type pulumi.IntInput `pulumi:"type"`
-	// 更新时间
+	// Last Updated
 	UpdatedTime pulumi.StringInput `pulumi:"updatedTime"`
 }
 
@@ -1051,47 +1051,47 @@ func (o GetOrganizationOrganizationOutput) ToGetOrganizationOrganizationOutputWi
 	return o
 }
 
-// 创建时间
+// Creation Time
 func (o GetOrganizationOrganizationOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOrganizationOrganization) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 描述
+// Description
 func (o GetOrganizationOrganizationOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOrganizationOrganization) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 组织名称
+// Organization Name
 func (o GetOrganizationOrganizationOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOrganizationOrganization) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 管理员ID
+// Administrator ID
 func (o GetOrganizationOrganizationOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOrganizationOrganization) string { return v.Owner }).(pulumi.StringOutput)
 }
 
-// 状态
+// Status
 func (o GetOrganizationOrganizationOutput) Status() pulumi.IntOutput {
 	return o.ApplyT(func(v GetOrganizationOrganization) int { return v.Status }).(pulumi.IntOutput)
 }
 
-// 组织类型，企业组织固定是 1
+// Organization type, enterprise organization is always 1
 func (o GetOrganizationOrganizationOutput) Type() pulumi.IntOutput {
 	return o.ApplyT(func(v GetOrganizationOrganization) int { return v.Type }).(pulumi.IntOutput)
 }
 
-// 更新时间
+// Last Updated
 func (o GetOrganizationOrganizationOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOrganizationOrganization) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
 type GetOrganizationOwner struct {
-	// 账号ID
+	// Account ID
 	AccountId int `pulumi:"accountId"`
-	// 账号名称
+	// Account Name
 	AccountName string `pulumi:"accountName"`
-	// 主体名称
+	// Entity Name
 	MainName string `pulumi:"mainName"`
 }
 
@@ -1107,11 +1107,11 @@ type GetOrganizationOwnerInput interface {
 }
 
 type GetOrganizationOwnerArgs struct {
-	// 账号ID
+	// Account ID
 	AccountId pulumi.IntInput `pulumi:"accountId"`
-	// 账号名称
+	// Account Name
 	AccountName pulumi.StringInput `pulumi:"accountName"`
-	// 主体名称
+	// Entity Name
 	MainName pulumi.StringInput `pulumi:"mainName"`
 }
 
@@ -1141,17 +1141,17 @@ func (o GetOrganizationOwnerOutput) ToGetOrganizationOwnerOutputWithContext(ctx 
 	return o
 }
 
-// 账号ID
+// Account ID
 func (o GetOrganizationOwnerOutput) AccountId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetOrganizationOwner) int { return v.AccountId }).(pulumi.IntOutput)
 }
 
-// 账号名称
+// Account Name
 func (o GetOrganizationOwnerOutput) AccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOrganizationOwner) string { return v.AccountName }).(pulumi.StringOutput)
 }
 
-// 主体名称
+// Entity Name
 func (o GetOrganizationOwnerOutput) MainName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOrganizationOwner) string { return v.MainName }).(pulumi.StringOutput)
 }

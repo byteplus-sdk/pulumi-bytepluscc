@@ -15,51 +15,51 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class InstanceChargeDetail
     {
         /// <summary>
-        /// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+        /// Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
         /// </summary>
         public readonly bool? AutoRenew;
         /// <summary>
-        /// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        /// Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
         /// </summary>
         public readonly string? ChargeEndTime;
         /// <summary>
-        /// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        /// Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
         /// </summary>
         public readonly string? ChargeStartTime;
         /// <summary>
-        /// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+        /// Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
         /// </summary>
         public readonly string? ChargeStatus;
         /// <summary>
-        /// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+        /// Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
         /// </summary>
         public readonly string ChargeType;
         /// <summary>
-        /// 实例购买数量。取值范围为 1~50。默认值为 1。
+        /// Number of instances to purchase. Value range: 1–50. Default: 1
         /// </summary>
         public readonly int? Number;
         /// <summary>
-        /// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        /// Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
         /// </summary>
         public readonly string? OverdueReclaimTime;
         /// <summary>
-        /// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        /// Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
         /// </summary>
         public readonly string? OverdueTime;
         /// <summary>
-        /// 预付费场景下的购买时长。
+        /// Purchase duration in prepaid scenarios.
         /// </summary>
         public readonly int? Period;
         /// <summary>
-        /// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+        /// Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
         /// </summary>
         public readonly string? PeriodUnit;
         /// <summary>
-        /// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        /// Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
         /// </summary>
         public readonly string? TempModifyEndTime;
         /// <summary>
-        /// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        /// Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
         /// </summary>
         public readonly string? TempModifyStartTime;
 

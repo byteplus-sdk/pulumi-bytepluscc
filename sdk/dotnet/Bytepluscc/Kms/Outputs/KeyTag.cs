@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms.Outputs
     public sealed class KeyTag
     {
         /// <summary>
-        /// KMS密钥的标签键
+        /// KMS key label key.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// KMS密钥的标签值
+        /// KMS key label value.
         /// </summary>
         public readonly string? Value;
 

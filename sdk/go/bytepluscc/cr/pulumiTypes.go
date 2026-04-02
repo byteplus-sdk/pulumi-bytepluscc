@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type RegistryProxyCache struct {
-	// ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+	// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
 	Type *string `pulumi:"type"`
 }
 
@@ -30,7 +30,7 @@ type RegistryProxyCacheInput interface {
 }
 
 type RegistryProxyCacheArgs struct {
-	// ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+	// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -111,7 +111,7 @@ func (o RegistryProxyCacheOutput) ToRegistryProxyCachePtrOutputWithContext(ctx c
 	}).(RegistryProxyCachePtrOutput)
 }
 
-// ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
 func (o RegistryProxyCacheOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryProxyCache) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -140,7 +140,7 @@ func (o RegistryProxyCachePtrOutput) Elem() RegistryProxyCacheOutput {
 	}).(RegistryProxyCacheOutput)
 }
 
-// ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
 func (o RegistryProxyCachePtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryProxyCache) *string {
 		if v == nil {
@@ -151,9 +151,25 @@ func (o RegistryProxyCachePtrOutput) Type() pulumi.StringPtrOutput {
 }
 
 type RegistryStatus struct {
-	// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+	// Creating, [ Progressing ]: Creating
+	// Running, [ Ok ]: Running
+	// Running, [ Degraded ]: Running
+	// Stopped, [ Balance ]: Suspended due to insufficient balance
+	// Stopped, [ Released ]: Pending reclamation
+	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+	// Starting, [ Progressing ]: Starting
+	// Deleting, [ Progressing ]: Deleting
+	// Failed, [ Unknown ]: Abnormal
 	Conditions []string `pulumi:"conditions"`
-	// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+	// Creating, [ Progressing ]: Creating
+	// Running, [ Ok ]: Running
+	// Running, [ Degraded ]: Running
+	// Stopped, [ Balance ]: Suspended due to insufficient balance
+	// Stopped, [ Released ]: Pending reclamation
+	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+	// Starting, [ Progressing ]: Starting
+	// Deleting, [ Progressing ]: Deleting
+	// Failed, [ Unknown ]: Abnormal
 	Phase *string `pulumi:"phase"`
 }
 
@@ -169,9 +185,25 @@ type RegistryStatusInput interface {
 }
 
 type RegistryStatusArgs struct {
-	// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+	// Creating, [ Progressing ]: Creating
+	// Running, [ Ok ]: Running
+	// Running, [ Degraded ]: Running
+	// Stopped, [ Balance ]: Suspended due to insufficient balance
+	// Stopped, [ Released ]: Pending reclamation
+	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+	// Starting, [ Progressing ]: Starting
+	// Deleting, [ Progressing ]: Deleting
+	// Failed, [ Unknown ]: Abnormal
 	Conditions pulumi.StringArrayInput `pulumi:"conditions"`
-	// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+	// Creating, [ Progressing ]: Creating
+	// Running, [ Ok ]: Running
+	// Running, [ Degraded ]: Running
+	// Stopped, [ Balance ]: Suspended due to insufficient balance
+	// Stopped, [ Released ]: Pending reclamation
+	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+	// Starting, [ Progressing ]: Starting
+	// Deleting, [ Progressing ]: Deleting
+	// Failed, [ Unknown ]: Abnormal
 	Phase pulumi.StringPtrInput `pulumi:"phase"`
 }
 
@@ -252,12 +284,28 @@ func (o RegistryStatusOutput) ToRegistryStatusPtrOutputWithContext(ctx context.C
 	}).(RegistryStatusPtrOutput)
 }
 
-// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+// Creating, [ Progressing ]: Creating
+// Running, [ Ok ]: Running
+// Running, [ Degraded ]: Running
+// Stopped, [ Balance ]: Suspended due to insufficient balance
+// Stopped, [ Released ]: Pending reclamation
+// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+// Starting, [ Progressing ]: Starting
+// Deleting, [ Progressing ]: Deleting
+// Failed, [ Unknown ]: Abnormal
 func (o RegistryStatusOutput) Conditions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryStatus) []string { return v.Conditions }).(pulumi.StringArrayOutput)
 }
 
-// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+// Creating, [ Progressing ]: Creating
+// Running, [ Ok ]: Running
+// Running, [ Degraded ]: Running
+// Stopped, [ Balance ]: Suspended due to insufficient balance
+// Stopped, [ Released ]: Pending reclamation
+// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+// Starting, [ Progressing ]: Starting
+// Deleting, [ Progressing ]: Deleting
+// Failed, [ Unknown ]: Abnormal
 func (o RegistryStatusOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryStatus) *string { return v.Phase }).(pulumi.StringPtrOutput)
 }
@@ -286,7 +334,15 @@ func (o RegistryStatusPtrOutput) Elem() RegistryStatusOutput {
 	}).(RegistryStatusOutput)
 }
 
-// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+// Creating, [ Progressing ]: Creating
+// Running, [ Ok ]: Running
+// Running, [ Degraded ]: Running
+// Stopped, [ Balance ]: Suspended due to insufficient balance
+// Stopped, [ Released ]: Pending reclamation
+// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+// Starting, [ Progressing ]: Starting
+// Deleting, [ Progressing ]: Deleting
+// Failed, [ Unknown ]: Abnormal
 func (o RegistryStatusPtrOutput) Conditions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryStatus) []string {
 		if v == nil {
@@ -296,7 +352,15 @@ func (o RegistryStatusPtrOutput) Conditions() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
-// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+// Creating, [ Progressing ]: Creating
+// Running, [ Ok ]: Running
+// Running, [ Degraded ]: Running
+// Stopped, [ Balance ]: Suspended due to insufficient balance
+// Stopped, [ Released ]: Pending reclamation
+// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+// Starting, [ Progressing ]: Starting
+// Deleting, [ Progressing ]: Deleting
+// Failed, [ Unknown ]: Abnormal
 func (o RegistryStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryStatus) *string {
 		if v == nil {
@@ -307,9 +371,9 @@ func (o RegistryStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 }
 
 type RegistryTag struct {
-	// 标签的 Key 值。
+	// Tag key values
 	Key *string `pulumi:"key"`
-	// 标签的 Value 值列表。
+	// List of tag values
 	Value *string `pulumi:"value"`
 }
 
@@ -325,9 +389,9 @@ type RegistryTagInput interface {
 }
 
 type RegistryTagArgs struct {
-	// 标签的 Key 值。
+	// Tag key values
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签的 Value 值列表。
+	// List of tag values
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -382,12 +446,12 @@ func (o RegistryTagOutput) ToRegistryTagOutputWithContext(ctx context.Context) R
 	return o
 }
 
-// 标签的 Key 值。
+// Tag key values
 func (o RegistryTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签的 Value 值列表。
+// List of tag values
 func (o RegistryTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -413,7 +477,7 @@ func (o RegistryTagArrayOutput) Index(i pulumi.IntInput) RegistryTagOutput {
 }
 
 type GetRegistryProxyCache struct {
-	// ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+	// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
 	Type string `pulumi:"type"`
 }
 
@@ -429,7 +493,7 @@ type GetRegistryProxyCacheInput interface {
 }
 
 type GetRegistryProxyCacheArgs struct {
-	// ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+	// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -459,15 +523,31 @@ func (o GetRegistryProxyCacheOutput) ToGetRegistryProxyCacheOutputWithContext(ct
 	return o
 }
 
-// ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
 func (o GetRegistryProxyCacheOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryProxyCache) string { return v.Type }).(pulumi.StringOutput)
 }
 
 type GetRegistryStatus struct {
-	// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+	// Creating, [ Progressing ]: Creating
+	// Running, [ Ok ]: Running
+	// Running, [ Degraded ]: Running
+	// Stopped, [ Balance ]: Suspended due to insufficient balance
+	// Stopped, [ Released ]: Pending reclamation
+	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+	// Starting, [ Progressing ]: Starting
+	// Deleting, [ Progressing ]: Deleting
+	// Failed, [ Unknown ]: Abnormal
 	Conditions []string `pulumi:"conditions"`
-	// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+	// Creating, [ Progressing ]: Creating
+	// Running, [ Ok ]: Running
+	// Running, [ Degraded ]: Running
+	// Stopped, [ Balance ]: Suspended due to insufficient balance
+	// Stopped, [ Released ]: Pending reclamation
+	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+	// Starting, [ Progressing ]: Starting
+	// Deleting, [ Progressing ]: Deleting
+	// Failed, [ Unknown ]: Abnormal
 	Phase string `pulumi:"phase"`
 }
 
@@ -483,9 +563,25 @@ type GetRegistryStatusInput interface {
 }
 
 type GetRegistryStatusArgs struct {
-	// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+	// Creating, [ Progressing ]: Creating
+	// Running, [ Ok ]: Running
+	// Running, [ Degraded ]: Running
+	// Stopped, [ Balance ]: Suspended due to insufficient balance
+	// Stopped, [ Released ]: Pending reclamation
+	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+	// Starting, [ Progressing ]: Starting
+	// Deleting, [ Progressing ]: Deleting
+	// Failed, [ Unknown ]: Abnormal
 	Conditions pulumi.StringArrayInput `pulumi:"conditions"`
-	// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+	// Creating, [ Progressing ]: Creating
+	// Running, [ Ok ]: Running
+	// Running, [ Degraded ]: Running
+	// Stopped, [ Balance ]: Suspended due to insufficient balance
+	// Stopped, [ Released ]: Pending reclamation
+	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+	// Starting, [ Progressing ]: Starting
+	// Deleting, [ Progressing ]: Deleting
+	// Failed, [ Unknown ]: Abnormal
 	Phase pulumi.StringInput `pulumi:"phase"`
 }
 
@@ -515,20 +611,36 @@ func (o GetRegistryStatusOutput) ToGetRegistryStatusOutputWithContext(ctx contex
 	return o
 }
 
-// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+// Creating, [ Progressing ]: Creating
+// Running, [ Ok ]: Running
+// Running, [ Degraded ]: Running
+// Stopped, [ Balance ]: Suspended due to insufficient balance
+// Stopped, [ Released ]: Pending reclamation
+// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+// Starting, [ Progressing ]: Starting
+// Deleting, [ Progressing ]: Deleting
+// Failed, [ Unknown ]: Abnormal
 func (o GetRegistryStatusOutput) Conditions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryStatus) []string { return v.Conditions }).(pulumi.StringArrayOutput)
 }
 
-// Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+// Creating, [ Progressing ]: Creating
+// Running, [ Ok ]: Running
+// Running, [ Degraded ]: Running
+// Stopped, [ Balance ]: Suspended due to insufficient balance
+// Stopped, [ Released ]: Pending reclamation
+// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+// Starting, [ Progressing ]: Starting
+// Deleting, [ Progressing ]: Deleting
+// Failed, [ Unknown ]: Abnormal
 func (o GetRegistryStatusOutput) Phase() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryStatus) string { return v.Phase }).(pulumi.StringOutput)
 }
 
 type GetRegistryTag struct {
-	// 标签的 Key 值。
+	// Tag key values
 	Key string `pulumi:"key"`
-	// 标签的 Value 值列表。
+	// List of tag values
 	Value string `pulumi:"value"`
 }
 
@@ -544,9 +656,9 @@ type GetRegistryTagInput interface {
 }
 
 type GetRegistryTagArgs struct {
-	// 标签的 Key 值。
+	// Tag key values
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签的 Value 值列表。
+	// List of tag values
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -601,12 +713,12 @@ func (o GetRegistryTagOutput) ToGetRegistryTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 标签的 Key 值。
+// Tag key values
 func (o GetRegistryTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签的 Value 值列表。
+// List of tag values
 func (o GetRegistryTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryTag) string { return v.Value }).(pulumi.StringOutput)
 }

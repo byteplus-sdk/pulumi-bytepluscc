@@ -14,13 +14,18 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'WorkspaceInstanceType',
+    'WorkspaceInstanceTypeCalculatePriceParam',
+    'WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList',
     'WorkspaceQuota',
     'WorkspaceTag',
     'WorkspaceUsage',
     'GetWorkspaceInstanceTypeResult',
+    'GetWorkspaceInstanceTypeCalculatePriceParamResult',
+    'GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListResult',
     'GetWorkspaceQuotaResult',
     'GetWorkspaceTagResult',
     'GetWorkspaceUsageResult',
@@ -35,6 +40,8 @@ class WorkspaceInstanceType(dict):
             suggest = "active_series"
         elif key == "availabilityZoneReplicas":
             suggest = "availability_zone_replicas"
+        elif key == "calculatePriceParams":
+            suggest = "calculate_price_params"
         elif key == "downsamplingPeriods":
             suggest = "downsampling_periods"
         elif key == "ingestSamplesPerSecond":
@@ -66,6 +73,7 @@ class WorkspaceInstanceType(dict):
     def __init__(__self__, *,
                  active_series: Optional[builtins.int] = None,
                  availability_zone_replicas: Optional[builtins.int] = None,
+                 calculate_price_params: Optional[Sequence['outputs.WorkspaceInstanceTypeCalculatePriceParam']] = None,
                  downsampling_periods: Optional[Sequence[builtins.str]] = None,
                  ingest_samples_per_second: Optional[builtins.int] = None,
                  query_concurrency: Optional[builtins.int] = None,
@@ -75,21 +83,23 @@ class WorkspaceInstanceType(dict):
                  scan_samples_per_second: Optional[builtins.int] = None,
                  scan_series_per_second: Optional[builtins.int] = None):
         """
-        :param builtins.int active_series: 最大活跃时序数。
-        :param builtins.int availability_zone_replicas: 可用区（az）数。
-        :param Sequence[builtins.str] downsampling_periods: 降采样策略。
-        :param builtins.int ingest_samples_per_second: 最大每秒写入样本数。
-        :param builtins.int query_concurrency: 最大查询并发数。
-        :param builtins.int query_per_second: 最大查询 QPS。
-        :param builtins.int replicas_per_zone: 每个可用区（az）的数据副本数。
-        :param builtins.str retention_period: 最长数据保留时间。
-        :param builtins.int scan_samples_per_second: 最大每秒扫描样本数。
-        :param builtins.int scan_series_per_second: 最大每秒扫描时序数。
+        :param builtins.int active_series: Maximum active time series count
+        :param builtins.int availability_zone_replicas: Number of availability zones (az)
+        :param Sequence[builtins.str] downsampling_periods: Downsampling policy
+        :param builtins.int ingest_samples_per_second: Maximum samples written per second
+        :param builtins.int query_concurrency: Maximum query concurrency
+        :param builtins.int query_per_second: Maximum query QPS
+        :param builtins.int replicas_per_zone: Number of data replicas per availability zone (az)
+        :param builtins.str retention_period: Maximum data retention period
+        :param builtins.int scan_samples_per_second: Maximum samples scanned per second
+        :param builtins.int scan_series_per_second: Maximum time series scanned per second
         """
         if active_series is not None:
             pulumi.set(__self__, "active_series", active_series)
         if availability_zone_replicas is not None:
             pulumi.set(__self__, "availability_zone_replicas", availability_zone_replicas)
+        if calculate_price_params is not None:
+            pulumi.set(__self__, "calculate_price_params", calculate_price_params)
         if downsampling_periods is not None:
             pulumi.set(__self__, "downsampling_periods", downsampling_periods)
         if ingest_samples_per_second is not None:
@@ -111,7 +121,7 @@ class WorkspaceInstanceType(dict):
     @pulumi.getter(name="activeSeries")
     def active_series(self) -> Optional[builtins.int]:
         """
-        最大活跃时序数。
+        Maximum active time series count
         """
         return pulumi.get(self, "active_series")
 
@@ -119,15 +129,20 @@ class WorkspaceInstanceType(dict):
     @pulumi.getter(name="availabilityZoneReplicas")
     def availability_zone_replicas(self) -> Optional[builtins.int]:
         """
-        可用区（az）数。
+        Number of availability zones (az)
         """
         return pulumi.get(self, "availability_zone_replicas")
+
+    @property
+    @pulumi.getter(name="calculatePriceParams")
+    def calculate_price_params(self) -> Optional[Sequence['outputs.WorkspaceInstanceTypeCalculatePriceParam']]:
+        return pulumi.get(self, "calculate_price_params")
 
     @property
     @pulumi.getter(name="downsamplingPeriods")
     def downsampling_periods(self) -> Optional[Sequence[builtins.str]]:
         """
-        降采样策略。
+        Downsampling policy
         """
         return pulumi.get(self, "downsampling_periods")
 
@@ -135,7 +150,7 @@ class WorkspaceInstanceType(dict):
     @pulumi.getter(name="ingestSamplesPerSecond")
     def ingest_samples_per_second(self) -> Optional[builtins.int]:
         """
-        最大每秒写入样本数。
+        Maximum samples written per second
         """
         return pulumi.get(self, "ingest_samples_per_second")
 
@@ -143,7 +158,7 @@ class WorkspaceInstanceType(dict):
     @pulumi.getter(name="queryConcurrency")
     def query_concurrency(self) -> Optional[builtins.int]:
         """
-        最大查询并发数。
+        Maximum query concurrency
         """
         return pulumi.get(self, "query_concurrency")
 
@@ -151,7 +166,7 @@ class WorkspaceInstanceType(dict):
     @pulumi.getter(name="queryPerSecond")
     def query_per_second(self) -> Optional[builtins.int]:
         """
-        最大查询 QPS。
+        Maximum query QPS
         """
         return pulumi.get(self, "query_per_second")
 
@@ -159,7 +174,7 @@ class WorkspaceInstanceType(dict):
     @pulumi.getter(name="replicasPerZone")
     def replicas_per_zone(self) -> Optional[builtins.int]:
         """
-        每个可用区（az）的数据副本数。
+        Number of data replicas per availability zone (az)
         """
         return pulumi.get(self, "replicas_per_zone")
 
@@ -167,7 +182,7 @@ class WorkspaceInstanceType(dict):
     @pulumi.getter(name="retentionPeriod")
     def retention_period(self) -> Optional[builtins.str]:
         """
-        最长数据保留时间。
+        Maximum data retention period
         """
         return pulumi.get(self, "retention_period")
 
@@ -175,7 +190,7 @@ class WorkspaceInstanceType(dict):
     @pulumi.getter(name="scanSamplesPerSecond")
     def scan_samples_per_second(self) -> Optional[builtins.int]:
         """
-        最大每秒扫描样本数。
+        Maximum samples scanned per second
         """
         return pulumi.get(self, "scan_samples_per_second")
 
@@ -183,9 +198,117 @@ class WorkspaceInstanceType(dict):
     @pulumi.getter(name="scanSeriesPerSecond")
     def scan_series_per_second(self) -> Optional[builtins.int]:
         """
-        最大每秒扫描时序数。
+        Maximum time series scanned per second
         """
         return pulumi.get(self, "scan_series_per_second")
+
+
+@pulumi.output_type
+class WorkspaceInstanceTypeCalculatePriceParam(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "calChargeItemLists":
+            suggest = "cal_charge_item_lists"
+        elif key == "configurationCode":
+            suggest = "configuration_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceInstanceTypeCalculatePriceParam. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceInstanceTypeCalculatePriceParam.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceInstanceTypeCalculatePriceParam.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cal_charge_item_lists: Optional[Sequence['outputs.WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList']] = None,
+                 configuration_code: Optional[builtins.str] = None,
+                 period: Optional[builtins.str] = None):
+        """
+        :param builtins.str configuration_code: Configuration item code.
+        :param builtins.str period: Billing cycle.
+        """
+        if cal_charge_item_lists is not None:
+            pulumi.set(__self__, "cal_charge_item_lists", cal_charge_item_lists)
+        if configuration_code is not None:
+            pulumi.set(__self__, "configuration_code", configuration_code)
+        if period is not None:
+            pulumi.set(__self__, "period", period)
+
+    @property
+    @pulumi.getter(name="calChargeItemLists")
+    def cal_charge_item_lists(self) -> Optional[Sequence['outputs.WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList']]:
+        return pulumi.get(self, "cal_charge_item_lists")
+
+    @property
+    @pulumi.getter(name="configurationCode")
+    def configuration_code(self) -> Optional[builtins.str]:
+        """
+        Configuration item code.
+        """
+        return pulumi.get(self, "configuration_code")
+
+    @property
+    @pulumi.getter
+    def period(self) -> Optional[builtins.str]:
+        """
+        Billing cycle.
+        """
+        return pulumi.get(self, "period")
+
+
+@pulumi.output_type
+class WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attrValue":
+            suggest = "attr_value"
+        elif key == "chargeItemCode":
+            suggest = "charge_item_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attr_value: Optional[builtins.str] = None,
+                 charge_item_code: Optional[builtins.str] = None):
+        """
+        :param builtins.str attr_value: Billing item attribute value.
+        :param builtins.str charge_item_code: Billing item code.
+        """
+        if attr_value is not None:
+            pulumi.set(__self__, "attr_value", attr_value)
+        if charge_item_code is not None:
+            pulumi.set(__self__, "charge_item_code", charge_item_code)
+
+    @property
+    @pulumi.getter(name="attrValue")
+    def attr_value(self) -> Optional[builtins.str]:
+        """
+        Billing item attribute value.
+        """
+        return pulumi.get(self, "attr_value")
+
+    @property
+    @pulumi.getter(name="chargeItemCode")
+    def charge_item_code(self) -> Optional[builtins.str]:
+        """
+        Billing item code.
+        """
+        return pulumi.get(self, "charge_item_code")
 
 
 @pulumi.output_type
@@ -197,6 +320,10 @@ class WorkspaceQuota(dict):
             suggest = "active_series"
         elif key == "ingestSamplesPerSecond":
             suggest = "ingest_samples_per_second"
+        elif key == "publicQueryBandwidth":
+            suggest = "public_query_bandwidth"
+        elif key == "publicWriteBandwidth":
+            suggest = "public_write_bandwidth"
         elif key == "queryPerSecond":
             suggest = "query_per_second"
         elif key == "scanSamplesPerSecond":
@@ -218,20 +345,28 @@ class WorkspaceQuota(dict):
     def __init__(__self__, *,
                  active_series: Optional[builtins.int] = None,
                  ingest_samples_per_second: Optional[builtins.int] = None,
+                 public_query_bandwidth: Optional[builtins.int] = None,
+                 public_write_bandwidth: Optional[builtins.int] = None,
                  query_per_second: Optional[builtins.int] = None,
                  scan_samples_per_second: Optional[builtins.int] = None,
                  scan_series_per_second: Optional[builtins.int] = None):
         """
-        :param builtins.int active_series: 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
-        :param builtins.int ingest_samples_per_second: 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
-        :param builtins.int query_per_second: 最大查询 QPS。整数形式，默认取值范围为 1～500。
-        :param builtins.int scan_samples_per_second: 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
-        :param builtins.int scan_series_per_second: 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+        :param builtins.int active_series: Maximum active time series count. Integer, default range is 1–50000000
+        :param builtins.int ingest_samples_per_second: Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
+        :param builtins.int public_query_bandwidth: Workspace public Query bandwidth (Mbps).
+        :param builtins.int public_write_bandwidth: Workspace public RemoteWrite bandwidth (Mbps).
+        :param builtins.int query_per_second: Maximum query QPS. Integer, default range is 1–500
+        :param builtins.int scan_samples_per_second: Maximum samples scanned per second. Integer, default range is 1–1000000000
+        :param builtins.int scan_series_per_second: Maximum time series scanned per second. Integer, default range is 1–200000
         """
         if active_series is not None:
             pulumi.set(__self__, "active_series", active_series)
         if ingest_samples_per_second is not None:
             pulumi.set(__self__, "ingest_samples_per_second", ingest_samples_per_second)
+        if public_query_bandwidth is not None:
+            pulumi.set(__self__, "public_query_bandwidth", public_query_bandwidth)
+        if public_write_bandwidth is not None:
+            pulumi.set(__self__, "public_write_bandwidth", public_write_bandwidth)
         if query_per_second is not None:
             pulumi.set(__self__, "query_per_second", query_per_second)
         if scan_samples_per_second is not None:
@@ -243,7 +378,7 @@ class WorkspaceQuota(dict):
     @pulumi.getter(name="activeSeries")
     def active_series(self) -> Optional[builtins.int]:
         """
-        最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+        Maximum active time series count. Integer, default range is 1–50000000
         """
         return pulumi.get(self, "active_series")
 
@@ -251,15 +386,31 @@ class WorkspaceQuota(dict):
     @pulumi.getter(name="ingestSamplesPerSecond")
     def ingest_samples_per_second(self) -> Optional[builtins.int]:
         """
-        指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+        Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
         """
         return pulumi.get(self, "ingest_samples_per_second")
+
+    @property
+    @pulumi.getter(name="publicQueryBandwidth")
+    def public_query_bandwidth(self) -> Optional[builtins.int]:
+        """
+        Workspace public Query bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_query_bandwidth")
+
+    @property
+    @pulumi.getter(name="publicWriteBandwidth")
+    def public_write_bandwidth(self) -> Optional[builtins.int]:
+        """
+        Workspace public RemoteWrite bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_write_bandwidth")
 
     @property
     @pulumi.getter(name="queryPerSecond")
     def query_per_second(self) -> Optional[builtins.int]:
         """
-        最大查询 QPS。整数形式，默认取值范围为 1～500。
+        Maximum query QPS. Integer, default range is 1–500
         """
         return pulumi.get(self, "query_per_second")
 
@@ -267,7 +418,7 @@ class WorkspaceQuota(dict):
     @pulumi.getter(name="scanSamplesPerSecond")
     def scan_samples_per_second(self) -> Optional[builtins.int]:
         """
-        最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+        Maximum samples scanned per second. Integer, default range is 1–1000000000
         """
         return pulumi.get(self, "scan_samples_per_second")
 
@@ -275,7 +426,7 @@ class WorkspaceQuota(dict):
     @pulumi.getter(name="scanSeriesPerSecond")
     def scan_series_per_second(self) -> Optional[builtins.int]:
         """
-        最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+        Maximum time series scanned per second. Integer, default range is 1–200000
         """
         return pulumi.get(self, "scan_series_per_second")
 
@@ -286,8 +437,8 @@ class WorkspaceTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -298,7 +449,7 @@ class WorkspaceTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -306,7 +457,7 @@ class WorkspaceTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -336,8 +487,8 @@ class WorkspaceUsage(dict):
                  active_series: Optional[builtins.int] = None,
                  ingested_samples_per_second: Optional[builtins.float] = None):
         """
-        :param builtins.int active_series: 活跃时序数。
-        :param builtins.float ingested_samples_per_second: 每秒写入样本数。
+        :param builtins.int active_series: Active time series count
+        :param builtins.float ingested_samples_per_second: Samples written per second
         """
         if active_series is not None:
             pulumi.set(__self__, "active_series", active_series)
@@ -348,7 +499,7 @@ class WorkspaceUsage(dict):
     @pulumi.getter(name="activeSeries")
     def active_series(self) -> Optional[builtins.int]:
         """
-        活跃时序数。
+        Active time series count
         """
         return pulumi.get(self, "active_series")
 
@@ -356,7 +507,7 @@ class WorkspaceUsage(dict):
     @pulumi.getter(name="ingestedSamplesPerSecond")
     def ingested_samples_per_second(self) -> Optional[builtins.float]:
         """
-        每秒写入样本数。
+        Samples written per second
         """
         return pulumi.get(self, "ingested_samples_per_second")
 
@@ -366,6 +517,7 @@ class GetWorkspaceInstanceTypeResult(dict):
     def __init__(__self__, *,
                  active_series: builtins.int,
                  availability_zone_replicas: builtins.int,
+                 calculate_price_params: Sequence['outputs.GetWorkspaceInstanceTypeCalculatePriceParamResult'],
                  downsampling_periods: Sequence[builtins.str],
                  ingest_samples_per_second: builtins.int,
                  query_concurrency: builtins.int,
@@ -375,19 +527,21 @@ class GetWorkspaceInstanceTypeResult(dict):
                  scan_samples_per_second: builtins.int,
                  scan_series_per_second: builtins.int):
         """
-        :param builtins.int active_series: 最大活跃时序数。
-        :param builtins.int availability_zone_replicas: 可用区（az）数。
-        :param Sequence[builtins.str] downsampling_periods: 降采样策略。
-        :param builtins.int ingest_samples_per_second: 最大每秒写入样本数。
-        :param builtins.int query_concurrency: 最大查询并发数。
-        :param builtins.int query_per_second: 最大查询 QPS。
-        :param builtins.int replicas_per_zone: 每个可用区（az）的数据副本数。
-        :param builtins.str retention_period: 最长数据保留时间。
-        :param builtins.int scan_samples_per_second: 最大每秒扫描样本数。
-        :param builtins.int scan_series_per_second: 最大每秒扫描时序数。
+        :param builtins.int active_series: Maximum active time series count
+        :param builtins.int availability_zone_replicas: Number of availability zones (az)
+        :param Sequence['GetWorkspaceInstanceTypeCalculatePriceParamArgs'] calculate_price_params: Billing parameter list.
+        :param Sequence[builtins.str] downsampling_periods: Downsampling policy
+        :param builtins.int ingest_samples_per_second: Maximum samples written per second
+        :param builtins.int query_concurrency: Maximum query concurrency
+        :param builtins.int query_per_second: Maximum query QPS
+        :param builtins.int replicas_per_zone: Number of data replicas per availability zone (az)
+        :param builtins.str retention_period: Maximum data retention period
+        :param builtins.int scan_samples_per_second: Maximum samples scanned per second
+        :param builtins.int scan_series_per_second: Maximum time series scanned per second
         """
         pulumi.set(__self__, "active_series", active_series)
         pulumi.set(__self__, "availability_zone_replicas", availability_zone_replicas)
+        pulumi.set(__self__, "calculate_price_params", calculate_price_params)
         pulumi.set(__self__, "downsampling_periods", downsampling_periods)
         pulumi.set(__self__, "ingest_samples_per_second", ingest_samples_per_second)
         pulumi.set(__self__, "query_concurrency", query_concurrency)
@@ -401,7 +555,7 @@ class GetWorkspaceInstanceTypeResult(dict):
     @pulumi.getter(name="activeSeries")
     def active_series(self) -> builtins.int:
         """
-        最大活跃时序数。
+        Maximum active time series count
         """
         return pulumi.get(self, "active_series")
 
@@ -409,15 +563,23 @@ class GetWorkspaceInstanceTypeResult(dict):
     @pulumi.getter(name="availabilityZoneReplicas")
     def availability_zone_replicas(self) -> builtins.int:
         """
-        可用区（az）数。
+        Number of availability zones (az)
         """
         return pulumi.get(self, "availability_zone_replicas")
+
+    @property
+    @pulumi.getter(name="calculatePriceParams")
+    def calculate_price_params(self) -> Sequence['outputs.GetWorkspaceInstanceTypeCalculatePriceParamResult']:
+        """
+        Billing parameter list.
+        """
+        return pulumi.get(self, "calculate_price_params")
 
     @property
     @pulumi.getter(name="downsamplingPeriods")
     def downsampling_periods(self) -> Sequence[builtins.str]:
         """
-        降采样策略。
+        Downsampling policy
         """
         return pulumi.get(self, "downsampling_periods")
 
@@ -425,7 +587,7 @@ class GetWorkspaceInstanceTypeResult(dict):
     @pulumi.getter(name="ingestSamplesPerSecond")
     def ingest_samples_per_second(self) -> builtins.int:
         """
-        最大每秒写入样本数。
+        Maximum samples written per second
         """
         return pulumi.get(self, "ingest_samples_per_second")
 
@@ -433,7 +595,7 @@ class GetWorkspaceInstanceTypeResult(dict):
     @pulumi.getter(name="queryConcurrency")
     def query_concurrency(self) -> builtins.int:
         """
-        最大查询并发数。
+        Maximum query concurrency
         """
         return pulumi.get(self, "query_concurrency")
 
@@ -441,7 +603,7 @@ class GetWorkspaceInstanceTypeResult(dict):
     @pulumi.getter(name="queryPerSecond")
     def query_per_second(self) -> builtins.int:
         """
-        最大查询 QPS。
+        Maximum query QPS
         """
         return pulumi.get(self, "query_per_second")
 
@@ -449,7 +611,7 @@ class GetWorkspaceInstanceTypeResult(dict):
     @pulumi.getter(name="replicasPerZone")
     def replicas_per_zone(self) -> builtins.int:
         """
-        每个可用区（az）的数据副本数。
+        Number of data replicas per availability zone (az)
         """
         return pulumi.get(self, "replicas_per_zone")
 
@@ -457,7 +619,7 @@ class GetWorkspaceInstanceTypeResult(dict):
     @pulumi.getter(name="retentionPeriod")
     def retention_period(self) -> builtins.str:
         """
-        最长数据保留时间。
+        Maximum data retention period
         """
         return pulumi.get(self, "retention_period")
 
@@ -465,7 +627,7 @@ class GetWorkspaceInstanceTypeResult(dict):
     @pulumi.getter(name="scanSamplesPerSecond")
     def scan_samples_per_second(self) -> builtins.int:
         """
-        最大每秒扫描样本数。
+        Maximum samples scanned per second
         """
         return pulumi.get(self, "scan_samples_per_second")
 
@@ -473,9 +635,78 @@ class GetWorkspaceInstanceTypeResult(dict):
     @pulumi.getter(name="scanSeriesPerSecond")
     def scan_series_per_second(self) -> builtins.int:
         """
-        最大每秒扫描时序数。
+        Maximum time series scanned per second
         """
         return pulumi.get(self, "scan_series_per_second")
+
+
+@pulumi.output_type
+class GetWorkspaceInstanceTypeCalculatePriceParamResult(dict):
+    def __init__(__self__, *,
+                 cal_charge_item_lists: Sequence['outputs.GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListResult'],
+                 configuration_code: builtins.str,
+                 period: builtins.str):
+        """
+        :param Sequence['GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs'] cal_charge_item_lists: Billing item list.
+        :param builtins.str configuration_code: Configuration item code.
+        :param builtins.str period: Billing cycle.
+        """
+        pulumi.set(__self__, "cal_charge_item_lists", cal_charge_item_lists)
+        pulumi.set(__self__, "configuration_code", configuration_code)
+        pulumi.set(__self__, "period", period)
+
+    @property
+    @pulumi.getter(name="calChargeItemLists")
+    def cal_charge_item_lists(self) -> Sequence['outputs.GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListResult']:
+        """
+        Billing item list.
+        """
+        return pulumi.get(self, "cal_charge_item_lists")
+
+    @property
+    @pulumi.getter(name="configurationCode")
+    def configuration_code(self) -> builtins.str:
+        """
+        Configuration item code.
+        """
+        return pulumi.get(self, "configuration_code")
+
+    @property
+    @pulumi.getter
+    def period(self) -> builtins.str:
+        """
+        Billing cycle.
+        """
+        return pulumi.get(self, "period")
+
+
+@pulumi.output_type
+class GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListResult(dict):
+    def __init__(__self__, *,
+                 attr_value: builtins.str,
+                 charge_item_code: builtins.str):
+        """
+        :param builtins.str attr_value: Billing item attribute value.
+        :param builtins.str charge_item_code: Billing item code.
+        """
+        pulumi.set(__self__, "attr_value", attr_value)
+        pulumi.set(__self__, "charge_item_code", charge_item_code)
+
+    @property
+    @pulumi.getter(name="attrValue")
+    def attr_value(self) -> builtins.str:
+        """
+        Billing item attribute value.
+        """
+        return pulumi.get(self, "attr_value")
+
+    @property
+    @pulumi.getter(name="chargeItemCode")
+    def charge_item_code(self) -> builtins.str:
+        """
+        Billing item code.
+        """
+        return pulumi.get(self, "charge_item_code")
 
 
 @pulumi.output_type
@@ -483,18 +714,24 @@ class GetWorkspaceQuotaResult(dict):
     def __init__(__self__, *,
                  active_series: builtins.int,
                  ingest_samples_per_second: builtins.int,
+                 public_query_bandwidth: builtins.int,
+                 public_write_bandwidth: builtins.int,
                  query_per_second: builtins.int,
                  scan_samples_per_second: builtins.int,
                  scan_series_per_second: builtins.int):
         """
-        :param builtins.int active_series: 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
-        :param builtins.int ingest_samples_per_second: 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
-        :param builtins.int query_per_second: 最大查询 QPS。整数形式，默认取值范围为 1～500。
-        :param builtins.int scan_samples_per_second: 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
-        :param builtins.int scan_series_per_second: 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+        :param builtins.int active_series: Maximum active time series count. Integer, default range is 1–50000000
+        :param builtins.int ingest_samples_per_second: Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
+        :param builtins.int public_query_bandwidth: Workspace public Query bandwidth (Mbps).
+        :param builtins.int public_write_bandwidth: Workspace public RemoteWrite bandwidth (Mbps).
+        :param builtins.int query_per_second: Maximum query QPS. Integer, default range is 1–500
+        :param builtins.int scan_samples_per_second: Maximum samples scanned per second. Integer, default range is 1–1000000000
+        :param builtins.int scan_series_per_second: Maximum time series scanned per second. Integer, default range is 1–200000
         """
         pulumi.set(__self__, "active_series", active_series)
         pulumi.set(__self__, "ingest_samples_per_second", ingest_samples_per_second)
+        pulumi.set(__self__, "public_query_bandwidth", public_query_bandwidth)
+        pulumi.set(__self__, "public_write_bandwidth", public_write_bandwidth)
         pulumi.set(__self__, "query_per_second", query_per_second)
         pulumi.set(__self__, "scan_samples_per_second", scan_samples_per_second)
         pulumi.set(__self__, "scan_series_per_second", scan_series_per_second)
@@ -503,7 +740,7 @@ class GetWorkspaceQuotaResult(dict):
     @pulumi.getter(name="activeSeries")
     def active_series(self) -> builtins.int:
         """
-        最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+        Maximum active time series count. Integer, default range is 1–50000000
         """
         return pulumi.get(self, "active_series")
 
@@ -511,15 +748,31 @@ class GetWorkspaceQuotaResult(dict):
     @pulumi.getter(name="ingestSamplesPerSecond")
     def ingest_samples_per_second(self) -> builtins.int:
         """
-        指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+        Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
         """
         return pulumi.get(self, "ingest_samples_per_second")
+
+    @property
+    @pulumi.getter(name="publicQueryBandwidth")
+    def public_query_bandwidth(self) -> builtins.int:
+        """
+        Workspace public Query bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_query_bandwidth")
+
+    @property
+    @pulumi.getter(name="publicWriteBandwidth")
+    def public_write_bandwidth(self) -> builtins.int:
+        """
+        Workspace public RemoteWrite bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_write_bandwidth")
 
     @property
     @pulumi.getter(name="queryPerSecond")
     def query_per_second(self) -> builtins.int:
         """
-        最大查询 QPS。整数形式，默认取值范围为 1～500。
+        Maximum query QPS. Integer, default range is 1–500
         """
         return pulumi.get(self, "query_per_second")
 
@@ -527,7 +780,7 @@ class GetWorkspaceQuotaResult(dict):
     @pulumi.getter(name="scanSamplesPerSecond")
     def scan_samples_per_second(self) -> builtins.int:
         """
-        最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+        Maximum samples scanned per second. Integer, default range is 1–1000000000
         """
         return pulumi.get(self, "scan_samples_per_second")
 
@@ -535,7 +788,7 @@ class GetWorkspaceQuotaResult(dict):
     @pulumi.getter(name="scanSeriesPerSecond")
     def scan_series_per_second(self) -> builtins.int:
         """
-        最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+        Maximum time series scanned per second. Integer, default range is 1–200000
         """
         return pulumi.get(self, "scan_series_per_second")
 
@@ -546,8 +799,8 @@ class GetWorkspaceTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -556,7 +809,7 @@ class GetWorkspaceTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -564,7 +817,7 @@ class GetWorkspaceTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -575,8 +828,8 @@ class GetWorkspaceUsageResult(dict):
                  active_series: builtins.int,
                  ingested_samples_per_second: builtins.float):
         """
-        :param builtins.int active_series: 活跃时序数。
-        :param builtins.float ingested_samples_per_second: 每秒写入样本数。
+        :param builtins.int active_series: Active time series count
+        :param builtins.float ingested_samples_per_second: Samples written per second
         """
         pulumi.set(__self__, "active_series", active_series)
         pulumi.set(__self__, "ingested_samples_per_second", ingested_samples_per_second)
@@ -585,7 +838,7 @@ class GetWorkspaceUsageResult(dict):
     @pulumi.getter(name="activeSeries")
     def active_series(self) -> builtins.int:
         """
-        活跃时序数。
+        Active time series count
         """
         return pulumi.get(self, "active_series")
 
@@ -593,7 +846,7 @@ class GetWorkspaceUsageResult(dict):
     @pulumi.getter(name="ingestedSamplesPerSecond")
     def ingested_samples_per_second(self) -> builtins.float:
         """
-        每秒写入样本数。
+        Samples written per second
         """
         return pulumi.get(self, "ingested_samples_per_second")
 

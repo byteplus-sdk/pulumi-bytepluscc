@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。当用户访问火山引擎云资源的权限访问具备可抽象的共性时，如：网络运维权限、安全管理权限等，您可以在云身份中心预置访问权限集作为权限模版，最终基于访问权限集来实现中心化授权。云身份中心将会为您同步分发访问权限集到各个账号，减少企业权限的运维成本。
+ * After you create a Cloud Identity Center user, you need to grant the user login access permissions to each account. When access permissions to Volcano Engine cloud resources share common characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission operation and maintenance costs
  *
  * ## Import
  *
@@ -44,36 +44,36 @@ export class PermissionSet extends pulumi.CustomResource {
     }
 
     /**
-     * 创建时间。
+     * Creation Time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 权限集描述。
+     * Permission Set Description
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 权限集名称。
+     * Permission Set Name
      */
     public readonly name!: pulumi.Output<string>;
     public readonly permissionPolicies!: pulumi.Output<outputs.cloudidentity.PermissionSetPermissionPolicy[]>;
     /**
-     * 权限集 ID。
+     * Permission Set ID
      */
     public /*out*/ readonly permissionSetId!: pulumi.Output<string>;
     /**
-     * 跳转控制台 URL。
+     * Console Redirect URL
      */
     public readonly relayState!: pulumi.Output<string>;
     /**
-     * session 过期时间，单位秒。
+     * Session Expiration Time (seconds)
      */
     public readonly sessionDuration!: pulumi.Output<number>;
     /**
-     * 状态通知配置。
+     * Status Notification Configuration
      */
     public /*out*/ readonly statusNotifications!: pulumi.Output<string[]>;
     /**
-     * 更新时间。
+     * Update Time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -124,36 +124,36 @@ export class PermissionSet extends pulumi.CustomResource {
  */
 export interface PermissionSetState {
     /**
-     * 创建时间。
+     * Creation Time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 权限集描述。
+     * Permission Set Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 权限集名称。
+     * Permission Set Name
      */
     name?: pulumi.Input<string>;
     permissionPolicies?: pulumi.Input<pulumi.Input<inputs.cloudidentity.PermissionSetPermissionPolicy>[]>;
     /**
-     * 权限集 ID。
+     * Permission Set ID
      */
     permissionSetId?: pulumi.Input<string>;
     /**
-     * 跳转控制台 URL。
+     * Console Redirect URL
      */
     relayState?: pulumi.Input<string>;
     /**
-     * session 过期时间，单位秒。
+     * Session Expiration Time (seconds)
      */
     sessionDuration?: pulumi.Input<number>;
     /**
-     * 状态通知配置。
+     * Status Notification Configuration
      */
     statusNotifications?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 更新时间。
+     * Update Time
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -163,20 +163,20 @@ export interface PermissionSetState {
  */
 export interface PermissionSetArgs {
     /**
-     * 权限集描述。
+     * Permission Set Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 权限集名称。
+     * Permission Set Name
      */
     name: pulumi.Input<string>;
     permissionPolicies?: pulumi.Input<pulumi.Input<inputs.cloudidentity.PermissionSetPermissionPolicy>[]>;
     /**
-     * 跳转控制台 URL。
+     * Console Redirect URL
      */
     relayState?: pulumi.Input<string>;
     /**
-     * session 过期时间，单位秒。
+     * Session Expiration Time (seconds)
      */
     sessionDuration?: pulumi.Input<number>;
 }

@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 通过流量镜像，您可以按自己设定的筛选条件复制网卡的流量，并将复制的流量私网转发到目标服务进行监控分析。
+ * With traffic mirroring, you can mirror network interface traffic based on your filter conditions and forward the mirrored traffic over the private network to a target service for monitoring and analysis
  *
  * ## Example Usage
  *
@@ -61,30 +61,30 @@ export class TrafficMirrorFilter extends pulumi.CustomResource {
     }
 
     /**
-     * 筛选条件的创建时间。
+     * Filter condition creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 筛选条件实例描述。
+     * Filter condition instance description
      */
     public readonly description!: pulumi.Output<string>;
     public /*out*/ readonly egressFilterRules!: pulumi.Output<outputs.vpc.TrafficMirrorFilterEgressFilterRule[]>;
     public /*out*/ readonly ingressFilterRules!: pulumi.Output<outputs.vpc.TrafficMirrorFilterIngressFilterRule[]>;
     /**
-     * 筛选条件所属项目的名称。
+     * Project name of the filter condition
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 筛选条件状态。
+     * Filter condition status
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.vpc.TrafficMirrorFilterTag[]>;
     /**
-     * 筛选条件实例ID。
+     * Filter condition instance ID
      */
     public /*out*/ readonly trafficMirrorFilterId!: pulumi.Output<string>;
     /**
-     * 筛选条件名称。
+     * Filter condition name
      */
     public readonly trafficMirrorFilterName!: pulumi.Output<string>;
 
@@ -132,30 +132,30 @@ export class TrafficMirrorFilter extends pulumi.CustomResource {
  */
 export interface TrafficMirrorFilterState {
     /**
-     * 筛选条件的创建时间。
+     * Filter condition creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 筛选条件实例描述。
+     * Filter condition instance description
      */
     description?: pulumi.Input<string>;
     egressFilterRules?: pulumi.Input<pulumi.Input<inputs.vpc.TrafficMirrorFilterEgressFilterRule>[]>;
     ingressFilterRules?: pulumi.Input<pulumi.Input<inputs.vpc.TrafficMirrorFilterIngressFilterRule>[]>;
     /**
-     * 筛选条件所属项目的名称。
+     * Project name of the filter condition
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 筛选条件状态。
+     * Filter condition status
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.TrafficMirrorFilterTag>[]>;
     /**
-     * 筛选条件实例ID。
+     * Filter condition instance ID
      */
     trafficMirrorFilterId?: pulumi.Input<string>;
     /**
-     * 筛选条件名称。
+     * Filter condition name
      */
     trafficMirrorFilterName?: pulumi.Input<string>;
 }
@@ -165,16 +165,16 @@ export interface TrafficMirrorFilterState {
  */
 export interface TrafficMirrorFilterArgs {
     /**
-     * 筛选条件实例描述。
+     * Filter condition instance description
      */
     description?: pulumi.Input<string>;
     /**
-     * 筛选条件所属项目的名称。
+     * Project name of the filter condition
      */
     projectName?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.TrafficMirrorFilterTag>[]>;
     /**
-     * 筛选条件名称。
+     * Filter condition name
      */
     trafficMirrorFilterName?: pulumi.Input<string>;
 }

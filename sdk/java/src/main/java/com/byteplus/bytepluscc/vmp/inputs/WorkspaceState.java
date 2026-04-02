@@ -10,6 +10,7 @@ import com.byteplus.bytepluscc.vmp.inputs.WorkspaceUsageArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -22,14 +23,44 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     public static final WorkspaceState Empty = new WorkspaceState();
 
     /**
-     * 工作区创建时间，RFC3339 格式。
+     * Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+     * 
+     */
+    @Import(name="authType")
+    private @Nullable Output<String> authType;
+
+    /**
+     * @return Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+     * 
+     */
+    public Optional<Output<String>> authType() {
+        return Optional.ofNullable(this.authType);
+    }
+
+    /**
+     * Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+     * 
+     */
+    @Import(name="bearerToken")
+    private @Nullable Output<String> bearerToken;
+
+    /**
+     * @return Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+     * 
+     */
+    public Optional<Output<String>> bearerToken() {
+        return Optional.ofNullable(this.bearerToken);
+    }
+
+    /**
+     * Workspace creation time, RFC3339 format
      * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
-     * @return 工作区创建时间，RFC3339 格式。
+     * @return Workspace creation time, RFC3339 format
      * 
      */
     public Optional<Output<String>> createTime() {
@@ -37,14 +68,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启工作区删除保护,true：开启，false：关闭。
+     * Enable workspace deletion protection: true for enabled, false for disabled
      * 
      */
     @Import(name="deleteProtectionEnabled")
     private @Nullable Output<Boolean> deleteProtectionEnabled;
 
     /**
-     * @return 是否开启工作区删除保护,true：开启，false：关闭。
+     * @return Enable workspace deletion protection: true for enabled, false for disabled
      * 
      */
     public Optional<Output<Boolean>> deleteProtectionEnabled() {
@@ -52,14 +83,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区描述信息，字符串形式，长度限制为 0～200。
+     * Workspace description, string, length limit 0–200
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 工作区描述信息，字符串形式，长度限制为 0～200。
+     * @return Workspace description, string, length limit 0–200
      * 
      */
     public Optional<Output<String>> description() {
@@ -67,14 +98,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区规格详情。
+     * Workspace specification details
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<WorkspaceInstanceTypeArgs> instanceType;
 
     /**
-     * @return 工作区规格详情。
+     * @return Workspace specification details
      * 
      */
     public Optional<Output<WorkspaceInstanceTypeArgs>> instanceType() {
@@ -82,14 +113,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+     * Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
      * 
      */
     @Import(name="instanceTypeId")
     private @Nullable Output<String> instanceTypeId;
 
     /**
-     * @return 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+     * @return Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
      * 
      */
     public Optional<Output<String>> instanceTypeId() {
@@ -97,14 +128,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区名称，字符串形式，长度限制为 1～100。
+     * Workspace name, string, length limit 1–100
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 工作区名称，字符串形式，长度限制为 1～100。
+     * @return Workspace name, string, length limit 1–100
      * 
      */
     public Optional<Output<String>> name() {
@@ -112,14 +143,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区预期欠费回收时间，RFC3339 格式。
+     * Workspace expected overdue recovery time, RFC3339 format
      * 
      */
     @Import(name="overdueReclaimTime")
     private @Nullable Output<String> overdueReclaimTime;
 
     /**
-     * @return 工作区预期欠费回收时间，RFC3339 格式。
+     * @return Workspace expected overdue recovery time, RFC3339 format
      * 
      */
     public Optional<Output<String>> overdueReclaimTime() {
@@ -127,14 +158,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区 BasicAuth 密码。
+     * Workspace BasicAuth password
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return 工作区 BasicAuth 密码。
+     * @return Workspace BasicAuth password
      * 
      */
     public Optional<Output<String>> password() {
@@ -142,14 +173,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 项目名称。
+     * Project name
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -157,14 +188,29 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区 Push Gateway URL 地址。
+     * Workspace public Push Gateway URL address.
+     * 
+     */
+    @Import(name="prometheusPushEndpoint")
+    private @Nullable Output<String> prometheusPushEndpoint;
+
+    /**
+     * @return Workspace public Push Gateway URL address.
+     * 
+     */
+    public Optional<Output<String>> prometheusPushEndpoint() {
+        return Optional.ofNullable(this.prometheusPushEndpoint);
+    }
+
+    /**
+     * Workspace Push Gateway URL address
      * 
      */
     @Import(name="prometheusPushIntranetEndpoint")
     private @Nullable Output<String> prometheusPushIntranetEndpoint;
 
     /**
-     * @return 工作区 Push Gateway URL 地址。
+     * @return Workspace Push Gateway URL address
      * 
      */
     public Optional<Output<String>> prometheusPushIntranetEndpoint() {
@@ -172,14 +218,29 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区 Query URL 地址。
+     * Workspace public Query URL address.
+     * 
+     */
+    @Import(name="prometheusQueryEndpoint")
+    private @Nullable Output<String> prometheusQueryEndpoint;
+
+    /**
+     * @return Workspace public Query URL address.
+     * 
+     */
+    public Optional<Output<String>> prometheusQueryEndpoint() {
+        return Optional.ofNullable(this.prometheusQueryEndpoint);
+    }
+
+    /**
+     * Workspace Query URL address
      * 
      */
     @Import(name="prometheusQueryIntranetEndpoint")
     private @Nullable Output<String> prometheusQueryIntranetEndpoint;
 
     /**
-     * @return 工作区 Query URL 地址。
+     * @return Workspace Query URL address
      * 
      */
     public Optional<Output<String>> prometheusQueryIntranetEndpoint() {
@@ -187,14 +248,29 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区 RemoteWrite URL 地址。
+     * Workspace public RemoteWrite URL address.
+     * 
+     */
+    @Import(name="prometheusWriteEndpoint")
+    private @Nullable Output<String> prometheusWriteEndpoint;
+
+    /**
+     * @return Workspace public RemoteWrite URL address.
+     * 
+     */
+    public Optional<Output<String>> prometheusWriteEndpoint() {
+        return Optional.ofNullable(this.prometheusWriteEndpoint);
+    }
+
+    /**
+     * Workspace RemoteWrite URL address
      * 
      */
     @Import(name="prometheusWriteIntranetEndpoint")
     private @Nullable Output<String> prometheusWriteIntranetEndpoint;
 
     /**
-     * @return 工作区 RemoteWrite URL 地址。
+     * @return Workspace RemoteWrite URL address
      * 
      */
     public Optional<Output<String>> prometheusWriteIntranetEndpoint() {
@@ -202,14 +278,59 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区配额详情。
+     * Whether to enable workspace public access capability. true: enabled, false: disabled.
+     * 
+     */
+    @Import(name="publicAccessEnabled")
+    private @Nullable Output<Boolean> publicAccessEnabled;
+
+    /**
+     * @return Whether to enable workspace public access capability. true: enabled, false: disabled.
+     * 
+     */
+    public Optional<Output<Boolean>> publicAccessEnabled() {
+        return Optional.ofNullable(this.publicAccessEnabled);
+    }
+
+    /**
+     * Workspace public Query bandwidth (Mbps).
+     * 
+     */
+    @Import(name="publicQueryBandwidth")
+    private @Nullable Output<Integer> publicQueryBandwidth;
+
+    /**
+     * @return Workspace public Query bandwidth (Mbps).
+     * 
+     */
+    public Optional<Output<Integer>> publicQueryBandwidth() {
+        return Optional.ofNullable(this.publicQueryBandwidth);
+    }
+
+    /**
+     * Workspace public RemoteWrite bandwidth (Mbps).
+     * 
+     */
+    @Import(name="publicWriteBandwidth")
+    private @Nullable Output<Integer> publicWriteBandwidth;
+
+    /**
+     * @return Workspace public RemoteWrite bandwidth (Mbps).
+     * 
+     */
+    public Optional<Output<Integer>> publicWriteBandwidth() {
+        return Optional.ofNullable(this.publicWriteBandwidth);
+    }
+
+    /**
+     * Workspace quota details
      * 
      */
     @Import(name="quota")
     private @Nullable Output<WorkspaceQuotaArgs> quota;
 
     /**
-     * @return 工作区配额详情。
+     * @return Workspace quota details
      * 
      */
     public Optional<Output<WorkspaceQuotaArgs>> quota() {
@@ -217,14 +338,29 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+     * Workspace public Query search latency offset.
+     * 
+     */
+    @Import(name="searchLatencyOffset")
+    private @Nullable Output<String> searchLatencyOffset;
+
+    /**
+     * @return Workspace public Query search latency offset.
+     * 
+     */
+    public Optional<Output<String>> searchLatencyOffset() {
+        return Optional.ofNullable(this.searchLatencyOffset);
+    }
+
+    /**
+     * Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+     * @return Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
      * 
      */
     public Optional<Output<String>> status() {
@@ -239,14 +375,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区用量。
+     * Workspace usage
      * 
      */
     @Import(name="usage")
     private @Nullable Output<WorkspaceUsageArgs> usage;
 
     /**
-     * @return 工作区用量。
+     * @return Workspace usage
      * 
      */
     public Optional<Output<WorkspaceUsageArgs>> usage() {
@@ -254,14 +390,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区 BasicAuth 用户名。
+     * Workspace BasicAuth username
      * 
      */
     @Import(name="username")
     private @Nullable Output<String> username;
 
     /**
-     * @return 工作区 BasicAuth 用户名。
+     * @return Workspace BasicAuth username
      * 
      */
     public Optional<Output<String>> username() {
@@ -269,14 +405,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区Id。
+     * Workspace ID
      * 
      */
     @Import(name="workspaceId")
     private @Nullable Output<String> workspaceId;
 
     /**
-     * @return 工作区Id。
+     * @return Workspace ID
      * 
      */
     public Optional<Output<String>> workspaceId() {
@@ -286,6 +422,8 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     private WorkspaceState() {}
 
     private WorkspaceState(WorkspaceState $) {
+        this.authType = $.authType;
+        this.bearerToken = $.bearerToken;
         this.createTime = $.createTime;
         this.deleteProtectionEnabled = $.deleteProtectionEnabled;
         this.description = $.description;
@@ -295,10 +433,17 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         this.overdueReclaimTime = $.overdueReclaimTime;
         this.password = $.password;
         this.projectName = $.projectName;
+        this.prometheusPushEndpoint = $.prometheusPushEndpoint;
         this.prometheusPushIntranetEndpoint = $.prometheusPushIntranetEndpoint;
+        this.prometheusQueryEndpoint = $.prometheusQueryEndpoint;
         this.prometheusQueryIntranetEndpoint = $.prometheusQueryIntranetEndpoint;
+        this.prometheusWriteEndpoint = $.prometheusWriteEndpoint;
         this.prometheusWriteIntranetEndpoint = $.prometheusWriteIntranetEndpoint;
+        this.publicAccessEnabled = $.publicAccessEnabled;
+        this.publicQueryBandwidth = $.publicQueryBandwidth;
+        this.publicWriteBandwidth = $.publicWriteBandwidth;
         this.quota = $.quota;
+        this.searchLatencyOffset = $.searchLatencyOffset;
         this.status = $.status;
         this.tags = $.tags;
         this.usage = $.usage;
@@ -325,7 +470,49 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 工作区创建时间，RFC3339 格式。
+         * @param authType Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder authType(@Nullable Output<String> authType) {
+            $.authType = authType;
+            return this;
+        }
+
+        /**
+         * @param authType Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder authType(String authType) {
+            return authType(Output.of(authType));
+        }
+
+        /**
+         * @param bearerToken Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bearerToken(@Nullable Output<String> bearerToken) {
+            $.bearerToken = bearerToken;
+            return this;
+        }
+
+        /**
+         * @param bearerToken Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bearerToken(String bearerToken) {
+            return bearerToken(Output.of(bearerToken));
+        }
+
+        /**
+         * @param createTime Workspace creation time, RFC3339 format
          * 
          * @return builder
          * 
@@ -336,7 +523,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 工作区创建时间，RFC3339 格式。
+         * @param createTime Workspace creation time, RFC3339 format
          * 
          * @return builder
          * 
@@ -346,7 +533,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteProtectionEnabled 是否开启工作区删除保护,true：开启，false：关闭。
+         * @param deleteProtectionEnabled Enable workspace deletion protection: true for enabled, false for disabled
          * 
          * @return builder
          * 
@@ -357,7 +544,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteProtectionEnabled 是否开启工作区删除保护,true：开启，false：关闭。
+         * @param deleteProtectionEnabled Enable workspace deletion protection: true for enabled, false for disabled
          * 
          * @return builder
          * 
@@ -367,7 +554,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 工作区描述信息，字符串形式，长度限制为 0～200。
+         * @param description Workspace description, string, length limit 0–200
          * 
          * @return builder
          * 
@@ -378,7 +565,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 工作区描述信息，字符串形式，长度限制为 0～200。
+         * @param description Workspace description, string, length limit 0–200
          * 
          * @return builder
          * 
@@ -388,7 +575,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 工作区规格详情。
+         * @param instanceType Workspace specification details
          * 
          * @return builder
          * 
@@ -399,7 +586,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 工作区规格详情。
+         * @param instanceType Workspace specification details
          * 
          * @return builder
          * 
@@ -409,7 +596,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceTypeId 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+         * @param instanceTypeId Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
          * 
          * @return builder
          * 
@@ -420,7 +607,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceTypeId 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+         * @param instanceTypeId Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
          * 
          * @return builder
          * 
@@ -430,7 +617,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 工作区名称，字符串形式，长度限制为 1～100。
+         * @param name Workspace name, string, length limit 1–100
          * 
          * @return builder
          * 
@@ -441,7 +628,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 工作区名称，字符串形式，长度限制为 1～100。
+         * @param name Workspace name, string, length limit 1–100
          * 
          * @return builder
          * 
@@ -451,7 +638,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueReclaimTime 工作区预期欠费回收时间，RFC3339 格式。
+         * @param overdueReclaimTime Workspace expected overdue recovery time, RFC3339 format
          * 
          * @return builder
          * 
@@ -462,7 +649,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueReclaimTime 工作区预期欠费回收时间，RFC3339 格式。
+         * @param overdueReclaimTime Workspace expected overdue recovery time, RFC3339 format
          * 
          * @return builder
          * 
@@ -472,7 +659,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 工作区 BasicAuth 密码。
+         * @param password Workspace BasicAuth password
          * 
          * @return builder
          * 
@@ -483,7 +670,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 工作区 BasicAuth 密码。
+         * @param password Workspace BasicAuth password
          * 
          * @return builder
          * 
@@ -493,7 +680,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -504,7 +691,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -514,7 +701,28 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prometheusPushIntranetEndpoint 工作区 Push Gateway URL 地址。
+         * @param prometheusPushEndpoint Workspace public Push Gateway URL address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder prometheusPushEndpoint(@Nullable Output<String> prometheusPushEndpoint) {
+            $.prometheusPushEndpoint = prometheusPushEndpoint;
+            return this;
+        }
+
+        /**
+         * @param prometheusPushEndpoint Workspace public Push Gateway URL address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder prometheusPushEndpoint(String prometheusPushEndpoint) {
+            return prometheusPushEndpoint(Output.of(prometheusPushEndpoint));
+        }
+
+        /**
+         * @param prometheusPushIntranetEndpoint Workspace Push Gateway URL address
          * 
          * @return builder
          * 
@@ -525,7 +733,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prometheusPushIntranetEndpoint 工作区 Push Gateway URL 地址。
+         * @param prometheusPushIntranetEndpoint Workspace Push Gateway URL address
          * 
          * @return builder
          * 
@@ -535,7 +743,28 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prometheusQueryIntranetEndpoint 工作区 Query URL 地址。
+         * @param prometheusQueryEndpoint Workspace public Query URL address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder prometheusQueryEndpoint(@Nullable Output<String> prometheusQueryEndpoint) {
+            $.prometheusQueryEndpoint = prometheusQueryEndpoint;
+            return this;
+        }
+
+        /**
+         * @param prometheusQueryEndpoint Workspace public Query URL address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder prometheusQueryEndpoint(String prometheusQueryEndpoint) {
+            return prometheusQueryEndpoint(Output.of(prometheusQueryEndpoint));
+        }
+
+        /**
+         * @param prometheusQueryIntranetEndpoint Workspace Query URL address
          * 
          * @return builder
          * 
@@ -546,7 +775,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prometheusQueryIntranetEndpoint 工作区 Query URL 地址。
+         * @param prometheusQueryIntranetEndpoint Workspace Query URL address
          * 
          * @return builder
          * 
@@ -556,7 +785,28 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prometheusWriteIntranetEndpoint 工作区 RemoteWrite URL 地址。
+         * @param prometheusWriteEndpoint Workspace public RemoteWrite URL address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder prometheusWriteEndpoint(@Nullable Output<String> prometheusWriteEndpoint) {
+            $.prometheusWriteEndpoint = prometheusWriteEndpoint;
+            return this;
+        }
+
+        /**
+         * @param prometheusWriteEndpoint Workspace public RemoteWrite URL address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder prometheusWriteEndpoint(String prometheusWriteEndpoint) {
+            return prometheusWriteEndpoint(Output.of(prometheusWriteEndpoint));
+        }
+
+        /**
+         * @param prometheusWriteIntranetEndpoint Workspace RemoteWrite URL address
          * 
          * @return builder
          * 
@@ -567,7 +817,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prometheusWriteIntranetEndpoint 工作区 RemoteWrite URL 地址。
+         * @param prometheusWriteIntranetEndpoint Workspace RemoteWrite URL address
          * 
          * @return builder
          * 
@@ -577,7 +827,70 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param quota 工作区配额详情。
+         * @param publicAccessEnabled Whether to enable workspace public access capability. true: enabled, false: disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicAccessEnabled(@Nullable Output<Boolean> publicAccessEnabled) {
+            $.publicAccessEnabled = publicAccessEnabled;
+            return this;
+        }
+
+        /**
+         * @param publicAccessEnabled Whether to enable workspace public access capability. true: enabled, false: disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicAccessEnabled(Boolean publicAccessEnabled) {
+            return publicAccessEnabled(Output.of(publicAccessEnabled));
+        }
+
+        /**
+         * @param publicQueryBandwidth Workspace public Query bandwidth (Mbps).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicQueryBandwidth(@Nullable Output<Integer> publicQueryBandwidth) {
+            $.publicQueryBandwidth = publicQueryBandwidth;
+            return this;
+        }
+
+        /**
+         * @param publicQueryBandwidth Workspace public Query bandwidth (Mbps).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicQueryBandwidth(Integer publicQueryBandwidth) {
+            return publicQueryBandwidth(Output.of(publicQueryBandwidth));
+        }
+
+        /**
+         * @param publicWriteBandwidth Workspace public RemoteWrite bandwidth (Mbps).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicWriteBandwidth(@Nullable Output<Integer> publicWriteBandwidth) {
+            $.publicWriteBandwidth = publicWriteBandwidth;
+            return this;
+        }
+
+        /**
+         * @param publicWriteBandwidth Workspace public RemoteWrite bandwidth (Mbps).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicWriteBandwidth(Integer publicWriteBandwidth) {
+            return publicWriteBandwidth(Output.of(publicWriteBandwidth));
+        }
+
+        /**
+         * @param quota Workspace quota details
          * 
          * @return builder
          * 
@@ -588,7 +901,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param quota 工作区配额详情。
+         * @param quota Workspace quota details
          * 
          * @return builder
          * 
@@ -598,7 +911,28 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+         * @param searchLatencyOffset Workspace public Query search latency offset.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchLatencyOffset(@Nullable Output<String> searchLatencyOffset) {
+            $.searchLatencyOffset = searchLatencyOffset;
+            return this;
+        }
+
+        /**
+         * @param searchLatencyOffset Workspace public Query search latency offset.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchLatencyOffset(String searchLatencyOffset) {
+            return searchLatencyOffset(Output.of(searchLatencyOffset));
+        }
+
+        /**
+         * @param status Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
          * 
          * @return builder
          * 
@@ -609,7 +943,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+         * @param status Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
          * 
          * @return builder
          * 
@@ -632,7 +966,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param usage 工作区用量。
+         * @param usage Workspace usage
          * 
          * @return builder
          * 
@@ -643,7 +977,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param usage 工作区用量。
+         * @param usage Workspace usage
          * 
          * @return builder
          * 
@@ -653,7 +987,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param username 工作区 BasicAuth 用户名。
+         * @param username Workspace BasicAuth username
          * 
          * @return builder
          * 
@@ -664,7 +998,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param username 工作区 BasicAuth 用户名。
+         * @param username Workspace BasicAuth username
          * 
          * @return builder
          * 
@@ -674,7 +1008,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param workspaceId 工作区Id。
+         * @param workspaceId Workspace ID
          * 
          * @return builder
          * 
@@ -685,7 +1019,7 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param workspaceId 工作区Id。
+         * @param workspaceId Workspace ID
          * 
          * @return builder
          * 

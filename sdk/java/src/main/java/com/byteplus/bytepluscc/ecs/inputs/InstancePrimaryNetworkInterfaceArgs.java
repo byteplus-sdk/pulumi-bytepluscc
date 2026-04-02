@@ -18,14 +18,14 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
     public static final InstancePrimaryNetworkInterfaceArgs Empty = new InstancePrimaryNetworkInterfaceArgs();
 
     /**
-     * 实例的IPv6地址数量。
+     * The number of IPv6 addresses for the instance.
      * 
      */
     @Import(name="ipv6AddressCount")
     private @Nullable Output<Integer> ipv6AddressCount;
 
     /**
-     * @return 实例的IPv6地址数量。
+     * @return The number of IPv6 addresses for the instance.
      * 
      */
     public Optional<Output<Integer>> ipv6AddressCount() {
@@ -33,14 +33,14 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
     }
 
     /**
-     * 实例的IPv6地址。
+     * IPv6 address of the instance.
      * 
      */
     @Import(name="ipv6Addresses")
     private @Nullable Output<List<String>> ipv6Addresses;
 
     /**
-     * @return 实例的IPv6地址。
+     * @return IPv6 address of the instance.
      * 
      */
     public Optional<Output<List<String>>> ipv6Addresses() {
@@ -48,14 +48,14 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
     }
 
     /**
-     * 实例的MAC地址。
+     * Instance MAC address.
      * 
      */
     @Import(name="macAddress")
     private @Nullable Output<String> macAddress;
 
     /**
-     * @return 实例的MAC地址。
+     * @return Instance MAC address.
      * 
      */
     public Optional<Output<String>> macAddress() {
@@ -63,14 +63,14 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
     }
 
     /**
-     * 实例的网络接口ID。
+     * The network interface ID of the instance.
      * 
      */
     @Import(name="networkInterfaceId")
     private @Nullable Output<String> networkInterfaceId;
 
     /**
-     * @return 实例的网络接口ID。
+     * @return The network interface ID of the instance.
      * 
      */
     public Optional<Output<String>> networkInterfaceId() {
@@ -78,14 +78,14 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
     }
 
     /**
-     * 实例的主IP地址。
+     * Instance primary IP address
      * 
      */
     @Import(name="primaryIpAddress")
     private @Nullable Output<String> primaryIpAddress;
 
     /**
-     * @return 实例的主IP地址。
+     * @return Instance primary IP address
      * 
      */
     public Optional<Output<String>> primaryIpAddress() {
@@ -93,14 +93,14 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
     }
 
     /**
-     * 实例的私有IP地址。
+     * Instance private IP address.
      * 
      */
     @Import(name="privateIpAddresses")
     private @Nullable Output<List<String>> privateIpAddresses;
 
     /**
-     * @return 实例的私有IP地址。
+     * @return Instance private IP address.
      * 
      */
     public Optional<Output<List<String>>> privateIpAddresses() {
@@ -108,14 +108,14 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
     }
 
     /**
-     * 实例的安全组ID。
+     * Instance security group ID
      * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
-     * @return 实例的安全组ID。
+     * @return Instance security group ID
      * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
@@ -123,14 +123,14 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
     }
 
     /**
-     * 实例的子网ID。
+     * Instance subnet ID.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 实例的子网ID。
+     * @return Instance subnet ID.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -138,14 +138,14 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
     }
 
     /**
-     * 实例的VPC ID。
+     * VPC ID of the instance.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 实例的VPC ID。
+     * @return VPC ID of the instance.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -185,7 +185,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ipv6AddressCount 实例的IPv6地址数量。
+         * @param ipv6AddressCount The number of IPv6 addresses for the instance.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ipv6AddressCount 实例的IPv6地址数量。
+         * @param ipv6AddressCount The number of IPv6 addresses for the instance.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ipv6Addresses 实例的IPv6地址。
+         * @param ipv6Addresses IPv6 address of the instance.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ipv6Addresses 实例的IPv6地址。
+         * @param ipv6Addresses IPv6 address of the instance.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ipv6Addresses 实例的IPv6地址。
+         * @param ipv6Addresses IPv6 address of the instance.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param macAddress 实例的MAC地址。
+         * @param macAddress Instance MAC address.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param macAddress 实例的MAC地址。
+         * @param macAddress Instance MAC address.
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param networkInterfaceId 实例的网络接口ID。
+         * @param networkInterfaceId The network interface ID of the instance.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param networkInterfaceId 实例的网络接口ID。
+         * @param networkInterfaceId The network interface ID of the instance.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param primaryIpAddress 实例的主IP地址。
+         * @param primaryIpAddress Instance primary IP address
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param primaryIpAddress 实例的主IP地址。
+         * @param primaryIpAddress Instance primary IP address
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param privateIpAddresses 实例的私有IP地址。
+         * @param privateIpAddresses Instance private IP address.
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param privateIpAddresses 实例的私有IP地址。
+         * @param privateIpAddresses Instance private IP address.
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param privateIpAddresses 实例的私有IP地址。
+         * @param privateIpAddresses Instance private IP address.
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param securityGroupIds 实例的安全组ID。
+         * @param securityGroupIds Instance security group ID
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param securityGroupIds 实例的安全组ID。
+         * @param securityGroupIds Instance security group ID
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param securityGroupIds 实例的安全组ID。
+         * @param securityGroupIds Instance security group ID
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param subnetId 实例的子网ID。
+         * @param subnetId Instance subnet ID.
          * 
          * @return builder
          * 
@@ -373,7 +373,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param subnetId 实例的子网ID。
+         * @param subnetId Instance subnet ID.
          * 
          * @return builder
          * 
@@ -383,7 +383,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param vpcId 实例的VPC ID。
+         * @param vpcId VPC ID of the instance.
          * 
          * @return builder
          * 
@@ -394,7 +394,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param vpcId 实例的VPC ID。
+         * @param vpcId VPC ID of the instance.
          * 
          * @return builder
          * 

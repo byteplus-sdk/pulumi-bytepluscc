@@ -29,13 +29,13 @@ class UserArgs:
                  user_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a User resource.
-        :param pulumi.Input[builtins.str] description: 用户描述。
-        :param pulumi.Input[builtins.str] display_name: 用户显示名。
-        :param pulumi.Input[builtins.str] email: 邮箱。
-        :param pulumi.Input[builtins.str] password: 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
-        :param pulumi.Input[builtins.bool] password_reset_required: 首次登陆需不需要重置密码。
-        :param pulumi.Input[builtins.str] phone: 手机号。
-        :param pulumi.Input[builtins.str] user_name: 用户名。
+        :param pulumi.Input[builtins.str] description: User Description.
+        :param pulumi.Input[builtins.str] display_name: User Display Name.
+        :param pulumi.Input[builtins.str] email: Email.
+        :param pulumi.Input[builtins.str] password: Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
+        :param pulumi.Input[builtins.bool] password_reset_required: Is password reset required on first login?
+        :param pulumi.Input[builtins.str] phone: Mobile Number.
+        :param pulumi.Input[builtins.str] user_name: Username.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -56,7 +56,7 @@ class UserArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户描述。
+        User Description.
         """
         return pulumi.get(self, "description")
 
@@ -68,7 +68,7 @@ class UserArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户显示名。
+        User Display Name.
         """
         return pulumi.get(self, "display_name")
 
@@ -80,7 +80,7 @@ class UserArgs:
     @pulumi.getter
     def email(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        邮箱。
+        Email.
         """
         return pulumi.get(self, "email")
 
@@ -92,7 +92,7 @@ class UserArgs:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+        Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
         """
         return pulumi.get(self, "password")
 
@@ -104,7 +104,7 @@ class UserArgs:
     @pulumi.getter(name="passwordResetRequired")
     def password_reset_required(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        首次登陆需不需要重置密码。
+        Is password reset required on first login?
         """
         return pulumi.get(self, "password_reset_required")
 
@@ -116,7 +116,7 @@ class UserArgs:
     @pulumi.getter
     def phone(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        手机号。
+        Mobile Number.
         """
         return pulumi.get(self, "phone")
 
@@ -128,7 +128,7 @@ class UserArgs:
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户名。
+        Username.
         """
         return pulumi.get(self, "user_name")
 
@@ -154,18 +154,18 @@ class _UserState:
                  user_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering User resources.
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 用户描述。
-        :param pulumi.Input[builtins.str] display_name: 用户显示名。
-        :param pulumi.Input[builtins.str] email: 邮箱。
-        :param pulumi.Input[builtins.str] identity_type: 身份类型。
-        :param pulumi.Input[builtins.str] password: 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
-        :param pulumi.Input[builtins.bool] password_reset_required: 首次登陆需不需要重置密码。
-        :param pulumi.Input[builtins.str] phone: 手机号。
-        :param pulumi.Input[builtins.str] source: 用户来源。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
-        :param pulumi.Input[builtins.str] user_id: 用户id。
-        :param pulumi.Input[builtins.str] user_name: 用户名。
+        :param pulumi.Input[builtins.str] created_time: Creation Time.
+        :param pulumi.Input[builtins.str] description: User Description.
+        :param pulumi.Input[builtins.str] display_name: User Display Name.
+        :param pulumi.Input[builtins.str] email: Email.
+        :param pulumi.Input[builtins.str] identity_type: Identity Type.
+        :param pulumi.Input[builtins.str] password: Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
+        :param pulumi.Input[builtins.bool] password_reset_required: Is password reset required on first login?
+        :param pulumi.Input[builtins.str] phone: Mobile Number.
+        :param pulumi.Input[builtins.str] source: User Source.
+        :param pulumi.Input[builtins.str] updated_time: Update Time.
+        :param pulumi.Input[builtins.str] user_id: User ID.
+        :param pulumi.Input[builtins.str] user_name: Username.
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -196,7 +196,7 @@ class _UserState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation Time.
         """
         return pulumi.get(self, "created_time")
 
@@ -208,7 +208,7 @@ class _UserState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户描述。
+        User Description.
         """
         return pulumi.get(self, "description")
 
@@ -220,7 +220,7 @@ class _UserState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户显示名。
+        User Display Name.
         """
         return pulumi.get(self, "display_name")
 
@@ -232,7 +232,7 @@ class _UserState:
     @pulumi.getter
     def email(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        邮箱。
+        Email.
         """
         return pulumi.get(self, "email")
 
@@ -244,7 +244,7 @@ class _UserState:
     @pulumi.getter(name="identityType")
     def identity_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        身份类型。
+        Identity Type.
         """
         return pulumi.get(self, "identity_type")
 
@@ -256,7 +256,7 @@ class _UserState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+        Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
         """
         return pulumi.get(self, "password")
 
@@ -268,7 +268,7 @@ class _UserState:
     @pulumi.getter(name="passwordResetRequired")
     def password_reset_required(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        首次登陆需不需要重置密码。
+        Is password reset required on first login?
         """
         return pulumi.get(self, "password_reset_required")
 
@@ -280,7 +280,7 @@ class _UserState:
     @pulumi.getter
     def phone(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        手机号。
+        Mobile Number.
         """
         return pulumi.get(self, "phone")
 
@@ -292,7 +292,7 @@ class _UserState:
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户来源。
+        User Source.
         """
         return pulumi.get(self, "source")
 
@@ -304,7 +304,7 @@ class _UserState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间。
+        Update Time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -316,7 +316,7 @@ class _UserState:
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户id。
+        User ID.
         """
         return pulumi.get(self, "user_id")
 
@@ -328,7 +328,7 @@ class _UserState:
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户名。
+        Username.
         """
         return pulumi.get(self, "user_name")
 
@@ -352,7 +352,7 @@ class User(pulumi.CustomResource):
                  user_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        云身份中心用户，与企业员工身份一一映射。云身份中心用户是一种身份类型，可与某个账号下的IAM用户身份进行唯一关联并单点登录。云身份中心提供企业员工身份全生命周期管理、权限管理能力，推荐您在本产品内统一管理员工身份。
+        Cloud Identity Center users are mapped one-to-one with enterprise employee identities. A Cloud Identity Center user is an identity type that can be uniquely linked to an IAM user under an account for single sign-on. Cloud Identity Center provides full lifecycle management and permission management for enterprise employee identities. We recommend that you centrally manage employee identities within this product.
 
         ## Example Usage
 
@@ -378,13 +378,13 @@ class User(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 用户描述。
-        :param pulumi.Input[builtins.str] display_name: 用户显示名。
-        :param pulumi.Input[builtins.str] email: 邮箱。
-        :param pulumi.Input[builtins.str] password: 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
-        :param pulumi.Input[builtins.bool] password_reset_required: 首次登陆需不需要重置密码。
-        :param pulumi.Input[builtins.str] phone: 手机号。
-        :param pulumi.Input[builtins.str] user_name: 用户名。
+        :param pulumi.Input[builtins.str] description: User Description.
+        :param pulumi.Input[builtins.str] display_name: User Display Name.
+        :param pulumi.Input[builtins.str] email: Email.
+        :param pulumi.Input[builtins.str] password: Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
+        :param pulumi.Input[builtins.bool] password_reset_required: Is password reset required on first login?
+        :param pulumi.Input[builtins.str] phone: Mobile Number.
+        :param pulumi.Input[builtins.str] user_name: Username.
         """
         ...
     @overload
@@ -393,7 +393,7 @@ class User(pulumi.CustomResource):
                  args: Optional[UserArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        云身份中心用户，与企业员工身份一一映射。云身份中心用户是一种身份类型，可与某个账号下的IAM用户身份进行唯一关联并单点登录。云身份中心提供企业员工身份全生命周期管理、权限管理能力，推荐您在本产品内统一管理员工身份。
+        Cloud Identity Center users are mapped one-to-one with enterprise employee identities. A Cloud Identity Center user is an identity type that can be uniquely linked to an IAM user under an account for single sign-on. Cloud Identity Center provides full lifecycle management and permission management for enterprise employee identities. We recommend that you centrally manage employee identities within this product.
 
         ## Example Usage
 
@@ -489,18 +489,18 @@ class User(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 用户描述。
-        :param pulumi.Input[builtins.str] display_name: 用户显示名。
-        :param pulumi.Input[builtins.str] email: 邮箱。
-        :param pulumi.Input[builtins.str] identity_type: 身份类型。
-        :param pulumi.Input[builtins.str] password: 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
-        :param pulumi.Input[builtins.bool] password_reset_required: 首次登陆需不需要重置密码。
-        :param pulumi.Input[builtins.str] phone: 手机号。
-        :param pulumi.Input[builtins.str] source: 用户来源。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
-        :param pulumi.Input[builtins.str] user_id: 用户id。
-        :param pulumi.Input[builtins.str] user_name: 用户名。
+        :param pulumi.Input[builtins.str] created_time: Creation Time.
+        :param pulumi.Input[builtins.str] description: User Description.
+        :param pulumi.Input[builtins.str] display_name: User Display Name.
+        :param pulumi.Input[builtins.str] email: Email.
+        :param pulumi.Input[builtins.str] identity_type: Identity Type.
+        :param pulumi.Input[builtins.str] password: Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
+        :param pulumi.Input[builtins.bool] password_reset_required: Is password reset required on first login?
+        :param pulumi.Input[builtins.str] phone: Mobile Number.
+        :param pulumi.Input[builtins.str] source: User Source.
+        :param pulumi.Input[builtins.str] updated_time: Update Time.
+        :param pulumi.Input[builtins.str] user_id: User ID.
+        :param pulumi.Input[builtins.str] user_name: Username.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -524,7 +524,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation Time.
         """
         return pulumi.get(self, "created_time")
 
@@ -532,7 +532,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        用户描述。
+        User Description.
         """
         return pulumi.get(self, "description")
 
@@ -540,7 +540,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[builtins.str]:
         """
-        用户显示名。
+        User Display Name.
         """
         return pulumi.get(self, "display_name")
 
@@ -548,7 +548,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter
     def email(self) -> pulumi.Output[builtins.str]:
         """
-        邮箱。
+        Email.
         """
         return pulumi.get(self, "email")
 
@@ -556,7 +556,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="identityType")
     def identity_type(self) -> pulumi.Output[builtins.str]:
         """
-        身份类型。
+        Identity Type.
         """
         return pulumi.get(self, "identity_type")
 
@@ -564,7 +564,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output[builtins.str]:
         """
-        密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+        Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
         """
         return pulumi.get(self, "password")
 
@@ -572,7 +572,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="passwordResetRequired")
     def password_reset_required(self) -> pulumi.Output[builtins.bool]:
         """
-        首次登陆需不需要重置密码。
+        Is password reset required on first login?
         """
         return pulumi.get(self, "password_reset_required")
 
@@ -580,7 +580,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter
     def phone(self) -> pulumi.Output[builtins.str]:
         """
-        手机号。
+        Mobile Number.
         """
         return pulumi.get(self, "phone")
 
@@ -588,7 +588,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter
     def source(self) -> pulumi.Output[builtins.str]:
         """
-        用户来源。
+        User Source.
         """
         return pulumi.get(self, "source")
 
@@ -596,7 +596,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间。
+        Update Time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -604,7 +604,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Output[builtins.str]:
         """
-        用户id。
+        User ID.
         """
         return pulumi.get(self, "user_id")
 
@@ -612,7 +612,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Output[builtins.str]:
         """
-        用户名。
+        Username.
         """
         return pulumi.get(self, "user_name")
 

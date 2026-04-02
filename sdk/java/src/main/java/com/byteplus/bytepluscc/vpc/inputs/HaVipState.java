@@ -18,14 +18,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     public static final HaVipState Empty = new HaVipState();
 
     /**
-     * HAVIP绑定的公网IP的IP地址。
+     * IP address of the public IP bound to the HAVIP
      * 
      */
     @Import(name="associatedEipAddress")
     private @Nullable Output<String> associatedEipAddress;
 
     /**
-     * @return HAVIP绑定的公网IP的IP地址。
+     * @return IP address of the public IP bound to the HAVIP
      * 
      */
     public Optional<Output<String>> associatedEipAddress() {
@@ -33,14 +33,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HAVIP绑定的公网IP的ID。
+     * ID of the public IP bound to the HAVIP
      * 
      */
     @Import(name="associatedEipId")
     private @Nullable Output<String> associatedEipId;
 
     /**
-     * @return HAVIP绑定的公网IP的ID。
+     * @return ID of the public IP bound to the HAVIP
      * 
      */
     public Optional<Output<String>> associatedEipId() {
@@ -48,14 +48,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 绑定HAVIP的实例ID列表。
+     * List of instance IDs bound to the HAVIP
      * 
      */
     @Import(name="associatedInstanceIds")
     private @Nullable Output<List<String>> associatedInstanceIds;
 
     /**
-     * @return 绑定HAVIP的实例ID列表。
+     * @return List of instance IDs bound to the HAVIP
      * 
      */
     public Optional<Output<List<String>>> associatedInstanceIds() {
@@ -63,14 +63,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+     * Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
      * 
      */
     @Import(name="associatedInstanceType")
     private @Nullable Output<String> associatedInstanceType;
 
     /**
-     * @return 绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+     * @return Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
      * 
      */
     public Optional<Output<String>> associatedInstanceType() {
@@ -78,14 +78,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HAVIP的创建时间。
+     * Creation time of the HAVIP
      * 
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
-     * @return HAVIP的创建时间。
+     * @return Creation time of the HAVIP
      * 
      */
     public Optional<Output<String>> createdAt() {
@@ -93,14 +93,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HAVIP的描述。长度限制为0～255个字符。
+     * Description of the HAVIP. Length limit: 0–255 characters
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return HAVIP的描述。长度限制为0～255个字符。
+     * @return Description of the HAVIP. Length limit: 0–255 characters
      * 
      */
     public Optional<Output<String>> description() {
@@ -108,14 +108,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HAVIP的ID。
+     * ID of the HAVIP
      * 
      */
     @Import(name="haVipId")
     private @Nullable Output<String> haVipId;
 
     /**
-     * @return HAVIP的ID。
+     * @return ID of the HAVIP
      * 
      */
     public Optional<Output<String>> haVipId() {
@@ -123,14 +123,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+     * Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
      * 
      */
     @Import(name="haVipName")
     private @Nullable Output<String> haVipName;
 
     /**
-     * @return HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+     * @return Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
      * 
      */
     public Optional<Output<String>> haVipName() {
@@ -138,14 +138,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HAVIP的IP地址。
+     * IP address of the HAVIP
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return HAVIP的IP地址。
+     * @return IP address of the HAVIP
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -153,14 +153,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 与HAVIP绑定的主实例的ID。
+     * ID of the primary instance bound to the HAVIP
      * 
      */
     @Import(name="masterInstanceId")
     private @Nullable Output<String> masterInstanceId;
 
     /**
-     * @return 与HAVIP绑定的主实例的ID。
+     * @return ID of the primary instance bound to the HAVIP
      * 
      */
     public Optional<Output<String>> masterInstanceId() {
@@ -168,14 +168,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HAVIP的项目名称。
+     * Project name of the HAVIP
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return HAVIP的项目名称。
+     * @return Project name of the HAVIP
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -183,14 +183,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HAVIP的状态。Available：可用。Creating：创建中。InUse：使用中。Deleting：删除中。
+     * Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return HAVIP的状态。Available：可用。Creating：创建中。InUse：使用中。Deleting：删除中。
+     * @return Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
      * 
      */
     public Optional<Output<String>> status() {
@@ -198,14 +198,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HAVIP所属的子网 ID。
+     * Subnet ID to which the HAVIP belongs
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return HAVIP所属的子网 ID。
+     * @return Subnet ID to which the HAVIP belongs
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -220,14 +220,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HAVIP最近一次的修改时间。
+     * Last modification time of the HAVIP
      * 
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
-     * @return HAVIP最近一次的修改时间。
+     * @return Last modification time of the HAVIP
      * 
      */
     public Optional<Output<String>> updatedAt() {
@@ -235,14 +235,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HAVIP所属的VPC ID。
+     * VPC ID to which the HAVIP belongs
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return HAVIP所属的VPC ID。
+     * @return VPC ID to which the HAVIP belongs
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -289,7 +289,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associatedEipAddress HAVIP绑定的公网IP的IP地址。
+         * @param associatedEipAddress IP address of the public IP bound to the HAVIP
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associatedEipAddress HAVIP绑定的公网IP的IP地址。
+         * @param associatedEipAddress IP address of the public IP bound to the HAVIP
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associatedEipId HAVIP绑定的公网IP的ID。
+         * @param associatedEipId ID of the public IP bound to the HAVIP
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associatedEipId HAVIP绑定的公网IP的ID。
+         * @param associatedEipId ID of the public IP bound to the HAVIP
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associatedInstanceIds 绑定HAVIP的实例ID列表。
+         * @param associatedInstanceIds List of instance IDs bound to the HAVIP
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associatedInstanceIds 绑定HAVIP的实例ID列表。
+         * @param associatedInstanceIds List of instance IDs bound to the HAVIP
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associatedInstanceIds 绑定HAVIP的实例ID列表。
+         * @param associatedInstanceIds List of instance IDs bound to the HAVIP
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associatedInstanceType 绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+         * @param associatedInstanceType Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
          * 
          * @return builder
          * 
@@ -373,7 +373,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associatedInstanceType 绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+         * @param associatedInstanceType Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
          * 
          * @return builder
          * 
@@ -383,7 +383,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdAt HAVIP的创建时间。
+         * @param createdAt Creation time of the HAVIP
          * 
          * @return builder
          * 
@@ -394,7 +394,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdAt HAVIP的创建时间。
+         * @param createdAt Creation time of the HAVIP
          * 
          * @return builder
          * 
@@ -404,7 +404,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description HAVIP的描述。长度限制为0～255个字符。
+         * @param description Description of the HAVIP. Length limit: 0–255 characters
          * 
          * @return builder
          * 
@@ -415,7 +415,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description HAVIP的描述。长度限制为0～255个字符。
+         * @param description Description of the HAVIP. Length limit: 0–255 characters
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param haVipId HAVIP的ID。
+         * @param haVipId ID of the HAVIP
          * 
          * @return builder
          * 
@@ -436,7 +436,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param haVipId HAVIP的ID。
+         * @param haVipId ID of the HAVIP
          * 
          * @return builder
          * 
@@ -446,7 +446,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param haVipName HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+         * @param haVipName Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
          * 
          * @return builder
          * 
@@ -457,7 +457,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param haVipName HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+         * @param haVipName Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
          * 
          * @return builder
          * 
@@ -467,7 +467,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddress HAVIP的IP地址。
+         * @param ipAddress IP address of the HAVIP
          * 
          * @return builder
          * 
@@ -478,7 +478,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddress HAVIP的IP地址。
+         * @param ipAddress IP address of the HAVIP
          * 
          * @return builder
          * 
@@ -488,7 +488,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterInstanceId 与HAVIP绑定的主实例的ID。
+         * @param masterInstanceId ID of the primary instance bound to the HAVIP
          * 
          * @return builder
          * 
@@ -499,7 +499,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterInstanceId 与HAVIP绑定的主实例的ID。
+         * @param masterInstanceId ID of the primary instance bound to the HAVIP
          * 
          * @return builder
          * 
@@ -509,7 +509,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName HAVIP的项目名称。
+         * @param projectName Project name of the HAVIP
          * 
          * @return builder
          * 
@@ -520,7 +520,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName HAVIP的项目名称。
+         * @param projectName Project name of the HAVIP
          * 
          * @return builder
          * 
@@ -530,7 +530,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status HAVIP的状态。Available：可用。Creating：创建中。InUse：使用中。Deleting：删除中。
+         * @param status Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
          * 
          * @return builder
          * 
@@ -541,7 +541,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status HAVIP的状态。Available：可用。Creating：创建中。InUse：使用中。Deleting：删除中。
+         * @param status Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
          * 
          * @return builder
          * 
@@ -551,7 +551,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId HAVIP所属的子网 ID。
+         * @param subnetId Subnet ID to which the HAVIP belongs
          * 
          * @return builder
          * 
@@ -562,7 +562,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId HAVIP所属的子网 ID。
+         * @param subnetId Subnet ID to which the HAVIP belongs
          * 
          * @return builder
          * 
@@ -585,7 +585,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedAt HAVIP最近一次的修改时间。
+         * @param updatedAt Last modification time of the HAVIP
          * 
          * @return builder
          * 
@@ -596,7 +596,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedAt HAVIP最近一次的修改时间。
+         * @param updatedAt Last modification time of the HAVIP
          * 
          * @return builder
          * 
@@ -606,7 +606,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId HAVIP所属的VPC ID。
+         * @param vpcId VPC ID to which the HAVIP belongs
          * 
          * @return builder
          * 
@@ -617,7 +617,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId HAVIP所属的VPC ID。
+         * @param vpcId VPC ID to which the HAVIP belongs
          * 
          * @return builder
          * 

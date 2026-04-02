@@ -15,23 +15,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetAclListenerResult
     {
         /// <summary>
-        /// 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+        /// Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
         /// </summary>
         public readonly string AclType;
         /// <summary>
-        /// 监听器的ID
+        /// Listener ID
         /// </summary>
         public readonly string ListenerId;
         /// <summary>
-        /// 监听器的名称
+        /// Listener name
         /// </summary>
         public readonly string ListenerName;
         /// <summary>
-        /// 监听器的端口
+        /// Listener port
         /// </summary>
         public readonly int Port;
         /// <summary>
-        /// 监听器的协议
+        /// Listener protocol
         /// </summary>
         public readonly string Protocol;
 

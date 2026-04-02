@@ -32,14 +32,14 @@ class ShareConfigArgs:
                  project: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a ShareConfig resource.
-        :param pulumi.Input['ShareConfigAllowIpAccessRuleArgs'] allow_ip_access_rule: 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
-        :param pulumi.Input['ShareConfigAllowRefererAccessRuleArgs'] allow_referer_access_rule: 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
-        :param pulumi.Input['ShareConfigCommonMatchListArgs'] common_match_list: 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
-        :param pulumi.Input[builtins.str] config_name: 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
-        :param pulumi.Input[builtins.str] config_type: 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
-        :param pulumi.Input['ShareConfigDenyIpAccessRuleArgs'] deny_ip_access_rule: 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
-        :param pulumi.Input['ShareConfigDenyRefererAccessRuleArgs'] deny_referer_access_rule: 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
-        :param pulumi.Input[builtins.str] project: 表示该全局配置所归属的项目名称。
+        :param pulumi.Input['ShareConfigAllowIpAccessRuleArgs'] allow_ip_access_rule: Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
+        :param pulumi.Input['ShareConfigAllowRefererAccessRuleArgs'] allow_referer_access_rule: Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
+        :param pulumi.Input['ShareConfigCommonMatchListArgs'] common_match_list: Specifies the configuration for a common list, where ConfigType is common*match*list.
+        :param pulumi.Input[builtins.str] config_name: Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
+        :param pulumi.Input[builtins.str] config_type: This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
+        :param pulumi.Input['ShareConfigDenyIpAccessRuleArgs'] deny_ip_access_rule: Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
+        :param pulumi.Input['ShareConfigDenyRefererAccessRuleArgs'] deny_referer_access_rule: Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
+        :param pulumi.Input[builtins.str] project: Specifies the project name to which the global configuration belongs.
         """
         if allow_ip_access_rule is not None:
             pulumi.set(__self__, "allow_ip_access_rule", allow_ip_access_rule)
@@ -62,7 +62,7 @@ class ShareConfigArgs:
     @pulumi.getter(name="allowIpAccessRule")
     def allow_ip_access_rule(self) -> Optional[pulumi.Input['ShareConfigAllowIpAccessRuleArgs']]:
         """
-        表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+        Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
         """
         return pulumi.get(self, "allow_ip_access_rule")
 
@@ -74,7 +74,7 @@ class ShareConfigArgs:
     @pulumi.getter(name="allowRefererAccessRule")
     def allow_referer_access_rule(self) -> Optional[pulumi.Input['ShareConfigAllowRefererAccessRuleArgs']]:
         """
-        表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+        Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
         """
         return pulumi.get(self, "allow_referer_access_rule")
 
@@ -86,7 +86,7 @@ class ShareConfigArgs:
     @pulumi.getter(name="commonMatchList")
     def common_match_list(self) -> Optional[pulumi.Input['ShareConfigCommonMatchListArgs']]:
         """
-        表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+        Specifies the configuration for a common list, where ConfigType is common*match*list.
         """
         return pulumi.get(self, "common_match_list")
 
@@ -98,7 +98,7 @@ class ShareConfigArgs:
     @pulumi.getter(name="configName")
     def config_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+        Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
         """
         return pulumi.get(self, "config_name")
 
@@ -110,7 +110,7 @@ class ShareConfigArgs:
     @pulumi.getter(name="configType")
     def config_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+        This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
         """
         return pulumi.get(self, "config_type")
 
@@ -122,7 +122,7 @@ class ShareConfigArgs:
     @pulumi.getter(name="denyIpAccessRule")
     def deny_ip_access_rule(self) -> Optional[pulumi.Input['ShareConfigDenyIpAccessRuleArgs']]:
         """
-        表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+        Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
         """
         return pulumi.get(self, "deny_ip_access_rule")
 
@@ -134,7 +134,7 @@ class ShareConfigArgs:
     @pulumi.getter(name="denyRefererAccessRule")
     def deny_referer_access_rule(self) -> Optional[pulumi.Input['ShareConfigDenyRefererAccessRuleArgs']]:
         """
-        表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+        Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
         """
         return pulumi.get(self, "deny_referer_access_rule")
 
@@ -146,7 +146,7 @@ class ShareConfigArgs:
     @pulumi.getter
     def project(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该全局配置所归属的项目名称。
+        Specifies the project name to which the global configuration belongs.
         """
         return pulumi.get(self, "project")
 
@@ -171,17 +171,17 @@ class _ShareConfigState:
                  updated_time: Optional[pulumi.Input[builtins.int]] = None):
         """
         Input properties used for looking up and filtering ShareConfig resources.
-        :param pulumi.Input['ShareConfigAllowIpAccessRuleArgs'] allow_ip_access_rule: 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
-        :param pulumi.Input['ShareConfigAllowRefererAccessRuleArgs'] allow_referer_access_rule: 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
-        :param pulumi.Input['ShareConfigCommonMatchListArgs'] common_match_list: 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
-        :param pulumi.Input[builtins.str] config_name: 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
-        :param pulumi.Input[builtins.str] config_type: 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
-        :param pulumi.Input['ShareConfigDenyIpAccessRuleArgs'] deny_ip_access_rule: 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
-        :param pulumi.Input['ShareConfigDenyRefererAccessRuleArgs'] deny_referer_access_rule: 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
-        :param pulumi.Input[builtins.int] domain_count: 表示与该全局配置关联的加速域名的数量。
-        :param pulumi.Input[builtins.str] project: 表示该全局配置所归属的项目名称。
-        :param pulumi.Input[builtins.str] rule_content: 表示该自定义错误页面的 HTML 代码。
-        :param pulumi.Input[builtins.int] updated_time: 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+        :param pulumi.Input['ShareConfigAllowIpAccessRuleArgs'] allow_ip_access_rule: Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
+        :param pulumi.Input['ShareConfigAllowRefererAccessRuleArgs'] allow_referer_access_rule: Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
+        :param pulumi.Input['ShareConfigCommonMatchListArgs'] common_match_list: Specifies the configuration for a common list, where ConfigType is common*match*list.
+        :param pulumi.Input[builtins.str] config_name: Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
+        :param pulumi.Input[builtins.str] config_type: This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
+        :param pulumi.Input['ShareConfigDenyIpAccessRuleArgs'] deny_ip_access_rule: Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
+        :param pulumi.Input['ShareConfigDenyRefererAccessRuleArgs'] deny_referer_access_rule: Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
+        :param pulumi.Input[builtins.int] domain_count: Indicates the number of accelerated domains associated with this global configuration.
+        :param pulumi.Input[builtins.str] project: Specifies the project name to which the global configuration belongs.
+        :param pulumi.Input[builtins.str] rule_content: Specifies the HTML code for the custom error page.
+        :param pulumi.Input[builtins.int] updated_time: Indicates the last modification time of this global configuration, in Unix timestamp.
         """
         if allow_ip_access_rule is not None:
             pulumi.set(__self__, "allow_ip_access_rule", allow_ip_access_rule)
@@ -210,7 +210,7 @@ class _ShareConfigState:
     @pulumi.getter(name="allowIpAccessRule")
     def allow_ip_access_rule(self) -> Optional[pulumi.Input['ShareConfigAllowIpAccessRuleArgs']]:
         """
-        表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+        Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
         """
         return pulumi.get(self, "allow_ip_access_rule")
 
@@ -222,7 +222,7 @@ class _ShareConfigState:
     @pulumi.getter(name="allowRefererAccessRule")
     def allow_referer_access_rule(self) -> Optional[pulumi.Input['ShareConfigAllowRefererAccessRuleArgs']]:
         """
-        表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+        Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
         """
         return pulumi.get(self, "allow_referer_access_rule")
 
@@ -234,7 +234,7 @@ class _ShareConfigState:
     @pulumi.getter(name="commonMatchList")
     def common_match_list(self) -> Optional[pulumi.Input['ShareConfigCommonMatchListArgs']]:
         """
-        表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+        Specifies the configuration for a common list, where ConfigType is common*match*list.
         """
         return pulumi.get(self, "common_match_list")
 
@@ -246,7 +246,7 @@ class _ShareConfigState:
     @pulumi.getter(name="configName")
     def config_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+        Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
         """
         return pulumi.get(self, "config_name")
 
@@ -258,7 +258,7 @@ class _ShareConfigState:
     @pulumi.getter(name="configType")
     def config_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+        This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
         """
         return pulumi.get(self, "config_type")
 
@@ -270,7 +270,7 @@ class _ShareConfigState:
     @pulumi.getter(name="denyIpAccessRule")
     def deny_ip_access_rule(self) -> Optional[pulumi.Input['ShareConfigDenyIpAccessRuleArgs']]:
         """
-        表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+        Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
         """
         return pulumi.get(self, "deny_ip_access_rule")
 
@@ -282,7 +282,7 @@ class _ShareConfigState:
     @pulumi.getter(name="denyRefererAccessRule")
     def deny_referer_access_rule(self) -> Optional[pulumi.Input['ShareConfigDenyRefererAccessRuleArgs']]:
         """
-        表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+        Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
         """
         return pulumi.get(self, "deny_referer_access_rule")
 
@@ -294,7 +294,7 @@ class _ShareConfigState:
     @pulumi.getter(name="domainCount")
     def domain_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示与该全局配置关联的加速域名的数量。
+        Indicates the number of accelerated domains associated with this global configuration.
         """
         return pulumi.get(self, "domain_count")
 
@@ -306,7 +306,7 @@ class _ShareConfigState:
     @pulumi.getter
     def project(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该全局配置所归属的项目名称。
+        Specifies the project name to which the global configuration belongs.
         """
         return pulumi.get(self, "project")
 
@@ -318,7 +318,7 @@ class _ShareConfigState:
     @pulumi.getter(name="ruleContent")
     def rule_content(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该自定义错误页面的 HTML 代码。
+        Specifies the HTML code for the custom error page.
         """
         return pulumi.get(self, "rule_content")
 
@@ -330,7 +330,7 @@ class _ShareConfigState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+        Indicates the last modification time of this global configuration, in Unix timestamp.
         """
         return pulumi.get(self, "updated_time")
 
@@ -355,7 +355,7 @@ class ShareConfig(pulumi.CustomResource):
                  project: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        全局配置扩展了域名的配置能力，具有以下优点：提升了黑白名单的容量。例如，IP 黑名单可以包含高达 30,000 个条目。提升了域名配置的效率。一个全局配置可与多个域名关联。提供了通用列表类型，可以在额外的域名配置中被使用。一个全局配置的修改可立刻应用于其关联的所有域名。
+        Global configuration extends domain configuration capabilities with the following advantages: increases the capacity of denylist and allowlist. For example, an IP denylist can contain up to 30,000 entries. Improves domain configuration efficiency. A single global configuration can be associated with multiple domains. Provides a common list type that can be used in additional domain configurations. Modifications to a global configuration are immediately applied to all associated domains.
 
         ## Import
 
@@ -365,14 +365,14 @@ class ShareConfig(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ShareConfigAllowIpAccessRuleArgs', 'ShareConfigAllowIpAccessRuleArgsDict']] allow_ip_access_rule: 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
-        :param pulumi.Input[Union['ShareConfigAllowRefererAccessRuleArgs', 'ShareConfigAllowRefererAccessRuleArgsDict']] allow_referer_access_rule: 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
-        :param pulumi.Input[Union['ShareConfigCommonMatchListArgs', 'ShareConfigCommonMatchListArgsDict']] common_match_list: 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
-        :param pulumi.Input[builtins.str] config_name: 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
-        :param pulumi.Input[builtins.str] config_type: 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
-        :param pulumi.Input[Union['ShareConfigDenyIpAccessRuleArgs', 'ShareConfigDenyIpAccessRuleArgsDict']] deny_ip_access_rule: 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
-        :param pulumi.Input[Union['ShareConfigDenyRefererAccessRuleArgs', 'ShareConfigDenyRefererAccessRuleArgsDict']] deny_referer_access_rule: 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
-        :param pulumi.Input[builtins.str] project: 表示该全局配置所归属的项目名称。
+        :param pulumi.Input[Union['ShareConfigAllowIpAccessRuleArgs', 'ShareConfigAllowIpAccessRuleArgsDict']] allow_ip_access_rule: Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
+        :param pulumi.Input[Union['ShareConfigAllowRefererAccessRuleArgs', 'ShareConfigAllowRefererAccessRuleArgsDict']] allow_referer_access_rule: Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
+        :param pulumi.Input[Union['ShareConfigCommonMatchListArgs', 'ShareConfigCommonMatchListArgsDict']] common_match_list: Specifies the configuration for a common list, where ConfigType is common*match*list.
+        :param pulumi.Input[builtins.str] config_name: Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
+        :param pulumi.Input[builtins.str] config_type: This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
+        :param pulumi.Input[Union['ShareConfigDenyIpAccessRuleArgs', 'ShareConfigDenyIpAccessRuleArgsDict']] deny_ip_access_rule: Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
+        :param pulumi.Input[Union['ShareConfigDenyRefererAccessRuleArgs', 'ShareConfigDenyRefererAccessRuleArgsDict']] deny_referer_access_rule: Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
+        :param pulumi.Input[builtins.str] project: Specifies the project name to which the global configuration belongs.
         """
         ...
     @overload
@@ -381,7 +381,7 @@ class ShareConfig(pulumi.CustomResource):
                  args: Optional[ShareConfigArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        全局配置扩展了域名的配置能力，具有以下优点：提升了黑白名单的容量。例如，IP 黑名单可以包含高达 30,000 个条目。提升了域名配置的效率。一个全局配置可与多个域名关联。提供了通用列表类型，可以在额外的域名配置中被使用。一个全局配置的修改可立刻应用于其关联的所有域名。
+        Global configuration extends domain configuration capabilities with the following advantages: increases the capacity of denylist and allowlist. For example, an IP denylist can contain up to 30,000 entries. Improves domain configuration efficiency. A single global configuration can be associated with multiple domains. Provides a common list type that can be used in additional domain configurations. Modifications to a global configuration are immediately applied to all associated domains.
 
         ## Import
 
@@ -460,17 +460,17 @@ class ShareConfig(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ShareConfigAllowIpAccessRuleArgs', 'ShareConfigAllowIpAccessRuleArgsDict']] allow_ip_access_rule: 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
-        :param pulumi.Input[Union['ShareConfigAllowRefererAccessRuleArgs', 'ShareConfigAllowRefererAccessRuleArgsDict']] allow_referer_access_rule: 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
-        :param pulumi.Input[Union['ShareConfigCommonMatchListArgs', 'ShareConfigCommonMatchListArgsDict']] common_match_list: 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
-        :param pulumi.Input[builtins.str] config_name: 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
-        :param pulumi.Input[builtins.str] config_type: 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
-        :param pulumi.Input[Union['ShareConfigDenyIpAccessRuleArgs', 'ShareConfigDenyIpAccessRuleArgsDict']] deny_ip_access_rule: 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
-        :param pulumi.Input[Union['ShareConfigDenyRefererAccessRuleArgs', 'ShareConfigDenyRefererAccessRuleArgsDict']] deny_referer_access_rule: 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
-        :param pulumi.Input[builtins.int] domain_count: 表示与该全局配置关联的加速域名的数量。
-        :param pulumi.Input[builtins.str] project: 表示该全局配置所归属的项目名称。
-        :param pulumi.Input[builtins.str] rule_content: 表示该自定义错误页面的 HTML 代码。
-        :param pulumi.Input[builtins.int] updated_time: 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+        :param pulumi.Input[Union['ShareConfigAllowIpAccessRuleArgs', 'ShareConfigAllowIpAccessRuleArgsDict']] allow_ip_access_rule: Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
+        :param pulumi.Input[Union['ShareConfigAllowRefererAccessRuleArgs', 'ShareConfigAllowRefererAccessRuleArgsDict']] allow_referer_access_rule: Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
+        :param pulumi.Input[Union['ShareConfigCommonMatchListArgs', 'ShareConfigCommonMatchListArgsDict']] common_match_list: Specifies the configuration for a common list, where ConfigType is common*match*list.
+        :param pulumi.Input[builtins.str] config_name: Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
+        :param pulumi.Input[builtins.str] config_type: This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
+        :param pulumi.Input[Union['ShareConfigDenyIpAccessRuleArgs', 'ShareConfigDenyIpAccessRuleArgsDict']] deny_ip_access_rule: Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
+        :param pulumi.Input[Union['ShareConfigDenyRefererAccessRuleArgs', 'ShareConfigDenyRefererAccessRuleArgsDict']] deny_referer_access_rule: Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
+        :param pulumi.Input[builtins.int] domain_count: Indicates the number of accelerated domains associated with this global configuration.
+        :param pulumi.Input[builtins.str] project: Specifies the project name to which the global configuration belongs.
+        :param pulumi.Input[builtins.str] rule_content: Specifies the HTML code for the custom error page.
+        :param pulumi.Input[builtins.int] updated_time: Indicates the last modification time of this global configuration, in Unix timestamp.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -493,7 +493,7 @@ class ShareConfig(pulumi.CustomResource):
     @pulumi.getter(name="allowIpAccessRule")
     def allow_ip_access_rule(self) -> pulumi.Output['outputs.ShareConfigAllowIpAccessRule']:
         """
-        表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+        Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
         """
         return pulumi.get(self, "allow_ip_access_rule")
 
@@ -501,7 +501,7 @@ class ShareConfig(pulumi.CustomResource):
     @pulumi.getter(name="allowRefererAccessRule")
     def allow_referer_access_rule(self) -> pulumi.Output['outputs.ShareConfigAllowRefererAccessRule']:
         """
-        表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+        Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
         """
         return pulumi.get(self, "allow_referer_access_rule")
 
@@ -509,7 +509,7 @@ class ShareConfig(pulumi.CustomResource):
     @pulumi.getter(name="commonMatchList")
     def common_match_list(self) -> pulumi.Output['outputs.ShareConfigCommonMatchList']:
         """
-        表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+        Specifies the configuration for a common list, where ConfigType is common*match*list.
         """
         return pulumi.get(self, "common_match_list")
 
@@ -517,7 +517,7 @@ class ShareConfig(pulumi.CustomResource):
     @pulumi.getter(name="configName")
     def config_name(self) -> pulumi.Output[builtins.str]:
         """
-        表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+        Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
         """
         return pulumi.get(self, "config_name")
 
@@ -525,7 +525,7 @@ class ShareConfig(pulumi.CustomResource):
     @pulumi.getter(name="configType")
     def config_type(self) -> pulumi.Output[builtins.str]:
         """
-        表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+        This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
         """
         return pulumi.get(self, "config_type")
 
@@ -533,7 +533,7 @@ class ShareConfig(pulumi.CustomResource):
     @pulumi.getter(name="denyIpAccessRule")
     def deny_ip_access_rule(self) -> pulumi.Output['outputs.ShareConfigDenyIpAccessRule']:
         """
-        表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+        Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
         """
         return pulumi.get(self, "deny_ip_access_rule")
 
@@ -541,7 +541,7 @@ class ShareConfig(pulumi.CustomResource):
     @pulumi.getter(name="denyRefererAccessRule")
     def deny_referer_access_rule(self) -> pulumi.Output['outputs.ShareConfigDenyRefererAccessRule']:
         """
-        表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+        Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
         """
         return pulumi.get(self, "deny_referer_access_rule")
 
@@ -549,7 +549,7 @@ class ShareConfig(pulumi.CustomResource):
     @pulumi.getter(name="domainCount")
     def domain_count(self) -> pulumi.Output[builtins.int]:
         """
-        表示与该全局配置关联的加速域名的数量。
+        Indicates the number of accelerated domains associated with this global configuration.
         """
         return pulumi.get(self, "domain_count")
 
@@ -557,7 +557,7 @@ class ShareConfig(pulumi.CustomResource):
     @pulumi.getter
     def project(self) -> pulumi.Output[builtins.str]:
         """
-        表示该全局配置所归属的项目名称。
+        Specifies the project name to which the global configuration belongs.
         """
         return pulumi.get(self, "project")
 
@@ -565,7 +565,7 @@ class ShareConfig(pulumi.CustomResource):
     @pulumi.getter(name="ruleContent")
     def rule_content(self) -> pulumi.Output[builtins.str]:
         """
-        表示该自定义错误页面的 HTML 代码。
+        Specifies the HTML code for the custom error page.
         """
         return pulumi.get(self, "rule_content")
 
@@ -573,7 +573,7 @@ class ShareConfig(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.int]:
         """
-        表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+        Indicates the last modification time of this global configuration, in Unix timestamp.
         """
         return pulumi.get(self, "updated_time")
 

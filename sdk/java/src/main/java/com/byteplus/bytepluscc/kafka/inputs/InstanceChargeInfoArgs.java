@@ -18,14 +18,14 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
     public static final InstanceChargeInfoArgs Empty = new InstanceChargeInfoArgs();
 
     /**
-     * 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+     * Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
      * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
-     * @return 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+     * @return Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
      * 
      */
     public Optional<Output<Boolean>> autoRenew() {
@@ -33,14 +33,14 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 包年包月实例的到期时间。
+     * Expiration time for the subscription instance.
      * 
      */
     @Import(name="chargeExpireTime")
     private @Nullable Output<String> chargeExpireTime;
 
     /**
-     * @return 包年包月实例的到期时间。
+     * @return Expiration time for the subscription instance.
      * 
      */
     public Optional<Output<String>> chargeExpireTime() {
@@ -48,14 +48,14 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 实例的计费开始时间。
+     * Instance billing start time.
      * 
      */
     @Import(name="chargeStartTime")
     private @Nullable Output<String> chargeStartTime;
 
     /**
-     * @return 实例的计费开始时间。
+     * @return Instance billing start time.
      * 
      */
     public Optional<Output<String>> chargeStartTime() {
@@ -63,14 +63,14 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+     * Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
      * 
      */
     @Import(name="chargeStatus")
     private @Nullable Output<String> chargeStatus;
 
     /**
-     * @return 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+     * @return Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
      * 
      */
     public Optional<Output<String>> chargeStatus() {
@@ -78,14 +78,14 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+     * Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+     * @return Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -93,14 +93,14 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 实例欠费关停后的预计释放时间。
+     * Estimated release time after the instance is stopped due to overdue payment.
      * 
      */
     @Import(name="overdueReclaimTime")
     private @Nullable Output<String> overdueReclaimTime;
 
     /**
-     * @return 实例欠费关停后的预计释放时间。
+     * @return Estimated release time after the instance is stopped due to overdue payment.
      * 
      */
     public Optional<Output<String>> overdueReclaimTime() {
@@ -108,14 +108,14 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 实例的欠费关停时间。
+     * Instance suspension time due to overdue payment.
      * 
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
-     * @return 实例的欠费关停时间。
+     * @return Instance suspension time due to overdue payment.
      * 
      */
     public Optional<Output<String>> overdueTime() {
@@ -123,14 +123,14 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 包年包月类型实例的购买时长。
+     * Purchase duration for subscription-based instances.
      * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
-     * @return 包年包月类型实例的购买时长。
+     * @return Purchase duration for subscription-based instances.
      * 
      */
     public Optional<Output<Integer>> period() {
@@ -138,14 +138,14 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+     * The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
      * 
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
-     * @return 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+     * @return The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
      * 
      */
     public Optional<Output<String>> periodUnit() {
@@ -185,7 +185,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param autoRenew 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+         * @param autoRenew Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param autoRenew 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+         * @param autoRenew Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param chargeExpireTime 包年包月实例的到期时间。
+         * @param chargeExpireTime Expiration time for the subscription instance.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param chargeExpireTime 包年包月实例的到期时间。
+         * @param chargeExpireTime Expiration time for the subscription instance.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param chargeStartTime 实例的计费开始时间。
+         * @param chargeStartTime Instance billing start time.
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param chargeStartTime 实例的计费开始时间。
+         * @param chargeStartTime Instance billing start time.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param chargeStatus 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+         * @param chargeStatus Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param chargeStatus 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+         * @param chargeStatus Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param chargeType 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+         * @param chargeType Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param chargeType 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+         * @param chargeType Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param overdueReclaimTime 实例欠费关停后的预计释放时间。
+         * @param overdueReclaimTime Estimated release time after the instance is stopped due to overdue payment.
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param overdueReclaimTime 实例欠费关停后的预计释放时间。
+         * @param overdueReclaimTime Estimated release time after the instance is stopped due to overdue payment.
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param overdueTime 实例的欠费关停时间。
+         * @param overdueTime Instance suspension time due to overdue payment.
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param overdueTime 实例的欠费关停时间。
+         * @param overdueTime Instance suspension time due to overdue payment.
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param period 包年包月类型实例的购买时长。
+         * @param period Purchase duration for subscription-based instances.
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param period 包年包月类型实例的购买时长。
+         * @param period Purchase duration for subscription-based instances.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param periodUnit 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+         * @param periodUnit The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class InstanceChargeInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param periodUnit 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+         * @param periodUnit The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
          * 
          * @return builder
          * 

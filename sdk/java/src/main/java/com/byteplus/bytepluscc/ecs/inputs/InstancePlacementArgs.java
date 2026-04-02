@@ -16,14 +16,14 @@ public final class InstancePlacementArgs extends com.pulumi.resources.ResourceAr
     public static final InstancePlacementArgs Empty = new InstancePlacementArgs();
 
     /**
-     * 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+     * For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
      * 
      */
     @Import(name="affinity")
     private @Nullable Output<String> affinity;
 
     /**
-     * @return 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+     * @return For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
      * 
      */
     public Optional<Output<String>> affinity() {
@@ -31,14 +31,14 @@ public final class InstancePlacementArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 实例的专用主机集群ID。
+     * Instance dedicated host cluster ID.
      * 
      */
     @Import(name="dedicatedHostClusterId")
     private @Nullable Output<String> dedicatedHostClusterId;
 
     /**
-     * @return 实例的专用主机集群ID。
+     * @return Instance dedicated host cluster ID.
      * 
      */
     public Optional<Output<String>> dedicatedHostClusterId() {
@@ -46,14 +46,14 @@ public final class InstancePlacementArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 实例的专用主机ID。
+     * Dedicated host ID for the instance.
      * 
      */
     @Import(name="dedicatedHostId")
     private @Nullable Output<String> dedicatedHostId;
 
     /**
-     * @return 实例的专用主机ID。
+     * @return Dedicated host ID for the instance.
      * 
      */
     public Optional<Output<String>> dedicatedHostId() {
@@ -61,14 +61,14 @@ public final class InstancePlacementArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+     * Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
      * 
      */
     @Import(name="tenancy")
     private @Nullable Output<String> tenancy;
 
     /**
-     * @return 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+     * @return Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
      * 
      */
     public Optional<Output<String>> tenancy() {
@@ -103,7 +103,7 @@ public final class InstancePlacementArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param affinity 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+         * @param affinity For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class InstancePlacementArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param affinity 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+         * @param affinity For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class InstancePlacementArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param dedicatedHostClusterId 实例的专用主机集群ID。
+         * @param dedicatedHostClusterId Instance dedicated host cluster ID.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class InstancePlacementArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param dedicatedHostClusterId 实例的专用主机集群ID。
+         * @param dedicatedHostClusterId Instance dedicated host cluster ID.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class InstancePlacementArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param dedicatedHostId 实例的专用主机ID。
+         * @param dedicatedHostId Dedicated host ID for the instance.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class InstancePlacementArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param dedicatedHostId 实例的专用主机ID。
+         * @param dedicatedHostId Dedicated host ID for the instance.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class InstancePlacementArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param tenancy 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+         * @param tenancy Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class InstancePlacementArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param tenancy 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+         * @param tenancy Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
          * 
          * @return builder
          * 

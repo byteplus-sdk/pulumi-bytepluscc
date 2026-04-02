@@ -12,74 +12,74 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceInstanceConfigurationWarmNodeStorageSpec {
     /**
-     * @return 存储规格的描述信息
+     * @return Description of storage specification.
      * 
      */
     private String description;
     /**
-     * @return 存储规格的显示名称
+     * @return Display name of storage specification.
      * 
      */
     private String displayName;
     /**
-     * @return 存储规格的最大值，单位为 GiB
+     * @return Maximum storage specification, measured in GiB
      * 
      */
     private Integer maxSize;
     /**
-     * @return 存储规格最小值，单位为 GiB
+     * @return Minimum value for storage specification, unit: GiB.
      * 
      */
     private Integer minSize;
     /**
-     * @return 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+     * @return Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
      * 
      */
     private String name;
     /**
-     * @return 当前存储规格值，单位为 GiB
+     * @return Current storage specification value, in GiB.
      * 
      */
     private Integer size;
 
     private GetInstanceInstanceConfigurationWarmNodeStorageSpec() {}
     /**
-     * @return 存储规格的描述信息
+     * @return Description of storage specification.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 存储规格的显示名称
+     * @return Display name of storage specification.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return 存储规格的最大值，单位为 GiB
+     * @return Maximum storage specification, measured in GiB
      * 
      */
     public Integer maxSize() {
         return this.maxSize;
     }
     /**
-     * @return 存储规格最小值，单位为 GiB
+     * @return Minimum value for storage specification, unit: GiB.
      * 
      */
     public Integer minSize() {
         return this.minSize;
     }
     /**
-     * @return 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+     * @return Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 当前存储规格值，单位为 GiB
+     * @return Current storage specification value, in GiB.
      * 
      */
     public Integer size() {

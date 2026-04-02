@@ -19,14 +19,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
     public static final DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgs Empty = new DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgs();
 
     /**
-     * 内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+     * The content delivery network can cache authentication status codes. This parameter indicates the related configuration.
      * 
      */
     @Import(name="cacheAction")
     private @Nullable Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionArgs> cacheAction;
 
     /**
-     * @return 内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+     * @return The content delivery network can cache authentication status codes. This parameter indicates the related configuration.
      * 
      */
     public Optional<Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionArgs>> cacheAction() {
@@ -34,14 +34,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
     }
 
     /**
-     * 表示鉴权失败时，内容分发网络如何响应用户。
+     * Indicates how the content delivery network responds to users when authentication fails.
      * 
      */
     @Import(name="responseAction")
     private @Nullable Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionArgs> responseAction;
 
     /**
-     * @return 表示鉴权失败时，内容分发网络如何响应用户。
+     * @return Indicates how the content delivery network responds to users when authentication fails.
      * 
      */
     public Optional<Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionArgs>> responseAction() {
@@ -49,14 +49,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
     }
 
     /**
-     * 表示内容分发网络对鉴权状态码的处理方式。
+     * Specifies how the content delivery network handles authentication status codes.
      * 
      */
     @Import(name="statusCodeAction")
     private @Nullable Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionArgs> statusCodeAction;
 
     /**
-     * @return 表示内容分发网络对鉴权状态码的处理方式。
+     * @return Specifies how the content delivery network handles authentication status codes.
      * 
      */
     public Optional<Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionArgs>> statusCodeAction() {
@@ -64,14 +64,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
     }
 
     /**
-     * 表示鉴权超时后，内容分发网络如何处理鉴权请求。
+     * Specifies how the content delivery network handles authentication requests after authentication timeout.
      * 
      */
     @Import(name="timeOutAction")
     private @Nullable Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionArgs> timeOutAction;
 
     /**
-     * @return 表示鉴权超时后，内容分发网络如何处理鉴权请求。
+     * @return Specifies how the content delivery network handles authentication requests after authentication timeout.
      * 
      */
     public Optional<Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionArgs>> timeOutAction() {
@@ -106,7 +106,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param cacheAction 内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+         * @param cacheAction The content delivery network can cache authentication status codes. This parameter indicates the related configuration.
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param cacheAction 内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+         * @param cacheAction The content delivery network can cache authentication status codes. This parameter indicates the related configuration.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param responseAction 表示鉴权失败时，内容分发网络如何响应用户。
+         * @param responseAction Indicates how the content delivery network responds to users when authentication fails.
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param responseAction 表示鉴权失败时，内容分发网络如何响应用户。
+         * @param responseAction Indicates how the content delivery network responds to users when authentication fails.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param statusCodeAction 表示内容分发网络对鉴权状态码的处理方式。
+         * @param statusCodeAction Specifies how the content delivery network handles authentication status codes.
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param statusCodeAction 表示内容分发网络对鉴权状态码的处理方式。
+         * @param statusCodeAction Specifies how the content delivery network handles authentication status codes.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param timeOutAction 表示鉴权超时后，内容分发网络如何处理鉴权请求。
+         * @param timeOutAction Specifies how the content delivery network handles authentication requests after authentication timeout.
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param timeOutAction 表示鉴权超时后，内容分发网络如何处理鉴权请求。
+         * @param timeOutAction Specifies how the content delivery network handles authentication requests after authentication timeout.
          * 
          * @return builder
          * 

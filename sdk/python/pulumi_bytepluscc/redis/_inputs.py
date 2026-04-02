@@ -36,11 +36,11 @@ if not MYPY:
     class InstanceCapacityArgsDict(TypedDict):
         total: NotRequired[pulumi.Input[builtins.int]]
         """
-        当前实例的内存总容量。单位：MiB。
+        Total memory capacity of the current instance. Unit: MiB.
         """
         used: NotRequired[pulumi.Input[builtins.int]]
         """
-        当前实例已用容量。单位：MiB。
+        Used capacity of the current instance. Unit: MiB.
         """
 elif False:
     InstanceCapacityArgsDict: TypeAlias = Mapping[str, Any]
@@ -51,8 +51,8 @@ class InstanceCapacityArgs:
                  total: Optional[pulumi.Input[builtins.int]] = None,
                  used: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.int] total: 当前实例的内存总容量。单位：MiB。
-        :param pulumi.Input[builtins.int] used: 当前实例已用容量。单位：MiB。
+        :param pulumi.Input[builtins.int] total: Total memory capacity of the current instance. Unit: MiB.
+        :param pulumi.Input[builtins.int] used: Used capacity of the current instance. Unit: MiB.
         """
         if total is not None:
             pulumi.set(__self__, "total", total)
@@ -63,7 +63,7 @@ class InstanceCapacityArgs:
     @pulumi.getter
     def total(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        当前实例的内存总容量。单位：MiB。
+        Total memory capacity of the current instance. Unit: MiB.
         """
         return pulumi.get(self, "total")
 
@@ -75,7 +75,7 @@ class InstanceCapacityArgs:
     @pulumi.getter
     def used(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        当前实例已用容量。单位：MiB。
+        Used capacity of the current instance. Unit: MiB.
         """
         return pulumi.get(self, "used")
 
@@ -88,7 +88,7 @@ if not MYPY:
     class InstanceConfigureNodeArgsDict(TypedDict):
         az: NotRequired[pulumi.Input[builtins.str]]
         """
-        每个节点所属的可用区。
+        The availability zone each node belongs to.
         """
 elif False:
     InstanceConfigureNodeArgsDict: TypeAlias = Mapping[str, Any]
@@ -98,7 +98,7 @@ class InstanceConfigureNodeArgs:
     def __init__(__self__, *,
                  az: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] az: 每个节点所属的可用区。
+        :param pulumi.Input[builtins.str] az: The availability zone each node belongs to.
         """
         if az is not None:
             pulumi.set(__self__, "az", az)
@@ -107,7 +107,7 @@ class InstanceConfigureNodeArgs:
     @pulumi.getter
     def az(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        每个节点所属的可用区。
+        The availability zone each node belongs to.
         """
         return pulumi.get(self, "az")
 
@@ -120,12 +120,12 @@ if not MYPY:
     class InstanceInstanceShardArgsDict(TypedDict):
         node_number: NotRequired[pulumi.Input[builtins.int]]
         """
-        分片中的节点数量
+        Number of nodes in each shard
         """
         server_nodes: NotRequired[pulumi.Input[Sequence[pulumi.Input['InstanceInstanceShardServerNodeArgsDict']]]]
         shard_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        分片 ID。
+        Shard ID.
         """
 elif False:
     InstanceInstanceShardArgsDict: TypeAlias = Mapping[str, Any]
@@ -137,8 +137,8 @@ class InstanceInstanceShardArgs:
                  server_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceInstanceShardServerNodeArgs']]]] = None,
                  shard_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.int] node_number: 分片中的节点数量
-        :param pulumi.Input[builtins.str] shard_id: 分片 ID。
+        :param pulumi.Input[builtins.int] node_number: Number of nodes in each shard
+        :param pulumi.Input[builtins.str] shard_id: Shard ID.
         """
         if node_number is not None:
             pulumi.set(__self__, "node_number", node_number)
@@ -151,7 +151,7 @@ class InstanceInstanceShardArgs:
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        分片中的节点数量
+        Number of nodes in each shard
         """
         return pulumi.get(self, "node_number")
 
@@ -172,7 +172,7 @@ class InstanceInstanceShardArgs:
     @pulumi.getter(name="shardId")
     def shard_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        分片 ID。
+        Shard ID.
         """
         return pulumi.get(self, "shard_id")
 
@@ -185,19 +185,19 @@ if not MYPY:
     class InstanceInstanceShardServerNodeArgsDict(TypedDict):
         current_role: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+        Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
         """
         node_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点 ID。
+        Node ID.
         """
         status: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+        Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
         """
         zone_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点所在的可用区。
+        Availability zone where the node is located.
         """
 elif False:
     InstanceInstanceShardServerNodeArgsDict: TypeAlias = Mapping[str, Any]
@@ -210,10 +210,10 @@ class InstanceInstanceShardServerNodeArgs:
                  status: Optional[pulumi.Input[builtins.str]] = None,
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] current_role: 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
-        :param pulumi.Input[builtins.str] node_id: 节点 ID。
-        :param pulumi.Input[builtins.str] status: 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
-        :param pulumi.Input[builtins.str] zone_id: 节点所在的可用区。
+        :param pulumi.Input[builtins.str] current_role: Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
+        :param pulumi.Input[builtins.str] node_id: Node ID.
+        :param pulumi.Input[builtins.str] status: Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone where the node is located.
         """
         if current_role is not None:
             pulumi.set(__self__, "current_role", current_role)
@@ -228,7 +228,7 @@ class InstanceInstanceShardServerNodeArgs:
     @pulumi.getter(name="currentRole")
     def current_role(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+        Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
         """
         return pulumi.get(self, "current_role")
 
@@ -240,7 +240,7 @@ class InstanceInstanceShardServerNodeArgs:
     @pulumi.getter(name="nodeId")
     def node_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点 ID。
+        Node ID.
         """
         return pulumi.get(self, "node_id")
 
@@ -252,7 +252,7 @@ class InstanceInstanceShardServerNodeArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+        Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
         """
         return pulumi.get(self, "status")
 
@@ -264,7 +264,7 @@ class InstanceInstanceShardServerNodeArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点所在的可用区。
+        Availability zone where the node is located.
         """
         return pulumi.get(self, "zone_id")
 
@@ -277,11 +277,11 @@ if not MYPY:
     class InstanceTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Tag key.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value.
         """
 elif False:
     InstanceTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -292,8 +292,8 @@ class InstanceTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Tag key.
+        :param pulumi.Input[builtins.str] value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -304,7 +304,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -316,7 +316,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -329,27 +329,27 @@ if not MYPY:
     class InstanceVisitAddrArgsDict(TypedDict):
         addr_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+        Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
         """
         address: NotRequired[pulumi.Input[builtins.str]]
         """
-        IP 地址或者域名。
+        IP address or domain name.
         """
         eip_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+        EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
         """
         port: NotRequired[pulumi.Input[builtins.str]]
         """
-        端口号。
+        Port number.
         """
         vi_pv6: NotRequired[pulumi.Input[builtins.str]]
         """
-        连接地址所对应的 IPv6 地址。
+        IPv6 address corresponding to the connection address.
         """
         vip: NotRequired[pulumi.Input[builtins.str]]
         """
-        连接地址所对应的 IPv4 地址。
+        The IPv4 address corresponding to the connection address.
         """
 elif False:
     InstanceVisitAddrArgsDict: TypeAlias = Mapping[str, Any]
@@ -364,12 +364,12 @@ class InstanceVisitAddrArgs:
                  vi_pv6: Optional[pulumi.Input[builtins.str]] = None,
                  vip: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] addr_type: 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
-        :param pulumi.Input[builtins.str] address: IP 地址或者域名。
-        :param pulumi.Input[builtins.str] eip_id: 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
-        :param pulumi.Input[builtins.str] port: 端口号。
-        :param pulumi.Input[builtins.str] vi_pv6: 连接地址所对应的 IPv6 地址。
-        :param pulumi.Input[builtins.str] vip: 连接地址所对应的 IPv4 地址。
+        :param pulumi.Input[builtins.str] addr_type: Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
+        :param pulumi.Input[builtins.str] address: IP address or domain name.
+        :param pulumi.Input[builtins.str] eip_id: EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
+        :param pulumi.Input[builtins.str] port: Port number.
+        :param pulumi.Input[builtins.str] vi_pv6: IPv6 address corresponding to the connection address.
+        :param pulumi.Input[builtins.str] vip: The IPv4 address corresponding to the connection address.
         """
         if addr_type is not None:
             pulumi.set(__self__, "addr_type", addr_type)
@@ -388,7 +388,7 @@ class InstanceVisitAddrArgs:
     @pulumi.getter(name="addrType")
     def addr_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+        Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
         """
         return pulumi.get(self, "addr_type")
 
@@ -400,7 +400,7 @@ class InstanceVisitAddrArgs:
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP 地址或者域名。
+        IP address or domain name.
         """
         return pulumi.get(self, "address")
 
@@ -412,7 +412,7 @@ class InstanceVisitAddrArgs:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+        EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
         """
         return pulumi.get(self, "eip_id")
 
@@ -424,7 +424,7 @@ class InstanceVisitAddrArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        端口号。
+        Port number.
         """
         return pulumi.get(self, "port")
 
@@ -436,7 +436,7 @@ class InstanceVisitAddrArgs:
     @pulumi.getter(name="viPv6")
     def vi_pv6(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接地址所对应的 IPv6 地址。
+        IPv6 address corresponding to the connection address.
         """
         return pulumi.get(self, "vi_pv6")
 
@@ -448,7 +448,7 @@ class InstanceVisitAddrArgs:
     @pulumi.getter
     def vip(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接地址所对应的 IPv4 地址。
+        The IPv4 address corresponding to the connection address.
         """
         return pulumi.get(self, "vip")
 

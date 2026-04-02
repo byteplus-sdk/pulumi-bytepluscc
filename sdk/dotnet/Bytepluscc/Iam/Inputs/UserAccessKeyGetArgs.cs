@@ -14,49 +14,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Inputs
     public sealed class UserAccessKeyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 访问密钥ID。
+        /// Access key ID.
         /// </summary>
         [Input("accessKeyId")]
         public Input<string>? AccessKeyId { get; set; }
 
         /// <summary>
-        /// 访问密钥创建时间。
+        /// Access key creation time.
         /// </summary>
         [Input("createDate")]
         public Input<string>? CreateDate { get; set; }
 
         /// <summary>
-        /// 最近一次使用的服务区域。
+        /// Most recently used service region.
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
 
         /// <summary>
-        /// 访问密钥最近一次使用时间。
+        /// Last used time of the access key.
         /// </summary>
         [Input("requestTime")]
         public Input<string>? RequestTime { get; set; }
 
         /// <summary>
-        /// 最近一次使用的服务名称。
+        /// Name of the most recently used service.
         /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }
 
         /// <summary>
-        /// 访问密钥状态。Active代表启用，Inactive代表禁用。
+        /// Access key status. 'Active' means enabled, 'Inactive' means disabled.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 访问密钥更新时间。
+        /// Access key update time.
         /// </summary>
         [Input("updateDate")]
         public Input<string>? UpdateDate { get; set; }
 
         /// <summary>
-        /// 访问密钥Secret。
+        /// Access key Secret.
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }

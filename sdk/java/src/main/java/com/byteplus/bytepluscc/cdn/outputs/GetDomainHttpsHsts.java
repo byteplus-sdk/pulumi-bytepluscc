@@ -13,38 +13,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainHttpsHsts {
     /**
-     * @return 表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
+     * @return Indicates whether the HSTS configuration also applies to subdomains of the accelerated domain. The parameter has the following values: include: applies HSTS configuration to subdomain sites. exclude: does not apply HSTS configuration to subdomain sites. The default value is exclude.
      * 
      */
     private String subdomain;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
      * 
      */
     private Boolean switch_;
     /**
-     * @return 表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+     * @return Indicates the cache expiration time for the Strict-Transport-Security response header in the browser, in seconds. If Switch is true, this parameter is required. The value range is 0–31,536,000. 31,536,000 seconds equals 365 days. If the value is 0, it is equivalent to disabling the HSTS setting.
      * 
      */
     private Integer ttl;
 
     private GetDomainHttpsHsts() {}
     /**
-     * @return 表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
+     * @return Indicates whether the HSTS configuration also applies to subdomains of the accelerated domain. The parameter has the following values: include: applies HSTS configuration to subdomain sites. exclude: does not apply HSTS configuration to subdomain sites. The default value is exclude.
      * 
      */
     public String subdomain() {
         return this.subdomain;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
      * 
      */
     public Boolean switch_() {
         return this.switch_;
     }
     /**
-     * @return 表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+     * @return Indicates the cache expiration time for the Strict-Transport-Security response header in the browser, in seconds. If Switch is true, this parameter is required. The value range is 0–31,536,000. 31,536,000 seconds equals 365 days. If the value is 0, it is equivalent to disabling the HSTS setting.
      * 
      */
     public Integer ttl() {

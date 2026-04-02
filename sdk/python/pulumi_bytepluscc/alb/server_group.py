@@ -38,18 +38,18 @@ class ServerGroupArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['ServerGroupTagArgs']]]] = None):
         """
         The set of arguments for constructing a ServerGroup resource.
-        :param pulumi.Input[builtins.str] vpc_id: 后端服务器组所属 Vpc 的 ID。
-        :param pulumi.Input[builtins.str] cross_zone_enabled: 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
-        :param pulumi.Input[builtins.str] description: 后端服务器组的描述。
-        :param pulumi.Input['ServerGroupHealthCheckArgs'] health_check: 服务器组健康检查配置信息。
-        :param pulumi.Input[builtins.str] ip_address_type: 服务器组的IP地址类型。目前只支持 IPv4
-        :param pulumi.Input[builtins.str] project_name: 后端服务器组所属项目名称。
-        :param pulumi.Input[builtins.str] protocol: 后端协议：HTTP，HTTPS。
-        :param pulumi.Input[builtins.str] scheduler: 调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
-        :param pulumi.Input[builtins.str] server_group_name: 后端服务器组的名称。
-        :param pulumi.Input[builtins.str] server_group_type: 后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
-        :param pulumi.Input[builtins.str] status: 服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
-        :param pulumi.Input['ServerGroupStickySessionConfigArgs'] sticky_session_config: 会话保持功能的参数信息。
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the backend server group belongs.
+        :param pulumi.Input[builtins.str] cross_zone_enabled: Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+        :param pulumi.Input[builtins.str] description: Description of the backend server group.
+        :param pulumi.Input['ServerGroupHealthCheckArgs'] health_check: Server group health check configuration information.
+        :param pulumi.Input[builtins.str] ip_address_type: IP address type of the server group. Only IPv4 is supported.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the backend server group belongs.
+        :param pulumi.Input[builtins.str] protocol: Backend protocol: HTTP, HTTPS.
+        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+        :param pulumi.Input[builtins.str] server_group_name: Name of the backend server group.
+        :param pulumi.Input[builtins.str] server_group_type: Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+        :param pulumi.Input[builtins.str] status: Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+        :param pulumi.Input['ServerGroupStickySessionConfigArgs'] sticky_session_config: Session persistence parameter information.
         """
         pulumi.set(__self__, "vpc_id", vpc_id)
         if cross_zone_enabled is not None:
@@ -83,7 +83,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        后端服务器组所属 Vpc 的 ID。
+        ID of the VPC to which the backend server group belongs.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -95,7 +95,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="crossZoneEnabled")
     def cross_zone_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+        Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
         """
         return pulumi.get(self, "cross_zone_enabled")
 
@@ -107,7 +107,7 @@ class ServerGroupArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的描述。
+        Description of the backend server group.
         """
         return pulumi.get(self, "description")
 
@@ -119,7 +119,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="healthCheck")
     def health_check(self) -> Optional[pulumi.Input['ServerGroupHealthCheckArgs']]:
         """
-        服务器组健康检查配置信息。
+        Server group health check configuration information.
         """
         return pulumi.get(self, "health_check")
 
@@ -131,7 +131,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="ipAddressType")
     def ip_address_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        服务器组的IP地址类型。目前只支持 IPv4
+        IP address type of the server group. Only IPv4 is supported.
         """
         return pulumi.get(self, "ip_address_type")
 
@@ -143,7 +143,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组所属项目名称。
+        Name of the project to which the backend server group belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -155,7 +155,7 @@ class ServerGroupArgs:
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端协议：HTTP，HTTPS。
+        Backend protocol: HTTP, HTTPS.
         """
         return pulumi.get(self, "protocol")
 
@@ -167,7 +167,7 @@ class ServerGroupArgs:
     @pulumi.getter
     def scheduler(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+        Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
         """
         return pulumi.get(self, "scheduler")
 
@@ -179,7 +179,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="serverGroupName")
     def server_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的名称。
+        Name of the backend server group.
         """
         return pulumi.get(self, "server_group_name")
 
@@ -191,7 +191,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="serverGroupType")
     def server_group_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
+        Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
         """
         return pulumi.get(self, "server_group_type")
 
@@ -212,7 +212,7 @@ class ServerGroupArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
+        Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
         """
         return pulumi.get(self, "status")
 
@@ -224,7 +224,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="stickySessionConfig")
     def sticky_session_config(self) -> Optional[pulumi.Input['ServerGroupStickySessionConfigArgs']]:
         """
-        会话保持功能的参数信息。
+        Session persistence parameter information.
         """
         return pulumi.get(self, "sticky_session_config")
 
@@ -266,22 +266,22 @@ class _ServerGroupState:
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServerGroup resources.
-        :param pulumi.Input[builtins.str] create_time: 后端服务器组的创建时间。
-        :param pulumi.Input[builtins.str] cross_zone_enabled: 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
-        :param pulumi.Input[builtins.str] description: 后端服务器组的描述。
-        :param pulumi.Input['ServerGroupHealthCheckArgs'] health_check: 服务器组健康检查配置信息。
-        :param pulumi.Input[builtins.str] ip_address_type: 服务器组的IP地址类型。目前只支持 IPv4
-        :param pulumi.Input[builtins.str] project_name: 后端服务器组所属项目名称。
-        :param pulumi.Input[builtins.str] protocol: 后端协议：HTTP，HTTPS。
-        :param pulumi.Input[builtins.str] scheduler: 调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
-        :param pulumi.Input[builtins.int] server_count: 服务器组内后端服务器的个数。
-        :param pulumi.Input[builtins.str] server_group_id: 后端服务器组的ID。
-        :param pulumi.Input[builtins.str] server_group_name: 后端服务器组的名称。
-        :param pulumi.Input[builtins.str] server_group_type: 后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
-        :param pulumi.Input[builtins.str] status: 服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
-        :param pulumi.Input['ServerGroupStickySessionConfigArgs'] sticky_session_config: 会话保持功能的参数信息。
-        :param pulumi.Input[builtins.str] update_time: 后端服务器组的最近操作时间。
-        :param pulumi.Input[builtins.str] vpc_id: 后端服务器组所属 Vpc 的 ID。
+        :param pulumi.Input[builtins.str] create_time: Creation time of the backend server group.
+        :param pulumi.Input[builtins.str] cross_zone_enabled: Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+        :param pulumi.Input[builtins.str] description: Description of the backend server group.
+        :param pulumi.Input['ServerGroupHealthCheckArgs'] health_check: Server group health check configuration information.
+        :param pulumi.Input[builtins.str] ip_address_type: IP address type of the server group. Only IPv4 is supported.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the backend server group belongs.
+        :param pulumi.Input[builtins.str] protocol: Backend protocol: HTTP, HTTPS.
+        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+        :param pulumi.Input[builtins.int] server_count: Number of backend servers in the server group.
+        :param pulumi.Input[builtins.str] server_group_id: ID of the backend server group.
+        :param pulumi.Input[builtins.str] server_group_name: Name of the backend server group.
+        :param pulumi.Input[builtins.str] server_group_type: Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+        :param pulumi.Input[builtins.str] status: Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+        :param pulumi.Input['ServerGroupStickySessionConfigArgs'] sticky_session_config: Session persistence parameter information.
+        :param pulumi.Input[builtins.str] update_time: Last operation time of the backend server group.
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the backend server group belongs.
         """
         if create_time is not None:
             pulumi.set(__self__, "create_time", create_time)
@@ -326,7 +326,7 @@ class _ServerGroupState:
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的创建时间。
+        Creation time of the backend server group.
         """
         return pulumi.get(self, "create_time")
 
@@ -338,7 +338,7 @@ class _ServerGroupState:
     @pulumi.getter(name="crossZoneEnabled")
     def cross_zone_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+        Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
         """
         return pulumi.get(self, "cross_zone_enabled")
 
@@ -350,7 +350,7 @@ class _ServerGroupState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的描述。
+        Description of the backend server group.
         """
         return pulumi.get(self, "description")
 
@@ -362,7 +362,7 @@ class _ServerGroupState:
     @pulumi.getter(name="healthCheck")
     def health_check(self) -> Optional[pulumi.Input['ServerGroupHealthCheckArgs']]:
         """
-        服务器组健康检查配置信息。
+        Server group health check configuration information.
         """
         return pulumi.get(self, "health_check")
 
@@ -374,7 +374,7 @@ class _ServerGroupState:
     @pulumi.getter(name="ipAddressType")
     def ip_address_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        服务器组的IP地址类型。目前只支持 IPv4
+        IP address type of the server group. Only IPv4 is supported.
         """
         return pulumi.get(self, "ip_address_type")
 
@@ -395,7 +395,7 @@ class _ServerGroupState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组所属项目名称。
+        Name of the project to which the backend server group belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -407,7 +407,7 @@ class _ServerGroupState:
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端协议：HTTP，HTTPS。
+        Backend protocol: HTTP, HTTPS.
         """
         return pulumi.get(self, "protocol")
 
@@ -419,7 +419,7 @@ class _ServerGroupState:
     @pulumi.getter
     def scheduler(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+        Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
         """
         return pulumi.get(self, "scheduler")
 
@@ -431,7 +431,7 @@ class _ServerGroupState:
     @pulumi.getter(name="serverCount")
     def server_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        服务器组内后端服务器的个数。
+        Number of backend servers in the server group.
         """
         return pulumi.get(self, "server_count")
 
@@ -443,7 +443,7 @@ class _ServerGroupState:
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的ID。
+        ID of the backend server group.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -455,7 +455,7 @@ class _ServerGroupState:
     @pulumi.getter(name="serverGroupName")
     def server_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的名称。
+        Name of the backend server group.
         """
         return pulumi.get(self, "server_group_name")
 
@@ -467,7 +467,7 @@ class _ServerGroupState:
     @pulumi.getter(name="serverGroupType")
     def server_group_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
+        Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
         """
         return pulumi.get(self, "server_group_type")
 
@@ -488,7 +488,7 @@ class _ServerGroupState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
+        Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
         """
         return pulumi.get(self, "status")
 
@@ -500,7 +500,7 @@ class _ServerGroupState:
     @pulumi.getter(name="stickySessionConfig")
     def sticky_session_config(self) -> Optional[pulumi.Input['ServerGroupStickySessionConfigArgs']]:
         """
-        会话保持功能的参数信息。
+        Session persistence parameter information.
         """
         return pulumi.get(self, "sticky_session_config")
 
@@ -521,7 +521,7 @@ class _ServerGroupState:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的最近操作时间。
+        Last operation time of the backend server group.
         """
         return pulumi.get(self, "update_time")
 
@@ -533,7 +533,7 @@ class _ServerGroupState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组所属 Vpc 的 ID。
+        ID of the VPC to which the backend server group belongs.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -564,7 +564,7 @@ class ServerGroup(pulumi.CustomResource):
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        服务器组是后端服务器的逻辑集合。ALB 实例按照您配置的转发规则确定客户端请求将被转发到的服务器组。然后，ALB 实例根据您配置的负载均衡策略，将请求分发给服务器组内的后端服务器。后端服务器接收并处理请求。
+        A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your configured forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your configured load balancing policy. Backend servers receive and process the requests.
 
         ## Import
 
@@ -574,18 +574,18 @@ class ServerGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] cross_zone_enabled: 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
-        :param pulumi.Input[builtins.str] description: 后端服务器组的描述。
-        :param pulumi.Input[Union['ServerGroupHealthCheckArgs', 'ServerGroupHealthCheckArgsDict']] health_check: 服务器组健康检查配置信息。
-        :param pulumi.Input[builtins.str] ip_address_type: 服务器组的IP地址类型。目前只支持 IPv4
-        :param pulumi.Input[builtins.str] project_name: 后端服务器组所属项目名称。
-        :param pulumi.Input[builtins.str] protocol: 后端协议：HTTP，HTTPS。
-        :param pulumi.Input[builtins.str] scheduler: 调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
-        :param pulumi.Input[builtins.str] server_group_name: 后端服务器组的名称。
-        :param pulumi.Input[builtins.str] server_group_type: 后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
-        :param pulumi.Input[builtins.str] status: 服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
-        :param pulumi.Input[Union['ServerGroupStickySessionConfigArgs', 'ServerGroupStickySessionConfigArgsDict']] sticky_session_config: 会话保持功能的参数信息。
-        :param pulumi.Input[builtins.str] vpc_id: 后端服务器组所属 Vpc 的 ID。
+        :param pulumi.Input[builtins.str] cross_zone_enabled: Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+        :param pulumi.Input[builtins.str] description: Description of the backend server group.
+        :param pulumi.Input[Union['ServerGroupHealthCheckArgs', 'ServerGroupHealthCheckArgsDict']] health_check: Server group health check configuration information.
+        :param pulumi.Input[builtins.str] ip_address_type: IP address type of the server group. Only IPv4 is supported.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the backend server group belongs.
+        :param pulumi.Input[builtins.str] protocol: Backend protocol: HTTP, HTTPS.
+        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+        :param pulumi.Input[builtins.str] server_group_name: Name of the backend server group.
+        :param pulumi.Input[builtins.str] server_group_type: Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+        :param pulumi.Input[builtins.str] status: Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+        :param pulumi.Input[Union['ServerGroupStickySessionConfigArgs', 'ServerGroupStickySessionConfigArgsDict']] sticky_session_config: Session persistence parameter information.
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the backend server group belongs.
         """
         ...
     @overload
@@ -594,7 +594,7 @@ class ServerGroup(pulumi.CustomResource):
                  args: ServerGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        服务器组是后端服务器的逻辑集合。ALB 实例按照您配置的转发规则确定客户端请求将被转发到的服务器组。然后，ALB 实例根据您配置的负载均衡策略，将请求分发给服务器组内的后端服务器。后端服务器接收并处理请求。
+        A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your configured forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your configured load balancing policy. Backend servers receive and process the requests.
 
         ## Import
 
@@ -697,22 +697,22 @@ class ServerGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] create_time: 后端服务器组的创建时间。
-        :param pulumi.Input[builtins.str] cross_zone_enabled: 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
-        :param pulumi.Input[builtins.str] description: 后端服务器组的描述。
-        :param pulumi.Input[Union['ServerGroupHealthCheckArgs', 'ServerGroupHealthCheckArgsDict']] health_check: 服务器组健康检查配置信息。
-        :param pulumi.Input[builtins.str] ip_address_type: 服务器组的IP地址类型。目前只支持 IPv4
-        :param pulumi.Input[builtins.str] project_name: 后端服务器组所属项目名称。
-        :param pulumi.Input[builtins.str] protocol: 后端协议：HTTP，HTTPS。
-        :param pulumi.Input[builtins.str] scheduler: 调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
-        :param pulumi.Input[builtins.int] server_count: 服务器组内后端服务器的个数。
-        :param pulumi.Input[builtins.str] server_group_id: 后端服务器组的ID。
-        :param pulumi.Input[builtins.str] server_group_name: 后端服务器组的名称。
-        :param pulumi.Input[builtins.str] server_group_type: 后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
-        :param pulumi.Input[builtins.str] status: 服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
-        :param pulumi.Input[Union['ServerGroupStickySessionConfigArgs', 'ServerGroupStickySessionConfigArgsDict']] sticky_session_config: 会话保持功能的参数信息。
-        :param pulumi.Input[builtins.str] update_time: 后端服务器组的最近操作时间。
-        :param pulumi.Input[builtins.str] vpc_id: 后端服务器组所属 Vpc 的 ID。
+        :param pulumi.Input[builtins.str] create_time: Creation time of the backend server group.
+        :param pulumi.Input[builtins.str] cross_zone_enabled: Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+        :param pulumi.Input[builtins.str] description: Description of the backend server group.
+        :param pulumi.Input[Union['ServerGroupHealthCheckArgs', 'ServerGroupHealthCheckArgsDict']] health_check: Server group health check configuration information.
+        :param pulumi.Input[builtins.str] ip_address_type: IP address type of the server group. Only IPv4 is supported.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the backend server group belongs.
+        :param pulumi.Input[builtins.str] protocol: Backend protocol: HTTP, HTTPS.
+        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+        :param pulumi.Input[builtins.int] server_count: Number of backend servers in the server group.
+        :param pulumi.Input[builtins.str] server_group_id: ID of the backend server group.
+        :param pulumi.Input[builtins.str] server_group_name: Name of the backend server group.
+        :param pulumi.Input[builtins.str] server_group_type: Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+        :param pulumi.Input[builtins.str] status: Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+        :param pulumi.Input[Union['ServerGroupStickySessionConfigArgs', 'ServerGroupStickySessionConfigArgsDict']] sticky_session_config: Session persistence parameter information.
+        :param pulumi.Input[builtins.str] update_time: Last operation time of the backend server group.
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the backend server group belongs.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -743,7 +743,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组的创建时间。
+        Creation time of the backend server group.
         """
         return pulumi.get(self, "create_time")
 
@@ -751,7 +751,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="crossZoneEnabled")
     def cross_zone_enabled(self) -> pulumi.Output[builtins.str]:
         """
-        是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+        Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
         """
         return pulumi.get(self, "cross_zone_enabled")
 
@@ -759,7 +759,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组的描述。
+        Description of the backend server group.
         """
         return pulumi.get(self, "description")
 
@@ -767,7 +767,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="healthCheck")
     def health_check(self) -> pulumi.Output['outputs.ServerGroupHealthCheck']:
         """
-        服务器组健康检查配置信息。
+        Server group health check configuration information.
         """
         return pulumi.get(self, "health_check")
 
@@ -775,7 +775,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="ipAddressType")
     def ip_address_type(self) -> pulumi.Output[builtins.str]:
         """
-        服务器组的IP地址类型。目前只支持 IPv4
+        IP address type of the server group. Only IPv4 is supported.
         """
         return pulumi.get(self, "ip_address_type")
 
@@ -788,7 +788,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组所属项目名称。
+        Name of the project to which the backend server group belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -796,7 +796,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter
     def protocol(self) -> pulumi.Output[builtins.str]:
         """
-        后端协议：HTTP，HTTPS。
+        Backend protocol: HTTP, HTTPS.
         """
         return pulumi.get(self, "protocol")
 
@@ -804,7 +804,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter
     def scheduler(self) -> pulumi.Output[builtins.str]:
         """
-        调度算法。取值：wrr：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+        Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
         """
         return pulumi.get(self, "scheduler")
 
@@ -812,7 +812,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="serverCount")
     def server_count(self) -> pulumi.Output[builtins.int]:
         """
-        服务器组内后端服务器的个数。
+        Number of backend servers in the server group.
         """
         return pulumi.get(self, "server_count")
 
@@ -820,7 +820,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组的ID。
+        ID of the backend server group.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -828,7 +828,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="serverGroupName")
     def server_group_name(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组的名称。
+        Name of the backend server group.
         """
         return pulumi.get(self, "server_group_name")
 
@@ -836,7 +836,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="serverGroupType")
     def server_group_type(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组的类型。instance：服务器类型，该类型服务器组支持添加 ecs、eni 实例作为后端服务器。ip：IP类型，该类型服务器组支持添加 IP 地址作为后端服务器。
+        Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
         """
         return pulumi.get(self, "server_group_type")
 
@@ -849,7 +849,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        服务器组状态。Creating：创建中。Active：运行中。Configuring：配置中。Deleting：删除中。
+        Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
         """
         return pulumi.get(self, "status")
 
@@ -857,7 +857,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="stickySessionConfig")
     def sticky_session_config(self) -> pulumi.Output['outputs.ServerGroupStickySessionConfig']:
         """
-        会话保持功能的参数信息。
+        Session persistence parameter information.
         """
         return pulumi.get(self, "sticky_session_config")
 
@@ -870,7 +870,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组的最近操作时间。
+        Last operation time of the backend server group.
         """
         return pulumi.get(self, "update_time")
 
@@ -878,7 +878,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组所属 Vpc 的 ID。
+        ID of the VPC to which the backend server group belongs.
         """
         return pulumi.get(self, "vpc_id")
 

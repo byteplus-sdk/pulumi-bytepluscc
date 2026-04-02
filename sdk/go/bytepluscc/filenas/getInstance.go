@@ -30,43 +30,43 @@ type LookupInstanceArgs struct {
 
 // A collection of values returned by getInstance.
 type LookupInstanceResult struct {
-	// 缓存型性能信息。
+	// Cache performance information
 	CachePerformance GetInstanceCachePerformance `pulumi:"cachePerformance"`
-	// 文件系统容量。
+	// File system capacity
 	Capacity GetInstanceCapacity `pulumi:"capacity"`
-	// 计费类型，取值 PayAsYouGo，表示按量计费。
+	// Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
 	ChargeType string `pulumi:"chargeType"`
-	// 创建时间
+	// Creation time
 	CreateTime string `pulumi:"createTime"`
-	// 描述信息。
+	// Description
 	Description string `pulumi:"description"`
-	// 文件系统 ID。
+	// File system ID
 	FileSystemId string `pulumi:"fileSystemId"`
-	// 文件系统名称。
+	// File system name
 	FileSystemName string `pulumi:"fileSystemName"`
-	// 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+	// File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
 	FileSystemType string `pulumi:"fileSystemType"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 所属项目，默认值为 default 项目。
+	// Project, default value is the Default project
 	ProjectName string `pulumi:"projectName"`
-	// 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+	// File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
 	ProtocolType string `pulumi:"protocolType"`
-	// 快照数量
+	// Number of snapshots
 	SnapshotCount int `pulumi:"snapshotCount"`
-	// 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+	// Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
 	SnapshotId string `pulumi:"snapshotId"`
-	// 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+	// File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
 	Status string `pulumi:"status"`
-	// 存储类型，取值Standard，表示标准型。
+	// Storage type. Value: Standard, indicates standard type
 	StorageType string `pulumi:"storageType"`
-	// 文件系统的标签信息
+	// File system tag information
 	Tags []GetInstanceTag `pulumi:"tags"`
-	// 更新时间
+	// Update time
 	UpdateTime string `pulumi:"updateTime"`
-	// 可用区 ID。
+	// Availability Zone ID
 	ZoneId string `pulumi:"zoneId"`
-	// 可用区名称。
+	// Availability Zone name
 	ZoneName string `pulumi:"zoneName"`
 }
 
@@ -104,42 +104,42 @@ func (o LookupInstanceResultOutput) ToLookupInstanceResultOutputWithContext(ctx 
 	return o
 }
 
-// 缓存型性能信息。
+// Cache performance information
 func (o LookupInstanceResultOutput) CachePerformance() GetInstanceCachePerformanceOutput {
 	return o.ApplyT(func(v LookupInstanceResult) GetInstanceCachePerformance { return v.CachePerformance }).(GetInstanceCachePerformanceOutput)
 }
 
-// 文件系统容量。
+// File system capacity
 func (o LookupInstanceResultOutput) Capacity() GetInstanceCapacityOutput {
 	return o.ApplyT(func(v LookupInstanceResult) GetInstanceCapacity { return v.Capacity }).(GetInstanceCapacityOutput)
 }
 
-// 计费类型，取值 PayAsYouGo，表示按量计费。
+// Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
 func (o LookupInstanceResultOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 创建时间
+// Creation time
 func (o LookupInstanceResultOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 描述信息。
+// Description
 func (o LookupInstanceResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 文件系统 ID。
+// File system ID
 func (o LookupInstanceResultOutput) FileSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.FileSystemId }).(pulumi.StringOutput)
 }
 
-// 文件系统名称。
+// File system name
 func (o LookupInstanceResultOutput) FileSystemName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.FileSystemName }).(pulumi.StringOutput)
 }
 
-// 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+// File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
 func (o LookupInstanceResultOutput) FileSystemType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.FileSystemType }).(pulumi.StringOutput)
 }
@@ -149,52 +149,52 @@ func (o LookupInstanceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 所属项目，默认值为 default 项目。
+// Project, default value is the Default project
 func (o LookupInstanceResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+// File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
 func (o LookupInstanceResultOutput) ProtocolType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ProtocolType }).(pulumi.StringOutput)
 }
 
-// 快照数量
+// Number of snapshots
 func (o LookupInstanceResultOutput) SnapshotCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.SnapshotCount }).(pulumi.IntOutput)
 }
 
-// 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+// Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
 func (o LookupInstanceResultOutput) SnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.SnapshotId }).(pulumi.StringOutput)
 }
 
-// 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+// File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
 func (o LookupInstanceResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 存储类型，取值Standard，表示标准型。
+// Storage type. Value: Standard, indicates standard type
 func (o LookupInstanceResultOutput) StorageType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.StorageType }).(pulumi.StringOutput)
 }
 
-// 文件系统的标签信息
+// File system tag information
 func (o LookupInstanceResultOutput) Tags() GetInstanceTagArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceTag { return v.Tags }).(GetInstanceTagArrayOutput)
 }
 
-// 更新时间
+// Update time
 func (o LookupInstanceResultOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.UpdateTime }).(pulumi.StringOutput)
 }
 
-// 可用区 ID。
+// Availability Zone ID
 func (o LookupInstanceResultOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ZoneId }).(pulumi.StringOutput)
 }
 
-// 可用区名称。
+// Availability Zone name
 func (o LookupInstanceResultOutput) ZoneName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ZoneName }).(pulumi.StringOutput)
 }

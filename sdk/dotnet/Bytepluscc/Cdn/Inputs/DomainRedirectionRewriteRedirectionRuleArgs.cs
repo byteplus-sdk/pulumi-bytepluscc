@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainRedirectionRewriteRedirectionRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示一个 URL 重定向改写的规则。
+        /// Indicates a URL redirect rewrite rule
         /// </summary>
         [Input("redirectionAction")]
         public Input<Inputs.DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs>? RedirectionAction { get; set; }

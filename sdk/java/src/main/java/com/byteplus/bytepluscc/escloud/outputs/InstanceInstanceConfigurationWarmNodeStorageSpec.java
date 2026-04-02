@@ -13,74 +13,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceInstanceConfigurationWarmNodeStorageSpec {
     /**
-     * @return 存储规格的描述信息
+     * @return Description of storage specification.
      * 
      */
     private @Nullable String description;
     /**
-     * @return 存储规格的显示名称
+     * @return Display name of storage specification.
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return 存储规格的最大值，单位为 GiB
+     * @return Maximum storage specification, measured in GiB
      * 
      */
     private @Nullable Integer maxSize;
     /**
-     * @return 存储规格最小值，单位为 GiB
+     * @return Minimum value for storage specification, unit: GiB.
      * 
      */
     private @Nullable Integer minSize;
     /**
-     * @return 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+     * @return Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
      * 
      */
     private @Nullable String name;
     /**
-     * @return 当前存储规格值，单位为 GiB
+     * @return Current storage specification value, in GiB.
      * 
      */
     private @Nullable Integer size;
 
     private InstanceInstanceConfigurationWarmNodeStorageSpec() {}
     /**
-     * @return 存储规格的描述信息
+     * @return Description of storage specification.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return 存储规格的显示名称
+     * @return Display name of storage specification.
      * 
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return 存储规格的最大值，单位为 GiB
+     * @return Maximum storage specification, measured in GiB
      * 
      */
     public Optional<Integer> maxSize() {
         return Optional.ofNullable(this.maxSize);
     }
     /**
-     * @return 存储规格最小值，单位为 GiB
+     * @return Minimum value for storage specification, unit: GiB.
      * 
      */
     public Optional<Integer> minSize() {
         return Optional.ofNullable(this.minSize);
     }
     /**
-     * @return 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+     * @return Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return 当前存储规格值，单位为 GiB
+     * @return Current storage specification value, in GiB.
      * 
      */
     public Optional<Integer> size() {

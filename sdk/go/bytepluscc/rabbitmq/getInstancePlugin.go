@@ -30,25 +30,25 @@ type LookupInstancePluginArgs struct {
 
 // A collection of values returned by getInstancePlugin.
 type LookupInstancePluginResult struct {
-	// 插件描述。
+	// Plugin description
 	Description string `pulumi:"description"`
-	// 关闭此插件的注意事项说明。
+	// Notes for disabling this plugin
 	DisablePrompt string `pulumi:"disablePrompt"`
-	// 开启此插件的注意事项说明。
+	// Notes for enabling this plugin
 	EnablePrompt string `pulumi:"enablePrompt"`
-	// 是否已开启插件。true：插件已开启。false：插件已关闭。
+	// Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
 	Enabled bool `pulumi:"enabled"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 实例 ID。
+	// Instance ID
 	InstanceId string `pulumi:"instanceId"`
-	// 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+	// Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
 	NeedRebootOnChange bool `pulumi:"needRebootOnChange"`
-	// 插件名称。
+	// Plugin name
 	PluginName string `pulumi:"pluginName"`
-	// 插件监听的端口。
+	// Plugin listening port
 	Port int `pulumi:"port"`
-	// 插件版本。
+	// Plugin version
 	Version string `pulumi:"version"`
 }
 
@@ -86,22 +86,22 @@ func (o LookupInstancePluginResultOutput) ToLookupInstancePluginResultOutputWith
 	return o
 }
 
-// 插件描述。
+// Plugin description
 func (o LookupInstancePluginResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstancePluginResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 关闭此插件的注意事项说明。
+// Notes for disabling this plugin
 func (o LookupInstancePluginResultOutput) DisablePrompt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstancePluginResult) string { return v.DisablePrompt }).(pulumi.StringOutput)
 }
 
-// 开启此插件的注意事项说明。
+// Notes for enabling this plugin
 func (o LookupInstancePluginResultOutput) EnablePrompt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstancePluginResult) string { return v.EnablePrompt }).(pulumi.StringOutput)
 }
 
-// 是否已开启插件。true：插件已开启。false：插件已关闭。
+// Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
 func (o LookupInstancePluginResultOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupInstancePluginResult) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
@@ -111,27 +111,27 @@ func (o LookupInstancePluginResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstancePluginResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 实例 ID。
+// Instance ID
 func (o LookupInstancePluginResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstancePluginResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+// Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
 func (o LookupInstancePluginResultOutput) NeedRebootOnChange() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupInstancePluginResult) bool { return v.NeedRebootOnChange }).(pulumi.BoolOutput)
 }
 
-// 插件名称。
+// Plugin name
 func (o LookupInstancePluginResultOutput) PluginName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstancePluginResult) string { return v.PluginName }).(pulumi.StringOutput)
 }
 
-// 插件监听的端口。
+// Plugin listening port
 func (o LookupInstancePluginResultOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstancePluginResult) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// 插件版本。
+// Plugin version
 func (o LookupInstancePluginResultOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstancePluginResult) string { return v.Version }).(pulumi.StringOutput)
 }

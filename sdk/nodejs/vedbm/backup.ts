@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 云数据库 veDB备份管理
+ * Cloud Database veDB Backup Management
  *
  * ## Example Usage
  *
@@ -58,59 +58,59 @@ export class Backup extends pulumi.CustomResource {
     }
 
     /**
-     * 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      */
     public /*out*/ readonly backupEndTime!: pulumi.Output<string>;
     /**
-     * 备份文件大小，单位为 KiB。
+     * Backup file size, unit: KiB
      */
     public /*out*/ readonly backupFileSize!: pulumi.Output<number>;
     /**
-     * 备份 ID。
+     * Backup ID
      */
     public /*out*/ readonly backupId!: pulumi.Output<string>;
     /**
-     * 备份方式，目前仅支持物理备份。
+     * Backup method, currently only physical backup is supported
      */
     public readonly backupMethod!: pulumi.Output<string>;
     /**
-     * 数据备份保留天数。
+     * Data backup retention days
      */
     public readonly backupRetentionPeriod!: pulumi.Output<number>;
     /**
-     * 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      */
     public /*out*/ readonly backupStartTime!: pulumi.Output<string>;
     /**
-     * 备份状态。
+     * Backup status
      */
     public /*out*/ readonly backupStatus!: pulumi.Output<string>;
     /**
-     * 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
      */
     public readonly backupTime!: pulumi.Output<string>;
     /**
-     * 备份类型，目前仅支持全量备份。
+     * Backup type, currently only full backup is supported
      */
     public readonly backupType!: pulumi.Output<string>;
     /**
-     * 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      */
     public /*out*/ readonly consistentTime!: pulumi.Output<string>;
     /**
-     * 是否开启持续备份，取值固定为 true。
+     * Enable continuous backup, value is always true
      */
     public /*out*/ readonly continueBackup!: pulumi.Output<boolean>;
     /**
-     * 创建类型。
+     * Creation type
      */
     public /*out*/ readonly createType!: pulumi.Output<string>;
     /**
-     * 全量备份周期，多个取值用英文逗号（,）隔开。
+     * Full backup cycle, use commas (,) to separate multiple values
      */
     public readonly fullBackupPeriod!: pulumi.Output<string>;
     /**
-     * 实例ID。
+     * Instance ID
      */
     public readonly instanceId!: pulumi.Output<string>;
 
@@ -171,59 +171,59 @@ export class Backup extends pulumi.CustomResource {
  */
 export interface BackupState {
     /**
-     * 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      */
     backupEndTime?: pulumi.Input<string>;
     /**
-     * 备份文件大小，单位为 KiB。
+     * Backup file size, unit: KiB
      */
     backupFileSize?: pulumi.Input<number>;
     /**
-     * 备份 ID。
+     * Backup ID
      */
     backupId?: pulumi.Input<string>;
     /**
-     * 备份方式，目前仅支持物理备份。
+     * Backup method, currently only physical backup is supported
      */
     backupMethod?: pulumi.Input<string>;
     /**
-     * 数据备份保留天数。
+     * Data backup retention days
      */
     backupRetentionPeriod?: pulumi.Input<number>;
     /**
-     * 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      */
     backupStartTime?: pulumi.Input<string>;
     /**
-     * 备份状态。
+     * Backup status
      */
     backupStatus?: pulumi.Input<string>;
     /**
-     * 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
      */
     backupTime?: pulumi.Input<string>;
     /**
-     * 备份类型，目前仅支持全量备份。
+     * Backup type, currently only full backup is supported
      */
     backupType?: pulumi.Input<string>;
     /**
-     * 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      */
     consistentTime?: pulumi.Input<string>;
     /**
-     * 是否开启持续备份，取值固定为 true。
+     * Enable continuous backup, value is always true
      */
     continueBackup?: pulumi.Input<boolean>;
     /**
-     * 创建类型。
+     * Creation type
      */
     createType?: pulumi.Input<string>;
     /**
-     * 全量备份周期，多个取值用英文逗号（,）隔开。
+     * Full backup cycle, use commas (,) to separate multiple values
      */
     fullBackupPeriod?: pulumi.Input<string>;
     /**
-     * 实例ID。
+     * Instance ID
      */
     instanceId?: pulumi.Input<string>;
 }
@@ -233,27 +233,27 @@ export interface BackupState {
  */
 export interface BackupArgs {
     /**
-     * 备份方式，目前仅支持物理备份。
+     * Backup method, currently only physical backup is supported
      */
     backupMethod?: pulumi.Input<string>;
     /**
-     * 数据备份保留天数。
+     * Data backup retention days
      */
     backupRetentionPeriod?: pulumi.Input<number>;
     /**
-     * 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
      */
     backupTime?: pulumi.Input<string>;
     /**
-     * 备份类型，目前仅支持全量备份。
+     * Backup type, currently only full backup is supported
      */
     backupType?: pulumi.Input<string>;
     /**
-     * 全量备份周期，多个取值用英文逗号（,）隔开。
+     * Full backup cycle, use commas (,) to separate multiple values
      */
     fullBackupPeriod?: pulumi.Input<string>;
     /**
-     * 实例ID。
+     * Instance ID
      */
     instanceId: pulumi.Input<string>;
 }

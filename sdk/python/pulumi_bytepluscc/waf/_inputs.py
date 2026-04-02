@@ -38,12 +38,12 @@ if not MYPY:
     class DomainBackendGroupArgsDict(TypedDict):
         access_ports: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]
         """
-        接入的端口号。
+        Access port number.
         """
         backends: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainBackendGroupBackendArgsDict']]]]
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        源站组名称。
+        Origin group name.
         """
 elif False:
     DomainBackendGroupArgsDict: TypeAlias = Mapping[str, Any]
@@ -55,8 +55,8 @@ class DomainBackendGroupArgs:
                  backends: Optional[pulumi.Input[Sequence[pulumi.Input['DomainBackendGroupBackendArgs']]]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.int]]] access_ports: 接入的端口号。
-        :param pulumi.Input[builtins.str] name: 源站组名称。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.int]]] access_ports: Access port number.
+        :param pulumi.Input[builtins.str] name: Origin group name.
         """
         if access_ports is not None:
             pulumi.set(__self__, "access_ports", access_ports)
@@ -69,7 +69,7 @@ class DomainBackendGroupArgs:
     @pulumi.getter(name="accessPorts")
     def access_ports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]:
         """
-        接入的端口号。
+        Access port number.
         """
         return pulumi.get(self, "access_ports")
 
@@ -90,7 +90,7 @@ class DomainBackendGroupArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        源站组名称。
+        Origin group name.
         """
         return pulumi.get(self, "name")
 
@@ -103,19 +103,19 @@ if not MYPY:
     class DomainBackendGroupBackendArgsDict(TypedDict):
         ip: NotRequired[pulumi.Input[builtins.str]]
         """
-        源站 IP 地址。
+        Origin IP address
         """
         port: NotRequired[pulumi.Input[builtins.int]]
         """
-        源站端口。
+        Origin port
         """
         protocol: NotRequired[pulumi.Input[builtins.str]]
         """
-        源站协议。
+        Origin protocol.
         """
         weight: NotRequired[pulumi.Input[builtins.int]]
         """
-        源站权重。
+        Origin weight
         """
 elif False:
     DomainBackendGroupBackendArgsDict: TypeAlias = Mapping[str, Any]
@@ -128,10 +128,10 @@ class DomainBackendGroupBackendArgs:
                  protocol: Optional[pulumi.Input[builtins.str]] = None,
                  weight: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] ip: 源站 IP 地址。
-        :param pulumi.Input[builtins.int] port: 源站端口。
-        :param pulumi.Input[builtins.str] protocol: 源站协议。
-        :param pulumi.Input[builtins.int] weight: 源站权重。
+        :param pulumi.Input[builtins.str] ip: Origin IP address
+        :param pulumi.Input[builtins.int] port: Origin port
+        :param pulumi.Input[builtins.str] protocol: Origin protocol.
+        :param pulumi.Input[builtins.int] weight: Origin weight
         """
         if ip is not None:
             pulumi.set(__self__, "ip", ip)
@@ -146,7 +146,7 @@ class DomainBackendGroupBackendArgs:
     @pulumi.getter
     def ip(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        源站 IP 地址。
+        Origin IP address
         """
         return pulumi.get(self, "ip")
 
@@ -158,7 +158,7 @@ class DomainBackendGroupBackendArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        源站端口。
+        Origin port
         """
         return pulumi.get(self, "port")
 
@@ -170,7 +170,7 @@ class DomainBackendGroupBackendArgs:
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        源站协议。
+        Origin protocol.
         """
         return pulumi.get(self, "protocol")
 
@@ -182,7 +182,7 @@ class DomainBackendGroupBackendArgs:
     @pulumi.getter
     def weight(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        源站权重。
+        Origin weight
         """
         return pulumi.get(self, "weight")
 
@@ -195,35 +195,35 @@ if not MYPY:
     class DomainCloudAccessConfigArgsDict(TypedDict):
         access_protocol: NotRequired[pulumi.Input[builtins.str]]
         """
-        接入协议类型。
+        Access protocol type
         """
         defence_mode: NotRequired[pulumi.Input[builtins.int]]
         """
-        防护模式。
+        Protection mode
         """
         instance_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        负载均衡实例 ID。
+        Load balancing instance ID.
         """
         instance_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        负载均衡实例名称。
+        Load balancer instance name.
         """
         listener_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        负载均衡监听器 ID。
+        Load balancing listener ID.
         """
         lost_association_from_alb: NotRequired[pulumi.Input[builtins.int]]
         """
-        是否从 ALB 中丢失关联。
+        Disassociated from ALB
         """
         port: NotRequired[pulumi.Input[builtins.str]]
         """
-        监听器转发规则的端口号。
+        Listener forwarding rule port number
         """
         protocol: NotRequired[pulumi.Input[builtins.str]]
         """
-        监听器转发规则的协议类型。
+        Protocol type for listener forwarding rules.
         """
 elif False:
     DomainCloudAccessConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -240,14 +240,14 @@ class DomainCloudAccessConfigArgs:
                  port: Optional[pulumi.Input[builtins.str]] = None,
                  protocol: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] access_protocol: 接入协议类型。
-        :param pulumi.Input[builtins.int] defence_mode: 防护模式。
-        :param pulumi.Input[builtins.str] instance_id: 负载均衡实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: 负载均衡实例名称。
-        :param pulumi.Input[builtins.str] listener_id: 负载均衡监听器 ID。
-        :param pulumi.Input[builtins.int] lost_association_from_alb: 是否从 ALB 中丢失关联。
-        :param pulumi.Input[builtins.str] port: 监听器转发规则的端口号。
-        :param pulumi.Input[builtins.str] protocol: 监听器转发规则的协议类型。
+        :param pulumi.Input[builtins.str] access_protocol: Access protocol type
+        :param pulumi.Input[builtins.int] defence_mode: Protection mode
+        :param pulumi.Input[builtins.str] instance_id: Load balancing instance ID.
+        :param pulumi.Input[builtins.str] instance_name: Load balancer instance name.
+        :param pulumi.Input[builtins.str] listener_id: Load balancing listener ID.
+        :param pulumi.Input[builtins.int] lost_association_from_alb: Disassociated from ALB
+        :param pulumi.Input[builtins.str] port: Listener forwarding rule port number
+        :param pulumi.Input[builtins.str] protocol: Protocol type for listener forwarding rules.
         """
         if access_protocol is not None:
             pulumi.set(__self__, "access_protocol", access_protocol)
@@ -270,7 +270,7 @@ class DomainCloudAccessConfigArgs:
     @pulumi.getter(name="accessProtocol")
     def access_protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        接入协议类型。
+        Access protocol type
         """
         return pulumi.get(self, "access_protocol")
 
@@ -282,7 +282,7 @@ class DomainCloudAccessConfigArgs:
     @pulumi.getter(name="defenceMode")
     def defence_mode(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        防护模式。
+        Protection mode
         """
         return pulumi.get(self, "defence_mode")
 
@@ -294,7 +294,7 @@ class DomainCloudAccessConfigArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例 ID。
+        Load balancing instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -306,7 +306,7 @@ class DomainCloudAccessConfigArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例名称。
+        Load balancer instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -318,7 +318,7 @@ class DomainCloudAccessConfigArgs:
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡监听器 ID。
+        Load balancing listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -330,7 +330,7 @@ class DomainCloudAccessConfigArgs:
     @pulumi.getter(name="lostAssociationFromAlb")
     def lost_association_from_alb(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        是否从 ALB 中丢失关联。
+        Disassociated from ALB
         """
         return pulumi.get(self, "lost_association_from_alb")
 
@@ -342,7 +342,7 @@ class DomainCloudAccessConfigArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器转发规则的端口号。
+        Listener forwarding rule port number
         """
         return pulumi.get(self, "port")
 
@@ -354,7 +354,7 @@ class DomainCloudAccessConfigArgs:
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器转发规则的协议类型。
+        Protocol type for listener forwarding rules.
         """
         return pulumi.get(self, "protocol")
 
@@ -367,11 +367,11 @@ if not MYPY:
     class DomainProtocolPortsArgsDict(TypedDict):
         http: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]
         """
-        HTTP 协议的端口号。
+        HTTP protocol port number
         """
         https: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]
         """
-        HTTPS 协议的端口号。
+        HTTPS protocol port number
         """
 elif False:
     DomainProtocolPortsArgsDict: TypeAlias = Mapping[str, Any]
@@ -382,8 +382,8 @@ class DomainProtocolPortsArgs:
                  http: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]] = None,
                  https: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.int]]] http: HTTP 协议的端口号。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.int]]] https: HTTPS 协议的端口号。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.int]]] http: HTTP protocol port number
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.int]]] https: HTTPS protocol port number
         """
         if http is not None:
             pulumi.set(__self__, "http", http)
@@ -394,7 +394,7 @@ class DomainProtocolPortsArgs:
     @pulumi.getter
     def http(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]:
         """
-        HTTP 协议的端口号。
+        HTTP protocol port number
         """
         return pulumi.get(self, "http")
 
@@ -406,7 +406,7 @@ class DomainProtocolPortsArgs:
     @pulumi.getter
     def https(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]:
         """
-        HTTPS 协议的端口号。
+        HTTPS protocol port number
         """
         return pulumi.get(self, "https")
 
@@ -419,35 +419,35 @@ if not MYPY:
     class DomainTcpListenerConfigArgsDict(TypedDict):
         access_protocol: NotRequired[pulumi.Input[builtins.str]]
         """
-        接入协议类型。
+        Access protocol type
         """
         defence_mode: NotRequired[pulumi.Input[builtins.int]]
         """
-        防护模式。
+        Protection mode
         """
         instance_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例 ID。
+        Instance ID.
         """
         instance_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例名称。
+        Instance name.
         """
         listener_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        监听器 ID。
+        Listener ID.
         """
         lost_association_from_alb: NotRequired[pulumi.Input[builtins.int]]
         """
-        是否从 ALB 中丢失关联。
+        Disassociated from ALB
         """
         port: NotRequired[pulumi.Input[builtins.str]]
         """
-        监听器的端口号。
+        Listener port number
         """
         protocol: NotRequired[pulumi.Input[builtins.str]]
         """
-        监听器协议类型。
+        Listener protocol type.
         """
 elif False:
     DomainTcpListenerConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -464,14 +464,14 @@ class DomainTcpListenerConfigArgs:
                  port: Optional[pulumi.Input[builtins.str]] = None,
                  protocol: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] access_protocol: 接入协议类型。
-        :param pulumi.Input[builtins.int] defence_mode: 防护模式。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。
-        :param pulumi.Input[builtins.str] listener_id: 监听器 ID。
-        :param pulumi.Input[builtins.int] lost_association_from_alb: 是否从 ALB 中丢失关联。
-        :param pulumi.Input[builtins.str] port: 监听器的端口号。
-        :param pulumi.Input[builtins.str] protocol: 监听器协议类型。
+        :param pulumi.Input[builtins.str] access_protocol: Access protocol type
+        :param pulumi.Input[builtins.int] defence_mode: Protection mode
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] instance_name: Instance name.
+        :param pulumi.Input[builtins.str] listener_id: Listener ID.
+        :param pulumi.Input[builtins.int] lost_association_from_alb: Disassociated from ALB
+        :param pulumi.Input[builtins.str] port: Listener port number
+        :param pulumi.Input[builtins.str] protocol: Listener protocol type.
         """
         if access_protocol is not None:
             pulumi.set(__self__, "access_protocol", access_protocol)
@@ -494,7 +494,7 @@ class DomainTcpListenerConfigArgs:
     @pulumi.getter(name="accessProtocol")
     def access_protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        接入协议类型。
+        Access protocol type
         """
         return pulumi.get(self, "access_protocol")
 
@@ -506,7 +506,7 @@ class DomainTcpListenerConfigArgs:
     @pulumi.getter(name="defenceMode")
     def defence_mode(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        防护模式。
+        Protection mode
         """
         return pulumi.get(self, "defence_mode")
 
@@ -518,7 +518,7 @@ class DomainTcpListenerConfigArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -530,7 +530,7 @@ class DomainTcpListenerConfigArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例名称。
+        Instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -542,7 +542,7 @@ class DomainTcpListenerConfigArgs:
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器 ID。
+        Listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -554,7 +554,7 @@ class DomainTcpListenerConfigArgs:
     @pulumi.getter(name="lostAssociationFromAlb")
     def lost_association_from_alb(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        是否从 ALB 中丢失关联。
+        Disassociated from ALB
         """
         return pulumi.get(self, "lost_association_from_alb")
 
@@ -566,7 +566,7 @@ class DomainTcpListenerConfigArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器的端口号。
+        Listener port number
         """
         return pulumi.get(self, "port")
 
@@ -578,7 +578,7 @@ class DomainTcpListenerConfigArgs:
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器协议类型。
+        Listener protocol type.
         """
         return pulumi.get(self, "protocol")
 
@@ -614,15 +614,15 @@ if not MYPY:
     class DomainTlsFieldsConfigHeadersConfigArgsDict(TypedDict):
         enable: NotRequired[pulumi.Input[builtins.int]]
         """
-        是否记录全量 header。
+        Record all header fields
         """
         excluded_key_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+        Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
         """
         statistical_key_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        统计 header 字段，将对应字段用于日志统计分析和告警。
+        Statistics header fields. Use the specified fields for log analysis and alerts.
         """
 elif False:
     DomainTlsFieldsConfigHeadersConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -634,9 +634,9 @@ class DomainTlsFieldsConfigHeadersConfigArgs:
                  excluded_key_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  statistical_key_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.int] enable: 是否记录全量 header。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] excluded_key_lists: 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] statistical_key_lists: 统计 header 字段，将对应字段用于日志统计分析和告警。
+        :param pulumi.Input[builtins.int] enable: Record all header fields
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] excluded_key_lists: Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] statistical_key_lists: Statistics header fields. Use the specified fields for log analysis and alerts.
         """
         if enable is not None:
             pulumi.set(__self__, "enable", enable)
@@ -649,7 +649,7 @@ class DomainTlsFieldsConfigHeadersConfigArgs:
     @pulumi.getter
     def enable(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        是否记录全量 header。
+        Record all header fields
         """
         return pulumi.get(self, "enable")
 
@@ -661,7 +661,7 @@ class DomainTlsFieldsConfigHeadersConfigArgs:
     @pulumi.getter(name="excludedKeyLists")
     def excluded_key_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+        Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
         """
         return pulumi.get(self, "excluded_key_lists")
 
@@ -673,7 +673,7 @@ class DomainTlsFieldsConfigHeadersConfigArgs:
     @pulumi.getter(name="statisticalKeyLists")
     def statistical_key_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        统计 header 字段，将对应字段用于日志统计分析和告警。
+        Statistics header fields. Use the specified fields for log analysis and alerts.
         """
         return pulumi.get(self, "statistical_key_lists")
 

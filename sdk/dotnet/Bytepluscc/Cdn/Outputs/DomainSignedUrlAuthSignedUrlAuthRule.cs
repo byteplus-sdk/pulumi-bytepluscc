@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainSignedUrlAuthSignedUrlAuthRule
     {
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         public readonly Outputs.DomainSignedUrlAuthSignedUrlAuthRuleCondition? Condition;
         /// <summary>
-        /// 表示签名计算的配置。
+        /// Indicates the configuration for signature calculation.
         /// </summary>
         public readonly Outputs.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthAction? SignedUrlAuthAction;
 

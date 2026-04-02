@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamTlsSettings {
     /**
-     * @return SNI。留空时会将访问网关的域名透传到upstream。
+     * @return SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
      * 
      */
     private @Nullable String sni;
     /**
-     * @return TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+     * @return TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
      * 
      */
     private @Nullable String tlsMode;
 
     private UpstreamTlsSettings() {}
     /**
-     * @return SNI。留空时会将访问网关的域名透传到upstream。
+     * @return SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
      * 
      */
     public Optional<String> sni() {
         return Optional.ofNullable(this.sni);
     }
     /**
-     * @return TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+     * @return TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
      * 
      */
     public Optional<String> tlsMode() {

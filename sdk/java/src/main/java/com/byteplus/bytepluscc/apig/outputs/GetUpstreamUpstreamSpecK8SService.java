@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamUpstreamSpecK8SService {
     /**
-     * @return 容器服务名称。长度限制为2~63个字符。
+     * @return Container Service Name. Length: 2–63 characters
      * 
      */
     private String name;
     /**
-     * @return 命名空间。长度限制为2~63个字符。
+     * @return Namespace. Length: 2~63 characters
      * 
      */
     private String namespace;
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     private Integer port;
 
     private GetUpstreamUpstreamSpecK8SService() {}
     /**
-     * @return 容器服务名称。长度限制为2~63个字符。
+     * @return Container Service Name. Length: 2–63 characters
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 命名空间。长度限制为2~63个字符。
+     * @return Namespace. Length: 2~63 characters
      * 
      */
     public String namespace() {
         return this.namespace;
     }
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     public Integer port() {

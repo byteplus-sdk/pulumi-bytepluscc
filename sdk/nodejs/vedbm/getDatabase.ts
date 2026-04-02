@@ -31,19 +31,19 @@ export interface GetDatabaseArgs {
  */
 export interface GetDatabaseResult {
     /**
-     * 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+     * Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
      */
     readonly characterSetName: string;
     /**
-     * 数据库的权限信息
+     * Database permission information
      */
     readonly databasesPrivileges: outputs.vedbm.GetDatabaseDatabasesPrivilege[];
     /**
-     * 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+     * Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
      */
     readonly dbDesc: string;
     /**
-     * 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+     * Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
      */
     readonly dbName: string;
     /**
@@ -51,7 +51,7 @@ export interface GetDatabaseResult {
      */
     readonly id: string;
     /**
-     * 实例ID。
+     * Instance ID
      */
     readonly instanceId: string;
 }

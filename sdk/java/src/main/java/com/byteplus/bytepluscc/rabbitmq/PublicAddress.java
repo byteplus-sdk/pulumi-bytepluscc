@@ -20,7 +20,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 消息队列 RabbitMQ版支持开启公网访问，开启后，您可以通过公网访问 RabbitMQ 实例。
+ * RabbitMQ supports enabling public access. Once enabled, you can access the RabbitMQ instance via the public network.
  * 
  * ## Example Usage
  * 
@@ -68,98 +68,98 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:rabbitmq/publicAddress:PublicAddress")
 public class PublicAddress extends com.pulumi.resources.CustomResource {
     /**
-     * 创建实例的主账号ID。
+     * Main account ID that created the instance.
      * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
-     * @return 创建实例的主账号ID。
+     * @return Main account ID that created the instance.
      * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
-     * 是否已开启公网解析功能。true：已开启, false：已关闭。
+     * Whether public DNS resolution is enabled. true: enabled, false: disabled.
      * 
      */
     @Export(name="applyPrivateDnsToPublic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> applyPrivateDnsToPublic;
 
     /**
-     * @return 是否已开启公网解析功能。true：已开启, false：已关闭。
+     * @return Whether public DNS resolution is enabled. true: enabled, false: disabled.
      * 
      */
     public Output<Boolean> applyPrivateDnsToPublic() {
         return this.applyPrivateDnsToPublic;
     }
     /**
-     * 实例的类型，即集群版或单机版。
+     * Instance type: cluster or standalone.
      * 
      */
     @Export(name="archType", refs={String.class}, tree="[0]")
     private Output<String> archType;
 
     /**
-     * @return 实例的类型，即集群版或单机版。
+     * @return Instance type: cluster or standalone.
      * 
      */
     public Output<String> archType() {
         return this.archType;
     }
     /**
-     * 实例的计费方式等计费信息。
+     * Instance billing method and related billing information.
      * 
      */
     @Export(name="chargeDetail", refs={PublicAddressChargeDetail.class}, tree="[0]")
     private Output<PublicAddressChargeDetail> chargeDetail;
 
     /**
-     * @return 实例的计费方式等计费信息。
+     * @return Instance billing method and related billing information.
      * 
      */
     public Output<PublicAddressChargeDetail> chargeDetail() {
         return this.chargeDetail;
     }
     /**
-     * RabbitMQ实例的计算规格。
+     * RabbitMQ instance compute specification.
      * 
      */
     @Export(name="computeSpec", refs={String.class}, tree="[0]")
     private Output<String> computeSpec;
 
     /**
-     * @return RabbitMQ实例的计算规格。
+     * @return RabbitMQ instance compute specification.
      * 
      */
     public Output<String> computeSpec() {
         return this.computeSpec;
     }
     /**
-     * 实例的创建时间。
+     * Instance creation time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 实例的创建时间。
+     * @return Instance creation time.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * EIP的ID。
+     * EIP ID.
      * 
      */
     @Export(name="eipId", refs={String.class}, tree="[0]")
     private Output<String> eipId;
 
     /**
-     * @return EIP的ID。
+     * @return EIP ID.
      * 
      */
     public Output<String> eipId() {
@@ -172,112 +172,112 @@ public class PublicAddress extends com.pulumi.resources.CustomResource {
         return this.endpoints;
     }
     /**
-     * 实例的简单描述。
+     * Brief description of the instance.
      * 
      */
     @Export(name="instanceDescription", refs={String.class}, tree="[0]")
     private Output<String> instanceDescription;
 
     /**
-     * @return 实例的简单描述。
+     * @return Brief description of the instance.
      * 
      */
     public Output<String> instanceDescription() {
         return this.instanceDescription;
     }
     /**
-     * RabbitMQ 实例 ID。
+     * RabbitMQ instance ID.
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return RabbitMQ 实例 ID。
+     * @return RabbitMQ instance ID.
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * RabbitMQ 实例名称。
+     * RabbitMQ instance name.
      * 
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
-     * @return RabbitMQ 实例名称。
+     * @return RabbitMQ instance name.
      * 
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
-     * 实例状态。
+     * Instance status.
      * 
      */
     @Export(name="instanceStatus", refs={String.class}, tree="[0]")
     private Output<String> instanceStatus;
 
     /**
-     * @return 实例状态。
+     * @return Instance status.
      * 
      */
     public Output<String> instanceStatus() {
         return this.instanceStatus;
     }
     /**
-     * 是否开启了云盘加密。
+     * Whether cloud disk encryption is enabled.
      * 
      */
     @Export(name="isEncrypted", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEncrypted;
 
     /**
-     * @return 是否开启了云盘加密。
+     * @return Whether cloud disk encryption is enabled.
      * 
      */
     public Output<Boolean> isEncrypted() {
         return this.isEncrypted;
     }
     /**
-     * 实例所属的IAM项目。
+     * IAM project the instance belongs to.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 实例所属的IAM项目。
+     * @return IAM project the instance belongs to.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 实例总存储空间。单位为 GiB。
+     * Total storage space of the instance, in GiB.
      * 
      */
     @Export(name="storageSpace", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageSpace;
 
     /**
-     * @return 实例总存储空间。单位为 GiB。
+     * @return Total storage space of the instance, in GiB.
      * 
      */
     public Output<Integer> storageSpace() {
         return this.storageSpace;
     }
     /**
-     * VPC的子网ID。
+     * VPC subnet ID.
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return VPC的子网ID。
+     * @return VPC subnet ID.
      * 
      */
     public Output<String> subnetId() {
@@ -290,84 +290,84 @@ public class PublicAddress extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 实例已用存储空间。单位为 GiB。
+     * Used storage space of the instance, in GiB.
      * 
      */
     @Export(name="usedStorageSpace", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedStorageSpace;
 
     /**
-     * @return 实例已用存储空间。单位为 GiB。
+     * @return Used storage space of the instance, in GiB.
      * 
      */
     public Output<Integer> usedStorageSpace() {
         return this.usedStorageSpace;
     }
     /**
-     * RabbitMQ WebUI管理员账号名。
+     * RabbitMQ WebUI administrator account name.
      * 
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
-     * @return RabbitMQ WebUI管理员账号名。
+     * @return RabbitMQ WebUI administrator account name.
      * 
      */
     public Output<String> userName() {
         return this.userName;
     }
     /**
-     * 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+     * Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
-     * @return 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+     * @return Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
      * 
      */
     public Output<String> version() {
         return this.version;
     }
     /**
-     * 私有网络（VPC）ID。
+     * Private network (VPC) ID.
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 私有网络（VPC）ID。
+     * @return Private network (VPC) ID.
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * 可用区的描述信息。
+     * Description of the availability zone.
      * 
      */
     @Export(name="zoneDescription", refs={String.class}, tree="[0]")
     private Output<String> zoneDescription;
 
     /**
-     * @return 可用区的描述信息。
+     * @return Description of the availability zone.
      * 
      */
     public Output<String> zoneDescription() {
         return this.zoneDescription;
     }
     /**
-     * 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+     * Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
-     * @return 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+     * @return Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
      * 
      */
     public Output<String> zoneId() {

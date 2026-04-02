@@ -19,7 +19,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Outputs
         /// </summary>
         public readonly string? VpcId;
         /// <summary>
-        /// VPC 名称。
+        /// VPC name
         /// </summary>
         public readonly string? VpcName;
 

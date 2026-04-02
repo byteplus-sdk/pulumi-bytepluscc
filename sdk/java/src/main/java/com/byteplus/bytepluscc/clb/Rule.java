@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 转发规则用于将指定域名和URL的请求引流至指定的后端服务器组。
+ * The forwarding rule directs requests for specified domain names and URLs to the designated backend server group.
  * 
  * ## Example Usage
  * 
@@ -74,98 +74,98 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:clb/rule:Rule")
 public class Rule extends com.pulumi.resources.CustomResource {
     /**
-     * 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+     * Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
      * 
      */
     @Export(name="actionType", refs={String.class}, tree="[0]")
     private Output<String> actionType;
 
     /**
-     * @return 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+     * @return Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
      * 
      */
     public Output<String> actionType() {
         return this.actionType;
     }
     /**
-     * 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * @return Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 转发规则的域名。
+     * Domain name of the forwarding rule.
      * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
-     * @return 转发规则的域名。
+     * @return Domain name of the forwarding rule.
      * 
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
-     * 监听器ID。
+     * Listener ID.
      * 
      */
     @Export(name="listenerId", refs={String.class}, tree="[0]")
     private Output<String> listenerId;
 
     /**
-     * @return 监听器ID。
+     * @return Listener ID.
      * 
      */
     public Output<String> listenerId() {
         return this.listenerId;
     }
     /**
-     * 重定向相关配置信息。
+     * Redirection-related configuration information.
      * 
      */
     @Export(name="redirectConfig", refs={RuleRedirectConfig.class}, tree="[0]")
     private Output<RuleRedirectConfig> redirectConfig;
 
     /**
-     * @return 重定向相关配置信息。
+     * @return Redirection-related configuration information.
      * 
      */
     public Output<RuleRedirectConfig> redirectConfig() {
         return this.redirectConfig;
     }
     /**
-     * 转发规则ID。
+     * Forwarding rule ID.
      * 
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
-     * @return 转发规则ID。
+     * @return Forwarding rule ID.
      * 
      */
     public Output<String> ruleId() {
         return this.ruleId;
     }
     /**
-     * 转发规则关联的后端服务器组的ID。
+     * ID of the backend server group associated with the forwarding rule.
      * 
      */
     @Export(name="serverGroupId", refs={String.class}, tree="[0]")
     private Output<String> serverGroupId;
 
     /**
-     * @return 转发规则关联的后端服务器组的ID。
+     * @return ID of the backend server group associated with the forwarding rule.
      * 
      */
     public Output<String> serverGroupId() {
@@ -178,14 +178,14 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 转发规则的URL。
+     * URL of the forwarding rule.
      * 
      */
     @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**
-     * @return 转发规则的URL。
+     * @return URL of the forwarding rule.
      * 
      */
     public Output<String> url() {

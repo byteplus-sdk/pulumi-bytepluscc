@@ -15,23 +15,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq.Outputs
     public sealed class InstanceEndpoint
     {
         /// <summary>
-        /// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+        /// Type of instance endpoint. RabbitMQ instances provide the following endpoint types: WEB: Web UI endpoint, AMQP0*9*1: AMQP endpoint, MQTT: MQTT endpoint, WEB_MQTT: WEB and MQTT endpoints, STOMP: STOMP endpoint.
         /// </summary>
         public readonly string? EndpointType;
         /// <summary>
-        /// 实例的私网访问域名。
+        /// Private network access domain name of the instance.
         /// </summary>
         public readonly string? InternalEndpoint;
         /// <summary>
-        /// 公共服务区 IP 接入点。
+        /// Public service zone IP endpoint.
         /// </summary>
         public readonly string? InternalIpEndpoint;
         /// <summary>
-        /// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+        /// Network type of the endpoint. PrivateNetwork indicates a private network (VPC).
         /// </summary>
         public readonly string? NetworkType;
         /// <summary>
-        /// 实例公网访问域名。仅在开启公网访问之后显示。
+        /// Instance public access domain name. Displayed only after public access is enabled.
         /// </summary>
         public readonly string? PublicEndpoint;
 

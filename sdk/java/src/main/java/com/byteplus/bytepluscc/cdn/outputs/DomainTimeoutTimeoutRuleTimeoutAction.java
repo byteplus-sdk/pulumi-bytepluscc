@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainTimeoutTimeoutRuleTimeoutAction {
     /**
-     * @return 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+     * @return Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
      * 
      */
     private @Nullable Integer httpTimeout;
     /**
-     * @return 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+     * @return Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
      * 
      */
     private @Nullable Integer tcpTimeout;
 
     private DomainTimeoutTimeoutRuleTimeoutAction() {}
     /**
-     * @return 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+     * @return Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
      * 
      */
     public Optional<Integer> httpTimeout() {
         return Optional.ofNullable(this.httpTimeout);
     }
     /**
-     * @return 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+     * @return Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
      * 
      */
     public Optional<Integer> tcpTimeout() {

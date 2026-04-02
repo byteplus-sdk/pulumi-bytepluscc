@@ -18,211 +18,211 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainResult {
     /**
-     * @return 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+     * @return Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
      * 
      */
     private Integer accessMode;
     /**
-     * @return 高防实例 IP。高防型 WAF 接入展示，否则为空。
+     * @return High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
      * 
      */
     private String advancedDefenseIp;
     /**
-     * @return 高防实例 Ipv6。高防型 WAF 接入展示，否则为空。
+     * @return High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
      * 
      */
     private String advancedDefenseIpv6;
     /**
-     * @return 是否开启了 API 防护策略。0：关闭，1：开启。
+     * @return API protection policy enabled. 0: Off, 1: On
      * 
      */
     private Integer apiEnable;
     /**
-     * @return 攻击状态。0:未发现攻击,1:发现攻击。
+     * @return Attack status. 0: No attack detected, 1: Attack detected.
      * 
      */
     private Integer attackStatus;
     /**
-     * @return 是否开启智能 CC 防护策略。0：关闭，1：开启。
+     * @return Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
      * 
      */
     private Integer autoCcEnable;
     /**
-     * @return 是否开启自动封禁。0：关闭，1：开启。
+     * @return Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
      * 
      */
     private Integer automaticBlackEnable;
     /**
-     * @return 源站配置。
+     * @return Origin configuration.
      * 
      */
     private List<GetDomainBackendGroup> backendGroups;
     /**
-     * @return 是否开启了黑名单策略。0：关闭, 1：开启。
+     * @return Denylist policy enabled. 0: Off, 1: On
      * 
      */
     private Integer blackIpEnable;
     /**
-     * @return 是否开启了区域封禁策略。0：关闭;1：开启。
+     * @return Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
      * 
      */
     private Integer blackLctEnable;
     /**
-     * @return 是否开启动态Token防护。
+     * @return Dynamic token protection enabled
      * 
      */
     private Integer botDytokenEnable;
     /**
-     * @return 是否开启 bot 频率限制策略。
-     * 0：关闭
-     * 1：开启。
+     * @return Bot rate limit policy enabled.
+     * 0: Off
+     * 1: On
      * 
      */
     private Integer botFrequencyEnable;
     /**
-     * @return 是否开启 bot 统计防护策略。
-     * 0：关闭
-     * 1：开启。
+     * @return Bot statistics protection policy enabled.
+     * 0: Off
+     * 1: On
      * 
      */
     private Integer botRepeatEnable;
     /**
-     * @return 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-     * 0：观察
-     * 2：拦截
-     * 6：JS 挑战
-     * 7：人机验证。
+     * @return Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+     * 0: Observe
+     * 2: Intercept
+     * 6: JS Challenge
+     * 7: CAPTCHA.
      * 
      */
     private Integer botSequenceDefaultAction;
     /**
-     * @return 是否开启 bot 行为地图。
-     * 0：关闭
-     * 1：开启。
+     * @return Whether to enable bot behavior map.
+     * 0: Off
+     * 1: On.
      * 
      */
     private Integer botSequenceEnable;
     /**
-     * @return 是否开启 CC 防护策略。
-     * 0：关闭
-     * 1：开启。
+     * @return Whether to enable CC protection policy.
+     * 0: Disabled
+     * 1: Enabled.
      * 
      */
     private Integer ccEnable;
     /**
-     * @return 托管至证书中心的证书ID。
+     * @return Certificate ID managed in Certificate Center
      * 
      */
     private String certificateId;
     /**
-     * @return 证书名称，协议类型包含 HTTPS 时显示。
+     * @return Certificate name. Displayed when protocol type includes HTTPS.
      * 
      */
     private String certificateName;
     /**
-     * @return 证书托管平台:waf/certificate_service。
+     * @return Certificate hosting platform: waf/certificate_service.
      * 
      */
     private String certificatePlatform;
     /**
-     * @return CLB实例ID。
+     * @return CLB instance ID.
      * 
      */
     private String clbInstanceIds;
     /**
-     * @return CLB监听器ID。
+     * @return CLB listener ID.
      * 
      */
     private String clbListenerId;
     /**
-     * @return CLB后端服务器组ID。
+     * @return CLB backend server group ID.
      * 
      */
     private String clbPoolId;
     /**
-     * @return CLB后端服务器ID。
+     * @return CLB backend server ID
      * 
      */
     private String clbServerId;
     /**
-     * @return 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+     * @return Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
      * 
      */
     private Integer clientIpLocation;
     /**
-     * @return 客户端请求body最大值(MB)。
+     * @return Maximum client request body size (MB).
      * 
      */
     private Integer clientMaxBodySize;
     /**
-     * @return LB接入参数。
+     * @return LB access parameters.
      * 
      */
     private List<GetDomainCloudAccessConfig> cloudAccessConfigs;
     /**
-     * @return CNAME记录。
+     * @return CNAME record.
      * 
      */
     private String cname;
     /**
-     * @return 是否开启自定义BOT防护。
+     * @return Whether to enable custom bot protection.
      * 
      */
     private Integer customBotEnable;
     /**
-     * @return 自定义Header。
+     * @return Custom header.
      * 
      */
     private List<String> customHeaders;
     /**
-     * @return 是否开启自定义响应。
+     * @return Whether to enable custom response.
      * 
      */
     private Integer customRspEnable;
     /**
-     * @return 自定义SNI。
+     * @return Custom SNI.
      * 
      */
     private String customSni;
     /**
-     * @return 为例外 ALB 实例设置防护模式。
-     * 1：启用防护，已配置的防护策略生效。
-     * 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-     * 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-     * 设置例外防护实例后，域名可能还会存在以下防护状态：
-     * 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-     * 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-     * 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+     * @return Set protection mode for exception ALB instances.
+     * 1: Enable protection. The configured protection policies take effect.
+     * 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+     * 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+     * After configuring exception protection instances, the domain may also have the following protection statuses:
+     * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+     * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+     * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
      * 
      */
     private Integer defenceMode;
     /**
-     * @return 是否开启数据泄露防护。
+     * @return Data leakage protection enabled
      * 
      */
     private Integer dlpEnable;
     /**
-     * @return 防护的域名信息，支持泛域名和精确域名。
+     * @return Protected domain information. Supports wildcard and exact domains
      * 
      */
     private String domain;
     /**
-     * @return 是否开启用户自定义重定向。0:关闭,1:开启。
+     * @return User-defined redirection enabled. 0: Off, 1: On
      * 
      */
     private Integer enableCustomRedirect;
     /**
-     * @return 是否开启HTTP2.0。0:关闭,1:开启。
+     * @return Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
      * 
      */
     private Integer enableHttp2;
     /**
-     * @return 是否支持防护Ipv6请求。0:关闭,1:开启。
+     * @return IPv6 request protection supported. 0: Off, 1: On
      * 
      */
     private Integer enableIpv6;
     /**
-     * @return 是否开启SNI配置。0:关闭,1:开启。
+     * @return Whether to enable SNI configuration. 0: Off, 1: On.
      * 
      */
     private Integer enableSni;
@@ -232,147 +232,147 @@ public final class GetDomainResult {
      */
     private String id;
     /**
-     * @return 长连接复用个数。
+     * @return Persistent connection reuse count
      * 
      */
     private Integer keepAliveRequest;
     /**
-     * @return 长连接保持时间(秒)。
+     * @return Persistent connection keep-alive time (seconds)
      * 
      */
     private Integer keepAliveTimeout;
     /**
-     * @return 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+     * @return Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
      * 
      */
     private String lbAlgorithm;
     /**
-     * @return 端口号。
+     * @return Port number
      * 
      */
     private Integer port;
     /**
-     * @return 项目名称。
+     * @return Project name.
      * 
      */
     private String projectName;
     /**
-     * @return 是否开启协议跟随。0:关闭,1:开启。
+     * @return Protocol following enabled. 0: Off, 1: On
      * 
      */
     private Integer protocolFollow;
     /**
-     * @return 接入端口信息。
+     * @return Access port information
      * 
      */
     private GetDomainProtocolPorts protocolPorts;
     /**
-     * @return 接入协议类型,支持HTTP/HTTPS。
+     * @return Access protocol type: supports HTTP/HTTPS
      * 
      */
     private List<String> protocols;
     /**
-     * @return 是否开启代理配置。0:关闭,1:开启。
+     * @return Proxy configuration enabled. 0: Off, 1: On
      * 
      */
     private Integer proxyConfig;
     /**
-     * @return WAF和后端服务器的建连超时时间(秒)。
+     * @return Connection timeout between WAF and backend server (seconds).
      * 
      */
     private Integer proxyConnectTimeout;
     /**
-     * @return WAF回源长连接可复用个数。
+     * @return Number of reusable WAF origin persistent connections.
      * 
      */
     private Integer proxyKeepAlive;
     /**
-     * @return 空闲长连接超时时间(秒)。
+     * @return Idle persistent connection timeout (seconds)
      * 
      */
     private Integer proxyKeepAliveTimeout;
     /**
-     * @return WAF从后端服务器读取响应的超时时间(秒)。
+     * @return Timeout for WAF to read response from backend server (seconds).
      * 
      */
     private Integer proxyReadTimeout;
     /**
-     * @return WAF回源重试次数。
+     * @return WAF origin retry count.
      * 
      */
     private Integer proxyRetry;
     /**
-     * @return WAF将请求传输到后端服务器的超时时间(秒)。
+     * @return Timeout for WAF to transmit request to backend server (seconds).
      * 
      */
     private Integer proxyWriteTimeout;
     /**
-     * @return CNAME接入回源方式。0:私网回源,1:公网回源。
+     * @return CNAME access origin method. 0: Private network origin, 1: Public network origin.
      * 
      */
     private Integer publicRealServer;
     /**
-     * @return 是否开启异常响应防护。
+     * @return Whether to enable abnormal response protection.
      * 
      */
     private Integer rspAbnormalEnable;
     /**
-     * @return 服务IP。
+     * @return Service IP
      * 
      */
     private String serverIps;
     /**
-     * @return WAF回源IP。
+     * @return WAF origin IP.
      * 
      */
     private String srcIps;
     /**
-     * @return 源站协议。
+     * @return Origin protocol.
      * 
      */
     private String srcProtocol;
     /**
-     * @return 加密套件。
+     * @return Cipher suite
      * 
      */
     private List<String> sslCiphers;
     /**
-     * @return TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+     * @return TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
      * 
      */
     private List<String> sslProtocols;
     /**
-     * @return 接入状态。0:正常,1:DNS未解析,2:配置中,3:配置失败,4:配置未生效,5:更新中,6:实例已删除。
+     * @return Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
      * 
      */
     private Integer status;
     /**
-     * @return 是否开启托管BOT防护。
+     * @return Whether to enable managed bot protection.
      * 
      */
     private Integer systemBotEnable;
     /**
-     * @return 是否开启防篡改。
+     * @return Whether to enable anti-tampering.
      * 
      */
     private Integer tamperProofEnable;
     /**
-     * @return TCP监听器配置。
+     * @return TCP listener configuration.
      * 
      */
     private List<GetDomainTcpListenerConfig> tcpListenerConfigs;
     /**
-     * @return 是否开启日志服务。0:关闭,1:开启。
+     * @return Log service enabled. 0: Off, 1: On
      * 
      */
     private Integer tlsEnable;
     /**
-     * @return 日志字段配置详情。
+     * @return Log field configuration details
      * 
      */
     private GetDomainTlsFieldsConfig tlsFieldsConfig;
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     private String updateTime;
@@ -382,307 +382,307 @@ public final class GetDomainResult {
      */
     private String vpcId;
     /**
-     * @return 是否开启WAF防护。
+     * @return WAF protection enabled
      * 
      */
     private Integer wafEnable;
     /**
-     * @return 是否开启白名单请求防护。
+     * @return Allowlist request protection enabled
      * 
      */
     private Integer wafWhiteReqEnable;
     /**
-     * @return 是否开启白名单防护。
+     * @return Whether to enable allowlist protection.
      * 
      */
     private Integer whiteEnable;
     /**
-     * @return 是否开启字段白名单防护。
+     * @return Field allowlist protection enabled
      * 
      */
     private Integer whiteFieldEnable;
 
     private GetDomainResult() {}
     /**
-     * @return 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+     * @return Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
      * 
      */
     public Integer accessMode() {
         return this.accessMode;
     }
     /**
-     * @return 高防实例 IP。高防型 WAF 接入展示，否则为空。
+     * @return High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
      * 
      */
     public String advancedDefenseIp() {
         return this.advancedDefenseIp;
     }
     /**
-     * @return 高防实例 Ipv6。高防型 WAF 接入展示，否则为空。
+     * @return High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
      * 
      */
     public String advancedDefenseIpv6() {
         return this.advancedDefenseIpv6;
     }
     /**
-     * @return 是否开启了 API 防护策略。0：关闭，1：开启。
+     * @return API protection policy enabled. 0: Off, 1: On
      * 
      */
     public Integer apiEnable() {
         return this.apiEnable;
     }
     /**
-     * @return 攻击状态。0:未发现攻击,1:发现攻击。
+     * @return Attack status. 0: No attack detected, 1: Attack detected.
      * 
      */
     public Integer attackStatus() {
         return this.attackStatus;
     }
     /**
-     * @return 是否开启智能 CC 防护策略。0：关闭，1：开启。
+     * @return Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
      * 
      */
     public Integer autoCcEnable() {
         return this.autoCcEnable;
     }
     /**
-     * @return 是否开启自动封禁。0：关闭，1：开启。
+     * @return Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
      * 
      */
     public Integer automaticBlackEnable() {
         return this.automaticBlackEnable;
     }
     /**
-     * @return 源站配置。
+     * @return Origin configuration.
      * 
      */
     public List<GetDomainBackendGroup> backendGroups() {
         return this.backendGroups;
     }
     /**
-     * @return 是否开启了黑名单策略。0：关闭, 1：开启。
+     * @return Denylist policy enabled. 0: Off, 1: On
      * 
      */
     public Integer blackIpEnable() {
         return this.blackIpEnable;
     }
     /**
-     * @return 是否开启了区域封禁策略。0：关闭;1：开启。
+     * @return Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
      * 
      */
     public Integer blackLctEnable() {
         return this.blackLctEnable;
     }
     /**
-     * @return 是否开启动态Token防护。
+     * @return Dynamic token protection enabled
      * 
      */
     public Integer botDytokenEnable() {
         return this.botDytokenEnable;
     }
     /**
-     * @return 是否开启 bot 频率限制策略。
-     * 0：关闭
-     * 1：开启。
+     * @return Bot rate limit policy enabled.
+     * 0: Off
+     * 1: On
      * 
      */
     public Integer botFrequencyEnable() {
         return this.botFrequencyEnable;
     }
     /**
-     * @return 是否开启 bot 统计防护策略。
-     * 0：关闭
-     * 1：开启。
+     * @return Bot statistics protection policy enabled.
+     * 0: Off
+     * 1: On
      * 
      */
     public Integer botRepeatEnable() {
         return this.botRepeatEnable;
     }
     /**
-     * @return 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-     * 0：观察
-     * 2：拦截
-     * 6：JS 挑战
-     * 7：人机验证。
+     * @return Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+     * 0: Observe
+     * 2: Intercept
+     * 6: JS Challenge
+     * 7: CAPTCHA.
      * 
      */
     public Integer botSequenceDefaultAction() {
         return this.botSequenceDefaultAction;
     }
     /**
-     * @return 是否开启 bot 行为地图。
-     * 0：关闭
-     * 1：开启。
+     * @return Whether to enable bot behavior map.
+     * 0: Off
+     * 1: On.
      * 
      */
     public Integer botSequenceEnable() {
         return this.botSequenceEnable;
     }
     /**
-     * @return 是否开启 CC 防护策略。
-     * 0：关闭
-     * 1：开启。
+     * @return Whether to enable CC protection policy.
+     * 0: Disabled
+     * 1: Enabled.
      * 
      */
     public Integer ccEnable() {
         return this.ccEnable;
     }
     /**
-     * @return 托管至证书中心的证书ID。
+     * @return Certificate ID managed in Certificate Center
      * 
      */
     public String certificateId() {
         return this.certificateId;
     }
     /**
-     * @return 证书名称，协议类型包含 HTTPS 时显示。
+     * @return Certificate name. Displayed when protocol type includes HTTPS.
      * 
      */
     public String certificateName() {
         return this.certificateName;
     }
     /**
-     * @return 证书托管平台:waf/certificate_service。
+     * @return Certificate hosting platform: waf/certificate_service.
      * 
      */
     public String certificatePlatform() {
         return this.certificatePlatform;
     }
     /**
-     * @return CLB实例ID。
+     * @return CLB instance ID.
      * 
      */
     public String clbInstanceIds() {
         return this.clbInstanceIds;
     }
     /**
-     * @return CLB监听器ID。
+     * @return CLB listener ID.
      * 
      */
     public String clbListenerId() {
         return this.clbListenerId;
     }
     /**
-     * @return CLB后端服务器组ID。
+     * @return CLB backend server group ID.
      * 
      */
     public String clbPoolId() {
         return this.clbPoolId;
     }
     /**
-     * @return CLB后端服务器ID。
+     * @return CLB backend server ID
      * 
      */
     public String clbServerId() {
         return this.clbServerId;
     }
     /**
-     * @return 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+     * @return Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
      * 
      */
     public Integer clientIpLocation() {
         return this.clientIpLocation;
     }
     /**
-     * @return 客户端请求body最大值(MB)。
+     * @return Maximum client request body size (MB).
      * 
      */
     public Integer clientMaxBodySize() {
         return this.clientMaxBodySize;
     }
     /**
-     * @return LB接入参数。
+     * @return LB access parameters.
      * 
      */
     public List<GetDomainCloudAccessConfig> cloudAccessConfigs() {
         return this.cloudAccessConfigs;
     }
     /**
-     * @return CNAME记录。
+     * @return CNAME record.
      * 
      */
     public String cname() {
         return this.cname;
     }
     /**
-     * @return 是否开启自定义BOT防护。
+     * @return Whether to enable custom bot protection.
      * 
      */
     public Integer customBotEnable() {
         return this.customBotEnable;
     }
     /**
-     * @return 自定义Header。
+     * @return Custom header.
      * 
      */
     public List<String> customHeaders() {
         return this.customHeaders;
     }
     /**
-     * @return 是否开启自定义响应。
+     * @return Whether to enable custom response.
      * 
      */
     public Integer customRspEnable() {
         return this.customRspEnable;
     }
     /**
-     * @return 自定义SNI。
+     * @return Custom SNI.
      * 
      */
     public String customSni() {
         return this.customSni;
     }
     /**
-     * @return 为例外 ALB 实例设置防护模式。
-     * 1：启用防护，已配置的防护策略生效。
-     * 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-     * 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-     * 设置例外防护实例后，域名可能还会存在以下防护状态：
-     * 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-     * 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-     * 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+     * @return Set protection mode for exception ALB instances.
+     * 1: Enable protection. The configured protection policies take effect.
+     * 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+     * 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+     * After configuring exception protection instances, the domain may also have the following protection statuses:
+     * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+     * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+     * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
      * 
      */
     public Integer defenceMode() {
         return this.defenceMode;
     }
     /**
-     * @return 是否开启数据泄露防护。
+     * @return Data leakage protection enabled
      * 
      */
     public Integer dlpEnable() {
         return this.dlpEnable;
     }
     /**
-     * @return 防护的域名信息，支持泛域名和精确域名。
+     * @return Protected domain information. Supports wildcard and exact domains
      * 
      */
     public String domain() {
         return this.domain;
     }
     /**
-     * @return 是否开启用户自定义重定向。0:关闭,1:开启。
+     * @return User-defined redirection enabled. 0: Off, 1: On
      * 
      */
     public Integer enableCustomRedirect() {
         return this.enableCustomRedirect;
     }
     /**
-     * @return 是否开启HTTP2.0。0:关闭,1:开启。
+     * @return Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
      * 
      */
     public Integer enableHttp2() {
         return this.enableHttp2;
     }
     /**
-     * @return 是否支持防护Ipv6请求。0:关闭,1:开启。
+     * @return IPv6 request protection supported. 0: Off, 1: On
      * 
      */
     public Integer enableIpv6() {
         return this.enableIpv6;
     }
     /**
-     * @return 是否开启SNI配置。0:关闭,1:开启。
+     * @return Whether to enable SNI configuration. 0: Off, 1: On.
      * 
      */
     public Integer enableSni() {
@@ -696,203 +696,203 @@ public final class GetDomainResult {
         return this.id;
     }
     /**
-     * @return 长连接复用个数。
+     * @return Persistent connection reuse count
      * 
      */
     public Integer keepAliveRequest() {
         return this.keepAliveRequest;
     }
     /**
-     * @return 长连接保持时间(秒)。
+     * @return Persistent connection keep-alive time (seconds)
      * 
      */
     public Integer keepAliveTimeout() {
         return this.keepAliveTimeout;
     }
     /**
-     * @return 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+     * @return Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
      * 
      */
     public String lbAlgorithm() {
         return this.lbAlgorithm;
     }
     /**
-     * @return 端口号。
+     * @return Port number
      * 
      */
     public Integer port() {
         return this.port;
     }
     /**
-     * @return 项目名称。
+     * @return Project name.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 是否开启协议跟随。0:关闭,1:开启。
+     * @return Protocol following enabled. 0: Off, 1: On
      * 
      */
     public Integer protocolFollow() {
         return this.protocolFollow;
     }
     /**
-     * @return 接入端口信息。
+     * @return Access port information
      * 
      */
     public GetDomainProtocolPorts protocolPorts() {
         return this.protocolPorts;
     }
     /**
-     * @return 接入协议类型,支持HTTP/HTTPS。
+     * @return Access protocol type: supports HTTP/HTTPS
      * 
      */
     public List<String> protocols() {
         return this.protocols;
     }
     /**
-     * @return 是否开启代理配置。0:关闭,1:开启。
+     * @return Proxy configuration enabled. 0: Off, 1: On
      * 
      */
     public Integer proxyConfig() {
         return this.proxyConfig;
     }
     /**
-     * @return WAF和后端服务器的建连超时时间(秒)。
+     * @return Connection timeout between WAF and backend server (seconds).
      * 
      */
     public Integer proxyConnectTimeout() {
         return this.proxyConnectTimeout;
     }
     /**
-     * @return WAF回源长连接可复用个数。
+     * @return Number of reusable WAF origin persistent connections.
      * 
      */
     public Integer proxyKeepAlive() {
         return this.proxyKeepAlive;
     }
     /**
-     * @return 空闲长连接超时时间(秒)。
+     * @return Idle persistent connection timeout (seconds)
      * 
      */
     public Integer proxyKeepAliveTimeout() {
         return this.proxyKeepAliveTimeout;
     }
     /**
-     * @return WAF从后端服务器读取响应的超时时间(秒)。
+     * @return Timeout for WAF to read response from backend server (seconds).
      * 
      */
     public Integer proxyReadTimeout() {
         return this.proxyReadTimeout;
     }
     /**
-     * @return WAF回源重试次数。
+     * @return WAF origin retry count.
      * 
      */
     public Integer proxyRetry() {
         return this.proxyRetry;
     }
     /**
-     * @return WAF将请求传输到后端服务器的超时时间(秒)。
+     * @return Timeout for WAF to transmit request to backend server (seconds).
      * 
      */
     public Integer proxyWriteTimeout() {
         return this.proxyWriteTimeout;
     }
     /**
-     * @return CNAME接入回源方式。0:私网回源,1:公网回源。
+     * @return CNAME access origin method. 0: Private network origin, 1: Public network origin.
      * 
      */
     public Integer publicRealServer() {
         return this.publicRealServer;
     }
     /**
-     * @return 是否开启异常响应防护。
+     * @return Whether to enable abnormal response protection.
      * 
      */
     public Integer rspAbnormalEnable() {
         return this.rspAbnormalEnable;
     }
     /**
-     * @return 服务IP。
+     * @return Service IP
      * 
      */
     public String serverIps() {
         return this.serverIps;
     }
     /**
-     * @return WAF回源IP。
+     * @return WAF origin IP.
      * 
      */
     public String srcIps() {
         return this.srcIps;
     }
     /**
-     * @return 源站协议。
+     * @return Origin protocol.
      * 
      */
     public String srcProtocol() {
         return this.srcProtocol;
     }
     /**
-     * @return 加密套件。
+     * @return Cipher suite
      * 
      */
     public List<String> sslCiphers() {
         return this.sslCiphers;
     }
     /**
-     * @return TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+     * @return TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
      * 
      */
     public List<String> sslProtocols() {
         return this.sslProtocols;
     }
     /**
-     * @return 接入状态。0:正常,1:DNS未解析,2:配置中,3:配置失败,4:配置未生效,5:更新中,6:实例已删除。
+     * @return Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
      * 
      */
     public Integer status() {
         return this.status;
     }
     /**
-     * @return 是否开启托管BOT防护。
+     * @return Whether to enable managed bot protection.
      * 
      */
     public Integer systemBotEnable() {
         return this.systemBotEnable;
     }
     /**
-     * @return 是否开启防篡改。
+     * @return Whether to enable anti-tampering.
      * 
      */
     public Integer tamperProofEnable() {
         return this.tamperProofEnable;
     }
     /**
-     * @return TCP监听器配置。
+     * @return TCP listener configuration.
      * 
      */
     public List<GetDomainTcpListenerConfig> tcpListenerConfigs() {
         return this.tcpListenerConfigs;
     }
     /**
-     * @return 是否开启日志服务。0:关闭,1:开启。
+     * @return Log service enabled. 0: Off, 1: On
      * 
      */
     public Integer tlsEnable() {
         return this.tlsEnable;
     }
     /**
-     * @return 日志字段配置详情。
+     * @return Log field configuration details
      * 
      */
     public GetDomainTlsFieldsConfig tlsFieldsConfig() {
         return this.tlsFieldsConfig;
     }
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public String updateTime() {
@@ -906,28 +906,28 @@ public final class GetDomainResult {
         return this.vpcId;
     }
     /**
-     * @return 是否开启WAF防护。
+     * @return WAF protection enabled
      * 
      */
     public Integer wafEnable() {
         return this.wafEnable;
     }
     /**
-     * @return 是否开启白名单请求防护。
+     * @return Allowlist request protection enabled
      * 
      */
     public Integer wafWhiteReqEnable() {
         return this.wafWhiteReqEnable;
     }
     /**
-     * @return 是否开启白名单防护。
+     * @return Whether to enable allowlist protection.
      * 
      */
     public Integer whiteEnable() {
         return this.whiteEnable;
     }
     /**
-     * @return 是否开启字段白名单防护。
+     * @return Field allowlist protection enabled
      * 
      */
     public Integer whiteFieldEnable() {

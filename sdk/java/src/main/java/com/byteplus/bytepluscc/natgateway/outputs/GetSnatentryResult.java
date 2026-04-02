@@ -11,12 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetSnatentryResult {
     /**
-     * @return SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+     * @return IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
      * 
      */
     private String eipAddress;
     /**
-     * @return SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+     * @return ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
      * 
      */
     private String eipId;
@@ -26,51 +26,51 @@ public final class GetSnatentryResult {
      */
     private String id;
     /**
-     * @return SNAT规则所属NAT网关的ID。
+     * @return ID of the NAT gateway associated with the SNAT rule
      * 
      */
     private String natGatewayId;
     /**
-     * @return 私网NAT网关的中转IP的ID。
+     * @return ID of the transit IP for the private NAT gateway
      * 
      */
     private String natIpId;
     /**
-     * @return SNAT规则的ID。
+     * @return ID of the SNAT rule
      * 
      */
     private String snatEntryId;
     /**
-     * @return SNAT规则的名称。
+     * @return Name of the SNAT rule
      * 
      */
     private String snatEntryName;
     /**
-     * @return SNAT规则对应的网段。
+     * @return Network segment corresponding to the SNAT rule
      * 
      */
     private String sourceCidr;
     /**
-     * @return SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * @return Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
      * 
      */
     private String status;
     /**
-     * @return SNAT规则关联子网的ID。
+     * @return ID of the subnet associated with the SNAT rule
      * 
      */
     private String subnetId;
 
     private GetSnatentryResult() {}
     /**
-     * @return SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+     * @return IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
      * 
      */
     public String eipAddress() {
         return this.eipAddress;
     }
     /**
-     * @return SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+     * @return ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
      * 
      */
     public String eipId() {
@@ -84,49 +84,49 @@ public final class GetSnatentryResult {
         return this.id;
     }
     /**
-     * @return SNAT规则所属NAT网关的ID。
+     * @return ID of the NAT gateway associated with the SNAT rule
      * 
      */
     public String natGatewayId() {
         return this.natGatewayId;
     }
     /**
-     * @return 私网NAT网关的中转IP的ID。
+     * @return ID of the transit IP for the private NAT gateway
      * 
      */
     public String natIpId() {
         return this.natIpId;
     }
     /**
-     * @return SNAT规则的ID。
+     * @return ID of the SNAT rule
      * 
      */
     public String snatEntryId() {
         return this.snatEntryId;
     }
     /**
-     * @return SNAT规则的名称。
+     * @return Name of the SNAT rule
      * 
      */
     public String snatEntryName() {
         return this.snatEntryName;
     }
     /**
-     * @return SNAT规则对应的网段。
+     * @return Network segment corresponding to the SNAT rule
      * 
      */
     public String sourceCidr() {
         return this.sourceCidr;
     }
     /**
-     * @return SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * @return Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return SNAT规则关联子网的ID。
+     * @return ID of the subnet associated with the SNAT rule
      * 
      */
     public String subnetId() {

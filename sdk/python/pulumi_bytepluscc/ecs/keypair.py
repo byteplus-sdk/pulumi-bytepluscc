@@ -30,11 +30,11 @@ class KeypairArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['KeypairTagArgs']]]] = None):
         """
         The set of arguments for constructing a Keypair resource.
-        :param pulumi.Input[builtins.str] key_pair_name: 密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
-        :param pulumi.Input[builtins.str] description: 密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: 操作的实例ID。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
-        :param pulumi.Input[builtins.str] public_key: 密钥对的公钥信息。
+        :param pulumi.Input[builtins.str] key_pair_name: Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
+        :param pulumi.Input[builtins.str] description: Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period ('.'), space, underscore ('_'), hyphen ('-'), equals sign ('='), English comma (','), Chinese comma ('，'), and Chinese period ('。'). Length must not exceed 255 characters.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: Instance ID for the operation.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
+        :param pulumi.Input[builtins.str] public_key: Public key information of the key pair.
         """
         pulumi.set(__self__, "key_pair_name", key_pair_name)
         if description is not None:
@@ -52,7 +52,7 @@ class KeypairArgs:
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> pulumi.Input[builtins.str]:
         """
-        密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
+        Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -64,7 +64,7 @@ class KeypairArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
+        Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period ('.'), space, underscore ('_'), hyphen ('-'), equals sign ('='), English comma (','), Chinese comma ('，'), and Chinese period ('。'). Length must not exceed 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -76,7 +76,7 @@ class KeypairArgs:
     @pulumi.getter(name="instanceIds")
     def instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        操作的实例ID。
+        Instance ID for the operation.
         """
         return pulumi.get(self, "instance_ids")
 
@@ -88,7 +88,7 @@ class KeypairArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
         """
         return pulumi.get(self, "project_name")
 
@@ -100,7 +100,7 @@ class KeypairArgs:
     @pulumi.getter(name="publicKey")
     def public_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥对的公钥信息。
+        Public key information of the key pair.
         """
         return pulumi.get(self, "public_key")
 
@@ -133,15 +133,15 @@ class _KeypairState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Keypair resources.
-        :param pulumi.Input[builtins.str] created_time: 密钥对创建时间。
-        :param pulumi.Input[builtins.str] description: 密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
-        :param pulumi.Input[builtins.str] finger_print: 密钥对的指纹。根据RFC4716定义的公钥指纹格式，采用MD5信息摘要算法。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: 操作的实例ID。
-        :param pulumi.Input[builtins.str] key_pair_id: 密钥对唯一ID。
-        :param pulumi.Input[builtins.str] key_pair_name: 密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
-        :param pulumi.Input[builtins.str] public_key: 密钥对的公钥信息。
-        :param pulumi.Input[builtins.str] updated_time: 密钥对更新时间。
+        :param pulumi.Input[builtins.str] created_time: Creation time of the key pair.
+        :param pulumi.Input[builtins.str] description: Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period ('.'), space, underscore ('_'), hyphen ('-'), equals sign ('='), English comma (','), Chinese comma ('，'), and Chinese period ('。'). Length must not exceed 255 characters.
+        :param pulumi.Input[builtins.str] finger_print: Fingerprint of the key pair. The public key fingerprint format is defined by RFC4716 and uses the MD5 hash algorithm.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: Instance ID for the operation.
+        :param pulumi.Input[builtins.str] key_pair_id: Unique ID of the key pair.
+        :param pulumi.Input[builtins.str] key_pair_name: Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
+        :param pulumi.Input[builtins.str] public_key: Public key information of the key pair.
+        :param pulumi.Input[builtins.str] updated_time: Update time of the key pair.
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -168,7 +168,7 @@ class _KeypairState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥对创建时间。
+        Creation time of the key pair.
         """
         return pulumi.get(self, "created_time")
 
@@ -180,7 +180,7 @@ class _KeypairState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
+        Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period ('.'), space, underscore ('_'), hyphen ('-'), equals sign ('='), English comma (','), Chinese comma ('，'), and Chinese period ('。'). Length must not exceed 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -192,7 +192,7 @@ class _KeypairState:
     @pulumi.getter(name="fingerPrint")
     def finger_print(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥对的指纹。根据RFC4716定义的公钥指纹格式，采用MD5信息摘要算法。
+        Fingerprint of the key pair. The public key fingerprint format is defined by RFC4716 and uses the MD5 hash algorithm.
         """
         return pulumi.get(self, "finger_print")
 
@@ -204,7 +204,7 @@ class _KeypairState:
     @pulumi.getter(name="instanceIds")
     def instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        操作的实例ID。
+        Instance ID for the operation.
         """
         return pulumi.get(self, "instance_ids")
 
@@ -216,7 +216,7 @@ class _KeypairState:
     @pulumi.getter(name="keyPairId")
     def key_pair_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥对唯一ID。
+        Unique ID of the key pair.
         """
         return pulumi.get(self, "key_pair_id")
 
@@ -228,7 +228,7 @@ class _KeypairState:
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
+        Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -240,7 +240,7 @@ class _KeypairState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
         """
         return pulumi.get(self, "project_name")
 
@@ -252,7 +252,7 @@ class _KeypairState:
     @pulumi.getter(name="publicKey")
     def public_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥对的公钥信息。
+        Public key information of the key pair.
         """
         return pulumi.get(self, "public_key")
 
@@ -273,7 +273,7 @@ class _KeypairState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥对更新时间。
+        Update time of the key pair.
         """
         return pulumi.get(self, "updated_time")
 
@@ -296,7 +296,7 @@ class Keypair(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeypairTagArgs', 'KeypairTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        ECS 密钥对（Keypair）默认采用 RSA 2048 位加密算法生成一对关联密钥，包含公钥（public key）和私钥（private key）。其中，公钥用于对数据进行加密处理，可将明文转换为不可直接读取的密文；私钥则作为解密的唯一凭证，能将密文还原为原始明文，实现安全的身份验证与数据传输。
+        ECS key pair (Keypair) is generated by default using the RSA 2048-bit encryption algorithm, producing a pair of associated keys: a public key and a private key. The public key is used to encrypt data, converting plaintext into unreadable ciphertext. The private key is the sole credential for decryption, restoring ciphertext to its original plaintext, ensuring secure authentication and data transmission.
 
         ## Example Usage
 
@@ -322,11 +322,11 @@ class Keypair(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: 操作的实例ID。
-        :param pulumi.Input[builtins.str] key_pair_name: 密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
-        :param pulumi.Input[builtins.str] public_key: 密钥对的公钥信息。
+        :param pulumi.Input[builtins.str] description: Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period ('.'), space, underscore ('_'), hyphen ('-'), equals sign ('='), English comma (','), Chinese comma ('，'), and Chinese period ('。'). Length must not exceed 255 characters.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: Instance ID for the operation.
+        :param pulumi.Input[builtins.str] key_pair_name: Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
+        :param pulumi.Input[builtins.str] public_key: Public key information of the key pair.
         """
         ...
     @overload
@@ -335,7 +335,7 @@ class Keypair(pulumi.CustomResource):
                  args: KeypairArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ECS 密钥对（Keypair）默认采用 RSA 2048 位加密算法生成一对关联密钥，包含公钥（public key）和私钥（private key）。其中，公钥用于对数据进行加密处理，可将明文转换为不可直接读取的密文；私钥则作为解密的唯一凭证，能将密文还原为原始明文，实现安全的身份验证与数据传输。
+        ECS key pair (Keypair) is generated by default using the RSA 2048-bit encryption algorithm, producing a pair of associated keys: a public key and a private key. The public key is used to encrypt data, converting plaintext into unreadable ciphertext. The private key is the sole credential for decryption, restoring ciphertext to its original plaintext, ensuring secure authentication and data transmission.
 
         ## Example Usage
 
@@ -428,15 +428,15 @@ class Keypair(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 密钥对创建时间。
-        :param pulumi.Input[builtins.str] description: 密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
-        :param pulumi.Input[builtins.str] finger_print: 密钥对的指纹。根据RFC4716定义的公钥指纹格式，采用MD5信息摘要算法。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: 操作的实例ID。
-        :param pulumi.Input[builtins.str] key_pair_id: 密钥对唯一ID。
-        :param pulumi.Input[builtins.str] key_pair_name: 密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
-        :param pulumi.Input[builtins.str] public_key: 密钥对的公钥信息。
-        :param pulumi.Input[builtins.str] updated_time: 密钥对更新时间。
+        :param pulumi.Input[builtins.str] created_time: Creation time of the key pair.
+        :param pulumi.Input[builtins.str] description: Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period ('.'), space, underscore ('_'), hyphen ('-'), equals sign ('='), English comma (','), Chinese comma ('，'), and Chinese period ('。'). Length must not exceed 255 characters.
+        :param pulumi.Input[builtins.str] finger_print: Fingerprint of the key pair. The public key fingerprint format is defined by RFC4716 and uses the MD5 hash algorithm.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: Instance ID for the operation.
+        :param pulumi.Input[builtins.str] key_pair_id: Unique ID of the key pair.
+        :param pulumi.Input[builtins.str] key_pair_name: Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
+        :param pulumi.Input[builtins.str] public_key: Public key information of the key pair.
+        :param pulumi.Input[builtins.str] updated_time: Update time of the key pair.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -458,7 +458,7 @@ class Keypair(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        密钥对创建时间。
+        Creation time of the key pair.
         """
         return pulumi.get(self, "created_time")
 
@@ -466,7 +466,7 @@ class Keypair(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
+        Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period ('.'), space, underscore ('_'), hyphen ('-'), equals sign ('='), English comma (','), Chinese comma ('，'), and Chinese period ('。'). Length must not exceed 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -474,7 +474,7 @@ class Keypair(pulumi.CustomResource):
     @pulumi.getter(name="fingerPrint")
     def finger_print(self) -> pulumi.Output[builtins.str]:
         """
-        密钥对的指纹。根据RFC4716定义的公钥指纹格式，采用MD5信息摘要算法。
+        Fingerprint of the key pair. The public key fingerprint format is defined by RFC4716 and uses the MD5 hash algorithm.
         """
         return pulumi.get(self, "finger_print")
 
@@ -482,7 +482,7 @@ class Keypair(pulumi.CustomResource):
     @pulumi.getter(name="instanceIds")
     def instance_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        操作的实例ID。
+        Instance ID for the operation.
         """
         return pulumi.get(self, "instance_ids")
 
@@ -490,7 +490,7 @@ class Keypair(pulumi.CustomResource):
     @pulumi.getter(name="keyPairId")
     def key_pair_id(self) -> pulumi.Output[builtins.str]:
         """
-        密钥对唯一ID。
+        Unique ID of the key pair.
         """
         return pulumi.get(self, "key_pair_id")
 
@@ -498,7 +498,7 @@ class Keypair(pulumi.CustomResource):
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> pulumi.Output[builtins.str]:
         """
-        密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
+        Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -506,7 +506,7 @@ class Keypair(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
         """
         return pulumi.get(self, "project_name")
 
@@ -514,7 +514,7 @@ class Keypair(pulumi.CustomResource):
     @pulumi.getter(name="publicKey")
     def public_key(self) -> pulumi.Output[builtins.str]:
         """
-        密钥对的公钥信息。
+        Public key information of the key pair.
         """
         return pulumi.get(self, "public_key")
 
@@ -527,7 +527,7 @@ class Keypair(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        密钥对更新时间。
+        Update time of the key pair.
         """
         return pulumi.get(self, "updated_time")
 

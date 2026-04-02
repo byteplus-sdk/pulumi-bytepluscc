@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class RuleLevelCondition {
     private @Nullable List<RuleLevelConditionCondition> conditions;
     /**
-     * @return 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+     * @return Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
      * 
      */
     private @Nullable String level;
@@ -25,7 +25,7 @@ public final class RuleLevelCondition {
         return this.conditions == null ? List.of() : this.conditions;
     }
     /**
-     * @return 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+     * @return Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
      * 
      */
     public Optional<String> level() {

@@ -70,7 +70,7 @@ class GetCenResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.str:
         """
-        CEN实例所属的账号ID。
+        Account ID to which the CEN instance belongs
         """
         return pulumi.get(self, "account_id")
 
@@ -78,7 +78,7 @@ class GetCenResult:
     @pulumi.getter(name="cenBandwidthPackageIds")
     def cen_bandwidth_package_ids(self) -> Sequence[builtins.str]:
         """
-        带宽包ID。
+        Bandwidth package ID
         """
         return pulumi.get(self, "cen_bandwidth_package_ids")
 
@@ -86,7 +86,7 @@ class GetCenResult:
     @pulumi.getter(name="cenId")
     def cen_id(self) -> builtins.str:
         """
-        CEN实例的ID。
+        CEN instance ID
         """
         return pulumi.get(self, "cen_id")
 
@@ -94,7 +94,7 @@ class GetCenResult:
     @pulumi.getter(name="cenName")
     def cen_name(self) -> builtins.str:
         """
-        CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+        Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
         """
         return pulumi.get(self, "cen_name")
 
@@ -102,7 +102,7 @@ class GetCenResult:
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> builtins.str:
         """
-        创建CEN实例的时间。
+        Time when the CEN instance was created
         """
         return pulumi.get(self, "creation_time")
 
@@ -110,7 +110,7 @@ class GetCenResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+        Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
         """
         return pulumi.get(self, "description")
 
@@ -126,7 +126,7 @@ class GetCenResult:
     @pulumi.getter
     def instances(self) -> Sequence['outputs.GetCenInstanceResult']:
         """
-        已关联的网络实例列表
+        List of associated network instances
         """
         return pulumi.get(self, "instances")
 
@@ -134,7 +134,7 @@ class GetCenResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        CEN实例所属项目的名称。不填则默认为default。
+        Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
         """
         return pulumi.get(self, "project_name")
 
@@ -142,7 +142,7 @@ class GetCenResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+        Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
         """
         return pulumi.get(self, "status")
 
@@ -150,7 +150,7 @@ class GetCenResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetCenTagResult']:
         """
-        标签信息。
+        Tag information
         """
         return pulumi.get(self, "tags")
 
@@ -158,7 +158,7 @@ class GetCenResult:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> builtins.str:
         """
-        更新CEN实例的时间。
+        Time when the CEN instance was updated
         """
         return pulumi.get(self, "update_time")
 

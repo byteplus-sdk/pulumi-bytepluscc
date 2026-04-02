@@ -18,7 +18,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * IPv6公网流量的带宽，决定IPv6地址的公网通信能力。IPv6地址若未开通IPv6公网带宽，则仅支持私网互通，您可以按需为IPv6地址开通IPv6公网带宽，使该IPv6地址具备与公网互通的能力。
+ * IPv6 public traffic bandwidth determines the public communication capability of the IPv6 address. If the IPv6 address does not have IPv6 public bandwidth enabled, it only supports private network communication. You can enable IPv6 public bandwidth for the IPv6 address as needed to allow public network communication.
  * 
  * ## Example Usage
  * 
@@ -74,252 +74,252 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth")
 public class Ipv6AddressBandwidth extends com.pulumi.resources.CustomResource {
     /**
-     * IPv6公网带宽的ID。
+     * IPv6 public bandwidth ID
      * 
      */
     @Export(name="allocationId", refs={String.class}, tree="[0]")
     private Output<String> allocationId;
 
     /**
-     * @return IPv6公网带宽的ID。
+     * @return IPv6 public bandwidth ID
      * 
      */
     public Output<String> allocationId() {
         return this.allocationId;
     }
     /**
-     * IPv6公网带宽的带宽上限。
+     * IPv6 public bandwidth cap
      * 
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
-     * @return IPv6公网带宽的带宽上限。
+     * @return IPv6 public bandwidth cap
      * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
-     * IPv6共享带宽包的ID。
+     * IPv6 shared bandwidth package ID
      * 
      */
     @Export(name="bandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> bandwidthPackageId;
 
     /**
-     * @return IPv6共享带宽包的ID。
+     * @return IPv6 shared bandwidth package ID
      * 
      */
     public Output<String> bandwidthPackageId() {
         return this.bandwidthPackageId;
     }
     /**
-     * IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
      * 
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
-     * @return IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * @return IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
      * 
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
-     * IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+     * Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
      * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
-     * @return IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+     * @return Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
      * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
-     * IPv6公网带宽的开通时间。
+     * IPv6 public bandwidth activation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return IPv6公网带宽的开通时间。
+     * @return IPv6 public bandwidth activation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * IPv6公网带宽的删除时间。
+     * IPv6 public bandwidth deletion time
      * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
-     * @return IPv6公网带宽的删除时间。
+     * @return IPv6 public bandwidth deletion time
      * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
-     * IPv6公网带宽关联的实例ID。
+     * Instance ID associated with IPv6 public bandwidth
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return IPv6公网带宽关联的实例ID。
+     * @return Instance ID associated with IPv6 public bandwidth
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+     * Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
      * 
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
-     * @return IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+     * @return Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
      * 
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
-     * IPv6地址。
+     * IPv6 address
      * 
      */
     @Export(name="ipv6Address", refs={String.class}, tree="[0]")
     private Output<String> ipv6Address;
 
     /**
-     * @return IPv6地址。
+     * @return IPv6 address
      * 
      */
     public Output<String> ipv6Address() {
         return this.ipv6Address;
     }
     /**
-     * IPv6网关的ID。
+     * IPv6 gateway ID
      * 
      */
     @Export(name="ipv6GatewayId", refs={String.class}, tree="[0]")
     private Output<String> ipv6GatewayId;
 
     /**
-     * @return IPv6网关的ID。
+     * @return IPv6 gateway ID
      * 
      */
     public Output<String> ipv6GatewayId() {
         return this.ipv6GatewayId;
     }
     /**
-     * IPv6公网带宽的线路类型。BGP：BGP（多线）。
+     * IPv6 public bandwidth line type. BGP: BGP (multi-line).
      * 
      */
     @Export(name="isp", refs={String.class}, tree="[0]")
     private Output<String> isp;
 
     /**
-     * @return IPv6公网带宽的线路类型。BGP：BGP（多线）。
+     * @return IPv6 public bandwidth line type. BGP: BGP (multi-line).
      * 
      */
     public Output<String> isp() {
         return this.isp;
     }
     /**
-     * IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+     * Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
      * 
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
-     * @return IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+     * @return Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
      * 
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
-     * IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+     * IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
      * 
      */
     @Export(name="networkType", refs={String.class}, tree="[0]")
     private Output<String> networkType;
 
     /**
-     * @return IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+     * @return IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
      * 
      */
     public Output<String> networkType() {
         return this.networkType;
     }
     /**
-     * IPv6公网带宽欠费关停的时间。
+     * IPv6 public bandwidth deactivation time due to overdue payment
      * 
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
-     * @return IPv6公网带宽欠费关停的时间。
+     * @return IPv6 public bandwidth deactivation time due to overdue payment
      * 
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
-     * IPv6公网带宽的项目。
+     * IPv6 public bandwidth project
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return IPv6公网带宽的项目。
+     * @return IPv6 public bandwidth project
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 是否为服务托管。
+     * Service hosting status
      * 
      */
     @Export(name="serviceManaged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> serviceManaged;
 
     /**
-     * @return 是否为服务托管。
+     * @return Service hosting status
      * 
      */
     public Output<Boolean> serviceManaged() {
         return this.serviceManaged;
     }
     /**
-     * IPv6公网带宽的状态。Creating：创建中。Available：可用。
+     * IPv6 public bandwidth status. Creating: Creating. Available: Available.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return IPv6公网带宽的状态。Creating：创建中。Available：可用。
+     * @return IPv6 public bandwidth status. Creating: Creating. Available: Available.
      * 
      */
     public Output<String> status() {
@@ -332,14 +332,14 @@ public class Ipv6AddressBandwidth extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * IPv6公网带宽的最近操作时间。
+     * IPv6 public bandwidth last operation time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return IPv6公网带宽的最近操作时间。
+     * @return IPv6 public bandwidth last operation time
      * 
      */
     public Output<String> updatedTime() {

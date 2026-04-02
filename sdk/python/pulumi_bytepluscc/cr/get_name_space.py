@@ -48,7 +48,7 @@ class GetNameSpaceResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        命名空间的创建时间。
+        Namespace creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -64,7 +64,7 @@ class GetNameSpaceResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+        Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
         """
         return pulumi.get(self, "name")
 
@@ -72,7 +72,7 @@ class GetNameSpaceResult:
     @pulumi.getter
     def project(self) -> builtins.str:
         """
-        命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+        Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
         """
         return pulumi.get(self, "project")
 
@@ -80,7 +80,7 @@ class GetNameSpaceResult:
     @pulumi.getter
     def registry(self) -> builtins.str:
         """
-        指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+        Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
         """
         return pulumi.get(self, "registry")
 

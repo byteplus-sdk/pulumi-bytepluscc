@@ -29,11 +29,11 @@ export interface GetSnatentryArgs {
  */
 export interface GetSnatentryResult {
     /**
-     * SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+     * IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
      */
     readonly eipAddress: string;
     /**
-     * SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+     * ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
      */
     readonly eipId: string;
     /**
@@ -41,31 +41,31 @@ export interface GetSnatentryResult {
      */
     readonly id: string;
     /**
-     * SNAT规则所属NAT网关的ID。
+     * ID of the NAT gateway associated with the SNAT rule
      */
     readonly natGatewayId: string;
     /**
-     * 私网NAT网关的中转IP的ID。
+     * ID of the transit IP for the private NAT gateway
      */
     readonly natIpId: string;
     /**
-     * SNAT规则的ID。
+     * ID of the SNAT rule
      */
     readonly snatEntryId: string;
     /**
-     * SNAT规则的名称。
+     * Name of the SNAT rule
      */
     readonly snatEntryName: string;
     /**
-     * SNAT规则对应的网段。
+     * Network segment corresponding to the SNAT rule
      */
     readonly sourceCidr: string;
     /**
-     * SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
      */
     readonly status: string;
     /**
-     * SNAT规则关联子网的ID。
+     * ID of the subnet associated with the SNAT rule
      */
     readonly subnetId: string;
 }

@@ -22,7 +22,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 节点池是集群中具有相同配置的一组节点，一个节点池包含一个节点或多个节点。节点池的配置包含节点的属性，例如节点规格、可用区、标签、污点等。这些属性可以在创建节点池时指定，也可以在创建完成后进行编辑修改。
+ * A node pool is a group of nodes in a cluster with the same configuration. A node pool can contain one or more nodes. The node pool configuration includes node attributes such as node specifications, availability zones, labels, taints, and more. These attributes can be specified when creating the node pool or edited after creation.
  * 
  * ## Example Usage
  * 
@@ -39,154 +39,154 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vke/nodePool:NodePool")
 public class NodePool extends com.pulumi.resources.CustomResource {
     /**
-     * 节点池伸缩策略配置。
+     * Node pool scaling policy configuration.
      * 
      */
     @Export(name="autoScaling", refs={NodePoolAutoScaling.class}, tree="[0]")
     private Output<NodePoolAutoScaling> autoScaling;
 
     /**
-     * @return 节点池伸缩策略配置。
+     * @return Node pool scaling policy configuration.
      * 
      */
     public Output<NodePoolAutoScaling> autoScaling() {
         return this.autoScaling;
     }
     /**
-     * 节点池所在集群的 ID。
+     * ID of the cluster where the node pool is located
      * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
-     * @return 节点池所在集群的 ID。
+     * @return ID of the cluster where the node pool is located
      * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
-     * 创建节点池的时间。
+     * Node pool creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建节点池的时间。
+     * @return Node pool creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 节点池 Kubernetes 相关配置。
+     * Kubernetes-related configuration for the node pool
      * 
      */
     @Export(name="kubernetesConfig", refs={NodePoolKubernetesConfig.class}, tree="[0]")
     private Output<NodePoolKubernetesConfig> kubernetesConfig;
 
     /**
-     * @return 节点池 Kubernetes 相关配置。
+     * @return Kubernetes-related configuration for the node pool
      * 
      */
     public Output<NodePoolKubernetesConfig> kubernetesConfig() {
         return this.kubernetesConfig;
     }
     /**
-     * 托管节点池配置。
+     * Managed node pool configuration
      * 
      */
     @Export(name="management", refs={NodePoolManagement.class}, tree="[0]")
     private Output<NodePoolManagement> management;
 
     /**
-     * @return 托管节点池配置。
+     * @return Managed node pool configuration
      * 
      */
     public Output<NodePoolManagement> management() {
         return this.management;
     }
     /**
-     * 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * @return Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 节点池中云服务器（ECS）实例配置。
+     * Cloud server (ECS) instance configuration in the node pool
      * 
      */
     @Export(name="nodeConfig", refs={NodePoolNodeConfig.class}, tree="[0]")
     private Output<NodePoolNodeConfig> nodeConfig;
 
     /**
-     * @return 节点池中云服务器（ECS）实例配置。
+     * @return Cloud server (ECS) instance configuration in the node pool
      * 
      */
     public Output<NodePoolNodeConfig> nodeConfig() {
         return this.nodeConfig;
     }
     /**
-     * 节点池 ID 。
+     * Node pool ID
      * 
      */
     @Export(name="nodePoolId", refs={String.class}, tree="[0]")
     private Output<String> nodePoolId;
 
     /**
-     * @return 节点池 ID 。
+     * @return Node pool ID
      * 
      */
     public Output<String> nodePoolId() {
         return this.nodePoolId;
     }
     /**
-     * 节点池中的节点统计。
+     * Node statistics in the node pool.
      * 
      */
     @Export(name="nodeStatistics", refs={NodePoolNodeStatistics.class}, tree="[0]")
     private Output<NodePoolNodeStatistics> nodeStatistics;
 
     /**
-     * @return 节点池中的节点统计。
+     * @return Node statistics in the node pool.
      * 
      */
     public Output<NodePoolNodeStatistics> nodeStatistics() {
         return this.nodeStatistics;
     }
     /**
-     * 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+     * When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
      * 
      */
     @Export(name="retainResources", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> retainResources;
 
     /**
-     * @return 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+     * @return When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
      * 
      */
     public Output<List<String>> retainResources() {
         return this.retainResources;
     }
     /**
-     * 节点池状态。
+     * Node pool status
      * 
      */
     @Export(name="status", refs={NodePoolStatus.class}, tree="[0]")
     private Output<NodePoolStatus> status;
 
     /**
-     * @return 节点池状态。
+     * @return Node pool status
      * 
      */
     public Output<NodePoolStatus> status() {
@@ -199,14 +199,14 @@ public class NodePool extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 更新节点池的时间。
+     * Node pool update time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新节点池的时间。
+     * @return Node pool update time
      * 
      */
     public Output<String> updatedTime() {

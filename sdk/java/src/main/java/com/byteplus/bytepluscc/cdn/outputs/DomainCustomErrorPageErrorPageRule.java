@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainCustomErrorPageErrorPageRule {
     /**
-     * @return 表示规则的相关配置。
+     * @return Indicates the relevant configuration for the rule.
      * 
      */
     private @Nullable DomainCustomErrorPageErrorPageRuleErrorPageAction errorPageAction;
 
     private DomainCustomErrorPageErrorPageRule() {}
     /**
-     * @return 表示规则的相关配置。
+     * @return Indicates the relevant configuration for the rule.
      * 
      */
     public Optional<DomainCustomErrorPageErrorPageRuleErrorPageAction> errorPageAction() {

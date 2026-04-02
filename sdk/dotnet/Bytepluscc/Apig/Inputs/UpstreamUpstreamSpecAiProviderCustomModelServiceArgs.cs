@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamUpstreamSpecAiProviderCustomModelServiceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 模型服务名称。
+        /// Model Service Name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 命名空间。
+        /// Namespace
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
         /// <summary>
-        /// 端口。
+        /// Port
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter.Outputs
     public sealed class VpcAttachmentAttachPoint
     {
         /// <summary>
-        /// 连接点的子网ID。
+        /// Subnet ID of the connection point.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
-        /// 连接点的可用区ID。
+        /// Availability zone ID of the connection point.
         /// </summary>
         public readonly string ZoneId;
 

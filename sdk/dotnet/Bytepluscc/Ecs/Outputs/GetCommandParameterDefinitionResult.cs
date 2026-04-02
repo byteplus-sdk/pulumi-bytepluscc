@@ -15,39 +15,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class GetCommandParameterDefinitionResult
     {
         /// <summary>
-        /// 自定义参数值（数字）允许的小数点后位数。
+        /// Allowed decimal places for custom parameter (number).
         /// </summary>
         public readonly int DecimalPrecision;
         /// <summary>
-        /// 自定义参数默认值。
+        /// Default value for custom parameter.
         /// </summary>
         public readonly string DefaultValue;
         /// <summary>
-        /// 自定义参数值（字符串）的最大长度。
+        /// Maximum length for custom parameter (string).
         /// </summary>
         public readonly int MaxLength;
         /// <summary>
-        /// 自定义参数值（数字）的最大值。
+        /// Maximum value for custom parameter (number).
         /// </summary>
         public readonly string MaxValue;
         /// <summary>
-        /// 自定义参数值（字符串）的最小长度。
+        /// Minimum length for custom parameter (string).
         /// </summary>
         public readonly int MinLength;
         /// <summary>
-        /// 自定义参数值（数字）的最小值。
+        /// Minimum value for custom parameter (number).
         /// </summary>
         public readonly string MinValue;
         /// <summary>
-        /// 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+        /// Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 是否必填。
+        /// Whether it is required.
         /// </summary>
         public readonly bool Required;
         /// <summary>
-        /// 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+        /// Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
         /// </summary>
         public readonly string Type;
 

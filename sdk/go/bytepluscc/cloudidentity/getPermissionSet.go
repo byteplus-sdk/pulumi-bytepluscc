@@ -30,25 +30,25 @@ type LookupPermissionSetArgs struct {
 
 // A collection of values returned by getPermissionSet.
 type LookupPermissionSetResult struct {
-	// 创建时间。
+	// Creation Time
 	CreatedTime string `pulumi:"createdTime"`
-	// 权限集描述。
+	// Permission Set Description
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 权限集名称。
+	// Permission Set Name
 	Name string `pulumi:"name"`
-	// 权限集下的策略列表。
+	// Policy List Under Permission Set
 	PermissionPolicies []GetPermissionSetPermissionPolicy `pulumi:"permissionPolicies"`
-	// 权限集 ID。
+	// Permission Set ID
 	PermissionSetId string `pulumi:"permissionSetId"`
-	// 跳转控制台 URL。
+	// Console Redirect URL
 	RelayState string `pulumi:"relayState"`
-	// session 过期时间，单位秒。
+	// Session Expiration Time (seconds)
 	SessionDuration int `pulumi:"sessionDuration"`
-	// 状态通知配置。
+	// Status Notification Configuration
 	StatusNotifications []string `pulumi:"statusNotifications"`
-	// 更新时间。
+	// Update Time
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -86,12 +86,12 @@ func (o LookupPermissionSetResultOutput) ToLookupPermissionSetResultOutputWithCo
 	return o
 }
 
-// 创建时间。
+// Creation Time
 func (o LookupPermissionSetResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 权限集描述。
+// Permission Set Description
 func (o LookupPermissionSetResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -101,37 +101,37 @@ func (o LookupPermissionSetResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 权限集名称。
+// Permission Set Name
 func (o LookupPermissionSetResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 权限集下的策略列表。
+// Policy List Under Permission Set
 func (o LookupPermissionSetResultOutput) PermissionPolicies() GetPermissionSetPermissionPolicyArrayOutput {
 	return o.ApplyT(func(v LookupPermissionSetResult) []GetPermissionSetPermissionPolicy { return v.PermissionPolicies }).(GetPermissionSetPermissionPolicyArrayOutput)
 }
 
-// 权限集 ID。
+// Permission Set ID
 func (o LookupPermissionSetResultOutput) PermissionSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetResult) string { return v.PermissionSetId }).(pulumi.StringOutput)
 }
 
-// 跳转控制台 URL。
+// Console Redirect URL
 func (o LookupPermissionSetResultOutput) RelayState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetResult) string { return v.RelayState }).(pulumi.StringOutput)
 }
 
-// session 过期时间，单位秒。
+// Session Expiration Time (seconds)
 func (o LookupPermissionSetResultOutput) SessionDuration() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupPermissionSetResult) int { return v.SessionDuration }).(pulumi.IntOutput)
 }
 
-// 状态通知配置。
+// Status Notification Configuration
 func (o LookupPermissionSetResultOutput) StatusNotifications() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupPermissionSetResult) []string { return v.StatusNotifications }).(pulumi.StringArrayOutput)
 }
 
-// 更新时间。
+// Update Time
 func (o LookupPermissionSetResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

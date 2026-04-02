@@ -65,35 +65,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
     public sealed class GetInstanceResult
     {
         /// <summary>
-        /// 缓存型性能信息。
+        /// Cache performance information
         /// </summary>
         public readonly Outputs.GetInstanceCachePerformanceResult CachePerformance;
         /// <summary>
-        /// 文件系统容量。
+        /// File system capacity
         /// </summary>
         public readonly Outputs.GetInstanceCapacityResult Capacity;
         /// <summary>
-        /// 计费类型，取值 PayAsYouGo，表示按量计费。
+        /// Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
         /// </summary>
         public readonly string ChargeType;
         /// <summary>
-        /// 创建时间
+        /// Creation time
         /// </summary>
         public readonly string CreateTime;
         /// <summary>
-        /// 描述信息。
+        /// Description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 文件系统 ID。
+        /// File system ID
         /// </summary>
         public readonly string FileSystemId;
         /// <summary>
-        /// 文件系统名称。
+        /// File system name
         /// </summary>
         public readonly string FileSystemName;
         /// <summary>
-        /// 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+        /// File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
         /// </summary>
         public readonly string FileSystemType;
         /// <summary>
@@ -101,43 +101,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 所属项目，默认值为 default 项目。
+        /// Project, default value is the Default project
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+        /// File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
         /// </summary>
         public readonly string ProtocolType;
         /// <summary>
-        /// 快照数量
+        /// Number of snapshots
         /// </summary>
         public readonly int SnapshotCount;
         /// <summary>
-        /// 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+        /// Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
         /// </summary>
         public readonly string SnapshotId;
         /// <summary>
-        /// 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+        /// File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 存储类型，取值Standard，表示标准型。
+        /// Storage type. Value: Standard, indicates standard type
         /// </summary>
         public readonly string StorageType;
         /// <summary>
-        /// 文件系统的标签信息
+        /// File system tag information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceTagResult> Tags;
         /// <summary>
-        /// 更新时间
+        /// Update time
         /// </summary>
         public readonly string UpdateTime;
         /// <summary>
-        /// 可用区 ID。
+        /// Availability Zone ID
         /// </summary>
         public readonly string ZoneId;
         /// <summary>
-        /// 可用区名称。
+        /// Availability Zone name
         /// </summary>
         public readonly string ZoneName;
 

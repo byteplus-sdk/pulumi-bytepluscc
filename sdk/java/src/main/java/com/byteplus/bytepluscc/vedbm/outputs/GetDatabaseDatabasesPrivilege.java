@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDatabaseDatabasesPrivilege {
     /**
-     * @return 需授权的账号名称
+     * @return Account name to be authorized
      * 
      */
     private String accountName;
     /**
-     * @return 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+     * @return Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
      * 
      */
     private String accountPrivilege;
     /**
-     * @return 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+     * @return Specific SQL operation permissions, separated by English commas; required for Custom type
      * 
      */
     private List<String> accountPrivilegeDetails;
 
     private GetDatabaseDatabasesPrivilege() {}
     /**
-     * @return 需授权的账号名称
+     * @return Account name to be authorized
      * 
      */
     public String accountName() {
         return this.accountName;
     }
     /**
-     * @return 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+     * @return Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
      * 
      */
     public String accountPrivilege() {
         return this.accountPrivilege;
     }
     /**
-     * @return 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+     * @return Specific SQL operation permissions, separated by English commas; required for Custom type
      * 
      */
     public List<String> accountPrivilegeDetails() {

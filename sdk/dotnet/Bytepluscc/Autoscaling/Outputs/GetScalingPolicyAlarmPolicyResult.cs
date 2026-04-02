@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling.Outputs
     public sealed class GetScalingPolicyAlarmPolicyResult
     {
         /// <summary>
-        /// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+        /// Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
         /// </summary>
         public readonly Outputs.GetScalingPolicyAlarmPolicyConditionResult Condition;
         /// <summary>
-        /// 多指标告警时的判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+        /// Determination conditions for multi-metric alarms. &amp;&amp;: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
         /// </summary>
         public readonly string ConditionOperator;
         /// <summary>
-        /// 多指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效，且必须配置AlarmPolicy.Condition.x或AlarmPolicy.Conditions.x相关参数，当二者同时配置时，仅AlarmPolicy.Conditions.x生效。
+        /// Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetScalingPolicyAlarmPolicyConditionResult> Conditions;
         /// <summary>
-        /// 报警任务的生效时间段。
+        /// The effective period for the alarm task.
         /// </summary>
         public readonly string Effective;
         /// <summary>
-        /// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+        /// Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
         /// </summary>
         public readonly int EvaluationCount;
         /// <summary>
-        /// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+        /// Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
         /// </summary>
         public readonly string RuleType;
 

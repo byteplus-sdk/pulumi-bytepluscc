@@ -16,14 +16,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
     public static final DatabaseState Empty = new DatabaseState();
 
     /**
-     * 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+     * Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
      * 
      */
     @Import(name="cType")
     private @Nullable Output<String> cType;
 
     /**
-     * @return 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+     * @return Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
      * 
      */
     public Optional<Output<String>> cType() {
@@ -31,14 +31,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+     * Database character set. Supported character sets: utf8 (default), latin1, ascii
      * 
      */
     @Import(name="characterSetName")
     private @Nullable Output<String> characterSetName;
 
     /**
-     * @return 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+     * @return Database character set. Supported character sets: utf8 (default), latin1, ascii
      * 
      */
     public Optional<Output<String>> characterSetName() {
@@ -46,14 +46,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+     * Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
      * 
      */
     @Import(name="collate")
     private @Nullable Output<String> collate;
 
     /**
-     * @return 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+     * @return Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
      * 
      */
     public Optional<Output<String>> collate() {
@@ -61,14 +61,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+     * Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
      * 
      */
     @Import(name="dbName")
     private @Nullable Output<String> dbName;
 
     /**
-     * @return 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+     * @return Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
      * 
      */
     public Optional<Output<String>> dbName() {
@@ -76,14 +76,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库状态：Unavailable：不可用。Available：可用。
+     * Database status: Unavailable: Not available. Available: Available.
      * 
      */
     @Import(name="dbStatus")
     private @Nullable Output<String> dbStatus;
 
     /**
-     * @return 数据库状态：Unavailable：不可用。Available：可用。
+     * @return Database status: Unavailable: Not available. Available: Available.
      * 
      */
     public Optional<Output<String>> dbStatus() {
@@ -91,14 +91,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID
+     * Instance ID
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例 ID
+     * @return Instance ID
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -106,14 +106,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+     * Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
      * 
      */
     @Import(name="owner")
     private @Nullable Output<String> owner;
 
     /**
-     * @return 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+     * @return Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
      * 
      */
     public Optional<Output<String>> owner() {
@@ -151,7 +151,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cType 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+         * @param cType Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cType 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+         * @param cType Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param characterSetName 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+         * @param characterSetName Database character set. Supported character sets: utf8 (default), latin1, ascii
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param characterSetName 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+         * @param characterSetName Database character set. Supported character sets: utf8 (default), latin1, ascii
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param collate 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+         * @param collate Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param collate 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+         * @param collate Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbName 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+         * @param dbName Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbName 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+         * @param dbName Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbStatus 数据库状态：Unavailable：不可用。Available：可用。
+         * @param dbStatus Database status: Unavailable: Not available. Available: Available.
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbStatus 数据库状态：Unavailable：不可用。Available：可用。
+         * @param dbStatus Database status: Unavailable: Not available. Available: Available.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param owner 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+         * @param owner Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param owner 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+         * @param owner Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
          * 
          * @return builder
          * 

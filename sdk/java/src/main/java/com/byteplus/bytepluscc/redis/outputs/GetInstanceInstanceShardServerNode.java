@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceInstanceShardServerNode {
     /**
-     * @return 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+     * @return Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
      * 
      */
     private String currentRole;
     /**
-     * @return 节点 ID。
+     * @return Node ID.
      * 
      */
     private String nodeId;
     /**
-     * @return 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+     * @return Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
      * 
      */
     private String status;
     /**
-     * @return 节点所在的可用区。
+     * @return Availability zone where the node is located.
      * 
      */
     private String zoneId;
 
     private GetInstanceInstanceShardServerNode() {}
     /**
-     * @return 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+     * @return Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
      * 
      */
     public String currentRole() {
         return this.currentRole;
     }
     /**
-     * @return 节点 ID。
+     * @return Node ID.
      * 
      */
     public String nodeId() {
         return this.nodeId;
     }
     /**
-     * @return 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+     * @return Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 节点所在的可用区。
+     * @return Availability zone where the node is located.
      * 
      */
     public String zoneId() {

@@ -14,22 +14,30 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp.Inputs
     public sealed class WorkspaceInstanceTypeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 最大活跃时序数。
+        /// Maximum active time series count
         /// </summary>
         [Input("activeSeries")]
         public Input<int>? ActiveSeries { get; set; }
 
         /// <summary>
-        /// 可用区（az）数。
+        /// Number of availability zones (az)
         /// </summary>
         [Input("availabilityZoneReplicas")]
         public Input<int>? AvailabilityZoneReplicas { get; set; }
+
+        [Input("calculatePriceParams")]
+        private InputList<Inputs.WorkspaceInstanceTypeCalculatePriceParamGetArgs>? _calculatePriceParams;
+        public InputList<Inputs.WorkspaceInstanceTypeCalculatePriceParamGetArgs> CalculatePriceParams
+        {
+            get => _calculatePriceParams ?? (_calculatePriceParams = new InputList<Inputs.WorkspaceInstanceTypeCalculatePriceParamGetArgs>());
+            set => _calculatePriceParams = value;
+        }
 
         [Input("downsamplingPeriods")]
         private InputList<string>? _downsamplingPeriods;
 
         /// <summary>
-        /// 降采样策略。
+        /// Downsampling policy
         /// </summary>
         public InputList<string> DownsamplingPeriods
         {
@@ -38,43 +46,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp.Inputs
         }
 
         /// <summary>
-        /// 最大每秒写入样本数。
+        /// Maximum samples written per second
         /// </summary>
         [Input("ingestSamplesPerSecond")]
         public Input<int>? IngestSamplesPerSecond { get; set; }
 
         /// <summary>
-        /// 最大查询并发数。
+        /// Maximum query concurrency
         /// </summary>
         [Input("queryConcurrency")]
         public Input<int>? QueryConcurrency { get; set; }
 
         /// <summary>
-        /// 最大查询 QPS。
+        /// Maximum query QPS
         /// </summary>
         [Input("queryPerSecond")]
         public Input<int>? QueryPerSecond { get; set; }
 
         /// <summary>
-        /// 每个可用区（az）的数据副本数。
+        /// Number of data replicas per availability zone (az)
         /// </summary>
         [Input("replicasPerZone")]
         public Input<int>? ReplicasPerZone { get; set; }
 
         /// <summary>
-        /// 最长数据保留时间。
+        /// Maximum data retention period
         /// </summary>
         [Input("retentionPeriod")]
         public Input<string>? RetentionPeriod { get; set; }
 
         /// <summary>
-        /// 最大每秒扫描样本数。
+        /// Maximum samples scanned per second
         /// </summary>
         [Input("scanSamplesPerSecond")]
         public Input<int>? ScanSamplesPerSecond { get; set; }
 
         /// <summary>
-        /// 最大每秒扫描时序数。
+        /// Maximum time series scanned per second
         /// </summary>
         [Input("scanSeriesPerSecond")]
         public Input<int>? ScanSeriesPerSecond { get; set; }

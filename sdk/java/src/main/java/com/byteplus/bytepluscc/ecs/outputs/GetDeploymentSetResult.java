@@ -14,42 +14,42 @@ import java.util.Objects;
 @CustomType
 public final class GetDeploymentSetResult {
     /**
-     * @return 实例启动模板版本信息。
+     * @return Instance launch template version information.
      * 
      */
     private List<GetDeploymentSetCapacity> capacities;
     /**
-     * @return 部署集的创建时间。
+     * @return Deployment set creation time.
      * 
      */
     private String createdAt;
     /**
-     * @return 部署集组的序号，取值范围：1～7。
+     * @return Deployment set group index. Value range: 1–7.
      * 
      */
     private Integer deploymentSetGroupNumber;
     /**
-     * @return 部署集ID。
+     * @return Deployment set ID.
      * 
      */
     private String deploymentSetId;
     /**
-     * @return 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+     * @return Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
      * 
      */
     private String deploymentSetName;
     /**
-     * @return 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+     * @return Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;. Length limit: within 255 characters.
      * 
      */
     private String description;
     /**
-     * @return 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+     * @return Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
      * 
      */
     private String granularity;
     /**
-     * @return 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+     * @return Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
      * 
      */
     private Integer groupCount;
@@ -59,73 +59,73 @@ public final class GetDeploymentSetResult {
      */
     private String id;
     /**
-     * @return 部署集内的ECS实例数量。
+     * @return Number of ECS instances in the deployment set.
      * 
      */
     private Integer instanceAmount;
     /**
-     * @return 部署集内的ECS实例ID列表。
+     * @return List of ECS instance IDs in the deployment set.
      * 
      */
     private List<String> instanceIds;
     /**
-     * @return 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+     * @return Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
      * 
      */
     private String strategy;
 
     private GetDeploymentSetResult() {}
     /**
-     * @return 实例启动模板版本信息。
+     * @return Instance launch template version information.
      * 
      */
     public List<GetDeploymentSetCapacity> capacities() {
         return this.capacities;
     }
     /**
-     * @return 部署集的创建时间。
+     * @return Deployment set creation time.
      * 
      */
     public String createdAt() {
         return this.createdAt;
     }
     /**
-     * @return 部署集组的序号，取值范围：1～7。
+     * @return Deployment set group index. Value range: 1–7.
      * 
      */
     public Integer deploymentSetGroupNumber() {
         return this.deploymentSetGroupNumber;
     }
     /**
-     * @return 部署集ID。
+     * @return Deployment set ID.
      * 
      */
     public String deploymentSetId() {
         return this.deploymentSetId;
     }
     /**
-     * @return 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+     * @return Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
      * 
      */
     public String deploymentSetName() {
         return this.deploymentSetName;
     }
     /**
-     * @return 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+     * @return Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;. Length limit: within 255 characters.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+     * @return Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
      * 
      */
     public String granularity() {
         return this.granularity;
     }
     /**
-     * @return 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+     * @return Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
      * 
      */
     public Integer groupCount() {
@@ -139,21 +139,21 @@ public final class GetDeploymentSetResult {
         return this.id;
     }
     /**
-     * @return 部署集内的ECS实例数量。
+     * @return Number of ECS instances in the deployment set.
      * 
      */
     public Integer instanceAmount() {
         return this.instanceAmount;
     }
     /**
-     * @return 部署集内的ECS实例ID列表。
+     * @return List of ECS instance IDs in the deployment set.
      * 
      */
     public List<String> instanceIds() {
         return this.instanceIds;
     }
     /**
-     * @return 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+     * @return Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
      * 
      */
     public String strategy() {

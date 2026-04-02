@@ -26,10 +26,10 @@ class PermissionSetAssignmentArgs:
                  target_id: pulumi.Input[builtins.str]):
         """
         The set of arguments for constructing a PermissionSetAssignment resource.
-        :param pulumi.Input[builtins.str] permission_set_id: 权限集 ID。
-        :param pulumi.Input[builtins.str] principal_id: 云身份中心对象 ID
-        :param pulumi.Input[builtins.str] principal_type: 云身份中心对象类型，User 或者 Group。
-        :param pulumi.Input[builtins.str] target_id: 授权账号 ID。
+        :param pulumi.Input[builtins.str] permission_set_id: Permission set ID
+        :param pulumi.Input[builtins.str] principal_id: Cloud Identity Center object ID
+        :param pulumi.Input[builtins.str] principal_type: Cloud Identity Center object type: User or Group
+        :param pulumi.Input[builtins.str] target_id: Authorized account ID
         """
         pulumi.set(__self__, "permission_set_id", permission_set_id)
         pulumi.set(__self__, "principal_id", principal_id)
@@ -40,7 +40,7 @@ class PermissionSetAssignmentArgs:
     @pulumi.getter(name="permissionSetId")
     def permission_set_id(self) -> pulumi.Input[builtins.str]:
         """
-        权限集 ID。
+        Permission set ID
         """
         return pulumi.get(self, "permission_set_id")
 
@@ -52,7 +52,7 @@ class PermissionSetAssignmentArgs:
     @pulumi.getter(name="principalId")
     def principal_id(self) -> pulumi.Input[builtins.str]:
         """
-        云身份中心对象 ID
+        Cloud Identity Center object ID
         """
         return pulumi.get(self, "principal_id")
 
@@ -64,7 +64,7 @@ class PermissionSetAssignmentArgs:
     @pulumi.getter(name="principalType")
     def principal_type(self) -> pulumi.Input[builtins.str]:
         """
-        云身份中心对象类型，User 或者 Group。
+        Cloud Identity Center object type: User or Group
         """
         return pulumi.get(self, "principal_type")
 
@@ -76,7 +76,7 @@ class PermissionSetAssignmentArgs:
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Input[builtins.str]:
         """
-        授权账号 ID。
+        Authorized account ID
         """
         return pulumi.get(self, "target_id")
 
@@ -98,14 +98,14 @@ class _PermissionSetAssignmentState:
                  target_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering PermissionSetAssignment resources.
-        :param pulumi.Input[builtins.str] created_time: 授权创建时间。
-        :param pulumi.Input[builtins.str] permission_set_id: 权限集 ID。
-        :param pulumi.Input[builtins.str] permission_set_name: 权限集名称。
-        :param pulumi.Input[builtins.str] principal_id: 云身份中心对象 ID
-        :param pulumi.Input[builtins.str] principal_name: 云身份中心对象名。
-        :param pulumi.Input[builtins.str] principal_type: 云身份中心对象类型，User 或者 Group。
-        :param pulumi.Input[builtins.str] target_id: 授权账号 ID。
-        :param pulumi.Input[builtins.str] target_name: 授权账号名。
+        :param pulumi.Input[builtins.str] created_time: Authorization creation time
+        :param pulumi.Input[builtins.str] permission_set_id: Permission set ID
+        :param pulumi.Input[builtins.str] permission_set_name: Permission set name
+        :param pulumi.Input[builtins.str] principal_id: Cloud Identity Center object ID
+        :param pulumi.Input[builtins.str] principal_name: Cloud Identity Center object name
+        :param pulumi.Input[builtins.str] principal_type: Cloud Identity Center object type: User or Group
+        :param pulumi.Input[builtins.str] target_id: Authorized account ID
+        :param pulumi.Input[builtins.str] target_name: Authorized account name
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -128,7 +128,7 @@ class _PermissionSetAssignmentState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        授权创建时间。
+        Authorization creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -140,7 +140,7 @@ class _PermissionSetAssignmentState:
     @pulumi.getter(name="permissionSetId")
     def permission_set_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限集 ID。
+        Permission set ID
         """
         return pulumi.get(self, "permission_set_id")
 
@@ -152,7 +152,7 @@ class _PermissionSetAssignmentState:
     @pulumi.getter(name="permissionSetName")
     def permission_set_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限集名称。
+        Permission set name
         """
         return pulumi.get(self, "permission_set_name")
 
@@ -164,7 +164,7 @@ class _PermissionSetAssignmentState:
     @pulumi.getter(name="principalId")
     def principal_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云身份中心对象 ID
+        Cloud Identity Center object ID
         """
         return pulumi.get(self, "principal_id")
 
@@ -176,7 +176,7 @@ class _PermissionSetAssignmentState:
     @pulumi.getter(name="principalName")
     def principal_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云身份中心对象名。
+        Cloud Identity Center object name
         """
         return pulumi.get(self, "principal_name")
 
@@ -188,7 +188,7 @@ class _PermissionSetAssignmentState:
     @pulumi.getter(name="principalType")
     def principal_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云身份中心对象类型，User 或者 Group。
+        Cloud Identity Center object type: User or Group
         """
         return pulumi.get(self, "principal_type")
 
@@ -200,7 +200,7 @@ class _PermissionSetAssignmentState:
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        授权账号 ID。
+        Authorized account ID
         """
         return pulumi.get(self, "target_id")
 
@@ -212,7 +212,7 @@ class _PermissionSetAssignmentState:
     @pulumi.getter(name="targetName")
     def target_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        授权账号名。
+        Authorized account name
         """
         return pulumi.get(self, "target_name")
 
@@ -233,8 +233,8 @@ class PermissionSetAssignment(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。
-        当用户访问火山引擎云资源的权限访问具备可抽象的共性时，如：网络运维权限、安全管理权限等，您可以在云身份中心预置访问权限集作为权限模版，最终基于访问权限集来实现中心化授权。云身份中心将会为您同步分发访问权限集到各个账号，减少企业权限的运维成本。
+        After you create a Cloud Identity Center user, you need to grant the user login access to each account.
+        When users require access to Volcano Engine cloud resources with permissions that share abstractable characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission management costs.
 
         ## Example Usage
 
@@ -257,10 +257,10 @@ class PermissionSetAssignment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] permission_set_id: 权限集 ID。
-        :param pulumi.Input[builtins.str] principal_id: 云身份中心对象 ID
-        :param pulumi.Input[builtins.str] principal_type: 云身份中心对象类型，User 或者 Group。
-        :param pulumi.Input[builtins.str] target_id: 授权账号 ID。
+        :param pulumi.Input[builtins.str] permission_set_id: Permission set ID
+        :param pulumi.Input[builtins.str] principal_id: Cloud Identity Center object ID
+        :param pulumi.Input[builtins.str] principal_type: Cloud Identity Center object type: User or Group
+        :param pulumi.Input[builtins.str] target_id: Authorized account ID
         """
         ...
     @overload
@@ -269,8 +269,8 @@ class PermissionSetAssignment(pulumi.CustomResource):
                  args: PermissionSetAssignmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。
-        当用户访问火山引擎云资源的权限访问具备可抽象的共性时，如：网络运维权限、安全管理权限等，您可以在云身份中心预置访问权限集作为权限模版，最终基于访问权限集来实现中心化授权。云身份中心将会为您同步分发访问权限集到各个账号，减少企业权限的运维成本。
+        After you create a Cloud Identity Center user, you need to grant the user login access to each account.
+        When users require access to Volcano Engine cloud resources with permissions that share abstractable characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission management costs.
 
         ## Example Usage
 
@@ -360,14 +360,14 @@ class PermissionSetAssignment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 授权创建时间。
-        :param pulumi.Input[builtins.str] permission_set_id: 权限集 ID。
-        :param pulumi.Input[builtins.str] permission_set_name: 权限集名称。
-        :param pulumi.Input[builtins.str] principal_id: 云身份中心对象 ID
-        :param pulumi.Input[builtins.str] principal_name: 云身份中心对象名。
-        :param pulumi.Input[builtins.str] principal_type: 云身份中心对象类型，User 或者 Group。
-        :param pulumi.Input[builtins.str] target_id: 授权账号 ID。
-        :param pulumi.Input[builtins.str] target_name: 授权账号名。
+        :param pulumi.Input[builtins.str] created_time: Authorization creation time
+        :param pulumi.Input[builtins.str] permission_set_id: Permission set ID
+        :param pulumi.Input[builtins.str] permission_set_name: Permission set name
+        :param pulumi.Input[builtins.str] principal_id: Cloud Identity Center object ID
+        :param pulumi.Input[builtins.str] principal_name: Cloud Identity Center object name
+        :param pulumi.Input[builtins.str] principal_type: Cloud Identity Center object type: User or Group
+        :param pulumi.Input[builtins.str] target_id: Authorized account ID
+        :param pulumi.Input[builtins.str] target_name: Authorized account name
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -387,7 +387,7 @@ class PermissionSetAssignment(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        授权创建时间。
+        Authorization creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -395,7 +395,7 @@ class PermissionSetAssignment(pulumi.CustomResource):
     @pulumi.getter(name="permissionSetId")
     def permission_set_id(self) -> pulumi.Output[builtins.str]:
         """
-        权限集 ID。
+        Permission set ID
         """
         return pulumi.get(self, "permission_set_id")
 
@@ -403,7 +403,7 @@ class PermissionSetAssignment(pulumi.CustomResource):
     @pulumi.getter(name="permissionSetName")
     def permission_set_name(self) -> pulumi.Output[builtins.str]:
         """
-        权限集名称。
+        Permission set name
         """
         return pulumi.get(self, "permission_set_name")
 
@@ -411,7 +411,7 @@ class PermissionSetAssignment(pulumi.CustomResource):
     @pulumi.getter(name="principalId")
     def principal_id(self) -> pulumi.Output[builtins.str]:
         """
-        云身份中心对象 ID
+        Cloud Identity Center object ID
         """
         return pulumi.get(self, "principal_id")
 
@@ -419,7 +419,7 @@ class PermissionSetAssignment(pulumi.CustomResource):
     @pulumi.getter(name="principalName")
     def principal_name(self) -> pulumi.Output[builtins.str]:
         """
-        云身份中心对象名。
+        Cloud Identity Center object name
         """
         return pulumi.get(self, "principal_name")
 
@@ -427,7 +427,7 @@ class PermissionSetAssignment(pulumi.CustomResource):
     @pulumi.getter(name="principalType")
     def principal_type(self) -> pulumi.Output[builtins.str]:
         """
-        云身份中心对象类型，User 或者 Group。
+        Cloud Identity Center object type: User or Group
         """
         return pulumi.get(self, "principal_type")
 
@@ -435,7 +435,7 @@ class PermissionSetAssignment(pulumi.CustomResource):
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[builtins.str]:
         """
-        授权账号 ID。
+        Authorized account ID
         """
         return pulumi.get(self, "target_id")
 
@@ -443,7 +443,7 @@ class PermissionSetAssignment(pulumi.CustomResource):
     @pulumi.getter(name="targetName")
     def target_name(self) -> pulumi.Output[builtins.str]:
         """
-        授权账号名。
+        Authorized account name
         """
         return pulumi.get(self, "target_name")
 

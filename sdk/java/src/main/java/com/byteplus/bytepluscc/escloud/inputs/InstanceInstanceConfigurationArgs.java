@@ -35,14 +35,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     public static final InstanceInstanceConfigurationArgs Empty = new InstanceInstanceConfigurationArgs();
 
     /**
-     * 管理员密码。
+     * Administrator password.
      * 
      */
     @Import(name="adminPassword")
     private @Nullable Output<String> adminPassword;
 
     /**
-     * @return 管理员密码。
+     * @return Administrator password.
      * 
      */
     public Optional<Output<String>> adminPassword() {
@@ -50,14 +50,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 管理员用户名。
+     * Administrator username.
      * 
      */
     @Import(name="adminUserName")
     private @Nullable Output<String> adminUserName;
 
     /**
-     * @return 管理员用户名。
+     * @return Administrator username.
      * 
      */
     public Optional<Output<String>> adminUserName() {
@@ -65,14 +65,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+     * Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
      * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
-     * @return 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+     * @return Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
      * 
      */
     public Optional<Output<Boolean>> autoRenew() {
@@ -80,14 +80,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+     * Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+     * @return Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -95,14 +95,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 冷节点数量。
+     * Number of cold nodes.
      * 
      */
     @Import(name="coldNodeNumber")
     private @Nullable Output<Integer> coldNodeNumber;
 
     /**
-     * @return 冷节点数量。
+     * @return Number of cold nodes.
      * 
      */
     public Optional<Output<Integer>> coldNodeNumber() {
@@ -110,14 +110,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 冷节点的节点规格配置详情。
+     * Node specification details for cold nodes
      * 
      */
     @Import(name="coldNodeResourceSpec")
     private @Nullable Output<InstanceInstanceConfigurationColdNodeResourceSpecArgs> coldNodeResourceSpec;
 
     /**
-     * @return 冷节点的节点规格配置详情。
+     * @return Node specification details for cold nodes
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationColdNodeResourceSpecArgs>> coldNodeResourceSpec() {
@@ -125,14 +125,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 冷节点的存储规格配置详情。
+     * Details of cold node storage specification configuration
      * 
      */
     @Import(name="coldNodeStorageSpec")
     private @Nullable Output<InstanceInstanceConfigurationColdNodeStorageSpecArgs> coldNodeStorageSpec;
 
     /**
-     * @return 冷节点的存储规格配置详情。
+     * @return Details of cold node storage specification configuration
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationColdNodeStorageSpecArgs>> coldNodeStorageSpec() {
@@ -140,14 +140,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+     * Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
      * 
      */
     @Import(name="configurationCode")
     private @Nullable Output<String> configurationCode;
 
     /**
-     * @return 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+     * @return Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
      * 
      */
     public Optional<Output<String>> configurationCode() {
@@ -155,14 +155,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 协调节点数量。
+     * Coordinator node count
      * 
      */
     @Import(name="coordinatorNodeNumber")
     private @Nullable Output<Integer> coordinatorNodeNumber;
 
     /**
-     * @return 协调节点数量。
+     * @return Coordinator node count
      * 
      */
     public Optional<Output<Integer>> coordinatorNodeNumber() {
@@ -170,14 +170,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 协调节点的节点规格配置详情。
+     * Node specification configuration details for coordinator node.
      * 
      */
     @Import(name="coordinatorNodeResourceSpec")
     private @Nullable Output<InstanceInstanceConfigurationCoordinatorNodeResourceSpecArgs> coordinatorNodeResourceSpec;
 
     /**
-     * @return 协调节点的节点规格配置详情。
+     * @return Node specification configuration details for coordinator node.
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationCoordinatorNodeResourceSpecArgs>> coordinatorNodeResourceSpec() {
@@ -185,14 +185,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 协调节点的存储规格配置详情。
+     * Storage specification configuration details for coordinator node.
      * 
      */
     @Import(name="coordinatorNodeStorageSpec")
     private @Nullable Output<InstanceInstanceConfigurationCoordinatorNodeStorageSpecArgs> coordinatorNodeStorageSpec;
 
     /**
-     * @return 协调节点的存储规格配置详情。
+     * @return Storage specification configuration details for coordinator node.
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationCoordinatorNodeStorageSpecArgs>> coordinatorNodeStorageSpec() {
@@ -200,14 +200,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+     * Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
      * 
      */
     @Import(name="deletionProtection")
     private @Nullable Output<Boolean> deletionProtection;
 
     /**
-     * @return 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+     * @return Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
      * 
      */
     public Optional<Output<Boolean>> deletionProtection() {
@@ -215,14 +215,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+     * Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
      * 
      */
     @Import(name="enableHttps")
     private @Nullable Output<Boolean> enableHttps;
 
     /**
-     * @return 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+     * @return Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
      * 
      */
     public Optional<Output<Boolean>> enableHttps() {
@@ -230,14 +230,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+     * Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
      * 
      */
     @Import(name="enablePureMaster")
     private @Nullable Output<Boolean> enablePureMaster;
 
     /**
-     * @return Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+     * @return Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
      * 
      */
     public Optional<Output<Boolean>> enablePureMaster() {
@@ -245,14 +245,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 数据节点数量。
+     * Number of data nodes
      * 
      */
     @Import(name="hotNodeNumber")
     private @Nullable Output<Integer> hotNodeNumber;
 
     /**
-     * @return 数据节点数量。
+     * @return Number of data nodes
      * 
      */
     public Optional<Output<Integer>> hotNodeNumber() {
@@ -260,14 +260,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 数据节点的节点规格配置详情。
+     * Node specification configuration details for data node.
      * 
      */
     @Import(name="hotNodeResourceSpec")
     private @Nullable Output<InstanceInstanceConfigurationHotNodeResourceSpecArgs> hotNodeResourceSpec;
 
     /**
-     * @return 数据节点的节点规格配置详情。
+     * @return Node specification configuration details for data node.
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationHotNodeResourceSpecArgs>> hotNodeResourceSpec() {
@@ -275,14 +275,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 数据节点的存储规格配置详情。
+     * Data node storage specification configuration details
      * 
      */
     @Import(name="hotNodeStorageSpec")
     private @Nullable Output<InstanceInstanceConfigurationHotNodeStorageSpecArgs> hotNodeStorageSpec;
 
     /**
-     * @return 数据节点的存储规格配置详情。
+     * @return Data node storage specification configuration details
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationHotNodeStorageSpecArgs>> hotNodeStorageSpec() {
@@ -290,14 +290,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+     * Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+     * @return Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -305,14 +305,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * kibana 节点数量。
+     * Number of Kibana nodes
      * 
      */
     @Import(name="kibanaNodeNumber")
     private @Nullable Output<Integer> kibanaNodeNumber;
 
     /**
-     * @return kibana 节点数量。
+     * @return Number of Kibana nodes
      * 
      */
     public Optional<Output<Integer>> kibanaNodeNumber() {
@@ -320,14 +320,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * Kibana 节点的节点规格配置详情。
+     * Kibana node specification configuration details
      * 
      */
     @Import(name="kibanaNodeResourceSpec")
     private @Nullable Output<InstanceInstanceConfigurationKibanaNodeResourceSpecArgs> kibanaNodeResourceSpec;
 
     /**
-     * @return Kibana 节点的节点规格配置详情。
+     * @return Kibana node specification configuration details
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationKibanaNodeResourceSpecArgs>> kibanaNodeResourceSpec() {
@@ -335,14 +335,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * master 节点数量。
+     * Number of master nodes.
      * 
      */
     @Import(name="masterNodeNumber")
     private @Nullable Output<Integer> masterNodeNumber;
 
     /**
-     * @return master 节点数量。
+     * @return Number of master nodes.
      * 
      */
     public Optional<Output<Integer>> masterNodeNumber() {
@@ -350,14 +350,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * Master 节点的节点规格配置详情。
+     * Master node specification configuration details
      * 
      */
     @Import(name="masterNodeResourceSpec")
     private @Nullable Output<InstanceInstanceConfigurationMasterNodeResourceSpecArgs> masterNodeResourceSpec;
 
     /**
-     * @return Master 节点的节点规格配置详情。
+     * @return Master node specification configuration details
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationMasterNodeResourceSpecArgs>> masterNodeResourceSpec() {
@@ -365,14 +365,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * Master 节点的存储规格配置详情。
+     * Storage specification details for master node
      * 
      */
     @Import(name="masterNodeStorageSpec")
     private @Nullable Output<InstanceInstanceConfigurationMasterNodeStorageSpecArgs> masterNodeStorageSpec;
 
     /**
-     * @return Master 节点的存储规格配置详情。
+     * @return Storage specification details for master node
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationMasterNodeStorageSpecArgs>> masterNodeStorageSpec() {
@@ -394,14 +394,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 包年包月实例的购买时长，单位：月。
+     * Subscription instance purchase duration, in months.
      * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
-     * @return 包年包月实例的购买时长，单位：月。
+     * @return Subscription instance purchase duration, in months.
      * 
      */
     public Optional<Output<Integer>> period() {
@@ -409,14 +409,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+     * Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+     * @return Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -424,14 +424,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 实例所在区域。
+     * Instance region
      * 
      */
     @Import(name="regionId")
     private @Nullable Output<String> regionId;
 
     /**
-     * @return 实例所在区域。
+     * @return Instance region
      * 
      */
     public Optional<Output<String>> regionId() {
@@ -439,14 +439,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+     * Set subnet information for the instance. Note: The subnet must be in the primary zone.
      * 
      */
     @Import(name="subnet")
     private @Nullable Output<InstanceInstanceConfigurationSubnetArgs> subnet;
 
     /**
-     * @return 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+     * @return Set subnet information for the instance. Note: The subnet must be in the primary zone.
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationSubnetArgs>> subnet() {
@@ -461,14 +461,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * API的版本，取值：2023-01-01。
+     * API version. Value: 2023-01-01.
      * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
-     * @return API的版本，取值：2023-01-01。
+     * @return API version. Value: 2023-01-01.
      * 
      */
     public Optional<Output<String>> version() {
@@ -476,14 +476,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 设置实例的私有网络 VPC 信息。
+     * Set VPC information for the instance
      * 
      */
     @Import(name="vpc")
     private @Nullable Output<InstanceInstanceConfigurationVpcArgs> vpc;
 
     /**
-     * @return 设置实例的私有网络 VPC 信息。
+     * @return Set VPC information for the instance
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationVpcArgs>> vpc() {
@@ -491,14 +491,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 温节点数量。
+     * Warm node count.
      * 
      */
     @Import(name="warmNodeNumber")
     private @Nullable Output<Integer> warmNodeNumber;
 
     /**
-     * @return 温节点数量。
+     * @return Warm node count.
      * 
      */
     public Optional<Output<Integer>> warmNodeNumber() {
@@ -506,14 +506,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 温节点的节点规格配置详情。
+     * Warm node specification configuration details.
      * 
      */
     @Import(name="warmNodeResourceSpec")
     private @Nullable Output<InstanceInstanceConfigurationWarmNodeResourceSpecArgs> warmNodeResourceSpec;
 
     /**
-     * @return 温节点的节点规格配置详情。
+     * @return Warm node specification configuration details.
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationWarmNodeResourceSpecArgs>> warmNodeResourceSpec() {
@@ -521,14 +521,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 温节点的存储规格配置详情。
+     * Storage specification details for warm nodes
      * 
      */
     @Import(name="warmNodeStorageSpec")
     private @Nullable Output<InstanceInstanceConfigurationWarmNodeStorageSpecArgs> warmNodeStorageSpec;
 
     /**
-     * @return 温节点的存储规格配置详情。
+     * @return Storage specification details for warm nodes
      * 
      */
     public Optional<Output<InstanceInstanceConfigurationWarmNodeStorageSpecArgs>> warmNodeStorageSpec() {
@@ -536,14 +536,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+     * Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+     * @return Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -551,14 +551,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     }
 
     /**
-     * 实例的可用区数量。
+     * Number of instance availability zones.
      * 
      */
     @Import(name="zoneNumber")
     private @Nullable Output<Integer> zoneNumber;
 
     /**
-     * @return 实例的可用区数量。
+     * @return Number of instance availability zones.
      * 
      */
     public Optional<Output<Integer>> zoneNumber() {
@@ -626,7 +626,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param adminPassword 管理员密码。
+         * @param adminPassword Administrator password.
          * 
          * @return builder
          * 
@@ -637,7 +637,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param adminPassword 管理员密码。
+         * @param adminPassword Administrator password.
          * 
          * @return builder
          * 
@@ -647,7 +647,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param adminUserName 管理员用户名。
+         * @param adminUserName Administrator username.
          * 
          * @return builder
          * 
@@ -658,7 +658,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param adminUserName 管理员用户名。
+         * @param adminUserName Administrator username.
          * 
          * @return builder
          * 
@@ -668,7 +668,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param autoRenew 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+         * @param autoRenew Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
          * 
          * @return builder
          * 
@@ -679,7 +679,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param autoRenew 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+         * @param autoRenew Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
          * 
          * @return builder
          * 
@@ -689,7 +689,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param chargeType 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+         * @param chargeType Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
          * 
          * @return builder
          * 
@@ -700,7 +700,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param chargeType 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+         * @param chargeType Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
          * 
          * @return builder
          * 
@@ -710,7 +710,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param coldNodeNumber 冷节点数量。
+         * @param coldNodeNumber Number of cold nodes.
          * 
          * @return builder
          * 
@@ -721,7 +721,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param coldNodeNumber 冷节点数量。
+         * @param coldNodeNumber Number of cold nodes.
          * 
          * @return builder
          * 
@@ -731,7 +731,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param coldNodeResourceSpec 冷节点的节点规格配置详情。
+         * @param coldNodeResourceSpec Node specification details for cold nodes
          * 
          * @return builder
          * 
@@ -742,7 +742,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param coldNodeResourceSpec 冷节点的节点规格配置详情。
+         * @param coldNodeResourceSpec Node specification details for cold nodes
          * 
          * @return builder
          * 
@@ -752,7 +752,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param coldNodeStorageSpec 冷节点的存储规格配置详情。
+         * @param coldNodeStorageSpec Details of cold node storage specification configuration
          * 
          * @return builder
          * 
@@ -763,7 +763,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param coldNodeStorageSpec 冷节点的存储规格配置详情。
+         * @param coldNodeStorageSpec Details of cold node storage specification configuration
          * 
          * @return builder
          * 
@@ -773,7 +773,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param configurationCode 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+         * @param configurationCode Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
          * 
          * @return builder
          * 
@@ -784,7 +784,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param configurationCode 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+         * @param configurationCode Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
          * 
          * @return builder
          * 
@@ -794,7 +794,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param coordinatorNodeNumber 协调节点数量。
+         * @param coordinatorNodeNumber Coordinator node count
          * 
          * @return builder
          * 
@@ -805,7 +805,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param coordinatorNodeNumber 协调节点数量。
+         * @param coordinatorNodeNumber Coordinator node count
          * 
          * @return builder
          * 
@@ -815,7 +815,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param coordinatorNodeResourceSpec 协调节点的节点规格配置详情。
+         * @param coordinatorNodeResourceSpec Node specification configuration details for coordinator node.
          * 
          * @return builder
          * 
@@ -826,7 +826,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param coordinatorNodeResourceSpec 协调节点的节点规格配置详情。
+         * @param coordinatorNodeResourceSpec Node specification configuration details for coordinator node.
          * 
          * @return builder
          * 
@@ -836,7 +836,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param coordinatorNodeStorageSpec 协调节点的存储规格配置详情。
+         * @param coordinatorNodeStorageSpec Storage specification configuration details for coordinator node.
          * 
          * @return builder
          * 
@@ -847,7 +847,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param coordinatorNodeStorageSpec 协调节点的存储规格配置详情。
+         * @param coordinatorNodeStorageSpec Storage specification configuration details for coordinator node.
          * 
          * @return builder
          * 
@@ -857,7 +857,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param deletionProtection 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+         * @param deletionProtection Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
          * 
          * @return builder
          * 
@@ -868,7 +868,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param deletionProtection 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+         * @param deletionProtection Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
          * 
          * @return builder
          * 
@@ -878,7 +878,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enableHttps 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+         * @param enableHttps Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
          * 
          * @return builder
          * 
@@ -889,7 +889,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enableHttps 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+         * @param enableHttps Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
          * 
          * @return builder
          * 
@@ -899,7 +899,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enablePureMaster Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+         * @param enablePureMaster Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
          * 
          * @return builder
          * 
@@ -910,7 +910,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enablePureMaster Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+         * @param enablePureMaster Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
          * 
          * @return builder
          * 
@@ -920,7 +920,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param hotNodeNumber 数据节点数量。
+         * @param hotNodeNumber Number of data nodes
          * 
          * @return builder
          * 
@@ -931,7 +931,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param hotNodeNumber 数据节点数量。
+         * @param hotNodeNumber Number of data nodes
          * 
          * @return builder
          * 
@@ -941,7 +941,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param hotNodeResourceSpec 数据节点的节点规格配置详情。
+         * @param hotNodeResourceSpec Node specification configuration details for data node.
          * 
          * @return builder
          * 
@@ -952,7 +952,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param hotNodeResourceSpec 数据节点的节点规格配置详情。
+         * @param hotNodeResourceSpec Node specification configuration details for data node.
          * 
          * @return builder
          * 
@@ -962,7 +962,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param hotNodeStorageSpec 数据节点的存储规格配置详情。
+         * @param hotNodeStorageSpec Data node storage specification configuration details
          * 
          * @return builder
          * 
@@ -973,7 +973,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param hotNodeStorageSpec 数据节点的存储规格配置详情。
+         * @param hotNodeStorageSpec Data node storage specification configuration details
          * 
          * @return builder
          * 
@@ -983,7 +983,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param instanceName 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+         * @param instanceName Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -994,7 +994,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param instanceName 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+         * @param instanceName Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -1004,7 +1004,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param kibanaNodeNumber kibana 节点数量。
+         * @param kibanaNodeNumber Number of Kibana nodes
          * 
          * @return builder
          * 
@@ -1015,7 +1015,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param kibanaNodeNumber kibana 节点数量。
+         * @param kibanaNodeNumber Number of Kibana nodes
          * 
          * @return builder
          * 
@@ -1025,7 +1025,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param kibanaNodeResourceSpec Kibana 节点的节点规格配置详情。
+         * @param kibanaNodeResourceSpec Kibana node specification configuration details
          * 
          * @return builder
          * 
@@ -1036,7 +1036,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param kibanaNodeResourceSpec Kibana 节点的节点规格配置详情。
+         * @param kibanaNodeResourceSpec Kibana node specification configuration details
          * 
          * @return builder
          * 
@@ -1046,7 +1046,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param masterNodeNumber master 节点数量。
+         * @param masterNodeNumber Number of master nodes.
          * 
          * @return builder
          * 
@@ -1057,7 +1057,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param masterNodeNumber master 节点数量。
+         * @param masterNodeNumber Number of master nodes.
          * 
          * @return builder
          * 
@@ -1067,7 +1067,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param masterNodeResourceSpec Master 节点的节点规格配置详情。
+         * @param masterNodeResourceSpec Master node specification configuration details
          * 
          * @return builder
          * 
@@ -1078,7 +1078,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param masterNodeResourceSpec Master 节点的节点规格配置详情。
+         * @param masterNodeResourceSpec Master node specification configuration details
          * 
          * @return builder
          * 
@@ -1088,7 +1088,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param masterNodeStorageSpec Master 节点的存储规格配置详情。
+         * @param masterNodeStorageSpec Storage specification details for master node
          * 
          * @return builder
          * 
@@ -1099,7 +1099,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param masterNodeStorageSpec Master 节点的存储规格配置详情。
+         * @param masterNodeStorageSpec Storage specification details for master node
          * 
          * @return builder
          * 
@@ -1135,7 +1135,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param period 包年包月实例的购买时长，单位：月。
+         * @param period Subscription instance purchase duration, in months.
          * 
          * @return builder
          * 
@@ -1146,7 +1146,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param period 包年包月实例的购买时长，单位：月。
+         * @param period Subscription instance purchase duration, in months.
          * 
          * @return builder
          * 
@@ -1156,7 +1156,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param projectName 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+         * @param projectName Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
          * 
          * @return builder
          * 
@@ -1167,7 +1167,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param projectName 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+         * @param projectName Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
          * 
          * @return builder
          * 
@@ -1177,7 +1177,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param regionId 实例所在区域。
+         * @param regionId Instance region
          * 
          * @return builder
          * 
@@ -1188,7 +1188,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param regionId 实例所在区域。
+         * @param regionId Instance region
          * 
          * @return builder
          * 
@@ -1198,7 +1198,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param subnet 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+         * @param subnet Set subnet information for the instance. Note: The subnet must be in the primary zone.
          * 
          * @return builder
          * 
@@ -1209,7 +1209,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param subnet 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+         * @param subnet Set subnet information for the instance. Note: The subnet must be in the primary zone.
          * 
          * @return builder
          * 
@@ -1232,7 +1232,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param version API的版本，取值：2023-01-01。
+         * @param version API version. Value: 2023-01-01.
          * 
          * @return builder
          * 
@@ -1243,7 +1243,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param version API的版本，取值：2023-01-01。
+         * @param version API version. Value: 2023-01-01.
          * 
          * @return builder
          * 
@@ -1253,7 +1253,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param vpc 设置实例的私有网络 VPC 信息。
+         * @param vpc Set VPC information for the instance
          * 
          * @return builder
          * 
@@ -1264,7 +1264,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param vpc 设置实例的私有网络 VPC 信息。
+         * @param vpc Set VPC information for the instance
          * 
          * @return builder
          * 
@@ -1274,7 +1274,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param warmNodeNumber 温节点数量。
+         * @param warmNodeNumber Warm node count.
          * 
          * @return builder
          * 
@@ -1285,7 +1285,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param warmNodeNumber 温节点数量。
+         * @param warmNodeNumber Warm node count.
          * 
          * @return builder
          * 
@@ -1295,7 +1295,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param warmNodeResourceSpec 温节点的节点规格配置详情。
+         * @param warmNodeResourceSpec Warm node specification configuration details.
          * 
          * @return builder
          * 
@@ -1306,7 +1306,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param warmNodeResourceSpec 温节点的节点规格配置详情。
+         * @param warmNodeResourceSpec Warm node specification configuration details.
          * 
          * @return builder
          * 
@@ -1316,7 +1316,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param warmNodeStorageSpec 温节点的存储规格配置详情。
+         * @param warmNodeStorageSpec Storage specification details for warm nodes
          * 
          * @return builder
          * 
@@ -1327,7 +1327,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param warmNodeStorageSpec 温节点的存储规格配置详情。
+         * @param warmNodeStorageSpec Storage specification details for warm nodes
          * 
          * @return builder
          * 
@@ -1337,7 +1337,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param zoneId 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+         * @param zoneId Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
          * 
          * @return builder
          * 
@@ -1348,7 +1348,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param zoneId 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+         * @param zoneId Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
          * 
          * @return builder
          * 
@@ -1358,7 +1358,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param zoneNumber 实例的可用区数量。
+         * @param zoneNumber Number of instance availability zones.
          * 
          * @return builder
          * 
@@ -1369,7 +1369,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         }
 
         /**
-         * @param zoneNumber 实例的可用区数量。
+         * @param zoneNumber Number of instance availability zones.
          * 
          * @return builder
          * 

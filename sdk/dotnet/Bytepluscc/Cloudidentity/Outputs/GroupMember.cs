@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity.Outputs
     public sealed class GroupMember
     {
         /// <summary>
-        /// 用户id。
+        /// User ID
         /// </summary>
         public readonly string? UserId;
 

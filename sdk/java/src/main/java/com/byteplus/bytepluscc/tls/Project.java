@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 日志项目是数据的项目管理单元，用于租户资源隔离和控制，通常一个日志项目对应一个应用、业务或产品。
+ * A log project is a data management unit used for tenant resource isolation and control. Typically, each log project corresponds to an application, service, or product
  * 
  * ## Example Usage
  * 
@@ -71,84 +71,84 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:tls/project:Project")
 public class Project extends com.pulumi.resources.CustomResource {
     /**
-     * 日志项目创建时间。
+     * Log project creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 日志项目创建时间。
+     * @return Log project creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 日志项目的简单描述。
+     * Brief description of the log project
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 日志项目的简单描述。
+     * @return Brief description of the log project
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 日志项目所属的 IAM 项目。
+     * The IAM project associated with the log project
      * 
      */
     @Export(name="iamProjectName", refs={String.class}, tree="[0]")
     private Output<String> iamProjectName;
 
     /**
-     * @return 日志项目所属的 IAM 项目。
+     * @return The IAM project associated with the log project
      * 
      */
     public Output<String> iamProjectName() {
         return this.iamProjectName;
     }
     /**
-     * 私网连接域名。
+     * Private network connection domain name
      * 
      */
     @Export(name="innerNetDomain", refs={String.class}, tree="[0]")
     private Output<String> innerNetDomain;
 
     /**
-     * @return 私网连接域名。
+     * @return Private network connection domain name
      * 
      */
     public Output<String> innerNetDomain() {
         return this.innerNetDomain;
     }
     /**
-     * 日志项目的 ID。
+     * Log project ID
      * 
      */
     @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
-     * @return 日志项目的 ID。
+     * @return Log project ID
      * 
      */
     public Output<String> projectId() {
         return this.projectId;
     }
     /**
-     * 日志项目名称。
+     * Log project name
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 日志项目名称。
+     * @return Log project name
      * 
      */
     public Output<String> projectName() {
@@ -161,14 +161,14 @@ public class Project extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 当前日志项目下的日志主题数量。
+     * Number of log topics in the current log project
      * 
      */
     @Export(name="topicCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> topicCount;
 
     /**
-     * @return 当前日志项目下的日志主题数量。
+     * @return Number of log topics in the current log project
      * 
      */
     public Output<Integer> topicCount() {

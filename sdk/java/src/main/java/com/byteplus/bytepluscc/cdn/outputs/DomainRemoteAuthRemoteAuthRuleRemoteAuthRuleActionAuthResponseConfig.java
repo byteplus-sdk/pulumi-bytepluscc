@@ -15,50 +15,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfig {
     /**
-     * @return 内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+     * @return The content delivery network can cache authentication status codes. This parameter indicates the related configuration.
      * 
      */
     private @Nullable DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheAction cacheAction;
     /**
-     * @return 表示鉴权失败时，内容分发网络如何响应用户。
+     * @return Indicates how the content delivery network responds to users when authentication fails.
      * 
      */
     private @Nullable DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction responseAction;
     /**
-     * @return 表示内容分发网络对鉴权状态码的处理方式。
+     * @return Specifies how the content delivery network handles authentication status codes.
      * 
      */
     private @Nullable DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeAction statusCodeAction;
     /**
-     * @return 表示鉴权超时后，内容分发网络如何处理鉴权请求。
+     * @return Specifies how the content delivery network handles authentication requests after authentication timeout.
      * 
      */
     private @Nullable DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutAction timeOutAction;
 
     private DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfig() {}
     /**
-     * @return 内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+     * @return The content delivery network can cache authentication status codes. This parameter indicates the related configuration.
      * 
      */
     public Optional<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheAction> cacheAction() {
         return Optional.ofNullable(this.cacheAction);
     }
     /**
-     * @return 表示鉴权失败时，内容分发网络如何响应用户。
+     * @return Indicates how the content delivery network responds to users when authentication fails.
      * 
      */
     public Optional<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction> responseAction() {
         return Optional.ofNullable(this.responseAction);
     }
     /**
-     * @return 表示内容分发网络对鉴权状态码的处理方式。
+     * @return Specifies how the content delivery network handles authentication status codes.
      * 
      */
     public Optional<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeAction> statusCodeAction() {
         return Optional.ofNullable(this.statusCodeAction);
     }
     /**
-     * @return 表示鉴权超时后，内容分发网络如何处理鉴权请求。
+     * @return Specifies how the content delivery network handles authentication requests after authentication timeout.
      * 
      */
     public Optional<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutAction> timeOutAction() {

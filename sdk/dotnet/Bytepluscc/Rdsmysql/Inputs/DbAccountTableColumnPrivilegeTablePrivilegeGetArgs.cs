@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
         private InputList<string>? _accountPrivilegeDetails;
 
         /// <summary>
-        /// 账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+        /// Account table permissions. Value options (multiple selections allowed): ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, SHOW, VIEW, TRIGGER, UPDATE, CREATE VIEW, REFERENCES. Note: Use commas (,) to separate multiple permissions.
         /// </summary>
         public InputList<string> AccountPrivilegeDetails
         {
@@ -26,7 +26,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
         }
 
         /// <summary>
-        /// 对账号进行权限设置的表的名称。
+        /// Name of the table for setting permissions for the account.
         /// </summary>
         [Input("tableName")]
         public Input<string>? TableName { get; set; }

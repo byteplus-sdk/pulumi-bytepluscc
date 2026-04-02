@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolKubernetesConfigContainerdConfig {
     /**
-     * @return 指定跳过证书认证的容器镜像仓库地址。
+     * @return Specify the container image repository address to skip certificate verification.
      * 
      */
     private List<String> insecureRegistries;
     /**
-     * @return 容器镜像仓库代理配置。
+     * @return Container image repository proxy configuration
      * 
      */
     private List<GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig> registryProxyConfigs;
 
     private GetNodePoolKubernetesConfigContainerdConfig() {}
     /**
-     * @return 指定跳过证书认证的容器镜像仓库地址。
+     * @return Specify the container image repository address to skip certificate verification.
      * 
      */
     public List<String> insecureRegistries() {
         return this.insecureRegistries;
     }
     /**
-     * @return 容器镜像仓库代理配置。
+     * @return Container image repository proxy configuration
      * 
      */
     public List<GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig> registryProxyConfigs() {

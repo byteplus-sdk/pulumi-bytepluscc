@@ -14,49 +14,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
     public sealed class ClusterApplicationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 应用配置路径。
+        /// Application configuration path.
         /// </summary>
         [Input("applicationConfigHome")]
         public Input<string>? ApplicationConfigHome { get; set; }
 
         /// <summary>
-        /// 应用安装路径。
+        /// Application installation path.
         /// </summary>
         [Input("applicationHome")]
         public Input<string>? ApplicationHome { get; set; }
 
         /// <summary>
-        /// 应用名称。
+        /// Application name.
         /// </summary>
         [Input("applicationName")]
         public Input<string>? ApplicationName { get; set; }
 
         /// <summary>
-        /// 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+        /// Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
         /// </summary>
         [Input("applicationState")]
         public Input<string>? ApplicationState { get; set; }
 
         /// <summary>
-        /// 应用版本。
+        /// Application version.
         /// </summary>
         [Input("applicationVersion")]
         public Input<string>? ApplicationVersion { get; set; }
 
         /// <summary>
-        /// 应用用户组。
+        /// Application user group.
         /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
         /// <summary>
-        /// 是否支持客户端。
+        /// Whether client is supported.
         /// </summary>
         [Input("supportClient")]
         public Input<bool>? SupportClient { get; set; }
 
         /// <summary>
-        /// 应用用户。
+        /// Application user.
         /// </summary>
         [Input("user")]
         public Input<string>? User { get; set; }

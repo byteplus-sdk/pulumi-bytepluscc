@@ -17,14 +17,14 @@ public final class ScalingGroupServerGroupAttributeArgs extends com.pulumi.resou
     public static final ScalingGroupServerGroupAttributeArgs Empty = new ScalingGroupServerGroupAttributeArgs();
 
     /**
-     * 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+     * Port number of the server in the backend server group for load balancing. Range: 1–65535.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+     * @return Port number of the server in the backend server group for load balancing. Range: 1–65535.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -32,14 +32,14 @@ public final class ScalingGroupServerGroupAttributeArgs extends com.pulumi.resou
     }
 
     /**
-     * 负载均衡后端服务器组的ID。
+     * Backend server group ID for load balancing.
      * 
      */
     @Import(name="serverGroupId")
     private @Nullable Output<String> serverGroupId;
 
     /**
-     * @return 负载均衡后端服务器组的ID。
+     * @return Backend server group ID for load balancing.
      * 
      */
     public Optional<Output<String>> serverGroupId() {
@@ -47,14 +47,14 @@ public final class ScalingGroupServerGroupAttributeArgs extends com.pulumi.resou
     }
 
     /**
-     * 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+     * Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+     * @return Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
      * 
      */
     public Optional<Output<String>> type() {
@@ -62,14 +62,14 @@ public final class ScalingGroupServerGroupAttributeArgs extends com.pulumi.resou
     }
 
     /**
-     * 负载均衡后端服务器组中服务器的权重。
+     * Weight of servers in the backend server group of the load balancer
      * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
-     * @return 负载均衡后端服务器组中服务器的权重。
+     * @return Weight of servers in the backend server group of the load balancer
      * 
      */
     public Optional<Output<Integer>> weight() {
@@ -104,7 +104,7 @@ public final class ScalingGroupServerGroupAttributeArgs extends com.pulumi.resou
         }
 
         /**
-         * @param port 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+         * @param port Port number of the server in the backend server group for load balancing. Range: 1–65535.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class ScalingGroupServerGroupAttributeArgs extends com.pulumi.resou
         }
 
         /**
-         * @param port 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+         * @param port Port number of the server in the backend server group for load balancing. Range: 1–65535.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class ScalingGroupServerGroupAttributeArgs extends com.pulumi.resou
         }
 
         /**
-         * @param serverGroupId 负载均衡后端服务器组的ID。
+         * @param serverGroupId Backend server group ID for load balancing.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class ScalingGroupServerGroupAttributeArgs extends com.pulumi.resou
         }
 
         /**
-         * @param serverGroupId 负载均衡后端服务器组的ID。
+         * @param serverGroupId Backend server group ID for load balancing.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class ScalingGroupServerGroupAttributeArgs extends com.pulumi.resou
         }
 
         /**
-         * @param type 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+         * @param type Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class ScalingGroupServerGroupAttributeArgs extends com.pulumi.resou
         }
 
         /**
-         * @param type 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+         * @param type Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class ScalingGroupServerGroupAttributeArgs extends com.pulumi.resou
         }
 
         /**
-         * @param weight 负载均衡后端服务器组中服务器的权重。
+         * @param weight Weight of servers in the backend server group of the load balancer
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class ScalingGroupServerGroupAttributeArgs extends com.pulumi.resou
         }
 
         /**
-         * @param weight 负载均衡后端服务器组中服务器的权重。
+         * @param weight Weight of servers in the backend server group of the load balancer
          * 
          * @return builder
          * 

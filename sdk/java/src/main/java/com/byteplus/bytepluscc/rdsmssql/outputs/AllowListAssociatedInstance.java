@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AllowListAssociatedInstance {
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     private @Nullable String instanceId;
 
     private AllowListAssociatedInstance() {}
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     public Optional<String> instanceId() {

@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 服务作为业务对外暴露的入口，可以通过绑定域名功能，将您的自定义域名绑定至服务。
+// The service serves as the entry point for external access. You can bind your custom domain to the service using the domain binding feature
 //
 // ## Example Usage
 //
@@ -56,25 +56,25 @@ import (
 type CustomDomain struct {
 	pulumi.CustomResourceState
 
-	// 自定义域名证书ID。
+	// Custom Domain Certificate ID
 	CertificateId pulumi.StringOutput `pulumi:"certificateId"`
-	// 备注。
+	// Remarks
 	Comments pulumi.StringOutput `pulumi:"comments"`
-	// 创建时间。
+	// Creation Time
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 自定义域名ID。
+	// Custom Domain ID
 	CustomDomainId pulumi.StringOutput `pulumi:"customDomainId"`
-	// 自定义域名。
+	// Custom Domain
 	Domain pulumi.StringOutput `pulumi:"domain"`
-	// 协议，取值：HTTP。HTTPS。
+	// Protocol. Values: HTTP, HTTPS
 	Protocols pulumi.StringArrayOutput `pulumi:"protocols"`
-	// 服务ID。
+	// Service ID
 	ServiceId pulumi.StringOutput `pulumi:"serviceId"`
-	// 重定向到HTTPS。
+	// Redirect to HTTPS
 	SslRedirect pulumi.BoolOutput `pulumi:"sslRedirect"`
-	// 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+	// Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
 	Status pulumi.StringOutput `pulumi:"status"`
-	// 更新时间。
+	// Update Time
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -117,48 +117,48 @@ func GetCustomDomain(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CustomDomain resources.
 type customDomainState struct {
-	// 自定义域名证书ID。
+	// Custom Domain Certificate ID
 	CertificateId *string `pulumi:"certificateId"`
-	// 备注。
+	// Remarks
 	Comments *string `pulumi:"comments"`
-	// 创建时间。
+	// Creation Time
 	CreatedTime *string `pulumi:"createdTime"`
-	// 自定义域名ID。
+	// Custom Domain ID
 	CustomDomainId *string `pulumi:"customDomainId"`
-	// 自定义域名。
+	// Custom Domain
 	Domain *string `pulumi:"domain"`
-	// 协议，取值：HTTP。HTTPS。
+	// Protocol. Values: HTTP, HTTPS
 	Protocols []string `pulumi:"protocols"`
-	// 服务ID。
+	// Service ID
 	ServiceId *string `pulumi:"serviceId"`
-	// 重定向到HTTPS。
+	// Redirect to HTTPS
 	SslRedirect *bool `pulumi:"sslRedirect"`
-	// 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+	// Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
 	Status *string `pulumi:"status"`
-	// 更新时间。
+	// Update Time
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type CustomDomainState struct {
-	// 自定义域名证书ID。
+	// Custom Domain Certificate ID
 	CertificateId pulumi.StringPtrInput
-	// 备注。
+	// Remarks
 	Comments pulumi.StringPtrInput
-	// 创建时间。
+	// Creation Time
 	CreatedTime pulumi.StringPtrInput
-	// 自定义域名ID。
+	// Custom Domain ID
 	CustomDomainId pulumi.StringPtrInput
-	// 自定义域名。
+	// Custom Domain
 	Domain pulumi.StringPtrInput
-	// 协议，取值：HTTP。HTTPS。
+	// Protocol. Values: HTTP, HTTPS
 	Protocols pulumi.StringArrayInput
-	// 服务ID。
+	// Service ID
 	ServiceId pulumi.StringPtrInput
-	// 重定向到HTTPS。
+	// Redirect to HTTPS
 	SslRedirect pulumi.BoolPtrInput
-	// 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+	// Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
 	Status pulumi.StringPtrInput
-	// 更新时间。
+	// Update Time
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -167,33 +167,33 @@ func (CustomDomainState) ElementType() reflect.Type {
 }
 
 type customDomainArgs struct {
-	// 自定义域名证书ID。
+	// Custom Domain Certificate ID
 	CertificateId *string `pulumi:"certificateId"`
-	// 备注。
+	// Remarks
 	Comments *string `pulumi:"comments"`
-	// 自定义域名。
+	// Custom Domain
 	Domain string `pulumi:"domain"`
-	// 协议，取值：HTTP。HTTPS。
+	// Protocol. Values: HTTP, HTTPS
 	Protocols []string `pulumi:"protocols"`
-	// 服务ID。
+	// Service ID
 	ServiceId string `pulumi:"serviceId"`
-	// 重定向到HTTPS。
+	// Redirect to HTTPS
 	SslRedirect *bool `pulumi:"sslRedirect"`
 }
 
 // The set of arguments for constructing a CustomDomain resource.
 type CustomDomainArgs struct {
-	// 自定义域名证书ID。
+	// Custom Domain Certificate ID
 	CertificateId pulumi.StringPtrInput
-	// 备注。
+	// Remarks
 	Comments pulumi.StringPtrInput
-	// 自定义域名。
+	// Custom Domain
 	Domain pulumi.StringInput
-	// 协议，取值：HTTP。HTTPS。
+	// Protocol. Values: HTTP, HTTPS
 	Protocols pulumi.StringArrayInput
-	// 服务ID。
+	// Service ID
 	ServiceId pulumi.StringInput
-	// 重定向到HTTPS。
+	// Redirect to HTTPS
 	SslRedirect pulumi.BoolPtrInput
 }
 
@@ -284,52 +284,52 @@ func (o CustomDomainOutput) ToCustomDomainOutputWithContext(ctx context.Context)
 	return o
 }
 
-// 自定义域名证书ID。
+// Custom Domain Certificate ID
 func (o CustomDomainOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomDomain) pulumi.StringOutput { return v.CertificateId }).(pulumi.StringOutput)
 }
 
-// 备注。
+// Remarks
 func (o CustomDomainOutput) Comments() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomDomain) pulumi.StringOutput { return v.Comments }).(pulumi.StringOutput)
 }
 
-// 创建时间。
+// Creation Time
 func (o CustomDomainOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomDomain) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 自定义域名ID。
+// Custom Domain ID
 func (o CustomDomainOutput) CustomDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomDomain) pulumi.StringOutput { return v.CustomDomainId }).(pulumi.StringOutput)
 }
 
-// 自定义域名。
+// Custom Domain
 func (o CustomDomainOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomDomain) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 协议，取值：HTTP。HTTPS。
+// Protocol. Values: HTTP, HTTPS
 func (o CustomDomainOutput) Protocols() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *CustomDomain) pulumi.StringArrayOutput { return v.Protocols }).(pulumi.StringArrayOutput)
 }
 
-// 服务ID。
+// Service ID
 func (o CustomDomainOutput) ServiceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomDomain) pulumi.StringOutput { return v.ServiceId }).(pulumi.StringOutput)
 }
 
-// 重定向到HTTPS。
+// Redirect to HTTPS
 func (o CustomDomainOutput) SslRedirect() pulumi.BoolOutput {
 	return o.ApplyT(func(v *CustomDomain) pulumi.BoolOutput { return v.SslRedirect }).(pulumi.BoolOutput)
 }
 
-// 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+// Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
 func (o CustomDomainOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomDomain) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update Time
 func (o CustomDomainOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomDomain) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamSourceSourceSpecK8SSource {
     /**
-     * @return 集群ID。
+     * @return Cluster ID
      * 
      */
     private String clusterId;
     /**
-     * @return 集群类型。
+     * @return Cluster type
      * 
      */
     private String clusterType;
 
     private GetUpstreamSourceSourceSpecK8SSource() {}
     /**
-     * @return 集群ID。
+     * @return Cluster ID
      * 
      */
     public String clusterId() {
         return this.clusterId;
     }
     /**
-     * @return 集群类型。
+     * @return Cluster type
      * 
      */
     public String clusterType() {

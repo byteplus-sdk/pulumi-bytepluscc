@@ -16,14 +16,14 @@ public final class ClusterClusterConfigApiServerEndpointsPublicIpArgs extends co
     public static final ClusterClusterConfigApiServerEndpointsPublicIpArgs Empty = new ClusterClusterConfigApiServerEndpointsPublicIpArgs();
 
     /**
-     * 公网 IP 的 IPv4 地址。
+     * IPv4 address of the public IP.
      * 
      */
     @Import(name="ipv4")
     private @Nullable Output<String> ipv4;
 
     /**
-     * @return 公网 IP 的 IPv4 地址。
+     * @return IPv4 address of the public IP.
      * 
      */
     public Optional<Output<String>> ipv4() {
@@ -55,7 +55,7 @@ public final class ClusterClusterConfigApiServerEndpointsPublicIpArgs extends co
         }
 
         /**
-         * @param ipv4 公网 IP 的 IPv4 地址。
+         * @param ipv4 IPv4 address of the public IP.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class ClusterClusterConfigApiServerEndpointsPublicIpArgs extends co
         }
 
         /**
-         * @param ipv4 公网 IP 的 IPv4 地址。
+         * @param ipv4 IPv4 address of the public IP.
          * 
          * @return builder
          * 

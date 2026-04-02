@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis.Inputs
     public sealed class InstanceInstanceShardGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 分片中的节点数量
+        /// Number of nodes in each shard
         /// </summary>
         [Input("nodeNumber")]
         public Input<int>? NodeNumber { get; set; }
@@ -28,7 +28,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis.Inputs
         }
 
         /// <summary>
-        /// 分片 ID。
+        /// Shard ID.
         /// </summary>
         [Input("shardId")]
         public Input<string>? ShardId { get; set; }

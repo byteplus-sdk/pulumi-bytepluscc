@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cr
 {
     /// <summary>
-    /// OCI 制品仓库用于存储容器镜像或 Helm Chart 等，符合开源容器标准的 OCI（Open Container Initiative） 制品。
+    /// The OCI artifact repository is used to store container images, Helm Charts, and other OCI (Open Container Initiative) artifacts that comply with open container standards.
     /// 
     /// ## Example Usage
     /// 
@@ -45,43 +45,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     public partial class Repository : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+        /// Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
         /// </summary>
         [Output("accessLevel")]
         public Output<string> AccessLevel { get; private set; } = null!;
 
         /// <summary>
-        /// 创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+        /// Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
         /// </summary>
         [Output("createTime")]
         public Output<string> CreateTime { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+        /// Image repository description, with a length of 0–300 UTF-8 characters.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+        /// OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+        /// Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
         /// </summary>
         [Output("namespace")]
         public Output<string> Namespace { get; private set; } = null!;
 
         /// <summary>
-        /// 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+        /// Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
         /// </summary>
         [Output("registry")]
         public Output<string> Registry { get; private set; } = null!;
 
         /// <summary>
-        /// 最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+        /// Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
         /// </summary>
         [Output("updateTime")]
         public Output<string> UpdateTime { get; private set; } = null!;
@@ -134,31 +134,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     public sealed class RepositoryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+        /// Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
         /// </summary>
         [Input("accessLevel")]
         public Input<string>? AccessLevel { get; set; }
 
         /// <summary>
-        /// 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+        /// Image repository description, with a length of 0–300 UTF-8 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+        /// OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+        /// Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
 
         /// <summary>
-        /// 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+        /// Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
         /// </summary>
         [Input("registry", required: true)]
         public Input<string> Registry { get; set; } = null!;
@@ -172,43 +172,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     public sealed class RepositoryState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+        /// Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
         /// </summary>
         [Input("accessLevel")]
         public Input<string>? AccessLevel { get; set; }
 
         /// <summary>
-        /// 创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+        /// Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+        /// Image repository description, with a length of 0–300 UTF-8 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+        /// OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+        /// Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
         /// <summary>
-        /// 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+        /// Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
         /// </summary>
         [Input("registry")]
         public Input<string>? Registry { get; set; }
 
         /// <summary>
-        /// 最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+        /// Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
         /// </summary>
         [Input("updateTime")]
         public Input<string>? UpdateTime { get; set; }

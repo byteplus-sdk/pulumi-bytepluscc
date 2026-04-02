@@ -65,35 +65,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     public sealed class GetAllowListResult
     {
         /// <summary>
-        /// IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+        /// IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
         /// </summary>
         public readonly string AllowList;
         /// <summary>
-        /// 白名单描述。
+        /// Allowlist description.
         /// </summary>
         public readonly string AllowListDesc;
         /// <summary>
-        /// 白名单的id。
+        /// Allowlist ID.
         /// </summary>
         public readonly string AllowListId;
         /// <summary>
-        /// 白名单内的 IP 地址（或地址段）总数。
+        /// Total number of IP addresses (or address ranges) in the allowlist.
         /// </summary>
         public readonly int AllowListIpNum;
         /// <summary>
-        /// 白名单名称。
+        /// Allowlist name.
         /// </summary>
         public readonly string AllowListName;
         /// <summary>
-        /// 白名单内的IP地址类型，当前仅支持IPv4。
+        /// IP address type in the allowlist. Only IPv4 is currently supported.
         /// </summary>
         public readonly string AllowListType;
         /// <summary>
-        /// 白名单下绑定的实例总数
+        /// Total number of instances bound to the allowlist.
         /// </summary>
         public readonly int AssociatedInstanceNum;
         /// <summary>
-        /// 绑定的实例列表。
+        /// List of bound instances.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAllowListAssociatedInstanceResult> AssociatedInstances;
         /// <summary>
@@ -101,11 +101,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+        /// How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
         /// </summary>
         public readonly string ModifyMode;
         /// <summary>
-        /// 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+        /// Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
         /// </summary>
         public readonly string ProjectName;
 

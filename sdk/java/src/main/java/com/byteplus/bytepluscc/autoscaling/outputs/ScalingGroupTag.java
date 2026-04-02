@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ScalingGroupTag {
     /**
-     * @return 用户标签的标签键。
+     * @return User label tag key
      * 
      */
     private @Nullable String key;
     /**
-     * @return 用户标签的标签值。
+     * @return The value of the user tag.
      * 
      */
     private @Nullable String value;
 
     private ScalingGroupTag() {}
     /**
-     * @return 用户标签的标签键。
+     * @return User label tag key
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 用户标签的标签值。
+     * @return The value of the user tag.
      * 
      */
     public Optional<String> value() {

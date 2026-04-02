@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Ecs
 {
     /// <summary>
-    /// 部署集是在底层硬件维度上控制实例分散部署的策略，可以实现物理层级的安全隔离。您可以通过创建部署集，使实例分散部署在不同的底层硬件上，用于保障业务的底层容灾能力及高可用性。
+    /// A deployment set is a strategy that controls the distribution of instances at the underlying hardware level, enabling physical-level security isolation. By creating deployment sets, you can distribute instances across different underlying hardware to ensure disaster recovery and high availability for your business.
     /// 
     /// ## Example Usage
     /// 
@@ -52,61 +52,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<ImmutableArray<Outputs.DeploymentSetCapacity>> Capacities { get; private set; } = null!;
 
         /// <summary>
-        /// 部署集的创建时间。
+        /// Deployment set creation time.
         /// </summary>
         [Output("createdAt")]
         public Output<string> CreatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 部署集组的序号，取值范围：1～7。
+        /// Deployment set group index. Value range: 1–7.
         /// </summary>
         [Output("deploymentSetGroupNumber")]
         public Output<int> DeploymentSetGroupNumber { get; private set; } = null!;
 
         /// <summary>
-        /// 部署集ID。
+        /// Deployment set ID.
         /// </summary>
         [Output("deploymentSetId")]
         public Output<string> DeploymentSetId { get; private set; } = null!;
 
         /// <summary>
-        /// 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+        /// Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
         /// </summary>
         [Output("deploymentSetName")]
         public Output<string> DeploymentSetName { get; private set; } = null!;
 
         /// <summary>
-        /// 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+        /// Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+        /// Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
         /// </summary>
         [Output("granularity")]
         public Output<string> Granularity { get; private set; } = null!;
 
         /// <summary>
-        /// 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+        /// Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
         /// </summary>
         [Output("groupCount")]
         public Output<int> GroupCount { get; private set; } = null!;
 
         /// <summary>
-        /// 部署集内的ECS实例数量。
+        /// Number of ECS instances in the deployment set.
         /// </summary>
         [Output("instanceAmount")]
         public Output<int> InstanceAmount { get; private set; } = null!;
 
         /// <summary>
-        /// 部署集内的ECS实例ID列表。
+        /// List of ECS instance IDs in the deployment set.
         /// </summary>
         [Output("instanceIds")]
         public Output<ImmutableArray<string>> InstanceIds { get; private set; } = null!;
 
         /// <summary>
-        /// 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+        /// Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
         /// </summary>
         [Output("strategy")]
         public Output<string> Strategy { get; private set; } = null!;
@@ -159,31 +159,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class DeploymentSetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 部署集组的序号，取值范围：1～7。
+        /// Deployment set group index. Value range: 1–7.
         /// </summary>
         [Input("deploymentSetGroupNumber")]
         public Input<int>? DeploymentSetGroupNumber { get; set; }
 
         /// <summary>
-        /// 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+        /// Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
         /// </summary>
         [Input("deploymentSetName", required: true)]
         public Input<string> DeploymentSetName { get; set; } = null!;
 
         /// <summary>
-        /// 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+        /// Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+        /// Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
         /// </summary>
         [Input("granularity")]
         public Input<string>? Granularity { get; set; }
 
         /// <summary>
-        /// 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+        /// Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
         /// </summary>
         [Input("groupCount")]
         public Input<int>? GroupCount { get; set; }
@@ -192,7 +192,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         private InputList<string>? _instanceIds;
 
         /// <summary>
-        /// 部署集内的ECS实例ID列表。
+        /// List of ECS instance IDs in the deployment set.
         /// </summary>
         public InputList<string> InstanceIds
         {
@@ -201,7 +201,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+        /// Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
         /// </summary>
         [Input("strategy")]
         public Input<string>? Strategy { get; set; }
@@ -223,49 +223,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 部署集的创建时间。
+        /// Deployment set creation time.
         /// </summary>
         [Input("createdAt")]
         public Input<string>? CreatedAt { get; set; }
 
         /// <summary>
-        /// 部署集组的序号，取值范围：1～7。
+        /// Deployment set group index. Value range: 1–7.
         /// </summary>
         [Input("deploymentSetGroupNumber")]
         public Input<int>? DeploymentSetGroupNumber { get; set; }
 
         /// <summary>
-        /// 部署集ID。
+        /// Deployment set ID.
         /// </summary>
         [Input("deploymentSetId")]
         public Input<string>? DeploymentSetId { get; set; }
 
         /// <summary>
-        /// 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+        /// Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
         /// </summary>
         [Input("deploymentSetName")]
         public Input<string>? DeploymentSetName { get; set; }
 
         /// <summary>
-        /// 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+        /// Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+        /// Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
         /// </summary>
         [Input("granularity")]
         public Input<string>? Granularity { get; set; }
 
         /// <summary>
-        /// 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+        /// Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
         /// </summary>
         [Input("groupCount")]
         public Input<int>? GroupCount { get; set; }
 
         /// <summary>
-        /// 部署集内的ECS实例数量。
+        /// Number of ECS instances in the deployment set.
         /// </summary>
         [Input("instanceAmount")]
         public Input<int>? InstanceAmount { get; set; }
@@ -274,7 +274,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         private InputList<string>? _instanceIds;
 
         /// <summary>
-        /// 部署集内的ECS实例ID列表。
+        /// List of ECS instance IDs in the deployment set.
         /// </summary>
         public InputList<string> InstanceIds
         {
@@ -283,7 +283,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+        /// Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
         /// </summary>
         [Input("strategy")]
         public Input<string>? Strategy { get; set; }

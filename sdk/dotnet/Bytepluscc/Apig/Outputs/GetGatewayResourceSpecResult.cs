@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetGatewayResourceSpecResult
     {
         /// <summary>
-        /// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+        /// CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
         /// </summary>
         public readonly string ClbSpecCode;
         /// <summary>
-        /// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+        /// Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
         /// </summary>
         public readonly string InstanceSpecCode;
         /// <summary>
-        /// 网络类型。默认值为开启公网，开启私网。
+        /// Network type. Default value: enable public network, enable private network
         /// </summary>
         public readonly Outputs.GetGatewayResourceSpecNetworkTypeResult NetworkType;
         /// <summary>
-        /// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+        /// Public network bandwidth limit. This field is only used for the 'bandwidth limit billing' public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
         /// </summary>
         public readonly int PublicNetworkBandwidth;
         /// <summary>
-        /// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+        /// Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
         /// </summary>
         public readonly string PublicNetworkBillingType;
         /// <summary>
-        /// 节点数量。取值限制为2~100。
+        /// Node count. Value range: 2–100
         /// </summary>
         public readonly int Replicas;
 

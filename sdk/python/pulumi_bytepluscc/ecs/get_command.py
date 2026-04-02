@@ -88,7 +88,7 @@ class GetCommandResult:
     @pulumi.getter(name="commandContent")
     def command_content(self) -> builtins.str:
         """
-        命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+        Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
         """
         return pulumi.get(self, "command_content")
 
@@ -96,7 +96,7 @@ class GetCommandResult:
     @pulumi.getter(name="commandId")
     def command_id(self) -> builtins.str:
         """
-        自定义命令ID。
+        Custom command ID.
         """
         return pulumi.get(self, "command_id")
 
@@ -104,7 +104,7 @@ class GetCommandResult:
     @pulumi.getter(name="contentEncoding")
     def content_encoding(self) -> builtins.str:
         """
-        命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+        Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
         """
         return pulumi.get(self, "content_encoding")
 
@@ -112,7 +112,7 @@ class GetCommandResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -120,7 +120,7 @@ class GetCommandResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+        Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
         """
         return pulumi.get(self, "description")
 
@@ -128,7 +128,7 @@ class GetCommandResult:
     @pulumi.getter(name="enableParameter")
     def enable_parameter(self) -> builtins.bool:
         """
-        创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+        Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
         """
         return pulumi.get(self, "enable_parameter")
 
@@ -144,7 +144,7 @@ class GetCommandResult:
     @pulumi.getter(name="invocationTimes")
     def invocation_times(self) -> builtins.int:
         """
-        命令被调用次数。
+        Number of times the command has been invoked.
         """
         return pulumi.get(self, "invocation_times")
 
@@ -152,7 +152,7 @@ class GetCommandResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        命令名称。字符长度1~32。不限制特殊字符。
+        Command name. Character length: 1~32. No restriction on special characters.
         """
         return pulumi.get(self, "name")
 
@@ -160,7 +160,7 @@ class GetCommandResult:
     @pulumi.getter(name="parameterDefinitions")
     def parameter_definitions(self) -> Sequence['outputs.GetCommandParameterDefinitionResult']:
         """
-        自定义参数定义信息。
+        Custom parameter definition information.
         """
         return pulumi.get(self, "parameter_definitions")
 
@@ -168,7 +168,7 @@ class GetCommandResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        资源所属项目，一个资源只能归属于一个项目。
+        Project to which the resource belongs. Each resource can belong to only one project.
         """
         return pulumi.get(self, "project_name")
 
@@ -176,7 +176,7 @@ class GetCommandResult:
     @pulumi.getter(name="providerName")
     def provider_name(self) -> builtins.str:
         """
-        命令的提供方。
+        Command provider.
         """
         return pulumi.get(self, "provider_name")
 
@@ -184,7 +184,7 @@ class GetCommandResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetCommandTagResult']:
         """
-        标签键值对。
+        Tag key-value pair.
         """
         return pulumi.get(self, "tags")
 
@@ -192,7 +192,7 @@ class GetCommandResult:
     @pulumi.getter
     def timeout(self) -> builtins.int:
         """
-        创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+        Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
         """
         return pulumi.get(self, "timeout")
 
@@ -200,7 +200,7 @@ class GetCommandResult:
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+        Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
         """
         return pulumi.get(self, "type")
 
@@ -208,7 +208,7 @@ class GetCommandResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -216,7 +216,7 @@ class GetCommandResult:
     @pulumi.getter
     def username(self) -> builtins.str:
         """
-        执行命令时的用户名。
+        Username for executing the command.
         """
         return pulumi.get(self, "username")
 
@@ -224,7 +224,7 @@ class GetCommandResult:
     @pulumi.getter(name="workingDir")
     def working_dir(self) -> builtins.str:
         """
-        创建的命令在ECS实例中运行的目录。
+        Directory where the created command runs on ECS instances.
         """
         return pulumi.get(self, "working_dir")
 

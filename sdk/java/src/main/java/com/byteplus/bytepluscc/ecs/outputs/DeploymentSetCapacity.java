@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentSetCapacity {
     /**
-     * @return 该可用区内，还可以加入当前部署集的ECS实例数量。
+     * @return You can also include the number of ECS instances in the current deployment set within this availability zone.
      * 
      */
     private @Nullable Integer availableCount;
     /**
-     * @return 部署集内属于该可用区的ECS实例数量。
+     * @return Number of ECS instances in the deployment set that belong to this availability zone.
      * 
      */
     private @Nullable Integer usedCount;
     /**
-     * @return 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+     * @return Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
      * 
      */
     private @Nullable String zoneId;
 
     private DeploymentSetCapacity() {}
     /**
-     * @return 该可用区内，还可以加入当前部署集的ECS实例数量。
+     * @return You can also include the number of ECS instances in the current deployment set within this availability zone.
      * 
      */
     public Optional<Integer> availableCount() {
         return Optional.ofNullable(this.availableCount);
     }
     /**
-     * @return 部署集内属于该可用区的ECS实例数量。
+     * @return Number of ECS instances in the deployment set that belong to this availability zone.
      * 
      */
     public Optional<Integer> usedCount() {
         return Optional.ofNullable(this.usedCount);
     }
     /**
-     * @return 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+     * @return Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
      * 
      */
     public Optional<String> zoneId() {

@@ -18,14 +18,14 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
     public static final UpstreamSourceIngressSettingsArgs Empty = new UpstreamSourceIngressSettingsArgs();
 
     /**
-     * 是否启用所有Ingress类。
+     * Whether to enable all Ingress classes
      * 
      */
     @Import(name="enableAllIngressClasses")
     private @Nullable Output<Boolean> enableAllIngressClasses;
 
     /**
-     * @return 是否启用所有Ingress类。
+     * @return Whether to enable all Ingress classes
      * 
      */
     public Optional<Output<Boolean>> enableAllIngressClasses() {
@@ -33,14 +33,14 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
     }
 
     /**
-     * 是否全部命名空间。
+     * Whether all namespaces
      * 
      */
     @Import(name="enableAllNamespaces")
     private @Nullable Output<Boolean> enableAllNamespaces;
 
     /**
-     * @return 是否全部命名空间。
+     * @return Whether all namespaces
      * 
      */
     public Optional<Output<Boolean>> enableAllNamespaces() {
@@ -48,14 +48,14 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
     }
 
     /**
-     * 是否开启。
+     * Whether enabled
      * 
      */
     @Import(name="enableIngress")
     private @Nullable Output<Boolean> enableIngress;
 
     /**
-     * @return 是否开启。
+     * @return Whether enabled
      * 
      */
     public Optional<Output<Boolean>> enableIngress() {
@@ -63,14 +63,14 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
     }
 
     /**
-     * 是否监听IngressClass为空的资源。
+     * Whether to monitor resources with empty IngressClass
      * 
      */
     @Import(name="enableIngressWithoutIngressClass")
     private @Nullable Output<Boolean> enableIngressWithoutIngressClass;
 
     /**
-     * @return 是否监听IngressClass为空的资源。
+     * @return Whether to monitor resources with empty IngressClass
      * 
      */
     public Optional<Output<Boolean>> enableIngressWithoutIngressClass() {
@@ -78,14 +78,14 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
     }
 
     /**
-     * 指定IngressClass。
+     * Specify IngressClass
      * 
      */
     @Import(name="ingressClasses")
     private @Nullable Output<List<String>> ingressClasses;
 
     /**
-     * @return 指定IngressClass。
+     * @return Specify IngressClass
      * 
      */
     public Optional<Output<List<String>>> ingressClasses() {
@@ -93,14 +93,14 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
     }
 
     /**
-     * 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+     * Traffic entry switch. When enabled, the IP address in the Status of the current cluster&#39;s Ingress will be updated to the current gateway&#39;s IP address
      * 
      */
     @Import(name="updateStatus")
     private @Nullable Output<Boolean> updateStatus;
 
     /**
-     * @return 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+     * @return Traffic entry switch. When enabled, the IP address in the Status of the current cluster&#39;s Ingress will be updated to the current gateway&#39;s IP address
      * 
      */
     public Optional<Output<Boolean>> updateStatus() {
@@ -108,14 +108,14 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
     }
 
     /**
-     * 指定命名空间。
+     * Specify namespace
      * 
      */
     @Import(name="watchNamespaces")
     private @Nullable Output<List<String>> watchNamespaces;
 
     /**
-     * @return 指定命名空间。
+     * @return Specify namespace
      * 
      */
     public Optional<Output<List<String>>> watchNamespaces() {
@@ -153,7 +153,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enableAllIngressClasses 是否启用所有Ingress类。
+         * @param enableAllIngressClasses Whether to enable all Ingress classes
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enableAllIngressClasses 是否启用所有Ingress类。
+         * @param enableAllIngressClasses Whether to enable all Ingress classes
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enableAllNamespaces 是否全部命名空间。
+         * @param enableAllNamespaces Whether all namespaces
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enableAllNamespaces 是否全部命名空间。
+         * @param enableAllNamespaces Whether all namespaces
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enableIngress 是否开启。
+         * @param enableIngress Whether enabled
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enableIngress 是否开启。
+         * @param enableIngress Whether enabled
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enableIngressWithoutIngressClass 是否监听IngressClass为空的资源。
+         * @param enableIngressWithoutIngressClass Whether to monitor resources with empty IngressClass
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enableIngressWithoutIngressClass 是否监听IngressClass为空的资源。
+         * @param enableIngressWithoutIngressClass Whether to monitor resources with empty IngressClass
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ingressClasses 指定IngressClass。
+         * @param ingressClasses Specify IngressClass
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ingressClasses 指定IngressClass。
+         * @param ingressClasses Specify IngressClass
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ingressClasses 指定IngressClass。
+         * @param ingressClasses Specify IngressClass
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param updateStatus 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+         * @param updateStatus Traffic entry switch. When enabled, the IP address in the Status of the current cluster&#39;s Ingress will be updated to the current gateway&#39;s IP address
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param updateStatus 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+         * @param updateStatus Traffic entry switch. When enabled, the IP address in the Status of the current cluster&#39;s Ingress will be updated to the current gateway&#39;s IP address
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param watchNamespaces 指定命名空间。
+         * @param watchNamespaces Specify namespace
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param watchNamespaces 指定命名空间。
+         * @param watchNamespaces Specify namespace
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class UpstreamSourceIngressSettingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param watchNamespaces 指定命名空间。
+         * @param watchNamespaces Specify namespace
          * 
          * @return builder
          * 

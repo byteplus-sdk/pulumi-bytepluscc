@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class NodeKubernetesConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+        /// Node lock configuration. Options: false (default): not locked; true: locked
         /// </summary>
         [Input("cordon")]
         public Input<bool>? Cordon { get; set; }

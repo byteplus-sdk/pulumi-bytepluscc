@@ -26,11 +26,11 @@ if not MYPY:
     class ZoneTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签的键。
+        Tag key
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签的值。
+        Tag value.
         """
 elif False:
     ZoneTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -41,8 +41,8 @@ class ZoneTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签的键。
-        :param pulumi.Input[builtins.str] value: 标签的值。
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -53,7 +53,7 @@ class ZoneTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签的键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -65,7 +65,7 @@ class ZoneTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签的值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 

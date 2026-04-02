@@ -16,7 +16,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 在消息队列 RabbitMQ版控制台中创建实例之后，实例插件默认为关闭状态，您可以手动为实例开启/关闭插件。开启/关闭部分插件会导致集群滚动重启，建议避开业务运行时段执行该操作。集群滚动重启时会造成未持久化的消息丢失，也会出现短暂的连接不稳定现象，例如连接断开，断开后会根据客户端配置决定是否自动重连。
+ * After you create an instance in the RabbitMQ console, plugins are disabled by default. You can manually enable or disable plugins for the instance. Enabling or disabling certain plugins will cause a rolling restart of the cluster. It is recommended to perform this operation outside of business hours. A rolling restart may result in the loss of non-persistent messages and temporary connection instability, such as connection drops. After a connection drop, whether the client automatically reconnects depends on its configuration
  * 
  * ## Example Usage
  * 
@@ -64,126 +64,126 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:rabbitmq/instancePlugin:InstancePlugin")
 public class InstancePlugin extends com.pulumi.resources.CustomResource {
     /**
-     * 插件描述。
+     * Plugin description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 插件描述。
+     * @return Plugin description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 关闭此插件的注意事项说明。
+     * Notes for disabling this plugin
      * 
      */
     @Export(name="disablePrompt", refs={String.class}, tree="[0]")
     private Output<String> disablePrompt;
 
     /**
-     * @return 关闭此插件的注意事项说明。
+     * @return Notes for disabling this plugin
      * 
      */
     public Output<String> disablePrompt() {
         return this.disablePrompt;
     }
     /**
-     * 开启此插件的注意事项说明。
+     * Notes for enabling this plugin
      * 
      */
     @Export(name="enablePrompt", refs={String.class}, tree="[0]")
     private Output<String> enablePrompt;
 
     /**
-     * @return 开启此插件的注意事项说明。
+     * @return Notes for enabling this plugin
      * 
      */
     public Output<String> enablePrompt() {
         return this.enablePrompt;
     }
     /**
-     * 是否已开启插件。true：插件已开启。false：插件已关闭。
+     * Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
      * 
      */
     @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
-     * @return 是否已开启插件。true：插件已开启。false：插件已关闭。
+     * @return Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
      * 
      */
     public Output<Boolean> enabled() {
         return this.enabled;
     }
     /**
-     * 实例 ID。
+     * Instance ID
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+     * Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
      * 
      */
     @Export(name="needRebootOnChange", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> needRebootOnChange;
 
     /**
-     * @return 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+     * @return Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
      * 
      */
     public Output<Boolean> needRebootOnChange() {
         return this.needRebootOnChange;
     }
     /**
-     * 插件名称。
+     * Plugin name
      * 
      */
     @Export(name="pluginName", refs={String.class}, tree="[0]")
     private Output<String> pluginName;
 
     /**
-     * @return 插件名称。
+     * @return Plugin name
      * 
      */
     public Output<String> pluginName() {
         return this.pluginName;
     }
     /**
-     * 插件监听的端口。
+     * Plugin listening port
      * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
-     * @return 插件监听的端口。
+     * @return Plugin listening port
      * 
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
-     * 插件版本。
+     * Plugin version
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
-     * @return 插件版本。
+     * @return Plugin version
      * 
      */
     public Output<String> version() {

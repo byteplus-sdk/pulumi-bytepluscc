@@ -26,14 +26,14 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 是否开启组间会话保持。on：开启。off：不开启。
+     * Whether to enable inter-group session persistence. on: enabled. off: disabled.
      * 
      */
     @Import(name="stickySessionEnabled")
     private @Nullable Output<String> stickySessionEnabled;
 
     /**
-     * @return 是否开启组间会话保持。on：开启。off：不开启。
+     * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
      * 
      */
     public Optional<Output<String>> stickySessionEnabled() {
@@ -41,14 +41,14 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 组件回话保持的超时时间。单位：秒。
+     * Component session stickiness timeout. Unit: seconds.
      * 
      */
     @Import(name="stickySessionTimeout")
     private @Nullable Output<Integer> stickySessionTimeout;
 
     /**
-     * @return 组件回话保持的超时时间。单位：秒。
+     * @return Component session stickiness timeout. Unit: seconds.
      * 
      */
     public Optional<Output<Integer>> stickySessionTimeout() {
@@ -95,7 +95,7 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param stickySessionEnabled 是否开启组间会话保持。on：开启。off：不开启。
+         * @param stickySessionEnabled Whether to enable inter-group session persistence. on: enabled. off: disabled.
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param stickySessionEnabled 是否开启组间会话保持。on：开启。off：不开启。
+         * @param stickySessionEnabled Whether to enable inter-group session persistence. on: enabled. off: disabled.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param stickySessionTimeout 组件回话保持的超时时间。单位：秒。
+         * @param stickySessionTimeout Component session stickiness timeout. Unit: seconds.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param stickySessionTimeout 组件回话保持的超时时间。单位：秒。
+         * @param stickySessionTimeout Component session stickiness timeout. Unit: seconds.
          * 
          * @return builder
          * 

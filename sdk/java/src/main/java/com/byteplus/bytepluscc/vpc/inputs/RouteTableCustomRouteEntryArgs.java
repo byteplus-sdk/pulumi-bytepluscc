@@ -16,14 +16,14 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
     public static final RouteTableCustomRouteEntryArgs Empty = new RouteTableCustomRouteEntryArgs();
 
     /**
-     * 路由条目描述。
+     * Route Entry Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 路由条目描述。
+     * @return Route Entry Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -31,14 +31,14 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 路由条目的目标网段。
+     * Destination CIDR of the route entry
      * 
      */
     @Import(name="destinationCidrBlock")
     private @Nullable Output<String> destinationCidrBlock;
 
     /**
-     * @return 路由条目的目标网段。
+     * @return Destination CIDR of the route entry
      * 
      */
     public Optional<Output<String>> destinationCidrBlock() {
@@ -46,14 +46,14 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 前缀列表ID。
+     * Prefix List ID
      * 
      */
     @Import(name="destinationPrefixListId")
     private @Nullable Output<String> destinationPrefixListId;
 
     /**
-     * @return 前缀列表ID。
+     * @return Prefix List ID
      * 
      */
     public Optional<Output<String>> destinationPrefixListId() {
@@ -61,14 +61,14 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 下一跳资源ID。
+     * Next Hop Resource ID
      * 
      */
     @Import(name="nextHopId")
     private @Nullable Output<String> nextHopId;
 
     /**
-     * @return 下一跳资源ID。
+     * @return Next Hop Resource ID
      * 
      */
     public Optional<Output<String>> nextHopId() {
@@ -76,14 +76,14 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 路由条目下一跳资源的名称。
+     * Name of the next hop resource for the route entry
      * 
      */
     @Import(name="nextHopName")
     private @Nullable Output<String> nextHopName;
 
     /**
-     * @return 路由条目下一跳资源的名称。
+     * @return Name of the next hop resource for the route entry
      * 
      */
     public Optional<Output<String>> nextHopName() {
@@ -91,14 +91,14 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+     * Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
      * 
      */
     @Import(name="nextHopType")
     private @Nullable Output<String> nextHopType;
 
     /**
-     * @return 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+     * @return Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
      * 
      */
     public Optional<Output<String>> nextHopType() {
@@ -106,14 +106,14 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 路由条目名称。
+     * Route Entry Name
      * 
      */
     @Import(name="routeEntryName")
     private @Nullable Output<String> routeEntryName;
 
     /**
-     * @return 路由条目名称。
+     * @return Route Entry Name
      * 
      */
     public Optional<Output<String>> routeEntryName() {
@@ -151,7 +151,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param description 路由条目描述。
+         * @param description Route Entry Description
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param description 路由条目描述。
+         * @param description Route Entry Description
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param destinationCidrBlock 路由条目的目标网段。
+         * @param destinationCidrBlock Destination CIDR of the route entry
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param destinationCidrBlock 路由条目的目标网段。
+         * @param destinationCidrBlock Destination CIDR of the route entry
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param destinationPrefixListId 前缀列表ID。
+         * @param destinationPrefixListId Prefix List ID
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param destinationPrefixListId 前缀列表ID。
+         * @param destinationPrefixListId Prefix List ID
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param nextHopId 下一跳资源ID。
+         * @param nextHopId Next Hop Resource ID
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param nextHopId 下一跳资源ID。
+         * @param nextHopId Next Hop Resource ID
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param nextHopName 路由条目下一跳资源的名称。
+         * @param nextHopName Name of the next hop resource for the route entry
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param nextHopName 路由条目下一跳资源的名称。
+         * @param nextHopName Name of the next hop resource for the route entry
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param nextHopType 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+         * @param nextHopType Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param nextHopType 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+         * @param nextHopType Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param routeEntryName 路由条目名称。
+         * @param routeEntryName Route Entry Name
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class RouteTableCustomRouteEntryArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param routeEntryName 路由条目名称。
+         * @param routeEntryName Route Entry Name
          * 
          * @return builder
          * 

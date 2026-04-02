@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GatewayResourceSpecNetworkType {
     /**
-     * @return 是否启用私网。
+     * @return Whether to enable private network
      * 
      */
     private @Nullable Boolean enablePrivateNetwork;
     /**
-     * @return 是否启用公网。
+     * @return Whether to enable public network
      * 
      */
     private @Nullable Boolean enablePublicNetwork;
 
     private GatewayResourceSpecNetworkType() {}
     /**
-     * @return 是否启用私网。
+     * @return Whether to enable private network
      * 
      */
     public Optional<Boolean> enablePrivateNetwork() {
         return Optional.ofNullable(this.enablePrivateNetwork);
     }
     /**
-     * @return 是否启用公网。
+     * @return Whether to enable public network
      * 
      */
     public Optional<Boolean> enablePublicNetwork() {

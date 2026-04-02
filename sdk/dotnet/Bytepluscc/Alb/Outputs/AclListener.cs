@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class AclListener
     {
         /// <summary>
-        /// 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+        /// Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
         /// </summary>
         public readonly string? AclType;
 

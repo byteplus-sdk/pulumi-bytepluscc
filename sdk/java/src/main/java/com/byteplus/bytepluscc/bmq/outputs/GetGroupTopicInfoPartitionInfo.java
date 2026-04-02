@@ -12,74 +12,74 @@ import java.util.Objects;
 @CustomType
 public final class GetGroupTopicInfoPartitionInfo {
     /**
-     * @return 当前消费位点。
+     * @return Current consumption position.
      * 
      */
     private Integer currentOffset;
     /**
-     * @return Consumer Group 的名称。
+     * @return Name of the Consumer Group.
      * 
      */
     private String groupName;
     /**
-     * @return 分区中未被消费的消息条数。
+     * @return Number of unconsumed messages in the partition.
      * 
      */
     private Integer lag;
     /**
-     * @return 最新消费位点。
+     * @return Latest consumption position.
      * 
      */
     private Integer latestOffset;
     /**
-     * @return 分区序号。
+     * @return Partition number.
      * 
      */
     private Integer partitionId;
     /**
-     * @return Consumer Group 订阅的 Topic 名称。
+     * @return Name of the Topic subscribed by the Consumer Group.
      * 
      */
     private String topicName;
 
     private GetGroupTopicInfoPartitionInfo() {}
     /**
-     * @return 当前消费位点。
+     * @return Current consumption position.
      * 
      */
     public Integer currentOffset() {
         return this.currentOffset;
     }
     /**
-     * @return Consumer Group 的名称。
+     * @return Name of the Consumer Group.
      * 
      */
     public String groupName() {
         return this.groupName;
     }
     /**
-     * @return 分区中未被消费的消息条数。
+     * @return Number of unconsumed messages in the partition.
      * 
      */
     public Integer lag() {
         return this.lag;
     }
     /**
-     * @return 最新消费位点。
+     * @return Latest consumption position.
      * 
      */
     public Integer latestOffset() {
         return this.latestOffset;
     }
     /**
-     * @return 分区序号。
+     * @return Partition number.
      * 
      */
     public Integer partitionId() {
         return this.partitionId;
     }
     /**
-     * @return Consumer Group 订阅的 Topic 名称。
+     * @return Name of the Topic subscribed by the Consumer Group.
      * 
      */
     public String topicName() {

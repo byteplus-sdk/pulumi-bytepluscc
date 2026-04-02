@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PolicyPolicyUserGroup {
     /**
-     * @return 对应用户、角色、用户组的名称。
+     * @return Name of the corresponding user, role, or user group.
      * 
      */
     private @Nullable String name;
@@ -22,7 +22,7 @@ public final class PolicyPolicyUserGroup {
 
     private PolicyPolicyUserGroup() {}
     /**
-     * @return 对应用户、角色、用户组的名称。
+     * @return Name of the corresponding user, role, or user group.
      * 
      */
     public Optional<String> name() {

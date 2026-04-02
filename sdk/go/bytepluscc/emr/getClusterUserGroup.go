@@ -30,15 +30,15 @@ type LookupClusterUserGroupArgs struct {
 
 // A collection of values returned by getClusterUserGroup.
 type LookupClusterUserGroupResult struct {
-	// 集群ID。
+	// Cluster ID.
 	ClusterId string `pulumi:"clusterId"`
-	// 用户组描述。
+	// User group description.
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 用户组成员。不支持操作特殊用户，如admin等。
+	// Operations on special users, such as admin, are not supported.
 	Members []string `pulumi:"members"`
-	// 用户组名称。
+	// User group name.
 	UserGroupName string `pulumi:"userGroupName"`
 }
 
@@ -76,12 +76,12 @@ func (o LookupClusterUserGroupResultOutput) ToLookupClusterUserGroupResultOutput
 	return o
 }
 
-// 集群ID。
+// Cluster ID.
 func (o LookupClusterUserGroupResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterUserGroupResult) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 用户组描述。
+// User group description.
 func (o LookupClusterUserGroupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterUserGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -91,12 +91,12 @@ func (o LookupClusterUserGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterUserGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 用户组成员。不支持操作特殊用户，如admin等。
+// Operations on special users, such as admin, are not supported.
 func (o LookupClusterUserGroupResultOutput) Members() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupClusterUserGroupResult) []string { return v.Members }).(pulumi.StringArrayOutput)
 }
 
-// 用户组名称。
+// User group name.
 func (o LookupClusterUserGroupResultOutput) UserGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterUserGroupResult) string { return v.UserGroupName }).(pulumi.StringOutput)
 }

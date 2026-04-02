@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamSourceSourceSpecK8SSource {
     /**
-     * @return 集群ID。
+     * @return Cluster ID
      * 
      */
     private @Nullable String clusterId;
     /**
-     * @return 集群类型。
+     * @return Cluster type
      * 
      */
     private @Nullable String clusterType;
 
     private UpstreamSourceSourceSpecK8SSource() {}
     /**
-     * @return 集群ID。
+     * @return Cluster ID
      * 
      */
     public Optional<String> clusterId() {
         return Optional.ofNullable(this.clusterId);
     }
     /**
-     * @return 集群类型。
+     * @return Cluster type
      * 
      */
     public Optional<String> clusterType() {

@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleDimensionConditionsTagCondition {
     /**
-     * @return 判断条件。and：全部满足。or：任意满足。
+     * @return Condition. and: All conditions met. or: Any condition met.
      * 
      */
     private String condition;
     /**
-     * @return 标签列表。最多支持配置 10 个标签列表。标签值不能超过 50 个字符。
+     * @return Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
      * 
      */
     private List<GetRuleDimensionConditionsTagConditionTag> tags;
 
     private GetRuleDimensionConditionsTagCondition() {}
     /**
-     * @return 判断条件。and：全部满足。or：任意满足。
+     * @return Condition. and: All conditions met. or: Any condition met.
      * 
      */
     public String condition() {
         return this.condition;
     }
     /**
-     * @return 标签列表。最多支持配置 10 个标签列表。标签值不能超过 50 个字符。
+     * @return Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
      * 
      */
     public List<GetRuleDimensionConditionsTagConditionTag> tags() {

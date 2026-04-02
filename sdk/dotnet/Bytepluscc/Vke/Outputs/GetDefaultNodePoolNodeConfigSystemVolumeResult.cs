@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetDefaultNodePoolNodeConfigSystemVolumeResult
     {
         /// <summary>
-        /// 放置组Id
+        /// Placement group ID
         /// </summary>
         public readonly string PlacementGroupId;
         /// <summary>
-        /// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+        /// Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
         /// </summary>
         public readonly int Size;
         /// <summary>
-        /// 放置子组
+        /// Placement subgroup
         /// </summary>
         public readonly int SubgroupNumber;
         /// <summary>
-        /// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        /// Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
         /// </summary>
         public readonly string Type;
 

@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class LoadBalancerTag {
     /**
-     * @return 标签的键，用于标识标签的类别。
+     * @return Tag key, used to identify the tag category.
      * 
      */
     private @Nullable String key;
     /**
-     * @return 标签的值，用于标识具体的标签内容。
+     * @return Tag value used to identify the specific tag content.
      * 
      */
     private @Nullable String value;
 
     private LoadBalancerTag() {}
     /**
-     * @return 标签的键，用于标识标签的类别。
+     * @return Tag key, used to identify the tag category.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 标签的值，用于标识具体的标签内容。
+     * @return Tag value used to identify the specific tag content.
      * 
      */
     public Optional<String> value() {

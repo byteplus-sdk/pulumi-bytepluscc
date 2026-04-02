@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
+ * An image is a special file containing the basic operating system and application data required for a cloud server instance. You must select an image when creating an instance.
  *
  * ## Example Usage
  *
@@ -63,117 +63,133 @@ export class Image extends pulumi.CustomResource {
     }
 
     /**
-     * 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+     * Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
      */
-    public /*out*/ readonly architecture!: pulumi.Output<string>;
+    public readonly architecture!: pulumi.Output<string>;
     /**
-     * 镜像的启动模式。可以选择BIOS、UEFI类型。
+     * Image boot mode. You can select BIOS or UEFI
      */
-    public /*out*/ readonly bootMode!: pulumi.Output<string>;
+    public readonly bootMode!: pulumi.Output<string>;
     /**
-     * 镜像创建时间
+     * Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+     */
+    public readonly createWholeImage!: pulumi.Output<boolean>;
+    /**
+     * Image creation time
      */
     public /*out*/ readonly createdAt!: pulumi.Output<string>;
     /**
-     * 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+     * Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 镜像的检测结果。
+     * Image check result.
      */
     public /*out*/ readonly detectionResults!: pulumi.Output<outputs.ecs.ImageDetectionResults>;
     /**
-     * 镜像ID。
+     * Image ID
      */
     public /*out*/ readonly imageId!: pulumi.Output<string>;
     /**
-     * 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+     * Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
      */
     public readonly imageName!: pulumi.Output<string>;
     /**
-     * 镜像所属的账号ID。
+     * Account ID to which the image belongs.
      */
     public /*out*/ readonly imageOwnerId!: pulumi.Output<string>;
     /**
-     * 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+     * Imported image information
+     */
+    public readonly importImage!: pulumi.Output<outputs.ecs.ImageImportImage>;
+    /**
+     * Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      */
     public readonly instanceId!: pulumi.Output<string>;
     /**
-     * 镜像中是否安装了云助手Agent。
+     * Whether Cloud Assistant Agent is installed in the image
      */
     public /*out*/ readonly isInstallRunCommandAgent!: pulumi.Output<boolean>;
     /**
-     * 公共镜像是否长期维护。
+     * Whether the public image is maintained long-term.
      */
     public /*out*/ readonly isLts!: pulumi.Output<boolean>;
     /**
-     * 镜像是否支持Cloud-init。
+     * Whether the image supports Cloud-init.
      */
     public /*out*/ readonly isSupportCloudInit!: pulumi.Output<boolean>;
     /**
-     * 镜像的内核版本。
+     * Image kernel version.
      */
     public /*out*/ readonly kernel!: pulumi.Output<string>;
     /**
-     * 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+     * Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
      */
-    public /*out*/ readonly licenseType!: pulumi.Output<string>;
+    public readonly licenseType!: pulumi.Output<string>;
     /**
-     * 镜像操作系统的名称。
+     * Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+     */
+    public readonly needDetection!: pulumi.Output<boolean>;
+    /**
+     * Name of the image operating system.
      */
     public /*out*/ readonly osName!: pulumi.Output<string>;
     /**
-     * 操作系统类型。
+     * Operating system type
      */
-    public /*out*/ readonly osType!: pulumi.Output<string>;
+    public readonly osType!: pulumi.Output<string>;
     /**
-     * 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+     * Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
      */
-    public /*out*/ readonly platform!: pulumi.Output<string>;
+    public readonly platform!: pulumi.Output<string>;
     /**
-     * 镜像的发行版本。
+     * Image release version.
      */
-    public /*out*/ readonly platformVersion!: pulumi.Output<string>;
+    public readonly platformVersion!: pulumi.Output<string>;
     /**
-     * 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+     * Product code for marketplace image
+     */
+    public /*out*/ readonly productCode!: pulumi.Output<string>;
+    /**
+     * Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 镜像共享的账户
+     * Accounts with which the image is shared
      */
     public readonly sharePermissions!: pulumi.Output<string[]>;
     /**
-     * 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+     * Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
      */
     public /*out*/ readonly shareStatus!: pulumi.Output<string>;
     /**
-     * 镜像大小，单位为GiB。
+     * Image size, in GiB.
      */
     public /*out*/ readonly size!: pulumi.Output<number>;
     /**
-     * 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+     * Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
      */
     public readonly snapshotGroupId!: pulumi.Output<string>;
     /**
-     * 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+     * System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      */
     public readonly snapshotId!: pulumi.Output<string>;
     public /*out*/ readonly snapshots!: pulumi.Output<outputs.ecs.ImageSnapshot[]>;
     /**
-     * 镜像的状态。
+     * Image status.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.ecs.ImageTag[]>;
     /**
-     * 镜像更新时间
+     * Image update time
      */
     public /*out*/ readonly updatedAt!: pulumi.Output<string>;
     /**
-     * 镜像大小，单位为Byte。
+     * Image size, in Bytes.
      */
     public /*out*/ readonly virtualSize!: pulumi.Output<number>;
     /**
-     * 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+     * Image visibility. public: Public image. private: Private image. shared: Shared image.
      */
     public /*out*/ readonly visibility!: pulumi.Output<string>;
 
@@ -192,22 +208,26 @@ export class Image extends pulumi.CustomResource {
             const state = argsOrState as ImageState | undefined;
             resourceInputs["architecture"] = state ? state.architecture : undefined;
             resourceInputs["bootMode"] = state ? state.bootMode : undefined;
+            resourceInputs["createWholeImage"] = state ? state.createWholeImage : undefined;
             resourceInputs["createdAt"] = state ? state.createdAt : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["detectionResults"] = state ? state.detectionResults : undefined;
             resourceInputs["imageId"] = state ? state.imageId : undefined;
             resourceInputs["imageName"] = state ? state.imageName : undefined;
             resourceInputs["imageOwnerId"] = state ? state.imageOwnerId : undefined;
+            resourceInputs["importImage"] = state ? state.importImage : undefined;
             resourceInputs["instanceId"] = state ? state.instanceId : undefined;
             resourceInputs["isInstallRunCommandAgent"] = state ? state.isInstallRunCommandAgent : undefined;
             resourceInputs["isLts"] = state ? state.isLts : undefined;
             resourceInputs["isSupportCloudInit"] = state ? state.isSupportCloudInit : undefined;
             resourceInputs["kernel"] = state ? state.kernel : undefined;
             resourceInputs["licenseType"] = state ? state.licenseType : undefined;
+            resourceInputs["needDetection"] = state ? state.needDetection : undefined;
             resourceInputs["osName"] = state ? state.osName : undefined;
             resourceInputs["osType"] = state ? state.osType : undefined;
             resourceInputs["platform"] = state ? state.platform : undefined;
             resourceInputs["platformVersion"] = state ? state.platformVersion : undefined;
+            resourceInputs["productCode"] = state ? state.productCode : undefined;
             resourceInputs["projectName"] = state ? state.projectName : undefined;
             resourceInputs["sharePermissions"] = state ? state.sharePermissions : undefined;
             resourceInputs["shareStatus"] = state ? state.shareStatus : undefined;
@@ -225,16 +245,23 @@ export class Image extends pulumi.CustomResource {
             if ((!args || args.imageName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'imageName'");
             }
+            resourceInputs["architecture"] = args ? args.architecture : undefined;
+            resourceInputs["bootMode"] = args ? args.bootMode : undefined;
+            resourceInputs["createWholeImage"] = args ? args.createWholeImage : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["imageName"] = args ? args.imageName : undefined;
+            resourceInputs["importImage"] = args ? args.importImage : undefined;
             resourceInputs["instanceId"] = args ? args.instanceId : undefined;
+            resourceInputs["licenseType"] = args ? args.licenseType : undefined;
+            resourceInputs["needDetection"] = args ? args.needDetection : undefined;
+            resourceInputs["osType"] = args ? args.osType : undefined;
+            resourceInputs["platform"] = args ? args.platform : undefined;
+            resourceInputs["platformVersion"] = args ? args.platformVersion : undefined;
             resourceInputs["projectName"] = args ? args.projectName : undefined;
             resourceInputs["sharePermissions"] = args ? args.sharePermissions : undefined;
             resourceInputs["snapshotGroupId"] = args ? args.snapshotGroupId : undefined;
             resourceInputs["snapshotId"] = args ? args.snapshotId : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["architecture"] = undefined /*out*/;
-            resourceInputs["bootMode"] = undefined /*out*/;
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["detectionResults"] = undefined /*out*/;
             resourceInputs["imageId"] = undefined /*out*/;
@@ -243,11 +270,8 @@ export class Image extends pulumi.CustomResource {
             resourceInputs["isLts"] = undefined /*out*/;
             resourceInputs["isSupportCloudInit"] = undefined /*out*/;
             resourceInputs["kernel"] = undefined /*out*/;
-            resourceInputs["licenseType"] = undefined /*out*/;
             resourceInputs["osName"] = undefined /*out*/;
-            resourceInputs["osType"] = undefined /*out*/;
-            resourceInputs["platform"] = undefined /*out*/;
-            resourceInputs["platformVersion"] = undefined /*out*/;
+            resourceInputs["productCode"] = undefined /*out*/;
             resourceInputs["shareStatus"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
             resourceInputs["snapshots"] = undefined /*out*/;
@@ -266,117 +290,133 @@ export class Image extends pulumi.CustomResource {
  */
 export interface ImageState {
     /**
-     * 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+     * Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
      */
     architecture?: pulumi.Input<string>;
     /**
-     * 镜像的启动模式。可以选择BIOS、UEFI类型。
+     * Image boot mode. You can select BIOS or UEFI
      */
     bootMode?: pulumi.Input<string>;
     /**
-     * 镜像创建时间
+     * Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+     */
+    createWholeImage?: pulumi.Input<boolean>;
+    /**
+     * Image creation time
      */
     createdAt?: pulumi.Input<string>;
     /**
-     * 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+     * Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
      */
     description?: pulumi.Input<string>;
     /**
-     * 镜像的检测结果。
+     * Image check result.
      */
     detectionResults?: pulumi.Input<inputs.ecs.ImageDetectionResults>;
     /**
-     * 镜像ID。
+     * Image ID
      */
     imageId?: pulumi.Input<string>;
     /**
-     * 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+     * Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
      */
     imageName?: pulumi.Input<string>;
     /**
-     * 镜像所属的账号ID。
+     * Account ID to which the image belongs.
      */
     imageOwnerId?: pulumi.Input<string>;
     /**
-     * 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+     * Imported image information
+     */
+    importImage?: pulumi.Input<inputs.ecs.ImageImportImage>;
+    /**
+     * Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 镜像中是否安装了云助手Agent。
+     * Whether Cloud Assistant Agent is installed in the image
      */
     isInstallRunCommandAgent?: pulumi.Input<boolean>;
     /**
-     * 公共镜像是否长期维护。
+     * Whether the public image is maintained long-term.
      */
     isLts?: pulumi.Input<boolean>;
     /**
-     * 镜像是否支持Cloud-init。
+     * Whether the image supports Cloud-init.
      */
     isSupportCloudInit?: pulumi.Input<boolean>;
     /**
-     * 镜像的内核版本。
+     * Image kernel version.
      */
     kernel?: pulumi.Input<string>;
     /**
-     * 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+     * Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
      */
     licenseType?: pulumi.Input<string>;
     /**
-     * 镜像操作系统的名称。
+     * Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+     */
+    needDetection?: pulumi.Input<boolean>;
+    /**
+     * Name of the image operating system.
      */
     osName?: pulumi.Input<string>;
     /**
-     * 操作系统类型。
+     * Operating system type
      */
     osType?: pulumi.Input<string>;
     /**
-     * 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+     * Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
      */
     platform?: pulumi.Input<string>;
     /**
-     * 镜像的发行版本。
+     * Image release version.
      */
     platformVersion?: pulumi.Input<string>;
     /**
-     * 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+     * Product code for marketplace image
+     */
+    productCode?: pulumi.Input<string>;
+    /**
+     * Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 镜像共享的账户
+     * Accounts with which the image is shared
      */
     sharePermissions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+     * Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
      */
     shareStatus?: pulumi.Input<string>;
     /**
-     * 镜像大小，单位为GiB。
+     * Image size, in GiB.
      */
     size?: pulumi.Input<number>;
     /**
-     * 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+     * Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
      */
     snapshotGroupId?: pulumi.Input<string>;
     /**
-     * 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+     * System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      */
     snapshotId?: pulumi.Input<string>;
     snapshots?: pulumi.Input<pulumi.Input<inputs.ecs.ImageSnapshot>[]>;
     /**
-     * 镜像的状态。
+     * Image status.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.ecs.ImageTag>[]>;
     /**
-     * 镜像更新时间
+     * Image update time
      */
     updatedAt?: pulumi.Input<string>;
     /**
-     * 镜像大小，单位为Byte。
+     * Image size, in Bytes.
      */
     virtualSize?: pulumi.Input<number>;
     /**
-     * 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+     * Image visibility. public: Public image. private: Private image. shared: Shared image.
      */
     visibility?: pulumi.Input<string>;
 }
@@ -386,31 +426,67 @@ export interface ImageState {
  */
 export interface ImageArgs {
     /**
-     * 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+     * Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
+     */
+    architecture?: pulumi.Input<string>;
+    /**
+     * Image boot mode. You can select BIOS or UEFI
+     */
+    bootMode?: pulumi.Input<string>;
+    /**
+     * Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+     */
+    createWholeImage?: pulumi.Input<boolean>;
+    /**
+     * Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
      */
     description?: pulumi.Input<string>;
     /**
-     * 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+     * Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
      */
     imageName: pulumi.Input<string>;
     /**
-     * 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+     * Imported image information
+     */
+    importImage?: pulumi.Input<inputs.ecs.ImageImportImage>;
+    /**
+     * Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+     * Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
+     */
+    licenseType?: pulumi.Input<string>;
+    /**
+     * Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+     */
+    needDetection?: pulumi.Input<boolean>;
+    /**
+     * Operating system type
+     */
+    osType?: pulumi.Input<string>;
+    /**
+     * Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
+     */
+    platform?: pulumi.Input<string>;
+    /**
+     * Image release version.
+     */
+    platformVersion?: pulumi.Input<string>;
+    /**
+     * Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 镜像共享的账户
+     * Accounts with which the image is shared
      */
     sharePermissions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+     * Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
      */
     snapshotGroupId?: pulumi.Input<string>;
     /**
-     * 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+     * System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      */
     snapshotId?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.ecs.ImageTag>[]>;

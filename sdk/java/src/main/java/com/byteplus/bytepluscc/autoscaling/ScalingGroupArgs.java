@@ -3,6 +3,8 @@
 
 package com.byteplus.bytepluscc.autoscaling;
 
+import com.byteplus.bytepluscc.autoscaling.inputs.ScalingGroupInstanceArgs;
+import com.byteplus.bytepluscc.autoscaling.inputs.ScalingGroupInstanceRemovePolicyArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.ScalingGroupInstancesDistributionArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.ScalingGroupLaunchTemplateOverrideArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.ScalingGroupServerGroupAttributeArgs;
@@ -24,14 +26,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     public static final ScalingGroupArgs Empty = new ScalingGroupArgs();
 
     /**
-     * 伸缩组绑定的伸缩配置的ID。
+     * ID of the scaling configuration bound to the scaling group
      * 
      */
     @Import(name="activeScalingConfigurationId")
     private @Nullable Output<String> activeScalingConfigurationId;
 
     /**
-     * @return 伸缩组绑定的伸缩配置的ID。
+     * @return ID of the scaling configuration bound to the scaling group
      * 
      */
     public Optional<Output<String>> activeScalingConfigurationId() {
@@ -39,14 +41,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+     * Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
      * 
      */
     @Import(name="defaultCooldown")
     private @Nullable Output<Integer> defaultCooldown;
 
     /**
-     * @return 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+     * @return Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
      * 
      */
     public Optional<Output<Integer>> defaultCooldown() {
@@ -54,14 +56,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+     * Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
      * 
      */
     @Import(name="desireInstanceNumber")
     private @Nullable Output<Integer> desireInstanceNumber;
 
     /**
-     * @return 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+     * @return Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
      * 
      */
     public Optional<Output<Integer>> desireInstanceNumber() {
@@ -69,44 +71,58 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
+     * Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
      * 
      */
     @Import(name="healthCheckType")
     private @Nullable Output<String> healthCheckType;
 
     /**
-     * @return 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
+     * @return Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
      * 
      */
     public Optional<Output<String>> healthCheckType() {
         return Optional.ofNullable(this.healthCheckType);
     }
 
+    @Import(name="instanceRemovePolicies")
+    private @Nullable Output<List<ScalingGroupInstanceRemovePolicyArgs>> instanceRemovePolicies;
+
+    public Optional<Output<List<ScalingGroupInstanceRemovePolicyArgs>>> instanceRemovePolicies() {
+        return Optional.ofNullable(this.instanceRemovePolicies);
+    }
+
     /**
-     * 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
+     * Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
      * 
      */
     @Import(name="instanceTerminatePolicy")
     private @Nullable Output<String> instanceTerminatePolicy;
 
     /**
-     * @return 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
+     * @return Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
      * 
      */
     public Optional<Output<String>> instanceTerminatePolicy() {
         return Optional.ofNullable(this.instanceTerminatePolicy);
     }
 
+    @Import(name="instances")
+    private @Nullable Output<List<ScalingGroupInstanceArgs>> instances;
+
+    public Optional<Output<List<ScalingGroupInstanceArgs>>> instances() {
+        return Optional.ofNullable(this.instances);
+    }
+
     /**
-     * 实例分布策略。
+     * Instance distribution policy.
      * 
      */
     @Import(name="instancesDistribution")
     private @Nullable Output<ScalingGroupInstancesDistributionArgs> instancesDistribution;
 
     /**
-     * @return 实例分布策略。
+     * @return Instance distribution policy.
      * 
      */
     public Optional<Output<ScalingGroupInstancesDistributionArgs>> instancesDistribution() {
@@ -114,14 +130,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否启用伸缩组。true：启用。false：停止
+     * Whether to enable the scaling group. true: enabled. false: stopped
      * 
      */
     @Import(name="isEnableScalingGroup")
     private @Nullable Output<Boolean> isEnableScalingGroup;
 
     /**
-     * @return 是否启用伸缩组。true：启用。false：停止
+     * @return Whether to enable the scaling group. true: enabled. false: stopped
      * 
      */
     public Optional<Output<Boolean>> isEnableScalingGroup() {
@@ -129,14 +145,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+     * Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
      * 
      */
     @Import(name="launchTemplateId")
     private @Nullable Output<String> launchTemplateId;
 
     /**
-     * @return 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+     * @return Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
      * 
      */
     public Optional<Output<String>> launchTemplateId() {
@@ -151,14 +167,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+     * Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
      * 
      */
     @Import(name="launchTemplateVersion")
     private @Nullable Output<String> launchTemplateVersion;
 
     /**
-     * @return 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+     * @return Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
      * 
      */
     public Optional<Output<String>> launchTemplateVersion() {
@@ -166,14 +182,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+     * Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
      * 
      */
     @Import(name="maxInstanceNumber", required=true)
     private Output<Integer> maxInstanceNumber;
 
     /**
-     * @return 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+     * @return Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
      * 
      */
     public Output<Integer> maxInstanceNumber() {
@@ -181,14 +197,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+     * Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
      * 
      */
     @Import(name="minInstanceNumber", required=true)
     private Output<Integer> minInstanceNumber;
 
     /**
-     * @return 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+     * @return Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
      * 
      */
     public Output<Integer> minInstanceNumber() {
@@ -196,14 +212,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+     * Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
      * 
      */
     @Import(name="multiAzPolicy")
     private @Nullable Output<String> multiAzPolicy;
 
     /**
-     * @return 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+     * @return Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
      * 
      */
     public Optional<Output<String>> multiAzPolicy() {
@@ -211,14 +227,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * Project to which the scaling group belongs. Default is &#39;default&#39;. A resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length: 64 characters.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * @return Project to which the scaling group belongs. Default is &#39;default&#39;. A resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length: 64 characters.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -226,14 +242,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+     * Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
      * 
      */
     @Import(name="scalingGroupName", required=true)
     private Output<String> scalingGroupName;
 
     /**
-     * @return 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+     * @return Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
      * 
      */
     public Output<String> scalingGroupName() {
@@ -241,14 +257,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+     * Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
      * 
      */
     @Import(name="scalingMode")
     private @Nullable Output<String> scalingMode;
 
     /**
-     * @return 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+     * @return Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
      * 
      */
     public Optional<Output<String>> scalingMode() {
@@ -263,14 +279,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩组中实例主网卡的子网ID列表。
+     * List of subnet IDs for the primary network interface of instances in the scaling group
      * 
      */
     @Import(name="subnetIds", required=true)
     private Output<List<String>> subnetIds;
 
     /**
-     * @return 伸缩组中实例主网卡的子网ID列表。
+     * @return List of subnet IDs for the primary network interface of instances in the scaling group
      * 
      */
     public Output<List<String>> subnetIds() {
@@ -278,14 +294,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+     * Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
      * 
      */
     @Import(name="suspendedProcesses")
     private @Nullable Output<List<String>> suspendedProcesses;
 
     /**
-     * @return 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+     * @return Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
      * 
      */
     public Optional<Output<List<String>>> suspendedProcesses() {
@@ -306,7 +322,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         this.defaultCooldown = $.defaultCooldown;
         this.desireInstanceNumber = $.desireInstanceNumber;
         this.healthCheckType = $.healthCheckType;
+        this.instanceRemovePolicies = $.instanceRemovePolicies;
         this.instanceTerminatePolicy = $.instanceTerminatePolicy;
+        this.instances = $.instances;
         this.instancesDistribution = $.instancesDistribution;
         this.isEnableScalingGroup = $.isEnableScalingGroup;
         this.launchTemplateId = $.launchTemplateId;
@@ -343,7 +361,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param activeScalingConfigurationId 伸缩组绑定的伸缩配置的ID。
+         * @param activeScalingConfigurationId ID of the scaling configuration bound to the scaling group
          * 
          * @return builder
          * 
@@ -354,7 +372,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param activeScalingConfigurationId 伸缩组绑定的伸缩配置的ID。
+         * @param activeScalingConfigurationId ID of the scaling configuration bound to the scaling group
          * 
          * @return builder
          * 
@@ -364,7 +382,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param defaultCooldown 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+         * @param defaultCooldown Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
          * 
          * @return builder
          * 
@@ -375,7 +393,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param defaultCooldown 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+         * @param defaultCooldown Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
          * 
          * @return builder
          * 
@@ -385,7 +403,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param desireInstanceNumber 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+         * @param desireInstanceNumber Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
          * 
          * @return builder
          * 
@@ -396,7 +414,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param desireInstanceNumber 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+         * @param desireInstanceNumber Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
          * 
          * @return builder
          * 
@@ -406,7 +424,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param healthCheckType 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
+         * @param healthCheckType Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
          * 
          * @return builder
          * 
@@ -417,7 +435,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param healthCheckType 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
+         * @param healthCheckType Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
          * 
          * @return builder
          * 
@@ -426,8 +444,21 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
             return healthCheckType(Output.of(healthCheckType));
         }
 
+        public Builder instanceRemovePolicies(@Nullable Output<List<ScalingGroupInstanceRemovePolicyArgs>> instanceRemovePolicies) {
+            $.instanceRemovePolicies = instanceRemovePolicies;
+            return this;
+        }
+
+        public Builder instanceRemovePolicies(List<ScalingGroupInstanceRemovePolicyArgs> instanceRemovePolicies) {
+            return instanceRemovePolicies(Output.of(instanceRemovePolicies));
+        }
+
+        public Builder instanceRemovePolicies(ScalingGroupInstanceRemovePolicyArgs... instanceRemovePolicies) {
+            return instanceRemovePolicies(List.of(instanceRemovePolicies));
+        }
+
         /**
-         * @param instanceTerminatePolicy 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
+         * @param instanceTerminatePolicy Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
          * 
          * @return builder
          * 
@@ -438,7 +469,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceTerminatePolicy 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
+         * @param instanceTerminatePolicy Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
          * 
          * @return builder
          * 
@@ -447,8 +478,21 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
             return instanceTerminatePolicy(Output.of(instanceTerminatePolicy));
         }
 
+        public Builder instances(@Nullable Output<List<ScalingGroupInstanceArgs>> instances) {
+            $.instances = instances;
+            return this;
+        }
+
+        public Builder instances(List<ScalingGroupInstanceArgs> instances) {
+            return instances(Output.of(instances));
+        }
+
+        public Builder instances(ScalingGroupInstanceArgs... instances) {
+            return instances(List.of(instances));
+        }
+
         /**
-         * @param instancesDistribution 实例分布策略。
+         * @param instancesDistribution Instance distribution policy.
          * 
          * @return builder
          * 
@@ -459,7 +503,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instancesDistribution 实例分布策略。
+         * @param instancesDistribution Instance distribution policy.
          * 
          * @return builder
          * 
@@ -469,7 +513,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEnableScalingGroup 是否启用伸缩组。true：启用。false：停止
+         * @param isEnableScalingGroup Whether to enable the scaling group. true: enabled. false: stopped
          * 
          * @return builder
          * 
@@ -480,7 +524,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEnableScalingGroup 是否启用伸缩组。true：启用。false：停止
+         * @param isEnableScalingGroup Whether to enable the scaling group. true: enabled. false: stopped
          * 
          * @return builder
          * 
@@ -490,7 +534,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param launchTemplateId 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+         * @param launchTemplateId Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
          * 
          * @return builder
          * 
@@ -501,7 +545,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param launchTemplateId 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+         * @param launchTemplateId Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
          * 
          * @return builder
          * 
@@ -524,7 +568,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param launchTemplateVersion 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+         * @param launchTemplateVersion Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
          * 
          * @return builder
          * 
@@ -535,7 +579,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param launchTemplateVersion 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+         * @param launchTemplateVersion Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
          * 
          * @return builder
          * 
@@ -545,7 +589,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxInstanceNumber 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+         * @param maxInstanceNumber Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
          * 
          * @return builder
          * 
@@ -556,7 +600,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxInstanceNumber 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+         * @param maxInstanceNumber Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
          * 
          * @return builder
          * 
@@ -566,7 +610,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param minInstanceNumber 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+         * @param minInstanceNumber Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
          * 
          * @return builder
          * 
@@ -577,7 +621,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param minInstanceNumber 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+         * @param minInstanceNumber Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
          * 
          * @return builder
          * 
@@ -587,7 +631,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiAzPolicy 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+         * @param multiAzPolicy Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
          * 
          * @return builder
          * 
@@ -598,7 +642,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiAzPolicy 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+         * @param multiAzPolicy Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
          * 
          * @return builder
          * 
@@ -608,7 +652,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+         * @param projectName Project to which the scaling group belongs. Default is &#39;default&#39;. A resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length: 64 characters.
          * 
          * @return builder
          * 
@@ -619,7 +663,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+         * @param projectName Project to which the scaling group belongs. Default is &#39;default&#39;. A resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length: 64 characters.
          * 
          * @return builder
          * 
@@ -629,7 +673,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scalingGroupName 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+         * @param scalingGroupName Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
          * 
          * @return builder
          * 
@@ -640,7 +684,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scalingGroupName 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+         * @param scalingGroupName Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
          * 
          * @return builder
          * 
@@ -650,7 +694,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scalingMode 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+         * @param scalingMode Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
          * 
          * @return builder
          * 
@@ -661,7 +705,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scalingMode 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+         * @param scalingMode Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
          * 
          * @return builder
          * 
@@ -684,7 +728,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds 伸缩组中实例主网卡的子网ID列表。
+         * @param subnetIds List of subnet IDs for the primary network interface of instances in the scaling group
          * 
          * @return builder
          * 
@@ -695,7 +739,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds 伸缩组中实例主网卡的子网ID列表。
+         * @param subnetIds List of subnet IDs for the primary network interface of instances in the scaling group
          * 
          * @return builder
          * 
@@ -705,7 +749,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds 伸缩组中实例主网卡的子网ID列表。
+         * @param subnetIds List of subnet IDs for the primary network interface of instances in the scaling group
          * 
          * @return builder
          * 
@@ -715,7 +759,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param suspendedProcesses 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+         * @param suspendedProcesses Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
          * 
          * @return builder
          * 
@@ -726,7 +770,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param suspendedProcesses 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+         * @param suspendedProcesses Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
          * 
          * @return builder
          * 
@@ -736,7 +780,7 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param suspendedProcesses 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+         * @param suspendedProcesses Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
          * 
          * @return builder
          * 

@@ -16,14 +16,14 @@ public final class VpcAttachmentTagArgs extends com.pulumi.resources.ResourceArg
     public static final VpcAttachmentTagArgs Empty = new VpcAttachmentTagArgs();
 
     /**
-     * 用户标签的标签键。
+     * Tag key for user tag.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 用户标签的标签键。
+     * @return Tag key for user tag.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class VpcAttachmentTagArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 用户标签的标签值。
+     * Tag value for user tag.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 用户标签的标签值。
+     * @return Tag value for user tag.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class VpcAttachmentTagArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param key 用户标签的标签键。
+         * @param key Tag key for user tag.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class VpcAttachmentTagArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param key 用户标签的标签键。
+         * @param key Tag key for user tag.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class VpcAttachmentTagArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param value 用户标签的标签值。
+         * @param value Tag value for user tag.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class VpcAttachmentTagArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param value 用户标签的标签值。
+         * @param value Tag value for user tag.
          * 
          * @return builder
          * 

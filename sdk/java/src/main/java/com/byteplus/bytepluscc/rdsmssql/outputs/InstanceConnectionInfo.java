@@ -15,22 +15,22 @@ import javax.annotation.Nullable;
 public final class InstanceConnectionInfo {
     private @Nullable List<InstanceConnectionInfoAddress> addresses;
     /**
-     * @return 描述信息。
+     * @return Description.
      * 
      */
     private @Nullable String description;
     /**
-     * @return 终端 ID。
+     * @return Terminal ID.
      * 
      */
     private @Nullable String endpointId;
     /**
-     * @return 终端名称。
+     * @return Terminal name.
      * 
      */
     private @Nullable String endpointName;
     /**
-     * @return 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+     * @return Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
      * 
      */
     private @Nullable String endpointType;
@@ -40,28 +40,28 @@ public final class InstanceConnectionInfo {
         return this.addresses == null ? List.of() : this.addresses;
     }
     /**
-     * @return 描述信息。
+     * @return Description.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return 终端 ID。
+     * @return Terminal ID.
      * 
      */
     public Optional<String> endpointId() {
         return Optional.ofNullable(this.endpointId);
     }
     /**
-     * @return 终端名称。
+     * @return Terminal name.
      * 
      */
     public Optional<String> endpointName() {
         return Optional.ofNullable(this.endpointName);
     }
     /**
-     * @return 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+     * @return Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
      * 
      */
     public Optional<String> endpointType() {

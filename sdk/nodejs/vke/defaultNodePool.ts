@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 除标准的自定义节点池外，容器服务支持 默认节点池（固定名称vke-default-nodepool）能力，用来纳管已有云服务器（ECS）实例。默认节点池的安全配置、高级配置、更多配置等配置能力与标准节点池一致，但不具备扩缩容、编辑数量等能力。
+ * In addition to standard custom node pools, container service supports the default node pool (fixed name vke-default-nodepool) for managing existing cloud server (ECS) instances. The default node pool has the same security, advanced, and additional configuration capabilities as standard node pools, but does not support scaling or editing the number of nodes.
  *
  * ## Import
  *
@@ -44,48 +44,48 @@ export class DefaultNodePool extends pulumi.CustomResource {
     }
 
     /**
-     * 节点池伸缩策略配置。
+     * Node pool scaling policy configuration
      */
     public /*out*/ readonly autoScaling!: pulumi.Output<outputs.vke.DefaultNodePoolAutoScaling>;
     /**
-     * 节点池所在集群的 ID。
+     * Cluster ID where the node pool is located
      */
     public readonly clusterId!: pulumi.Output<string>;
     /**
-     * 创建节点池的时间。
+     * Node pool creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 节点池 Kubernetes 相关配置。
+     * Kubernetes-related configuration for the node pool
      */
     public readonly kubernetesConfig!: pulumi.Output<outputs.vke.DefaultNodePoolKubernetesConfig>;
     /**
-     * 托管节点池配置。
+     * Managed node pool configuration
      */
     public /*out*/ readonly management!: pulumi.Output<outputs.vke.DefaultNodePoolManagement>;
     /**
-     * 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
      */
     public /*out*/ readonly name!: pulumi.Output<string>;
     /**
-     * 节点池中云服务器（ECS）实例配置。
+     * Cloud server (ECS) instance configuration in the node pool
      */
     public readonly nodeConfig!: pulumi.Output<outputs.vke.DefaultNodePoolNodeConfig>;
     /**
-     * 节点池 ID 。
+     * Node pool ID
      */
     public /*out*/ readonly nodePoolId!: pulumi.Output<string>;
     /**
-     * 节点池中的节点统计。
+     * Node statistics in the node pool.
      */
     public /*out*/ readonly nodeStatistics!: pulumi.Output<outputs.vke.DefaultNodePoolNodeStatistics>;
     /**
-     * 节点池状态。
+     * Node pool status
      */
     public /*out*/ readonly status!: pulumi.Output<outputs.vke.DefaultNodePoolStatus>;
     public readonly tags!: pulumi.Output<outputs.vke.DefaultNodePoolTag[]>;
     /**
-     * 更新节点池的时间。
+     * Time when the node pool was updated
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -145,48 +145,48 @@ export class DefaultNodePool extends pulumi.CustomResource {
  */
 export interface DefaultNodePoolState {
     /**
-     * 节点池伸缩策略配置。
+     * Node pool scaling policy configuration
      */
     autoScaling?: pulumi.Input<inputs.vke.DefaultNodePoolAutoScaling>;
     /**
-     * 节点池所在集群的 ID。
+     * Cluster ID where the node pool is located
      */
     clusterId?: pulumi.Input<string>;
     /**
-     * 创建节点池的时间。
+     * Node pool creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 节点池 Kubernetes 相关配置。
+     * Kubernetes-related configuration for the node pool
      */
     kubernetesConfig?: pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfig>;
     /**
-     * 托管节点池配置。
+     * Managed node pool configuration
      */
     management?: pulumi.Input<inputs.vke.DefaultNodePoolManagement>;
     /**
-     * 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
      */
     name?: pulumi.Input<string>;
     /**
-     * 节点池中云服务器（ECS）实例配置。
+     * Cloud server (ECS) instance configuration in the node pool
      */
     nodeConfig?: pulumi.Input<inputs.vke.DefaultNodePoolNodeConfig>;
     /**
-     * 节点池 ID 。
+     * Node pool ID
      */
     nodePoolId?: pulumi.Input<string>;
     /**
-     * 节点池中的节点统计。
+     * Node statistics in the node pool.
      */
     nodeStatistics?: pulumi.Input<inputs.vke.DefaultNodePoolNodeStatistics>;
     /**
-     * 节点池状态。
+     * Node pool status
      */
     status?: pulumi.Input<inputs.vke.DefaultNodePoolStatus>;
     tags?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolTag>[]>;
     /**
-     * 更新节点池的时间。
+     * Time when the node pool was updated
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -196,15 +196,15 @@ export interface DefaultNodePoolState {
  */
 export interface DefaultNodePoolArgs {
     /**
-     * 节点池所在集群的 ID。
+     * Cluster ID where the node pool is located
      */
     clusterId: pulumi.Input<string>;
     /**
-     * 节点池 Kubernetes 相关配置。
+     * Kubernetes-related configuration for the node pool
      */
     kubernetesConfig?: pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfig>;
     /**
-     * 节点池中云服务器（ECS）实例配置。
+     * Cloud server (ECS) instance configuration in the node pool
      */
     nodeConfig: pulumi.Input<inputs.vke.DefaultNodePoolNodeConfig>;
     tags?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolTag>[]>;

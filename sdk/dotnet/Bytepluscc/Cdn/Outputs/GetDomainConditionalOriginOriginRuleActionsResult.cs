@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainConditionalOriginOriginRuleActionsResult
     {
         /// <summary>
-        /// 表示一个源站配置列表。当前，列表中只能包含一个源站配置。
+        /// Indicates a list of origin configurations. Currently, the list can contain only one origin configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainConditionalOriginOriginRuleActionsOriginLineResult> OriginLines;
 

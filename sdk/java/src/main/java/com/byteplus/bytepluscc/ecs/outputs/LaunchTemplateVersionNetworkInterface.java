@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class LaunchTemplateVersionNetworkInterface {
     /**
-     * @return 网卡关联的安全组ID。
+     * @return Security group ID associated with the network interface.
      * 
      */
     private @Nullable List<String> securityGroupIds;
     /**
-     * @return 实例的私有网络子网ID。
+     * @return Private network subnet ID of the instance.
      * 
      */
     private @Nullable String subnetId;
 
     private LaunchTemplateVersionNetworkInterface() {}
     /**
-     * @return 网卡关联的安全组ID。
+     * @return Security group ID associated with the network interface.
      * 
      */
     public List<String> securityGroupIds() {
         return this.securityGroupIds == null ? List.of() : this.securityGroupIds;
     }
     /**
-     * @return 实例的私有网络子网ID。
+     * @return Private network subnet ID of the instance.
      * 
      */
     public Optional<String> subnetId() {

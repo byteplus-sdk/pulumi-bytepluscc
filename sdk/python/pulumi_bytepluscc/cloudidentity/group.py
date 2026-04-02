@@ -29,10 +29,10 @@ class GroupArgs:
                  members: Optional[pulumi.Input[Sequence[pulumi.Input['GroupMemberArgs']]]] = None):
         """
         The set of arguments for constructing a Group resource.
-        :param pulumi.Input[builtins.str] group_name: 用户组名称。
-        :param pulumi.Input[builtins.str] join_type: 用户组类型。
-        :param pulumi.Input[builtins.str] description: 描述。
-        :param pulumi.Input[builtins.str] display_name: 显示名。
+        :param pulumi.Input[builtins.str] group_name: User Group Name
+        :param pulumi.Input[builtins.str] join_type: User Group Type
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] display_name: Display Name
         """
         pulumi.set(__self__, "group_name", group_name)
         pulumi.set(__self__, "join_type", join_type)
@@ -47,7 +47,7 @@ class GroupArgs:
     @pulumi.getter(name="groupName")
     def group_name(self) -> pulumi.Input[builtins.str]:
         """
-        用户组名称。
+        User Group Name
         """
         return pulumi.get(self, "group_name")
 
@@ -59,7 +59,7 @@ class GroupArgs:
     @pulumi.getter(name="joinType")
     def join_type(self) -> pulumi.Input[builtins.str]:
         """
-        用户组类型。
+        User Group Type
         """
         return pulumi.get(self, "join_type")
 
@@ -71,7 +71,7 @@ class GroupArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        描述。
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -83,7 +83,7 @@ class GroupArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        显示名。
+        Display Name
         """
         return pulumi.get(self, "display_name")
 
@@ -115,14 +115,14 @@ class _GroupState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Group resources.
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 描述。
-        :param pulumi.Input[builtins.str] display_name: 显示名。
-        :param pulumi.Input[builtins.str] group_id: 用户组id。
-        :param pulumi.Input[builtins.str] group_name: 用户组名称。
-        :param pulumi.Input[builtins.str] join_type: 用户组类型。
-        :param pulumi.Input[builtins.str] source: 用户组来源。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
+        :param pulumi.Input[builtins.str] created_time: Creation Time
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] display_name: Display Name
+        :param pulumi.Input[builtins.str] group_id: User Group ID
+        :param pulumi.Input[builtins.str] group_name: User Group Name
+        :param pulumi.Input[builtins.str] join_type: User Group Type
+        :param pulumi.Input[builtins.str] source: User Group Source
+        :param pulumi.Input[builtins.str] updated_time: Update Time
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -147,7 +147,7 @@ class _GroupState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -159,7 +159,7 @@ class _GroupState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        描述。
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -171,7 +171,7 @@ class _GroupState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        显示名。
+        Display Name
         """
         return pulumi.get(self, "display_name")
 
@@ -183,7 +183,7 @@ class _GroupState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组id。
+        User Group ID
         """
         return pulumi.get(self, "group_id")
 
@@ -195,7 +195,7 @@ class _GroupState:
     @pulumi.getter(name="groupName")
     def group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组名称。
+        User Group Name
         """
         return pulumi.get(self, "group_name")
 
@@ -207,7 +207,7 @@ class _GroupState:
     @pulumi.getter(name="joinType")
     def join_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组类型。
+        User Group Type
         """
         return pulumi.get(self, "join_type")
 
@@ -228,7 +228,7 @@ class _GroupState:
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组来源。
+        User Group Source
         """
         return pulumi.get(self, "source")
 
@@ -240,7 +240,7 @@ class _GroupState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间。
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 
@@ -262,7 +262,7 @@ class Group(pulumi.CustomResource):
                  members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GroupMemberArgs', 'GroupMemberArgsDict']]]]] = None,
                  __props__=None):
         """
-        当您需要批量为云身份中心用户进行SSO授权时，您可以先通过用户组进行批量的用户管理。
+        When you need to grant SSO authorization to Cloud Identity Center users in bulk, you can first manage users in bulk through user groups
 
         ## Import
 
@@ -272,10 +272,10 @@ class Group(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 描述。
-        :param pulumi.Input[builtins.str] display_name: 显示名。
-        :param pulumi.Input[builtins.str] group_name: 用户组名称。
-        :param pulumi.Input[builtins.str] join_type: 用户组类型。
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] display_name: Display Name
+        :param pulumi.Input[builtins.str] group_name: User Group Name
+        :param pulumi.Input[builtins.str] join_type: User Group Type
         """
         ...
     @overload
@@ -284,7 +284,7 @@ class Group(pulumi.CustomResource):
                  args: GroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        当您需要批量为云身份中心用户进行SSO授权时，您可以先通过用户组进行批量的用户管理。
+        When you need to grant SSO authorization to Cloud Identity Center users in bulk, you can first manage users in bulk through user groups
 
         ## Import
 
@@ -360,14 +360,14 @@ class Group(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 描述。
-        :param pulumi.Input[builtins.str] display_name: 显示名。
-        :param pulumi.Input[builtins.str] group_id: 用户组id。
-        :param pulumi.Input[builtins.str] group_name: 用户组名称。
-        :param pulumi.Input[builtins.str] join_type: 用户组类型。
-        :param pulumi.Input[builtins.str] source: 用户组来源。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
+        :param pulumi.Input[builtins.str] created_time: Creation Time
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] display_name: Display Name
+        :param pulumi.Input[builtins.str] group_id: User Group ID
+        :param pulumi.Input[builtins.str] group_name: User Group Name
+        :param pulumi.Input[builtins.str] join_type: User Group Type
+        :param pulumi.Input[builtins.str] source: User Group Source
+        :param pulumi.Input[builtins.str] updated_time: Update Time
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -388,7 +388,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -396,7 +396,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        描述。
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -404,7 +404,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[builtins.str]:
         """
-        显示名。
+        Display Name
         """
         return pulumi.get(self, "display_name")
 
@@ -412,7 +412,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[builtins.str]:
         """
-        用户组id。
+        User Group ID
         """
         return pulumi.get(self, "group_id")
 
@@ -420,7 +420,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="groupName")
     def group_name(self) -> pulumi.Output[builtins.str]:
         """
-        用户组名称。
+        User Group Name
         """
         return pulumi.get(self, "group_name")
 
@@ -428,7 +428,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="joinType")
     def join_type(self) -> pulumi.Output[builtins.str]:
         """
-        用户组类型。
+        User Group Type
         """
         return pulumi.get(self, "join_type")
 
@@ -441,7 +441,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter
     def source(self) -> pulumi.Output[builtins.str]:
         """
-        用户组来源。
+        User Group Source
         """
         return pulumi.get(self, "source")
 
@@ -449,7 +449,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间。
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 

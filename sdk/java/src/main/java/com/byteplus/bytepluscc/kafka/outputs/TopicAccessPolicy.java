@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TopicAccessPolicy {
     /**
-     * @return SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+     * @return SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
      * 
      */
     private @Nullable String accessPolicy;
     /**
-     * @return SASL 用户名称。
+     * @return SASL username.
      * 
      */
     private @Nullable String userName;
 
     private TopicAccessPolicy() {}
     /**
-     * @return SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+     * @return SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
      * 
      */
     public Optional<String> accessPolicy() {
         return Optional.ofNullable(this.accessPolicy);
     }
     /**
-     * @return SASL 用户名称。
+     * @return SASL username.
      * 
      */
     public Optional<String> userName() {

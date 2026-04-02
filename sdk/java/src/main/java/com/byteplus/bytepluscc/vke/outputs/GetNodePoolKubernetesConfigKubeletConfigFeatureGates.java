@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolKubernetesConfigKubeletConfigFeatureGates {
     /**
-     * @return 是否开启特性开关本地垂直Pod伸缩
+     * @return Enable local vertical Pod autoscaling feature toggle
      * 
      */
     private Boolean inPlacePodVerticalScaling;
     /**
-     * @return 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+     * @return Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
      * 
      */
     private Boolean qoSResourceManager;
 
     private GetNodePoolKubernetesConfigKubeletConfigFeatureGates() {}
     /**
-     * @return 是否开启特性开关本地垂直Pod伸缩
+     * @return Enable local vertical Pod autoscaling feature toggle
      * 
      */
     public Boolean inPlacePodVerticalScaling() {
         return this.inPlacePodVerticalScaling;
     }
     /**
-     * @return 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+     * @return Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
      * 
      */
     public Boolean qoSResourceManager() {

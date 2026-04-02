@@ -14,17 +14,17 @@ import java.util.Objects;
 @CustomType
 public final class GetProjectResult {
     /**
-     * @return 日志项目创建时间。
+     * @return Log project creation time
      * 
      */
     private String createdTime;
     /**
-     * @return 日志项目的简单描述。
+     * @return Brief description of the log project
      * 
      */
     private String description;
     /**
-     * @return 日志项目所属的 IAM 项目。
+     * @return The IAM project associated with the log project
      * 
      */
     private String iamProjectName;
@@ -34,48 +34,48 @@ public final class GetProjectResult {
      */
     private String id;
     /**
-     * @return 私网连接域名。
+     * @return Private network connection domain name
      * 
      */
     private String innerNetDomain;
     /**
-     * @return 日志项目的 ID。
+     * @return Log project ID
      * 
      */
     private String projectId;
     /**
-     * @return 日志项目名称。
+     * @return Log project name
      * 
      */
     private String projectName;
     /**
-     * @return 标签信息。
+     * @return Tag information
      * 
      */
     private List<GetProjectTag> tags;
     /**
-     * @return 当前日志项目下的日志主题数量。
+     * @return Number of log topics in the current log project
      * 
      */
     private Integer topicCount;
 
     private GetProjectResult() {}
     /**
-     * @return 日志项目创建时间。
+     * @return Log project creation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 日志项目的简单描述。
+     * @return Brief description of the log project
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 日志项目所属的 IAM 项目。
+     * @return The IAM project associated with the log project
      * 
      */
     public String iamProjectName() {
@@ -89,35 +89,35 @@ public final class GetProjectResult {
         return this.id;
     }
     /**
-     * @return 私网连接域名。
+     * @return Private network connection domain name
      * 
      */
     public String innerNetDomain() {
         return this.innerNetDomain;
     }
     /**
-     * @return 日志项目的 ID。
+     * @return Log project ID
      * 
      */
     public String projectId() {
         return this.projectId;
     }
     /**
-     * @return 日志项目名称。
+     * @return Log project name
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 标签信息。
+     * @return Tag information
      * 
      */
     public List<GetProjectTag> tags() {
         return this.tags;
     }
     /**
-     * @return 当前日志项目下的日志主题数量。
+     * @return Number of log topics in the current log project
      * 
      */
     public Integer topicCount() {

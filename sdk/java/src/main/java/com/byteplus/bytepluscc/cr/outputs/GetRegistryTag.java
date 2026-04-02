@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryTag {
     /**
-     * @return 标签的 Key 值。
+     * @return Tag key values
      * 
      */
     private String key;
     /**
-     * @return 标签的 Value 值列表。
+     * @return List of tag values
      * 
      */
     private String value;
 
     private GetRegistryTag() {}
     /**
-     * @return 标签的 Key 值。
+     * @return Tag key values
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 标签的 Value 值列表。
+     * @return List of tag values
      * 
      */
     public String value() {

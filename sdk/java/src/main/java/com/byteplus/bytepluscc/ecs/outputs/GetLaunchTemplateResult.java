@@ -15,12 +15,12 @@ import java.util.Objects;
 @CustomType
 public final class GetLaunchTemplateResult {
     /**
-     * @return 实例启动模板的创建时间。
+     * @return Instance launch template creation time
      * 
      */
     private String createdAt;
     /**
-     * @return 实例启动模板的默认版本号。
+     * @return Instance launch template default version number
      * 
      */
     private Integer defaultVersionNumber;
@@ -30,51 +30,51 @@ public final class GetLaunchTemplateResult {
      */
     private String id;
     /**
-     * @return 实例启动模的最新版本号。
+     * @return Latest version number of the instance launch template.
      * 
      */
     private Integer latestVersionNumber;
     /**
-     * @return 实例启动模板 ID。
+     * @return Instance launch template ID
      * 
      */
     private String launchTemplateId;
     /**
-     * @return 实例启动模板名称。
+     * @return Instance launch template name.
      * 
      */
     private String launchTemplateName;
     /**
-     * @return 实例启动模版所属项目。
+     * @return Project associated with the instance launch template.
      * 
      */
     private String launchTemplateProjectName;
     /**
-     * @return 实例启动模版的标签信息。
+     * @return Instance launch template tag information
      * 
      */
     private List<GetLaunchTemplateLaunchTemplateTag> launchTemplateTags;
     /**
-     * @return 实例启动模板版本信息。
+     * @return Instance launch template version information
      * 
      */
     private GetLaunchTemplateLaunchTemplateVersion launchTemplateVersion;
     /**
-     * @return 实例启动模板的更新时间。
+     * @return Instance launch template update time
      * 
      */
     private String updatedAt;
 
     private GetLaunchTemplateResult() {}
     /**
-     * @return 实例启动模板的创建时间。
+     * @return Instance launch template creation time
      * 
      */
     public String createdAt() {
         return this.createdAt;
     }
     /**
-     * @return 实例启动模板的默认版本号。
+     * @return Instance launch template default version number
      * 
      */
     public Integer defaultVersionNumber() {
@@ -88,49 +88,49 @@ public final class GetLaunchTemplateResult {
         return this.id;
     }
     /**
-     * @return 实例启动模的最新版本号。
+     * @return Latest version number of the instance launch template.
      * 
      */
     public Integer latestVersionNumber() {
         return this.latestVersionNumber;
     }
     /**
-     * @return 实例启动模板 ID。
+     * @return Instance launch template ID
      * 
      */
     public String launchTemplateId() {
         return this.launchTemplateId;
     }
     /**
-     * @return 实例启动模板名称。
+     * @return Instance launch template name.
      * 
      */
     public String launchTemplateName() {
         return this.launchTemplateName;
     }
     /**
-     * @return 实例启动模版所属项目。
+     * @return Project associated with the instance launch template.
      * 
      */
     public String launchTemplateProjectName() {
         return this.launchTemplateProjectName;
     }
     /**
-     * @return 实例启动模版的标签信息。
+     * @return Instance launch template tag information
      * 
      */
     public List<GetLaunchTemplateLaunchTemplateTag> launchTemplateTags() {
         return this.launchTemplateTags;
     }
     /**
-     * @return 实例启动模板版本信息。
+     * @return Instance launch template version information
      * 
      */
     public GetLaunchTemplateLaunchTemplateVersion launchTemplateVersion() {
         return this.launchTemplateVersion;
     }
     /**
-     * @return 实例启动模板的更新时间。
+     * @return Instance launch template update time
      * 
      */
     public String updatedAt() {

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetNodeStatusResult
     {
         /// <summary>
-        /// 节点当前主状态下的状态条件，即进入该主状态的原因。
+        /// Status condition under the node's current primary state, indicating the reason for entering this primary state.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodeStatusConditionResult> Conditions;
         /// <summary>
-        /// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+        /// Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
         /// </summary>
         public readonly string Phase;
 

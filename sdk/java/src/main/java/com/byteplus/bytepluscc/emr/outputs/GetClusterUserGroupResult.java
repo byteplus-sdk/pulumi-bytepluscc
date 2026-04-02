@@ -12,12 +12,12 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterUserGroupResult {
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     private String clusterId;
     /**
-     * @return 用户组描述。
+     * @return User group description.
      * 
      */
     private String description;
@@ -27,26 +27,26 @@ public final class GetClusterUserGroupResult {
      */
     private String id;
     /**
-     * @return 用户组成员。不支持操作特殊用户，如admin等。
+     * @return Operations on special users, such as admin, are not supported.
      * 
      */
     private List<String> members;
     /**
-     * @return 用户组名称。
+     * @return User group name.
      * 
      */
     private String userGroupName;
 
     private GetClusterUserGroupResult() {}
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     public String clusterId() {
         return this.clusterId;
     }
     /**
-     * @return 用户组描述。
+     * @return User group description.
      * 
      */
     public String description() {
@@ -60,14 +60,14 @@ public final class GetClusterUserGroupResult {
         return this.id;
     }
     /**
-     * @return 用户组成员。不支持操作特殊用户，如admin等。
+     * @return Operations on special users, such as admin, are not supported.
      * 
      */
     public List<String> members() {
         return this.members;
     }
     /**
-     * @return 用户组名称。
+     * @return User group name.
      * 
      */
     public String userGroupName() {

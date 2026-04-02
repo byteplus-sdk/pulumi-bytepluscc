@@ -31,31 +31,31 @@ export interface GetCertificateArgs {
  */
 export interface GetCertificateResult {
     /**
-     * 证书ID。
+     * Certificate ID
      */
     readonly certificateId: string;
     /**
-     * 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+     * Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      */
     readonly certificateName: string;
     /**
-     * 证书类型，取值：CA：CA证书、Server：服务器证书。
+     * Certificate type. Options: CA: CA certificate; Server: server certificate
      */
     readonly certificateType: string;
     /**
-     * 证书创建时间。
+     * Certificate creation time
      */
     readonly createdTime: string;
     /**
-     * 证书描述。
+     * Certificate description
      */
     readonly description: string;
     /**
-     * 证书域名。
+     * Certificate domain name
      */
     readonly domainName: string;
     /**
-     * 证书过期时间。
+     * Certificate expiration time
      */
     readonly expiredAt: string;
     /**
@@ -63,31 +63,31 @@ export interface GetCertificateResult {
      */
     readonly id: string;
     /**
-     * 证书关联的监听器列表。
+     * List of listeners associated with the certificate
      */
     readonly listeners: string[];
     /**
-     * 服务器证书的私钥，当证书类型为Server时必填。
+     * Server certificate private key. Required when certificate type is Server
      */
     readonly privateKey: string;
     /**
-     * 项目名称。
+     * Project name
      */
     readonly projectName: string;
     /**
-     * 服务器证书的公钥。
+     * Server certificate public key
      */
     readonly publicKey: string;
     /**
-     * 证书扩展域名列表，用英文',' 分隔多个域名， 包含(commonName,DnsName,IP)。
+     * Certificate subject alternative name list. Use English ',' to separate multiple domain names. Includes (commonName, DnsName, IP)
      */
     readonly san: string;
     /**
-     * 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+     * Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
      */
     readonly status: string;
     /**
-     * 标签列表。
+     * Tag list
      */
     readonly tags: outputs.alb.GetCertificateTag[];
 }

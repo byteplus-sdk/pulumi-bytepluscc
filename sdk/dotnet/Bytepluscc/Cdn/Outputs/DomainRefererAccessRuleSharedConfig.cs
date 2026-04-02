@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainRefererAccessRuleSharedConfig
     {
         /// <summary>
-        /// 表示一个全局配置的名称。
+        /// Indicates the name of a global configuration.
         /// </summary>
         public readonly string? ConfigName;
 

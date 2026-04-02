@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class UpstreamUpstreamSpecK8SService
     {
         /// <summary>
-        /// 容器服务名称。长度限制为2~63个字符。
+        /// Container Service Name. Length: 2–63 characters
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// 命名空间。长度限制为2~63个字符。
+        /// Namespace. Length: 2~63 characters
         /// </summary>
         public readonly string? Namespace;
         /// <summary>
-        /// 端口。
+        /// Port
         /// </summary>
         public readonly int? Port;
 

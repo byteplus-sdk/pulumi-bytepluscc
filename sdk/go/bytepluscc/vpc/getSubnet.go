@@ -30,47 +30,47 @@ type LookupSubnetArgs struct {
 
 // A collection of values returned by getSubnet.
 type LookupSubnetResult struct {
-	// 子网所属账户的ID。
+	// ID of the account to which the subnet belongs
 	AccountId string `pulumi:"accountId"`
-	// 子网中可用的IP地址数量。
+	// Number of available IP addresses in the subnet
 	AvailableIpAddressCount int `pulumi:"availableIpAddressCount"`
-	// 子网的IPv4网段。
+	// Subnet IPv4 CIDR block
 	CidrBlock string `pulumi:"cidrBlock"`
-	// 子网的创建时间。
+	// Subnet creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+	// Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
 	Description string `pulumi:"description"`
-	// 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+	// Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
 	EnableIpv6 bool `pulumi:"enableIpv6"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+	// Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
 	Ipv6CidrBlock string `pulumi:"ipv6CidrBlock"`
-	// 该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
+	// Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
 	IsDefault bool `pulumi:"isDefault"`
-	// 子网关联的网络ACL的ID。
+	// ID of the network ACL associated with the subnet
 	NetworkAclId string `pulumi:"networkAclId"`
-	// 子网所在VPC实例所属项目的名称。
+	// Name of the project associated with the VPC instance where the subnet resides
 	ProjectName string `pulumi:"projectName"`
-	// 只读字段，子网IPv6网段。
+	// Read-only field, subnet IPv6 CIDR block
 	ReadIpv6CidrBlock string `pulumi:"readIpv6CidrBlock"`
-	// 路由表信息。
+	// Route table information
 	RouteTable GetSubnetRouteTable `pulumi:"routeTable"`
-	// 子网的状态。1、Pending：表示配置中。2、Available：表示可用。
+	// Subnet status. 1. Pending: Configuring. 2. Available: Available
 	Status string `pulumi:"status"`
-	// 待修改信息的子网的ID。
+	// ID of the subnet whose information is to be modified
 	SubnetId string `pulumi:"subnetId"`
-	// 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+	// Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
 	SubnetName string `pulumi:"subnetName"`
-	// 子网的标签信息。
+	// Subnet tag information
 	Tags []GetSubnetTag `pulumi:"tags"`
-	// 子网下可用IP总数。
+	// Total number of available IPs in the subnet
 	TotalIpv4Count int `pulumi:"totalIpv4Count"`
-	// 子网的更新时间。
+	// Subnet update time
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 子网所属VPC的ID。
+	// ID of the VPC to which the subnet belongs
 	VpcId string `pulumi:"vpcId"`
-	// 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+	// Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -108,32 +108,32 @@ func (o LookupSubnetResultOutput) ToLookupSubnetResultOutputWithContext(ctx cont
 	return o
 }
 
-// 子网所属账户的ID。
+// ID of the account to which the subnet belongs
 func (o LookupSubnetResultOutput) AccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.AccountId }).(pulumi.StringOutput)
 }
 
-// 子网中可用的IP地址数量。
+// Number of available IP addresses in the subnet
 func (o LookupSubnetResultOutput) AvailableIpAddressCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupSubnetResult) int { return v.AvailableIpAddressCount }).(pulumi.IntOutput)
 }
 
-// 子网的IPv4网段。
+// Subnet IPv4 CIDR block
 func (o LookupSubnetResultOutput) CidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.CidrBlock }).(pulumi.StringOutput)
 }
 
-// 子网的创建时间。
+// Subnet creation time
 func (o LookupSubnetResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+// Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
 func (o LookupSubnetResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+// Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
 func (o LookupSubnetResultOutput) EnableIpv6() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupSubnetResult) bool { return v.EnableIpv6 }).(pulumi.BoolOutput)
 }
@@ -143,72 +143,72 @@ func (o LookupSubnetResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+// Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
 func (o LookupSubnetResultOutput) Ipv6CidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.Ipv6CidrBlock }).(pulumi.StringOutput)
 }
 
-// 该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
+// Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
 func (o LookupSubnetResultOutput) IsDefault() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupSubnetResult) bool { return v.IsDefault }).(pulumi.BoolOutput)
 }
 
-// 子网关联的网络ACL的ID。
+// ID of the network ACL associated with the subnet
 func (o LookupSubnetResultOutput) NetworkAclId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.NetworkAclId }).(pulumi.StringOutput)
 }
 
-// 子网所在VPC实例所属项目的名称。
+// Name of the project associated with the VPC instance where the subnet resides
 func (o LookupSubnetResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 只读字段，子网IPv6网段。
+// Read-only field, subnet IPv6 CIDR block
 func (o LookupSubnetResultOutput) ReadIpv6CidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.ReadIpv6CidrBlock }).(pulumi.StringOutput)
 }
 
-// 路由表信息。
+// Route table information
 func (o LookupSubnetResultOutput) RouteTable() GetSubnetRouteTableOutput {
 	return o.ApplyT(func(v LookupSubnetResult) GetSubnetRouteTable { return v.RouteTable }).(GetSubnetRouteTableOutput)
 }
 
-// 子网的状态。1、Pending：表示配置中。2、Available：表示可用。
+// Subnet status. 1. Pending: Configuring. 2. Available: Available
 func (o LookupSubnetResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 待修改信息的子网的ID。
+// ID of the subnet whose information is to be modified
 func (o LookupSubnetResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+// Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
 func (o LookupSubnetResultOutput) SubnetName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.SubnetName }).(pulumi.StringOutput)
 }
 
-// 子网的标签信息。
+// Subnet tag information
 func (o LookupSubnetResultOutput) Tags() GetSubnetTagArrayOutput {
 	return o.ApplyT(func(v LookupSubnetResult) []GetSubnetTag { return v.Tags }).(GetSubnetTagArrayOutput)
 }
 
-// 子网下可用IP总数。
+// Total number of available IPs in the subnet
 func (o LookupSubnetResultOutput) TotalIpv4Count() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupSubnetResult) int { return v.TotalIpv4Count }).(pulumi.IntOutput)
 }
 
-// 子网的更新时间。
+// Subnet update time
 func (o LookupSubnetResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 子网所属VPC的ID。
+// ID of the VPC to which the subnet belongs
 func (o LookupSubnetResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+// Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
 func (o LookupSubnetResultOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.ZoneId }).(pulumi.StringOutput)
 }

@@ -21,14 +21,14 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
     public static final PolicyArgs Empty = new PolicyArgs();
 
     /**
-     * 策略描述，长度不超过128。
+     * Policy description, no more than 128 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 策略描述，长度不超过128。
+     * @return Policy description, no more than 128 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -36,14 +36,14 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 策略语法内容，例如：{&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
+     * Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
      * 
      */
     @Import(name="policyDocument", required=true)
     private Output<String> policyDocument;
 
     /**
-     * @return 策略语法内容，例如：{&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
+     * @return Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
      * 
      */
     public Output<String> policyDocument() {
@@ -51,14 +51,14 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 策略名，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+     * Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
      * 
      */
     @Import(name="policyName", required=true)
     private Output<String> policyName;
 
     /**
-     * @return 策略名，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+     * @return Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
      * 
      */
     public Output<String> policyName() {
@@ -73,14 +73,14 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      * 
      */
     @Import(name="policyType", required=true)
     private Output<String> policyType;
 
     /**
-     * @return 策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      * 
      */
     public Output<String> policyType() {
@@ -132,7 +132,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 策略描述，长度不超过128。
+         * @param description Policy description, no more than 128 characters.
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 策略描述，长度不超过128。
+         * @param description Policy description, no more than 128 characters.
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyDocument 策略语法内容，例如：{&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
+         * @param policyDocument Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyDocument 策略语法内容，例如：{&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
+         * @param policyDocument Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyName 策略名，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+         * @param policyName Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyName 策略名，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+         * @param policyName Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
          * 
          * @return builder
          * 
@@ -208,7 +208,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyType 策略类型。System代表系统预设策略，Custom代表自定义策略。
+         * @param policyType Policy type. System indicates a system preset policy; Custom indicates a custom policy.
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyType 策略类型。System代表系统预设策略，Custom代表自定义策略。
+         * @param policyType Policy type. System indicates a system preset policy; Custom indicates a custom policy.
          * 
          * @return builder
          * 

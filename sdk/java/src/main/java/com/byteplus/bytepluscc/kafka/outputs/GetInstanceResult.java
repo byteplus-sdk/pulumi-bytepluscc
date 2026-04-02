@@ -17,32 +17,32 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceResult {
     /**
-     * @return 创建实例的主账号 ID。
+     * @return Main account ID for creating the instance.
      * 
      */
     private String accountId;
     /**
-     * @return Kafka 实例的计费类型等计费信息。
+     * @return Billing type and related billing information for the Kafka instance.
      * 
      */
     private GetInstanceChargeInfo chargeInfo;
     /**
-     * @return 实例的计算规格。
+     * @return Instance compute specification.
      * 
      */
     private String computeSpec;
     /**
-     * @return Kafka 实例的连接信息。
+     * @return Connection information for the Kafka instance.
      * 
      */
     private List<GetInstanceConnectionInfo> connectionInfos;
     /**
-     * @return 实例的创建时间，时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * @return Instance creation time. Time format: YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     private String createdTime;
     /**
-     * @return EIP 的 ID。
+     * @return EIP ID.
      * 
      */
     private String eipId;
@@ -52,174 +52,174 @@ public final class GetInstanceResult {
      */
     private String id;
     /**
-     * @return Kafka 实例的简单描述。长度范围为 1~128 个字符。
+     * @return Brief description of the Kafka instance. Length must be between 1 and 128 characters.
      * 
      */
     private String instanceDescription;
     /**
-     * @return Kafka 实例的 ID。
+     * @return Kafka instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return Kafka 实例的名称。只能包含中文、字母、数字、下划线（_）和连字符（-）。不能以数字和连字符（-）开头。长度范围为 1~128 个字符。
+     * @return Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     private String instanceName;
     /**
-     * @return Kafka 实例的状态。Error：错误, Deleting：删除中, Creating：部署中, Upgrading：升级中, Updating：变更中, Running：运行中, Scaling：更配中, Rebuilding：重建中, Destroying：销毁中, Restarting：重启中, Migrating：迁移中, Restoring：恢复中, Importing：导入中, NetCreating：申请公网中, NetReleasing：释放公网中, Rollingback：回滚中, CreateFailed：创建失败, UpgradeFailed：升级失败, ScaleFailed：更配失败, RestartFailed：重启失败
+     * @return Status of the Kafka instance. Error: error, Deleting: deleting, Creating: deploying, Upgrading: upgrading, Updating: updating, Running: running, Scaling: scaling, Rebuilding: rebuilding, Destroying: destroying, Restarting: restarting, Migrating: migrating, Restoring: restoring, Importing: importing, NetCreating: applying for public network, NetReleasing: releasing public network, Rollingback: rolling back, CreateFailed: creation failed, UpgradeFailed: upgrade failed, ScaleFailed: scaling failed, RestartFailed: restart failed
      * 
      */
     private String instanceStatus;
     /**
-     * @return 实例绑定的白名单 ID 列表。绑定白名单后，仅配置在白名单中的 IP 地址与地址段才能访问此实例。若未设置此参数，新 Kafka 实例将绑定白名单 default，对应 IP 地址为 0.0.0.0，表示允许所有地址访问该 Kafka 实例。
+     * @return List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist &#39;default&#39;, with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
      * 
      */
     private List<String> ipWhiteLists;
     /**
-     * @return 是否开启再均衡。
+     * @return Whether to enable rebalancing.
      * 
      */
     private Boolean needRebalance;
     /**
-     * @return Kafka 实例的初始参数配置,格式为json,参数列表: 最大消息大小(MessageMaxByte)1-12MB 默认10, 消息保留时间(LogRetentionHours)0-2160Hour 默认72, 消费位点保留时长(OffsetRetentionMinutes)1-10080Min 默认4320 消息时间类型(MessageTimestampType)LogAppendTime/CreateTime 消息写入到服务端时间、producer创建消息时间。
+     * @return Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
      * 
      */
     private String parameters;
     /**
-     * @return 分区数量。
+     * @return Number of partitions.
      * 
      */
     private Integer partitionNumber;
     /**
-     * @return 是否开启公网解析。
+     * @return Whether to enable public network domain resolution.
      * 
      */
     private Boolean privateDomainOnPublic;
     /**
-     * @return 当前创建的 Kafka 实例所属的 IAM 项目。
+     * @return IAM project to which the currently created Kafka instance belongs.
      * 
      */
     private String projectName;
     /**
-     * @return 实例的存储空间，单位为 GiB, 必须指定为 100 的倍数。
+     * @return Instance storage space, measured in GiB, must be specified as a multiple of 100.
      * 
      */
     private Integer storageSpace;
     /**
-     * @return Kafka 实例数据存储的云盘类型。可设置为 ESSD*FlexPL 或 ESSD*PL0，默认为 ESSD_FlexPL。
+     * @return Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
      * 
      */
     private String storageType;
     /**
-     * @return 实例所在的 VPC 子网 ID。
+     * @return VPC subnet ID where the instance is located.
      * 
      */
     private String subnetId;
     /**
-     * @return 云资源标签。可以将实例通过标签进行归类，便于实例的搜索和资源聚合。
+     * @return Cloud resource tags. You can categorize instances by tags for easier search and resource aggregation.
      * 
      */
     private List<GetInstanceTag> tags;
     /**
-     * @return 一个 Kafka 实例下的 Topic 列表
+     * @return List of topics under a Kafka instance
      * 
      */
     private List<String> topics;
     /**
-     * @return 当前实例剩余可用消费组个数。
+     * @return The remaining number of available consumer groups for the current instance.
      * 
      */
     private Integer usableGroupNumber;
     /**
-     * @return 当前实例剩余可用分区数。
+     * @return Number of available partitions remaining for the current instance.
      * 
      */
     private Integer usablePartitionNumber;
     /**
-     * @return 当前实例已经创建的消费组(Group)个数。
+     * @return Number of consumer groups (Group) currently created in the instance.
      * 
      */
     private Integer usedGroupNumber;
     /**
-     * @return 当前实例已经使用的分区个数。
+     * @return Number of partitions currently used by the instance.
      * 
      */
     private Integer usedPartitionNumber;
     /**
-     * @return 实例已用储空间，单位为 GiB。
+     * @return Used storage space of the instance, measured in GiB.
      * 
      */
     private Integer usedStorageSpace;
     /**
-     * @return 当前实例已创建的 Topic 个数。
+     * @return Number of topics created in the current instance.
      * 
      */
     private Integer usedTopicNumber;
     /**
-     * @return SASL/PLAIN 用户名称，需要满足以下要求: 1.由小写字母、数字、连字符（-）或下划线组成。2.长度为 3~64 个字符。3.用户名不支持设置为 admin 或 monitor,且实例内用户名称唯一。
+     * @return SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
      * 
      */
     private String userName;
     /**
-     * @return SASL/PLAIN 用户的密码，需要满足以下要求: 1.长度在8到32个字符 2.由大写字母、小写字母、数字、特殊字符中的任意三种组成 3.支持的特殊字符包括 !{@literal @}#$%^&amp;*()_+-=。
+     * @return Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !{@literal @}#$%^&amp;*()_+-=
      * 
      */
     private String userPassword;
     /**
-     * @return 支持的 Kafka 版本，当前支持的版本包括 2.2.2, 2.8.2。
+     * @return Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
      * 
      */
     private String version;
     /**
-     * @return 实例所在的私有网络 (VPC) ID。
+     * @return Private network (VPC) ID where the instance is located.
      * 
      */
     private String vpcId;
     /**
-     * @return 实例所在的可用区 ID。消息队列 Kafka版实例支持跨 AZ 部署, 多个可用区ID之间以逗号间隔。
+     * @return Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
      * 
      */
     private String zoneId;
 
     private GetInstanceResult() {}
     /**
-     * @return 创建实例的主账号 ID。
+     * @return Main account ID for creating the instance.
      * 
      */
     public String accountId() {
         return this.accountId;
     }
     /**
-     * @return Kafka 实例的计费类型等计费信息。
+     * @return Billing type and related billing information for the Kafka instance.
      * 
      */
     public GetInstanceChargeInfo chargeInfo() {
         return this.chargeInfo;
     }
     /**
-     * @return 实例的计算规格。
+     * @return Instance compute specification.
      * 
      */
     public String computeSpec() {
         return this.computeSpec;
     }
     /**
-     * @return Kafka 实例的连接信息。
+     * @return Connection information for the Kafka instance.
      * 
      */
     public List<GetInstanceConnectionInfo> connectionInfos() {
         return this.connectionInfos;
     }
     /**
-     * @return 实例的创建时间，时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * @return Instance creation time. Time format: YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return EIP 的 ID。
+     * @return EIP ID.
      * 
      */
     public String eipId() {
@@ -233,182 +233,182 @@ public final class GetInstanceResult {
         return this.id;
     }
     /**
-     * @return Kafka 实例的简单描述。长度范围为 1~128 个字符。
+     * @return Brief description of the Kafka instance. Length must be between 1 and 128 characters.
      * 
      */
     public String instanceDescription() {
         return this.instanceDescription;
     }
     /**
-     * @return Kafka 实例的 ID。
+     * @return Kafka instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return Kafka 实例的名称。只能包含中文、字母、数字、下划线（_）和连字符（-）。不能以数字和连字符（-）开头。长度范围为 1~128 个字符。
+     * @return Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return Kafka 实例的状态。Error：错误, Deleting：删除中, Creating：部署中, Upgrading：升级中, Updating：变更中, Running：运行中, Scaling：更配中, Rebuilding：重建中, Destroying：销毁中, Restarting：重启中, Migrating：迁移中, Restoring：恢复中, Importing：导入中, NetCreating：申请公网中, NetReleasing：释放公网中, Rollingback：回滚中, CreateFailed：创建失败, UpgradeFailed：升级失败, ScaleFailed：更配失败, RestartFailed：重启失败
+     * @return Status of the Kafka instance. Error: error, Deleting: deleting, Creating: deploying, Upgrading: upgrading, Updating: updating, Running: running, Scaling: scaling, Rebuilding: rebuilding, Destroying: destroying, Restarting: restarting, Migrating: migrating, Restoring: restoring, Importing: importing, NetCreating: applying for public network, NetReleasing: releasing public network, Rollingback: rolling back, CreateFailed: creation failed, UpgradeFailed: upgrade failed, ScaleFailed: scaling failed, RestartFailed: restart failed
      * 
      */
     public String instanceStatus() {
         return this.instanceStatus;
     }
     /**
-     * @return 实例绑定的白名单 ID 列表。绑定白名单后，仅配置在白名单中的 IP 地址与地址段才能访问此实例。若未设置此参数，新 Kafka 实例将绑定白名单 default，对应 IP 地址为 0.0.0.0，表示允许所有地址访问该 Kafka 实例。
+     * @return List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist &#39;default&#39;, with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
      * 
      */
     public List<String> ipWhiteLists() {
         return this.ipWhiteLists;
     }
     /**
-     * @return 是否开启再均衡。
+     * @return Whether to enable rebalancing.
      * 
      */
     public Boolean needRebalance() {
         return this.needRebalance;
     }
     /**
-     * @return Kafka 实例的初始参数配置,格式为json,参数列表: 最大消息大小(MessageMaxByte)1-12MB 默认10, 消息保留时间(LogRetentionHours)0-2160Hour 默认72, 消费位点保留时长(OffsetRetentionMinutes)1-10080Min 默认4320 消息时间类型(MessageTimestampType)LogAppendTime/CreateTime 消息写入到服务端时间、producer创建消息时间。
+     * @return Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
      * 
      */
     public String parameters() {
         return this.parameters;
     }
     /**
-     * @return 分区数量。
+     * @return Number of partitions.
      * 
      */
     public Integer partitionNumber() {
         return this.partitionNumber;
     }
     /**
-     * @return 是否开启公网解析。
+     * @return Whether to enable public network domain resolution.
      * 
      */
     public Boolean privateDomainOnPublic() {
         return this.privateDomainOnPublic;
     }
     /**
-     * @return 当前创建的 Kafka 实例所属的 IAM 项目。
+     * @return IAM project to which the currently created Kafka instance belongs.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 实例的存储空间，单位为 GiB, 必须指定为 100 的倍数。
+     * @return Instance storage space, measured in GiB, must be specified as a multiple of 100.
      * 
      */
     public Integer storageSpace() {
         return this.storageSpace;
     }
     /**
-     * @return Kafka 实例数据存储的云盘类型。可设置为 ESSD*FlexPL 或 ESSD*PL0，默认为 ESSD_FlexPL。
+     * @return Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
      * 
      */
     public String storageType() {
         return this.storageType;
     }
     /**
-     * @return 实例所在的 VPC 子网 ID。
+     * @return VPC subnet ID where the instance is located.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return 云资源标签。可以将实例通过标签进行归类，便于实例的搜索和资源聚合。
+     * @return Cloud resource tags. You can categorize instances by tags for easier search and resource aggregation.
      * 
      */
     public List<GetInstanceTag> tags() {
         return this.tags;
     }
     /**
-     * @return 一个 Kafka 实例下的 Topic 列表
+     * @return List of topics under a Kafka instance
      * 
      */
     public List<String> topics() {
         return this.topics;
     }
     /**
-     * @return 当前实例剩余可用消费组个数。
+     * @return The remaining number of available consumer groups for the current instance.
      * 
      */
     public Integer usableGroupNumber() {
         return this.usableGroupNumber;
     }
     /**
-     * @return 当前实例剩余可用分区数。
+     * @return Number of available partitions remaining for the current instance.
      * 
      */
     public Integer usablePartitionNumber() {
         return this.usablePartitionNumber;
     }
     /**
-     * @return 当前实例已经创建的消费组(Group)个数。
+     * @return Number of consumer groups (Group) currently created in the instance.
      * 
      */
     public Integer usedGroupNumber() {
         return this.usedGroupNumber;
     }
     /**
-     * @return 当前实例已经使用的分区个数。
+     * @return Number of partitions currently used by the instance.
      * 
      */
     public Integer usedPartitionNumber() {
         return this.usedPartitionNumber;
     }
     /**
-     * @return 实例已用储空间，单位为 GiB。
+     * @return Used storage space of the instance, measured in GiB.
      * 
      */
     public Integer usedStorageSpace() {
         return this.usedStorageSpace;
     }
     /**
-     * @return 当前实例已创建的 Topic 个数。
+     * @return Number of topics created in the current instance.
      * 
      */
     public Integer usedTopicNumber() {
         return this.usedTopicNumber;
     }
     /**
-     * @return SASL/PLAIN 用户名称，需要满足以下要求: 1.由小写字母、数字、连字符（-）或下划线组成。2.长度为 3~64 个字符。3.用户名不支持设置为 admin 或 monitor,且实例内用户名称唯一。
+     * @return SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
      * 
      */
     public String userName() {
         return this.userName;
     }
     /**
-     * @return SASL/PLAIN 用户的密码，需要满足以下要求: 1.长度在8到32个字符 2.由大写字母、小写字母、数字、特殊字符中的任意三种组成 3.支持的特殊字符包括 !{@literal @}#$%^&amp;*()_+-=。
+     * @return Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !{@literal @}#$%^&amp;*()_+-=
      * 
      */
     public String userPassword() {
         return this.userPassword;
     }
     /**
-     * @return 支持的 Kafka 版本，当前支持的版本包括 2.2.2, 2.8.2。
+     * @return Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
      * 
      */
     public String version() {
         return this.version;
     }
     /**
-     * @return 实例所在的私有网络 (VPC) ID。
+     * @return Private network (VPC) ID where the instance is located.
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return 实例所在的可用区 ID。消息队列 Kafka版实例支持跨 AZ 部署, 多个可用区ID之间以逗号间隔。
+     * @return Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
      * 
      */
     public String zoneId() {

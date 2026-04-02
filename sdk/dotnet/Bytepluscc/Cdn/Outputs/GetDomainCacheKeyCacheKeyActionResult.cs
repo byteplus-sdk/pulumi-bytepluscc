@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainCacheKeyCacheKeyActionResult
     {
         /// <summary>
-        /// 表示一个操作配置的列表。当前您仅可设置一个操作配置。
+        /// Indicates a list of operation configurations. Currently, you can only set one operation configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainCacheKeyCacheKeyActionCacheKeyComponentResult> CacheKeyComponents;
 

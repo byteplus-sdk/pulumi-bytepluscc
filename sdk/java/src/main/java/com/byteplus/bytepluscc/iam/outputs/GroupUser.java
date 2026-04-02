@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GroupUser {
     /**
-     * @return 用户名。
+     * @return Username.
      * 
      */
     private @Nullable String userName;
 
     private GroupUser() {}
     /**
-     * @return 用户名。
+     * @return Username.
      * 
      */
     public Optional<String> userName() {

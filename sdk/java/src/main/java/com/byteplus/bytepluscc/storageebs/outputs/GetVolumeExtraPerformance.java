@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetVolumeExtraPerformance {
     /**
-     * @return 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+     * @return Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
      * 
      */
     private String extraPerformanceTypeId;
     /**
-     * @return 云盘的额外IOPS。
+     * @return Extra IOPS of the disk.
      * 
      */
     private Double iops;
     /**
-     * @return 云盘的额外吞吐量。
+     * @return Extra throughput of the disk.
      * 
      */
     private Double throughput;
 
     private GetVolumeExtraPerformance() {}
     /**
-     * @return 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+     * @return Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
      * 
      */
     public String extraPerformanceTypeId() {
         return this.extraPerformanceTypeId;
     }
     /**
-     * @return 云盘的额外IOPS。
+     * @return Extra IOPS of the disk.
      * 
      */
     public Double iops() {
         return this.iops;
     }
     /**
-     * @return 云盘的额外吞吐量。
+     * @return Extra throughput of the disk.
      * 
      */
     public Double throughput() {

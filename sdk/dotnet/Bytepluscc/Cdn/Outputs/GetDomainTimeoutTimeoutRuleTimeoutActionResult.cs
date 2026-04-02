@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainTimeoutTimeoutRuleTimeoutActionResult
     {
         /// <summary>
-        /// 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+        /// Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
         /// </summary>
         public readonly int HttpTimeout;
         /// <summary>
-        /// 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+        /// Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
         /// </summary>
         public readonly int TcpTimeout;
 

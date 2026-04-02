@@ -31,79 +31,79 @@ export interface GetBackupArgs {
  */
 export interface GetBackupResult {
     /**
-     * 备份创建结束时间（UTC）。
+     * Backup creation end time (UTC)
      */
     readonly backupEndTime: string;
     /**
-     * 备份文件名。
+     * Backup file name
      */
     readonly backupFileName: string;
     /**
-     * 备份文件大小，单位为字节。
+     * Backup file size (bytes)
      */
     readonly backupFileSize: number;
     /**
-     * 备份 ID。
+     * Backup ID
      */
     readonly backupId: string;
     /**
-     * 创建逻辑备份类型的库表备份时，用于指定要备份的库表信息。
+     * When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
      */
     readonly backupMetas: outputs.rdsmysql.GetBackupBackupMeta[];
     /**
-     * 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+     * Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
      */
     readonly backupMethod: string;
     /**
-     * 备份的名称。
+     * Backup name
      */
     readonly backupName: string;
     /**
-     * 备份所在区域。
+     * Backup region
      */
     readonly backupRegion: string;
     /**
-     * 备份创建开始时间（UTC）。
+     * Backup creation start time (UTC)
      */
     readonly backupStartTime: string;
     /**
-     * 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+     * Backup status. Values: Success, Failed, Running
      */
     readonly backupStatus: string;
     /**
-     * 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+     * Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
      */
     readonly backupType: string;
     /**
-     * 一致性时间点。
+     * Consistency time point
      */
     readonly consistentTime: string;
     /**
-     * 备份创建者，取值：System（系统）、User（用户）。
+     * Backup creator. Values: System (system), User (user)
      */
     readonly createType: string;
     /**
-     * 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
      */
     readonly dbEngineVersion: string;
     /**
-     * 库表信息列表。
+     * Database and table information list
      */
     readonly dbTableInfos: outputs.rdsmysql.GetBackupDbTableInfo[];
     /**
-     * 下载状态。
+     * Download status
      */
     readonly downloadStatus: string;
     /**
-     * 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+     * Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
      */
     readonly engineType: string;
     /**
-     * 备份失败的错误信息。
+     * Error message for backup failure
      */
     readonly errorMessage: string;
     /**
-     * 备份过期时间（UTC）。
+     * Backup expiration time (UTC)
      */
     readonly expiredTime: string;
     /**
@@ -111,15 +111,15 @@ export interface GetBackupResult {
      */
     readonly id: string;
     /**
-     * 实例 ID。
+     * Instance ID
      */
     readonly instanceId: string;
     /**
-     * 是否加密。
+     * Whether encrypted
      */
     readonly isEncrypted: boolean;
     /**
-     * 是否已过期。
+     * Whether expired
      */
     readonly isExpired: boolean;
 }

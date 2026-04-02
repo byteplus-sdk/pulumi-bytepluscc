@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class EniTag {
     /**
-     * @return 用户标签的标签键。
+     * @return Tag key for the user tag.
      * 
      */
     private @Nullable String key;
     /**
-     * @return 用户标签的标签值。
+     * @return Tag value for the user tag.
      * 
      */
     private @Nullable String value;
 
     private EniTag() {}
     /**
-     * @return 用户标签的标签键。
+     * @return Tag key for the user tag.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 用户标签的标签值。
+     * @return Tag value for the user tag.
      * 
      */
     public Optional<String> value() {

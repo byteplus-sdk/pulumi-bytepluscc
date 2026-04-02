@@ -27,7 +27,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 云数据库 MySQL 版是火山引擎基于开源数据库 MySQL 打造的弹性、可靠的在线关系型数据库服务。 MySQL 实例使用云原生方式部署，结合本地 SSD 存储类型，提供高性能读写能力；完全兼容 MySQL 引擎，并提供实例管理、备份恢复、日志管理、监控告警、数据迁移等全套解决方案，帮助企业简化繁杂的数据库管理和运维任务，使企业有更多的时间与资源聚焦于自己的核心业务。
+ * Volcano Engine Cloud Database MySQL Edition is an elastic and reliable online relational database service built on the open-source MySQL database. MySQL instances are deployed using cloud-native methods and local SSD storage, delivering high-performance read and write capabilities. The service is fully compatible with the MySQL engine and offers a complete suite of solutions, including instance management, backup and recovery, log management, monitoring and alerts, and data migration. This helps enterprises simplify complex database management and operations, allowing them to focus more time and resources on their core business.
  * 
  * ## Example Usage
  * 
@@ -50,308 +50,308 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.addressObjects;
     }
     /**
-     * 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+     * Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
      * 
      */
     @Export(name="allowListIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowListIds;
 
     /**
-     * @return 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+     * @return Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
      * 
      */
     public Output<List<String>> allowListIds() {
         return this.allowListIds;
     }
     /**
-     * 白名单版本。
+     * Allowlist version
      * 
      */
     @Export(name="allowListVersion", refs={String.class}, tree="[0]")
     private Output<String> allowListVersion;
 
     /**
-     * @return 白名单版本。
+     * @return Allowlist version
      * 
      */
     public Output<String> allowListVersion() {
         return this.allowListVersion;
     }
     /**
-     * 自动扩容配置。
+     * Auto scaling configuration
      * 
      */
     @Export(name="autoStorageScalingConfig", refs={InstanceAutoStorageScalingConfig.class}, tree="[0]")
     private Output<InstanceAutoStorageScalingConfig> autoStorageScalingConfig;
 
     /**
-     * @return 自动扩容配置。
+     * @return Auto scaling configuration
      * 
      */
     public Output<InstanceAutoStorageScalingConfig> autoStorageScalingConfig() {
         return this.autoStorageScalingConfig;
     }
     /**
-     * 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+     * Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
      * 
      */
     @Export(name="autoUpgradeMinorVersion", refs={String.class}, tree="[0]")
     private Output<String> autoUpgradeMinorVersion;
 
     /**
-     * @return 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+     * @return Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
      * 
      */
     public Output<String> autoUpgradeMinorVersion() {
         return this.autoUpgradeMinorVersion;
     }
     /**
-     * 备份中审计日志使用的空间。
+     * Space used by audit logs in backup.
      * 
      */
     @Export(name="backupAuditLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupAuditLogSize;
 
     /**
-     * @return 备份中审计日志使用的空间。
+     * @return Space used by audit logs in backup.
      * 
      */
     public Output<Integer> backupAuditLogSize() {
         return this.backupAuditLogSize;
     }
     /**
-     * 备份中 Binlog 日志使用的空间。
+     * Space used by binlog logs in backup.
      * 
      */
     @Export(name="backupBinLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupBinLogSize;
 
     /**
-     * @return 备份中 Binlog 日志使用的空间。
+     * @return Space used by binlog logs in backup.
      * 
      */
     public Output<Integer> backupBinLogSize() {
         return this.backupBinLogSize;
     }
     /**
-     * 备份中数据使用的空间。
+     * Space used by data in backup.
      * 
      */
     @Export(name="backupDataSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupDataSize;
 
     /**
-     * @return 备份中数据使用的空间。
+     * @return Space used by data in backup.
      * 
      */
     public Output<Integer> backupDataSize() {
         return this.backupDataSize;
     }
     /**
-     * 备份中错误日志使用的空间。
+     * Space used by error logs in backups.
      * 
      */
     @Export(name="backupErrorLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupErrorLogSize;
 
     /**
-     * @return 备份中错误日志使用的空间。
+     * @return Space used by error logs in backups.
      * 
      */
     public Output<Integer> backupErrorLogSize() {
         return this.backupErrorLogSize;
     }
     /**
-     * 免费的备份存储空间，单位为 GB。
+     * Free backup storage space, in GB
      * 
      */
     @Export(name="backupFreeQuotaSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupFreeQuotaSize;
 
     /**
-     * @return 免费的备份存储空间，单位为 GB。
+     * @return Free backup storage space, in GB
      * 
      */
     public Output<Integer> backupFreeQuotaSize() {
         return this.backupFreeQuotaSize;
     }
     /**
-     * 备份中日志使用的空间。
+     * Space used by logs in backups.
      * 
      */
     @Export(name="backupLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupLogSize;
 
     /**
-     * @return 备份中日志使用的空间。
+     * @return Space used by logs in backups.
      * 
      */
     public Output<Integer> backupLogSize() {
         return this.backupLogSize;
     }
     /**
-     * 备份中慢日志使用的空间。
+     * Space used by slow logs in backups.
      * 
      */
     @Export(name="backupSlowLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupSlowLogSize;
 
     /**
-     * @return 备份中慢日志使用的空间。
+     * @return Space used by slow logs in backups.
      * 
      */
     public Output<Integer> backupSlowLogSize() {
         return this.backupSlowLogSize;
     }
     /**
-     * 实例的备份已使用的空间，单位为 GB。
+     * Backup space used by the instance, in GB
      * 
      */
     @Export(name="backupUse", refs={Double.class}, tree="[0]")
     private Output<Double> backupUse;
 
     /**
-     * @return 实例的备份已使用的空间，单位为 GB。
+     * @return Backup space used by the instance, in GB
      * 
      */
     public Output<Double> backupUse() {
         return this.backupUse;
     }
     /**
-     * 基础备份中 Binlog 日志使用的空间。
+     * Space used by Binlog logs in basic backups.
      * 
      */
     @Export(name="basicBackupBinlogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> basicBackupBinlogSize;
 
     /**
-     * @return 基础备份中 Binlog 日志使用的空间。
+     * @return Space used by Binlog logs in basic backups.
      * 
      */
     public Output<Integer> basicBackupBinlogSize() {
         return this.basicBackupBinlogSize;
     }
     /**
-     * 基础备份中数据使用的空间。
+     * Space used by data in the base backup
      * 
      */
     @Export(name="basicBackupDataSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> basicBackupDataSize;
 
     /**
-     * @return 基础备份中数据使用的空间。
+     * @return Space used by data in the base backup
      * 
      */
     public Output<Integer> basicBackupDataSize() {
         return this.basicBackupDataSize;
     }
     /**
-     * 付费方式。
+     * Billing method
      * 
      */
     @Export(name="chargeDetail", refs={InstanceChargeDetail.class}, tree="[0]")
     private Output<InstanceChargeDetail> chargeDetail;
 
     /**
-     * @return 付费方式。
+     * @return Billing method
      * 
      */
     public Output<InstanceChargeDetail> chargeDetail() {
         return this.chargeDetail;
     }
     /**
-     * 实例数据库代理服务的 CPU 核数。
+     * Number of CPU cores for the database proxy service of the instance
      * 
      */
     @Export(name="cpuNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuNum;
 
     /**
-     * @return 实例数据库代理服务的 CPU 核数。
+     * @return Number of CPU cores for the database proxy service of the instance
      * 
      */
     public Output<Integer> cpuNum() {
         return this.cpuNum;
     }
     /**
-     * 实例创建本地时间。
+     * Instance creation local time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 实例创建本地时间。
+     * @return Instance creation local time.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 实例的内核小版本。
+     * Instance kernel minor version.
      * 
      */
     @Export(name="currentKernelVersion", refs={String.class}, tree="[0]")
     private Output<String> currentKernelVersion;
 
     /**
-     * @return 实例的内核小版本。
+     * @return Instance kernel minor version.
      * 
      */
     public Output<String> currentKernelVersion() {
         return this.currentKernelVersion;
     }
     /**
-     * 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
      * 
      */
     @Export(name="dbEngineVersion", refs={String.class}, tree="[0]")
     private Output<String> dbEngineVersion;
 
     /**
-     * @return 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * @return Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
      * 
      */
     public Output<String> dbEngineVersion() {
         return this.dbEngineVersion;
     }
     /**
-     * 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+     * Parameter template ID. Default value is the default parameter template for the database engine version
      * 
      */
     @Export(name="dbParamGroupId", refs={String.class}, tree="[0]")
     private Output<String> dbParamGroupId;
 
     /**
-     * @return 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+     * @return Parameter template ID. Default value is the default parameter template for the database engine version
      * 
      */
     public Output<String> dbParamGroupId() {
         return this.dbParamGroupId;
     }
     /**
-     * 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+     * Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
      * 
      */
     @Export(name="dbTimeZone", refs={String.class}, tree="[0]")
     private Output<String> dbTimeZone;
 
     /**
-     * @return 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+     * @return Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
      * 
      */
     public Output<String> dbTimeZone() {
         return this.dbTimeZone;
     }
     /**
-     * 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+     * Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
      * 
      */
     @Export(name="deletionProtection", refs={String.class}, tree="[0]")
     private Output<String> deletionProtection;
 
     /**
-     * @return 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+     * @return Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
      * 
      */
     public Output<String> deletionProtection() {
@@ -364,56 +364,56 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.disasterRecoveryInstances;
     }
     /**
-     * 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+     * ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
      * 
      */
     @Export(name="drDtsTaskId", refs={String.class}, tree="[0]")
     private Output<String> drDtsTaskId;
 
     /**
-     * @return 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+     * @return ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
      * 
      */
     public Output<String> drDtsTaskId() {
         return this.drDtsTaskId;
     }
     /**
-     * 主实例与灾备实例之间同步任务的名称。
+     * Name of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     @Export(name="drDtsTaskName", refs={String.class}, tree="[0]")
     private Output<String> drDtsTaskName;
 
     /**
-     * @return 主实例与灾备实例之间同步任务的名称。
+     * @return Name of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     public Output<String> drDtsTaskName() {
         return this.drDtsTaskName;
     }
     /**
-     * 主实例与灾备实例之间同步任务的状态。
+     * Status of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     @Export(name="drDtsTaskStatus", refs={String.class}, tree="[0]")
     private Output<String> drDtsTaskStatus;
 
     /**
-     * @return 主实例与灾备实例之间同步任务的状态。
+     * @return Status of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     public Output<String> drDtsTaskStatus() {
         return this.drDtsTaskStatus;
     }
     /**
-     * 灾备实例与主实例之间的时延。
+     * Latency between the disaster recovery instance and the primary instance.
      * 
      */
     @Export(name="drSecondsBehindMaster", refs={Integer.class}, tree="[0]")
     private Output<Integer> drSecondsBehindMaster;
 
     /**
-     * @return 灾备实例与主实例之间的时延。
+     * @return Latency between the disaster recovery instance and the primary instance.
      * 
      */
     public Output<Integer> drSecondsBehindMaster() {
@@ -426,238 +426,238 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.endpoints;
     }
     /**
-     * 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+     * Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      * 
      */
     @Export(name="globalReadOnly", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> globalReadOnly;
 
     /**
-     * @return 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+     * @return Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      * 
      */
     public Output<Boolean> globalReadOnly() {
         return this.globalReadOnly;
     }
     /**
-     * 实例是否有灾备实例。取值：true：是。false：否。
+     * Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
      * 
      */
     @Export(name="hasDisasterRecoveryInstances", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> hasDisasterRecoveryInstances;
 
     /**
-     * @return 实例是否有灾备实例。取值：true：是。false：否。
+     * @return Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
      * 
      */
     public Output<Boolean> hasDisasterRecoveryInstances() {
         return this.hasDisasterRecoveryInstances;
     }
     /**
-     * 实例是否处于蓝绿部署中。取值：true：是。false：否。
+     * Is the instance in blue-green deployment? Values: true: yes. false: no.
      * 
      */
     @Export(name="hasGreenInstance", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> hasGreenInstance;
 
     /**
-     * @return 实例是否处于蓝绿部署中。取值：true：是。false：否。
+     * @return Is the instance in blue-green deployment? Values: true: yes. false: no.
      * 
      */
     public Output<Boolean> hasGreenInstance() {
         return this.hasGreenInstance;
     }
     /**
-     * 实例 ID。
+     * Instance ID.
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * 实例名称。
+     * Instance name.
      * 
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
-     * @return 实例名称。
+     * @return Instance name.
      * 
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
-     * 实例状态。
+     * Instance status.
      * 
      */
     @Export(name="instanceStatus", refs={String.class}, tree="[0]")
     private Output<String> instanceStatus;
 
     /**
-     * @return 实例状态。
+     * @return Instance status.
      * 
      */
     public Output<String> instanceStatus() {
         return this.instanceStatus;
     }
     /**
-     * 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+     * Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
      * 
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
-     * @return 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+     * @return Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
      * 
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
-     * 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+     * Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
      * 
      */
     @Export(name="lowerCaseTableNames", refs={String.class}, tree="[0]")
     private Output<String> lowerCaseTableNames;
 
     /**
-     * @return 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+     * @return Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
      * 
      */
     public Output<String> lowerCaseTableNames() {
         return this.lowerCaseTableNames;
     }
     /**
-     * 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+     * Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
      * 
      */
     @Export(name="maintenanceWindow", refs={InstanceMaintenanceWindow.class}, tree="[0]")
     private Output<InstanceMaintenanceWindow> maintenanceWindow;
 
     /**
-     * @return 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+     * @return Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
      * 
      */
     public Output<InstanceMaintenanceWindow> maintenanceWindow() {
         return this.maintenanceWindow;
     }
     /**
-     * 主实例的 ID。
+     * Primary instance ID
      * 
      */
     @Export(name="masterInstanceId", refs={String.class}, tree="[0]")
     private Output<String> masterInstanceId;
 
     /**
-     * @return 主实例的 ID。
+     * @return Primary instance ID
      * 
      */
     public Output<String> masterInstanceId() {
         return this.masterInstanceId;
     }
     /**
-     * 主实例的名称。
+     * Primary instance name.
      * 
      */
     @Export(name="masterInstanceName", refs={String.class}, tree="[0]")
     private Output<String> masterInstanceName;
 
     /**
-     * @return 主实例的名称。
+     * @return Primary instance name.
      * 
      */
     public Output<String> masterInstanceName() {
         return this.masterInstanceName;
     }
     /**
-     * 内存大小。单位：GB。
+     * Memory size. Unit: GB.
      * 
      */
     @Export(name="memory", refs={Integer.class}, tree="[0]")
     private Output<Integer> memory;
 
     /**
-     * @return 内存大小。单位：GB。
+     * @return Memory size. Unit: GB.
      * 
      */
     public Output<Integer> memory() {
         return this.memory;
     }
     /**
-     * 实例主节点 CPU 使用率近一分钟的平均值。
+     * Average CPU usage of the primary node in the instance over the past minute.
      * 
      */
     @Export(name="nodeCpuUsedPercentage", refs={Double.class}, tree="[0]")
     private Output<Double> nodeCpuUsedPercentage;
 
     /**
-     * @return 实例主节点 CPU 使用率近一分钟的平均值。
+     * @return Average CPU usage of the primary node in the instance over the past minute.
      * 
      */
     public Output<Double> nodeCpuUsedPercentage() {
         return this.nodeCpuUsedPercentage;
     }
     /**
-     * 实例主节点内存使用率近一分钟的平均值。
+     * Average memory usage of the primary node over the past minute
      * 
      */
     @Export(name="nodeMemoryUsedPercentage", refs={Double.class}, tree="[0]")
     private Output<Double> nodeMemoryUsedPercentage;
 
     /**
-     * @return 实例主节点内存使用率近一分钟的平均值。
+     * @return Average memory usage of the primary node over the past minute
      * 
      */
     public Output<Double> nodeMemoryUsedPercentage() {
         return this.nodeMemoryUsedPercentage;
     }
     /**
-     * 节点数量。
+     * Number of nodes.
      * 
      */
     @Export(name="nodeNumber", refs={String.class}, tree="[0]")
     private Output<String> nodeNumber;
 
     /**
-     * @return 节点数量。
+     * @return Number of nodes.
      * 
      */
     public Output<String> nodeNumber() {
         return this.nodeNumber;
     }
     /**
-     * 实例主节点磁盘使用率近一分钟的平均值。
+     * Average disk usage of the primary node over the past minute
      * 
      */
     @Export(name="nodeSpaceUsedPercentage", refs={Double.class}, tree="[0]")
     private Output<Double> nodeSpaceUsedPercentage;
 
     /**
-     * @return 实例主节点磁盘使用率近一分钟的平均值。
+     * @return Average disk usage of the primary node over the past minute
      * 
      */
     public Output<Double> nodeSpaceUsedPercentage() {
         return this.nodeSpaceUsedPercentage;
     }
     /**
-     * 节点规格。
+     * Node specifications.
      * 
      */
     @Export(name="nodeSpec", refs={String.class}, tree="[0]")
     private Output<String> nodeSpec;
 
     /**
-     * @return 节点规格。
+     * @return Node specifications.
      * 
      */
     public Output<String> nodeSpec() {
@@ -670,224 +670,224 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.nodes;
     }
     /**
-     * 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+     * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
-     * @return 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+     * @return Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      * 
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
-     * 所属项目。
+     * Project.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 所属项目。
+     * @return Project.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * proxy信息
+     * proxy information
      * 
      */
     @Export(name="proxyDetail", refs={InstanceProxyDetail.class}, tree="[0]")
     private Output<InstanceProxyDetail> proxyDetail;
 
     /**
-     * @return proxy信息
+     * @return proxy information
      * 
      */
     public Output<InstanceProxyDetail> proxyDetail() {
         return this.proxyDetail;
     }
     /**
-     * 实例存储空间中审计日志使用的空间。
+     * Space used by audit logs in instance storage
      * 
      */
     @Export(name="storageAuditLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageAuditLogSize;
 
     /**
-     * @return 实例存储空间中审计日志使用的空间。
+     * @return Space used by audit logs in instance storage
      * 
      */
     public Output<Integer> storageAuditLogSize() {
         return this.storageAuditLogSize;
     }
     /**
-     * 实例存储空间中 Binlog 使用的空间。
+     * Binlog space usage in the instance storage
      * 
      */
     @Export(name="storageBinLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageBinLogSize;
 
     /**
-     * @return 实例存储空间中 Binlog 使用的空间。
+     * @return Binlog space usage in the instance storage
      * 
      */
     public Output<Integer> storageBinLogSize() {
         return this.storageBinLogSize;
     }
     /**
-     * 实例存储空间中数据使用的空间。
+     * Space used by data in instance storage.
      * 
      */
     @Export(name="storageDataSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageDataSize;
 
     /**
-     * @return 实例存储空间中数据使用的空间。
+     * @return Space used by data in instance storage.
      * 
      */
     public Output<Integer> storageDataSize() {
         return this.storageDataSize;
     }
     /**
-     * 实例存储空间中错误日志使用的空间。
+     * Space used by error logs in instance storage.
      * 
      */
     @Export(name="storageErrorLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageErrorLogSize;
 
     /**
-     * @return 实例存储空间中错误日志使用的空间。
+     * @return Space used by error logs in instance storage.
      * 
      */
     public Output<Integer> storageErrorLogSize() {
         return this.storageErrorLogSize;
     }
     /**
-     * 实例存储空间中日志使用的空间。
+     * Space used by logs in the instance storage
      * 
      */
     @Export(name="storageLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageLogSize;
 
     /**
-     * @return 实例存储空间中日志使用的空间。
+     * @return Space used by logs in the instance storage
      * 
      */
     public Output<Integer> storageLogSize() {
         return this.storageLogSize;
     }
     /**
-     * 实例存储空间中慢日志使用的空间。
+     * Space used by slow logs in instance storage
      * 
      */
     @Export(name="storageSlowLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageSlowLogSize;
 
     /**
-     * @return 实例存储空间中慢日志使用的空间。
+     * @return Space used by slow logs in instance storage
      * 
      */
     public Output<Integer> storageSlowLogSize() {
         return this.storageSlowLogSize;
     }
     /**
-     * 实例总存储空间。单位为 GB。
+     * Total storage space of the instance, in GB
      * 
      */
     @Export(name="storageSpace", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageSpace;
 
     /**
-     * @return 实例总存储空间。单位为 GB。
+     * @return Total storage space of the instance, in GB
      * 
      */
     public Output<Integer> storageSpace() {
         return this.storageSpace;
     }
     /**
-     * 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+     * Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
      * 
      */
     @Export(name="storageType", refs={String.class}, tree="[0]")
     private Output<String> storageType;
 
     /**
-     * @return 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+     * @return Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
      * 
      */
     public Output<String> storageType() {
         return this.storageType;
     }
     /**
-     * 实例已使用用存储空间，单位为 GB。
+     * Storage space used by the instance, in GB
      * 
      */
     @Export(name="storageUse", refs={Double.class}, tree="[0]")
     private Output<Double> storageUse;
 
     /**
-     * @return 实例已使用用存储空间，单位为 GB。
+     * @return Storage space used by the instance, in GB
      * 
      */
     public Output<Double> storageUse() {
         return this.storageUse;
     }
     /**
-     * 子网 ID。
+     * Subnet ID.
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return 子网 ID。
+     * @return Subnet ID.
      * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
     /**
-     * 高权限账号名称。不传此参数默认不创建高权限账号。
+     * High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
      * 
      */
     @Export(name="superAccountName", refs={String.class}, tree="[0]")
     private Output<String> superAccountName;
 
     /**
-     * @return 高权限账号名称。不传此参数默认不创建高权限账号。
+     * @return High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
      * 
      */
     public Output<String> superAccountName() {
         return this.superAccountName;
     }
     /**
-     * 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+     * Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
      * 
      */
     @Export(name="superAccountPassword", refs={String.class}, tree="[0]")
     private Output<String> superAccountPassword;
 
     /**
-     * @return 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+     * @return Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
      * 
      */
     public Output<String> superAccountPassword() {
         return this.superAccountPassword;
     }
     /**
-     * 数据同步方式：SemiSync：半同步。Async：异步。
+     * Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
      * 
      */
     @Export(name="syncMode", refs={String.class}, tree="[0]")
     private Output<String> syncMode;
 
     /**
-     * @return 数据同步方式：SemiSync：半同步。Async：异步。
+     * @return Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
      * 
      */
     public Output<String> syncMode() {
@@ -900,84 +900,84 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 时区。
+     * Time zone
      * 
      */
     @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     /**
-     * @return 时区。
+     * @return Time zone
      * 
      */
     public Output<String> timeZone() {
         return this.timeZone;
     }
     /**
-     * 实例更新本地时间。
+     * Instance updates local time.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 实例更新本地时间。
+     * @return Instance updates local time.
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * CPU 大小。例如：1 表示 1U。
+     * CPU size. For example: 1 means 1U.
      * 
      */
     @Export(name="vcpu", refs={Integer.class}, tree="[0]")
     private Output<Integer> vcpu;
 
     /**
-     * @return CPU 大小。例如：1 表示 1U。
+     * @return CPU size. For example: 1 means 1U.
      * 
      */
     public Output<Integer> vcpu() {
         return this.vcpu;
     }
     /**
-     * 专有网络（VPC） ID。
+     * VPC (Virtual Private Cloud) ID.
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 专有网络（VPC） ID。
+     * @return VPC (Virtual Private Cloud) ID.
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * 实例主节点所在可用区。
+     * Availability zone of the instance&#39;s primary node.
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
-     * @return 实例主节点所在可用区。
+     * @return Availability zone of the instance&#39;s primary node.
      * 
      */
     public Output<String> zoneId() {
         return this.zoneId;
     }
     /**
-     * 实例各节点所在的可用区列表。
+     * List of availability zones for each node in the instance.
      * 
      */
     @Export(name="zoneIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> zoneIds;
 
     /**
-     * @return 实例各节点所在的可用区列表。
+     * @return List of availability zones for each node in the instance.
      * 
      */
     public Output<List<String>> zoneIds() {

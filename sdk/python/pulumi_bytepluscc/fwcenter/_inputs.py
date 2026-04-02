@@ -28,15 +28,15 @@ if not MYPY:
     class DnsControlPolicyDomainListV1ArgsDict(TypedDict):
         address: NotRequired[pulumi.Input[builtins.str]]
         """
-        具体地址信息。
+        Specific address information.
         """
         description: NotRequired[pulumi.Input[builtins.str]]
         """
-        描述信息。
+        Description information.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+        Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
         """
 elif False:
     DnsControlPolicyDomainListV1ArgsDict: TypeAlias = Mapping[str, Any]
@@ -48,9 +48,9 @@ class DnsControlPolicyDomainListV1Args:
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] address: 具体地址信息。
-        :param pulumi.Input[builtins.str] description: 描述信息。
-        :param pulumi.Input[builtins.str] type: 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+        :param pulumi.Input[builtins.str] address: Specific address information.
+        :param pulumi.Input[builtins.str] description: Description information.
+        :param pulumi.Input[builtins.str] type: Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
         """
         if address is not None:
             pulumi.set(__self__, "address", address)
@@ -63,7 +63,7 @@ class DnsControlPolicyDomainListV1Args:
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        具体地址信息。
+        Specific address information.
         """
         return pulumi.get(self, "address")
 
@@ -75,7 +75,7 @@ class DnsControlPolicyDomainListV1Args:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        描述信息。
+        Description information.
         """
         return pulumi.get(self, "description")
 
@@ -87,7 +87,7 @@ class DnsControlPolicyDomainListV1Args:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+        Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
         """
         return pulumi.get(self, "type")
 
@@ -100,7 +100,7 @@ if not MYPY:
     class DnsControlPolicySourceArgsDict(TypedDict):
         region: NotRequired[pulumi.Input[builtins.str]]
         """
-        VPC地域信息。
+        VPC region information.
         """
         vpc_id: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -115,7 +115,7 @@ class DnsControlPolicySourceArgs:
                  region: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] region: VPC地域信息。
+        :param pulumi.Input[builtins.str] region: VPC region information.
         :param pulumi.Input[builtins.str] vpc_id: VPC ID。
         """
         if region is not None:
@@ -127,7 +127,7 @@ class DnsControlPolicySourceArgs:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPC地域信息。
+        VPC region information.
         """
         return pulumi.get(self, "region")
 

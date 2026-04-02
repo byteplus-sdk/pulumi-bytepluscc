@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNgwNatIpAddress {
     /**
-     * @return 中转Ip地址。
+     * @return Transit IP address
      * 
      */
     private String natIpAddress;
     /**
-     * @return 中转Ip id。
+     * @return Transit IP ID
      * 
      */
     private String natIpId;
 
     private GetNgwNatIpAddress() {}
     /**
-     * @return 中转Ip地址。
+     * @return Transit IP address
      * 
      */
     public String natIpAddress() {
         return this.natIpAddress;
     }
     /**
-     * @return 中转Ip id。
+     * @return Transit IP ID
      * 
      */
     public String natIpId() {

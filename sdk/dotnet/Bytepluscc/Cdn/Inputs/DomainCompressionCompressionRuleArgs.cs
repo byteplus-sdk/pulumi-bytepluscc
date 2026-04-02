@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainCompressionCompressionRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示压缩操作的配置。
+        /// Represents the configuration for compression operations.
         /// </summary>
         [Input("compressionAction")]
         public Input<Inputs.DomainCompressionCompressionRuleCompressionActionArgs>? CompressionAction { get; set; }
 
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         [Input("condition")]
         public Input<Inputs.DomainCompressionCompressionRuleConditionArgs>? Condition { get; set; }

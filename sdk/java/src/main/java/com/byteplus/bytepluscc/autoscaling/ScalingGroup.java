@@ -6,6 +6,8 @@ package com.byteplus.bytepluscc.autoscaling;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.autoscaling.ScalingGroupArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.ScalingGroupState;
+import com.byteplus.bytepluscc.autoscaling.outputs.ScalingGroupInstance;
+import com.byteplus.bytepluscc.autoscaling.outputs.ScalingGroupInstanceRemovePolicy;
 import com.byteplus.bytepluscc.autoscaling.outputs.ScalingGroupInstancesDistribution;
 import com.byteplus.bytepluscc.autoscaling.outputs.ScalingGroupLaunchTemplateOverride;
 import com.byteplus.bytepluscc.autoscaling.outputs.ScalingGroupServerGroupAttribute;
@@ -21,7 +23,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 伸缩组用于管理一组云资源实例。通过伸缩组可以定义云资源池中的实例数/容量、冷却时间、负载均衡等信息。
+ * Scaling groups are used to manage a set of cloud resource instances. You can use scaling groups to define the number/capacity of instances in the resource pool, cooldown time, load balancing, and other information.
  * 
  * ## Example Usage
  * 
@@ -38,140 +40,152 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:autoscaling/scalingGroup:ScalingGroup")
 public class ScalingGroup extends com.pulumi.resources.CustomResource {
     /**
-     * 伸缩组绑定的伸缩配置的ID。
+     * ID of the scaling configuration bound to the scaling group
      * 
      */
     @Export(name="activeScalingConfigurationId", refs={String.class}, tree="[0]")
     private Output<String> activeScalingConfigurationId;
 
     /**
-     * @return 伸缩组绑定的伸缩配置的ID。
+     * @return ID of the scaling configuration bound to the scaling group
      * 
      */
     public Output<String> activeScalingConfigurationId() {
         return this.activeScalingConfigurationId;
     }
     /**
-     * 伸缩组创建时间。
+     * Scaling group creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 伸缩组创建时间。
+     * @return Scaling group creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * RDS数据库实例的ID。
+     * ID of the RDS database instance.
      * 
      */
     @Export(name="dbInstanceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dbInstanceIds;
 
     /**
-     * @return RDS数据库实例的ID。
+     * @return ID of the RDS database instance.
      * 
      */
     public Output<List<String>> dbInstanceIds() {
         return this.dbInstanceIds;
     }
     /**
-     * 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+     * Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
      * 
      */
     @Export(name="defaultCooldown", refs={Integer.class}, tree="[0]")
     private Output<Integer> defaultCooldown;
 
     /**
-     * @return 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+     * @return Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
      * 
      */
     public Output<Integer> defaultCooldown() {
         return this.defaultCooldown;
     }
     /**
-     * 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+     * Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
      * 
      */
     @Export(name="desireInstanceNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> desireInstanceNumber;
 
     /**
-     * @return 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+     * @return Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
      * 
      */
     public Output<Integer> desireInstanceNumber() {
         return this.desireInstanceNumber;
     }
     /**
-     * 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
+     * Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
      * 
      */
     @Export(name="healthCheckType", refs={String.class}, tree="[0]")
     private Output<String> healthCheckType;
 
     /**
-     * @return 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
+     * @return Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
      * 
      */
     public Output<String> healthCheckType() {
         return this.healthCheckType;
     }
+    @Export(name="instanceRemovePolicies", refs={List.class,ScalingGroupInstanceRemovePolicy.class}, tree="[0,1]")
+    private Output<List<ScalingGroupInstanceRemovePolicy>> instanceRemovePolicies;
+
+    public Output<List<ScalingGroupInstanceRemovePolicy>> instanceRemovePolicies() {
+        return this.instanceRemovePolicies;
+    }
     /**
-     * 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
+     * Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
      * 
      */
     @Export(name="instanceTerminatePolicy", refs={String.class}, tree="[0]")
     private Output<String> instanceTerminatePolicy;
 
     /**
-     * @return 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
+     * @return Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
      * 
      */
     public Output<String> instanceTerminatePolicy() {
         return this.instanceTerminatePolicy;
     }
+    @Export(name="instances", refs={List.class,ScalingGroupInstance.class}, tree="[0,1]")
+    private Output<List<ScalingGroupInstance>> instances;
+
+    public Output<List<ScalingGroupInstance>> instances() {
+        return this.instances;
+    }
     /**
-     * 实例分布策略。
+     * Instance distribution policy.
      * 
      */
     @Export(name="instancesDistribution", refs={ScalingGroupInstancesDistribution.class}, tree="[0]")
     private Output<ScalingGroupInstancesDistribution> instancesDistribution;
 
     /**
-     * @return 实例分布策略。
+     * @return Instance distribution policy.
      * 
      */
     public Output<ScalingGroupInstancesDistribution> instancesDistribution() {
         return this.instancesDistribution;
     }
     /**
-     * 是否启用伸缩组。true：启用。false：停止
+     * Whether to enable the scaling group. true: enabled. false: stopped
      * 
      */
     @Export(name="isEnableScalingGroup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnableScalingGroup;
 
     /**
-     * @return 是否启用伸缩组。true：启用。false：停止
+     * @return Whether to enable the scaling group. true: enabled. false: stopped
      * 
      */
     public Output<Boolean> isEnableScalingGroup() {
         return this.isEnableScalingGroup;
     }
     /**
-     * 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+     * Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
      * 
      */
     @Export(name="launchTemplateId", refs={String.class}, tree="[0]")
     private Output<String> launchTemplateId;
 
     /**
-     * @return 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+     * @return Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
      * 
      */
     public Output<String> launchTemplateId() {
@@ -184,140 +198,140 @@ public class ScalingGroup extends com.pulumi.resources.CustomResource {
         return this.launchTemplateOverrides;
     }
     /**
-     * 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+     * Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
      * 
      */
     @Export(name="launchTemplateVersion", refs={String.class}, tree="[0]")
     private Output<String> launchTemplateVersion;
 
     /**
-     * @return 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+     * @return Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
      * 
      */
     public Output<String> launchTemplateVersion() {
         return this.launchTemplateVersion;
     }
     /**
-     * 伸缩组的状态。Active：已启用。InActive：未激活。Deleting：删除中。Locked: 已锁定。CoolingDown: 冷却中。Unknown: 未知状态。
+     * Status of the scaling group. Active: enabled. InActive: not activated. Deleting: deleting. Locked: locked. CoolingDown: cooling down. Unknown: unknown status.
      * 
      */
     @Export(name="lifecycleState", refs={String.class}, tree="[0]")
     private Output<String> lifecycleState;
 
     /**
-     * @return 伸缩组的状态。Active：已启用。InActive：未激活。Deleting：删除中。Locked: 已锁定。CoolingDown: 冷却中。Unknown: 未知状态。
+     * @return Status of the scaling group. Active: enabled. InActive: not activated. Deleting: deleting. Locked: locked. CoolingDown: cooling down. Unknown: unknown status.
      * 
      */
     public Output<String> lifecycleState() {
         return this.lifecycleState;
     }
     /**
-     * 伸缩组实例CLB健康状况检查宽限期。
+     * Grace period for CLB health checks on scaling group instances
      * 
      */
     @Export(name="loadBalancerHealthCheckGracePeriod", refs={Integer.class}, tree="[0]")
     private Output<Integer> loadBalancerHealthCheckGracePeriod;
 
     /**
-     * @return 伸缩组实例CLB健康状况检查宽限期。
+     * @return Grace period for CLB health checks on scaling group instances
      * 
      */
     public Output<Integer> loadBalancerHealthCheckGracePeriod() {
         return this.loadBalancerHealthCheckGracePeriod;
     }
     /**
-     * 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+     * Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
      * 
      */
     @Export(name="maxInstanceNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxInstanceNumber;
 
     /**
-     * @return 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+     * @return Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
      * 
      */
     public Output<Integer> maxInstanceNumber() {
         return this.maxInstanceNumber;
     }
     /**
-     * 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+     * Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
      * 
      */
     @Export(name="minInstanceNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> minInstanceNumber;
 
     /**
-     * @return 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+     * @return Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
      * 
      */
     public Output<Integer> minInstanceNumber() {
         return this.minInstanceNumber;
     }
     /**
-     * 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+     * Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
      * 
      */
     @Export(name="multiAzPolicy", refs={String.class}, tree="[0]")
     private Output<String> multiAzPolicy;
 
     /**
-     * @return 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+     * @return Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
      * 
      */
     public Output<String> multiAzPolicy() {
         return this.multiAzPolicy;
     }
     /**
-     * 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * Project to which the scaling group belongs. Default is &#39;default&#39;. A resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length: 64 characters.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * @return Project to which the scaling group belongs. Default is &#39;default&#39;. A resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length: 64 characters.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 伸缩组ID。
+     * Scaling group ID.
      * 
      */
     @Export(name="scalingGroupId", refs={String.class}, tree="[0]")
     private Output<String> scalingGroupId;
 
     /**
-     * @return 伸缩组ID。
+     * @return Scaling group ID.
      * 
      */
     public Output<String> scalingGroupId() {
         return this.scalingGroupId;
     }
     /**
-     * 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+     * Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
      * 
      */
     @Export(name="scalingGroupName", refs={String.class}, tree="[0]")
     private Output<String> scalingGroupName;
 
     /**
-     * @return 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+     * @return Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
      * 
      */
     public Output<String> scalingGroupName() {
         return this.scalingGroupName;
     }
     /**
-     * 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+     * Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
      * 
      */
     @Export(name="scalingMode", refs={String.class}, tree="[0]")
     private Output<String> scalingMode;
 
     /**
-     * @return 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+     * @return Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
      * 
      */
     public Output<String> scalingMode() {
@@ -330,42 +344,42 @@ public class ScalingGroup extends com.pulumi.resources.CustomResource {
         return this.serverGroupAttributes;
     }
     /**
-     * 伸缩组内处于停用中状态的实例数量。
+     * Number of instances in the scaling group that are in the disabled state.
      * 
      */
     @Export(name="stoppedInstanceCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> stoppedInstanceCount;
 
     /**
-     * @return 伸缩组内处于停用中状态的实例数量。
+     * @return Number of instances in the scaling group that are in the disabled state.
      * 
      */
     public Output<Integer> stoppedInstanceCount() {
         return this.stoppedInstanceCount;
     }
     /**
-     * 伸缩组中实例主网卡的子网ID列表。
+     * List of subnet IDs for the primary network interface of instances in the scaling group
      * 
      */
     @Export(name="subnetIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subnetIds;
 
     /**
-     * @return 伸缩组中实例主网卡的子网ID列表。
+     * @return List of subnet IDs for the primary network interface of instances in the scaling group
      * 
      */
     public Output<List<String>> subnetIds() {
         return this.subnetIds;
     }
     /**
-     * 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+     * Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
      * 
      */
     @Export(name="suspendedProcesses", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> suspendedProcesses;
 
     /**
-     * @return 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+     * @return Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
      * 
      */
     public Output<List<String>> suspendedProcesses() {
@@ -378,42 +392,42 @@ public class ScalingGroup extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 当前伸缩组内实例的个数。
+     * Number of instances currently in the scaling group
      * 
      */
     @Export(name="totalInstanceCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalInstanceCount;
 
     /**
-     * @return 当前伸缩组内实例的个数。
+     * @return Number of instances currently in the scaling group
      * 
      */
     public Output<Integer> totalInstanceCount() {
         return this.totalInstanceCount;
     }
     /**
-     * 伸缩组更新时间。
+     * Scaling group update time.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 伸缩组更新时间。
+     * @return Scaling group update time.
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 伸缩组所属私有网络ID。
+     * VPC ID to which the scaling group belongs
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 伸缩组所属私有网络ID。
+     * @return VPC ID to which the scaling group belongs
      * 
      */
     public Output<String> vpcId() {

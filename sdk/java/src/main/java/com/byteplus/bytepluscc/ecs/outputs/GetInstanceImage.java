@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceImage {
     /**
-     * @return 实例的镜像ID。
+     * @return Instance image ID.
      * 
      */
     private String imageId;
     /**
-     * @return 实例的镜像发布版本。
+     * @return The image release version of the instance.
      * 
      */
     private String imageReleaseVersion;
     /**
-     * @return 实例是否保留镜像凭证。
+     * @return Whether the instance retains image credentials
      * 
      */
     private Boolean keepImageCredential;
     /**
-     * @return 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+     * @return Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
      * 
      */
     private String securityEnhancementStrategy;
 
     private GetInstanceImage() {}
     /**
-     * @return 实例的镜像ID。
+     * @return Instance image ID.
      * 
      */
     public String imageId() {
         return this.imageId;
     }
     /**
-     * @return 实例的镜像发布版本。
+     * @return The image release version of the instance.
      * 
      */
     public String imageReleaseVersion() {
         return this.imageReleaseVersion;
     }
     /**
-     * @return 实例是否保留镜像凭证。
+     * @return Whether the instance retains image credentials
      * 
      */
     public Boolean keepImageCredential() {
         return this.keepImageCredential;
     }
     /**
-     * @return 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+     * @return Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
      * 
      */
     public String securityEnhancementStrategy() {

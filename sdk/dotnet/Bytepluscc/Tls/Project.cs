@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Tls
 {
     /// <summary>
-    /// 日志项目是数据的项目管理单元，用于租户资源隔离和控制，通常一个日志项目对应一个应用、业务或产品。
+    /// A log project is a data management unit used for tenant resource isolation and control. Typically, each log project corresponds to an application, service, or product
     /// 
     /// ## Example Usage
     /// 
@@ -51,37 +51,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     public partial class Project : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 日志项目创建时间。
+        /// Log project creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 日志项目的简单描述。
+        /// Brief description of the log project
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 日志项目所属的 IAM 项目。
+        /// The IAM project associated with the log project
         /// </summary>
         [Output("iamProjectName")]
         public Output<string> IamProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 私网连接域名。
+        /// Private network connection domain name
         /// </summary>
         [Output("innerNetDomain")]
         public Output<string> InnerNetDomain { get; private set; } = null!;
 
         /// <summary>
-        /// 日志项目的 ID。
+        /// Log project ID
         /// </summary>
         [Output("projectId")]
         public Output<string> ProjectId { get; private set; } = null!;
 
         /// <summary>
-        /// 日志项目名称。
+        /// Log project name
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
@@ -90,7 +90,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
         public Output<ImmutableArray<Outputs.ProjectTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 当前日志项目下的日志主题数量。
+        /// Number of log topics in the current log project
         /// </summary>
         [Output("topicCount")]
         public Output<int> TopicCount { get; private set; } = null!;
@@ -143,19 +143,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     public sealed class ProjectArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 日志项目的简单描述。
+        /// Brief description of the log project
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 日志项目所属的 IAM 项目。
+        /// The IAM project associated with the log project
         /// </summary>
         [Input("iamProjectName")]
         public Input<string>? IamProjectName { get; set; }
 
         /// <summary>
-        /// 日志项目名称。
+        /// Log project name
         /// </summary>
         [Input("projectName", required: true)]
         public Input<string> ProjectName { get; set; } = null!;
@@ -177,37 +177,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     public sealed class ProjectState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 日志项目创建时间。
+        /// Log project creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 日志项目的简单描述。
+        /// Brief description of the log project
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 日志项目所属的 IAM 项目。
+        /// The IAM project associated with the log project
         /// </summary>
         [Input("iamProjectName")]
         public Input<string>? IamProjectName { get; set; }
 
         /// <summary>
-        /// 私网连接域名。
+        /// Private network connection domain name
         /// </summary>
         [Input("innerNetDomain")]
         public Input<string>? InnerNetDomain { get; set; }
 
         /// <summary>
-        /// 日志项目的 ID。
+        /// Log project ID
         /// </summary>
         [Input("projectId")]
         public Input<string>? ProjectId { get; set; }
 
         /// <summary>
-        /// 日志项目名称。
+        /// Log project name
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -221,7 +221,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
         }
 
         /// <summary>
-        /// 当前日志项目下的日志主题数量。
+        /// Number of log topics in the current log project
         /// </summary>
         [Input("topicCount")]
         public Input<int>? TopicCount { get; set; }

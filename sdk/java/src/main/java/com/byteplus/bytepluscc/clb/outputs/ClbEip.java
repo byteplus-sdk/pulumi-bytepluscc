@@ -14,74 +14,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClbEip {
     /**
-     * @return 带宽峰值。
+     * @return Peak bandwidth
      * 
      */
     private @Nullable Double bandwidth;
     /**
-     * @return 共享带宽包ID。
+     * @return Shared bandwidth package ID
      * 
      */
     private @Nullable String bandwidthPackageId;
     /**
-     * @return 计费方式。
+     * @return Billing method
      * 
      */
     private @Nullable Double eipBillingType;
     /**
-     * @return 线路类型。
+     * @return Line type
      * 
      */
     private @Nullable String isp;
     /**
-     * @return 防护包ID。
+     * @return Protection package ID
      * 
      */
     private @Nullable Double securityProtectionInstanceId;
     /**
-     * @return 安全防护类型。
+     * @return Security protection type
      * 
      */
     private @Nullable List<String> securityProtectionTypes;
 
     private ClbEip() {}
     /**
-     * @return 带宽峰值。
+     * @return Peak bandwidth
      * 
      */
     public Optional<Double> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
     }
     /**
-     * @return 共享带宽包ID。
+     * @return Shared bandwidth package ID
      * 
      */
     public Optional<String> bandwidthPackageId() {
         return Optional.ofNullable(this.bandwidthPackageId);
     }
     /**
-     * @return 计费方式。
+     * @return Billing method
      * 
      */
     public Optional<Double> eipBillingType() {
         return Optional.ofNullable(this.eipBillingType);
     }
     /**
-     * @return 线路类型。
+     * @return Line type
      * 
      */
     public Optional<String> isp() {
         return Optional.ofNullable(this.isp);
     }
     /**
-     * @return 防护包ID。
+     * @return Protection package ID
      * 
      */
     public Optional<Double> securityProtectionInstanceId() {
         return Optional.ofNullable(this.securityProtectionInstanceId);
     }
     /**
-     * @return 安全防护类型。
+     * @return Security protection type
      * 
      */
     public List<String> securityProtectionTypes() {

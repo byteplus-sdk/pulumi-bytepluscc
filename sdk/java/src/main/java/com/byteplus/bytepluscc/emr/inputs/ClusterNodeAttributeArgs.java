@@ -16,14 +16,14 @@ public final class ClusterNodeAttributeArgs extends com.pulumi.resources.Resourc
     public static final ClusterNodeAttributeArgs Empty = new ClusterNodeAttributeArgs();
 
     /**
-     * ECS实例角色。
+     * ECS instance role.
      * 
      */
     @Import(name="ecsIamRole")
     private @Nullable Output<String> ecsIamRole;
 
     /**
-     * @return ECS实例角色。
+     * @return ECS instance role.
      * 
      */
     public Optional<Output<String>> ecsIamRole() {
@@ -31,14 +31,14 @@ public final class ClusterNodeAttributeArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 可用区ID。
+     * Zone ID.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 可用区ID。
+     * @return Zone ID.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -71,7 +71,7 @@ public final class ClusterNodeAttributeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param ecsIamRole ECS实例角色。
+         * @param ecsIamRole ECS instance role.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ClusterNodeAttributeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param ecsIamRole ECS实例角色。
+         * @param ecsIamRole ECS instance role.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ClusterNodeAttributeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param zoneId 可用区ID。
+         * @param zoneId Zone ID.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ClusterNodeAttributeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param zoneId 可用区ID。
+         * @param zoneId Zone ID.
          * 
          * @return builder
          * 

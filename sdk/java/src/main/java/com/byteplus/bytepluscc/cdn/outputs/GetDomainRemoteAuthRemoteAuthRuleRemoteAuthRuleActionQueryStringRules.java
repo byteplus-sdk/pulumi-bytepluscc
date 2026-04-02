@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules {
     /**
-     * @return 表示鉴权请求参数的设置策略。
+     * @return Indicates the strategy for setting authentication request parameters.
      * 
      */
     private GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponents queryStringComponents;
     /**
-     * @return 表示鉴权请求中额外的参数设置。您最多可以设置 50 个参数。
+     * @return Indicates additional parameter settings in the authentication request. You can set up to 50 parameters.
      * 
      */
     private List<GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance> queryStringInstances;
 
     private GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules() {}
     /**
-     * @return 表示鉴权请求参数的设置策略。
+     * @return Indicates the strategy for setting authentication request parameters.
      * 
      */
     public GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponents queryStringComponents() {
         return this.queryStringComponents;
     }
     /**
-     * @return 表示鉴权请求中额外的参数设置。您最多可以设置 50 个参数。
+     * @return Indicates additional parameter settings in the authentication request. You can set up to 50 parameters.
      * 
      */
     public List<GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance> queryStringInstances() {

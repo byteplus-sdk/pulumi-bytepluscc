@@ -12,98 +12,98 @@ import java.util.Objects;
 @CustomType
 public final class GetNetworkAclDefaultIngressAclEntry {
     /**
-     * @return 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+     * @return For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
      * 
      */
     private String cidrIp;
     /**
-     * @return 规则的描述信息。
+     * @return Rule description.
      * 
      */
     private String description;
     /**
-     * @return 规则的ID。
+     * @return Rule ID.
      * 
      */
     private String networkAclEntryId;
     /**
-     * @return 规则的名称。
+     * @return Rule name.
      * 
      */
     private String networkAclEntryName;
     /**
-     * @return 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+     * @return Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
      * 
      */
     private String policy;
     /**
-     * @return 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+     * @return Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
      * 
      */
     private String port;
     /**
-     * @return 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+     * @return Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
      * 
      */
     private Integer priority;
     /**
-     * @return 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+     * @return Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
      * 
      */
     private String protocol;
 
     private GetNetworkAclDefaultIngressAclEntry() {}
     /**
-     * @return 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+     * @return For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
      * 
      */
     public String cidrIp() {
         return this.cidrIp;
     }
     /**
-     * @return 规则的描述信息。
+     * @return Rule description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 规则的ID。
+     * @return Rule ID.
      * 
      */
     public String networkAclEntryId() {
         return this.networkAclEntryId;
     }
     /**
-     * @return 规则的名称。
+     * @return Rule name.
      * 
      */
     public String networkAclEntryName() {
         return this.networkAclEntryName;
     }
     /**
-     * @return 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+     * @return Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
      * 
      */
     public String policy() {
         return this.policy;
     }
     /**
-     * @return 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+     * @return Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
      * 
      */
     public String port() {
         return this.port;
     }
     /**
-     * @return 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+     * @return Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
      * 
      */
     public Integer priority() {
         return this.priority;
     }
     /**
-     * @return 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+     * @return Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
      * 
      */
     public String protocol() {

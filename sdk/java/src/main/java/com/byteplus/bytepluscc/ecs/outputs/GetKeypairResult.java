@@ -13,17 +13,17 @@ import java.util.Objects;
 @CustomType
 public final class GetKeypairResult {
     /**
-     * @return 密钥对创建时间。
+     * @return Creation time of the key pair.
      * 
      */
     private String createdTime;
     /**
-     * @return 密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
+     * @return Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period (&#39;.&#39;), space, underscore (&#39;_&#39;), hyphen (&#39;-&#39;), equals sign (&#39;=&#39;), English comma (&#39;,&#39;), Chinese comma (&#39;，&#39;), and Chinese period (&#39;。&#39;). Length must not exceed 255 characters.
      * 
      */
     private String description;
     /**
-     * @return 密钥对的指纹。根据RFC4716定义的公钥指纹格式，采用MD5信息摘要算法。
+     * @return Fingerprint of the key pair. The public key fingerprint format is defined by RFC4716 and uses the MD5 hash algorithm.
      * 
      */
     private String fingerPrint;
@@ -33,58 +33,58 @@ public final class GetKeypairResult {
      */
     private String id;
     /**
-     * @return 操作的实例ID。
+     * @return Instance ID for the operation.
      * 
      */
     private List<String> instanceIds;
     /**
-     * @return 密钥对唯一ID。
+     * @return Unique ID of the key pair.
      * 
      */
     private String keyPairId;
     /**
-     * @return 密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
+     * @return Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods (&#39;.&#39;) can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens (&#39;-&#39;). The name cannot start or end with &#39;-&#39; or &#39;.&#39;, and cannot contain consecutive &#39;-&#39; or &#39;.&#39;.
      * 
      */
     private String keyPairName;
     /**
-     * @return 资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * @return Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
      * 
      */
     private String projectName;
     /**
-     * @return 密钥对的公钥信息。
+     * @return Public key information of the key pair.
      * 
      */
     private String publicKey;
     /**
-     * @return 密钥对的标签。
+     * @return Tags of the key pair.
      * 
      */
     private List<GetKeypairTag> tags;
     /**
-     * @return 密钥对更新时间。
+     * @return Update time of the key pair.
      * 
      */
     private String updatedTime;
 
     private GetKeypairResult() {}
     /**
-     * @return 密钥对创建时间。
+     * @return Creation time of the key pair.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
+     * @return Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period (&#39;.&#39;), space, underscore (&#39;_&#39;), hyphen (&#39;-&#39;), equals sign (&#39;=&#39;), English comma (&#39;,&#39;), Chinese comma (&#39;，&#39;), and Chinese period (&#39;。&#39;). Length must not exceed 255 characters.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 密钥对的指纹。根据RFC4716定义的公钥指纹格式，采用MD5信息摘要算法。
+     * @return Fingerprint of the key pair. The public key fingerprint format is defined by RFC4716 and uses the MD5 hash algorithm.
      * 
      */
     public String fingerPrint() {
@@ -98,49 +98,49 @@ public final class GetKeypairResult {
         return this.id;
     }
     /**
-     * @return 操作的实例ID。
+     * @return Instance ID for the operation.
      * 
      */
     public List<String> instanceIds() {
         return this.instanceIds;
     }
     /**
-     * @return 密钥对唯一ID。
+     * @return Unique ID of the key pair.
      * 
      */
     public String keyPairId() {
         return this.keyPairId;
     }
     /**
-     * @return 密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
+     * @return Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods (&#39;.&#39;) can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens (&#39;-&#39;). The name cannot start or end with &#39;-&#39; or &#39;.&#39;, and cannot contain consecutive &#39;-&#39; or &#39;.&#39;.
      * 
      */
     public String keyPairName() {
         return this.keyPairName;
     }
     /**
-     * @return 资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * @return Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 密钥对的公钥信息。
+     * @return Public key information of the key pair.
      * 
      */
     public String publicKey() {
         return this.publicKey;
     }
     /**
-     * @return 密钥对的标签。
+     * @return Tags of the key pair.
      * 
      */
     public List<GetKeypairTag> tags() {
         return this.tags;
     }
     /**
-     * @return 密钥对更新时间。
+     * @return Update time of the key pair.
      * 
      */
     public String updatedTime() {

@@ -10,6 +10,7 @@ import com.byteplus.bytepluscc.vmp.outputs.GetWorkspaceUsage;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -17,17 +18,27 @@ import java.util.Objects;
 @CustomType
 public final class GetWorkspaceResult {
     /**
-     * @return 工作区创建时间，RFC3339 格式。
+     * @return Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+     * 
+     */
+    private String authType;
+    /**
+     * @return Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+     * 
+     */
+    private String bearerToken;
+    /**
+     * @return Workspace creation time, RFC3339 format
      * 
      */
     private String createTime;
     /**
-     * @return 是否开启工作区删除保护,true：开启，false：关闭。
+     * @return Enable workspace deletion protection: true for enabled, false for disabled
      * 
      */
     private Boolean deleteProtectionEnabled;
     /**
-     * @return 工作区描述信息，字符串形式，长度限制为 0～200。
+     * @return Workspace description, string, length limit 0–200
      * 
      */
     private String description;
@@ -37,98 +48,147 @@ public final class GetWorkspaceResult {
      */
     private String id;
     /**
-     * @return 工作区规格详情。
+     * @return Workspace specification details
      * 
      */
     private GetWorkspaceInstanceType instanceType;
     /**
-     * @return 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+     * @return Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
      * 
      */
     private String instanceTypeId;
     /**
-     * @return 工作区名称，字符串形式，长度限制为 1～100。
+     * @return Workspace name, string, length limit 1–100
      * 
      */
     private String name;
     /**
-     * @return 工作区预期欠费回收时间，RFC3339 格式。
+     * @return Workspace expected overdue recovery time, RFC3339 format
      * 
      */
     private String overdueReclaimTime;
     /**
-     * @return 工作区 BasicAuth 密码。
+     * @return Workspace BasicAuth password
      * 
      */
     private String password;
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     private String projectName;
     /**
-     * @return 工作区 Push Gateway URL 地址。
+     * @return Workspace public Push Gateway URL address.
+     * 
+     */
+    private String prometheusPushEndpoint;
+    /**
+     * @return Workspace Push Gateway URL address
      * 
      */
     private String prometheusPushIntranetEndpoint;
     /**
-     * @return 工作区 Query URL 地址。
+     * @return Workspace public Query URL address.
+     * 
+     */
+    private String prometheusQueryEndpoint;
+    /**
+     * @return Workspace Query URL address
      * 
      */
     private String prometheusQueryIntranetEndpoint;
     /**
-     * @return 工作区 RemoteWrite URL 地址。
+     * @return Workspace public RemoteWrite URL address.
+     * 
+     */
+    private String prometheusWriteEndpoint;
+    /**
+     * @return Workspace RemoteWrite URL address
      * 
      */
     private String prometheusWriteIntranetEndpoint;
     /**
-     * @return 工作区配额详情。
+     * @return Whether to enable workspace public access capability. true: enabled, false: disabled.
+     * 
+     */
+    private Boolean publicAccessEnabled;
+    /**
+     * @return Workspace public Query bandwidth (Mbps).
+     * 
+     */
+    private Integer publicQueryBandwidth;
+    /**
+     * @return Workspace public RemoteWrite bandwidth (Mbps).
+     * 
+     */
+    private Integer publicWriteBandwidth;
+    /**
+     * @return Workspace quota details
      * 
      */
     private GetWorkspaceQuota quota;
     /**
-     * @return 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+     * @return Workspace public Query search latency offset.
+     * 
+     */
+    private String searchLatencyOffset;
+    /**
+     * @return Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
      * 
      */
     private String status;
     /**
-     * @return 工作区标签。
+     * @return Workspace tags
      * 
      */
     private List<GetWorkspaceTag> tags;
     /**
-     * @return 工作区用量。
+     * @return Workspace usage
      * 
      */
     private GetWorkspaceUsage usage;
     /**
-     * @return 工作区 BasicAuth 用户名。
+     * @return Workspace BasicAuth username
      * 
      */
     private String username;
     /**
-     * @return 工作区Id。
+     * @return Workspace ID
      * 
      */
     private String workspaceId;
 
     private GetWorkspaceResult() {}
     /**
-     * @return 工作区创建时间，RFC3339 格式。
+     * @return Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+     * 
+     */
+    public String authType() {
+        return this.authType;
+    }
+    /**
+     * @return Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+     * 
+     */
+    public String bearerToken() {
+        return this.bearerToken;
+    }
+    /**
+     * @return Workspace creation time, RFC3339 format
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return 是否开启工作区删除保护,true：开启，false：关闭。
+     * @return Enable workspace deletion protection: true for enabled, false for disabled
      * 
      */
     public Boolean deleteProtectionEnabled() {
         return this.deleteProtectionEnabled;
     }
     /**
-     * @return 工作区描述信息，字符串形式，长度限制为 0～200。
+     * @return Workspace description, string, length limit 0–200
      * 
      */
     public String description() {
@@ -142,105 +202,154 @@ public final class GetWorkspaceResult {
         return this.id;
     }
     /**
-     * @return 工作区规格详情。
+     * @return Workspace specification details
      * 
      */
     public GetWorkspaceInstanceType instanceType() {
         return this.instanceType;
     }
     /**
-     * @return 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+     * @return Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
      * 
      */
     public String instanceTypeId() {
         return this.instanceTypeId;
     }
     /**
-     * @return 工作区名称，字符串形式，长度限制为 1～100。
+     * @return Workspace name, string, length limit 1–100
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 工作区预期欠费回收时间，RFC3339 格式。
+     * @return Workspace expected overdue recovery time, RFC3339 format
      * 
      */
     public String overdueReclaimTime() {
         return this.overdueReclaimTime;
     }
     /**
-     * @return 工作区 BasicAuth 密码。
+     * @return Workspace BasicAuth password
      * 
      */
     public String password() {
         return this.password;
     }
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 工作区 Push Gateway URL 地址。
+     * @return Workspace public Push Gateway URL address.
+     * 
+     */
+    public String prometheusPushEndpoint() {
+        return this.prometheusPushEndpoint;
+    }
+    /**
+     * @return Workspace Push Gateway URL address
      * 
      */
     public String prometheusPushIntranetEndpoint() {
         return this.prometheusPushIntranetEndpoint;
     }
     /**
-     * @return 工作区 Query URL 地址。
+     * @return Workspace public Query URL address.
+     * 
+     */
+    public String prometheusQueryEndpoint() {
+        return this.prometheusQueryEndpoint;
+    }
+    /**
+     * @return Workspace Query URL address
      * 
      */
     public String prometheusQueryIntranetEndpoint() {
         return this.prometheusQueryIntranetEndpoint;
     }
     /**
-     * @return 工作区 RemoteWrite URL 地址。
+     * @return Workspace public RemoteWrite URL address.
+     * 
+     */
+    public String prometheusWriteEndpoint() {
+        return this.prometheusWriteEndpoint;
+    }
+    /**
+     * @return Workspace RemoteWrite URL address
      * 
      */
     public String prometheusWriteIntranetEndpoint() {
         return this.prometheusWriteIntranetEndpoint;
     }
     /**
-     * @return 工作区配额详情。
+     * @return Whether to enable workspace public access capability. true: enabled, false: disabled.
+     * 
+     */
+    public Boolean publicAccessEnabled() {
+        return this.publicAccessEnabled;
+    }
+    /**
+     * @return Workspace public Query bandwidth (Mbps).
+     * 
+     */
+    public Integer publicQueryBandwidth() {
+        return this.publicQueryBandwidth;
+    }
+    /**
+     * @return Workspace public RemoteWrite bandwidth (Mbps).
+     * 
+     */
+    public Integer publicWriteBandwidth() {
+        return this.publicWriteBandwidth;
+    }
+    /**
+     * @return Workspace quota details
      * 
      */
     public GetWorkspaceQuota quota() {
         return this.quota;
     }
     /**
-     * @return 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+     * @return Workspace public Query search latency offset.
+     * 
+     */
+    public String searchLatencyOffset() {
+        return this.searchLatencyOffset;
+    }
+    /**
+     * @return Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 工作区标签。
+     * @return Workspace tags
      * 
      */
     public List<GetWorkspaceTag> tags() {
         return this.tags;
     }
     /**
-     * @return 工作区用量。
+     * @return Workspace usage
      * 
      */
     public GetWorkspaceUsage usage() {
         return this.usage;
     }
     /**
-     * @return 工作区 BasicAuth 用户名。
+     * @return Workspace BasicAuth username
      * 
      */
     public String username() {
         return this.username;
     }
     /**
-     * @return 工作区Id。
+     * @return Workspace ID
      * 
      */
     public String workspaceId() {
@@ -256,6 +365,8 @@ public final class GetWorkspaceResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String authType;
+        private String bearerToken;
         private String createTime;
         private Boolean deleteProtectionEnabled;
         private String description;
@@ -266,10 +377,17 @@ public final class GetWorkspaceResult {
         private String overdueReclaimTime;
         private String password;
         private String projectName;
+        private String prometheusPushEndpoint;
         private String prometheusPushIntranetEndpoint;
+        private String prometheusQueryEndpoint;
         private String prometheusQueryIntranetEndpoint;
+        private String prometheusWriteEndpoint;
         private String prometheusWriteIntranetEndpoint;
+        private Boolean publicAccessEnabled;
+        private Integer publicQueryBandwidth;
+        private Integer publicWriteBandwidth;
         private GetWorkspaceQuota quota;
+        private String searchLatencyOffset;
         private String status;
         private List<GetWorkspaceTag> tags;
         private GetWorkspaceUsage usage;
@@ -278,6 +396,8 @@ public final class GetWorkspaceResult {
         public Builder() {}
         public Builder(GetWorkspaceResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.authType = defaults.authType;
+    	      this.bearerToken = defaults.bearerToken;
     	      this.createTime = defaults.createTime;
     	      this.deleteProtectionEnabled = defaults.deleteProtectionEnabled;
     	      this.description = defaults.description;
@@ -288,10 +408,17 @@ public final class GetWorkspaceResult {
     	      this.overdueReclaimTime = defaults.overdueReclaimTime;
     	      this.password = defaults.password;
     	      this.projectName = defaults.projectName;
+    	      this.prometheusPushEndpoint = defaults.prometheusPushEndpoint;
     	      this.prometheusPushIntranetEndpoint = defaults.prometheusPushIntranetEndpoint;
+    	      this.prometheusQueryEndpoint = defaults.prometheusQueryEndpoint;
     	      this.prometheusQueryIntranetEndpoint = defaults.prometheusQueryIntranetEndpoint;
+    	      this.prometheusWriteEndpoint = defaults.prometheusWriteEndpoint;
     	      this.prometheusWriteIntranetEndpoint = defaults.prometheusWriteIntranetEndpoint;
+    	      this.publicAccessEnabled = defaults.publicAccessEnabled;
+    	      this.publicQueryBandwidth = defaults.publicQueryBandwidth;
+    	      this.publicWriteBandwidth = defaults.publicWriteBandwidth;
     	      this.quota = defaults.quota;
+    	      this.searchLatencyOffset = defaults.searchLatencyOffset;
     	      this.status = defaults.status;
     	      this.tags = defaults.tags;
     	      this.usage = defaults.usage;
@@ -299,6 +426,22 @@ public final class GetWorkspaceResult {
     	      this.workspaceId = defaults.workspaceId;
         }
 
+        @CustomType.Setter
+        public Builder authType(String authType) {
+            if (authType == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "authType");
+            }
+            this.authType = authType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder bearerToken(String bearerToken) {
+            if (bearerToken == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "bearerToken");
+            }
+            this.bearerToken = bearerToken;
+            return this;
+        }
         @CustomType.Setter
         public Builder createTime(String createTime) {
             if (createTime == null) {
@@ -380,11 +523,27 @@ public final class GetWorkspaceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder prometheusPushEndpoint(String prometheusPushEndpoint) {
+            if (prometheusPushEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "prometheusPushEndpoint");
+            }
+            this.prometheusPushEndpoint = prometheusPushEndpoint;
+            return this;
+        }
+        @CustomType.Setter
         public Builder prometheusPushIntranetEndpoint(String prometheusPushIntranetEndpoint) {
             if (prometheusPushIntranetEndpoint == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceResult", "prometheusPushIntranetEndpoint");
             }
             this.prometheusPushIntranetEndpoint = prometheusPushIntranetEndpoint;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder prometheusQueryEndpoint(String prometheusQueryEndpoint) {
+            if (prometheusQueryEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "prometheusQueryEndpoint");
+            }
+            this.prometheusQueryEndpoint = prometheusQueryEndpoint;
             return this;
         }
         @CustomType.Setter
@@ -396,6 +555,14 @@ public final class GetWorkspaceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder prometheusWriteEndpoint(String prometheusWriteEndpoint) {
+            if (prometheusWriteEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "prometheusWriteEndpoint");
+            }
+            this.prometheusWriteEndpoint = prometheusWriteEndpoint;
+            return this;
+        }
+        @CustomType.Setter
         public Builder prometheusWriteIntranetEndpoint(String prometheusWriteIntranetEndpoint) {
             if (prometheusWriteIntranetEndpoint == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceResult", "prometheusWriteIntranetEndpoint");
@@ -404,11 +571,43 @@ public final class GetWorkspaceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder publicAccessEnabled(Boolean publicAccessEnabled) {
+            if (publicAccessEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "publicAccessEnabled");
+            }
+            this.publicAccessEnabled = publicAccessEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder publicQueryBandwidth(Integer publicQueryBandwidth) {
+            if (publicQueryBandwidth == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "publicQueryBandwidth");
+            }
+            this.publicQueryBandwidth = publicQueryBandwidth;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder publicWriteBandwidth(Integer publicWriteBandwidth) {
+            if (publicWriteBandwidth == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "publicWriteBandwidth");
+            }
+            this.publicWriteBandwidth = publicWriteBandwidth;
+            return this;
+        }
+        @CustomType.Setter
         public Builder quota(GetWorkspaceQuota quota) {
             if (quota == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceResult", "quota");
             }
             this.quota = quota;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder searchLatencyOffset(String searchLatencyOffset) {
+            if (searchLatencyOffset == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "searchLatencyOffset");
+            }
+            this.searchLatencyOffset = searchLatencyOffset;
             return this;
         }
         @CustomType.Setter
@@ -456,6 +655,8 @@ public final class GetWorkspaceResult {
         }
         public GetWorkspaceResult build() {
             final var _resultValue = new GetWorkspaceResult();
+            _resultValue.authType = authType;
+            _resultValue.bearerToken = bearerToken;
             _resultValue.createTime = createTime;
             _resultValue.deleteProtectionEnabled = deleteProtectionEnabled;
             _resultValue.description = description;
@@ -466,10 +667,17 @@ public final class GetWorkspaceResult {
             _resultValue.overdueReclaimTime = overdueReclaimTime;
             _resultValue.password = password;
             _resultValue.projectName = projectName;
+            _resultValue.prometheusPushEndpoint = prometheusPushEndpoint;
             _resultValue.prometheusPushIntranetEndpoint = prometheusPushIntranetEndpoint;
+            _resultValue.prometheusQueryEndpoint = prometheusQueryEndpoint;
             _resultValue.prometheusQueryIntranetEndpoint = prometheusQueryIntranetEndpoint;
+            _resultValue.prometheusWriteEndpoint = prometheusWriteEndpoint;
             _resultValue.prometheusWriteIntranetEndpoint = prometheusWriteIntranetEndpoint;
+            _resultValue.publicAccessEnabled = publicAccessEnabled;
+            _resultValue.publicQueryBandwidth = publicQueryBandwidth;
+            _resultValue.publicWriteBandwidth = publicWriteBandwidth;
             _resultValue.quota = quota;
+            _resultValue.searchLatencyOffset = searchLatencyOffset;
             _resultValue.status = status;
             _resultValue.tags = tags;
             _resultValue.usage = usage;

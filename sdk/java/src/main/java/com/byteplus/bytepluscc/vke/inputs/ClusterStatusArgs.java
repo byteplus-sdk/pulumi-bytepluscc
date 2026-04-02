@@ -25,14 +25,14 @@ public final class ClusterStatusArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群状态阶段
+     * Cluster status phase.
      * 
      */
     @Import(name="phase")
     private @Nullable Output<String> phase;
 
     /**
-     * @return 集群状态阶段
+     * @return Cluster status phase.
      * 
      */
     public Optional<Output<String>> phase() {
@@ -78,7 +78,7 @@ public final class ClusterStatusArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phase 集群状态阶段
+         * @param phase Cluster status phase.
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class ClusterStatusArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phase 集群状态阶段
+         * @param phase Cluster status phase.
          * 
          * @return builder
          * 

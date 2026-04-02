@@ -22,27 +22,27 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterResult {
     /**
-     * @return 集群控制面及部分节点的网络配置。
+     * @return Network configuration for the cluster control plane and some nodes.
      * 
      */
     private GetClusterClusterConfig clusterConfig;
     /**
-     * @return 集群 ID。
+     * @return Cluster ID.
      * 
      */
     private String clusterId;
     /**
-     * @return 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Cluster creation time. Standard RFC3339 format, UTC+0.
      * 
      */
     private String createdTime;
     /**
-     * @return 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+     * @return Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
      * 
      */
     private Boolean deleteProtectionEnabled;
     /**
-     * @return 集群描述。长度限制为 300 个字符以内。
+     * @return Cluster description. Maximum length is 300 characters.
      * 
      */
     private String description;
@@ -52,117 +52,117 @@ public final class GetClusterResult {
      */
     private String id;
     /**
-     * @return IRSA（IAM Role for Service Account）能力相关参数配置。
+     * @return IRSA (IAM Role for Service Account) capability parameter configuration
      * 
      */
     private GetClusterIrsaConfig irsaConfig;
     /**
-     * @return 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+     * @return Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
      * 
      */
     private String kubernetesVersion;
     /**
-     * @return 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+     * @return Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
      * 
      */
     private String kubernetesVersionCreate;
     /**
-     * @return 集群的日志配置信息。
+     * @return Cluster log configuration information.
      * 
      */
     private GetClusterLoggingConfig loggingConfig;
     /**
-     * @return 集群状态描述。
+     * @return Cluster status description.
      * 
      */
     private String message;
     /**
-     * @return 监控配置信息。
+     * @return Monitoring configuration information.
      * 
      */
     private GetClusterMonitoringConfig monitoringConfig;
     /**
-     * @return 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * @return Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
      * 
      */
     private String name;
     /**
-     * @return 集群中各主状态下对应的节点数量统计。
+     * @return Statistics of node counts for each main status in the cluster.
      * 
      */
     private GetClusterNodeStatistics nodeStatistics;
     /**
-     * @return Pod 的网络配置。
+     * @return Pod network configuration.
      * 
      */
     private GetClusterPodsConfig podsConfig;
     /**
-     * @return 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+     * @return Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
      * 
      */
     private String projectName;
     /**
-     * @return 服务的网络配置。
+     * @return Network configuration for the service.
      * 
      */
     private GetClusterServicesConfig servicesConfig;
     /**
-     * @return 集群源地域。
+     * @return Cluster source region
      * 
      */
     private String sourceRegion;
     /**
-     * @return 集群状态。
+     * @return Cluster status.
      * 
      */
     private GetClusterStatus status;
     /**
-     * @return 集群的标签。
+     * @return Cluster tags.
      * 
      */
     private List<GetClusterTag> tags;
     /**
-     * @return 集群类型。
+     * @return Cluster type.
      * 
      */
     private String type;
     /**
-     * @return 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Last update time of the cluster. Standard RFC3339 format, UTC+0.
      * 
      */
     private String updatedTime;
 
     private GetClusterResult() {}
     /**
-     * @return 集群控制面及部分节点的网络配置。
+     * @return Network configuration for the cluster control plane and some nodes.
      * 
      */
     public GetClusterClusterConfig clusterConfig() {
         return this.clusterConfig;
     }
     /**
-     * @return 集群 ID。
+     * @return Cluster ID.
      * 
      */
     public String clusterId() {
         return this.clusterId;
     }
     /**
-     * @return 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Cluster creation time. Standard RFC3339 format, UTC+0.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+     * @return Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
      * 
      */
     public Boolean deleteProtectionEnabled() {
         return this.deleteProtectionEnabled;
     }
     /**
-     * @return 集群描述。长度限制为 300 个字符以内。
+     * @return Cluster description. Maximum length is 300 characters.
      * 
      */
     public String description() {
@@ -176,112 +176,112 @@ public final class GetClusterResult {
         return this.id;
     }
     /**
-     * @return IRSA（IAM Role for Service Account）能力相关参数配置。
+     * @return IRSA (IAM Role for Service Account) capability parameter configuration
      * 
      */
     public GetClusterIrsaConfig irsaConfig() {
         return this.irsaConfig;
     }
     /**
-     * @return 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+     * @return Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
      * 
      */
     public String kubernetesVersion() {
         return this.kubernetesVersion;
     }
     /**
-     * @return 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+     * @return Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
      * 
      */
     public String kubernetesVersionCreate() {
         return this.kubernetesVersionCreate;
     }
     /**
-     * @return 集群的日志配置信息。
+     * @return Cluster log configuration information.
      * 
      */
     public GetClusterLoggingConfig loggingConfig() {
         return this.loggingConfig;
     }
     /**
-     * @return 集群状态描述。
+     * @return Cluster status description.
      * 
      */
     public String message() {
         return this.message;
     }
     /**
-     * @return 监控配置信息。
+     * @return Monitoring configuration information.
      * 
      */
     public GetClusterMonitoringConfig monitoringConfig() {
         return this.monitoringConfig;
     }
     /**
-     * @return 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * @return Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 集群中各主状态下对应的节点数量统计。
+     * @return Statistics of node counts for each main status in the cluster.
      * 
      */
     public GetClusterNodeStatistics nodeStatistics() {
         return this.nodeStatistics;
     }
     /**
-     * @return Pod 的网络配置。
+     * @return Pod network configuration.
      * 
      */
     public GetClusterPodsConfig podsConfig() {
         return this.podsConfig;
     }
     /**
-     * @return 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+     * @return Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 服务的网络配置。
+     * @return Network configuration for the service.
      * 
      */
     public GetClusterServicesConfig servicesConfig() {
         return this.servicesConfig;
     }
     /**
-     * @return 集群源地域。
+     * @return Cluster source region
      * 
      */
     public String sourceRegion() {
         return this.sourceRegion;
     }
     /**
-     * @return 集群状态。
+     * @return Cluster status.
      * 
      */
     public GetClusterStatus status() {
         return this.status;
     }
     /**
-     * @return 集群的标签。
+     * @return Cluster tags.
      * 
      */
     public List<GetClusterTag> tags() {
         return this.tags;
     }
     /**
-     * @return 集群类型。
+     * @return Cluster type.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Last update time of the cluster. Standard RFC3339 format, UTC+0.
      * 
      */
     public String updatedTime() {

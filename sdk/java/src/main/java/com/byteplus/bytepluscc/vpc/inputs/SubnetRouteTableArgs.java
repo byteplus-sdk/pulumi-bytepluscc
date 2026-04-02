@@ -16,14 +16,14 @@ public final class SubnetRouteTableArgs extends com.pulumi.resources.ResourceArg
     public static final SubnetRouteTableArgs Empty = new SubnetRouteTableArgs();
 
     /**
-     * 子网关联的路由表ID。
+     * ID of the route table associated with the subnet
      * 
      */
     @Import(name="routeTableId")
     private @Nullable Output<String> routeTableId;
 
     /**
-     * @return 子网关联的路由表ID。
+     * @return ID of the route table associated with the subnet
      * 
      */
     public Optional<Output<String>> routeTableId() {
@@ -31,14 +31,14 @@ public final class SubnetRouteTableArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+     * Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
      * 
      */
     @Import(name="routeTableType")
     private @Nullable Output<String> routeTableType;
 
     /**
-     * @return 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+     * @return Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
      * 
      */
     public Optional<Output<String>> routeTableType() {
@@ -71,7 +71,7 @@ public final class SubnetRouteTableArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param routeTableId 子网关联的路由表ID。
+         * @param routeTableId ID of the route table associated with the subnet
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class SubnetRouteTableArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param routeTableId 子网关联的路由表ID。
+         * @param routeTableId ID of the route table associated with the subnet
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class SubnetRouteTableArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param routeTableType 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+         * @param routeTableType Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class SubnetRouteTableArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param routeTableType 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+         * @param routeTableType Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
          * 
          * @return builder
          * 

@@ -15,12 +15,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules
     {
         /// <summary>
-        /// 表示鉴权请求头的设置策略。
+        /// Indicates the configuration policy for authentication request headers.
         /// </summary>
         public readonly Outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponents? RequestHeaderComponents;
         public readonly ImmutableArray<Outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstance> RequestHeaderInstances;
         /// <summary>
-        /// 表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+        /// Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
         /// </summary>
         public readonly string? RequestHost;
 

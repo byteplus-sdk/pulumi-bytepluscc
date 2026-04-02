@@ -15,27 +15,27 @@ import java.util.Objects;
 @CustomType
 public final class GetGroupResult {
     /**
-     * @return 用户组所属主账号的ID。
+     * @return ID of the primary account to which the user group belongs.
      * 
      */
     private Integer accountId;
     /**
-     * @return 用户组绑定的策略信息。
+     * @return Policy information bound to the user group.
      * 
      */
     private List<GetGroupAttachedPolicy> attachedPolicies;
     /**
-     * @return 用户组的创建时间。
+     * @return User group creation time.
      * 
      */
     private String createdTime;
     /**
-     * @return 用户组描述信息。长度不超过128。
+     * @return User group description. Maximum length: 128 characters.
      * 
      */
     private String description;
     /**
-     * @return 用户组显示名称。长度不超过64。
+     * @return User group display name. Maximum length: 64 characters.
      * 
      */
     private String displayName;
@@ -45,57 +45,57 @@ public final class GetGroupResult {
      */
     private String id;
     /**
-     * @return 用户组的更新时间。
+     * @return User group update time.
      * 
      */
     private String updatedTime;
     /**
-     * @return 用户组ID。
+     * @return User group ID.
      * 
      */
     private Integer userGroupId;
     /**
-     * @return 用户组名称。长度1~64，支持英文、数字和.-_符号。
+     * @return User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
      * 
      */
     private String userGroupName;
     /**
-     * @return 用户组内绑定的用户信息。
+     * @return User information associated with the user group.
      * 
      */
     private List<GetGroupUser> users;
 
     private GetGroupResult() {}
     /**
-     * @return 用户组所属主账号的ID。
+     * @return ID of the primary account to which the user group belongs.
      * 
      */
     public Integer accountId() {
         return this.accountId;
     }
     /**
-     * @return 用户组绑定的策略信息。
+     * @return Policy information bound to the user group.
      * 
      */
     public List<GetGroupAttachedPolicy> attachedPolicies() {
         return this.attachedPolicies;
     }
     /**
-     * @return 用户组的创建时间。
+     * @return User group creation time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 用户组描述信息。长度不超过128。
+     * @return User group description. Maximum length: 128 characters.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 用户组显示名称。长度不超过64。
+     * @return User group display name. Maximum length: 64 characters.
      * 
      */
     public String displayName() {
@@ -109,28 +109,28 @@ public final class GetGroupResult {
         return this.id;
     }
     /**
-     * @return 用户组的更新时间。
+     * @return User group update time.
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 用户组ID。
+     * @return User group ID.
      * 
      */
     public Integer userGroupId() {
         return this.userGroupId;
     }
     /**
-     * @return 用户组名称。长度1~64，支持英文、数字和.-_符号。
+     * @return User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
      * 
      */
     public String userGroupName() {
         return this.userGroupName;
     }
     /**
-     * @return 用户组内绑定的用户信息。
+     * @return User information associated with the user group.
      * 
      */
     public List<GetGroupUser> users() {

@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class LoadBalancerGlobalAccelerator {
     /**
-     * @return 绑定的全球加速实例的ID。
+     * @return ID of the bound Global Accelerator instance.
      * 
      */
     private @Nullable String acceleratorId;
     /**
-     * @return 绑定的全球加速监听器的ID。
+     * @return ID of the bound Global Accelerator listener.
      * 
      */
     private @Nullable String acceleratorListenerId;
     /**
-     * @return 绑定的终端节点组的ID。
+     * @return ID of the bound endpoint group.
      * 
      */
     private @Nullable String endpointGroupId;
     /**
-     * @return 后端服务器的权重，决定流量分发比例。
+     * @return Weight of the backend server, determines traffic distribution ratio.
      * 
      */
     private @Nullable Integer weight;
 
     private LoadBalancerGlobalAccelerator() {}
     /**
-     * @return 绑定的全球加速实例的ID。
+     * @return ID of the bound Global Accelerator instance.
      * 
      */
     public Optional<String> acceleratorId() {
         return Optional.ofNullable(this.acceleratorId);
     }
     /**
-     * @return 绑定的全球加速监听器的ID。
+     * @return ID of the bound Global Accelerator listener.
      * 
      */
     public Optional<String> acceleratorListenerId() {
         return Optional.ofNullable(this.acceleratorListenerId);
     }
     /**
-     * @return 绑定的终端节点组的ID。
+     * @return ID of the bound endpoint group.
      * 
      */
     public Optional<String> endpointGroupId() {
         return Optional.ofNullable(this.endpointGroupId);
     }
     /**
-     * @return 后端服务器的权重，决定流量分发比例。
+     * @return Weight of the backend server, determines traffic distribution ratio.
      * 
      */
     public Optional<Integer> weight() {

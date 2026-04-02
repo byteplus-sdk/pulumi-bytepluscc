@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceProxyDetailProxyResourceInfo {
     /**
-     * @return 实例数据库代理服务当前的核数。
+     * @return Current number of cores for the instance database proxy service
      * 
      */
     private @Nullable Integer currentProxyCpuNum;
     /**
-     * @return 用户可为数据库代理服务配置的最多核数。
+     * @return Maximum number of cores configurable for database proxy service.
      * 
      */
     private @Nullable Integer maxProxyCpuNum;
     /**
-     * @return 用户可为数据库代理服务配置的最少核数。
+     * @return Minimum number of CPU cores configurable for the database proxy service
      * 
      */
     private @Nullable Integer minProxyCpuNum;
 
     private InstanceProxyDetailProxyResourceInfo() {}
     /**
-     * @return 实例数据库代理服务当前的核数。
+     * @return Current number of cores for the instance database proxy service
      * 
      */
     public Optional<Integer> currentProxyCpuNum() {
         return Optional.ofNullable(this.currentProxyCpuNum);
     }
     /**
-     * @return 用户可为数据库代理服务配置的最多核数。
+     * @return Maximum number of cores configurable for database proxy service.
      * 
      */
     public Optional<Integer> maxProxyCpuNum() {
         return Optional.ofNullable(this.maxProxyCpuNum);
     }
     /**
-     * @return 用户可为数据库代理服务配置的最少核数。
+     * @return Minimum number of CPU cores configurable for the database proxy service
      * 
      */
     public Optional<Integer> minProxyCpuNum() {

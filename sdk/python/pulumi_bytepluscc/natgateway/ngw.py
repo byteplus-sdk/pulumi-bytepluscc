@@ -37,18 +37,18 @@ class NgwArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['NgwTagArgs']]]] = None):
         """
         The set of arguments for constructing a Ngw resource.
-        :param pulumi.Input[builtins.str] vpc_id: NAT网关所在私有网络的ID。
-        :param pulumi.Input[builtins.int] billing_type: NAT网关的计费方式。取值如下：1 ：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。当NetworkType传入intranet时，本参数仅支持且必须传入3。
-        :param pulumi.Input[builtins.str] description: NAT网关的描述。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1 ～ 255个字符。不填默认空字符串。
-        :param pulumi.Input[builtins.str] nat_gateway_name: NAT网关的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认是NAT网关实例的ID。
-        :param pulumi.Input[builtins.str] network_type: NAT网关类型。internet：公网NAT网关。intranet：私网NAT网关。
-        :param pulumi.Input[builtins.int] period: 购买包年包月NAT网关的时长，默认1。当PeriodUnit传入Month，Period取值范围：1 ~ 9、12、24、36。当PeriodUnit传入Year，Period取值范围：1 ~ 3。
-        :param pulumi.Input[builtins.str] period_unit: 购买包年包月NAT网关时长的单位，默认Month。Month ：月。Year ：年。
-        :param pulumi.Input[builtins.str] project_name: NAT网关所属项目的名称。不填默认加入default项目。
-        :param pulumi.Input[builtins.bool] smart_schedule_enabled: 是否开启智能调度。
-        :param pulumi.Input[builtins.str] smart_schedule_rule: 智能调度策略规则。ChinaMobile：中国移动。ChinaUnicom：中国联通。ChinaTelecom：中国电信。BGP：BGP多线。
-        :param pulumi.Input[builtins.str] spec: NAT网关的规格。Small（默认）：小型。Medium：中型。Large：大型。Extra*Large*1：超大型-1。Extra*Large*2：超大型-2。
-        :param pulumi.Input[builtins.str] subnet_id: NAT网关所在子网的ID。传入的子网，必须是VpcId传入的私有网络的子网。子网内至少有一个可用的私网IP。系统自动生成的NAT网关网卡将占用该子网一个私网IP。子网所在的可用区需要已部署NAT网关资源。子网所在可用区将作为NAT网关的主可用区，并自动关联备可用区。当主可用区发生故障时，NAT网关自动切换到备可用区。
+        :param pulumi.Input[builtins.str] vpc_id: ID of the private network where the NAT Gateway is located
+        :param pulumi.Input[builtins.int] billing_type: NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
+        :param pulumi.Input[builtins.str] description: Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] nat_gateway_name: Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
+        :param pulumi.Input[builtins.str] network_type: NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
+        :param pulumi.Input[builtins.int] period: Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
+        :param pulumi.Input[builtins.str] period_unit: Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
+        :param pulumi.Input[builtins.str] project_name: Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
+        :param pulumi.Input[builtins.bool] smart_schedule_enabled: Whether to enable intelligent scheduling
+        :param pulumi.Input[builtins.str] smart_schedule_rule: Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
+        :param pulumi.Input[builtins.str] spec: NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
         """
         pulumi.set(__self__, "vpc_id", vpc_id)
         if billing_type is not None:
@@ -80,7 +80,7 @@ class NgwArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        NAT网关所在私有网络的ID。
+        ID of the private network where the NAT Gateway is located
         """
         return pulumi.get(self, "vpc_id")
 
@@ -92,7 +92,7 @@ class NgwArgs:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        NAT网关的计费方式。取值如下：1 ：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。当NetworkType传入intranet时，本参数仅支持且必须传入3。
+        NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
         """
         return pulumi.get(self, "billing_type")
 
@@ -104,7 +104,7 @@ class NgwArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关的描述。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1 ～ 255个字符。不填默认空字符串。
+        Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -116,7 +116,7 @@ class NgwArgs:
     @pulumi.getter(name="natGatewayName")
     def nat_gateway_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认是NAT网关实例的ID。
+        Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
         """
         return pulumi.get(self, "nat_gateway_name")
 
@@ -128,7 +128,7 @@ class NgwArgs:
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关类型。internet：公网NAT网关。intranet：私网NAT网关。
+        NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
         """
         return pulumi.get(self, "network_type")
 
@@ -140,7 +140,7 @@ class NgwArgs:
     @pulumi.getter
     def period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        购买包年包月NAT网关的时长，默认1。当PeriodUnit传入Month，Period取值范围：1 ~ 9、12、24、36。当PeriodUnit传入Year，Period取值范围：1 ~ 3。
+        Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
         """
         return pulumi.get(self, "period")
 
@@ -152,7 +152,7 @@ class NgwArgs:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        购买包年包月NAT网关时长的单位，默认Month。Month ：月。Year ：年。
+        Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
         """
         return pulumi.get(self, "period_unit")
 
@@ -164,7 +164,7 @@ class NgwArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关所属项目的名称。不填默认加入default项目。
+        Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
         """
         return pulumi.get(self, "project_name")
 
@@ -176,7 +176,7 @@ class NgwArgs:
     @pulumi.getter(name="smartScheduleEnabled")
     def smart_schedule_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启智能调度。
+        Whether to enable intelligent scheduling
         """
         return pulumi.get(self, "smart_schedule_enabled")
 
@@ -188,7 +188,7 @@ class NgwArgs:
     @pulumi.getter(name="smartScheduleRule")
     def smart_schedule_rule(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        智能调度策略规则。ChinaMobile：中国移动。ChinaUnicom：中国联通。ChinaTelecom：中国电信。BGP：BGP多线。
+        Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
         """
         return pulumi.get(self, "smart_schedule_rule")
 
@@ -200,7 +200,7 @@ class NgwArgs:
     @pulumi.getter
     def spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关的规格。Small（默认）：小型。Medium：中型。Large：大型。Extra*Large*1：超大型-1。Extra*Large*2：超大型-2。
+        NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
         """
         return pulumi.get(self, "spec")
 
@@ -212,7 +212,7 @@ class NgwArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关所在子网的ID。传入的子网，必须是VpcId传入的私有网络的子网。子网内至少有一个可用的私网IP。系统自动生成的NAT网关网卡将占用该子网一个私网IP。子网所在的可用区需要已部署NAT网关资源。子网所在可用区将作为NAT网关的主可用区，并自动关联备可用区。当主可用区发生故障时，NAT网关自动切换到备可用区。
+        ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -264,32 +264,32 @@ class _NgwState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Ngw resources.
-        :param pulumi.Input[builtins.int] billing_type: NAT网关的计费方式。取值如下：1 ：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。当NetworkType传入intranet时，本参数仅支持且必须传入3。
-        :param pulumi.Input[builtins.str] business_status: NAT网关是否被锁定。空值：正常未被锁定。Normal：正常未被锁定。FinancialLocked：因欠费被锁定。
-        :param pulumi.Input[builtins.str] created_time: 创建时间
-        :param pulumi.Input[builtins.str] deleted_time: 删除时间
-        :param pulumi.Input[builtins.str] description: NAT网关的描述。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1 ～ 255个字符。不填默认空字符串。
-        :param pulumi.Input[builtins.bool] direct_mode: 标识该nat是直通还是非直通。   - true（默认）：EIP直通nat网关。   - false：非EIP直通nat网关。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] dnat_entry_ids: DNAT规则ID列表。
-        :param pulumi.Input[builtins.str] expired_time: 包年包月NAT网关到期时间。仅包年包月计费类型的NAT网关会返回此参数。
-        :param pulumi.Input[builtins.str] lock_reason: NAT被锁定的原因。financial：因欠费被锁定。security：因安全原因被锁定。
-        :param pulumi.Input[builtins.str] nat_gateway_id: NAT网关ID。
-        :param pulumi.Input[builtins.str] nat_gateway_name: NAT网关的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认是NAT网关实例的ID。
-        :param pulumi.Input[builtins.str] network_interface_id: NAT网关占用的网卡ID。
-        :param pulumi.Input[builtins.str] network_type: NAT网关类型。internet：公网NAT网关。intranet：私网NAT网关。
-        :param pulumi.Input[builtins.str] overdue_time: 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
-        :param pulumi.Input[builtins.int] period: 购买包年包月NAT网关的时长，默认1。当PeriodUnit传入Month，Period取值范围：1 ~ 9、12、24、36。当PeriodUnit传入Year，Period取值范围：1 ~ 3。
-        :param pulumi.Input[builtins.str] period_unit: 购买包年包月NAT网关时长的单位，默认Month。Month ：月。Year ：年。
-        :param pulumi.Input[builtins.str] project_name: NAT网关所属项目的名称。不填默认加入default项目。
-        :param pulumi.Input[builtins.bool] smart_schedule_enabled: 是否开启智能调度。
-        :param pulumi.Input[builtins.str] smart_schedule_rule: 智能调度策略规则。ChinaMobile：中国移动。ChinaUnicom：中国联通。ChinaTelecom：中国电信。BGP：BGP多线。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] snat_entry_ids: SNAT规则ID列表。
-        :param pulumi.Input[builtins.str] spec: NAT网关的规格。Small（默认）：小型。Medium：中型。Large：大型。Extra*Large*1：超大型-1。Extra*Large*2：超大型-2。
-        :param pulumi.Input[builtins.str] status: NAT网关的状态。Available：可用。Creating：创建中。Pending：操作中。Deleting：删除中。
-        :param pulumi.Input[builtins.str] subnet_id: NAT网关所在子网的ID。传入的子网，必须是VpcId传入的私有网络的子网。子网内至少有一个可用的私网IP。系统自动生成的NAT网关网卡将占用该子网一个私网IP。子网所在的可用区需要已部署NAT网关资源。子网所在可用区将作为NAT网关的主可用区，并自动关联备可用区。当主可用区发生故障时，NAT网关自动切换到备可用区。
-        :param pulumi.Input[builtins.str] updated_time: NAT网关的最后操作时间。
-        :param pulumi.Input[builtins.str] vpc_id: NAT网关所在私有网络的ID。
-        :param pulumi.Input[builtins.str] zone_id: NAT网关所属主可用区的ID。
+        :param pulumi.Input[builtins.int] billing_type: NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
+        :param pulumi.Input[builtins.str] business_status: Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
+        :param pulumi.Input[builtins.str] created_time: Creation time
+        :param pulumi.Input[builtins.str] deleted_time: Deletion time
+        :param pulumi.Input[builtins.str] description: Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.bool] direct_mode: Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] dnat_entry_ids: DNAT rule ID list.
+        :param pulumi.Input[builtins.str] expired_time: Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
+        :param pulumi.Input[builtins.str] lock_reason: Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
+        :param pulumi.Input[builtins.str] nat_gateway_id: NAT gateway ID.
+        :param pulumi.Input[builtins.str] nat_gateway_name: Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
+        :param pulumi.Input[builtins.str] network_interface_id: Network interface ID occupied by the NAT gateway.
+        :param pulumi.Input[builtins.str] network_type: NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
+        :param pulumi.Input[builtins.str] overdue_time: Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
+        :param pulumi.Input[builtins.int] period: Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
+        :param pulumi.Input[builtins.str] period_unit: Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
+        :param pulumi.Input[builtins.str] project_name: Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
+        :param pulumi.Input[builtins.bool] smart_schedule_enabled: Whether to enable intelligent scheduling
+        :param pulumi.Input[builtins.str] smart_schedule_rule: Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] snat_entry_ids: SNAT rule ID list
+        :param pulumi.Input[builtins.str] spec: NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
+        :param pulumi.Input[builtins.str] status: Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
+        :param pulumi.Input[builtins.str] updated_time: Last operation time of the NAT Gateway
+        :param pulumi.Input[builtins.str] vpc_id: ID of the private network where the NAT Gateway is located
+        :param pulumi.Input[builtins.str] zone_id: ID of the primary availability zone the NAT Gateway belongs to
         """
         if billing_type is not None:
             pulumi.set(__self__, "billing_type", billing_type)
@@ -354,7 +354,7 @@ class _NgwState:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        NAT网关的计费方式。取值如下：1 ：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。当NetworkType传入intranet时，本参数仅支持且必须传入3。
+        NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
         """
         return pulumi.get(self, "billing_type")
 
@@ -366,7 +366,7 @@ class _NgwState:
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关是否被锁定。空值：正常未被锁定。Normal：正常未被锁定。FinancialLocked：因欠费被锁定。
+        Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
         """
         return pulumi.get(self, "business_status")
 
@@ -378,7 +378,7 @@ class _NgwState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -390,7 +390,7 @@ class _NgwState:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        删除时间
+        Deletion time
         """
         return pulumi.get(self, "deleted_time")
 
@@ -402,7 +402,7 @@ class _NgwState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关的描述。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1 ～ 255个字符。不填默认空字符串。
+        Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -414,7 +414,7 @@ class _NgwState:
     @pulumi.getter(name="directMode")
     def direct_mode(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        标识该nat是直通还是非直通。   - true（默认）：EIP直通nat网关。   - false：非EIP直通nat网关。
+        Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
         """
         return pulumi.get(self, "direct_mode")
 
@@ -426,7 +426,7 @@ class _NgwState:
     @pulumi.getter(name="dnatEntryIds")
     def dnat_entry_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        DNAT规则ID列表。
+        DNAT rule ID list.
         """
         return pulumi.get(self, "dnat_entry_ids")
 
@@ -447,7 +447,7 @@ class _NgwState:
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        包年包月NAT网关到期时间。仅包年包月计费类型的NAT网关会返回此参数。
+        Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
         """
         return pulumi.get(self, "expired_time")
 
@@ -459,7 +459,7 @@ class _NgwState:
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT被锁定的原因。financial：因欠费被锁定。security：因安全原因被锁定。
+        Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
         """
         return pulumi.get(self, "lock_reason")
 
@@ -471,7 +471,7 @@ class _NgwState:
     @pulumi.getter(name="natGatewayId")
     def nat_gateway_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关ID。
+        NAT gateway ID.
         """
         return pulumi.get(self, "nat_gateway_id")
 
@@ -483,7 +483,7 @@ class _NgwState:
     @pulumi.getter(name="natGatewayName")
     def nat_gateway_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认是NAT网关实例的ID。
+        Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
         """
         return pulumi.get(self, "nat_gateway_name")
 
@@ -504,7 +504,7 @@ class _NgwState:
     @pulumi.getter(name="networkInterfaceId")
     def network_interface_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关占用的网卡ID。
+        Network interface ID occupied by the NAT gateway.
         """
         return pulumi.get(self, "network_interface_id")
 
@@ -516,7 +516,7 @@ class _NgwState:
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关类型。internet：公网NAT网关。intranet：私网NAT网关。
+        NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
         """
         return pulumi.get(self, "network_type")
 
@@ -528,7 +528,7 @@ class _NgwState:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+        Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -540,7 +540,7 @@ class _NgwState:
     @pulumi.getter
     def period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        购买包年包月NAT网关的时长，默认1。当PeriodUnit传入Month，Period取值范围：1 ~ 9、12、24、36。当PeriodUnit传入Year，Period取值范围：1 ~ 3。
+        Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
         """
         return pulumi.get(self, "period")
 
@@ -552,7 +552,7 @@ class _NgwState:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        购买包年包月NAT网关时长的单位，默认Month。Month ：月。Year ：年。
+        Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
         """
         return pulumi.get(self, "period_unit")
 
@@ -564,7 +564,7 @@ class _NgwState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关所属项目的名称。不填默认加入default项目。
+        Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
         """
         return pulumi.get(self, "project_name")
 
@@ -576,7 +576,7 @@ class _NgwState:
     @pulumi.getter(name="smartScheduleEnabled")
     def smart_schedule_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启智能调度。
+        Whether to enable intelligent scheduling
         """
         return pulumi.get(self, "smart_schedule_enabled")
 
@@ -588,7 +588,7 @@ class _NgwState:
     @pulumi.getter(name="smartScheduleRule")
     def smart_schedule_rule(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        智能调度策略规则。ChinaMobile：中国移动。ChinaUnicom：中国联通。ChinaTelecom：中国电信。BGP：BGP多线。
+        Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
         """
         return pulumi.get(self, "smart_schedule_rule")
 
@@ -600,7 +600,7 @@ class _NgwState:
     @pulumi.getter(name="snatEntryIds")
     def snat_entry_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        SNAT规则ID列表。
+        SNAT rule ID list
         """
         return pulumi.get(self, "snat_entry_ids")
 
@@ -612,7 +612,7 @@ class _NgwState:
     @pulumi.getter
     def spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关的规格。Small（默认）：小型。Medium：中型。Large：大型。Extra*Large*1：超大型-1。Extra*Large*2：超大型-2。
+        NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
         """
         return pulumi.get(self, "spec")
 
@@ -624,7 +624,7 @@ class _NgwState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关的状态。Available：可用。Creating：创建中。Pending：操作中。Deleting：删除中。
+        Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
         """
         return pulumi.get(self, "status")
 
@@ -636,7 +636,7 @@ class _NgwState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关所在子网的ID。传入的子网，必须是VpcId传入的私有网络的子网。子网内至少有一个可用的私网IP。系统自动生成的NAT网关网卡将占用该子网一个私网IP。子网所在的可用区需要已部署NAT网关资源。子网所在可用区将作为NAT网关的主可用区，并自动关联备可用区。当主可用区发生故障时，NAT网关自动切换到备可用区。
+        ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -657,7 +657,7 @@ class _NgwState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关的最后操作时间。
+        Last operation time of the NAT Gateway
         """
         return pulumi.get(self, "updated_time")
 
@@ -669,7 +669,7 @@ class _NgwState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关所在私有网络的ID。
+        ID of the private network where the NAT Gateway is located
         """
         return pulumi.get(self, "vpc_id")
 
@@ -681,7 +681,7 @@ class _NgwState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NAT网关所属主可用区的ID。
+        ID of the primary availability zone the NAT Gateway belongs to
         """
         return pulumi.get(self, "zone_id")
 
@@ -711,7 +711,7 @@ class Ngw(pulumi.CustomResource):
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        NAT网关为私有网络内的云服务器提供网络地址转换服务。
+        NAT Gateway provides network address translation services for cloud servers within the private network
 
         ## Example Usage
 
@@ -742,18 +742,18 @@ class Ngw(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] billing_type: NAT网关的计费方式。取值如下：1 ：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。当NetworkType传入intranet时，本参数仅支持且必须传入3。
-        :param pulumi.Input[builtins.str] description: NAT网关的描述。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1 ～ 255个字符。不填默认空字符串。
-        :param pulumi.Input[builtins.str] nat_gateway_name: NAT网关的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认是NAT网关实例的ID。
-        :param pulumi.Input[builtins.str] network_type: NAT网关类型。internet：公网NAT网关。intranet：私网NAT网关。
-        :param pulumi.Input[builtins.int] period: 购买包年包月NAT网关的时长，默认1。当PeriodUnit传入Month，Period取值范围：1 ~ 9、12、24、36。当PeriodUnit传入Year，Period取值范围：1 ~ 3。
-        :param pulumi.Input[builtins.str] period_unit: 购买包年包月NAT网关时长的单位，默认Month。Month ：月。Year ：年。
-        :param pulumi.Input[builtins.str] project_name: NAT网关所属项目的名称。不填默认加入default项目。
-        :param pulumi.Input[builtins.bool] smart_schedule_enabled: 是否开启智能调度。
-        :param pulumi.Input[builtins.str] smart_schedule_rule: 智能调度策略规则。ChinaMobile：中国移动。ChinaUnicom：中国联通。ChinaTelecom：中国电信。BGP：BGP多线。
-        :param pulumi.Input[builtins.str] spec: NAT网关的规格。Small（默认）：小型。Medium：中型。Large：大型。Extra*Large*1：超大型-1。Extra*Large*2：超大型-2。
-        :param pulumi.Input[builtins.str] subnet_id: NAT网关所在子网的ID。传入的子网，必须是VpcId传入的私有网络的子网。子网内至少有一个可用的私网IP。系统自动生成的NAT网关网卡将占用该子网一个私网IP。子网所在的可用区需要已部署NAT网关资源。子网所在可用区将作为NAT网关的主可用区，并自动关联备可用区。当主可用区发生故障时，NAT网关自动切换到备可用区。
-        :param pulumi.Input[builtins.str] vpc_id: NAT网关所在私有网络的ID。
+        :param pulumi.Input[builtins.int] billing_type: NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
+        :param pulumi.Input[builtins.str] description: Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] nat_gateway_name: Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
+        :param pulumi.Input[builtins.str] network_type: NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
+        :param pulumi.Input[builtins.int] period: Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
+        :param pulumi.Input[builtins.str] period_unit: Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
+        :param pulumi.Input[builtins.str] project_name: Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
+        :param pulumi.Input[builtins.bool] smart_schedule_enabled: Whether to enable intelligent scheduling
+        :param pulumi.Input[builtins.str] smart_schedule_rule: Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
+        :param pulumi.Input[builtins.str] spec: NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
+        :param pulumi.Input[builtins.str] vpc_id: ID of the private network where the NAT Gateway is located
         """
         ...
     @overload
@@ -762,7 +762,7 @@ class Ngw(pulumi.CustomResource):
                  args: NgwArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        NAT网关为私有网络内的云服务器提供网络地址转换服务。
+        NAT Gateway provides network address translation services for cloud servers within the private network
 
         ## Example Usage
 
@@ -905,32 +905,32 @@ class Ngw(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] billing_type: NAT网关的计费方式。取值如下：1 ：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。当NetworkType传入intranet时，本参数仅支持且必须传入3。
-        :param pulumi.Input[builtins.str] business_status: NAT网关是否被锁定。空值：正常未被锁定。Normal：正常未被锁定。FinancialLocked：因欠费被锁定。
-        :param pulumi.Input[builtins.str] created_time: 创建时间
-        :param pulumi.Input[builtins.str] deleted_time: 删除时间
-        :param pulumi.Input[builtins.str] description: NAT网关的描述。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1 ～ 255个字符。不填默认空字符串。
-        :param pulumi.Input[builtins.bool] direct_mode: 标识该nat是直通还是非直通。   - true（默认）：EIP直通nat网关。   - false：非EIP直通nat网关。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] dnat_entry_ids: DNAT规则ID列表。
-        :param pulumi.Input[builtins.str] expired_time: 包年包月NAT网关到期时间。仅包年包月计费类型的NAT网关会返回此参数。
-        :param pulumi.Input[builtins.str] lock_reason: NAT被锁定的原因。financial：因欠费被锁定。security：因安全原因被锁定。
-        :param pulumi.Input[builtins.str] nat_gateway_id: NAT网关ID。
-        :param pulumi.Input[builtins.str] nat_gateway_name: NAT网关的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认是NAT网关实例的ID。
-        :param pulumi.Input[builtins.str] network_interface_id: NAT网关占用的网卡ID。
-        :param pulumi.Input[builtins.str] network_type: NAT网关类型。internet：公网NAT网关。intranet：私网NAT网关。
-        :param pulumi.Input[builtins.str] overdue_time: 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
-        :param pulumi.Input[builtins.int] period: 购买包年包月NAT网关的时长，默认1。当PeriodUnit传入Month，Period取值范围：1 ~ 9、12、24、36。当PeriodUnit传入Year，Period取值范围：1 ~ 3。
-        :param pulumi.Input[builtins.str] period_unit: 购买包年包月NAT网关时长的单位，默认Month。Month ：月。Year ：年。
-        :param pulumi.Input[builtins.str] project_name: NAT网关所属项目的名称。不填默认加入default项目。
-        :param pulumi.Input[builtins.bool] smart_schedule_enabled: 是否开启智能调度。
-        :param pulumi.Input[builtins.str] smart_schedule_rule: 智能调度策略规则。ChinaMobile：中国移动。ChinaUnicom：中国联通。ChinaTelecom：中国电信。BGP：BGP多线。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] snat_entry_ids: SNAT规则ID列表。
-        :param pulumi.Input[builtins.str] spec: NAT网关的规格。Small（默认）：小型。Medium：中型。Large：大型。Extra*Large*1：超大型-1。Extra*Large*2：超大型-2。
-        :param pulumi.Input[builtins.str] status: NAT网关的状态。Available：可用。Creating：创建中。Pending：操作中。Deleting：删除中。
-        :param pulumi.Input[builtins.str] subnet_id: NAT网关所在子网的ID。传入的子网，必须是VpcId传入的私有网络的子网。子网内至少有一个可用的私网IP。系统自动生成的NAT网关网卡将占用该子网一个私网IP。子网所在的可用区需要已部署NAT网关资源。子网所在可用区将作为NAT网关的主可用区，并自动关联备可用区。当主可用区发生故障时，NAT网关自动切换到备可用区。
-        :param pulumi.Input[builtins.str] updated_time: NAT网关的最后操作时间。
-        :param pulumi.Input[builtins.str] vpc_id: NAT网关所在私有网络的ID。
-        :param pulumi.Input[builtins.str] zone_id: NAT网关所属主可用区的ID。
+        :param pulumi.Input[builtins.int] billing_type: NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
+        :param pulumi.Input[builtins.str] business_status: Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
+        :param pulumi.Input[builtins.str] created_time: Creation time
+        :param pulumi.Input[builtins.str] deleted_time: Deletion time
+        :param pulumi.Input[builtins.str] description: Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.bool] direct_mode: Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] dnat_entry_ids: DNAT rule ID list.
+        :param pulumi.Input[builtins.str] expired_time: Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
+        :param pulumi.Input[builtins.str] lock_reason: Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
+        :param pulumi.Input[builtins.str] nat_gateway_id: NAT gateway ID.
+        :param pulumi.Input[builtins.str] nat_gateway_name: Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
+        :param pulumi.Input[builtins.str] network_interface_id: Network interface ID occupied by the NAT gateway.
+        :param pulumi.Input[builtins.str] network_type: NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
+        :param pulumi.Input[builtins.str] overdue_time: Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
+        :param pulumi.Input[builtins.int] period: Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
+        :param pulumi.Input[builtins.str] period_unit: Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
+        :param pulumi.Input[builtins.str] project_name: Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
+        :param pulumi.Input[builtins.bool] smart_schedule_enabled: Whether to enable intelligent scheduling
+        :param pulumi.Input[builtins.str] smart_schedule_rule: Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] snat_entry_ids: SNAT rule ID list
+        :param pulumi.Input[builtins.str] spec: NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
+        :param pulumi.Input[builtins.str] status: Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
+        :param pulumi.Input[builtins.str] updated_time: Last operation time of the NAT Gateway
+        :param pulumi.Input[builtins.str] vpc_id: ID of the private network where the NAT Gateway is located
+        :param pulumi.Input[builtins.str] zone_id: ID of the primary availability zone the NAT Gateway belongs to
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -971,7 +971,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> pulumi.Output[builtins.int]:
         """
-        NAT网关的计费方式。取值如下：1 ：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。当NetworkType传入intranet时，本参数仅支持且必须传入3。
+        NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
         """
         return pulumi.get(self, "billing_type")
 
@@ -979,7 +979,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> pulumi.Output[builtins.str]:
         """
-        NAT网关是否被锁定。空值：正常未被锁定。Normal：正常未被锁定。FinancialLocked：因欠费被锁定。
+        Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
         """
         return pulumi.get(self, "business_status")
 
@@ -987,7 +987,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -995,7 +995,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> pulumi.Output[builtins.str]:
         """
-        删除时间
+        Deletion time
         """
         return pulumi.get(self, "deleted_time")
 
@@ -1003,7 +1003,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        NAT网关的描述。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1 ～ 255个字符。不填默认空字符串。
+        Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -1011,7 +1011,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="directMode")
     def direct_mode(self) -> pulumi.Output[builtins.bool]:
         """
-        标识该nat是直通还是非直通。   - true（默认）：EIP直通nat网关。   - false：非EIP直通nat网关。
+        Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
         """
         return pulumi.get(self, "direct_mode")
 
@@ -1019,7 +1019,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="dnatEntryIds")
     def dnat_entry_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        DNAT规则ID列表。
+        DNAT rule ID list.
         """
         return pulumi.get(self, "dnat_entry_ids")
 
@@ -1032,7 +1032,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> pulumi.Output[builtins.str]:
         """
-        包年包月NAT网关到期时间。仅包年包月计费类型的NAT网关会返回此参数。
+        Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
         """
         return pulumi.get(self, "expired_time")
 
@@ -1040,7 +1040,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> pulumi.Output[builtins.str]:
         """
-        NAT被锁定的原因。financial：因欠费被锁定。security：因安全原因被锁定。
+        Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
         """
         return pulumi.get(self, "lock_reason")
 
@@ -1048,7 +1048,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="natGatewayId")
     def nat_gateway_id(self) -> pulumi.Output[builtins.str]:
         """
-        NAT网关ID。
+        NAT gateway ID.
         """
         return pulumi.get(self, "nat_gateway_id")
 
@@ -1056,7 +1056,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="natGatewayName")
     def nat_gateway_name(self) -> pulumi.Output[builtins.str]:
         """
-        NAT网关的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认是NAT网关实例的ID。
+        Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
         """
         return pulumi.get(self, "nat_gateway_name")
 
@@ -1069,7 +1069,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="networkInterfaceId")
     def network_interface_id(self) -> pulumi.Output[builtins.str]:
         """
-        NAT网关占用的网卡ID。
+        Network interface ID occupied by the NAT gateway.
         """
         return pulumi.get(self, "network_interface_id")
 
@@ -1077,7 +1077,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="networkType")
     def network_type(self) -> pulumi.Output[builtins.str]:
         """
-        NAT网关类型。internet：公网NAT网关。intranet：私网NAT网关。
+        NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
         """
         return pulumi.get(self, "network_type")
 
@@ -1085,7 +1085,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> pulumi.Output[builtins.str]:
         """
-        资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+        Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -1093,7 +1093,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter
     def period(self) -> pulumi.Output[builtins.int]:
         """
-        购买包年包月NAT网关的时长，默认1。当PeriodUnit传入Month，Period取值范围：1 ~ 9、12、24、36。当PeriodUnit传入Year，Period取值范围：1 ~ 3。
+        Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
         """
         return pulumi.get(self, "period")
 
@@ -1101,7 +1101,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> pulumi.Output[builtins.str]:
         """
-        购买包年包月NAT网关时长的单位，默认Month。Month ：月。Year ：年。
+        Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
         """
         return pulumi.get(self, "period_unit")
 
@@ -1109,7 +1109,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        NAT网关所属项目的名称。不填默认加入default项目。
+        Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
         """
         return pulumi.get(self, "project_name")
 
@@ -1117,7 +1117,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="smartScheduleEnabled")
     def smart_schedule_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启智能调度。
+        Whether to enable intelligent scheduling
         """
         return pulumi.get(self, "smart_schedule_enabled")
 
@@ -1125,7 +1125,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="smartScheduleRule")
     def smart_schedule_rule(self) -> pulumi.Output[builtins.str]:
         """
-        智能调度策略规则。ChinaMobile：中国移动。ChinaUnicom：中国联通。ChinaTelecom：中国电信。BGP：BGP多线。
+        Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
         """
         return pulumi.get(self, "smart_schedule_rule")
 
@@ -1133,7 +1133,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="snatEntryIds")
     def snat_entry_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        SNAT规则ID列表。
+        SNAT rule ID list
         """
         return pulumi.get(self, "snat_entry_ids")
 
@@ -1141,7 +1141,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter
     def spec(self) -> pulumi.Output[builtins.str]:
         """
-        NAT网关的规格。Small（默认）：小型。Medium：中型。Large：大型。Extra*Large*1：超大型-1。Extra*Large*2：超大型-2。
+        NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
         """
         return pulumi.get(self, "spec")
 
@@ -1149,7 +1149,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        NAT网关的状态。Available：可用。Creating：创建中。Pending：操作中。Deleting：删除中。
+        Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
         """
         return pulumi.get(self, "status")
 
@@ -1157,7 +1157,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        NAT网关所在子网的ID。传入的子网，必须是VpcId传入的私有网络的子网。子网内至少有一个可用的私网IP。系统自动生成的NAT网关网卡将占用该子网一个私网IP。子网所在的可用区需要已部署NAT网关资源。子网所在可用区将作为NAT网关的主可用区，并自动关联备可用区。当主可用区发生故障时，NAT网关自动切换到备可用区。
+        ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1170,7 +1170,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        NAT网关的最后操作时间。
+        Last operation time of the NAT Gateway
         """
         return pulumi.get(self, "updated_time")
 
@@ -1178,7 +1178,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        NAT网关所在私有网络的ID。
+        ID of the private network where the NAT Gateway is located
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1186,7 +1186,7 @@ class Ngw(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        NAT网关所属主可用区的ID。
+        ID of the primary availability zone the NAT Gateway belongs to
         """
         return pulumi.get(self, "zone_id")
 

@@ -17,14 +17,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     public static final AccountArgs Empty = new AccountArgs();
 
     /**
-     * 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
+     * Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
      * 
      */
     @Import(name="accountName", required=true)
     private Output<String> accountName;
 
     /**
-     * @return 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
+     * @return Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
      * 
      */
     public Output<String> accountName() {
@@ -32,14 +32,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+     * Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+     * @return Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
      * 
      */
     public Optional<Output<String>> description() {
@@ -47,14 +47,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID。
+     * Instance ID.
      * 
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public Output<String> instanceId() {
@@ -62,14 +62,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!{@literal @}#$%^&amp;*-+=_|{}[];&lt;&gt;,.?
+     * Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!{@literal @}#$%^&amp;*-+=_|{}[];&lt;&gt;,.?
      * 
      */
     @Import(name="password", required=true)
     private Output<String> password;
 
     /**
-     * @return 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!{@literal @}#$%^&amp;*-+=_|{}[];&lt;&gt;,.?
+     * @return Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!{@literal @}#$%^&amp;*-+=_|{}[];&lt;&gt;,.?
      * 
      */
     public Output<String> password() {
@@ -77,14 +77,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+     * Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role&#39;s ACL rules, see ACL syntax.
      * 
      */
     @Import(name="roleName", required=true)
     private Output<String> roleName;
 
     /**
-     * @return 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+     * @return Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role&#39;s ACL rules, see ACL syntax.
      * 
      */
     public Output<String> roleName() {
@@ -120,7 +120,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountName 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
+         * @param accountName Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountName 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
+         * @param accountName Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+         * @param description Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+         * @param description Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!{@literal @}#$%^&amp;*-+=_|{}[];&lt;&gt;,.?
+         * @param password Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!{@literal @}#$%^&amp;*-+=_|{}[];&lt;&gt;,.?
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!{@literal @}#$%^&amp;*-+=_|{}[];&lt;&gt;,.?
+         * @param password Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!{@literal @}#$%^&amp;*-+=_|{}[];&lt;&gt;,.?
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param roleName 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+         * @param roleName Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role&#39;s ACL rules, see ACL syntax.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param roleName 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+         * @param roleName Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role&#39;s ACL rules, see ACL syntax.
          * 
          * @return builder
          * 

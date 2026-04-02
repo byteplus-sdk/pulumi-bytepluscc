@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainRequestBlockRuleBlockRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示列表中一条规则的拦截配置。
+        /// Indicates the interception configuration for a rule in the list.
         /// </summary>
         [Input("blockAction")]
         public Input<Inputs.DomainRequestBlockRuleBlockRuleBlockActionGetArgs>? BlockAction { get; set; }
 
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         [Input("condition")]
         public Input<Inputs.DomainRequestBlockRuleBlockRuleConditionGetArgs>? Condition { get; set; }
 
         /// <summary>
-        /// 表示规则的名称，长度不超过 20 个字符，可以包含字母、数字、下划线（_）、中划线（-）、汉字。一个汉字占 3 个字符。
+        /// Indicates the name of the rule, which must not exceed 20 characters and can include letters, numbers, underscores (_), hyphens (-), and Chinese characters. One Chinese character counts as 3 characters.
         /// </summary>
         [Input("ruleName")]
         public Input<string>? RuleName { get; set; }

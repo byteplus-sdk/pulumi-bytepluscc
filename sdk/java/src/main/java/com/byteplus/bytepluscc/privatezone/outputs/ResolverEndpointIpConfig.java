@@ -12,50 +12,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ResolverEndpointIpConfig {
     /**
-     * @return 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+     * @return Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
      * 
      */
     private @Nullable String azId;
     /**
-     * @return 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+     * @return IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
      * 
      */
     private @Nullable String ip;
     /**
-     * @return 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+     * @return IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
      * 
      */
     private @Nullable String ipv6;
     /**
-     * @return 终端节点 IP 地址所在的子网 ID。
+     * @return Subnet ID for the endpoint IP address
      * 
      */
     private @Nullable String subnetId;
 
     private ResolverEndpointIpConfig() {}
     /**
-     * @return 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+     * @return Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
      * 
      */
     public Optional<String> azId() {
         return Optional.ofNullable(this.azId);
     }
     /**
-     * @return 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+     * @return IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
      * 
      */
     public Optional<String> ip() {
         return Optional.ofNullable(this.ip);
     }
     /**
-     * @return 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+     * @return IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
      * 
      */
     public Optional<String> ipv6() {
         return Optional.ofNullable(this.ipv6);
     }
     /**
-     * @return 终端节点 IP 地址所在的子网 ID。
+     * @return Subnet ID for the endpoint IP address
      * 
      */
     public Optional<String> subnetId() {

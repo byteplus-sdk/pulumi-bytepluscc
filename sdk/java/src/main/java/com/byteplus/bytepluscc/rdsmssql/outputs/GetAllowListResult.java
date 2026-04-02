@@ -14,47 +14,47 @@ import java.util.Objects;
 @CustomType
 public final class GetAllowListResult {
     /**
-     * @return IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * @return IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
      * 
      */
     private String allowList;
     /**
-     * @return 白名单分类。
+     * @return Allowlist category
      * 
      */
     private String allowListCategory;
     /**
-     * @return 白名单描述。
+     * @return Allowlist description
      * 
      */
     private String allowListDesc;
     /**
-     * @return 白名单的id。
+     * @return Allowlist ID
      * 
      */
     private String allowListId;
     /**
-     * @return AllowListIP数量。
+     * @return Allowlist IP count
      * 
      */
     private Integer allowListIpNum;
     /**
-     * @return 白名单名称。
+     * @return Allowlist name
      * 
      */
     private String allowListName;
     /**
-     * @return 白名单内的IP地址类型，当前仅支持IPv4。
+     * @return IP address type in the allowlist. Only IPv4 is supported
      * 
      */
     private String allowListType;
     /**
-     * @return 绑定的实例数量。解绑实例的白名单时必传。
+     * @return Number of bound instances. Required when unbinding an instance from the allowlist
      * 
      */
     private Integer associatedInstanceNum;
     /**
-     * @return 绑定的实例列表。
+     * @return Bound instance list
      * 
      */
     private List<GetAllowListAssociatedInstance> associatedInstances;
@@ -64,80 +64,80 @@ public final class GetAllowListResult {
      */
     private String id;
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     private String instanceId;
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     private String projectName;
     /**
-     * @return 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+     * @return IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
      * 
      */
     private String userAllowList;
 
     private GetAllowListResult() {}
     /**
-     * @return IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * @return IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
      * 
      */
     public String allowList() {
         return this.allowList;
     }
     /**
-     * @return 白名单分类。
+     * @return Allowlist category
      * 
      */
     public String allowListCategory() {
         return this.allowListCategory;
     }
     /**
-     * @return 白名单描述。
+     * @return Allowlist description
      * 
      */
     public String allowListDesc() {
         return this.allowListDesc;
     }
     /**
-     * @return 白名单的id。
+     * @return Allowlist ID
      * 
      */
     public String allowListId() {
         return this.allowListId;
     }
     /**
-     * @return AllowListIP数量。
+     * @return Allowlist IP count
      * 
      */
     public Integer allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
-     * @return 白名单名称。
+     * @return Allowlist name
      * 
      */
     public String allowListName() {
         return this.allowListName;
     }
     /**
-     * @return 白名单内的IP地址类型，当前仅支持IPv4。
+     * @return IP address type in the allowlist. Only IPv4 is supported
      * 
      */
     public String allowListType() {
         return this.allowListType;
     }
     /**
-     * @return 绑定的实例数量。解绑实例的白名单时必传。
+     * @return Number of bound instances. Required when unbinding an instance from the allowlist
      * 
      */
     public Integer associatedInstanceNum() {
         return this.associatedInstanceNum;
     }
     /**
-     * @return 绑定的实例列表。
+     * @return Bound instance list
      * 
      */
     public List<GetAllowListAssociatedInstance> associatedInstances() {
@@ -151,21 +151,21 @@ public final class GetAllowListResult {
         return this.id;
     }
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+     * @return IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
      * 
      */
     public String userAllowList() {

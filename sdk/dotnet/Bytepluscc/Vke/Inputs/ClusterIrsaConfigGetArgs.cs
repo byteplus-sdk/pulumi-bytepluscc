@@ -14,37 +14,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class ClusterIrsaConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 接受令牌的标识符。
+        /// Identifier for accepting tokens
         /// </summary>
         [Input("audience")]
         public Input<string>? Audience { get; set; }
 
         /// <summary>
-        /// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+        /// Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+        /// OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
         /// </summary>
         [Input("issuer")]
         public Input<string>? Issuer { get; set; }
 
         /// <summary>
-        /// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+        /// JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
         /// </summary>
         [Input("jwksUrl")]
         public Input<string>? JwksUrl { get; set; }
 
         /// <summary>
-        /// OIDC 提供商 TRN。
+        /// OIDC provider TRN.
         /// </summary>
         [Input("oidcTrn")]
         public Input<string>? OidcTrn { get; set; }
 
         /// <summary>
-        /// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+        /// OIDC provider configuration document in JSON format, containing information about the OIDC provider.
         /// </summary>
         [Input("openIdConfigUrl")]
         public Input<string>? OpenIdConfigUrl { get; set; }

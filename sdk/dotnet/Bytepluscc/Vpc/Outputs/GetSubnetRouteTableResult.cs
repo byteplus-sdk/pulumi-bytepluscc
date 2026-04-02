@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Outputs
     public sealed class GetSubnetRouteTableResult
     {
         /// <summary>
-        /// 子网关联的路由表ID。
+        /// ID of the route table associated with the subnet
         /// </summary>
         public readonly string RouteTableId;
         /// <summary>
-        /// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+        /// Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
         /// </summary>
         public readonly string RouteTableType;
 

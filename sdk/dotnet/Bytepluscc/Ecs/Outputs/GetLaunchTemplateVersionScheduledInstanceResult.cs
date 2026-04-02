@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class GetLaunchTemplateVersionScheduledInstanceResult
     {
         /// <summary>
-        /// 弹性预约单的描述。
+        /// Description of the elastic reservation order
         /// </summary>
         public readonly string ScheduledInstanceDescription;
         /// <summary>
-        /// 弹性预约单的名称。
+        /// Name of the elastic reservation order
         /// </summary>
         public readonly string ScheduledInstanceName;
 

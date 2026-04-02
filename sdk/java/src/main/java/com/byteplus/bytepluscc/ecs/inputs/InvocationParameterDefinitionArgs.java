@@ -18,14 +18,14 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
     public static final InvocationParameterDefinitionArgs Empty = new InvocationParameterDefinitionArgs();
 
     /**
-     * 自定义参数值（数字）允许的小数点后位数。
+     * Allowed number of decimal places for custom parameter values (numeric).
      * 
      */
     @Import(name="decimalPrecision")
     private @Nullable Output<Integer> decimalPrecision;
 
     /**
-     * @return 自定义参数值（数字）允许的小数点后位数。
+     * @return Allowed number of decimal places for custom parameter values (numeric).
      * 
      */
     public Optional<Output<Integer>> decimalPrecision() {
@@ -33,14 +33,14 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
     }
 
     /**
-     * 自定义参数默认值。
+     * Default value for custom parameter.
      * 
      */
     @Import(name="defaultValue")
     private @Nullable Output<String> defaultValue;
 
     /**
-     * @return 自定义参数默认值。
+     * @return Default value for custom parameter.
      * 
      */
     public Optional<Output<String>> defaultValue() {
@@ -48,14 +48,14 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
     }
 
     /**
-     * 自定义参数值（字符串）的最大长度。
+     * Maximum length for custom parameter value (string).
      * 
      */
     @Import(name="maxLength")
     private @Nullable Output<Integer> maxLength;
 
     /**
-     * @return 自定义参数值（字符串）的最大长度。
+     * @return Maximum length for custom parameter value (string).
      * 
      */
     public Optional<Output<Integer>> maxLength() {
@@ -63,14 +63,14 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
     }
 
     /**
-     * 自定义参数值（数字）的最大值。
+     * Maximum value for custom parameter (numeric).
      * 
      */
     @Import(name="maxValue")
     private @Nullable Output<String> maxValue;
 
     /**
-     * @return 自定义参数值（数字）的最大值。
+     * @return Maximum value for custom parameter (numeric).
      * 
      */
     public Optional<Output<String>> maxValue() {
@@ -78,14 +78,14 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
     }
 
     /**
-     * 自定义参数值（字符串）的最小长度。
+     * Minimum length for custom parameter values (string).
      * 
      */
     @Import(name="minLength")
     private @Nullable Output<Integer> minLength;
 
     /**
-     * @return 自定义参数值（字符串）的最小长度。
+     * @return Minimum length for custom parameter values (string).
      * 
      */
     public Optional<Output<Integer>> minLength() {
@@ -93,14 +93,14 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
     }
 
     /**
-     * 自定义参数值（数字）的最小值。
+     * Minimum value for custom parameter (numeric).
      * 
      */
     @Import(name="minValue")
     private @Nullable Output<String> minValue;
 
     /**
-     * @return 自定义参数值（数字）的最小值。
+     * @return Minimum value for custom parameter (numeric).
      * 
      */
     public Optional<Output<String>> minValue() {
@@ -108,14 +108,14 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
     }
 
     /**
-     * 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+     * Custom parameter name. Must be defined in the script using {{Param}}.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+     * @return Custom parameter name. Must be defined in the script using {{Param}}.
      * 
      */
     public Optional<Output<String>> name() {
@@ -123,14 +123,14 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
     }
 
     /**
-     * 是否必填。true：必填。false：非必填。
+     * Required. true: Required. false: Optional.
      * 
      */
     @Import(name="required")
     private @Nullable Output<Boolean> required;
 
     /**
-     * @return 是否必填。true：必填。false：非必填。
+     * @return Required. true: Required. false: Optional.
      * 
      */
     public Optional<Output<Boolean>> required() {
@@ -138,14 +138,14 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
     }
 
     /**
-     * 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+     * Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+     * @return Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
      * 
      */
     public Optional<Output<String>> type() {
@@ -185,7 +185,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param decimalPrecision 自定义参数值（数字）允许的小数点后位数。
+         * @param decimalPrecision Allowed number of decimal places for custom parameter values (numeric).
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param decimalPrecision 自定义参数值（数字）允许的小数点后位数。
+         * @param decimalPrecision Allowed number of decimal places for custom parameter values (numeric).
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param defaultValue 自定义参数默认值。
+         * @param defaultValue Default value for custom parameter.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param defaultValue 自定义参数默认值。
+         * @param defaultValue Default value for custom parameter.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param maxLength 自定义参数值（字符串）的最大长度。
+         * @param maxLength Maximum length for custom parameter value (string).
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param maxLength 自定义参数值（字符串）的最大长度。
+         * @param maxLength Maximum length for custom parameter value (string).
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param maxValue 自定义参数值（数字）的最大值。
+         * @param maxValue Maximum value for custom parameter (numeric).
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param maxValue 自定义参数值（数字）的最大值。
+         * @param maxValue Maximum value for custom parameter (numeric).
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param minLength 自定义参数值（字符串）的最小长度。
+         * @param minLength Minimum length for custom parameter values (string).
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param minLength 自定义参数值（字符串）的最小长度。
+         * @param minLength Minimum length for custom parameter values (string).
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param minValue 自定义参数值（数字）的最小值。
+         * @param minValue Minimum value for custom parameter (numeric).
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param minValue 自定义参数值（数字）的最小值。
+         * @param minValue Minimum value for custom parameter (numeric).
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param name 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+         * @param name Custom parameter name. Must be defined in the script using {{Param}}.
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param name 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+         * @param name Custom parameter name. Must be defined in the script using {{Param}}.
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param required 是否必填。true：必填。false：非必填。
+         * @param required Required. true: Required. false: Optional.
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param required 是否必填。true：必填。false：非必填。
+         * @param required Required. true: Required. false: Optional.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param type 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+         * @param type Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class InvocationParameterDefinitionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param type 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+         * @param type Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
          * 
          * @return builder
          * 

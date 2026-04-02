@@ -17,14 +17,14 @@ public final class NodeGroupApplicationLayoutArgs extends com.pulumi.resources.R
     public static final NodeGroupApplicationLayoutArgs Empty = new NodeGroupApplicationLayoutArgs();
 
     /**
-     * 应用名称。
+     * Application name.
      * 
      */
     @Import(name="applicationName")
     private @Nullable Output<String> applicationName;
 
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     public Optional<Output<String>> applicationName() {
@@ -32,14 +32,14 @@ public final class NodeGroupApplicationLayoutArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 组件的自定义配置参数列表。
+     * Custom configuration parameter list for the component.
      * 
      */
     @Import(name="layoutComponentNames")
     private @Nullable Output<List<String>> layoutComponentNames;
 
     /**
-     * @return 组件的自定义配置参数列表。
+     * @return Custom configuration parameter list for the component.
      * 
      */
     public Optional<Output<List<String>>> layoutComponentNames() {
@@ -72,7 +72,7 @@ public final class NodeGroupApplicationLayoutArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param applicationName 应用名称。
+         * @param applicationName Application name.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class NodeGroupApplicationLayoutArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param applicationName 应用名称。
+         * @param applicationName Application name.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class NodeGroupApplicationLayoutArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param layoutComponentNames 组件的自定义配置参数列表。
+         * @param layoutComponentNames Custom configuration parameter list for the component.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class NodeGroupApplicationLayoutArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param layoutComponentNames 组件的自定义配置参数列表。
+         * @param layoutComponentNames Custom configuration parameter list for the component.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class NodeGroupApplicationLayoutArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param layoutComponentNames 组件的自定义配置参数列表。
+         * @param layoutComponentNames Custom configuration parameter list for the component.
          * 
          * @return builder
          * 

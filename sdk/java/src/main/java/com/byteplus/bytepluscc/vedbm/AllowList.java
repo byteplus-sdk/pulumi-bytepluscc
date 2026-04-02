@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * vedbm访问白名单。
+ * vedbm access allowlist.
  * 
  * ## Example Usage
  * 
@@ -34,98 +34,98 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vedbm/allowList:AllowList")
 public class AllowList extends com.pulumi.resources.CustomResource {
     /**
-     * IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
      * 
      */
     @Export(name="allowList", refs={String.class}, tree="[0]")
     private Output<String> allowList;
 
     /**
-     * @return IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * @return IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
      * 
      */
     public Output<String> allowList() {
         return this.allowList;
     }
     /**
-     * 白名单描述。
+     * Allowlist description.
      * 
      */
     @Export(name="allowListDesc", refs={String.class}, tree="[0]")
     private Output<String> allowListDesc;
 
     /**
-     * @return 白名单描述。
+     * @return Allowlist description.
      * 
      */
     public Output<String> allowListDesc() {
         return this.allowListDesc;
     }
     /**
-     * 白名单的id。
+     * Allowlist ID.
      * 
      */
     @Export(name="allowListId", refs={String.class}, tree="[0]")
     private Output<String> allowListId;
 
     /**
-     * @return 白名单的id。
+     * @return Allowlist ID.
      * 
      */
     public Output<String> allowListId() {
         return this.allowListId;
     }
     /**
-     * 白名单内的 IP 地址（或地址段）总数。
+     * Total number of IP addresses (or address ranges) in the allowlist.
      * 
      */
     @Export(name="allowListIpNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowListIpNum;
 
     /**
-     * @return 白名单内的 IP 地址（或地址段）总数。
+     * @return Total number of IP addresses (or address ranges) in the allowlist.
      * 
      */
     public Output<Integer> allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
-     * 白名单名称。
+     * Allowlist name.
      * 
      */
     @Export(name="allowListName", refs={String.class}, tree="[0]")
     private Output<String> allowListName;
 
     /**
-     * @return 白名单名称。
+     * @return Allowlist name.
      * 
      */
     public Output<String> allowListName() {
         return this.allowListName;
     }
     /**
-     * 白名单内的IP地址类型，当前仅支持IPv4。
+     * IP address type in the allowlist. Only IPv4 is currently supported.
      * 
      */
     @Export(name="allowListType", refs={String.class}, tree="[0]")
     private Output<String> allowListType;
 
     /**
-     * @return 白名单内的IP地址类型，当前仅支持IPv4。
+     * @return IP address type in the allowlist. Only IPv4 is currently supported.
      * 
      */
     public Output<String> allowListType() {
         return this.allowListType;
     }
     /**
-     * 白名单下绑定的实例总数
+     * Total number of instances bound to the allowlist.
      * 
      */
     @Export(name="associatedInstanceNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> associatedInstanceNum;
 
     /**
-     * @return 白名单下绑定的实例总数
+     * @return Total number of instances bound to the allowlist.
      * 
      */
     public Output<Integer> associatedInstanceNum() {
@@ -138,28 +138,28 @@ public class AllowList extends com.pulumi.resources.CustomResource {
         return this.associatedInstances;
     }
     /**
-     * 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+     * How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
      * 
      */
     @Export(name="modifyMode", refs={String.class}, tree="[0]")
     private Output<String> modifyMode;
 
     /**
-     * @return 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+     * @return How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
      * 
      */
     public Output<String> modifyMode() {
         return this.modifyMode;
     }
     /**
-     * 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+     * Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+     * @return Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
      * 
      */
     public Output<String> projectName() {

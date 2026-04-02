@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GatewayServiceDomain
     {
         /// <summary>
-        /// 域名。
+        /// Domain.
         /// </summary>
         public readonly string? Domain;
         /// <summary>
-        /// 域名类型。取值：public：公网。private：私网。
+        /// Domain type. Options: public: Public network. private: Private network.
         /// </summary>
         public readonly string? Type;
 

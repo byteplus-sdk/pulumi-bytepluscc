@@ -16,14 +16,14 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceTagArgs Empty = new InstanceTagArgs();
 
     /**
-     * 实例的键。
+     * Instance key.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 实例的键。
+     * @return Instance key.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的值。
+     * Instance value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 实例的值。
+     * @return Instance value.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 实例的键。
+         * @param key Instance key.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 实例的键。
+         * @param key Instance key.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 实例的值。
+         * @param value Instance value.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 实例的值。
+         * @param value Instance value.
          * 
          * @return builder
          * 

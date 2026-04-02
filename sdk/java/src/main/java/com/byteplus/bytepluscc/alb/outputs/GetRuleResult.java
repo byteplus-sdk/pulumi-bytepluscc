@@ -18,17 +18,17 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleResult {
     /**
-     * @return 转发规则的描述。
+     * @return Forwarding rule description.
      * 
      */
     private String description;
     /**
-     * @return 转发规则的域名。
+     * @return Domain name of the forwarding rule.
      * 
      */
     private String domain;
     /**
-     * @return 转发规则服务器组配置
+     * @return Forwarding rule server group configuration.
      * 
      */
     private GetRuleForwardGroupConfig forwardGroupConfig;
@@ -38,88 +38,88 @@ public final class GetRuleResult {
      */
     private String id;
     /**
-     * @return 监听器ID。
+     * @return Listener ID.
      * 
      */
     private String listenerId;
     /**
-     * @return 标准版转发规则优先级。
+     * @return Standard edition forwarding rule priority.
      * 
      */
     private Integer priority;
     /**
-     * @return 重定向相关配置信息。
+     * @return Redirect-related configuration information.
      * 
      */
     private GetRuleRedirectConfig redirectConfig;
     /**
-     * @return 重定向相关配置信息。
+     * @return Redirect-related configuration information.
      * 
      */
     private GetRuleRewriteConfig rewriteConfig;
     /**
-     * @return 转发规则重写配置开关。on：开启。off：关闭。
+     * @return Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
      * 
      */
     private String rewriteEnabled;
     /**
-     * @return 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+     * @return Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
      * 
      */
     private String ruleAction;
     /**
-     * @return 标准版转发规则动作。
+     * @return Standard edition forwarding rule action.
      * 
      */
     private List<GetRuleRuleAction> ruleActions;
     /**
-     * @return 标准版转发规则条件。
+     * @return Standard edition forwarding rule condition.
      * 
      */
     private List<GetRuleRuleCondition> ruleConditions;
     /**
-     * @return 转发规则ID。
+     * @return Forwarding rule ID.
      * 
      */
     private String ruleId;
     /**
-     * @return 转发规则关联的后端服务器组ID。
+     * @return Backend server group ID associated with the forwarding rule.
      * 
      */
     private String serverGroupId;
     /**
-     * @return 转发规则 QPS 限速开关。on：开启。off：关闭。
+     * @return Forwarding rule QPS throttling switch. on: enabled. off: disabled.
      * 
      */
     private String trafficLimitEnabled;
     /**
-     * @return 每秒请求数。取值范围：100～100000。
+     * @return Requests per second. Range: 100–100000.
      * 
      */
     private Integer trafficLimitQps;
     /**
-     * @return 转发规则的URL。
+     * @return Forwarding rule URL.
      * 
      */
     private String url;
 
     private GetRuleResult() {}
     /**
-     * @return 转发规则的描述。
+     * @return Forwarding rule description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 转发规则的域名。
+     * @return Domain name of the forwarding rule.
      * 
      */
     public String domain() {
         return this.domain;
     }
     /**
-     * @return 转发规则服务器组配置
+     * @return Forwarding rule server group configuration.
      * 
      */
     public GetRuleForwardGroupConfig forwardGroupConfig() {
@@ -133,91 +133,91 @@ public final class GetRuleResult {
         return this.id;
     }
     /**
-     * @return 监听器ID。
+     * @return Listener ID.
      * 
      */
     public String listenerId() {
         return this.listenerId;
     }
     /**
-     * @return 标准版转发规则优先级。
+     * @return Standard edition forwarding rule priority.
      * 
      */
     public Integer priority() {
         return this.priority;
     }
     /**
-     * @return 重定向相关配置信息。
+     * @return Redirect-related configuration information.
      * 
      */
     public GetRuleRedirectConfig redirectConfig() {
         return this.redirectConfig;
     }
     /**
-     * @return 重定向相关配置信息。
+     * @return Redirect-related configuration information.
      * 
      */
     public GetRuleRewriteConfig rewriteConfig() {
         return this.rewriteConfig;
     }
     /**
-     * @return 转发规则重写配置开关。on：开启。off：关闭。
+     * @return Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
      * 
      */
     public String rewriteEnabled() {
         return this.rewriteEnabled;
     }
     /**
-     * @return 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+     * @return Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
      * 
      */
     public String ruleAction() {
         return this.ruleAction;
     }
     /**
-     * @return 标准版转发规则动作。
+     * @return Standard edition forwarding rule action.
      * 
      */
     public List<GetRuleRuleAction> ruleActions() {
         return this.ruleActions;
     }
     /**
-     * @return 标准版转发规则条件。
+     * @return Standard edition forwarding rule condition.
      * 
      */
     public List<GetRuleRuleCondition> ruleConditions() {
         return this.ruleConditions;
     }
     /**
-     * @return 转发规则ID。
+     * @return Forwarding rule ID.
      * 
      */
     public String ruleId() {
         return this.ruleId;
     }
     /**
-     * @return 转发规则关联的后端服务器组ID。
+     * @return Backend server group ID associated with the forwarding rule.
      * 
      */
     public String serverGroupId() {
         return this.serverGroupId;
     }
     /**
-     * @return 转发规则 QPS 限速开关。on：开启。off：关闭。
+     * @return Forwarding rule QPS throttling switch. on: enabled. off: disabled.
      * 
      */
     public String trafficLimitEnabled() {
         return this.trafficLimitEnabled;
     }
     /**
-     * @return 每秒请求数。取值范围：100～100000。
+     * @return Requests per second. Range: 100–100000.
      * 
      */
     public Integer trafficLimitQps() {
         return this.trafficLimitQps;
     }
     /**
-     * @return 转发规则的URL。
+     * @return Forwarding rule URL.
      * 
      */
     public String url() {

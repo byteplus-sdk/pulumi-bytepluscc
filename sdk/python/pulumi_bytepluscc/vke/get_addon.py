@@ -64,7 +64,7 @@ class GetAddonResult:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> builtins.str:
         """
-        组件所在集群 ID。
+        Cluster ID where the component is located.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -72,7 +72,7 @@ class GetAddonResult:
     @pulumi.getter
     def config(self) -> builtins.str:
         """
-        组件配置。
+        Component configuration.
         """
         return pulumi.get(self, "config")
 
@@ -80,7 +80,7 @@ class GetAddonResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+        Component installation time. Standard RFC3339 format, UTC+0 time.
         """
         return pulumi.get(self, "created_time")
 
@@ -88,7 +88,7 @@ class GetAddonResult:
     @pulumi.getter(name="deployMode")
     def deploy_mode(self) -> builtins.str:
         """
-        组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+        Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
         """
         return pulumi.get(self, "deploy_mode")
 
@@ -96,7 +96,7 @@ class GetAddonResult:
     @pulumi.getter(name="deployNodeType")
     def deploy_node_type(self) -> builtins.str:
         """
-        部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+        Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
         """
         return pulumi.get(self, "deploy_node_type")
 
@@ -112,7 +112,7 @@ class GetAddonResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        组件名称。
+        Component name.
         """
         return pulumi.get(self, "name")
 
@@ -120,7 +120,7 @@ class GetAddonResult:
     @pulumi.getter
     def status(self) -> 'outputs.GetAddonStatusResult':
         """
-        组件状态。
+        Component status.
         """
         return pulumi.get(self, "status")
 
@@ -128,7 +128,7 @@ class GetAddonResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+        Component update time. Standard RFC3339 format, UTC+0 time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -136,7 +136,7 @@ class GetAddonResult:
     @pulumi.getter
     def version(self) -> builtins.str:
         """
-        组件版本。
+        Component version.
         """
         return pulumi.get(self, "version")
 

@@ -17,14 +17,14 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
     public static final DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs Empty = new DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs();
 
     /**
-     * 表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+     * Indicates the maximum download speed for a single request, measured in B/S. The parameter range is 1–1,073,741,824,000,000, using a base conversion of 1,024.
      * 
      */
     @Import(name="speedLimitRate")
     private @Nullable Output<Integer> speedLimitRate;
 
     /**
-     * @return 表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+     * @return Indicates the maximum download speed for a single request, measured in B/S. The parameter range is 1–1,073,741,824,000,000, using a base conversion of 1,024.
      * 
      */
     public Optional<Output<Integer>> speedLimitRate() {
@@ -32,14 +32,14 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
     }
 
     /**
-     * 表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+     * Represents a data volume. Download throttling is enabled for a request only when the amount of data downloaded in a single request reaches this value. Unit: Byte. The parameter range is 0–1,073,741,824,000,000, using a base of 1,024 for conversion.
      * 
      */
     @Import(name="speedLimitRateAfter")
     private @Nullable Output<Integer> speedLimitRateAfter;
 
     /**
-     * @return 表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+     * @return Represents a data volume. Download throttling is enabled for a request only when the amount of data downloaded in a single request reaches this value. Unit: Byte. The parameter range is 0–1,073,741,824,000,000, using a base of 1,024 for conversion.
      * 
      */
     public Optional<Output<Integer>> speedLimitRateAfter() {
@@ -47,14 +47,14 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
     }
 
     /**
-     * 表示限速发生的日期和时间段。
+     * Indicates the date and time period when rate limiting occurs.
      * 
      */
     @Import(name="speedLimitTime")
     private @Nullable Output<DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgs> speedLimitTime;
 
     /**
-     * @return 表示限速发生的日期和时间段。
+     * @return Indicates the date and time period when rate limiting occurs.
      * 
      */
     public Optional<Output<DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgs>> speedLimitTime() {
@@ -88,7 +88,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
         }
 
         /**
-         * @param speedLimitRate 表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+         * @param speedLimitRate Indicates the maximum download speed for a single request, measured in B/S. The parameter range is 1–1,073,741,824,000,000, using a base conversion of 1,024.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
         }
 
         /**
-         * @param speedLimitRate 表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+         * @param speedLimitRate Indicates the maximum download speed for a single request, measured in B/S. The parameter range is 1–1,073,741,824,000,000, using a base conversion of 1,024.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
         }
 
         /**
-         * @param speedLimitRateAfter 表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+         * @param speedLimitRateAfter Represents a data volume. Download throttling is enabled for a request only when the amount of data downloaded in a single request reaches this value. Unit: Byte. The parameter range is 0–1,073,741,824,000,000, using a base of 1,024 for conversion.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
         }
 
         /**
-         * @param speedLimitRateAfter 表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+         * @param speedLimitRateAfter Represents a data volume. Download throttling is enabled for a request only when the amount of data downloaded in a single request reaches this value. Unit: Byte. The parameter range is 0–1,073,741,824,000,000, using a base of 1,024 for conversion.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
         }
 
         /**
-         * @param speedLimitTime 表示限速发生的日期和时间段。
+         * @param speedLimitTime Indicates the date and time period when rate limiting occurs.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
         }
 
         /**
-         * @param speedLimitTime 表示限速发生的日期和时间段。
+         * @param speedLimitTime Indicates the date and time period when rate limiting occurs.
          * 
          * @return builder
          * 

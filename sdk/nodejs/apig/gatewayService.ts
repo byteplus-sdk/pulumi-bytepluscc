@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 服务是一组路由对外暴露的入口，用于区分流量的来源和协议，实现业务、环境、逻辑租户隔离。服务可以绑定独立的访问域名，以域名维度访问业务。
+ * A service is a set of routes exposed as entry points to distinguish traffic sources and protocols, enabling business, environment, and logical tenant isolation. Services can bind independent access domains, allowing access by domain.
  *
  * ## Import
  *
@@ -44,61 +44,61 @@ export class GatewayService extends pulumi.CustomResource {
     }
 
     /**
-     * 认证配置。
+     * Authentication configuration.
      */
     public readonly authSpec!: pulumi.Output<outputs.apig.GatewayServiceAuthSpec>;
     /**
-     * 备注，长度限制为0~253个字符。
+     * Remarks. Length must be 0–253 characters.
      */
     public readonly comments!: pulumi.Output<string>;
     /**
-     * 创建时间。
+     * Creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     public readonly customDomains!: pulumi.Output<outputs.apig.GatewayServiceCustomDomain[]>;
     /**
-     * 域名详情。
+     * Domain details.
      */
     public /*out*/ readonly domainSpec!: pulumi.Output<outputs.apig.GatewayServiceDomainSpec>;
     /**
-     * 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
      */
     public readonly domainType!: pulumi.Output<string>;
     public /*out*/ readonly domains!: pulumi.Output<outputs.apig.GatewayServiceDomain[]>;
     /**
-     * 网关ID。
+     * Gateway ID.
      */
     public readonly gatewayId!: pulumi.Output<string>;
     /**
-     * 网关名称。
+     * Gateway name.
      */
     public /*out*/ readonly gatewayName!: pulumi.Output<string>;
     /**
-     * 服务创建失败、删除失败或异常时的错误信息。
+     * Error message for service creation failure, deletion failure, or abnormal status.
      */
     public /*out*/ readonly message!: pulumi.Output<string>;
     /**
-     * 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+     * Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
      */
     public readonly protocols!: pulumi.Output<string[]>;
     /**
-     * 服务ID。
+     * Service ID.
      */
     public /*out*/ readonly serviceId!: pulumi.Output<string>;
     /**
-     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+     * Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
      */
     public readonly serviceName!: pulumi.Output<string>;
     /**
-     * 服务默认域名网络配置。。
+     * Default domain network configuration..
      */
     public readonly serviceNetworkSpec!: pulumi.Output<outputs.apig.GatewayServiceServiceNetworkSpec>;
     /**
-     * 服务类型，取值：AIProvider：AI模型代理。
+     * Service type. Options: AIProvider: AI model proxy.
      */
     public readonly serviceType!: pulumi.Output<string>;
     /**
-     * Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+     * Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
 
@@ -172,61 +172,61 @@ export class GatewayService extends pulumi.CustomResource {
  */
 export interface GatewayServiceState {
     /**
-     * 认证配置。
+     * Authentication configuration.
      */
     authSpec?: pulumi.Input<inputs.apig.GatewayServiceAuthSpec>;
     /**
-     * 备注，长度限制为0~253个字符。
+     * Remarks. Length must be 0–253 characters.
      */
     comments?: pulumi.Input<string>;
     /**
-     * 创建时间。
+     * Creation time.
      */
     createdTime?: pulumi.Input<string>;
     customDomains?: pulumi.Input<pulumi.Input<inputs.apig.GatewayServiceCustomDomain>[]>;
     /**
-     * 域名详情。
+     * Domain details.
      */
     domainSpec?: pulumi.Input<inputs.apig.GatewayServiceDomainSpec>;
     /**
-     * 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
      */
     domainType?: pulumi.Input<string>;
     domains?: pulumi.Input<pulumi.Input<inputs.apig.GatewayServiceDomain>[]>;
     /**
-     * 网关ID。
+     * Gateway ID.
      */
     gatewayId?: pulumi.Input<string>;
     /**
-     * 网关名称。
+     * Gateway name.
      */
     gatewayName?: pulumi.Input<string>;
     /**
-     * 服务创建失败、删除失败或异常时的错误信息。
+     * Error message for service creation failure, deletion failure, or abnormal status.
      */
     message?: pulumi.Input<string>;
     /**
-     * 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+     * Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
      */
     protocols?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 服务ID。
+     * Service ID.
      */
     serviceId?: pulumi.Input<string>;
     /**
-     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+     * Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
      */
     serviceName?: pulumi.Input<string>;
     /**
-     * 服务默认域名网络配置。。
+     * Default domain network configuration..
      */
     serviceNetworkSpec?: pulumi.Input<inputs.apig.GatewayServiceServiceNetworkSpec>;
     /**
-     * 服务类型，取值：AIProvider：AI模型代理。
+     * Service type. Options: AIProvider: AI model proxy.
      */
     serviceType?: pulumi.Input<string>;
     /**
-     * Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+     * Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
      */
     status?: pulumi.Input<string>;
 }
@@ -236,36 +236,36 @@ export interface GatewayServiceState {
  */
 export interface GatewayServiceArgs {
     /**
-     * 认证配置。
+     * Authentication configuration.
      */
     authSpec: pulumi.Input<inputs.apig.GatewayServiceAuthSpec>;
     /**
-     * 备注，长度限制为0~253个字符。
+     * Remarks. Length must be 0–253 characters.
      */
     comments?: pulumi.Input<string>;
     customDomains?: pulumi.Input<pulumi.Input<inputs.apig.GatewayServiceCustomDomain>[]>;
     /**
-     * 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
      */
     domainType?: pulumi.Input<string>;
     /**
-     * 网关ID。
+     * Gateway ID.
      */
     gatewayId: pulumi.Input<string>;
     /**
-     * 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+     * Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
      */
     protocols: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+     * Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
      */
     serviceName: pulumi.Input<string>;
     /**
-     * 服务默认域名网络配置。。
+     * Default domain network configuration..
      */
     serviceNetworkSpec?: pulumi.Input<inputs.apig.GatewayServiceServiceNetworkSpec>;
     /**
-     * 服务类型，取值：AIProvider：AI模型代理。
+     * Service type. Options: AIProvider: AI model proxy.
      */
     serviceType?: pulumi.Input<string>;
 }

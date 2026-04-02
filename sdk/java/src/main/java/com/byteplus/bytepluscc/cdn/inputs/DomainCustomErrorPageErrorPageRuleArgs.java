@@ -16,14 +16,14 @@ public final class DomainCustomErrorPageErrorPageRuleArgs extends com.pulumi.res
     public static final DomainCustomErrorPageErrorPageRuleArgs Empty = new DomainCustomErrorPageErrorPageRuleArgs();
 
     /**
-     * 表示规则的相关配置。
+     * Indicates the relevant configuration for the rule.
      * 
      */
     @Import(name="errorPageAction")
     private @Nullable Output<DomainCustomErrorPageErrorPageRuleErrorPageActionArgs> errorPageAction;
 
     /**
-     * @return 表示规则的相关配置。
+     * @return Indicates the relevant configuration for the rule.
      * 
      */
     public Optional<Output<DomainCustomErrorPageErrorPageRuleErrorPageActionArgs>> errorPageAction() {
@@ -55,7 +55,7 @@ public final class DomainCustomErrorPageErrorPageRuleArgs extends com.pulumi.res
         }
 
         /**
-         * @param errorPageAction 表示规则的相关配置。
+         * @param errorPageAction Indicates the relevant configuration for the rule.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DomainCustomErrorPageErrorPageRuleArgs extends com.pulumi.res
         }
 
         /**
-         * @param errorPageAction 表示规则的相关配置。
+         * @param errorPageAction Indicates the relevant configuration for the rule.
          * 
          * @return builder
          * 

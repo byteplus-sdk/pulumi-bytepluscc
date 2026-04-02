@@ -31,11 +31,11 @@ export interface GetSnapshotArgs {
  */
 export interface GetSnapshotResult {
     /**
-     * 快照创建时间。
+     * Snapshot creation time.
      */
     readonly creationTime: string;
     /**
-     * 快照描述信息，默认为空，长度限制为0~255个字符。
+     * Snapshot description. Default is empty. Length must be between 0 and 255 characters.
      */
     readonly description: string;
     /**
@@ -43,79 +43,79 @@ export interface GetSnapshotResult {
      */
     readonly id: string;
     /**
-     * 镜像ID
+     * Image ID
      */
     readonly imageId: string;
     /**
-     * 快照是否开启极速可用能力，取值说明如下：true：已开启极速可用能力。false：未开启极速可用能力。
+     * Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
      */
     readonly instantAccess: boolean;
     /**
-     * 快照转储进度。
+     * Snapshot dump progress.
      */
     readonly progress: number;
     /**
-     * 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+     * Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
      */
     readonly projectName: string;
     /**
-     * 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+     * Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
      */
     readonly retentionDays: number;
     /**
-     * 快照是否共享。
+     * Whether the snapshot is shared.
      */
     readonly shared: boolean;
     /**
-     * 快照一致性组ID。
+     * Snapshot consistency group ID.
      */
     readonly snapshotGroupId: string;
     /**
-     * 快照ID。
+     * Snapshot ID.
      */
     readonly snapshotId: string;
     /**
-     * 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+     * Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with 'auto'.
      */
     readonly snapshotName: string;
     /**
-     * 快照类型，取值说明如下：user：查询手动快照。auto：查询自动快照。share：查询共享快照。默认查询所有快照。
+     * Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
      */
     readonly snapshotType: string;
     /**
-     * 快照状态，取值说明如下：available：可用。creating：创建中。rollbacking：回滚中。deleted：已删除。failed：错误。
+     * Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
      */
     readonly status: string;
     /**
-     * 快照的标签信息。
+     * Snapshot tag information.
      */
     readonly tags: outputs.storageebs.GetSnapshotTag[];
     /**
-     * 快照相关的云盘ID。
+     * Cloud disk ID associated with the snapshot.
      */
     readonly volumeId: string;
     /**
-     * 云盘种类，取值说明如下：system：系统盘。data：数据盘。
+     * Cloud disk category. Value options: system: system disk. data: data disk.
      */
     readonly volumeKind: string;
     /**
-     * 云盘名称。
+     * Cloud disk name.
      */
     readonly volumeName: string;
     /**
-     * 云盘大小，单位为GiB。
+     * Cloud disk size, in GiB.
      */
     readonly volumeSize: number;
     /**
-     * 云盘状态，取值说明如下：available：可用, attaching：挂载中, attached：已挂载, detaching：卸载中, creating：创建中, deleting：删除中, error：错误, extending：扩容中, ""：云盘被删除。
+     * Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, "": cloud disk deleted.
      */
     readonly volumeStatus: string;
     /**
-     * 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL：极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘
+     * Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
      */
     readonly volumeType: string;
     /**
-     * 快照所在的可用区ID。
+     * Availability zone ID where the snapshot is located.
      */
     readonly zoneId: string;
 }

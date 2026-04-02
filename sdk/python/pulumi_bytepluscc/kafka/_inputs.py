@@ -36,7 +36,7 @@ if not MYPY:
     class AllowListAssociatedInstanceArgsDict(TypedDict):
         instance_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        白名单绑定的实例ID。
+        ID of the instance bound to the allowlist
         """
 elif False:
     AllowListAssociatedInstanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -46,7 +46,7 @@ class AllowListAssociatedInstanceArgs:
     def __init__(__self__, *,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] instance_id: 白名单绑定的实例ID。
+        :param pulumi.Input[builtins.str] instance_id: ID of the instance bound to the allowlist
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
@@ -55,7 +55,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单绑定的实例ID。
+        ID of the instance bound to the allowlist
         """
         return pulumi.get(self, "instance_id")
 
@@ -68,39 +68,39 @@ if not MYPY:
     class InstanceChargeInfoArgsDict(TypedDict):
         auto_renew: NotRequired[pulumi.Input[builtins.bool]]
         """
-        包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+        Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
         """
         charge_expire_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        包年包月实例的到期时间。
+        Expiration time for the subscription instance.
         """
         charge_start_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例的计费开始时间。
+        Instance billing start time.
         """
         charge_status: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+        Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
         """
         charge_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+        Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
         """
         overdue_reclaim_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例欠费关停后的预计释放时间。
+        Estimated release time after the instance is stopped due to overdue payment.
         """
         overdue_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例的欠费关停时间。
+        Instance suspension time due to overdue payment.
         """
         period: NotRequired[pulumi.Input[builtins.int]]
         """
-        包年包月类型实例的购买时长。
+        Purchase duration for subscription-based instances.
         """
         period_unit: NotRequired[pulumi.Input[builtins.str]]
         """
-        包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+        The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
         """
 elif False:
     InstanceChargeInfoArgsDict: TypeAlias = Mapping[str, Any]
@@ -118,15 +118,15 @@ class InstanceChargeInfoArgs:
                  period: Optional[pulumi.Input[builtins.int]] = None,
                  period_unit: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] auto_renew: 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
-        :param pulumi.Input[builtins.str] charge_expire_time: 包年包月实例的到期时间。
-        :param pulumi.Input[builtins.str] charge_start_time: 实例的计费开始时间。
-        :param pulumi.Input[builtins.str] charge_status: 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
-        :param pulumi.Input[builtins.str] charge_type: 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
-        :param pulumi.Input[builtins.str] overdue_reclaim_time: 实例欠费关停后的预计释放时间。
-        :param pulumi.Input[builtins.str] overdue_time: 实例的欠费关停时间。
-        :param pulumi.Input[builtins.int] period: 包年包月类型实例的购买时长。
-        :param pulumi.Input[builtins.str] period_unit: 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+        :param pulumi.Input[builtins.bool] auto_renew: Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
+        :param pulumi.Input[builtins.str] charge_expire_time: Expiration time for the subscription instance.
+        :param pulumi.Input[builtins.str] charge_start_time: Instance billing start time.
+        :param pulumi.Input[builtins.str] charge_status: Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
+        :param pulumi.Input[builtins.str] charge_type: Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
+        :param pulumi.Input[builtins.str] overdue_reclaim_time: Estimated release time after the instance is stopped due to overdue payment.
+        :param pulumi.Input[builtins.str] overdue_time: Instance suspension time due to overdue payment.
+        :param pulumi.Input[builtins.int] period: Purchase duration for subscription-based instances.
+        :param pulumi.Input[builtins.str] period_unit: The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
         """
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
@@ -151,7 +151,7 @@ class InstanceChargeInfoArgs:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+        Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -163,7 +163,7 @@ class InstanceChargeInfoArgs:
     @pulumi.getter(name="chargeExpireTime")
     def charge_expire_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        包年包月实例的到期时间。
+        Expiration time for the subscription instance.
         """
         return pulumi.get(self, "charge_expire_time")
 
@@ -175,7 +175,7 @@ class InstanceChargeInfoArgs:
     @pulumi.getter(name="chargeStartTime")
     def charge_start_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的计费开始时间。
+        Instance billing start time.
         """
         return pulumi.get(self, "charge_start_time")
 
@@ -187,7 +187,7 @@ class InstanceChargeInfoArgs:
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+        Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
         """
         return pulumi.get(self, "charge_status")
 
@@ -199,7 +199,7 @@ class InstanceChargeInfoArgs:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+        Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
         """
         return pulumi.get(self, "charge_type")
 
@@ -211,7 +211,7 @@ class InstanceChargeInfoArgs:
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例欠费关停后的预计释放时间。
+        Estimated release time after the instance is stopped due to overdue payment.
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -223,7 +223,7 @@ class InstanceChargeInfoArgs:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的欠费关停时间。
+        Instance suspension time due to overdue payment.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -235,7 +235,7 @@ class InstanceChargeInfoArgs:
     @pulumi.getter
     def period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        包年包月类型实例的购买时长。
+        Purchase duration for subscription-based instances.
         """
         return pulumi.get(self, "period")
 
@@ -247,7 +247,7 @@ class InstanceChargeInfoArgs:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+        The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
         """
         return pulumi.get(self, "period_unit")
 
@@ -260,19 +260,19 @@ if not MYPY:
     class InstanceConnectionInfoArgsDict(TypedDict):
         endpoint_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+        Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
         """
         internal_endpoint: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例私网访问域名。
+        Instance private network access domain name.
         """
         network_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        接入点的网络类型。统一为 PrivateNetwork。
+        Network type for the access point. Unified as PrivateNetwork.
         """
         public_endpoint: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例公网访问域名。
+        Public access domain name for the instance.
         """
 elif False:
     InstanceConnectionInfoArgsDict: TypeAlias = Mapping[str, Any]
@@ -285,10 +285,10 @@ class InstanceConnectionInfoArgs:
                  network_type: Optional[pulumi.Input[builtins.str]] = None,
                  public_endpoint: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] endpoint_type: 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
-        :param pulumi.Input[builtins.str] internal_endpoint: 实例私网访问域名。
-        :param pulumi.Input[builtins.str] network_type: 接入点的网络类型。统一为 PrivateNetwork。
-        :param pulumi.Input[builtins.str] public_endpoint: 实例公网访问域名。
+        :param pulumi.Input[builtins.str] endpoint_type: Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
+        :param pulumi.Input[builtins.str] internal_endpoint: Instance private network access domain name.
+        :param pulumi.Input[builtins.str] network_type: Network type for the access point. Unified as PrivateNetwork.
+        :param pulumi.Input[builtins.str] public_endpoint: Public access domain name for the instance.
         """
         if endpoint_type is not None:
             pulumi.set(__self__, "endpoint_type", endpoint_type)
@@ -303,7 +303,7 @@ class InstanceConnectionInfoArgs:
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+        Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -315,7 +315,7 @@ class InstanceConnectionInfoArgs:
     @pulumi.getter(name="internalEndpoint")
     def internal_endpoint(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例私网访问域名。
+        Instance private network access domain name.
         """
         return pulumi.get(self, "internal_endpoint")
 
@@ -327,7 +327,7 @@ class InstanceConnectionInfoArgs:
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        接入点的网络类型。统一为 PrivateNetwork。
+        Network type for the access point. Unified as PrivateNetwork.
         """
         return pulumi.get(self, "network_type")
 
@@ -339,7 +339,7 @@ class InstanceConnectionInfoArgs:
     @pulumi.getter(name="publicEndpoint")
     def public_endpoint(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例公网访问域名。
+        Public access domain name for the instance.
         """
         return pulumi.get(self, "public_endpoint")
 
@@ -352,11 +352,11 @@ if not MYPY:
     class InstanceTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签的键。
+        Tag key.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签的值。
+        Tag value.
         """
 elif False:
     InstanceTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -367,8 +367,8 @@ class InstanceTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签的键。
-        :param pulumi.Input[builtins.str] value: 标签的值。
+        :param pulumi.Input[builtins.str] key: Tag key.
+        :param pulumi.Input[builtins.str] value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -379,7 +379,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签的键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -391,7 +391,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签的值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -404,11 +404,11 @@ if not MYPY:
     class TopicAccessPolicyArgsDict(TypedDict):
         access_policy: NotRequired[pulumi.Input[builtins.str]]
         """
-        SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+        SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
         """
         user_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        SASL 用户名称。
+        SASL username.
         """
 elif False:
     TopicAccessPolicyArgsDict: TypeAlias = Mapping[str, Any]
@@ -419,8 +419,8 @@ class TopicAccessPolicyArgs:
                  access_policy: Optional[pulumi.Input[builtins.str]] = None,
                  user_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] access_policy: SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
-        :param pulumi.Input[builtins.str] user_name: SASL 用户名称。
+        :param pulumi.Input[builtins.str] access_policy: SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
+        :param pulumi.Input[builtins.str] user_name: SASL username.
         """
         if access_policy is not None:
             pulumi.set(__self__, "access_policy", access_policy)
@@ -431,7 +431,7 @@ class TopicAccessPolicyArgs:
     @pulumi.getter(name="accessPolicy")
     def access_policy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+        SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
         """
         return pulumi.get(self, "access_policy")
 
@@ -443,7 +443,7 @@ class TopicAccessPolicyArgs:
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        SASL 用户名称。
+        SASL username.
         """
         return pulumi.get(self, "user_name")
 
@@ -456,11 +456,11 @@ if not MYPY:
     class TopicTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Label key.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value.
         """
 elif False:
     TopicTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -471,8 +471,8 @@ class TopicTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Label key.
+        :param pulumi.Input[builtins.str] value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -483,7 +483,7 @@ class TopicTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Label key.
         """
         return pulumi.get(self, "key")
 
@@ -495,7 +495,7 @@ class TopicTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 

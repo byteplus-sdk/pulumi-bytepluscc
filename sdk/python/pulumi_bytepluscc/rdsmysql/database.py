@@ -29,10 +29,10 @@ class DatabaseArgs:
                  description: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Database resource.
-        :param pulumi.Input[builtins.str] instance_id: 数据库实例 ID。
-        :param pulumi.Input[builtins.str] name: 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
-        :param pulumi.Input[builtins.str] character_set_name: 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
-        :param pulumi.Input[builtins.str] description: 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+        :param pulumi.Input[builtins.str] instance_id: Database instance ID.
+        :param pulumi.Input[builtins.str] name: Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
+        :param pulumi.Input[builtins.str] character_set_name: Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
+        :param pulumi.Input[builtins.str] description: Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
         """
         pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "name", name)
@@ -47,7 +47,7 @@ class DatabaseArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Input[builtins.str]:
         """
-        数据库实例 ID。
+        Database instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -59,7 +59,7 @@ class DatabaseArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+        Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
         """
         return pulumi.get(self, "name")
 
@@ -71,7 +71,7 @@ class DatabaseArgs:
     @pulumi.getter(name="characterSetName")
     def character_set_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+        Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
         """
         return pulumi.get(self, "character_set_name")
 
@@ -92,7 +92,7 @@ class DatabaseArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+        Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
         """
         return pulumi.get(self, "description")
 
@@ -112,11 +112,11 @@ class _DatabaseState:
                  status: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Database resources.
-        :param pulumi.Input[builtins.str] character_set_name: 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
-        :param pulumi.Input[builtins.str] description: 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
-        :param pulumi.Input[builtins.str] instance_id: 数据库实例 ID。
-        :param pulumi.Input[builtins.str] name: 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
-        :param pulumi.Input[builtins.str] status: 数据库状态。取值为：Unavailable：不可用。Available：可用。
+        :param pulumi.Input[builtins.str] character_set_name: Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
+        :param pulumi.Input[builtins.str] description: Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
+        :param pulumi.Input[builtins.str] instance_id: Database instance ID.
+        :param pulumi.Input[builtins.str] name: Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
+        :param pulumi.Input[builtins.str] status: Database status. Values: Unavailable (not available), Available (available).
         """
         if character_set_name is not None:
             pulumi.set(__self__, "character_set_name", character_set_name)
@@ -135,7 +135,7 @@ class _DatabaseState:
     @pulumi.getter(name="characterSetName")
     def character_set_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+        Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
         """
         return pulumi.get(self, "character_set_name")
 
@@ -156,7 +156,7 @@ class _DatabaseState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+        Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
         """
         return pulumi.get(self, "description")
 
@@ -168,7 +168,7 @@ class _DatabaseState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库实例 ID。
+        Database instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -180,7 +180,7 @@ class _DatabaseState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+        Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
         """
         return pulumi.get(self, "name")
 
@@ -192,7 +192,7 @@ class _DatabaseState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库状态。取值为：Unavailable：不可用。Available：可用。
+        Database status. Values: Unavailable (not available), Available (available).
         """
         return pulumi.get(self, "status")
 
@@ -214,7 +214,7 @@ class Database(pulumi.CustomResource):
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        数据库
+        Database
 
         ## Import
 
@@ -224,10 +224,10 @@ class Database(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] character_set_name: 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
-        :param pulumi.Input[builtins.str] description: 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
-        :param pulumi.Input[builtins.str] instance_id: 数据库实例 ID。
-        :param pulumi.Input[builtins.str] name: 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+        :param pulumi.Input[builtins.str] character_set_name: Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
+        :param pulumi.Input[builtins.str] description: Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
+        :param pulumi.Input[builtins.str] instance_id: Database instance ID.
+        :param pulumi.Input[builtins.str] name: Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
         """
         ...
     @overload
@@ -236,7 +236,7 @@ class Database(pulumi.CustomResource):
                  args: DatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        数据库
+        Database
 
         ## Import
 
@@ -306,11 +306,11 @@ class Database(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] character_set_name: 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
-        :param pulumi.Input[builtins.str] description: 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
-        :param pulumi.Input[builtins.str] instance_id: 数据库实例 ID。
-        :param pulumi.Input[builtins.str] name: 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
-        :param pulumi.Input[builtins.str] status: 数据库状态。取值为：Unavailable：不可用。Available：可用。
+        :param pulumi.Input[builtins.str] character_set_name: Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
+        :param pulumi.Input[builtins.str] description: Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
+        :param pulumi.Input[builtins.str] instance_id: Database instance ID.
+        :param pulumi.Input[builtins.str] name: Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
+        :param pulumi.Input[builtins.str] status: Database status. Values: Unavailable (not available), Available (available).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -328,7 +328,7 @@ class Database(pulumi.CustomResource):
     @pulumi.getter(name="characterSetName")
     def character_set_name(self) -> pulumi.Output[builtins.str]:
         """
-        数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+        Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
         """
         return pulumi.get(self, "character_set_name")
 
@@ -341,7 +341,7 @@ class Database(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+        Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
         """
         return pulumi.get(self, "description")
 
@@ -349,7 +349,7 @@ class Database(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        数据库实例 ID。
+        Database instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -357,7 +357,7 @@ class Database(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+        Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
         """
         return pulumi.get(self, "name")
 
@@ -365,7 +365,7 @@ class Database(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        数据库状态。取值为：Unavailable：不可用。Available：可用。
+        Database status. Values: Unavailable (not available), Available (available).
         """
         return pulumi.get(self, "status")
 

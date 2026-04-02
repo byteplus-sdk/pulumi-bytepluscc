@@ -35,7 +35,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
         /// </summary>
         public readonly Outputs.GetRuleRuleActionTrafficLimitConfigResult TrafficLimitConfig;
         /// <summary>
-        /// 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+        /// Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
         /// </summary>
         public readonly string Type;
 

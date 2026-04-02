@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainRewriteHls {
     /**
-     * @return 表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。该参数的默认值是 DrmAuthToken。
+     * @return Indicates the name of the signature parameter, which cannot exceed 100 characters. Parameter names are case-sensitive and can include letters, numbers, underscores (_), hyphens (-), commas (,), periods (.), and exclamation marks (!). The default value is DrmAuthToken.
      * 
      */
     private String signName;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
      * 
      */
     private Boolean switch_;
 
     private GetDomainRewriteHls() {}
     /**
-     * @return 表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。该参数的默认值是 DrmAuthToken。
+     * @return Indicates the name of the signature parameter, which cannot exceed 100 characters. Parameter names are case-sensitive and can include letters, numbers, underscores (_), hyphens (-), commas (,), periods (.), and exclamation marks (!). The default value is DrmAuthToken.
      * 
      */
     public String signName() {
         return this.signName;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
      * 
      */
     public Boolean switch_() {

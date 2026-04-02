@@ -32,12 +32,12 @@ class ServerGroupArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a ServerGroup resource.
-        :param pulumi.Input[builtins.str] load_balancer_id: 后端服务器组所属的CLB实例ID。
-        :param pulumi.Input[builtins.str] address_ip_version: 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
-        :param pulumi.Input[builtins.str] any_port_enabled: 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
-        :param pulumi.Input[builtins.str] description: 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
-        :param pulumi.Input[builtins.str] server_group_name: 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
-        :param pulumi.Input[builtins.str] type: 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+        :param pulumi.Input[builtins.str] load_balancer_id: CLB instance ID to which the backend server group belongs.
+        :param pulumi.Input[builtins.str] address_ip_version: IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
+        :param pulumi.Input[builtins.str] any_port_enabled: Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
+        :param pulumi.Input[builtins.str] description: Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] server_group_name: Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
+        :param pulumi.Input[builtins.str] type: Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
         """
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if address_ip_version is not None:
@@ -59,7 +59,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Input[builtins.str]:
         """
-        后端服务器组所属的CLB实例ID。
+        CLB instance ID to which the backend server group belongs.
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -71,7 +71,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="addressIpVersion")
     def address_ip_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+        IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
         """
         return pulumi.get(self, "address_ip_version")
 
@@ -83,7 +83,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="anyPortEnabled")
     def any_port_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+        Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
         """
         return pulumi.get(self, "any_port_enabled")
 
@@ -95,7 +95,7 @@ class ServerGroupArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+        Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -107,7 +107,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="serverGroupName")
     def server_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+        Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
         """
         return pulumi.get(self, "server_group_name")
 
@@ -137,7 +137,7 @@ class ServerGroupArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+        Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
         """
         return pulumi.get(self, "type")
 
@@ -163,15 +163,15 @@ class _ServerGroupState:
                  update_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServerGroup resources.
-        :param pulumi.Input[builtins.str] address_ip_version: 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
-        :param pulumi.Input[builtins.str] any_port_enabled: 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
-        :param pulumi.Input[builtins.str] create_time: 后端服务器组的创建时间。
-        :param pulumi.Input[builtins.str] description: 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
-        :param pulumi.Input[builtins.str] load_balancer_id: 后端服务器组所属的CLB实例ID。
-        :param pulumi.Input[builtins.str] server_group_id: 后端服务器组的ID。
-        :param pulumi.Input[builtins.str] server_group_name: 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
-        :param pulumi.Input[builtins.str] type: 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
-        :param pulumi.Input[builtins.str] update_time: 后端服务器组的最近操作时间。
+        :param pulumi.Input[builtins.str] address_ip_version: IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
+        :param pulumi.Input[builtins.str] any_port_enabled: Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
+        :param pulumi.Input[builtins.str] create_time: Creation time of the backend server group.
+        :param pulumi.Input[builtins.str] description: Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] load_balancer_id: CLB instance ID to which the backend server group belongs.
+        :param pulumi.Input[builtins.str] server_group_id: Backend server group ID.
+        :param pulumi.Input[builtins.str] server_group_name: Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
+        :param pulumi.Input[builtins.str] type: Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
+        :param pulumi.Input[builtins.str] update_time: Last operation time of the backend server group.
         """
         if address_ip_version is not None:
             pulumi.set(__self__, "address_ip_version", address_ip_version)
@@ -202,7 +202,7 @@ class _ServerGroupState:
     @pulumi.getter(name="addressIpVersion")
     def address_ip_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+        IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
         """
         return pulumi.get(self, "address_ip_version")
 
@@ -214,7 +214,7 @@ class _ServerGroupState:
     @pulumi.getter(name="anyPortEnabled")
     def any_port_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+        Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
         """
         return pulumi.get(self, "any_port_enabled")
 
@@ -226,7 +226,7 @@ class _ServerGroupState:
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的创建时间。
+        Creation time of the backend server group.
         """
         return pulumi.get(self, "create_time")
 
@@ -238,7 +238,7 @@ class _ServerGroupState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+        Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -259,7 +259,7 @@ class _ServerGroupState:
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组所属的CLB实例ID。
+        CLB instance ID to which the backend server group belongs.
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -271,7 +271,7 @@ class _ServerGroupState:
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的ID。
+        Backend server group ID.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -283,7 +283,7 @@ class _ServerGroupState:
     @pulumi.getter(name="serverGroupName")
     def server_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+        Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
         """
         return pulumi.get(self, "server_group_name")
 
@@ -313,7 +313,7 @@ class _ServerGroupState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+        Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
         """
         return pulumi.get(self, "type")
 
@@ -325,7 +325,7 @@ class _ServerGroupState:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器组的最近操作时间。
+        Last operation time of the backend server group.
         """
         return pulumi.get(self, "update_time")
 
@@ -350,7 +350,7 @@ class ServerGroup(pulumi.CustomResource):
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        后端服务器组是一组后端服务器。
+        A backend server group is a collection of backend servers.
 
         ## Import
 
@@ -360,12 +360,12 @@ class ServerGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] address_ip_version: 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
-        :param pulumi.Input[builtins.str] any_port_enabled: 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
-        :param pulumi.Input[builtins.str] description: 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
-        :param pulumi.Input[builtins.str] load_balancer_id: 后端服务器组所属的CLB实例ID。
-        :param pulumi.Input[builtins.str] server_group_name: 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
-        :param pulumi.Input[builtins.str] type: 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+        :param pulumi.Input[builtins.str] address_ip_version: IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
+        :param pulumi.Input[builtins.str] any_port_enabled: Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
+        :param pulumi.Input[builtins.str] description: Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] load_balancer_id: CLB instance ID to which the backend server group belongs.
+        :param pulumi.Input[builtins.str] server_group_name: Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
+        :param pulumi.Input[builtins.str] type: Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
         """
         ...
     @overload
@@ -374,7 +374,7 @@ class ServerGroup(pulumi.CustomResource):
                  args: ServerGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        后端服务器组是一组后端服务器。
+        A backend server group is a collection of backend servers.
 
         ## Import
 
@@ -457,15 +457,15 @@ class ServerGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] address_ip_version: 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
-        :param pulumi.Input[builtins.str] any_port_enabled: 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
-        :param pulumi.Input[builtins.str] create_time: 后端服务器组的创建时间。
-        :param pulumi.Input[builtins.str] description: 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
-        :param pulumi.Input[builtins.str] load_balancer_id: 后端服务器组所属的CLB实例ID。
-        :param pulumi.Input[builtins.str] server_group_id: 后端服务器组的ID。
-        :param pulumi.Input[builtins.str] server_group_name: 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
-        :param pulumi.Input[builtins.str] type: 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
-        :param pulumi.Input[builtins.str] update_time: 后端服务器组的最近操作时间。
+        :param pulumi.Input[builtins.str] address_ip_version: IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
+        :param pulumi.Input[builtins.str] any_port_enabled: Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
+        :param pulumi.Input[builtins.str] create_time: Creation time of the backend server group.
+        :param pulumi.Input[builtins.str] description: Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] load_balancer_id: CLB instance ID to which the backend server group belongs.
+        :param pulumi.Input[builtins.str] server_group_id: Backend server group ID.
+        :param pulumi.Input[builtins.str] server_group_name: Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
+        :param pulumi.Input[builtins.str] type: Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
+        :param pulumi.Input[builtins.str] update_time: Last operation time of the backend server group.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -489,7 +489,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="addressIpVersion")
     def address_ip_version(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+        IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
         """
         return pulumi.get(self, "address_ip_version")
 
@@ -497,7 +497,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="anyPortEnabled")
     def any_port_enabled(self) -> pulumi.Output[builtins.str]:
         """
-        是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+        Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
         """
         return pulumi.get(self, "any_port_enabled")
 
@@ -505,7 +505,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组的创建时间。
+        Creation time of the backend server group.
         """
         return pulumi.get(self, "create_time")
 
@@ -513,7 +513,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+        Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -526,7 +526,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组所属的CLB实例ID。
+        CLB instance ID to which the backend server group belongs.
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -534,7 +534,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组的ID。
+        Backend server group ID.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -542,7 +542,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="serverGroupName")
     def server_group_name(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+        Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
         """
         return pulumi.get(self, "server_group_name")
 
@@ -560,7 +560,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+        Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
         """
         return pulumi.get(self, "type")
 
@@ -568,7 +568,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器组的最近操作时间。
+        Last operation time of the backend server group.
         """
         return pulumi.get(self, "update_time")
 

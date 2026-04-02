@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type GroupMember struct {
-	// 用户id。
+	// User ID
 	UserId *string `pulumi:"userId"`
 }
 
@@ -30,7 +30,7 @@ type GroupMemberInput interface {
 }
 
 type GroupMemberArgs struct {
-	// 用户id。
+	// User ID
 	UserId pulumi.StringPtrInput `pulumi:"userId"`
 }
 
@@ -85,7 +85,7 @@ func (o GroupMemberOutput) ToGroupMemberOutputWithContext(ctx context.Context) G
 	return o
 }
 
-// 用户id。
+// User ID
 func (o GroupMemberOutput) UserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupMember) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
@@ -111,11 +111,11 @@ func (o GroupMemberArrayOutput) Index(i pulumi.IntInput) GroupMemberOutput {
 }
 
 type PermissionSetPermissionPolicy struct {
-	// 策略语法内容。语法可参考 策略语法说明。
+	// Policy syntax content. Refer to policy syntax documentation
 	PermissionPolicyDocument *string `pulumi:"permissionPolicyDocument"`
-	// 策略名称。
+	// Policy Name
 	PermissionPolicyName *string `pulumi:"permissionPolicyName"`
-	// 策略类型，System or Inline。
+	// Policy Type: System or Inline
 	PermissionPolicyType *string `pulumi:"permissionPolicyType"`
 }
 
@@ -131,11 +131,11 @@ type PermissionSetPermissionPolicyInput interface {
 }
 
 type PermissionSetPermissionPolicyArgs struct {
-	// 策略语法内容。语法可参考 策略语法说明。
+	// Policy syntax content. Refer to policy syntax documentation
 	PermissionPolicyDocument pulumi.StringPtrInput `pulumi:"permissionPolicyDocument"`
-	// 策略名称。
+	// Policy Name
 	PermissionPolicyName pulumi.StringPtrInput `pulumi:"permissionPolicyName"`
-	// 策略类型，System or Inline。
+	// Policy Type: System or Inline
 	PermissionPolicyType pulumi.StringPtrInput `pulumi:"permissionPolicyType"`
 }
 
@@ -190,17 +190,17 @@ func (o PermissionSetPermissionPolicyOutput) ToPermissionSetPermissionPolicyOutp
 	return o
 }
 
-// 策略语法内容。语法可参考 策略语法说明。
+// Policy syntax content. Refer to policy syntax documentation
 func (o PermissionSetPermissionPolicyOutput) PermissionPolicyDocument() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PermissionSetPermissionPolicy) *string { return v.PermissionPolicyDocument }).(pulumi.StringPtrOutput)
 }
 
-// 策略名称。
+// Policy Name
 func (o PermissionSetPermissionPolicyOutput) PermissionPolicyName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PermissionSetPermissionPolicy) *string { return v.PermissionPolicyName }).(pulumi.StringPtrOutput)
 }
 
-// 策略类型，System or Inline。
+// Policy Type: System or Inline
 func (o PermissionSetPermissionPolicyOutput) PermissionPolicyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PermissionSetPermissionPolicy) *string { return v.PermissionPolicyType }).(pulumi.StringPtrOutput)
 }
@@ -226,23 +226,23 @@ func (o PermissionSetPermissionPolicyArrayOutput) Index(i pulumi.IntInput) Permi
 }
 
 type GetGroupMember struct {
-	// 用户描述信息
+	// User Description
 	Description string `pulumi:"description"`
-	// 用户显示名称。
+	// User Display Name
 	DisplayName string `pulumi:"displayName"`
-	// 用户邮箱。
+	// User Email
 	Email string `pulumi:"email"`
-	// 用户身份类型。
+	// User Identity Type
 	IdentityType string `pulumi:"identityType"`
-	// 用户加入用户组的时间。
+	// User Group Join Time
 	JoinTime string `pulumi:"joinTime"`
-	// 用户手机号。
+	// User Phone Number
 	Phone string `pulumi:"phone"`
-	// 用户来源。
+	// User Source
 	Source string `pulumi:"source"`
-	// 用户id。
+	// User ID
 	UserId string `pulumi:"userId"`
-	// 用户名。
+	// Username
 	UserName string `pulumi:"userName"`
 }
 
@@ -258,23 +258,23 @@ type GetGroupMemberInput interface {
 }
 
 type GetGroupMemberArgs struct {
-	// 用户描述信息
+	// User Description
 	Description pulumi.StringInput `pulumi:"description"`
-	// 用户显示名称。
+	// User Display Name
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 用户邮箱。
+	// User Email
 	Email pulumi.StringInput `pulumi:"email"`
-	// 用户身份类型。
+	// User Identity Type
 	IdentityType pulumi.StringInput `pulumi:"identityType"`
-	// 用户加入用户组的时间。
+	// User Group Join Time
 	JoinTime pulumi.StringInput `pulumi:"joinTime"`
-	// 用户手机号。
+	// User Phone Number
 	Phone pulumi.StringInput `pulumi:"phone"`
-	// 用户来源。
+	// User Source
 	Source pulumi.StringInput `pulumi:"source"`
-	// 用户id。
+	// User ID
 	UserId pulumi.StringInput `pulumi:"userId"`
-	// 用户名。
+	// Username
 	UserName pulumi.StringInput `pulumi:"userName"`
 }
 
@@ -329,47 +329,47 @@ func (o GetGroupMemberOutput) ToGetGroupMemberOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 用户描述信息
+// User Description
 func (o GetGroupMemberOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupMember) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 用户显示名称。
+// User Display Name
 func (o GetGroupMemberOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupMember) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 用户邮箱。
+// User Email
 func (o GetGroupMemberOutput) Email() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupMember) string { return v.Email }).(pulumi.StringOutput)
 }
 
-// 用户身份类型。
+// User Identity Type
 func (o GetGroupMemberOutput) IdentityType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupMember) string { return v.IdentityType }).(pulumi.StringOutput)
 }
 
-// 用户加入用户组的时间。
+// User Group Join Time
 func (o GetGroupMemberOutput) JoinTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupMember) string { return v.JoinTime }).(pulumi.StringOutput)
 }
 
-// 用户手机号。
+// User Phone Number
 func (o GetGroupMemberOutput) Phone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupMember) string { return v.Phone }).(pulumi.StringOutput)
 }
 
-// 用户来源。
+// User Source
 func (o GetGroupMemberOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupMember) string { return v.Source }).(pulumi.StringOutput)
 }
 
-// 用户id。
+// User ID
 func (o GetGroupMemberOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupMember) string { return v.UserId }).(pulumi.StringOutput)
 }
 
-// 用户名。
+// Username
 func (o GetGroupMemberOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupMember) string { return v.UserName }).(pulumi.StringOutput)
 }
@@ -395,13 +395,13 @@ func (o GetGroupMemberArrayOutput) Index(i pulumi.IntInput) GetGroupMemberOutput
 }
 
 type GetPermissionSetPermissionPolicy struct {
-	// 策略创建时间。
+	// Policy Creation Time
 	CreatedTime string `pulumi:"createdTime"`
-	// 策略语法内容。语法可参考 策略语法说明。
+	// Policy syntax content. Refer to policy syntax documentation
 	PermissionPolicyDocument string `pulumi:"permissionPolicyDocument"`
-	// 策略名称。
+	// Policy Name
 	PermissionPolicyName string `pulumi:"permissionPolicyName"`
-	// 策略类型，System or Inline。
+	// Policy Type: System or Inline
 	PermissionPolicyType string `pulumi:"permissionPolicyType"`
 }
 
@@ -417,13 +417,13 @@ type GetPermissionSetPermissionPolicyInput interface {
 }
 
 type GetPermissionSetPermissionPolicyArgs struct {
-	// 策略创建时间。
+	// Policy Creation Time
 	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
-	// 策略语法内容。语法可参考 策略语法说明。
+	// Policy syntax content. Refer to policy syntax documentation
 	PermissionPolicyDocument pulumi.StringInput `pulumi:"permissionPolicyDocument"`
-	// 策略名称。
+	// Policy Name
 	PermissionPolicyName pulumi.StringInput `pulumi:"permissionPolicyName"`
-	// 策略类型，System or Inline。
+	// Policy Type: System or Inline
 	PermissionPolicyType pulumi.StringInput `pulumi:"permissionPolicyType"`
 }
 
@@ -478,22 +478,22 @@ func (o GetPermissionSetPermissionPolicyOutput) ToGetPermissionSetPermissionPoli
 	return o
 }
 
-// 策略创建时间。
+// Policy Creation Time
 func (o GetPermissionSetPermissionPolicyOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionSetPermissionPolicy) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 策略语法内容。语法可参考 策略语法说明。
+// Policy syntax content. Refer to policy syntax documentation
 func (o GetPermissionSetPermissionPolicyOutput) PermissionPolicyDocument() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionSetPermissionPolicy) string { return v.PermissionPolicyDocument }).(pulumi.StringOutput)
 }
 
-// 策略名称。
+// Policy Name
 func (o GetPermissionSetPermissionPolicyOutput) PermissionPolicyName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionSetPermissionPolicy) string { return v.PermissionPolicyName }).(pulumi.StringOutput)
 }
 
-// 策略类型，System or Inline。
+// Policy Type: System or Inline
 func (o GetPermissionSetPermissionPolicyOutput) PermissionPolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionSetPermissionPolicy) string { return v.PermissionPolicyType }).(pulumi.StringOutput)
 }

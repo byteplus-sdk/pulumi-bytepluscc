@@ -16,7 +16,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 容器服务提供集群 RBAC 授权功能，为 IAM 用户或角色授予 RBAC 访问权限，包括可访问的资源、权限的作用范围、预置的角色类型等，从而更好地管理集群的安全访问控制，满足企业用户细粒度的资源访问权限控制需求。
+ * Container Service provides cluster RBAC authorization, granting RBAC access permissions to IAM users or roles. This includes accessible resources, scope of permissions, and predefined role types, enabling better management of cluster security access control and meeting enterprise users&#39; requirements for fine-grained resource access control.
  * 
  * ## Example Usage
  * 
@@ -69,252 +69,252 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vke/permission:Permission")
 public class Permission extends com.pulumi.resources.CustomResource {
     /**
-     * RBAC 权限策略资源被授权的时间。
+     * Time when the RBAC policy resource was authorized.
      * 
      */
     @Export(name="authorizedAt", refs={String.class}, tree="[0]")
     private Output<String> authorizedAt;
 
     /**
-     * @return RBAC 权限策略资源被授权的时间。
+     * @return Time when the RBAC policy resource was authorized.
      * 
      */
     public Output<String> authorizedAt() {
         return this.authorizedAt;
     }
     /**
-     * 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * Grantor ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     @Export(name="authorizerId", refs={Integer.class}, tree="[0]")
     private Output<Integer> authorizerId;
 
     /**
-     * @return 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * @return Grantor ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     public Output<Integer> authorizerId() {
         return this.authorizerId;
     }
     /**
-     * 授权者名称
+     * Grantor name
      * 
      */
     @Export(name="authorizerName", refs={String.class}, tree="[0]")
     private Output<String> authorizerName;
 
     /**
-     * @return 授权者名称
+     * @return Grantor name
      * 
      */
     public Output<String> authorizerName() {
         return this.authorizerName;
     }
     /**
-     * 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     @Export(name="authorizerType", refs={String.class}, tree="[0]")
     private Output<String> authorizerType;
 
     /**
-     * @return 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * @return Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     public Output<String> authorizerType() {
         return this.authorizerType;
     }
     /**
-     * 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+     * Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
      * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
-     * @return 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+     * @return Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
      * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
-     * RBAC 权限策略资源创建的时间。
+     * Time when the RBAC policy resource was created.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return RBAC 权限策略资源创建的时间。
+     * @return Time when the RBAC policy resource was created.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * Grantee ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     @Export(name="granteeId", refs={Integer.class}, tree="[0]")
     private Output<Integer> granteeId;
 
     /**
-     * @return 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * @return Grantee ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     public Output<Integer> granteeId() {
         return this.granteeId;
     }
     /**
-     * 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     @Export(name="granteeType", refs={String.class}, tree="[0]")
     private Output<String> granteeType;
 
     /**
-     * @return 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * @return Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     public Output<String> granteeType() {
         return this.granteeType;
     }
     /**
-     * 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+     * Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
      * 
      */
     @Export(name="isCustomRole", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCustomRole;
 
     /**
-     * @return 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+     * @return Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
      * 
      */
     public Output<Boolean> isCustomRole() {
         return this.isCustomRole;
     }
     /**
-     * RBAC 权限策略资源在 Kubernetes 中的对象名称。
+     * The object name of the RBAC policy resource in Kubernetes.
      * 
      */
     @Export(name="kubeRoleBindingName", refs={String.class}, tree="[0]")
     private Output<String> kubeRoleBindingName;
 
     /**
-     * @return RBAC 权限策略资源在 Kubernetes 中的对象名称。
+     * @return The object name of the RBAC policy resource in Kubernetes.
      * 
      */
     public Output<String> kubeRoleBindingName() {
         return this.kubeRoleBindingName;
     }
     /**
-     * 授权详细消息。
+     * Authorization details message.
      * 
      */
     @Export(name="message", refs={String.class}, tree="[0]")
     private Output<String> message;
 
     /**
-     * @return 授权详细消息。
+     * @return Authorization details message.
      * 
      */
     public Output<String> message() {
         return this.message;
     }
     /**
-     * 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+     * Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
-     * @return 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+     * @return Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
      * 
      */
     public Output<String> namespace() {
         return this.namespace;
     }
     /**
-     * RBAC 权限策略资源 ID。
+     * RBAC policy resource ID.
      * 
      */
     @Export(name="permissionId", refs={String.class}, tree="[0]")
     private Output<String> permissionId;
 
     /**
-     * @return RBAC 权限策略资源 ID。
+     * @return RBAC policy resource ID.
      * 
      */
     public Output<String> permissionId() {
         return this.permissionId;
     }
     /**
-     * 项目选择器
+     * Project selector
      * 
      */
     @Export(name="projectSelector", refs={String.class}, tree="[0]")
     private Output<String> projectSelector;
 
     /**
-     * @return 项目选择器
+     * @return Project selector
      * 
      */
     public Output<String> projectSelector() {
         return this.projectSelector;
     }
     /**
-     * 撤销授权的时间。
+     * Time when authorization is revoked.
      * 
      */
     @Export(name="revokedAt", refs={String.class}, tree="[0]")
     private Output<String> revokedAt;
 
     /**
-     * @return 撤销授权的时间。
+     * @return Time when authorization is revoked.
      * 
      */
     public Output<String> revokedAt() {
         return this.revokedAt;
     }
     /**
-     * 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+     * The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
      * 
      */
     @Export(name="roleDomain", refs={String.class}, tree="[0]")
     private Output<String> roleDomain;
 
     /**
-     * @return 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+     * @return The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
      * 
      */
     public Output<String> roleDomain() {
         return this.roleDomain;
     }
     /**
-     * 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+     * Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
      * 
      */
     @Export(name="roleName", refs={String.class}, tree="[0]")
     private Output<String> roleName;
 
     /**
-     * @return 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+     * @return Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
      * 
      */
     public Output<String> roleName() {
         return this.roleName;
     }
     /**
-     * RBAC 权限访问策略资源的状态，取值如下：Success：授权成功。Failed：授权失败。Pending：授权中。PartialSuccess：部分授权成功。
+     * Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return RBAC 权限访问策略资源的状态，取值如下：Success：授权成功。Failed：授权失败。Pending：授权中。PartialSuccess：部分授权成功。
+     * @return Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
      * 
      */
     public Output<String> status() {

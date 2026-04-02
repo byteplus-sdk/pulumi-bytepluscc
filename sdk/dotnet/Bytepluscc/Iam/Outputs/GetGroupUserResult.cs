@@ -15,23 +15,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
     public sealed class GetGroupUserResult
     {
         /// <summary>
-        /// 用户描述。
+        /// User description.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 用户显示名。
+        /// User display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// 用户加入用户组的时间。
+        /// Time when the user joined the user group.
         /// </summary>
         public readonly string JoinTime;
         /// <summary>
-        /// 用户ID。
+        /// User ID.
         /// </summary>
         public readonly int UserId;
         /// <summary>
-        /// 用户名。
+        /// Username.
         /// </summary>
         public readonly string UserName;
 

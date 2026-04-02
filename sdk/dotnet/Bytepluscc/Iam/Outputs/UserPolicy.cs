@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
     public sealed class UserPolicy
     {
         /// <summary>
-        /// 权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
+        /// Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
         /// </summary>
         public readonly string? PolicyName;
         /// <summary>
-        /// 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+        /// Permission policy type. 'System' indicates system preset policy, 'Custom' indicates custom policy.
         /// </summary>
         public readonly string? PolicyType;
 

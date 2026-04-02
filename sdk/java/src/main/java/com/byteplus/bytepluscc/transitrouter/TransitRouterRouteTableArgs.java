@@ -19,14 +19,14 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
     public static final TransitRouterRouteTableArgs Empty = new TransitRouterRouteTableArgs();
 
     /**
-     * TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * @return Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -41,14 +41,14 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 中转路由器实例的ID
+     * Transit Router instance ID
      * 
      */
     @Import(name="transitRouterId", required=true)
     private Output<String> transitRouterId;
 
     /**
-     * @return 中转路由器实例的ID
+     * @return Transit Router instance ID
      * 
      */
     public Output<String> transitRouterId() {
@@ -56,14 +56,14 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+     * Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
      * 
      */
     @Import(name="transitRouterRouteTableName")
     private @Nullable Output<String> transitRouterRouteTableName;
 
     /**
-     * @return TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+     * @return Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
      * 
      */
     public Optional<Output<String>> transitRouterRouteTableName() {
@@ -98,7 +98,7 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param description TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+         * @param description Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param description TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+         * @param description Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterId 中转路由器实例的ID
+         * @param transitRouterId Transit Router instance ID
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterId 中转路由器实例的ID
+         * @param transitRouterId Transit Router instance ID
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterRouteTableName TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+         * @param transitRouterRouteTableName Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterRouteTableName TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+         * @param transitRouterRouteTableName Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
          * 
          * @return builder
          * 

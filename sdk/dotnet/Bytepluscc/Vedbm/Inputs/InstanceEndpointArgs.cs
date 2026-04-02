@@ -22,61 +22,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Inputs
         }
 
         /// <summary>
-        /// 是否允许自动加入新节点，取值：true：是。false：否。
+        /// Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
         /// </summary>
         [Input("autoAddNewNodes")]
         public Input<bool>? AutoAddNewNodes { get; set; }
 
         /// <summary>
-        /// 一致性级别，仅对读写模式的连接终端有效。取值：Eventual：最终一致性。Session：会话一致性。Global：全局一致性。
+        /// Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
         /// </summary>
         [Input("consistLevel")]
         public Input<string>? ConsistLevel { get; set; }
 
         /// <summary>
-        /// 延迟很大时，只读节点同步最新数据的超时时间，单位为 us，取值范围为 1us~100000000us。
+        /// When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
         /// </summary>
         [Input("consistTimeout")]
         public Input<int>? ConsistTimeout { get; set; }
 
         /// <summary>
-        /// 只读节点同步数据超时后的超时策略，支持以下两种策略：ReturnError：返回 SQL 报错（wait replication complete timeout, please retry）。ReadMaster：发送请求到主节点。
+        /// Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
         /// </summary>
         [Input("consistTimeoutAction")]
         public Input<string>? ConsistTimeoutAction { get; set; }
 
         /// <summary>
-        /// 地址描述。
+        /// Address description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 是否开启事务拆分，仅对读写模式的连接终端有效。取值：true：是。false：否。
+        /// Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
         /// </summary>
         [Input("distributedTransaction")]
         public Input<bool>? DistributedTransaction { get; set; }
 
         /// <summary>
-        /// 实例连接终端 ID。
+        /// Instance connection endpoint ID.
         /// </summary>
         [Input("endpointId")]
         public Input<string>? EndpointId { get; set; }
 
         /// <summary>
-        /// 实例连接终端名称。
+        /// Instance connection endpoint name.
         /// </summary>
         [Input("endpointName")]
         public Input<string>? EndpointName { get; set; }
 
         /// <summary>
-        /// 连接终端类型，取值：Cluster：默认终端。Primary：主节点终端。Custom：自定义终端。
+        /// Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
         /// </summary>
         [Input("endpointType")]
         public Input<string>? EndpointType { get; set; }
 
         /// <summary>
-        /// 主节点是否接受读请求。仅对读写模式的连接终端有效。true：是。false：否。
+        /// Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
         /// </summary>
         [Input("masterAcceptReadRequests")]
         public Input<bool>? MasterAcceptReadRequests { get; set; }
@@ -85,7 +85,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Inputs
         private InputList<string>? _nodeIds;
 
         /// <summary>
-        /// 连接终端配置的节点列表。
+        /// Node list configured for the connection endpoint.
         /// </summary>
         public InputList<string> NodeIds
         {
@@ -94,7 +94,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Inputs
         }
 
         /// <summary>
-        /// 连接终端的读写模式，取值：ReadWrite: 读写。ReadOnly: 只读。
+        /// Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
         /// </summary>
         [Input("readWriteMode")]
         public Input<string>? ReadWriteMode { get; set; }

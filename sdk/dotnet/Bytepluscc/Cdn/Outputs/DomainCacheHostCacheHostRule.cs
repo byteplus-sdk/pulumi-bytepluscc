@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainCacheHostCacheHostRule
     {
         /// <summary>
-        /// 表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        /// Indicates the target domain. The target domain must be an accelerated domain under your account. This parameter specifies that the Domain shares the cache of CacheHost.
         /// </summary>
         public readonly Outputs.DomainCacheHostCacheHostRuleCacheHostAction? CacheHostAction;
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         public readonly Outputs.DomainCacheHostCacheHostRuleCondition? Condition;
 

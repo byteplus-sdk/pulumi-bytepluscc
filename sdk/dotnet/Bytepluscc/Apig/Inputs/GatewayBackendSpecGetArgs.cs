@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class GatewayBackendSpecGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否支持VKE Flannel CNI。
+        /// Whether VKE Flannel CNI is supported
         /// </summary>
         [Input("isVkeWithFlannelCniSupported")]
         public Input<bool>? IsVkeWithFlannelCniSupported { get; set; }

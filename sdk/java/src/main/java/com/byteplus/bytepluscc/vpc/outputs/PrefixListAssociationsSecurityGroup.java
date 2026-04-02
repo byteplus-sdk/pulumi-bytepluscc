@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PrefixListAssociationsSecurityGroup {
     /**
-     * @return 关联资源的ID。
+     * @return ID of the associated resource.
      * 
      */
     private @Nullable String resourceId;
     /**
-     * @return 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+     * @return Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
      * 
      */
     private @Nullable String resourceType;
 
     private PrefixListAssociationsSecurityGroup() {}
     /**
-     * @return 关联资源的ID。
+     * @return ID of the associated resource.
      * 
      */
     public Optional<String> resourceId() {
         return Optional.ofNullable(this.resourceId);
     }
     /**
-     * @return 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+     * @return Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
      * 
      */
     public Optional<String> resourceType() {

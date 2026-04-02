@@ -39,19 +39,19 @@ class NlbArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['NlbTagArgs']]]] = None):
         """
         The set of arguments for constructing a Nlb resource.
-        :param pulumi.Input[builtins.str] ipv4_network_type: NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: NLB实例关联的安全组ID列表。
-        :param pulumi.Input[builtins.str] vpc_id: NLB实例所属的VPC ID。
-        :param pulumi.Input[builtins.str] account_id: NLB实例所属的账号ID。
-        :param pulumi.Input[builtins.bool] cross_zone_enabled: NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
-        :param pulumi.Input[builtins.str] description: NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
-        :param pulumi.Input[builtins.str] ip_address_version: NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
-        :param pulumi.Input[builtins.str] ipv4_bandwidth_package_id: IPv4类型的共享带宽包ID。
-        :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: IPv6类型的共享带宽包ID。
-        :param pulumi.Input[builtins.str] ipv6_network_type: NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
-        :param pulumi.Input[builtins.str] load_balancer_name: NLB实例的名称。
-        :param pulumi.Input[builtins.str] modification_protection_status: NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
-        :param pulumi.Input[builtins.str] project_name: NLB实例所属项目的名称。
+        :param pulumi.Input[builtins.str] ipv4_network_type: IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: List of security group IDs associated with the NLB instance.
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID to which the NLB instance belongs.
+        :param pulumi.Input[builtins.str] account_id: Account ID to which the NLB instance belongs.
+        :param pulumi.Input[builtins.bool] cross_zone_enabled: Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
+        :param pulumi.Input[builtins.str] description: Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
+        :param pulumi.Input[builtins.str] ip_address_version: IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
+        :param pulumi.Input[builtins.str] ipv4_bandwidth_package_id: Shared bandwidth package ID for IPv4 type.
+        :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: Shared bandwidth package ID for IPv6 type.
+        :param pulumi.Input[builtins.str] ipv6_network_type: IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
+        :param pulumi.Input[builtins.str] load_balancer_name: Name of the NLB instance.
+        :param pulumi.Input[builtins.str] modification_protection_status: Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the NLB instance belongs.
         """
         pulumi.set(__self__, "ipv4_network_type", ipv4_network_type)
         pulumi.set(__self__, "security_group_ids", security_group_ids)
@@ -84,7 +84,7 @@ class NlbArgs:
     @pulumi.getter(name="ipv4NetworkType")
     def ipv4_network_type(self) -> pulumi.Input[builtins.str]:
         """
-        NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+        IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
         """
         return pulumi.get(self, "ipv4_network_type")
 
@@ -96,7 +96,7 @@ class NlbArgs:
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> pulumi.Input[Sequence[pulumi.Input[builtins.str]]]:
         """
-        NLB实例关联的安全组ID列表。
+        List of security group IDs associated with the NLB instance.
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -108,7 +108,7 @@ class NlbArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        NLB实例所属的VPC ID。
+        VPC ID to which the NLB instance belongs.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -129,7 +129,7 @@ class NlbArgs:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例所属的账号ID。
+        Account ID to which the NLB instance belongs.
         """
         return pulumi.get(self, "account_id")
 
@@ -141,7 +141,7 @@ class NlbArgs:
     @pulumi.getter(name="crossZoneEnabled")
     def cross_zone_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+        Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
         """
         return pulumi.get(self, "cross_zone_enabled")
 
@@ -153,7 +153,7 @@ class NlbArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+        Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -165,7 +165,7 @@ class NlbArgs:
     @pulumi.getter(name="ipAddressVersion")
     def ip_address_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+        IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
         """
         return pulumi.get(self, "ip_address_version")
 
@@ -177,7 +177,7 @@ class NlbArgs:
     @pulumi.getter(name="ipv4BandwidthPackageId")
     def ipv4_bandwidth_package_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv4类型的共享带宽包ID。
+        Shared bandwidth package ID for IPv4 type.
         """
         return pulumi.get(self, "ipv4_bandwidth_package_id")
 
@@ -189,7 +189,7 @@ class NlbArgs:
     @pulumi.getter(name="ipv6BandwidthPackageId")
     def ipv6_bandwidth_package_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv6类型的共享带宽包ID。
+        Shared bandwidth package ID for IPv6 type.
         """
         return pulumi.get(self, "ipv6_bandwidth_package_id")
 
@@ -201,7 +201,7 @@ class NlbArgs:
     @pulumi.getter(name="ipv6NetworkType")
     def ipv6_network_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+        IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
         """
         return pulumi.get(self, "ipv6_network_type")
 
@@ -213,7 +213,7 @@ class NlbArgs:
     @pulumi.getter(name="loadBalancerName")
     def load_balancer_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的名称。
+        Name of the NLB instance.
         """
         return pulumi.get(self, "load_balancer_name")
 
@@ -225,7 +225,7 @@ class NlbArgs:
     @pulumi.getter(name="modificationProtectionStatus")
     def modification_protection_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+        Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
         """
         return pulumi.get(self, "modification_protection_status")
 
@@ -237,7 +237,7 @@ class NlbArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例所属项目的名称。
+        Name of the project to which the NLB instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -287,31 +287,31 @@ class _NlbState:
                  zone_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['NlbZoneMappingArgs']]]] = None):
         """
         Input properties used for looking up and filtering Nlb resources.
-        :param pulumi.Input['NlbAccessLogArgs'] access_log: NLB实例的访问日志信息。
-        :param pulumi.Input[builtins.str] account_id: NLB实例所属的账号ID。
-        :param pulumi.Input[builtins.str] billing_status: NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
-        :param pulumi.Input[builtins.int] billing_type: NLB实例的计费类型。3：按使用量计费
-        :param pulumi.Input[builtins.str] created_time: NLB实例的创建时间。
-        :param pulumi.Input[builtins.bool] cross_zone_enabled: NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
-        :param pulumi.Input[builtins.str] description: NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
-        :param pulumi.Input[builtins.str] dns_name: NLB实例的DNS地址。
-        :param pulumi.Input[builtins.str] expected_overdue_time: NLB实例欠费关停时间。
-        :param pulumi.Input[builtins.str] ip_address_version: NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
-        :param pulumi.Input[builtins.str] ipv4_bandwidth_package_id: IPv4类型的共享带宽包ID。
-        :param pulumi.Input[builtins.str] ipv4_network_type: NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
-        :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: IPv6类型的共享带宽包ID。
-        :param pulumi.Input[builtins.str] ipv6_network_type: NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
-        :param pulumi.Input[builtins.str] load_balancer_id: NLB实例ID。
-        :param pulumi.Input[builtins.str] load_balancer_name: NLB实例的名称。
-        :param pulumi.Input[builtins.str] managed_security_group_id: 系统为NLB实例自动关联的托管安全组ID。
-        :param pulumi.Input[builtins.str] modification_protection_status: NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
-        :param pulumi.Input[builtins.str] overdue_time: NLB实例被锁定的时间。参数BillingStatus为Normal时，本参数返回为空字符串。
-        :param pulumi.Input[builtins.str] project_name: NLB实例所属项目的名称。
-        :param pulumi.Input[builtins.str] reclaimed_time: NLB实例的预期回收时间。参数BillingStatus为Normal时，本参数返回为空字符串。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: NLB实例关联的安全组ID列表。
-        :param pulumi.Input[builtins.str] status: NLB 实例的状态。Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。仅调用API创建NLB实例时存在该状态。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
-        :param pulumi.Input[builtins.str] updated_time: NLB实例的更新时间。
-        :param pulumi.Input[builtins.str] vpc_id: NLB实例所属的VPC ID。
+        :param pulumi.Input['NlbAccessLogArgs'] access_log: Access log information of the NLB instance.
+        :param pulumi.Input[builtins.str] account_id: Account ID to which the NLB instance belongs.
+        :param pulumi.Input[builtins.str] billing_status: Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
+        :param pulumi.Input[builtins.int] billing_type: Billing type of the NLB instance. 3: pay-as-you-go
+        :param pulumi.Input[builtins.str] created_time: Creation time of the NLB instance.
+        :param pulumi.Input[builtins.bool] cross_zone_enabled: Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
+        :param pulumi.Input[builtins.str] description: Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
+        :param pulumi.Input[builtins.str] dns_name: DNS address of the NLB instance.
+        :param pulumi.Input[builtins.str] expected_overdue_time: Time when the NLB instance is suspended due to overdue payment.
+        :param pulumi.Input[builtins.str] ip_address_version: IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
+        :param pulumi.Input[builtins.str] ipv4_bandwidth_package_id: Shared bandwidth package ID for IPv4 type.
+        :param pulumi.Input[builtins.str] ipv4_network_type: IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
+        :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: Shared bandwidth package ID for IPv6 type.
+        :param pulumi.Input[builtins.str] ipv6_network_type: IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
+        :param pulumi.Input[builtins.str] load_balancer_id: NLB instance ID.
+        :param pulumi.Input[builtins.str] load_balancer_name: Name of the NLB instance.
+        :param pulumi.Input[builtins.str] managed_security_group_id: Managed security group ID automatically associated with the NLB instance by the system.
+        :param pulumi.Input[builtins.str] modification_protection_status: Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
+        :param pulumi.Input[builtins.str] overdue_time: Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the NLB instance belongs.
+        :param pulumi.Input[builtins.str] reclaimed_time: Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: List of security group IDs associated with the NLB instance.
+        :param pulumi.Input[builtins.str] status: Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
+        :param pulumi.Input[builtins.str] updated_time: Update time of the NLB instance.
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID to which the NLB instance belongs.
         """
         if access_log is not None:
             pulumi.set(__self__, "access_log", access_log)
@@ -372,7 +372,7 @@ class _NlbState:
     @pulumi.getter(name="accessLog")
     def access_log(self) -> Optional[pulumi.Input['NlbAccessLogArgs']]:
         """
-        NLB实例的访问日志信息。
+        Access log information of the NLB instance.
         """
         return pulumi.get(self, "access_log")
 
@@ -384,7 +384,7 @@ class _NlbState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例所属的账号ID。
+        Account ID to which the NLB instance belongs.
         """
         return pulumi.get(self, "account_id")
 
@@ -396,7 +396,7 @@ class _NlbState:
     @pulumi.getter(name="billingStatus")
     def billing_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
+        Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
         """
         return pulumi.get(self, "billing_status")
 
@@ -408,7 +408,7 @@ class _NlbState:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        NLB实例的计费类型。3：按使用量计费
+        Billing type of the NLB instance. 3: pay-as-you-go
         """
         return pulumi.get(self, "billing_type")
 
@@ -420,7 +420,7 @@ class _NlbState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的创建时间。
+        Creation time of the NLB instance.
         """
         return pulumi.get(self, "created_time")
 
@@ -432,7 +432,7 @@ class _NlbState:
     @pulumi.getter(name="crossZoneEnabled")
     def cross_zone_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+        Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
         """
         return pulumi.get(self, "cross_zone_enabled")
 
@@ -444,7 +444,7 @@ class _NlbState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+        Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -456,7 +456,7 @@ class _NlbState:
     @pulumi.getter(name="dnsName")
     def dns_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的DNS地址。
+        DNS address of the NLB instance.
         """
         return pulumi.get(self, "dns_name")
 
@@ -468,7 +468,7 @@ class _NlbState:
     @pulumi.getter(name="expectedOverdueTime")
     def expected_overdue_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例欠费关停时间。
+        Time when the NLB instance is suspended due to overdue payment.
         """
         return pulumi.get(self, "expected_overdue_time")
 
@@ -480,7 +480,7 @@ class _NlbState:
     @pulumi.getter(name="ipAddressVersion")
     def ip_address_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+        IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
         """
         return pulumi.get(self, "ip_address_version")
 
@@ -492,7 +492,7 @@ class _NlbState:
     @pulumi.getter(name="ipv4BandwidthPackageId")
     def ipv4_bandwidth_package_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv4类型的共享带宽包ID。
+        Shared bandwidth package ID for IPv4 type.
         """
         return pulumi.get(self, "ipv4_bandwidth_package_id")
 
@@ -504,7 +504,7 @@ class _NlbState:
     @pulumi.getter(name="ipv4NetworkType")
     def ipv4_network_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+        IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
         """
         return pulumi.get(self, "ipv4_network_type")
 
@@ -516,7 +516,7 @@ class _NlbState:
     @pulumi.getter(name="ipv6BandwidthPackageId")
     def ipv6_bandwidth_package_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv6类型的共享带宽包ID。
+        Shared bandwidth package ID for IPv6 type.
         """
         return pulumi.get(self, "ipv6_bandwidth_package_id")
 
@@ -528,7 +528,7 @@ class _NlbState:
     @pulumi.getter(name="ipv6NetworkType")
     def ipv6_network_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+        IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
         """
         return pulumi.get(self, "ipv6_network_type")
 
@@ -540,7 +540,7 @@ class _NlbState:
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例ID。
+        NLB instance ID.
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -552,7 +552,7 @@ class _NlbState:
     @pulumi.getter(name="loadBalancerName")
     def load_balancer_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的名称。
+        Name of the NLB instance.
         """
         return pulumi.get(self, "load_balancer_name")
 
@@ -564,7 +564,7 @@ class _NlbState:
     @pulumi.getter(name="managedSecurityGroupId")
     def managed_security_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        系统为NLB实例自动关联的托管安全组ID。
+        Managed security group ID automatically associated with the NLB instance by the system.
         """
         return pulumi.get(self, "managed_security_group_id")
 
@@ -576,7 +576,7 @@ class _NlbState:
     @pulumi.getter(name="modificationProtectionStatus")
     def modification_protection_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+        Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
         """
         return pulumi.get(self, "modification_protection_status")
 
@@ -588,7 +588,7 @@ class _NlbState:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例被锁定的时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+        Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -600,7 +600,7 @@ class _NlbState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例所属项目的名称。
+        Name of the project to which the NLB instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -612,7 +612,7 @@ class _NlbState:
     @pulumi.getter(name="reclaimedTime")
     def reclaimed_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的预期回收时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+        Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
         """
         return pulumi.get(self, "reclaimed_time")
 
@@ -624,7 +624,7 @@ class _NlbState:
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        NLB实例关联的安全组ID列表。
+        List of security group IDs associated with the NLB instance.
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -636,7 +636,7 @@ class _NlbState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB 实例的状态。Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。仅调用API创建NLB实例时存在该状态。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+        Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
         """
         return pulumi.get(self, "status")
 
@@ -657,7 +657,7 @@ class _NlbState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例的更新时间。
+        Update time of the NLB instance.
         """
         return pulumi.get(self, "updated_time")
 
@@ -669,7 +669,7 @@ class _NlbState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        NLB实例所属的VPC ID。
+        VPC ID to which the NLB instance belongs.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -710,7 +710,7 @@ class Nlb(pulumi.CustomResource):
                  zone_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NlbZoneMappingArgs', 'NlbZoneMappingArgsDict']]]]] = None,
                  __props__=None):
         """
-        NLB 实例用于接收用户的访问请求，并根据监听器和服务器组的配置设定，将访问请求转发至后端服务器。
+        The NLB instance receives user access requests and forwards them to backend servers based on the configuration of listeners and server groups.
 
         ## Import
 
@@ -720,19 +720,19 @@ class Nlb(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_id: NLB实例所属的账号ID。
-        :param pulumi.Input[builtins.bool] cross_zone_enabled: NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
-        :param pulumi.Input[builtins.str] description: NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
-        :param pulumi.Input[builtins.str] ip_address_version: NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
-        :param pulumi.Input[builtins.str] ipv4_bandwidth_package_id: IPv4类型的共享带宽包ID。
-        :param pulumi.Input[builtins.str] ipv4_network_type: NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
-        :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: IPv6类型的共享带宽包ID。
-        :param pulumi.Input[builtins.str] ipv6_network_type: NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
-        :param pulumi.Input[builtins.str] load_balancer_name: NLB实例的名称。
-        :param pulumi.Input[builtins.str] modification_protection_status: NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
-        :param pulumi.Input[builtins.str] project_name: NLB实例所属项目的名称。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: NLB实例关联的安全组ID列表。
-        :param pulumi.Input[builtins.str] vpc_id: NLB实例所属的VPC ID。
+        :param pulumi.Input[builtins.str] account_id: Account ID to which the NLB instance belongs.
+        :param pulumi.Input[builtins.bool] cross_zone_enabled: Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
+        :param pulumi.Input[builtins.str] description: Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
+        :param pulumi.Input[builtins.str] ip_address_version: IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
+        :param pulumi.Input[builtins.str] ipv4_bandwidth_package_id: Shared bandwidth package ID for IPv4 type.
+        :param pulumi.Input[builtins.str] ipv4_network_type: IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
+        :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: Shared bandwidth package ID for IPv6 type.
+        :param pulumi.Input[builtins.str] ipv6_network_type: IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
+        :param pulumi.Input[builtins.str] load_balancer_name: Name of the NLB instance.
+        :param pulumi.Input[builtins.str] modification_protection_status: Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the NLB instance belongs.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: List of security group IDs associated with the NLB instance.
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID to which the NLB instance belongs.
         """
         ...
     @overload
@@ -741,7 +741,7 @@ class Nlb(pulumi.CustomResource):
                  args: NlbArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        NLB 实例用于接收用户的访问请求，并根据监听器和服务器组的配置设定，将访问请求转发至后端服务器。
+        The NLB instance receives user access requests and forwards them to backend servers based on the configuration of listeners and server groups.
 
         ## Import
 
@@ -867,31 +867,31 @@ class Nlb(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['NlbAccessLogArgs', 'NlbAccessLogArgsDict']] access_log: NLB实例的访问日志信息。
-        :param pulumi.Input[builtins.str] account_id: NLB实例所属的账号ID。
-        :param pulumi.Input[builtins.str] billing_status: NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
-        :param pulumi.Input[builtins.int] billing_type: NLB实例的计费类型。3：按使用量计费
-        :param pulumi.Input[builtins.str] created_time: NLB实例的创建时间。
-        :param pulumi.Input[builtins.bool] cross_zone_enabled: NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
-        :param pulumi.Input[builtins.str] description: NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
-        :param pulumi.Input[builtins.str] dns_name: NLB实例的DNS地址。
-        :param pulumi.Input[builtins.str] expected_overdue_time: NLB实例欠费关停时间。
-        :param pulumi.Input[builtins.str] ip_address_version: NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
-        :param pulumi.Input[builtins.str] ipv4_bandwidth_package_id: IPv4类型的共享带宽包ID。
-        :param pulumi.Input[builtins.str] ipv4_network_type: NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
-        :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: IPv6类型的共享带宽包ID。
-        :param pulumi.Input[builtins.str] ipv6_network_type: NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
-        :param pulumi.Input[builtins.str] load_balancer_id: NLB实例ID。
-        :param pulumi.Input[builtins.str] load_balancer_name: NLB实例的名称。
-        :param pulumi.Input[builtins.str] managed_security_group_id: 系统为NLB实例自动关联的托管安全组ID。
-        :param pulumi.Input[builtins.str] modification_protection_status: NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
-        :param pulumi.Input[builtins.str] overdue_time: NLB实例被锁定的时间。参数BillingStatus为Normal时，本参数返回为空字符串。
-        :param pulumi.Input[builtins.str] project_name: NLB实例所属项目的名称。
-        :param pulumi.Input[builtins.str] reclaimed_time: NLB实例的预期回收时间。参数BillingStatus为Normal时，本参数返回为空字符串。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: NLB实例关联的安全组ID列表。
-        :param pulumi.Input[builtins.str] status: NLB 实例的状态。Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。仅调用API创建NLB实例时存在该状态。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
-        :param pulumi.Input[builtins.str] updated_time: NLB实例的更新时间。
-        :param pulumi.Input[builtins.str] vpc_id: NLB实例所属的VPC ID。
+        :param pulumi.Input[Union['NlbAccessLogArgs', 'NlbAccessLogArgsDict']] access_log: Access log information of the NLB instance.
+        :param pulumi.Input[builtins.str] account_id: Account ID to which the NLB instance belongs.
+        :param pulumi.Input[builtins.str] billing_status: Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
+        :param pulumi.Input[builtins.int] billing_type: Billing type of the NLB instance. 3: pay-as-you-go
+        :param pulumi.Input[builtins.str] created_time: Creation time of the NLB instance.
+        :param pulumi.Input[builtins.bool] cross_zone_enabled: Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
+        :param pulumi.Input[builtins.str] description: Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
+        :param pulumi.Input[builtins.str] dns_name: DNS address of the NLB instance.
+        :param pulumi.Input[builtins.str] expected_overdue_time: Time when the NLB instance is suspended due to overdue payment.
+        :param pulumi.Input[builtins.str] ip_address_version: IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
+        :param pulumi.Input[builtins.str] ipv4_bandwidth_package_id: Shared bandwidth package ID for IPv4 type.
+        :param pulumi.Input[builtins.str] ipv4_network_type: IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
+        :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: Shared bandwidth package ID for IPv6 type.
+        :param pulumi.Input[builtins.str] ipv6_network_type: IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
+        :param pulumi.Input[builtins.str] load_balancer_id: NLB instance ID.
+        :param pulumi.Input[builtins.str] load_balancer_name: Name of the NLB instance.
+        :param pulumi.Input[builtins.str] managed_security_group_id: Managed security group ID automatically associated with the NLB instance by the system.
+        :param pulumi.Input[builtins.str] modification_protection_status: Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
+        :param pulumi.Input[builtins.str] overdue_time: Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the NLB instance belongs.
+        :param pulumi.Input[builtins.str] reclaimed_time: Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: List of security group IDs associated with the NLB instance.
+        :param pulumi.Input[builtins.str] status: Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
+        :param pulumi.Input[builtins.str] updated_time: Update time of the NLB instance.
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID to which the NLB instance belongs.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -930,7 +930,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="accessLog")
     def access_log(self) -> pulumi.Output['outputs.NlbAccessLog']:
         """
-        NLB实例的访问日志信息。
+        Access log information of the NLB instance.
         """
         return pulumi.get(self, "access_log")
 
@@ -938,7 +938,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例所属的账号ID。
+        Account ID to which the NLB instance belongs.
         """
         return pulumi.get(self, "account_id")
 
@@ -946,7 +946,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="billingStatus")
     def billing_status(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
+        Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
         """
         return pulumi.get(self, "billing_status")
 
@@ -954,7 +954,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> pulumi.Output[builtins.int]:
         """
-        NLB实例的计费类型。3：按使用量计费
+        Billing type of the NLB instance. 3: pay-as-you-go
         """
         return pulumi.get(self, "billing_type")
 
@@ -962,7 +962,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例的创建时间。
+        Creation time of the NLB instance.
         """
         return pulumi.get(self, "created_time")
 
@@ -970,7 +970,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="crossZoneEnabled")
     def cross_zone_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+        Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
         """
         return pulumi.get(self, "cross_zone_enabled")
 
@@ -978,7 +978,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+        Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -986,7 +986,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="dnsName")
     def dns_name(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例的DNS地址。
+        DNS address of the NLB instance.
         """
         return pulumi.get(self, "dns_name")
 
@@ -994,7 +994,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="expectedOverdueTime")
     def expected_overdue_time(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例欠费关停时间。
+        Time when the NLB instance is suspended due to overdue payment.
         """
         return pulumi.get(self, "expected_overdue_time")
 
@@ -1002,7 +1002,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="ipAddressVersion")
     def ip_address_version(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+        IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
         """
         return pulumi.get(self, "ip_address_version")
 
@@ -1010,7 +1010,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="ipv4BandwidthPackageId")
     def ipv4_bandwidth_package_id(self) -> pulumi.Output[builtins.str]:
         """
-        IPv4类型的共享带宽包ID。
+        Shared bandwidth package ID for IPv4 type.
         """
         return pulumi.get(self, "ipv4_bandwidth_package_id")
 
@@ -1018,7 +1018,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="ipv4NetworkType")
     def ipv4_network_type(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+        IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
         """
         return pulumi.get(self, "ipv4_network_type")
 
@@ -1026,7 +1026,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="ipv6BandwidthPackageId")
     def ipv6_bandwidth_package_id(self) -> pulumi.Output[builtins.str]:
         """
-        IPv6类型的共享带宽包ID。
+        Shared bandwidth package ID for IPv6 type.
         """
         return pulumi.get(self, "ipv6_bandwidth_package_id")
 
@@ -1034,7 +1034,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="ipv6NetworkType")
     def ipv6_network_type(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+        IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
         """
         return pulumi.get(self, "ipv6_network_type")
 
@@ -1042,7 +1042,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例ID。
+        NLB instance ID.
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -1050,7 +1050,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="loadBalancerName")
     def load_balancer_name(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例的名称。
+        Name of the NLB instance.
         """
         return pulumi.get(self, "load_balancer_name")
 
@@ -1058,7 +1058,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="managedSecurityGroupId")
     def managed_security_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        系统为NLB实例自动关联的托管安全组ID。
+        Managed security group ID automatically associated with the NLB instance by the system.
         """
         return pulumi.get(self, "managed_security_group_id")
 
@@ -1066,7 +1066,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="modificationProtectionStatus")
     def modification_protection_status(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+        Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
         """
         return pulumi.get(self, "modification_protection_status")
 
@@ -1074,7 +1074,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例被锁定的时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+        Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -1082,7 +1082,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例所属项目的名称。
+        Name of the project to which the NLB instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -1090,7 +1090,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="reclaimedTime")
     def reclaimed_time(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例的预期回收时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+        Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
         """
         return pulumi.get(self, "reclaimed_time")
 
@@ -1098,7 +1098,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        NLB实例关联的安全组ID列表。
+        List of security group IDs associated with the NLB instance.
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -1106,7 +1106,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        NLB 实例的状态。Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。仅调用API创建NLB实例时存在该状态。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+        Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
         """
         return pulumi.get(self, "status")
 
@@ -1119,7 +1119,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例的更新时间。
+        Update time of the NLB instance.
         """
         return pulumi.get(self, "updated_time")
 
@@ -1127,7 +1127,7 @@ class Nlb(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        NLB实例所属的VPC ID。
+        VPC ID to which the NLB instance belongs.
         """
         return pulumi.get(self, "vpc_id")
 

@@ -13,37 +13,37 @@ import java.util.Objects;
 @CustomType
 public final class GetCertificateResult {
     /**
-     * @return 证书ID。
+     * @return Certificate ID
      * 
      */
     private String certificateId;
     /**
-     * @return 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+     * @return Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      * 
      */
     private String certificateName;
     /**
-     * @return 证书类型，取值：CA：CA证书、Server：服务器证书。
+     * @return Certificate type. Options: CA: CA certificate; Server: server certificate
      * 
      */
     private String certificateType;
     /**
-     * @return 证书创建时间。
+     * @return Certificate creation time
      * 
      */
     private String createdTime;
     /**
-     * @return 证书描述。
+     * @return Certificate description
      * 
      */
     private String description;
     /**
-     * @return 证书域名。
+     * @return Certificate domain name
      * 
      */
     private String domainName;
     /**
-     * @return 证书过期时间。
+     * @return Certificate expiration time
      * 
      */
     private String expiredAt;
@@ -53,86 +53,86 @@ public final class GetCertificateResult {
      */
     private String id;
     /**
-     * @return 证书关联的监听器列表。
+     * @return List of listeners associated with the certificate
      * 
      */
     private List<String> listeners;
     /**
-     * @return 服务器证书的私钥，当证书类型为Server时必填。
+     * @return Server certificate private key. Required when certificate type is Server
      * 
      */
     private String privateKey;
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     private String projectName;
     /**
-     * @return 服务器证书的公钥。
+     * @return Server certificate public key
      * 
      */
     private String publicKey;
     /**
-     * @return 证书扩展域名列表，用英文&#39;,&#39; 分隔多个域名， 包含(commonName,DnsName,IP)。
+     * @return Certificate subject alternative name list. Use English &#39;,&#39; to separate multiple domain names. Includes (commonName, DnsName, IP)
      * 
      */
     private String san;
     /**
-     * @return 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+     * @return Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
      * 
      */
     private String status;
     /**
-     * @return 标签列表。
+     * @return Tag list
      * 
      */
     private List<GetCertificateTag> tags;
 
     private GetCertificateResult() {}
     /**
-     * @return 证书ID。
+     * @return Certificate ID
      * 
      */
     public String certificateId() {
         return this.certificateId;
     }
     /**
-     * @return 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+     * @return Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      * 
      */
     public String certificateName() {
         return this.certificateName;
     }
     /**
-     * @return 证书类型，取值：CA：CA证书、Server：服务器证书。
+     * @return Certificate type. Options: CA: CA certificate; Server: server certificate
      * 
      */
     public String certificateType() {
         return this.certificateType;
     }
     /**
-     * @return 证书创建时间。
+     * @return Certificate creation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 证书描述。
+     * @return Certificate description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 证书域名。
+     * @return Certificate domain name
      * 
      */
     public String domainName() {
         return this.domainName;
     }
     /**
-     * @return 证书过期时间。
+     * @return Certificate expiration time
      * 
      */
     public String expiredAt() {
@@ -146,49 +146,49 @@ public final class GetCertificateResult {
         return this.id;
     }
     /**
-     * @return 证书关联的监听器列表。
+     * @return List of listeners associated with the certificate
      * 
      */
     public List<String> listeners() {
         return this.listeners;
     }
     /**
-     * @return 服务器证书的私钥，当证书类型为Server时必填。
+     * @return Server certificate private key. Required when certificate type is Server
      * 
      */
     public String privateKey() {
         return this.privateKey;
     }
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 服务器证书的公钥。
+     * @return Server certificate public key
      * 
      */
     public String publicKey() {
         return this.publicKey;
     }
     /**
-     * @return 证书扩展域名列表，用英文&#39;,&#39; 分隔多个域名， 包含(commonName,DnsName,IP)。
+     * @return Certificate subject alternative name list. Use English &#39;,&#39; to separate multiple domain names. Includes (commonName, DnsName, IP)
      * 
      */
     public String san() {
         return this.san;
     }
     /**
-     * @return 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+     * @return Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 标签列表。
+     * @return Tag list
      * 
      */
     public List<GetCertificateTag> tags() {

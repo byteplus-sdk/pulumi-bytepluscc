@@ -16,7 +16,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 当您需要批量为云身份中心用户进行SSO授权时，您可以先通过用户组进行批量的用户管理。
+ * When you need to grant SSO authorization to Cloud Identity Center users in bulk, you can first manage users in bulk through user groups
  * 
  * ## Example Usage
  * 
@@ -33,84 +33,84 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:cloudidentity/group:Group")
 public class Group extends com.pulumi.resources.CustomResource {
     /**
-     * 创建时间。
+     * Creation Time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 描述。
+     * Description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 描述。
+     * @return Description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 显示名。
+     * Display Name
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return 显示名。
+     * @return Display Name
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * 用户组id。
+     * User Group ID
      * 
      */
     @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
-     * @return 用户组id。
+     * @return User Group ID
      * 
      */
     public Output<String> groupId() {
         return this.groupId;
     }
     /**
-     * 用户组名称。
+     * User Group Name
      * 
      */
     @Export(name="groupName", refs={String.class}, tree="[0]")
     private Output<String> groupName;
 
     /**
-     * @return 用户组名称。
+     * @return User Group Name
      * 
      */
     public Output<String> groupName() {
         return this.groupName;
     }
     /**
-     * 用户组类型。
+     * User Group Type
      * 
      */
     @Export(name="joinType", refs={String.class}, tree="[0]")
     private Output<String> joinType;
 
     /**
-     * @return 用户组类型。
+     * @return User Group Type
      * 
      */
     public Output<String> joinType() {
@@ -123,28 +123,28 @@ public class Group extends com.pulumi.resources.CustomResource {
         return this.members;
     }
     /**
-     * 用户组来源。
+     * User Group Source
      * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
-     * @return 用户组来源。
+     * @return User Group Source
      * 
      */
     public Output<String> source() {
         return this.source;
     }
     /**
-     * 更新时间。
+     * Update Time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     public Output<String> updatedTime() {

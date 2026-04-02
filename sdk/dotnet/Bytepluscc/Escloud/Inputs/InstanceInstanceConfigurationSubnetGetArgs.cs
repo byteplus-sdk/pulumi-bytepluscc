@@ -20,7 +20,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Inputs
         public Input<string>? SubnetId { get; set; }
 
         /// <summary>
-        /// Subnet 名称。
+        /// Subnet name
         /// </summary>
         [Input("subnetName")]
         public Input<string>? SubnetName { get; set; }

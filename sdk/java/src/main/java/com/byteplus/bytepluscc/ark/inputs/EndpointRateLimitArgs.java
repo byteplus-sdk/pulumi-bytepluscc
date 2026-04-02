@@ -16,14 +16,14 @@ public final class EndpointRateLimitArgs extends com.pulumi.resources.ResourceAr
     public static final EndpointRateLimitArgs Empty = new EndpointRateLimitArgs();
 
     /**
-     * Requests Per Minute，每分钟请求数。
+     * Requests Per Minute, number of requests per minute
      * 
      */
     @Import(name="rpm")
     private @Nullable Output<Integer> rpm;
 
     /**
-     * @return Requests Per Minute，每分钟请求数。
+     * @return Requests Per Minute, number of requests per minute
      * 
      */
     public Optional<Output<Integer>> rpm() {
@@ -31,14 +31,14 @@ public final class EndpointRateLimitArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Tokens Per Minute，每分钟请求 token 数。
+     * Tokens Per Minute, number of tokens requested per minute
      * 
      */
     @Import(name="tpm")
     private @Nullable Output<Integer> tpm;
 
     /**
-     * @return Tokens Per Minute，每分钟请求 token 数。
+     * @return Tokens Per Minute, number of tokens requested per minute
      * 
      */
     public Optional<Output<Integer>> tpm() {
@@ -71,7 +71,7 @@ public final class EndpointRateLimitArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param rpm Requests Per Minute，每分钟请求数。
+         * @param rpm Requests Per Minute, number of requests per minute
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class EndpointRateLimitArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param rpm Requests Per Minute，每分钟请求数。
+         * @param rpm Requests Per Minute, number of requests per minute
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class EndpointRateLimitArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param tpm Tokens Per Minute，每分钟请求 token 数。
+         * @param tpm Tokens Per Minute, number of tokens requested per minute
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class EndpointRateLimitArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param tpm Tokens Per Minute，每分钟请求 token 数。
+         * @param tpm Tokens Per Minute, number of tokens requested per minute
          * 
          * @return builder
          * 

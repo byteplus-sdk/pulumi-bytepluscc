@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetUpstreamUpstreamSpecDomainResult
     {
         /// <summary>
-        /// 域名列表。
+        /// Domain name list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUpstreamUpstreamSpecDomainDomainListResult> DomainLists;
 

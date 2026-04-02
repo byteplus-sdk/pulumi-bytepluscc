@@ -44,7 +44,7 @@ class GroupMember(dict):
     def __init__(__self__, *,
                  user_id: Optional[builtins.str] = None):
         """
-        :param builtins.str user_id: 用户id。
+        :param builtins.str user_id: User ID
         """
         if user_id is not None:
             pulumi.set(__self__, "user_id", user_id)
@@ -53,7 +53,7 @@ class GroupMember(dict):
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[builtins.str]:
         """
-        用户id。
+        User ID
         """
         return pulumi.get(self, "user_id")
 
@@ -86,9 +86,9 @@ class PermissionSetPermissionPolicy(dict):
                  permission_policy_name: Optional[builtins.str] = None,
                  permission_policy_type: Optional[builtins.str] = None):
         """
-        :param builtins.str permission_policy_document: 策略语法内容。语法可参考 策略语法说明。
-        :param builtins.str permission_policy_name: 策略名称。
-        :param builtins.str permission_policy_type: 策略类型，System or Inline。
+        :param builtins.str permission_policy_document: Policy syntax content. Refer to policy syntax documentation
+        :param builtins.str permission_policy_name: Policy Name
+        :param builtins.str permission_policy_type: Policy Type: System or Inline
         """
         if permission_policy_document is not None:
             pulumi.set(__self__, "permission_policy_document", permission_policy_document)
@@ -101,7 +101,7 @@ class PermissionSetPermissionPolicy(dict):
     @pulumi.getter(name="permissionPolicyDocument")
     def permission_policy_document(self) -> Optional[builtins.str]:
         """
-        策略语法内容。语法可参考 策略语法说明。
+        Policy syntax content. Refer to policy syntax documentation
         """
         return pulumi.get(self, "permission_policy_document")
 
@@ -109,7 +109,7 @@ class PermissionSetPermissionPolicy(dict):
     @pulumi.getter(name="permissionPolicyName")
     def permission_policy_name(self) -> Optional[builtins.str]:
         """
-        策略名称。
+        Policy Name
         """
         return pulumi.get(self, "permission_policy_name")
 
@@ -117,7 +117,7 @@ class PermissionSetPermissionPolicy(dict):
     @pulumi.getter(name="permissionPolicyType")
     def permission_policy_type(self) -> Optional[builtins.str]:
         """
-        策略类型，System or Inline。
+        Policy Type: System or Inline
         """
         return pulumi.get(self, "permission_policy_type")
 
@@ -135,15 +135,15 @@ class GetGroupMemberResult(dict):
                  user_id: builtins.str,
                  user_name: builtins.str):
         """
-        :param builtins.str description: 用户描述信息
-        :param builtins.str display_name: 用户显示名称。
-        :param builtins.str email: 用户邮箱。
-        :param builtins.str identity_type: 用户身份类型。
-        :param builtins.str join_time: 用户加入用户组的时间。
-        :param builtins.str phone: 用户手机号。
-        :param builtins.str source: 用户来源。
-        :param builtins.str user_id: 用户id。
-        :param builtins.str user_name: 用户名。
+        :param builtins.str description: User Description
+        :param builtins.str display_name: User Display Name
+        :param builtins.str email: User Email
+        :param builtins.str identity_type: User Identity Type
+        :param builtins.str join_time: User Group Join Time
+        :param builtins.str phone: User Phone Number
+        :param builtins.str source: User Source
+        :param builtins.str user_id: User ID
+        :param builtins.str user_name: Username
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
@@ -159,7 +159,7 @@ class GetGroupMemberResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        用户描述信息
+        User Description
         """
         return pulumi.get(self, "description")
 
@@ -167,7 +167,7 @@ class GetGroupMemberResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        用户显示名称。
+        User Display Name
         """
         return pulumi.get(self, "display_name")
 
@@ -175,7 +175,7 @@ class GetGroupMemberResult(dict):
     @pulumi.getter
     def email(self) -> builtins.str:
         """
-        用户邮箱。
+        User Email
         """
         return pulumi.get(self, "email")
 
@@ -183,7 +183,7 @@ class GetGroupMemberResult(dict):
     @pulumi.getter(name="identityType")
     def identity_type(self) -> builtins.str:
         """
-        用户身份类型。
+        User Identity Type
         """
         return pulumi.get(self, "identity_type")
 
@@ -191,7 +191,7 @@ class GetGroupMemberResult(dict):
     @pulumi.getter(name="joinTime")
     def join_time(self) -> builtins.str:
         """
-        用户加入用户组的时间。
+        User Group Join Time
         """
         return pulumi.get(self, "join_time")
 
@@ -199,7 +199,7 @@ class GetGroupMemberResult(dict):
     @pulumi.getter
     def phone(self) -> builtins.str:
         """
-        用户手机号。
+        User Phone Number
         """
         return pulumi.get(self, "phone")
 
@@ -207,7 +207,7 @@ class GetGroupMemberResult(dict):
     @pulumi.getter
     def source(self) -> builtins.str:
         """
-        用户来源。
+        User Source
         """
         return pulumi.get(self, "source")
 
@@ -215,7 +215,7 @@ class GetGroupMemberResult(dict):
     @pulumi.getter(name="userId")
     def user_id(self) -> builtins.str:
         """
-        用户id。
+        User ID
         """
         return pulumi.get(self, "user_id")
 
@@ -223,7 +223,7 @@ class GetGroupMemberResult(dict):
     @pulumi.getter(name="userName")
     def user_name(self) -> builtins.str:
         """
-        用户名。
+        Username
         """
         return pulumi.get(self, "user_name")
 
@@ -236,10 +236,10 @@ class GetPermissionSetPermissionPolicyResult(dict):
                  permission_policy_name: builtins.str,
                  permission_policy_type: builtins.str):
         """
-        :param builtins.str created_time: 策略创建时间。
-        :param builtins.str permission_policy_document: 策略语法内容。语法可参考 策略语法说明。
-        :param builtins.str permission_policy_name: 策略名称。
-        :param builtins.str permission_policy_type: 策略类型，System or Inline。
+        :param builtins.str created_time: Policy Creation Time
+        :param builtins.str permission_policy_document: Policy syntax content. Refer to policy syntax documentation
+        :param builtins.str permission_policy_name: Policy Name
+        :param builtins.str permission_policy_type: Policy Type: System or Inline
         """
         pulumi.set(__self__, "created_time", created_time)
         pulumi.set(__self__, "permission_policy_document", permission_policy_document)
@@ -250,7 +250,7 @@ class GetPermissionSetPermissionPolicyResult(dict):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        策略创建时间。
+        Policy Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -258,7 +258,7 @@ class GetPermissionSetPermissionPolicyResult(dict):
     @pulumi.getter(name="permissionPolicyDocument")
     def permission_policy_document(self) -> builtins.str:
         """
-        策略语法内容。语法可参考 策略语法说明。
+        Policy syntax content. Refer to policy syntax documentation
         """
         return pulumi.get(self, "permission_policy_document")
 
@@ -266,7 +266,7 @@ class GetPermissionSetPermissionPolicyResult(dict):
     @pulumi.getter(name="permissionPolicyName")
     def permission_policy_name(self) -> builtins.str:
         """
-        策略名称。
+        Policy Name
         """
         return pulumi.get(self, "permission_policy_name")
 
@@ -274,7 +274,7 @@ class GetPermissionSetPermissionPolicyResult(dict):
     @pulumi.getter(name="permissionPolicyType")
     def permission_policy_type(self) -> builtins.str:
         """
-        策略类型，System or Inline。
+        Policy Type: System or Inline
         """
         return pulumi.get(self, "permission_policy_type")
 

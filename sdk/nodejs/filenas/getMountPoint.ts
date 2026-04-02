@@ -31,19 +31,19 @@ export interface GetMountPointArgs {
  */
 export interface GetMountPointResult {
     /**
-     * 客户端信息。
+     * Client information.
      */
     readonly clients: outputs.filenas.GetMountPointClient[];
     /**
-     * 挂载点创建时间。
+     * Mount point creation time.
      */
     readonly createdTime: string;
     /**
-     * DNS 地址。
+     * DNS address.
      */
     readonly domain: string;
     /**
-     * 文件系统 ID。
+     * File system ID.
      */
     readonly fileSystemId: string;
     /**
@@ -51,47 +51,47 @@ export interface GetMountPointResult {
      */
     readonly id: string;
     /**
-     * 挂载点地址。
+     * Mount point address.
      */
     readonly ip: string;
     /**
-     * 挂载点 ID。
+     * Mount point ID.
      */
     readonly mountPointId: string;
     /**
-     * 挂载点名称。
+     * Mount point name.
      */
     readonly mountPointName: string;
     /**
-     * 挂载点绑定的权限组信息。
+     * Permission group information bound to the mount point.
      */
     readonly permissionGroup: outputs.filenas.GetMountPointPermissionGroup;
     /**
-     * 权限组 ID。
+     * Permission group ID.
      */
     readonly permissionGroupId: string;
     /**
-     * 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+     * Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
      */
     readonly status: string;
     /**
-     * 子网 ID。
+     * Subnet ID.
      */
     readonly subnetId: string;
     /**
-     * 子网名称。
+     * Subnet name.
      */
     readonly subnetName: string;
     /**
-     * 挂载点更新时间。
+     * Mount point update time.
      */
     readonly updatedTime: string;
     /**
-     * 私有网络 ID。
+     * Private network ID.
      */
     readonly vpcId: string;
     /**
-     * 私有网络名称。
+     * Private network name.
      */
     readonly vpcName: string;
 }

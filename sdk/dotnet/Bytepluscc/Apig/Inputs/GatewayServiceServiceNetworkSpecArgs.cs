@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class GatewayServiceServiceNetworkSpecArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 开启私网。
+        /// Enable private network.
         /// </summary>
         [Input("enablePrivateNetwork")]
         public Input<bool>? EnablePrivateNetwork { get; set; }
 
         /// <summary>
-        /// 开启公网。
+        /// Enable public network.
         /// </summary>
         [Input("enablePublicNetwork")]
         public Input<bool>? EnablePublicNetwork { get; set; }
@@ -29,7 +29,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
         private InputList<string>? _privateNetworkIps;
 
         /// <summary>
-        /// 私网域名解析的目标IP。
+        /// Target IP for private network domain resolution.
         /// </summary>
         public InputList<string> PrivateNetworkIps
         {

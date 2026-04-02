@@ -14,7 +14,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 给指定的账号部署权限集。
+ * Deploy permission set to the specified account
  * 
  * ## Example Usage
  * 
@@ -62,98 +62,98 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:cloudidentity/permissionSetProvisioning:PermissionSetProvisioning")
 public class PermissionSetProvisioning extends com.pulumi.resources.CustomResource {
     /**
-     * 创建时间。
+     * Creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 权限集 ID。
+     * Permission set ID
      * 
      */
     @Export(name="permissionSetId", refs={String.class}, tree="[0]")
     private Output<String> permissionSetId;
 
     /**
-     * @return 权限集 ID。
+     * @return Permission set ID
      * 
      */
     public Output<String> permissionSetId() {
         return this.permissionSetId;
     }
     /**
-     * 权限集名。
+     * Permission set name
      * 
      */
     @Export(name="permissionSetName", refs={String.class}, tree="[0]")
     private Output<String> permissionSetName;
 
     /**
-     * @return 权限集名。
+     * @return Permission set name
      * 
      */
     public Output<String> permissionSetName() {
         return this.permissionSetName;
     }
     /**
-     * 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+     * Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
      * 
      */
     @Export(name="provisioningStatus", refs={String.class}, tree="[0]")
     private Output<String> provisioningStatus;
 
     /**
-     * @return 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+     * @return Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
      * 
      */
     public Output<String> provisioningStatus() {
         return this.provisioningStatus;
     }
     /**
-     * 授权的账号 ID。
+     * Authorized account ID
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
-     * @return 授权的账号 ID。
+     * @return Authorized account ID
      * 
      */
     public Output<String> targetId() {
         return this.targetId;
     }
     /**
-     * 账号名。
+     * Account name
      * 
      */
     @Export(name="targetName", refs={String.class}, tree="[0]")
     private Output<String> targetName;
 
     /**
-     * @return 账号名。
+     * @return Account name
      * 
      */
     public Output<String> targetName() {
         return this.targetName;
     }
     /**
-     * 更新时间。
+     * Update time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public Output<String> updatedTime() {

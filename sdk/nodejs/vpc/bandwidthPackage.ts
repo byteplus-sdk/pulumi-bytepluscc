@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 共享带宽包是一种支持复用和共享带宽的云资源。将单个地域内多个公网IP或IPv6公网带宽添加到一个共享带宽包实例中，共享一条带宽。
+ * A shared bandwidth package is a cloud resource that supports multiplexing and sharing bandwidth. Add multiple public IPs or IPv6 public bandwidths within a single region to a shared bandwidth package instance to share one bandwidth.
  *
  * ## Import
  *
@@ -44,85 +44,85 @@ export class BandwidthPackage extends pulumi.CustomResource {
     }
 
     /**
-     * 共享带宽包的带宽上限，单位：Mbps。BillingType传入1：取值范围5 ~ 5000，BillingType传入2、3、4：取值范围2 ~ 5000。
+     * Bandwidth cap of the shared bandwidth package, unit: Mbps. If BillingType is 1: range is 5–5000. If BillingType is 2, 3, or 4: range is 2–5000.
      */
     public readonly bandwidth!: pulumi.Output<number>;
     /**
-     * 带宽包ID
+     * Bandwidth package ID
      */
     public /*out*/ readonly bandwidthPackageId!: pulumi.Output<string>;
     /**
-     * 带宽包名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * Bandwidth package name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
      */
     public readonly bandwidthPackageName!: pulumi.Output<string>;
     /**
-     * 共享带宽包的计费方式。取值如下：1：包年包月。2 : 按带宽上限计费（默认值）。3：按主流量计费。4 : 按传统95计费（保底比例默认20%）。
+     * Billing methods for shared bandwidth packages. Options are: 1: Annual/monthly subscription. 2: Billed by bandwidth cap (default). 3: Billed by peak traffic. 4: Billed by traditional 95th percentile (minimum ratio defaults to 20%).
      */
     public readonly billingType!: pulumi.Output<number>;
     /**
-     * 计费状态
+     * Billing status
      */
     public /*out*/ readonly businessStatus!: pulumi.Output<string>;
     /**
-     * 创建时间
+     * Creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 删除时间
+     * Deletion time
      */
     public /*out*/ readonly deletedTime!: pulumi.Output<string>;
     /**
-     * 描述信息，长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description, limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      */
     public readonly description!: pulumi.Output<string>;
     public readonly eipAddresses!: pulumi.Output<outputs.vpc.BandwidthPackageEipAddress[]>;
     /**
-     * 是否启用双栈，取值如下：true：启用双栈。false：不启用双栈。
+     * Enable dual stack. Options: true: enable dual stack; false: do not enable dual stack.
      */
     public readonly enableDualStack!: pulumi.Output<boolean>;
     /**
-     * 过期时间
+     * Expiration time
      */
     public /*out*/ readonly expiredTime!: pulumi.Output<string>;
     /**
-     * 线路类型，默认为BGP。BGP：BGP（多线）。1、若您的账号已申请并开通了静态单线权限，则可传入如下取值：1.1、ChinaMobile：中国移动静态单线。1.2、ChinaTelecom：中国电信静态单线。1.3、ChinaUnicom：中国联通静态单线。2、若您的账号已申请并开通了BGP单线权限，则可传入SingleLine*BGP。3、若您的账号已申请并开通了精品BGP权限，则可传入Premium*BGP。4、若您的账号已申请并开通了融合BGP权限，则可传入Fusion*BGP。5、若您的账号已申请并开通了惠选型静态单线权限，则可传入如下取值：5.1、ChinaMobile*Value：中国移动惠选型静态单线。5.2、ChinaUnicom*Value：中国联通惠选型静态单线。5.3、ChinaTelecom*Value：中国电信惠选型静态单线。
+     * Line type, default is BGP. BGP: BGP (multi-line). 1. If your account has applied for and enabled static single line permissions, you can use the following values: 1.1, ChinaMobile: China Mobile static single line. 1.2, ChinaTelecom: China Telecom static single line. 1.3, ChinaUnicom: China Unicom static single line. 2. If your account has applied for and enabled BGP single line permissions, you can use SingleLine*BGP. 3. If your account has applied for and enabled Premium BGP permissions, you can use Premium*BGP. 4. If your account has applied for and enabled Fusion BGP permissions, you can use Fusion*BGP. 5. If your account has applied for and enabled Economical static single line permissions, you can use the following values: 5.1, ChinaMobile*Value: China Mobile economical static single line. 5.2, ChinaUnicom*Value: China Unicom economical static single line. 5.3, ChinaTelecom*Value: China Telecom economical static single line.
      */
     public readonly isp!: pulumi.Output<string>;
     /**
-     * 欠费时间
+     * Overdue time
      */
     public /*out*/ readonly overdueTime!: pulumi.Output<string>;
     /**
-     * 购买包年包月共享带宽包的时长，默认“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36。当PeriodUnit传入2，Period取值范围：1～3。
+     * Duration for purchasing yearly/monthly shared bandwidth package, default is '1'. If PeriodUnit is 1, Period can be 1–9, 12, 24, or 36. If PeriodUnit is 2, Period can be 1–3.
      */
     public readonly period!: pulumi.Output<number>;
     /**
-     * 购买包年包月共享带宽包时长的单位，取值如下：1：月（默认值）。2 ：年。
+     * Unit for the duration when purchasing an annual/monthly subscription shared bandwidth package. Options are: 1: Month (default). 2: Year.
      */
     public readonly periodUnit!: pulumi.Output<number>;
     /**
-     * 项目名称，不填默认加入default项目。
+     * Project name. If not specified, added to the default project.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 共享带宽包的IP协议，取值如下：Dual-stack：双栈协议类型。IPv4：IPv4协议类型协议。仅BillingType传2或4时，本参数支持传入Dual-stack
+     * IP protocol of the shared bandwidth package. Options are: Dual-stack: Dual-stack protocol type. IPv4: IPv4 protocol type. This parameter supports Dual-stack only when BillingType is 2 or 4.
      */
     public readonly protocol!: pulumi.Output<string>;
     /**
-     * 95计费保底比例，单位%，仅95计费共享带宽包实例返回此参数。
+     * 95 billing minimum ratio, unit: %, this parameter is returned only for 95 billing shared bandwidth package instances.
      */
     public /*out*/ readonly ratio!: pulumi.Output<number>;
     /**
-     * 共享带宽包的的安全防护类型。AntiDDoS_Enhanced：创建增强防护类型的共享带宽包，即创建支持添加基础防护类型公网IP的共享带宽包。不填则表示基础防护类型的共享带宽包，即创建支持添加增强防护类型公网IP的共享带宽包。
+     * Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
      */
     public readonly securityProtectionTypes!: pulumi.Output<string[]>;
     /**
-     * 共享带宽包的状态。Creating：创建中。Available：可用。Deleting：删除中。
+     * Status of the shared bandwidth package. Creating: In progress. Available: Available. Deleting: In progress.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.vpc.BandwidthPackageTag[]>;
     /**
-     * 更新时间
+     * Update time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -199,85 +199,85 @@ export class BandwidthPackage extends pulumi.CustomResource {
  */
 export interface BandwidthPackageState {
     /**
-     * 共享带宽包的带宽上限，单位：Mbps。BillingType传入1：取值范围5 ~ 5000，BillingType传入2、3、4：取值范围2 ~ 5000。
+     * Bandwidth cap of the shared bandwidth package, unit: Mbps. If BillingType is 1: range is 5–5000. If BillingType is 2, 3, or 4: range is 2–5000.
      */
     bandwidth?: pulumi.Input<number>;
     /**
-     * 带宽包ID
+     * Bandwidth package ID
      */
     bandwidthPackageId?: pulumi.Input<string>;
     /**
-     * 带宽包名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * Bandwidth package name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
      */
     bandwidthPackageName?: pulumi.Input<string>;
     /**
-     * 共享带宽包的计费方式。取值如下：1：包年包月。2 : 按带宽上限计费（默认值）。3：按主流量计费。4 : 按传统95计费（保底比例默认20%）。
+     * Billing methods for shared bandwidth packages. Options are: 1: Annual/monthly subscription. 2: Billed by bandwidth cap (default). 3: Billed by peak traffic. 4: Billed by traditional 95th percentile (minimum ratio defaults to 20%).
      */
     billingType?: pulumi.Input<number>;
     /**
-     * 计费状态
+     * Billing status
      */
     businessStatus?: pulumi.Input<string>;
     /**
-     * 创建时间
+     * Creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 删除时间
+     * Deletion time
      */
     deletedTime?: pulumi.Input<string>;
     /**
-     * 描述信息，长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description, limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      */
     description?: pulumi.Input<string>;
     eipAddresses?: pulumi.Input<pulumi.Input<inputs.vpc.BandwidthPackageEipAddress>[]>;
     /**
-     * 是否启用双栈，取值如下：true：启用双栈。false：不启用双栈。
+     * Enable dual stack. Options: true: enable dual stack; false: do not enable dual stack.
      */
     enableDualStack?: pulumi.Input<boolean>;
     /**
-     * 过期时间
+     * Expiration time
      */
     expiredTime?: pulumi.Input<string>;
     /**
-     * 线路类型，默认为BGP。BGP：BGP（多线）。1、若您的账号已申请并开通了静态单线权限，则可传入如下取值：1.1、ChinaMobile：中国移动静态单线。1.2、ChinaTelecom：中国电信静态单线。1.3、ChinaUnicom：中国联通静态单线。2、若您的账号已申请并开通了BGP单线权限，则可传入SingleLine*BGP。3、若您的账号已申请并开通了精品BGP权限，则可传入Premium*BGP。4、若您的账号已申请并开通了融合BGP权限，则可传入Fusion*BGP。5、若您的账号已申请并开通了惠选型静态单线权限，则可传入如下取值：5.1、ChinaMobile*Value：中国移动惠选型静态单线。5.2、ChinaUnicom*Value：中国联通惠选型静态单线。5.3、ChinaTelecom*Value：中国电信惠选型静态单线。
+     * Line type, default is BGP. BGP: BGP (multi-line). 1. If your account has applied for and enabled static single line permissions, you can use the following values: 1.1, ChinaMobile: China Mobile static single line. 1.2, ChinaTelecom: China Telecom static single line. 1.3, ChinaUnicom: China Unicom static single line. 2. If your account has applied for and enabled BGP single line permissions, you can use SingleLine*BGP. 3. If your account has applied for and enabled Premium BGP permissions, you can use Premium*BGP. 4. If your account has applied for and enabled Fusion BGP permissions, you can use Fusion*BGP. 5. If your account has applied for and enabled Economical static single line permissions, you can use the following values: 5.1, ChinaMobile*Value: China Mobile economical static single line. 5.2, ChinaUnicom*Value: China Unicom economical static single line. 5.3, ChinaTelecom*Value: China Telecom economical static single line.
      */
     isp?: pulumi.Input<string>;
     /**
-     * 欠费时间
+     * Overdue time
      */
     overdueTime?: pulumi.Input<string>;
     /**
-     * 购买包年包月共享带宽包的时长，默认“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36。当PeriodUnit传入2，Period取值范围：1～3。
+     * Duration for purchasing yearly/monthly shared bandwidth package, default is '1'. If PeriodUnit is 1, Period can be 1–9, 12, 24, or 36. If PeriodUnit is 2, Period can be 1–3.
      */
     period?: pulumi.Input<number>;
     /**
-     * 购买包年包月共享带宽包时长的单位，取值如下：1：月（默认值）。2 ：年。
+     * Unit for the duration when purchasing an annual/monthly subscription shared bandwidth package. Options are: 1: Month (default). 2: Year.
      */
     periodUnit?: pulumi.Input<number>;
     /**
-     * 项目名称，不填默认加入default项目。
+     * Project name. If not specified, added to the default project.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 共享带宽包的IP协议，取值如下：Dual-stack：双栈协议类型。IPv4：IPv4协议类型协议。仅BillingType传2或4时，本参数支持传入Dual-stack
+     * IP protocol of the shared bandwidth package. Options are: Dual-stack: Dual-stack protocol type. IPv4: IPv4 protocol type. This parameter supports Dual-stack only when BillingType is 2 or 4.
      */
     protocol?: pulumi.Input<string>;
     /**
-     * 95计费保底比例，单位%，仅95计费共享带宽包实例返回此参数。
+     * 95 billing minimum ratio, unit: %, this parameter is returned only for 95 billing shared bandwidth package instances.
      */
     ratio?: pulumi.Input<number>;
     /**
-     * 共享带宽包的的安全防护类型。AntiDDoS_Enhanced：创建增强防护类型的共享带宽包，即创建支持添加基础防护类型公网IP的共享带宽包。不填则表示基础防护类型的共享带宽包，即创建支持添加增强防护类型公网IP的共享带宽包。
+     * Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
      */
     securityProtectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 共享带宽包的状态。Creating：创建中。Available：可用。Deleting：删除中。
+     * Status of the shared bandwidth package. Creating: In progress. Available: Available. Deleting: In progress.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.BandwidthPackageTag>[]>;
     /**
-     * 更新时间
+     * Update time
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -287,48 +287,48 @@ export interface BandwidthPackageState {
  */
 export interface BandwidthPackageArgs {
     /**
-     * 共享带宽包的带宽上限，单位：Mbps。BillingType传入1：取值范围5 ~ 5000，BillingType传入2、3、4：取值范围2 ~ 5000。
+     * Bandwidth cap of the shared bandwidth package, unit: Mbps. If BillingType is 1: range is 5–5000. If BillingType is 2, 3, or 4: range is 2–5000.
      */
     bandwidth: pulumi.Input<number>;
     /**
-     * 带宽包名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * Bandwidth package name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
      */
     bandwidthPackageName?: pulumi.Input<string>;
     /**
-     * 共享带宽包的计费方式。取值如下：1：包年包月。2 : 按带宽上限计费（默认值）。3：按主流量计费。4 : 按传统95计费（保底比例默认20%）。
+     * Billing methods for shared bandwidth packages. Options are: 1: Annual/monthly subscription. 2: Billed by bandwidth cap (default). 3: Billed by peak traffic. 4: Billed by traditional 95th percentile (minimum ratio defaults to 20%).
      */
     billingType?: pulumi.Input<number>;
     /**
-     * 描述信息，长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description, limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      */
     description?: pulumi.Input<string>;
     eipAddresses?: pulumi.Input<pulumi.Input<inputs.vpc.BandwidthPackageEipAddress>[]>;
     /**
-     * 是否启用双栈，取值如下：true：启用双栈。false：不启用双栈。
+     * Enable dual stack. Options: true: enable dual stack; false: do not enable dual stack.
      */
     enableDualStack?: pulumi.Input<boolean>;
     /**
-     * 线路类型，默认为BGP。BGP：BGP（多线）。1、若您的账号已申请并开通了静态单线权限，则可传入如下取值：1.1、ChinaMobile：中国移动静态单线。1.2、ChinaTelecom：中国电信静态单线。1.3、ChinaUnicom：中国联通静态单线。2、若您的账号已申请并开通了BGP单线权限，则可传入SingleLine*BGP。3、若您的账号已申请并开通了精品BGP权限，则可传入Premium*BGP。4、若您的账号已申请并开通了融合BGP权限，则可传入Fusion*BGP。5、若您的账号已申请并开通了惠选型静态单线权限，则可传入如下取值：5.1、ChinaMobile*Value：中国移动惠选型静态单线。5.2、ChinaUnicom*Value：中国联通惠选型静态单线。5.3、ChinaTelecom*Value：中国电信惠选型静态单线。
+     * Line type, default is BGP. BGP: BGP (multi-line). 1. If your account has applied for and enabled static single line permissions, you can use the following values: 1.1, ChinaMobile: China Mobile static single line. 1.2, ChinaTelecom: China Telecom static single line. 1.3, ChinaUnicom: China Unicom static single line. 2. If your account has applied for and enabled BGP single line permissions, you can use SingleLine*BGP. 3. If your account has applied for and enabled Premium BGP permissions, you can use Premium*BGP. 4. If your account has applied for and enabled Fusion BGP permissions, you can use Fusion*BGP. 5. If your account has applied for and enabled Economical static single line permissions, you can use the following values: 5.1, ChinaMobile*Value: China Mobile economical static single line. 5.2, ChinaUnicom*Value: China Unicom economical static single line. 5.3, ChinaTelecom*Value: China Telecom economical static single line.
      */
     isp?: pulumi.Input<string>;
     /**
-     * 购买包年包月共享带宽包的时长，默认“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36。当PeriodUnit传入2，Period取值范围：1～3。
+     * Duration for purchasing yearly/monthly shared bandwidth package, default is '1'. If PeriodUnit is 1, Period can be 1–9, 12, 24, or 36. If PeriodUnit is 2, Period can be 1–3.
      */
     period?: pulumi.Input<number>;
     /**
-     * 购买包年包月共享带宽包时长的单位，取值如下：1：月（默认值）。2 ：年。
+     * Unit for the duration when purchasing an annual/monthly subscription shared bandwidth package. Options are: 1: Month (default). 2: Year.
      */
     periodUnit?: pulumi.Input<number>;
     /**
-     * 项目名称，不填默认加入default项目。
+     * Project name. If not specified, added to the default project.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 共享带宽包的IP协议，取值如下：Dual-stack：双栈协议类型。IPv4：IPv4协议类型协议。仅BillingType传2或4时，本参数支持传入Dual-stack
+     * IP protocol of the shared bandwidth package. Options are: Dual-stack: Dual-stack protocol type. IPv4: IPv4 protocol type. This parameter supports Dual-stack only when BillingType is 2 or 4.
      */
     protocol?: pulumi.Input<string>;
     /**
-     * 共享带宽包的的安全防护类型。AntiDDoS_Enhanced：创建增强防护类型的共享带宽包，即创建支持添加基础防护类型公网IP的共享带宽包。不填则表示基础防护类型的共享带宽包，即创建支持添加增强防护类型公网IP的共享带宽包。
+     * Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
      */
     securityProtectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.BandwidthPackageTag>[]>;

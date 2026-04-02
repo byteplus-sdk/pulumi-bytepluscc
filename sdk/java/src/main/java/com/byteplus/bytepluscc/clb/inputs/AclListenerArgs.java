@@ -17,14 +17,14 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
     public static final AclListenerArgs Empty = new AclListenerArgs();
 
     /**
-     * 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+     * Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
      * 
      */
     @Import(name="aclType")
     private @Nullable Output<String> aclType;
 
     /**
-     * @return 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+     * @return Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
      * 
      */
     public Optional<Output<String>> aclType() {
@@ -32,14 +32,14 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的ID。
+     * Listener ID
      * 
      */
     @Import(name="listenerId")
     private @Nullable Output<String> listenerId;
 
     /**
-     * @return 监听器的ID。
+     * @return Listener ID
      * 
      */
     public Optional<Output<String>> listenerId() {
@@ -47,14 +47,14 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的名称。
+     * Listener name
      * 
      */
     @Import(name="listenerName")
     private @Nullable Output<String> listenerName;
 
     /**
-     * @return 监听器的名称。
+     * @return Listener name
      * 
      */
     public Optional<Output<String>> listenerName() {
@@ -62,14 +62,14 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的端口。
+     * Listener port
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 监听器的端口。
+     * @return Listener port
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -77,14 +77,14 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+     * Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
      * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
-     * @return 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+     * @return Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -120,7 +120,7 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclType 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+         * @param aclType Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclType 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+         * @param aclType Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerId 监听器的ID。
+         * @param listenerId Listener ID
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerId 监听器的ID。
+         * @param listenerId Listener ID
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerName 监听器的名称。
+         * @param listenerName Listener name
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerName 监听器的名称。
+         * @param listenerName Listener name
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 监听器的端口。
+         * @param port Listener port
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 监听器的端口。
+         * @param port Listener port
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+         * @param protocol Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+         * @param protocol Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
          * 
          * @return builder
          * 

@@ -16,14 +16,14 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceTagArgs Empty = new InstanceTagArgs();
 
     /**
-     * 标签键。
+     * Tag key
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 标签键。
+     * @return Tag key
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 标签类型。
+     * Tag type
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 标签类型。
+     * @return Tag type
      * 
      */
     public Optional<Output<String>> type() {
@@ -46,14 +46,14 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 标签值。
+     * Tag value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 标签值。
+     * @return Tag value
      * 
      */
     public Optional<Output<String>> value() {
@@ -87,7 +87,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 标签键。
+         * @param key Tag key
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 标签键。
+         * @param key Tag key
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 标签类型。
+         * @param type Tag type
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 标签类型。
+         * @param type Tag type
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 标签值。
+         * @param value Tag value
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 标签值。
+         * @param value Tag value
          * 
          * @return builder
          * 

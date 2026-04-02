@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas.Outputs
     public sealed class InstanceCachePerformance
     {
         /// <summary>
-        /// 预配置带宽，用于增加文件系统带宽。
+        /// Provisioned bandwidth, used to increase file system bandwidth
         /// </summary>
         public readonly int? CacheBandwidth;
 

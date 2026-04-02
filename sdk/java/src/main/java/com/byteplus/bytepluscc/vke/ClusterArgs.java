@@ -26,14 +26,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     public static final ClusterArgs Empty = new ClusterArgs();
 
     /**
-     * 集群控制面及部分节点的网络配置。
+     * Network configuration for the cluster control plane and some nodes.
      * 
      */
     @Import(name="clusterConfig")
     private @Nullable Output<ClusterClusterConfigArgs> clusterConfig;
 
     /**
-     * @return 集群控制面及部分节点的网络配置。
+     * @return Network configuration for the cluster control plane and some nodes.
      * 
      */
     public Optional<Output<ClusterClusterConfigArgs>> clusterConfig() {
@@ -41,14 +41,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+     * Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
      * 
      */
     @Import(name="deleteProtectionEnabled")
     private @Nullable Output<Boolean> deleteProtectionEnabled;
 
     /**
-     * @return 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+     * @return Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
      * 
      */
     public Optional<Output<Boolean>> deleteProtectionEnabled() {
@@ -56,14 +56,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群描述。长度限制为 300 个字符以内。
+     * Cluster description. Maximum length is 300 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 集群描述。长度限制为 300 个字符以内。
+     * @return Cluster description. Maximum length is 300 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -71,14 +71,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IRSA（IAM Role for Service Account）能力相关参数配置。
+     * IRSA (IAM Role for Service Account) capability parameter configuration
      * 
      */
     @Import(name="irsaConfig")
     private @Nullable Output<ClusterIrsaConfigArgs> irsaConfig;
 
     /**
-     * @return IRSA（IAM Role for Service Account）能力相关参数配置。
+     * @return IRSA (IAM Role for Service Account) capability parameter configuration
      * 
      */
     public Optional<Output<ClusterIrsaConfigArgs>> irsaConfig() {
@@ -86,14 +86,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+     * Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
      * 
      */
     @Import(name="kubernetesVersionCreate")
     private @Nullable Output<String> kubernetesVersionCreate;
 
     /**
-     * @return 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+     * @return Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
      * 
      */
     public Optional<Output<String>> kubernetesVersionCreate() {
@@ -101,14 +101,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群的日志配置信息。
+     * Cluster log configuration information.
      * 
      */
     @Import(name="loggingConfig")
     private @Nullable Output<ClusterLoggingConfigArgs> loggingConfig;
 
     /**
-     * @return 集群的日志配置信息。
+     * @return Cluster log configuration information.
      * 
      */
     public Optional<Output<ClusterLoggingConfigArgs>> loggingConfig() {
@@ -116,14 +116,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监控配置信息。
+     * Monitoring configuration information.
      * 
      */
     @Import(name="monitoringConfig")
     private @Nullable Output<ClusterMonitoringConfigArgs> monitoringConfig;
 
     /**
-     * @return 监控配置信息。
+     * @return Monitoring configuration information.
      * 
      */
     public Optional<Output<ClusterMonitoringConfigArgs>> monitoringConfig() {
@@ -131,14 +131,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * @return Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
      * 
      */
     public Output<String> name() {
@@ -146,14 +146,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Pod 的网络配置。
+     * Pod network configuration.
      * 
      */
     @Import(name="podsConfig")
     private @Nullable Output<ClusterPodsConfigArgs> podsConfig;
 
     /**
-     * @return Pod 的网络配置。
+     * @return Pod network configuration.
      * 
      */
     public Optional<Output<ClusterPodsConfigArgs>> podsConfig() {
@@ -161,14 +161,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+     * Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+     * @return Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -176,14 +176,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 服务的网络配置。
+     * Network configuration for the service.
      * 
      */
     @Import(name="servicesConfig")
     private @Nullable Output<ClusterServicesConfigArgs> servicesConfig;
 
     /**
-     * @return 服务的网络配置。
+     * @return Network configuration for the service.
      * 
      */
     public Optional<Output<ClusterServicesConfigArgs>> servicesConfig() {
@@ -191,14 +191,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群源地域。
+     * Cluster source region
      * 
      */
     @Import(name="sourceRegion")
     private @Nullable Output<String> sourceRegion;
 
     /**
-     * @return 集群源地域。
+     * @return Cluster source region
      * 
      */
     public Optional<Output<String>> sourceRegion() {
@@ -249,7 +249,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterConfig 集群控制面及部分节点的网络配置。
+         * @param clusterConfig Network configuration for the cluster control plane and some nodes.
          * 
          * @return builder
          * 
@@ -260,7 +260,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterConfig 集群控制面及部分节点的网络配置。
+         * @param clusterConfig Network configuration for the cluster control plane and some nodes.
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteProtectionEnabled 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+         * @param deleteProtectionEnabled Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteProtectionEnabled 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+         * @param deleteProtectionEnabled Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 集群描述。长度限制为 300 个字符以内。
+         * @param description Cluster description. Maximum length is 300 characters.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 集群描述。长度限制为 300 个字符以内。
+         * @param description Cluster description. Maximum length is 300 characters.
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param irsaConfig IRSA（IAM Role for Service Account）能力相关参数配置。
+         * @param irsaConfig IRSA (IAM Role for Service Account) capability parameter configuration
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param irsaConfig IRSA（IAM Role for Service Account）能力相关参数配置。
+         * @param irsaConfig IRSA (IAM Role for Service Account) capability parameter configuration
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kubernetesVersionCreate 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+         * @param kubernetesVersionCreate Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kubernetesVersionCreate 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+         * @param kubernetesVersionCreate Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loggingConfig 集群的日志配置信息。
+         * @param loggingConfig Cluster log configuration information.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loggingConfig 集群的日志配置信息。
+         * @param loggingConfig Cluster log configuration information.
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param monitoringConfig 监控配置信息。
+         * @param monitoringConfig Monitoring configuration information.
          * 
          * @return builder
          * 
@@ -386,7 +386,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param monitoringConfig 监控配置信息。
+         * @param monitoringConfig Monitoring configuration information.
          * 
          * @return builder
          * 
@@ -396,7 +396,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+         * @param name Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
          * 
          * @return builder
          * 
@@ -407,7 +407,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+         * @param name Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
          * 
          * @return builder
          * 
@@ -417,7 +417,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param podsConfig Pod 的网络配置。
+         * @param podsConfig Pod network configuration.
          * 
          * @return builder
          * 
@@ -428,7 +428,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param podsConfig Pod 的网络配置。
+         * @param podsConfig Pod network configuration.
          * 
          * @return builder
          * 
@@ -438,7 +438,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+         * @param projectName Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
          * 
          * @return builder
          * 
@@ -449,7 +449,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+         * @param projectName Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
          * 
          * @return builder
          * 
@@ -459,7 +459,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param servicesConfig 服务的网络配置。
+         * @param servicesConfig Network configuration for the service.
          * 
          * @return builder
          * 
@@ -470,7 +470,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param servicesConfig 服务的网络配置。
+         * @param servicesConfig Network configuration for the service.
          * 
          * @return builder
          * 
@@ -480,7 +480,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceRegion 集群源地域。
+         * @param sourceRegion Cluster source region
          * 
          * @return builder
          * 
@@ -491,7 +491,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceRegion 集群源地域。
+         * @param sourceRegion Cluster source region
          * 
          * @return builder
          * 

@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainNegativeCachNegativeCacheRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        /// Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
 
         /// <summary>
-        /// 表示内容分发网络对请求的文件匹配 ConditionRule 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+        /// Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
         /// </summary>
         [Input("ignoreCase")]
         public Input<bool>? IgnoreCase { get; set; }
 
         /// <summary>
-        /// 指定一个需要缓存的状态码。状态码的范围是 400-599。您也可以指定 4xx 或者 5xx。4xx 表示 400 到 499 之间的所有状态码。5xx 表示 500 到 599 之间的所有状态码。
+        /// Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
         /// </summary>
         [Input("statusCode")]
         public Input<string>? StatusCode { get; set; }
 
         /// <summary>
-        /// 表示状态码的缓存时间。单位是秒。时间的范围是 1-315,360,000。315,360,000 表示 10年。
+        /// Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
         /// </summary>
         [Input("ttl")]
         public Input<int>? Ttl { get; set; }

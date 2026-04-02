@@ -15,39 +15,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Outputs
     public sealed class GetInstanceChargeDetailResult
     {
         /// <summary>
-        /// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+        /// Whether to enable auto-renewal in prepaid scenarios. Values: true: auto-renewal. false: no auto-renewal.
         /// </summary>
         public readonly bool AutoRenew;
         /// <summary>
-        /// 预付费场景下计费到期的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Billing expiration time for prepaid scenarios, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         /// </summary>
         public readonly string ChargeEndTime;
         /// <summary>
-        /// 计费开始的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Billing start time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         /// </summary>
         public readonly string ChargeStartTime;
         /// <summary>
-        /// 付费状态：Normal：正常。Overdue：欠费。Shutdown：关停。
+        /// Payment status: Normal: Normal. Overdue: Overdue. Shutdown: Shutdown
         /// </summary>
         public readonly string ChargeStatus;
         /// <summary>
-        /// 计费类型。PostPaid：按量计费；PrePaid：包年包月。
+        /// Billing type. PostPaid: Pay-as-you-go. PrePaid: yearly/monthly subscription
         /// </summary>
         public readonly string ChargeType;
         /// <summary>
-        /// 欠费关停时预计释放时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Estimated release time when shut down due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         /// </summary>
         public readonly string OverdueReclaimTime;
         /// <summary>
-        /// 欠费关停时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Shutdown time for overdue payments. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
         /// </summary>
         public readonly string OverdueTime;
         /// <summary>
-        /// 预付费场景下的购买时长。
+        /// Purchase duration for prepaid scenarios.
         /// </summary>
         public readonly int Period;
         /// <summary>
-        /// 预付费场景下的购买周期。Month：包月。Year：包年。
+        /// Purchase period for prepaid scenarios. Month: monthly subscription. Year: annual subscription.
         /// </summary>
         public readonly string PeriodUnit;
 

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Privatezone
 {
     /// <summary>
-    /// 转发规则详细信息
+    /// Forwarding rule details
     /// 
     /// ## Import
     /// 
@@ -23,19 +23,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
     public partial class ResolverRule : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 转发规则的创建时间
+        /// Creation time of the forwarding rule
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则是否被启用。true：启用。false：禁用。
+        /// Whether the forwarding rule is enabled. true: enabled. false: disabled
         /// </summary>
         [Output("enable")]
         public Output<bool> Enable { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+        /// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
         /// </summary>
         [Output("endpointId")]
         public Output<int> EndpointId { get; private set; } = null!;
@@ -44,31 +44,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         public Output<ImmutableArray<Outputs.ResolverRuleForwardIP>> ForwardIPs { get; private set; } = null!;
 
         /// <summary>
-        /// 最近一次更新转发规则的账号的 ID
+        /// Account ID of the last update to the forwarding rule
         /// </summary>
         [Output("lastOperator")]
         public Output<string> LastOperator { get; private set; } = null!;
 
         /// <summary>
-        /// 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+        /// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
         /// </summary>
         [Output("line")]
         public Output<string> Line { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则的名称。支持 UTF-8 格式。
+        /// Name of the forwarding rule. Supports UTF-8 format
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则所属的项目名称。默认为 default。
+        /// Project name associated with the forwarding rule. Default is default
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则的 ID。
+        /// Forwarding rule ID
         /// </summary>
         [Output("ruleId")]
         public Output<string> RuleId { get; private set; } = null!;
@@ -77,13 +77,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         public Output<ImmutableArray<Outputs.ResolverRuleTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+        /// Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则的更新时间
+        /// Update time of the forwarding rule
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -92,7 +92,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         public Output<ImmutableArray<Outputs.ResolverRuleVpC>> VpCs { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+        /// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         /// </summary>
         [Output("zoneName")]
         public Output<string> ZoneName { get; private set; } = null!;
@@ -145,7 +145,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
     public sealed class ResolverRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+        /// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
         /// </summary>
         [Input("endpointId")]
         public Input<int>? EndpointId { get; set; }
@@ -159,19 +159,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         }
 
         /// <summary>
-        /// 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+        /// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
         /// </summary>
         [Input("line")]
         public Input<string>? Line { get; set; }
 
         /// <summary>
-        /// 转发规则的名称。支持 UTF-8 格式。
+        /// Name of the forwarding rule. Supports UTF-8 format
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// 转发规则所属的项目名称。默认为 default。
+        /// Project name associated with the forwarding rule. Default is default
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -185,7 +185,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         }
 
         /// <summary>
-        /// 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+        /// Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -199,7 +199,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         }
 
         /// <summary>
-        /// 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+        /// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         /// </summary>
         [Input("zoneName")]
         public Input<string>? ZoneName { get; set; }
@@ -213,19 +213,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
     public sealed class ResolverRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 转发规则的创建时间
+        /// Creation time of the forwarding rule
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 转发规则是否被启用。true：启用。false：禁用。
+        /// Whether the forwarding rule is enabled. true: enabled. false: disabled
         /// </summary>
         [Input("enable")]
         public Input<bool>? Enable { get; set; }
 
         /// <summary>
-        /// 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+        /// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
         /// </summary>
         [Input("endpointId")]
         public Input<int>? EndpointId { get; set; }
@@ -239,31 +239,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         }
 
         /// <summary>
-        /// 最近一次更新转发规则的账号的 ID
+        /// Account ID of the last update to the forwarding rule
         /// </summary>
         [Input("lastOperator")]
         public Input<string>? LastOperator { get; set; }
 
         /// <summary>
-        /// 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+        /// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
         /// </summary>
         [Input("line")]
         public Input<string>? Line { get; set; }
 
         /// <summary>
-        /// 转发规则的名称。支持 UTF-8 格式。
+        /// Name of the forwarding rule. Supports UTF-8 format
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 转发规则所属的项目名称。默认为 default。
+        /// Project name associated with the forwarding rule. Default is default
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 转发规则的 ID。
+        /// Forwarding rule ID
         /// </summary>
         [Input("ruleId")]
         public Input<string>? RuleId { get; set; }
@@ -277,13 +277,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         }
 
         /// <summary>
-        /// 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+        /// Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// 转发规则的更新时间
+        /// Update time of the forwarding rule
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
@@ -297,7 +297,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         }
 
         /// <summary>
-        /// 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+        /// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         /// </summary>
         [Input("zoneName")]
         public Input<string>? ZoneName { get; set; }

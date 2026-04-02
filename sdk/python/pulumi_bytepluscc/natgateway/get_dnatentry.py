@@ -66,7 +66,7 @@ class GetDnatentryResult:
     @pulumi.getter(name="dnatEntryId")
     def dnat_entry_id(self) -> builtins.str:
         """
-        DNAT规则的ID。
+        ID of the DNAT rule.
         """
         return pulumi.get(self, "dnat_entry_id")
 
@@ -74,7 +74,7 @@ class GetDnatentryResult:
     @pulumi.getter(name="dnatEntryName")
     def dnat_entry_name(self) -> builtins.str:
         """
-        DNAT规则的名称。
+        Name of the DNAT rule.
         """
         return pulumi.get(self, "dnat_entry_name")
 
@@ -82,7 +82,7 @@ class GetDnatentryResult:
     @pulumi.getter(name="externalIp")
     def external_ip(self) -> builtins.str:
         """
-        NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+        IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
         """
         return pulumi.get(self, "external_ip")
 
@@ -90,7 +90,7 @@ class GetDnatentryResult:
     @pulumi.getter(name="externalPort")
     def external_port(self) -> builtins.str:
         """
-        接收来自公网外部请求的端口或端口段。
+        Port or port range that receives requests from the public network.
         """
         return pulumi.get(self, "external_port")
 
@@ -106,7 +106,7 @@ class GetDnatentryResult:
     @pulumi.getter(name="internalIp")
     def internal_ip(self) -> builtins.str:
         """
-        云服务器实例的私网IP。
+        Private IP address of the cloud server instance.
         """
         return pulumi.get(self, "internal_ip")
 
@@ -114,7 +114,7 @@ class GetDnatentryResult:
     @pulumi.getter(name="internalPort")
     def internal_port(self) -> builtins.str:
         """
-        云服务器实例私网IP的端口或端口段。
+        Port or port range of the private IP address of the cloud server instance.
         """
         return pulumi.get(self, "internal_port")
 
@@ -122,7 +122,7 @@ class GetDnatentryResult:
     @pulumi.getter(name="natGatewayId")
     def nat_gateway_id(self) -> builtins.str:
         """
-        DNAT规则所属NAT网关的ID。
+        ID of the NAT gateway to which the DNAT rule belongs.
         """
         return pulumi.get(self, "nat_gateway_id")
 
@@ -130,7 +130,7 @@ class GetDnatentryResult:
     @pulumi.getter(name="portType")
     def port_type(self) -> builtins.str:
         """
-        DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+        Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
         """
         return pulumi.get(self, "port_type")
 
@@ -138,7 +138,7 @@ class GetDnatentryResult:
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+        Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
         """
         return pulumi.get(self, "protocol")
 
@@ -146,7 +146,7 @@ class GetDnatentryResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        DNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+        Status of the DNAT rule. Creating: Creating. Deleting: Deleting. Available: Available.
         """
         return pulumi.get(self, "status")
 

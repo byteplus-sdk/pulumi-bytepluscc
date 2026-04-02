@@ -30,19 +30,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
         }
 
         /// <summary>
-        /// 应用名称。
+        /// Application name.
         /// </summary>
         [Input("applicationName")]
         public Input<string>? ApplicationName { get; set; }
 
         /// <summary>
-        /// 元数据连接id。
+        /// Metadata connection ID.
         /// </summary>
         [Input("connectionId")]
         public Input<string>? ConnectionId { get; set; }
 
         /// <summary>
-        /// 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+        /// Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
         /// </summary>
         [Input("connectionType")]
         public Input<string>? ConnectionType { get; set; }

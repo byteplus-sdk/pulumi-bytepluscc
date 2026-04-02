@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceCapacity {
     /**
-     * @return 文件系统可用总容量，单位为 GiB。
+     * @return Total available file system capacity, in GiB
      * 
      */
     private Double total;
     /**
-     * @return 文件系统已使用容量，单位为 MiB。
+     * @return Used file system capacity, in MiB
      * 
      */
     private Double used;
 
     private GetInstanceCapacity() {}
     /**
-     * @return 文件系统可用总容量，单位为 GiB。
+     * @return Total available file system capacity, in GiB
      * 
      */
     public Double total() {
         return this.total;
     }
     /**
-     * @return 文件系统已使用容量，单位为 MiB。
+     * @return Used file system capacity, in MiB
      * 
      */
     public Double used() {

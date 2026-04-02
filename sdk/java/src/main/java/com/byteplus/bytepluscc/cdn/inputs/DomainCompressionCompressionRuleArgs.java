@@ -17,14 +17,14 @@ public final class DomainCompressionCompressionRuleArgs extends com.pulumi.resou
     public static final DomainCompressionCompressionRuleArgs Empty = new DomainCompressionCompressionRuleArgs();
 
     /**
-     * 表示压缩操作的配置。
+     * Represents the configuration for compression operations.
      * 
      */
     @Import(name="compressionAction")
     private @Nullable Output<DomainCompressionCompressionRuleCompressionActionArgs> compressionAction;
 
     /**
-     * @return 表示压缩操作的配置。
+     * @return Represents the configuration for compression operations.
      * 
      */
     public Optional<Output<DomainCompressionCompressionRuleCompressionActionArgs>> compressionAction() {
@@ -32,14 +32,14 @@ public final class DomainCompressionCompressionRuleArgs extends com.pulumi.resou
     }
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainCompressionCompressionRuleConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainCompressionCompressionRuleConditionArgs>> condition() {
@@ -72,7 +72,7 @@ public final class DomainCompressionCompressionRuleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param compressionAction 表示压缩操作的配置。
+         * @param compressionAction Represents the configuration for compression operations.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainCompressionCompressionRuleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param compressionAction 表示压缩操作的配置。
+         * @param compressionAction Represents the configuration for compression operations.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainCompressionCompressionRuleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainCompressionCompressionRuleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 

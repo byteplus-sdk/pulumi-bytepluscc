@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 节点池是集群中具有相同配置的一组节点，一个节点池包含一个节点或多个节点。节点池的配置包含节点的属性，例如节点规格、可用区、标签、污点等。这些属性可以在创建节点池时指定，也可以在创建完成后进行编辑修改。
+// A node pool is a group of nodes in a cluster with the same configuration. A node pool can contain one or more nodes. The node pool configuration includes node attributes such as node specifications, availability zones, labels, taints, and more. These attributes can be specified when creating the node pool or edited after creation.
 //
 // ## Import
 //
@@ -22,30 +22,30 @@ import (
 type NodePool struct {
 	pulumi.CustomResourceState
 
-	// 节点池伸缩策略配置。
+	// Node pool scaling policy configuration.
 	AutoScaling NodePoolAutoScalingOutput `pulumi:"autoScaling"`
-	// 节点池所在集群的 ID。
+	// ID of the cluster where the node pool is located
 	ClusterId pulumi.StringOutput `pulumi:"clusterId"`
-	// 创建节点池的时间。
+	// Node pool creation time
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 节点池 Kubernetes 相关配置。
+	// Kubernetes-related configuration for the node pool
 	KubernetesConfig NodePoolKubernetesConfigOutput `pulumi:"kubernetesConfig"`
-	// 托管节点池配置。
+	// Managed node pool configuration
 	Management NodePoolManagementOutput `pulumi:"management"`
-	// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 节点池中云服务器（ECS）实例配置。
+	// Cloud server (ECS) instance configuration in the node pool
 	NodeConfig NodePoolNodeConfigOutput `pulumi:"nodeConfig"`
-	// 节点池 ID 。
+	// Node pool ID
 	NodePoolId pulumi.StringOutput `pulumi:"nodePoolId"`
-	// 节点池中的节点统计。
+	// Node statistics in the node pool.
 	NodeStatistics NodePoolNodeStatisticsOutput `pulumi:"nodeStatistics"`
-	// 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+	// When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
 	RetainResources pulumi.StringArrayOutput `pulumi:"retainResources"`
-	// 节点池状态。
+	// Node pool status
 	Status NodePoolStatusOutput   `pulumi:"status"`
 	Tags   NodePoolTagArrayOutput `pulumi:"tags"`
-	// 更新节点池的时间。
+	// Node pool update time
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -82,58 +82,58 @@ func GetNodePool(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NodePool resources.
 type nodePoolState struct {
-	// 节点池伸缩策略配置。
+	// Node pool scaling policy configuration.
 	AutoScaling *NodePoolAutoScaling `pulumi:"autoScaling"`
-	// 节点池所在集群的 ID。
+	// ID of the cluster where the node pool is located
 	ClusterId *string `pulumi:"clusterId"`
-	// 创建节点池的时间。
+	// Node pool creation time
 	CreatedTime *string `pulumi:"createdTime"`
-	// 节点池 Kubernetes 相关配置。
+	// Kubernetes-related configuration for the node pool
 	KubernetesConfig *NodePoolKubernetesConfig `pulumi:"kubernetesConfig"`
-	// 托管节点池配置。
+	// Managed node pool configuration
 	Management *NodePoolManagement `pulumi:"management"`
-	// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
 	Name *string `pulumi:"name"`
-	// 节点池中云服务器（ECS）实例配置。
+	// Cloud server (ECS) instance configuration in the node pool
 	NodeConfig *NodePoolNodeConfig `pulumi:"nodeConfig"`
-	// 节点池 ID 。
+	// Node pool ID
 	NodePoolId *string `pulumi:"nodePoolId"`
-	// 节点池中的节点统计。
+	// Node statistics in the node pool.
 	NodeStatistics *NodePoolNodeStatistics `pulumi:"nodeStatistics"`
-	// 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+	// When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
 	RetainResources []string `pulumi:"retainResources"`
-	// 节点池状态。
+	// Node pool status
 	Status *NodePoolStatus `pulumi:"status"`
 	Tags   []NodePoolTag   `pulumi:"tags"`
-	// 更新节点池的时间。
+	// Node pool update time
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type NodePoolState struct {
-	// 节点池伸缩策略配置。
+	// Node pool scaling policy configuration.
 	AutoScaling NodePoolAutoScalingPtrInput
-	// 节点池所在集群的 ID。
+	// ID of the cluster where the node pool is located
 	ClusterId pulumi.StringPtrInput
-	// 创建节点池的时间。
+	// Node pool creation time
 	CreatedTime pulumi.StringPtrInput
-	// 节点池 Kubernetes 相关配置。
+	// Kubernetes-related configuration for the node pool
 	KubernetesConfig NodePoolKubernetesConfigPtrInput
-	// 托管节点池配置。
+	// Managed node pool configuration
 	Management NodePoolManagementPtrInput
-	// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
 	Name pulumi.StringPtrInput
-	// 节点池中云服务器（ECS）实例配置。
+	// Cloud server (ECS) instance configuration in the node pool
 	NodeConfig NodePoolNodeConfigPtrInput
-	// 节点池 ID 。
+	// Node pool ID
 	NodePoolId pulumi.StringPtrInput
-	// 节点池中的节点统计。
+	// Node statistics in the node pool.
 	NodeStatistics NodePoolNodeStatisticsPtrInput
-	// 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+	// When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
 	RetainResources pulumi.StringArrayInput
-	// 节点池状态。
+	// Node pool status
 	Status NodePoolStatusPtrInput
 	Tags   NodePoolTagArrayInput
-	// 更新节点池的时间。
+	// Node pool update time
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -142,38 +142,38 @@ func (NodePoolState) ElementType() reflect.Type {
 }
 
 type nodePoolArgs struct {
-	// 节点池伸缩策略配置。
+	// Node pool scaling policy configuration.
 	AutoScaling *NodePoolAutoScaling `pulumi:"autoScaling"`
-	// 节点池所在集群的 ID。
+	// ID of the cluster where the node pool is located
 	ClusterId string `pulumi:"clusterId"`
-	// 节点池 Kubernetes 相关配置。
+	// Kubernetes-related configuration for the node pool
 	KubernetesConfig *NodePoolKubernetesConfig `pulumi:"kubernetesConfig"`
-	// 托管节点池配置。
+	// Managed node pool configuration
 	Management *NodePoolManagement `pulumi:"management"`
-	// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
 	Name *string `pulumi:"name"`
-	// 节点池中云服务器（ECS）实例配置。
+	// Cloud server (ECS) instance configuration in the node pool
 	NodeConfig *NodePoolNodeConfig `pulumi:"nodeConfig"`
-	// 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+	// When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
 	RetainResources []string      `pulumi:"retainResources"`
 	Tags            []NodePoolTag `pulumi:"tags"`
 }
 
 // The set of arguments for constructing a NodePool resource.
 type NodePoolArgs struct {
-	// 节点池伸缩策略配置。
+	// Node pool scaling policy configuration.
 	AutoScaling NodePoolAutoScalingPtrInput
-	// 节点池所在集群的 ID。
+	// ID of the cluster where the node pool is located
 	ClusterId pulumi.StringInput
-	// 节点池 Kubernetes 相关配置。
+	// Kubernetes-related configuration for the node pool
 	KubernetesConfig NodePoolKubernetesConfigPtrInput
-	// 托管节点池配置。
+	// Managed node pool configuration
 	Management NodePoolManagementPtrInput
-	// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
 	Name pulumi.StringPtrInput
-	// 节点池中云服务器（ECS）实例配置。
+	// Cloud server (ECS) instance configuration in the node pool
 	NodeConfig NodePoolNodeConfigPtrInput
-	// 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+	// When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
 	RetainResources pulumi.StringArrayInput
 	Tags            NodePoolTagArrayInput
 }
@@ -265,57 +265,57 @@ func (o NodePoolOutput) ToNodePoolOutputWithContext(ctx context.Context) NodePoo
 	return o
 }
 
-// 节点池伸缩策略配置。
+// Node pool scaling policy configuration.
 func (o NodePoolOutput) AutoScaling() NodePoolAutoScalingOutput {
 	return o.ApplyT(func(v *NodePool) NodePoolAutoScalingOutput { return v.AutoScaling }).(NodePoolAutoScalingOutput)
 }
 
-// 节点池所在集群的 ID。
+// ID of the cluster where the node pool is located
 func (o NodePoolOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 创建节点池的时间。
+// Node pool creation time
 func (o NodePoolOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 节点池 Kubernetes 相关配置。
+// Kubernetes-related configuration for the node pool
 func (o NodePoolOutput) KubernetesConfig() NodePoolKubernetesConfigOutput {
 	return o.ApplyT(func(v *NodePool) NodePoolKubernetesConfigOutput { return v.KubernetesConfig }).(NodePoolKubernetesConfigOutput)
 }
 
-// 托管节点池配置。
+// Managed node pool configuration
 func (o NodePoolOutput) Management() NodePoolManagementOutput {
 	return o.ApplyT(func(v *NodePool) NodePoolManagementOutput { return v.Management }).(NodePoolManagementOutput)
 }
 
-// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+// Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
 func (o NodePoolOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 节点池中云服务器（ECS）实例配置。
+// Cloud server (ECS) instance configuration in the node pool
 func (o NodePoolOutput) NodeConfig() NodePoolNodeConfigOutput {
 	return o.ApplyT(func(v *NodePool) NodePoolNodeConfigOutput { return v.NodeConfig }).(NodePoolNodeConfigOutput)
 }
 
-// 节点池 ID 。
+// Node pool ID
 func (o NodePoolOutput) NodePoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.NodePoolId }).(pulumi.StringOutput)
 }
 
-// 节点池中的节点统计。
+// Node statistics in the node pool.
 func (o NodePoolOutput) NodeStatistics() NodePoolNodeStatisticsOutput {
 	return o.ApplyT(func(v *NodePool) NodePoolNodeStatisticsOutput { return v.NodeStatistics }).(NodePoolNodeStatisticsOutput)
 }
 
-// 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+// When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
 func (o NodePoolOutput) RetainResources() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePool) pulumi.StringArrayOutput { return v.RetainResources }).(pulumi.StringArrayOutput)
 }
 
-// 节点池状态。
+// Node pool status
 func (o NodePoolOutput) Status() NodePoolStatusOutput {
 	return o.ApplyT(func(v *NodePool) NodePoolStatusOutput { return v.Status }).(NodePoolStatusOutput)
 }
@@ -324,7 +324,7 @@ func (o NodePoolOutput) Tags() NodePoolTagArrayOutput {
 	return o.ApplyT(func(v *NodePool) NodePoolTagArrayOutput { return v.Tags }).(NodePoolTagArrayOutput)
 }
 
-// 更新节点池的时间。
+// Node pool update time
 func (o NodePoolOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

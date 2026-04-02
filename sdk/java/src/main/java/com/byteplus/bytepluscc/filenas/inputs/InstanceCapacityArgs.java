@@ -16,14 +16,14 @@ public final class InstanceCapacityArgs extends com.pulumi.resources.ResourceArg
     public static final InstanceCapacityArgs Empty = new InstanceCapacityArgs();
 
     /**
-     * 文件系统可用总容量，单位为 GiB。
+     * Total available file system capacity, in GiB
      * 
      */
     @Import(name="total")
     private @Nullable Output<Double> total;
 
     /**
-     * @return 文件系统可用总容量，单位为 GiB。
+     * @return Total available file system capacity, in GiB
      * 
      */
     public Optional<Output<Double>> total() {
@@ -31,14 +31,14 @@ public final class InstanceCapacityArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 文件系统已使用容量，单位为 MiB。
+     * Used file system capacity, in MiB
      * 
      */
     @Import(name="used")
     private @Nullable Output<Double> used;
 
     /**
-     * @return 文件系统已使用容量，单位为 MiB。
+     * @return Used file system capacity, in MiB
      * 
      */
     public Optional<Output<Double>> used() {
@@ -71,7 +71,7 @@ public final class InstanceCapacityArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param total 文件系统可用总容量，单位为 GiB。
+         * @param total Total available file system capacity, in GiB
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class InstanceCapacityArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param total 文件系统可用总容量，单位为 GiB。
+         * @param total Total available file system capacity, in GiB
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class InstanceCapacityArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param used 文件系统已使用容量，单位为 MiB。
+         * @param used Used file system capacity, in MiB
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class InstanceCapacityArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param used 文件系统已使用容量，单位为 MiB。
+         * @param used Used file system capacity, in MiB
          * 
          * @return builder
          * 

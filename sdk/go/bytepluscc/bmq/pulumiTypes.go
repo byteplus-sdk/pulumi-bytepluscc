@@ -14,13 +14,13 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type GroupResetInfo struct {
-	// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+	// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
 	OffsetType *string `pulumi:"offsetType"`
-	// 分区序号。
+	// Partition number.
 	PartitionId *int `pulumi:"partitionId"`
-	// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+	// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
 	ResetBy *string `pulumi:"resetBy"`
-	// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+	// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
 	ResetValue *int `pulumi:"resetValue"`
 	// Topic ID。
 	TopicId *string `pulumi:"topicId"`
@@ -38,13 +38,13 @@ type GroupResetInfoInput interface {
 }
 
 type GroupResetInfoArgs struct {
-	// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+	// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
 	OffsetType pulumi.StringPtrInput `pulumi:"offsetType"`
-	// 分区序号。
+	// Partition number.
 	PartitionId pulumi.IntPtrInput `pulumi:"partitionId"`
-	// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+	// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
 	ResetBy pulumi.StringPtrInput `pulumi:"resetBy"`
-	// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+	// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
 	ResetValue pulumi.IntPtrInput `pulumi:"resetValue"`
 	// Topic ID。
 	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
@@ -127,22 +127,22 @@ func (o GroupResetInfoOutput) ToGroupResetInfoPtrOutputWithContext(ctx context.C
 	}).(GroupResetInfoPtrOutput)
 }
 
-// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
 func (o GroupResetInfoOutput) OffsetType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupResetInfo) *string { return v.OffsetType }).(pulumi.StringPtrOutput)
 }
 
-// 分区序号。
+// Partition number.
 func (o GroupResetInfoOutput) PartitionId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupResetInfo) *int { return v.PartitionId }).(pulumi.IntPtrOutput)
 }
 
-// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
 func (o GroupResetInfoOutput) ResetBy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupResetInfo) *string { return v.ResetBy }).(pulumi.StringPtrOutput)
 }
 
-// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
 func (o GroupResetInfoOutput) ResetValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupResetInfo) *int { return v.ResetValue }).(pulumi.IntPtrOutput)
 }
@@ -176,7 +176,7 @@ func (o GroupResetInfoPtrOutput) Elem() GroupResetInfoOutput {
 	}).(GroupResetInfoOutput)
 }
 
-// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
 func (o GroupResetInfoPtrOutput) OffsetType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GroupResetInfo) *string {
 		if v == nil {
@@ -186,7 +186,7 @@ func (o GroupResetInfoPtrOutput) OffsetType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 分区序号。
+// Partition number.
 func (o GroupResetInfoPtrOutput) PartitionId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GroupResetInfo) *int {
 		if v == nil {
@@ -196,7 +196,7 @@ func (o GroupResetInfoPtrOutput) PartitionId() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
 func (o GroupResetInfoPtrOutput) ResetBy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GroupResetInfo) *string {
 		if v == nil {
@@ -206,7 +206,7 @@ func (o GroupResetInfoPtrOutput) ResetBy() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
 func (o GroupResetInfoPtrOutput) ResetValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GroupResetInfo) *int {
 		if v == nil {
@@ -227,22 +227,22 @@ func (o GroupResetInfoPtrOutput) TopicId() pulumi.StringPtrOutput {
 }
 
 type GroupTopicInfo struct {
-	// Topic 的创建时间。
+	// Topic creation time.
 	CreateTime *string `pulumi:"createTime"`
-	// Topic 的描述语句。
+	// Topic description.
 	Description *string `pulumi:"description"`
-	// Topic 中未被消费的消息条数。
+	// Number of unconsumed messages in the Topic.
 	Lag            *int                          `pulumi:"lag"`
 	PartitionInfos []GroupTopicInfoPartitionInfo `pulumi:"partitionInfos"`
-	// Topic 分区数。
+	// Number of Topic partitions.
 	Partitions *int `pulumi:"partitions"`
-	// 数据在 Topic 中的保留时长，单位为小时。
+	// Retention period of data in the Topic, in hours.
 	Retention *int `pulumi:"retention"`
-	// Topic 的状态。
+	// Topic status.
 	Status *string `pulumi:"status"`
 	// Topic ID。
 	TopicId *string `pulumi:"topicId"`
-	// Topic 的名称。
+	// Topic name.
 	TopicName *string `pulumi:"topicName"`
 }
 
@@ -258,22 +258,22 @@ type GroupTopicInfoInput interface {
 }
 
 type GroupTopicInfoArgs struct {
-	// Topic 的创建时间。
+	// Topic creation time.
 	CreateTime pulumi.StringPtrInput `pulumi:"createTime"`
-	// Topic 的描述语句。
+	// Topic description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// Topic 中未被消费的消息条数。
+	// Number of unconsumed messages in the Topic.
 	Lag            pulumi.IntPtrInput                    `pulumi:"lag"`
 	PartitionInfos GroupTopicInfoPartitionInfoArrayInput `pulumi:"partitionInfos"`
-	// Topic 分区数。
+	// Number of Topic partitions.
 	Partitions pulumi.IntPtrInput `pulumi:"partitions"`
-	// 数据在 Topic 中的保留时长，单位为小时。
+	// Retention period of data in the Topic, in hours.
 	Retention pulumi.IntPtrInput `pulumi:"retention"`
-	// Topic 的状态。
+	// Topic status.
 	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Topic ID。
 	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
-	// Topic 的名称。
+	// Topic name.
 	TopicName pulumi.StringPtrInput `pulumi:"topicName"`
 }
 
@@ -328,17 +328,17 @@ func (o GroupTopicInfoOutput) ToGroupTopicInfoOutputWithContext(ctx context.Cont
 	return o
 }
 
-// Topic 的创建时间。
+// Topic creation time.
 func (o GroupTopicInfoOutput) CreateTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *string { return v.CreateTime }).(pulumi.StringPtrOutput)
 }
 
-// Topic 的描述语句。
+// Topic description.
 func (o GroupTopicInfoOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// Topic 中未被消费的消息条数。
+// Number of unconsumed messages in the Topic.
 func (o GroupTopicInfoOutput) Lag() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *int { return v.Lag }).(pulumi.IntPtrOutput)
 }
@@ -347,17 +347,17 @@ func (o GroupTopicInfoOutput) PartitionInfos() GroupTopicInfoPartitionInfoArrayO
 	return o.ApplyT(func(v GroupTopicInfo) []GroupTopicInfoPartitionInfo { return v.PartitionInfos }).(GroupTopicInfoPartitionInfoArrayOutput)
 }
 
-// Topic 分区数。
+// Number of Topic partitions.
 func (o GroupTopicInfoOutput) Partitions() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *int { return v.Partitions }).(pulumi.IntPtrOutput)
 }
 
-// 数据在 Topic 中的保留时长，单位为小时。
+// Retention period of data in the Topic, in hours.
 func (o GroupTopicInfoOutput) Retention() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *int { return v.Retention }).(pulumi.IntPtrOutput)
 }
 
-// Topic 的状态。
+// Topic status.
 func (o GroupTopicInfoOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
@@ -367,7 +367,7 @@ func (o GroupTopicInfoOutput) TopicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *string { return v.TopicId }).(pulumi.StringPtrOutput)
 }
 
-// Topic 的名称。
+// Topic name.
 func (o GroupTopicInfoOutput) TopicName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *string { return v.TopicName }).(pulumi.StringPtrOutput)
 }
@@ -393,17 +393,17 @@ func (o GroupTopicInfoArrayOutput) Index(i pulumi.IntInput) GroupTopicInfoOutput
 }
 
 type GroupTopicInfoPartitionInfo struct {
-	// 当前消费位点。
+	// Current consumption position.
 	CurrentOffset *int `pulumi:"currentOffset"`
-	// Consumer Group 的名称。
+	// Name of the Consumer Group.
 	GroupName *string `pulumi:"groupName"`
-	// 分区中未被消费的消息条数。
+	// Number of unconsumed messages in the partition.
 	Lag *int `pulumi:"lag"`
-	// 最新消费位点。
+	// Latest consumption position.
 	LatestOffset *int `pulumi:"latestOffset"`
-	// 分区序号。
+	// Partition number.
 	PartitionId *int `pulumi:"partitionId"`
-	// Consumer Group 订阅的 Topic 名称。
+	// Name of the Topic subscribed by the Consumer Group.
 	TopicName *string `pulumi:"topicName"`
 }
 
@@ -419,17 +419,17 @@ type GroupTopicInfoPartitionInfoInput interface {
 }
 
 type GroupTopicInfoPartitionInfoArgs struct {
-	// 当前消费位点。
+	// Current consumption position.
 	CurrentOffset pulumi.IntPtrInput `pulumi:"currentOffset"`
-	// Consumer Group 的名称。
+	// Name of the Consumer Group.
 	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
-	// 分区中未被消费的消息条数。
+	// Number of unconsumed messages in the partition.
 	Lag pulumi.IntPtrInput `pulumi:"lag"`
-	// 最新消费位点。
+	// Latest consumption position.
 	LatestOffset pulumi.IntPtrInput `pulumi:"latestOffset"`
-	// 分区序号。
+	// Partition number.
 	PartitionId pulumi.IntPtrInput `pulumi:"partitionId"`
-	// Consumer Group 订阅的 Topic 名称。
+	// Name of the Topic subscribed by the Consumer Group.
 	TopicName pulumi.StringPtrInput `pulumi:"topicName"`
 }
 
@@ -484,32 +484,32 @@ func (o GroupTopicInfoPartitionInfoOutput) ToGroupTopicInfoPartitionInfoOutputWi
 	return o
 }
 
-// 当前消费位点。
+// Current consumption position.
 func (o GroupTopicInfoPartitionInfoOutput) CurrentOffset() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *int { return v.CurrentOffset }).(pulumi.IntPtrOutput)
 }
 
-// Consumer Group 的名称。
+// Name of the Consumer Group.
 func (o GroupTopicInfoPartitionInfoOutput) GroupName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *string { return v.GroupName }).(pulumi.StringPtrOutput)
 }
 
-// 分区中未被消费的消息条数。
+// Number of unconsumed messages in the partition.
 func (o GroupTopicInfoPartitionInfoOutput) Lag() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *int { return v.Lag }).(pulumi.IntPtrOutput)
 }
 
-// 最新消费位点。
+// Latest consumption position.
 func (o GroupTopicInfoPartitionInfoOutput) LatestOffset() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *int { return v.LatestOffset }).(pulumi.IntPtrOutput)
 }
 
-// 分区序号。
+// Partition number.
 func (o GroupTopicInfoPartitionInfoOutput) PartitionId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *int { return v.PartitionId }).(pulumi.IntPtrOutput)
 }
 
-// Consumer Group 订阅的 Topic 名称。
+// Name of the Topic subscribed by the Consumer Group.
 func (o GroupTopicInfoPartitionInfoOutput) TopicName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *string { return v.TopicName }).(pulumi.StringPtrOutput)
 }
@@ -535,9 +535,9 @@ func (o GroupTopicInfoPartitionInfoArrayOutput) Index(i pulumi.IntInput) GroupTo
 }
 
 type InstanceEndpoints struct {
-	// 实例私网访问接入点响应数据。
+	// Instance private network access endpoint response data
 	Overlay *InstanceEndpointsOverlay `pulumi:"overlay"`
-	// 实例公网访问接入点响应数据。
+	// Instance public access endpoint response data
 	Public *InstanceEndpointsPublic `pulumi:"public"`
 }
 
@@ -553,9 +553,9 @@ type InstanceEndpointsInput interface {
 }
 
 type InstanceEndpointsArgs struct {
-	// 实例私网访问接入点响应数据。
+	// Instance private network access endpoint response data
 	Overlay InstanceEndpointsOverlayPtrInput `pulumi:"overlay"`
-	// 实例公网访问接入点响应数据。
+	// Instance public access endpoint response data
 	Public InstanceEndpointsPublicPtrInput `pulumi:"public"`
 }
 
@@ -636,12 +636,12 @@ func (o InstanceEndpointsOutput) ToInstanceEndpointsPtrOutputWithContext(ctx con
 	}).(InstanceEndpointsPtrOutput)
 }
 
-// 实例私网访问接入点响应数据。
+// Instance private network access endpoint response data
 func (o InstanceEndpointsOutput) Overlay() InstanceEndpointsOverlayPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoints) *InstanceEndpointsOverlay { return v.Overlay }).(InstanceEndpointsOverlayPtrOutput)
 }
 
-// 实例公网访问接入点响应数据。
+// Instance public access endpoint response data
 func (o InstanceEndpointsOutput) Public() InstanceEndpointsPublicPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoints) *InstanceEndpointsPublic { return v.Public }).(InstanceEndpointsPublicPtrOutput)
 }
@@ -670,7 +670,7 @@ func (o InstanceEndpointsPtrOutput) Elem() InstanceEndpointsOutput {
 	}).(InstanceEndpointsOutput)
 }
 
-// 实例私网访问接入点响应数据。
+// Instance private network access endpoint response data
 func (o InstanceEndpointsPtrOutput) Overlay() InstanceEndpointsOverlayPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpoints) *InstanceEndpointsOverlay {
 		if v == nil {
@@ -680,7 +680,7 @@ func (o InstanceEndpointsPtrOutput) Overlay() InstanceEndpointsOverlayPtrOutput 
 	}).(InstanceEndpointsOverlayPtrOutput)
 }
 
-// 实例公网访问接入点响应数据。
+// Instance public access endpoint response data
 func (o InstanceEndpointsPtrOutput) Public() InstanceEndpointsPublicPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpoints) *InstanceEndpointsPublic {
 		if v == nil {
@@ -691,25 +691,25 @@ func (o InstanceEndpointsPtrOutput) Public() InstanceEndpointsPublicPtrOutput {
 }
 
 type InstanceEndpointsOverlay struct {
-	// 域名映射地址。
+	// Domain mapping address
 	Address *string `pulumi:"address"`
-	// 实例绑定的EIP的ID。
+	// ID of the EIP bound to the instance
 	EipId *string `pulumi:"eipId"`
-	// 私网Plain接入点。
+	// Private network Plain endpoint
 	Plain *string `pulumi:"plain"`
-	// 普通接入点端口。
+	// Standard endpoint port
 	PlainPort *int `pulumi:"plainPort"`
-	// 私网SASL认证接入点。
+	// Private network SASL authentication endpoint
 	Sasl *string `pulumi:"sasl"`
-	// 认证接入点端口。
+	// Authentication endpoint port
 	SaslPort *int `pulumi:"saslPort"`
-	// 加密接入点。
+	// Encrypted endpoint
 	Ssl *string `pulumi:"ssl"`
-	// 加密接入点端口。
+	// Encrypted endpoint port
 	SslPort *int `pulumi:"sslPort"`
-	// 接入点状态。
+	// Endpoint status
 	Status *string `pulumi:"status"`
-	// 售卖区网络关联的VPC ID列表。
+	// List of VPC IDs associated with the sales zone network
 	VpcIds []string `pulumi:"vpcIds"`
 }
 
@@ -725,25 +725,25 @@ type InstanceEndpointsOverlayInput interface {
 }
 
 type InstanceEndpointsOverlayArgs struct {
-	// 域名映射地址。
+	// Domain mapping address
 	Address pulumi.StringPtrInput `pulumi:"address"`
-	// 实例绑定的EIP的ID。
+	// ID of the EIP bound to the instance
 	EipId pulumi.StringPtrInput `pulumi:"eipId"`
-	// 私网Plain接入点。
+	// Private network Plain endpoint
 	Plain pulumi.StringPtrInput `pulumi:"plain"`
-	// 普通接入点端口。
+	// Standard endpoint port
 	PlainPort pulumi.IntPtrInput `pulumi:"plainPort"`
-	// 私网SASL认证接入点。
+	// Private network SASL authentication endpoint
 	Sasl pulumi.StringPtrInput `pulumi:"sasl"`
-	// 认证接入点端口。
+	// Authentication endpoint port
 	SaslPort pulumi.IntPtrInput `pulumi:"saslPort"`
-	// 加密接入点。
+	// Encrypted endpoint
 	Ssl pulumi.StringPtrInput `pulumi:"ssl"`
-	// 加密接入点端口。
+	// Encrypted endpoint port
 	SslPort pulumi.IntPtrInput `pulumi:"sslPort"`
-	// 接入点状态。
+	// Endpoint status
 	Status pulumi.StringPtrInput `pulumi:"status"`
-	// 售卖区网络关联的VPC ID列表。
+	// List of VPC IDs associated with the sales zone network
 	VpcIds pulumi.StringArrayInput `pulumi:"vpcIds"`
 }
 
@@ -824,52 +824,52 @@ func (o InstanceEndpointsOverlayOutput) ToInstanceEndpointsOverlayPtrOutputWithC
 	}).(InstanceEndpointsOverlayPtrOutput)
 }
 
-// 域名映射地址。
+// Domain mapping address
 func (o InstanceEndpointsOverlayOutput) Address() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) *string { return v.Address }).(pulumi.StringPtrOutput)
 }
 
-// 实例绑定的EIP的ID。
+// ID of the EIP bound to the instance
 func (o InstanceEndpointsOverlayOutput) EipId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) *string { return v.EipId }).(pulumi.StringPtrOutput)
 }
 
-// 私网Plain接入点。
+// Private network Plain endpoint
 func (o InstanceEndpointsOverlayOutput) Plain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) *string { return v.Plain }).(pulumi.StringPtrOutput)
 }
 
-// 普通接入点端口。
+// Standard endpoint port
 func (o InstanceEndpointsOverlayOutput) PlainPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) *int { return v.PlainPort }).(pulumi.IntPtrOutput)
 }
 
-// 私网SASL认证接入点。
+// Private network SASL authentication endpoint
 func (o InstanceEndpointsOverlayOutput) Sasl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) *string { return v.Sasl }).(pulumi.StringPtrOutput)
 }
 
-// 认证接入点端口。
+// Authentication endpoint port
 func (o InstanceEndpointsOverlayOutput) SaslPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) *int { return v.SaslPort }).(pulumi.IntPtrOutput)
 }
 
-// 加密接入点。
+// Encrypted endpoint
 func (o InstanceEndpointsOverlayOutput) Ssl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) *string { return v.Ssl }).(pulumi.StringPtrOutput)
 }
 
-// 加密接入点端口。
+// Encrypted endpoint port
 func (o InstanceEndpointsOverlayOutput) SslPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) *int { return v.SslPort }).(pulumi.IntPtrOutput)
 }
 
-// 接入点状态。
+// Endpoint status
 func (o InstanceEndpointsOverlayOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
-// 售卖区网络关联的VPC ID列表。
+// List of VPC IDs associated with the sales zone network
 func (o InstanceEndpointsOverlayOutput) VpcIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) []string { return v.VpcIds }).(pulumi.StringArrayOutput)
 }
@@ -898,7 +898,7 @@ func (o InstanceEndpointsOverlayPtrOutput) Elem() InstanceEndpointsOverlayOutput
 	}).(InstanceEndpointsOverlayOutput)
 }
 
-// 域名映射地址。
+// Domain mapping address
 func (o InstanceEndpointsOverlayPtrOutput) Address() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsOverlay) *string {
 		if v == nil {
@@ -908,7 +908,7 @@ func (o InstanceEndpointsOverlayPtrOutput) Address() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例绑定的EIP的ID。
+// ID of the EIP bound to the instance
 func (o InstanceEndpointsOverlayPtrOutput) EipId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsOverlay) *string {
 		if v == nil {
@@ -918,7 +918,7 @@ func (o InstanceEndpointsOverlayPtrOutput) EipId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 私网Plain接入点。
+// Private network Plain endpoint
 func (o InstanceEndpointsOverlayPtrOutput) Plain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsOverlay) *string {
 		if v == nil {
@@ -928,7 +928,7 @@ func (o InstanceEndpointsOverlayPtrOutput) Plain() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 普通接入点端口。
+// Standard endpoint port
 func (o InstanceEndpointsOverlayPtrOutput) PlainPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsOverlay) *int {
 		if v == nil {
@@ -938,7 +938,7 @@ func (o InstanceEndpointsOverlayPtrOutput) PlainPort() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 私网SASL认证接入点。
+// Private network SASL authentication endpoint
 func (o InstanceEndpointsOverlayPtrOutput) Sasl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsOverlay) *string {
 		if v == nil {
@@ -948,7 +948,7 @@ func (o InstanceEndpointsOverlayPtrOutput) Sasl() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 认证接入点端口。
+// Authentication endpoint port
 func (o InstanceEndpointsOverlayPtrOutput) SaslPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsOverlay) *int {
 		if v == nil {
@@ -958,7 +958,7 @@ func (o InstanceEndpointsOverlayPtrOutput) SaslPort() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 加密接入点。
+// Encrypted endpoint
 func (o InstanceEndpointsOverlayPtrOutput) Ssl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsOverlay) *string {
 		if v == nil {
@@ -968,7 +968,7 @@ func (o InstanceEndpointsOverlayPtrOutput) Ssl() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 加密接入点端口。
+// Encrypted endpoint port
 func (o InstanceEndpointsOverlayPtrOutput) SslPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsOverlay) *int {
 		if v == nil {
@@ -978,7 +978,7 @@ func (o InstanceEndpointsOverlayPtrOutput) SslPort() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 接入点状态。
+// Endpoint status
 func (o InstanceEndpointsOverlayPtrOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsOverlay) *string {
 		if v == nil {
@@ -988,7 +988,7 @@ func (o InstanceEndpointsOverlayPtrOutput) Status() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 售卖区网络关联的VPC ID列表。
+// List of VPC IDs associated with the sales zone network
 func (o InstanceEndpointsOverlayPtrOutput) VpcIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InstanceEndpointsOverlay) []string {
 		if v == nil {
@@ -999,25 +999,25 @@ func (o InstanceEndpointsOverlayPtrOutput) VpcIds() pulumi.StringArrayOutput {
 }
 
 type InstanceEndpointsPublic struct {
-	// 域名映射地址。
+	// Domain mapping address
 	Address *string `pulumi:"address"`
-	// 实例绑定的EIP的ID。
+	// ID of the EIP bound to the instance
 	EipId *string `pulumi:"eipId"`
-	// 私网Plain接入点。
+	// Private network Plain endpoint
 	Plain *string `pulumi:"plain"`
-	// 普通接入点端口。
+	// Standard endpoint port
 	PlainPort *int `pulumi:"plainPort"`
-	// 私网SASL认证接入点。
+	// Private network SASL authentication endpoint
 	Sasl *string `pulumi:"sasl"`
-	// 认证接入点端口。
+	// Authentication endpoint port
 	SaslPort *int `pulumi:"saslPort"`
-	// 加密接入点。
+	// Encrypted endpoint
 	Ssl *string `pulumi:"ssl"`
-	// 加密接入点端口。
+	// Encrypted endpoint port
 	SslPort *int `pulumi:"sslPort"`
-	// 接入点状态。
+	// Endpoint status
 	Status *string `pulumi:"status"`
-	// 售卖区网络关联的VPC ID列表。
+	// List of VPC IDs associated with the sales zone network
 	VpcIds []string `pulumi:"vpcIds"`
 }
 
@@ -1033,25 +1033,25 @@ type InstanceEndpointsPublicInput interface {
 }
 
 type InstanceEndpointsPublicArgs struct {
-	// 域名映射地址。
+	// Domain mapping address
 	Address pulumi.StringPtrInput `pulumi:"address"`
-	// 实例绑定的EIP的ID。
+	// ID of the EIP bound to the instance
 	EipId pulumi.StringPtrInput `pulumi:"eipId"`
-	// 私网Plain接入点。
+	// Private network Plain endpoint
 	Plain pulumi.StringPtrInput `pulumi:"plain"`
-	// 普通接入点端口。
+	// Standard endpoint port
 	PlainPort pulumi.IntPtrInput `pulumi:"plainPort"`
-	// 私网SASL认证接入点。
+	// Private network SASL authentication endpoint
 	Sasl pulumi.StringPtrInput `pulumi:"sasl"`
-	// 认证接入点端口。
+	// Authentication endpoint port
 	SaslPort pulumi.IntPtrInput `pulumi:"saslPort"`
-	// 加密接入点。
+	// Encrypted endpoint
 	Ssl pulumi.StringPtrInput `pulumi:"ssl"`
-	// 加密接入点端口。
+	// Encrypted endpoint port
 	SslPort pulumi.IntPtrInput `pulumi:"sslPort"`
-	// 接入点状态。
+	// Endpoint status
 	Status pulumi.StringPtrInput `pulumi:"status"`
-	// 售卖区网络关联的VPC ID列表。
+	// List of VPC IDs associated with the sales zone network
 	VpcIds pulumi.StringArrayInput `pulumi:"vpcIds"`
 }
 
@@ -1132,52 +1132,52 @@ func (o InstanceEndpointsPublicOutput) ToInstanceEndpointsPublicPtrOutputWithCon
 	}).(InstanceEndpointsPublicPtrOutput)
 }
 
-// 域名映射地址。
+// Domain mapping address
 func (o InstanceEndpointsPublicOutput) Address() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) *string { return v.Address }).(pulumi.StringPtrOutput)
 }
 
-// 实例绑定的EIP的ID。
+// ID of the EIP bound to the instance
 func (o InstanceEndpointsPublicOutput) EipId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) *string { return v.EipId }).(pulumi.StringPtrOutput)
 }
 
-// 私网Plain接入点。
+// Private network Plain endpoint
 func (o InstanceEndpointsPublicOutput) Plain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) *string { return v.Plain }).(pulumi.StringPtrOutput)
 }
 
-// 普通接入点端口。
+// Standard endpoint port
 func (o InstanceEndpointsPublicOutput) PlainPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) *int { return v.PlainPort }).(pulumi.IntPtrOutput)
 }
 
-// 私网SASL认证接入点。
+// Private network SASL authentication endpoint
 func (o InstanceEndpointsPublicOutput) Sasl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) *string { return v.Sasl }).(pulumi.StringPtrOutput)
 }
 
-// 认证接入点端口。
+// Authentication endpoint port
 func (o InstanceEndpointsPublicOutput) SaslPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) *int { return v.SaslPort }).(pulumi.IntPtrOutput)
 }
 
-// 加密接入点。
+// Encrypted endpoint
 func (o InstanceEndpointsPublicOutput) Ssl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) *string { return v.Ssl }).(pulumi.StringPtrOutput)
 }
 
-// 加密接入点端口。
+// Encrypted endpoint port
 func (o InstanceEndpointsPublicOutput) SslPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) *int { return v.SslPort }).(pulumi.IntPtrOutput)
 }
 
-// 接入点状态。
+// Endpoint status
 func (o InstanceEndpointsPublicOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
-// 售卖区网络关联的VPC ID列表。
+// List of VPC IDs associated with the sales zone network
 func (o InstanceEndpointsPublicOutput) VpcIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) []string { return v.VpcIds }).(pulumi.StringArrayOutput)
 }
@@ -1206,7 +1206,7 @@ func (o InstanceEndpointsPublicPtrOutput) Elem() InstanceEndpointsPublicOutput {
 	}).(InstanceEndpointsPublicOutput)
 }
 
-// 域名映射地址。
+// Domain mapping address
 func (o InstanceEndpointsPublicPtrOutput) Address() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsPublic) *string {
 		if v == nil {
@@ -1216,7 +1216,7 @@ func (o InstanceEndpointsPublicPtrOutput) Address() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例绑定的EIP的ID。
+// ID of the EIP bound to the instance
 func (o InstanceEndpointsPublicPtrOutput) EipId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsPublic) *string {
 		if v == nil {
@@ -1226,7 +1226,7 @@ func (o InstanceEndpointsPublicPtrOutput) EipId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 私网Plain接入点。
+// Private network Plain endpoint
 func (o InstanceEndpointsPublicPtrOutput) Plain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsPublic) *string {
 		if v == nil {
@@ -1236,7 +1236,7 @@ func (o InstanceEndpointsPublicPtrOutput) Plain() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 普通接入点端口。
+// Standard endpoint port
 func (o InstanceEndpointsPublicPtrOutput) PlainPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsPublic) *int {
 		if v == nil {
@@ -1246,7 +1246,7 @@ func (o InstanceEndpointsPublicPtrOutput) PlainPort() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 私网SASL认证接入点。
+// Private network SASL authentication endpoint
 func (o InstanceEndpointsPublicPtrOutput) Sasl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsPublic) *string {
 		if v == nil {
@@ -1256,7 +1256,7 @@ func (o InstanceEndpointsPublicPtrOutput) Sasl() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 认证接入点端口。
+// Authentication endpoint port
 func (o InstanceEndpointsPublicPtrOutput) SaslPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsPublic) *int {
 		if v == nil {
@@ -1266,7 +1266,7 @@ func (o InstanceEndpointsPublicPtrOutput) SaslPort() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 加密接入点。
+// Encrypted endpoint
 func (o InstanceEndpointsPublicPtrOutput) Ssl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsPublic) *string {
 		if v == nil {
@@ -1276,7 +1276,7 @@ func (o InstanceEndpointsPublicPtrOutput) Ssl() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 加密接入点端口。
+// Encrypted endpoint port
 func (o InstanceEndpointsPublicPtrOutput) SslPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsPublic) *int {
 		if v == nil {
@@ -1286,7 +1286,7 @@ func (o InstanceEndpointsPublicPtrOutput) SslPort() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 接入点状态。
+// Endpoint status
 func (o InstanceEndpointsPublicPtrOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsPublic) *string {
 		if v == nil {
@@ -1296,7 +1296,7 @@ func (o InstanceEndpointsPublicPtrOutput) Status() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 售卖区网络关联的VPC ID列表。
+// List of VPC IDs associated with the sales zone network
 func (o InstanceEndpointsPublicPtrOutput) VpcIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InstanceEndpointsPublic) []string {
 		if v == nil {
@@ -1308,7 +1308,7 @@ func (o InstanceEndpointsPublicPtrOutput) VpcIds() pulumi.StringArrayOutput {
 
 type InstanceResourceTag struct {
 	TagKvs []InstanceResourceTagTagKv `pulumi:"tagKvs"`
-	// 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+	// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
 	Type *string `pulumi:"type"`
 }
 
@@ -1325,7 +1325,7 @@ type InstanceResourceTagInput interface {
 
 type InstanceResourceTagArgs struct {
 	TagKvs InstanceResourceTagTagKvArrayInput `pulumi:"tagKvs"`
-	// 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+	// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -1384,7 +1384,7 @@ func (o InstanceResourceTagOutput) TagKvs() InstanceResourceTagTagKvArrayOutput 
 	return o.ApplyT(func(v InstanceResourceTag) []InstanceResourceTagTagKv { return v.TagKvs }).(InstanceResourceTagTagKvArrayOutput)
 }
 
-// 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
 func (o InstanceResourceTagOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceResourceTag) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -1410,11 +1410,11 @@ func (o InstanceResourceTagArrayOutput) Index(i pulumi.IntInput) InstanceResourc
 }
 
 type InstanceResourceTagTagKv struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
 	Type *string `pulumi:"type"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -1430,11 +1430,11 @@ type InstanceResourceTagTagKvInput interface {
 }
 
 type InstanceResourceTagTagKvArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
 	Type pulumi.StringPtrInput `pulumi:"type"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1489,17 +1489,17 @@ func (o InstanceResourceTagTagKvOutput) ToInstanceResourceTagTagKvOutputWithCont
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o InstanceResourceTagTagKvOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceResourceTagTagKv) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
 func (o InstanceResourceTagTagKvOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceResourceTagTagKv) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o InstanceResourceTagTagKvOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceResourceTagTagKv) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1525,7 +1525,7 @@ func (o InstanceResourceTagTagKvArrayOutput) Index(i pulumi.IntInput) InstanceRe
 }
 
 type InstanceResources struct {
-	// 资源统计响应数据。
+	// Resource statistics response data
 	Storage *InstanceResourcesStorage `pulumi:"storage"`
 }
 
@@ -1541,7 +1541,7 @@ type InstanceResourcesInput interface {
 }
 
 type InstanceResourcesArgs struct {
-	// 资源统计响应数据。
+	// Resource statistics response data
 	Storage InstanceResourcesStoragePtrInput `pulumi:"storage"`
 }
 
@@ -1622,7 +1622,7 @@ func (o InstanceResourcesOutput) ToInstanceResourcesPtrOutputWithContext(ctx con
 	}).(InstanceResourcesPtrOutput)
 }
 
-// 资源统计响应数据。
+// Resource statistics response data
 func (o InstanceResourcesOutput) Storage() InstanceResourcesStoragePtrOutput {
 	return o.ApplyT(func(v InstanceResources) *InstanceResourcesStorage { return v.Storage }).(InstanceResourcesStoragePtrOutput)
 }
@@ -1651,7 +1651,7 @@ func (o InstanceResourcesPtrOutput) Elem() InstanceResourcesOutput {
 	}).(InstanceResourcesOutput)
 }
 
-// 资源统计响应数据。
+// Resource statistics response data
 func (o InstanceResourcesPtrOutput) Storage() InstanceResourcesStoragePtrOutput {
 	return o.ApplyT(func(v *InstanceResources) *InstanceResourcesStorage {
 		if v == nil {
@@ -1662,9 +1662,9 @@ func (o InstanceResourcesPtrOutput) Storage() InstanceResourcesStoragePtrOutput 
 }
 
 type InstanceResourcesStorage struct {
-	// 资源大小。
+	// Resource size
 	Size *int `pulumi:"size"`
-	// 资源单位。
+	// Resource unit
 	Unit *string `pulumi:"unit"`
 }
 
@@ -1680,9 +1680,9 @@ type InstanceResourcesStorageInput interface {
 }
 
 type InstanceResourcesStorageArgs struct {
-	// 资源大小。
+	// Resource size
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 资源单位。
+	// Resource unit
 	Unit pulumi.StringPtrInput `pulumi:"unit"`
 }
 
@@ -1763,12 +1763,12 @@ func (o InstanceResourcesStorageOutput) ToInstanceResourcesStoragePtrOutputWithC
 	}).(InstanceResourcesStoragePtrOutput)
 }
 
-// 资源大小。
+// Resource size
 func (o InstanceResourcesStorageOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceResourcesStorage) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 资源单位。
+// Resource unit
 func (o InstanceResourcesStorageOutput) Unit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceResourcesStorage) *string { return v.Unit }).(pulumi.StringPtrOutput)
 }
@@ -1797,7 +1797,7 @@ func (o InstanceResourcesStoragePtrOutput) Elem() InstanceResourcesStorageOutput
 	}).(InstanceResourcesStorageOutput)
 }
 
-// 资源大小。
+// Resource size
 func (o InstanceResourcesStoragePtrOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceResourcesStorage) *int {
 		if v == nil {
@@ -1807,7 +1807,7 @@ func (o InstanceResourcesStoragePtrOutput) Size() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 资源单位。
+// Resource unit
 func (o InstanceResourcesStoragePtrOutput) Unit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceResourcesStorage) *string {
 		if v == nil {
@@ -1818,11 +1818,11 @@ func (o InstanceResourcesStoragePtrOutput) Unit() pulumi.StringPtrOutput {
 }
 
 type InstanceTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
 	Type *string `pulumi:"type"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -1838,11 +1838,11 @@ type InstanceTagInput interface {
 }
 
 type InstanceTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
 	Type pulumi.StringPtrInput `pulumi:"type"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1897,17 +1897,17 @@ func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) I
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
 func (o InstanceTagOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1933,13 +1933,13 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 }
 
 type GetGroupResetInfo struct {
-	// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+	// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
 	OffsetType string `pulumi:"offsetType"`
-	// 分区序号。
+	// Partition number.
 	PartitionId int `pulumi:"partitionId"`
-	// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+	// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
 	ResetBy string `pulumi:"resetBy"`
-	// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+	// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
 	ResetValue int `pulumi:"resetValue"`
 	// Topic ID。
 	TopicId string `pulumi:"topicId"`
@@ -1957,13 +1957,13 @@ type GetGroupResetInfoInput interface {
 }
 
 type GetGroupResetInfoArgs struct {
-	// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+	// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
 	OffsetType pulumi.StringInput `pulumi:"offsetType"`
-	// 分区序号。
+	// Partition number.
 	PartitionId pulumi.IntInput `pulumi:"partitionId"`
-	// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+	// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
 	ResetBy pulumi.StringInput `pulumi:"resetBy"`
-	// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+	// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
 	ResetValue pulumi.IntInput `pulumi:"resetValue"`
 	// Topic ID。
 	TopicId pulumi.StringInput `pulumi:"topicId"`
@@ -1995,22 +1995,22 @@ func (o GetGroupResetInfoOutput) ToGetGroupResetInfoOutputWithContext(ctx contex
 	return o
 }
 
-// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
 func (o GetGroupResetInfoOutput) OffsetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupResetInfo) string { return v.OffsetType }).(pulumi.StringOutput)
 }
 
-// 分区序号。
+// Partition number.
 func (o GetGroupResetInfoOutput) PartitionId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupResetInfo) int { return v.PartitionId }).(pulumi.IntOutput)
 }
 
-// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
 func (o GetGroupResetInfoOutput) ResetBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupResetInfo) string { return v.ResetBy }).(pulumi.StringOutput)
 }
 
-// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
 func (o GetGroupResetInfoOutput) ResetValue() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupResetInfo) int { return v.ResetValue }).(pulumi.IntOutput)
 }
@@ -2021,23 +2021,23 @@ func (o GetGroupResetInfoOutput) TopicId() pulumi.StringOutput {
 }
 
 type GetGroupTopicInfo struct {
-	// Topic 的创建时间。
+	// Topic creation time.
 	CreateTime string `pulumi:"createTime"`
-	// Topic 的描述语句。
+	// Topic description.
 	Description string `pulumi:"description"`
-	// Topic 中未被消费的消息条数。
+	// Number of unconsumed messages in the Topic.
 	Lag int `pulumi:"lag"`
-	// 分区列表。
+	// Partition list.
 	PartitionInfos []GetGroupTopicInfoPartitionInfo `pulumi:"partitionInfos"`
-	// Topic 分区数。
+	// Number of Topic partitions.
 	Partitions int `pulumi:"partitions"`
-	// 数据在 Topic 中的保留时长，单位为小时。
+	// Retention period of data in the Topic, in hours.
 	Retention int `pulumi:"retention"`
-	// Topic 的状态。
+	// Topic status.
 	Status string `pulumi:"status"`
 	// Topic ID。
 	TopicId string `pulumi:"topicId"`
-	// Topic 的名称。
+	// Topic name.
 	TopicName string `pulumi:"topicName"`
 }
 
@@ -2053,23 +2053,23 @@ type GetGroupTopicInfoInput interface {
 }
 
 type GetGroupTopicInfoArgs struct {
-	// Topic 的创建时间。
+	// Topic creation time.
 	CreateTime pulumi.StringInput `pulumi:"createTime"`
-	// Topic 的描述语句。
+	// Topic description.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Topic 中未被消费的消息条数。
+	// Number of unconsumed messages in the Topic.
 	Lag pulumi.IntInput `pulumi:"lag"`
-	// 分区列表。
+	// Partition list.
 	PartitionInfos GetGroupTopicInfoPartitionInfoArrayInput `pulumi:"partitionInfos"`
-	// Topic 分区数。
+	// Number of Topic partitions.
 	Partitions pulumi.IntInput `pulumi:"partitions"`
-	// 数据在 Topic 中的保留时长，单位为小时。
+	// Retention period of data in the Topic, in hours.
 	Retention pulumi.IntInput `pulumi:"retention"`
-	// Topic 的状态。
+	// Topic status.
 	Status pulumi.StringInput `pulumi:"status"`
 	// Topic ID。
 	TopicId pulumi.StringInput `pulumi:"topicId"`
-	// Topic 的名称。
+	// Topic name.
 	TopicName pulumi.StringInput `pulumi:"topicName"`
 }
 
@@ -2124,37 +2124,37 @@ func (o GetGroupTopicInfoOutput) ToGetGroupTopicInfoOutputWithContext(ctx contex
 	return o
 }
 
-// Topic 的创建时间。
+// Topic creation time.
 func (o GetGroupTopicInfoOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// Topic 的描述语句。
+// Topic description.
 func (o GetGroupTopicInfoOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Topic 中未被消费的消息条数。
+// Number of unconsumed messages in the Topic.
 func (o GetGroupTopicInfoOutput) Lag() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) int { return v.Lag }).(pulumi.IntOutput)
 }
 
-// 分区列表。
+// Partition list.
 func (o GetGroupTopicInfoOutput) PartitionInfos() GetGroupTopicInfoPartitionInfoArrayOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) []GetGroupTopicInfoPartitionInfo { return v.PartitionInfos }).(GetGroupTopicInfoPartitionInfoArrayOutput)
 }
 
-// Topic 分区数。
+// Number of Topic partitions.
 func (o GetGroupTopicInfoOutput) Partitions() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) int { return v.Partitions }).(pulumi.IntOutput)
 }
 
-// 数据在 Topic 中的保留时长，单位为小时。
+// Retention period of data in the Topic, in hours.
 func (o GetGroupTopicInfoOutput) Retention() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) int { return v.Retention }).(pulumi.IntOutput)
 }
 
-// Topic 的状态。
+// Topic status.
 func (o GetGroupTopicInfoOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.Status }).(pulumi.StringOutput)
 }
@@ -2164,7 +2164,7 @@ func (o GetGroupTopicInfoOutput) TopicId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.TopicId }).(pulumi.StringOutput)
 }
 
-// Topic 的名称。
+// Topic name.
 func (o GetGroupTopicInfoOutput) TopicName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.TopicName }).(pulumi.StringOutput)
 }
@@ -2190,17 +2190,17 @@ func (o GetGroupTopicInfoArrayOutput) Index(i pulumi.IntInput) GetGroupTopicInfo
 }
 
 type GetGroupTopicInfoPartitionInfo struct {
-	// 当前消费位点。
+	// Current consumption position.
 	CurrentOffset int `pulumi:"currentOffset"`
-	// Consumer Group 的名称。
+	// Name of the Consumer Group.
 	GroupName string `pulumi:"groupName"`
-	// 分区中未被消费的消息条数。
+	// Number of unconsumed messages in the partition.
 	Lag int `pulumi:"lag"`
-	// 最新消费位点。
+	// Latest consumption position.
 	LatestOffset int `pulumi:"latestOffset"`
-	// 分区序号。
+	// Partition number.
 	PartitionId int `pulumi:"partitionId"`
-	// Consumer Group 订阅的 Topic 名称。
+	// Name of the Topic subscribed by the Consumer Group.
 	TopicName string `pulumi:"topicName"`
 }
 
@@ -2216,17 +2216,17 @@ type GetGroupTopicInfoPartitionInfoInput interface {
 }
 
 type GetGroupTopicInfoPartitionInfoArgs struct {
-	// 当前消费位点。
+	// Current consumption position.
 	CurrentOffset pulumi.IntInput `pulumi:"currentOffset"`
-	// Consumer Group 的名称。
+	// Name of the Consumer Group.
 	GroupName pulumi.StringInput `pulumi:"groupName"`
-	// 分区中未被消费的消息条数。
+	// Number of unconsumed messages in the partition.
 	Lag pulumi.IntInput `pulumi:"lag"`
-	// 最新消费位点。
+	// Latest consumption position.
 	LatestOffset pulumi.IntInput `pulumi:"latestOffset"`
-	// 分区序号。
+	// Partition number.
 	PartitionId pulumi.IntInput `pulumi:"partitionId"`
-	// Consumer Group 订阅的 Topic 名称。
+	// Name of the Topic subscribed by the Consumer Group.
 	TopicName pulumi.StringInput `pulumi:"topicName"`
 }
 
@@ -2281,32 +2281,32 @@ func (o GetGroupTopicInfoPartitionInfoOutput) ToGetGroupTopicInfoPartitionInfoOu
 	return o
 }
 
-// 当前消费位点。
+// Current consumption position.
 func (o GetGroupTopicInfoPartitionInfoOutput) CurrentOffset() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) int { return v.CurrentOffset }).(pulumi.IntOutput)
 }
 
-// Consumer Group 的名称。
+// Name of the Consumer Group.
 func (o GetGroupTopicInfoPartitionInfoOutput) GroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) string { return v.GroupName }).(pulumi.StringOutput)
 }
 
-// 分区中未被消费的消息条数。
+// Number of unconsumed messages in the partition.
 func (o GetGroupTopicInfoPartitionInfoOutput) Lag() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) int { return v.Lag }).(pulumi.IntOutput)
 }
 
-// 最新消费位点。
+// Latest consumption position.
 func (o GetGroupTopicInfoPartitionInfoOutput) LatestOffset() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) int { return v.LatestOffset }).(pulumi.IntOutput)
 }
 
-// 分区序号。
+// Partition number.
 func (o GetGroupTopicInfoPartitionInfoOutput) PartitionId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) int { return v.PartitionId }).(pulumi.IntOutput)
 }
 
-// Consumer Group 订阅的 Topic 名称。
+// Name of the Topic subscribed by the Consumer Group.
 func (o GetGroupTopicInfoPartitionInfoOutput) TopicName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) string { return v.TopicName }).(pulumi.StringOutput)
 }
@@ -2332,9 +2332,9 @@ func (o GetGroupTopicInfoPartitionInfoArrayOutput) Index(i pulumi.IntInput) GetG
 }
 
 type GetInstanceEndpoints struct {
-	// 实例私网访问接入点响应数据。
+	// Instance private network access endpoint response data
 	Overlay GetInstanceEndpointsOverlay `pulumi:"overlay"`
-	// 实例公网访问接入点响应数据。
+	// Instance public access endpoint response data
 	Public GetInstanceEndpointsPublic `pulumi:"public"`
 }
 
@@ -2350,9 +2350,9 @@ type GetInstanceEndpointsInput interface {
 }
 
 type GetInstanceEndpointsArgs struct {
-	// 实例私网访问接入点响应数据。
+	// Instance private network access endpoint response data
 	Overlay GetInstanceEndpointsOverlayInput `pulumi:"overlay"`
-	// 实例公网访问接入点响应数据。
+	// Instance public access endpoint response data
 	Public GetInstanceEndpointsPublicInput `pulumi:"public"`
 }
 
@@ -2382,36 +2382,36 @@ func (o GetInstanceEndpointsOutput) ToGetInstanceEndpointsOutputWithContext(ctx 
 	return o
 }
 
-// 实例私网访问接入点响应数据。
+// Instance private network access endpoint response data
 func (o GetInstanceEndpointsOutput) Overlay() GetInstanceEndpointsOverlayOutput {
 	return o.ApplyT(func(v GetInstanceEndpoints) GetInstanceEndpointsOverlay { return v.Overlay }).(GetInstanceEndpointsOverlayOutput)
 }
 
-// 实例公网访问接入点响应数据。
+// Instance public access endpoint response data
 func (o GetInstanceEndpointsOutput) Public() GetInstanceEndpointsPublicOutput {
 	return o.ApplyT(func(v GetInstanceEndpoints) GetInstanceEndpointsPublic { return v.Public }).(GetInstanceEndpointsPublicOutput)
 }
 
 type GetInstanceEndpointsOverlay struct {
-	// 域名映射地址。
+	// Domain mapping address
 	Address string `pulumi:"address"`
-	// 实例绑定的EIP的ID。
+	// ID of the EIP bound to the instance
 	EipId string `pulumi:"eipId"`
-	// 私网Plain接入点。
+	// Private network Plain endpoint
 	Plain string `pulumi:"plain"`
-	// 普通接入点端口。
+	// Standard endpoint port
 	PlainPort int `pulumi:"plainPort"`
-	// 私网SASL认证接入点。
+	// Private network SASL authentication endpoint
 	Sasl string `pulumi:"sasl"`
-	// 认证接入点端口。
+	// Authentication endpoint port
 	SaslPort int `pulumi:"saslPort"`
-	// 加密接入点。
+	// Encrypted endpoint
 	Ssl string `pulumi:"ssl"`
-	// 加密接入点端口。
+	// Encrypted endpoint port
 	SslPort int `pulumi:"sslPort"`
-	// 接入点状态。
+	// Endpoint status
 	Status string `pulumi:"status"`
-	// 售卖区网络关联的VPC ID列表。
+	// List of VPC IDs associated with the sales zone network
 	VpcIds []string `pulumi:"vpcIds"`
 }
 
@@ -2427,25 +2427,25 @@ type GetInstanceEndpointsOverlayInput interface {
 }
 
 type GetInstanceEndpointsOverlayArgs struct {
-	// 域名映射地址。
+	// Domain mapping address
 	Address pulumi.StringInput `pulumi:"address"`
-	// 实例绑定的EIP的ID。
+	// ID of the EIP bound to the instance
 	EipId pulumi.StringInput `pulumi:"eipId"`
-	// 私网Plain接入点。
+	// Private network Plain endpoint
 	Plain pulumi.StringInput `pulumi:"plain"`
-	// 普通接入点端口。
+	// Standard endpoint port
 	PlainPort pulumi.IntInput `pulumi:"plainPort"`
-	// 私网SASL认证接入点。
+	// Private network SASL authentication endpoint
 	Sasl pulumi.StringInput `pulumi:"sasl"`
-	// 认证接入点端口。
+	// Authentication endpoint port
 	SaslPort pulumi.IntInput `pulumi:"saslPort"`
-	// 加密接入点。
+	// Encrypted endpoint
 	Ssl pulumi.StringInput `pulumi:"ssl"`
-	// 加密接入点端口。
+	// Encrypted endpoint port
 	SslPort pulumi.IntInput `pulumi:"sslPort"`
-	// 接入点状态。
+	// Endpoint status
 	Status pulumi.StringInput `pulumi:"status"`
-	// 售卖区网络关联的VPC ID列表。
+	// List of VPC IDs associated with the sales zone network
 	VpcIds pulumi.StringArrayInput `pulumi:"vpcIds"`
 }
 
@@ -2475,76 +2475,76 @@ func (o GetInstanceEndpointsOverlayOutput) ToGetInstanceEndpointsOverlayOutputWi
 	return o
 }
 
-// 域名映射地址。
+// Domain mapping address
 func (o GetInstanceEndpointsOverlayOutput) Address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) string { return v.Address }).(pulumi.StringOutput)
 }
 
-// 实例绑定的EIP的ID。
+// ID of the EIP bound to the instance
 func (o GetInstanceEndpointsOverlayOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) string { return v.EipId }).(pulumi.StringOutput)
 }
 
-// 私网Plain接入点。
+// Private network Plain endpoint
 func (o GetInstanceEndpointsOverlayOutput) Plain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) string { return v.Plain }).(pulumi.StringOutput)
 }
 
-// 普通接入点端口。
+// Standard endpoint port
 func (o GetInstanceEndpointsOverlayOutput) PlainPort() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) int { return v.PlainPort }).(pulumi.IntOutput)
 }
 
-// 私网SASL认证接入点。
+// Private network SASL authentication endpoint
 func (o GetInstanceEndpointsOverlayOutput) Sasl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) string { return v.Sasl }).(pulumi.StringOutput)
 }
 
-// 认证接入点端口。
+// Authentication endpoint port
 func (o GetInstanceEndpointsOverlayOutput) SaslPort() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) int { return v.SaslPort }).(pulumi.IntOutput)
 }
 
-// 加密接入点。
+// Encrypted endpoint
 func (o GetInstanceEndpointsOverlayOutput) Ssl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) string { return v.Ssl }).(pulumi.StringOutput)
 }
 
-// 加密接入点端口。
+// Encrypted endpoint port
 func (o GetInstanceEndpointsOverlayOutput) SslPort() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) int { return v.SslPort }).(pulumi.IntOutput)
 }
 
-// 接入点状态。
+// Endpoint status
 func (o GetInstanceEndpointsOverlayOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 售卖区网络关联的VPC ID列表。
+// List of VPC IDs associated with the sales zone network
 func (o GetInstanceEndpointsOverlayOutput) VpcIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) []string { return v.VpcIds }).(pulumi.StringArrayOutput)
 }
 
 type GetInstanceEndpointsPublic struct {
-	// 域名映射地址。
+	// Domain mapping address
 	Address string `pulumi:"address"`
-	// 实例绑定的EIP的ID。
+	// ID of the EIP bound to the instance
 	EipId string `pulumi:"eipId"`
-	// 私网Plain接入点。
+	// Private network Plain endpoint
 	Plain string `pulumi:"plain"`
-	// 普通接入点端口。
+	// Standard endpoint port
 	PlainPort int `pulumi:"plainPort"`
-	// 私网SASL认证接入点。
+	// Private network SASL authentication endpoint
 	Sasl string `pulumi:"sasl"`
-	// 认证接入点端口。
+	// Authentication endpoint port
 	SaslPort int `pulumi:"saslPort"`
-	// 加密接入点。
+	// Encrypted endpoint
 	Ssl string `pulumi:"ssl"`
-	// 加密接入点端口。
+	// Encrypted endpoint port
 	SslPort int `pulumi:"sslPort"`
-	// 接入点状态。
+	// Endpoint status
 	Status string `pulumi:"status"`
-	// 售卖区网络关联的VPC ID列表。
+	// List of VPC IDs associated with the sales zone network
 	VpcIds []string `pulumi:"vpcIds"`
 }
 
@@ -2560,25 +2560,25 @@ type GetInstanceEndpointsPublicInput interface {
 }
 
 type GetInstanceEndpointsPublicArgs struct {
-	// 域名映射地址。
+	// Domain mapping address
 	Address pulumi.StringInput `pulumi:"address"`
-	// 实例绑定的EIP的ID。
+	// ID of the EIP bound to the instance
 	EipId pulumi.StringInput `pulumi:"eipId"`
-	// 私网Plain接入点。
+	// Private network Plain endpoint
 	Plain pulumi.StringInput `pulumi:"plain"`
-	// 普通接入点端口。
+	// Standard endpoint port
 	PlainPort pulumi.IntInput `pulumi:"plainPort"`
-	// 私网SASL认证接入点。
+	// Private network SASL authentication endpoint
 	Sasl pulumi.StringInput `pulumi:"sasl"`
-	// 认证接入点端口。
+	// Authentication endpoint port
 	SaslPort pulumi.IntInput `pulumi:"saslPort"`
-	// 加密接入点。
+	// Encrypted endpoint
 	Ssl pulumi.StringInput `pulumi:"ssl"`
-	// 加密接入点端口。
+	// Encrypted endpoint port
 	SslPort pulumi.IntInput `pulumi:"sslPort"`
-	// 接入点状态。
+	// Endpoint status
 	Status pulumi.StringInput `pulumi:"status"`
-	// 售卖区网络关联的VPC ID列表。
+	// List of VPC IDs associated with the sales zone network
 	VpcIds pulumi.StringArrayInput `pulumi:"vpcIds"`
 }
 
@@ -2608,60 +2608,60 @@ func (o GetInstanceEndpointsPublicOutput) ToGetInstanceEndpointsPublicOutputWith
 	return o
 }
 
-// 域名映射地址。
+// Domain mapping address
 func (o GetInstanceEndpointsPublicOutput) Address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) string { return v.Address }).(pulumi.StringOutput)
 }
 
-// 实例绑定的EIP的ID。
+// ID of the EIP bound to the instance
 func (o GetInstanceEndpointsPublicOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) string { return v.EipId }).(pulumi.StringOutput)
 }
 
-// 私网Plain接入点。
+// Private network Plain endpoint
 func (o GetInstanceEndpointsPublicOutput) Plain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) string { return v.Plain }).(pulumi.StringOutput)
 }
 
-// 普通接入点端口。
+// Standard endpoint port
 func (o GetInstanceEndpointsPublicOutput) PlainPort() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) int { return v.PlainPort }).(pulumi.IntOutput)
 }
 
-// 私网SASL认证接入点。
+// Private network SASL authentication endpoint
 func (o GetInstanceEndpointsPublicOutput) Sasl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) string { return v.Sasl }).(pulumi.StringOutput)
 }
 
-// 认证接入点端口。
+// Authentication endpoint port
 func (o GetInstanceEndpointsPublicOutput) SaslPort() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) int { return v.SaslPort }).(pulumi.IntOutput)
 }
 
-// 加密接入点。
+// Encrypted endpoint
 func (o GetInstanceEndpointsPublicOutput) Ssl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) string { return v.Ssl }).(pulumi.StringOutput)
 }
 
-// 加密接入点端口。
+// Encrypted endpoint port
 func (o GetInstanceEndpointsPublicOutput) SslPort() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) int { return v.SslPort }).(pulumi.IntOutput)
 }
 
-// 接入点状态。
+// Endpoint status
 func (o GetInstanceEndpointsPublicOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 售卖区网络关联的VPC ID列表。
+// List of VPC IDs associated with the sales zone network
 func (o GetInstanceEndpointsPublicOutput) VpcIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) []string { return v.VpcIds }).(pulumi.StringArrayOutput)
 }
 
 type GetInstanceResourceTag struct {
-	// 标签键值对。
+	// Tag key-value pair
 	TagKvs []GetInstanceResourceTagTagKv `pulumi:"tagKvs"`
-	// 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+	// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
 	Type string `pulumi:"type"`
 }
 
@@ -2677,9 +2677,9 @@ type GetInstanceResourceTagInput interface {
 }
 
 type GetInstanceResourceTagArgs struct {
-	// 标签键值对。
+	// Tag key-value pair
 	TagKvs GetInstanceResourceTagTagKvArrayInput `pulumi:"tagKvs"`
-	// 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+	// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -2734,12 +2734,12 @@ func (o GetInstanceResourceTagOutput) ToGetInstanceResourceTagOutputWithContext(
 	return o
 }
 
-// 标签键值对。
+// Tag key-value pair
 func (o GetInstanceResourceTagOutput) TagKvs() GetInstanceResourceTagTagKvArrayOutput {
 	return o.ApplyT(func(v GetInstanceResourceTag) []GetInstanceResourceTagTagKv { return v.TagKvs }).(GetInstanceResourceTagTagKvArrayOutput)
 }
 
-// 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
 func (o GetInstanceResourceTagOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceResourceTag) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -2765,11 +2765,11 @@ func (o GetInstanceResourceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceR
 }
 
 type GetInstanceResourceTagTagKv struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
 	Type string `pulumi:"type"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -2785,11 +2785,11 @@ type GetInstanceResourceTagTagKvInput interface {
 }
 
 type GetInstanceResourceTagTagKvArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
 	Type pulumi.StringInput `pulumi:"type"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -2844,17 +2844,17 @@ func (o GetInstanceResourceTagTagKvOutput) ToGetInstanceResourceTagTagKvOutputWi
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetInstanceResourceTagTagKvOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceResourceTagTagKv) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
 func (o GetInstanceResourceTagTagKvOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceResourceTagTagKv) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetInstanceResourceTagTagKvOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceResourceTagTagKv) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -2880,7 +2880,7 @@ func (o GetInstanceResourceTagTagKvArrayOutput) Index(i pulumi.IntInput) GetInst
 }
 
 type GetInstanceResources struct {
-	// 资源统计响应数据。
+	// Resource statistics response data
 	Storage GetInstanceResourcesStorage `pulumi:"storage"`
 }
 
@@ -2896,7 +2896,7 @@ type GetInstanceResourcesInput interface {
 }
 
 type GetInstanceResourcesArgs struct {
-	// 资源统计响应数据。
+	// Resource statistics response data
 	Storage GetInstanceResourcesStorageInput `pulumi:"storage"`
 }
 
@@ -2926,15 +2926,15 @@ func (o GetInstanceResourcesOutput) ToGetInstanceResourcesOutputWithContext(ctx 
 	return o
 }
 
-// 资源统计响应数据。
+// Resource statistics response data
 func (o GetInstanceResourcesOutput) Storage() GetInstanceResourcesStorageOutput {
 	return o.ApplyT(func(v GetInstanceResources) GetInstanceResourcesStorage { return v.Storage }).(GetInstanceResourcesStorageOutput)
 }
 
 type GetInstanceResourcesStorage struct {
-	// 资源大小。
+	// Resource size
 	Size int `pulumi:"size"`
-	// 资源单位。
+	// Resource unit
 	Unit string `pulumi:"unit"`
 }
 
@@ -2950,9 +2950,9 @@ type GetInstanceResourcesStorageInput interface {
 }
 
 type GetInstanceResourcesStorageArgs struct {
-	// 资源大小。
+	// Resource size
 	Size pulumi.IntInput `pulumi:"size"`
-	// 资源单位。
+	// Resource unit
 	Unit pulumi.StringInput `pulumi:"unit"`
 }
 
@@ -2982,22 +2982,22 @@ func (o GetInstanceResourcesStorageOutput) ToGetInstanceResourcesStorageOutputWi
 	return o
 }
 
-// 资源大小。
+// Resource size
 func (o GetInstanceResourcesStorageOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceResourcesStorage) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 资源单位。
+// Resource unit
 func (o GetInstanceResourcesStorageOutput) Unit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceResourcesStorage) string { return v.Unit }).(pulumi.StringOutput)
 }
 
 type GetInstanceTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
 	Type string `pulumi:"type"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -3013,11 +3013,11 @@ type GetInstanceTagInput interface {
 }
 
 type GetInstanceTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
 	Type pulumi.StringInput `pulumi:"type"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -3072,17 +3072,17 @@ func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
 func (o GetInstanceTagOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
 }

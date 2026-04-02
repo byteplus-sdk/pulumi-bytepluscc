@@ -19,14 +19,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     public static final HealthCheckTemplateState Empty = new HealthCheckTemplateState();
 
     /**
-     * 健康检查模版的创建时间。
+     * Creation time of the health check template.
      * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
-     * @return 健康检查模版的创建时间。
+     * @return Creation time of the health check template.
      * 
      */
     public Optional<Output<String>> createTime() {
@@ -34,14 +34,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * @return Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -49,14 +49,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
+     * Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. The string can contain letters, numbers, &#39;-&#39;, and &#39;.&#39; characters. &#39;-&#39; cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
      * 
      */
     @Import(name="healthCheckDomain")
     private @Nullable Output<String> healthCheckDomain;
 
     /**
-     * @return 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
+     * @return Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. The string can contain letters, numbers, &#39;-&#39;, and &#39;.&#39; characters. &#39;-&#39; cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
      * 
      */
     public Optional<Output<String>> healthCheckDomain() {
@@ -64,14 +64,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
+     * HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
      * 
      */
     @Import(name="healthCheckHttpCode")
     private @Nullable Output<String> healthCheckHttpCode;
 
     /**
-     * @return 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
+     * @return HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
      * 
      */
     public Optional<Output<String>> healthCheckHttpCode() {
@@ -79,14 +79,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
+     * HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
      * 
      */
     @Import(name="healthCheckHttpVersion")
     private @Nullable Output<String> healthCheckHttpVersion;
 
     /**
-     * @return 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
+     * @return HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
      * 
      */
     public Optional<Output<String>> healthCheckHttpVersion() {
@@ -94,14 +94,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 执行健康检查的时间间隔，默认为2，取值1-300s 。
+     * Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
      * 
      */
     @Import(name="healthCheckInterval")
     private @Nullable Output<Integer> healthCheckInterval;
 
     /**
-     * @return 执行健康检查的时间间隔，默认为2，取值1-300s 。
+     * @return Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
      * 
      */
     public Optional<Output<Integer>> healthCheckInterval() {
@@ -109,14 +109,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
+     * Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
      * 
      */
     @Import(name="healthCheckMethod")
     private @Nullable Output<String> healthCheckMethod;
 
     /**
-     * @return 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
+     * @return Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
      * 
      */
     public Optional<Output<String>> healthCheckMethod() {
@@ -124,14 +124,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+     * Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
      * 
      */
     @Import(name="healthCheckPort")
     private @Nullable Output<Integer> healthCheckPort;
 
     /**
-     * @return 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+     * @return Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
      * 
      */
     public Optional<Output<Integer>> healthCheckPort() {
@@ -139,14 +139,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查的协议。HTTPTCP。
+     * Protocol for the health check. HTTP or TCP.
      * 
      */
     @Import(name="healthCheckProtocol")
     private @Nullable Output<String> healthCheckProtocol;
 
     /**
-     * @return 健康检查的协议。HTTPTCP。
+     * @return Protocol for the health check. HTTP or TCP.
      * 
      */
     public Optional<Output<String>> healthCheckProtocol() {
@@ -154,14 +154,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查模板 ID。
+     * Health check template ID.
      * 
      */
     @Import(name="healthCheckTemplateId")
     private @Nullable Output<String> healthCheckTemplateId;
 
     /**
-     * @return 健康检查模板 ID。
+     * @return Health check template ID.
      * 
      */
     public Optional<Output<String>> healthCheckTemplateId() {
@@ -169,14 +169,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
+     * Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="healthCheckTemplateName")
     private @Nullable Output<String> healthCheckTemplateName;
 
     /**
-     * @return 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
+     * @return Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     public Optional<Output<String>> healthCheckTemplateName() {
@@ -184,14 +184,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查的响应超时时间，默认为2，取值1-60s 。
+     * Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
      * 
      */
     @Import(name="healthCheckTimeout")
     private @Nullable Output<Integer> healthCheckTimeout;
 
     /**
-     * @return 健康检查的响应超时时间，默认为2，取值1-60s 。
+     * @return Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
      * 
      */
     public Optional<Output<Integer>> healthCheckTimeout() {
@@ -199,14 +199,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&amp;’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
+     * Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with &#39;/&#39;. Can only contain letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; characters. Length must be between 1 and 128 characters. If not specified, defaults to &#39;/&#39;.
      * 
      */
     @Import(name="healthCheckUri")
     private @Nullable Output<String> healthCheckUri;
 
     /**
-     * @return 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&amp;’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
+     * @return Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with &#39;/&#39;. Can only contain letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; characters. Length must be between 1 and 128 characters. If not specified, defaults to &#39;/&#39;.
      * 
      */
     public Optional<Output<String>> healthCheckUri() {
@@ -214,14 +214,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查的健康阈值，默认为3，取值2-10次。
+     * Health threshold for the health check. Default is 3. Range: 2–10 times.
      * 
      */
     @Import(name="healthyThreshold")
     private @Nullable Output<Integer> healthyThreshold;
 
     /**
-     * @return 健康检查的健康阈值，默认为3，取值2-10次。
+     * @return Health threshold for the health check. Default is 3. Range: 2–10 times.
      * 
      */
     public Optional<Output<Integer>> healthyThreshold() {
@@ -229,14 +229,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查模板所属项目名称。
+     * Project name to which the health check template belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 健康检查模板所属项目名称。
+     * @return Project name to which the health check template belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -251,14 +251,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查的不健康阈值，默认为3，取值2-10次。
+     * Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
      * 
      */
     @Import(name="unhealthyThreshold")
     private @Nullable Output<Integer> unhealthyThreshold;
 
     /**
-     * @return 健康检查的不健康阈值，默认为3，取值2-10次。
+     * @return Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
      * 
      */
     public Optional<Output<Integer>> unhealthyThreshold() {
@@ -266,14 +266,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 健康检查模版最近一次的操作时间。
+     * Last operation time of the health check template.
      * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
-     * @return 健康检查模版最近一次的操作时间。
+     * @return Last operation time of the health check template.
      * 
      */
     public Optional<Output<String>> updateTime() {
@@ -322,7 +322,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param createTime 健康检查模版的创建时间。
+         * @param createTime Creation time of the health check template.
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param createTime 健康检查模版的创建时间。
+         * @param createTime Creation time of the health check template.
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+         * @param description Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+         * @param description Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckDomain 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
+         * @param healthCheckDomain Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. The string can contain letters, numbers, &#39;-&#39;, and &#39;.&#39; characters. &#39;-&#39; cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckDomain 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
+         * @param healthCheckDomain Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. The string can contain letters, numbers, &#39;-&#39;, and &#39;.&#39; characters. &#39;-&#39; cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
          * 
          * @return builder
          * 
@@ -385,7 +385,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckHttpCode 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
+         * @param healthCheckHttpCode HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
          * 
          * @return builder
          * 
@@ -396,7 +396,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckHttpCode 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
+         * @param healthCheckHttpCode HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
          * 
          * @return builder
          * 
@@ -406,7 +406,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckHttpVersion 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
+         * @param healthCheckHttpVersion HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
          * 
          * @return builder
          * 
@@ -417,7 +417,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckHttpVersion 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
+         * @param healthCheckHttpVersion HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
          * 
          * @return builder
          * 
@@ -427,7 +427,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckInterval 执行健康检查的时间间隔，默认为2，取值1-300s 。
+         * @param healthCheckInterval Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
          * 
          * @return builder
          * 
@@ -438,7 +438,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckInterval 执行健康检查的时间间隔，默认为2，取值1-300s 。
+         * @param healthCheckInterval Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
          * 
          * @return builder
          * 
@@ -448,7 +448,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckMethod 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
+         * @param healthCheckMethod Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
          * 
          * @return builder
          * 
@@ -459,7 +459,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckMethod 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
+         * @param healthCheckMethod Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
          * 
          * @return builder
          * 
@@ -469,7 +469,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckPort 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+         * @param healthCheckPort Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
          * 
          * @return builder
          * 
@@ -480,7 +480,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckPort 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+         * @param healthCheckPort Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
          * 
          * @return builder
          * 
@@ -490,7 +490,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckProtocol 健康检查的协议。HTTPTCP。
+         * @param healthCheckProtocol Protocol for the health check. HTTP or TCP.
          * 
          * @return builder
          * 
@@ -501,7 +501,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckProtocol 健康检查的协议。HTTPTCP。
+         * @param healthCheckProtocol Protocol for the health check. HTTP or TCP.
          * 
          * @return builder
          * 
@@ -511,7 +511,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckTemplateId 健康检查模板 ID。
+         * @param healthCheckTemplateId Health check template ID.
          * 
          * @return builder
          * 
@@ -522,7 +522,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckTemplateId 健康检查模板 ID。
+         * @param healthCheckTemplateId Health check template ID.
          * 
          * @return builder
          * 
@@ -532,7 +532,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckTemplateName 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
+         * @param healthCheckTemplateName Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -543,7 +543,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckTemplateName 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
+         * @param healthCheckTemplateName Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -553,7 +553,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckTimeout 健康检查的响应超时时间，默认为2，取值1-60s 。
+         * @param healthCheckTimeout Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
          * 
          * @return builder
          * 
@@ -564,7 +564,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckTimeout 健康检查的响应超时时间，默认为2，取值1-60s 。
+         * @param healthCheckTimeout Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
          * 
          * @return builder
          * 
@@ -574,7 +574,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckUri 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&amp;’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
+         * @param healthCheckUri Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with &#39;/&#39;. Can only contain letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; characters. Length must be between 1 and 128 characters. If not specified, defaults to &#39;/&#39;.
          * 
          * @return builder
          * 
@@ -585,7 +585,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthCheckUri 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&amp;’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
+         * @param healthCheckUri Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with &#39;/&#39;. Can only contain letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; characters. Length must be between 1 and 128 characters. If not specified, defaults to &#39;/&#39;.
          * 
          * @return builder
          * 
@@ -595,7 +595,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthyThreshold 健康检查的健康阈值，默认为3，取值2-10次。
+         * @param healthyThreshold Health threshold for the health check. Default is 3. Range: 2–10 times.
          * 
          * @return builder
          * 
@@ -606,7 +606,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param healthyThreshold 健康检查的健康阈值，默认为3，取值2-10次。
+         * @param healthyThreshold Health threshold for the health check. Default is 3. Range: 2–10 times.
          * 
          * @return builder
          * 
@@ -616,7 +616,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param projectName 健康检查模板所属项目名称。
+         * @param projectName Project name to which the health check template belongs.
          * 
          * @return builder
          * 
@@ -627,7 +627,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param projectName 健康检查模板所属项目名称。
+         * @param projectName Project name to which the health check template belongs.
          * 
          * @return builder
          * 
@@ -650,7 +650,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param unhealthyThreshold 健康检查的不健康阈值，默认为3，取值2-10次。
+         * @param unhealthyThreshold Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
          * 
          * @return builder
          * 
@@ -661,7 +661,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param unhealthyThreshold 健康检查的不健康阈值，默认为3，取值2-10次。
+         * @param unhealthyThreshold Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
          * 
          * @return builder
          * 
@@ -671,7 +671,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param updateTime 健康检查模版最近一次的操作时间。
+         * @param updateTime Last operation time of the health check template.
          * 
          * @return builder
          * 
@@ -682,7 +682,7 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param updateTime 健康检查模版最近一次的操作时间。
+         * @param updateTime Last operation time of the health check template.
          * 
          * @return builder
          * 

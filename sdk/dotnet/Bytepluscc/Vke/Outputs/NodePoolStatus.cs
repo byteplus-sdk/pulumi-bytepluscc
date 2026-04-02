@@ -16,7 +16,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     {
         public readonly ImmutableArray<Outputs.NodePoolStatusCondition> Conditions;
         /// <summary>
-        /// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+        /// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
         /// </summary>
         public readonly string? Phase;
 

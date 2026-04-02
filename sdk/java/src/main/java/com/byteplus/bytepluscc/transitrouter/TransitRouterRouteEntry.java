@@ -15,7 +15,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 通过为网络实例连接或跨地域连接关联的路由表创建或删除静态路由，能够灵活地控制中转路由器中的流量走向。
+ * By creating or deleting static routes in route tables associated with network instance connections or cross-region connections, you can flexibly control traffic direction in the transit router
  * 
  * ## Example Usage
  * 
@@ -32,196 +32,196 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry")
 public class TransitRouterRouteEntry extends com.pulumi.resources.CustomResource {
     /**
-     * 路由条目的AS路径。
+     * AS path of the route entry
      * 
      */
     @Export(name="asPaths", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> asPaths;
 
     /**
-     * @return 路由条目的AS路径。
+     * @return AS path of the route entry
      * 
      */
     public Output<List<String>> asPaths() {
         return this.asPaths;
     }
     /**
-     * 路由条目的创建时间。
+     * Creation time of the route entry
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 路由条目的创建时间。
+     * @return Creation time of the route entry
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * @return Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 路由条目的目标网段。
+     * Destination CIDR block of the route entry
      * 
      */
     @Export(name="destinationCidrBlock", refs={String.class}, tree="[0]")
     private Output<String> destinationCidrBlock;
 
     /**
-     * @return 路由条目的目标网段。
+     * @return Destination CIDR block of the route entry
      * 
      */
     public Output<String> destinationCidrBlock() {
         return this.destinationCidrBlock;
     }
     /**
-     * 路由条目的状态。Available：可用。Creating：创建中。Pending：配置中。Deleting：删除中。Conflicted：未生效。
+     * Status of the route entry. Available: Available. Creating: Creating. Pending: Configuring. Deleting: Deleting. Conflicted: Inactive
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 路由条目的状态。Available：可用。Creating：创建中。Pending：配置中。Deleting：删除中。Conflicted：未生效。
+     * @return Status of the route entry. Available: Available. Creating: Creating. Pending: Configuring. Deleting: Deleting. Conflicted: Inactive
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * TR路由条目的ID。
+     * ID of the TR route entry
      * 
      */
     @Export(name="transitRouterRouteEntryId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryId;
 
     /**
-     * @return TR路由条目的ID。
+     * @return ID of the TR route entry
      * 
      */
     public Output<String> transitRouterRouteEntryId() {
         return this.transitRouterRouteEntryId;
     }
     /**
-     * 路由条目的名称。
+     * Name of the route entry
      * 
      */
     @Export(name="transitRouterRouteEntryName", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryName;
 
     /**
-     * @return 路由条目的名称。
+     * @return Name of the route entry
      * 
      */
     public Output<String> transitRouterRouteEntryName() {
         return this.transitRouterRouteEntryName;
     }
     /**
-     * 路由条目的下一跳ID。
+     * Next hop ID of the route entry
      * 
      */
     @Export(name="transitRouterRouteEntryNextHopId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryNextHopId;
 
     /**
-     * @return 路由条目的下一跳ID。
+     * @return Next hop ID of the route entry
      * 
      */
     public Output<String> transitRouterRouteEntryNextHopId() {
         return this.transitRouterRouteEntryNextHopId;
     }
     /**
-     * 路由条目下一跳网络实例ID。
+     * Next hop network instance ID of the route entry
      * 
      */
     @Export(name="transitRouterRouteEntryNextHopResourceId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryNextHopResourceId;
 
     /**
-     * @return 路由条目下一跳网络实例ID。
+     * @return Next hop network instance ID of the route entry
      * 
      */
     public Output<String> transitRouterRouteEntryNextHopResourceId() {
         return this.transitRouterRouteEntryNextHopResourceId;
     }
     /**
-     * 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+     * Type of the next hop network instance for the route entry. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
      * 
      */
     @Export(name="transitRouterRouteEntryNextHopResourceType", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryNextHopResourceType;
 
     /**
-     * @return 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+     * @return Type of the next hop network instance for the route entry. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
      * 
      */
     public Output<String> transitRouterRouteEntryNextHopResourceType() {
         return this.transitRouterRouteEntryNextHopResourceType;
     }
     /**
-     * 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
+     * Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
      * 
      */
     @Export(name="transitRouterRouteEntryNextHopType", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryNextHopType;
 
     /**
-     * @return 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
+     * @return Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
      * 
      */
     public Output<String> transitRouterRouteEntryNextHopType() {
         return this.transitRouterRouteEntryNextHopType;
     }
     /**
-     * 路由条目的类型。Static：静态路由。Propagated：自动学习路由。
+     * Type of the route entry. Static: Static route. Propagated: Learned route
      * 
      */
     @Export(name="transitRouterRouteEntryType", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryType;
 
     /**
-     * @return 路由条目的类型。Static：静态路由。Propagated：自动学习路由。
+     * @return Type of the route entry. Static: Static route. Propagated: Learned route
      * 
      */
     public Output<String> transitRouterRouteEntryType() {
         return this.transitRouterRouteEntryType;
     }
     /**
-     * 中转路由器实例关联的路由表的ID。
+     * ID of the route table associated with the transit router instance
      * 
      */
     @Export(name="transitRouterRouteTableId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteTableId;
 
     /**
-     * @return 中转路由器实例关联的路由表的ID。
+     * @return ID of the route table associated with the transit router instance
      * 
      */
     public Output<String> transitRouterRouteTableId() {
         return this.transitRouterRouteTableId;
     }
     /**
-     * 路由条目的更新时间。
+     * Last updated time of the route entry
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 路由条目的更新时间。
+     * @return Last updated time of the route entry
      * 
      */
     public Output<String> updatedTime() {

@@ -30,39 +30,39 @@ type LookupTrafficMirrorSessionArgs struct {
 
 // A collection of values returned by getTrafficMirrorSession.
 type LookupTrafficMirrorSessionResult struct {
-	// 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+	// Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
 	BusinessStatus string `pulumi:"businessStatus"`
-	// 创建时间。
+	// Creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// 镜像会话实例描述。
+	// Mirror session instance description
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 锁定原因。
+	// Lock reason
 	LockReason string `pulumi:"lockReason"`
-	// 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+	// Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
 	NetworkInterfaceId string `pulumi:"networkInterfaceId"`
-	// 镜像会话MTU，超过被截断，取值范围：64～9600。
+	// Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
 	PacketLength int `pulumi:"packetLength"`
-	// 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+	// Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
 	Priority int `pulumi:"priority"`
-	// 所属项目的名称
+	// Name of the associated project
 	ProjectName string `pulumi:"projectName"`
-	// 会话状态。
+	// Session status
 	Status string `pulumi:"status"`
-	// 标签信息。
+	// Tag information
 	Tags []GetTrafficMirrorSessionTag `pulumi:"tags"`
-	// 筛选条件实例ID。
+	// Filter condition instance ID
 	TrafficMirrorFilterId string `pulumi:"trafficMirrorFilterId"`
-	// 镜像会话实例ID。
+	// Mirror session instance ID
 	TrafficMirrorSessionId string `pulumi:"trafficMirrorSessionId"`
-	// 镜像会话名称。
+	// Mirror session name
 	TrafficMirrorSessionName string `pulumi:"trafficMirrorSessionName"`
-	// 镜像源实例列表。
+	// Mirror source instance list
 	TrafficMirrorSourceIds []string `pulumi:"trafficMirrorSourceIds"`
-	// 镜像目的实例ID。
+	// Mirror destination instance ID
 	TrafficMirrorTargetId string `pulumi:"trafficMirrorTargetId"`
-	// 镜像会话VNI，取值范围1 ～ 16777215。
+	// Mirror session VNI. Range: 1–16777215
 	VirtualNetworkId int `pulumi:"virtualNetworkId"`
 }
 
@@ -100,17 +100,17 @@ func (o LookupTrafficMirrorSessionResultOutput) ToLookupTrafficMirrorSessionResu
 	return o
 }
 
-// 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+// Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
 func (o LookupTrafficMirrorSessionResultOutput) BusinessStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) string { return v.BusinessStatus }).(pulumi.StringOutput)
 }
 
-// 创建时间。
+// Creation time
 func (o LookupTrafficMirrorSessionResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 镜像会话实例描述。
+// Mirror session instance description
 func (o LookupTrafficMirrorSessionResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -120,67 +120,67 @@ func (o LookupTrafficMirrorSessionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 锁定原因。
+// Lock reason
 func (o LookupTrafficMirrorSessionResultOutput) LockReason() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) string { return v.LockReason }).(pulumi.StringOutput)
 }
 
-// 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+// Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
 func (o LookupTrafficMirrorSessionResultOutput) NetworkInterfaceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) string { return v.NetworkInterfaceId }).(pulumi.StringOutput)
 }
 
-// 镜像会话MTU，超过被截断，取值范围：64～9600。
+// Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
 func (o LookupTrafficMirrorSessionResultOutput) PacketLength() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) int { return v.PacketLength }).(pulumi.IntOutput)
 }
 
-// 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+// Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
 func (o LookupTrafficMirrorSessionResultOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// 所属项目的名称
+// Name of the associated project
 func (o LookupTrafficMirrorSessionResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 会话状态。
+// Session status
 func (o LookupTrafficMirrorSessionResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 标签信息。
+// Tag information
 func (o LookupTrafficMirrorSessionResultOutput) Tags() GetTrafficMirrorSessionTagArrayOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) []GetTrafficMirrorSessionTag { return v.Tags }).(GetTrafficMirrorSessionTagArrayOutput)
 }
 
-// 筛选条件实例ID。
+// Filter condition instance ID
 func (o LookupTrafficMirrorSessionResultOutput) TrafficMirrorFilterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) string { return v.TrafficMirrorFilterId }).(pulumi.StringOutput)
 }
 
-// 镜像会话实例ID。
+// Mirror session instance ID
 func (o LookupTrafficMirrorSessionResultOutput) TrafficMirrorSessionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) string { return v.TrafficMirrorSessionId }).(pulumi.StringOutput)
 }
 
-// 镜像会话名称。
+// Mirror session name
 func (o LookupTrafficMirrorSessionResultOutput) TrafficMirrorSessionName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) string { return v.TrafficMirrorSessionName }).(pulumi.StringOutput)
 }
 
-// 镜像源实例列表。
+// Mirror source instance list
 func (o LookupTrafficMirrorSessionResultOutput) TrafficMirrorSourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) []string { return v.TrafficMirrorSourceIds }).(pulumi.StringArrayOutput)
 }
 
-// 镜像目的实例ID。
+// Mirror destination instance ID
 func (o LookupTrafficMirrorSessionResultOutput) TrafficMirrorTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) string { return v.TrafficMirrorTargetId }).(pulumi.StringOutput)
 }
 
-// 镜像会话VNI，取值范围1 ～ 16777215。
+// Mirror session VNI. Range: 1–16777215
 func (o LookupTrafficMirrorSessionResultOutput) VirtualNetworkId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorSessionResult) int { return v.VirtualNetworkId }).(pulumi.IntOutput)
 }

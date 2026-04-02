@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class OrganizationOwner {
     /**
-     * @return 账号ID
+     * @return Account ID
      * 
      */
     private @Nullable Integer accountId;
     /**
-     * @return 账号名称
+     * @return Account Name
      * 
      */
     private @Nullable String accountName;
     /**
-     * @return 主体名称
+     * @return Entity Name
      * 
      */
     private @Nullable String mainName;
 
     private OrganizationOwner() {}
     /**
-     * @return 账号ID
+     * @return Account ID
      * 
      */
     public Optional<Integer> accountId() {
         return Optional.ofNullable(this.accountId);
     }
     /**
-     * @return 账号名称
+     * @return Account Name
      * 
      */
     public Optional<String> accountName() {
         return Optional.ofNullable(this.accountName);
     }
     /**
-     * @return 主体名称
+     * @return Entity Name
      * 
      */
     public Optional<String> mainName() {

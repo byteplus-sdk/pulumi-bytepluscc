@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
 {
     /// <summary>
-    /// 当您需要批量为云身份中心用户进行SSO授权时，您可以先通过用户组进行批量的用户管理。
+    /// When you need to grant SSO authorization to Cloud Identity Center users in bulk, you can first manage users in bulk through user groups
     /// 
     /// ## Import
     /// 
@@ -23,37 +23,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public partial class Group : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation Time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 描述。
+        /// Description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 显示名。
+        /// Display Name
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组id。
+        /// User Group ID
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组名称。
+        /// User Group Name
         /// </summary>
         [Output("groupName")]
         public Output<string> GroupName { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组类型。
+        /// User Group Type
         /// </summary>
         [Output("joinType")]
         public Output<string> JoinType { get; private set; } = null!;
@@ -62,13 +62,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         public Output<ImmutableArray<Outputs.GroupMember>> Members { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组来源。
+        /// User Group Source
         /// </summary>
         [Output("source")]
         public Output<string> Source { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update Time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -121,25 +121,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class GroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 描述。
+        /// Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 显示名。
+        /// Display Name
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// 用户组名称。
+        /// User Group Name
         /// </summary>
         [Input("groupName", required: true)]
         public Input<string> GroupName { get; set; } = null!;
 
         /// <summary>
-        /// 用户组类型。
+        /// User Group Type
         /// </summary>
         [Input("joinType", required: true)]
         public Input<string> JoinType { get; set; } = null!;
@@ -161,37 +161,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class GroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation Time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 描述。
+        /// Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 显示名。
+        /// Display Name
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// 用户组id。
+        /// User Group ID
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         /// <summary>
-        /// 用户组名称。
+        /// User Group Name
         /// </summary>
         [Input("groupName")]
         public Input<string>? GroupName { get; set; }
 
         /// <summary>
-        /// 用户组类型。
+        /// User Group Type
         /// </summary>
         [Input("joinType")]
         public Input<string>? JoinType { get; set; }
@@ -205,13 +205,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         }
 
         /// <summary>
-        /// 用户组来源。
+        /// User Group Source
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update Time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

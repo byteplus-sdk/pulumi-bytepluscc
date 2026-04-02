@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetServerGroupListener {
     /**
-     * @return 监听器的ID。
+     * @return Listener ID.
      * 
      */
     private String listenerId;
 
     private GetServerGroupListener() {}
     /**
-     * @return 监听器的ID。
+     * @return Listener ID.
      * 
      */
     public String listenerId() {

@@ -14,49 +14,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Inputs
     public sealed class DomainTcpListenerConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 接入协议类型。
+        /// Access protocol type
         /// </summary>
         [Input("accessProtocol")]
         public Input<string>? AccessProtocol { get; set; }
 
         /// <summary>
-        /// 防护模式。
+        /// Protection mode
         /// </summary>
         [Input("defenceMode")]
         public Input<int>? DefenceMode { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 实例名称。
+        /// Instance name.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 监听器 ID。
+        /// Listener ID.
         /// </summary>
         [Input("listenerId")]
         public Input<string>? ListenerId { get; set; }
 
         /// <summary>
-        /// 是否从 ALB 中丢失关联。
+        /// Disassociated from ALB
         /// </summary>
         [Input("lostAssociationFromAlb")]
         public Input<int>? LostAssociationFromAlb { get; set; }
 
         /// <summary>
-        /// 监听器的端口号。
+        /// Listener port number
         /// </summary>
         [Input("port")]
         public Input<string>? Port { get; set; }
 
         /// <summary>
-        /// 监听器协议类型。
+        /// Listener protocol type.
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }

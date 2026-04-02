@@ -15,14 +15,14 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
     public static final MountPointArgs Empty = new MountPointArgs();
 
     /**
-     * 文件系统 ID。
+     * File system ID.
      * 
      */
     @Import(name="fileSystemId", required=true)
     private Output<String> fileSystemId;
 
     /**
-     * @return 文件系统 ID。
+     * @return File system ID.
      * 
      */
     public Output<String> fileSystemId() {
@@ -30,14 +30,14 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 挂载点名称。
+     * Mount point name.
      * 
      */
     @Import(name="mountPointName", required=true)
     private Output<String> mountPointName;
 
     /**
-     * @return 挂载点名称。
+     * @return Mount point name.
      * 
      */
     public Output<String> mountPointName() {
@@ -45,14 +45,14 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 权限组 ID。
+     * Permission group ID.
      * 
      */
     @Import(name="permissionGroupId", required=true)
     private Output<String> permissionGroupId;
 
     /**
-     * @return 权限组 ID。
+     * @return Permission group ID.
      * 
      */
     public Output<String> permissionGroupId() {
@@ -60,14 +60,14 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网 ID。
+     * Subnet ID.
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return 子网 ID。
+     * @return Subnet ID.
      * 
      */
     public Output<String> subnetId() {
@@ -75,14 +75,14 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 私有网络 ID。
+     * Private network ID.
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return 私有网络 ID。
+     * @return Private network ID.
      * 
      */
     public Output<String> vpcId() {
@@ -118,7 +118,7 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemId 文件系统 ID。
+         * @param fileSystemId File system ID.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemId 文件系统 ID。
+         * @param fileSystemId File system ID.
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mountPointName 挂载点名称。
+         * @param mountPointName Mount point name.
          * 
          * @return builder
          * 
@@ -150,7 +150,7 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mountPointName 挂载点名称。
+         * @param mountPointName Mount point name.
          * 
          * @return builder
          * 
@@ -160,7 +160,7 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param permissionGroupId 权限组 ID。
+         * @param permissionGroupId Permission group ID.
          * 
          * @return builder
          * 
@@ -171,7 +171,7 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param permissionGroupId 权限组 ID。
+         * @param permissionGroupId Permission group ID.
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。
+         * @param subnetId Subnet ID.
          * 
          * @return builder
          * 
@@ -192,7 +192,7 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。
+         * @param subnetId Subnet ID.
          * 
          * @return builder
          * 
@@ -202,7 +202,7 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络 ID。
+         * @param vpcId Private network ID.
          * 
          * @return builder
          * 
@@ -213,7 +213,7 @@ public final class MountPointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络 ID。
+         * @param vpcId Private network ID.
          * 
          * @return builder
          * 

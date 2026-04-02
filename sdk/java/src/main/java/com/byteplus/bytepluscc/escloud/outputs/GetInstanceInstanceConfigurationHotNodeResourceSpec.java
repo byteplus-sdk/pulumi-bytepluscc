@@ -12,62 +12,62 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceInstanceConfigurationHotNodeResourceSpec {
     /**
-     * @return 节点规格的 CPU 资源，单位为核（Core）。
+     * @return CPU resources of node specification, measured in cores
      * 
      */
     private Integer cpu;
     /**
-     * @return 节点规格的描述信息。
+     * @return Description of node specification.
      * 
      */
     private String description;
     /**
-     * @return 节点规格的显示名称。
+     * @return Display name of node specification.
      * 
      */
     private String displayName;
     /**
-     * @return 节点规格的内存容量，单位 GiB。
+     * @return Memory capacity for node specification, measured in GiB.
      * 
      */
     private Integer memory;
     /**
-     * @return 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+     * @return Node specification. For details on node specification types and details, see Product Specifications.
      * 
      */
     private String name;
 
     private GetInstanceInstanceConfigurationHotNodeResourceSpec() {}
     /**
-     * @return 节点规格的 CPU 资源，单位为核（Core）。
+     * @return CPU resources of node specification, measured in cores
      * 
      */
     public Integer cpu() {
         return this.cpu;
     }
     /**
-     * @return 节点规格的描述信息。
+     * @return Description of node specification.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 节点规格的显示名称。
+     * @return Display name of node specification.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return 节点规格的内存容量，单位 GiB。
+     * @return Memory capacity for node specification, measured in GiB.
      * 
      */
     public Integer memory() {
         return this.memory;
     }
     /**
-     * @return 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+     * @return Node specification. For details on node specification types and details, see Product Specifications.
      * 
      */
     public String name() {

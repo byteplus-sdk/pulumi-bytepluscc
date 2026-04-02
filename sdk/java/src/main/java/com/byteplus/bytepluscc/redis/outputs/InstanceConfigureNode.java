@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceConfigureNode {
     /**
-     * @return 每个节点所属的可用区。
+     * @return The availability zone each node belongs to.
      * 
      */
     private @Nullable String az;
 
     private InstanceConfigureNode() {}
     /**
-     * @return 每个节点所属的可用区。
+     * @return The availability zone each node belongs to.
      * 
      */
     public Optional<String> az() {

@@ -25,14 +25,14 @@ public final class DomainCustomErrorPageArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -78,7 +78,7 @@ public final class DomainCustomErrorPageArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param switch_ Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class DomainCustomErrorPageArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param switch_ Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
          * 
          * @return builder
          * 

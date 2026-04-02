@@ -30,31 +30,31 @@ type LookupAclArgs struct {
 
 // A collection of values returned by getAcl.
 type LookupAclResult struct {
-	// 访问控制策略组中IP条目的详细信息。
+	// Detailed information about IP entries in the access control policy group.
 	AclEntries []GetAclAclEntry `pulumi:"aclEntries"`
-	// 访问控制策略组包含的IP条目数量。
+	// Number of IP entries contained in the access control policy group.
 	AclEntryCount int `pulumi:"aclEntryCount"`
-	// 访问控制策略组的ID。
+	// Access control policy group ID
 	AclId string `pulumi:"aclId"`
-	// 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+	// Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
 	AclName string `pulumi:"aclName"`
-	// 访问控制策略组的创建时间。
+	// Creation time of the access control policy group
 	CreateTime string `pulumi:"createTime"`
-	// 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+	// Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 访问控制策略组关联的监听器的详细信息。
+	// Detailed information about listeners associated with the access control policy group
 	Listeners []GetAclListener `pulumi:"listeners"`
-	// 访问控制策略组所属项目的名称。不填默认为default。
+	// Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
 	ProjectName string `pulumi:"projectName"`
-	// 是否为托管资源。true：是。false：否。
+	// Is this a managed resource. true: yes. false: no.
 	ServiceManaged bool `pulumi:"serviceManaged"`
-	// 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+	// Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
 	Status string `pulumi:"status"`
-	// 访问控制策略组标签的详细信息。
+	// Detailed information about access control policy group tags
 	Tags []GetAclTag `pulumi:"tags"`
-	// 访问控制策略组的最近操作时间。
+	// Last operation time of the access control policy group
 	UpdateTime string `pulumi:"updateTime"`
 }
 
@@ -92,32 +92,32 @@ func (o LookupAclResultOutput) ToLookupAclResultOutputWithContext(ctx context.Co
 	return o
 }
 
-// 访问控制策略组中IP条目的详细信息。
+// Detailed information about IP entries in the access control policy group.
 func (o LookupAclResultOutput) AclEntries() GetAclAclEntryArrayOutput {
 	return o.ApplyT(func(v LookupAclResult) []GetAclAclEntry { return v.AclEntries }).(GetAclAclEntryArrayOutput)
 }
 
-// 访问控制策略组包含的IP条目数量。
+// Number of IP entries contained in the access control policy group.
 func (o LookupAclResultOutput) AclEntryCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAclResult) int { return v.AclEntryCount }).(pulumi.IntOutput)
 }
 
-// 访问控制策略组的ID。
+// Access control policy group ID
 func (o LookupAclResultOutput) AclId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.AclId }).(pulumi.StringOutput)
 }
 
-// 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+// Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
 func (o LookupAclResultOutput) AclName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.AclName }).(pulumi.StringOutput)
 }
 
-// 访问控制策略组的创建时间。
+// Creation time of the access control policy group
 func (o LookupAclResultOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+// Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 func (o LookupAclResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -127,32 +127,32 @@ func (o LookupAclResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 访问控制策略组关联的监听器的详细信息。
+// Detailed information about listeners associated with the access control policy group
 func (o LookupAclResultOutput) Listeners() GetAclListenerArrayOutput {
 	return o.ApplyT(func(v LookupAclResult) []GetAclListener { return v.Listeners }).(GetAclListenerArrayOutput)
 }
 
-// 访问控制策略组所属项目的名称。不填默认为default。
+// Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
 func (o LookupAclResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 是否为托管资源。true：是。false：否。
+// Is this a managed resource. true: yes. false: no.
 func (o LookupAclResultOutput) ServiceManaged() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAclResult) bool { return v.ServiceManaged }).(pulumi.BoolOutput)
 }
 
-// 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+// Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
 func (o LookupAclResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 访问控制策略组标签的详细信息。
+// Detailed information about access control policy group tags
 func (o LookupAclResultOutput) Tags() GetAclTagArrayOutput {
 	return o.ApplyT(func(v LookupAclResult) []GetAclTag { return v.Tags }).(GetAclTagArrayOutput)
 }
 
-// 访问控制策略组的最近操作时间。
+// Last operation time of the access control policy group
 func (o LookupAclResultOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.UpdateTime }).(pulumi.StringOutput)
 }

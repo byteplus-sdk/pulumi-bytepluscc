@@ -39,20 +39,20 @@ class HealthCheckTemplateArgs:
                  unhealthy_threshold: Optional[pulumi.Input[builtins.int]] = None):
         """
         The set of arguments for constructing a HealthCheckTemplate resource.
-        :param pulumi.Input[builtins.str] health_check_template_name: 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
-        :param pulumi.Input[builtins.str] description: 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
-        :param pulumi.Input[builtins.str] health_check_domain: 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
-        :param pulumi.Input[builtins.str] health_check_http_code: 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
-        :param pulumi.Input[builtins.str] health_check_http_version: 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
-        :param pulumi.Input[builtins.int] health_check_interval: 执行健康检查的时间间隔，默认为2，取值1-300s 。
-        :param pulumi.Input[builtins.str] health_check_method: 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
-        :param pulumi.Input[builtins.int] health_check_port: 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
-        :param pulumi.Input[builtins.str] health_check_protocol: 健康检查的协议。HTTPTCP。
-        :param pulumi.Input[builtins.int] health_check_timeout: 健康检查的响应超时时间，默认为2，取值1-60s 。
-        :param pulumi.Input[builtins.str] health_check_uri: 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
-        :param pulumi.Input[builtins.int] healthy_threshold: 健康检查的健康阈值，默认为3，取值2-10次。
-        :param pulumi.Input[builtins.str] project_name: 健康检查模板所属项目名称。
-        :param pulumi.Input[builtins.int] unhealthy_threshold: 健康检查的不健康阈值，默认为3，取值2-10次。
+        :param pulumi.Input[builtins.str] health_check_template_name: Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] description: Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] health_check_domain: Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one '.', and cannot start or end with '.'. The string can contain letters, numbers, '-', and '.' characters. '-' cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
+        :param pulumi.Input[builtins.str] health_check_http_code: HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+        :param pulumi.Input[builtins.str] health_check_http_version: HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
+        :param pulumi.Input[builtins.int] health_check_interval: Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
+        :param pulumi.Input[builtins.str] health_check_method: Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
+        :param pulumi.Input[builtins.int] health_check_port: Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
+        :param pulumi.Input[builtins.str] health_check_protocol: Protocol for the health check. HTTP or TCP.
+        :param pulumi.Input[builtins.int] health_check_timeout: Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
+        :param pulumi.Input[builtins.str] health_check_uri: Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with '/'. Can only contain letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' characters. Length must be between 1 and 128 characters. If not specified, defaults to '/'.
+        :param pulumi.Input[builtins.int] healthy_threshold: Health threshold for the health check. Default is 3. Range: 2–10 times.
+        :param pulumi.Input[builtins.str] project_name: Project name to which the health check template belongs.
+        :param pulumi.Input[builtins.int] unhealthy_threshold: Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
         """
         pulumi.set(__self__, "health_check_template_name", health_check_template_name)
         if description is not None:
@@ -88,7 +88,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter(name="healthCheckTemplateName")
     def health_check_template_name(self) -> pulumi.Input[builtins.str]:
         """
-        健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
+        Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "health_check_template_name")
 
@@ -100,7 +100,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+        Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -112,7 +112,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter(name="healthCheckDomain")
     def health_check_domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
+        Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one '.', and cannot start or end with '.'. The string can contain letters, numbers, '-', and '.' characters. '-' cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
         """
         return pulumi.get(self, "health_check_domain")
 
@@ -124,7 +124,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter(name="healthCheckHttpCode")
     def health_check_http_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
+        HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
         """
         return pulumi.get(self, "health_check_http_code")
 
@@ -136,7 +136,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter(name="healthCheckHttpVersion")
     def health_check_http_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
+        HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
         """
         return pulumi.get(self, "health_check_http_version")
 
@@ -148,7 +148,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter(name="healthCheckInterval")
     def health_check_interval(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        执行健康检查的时间间隔，默认为2，取值1-300s 。
+        Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
         """
         return pulumi.get(self, "health_check_interval")
 
@@ -160,7 +160,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter(name="healthCheckMethod")
     def health_check_method(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
+        Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
         """
         return pulumi.get(self, "health_check_method")
 
@@ -172,7 +172,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter(name="healthCheckPort")
     def health_check_port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+        Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
         """
         return pulumi.get(self, "health_check_port")
 
@@ -184,7 +184,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter(name="healthCheckProtocol")
     def health_check_protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查的协议。HTTPTCP。
+        Protocol for the health check. HTTP or TCP.
         """
         return pulumi.get(self, "health_check_protocol")
 
@@ -196,7 +196,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter(name="healthCheckTimeout")
     def health_check_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        健康检查的响应超时时间，默认为2，取值1-60s 。
+        Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
         """
         return pulumi.get(self, "health_check_timeout")
 
@@ -208,7 +208,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter(name="healthCheckUri")
     def health_check_uri(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
+        Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with '/'. Can only contain letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' characters. Length must be between 1 and 128 characters. If not specified, defaults to '/'.
         """
         return pulumi.get(self, "health_check_uri")
 
@@ -220,7 +220,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter(name="healthyThreshold")
     def healthy_threshold(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        健康检查的健康阈值，默认为3，取值2-10次。
+        Health threshold for the health check. Default is 3. Range: 2–10 times.
         """
         return pulumi.get(self, "healthy_threshold")
 
@@ -232,7 +232,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查模板所属项目名称。
+        Project name to which the health check template belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -253,7 +253,7 @@ class HealthCheckTemplateArgs:
     @pulumi.getter(name="unhealthyThreshold")
     def unhealthy_threshold(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        健康检查的不健康阈值，默认为3，取值2-10次。
+        Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
         """
         return pulumi.get(self, "unhealthy_threshold")
 
@@ -285,23 +285,23 @@ class _HealthCheckTemplateState:
                  update_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering HealthCheckTemplate resources.
-        :param pulumi.Input[builtins.str] create_time: 健康检查模版的创建时间。
-        :param pulumi.Input[builtins.str] description: 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
-        :param pulumi.Input[builtins.str] health_check_domain: 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
-        :param pulumi.Input[builtins.str] health_check_http_code: 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
-        :param pulumi.Input[builtins.str] health_check_http_version: 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
-        :param pulumi.Input[builtins.int] health_check_interval: 执行健康检查的时间间隔，默认为2，取值1-300s 。
-        :param pulumi.Input[builtins.str] health_check_method: 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
-        :param pulumi.Input[builtins.int] health_check_port: 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
-        :param pulumi.Input[builtins.str] health_check_protocol: 健康检查的协议。HTTPTCP。
-        :param pulumi.Input[builtins.str] health_check_template_id: 健康检查模板 ID。
-        :param pulumi.Input[builtins.str] health_check_template_name: 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
-        :param pulumi.Input[builtins.int] health_check_timeout: 健康检查的响应超时时间，默认为2，取值1-60s 。
-        :param pulumi.Input[builtins.str] health_check_uri: 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
-        :param pulumi.Input[builtins.int] healthy_threshold: 健康检查的健康阈值，默认为3，取值2-10次。
-        :param pulumi.Input[builtins.str] project_name: 健康检查模板所属项目名称。
-        :param pulumi.Input[builtins.int] unhealthy_threshold: 健康检查的不健康阈值，默认为3，取值2-10次。
-        :param pulumi.Input[builtins.str] update_time: 健康检查模版最近一次的操作时间。
+        :param pulumi.Input[builtins.str] create_time: Creation time of the health check template.
+        :param pulumi.Input[builtins.str] description: Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] health_check_domain: Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one '.', and cannot start or end with '.'. The string can contain letters, numbers, '-', and '.' characters. '-' cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
+        :param pulumi.Input[builtins.str] health_check_http_code: HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+        :param pulumi.Input[builtins.str] health_check_http_version: HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
+        :param pulumi.Input[builtins.int] health_check_interval: Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
+        :param pulumi.Input[builtins.str] health_check_method: Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
+        :param pulumi.Input[builtins.int] health_check_port: Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
+        :param pulumi.Input[builtins.str] health_check_protocol: Protocol for the health check. HTTP or TCP.
+        :param pulumi.Input[builtins.str] health_check_template_id: Health check template ID.
+        :param pulumi.Input[builtins.str] health_check_template_name: Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.int] health_check_timeout: Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
+        :param pulumi.Input[builtins.str] health_check_uri: Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with '/'. Can only contain letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' characters. Length must be between 1 and 128 characters. If not specified, defaults to '/'.
+        :param pulumi.Input[builtins.int] healthy_threshold: Health threshold for the health check. Default is 3. Range: 2–10 times.
+        :param pulumi.Input[builtins.str] project_name: Project name to which the health check template belongs.
+        :param pulumi.Input[builtins.int] unhealthy_threshold: Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
+        :param pulumi.Input[builtins.str] update_time: Last operation time of the health check template.
         """
         if create_time is not None:
             pulumi.set(__self__, "create_time", create_time)
@@ -344,7 +344,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查模版的创建时间。
+        Creation time of the health check template.
         """
         return pulumi.get(self, "create_time")
 
@@ -356,7 +356,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+        Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -368,7 +368,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="healthCheckDomain")
     def health_check_domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
+        Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one '.', and cannot start or end with '.'. The string can contain letters, numbers, '-', and '.' characters. '-' cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
         """
         return pulumi.get(self, "health_check_domain")
 
@@ -380,7 +380,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="healthCheckHttpCode")
     def health_check_http_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
+        HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
         """
         return pulumi.get(self, "health_check_http_code")
 
@@ -392,7 +392,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="healthCheckHttpVersion")
     def health_check_http_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
+        HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
         """
         return pulumi.get(self, "health_check_http_version")
 
@@ -404,7 +404,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="healthCheckInterval")
     def health_check_interval(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        执行健康检查的时间间隔，默认为2，取值1-300s 。
+        Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
         """
         return pulumi.get(self, "health_check_interval")
 
@@ -416,7 +416,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="healthCheckMethod")
     def health_check_method(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
+        Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
         """
         return pulumi.get(self, "health_check_method")
 
@@ -428,7 +428,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="healthCheckPort")
     def health_check_port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+        Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
         """
         return pulumi.get(self, "health_check_port")
 
@@ -440,7 +440,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="healthCheckProtocol")
     def health_check_protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查的协议。HTTPTCP。
+        Protocol for the health check. HTTP or TCP.
         """
         return pulumi.get(self, "health_check_protocol")
 
@@ -452,7 +452,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="healthCheckTemplateId")
     def health_check_template_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查模板 ID。
+        Health check template ID.
         """
         return pulumi.get(self, "health_check_template_id")
 
@@ -464,7 +464,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="healthCheckTemplateName")
     def health_check_template_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
+        Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "health_check_template_name")
 
@@ -476,7 +476,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="healthCheckTimeout")
     def health_check_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        健康检查的响应超时时间，默认为2，取值1-60s 。
+        Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
         """
         return pulumi.get(self, "health_check_timeout")
 
@@ -488,7 +488,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="healthCheckUri")
     def health_check_uri(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
+        Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with '/'. Can only contain letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' characters. Length must be between 1 and 128 characters. If not specified, defaults to '/'.
         """
         return pulumi.get(self, "health_check_uri")
 
@@ -500,7 +500,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="healthyThreshold")
     def healthy_threshold(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        健康检查的健康阈值，默认为3，取值2-10次。
+        Health threshold for the health check. Default is 3. Range: 2–10 times.
         """
         return pulumi.get(self, "healthy_threshold")
 
@@ -512,7 +512,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查模板所属项目名称。
+        Project name to which the health check template belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -533,7 +533,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="unhealthyThreshold")
     def unhealthy_threshold(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        健康检查的不健康阈值，默认为3，取值2-10次。
+        Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
         """
         return pulumi.get(self, "unhealthy_threshold")
 
@@ -545,7 +545,7 @@ class _HealthCheckTemplateState:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        健康检查模版最近一次的操作时间。
+        Last operation time of the health check template.
         """
         return pulumi.get(self, "update_time")
 
@@ -577,7 +577,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
                  unhealthy_threshold: Optional[pulumi.Input[builtins.int]] = None,
                  __props__=None):
         """
-        健康检查是确保应用程序是否可用的关键功能。ALB 通过定期对后端服务器进行健康检查，来验证这些服务器是否可以接受新的请求。当一个后端服务器不能正常响应 ALB 的健康检查请求时，来自客户端的流量不会被路由到该服务器。ALB 会将流量转发至其他状态为正常的服务器上。从而保证了服务的连续性和可靠性。ALB 健康检查是基于服务器组进行的。服务器组启用健康检查后，ALB 定期检查服务器组内的后端服务器状态。
+        Health checks are essential for ensuring application availability. ALB regularly performs health checks on backend servers to verify whether they can accept new requests. If a backend server fails to respond properly to ALB's health check requests, client traffic will not be routed to that server. ALB forwards traffic to other servers with a healthy status, ensuring service continuity and reliability. ALB health checks are performed based on server groups. Once health checks are enabled for a server group, ALB periodically checks the status of backend servers within the group.
 
         ## Example Usage
 
@@ -614,20 +614,20 @@ class HealthCheckTemplate(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
-        :param pulumi.Input[builtins.str] health_check_domain: 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
-        :param pulumi.Input[builtins.str] health_check_http_code: 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
-        :param pulumi.Input[builtins.str] health_check_http_version: 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
-        :param pulumi.Input[builtins.int] health_check_interval: 执行健康检查的时间间隔，默认为2，取值1-300s 。
-        :param pulumi.Input[builtins.str] health_check_method: 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
-        :param pulumi.Input[builtins.int] health_check_port: 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
-        :param pulumi.Input[builtins.str] health_check_protocol: 健康检查的协议。HTTPTCP。
-        :param pulumi.Input[builtins.str] health_check_template_name: 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
-        :param pulumi.Input[builtins.int] health_check_timeout: 健康检查的响应超时时间，默认为2，取值1-60s 。
-        :param pulumi.Input[builtins.str] health_check_uri: 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
-        :param pulumi.Input[builtins.int] healthy_threshold: 健康检查的健康阈值，默认为3，取值2-10次。
-        :param pulumi.Input[builtins.str] project_name: 健康检查模板所属项目名称。
-        :param pulumi.Input[builtins.int] unhealthy_threshold: 健康检查的不健康阈值，默认为3，取值2-10次。
+        :param pulumi.Input[builtins.str] description: Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] health_check_domain: Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one '.', and cannot start or end with '.'. The string can contain letters, numbers, '-', and '.' characters. '-' cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
+        :param pulumi.Input[builtins.str] health_check_http_code: HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+        :param pulumi.Input[builtins.str] health_check_http_version: HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
+        :param pulumi.Input[builtins.int] health_check_interval: Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
+        :param pulumi.Input[builtins.str] health_check_method: Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
+        :param pulumi.Input[builtins.int] health_check_port: Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
+        :param pulumi.Input[builtins.str] health_check_protocol: Protocol for the health check. HTTP or TCP.
+        :param pulumi.Input[builtins.str] health_check_template_name: Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.int] health_check_timeout: Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
+        :param pulumi.Input[builtins.str] health_check_uri: Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with '/'. Can only contain letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' characters. Length must be between 1 and 128 characters. If not specified, defaults to '/'.
+        :param pulumi.Input[builtins.int] healthy_threshold: Health threshold for the health check. Default is 3. Range: 2–10 times.
+        :param pulumi.Input[builtins.str] project_name: Project name to which the health check template belongs.
+        :param pulumi.Input[builtins.int] unhealthy_threshold: Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
         """
         ...
     @overload
@@ -636,7 +636,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
                  args: HealthCheckTemplateArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        健康检查是确保应用程序是否可用的关键功能。ALB 通过定期对后端服务器进行健康检查，来验证这些服务器是否可以接受新的请求。当一个后端服务器不能正常响应 ALB 的健康检查请求时，来自客户端的流量不会被路由到该服务器。ALB 会将流量转发至其他状态为正常的服务器上。从而保证了服务的连续性和可靠性。ALB 健康检查是基于服务器组进行的。服务器组启用健康检查后，ALB 定期检查服务器组内的后端服务器状态。
+        Health checks are essential for ensuring application availability. ALB regularly performs health checks on backend servers to verify whether they can accept new requests. If a backend server fails to respond properly to ALB's health check requests, client traffic will not be routed to that server. ALB forwards traffic to other servers with a healthy status, ensuring service continuity and reliability. ALB health checks are performed based on server groups. Once health checks are enabled for a server group, ALB periodically checks the status of backend servers within the group.
 
         ## Example Usage
 
@@ -765,23 +765,23 @@ class HealthCheckTemplate(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] create_time: 健康检查模版的创建时间。
-        :param pulumi.Input[builtins.str] description: 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
-        :param pulumi.Input[builtins.str] health_check_domain: 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
-        :param pulumi.Input[builtins.str] health_check_http_code: 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
-        :param pulumi.Input[builtins.str] health_check_http_version: 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
-        :param pulumi.Input[builtins.int] health_check_interval: 执行健康检查的时间间隔，默认为2，取值1-300s 。
-        :param pulumi.Input[builtins.str] health_check_method: 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
-        :param pulumi.Input[builtins.int] health_check_port: 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
-        :param pulumi.Input[builtins.str] health_check_protocol: 健康检查的协议。HTTPTCP。
-        :param pulumi.Input[builtins.str] health_check_template_id: 健康检查模板 ID。
-        :param pulumi.Input[builtins.str] health_check_template_name: 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
-        :param pulumi.Input[builtins.int] health_check_timeout: 健康检查的响应超时时间，默认为2，取值1-60s 。
-        :param pulumi.Input[builtins.str] health_check_uri: 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
-        :param pulumi.Input[builtins.int] healthy_threshold: 健康检查的健康阈值，默认为3，取值2-10次。
-        :param pulumi.Input[builtins.str] project_name: 健康检查模板所属项目名称。
-        :param pulumi.Input[builtins.int] unhealthy_threshold: 健康检查的不健康阈值，默认为3，取值2-10次。
-        :param pulumi.Input[builtins.str] update_time: 健康检查模版最近一次的操作时间。
+        :param pulumi.Input[builtins.str] create_time: Creation time of the health check template.
+        :param pulumi.Input[builtins.str] description: Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] health_check_domain: Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one '.', and cannot start or end with '.'. The string can contain letters, numbers, '-', and '.' characters. '-' cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
+        :param pulumi.Input[builtins.str] health_check_http_code: HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+        :param pulumi.Input[builtins.str] health_check_http_version: HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
+        :param pulumi.Input[builtins.int] health_check_interval: Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
+        :param pulumi.Input[builtins.str] health_check_method: Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
+        :param pulumi.Input[builtins.int] health_check_port: Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
+        :param pulumi.Input[builtins.str] health_check_protocol: Protocol for the health check. HTTP or TCP.
+        :param pulumi.Input[builtins.str] health_check_template_id: Health check template ID.
+        :param pulumi.Input[builtins.str] health_check_template_name: Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.int] health_check_timeout: Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
+        :param pulumi.Input[builtins.str] health_check_uri: Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with '/'. Can only contain letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' characters. Length must be between 1 and 128 characters. If not specified, defaults to '/'.
+        :param pulumi.Input[builtins.int] healthy_threshold: Health threshold for the health check. Default is 3. Range: 2–10 times.
+        :param pulumi.Input[builtins.str] project_name: Project name to which the health check template belongs.
+        :param pulumi.Input[builtins.int] unhealthy_threshold: Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
+        :param pulumi.Input[builtins.str] update_time: Last operation time of the health check template.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -811,7 +811,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[builtins.str]:
         """
-        健康检查模版的创建时间。
+        Creation time of the health check template.
         """
         return pulumi.get(self, "create_time")
 
@@ -819,7 +819,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+        Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -827,7 +827,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="healthCheckDomain")
     def health_check_domain(self) -> pulumi.Output[builtins.str]:
         """
-        健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
+        Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one '.', and cannot start or end with '.'. The string can contain letters, numbers, '-', and '.' characters. '-' cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
         """
         return pulumi.get(self, "health_check_domain")
 
@@ -835,7 +835,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="healthCheckHttpCode")
     def health_check_http_code(self) -> pulumi.Output[builtins.str]:
         """
-        健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
+        HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
         """
         return pulumi.get(self, "health_check_http_code")
 
@@ -843,7 +843,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="healthCheckHttpVersion")
     def health_check_http_version(self) -> pulumi.Output[builtins.str]:
         """
-        健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
+        HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
         """
         return pulumi.get(self, "health_check_http_version")
 
@@ -851,7 +851,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="healthCheckInterval")
     def health_check_interval(self) -> pulumi.Output[builtins.int]:
         """
-        执行健康检查的时间间隔，默认为2，取值1-300s 。
+        Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
         """
         return pulumi.get(self, "health_check_interval")
 
@@ -859,7 +859,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="healthCheckMethod")
     def health_check_method(self) -> pulumi.Output[builtins.str]:
         """
-        健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
+        Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
         """
         return pulumi.get(self, "health_check_method")
 
@@ -867,7 +867,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="healthCheckPort")
     def health_check_port(self) -> pulumi.Output[builtins.int]:
         """
-        健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+        Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
         """
         return pulumi.get(self, "health_check_port")
 
@@ -875,7 +875,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="healthCheckProtocol")
     def health_check_protocol(self) -> pulumi.Output[builtins.str]:
         """
-        健康检查的协议。HTTPTCP。
+        Protocol for the health check. HTTP or TCP.
         """
         return pulumi.get(self, "health_check_protocol")
 
@@ -883,7 +883,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="healthCheckTemplateId")
     def health_check_template_id(self) -> pulumi.Output[builtins.str]:
         """
-        健康检查模板 ID。
+        Health check template ID.
         """
         return pulumi.get(self, "health_check_template_id")
 
@@ -891,7 +891,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="healthCheckTemplateName")
     def health_check_template_name(self) -> pulumi.Output[builtins.str]:
         """
-        健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
+        Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "health_check_template_name")
 
@@ -899,7 +899,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="healthCheckTimeout")
     def health_check_timeout(self) -> pulumi.Output[builtins.int]:
         """
-        健康检查的响应超时时间，默认为2，取值1-60s 。
+        Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
         """
         return pulumi.get(self, "health_check_timeout")
 
@@ -907,7 +907,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="healthCheckUri")
     def health_check_uri(self) -> pulumi.Output[builtins.str]:
         """
-        健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
+        Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with '/'. Can only contain letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' characters. Length must be between 1 and 128 characters. If not specified, defaults to '/'.
         """
         return pulumi.get(self, "health_check_uri")
 
@@ -915,7 +915,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="healthyThreshold")
     def healthy_threshold(self) -> pulumi.Output[builtins.int]:
         """
-        健康检查的健康阈值，默认为3，取值2-10次。
+        Health threshold for the health check. Default is 3. Range: 2–10 times.
         """
         return pulumi.get(self, "healthy_threshold")
 
@@ -923,7 +923,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        健康检查模板所属项目名称。
+        Project name to which the health check template belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -936,7 +936,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="unhealthyThreshold")
     def unhealthy_threshold(self) -> pulumi.Output[builtins.int]:
         """
-        健康检查的不健康阈值，默认为3，取值2-10次。
+        Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
         """
         return pulumi.get(self, "unhealthy_threshold")
 
@@ -944,7 +944,7 @@ class HealthCheckTemplate(pulumi.CustomResource):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> pulumi.Output[builtins.str]:
         """
-        健康检查模版最近一次的操作时间。
+        Last operation time of the health check template.
         """
         return pulumi.get(self, "update_time")
 

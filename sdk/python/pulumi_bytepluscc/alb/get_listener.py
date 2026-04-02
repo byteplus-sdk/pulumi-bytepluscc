@@ -127,7 +127,7 @@ class GetListenerResult:
     @pulumi.getter(name="accessLogRecordCustomizedHeadersEnabled")
     def access_log_record_customized_headers_enabled(self) -> builtins.str:
         """
-        监听器是否已开启“在访问日志中记录自定义header”的功能：on：表示该功能已开启。off：表示该功能未开启。
+        Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
         """
         return pulumi.get(self, "access_log_record_customized_headers_enabled")
 
@@ -135,7 +135,7 @@ class GetListenerResult:
     @pulumi.getter(name="aclIds")
     def acl_ids(self) -> Sequence[builtins.str]:
         """
-        监听器绑定的访问控制策略组 ID。当AclStatus参数配置为 on 时，AclIds为必填参数。
+        Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
         """
         return pulumi.get(self, "acl_ids")
 
@@ -143,7 +143,7 @@ class GetListenerResult:
     @pulumi.getter(name="aclStatus")
     def acl_status(self) -> builtins.str:
         """
-        是否开启访问控制功能。取值如下：on：开启。off ：不开启（默认）。
+        Enable access control. Values: on: enabled. off: disabled (default).
         """
         return pulumi.get(self, "acl_status")
 
@@ -151,7 +151,7 @@ class GetListenerResult:
     @pulumi.getter(name="aclType")
     def acl_type(self) -> builtins.str:
         """
-        访问控制的方式，取值如下：white：白名单方式。表示监听器仅转发来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器不会转发任何请求。black：黑名单方式。表示仅拒绝来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器会转发全部请求。当AclStatus参数配置为 on 时，AclType为必填参数。
+        Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
         """
         return pulumi.get(self, "acl_type")
 
@@ -159,7 +159,7 @@ class GetListenerResult:
     @pulumi.getter(name="caCertificateId")
     def ca_certificate_id(self) -> builtins.str:
         """
-        HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 alb 时，必须指定 CACertificateId 参数。
+        CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
         """
         return pulumi.get(self, "ca_certificate_id")
 
@@ -167,7 +167,7 @@ class GetListenerResult:
     @pulumi.getter(name="caCertificateSource")
     def ca_certificate_source(self) -> builtins.str:
         """
-        HTTPS 监听器关联的 CA 证书的来源，用于双向认证。alb（默认）：表示通过 ALB 上传的证书。标准版 ALB 实例不支持此来源的证书。pca*root：表示通过火山引擎证书中心购买或上传的私有根 CA 证书。pca*sub：表示通过火山引擎证书中心购买或上传的私有子 CA 证书。
+        Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
         """
         return pulumi.get(self, "ca_certificate_source")
 
@@ -175,7 +175,7 @@ class GetListenerResult:
     @pulumi.getter(name="certCenterCertificateId")
     def cert_center_certificate_id(self) -> builtins.str:
         """
-        HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 cert_center 时必传。
+        Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
         """
         return pulumi.get(self, "cert_center_certificate_id")
 
@@ -183,7 +183,7 @@ class GetListenerResult:
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> builtins.str:
         """
-        HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 alb 时必传。
+        Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -191,7 +191,7 @@ class GetListenerResult:
     @pulumi.getter(name="certificateSource")
     def certificate_source(self) -> builtins.str:
         """
-        HTTPS监听器关联的默认证书的来源，取值：alb：表示通过 ALB 上传的证书。cert*center：表示通过火山引擎证书中心购买或上传的 SSL 证书。pca*leaf：表示通过火山引擎证书中心购买或上传的私有叶子证书。
+        The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
         """
         return pulumi.get(self, "certificate_source")
 
@@ -199,7 +199,7 @@ class GetListenerResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        监听器的创建时间。
+        Listener creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -207,7 +207,7 @@ class GetListenerResult:
     @pulumi.getter(name="customizedCfgId")
     def customized_cfg_id(self) -> builtins.str:
         """
-        个性化配置ID，未绑定时值为空字符串。
+        Personalized configuration ID. If not bound, the value is an empty string.
         """
         return pulumi.get(self, "customized_cfg_id")
 
@@ -215,7 +215,7 @@ class GetListenerResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        监听器的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+        Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -223,7 +223,7 @@ class GetListenerResult:
     @pulumi.getter(name="domainExtensions")
     def domain_extensions(self) -> Sequence['outputs.GetListenerDomainExtensionResult']:
         """
-        HTTPS监听器关联的扩展域名列表。一个HTTPS监听器能关联的扩展域名上限为20个。
+        List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
         """
         return pulumi.get(self, "domain_extensions")
 
@@ -231,7 +231,7 @@ class GetListenerResult:
     @pulumi.getter(name="enableHttp2")
     def enable_http2(self) -> builtins.str:
         """
-        HTTP2.0 特性开关，该参数仅对 HTTPS 监听器有效。取值如下：on：开启。off：关闭（默认）。
+        HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
         """
         return pulumi.get(self, "enable_http2")
 
@@ -239,7 +239,7 @@ class GetListenerResult:
     @pulumi.getter(name="enableQuic")
     def enable_quic(self) -> builtins.str:
         """
-        QUIC 特性开关，该参数仅对 HTTPS 监听器有效，取值如下：on：开启。off：关闭（默认）。只有标准版 ALB 实例支持 QUIC。
+        QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
         """
         return pulumi.get(self, "enable_quic")
 
@@ -247,7 +247,7 @@ class GetListenerResult:
     @pulumi.getter
     def enabled(self) -> builtins.str:
         """
-        监听器开启/关闭，取值如下：on：开启（默认）。off：关闭。
+        Listener on/off status. Values: on: On (default). off: Off.
         """
         return pulumi.get(self, "enabled")
 
@@ -263,7 +263,7 @@ class GetListenerResult:
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> builtins.str:
         """
-        监听器 ID。
+        Listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -271,7 +271,7 @@ class GetListenerResult:
     @pulumi.getter(name="listenerName")
     def listener_name(self) -> builtins.str:
         """
-        监听器的名字。不填写时以“协议-端口”格式命名。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1-128字符之间。
+        Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "listener_name")
 
@@ -279,7 +279,7 @@ class GetListenerResult:
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> builtins.str:
         """
-        监听器所属的负载均衡实例 ID。
+        Load balancer instance ID to which the listener belongs.
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -287,7 +287,7 @@ class GetListenerResult:
     @pulumi.getter(name="pcaLeafCertificateId")
     def pca_leaf_certificate_id(self) -> builtins.str:
         """
-        HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+        Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
         """
         return pulumi.get(self, "pca_leaf_certificate_id")
 
@@ -295,7 +295,7 @@ class GetListenerResult:
     @pulumi.getter(name="pcaRootCaCertificateId")
     def pca_root_ca_certificate_id(self) -> builtins.str:
         """
-        HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_root 时，必须指定 PcaRootCACertificateId 参数。
+        CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
         """
         return pulumi.get(self, "pca_root_ca_certificate_id")
 
@@ -303,7 +303,7 @@ class GetListenerResult:
     @pulumi.getter(name="pcaSubCaCertificateId")
     def pca_sub_ca_certificate_id(self) -> builtins.str:
         """
-        HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_sub 时，必须指定 PcaSubCACertificateId 参数。
+        CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
         """
         return pulumi.get(self, "pca_sub_ca_certificate_id")
 
@@ -311,7 +311,7 @@ class GetListenerResult:
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        监听器的监听端口，取值：1   - 65535 。
+        The listener port. Values: 1   - 65535.
         """
         return pulumi.get(self, "port")
 
@@ -319,7 +319,7 @@ class GetListenerResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        监听器所属项目名称。
+        Name of the project to which the listener belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -327,7 +327,7 @@ class GetListenerResult:
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        监听器的协议，支持 HTTP 协议和 HTTPS 协议。
+        Listener protocol. Supports HTTP and HTTPS protocols.
         """
         return pulumi.get(self, "protocol")
 
@@ -335,7 +335,7 @@ class GetListenerResult:
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> builtins.str:
         """
-        监听器的默认服务器组。
+        Default server group for the listener.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -343,7 +343,7 @@ class GetListenerResult:
     @pulumi.getter(name="serverGroups")
     def server_groups(self) -> Sequence['outputs.GetListenerServerGroupResult']:
         """
-        关联监听器的所有服务器组。
+        All server groups associated with the listener.
         """
         return pulumi.get(self, "server_groups")
 
@@ -351,7 +351,7 @@ class GetListenerResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        监听器的状态。取值如下：Creating：创建中。Active： 运行中。Pending： 变配中。Disabled：已停止。Deleting：删除中。
+        Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
         """
         return pulumi.get(self, "status")
 
@@ -359,7 +359,7 @@ class GetListenerResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetListenerTagResult']:
         """
-        监听器所属标签。
+        Listener tags.
         """
         return pulumi.get(self, "tags")
 
@@ -367,7 +367,7 @@ class GetListenerResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        监听器最近一次的操作时间。
+        Time of the listener's most recent operation.
         """
         return pulumi.get(self, "updated_time")
 

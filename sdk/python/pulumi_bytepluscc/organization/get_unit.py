@@ -72,7 +72,7 @@ class GetUnitResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -80,7 +80,7 @@ class GetUnitResult:
     @pulumi.getter(name="deleteUk")
     def delete_uk(self) -> builtins.str:
         """
-        删除标识。
+        Deletion flag.
         """
         return pulumi.get(self, "delete_uk")
 
@@ -88,7 +88,7 @@ class GetUnitResult:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> builtins.str:
         """
-        删除时间。
+        Deletion time.
         """
         return pulumi.get(self, "deleted_time")
 
@@ -96,7 +96,7 @@ class GetUnitResult:
     @pulumi.getter
     def depth(self) -> builtins.int:
         """
-        深度。
+        Depth.
         """
         return pulumi.get(self, "depth")
 
@@ -104,7 +104,7 @@ class GetUnitResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        描述。
+        Description.
         """
         return pulumi.get(self, "description")
 
@@ -120,7 +120,7 @@ class GetUnitResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        组织单元名称。
+        Organizational unit name.
         """
         return pulumi.get(self, "name")
 
@@ -128,7 +128,7 @@ class GetUnitResult:
     @pulumi.getter(name="orgId")
     def org_id(self) -> builtins.str:
         """
-        组织ID。
+        Organization ID.
         """
         return pulumi.get(self, "org_id")
 
@@ -136,7 +136,7 @@ class GetUnitResult:
     @pulumi.getter(name="orgType")
     def org_type(self) -> builtins.int:
         """
-        组织类型。企业组织： 1
+        Organization type. Enterprise organization: 1
         """
         return pulumi.get(self, "org_type")
 
@@ -144,7 +144,7 @@ class GetUnitResult:
     @pulumi.getter(name="orgUnitId")
     def org_unit_id(self) -> builtins.str:
         """
-        组织单元ID。
+        Organizational unit ID.
         """
         return pulumi.get(self, "org_unit_id")
 
@@ -152,7 +152,7 @@ class GetUnitResult:
     @pulumi.getter
     def owner(self) -> builtins.str:
         """
-        管理员ID。
+        Administrator ID.
         """
         return pulumi.get(self, "owner")
 
@@ -160,7 +160,7 @@ class GetUnitResult:
     @pulumi.getter(name="parentId")
     def parent_id(self) -> builtins.str:
         """
-        父单元Id。
+        Parent unit ID.
         """
         return pulumi.get(self, "parent_id")
 
@@ -168,7 +168,7 @@ class GetUnitResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "updated_time")
 

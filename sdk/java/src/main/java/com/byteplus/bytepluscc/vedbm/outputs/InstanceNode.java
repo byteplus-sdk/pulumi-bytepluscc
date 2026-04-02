@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceNode {
     /**
-     * @return 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+     * @return Node failover priority. Range: 0~15. Higher values indicate higher priority
      * 
      */
     private @Nullable Integer failoverPriority;
     /**
-     * @return 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+     * @return Node type. Values: Primary: primary node. ReadOnly: read-only node.
      * 
      */
     private @Nullable String nodeType;
 
     private InstanceNode() {}
     /**
-     * @return 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+     * @return Node failover priority. Range: 0~15. Higher values indicate higher priority
      * 
      */
     public Optional<Integer> failoverPriority() {
         return Optional.ofNullable(this.failoverPriority);
     }
     /**
-     * @return 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+     * @return Node type. Values: Primary: primary node. ReadOnly: read-only node.
      * 
      */
     public Optional<String> nodeType() {

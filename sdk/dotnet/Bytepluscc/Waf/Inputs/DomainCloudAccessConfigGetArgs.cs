@@ -14,49 +14,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Inputs
     public sealed class DomainCloudAccessConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 接入协议类型。
+        /// Access protocol type
         /// </summary>
         [Input("accessProtocol")]
         public Input<string>? AccessProtocol { get; set; }
 
         /// <summary>
-        /// 防护模式。
+        /// Protection mode
         /// </summary>
         [Input("defenceMode")]
         public Input<int>? DefenceMode { get; set; }
 
         /// <summary>
-        /// 负载均衡实例 ID。
+        /// Load balancing instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 负载均衡实例名称。
+        /// Load balancer instance name.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 负载均衡监听器 ID。
+        /// Load balancing listener ID.
         /// </summary>
         [Input("listenerId")]
         public Input<string>? ListenerId { get; set; }
 
         /// <summary>
-        /// 是否从 ALB 中丢失关联。
+        /// Disassociated from ALB
         /// </summary>
         [Input("lostAssociationFromAlb")]
         public Input<int>? LostAssociationFromAlb { get; set; }
 
         /// <summary>
-        /// 监听器转发规则的端口号。
+        /// Listener forwarding rule port number
         /// </summary>
         [Input("port")]
         public Input<string>? Port { get; set; }
 
         /// <summary>
-        /// 监听器转发规则的协议类型。
+        /// Protocol type for listener forwarding rules.
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }

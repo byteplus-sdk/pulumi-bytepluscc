@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NlbListenerTag {
     /**
-     * @return 标签键。
+     * @return Tag key
      * 
      */
     private @Nullable String key;
     /**
-     * @return 标签值。
+     * @return Tag value
      * 
      */
     private @Nullable String value;
 
     private NlbListenerTag() {}
     /**
-     * @return 标签键。
+     * @return Tag key
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 标签值。
+     * @return Tag value
      * 
      */
     public Optional<String> value() {

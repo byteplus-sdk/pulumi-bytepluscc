@@ -31,35 +31,35 @@ export interface GetTransitRouterArgs {
  */
 export interface GetTransitRouterResult {
     /**
-     * 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+     * ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
      */
     readonly asn: number;
     /**
-     * 网络实例连接的详细信息。
+     * Detailed information of the network instance connection
      */
     readonly attachments: outputs.transitrouter.GetTransitRouterAttachment[];
     /**
-     * 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+     * Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
      */
     readonly businessStatus: string;
     /**
-     * 网络实例连接的创建时间。
+     * Creation time of the network instance connection.
      */
     readonly creationTime: string;
     /**
-     * 网络实例连接的删除时间。
+     * Deletion time of the network instance connection.
      */
     readonly deletedTime: string;
     /**
-     * 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
      */
     readonly description: string;
     /**
-     * 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     * Sharing method of the transit router instance. rs: Shared via platform resource sharing. tr: Shared via transit router instance sharing
      */
     readonly grantSourceType: string;
     /**
-     * 实例共享的状态。Accepted：已接受。Initial：待接受。
+     * Instance sharing status. Accepted: Received. Initial: Pending acceptance.
      */
     readonly grantStatus: string;
     /**
@@ -67,35 +67,35 @@ export interface GetTransitRouterResult {
      */
     readonly id: string;
     /**
-     * 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
      */
     readonly multicastEnabled: boolean;
     /**
-     * 中转路由器实例的欠费关停时间。
+     * Shutdown time due to overdue payment for the transit router instance
      */
     readonly overdueTime: string;
     /**
-     * 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+     * Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is 'default'
      */
     readonly projectName: string;
     /**
-     * 中转路由器实例的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+     * Status of the transit router instance. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      */
     readonly status: string;
     /**
-     * 标签列表
+     * Tag list
      */
     readonly tags: outputs.transitrouter.GetTransitRouterTag[];
     /**
-     * 中转路由器实例的ID。
+     * Transit router instance ID.
      */
     readonly transitRouterId: string;
     /**
-     * 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+     * Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
      */
     readonly transitRouterName: string;
     /**
-     * 中转路由器实例的最近操作时间。
+     * Last operation time of the transit router instance
      */
     readonly updateTime: string;
 }

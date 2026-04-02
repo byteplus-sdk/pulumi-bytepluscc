@@ -29,9 +29,9 @@ class DnsControlPolicyDomainListV1(dict):
                  description: Optional[builtins.str] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str address: 具体地址信息。
-        :param builtins.str description: 描述信息。
-        :param builtins.str type: 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+        :param builtins.str address: Specific address information.
+        :param builtins.str description: Description information.
+        :param builtins.str type: Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
         """
         if address is not None:
             pulumi.set(__self__, "address", address)
@@ -44,7 +44,7 @@ class DnsControlPolicyDomainListV1(dict):
     @pulumi.getter
     def address(self) -> Optional[builtins.str]:
         """
-        具体地址信息。
+        Specific address information.
         """
         return pulumi.get(self, "address")
 
@@ -52,7 +52,7 @@ class DnsControlPolicyDomainListV1(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        描述信息。
+        Description information.
         """
         return pulumi.get(self, "description")
 
@@ -60,7 +60,7 @@ class DnsControlPolicyDomainListV1(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+        Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
         """
         return pulumi.get(self, "type")
 
@@ -88,7 +88,7 @@ class DnsControlPolicySource(dict):
                  region: Optional[builtins.str] = None,
                  vpc_id: Optional[builtins.str] = None):
         """
-        :param builtins.str region: VPC地域信息。
+        :param builtins.str region: VPC region information.
         :param builtins.str vpc_id: VPC ID。
         """
         if region is not None:
@@ -100,7 +100,7 @@ class DnsControlPolicySource(dict):
     @pulumi.getter
     def region(self) -> Optional[builtins.str]:
         """
-        VPC地域信息。
+        VPC region information.
         """
         return pulumi.get(self, "region")
 
@@ -120,9 +120,9 @@ class GetDnsControlPolicyDomainListV1Result(dict):
                  description: builtins.str,
                  type: builtins.str):
         """
-        :param builtins.str address: 具体地址信息。
-        :param builtins.str description: 描述信息。
-        :param builtins.str type: 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+        :param builtins.str address: Specific address information.
+        :param builtins.str description: Description information.
+        :param builtins.str type: Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
         """
         pulumi.set(__self__, "address", address)
         pulumi.set(__self__, "description", description)
@@ -132,7 +132,7 @@ class GetDnsControlPolicyDomainListV1Result(dict):
     @pulumi.getter
     def address(self) -> builtins.str:
         """
-        具体地址信息。
+        Specific address information.
         """
         return pulumi.get(self, "address")
 
@@ -140,7 +140,7 @@ class GetDnsControlPolicyDomainListV1Result(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        描述信息。
+        Description information.
         """
         return pulumi.get(self, "description")
 
@@ -148,7 +148,7 @@ class GetDnsControlPolicyDomainListV1Result(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+        Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
         """
         return pulumi.get(self, "type")
 
@@ -159,7 +159,7 @@ class GetDnsControlPolicySourceResult(dict):
                  region: builtins.str,
                  vpc_id: builtins.str):
         """
-        :param builtins.str region: VPC地域信息。
+        :param builtins.str region: VPC region information.
         :param builtins.str vpc_id: VPC ID。
         """
         pulumi.set(__self__, "region", region)
@@ -169,7 +169,7 @@ class GetDnsControlPolicySourceResult(dict):
     @pulumi.getter
     def region(self) -> builtins.str:
         """
-        VPC地域信息。
+        VPC region information.
         """
         return pulumi.get(self, "region")
 

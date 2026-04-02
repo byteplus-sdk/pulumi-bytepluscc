@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 专线网关是本地数据中心访问云上的入口，用于连接私有网络（VPC）与物理专线，实现云下数据中心（IDC）和云上私有网络（VPC）互访。
+ * The Direct Connect Gateway is the entry point for local data centers to access the cloud. It connects private networks (VPC) and physical dedicated connections, enabling mutual access between on-premises data centers (IDC) and cloud private networks (VPC).
  *
  * ## Example Usage
  *
@@ -62,65 +62,65 @@ export class DirectConnectGateway extends pulumi.CustomResource {
     }
 
     /**
-     * 专线网关所属账号的ID。
+     * ID of the account to which the Direct Connect Gateway belongs.
      */
     public /*out*/ readonly accountId!: pulumi.Output<string>;
     public /*out*/ readonly associateCens!: pulumi.Output<outputs.directconnect.DirectConnectGatewayAssociateCen[]>;
     /**
-     * 关联的EIC信息。
+     * Associated EIC information.
      */
     public /*out*/ readonly associateEic!: pulumi.Output<outputs.directconnect.DirectConnectGatewayAssociateEic>;
     /**
-     * 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
+     * ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
      */
     public readonly bgpAsn!: pulumi.Output<number>;
     /**
-     * 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
+     * Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
      */
     public /*out*/ readonly businessStatus!: pulumi.Output<string>;
     /**
-     * 创建专线网关的时间。
+     * Time when the Direct Connect Gateway was created.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 预期资源强制回收时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
      */
     public /*out*/ readonly deletedTime!: pulumi.Output<string>;
     /**
-     * 专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 专线网关的ID。
+     * ID of the Direct Connect Gateway.
      */
     public /*out*/ readonly directConnectGatewayId!: pulumi.Output<string>;
     /**
-     * 专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
+     * Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
      */
     public readonly directConnectGatewayName!: pulumi.Output<string>;
     /**
-     * 是否支持IPv6。true：支持。false：不支持。
+     * Whether IPv6 is supported. true: supported. false: not supported.
      */
     public readonly enableIpv6!: pulumi.Output<boolean>;
     /**
-     * 专线网关被锁定的原因。unlock：解锁。financial：因欠费被锁定。security：因安全被锁定。
+     * Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
      */
     public /*out*/ readonly lockReason!: pulumi.Output<string>;
     /**
-     * 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
      */
     public /*out*/ readonly overdueTime!: pulumi.Output<string>;
     /**
-     * 专线网关所属的项目。
+     * Project to which the Direct Connect Gateway belongs.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 专线网关的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+     * Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.directconnect.DirectConnectGatewayTag[]>;
     /**
-     * 更新专线网关的时间。
+     * Time when the Direct Connect Gateway was updated.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -184,65 +184,65 @@ export class DirectConnectGateway extends pulumi.CustomResource {
  */
 export interface DirectConnectGatewayState {
     /**
-     * 专线网关所属账号的ID。
+     * ID of the account to which the Direct Connect Gateway belongs.
      */
     accountId?: pulumi.Input<string>;
     associateCens?: pulumi.Input<pulumi.Input<inputs.directconnect.DirectConnectGatewayAssociateCen>[]>;
     /**
-     * 关联的EIC信息。
+     * Associated EIC information.
      */
     associateEic?: pulumi.Input<inputs.directconnect.DirectConnectGatewayAssociateEic>;
     /**
-     * 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
+     * ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
      */
     bgpAsn?: pulumi.Input<number>;
     /**
-     * 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
+     * Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
      */
     businessStatus?: pulumi.Input<string>;
     /**
-     * 创建专线网关的时间。
+     * Time when the Direct Connect Gateway was created.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 预期资源强制回收时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
      */
     deletedTime?: pulumi.Input<string>;
     /**
-     * 专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
      */
     description?: pulumi.Input<string>;
     /**
-     * 专线网关的ID。
+     * ID of the Direct Connect Gateway.
      */
     directConnectGatewayId?: pulumi.Input<string>;
     /**
-     * 专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
+     * Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
      */
     directConnectGatewayName?: pulumi.Input<string>;
     /**
-     * 是否支持IPv6。true：支持。false：不支持。
+     * Whether IPv6 is supported. true: supported. false: not supported.
      */
     enableIpv6?: pulumi.Input<boolean>;
     /**
-     * 专线网关被锁定的原因。unlock：解锁。financial：因欠费被锁定。security：因安全被锁定。
+     * Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
      */
     lockReason?: pulumi.Input<string>;
     /**
-     * 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
      */
     overdueTime?: pulumi.Input<string>;
     /**
-     * 专线网关所属的项目。
+     * Project to which the Direct Connect Gateway belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 专线网关的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+     * Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.directconnect.DirectConnectGatewayTag>[]>;
     /**
-     * 更新专线网关的时间。
+     * Time when the Direct Connect Gateway was updated.
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -252,23 +252,23 @@ export interface DirectConnectGatewayState {
  */
 export interface DirectConnectGatewayArgs {
     /**
-     * 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
+     * ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
      */
     bgpAsn?: pulumi.Input<number>;
     /**
-     * 专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
      */
     description?: pulumi.Input<string>;
     /**
-     * 专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
+     * Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
      */
     directConnectGatewayName?: pulumi.Input<string>;
     /**
-     * 是否支持IPv6。true：支持。false：不支持。
+     * Whether IPv6 is supported. true: supported. false: not supported.
      */
     enableIpv6?: pulumi.Input<boolean>;
     /**
-     * 专线网关所属的项目。
+     * Project to which the Direct Connect Gateway belongs.
      */
     projectName?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.directconnect.DirectConnectGatewayTag>[]>;

@@ -19,14 +19,14 @@ public final class KeyMultiRegionConfigurationArgs extends com.pulumi.resources.
     public static final KeyMultiRegionConfigurationArgs Empty = new KeyMultiRegionConfigurationArgs();
 
     /**
-     * 多区域密钥的类型。
+     * Multi-region key type.
      * 
      */
     @Import(name="multiRegionKeyType")
     private @Nullable Output<String> multiRegionKeyType;
 
     /**
-     * @return 多区域密钥的类型。
+     * @return Multi-region key type.
      * 
      */
     public Optional<Output<String>> multiRegionKeyType() {
@@ -34,14 +34,14 @@ public final class KeyMultiRegionConfigurationArgs extends com.pulumi.resources.
     }
 
     /**
-     * 主多区域键的事务识别号和区域 ID。
+     * Primary multi-region key transaction identifier and region ID.
      * 
      */
     @Import(name="primaryKey")
     private @Nullable Output<KeyMultiRegionConfigurationPrimaryKeyArgs> primaryKey;
 
     /**
-     * @return 主多区域键的事务识别号和区域 ID。
+     * @return Primary multi-region key transaction identifier and region ID.
      * 
      */
     public Optional<Output<KeyMultiRegionConfigurationPrimaryKeyArgs>> primaryKey() {
@@ -82,7 +82,7 @@ public final class KeyMultiRegionConfigurationArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param multiRegionKeyType 多区域密钥的类型。
+         * @param multiRegionKeyType Multi-region key type.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class KeyMultiRegionConfigurationArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param multiRegionKeyType 多区域密钥的类型。
+         * @param multiRegionKeyType Multi-region key type.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class KeyMultiRegionConfigurationArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param primaryKey 主多区域键的事务识别号和区域 ID。
+         * @param primaryKey Primary multi-region key transaction identifier and region ID.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class KeyMultiRegionConfigurationArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param primaryKey 主多区域键的事务识别号和区域 ID。
+         * @param primaryKey Primary multi-region key transaction identifier and region ID.
          * 
          * @return builder
          * 

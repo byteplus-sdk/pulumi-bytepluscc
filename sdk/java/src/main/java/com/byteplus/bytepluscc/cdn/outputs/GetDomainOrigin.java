@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainOrigin {
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private GetDomainOriginCondition condition;
     /**
-     * @return 表示源站配置。
+     * @return Indicates origin configuration.
      * 
      */
     private GetDomainOriginOriginAction originAction;
 
     private GetDomainOrigin() {}
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public GetDomainOriginCondition condition() {
         return this.condition;
     }
     /**
-     * @return 表示源站配置。
+     * @return Indicates origin configuration.
      * 
      */
     public GetDomainOriginOriginAction originAction() {

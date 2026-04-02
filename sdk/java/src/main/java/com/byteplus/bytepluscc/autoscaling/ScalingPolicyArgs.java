@@ -21,14 +21,14 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
     public static final ScalingPolicyArgs Empty = new ScalingPolicyArgs();
 
     /**
-     * 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+     * Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
      * 
      */
     @Import(name="adjustmentType")
     private @Nullable Output<String> adjustmentType;
 
     /**
-     * @return 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+     * @return Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
      * 
      */
     public Optional<Output<String>> adjustmentType() {
@@ -36,14 +36,14 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+     * Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
      * 
      */
     @Import(name="adjustmentValue")
     private @Nullable Output<Integer> adjustmentValue;
 
     /**
-     * @return 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+     * @return Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
      * 
      */
     public Optional<Output<Integer>> adjustmentValue() {
@@ -51,14 +51,14 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 报警任务的详细信息。
+     * Detailed information about the alarm task.
      * 
      */
     @Import(name="alarmPolicy")
     private @Nullable Output<ScalingPolicyAlarmPolicyArgs> alarmPolicy;
 
     /**
-     * @return 报警任务的详细信息。
+     * @return Detailed information about the alarm task.
      * 
      */
     public Optional<Output<ScalingPolicyAlarmPolicyArgs>> alarmPolicy() {
@@ -66,14 +66,14 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+     * Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group&#39;s cooldown time is used by default.
      * 
      */
     @Import(name="cooldown")
     private @Nullable Output<Integer> cooldown;
 
     /**
-     * @return 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+     * @return Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group&#39;s cooldown time is used by default.
      * 
      */
     public Optional<Output<Integer>> cooldown() {
@@ -81,14 +81,14 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+     * Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
      * 
      */
     @Import(name="isEnabledPolicy")
     private @Nullable Output<Boolean> isEnabledPolicy;
 
     /**
-     * @return 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+     * @return Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
      * 
      */
     public Optional<Output<Boolean>> isEnabledPolicy() {
@@ -96,14 +96,14 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩组ID。
+     * Scaling group ID.
      * 
      */
     @Import(name="scalingGroupId", required=true)
     private Output<String> scalingGroupId;
 
     /**
-     * @return 伸缩组ID。
+     * @return Scaling group ID.
      * 
      */
     public Output<String> scalingGroupId() {
@@ -111,14 +111,14 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩规则名称。
+     * Name of the scaling rule.
      * 
      */
     @Import(name="scalingPolicyName", required=true)
     private Output<String> scalingPolicyName;
 
     /**
-     * @return 伸缩规则名称。
+     * @return Name of the scaling rule.
      * 
      */
     public Output<String> scalingPolicyName() {
@@ -126,14 +126,14 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+     * Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
      * 
      */
     @Import(name="scalingPolicyType", required=true)
     private Output<String> scalingPolicyType;
 
     /**
-     * @return 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+     * @return Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
      * 
      */
     public Output<String> scalingPolicyType() {
@@ -141,14 +141,14 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 定时任务/周期任务的详细信息。
+     * Detailed information for scheduled/recurring tasks.
      * 
      */
     @Import(name="scheduledPolicy")
     private @Nullable Output<ScalingPolicyScheduledPolicyArgs> scheduledPolicy;
 
     /**
-     * @return 定时任务/周期任务的详细信息。
+     * @return Detailed information for scheduled/recurring tasks.
      * 
      */
     public Optional<Output<ScalingPolicyScheduledPolicyArgs>> scheduledPolicy() {
@@ -188,7 +188,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param adjustmentType 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+         * @param adjustmentType Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param adjustmentType 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+         * @param adjustmentType Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param adjustmentValue 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+         * @param adjustmentValue Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param adjustmentValue 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+         * @param adjustmentValue Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alarmPolicy 报警任务的详细信息。
+         * @param alarmPolicy Detailed information about the alarm task.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alarmPolicy 报警任务的详细信息。
+         * @param alarmPolicy Detailed information about the alarm task.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cooldown 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+         * @param cooldown Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group&#39;s cooldown time is used by default.
          * 
          * @return builder
          * 
@@ -262,7 +262,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cooldown 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+         * @param cooldown Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group&#39;s cooldown time is used by default.
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEnabledPolicy 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+         * @param isEnabledPolicy Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEnabledPolicy 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+         * @param isEnabledPolicy Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scalingGroupId 伸缩组ID。
+         * @param scalingGroupId Scaling group ID.
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scalingGroupId 伸缩组ID。
+         * @param scalingGroupId Scaling group ID.
          * 
          * @return builder
          * 
@@ -314,7 +314,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scalingPolicyName 伸缩规则名称。
+         * @param scalingPolicyName Name of the scaling rule.
          * 
          * @return builder
          * 
@@ -325,7 +325,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scalingPolicyName 伸缩规则名称。
+         * @param scalingPolicyName Name of the scaling rule.
          * 
          * @return builder
          * 
@@ -335,7 +335,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scalingPolicyType 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+         * @param scalingPolicyType Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
          * 
          * @return builder
          * 
@@ -346,7 +346,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scalingPolicyType 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+         * @param scalingPolicyType Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
          * 
          * @return builder
          * 
@@ -356,7 +356,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scheduledPolicy 定时任务/周期任务的详细信息。
+         * @param scheduledPolicy Detailed information for scheduled/recurring tasks.
          * 
          * @return builder
          * 
@@ -367,7 +367,7 @@ public final class ScalingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scheduledPolicy 定时任务/周期任务的详细信息。
+         * @param scheduledPolicy Detailed information for scheduled/recurring tasks.
          * 
          * @return builder
          * 

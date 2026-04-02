@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class InstanceNode
     {
         /// <summary>
-        /// 节点规格。
+        /// Node specification.
         /// </summary>
         public readonly string NodeSpec;
         /// <summary>
-        /// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+        /// Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
         /// </summary>
         public readonly string NodeType;
         /// <summary>
-        /// 可用区 ID。
+        /// Availability zone ID
         /// </summary>
         public readonly string ZoneId;
 

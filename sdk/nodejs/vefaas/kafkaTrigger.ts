@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 函数服务支持对接消息队列 Kafka 版。通过创建 Kafka 触发器，函数服务将作为消费者消费 Kafka 中的消息，并将消息传递给用户函数，触发函数代码逻辑。您无需关心函数服务消费消息的细节，只需编写处理消息的函数。
+ * Function service supports integration with Kafka message queue. By creating a Kafka trigger, the function service acts as a consumer to consume messages from Kafka and passes them to your function, triggering your function logic. You do not need to handle the details of message consumption; just write the function to process messages.
  *
  * ## Example Usage
  *
@@ -69,67 +69,67 @@ export class KafkaTrigger extends pulumi.CustomResource {
     }
 
     /**
-     * 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+     * Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
      */
     public readonly batchFlushDurationMilliseconds!: pulumi.Output<number>;
     /**
-     * 触发器批量消费的每批次消息数。
+     * Number of messages per batch for trigger batch consumption.
      */
     public readonly batchSize!: pulumi.Output<number>;
     /**
-     * 消息队列 Kafka 实例的消费组名字。
+     * Consumer group name of the Kafka message queue instance.
      */
     public /*out*/ readonly consumerGroup!: pulumi.Output<string>;
     /**
-     * Kafka 触发器创建时间。
+     * Kafka trigger creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * Kafka 触发器描述。长度限制为 200 个字符以内。
+     * Description of the Kafka trigger. Limited to 200 characters.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+     * Enable the trigger when creating it. Options: true—enable. false—disable.
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
-     * 函数 ID。
+     * Function ID.
      */
     public readonly functionId!: pulumi.Output<string>;
     /**
-     * Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+     * Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
      */
     public readonly kafkaCredentials!: pulumi.Output<outputs.vefaas.KafkaTriggerKafkaCredentials>;
     /**
-     * Kafka 触发器 ID。
+     * Kafka trigger ID.
      */
     public /*out*/ readonly kafkaTriggerId!: pulumi.Output<string>;
     /**
-     * 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+     * Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
      */
     public readonly maximumRetryAttempts!: pulumi.Output<number>;
     /**
-     * 消息队列 Kafka 实例 ID。
+     * Kafka message queue instance ID.
      */
     public readonly mqInstanceId!: pulumi.Output<string>;
     /**
-     * Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+     * Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+     * Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
      */
     public readonly startingPosition!: pulumi.Output<string>;
     /**
-     * Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+     * Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 消息队列 Kafka 实例的 Topic 名称。
+     * Topic name of the Kafka message queue instance.
      */
     public readonly topicName!: pulumi.Output<string>;
     /**
-     * Kafka 触发器最近一次更新时间。
+     * Last update time of the Kafka trigger.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -206,67 +206,67 @@ export class KafkaTrigger extends pulumi.CustomResource {
  */
 export interface KafkaTriggerState {
     /**
-     * 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+     * Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
      */
     batchFlushDurationMilliseconds?: pulumi.Input<number>;
     /**
-     * 触发器批量消费的每批次消息数。
+     * Number of messages per batch for trigger batch consumption.
      */
     batchSize?: pulumi.Input<number>;
     /**
-     * 消息队列 Kafka 实例的消费组名字。
+     * Consumer group name of the Kafka message queue instance.
      */
     consumerGroup?: pulumi.Input<string>;
     /**
-     * Kafka 触发器创建时间。
+     * Kafka trigger creation time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * Kafka 触发器描述。长度限制为 200 个字符以内。
+     * Description of the Kafka trigger. Limited to 200 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+     * Enable the trigger when creating it. Options: true—enable. false—disable.
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * 函数 ID。
+     * Function ID.
      */
     functionId?: pulumi.Input<string>;
     /**
-     * Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+     * Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
      */
     kafkaCredentials?: pulumi.Input<inputs.vefaas.KafkaTriggerKafkaCredentials>;
     /**
-     * Kafka 触发器 ID。
+     * Kafka trigger ID.
      */
     kafkaTriggerId?: pulumi.Input<string>;
     /**
-     * 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+     * Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
      */
     maximumRetryAttempts?: pulumi.Input<number>;
     /**
-     * 消息队列 Kafka 实例 ID。
+     * Kafka message queue instance ID.
      */
     mqInstanceId?: pulumi.Input<string>;
     /**
-     * Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+     * Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
      */
     name?: pulumi.Input<string>;
     /**
-     * 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+     * Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
      */
     startingPosition?: pulumi.Input<string>;
     /**
-     * Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+     * Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
      */
     status?: pulumi.Input<string>;
     /**
-     * 消息队列 Kafka 实例的 Topic 名称。
+     * Topic name of the Kafka message queue instance.
      */
     topicName?: pulumi.Input<string>;
     /**
-     * Kafka 触发器最近一次更新时间。
+     * Last update time of the Kafka trigger.
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -276,47 +276,47 @@ export interface KafkaTriggerState {
  */
 export interface KafkaTriggerArgs {
     /**
-     * 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+     * Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
      */
     batchFlushDurationMilliseconds?: pulumi.Input<number>;
     /**
-     * 触发器批量消费的每批次消息数。
+     * Number of messages per batch for trigger batch consumption.
      */
     batchSize?: pulumi.Input<number>;
     /**
-     * Kafka 触发器描述。长度限制为 200 个字符以内。
+     * Description of the Kafka trigger. Limited to 200 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+     * Enable the trigger when creating it. Options: true—enable. false—disable.
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * 函数 ID。
+     * Function ID.
      */
     functionId: pulumi.Input<string>;
     /**
-     * Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+     * Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
      */
     kafkaCredentials: pulumi.Input<inputs.vefaas.KafkaTriggerKafkaCredentials>;
     /**
-     * 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+     * Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
      */
     maximumRetryAttempts?: pulumi.Input<number>;
     /**
-     * 消息队列 Kafka 实例 ID。
+     * Kafka message queue instance ID.
      */
     mqInstanceId: pulumi.Input<string>;
     /**
-     * Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+     * Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
      */
     name: pulumi.Input<string>;
     /**
-     * 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+     * Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
      */
     startingPosition?: pulumi.Input<string>;
     /**
-     * 消息队列 Kafka 实例的 Topic 名称。
+     * Topic name of the Kafka message queue instance.
      */
     topicName: pulumi.Input<string>;
 }

@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 企业组织管理
+ * Enterprise Organization Management
  *
  * ## Example Usage
  *
@@ -53,15 +53,15 @@ export class Organization extends pulumi.CustomResource {
     }
 
     /**
-     * 组织详情
+     * Organization Details
      */
     public readonly organization!: pulumi.Output<outputs.organization.OrganizationOrganization>;
     /**
-     * 组织ID
+     * Organization ID
      */
     public /*out*/ readonly organizationId!: pulumi.Output<string>;
     /**
-     * 管理员详情
+     * Administrator Details
      */
     public readonly owner!: pulumi.Output<outputs.organization.OrganizationOwner>;
 
@@ -97,15 +97,15 @@ export class Organization extends pulumi.CustomResource {
  */
 export interface OrganizationState {
     /**
-     * 组织详情
+     * Organization Details
      */
     organization?: pulumi.Input<inputs.organization.OrganizationOrganization>;
     /**
-     * 组织ID
+     * Organization ID
      */
     organizationId?: pulumi.Input<string>;
     /**
-     * 管理员详情
+     * Administrator Details
      */
     owner?: pulumi.Input<inputs.organization.OrganizationOwner>;
 }
@@ -115,11 +115,11 @@ export interface OrganizationState {
  */
 export interface OrganizationArgs {
     /**
-     * 组织详情
+     * Organization Details
      */
     organization?: pulumi.Input<inputs.organization.OrganizationOrganization>;
     /**
-     * 管理员详情
+     * Administrator Details
      */
     owner?: pulumi.Input<inputs.organization.OrganizationOwner>;
 }

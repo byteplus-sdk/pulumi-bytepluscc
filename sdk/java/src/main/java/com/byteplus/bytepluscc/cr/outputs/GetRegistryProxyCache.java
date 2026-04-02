@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryProxyCache {
     /**
-     * @return ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+     * @return Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
      * 
      */
     private String type;
 
     private GetRegistryProxyCache() {}
     /**
-     * @return ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+     * @return Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
      * 
      */
     public String type() {

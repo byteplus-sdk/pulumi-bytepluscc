@@ -18,14 +18,14 @@ public final class ClusterLoggingConfigArgs extends com.pulumi.resources.Resourc
     public static final ClusterLoggingConfigArgs Empty = new ClusterLoggingConfigArgs();
 
     /**
-     * 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+     * Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
      * 
      */
     @Import(name="logProjectId")
     private @Nullable Output<String> logProjectId;
 
     /**
-     * @return 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+     * @return Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
      * 
      */
     public Optional<Output<String>> logProjectId() {
@@ -65,7 +65,7 @@ public final class ClusterLoggingConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param logProjectId 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+         * @param logProjectId Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class ClusterLoggingConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param logProjectId 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+         * @param logProjectId Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
          * 
          * @return builder
          * 

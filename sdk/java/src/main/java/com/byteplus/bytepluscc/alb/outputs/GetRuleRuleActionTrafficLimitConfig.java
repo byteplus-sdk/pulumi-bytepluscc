@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleRuleActionTrafficLimitConfig {
     /**
-     * @return 每秒请求数。
+     * @return Requests per second.
      * 
      */
     private Integer qps;
 
     private GetRuleRuleActionTrafficLimitConfig() {}
     /**
-     * @return 每秒请求数。
+     * @return Requests per second.
      * 
      */
     public Integer qps() {

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
 {
     /// <summary>
-    /// 云数据库 SQL Server 版是基于世界一流的商用型数据库产品 Microsoft SQL Server 打造的一种稳定、可靠、可弹性伸缩的在线数据库服务。实例是使用云数据库 SQL Server 版的第一步
+    /// Cloud Database SQL Server Edition is a stable, reliable, and scalable online database service built on the world-class commercial database product Microsoft SQL Server. Creating an instance is the first step to using Cloud Database SQL Server Edition
     /// 
     /// ## Import
     /// 
@@ -23,25 +23,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
     public partial class Instance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{"Key":"Value"}
+        /// Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
         /// </summary>
         [Output("advancedFeatures")]
         public Output<string> AdvancedFeatures { get; private set; } = null!;
 
         /// <summary>
-        /// 允许访问的白名单ID列表。
+        /// Allowlist ID list permitted for access.
         /// </summary>
         [Output("allowListIds")]
         public Output<ImmutableArray<string>> AllowListIds { get; private set; } = null!;
 
         /// <summary>
-        /// 实例已用备份空间。单位：GiB。
+        /// Used backup space for the instance, in GiB.
         /// </summary>
         [Output("backupUse")]
         public Output<double> BackupUse { get; private set; } = null!;
 
         /// <summary>
-        /// 付费方式。
+        /// Payment method.
         /// </summary>
         [Output("chargeInfo")]
         public Output<Outputs.InstanceChargeInfo> ChargeInfo { get; private set; } = null!;
@@ -50,67 +50,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         public Output<ImmutableArray<Outputs.InstanceConnectionInfo>> ConnectionInfos { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+        /// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
         /// </summary>
         [Output("dbEngineVersion")]
         public Output<string> DbEngineVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 内核版本号。
+        /// Kernel version number.
         /// </summary>
         [Output("innerVersion")]
         public Output<string> InnerVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 实例分类。取值：Primary：主实例。ReadOnly：只读实例。
+        /// Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
         /// </summary>
         [Output("instanceCategory")]
         public Output<string> InstanceCategory { get; private set; } = null!;
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID.
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+        /// Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
         /// </summary>
         [Output("instanceName")]
         public Output<string> InstanceName { get; private set; } = null!;
 
         /// <summary>
-        /// 实例状态，取值：Running：运行中。Creating：创建中。CreateFailed：创建失败。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主节点切换中。Error：错误。
+        /// Instance status. Values: Running: running. Creating: creating. CreateFailed: creation failed. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: primary node switching. Error: error.
         /// </summary>
         [Output("instanceStatus")]
         public Output<string> InstanceStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+        /// Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
         /// </summary>
         [Output("instanceType")]
         public Output<string> InstanceType { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+        /// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
         /// </summary>
         [Output("maintenanceTime")]
         public Output<string> MaintenanceTime { get; private set; } = null!;
 
         /// <summary>
-        /// 主节点ID。手动切换主备节点时，该参数为必填项。
+        /// Primary node ID. This parameter is required when manually switching master and standby nodes.
         /// </summary>
         [Output("masterNodeId")]
         public Output<string> MasterNodeId { get; private set; } = null!;
 
         /// <summary>
-        /// 内存大小，单位为 GiB。
+        /// Memory size, in GiB.
         /// </summary>
         [Output("memory")]
         public Output<int> Memory { get; private set; } = null!;
@@ -119,79 +119,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         public Output<ImmutableArray<Outputs.InstanceNodeDetailInfo>> NodeDetailInfos { get; private set; } = null!;
 
         /// <summary>
-        /// 实例规格代码。
+        /// Instance specification code.
         /// </summary>
         [Output("nodeSpec")]
         public Output<string> NodeSpec { get; private set; } = null!;
 
         /// <summary>
-        /// 端口
+        /// Port.
         /// </summary>
         [Output("port")]
         public Output<string> Port { get; private set; } = null!;
 
         /// <summary>
-        /// 主实例ID。如果为空说明它是主实例。
+        /// Primary instance ID. If this field is empty, this instance is the primary instance.
         /// </summary>
         [Output("primaryInstanceId")]
         public Output<string> PrimaryInstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 所属项目。
+        /// Project.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 只读实例数量。
+        /// Number of read-only instances.
         /// </summary>
         [Output("readOnlyNumber")]
         public Output<int> ReadOnlyNumber { get; private set; } = null!;
 
         /// <summary>
-        /// 实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+        /// Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
         /// </summary>
         [Output("serverCollation")]
         public Output<string> ServerCollation { get; private set; } = null!;
 
         /// <summary>
-        /// 表示是否开启慢日志，取值如下：true：表示开启慢日志。false：表示不开启慢日志。
+        /// Indicates whether slow logs are enabled. Available values: true: slow logs enabled. false: slow logs disabled.
         /// </summary>
         [Output("slowQueryEnable")]
         public Output<bool> SlowQueryEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 慢日志的阈值，取值范围为 [1~10]，单位：秒（s）。
+        /// Slow log threshold. Range: [1~10], unit: seconds (s).
         /// </summary>
         [Output("slowQueryTime")]
         public Output<string> SlowQueryTime { get; private set; } = null!;
 
         /// <summary>
-        /// 存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+        /// Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
         /// </summary>
         [Output("storageSpace")]
         public Output<int> StorageSpace { get; private set; } = null!;
 
         /// <summary>
-        /// 实例存储类型。
+        /// Instance storage type.
         /// </summary>
         [Output("storageType")]
         public Output<string> StorageType { get; private set; } = null!;
 
         /// <summary>
-        /// 实例已用储空间。单位：GiB。
+        /// Used storage space for the instance. Unit: GiB.
         /// </summary>
         [Output("storageUse")]
         public Output<double> StorageUse { get; private set; } = null!;
 
         /// <summary>
-        /// 子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+        /// Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
 
         /// <summary>
-        /// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&amp;*()_+-=。
+        /// Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&amp;*()_+-=.
         /// </summary>
         [Output("superAccountPassword")]
         public Output<string> SuperAccountPassword { get; private set; } = null!;
@@ -200,19 +200,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         public Output<ImmutableArray<Outputs.InstanceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 时区。
+        /// Time zone.
         /// </summary>
         [Output("timeZone")]
         public Output<string> TimeZone { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update time.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// CPU 大小。例如：1 表示 1核。
+        /// CPU size. For example: 1 means 1 core.
         /// </summary>
         [Output("vcpu")]
         public Output<int> Vcpu { get; private set; } = null!;
@@ -224,7 +224,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// 节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+        /// Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node's zone by default, the second is the standby node's zone.
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
@@ -277,7 +277,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
     public sealed class InstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{"Key":"Value"}
+        /// Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
         /// </summary>
         [Input("advancedFeatures")]
         public Input<string>? AdvancedFeatures { get; set; }
@@ -286,7 +286,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         private InputList<string>? _allowListIds;
 
         /// <summary>
-        /// 允许访问的白名单ID列表。
+        /// Allowlist ID list permitted for access.
         /// </summary>
         public InputList<string> AllowListIds
         {
@@ -295,73 +295,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         }
 
         /// <summary>
-        /// 付费方式。
+        /// Payment method.
         /// </summary>
         [Input("chargeInfo")]
         public Input<Inputs.InstanceChargeInfoArgs>? ChargeInfo { get; set; }
 
         /// <summary>
-        /// 兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+        /// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
         /// </summary>
         [Input("dbEngineVersion", required: true)]
         public Input<string> DbEngineVersion { get; set; } = null!;
 
         /// <summary>
-        /// 实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+        /// Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+        /// Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
         /// </summary>
         [Input("instanceType", required: true)]
         public Input<string> InstanceType { get; set; } = null!;
 
         /// <summary>
-        /// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+        /// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
         /// </summary>
         [Input("maintenanceTime")]
         public Input<string>? MaintenanceTime { get; set; }
 
         /// <summary>
-        /// 主节点ID。手动切换主备节点时，该参数为必填项。
+        /// Primary node ID. This parameter is required when manually switching master and standby nodes.
         /// </summary>
         [Input("masterNodeId")]
         public Input<string>? MasterNodeId { get; set; }
 
         /// <summary>
-        /// 实例规格代码。
+        /// Instance specification code.
         /// </summary>
         [Input("nodeSpec", required: true)]
         public Input<string> NodeSpec { get; set; } = null!;
 
         /// <summary>
-        /// 所属项目。
+        /// Project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+        /// Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
         /// </summary>
         [Input("serverCollation")]
         public Input<string>? ServerCollation { get; set; }
 
         /// <summary>
-        /// 存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+        /// Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
         /// </summary>
         [Input("storageSpace", required: true)]
         public Input<int> StorageSpace { get; set; } = null!;
 
         /// <summary>
-        /// 子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+        /// Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
 
         /// <summary>
-        /// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&amp;*()_+-=。
+        /// Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&amp;*()_+-=.
         /// </summary>
         [Input("superAccountPassword", required: true)]
         public Input<string> SuperAccountPassword { get; set; } = null!;
@@ -375,7 +375,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         }
 
         /// <summary>
-        /// 时区。
+        /// Time zone.
         /// </summary>
         [Input("timeZone", required: true)]
         public Input<string> TimeZone { get; set; } = null!;
@@ -387,7 +387,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         public Input<string> VpcId { get; set; } = null!;
 
         /// <summary>
-        /// 节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+        /// Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node's zone by default, the second is the standby node's zone.
         /// </summary>
         [Input("zoneId", required: true)]
         public Input<string> ZoneId { get; set; } = null!;
@@ -401,7 +401,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
     public sealed class InstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{"Key":"Value"}
+        /// Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
         /// </summary>
         [Input("advancedFeatures")]
         public Input<string>? AdvancedFeatures { get; set; }
@@ -410,7 +410,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         private InputList<string>? _allowListIds;
 
         /// <summary>
-        /// 允许访问的白名单ID列表。
+        /// Allowlist ID list permitted for access.
         /// </summary>
         public InputList<string> AllowListIds
         {
@@ -419,13 +419,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         }
 
         /// <summary>
-        /// 实例已用备份空间。单位：GiB。
+        /// Used backup space for the instance, in GiB.
         /// </summary>
         [Input("backupUse")]
         public Input<double>? BackupUse { get; set; }
 
         /// <summary>
-        /// 付费方式。
+        /// Payment method.
         /// </summary>
         [Input("chargeInfo")]
         public Input<Inputs.InstanceChargeInfoGetArgs>? ChargeInfo { get; set; }
@@ -439,67 +439,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         }
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+        /// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
         /// </summary>
         [Input("dbEngineVersion")]
         public Input<string>? DbEngineVersion { get; set; }
 
         /// <summary>
-        /// 内核版本号。
+        /// Kernel version number.
         /// </summary>
         [Input("innerVersion")]
         public Input<string>? InnerVersion { get; set; }
 
         /// <summary>
-        /// 实例分类。取值：Primary：主实例。ReadOnly：只读实例。
+        /// Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
         /// </summary>
         [Input("instanceCategory")]
         public Input<string>? InstanceCategory { get; set; }
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+        /// Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 实例状态，取值：Running：运行中。Creating：创建中。CreateFailed：创建失败。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主节点切换中。Error：错误。
+        /// Instance status. Values: Running: running. Creating: creating. CreateFailed: creation failed. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: primary node switching. Error: error.
         /// </summary>
         [Input("instanceStatus")]
         public Input<string>? InstanceStatus { get; set; }
 
         /// <summary>
-        /// 实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+        /// Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
         /// </summary>
         [Input("instanceType")]
         public Input<string>? InstanceType { get; set; }
 
         /// <summary>
-        /// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+        /// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
         /// </summary>
         [Input("maintenanceTime")]
         public Input<string>? MaintenanceTime { get; set; }
 
         /// <summary>
-        /// 主节点ID。手动切换主备节点时，该参数为必填项。
+        /// Primary node ID. This parameter is required when manually switching master and standby nodes.
         /// </summary>
         [Input("masterNodeId")]
         public Input<string>? MasterNodeId { get; set; }
 
         /// <summary>
-        /// 内存大小，单位为 GiB。
+        /// Memory size, in GiB.
         /// </summary>
         [Input("memory")]
         public Input<int>? Memory { get; set; }
@@ -513,79 +513,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         }
 
         /// <summary>
-        /// 实例规格代码。
+        /// Instance specification code.
         /// </summary>
         [Input("nodeSpec")]
         public Input<string>? NodeSpec { get; set; }
 
         /// <summary>
-        /// 端口
+        /// Port.
         /// </summary>
         [Input("port")]
         public Input<string>? Port { get; set; }
 
         /// <summary>
-        /// 主实例ID。如果为空说明它是主实例。
+        /// Primary instance ID. If this field is empty, this instance is the primary instance.
         /// </summary>
         [Input("primaryInstanceId")]
         public Input<string>? PrimaryInstanceId { get; set; }
 
         /// <summary>
-        /// 所属项目。
+        /// Project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 只读实例数量。
+        /// Number of read-only instances.
         /// </summary>
         [Input("readOnlyNumber")]
         public Input<int>? ReadOnlyNumber { get; set; }
 
         /// <summary>
-        /// 实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+        /// Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
         /// </summary>
         [Input("serverCollation")]
         public Input<string>? ServerCollation { get; set; }
 
         /// <summary>
-        /// 表示是否开启慢日志，取值如下：true：表示开启慢日志。false：表示不开启慢日志。
+        /// Indicates whether slow logs are enabled. Available values: true: slow logs enabled. false: slow logs disabled.
         /// </summary>
         [Input("slowQueryEnable")]
         public Input<bool>? SlowQueryEnable { get; set; }
 
         /// <summary>
-        /// 慢日志的阈值，取值范围为 [1~10]，单位：秒（s）。
+        /// Slow log threshold. Range: [1~10], unit: seconds (s).
         /// </summary>
         [Input("slowQueryTime")]
         public Input<string>? SlowQueryTime { get; set; }
 
         /// <summary>
-        /// 存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+        /// Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
         /// </summary>
         [Input("storageSpace")]
         public Input<int>? StorageSpace { get; set; }
 
         /// <summary>
-        /// 实例存储类型。
+        /// Instance storage type.
         /// </summary>
         [Input("storageType")]
         public Input<string>? StorageType { get; set; }
 
         /// <summary>
-        /// 实例已用储空间。单位：GiB。
+        /// Used storage space for the instance. Unit: GiB.
         /// </summary>
         [Input("storageUse")]
         public Input<double>? StorageUse { get; set; }
 
         /// <summary>
-        /// 子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+        /// Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
         /// <summary>
-        /// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&amp;*()_+-=。
+        /// Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&amp;*()_+-=.
         /// </summary>
         [Input("superAccountPassword")]
         public Input<string>? SuperAccountPassword { get; set; }
@@ -599,19 +599,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         }
 
         /// <summary>
-        /// 时区。
+        /// Time zone.
         /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update time.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// CPU 大小。例如：1 表示 1核。
+        /// CPU size. For example: 1 means 1 core.
         /// </summary>
         [Input("vcpu")]
         public Input<int>? Vcpu { get; set; }
@@ -623,7 +623,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// 节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+        /// Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node's zone by default, the second is the standby node's zone.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

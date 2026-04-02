@@ -76,7 +76,7 @@ class GetNodePoolResult:
     @pulumi.getter(name="autoScaling")
     def auto_scaling(self) -> 'outputs.GetNodePoolAutoScalingResult':
         """
-        节点池伸缩策略配置。
+        Node pool scaling policy configuration.
         """
         return pulumi.get(self, "auto_scaling")
 
@@ -84,7 +84,7 @@ class GetNodePoolResult:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> builtins.str:
         """
-        节点池所在集群的 ID。
+        ID of the cluster where the node pool is located
         """
         return pulumi.get(self, "cluster_id")
 
@@ -92,7 +92,7 @@ class GetNodePoolResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建节点池的时间。
+        Node pool creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -108,7 +108,7 @@ class GetNodePoolResult:
     @pulumi.getter(name="kubernetesConfig")
     def kubernetes_config(self) -> 'outputs.GetNodePoolKubernetesConfigResult':
         """
-        节点池 Kubernetes 相关配置。
+        Kubernetes-related configuration for the node pool
         """
         return pulumi.get(self, "kubernetes_config")
 
@@ -116,7 +116,7 @@ class GetNodePoolResult:
     @pulumi.getter
     def management(self) -> 'outputs.GetNodePoolManagementResult':
         """
-        托管节点池配置。
+        Managed node pool configuration
         """
         return pulumi.get(self, "management")
 
@@ -124,7 +124,7 @@ class GetNodePoolResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
         """
         return pulumi.get(self, "name")
 
@@ -132,7 +132,7 @@ class GetNodePoolResult:
     @pulumi.getter(name="nodeConfig")
     def node_config(self) -> 'outputs.GetNodePoolNodeConfigResult':
         """
-        节点池中云服务器（ECS）实例配置。
+        Cloud server (ECS) instance configuration in the node pool
         """
         return pulumi.get(self, "node_config")
 
@@ -140,7 +140,7 @@ class GetNodePoolResult:
     @pulumi.getter(name="nodePoolId")
     def node_pool_id(self) -> builtins.str:
         """
-        节点池 ID 。
+        Node pool ID
         """
         return pulumi.get(self, "node_pool_id")
 
@@ -148,7 +148,7 @@ class GetNodePoolResult:
     @pulumi.getter(name="nodeStatistics")
     def node_statistics(self) -> 'outputs.GetNodePoolNodeStatisticsResult':
         """
-        节点池中的节点统计。
+        Node statistics in the node pool.
         """
         return pulumi.get(self, "node_statistics")
 
@@ -156,7 +156,7 @@ class GetNodePoolResult:
     @pulumi.getter(name="retainResources")
     def retain_resources(self) -> Sequence[builtins.str]:
         """
-        删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+        When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
         """
         return pulumi.get(self, "retain_resources")
 
@@ -164,7 +164,7 @@ class GetNodePoolResult:
     @pulumi.getter
     def status(self) -> 'outputs.GetNodePoolStatusResult':
         """
-        节点池状态。
+        Node pool status
         """
         return pulumi.get(self, "status")
 
@@ -172,7 +172,7 @@ class GetNodePoolResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetNodePoolTagResult']:
         """
-        节点池的标签信息
+        Node pool tag information
         """
         return pulumi.get(self, "tags")
 
@@ -180,7 +180,7 @@ class GetNodePoolResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新节点池的时间。
+        Node pool update time
         """
         return pulumi.get(self, "updated_time")
 

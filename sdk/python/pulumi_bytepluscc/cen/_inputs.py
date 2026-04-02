@@ -28,19 +28,19 @@ if not MYPY:
     class CenInstanceArgsDict(TypedDict):
         instance_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例的ID。
+        Network instance ID
         """
         instance_owner_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例所属账号的ID。
+        Account ID for the network instance
         """
         instance_region_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例所在的地域。
+        Region where the network instance is located
         """
         instance_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例的类型。
+        Type of the network instance
         """
 elif False:
     CenInstanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -53,10 +53,10 @@ class CenInstanceArgs:
                  instance_region_id: Optional[pulumi.Input[builtins.str]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] instance_id: 网络实例的ID。
-        :param pulumi.Input[builtins.str] instance_owner_id: 网络实例所属账号的ID。
-        :param pulumi.Input[builtins.str] instance_region_id: 网络实例所在的地域。
-        :param pulumi.Input[builtins.str] instance_type: 网络实例的类型。
+        :param pulumi.Input[builtins.str] instance_id: Network instance ID
+        :param pulumi.Input[builtins.str] instance_owner_id: Account ID for the network instance
+        :param pulumi.Input[builtins.str] instance_region_id: Region where the network instance is located
+        :param pulumi.Input[builtins.str] instance_type: Type of the network instance
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
@@ -71,7 +71,7 @@ class CenInstanceArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例的ID。
+        Network instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -83,7 +83,7 @@ class CenInstanceArgs:
     @pulumi.getter(name="instanceOwnerId")
     def instance_owner_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例所属账号的ID。
+        Account ID for the network instance
         """
         return pulumi.get(self, "instance_owner_id")
 
@@ -95,7 +95,7 @@ class CenInstanceArgs:
     @pulumi.getter(name="instanceRegionId")
     def instance_region_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例所在的地域。
+        Region where the network instance is located
         """
         return pulumi.get(self, "instance_region_id")
 
@@ -107,7 +107,7 @@ class CenInstanceArgs:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例的类型。
+        Type of the network instance
         """
         return pulumi.get(self, "instance_type")
 
@@ -120,11 +120,11 @@ if not MYPY:
     class CenTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+        Tag key for user labels. Length limit: 1–128 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Duplicate tag keys are not allowed for the same resource
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+        Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @
         """
 elif False:
     CenTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -135,8 +135,8 @@ class CenTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
-        :param pulumi.Input[builtins.str] value: 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+        :param pulumi.Input[builtins.str] key: Tag key for user labels. Length limit: 1–128 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Duplicate tag keys are not allowed for the same resource
+        :param pulumi.Input[builtins.str] value: Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -147,7 +147,7 @@ class CenTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+        Tag key for user labels. Length limit: 1–128 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Duplicate tag keys are not allowed for the same resource
         """
         return pulumi.get(self, "key")
 
@@ -159,7 +159,7 @@ class CenTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+        Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @
         """
         return pulumi.get(self, "value")
 

@@ -17,14 +17,14 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
     public static final KeyRingState Empty = new KeyRingState();
 
     /**
-     * 密钥环创建日期。
+     * Keyring creation date
      * 
      */
     @Import(name="createDate")
     private @Nullable Output<Integer> createDate;
 
     /**
-     * @return 密钥环创建日期。
+     * @return Keyring creation date
      * 
      */
     public Optional<Output<Integer>> createDate() {
@@ -32,14 +32,14 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥环描述，长度为 0   - 8192 个字符。
+     * Keyring description, length: 0–8192 characters
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 密钥环描述，长度为 0   - 8192 个字符。
+     * @return Keyring description, length: 0–8192 characters
      * 
      */
     public Optional<Output<String>> description() {
@@ -47,14 +47,14 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥环密钥次数。
+     * Number of keys in keyring
      * 
      */
     @Import(name="keyCount")
     private @Nullable Output<Integer> keyCount;
 
     /**
-     * @return 密钥环密钥次数。
+     * @return Number of keys in keyring
      * 
      */
     public Optional<Output<Integer>> keyCount() {
@@ -62,14 +62,14 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥环唯一标识符，UUID形式。
+     * Keyring unique identifier, in UUID format
      * 
      */
     @Import(name="keyRingId")
     private @Nullable Output<String> keyRingId;
 
     /**
-     * @return 密钥环唯一标识符，UUID形式。
+     * @return Keyring unique identifier, in UUID format
      * 
      */
     public Optional<Output<String>> keyRingId() {
@@ -77,14 +77,14 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+     * Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
      * 
      */
     @Import(name="keyringName")
     private @Nullable Output<String> keyringName;
 
     /**
-     * @return 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+     * @return Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
      * 
      */
     public Optional<Output<String>> keyringName() {
@@ -92,14 +92,14 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥环类型，取值：CustomKeyring。
+     * Keyring type, value: CustomKeyring
      * 
      */
     @Import(name="keyringType")
     private @Nullable Output<String> keyringType;
 
     /**
-     * @return 密钥环类型，取值：CustomKeyring。
+     * @return Keyring type, value: CustomKeyring
      * 
      */
     public Optional<Output<String>> keyringType() {
@@ -107,14 +107,14 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 项目名称，默认值：default。
+     * Project name, default value: default
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 项目名称，默认值：default。
+     * @return Project name, default value: default
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -122,14 +122,14 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥环租户ID。
+     * Keyring tenant ID
      * 
      */
     @Import(name="uid")
     private @Nullable Output<String> uid;
 
     /**
-     * @return 密钥环租户ID。
+     * @return Keyring tenant ID
      * 
      */
     public Optional<Output<String>> uid() {
@@ -137,14 +137,14 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥环更新日期。
+     * Keyring update date
      * 
      */
     @Import(name="updateDate")
     private @Nullable Output<Integer> updateDate;
 
     /**
-     * @return 密钥环更新日期。
+     * @return Keyring update date
      * 
      */
     public Optional<Output<Integer>> updateDate() {
@@ -184,7 +184,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createDate 密钥环创建日期。
+         * @param createDate Keyring creation date
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createDate 密钥环创建日期。
+         * @param createDate Keyring creation date
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 密钥环描述，长度为 0   - 8192 个字符。
+         * @param description Keyring description, length: 0–8192 characters
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 密钥环描述，长度为 0   - 8192 个字符。
+         * @param description Keyring description, length: 0–8192 characters
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyCount 密钥环密钥次数。
+         * @param keyCount Number of keys in keyring
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyCount 密钥环密钥次数。
+         * @param keyCount Number of keys in keyring
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyRingId 密钥环唯一标识符，UUID形式。
+         * @param keyRingId Keyring unique identifier, in UUID format
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyRingId 密钥环唯一标识符，UUID形式。
+         * @param keyRingId Keyring unique identifier, in UUID format
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyringName 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+         * @param keyringName Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyringName 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+         * @param keyringName Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyringType 密钥环类型，取值：CustomKeyring。
+         * @param keyringType Keyring type, value: CustomKeyring
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyringType 密钥环类型，取值：CustomKeyring。
+         * @param keyringType Keyring type, value: CustomKeyring
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称，默认值：default。
+         * @param projectName Project name, default value: default
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称，默认值：default。
+         * @param projectName Project name, default value: default
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param uid 密钥环租户ID。
+         * @param uid Keyring tenant ID
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param uid 密钥环租户ID。
+         * @param uid Keyring tenant ID
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateDate 密钥环更新日期。
+         * @param updateDate Keyring update date
          * 
          * @return builder
          * 
@@ -363,7 +363,7 @@ public final class KeyRingState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateDate 密钥环更新日期。
+         * @param updateDate Keyring update date
          * 
          * @return builder
          * 

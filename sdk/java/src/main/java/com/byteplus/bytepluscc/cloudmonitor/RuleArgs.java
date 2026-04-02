@@ -28,14 +28,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     public static final RuleArgs Empty = new RuleArgs();
 
     /**
-     * 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+     * Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
      * 
      */
     @Import(name="alertMethods")
     private @Nullable Output<List<String>> alertMethods;
 
     /**
-     * @return 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+     * @return Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
      * 
      */
     public Optional<Output<List<String>>> alertMethods() {
@@ -43,14 +43,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 多指标判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+     * Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
      * 
      */
     @Import(name="conditionOperator")
     private @Nullable Output<String> conditionOperator;
 
     /**
-     * @return 多指标判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+     * @return Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
      * 
      */
     public Optional<Output<String>> conditionOperator() {
@@ -65,14 +65,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警策略绑定的告警通知组 ID。
+     * Alert notification group ID bound to the alert policy.
      * 
      */
     @Import(name="contactGroupIds")
     private @Nullable Output<List<String>> contactGroupIds;
 
     /**
-     * @return 告警策略绑定的告警通知组 ID。
+     * @return Alert notification group ID bound to the alert policy.
      * 
      */
     public Optional<Output<List<String>>> contactGroupIds() {
@@ -80,14 +80,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警策略描述信息。
+     * Alert policy description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 告警策略描述信息。
+     * @return Alert policy description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -95,14 +95,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Dimension 配置。
+     * Dimension configuration.
      * 
      */
     @Import(name="dimensionConditions")
     private @Nullable Output<RuleDimensionConditionsArgs> dimensionConditions;
 
     /**
-     * @return Dimension 配置。
+     * @return Dimension configuration.
      * 
      */
     public Optional<Output<RuleDimensionConditionsArgs>> dimensionConditions() {
@@ -110,14 +110,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 策略生效的截止时间，格式为HH:MM。
+     * Policy expiration time, in HH:MM format.
      * 
      */
     @Import(name="effectEndAt", required=true)
     private Output<String> effectEndAt;
 
     /**
-     * @return 策略生效的截止时间，格式为HH:MM。
+     * @return Policy expiration time, in HH:MM format.
      * 
      */
     public Output<String> effectEndAt() {
@@ -125,14 +125,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警策略生效的开始时间，格式为HH:MM。
+     * Policy start time, in HH:MM format.
      * 
      */
     @Import(name="effectStartAt", required=true)
     private Output<String> effectStartAt;
 
     /**
-     * @return 告警策略生效的开始时间，格式为HH:MM。
+     * @return Policy start time, in HH:MM format.
      * 
      */
     public Output<String> effectStartAt() {
@@ -140,14 +140,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警策略的开启状态。,enable：开启,disable：禁用
+     * Alert policy status. enable: enabled, disable: disabled
      * 
      */
     @Import(name="enableState", required=true)
     private Output<String> enableState;
 
     /**
-     * @return 告警策略的开启状态。,enable：开启,disable：禁用
+     * @return Alert policy status. enable: enabled, disable: disabled
      * 
      */
     public Output<String> enableState() {
@@ -155,14 +155,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 触发告警需要持续的周期。单位为分钟。
+     * Duration required to trigger an alert, in minutes.
      * 
      */
     @Import(name="evaluationCount", required=true)
     private Output<Integer> evaluationCount;
 
     /**
-     * @return 触发告警需要持续的周期。单位为分钟。
+     * @return Duration required to trigger an alert, in minutes.
      * 
      */
     public Output<Integer> evaluationCount() {
@@ -170,14 +170,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警级别。critical：严重,warning：警告,notice：通知
+     * Alert level. critical: critical, warning: warning, notice: notification
      * 
      */
     @Import(name="level", required=true)
     private Output<String> level;
 
     /**
-     * @return 告警级别。critical：严重,warning：警告,notice：通知
+     * @return Alert level. critical: critical, warning: warning, notice: notification
      * 
      */
     public Output<String> level() {
@@ -192,14 +192,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+     * Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
      * 
      */
     @Import(name="multipleConditions")
     private @Nullable Output<Boolean> multipleConditions;
 
     /**
-     * @return 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+     * @return Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
      * 
      */
     public Optional<Output<Boolean>> multipleConditions() {
@@ -207,14 +207,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+     * Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+     * @return Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
      * 
      */
     public Output<String> namespace() {
@@ -222,14 +222,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 无数据告警。
+     * No data alert.
      * 
      */
     @Import(name="noData")
     private @Nullable Output<RuleNoDataArgs> noData;
 
     /**
-     * @return 无数据告警。
+     * @return No data alert.
      * 
      */
     public Optional<Output<RuleNoDataArgs>> noData() {
@@ -237,14 +237,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 通知策略 ID。
+     * Notification policy ID.
      * 
      */
     @Import(name="notificationId")
     private @Nullable Output<String> notificationId;
 
     /**
-     * @return 通知策略 ID。
+     * @return Notification policy ID.
      * 
      */
     public Optional<Output<String>> notificationId() {
@@ -259,14 +259,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警策略检测的资源 ID。
+     * Resource ID detected by the alert policy.
      * 
      */
     @Import(name="originalDimensions")
     private @Nullable Output<RuleOriginalDimensionsArgs> originalDimensions;
 
     /**
-     * @return 告警策略检测的资源 ID。
+     * @return Resource ID detected by the alert policy.
      * 
      */
     public Optional<Output<RuleOriginalDimensionsArgs>> originalDimensions() {
@@ -274,14 +274,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警策略所属项目。
+     * Project to which the alert policy belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 告警策略所属项目。
+     * @return Project to which the alert policy belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -289,14 +289,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警恢复通知。
+     * Alert recovery notification.
      * 
      */
     @Import(name="recoveryNotify")
     private @Nullable Output<RuleRecoveryNotifyArgs> recoveryNotify;
 
     /**
-     * @return 告警恢复通知。
+     * @return Alert recovery notification.
      * 
      */
     public Optional<Output<RuleRecoveryNotifyArgs>> recoveryNotify() {
@@ -304,14 +304,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云产品所属可用区 ID。
+     * Availability zone ID of the cloud product.
      * 
      */
     @Import(name="regions")
     private @Nullable Output<List<String>> regions;
 
     /**
-     * @return 云产品所属可用区 ID。
+     * @return Availability zone ID of the cloud product.
      * 
      */
     public Optional<Output<List<String>>> regions() {
@@ -319,14 +319,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警策略名称。
+     * Alert policy name.
      * 
      */
     @Import(name="ruleName", required=true)
     private Output<String> ruleName;
 
     /**
-     * @return 告警策略名称。
+     * @return Alert policy name.
      * 
      */
     public Output<String> ruleName() {
@@ -334,14 +334,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+     * Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
      * 
      */
     @Import(name="ruleType", required=true)
     private Output<String> ruleType;
 
     /**
-     * @return 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+     * @return Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
      * 
      */
     public Output<String> ruleType() {
@@ -349,14 +349,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+     * Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
      * 
      */
     @Import(name="silenceTime", required=true)
     private Output<Integer> silenceTime;
 
     /**
-     * @return 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+     * @return Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
      * 
      */
     public Output<Integer> silenceTime() {
@@ -364,14 +364,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+     * Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
      * 
      */
     @Import(name="subNamespace", required=true)
     private Output<String> subNamespace;
 
     /**
-     * @return 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+     * @return Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
      * 
      */
     public Output<String> subNamespace() {
@@ -386,14 +386,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警策略绑定的告警回调 URL 地址。
+     * Alarm callback URL bound to the alarm policy.
      * 
      */
     @Import(name="webhook")
     private @Nullable Output<String> webhook;
 
     /**
-     * @return 告警策略绑定的告警回调 URL 地址。
+     * @return Alarm callback URL bound to the alarm policy.
      * 
      */
     public Optional<Output<String>> webhook() {
@@ -401,14 +401,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 告警发生时告警回调 ID 列表。
+     * Alarm callback ID list when an alarm occurs.
      * 
      */
     @Import(name="webhookIds")
     private @Nullable Output<List<String>> webhookIds;
 
     /**
-     * @return 告警发生时告警回调 ID 列表。
+     * @return Alarm callback ID list when an alarm occurs.
      * 
      */
     public Optional<Output<List<String>>> webhookIds() {
@@ -467,7 +467,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertMethods 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+         * @param alertMethods Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
          * 
          * @return builder
          * 
@@ -478,7 +478,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertMethods 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+         * @param alertMethods Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
          * 
          * @return builder
          * 
@@ -488,7 +488,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertMethods 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+         * @param alertMethods Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
          * 
          * @return builder
          * 
@@ -498,7 +498,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param conditionOperator 多指标判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+         * @param conditionOperator Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
          * 
          * @return builder
          * 
@@ -509,7 +509,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param conditionOperator 多指标判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+         * @param conditionOperator Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
          * 
          * @return builder
          * 
@@ -532,7 +532,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contactGroupIds 告警策略绑定的告警通知组 ID。
+         * @param contactGroupIds Alert notification group ID bound to the alert policy.
          * 
          * @return builder
          * 
@@ -543,7 +543,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contactGroupIds 告警策略绑定的告警通知组 ID。
+         * @param contactGroupIds Alert notification group ID bound to the alert policy.
          * 
          * @return builder
          * 
@@ -553,7 +553,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contactGroupIds 告警策略绑定的告警通知组 ID。
+         * @param contactGroupIds Alert notification group ID bound to the alert policy.
          * 
          * @return builder
          * 
@@ -563,7 +563,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 告警策略描述信息。
+         * @param description Alert policy description.
          * 
          * @return builder
          * 
@@ -574,7 +574,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 告警策略描述信息。
+         * @param description Alert policy description.
          * 
          * @return builder
          * 
@@ -584,7 +584,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dimensionConditions Dimension 配置。
+         * @param dimensionConditions Dimension configuration.
          * 
          * @return builder
          * 
@@ -595,7 +595,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dimensionConditions Dimension 配置。
+         * @param dimensionConditions Dimension configuration.
          * 
          * @return builder
          * 
@@ -605,7 +605,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param effectEndAt 策略生效的截止时间，格式为HH:MM。
+         * @param effectEndAt Policy expiration time, in HH:MM format.
          * 
          * @return builder
          * 
@@ -616,7 +616,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param effectEndAt 策略生效的截止时间，格式为HH:MM。
+         * @param effectEndAt Policy expiration time, in HH:MM format.
          * 
          * @return builder
          * 
@@ -626,7 +626,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param effectStartAt 告警策略生效的开始时间，格式为HH:MM。
+         * @param effectStartAt Policy start time, in HH:MM format.
          * 
          * @return builder
          * 
@@ -637,7 +637,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param effectStartAt 告警策略生效的开始时间，格式为HH:MM。
+         * @param effectStartAt Policy start time, in HH:MM format.
          * 
          * @return builder
          * 
@@ -647,7 +647,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableState 告警策略的开启状态。,enable：开启,disable：禁用
+         * @param enableState Alert policy status. enable: enabled, disable: disabled
          * 
          * @return builder
          * 
@@ -658,7 +658,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableState 告警策略的开启状态。,enable：开启,disable：禁用
+         * @param enableState Alert policy status. enable: enabled, disable: disabled
          * 
          * @return builder
          * 
@@ -668,7 +668,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param evaluationCount 触发告警需要持续的周期。单位为分钟。
+         * @param evaluationCount Duration required to trigger an alert, in minutes.
          * 
          * @return builder
          * 
@@ -679,7 +679,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param evaluationCount 触发告警需要持续的周期。单位为分钟。
+         * @param evaluationCount Duration required to trigger an alert, in minutes.
          * 
          * @return builder
          * 
@@ -689,7 +689,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param level 告警级别。critical：严重,warning：警告,notice：通知
+         * @param level Alert level. critical: critical, warning: warning, notice: notification
          * 
          * @return builder
          * 
@@ -700,7 +700,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param level 告警级别。critical：严重,warning：警告,notice：通知
+         * @param level Alert level. critical: critical, warning: warning, notice: notification
          * 
          * @return builder
          * 
@@ -723,7 +723,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multipleConditions 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+         * @param multipleConditions Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
          * 
          * @return builder
          * 
@@ -734,7 +734,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multipleConditions 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+         * @param multipleConditions Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
          * 
          * @return builder
          * 
@@ -744,7 +744,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+         * @param namespace Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
          * 
          * @return builder
          * 
@@ -755,7 +755,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+         * @param namespace Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
          * 
          * @return builder
          * 
@@ -765,7 +765,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param noData 无数据告警。
+         * @param noData No data alert.
          * 
          * @return builder
          * 
@@ -776,7 +776,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param noData 无数据告警。
+         * @param noData No data alert.
          * 
          * @return builder
          * 
@@ -786,7 +786,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param notificationId 通知策略 ID。
+         * @param notificationId Notification policy ID.
          * 
          * @return builder
          * 
@@ -797,7 +797,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param notificationId 通知策略 ID。
+         * @param notificationId Notification policy ID.
          * 
          * @return builder
          * 
@@ -820,7 +820,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originalDimensions 告警策略检测的资源 ID。
+         * @param originalDimensions Resource ID detected by the alert policy.
          * 
          * @return builder
          * 
@@ -831,7 +831,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originalDimensions 告警策略检测的资源 ID。
+         * @param originalDimensions Resource ID detected by the alert policy.
          * 
          * @return builder
          * 
@@ -841,7 +841,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 告警策略所属项目。
+         * @param projectName Project to which the alert policy belongs.
          * 
          * @return builder
          * 
@@ -852,7 +852,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 告警策略所属项目。
+         * @param projectName Project to which the alert policy belongs.
          * 
          * @return builder
          * 
@@ -862,7 +862,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recoveryNotify 告警恢复通知。
+         * @param recoveryNotify Alert recovery notification.
          * 
          * @return builder
          * 
@@ -873,7 +873,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recoveryNotify 告警恢复通知。
+         * @param recoveryNotify Alert recovery notification.
          * 
          * @return builder
          * 
@@ -883,7 +883,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param regions 云产品所属可用区 ID。
+         * @param regions Availability zone ID of the cloud product.
          * 
          * @return builder
          * 
@@ -894,7 +894,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param regions 云产品所属可用区 ID。
+         * @param regions Availability zone ID of the cloud product.
          * 
          * @return builder
          * 
@@ -904,7 +904,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param regions 云产品所属可用区 ID。
+         * @param regions Availability zone ID of the cloud product.
          * 
          * @return builder
          * 
@@ -914,7 +914,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleName 告警策略名称。
+         * @param ruleName Alert policy name.
          * 
          * @return builder
          * 
@@ -925,7 +925,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleName 告警策略名称。
+         * @param ruleName Alert policy name.
          * 
          * @return builder
          * 
@@ -935,7 +935,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleType 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+         * @param ruleType Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
          * 
          * @return builder
          * 
@@ -946,7 +946,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleType 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+         * @param ruleType Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
          * 
          * @return builder
          * 
@@ -956,7 +956,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param silenceTime 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+         * @param silenceTime Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
          * 
          * @return builder
          * 
@@ -967,7 +967,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param silenceTime 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+         * @param silenceTime Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
          * 
          * @return builder
          * 
@@ -977,7 +977,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subNamespace 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+         * @param subNamespace Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
          * 
          * @return builder
          * 
@@ -988,7 +988,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subNamespace 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+         * @param subNamespace Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
          * 
          * @return builder
          * 
@@ -1011,7 +1011,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param webhook 告警策略绑定的告警回调 URL 地址。
+         * @param webhook Alarm callback URL bound to the alarm policy.
          * 
          * @return builder
          * 
@@ -1022,7 +1022,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param webhook 告警策略绑定的告警回调 URL 地址。
+         * @param webhook Alarm callback URL bound to the alarm policy.
          * 
          * @return builder
          * 
@@ -1032,7 +1032,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param webhookIds 告警发生时告警回调 ID 列表。
+         * @param webhookIds Alarm callback ID list when an alarm occurs.
          * 
          * @return builder
          * 
@@ -1043,7 +1043,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param webhookIds 告警发生时告警回调 ID 列表。
+         * @param webhookIds Alarm callback ID list when an alarm occurs.
          * 
          * @return builder
          * 
@@ -1053,7 +1053,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param webhookIds 告警发生时告警回调 ID 列表。
+         * @param webhookIds Alarm callback ID list when an alarm occurs.
          * 
          * @return builder
          * 

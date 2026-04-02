@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class EndpointModelReference {
     /**
-     * @return 定制模型的ID。
+     * @return Custom model ID
      * 
      */
     private @Nullable String customModelId;
     /**
-     * @return 基础模型。
+     * @return Base model
      * 
      */
     private @Nullable EndpointModelReferenceFoundationModel foundationModel;
 
     private EndpointModelReference() {}
     /**
-     * @return 定制模型的ID。
+     * @return Custom model ID
      * 
      */
     public Optional<String> customModelId() {
         return Optional.ofNullable(this.customModelId);
     }
     /**
-     * @return 基础模型。
+     * @return Base model
      * 
      */
     public Optional<EndpointModelReferenceFoundationModel> foundationModel() {

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetDefaultNodePoolStatusResult
     {
         /// <summary>
-        /// 节点池当前主状态下的状态条件，即进入该主状态的原因。
+        /// Status conditions of the node pool in its current primary state, indicating the reason for entering this state
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDefaultNodePoolStatusConditionResult> Conditions;
         /// <summary>
-        /// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+        /// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
         /// </summary>
         public readonly string Phase;
 

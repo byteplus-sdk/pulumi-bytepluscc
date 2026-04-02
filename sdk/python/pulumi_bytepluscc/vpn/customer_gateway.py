@@ -31,12 +31,12 @@ class CustomerGatewayArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['CustomerGatewayTagArgs']]]] = None):
         """
         The set of arguments for constructing a CustomerGateway resource.
-        :param pulumi.Input[builtins.str] ip_address: 对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
-        :param pulumi.Input[builtins.int] asn: 用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
-        :param pulumi.Input[builtins.str] customer_gateway_name: 用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
-        :param pulumi.Input[builtins.str] description: 用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
-        :param pulumi.Input[builtins.str] ip_version: VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
-        :param pulumi.Input[builtins.str] project_name: 用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
+        :param pulumi.Input[builtins.str] ip_address: Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
+        :param pulumi.Input[builtins.int] asn: User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
+        :param pulumi.Input[builtins.str] customer_gateway_name: User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
+        :param pulumi.Input[builtins.str] description: Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
+        :param pulumi.Input[builtins.str] ip_version: IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
+        :param pulumi.Input[builtins.str] project_name: Project to which the user gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project
         """
         pulumi.set(__self__, "ip_address", ip_address)
         if asn is not None:
@@ -56,7 +56,7 @@ class CustomerGatewayArgs:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> pulumi.Input[builtins.str]:
         """
-        对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
+        Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
         """
         return pulumi.get(self, "ip_address")
 
@@ -68,7 +68,7 @@ class CustomerGatewayArgs:
     @pulumi.getter
     def asn(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
+        User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
         """
         return pulumi.get(self, "asn")
 
@@ -80,7 +80,7 @@ class CustomerGatewayArgs:
     @pulumi.getter(name="customerGatewayName")
     def customer_gateway_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
+        User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
         """
         return pulumi.get(self, "customer_gateway_name")
 
@@ -92,7 +92,7 @@ class CustomerGatewayArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
+        Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
         """
         return pulumi.get(self, "description")
 
@@ -104,7 +104,7 @@ class CustomerGatewayArgs:
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
+        IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
         """
         return pulumi.get(self, "ip_version")
 
@@ -116,7 +116,7 @@ class CustomerGatewayArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
+        Project to which the user gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project
         """
         return pulumi.get(self, "project_name")
 
@@ -152,18 +152,18 @@ class _CustomerGatewayState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering CustomerGateway resources.
-        :param pulumi.Input[builtins.str] account_id: 用户网关所属账户的ID。
-        :param pulumi.Input[builtins.int] asn: 用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
-        :param pulumi.Input[builtins.int] connection_count: 用户网关关联的IPsec连接的数量。
-        :param pulumi.Input[builtins.str] created_time: 创建用户网关的时间。
-        :param pulumi.Input[builtins.str] customer_gateway_id: 网关ID。
-        :param pulumi.Input[builtins.str] customer_gateway_name: 用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
-        :param pulumi.Input[builtins.str] description: 用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
-        :param pulumi.Input[builtins.str] ip_address: 对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
-        :param pulumi.Input[builtins.str] ip_version: VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
-        :param pulumi.Input[builtins.str] project_name: 用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
-        :param pulumi.Input[builtins.str] status: 用户网关的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
-        :param pulumi.Input[builtins.str] updated_time: 更新用户网关的时间。
+        :param pulumi.Input[builtins.str] account_id: ID of the account to which the user gateway belongs
+        :param pulumi.Input[builtins.int] asn: User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
+        :param pulumi.Input[builtins.int] connection_count: Number of IPsec connections associated with the user gateway
+        :param pulumi.Input[builtins.str] created_time: Time when the user gateway was created
+        :param pulumi.Input[builtins.str] customer_gateway_id: Gateway ID
+        :param pulumi.Input[builtins.str] customer_gateway_name: User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
+        :param pulumi.Input[builtins.str] description: Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
+        :param pulumi.Input[builtins.str] ip_address: Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
+        :param pulumi.Input[builtins.str] ip_version: IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
+        :param pulumi.Input[builtins.str] project_name: Project to which the user gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project
+        :param pulumi.Input[builtins.str] status: Status of the user gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
+        :param pulumi.Input[builtins.str] updated_time: Time when the user gateway was updated
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -196,7 +196,7 @@ class _CustomerGatewayState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户网关所属账户的ID。
+        ID of the account to which the user gateway belongs
         """
         return pulumi.get(self, "account_id")
 
@@ -208,7 +208,7 @@ class _CustomerGatewayState:
     @pulumi.getter
     def asn(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
+        User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
         """
         return pulumi.get(self, "asn")
 
@@ -220,7 +220,7 @@ class _CustomerGatewayState:
     @pulumi.getter(name="connectionCount")
     def connection_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        用户网关关联的IPsec连接的数量。
+        Number of IPsec connections associated with the user gateway
         """
         return pulumi.get(self, "connection_count")
 
@@ -232,7 +232,7 @@ class _CustomerGatewayState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建用户网关的时间。
+        Time when the user gateway was created
         """
         return pulumi.get(self, "created_time")
 
@@ -244,7 +244,7 @@ class _CustomerGatewayState:
     @pulumi.getter(name="customerGatewayId")
     def customer_gateway_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关ID。
+        Gateway ID
         """
         return pulumi.get(self, "customer_gateway_id")
 
@@ -256,7 +256,7 @@ class _CustomerGatewayState:
     @pulumi.getter(name="customerGatewayName")
     def customer_gateway_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
+        User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
         """
         return pulumi.get(self, "customer_gateway_name")
 
@@ -268,7 +268,7 @@ class _CustomerGatewayState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
+        Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
         """
         return pulumi.get(self, "description")
 
@@ -280,7 +280,7 @@ class _CustomerGatewayState:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
+        Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
         """
         return pulumi.get(self, "ip_address")
 
@@ -292,7 +292,7 @@ class _CustomerGatewayState:
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
+        IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
         """
         return pulumi.get(self, "ip_version")
 
@@ -304,7 +304,7 @@ class _CustomerGatewayState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
+        Project to which the user gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project
         """
         return pulumi.get(self, "project_name")
 
@@ -316,7 +316,7 @@ class _CustomerGatewayState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户网关的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        Status of the user gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
         """
         return pulumi.get(self, "status")
 
@@ -337,7 +337,7 @@ class _CustomerGatewayState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新用户网关的时间。
+        Time when the user gateway was updated
         """
         return pulumi.get(self, "updated_time")
 
@@ -361,7 +361,7 @@ class CustomerGateway(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomerGatewayTagArgs', 'CustomerGatewayTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        用户网关是您本地网关侧的信息集合和抽象。通过用户网关，您可以把本地网关的信息注册到云上VPC之中。一个用户网关，可以对接多个VPN网关。
+        The user gateway is a collection and abstraction of information on your local gateway side. With the user gateway, you can register local gateway information to the cloud VPC. One user gateway can connect to multiple VPN gateways
 
         ## Example Usage
 
@@ -386,12 +386,12 @@ class CustomerGateway(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] asn: 用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
-        :param pulumi.Input[builtins.str] customer_gateway_name: 用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
-        :param pulumi.Input[builtins.str] description: 用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
-        :param pulumi.Input[builtins.str] ip_address: 对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
-        :param pulumi.Input[builtins.str] ip_version: VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
-        :param pulumi.Input[builtins.str] project_name: 用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
+        :param pulumi.Input[builtins.int] asn: User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
+        :param pulumi.Input[builtins.str] customer_gateway_name: User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
+        :param pulumi.Input[builtins.str] description: Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
+        :param pulumi.Input[builtins.str] ip_address: Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
+        :param pulumi.Input[builtins.str] ip_version: IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
+        :param pulumi.Input[builtins.str] project_name: Project to which the user gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project
         """
         ...
     @overload
@@ -400,7 +400,7 @@ class CustomerGateway(pulumi.CustomResource):
                  args: CustomerGatewayArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        用户网关是您本地网关侧的信息集合和抽象。通过用户网关，您可以把本地网关的信息注册到云上VPC之中。一个用户网关，可以对接多个VPN网关。
+        The user gateway is a collection and abstraction of information on your local gateway side. With the user gateway, you can register local gateway information to the cloud VPC. One user gateway can connect to multiple VPN gateways
 
         ## Example Usage
 
@@ -499,18 +499,18 @@ class CustomerGateway(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_id: 用户网关所属账户的ID。
-        :param pulumi.Input[builtins.int] asn: 用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
-        :param pulumi.Input[builtins.int] connection_count: 用户网关关联的IPsec连接的数量。
-        :param pulumi.Input[builtins.str] created_time: 创建用户网关的时间。
-        :param pulumi.Input[builtins.str] customer_gateway_id: 网关ID。
-        :param pulumi.Input[builtins.str] customer_gateway_name: 用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
-        :param pulumi.Input[builtins.str] description: 用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
-        :param pulumi.Input[builtins.str] ip_address: 对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
-        :param pulumi.Input[builtins.str] ip_version: VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
-        :param pulumi.Input[builtins.str] project_name: 用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
-        :param pulumi.Input[builtins.str] status: 用户网关的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
-        :param pulumi.Input[builtins.str] updated_time: 更新用户网关的时间。
+        :param pulumi.Input[builtins.str] account_id: ID of the account to which the user gateway belongs
+        :param pulumi.Input[builtins.int] asn: User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
+        :param pulumi.Input[builtins.int] connection_count: Number of IPsec connections associated with the user gateway
+        :param pulumi.Input[builtins.str] created_time: Time when the user gateway was created
+        :param pulumi.Input[builtins.str] customer_gateway_id: Gateway ID
+        :param pulumi.Input[builtins.str] customer_gateway_name: User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
+        :param pulumi.Input[builtins.str] description: Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
+        :param pulumi.Input[builtins.str] ip_address: Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
+        :param pulumi.Input[builtins.str] ip_version: IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
+        :param pulumi.Input[builtins.str] project_name: Project to which the user gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project
+        :param pulumi.Input[builtins.str] status: Status of the user gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
+        :param pulumi.Input[builtins.str] updated_time: Time when the user gateway was updated
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -535,7 +535,7 @@ class CustomerGateway(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        用户网关所属账户的ID。
+        ID of the account to which the user gateway belongs
         """
         return pulumi.get(self, "account_id")
 
@@ -543,7 +543,7 @@ class CustomerGateway(pulumi.CustomResource):
     @pulumi.getter
     def asn(self) -> pulumi.Output[builtins.int]:
         """
-        用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
+        User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
         """
         return pulumi.get(self, "asn")
 
@@ -551,7 +551,7 @@ class CustomerGateway(pulumi.CustomResource):
     @pulumi.getter(name="connectionCount")
     def connection_count(self) -> pulumi.Output[builtins.int]:
         """
-        用户网关关联的IPsec连接的数量。
+        Number of IPsec connections associated with the user gateway
         """
         return pulumi.get(self, "connection_count")
 
@@ -559,7 +559,7 @@ class CustomerGateway(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建用户网关的时间。
+        Time when the user gateway was created
         """
         return pulumi.get(self, "created_time")
 
@@ -567,7 +567,7 @@ class CustomerGateway(pulumi.CustomResource):
     @pulumi.getter(name="customerGatewayId")
     def customer_gateway_id(self) -> pulumi.Output[builtins.str]:
         """
-        网关ID。
+        Gateway ID
         """
         return pulumi.get(self, "customer_gateway_id")
 
@@ -575,7 +575,7 @@ class CustomerGateway(pulumi.CustomResource):
     @pulumi.getter(name="customerGatewayName")
     def customer_gateway_name(self) -> pulumi.Output[builtins.str]:
         """
-        用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
+        User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
         """
         return pulumi.get(self, "customer_gateway_name")
 
@@ -583,7 +583,7 @@ class CustomerGateway(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
+        Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
         """
         return pulumi.get(self, "description")
 
@@ -591,7 +591,7 @@ class CustomerGateway(pulumi.CustomResource):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> pulumi.Output[builtins.str]:
         """
-        对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
+        Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
         """
         return pulumi.get(self, "ip_address")
 
@@ -599,7 +599,7 @@ class CustomerGateway(pulumi.CustomResource):
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> pulumi.Output[builtins.str]:
         """
-        VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
+        IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
         """
         return pulumi.get(self, "ip_version")
 
@@ -607,7 +607,7 @@ class CustomerGateway(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
+        Project to which the user gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project
         """
         return pulumi.get(self, "project_name")
 
@@ -615,7 +615,7 @@ class CustomerGateway(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        用户网关的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        Status of the user gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
         """
         return pulumi.get(self, "status")
 
@@ -628,7 +628,7 @@ class CustomerGateway(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新用户网关的时间。
+        Time when the user gateway was updated
         """
         return pulumi.get(self, "updated_time")
 

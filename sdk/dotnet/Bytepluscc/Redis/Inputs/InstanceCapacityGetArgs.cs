@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis.Inputs
     public sealed class InstanceCapacityGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 当前实例的内存总容量。单位：MiB。
+        /// Total memory capacity of the current instance. Unit: MiB.
         /// </summary>
         [Input("total")]
         public Input<int>? Total { get; set; }
 
         /// <summary>
-        /// 当前实例已用容量。单位：MiB。
+        /// Used capacity of the current instance. Unit: MiB.
         /// </summary>
         [Input("used")]
         public Input<int>? Used { get; set; }

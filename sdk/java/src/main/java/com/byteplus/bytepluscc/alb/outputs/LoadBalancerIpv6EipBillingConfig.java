@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class LoadBalancerIpv6EipBillingConfig {
     /**
-     * @return IPv6 EIP的带宽峰值，单位为Mbps。
+     * @return Peak bandwidth of IPv6 EIP, in Mbps.
      * 
      */
     private @Nullable Integer bandwidth;
     /**
-     * @return IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+     * @return Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
      * 
      */
     private @Nullable Integer billingType;
     /**
-     * @return IPv6公网IP的线路类型，BGP表示多线。
+     * @return Line type of IPv6 public IP; BGP indicates multi-line.
      * 
      */
     private @Nullable String isp;
 
     private LoadBalancerIpv6EipBillingConfig() {}
     /**
-     * @return IPv6 EIP的带宽峰值，单位为Mbps。
+     * @return Peak bandwidth of IPv6 EIP, in Mbps.
      * 
      */
     public Optional<Integer> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
     }
     /**
-     * @return IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+     * @return Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
      * 
      */
     public Optional<Integer> billingType() {
         return Optional.ofNullable(this.billingType);
     }
     /**
-     * @return IPv6公网IP的线路类型，BGP表示多线。
+     * @return Line type of IPv6 public IP; BGP indicates multi-line.
      * 
      */
     public Optional<String> isp() {

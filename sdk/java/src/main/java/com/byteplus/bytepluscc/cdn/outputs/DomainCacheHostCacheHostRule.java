@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainCacheHostCacheHostRule {
     /**
-     * @return 表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+     * @return Indicates the target domain. The target domain must be an accelerated domain under your account. This parameter specifies that the Domain shares the cache of CacheHost.
      * 
      */
     private @Nullable DomainCacheHostCacheHostRuleCacheHostAction cacheHostAction;
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private @Nullable DomainCacheHostCacheHostRuleCondition condition;
 
     private DomainCacheHostCacheHostRule() {}
     /**
-     * @return 表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+     * @return Indicates the target domain. The target domain must be an accelerated domain under your account. This parameter specifies that the Domain shares the cache of CacheHost.
      * 
      */
     public Optional<DomainCacheHostCacheHostRuleCacheHostAction> cacheHostAction() {
         return Optional.ofNullable(this.cacheHostAction);
     }
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<DomainCacheHostCacheHostRuleCondition> condition() {

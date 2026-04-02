@@ -97,7 +97,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="applicationLayouts")
     def application_layouts(self) -> Sequence['outputs.GetNodeGroupApplicationLayoutResult']:
         """
-        当前节点组可布局的组件名称列表。
+        List of component names that can be deployed in the current node group.
         """
         return pulumi.get(self, "application_layouts")
 
@@ -105,7 +105,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="chargePreConfig")
     def charge_pre_config(self) -> 'outputs.GetNodeGroupChargePreConfigResult':
         """
-        包周期付费配置。
+        Subscription payment configuration.
         """
         return pulumi.get(self, "charge_pre_config")
 
@@ -113,7 +113,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        付费类型。PRE表示包月，POST表示按量计费。
+        Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
         """
         return pulumi.get(self, "charge_type")
 
@@ -121,7 +121,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> builtins.str:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -129,7 +129,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.int:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -137,7 +137,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="dataDisks")
     def data_disks(self) -> Sequence['outputs.GetNodeGroupDataDiskResult']:
         """
-        数据盘配置。
+        Data disk configuration.
         """
         return pulumi.get(self, "data_disks")
 
@@ -145,7 +145,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="ecsInstanceTypes")
     def ecs_instance_types(self) -> Sequence[builtins.str]:
         """
-        ECS实例规格列表。当前修改仅支持单个实例规格。
+        ECS instance specification list. Currently, only a single instance specification can be modified.
         """
         return pulumi.get(self, "ecs_instance_types")
 
@@ -161,7 +161,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="layoutComponentNames")
     def layout_component_names(self) -> Sequence[builtins.str]:
         """
-        返回的节点组组件的自定义配置参数列表。
+        Custom configuration parameter list for the returned node group components.
         """
         return pulumi.get(self, "layout_component_names")
 
@@ -169,7 +169,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> builtins.int:
         """
-        节点数量。取值范围：1~1000。
+        Node count. Value range: 1~1000.
         """
         return pulumi.get(self, "node_count")
 
@@ -177,7 +177,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="nodeGroupId")
     def node_group_id(self) -> builtins.str:
         """
-        节点组ID。
+        Node group ID.
         """
         return pulumi.get(self, "node_group_id")
 
@@ -185,7 +185,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="nodeGroupName")
     def node_group_name(self) -> builtins.str:
         """
-        节点组名称。
+        Node group name.
         """
         return pulumi.get(self, "node_group_name")
 
@@ -193,7 +193,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="nodeGroupState")
     def node_group_state(self) -> builtins.str:
         """
-        节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+        Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
         """
         return pulumi.get(self, "node_group_state")
 
@@ -201,7 +201,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="nodeGroupType")
     def node_group_type(self) -> builtins.str:
         """
-        节点组类型。
+        Node group type.
         """
         return pulumi.get(self, "node_group_type")
 
@@ -209,7 +209,7 @@ class GetNodeGroupResult:
     @pulumi.getter
     def nodes(self) -> Sequence['outputs.GetNodeGroupNodeResult']:
         """
-        节点列表。
+        Node list.
         """
         return pulumi.get(self, "nodes")
 
@@ -217,7 +217,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Sequence[builtins.str]:
         """
-        子网ID列表。
+        Subnet ID list.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -225,7 +225,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="systemDisk")
     def system_disk(self) -> 'outputs.GetNodeGroupSystemDiskResult':
         """
-        系统盘。
+        System disk.
         """
         return pulumi.get(self, "system_disk")
 
@@ -233,7 +233,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="targetDiskSize")
     def target_disk_size(self) -> builtins.int:
         """
-        待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+        Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
         """
         return pulumi.get(self, "target_disk_size")
 
@@ -241,7 +241,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="terminateTime")
     def terminate_time(self) -> builtins.str:
         """
-        集群终止时间。
+        Cluster termination time.
         """
         return pulumi.get(self, "terminate_time")
 
@@ -249,7 +249,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="withPublicIp")
     def with_public_ip(self) -> builtins.bool:
         """
-        ECS是否附带公网IP。
+        Whether the ECS instance includes a public IP.
         """
         return pulumi.get(self, "with_public_ip")
 
@@ -257,7 +257,7 @@ class GetNodeGroupResult:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        zoneId，为空时默认复用集群的zoneId。
+        zoneId. If empty, the cluster's zoneId is reused by default.
         """
         return pulumi.get(self, "zone_id")
 

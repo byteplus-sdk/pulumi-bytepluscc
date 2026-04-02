@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+        /// Indicates the maximum download speed for a single request, measured in B/S. The parameter range is 1–1,073,741,824,000,000, using a base conversion of 1,024.
         /// </summary>
         [Input("speedLimitRate")]
         public Input<int>? SpeedLimitRate { get; set; }
 
         /// <summary>
-        /// 表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+        /// Represents a data volume. Download throttling is enabled for a request only when the amount of data downloaded in a single request reaches this value. Unit: Byte. The parameter range is 0–1,073,741,824,000,000, using a base of 1,024 for conversion.
         /// </summary>
         [Input("speedLimitRateAfter")]
         public Input<int>? SpeedLimitRateAfter { get; set; }
 
         /// <summary>
-        /// 表示限速发生的日期和时间段。
+        /// Indicates the date and time period when rate limiting occurs.
         /// </summary>
         [Input("speedLimitTime")]
         public Input<Inputs.DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgs>? SpeedLimitTime { get; set; }

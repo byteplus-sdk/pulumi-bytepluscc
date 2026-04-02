@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class LoadBalancerIpv6EipBillingConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// IPv6 EIP的带宽峰值，单位为Mbps。
+        /// Peak bandwidth of IPv6 EIP, in Mbps.
         /// </summary>
         [Input("bandwidth")]
         public Input<int>? Bandwidth { get; set; }
 
         /// <summary>
-        /// IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+        /// Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
         /// </summary>
         [Input("billingType")]
         public Input<int>? BillingType { get; set; }
 
         /// <summary>
-        /// IPv6公网IP的线路类型，BGP表示多线。
+        /// Line type of IPv6 public IP; BGP indicates multi-line.
         /// </summary>
         [Input("isp")]
         public Input<string>? Isp { get; set; }

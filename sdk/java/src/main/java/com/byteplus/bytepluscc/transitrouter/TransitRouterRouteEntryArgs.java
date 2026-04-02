@@ -17,14 +17,14 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
     public static final TransitRouterRouteEntryArgs Empty = new TransitRouterRouteEntryArgs();
 
     /**
-     * TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * @return Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
      * 
      */
     public Optional<Output<String>> description() {
@@ -32,14 +32,14 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 路由条目的目标网段。
+     * Destination CIDR block of the route entry
      * 
      */
     @Import(name="destinationCidrBlock", required=true)
     private Output<String> destinationCidrBlock;
 
     /**
-     * @return 路由条目的目标网段。
+     * @return Destination CIDR block of the route entry
      * 
      */
     public Output<String> destinationCidrBlock() {
@@ -47,14 +47,14 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 路由条目的名称。
+     * Name of the route entry
      * 
      */
     @Import(name="transitRouterRouteEntryName")
     private @Nullable Output<String> transitRouterRouteEntryName;
 
     /**
-     * @return 路由条目的名称。
+     * @return Name of the route entry
      * 
      */
     public Optional<Output<String>> transitRouterRouteEntryName() {
@@ -62,14 +62,14 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 路由条目的下一跳ID。
+     * Next hop ID of the route entry
      * 
      */
     @Import(name="transitRouterRouteEntryNextHopId")
     private @Nullable Output<String> transitRouterRouteEntryNextHopId;
 
     /**
-     * @return 路由条目的下一跳ID。
+     * @return Next hop ID of the route entry
      * 
      */
     public Optional<Output<String>> transitRouterRouteEntryNextHopId() {
@@ -77,14 +77,14 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
+     * Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
      * 
      */
     @Import(name="transitRouterRouteEntryNextHopType", required=true)
     private Output<String> transitRouterRouteEntryNextHopType;
 
     /**
-     * @return 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
+     * @return Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
      * 
      */
     public Output<String> transitRouterRouteEntryNextHopType() {
@@ -92,14 +92,14 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 中转路由器实例关联的路由表的ID。
+     * ID of the route table associated with the transit router instance
      * 
      */
     @Import(name="transitRouterRouteTableId", required=true)
     private Output<String> transitRouterRouteTableId;
 
     /**
-     * @return 中转路由器实例关联的路由表的ID。
+     * @return ID of the route table associated with the transit router instance
      * 
      */
     public Output<String> transitRouterRouteTableId() {
@@ -136,7 +136,7 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param description TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+         * @param description Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param description TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+         * @param description Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationCidrBlock 路由条目的目标网段。
+         * @param destinationCidrBlock Destination CIDR block of the route entry
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationCidrBlock 路由条目的目标网段。
+         * @param destinationCidrBlock Destination CIDR block of the route entry
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterRouteEntryName 路由条目的名称。
+         * @param transitRouterRouteEntryName Name of the route entry
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterRouteEntryName 路由条目的名称。
+         * @param transitRouterRouteEntryName Name of the route entry
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterRouteEntryNextHopId 路由条目的下一跳ID。
+         * @param transitRouterRouteEntryNextHopId Next hop ID of the route entry
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterRouteEntryNextHopId 路由条目的下一跳ID。
+         * @param transitRouterRouteEntryNextHopId Next hop ID of the route entry
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterRouteEntryNextHopType 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
+         * @param transitRouterRouteEntryNextHopType Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterRouteEntryNextHopType 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
+         * @param transitRouterRouteEntryNextHopType Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterRouteTableId 中转路由器实例关联的路由表的ID。
+         * @param transitRouterRouteTableId ID of the route table associated with the transit router instance
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class TransitRouterRouteEntryArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterRouteTableId 中转路由器实例关联的路由表的ID。
+         * @param transitRouterRouteTableId ID of the route table associated with the transit router instance
          * 
          * @return builder
          * 

@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDnsControlPolicySource {
     /**
-     * @return VPC地域信息。
+     * @return VPC region information.
      * 
      */
     private String region;
@@ -23,7 +23,7 @@ public final class GetDnsControlPolicySource {
 
     private GetDnsControlPolicySource() {}
     /**
-     * @return VPC地域信息。
+     * @return VPC region information.
      * 
      */
     public String region() {

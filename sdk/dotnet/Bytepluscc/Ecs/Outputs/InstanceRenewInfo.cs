@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class InstanceRenewInfo
     {
         /// <summary>
-        /// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+        /// Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
         /// </summary>
         public readonly int? Period;
         /// <summary>
-        /// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+        /// Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
         /// </summary>
         public readonly string? PeriodUnit;
 

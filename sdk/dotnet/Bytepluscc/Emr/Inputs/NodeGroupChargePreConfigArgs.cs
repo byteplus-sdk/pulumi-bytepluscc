@@ -14,37 +14,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
     public sealed class NodeGroupChargePreConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启自动续费。
+        /// Whether to enable auto-renewal.
         /// </summary>
         [Input("autoRenew")]
         public Input<bool>? AutoRenew { get; set; }
 
         /// <summary>
-        /// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+        /// Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
         /// </summary>
         [Input("autoRenewPeriod")]
         public Input<int>? AutoRenewPeriod { get; set; }
 
         /// <summary>
-        /// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+        /// Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
         /// </summary>
         [Input("autoRenewPeriodUnit")]
         public Input<string>? AutoRenewPeriodUnit { get; set; }
 
         /// <summary>
-        /// chargeType=PRE默认值=1，包月的购买时长单位。
+        /// When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
         /// </summary>
         [Input("chargePeriod")]
         public Input<int>? ChargePeriod { get; set; }
 
         /// <summary>
-        /// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+        /// When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
         /// </summary>
         [Input("chargePeriodUnit")]
         public Input<string>? ChargePeriodUnit { get; set; }
 
         /// <summary>
-        /// 付费类型，枚举值：POST，PRE。
+        /// Payment type. Enum values: POST, PRE.
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }

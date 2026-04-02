@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class ClusterClusterConfigApiServerPublicAccessConfig
     {
         /// <summary>
-        /// 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+        /// Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
         /// </summary>
         public readonly Outputs.ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig? PublicAccessNetworkConfig;
 

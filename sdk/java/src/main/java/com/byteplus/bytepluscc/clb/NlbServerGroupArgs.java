@@ -23,14 +23,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     public static final NlbServerGroupArgs Empty = new NlbServerGroupArgs();
 
     /**
-     * 是否开启全端口转发。
+     * Enable all-port forwarding
      * 
      */
     @Import(name="anyPortEnabled")
     private @Nullable Output<Boolean> anyPortEnabled;
 
     /**
-     * @return 是否开启全端口转发。
+     * @return Enable all-port forwarding
      * 
      */
     public Optional<Output<Boolean>> anyPortEnabled() {
@@ -38,14 +38,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 是否开启放通后端安全组功能。仅参数Type为“instance”时，可以配置此参数。
+     * Enable backend security group pass-through. This parameter can only be configured when Type is &#39;instance&#39;.
      * 
      */
     @Import(name="bypassSecurityGroupEnabled")
     private @Nullable Output<Boolean> bypassSecurityGroupEnabled;
 
     /**
-     * @return 是否开启放通后端安全组功能。仅参数Type为“instance”时，可以配置此参数。
+     * @return Enable backend security group pass-through. This parameter can only be configured when Type is &#39;instance&#39;.
      * 
      */
     public Optional<Output<Boolean>> bypassSecurityGroupEnabled() {
@@ -53,14 +53,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 是否开启连接优雅中断。
+     * Enable graceful connection termination.
      * 
      */
     @Import(name="connectionDrainEnabled")
     private @Nullable Output<Boolean> connectionDrainEnabled;
 
     /**
-     * @return 是否开启连接优雅中断。
+     * @return Enable graceful connection termination.
      * 
      */
     public Optional<Output<Boolean>> connectionDrainEnabled() {
@@ -68,14 +68,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 连接优雅中断超时时间，取值范围为0～900秒。参数ConnectionDrainEnabled为“true”时，该参数为必填。
+     * Connection graceful shutdown timeout, range: 0–900 seconds. If ConnectionDrainEnabled is &#39;true&#39;, this parameter is required.
      * 
      */
     @Import(name="connectionDrainTimeout")
     private @Nullable Output<Integer> connectionDrainTimeout;
 
     /**
-     * @return 连接优雅中断超时时间，取值范围为0～900秒。参数ConnectionDrainEnabled为“true”时，该参数为必填。
+     * @return Connection graceful shutdown timeout, range: 0–900 seconds. If ConnectionDrainEnabled is &#39;true&#39;, this parameter is required.
      * 
      */
     public Optional<Output<Integer>> connectionDrainTimeout() {
@@ -83,14 +83,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 后端服务器组的描述,服务器组的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+     * Description of the backend server group, description of the server group. Must start with a letter, number, or Chinese character, and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period（。）. Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 后端服务器组的描述,服务器组的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+     * @return Description of the backend server group, description of the server group. Must start with a letter, number, or Chinese character, and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period（。）. Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -98,14 +98,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 健康检查相关参数。
+     * Health check parameters
      * 
      */
     @Import(name="healthCheck")
     private @Nullable Output<NlbServerGroupHealthCheckArgs> healthCheck;
 
     /**
-     * @return 健康检查相关参数。
+     * @return Health check parameters
      * 
      */
     public Optional<Output<NlbServerGroupHealthCheckArgs>> healthCheck() {
@@ -113,14 +113,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 服务器组的IP地址类型。取值如下：ipv4（默认值）：表示该服务器组仅支持添加IPv4类型的后端服务器。ipv6：表示该服务器组仅支持添加IPv6类型的后端服务器。
+     * IP address type of the server group. Options: ipv4 (default): The server group only supports adding IPv4 type backend servers. ipv6: The server group only supports adding IPv6 type backend servers.
      * 
      */
     @Import(name="ipAddressVersion")
     private @Nullable Output<String> ipAddressVersion;
 
     /**
-     * @return 服务器组的IP地址类型。取值如下：ipv4（默认值）：表示该服务器组仅支持添加IPv4类型的后端服务器。ipv6：表示该服务器组仅支持添加IPv6类型的后端服务器。
+     * @return IP address type of the server group. Options: ipv4 (default): The server group only supports adding IPv4 type backend servers. ipv6: The server group only supports adding IPv6 type backend servers.
      * 
      */
     public Optional<Output<String>> ipAddressVersion() {
@@ -128,14 +128,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 是否开启源地址保持。
+     * Enable source address persistence
      * 
      */
     @Import(name="preserveClientIpEnabled")
     private @Nullable Output<Boolean> preserveClientIpEnabled;
 
     /**
-     * @return 是否开启源地址保持。
+     * @return Enable source address persistence
      * 
      */
     public Optional<Output<Boolean>> preserveClientIpEnabled() {
@@ -143,14 +143,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 项目名称。
+     * Project name
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -158,14 +158,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * NLB转发流量到后端服务器时使用的通信协议。取值如下：TCP。UDP。
+     * Communication protocol used by NLB to forward traffic to backend servers. Options: TCP. UDP.
      * 
      */
     @Import(name="protocol", required=true)
     private Output<String> protocol;
 
     /**
-     * @return NLB转发流量到后端服务器时使用的通信协议。取值如下：TCP。UDP。
+     * @return Communication protocol used by NLB to forward traffic to backend servers. Options: TCP. UDP.
      * 
      */
     public Output<String> protocol() {
@@ -173,14 +173,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 是否开启Proxy-Protocol协议。取值如下：off（默认值）：关闭。standard：开启。NLB将通过Proxy-Protocol协议携带客户端源IP地址转发至后端服务器，还需要在后端服务器上配置Proxy-Protocol。
+     * Enable Proxy-Protocol. Available values: off (default): disabled. standard: enabled. NLB forwards the client source IP address to the backend server via Proxy-Protocol. Proxy-Protocol must also be configured on the backend server.
      * 
      */
     @Import(name="proxyProtocolType")
     private @Nullable Output<String> proxyProtocolType;
 
     /**
-     * @return 是否开启Proxy-Protocol协议。取值如下：off（默认值）：关闭。standard：开启。NLB将通过Proxy-Protocol协议携带客户端源IP地址转发至后端服务器，还需要在后端服务器上配置Proxy-Protocol。
+     * @return Enable Proxy-Protocol. Available values: off (default): disabled. standard: enabled. NLB forwards the client source IP address to the backend server via Proxy-Protocol. Proxy-Protocol must also be configured on the backend server.
      * 
      */
     public Optional<Output<String>> proxyProtocolType() {
@@ -188,14 +188,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * NLB转发流量时遵循的规则。取值如下：wrr（默认值）：加权轮询，权重值越高的后端服务器，被轮询到的次数（概率）越高。wlc：加权最小连接数，在最少连接数的基础上，根据后端服务器的不同处理能力，给每个服务器分配不同的权重，使其能够接受相应权值数的服务请求。sh：源地址哈希，基于源IP地址的一致性哈希，相同的源地址会调度到相同的后端服务器。
+     * Rules followed by NLB when forwarding traffic. Options: wrr (default): Weighted round robin. Backend servers with higher weights are selected more frequently (higher probability). wlc: Weighted least connections. Based on the least number of connections, assigns different weights to backend servers according to their processing capabilities, allowing each server to handle a corresponding number of service requests. sh: Source address hash. Uses consistent hashing based on the source IP address; requests from the same source address are routed to the same backend server.
      * 
      */
     @Import(name="scheduler")
     private @Nullable Output<String> scheduler;
 
     /**
-     * @return NLB转发流量时遵循的规则。取值如下：wrr（默认值）：加权轮询，权重值越高的后端服务器，被轮询到的次数（概率）越高。wlc：加权最小连接数，在最少连接数的基础上，根据后端服务器的不同处理能力，给每个服务器分配不同的权重，使其能够接受相应权值数的服务请求。sh：源地址哈希，基于源IP地址的一致性哈希，相同的源地址会调度到相同的后端服务器。
+     * @return Rules followed by NLB when forwarding traffic. Options: wrr (default): Weighted round robin. Backend servers with higher weights are selected more frequently (higher probability). wlc: Weighted least connections. Based on the least number of connections, assigns different weights to backend servers according to their processing capabilities, allowing each server to handle a corresponding number of service requests. sh: Source address hash. Uses consistent hashing based on the source IP address; requests from the same source address are routed to the same backend server.
      * 
      */
     public Optional<Output<String>> scheduler() {
@@ -203,14 +203,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 服务器组名称, 必须以字母、数字或中文开头，可包含以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。该参数不传入，则默认为服务器组ID。
+     * Server group name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the server group ID
      * 
      */
     @Import(name="serverGroupName")
     private @Nullable Output<String> serverGroupName;
 
     /**
-     * @return 服务器组名称, 必须以字母、数字或中文开头，可包含以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。该参数不传入，则默认为服务器组ID。
+     * @return Server group name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the server group ID
      * 
      */
     public Optional<Output<String>> serverGroupName() {
@@ -225,14 +225,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 是否开启会话保持。
+     * Enable session persistence.
      * 
      */
     @Import(name="sessionPersistenceEnabled")
     private @Nullable Output<Boolean> sessionPersistenceEnabled;
 
     /**
-     * @return 是否开启会话保持。
+     * @return Enable session persistence.
      * 
      */
     public Optional<Output<Boolean>> sessionPersistenceEnabled() {
@@ -240,14 +240,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 会话保持的超时时间，取值范围为1～3600秒，默认1000秒。
+     * Session persistence timeout. Range: 1–3600 seconds, default: 1000 seconds
      * 
      */
     @Import(name="sessionPersistenceTimeout")
     private @Nullable Output<Integer> sessionPersistenceTimeout;
 
     /**
-     * @return 会话保持的超时时间，取值范围为1～3600秒，默认1000秒。
+     * @return Session persistence timeout. Range: 1–3600 seconds, default: 1000 seconds
      * 
      */
     public Optional<Output<Integer>> sessionPersistenceTimeout() {
@@ -262,14 +262,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 是否开启清除TCP/HTTP/HTTPS报文的timestamp（即时间戳）的功能。
+     * Enable removal of TCP/HTTP/HTTPS packet timestamps
      * 
      */
     @Import(name="timestampRemoveEnabled")
     private @Nullable Output<Boolean> timestampRemoveEnabled;
 
     /**
-     * @return 是否开启清除TCP/HTTP/HTTPS报文的timestamp（即时间戳）的功能。
+     * @return Enable removal of TCP/HTTP/HTTPS packet timestamps
      * 
      */
     public Optional<Output<Boolean>> timestampRemoveEnabled() {
@@ -277,14 +277,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 服务器组的类型。取值如下：instance（默认值）：服务器类型。支持添加云服务器实例和已绑定云服务器实例的辅助网卡作为后端服务器。ip：IP地址类型。支持添加任何网络可达的VPC或IDC中的服务器作为后端服务器。
+     * Server group type. Available values: instance (default): server type. Supports adding cloud server instances and auxiliary network interfaces bound to cloud server instances as backend servers. ip: IP address type. Supports adding any network-accessible server in a VPC or IDC as a backend server.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 服务器组的类型。取值如下：instance（默认值）：服务器类型。支持添加云服务器实例和已绑定云服务器实例的辅助网卡作为后端服务器。ip：IP地址类型。支持添加任何网络可达的VPC或IDC中的服务器作为后端服务器。
+     * @return Server group type. Available values: instance (default): server type. Supports adding cloud server instances and auxiliary network interfaces bound to cloud server instances as backend servers. ip: IP address type. Supports adding any network-accessible server in a VPC or IDC as a backend server.
      * 
      */
     public Optional<Output<String>> type() {
@@ -292,14 +292,14 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 服务器组所属私有网络的ID。
+     * ID of the private network to which the server group belongs
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return 服务器组所属私有网络的ID。
+     * @return ID of the private network to which the server group belongs
      * 
      */
     public Output<String> vpcId() {
@@ -350,7 +350,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param anyPortEnabled 是否开启全端口转发。
+         * @param anyPortEnabled Enable all-port forwarding
          * 
          * @return builder
          * 
@@ -361,7 +361,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param anyPortEnabled 是否开启全端口转发。
+         * @param anyPortEnabled Enable all-port forwarding
          * 
          * @return builder
          * 
@@ -371,7 +371,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param bypassSecurityGroupEnabled 是否开启放通后端安全组功能。仅参数Type为“instance”时，可以配置此参数。
+         * @param bypassSecurityGroupEnabled Enable backend security group pass-through. This parameter can only be configured when Type is &#39;instance&#39;.
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param bypassSecurityGroupEnabled 是否开启放通后端安全组功能。仅参数Type为“instance”时，可以配置此参数。
+         * @param bypassSecurityGroupEnabled Enable backend security group pass-through. This parameter can only be configured when Type is &#39;instance&#39;.
          * 
          * @return builder
          * 
@@ -392,7 +392,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param connectionDrainEnabled 是否开启连接优雅中断。
+         * @param connectionDrainEnabled Enable graceful connection termination.
          * 
          * @return builder
          * 
@@ -403,7 +403,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param connectionDrainEnabled 是否开启连接优雅中断。
+         * @param connectionDrainEnabled Enable graceful connection termination.
          * 
          * @return builder
          * 
@@ -413,7 +413,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param connectionDrainTimeout 连接优雅中断超时时间，取值范围为0～900秒。参数ConnectionDrainEnabled为“true”时，该参数为必填。
+         * @param connectionDrainTimeout Connection graceful shutdown timeout, range: 0–900 seconds. If ConnectionDrainEnabled is &#39;true&#39;, this parameter is required.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param connectionDrainTimeout 连接优雅中断超时时间，取值范围为0～900秒。参数ConnectionDrainEnabled为“true”时，该参数为必填。
+         * @param connectionDrainTimeout Connection graceful shutdown timeout, range: 0–900 seconds. If ConnectionDrainEnabled is &#39;true&#39;, this parameter is required.
          * 
          * @return builder
          * 
@@ -434,7 +434,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description 后端服务器组的描述,服务器组的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+         * @param description Description of the backend server group, description of the server group. Must start with a letter, number, or Chinese character, and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period（。）. Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
          * 
          * @return builder
          * 
@@ -445,7 +445,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description 后端服务器组的描述,服务器组的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+         * @param description Description of the backend server group, description of the server group. Must start with a letter, number, or Chinese character, and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period（。）. Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
          * 
          * @return builder
          * 
@@ -455,7 +455,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param healthCheck 健康检查相关参数。
+         * @param healthCheck Health check parameters
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param healthCheck 健康检查相关参数。
+         * @param healthCheck Health check parameters
          * 
          * @return builder
          * 
@@ -476,7 +476,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipAddressVersion 服务器组的IP地址类型。取值如下：ipv4（默认值）：表示该服务器组仅支持添加IPv4类型的后端服务器。ipv6：表示该服务器组仅支持添加IPv6类型的后端服务器。
+         * @param ipAddressVersion IP address type of the server group. Options: ipv4 (default): The server group only supports adding IPv4 type backend servers. ipv6: The server group only supports adding IPv6 type backend servers.
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipAddressVersion 服务器组的IP地址类型。取值如下：ipv4（默认值）：表示该服务器组仅支持添加IPv4类型的后端服务器。ipv6：表示该服务器组仅支持添加IPv6类型的后端服务器。
+         * @param ipAddressVersion IP address type of the server group. Options: ipv4 (default): The server group only supports adding IPv4 type backend servers. ipv6: The server group only supports adding IPv6 type backend servers.
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param preserveClientIpEnabled 是否开启源地址保持。
+         * @param preserveClientIpEnabled Enable source address persistence
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param preserveClientIpEnabled 是否开启源地址保持。
+         * @param preserveClientIpEnabled Enable source address persistence
          * 
          * @return builder
          * 
@@ -518,7 +518,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -529,7 +529,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -539,7 +539,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param protocol NLB转发流量到后端服务器时使用的通信协议。取值如下：TCP。UDP。
+         * @param protocol Communication protocol used by NLB to forward traffic to backend servers. Options: TCP. UDP.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param protocol NLB转发流量到后端服务器时使用的通信协议。取值如下：TCP。UDP。
+         * @param protocol Communication protocol used by NLB to forward traffic to backend servers. Options: TCP. UDP.
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param proxyProtocolType 是否开启Proxy-Protocol协议。取值如下：off（默认值）：关闭。standard：开启。NLB将通过Proxy-Protocol协议携带客户端源IP地址转发至后端服务器，还需要在后端服务器上配置Proxy-Protocol。
+         * @param proxyProtocolType Enable Proxy-Protocol. Available values: off (default): disabled. standard: enabled. NLB forwards the client source IP address to the backend server via Proxy-Protocol. Proxy-Protocol must also be configured on the backend server.
          * 
          * @return builder
          * 
@@ -571,7 +571,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param proxyProtocolType 是否开启Proxy-Protocol协议。取值如下：off（默认值）：关闭。standard：开启。NLB将通过Proxy-Protocol协议携带客户端源IP地址转发至后端服务器，还需要在后端服务器上配置Proxy-Protocol。
+         * @param proxyProtocolType Enable Proxy-Protocol. Available values: off (default): disabled. standard: enabled. NLB forwards the client source IP address to the backend server via Proxy-Protocol. Proxy-Protocol must also be configured on the backend server.
          * 
          * @return builder
          * 
@@ -581,7 +581,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param scheduler NLB转发流量时遵循的规则。取值如下：wrr（默认值）：加权轮询，权重值越高的后端服务器，被轮询到的次数（概率）越高。wlc：加权最小连接数，在最少连接数的基础上，根据后端服务器的不同处理能力，给每个服务器分配不同的权重，使其能够接受相应权值数的服务请求。sh：源地址哈希，基于源IP地址的一致性哈希，相同的源地址会调度到相同的后端服务器。
+         * @param scheduler Rules followed by NLB when forwarding traffic. Options: wrr (default): Weighted round robin. Backend servers with higher weights are selected more frequently (higher probability). wlc: Weighted least connections. Based on the least number of connections, assigns different weights to backend servers according to their processing capabilities, allowing each server to handle a corresponding number of service requests. sh: Source address hash. Uses consistent hashing based on the source IP address; requests from the same source address are routed to the same backend server.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param scheduler NLB转发流量时遵循的规则。取值如下：wrr（默认值）：加权轮询，权重值越高的后端服务器，被轮询到的次数（概率）越高。wlc：加权最小连接数，在最少连接数的基础上，根据后端服务器的不同处理能力，给每个服务器分配不同的权重，使其能够接受相应权值数的服务请求。sh：源地址哈希，基于源IP地址的一致性哈希，相同的源地址会调度到相同的后端服务器。
+         * @param scheduler Rules followed by NLB when forwarding traffic. Options: wrr (default): Weighted round robin. Backend servers with higher weights are selected more frequently (higher probability). wlc: Weighted least connections. Based on the least number of connections, assigns different weights to backend servers according to their processing capabilities, allowing each server to handle a corresponding number of service requests. sh: Source address hash. Uses consistent hashing based on the source IP address; requests from the same source address are routed to the same backend server.
          * 
          * @return builder
          * 
@@ -602,7 +602,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serverGroupName 服务器组名称, 必须以字母、数字或中文开头，可包含以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。该参数不传入，则默认为服务器组ID。
+         * @param serverGroupName Server group name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the server group ID
          * 
          * @return builder
          * 
@@ -613,7 +613,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serverGroupName 服务器组名称, 必须以字母、数字或中文开头，可包含以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。该参数不传入，则默认为服务器组ID。
+         * @param serverGroupName Server group name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the server group ID
          * 
          * @return builder
          * 
@@ -636,7 +636,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param sessionPersistenceEnabled 是否开启会话保持。
+         * @param sessionPersistenceEnabled Enable session persistence.
          * 
          * @return builder
          * 
@@ -647,7 +647,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param sessionPersistenceEnabled 是否开启会话保持。
+         * @param sessionPersistenceEnabled Enable session persistence.
          * 
          * @return builder
          * 
@@ -657,7 +657,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param sessionPersistenceTimeout 会话保持的超时时间，取值范围为1～3600秒，默认1000秒。
+         * @param sessionPersistenceTimeout Session persistence timeout. Range: 1–3600 seconds, default: 1000 seconds
          * 
          * @return builder
          * 
@@ -668,7 +668,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param sessionPersistenceTimeout 会话保持的超时时间，取值范围为1～3600秒，默认1000秒。
+         * @param sessionPersistenceTimeout Session persistence timeout. Range: 1–3600 seconds, default: 1000 seconds
          * 
          * @return builder
          * 
@@ -691,7 +691,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param timestampRemoveEnabled 是否开启清除TCP/HTTP/HTTPS报文的timestamp（即时间戳）的功能。
+         * @param timestampRemoveEnabled Enable removal of TCP/HTTP/HTTPS packet timestamps
          * 
          * @return builder
          * 
@@ -702,7 +702,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param timestampRemoveEnabled 是否开启清除TCP/HTTP/HTTPS报文的timestamp（即时间戳）的功能。
+         * @param timestampRemoveEnabled Enable removal of TCP/HTTP/HTTPS packet timestamps
          * 
          * @return builder
          * 
@@ -712,7 +712,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param type 服务器组的类型。取值如下：instance（默认值）：服务器类型。支持添加云服务器实例和已绑定云服务器实例的辅助网卡作为后端服务器。ip：IP地址类型。支持添加任何网络可达的VPC或IDC中的服务器作为后端服务器。
+         * @param type Server group type. Available values: instance (default): server type. Supports adding cloud server instances and auxiliary network interfaces bound to cloud server instances as backend servers. ip: IP address type. Supports adding any network-accessible server in a VPC or IDC as a backend server.
          * 
          * @return builder
          * 
@@ -723,7 +723,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param type 服务器组的类型。取值如下：instance（默认值）：服务器类型。支持添加云服务器实例和已绑定云服务器实例的辅助网卡作为后端服务器。ip：IP地址类型。支持添加任何网络可达的VPC或IDC中的服务器作为后端服务器。
+         * @param type Server group type. Available values: instance (default): server type. Supports adding cloud server instances and auxiliary network interfaces bound to cloud server instances as backend servers. ip: IP address type. Supports adding any network-accessible server in a VPC or IDC as a backend server.
          * 
          * @return builder
          * 
@@ -733,7 +733,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param vpcId 服务器组所属私有网络的ID。
+         * @param vpcId ID of the private network to which the server group belongs
          * 
          * @return builder
          * 
@@ -744,7 +744,7 @@ public final class NlbServerGroupArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param vpcId 服务器组所属私有网络的ID。
+         * @param vpcId ID of the private network to which the server group belongs
          * 
          * @return builder
          * 

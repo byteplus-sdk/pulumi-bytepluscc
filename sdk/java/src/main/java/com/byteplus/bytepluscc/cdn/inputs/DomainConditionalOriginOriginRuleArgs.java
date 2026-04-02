@@ -17,14 +17,14 @@ public final class DomainConditionalOriginOriginRuleArgs extends com.pulumi.reso
     public static final DomainConditionalOriginOriginRuleArgs Empty = new DomainConditionalOriginOriginRuleArgs();
 
     /**
-     * 表示列表中一条规则的操作配置。
+     * Indicates the operation configuration for a rule in the list.
      * 
      */
     @Import(name="actions")
     private @Nullable Output<DomainConditionalOriginOriginRuleActionsArgs> actions;
 
     /**
-     * @return 表示列表中一条规则的操作配置。
+     * @return Indicates the operation configuration for a rule in the list.
      * 
      */
     public Optional<Output<DomainConditionalOriginOriginRuleActionsArgs>> actions() {
@@ -32,14 +32,14 @@ public final class DomainConditionalOriginOriginRuleArgs extends com.pulumi.reso
     }
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainConditionalOriginOriginRuleConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainConditionalOriginOriginRuleConditionArgs>> condition() {
@@ -72,7 +72,7 @@ public final class DomainConditionalOriginOriginRuleArgs extends com.pulumi.reso
         }
 
         /**
-         * @param actions 表示列表中一条规则的操作配置。
+         * @param actions Indicates the operation configuration for a rule in the list.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainConditionalOriginOriginRuleArgs extends com.pulumi.reso
         }
 
         /**
-         * @param actions 表示列表中一条规则的操作配置。
+         * @param actions Indicates the operation configuration for a rule in the list.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainConditionalOriginOriginRuleArgs extends com.pulumi.reso
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainConditionalOriginOriginRuleArgs extends com.pulumi.reso
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 

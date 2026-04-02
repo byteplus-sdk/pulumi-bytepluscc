@@ -16,14 +16,14 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
     public static final ServerGroupTagArgs Empty = new ServerGroupTagArgs();
 
     /**
-     * 标签的标签键。同一资源的标签键不允许重复。
+     * Tag key. Tag keys for the same resource must be unique.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 标签的标签键。同一资源的标签键不允许重复。
+     * @return Tag key. Tag keys for the same resource must be unique.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 标签的标签值。
+     * Tag value of the tag.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 标签的标签值。
+     * @return Tag value of the tag.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key 标签的标签键。同一资源的标签键不允许重复。
+         * @param key Tag key. Tag keys for the same resource must be unique.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key 标签的标签键。同一资源的标签键不允许重复。
+         * @param key Tag key. Tag keys for the same resource must be unique.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param value 标签的标签值。
+         * @param value Tag value of the tag.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param value 标签的标签值。
+         * @param value Tag value of the tag.
          * 
          * @return builder
          * 

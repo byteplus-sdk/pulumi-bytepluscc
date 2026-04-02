@@ -23,14 +23,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceArgs Empty = new InstanceArgs();
 
     /**
-     * 计费详细信息。
+     * Billing details.
      * 
      */
     @Import(name="chargeDetail")
     private @Nullable Output<InstanceChargeDetailArgs> chargeDetail;
 
     /**
-     * @return 计费详细信息。
+     * @return Billing details.
      * 
      */
     public Optional<Output<InstanceChargeDetailArgs>> chargeDetail() {
@@ -38,14 +38,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例兼容版本。取值范围：MySQL*8*0：表示兼容社区 MySQL 8.0 版本。MySQL*5*7：表示兼容社区 MySQL 5.7 版本。
+     * Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
      * 
      */
     @Import(name="dbEngineVersion", required=true)
     private Output<String> dbEngineVersion;
 
     /**
-     * @return 实例兼容版本。取值范围：MySQL*8*0：表示兼容社区 MySQL 8.0 版本。MySQL*5*7：表示兼容社区 MySQL 5.7 版本。
+     * @return Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
      * 
      */
     public Output<String> dbEngineVersion() {
@@ -53,14 +53,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 根据兼容版本，选择 veDB MySQL 小版本。当 DBEngineVersion 取值为 MySQL*5*7 时，该参数取值默认为 2.0。当 DBEngineVersion 取值为 MySQL*8*0 时，该参数取值范围如下：3.0（默认）：veDB MySQL 稳定版，100% 兼容 MySQL 8.0。3.1：原生支持 HTAP 应用场景，加速复杂查询。3.2：原生支持 HTAP 应用场景，加速复杂查询。
+     * Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
      * 
      */
     @Import(name="dbMinorVersion")
     private @Nullable Output<String> dbMinorVersion;
 
     /**
-     * @return 根据兼容版本，选择 veDB MySQL 小版本。当 DBEngineVersion 取值为 MySQL*5*7 时，该参数取值默认为 2.0。当 DBEngineVersion 取值为 MySQL*8*0 时，该参数取值范围如下：3.0（默认）：veDB MySQL 稳定版，100% 兼容 MySQL 8.0。3.1：原生支持 HTAP 应用场景，加速复杂查询。3.2：原生支持 HTAP 应用场景，加速复杂查询。
+     * @return Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
      * 
      */
     public Optional<Output<String>> dbMinorVersion() {
@@ -68,14 +68,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例是否开启了删除保护功能。取值范围：enabled：开启。disabled：关闭。
+     * Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
      * 
      */
     @Import(name="deletionProtection")
     private @Nullable Output<String> deletionProtection;
 
     /**
-     * @return 实例是否开启了删除保护功能。取值范围：enabled：开启。disabled：关闭。
+     * @return Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
      * 
      */
     public Optional<Output<String>> deletionProtection() {
@@ -83,14 +83,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例名称。命名规则：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需在 1~128 个字符内。
+     * Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 实例名称。命名规则：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需在 1~128 个字符内。
+     * @return Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -98,14 +98,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表名是否区分大小写。取值范围：0：表名称大小写敏感，后端根据实际表名存储。1：表名称不区分大小写，后端存储时将表名称统一为小写字母。
+     * Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
      * 
      */
     @Import(name="lowerCaseTableNames")
     private @Nullable Output<String> lowerCaseTableNames;
 
     /**
-     * @return 表名是否区分大小写。取值范围：0：表名称大小写敏感，后端根据实际表名存储。1：表名称不区分大小写，后端存储时将表名称统一为小写字母。
+     * @return Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
      * 
      */
     public Optional<Output<String>> lowerCaseTableNames() {
@@ -113,14 +113,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的可维护时间窗口信息。
+     * Instance maintenance window information
      * 
      */
     @Import(name="maintenanceWindow")
     private @Nullable Output<InstanceMaintenanceWindowArgs> maintenanceWindow;
 
     /**
-     * @return 实例的可维护时间窗口信息。
+     * @return Instance maintenance window information
      * 
      */
     public Optional<Output<InstanceMaintenanceWindowArgs>> maintenanceWindow() {
@@ -128,14 +128,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例节点数量。取值范围为 2~16 个。
+     * Number of instance nodes. Value range: 2–16.
      * 
      */
     @Import(name="nodeNumber", required=true)
     private Output<Integer> nodeNumber;
 
     /**
-     * @return 实例节点数量。取值范围为 2~16 个。
+     * @return Number of instance nodes. Value range: 2–16.
      * 
      */
     public Output<Integer> nodeNumber() {
@@ -143,14 +143,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的节点规格代码。
+     * Instance node specification code.
      * 
      */
     @Import(name="nodeSpec", required=true)
     private Output<String> nodeSpec;
 
     /**
-     * @return 实例的节点规格代码。
+     * @return Instance node specification code.
      * 
      */
     public Output<String> nodeSpec() {
@@ -165,14 +165,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建的实例数量，取值范围 1~50，默认值为 1。
+     * Number of instances to create. Range: 1~50. Default: 1
      * 
      */
     @Import(name="number")
     private @Nullable Output<Integer> number;
 
     /**
-     * @return 创建的实例数量，取值范围 1~50，默认值为 1。
+     * @return Number of instances to create. Range: 1~50. Default: 1
      * 
      */
     public Optional<Output<Integer>> number() {
@@ -180,14 +180,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 为实例默认创建的连接终端指定私网端口号。默认取值为 3306，取值范围为 1000~65534。
+     * Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 为实例默认创建的连接终端指定私网端口号。默认取值为 3306，取值范围为 1000~65534。
+     * @return Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -195,14 +195,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 预付费的存储总容量大小，单位 GiB。
+     * Total prepaid storage capacity, in GiB
      * 
      */
     @Import(name="prePaidStorageInGb")
     private @Nullable Output<Integer> prePaidStorageInGb;
 
     /**
-     * @return 预付费的存储总容量大小，单位 GiB。
+     * @return Total prepaid storage capacity, in GiB
      * 
      */
     public Optional<Output<Integer>> prePaidStorageInGb() {
@@ -210,14 +210,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所属的项目名称。
+     * Project name to which the instance belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 实例所属的项目名称。
+     * @return Project name to which the instance belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -225,14 +225,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 存储计费类型，不传入该参数时，存储计费类型默认与计算计费类型取值一致。取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+     * Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
      * 
      */
     @Import(name="storageChargeType")
     private @Nullable Output<String> storageChargeType;
 
     /**
-     * @return 存储计费类型，不传入该参数时，存储计费类型默认与计算计费类型取值一致。取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+     * @return Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
      * 
      */
     public Optional<Output<String>> storageChargeType() {
@@ -240,14 +240,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网 ID。子网必须属于所选的可用区。
+     * Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return 子网 ID。子网必须属于所选的可用区。
+     * @return Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     public Output<String> subnetId() {
@@ -255,14 +255,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 高权限用户的账号名称。账号名称需满足以下要求：名称唯一，且长度在 2~32 个字符内。由字母、数字、中划线（-）、下划线（_）组成。以字母开头，以字母或数字结尾。名称内不能包含禁用关键词。
+     * Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
      * 
      */
     @Import(name="superAccountName")
     private @Nullable Output<String> superAccountName;
 
     /**
-     * @return 高权限用户的账号名称。账号名称需满足以下要求：名称唯一，且长度在 2~32 个字符内。由字母、数字、中划线（-）、下划线（_）组成。以字母开头，以字母或数字结尾。名称内不能包含禁用关键词。
+     * @return Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
      * 
      */
     public Optional<Output<String>> superAccountName() {
@@ -270,14 +270,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 高权限账号的密码。账号密码需满足以下要求：只能包含大小写字母、数字和特殊字符（如 ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/）。长度需在 8~32 个字符内。至少包含大写字母、小写字母、数字或特殊字符中的 3 种。
+     * Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
      * 
      */
     @Import(name="superAccountPassword")
     private @Nullable Output<String> superAccountPassword;
 
     /**
-     * @return 高权限账号的密码。账号密码需满足以下要求：只能包含大小写字母、数字和特殊字符（如 ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/）。长度需在 8~32 个字符内。至少包含大写字母、小写字母、数字或特殊字符中的 3 种。
+     * @return Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
      * 
      */
     public Optional<Output<String>> superAccountPassword() {
@@ -292,14 +292,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 参数模板 ID。
+     * Parameter template ID
      * 
      */
     @Import(name="templateId")
     private @Nullable Output<String> templateId;
 
     /**
-     * @return 参数模板 ID。
+     * @return Parameter template ID
      * 
      */
     public Optional<Output<String>> templateId() {
@@ -307,14 +307,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的时区。国内所有地域默认时区为 UTC +08:00。
+     * Instance time zone. The default time zone for all regions in China is UTC +08:00.
      * 
      */
     @Import(name="timeZone")
     private @Nullable Output<String> timeZone;
 
     /**
-     * @return 实例的时区。国内所有地域默认时区为 UTC +08:00。
+     * @return Instance time zone. The default time zone for all regions in China is UTC +08:00.
      * 
      */
     public Optional<Output<String>> timeZone() {
@@ -322,14 +322,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 私有网络（VPC） ID。
+     * Private network (VPC) ID.
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return 私有网络（VPC） ID。
+     * @return Private network (VPC) ID.
      * 
      */
     public Output<String> vpcId() {
@@ -337,14 +337,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 可用区 ID。
+     * Availability zone ID
      * 
      */
     @Import(name="zoneIds", required=true)
     private Output<String> zoneIds;
 
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID
      * 
      */
     public Output<String> zoneIds() {
@@ -398,7 +398,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeDetail 计费详细信息。
+         * @param chargeDetail Billing details.
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeDetail 计费详细信息。
+         * @param chargeDetail Billing details.
          * 
          * @return builder
          * 
@@ -419,7 +419,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersion 实例兼容版本。取值范围：MySQL*8*0：表示兼容社区 MySQL 8.0 版本。MySQL*5*7：表示兼容社区 MySQL 5.7 版本。
+         * @param dbEngineVersion Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersion 实例兼容版本。取值范围：MySQL*8*0：表示兼容社区 MySQL 8.0 版本。MySQL*5*7：表示兼容社区 MySQL 5.7 版本。
+         * @param dbEngineVersion Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbMinorVersion 根据兼容版本，选择 veDB MySQL 小版本。当 DBEngineVersion 取值为 MySQL*5*7 时，该参数取值默认为 2.0。当 DBEngineVersion 取值为 MySQL*8*0 时，该参数取值范围如下：3.0（默认）：veDB MySQL 稳定版，100% 兼容 MySQL 8.0。3.1：原生支持 HTAP 应用场景，加速复杂查询。3.2：原生支持 HTAP 应用场景，加速复杂查询。
+         * @param dbMinorVersion Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
          * 
          * @return builder
          * 
@@ -451,7 +451,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbMinorVersion 根据兼容版本，选择 veDB MySQL 小版本。当 DBEngineVersion 取值为 MySQL*5*7 时，该参数取值默认为 2.0。当 DBEngineVersion 取值为 MySQL*8*0 时，该参数取值范围如下：3.0（默认）：veDB MySQL 稳定版，100% 兼容 MySQL 8.0。3.1：原生支持 HTAP 应用场景，加速复杂查询。3.2：原生支持 HTAP 应用场景，加速复杂查询。
+         * @param dbMinorVersion Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
          * 
          * @return builder
          * 
@@ -461,7 +461,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletionProtection 实例是否开启了删除保护功能。取值范围：enabled：开启。disabled：关闭。
+         * @param deletionProtection Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
          * 
          * @return builder
          * 
@@ -472,7 +472,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletionProtection 实例是否开启了删除保护功能。取值范围：enabled：开启。disabled：关闭。
+         * @param deletionProtection Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName 实例名称。命名规则：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需在 1~128 个字符内。
+         * @param instanceName Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName 实例名称。命名规则：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需在 1~128 个字符内。
+         * @param instanceName Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lowerCaseTableNames 表名是否区分大小写。取值范围：0：表名称大小写敏感，后端根据实际表名存储。1：表名称不区分大小写，后端存储时将表名称统一为小写字母。
+         * @param lowerCaseTableNames Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
          * 
          * @return builder
          * 
@@ -514,7 +514,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lowerCaseTableNames 表名是否区分大小写。取值范围：0：表名称大小写敏感，后端根据实际表名存储。1：表名称不区分大小写，后端存储时将表名称统一为小写字母。
+         * @param lowerCaseTableNames Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceWindow 实例的可维护时间窗口信息。
+         * @param maintenanceWindow Instance maintenance window information
          * 
          * @return builder
          * 
@@ -535,7 +535,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceWindow 实例的可维护时间窗口信息。
+         * @param maintenanceWindow Instance maintenance window information
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeNumber 实例节点数量。取值范围为 2~16 个。
+         * @param nodeNumber Number of instance nodes. Value range: 2–16.
          * 
          * @return builder
          * 
@@ -556,7 +556,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeNumber 实例节点数量。取值范围为 2~16 个。
+         * @param nodeNumber Number of instance nodes. Value range: 2–16.
          * 
          * @return builder
          * 
@@ -566,7 +566,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpec 实例的节点规格代码。
+         * @param nodeSpec Instance node specification code.
          * 
          * @return builder
          * 
@@ -577,7 +577,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpec 实例的节点规格代码。
+         * @param nodeSpec Instance node specification code.
          * 
          * @return builder
          * 
@@ -600,7 +600,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param number 创建的实例数量，取值范围 1~50，默认值为 1。
+         * @param number Number of instances to create. Range: 1~50. Default: 1
          * 
          * @return builder
          * 
@@ -611,7 +611,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param number 创建的实例数量，取值范围 1~50，默认值为 1。
+         * @param number Number of instances to create. Range: 1~50. Default: 1
          * 
          * @return builder
          * 
@@ -621,7 +621,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 为实例默认创建的连接终端指定私网端口号。默认取值为 3306，取值范围为 1000~65534。
+         * @param port Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
          * 
          * @return builder
          * 
@@ -632,7 +632,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 为实例默认创建的连接终端指定私网端口号。默认取值为 3306，取值范围为 1000~65534。
+         * @param port Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
          * 
          * @return builder
          * 
@@ -642,7 +642,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prePaidStorageInGb 预付费的存储总容量大小，单位 GiB。
+         * @param prePaidStorageInGb Total prepaid storage capacity, in GiB
          * 
          * @return builder
          * 
@@ -653,7 +653,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prePaidStorageInGb 预付费的存储总容量大小，单位 GiB。
+         * @param prePaidStorageInGb Total prepaid storage capacity, in GiB
          * 
          * @return builder
          * 
@@ -663,7 +663,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属的项目名称。
+         * @param projectName Project name to which the instance belongs.
          * 
          * @return builder
          * 
@@ -674,7 +674,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属的项目名称。
+         * @param projectName Project name to which the instance belongs.
          * 
          * @return builder
          * 
@@ -684,7 +684,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageChargeType 存储计费类型，不传入该参数时，存储计费类型默认与计算计费类型取值一致。取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+         * @param storageChargeType Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
          * 
          * @return builder
          * 
@@ -695,7 +695,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageChargeType 存储计费类型，不传入该参数时，存储计费类型默认与计算计费类型取值一致。取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+         * @param storageChargeType Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
          * 
          * @return builder
          * 
@@ -705,7 +705,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。子网必须属于所选的可用区。
+         * @param subnetId Subnet ID. The subnet must belong to the selected availability zone.
          * 
          * @return builder
          * 
@@ -716,7 +716,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。子网必须属于所选的可用区。
+         * @param subnetId Subnet ID. The subnet must belong to the selected availability zone.
          * 
          * @return builder
          * 
@@ -726,7 +726,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountName 高权限用户的账号名称。账号名称需满足以下要求：名称唯一，且长度在 2~32 个字符内。由字母、数字、中划线（-）、下划线（_）组成。以字母开头，以字母或数字结尾。名称内不能包含禁用关键词。
+         * @param superAccountName Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
          * 
          * @return builder
          * 
@@ -737,7 +737,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountName 高权限用户的账号名称。账号名称需满足以下要求：名称唯一，且长度在 2~32 个字符内。由字母、数字、中划线（-）、下划线（_）组成。以字母开头，以字母或数字结尾。名称内不能包含禁用关键词。
+         * @param superAccountName Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
          * 
          * @return builder
          * 
@@ -747,7 +747,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountPassword 高权限账号的密码。账号密码需满足以下要求：只能包含大小写字母、数字和特殊字符（如 ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/）。长度需在 8~32 个字符内。至少包含大写字母、小写字母、数字或特殊字符中的 3 种。
+         * @param superAccountPassword Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
          * 
          * @return builder
          * 
@@ -758,7 +758,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountPassword 高权限账号的密码。账号密码需满足以下要求：只能包含大小写字母、数字和特殊字符（如 ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/）。长度需在 8~32 个字符内。至少包含大写字母、小写字母、数字或特殊字符中的 3 种。
+         * @param superAccountPassword Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
          * 
          * @return builder
          * 
@@ -781,7 +781,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param templateId 参数模板 ID。
+         * @param templateId Parameter template ID
          * 
          * @return builder
          * 
@@ -792,7 +792,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param templateId 参数模板 ID。
+         * @param templateId Parameter template ID
          * 
          * @return builder
          * 
@@ -802,7 +802,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeZone 实例的时区。国内所有地域默认时区为 UTC +08:00。
+         * @param timeZone Instance time zone. The default time zone for all regions in China is UTC +08:00.
          * 
          * @return builder
          * 
@@ -813,7 +813,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeZone 实例的时区。国内所有地域默认时区为 UTC +08:00。
+         * @param timeZone Instance time zone. The default time zone for all regions in China is UTC +08:00.
          * 
          * @return builder
          * 
@@ -823,7 +823,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络（VPC） ID。
+         * @param vpcId Private network (VPC) ID.
          * 
          * @return builder
          * 
@@ -834,7 +834,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络（VPC） ID。
+         * @param vpcId Private network (VPC) ID.
          * 
          * @return builder
          * 
@@ -844,7 +844,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIds 可用区 ID。
+         * @param zoneIds Availability zone ID
          * 
          * @return builder
          * 
@@ -855,7 +855,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIds 可用区 ID。
+         * @param zoneIds Availability zone ID
          * 
          * @return builder
          * 

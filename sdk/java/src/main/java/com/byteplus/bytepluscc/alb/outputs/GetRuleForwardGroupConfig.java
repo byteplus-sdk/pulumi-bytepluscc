@@ -14,38 +14,38 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleForwardGroupConfig {
     /**
-     * @return 转发到的目的服务器组列表。
+     * @return Destination server group list.
      * 
      */
     private List<GetRuleForwardGroupConfigServerGroupTuple> serverGroupTuples;
     /**
-     * @return 是否开启组间会话保持。on：开启。off：不开启。
+     * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
      * 
      */
     private String stickySessionEnabled;
     /**
-     * @return 组件回话保持的超时时间。单位：秒。
+     * @return Component session stickiness timeout. Unit: seconds.
      * 
      */
     private Integer stickySessionTimeout;
 
     private GetRuleForwardGroupConfig() {}
     /**
-     * @return 转发到的目的服务器组列表。
+     * @return Destination server group list.
      * 
      */
     public List<GetRuleForwardGroupConfigServerGroupTuple> serverGroupTuples() {
         return this.serverGroupTuples;
     }
     /**
-     * @return 是否开启组间会话保持。on：开启。off：不开启。
+     * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
      * 
      */
     public String stickySessionEnabled() {
         return this.stickySessionEnabled;
     }
     /**
-     * @return 组件回话保持的超时时间。单位：秒。
+     * @return Component session stickiness timeout. Unit: seconds.
      * 
      */
     public Integer stickySessionTimeout() {

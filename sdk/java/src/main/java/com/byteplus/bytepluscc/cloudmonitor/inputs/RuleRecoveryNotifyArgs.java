@@ -16,14 +16,14 @@ public final class RuleRecoveryNotifyArgs extends com.pulumi.resources.ResourceA
     public static final RuleRecoveryNotifyArgs Empty = new RuleRecoveryNotifyArgs();
 
     /**
-     * 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+     * Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
      * 
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
-     * @return 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+     * @return Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
      * 
      */
     public Optional<Output<Boolean>> enable() {
@@ -55,7 +55,7 @@ public final class RuleRecoveryNotifyArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param enable 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+         * @param enable Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class RuleRecoveryNotifyArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param enable 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+         * @param enable Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
          * 
          * @return builder
          * 

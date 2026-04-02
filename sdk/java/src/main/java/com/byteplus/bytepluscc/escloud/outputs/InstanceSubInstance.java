@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceSubInstance {
     /**
-     * @return 企业级 SQL 分析实例 ID。
+     * @return Enterprise-level SQL analysis instance ID.
      * 
      */
     private @Nullable String subInstanceId;
     /**
-     * @return 实例状态。
+     * @return Instance status
      * 
      */
     private @Nullable String subInstanceStatus;
     /**
-     * @return 实例类型。
+     * @return Instance type
      * 
      */
     private @Nullable String subInstanceType;
 
     private InstanceSubInstance() {}
     /**
-     * @return 企业级 SQL 分析实例 ID。
+     * @return Enterprise-level SQL analysis instance ID.
      * 
      */
     public Optional<String> subInstanceId() {
         return Optional.ofNullable(this.subInstanceId);
     }
     /**
-     * @return 实例状态。
+     * @return Instance status
      * 
      */
     public Optional<String> subInstanceStatus() {
         return Optional.ofNullable(this.subInstanceStatus);
     }
     /**
-     * @return 实例类型。
+     * @return Instance type
      * 
      */
     public Optional<String> subInstanceType() {

@@ -64,7 +64,7 @@ class AwaitableGetLaunchTemplateVersionsResult(GetLaunchTemplateVersionsResult):
 
 def get_launch_template_versions(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLaunchTemplateVersionsResult:
     """
-    Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+    Plural Data Source schema for Byteplus::ECS::LaunchTemplateVersion
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -75,7 +75,7 @@ def get_launch_template_versions(opts: Optional[pulumi.InvokeOptions] = None) ->
         ids=pulumi.get(__ret__, 'ids'))
 def get_launch_template_versions_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLaunchTemplateVersionsResult]:
     """
-    Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+    Plural Data Source schema for Byteplus::ECS::LaunchTemplateVersion
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetVolumeBaselinePerformance {
     /**
-     * @return 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+     * @return Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
      * 
      */
     private Double iops;
     /**
-     * @return 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+     * @return The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
      * 
      */
     private Double throughput;
 
     private GetVolumeBaselinePerformance() {}
     /**
-     * @return 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+     * @return Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
      * 
      */
     public Double iops() {
         return this.iops;
     }
     /**
-     * @return 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+     * @return The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
      * 
      */
     public Double throughput() {

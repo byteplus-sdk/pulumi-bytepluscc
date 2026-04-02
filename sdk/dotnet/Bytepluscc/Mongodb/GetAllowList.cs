@@ -65,39 +65,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
     public sealed class GetAllowListResult
     {
         /// <summary>
-        /// 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+        /// Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
         /// </summary>
         public readonly string AllowListCategory;
         /// <summary>
-        /// 白名单的备注信息，长度不可超过 200 个字符。
+        /// Allowlist remarks. Maximum length: 200 characters.
         /// </summary>
         public readonly string AllowListDesc;
         /// <summary>
-        /// 白名单 ID。
+        /// Allowlist ID.
         /// </summary>
         public readonly string AllowListId;
         /// <summary>
-        /// 白名单内的 IP 地址（或地址段）总数。
+        /// Total number of IP addresses (or address ranges) in the allowlist.
         /// </summary>
         public readonly int AllowListIpNum;
         /// <summary>
-        /// 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+        /// Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
         /// </summary>
         public readonly string AllowListName;
         /// <summary>
-        /// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+        /// IP address type in the allowlist. Only IPv4 addresses are currently supported.
         /// </summary>
         public readonly string AllowListType;
         /// <summary>
-        /// 输入 IP 地址或 CIDR 格式的 IP 地址段。
+        /// Enter an IP address or a CIDR-format IP address range.
         /// </summary>
         public readonly ImmutableArray<string> AllowLists;
         /// <summary>
-        /// 已绑定当前白名单的实例总数。
+        /// Total number of instances bound to the current allowlist.
         /// </summary>
         public readonly int AssociatedInstanceNum;
         /// <summary>
-        /// 已绑定当前白名单的实例信息。
+        /// Instance information bound to the current allowlist.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAllowListAssociatedInstanceResult> AssociatedInstances;
         /// <summary>
@@ -105,7 +105,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 当前白名单所属的项目。
+        /// Project to which the current allowlist belongs.
         /// </summary>
         public readonly string ProjectName;
 

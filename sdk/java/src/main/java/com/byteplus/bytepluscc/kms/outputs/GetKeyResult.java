@@ -16,12 +16,12 @@ import java.util.Objects;
 @CustomType
 public final class GetKeyResult {
     /**
-     * @return 密钥创建时间。
+     * @return Key creation time.
      * 
      */
     private Integer createdTime;
     /**
-     * @return 密钥描述:长度为 0   - 8192 个字符。
+     * @return Key description: Length 0–8192 characters.
      * 
      */
     private String description;
@@ -31,126 +31,126 @@ public final class GetKeyResult {
      */
     private String id;
     /**
-     * @return 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * @return User master key archive operation (enter 1 to archive, 2 to unarchive).
      * 
      */
     private Integer keyArchiveOperation;
     /**
-     * @return 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * @return User master key enable operation (enter 1 to enable, 2 to disable).
      * 
      */
     private Integer keyEnableOperation;
     /**
-     * @return 密钥唯一标识符，UUID形式。
+     * @return Key unique identifier in UUID format.
      * 
      */
     private String keyId;
     /**
-     * @return 密钥材料过期时间，当值为空时表示不会过期。
+     * @return Key material expiration time. If empty, the key does not expire.
      * 
      */
     private String keyMaterialExpireTime;
     /**
-     * @return 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * @return Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      * 
      */
     private String keyName;
     /**
-     * @return 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * @return User master key rotation operation (enter 1 to enable, 2 to disable).
      * 
      */
     private Integer keyRotationOperation;
     /**
-     * @return 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+     * @return Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
      * 
      */
     private String keySpec;
     /**
-     * @return 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
+     * @return Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
      * 
      */
     private String keyState;
     /**
-     * @return 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+     * @return Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
      * 
      */
     private String keyUsage;
     /**
-     * @return 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * @return Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      * 
      */
     private String keyringName;
     /**
-     * @return 密钥最后轮转时间。
+     * @return Key last rotation time.
      * 
      */
     private String lastRotationTime;
     /**
-     * @return 是否为 Multi-region 类型的主密钥。
+     * @return Is this a multi-region type master key.
      * 
      */
     private Boolean multiRegion;
     /**
-     * @return Multi-region key 配置信息。
+     * @return Multi-region key configuration information.
      * 
      */
     private GetKeyMultiRegionConfiguration multiRegionConfiguration;
     /**
-     * @return 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+     * @return Key source. Options: CloudKMS, External, ExternalKeyStore.
      * 
      */
     private String origin;
     /**
-     * @return 密钥保护级别，取值：SOFTWARE，HSM。
+     * @return Key protection level. Options: SOFTWARE, HSM.
      * 
      */
     private String protectionLevel;
     /**
-     * @return 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * @return Key rotation period (days). Range: [90, 2560].
      * 
      */
     private Integer rotateInterval;
     /**
-     * @return 密钥轮转状态，取值：Enable，Disable。
+     * @return Key rotation status. Options: Enable, Disable.
      * 
      */
     private String rotateState;
     /**
-     * @return 密钥删除时间。
+     * @return Key deletion time.
      * 
      */
     private String scheduleDeleteTime;
     /**
-     * @return 密钥轮转时间。
+     * @return Key rotation time.
      * 
      */
     private String scheduleRotationTime;
     /**
-     * @return KMS密钥的标签信息
+     * @return KMS key label information.
      * 
      */
     private List<GetKeyTag> tags;
     /**
-     * @return 资源名称，格式应为 trn:${Service}:${Region}:${AccountID}:${ResourcePath}。
+     * @return Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
      * 
      */
     private String trn;
     /**
-     * @return 密钥更新时间。
+     * @return Key update time.
      * 
      */
     private Integer updatedTime;
 
     private GetKeyResult() {}
     /**
-     * @return 密钥创建时间。
+     * @return Key creation time.
      * 
      */
     public Integer createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 密钥描述:长度为 0   - 8192 个字符。
+     * @return Key description: Length 0–8192 characters.
      * 
      */
     public String description() {
@@ -164,154 +164,154 @@ public final class GetKeyResult {
         return this.id;
     }
     /**
-     * @return 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * @return User master key archive operation (enter 1 to archive, 2 to unarchive).
      * 
      */
     public Integer keyArchiveOperation() {
         return this.keyArchiveOperation;
     }
     /**
-     * @return 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * @return User master key enable operation (enter 1 to enable, 2 to disable).
      * 
      */
     public Integer keyEnableOperation() {
         return this.keyEnableOperation;
     }
     /**
-     * @return 密钥唯一标识符，UUID形式。
+     * @return Key unique identifier in UUID format.
      * 
      */
     public String keyId() {
         return this.keyId;
     }
     /**
-     * @return 密钥材料过期时间，当值为空时表示不会过期。
+     * @return Key material expiration time. If empty, the key does not expire.
      * 
      */
     public String keyMaterialExpireTime() {
         return this.keyMaterialExpireTime;
     }
     /**
-     * @return 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * @return Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      * 
      */
     public String keyName() {
         return this.keyName;
     }
     /**
-     * @return 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * @return User master key rotation operation (enter 1 to enable, 2 to disable).
      * 
      */
     public Integer keyRotationOperation() {
         return this.keyRotationOperation;
     }
     /**
-     * @return 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+     * @return Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
      * 
      */
     public String keySpec() {
         return this.keySpec;
     }
     /**
-     * @return 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
+     * @return Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
      * 
      */
     public String keyState() {
         return this.keyState;
     }
     /**
-     * @return 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+     * @return Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
      * 
      */
     public String keyUsage() {
         return this.keyUsage;
     }
     /**
-     * @return 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * @return Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      * 
      */
     public String keyringName() {
         return this.keyringName;
     }
     /**
-     * @return 密钥最后轮转时间。
+     * @return Key last rotation time.
      * 
      */
     public String lastRotationTime() {
         return this.lastRotationTime;
     }
     /**
-     * @return 是否为 Multi-region 类型的主密钥。
+     * @return Is this a multi-region type master key.
      * 
      */
     public Boolean multiRegion() {
         return this.multiRegion;
     }
     /**
-     * @return Multi-region key 配置信息。
+     * @return Multi-region key configuration information.
      * 
      */
     public GetKeyMultiRegionConfiguration multiRegionConfiguration() {
         return this.multiRegionConfiguration;
     }
     /**
-     * @return 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+     * @return Key source. Options: CloudKMS, External, ExternalKeyStore.
      * 
      */
     public String origin() {
         return this.origin;
     }
     /**
-     * @return 密钥保护级别，取值：SOFTWARE，HSM。
+     * @return Key protection level. Options: SOFTWARE, HSM.
      * 
      */
     public String protectionLevel() {
         return this.protectionLevel;
     }
     /**
-     * @return 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * @return Key rotation period (days). Range: [90, 2560].
      * 
      */
     public Integer rotateInterval() {
         return this.rotateInterval;
     }
     /**
-     * @return 密钥轮转状态，取值：Enable，Disable。
+     * @return Key rotation status. Options: Enable, Disable.
      * 
      */
     public String rotateState() {
         return this.rotateState;
     }
     /**
-     * @return 密钥删除时间。
+     * @return Key deletion time.
      * 
      */
     public String scheduleDeleteTime() {
         return this.scheduleDeleteTime;
     }
     /**
-     * @return 密钥轮转时间。
+     * @return Key rotation time.
      * 
      */
     public String scheduleRotationTime() {
         return this.scheduleRotationTime;
     }
     /**
-     * @return KMS密钥的标签信息
+     * @return KMS key label information.
      * 
      */
     public List<GetKeyTag> tags() {
         return this.tags;
     }
     /**
-     * @return 资源名称，格式应为 trn:${Service}:${Region}:${AccountID}:${ResourcePath}。
+     * @return Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
      * 
      */
     public String trn() {
         return this.trn;
     }
     /**
-     * @return 密钥更新时间。
+     * @return Key update time.
      * 
      */
     public Integer updatedTime() {

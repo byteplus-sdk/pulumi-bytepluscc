@@ -18,14 +18,14 @@ public final class UpstreamLoadBalancerSettingsArgs extends com.pulumi.resources
     public static final UpstreamLoadBalancerSettingsArgs Empty = new UpstreamLoadBalancerSettingsArgs();
 
     /**
-     * 一致性哈希负载均衡。
+     * Consistent Hash Load Balancing
      * 
      */
     @Import(name="consistentHashLb")
     private @Nullable Output<UpstreamLoadBalancerSettingsConsistentHashLbArgs> consistentHashLb;
 
     /**
-     * @return 一致性哈希负载均衡。
+     * @return Consistent Hash Load Balancing
      * 
      */
     public Optional<Output<UpstreamLoadBalancerSettingsConsistentHashLbArgs>> consistentHashLb() {
@@ -33,14 +33,14 @@ public final class UpstreamLoadBalancerSettingsArgs extends com.pulumi.resources
     }
 
     /**
-     * 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+     * Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
      * 
      */
     @Import(name="lbPolicy")
     private @Nullable Output<String> lbPolicy;
 
     /**
-     * @return 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+     * @return Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
      * 
      */
     public Optional<Output<String>> lbPolicy() {
@@ -48,14 +48,14 @@ public final class UpstreamLoadBalancerSettingsArgs extends com.pulumi.resources
     }
 
     /**
-     * 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+     * Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
      * 
      */
     @Import(name="simpleLb")
     private @Nullable Output<String> simpleLb;
 
     /**
-     * @return 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+     * @return Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
      * 
      */
     public Optional<Output<String>> simpleLb() {
@@ -63,14 +63,14 @@ public final class UpstreamLoadBalancerSettingsArgs extends com.pulumi.resources
     }
 
     /**
-     * 预热时间。单位为秒。
+     * Warm-up time (seconds)
      * 
      */
     @Import(name="warmupDuration")
     private @Nullable Output<Integer> warmupDuration;
 
     /**
-     * @return 预热时间。单位为秒。
+     * @return Warm-up time (seconds)
      * 
      */
     public Optional<Output<Integer>> warmupDuration() {
@@ -105,7 +105,7 @@ public final class UpstreamLoadBalancerSettingsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param consistentHashLb 一致性哈希负载均衡。
+         * @param consistentHashLb Consistent Hash Load Balancing
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class UpstreamLoadBalancerSettingsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param consistentHashLb 一致性哈希负载均衡。
+         * @param consistentHashLb Consistent Hash Load Balancing
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class UpstreamLoadBalancerSettingsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param lbPolicy 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+         * @param lbPolicy Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class UpstreamLoadBalancerSettingsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param lbPolicy 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+         * @param lbPolicy Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class UpstreamLoadBalancerSettingsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param simpleLb 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+         * @param simpleLb Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class UpstreamLoadBalancerSettingsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param simpleLb 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+         * @param simpleLb Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class UpstreamLoadBalancerSettingsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param warmupDuration 预热时间。单位为秒。
+         * @param warmupDuration Warm-up time (seconds)
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class UpstreamLoadBalancerSettingsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param warmupDuration 预热时间。单位为秒。
+         * @param warmupDuration Warm-up time (seconds)
          * 
          * @return builder
          * 

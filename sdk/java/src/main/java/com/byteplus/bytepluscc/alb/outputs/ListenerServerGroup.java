@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ListenerServerGroup {
     /**
-     * @return 服务器组 ID 。
+     * @return Server group ID.
      * 
      */
     private @Nullable String serverGroupId;
     /**
-     * @return 服务器组名称。
+     * @return Server group name.
      * 
      */
     private @Nullable String serverGroupName;
 
     private ListenerServerGroup() {}
     /**
-     * @return 服务器组 ID 。
+     * @return Server group ID.
      * 
      */
     public Optional<String> serverGroupId() {
         return Optional.ofNullable(this.serverGroupId);
     }
     /**
-     * @return 服务器组名称。
+     * @return Server group name.
      * 
      */
     public Optional<String> serverGroupName() {

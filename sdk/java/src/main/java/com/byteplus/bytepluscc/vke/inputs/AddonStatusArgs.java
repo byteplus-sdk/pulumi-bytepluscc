@@ -25,14 +25,14 @@ public final class AddonStatusArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+     * Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
      * 
      */
     @Import(name="phase")
     private @Nullable Output<String> phase;
 
     /**
-     * @return 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+     * @return Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
      * 
      */
     public Optional<Output<String>> phase() {
@@ -78,7 +78,7 @@ public final class AddonStatusArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phase 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+         * @param phase Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class AddonStatusArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phase 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+         * @param phase Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
          * 
          * @return builder
          * 

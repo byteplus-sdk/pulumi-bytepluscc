@@ -14,55 +14,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
     public sealed class InstanceEndpointsPublicArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 域名映射地址。
+        /// Domain mapping address
         /// </summary>
         [Input("address")]
         public Input<string>? Address { get; set; }
 
         /// <summary>
-        /// 实例绑定的EIP的ID。
+        /// ID of the EIP bound to the instance
         /// </summary>
         [Input("eipId")]
         public Input<string>? EipId { get; set; }
 
         /// <summary>
-        /// 私网Plain接入点。
+        /// Private network Plain endpoint
         /// </summary>
         [Input("plain")]
         public Input<string>? Plain { get; set; }
 
         /// <summary>
-        /// 普通接入点端口。
+        /// Standard endpoint port
         /// </summary>
         [Input("plainPort")]
         public Input<int>? PlainPort { get; set; }
 
         /// <summary>
-        /// 私网SASL认证接入点。
+        /// Private network SASL authentication endpoint
         /// </summary>
         [Input("sasl")]
         public Input<string>? Sasl { get; set; }
 
         /// <summary>
-        /// 认证接入点端口。
+        /// Authentication endpoint port
         /// </summary>
         [Input("saslPort")]
         public Input<int>? SaslPort { get; set; }
 
         /// <summary>
-        /// 加密接入点。
+        /// Encrypted endpoint
         /// </summary>
         [Input("ssl")]
         public Input<string>? Ssl { get; set; }
 
         /// <summary>
-        /// 加密接入点端口。
+        /// Encrypted endpoint port
         /// </summary>
         [Input("sslPort")]
         public Input<int>? SslPort { get; set; }
 
         /// <summary>
-        /// 接入点状态。
+        /// Endpoint status
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -71,7 +71,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
         private InputList<string>? _vpcIds;
 
         /// <summary>
-        /// 售卖区网络关联的VPC ID列表。
+        /// List of VPC IDs associated with the sales zone network
         /// </summary>
         public InputList<string> VpcIds
         {

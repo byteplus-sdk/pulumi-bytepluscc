@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayBackendSpec {
     /**
-     * @return 是否支持VKE Flannel CNI。
+     * @return Whether VKE Flannel CNI is supported
      * 
      */
     private Boolean isVkeWithFlannelCniSupported;
@@ -24,7 +24,7 @@ public final class GetGatewayBackendSpec {
 
     private GetGatewayBackendSpec() {}
     /**
-     * @return 是否支持VKE Flannel CNI。
+     * @return Whether VKE Flannel CNI is supported
      * 
      */
     public Boolean isVkeWithFlannelCniSupported() {

@@ -17,14 +17,14 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
     public static final UserProvisioningArgs Empty = new UserProvisioningArgs();
 
     /**
-     * 删除策略。
+     * Deletion Policy
      * 
      */
     @Import(name="deletionStrategy", required=true)
     private Output<String> deletionStrategy;
 
     /**
-     * @return 删除策略。
+     * @return Deletion Policy
      * 
      */
     public Output<String> deletionStrategy() {
@@ -32,14 +32,14 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 任务描述。
+     * Task Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 任务描述。
+     * @return Task Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -47,14 +47,14 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 用户名冲突策略。
+     * Username Conflict Policy
      * 
      */
     @Import(name="duplicationStrategy", required=true)
     private Output<String> duplicationStrategy;
 
     /**
-     * @return 用户名冲突策略。
+     * @return Username Conflict Policy
      * 
      */
     public Output<String> duplicationStrategy() {
@@ -62,14 +62,14 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 本次同步IAM用户名称后缀。
+     * Suffix for IAM user name in this synchronization
      * 
      */
     @Import(name="duplicationSuffix")
     private @Nullable Output<String> duplicationSuffix;
 
     /**
-     * @return 本次同步IAM用户名称后缀。
+     * @return Suffix for IAM user name in this synchronization
      * 
      */
     public Optional<Output<String>> duplicationSuffix() {
@@ -77,14 +77,14 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 身份源冲突策略。
+     * Identity Source Conflict Policy
      * 
      */
     @Import(name="identitySourceStrategy", required=true)
     private Output<String> identitySourceStrategy;
 
     /**
-     * @return 身份源冲突策略。
+     * @return Identity Source Conflict Policy
      * 
      */
     public Output<String> identitySourceStrategy() {
@@ -92,14 +92,14 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 身份id。
+     * Identity ID
      * 
      */
     @Import(name="principalId", required=true)
     private Output<String> principalId;
 
     /**
-     * @return 身份id。
+     * @return Identity ID
      * 
      */
     public Output<String> principalId() {
@@ -107,14 +107,14 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 身份类型。
+     * Identity Type
      * 
      */
     @Import(name="principalType", required=true)
     private Output<String> principalType;
 
     /**
-     * @return 身份类型。
+     * @return Identity Type
      * 
      */
     public Output<String> principalType() {
@@ -122,14 +122,14 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 目标id。
+     * Target ID
      * 
      */
     @Import(name="targetId", required=true)
     private Output<String> targetId;
 
     /**
-     * @return 目标id。
+     * @return Target ID
      * 
      */
     public Output<String> targetId() {
@@ -168,7 +168,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param deletionStrategy 删除策略。
+         * @param deletionStrategy Deletion Policy
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param deletionStrategy 删除策略。
+         * @param deletionStrategy Deletion Policy
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description 任务描述。
+         * @param description Task Description
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description 任务描述。
+         * @param description Task Description
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param duplicationStrategy 用户名冲突策略。
+         * @param duplicationStrategy Username Conflict Policy
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param duplicationStrategy 用户名冲突策略。
+         * @param duplicationStrategy Username Conflict Policy
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param duplicationSuffix 本次同步IAM用户名称后缀。
+         * @param duplicationSuffix Suffix for IAM user name in this synchronization
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param duplicationSuffix 本次同步IAM用户名称后缀。
+         * @param duplicationSuffix Suffix for IAM user name in this synchronization
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param identitySourceStrategy 身份源冲突策略。
+         * @param identitySourceStrategy Identity Source Conflict Policy
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param identitySourceStrategy 身份源冲突策略。
+         * @param identitySourceStrategy Identity Source Conflict Policy
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param principalId 身份id。
+         * @param principalId Identity ID
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param principalId 身份id。
+         * @param principalId Identity ID
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param principalType 身份类型。
+         * @param principalType Identity Type
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param principalType 身份类型。
+         * @param principalType Identity Type
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param targetId 目标id。
+         * @param targetId Target ID
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class UserProvisioningArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param targetId 目标id。
+         * @param targetId Target ID
          * 
          * @return builder
          * 

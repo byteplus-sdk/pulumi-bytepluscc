@@ -17,14 +17,14 @@ public final class LaunchTemplateVersionNetworkInterfaceArgs extends com.pulumi.
     public static final LaunchTemplateVersionNetworkInterfaceArgs Empty = new LaunchTemplateVersionNetworkInterfaceArgs();
 
     /**
-     * 网卡关联的安全组ID。
+     * Security group ID associated with the network interface.
      * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
-     * @return 网卡关联的安全组ID。
+     * @return Security group ID associated with the network interface.
      * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
@@ -32,14 +32,14 @@ public final class LaunchTemplateVersionNetworkInterfaceArgs extends com.pulumi.
     }
 
     /**
-     * 实例的私有网络子网ID。
+     * Private network subnet ID of the instance.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 实例的私有网络子网ID。
+     * @return Private network subnet ID of the instance.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -72,7 +72,7 @@ public final class LaunchTemplateVersionNetworkInterfaceArgs extends com.pulumi.
         }
 
         /**
-         * @param securityGroupIds 网卡关联的安全组ID。
+         * @param securityGroupIds Security group ID associated with the network interface.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class LaunchTemplateVersionNetworkInterfaceArgs extends com.pulumi.
         }
 
         /**
-         * @param securityGroupIds 网卡关联的安全组ID。
+         * @param securityGroupIds Security group ID associated with the network interface.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class LaunchTemplateVersionNetworkInterfaceArgs extends com.pulumi.
         }
 
         /**
-         * @param securityGroupIds 网卡关联的安全组ID。
+         * @param securityGroupIds Security group ID associated with the network interface.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class LaunchTemplateVersionNetworkInterfaceArgs extends com.pulumi.
         }
 
         /**
-         * @param subnetId 实例的私有网络子网ID。
+         * @param subnetId Private network subnet ID of the instance.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class LaunchTemplateVersionNetworkInterfaceArgs extends com.pulumi.
         }
 
         /**
-         * @param subnetId 实例的私有网络子网ID。
+         * @param subnetId Private network subnet ID of the instance.
          * 
          * @return builder
          * 

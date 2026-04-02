@@ -22,14 +22,14 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
     public static final ShareConfigState Empty = new ShareConfigState();
 
     /**
-     * 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+     * Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
      * 
      */
     @Import(name="allowIpAccessRule")
     private @Nullable Output<ShareConfigAllowIpAccessRuleArgs> allowIpAccessRule;
 
     /**
-     * @return 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+     * @return Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
      * 
      */
     public Optional<Output<ShareConfigAllowIpAccessRuleArgs>> allowIpAccessRule() {
@@ -37,14 +37,14 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+     * Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
      * 
      */
     @Import(name="allowRefererAccessRule")
     private @Nullable Output<ShareConfigAllowRefererAccessRuleArgs> allowRefererAccessRule;
 
     /**
-     * @return 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+     * @return Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
      * 
      */
     public Optional<Output<ShareConfigAllowRefererAccessRuleArgs>> allowRefererAccessRule() {
@@ -52,14 +52,14 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+     * Specifies the configuration for a common list, where ConfigType is common*match*list.
      * 
      */
     @Import(name="commonMatchList")
     private @Nullable Output<ShareConfigCommonMatchListArgs> commonMatchList;
 
     /**
-     * @return 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+     * @return Specifies the configuration for a common list, where ConfigType is common*match*list.
      * 
      */
     public Optional<Output<ShareConfigCommonMatchListArgs>> commonMatchList() {
@@ -67,14 +67,14 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+     * Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
      * 
      */
     @Import(name="configName")
     private @Nullable Output<String> configName;
 
     /**
-     * @return 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+     * @return Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
      * 
      */
     public Optional<Output<String>> configName() {
@@ -82,14 +82,14 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+     * This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
      * 
      */
     @Import(name="configType")
     private @Nullable Output<String> configType;
 
     /**
-     * @return 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+     * @return This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
      * 
      */
     public Optional<Output<String>> configType() {
@@ -97,14 +97,14 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+     * Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
      * 
      */
     @Import(name="denyIpAccessRule")
     private @Nullable Output<ShareConfigDenyIpAccessRuleArgs> denyIpAccessRule;
 
     /**
-     * @return 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+     * @return Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
      * 
      */
     public Optional<Output<ShareConfigDenyIpAccessRuleArgs>> denyIpAccessRule() {
@@ -112,14 +112,14 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+     * Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
      * 
      */
     @Import(name="denyRefererAccessRule")
     private @Nullable Output<ShareConfigDenyRefererAccessRuleArgs> denyRefererAccessRule;
 
     /**
-     * @return 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+     * @return Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
      * 
      */
     public Optional<Output<ShareConfigDenyRefererAccessRuleArgs>> denyRefererAccessRule() {
@@ -127,14 +127,14 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示与该全局配置关联的加速域名的数量。
+     * Indicates the number of accelerated domains associated with this global configuration.
      * 
      */
     @Import(name="domainCount")
     private @Nullable Output<Integer> domainCount;
 
     /**
-     * @return 表示与该全局配置关联的加速域名的数量。
+     * @return Indicates the number of accelerated domains associated with this global configuration.
      * 
      */
     public Optional<Output<Integer>> domainCount() {
@@ -142,14 +142,14 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示该全局配置所归属的项目名称。
+     * Specifies the project name to which the global configuration belongs.
      * 
      */
     @Import(name="project")
     private @Nullable Output<String> project;
 
     /**
-     * @return 表示该全局配置所归属的项目名称。
+     * @return Specifies the project name to which the global configuration belongs.
      * 
      */
     public Optional<Output<String>> project() {
@@ -157,14 +157,14 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示该自定义错误页面的 HTML 代码。
+     * Specifies the HTML code for the custom error page.
      * 
      */
     @Import(name="ruleContent")
     private @Nullable Output<String> ruleContent;
 
     /**
-     * @return 表示该自定义错误页面的 HTML 代码。
+     * @return Specifies the HTML code for the custom error page.
      * 
      */
     public Optional<Output<String>> ruleContent() {
@@ -172,14 +172,14 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+     * Indicates the last modification time of this global configuration, in Unix timestamp.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<Integer> updatedTime;
 
     /**
-     * @return 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+     * @return Indicates the last modification time of this global configuration, in Unix timestamp.
      * 
      */
     public Optional<Output<Integer>> updatedTime() {
@@ -221,7 +221,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowIpAccessRule 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+         * @param allowIpAccessRule Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowIpAccessRule 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+         * @param allowIpAccessRule Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowRefererAccessRule 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+         * @param allowRefererAccessRule Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowRefererAccessRule 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+         * @param allowRefererAccessRule Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commonMatchList 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+         * @param commonMatchList Specifies the configuration for a common list, where ConfigType is common*match*list.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commonMatchList 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+         * @param commonMatchList Specifies the configuration for a common list, where ConfigType is common*match*list.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configName 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+         * @param configName Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configName 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+         * @param configName Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configType 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+         * @param configType This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configType 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+         * @param configType This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param denyIpAccessRule 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+         * @param denyIpAccessRule Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param denyIpAccessRule 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+         * @param denyIpAccessRule Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param denyRefererAccessRule 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+         * @param denyRefererAccessRule Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param denyRefererAccessRule 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+         * @param denyRefererAccessRule Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
          * 
          * @return builder
          * 
@@ -368,7 +368,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domainCount 表示与该全局配置关联的加速域名的数量。
+         * @param domainCount Indicates the number of accelerated domains associated with this global configuration.
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domainCount 表示与该全局配置关联的加速域名的数量。
+         * @param domainCount Indicates the number of accelerated domains associated with this global configuration.
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project 表示该全局配置所归属的项目名称。
+         * @param project Specifies the project name to which the global configuration belongs.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project 表示该全局配置所归属的项目名称。
+         * @param project Specifies the project name to which the global configuration belongs.
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleContent 表示该自定义错误页面的 HTML 代码。
+         * @param ruleContent Specifies the HTML code for the custom error page.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleContent 表示该自定义错误页面的 HTML 代码。
+         * @param ruleContent Specifies the HTML code for the custom error page.
          * 
          * @return builder
          * 
@@ -431,7 +431,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+         * @param updatedTime Indicates the last modification time of this global configuration, in Unix timestamp.
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class ShareConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+         * @param updatedTime Indicates the last modification time of this global configuration, in Unix timestamp.
          * 
          * @return builder
          * 

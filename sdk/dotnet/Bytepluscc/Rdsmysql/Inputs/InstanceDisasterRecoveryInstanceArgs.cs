@@ -14,37 +14,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
     public sealed class InstanceDisasterRecoveryInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 主实例与灾备实例之间同步任务的 ID。
+        /// ID of synchronization tasks between primary and disaster recovery instances.
         /// </summary>
         [Input("dtsTaskId")]
         public Input<string>? DtsTaskId { get; set; }
 
         /// <summary>
-        /// 主实例与灾备实例之间同步任务的名称。
+        /// Name of the synchronization task between the primary instance and the disaster recovery instance
         /// </summary>
         [Input("dtsTaskName")]
         public Input<string>? DtsTaskName { get; set; }
 
         /// <summary>
-        /// 主实例与灾备实例之间同步任务的状态。
+        /// Status of synchronization tasks between the primary instance and the disaster recovery instance
         /// </summary>
         [Input("dtsTaskStatus")]
         public Input<string>? DtsTaskStatus { get; set; }
 
         /// <summary>
-        /// 灾备实例的 ID。
+        /// Disaster recovery instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 灾备实例的名称。
+        /// Name of disaster recovery instance.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 灾备实例与主实例之间的时延。
+        /// Latency between the disaster recovery instance and the primary instance.
         /// </summary>
         [Input("secondsBehindMaster")]
         public Input<int>? SecondsBehindMaster { get; set; }

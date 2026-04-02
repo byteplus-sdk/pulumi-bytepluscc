@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetTopicTag {
     /**
-     * @return 标签键。
+     * @return Label key.
      * 
      */
     private String key;
     /**
-     * @return 标签值。
+     * @return Tag value.
      * 
      */
     private String value;
 
     private GetTopicTag() {}
     /**
-     * @return 标签键。
+     * @return Label key.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 标签值。
+     * @return Tag value.
      * 
      */
     public String value() {

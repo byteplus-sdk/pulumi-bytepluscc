@@ -103,24 +103,24 @@ class TransitRouterAttachment(dict):
                  transit_router_traffic_qos_queue_policy_id: Optional[builtins.str] = None,
                  update_time: Optional[builtins.str] = None):
         """
-        :param builtins.bool auto_publish_route_enabled: 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
-        :param builtins.str business_status: 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
-        :param builtins.str creation_time: 网络实例连接的创建时间。
-        :param builtins.str deleted_time: 网络实例连接的删除时间。
-        :param builtins.str description: 网络实例连接的描述信息。
-        :param builtins.bool ipv6_enabled: 是否开启IPv6功能。true：是。false：否。
-        :param builtins.str overdue_time: 网络实例连接的欠费关停时间。
-        :param builtins.str resource_id: 网络实例的ID。
-        :param builtins.str resource_type: 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
-        :param builtins.str status: 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
-        :param builtins.str transit_router_attachment_id: 网络实例连接的ID。
-        :param builtins.str transit_router_attachment_name: 网络实例连接的名称。
-        :param builtins.str transit_router_forward_policy_table_id: 跨地域连接关联的转发策略的ID。
-        :param builtins.str transit_router_id: 中转路由器实例的ID。
-        :param builtins.str transit_router_route_table_id: 网络实例连接关联转发的路由表ID。
-        :param builtins.str transit_router_traffic_qos_marking_policy_id: 跨地域连接关联的流标记策略的ID。
-        :param builtins.str transit_router_traffic_qos_queue_policy_id: 跨地域连接关联的流队列策略的ID。
-        :param builtins.str update_time: 网络实例连接的最近操作时间。
+        :param builtins.bool auto_publish_route_enabled: Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
+        :param builtins.str business_status: Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
+        :param builtins.str creation_time: Creation time of the network instance connection.
+        :param builtins.str deleted_time: Deletion time of the network instance connection.
+        :param builtins.str description: Description of the network instance connection.
+        :param builtins.bool ipv6_enabled: Whether IPv6 is enabled. true: yes. false: no
+        :param builtins.str overdue_time: Shutdown time due to overdue payment for the network instance connection
+        :param builtins.str resource_id: ID of the network instance
+        :param builtins.str resource_type: Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
+        :param builtins.str status: Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
+        :param builtins.str transit_router_attachment_id: Network instance connection ID.
+        :param builtins.str transit_router_attachment_name: Name of the network instance connection
+        :param builtins.str transit_router_forward_policy_table_id: ID of the forwarding policy associated with the cross-region connection
+        :param builtins.str transit_router_id: Transit router instance ID.
+        :param builtins.str transit_router_route_table_id: Route table ID associated with the forwarding of the network instance connection.
+        :param builtins.str transit_router_traffic_qos_marking_policy_id: ID of the flow marking policy associated with the cross-region connection
+        :param builtins.str transit_router_traffic_qos_queue_policy_id: ID of the flow queue policy associated with the cross-region connection
+        :param builtins.str update_time: Last operation time of the network instance connection
         """
         if auto_publish_route_enabled is not None:
             pulumi.set(__self__, "auto_publish_route_enabled", auto_publish_route_enabled)
@@ -165,7 +165,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="autoPublishRouteEnabled")
     def auto_publish_route_enabled(self) -> Optional[builtins.bool]:
         """
-        是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+        Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
         """
         return pulumi.get(self, "auto_publish_route_enabled")
 
@@ -173,7 +173,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> Optional[builtins.str]:
         """
-        网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+        Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
         """
         return pulumi.get(self, "business_status")
 
@@ -181,7 +181,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> Optional[builtins.str]:
         """
-        网络实例连接的创建时间。
+        Creation time of the network instance connection.
         """
         return pulumi.get(self, "creation_time")
 
@@ -189,7 +189,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> Optional[builtins.str]:
         """
-        网络实例连接的删除时间。
+        Deletion time of the network instance connection.
         """
         return pulumi.get(self, "deleted_time")
 
@@ -197,7 +197,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        网络实例连接的描述信息。
+        Description of the network instance connection.
         """
         return pulumi.get(self, "description")
 
@@ -205,7 +205,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="ipv6Enabled")
     def ipv6_enabled(self) -> Optional[builtins.bool]:
         """
-        是否开启IPv6功能。true：是。false：否。
+        Whether IPv6 is enabled. true: yes. false: no
         """
         return pulumi.get(self, "ipv6_enabled")
 
@@ -213,7 +213,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[builtins.str]:
         """
-        网络实例连接的欠费关停时间。
+        Shutdown time due to overdue payment for the network instance connection
         """
         return pulumi.get(self, "overdue_time")
 
@@ -221,7 +221,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[builtins.str]:
         """
-        网络实例的ID。
+        ID of the network instance
         """
         return pulumi.get(self, "resource_id")
 
@@ -229,7 +229,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[builtins.str]:
         """
-        网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
         """
         return pulumi.get(self, "resource_type")
 
@@ -237,7 +237,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter
     def status(self) -> Optional[builtins.str]:
         """
-        网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
         """
         return pulumi.get(self, "status")
 
@@ -250,7 +250,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="transitRouterAttachmentId")
     def transit_router_attachment_id(self) -> Optional[builtins.str]:
         """
-        网络实例连接的ID。
+        Network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_id")
 
@@ -258,7 +258,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="transitRouterAttachmentName")
     def transit_router_attachment_name(self) -> Optional[builtins.str]:
         """
-        网络实例连接的名称。
+        Name of the network instance connection
         """
         return pulumi.get(self, "transit_router_attachment_name")
 
@@ -266,7 +266,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="transitRouterForwardPolicyTableId")
     def transit_router_forward_policy_table_id(self) -> Optional[builtins.str]:
         """
-        跨地域连接关联的转发策略的ID。
+        ID of the forwarding policy associated with the cross-region connection
         """
         return pulumi.get(self, "transit_router_forward_policy_table_id")
 
@@ -274,7 +274,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> Optional[builtins.str]:
         """
-        中转路由器实例的ID。
+        Transit router instance ID.
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -282,7 +282,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="transitRouterRouteTableId")
     def transit_router_route_table_id(self) -> Optional[builtins.str]:
         """
-        网络实例连接关联转发的路由表ID。
+        Route table ID associated with the forwarding of the network instance connection.
         """
         return pulumi.get(self, "transit_router_route_table_id")
 
@@ -290,7 +290,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="transitRouterTrafficQosMarkingPolicyId")
     def transit_router_traffic_qos_marking_policy_id(self) -> Optional[builtins.str]:
         """
-        跨地域连接关联的流标记策略的ID。
+        ID of the flow marking policy associated with the cross-region connection
         """
         return pulumi.get(self, "transit_router_traffic_qos_marking_policy_id")
 
@@ -298,7 +298,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="transitRouterTrafficQosQueuePolicyId")
     def transit_router_traffic_qos_queue_policy_id(self) -> Optional[builtins.str]:
         """
-        跨地域连接关联的流队列策略的ID。
+        ID of the flow queue policy associated with the cross-region connection
         """
         return pulumi.get(self, "transit_router_traffic_qos_queue_policy_id")
 
@@ -306,7 +306,7 @@ class TransitRouterAttachment(dict):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[builtins.str]:
         """
-        网络实例连接的最近操作时间。
+        Last operation time of the network instance connection
         """
         return pulumi.get(self, "update_time")
 
@@ -317,8 +317,8 @@ class TransitRouterAttachmentTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -329,7 +329,7 @@ class TransitRouterAttachmentTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -337,7 +337,7 @@ class TransitRouterAttachmentTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -348,8 +348,8 @@ class TransitRouterRouteTableTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键
-        :param builtins.str value: 标签值
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -360,7 +360,7 @@ class TransitRouterRouteTableTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -368,7 +368,7 @@ class TransitRouterRouteTableTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -379,8 +379,8 @@ class TransitRouterTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -391,7 +391,7 @@ class TransitRouterTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -399,7 +399,7 @@ class TransitRouterTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -429,8 +429,8 @@ class VpcAttachmentAttachPoint(dict):
                  subnet_id: builtins.str,
                  zone_id: builtins.str):
         """
-        :param builtins.str subnet_id: 连接点的子网ID。
-        :param builtins.str zone_id: 连接点的可用区ID。
+        :param builtins.str subnet_id: Subnet ID of the connection point.
+        :param builtins.str zone_id: Availability zone ID of the connection point.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "zone_id", zone_id)
@@ -439,7 +439,7 @@ class VpcAttachmentAttachPoint(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        连接点的子网ID。
+        Subnet ID of the connection point.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -447,7 +447,7 @@ class VpcAttachmentAttachPoint(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        连接点的可用区ID。
+        Availability zone ID of the connection point.
         """
         return pulumi.get(self, "zone_id")
 
@@ -458,8 +458,8 @@ class VpcAttachmentTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: Tag key for user tag.
+        :param builtins.str value: Tag value for user tag.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -470,7 +470,7 @@ class VpcAttachmentTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        Tag key for user tag.
         """
         return pulumi.get(self, "key")
 
@@ -478,7 +478,7 @@ class VpcAttachmentTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        Tag value for user tag.
         """
         return pulumi.get(self, "value")
 
@@ -489,8 +489,8 @@ class VpnAttachmentTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str value: User tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -501,7 +501,7 @@ class VpnAttachmentTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -509,7 +509,7 @@ class VpnAttachmentTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 
@@ -537,25 +537,25 @@ class GetTransitRouterAttachmentResult(dict):
                  transit_router_traffic_qos_queue_policy_id: builtins.str,
                  update_time: builtins.str):
         """
-        :param builtins.bool auto_publish_route_enabled: 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
-        :param builtins.str business_status: 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
-        :param builtins.str creation_time: 网络实例连接的创建时间。
-        :param builtins.str deleted_time: 网络实例连接的删除时间。
-        :param builtins.str description: 网络实例连接的描述信息。
-        :param builtins.bool ipv6_enabled: 是否开启IPv6功能。true：是。false：否。
-        :param builtins.str overdue_time: 网络实例连接的欠费关停时间。
-        :param builtins.str resource_id: 网络实例的ID。
-        :param builtins.str resource_type: 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
-        :param builtins.str status: 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
-        :param Sequence['GetTransitRouterAttachmentTagArgs'] tags: 网络实例连接的标签信息
-        :param builtins.str transit_router_attachment_id: 网络实例连接的ID。
-        :param builtins.str transit_router_attachment_name: 网络实例连接的名称。
-        :param builtins.str transit_router_forward_policy_table_id: 跨地域连接关联的转发策略的ID。
-        :param builtins.str transit_router_id: 中转路由器实例的ID。
-        :param builtins.str transit_router_route_table_id: 网络实例连接关联转发的路由表ID。
-        :param builtins.str transit_router_traffic_qos_marking_policy_id: 跨地域连接关联的流标记策略的ID。
-        :param builtins.str transit_router_traffic_qos_queue_policy_id: 跨地域连接关联的流队列策略的ID。
-        :param builtins.str update_time: 网络实例连接的最近操作时间。
+        :param builtins.bool auto_publish_route_enabled: Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
+        :param builtins.str business_status: Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
+        :param builtins.str creation_time: Creation time of the network instance connection.
+        :param builtins.str deleted_time: Deletion time of the network instance connection.
+        :param builtins.str description: Description of the network instance connection.
+        :param builtins.bool ipv6_enabled: Whether IPv6 is enabled. true: yes. false: no
+        :param builtins.str overdue_time: Shutdown time due to overdue payment for the network instance connection
+        :param builtins.str resource_id: ID of the network instance
+        :param builtins.str resource_type: Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
+        :param builtins.str status: Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
+        :param Sequence['GetTransitRouterAttachmentTagArgs'] tags: Tag information of the network instance connection
+        :param builtins.str transit_router_attachment_id: Network instance connection ID.
+        :param builtins.str transit_router_attachment_name: Name of the network instance connection
+        :param builtins.str transit_router_forward_policy_table_id: ID of the forwarding policy associated with the cross-region connection
+        :param builtins.str transit_router_id: Transit router instance ID.
+        :param builtins.str transit_router_route_table_id: Route table ID associated with the forwarding of the network instance connection.
+        :param builtins.str transit_router_traffic_qos_marking_policy_id: ID of the flow marking policy associated with the cross-region connection
+        :param builtins.str transit_router_traffic_qos_queue_policy_id: ID of the flow queue policy associated with the cross-region connection
+        :param builtins.str update_time: Last operation time of the network instance connection
         """
         pulumi.set(__self__, "auto_publish_route_enabled", auto_publish_route_enabled)
         pulumi.set(__self__, "business_status", business_status)
@@ -581,7 +581,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="autoPublishRouteEnabled")
     def auto_publish_route_enabled(self) -> builtins.bool:
         """
-        是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+        Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
         """
         return pulumi.get(self, "auto_publish_route_enabled")
 
@@ -589,7 +589,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> builtins.str:
         """
-        网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+        Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
         """
         return pulumi.get(self, "business_status")
 
@@ -597,7 +597,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> builtins.str:
         """
-        网络实例连接的创建时间。
+        Creation time of the network instance connection.
         """
         return pulumi.get(self, "creation_time")
 
@@ -605,7 +605,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> builtins.str:
         """
-        网络实例连接的删除时间。
+        Deletion time of the network instance connection.
         """
         return pulumi.get(self, "deleted_time")
 
@@ -613,7 +613,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        网络实例连接的描述信息。
+        Description of the network instance connection.
         """
         return pulumi.get(self, "description")
 
@@ -621,7 +621,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="ipv6Enabled")
     def ipv6_enabled(self) -> builtins.bool:
         """
-        是否开启IPv6功能。true：是。false：否。
+        Whether IPv6 is enabled. true: yes. false: no
         """
         return pulumi.get(self, "ipv6_enabled")
 
@@ -629,7 +629,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> builtins.str:
         """
-        网络实例连接的欠费关停时间。
+        Shutdown time due to overdue payment for the network instance connection
         """
         return pulumi.get(self, "overdue_time")
 
@@ -637,7 +637,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> builtins.str:
         """
-        网络实例的ID。
+        ID of the network instance
         """
         return pulumi.get(self, "resource_id")
 
@@ -645,7 +645,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> builtins.str:
         """
-        网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
         """
         return pulumi.get(self, "resource_type")
 
@@ -653,7 +653,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
         """
         return pulumi.get(self, "status")
 
@@ -661,7 +661,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetTransitRouterAttachmentTagResult']:
         """
-        网络实例连接的标签信息
+        Tag information of the network instance connection
         """
         return pulumi.get(self, "tags")
 
@@ -669,7 +669,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="transitRouterAttachmentId")
     def transit_router_attachment_id(self) -> builtins.str:
         """
-        网络实例连接的ID。
+        Network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_id")
 
@@ -677,7 +677,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="transitRouterAttachmentName")
     def transit_router_attachment_name(self) -> builtins.str:
         """
-        网络实例连接的名称。
+        Name of the network instance connection
         """
         return pulumi.get(self, "transit_router_attachment_name")
 
@@ -685,7 +685,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="transitRouterForwardPolicyTableId")
     def transit_router_forward_policy_table_id(self) -> builtins.str:
         """
-        跨地域连接关联的转发策略的ID。
+        ID of the forwarding policy associated with the cross-region connection
         """
         return pulumi.get(self, "transit_router_forward_policy_table_id")
 
@@ -693,7 +693,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> builtins.str:
         """
-        中转路由器实例的ID。
+        Transit router instance ID.
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -701,7 +701,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="transitRouterRouteTableId")
     def transit_router_route_table_id(self) -> builtins.str:
         """
-        网络实例连接关联转发的路由表ID。
+        Route table ID associated with the forwarding of the network instance connection.
         """
         return pulumi.get(self, "transit_router_route_table_id")
 
@@ -709,7 +709,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="transitRouterTrafficQosMarkingPolicyId")
     def transit_router_traffic_qos_marking_policy_id(self) -> builtins.str:
         """
-        跨地域连接关联的流标记策略的ID。
+        ID of the flow marking policy associated with the cross-region connection
         """
         return pulumi.get(self, "transit_router_traffic_qos_marking_policy_id")
 
@@ -717,7 +717,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="transitRouterTrafficQosQueuePolicyId")
     def transit_router_traffic_qos_queue_policy_id(self) -> builtins.str:
         """
-        跨地域连接关联的流队列策略的ID。
+        ID of the flow queue policy associated with the cross-region connection
         """
         return pulumi.get(self, "transit_router_traffic_qos_queue_policy_id")
 
@@ -725,7 +725,7 @@ class GetTransitRouterAttachmentResult(dict):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> builtins.str:
         """
-        网络实例连接的最近操作时间。
+        Last operation time of the network instance connection
         """
         return pulumi.get(self, "update_time")
 
@@ -736,8 +736,8 @@ class GetTransitRouterAttachmentTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -746,7 +746,7 @@ class GetTransitRouterAttachmentTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -754,7 +754,7 @@ class GetTransitRouterAttachmentTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -765,8 +765,8 @@ class GetTransitRouterRouteTableTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键
-        :param builtins.str value: 标签值
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -775,7 +775,7 @@ class GetTransitRouterRouteTableTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -783,7 +783,7 @@ class GetTransitRouterRouteTableTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -794,8 +794,8 @@ class GetTransitRouterTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -804,7 +804,7 @@ class GetTransitRouterTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -812,7 +812,7 @@ class GetTransitRouterTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -824,9 +824,9 @@ class GetVpcAttachmentAttachPointResult(dict):
                  subnet_id: builtins.str,
                  zone_id: builtins.str):
         """
-        :param builtins.str network_interface_id: 连接点的网卡ID。
-        :param builtins.str subnet_id: 连接点的子网ID。
-        :param builtins.str zone_id: 连接点的可用区ID。
+        :param builtins.str network_interface_id: Network interface card ID of the connection point.
+        :param builtins.str subnet_id: Subnet ID of the connection point.
+        :param builtins.str zone_id: Availability zone ID of the connection point.
         """
         pulumi.set(__self__, "network_interface_id", network_interface_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -836,7 +836,7 @@ class GetVpcAttachmentAttachPointResult(dict):
     @pulumi.getter(name="networkInterfaceId")
     def network_interface_id(self) -> builtins.str:
         """
-        连接点的网卡ID。
+        Network interface card ID of the connection point.
         """
         return pulumi.get(self, "network_interface_id")
 
@@ -844,7 +844,7 @@ class GetVpcAttachmentAttachPointResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        连接点的子网ID。
+        Subnet ID of the connection point.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -852,7 +852,7 @@ class GetVpcAttachmentAttachPointResult(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        连接点的可用区ID。
+        Availability zone ID of the connection point.
         """
         return pulumi.get(self, "zone_id")
 
@@ -863,8 +863,8 @@ class GetVpcAttachmentTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: Tag key for user tag.
+        :param builtins.str value: Tag value for user tag.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -873,7 +873,7 @@ class GetVpcAttachmentTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        Tag key for user tag.
         """
         return pulumi.get(self, "key")
 
@@ -881,7 +881,7 @@ class GetVpcAttachmentTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        Tag value for user tag.
         """
         return pulumi.get(self, "value")
 
@@ -892,8 +892,8 @@ class GetVpnAttachmentTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str value: User tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -902,7 +902,7 @@ class GetVpnAttachmentTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -910,7 +910,7 @@ class GetVpnAttachmentTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 

@@ -65,23 +65,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class GetRouteTableResult
     {
         /// <summary>
-        /// 路由表所属账号的ID。
+        /// Account ID owning the route table
         /// </summary>
         public readonly string AccountId;
         /// <summary>
-        /// 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+        /// Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
         /// </summary>
         public readonly string AssociateType;
         /// <summary>
-        /// 路由表创建时间。
+        /// Route Table Creation Time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 路由表关联的自定义路由条目列表。
+        /// List of custom route entries associated with the route table
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRouteTableCustomRouteEntryResult> CustomRouteEntries;
         /// <summary>
-        /// 路由表描述信息。
+        /// Route Table Description
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -89,51 +89,51 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 关联路由表的IPv4网关ID。
+        /// IPv4 Gateway ID associated with the route table
         /// </summary>
         public readonly string Ipv4GatewayId;
         /// <summary>
-        /// 关联路由表的IPv6网关ID。
+        /// IPv6 Gateway ID associated with the route table
         /// </summary>
         public readonly string Ipv6GatewayId;
         /// <summary>
-        /// 路由表所属项目的名称。
+        /// Name of the project owning the route table
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 路由表ID。
+        /// Route Table ID
         /// </summary>
         public readonly string RouteTableId;
         /// <summary>
-        /// 路由表名称。
+        /// Route Table Name
         /// </summary>
         public readonly string RouteTableName;
         /// <summary>
-        /// 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+        /// Route table type. 1. Custom: Custom route table 2. System: System route table
         /// </summary>
         public readonly string RouteTableType;
         /// <summary>
-        /// 关联的子网的ID列表。
+        /// List of associated subnet IDs
         /// </summary>
         public readonly ImmutableArray<string> SubnetIds;
         /// <summary>
-        /// 路由表关联的系统默认路由条目列表。
+        /// List of system default route entries associated with the route table
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRouteTableSystemRouteEntryResult> SystemRouteEntries;
         /// <summary>
-        /// 标签列表。
+        /// Tag List
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRouteTableTagResult> Tags;
         /// <summary>
-        /// 路由表更新时间。
+        /// Route Table Last Updated Time
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// 路由表所属VPC的ID。
+        /// ID of the VPC owning the route table
         /// </summary>
         public readonly string VpcId;
         /// <summary>
-        /// VPC的名称。
+        /// VPC Name
         /// </summary>
         public readonly string VpcName;
 

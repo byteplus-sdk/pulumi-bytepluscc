@@ -16,7 +16,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 服务作为业务对外暴露的入口，可以通过绑定域名功能，将您的自定义域名绑定至服务。
+ * The service serves as the entry point for external access. You can bind your custom domain to the service using the domain binding feature
  * 
  * ## Example Usage
  * 
@@ -70,140 +70,140 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:apig/customDomain:CustomDomain")
 public class CustomDomain extends com.pulumi.resources.CustomResource {
     /**
-     * 自定义域名证书ID。
+     * Custom Domain Certificate ID
      * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
-     * @return 自定义域名证书ID。
+     * @return Custom Domain Certificate ID
      * 
      */
     public Output<String> certificateId() {
         return this.certificateId;
     }
     /**
-     * 备注。
+     * Remarks
      * 
      */
     @Export(name="comments", refs={String.class}, tree="[0]")
     private Output<String> comments;
 
     /**
-     * @return 备注。
+     * @return Remarks
      * 
      */
     public Output<String> comments() {
         return this.comments;
     }
     /**
-     * 创建时间。
+     * Creation Time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 自定义域名ID。
+     * Custom Domain ID
      * 
      */
     @Export(name="customDomainId", refs={String.class}, tree="[0]")
     private Output<String> customDomainId;
 
     /**
-     * @return 自定义域名ID。
+     * @return Custom Domain ID
      * 
      */
     public Output<String> customDomainId() {
         return this.customDomainId;
     }
     /**
-     * 自定义域名。
+     * Custom Domain
      * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
-     * @return 自定义域名。
+     * @return Custom Domain
      * 
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
-     * 协议，取值：HTTP。HTTPS。
+     * Protocol. Values: HTTP, HTTPS
      * 
      */
     @Export(name="protocols", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> protocols;
 
     /**
-     * @return 协议，取值：HTTP。HTTPS。
+     * @return Protocol. Values: HTTP, HTTPS
      * 
      */
     public Output<List<String>> protocols() {
         return this.protocols;
     }
     /**
-     * 服务ID。
+     * Service ID
      * 
      */
     @Export(name="serviceId", refs={String.class}, tree="[0]")
     private Output<String> serviceId;
 
     /**
-     * @return 服务ID。
+     * @return Service ID
      * 
      */
     public Output<String> serviceId() {
         return this.serviceId;
     }
     /**
-     * 重定向到HTTPS。
+     * Redirect to HTTPS
      * 
      */
     @Export(name="sslRedirect", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> sslRedirect;
 
     /**
-     * @return 重定向到HTTPS。
+     * @return Redirect to HTTPS
      * 
      */
     public Output<Boolean> sslRedirect() {
         return this.sslRedirect;
     }
     /**
-     * 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+     * Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+     * @return Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 更新时间。
+     * Update Time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     public Output<String> updatedTime() {

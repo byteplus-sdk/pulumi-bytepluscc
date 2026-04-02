@@ -13,12 +13,2131 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type FunctionAsyncTaskConfig struct {
+	// Asynchronous task callback target configuration
+	DestinationConfig *FunctionAsyncTaskConfigDestinationConfig `pulumi:"destinationConfig"`
+	// Whether to enable asynchronous task
+	EnableAsyncTask *bool `pulumi:"enableAsyncTask"`
+	// Number of retry attempts for asynchronous task failures. Available values: 0–3
+	MaxRetry *int `pulumi:"maxRetry"`
+}
+
+// FunctionAsyncTaskConfigInput is an input type that accepts FunctionAsyncTaskConfigArgs and FunctionAsyncTaskConfigOutput values.
+// You can construct a concrete instance of `FunctionAsyncTaskConfigInput` via:
+//
+//	FunctionAsyncTaskConfigArgs{...}
+type FunctionAsyncTaskConfigInput interface {
+	pulumi.Input
+
+	ToFunctionAsyncTaskConfigOutput() FunctionAsyncTaskConfigOutput
+	ToFunctionAsyncTaskConfigOutputWithContext(context.Context) FunctionAsyncTaskConfigOutput
+}
+
+type FunctionAsyncTaskConfigArgs struct {
+	// Asynchronous task callback target configuration
+	DestinationConfig FunctionAsyncTaskConfigDestinationConfigPtrInput `pulumi:"destinationConfig"`
+	// Whether to enable asynchronous task
+	EnableAsyncTask pulumi.BoolPtrInput `pulumi:"enableAsyncTask"`
+	// Number of retry attempts for asynchronous task failures. Available values: 0–3
+	MaxRetry pulumi.IntPtrInput `pulumi:"maxRetry"`
+}
+
+func (FunctionAsyncTaskConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionAsyncTaskConfig)(nil)).Elem()
+}
+
+func (i FunctionAsyncTaskConfigArgs) ToFunctionAsyncTaskConfigOutput() FunctionAsyncTaskConfigOutput {
+	return i.ToFunctionAsyncTaskConfigOutputWithContext(context.Background())
+}
+
+func (i FunctionAsyncTaskConfigArgs) ToFunctionAsyncTaskConfigOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionAsyncTaskConfigOutput)
+}
+
+func (i FunctionAsyncTaskConfigArgs) ToFunctionAsyncTaskConfigPtrOutput() FunctionAsyncTaskConfigPtrOutput {
+	return i.ToFunctionAsyncTaskConfigPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionAsyncTaskConfigArgs) ToFunctionAsyncTaskConfigPtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionAsyncTaskConfigOutput).ToFunctionAsyncTaskConfigPtrOutputWithContext(ctx)
+}
+
+// FunctionAsyncTaskConfigPtrInput is an input type that accepts FunctionAsyncTaskConfigArgs, FunctionAsyncTaskConfigPtr and FunctionAsyncTaskConfigPtrOutput values.
+// You can construct a concrete instance of `FunctionAsyncTaskConfigPtrInput` via:
+//
+//	        FunctionAsyncTaskConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionAsyncTaskConfigPtrInput interface {
+	pulumi.Input
+
+	ToFunctionAsyncTaskConfigPtrOutput() FunctionAsyncTaskConfigPtrOutput
+	ToFunctionAsyncTaskConfigPtrOutputWithContext(context.Context) FunctionAsyncTaskConfigPtrOutput
+}
+
+type functionAsyncTaskConfigPtrType FunctionAsyncTaskConfigArgs
+
+func FunctionAsyncTaskConfigPtr(v *FunctionAsyncTaskConfigArgs) FunctionAsyncTaskConfigPtrInput {
+	return (*functionAsyncTaskConfigPtrType)(v)
+}
+
+func (*functionAsyncTaskConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionAsyncTaskConfig)(nil)).Elem()
+}
+
+func (i *functionAsyncTaskConfigPtrType) ToFunctionAsyncTaskConfigPtrOutput() FunctionAsyncTaskConfigPtrOutput {
+	return i.ToFunctionAsyncTaskConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *functionAsyncTaskConfigPtrType) ToFunctionAsyncTaskConfigPtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionAsyncTaskConfigPtrOutput)
+}
+
+type FunctionAsyncTaskConfigOutput struct{ *pulumi.OutputState }
+
+func (FunctionAsyncTaskConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionAsyncTaskConfig)(nil)).Elem()
+}
+
+func (o FunctionAsyncTaskConfigOutput) ToFunctionAsyncTaskConfigOutput() FunctionAsyncTaskConfigOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigOutput) ToFunctionAsyncTaskConfigOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigOutput) ToFunctionAsyncTaskConfigPtrOutput() FunctionAsyncTaskConfigPtrOutput {
+	return o.ToFunctionAsyncTaskConfigPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionAsyncTaskConfigOutput) ToFunctionAsyncTaskConfigPtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionAsyncTaskConfig) *FunctionAsyncTaskConfig {
+		return &v
+	}).(FunctionAsyncTaskConfigPtrOutput)
+}
+
+// Asynchronous task callback target configuration
+func (o FunctionAsyncTaskConfigOutput) DestinationConfig() FunctionAsyncTaskConfigDestinationConfigPtrOutput {
+	return o.ApplyT(func(v FunctionAsyncTaskConfig) *FunctionAsyncTaskConfigDestinationConfig { return v.DestinationConfig }).(FunctionAsyncTaskConfigDestinationConfigPtrOutput)
+}
+
+// Whether to enable asynchronous task
+func (o FunctionAsyncTaskConfigOutput) EnableAsyncTask() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FunctionAsyncTaskConfig) *bool { return v.EnableAsyncTask }).(pulumi.BoolPtrOutput)
+}
+
+// Number of retry attempts for asynchronous task failures. Available values: 0–3
+func (o FunctionAsyncTaskConfigOutput) MaxRetry() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FunctionAsyncTaskConfig) *int { return v.MaxRetry }).(pulumi.IntPtrOutput)
+}
+
+type FunctionAsyncTaskConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionAsyncTaskConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionAsyncTaskConfig)(nil)).Elem()
+}
+
+func (o FunctionAsyncTaskConfigPtrOutput) ToFunctionAsyncTaskConfigPtrOutput() FunctionAsyncTaskConfigPtrOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigPtrOutput) ToFunctionAsyncTaskConfigPtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigPtrOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigPtrOutput) Elem() FunctionAsyncTaskConfigOutput {
+	return o.ApplyT(func(v *FunctionAsyncTaskConfig) FunctionAsyncTaskConfig {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionAsyncTaskConfig
+		return ret
+	}).(FunctionAsyncTaskConfigOutput)
+}
+
+// Asynchronous task callback target configuration
+func (o FunctionAsyncTaskConfigPtrOutput) DestinationConfig() FunctionAsyncTaskConfigDestinationConfigPtrOutput {
+	return o.ApplyT(func(v *FunctionAsyncTaskConfig) *FunctionAsyncTaskConfigDestinationConfig {
+		if v == nil {
+			return nil
+		}
+		return v.DestinationConfig
+	}).(FunctionAsyncTaskConfigDestinationConfigPtrOutput)
+}
+
+// Whether to enable asynchronous task
+func (o FunctionAsyncTaskConfigPtrOutput) EnableAsyncTask() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FunctionAsyncTaskConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableAsyncTask
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Number of retry attempts for asynchronous task failures. Available values: 0–3
+func (o FunctionAsyncTaskConfigPtrOutput) MaxRetry() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *FunctionAsyncTaskConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxRetry
+	}).(pulumi.IntPtrOutput)
+}
+
+type FunctionAsyncTaskConfigDestinationConfig struct {
+	// Callback target configuration when the task fails
+	OnFailure *FunctionAsyncTaskConfigDestinationConfigOnFailure `pulumi:"onFailure"`
+	// Callback target configuration when the task succeeds
+	OnSuccess *FunctionAsyncTaskConfigDestinationConfigOnSuccess `pulumi:"onSuccess"`
+}
+
+// FunctionAsyncTaskConfigDestinationConfigInput is an input type that accepts FunctionAsyncTaskConfigDestinationConfigArgs and FunctionAsyncTaskConfigDestinationConfigOutput values.
+// You can construct a concrete instance of `FunctionAsyncTaskConfigDestinationConfigInput` via:
+//
+//	FunctionAsyncTaskConfigDestinationConfigArgs{...}
+type FunctionAsyncTaskConfigDestinationConfigInput interface {
+	pulumi.Input
+
+	ToFunctionAsyncTaskConfigDestinationConfigOutput() FunctionAsyncTaskConfigDestinationConfigOutput
+	ToFunctionAsyncTaskConfigDestinationConfigOutputWithContext(context.Context) FunctionAsyncTaskConfigDestinationConfigOutput
+}
+
+type FunctionAsyncTaskConfigDestinationConfigArgs struct {
+	// Callback target configuration when the task fails
+	OnFailure FunctionAsyncTaskConfigDestinationConfigOnFailurePtrInput `pulumi:"onFailure"`
+	// Callback target configuration when the task succeeds
+	OnSuccess FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrInput `pulumi:"onSuccess"`
+}
+
+func (FunctionAsyncTaskConfigDestinationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfig)(nil)).Elem()
+}
+
+func (i FunctionAsyncTaskConfigDestinationConfigArgs) ToFunctionAsyncTaskConfigDestinationConfigOutput() FunctionAsyncTaskConfigDestinationConfigOutput {
+	return i.ToFunctionAsyncTaskConfigDestinationConfigOutputWithContext(context.Background())
+}
+
+func (i FunctionAsyncTaskConfigDestinationConfigArgs) ToFunctionAsyncTaskConfigDestinationConfigOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionAsyncTaskConfigDestinationConfigOutput)
+}
+
+func (i FunctionAsyncTaskConfigDestinationConfigArgs) ToFunctionAsyncTaskConfigDestinationConfigPtrOutput() FunctionAsyncTaskConfigDestinationConfigPtrOutput {
+	return i.ToFunctionAsyncTaskConfigDestinationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionAsyncTaskConfigDestinationConfigArgs) ToFunctionAsyncTaskConfigDestinationConfigPtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionAsyncTaskConfigDestinationConfigOutput).ToFunctionAsyncTaskConfigDestinationConfigPtrOutputWithContext(ctx)
+}
+
+// FunctionAsyncTaskConfigDestinationConfigPtrInput is an input type that accepts FunctionAsyncTaskConfigDestinationConfigArgs, FunctionAsyncTaskConfigDestinationConfigPtr and FunctionAsyncTaskConfigDestinationConfigPtrOutput values.
+// You can construct a concrete instance of `FunctionAsyncTaskConfigDestinationConfigPtrInput` via:
+//
+//	        FunctionAsyncTaskConfigDestinationConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionAsyncTaskConfigDestinationConfigPtrInput interface {
+	pulumi.Input
+
+	ToFunctionAsyncTaskConfigDestinationConfigPtrOutput() FunctionAsyncTaskConfigDestinationConfigPtrOutput
+	ToFunctionAsyncTaskConfigDestinationConfigPtrOutputWithContext(context.Context) FunctionAsyncTaskConfigDestinationConfigPtrOutput
+}
+
+type functionAsyncTaskConfigDestinationConfigPtrType FunctionAsyncTaskConfigDestinationConfigArgs
+
+func FunctionAsyncTaskConfigDestinationConfigPtr(v *FunctionAsyncTaskConfigDestinationConfigArgs) FunctionAsyncTaskConfigDestinationConfigPtrInput {
+	return (*functionAsyncTaskConfigDestinationConfigPtrType)(v)
+}
+
+func (*functionAsyncTaskConfigDestinationConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionAsyncTaskConfigDestinationConfig)(nil)).Elem()
+}
+
+func (i *functionAsyncTaskConfigDestinationConfigPtrType) ToFunctionAsyncTaskConfigDestinationConfigPtrOutput() FunctionAsyncTaskConfigDestinationConfigPtrOutput {
+	return i.ToFunctionAsyncTaskConfigDestinationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *functionAsyncTaskConfigDestinationConfigPtrType) ToFunctionAsyncTaskConfigDestinationConfigPtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionAsyncTaskConfigDestinationConfigPtrOutput)
+}
+
+type FunctionAsyncTaskConfigDestinationConfigOutput struct{ *pulumi.OutputState }
+
+func (FunctionAsyncTaskConfigDestinationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfig)(nil)).Elem()
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOutput) ToFunctionAsyncTaskConfigDestinationConfigOutput() FunctionAsyncTaskConfigDestinationConfigOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOutput) ToFunctionAsyncTaskConfigDestinationConfigOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOutput) ToFunctionAsyncTaskConfigDestinationConfigPtrOutput() FunctionAsyncTaskConfigDestinationConfigPtrOutput {
+	return o.ToFunctionAsyncTaskConfigDestinationConfigPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOutput) ToFunctionAsyncTaskConfigDestinationConfigPtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionAsyncTaskConfigDestinationConfig) *FunctionAsyncTaskConfigDestinationConfig {
+		return &v
+	}).(FunctionAsyncTaskConfigDestinationConfigPtrOutput)
+}
+
+// Callback target configuration when the task fails
+func (o FunctionAsyncTaskConfigDestinationConfigOutput) OnFailure() FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput {
+	return o.ApplyT(func(v FunctionAsyncTaskConfigDestinationConfig) *FunctionAsyncTaskConfigDestinationConfigOnFailure {
+		return v.OnFailure
+	}).(FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput)
+}
+
+// Callback target configuration when the task succeeds
+func (o FunctionAsyncTaskConfigDestinationConfigOutput) OnSuccess() FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput {
+	return o.ApplyT(func(v FunctionAsyncTaskConfigDestinationConfig) *FunctionAsyncTaskConfigDestinationConfigOnSuccess {
+		return v.OnSuccess
+	}).(FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput)
+}
+
+type FunctionAsyncTaskConfigDestinationConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionAsyncTaskConfigDestinationConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionAsyncTaskConfigDestinationConfig)(nil)).Elem()
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigPtrOutput) ToFunctionAsyncTaskConfigDestinationConfigPtrOutput() FunctionAsyncTaskConfigDestinationConfigPtrOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigPtrOutput) ToFunctionAsyncTaskConfigDestinationConfigPtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigPtrOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigPtrOutput) Elem() FunctionAsyncTaskConfigDestinationConfigOutput {
+	return o.ApplyT(func(v *FunctionAsyncTaskConfigDestinationConfig) FunctionAsyncTaskConfigDestinationConfig {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionAsyncTaskConfigDestinationConfig
+		return ret
+	}).(FunctionAsyncTaskConfigDestinationConfigOutput)
+}
+
+// Callback target configuration when the task fails
+func (o FunctionAsyncTaskConfigDestinationConfigPtrOutput) OnFailure() FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput {
+	return o.ApplyT(func(v *FunctionAsyncTaskConfigDestinationConfig) *FunctionAsyncTaskConfigDestinationConfigOnFailure {
+		if v == nil {
+			return nil
+		}
+		return v.OnFailure
+	}).(FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput)
+}
+
+// Callback target configuration when the task succeeds
+func (o FunctionAsyncTaskConfigDestinationConfigPtrOutput) OnSuccess() FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput {
+	return o.ApplyT(func(v *FunctionAsyncTaskConfigDestinationConfig) *FunctionAsyncTaskConfigDestinationConfigOnSuccess {
+		if v == nil {
+			return nil
+		}
+		return v.OnSuccess
+	}).(FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput)
+}
+
+type FunctionAsyncTaskConfigDestinationConfigOnFailure struct {
+	// Specific callback target. Set the value to empty ("") to disable this callback
+	Destination *string `pulumi:"destination"`
+}
+
+// FunctionAsyncTaskConfigDestinationConfigOnFailureInput is an input type that accepts FunctionAsyncTaskConfigDestinationConfigOnFailureArgs and FunctionAsyncTaskConfigDestinationConfigOnFailureOutput values.
+// You can construct a concrete instance of `FunctionAsyncTaskConfigDestinationConfigOnFailureInput` via:
+//
+//	FunctionAsyncTaskConfigDestinationConfigOnFailureArgs{...}
+type FunctionAsyncTaskConfigDestinationConfigOnFailureInput interface {
+	pulumi.Input
+
+	ToFunctionAsyncTaskConfigDestinationConfigOnFailureOutput() FunctionAsyncTaskConfigDestinationConfigOnFailureOutput
+	ToFunctionAsyncTaskConfigDestinationConfigOnFailureOutputWithContext(context.Context) FunctionAsyncTaskConfigDestinationConfigOnFailureOutput
+}
+
+type FunctionAsyncTaskConfigDestinationConfigOnFailureArgs struct {
+	// Specific callback target. Set the value to empty ("") to disable this callback
+	Destination pulumi.StringPtrInput `pulumi:"destination"`
+}
+
+func (FunctionAsyncTaskConfigDestinationConfigOnFailureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfigOnFailure)(nil)).Elem()
+}
+
+func (i FunctionAsyncTaskConfigDestinationConfigOnFailureArgs) ToFunctionAsyncTaskConfigDestinationConfigOnFailureOutput() FunctionAsyncTaskConfigDestinationConfigOnFailureOutput {
+	return i.ToFunctionAsyncTaskConfigDestinationConfigOnFailureOutputWithContext(context.Background())
+}
+
+func (i FunctionAsyncTaskConfigDestinationConfigOnFailureArgs) ToFunctionAsyncTaskConfigDestinationConfigOnFailureOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOnFailureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionAsyncTaskConfigDestinationConfigOnFailureOutput)
+}
+
+func (i FunctionAsyncTaskConfigDestinationConfigOnFailureArgs) ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput() FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput {
+	return i.ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutputWithContext(context.Background())
+}
+
+func (i FunctionAsyncTaskConfigDestinationConfigOnFailureArgs) ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionAsyncTaskConfigDestinationConfigOnFailureOutput).ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutputWithContext(ctx)
+}
+
+// FunctionAsyncTaskConfigDestinationConfigOnFailurePtrInput is an input type that accepts FunctionAsyncTaskConfigDestinationConfigOnFailureArgs, FunctionAsyncTaskConfigDestinationConfigOnFailurePtr and FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput values.
+// You can construct a concrete instance of `FunctionAsyncTaskConfigDestinationConfigOnFailurePtrInput` via:
+//
+//	        FunctionAsyncTaskConfigDestinationConfigOnFailureArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionAsyncTaskConfigDestinationConfigOnFailurePtrInput interface {
+	pulumi.Input
+
+	ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput() FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput
+	ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutputWithContext(context.Context) FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput
+}
+
+type functionAsyncTaskConfigDestinationConfigOnFailurePtrType FunctionAsyncTaskConfigDestinationConfigOnFailureArgs
+
+func FunctionAsyncTaskConfigDestinationConfigOnFailurePtr(v *FunctionAsyncTaskConfigDestinationConfigOnFailureArgs) FunctionAsyncTaskConfigDestinationConfigOnFailurePtrInput {
+	return (*functionAsyncTaskConfigDestinationConfigOnFailurePtrType)(v)
+}
+
+func (*functionAsyncTaskConfigDestinationConfigOnFailurePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionAsyncTaskConfigDestinationConfigOnFailure)(nil)).Elem()
+}
+
+func (i *functionAsyncTaskConfigDestinationConfigOnFailurePtrType) ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput() FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput {
+	return i.ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutputWithContext(context.Background())
+}
+
+func (i *functionAsyncTaskConfigDestinationConfigOnFailurePtrType) ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput)
+}
+
+type FunctionAsyncTaskConfigDestinationConfigOnFailureOutput struct{ *pulumi.OutputState }
+
+func (FunctionAsyncTaskConfigDestinationConfigOnFailureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfigOnFailure)(nil)).Elem()
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnFailureOutput) ToFunctionAsyncTaskConfigDestinationConfigOnFailureOutput() FunctionAsyncTaskConfigDestinationConfigOnFailureOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnFailureOutput) ToFunctionAsyncTaskConfigDestinationConfigOnFailureOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOnFailureOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnFailureOutput) ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput() FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput {
+	return o.ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutputWithContext(context.Background())
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnFailureOutput) ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionAsyncTaskConfigDestinationConfigOnFailure) *FunctionAsyncTaskConfigDestinationConfigOnFailure {
+		return &v
+	}).(FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput)
+}
+
+// Specific callback target. Set the value to empty ("") to disable this callback
+func (o FunctionAsyncTaskConfigDestinationConfigOnFailureOutput) Destination() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionAsyncTaskConfigDestinationConfigOnFailure) *string { return v.Destination }).(pulumi.StringPtrOutput)
+}
+
+type FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionAsyncTaskConfigDestinationConfigOnFailure)(nil)).Elem()
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput) ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput() FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput) ToFunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput) Elem() FunctionAsyncTaskConfigDestinationConfigOnFailureOutput {
+	return o.ApplyT(func(v *FunctionAsyncTaskConfigDestinationConfigOnFailure) FunctionAsyncTaskConfigDestinationConfigOnFailure {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionAsyncTaskConfigDestinationConfigOnFailure
+		return ret
+	}).(FunctionAsyncTaskConfigDestinationConfigOnFailureOutput)
+}
+
+// Specific callback target. Set the value to empty ("") to disable this callback
+func (o FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput) Destination() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionAsyncTaskConfigDestinationConfigOnFailure) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Destination
+	}).(pulumi.StringPtrOutput)
+}
+
+type FunctionAsyncTaskConfigDestinationConfigOnSuccess struct {
+	// Specific callback target. Set the value to empty ("") to disable this callback
+	Destination *string `pulumi:"destination"`
+}
+
+// FunctionAsyncTaskConfigDestinationConfigOnSuccessInput is an input type that accepts FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs and FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput values.
+// You can construct a concrete instance of `FunctionAsyncTaskConfigDestinationConfigOnSuccessInput` via:
+//
+//	FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs{...}
+type FunctionAsyncTaskConfigDestinationConfigOnSuccessInput interface {
+	pulumi.Input
+
+	ToFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput() FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput
+	ToFunctionAsyncTaskConfigDestinationConfigOnSuccessOutputWithContext(context.Context) FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput
+}
+
+type FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs struct {
+	// Specific callback target. Set the value to empty ("") to disable this callback
+	Destination pulumi.StringPtrInput `pulumi:"destination"`
+}
+
+func (FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfigOnSuccess)(nil)).Elem()
+}
+
+func (i FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs) ToFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput() FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput {
+	return i.ToFunctionAsyncTaskConfigDestinationConfigOnSuccessOutputWithContext(context.Background())
+}
+
+func (i FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs) ToFunctionAsyncTaskConfigDestinationConfigOnSuccessOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput)
+}
+
+func (i FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs) ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput() FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput {
+	return i.ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs) ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput).ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutputWithContext(ctx)
+}
+
+// FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrInput is an input type that accepts FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs, FunctionAsyncTaskConfigDestinationConfigOnSuccessPtr and FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput values.
+// You can construct a concrete instance of `FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrInput` via:
+//
+//	        FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrInput interface {
+	pulumi.Input
+
+	ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput() FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput
+	ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutputWithContext(context.Context) FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput
+}
+
+type functionAsyncTaskConfigDestinationConfigOnSuccessPtrType FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs
+
+func FunctionAsyncTaskConfigDestinationConfigOnSuccessPtr(v *FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs) FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrInput {
+	return (*functionAsyncTaskConfigDestinationConfigOnSuccessPtrType)(v)
+}
+
+func (*functionAsyncTaskConfigDestinationConfigOnSuccessPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionAsyncTaskConfigDestinationConfigOnSuccess)(nil)).Elem()
+}
+
+func (i *functionAsyncTaskConfigDestinationConfigOnSuccessPtrType) ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput() FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput {
+	return i.ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutputWithContext(context.Background())
+}
+
+func (i *functionAsyncTaskConfigDestinationConfigOnSuccessPtrType) ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput)
+}
+
+type FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput struct{ *pulumi.OutputState }
+
+func (FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfigOnSuccess)(nil)).Elem()
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput) ToFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput() FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput) ToFunctionAsyncTaskConfigDestinationConfigOnSuccessOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput) ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput() FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput {
+	return o.ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput) ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionAsyncTaskConfigDestinationConfigOnSuccess) *FunctionAsyncTaskConfigDestinationConfigOnSuccess {
+		return &v
+	}).(FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput)
+}
+
+// Specific callback target. Set the value to empty ("") to disable this callback
+func (o FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput) Destination() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionAsyncTaskConfigDestinationConfigOnSuccess) *string { return v.Destination }).(pulumi.StringPtrOutput)
+}
+
+type FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionAsyncTaskConfigDestinationConfigOnSuccess)(nil)).Elem()
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput) ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput() FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput) ToFunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutputWithContext(ctx context.Context) FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput {
+	return o
+}
+
+func (o FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput) Elem() FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput {
+	return o.ApplyT(func(v *FunctionAsyncTaskConfigDestinationConfigOnSuccess) FunctionAsyncTaskConfigDestinationConfigOnSuccess {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionAsyncTaskConfigDestinationConfigOnSuccess
+		return ret
+	}).(FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput)
+}
+
+// Specific callback target. Set the value to empty ("") to disable this callback
+func (o FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput) Destination() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionAsyncTaskConfigDestinationConfigOnSuccess) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Destination
+	}).(pulumi.StringPtrOutput)
+}
+
+type FunctionEnv struct {
+	// Environment variable key. 1–63 characters; can include letters, numbers, and underscores (_), but cannot start with a number. Key must be unique within the same function
+	Key *string `pulumi:"key"`
+	// Environment variable value
+	Value *string `pulumi:"value"`
+}
+
+// FunctionEnvInput is an input type that accepts FunctionEnvArgs and FunctionEnvOutput values.
+// You can construct a concrete instance of `FunctionEnvInput` via:
+//
+//	FunctionEnvArgs{...}
+type FunctionEnvInput interface {
+	pulumi.Input
+
+	ToFunctionEnvOutput() FunctionEnvOutput
+	ToFunctionEnvOutputWithContext(context.Context) FunctionEnvOutput
+}
+
+type FunctionEnvArgs struct {
+	// Environment variable key. 1–63 characters; can include letters, numbers, and underscores (_), but cannot start with a number. Key must be unique within the same function
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Environment variable value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (FunctionEnvArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionEnv)(nil)).Elem()
+}
+
+func (i FunctionEnvArgs) ToFunctionEnvOutput() FunctionEnvOutput {
+	return i.ToFunctionEnvOutputWithContext(context.Background())
+}
+
+func (i FunctionEnvArgs) ToFunctionEnvOutputWithContext(ctx context.Context) FunctionEnvOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionEnvOutput)
+}
+
+// FunctionEnvArrayInput is an input type that accepts FunctionEnvArray and FunctionEnvArrayOutput values.
+// You can construct a concrete instance of `FunctionEnvArrayInput` via:
+//
+//	FunctionEnvArray{ FunctionEnvArgs{...} }
+type FunctionEnvArrayInput interface {
+	pulumi.Input
+
+	ToFunctionEnvArrayOutput() FunctionEnvArrayOutput
+	ToFunctionEnvArrayOutputWithContext(context.Context) FunctionEnvArrayOutput
+}
+
+type FunctionEnvArray []FunctionEnvInput
+
+func (FunctionEnvArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FunctionEnv)(nil)).Elem()
+}
+
+func (i FunctionEnvArray) ToFunctionEnvArrayOutput() FunctionEnvArrayOutput {
+	return i.ToFunctionEnvArrayOutputWithContext(context.Background())
+}
+
+func (i FunctionEnvArray) ToFunctionEnvArrayOutputWithContext(ctx context.Context) FunctionEnvArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionEnvArrayOutput)
+}
+
+type FunctionEnvOutput struct{ *pulumi.OutputState }
+
+func (FunctionEnvOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionEnv)(nil)).Elem()
+}
+
+func (o FunctionEnvOutput) ToFunctionEnvOutput() FunctionEnvOutput {
+	return o
+}
+
+func (o FunctionEnvOutput) ToFunctionEnvOutputWithContext(ctx context.Context) FunctionEnvOutput {
+	return o
+}
+
+// Environment variable key. 1–63 characters; can include letters, numbers, and underscores (_), but cannot start with a number. Key must be unique within the same function
+func (o FunctionEnvOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionEnv) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Environment variable value
+func (o FunctionEnvOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionEnv) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type FunctionEnvArrayOutput struct{ *pulumi.OutputState }
+
+func (FunctionEnvArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FunctionEnv)(nil)).Elem()
+}
+
+func (o FunctionEnvArrayOutput) ToFunctionEnvArrayOutput() FunctionEnvArrayOutput {
+	return o
+}
+
+func (o FunctionEnvArrayOutput) ToFunctionEnvArrayOutputWithContext(ctx context.Context) FunctionEnvArrayOutput {
+	return o
+}
+
+func (o FunctionEnvArrayOutput) Index(i pulumi.IntInput) FunctionEnvOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FunctionEnv {
+		return vs[0].([]FunctionEnv)[vs[1].(int)]
+	}).(FunctionEnvOutput)
+}
+
+type FunctionNasStorage struct {
+	// Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
+	EnableNas  *bool                         `pulumi:"enableNas"`
+	NasConfigs []FunctionNasStorageNasConfig `pulumi:"nasConfigs"`
+}
+
+// FunctionNasStorageInput is an input type that accepts FunctionNasStorageArgs and FunctionNasStorageOutput values.
+// You can construct a concrete instance of `FunctionNasStorageInput` via:
+//
+//	FunctionNasStorageArgs{...}
+type FunctionNasStorageInput interface {
+	pulumi.Input
+
+	ToFunctionNasStorageOutput() FunctionNasStorageOutput
+	ToFunctionNasStorageOutputWithContext(context.Context) FunctionNasStorageOutput
+}
+
+type FunctionNasStorageArgs struct {
+	// Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
+	EnableNas  pulumi.BoolPtrInput                   `pulumi:"enableNas"`
+	NasConfigs FunctionNasStorageNasConfigArrayInput `pulumi:"nasConfigs"`
+}
+
+func (FunctionNasStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionNasStorage)(nil)).Elem()
+}
+
+func (i FunctionNasStorageArgs) ToFunctionNasStorageOutput() FunctionNasStorageOutput {
+	return i.ToFunctionNasStorageOutputWithContext(context.Background())
+}
+
+func (i FunctionNasStorageArgs) ToFunctionNasStorageOutputWithContext(ctx context.Context) FunctionNasStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionNasStorageOutput)
+}
+
+func (i FunctionNasStorageArgs) ToFunctionNasStoragePtrOutput() FunctionNasStoragePtrOutput {
+	return i.ToFunctionNasStoragePtrOutputWithContext(context.Background())
+}
+
+func (i FunctionNasStorageArgs) ToFunctionNasStoragePtrOutputWithContext(ctx context.Context) FunctionNasStoragePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionNasStorageOutput).ToFunctionNasStoragePtrOutputWithContext(ctx)
+}
+
+// FunctionNasStoragePtrInput is an input type that accepts FunctionNasStorageArgs, FunctionNasStoragePtr and FunctionNasStoragePtrOutput values.
+// You can construct a concrete instance of `FunctionNasStoragePtrInput` via:
+//
+//	        FunctionNasStorageArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionNasStoragePtrInput interface {
+	pulumi.Input
+
+	ToFunctionNasStoragePtrOutput() FunctionNasStoragePtrOutput
+	ToFunctionNasStoragePtrOutputWithContext(context.Context) FunctionNasStoragePtrOutput
+}
+
+type functionNasStoragePtrType FunctionNasStorageArgs
+
+func FunctionNasStoragePtr(v *FunctionNasStorageArgs) FunctionNasStoragePtrInput {
+	return (*functionNasStoragePtrType)(v)
+}
+
+func (*functionNasStoragePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionNasStorage)(nil)).Elem()
+}
+
+func (i *functionNasStoragePtrType) ToFunctionNasStoragePtrOutput() FunctionNasStoragePtrOutput {
+	return i.ToFunctionNasStoragePtrOutputWithContext(context.Background())
+}
+
+func (i *functionNasStoragePtrType) ToFunctionNasStoragePtrOutputWithContext(ctx context.Context) FunctionNasStoragePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionNasStoragePtrOutput)
+}
+
+type FunctionNasStorageOutput struct{ *pulumi.OutputState }
+
+func (FunctionNasStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionNasStorage)(nil)).Elem()
+}
+
+func (o FunctionNasStorageOutput) ToFunctionNasStorageOutput() FunctionNasStorageOutput {
+	return o
+}
+
+func (o FunctionNasStorageOutput) ToFunctionNasStorageOutputWithContext(ctx context.Context) FunctionNasStorageOutput {
+	return o
+}
+
+func (o FunctionNasStorageOutput) ToFunctionNasStoragePtrOutput() FunctionNasStoragePtrOutput {
+	return o.ToFunctionNasStoragePtrOutputWithContext(context.Background())
+}
+
+func (o FunctionNasStorageOutput) ToFunctionNasStoragePtrOutputWithContext(ctx context.Context) FunctionNasStoragePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionNasStorage) *FunctionNasStorage {
+		return &v
+	}).(FunctionNasStoragePtrOutput)
+}
+
+// Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
+func (o FunctionNasStorageOutput) EnableNas() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FunctionNasStorage) *bool { return v.EnableNas }).(pulumi.BoolPtrOutput)
+}
+
+func (o FunctionNasStorageOutput) NasConfigs() FunctionNasStorageNasConfigArrayOutput {
+	return o.ApplyT(func(v FunctionNasStorage) []FunctionNasStorageNasConfig { return v.NasConfigs }).(FunctionNasStorageNasConfigArrayOutput)
+}
+
+type FunctionNasStoragePtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionNasStoragePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionNasStorage)(nil)).Elem()
+}
+
+func (o FunctionNasStoragePtrOutput) ToFunctionNasStoragePtrOutput() FunctionNasStoragePtrOutput {
+	return o
+}
+
+func (o FunctionNasStoragePtrOutput) ToFunctionNasStoragePtrOutputWithContext(ctx context.Context) FunctionNasStoragePtrOutput {
+	return o
+}
+
+func (o FunctionNasStoragePtrOutput) Elem() FunctionNasStorageOutput {
+	return o.ApplyT(func(v *FunctionNasStorage) FunctionNasStorage {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionNasStorage
+		return ret
+	}).(FunctionNasStorageOutput)
+}
+
+// Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
+func (o FunctionNasStoragePtrOutput) EnableNas() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FunctionNasStorage) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableNas
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o FunctionNasStoragePtrOutput) NasConfigs() FunctionNasStorageNasConfigArrayOutput {
+	return o.ApplyT(func(v *FunctionNasStorage) []FunctionNasStorageNasConfig {
+		if v == nil {
+			return nil
+		}
+		return v.NasConfigs
+	}).(FunctionNasStorageNasConfigArrayOutput)
+}
+
+type FunctionNasStorageNasConfig struct {
+	// NAS file system ID.
+	FileSystemId *string `pulumi:"fileSystemId"`
+	// User group in the file system. Customization is not currently supported. If this parameter is provided, its value is 1000 (consistent with the function run user gid)
+	Gid *int `pulumi:"gid"`
+	// Function local mount directory. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #).
+	LocalMountPath *string `pulumi:"localMountPath"`
+	// NAS mount point ID
+	MountPointId *string `pulumi:"mountPointId"`
+	// Remote directory in the file system. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #)
+	RemotePath *string `pulumi:"remotePath"`
+	// The user in the file system cannot be customized for now. If this parameter is provided, the value must be 1000 (consistent with the function run user uid).
+	Uid *int `pulumi:"uid"`
+}
+
+// FunctionNasStorageNasConfigInput is an input type that accepts FunctionNasStorageNasConfigArgs and FunctionNasStorageNasConfigOutput values.
+// You can construct a concrete instance of `FunctionNasStorageNasConfigInput` via:
+//
+//	FunctionNasStorageNasConfigArgs{...}
+type FunctionNasStorageNasConfigInput interface {
+	pulumi.Input
+
+	ToFunctionNasStorageNasConfigOutput() FunctionNasStorageNasConfigOutput
+	ToFunctionNasStorageNasConfigOutputWithContext(context.Context) FunctionNasStorageNasConfigOutput
+}
+
+type FunctionNasStorageNasConfigArgs struct {
+	// NAS file system ID.
+	FileSystemId pulumi.StringPtrInput `pulumi:"fileSystemId"`
+	// User group in the file system. Customization is not currently supported. If this parameter is provided, its value is 1000 (consistent with the function run user gid)
+	Gid pulumi.IntPtrInput `pulumi:"gid"`
+	// Function local mount directory. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #).
+	LocalMountPath pulumi.StringPtrInput `pulumi:"localMountPath"`
+	// NAS mount point ID
+	MountPointId pulumi.StringPtrInput `pulumi:"mountPointId"`
+	// Remote directory in the file system. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #)
+	RemotePath pulumi.StringPtrInput `pulumi:"remotePath"`
+	// The user in the file system cannot be customized for now. If this parameter is provided, the value must be 1000 (consistent with the function run user uid).
+	Uid pulumi.IntPtrInput `pulumi:"uid"`
+}
+
+func (FunctionNasStorageNasConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionNasStorageNasConfig)(nil)).Elem()
+}
+
+func (i FunctionNasStorageNasConfigArgs) ToFunctionNasStorageNasConfigOutput() FunctionNasStorageNasConfigOutput {
+	return i.ToFunctionNasStorageNasConfigOutputWithContext(context.Background())
+}
+
+func (i FunctionNasStorageNasConfigArgs) ToFunctionNasStorageNasConfigOutputWithContext(ctx context.Context) FunctionNasStorageNasConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionNasStorageNasConfigOutput)
+}
+
+// FunctionNasStorageNasConfigArrayInput is an input type that accepts FunctionNasStorageNasConfigArray and FunctionNasStorageNasConfigArrayOutput values.
+// You can construct a concrete instance of `FunctionNasStorageNasConfigArrayInput` via:
+//
+//	FunctionNasStorageNasConfigArray{ FunctionNasStorageNasConfigArgs{...} }
+type FunctionNasStorageNasConfigArrayInput interface {
+	pulumi.Input
+
+	ToFunctionNasStorageNasConfigArrayOutput() FunctionNasStorageNasConfigArrayOutput
+	ToFunctionNasStorageNasConfigArrayOutputWithContext(context.Context) FunctionNasStorageNasConfigArrayOutput
+}
+
+type FunctionNasStorageNasConfigArray []FunctionNasStorageNasConfigInput
+
+func (FunctionNasStorageNasConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FunctionNasStorageNasConfig)(nil)).Elem()
+}
+
+func (i FunctionNasStorageNasConfigArray) ToFunctionNasStorageNasConfigArrayOutput() FunctionNasStorageNasConfigArrayOutput {
+	return i.ToFunctionNasStorageNasConfigArrayOutputWithContext(context.Background())
+}
+
+func (i FunctionNasStorageNasConfigArray) ToFunctionNasStorageNasConfigArrayOutputWithContext(ctx context.Context) FunctionNasStorageNasConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionNasStorageNasConfigArrayOutput)
+}
+
+type FunctionNasStorageNasConfigOutput struct{ *pulumi.OutputState }
+
+func (FunctionNasStorageNasConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionNasStorageNasConfig)(nil)).Elem()
+}
+
+func (o FunctionNasStorageNasConfigOutput) ToFunctionNasStorageNasConfigOutput() FunctionNasStorageNasConfigOutput {
+	return o
+}
+
+func (o FunctionNasStorageNasConfigOutput) ToFunctionNasStorageNasConfigOutputWithContext(ctx context.Context) FunctionNasStorageNasConfigOutput {
+	return o
+}
+
+// NAS file system ID.
+func (o FunctionNasStorageNasConfigOutput) FileSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionNasStorageNasConfig) *string { return v.FileSystemId }).(pulumi.StringPtrOutput)
+}
+
+// User group in the file system. Customization is not currently supported. If this parameter is provided, its value is 1000 (consistent with the function run user gid)
+func (o FunctionNasStorageNasConfigOutput) Gid() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FunctionNasStorageNasConfig) *int { return v.Gid }).(pulumi.IntPtrOutput)
+}
+
+// Function local mount directory. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #).
+func (o FunctionNasStorageNasConfigOutput) LocalMountPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionNasStorageNasConfig) *string { return v.LocalMountPath }).(pulumi.StringPtrOutput)
+}
+
+// NAS mount point ID
+func (o FunctionNasStorageNasConfigOutput) MountPointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionNasStorageNasConfig) *string { return v.MountPointId }).(pulumi.StringPtrOutput)
+}
+
+// Remote directory in the file system. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #)
+func (o FunctionNasStorageNasConfigOutput) RemotePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionNasStorageNasConfig) *string { return v.RemotePath }).(pulumi.StringPtrOutput)
+}
+
+// The user in the file system cannot be customized for now. If this parameter is provided, the value must be 1000 (consistent with the function run user uid).
+func (o FunctionNasStorageNasConfigOutput) Uid() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FunctionNasStorageNasConfig) *int { return v.Uid }).(pulumi.IntPtrOutput)
+}
+
+type FunctionNasStorageNasConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (FunctionNasStorageNasConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FunctionNasStorageNasConfig)(nil)).Elem()
+}
+
+func (o FunctionNasStorageNasConfigArrayOutput) ToFunctionNasStorageNasConfigArrayOutput() FunctionNasStorageNasConfigArrayOutput {
+	return o
+}
+
+func (o FunctionNasStorageNasConfigArrayOutput) ToFunctionNasStorageNasConfigArrayOutputWithContext(ctx context.Context) FunctionNasStorageNasConfigArrayOutput {
+	return o
+}
+
+func (o FunctionNasStorageNasConfigArrayOutput) Index(i pulumi.IntInput) FunctionNasStorageNasConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FunctionNasStorageNasConfig {
+		return vs[0].([]FunctionNasStorageNasConfig)[vs[1].(int)]
+	}).(FunctionNasStorageNasConfigOutput)
+}
+
+type FunctionSourceAccessConfig struct {
+	// Image repository password
+	Password *string `pulumi:"password"`
+	// Image repository username
+	Username *string `pulumi:"username"`
+}
+
+// FunctionSourceAccessConfigInput is an input type that accepts FunctionSourceAccessConfigArgs and FunctionSourceAccessConfigOutput values.
+// You can construct a concrete instance of `FunctionSourceAccessConfigInput` via:
+//
+//	FunctionSourceAccessConfigArgs{...}
+type FunctionSourceAccessConfigInput interface {
+	pulumi.Input
+
+	ToFunctionSourceAccessConfigOutput() FunctionSourceAccessConfigOutput
+	ToFunctionSourceAccessConfigOutputWithContext(context.Context) FunctionSourceAccessConfigOutput
+}
+
+type FunctionSourceAccessConfigArgs struct {
+	// Image repository password
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// Image repository username
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (FunctionSourceAccessConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionSourceAccessConfig)(nil)).Elem()
+}
+
+func (i FunctionSourceAccessConfigArgs) ToFunctionSourceAccessConfigOutput() FunctionSourceAccessConfigOutput {
+	return i.ToFunctionSourceAccessConfigOutputWithContext(context.Background())
+}
+
+func (i FunctionSourceAccessConfigArgs) ToFunctionSourceAccessConfigOutputWithContext(ctx context.Context) FunctionSourceAccessConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceAccessConfigOutput)
+}
+
+func (i FunctionSourceAccessConfigArgs) ToFunctionSourceAccessConfigPtrOutput() FunctionSourceAccessConfigPtrOutput {
+	return i.ToFunctionSourceAccessConfigPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionSourceAccessConfigArgs) ToFunctionSourceAccessConfigPtrOutputWithContext(ctx context.Context) FunctionSourceAccessConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceAccessConfigOutput).ToFunctionSourceAccessConfigPtrOutputWithContext(ctx)
+}
+
+// FunctionSourceAccessConfigPtrInput is an input type that accepts FunctionSourceAccessConfigArgs, FunctionSourceAccessConfigPtr and FunctionSourceAccessConfigPtrOutput values.
+// You can construct a concrete instance of `FunctionSourceAccessConfigPtrInput` via:
+//
+//	        FunctionSourceAccessConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionSourceAccessConfigPtrInput interface {
+	pulumi.Input
+
+	ToFunctionSourceAccessConfigPtrOutput() FunctionSourceAccessConfigPtrOutput
+	ToFunctionSourceAccessConfigPtrOutputWithContext(context.Context) FunctionSourceAccessConfigPtrOutput
+}
+
+type functionSourceAccessConfigPtrType FunctionSourceAccessConfigArgs
+
+func FunctionSourceAccessConfigPtr(v *FunctionSourceAccessConfigArgs) FunctionSourceAccessConfigPtrInput {
+	return (*functionSourceAccessConfigPtrType)(v)
+}
+
+func (*functionSourceAccessConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionSourceAccessConfig)(nil)).Elem()
+}
+
+func (i *functionSourceAccessConfigPtrType) ToFunctionSourceAccessConfigPtrOutput() FunctionSourceAccessConfigPtrOutput {
+	return i.ToFunctionSourceAccessConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *functionSourceAccessConfigPtrType) ToFunctionSourceAccessConfigPtrOutputWithContext(ctx context.Context) FunctionSourceAccessConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceAccessConfigPtrOutput)
+}
+
+type FunctionSourceAccessConfigOutput struct{ *pulumi.OutputState }
+
+func (FunctionSourceAccessConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionSourceAccessConfig)(nil)).Elem()
+}
+
+func (o FunctionSourceAccessConfigOutput) ToFunctionSourceAccessConfigOutput() FunctionSourceAccessConfigOutput {
+	return o
+}
+
+func (o FunctionSourceAccessConfigOutput) ToFunctionSourceAccessConfigOutputWithContext(ctx context.Context) FunctionSourceAccessConfigOutput {
+	return o
+}
+
+func (o FunctionSourceAccessConfigOutput) ToFunctionSourceAccessConfigPtrOutput() FunctionSourceAccessConfigPtrOutput {
+	return o.ToFunctionSourceAccessConfigPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionSourceAccessConfigOutput) ToFunctionSourceAccessConfigPtrOutputWithContext(ctx context.Context) FunctionSourceAccessConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionSourceAccessConfig) *FunctionSourceAccessConfig {
+		return &v
+	}).(FunctionSourceAccessConfigPtrOutput)
+}
+
+// Image repository password
+func (o FunctionSourceAccessConfigOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSourceAccessConfig) *string { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// Image repository username
+func (o FunctionSourceAccessConfigOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionSourceAccessConfig) *string { return v.Username }).(pulumi.StringPtrOutput)
+}
+
+type FunctionSourceAccessConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionSourceAccessConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionSourceAccessConfig)(nil)).Elem()
+}
+
+func (o FunctionSourceAccessConfigPtrOutput) ToFunctionSourceAccessConfigPtrOutput() FunctionSourceAccessConfigPtrOutput {
+	return o
+}
+
+func (o FunctionSourceAccessConfigPtrOutput) ToFunctionSourceAccessConfigPtrOutputWithContext(ctx context.Context) FunctionSourceAccessConfigPtrOutput {
+	return o
+}
+
+func (o FunctionSourceAccessConfigPtrOutput) Elem() FunctionSourceAccessConfigOutput {
+	return o.ApplyT(func(v *FunctionSourceAccessConfig) FunctionSourceAccessConfig {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionSourceAccessConfig
+		return ret
+	}).(FunctionSourceAccessConfigOutput)
+}
+
+// Image repository password
+func (o FunctionSourceAccessConfigPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceAccessConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// Image repository username
+func (o FunctionSourceAccessConfigPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionSourceAccessConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type FunctionTag struct {
+	// Function tag key
+	Key *string `pulumi:"key"`
+	// Function tag value
+	Value *string `pulumi:"value"`
+}
+
+// FunctionTagInput is an input type that accepts FunctionTagArgs and FunctionTagOutput values.
+// You can construct a concrete instance of `FunctionTagInput` via:
+//
+//	FunctionTagArgs{...}
+type FunctionTagInput interface {
+	pulumi.Input
+
+	ToFunctionTagOutput() FunctionTagOutput
+	ToFunctionTagOutputWithContext(context.Context) FunctionTagOutput
+}
+
+type FunctionTagArgs struct {
+	// Function tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Function tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (FunctionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionTag)(nil)).Elem()
+}
+
+func (i FunctionTagArgs) ToFunctionTagOutput() FunctionTagOutput {
+	return i.ToFunctionTagOutputWithContext(context.Background())
+}
+
+func (i FunctionTagArgs) ToFunctionTagOutputWithContext(ctx context.Context) FunctionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionTagOutput)
+}
+
+// FunctionTagArrayInput is an input type that accepts FunctionTagArray and FunctionTagArrayOutput values.
+// You can construct a concrete instance of `FunctionTagArrayInput` via:
+//
+//	FunctionTagArray{ FunctionTagArgs{...} }
+type FunctionTagArrayInput interface {
+	pulumi.Input
+
+	ToFunctionTagArrayOutput() FunctionTagArrayOutput
+	ToFunctionTagArrayOutputWithContext(context.Context) FunctionTagArrayOutput
+}
+
+type FunctionTagArray []FunctionTagInput
+
+func (FunctionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FunctionTag)(nil)).Elem()
+}
+
+func (i FunctionTagArray) ToFunctionTagArrayOutput() FunctionTagArrayOutput {
+	return i.ToFunctionTagArrayOutputWithContext(context.Background())
+}
+
+func (i FunctionTagArray) ToFunctionTagArrayOutputWithContext(ctx context.Context) FunctionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionTagArrayOutput)
+}
+
+type FunctionTagOutput struct{ *pulumi.OutputState }
+
+func (FunctionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionTag)(nil)).Elem()
+}
+
+func (o FunctionTagOutput) ToFunctionTagOutput() FunctionTagOutput {
+	return o
+}
+
+func (o FunctionTagOutput) ToFunctionTagOutputWithContext(ctx context.Context) FunctionTagOutput {
+	return o
+}
+
+// Function tag key
+func (o FunctionTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Function tag value
+func (o FunctionTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type FunctionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (FunctionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FunctionTag)(nil)).Elem()
+}
+
+func (o FunctionTagArrayOutput) ToFunctionTagArrayOutput() FunctionTagArrayOutput {
+	return o
+}
+
+func (o FunctionTagArrayOutput) ToFunctionTagArrayOutputWithContext(ctx context.Context) FunctionTagArrayOutput {
+	return o
+}
+
+func (o FunctionTagArrayOutput) Index(i pulumi.IntInput) FunctionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FunctionTag {
+		return vs[0].([]FunctionTag)[vs[1].(int)]
+	}).(FunctionTagOutput)
+}
+
+type FunctionTlsConfig struct {
+	// TLS log feature toggle. true: enabled, function stdout/stderr logs will be collected to the specified log project and log topic in Log Service. false: disabled, logs will not be collected
+	EnableLog *bool `pulumi:"enableLog"`
+	// TLS log project ID
+	TlsProjectId *string `pulumi:"tlsProjectId"`
+	// TLS log topic ID.
+	TlsTopicId *string `pulumi:"tlsTopicId"`
+}
+
+// FunctionTlsConfigInput is an input type that accepts FunctionTlsConfigArgs and FunctionTlsConfigOutput values.
+// You can construct a concrete instance of `FunctionTlsConfigInput` via:
+//
+//	FunctionTlsConfigArgs{...}
+type FunctionTlsConfigInput interface {
+	pulumi.Input
+
+	ToFunctionTlsConfigOutput() FunctionTlsConfigOutput
+	ToFunctionTlsConfigOutputWithContext(context.Context) FunctionTlsConfigOutput
+}
+
+type FunctionTlsConfigArgs struct {
+	// TLS log feature toggle. true: enabled, function stdout/stderr logs will be collected to the specified log project and log topic in Log Service. false: disabled, logs will not be collected
+	EnableLog pulumi.BoolPtrInput `pulumi:"enableLog"`
+	// TLS log project ID
+	TlsProjectId pulumi.StringPtrInput `pulumi:"tlsProjectId"`
+	// TLS log topic ID.
+	TlsTopicId pulumi.StringPtrInput `pulumi:"tlsTopicId"`
+}
+
+func (FunctionTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionTlsConfig)(nil)).Elem()
+}
+
+func (i FunctionTlsConfigArgs) ToFunctionTlsConfigOutput() FunctionTlsConfigOutput {
+	return i.ToFunctionTlsConfigOutputWithContext(context.Background())
+}
+
+func (i FunctionTlsConfigArgs) ToFunctionTlsConfigOutputWithContext(ctx context.Context) FunctionTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionTlsConfigOutput)
+}
+
+func (i FunctionTlsConfigArgs) ToFunctionTlsConfigPtrOutput() FunctionTlsConfigPtrOutput {
+	return i.ToFunctionTlsConfigPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionTlsConfigArgs) ToFunctionTlsConfigPtrOutputWithContext(ctx context.Context) FunctionTlsConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionTlsConfigOutput).ToFunctionTlsConfigPtrOutputWithContext(ctx)
+}
+
+// FunctionTlsConfigPtrInput is an input type that accepts FunctionTlsConfigArgs, FunctionTlsConfigPtr and FunctionTlsConfigPtrOutput values.
+// You can construct a concrete instance of `FunctionTlsConfigPtrInput` via:
+//
+//	        FunctionTlsConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionTlsConfigPtrInput interface {
+	pulumi.Input
+
+	ToFunctionTlsConfigPtrOutput() FunctionTlsConfigPtrOutput
+	ToFunctionTlsConfigPtrOutputWithContext(context.Context) FunctionTlsConfigPtrOutput
+}
+
+type functionTlsConfigPtrType FunctionTlsConfigArgs
+
+func FunctionTlsConfigPtr(v *FunctionTlsConfigArgs) FunctionTlsConfigPtrInput {
+	return (*functionTlsConfigPtrType)(v)
+}
+
+func (*functionTlsConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionTlsConfig)(nil)).Elem()
+}
+
+func (i *functionTlsConfigPtrType) ToFunctionTlsConfigPtrOutput() FunctionTlsConfigPtrOutput {
+	return i.ToFunctionTlsConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *functionTlsConfigPtrType) ToFunctionTlsConfigPtrOutputWithContext(ctx context.Context) FunctionTlsConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionTlsConfigPtrOutput)
+}
+
+type FunctionTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (FunctionTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionTlsConfig)(nil)).Elem()
+}
+
+func (o FunctionTlsConfigOutput) ToFunctionTlsConfigOutput() FunctionTlsConfigOutput {
+	return o
+}
+
+func (o FunctionTlsConfigOutput) ToFunctionTlsConfigOutputWithContext(ctx context.Context) FunctionTlsConfigOutput {
+	return o
+}
+
+func (o FunctionTlsConfigOutput) ToFunctionTlsConfigPtrOutput() FunctionTlsConfigPtrOutput {
+	return o.ToFunctionTlsConfigPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionTlsConfigOutput) ToFunctionTlsConfigPtrOutputWithContext(ctx context.Context) FunctionTlsConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionTlsConfig) *FunctionTlsConfig {
+		return &v
+	}).(FunctionTlsConfigPtrOutput)
+}
+
+// TLS log feature toggle. true: enabled, function stdout/stderr logs will be collected to the specified log project and log topic in Log Service. false: disabled, logs will not be collected
+func (o FunctionTlsConfigOutput) EnableLog() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FunctionTlsConfig) *bool { return v.EnableLog }).(pulumi.BoolPtrOutput)
+}
+
+// TLS log project ID
+func (o FunctionTlsConfigOutput) TlsProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionTlsConfig) *string { return v.TlsProjectId }).(pulumi.StringPtrOutput)
+}
+
+// TLS log topic ID.
+func (o FunctionTlsConfigOutput) TlsTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionTlsConfig) *string { return v.TlsTopicId }).(pulumi.StringPtrOutput)
+}
+
+type FunctionTlsConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionTlsConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionTlsConfig)(nil)).Elem()
+}
+
+func (o FunctionTlsConfigPtrOutput) ToFunctionTlsConfigPtrOutput() FunctionTlsConfigPtrOutput {
+	return o
+}
+
+func (o FunctionTlsConfigPtrOutput) ToFunctionTlsConfigPtrOutputWithContext(ctx context.Context) FunctionTlsConfigPtrOutput {
+	return o
+}
+
+func (o FunctionTlsConfigPtrOutput) Elem() FunctionTlsConfigOutput {
+	return o.ApplyT(func(v *FunctionTlsConfig) FunctionTlsConfig {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionTlsConfig
+		return ret
+	}).(FunctionTlsConfigOutput)
+}
+
+// TLS log feature toggle. true: enabled, function stdout/stderr logs will be collected to the specified log project and log topic in Log Service. false: disabled, logs will not be collected
+func (o FunctionTlsConfigPtrOutput) EnableLog() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FunctionTlsConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableLog
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TLS log project ID
+func (o FunctionTlsConfigPtrOutput) TlsProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionTlsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TlsProjectId
+	}).(pulumi.StringPtrOutput)
+}
+
+// TLS log topic ID.
+func (o FunctionTlsConfigPtrOutput) TlsTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionTlsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TlsTopicId
+	}).(pulumi.StringPtrOutput)
+}
+
+type FunctionTosMountConfig struct {
+	// AKSK with TOS domain access permission.
+	Credentials *FunctionTosMountConfigCredentials `pulumi:"credentials"`
+	// Enable TOS storage mount.
+	EnableTos   *bool                              `pulumi:"enableTos"`
+	MountPoints []FunctionTosMountConfigMountPoint `pulumi:"mountPoints"`
+}
+
+// FunctionTosMountConfigInput is an input type that accepts FunctionTosMountConfigArgs and FunctionTosMountConfigOutput values.
+// You can construct a concrete instance of `FunctionTosMountConfigInput` via:
+//
+//	FunctionTosMountConfigArgs{...}
+type FunctionTosMountConfigInput interface {
+	pulumi.Input
+
+	ToFunctionTosMountConfigOutput() FunctionTosMountConfigOutput
+	ToFunctionTosMountConfigOutputWithContext(context.Context) FunctionTosMountConfigOutput
+}
+
+type FunctionTosMountConfigArgs struct {
+	// AKSK with TOS domain access permission.
+	Credentials FunctionTosMountConfigCredentialsPtrInput `pulumi:"credentials"`
+	// Enable TOS storage mount.
+	EnableTos   pulumi.BoolPtrInput                        `pulumi:"enableTos"`
+	MountPoints FunctionTosMountConfigMountPointArrayInput `pulumi:"mountPoints"`
+}
+
+func (FunctionTosMountConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionTosMountConfig)(nil)).Elem()
+}
+
+func (i FunctionTosMountConfigArgs) ToFunctionTosMountConfigOutput() FunctionTosMountConfigOutput {
+	return i.ToFunctionTosMountConfigOutputWithContext(context.Background())
+}
+
+func (i FunctionTosMountConfigArgs) ToFunctionTosMountConfigOutputWithContext(ctx context.Context) FunctionTosMountConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionTosMountConfigOutput)
+}
+
+func (i FunctionTosMountConfigArgs) ToFunctionTosMountConfigPtrOutput() FunctionTosMountConfigPtrOutput {
+	return i.ToFunctionTosMountConfigPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionTosMountConfigArgs) ToFunctionTosMountConfigPtrOutputWithContext(ctx context.Context) FunctionTosMountConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionTosMountConfigOutput).ToFunctionTosMountConfigPtrOutputWithContext(ctx)
+}
+
+// FunctionTosMountConfigPtrInput is an input type that accepts FunctionTosMountConfigArgs, FunctionTosMountConfigPtr and FunctionTosMountConfigPtrOutput values.
+// You can construct a concrete instance of `FunctionTosMountConfigPtrInput` via:
+//
+//	        FunctionTosMountConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionTosMountConfigPtrInput interface {
+	pulumi.Input
+
+	ToFunctionTosMountConfigPtrOutput() FunctionTosMountConfigPtrOutput
+	ToFunctionTosMountConfigPtrOutputWithContext(context.Context) FunctionTosMountConfigPtrOutput
+}
+
+type functionTosMountConfigPtrType FunctionTosMountConfigArgs
+
+func FunctionTosMountConfigPtr(v *FunctionTosMountConfigArgs) FunctionTosMountConfigPtrInput {
+	return (*functionTosMountConfigPtrType)(v)
+}
+
+func (*functionTosMountConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionTosMountConfig)(nil)).Elem()
+}
+
+func (i *functionTosMountConfigPtrType) ToFunctionTosMountConfigPtrOutput() FunctionTosMountConfigPtrOutput {
+	return i.ToFunctionTosMountConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *functionTosMountConfigPtrType) ToFunctionTosMountConfigPtrOutputWithContext(ctx context.Context) FunctionTosMountConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionTosMountConfigPtrOutput)
+}
+
+type FunctionTosMountConfigOutput struct{ *pulumi.OutputState }
+
+func (FunctionTosMountConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionTosMountConfig)(nil)).Elem()
+}
+
+func (o FunctionTosMountConfigOutput) ToFunctionTosMountConfigOutput() FunctionTosMountConfigOutput {
+	return o
+}
+
+func (o FunctionTosMountConfigOutput) ToFunctionTosMountConfigOutputWithContext(ctx context.Context) FunctionTosMountConfigOutput {
+	return o
+}
+
+func (o FunctionTosMountConfigOutput) ToFunctionTosMountConfigPtrOutput() FunctionTosMountConfigPtrOutput {
+	return o.ToFunctionTosMountConfigPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionTosMountConfigOutput) ToFunctionTosMountConfigPtrOutputWithContext(ctx context.Context) FunctionTosMountConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionTosMountConfig) *FunctionTosMountConfig {
+		return &v
+	}).(FunctionTosMountConfigPtrOutput)
+}
+
+// AKSK with TOS domain access permission.
+func (o FunctionTosMountConfigOutput) Credentials() FunctionTosMountConfigCredentialsPtrOutput {
+	return o.ApplyT(func(v FunctionTosMountConfig) *FunctionTosMountConfigCredentials { return v.Credentials }).(FunctionTosMountConfigCredentialsPtrOutput)
+}
+
+// Enable TOS storage mount.
+func (o FunctionTosMountConfigOutput) EnableTos() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FunctionTosMountConfig) *bool { return v.EnableTos }).(pulumi.BoolPtrOutput)
+}
+
+func (o FunctionTosMountConfigOutput) MountPoints() FunctionTosMountConfigMountPointArrayOutput {
+	return o.ApplyT(func(v FunctionTosMountConfig) []FunctionTosMountConfigMountPoint { return v.MountPoints }).(FunctionTosMountConfigMountPointArrayOutput)
+}
+
+type FunctionTosMountConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionTosMountConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionTosMountConfig)(nil)).Elem()
+}
+
+func (o FunctionTosMountConfigPtrOutput) ToFunctionTosMountConfigPtrOutput() FunctionTosMountConfigPtrOutput {
+	return o
+}
+
+func (o FunctionTosMountConfigPtrOutput) ToFunctionTosMountConfigPtrOutputWithContext(ctx context.Context) FunctionTosMountConfigPtrOutput {
+	return o
+}
+
+func (o FunctionTosMountConfigPtrOutput) Elem() FunctionTosMountConfigOutput {
+	return o.ApplyT(func(v *FunctionTosMountConfig) FunctionTosMountConfig {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionTosMountConfig
+		return ret
+	}).(FunctionTosMountConfigOutput)
+}
+
+// AKSK with TOS domain access permission.
+func (o FunctionTosMountConfigPtrOutput) Credentials() FunctionTosMountConfigCredentialsPtrOutput {
+	return o.ApplyT(func(v *FunctionTosMountConfig) *FunctionTosMountConfigCredentials {
+		if v == nil {
+			return nil
+		}
+		return v.Credentials
+	}).(FunctionTosMountConfigCredentialsPtrOutput)
+}
+
+// Enable TOS storage mount.
+func (o FunctionTosMountConfigPtrOutput) EnableTos() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FunctionTosMountConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableTos
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o FunctionTosMountConfigPtrOutput) MountPoints() FunctionTosMountConfigMountPointArrayOutput {
+	return o.ApplyT(func(v *FunctionTosMountConfig) []FunctionTosMountConfigMountPoint {
+		if v == nil {
+			return nil
+		}
+		return v.MountPoints
+	}).(FunctionTosMountConfigMountPointArrayOutput)
+}
+
+type FunctionTosMountConfigCredentials struct {
+	// Account AccessKey ID
+	AccessKeyId *string `pulumi:"accessKeyId"`
+	// Account Secret Access Key
+	SecretAccessKey *string `pulumi:"secretAccessKey"`
+}
+
+// FunctionTosMountConfigCredentialsInput is an input type that accepts FunctionTosMountConfigCredentialsArgs and FunctionTosMountConfigCredentialsOutput values.
+// You can construct a concrete instance of `FunctionTosMountConfigCredentialsInput` via:
+//
+//	FunctionTosMountConfigCredentialsArgs{...}
+type FunctionTosMountConfigCredentialsInput interface {
+	pulumi.Input
+
+	ToFunctionTosMountConfigCredentialsOutput() FunctionTosMountConfigCredentialsOutput
+	ToFunctionTosMountConfigCredentialsOutputWithContext(context.Context) FunctionTosMountConfigCredentialsOutput
+}
+
+type FunctionTosMountConfigCredentialsArgs struct {
+	// Account AccessKey ID
+	AccessKeyId pulumi.StringPtrInput `pulumi:"accessKeyId"`
+	// Account Secret Access Key
+	SecretAccessKey pulumi.StringPtrInput `pulumi:"secretAccessKey"`
+}
+
+func (FunctionTosMountConfigCredentialsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionTosMountConfigCredentials)(nil)).Elem()
+}
+
+func (i FunctionTosMountConfigCredentialsArgs) ToFunctionTosMountConfigCredentialsOutput() FunctionTosMountConfigCredentialsOutput {
+	return i.ToFunctionTosMountConfigCredentialsOutputWithContext(context.Background())
+}
+
+func (i FunctionTosMountConfigCredentialsArgs) ToFunctionTosMountConfigCredentialsOutputWithContext(ctx context.Context) FunctionTosMountConfigCredentialsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionTosMountConfigCredentialsOutput)
+}
+
+func (i FunctionTosMountConfigCredentialsArgs) ToFunctionTosMountConfigCredentialsPtrOutput() FunctionTosMountConfigCredentialsPtrOutput {
+	return i.ToFunctionTosMountConfigCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionTosMountConfigCredentialsArgs) ToFunctionTosMountConfigCredentialsPtrOutputWithContext(ctx context.Context) FunctionTosMountConfigCredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionTosMountConfigCredentialsOutput).ToFunctionTosMountConfigCredentialsPtrOutputWithContext(ctx)
+}
+
+// FunctionTosMountConfigCredentialsPtrInput is an input type that accepts FunctionTosMountConfigCredentialsArgs, FunctionTosMountConfigCredentialsPtr and FunctionTosMountConfigCredentialsPtrOutput values.
+// You can construct a concrete instance of `FunctionTosMountConfigCredentialsPtrInput` via:
+//
+//	        FunctionTosMountConfigCredentialsArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionTosMountConfigCredentialsPtrInput interface {
+	pulumi.Input
+
+	ToFunctionTosMountConfigCredentialsPtrOutput() FunctionTosMountConfigCredentialsPtrOutput
+	ToFunctionTosMountConfigCredentialsPtrOutputWithContext(context.Context) FunctionTosMountConfigCredentialsPtrOutput
+}
+
+type functionTosMountConfigCredentialsPtrType FunctionTosMountConfigCredentialsArgs
+
+func FunctionTosMountConfigCredentialsPtr(v *FunctionTosMountConfigCredentialsArgs) FunctionTosMountConfigCredentialsPtrInput {
+	return (*functionTosMountConfigCredentialsPtrType)(v)
+}
+
+func (*functionTosMountConfigCredentialsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionTosMountConfigCredentials)(nil)).Elem()
+}
+
+func (i *functionTosMountConfigCredentialsPtrType) ToFunctionTosMountConfigCredentialsPtrOutput() FunctionTosMountConfigCredentialsPtrOutput {
+	return i.ToFunctionTosMountConfigCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i *functionTosMountConfigCredentialsPtrType) ToFunctionTosMountConfigCredentialsPtrOutputWithContext(ctx context.Context) FunctionTosMountConfigCredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionTosMountConfigCredentialsPtrOutput)
+}
+
+type FunctionTosMountConfigCredentialsOutput struct{ *pulumi.OutputState }
+
+func (FunctionTosMountConfigCredentialsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionTosMountConfigCredentials)(nil)).Elem()
+}
+
+func (o FunctionTosMountConfigCredentialsOutput) ToFunctionTosMountConfigCredentialsOutput() FunctionTosMountConfigCredentialsOutput {
+	return o
+}
+
+func (o FunctionTosMountConfigCredentialsOutput) ToFunctionTosMountConfigCredentialsOutputWithContext(ctx context.Context) FunctionTosMountConfigCredentialsOutput {
+	return o
+}
+
+func (o FunctionTosMountConfigCredentialsOutput) ToFunctionTosMountConfigCredentialsPtrOutput() FunctionTosMountConfigCredentialsPtrOutput {
+	return o.ToFunctionTosMountConfigCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionTosMountConfigCredentialsOutput) ToFunctionTosMountConfigCredentialsPtrOutputWithContext(ctx context.Context) FunctionTosMountConfigCredentialsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionTosMountConfigCredentials) *FunctionTosMountConfigCredentials {
+		return &v
+	}).(FunctionTosMountConfigCredentialsPtrOutput)
+}
+
+// Account AccessKey ID
+func (o FunctionTosMountConfigCredentialsOutput) AccessKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionTosMountConfigCredentials) *string { return v.AccessKeyId }).(pulumi.StringPtrOutput)
+}
+
+// Account Secret Access Key
+func (o FunctionTosMountConfigCredentialsOutput) SecretAccessKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionTosMountConfigCredentials) *string { return v.SecretAccessKey }).(pulumi.StringPtrOutput)
+}
+
+type FunctionTosMountConfigCredentialsPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionTosMountConfigCredentialsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionTosMountConfigCredentials)(nil)).Elem()
+}
+
+func (o FunctionTosMountConfigCredentialsPtrOutput) ToFunctionTosMountConfigCredentialsPtrOutput() FunctionTosMountConfigCredentialsPtrOutput {
+	return o
+}
+
+func (o FunctionTosMountConfigCredentialsPtrOutput) ToFunctionTosMountConfigCredentialsPtrOutputWithContext(ctx context.Context) FunctionTosMountConfigCredentialsPtrOutput {
+	return o
+}
+
+func (o FunctionTosMountConfigCredentialsPtrOutput) Elem() FunctionTosMountConfigCredentialsOutput {
+	return o.ApplyT(func(v *FunctionTosMountConfigCredentials) FunctionTosMountConfigCredentials {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionTosMountConfigCredentials
+		return ret
+	}).(FunctionTosMountConfigCredentialsOutput)
+}
+
+// Account AccessKey ID
+func (o FunctionTosMountConfigCredentialsPtrOutput) AccessKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionTosMountConfigCredentials) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AccessKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Account Secret Access Key
+func (o FunctionTosMountConfigCredentialsPtrOutput) SecretAccessKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionTosMountConfigCredentials) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecretAccessKey
+	}).(pulumi.StringPtrOutput)
+}
+
+type FunctionTosMountConfigMountPoint struct {
+	// TOS bucket name.
+	BucketName *string `pulumi:"bucketName"`
+	// Mounted TOS Bucket path.
+	BucketPath *string `pulumi:"bucketPath"`
+	// TOS access domain name.
+	Endpoint *string `pulumi:"endpoint"`
+	// Function local mount directory.
+	LocalMountPath *string `pulumi:"localMountPath"`
+	// Function local directory access permission. After mounting a TOS bucket, whether the function's local mount directory is read-only. true: read-only; false (default): read/write
+	ReadOnly *bool `pulumi:"readOnly"`
+}
+
+// FunctionTosMountConfigMountPointInput is an input type that accepts FunctionTosMountConfigMountPointArgs and FunctionTosMountConfigMountPointOutput values.
+// You can construct a concrete instance of `FunctionTosMountConfigMountPointInput` via:
+//
+//	FunctionTosMountConfigMountPointArgs{...}
+type FunctionTosMountConfigMountPointInput interface {
+	pulumi.Input
+
+	ToFunctionTosMountConfigMountPointOutput() FunctionTosMountConfigMountPointOutput
+	ToFunctionTosMountConfigMountPointOutputWithContext(context.Context) FunctionTosMountConfigMountPointOutput
+}
+
+type FunctionTosMountConfigMountPointArgs struct {
+	// TOS bucket name.
+	BucketName pulumi.StringPtrInput `pulumi:"bucketName"`
+	// Mounted TOS Bucket path.
+	BucketPath pulumi.StringPtrInput `pulumi:"bucketPath"`
+	// TOS access domain name.
+	Endpoint pulumi.StringPtrInput `pulumi:"endpoint"`
+	// Function local mount directory.
+	LocalMountPath pulumi.StringPtrInput `pulumi:"localMountPath"`
+	// Function local directory access permission. After mounting a TOS bucket, whether the function's local mount directory is read-only. true: read-only; false (default): read/write
+	ReadOnly pulumi.BoolPtrInput `pulumi:"readOnly"`
+}
+
+func (FunctionTosMountConfigMountPointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionTosMountConfigMountPoint)(nil)).Elem()
+}
+
+func (i FunctionTosMountConfigMountPointArgs) ToFunctionTosMountConfigMountPointOutput() FunctionTosMountConfigMountPointOutput {
+	return i.ToFunctionTosMountConfigMountPointOutputWithContext(context.Background())
+}
+
+func (i FunctionTosMountConfigMountPointArgs) ToFunctionTosMountConfigMountPointOutputWithContext(ctx context.Context) FunctionTosMountConfigMountPointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionTosMountConfigMountPointOutput)
+}
+
+// FunctionTosMountConfigMountPointArrayInput is an input type that accepts FunctionTosMountConfigMountPointArray and FunctionTosMountConfigMountPointArrayOutput values.
+// You can construct a concrete instance of `FunctionTosMountConfigMountPointArrayInput` via:
+//
+//	FunctionTosMountConfigMountPointArray{ FunctionTosMountConfigMountPointArgs{...} }
+type FunctionTosMountConfigMountPointArrayInput interface {
+	pulumi.Input
+
+	ToFunctionTosMountConfigMountPointArrayOutput() FunctionTosMountConfigMountPointArrayOutput
+	ToFunctionTosMountConfigMountPointArrayOutputWithContext(context.Context) FunctionTosMountConfigMountPointArrayOutput
+}
+
+type FunctionTosMountConfigMountPointArray []FunctionTosMountConfigMountPointInput
+
+func (FunctionTosMountConfigMountPointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FunctionTosMountConfigMountPoint)(nil)).Elem()
+}
+
+func (i FunctionTosMountConfigMountPointArray) ToFunctionTosMountConfigMountPointArrayOutput() FunctionTosMountConfigMountPointArrayOutput {
+	return i.ToFunctionTosMountConfigMountPointArrayOutputWithContext(context.Background())
+}
+
+func (i FunctionTosMountConfigMountPointArray) ToFunctionTosMountConfigMountPointArrayOutputWithContext(ctx context.Context) FunctionTosMountConfigMountPointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionTosMountConfigMountPointArrayOutput)
+}
+
+type FunctionTosMountConfigMountPointOutput struct{ *pulumi.OutputState }
+
+func (FunctionTosMountConfigMountPointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionTosMountConfigMountPoint)(nil)).Elem()
+}
+
+func (o FunctionTosMountConfigMountPointOutput) ToFunctionTosMountConfigMountPointOutput() FunctionTosMountConfigMountPointOutput {
+	return o
+}
+
+func (o FunctionTosMountConfigMountPointOutput) ToFunctionTosMountConfigMountPointOutputWithContext(ctx context.Context) FunctionTosMountConfigMountPointOutput {
+	return o
+}
+
+// TOS bucket name.
+func (o FunctionTosMountConfigMountPointOutput) BucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionTosMountConfigMountPoint) *string { return v.BucketName }).(pulumi.StringPtrOutput)
+}
+
+// Mounted TOS Bucket path.
+func (o FunctionTosMountConfigMountPointOutput) BucketPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionTosMountConfigMountPoint) *string { return v.BucketPath }).(pulumi.StringPtrOutput)
+}
+
+// TOS access domain name.
+func (o FunctionTosMountConfigMountPointOutput) Endpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionTosMountConfigMountPoint) *string { return v.Endpoint }).(pulumi.StringPtrOutput)
+}
+
+// Function local mount directory.
+func (o FunctionTosMountConfigMountPointOutput) LocalMountPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionTosMountConfigMountPoint) *string { return v.LocalMountPath }).(pulumi.StringPtrOutput)
+}
+
+// Function local directory access permission. After mounting a TOS bucket, whether the function's local mount directory is read-only. true: read-only; false (default): read/write
+func (o FunctionTosMountConfigMountPointOutput) ReadOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FunctionTosMountConfigMountPoint) *bool { return v.ReadOnly }).(pulumi.BoolPtrOutput)
+}
+
+type FunctionTosMountConfigMountPointArrayOutput struct{ *pulumi.OutputState }
+
+func (FunctionTosMountConfigMountPointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FunctionTosMountConfigMountPoint)(nil)).Elem()
+}
+
+func (o FunctionTosMountConfigMountPointArrayOutput) ToFunctionTosMountConfigMountPointArrayOutput() FunctionTosMountConfigMountPointArrayOutput {
+	return o
+}
+
+func (o FunctionTosMountConfigMountPointArrayOutput) ToFunctionTosMountConfigMountPointArrayOutputWithContext(ctx context.Context) FunctionTosMountConfigMountPointArrayOutput {
+	return o
+}
+
+func (o FunctionTosMountConfigMountPointArrayOutput) Index(i pulumi.IntInput) FunctionTosMountConfigMountPointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FunctionTosMountConfigMountPoint {
+		return vs[0].([]FunctionTosMountConfigMountPoint)[vs[1].(int)]
+	}).(FunctionTosMountConfigMountPointOutput)
+}
+
+type FunctionVpcConfig struct {
+	// Function public network access switch. Whether to access the public network via veFaaS VPC shared NAT gateway. Values: true: enabled, access public network via default network interface. Public outbound traffic fees apply. false: disabled, function cannot access public network via default network interface.
+	EnableSharedInternetAccess *bool `pulumi:"enableSharedInternetAccess"`
+	// Whether the function enables private network access
+	EnableVpc *bool `pulumi:"enableVpc"`
+	// Security group ID
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// Subnet ID
+	SubnetIds []string `pulumi:"subnetIds"`
+	// VPC ID. If the VPC ID is an empty string, it means the current VPC configuration will be deleted
+	VpcId *string `pulumi:"vpcId"`
+}
+
+// FunctionVpcConfigInput is an input type that accepts FunctionVpcConfigArgs and FunctionVpcConfigOutput values.
+// You can construct a concrete instance of `FunctionVpcConfigInput` via:
+//
+//	FunctionVpcConfigArgs{...}
+type FunctionVpcConfigInput interface {
+	pulumi.Input
+
+	ToFunctionVpcConfigOutput() FunctionVpcConfigOutput
+	ToFunctionVpcConfigOutputWithContext(context.Context) FunctionVpcConfigOutput
+}
+
+type FunctionVpcConfigArgs struct {
+	// Function public network access switch. Whether to access the public network via veFaaS VPC shared NAT gateway. Values: true: enabled, access public network via default network interface. Public outbound traffic fees apply. false: disabled, function cannot access public network via default network interface.
+	EnableSharedInternetAccess pulumi.BoolPtrInput `pulumi:"enableSharedInternetAccess"`
+	// Whether the function enables private network access
+	EnableVpc pulumi.BoolPtrInput `pulumi:"enableVpc"`
+	// Security group ID
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// Subnet ID
+	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
+	// VPC ID. If the VPC ID is an empty string, it means the current VPC configuration will be deleted
+	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
+}
+
+func (FunctionVpcConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionVpcConfig)(nil)).Elem()
+}
+
+func (i FunctionVpcConfigArgs) ToFunctionVpcConfigOutput() FunctionVpcConfigOutput {
+	return i.ToFunctionVpcConfigOutputWithContext(context.Background())
+}
+
+func (i FunctionVpcConfigArgs) ToFunctionVpcConfigOutputWithContext(ctx context.Context) FunctionVpcConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionVpcConfigOutput)
+}
+
+func (i FunctionVpcConfigArgs) ToFunctionVpcConfigPtrOutput() FunctionVpcConfigPtrOutput {
+	return i.ToFunctionVpcConfigPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionVpcConfigArgs) ToFunctionVpcConfigPtrOutputWithContext(ctx context.Context) FunctionVpcConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionVpcConfigOutput).ToFunctionVpcConfigPtrOutputWithContext(ctx)
+}
+
+// FunctionVpcConfigPtrInput is an input type that accepts FunctionVpcConfigArgs, FunctionVpcConfigPtr and FunctionVpcConfigPtrOutput values.
+// You can construct a concrete instance of `FunctionVpcConfigPtrInput` via:
+//
+//	        FunctionVpcConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionVpcConfigPtrInput interface {
+	pulumi.Input
+
+	ToFunctionVpcConfigPtrOutput() FunctionVpcConfigPtrOutput
+	ToFunctionVpcConfigPtrOutputWithContext(context.Context) FunctionVpcConfigPtrOutput
+}
+
+type functionVpcConfigPtrType FunctionVpcConfigArgs
+
+func FunctionVpcConfigPtr(v *FunctionVpcConfigArgs) FunctionVpcConfigPtrInput {
+	return (*functionVpcConfigPtrType)(v)
+}
+
+func (*functionVpcConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionVpcConfig)(nil)).Elem()
+}
+
+func (i *functionVpcConfigPtrType) ToFunctionVpcConfigPtrOutput() FunctionVpcConfigPtrOutput {
+	return i.ToFunctionVpcConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *functionVpcConfigPtrType) ToFunctionVpcConfigPtrOutputWithContext(ctx context.Context) FunctionVpcConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionVpcConfigPtrOutput)
+}
+
+type FunctionVpcConfigOutput struct{ *pulumi.OutputState }
+
+func (FunctionVpcConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionVpcConfig)(nil)).Elem()
+}
+
+func (o FunctionVpcConfigOutput) ToFunctionVpcConfigOutput() FunctionVpcConfigOutput {
+	return o
+}
+
+func (o FunctionVpcConfigOutput) ToFunctionVpcConfigOutputWithContext(ctx context.Context) FunctionVpcConfigOutput {
+	return o
+}
+
+func (o FunctionVpcConfigOutput) ToFunctionVpcConfigPtrOutput() FunctionVpcConfigPtrOutput {
+	return o.ToFunctionVpcConfigPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionVpcConfigOutput) ToFunctionVpcConfigPtrOutputWithContext(ctx context.Context) FunctionVpcConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionVpcConfig) *FunctionVpcConfig {
+		return &v
+	}).(FunctionVpcConfigPtrOutput)
+}
+
+// Function public network access switch. Whether to access the public network via veFaaS VPC shared NAT gateway. Values: true: enabled, access public network via default network interface. Public outbound traffic fees apply. false: disabled, function cannot access public network via default network interface.
+func (o FunctionVpcConfigOutput) EnableSharedInternetAccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FunctionVpcConfig) *bool { return v.EnableSharedInternetAccess }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the function enables private network access
+func (o FunctionVpcConfigOutput) EnableVpc() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FunctionVpcConfig) *bool { return v.EnableVpc }).(pulumi.BoolPtrOutput)
+}
+
+// Security group ID
+func (o FunctionVpcConfigOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FunctionVpcConfig) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Subnet ID
+func (o FunctionVpcConfigOutput) SubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FunctionVpcConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
+}
+
+// VPC ID. If the VPC ID is an empty string, it means the current VPC configuration will be deleted
+func (o FunctionVpcConfigOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionVpcConfig) *string { return v.VpcId }).(pulumi.StringPtrOutput)
+}
+
+type FunctionVpcConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionVpcConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionVpcConfig)(nil)).Elem()
+}
+
+func (o FunctionVpcConfigPtrOutput) ToFunctionVpcConfigPtrOutput() FunctionVpcConfigPtrOutput {
+	return o
+}
+
+func (o FunctionVpcConfigPtrOutput) ToFunctionVpcConfigPtrOutputWithContext(ctx context.Context) FunctionVpcConfigPtrOutput {
+	return o
+}
+
+func (o FunctionVpcConfigPtrOutput) Elem() FunctionVpcConfigOutput {
+	return o.ApplyT(func(v *FunctionVpcConfig) FunctionVpcConfig {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionVpcConfig
+		return ret
+	}).(FunctionVpcConfigOutput)
+}
+
+// Function public network access switch. Whether to access the public network via veFaaS VPC shared NAT gateway. Values: true: enabled, access public network via default network interface. Public outbound traffic fees apply. false: disabled, function cannot access public network via default network interface.
+func (o FunctionVpcConfigPtrOutput) EnableSharedInternetAccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FunctionVpcConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableSharedInternetAccess
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether the function enables private network access
+func (o FunctionVpcConfigPtrOutput) EnableVpc() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FunctionVpcConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableVpc
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Security group ID
+func (o FunctionVpcConfigPtrOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *FunctionVpcConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityGroupIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// Subnet ID
+func (o FunctionVpcConfigPtrOutput) SubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *FunctionVpcConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// VPC ID. If the VPC ID is an empty string, it means the current VPC configuration will be deleted
+func (o FunctionVpcConfigPtrOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionVpcConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VpcId
+	}).(pulumi.StringPtrOutput)
+}
+
 type KafkaTriggerKafkaCredentials struct {
-	// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+	// Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
 	Mechanism string `pulumi:"mechanism"`
-	// 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+	// SASL/PLAIN password set when creating the Kafka instance.
 	Password string `pulumi:"password"`
-	// 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+	// SASL/PLAIN username set when creating the Kafka instance.
 	Username string `pulumi:"username"`
 }
 
@@ -34,11 +2153,11 @@ type KafkaTriggerKafkaCredentialsInput interface {
 }
 
 type KafkaTriggerKafkaCredentialsArgs struct {
-	// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+	// Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
 	Mechanism pulumi.StringInput `pulumi:"mechanism"`
-	// 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+	// SASL/PLAIN password set when creating the Kafka instance.
 	Password pulumi.StringInput `pulumi:"password"`
-	// 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+	// SASL/PLAIN username set when creating the Kafka instance.
 	Username pulumi.StringInput `pulumi:"username"`
 }
 
@@ -119,17 +2238,17 @@ func (o KafkaTriggerKafkaCredentialsOutput) ToKafkaTriggerKafkaCredentialsPtrOut
 	}).(KafkaTriggerKafkaCredentialsPtrOutput)
 }
 
-// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+// Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
 func (o KafkaTriggerKafkaCredentialsOutput) Mechanism() pulumi.StringOutput {
 	return o.ApplyT(func(v KafkaTriggerKafkaCredentials) string { return v.Mechanism }).(pulumi.StringOutput)
 }
 
-// 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+// SASL/PLAIN password set when creating the Kafka instance.
 func (o KafkaTriggerKafkaCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v KafkaTriggerKafkaCredentials) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+// SASL/PLAIN username set when creating the Kafka instance.
 func (o KafkaTriggerKafkaCredentialsOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v KafkaTriggerKafkaCredentials) string { return v.Username }).(pulumi.StringOutput)
 }
@@ -158,7 +2277,7 @@ func (o KafkaTriggerKafkaCredentialsPtrOutput) Elem() KafkaTriggerKafkaCredentia
 	}).(KafkaTriggerKafkaCredentialsOutput)
 }
 
-// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+// Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
 func (o KafkaTriggerKafkaCredentialsPtrOutput) Mechanism() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KafkaTriggerKafkaCredentials) *string {
 		if v == nil {
@@ -168,7 +2287,7 @@ func (o KafkaTriggerKafkaCredentialsPtrOutput) Mechanism() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+// SASL/PLAIN password set when creating the Kafka instance.
 func (o KafkaTriggerKafkaCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KafkaTriggerKafkaCredentials) *string {
 		if v == nil {
@@ -178,7 +2297,7 @@ func (o KafkaTriggerKafkaCredentialsPtrOutput) Password() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+// SASL/PLAIN username set when creating the Kafka instance.
 func (o KafkaTriggerKafkaCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KafkaTriggerKafkaCredentials) *string {
 		if v == nil {
@@ -189,9 +2308,9 @@ func (o KafkaTriggerKafkaCredentialsPtrOutput) Username() pulumi.StringPtrOutput
 }
 
 type SandboxEnv struct {
-	// 环境变量键。
+	// Environment variable key
 	Key *string `pulumi:"key"`
-	// 环境变量值。
+	// Environment variable value
 	Value *string `pulumi:"value"`
 }
 
@@ -207,9 +2326,9 @@ type SandboxEnvInput interface {
 }
 
 type SandboxEnvArgs struct {
-	// 环境变量键。
+	// Environment variable key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 环境变量值。
+	// Environment variable value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -264,12 +2383,12 @@ func (o SandboxEnvOutput) ToSandboxEnvOutputWithContext(ctx context.Context) San
 	return o
 }
 
-// 环境变量键。
+// Environment variable key
 func (o SandboxEnvOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SandboxEnv) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 环境变量值。
+// Environment variable value
 func (o SandboxEnvOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SandboxEnv) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -295,13 +2414,13 @@ func (o SandboxEnvArrayOutput) Index(i pulumi.IntInput) SandboxEnvOutput {
 }
 
 type SandboxInstanceImageInfo struct {
-	// 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+	// Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
 	Command *string `pulumi:"command"`
-	// 沙箱实例使用的已预热镜像地址。
+	// Preheated image address used by the sandbox instance
 	Image *string `pulumi:"image"`
-	// 沙箱实例使用的已预热镜像 ID。
+	// Pre-warmed image ID used by the sandbox instance.
 	ImageId *string `pulumi:"imageId"`
-	// 沙箱实例镜像监听端口。
+	// Listening port of the sandbox instance image.
 	Port *int `pulumi:"port"`
 }
 
@@ -317,13 +2436,13 @@ type SandboxInstanceImageInfoInput interface {
 }
 
 type SandboxInstanceImageInfoArgs struct {
-	// 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+	// Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
 	Command pulumi.StringPtrInput `pulumi:"command"`
-	// 沙箱实例使用的已预热镜像地址。
+	// Preheated image address used by the sandbox instance
 	Image pulumi.StringPtrInput `pulumi:"image"`
-	// 沙箱实例使用的已预热镜像 ID。
+	// Pre-warmed image ID used by the sandbox instance.
 	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
-	// 沙箱实例镜像监听端口。
+	// Listening port of the sandbox instance image.
 	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
@@ -404,22 +2523,22 @@ func (o SandboxInstanceImageInfoOutput) ToSandboxInstanceImageInfoPtrOutputWithC
 	}).(SandboxInstanceImageInfoPtrOutput)
 }
 
-// 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+// Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
 func (o SandboxInstanceImageInfoOutput) Command() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SandboxInstanceImageInfo) *string { return v.Command }).(pulumi.StringPtrOutput)
 }
 
-// 沙箱实例使用的已预热镜像地址。
+// Preheated image address used by the sandbox instance
 func (o SandboxInstanceImageInfoOutput) Image() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SandboxInstanceImageInfo) *string { return v.Image }).(pulumi.StringPtrOutput)
 }
 
-// 沙箱实例使用的已预热镜像 ID。
+// Pre-warmed image ID used by the sandbox instance.
 func (o SandboxInstanceImageInfoOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SandboxInstanceImageInfo) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
-// 沙箱实例镜像监听端口。
+// Listening port of the sandbox instance image.
 func (o SandboxInstanceImageInfoOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v SandboxInstanceImageInfo) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
@@ -448,7 +2567,7 @@ func (o SandboxInstanceImageInfoPtrOutput) Elem() SandboxInstanceImageInfoOutput
 	}).(SandboxInstanceImageInfoOutput)
 }
 
-// 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+// Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
 func (o SandboxInstanceImageInfoPtrOutput) Command() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SandboxInstanceImageInfo) *string {
 		if v == nil {
@@ -458,7 +2577,7 @@ func (o SandboxInstanceImageInfoPtrOutput) Command() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 沙箱实例使用的已预热镜像地址。
+// Preheated image address used by the sandbox instance
 func (o SandboxInstanceImageInfoPtrOutput) Image() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SandboxInstanceImageInfo) *string {
 		if v == nil {
@@ -468,7 +2587,7 @@ func (o SandboxInstanceImageInfoPtrOutput) Image() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 沙箱实例使用的已预热镜像 ID。
+// Pre-warmed image ID used by the sandbox instance.
 func (o SandboxInstanceImageInfoPtrOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SandboxInstanceImageInfo) *string {
 		if v == nil {
@@ -478,7 +2597,7 @@ func (o SandboxInstanceImageInfoPtrOutput) ImageId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 沙箱实例镜像监听端口。
+// Listening port of the sandbox instance image.
 func (o SandboxInstanceImageInfoPtrOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *SandboxInstanceImageInfo) *int {
 		if v == nil {
@@ -489,7 +2608,7 @@ func (o SandboxInstanceImageInfoPtrOutput) Port() pulumi.IntPtrOutput {
 }
 
 type SandboxInstanceTosMountConfig struct {
-	// 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+	// Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
 	Enable         *bool                                        `pulumi:"enable"`
 	TosMountPoints []SandboxInstanceTosMountConfigTosMountPoint `pulumi:"tosMountPoints"`
 }
@@ -506,7 +2625,7 @@ type SandboxInstanceTosMountConfigInput interface {
 }
 
 type SandboxInstanceTosMountConfigArgs struct {
-	// 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+	// Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
 	Enable         pulumi.BoolPtrInput                                  `pulumi:"enable"`
 	TosMountPoints SandboxInstanceTosMountConfigTosMountPointArrayInput `pulumi:"tosMountPoints"`
 }
@@ -588,7 +2707,7 @@ func (o SandboxInstanceTosMountConfigOutput) ToSandboxInstanceTosMountConfigPtrO
 	}).(SandboxInstanceTosMountConfigPtrOutput)
 }
 
-// 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+// Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
 func (o SandboxInstanceTosMountConfigOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v SandboxInstanceTosMountConfig) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
 }
@@ -623,7 +2742,7 @@ func (o SandboxInstanceTosMountConfigPtrOutput) Elem() SandboxInstanceTosMountCo
 	}).(SandboxInstanceTosMountConfigOutput)
 }
 
-// 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+// Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
 func (o SandboxInstanceTosMountConfigPtrOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *SandboxInstanceTosMountConfig) *bool {
 		if v == nil {
@@ -643,9 +2762,9 @@ func (o SandboxInstanceTosMountConfigPtrOutput) TosMountPoints() SandboxInstance
 }
 
 type SandboxInstanceTosMountConfigTosMountPoint struct {
-	// 沙箱实例挂载的 TOS 远端目录。
+	// TOS remote directory mounted by the sandbox instance
 	BucketPath *string `pulumi:"bucketPath"`
-	// 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+	// Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
 	LocalMountPath *string `pulumi:"localMountPath"`
 }
 
@@ -661,9 +2780,9 @@ type SandboxInstanceTosMountConfigTosMountPointInput interface {
 }
 
 type SandboxInstanceTosMountConfigTosMountPointArgs struct {
-	// 沙箱实例挂载的 TOS 远端目录。
+	// TOS remote directory mounted by the sandbox instance
 	BucketPath pulumi.StringPtrInput `pulumi:"bucketPath"`
-	// 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+	// Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
 	LocalMountPath pulumi.StringPtrInput `pulumi:"localMountPath"`
 }
 
@@ -718,12 +2837,12 @@ func (o SandboxInstanceTosMountConfigTosMountPointOutput) ToSandboxInstanceTosMo
 	return o
 }
 
-// 沙箱实例挂载的 TOS 远端目录。
+// TOS remote directory mounted by the sandbox instance
 func (o SandboxInstanceTosMountConfigTosMountPointOutput) BucketPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SandboxInstanceTosMountConfigTosMountPoint) *string { return v.BucketPath }).(pulumi.StringPtrOutput)
 }
 
-// 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+// Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
 func (o SandboxInstanceTosMountConfigTosMountPointOutput) LocalMountPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SandboxInstanceTosMountConfigTosMountPoint) *string { return v.LocalMountPath }).(pulumi.StringPtrOutput)
 }
@@ -749,9 +2868,9 @@ func (o SandboxInstanceTosMountConfigTosMountPointArrayOutput) Index(i pulumi.In
 }
 
 type SandboxMetadata struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -767,9 +2886,9 @@ type SandboxMetadataInput interface {
 }
 
 type SandboxMetadataArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -824,12 +2943,12 @@ func (o SandboxMetadataOutput) ToSandboxMetadataOutputWithContext(ctx context.Co
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o SandboxMetadataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SandboxMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o SandboxMetadataOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SandboxMetadata) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -854,12 +2973,1151 @@ func (o SandboxMetadataArrayOutput) Index(i pulumi.IntInput) SandboxMetadataOutp
 	}).(SandboxMetadataOutput)
 }
 
-type GetKafkaTriggerKafkaCredentials struct {
-	// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
-	Mechanism string `pulumi:"mechanism"`
-	// 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+type GetFunctionAsyncTaskConfig struct {
+	// Asynchronous task callback target configuration
+	DestinationConfig GetFunctionAsyncTaskConfigDestinationConfig `pulumi:"destinationConfig"`
+	// Whether to enable asynchronous task
+	EnableAsyncTask bool `pulumi:"enableAsyncTask"`
+	// Number of retry attempts for asynchronous task failures. Available values: 0–3
+	MaxRetry int `pulumi:"maxRetry"`
+}
+
+// GetFunctionAsyncTaskConfigInput is an input type that accepts GetFunctionAsyncTaskConfigArgs and GetFunctionAsyncTaskConfigOutput values.
+// You can construct a concrete instance of `GetFunctionAsyncTaskConfigInput` via:
+//
+//	GetFunctionAsyncTaskConfigArgs{...}
+type GetFunctionAsyncTaskConfigInput interface {
+	pulumi.Input
+
+	ToGetFunctionAsyncTaskConfigOutput() GetFunctionAsyncTaskConfigOutput
+	ToGetFunctionAsyncTaskConfigOutputWithContext(context.Context) GetFunctionAsyncTaskConfigOutput
+}
+
+type GetFunctionAsyncTaskConfigArgs struct {
+	// Asynchronous task callback target configuration
+	DestinationConfig GetFunctionAsyncTaskConfigDestinationConfigInput `pulumi:"destinationConfig"`
+	// Whether to enable asynchronous task
+	EnableAsyncTask pulumi.BoolInput `pulumi:"enableAsyncTask"`
+	// Number of retry attempts for asynchronous task failures. Available values: 0–3
+	MaxRetry pulumi.IntInput `pulumi:"maxRetry"`
+}
+
+func (GetFunctionAsyncTaskConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionAsyncTaskConfig)(nil)).Elem()
+}
+
+func (i GetFunctionAsyncTaskConfigArgs) ToGetFunctionAsyncTaskConfigOutput() GetFunctionAsyncTaskConfigOutput {
+	return i.ToGetFunctionAsyncTaskConfigOutputWithContext(context.Background())
+}
+
+func (i GetFunctionAsyncTaskConfigArgs) ToGetFunctionAsyncTaskConfigOutputWithContext(ctx context.Context) GetFunctionAsyncTaskConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionAsyncTaskConfigOutput)
+}
+
+type GetFunctionAsyncTaskConfigOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionAsyncTaskConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionAsyncTaskConfig)(nil)).Elem()
+}
+
+func (o GetFunctionAsyncTaskConfigOutput) ToGetFunctionAsyncTaskConfigOutput() GetFunctionAsyncTaskConfigOutput {
+	return o
+}
+
+func (o GetFunctionAsyncTaskConfigOutput) ToGetFunctionAsyncTaskConfigOutputWithContext(ctx context.Context) GetFunctionAsyncTaskConfigOutput {
+	return o
+}
+
+// Asynchronous task callback target configuration
+func (o GetFunctionAsyncTaskConfigOutput) DestinationConfig() GetFunctionAsyncTaskConfigDestinationConfigOutput {
+	return o.ApplyT(func(v GetFunctionAsyncTaskConfig) GetFunctionAsyncTaskConfigDestinationConfig {
+		return v.DestinationConfig
+	}).(GetFunctionAsyncTaskConfigDestinationConfigOutput)
+}
+
+// Whether to enable asynchronous task
+func (o GetFunctionAsyncTaskConfigOutput) EnableAsyncTask() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFunctionAsyncTaskConfig) bool { return v.EnableAsyncTask }).(pulumi.BoolOutput)
+}
+
+// Number of retry attempts for asynchronous task failures. Available values: 0–3
+func (o GetFunctionAsyncTaskConfigOutput) MaxRetry() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFunctionAsyncTaskConfig) int { return v.MaxRetry }).(pulumi.IntOutput)
+}
+
+type GetFunctionAsyncTaskConfigDestinationConfig struct {
+	// Callback target configuration when the task fails
+	OnFailure GetFunctionAsyncTaskConfigDestinationConfigOnFailure `pulumi:"onFailure"`
+	// Callback target configuration when the task succeeds
+	OnSuccess GetFunctionAsyncTaskConfigDestinationConfigOnSuccess `pulumi:"onSuccess"`
+}
+
+// GetFunctionAsyncTaskConfigDestinationConfigInput is an input type that accepts GetFunctionAsyncTaskConfigDestinationConfigArgs and GetFunctionAsyncTaskConfigDestinationConfigOutput values.
+// You can construct a concrete instance of `GetFunctionAsyncTaskConfigDestinationConfigInput` via:
+//
+//	GetFunctionAsyncTaskConfigDestinationConfigArgs{...}
+type GetFunctionAsyncTaskConfigDestinationConfigInput interface {
+	pulumi.Input
+
+	ToGetFunctionAsyncTaskConfigDestinationConfigOutput() GetFunctionAsyncTaskConfigDestinationConfigOutput
+	ToGetFunctionAsyncTaskConfigDestinationConfigOutputWithContext(context.Context) GetFunctionAsyncTaskConfigDestinationConfigOutput
+}
+
+type GetFunctionAsyncTaskConfigDestinationConfigArgs struct {
+	// Callback target configuration when the task fails
+	OnFailure GetFunctionAsyncTaskConfigDestinationConfigOnFailureInput `pulumi:"onFailure"`
+	// Callback target configuration when the task succeeds
+	OnSuccess GetFunctionAsyncTaskConfigDestinationConfigOnSuccessInput `pulumi:"onSuccess"`
+}
+
+func (GetFunctionAsyncTaskConfigDestinationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionAsyncTaskConfigDestinationConfig)(nil)).Elem()
+}
+
+func (i GetFunctionAsyncTaskConfigDestinationConfigArgs) ToGetFunctionAsyncTaskConfigDestinationConfigOutput() GetFunctionAsyncTaskConfigDestinationConfigOutput {
+	return i.ToGetFunctionAsyncTaskConfigDestinationConfigOutputWithContext(context.Background())
+}
+
+func (i GetFunctionAsyncTaskConfigDestinationConfigArgs) ToGetFunctionAsyncTaskConfigDestinationConfigOutputWithContext(ctx context.Context) GetFunctionAsyncTaskConfigDestinationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionAsyncTaskConfigDestinationConfigOutput)
+}
+
+type GetFunctionAsyncTaskConfigDestinationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionAsyncTaskConfigDestinationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionAsyncTaskConfigDestinationConfig)(nil)).Elem()
+}
+
+func (o GetFunctionAsyncTaskConfigDestinationConfigOutput) ToGetFunctionAsyncTaskConfigDestinationConfigOutput() GetFunctionAsyncTaskConfigDestinationConfigOutput {
+	return o
+}
+
+func (o GetFunctionAsyncTaskConfigDestinationConfigOutput) ToGetFunctionAsyncTaskConfigDestinationConfigOutputWithContext(ctx context.Context) GetFunctionAsyncTaskConfigDestinationConfigOutput {
+	return o
+}
+
+// Callback target configuration when the task fails
+func (o GetFunctionAsyncTaskConfigDestinationConfigOutput) OnFailure() GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput {
+	return o.ApplyT(func(v GetFunctionAsyncTaskConfigDestinationConfig) GetFunctionAsyncTaskConfigDestinationConfigOnFailure {
+		return v.OnFailure
+	}).(GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput)
+}
+
+// Callback target configuration when the task succeeds
+func (o GetFunctionAsyncTaskConfigDestinationConfigOutput) OnSuccess() GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput {
+	return o.ApplyT(func(v GetFunctionAsyncTaskConfigDestinationConfig) GetFunctionAsyncTaskConfigDestinationConfigOnSuccess {
+		return v.OnSuccess
+	}).(GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput)
+}
+
+type GetFunctionAsyncTaskConfigDestinationConfigOnFailure struct {
+	// Specific callback target. Set the value to empty ("") to disable this callback
+	Destination string `pulumi:"destination"`
+}
+
+// GetFunctionAsyncTaskConfigDestinationConfigOnFailureInput is an input type that accepts GetFunctionAsyncTaskConfigDestinationConfigOnFailureArgs and GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput values.
+// You can construct a concrete instance of `GetFunctionAsyncTaskConfigDestinationConfigOnFailureInput` via:
+//
+//	GetFunctionAsyncTaskConfigDestinationConfigOnFailureArgs{...}
+type GetFunctionAsyncTaskConfigDestinationConfigOnFailureInput interface {
+	pulumi.Input
+
+	ToGetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput() GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput
+	ToGetFunctionAsyncTaskConfigDestinationConfigOnFailureOutputWithContext(context.Context) GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput
+}
+
+type GetFunctionAsyncTaskConfigDestinationConfigOnFailureArgs struct {
+	// Specific callback target. Set the value to empty ("") to disable this callback
+	Destination pulumi.StringInput `pulumi:"destination"`
+}
+
+func (GetFunctionAsyncTaskConfigDestinationConfigOnFailureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionAsyncTaskConfigDestinationConfigOnFailure)(nil)).Elem()
+}
+
+func (i GetFunctionAsyncTaskConfigDestinationConfigOnFailureArgs) ToGetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput() GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput {
+	return i.ToGetFunctionAsyncTaskConfigDestinationConfigOnFailureOutputWithContext(context.Background())
+}
+
+func (i GetFunctionAsyncTaskConfigDestinationConfigOnFailureArgs) ToGetFunctionAsyncTaskConfigDestinationConfigOnFailureOutputWithContext(ctx context.Context) GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput)
+}
+
+type GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionAsyncTaskConfigDestinationConfigOnFailure)(nil)).Elem()
+}
+
+func (o GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput) ToGetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput() GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput {
+	return o
+}
+
+func (o GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput) ToGetFunctionAsyncTaskConfigDestinationConfigOnFailureOutputWithContext(ctx context.Context) GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput {
+	return o
+}
+
+// Specific callback target. Set the value to empty ("") to disable this callback
+func (o GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionAsyncTaskConfigDestinationConfigOnFailure) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+type GetFunctionAsyncTaskConfigDestinationConfigOnSuccess struct {
+	// Specific callback target. Set the value to empty ("") to disable this callback
+	Destination string `pulumi:"destination"`
+}
+
+// GetFunctionAsyncTaskConfigDestinationConfigOnSuccessInput is an input type that accepts GetFunctionAsyncTaskConfigDestinationConfigOnSuccessArgs and GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput values.
+// You can construct a concrete instance of `GetFunctionAsyncTaskConfigDestinationConfigOnSuccessInput` via:
+//
+//	GetFunctionAsyncTaskConfigDestinationConfigOnSuccessArgs{...}
+type GetFunctionAsyncTaskConfigDestinationConfigOnSuccessInput interface {
+	pulumi.Input
+
+	ToGetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput() GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput
+	ToGetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutputWithContext(context.Context) GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput
+}
+
+type GetFunctionAsyncTaskConfigDestinationConfigOnSuccessArgs struct {
+	// Specific callback target. Set the value to empty ("") to disable this callback
+	Destination pulumi.StringInput `pulumi:"destination"`
+}
+
+func (GetFunctionAsyncTaskConfigDestinationConfigOnSuccessArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionAsyncTaskConfigDestinationConfigOnSuccess)(nil)).Elem()
+}
+
+func (i GetFunctionAsyncTaskConfigDestinationConfigOnSuccessArgs) ToGetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput() GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput {
+	return i.ToGetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutputWithContext(context.Background())
+}
+
+func (i GetFunctionAsyncTaskConfigDestinationConfigOnSuccessArgs) ToGetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutputWithContext(ctx context.Context) GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput)
+}
+
+type GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionAsyncTaskConfigDestinationConfigOnSuccess)(nil)).Elem()
+}
+
+func (o GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput) ToGetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput() GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput {
+	return o
+}
+
+func (o GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput) ToGetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutputWithContext(ctx context.Context) GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput {
+	return o
+}
+
+// Specific callback target. Set the value to empty ("") to disable this callback
+func (o GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionAsyncTaskConfigDestinationConfigOnSuccess) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+type GetFunctionEnv struct {
+	// Environment variable key. 1–63 characters; can include letters, numbers, and underscores (_), but cannot start with a number. Key must be unique within the same function
+	Key string `pulumi:"key"`
+	// Environment variable value
+	Value string `pulumi:"value"`
+}
+
+// GetFunctionEnvInput is an input type that accepts GetFunctionEnvArgs and GetFunctionEnvOutput values.
+// You can construct a concrete instance of `GetFunctionEnvInput` via:
+//
+//	GetFunctionEnvArgs{...}
+type GetFunctionEnvInput interface {
+	pulumi.Input
+
+	ToGetFunctionEnvOutput() GetFunctionEnvOutput
+	ToGetFunctionEnvOutputWithContext(context.Context) GetFunctionEnvOutput
+}
+
+type GetFunctionEnvArgs struct {
+	// Environment variable key. 1–63 characters; can include letters, numbers, and underscores (_), but cannot start with a number. Key must be unique within the same function
+	Key pulumi.StringInput `pulumi:"key"`
+	// Environment variable value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFunctionEnvArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionEnv)(nil)).Elem()
+}
+
+func (i GetFunctionEnvArgs) ToGetFunctionEnvOutput() GetFunctionEnvOutput {
+	return i.ToGetFunctionEnvOutputWithContext(context.Background())
+}
+
+func (i GetFunctionEnvArgs) ToGetFunctionEnvOutputWithContext(ctx context.Context) GetFunctionEnvOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionEnvOutput)
+}
+
+// GetFunctionEnvArrayInput is an input type that accepts GetFunctionEnvArray and GetFunctionEnvArrayOutput values.
+// You can construct a concrete instance of `GetFunctionEnvArrayInput` via:
+//
+//	GetFunctionEnvArray{ GetFunctionEnvArgs{...} }
+type GetFunctionEnvArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionEnvArrayOutput() GetFunctionEnvArrayOutput
+	ToGetFunctionEnvArrayOutputWithContext(context.Context) GetFunctionEnvArrayOutput
+}
+
+type GetFunctionEnvArray []GetFunctionEnvInput
+
+func (GetFunctionEnvArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionEnv)(nil)).Elem()
+}
+
+func (i GetFunctionEnvArray) ToGetFunctionEnvArrayOutput() GetFunctionEnvArrayOutput {
+	return i.ToGetFunctionEnvArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionEnvArray) ToGetFunctionEnvArrayOutputWithContext(ctx context.Context) GetFunctionEnvArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionEnvArrayOutput)
+}
+
+type GetFunctionEnvOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionEnvOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionEnv)(nil)).Elem()
+}
+
+func (o GetFunctionEnvOutput) ToGetFunctionEnvOutput() GetFunctionEnvOutput {
+	return o
+}
+
+func (o GetFunctionEnvOutput) ToGetFunctionEnvOutputWithContext(ctx context.Context) GetFunctionEnvOutput {
+	return o
+}
+
+// Environment variable key. 1–63 characters; can include letters, numbers, and underscores (_), but cannot start with a number. Key must be unique within the same function
+func (o GetFunctionEnvOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionEnv) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Environment variable value
+func (o GetFunctionEnvOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionEnv) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetFunctionEnvArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionEnvArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionEnv)(nil)).Elem()
+}
+
+func (o GetFunctionEnvArrayOutput) ToGetFunctionEnvArrayOutput() GetFunctionEnvArrayOutput {
+	return o
+}
+
+func (o GetFunctionEnvArrayOutput) ToGetFunctionEnvArrayOutputWithContext(ctx context.Context) GetFunctionEnvArrayOutput {
+	return o
+}
+
+func (o GetFunctionEnvArrayOutput) Index(i pulumi.IntInput) GetFunctionEnvOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionEnv {
+		return vs[0].([]GetFunctionEnv)[vs[1].(int)]
+	}).(GetFunctionEnvOutput)
+}
+
+type GetFunctionNasStorage struct {
+	// Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
+	EnableNas bool `pulumi:"enableNas"`
+	// NAS storage configuration
+	NasConfigs []GetFunctionNasStorageNasConfig `pulumi:"nasConfigs"`
+}
+
+// GetFunctionNasStorageInput is an input type that accepts GetFunctionNasStorageArgs and GetFunctionNasStorageOutput values.
+// You can construct a concrete instance of `GetFunctionNasStorageInput` via:
+//
+//	GetFunctionNasStorageArgs{...}
+type GetFunctionNasStorageInput interface {
+	pulumi.Input
+
+	ToGetFunctionNasStorageOutput() GetFunctionNasStorageOutput
+	ToGetFunctionNasStorageOutputWithContext(context.Context) GetFunctionNasStorageOutput
+}
+
+type GetFunctionNasStorageArgs struct {
+	// Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
+	EnableNas pulumi.BoolInput `pulumi:"enableNas"`
+	// NAS storage configuration
+	NasConfigs GetFunctionNasStorageNasConfigArrayInput `pulumi:"nasConfigs"`
+}
+
+func (GetFunctionNasStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionNasStorage)(nil)).Elem()
+}
+
+func (i GetFunctionNasStorageArgs) ToGetFunctionNasStorageOutput() GetFunctionNasStorageOutput {
+	return i.ToGetFunctionNasStorageOutputWithContext(context.Background())
+}
+
+func (i GetFunctionNasStorageArgs) ToGetFunctionNasStorageOutputWithContext(ctx context.Context) GetFunctionNasStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionNasStorageOutput)
+}
+
+type GetFunctionNasStorageOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionNasStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionNasStorage)(nil)).Elem()
+}
+
+func (o GetFunctionNasStorageOutput) ToGetFunctionNasStorageOutput() GetFunctionNasStorageOutput {
+	return o
+}
+
+func (o GetFunctionNasStorageOutput) ToGetFunctionNasStorageOutputWithContext(ctx context.Context) GetFunctionNasStorageOutput {
+	return o
+}
+
+// Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
+func (o GetFunctionNasStorageOutput) EnableNas() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFunctionNasStorage) bool { return v.EnableNas }).(pulumi.BoolOutput)
+}
+
+// NAS storage configuration
+func (o GetFunctionNasStorageOutput) NasConfigs() GetFunctionNasStorageNasConfigArrayOutput {
+	return o.ApplyT(func(v GetFunctionNasStorage) []GetFunctionNasStorageNasConfig { return v.NasConfigs }).(GetFunctionNasStorageNasConfigArrayOutput)
+}
+
+type GetFunctionNasStorageNasConfig struct {
+	// NAS file system ID.
+	FileSystemId string `pulumi:"fileSystemId"`
+	// User group in the file system. Customization is not currently supported. If this parameter is provided, its value is 1000 (consistent with the function run user gid)
+	Gid int `pulumi:"gid"`
+	// Function local mount directory. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #).
+	LocalMountPath string `pulumi:"localMountPath"`
+	// NAS mount point ID
+	MountPointId string `pulumi:"mountPointId"`
+	// Remote directory in the file system. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #)
+	RemotePath string `pulumi:"remotePath"`
+	// The user in the file system cannot be customized for now. If this parameter is provided, the value must be 1000 (consistent with the function run user uid).
+	Uid int `pulumi:"uid"`
+}
+
+// GetFunctionNasStorageNasConfigInput is an input type that accepts GetFunctionNasStorageNasConfigArgs and GetFunctionNasStorageNasConfigOutput values.
+// You can construct a concrete instance of `GetFunctionNasStorageNasConfigInput` via:
+//
+//	GetFunctionNasStorageNasConfigArgs{...}
+type GetFunctionNasStorageNasConfigInput interface {
+	pulumi.Input
+
+	ToGetFunctionNasStorageNasConfigOutput() GetFunctionNasStorageNasConfigOutput
+	ToGetFunctionNasStorageNasConfigOutputWithContext(context.Context) GetFunctionNasStorageNasConfigOutput
+}
+
+type GetFunctionNasStorageNasConfigArgs struct {
+	// NAS file system ID.
+	FileSystemId pulumi.StringInput `pulumi:"fileSystemId"`
+	// User group in the file system. Customization is not currently supported. If this parameter is provided, its value is 1000 (consistent with the function run user gid)
+	Gid pulumi.IntInput `pulumi:"gid"`
+	// Function local mount directory. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #).
+	LocalMountPath pulumi.StringInput `pulumi:"localMountPath"`
+	// NAS mount point ID
+	MountPointId pulumi.StringInput `pulumi:"mountPointId"`
+	// Remote directory in the file system. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #)
+	RemotePath pulumi.StringInput `pulumi:"remotePath"`
+	// The user in the file system cannot be customized for now. If this parameter is provided, the value must be 1000 (consistent with the function run user uid).
+	Uid pulumi.IntInput `pulumi:"uid"`
+}
+
+func (GetFunctionNasStorageNasConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionNasStorageNasConfig)(nil)).Elem()
+}
+
+func (i GetFunctionNasStorageNasConfigArgs) ToGetFunctionNasStorageNasConfigOutput() GetFunctionNasStorageNasConfigOutput {
+	return i.ToGetFunctionNasStorageNasConfigOutputWithContext(context.Background())
+}
+
+func (i GetFunctionNasStorageNasConfigArgs) ToGetFunctionNasStorageNasConfigOutputWithContext(ctx context.Context) GetFunctionNasStorageNasConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionNasStorageNasConfigOutput)
+}
+
+// GetFunctionNasStorageNasConfigArrayInput is an input type that accepts GetFunctionNasStorageNasConfigArray and GetFunctionNasStorageNasConfigArrayOutput values.
+// You can construct a concrete instance of `GetFunctionNasStorageNasConfigArrayInput` via:
+//
+//	GetFunctionNasStorageNasConfigArray{ GetFunctionNasStorageNasConfigArgs{...} }
+type GetFunctionNasStorageNasConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionNasStorageNasConfigArrayOutput() GetFunctionNasStorageNasConfigArrayOutput
+	ToGetFunctionNasStorageNasConfigArrayOutputWithContext(context.Context) GetFunctionNasStorageNasConfigArrayOutput
+}
+
+type GetFunctionNasStorageNasConfigArray []GetFunctionNasStorageNasConfigInput
+
+func (GetFunctionNasStorageNasConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionNasStorageNasConfig)(nil)).Elem()
+}
+
+func (i GetFunctionNasStorageNasConfigArray) ToGetFunctionNasStorageNasConfigArrayOutput() GetFunctionNasStorageNasConfigArrayOutput {
+	return i.ToGetFunctionNasStorageNasConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionNasStorageNasConfigArray) ToGetFunctionNasStorageNasConfigArrayOutputWithContext(ctx context.Context) GetFunctionNasStorageNasConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionNasStorageNasConfigArrayOutput)
+}
+
+type GetFunctionNasStorageNasConfigOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionNasStorageNasConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionNasStorageNasConfig)(nil)).Elem()
+}
+
+func (o GetFunctionNasStorageNasConfigOutput) ToGetFunctionNasStorageNasConfigOutput() GetFunctionNasStorageNasConfigOutput {
+	return o
+}
+
+func (o GetFunctionNasStorageNasConfigOutput) ToGetFunctionNasStorageNasConfigOutputWithContext(ctx context.Context) GetFunctionNasStorageNasConfigOutput {
+	return o
+}
+
+// NAS file system ID.
+func (o GetFunctionNasStorageNasConfigOutput) FileSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionNasStorageNasConfig) string { return v.FileSystemId }).(pulumi.StringOutput)
+}
+
+// User group in the file system. Customization is not currently supported. If this parameter is provided, its value is 1000 (consistent with the function run user gid)
+func (o GetFunctionNasStorageNasConfigOutput) Gid() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFunctionNasStorageNasConfig) int { return v.Gid }).(pulumi.IntOutput)
+}
+
+// Function local mount directory. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #).
+func (o GetFunctionNasStorageNasConfigOutput) LocalMountPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionNasStorageNasConfig) string { return v.LocalMountPath }).(pulumi.StringOutput)
+}
+
+// NAS mount point ID
+func (o GetFunctionNasStorageNasConfigOutput) MountPointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionNasStorageNasConfig) string { return v.MountPointId }).(pulumi.StringOutput)
+}
+
+// Remote directory in the file system. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #)
+func (o GetFunctionNasStorageNasConfigOutput) RemotePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionNasStorageNasConfig) string { return v.RemotePath }).(pulumi.StringOutput)
+}
+
+// The user in the file system cannot be customized for now. If this parameter is provided, the value must be 1000 (consistent with the function run user uid).
+func (o GetFunctionNasStorageNasConfigOutput) Uid() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFunctionNasStorageNasConfig) int { return v.Uid }).(pulumi.IntOutput)
+}
+
+type GetFunctionNasStorageNasConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionNasStorageNasConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionNasStorageNasConfig)(nil)).Elem()
+}
+
+func (o GetFunctionNasStorageNasConfigArrayOutput) ToGetFunctionNasStorageNasConfigArrayOutput() GetFunctionNasStorageNasConfigArrayOutput {
+	return o
+}
+
+func (o GetFunctionNasStorageNasConfigArrayOutput) ToGetFunctionNasStorageNasConfigArrayOutputWithContext(ctx context.Context) GetFunctionNasStorageNasConfigArrayOutput {
+	return o
+}
+
+func (o GetFunctionNasStorageNasConfigArrayOutput) Index(i pulumi.IntInput) GetFunctionNasStorageNasConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionNasStorageNasConfig {
+		return vs[0].([]GetFunctionNasStorageNasConfig)[vs[1].(int)]
+	}).(GetFunctionNasStorageNasConfigOutput)
+}
+
+type GetFunctionSourceAccessConfig struct {
+	// Image repository password
 	Password string `pulumi:"password"`
-	// 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+	// Image repository username
+	Username string `pulumi:"username"`
+}
+
+// GetFunctionSourceAccessConfigInput is an input type that accepts GetFunctionSourceAccessConfigArgs and GetFunctionSourceAccessConfigOutput values.
+// You can construct a concrete instance of `GetFunctionSourceAccessConfigInput` via:
+//
+//	GetFunctionSourceAccessConfigArgs{...}
+type GetFunctionSourceAccessConfigInput interface {
+	pulumi.Input
+
+	ToGetFunctionSourceAccessConfigOutput() GetFunctionSourceAccessConfigOutput
+	ToGetFunctionSourceAccessConfigOutputWithContext(context.Context) GetFunctionSourceAccessConfigOutput
+}
+
+type GetFunctionSourceAccessConfigArgs struct {
+	// Image repository password
+	Password pulumi.StringInput `pulumi:"password"`
+	// Image repository username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetFunctionSourceAccessConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionSourceAccessConfig)(nil)).Elem()
+}
+
+func (i GetFunctionSourceAccessConfigArgs) ToGetFunctionSourceAccessConfigOutput() GetFunctionSourceAccessConfigOutput {
+	return i.ToGetFunctionSourceAccessConfigOutputWithContext(context.Background())
+}
+
+func (i GetFunctionSourceAccessConfigArgs) ToGetFunctionSourceAccessConfigOutputWithContext(ctx context.Context) GetFunctionSourceAccessConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionSourceAccessConfigOutput)
+}
+
+type GetFunctionSourceAccessConfigOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionSourceAccessConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionSourceAccessConfig)(nil)).Elem()
+}
+
+func (o GetFunctionSourceAccessConfigOutput) ToGetFunctionSourceAccessConfigOutput() GetFunctionSourceAccessConfigOutput {
+	return o
+}
+
+func (o GetFunctionSourceAccessConfigOutput) ToGetFunctionSourceAccessConfigOutputWithContext(ctx context.Context) GetFunctionSourceAccessConfigOutput {
+	return o
+}
+
+// Image repository password
+func (o GetFunctionSourceAccessConfigOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceAccessConfig) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Image repository username
+func (o GetFunctionSourceAccessConfigOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionSourceAccessConfig) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetFunctionTag struct {
+	// Function tag key
+	Key string `pulumi:"key"`
+	// Function tag value
+	Value string `pulumi:"value"`
+}
+
+// GetFunctionTagInput is an input type that accepts GetFunctionTagArgs and GetFunctionTagOutput values.
+// You can construct a concrete instance of `GetFunctionTagInput` via:
+//
+//	GetFunctionTagArgs{...}
+type GetFunctionTagInput interface {
+	pulumi.Input
+
+	ToGetFunctionTagOutput() GetFunctionTagOutput
+	ToGetFunctionTagOutputWithContext(context.Context) GetFunctionTagOutput
+}
+
+type GetFunctionTagArgs struct {
+	// Function tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Function tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFunctionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionTag)(nil)).Elem()
+}
+
+func (i GetFunctionTagArgs) ToGetFunctionTagOutput() GetFunctionTagOutput {
+	return i.ToGetFunctionTagOutputWithContext(context.Background())
+}
+
+func (i GetFunctionTagArgs) ToGetFunctionTagOutputWithContext(ctx context.Context) GetFunctionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionTagOutput)
+}
+
+// GetFunctionTagArrayInput is an input type that accepts GetFunctionTagArray and GetFunctionTagArrayOutput values.
+// You can construct a concrete instance of `GetFunctionTagArrayInput` via:
+//
+//	GetFunctionTagArray{ GetFunctionTagArgs{...} }
+type GetFunctionTagArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionTagArrayOutput() GetFunctionTagArrayOutput
+	ToGetFunctionTagArrayOutputWithContext(context.Context) GetFunctionTagArrayOutput
+}
+
+type GetFunctionTagArray []GetFunctionTagInput
+
+func (GetFunctionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionTag)(nil)).Elem()
+}
+
+func (i GetFunctionTagArray) ToGetFunctionTagArrayOutput() GetFunctionTagArrayOutput {
+	return i.ToGetFunctionTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionTagArray) ToGetFunctionTagArrayOutputWithContext(ctx context.Context) GetFunctionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionTagArrayOutput)
+}
+
+type GetFunctionTagOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionTag)(nil)).Elem()
+}
+
+func (o GetFunctionTagOutput) ToGetFunctionTagOutput() GetFunctionTagOutput {
+	return o
+}
+
+func (o GetFunctionTagOutput) ToGetFunctionTagOutputWithContext(ctx context.Context) GetFunctionTagOutput {
+	return o
+}
+
+// Function tag key
+func (o GetFunctionTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Function tag value
+func (o GetFunctionTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetFunctionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionTag)(nil)).Elem()
+}
+
+func (o GetFunctionTagArrayOutput) ToGetFunctionTagArrayOutput() GetFunctionTagArrayOutput {
+	return o
+}
+
+func (o GetFunctionTagArrayOutput) ToGetFunctionTagArrayOutputWithContext(ctx context.Context) GetFunctionTagArrayOutput {
+	return o
+}
+
+func (o GetFunctionTagArrayOutput) Index(i pulumi.IntInput) GetFunctionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionTag {
+		return vs[0].([]GetFunctionTag)[vs[1].(int)]
+	}).(GetFunctionTagOutput)
+}
+
+type GetFunctionTlsConfig struct {
+	// TLS log feature toggle. true: enabled, function stdout/stderr logs will be collected to the specified log project and log topic in Log Service. false: disabled, logs will not be collected
+	EnableLog bool `pulumi:"enableLog"`
+	// TLS log project ID
+	TlsProjectId string `pulumi:"tlsProjectId"`
+	// TLS log topic ID.
+	TlsTopicId string `pulumi:"tlsTopicId"`
+}
+
+// GetFunctionTlsConfigInput is an input type that accepts GetFunctionTlsConfigArgs and GetFunctionTlsConfigOutput values.
+// You can construct a concrete instance of `GetFunctionTlsConfigInput` via:
+//
+//	GetFunctionTlsConfigArgs{...}
+type GetFunctionTlsConfigInput interface {
+	pulumi.Input
+
+	ToGetFunctionTlsConfigOutput() GetFunctionTlsConfigOutput
+	ToGetFunctionTlsConfigOutputWithContext(context.Context) GetFunctionTlsConfigOutput
+}
+
+type GetFunctionTlsConfigArgs struct {
+	// TLS log feature toggle. true: enabled, function stdout/stderr logs will be collected to the specified log project and log topic in Log Service. false: disabled, logs will not be collected
+	EnableLog pulumi.BoolInput `pulumi:"enableLog"`
+	// TLS log project ID
+	TlsProjectId pulumi.StringInput `pulumi:"tlsProjectId"`
+	// TLS log topic ID.
+	TlsTopicId pulumi.StringInput `pulumi:"tlsTopicId"`
+}
+
+func (GetFunctionTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionTlsConfig)(nil)).Elem()
+}
+
+func (i GetFunctionTlsConfigArgs) ToGetFunctionTlsConfigOutput() GetFunctionTlsConfigOutput {
+	return i.ToGetFunctionTlsConfigOutputWithContext(context.Background())
+}
+
+func (i GetFunctionTlsConfigArgs) ToGetFunctionTlsConfigOutputWithContext(ctx context.Context) GetFunctionTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionTlsConfigOutput)
+}
+
+type GetFunctionTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionTlsConfig)(nil)).Elem()
+}
+
+func (o GetFunctionTlsConfigOutput) ToGetFunctionTlsConfigOutput() GetFunctionTlsConfigOutput {
+	return o
+}
+
+func (o GetFunctionTlsConfigOutput) ToGetFunctionTlsConfigOutputWithContext(ctx context.Context) GetFunctionTlsConfigOutput {
+	return o
+}
+
+// TLS log feature toggle. true: enabled, function stdout/stderr logs will be collected to the specified log project and log topic in Log Service. false: disabled, logs will not be collected
+func (o GetFunctionTlsConfigOutput) EnableLog() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFunctionTlsConfig) bool { return v.EnableLog }).(pulumi.BoolOutput)
+}
+
+// TLS log project ID
+func (o GetFunctionTlsConfigOutput) TlsProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionTlsConfig) string { return v.TlsProjectId }).(pulumi.StringOutput)
+}
+
+// TLS log topic ID.
+func (o GetFunctionTlsConfigOutput) TlsTopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionTlsConfig) string { return v.TlsTopicId }).(pulumi.StringOutput)
+}
+
+type GetFunctionTosMountConfig struct {
+	// AKSK with TOS domain access permission.
+	Credentials GetFunctionTosMountConfigCredentials `pulumi:"credentials"`
+	// Enable TOS storage mount.
+	EnableTos bool `pulumi:"enableTos"`
+	// TOS storage configuration list
+	MountPoints []GetFunctionTosMountConfigMountPoint `pulumi:"mountPoints"`
+}
+
+// GetFunctionTosMountConfigInput is an input type that accepts GetFunctionTosMountConfigArgs and GetFunctionTosMountConfigOutput values.
+// You can construct a concrete instance of `GetFunctionTosMountConfigInput` via:
+//
+//	GetFunctionTosMountConfigArgs{...}
+type GetFunctionTosMountConfigInput interface {
+	pulumi.Input
+
+	ToGetFunctionTosMountConfigOutput() GetFunctionTosMountConfigOutput
+	ToGetFunctionTosMountConfigOutputWithContext(context.Context) GetFunctionTosMountConfigOutput
+}
+
+type GetFunctionTosMountConfigArgs struct {
+	// AKSK with TOS domain access permission.
+	Credentials GetFunctionTosMountConfigCredentialsInput `pulumi:"credentials"`
+	// Enable TOS storage mount.
+	EnableTos pulumi.BoolInput `pulumi:"enableTos"`
+	// TOS storage configuration list
+	MountPoints GetFunctionTosMountConfigMountPointArrayInput `pulumi:"mountPoints"`
+}
+
+func (GetFunctionTosMountConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionTosMountConfig)(nil)).Elem()
+}
+
+func (i GetFunctionTosMountConfigArgs) ToGetFunctionTosMountConfigOutput() GetFunctionTosMountConfigOutput {
+	return i.ToGetFunctionTosMountConfigOutputWithContext(context.Background())
+}
+
+func (i GetFunctionTosMountConfigArgs) ToGetFunctionTosMountConfigOutputWithContext(ctx context.Context) GetFunctionTosMountConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionTosMountConfigOutput)
+}
+
+type GetFunctionTosMountConfigOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionTosMountConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionTosMountConfig)(nil)).Elem()
+}
+
+func (o GetFunctionTosMountConfigOutput) ToGetFunctionTosMountConfigOutput() GetFunctionTosMountConfigOutput {
+	return o
+}
+
+func (o GetFunctionTosMountConfigOutput) ToGetFunctionTosMountConfigOutputWithContext(ctx context.Context) GetFunctionTosMountConfigOutput {
+	return o
+}
+
+// AKSK with TOS domain access permission.
+func (o GetFunctionTosMountConfigOutput) Credentials() GetFunctionTosMountConfigCredentialsOutput {
+	return o.ApplyT(func(v GetFunctionTosMountConfig) GetFunctionTosMountConfigCredentials { return v.Credentials }).(GetFunctionTosMountConfigCredentialsOutput)
+}
+
+// Enable TOS storage mount.
+func (o GetFunctionTosMountConfigOutput) EnableTos() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFunctionTosMountConfig) bool { return v.EnableTos }).(pulumi.BoolOutput)
+}
+
+// TOS storage configuration list
+func (o GetFunctionTosMountConfigOutput) MountPoints() GetFunctionTosMountConfigMountPointArrayOutput {
+	return o.ApplyT(func(v GetFunctionTosMountConfig) []GetFunctionTosMountConfigMountPoint { return v.MountPoints }).(GetFunctionTosMountConfigMountPointArrayOutput)
+}
+
+type GetFunctionTosMountConfigCredentials struct {
+	// Account AccessKey ID
+	AccessKeyId string `pulumi:"accessKeyId"`
+	// Account Secret Access Key
+	SecretAccessKey string `pulumi:"secretAccessKey"`
+}
+
+// GetFunctionTosMountConfigCredentialsInput is an input type that accepts GetFunctionTosMountConfigCredentialsArgs and GetFunctionTosMountConfigCredentialsOutput values.
+// You can construct a concrete instance of `GetFunctionTosMountConfigCredentialsInput` via:
+//
+//	GetFunctionTosMountConfigCredentialsArgs{...}
+type GetFunctionTosMountConfigCredentialsInput interface {
+	pulumi.Input
+
+	ToGetFunctionTosMountConfigCredentialsOutput() GetFunctionTosMountConfigCredentialsOutput
+	ToGetFunctionTosMountConfigCredentialsOutputWithContext(context.Context) GetFunctionTosMountConfigCredentialsOutput
+}
+
+type GetFunctionTosMountConfigCredentialsArgs struct {
+	// Account AccessKey ID
+	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
+	// Account Secret Access Key
+	SecretAccessKey pulumi.StringInput `pulumi:"secretAccessKey"`
+}
+
+func (GetFunctionTosMountConfigCredentialsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionTosMountConfigCredentials)(nil)).Elem()
+}
+
+func (i GetFunctionTosMountConfigCredentialsArgs) ToGetFunctionTosMountConfigCredentialsOutput() GetFunctionTosMountConfigCredentialsOutput {
+	return i.ToGetFunctionTosMountConfigCredentialsOutputWithContext(context.Background())
+}
+
+func (i GetFunctionTosMountConfigCredentialsArgs) ToGetFunctionTosMountConfigCredentialsOutputWithContext(ctx context.Context) GetFunctionTosMountConfigCredentialsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionTosMountConfigCredentialsOutput)
+}
+
+type GetFunctionTosMountConfigCredentialsOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionTosMountConfigCredentialsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionTosMountConfigCredentials)(nil)).Elem()
+}
+
+func (o GetFunctionTosMountConfigCredentialsOutput) ToGetFunctionTosMountConfigCredentialsOutput() GetFunctionTosMountConfigCredentialsOutput {
+	return o
+}
+
+func (o GetFunctionTosMountConfigCredentialsOutput) ToGetFunctionTosMountConfigCredentialsOutputWithContext(ctx context.Context) GetFunctionTosMountConfigCredentialsOutput {
+	return o
+}
+
+// Account AccessKey ID
+func (o GetFunctionTosMountConfigCredentialsOutput) AccessKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionTosMountConfigCredentials) string { return v.AccessKeyId }).(pulumi.StringOutput)
+}
+
+// Account Secret Access Key
+func (o GetFunctionTosMountConfigCredentialsOutput) SecretAccessKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionTosMountConfigCredentials) string { return v.SecretAccessKey }).(pulumi.StringOutput)
+}
+
+type GetFunctionTosMountConfigMountPoint struct {
+	// TOS bucket name.
+	BucketName string `pulumi:"bucketName"`
+	// Mounted TOS Bucket path.
+	BucketPath string `pulumi:"bucketPath"`
+	// TOS access domain name.
+	Endpoint string `pulumi:"endpoint"`
+	// Function local mount directory.
+	LocalMountPath string `pulumi:"localMountPath"`
+	// Function local directory access permission. After mounting a TOS bucket, whether the function's local mount directory is read-only. true: read-only; false (default): read/write
+	ReadOnly bool `pulumi:"readOnly"`
+}
+
+// GetFunctionTosMountConfigMountPointInput is an input type that accepts GetFunctionTosMountConfigMountPointArgs and GetFunctionTosMountConfigMountPointOutput values.
+// You can construct a concrete instance of `GetFunctionTosMountConfigMountPointInput` via:
+//
+//	GetFunctionTosMountConfigMountPointArgs{...}
+type GetFunctionTosMountConfigMountPointInput interface {
+	pulumi.Input
+
+	ToGetFunctionTosMountConfigMountPointOutput() GetFunctionTosMountConfigMountPointOutput
+	ToGetFunctionTosMountConfigMountPointOutputWithContext(context.Context) GetFunctionTosMountConfigMountPointOutput
+}
+
+type GetFunctionTosMountConfigMountPointArgs struct {
+	// TOS bucket name.
+	BucketName pulumi.StringInput `pulumi:"bucketName"`
+	// Mounted TOS Bucket path.
+	BucketPath pulumi.StringInput `pulumi:"bucketPath"`
+	// TOS access domain name.
+	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+	// Function local mount directory.
+	LocalMountPath pulumi.StringInput `pulumi:"localMountPath"`
+	// Function local directory access permission. After mounting a TOS bucket, whether the function's local mount directory is read-only. true: read-only; false (default): read/write
+	ReadOnly pulumi.BoolInput `pulumi:"readOnly"`
+}
+
+func (GetFunctionTosMountConfigMountPointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionTosMountConfigMountPoint)(nil)).Elem()
+}
+
+func (i GetFunctionTosMountConfigMountPointArgs) ToGetFunctionTosMountConfigMountPointOutput() GetFunctionTosMountConfigMountPointOutput {
+	return i.ToGetFunctionTosMountConfigMountPointOutputWithContext(context.Background())
+}
+
+func (i GetFunctionTosMountConfigMountPointArgs) ToGetFunctionTosMountConfigMountPointOutputWithContext(ctx context.Context) GetFunctionTosMountConfigMountPointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionTosMountConfigMountPointOutput)
+}
+
+// GetFunctionTosMountConfigMountPointArrayInput is an input type that accepts GetFunctionTosMountConfigMountPointArray and GetFunctionTosMountConfigMountPointArrayOutput values.
+// You can construct a concrete instance of `GetFunctionTosMountConfigMountPointArrayInput` via:
+//
+//	GetFunctionTosMountConfigMountPointArray{ GetFunctionTosMountConfigMountPointArgs{...} }
+type GetFunctionTosMountConfigMountPointArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionTosMountConfigMountPointArrayOutput() GetFunctionTosMountConfigMountPointArrayOutput
+	ToGetFunctionTosMountConfigMountPointArrayOutputWithContext(context.Context) GetFunctionTosMountConfigMountPointArrayOutput
+}
+
+type GetFunctionTosMountConfigMountPointArray []GetFunctionTosMountConfigMountPointInput
+
+func (GetFunctionTosMountConfigMountPointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionTosMountConfigMountPoint)(nil)).Elem()
+}
+
+func (i GetFunctionTosMountConfigMountPointArray) ToGetFunctionTosMountConfigMountPointArrayOutput() GetFunctionTosMountConfigMountPointArrayOutput {
+	return i.ToGetFunctionTosMountConfigMountPointArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionTosMountConfigMountPointArray) ToGetFunctionTosMountConfigMountPointArrayOutputWithContext(ctx context.Context) GetFunctionTosMountConfigMountPointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionTosMountConfigMountPointArrayOutput)
+}
+
+type GetFunctionTosMountConfigMountPointOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionTosMountConfigMountPointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionTosMountConfigMountPoint)(nil)).Elem()
+}
+
+func (o GetFunctionTosMountConfigMountPointOutput) ToGetFunctionTosMountConfigMountPointOutput() GetFunctionTosMountConfigMountPointOutput {
+	return o
+}
+
+func (o GetFunctionTosMountConfigMountPointOutput) ToGetFunctionTosMountConfigMountPointOutputWithContext(ctx context.Context) GetFunctionTosMountConfigMountPointOutput {
+	return o
+}
+
+// TOS bucket name.
+func (o GetFunctionTosMountConfigMountPointOutput) BucketName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionTosMountConfigMountPoint) string { return v.BucketName }).(pulumi.StringOutput)
+}
+
+// Mounted TOS Bucket path.
+func (o GetFunctionTosMountConfigMountPointOutput) BucketPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionTosMountConfigMountPoint) string { return v.BucketPath }).(pulumi.StringOutput)
+}
+
+// TOS access domain name.
+func (o GetFunctionTosMountConfigMountPointOutput) Endpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionTosMountConfigMountPoint) string { return v.Endpoint }).(pulumi.StringOutput)
+}
+
+// Function local mount directory.
+func (o GetFunctionTosMountConfigMountPointOutput) LocalMountPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionTosMountConfigMountPoint) string { return v.LocalMountPath }).(pulumi.StringOutput)
+}
+
+// Function local directory access permission. After mounting a TOS bucket, whether the function's local mount directory is read-only. true: read-only; false (default): read/write
+func (o GetFunctionTosMountConfigMountPointOutput) ReadOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFunctionTosMountConfigMountPoint) bool { return v.ReadOnly }).(pulumi.BoolOutput)
+}
+
+type GetFunctionTosMountConfigMountPointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionTosMountConfigMountPointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionTosMountConfigMountPoint)(nil)).Elem()
+}
+
+func (o GetFunctionTosMountConfigMountPointArrayOutput) ToGetFunctionTosMountConfigMountPointArrayOutput() GetFunctionTosMountConfigMountPointArrayOutput {
+	return o
+}
+
+func (o GetFunctionTosMountConfigMountPointArrayOutput) ToGetFunctionTosMountConfigMountPointArrayOutputWithContext(ctx context.Context) GetFunctionTosMountConfigMountPointArrayOutput {
+	return o
+}
+
+func (o GetFunctionTosMountConfigMountPointArrayOutput) Index(i pulumi.IntInput) GetFunctionTosMountConfigMountPointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionTosMountConfigMountPoint {
+		return vs[0].([]GetFunctionTosMountConfigMountPoint)[vs[1].(int)]
+	}).(GetFunctionTosMountConfigMountPointOutput)
+}
+
+type GetFunctionVpcConfig struct {
+	// Function public network access switch. Whether to access the public network via veFaaS VPC shared NAT gateway. Values: true: enabled, access public network via default network interface. Public outbound traffic fees apply. false: disabled, function cannot access public network via default network interface.
+	EnableSharedInternetAccess bool `pulumi:"enableSharedInternetAccess"`
+	// Whether the function enables private network access
+	EnableVpc bool `pulumi:"enableVpc"`
+	// Security group ID
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// Subnet ID
+	SubnetIds []string `pulumi:"subnetIds"`
+	// VPC ID. If the VPC ID is an empty string, it means the current VPC configuration will be deleted
+	VpcId string `pulumi:"vpcId"`
+}
+
+// GetFunctionVpcConfigInput is an input type that accepts GetFunctionVpcConfigArgs and GetFunctionVpcConfigOutput values.
+// You can construct a concrete instance of `GetFunctionVpcConfigInput` via:
+//
+//	GetFunctionVpcConfigArgs{...}
+type GetFunctionVpcConfigInput interface {
+	pulumi.Input
+
+	ToGetFunctionVpcConfigOutput() GetFunctionVpcConfigOutput
+	ToGetFunctionVpcConfigOutputWithContext(context.Context) GetFunctionVpcConfigOutput
+}
+
+type GetFunctionVpcConfigArgs struct {
+	// Function public network access switch. Whether to access the public network via veFaaS VPC shared NAT gateway. Values: true: enabled, access public network via default network interface. Public outbound traffic fees apply. false: disabled, function cannot access public network via default network interface.
+	EnableSharedInternetAccess pulumi.BoolInput `pulumi:"enableSharedInternetAccess"`
+	// Whether the function enables private network access
+	EnableVpc pulumi.BoolInput `pulumi:"enableVpc"`
+	// Security group ID
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// Subnet ID
+	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
+	// VPC ID. If the VPC ID is an empty string, it means the current VPC configuration will be deleted
+	VpcId pulumi.StringInput `pulumi:"vpcId"`
+}
+
+func (GetFunctionVpcConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionVpcConfig)(nil)).Elem()
+}
+
+func (i GetFunctionVpcConfigArgs) ToGetFunctionVpcConfigOutput() GetFunctionVpcConfigOutput {
+	return i.ToGetFunctionVpcConfigOutputWithContext(context.Background())
+}
+
+func (i GetFunctionVpcConfigArgs) ToGetFunctionVpcConfigOutputWithContext(ctx context.Context) GetFunctionVpcConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionVpcConfigOutput)
+}
+
+type GetFunctionVpcConfigOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionVpcConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionVpcConfig)(nil)).Elem()
+}
+
+func (o GetFunctionVpcConfigOutput) ToGetFunctionVpcConfigOutput() GetFunctionVpcConfigOutput {
+	return o
+}
+
+func (o GetFunctionVpcConfigOutput) ToGetFunctionVpcConfigOutputWithContext(ctx context.Context) GetFunctionVpcConfigOutput {
+	return o
+}
+
+// Function public network access switch. Whether to access the public network via veFaaS VPC shared NAT gateway. Values: true: enabled, access public network via default network interface. Public outbound traffic fees apply. false: disabled, function cannot access public network via default network interface.
+func (o GetFunctionVpcConfigOutput) EnableSharedInternetAccess() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFunctionVpcConfig) bool { return v.EnableSharedInternetAccess }).(pulumi.BoolOutput)
+}
+
+// Whether the function enables private network access
+func (o GetFunctionVpcConfigOutput) EnableVpc() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFunctionVpcConfig) bool { return v.EnableVpc }).(pulumi.BoolOutput)
+}
+
+// Security group ID
+func (o GetFunctionVpcConfigOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFunctionVpcConfig) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Subnet ID
+func (o GetFunctionVpcConfigOutput) SubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFunctionVpcConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
+}
+
+// VPC ID. If the VPC ID is an empty string, it means the current VPC configuration will be deleted
+func (o GetFunctionVpcConfigOutput) VpcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionVpcConfig) string { return v.VpcId }).(pulumi.StringOutput)
+}
+
+type GetKafkaTriggerKafkaCredentials struct {
+	// Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
+	Mechanism string `pulumi:"mechanism"`
+	// SASL/PLAIN password set when creating the Kafka instance.
+	Password string `pulumi:"password"`
+	// SASL/PLAIN username set when creating the Kafka instance.
 	Username string `pulumi:"username"`
 }
 
@@ -875,11 +4133,11 @@ type GetKafkaTriggerKafkaCredentialsInput interface {
 }
 
 type GetKafkaTriggerKafkaCredentialsArgs struct {
-	// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+	// Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
 	Mechanism pulumi.StringInput `pulumi:"mechanism"`
-	// 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+	// SASL/PLAIN password set when creating the Kafka instance.
 	Password pulumi.StringInput `pulumi:"password"`
-	// 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+	// SASL/PLAIN username set when creating the Kafka instance.
 	Username pulumi.StringInput `pulumi:"username"`
 }
 
@@ -909,25 +4167,25 @@ func (o GetKafkaTriggerKafkaCredentialsOutput) ToGetKafkaTriggerKafkaCredentials
 	return o
 }
 
-// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+// Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
 func (o GetKafkaTriggerKafkaCredentialsOutput) Mechanism() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKafkaTriggerKafkaCredentials) string { return v.Mechanism }).(pulumi.StringOutput)
 }
 
-// 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+// SASL/PLAIN password set when creating the Kafka instance.
 func (o GetKafkaTriggerKafkaCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKafkaTriggerKafkaCredentials) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+// SASL/PLAIN username set when creating the Kafka instance.
 func (o GetKafkaTriggerKafkaCredentialsOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKafkaTriggerKafkaCredentials) string { return v.Username }).(pulumi.StringOutput)
 }
 
 type GetSandboxEnv struct {
-	// 环境变量键。
+	// Environment variable key
 	Key string `pulumi:"key"`
-	// 环境变量值。
+	// Environment variable value
 	Value string `pulumi:"value"`
 }
 
@@ -943,9 +4201,9 @@ type GetSandboxEnvInput interface {
 }
 
 type GetSandboxEnvArgs struct {
-	// 环境变量键。
+	// Environment variable key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 环境变量值。
+	// Environment variable value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1000,12 +4258,12 @@ func (o GetSandboxEnvOutput) ToGetSandboxEnvOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 环境变量键。
+// Environment variable key
 func (o GetSandboxEnvOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSandboxEnv) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 环境变量值。
+// Environment variable value
 func (o GetSandboxEnvOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSandboxEnv) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1031,13 +4289,13 @@ func (o GetSandboxEnvArrayOutput) Index(i pulumi.IntInput) GetSandboxEnvOutput {
 }
 
 type GetSandboxInstanceImageInfo struct {
-	// 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+	// Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
 	Command string `pulumi:"command"`
-	// 沙箱实例使用的已预热镜像地址。
+	// Preheated image address used by the sandbox instance
 	Image string `pulumi:"image"`
-	// 沙箱实例使用的已预热镜像 ID。
+	// Pre-warmed image ID used by the sandbox instance.
 	ImageId string `pulumi:"imageId"`
-	// 沙箱实例镜像监听端口。
+	// Listening port of the sandbox instance image.
 	Port int `pulumi:"port"`
 }
 
@@ -1053,13 +4311,13 @@ type GetSandboxInstanceImageInfoInput interface {
 }
 
 type GetSandboxInstanceImageInfoArgs struct {
-	// 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+	// Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
 	Command pulumi.StringInput `pulumi:"command"`
-	// 沙箱实例使用的已预热镜像地址。
+	// Preheated image address used by the sandbox instance
 	Image pulumi.StringInput `pulumi:"image"`
-	// 沙箱实例使用的已预热镜像 ID。
+	// Pre-warmed image ID used by the sandbox instance.
 	ImageId pulumi.StringInput `pulumi:"imageId"`
-	// 沙箱实例镜像监听端口。
+	// Listening port of the sandbox instance image.
 	Port pulumi.IntInput `pulumi:"port"`
 }
 
@@ -1089,30 +4347,30 @@ func (o GetSandboxInstanceImageInfoOutput) ToGetSandboxInstanceImageInfoOutputWi
 	return o
 }
 
-// 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+// Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
 func (o GetSandboxInstanceImageInfoOutput) Command() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSandboxInstanceImageInfo) string { return v.Command }).(pulumi.StringOutput)
 }
 
-// 沙箱实例使用的已预热镜像地址。
+// Preheated image address used by the sandbox instance
 func (o GetSandboxInstanceImageInfoOutput) Image() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSandboxInstanceImageInfo) string { return v.Image }).(pulumi.StringOutput)
 }
 
-// 沙箱实例使用的已预热镜像 ID。
+// Pre-warmed image ID used by the sandbox instance.
 func (o GetSandboxInstanceImageInfoOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSandboxInstanceImageInfo) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// 沙箱实例镜像监听端口。
+// Listening port of the sandbox instance image.
 func (o GetSandboxInstanceImageInfoOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetSandboxInstanceImageInfo) int { return v.Port }).(pulumi.IntOutput)
 }
 
 type GetSandboxInstanceTosMountConfig struct {
-	// 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+	// Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
 	Enable bool `pulumi:"enable"`
-	// 启用了实例级别 TOS 挂载的沙箱实例具体 TOS 挂载目录信息。
+	// Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
 	TosMountPoints []GetSandboxInstanceTosMountConfigTosMountPoint `pulumi:"tosMountPoints"`
 }
 
@@ -1128,9 +4386,9 @@ type GetSandboxInstanceTosMountConfigInput interface {
 }
 
 type GetSandboxInstanceTosMountConfigArgs struct {
-	// 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+	// Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
 	Enable pulumi.BoolInput `pulumi:"enable"`
-	// 启用了实例级别 TOS 挂载的沙箱实例具体 TOS 挂载目录信息。
+	// Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
 	TosMountPoints GetSandboxInstanceTosMountConfigTosMountPointArrayInput `pulumi:"tosMountPoints"`
 }
 
@@ -1160,12 +4418,12 @@ func (o GetSandboxInstanceTosMountConfigOutput) ToGetSandboxInstanceTosMountConf
 	return o
 }
 
-// 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+// Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
 func (o GetSandboxInstanceTosMountConfigOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSandboxInstanceTosMountConfig) bool { return v.Enable }).(pulumi.BoolOutput)
 }
 
-// 启用了实例级别 TOS 挂载的沙箱实例具体 TOS 挂载目录信息。
+// Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
 func (o GetSandboxInstanceTosMountConfigOutput) TosMountPoints() GetSandboxInstanceTosMountConfigTosMountPointArrayOutput {
 	return o.ApplyT(func(v GetSandboxInstanceTosMountConfig) []GetSandboxInstanceTosMountConfigTosMountPoint {
 		return v.TosMountPoints
@@ -1173,9 +4431,9 @@ func (o GetSandboxInstanceTosMountConfigOutput) TosMountPoints() GetSandboxInsta
 }
 
 type GetSandboxInstanceTosMountConfigTosMountPoint struct {
-	// 沙箱实例挂载的 TOS 远端目录。
+	// TOS remote directory mounted by the sandbox instance
 	BucketPath string `pulumi:"bucketPath"`
-	// 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+	// Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
 	LocalMountPath string `pulumi:"localMountPath"`
 }
 
@@ -1191,9 +4449,9 @@ type GetSandboxInstanceTosMountConfigTosMountPointInput interface {
 }
 
 type GetSandboxInstanceTosMountConfigTosMountPointArgs struct {
-	// 沙箱实例挂载的 TOS 远端目录。
+	// TOS remote directory mounted by the sandbox instance
 	BucketPath pulumi.StringInput `pulumi:"bucketPath"`
-	// 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+	// Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
 	LocalMountPath pulumi.StringInput `pulumi:"localMountPath"`
 }
 
@@ -1248,12 +4506,12 @@ func (o GetSandboxInstanceTosMountConfigTosMountPointOutput) ToGetSandboxInstanc
 	return o
 }
 
-// 沙箱实例挂载的 TOS 远端目录。
+// TOS remote directory mounted by the sandbox instance
 func (o GetSandboxInstanceTosMountConfigTosMountPointOutput) BucketPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSandboxInstanceTosMountConfigTosMountPoint) string { return v.BucketPath }).(pulumi.StringOutput)
 }
 
-// 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+// Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
 func (o GetSandboxInstanceTosMountConfigTosMountPointOutput) LocalMountPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSandboxInstanceTosMountConfigTosMountPoint) string { return v.LocalMountPath }).(pulumi.StringOutput)
 }
@@ -1279,9 +4537,9 @@ func (o GetSandboxInstanceTosMountConfigTosMountPointArrayOutput) Index(i pulumi
 }
 
 type GetSandboxMetadata struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -1297,9 +4555,9 @@ type GetSandboxMetadataInput interface {
 }
 
 type GetSandboxMetadataArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1354,12 +4612,12 @@ func (o GetSandboxMetadataOutput) ToGetSandboxMetadataOutputWithContext(ctx cont
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetSandboxMetadataOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSandboxMetadata) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetSandboxMetadataOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSandboxMetadata) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1385,6 +4643,34 @@ func (o GetSandboxMetadataArrayOutput) Index(i pulumi.IntInput) GetSandboxMetada
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionAsyncTaskConfigInput)(nil)).Elem(), FunctionAsyncTaskConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionAsyncTaskConfigPtrInput)(nil)).Elem(), FunctionAsyncTaskConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfigInput)(nil)).Elem(), FunctionAsyncTaskConfigDestinationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfigPtrInput)(nil)).Elem(), FunctionAsyncTaskConfigDestinationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfigOnFailureInput)(nil)).Elem(), FunctionAsyncTaskConfigDestinationConfigOnFailureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfigOnFailurePtrInput)(nil)).Elem(), FunctionAsyncTaskConfigDestinationConfigOnFailureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfigOnSuccessInput)(nil)).Elem(), FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrInput)(nil)).Elem(), FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionEnvInput)(nil)).Elem(), FunctionEnvArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionEnvArrayInput)(nil)).Elem(), FunctionEnvArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionNasStorageInput)(nil)).Elem(), FunctionNasStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionNasStoragePtrInput)(nil)).Elem(), FunctionNasStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionNasStorageNasConfigInput)(nil)).Elem(), FunctionNasStorageNasConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionNasStorageNasConfigArrayInput)(nil)).Elem(), FunctionNasStorageNasConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSourceAccessConfigInput)(nil)).Elem(), FunctionSourceAccessConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionSourceAccessConfigPtrInput)(nil)).Elem(), FunctionSourceAccessConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTagInput)(nil)).Elem(), FunctionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTagArrayInput)(nil)).Elem(), FunctionTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTlsConfigInput)(nil)).Elem(), FunctionTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTlsConfigPtrInput)(nil)).Elem(), FunctionTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTosMountConfigInput)(nil)).Elem(), FunctionTosMountConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTosMountConfigPtrInput)(nil)).Elem(), FunctionTosMountConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTosMountConfigCredentialsInput)(nil)).Elem(), FunctionTosMountConfigCredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTosMountConfigCredentialsPtrInput)(nil)).Elem(), FunctionTosMountConfigCredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTosMountConfigMountPointInput)(nil)).Elem(), FunctionTosMountConfigMountPointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTosMountConfigMountPointArrayInput)(nil)).Elem(), FunctionTosMountConfigMountPointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionVpcConfigInput)(nil)).Elem(), FunctionVpcConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionVpcConfigPtrInput)(nil)).Elem(), FunctionVpcConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KafkaTriggerKafkaCredentialsInput)(nil)).Elem(), KafkaTriggerKafkaCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KafkaTriggerKafkaCredentialsPtrInput)(nil)).Elem(), KafkaTriggerKafkaCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SandboxEnvInput)(nil)).Elem(), SandboxEnvArgs{})
@@ -1397,6 +4683,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SandboxInstanceTosMountConfigTosMountPointArrayInput)(nil)).Elem(), SandboxInstanceTosMountConfigTosMountPointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SandboxMetadataInput)(nil)).Elem(), SandboxMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SandboxMetadataArrayInput)(nil)).Elem(), SandboxMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionAsyncTaskConfigInput)(nil)).Elem(), GetFunctionAsyncTaskConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionAsyncTaskConfigDestinationConfigInput)(nil)).Elem(), GetFunctionAsyncTaskConfigDestinationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionAsyncTaskConfigDestinationConfigOnFailureInput)(nil)).Elem(), GetFunctionAsyncTaskConfigDestinationConfigOnFailureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionAsyncTaskConfigDestinationConfigOnSuccessInput)(nil)).Elem(), GetFunctionAsyncTaskConfigDestinationConfigOnSuccessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionEnvInput)(nil)).Elem(), GetFunctionEnvArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionEnvArrayInput)(nil)).Elem(), GetFunctionEnvArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionNasStorageInput)(nil)).Elem(), GetFunctionNasStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionNasStorageNasConfigInput)(nil)).Elem(), GetFunctionNasStorageNasConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionNasStorageNasConfigArrayInput)(nil)).Elem(), GetFunctionNasStorageNasConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionSourceAccessConfigInput)(nil)).Elem(), GetFunctionSourceAccessConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTagInput)(nil)).Elem(), GetFunctionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTagArrayInput)(nil)).Elem(), GetFunctionTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTlsConfigInput)(nil)).Elem(), GetFunctionTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTosMountConfigInput)(nil)).Elem(), GetFunctionTosMountConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTosMountConfigCredentialsInput)(nil)).Elem(), GetFunctionTosMountConfigCredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTosMountConfigMountPointInput)(nil)).Elem(), GetFunctionTosMountConfigMountPointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTosMountConfigMountPointArrayInput)(nil)).Elem(), GetFunctionTosMountConfigMountPointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionVpcConfigInput)(nil)).Elem(), GetFunctionVpcConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKafkaTriggerKafkaCredentialsInput)(nil)).Elem(), GetKafkaTriggerKafkaCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSandboxEnvInput)(nil)).Elem(), GetSandboxEnvArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSandboxEnvArrayInput)(nil)).Elem(), GetSandboxEnvArray{})
@@ -1406,6 +4710,34 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSandboxInstanceTosMountConfigTosMountPointArrayInput)(nil)).Elem(), GetSandboxInstanceTosMountConfigTosMountPointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSandboxMetadataInput)(nil)).Elem(), GetSandboxMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSandboxMetadataArrayInput)(nil)).Elem(), GetSandboxMetadataArray{})
+	pulumi.RegisterOutputType(FunctionAsyncTaskConfigOutput{})
+	pulumi.RegisterOutputType(FunctionAsyncTaskConfigPtrOutput{})
+	pulumi.RegisterOutputType(FunctionAsyncTaskConfigDestinationConfigOutput{})
+	pulumi.RegisterOutputType(FunctionAsyncTaskConfigDestinationConfigPtrOutput{})
+	pulumi.RegisterOutputType(FunctionAsyncTaskConfigDestinationConfigOnFailureOutput{})
+	pulumi.RegisterOutputType(FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput{})
+	pulumi.RegisterOutputType(FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput{})
+	pulumi.RegisterOutputType(FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput{})
+	pulumi.RegisterOutputType(FunctionEnvOutput{})
+	pulumi.RegisterOutputType(FunctionEnvArrayOutput{})
+	pulumi.RegisterOutputType(FunctionNasStorageOutput{})
+	pulumi.RegisterOutputType(FunctionNasStoragePtrOutput{})
+	pulumi.RegisterOutputType(FunctionNasStorageNasConfigOutput{})
+	pulumi.RegisterOutputType(FunctionNasStorageNasConfigArrayOutput{})
+	pulumi.RegisterOutputType(FunctionSourceAccessConfigOutput{})
+	pulumi.RegisterOutputType(FunctionSourceAccessConfigPtrOutput{})
+	pulumi.RegisterOutputType(FunctionTagOutput{})
+	pulumi.RegisterOutputType(FunctionTagArrayOutput{})
+	pulumi.RegisterOutputType(FunctionTlsConfigOutput{})
+	pulumi.RegisterOutputType(FunctionTlsConfigPtrOutput{})
+	pulumi.RegisterOutputType(FunctionTosMountConfigOutput{})
+	pulumi.RegisterOutputType(FunctionTosMountConfigPtrOutput{})
+	pulumi.RegisterOutputType(FunctionTosMountConfigCredentialsOutput{})
+	pulumi.RegisterOutputType(FunctionTosMountConfigCredentialsPtrOutput{})
+	pulumi.RegisterOutputType(FunctionTosMountConfigMountPointOutput{})
+	pulumi.RegisterOutputType(FunctionTosMountConfigMountPointArrayOutput{})
+	pulumi.RegisterOutputType(FunctionVpcConfigOutput{})
+	pulumi.RegisterOutputType(FunctionVpcConfigPtrOutput{})
 	pulumi.RegisterOutputType(KafkaTriggerKafkaCredentialsOutput{})
 	pulumi.RegisterOutputType(KafkaTriggerKafkaCredentialsPtrOutput{})
 	pulumi.RegisterOutputType(SandboxEnvOutput{})
@@ -1418,6 +4750,24 @@ func init() {
 	pulumi.RegisterOutputType(SandboxInstanceTosMountConfigTosMountPointArrayOutput{})
 	pulumi.RegisterOutputType(SandboxMetadataOutput{})
 	pulumi.RegisterOutputType(SandboxMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionAsyncTaskConfigOutput{})
+	pulumi.RegisterOutputType(GetFunctionAsyncTaskConfigDestinationConfigOutput{})
+	pulumi.RegisterOutputType(GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput{})
+	pulumi.RegisterOutputType(GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput{})
+	pulumi.RegisterOutputType(GetFunctionEnvOutput{})
+	pulumi.RegisterOutputType(GetFunctionEnvArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionNasStorageOutput{})
+	pulumi.RegisterOutputType(GetFunctionNasStorageNasConfigOutput{})
+	pulumi.RegisterOutputType(GetFunctionNasStorageNasConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionSourceAccessConfigOutput{})
+	pulumi.RegisterOutputType(GetFunctionTagOutput{})
+	pulumi.RegisterOutputType(GetFunctionTagArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionTlsConfigOutput{})
+	pulumi.RegisterOutputType(GetFunctionTosMountConfigOutput{})
+	pulumi.RegisterOutputType(GetFunctionTosMountConfigCredentialsOutput{})
+	pulumi.RegisterOutputType(GetFunctionTosMountConfigMountPointOutput{})
+	pulumi.RegisterOutputType(GetFunctionTosMountConfigMountPointArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionVpcConfigOutput{})
 	pulumi.RegisterOutputType(GetKafkaTriggerKafkaCredentialsOutput{})
 	pulumi.RegisterOutputType(GetSandboxEnvOutput{})
 	pulumi.RegisterOutputType(GetSandboxEnvArrayOutput{})

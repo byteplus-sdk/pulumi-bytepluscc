@@ -16,14 +16,14 @@ public final class VolumeBaselinePerformanceArgs extends com.pulumi.resources.Re
     public static final VolumeBaselinePerformanceArgs Empty = new VolumeBaselinePerformanceArgs();
 
     /**
-     * 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+     * Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
      * 
      */
     @Import(name="iops")
     private @Nullable Output<Double> iops;
 
     /**
-     * @return 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+     * @return Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
      * 
      */
     public Optional<Output<Double>> iops() {
@@ -31,14 +31,14 @@ public final class VolumeBaselinePerformanceArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+     * The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
      * 
      */
     @Import(name="throughput")
     private @Nullable Output<Double> throughput;
 
     /**
-     * @return 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+     * @return The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
      * 
      */
     public Optional<Output<Double>> throughput() {
@@ -71,7 +71,7 @@ public final class VolumeBaselinePerformanceArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param iops 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+         * @param iops Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class VolumeBaselinePerformanceArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param iops 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+         * @param iops Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class VolumeBaselinePerformanceArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param throughput 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+         * @param throughput The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class VolumeBaselinePerformanceArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param throughput 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+         * @param throughput The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
          * 
          * @return builder
          * 

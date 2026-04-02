@@ -31,43 +31,43 @@ export interface GetVolumeArgs {
  */
 export interface GetVolumeResult {
     /**
-     * 自动快照策略ID。
+     * Automatic snapshot policy ID.
      */
     readonly autoSnapshotPolicyId: string;
     /**
-     * 自动快照策略名称。
+     * Automatic snapshot policy name.
      */
     readonly autoSnapshotPolicyName: string;
     /**
-     * 基本性能。
+     * Baseline performance.
      */
     readonly baselinePerformance: outputs.storageebs.GetVolumeBaselinePerformance;
     /**
-     * 云盘创建时间。
+     * Disk creation time.
      */
     readonly createdAt: string;
     /**
-     * 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+     * When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
      */
     readonly deleteWithInstance: boolean;
     /**
-     * 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+     * Disk description. Default is empty. Length must be between 1 and 255 characters.
      */
     readonly description: string;
     /**
-     * 设备名称
+     * Device name
      */
     readonly deviceName: string;
     /**
-     * 具体错误
+     * Specific error
      */
     readonly errorDetail: string;
     /**
-     * 包年包月到期时间。
+     * Expiration time for yearly/monthly subscription.
      */
     readonly expiredTime: string;
     /**
-     * 额外性能。
+     * Extra performance.
      */
     readonly extraPerformance: outputs.storageebs.GetVolumeExtraPerformance;
     /**
@@ -75,83 +75,83 @@ export interface GetVolumeResult {
      */
     readonly id: string;
     /**
-     * 云盘中的镜像ID。
+     * Image ID in the disk.
      */
     readonly imageId: string;
     /**
-     * 创建云盘的同时挂载的ECS实例ID。
+     * ECS instance ID mounted when creating the cloud disk.
      */
     readonly instanceId: string;
     /**
-     * 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+     * Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
      */
     readonly kind: string;
     /**
-     * 云盘欠费回收时间。
+     * Disk overdue reclamation time.
      */
     readonly overdueReclaimTime: string;
     /**
-     * 云盘欠费关停时间。
+     * Disk overdue shutdown time.
      */
     readonly overdueTime: string;
     /**
-     * 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+     * Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
      */
     readonly payType: string;
     /**
-     * 云盘所要加入的Project（项目）名称。
+     * Project name to which the disk will be added.
      */
     readonly projectName: string;
     /**
-     * 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+     * Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
      */
     readonly renewType: number;
     /**
-     * Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+     * Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
      */
     readonly size: number;
     /**
-     * 快照计数
+     * Snapshot count.
      */
     readonly snapshotCount: number;
     /**
-     * 源快照。
+     * Source snapshot.
      */
     readonly sourceSnapshotId: string;
     /**
-     * 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+     * Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
      */
     readonly status: string;
     /**
-     * 云盘的标签信息
+     * Disk tag information.
      */
     readonly tags: outputs.storageebs.GetVolumeTag[];
     /**
-     * 总性能。
+     * Total performance.
      */
     readonly totalPerformance: outputs.storageebs.GetVolumeTotalPerformance;
     /**
-     * 交易状态 0：创建中 1：运行中 2：创建失败
+     * Transaction status 0: Creating 1: Running 2: Creation failed
      */
     readonly tradeStatus: number;
     /**
-     * 云盘更新时间。
+     * Disk update time.
      */
     readonly updatedAt: string;
     /**
-     * 云盘id。
+     * Disk ID.
      */
     readonly volumeId: string;
     /**
-     * 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+     * Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
      */
     readonly volumeName: string;
     /**
-     * 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+     * Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
      */
     readonly volumeType: string;
     /**
-     * 可用区ID。
+     * Availability zone ID.
      */
     readonly zoneId: string;
 }

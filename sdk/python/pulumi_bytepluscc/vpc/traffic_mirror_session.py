@@ -34,15 +34,15 @@ class TrafficMirrorSessionArgs:
                  virtual_network_id: Optional[pulumi.Input[builtins.int]] = None):
         """
         The set of arguments for constructing a TrafficMirrorSession resource.
-        :param pulumi.Input[builtins.str] network_interface_id: 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
-        :param pulumi.Input[builtins.int] priority: 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: 筛选条件实例ID。
-        :param pulumi.Input[builtins.str] traffic_mirror_target_id: 镜像目的实例ID。
-        :param pulumi.Input[builtins.str] description: 镜像会话实例描述。
-        :param pulumi.Input[builtins.int] packet_length: 镜像会话MTU，超过被截断，取值范围：64～9600。
-        :param pulumi.Input[builtins.str] project_name: 所属项目的名称
-        :param pulumi.Input[builtins.str] traffic_mirror_session_name: 镜像会话名称。
-        :param pulumi.Input[builtins.int] virtual_network_id: 镜像会话VNI，取值范围1 ～ 16777215。
+        :param pulumi.Input[builtins.str] network_interface_id: Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
+        :param pulumi.Input[builtins.int] priority: Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: Filter condition instance ID
+        :param pulumi.Input[builtins.str] traffic_mirror_target_id: Mirror destination instance ID
+        :param pulumi.Input[builtins.str] description: Mirror session instance description
+        :param pulumi.Input[builtins.int] packet_length: Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
+        :param pulumi.Input[builtins.str] project_name: Name of the associated project
+        :param pulumi.Input[builtins.str] traffic_mirror_session_name: Mirror session name
+        :param pulumi.Input[builtins.int] virtual_network_id: Mirror session VNI. Range: 1–16777215
         """
         pulumi.set(__self__, "network_interface_id", network_interface_id)
         pulumi.set(__self__, "priority", priority)
@@ -65,7 +65,7 @@ class TrafficMirrorSessionArgs:
     @pulumi.getter(name="networkInterfaceId")
     def network_interface_id(self) -> pulumi.Input[builtins.str]:
         """
-        镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+        Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
         """
         return pulumi.get(self, "network_interface_id")
 
@@ -77,7 +77,7 @@ class TrafficMirrorSessionArgs:
     @pulumi.getter
     def priority(self) -> pulumi.Input[builtins.int]:
         """
-        镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+        Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
         """
         return pulumi.get(self, "priority")
 
@@ -89,7 +89,7 @@ class TrafficMirrorSessionArgs:
     @pulumi.getter(name="trafficMirrorFilterId")
     def traffic_mirror_filter_id(self) -> pulumi.Input[builtins.str]:
         """
-        筛选条件实例ID。
+        Filter condition instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_id")
 
@@ -101,7 +101,7 @@ class TrafficMirrorSessionArgs:
     @pulumi.getter(name="trafficMirrorTargetId")
     def traffic_mirror_target_id(self) -> pulumi.Input[builtins.str]:
         """
-        镜像目的实例ID。
+        Mirror destination instance ID
         """
         return pulumi.get(self, "traffic_mirror_target_id")
 
@@ -113,7 +113,7 @@ class TrafficMirrorSessionArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像会话实例描述。
+        Mirror session instance description
         """
         return pulumi.get(self, "description")
 
@@ -125,7 +125,7 @@ class TrafficMirrorSessionArgs:
     @pulumi.getter(name="packetLength")
     def packet_length(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        镜像会话MTU，超过被截断，取值范围：64～9600。
+        Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
         """
         return pulumi.get(self, "packet_length")
 
@@ -137,7 +137,7 @@ class TrafficMirrorSessionArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        所属项目的名称
+        Name of the associated project
         """
         return pulumi.get(self, "project_name")
 
@@ -158,7 +158,7 @@ class TrafficMirrorSessionArgs:
     @pulumi.getter(name="trafficMirrorSessionName")
     def traffic_mirror_session_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像会话名称。
+        Mirror session name
         """
         return pulumi.get(self, "traffic_mirror_session_name")
 
@@ -170,7 +170,7 @@ class TrafficMirrorSessionArgs:
     @pulumi.getter(name="virtualNetworkId")
     def virtual_network_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        镜像会话VNI，取值范围1 ～ 16777215。
+        Mirror session VNI. Range: 1–16777215
         """
         return pulumi.get(self, "virtual_network_id")
 
@@ -200,21 +200,21 @@ class _TrafficMirrorSessionState:
                  virtual_network_id: Optional[pulumi.Input[builtins.int]] = None):
         """
         Input properties used for looking up and filtering TrafficMirrorSession resources.
-        :param pulumi.Input[builtins.str] business_status: 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 镜像会话实例描述。
-        :param pulumi.Input[builtins.str] lock_reason: 锁定原因。
-        :param pulumi.Input[builtins.str] network_interface_id: 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
-        :param pulumi.Input[builtins.int] packet_length: 镜像会话MTU，超过被截断，取值范围：64～9600。
-        :param pulumi.Input[builtins.int] priority: 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
-        :param pulumi.Input[builtins.str] project_name: 所属项目的名称
-        :param pulumi.Input[builtins.str] status: 会话状态。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: 筛选条件实例ID。
-        :param pulumi.Input[builtins.str] traffic_mirror_session_id: 镜像会话实例ID。
-        :param pulumi.Input[builtins.str] traffic_mirror_session_name: 镜像会话名称。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] traffic_mirror_source_ids: 镜像源实例列表。
-        :param pulumi.Input[builtins.str] traffic_mirror_target_id: 镜像目的实例ID。
-        :param pulumi.Input[builtins.int] virtual_network_id: 镜像会话VNI，取值范围1 ～ 16777215。
+        :param pulumi.Input[builtins.str] business_status: Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
+        :param pulumi.Input[builtins.str] created_time: Creation time
+        :param pulumi.Input[builtins.str] description: Mirror session instance description
+        :param pulumi.Input[builtins.str] lock_reason: Lock reason
+        :param pulumi.Input[builtins.str] network_interface_id: Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
+        :param pulumi.Input[builtins.int] packet_length: Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
+        :param pulumi.Input[builtins.int] priority: Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
+        :param pulumi.Input[builtins.str] project_name: Name of the associated project
+        :param pulumi.Input[builtins.str] status: Session status
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: Filter condition instance ID
+        :param pulumi.Input[builtins.str] traffic_mirror_session_id: Mirror session instance ID
+        :param pulumi.Input[builtins.str] traffic_mirror_session_name: Mirror session name
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] traffic_mirror_source_ids: Mirror source instance list
+        :param pulumi.Input[builtins.str] traffic_mirror_target_id: Mirror destination instance ID
+        :param pulumi.Input[builtins.int] virtual_network_id: Mirror session VNI. Range: 1–16777215
         """
         if business_status is not None:
             pulumi.set(__self__, "business_status", business_status)
@@ -253,7 +253,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+        Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
         """
         return pulumi.get(self, "business_status")
 
@@ -265,7 +265,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -277,7 +277,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像会话实例描述。
+        Mirror session instance description
         """
         return pulumi.get(self, "description")
 
@@ -289,7 +289,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        锁定原因。
+        Lock reason
         """
         return pulumi.get(self, "lock_reason")
 
@@ -301,7 +301,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter(name="networkInterfaceId")
     def network_interface_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+        Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
         """
         return pulumi.get(self, "network_interface_id")
 
@@ -313,7 +313,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter(name="packetLength")
     def packet_length(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        镜像会话MTU，超过被截断，取值范围：64～9600。
+        Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
         """
         return pulumi.get(self, "packet_length")
 
@@ -325,7 +325,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter
     def priority(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+        Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
         """
         return pulumi.get(self, "priority")
 
@@ -337,7 +337,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        所属项目的名称
+        Name of the associated project
         """
         return pulumi.get(self, "project_name")
 
@@ -349,7 +349,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        会话状态。
+        Session status
         """
         return pulumi.get(self, "status")
 
@@ -370,7 +370,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter(name="trafficMirrorFilterId")
     def traffic_mirror_filter_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选条件实例ID。
+        Filter condition instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_id")
 
@@ -382,7 +382,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter(name="trafficMirrorSessionId")
     def traffic_mirror_session_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像会话实例ID。
+        Mirror session instance ID
         """
         return pulumi.get(self, "traffic_mirror_session_id")
 
@@ -394,7 +394,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter(name="trafficMirrorSessionName")
     def traffic_mirror_session_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像会话名称。
+        Mirror session name
         """
         return pulumi.get(self, "traffic_mirror_session_name")
 
@@ -406,7 +406,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter(name="trafficMirrorSourceIds")
     def traffic_mirror_source_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        镜像源实例列表。
+        Mirror source instance list
         """
         return pulumi.get(self, "traffic_mirror_source_ids")
 
@@ -418,7 +418,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter(name="trafficMirrorTargetId")
     def traffic_mirror_target_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像目的实例ID。
+        Mirror destination instance ID
         """
         return pulumi.get(self, "traffic_mirror_target_id")
 
@@ -430,7 +430,7 @@ class _TrafficMirrorSessionState:
     @pulumi.getter(name="virtualNetworkId")
     def virtual_network_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        镜像会话VNI，取值范围1 ～ 16777215。
+        Mirror session VNI. Range: 1–16777215
         """
         return pulumi.get(self, "virtual_network_id")
 
@@ -457,7 +457,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
                  virtual_network_id: Optional[pulumi.Input[builtins.int]] = None,
                  __props__=None):
         """
-        镜像会话关联镜像源、镜像目的、筛选条件，使从镜像源复制的流量私网转发到镜像目的，是流量镜像的载体。
+        The mirror session links the mirror source, mirror destination, and filter conditions, enabling private network forwarding of traffic copied from the mirror source to the mirror destination. It serves as the carrier for traffic mirroring
 
         ## Example Usage
 
@@ -489,15 +489,15 @@ class TrafficMirrorSession(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 镜像会话实例描述。
-        :param pulumi.Input[builtins.str] network_interface_id: 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
-        :param pulumi.Input[builtins.int] packet_length: 镜像会话MTU，超过被截断，取值范围：64～9600。
-        :param pulumi.Input[builtins.int] priority: 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
-        :param pulumi.Input[builtins.str] project_name: 所属项目的名称
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: 筛选条件实例ID。
-        :param pulumi.Input[builtins.str] traffic_mirror_session_name: 镜像会话名称。
-        :param pulumi.Input[builtins.str] traffic_mirror_target_id: 镜像目的实例ID。
-        :param pulumi.Input[builtins.int] virtual_network_id: 镜像会话VNI，取值范围1 ～ 16777215。
+        :param pulumi.Input[builtins.str] description: Mirror session instance description
+        :param pulumi.Input[builtins.str] network_interface_id: Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
+        :param pulumi.Input[builtins.int] packet_length: Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
+        :param pulumi.Input[builtins.int] priority: Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
+        :param pulumi.Input[builtins.str] project_name: Name of the associated project
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: Filter condition instance ID
+        :param pulumi.Input[builtins.str] traffic_mirror_session_name: Mirror session name
+        :param pulumi.Input[builtins.str] traffic_mirror_target_id: Mirror destination instance ID
+        :param pulumi.Input[builtins.int] virtual_network_id: Mirror session VNI. Range: 1–16777215
         """
         ...
     @overload
@@ -506,7 +506,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
                  args: TrafficMirrorSessionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        镜像会话关联镜像源、镜像目的、筛选条件，使从镜像源复制的流量私网转发到镜像目的，是流量镜像的载体。
+        The mirror session links the mirror source, mirror destination, and filter conditions, enabling private network forwarding of traffic copied from the mirror source to the mirror destination. It serves as the carrier for traffic mirroring
 
         ## Example Usage
 
@@ -627,21 +627,21 @@ class TrafficMirrorSession(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] business_status: 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 镜像会话实例描述。
-        :param pulumi.Input[builtins.str] lock_reason: 锁定原因。
-        :param pulumi.Input[builtins.str] network_interface_id: 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
-        :param pulumi.Input[builtins.int] packet_length: 镜像会话MTU，超过被截断，取值范围：64～9600。
-        :param pulumi.Input[builtins.int] priority: 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
-        :param pulumi.Input[builtins.str] project_name: 所属项目的名称
-        :param pulumi.Input[builtins.str] status: 会话状态。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: 筛选条件实例ID。
-        :param pulumi.Input[builtins.str] traffic_mirror_session_id: 镜像会话实例ID。
-        :param pulumi.Input[builtins.str] traffic_mirror_session_name: 镜像会话名称。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] traffic_mirror_source_ids: 镜像源实例列表。
-        :param pulumi.Input[builtins.str] traffic_mirror_target_id: 镜像目的实例ID。
-        :param pulumi.Input[builtins.int] virtual_network_id: 镜像会话VNI，取值范围1 ～ 16777215。
+        :param pulumi.Input[builtins.str] business_status: Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
+        :param pulumi.Input[builtins.str] created_time: Creation time
+        :param pulumi.Input[builtins.str] description: Mirror session instance description
+        :param pulumi.Input[builtins.str] lock_reason: Lock reason
+        :param pulumi.Input[builtins.str] network_interface_id: Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
+        :param pulumi.Input[builtins.int] packet_length: Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
+        :param pulumi.Input[builtins.int] priority: Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
+        :param pulumi.Input[builtins.str] project_name: Name of the associated project
+        :param pulumi.Input[builtins.str] status: Session status
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: Filter condition instance ID
+        :param pulumi.Input[builtins.str] traffic_mirror_session_id: Mirror session instance ID
+        :param pulumi.Input[builtins.str] traffic_mirror_session_name: Mirror session name
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] traffic_mirror_source_ids: Mirror source instance list
+        :param pulumi.Input[builtins.str] traffic_mirror_target_id: Mirror destination instance ID
+        :param pulumi.Input[builtins.int] virtual_network_id: Mirror session VNI. Range: 1–16777215
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -669,7 +669,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> pulumi.Output[builtins.str]:
         """
-        会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+        Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
         """
         return pulumi.get(self, "business_status")
 
@@ -677,7 +677,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -685,7 +685,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        镜像会话实例描述。
+        Mirror session instance description
         """
         return pulumi.get(self, "description")
 
@@ -693,7 +693,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> pulumi.Output[builtins.str]:
         """
-        锁定原因。
+        Lock reason
         """
         return pulumi.get(self, "lock_reason")
 
@@ -701,7 +701,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter(name="networkInterfaceId")
     def network_interface_id(self) -> pulumi.Output[builtins.str]:
         """
-        镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+        Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
         """
         return pulumi.get(self, "network_interface_id")
 
@@ -709,7 +709,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter(name="packetLength")
     def packet_length(self) -> pulumi.Output[builtins.int]:
         """
-        镜像会话MTU，超过被截断，取值范围：64～9600。
+        Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
         """
         return pulumi.get(self, "packet_length")
 
@@ -717,7 +717,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter
     def priority(self) -> pulumi.Output[builtins.int]:
         """
-        镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+        Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
         """
         return pulumi.get(self, "priority")
 
@@ -725,7 +725,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        所属项目的名称
+        Name of the associated project
         """
         return pulumi.get(self, "project_name")
 
@@ -733,7 +733,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        会话状态。
+        Session status
         """
         return pulumi.get(self, "status")
 
@@ -746,7 +746,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter(name="trafficMirrorFilterId")
     def traffic_mirror_filter_id(self) -> pulumi.Output[builtins.str]:
         """
-        筛选条件实例ID。
+        Filter condition instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_id")
 
@@ -754,7 +754,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter(name="trafficMirrorSessionId")
     def traffic_mirror_session_id(self) -> pulumi.Output[builtins.str]:
         """
-        镜像会话实例ID。
+        Mirror session instance ID
         """
         return pulumi.get(self, "traffic_mirror_session_id")
 
@@ -762,7 +762,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter(name="trafficMirrorSessionName")
     def traffic_mirror_session_name(self) -> pulumi.Output[builtins.str]:
         """
-        镜像会话名称。
+        Mirror session name
         """
         return pulumi.get(self, "traffic_mirror_session_name")
 
@@ -770,7 +770,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter(name="trafficMirrorSourceIds")
     def traffic_mirror_source_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        镜像源实例列表。
+        Mirror source instance list
         """
         return pulumi.get(self, "traffic_mirror_source_ids")
 
@@ -778,7 +778,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter(name="trafficMirrorTargetId")
     def traffic_mirror_target_id(self) -> pulumi.Output[builtins.str]:
         """
-        镜像目的实例ID。
+        Mirror destination instance ID
         """
         return pulumi.get(self, "traffic_mirror_target_id")
 
@@ -786,7 +786,7 @@ class TrafficMirrorSession(pulumi.CustomResource):
     @pulumi.getter(name="virtualNetworkId")
     def virtual_network_id(self) -> pulumi.Output[builtins.int]:
         """
-        镜像会话VNI，取值范围1 ～ 16777215。
+        Mirror session VNI. Range: 1–16777215
         """
         return pulumi.get(self, "virtual_network_id")
 

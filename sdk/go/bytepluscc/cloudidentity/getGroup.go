@@ -30,25 +30,25 @@ type LookupGroupArgs struct {
 
 // A collection of values returned by getGroup.
 type LookupGroupResult struct {
-	// 创建时间。
+	// Creation Time
 	CreatedTime string `pulumi:"createdTime"`
-	// 描述。
+	// Description
 	Description string `pulumi:"description"`
-	// 显示名。
+	// Display Name
 	DisplayName string `pulumi:"displayName"`
-	// 用户组id。
+	// User Group ID
 	GroupId string `pulumi:"groupId"`
-	// 用户组名称。
+	// User Group Name
 	GroupName string `pulumi:"groupName"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 用户组类型。
+	// User Group Type
 	JoinType string `pulumi:"joinType"`
-	// 用户组成员列表
+	// User Group Member List
 	Members []GetGroupMember `pulumi:"members"`
-	// 用户组来源。
+	// User Group Source
 	Source string `pulumi:"source"`
-	// 更新时间。
+	// Update Time
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -86,27 +86,27 @@ func (o LookupGroupResultOutput) ToLookupGroupResultOutputWithContext(ctx contex
 	return o
 }
 
-// 创建时间。
+// Creation Time
 func (o LookupGroupResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 描述。
+// Description
 func (o LookupGroupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 显示名。
+// Display Name
 func (o LookupGroupResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 用户组id。
+// User Group ID
 func (o LookupGroupResultOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// 用户组名称。
+// User Group Name
 func (o LookupGroupResultOutput) GroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.GroupName }).(pulumi.StringOutput)
 }
@@ -116,22 +116,22 @@ func (o LookupGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 用户组类型。
+// User Group Type
 func (o LookupGroupResultOutput) JoinType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.JoinType }).(pulumi.StringOutput)
 }
 
-// 用户组成员列表
+// User Group Member List
 func (o LookupGroupResultOutput) Members() GetGroupMemberArrayOutput {
 	return o.ApplyT(func(v LookupGroupResult) []GetGroupMember { return v.Members }).(GetGroupMemberArrayOutput)
 }
 
-// 用户组来源。
+// User Group Source
 func (o LookupGroupResultOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.Source }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update Time
 func (o LookupGroupResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

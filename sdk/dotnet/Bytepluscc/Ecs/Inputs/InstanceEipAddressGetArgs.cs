@@ -14,70 +14,70 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class InstanceEipAddressGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例的分配ID。
+        /// Instance allocation ID
         /// </summary>
         [Input("allocationId")]
         public Input<string>? AllocationId { get; set; }
 
         /// <summary>
-        /// 公网IP的带宽上限，默认值为1，单位：Mbps。
-        ///     - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-        ///     - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+        /// Maximum bandwidth for public IP. Default value is 1, unit: Mbps.
+        ///     - If `ChargeType` is `PayByBandwidth`: value range is 1–500.
+        ///     - If `ChargeType` is `PayByTraffic`: value range is 1–200.
         /// </summary>
         [Input("bandwidthMbps")]
         public Input<int>? BandwidthMbps { get; set; }
 
         /// <summary>
-        /// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-        ///     - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-        ///     - 公网IP加入到共享带宽包必须同时满足如下条件：
-        ///       - 二者的安全防护类型相同。
-        ///       - 二者的地域相同。
-        ///       - 公网IP的计费方式必须是按量计费。
-        ///       - 共享带宽包为IPv4类型。
+        /// Shared bandwidth package ID, used to add a public IP to the shared bandwidth package.
+        ///     - You can call the [DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685) API to query the shared bandwidth package ID.
+        ///     - To add a public IP to a shared bandwidth package, all of the following conditions must be met:
+        ///       - Both must have the same security protection type.
+        ///       - Both must be in the same region.
+        ///       - The public IP must use pay-as-you-go billing.
+        ///       - The shared bandwidth package must be IPv4 type.
         /// </summary>
         [Input("bandwidthPackageId")]
         public Input<string>? BandwidthPackageId { get; set; }
 
         /// <summary>
-        /// 公网IP的计费方式，取值：
-        ///     - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-        ///     - PayByTraffic：按量计费-按实际流量计费。
-        ///     - PrePaid：包年包月。
+        /// Public IP billing method. Values:
+        ///     - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
+        ///     - PayByTraffic: Pay-as-you-go—billed by actual traffic.
+        ///     - PrePaid: Subscription.
         ///   
-        ///   **提示:**
-        ///   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+        ///   **Note:**
+        ///   When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
 
         /// <summary>
-        /// 实例的IP地址。
+        /// Instance IP address.
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// 公网IP的线路类型，默认为BGP。取值：
-        ///     - BGP：BGP（多线）。
-        ///     - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-        ///       - ChinaMobile：中国移动静态单线。
-        ///       - ChinaTelecom：中国电信静态单线。
-        ///       - ChinaUnicom：中国联通静态单线。
-        ///     - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-        ///     - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+        /// Line type for the public IP. Default is BGP. Values:
+        ///     - BGP: BGP (multi-line)
+        ///     - If your account has applied for and enabled static single-line permissions, you can use the following values:
+        ///       - ChinaMobile: China Mobile static single-line
+        ///       - ChinaTelecom: China Telecom static single-line
+        ///       - ChinaUnicom: China Unicom static single-line
+        ///     - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.
+        ///     - If your account has applied for and enabled static BGP permissions, you can use Static_BGP
         /// </summary>
         [Input("isp")]
         public Input<string>? Isp { get; set; }
 
         /// <summary>
-        /// 实例是否随实例释放。
+        /// Whether this resource is released when the instance is released.
         /// </summary>
         [Input("releaseWithInstance")]
         public Input<bool>? ReleaseWithInstance { get; set; }
 
         /// <summary>
-        /// DDoS原生防护（企业版）ID。
+        /// DDoS Native Protection (Enterprise Edition) ID.
         /// </summary>
         [Input("securityProtectionInstanceId")]
         public Input<int>? SecurityProtectionInstanceId { get; set; }
@@ -86,7 +86,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         private InputList<string>? _securityProtectionTypes;
 
         /// <summary>
-        /// 公网IP的安全防护类型。
+        /// Public IP security protection type.
         /// </summary>
         public InputList<string> SecurityProtectionTypes
         {

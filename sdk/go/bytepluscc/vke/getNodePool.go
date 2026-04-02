@@ -30,33 +30,33 @@ type LookupNodePoolArgs struct {
 
 // A collection of values returned by getNodePool.
 type LookupNodePoolResult struct {
-	// 节点池伸缩策略配置。
+	// Node pool scaling policy configuration.
 	AutoScaling GetNodePoolAutoScaling `pulumi:"autoScaling"`
-	// 节点池所在集群的 ID。
+	// ID of the cluster where the node pool is located
 	ClusterId string `pulumi:"clusterId"`
-	// 创建节点池的时间。
+	// Node pool creation time
 	CreatedTime string `pulumi:"createdTime"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 节点池 Kubernetes 相关配置。
+	// Kubernetes-related configuration for the node pool
 	KubernetesConfig GetNodePoolKubernetesConfig `pulumi:"kubernetesConfig"`
-	// 托管节点池配置。
+	// Managed node pool configuration
 	Management GetNodePoolManagement `pulumi:"management"`
-	// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
 	Name string `pulumi:"name"`
-	// 节点池中云服务器（ECS）实例配置。
+	// Cloud server (ECS) instance configuration in the node pool
 	NodeConfig GetNodePoolNodeConfig `pulumi:"nodeConfig"`
-	// 节点池 ID 。
+	// Node pool ID
 	NodePoolId string `pulumi:"nodePoolId"`
-	// 节点池中的节点统计。
+	// Node statistics in the node pool.
 	NodeStatistics GetNodePoolNodeStatistics `pulumi:"nodeStatistics"`
-	// 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+	// When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
 	RetainResources []string `pulumi:"retainResources"`
-	// 节点池状态。
+	// Node pool status
 	Status GetNodePoolStatus `pulumi:"status"`
-	// 节点池的标签信息
+	// Node pool tag information
 	Tags []GetNodePoolTag `pulumi:"tags"`
-	// 更新节点池的时间。
+	// Node pool update time
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -94,17 +94,17 @@ func (o LookupNodePoolResultOutput) ToLookupNodePoolResultOutputWithContext(ctx 
 	return o
 }
 
-// 节点池伸缩策略配置。
+// Node pool scaling policy configuration.
 func (o LookupNodePoolResultOutput) AutoScaling() GetNodePoolAutoScalingOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) GetNodePoolAutoScaling { return v.AutoScaling }).(GetNodePoolAutoScalingOutput)
 }
 
-// 节点池所在集群的 ID。
+// ID of the cluster where the node pool is located
 func (o LookupNodePoolResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 创建节点池的时间。
+// Node pool creation time
 func (o LookupNodePoolResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
@@ -114,52 +114,52 @@ func (o LookupNodePoolResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 节点池 Kubernetes 相关配置。
+// Kubernetes-related configuration for the node pool
 func (o LookupNodePoolResultOutput) KubernetesConfig() GetNodePoolKubernetesConfigOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) GetNodePoolKubernetesConfig { return v.KubernetesConfig }).(GetNodePoolKubernetesConfigOutput)
 }
 
-// 托管节点池配置。
+// Managed node pool configuration
 func (o LookupNodePoolResultOutput) Management() GetNodePoolManagementOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) GetNodePoolManagement { return v.Management }).(GetNodePoolManagementOutput)
 }
 
-// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+// Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
 func (o LookupNodePoolResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 节点池中云服务器（ECS）实例配置。
+// Cloud server (ECS) instance configuration in the node pool
 func (o LookupNodePoolResultOutput) NodeConfig() GetNodePoolNodeConfigOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) GetNodePoolNodeConfig { return v.NodeConfig }).(GetNodePoolNodeConfigOutput)
 }
 
-// 节点池 ID 。
+// Node pool ID
 func (o LookupNodePoolResultOutput) NodePoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) string { return v.NodePoolId }).(pulumi.StringOutput)
 }
 
-// 节点池中的节点统计。
+// Node statistics in the node pool.
 func (o LookupNodePoolResultOutput) NodeStatistics() GetNodePoolNodeStatisticsOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) GetNodePoolNodeStatistics { return v.NodeStatistics }).(GetNodePoolNodeStatisticsOutput)
 }
 
-// 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+// When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
 func (o LookupNodePoolResultOutput) RetainResources() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) []string { return v.RetainResources }).(pulumi.StringArrayOutput)
 }
 
-// 节点池状态。
+// Node pool status
 func (o LookupNodePoolResultOutput) Status() GetNodePoolStatusOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) GetNodePoolStatus { return v.Status }).(GetNodePoolStatusOutput)
 }
 
-// 节点池的标签信息
+// Node pool tag information
 func (o LookupNodePoolResultOutput) Tags() GetNodePoolTagArrayOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) []GetNodePoolTag { return v.Tags }).(GetNodePoolTagArrayOutput)
 }
 
-// 更新节点池的时间。
+// Node pool update time
 func (o LookupNodePoolResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

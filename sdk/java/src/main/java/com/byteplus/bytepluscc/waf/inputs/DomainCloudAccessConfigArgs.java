@@ -17,14 +17,14 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
     public static final DomainCloudAccessConfigArgs Empty = new DomainCloudAccessConfigArgs();
 
     /**
-     * 接入协议类型。
+     * Access protocol type
      * 
      */
     @Import(name="accessProtocol")
     private @Nullable Output<String> accessProtocol;
 
     /**
-     * @return 接入协议类型。
+     * @return Access protocol type
      * 
      */
     public Optional<Output<String>> accessProtocol() {
@@ -32,14 +32,14 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 防护模式。
+     * Protection mode
      * 
      */
     @Import(name="defenceMode")
     private @Nullable Output<Integer> defenceMode;
 
     /**
-     * @return 防护模式。
+     * @return Protection mode
      * 
      */
     public Optional<Output<Integer>> defenceMode() {
@@ -47,14 +47,14 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 负载均衡实例 ID。
+     * Load balancing instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 负载均衡实例 ID。
+     * @return Load balancing instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -62,14 +62,14 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 负载均衡实例名称。
+     * Load balancer instance name.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 负载均衡实例名称。
+     * @return Load balancer instance name.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -77,14 +77,14 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 负载均衡监听器 ID。
+     * Load balancing listener ID.
      * 
      */
     @Import(name="listenerId")
     private @Nullable Output<String> listenerId;
 
     /**
-     * @return 负载均衡监听器 ID。
+     * @return Load balancing listener ID.
      * 
      */
     public Optional<Output<String>> listenerId() {
@@ -92,14 +92,14 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 是否从 ALB 中丢失关联。
+     * Disassociated from ALB
      * 
      */
     @Import(name="lostAssociationFromAlb")
     private @Nullable Output<Integer> lostAssociationFromAlb;
 
     /**
-     * @return 是否从 ALB 中丢失关联。
+     * @return Disassociated from ALB
      * 
      */
     public Optional<Output<Integer>> lostAssociationFromAlb() {
@@ -107,14 +107,14 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 监听器转发规则的端口号。
+     * Listener forwarding rule port number
      * 
      */
     @Import(name="port")
     private @Nullable Output<String> port;
 
     /**
-     * @return 监听器转发规则的端口号。
+     * @return Listener forwarding rule port number
      * 
      */
     public Optional<Output<String>> port() {
@@ -122,14 +122,14 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 监听器转发规则的协议类型。
+     * Protocol type for listener forwarding rules.
      * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
-     * @return 监听器转发规则的协议类型。
+     * @return Protocol type for listener forwarding rules.
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -168,7 +168,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param accessProtocol 接入协议类型。
+         * @param accessProtocol Access protocol type
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param accessProtocol 接入协议类型。
+         * @param accessProtocol Access protocol type
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param defenceMode 防护模式。
+         * @param defenceMode Protection mode
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param defenceMode 防护模式。
+         * @param defenceMode Protection mode
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param instanceId 负载均衡实例 ID。
+         * @param instanceId Load balancing instance ID.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param instanceId 负载均衡实例 ID。
+         * @param instanceId Load balancing instance ID.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param instanceName 负载均衡实例名称。
+         * @param instanceName Load balancer instance name.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param instanceName 负载均衡实例名称。
+         * @param instanceName Load balancer instance name.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param listenerId 负载均衡监听器 ID。
+         * @param listenerId Load balancing listener ID.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param listenerId 负载均衡监听器 ID。
+         * @param listenerId Load balancing listener ID.
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param lostAssociationFromAlb 是否从 ALB 中丢失关联。
+         * @param lostAssociationFromAlb Disassociated from ALB
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param lostAssociationFromAlb 是否从 ALB 中丢失关联。
+         * @param lostAssociationFromAlb Disassociated from ALB
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param port 监听器转发规则的端口号。
+         * @param port Listener forwarding rule port number
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param port 监听器转发规则的端口号。
+         * @param port Listener forwarding rule port number
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param protocol 监听器转发规则的协议类型。
+         * @param protocol Protocol type for listener forwarding rules.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class DomainCloudAccessConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param protocol 监听器转发规则的协议类型。
+         * @param protocol Protocol type for listener forwarding rules.
          * 
          * @return builder
          * 

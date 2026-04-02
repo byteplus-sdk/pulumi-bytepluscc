@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 云数据库 MySQL 版是火山引擎基于开源数据库 MySQL 打造的弹性、可靠的在线关系型数据库服务。 MySQL 实例使用云原生方式部署，结合本地 SSD 存储类型，提供高性能读写能力；完全兼容 MySQL 引擎，并提供实例管理、备份恢复、日志管理、监控告警、数据迁移等全套解决方案，帮助企业简化繁杂的数据库管理和运维任务，使企业有更多的时间与资源聚焦于自己的核心业务。
+ * Volcano Engine Cloud Database MySQL Edition is an elastic and reliable online relational database service built on the open-source MySQL database. MySQL instances are deployed using cloud-native methods and local SSD storage, delivering high-performance read and write capabilities. The service is fully compatible with the MySQL engine and offers a complete suite of solutions, including instance management, backup and recovery, log management, monitoring and alerts, and data migration. This helps enterprises simplify complex database management and operations, allowing them to focus more time and resources on their core business.
  *
  * ## Import
  *
@@ -45,267 +45,267 @@ export class Instance extends pulumi.CustomResource {
 
     public /*out*/ readonly addressObjects!: pulumi.Output<outputs.rdsmysql.InstanceAddressObject[]>;
     /**
-     * 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+     * Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
      */
     public readonly allowListIds!: pulumi.Output<string[]>;
     /**
-     * 白名单版本。
+     * Allowlist version
      */
     public /*out*/ readonly allowListVersion!: pulumi.Output<string>;
     /**
-     * 自动扩容配置。
+     * Auto scaling configuration
      */
     public readonly autoStorageScalingConfig!: pulumi.Output<outputs.rdsmysql.InstanceAutoStorageScalingConfig>;
     /**
-     * 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+     * Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
      */
     public readonly autoUpgradeMinorVersion!: pulumi.Output<string>;
     /**
-     * 备份中审计日志使用的空间。
+     * Space used by audit logs in backup.
      */
     public /*out*/ readonly backupAuditLogSize!: pulumi.Output<number>;
     /**
-     * 备份中 Binlog 日志使用的空间。
+     * Space used by binlog logs in backup.
      */
     public /*out*/ readonly backupBinLogSize!: pulumi.Output<number>;
     /**
-     * 备份中数据使用的空间。
+     * Space used by data in backup.
      */
     public /*out*/ readonly backupDataSize!: pulumi.Output<number>;
     /**
-     * 备份中错误日志使用的空间。
+     * Space used by error logs in backups.
      */
     public /*out*/ readonly backupErrorLogSize!: pulumi.Output<number>;
     /**
-     * 免费的备份存储空间，单位为 GB。
+     * Free backup storage space, in GB
      */
     public /*out*/ readonly backupFreeQuotaSize!: pulumi.Output<number>;
     /**
-     * 备份中日志使用的空间。
+     * Space used by logs in backups.
      */
     public /*out*/ readonly backupLogSize!: pulumi.Output<number>;
     /**
-     * 备份中慢日志使用的空间。
+     * Space used by slow logs in backups.
      */
     public /*out*/ readonly backupSlowLogSize!: pulumi.Output<number>;
     /**
-     * 实例的备份已使用的空间，单位为 GB。
+     * Backup space used by the instance, in GB
      */
     public /*out*/ readonly backupUse!: pulumi.Output<number>;
     /**
-     * 基础备份中 Binlog 日志使用的空间。
+     * Space used by Binlog logs in basic backups.
      */
     public /*out*/ readonly basicBackupBinlogSize!: pulumi.Output<number>;
     /**
-     * 基础备份中数据使用的空间。
+     * Space used by data in the base backup
      */
     public /*out*/ readonly basicBackupDataSize!: pulumi.Output<number>;
     /**
-     * 付费方式。
+     * Billing method
      */
     public readonly chargeDetail!: pulumi.Output<outputs.rdsmysql.InstanceChargeDetail>;
     /**
-     * 实例数据库代理服务的 CPU 核数。
+     * Number of CPU cores for the database proxy service of the instance
      */
     public readonly cpuNum!: pulumi.Output<number>;
     /**
-     * 实例创建本地时间。
+     * Instance creation local time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 实例的内核小版本。
+     * Instance kernel minor version.
      */
     public /*out*/ readonly currentKernelVersion!: pulumi.Output<string>;
     /**
-     * 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
      */
     public readonly dbEngineVersion!: pulumi.Output<string>;
     /**
-     * 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+     * Parameter template ID. Default value is the default parameter template for the database engine version
      */
     public readonly dbParamGroupId!: pulumi.Output<string>;
     /**
-     * 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+     * Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
      */
     public readonly dbTimeZone!: pulumi.Output<string>;
     /**
-     * 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+     * Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
      */
     public readonly deletionProtection!: pulumi.Output<string>;
     public /*out*/ readonly disasterRecoveryInstances!: pulumi.Output<outputs.rdsmysql.InstanceDisasterRecoveryInstance[]>;
     /**
-     * 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+     * ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
      */
     public /*out*/ readonly drDtsTaskId!: pulumi.Output<string>;
     /**
-     * 主实例与灾备实例之间同步任务的名称。
+     * Name of synchronization tasks between primary and disaster recovery instances.
      */
     public /*out*/ readonly drDtsTaskName!: pulumi.Output<string>;
     /**
-     * 主实例与灾备实例之间同步任务的状态。
+     * Status of synchronization tasks between primary and disaster recovery instances.
      */
     public /*out*/ readonly drDtsTaskStatus!: pulumi.Output<string>;
     /**
-     * 灾备实例与主实例之间的时延。
+     * Latency between the disaster recovery instance and the primary instance.
      */
     public /*out*/ readonly drSecondsBehindMaster!: pulumi.Output<number>;
     public /*out*/ readonly endpoints!: pulumi.Output<outputs.rdsmysql.InstanceEndpoint[]>;
     /**
-     * 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+     * Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      */
     public readonly globalReadOnly!: pulumi.Output<boolean>;
     /**
-     * 实例是否有灾备实例。取值：true：是。false：否。
+     * Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
      */
     public /*out*/ readonly hasDisasterRecoveryInstances!: pulumi.Output<boolean>;
     /**
-     * 实例是否处于蓝绿部署中。取值：true：是。false：否。
+     * Is the instance in blue-green deployment? Values: true: yes. false: no.
      */
     public /*out*/ readonly hasGreenInstance!: pulumi.Output<boolean>;
     /**
-     * 实例 ID。
+     * Instance ID.
      */
     public /*out*/ readonly instanceId!: pulumi.Output<string>;
     /**
-     * 实例名称。
+     * Instance name.
      */
     public readonly instanceName!: pulumi.Output<string>;
     /**
-     * 实例状态。
+     * Instance status.
      */
     public /*out*/ readonly instanceStatus!: pulumi.Output<string>;
     /**
-     * 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+     * Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
      */
     public readonly instanceType!: pulumi.Output<string>;
     /**
-     * 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+     * Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
      */
     public readonly lowerCaseTableNames!: pulumi.Output<string>;
     /**
-     * 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+     * Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
      */
     public readonly maintenanceWindow!: pulumi.Output<outputs.rdsmysql.InstanceMaintenanceWindow>;
     /**
-     * 主实例的 ID。
+     * Primary instance ID
      */
     public /*out*/ readonly masterInstanceId!: pulumi.Output<string>;
     /**
-     * 主实例的名称。
+     * Primary instance name.
      */
     public /*out*/ readonly masterInstanceName!: pulumi.Output<string>;
     /**
-     * 内存大小。单位：GB。
+     * Memory size. Unit: GB.
      */
     public /*out*/ readonly memory!: pulumi.Output<number>;
     /**
-     * 实例主节点 CPU 使用率近一分钟的平均值。
+     * Average CPU usage of the primary node in the instance over the past minute.
      */
     public /*out*/ readonly nodeCpuUsedPercentage!: pulumi.Output<number>;
     /**
-     * 实例主节点内存使用率近一分钟的平均值。
+     * Average memory usage of the primary node over the past minute
      */
     public /*out*/ readonly nodeMemoryUsedPercentage!: pulumi.Output<number>;
     /**
-     * 节点数量。
+     * Number of nodes.
      */
     public /*out*/ readonly nodeNumber!: pulumi.Output<string>;
     /**
-     * 实例主节点磁盘使用率近一分钟的平均值。
+     * Average disk usage of the primary node over the past minute
      */
     public /*out*/ readonly nodeSpaceUsedPercentage!: pulumi.Output<number>;
     /**
-     * 节点规格。
+     * Node specifications.
      */
     public readonly nodeSpec!: pulumi.Output<string>;
     public readonly nodes!: pulumi.Output<outputs.rdsmysql.InstanceNode[]>;
     /**
-     * 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+     * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      */
     public readonly port!: pulumi.Output<number>;
     /**
-     * 所属项目。
+     * Project.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * proxy信息
+     * proxy information
      */
     public /*out*/ readonly proxyDetail!: pulumi.Output<outputs.rdsmysql.InstanceProxyDetail>;
     /**
-     * 实例存储空间中审计日志使用的空间。
+     * Space used by audit logs in instance storage
      */
     public /*out*/ readonly storageAuditLogSize!: pulumi.Output<number>;
     /**
-     * 实例存储空间中 Binlog 使用的空间。
+     * Binlog space usage in the instance storage
      */
     public /*out*/ readonly storageBinLogSize!: pulumi.Output<number>;
     /**
-     * 实例存储空间中数据使用的空间。
+     * Space used by data in instance storage.
      */
     public /*out*/ readonly storageDataSize!: pulumi.Output<number>;
     /**
-     * 实例存储空间中错误日志使用的空间。
+     * Space used by error logs in instance storage.
      */
     public /*out*/ readonly storageErrorLogSize!: pulumi.Output<number>;
     /**
-     * 实例存储空间中日志使用的空间。
+     * Space used by logs in the instance storage
      */
     public /*out*/ readonly storageLogSize!: pulumi.Output<number>;
     /**
-     * 实例存储空间中慢日志使用的空间。
+     * Space used by slow logs in instance storage
      */
     public /*out*/ readonly storageSlowLogSize!: pulumi.Output<number>;
     /**
-     * 实例总存储空间。单位为 GB。
+     * Total storage space of the instance, in GB
      */
     public readonly storageSpace!: pulumi.Output<number>;
     /**
-     * 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+     * Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
      */
     public readonly storageType!: pulumi.Output<string>;
     /**
-     * 实例已使用用存储空间，单位为 GB。
+     * Storage space used by the instance, in GB
      */
     public /*out*/ readonly storageUse!: pulumi.Output<number>;
     /**
-     * 子网 ID。
+     * Subnet ID.
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
-     * 高权限账号名称。不传此参数默认不创建高权限账号。
+     * High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
      */
     public readonly superAccountName!: pulumi.Output<string>;
     /**
-     * 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+     * Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
      */
     public readonly superAccountPassword!: pulumi.Output<string>;
     /**
-     * 数据同步方式：SemiSync：半同步。Async：异步。
+     * Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
      */
     public readonly syncMode!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.rdsmysql.InstanceTag[]>;
     /**
-     * 时区。
+     * Time zone
      */
     public /*out*/ readonly timeZone!: pulumi.Output<string>;
     /**
-     * 实例更新本地时间。
+     * Instance updates local time.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * CPU 大小。例如：1 表示 1U。
+     * CPU size. For example: 1 means 1U.
      */
     public /*out*/ readonly vcpu!: pulumi.Output<number>;
     /**
-     * 专有网络（VPC） ID。
+     * VPC (Virtual Private Cloud) ID.
      */
     public readonly vpcId!: pulumi.Output<string>;
     /**
-     * 实例主节点所在可用区。
+     * Availability zone of the instance's primary node.
      */
     public /*out*/ readonly zoneId!: pulumi.Output<string>;
     /**
-     * 实例各节点所在的可用区列表。
+     * List of availability zones for each node in the instance.
      */
     public /*out*/ readonly zoneIds!: pulumi.Output<string[]>;
 
@@ -497,267 +497,267 @@ export class Instance extends pulumi.CustomResource {
 export interface InstanceState {
     addressObjects?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceAddressObject>[]>;
     /**
-     * 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+     * Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
      */
     allowListIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 白名单版本。
+     * Allowlist version
      */
     allowListVersion?: pulumi.Input<string>;
     /**
-     * 自动扩容配置。
+     * Auto scaling configuration
      */
     autoStorageScalingConfig?: pulumi.Input<inputs.rdsmysql.InstanceAutoStorageScalingConfig>;
     /**
-     * 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+     * Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
      */
     autoUpgradeMinorVersion?: pulumi.Input<string>;
     /**
-     * 备份中审计日志使用的空间。
+     * Space used by audit logs in backup.
      */
     backupAuditLogSize?: pulumi.Input<number>;
     /**
-     * 备份中 Binlog 日志使用的空间。
+     * Space used by binlog logs in backup.
      */
     backupBinLogSize?: pulumi.Input<number>;
     /**
-     * 备份中数据使用的空间。
+     * Space used by data in backup.
      */
     backupDataSize?: pulumi.Input<number>;
     /**
-     * 备份中错误日志使用的空间。
+     * Space used by error logs in backups.
      */
     backupErrorLogSize?: pulumi.Input<number>;
     /**
-     * 免费的备份存储空间，单位为 GB。
+     * Free backup storage space, in GB
      */
     backupFreeQuotaSize?: pulumi.Input<number>;
     /**
-     * 备份中日志使用的空间。
+     * Space used by logs in backups.
      */
     backupLogSize?: pulumi.Input<number>;
     /**
-     * 备份中慢日志使用的空间。
+     * Space used by slow logs in backups.
      */
     backupSlowLogSize?: pulumi.Input<number>;
     /**
-     * 实例的备份已使用的空间，单位为 GB。
+     * Backup space used by the instance, in GB
      */
     backupUse?: pulumi.Input<number>;
     /**
-     * 基础备份中 Binlog 日志使用的空间。
+     * Space used by Binlog logs in basic backups.
      */
     basicBackupBinlogSize?: pulumi.Input<number>;
     /**
-     * 基础备份中数据使用的空间。
+     * Space used by data in the base backup
      */
     basicBackupDataSize?: pulumi.Input<number>;
     /**
-     * 付费方式。
+     * Billing method
      */
     chargeDetail?: pulumi.Input<inputs.rdsmysql.InstanceChargeDetail>;
     /**
-     * 实例数据库代理服务的 CPU 核数。
+     * Number of CPU cores for the database proxy service of the instance
      */
     cpuNum?: pulumi.Input<number>;
     /**
-     * 实例创建本地时间。
+     * Instance creation local time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 实例的内核小版本。
+     * Instance kernel minor version.
      */
     currentKernelVersion?: pulumi.Input<string>;
     /**
-     * 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
      */
     dbEngineVersion?: pulumi.Input<string>;
     /**
-     * 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+     * Parameter template ID. Default value is the default parameter template for the database engine version
      */
     dbParamGroupId?: pulumi.Input<string>;
     /**
-     * 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+     * Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
      */
     dbTimeZone?: pulumi.Input<string>;
     /**
-     * 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+     * Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
      */
     deletionProtection?: pulumi.Input<string>;
     disasterRecoveryInstances?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceDisasterRecoveryInstance>[]>;
     /**
-     * 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+     * ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
      */
     drDtsTaskId?: pulumi.Input<string>;
     /**
-     * 主实例与灾备实例之间同步任务的名称。
+     * Name of synchronization tasks between primary and disaster recovery instances.
      */
     drDtsTaskName?: pulumi.Input<string>;
     /**
-     * 主实例与灾备实例之间同步任务的状态。
+     * Status of synchronization tasks between primary and disaster recovery instances.
      */
     drDtsTaskStatus?: pulumi.Input<string>;
     /**
-     * 灾备实例与主实例之间的时延。
+     * Latency between the disaster recovery instance and the primary instance.
      */
     drSecondsBehindMaster?: pulumi.Input<number>;
     endpoints?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceEndpoint>[]>;
     /**
-     * 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+     * Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      */
     globalReadOnly?: pulumi.Input<boolean>;
     /**
-     * 实例是否有灾备实例。取值：true：是。false：否。
+     * Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
      */
     hasDisasterRecoveryInstances?: pulumi.Input<boolean>;
     /**
-     * 实例是否处于蓝绿部署中。取值：true：是。false：否。
+     * Is the instance in blue-green deployment? Values: true: yes. false: no.
      */
     hasGreenInstance?: pulumi.Input<boolean>;
     /**
-     * 实例 ID。
+     * Instance ID.
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 实例名称。
+     * Instance name.
      */
     instanceName?: pulumi.Input<string>;
     /**
-     * 实例状态。
+     * Instance status.
      */
     instanceStatus?: pulumi.Input<string>;
     /**
-     * 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+     * Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
      */
     instanceType?: pulumi.Input<string>;
     /**
-     * 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+     * Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
      */
     lowerCaseTableNames?: pulumi.Input<string>;
     /**
-     * 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+     * Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
      */
     maintenanceWindow?: pulumi.Input<inputs.rdsmysql.InstanceMaintenanceWindow>;
     /**
-     * 主实例的 ID。
+     * Primary instance ID
      */
     masterInstanceId?: pulumi.Input<string>;
     /**
-     * 主实例的名称。
+     * Primary instance name.
      */
     masterInstanceName?: pulumi.Input<string>;
     /**
-     * 内存大小。单位：GB。
+     * Memory size. Unit: GB.
      */
     memory?: pulumi.Input<number>;
     /**
-     * 实例主节点 CPU 使用率近一分钟的平均值。
+     * Average CPU usage of the primary node in the instance over the past minute.
      */
     nodeCpuUsedPercentage?: pulumi.Input<number>;
     /**
-     * 实例主节点内存使用率近一分钟的平均值。
+     * Average memory usage of the primary node over the past minute
      */
     nodeMemoryUsedPercentage?: pulumi.Input<number>;
     /**
-     * 节点数量。
+     * Number of nodes.
      */
     nodeNumber?: pulumi.Input<string>;
     /**
-     * 实例主节点磁盘使用率近一分钟的平均值。
+     * Average disk usage of the primary node over the past minute
      */
     nodeSpaceUsedPercentage?: pulumi.Input<number>;
     /**
-     * 节点规格。
+     * Node specifications.
      */
     nodeSpec?: pulumi.Input<string>;
     nodes?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceNode>[]>;
     /**
-     * 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+     * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      */
     port?: pulumi.Input<number>;
     /**
-     * 所属项目。
+     * Project.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * proxy信息
+     * proxy information
      */
     proxyDetail?: pulumi.Input<inputs.rdsmysql.InstanceProxyDetail>;
     /**
-     * 实例存储空间中审计日志使用的空间。
+     * Space used by audit logs in instance storage
      */
     storageAuditLogSize?: pulumi.Input<number>;
     /**
-     * 实例存储空间中 Binlog 使用的空间。
+     * Binlog space usage in the instance storage
      */
     storageBinLogSize?: pulumi.Input<number>;
     /**
-     * 实例存储空间中数据使用的空间。
+     * Space used by data in instance storage.
      */
     storageDataSize?: pulumi.Input<number>;
     /**
-     * 实例存储空间中错误日志使用的空间。
+     * Space used by error logs in instance storage.
      */
     storageErrorLogSize?: pulumi.Input<number>;
     /**
-     * 实例存储空间中日志使用的空间。
+     * Space used by logs in the instance storage
      */
     storageLogSize?: pulumi.Input<number>;
     /**
-     * 实例存储空间中慢日志使用的空间。
+     * Space used by slow logs in instance storage
      */
     storageSlowLogSize?: pulumi.Input<number>;
     /**
-     * 实例总存储空间。单位为 GB。
+     * Total storage space of the instance, in GB
      */
     storageSpace?: pulumi.Input<number>;
     /**
-     * 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+     * Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
      */
     storageType?: pulumi.Input<string>;
     /**
-     * 实例已使用用存储空间，单位为 GB。
+     * Storage space used by the instance, in GB
      */
     storageUse?: pulumi.Input<number>;
     /**
-     * 子网 ID。
+     * Subnet ID.
      */
     subnetId?: pulumi.Input<string>;
     /**
-     * 高权限账号名称。不传此参数默认不创建高权限账号。
+     * High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
      */
     superAccountName?: pulumi.Input<string>;
     /**
-     * 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+     * Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
      */
     superAccountPassword?: pulumi.Input<string>;
     /**
-     * 数据同步方式：SemiSync：半同步。Async：异步。
+     * Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
      */
     syncMode?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceTag>[]>;
     /**
-     * 时区。
+     * Time zone
      */
     timeZone?: pulumi.Input<string>;
     /**
-     * 实例更新本地时间。
+     * Instance updates local time.
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * CPU 大小。例如：1 表示 1U。
+     * CPU size. For example: 1 means 1U.
      */
     vcpu?: pulumi.Input<number>;
     /**
-     * 专有网络（VPC） ID。
+     * VPC (Virtual Private Cloud) ID.
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * 实例主节点所在可用区。
+     * Availability zone of the instance's primary node.
      */
     zoneId?: pulumi.Input<string>;
     /**
-     * 实例各节点所在的可用区列表。
+     * List of availability zones for each node in the instance.
      */
     zoneIds?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -767,101 +767,101 @@ export interface InstanceState {
  */
 export interface InstanceArgs {
     /**
-     * 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+     * Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
      */
     allowListIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 自动扩容配置。
+     * Auto scaling configuration
      */
     autoStorageScalingConfig?: pulumi.Input<inputs.rdsmysql.InstanceAutoStorageScalingConfig>;
     /**
-     * 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+     * Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
      */
     autoUpgradeMinorVersion?: pulumi.Input<string>;
     /**
-     * 付费方式。
+     * Billing method
      */
     chargeDetail: pulumi.Input<inputs.rdsmysql.InstanceChargeDetail>;
     /**
-     * 实例数据库代理服务的 CPU 核数。
+     * Number of CPU cores for the database proxy service of the instance
      */
     cpuNum?: pulumi.Input<number>;
     /**
-     * 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
      */
     dbEngineVersion: pulumi.Input<string>;
     /**
-     * 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+     * Parameter template ID. Default value is the default parameter template for the database engine version
      */
     dbParamGroupId?: pulumi.Input<string>;
     /**
-     * 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+     * Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
      */
     dbTimeZone?: pulumi.Input<string>;
     /**
-     * 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+     * Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
      */
     deletionProtection?: pulumi.Input<string>;
     /**
-     * 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+     * Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      */
     globalReadOnly?: pulumi.Input<boolean>;
     /**
-     * 实例名称。
+     * Instance name.
      */
     instanceName?: pulumi.Input<string>;
     /**
-     * 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+     * Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
      */
     instanceType?: pulumi.Input<string>;
     /**
-     * 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+     * Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
      */
     lowerCaseTableNames?: pulumi.Input<string>;
     /**
-     * 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+     * Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
      */
     maintenanceWindow?: pulumi.Input<inputs.rdsmysql.InstanceMaintenanceWindow>;
     /**
-     * 节点规格。
+     * Node specifications.
      */
     nodeSpec?: pulumi.Input<string>;
     nodes: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceNode>[]>;
     /**
-     * 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+     * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      */
     port?: pulumi.Input<number>;
     /**
-     * 所属项目。
+     * Project.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 实例总存储空间。单位为 GB。
+     * Total storage space of the instance, in GB
      */
     storageSpace: pulumi.Input<number>;
     /**
-     * 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+     * Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
      */
     storageType: pulumi.Input<string>;
     /**
-     * 子网 ID。
+     * Subnet ID.
      */
     subnetId: pulumi.Input<string>;
     /**
-     * 高权限账号名称。不传此参数默认不创建高权限账号。
+     * High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
      */
     superAccountName?: pulumi.Input<string>;
     /**
-     * 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+     * Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
      */
     superAccountPassword?: pulumi.Input<string>;
     /**
-     * 数据同步方式：SemiSync：半同步。Async：异步。
+     * Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
      */
     syncMode?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceTag>[]>;
     /**
-     * 专有网络（VPC） ID。
+     * VPC (Virtual Private Cloud) ID.
      */
     vpcId: pulumi.Input<string>;
 }

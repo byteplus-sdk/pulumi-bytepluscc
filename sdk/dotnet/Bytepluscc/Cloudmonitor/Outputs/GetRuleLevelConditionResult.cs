@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
     public sealed class GetRuleLevelConditionResult
     {
         /// <summary>
-        /// 告警分级配置。
+        /// Alert severity configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRuleLevelConditionConditionResult> Conditions;
         /// <summary>
-        /// 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+        /// Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
         /// </summary>
         public readonly string Level;
 

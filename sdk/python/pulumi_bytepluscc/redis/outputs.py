@@ -37,8 +37,8 @@ class InstanceCapacity(dict):
                  total: Optional[builtins.int] = None,
                  used: Optional[builtins.int] = None):
         """
-        :param builtins.int total: 当前实例的内存总容量。单位：MiB。
-        :param builtins.int used: 当前实例已用容量。单位：MiB。
+        :param builtins.int total: Total memory capacity of the current instance. Unit: MiB.
+        :param builtins.int used: Used capacity of the current instance. Unit: MiB.
         """
         if total is not None:
             pulumi.set(__self__, "total", total)
@@ -49,7 +49,7 @@ class InstanceCapacity(dict):
     @pulumi.getter
     def total(self) -> Optional[builtins.int]:
         """
-        当前实例的内存总容量。单位：MiB。
+        Total memory capacity of the current instance. Unit: MiB.
         """
         return pulumi.get(self, "total")
 
@@ -57,7 +57,7 @@ class InstanceCapacity(dict):
     @pulumi.getter
     def used(self) -> Optional[builtins.int]:
         """
-        当前实例已用容量。单位：MiB。
+        Used capacity of the current instance. Unit: MiB.
         """
         return pulumi.get(self, "used")
 
@@ -67,7 +67,7 @@ class InstanceConfigureNode(dict):
     def __init__(__self__, *,
                  az: Optional[builtins.str] = None):
         """
-        :param builtins.str az: 每个节点所属的可用区。
+        :param builtins.str az: The availability zone each node belongs to.
         """
         if az is not None:
             pulumi.set(__self__, "az", az)
@@ -76,7 +76,7 @@ class InstanceConfigureNode(dict):
     @pulumi.getter
     def az(self) -> Optional[builtins.str]:
         """
-        每个节点所属的可用区。
+        The availability zone each node belongs to.
         """
         return pulumi.get(self, "az")
 
@@ -109,8 +109,8 @@ class InstanceInstanceShard(dict):
                  server_nodes: Optional[Sequence['outputs.InstanceInstanceShardServerNode']] = None,
                  shard_id: Optional[builtins.str] = None):
         """
-        :param builtins.int node_number: 分片中的节点数量
-        :param builtins.str shard_id: 分片 ID。
+        :param builtins.int node_number: Number of nodes in each shard
+        :param builtins.str shard_id: Shard ID.
         """
         if node_number is not None:
             pulumi.set(__self__, "node_number", node_number)
@@ -123,7 +123,7 @@ class InstanceInstanceShard(dict):
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> Optional[builtins.int]:
         """
-        分片中的节点数量
+        Number of nodes in each shard
         """
         return pulumi.get(self, "node_number")
 
@@ -136,7 +136,7 @@ class InstanceInstanceShard(dict):
     @pulumi.getter(name="shardId")
     def shard_id(self) -> Optional[builtins.str]:
         """
-        分片 ID。
+        Shard ID.
         """
         return pulumi.get(self, "shard_id")
 
@@ -170,10 +170,10 @@ class InstanceInstanceShardServerNode(dict):
                  status: Optional[builtins.str] = None,
                  zone_id: Optional[builtins.str] = None):
         """
-        :param builtins.str current_role: 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
-        :param builtins.str node_id: 节点 ID。
-        :param builtins.str status: 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
-        :param builtins.str zone_id: 节点所在的可用区。
+        :param builtins.str current_role: Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
+        :param builtins.str node_id: Node ID.
+        :param builtins.str status: Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
+        :param builtins.str zone_id: Availability zone where the node is located.
         """
         if current_role is not None:
             pulumi.set(__self__, "current_role", current_role)
@@ -188,7 +188,7 @@ class InstanceInstanceShardServerNode(dict):
     @pulumi.getter(name="currentRole")
     def current_role(self) -> Optional[builtins.str]:
         """
-        节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+        Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
         """
         return pulumi.get(self, "current_role")
 
@@ -196,7 +196,7 @@ class InstanceInstanceShardServerNode(dict):
     @pulumi.getter(name="nodeId")
     def node_id(self) -> Optional[builtins.str]:
         """
-        节点 ID。
+        Node ID.
         """
         return pulumi.get(self, "node_id")
 
@@ -204,7 +204,7 @@ class InstanceInstanceShardServerNode(dict):
     @pulumi.getter
     def status(self) -> Optional[builtins.str]:
         """
-        节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+        Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
         """
         return pulumi.get(self, "status")
 
@@ -212,7 +212,7 @@ class InstanceInstanceShardServerNode(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[builtins.str]:
         """
-        节点所在的可用区。
+        Availability zone where the node is located.
         """
         return pulumi.get(self, "zone_id")
 
@@ -223,8 +223,8 @@ class InstanceTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -235,7 +235,7 @@ class InstanceTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -243,7 +243,7 @@ class InstanceTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -279,12 +279,12 @@ class InstanceVisitAddr(dict):
                  vi_pv6: Optional[builtins.str] = None,
                  vip: Optional[builtins.str] = None):
         """
-        :param builtins.str addr_type: 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
-        :param builtins.str address: IP 地址或者域名。
-        :param builtins.str eip_id: 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
-        :param builtins.str port: 端口号。
-        :param builtins.str vi_pv6: 连接地址所对应的 IPv6 地址。
-        :param builtins.str vip: 连接地址所对应的 IPv4 地址。
+        :param builtins.str addr_type: Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
+        :param builtins.str address: IP address or domain name.
+        :param builtins.str eip_id: EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
+        :param builtins.str port: Port number.
+        :param builtins.str vi_pv6: IPv6 address corresponding to the connection address.
+        :param builtins.str vip: The IPv4 address corresponding to the connection address.
         """
         if addr_type is not None:
             pulumi.set(__self__, "addr_type", addr_type)
@@ -303,7 +303,7 @@ class InstanceVisitAddr(dict):
     @pulumi.getter(name="addrType")
     def addr_type(self) -> Optional[builtins.str]:
         """
-        连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+        Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
         """
         return pulumi.get(self, "addr_type")
 
@@ -311,7 +311,7 @@ class InstanceVisitAddr(dict):
     @pulumi.getter
     def address(self) -> Optional[builtins.str]:
         """
-        IP 地址或者域名。
+        IP address or domain name.
         """
         return pulumi.get(self, "address")
 
@@ -319,7 +319,7 @@ class InstanceVisitAddr(dict):
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[builtins.str]:
         """
-        实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+        EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
         """
         return pulumi.get(self, "eip_id")
 
@@ -327,7 +327,7 @@ class InstanceVisitAddr(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.str]:
         """
-        端口号。
+        Port number.
         """
         return pulumi.get(self, "port")
 
@@ -335,7 +335,7 @@ class InstanceVisitAddr(dict):
     @pulumi.getter(name="viPv6")
     def vi_pv6(self) -> Optional[builtins.str]:
         """
-        连接地址所对应的 IPv6 地址。
+        IPv6 address corresponding to the connection address.
         """
         return pulumi.get(self, "vi_pv6")
 
@@ -343,7 +343,7 @@ class InstanceVisitAddr(dict):
     @pulumi.getter
     def vip(self) -> Optional[builtins.str]:
         """
-        连接地址所对应的 IPv4 地址。
+        The IPv4 address corresponding to the connection address.
         """
         return pulumi.get(self, "vip")
 
@@ -354,8 +354,8 @@ class GetInstanceCapacityResult(dict):
                  total: builtins.int,
                  used: builtins.int):
         """
-        :param builtins.int total: 当前实例的内存总容量。单位：MiB。
-        :param builtins.int used: 当前实例已用容量。单位：MiB。
+        :param builtins.int total: Total memory capacity of the current instance. Unit: MiB.
+        :param builtins.int used: Used capacity of the current instance. Unit: MiB.
         """
         pulumi.set(__self__, "total", total)
         pulumi.set(__self__, "used", used)
@@ -364,7 +364,7 @@ class GetInstanceCapacityResult(dict):
     @pulumi.getter
     def total(self) -> builtins.int:
         """
-        当前实例的内存总容量。单位：MiB。
+        Total memory capacity of the current instance. Unit: MiB.
         """
         return pulumi.get(self, "total")
 
@@ -372,7 +372,7 @@ class GetInstanceCapacityResult(dict):
     @pulumi.getter
     def used(self) -> builtins.int:
         """
-        当前实例已用容量。单位：MiB。
+        Used capacity of the current instance. Unit: MiB.
         """
         return pulumi.get(self, "used")
 
@@ -382,7 +382,7 @@ class GetInstanceConfigureNodeResult(dict):
     def __init__(__self__, *,
                  az: builtins.str):
         """
-        :param builtins.str az: 每个节点所属的可用区。
+        :param builtins.str az: The availability zone each node belongs to.
         """
         pulumi.set(__self__, "az", az)
 
@@ -390,7 +390,7 @@ class GetInstanceConfigureNodeResult(dict):
     @pulumi.getter
     def az(self) -> builtins.str:
         """
-        每个节点所属的可用区。
+        The availability zone each node belongs to.
         """
         return pulumi.get(self, "az")
 
@@ -402,9 +402,9 @@ class GetInstanceInstanceShardResult(dict):
                  server_nodes: Sequence['outputs.GetInstanceInstanceShardServerNodeResult'],
                  shard_id: builtins.str):
         """
-        :param builtins.int node_number: 分片中的节点数量
-        :param Sequence['GetInstanceInstanceShardServerNodeArgs'] server_nodes: 分片中所有 Server 节点的详情列表。
-        :param builtins.str shard_id: 分片 ID。
+        :param builtins.int node_number: Number of nodes in each shard
+        :param Sequence['GetInstanceInstanceShardServerNodeArgs'] server_nodes: Detailed list of all Server nodes in the shard.
+        :param builtins.str shard_id: Shard ID.
         """
         pulumi.set(__self__, "node_number", node_number)
         pulumi.set(__self__, "server_nodes", server_nodes)
@@ -414,7 +414,7 @@ class GetInstanceInstanceShardResult(dict):
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> builtins.int:
         """
-        分片中的节点数量
+        Number of nodes in each shard
         """
         return pulumi.get(self, "node_number")
 
@@ -422,7 +422,7 @@ class GetInstanceInstanceShardResult(dict):
     @pulumi.getter(name="serverNodes")
     def server_nodes(self) -> Sequence['outputs.GetInstanceInstanceShardServerNodeResult']:
         """
-        分片中所有 Server 节点的详情列表。
+        Detailed list of all Server nodes in the shard.
         """
         return pulumi.get(self, "server_nodes")
 
@@ -430,7 +430,7 @@ class GetInstanceInstanceShardResult(dict):
     @pulumi.getter(name="shardId")
     def shard_id(self) -> builtins.str:
         """
-        分片 ID。
+        Shard ID.
         """
         return pulumi.get(self, "shard_id")
 
@@ -443,10 +443,10 @@ class GetInstanceInstanceShardServerNodeResult(dict):
                  status: builtins.str,
                  zone_id: builtins.str):
         """
-        :param builtins.str current_role: 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
-        :param builtins.str node_id: 节点 ID。
-        :param builtins.str status: 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
-        :param builtins.str zone_id: 节点所在的可用区。
+        :param builtins.str current_role: Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
+        :param builtins.str node_id: Node ID.
+        :param builtins.str status: Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
+        :param builtins.str zone_id: Availability zone where the node is located.
         """
         pulumi.set(__self__, "current_role", current_role)
         pulumi.set(__self__, "node_id", node_id)
@@ -457,7 +457,7 @@ class GetInstanceInstanceShardServerNodeResult(dict):
     @pulumi.getter(name="currentRole")
     def current_role(self) -> builtins.str:
         """
-        节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+        Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
         """
         return pulumi.get(self, "current_role")
 
@@ -465,7 +465,7 @@ class GetInstanceInstanceShardServerNodeResult(dict):
     @pulumi.getter(name="nodeId")
     def node_id(self) -> builtins.str:
         """
-        节点 ID。
+        Node ID.
         """
         return pulumi.get(self, "node_id")
 
@@ -473,7 +473,7 @@ class GetInstanceInstanceShardServerNodeResult(dict):
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+        Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
         """
         return pulumi.get(self, "status")
 
@@ -481,7 +481,7 @@ class GetInstanceInstanceShardServerNodeResult(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        节点所在的可用区。
+        Availability zone where the node is located.
         """
         return pulumi.get(self, "zone_id")
 
@@ -492,8 +492,8 @@ class GetInstanceTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -502,7 +502,7 @@ class GetInstanceTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -510,7 +510,7 @@ class GetInstanceTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -525,12 +525,12 @@ class GetInstanceVisitAddrResult(dict):
                  vi_pv6: builtins.str,
                  vip: builtins.str):
         """
-        :param builtins.str addr_type: 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
-        :param builtins.str address: IP 地址或者域名。
-        :param builtins.str eip_id: 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
-        :param builtins.str port: 端口号。
-        :param builtins.str vi_pv6: 连接地址所对应的 IPv6 地址。
-        :param builtins.str vip: 连接地址所对应的 IPv4 地址。
+        :param builtins.str addr_type: Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
+        :param builtins.str address: IP address or domain name.
+        :param builtins.str eip_id: EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
+        :param builtins.str port: Port number.
+        :param builtins.str vi_pv6: IPv6 address corresponding to the connection address.
+        :param builtins.str vip: The IPv4 address corresponding to the connection address.
         """
         pulumi.set(__self__, "addr_type", addr_type)
         pulumi.set(__self__, "address", address)
@@ -543,7 +543,7 @@ class GetInstanceVisitAddrResult(dict):
     @pulumi.getter(name="addrType")
     def addr_type(self) -> builtins.str:
         """
-        连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+        Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
         """
         return pulumi.get(self, "addr_type")
 
@@ -551,7 +551,7 @@ class GetInstanceVisitAddrResult(dict):
     @pulumi.getter
     def address(self) -> builtins.str:
         """
-        IP 地址或者域名。
+        IP address or domain name.
         """
         return pulumi.get(self, "address")
 
@@ -559,7 +559,7 @@ class GetInstanceVisitAddrResult(dict):
     @pulumi.getter(name="eipId")
     def eip_id(self) -> builtins.str:
         """
-        实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+        EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
         """
         return pulumi.get(self, "eip_id")
 
@@ -567,7 +567,7 @@ class GetInstanceVisitAddrResult(dict):
     @pulumi.getter
     def port(self) -> builtins.str:
         """
-        端口号。
+        Port number.
         """
         return pulumi.get(self, "port")
 
@@ -575,7 +575,7 @@ class GetInstanceVisitAddrResult(dict):
     @pulumi.getter(name="viPv6")
     def vi_pv6(self) -> builtins.str:
         """
-        连接地址所对应的 IPv6 地址。
+        IPv6 address corresponding to the connection address.
         """
         return pulumi.get(self, "vi_pv6")
 
@@ -583,7 +583,7 @@ class GetInstanceVisitAddrResult(dict):
     @pulumi.getter
     def vip(self) -> builtins.str:
         """
-        连接地址所对应的 IPv4 地址。
+        The IPv4 address corresponding to the connection address.
         """
         return pulumi.get(self, "vip")
 

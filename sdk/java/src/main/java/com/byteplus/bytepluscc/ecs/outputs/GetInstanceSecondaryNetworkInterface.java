@@ -13,110 +13,110 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceSecondaryNetworkInterface {
     /**
-     * @return 实例的IPv6地址数量。
+     * @return The number of IPv6 addresses for the instance.
      * 
      */
     private Integer ipv6AddressCount;
     /**
-     * @return 实例的IPv6地址。
+     * @return IPv6 address of the instance.
      * 
      */
     private List<String> ipv6Addresses;
     /**
-     * @return 实例的MAC地址。
+     * @return Instance MAC address.
      * 
      */
     private String macAddress;
     /**
-     * @return 实例的网络接口ID。
+     * @return The network interface ID of the instance.
      * 
      */
     private String networkInterfaceId;
     /**
-     * @return 实例的主IP地址。
+     * @return Instance primary IP address
      * 
      */
     private String primaryIpAddress;
     /**
-     * @return 实例的私有IP地址。
+     * @return Instance private IP address.
      * 
      */
     private List<String> privateIpAddresses;
     /**
-     * @return 实例的安全组ID。
+     * @return Instance security group ID
      * 
      */
     private List<String> securityGroupIds;
     /**
-     * @return 实例的子网ID。
+     * @return Instance subnet ID.
      * 
      */
     private String subnetId;
     /**
-     * @return 实例的VPC ID。
+     * @return VPC ID of the instance.
      * 
      */
     private String vpcId;
 
     private GetInstanceSecondaryNetworkInterface() {}
     /**
-     * @return 实例的IPv6地址数量。
+     * @return The number of IPv6 addresses for the instance.
      * 
      */
     public Integer ipv6AddressCount() {
         return this.ipv6AddressCount;
     }
     /**
-     * @return 实例的IPv6地址。
+     * @return IPv6 address of the instance.
      * 
      */
     public List<String> ipv6Addresses() {
         return this.ipv6Addresses;
     }
     /**
-     * @return 实例的MAC地址。
+     * @return Instance MAC address.
      * 
      */
     public String macAddress() {
         return this.macAddress;
     }
     /**
-     * @return 实例的网络接口ID。
+     * @return The network interface ID of the instance.
      * 
      */
     public String networkInterfaceId() {
         return this.networkInterfaceId;
     }
     /**
-     * @return 实例的主IP地址。
+     * @return Instance primary IP address
      * 
      */
     public String primaryIpAddress() {
         return this.primaryIpAddress;
     }
     /**
-     * @return 实例的私有IP地址。
+     * @return Instance private IP address.
      * 
      */
     public List<String> privateIpAddresses() {
         return this.privateIpAddresses;
     }
     /**
-     * @return 实例的安全组ID。
+     * @return Instance security group ID
      * 
      */
     public List<String> securityGroupIds() {
         return this.securityGroupIds;
     }
     /**
-     * @return 实例的子网ID。
+     * @return Instance subnet ID.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return 实例的VPC ID。
+     * @return VPC ID of the instance.
      * 
      */
     public String vpcId() {

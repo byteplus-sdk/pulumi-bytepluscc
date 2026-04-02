@@ -14,12 +14,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamLoadBalancerSettingsConsistentHashLb {
     /**
-     * @return 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+     * @return Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
      * 
      */
     private @Nullable Integer hashBalanceFactor;
     /**
-     * @return 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+     * @return Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
      * 
      */
     private @Nullable String hashKey;
@@ -29,31 +29,31 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLb {
      */
     private @Nullable UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie httpCookie;
     /**
-     * @return 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+     * @return Parameter. Supports printable ASCII characters, length: 1–256 characters
      * 
      */
     private @Nullable String httpHeaderName;
     /**
-     * @return 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+     * @return Parameter. Supports printable ASCII characters, length: 1–256 characters
      * 
      */
     private @Nullable String httpQueryParameterName;
     /**
-     * @return 源IP地址。
+     * @return Source IP address
      * 
      */
     private @Nullable String useSourceIp;
 
     private UpstreamLoadBalancerSettingsConsistentHashLb() {}
     /**
-     * @return 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+     * @return Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
      * 
      */
     public Optional<Integer> hashBalanceFactor() {
         return Optional.ofNullable(this.hashBalanceFactor);
     }
     /**
-     * @return 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+     * @return Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
      * 
      */
     public Optional<String> hashKey() {
@@ -67,21 +67,21 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLb {
         return Optional.ofNullable(this.httpCookie);
     }
     /**
-     * @return 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+     * @return Parameter. Supports printable ASCII characters, length: 1–256 characters
      * 
      */
     public Optional<String> httpHeaderName() {
         return Optional.ofNullable(this.httpHeaderName);
     }
     /**
-     * @return 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+     * @return Parameter. Supports printable ASCII characters, length: 1–256 characters
      * 
      */
     public Optional<String> httpQueryParameterName() {
         return Optional.ofNullable(this.httpQueryParameterName);
     }
     /**
-     * @return 源IP地址。
+     * @return Source IP address
      * 
      */
     public Optional<String> useSourceIp() {

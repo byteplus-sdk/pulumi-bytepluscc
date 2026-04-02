@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<string>? _insecureRegistries;
 
         /// <summary>
-        /// 指定跳过证书认证的容器镜像仓库地址。
+        /// Specify the container image repository address to skip certificate verification.
         /// </summary>
         public InputList<string> InsecureRegistries
         {

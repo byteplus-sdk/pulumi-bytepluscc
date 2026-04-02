@@ -17,47 +17,47 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceResult {
     /**
-     * @return 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+     * @return Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
      * 
      */
     private String autoRenew;
     /**
-     * @return 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+     * @return Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
      * 
      */
     private String billingPeriod;
     /**
-     * @return 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+     * @return Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
      * 
      */
     private String billingType;
     /**
-     * @return 实例的创建时间。
+     * @return Instance creation time
      * 
      */
     private String createdTime;
     /**
-     * @return 实例的描述语句。
+     * @return Instance description statement
      * 
      */
     private String description;
     /**
-     * @return 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+     * @return Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
      * 
      */
     private String eipId;
     /**
-     * @return 实例所有接入点响应数据。
+     * @return Response data for all instance endpoints
      * 
      */
     private GetInstanceEndpoints endpoints;
     /**
-     * @return 实例过期时间。
+     * @return Instance expiration time
      * 
      */
     private String expirationTime;
     /**
-     * @return 实例消费组数量上限。
+     * @return Maximum number of consumer groups per instance
      * 
      */
     private Integer groupLimit;
@@ -67,145 +67,145 @@ public final class GetInstanceResult {
      */
     private String id;
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     private String instanceId;
     /**
-     * @return 实例下所有 Topic 的消息保留时长，单位为小时。
+     * @return Message retention period for all topics under the instance, in hours
      * 
      */
     private Integer messageRetention;
     /**
-     * @return 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+     * @return Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     private String name;
     /**
-     * @return 实例分区数量上限。
+     * @return Maximum number of partitions per instance
      * 
      */
     private Integer partitionLimit;
     /**
-     * @return 实例所属项目名称。
+     * @return Project name to which the instance belongs
      * 
      */
     private String projectName;
     /**
-     * @return 实例资源标签列表。
+     * @return Instance resource tag list
      * 
      */
     private List<GetInstanceResourceTag> resourceTags;
     /**
-     * @return 实例资源统计响应数据。
+     * @return Instance resource statistics response data
      * 
      */
     private GetInstanceResources resources;
     /**
-     * @return 实例使用安全组列表。
+     * @return List of security groups used by the instance
      * 
      */
     private List<String> securityGroupIdLists;
     /**
-     * @return 实例规格。
+     * @return Instance specification
      * 
      */
     private String specification;
     /**
-     * @return 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+     * @return Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
      * 
      */
     private String status;
     /**
-     * @return 实例使用的子网列表。
+     * @return List of subnets used by the instance
      * 
      */
     private List<String> subnetIdLists;
     /**
-     * @return 实例资源标签列表。
+     * @return Instance resource tag list
      * 
      */
     private List<GetInstanceTag> tags;
     /**
-     * @return 包年包月类型实例的购买时长，单位为月。
+     * @return Purchase duration for subscription instances, in months
      * 
      */
     private Integer times;
     /**
-     * @return 实例Topic数量上限。
+     * @return Maximum number of topics per instance
      * 
      */
     private Integer topicLimit;
     /**
-     * @return 实例所在VPC ID。
+     * @return VPC ID where the instance is located
      * 
      */
     private String vpcId;
     /**
-     * @return 实例所在可用区列表。
+     * @return List of availability zones where the instance is located
      * 
      */
     private List<String> zoneIdLists;
 
     private GetInstanceResult() {}
     /**
-     * @return 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+     * @return Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
      * 
      */
     public String autoRenew() {
         return this.autoRenew;
     }
     /**
-     * @return 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+     * @return Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
      * 
      */
     public String billingPeriod() {
         return this.billingPeriod;
     }
     /**
-     * @return 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+     * @return Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
      * 
      */
     public String billingType() {
         return this.billingType;
     }
     /**
-     * @return 实例的创建时间。
+     * @return Instance creation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 实例的描述语句。
+     * @return Instance description statement
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+     * @return Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
      * 
      */
     public String eipId() {
         return this.eipId;
     }
     /**
-     * @return 实例所有接入点响应数据。
+     * @return Response data for all instance endpoints
      * 
      */
     public GetInstanceEndpoints endpoints() {
         return this.endpoints;
     }
     /**
-     * @return 实例过期时间。
+     * @return Instance expiration time
      * 
      */
     public String expirationTime() {
         return this.expirationTime;
     }
     /**
-     * @return 实例消费组数量上限。
+     * @return Maximum number of consumer groups per instance
      * 
      */
     public Integer groupLimit() {
@@ -219,112 +219,112 @@ public final class GetInstanceResult {
         return this.id;
     }
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 实例下所有 Topic 的消息保留时长，单位为小时。
+     * @return Message retention period for all topics under the instance, in hours
      * 
      */
     public Integer messageRetention() {
         return this.messageRetention;
     }
     /**
-     * @return 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+     * @return Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 实例分区数量上限。
+     * @return Maximum number of partitions per instance
      * 
      */
     public Integer partitionLimit() {
         return this.partitionLimit;
     }
     /**
-     * @return 实例所属项目名称。
+     * @return Project name to which the instance belongs
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 实例资源标签列表。
+     * @return Instance resource tag list
      * 
      */
     public List<GetInstanceResourceTag> resourceTags() {
         return this.resourceTags;
     }
     /**
-     * @return 实例资源统计响应数据。
+     * @return Instance resource statistics response data
      * 
      */
     public GetInstanceResources resources() {
         return this.resources;
     }
     /**
-     * @return 实例使用安全组列表。
+     * @return List of security groups used by the instance
      * 
      */
     public List<String> securityGroupIdLists() {
         return this.securityGroupIdLists;
     }
     /**
-     * @return 实例规格。
+     * @return Instance specification
      * 
      */
     public String specification() {
         return this.specification;
     }
     /**
-     * @return 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+     * @return Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 实例使用的子网列表。
+     * @return List of subnets used by the instance
      * 
      */
     public List<String> subnetIdLists() {
         return this.subnetIdLists;
     }
     /**
-     * @return 实例资源标签列表。
+     * @return Instance resource tag list
      * 
      */
     public List<GetInstanceTag> tags() {
         return this.tags;
     }
     /**
-     * @return 包年包月类型实例的购买时长，单位为月。
+     * @return Purchase duration for subscription instances, in months
      * 
      */
     public Integer times() {
         return this.times;
     }
     /**
-     * @return 实例Topic数量上限。
+     * @return Maximum number of topics per instance
      * 
      */
     public Integer topicLimit() {
         return this.topicLimit;
     }
     /**
-     * @return 实例所在VPC ID。
+     * @return VPC ID where the instance is located
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return 实例所在可用区列表。
+     * @return List of availability zones where the instance is located
      * 
      */
     public List<String> zoneIdLists() {

@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class InstancePlacementGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+        /// For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
         /// </summary>
         [Input("affinity")]
         public Input<string>? Affinity { get; set; }
 
         /// <summary>
-        /// 实例的专用主机集群ID。
+        /// Instance dedicated host cluster ID.
         /// </summary>
         [Input("dedicatedHostClusterId")]
         public Input<string>? DedicatedHostClusterId { get; set; }
 
         /// <summary>
-        /// 实例的专用主机ID。
+        /// Dedicated host ID for the instance.
         /// </summary>
         [Input("dedicatedHostId")]
         public Input<string>? DedicatedHostId { get; set; }
 
         /// <summary>
-        /// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+        /// Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
         /// </summary>
         [Input("tenancy")]
         public Input<string>? Tenancy { get; set; }

@@ -14,17 +14,17 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type RuleCondition struct {
-	// 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator *string `pulumi:"comparisonOperator"`
-	// 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName *string `pulumi:"metricName"`
-	// 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
 	MetricUnit *string `pulumi:"metricUnit"`
-	// 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+	// Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
 	Period *string `pulumi:"period"`
-	// 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics *string `pulumi:"statistics"`
-	// 指标阈值。支持输入正数或 0。最多支持三位小数。
+	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold *string `pulumi:"threshold"`
 }
 
@@ -40,17 +40,17 @@ type RuleConditionInput interface {
 }
 
 type RuleConditionArgs struct {
-	// 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator pulumi.StringPtrInput `pulumi:"comparisonOperator"`
-	// 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
-	// 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
 	MetricUnit pulumi.StringPtrInput `pulumi:"metricUnit"`
-	// 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+	// Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
 	Period pulumi.StringPtrInput `pulumi:"period"`
-	// 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics pulumi.StringPtrInput `pulumi:"statistics"`
-	// 指标阈值。支持输入正数或 0。最多支持三位小数。
+	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold pulumi.StringPtrInput `pulumi:"threshold"`
 }
 
@@ -105,32 +105,32 @@ func (o RuleConditionOutput) ToRuleConditionOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 func (o RuleConditionOutput) ComparisonOperator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleCondition) *string { return v.ComparisonOperator }).(pulumi.StringPtrOutput)
 }
 
-// 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 func (o RuleConditionOutput) MetricName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleCondition) *string { return v.MetricName }).(pulumi.StringPtrOutput)
 }
 
-// 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
 func (o RuleConditionOutput) MetricUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleCondition) *string { return v.MetricUnit }).(pulumi.StringPtrOutput)
 }
 
-// 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+// Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
 func (o RuleConditionOutput) Period() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleCondition) *string { return v.Period }).(pulumi.StringPtrOutput)
 }
 
-// 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 func (o RuleConditionOutput) Statistics() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleCondition) *string { return v.Statistics }).(pulumi.StringPtrOutput)
 }
 
-// 指标阈值。支持输入正数或 0。最多支持三位小数。
+// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 func (o RuleConditionOutput) Threshold() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleCondition) *string { return v.Threshold }).(pulumi.StringPtrOutput)
 }
@@ -156,13 +156,13 @@ func (o RuleConditionArrayOutput) Index(i pulumi.IntInput) RuleConditionOutput {
 }
 
 type RuleDimensionConditions struct {
-	// 根据资源名称选择告警对象的条件。当Type为meta时必填。
+	// Condition for selecting alert objects based on resource name. Required when Type is meta.
 	MetaCondition *RuleDimensionConditionsMetaCondition `pulumi:"metaCondition"`
-	// 根据项目选择告警对象的条件。当Type为project时必填。
+	// Condition for selecting alert targets by project. Required when Type is project.
 	ProjectCondition *RuleDimensionConditionsProjectCondition `pulumi:"projectCondition"`
-	// 根据标签选择告警对象的条件。当Type为tag时必填。
+	// Condition for selecting alert objects by tag. Required when Type is tag.
 	TagCondition *RuleDimensionConditionsTagCondition `pulumi:"tagCondition"`
-	// Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+	// Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
 	Type *string `pulumi:"type"`
 }
 
@@ -178,13 +178,13 @@ type RuleDimensionConditionsInput interface {
 }
 
 type RuleDimensionConditionsArgs struct {
-	// 根据资源名称选择告警对象的条件。当Type为meta时必填。
+	// Condition for selecting alert objects based on resource name. Required when Type is meta.
 	MetaCondition RuleDimensionConditionsMetaConditionPtrInput `pulumi:"metaCondition"`
-	// 根据项目选择告警对象的条件。当Type为project时必填。
+	// Condition for selecting alert targets by project. Required when Type is project.
 	ProjectCondition RuleDimensionConditionsProjectConditionPtrInput `pulumi:"projectCondition"`
-	// 根据标签选择告警对象的条件。当Type为tag时必填。
+	// Condition for selecting alert objects by tag. Required when Type is tag.
 	TagCondition RuleDimensionConditionsTagConditionPtrInput `pulumi:"tagCondition"`
-	// Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+	// Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -265,22 +265,22 @@ func (o RuleDimensionConditionsOutput) ToRuleDimensionConditionsPtrOutputWithCon
 	}).(RuleDimensionConditionsPtrOutput)
 }
 
-// 根据资源名称选择告警对象的条件。当Type为meta时必填。
+// Condition for selecting alert objects based on resource name. Required when Type is meta.
 func (o RuleDimensionConditionsOutput) MetaCondition() RuleDimensionConditionsMetaConditionPtrOutput {
 	return o.ApplyT(func(v RuleDimensionConditions) *RuleDimensionConditionsMetaCondition { return v.MetaCondition }).(RuleDimensionConditionsMetaConditionPtrOutput)
 }
 
-// 根据项目选择告警对象的条件。当Type为project时必填。
+// Condition for selecting alert targets by project. Required when Type is project.
 func (o RuleDimensionConditionsOutput) ProjectCondition() RuleDimensionConditionsProjectConditionPtrOutput {
 	return o.ApplyT(func(v RuleDimensionConditions) *RuleDimensionConditionsProjectCondition { return v.ProjectCondition }).(RuleDimensionConditionsProjectConditionPtrOutput)
 }
 
-// 根据标签选择告警对象的条件。当Type为tag时必填。
+// Condition for selecting alert objects by tag. Required when Type is tag.
 func (o RuleDimensionConditionsOutput) TagCondition() RuleDimensionConditionsTagConditionPtrOutput {
 	return o.ApplyT(func(v RuleDimensionConditions) *RuleDimensionConditionsTagCondition { return v.TagCondition }).(RuleDimensionConditionsTagConditionPtrOutput)
 }
 
-// Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+// Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
 func (o RuleDimensionConditionsOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleDimensionConditions) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -309,7 +309,7 @@ func (o RuleDimensionConditionsPtrOutput) Elem() RuleDimensionConditionsOutput {
 	}).(RuleDimensionConditionsOutput)
 }
 
-// 根据资源名称选择告警对象的条件。当Type为meta时必填。
+// Condition for selecting alert objects based on resource name. Required when Type is meta.
 func (o RuleDimensionConditionsPtrOutput) MetaCondition() RuleDimensionConditionsMetaConditionPtrOutput {
 	return o.ApplyT(func(v *RuleDimensionConditions) *RuleDimensionConditionsMetaCondition {
 		if v == nil {
@@ -319,7 +319,7 @@ func (o RuleDimensionConditionsPtrOutput) MetaCondition() RuleDimensionCondition
 	}).(RuleDimensionConditionsMetaConditionPtrOutput)
 }
 
-// 根据项目选择告警对象的条件。当Type为project时必填。
+// Condition for selecting alert targets by project. Required when Type is project.
 func (o RuleDimensionConditionsPtrOutput) ProjectCondition() RuleDimensionConditionsProjectConditionPtrOutput {
 	return o.ApplyT(func(v *RuleDimensionConditions) *RuleDimensionConditionsProjectCondition {
 		if v == nil {
@@ -329,7 +329,7 @@ func (o RuleDimensionConditionsPtrOutput) ProjectCondition() RuleDimensionCondit
 	}).(RuleDimensionConditionsProjectConditionPtrOutput)
 }
 
-// 根据标签选择告警对象的条件。当Type为tag时必填。
+// Condition for selecting alert objects by tag. Required when Type is tag.
 func (o RuleDimensionConditionsPtrOutput) TagCondition() RuleDimensionConditionsTagConditionPtrOutput {
 	return o.ApplyT(func(v *RuleDimensionConditions) *RuleDimensionConditionsTagCondition {
 		if v == nil {
@@ -339,7 +339,7 @@ func (o RuleDimensionConditionsPtrOutput) TagCondition() RuleDimensionConditions
 	}).(RuleDimensionConditionsTagConditionPtrOutput)
 }
 
-// Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+// Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
 func (o RuleDimensionConditionsPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RuleDimensionConditions) *string {
 		if v == nil {
@@ -350,9 +350,9 @@ func (o RuleDimensionConditionsPtrOutput) Type() pulumi.StringPtrOutput {
 }
 
 type RuleDimensionConditionsMetaCondition struct {
-	// 是否为全量资源。true：全部资源。false：部分资源。
+	// Whether all resources are included. true: All resources. false: Partial resources.
 	AllDimensions *bool `pulumi:"allDimensions"`
-	// 判断条件。and：全部满足。or：任意满足。
+	// Condition. and: All conditions met. or: Any condition met.
 	Condition *string                                    `pulumi:"condition"`
 	Metas     []RuleDimensionConditionsMetaConditionMeta `pulumi:"metas"`
 }
@@ -369,9 +369,9 @@ type RuleDimensionConditionsMetaConditionInput interface {
 }
 
 type RuleDimensionConditionsMetaConditionArgs struct {
-	// 是否为全量资源。true：全部资源。false：部分资源。
+	// Whether all resources are included. true: All resources. false: Partial resources.
 	AllDimensions pulumi.BoolPtrInput `pulumi:"allDimensions"`
-	// 判断条件。and：全部满足。or：任意满足。
+	// Condition. and: All conditions met. or: Any condition met.
 	Condition pulumi.StringPtrInput                              `pulumi:"condition"`
 	Metas     RuleDimensionConditionsMetaConditionMetaArrayInput `pulumi:"metas"`
 }
@@ -453,12 +453,12 @@ func (o RuleDimensionConditionsMetaConditionOutput) ToRuleDimensionConditionsMet
 	}).(RuleDimensionConditionsMetaConditionPtrOutput)
 }
 
-// 是否为全量资源。true：全部资源。false：部分资源。
+// Whether all resources are included. true: All resources. false: Partial resources.
 func (o RuleDimensionConditionsMetaConditionOutput) AllDimensions() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RuleDimensionConditionsMetaCondition) *bool { return v.AllDimensions }).(pulumi.BoolPtrOutput)
 }
 
-// 判断条件。and：全部满足。or：任意满足。
+// Condition. and: All conditions met. or: Any condition met.
 func (o RuleDimensionConditionsMetaConditionOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleDimensionConditionsMetaCondition) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
@@ -493,7 +493,7 @@ func (o RuleDimensionConditionsMetaConditionPtrOutput) Elem() RuleDimensionCondi
 	}).(RuleDimensionConditionsMetaConditionOutput)
 }
 
-// 是否为全量资源。true：全部资源。false：部分资源。
+// Whether all resources are included. true: All resources. false: Partial resources.
 func (o RuleDimensionConditionsMetaConditionPtrOutput) AllDimensions() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RuleDimensionConditionsMetaCondition) *bool {
 		if v == nil {
@@ -503,7 +503,7 @@ func (o RuleDimensionConditionsMetaConditionPtrOutput) AllDimensions() pulumi.Bo
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 判断条件。and：全部满足。or：任意满足。
+// Condition. and: All conditions met. or: Any condition met.
 func (o RuleDimensionConditionsMetaConditionPtrOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RuleDimensionConditionsMetaCondition) *string {
 		if v == nil {
@@ -523,11 +523,11 @@ func (o RuleDimensionConditionsMetaConditionPtrOutput) Metas() RuleDimensionCond
 }
 
 type RuleDimensionConditionsMetaConditionMeta struct {
-	// 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
 	Comparator *string `pulumi:"comparator"`
-	// 标签键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+	// Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
 	Values []string `pulumi:"values"`
 }
 
@@ -543,11 +543,11 @@ type RuleDimensionConditionsMetaConditionMetaInput interface {
 }
 
 type RuleDimensionConditionsMetaConditionMetaArgs struct {
-	// 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
 	Comparator pulumi.StringPtrInput `pulumi:"comparator"`
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+	// Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
 	Values pulumi.StringArrayInput `pulumi:"values"`
 }
 
@@ -602,17 +602,17 @@ func (o RuleDimensionConditionsMetaConditionMetaOutput) ToRuleDimensionCondition
 	return o
 }
 
-// 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
 func (o RuleDimensionConditionsMetaConditionMetaOutput) Comparator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleDimensionConditionsMetaConditionMeta) *string { return v.Comparator }).(pulumi.StringPtrOutput)
 }
 
-// 标签键。
+// Tag key.
 func (o RuleDimensionConditionsMetaConditionMetaOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleDimensionConditionsMetaConditionMeta) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+// Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
 func (o RuleDimensionConditionsMetaConditionMetaOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RuleDimensionConditionsMetaConditionMeta) []string { return v.Values }).(pulumi.StringArrayOutput)
 }
@@ -638,7 +638,7 @@ func (o RuleDimensionConditionsMetaConditionMetaArrayOutput) Index(i pulumi.IntI
 }
 
 type RuleDimensionConditionsProjectCondition struct {
-	// 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+	// Project name list, in array format. Separate multiple values with commas.
 	Projects []string `pulumi:"projects"`
 }
 
@@ -654,7 +654,7 @@ type RuleDimensionConditionsProjectConditionInput interface {
 }
 
 type RuleDimensionConditionsProjectConditionArgs struct {
-	// 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+	// Project name list, in array format. Separate multiple values with commas.
 	Projects pulumi.StringArrayInput `pulumi:"projects"`
 }
 
@@ -735,7 +735,7 @@ func (o RuleDimensionConditionsProjectConditionOutput) ToRuleDimensionConditions
 	}).(RuleDimensionConditionsProjectConditionPtrOutput)
 }
 
-// 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+// Project name list, in array format. Separate multiple values with commas.
 func (o RuleDimensionConditionsProjectConditionOutput) Projects() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RuleDimensionConditionsProjectCondition) []string { return v.Projects }).(pulumi.StringArrayOutput)
 }
@@ -764,7 +764,7 @@ func (o RuleDimensionConditionsProjectConditionPtrOutput) Elem() RuleDimensionCo
 	}).(RuleDimensionConditionsProjectConditionOutput)
 }
 
-// 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+// Project name list, in array format. Separate multiple values with commas.
 func (o RuleDimensionConditionsProjectConditionPtrOutput) Projects() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RuleDimensionConditionsProjectCondition) []string {
 		if v == nil {
@@ -775,7 +775,7 @@ func (o RuleDimensionConditionsProjectConditionPtrOutput) Projects() pulumi.Stri
 }
 
 type RuleDimensionConditionsTagCondition struct {
-	// 判断条件。and：全部满足。or：任意满足。
+	// Condition. and: All conditions met. or: Any condition met.
 	Condition *string                                  `pulumi:"condition"`
 	Tags      []RuleDimensionConditionsTagConditionTag `pulumi:"tags"`
 }
@@ -792,7 +792,7 @@ type RuleDimensionConditionsTagConditionInput interface {
 }
 
 type RuleDimensionConditionsTagConditionArgs struct {
-	// 判断条件。and：全部满足。or：任意满足。
+	// Condition. and: All conditions met. or: Any condition met.
 	Condition pulumi.StringPtrInput                            `pulumi:"condition"`
 	Tags      RuleDimensionConditionsTagConditionTagArrayInput `pulumi:"tags"`
 }
@@ -874,7 +874,7 @@ func (o RuleDimensionConditionsTagConditionOutput) ToRuleDimensionConditionsTagC
 	}).(RuleDimensionConditionsTagConditionPtrOutput)
 }
 
-// 判断条件。and：全部满足。or：任意满足。
+// Condition. and: All conditions met. or: Any condition met.
 func (o RuleDimensionConditionsTagConditionOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleDimensionConditionsTagCondition) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
@@ -907,7 +907,7 @@ func (o RuleDimensionConditionsTagConditionPtrOutput) Elem() RuleDimensionCondit
 	}).(RuleDimensionConditionsTagConditionOutput)
 }
 
-// 判断条件。and：全部满足。or：任意满足。
+// Condition. and: All conditions met. or: Any condition met.
 func (o RuleDimensionConditionsTagConditionPtrOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RuleDimensionConditionsTagCondition) *string {
 		if v == nil {
@@ -927,11 +927,11 @@ func (o RuleDimensionConditionsTagConditionPtrOutput) Tags() RuleDimensionCondit
 }
 
 type RuleDimensionConditionsTagConditionTag struct {
-	// 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
 	Comparator *string `pulumi:"comparator"`
-	// 标签键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+	// Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
 	Values []string `pulumi:"values"`
 }
 
@@ -947,11 +947,11 @@ type RuleDimensionConditionsTagConditionTagInput interface {
 }
 
 type RuleDimensionConditionsTagConditionTagArgs struct {
-	// 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
 	Comparator pulumi.StringPtrInput `pulumi:"comparator"`
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+	// Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
 	Values pulumi.StringArrayInput `pulumi:"values"`
 }
 
@@ -1006,17 +1006,17 @@ func (o RuleDimensionConditionsTagConditionTagOutput) ToRuleDimensionConditionsT
 	return o
 }
 
-// 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
 func (o RuleDimensionConditionsTagConditionTagOutput) Comparator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleDimensionConditionsTagConditionTag) *string { return v.Comparator }).(pulumi.StringPtrOutput)
 }
 
-// 标签键。
+// Tag key.
 func (o RuleDimensionConditionsTagConditionTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleDimensionConditionsTagConditionTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+// Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
 func (o RuleDimensionConditionsTagConditionTagOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RuleDimensionConditionsTagConditionTag) []string { return v.Values }).(pulumi.StringArrayOutput)
 }
@@ -1043,7 +1043,7 @@ func (o RuleDimensionConditionsTagConditionTagArrayOutput) Index(i pulumi.IntInp
 
 type RuleLevelCondition struct {
 	Conditions []RuleLevelConditionCondition `pulumi:"conditions"`
-	// 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+	// Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
 	Level *string `pulumi:"level"`
 }
 
@@ -1060,7 +1060,7 @@ type RuleLevelConditionInput interface {
 
 type RuleLevelConditionArgs struct {
 	Conditions RuleLevelConditionConditionArrayInput `pulumi:"conditions"`
-	// 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+	// Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
 	Level pulumi.StringPtrInput `pulumi:"level"`
 }
 
@@ -1119,7 +1119,7 @@ func (o RuleLevelConditionOutput) Conditions() RuleLevelConditionConditionArrayO
 	return o.ApplyT(func(v RuleLevelCondition) []RuleLevelConditionCondition { return v.Conditions }).(RuleLevelConditionConditionArrayOutput)
 }
 
-// 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+// Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
 func (o RuleLevelConditionOutput) Level() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleLevelCondition) *string { return v.Level }).(pulumi.StringPtrOutput)
 }
@@ -1145,17 +1145,17 @@ func (o RuleLevelConditionArrayOutput) Index(i pulumi.IntInput) RuleLevelConditi
 }
 
 type RuleLevelConditionCondition struct {
-	// 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator *string `pulumi:"comparisonOperator"`
-	// 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName *string `pulumi:"metricName"`
-	// 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
 	MetricUnit *string `pulumi:"metricUnit"`
-	// 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+	// Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
 	Period *string `pulumi:"period"`
-	// 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics *string `pulumi:"statistics"`
-	// 指标阈值。支持输入正数或 0。最多支持三位小数。
+	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold *string `pulumi:"threshold"`
 }
 
@@ -1171,17 +1171,17 @@ type RuleLevelConditionConditionInput interface {
 }
 
 type RuleLevelConditionConditionArgs struct {
-	// 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator pulumi.StringPtrInput `pulumi:"comparisonOperator"`
-	// 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
-	// 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
 	MetricUnit pulumi.StringPtrInput `pulumi:"metricUnit"`
-	// 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+	// Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
 	Period pulumi.StringPtrInput `pulumi:"period"`
-	// 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics pulumi.StringPtrInput `pulumi:"statistics"`
-	// 指标阈值。支持输入正数或 0。最多支持三位小数。
+	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold pulumi.StringPtrInput `pulumi:"threshold"`
 }
 
@@ -1236,32 +1236,32 @@ func (o RuleLevelConditionConditionOutput) ToRuleLevelConditionConditionOutputWi
 	return o
 }
 
-// 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 func (o RuleLevelConditionConditionOutput) ComparisonOperator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleLevelConditionCondition) *string { return v.ComparisonOperator }).(pulumi.StringPtrOutput)
 }
 
-// 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 func (o RuleLevelConditionConditionOutput) MetricName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleLevelConditionCondition) *string { return v.MetricName }).(pulumi.StringPtrOutput)
 }
 
-// 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
 func (o RuleLevelConditionConditionOutput) MetricUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleLevelConditionCondition) *string { return v.MetricUnit }).(pulumi.StringPtrOutput)
 }
 
-// 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+// Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
 func (o RuleLevelConditionConditionOutput) Period() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleLevelConditionCondition) *string { return v.Period }).(pulumi.StringPtrOutput)
 }
 
-// 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 func (o RuleLevelConditionConditionOutput) Statistics() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleLevelConditionCondition) *string { return v.Statistics }).(pulumi.StringPtrOutput)
 }
 
-// 指标阈值。支持输入正数或 0。最多支持三位小数。
+// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 func (o RuleLevelConditionConditionOutput) Threshold() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleLevelConditionCondition) *string { return v.Threshold }).(pulumi.StringPtrOutput)
 }
@@ -1287,9 +1287,9 @@ func (o RuleLevelConditionConditionArrayOutput) Index(i pulumi.IntInput) RuleLev
 }
 
 type RuleNoData struct {
-	// 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+	// Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
 	Enable *bool `pulumi:"enable"`
-	// 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+	// No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
 	EvaluationCount *int `pulumi:"evaluationCount"`
 }
 
@@ -1305,9 +1305,9 @@ type RuleNoDataInput interface {
 }
 
 type RuleNoDataArgs struct {
-	// 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+	// Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
 	Enable pulumi.BoolPtrInput `pulumi:"enable"`
-	// 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+	// No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
 	EvaluationCount pulumi.IntPtrInput `pulumi:"evaluationCount"`
 }
 
@@ -1388,12 +1388,12 @@ func (o RuleNoDataOutput) ToRuleNoDataPtrOutputWithContext(ctx context.Context) 
 	}).(RuleNoDataPtrOutput)
 }
 
-// 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+// Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
 func (o RuleNoDataOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RuleNoData) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
 }
 
-// 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+// No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
 func (o RuleNoDataOutput) EvaluationCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v RuleNoData) *int { return v.EvaluationCount }).(pulumi.IntPtrOutput)
 }
@@ -1422,7 +1422,7 @@ func (o RuleNoDataPtrOutput) Elem() RuleNoDataOutput {
 	}).(RuleNoDataOutput)
 }
 
-// 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+// Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
 func (o RuleNoDataPtrOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RuleNoData) *bool {
 		if v == nil {
@@ -1432,7 +1432,7 @@ func (o RuleNoDataPtrOutput) Enable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+// No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
 func (o RuleNoDataPtrOutput) EvaluationCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *RuleNoData) *int {
 		if v == nil {
@@ -1443,9 +1443,9 @@ func (o RuleNoDataPtrOutput) EvaluationCount() pulumi.IntPtrOutput {
 }
 
 type RuleNotifyTemplate struct {
-	// 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+	// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
 	Channel *string `pulumi:"channel"`
-	// 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+	// Notification template ID. Note: Each notification channel supports only one notification template ID.
 	NotifyTemplateId *string `pulumi:"notifyTemplateId"`
 }
 
@@ -1461,9 +1461,9 @@ type RuleNotifyTemplateInput interface {
 }
 
 type RuleNotifyTemplateArgs struct {
-	// 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+	// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
 	Channel pulumi.StringPtrInput `pulumi:"channel"`
-	// 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+	// Notification template ID. Note: Each notification channel supports only one notification template ID.
 	NotifyTemplateId pulumi.StringPtrInput `pulumi:"notifyTemplateId"`
 }
 
@@ -1518,12 +1518,12 @@ func (o RuleNotifyTemplateOutput) ToRuleNotifyTemplateOutputWithContext(ctx cont
 	return o
 }
 
-// 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
 func (o RuleNotifyTemplateOutput) Channel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleNotifyTemplate) *string { return v.Channel }).(pulumi.StringPtrOutput)
 }
 
-// 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+// Notification template ID. Note: Each notification channel supports only one notification template ID.
 func (o RuleNotifyTemplateOutput) NotifyTemplateId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleNotifyTemplate) *string { return v.NotifyTemplateId }).(pulumi.StringPtrOutput)
 }
@@ -1549,9 +1549,9 @@ func (o RuleNotifyTemplateArrayOutput) Index(i pulumi.IntInput) RuleNotifyTempla
 }
 
 type RuleOriginalDimensions struct {
-	// 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+	// Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
 	Key *string `pulumi:"key"`
-	// 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：["*"] 。
+	// Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: ["*"] .
 	Values []string `pulumi:"values"`
 }
 
@@ -1567,9 +1567,9 @@ type RuleOriginalDimensionsInput interface {
 }
 
 type RuleOriginalDimensionsArgs struct {
-	// 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+	// Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：["*"] 。
+	// Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: ["*"] .
 	Values pulumi.StringArrayInput `pulumi:"values"`
 }
 
@@ -1650,12 +1650,12 @@ func (o RuleOriginalDimensionsOutput) ToRuleOriginalDimensionsPtrOutputWithConte
 	}).(RuleOriginalDimensionsPtrOutput)
 }
 
-// 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+// Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
 func (o RuleOriginalDimensionsOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleOriginalDimensions) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：["*"] 。
+// Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: ["*"] .
 func (o RuleOriginalDimensionsOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RuleOriginalDimensions) []string { return v.Values }).(pulumi.StringArrayOutput)
 }
@@ -1684,7 +1684,7 @@ func (o RuleOriginalDimensionsPtrOutput) Elem() RuleOriginalDimensionsOutput {
 	}).(RuleOriginalDimensionsOutput)
 }
 
-// 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+// Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
 func (o RuleOriginalDimensionsPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RuleOriginalDimensions) *string {
 		if v == nil {
@@ -1694,7 +1694,7 @@ func (o RuleOriginalDimensionsPtrOutput) Key() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：["*"] 。
+// Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: ["*"] .
 func (o RuleOriginalDimensionsPtrOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RuleOriginalDimensions) []string {
 		if v == nil {
@@ -1705,7 +1705,7 @@ func (o RuleOriginalDimensionsPtrOutput) Values() pulumi.StringArrayOutput {
 }
 
 type RuleRecoveryNotify struct {
-	// 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+	// Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
 	Enable *bool `pulumi:"enable"`
 }
 
@@ -1721,7 +1721,7 @@ type RuleRecoveryNotifyInput interface {
 }
 
 type RuleRecoveryNotifyArgs struct {
-	// 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+	// Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
 	Enable pulumi.BoolPtrInput `pulumi:"enable"`
 }
 
@@ -1802,7 +1802,7 @@ func (o RuleRecoveryNotifyOutput) ToRuleRecoveryNotifyPtrOutputWithContext(ctx c
 	}).(RuleRecoveryNotifyPtrOutput)
 }
 
-// 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+// Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
 func (o RuleRecoveryNotifyOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RuleRecoveryNotify) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
 }
@@ -1831,7 +1831,7 @@ func (o RuleRecoveryNotifyPtrOutput) Elem() RuleRecoveryNotifyOutput {
 	}).(RuleRecoveryNotifyOutput)
 }
 
-// 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+// Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
 func (o RuleRecoveryNotifyPtrOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RuleRecoveryNotify) *bool {
 		if v == nil {
@@ -1842,9 +1842,9 @@ func (o RuleRecoveryNotifyPtrOutput) Enable() pulumi.BoolPtrOutput {
 }
 
 type RuleTag struct {
-	// 标签键。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。volc:和/sys:为系统预留的标签键，添加标签时，标签键的开头不能设置为任何大小写形式的volc:和/sys:。标签键的长度需为 1～128 个字符。
+	// Tag key. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. volc: and /sys: are system-reserved tag keys. When adding a tag, the tag key cannot start with any case form of volc: or /sys:. Tag key length must be 1–128 characters.
 	Key *string `pulumi:"key"`
-	// 标签值。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。标签键的长度需为 0～255 个字符。
+	// Tag value. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. Tag key length must be 0–255 characters.
 	Value *string `pulumi:"value"`
 }
 
@@ -1860,9 +1860,9 @@ type RuleTagInput interface {
 }
 
 type RuleTagArgs struct {
-	// 标签键。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。volc:和/sys:为系统预留的标签键，添加标签时，标签键的开头不能设置为任何大小写形式的volc:和/sys:。标签键的长度需为 1～128 个字符。
+	// Tag key. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. volc: and /sys: are system-reserved tag keys. When adding a tag, the tag key cannot start with any case form of volc: or /sys:. Tag key length must be 1–128 characters.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。标签键的长度需为 0～255 个字符。
+	// Tag value. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. Tag key length must be 0–255 characters.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1917,12 +1917,12 @@ func (o RuleTagOutput) ToRuleTagOutputWithContext(ctx context.Context) RuleTagOu
 	return o
 }
 
-// 标签键。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。volc:和/sys:为系统预留的标签键，添加标签时，标签键的开头不能设置为任何大小写形式的volc:和/sys:。标签键的长度需为 1～128 个字符。
+// Tag key. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. volc: and /sys: are system-reserved tag keys. When adding a tag, the tag key cannot start with any case form of volc: or /sys:. Tag key length must be 1–128 characters.
 func (o RuleTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。标签键的长度需为 0～255 个字符。
+// Tag value. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. Tag key length must be 0–255 characters.
 func (o RuleTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1948,19 +1948,19 @@ func (o RuleTagArrayOutput) Index(i pulumi.IntInput) RuleTagOutput {
 }
 
 type GetRuleCondition struct {
-	// 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator string `pulumi:"comparisonOperator"`
-	// 指标显示名称。
+	// Metric display name.
 	DisplayName string `pulumi:"displayName"`
-	// 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName string `pulumi:"metricName"`
-	// 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
 	MetricUnit string `pulumi:"metricUnit"`
-	// 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+	// Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
 	Period string `pulumi:"period"`
-	// 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics string `pulumi:"statistics"`
-	// 指标阈值。支持输入正数或 0。最多支持三位小数。
+	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold string `pulumi:"threshold"`
 }
 
@@ -1976,19 +1976,19 @@ type GetRuleConditionInput interface {
 }
 
 type GetRuleConditionArgs struct {
-	// 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator pulumi.StringInput `pulumi:"comparisonOperator"`
-	// 指标显示名称。
+	// Metric display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName pulumi.StringInput `pulumi:"metricName"`
-	// 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
 	MetricUnit pulumi.StringInput `pulumi:"metricUnit"`
-	// 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+	// Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
 	Period pulumi.StringInput `pulumi:"period"`
-	// 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics pulumi.StringInput `pulumi:"statistics"`
-	// 指标阈值。支持输入正数或 0。最多支持三位小数。
+	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold pulumi.StringInput `pulumi:"threshold"`
 }
 
@@ -2043,37 +2043,37 @@ func (o GetRuleConditionOutput) ToGetRuleConditionOutputWithContext(ctx context.
 	return o
 }
 
-// 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 func (o GetRuleConditionOutput) ComparisonOperator() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleCondition) string { return v.ComparisonOperator }).(pulumi.StringOutput)
 }
 
-// 指标显示名称。
+// Metric display name.
 func (o GetRuleConditionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleCondition) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 func (o GetRuleConditionOutput) MetricName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleCondition) string { return v.MetricName }).(pulumi.StringOutput)
 }
 
-// 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
 func (o GetRuleConditionOutput) MetricUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleCondition) string { return v.MetricUnit }).(pulumi.StringOutput)
 }
 
-// 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+// Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
 func (o GetRuleConditionOutput) Period() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleCondition) string { return v.Period }).(pulumi.StringOutput)
 }
 
-// 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 func (o GetRuleConditionOutput) Statistics() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleCondition) string { return v.Statistics }).(pulumi.StringOutput)
 }
 
-// 指标阈值。支持输入正数或 0。最多支持三位小数。
+// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 func (o GetRuleConditionOutput) Threshold() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleCondition) string { return v.Threshold }).(pulumi.StringOutput)
 }
@@ -2099,13 +2099,13 @@ func (o GetRuleConditionArrayOutput) Index(i pulumi.IntInput) GetRuleConditionOu
 }
 
 type GetRuleDimensionConditions struct {
-	// 根据资源名称选择告警对象的条件。当Type为meta时必填。
+	// Condition for selecting alert objects based on resource name. Required when Type is meta.
 	MetaCondition GetRuleDimensionConditionsMetaCondition `pulumi:"metaCondition"`
-	// 根据项目选择告警对象的条件。当Type为project时必填。
+	// Condition for selecting alert targets by project. Required when Type is project.
 	ProjectCondition GetRuleDimensionConditionsProjectCondition `pulumi:"projectCondition"`
-	// 根据标签选择告警对象的条件。当Type为tag时必填。
+	// Condition for selecting alert objects by tag. Required when Type is tag.
 	TagCondition GetRuleDimensionConditionsTagCondition `pulumi:"tagCondition"`
-	// Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+	// Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
 	Type string `pulumi:"type"`
 }
 
@@ -2121,13 +2121,13 @@ type GetRuleDimensionConditionsInput interface {
 }
 
 type GetRuleDimensionConditionsArgs struct {
-	// 根据资源名称选择告警对象的条件。当Type为meta时必填。
+	// Condition for selecting alert objects based on resource name. Required when Type is meta.
 	MetaCondition GetRuleDimensionConditionsMetaConditionInput `pulumi:"metaCondition"`
-	// 根据项目选择告警对象的条件。当Type为project时必填。
+	// Condition for selecting alert targets by project. Required when Type is project.
 	ProjectCondition GetRuleDimensionConditionsProjectConditionInput `pulumi:"projectCondition"`
-	// 根据标签选择告警对象的条件。当Type为tag时必填。
+	// Condition for selecting alert objects by tag. Required when Type is tag.
 	TagCondition GetRuleDimensionConditionsTagConditionInput `pulumi:"tagCondition"`
-	// Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+	// Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -2157,34 +2157,34 @@ func (o GetRuleDimensionConditionsOutput) ToGetRuleDimensionConditionsOutputWith
 	return o
 }
 
-// 根据资源名称选择告警对象的条件。当Type为meta时必填。
+// Condition for selecting alert objects based on resource name. Required when Type is meta.
 func (o GetRuleDimensionConditionsOutput) MetaCondition() GetRuleDimensionConditionsMetaConditionOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditions) GetRuleDimensionConditionsMetaCondition { return v.MetaCondition }).(GetRuleDimensionConditionsMetaConditionOutput)
 }
 
-// 根据项目选择告警对象的条件。当Type为project时必填。
+// Condition for selecting alert targets by project. Required when Type is project.
 func (o GetRuleDimensionConditionsOutput) ProjectCondition() GetRuleDimensionConditionsProjectConditionOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditions) GetRuleDimensionConditionsProjectCondition {
 		return v.ProjectCondition
 	}).(GetRuleDimensionConditionsProjectConditionOutput)
 }
 
-// 根据标签选择告警对象的条件。当Type为tag时必填。
+// Condition for selecting alert objects by tag. Required when Type is tag.
 func (o GetRuleDimensionConditionsOutput) TagCondition() GetRuleDimensionConditionsTagConditionOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditions) GetRuleDimensionConditionsTagCondition { return v.TagCondition }).(GetRuleDimensionConditionsTagConditionOutput)
 }
 
-// Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+// Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
 func (o GetRuleDimensionConditionsOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditions) string { return v.Type }).(pulumi.StringOutput)
 }
 
 type GetRuleDimensionConditionsMetaCondition struct {
-	// 是否为全量资源。true：全部资源。false：部分资源。
+	// Whether all resources are included. true: All resources. false: Partial resources.
 	AllDimensions bool `pulumi:"allDimensions"`
-	// 判断条件。and：全部满足。or：任意满足。
+	// Condition. and: All conditions met. or: Any condition met.
 	Condition string `pulumi:"condition"`
-	// 判断条件。and：全部满足。or：任意满足。
+	// Condition. and: All conditions met. or: Any condition met.
 	Metas []GetRuleDimensionConditionsMetaConditionMeta `pulumi:"metas"`
 }
 
@@ -2200,11 +2200,11 @@ type GetRuleDimensionConditionsMetaConditionInput interface {
 }
 
 type GetRuleDimensionConditionsMetaConditionArgs struct {
-	// 是否为全量资源。true：全部资源。false：部分资源。
+	// Whether all resources are included. true: All resources. false: Partial resources.
 	AllDimensions pulumi.BoolInput `pulumi:"allDimensions"`
-	// 判断条件。and：全部满足。or：任意满足。
+	// Condition. and: All conditions met. or: Any condition met.
 	Condition pulumi.StringInput `pulumi:"condition"`
-	// 判断条件。and：全部满足。or：任意满足。
+	// Condition. and: All conditions met. or: Any condition met.
 	Metas GetRuleDimensionConditionsMetaConditionMetaArrayInput `pulumi:"metas"`
 }
 
@@ -2234,17 +2234,17 @@ func (o GetRuleDimensionConditionsMetaConditionOutput) ToGetRuleDimensionConditi
 	return o
 }
 
-// 是否为全量资源。true：全部资源。false：部分资源。
+// Whether all resources are included. true: All resources. false: Partial resources.
 func (o GetRuleDimensionConditionsMetaConditionOutput) AllDimensions() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsMetaCondition) bool { return v.AllDimensions }).(pulumi.BoolOutput)
 }
 
-// 判断条件。and：全部满足。or：任意满足。
+// Condition. and: All conditions met. or: Any condition met.
 func (o GetRuleDimensionConditionsMetaConditionOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsMetaCondition) string { return v.Condition }).(pulumi.StringOutput)
 }
 
-// 判断条件。and：全部满足。or：任意满足。
+// Condition. and: All conditions met. or: Any condition met.
 func (o GetRuleDimensionConditionsMetaConditionOutput) Metas() GetRuleDimensionConditionsMetaConditionMetaArrayOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsMetaCondition) []GetRuleDimensionConditionsMetaConditionMeta {
 		return v.Metas
@@ -2252,11 +2252,11 @@ func (o GetRuleDimensionConditionsMetaConditionOutput) Metas() GetRuleDimensionC
 }
 
 type GetRuleDimensionConditionsMetaConditionMeta struct {
-	// 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
 	Comparator string `pulumi:"comparator"`
-	// 标签键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+	// Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
 	Values []string `pulumi:"values"`
 }
 
@@ -2272,11 +2272,11 @@ type GetRuleDimensionConditionsMetaConditionMetaInput interface {
 }
 
 type GetRuleDimensionConditionsMetaConditionMetaArgs struct {
-	// 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
 	Comparator pulumi.StringInput `pulumi:"comparator"`
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+	// Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
 	Values pulumi.StringArrayInput `pulumi:"values"`
 }
 
@@ -2331,17 +2331,17 @@ func (o GetRuleDimensionConditionsMetaConditionMetaOutput) ToGetRuleDimensionCon
 	return o
 }
 
-// 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
 func (o GetRuleDimensionConditionsMetaConditionMetaOutput) Comparator() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsMetaConditionMeta) string { return v.Comparator }).(pulumi.StringOutput)
 }
 
-// 标签键。
+// Tag key.
 func (o GetRuleDimensionConditionsMetaConditionMetaOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsMetaConditionMeta) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+// Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
 func (o GetRuleDimensionConditionsMetaConditionMetaOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsMetaConditionMeta) []string { return v.Values }).(pulumi.StringArrayOutput)
 }
@@ -2367,7 +2367,7 @@ func (o GetRuleDimensionConditionsMetaConditionMetaArrayOutput) Index(i pulumi.I
 }
 
 type GetRuleDimensionConditionsProjectCondition struct {
-	// 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+	// Project name list, in array format. Separate multiple values with commas.
 	Projects []string `pulumi:"projects"`
 }
 
@@ -2383,7 +2383,7 @@ type GetRuleDimensionConditionsProjectConditionInput interface {
 }
 
 type GetRuleDimensionConditionsProjectConditionArgs struct {
-	// 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+	// Project name list, in array format. Separate multiple values with commas.
 	Projects pulumi.StringArrayInput `pulumi:"projects"`
 }
 
@@ -2413,15 +2413,15 @@ func (o GetRuleDimensionConditionsProjectConditionOutput) ToGetRuleDimensionCond
 	return o
 }
 
-// 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+// Project name list, in array format. Separate multiple values with commas.
 func (o GetRuleDimensionConditionsProjectConditionOutput) Projects() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsProjectCondition) []string { return v.Projects }).(pulumi.StringArrayOutput)
 }
 
 type GetRuleDimensionConditionsTagCondition struct {
-	// 判断条件。and：全部满足。or：任意满足。
+	// Condition. and: All conditions met. or: Any condition met.
 	Condition string `pulumi:"condition"`
-	// 标签列表。最多支持配置 10 个标签列表。标签值不能超过 50 个字符。
+	// Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
 	Tags []GetRuleDimensionConditionsTagConditionTag `pulumi:"tags"`
 }
 
@@ -2437,9 +2437,9 @@ type GetRuleDimensionConditionsTagConditionInput interface {
 }
 
 type GetRuleDimensionConditionsTagConditionArgs struct {
-	// 判断条件。and：全部满足。or：任意满足。
+	// Condition. and: All conditions met. or: Any condition met.
 	Condition pulumi.StringInput `pulumi:"condition"`
-	// 标签列表。最多支持配置 10 个标签列表。标签值不能超过 50 个字符。
+	// Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
 	Tags GetRuleDimensionConditionsTagConditionTagArrayInput `pulumi:"tags"`
 }
 
@@ -2469,12 +2469,12 @@ func (o GetRuleDimensionConditionsTagConditionOutput) ToGetRuleDimensionConditio
 	return o
 }
 
-// 判断条件。and：全部满足。or：任意满足。
+// Condition. and: All conditions met. or: Any condition met.
 func (o GetRuleDimensionConditionsTagConditionOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsTagCondition) string { return v.Condition }).(pulumi.StringOutput)
 }
 
-// 标签列表。最多支持配置 10 个标签列表。标签值不能超过 50 个字符。
+// Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
 func (o GetRuleDimensionConditionsTagConditionOutput) Tags() GetRuleDimensionConditionsTagConditionTagArrayOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsTagCondition) []GetRuleDimensionConditionsTagConditionTag {
 		return v.Tags
@@ -2482,11 +2482,11 @@ func (o GetRuleDimensionConditionsTagConditionOutput) Tags() GetRuleDimensionCon
 }
 
 type GetRuleDimensionConditionsTagConditionTag struct {
-	// 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
 	Comparator string `pulumi:"comparator"`
-	// 标签键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+	// Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
 	Values []string `pulumi:"values"`
 }
 
@@ -2502,11 +2502,11 @@ type GetRuleDimensionConditionsTagConditionTagInput interface {
 }
 
 type GetRuleDimensionConditionsTagConditionTagArgs struct {
-	// 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
 	Comparator pulumi.StringInput `pulumi:"comparator"`
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+	// Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
 	Values pulumi.StringArrayInput `pulumi:"values"`
 }
 
@@ -2561,17 +2561,17 @@ func (o GetRuleDimensionConditionsTagConditionTagOutput) ToGetRuleDimensionCondi
 	return o
 }
 
-// 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
 func (o GetRuleDimensionConditionsTagConditionTagOutput) Comparator() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsTagConditionTag) string { return v.Comparator }).(pulumi.StringOutput)
 }
 
-// 标签键。
+// Tag key.
 func (o GetRuleDimensionConditionsTagConditionTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsTagConditionTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+// Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
 func (o GetRuleDimensionConditionsTagConditionTagOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsTagConditionTag) []string { return v.Values }).(pulumi.StringArrayOutput)
 }
@@ -2597,9 +2597,9 @@ func (o GetRuleDimensionConditionsTagConditionTagArrayOutput) Index(i pulumi.Int
 }
 
 type GetRuleLevelCondition struct {
-	// 告警分级配置。
+	// Alert severity configuration.
 	Conditions []GetRuleLevelConditionCondition `pulumi:"conditions"`
-	// 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+	// Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
 	Level string `pulumi:"level"`
 }
 
@@ -2615,9 +2615,9 @@ type GetRuleLevelConditionInput interface {
 }
 
 type GetRuleLevelConditionArgs struct {
-	// 告警分级配置。
+	// Alert severity configuration.
 	Conditions GetRuleLevelConditionConditionArrayInput `pulumi:"conditions"`
-	// 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+	// Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
 	Level pulumi.StringInput `pulumi:"level"`
 }
 
@@ -2672,12 +2672,12 @@ func (o GetRuleLevelConditionOutput) ToGetRuleLevelConditionOutputWithContext(ct
 	return o
 }
 
-// 告警分级配置。
+// Alert severity configuration.
 func (o GetRuleLevelConditionOutput) Conditions() GetRuleLevelConditionConditionArrayOutput {
 	return o.ApplyT(func(v GetRuleLevelCondition) []GetRuleLevelConditionCondition { return v.Conditions }).(GetRuleLevelConditionConditionArrayOutput)
 }
 
-// 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+// Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
 func (o GetRuleLevelConditionOutput) Level() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleLevelCondition) string { return v.Level }).(pulumi.StringOutput)
 }
@@ -2703,19 +2703,19 @@ func (o GetRuleLevelConditionArrayOutput) Index(i pulumi.IntInput) GetRuleLevelC
 }
 
 type GetRuleLevelConditionCondition struct {
-	// 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator string `pulumi:"comparisonOperator"`
-	// 指标显示名称。
+	// Metric display name.
 	DisplayName string `pulumi:"displayName"`
-	// 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName string `pulumi:"metricName"`
-	// 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
 	MetricUnit string `pulumi:"metricUnit"`
-	// 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+	// Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
 	Period string `pulumi:"period"`
-	// 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics string `pulumi:"statistics"`
-	// 指标阈值。支持输入正数或 0。最多支持三位小数。
+	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold string `pulumi:"threshold"`
 }
 
@@ -2731,19 +2731,19 @@ type GetRuleLevelConditionConditionInput interface {
 }
 
 type GetRuleLevelConditionConditionArgs struct {
-	// 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator pulumi.StringInput `pulumi:"comparisonOperator"`
-	// 指标显示名称。
+	// Metric display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName pulumi.StringInput `pulumi:"metricName"`
-	// 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
 	MetricUnit pulumi.StringInput `pulumi:"metricUnit"`
-	// 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+	// Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
 	Period pulumi.StringInput `pulumi:"period"`
-	// 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics pulumi.StringInput `pulumi:"statistics"`
-	// 指标阈值。支持输入正数或 0。最多支持三位小数。
+	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold pulumi.StringInput `pulumi:"threshold"`
 }
 
@@ -2798,37 +2798,37 @@ func (o GetRuleLevelConditionConditionOutput) ToGetRuleLevelConditionConditionOu
 	return o
 }
 
-// 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 func (o GetRuleLevelConditionConditionOutput) ComparisonOperator() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleLevelConditionCondition) string { return v.ComparisonOperator }).(pulumi.StringOutput)
 }
 
-// 指标显示名称。
+// Metric display name.
 func (o GetRuleLevelConditionConditionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleLevelConditionCondition) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 func (o GetRuleLevelConditionConditionOutput) MetricName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleLevelConditionCondition) string { return v.MetricName }).(pulumi.StringOutput)
 }
 
-// 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
 func (o GetRuleLevelConditionConditionOutput) MetricUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleLevelConditionCondition) string { return v.MetricUnit }).(pulumi.StringOutput)
 }
 
-// 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+// Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
 func (o GetRuleLevelConditionConditionOutput) Period() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleLevelConditionCondition) string { return v.Period }).(pulumi.StringOutput)
 }
 
-// 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 func (o GetRuleLevelConditionConditionOutput) Statistics() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleLevelConditionCondition) string { return v.Statistics }).(pulumi.StringOutput)
 }
 
-// 指标阈值。支持输入正数或 0。最多支持三位小数。
+// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 func (o GetRuleLevelConditionConditionOutput) Threshold() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleLevelConditionCondition) string { return v.Threshold }).(pulumi.StringOutput)
 }
@@ -2854,9 +2854,9 @@ func (o GetRuleLevelConditionConditionArrayOutput) Index(i pulumi.IntInput) GetR
 }
 
 type GetRuleNoData struct {
-	// 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+	// Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
 	Enable bool `pulumi:"enable"`
-	// 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+	// No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
 	EvaluationCount int `pulumi:"evaluationCount"`
 }
 
@@ -2872,9 +2872,9 @@ type GetRuleNoDataInput interface {
 }
 
 type GetRuleNoDataArgs struct {
-	// 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+	// Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
 	Enable pulumi.BoolInput `pulumi:"enable"`
-	// 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+	// No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
 	EvaluationCount pulumi.IntInput `pulumi:"evaluationCount"`
 }
 
@@ -2904,20 +2904,20 @@ func (o GetRuleNoDataOutput) ToGetRuleNoDataOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+// Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
 func (o GetRuleNoDataOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRuleNoData) bool { return v.Enable }).(pulumi.BoolOutput)
 }
 
-// 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+// No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
 func (o GetRuleNoDataOutput) EvaluationCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetRuleNoData) int { return v.EvaluationCount }).(pulumi.IntOutput)
 }
 
 type GetRuleNotifyTemplate struct {
-	// 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+	// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
 	Channel string `pulumi:"channel"`
-	// 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+	// Notification template ID. Note: Each notification channel supports only one notification template ID.
 	NotifyTemplateId string `pulumi:"notifyTemplateId"`
 }
 
@@ -2933,9 +2933,9 @@ type GetRuleNotifyTemplateInput interface {
 }
 
 type GetRuleNotifyTemplateArgs struct {
-	// 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+	// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
 	Channel pulumi.StringInput `pulumi:"channel"`
-	// 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+	// Notification template ID. Note: Each notification channel supports only one notification template ID.
 	NotifyTemplateId pulumi.StringInput `pulumi:"notifyTemplateId"`
 }
 
@@ -2990,12 +2990,12 @@ func (o GetRuleNotifyTemplateOutput) ToGetRuleNotifyTemplateOutputWithContext(ct
 	return o
 }
 
-// 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
 func (o GetRuleNotifyTemplateOutput) Channel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleNotifyTemplate) string { return v.Channel }).(pulumi.StringOutput)
 }
 
-// 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+// Notification template ID. Note: Each notification channel supports only one notification template ID.
 func (o GetRuleNotifyTemplateOutput) NotifyTemplateId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleNotifyTemplate) string { return v.NotifyTemplateId }).(pulumi.StringOutput)
 }
@@ -3021,9 +3021,9 @@ func (o GetRuleNotifyTemplateArrayOutput) Index(i pulumi.IntInput) GetRuleNotify
 }
 
 type GetRuleOriginalDimensions struct {
-	// 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+	// Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
 	Key string `pulumi:"key"`
-	// 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：["*"] 。
+	// Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: ["*"] .
 	Values []string `pulumi:"values"`
 }
 
@@ -3039,9 +3039,9 @@ type GetRuleOriginalDimensionsInput interface {
 }
 
 type GetRuleOriginalDimensionsArgs struct {
-	// 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+	// Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：["*"] 。
+	// Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: ["*"] .
 	Values pulumi.StringArrayInput `pulumi:"values"`
 }
 
@@ -3071,18 +3071,18 @@ func (o GetRuleOriginalDimensionsOutput) ToGetRuleOriginalDimensionsOutputWithCo
 	return o
 }
 
-// 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+// Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
 func (o GetRuleOriginalDimensionsOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleOriginalDimensions) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：["*"] 。
+// Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: ["*"] .
 func (o GetRuleOriginalDimensionsOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRuleOriginalDimensions) []string { return v.Values }).(pulumi.StringArrayOutput)
 }
 
 type GetRuleRecoveryNotify struct {
-	// 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+	// Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
 	Enable bool `pulumi:"enable"`
 }
 
@@ -3098,7 +3098,7 @@ type GetRuleRecoveryNotifyInput interface {
 }
 
 type GetRuleRecoveryNotifyArgs struct {
-	// 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+	// Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
 	Enable pulumi.BoolInput `pulumi:"enable"`
 }
 
@@ -3128,15 +3128,15 @@ func (o GetRuleRecoveryNotifyOutput) ToGetRuleRecoveryNotifyOutputWithContext(ct
 	return o
 }
 
-// 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+// Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
 func (o GetRuleRecoveryNotifyOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRuleRecoveryNotify) bool { return v.Enable }).(pulumi.BoolOutput)
 }
 
 type GetRuleTag struct {
-	// 标签键。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。volc:和/sys:为系统预留的标签键，添加标签时，标签键的开头不能设置为任何大小写形式的volc:和/sys:。标签键的长度需为 1～128 个字符。
+	// Tag key. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. volc: and /sys: are system-reserved tag keys. When adding a tag, the tag key cannot start with any case form of volc: or /sys:. Tag key length must be 1–128 characters.
 	Key string `pulumi:"key"`
-	// 标签值。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。标签键的长度需为 0～255 个字符。
+	// Tag value. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. Tag key length must be 0–255 characters.
 	Value string `pulumi:"value"`
 }
 
@@ -3152,9 +3152,9 @@ type GetRuleTagInput interface {
 }
 
 type GetRuleTagArgs struct {
-	// 标签键。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。volc:和/sys:为系统预留的标签键，添加标签时，标签键的开头不能设置为任何大小写形式的volc:和/sys:。标签键的长度需为 1～128 个字符。
+	// Tag key. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. volc: and /sys: are system-reserved tag keys. When adding a tag, the tag key cannot start with any case form of volc: or /sys:. Tag key length must be 1–128 characters.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。标签键的长度需为 0～255 个字符。
+	// Tag value. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. Tag key length must be 0–255 characters.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -3209,12 +3209,12 @@ func (o GetRuleTagOutput) ToGetRuleTagOutputWithContext(ctx context.Context) Get
 	return o
 }
 
-// 标签键。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。volc:和/sys:为系统预留的标签键，添加标签时，标签键的开头不能设置为任何大小写形式的volc:和/sys:。标签键的长度需为 1～128 个字符。
+// Tag key. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. volc: and /sys: are system-reserved tag keys. When adding a tag, the tag key cannot start with any case form of volc: or /sys:. Tag key length must be 1–128 characters.
 func (o GetRuleTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。标签键的长度需为 0～255 个字符。
+// Tag value. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. Tag key length must be 0–255 characters.
 func (o GetRuleTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleTag) string { return v.Value }).(pulumi.StringOutput)
 }

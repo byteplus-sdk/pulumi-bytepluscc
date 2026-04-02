@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Directconnect.Outputs
     public sealed class GetDirectConnectGatewayAssociateEicResult
     {
         /// <summary>
-        /// EIC的ID。
+        /// ID of EIC.
         /// </summary>
         public readonly string EicId;
         /// <summary>
-        /// EIC的用户ID。
+        /// User ID of EIC.
         /// </summary>
         public readonly string EicOwnerId;
         /// <summary>
-        /// 实例在EIC中的状态。
+        /// Status of the instance in EIC.
         /// </summary>
         public readonly string EicStatus;
 

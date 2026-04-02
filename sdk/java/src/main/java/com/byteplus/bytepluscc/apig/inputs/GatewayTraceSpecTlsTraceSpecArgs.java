@@ -46,14 +46,14 @@ public final class GatewayTraceSpecTlsTraceSpecArgs extends com.pulumi.resources
     }
 
     /**
-     * 日志项目ID。
+     * Log project ID
      * 
      */
     @Import(name="projectId")
     private @Nullable Output<String> projectId;
 
     /**
-     * @return 日志项目ID。
+     * @return Log project ID
      * 
      */
     public Optional<Output<String>> projectId() {
@@ -145,7 +145,7 @@ public final class GatewayTraceSpecTlsTraceSpecArgs extends com.pulumi.resources
         }
 
         /**
-         * @param projectId 日志项目ID。
+         * @param projectId Log project ID
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class GatewayTraceSpecTlsTraceSpecArgs extends com.pulumi.resources
         }
 
         /**
-         * @param projectId 日志项目ID。
+         * @param projectId Log project ID
          * 
          * @return builder
          * 

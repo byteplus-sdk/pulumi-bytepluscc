@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Emr
 {
     /// <summary>
-    /// E-MapReduce（EMR）集群中支持对用户进行组管理，允许您创建、编辑和删除用户组。
+    /// User group management is supported in E-MapReduce (EMR) clusters, allowing you to create, edit, and delete user groups.
     /// 
     /// ## Example Usage
     /// 
@@ -48,25 +48,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     public partial class ClusterUserGroup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         [Output("clusterId")]
         public Output<string> ClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组描述。
+        /// User group description.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组成员。不支持操作特殊用户，如admin等。
+        /// Operations on special users, such as admin, are not supported.
         /// </summary>
         [Output("members")]
         public Output<ImmutableArray<string>> Members { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组名称。
+        /// User group name.
         /// </summary>
         [Output("userGroupName")]
         public Output<string> UserGroupName { get; private set; } = null!;
@@ -119,13 +119,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     public sealed class ClusterUserGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         [Input("clusterId", required: true)]
         public Input<string> ClusterId { get; set; } = null!;
 
         /// <summary>
-        /// 用户组描述。
+        /// User group description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -134,7 +134,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         private InputList<string>? _members;
 
         /// <summary>
-        /// 用户组成员。不支持操作特殊用户，如admin等。
+        /// Operations on special users, such as admin, are not supported.
         /// </summary>
         public InputList<string> Members
         {
@@ -143,7 +143,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 用户组名称。
+        /// User group name.
         /// </summary>
         [Input("userGroupName", required: true)]
         public Input<string> UserGroupName { get; set; } = null!;
@@ -157,13 +157,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     public sealed class ClusterUserGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// 用户组描述。
+        /// User group description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -172,7 +172,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         private InputList<string>? _members;
 
         /// <summary>
-        /// 用户组成员。不支持操作特殊用户，如admin等。
+        /// Operations on special users, such as admin, are not supported.
         /// </summary>
         public InputList<string> Members
         {
@@ -181,7 +181,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 用户组名称。
+        /// User group name.
         /// </summary>
         [Input("userGroupName")]
         public Input<string>? UserGroupName { get; set; }

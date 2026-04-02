@@ -18,42 +18,42 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamUpstreamSpec {
     /**
-     * @return AI模型代理。
+     * @return AI model proxy
      * 
      */
     private @Nullable UpstreamUpstreamSpecAiProvider aiProvider;
     /**
-     * @return 固定域名。
+     * @return Fixed domain name
      * 
      */
     private @Nullable UpstreamUpstreamSpecDomain domain;
     private @Nullable List<UpstreamUpstreamSpecEcsInstance> ecsInstances;
     /**
-     * @return 容器服务。
+     * @return Container Service
      * 
      */
     private @Nullable UpstreamUpstreamSpecK8SService k8SService;
     /**
-     * @return 注册中心。
+     * @return Registry Center
      * 
      */
     private @Nullable UpstreamUpstreamSpecNacosService nacosService;
     /**
-     * @return 函数服务。
+     * @return Function service
      * 
      */
     private @Nullable UpstreamUpstreamSpecVeFaas veFaas;
 
     private UpstreamUpstreamSpec() {}
     /**
-     * @return AI模型代理。
+     * @return AI model proxy
      * 
      */
     public Optional<UpstreamUpstreamSpecAiProvider> aiProvider() {
         return Optional.ofNullable(this.aiProvider);
     }
     /**
-     * @return 固定域名。
+     * @return Fixed domain name
      * 
      */
     public Optional<UpstreamUpstreamSpecDomain> domain() {
@@ -63,21 +63,21 @@ public final class UpstreamUpstreamSpec {
         return this.ecsInstances == null ? List.of() : this.ecsInstances;
     }
     /**
-     * @return 容器服务。
+     * @return Container Service
      * 
      */
     public Optional<UpstreamUpstreamSpecK8SService> k8SService() {
         return Optional.ofNullable(this.k8SService);
     }
     /**
-     * @return 注册中心。
+     * @return Registry Center
      * 
      */
     public Optional<UpstreamUpstreamSpecNacosService> nacosService() {
         return Optional.ofNullable(this.nacosService);
     }
     /**
-     * @return 函数服务。
+     * @return Function service
      * 
      */
     public Optional<UpstreamUpstreamSpecVeFaas> veFaas() {

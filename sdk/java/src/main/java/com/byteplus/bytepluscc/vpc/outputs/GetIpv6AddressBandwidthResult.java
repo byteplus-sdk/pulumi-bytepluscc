@@ -15,37 +15,37 @@ import java.util.Objects;
 @CustomType
 public final class GetIpv6AddressBandwidthResult {
     /**
-     * @return IPv6公网带宽的ID。
+     * @return IPv6 public bandwidth ID
      * 
      */
     private String allocationId;
     /**
-     * @return IPv6公网带宽的带宽上限。
+     * @return IPv6 public bandwidth cap
      * 
      */
     private Integer bandwidth;
     /**
-     * @return IPv6共享带宽包的ID。
+     * @return IPv6 shared bandwidth package ID
      * 
      */
     private String bandwidthPackageId;
     /**
-     * @return IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * @return IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
      * 
      */
     private Integer billingType;
     /**
-     * @return IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+     * @return Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
      * 
      */
     private String businessStatus;
     /**
-     * @return IPv6公网带宽的开通时间。
+     * @return IPv6 public bandwidth activation time
      * 
      */
     private String createdTime;
     /**
-     * @return IPv6公网带宽的删除时间。
+     * @return IPv6 public bandwidth deletion time
      * 
      */
     private String deletedTime;
@@ -55,116 +55,116 @@ public final class GetIpv6AddressBandwidthResult {
      */
     private String id;
     /**
-     * @return IPv6公网带宽关联的实例ID。
+     * @return Instance ID associated with IPv6 public bandwidth
      * 
      */
     private String instanceId;
     /**
-     * @return IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+     * @return Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
      * 
      */
     private String instanceType;
     /**
-     * @return IPv6地址。
+     * @return IPv6 address
      * 
      */
     private String ipv6Address;
     /**
-     * @return IPv6网关的ID。
+     * @return IPv6 gateway ID
      * 
      */
     private String ipv6GatewayId;
     /**
-     * @return IPv6公网带宽的线路类型。BGP：BGP（多线）。
+     * @return IPv6 public bandwidth line type. BGP: BGP (multi-line).
      * 
      */
     private String isp;
     /**
-     * @return IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+     * @return Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
      * 
      */
     private String lockReason;
     /**
-     * @return IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+     * @return IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
      * 
      */
     private String networkType;
     /**
-     * @return IPv6公网带宽欠费关停的时间。
+     * @return IPv6 public bandwidth deactivation time due to overdue payment
      * 
      */
     private String overdueTime;
     /**
-     * @return IPv6公网带宽的项目。
+     * @return IPv6 public bandwidth project
      * 
      */
     private String projectName;
     /**
-     * @return 是否为服务托管。
+     * @return Service hosting status
      * 
      */
     private Boolean serviceManaged;
     /**
-     * @return IPv6公网带宽的状态。Creating：创建中。Available：可用。
+     * @return IPv6 public bandwidth status. Creating: Creating. Available: Available.
      * 
      */
     private String status;
     /**
-     * @return 标签信息
+     * @return Tag information
      * 
      */
     private List<GetIpv6AddressBandwidthTag> tags;
     /**
-     * @return IPv6公网带宽的最近操作时间。
+     * @return IPv6 public bandwidth last operation time
      * 
      */
     private String updatedTime;
 
     private GetIpv6AddressBandwidthResult() {}
     /**
-     * @return IPv6公网带宽的ID。
+     * @return IPv6 public bandwidth ID
      * 
      */
     public String allocationId() {
         return this.allocationId;
     }
     /**
-     * @return IPv6公网带宽的带宽上限。
+     * @return IPv6 public bandwidth cap
      * 
      */
     public Integer bandwidth() {
         return this.bandwidth;
     }
     /**
-     * @return IPv6共享带宽包的ID。
+     * @return IPv6 shared bandwidth package ID
      * 
      */
     public String bandwidthPackageId() {
         return this.bandwidthPackageId;
     }
     /**
-     * @return IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * @return IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
      * 
      */
     public Integer billingType() {
         return this.billingType;
     }
     /**
-     * @return IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+     * @return Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
      * 
      */
     public String businessStatus() {
         return this.businessStatus;
     }
     /**
-     * @return IPv6公网带宽的开通时间。
+     * @return IPv6 public bandwidth activation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return IPv6公网带宽的删除时间。
+     * @return IPv6 public bandwidth deletion time
      * 
      */
     public String deletedTime() {
@@ -178,91 +178,91 @@ public final class GetIpv6AddressBandwidthResult {
         return this.id;
     }
     /**
-     * @return IPv6公网带宽关联的实例ID。
+     * @return Instance ID associated with IPv6 public bandwidth
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+     * @return Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
      * 
      */
     public String instanceType() {
         return this.instanceType;
     }
     /**
-     * @return IPv6地址。
+     * @return IPv6 address
      * 
      */
     public String ipv6Address() {
         return this.ipv6Address;
     }
     /**
-     * @return IPv6网关的ID。
+     * @return IPv6 gateway ID
      * 
      */
     public String ipv6GatewayId() {
         return this.ipv6GatewayId;
     }
     /**
-     * @return IPv6公网带宽的线路类型。BGP：BGP（多线）。
+     * @return IPv6 public bandwidth line type. BGP: BGP (multi-line).
      * 
      */
     public String isp() {
         return this.isp;
     }
     /**
-     * @return IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+     * @return Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
      * 
      */
     public String lockReason() {
         return this.lockReason;
     }
     /**
-     * @return IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+     * @return IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
      * 
      */
     public String networkType() {
         return this.networkType;
     }
     /**
-     * @return IPv6公网带宽欠费关停的时间。
+     * @return IPv6 public bandwidth deactivation time due to overdue payment
      * 
      */
     public String overdueTime() {
         return this.overdueTime;
     }
     /**
-     * @return IPv6公网带宽的项目。
+     * @return IPv6 public bandwidth project
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 是否为服务托管。
+     * @return Service hosting status
      * 
      */
     public Boolean serviceManaged() {
         return this.serviceManaged;
     }
     /**
-     * @return IPv6公网带宽的状态。Creating：创建中。Available：可用。
+     * @return IPv6 public bandwidth status. Creating: Creating. Available: Available.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 标签信息
+     * @return Tag information
      * 
      */
     public List<GetIpv6AddressBandwidthTag> tags() {
         return this.tags;
     }
     /**
-     * @return IPv6公网带宽的最近操作时间。
+     * @return IPv6 public bandwidth last operation time
      * 
      */
     public String updatedTime() {

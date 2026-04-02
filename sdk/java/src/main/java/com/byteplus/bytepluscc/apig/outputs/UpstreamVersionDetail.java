@@ -15,12 +15,12 @@ import javax.annotation.Nullable;
 public final class UpstreamVersionDetail {
     private @Nullable List<UpstreamVersionDetailLabel> labels;
     /**
-     * @return 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+     * @return Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
      * 
      */
     private @Nullable String name;
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     private @Nullable String updateTime;
@@ -30,14 +30,14 @@ public final class UpstreamVersionDetail {
         return this.labels == null ? List.of() : this.labels;
     }
     /**
-     * @return 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+     * @return Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public Optional<String> updateTime() {

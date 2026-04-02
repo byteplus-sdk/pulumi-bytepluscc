@@ -16,14 +16,14 @@ public final class NgwNatIpAddressArgs extends com.pulumi.resources.ResourceArgs
     public static final NgwNatIpAddressArgs Empty = new NgwNatIpAddressArgs();
 
     /**
-     * 中转Ip地址。
+     * Transit IP address
      * 
      */
     @Import(name="natIpAddress")
     private @Nullable Output<String> natIpAddress;
 
     /**
-     * @return 中转Ip地址。
+     * @return Transit IP address
      * 
      */
     public Optional<Output<String>> natIpAddress() {
@@ -31,14 +31,14 @@ public final class NgwNatIpAddressArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 中转Ip id。
+     * Transit IP ID
      * 
      */
     @Import(name="natIpId")
     private @Nullable Output<String> natIpId;
 
     /**
-     * @return 中转Ip id。
+     * @return Transit IP ID
      * 
      */
     public Optional<Output<String>> natIpId() {
@@ -71,7 +71,7 @@ public final class NgwNatIpAddressArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param natIpAddress 中转Ip地址。
+         * @param natIpAddress Transit IP address
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class NgwNatIpAddressArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param natIpAddress 中转Ip地址。
+         * @param natIpAddress Transit IP address
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class NgwNatIpAddressArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param natIpId 中转Ip id。
+         * @param natIpId Transit IP ID
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class NgwNatIpAddressArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param natIpId 中转Ip id。
+         * @param natIpId Transit IP ID
          * 
          * @return builder
          * 

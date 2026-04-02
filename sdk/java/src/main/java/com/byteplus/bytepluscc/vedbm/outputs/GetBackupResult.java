@@ -13,67 +13,67 @@ import java.util.Objects;
 @CustomType
 public final class GetBackupResult {
     /**
-     * @return 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     private String backupEndTime;
     /**
-     * @return 备份文件大小，单位为 KiB。
+     * @return Backup file size, unit: KiB
      * 
      */
     private Integer backupFileSize;
     /**
-     * @return 备份 ID。
+     * @return Backup ID
      * 
      */
     private String backupId;
     /**
-     * @return 备份方式，目前仅支持物理备份。
+     * @return Backup method, currently only physical backup is supported
      * 
      */
     private String backupMethod;
     /**
-     * @return 数据备份保留天数。
+     * @return Data backup retention days
      * 
      */
     private Integer backupRetentionPeriod;
     /**
-     * @return 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     private String backupStartTime;
     /**
-     * @return 备份状态。
+     * @return Backup status
      * 
      */
     private String backupStatus;
     /**
-     * @return 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * @return Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
      * 
      */
     private String backupTime;
     /**
-     * @return 备份类型，目前仅支持全量备份。
+     * @return Backup type, currently only full backup is supported
      * 
      */
     private String backupType;
     /**
-     * @return 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     private String consistentTime;
     /**
-     * @return 是否开启持续备份，取值固定为 true。
+     * @return Enable continuous backup, value is always true
      * 
      */
     private Boolean continueBackup;
     /**
-     * @return 创建类型。
+     * @return Creation type
      * 
      */
     private String createType;
     /**
-     * @return 全量备份周期，多个取值用英文逗号（,）隔开。
+     * @return Full backup cycle, use commas (,) to separate multiple values
      * 
      */
     private String fullBackupPeriod;
@@ -83,98 +83,98 @@ public final class GetBackupResult {
      */
     private String id;
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     private String instanceId;
 
     private GetBackupResult() {}
     /**
-     * @return 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     public String backupEndTime() {
         return this.backupEndTime;
     }
     /**
-     * @return 备份文件大小，单位为 KiB。
+     * @return Backup file size, unit: KiB
      * 
      */
     public Integer backupFileSize() {
         return this.backupFileSize;
     }
     /**
-     * @return 备份 ID。
+     * @return Backup ID
      * 
      */
     public String backupId() {
         return this.backupId;
     }
     /**
-     * @return 备份方式，目前仅支持物理备份。
+     * @return Backup method, currently only physical backup is supported
      * 
      */
     public String backupMethod() {
         return this.backupMethod;
     }
     /**
-     * @return 数据备份保留天数。
+     * @return Data backup retention days
      * 
      */
     public Integer backupRetentionPeriod() {
         return this.backupRetentionPeriod;
     }
     /**
-     * @return 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     public String backupStartTime() {
         return this.backupStartTime;
     }
     /**
-     * @return 备份状态。
+     * @return Backup status
      * 
      */
     public String backupStatus() {
         return this.backupStatus;
     }
     /**
-     * @return 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * @return Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
      * 
      */
     public String backupTime() {
         return this.backupTime;
     }
     /**
-     * @return 备份类型，目前仅支持全量备份。
+     * @return Backup type, currently only full backup is supported
      * 
      */
     public String backupType() {
         return this.backupType;
     }
     /**
-     * @return 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     public String consistentTime() {
         return this.consistentTime;
     }
     /**
-     * @return 是否开启持续备份，取值固定为 true。
+     * @return Enable continuous backup, value is always true
      * 
      */
     public Boolean continueBackup() {
         return this.continueBackup;
     }
     /**
-     * @return 创建类型。
+     * @return Creation type
      * 
      */
     public String createType() {
         return this.createType;
     }
     /**
-     * @return 全量备份周期，多个取值用英文逗号（,）隔开。
+     * @return Full backup cycle, use commas (,) to separate multiple values
      * 
      */
     public String fullBackupPeriod() {
@@ -188,7 +188,7 @@ public final class GetBackupResult {
         return this.id;
     }
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     public String instanceId() {

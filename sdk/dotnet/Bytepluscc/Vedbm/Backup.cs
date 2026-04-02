@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vedbm
 {
     /// <summary>
-    /// 云数据库 veDB备份管理
+    /// Cloud Database veDB Backup Management
     /// 
     /// ## Example Usage
     /// 
@@ -46,85 +46,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     public partial class Backup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         /// </summary>
         [Output("backupEndTime")]
         public Output<string> BackupEndTime { get; private set; } = null!;
 
         /// <summary>
-        /// 备份文件大小，单位为 KiB。
+        /// Backup file size, unit: KiB
         /// </summary>
         [Output("backupFileSize")]
         public Output<int> BackupFileSize { get; private set; } = null!;
 
         /// <summary>
-        /// 备份 ID。
+        /// Backup ID
         /// </summary>
         [Output("backupId")]
         public Output<string> BackupId { get; private set; } = null!;
 
         /// <summary>
-        /// 备份方式，目前仅支持物理备份。
+        /// Backup method, currently only physical backup is supported
         /// </summary>
         [Output("backupMethod")]
         public Output<string> BackupMethod { get; private set; } = null!;
 
         /// <summary>
-        /// 数据备份保留天数。
+        /// Data backup retention days
         /// </summary>
         [Output("backupRetentionPeriod")]
         public Output<int> BackupRetentionPeriod { get; private set; } = null!;
 
         /// <summary>
-        /// 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         /// </summary>
         [Output("backupStartTime")]
         public Output<string> BackupStartTime { get; private set; } = null!;
 
         /// <summary>
-        /// 备份状态。
+        /// Backup status
         /// </summary>
         [Output("backupStatus")]
         public Output<string> BackupStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+        /// Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
         /// </summary>
         [Output("backupTime")]
         public Output<string> BackupTime { get; private set; } = null!;
 
         /// <summary>
-        /// 备份类型，目前仅支持全量备份。
+        /// Backup type, currently only full backup is supported
         /// </summary>
         [Output("backupType")]
         public Output<string> BackupType { get; private set; } = null!;
 
         /// <summary>
-        /// 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         /// </summary>
         [Output("consistentTime")]
         public Output<string> ConsistentTime { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启持续备份，取值固定为 true。
+        /// Enable continuous backup, value is always true
         /// </summary>
         [Output("continueBackup")]
         public Output<bool> ContinueBackup { get; private set; } = null!;
 
         /// <summary>
-        /// 创建类型。
+        /// Creation type
         /// </summary>
         [Output("createType")]
         public Output<string> CreateType { get; private set; } = null!;
 
         /// <summary>
-        /// 全量备份周期，多个取值用英文逗号（,）隔开。
+        /// Full backup cycle, use commas (,) to separate multiple values
         /// </summary>
         [Output("fullBackupPeriod")]
         public Output<string> FullBackupPeriod { get; private set; } = null!;
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
@@ -177,37 +177,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     public sealed class BackupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 备份方式，目前仅支持物理备份。
+        /// Backup method, currently only physical backup is supported
         /// </summary>
         [Input("backupMethod")]
         public Input<string>? BackupMethod { get; set; }
 
         /// <summary>
-        /// 数据备份保留天数。
+        /// Data backup retention days
         /// </summary>
         [Input("backupRetentionPeriod")]
         public Input<int>? BackupRetentionPeriod { get; set; }
 
         /// <summary>
-        /// 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+        /// Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
         /// </summary>
         [Input("backupTime")]
         public Input<string>? BackupTime { get; set; }
 
         /// <summary>
-        /// 备份类型，目前仅支持全量备份。
+        /// Backup type, currently only full backup is supported
         /// </summary>
         [Input("backupType")]
         public Input<string>? BackupType { get; set; }
 
         /// <summary>
-        /// 全量备份周期，多个取值用英文逗号（,）隔开。
+        /// Full backup cycle, use commas (,) to separate multiple values
         /// </summary>
         [Input("fullBackupPeriod")]
         public Input<string>? FullBackupPeriod { get; set; }
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId", required: true)]
         public Input<string> InstanceId { get; set; } = null!;
@@ -221,85 +221,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     public sealed class BackupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         /// </summary>
         [Input("backupEndTime")]
         public Input<string>? BackupEndTime { get; set; }
 
         /// <summary>
-        /// 备份文件大小，单位为 KiB。
+        /// Backup file size, unit: KiB
         /// </summary>
         [Input("backupFileSize")]
         public Input<int>? BackupFileSize { get; set; }
 
         /// <summary>
-        /// 备份 ID。
+        /// Backup ID
         /// </summary>
         [Input("backupId")]
         public Input<string>? BackupId { get; set; }
 
         /// <summary>
-        /// 备份方式，目前仅支持物理备份。
+        /// Backup method, currently only physical backup is supported
         /// </summary>
         [Input("backupMethod")]
         public Input<string>? BackupMethod { get; set; }
 
         /// <summary>
-        /// 数据备份保留天数。
+        /// Data backup retention days
         /// </summary>
         [Input("backupRetentionPeriod")]
         public Input<int>? BackupRetentionPeriod { get; set; }
 
         /// <summary>
-        /// 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         /// </summary>
         [Input("backupStartTime")]
         public Input<string>? BackupStartTime { get; set; }
 
         /// <summary>
-        /// 备份状态。
+        /// Backup status
         /// </summary>
         [Input("backupStatus")]
         public Input<string>? BackupStatus { get; set; }
 
         /// <summary>
-        /// 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+        /// Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
         /// </summary>
         [Input("backupTime")]
         public Input<string>? BackupTime { get; set; }
 
         /// <summary>
-        /// 备份类型，目前仅支持全量备份。
+        /// Backup type, currently only full backup is supported
         /// </summary>
         [Input("backupType")]
         public Input<string>? BackupType { get; set; }
 
         /// <summary>
-        /// 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         /// </summary>
         [Input("consistentTime")]
         public Input<string>? ConsistentTime { get; set; }
 
         /// <summary>
-        /// 是否开启持续备份，取值固定为 true。
+        /// Enable continuous backup, value is always true
         /// </summary>
         [Input("continueBackup")]
         public Input<bool>? ContinueBackup { get; set; }
 
         /// <summary>
-        /// 创建类型。
+        /// Creation type
         /// </summary>
         [Input("createType")]
         public Input<string>? CreateType { get; set; }
 
         /// <summary>
-        /// 全量备份周期，多个取值用英文逗号（,）隔开。
+        /// Full backup cycle, use commas (,) to separate multiple values
         /// </summary>
         [Input("fullBackupPeriod")]
         public Input<string>? FullBackupPeriod { get; set; }
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }

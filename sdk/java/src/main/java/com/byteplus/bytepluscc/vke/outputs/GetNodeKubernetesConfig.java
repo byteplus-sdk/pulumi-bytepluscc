@@ -14,38 +14,38 @@ import java.util.Objects;
 @CustomType
 public final class GetNodeKubernetesConfig {
     /**
-     * @return 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+     * @return Node lock configuration. Options: false (default): not locked; true: locked
      * 
      */
     private Boolean cordon;
     /**
-     * @return 节点池/节点的 Kubernetes 标签（Labels）信息。最多可传入 20 个标签。
+     * @return Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
      * 
      */
     private List<GetNodeKubernetesConfigLabel> labels;
     /**
-     * @return 节点池/节点的 Kubernetes 污点（Taints）信息。最多可传入 20 个污点。
+     * @return Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
      * 
      */
     private List<GetNodeKubernetesConfigTaint> taints;
 
     private GetNodeKubernetesConfig() {}
     /**
-     * @return 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+     * @return Node lock configuration. Options: false (default): not locked; true: locked
      * 
      */
     public Boolean cordon() {
         return this.cordon;
     }
     /**
-     * @return 节点池/节点的 Kubernetes 标签（Labels）信息。最多可传入 20 个标签。
+     * @return Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
      * 
      */
     public List<GetNodeKubernetesConfigLabel> labels() {
         return this.labels;
     }
     /**
-     * @return 节点池/节点的 Kubernetes 污点（Taints）信息。最多可传入 20 个污点。
+     * @return Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
      * 
      */
     public List<GetNodeKubernetesConfigTaint> taints() {

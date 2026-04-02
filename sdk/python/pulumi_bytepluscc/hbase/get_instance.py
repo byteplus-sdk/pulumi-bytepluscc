@@ -145,7 +145,7 @@ class GetInstanceResult:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> builtins.bool:
         """
-        预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+        Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -153,7 +153,7 @@ class GetInstanceResult:
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> builtins.str:
         """
-        计费状态。取值：Normal：正常。Overdue：欠费。Shutdown：关停。
+        Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
         """
         return pulumi.get(self, "charge_status")
 
@@ -161,7 +161,7 @@ class GetInstanceResult:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+        Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
         """
         return pulumi.get(self, "charge_type")
 
@@ -169,7 +169,7 @@ class GetInstanceResult:
     @pulumi.getter(name="coldStorage")
     def cold_storage(self) -> builtins.int:
         """
-        实例总容量型存储空间大小，单位 GiB。
+        Total capacity-type storage space for the instance, in GiB.
         """
         return pulumi.get(self, "cold_storage")
 
@@ -177,7 +177,7 @@ class GetInstanceResult:
     @pulumi.getter(name="createTime")
     def create_time(self) -> builtins.str:
         """
-        实例创建时间（UTC 时间）。
+        Instance creation time (UTC).
         """
         return pulumi.get(self, "create_time")
 
@@ -185,7 +185,7 @@ class GetInstanceResult:
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> builtins.str:
         """
-        实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+        Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -193,7 +193,7 @@ class GetInstanceResult:
     @pulumi.getter(name="enableAuth")
     def enable_auth(self) -> builtins.bool:
         """
-        是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+        Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
         """
         return pulumi.get(self, "enable_auth")
 
@@ -201,7 +201,7 @@ class GetInstanceResult:
     @pulumi.getter(name="enableCloudStorage")
     def enable_cloud_storage(self) -> builtins.bool:
         """
-        是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+        Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
         """
         return pulumi.get(self, "enable_cloud_storage")
 
@@ -209,7 +209,7 @@ class GetInstanceResult:
     @pulumi.getter
     def endpoints(self) -> Sequence['outputs.GetInstanceEndpointResult']:
         """
-        连接地址信息列表。
+        Connection address information list
         """
         return pulumi.get(self, "endpoints")
 
@@ -217,7 +217,7 @@ class GetInstanceResult:
     @pulumi.getter(name="engineVersion")
     def engine_version(self) -> builtins.str:
         """
-        HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+        HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
         """
         return pulumi.get(self, "engine_version")
 
@@ -233,7 +233,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例 ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -241,7 +241,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> builtins.str:
         """
-        实例名称。
+        Instance name
         """
         return pulumi.get(self, "instance_name")
 
@@ -249,7 +249,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> builtins.str:
         """
-        实例类型。当前仅支持标准型，取值默认为 Standard。
+        Instance type. Currently, only Standard is supported. The default value is Standard
         """
         return pulumi.get(self, "instance_type")
 
@@ -257,7 +257,7 @@ class GetInstanceResult:
     @pulumi.getter(name="masterCount")
     def master_count(self) -> builtins.int:
         """
-        Master 节点个数。单可用区部署，默认包含 2 个 Master 节点。
+        Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
         """
         return pulumi.get(self, "master_count")
 
@@ -265,7 +265,7 @@ class GetInstanceResult:
     @pulumi.getter(name="masterSpec")
     def master_spec(self) -> builtins.str:
         """
-        Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+        Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
         """
         return pulumi.get(self, "master_spec")
 
@@ -273,7 +273,7 @@ class GetInstanceResult:
     @pulumi.getter(name="multiAz")
     def multi_az(self) -> builtins.bool:
         """
-        实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+        Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
         """
         return pulumi.get(self, "multi_az")
 
@@ -281,7 +281,7 @@ class GetInstanceResult:
     @pulumi.getter(name="primarySubnetId")
     def primary_subnet_id(self) -> builtins.str:
         """
-        实时主可用区子网 ID。
+        Real-time primary availability zone subnet ID.
         """
         return pulumi.get(self, "primary_subnet_id")
 
@@ -289,7 +289,7 @@ class GetInstanceResult:
     @pulumi.getter(name="primaryZoneId")
     def primary_zone_id(self) -> builtins.str:
         """
-        实时主可用区 ID。
+        Real-time primary zone ID
         """
         return pulumi.get(self, "primary_zone_id")
 
@@ -297,7 +297,7 @@ class GetInstanceResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        实例所属的项目名称。
+        Project name of the instance
         """
         return pulumi.get(self, "project_name")
 
@@ -305,7 +305,7 @@ class GetInstanceResult:
     @pulumi.getter(name="purchaseMonths")
     def purchase_months(self) -> builtins.int:
         """
-        购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+        Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
         """
         return pulumi.get(self, "purchase_months")
 
@@ -313,7 +313,7 @@ class GetInstanceResult:
     @pulumi.getter(name="regionId")
     def region_id(self) -> builtins.str:
         """
-        实例所属的地域 ID。
+        Region ID of the instance.
         """
         return pulumi.get(self, "region_id")
 
@@ -321,7 +321,7 @@ class GetInstanceResult:
     @pulumi.getter(name="rsCount")
     def rs_count(self) -> builtins.int:
         """
-        RegionServer 节点的数量。
+        Number of RegionServer nodes
         """
         return pulumi.get(self, "rs_count")
 
@@ -329,7 +329,7 @@ class GetInstanceResult:
     @pulumi.getter(name="rsSpec")
     def rs_spec(self) -> builtins.str:
         """
-        RegionServer 节点的规格码。
+        RegionServer node specification code.
         """
         return pulumi.get(self, "rs_spec")
 
@@ -337,7 +337,7 @@ class GetInstanceResult:
     @pulumi.getter(name="standbySubnetId")
     def standby_subnet_id(self) -> builtins.str:
         """
-        实时备可用区子网 ID。
+        Real-time standby availability zone subnet ID.
         """
         return pulumi.get(self, "standby_subnet_id")
 
@@ -345,7 +345,7 @@ class GetInstanceResult:
     @pulumi.getter(name="standbyZoneId")
     def standby_zone_id(self) -> builtins.str:
         """
-        实时备可用区 ID。
+        Real-time standby zone ID
         """
         return pulumi.get(self, "standby_zone_id")
 
@@ -353,7 +353,7 @@ class GetInstanceResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        实例当前状态。关于实例状态的更多说明，请参见实例状态说明。
+        Current status of the instance. For more details about instance status, see Instance Status Description
         """
         return pulumi.get(self, "status")
 
@@ -361,7 +361,7 @@ class GetInstanceResult:
     @pulumi.getter(name="storageCapacity")
     def storage_capacity(self) -> builtins.int:
         """
-        实例总存储容量，单位：GiB。
+        Total storage capacity of the instance, unit: GiB.
         """
         return pulumi.get(self, "storage_capacity")
 
@@ -369,7 +369,7 @@ class GetInstanceResult:
     @pulumi.getter(name="storageType")
     def storage_type(self) -> builtins.str:
         """
-        实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+        Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
         """
         return pulumi.get(self, "storage_type")
 
@@ -377,7 +377,7 @@ class GetInstanceResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+        Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
         """
         return pulumi.get(self, "subnet_id")
 
@@ -385,7 +385,7 @@ class GetInstanceResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetInstanceTagResult']:
         """
-        需要绑定的标签键和标签值数组对象。说明支持一次传入多组标签键值对象，多组标签键值对象间用英文逗号（,）分隔。单次最多同时传入 20 组标签键值对，单个实例最多绑定 50 个标签。标签键值需满足设置规则，具体规则请参见标签设置规则。
+        Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
         """
         return pulumi.get(self, "tags")
 
@@ -393,7 +393,7 @@ class GetInstanceResult:
     @pulumi.getter(name="usedColdStorage")
     def used_cold_storage(self) -> builtins.int:
         """
-        实例已使用的容量型存储空间大小，单位 MiB。
+        Capacity-type storage space used by the instance, in MiB
         """
         return pulumi.get(self, "used_cold_storage")
 
@@ -401,7 +401,7 @@ class GetInstanceResult:
     @pulumi.getter(name="usedStorage")
     def used_storage(self) -> builtins.float:
         """
-        主实例已使用的存储容量，单位：MiB。
+        Storage capacity used by the primary instance, in MiB
         """
         return pulumi.get(self, "used_storage")
 
@@ -409,7 +409,7 @@ class GetInstanceResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+        Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -417,7 +417,7 @@ class GetInstanceResult:
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> builtins.str:
         """
-        实例所属的私有网络名称。
+        Name of the private network to which the instance belongs.
         """
         return pulumi.get(self, "vpc_name")
 
@@ -425,7 +425,7 @@ class GetInstanceResult:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        实例所属的可用区 ID。
+        Zone ID of the instance
         """
         return pulumi.get(self, "zone_id")
 
@@ -433,7 +433,7 @@ class GetInstanceResult:
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> builtins.str:
         """
-        实例所属的可用区名称。
+        Name of the availability zone to which the instance belongs.
         """
         return pulumi.get(self, "zone_name")
 

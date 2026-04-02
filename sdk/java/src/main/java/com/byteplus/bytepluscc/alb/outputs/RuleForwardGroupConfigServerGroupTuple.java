@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleForwardGroupConfigServerGroupTuple {
     /**
-     * @return 转发到的目的服务器组 ID。
+     * @return Destination server group ID.
      * 
      */
     private @Nullable String serverGroupId;
     /**
-     * @return 服务器组权重。
+     * @return Server group weight.
      * 
      */
     private @Nullable Integer weight;
 
     private RuleForwardGroupConfigServerGroupTuple() {}
     /**
-     * @return 转发到的目的服务器组 ID。
+     * @return Destination server group ID.
      * 
      */
     public Optional<String> serverGroupId() {
         return Optional.ofNullable(this.serverGroupId);
     }
     /**
-     * @return 服务器组权重。
+     * @return Server group weight.
      * 
      */
     public Optional<Integer> weight() {

@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 实例启动模板版本是一系列实例配置信息的集合，用于快速购买实例。在模板中，您可以存储除密码外的全部配置信息，包括密钥对、计算规格、云盘、网络等，如果配置信息均有效，便可以一键成功购买实例，无需进行重复配置。
+ * Instance launch template version is a collection of instance configuration information used for quick instance purchase. In the template, you can store all configuration information except passwords, including key pairs, compute specifications, disks, network, etc. If all configuration information is valid, you can purchase an instance with one click without repeated configuration
  *
  * ## Import
  *
@@ -44,110 +44,110 @@ export class LaunchTemplateVersion extends pulumi.CustomResource {
     }
 
     /**
-     * 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+     * When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
      */
     public readonly deploymentSetGroupNumber!: pulumi.Output<number>;
     /**
-     * 实例需要加入的部署集ID。
+     * Deployment set ID to join for the instance.
      */
     public readonly deploymentSetId!: pulumi.Output<string>;
     /**
-     * 实例的描述。
+     * Instance description.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 实例绑定的公网IP信息。
+     * Public IP information bound to the instance.
      */
     public readonly eip!: pulumi.Output<outputs.ecs.LaunchTemplateVersionEip>;
     /**
-     * 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+     * Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
      */
     public readonly hostName!: pulumi.Output<string>;
     /**
-     * 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+     * Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
      */
     public readonly hpcClusterId!: pulumi.Output<string>;
     /**
-     * 镜像ID。
+     * Image ID
      */
     public readonly imageId!: pulumi.Output<string>;
     /**
-     * 镜像名称。
+     * Image name.
      */
     public readonly imageName!: pulumi.Output<string>;
     /**
-     * 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+     * Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
      */
     public readonly instanceChargeType!: pulumi.Output<string>;
     /**
-     * 实例的名称。
+     * Instance name.
      */
     public readonly instanceName!: pulumi.Output<string>;
     /**
-     * 实例的规格。
+     * Instance specifications
      */
     public readonly instanceTypeId!: pulumi.Output<string>;
     /**
-     * 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+     * Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
      */
     public readonly keepImageCredential!: pulumi.Output<boolean>;
     /**
-     * 实例绑定的密钥对。
+     * Key pair bound to the instance.
      */
     public readonly keyPairName!: pulumi.Output<string>;
     /**
-     * 实例启动模板 ID。
+     * Instance launch template ID.
      */
     public readonly launchTemplateId!: pulumi.Output<string>;
     public readonly networkInterfaces!: pulumi.Output<outputs.ecs.LaunchTemplateVersionNetworkInterface[]>;
     /**
-     * 实例所属项目。
+     * Project to which the instance belongs.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 弹性预约单信息。
+     * Elastic reservation order information
      */
     public readonly scheduledInstance!: pulumi.Output<outputs.ecs.LaunchTemplateVersionScheduledInstance>;
     /**
-     * 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+     * Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
      */
     public readonly securityEnhancementStrategy!: pulumi.Output<string>;
     /**
-     * 抢占式实例的每小时最高价格。
+     * Maximum hourly price for preemptible instances.
      */
     public readonly spotPriceLimit!: pulumi.Output<number>;
     /**
-     * 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+     * Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
      */
     public readonly spotStrategy!: pulumi.Output<string>;
     /**
-     * 有序后缀的起始序号。
+     * Starting sequence number for the ordered suffix.
      */
     public readonly suffixIndex!: pulumi.Output<number>;
     public readonly tags!: pulumi.Output<outputs.ecs.LaunchTemplateVersionTag[]>;
     /**
-     * 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+     * Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
      */
     public readonly uniqueSuffix!: pulumi.Output<boolean>;
     /**
-     * 实例的自定义数据。
+     * Custom data for the instance.
      */
     public readonly userData!: pulumi.Output<string>;
     /**
-     * 模版版本描述。
+     * Template version description.
      */
     public readonly versionDescription!: pulumi.Output<string>;
     /**
-     * 模板版本号。
+     * Template version number.
      */
     public /*out*/ readonly versionNumber!: pulumi.Output<string>;
     public readonly volumes!: pulumi.Output<outputs.ecs.LaunchTemplateVersionVolume[]>;
     /**
-     * 私有网络ID。
+     * Private network ID
      */
     public readonly vpcId!: pulumi.Output<string>;
     /**
-     * 实例所属可用区ID。
+     * Availability zone ID of the instance
      */
     public readonly zoneId!: pulumi.Output<string>;
 
@@ -235,110 +235,110 @@ export class LaunchTemplateVersion extends pulumi.CustomResource {
  */
 export interface LaunchTemplateVersionState {
     /**
-     * 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+     * When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
      */
     deploymentSetGroupNumber?: pulumi.Input<number>;
     /**
-     * 实例需要加入的部署集ID。
+     * Deployment set ID to join for the instance.
      */
     deploymentSetId?: pulumi.Input<string>;
     /**
-     * 实例的描述。
+     * Instance description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 实例绑定的公网IP信息。
+     * Public IP information bound to the instance.
      */
     eip?: pulumi.Input<inputs.ecs.LaunchTemplateVersionEip>;
     /**
-     * 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+     * Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
      */
     hostName?: pulumi.Input<string>;
     /**
-     * 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+     * Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
      */
     hpcClusterId?: pulumi.Input<string>;
     /**
-     * 镜像ID。
+     * Image ID
      */
     imageId?: pulumi.Input<string>;
     /**
-     * 镜像名称。
+     * Image name.
      */
     imageName?: pulumi.Input<string>;
     /**
-     * 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+     * Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
      */
     instanceChargeType?: pulumi.Input<string>;
     /**
-     * 实例的名称。
+     * Instance name.
      */
     instanceName?: pulumi.Input<string>;
     /**
-     * 实例的规格。
+     * Instance specifications
      */
     instanceTypeId?: pulumi.Input<string>;
     /**
-     * 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+     * Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
      */
     keepImageCredential?: pulumi.Input<boolean>;
     /**
-     * 实例绑定的密钥对。
+     * Key pair bound to the instance.
      */
     keyPairName?: pulumi.Input<string>;
     /**
-     * 实例启动模板 ID。
+     * Instance launch template ID.
      */
     launchTemplateId?: pulumi.Input<string>;
     networkInterfaces?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateVersionNetworkInterface>[]>;
     /**
-     * 实例所属项目。
+     * Project to which the instance belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 弹性预约单信息。
+     * Elastic reservation order information
      */
     scheduledInstance?: pulumi.Input<inputs.ecs.LaunchTemplateVersionScheduledInstance>;
     /**
-     * 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+     * Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
      */
     securityEnhancementStrategy?: pulumi.Input<string>;
     /**
-     * 抢占式实例的每小时最高价格。
+     * Maximum hourly price for preemptible instances.
      */
     spotPriceLimit?: pulumi.Input<number>;
     /**
-     * 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+     * Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
      */
     spotStrategy?: pulumi.Input<string>;
     /**
-     * 有序后缀的起始序号。
+     * Starting sequence number for the ordered suffix.
      */
     suffixIndex?: pulumi.Input<number>;
     tags?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateVersionTag>[]>;
     /**
-     * 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+     * Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
      */
     uniqueSuffix?: pulumi.Input<boolean>;
     /**
-     * 实例的自定义数据。
+     * Custom data for the instance.
      */
     userData?: pulumi.Input<string>;
     /**
-     * 模版版本描述。
+     * Template version description.
      */
     versionDescription?: pulumi.Input<string>;
     /**
-     * 模板版本号。
+     * Template version number.
      */
     versionNumber?: pulumi.Input<string>;
     volumes?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateVersionVolume>[]>;
     /**
-     * 私有网络ID。
+     * Private network ID
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * 实例所属可用区ID。
+     * Availability zone ID of the instance
      */
     zoneId?: pulumi.Input<string>;
 }
@@ -348,106 +348,106 @@ export interface LaunchTemplateVersionState {
  */
 export interface LaunchTemplateVersionArgs {
     /**
-     * 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+     * When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
      */
     deploymentSetGroupNumber?: pulumi.Input<number>;
     /**
-     * 实例需要加入的部署集ID。
+     * Deployment set ID to join for the instance.
      */
     deploymentSetId?: pulumi.Input<string>;
     /**
-     * 实例的描述。
+     * Instance description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 实例绑定的公网IP信息。
+     * Public IP information bound to the instance.
      */
     eip?: pulumi.Input<inputs.ecs.LaunchTemplateVersionEip>;
     /**
-     * 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+     * Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
      */
     hostName?: pulumi.Input<string>;
     /**
-     * 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+     * Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
      */
     hpcClusterId?: pulumi.Input<string>;
     /**
-     * 镜像ID。
+     * Image ID
      */
     imageId?: pulumi.Input<string>;
     /**
-     * 镜像名称。
+     * Image name.
      */
     imageName?: pulumi.Input<string>;
     /**
-     * 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+     * Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
      */
     instanceChargeType?: pulumi.Input<string>;
     /**
-     * 实例的名称。
+     * Instance name.
      */
     instanceName?: pulumi.Input<string>;
     /**
-     * 实例的规格。
+     * Instance specifications
      */
     instanceTypeId?: pulumi.Input<string>;
     /**
-     * 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+     * Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
      */
     keepImageCredential?: pulumi.Input<boolean>;
     /**
-     * 实例绑定的密钥对。
+     * Key pair bound to the instance.
      */
     keyPairName?: pulumi.Input<string>;
     /**
-     * 实例启动模板 ID。
+     * Instance launch template ID.
      */
     launchTemplateId?: pulumi.Input<string>;
     networkInterfaces?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateVersionNetworkInterface>[]>;
     /**
-     * 实例所属项目。
+     * Project to which the instance belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 弹性预约单信息。
+     * Elastic reservation order information
      */
     scheduledInstance?: pulumi.Input<inputs.ecs.LaunchTemplateVersionScheduledInstance>;
     /**
-     * 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+     * Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
      */
     securityEnhancementStrategy?: pulumi.Input<string>;
     /**
-     * 抢占式实例的每小时最高价格。
+     * Maximum hourly price for preemptible instances.
      */
     spotPriceLimit?: pulumi.Input<number>;
     /**
-     * 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+     * Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
      */
     spotStrategy?: pulumi.Input<string>;
     /**
-     * 有序后缀的起始序号。
+     * Starting sequence number for the ordered suffix.
      */
     suffixIndex?: pulumi.Input<number>;
     tags?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateVersionTag>[]>;
     /**
-     * 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+     * Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
      */
     uniqueSuffix?: pulumi.Input<boolean>;
     /**
-     * 实例的自定义数据。
+     * Custom data for the instance.
      */
     userData?: pulumi.Input<string>;
     /**
-     * 模版版本描述。
+     * Template version description.
      */
     versionDescription?: pulumi.Input<string>;
     volumes?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateVersionVolume>[]>;
     /**
-     * 私有网络ID。
+     * Private network ID
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * 实例所属可用区ID。
+     * Availability zone ID of the instance
      */
     zoneId?: pulumi.Input<string>;
 }

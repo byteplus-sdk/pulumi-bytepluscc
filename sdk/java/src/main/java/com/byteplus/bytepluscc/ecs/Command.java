@@ -19,7 +19,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 自定义命令是云助手提供的满足您个性化运维需求的功能，您可以在预置的公共命令不满足需求时创建自定义命令，并通过运维任务在实例中批量执行您编写的自定义命令。
+ * Custom commands are features provided by Cloud Assistant to meet your personalized O&amp;M needs. If the preset public commands do not meet your requirements, you can create custom commands and batch execute your custom commands on instances using O&amp;M tasks.
  * 
  * ## Example Usage
  * 
@@ -36,112 +36,112 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:ecs/command:Command")
 public class Command extends com.pulumi.resources.CustomResource {
     /**
-     * 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+     * Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
      * 
      */
     @Export(name="commandContent", refs={String.class}, tree="[0]")
     private Output<String> commandContent;
 
     /**
-     * @return 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+     * @return Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
      * 
      */
     public Output<String> commandContent() {
         return this.commandContent;
     }
     /**
-     * 自定义命令ID。
+     * Custom command ID.
      * 
      */
     @Export(name="commandId", refs={String.class}, tree="[0]")
     private Output<String> commandId;
 
     /**
-     * @return 自定义命令ID。
+     * @return Custom command ID.
      * 
      */
     public Output<String> commandId() {
         return this.commandId;
     }
     /**
-     * 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+     * Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
      * 
      */
     @Export(name="contentEncoding", refs={String.class}, tree="[0]")
     private Output<String> contentEncoding;
 
     /**
-     * @return 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+     * @return Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
      * 
      */
     public Output<String> contentEncoding() {
         return this.contentEncoding;
     }
     /**
-     * 创建时间。
+     * Creation time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+     * Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+     * @return Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+     * Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
      * 
      */
     @Export(name="enableParameter", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableParameter;
 
     /**
-     * @return 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+     * @return Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
      * 
      */
     public Output<Boolean> enableParameter() {
         return this.enableParameter;
     }
     /**
-     * 命令被调用次数。
+     * Number of times the command has been invoked.
      * 
      */
     @Export(name="invocationTimes", refs={Integer.class}, tree="[0]")
     private Output<Integer> invocationTimes;
 
     /**
-     * @return 命令被调用次数。
+     * @return Number of times the command has been invoked.
      * 
      */
     public Output<Integer> invocationTimes() {
         return this.invocationTimes;
     }
     /**
-     * 命令名称。字符长度1~32。不限制特殊字符。
+     * Command name. Character length: 1~32. No restriction on special characters.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 命令名称。字符长度1~32。不限制特殊字符。
+     * @return Command name. Character length: 1~32. No restriction on special characters.
      * 
      */
     public Output<String> name() {
@@ -154,28 +154,28 @@ public class Command extends com.pulumi.resources.CustomResource {
         return this.parameterDefinitions;
     }
     /**
-     * 资源所属项目，一个资源只能归属于一个项目。
+     * Project to which the resource belongs. Each resource can belong to only one project.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 资源所属项目，一个资源只能归属于一个项目。
+     * @return Project to which the resource belongs. Each resource can belong to only one project.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 命令的提供方。
+     * Command provider.
      * 
      */
     @Export(name="providerName", refs={String.class}, tree="[0]")
     private Output<String> providerName;
 
     /**
-     * @return 命令的提供方。
+     * @return Command provider.
      * 
      */
     public Output<String> providerName() {
@@ -188,70 +188,70 @@ public class Command extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+     * Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
      * 
      */
     @Export(name="timeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeout;
 
     /**
-     * @return 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+     * @return Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
      * 
      */
     public Output<Integer> timeout() {
         return this.timeout;
     }
     /**
-     * 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+     * Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+     * @return Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
      * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
-     * 更新时间。
+     * Update time.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 执行命令时的用户名。
+     * Username for executing the command.
      * 
      */
     @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**
-     * @return 执行命令时的用户名。
+     * @return Username for executing the command.
      * 
      */
     public Output<String> username() {
         return this.username;
     }
     /**
-     * 创建的命令在ECS实例中运行的目录。
+     * Directory where the created command runs on ECS instances.
      * 
      */
     @Export(name="workingDir", refs={String.class}, tree="[0]")
     private Output<String> workingDir;
 
     /**
-     * @return 创建的命令在ECS实例中运行的目录。
+     * @return Directory where the created command runs on ECS instances.
      * 
      */
     public Output<String> workingDir() {

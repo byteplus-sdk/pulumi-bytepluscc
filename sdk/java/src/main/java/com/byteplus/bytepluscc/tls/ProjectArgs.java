@@ -19,14 +19,14 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
     public static final ProjectArgs Empty = new ProjectArgs();
 
     /**
-     * 日志项目的简单描述。
+     * Brief description of the log project
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 日志项目的简单描述。
+     * @return Brief description of the log project
      * 
      */
     public Optional<Output<String>> description() {
@@ -34,14 +34,14 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 日志项目所属的 IAM 项目。
+     * The IAM project associated with the log project
      * 
      */
     @Import(name="iamProjectName")
     private @Nullable Output<String> iamProjectName;
 
     /**
-     * @return 日志项目所属的 IAM 项目。
+     * @return The IAM project associated with the log project
      * 
      */
     public Optional<Output<String>> iamProjectName() {
@@ -49,14 +49,14 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 日志项目名称。
+     * Log project name
      * 
      */
     @Import(name="projectName", required=true)
     private Output<String> projectName;
 
     /**
-     * @return 日志项目名称。
+     * @return Log project name
      * 
      */
     public Output<String> projectName() {
@@ -98,7 +98,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 日志项目的简单描述。
+         * @param description Brief description of the log project
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 日志项目的简单描述。
+         * @param description Brief description of the log project
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param iamProjectName 日志项目所属的 IAM 项目。
+         * @param iamProjectName The IAM project associated with the log project
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param iamProjectName 日志项目所属的 IAM 项目。
+         * @param iamProjectName The IAM project associated with the log project
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 日志项目名称。
+         * @param projectName Log project name
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 日志项目名称。
+         * @param projectName Log project name
          * 
          * @return builder
          * 

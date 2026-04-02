@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolStatus {
     /**
-     * @return 节点池当前主状态下的状态条件，即进入该主状态的原因。
+     * @return Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
      * 
      */
     private List<GetNodePoolStatusCondition> conditions;
     /**
-     * @return 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+     * @return Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
      * 
      */
     private String phase;
 
     private GetNodePoolStatus() {}
     /**
-     * @return 节点池当前主状态下的状态条件，即进入该主状态的原因。
+     * @return Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
      * 
      */
     public List<GetNodePoolStatusCondition> conditions() {
         return this.conditions;
     }
     /**
-     * @return 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+     * @return Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
      * 
      */
     public String phase() {

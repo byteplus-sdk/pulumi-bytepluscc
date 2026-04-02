@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainBackendGroupBackend {
     /**
-     * @return 源站 IP 地址。
+     * @return Origin IP address
      * 
      */
     private String ip;
     /**
-     * @return 源站端口。
+     * @return Origin port
      * 
      */
     private Integer port;
     /**
-     * @return 源站协议。
+     * @return Origin protocol.
      * 
      */
     private String protocol;
     /**
-     * @return 源站权重。
+     * @return Origin weight
      * 
      */
     private Integer weight;
 
     private GetDomainBackendGroupBackend() {}
     /**
-     * @return 源站 IP 地址。
+     * @return Origin IP address
      * 
      */
     public String ip() {
         return this.ip;
     }
     /**
-     * @return 源站端口。
+     * @return Origin port
      * 
      */
     public Integer port() {
         return this.port;
     }
     /**
-     * @return 源站协议。
+     * @return Origin protocol.
      * 
      */
     public String protocol() {
         return this.protocol;
     }
     /**
-     * @return 源站权重。
+     * @return Origin weight
      * 
      */
     public Integer weight() {

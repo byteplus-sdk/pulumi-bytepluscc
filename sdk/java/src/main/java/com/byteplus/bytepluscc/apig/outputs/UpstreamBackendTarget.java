@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamBackendTarget {
     /**
-     * @return 健康检查状态。
+     * @return Health Check Status
      * 
      */
     private @Nullable String healthStatus;
     /**
-     * @return 后端节点IP。
+     * @return Backend node IP
      * 
      */
     private @Nullable String ip;
     /**
-     * @return 后端节点端口。
+     * @return Backend node port
      * 
      */
     private @Nullable Integer port;
 
     private UpstreamBackendTarget() {}
     /**
-     * @return 健康检查状态。
+     * @return Health Check Status
      * 
      */
     public Optional<String> healthStatus() {
         return Optional.ofNullable(this.healthStatus);
     }
     /**
-     * @return 后端节点IP。
+     * @return Backend node IP
      * 
      */
     public Optional<String> ip() {
         return Optional.ofNullable(this.ip);
     }
     /**
-     * @return 后端节点端口。
+     * @return Backend node port
      * 
      */
     public Optional<Integer> port() {

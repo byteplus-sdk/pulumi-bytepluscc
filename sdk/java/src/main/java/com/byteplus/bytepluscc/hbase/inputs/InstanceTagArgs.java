@@ -16,14 +16,14 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceTagArgs Empty = new InstanceTagArgs();
 
     /**
-     * 实例所绑定标签的标签键。
+     * Tag key of the tags bound to the instance
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 实例所绑定标签的标签键。
+     * @return Tag key of the tags bound to the instance
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所绑定标签的标签值。
+     * Tag values bound to the instance.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 实例所绑定标签的标签值。
+     * @return Tag values bound to the instance.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 实例所绑定标签的标签键。
+         * @param key Tag key of the tags bound to the instance
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 实例所绑定标签的标签键。
+         * @param key Tag key of the tags bound to the instance
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 实例所绑定标签的标签值。
+         * @param value Tag values bound to the instance.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class InstanceTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 实例所绑定标签的标签值。
+         * @param value Tag values bound to the instance.
          * 
          * @return builder
          * 

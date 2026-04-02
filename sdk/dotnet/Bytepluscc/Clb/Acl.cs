@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Clb
 {
     /// <summary>
-    /// CLB提供监听级别的访问控制，如果您希望仅允许某些IP、或仅拒绝某些IP通过监听端口访问CLB实例，可以对该监听器设置访问控制策略。
+    /// CLB provides listener-level access control. If you want to allow only certain IPs or deny only certain IPs from accessing the CLB instance through the listener port, you can set an access control policy for the listener.
     /// 
     /// ## Example Usage
     /// 
@@ -67,31 +67,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         public Output<ImmutableArray<Outputs.AclAclEntry>> AclEntries { get; private set; } = null!;
 
         /// <summary>
-        /// 访问控制策略组包含的IP条目数量。
+        /// Number of IP entries contained in the access control policy group.
         /// </summary>
         [Output("aclEntryCount")]
         public Output<int> AclEntryCount { get; private set; } = null!;
 
         /// <summary>
-        /// 访问控制策略组的ID。
+        /// Access control policy group ID
         /// </summary>
         [Output("aclId")]
         public Output<string> AclId { get; private set; } = null!;
 
         /// <summary>
-        /// 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+        /// Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
         /// </summary>
         [Output("aclName")]
         public Output<string> AclName { get; private set; } = null!;
 
         /// <summary>
-        /// 访问控制策略组的创建时间。
+        /// Creation time of the access control policy group
         /// </summary>
         [Output("createTime")]
         public Output<string> CreateTime { get; private set; } = null!;
 
         /// <summary>
-        /// 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+        /// Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -100,19 +100,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         public Output<ImmutableArray<Outputs.AclListener>> Listeners { get; private set; } = null!;
 
         /// <summary>
-        /// 访问控制策略组所属项目的名称。不填默认为default。
+        /// Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 是否为托管资源。true：是。false：否。
+        /// Is this a managed resource. true: yes. false: no.
         /// </summary>
         [Output("serviceManaged")]
         public Output<bool> ServiceManaged { get; private set; } = null!;
 
         /// <summary>
-        /// 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+        /// Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -121,7 +121,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         public Output<ImmutableArray<Outputs.AclTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 访问控制策略组的最近操作时间。
+        /// Last operation time of the access control policy group
         /// </summary>
         [Output("updateTime")]
         public Output<string> UpdateTime { get; private set; } = null!;
@@ -182,19 +182,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         }
 
         /// <summary>
-        /// 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+        /// Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
         /// </summary>
         [Input("aclName")]
         public Input<string>? AclName { get; set; }
 
         /// <summary>
-        /// 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+        /// Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 访问控制策略组所属项目的名称。不填默认为default。
+        /// Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -224,31 +224,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         }
 
         /// <summary>
-        /// 访问控制策略组包含的IP条目数量。
+        /// Number of IP entries contained in the access control policy group.
         /// </summary>
         [Input("aclEntryCount")]
         public Input<int>? AclEntryCount { get; set; }
 
         /// <summary>
-        /// 访问控制策略组的ID。
+        /// Access control policy group ID
         /// </summary>
         [Input("aclId")]
         public Input<string>? AclId { get; set; }
 
         /// <summary>
-        /// 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+        /// Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
         /// </summary>
         [Input("aclName")]
         public Input<string>? AclName { get; set; }
 
         /// <summary>
-        /// 访问控制策略组的创建时间。
+        /// Creation time of the access control policy group
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+        /// Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -262,19 +262,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         }
 
         /// <summary>
-        /// 访问控制策略组所属项目的名称。不填默认为default。
+        /// Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 是否为托管资源。true：是。false：否。
+        /// Is this a managed resource. true: yes. false: no.
         /// </summary>
         [Input("serviceManaged")]
         public Input<bool>? ServiceManaged { get; set; }
 
         /// <summary>
-        /// 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+        /// Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -288,7 +288,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         }
 
         /// <summary>
-        /// 访问控制策略组的最近操作时间。
+        /// Last operation time of the access control policy group
         /// </summary>
         [Input("updateTime")]
         public Input<string>? UpdateTime { get; set; }

@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ShareConfigDenyIpAccessRule {
     /**
-     * @return 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+     * @return Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
      * 
      */
     private @Nullable List<String> rules;
 
     private ShareConfigDenyIpAccessRule() {}
     /**
-     * @return 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+     * @return Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
      * 
      */
     public List<String> rules() {

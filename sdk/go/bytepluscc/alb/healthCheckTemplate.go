@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 健康检查是确保应用程序是否可用的关键功能。ALB 通过定期对后端服务器进行健康检查，来验证这些服务器是否可以接受新的请求。当一个后端服务器不能正常响应 ALB 的健康检查请求时，来自客户端的流量不会被路由到该服务器。ALB 会将流量转发至其他状态为正常的服务器上。从而保证了服务的连续性和可靠性。ALB 健康检查是基于服务器组进行的。服务器组启用健康检查后，ALB 定期检查服务器组内的后端服务器状态。
+// Health checks are essential for ensuring application availability. ALB regularly performs health checks on backend servers to verify whether they can accept new requests. If a backend server fails to respond properly to ALB's health check requests, client traffic will not be routed to that server. ALB forwards traffic to other servers with a healthy status, ensuring service continuity and reliability. ALB health checks are performed based on server groups. Once health checks are enabled for a server group, ALB periodically checks the status of backend servers within the group.
 //
 // ## Example Usage
 //
@@ -67,40 +67,40 @@ import (
 type HealthCheckTemplate struct {
 	pulumi.CustomResourceState
 
-	// 健康检查模版的创建时间。
+	// Creation time of the health check template.
 	CreateTime pulumi.StringOutput `pulumi:"createTime"`
-	// 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+	// Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
+	// Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one '.', and cannot start or end with '.'. The string can contain letters, numbers, '-', and '.' characters. '-' cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
 	HealthCheckDomain pulumi.StringOutput `pulumi:"healthCheckDomain"`
-	// 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
+	// HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
 	HealthCheckHttpCode pulumi.StringOutput `pulumi:"healthCheckHttpCode"`
-	// 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
+	// HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
 	HealthCheckHttpVersion pulumi.StringOutput `pulumi:"healthCheckHttpVersion"`
-	// 执行健康检查的时间间隔，默认为2，取值1-300s 。
+	// Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
 	HealthCheckInterval pulumi.IntOutput `pulumi:"healthCheckInterval"`
-	// 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
+	// Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
 	HealthCheckMethod pulumi.StringOutput `pulumi:"healthCheckMethod"`
-	// 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+	// Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
 	HealthCheckPort pulumi.IntOutput `pulumi:"healthCheckPort"`
-	// 健康检查的协议。HTTPTCP。
+	// Protocol for the health check. HTTP or TCP.
 	HealthCheckProtocol pulumi.StringOutput `pulumi:"healthCheckProtocol"`
-	// 健康检查模板 ID。
+	// Health check template ID.
 	HealthCheckTemplateId pulumi.StringOutput `pulumi:"healthCheckTemplateId"`
-	// 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
+	// Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	HealthCheckTemplateName pulumi.StringOutput `pulumi:"healthCheckTemplateName"`
-	// 健康检查的响应超时时间，默认为2，取值1-60s 。
+	// Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
 	HealthCheckTimeout pulumi.IntOutput `pulumi:"healthCheckTimeout"`
-	// 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
+	// Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with '/'. Can only contain letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' characters. Length must be between 1 and 128 characters. If not specified, defaults to '/'.
 	HealthCheckUri pulumi.StringOutput `pulumi:"healthCheckUri"`
-	// 健康检查的健康阈值，默认为3，取值2-10次。
+	// Health threshold for the health check. Default is 3. Range: 2–10 times.
 	HealthyThreshold pulumi.IntOutput `pulumi:"healthyThreshold"`
-	// 健康检查模板所属项目名称。
+	// Project name to which the health check template belongs.
 	ProjectName pulumi.StringOutput               `pulumi:"projectName"`
 	Tags        HealthCheckTemplateTagArrayOutput `pulumi:"tags"`
-	// 健康检查的不健康阈值，默认为3，取值2-10次。
+	// Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
 	UnhealthyThreshold pulumi.IntOutput `pulumi:"unhealthyThreshold"`
-	// 健康检查模版最近一次的操作时间。
+	// Last operation time of the health check template.
 	UpdateTime pulumi.StringOutput `pulumi:"updateTime"`
 }
 
@@ -137,78 +137,78 @@ func GetHealthCheckTemplate(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering HealthCheckTemplate resources.
 type healthCheckTemplateState struct {
-	// 健康检查模版的创建时间。
+	// Creation time of the health check template.
 	CreateTime *string `pulumi:"createTime"`
-	// 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+	// Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
 	Description *string `pulumi:"description"`
-	// 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
+	// Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one '.', and cannot start or end with '.'. The string can contain letters, numbers, '-', and '.' characters. '-' cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
 	HealthCheckDomain *string `pulumi:"healthCheckDomain"`
-	// 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
+	// HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
 	HealthCheckHttpCode *string `pulumi:"healthCheckHttpCode"`
-	// 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
+	// HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
 	HealthCheckHttpVersion *string `pulumi:"healthCheckHttpVersion"`
-	// 执行健康检查的时间间隔，默认为2，取值1-300s 。
+	// Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
 	HealthCheckInterval *int `pulumi:"healthCheckInterval"`
-	// 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
+	// Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
 	HealthCheckMethod *string `pulumi:"healthCheckMethod"`
-	// 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+	// Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
 	HealthCheckPort *int `pulumi:"healthCheckPort"`
-	// 健康检查的协议。HTTPTCP。
+	// Protocol for the health check. HTTP or TCP.
 	HealthCheckProtocol *string `pulumi:"healthCheckProtocol"`
-	// 健康检查模板 ID。
+	// Health check template ID.
 	HealthCheckTemplateId *string `pulumi:"healthCheckTemplateId"`
-	// 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
+	// Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	HealthCheckTemplateName *string `pulumi:"healthCheckTemplateName"`
-	// 健康检查的响应超时时间，默认为2，取值1-60s 。
+	// Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
 	HealthCheckTimeout *int `pulumi:"healthCheckTimeout"`
-	// 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
+	// Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with '/'. Can only contain letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' characters. Length must be between 1 and 128 characters. If not specified, defaults to '/'.
 	HealthCheckUri *string `pulumi:"healthCheckUri"`
-	// 健康检查的健康阈值，默认为3，取值2-10次。
+	// Health threshold for the health check. Default is 3. Range: 2–10 times.
 	HealthyThreshold *int `pulumi:"healthyThreshold"`
-	// 健康检查模板所属项目名称。
+	// Project name to which the health check template belongs.
 	ProjectName *string                  `pulumi:"projectName"`
 	Tags        []HealthCheckTemplateTag `pulumi:"tags"`
-	// 健康检查的不健康阈值，默认为3，取值2-10次。
+	// Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
 	UnhealthyThreshold *int `pulumi:"unhealthyThreshold"`
-	// 健康检查模版最近一次的操作时间。
+	// Last operation time of the health check template.
 	UpdateTime *string `pulumi:"updateTime"`
 }
 
 type HealthCheckTemplateState struct {
-	// 健康检查模版的创建时间。
+	// Creation time of the health check template.
 	CreateTime pulumi.StringPtrInput
-	// 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+	// Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
 	Description pulumi.StringPtrInput
-	// 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
+	// Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one '.', and cannot start or end with '.'. The string can contain letters, numbers, '-', and '.' characters. '-' cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
 	HealthCheckDomain pulumi.StringPtrInput
-	// 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
+	// HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
 	HealthCheckHttpCode pulumi.StringPtrInput
-	// 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
+	// HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
 	HealthCheckHttpVersion pulumi.StringPtrInput
-	// 执行健康检查的时间间隔，默认为2，取值1-300s 。
+	// Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
 	HealthCheckInterval pulumi.IntPtrInput
-	// 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
+	// Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
 	HealthCheckMethod pulumi.StringPtrInput
-	// 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+	// Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
 	HealthCheckPort pulumi.IntPtrInput
-	// 健康检查的协议。HTTPTCP。
+	// Protocol for the health check. HTTP or TCP.
 	HealthCheckProtocol pulumi.StringPtrInput
-	// 健康检查模板 ID。
+	// Health check template ID.
 	HealthCheckTemplateId pulumi.StringPtrInput
-	// 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
+	// Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	HealthCheckTemplateName pulumi.StringPtrInput
-	// 健康检查的响应超时时间，默认为2，取值1-60s 。
+	// Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
 	HealthCheckTimeout pulumi.IntPtrInput
-	// 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
+	// Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with '/'. Can only contain letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' characters. Length must be between 1 and 128 characters. If not specified, defaults to '/'.
 	HealthCheckUri pulumi.StringPtrInput
-	// 健康检查的健康阈值，默认为3，取值2-10次。
+	// Health threshold for the health check. Default is 3. Range: 2–10 times.
 	HealthyThreshold pulumi.IntPtrInput
-	// 健康检查模板所属项目名称。
+	// Project name to which the health check template belongs.
 	ProjectName pulumi.StringPtrInput
 	Tags        HealthCheckTemplateTagArrayInput
-	// 健康检查的不健康阈值，默认为3，取值2-10次。
+	// Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
 	UnhealthyThreshold pulumi.IntPtrInput
-	// 健康检查模版最近一次的操作时间。
+	// Last operation time of the health check template.
 	UpdateTime pulumi.StringPtrInput
 }
 
@@ -217,67 +217,67 @@ func (HealthCheckTemplateState) ElementType() reflect.Type {
 }
 
 type healthCheckTemplateArgs struct {
-	// 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+	// Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
 	Description *string `pulumi:"description"`
-	// 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
+	// Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one '.', and cannot start or end with '.'. The string can contain letters, numbers, '-', and '.' characters. '-' cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
 	HealthCheckDomain *string `pulumi:"healthCheckDomain"`
-	// 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
+	// HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
 	HealthCheckHttpCode *string `pulumi:"healthCheckHttpCode"`
-	// 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
+	// HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
 	HealthCheckHttpVersion *string `pulumi:"healthCheckHttpVersion"`
-	// 执行健康检查的时间间隔，默认为2，取值1-300s 。
+	// Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
 	HealthCheckInterval *int `pulumi:"healthCheckInterval"`
-	// 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
+	// Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
 	HealthCheckMethod *string `pulumi:"healthCheckMethod"`
-	// 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+	// Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
 	HealthCheckPort *int `pulumi:"healthCheckPort"`
-	// 健康检查的协议。HTTPTCP。
+	// Protocol for the health check. HTTP or TCP.
 	HealthCheckProtocol *string `pulumi:"healthCheckProtocol"`
-	// 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
+	// Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	HealthCheckTemplateName string `pulumi:"healthCheckTemplateName"`
-	// 健康检查的响应超时时间，默认为2，取值1-60s 。
+	// Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
 	HealthCheckTimeout *int `pulumi:"healthCheckTimeout"`
-	// 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
+	// Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with '/'. Can only contain letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' characters. Length must be between 1 and 128 characters. If not specified, defaults to '/'.
 	HealthCheckUri *string `pulumi:"healthCheckUri"`
-	// 健康检查的健康阈值，默认为3，取值2-10次。
+	// Health threshold for the health check. Default is 3. Range: 2–10 times.
 	HealthyThreshold *int `pulumi:"healthyThreshold"`
-	// 健康检查模板所属项目名称。
+	// Project name to which the health check template belongs.
 	ProjectName *string                  `pulumi:"projectName"`
 	Tags        []HealthCheckTemplateTag `pulumi:"tags"`
-	// 健康检查的不健康阈值，默认为3，取值2-10次。
+	// Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
 	UnhealthyThreshold *int `pulumi:"unhealthyThreshold"`
 }
 
 // The set of arguments for constructing a HealthCheckTemplate resource.
 type HealthCheckTemplateArgs struct {
-	// 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+	// Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
 	Description pulumi.StringPtrInput
-	// 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
+	// Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one '.', and cannot start or end with '.'. The string can contain letters, numbers, '-', and '.' characters. '-' cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
 	HealthCheckDomain pulumi.StringPtrInput
-	// 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
+	// HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
 	HealthCheckHttpCode pulumi.StringPtrInput
-	// 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
+	// HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
 	HealthCheckHttpVersion pulumi.StringPtrInput
-	// 执行健康检查的时间间隔，默认为2，取值1-300s 。
+	// Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
 	HealthCheckInterval pulumi.IntPtrInput
-	// 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
+	// Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
 	HealthCheckMethod pulumi.StringPtrInput
-	// 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+	// Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
 	HealthCheckPort pulumi.IntPtrInput
-	// 健康检查的协议。HTTPTCP。
+	// Protocol for the health check. HTTP or TCP.
 	HealthCheckProtocol pulumi.StringPtrInput
-	// 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
+	// Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	HealthCheckTemplateName pulumi.StringInput
-	// 健康检查的响应超时时间，默认为2，取值1-60s 。
+	// Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
 	HealthCheckTimeout pulumi.IntPtrInput
-	// 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
+	// Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with '/'. Can only contain letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' characters. Length must be between 1 and 128 characters. If not specified, defaults to '/'.
 	HealthCheckUri pulumi.StringPtrInput
-	// 健康检查的健康阈值，默认为3，取值2-10次。
+	// Health threshold for the health check. Default is 3. Range: 2–10 times.
 	HealthyThreshold pulumi.IntPtrInput
-	// 健康检查模板所属项目名称。
+	// Project name to which the health check template belongs.
 	ProjectName pulumi.StringPtrInput
 	Tags        HealthCheckTemplateTagArrayInput
-	// 健康检查的不健康阈值，默认为3，取值2-10次。
+	// Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
 	UnhealthyThreshold pulumi.IntPtrInput
 }
 
@@ -368,77 +368,77 @@ func (o HealthCheckTemplateOutput) ToHealthCheckTemplateOutputWithContext(ctx co
 	return o
 }
 
-// 健康检查模版的创建时间。
+// Creation time of the health check template.
 func (o HealthCheckTemplateOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.StringOutput { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 健康检查描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+// Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
 func (o HealthCheckTemplateOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 健康检查的域名。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：需至少包含一个‘.’，且不允许以‘.’开头结尾。单个字符串由字母、数字、‘-’、‘.’字符组成，‘-’不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不填则此参数为空，负载均衡默认使用各后端服务器的私网IP地址进行健康检查。
+// Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one '.', and cannot start or end with '.'. The string can contain letters, numbers, '-', and '.' characters. '-' cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
 func (o HealthCheckTemplateOutput) HealthCheckDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.StringOutput { return v.HealthCheckDomain }).(pulumi.StringOutput)
 }
 
-// 健康检查正常的HTTP状态码。多个状态码用以半角逗号分隔，只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：http*2xx（默认）。http*3xx（默认） 。http*4xx 。http*5xx 。
+// HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
 func (o HealthCheckTemplateOutput) HealthCheckHttpCode() pulumi.StringOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.StringOutput { return v.HealthCheckHttpCode }).(pulumi.StringOutput)
 }
 
-// 健康检查HTTP协议版本。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：HTTP1.0（默认值）。HTTP1.1。
+// HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
 func (o HealthCheckTemplateOutput) HealthCheckHttpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.StringOutput { return v.HealthCheckHttpVersion }).(pulumi.StringOutput)
 }
 
-// 执行健康检查的时间间隔，默认为2，取值1-300s 。
+// Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
 func (o HealthCheckTemplateOutput) HealthCheckInterval() pulumi.IntOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.IntOutput { return v.HealthCheckInterval }).(pulumi.IntOutput)
 }
 
-// 健康检查的方法。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。取值如下：GETHEAD（默认方法）
+// Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
 func (o HealthCheckTemplateOutput) HealthCheckMethod() pulumi.StringOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.StringOutput { return v.HealthCheckMethod }).(pulumi.StringOutput)
 }
 
-// 健康检查端口。取值如下：0：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+// Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
 func (o HealthCheckTemplateOutput) HealthCheckPort() pulumi.IntOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.IntOutput { return v.HealthCheckPort }).(pulumi.IntOutput)
 }
 
-// 健康检查的协议。HTTPTCP。
+// Protocol for the health check. HTTP or TCP.
 func (o HealthCheckTemplateOutput) HealthCheckProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.StringOutput { return v.HealthCheckProtocol }).(pulumi.StringOutput)
 }
 
-// 健康检查模板 ID。
+// Health check template ID.
 func (o HealthCheckTemplateOutput) HealthCheckTemplateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.StringOutput { return v.HealthCheckTemplateId }).(pulumi.StringOutput)
 }
 
-// 健康检查模板的名称。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1～128字符之间。
+// Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 func (o HealthCheckTemplateOutput) HealthCheckTemplateName() pulumi.StringOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.StringOutput { return v.HealthCheckTemplateName }).(pulumi.StringOutput)
 }
 
-// 健康检查的响应超时时间，默认为2，取值1-60s 。
+// Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
 func (o HealthCheckTemplateOutput) HealthCheckTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.IntOutput { return v.HealthCheckTimeout }).(pulumi.IntOutput)
 }
 
-// 健康检查的路径。只有 HealthCheckProtocol 设置为 HTTP 时，该参数才生效。要求如下：必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’字符。长度限制为1 ～ 128个字符。不填默认为“/”。
+// Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with '/'. Can only contain letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' characters. Length must be between 1 and 128 characters. If not specified, defaults to '/'.
 func (o HealthCheckTemplateOutput) HealthCheckUri() pulumi.StringOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.StringOutput { return v.HealthCheckUri }).(pulumi.StringOutput)
 }
 
-// 健康检查的健康阈值，默认为3，取值2-10次。
+// Health threshold for the health check. Default is 3. Range: 2–10 times.
 func (o HealthCheckTemplateOutput) HealthyThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.IntOutput { return v.HealthyThreshold }).(pulumi.IntOutput)
 }
 
-// 健康检查模板所属项目名称。
+// Project name to which the health check template belongs.
 func (o HealthCheckTemplateOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
@@ -447,12 +447,12 @@ func (o HealthCheckTemplateOutput) Tags() HealthCheckTemplateTagArrayOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) HealthCheckTemplateTagArrayOutput { return v.Tags }).(HealthCheckTemplateTagArrayOutput)
 }
 
-// 健康检查的不健康阈值，默认为3，取值2-10次。
+// Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
 func (o HealthCheckTemplateOutput) UnhealthyThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.IntOutput { return v.UnhealthyThreshold }).(pulumi.IntOutput)
 }
 
-// 健康检查模版最近一次的操作时间。
+// Last operation time of the health check template.
 func (o HealthCheckTemplateOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *HealthCheckTemplate) pulumi.StringOutput { return v.UpdateTime }).(pulumi.StringOutput)
 }

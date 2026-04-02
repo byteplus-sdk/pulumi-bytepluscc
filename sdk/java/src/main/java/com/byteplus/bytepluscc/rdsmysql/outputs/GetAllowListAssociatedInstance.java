@@ -12,62 +12,62 @@ import java.util.Objects;
 @CustomType
 public final class GetAllowListAssociatedInstance {
     /**
-     * @return 已绑定当前白名单的实例 ID。
+     * @return Instance ID bound to the current allowlist.
      * 
      */
     private String instanceId;
     /**
-     * @return 已绑定当前白名单的实例名称。
+     * @return Instance name bound to the current allowlist.
      * 
      */
     private String instanceName;
     /**
-     * @return 实例状态。
+     * @return Instance status.
      * 
      */
     private String instanceStatus;
     /**
-     * @return 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+     * @return Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
      * 
      */
     private Boolean isLatest;
     /**
-     * @return 实例所属的私有网络 ID。
+     * @return Private network ID of the instance.
      * 
      */
     private String vpc;
 
     private GetAllowListAssociatedInstance() {}
     /**
-     * @return 已绑定当前白名单的实例 ID。
+     * @return Instance ID bound to the current allowlist.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 已绑定当前白名单的实例名称。
+     * @return Instance name bound to the current allowlist.
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 实例状态。
+     * @return Instance status.
      * 
      */
     public String instanceStatus() {
         return this.instanceStatus;
     }
     /**
-     * @return 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+     * @return Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
      * 
      */
     public Boolean isLatest() {
         return this.isLatest;
     }
     /**
-     * @return 实例所属的私有网络 ID。
+     * @return Private network ID of the instance.
      * 
      */
     public String vpc() {

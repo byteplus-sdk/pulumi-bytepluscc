@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark.Outputs
     public sealed class GetEndpointCertificateResult
     {
         /// <summary>
-        /// X509私有证书过期的时间。使用秒级时间戳表示。
+        /// X509 private certificate expiration time, represented as a timestamp in seconds
         /// </summary>
         public readonly int NotAfter;
         /// <summary>
-        /// X509私有证书开始生效的时间。使用秒级时间戳表示。
+        /// X509 private certificate activation time, represented as a timestamp in seconds
         /// </summary>
         public readonly int NotBefore;
         /// <summary>
-        /// 证书方。
+        /// Certificate subject
         /// </summary>
         public readonly string PcaHost;
         /// <summary>
-        /// PEM 格式的叶子证书。
+        /// PEM format leaf certificate
         /// </summary>
         public readonly string PcaInstanceCertificate;
         /// <summary>
-        /// 证书名称。
+        /// Certificate name
         /// </summary>
         public readonly string PcaName;
         /// <summary>
-        /// PEM 格式的根证书。
+        /// PEM format root certificate
         /// </summary>
         public readonly string PcaRootCaCertificate;
         /// <summary>
-        /// PEM 格式的中间根证书和根证书。
+        /// Intermediate certificate and root certificate in PEM format
         /// </summary>
         public readonly string PcaSubCaCertificate;
 

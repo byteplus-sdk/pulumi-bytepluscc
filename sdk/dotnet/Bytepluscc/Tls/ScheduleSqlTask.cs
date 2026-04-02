@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Tls
 {
     /// <summary>
-    /// 定时 SQL 分析任务的资源定义。
+    /// Resource definition for the scheduled SQL analysis task.
     /// 
     /// ## Import
     /// 
@@ -23,127 +23,127 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     public partial class ScheduleSqlTask : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 创建时间（秒级 Unix 时间戳）。
+        /// Creation time (seconds-level Unix timestamp).
         /// </summary>
         [Output("createdTime")]
         public Output<int> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 定时 SQL 分析任务的简单描述。不支持&lt;&gt;、'、\、\。长度范围为 0～64 个字符。
+        /// Brief description of the scheduled SQL analysis task. Characters &lt;&gt;, ', \, and \ are not supported. Length: 0–64 characters.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 目标日志项目 ID。
+        /// Target log project ID.
         /// </summary>
         [Output("destProjectId")]
         public Output<string> DestProjectId { get; private set; } = null!;
 
         /// <summary>
-        /// 目标日志主题所属地域。默认为当前地域。
+        /// Region of the target log topic. The default is the current region.
         /// </summary>
         [Output("destRegion")]
         public Output<string> DestRegion { get; private set; } = null!;
 
         /// <summary>
-        /// 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+        /// Target log topic ID for storing scheduled SQL analysis result data.
         /// </summary>
         [Output("destTopicId")]
         public Output<string> DestTopicId { get; private set; } = null!;
 
         /// <summary>
-        /// 目标日志主题名称。
+        /// Target log topic name.
         /// </summary>
         [Output("destTopicName")]
         public Output<string> DestTopicName { get; private set; } = null!;
 
         /// <summary>
-        /// 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+        /// End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
         /// </summary>
         [Output("processEndTime")]
         public Output<int> ProcessEndTime { get; private set; } = null!;
 
         /// <summary>
-        /// 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+        /// Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
         /// </summary>
         [Output("processSqlDelay")]
         public Output<int> ProcessSqlDelay { get; private set; } = null!;
 
         /// <summary>
-        /// 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+        /// Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
         /// </summary>
         [Output("processStartTime")]
         public Output<int> ProcessStartTime { get; private set; } = null!;
 
         /// <summary>
-        /// SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+        /// SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
         /// </summary>
         [Output("processTimeWindow")]
         public Output<string> ProcessTimeWindow { get; private set; } = null!;
 
         /// <summary>
-        /// 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+        /// The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service's retrieval and analysis syntax.
         /// </summary>
         [Output("query")]
         public Output<string> Query { get; private set; } = null!;
 
         /// <summary>
-        /// 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+        /// Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
         /// </summary>
         [Output("requestCycle")]
         public Output<Outputs.ScheduleSqlTaskRequestCycle> RequestCycle { get; private set; } = null!;
 
         /// <summary>
-        /// 源日志项目 ID。
+        /// Source log project ID.
         /// </summary>
         [Output("sourceProjectId")]
         public Output<string> SourceProjectId { get; private set; } = null!;
 
         /// <summary>
-        /// 源日志项目名称。
+        /// Source log project name.
         /// </summary>
         [Output("sourceProjectName")]
         public Output<string> SourceProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+        /// ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
         /// </summary>
         [Output("sourceTopicId")]
         public Output<string> SourceTopicId { get; private set; } = null!;
 
         /// <summary>
-        /// 源日志主题名称。
+        /// Source log topic name.
         /// </summary>
         [Output("sourceTopicName")]
         public Output<string> SourceTopicName { get; private set; } = null!;
 
         /// <summary>
-        /// 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+        /// Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
         /// </summary>
         [Output("status")]
         public Output<int> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 任务 ID。
+        /// Task ID.
         /// </summary>
         [Output("taskId")]
         public Output<string> TaskId { get; private set; } = null!;
 
         /// <summary>
-        /// 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+        /// Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
         /// </summary>
         [Output("taskName")]
         public Output<string> TaskName { get; private set; } = null!;
 
         /// <summary>
-        /// 任务类型：0 表示日志到日志；1 表示日志到指标。
+        /// Task type: 0 means log to log; 1 means log to metric.
         /// </summary>
         [Output("taskType")]
         public Output<int> TaskType { get; private set; } = null!;
 
         /// <summary>
-        /// 修改时间（秒级 Unix 时间戳）。
+        /// Modification time (seconds-level Unix timestamp).
         /// </summary>
         [Output("updatedTime")]
         public Output<int> UpdatedTime { get; private set; } = null!;
@@ -196,79 +196,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     public sealed class ScheduleSqlTaskArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 定时 SQL 分析任务的简单描述。不支持&lt;&gt;、'、\、\。长度范围为 0～64 个字符。
+        /// Brief description of the scheduled SQL analysis task. Characters &lt;&gt;, ', \, and \ are not supported. Length: 0–64 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 目标日志主题所属地域。默认为当前地域。
+        /// Region of the target log topic. The default is the current region.
         /// </summary>
         [Input("destRegion")]
         public Input<string>? DestRegion { get; set; }
 
         /// <summary>
-        /// 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+        /// Target log topic ID for storing scheduled SQL analysis result data.
         /// </summary>
         [Input("destTopicId", required: true)]
         public Input<string> DestTopicId { get; set; } = null!;
 
         /// <summary>
-        /// 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+        /// End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
         /// </summary>
         [Input("processEndTime")]
         public Input<int>? ProcessEndTime { get; set; }
 
         /// <summary>
-        /// 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+        /// Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
         /// </summary>
         [Input("processSqlDelay")]
         public Input<int>? ProcessSqlDelay { get; set; }
 
         /// <summary>
-        /// 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+        /// Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
         /// </summary>
         [Input("processStartTime", required: true)]
         public Input<int> ProcessStartTime { get; set; } = null!;
 
         /// <summary>
-        /// SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+        /// SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
         /// </summary>
         [Input("processTimeWindow", required: true)]
         public Input<string> ProcessTimeWindow { get; set; } = null!;
 
         /// <summary>
-        /// 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+        /// The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service's retrieval and analysis syntax.
         /// </summary>
         [Input("query", required: true)]
         public Input<string> Query { get; set; } = null!;
 
         /// <summary>
-        /// 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+        /// Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
         /// </summary>
         [Input("requestCycle", required: true)]
         public Input<Inputs.ScheduleSqlTaskRequestCycleArgs> RequestCycle { get; set; } = null!;
 
         /// <summary>
-        /// 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+        /// ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
         /// </summary>
         [Input("sourceTopicId", required: true)]
         public Input<string> SourceTopicId { get; set; } = null!;
 
         /// <summary>
-        /// 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+        /// Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
         /// </summary>
         [Input("status", required: true)]
         public Input<int> Status { get; set; } = null!;
 
         /// <summary>
-        /// 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+        /// Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
         /// </summary>
         [Input("taskName", required: true)]
         public Input<string> TaskName { get; set; } = null!;
 
         /// <summary>
-        /// 任务类型：0 表示日志到日志；1 表示日志到指标。
+        /// Task type: 0 means log to log; 1 means log to metric.
         /// </summary>
         [Input("taskType", required: true)]
         public Input<int> TaskType { get; set; } = null!;
@@ -282,127 +282,127 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     public sealed class ScheduleSqlTaskState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 创建时间（秒级 Unix 时间戳）。
+        /// Creation time (seconds-level Unix timestamp).
         /// </summary>
         [Input("createdTime")]
         public Input<int>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 定时 SQL 分析任务的简单描述。不支持&lt;&gt;、'、\、\。长度范围为 0～64 个字符。
+        /// Brief description of the scheduled SQL analysis task. Characters &lt;&gt;, ', \, and \ are not supported. Length: 0–64 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 目标日志项目 ID。
+        /// Target log project ID.
         /// </summary>
         [Input("destProjectId")]
         public Input<string>? DestProjectId { get; set; }
 
         /// <summary>
-        /// 目标日志主题所属地域。默认为当前地域。
+        /// Region of the target log topic. The default is the current region.
         /// </summary>
         [Input("destRegion")]
         public Input<string>? DestRegion { get; set; }
 
         /// <summary>
-        /// 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+        /// Target log topic ID for storing scheduled SQL analysis result data.
         /// </summary>
         [Input("destTopicId")]
         public Input<string>? DestTopicId { get; set; }
 
         /// <summary>
-        /// 目标日志主题名称。
+        /// Target log topic name.
         /// </summary>
         [Input("destTopicName")]
         public Input<string>? DestTopicName { get; set; }
 
         /// <summary>
-        /// 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+        /// End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
         /// </summary>
         [Input("processEndTime")]
         public Input<int>? ProcessEndTime { get; set; }
 
         /// <summary>
-        /// 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+        /// Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
         /// </summary>
         [Input("processSqlDelay")]
         public Input<int>? ProcessSqlDelay { get; set; }
 
         /// <summary>
-        /// 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+        /// Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
         /// </summary>
         [Input("processStartTime")]
         public Input<int>? ProcessStartTime { get; set; }
 
         /// <summary>
-        /// SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+        /// SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
         /// </summary>
         [Input("processTimeWindow")]
         public Input<string>? ProcessTimeWindow { get; set; }
 
         /// <summary>
-        /// 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+        /// The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service's retrieval and analysis syntax.
         /// </summary>
         [Input("query")]
         public Input<string>? Query { get; set; }
 
         /// <summary>
-        /// 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+        /// Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
         /// </summary>
         [Input("requestCycle")]
         public Input<Inputs.ScheduleSqlTaskRequestCycleGetArgs>? RequestCycle { get; set; }
 
         /// <summary>
-        /// 源日志项目 ID。
+        /// Source log project ID.
         /// </summary>
         [Input("sourceProjectId")]
         public Input<string>? SourceProjectId { get; set; }
 
         /// <summary>
-        /// 源日志项目名称。
+        /// Source log project name.
         /// </summary>
         [Input("sourceProjectName")]
         public Input<string>? SourceProjectName { get; set; }
 
         /// <summary>
-        /// 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+        /// ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
         /// </summary>
         [Input("sourceTopicId")]
         public Input<string>? SourceTopicId { get; set; }
 
         /// <summary>
-        /// 源日志主题名称。
+        /// Source log topic name.
         /// </summary>
         [Input("sourceTopicName")]
         public Input<string>? SourceTopicName { get; set; }
 
         /// <summary>
-        /// 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+        /// Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
         /// </summary>
         [Input("status")]
         public Input<int>? Status { get; set; }
 
         /// <summary>
-        /// 任务 ID。
+        /// Task ID.
         /// </summary>
         [Input("taskId")]
         public Input<string>? TaskId { get; set; }
 
         /// <summary>
-        /// 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+        /// Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
         /// </summary>
         [Input("taskName")]
         public Input<string>? TaskName { get; set; }
 
         /// <summary>
-        /// 任务类型：0 表示日志到日志；1 表示日志到指标。
+        /// Task type: 0 means log to log; 1 means log to metric.
         /// </summary>
         [Input("taskType")]
         public Input<int>? TaskType { get; set; }
 
         /// <summary>
-        /// 修改时间（秒级 Unix 时间戳）。
+        /// Modification time (seconds-level Unix timestamp).
         /// </summary>
         [Input("updatedTime")]
         public Input<int>? UpdatedTime { get; set; }

@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// E-MapReduce（EMR）是开源 Hadoop 生态的企业级大数据分析系统，完全兼容开源，为您提供 Hadoop、Spark、Hive、Hudi、Iceberg 等生态组件集成和管理。
+// E-MapReduce (EMR) is an enterprise-grade big data analytics system based on the open-source Hadoop ecosystem. It is fully compatible with open source and provides integration and management for ecosystem components such as Hadoop, Spark, Hive, Hudi, and Iceberg.
 //
 // ## Import
 //
@@ -22,58 +22,58 @@ import (
 type Cluster struct {
 	pulumi.CustomResourceState
 
-	// 账号ID。
+	// Account ID.
 	AccountId         pulumi.IntOutput                   `pulumi:"accountId"`
 	ApplicationExtras ClusterApplicationExtraArrayOutput `pulumi:"applicationExtras"`
-	// 集群安装的服务名称列表。创建字段。
+	// List of service names installed in the cluster. Creation-related field.
 	ApplicationNames pulumi.StringArrayOutput          `pulumi:"applicationNames"`
 	Applications     ClusterApplicationArrayOutput     `pulumi:"applications"`
 	BootstrapScripts ClusterBootstrapScriptArrayOutput `pulumi:"bootstrapScripts"`
-	// 包月的配置参数，当chargeType=PRE时，必选。
+	// Monthly subscription configuration parameters. Required when chargeType=PRE.
 	ChargePreConfig ClusterChargePreConfigOutput `pulumi:"chargePreConfig"`
-	// 付费类型，PRE表示包月，POST表示按量计费。
+	// Payment type. PRE means monthly subscription, POST means pay-as-you-go.
 	ChargeType pulumi.StringOutput `pulumi:"chargeType"`
-	// 集群dns域名后缀列表。
+	// Cluster DNS domain suffix list.
 	ClusterDomainNames pulumi.StringArrayOutput `pulumi:"clusterDomainNames"`
-	// 集群ID。
+	// Cluster ID.
 	ClusterId pulumi.StringOutput `pulumi:"clusterId"`
-	// 集群名称。
+	// Cluster name.
 	ClusterName pulumi.StringOutput `pulumi:"clusterName"`
-	// 集群状态。
+	// Cluster status.
 	ClusterState pulumi.StringOutput `pulumi:"clusterState"`
-	// 集群类型。
+	// Cluster type.
 	ClusterType pulumi.StringOutput `pulumi:"clusterType"`
-	// 集群创建时间。
+	// Cluster creation time.
 	CreatedTime pulumi.IntOutput `pulumi:"createdTime"`
-	// 创建者ID。
+	// Creator ID.
 	CreatorId pulumi.IntOutput `pulumi:"creatorId"`
-	// 创建者名称。
+	// Creator name.
 	CreatorName pulumi.StringOutput `pulumi:"creatorName"`
-	// 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+	// Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
 	DeployMode pulumi.StringOutput `pulumi:"deployMode"`
-	// ECS镜像ID。
+	// ECS image ID.
 	EcsImageId pulumi.StringOutput `pulumi:"ecsImageId"`
-	// 集群过期时间。
+	// Cluster expiration time.
 	ExpireTime pulumi.IntOutput `pulumi:"expireTime"`
-	// HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+	// HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
 	HistoryServerMode pulumi.StringOutput `pulumi:"historyServerMode"`
-	// 集群全局的节点信息。
+	// Cluster global node information.
 	NodeAttribute       ClusterNodeAttributeOutput           `pulumi:"nodeAttribute"`
 	NodeGroupAttributes ClusterNodeGroupAttributeArrayOutput `pulumi:"nodeGroupAttributes"`
-	// 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+	// Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 集群创建完成时间。
+	// Cluster creation completion time.
 	ReadyTime pulumi.IntOutput `pulumi:"readyTime"`
-	// 集群版本。
+	// Cluster version.
 	ReleaseVersion pulumi.StringOutput `pulumi:"releaseVersion"`
-	// 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+	// Cluster global security group ID. All ECS in node groups will join this security group.
 	SecurityGroupId pulumi.StringOutput `pulumi:"securityGroupId"`
-	// 安全模式。
+	// Security mode.
 	SecurityMode pulumi.StringOutput `pulumi:"securityMode"`
-	// 状态变更原因。
+	// Status change reason.
 	StateChangeReason ClusterStateChangeReasonOutput `pulumi:"stateChangeReason"`
 	Tags              ClusterTagArrayOutput          `pulumi:"tags"`
-	// 集群终止时间。
+	// Cluster termination time.
 	TerminateTime pulumi.IntOutput `pulumi:"terminateTime"`
 	// Vpc ID。
 	VpcId pulumi.StringOutput `pulumi:"vpcId"`
@@ -130,116 +130,116 @@ func GetCluster(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Cluster resources.
 type clusterState struct {
-	// 账号ID。
+	// Account ID.
 	AccountId         *int                      `pulumi:"accountId"`
 	ApplicationExtras []ClusterApplicationExtra `pulumi:"applicationExtras"`
-	// 集群安装的服务名称列表。创建字段。
+	// List of service names installed in the cluster. Creation-related field.
 	ApplicationNames []string                 `pulumi:"applicationNames"`
 	Applications     []ClusterApplication     `pulumi:"applications"`
 	BootstrapScripts []ClusterBootstrapScript `pulumi:"bootstrapScripts"`
-	// 包月的配置参数，当chargeType=PRE时，必选。
+	// Monthly subscription configuration parameters. Required when chargeType=PRE.
 	ChargePreConfig *ClusterChargePreConfig `pulumi:"chargePreConfig"`
-	// 付费类型，PRE表示包月，POST表示按量计费。
+	// Payment type. PRE means monthly subscription, POST means pay-as-you-go.
 	ChargeType *string `pulumi:"chargeType"`
-	// 集群dns域名后缀列表。
+	// Cluster DNS domain suffix list.
 	ClusterDomainNames []string `pulumi:"clusterDomainNames"`
-	// 集群ID。
+	// Cluster ID.
 	ClusterId *string `pulumi:"clusterId"`
-	// 集群名称。
+	// Cluster name.
 	ClusterName *string `pulumi:"clusterName"`
-	// 集群状态。
+	// Cluster status.
 	ClusterState *string `pulumi:"clusterState"`
-	// 集群类型。
+	// Cluster type.
 	ClusterType *string `pulumi:"clusterType"`
-	// 集群创建时间。
+	// Cluster creation time.
 	CreatedTime *int `pulumi:"createdTime"`
-	// 创建者ID。
+	// Creator ID.
 	CreatorId *int `pulumi:"creatorId"`
-	// 创建者名称。
+	// Creator name.
 	CreatorName *string `pulumi:"creatorName"`
-	// 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+	// Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
 	DeployMode *string `pulumi:"deployMode"`
-	// ECS镜像ID。
+	// ECS image ID.
 	EcsImageId *string `pulumi:"ecsImageId"`
-	// 集群过期时间。
+	// Cluster expiration time.
 	ExpireTime *int `pulumi:"expireTime"`
-	// HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+	// HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
 	HistoryServerMode *string `pulumi:"historyServerMode"`
-	// 集群全局的节点信息。
+	// Cluster global node information.
 	NodeAttribute       *ClusterNodeAttribute       `pulumi:"nodeAttribute"`
 	NodeGroupAttributes []ClusterNodeGroupAttribute `pulumi:"nodeGroupAttributes"`
-	// 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+	// Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
 	ProjectName *string `pulumi:"projectName"`
-	// 集群创建完成时间。
+	// Cluster creation completion time.
 	ReadyTime *int `pulumi:"readyTime"`
-	// 集群版本。
+	// Cluster version.
 	ReleaseVersion *string `pulumi:"releaseVersion"`
-	// 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+	// Cluster global security group ID. All ECS in node groups will join this security group.
 	SecurityGroupId *string `pulumi:"securityGroupId"`
-	// 安全模式。
+	// Security mode.
 	SecurityMode *string `pulumi:"securityMode"`
-	// 状态变更原因。
+	// Status change reason.
 	StateChangeReason *ClusterStateChangeReason `pulumi:"stateChangeReason"`
 	Tags              []ClusterTag              `pulumi:"tags"`
-	// 集群终止时间。
+	// Cluster termination time.
 	TerminateTime *int `pulumi:"terminateTime"`
 	// Vpc ID。
 	VpcId *string `pulumi:"vpcId"`
 }
 
 type ClusterState struct {
-	// 账号ID。
+	// Account ID.
 	AccountId         pulumi.IntPtrInput
 	ApplicationExtras ClusterApplicationExtraArrayInput
-	// 集群安装的服务名称列表。创建字段。
+	// List of service names installed in the cluster. Creation-related field.
 	ApplicationNames pulumi.StringArrayInput
 	Applications     ClusterApplicationArrayInput
 	BootstrapScripts ClusterBootstrapScriptArrayInput
-	// 包月的配置参数，当chargeType=PRE时，必选。
+	// Monthly subscription configuration parameters. Required when chargeType=PRE.
 	ChargePreConfig ClusterChargePreConfigPtrInput
-	// 付费类型，PRE表示包月，POST表示按量计费。
+	// Payment type. PRE means monthly subscription, POST means pay-as-you-go.
 	ChargeType pulumi.StringPtrInput
-	// 集群dns域名后缀列表。
+	// Cluster DNS domain suffix list.
 	ClusterDomainNames pulumi.StringArrayInput
-	// 集群ID。
+	// Cluster ID.
 	ClusterId pulumi.StringPtrInput
-	// 集群名称。
+	// Cluster name.
 	ClusterName pulumi.StringPtrInput
-	// 集群状态。
+	// Cluster status.
 	ClusterState pulumi.StringPtrInput
-	// 集群类型。
+	// Cluster type.
 	ClusterType pulumi.StringPtrInput
-	// 集群创建时间。
+	// Cluster creation time.
 	CreatedTime pulumi.IntPtrInput
-	// 创建者ID。
+	// Creator ID.
 	CreatorId pulumi.IntPtrInput
-	// 创建者名称。
+	// Creator name.
 	CreatorName pulumi.StringPtrInput
-	// 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+	// Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
 	DeployMode pulumi.StringPtrInput
-	// ECS镜像ID。
+	// ECS image ID.
 	EcsImageId pulumi.StringPtrInput
-	// 集群过期时间。
+	// Cluster expiration time.
 	ExpireTime pulumi.IntPtrInput
-	// HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+	// HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
 	HistoryServerMode pulumi.StringPtrInput
-	// 集群全局的节点信息。
+	// Cluster global node information.
 	NodeAttribute       ClusterNodeAttributePtrInput
 	NodeGroupAttributes ClusterNodeGroupAttributeArrayInput
-	// 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+	// Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
 	ProjectName pulumi.StringPtrInput
-	// 集群创建完成时间。
+	// Cluster creation completion time.
 	ReadyTime pulumi.IntPtrInput
-	// 集群版本。
+	// Cluster version.
 	ReleaseVersion pulumi.StringPtrInput
-	// 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+	// Cluster global security group ID. All ECS in node groups will join this security group.
 	SecurityGroupId pulumi.StringPtrInput
-	// 安全模式。
+	// Security mode.
 	SecurityMode pulumi.StringPtrInput
-	// 状态变更原因。
+	// Status change reason.
 	StateChangeReason ClusterStateChangeReasonPtrInput
 	Tags              ClusterTagArrayInput
-	// 集群终止时间。
+	// Cluster termination time.
 	TerminateTime pulumi.IntPtrInput
 	// Vpc ID。
 	VpcId pulumi.StringPtrInput
@@ -251,31 +251,31 @@ func (ClusterState) ElementType() reflect.Type {
 
 type clusterArgs struct {
 	ApplicationExtras []ClusterApplicationExtra `pulumi:"applicationExtras"`
-	// 集群安装的服务名称列表。创建字段。
+	// List of service names installed in the cluster. Creation-related field.
 	ApplicationNames []string                 `pulumi:"applicationNames"`
 	BootstrapScripts []ClusterBootstrapScript `pulumi:"bootstrapScripts"`
-	// 包月的配置参数，当chargeType=PRE时，必选。
+	// Monthly subscription configuration parameters. Required when chargeType=PRE.
 	ChargePreConfig *ClusterChargePreConfig `pulumi:"chargePreConfig"`
-	// 付费类型，PRE表示包月，POST表示按量计费。
+	// Payment type. PRE means monthly subscription, POST means pay-as-you-go.
 	ChargeType string `pulumi:"chargeType"`
-	// 集群名称。
+	// Cluster name.
 	ClusterName string `pulumi:"clusterName"`
-	// 集群类型。
+	// Cluster type.
 	ClusterType string `pulumi:"clusterType"`
-	// 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+	// Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
 	DeployMode *string `pulumi:"deployMode"`
-	// HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+	// HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
 	HistoryServerMode *string `pulumi:"historyServerMode"`
-	// 集群全局的节点信息。
+	// Cluster global node information.
 	NodeAttribute       ClusterNodeAttribute        `pulumi:"nodeAttribute"`
 	NodeGroupAttributes []ClusterNodeGroupAttribute `pulumi:"nodeGroupAttributes"`
-	// 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+	// Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
 	ProjectName *string `pulumi:"projectName"`
-	// 集群版本。
+	// Cluster version.
 	ReleaseVersion string `pulumi:"releaseVersion"`
-	// 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+	// Cluster global security group ID. All ECS in node groups will join this security group.
 	SecurityGroupId string `pulumi:"securityGroupId"`
-	// 安全模式。
+	// Security mode.
 	SecurityMode *string      `pulumi:"securityMode"`
 	Tags         []ClusterTag `pulumi:"tags"`
 	// Vpc ID。
@@ -285,31 +285,31 @@ type clusterArgs struct {
 // The set of arguments for constructing a Cluster resource.
 type ClusterArgs struct {
 	ApplicationExtras ClusterApplicationExtraArrayInput
-	// 集群安装的服务名称列表。创建字段。
+	// List of service names installed in the cluster. Creation-related field.
 	ApplicationNames pulumi.StringArrayInput
 	BootstrapScripts ClusterBootstrapScriptArrayInput
-	// 包月的配置参数，当chargeType=PRE时，必选。
+	// Monthly subscription configuration parameters. Required when chargeType=PRE.
 	ChargePreConfig ClusterChargePreConfigPtrInput
-	// 付费类型，PRE表示包月，POST表示按量计费。
+	// Payment type. PRE means monthly subscription, POST means pay-as-you-go.
 	ChargeType pulumi.StringInput
-	// 集群名称。
+	// Cluster name.
 	ClusterName pulumi.StringInput
-	// 集群类型。
+	// Cluster type.
 	ClusterType pulumi.StringInput
-	// 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+	// Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
 	DeployMode pulumi.StringPtrInput
-	// HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+	// HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
 	HistoryServerMode pulumi.StringPtrInput
-	// 集群全局的节点信息。
+	// Cluster global node information.
 	NodeAttribute       ClusterNodeAttributeInput
 	NodeGroupAttributes ClusterNodeGroupAttributeArrayInput
-	// 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+	// Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
 	ProjectName pulumi.StringPtrInput
-	// 集群版本。
+	// Cluster version.
 	ReleaseVersion pulumi.StringInput
-	// 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+	// Cluster global security group ID. All ECS in node groups will join this security group.
 	SecurityGroupId pulumi.StringInput
-	// 安全模式。
+	// Security mode.
 	SecurityMode pulumi.StringPtrInput
 	Tags         ClusterTagArrayInput
 	// Vpc ID。
@@ -403,7 +403,7 @@ func (o ClusterOutput) ToClusterOutputWithContext(ctx context.Context) ClusterOu
 	return o
 }
 
-// 账号ID。
+// Account ID.
 func (o ClusterOutput) AccountId() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.AccountId }).(pulumi.IntOutput)
 }
@@ -412,7 +412,7 @@ func (o ClusterOutput) ApplicationExtras() ClusterApplicationExtraArrayOutput {
 	return o.ApplyT(func(v *Cluster) ClusterApplicationExtraArrayOutput { return v.ApplicationExtras }).(ClusterApplicationExtraArrayOutput)
 }
 
-// 集群安装的服务名称列表。创建字段。
+// List of service names installed in the cluster. Creation-related field.
 func (o ClusterOutput) ApplicationNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringArrayOutput { return v.ApplicationNames }).(pulumi.StringArrayOutput)
 }
@@ -425,77 +425,77 @@ func (o ClusterOutput) BootstrapScripts() ClusterBootstrapScriptArrayOutput {
 	return o.ApplyT(func(v *Cluster) ClusterBootstrapScriptArrayOutput { return v.BootstrapScripts }).(ClusterBootstrapScriptArrayOutput)
 }
 
-// 包月的配置参数，当chargeType=PRE时，必选。
+// Monthly subscription configuration parameters. Required when chargeType=PRE.
 func (o ClusterOutput) ChargePreConfig() ClusterChargePreConfigOutput {
 	return o.ApplyT(func(v *Cluster) ClusterChargePreConfigOutput { return v.ChargePreConfig }).(ClusterChargePreConfigOutput)
 }
 
-// 付费类型，PRE表示包月，POST表示按量计费。
+// Payment type. PRE means monthly subscription, POST means pay-as-you-go.
 func (o ClusterOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 集群dns域名后缀列表。
+// Cluster DNS domain suffix list.
 func (o ClusterOutput) ClusterDomainNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringArrayOutput { return v.ClusterDomainNames }).(pulumi.StringArrayOutput)
 }
 
-// 集群ID。
+// Cluster ID.
 func (o ClusterOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 集群名称。
+// Cluster name.
 func (o ClusterOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.ClusterName }).(pulumi.StringOutput)
 }
 
-// 集群状态。
+// Cluster status.
 func (o ClusterOutput) ClusterState() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.ClusterState }).(pulumi.StringOutput)
 }
 
-// 集群类型。
+// Cluster type.
 func (o ClusterOutput) ClusterType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.ClusterType }).(pulumi.StringOutput)
 }
 
-// 集群创建时间。
+// Cluster creation time.
 func (o ClusterOutput) CreatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.CreatedTime }).(pulumi.IntOutput)
 }
 
-// 创建者ID。
+// Creator ID.
 func (o ClusterOutput) CreatorId() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.CreatorId }).(pulumi.IntOutput)
 }
 
-// 创建者名称。
+// Creator name.
 func (o ClusterOutput) CreatorName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.CreatorName }).(pulumi.StringOutput)
 }
 
-// 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+// Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
 func (o ClusterOutput) DeployMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.DeployMode }).(pulumi.StringOutput)
 }
 
-// ECS镜像ID。
+// ECS image ID.
 func (o ClusterOutput) EcsImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.EcsImageId }).(pulumi.StringOutput)
 }
 
-// 集群过期时间。
+// Cluster expiration time.
 func (o ClusterOutput) ExpireTime() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.ExpireTime }).(pulumi.IntOutput)
 }
 
-// HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+// HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
 func (o ClusterOutput) HistoryServerMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.HistoryServerMode }).(pulumi.StringOutput)
 }
 
-// 集群全局的节点信息。
+// Cluster global node information.
 func (o ClusterOutput) NodeAttribute() ClusterNodeAttributeOutput {
 	return o.ApplyT(func(v *Cluster) ClusterNodeAttributeOutput { return v.NodeAttribute }).(ClusterNodeAttributeOutput)
 }
@@ -504,32 +504,32 @@ func (o ClusterOutput) NodeGroupAttributes() ClusterNodeGroupAttributeArrayOutpu
 	return o.ApplyT(func(v *Cluster) ClusterNodeGroupAttributeArrayOutput { return v.NodeGroupAttributes }).(ClusterNodeGroupAttributeArrayOutput)
 }
 
-// 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+// Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
 func (o ClusterOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 集群创建完成时间。
+// Cluster creation completion time.
 func (o ClusterOutput) ReadyTime() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.ReadyTime }).(pulumi.IntOutput)
 }
 
-// 集群版本。
+// Cluster version.
 func (o ClusterOutput) ReleaseVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.ReleaseVersion }).(pulumi.StringOutput)
 }
 
-// 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+// Cluster global security group ID. All ECS in node groups will join this security group.
 func (o ClusterOutput) SecurityGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.SecurityGroupId }).(pulumi.StringOutput)
 }
 
-// 安全模式。
+// Security mode.
 func (o ClusterOutput) SecurityMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.SecurityMode }).(pulumi.StringOutput)
 }
 
-// 状态变更原因。
+// Status change reason.
 func (o ClusterOutput) StateChangeReason() ClusterStateChangeReasonOutput {
 	return o.ApplyT(func(v *Cluster) ClusterStateChangeReasonOutput { return v.StateChangeReason }).(ClusterStateChangeReasonOutput)
 }
@@ -538,7 +538,7 @@ func (o ClusterOutput) Tags() ClusterTagArrayOutput {
 	return o.ApplyT(func(v *Cluster) ClusterTagArrayOutput { return v.Tags }).(ClusterTagArrayOutput)
 }
 
-// 集群终止时间。
+// Cluster termination time.
 func (o ClusterOutput) TerminateTime() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.TerminateTime }).(pulumi.IntOutput)
 }

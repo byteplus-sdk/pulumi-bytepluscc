@@ -16,14 +16,14 @@ public final class NameSpaceState extends com.pulumi.resources.ResourceArgs {
     public static final NameSpaceState Empty = new NameSpaceState();
 
     /**
-     * 命名空间的创建时间。
+     * Namespace creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 命名空间的创建时间。
+     * @return Namespace creation time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -31,14 +31,14 @@ public final class NameSpaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+     * Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+     * @return Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
      * 
      */
     public Optional<Output<String>> name() {
@@ -46,14 +46,14 @@ public final class NameSpaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+     * Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
      * 
      */
     @Import(name="project")
     private @Nullable Output<String> project;
 
     /**
-     * @return 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+     * @return Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
      * 
      */
     public Optional<Output<String>> project() {
@@ -61,14 +61,14 @@ public final class NameSpaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+     * Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
      * 
      */
     @Import(name="registry")
     private @Nullable Output<String> registry;
 
     /**
-     * @return 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+     * @return Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
      * 
      */
     public Optional<Output<String>> registry() {
@@ -103,7 +103,7 @@ public final class NameSpaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 命名空间的创建时间。
+         * @param createdTime Namespace creation time.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class NameSpaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 命名空间的创建时间。
+         * @param createdTime Namespace creation time.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class NameSpaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+         * @param name Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class NameSpaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+         * @param name Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class NameSpaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+         * @param project Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class NameSpaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+         * @param project Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class NameSpaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param registry 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+         * @param registry Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class NameSpaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param registry 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+         * @param registry Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
          * 
          * @return builder
          * 

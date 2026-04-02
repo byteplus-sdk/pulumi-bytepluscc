@@ -16,14 +16,14 @@ public final class ClusterStateChangeReasonArgs extends com.pulumi.resources.Res
     public static final ClusterStateChangeReasonArgs Empty = new ClusterStateChangeReasonArgs();
 
     /**
-     * 状态更新码。
+     * Status update code.
      * 
      */
     @Import(name="code")
     private @Nullable Output<String> code;
 
     /**
-     * @return 状态更新码。
+     * @return Status update code.
      * 
      */
     public Optional<Output<String>> code() {
@@ -31,14 +31,14 @@ public final class ClusterStateChangeReasonArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 状态更新原因。
+     * Status update reason.
      * 
      */
     @Import(name="reason")
     private @Nullable Output<String> reason;
 
     /**
-     * @return 状态更新原因。
+     * @return Status update reason.
      * 
      */
     public Optional<Output<String>> reason() {
@@ -71,7 +71,7 @@ public final class ClusterStateChangeReasonArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param code 状态更新码。
+         * @param code Status update code.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ClusterStateChangeReasonArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param code 状态更新码。
+         * @param code Status update code.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ClusterStateChangeReasonArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param reason 状态更新原因。
+         * @param reason Status update reason.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ClusterStateChangeReasonArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param reason 状态更新原因。
+         * @param reason Status update reason.
          * 
          * @return builder
          * 

@@ -14,86 +14,86 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterApplicationExtraApplicationConfig {
     /**
-     * @return 组件实例名称。
+     * @return Component instance name.
      * 
      */
     private @Nullable String componentInstanceName;
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     private @Nullable String componentName;
     /**
-     * @return 配置文件名。
+     * @return Configuration file name.
      * 
      */
     private @Nullable String configFileName;
     /**
-     * @return 配置项名称。
+     * @return Configuration item name.
      * 
      */
     private @Nullable String configItemKey;
     /**
-     * @return 配置项值。
+     * @return Configuration item value.
      * 
      */
     private @Nullable String configItemValue;
     /**
-     * @return 是否删除。
+     * @return Whether to delete.
      * 
      */
     private @Nullable Boolean deleted;
     /**
-     * @return 影响组件。
+     * @return Affected component.
      * 
      */
     private @Nullable ClusterApplicationExtraApplicationConfigEffectiveScope effectiveScope;
 
     private ClusterApplicationExtraApplicationConfig() {}
     /**
-     * @return 组件实例名称。
+     * @return Component instance name.
      * 
      */
     public Optional<String> componentInstanceName() {
         return Optional.ofNullable(this.componentInstanceName);
     }
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     public Optional<String> componentName() {
         return Optional.ofNullable(this.componentName);
     }
     /**
-     * @return 配置文件名。
+     * @return Configuration file name.
      * 
      */
     public Optional<String> configFileName() {
         return Optional.ofNullable(this.configFileName);
     }
     /**
-     * @return 配置项名称。
+     * @return Configuration item name.
      * 
      */
     public Optional<String> configItemKey() {
         return Optional.ofNullable(this.configItemKey);
     }
     /**
-     * @return 配置项值。
+     * @return Configuration item value.
      * 
      */
     public Optional<String> configItemValue() {
         return Optional.ofNullable(this.configItemValue);
     }
     /**
-     * @return 是否删除。
+     * @return Whether to delete.
      * 
      */
     public Optional<Boolean> deleted() {
         return Optional.ofNullable(this.deleted);
     }
     /**
-     * @return 影响组件。
+     * @return Affected component.
      * 
      */
     public Optional<ClusterApplicationExtraApplicationConfigEffectiveScope> effectiveScope() {

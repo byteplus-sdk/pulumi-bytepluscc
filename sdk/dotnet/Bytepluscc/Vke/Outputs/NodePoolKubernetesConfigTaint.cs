@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class NodePoolKubernetesConfigTaint
     {
         /// <summary>
-        /// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+        /// Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
         /// </summary>
         public readonly string? Effect;
         /// <summary>
-        /// 污点键。
+        /// Taint key.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 污点值。
+        /// Taint value
         /// </summary>
         public readonly string? Value;
 

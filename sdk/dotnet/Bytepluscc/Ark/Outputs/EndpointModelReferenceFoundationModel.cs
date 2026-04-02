@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark.Outputs
     public sealed class EndpointModelReferenceFoundationModel
     {
         /// <summary>
-        /// 基础模型版本。
+        /// Base model version
         /// </summary>
         public readonly string? ModelVersion;
         /// <summary>
-        /// 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+        /// Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
         /// </summary>
         public readonly string? Name;
 

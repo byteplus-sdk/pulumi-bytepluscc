@@ -16,7 +16,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     {
         public readonly ImmutableArray<Outputs.AddonStatusCondition> Conditions;
         /// <summary>
-        /// 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+        /// Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
         /// </summary>
         public readonly string? Phase;
 

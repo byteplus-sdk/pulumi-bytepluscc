@@ -15,98 +15,98 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterClusterConfig {
     /**
-     * @return 集群 API Server 访问的 IPv4 地址信息。
+     * @return Cluster API Server access IPv4 address information
      * 
      */
     private GetClusterClusterConfigApiServerEndpoints apiServerEndpoints;
     /**
-     * @return 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+     * @return Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
      * 
      */
     private GetClusterClusterConfigApiServerPublicAccessConfig apiServerPublicAccessConfig;
     /**
-     * @return 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+     * @return Node public access configuration. Parameter value description: false: Disabled. true: Enabled
      * 
      */
     private Boolean apiServerPublicAccessEnabled;
     /**
-     * @return 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+     * @return Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
      * 
      */
     private String ipFamily;
     /**
-     * @return 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+     * @return Node public access configuration. Parameter value description: false: Disabled. true: Enabled
      * 
      */
     private Boolean resourcePublicAccessDefaultEnabled;
     /**
-     * @return 集群控制面及节点使用的的安全组。
+     * @return Security group used by the cluster control plane and nodes.
      * 
      */
     private List<String> securityGroupIds;
     /**
-     * @return 集群控制面在私有网络内通信的子网 ID。
+     * @return Subnet ID for cluster control plane communication within the private network.
      * 
      */
     private List<String> subnetIds;
     /**
-     * @return 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+     * @return Private network (VPC) ID where the cluster control plane and some nodes are located.
      * 
      */
     private String vpcId;
 
     private GetClusterClusterConfig() {}
     /**
-     * @return 集群 API Server 访问的 IPv4 地址信息。
+     * @return Cluster API Server access IPv4 address information
      * 
      */
     public GetClusterClusterConfigApiServerEndpoints apiServerEndpoints() {
         return this.apiServerEndpoints;
     }
     /**
-     * @return 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+     * @return Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
      * 
      */
     public GetClusterClusterConfigApiServerPublicAccessConfig apiServerPublicAccessConfig() {
         return this.apiServerPublicAccessConfig;
     }
     /**
-     * @return 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+     * @return Node public access configuration. Parameter value description: false: Disabled. true: Enabled
      * 
      */
     public Boolean apiServerPublicAccessEnabled() {
         return this.apiServerPublicAccessEnabled;
     }
     /**
-     * @return 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+     * @return Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
      * 
      */
     public String ipFamily() {
         return this.ipFamily;
     }
     /**
-     * @return 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+     * @return Node public access configuration. Parameter value description: false: Disabled. true: Enabled
      * 
      */
     public Boolean resourcePublicAccessDefaultEnabled() {
         return this.resourcePublicAccessDefaultEnabled;
     }
     /**
-     * @return 集群控制面及节点使用的的安全组。
+     * @return Security group used by the cluster control plane and nodes.
      * 
      */
     public List<String> securityGroupIds() {
         return this.securityGroupIds;
     }
     /**
-     * @return 集群控制面在私有网络内通信的子网 ID。
+     * @return Subnet ID for cluster control plane communication within the private network.
      * 
      */
     public List<String> subnetIds() {
         return this.subnetIds;
     }
     /**
-     * @return 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+     * @return Private network (VPC) ID where the cluster control plane and some nodes are located.
      * 
      */
     public String vpcId() {

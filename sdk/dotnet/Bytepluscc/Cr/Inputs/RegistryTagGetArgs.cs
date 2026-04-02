@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr.Inputs
     public sealed class RegistryTagGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 标签的 Key 值。
+        /// Tag key values
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 标签的 Value 值列表。
+        /// List of tag values
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

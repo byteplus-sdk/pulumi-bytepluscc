@@ -30,39 +30,39 @@ type LookupRuleArgs struct {
 
 // A collection of values returned by getRule.
 type LookupRuleResult struct {
-	// 转发规则的描述。
+	// Forwarding rule description.
 	Description string `pulumi:"description"`
-	// 转发规则的域名。
+	// Domain name of the forwarding rule.
 	Domain string `pulumi:"domain"`
-	// 转发规则服务器组配置
+	// Forwarding rule server group configuration.
 	ForwardGroupConfig GetRuleForwardGroupConfig `pulumi:"forwardGroupConfig"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 监听器ID。
+	// Listener ID.
 	ListenerId string `pulumi:"listenerId"`
-	// 标准版转发规则优先级。
+	// Standard edition forwarding rule priority.
 	Priority int `pulumi:"priority"`
-	// 重定向相关配置信息。
+	// Redirect-related configuration information.
 	RedirectConfig GetRuleRedirectConfig `pulumi:"redirectConfig"`
-	// 重定向相关配置信息。
+	// Redirect-related configuration information.
 	RewriteConfig GetRuleRewriteConfig `pulumi:"rewriteConfig"`
-	// 转发规则重写配置开关。on：开启。off：关闭。
+	// Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
 	RewriteEnabled string `pulumi:"rewriteEnabled"`
-	// 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+	// Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
 	RuleAction string `pulumi:"ruleAction"`
-	// 标准版转发规则动作。
+	// Standard edition forwarding rule action.
 	RuleActions []GetRuleRuleAction `pulumi:"ruleActions"`
-	// 标准版转发规则条件。
+	// Standard edition forwarding rule condition.
 	RuleConditions []GetRuleRuleCondition `pulumi:"ruleConditions"`
-	// 转发规则ID。
+	// Forwarding rule ID.
 	RuleId string `pulumi:"ruleId"`
-	// 转发规则关联的后端服务器组ID。
+	// Backend server group ID associated with the forwarding rule.
 	ServerGroupId string `pulumi:"serverGroupId"`
-	// 转发规则 QPS 限速开关。on：开启。off：关闭。
+	// Forwarding rule QPS throttling switch. on: enabled. off: disabled.
 	TrafficLimitEnabled string `pulumi:"trafficLimitEnabled"`
-	// 每秒请求数。取值范围：100～100000。
+	// Requests per second. Range: 100–100000.
 	TrafficLimitQps int `pulumi:"trafficLimitQps"`
-	// 转发规则的URL。
+	// Forwarding rule URL.
 	Url string `pulumi:"url"`
 }
 
@@ -100,17 +100,17 @@ func (o LookupRuleResultOutput) ToLookupRuleResultOutputWithContext(ctx context.
 	return o
 }
 
-// 转发规则的描述。
+// Forwarding rule description.
 func (o LookupRuleResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 转发规则的域名。
+// Domain name of the forwarding rule.
 func (o LookupRuleResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 转发规则服务器组配置
+// Forwarding rule server group configuration.
 func (o LookupRuleResultOutput) ForwardGroupConfig() GetRuleForwardGroupConfigOutput {
 	return o.ApplyT(func(v LookupRuleResult) GetRuleForwardGroupConfig { return v.ForwardGroupConfig }).(GetRuleForwardGroupConfigOutput)
 }
@@ -120,67 +120,67 @@ func (o LookupRuleResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 监听器ID。
+// Listener ID.
 func (o LookupRuleResultOutput) ListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.ListenerId }).(pulumi.StringOutput)
 }
 
-// 标准版转发规则优先级。
+// Standard edition forwarding rule priority.
 func (o LookupRuleResultOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupRuleResult) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// 重定向相关配置信息。
+// Redirect-related configuration information.
 func (o LookupRuleResultOutput) RedirectConfig() GetRuleRedirectConfigOutput {
 	return o.ApplyT(func(v LookupRuleResult) GetRuleRedirectConfig { return v.RedirectConfig }).(GetRuleRedirectConfigOutput)
 }
 
-// 重定向相关配置信息。
+// Redirect-related configuration information.
 func (o LookupRuleResultOutput) RewriteConfig() GetRuleRewriteConfigOutput {
 	return o.ApplyT(func(v LookupRuleResult) GetRuleRewriteConfig { return v.RewriteConfig }).(GetRuleRewriteConfigOutput)
 }
 
-// 转发规则重写配置开关。on：开启。off：关闭。
+// Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
 func (o LookupRuleResultOutput) RewriteEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.RewriteEnabled }).(pulumi.StringOutput)
 }
 
-// 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+// Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
 func (o LookupRuleResultOutput) RuleAction() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.RuleAction }).(pulumi.StringOutput)
 }
 
-// 标准版转发规则动作。
+// Standard edition forwarding rule action.
 func (o LookupRuleResultOutput) RuleActions() GetRuleRuleActionArrayOutput {
 	return o.ApplyT(func(v LookupRuleResult) []GetRuleRuleAction { return v.RuleActions }).(GetRuleRuleActionArrayOutput)
 }
 
-// 标准版转发规则条件。
+// Standard edition forwarding rule condition.
 func (o LookupRuleResultOutput) RuleConditions() GetRuleRuleConditionArrayOutput {
 	return o.ApplyT(func(v LookupRuleResult) []GetRuleRuleCondition { return v.RuleConditions }).(GetRuleRuleConditionArrayOutput)
 }
 
-// 转发规则ID。
+// Forwarding rule ID.
 func (o LookupRuleResultOutput) RuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.RuleId }).(pulumi.StringOutput)
 }
 
-// 转发规则关联的后端服务器组ID。
+// Backend server group ID associated with the forwarding rule.
 func (o LookupRuleResultOutput) ServerGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.ServerGroupId }).(pulumi.StringOutput)
 }
 
-// 转发规则 QPS 限速开关。on：开启。off：关闭。
+// Forwarding rule QPS throttling switch. on: enabled. off: disabled.
 func (o LookupRuleResultOutput) TrafficLimitEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.TrafficLimitEnabled }).(pulumi.StringOutput)
 }
 
-// 每秒请求数。取值范围：100～100000。
+// Requests per second. Range: 100–100000.
 func (o LookupRuleResultOutput) TrafficLimitQps() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupRuleResult) int { return v.TrafficLimitQps }).(pulumi.IntOutput)
 }
 
-// 转发规则的URL。
+// Forwarding rule URL.
 func (o LookupRuleResultOutput) Url() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Url }).(pulumi.StringOutput)
 }

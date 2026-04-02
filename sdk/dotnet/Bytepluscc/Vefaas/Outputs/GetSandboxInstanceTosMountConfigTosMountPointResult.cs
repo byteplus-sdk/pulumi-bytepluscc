@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas.Outputs
     public sealed class GetSandboxInstanceTosMountConfigTosMountPointResult
     {
         /// <summary>
-        /// 沙箱实例挂载的 TOS 远端目录。
+        /// TOS remote directory mounted by the sandbox instance
         /// </summary>
         public readonly string BucketPath;
         /// <summary>
-        /// 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+        /// Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
         /// </summary>
         public readonly string LocalMountPath;
 

@@ -18,14 +18,14 @@ public final class ClusterUserGroupArgs extends com.pulumi.resources.ResourceArg
     public static final ClusterUserGroupArgs Empty = new ClusterUserGroupArgs();
 
     /**
-     * 集群ID。
+     * Cluster ID.
      * 
      */
     @Import(name="clusterId", required=true)
     private Output<String> clusterId;
 
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     public Output<String> clusterId() {
@@ -33,14 +33,14 @@ public final class ClusterUserGroupArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 用户组描述。
+     * User group description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 用户组描述。
+     * @return User group description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -48,14 +48,14 @@ public final class ClusterUserGroupArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 用户组成员。不支持操作特殊用户，如admin等。
+     * Operations on special users, such as admin, are not supported.
      * 
      */
     @Import(name="members")
     private @Nullable Output<List<String>> members;
 
     /**
-     * @return 用户组成员。不支持操作特殊用户，如admin等。
+     * @return Operations on special users, such as admin, are not supported.
      * 
      */
     public Optional<Output<List<String>>> members() {
@@ -63,14 +63,14 @@ public final class ClusterUserGroupArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 用户组名称。
+     * User group name.
      * 
      */
     @Import(name="userGroupName", required=true)
     private Output<String> userGroupName;
 
     /**
-     * @return 用户组名称。
+     * @return User group name.
      * 
      */
     public Output<String> userGroupName() {
@@ -105,7 +105,7 @@ public final class ClusterUserGroupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param clusterId 集群ID。
+         * @param clusterId Cluster ID.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class ClusterUserGroupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param clusterId 集群ID。
+         * @param clusterId Cluster ID.
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class ClusterUserGroupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description 用户组描述。
+         * @param description User group description.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class ClusterUserGroupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description 用户组描述。
+         * @param description User group description.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class ClusterUserGroupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param members 用户组成员。不支持操作特殊用户，如admin等。
+         * @param members Operations on special users, such as admin, are not supported.
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class ClusterUserGroupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param members 用户组成员。不支持操作特殊用户，如admin等。
+         * @param members Operations on special users, such as admin, are not supported.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class ClusterUserGroupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param members 用户组成员。不支持操作特殊用户，如admin等。
+         * @param members Operations on special users, such as admin, are not supported.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class ClusterUserGroupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param userGroupName 用户组名称。
+         * @param userGroupName User group name.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class ClusterUserGroupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param userGroupName 用户组名称。
+         * @param userGroupName User group name.
          * 
          * @return builder
          * 

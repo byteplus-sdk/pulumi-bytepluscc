@@ -25,14 +25,14 @@ public final class DomainOriginRewriteArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 表示是否启用该模块。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+     * Indicates whether to enable this module. The parameter has the following values: true: enables the module. false: disables the module. The default value is false.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示是否启用该模块。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+     * @return Indicates whether to enable this module. The parameter has the following values: true: enables the module. false: disables the module. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -78,7 +78,7 @@ public final class DomainOriginRewriteArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param switch_ 表示是否启用该模块。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+         * @param switch_ Indicates whether to enable this module. The parameter has the following values: true: enables the module. false: disables the module. The default value is false.
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class DomainOriginRewriteArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param switch_ 表示是否启用该模块。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+         * @param switch_ Indicates whether to enable this module. The parameter has the following values: true: enables the module. false: disables the module. The default value is false.
          * 
          * @return builder
          * 

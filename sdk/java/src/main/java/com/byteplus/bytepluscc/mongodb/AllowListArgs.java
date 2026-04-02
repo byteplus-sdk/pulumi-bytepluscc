@@ -19,14 +19,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     public static final AllowListArgs Empty = new AllowListArgs();
 
     /**
-     * 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+     * Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
      * 
      */
     @Import(name="allowListCategory")
     private @Nullable Output<String> allowListCategory;
 
     /**
-     * @return 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+     * @return Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
      * 
      */
     public Optional<Output<String>> allowListCategory() {
@@ -34,14 +34,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单的备注信息，长度不可超过 200 个字符。
+     * Allowlist remarks. Maximum length: 200 characters.
      * 
      */
     @Import(name="allowListDesc")
     private @Nullable Output<String> allowListDesc;
 
     /**
-     * @return 白名单的备注信息，长度不可超过 200 个字符。
+     * @return Allowlist remarks. Maximum length: 200 characters.
      * 
      */
     public Optional<Output<String>> allowListDesc() {
@@ -49,14 +49,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+     * Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
      * 
      */
     @Import(name="allowListName", required=true)
     private Output<String> allowListName;
 
     /**
-     * @return 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+     * @return Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
      * 
      */
     public Output<String> allowListName() {
@@ -64,14 +64,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+     * IP address type in the allowlist. Only IPv4 addresses are currently supported.
      * 
      */
     @Import(name="allowListType")
     private @Nullable Output<String> allowListType;
 
     /**
-     * @return 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+     * @return IP address type in the allowlist. Only IPv4 addresses are currently supported.
      * 
      */
     public Optional<Output<String>> allowListType() {
@@ -79,14 +79,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 输入 IP 地址或 CIDR 格式的 IP 地址段。
+     * Enter an IP address or a CIDR-format IP address range.
      * 
      */
     @Import(name="allowLists", required=true)
     private Output<List<String>> allowLists;
 
     /**
-     * @return 输入 IP 地址或 CIDR 格式的 IP 地址段。
+     * @return Enter an IP address or a CIDR-format IP address range.
      * 
      */
     public Output<List<String>> allowLists() {
@@ -101,14 +101,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 当前白名单所属的项目。
+     * Project to which the current allowlist belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 当前白名单所属的项目。
+     * @return Project to which the current allowlist belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -146,7 +146,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListCategory 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+         * @param allowListCategory Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListCategory 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+         * @param allowListCategory Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListDesc 白名单的备注信息，长度不可超过 200 个字符。
+         * @param allowListDesc Allowlist remarks. Maximum length: 200 characters.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListDesc 白名单的备注信息，长度不可超过 200 个字符。
+         * @param allowListDesc Allowlist remarks. Maximum length: 200 characters.
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListName 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+         * @param allowListName Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListName 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+         * @param allowListName Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListType 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+         * @param allowListType IP address type in the allowlist. Only IPv4 addresses are currently supported.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListType 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+         * @param allowListType IP address type in the allowlist. Only IPv4 addresses are currently supported.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowLists 输入 IP 地址或 CIDR 格式的 IP 地址段。
+         * @param allowLists Enter an IP address or a CIDR-format IP address range.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowLists 输入 IP 地址或 CIDR 格式的 IP 地址段。
+         * @param allowLists Enter an IP address or a CIDR-format IP address range.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowLists 输入 IP 地址或 CIDR 格式的 IP 地址段。
+         * @param allowLists Enter an IP address or a CIDR-format IP address range.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 当前白名单所属的项目。
+         * @param projectName Project to which the current allowlist belongs.
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 当前白名单所属的项目。
+         * @param projectName Project to which the current allowlist belongs.
          * 
          * @return builder
          * 

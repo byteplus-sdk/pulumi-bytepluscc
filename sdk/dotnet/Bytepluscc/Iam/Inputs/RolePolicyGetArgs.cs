@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Inputs
     public sealed class RolePolicyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 策略名。
+        /// Policy name
         /// </summary>
         [Input("policyName")]
         public Input<string>? PolicyName { get; set; }
 
         /// <summary>
-        /// 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+        /// Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
         /// </summary>
         [Input("policyType")]
         public Input<string>? PolicyType { get; set; }

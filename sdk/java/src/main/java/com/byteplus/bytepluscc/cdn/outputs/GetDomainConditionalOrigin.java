@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainConditionalOrigin {
     /**
-     * @return 表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+     * @return Indicates a list of rules. Each rule in the list defines a filter and the action the content delivery network performs on requests that meet the filter criteria.
      * 
      */
     private List<GetDomainConditionalOriginOriginRule> originRules;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
      * 
      */
     private Boolean switch_;
 
     private GetDomainConditionalOrigin() {}
     /**
-     * @return 表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+     * @return Indicates a list of rules. Each rule in the list defines a filter and the action the content delivery network performs on requests that meet the filter criteria.
      * 
      */
     public List<GetDomainConditionalOriginOriginRule> originRules() {
         return this.originRules;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
      * 
      */
     public Boolean switch_() {

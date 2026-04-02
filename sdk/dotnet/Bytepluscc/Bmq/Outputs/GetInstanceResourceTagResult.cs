@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
     public sealed class GetInstanceResourceTagResult
     {
         /// <summary>
-        /// 标签键值对。
+        /// Tag key-value pair
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceResourceTagTagKvResult> TagKvs;
         /// <summary>
-        /// 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+        /// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
         /// </summary>
         public readonly string Type;
 

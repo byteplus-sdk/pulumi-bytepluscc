@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterClusterConfigApiServerEndpoints {
     /**
-     * @return 集群 API Server 私网的 IPv4 地址。
+     * @return Cluster API Server private IPv4 address.
      * 
      */
     private @Nullable ClusterClusterConfigApiServerEndpointsPrivateIp privateIp;
     /**
-     * @return 集群 API Server 公网的 IPv4 地址。
+     * @return Cluster API Server public IPv4 address
      * 
      */
     private @Nullable ClusterClusterConfigApiServerEndpointsPublicIp publicIp;
 
     private ClusterClusterConfigApiServerEndpoints() {}
     /**
-     * @return 集群 API Server 私网的 IPv4 地址。
+     * @return Cluster API Server private IPv4 address.
      * 
      */
     public Optional<ClusterClusterConfigApiServerEndpointsPrivateIp> privateIp() {
         return Optional.ofNullable(this.privateIp);
     }
     /**
-     * @return 集群 API Server 公网的 IPv4 地址。
+     * @return Cluster API Server public IPv4 address
      * 
      */
     public Optional<ClusterClusterConfigApiServerEndpointsPublicIp> publicIp() {

@@ -18,14 +18,14 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
     public static final NodeGroupChargePreConfigArgs Empty = new NodeGroupChargePreConfigArgs();
 
     /**
-     * 是否开启自动续费。
+     * Whether to enable auto-renewal.
      * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
-     * @return 是否开启自动续费。
+     * @return Whether to enable auto-renewal.
      * 
      */
     public Optional<Output<Boolean>> autoRenew() {
@@ -33,14 +33,14 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+     * Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
      * 
      */
     @Import(name="autoRenewPeriod")
     private @Nullable Output<Integer> autoRenewPeriod;
 
     /**
-     * @return 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+     * @return Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
      * 
      */
     public Optional<Output<Integer>> autoRenewPeriod() {
@@ -48,14 +48,14 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+     * Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
      * 
      */
     @Import(name="autoRenewPeriodUnit")
     private @Nullable Output<String> autoRenewPeriodUnit;
 
     /**
-     * @return 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+     * @return Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
      * 
      */
     public Optional<Output<String>> autoRenewPeriodUnit() {
@@ -63,14 +63,14 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * chargeType=PRE默认值=1，包月的购买时长单位。
+     * When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
      * 
      */
     @Import(name="chargePeriod")
     private @Nullable Output<Integer> chargePeriod;
 
     /**
-     * @return chargeType=PRE默认值=1，包月的购买时长单位。
+     * @return When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
      * 
      */
     public Optional<Output<Integer>> chargePeriod() {
@@ -78,14 +78,14 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+     * When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
      * 
      */
     @Import(name="chargePeriodUnit")
     private @Nullable Output<String> chargePeriodUnit;
 
     /**
-     * @return chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+     * @return When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
      * 
      */
     public Optional<Output<String>> chargePeriodUnit() {
@@ -93,14 +93,14 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 付费类型，枚举值：POST，PRE。
+     * Payment type. Enum values: POST, PRE.
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return 付费类型，枚举值：POST，PRE。
+     * @return Payment type. Enum values: POST, PRE.
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -137,7 +137,7 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param autoRenew 是否开启自动续费。
+         * @param autoRenew Whether to enable auto-renewal.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param autoRenew 是否开启自动续费。
+         * @param autoRenew Whether to enable auto-renewal.
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param autoRenewPeriod 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+         * @param autoRenewPeriod Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param autoRenewPeriod 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+         * @param autoRenewPeriod Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param autoRenewPeriodUnit 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+         * @param autoRenewPeriodUnit Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param autoRenewPeriodUnit 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+         * @param autoRenewPeriodUnit Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param chargePeriod chargeType=PRE默认值=1，包月的购买时长单位。
+         * @param chargePeriod When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param chargePeriod chargeType=PRE默认值=1，包月的购买时长单位。
+         * @param chargePeriod When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param chargePeriodUnit chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+         * @param chargePeriodUnit When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param chargePeriodUnit chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+         * @param chargePeriodUnit When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param chargeType 付费类型，枚举值：POST，PRE。
+         * @param chargeType Payment type. Enum values: POST, PRE.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class NodeGroupChargePreConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param chargeType 付费类型，枚举值：POST，PRE。
+         * @param chargeType Payment type. Enum values: POST, PRE.
          * 
          * @return builder
          * 

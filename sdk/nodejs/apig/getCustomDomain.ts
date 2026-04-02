@@ -29,23 +29,23 @@ export interface GetCustomDomainArgs {
  */
 export interface GetCustomDomainResult {
     /**
-     * 自定义域名证书ID。
+     * Custom Domain Certificate ID
      */
     readonly certificateId: string;
     /**
-     * 备注。
+     * Remarks
      */
     readonly comments: string;
     /**
-     * 创建时间。
+     * Creation Time
      */
     readonly createdTime: string;
     /**
-     * 自定义域名ID。
+     * Custom Domain ID
      */
     readonly customDomainId: string;
     /**
-     * 自定义域名。
+     * Custom Domain
      */
     readonly domain: string;
     /**
@@ -53,23 +53,23 @@ export interface GetCustomDomainResult {
      */
     readonly id: string;
     /**
-     * 协议，取值：HTTP。HTTPS。
+     * Protocol. Values: HTTP, HTTPS
      */
     readonly protocols: string[];
     /**
-     * 服务ID。
+     * Service ID
      */
     readonly serviceId: string;
     /**
-     * 重定向到HTTPS。
+     * Redirect to HTTPS
      */
     readonly sslRedirect: boolean;
     /**
-     * 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+     * Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
      */
     readonly status: string;
     /**
-     * 更新时间。
+     * Update Time
      */
     readonly updatedTime: string;
 }

@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AllowListAssociatedInstance {
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     private @Nullable String instanceId;
     /**
-     * @return 实例名称。
+     * @return Instance name.
      * 
      */
     private @Nullable String instanceName;
     /**
-     * @return 实例所属的 VPC ID。
+     * @return VPC ID to which the instance belongs.
      * 
      */
     private @Nullable String vpc;
 
     private AllowListAssociatedInstance() {}
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
     }
     /**
-     * @return 实例名称。
+     * @return Instance name.
      * 
      */
     public Optional<String> instanceName() {
         return Optional.ofNullable(this.instanceName);
     }
     /**
-     * @return 实例所属的 VPC ID。
+     * @return VPC ID to which the instance belongs.
      * 
      */
     public Optional<String> vpc() {

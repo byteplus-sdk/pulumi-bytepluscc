@@ -30,99 +30,99 @@ type LookupClbArgs struct {
 
 // A collection of values returned by getClb.
 type LookupClbResult struct {
-	// 负载均衡实例中访问日志的信息。
+	// Access log information in the load balancer instance
 	AccessLog GetClbAccessLog `pulumi:"accessLog"`
-	// 负载均衡实例所属的账号ID。
+	// Account ID to which the load balancer instance belongs
 	AccountId string `pulumi:"accountId"`
-	// CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
+	// IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
 	AddressIpVersion string `pulumi:"addressIpVersion"`
-	// 允许的多个端口范围。
+	// Allowed port ranges
 	AllowedPorts []string `pulumi:"allowedPorts"`
-	// 是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
+	// Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
 	AutoRenewal bool `pulumi:"autoRenewal"`
-	// 负载均衡实例是否被锁定。
+	// Whether the load balancer instance is locked
 	BusinessStatus string `pulumi:"businessStatus"`
-	// 是否开启bypass安全组功能。
+	// Whether to enable bypass security group feature
 	BypassSecurityGroupEnabled string `pulumi:"bypassSecurityGroupEnabled"`
-	// 负载均衡实例的创建时间。
+	// Creation time of the load balancer instance
 	CreateTime string `pulumi:"createTime"`
-	// 负载均衡实例的预期回收时间。
+	// Expected recycling time of the load balancer instance
 	DeletedTime string `pulumi:"deletedTime"`
-	// 负载均衡实例的描述。
+	// Description of the load balancer instance
 	Description string `pulumi:"description"`
-	// 负载均衡实例的公网IP的信息。
+	// Public IP information of the load balancer instance
 	Eip GetClbEip `pulumi:"eip"`
-	// 公网IP地址。
+	// Public IP address
 	EipAddress string `pulumi:"eipAddress"`
-	// 公网IP ID。
+	// Public IP ID
 	EipId string `pulumi:"eipId"`
-	// 负载均衡实例的启用状态。
+	// Enable status of the load balancer instance
 	Enabled bool `pulumi:"enabled"`
-	// 负载均衡实例的私网IPv4地址信息。
+	// Private IPv4 address information of the load balancer instance
 	Eni GetClbEni `pulumi:"eni"`
-	// 负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
+	// Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
 	EniAddressNum float64 `pulumi:"eniAddressNum"`
-	// 负载均衡实例的私网IPv6地址。
+	// Private IPv6 address of the load balancer instance
 	EniIpv6Address string `pulumi:"eniIpv6Address"`
-	// 负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
+	// List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
 	Enis GetClbEnis `pulumi:"enis"`
-	// 独占集群Id。
+	// Dedicated cluster ID
 	ExclusiveClusterId string `pulumi:"exclusiveClusterId"`
-	// 负载均衡实例到期时间。
+	// Expiration time of the load balancer instance
 	ExpiredTime string `pulumi:"expiredTime"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 负载均衡实例中监听器的信息。
+	// Listener information in the load balancer instance
 	Listeners []GetClbListener `pulumi:"listeners"`
-	// CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
+	// CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
 	LoadBalancerBillingType float64 `pulumi:"loadBalancerBillingType"`
-	// 负载均衡实例ID。
+	// Load balancer instance ID
 	LoadBalancerId string `pulumi:"loadBalancerId"`
-	// 负载均衡实例的名称。
+	// Name of the load balancer instance
 	LoadBalancerName string `pulumi:"loadBalancerName"`
-	// CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
+	// CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
 	LoadBalancerSpec string `pulumi:"loadBalancerSpec"`
-	// 负载均衡实例被冻结的原因。
+	// Reason why the load balancer instance is frozen
 	LockReason string `pulumi:"lockReason"`
-	// 负载均衡实例的主可用区ID。
+	// Main availability zone ID of the load balancer instance
 	MasterZoneId string `pulumi:"masterZoneId"`
-	// 设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
+	// Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
 	ModificationProtectionReason string `pulumi:"modificationProtectionReason"`
-	// CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
+	// Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
 	ModificationProtectionStatus string `pulumi:"modificationProtectionStatus"`
-	// 是否为新架构。
+	// Whether it is a new architecture
 	NewArch bool `pulumi:"newArch"`
-	// 订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
+	// Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
 	OrderId string `pulumi:"orderId"`
-	// 负载均衡实例的冻结时间。
+	// Freeze time of the load balancer instance
 	OverdueTime string `pulumi:"overdueTime"`
-	// 购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
+	// Duration for purchasing a CLB instance by year or by month. Default is '1'. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
 	Period float64 `pulumi:"period"`
-	// 购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
+	// Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
 	PeriodUnit string `pulumi:"periodUnit"`
-	// CLB实例所属项目的名称。
+	// Name of the project associated with the CLB instance
 	ProjectName string `pulumi:"projectName"`
-	// 负载均衡实例中后端服务器组的信息。
+	// Backend server group information in the load balancer instance
 	ServerGroups []GetClbServerGroup `pulumi:"serverGroups"`
-	// CLB实例是否为托管资源。
+	// Whether the CLB instance is a managed resource
 	ServiceManaged bool `pulumi:"serviceManaged"`
-	// 负载均衡实例的备可用区ID。
+	// Secondary availability zone ID of the load balancer instance
 	SlaveZoneId string `pulumi:"slaveZoneId"`
-	// 负载均衡实例状态，Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+	// Load balancer instance status: Inactive: stopped. Active: running. Creating: creating. Provisioning: creating. Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
 	Status string `pulumi:"status"`
-	// 负载均衡实例所属VPC内的子网ID。
+	// Subnet ID within the VPC of the load balancer instance
 	SubnetId string `pulumi:"subnetId"`
-	// CLB实例标签。
+	// CLB instance tags
 	Tags []GetClbTag `pulumi:"tags"`
-	// 是否开启 TCP Timestamp 清除功能。
+	// Enable TCP timestamp removal
 	TimestampRemoveEnabled string `pulumi:"timestampRemoveEnabled"`
-	// CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
+	// CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
 	Type string `pulumi:"type"`
-	// 负载均衡实例的最近操作时间。
+	// Most recent operation time of the load balancer instance
 	UpdateTime string `pulumi:"updateTime"`
-	// 负载均衡实例所属的VPC ID。
+	// VPC ID of the load balancer instance
 	VpcId string `pulumi:"vpcId"`
-	// 负载均衡实例的可用区类型。
+	// Availability zone type of the load balancer instance
 	ZoneType string `pulumi:"zoneType"`
 }
 
@@ -160,102 +160,102 @@ func (o LookupClbResultOutput) ToLookupClbResultOutputWithContext(ctx context.Co
 	return o
 }
 
-// 负载均衡实例中访问日志的信息。
+// Access log information in the load balancer instance
 func (o LookupClbResultOutput) AccessLog() GetClbAccessLogOutput {
 	return o.ApplyT(func(v LookupClbResult) GetClbAccessLog { return v.AccessLog }).(GetClbAccessLogOutput)
 }
 
-// 负载均衡实例所属的账号ID。
+// Account ID to which the load balancer instance belongs
 func (o LookupClbResultOutput) AccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.AccountId }).(pulumi.StringOutput)
 }
 
-// CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
+// IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
 func (o LookupClbResultOutput) AddressIpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.AddressIpVersion }).(pulumi.StringOutput)
 }
 
-// 允许的多个端口范围。
+// Allowed port ranges
 func (o LookupClbResultOutput) AllowedPorts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupClbResult) []string { return v.AllowedPorts }).(pulumi.StringArrayOutput)
 }
 
-// 是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
+// Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
 func (o LookupClbResultOutput) AutoRenewal() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupClbResult) bool { return v.AutoRenewal }).(pulumi.BoolOutput)
 }
 
-// 负载均衡实例是否被锁定。
+// Whether the load balancer instance is locked
 func (o LookupClbResultOutput) BusinessStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.BusinessStatus }).(pulumi.StringOutput)
 }
 
-// 是否开启bypass安全组功能。
+// Whether to enable bypass security group feature
 func (o LookupClbResultOutput) BypassSecurityGroupEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.BypassSecurityGroupEnabled }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例的创建时间。
+// Creation time of the load balancer instance
 func (o LookupClbResultOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例的预期回收时间。
+// Expected recycling time of the load balancer instance
 func (o LookupClbResultOutput) DeletedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.DeletedTime }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例的描述。
+// Description of the load balancer instance
 func (o LookupClbResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例的公网IP的信息。
+// Public IP information of the load balancer instance
 func (o LookupClbResultOutput) Eip() GetClbEipOutput {
 	return o.ApplyT(func(v LookupClbResult) GetClbEip { return v.Eip }).(GetClbEipOutput)
 }
 
-// 公网IP地址。
+// Public IP address
 func (o LookupClbResultOutput) EipAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.EipAddress }).(pulumi.StringOutput)
 }
 
-// 公网IP ID。
+// Public IP ID
 func (o LookupClbResultOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.EipId }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例的启用状态。
+// Enable status of the load balancer instance
 func (o LookupClbResultOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupClbResult) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 负载均衡实例的私网IPv4地址信息。
+// Private IPv4 address information of the load balancer instance
 func (o LookupClbResultOutput) Eni() GetClbEniOutput {
 	return o.ApplyT(func(v LookupClbResult) GetClbEni { return v.Eni }).(GetClbEniOutput)
 }
 
-// 负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
+// Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
 func (o LookupClbResultOutput) EniAddressNum() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupClbResult) float64 { return v.EniAddressNum }).(pulumi.Float64Output)
 }
 
-// 负载均衡实例的私网IPv6地址。
+// Private IPv6 address of the load balancer instance
 func (o LookupClbResultOutput) EniIpv6Address() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.EniIpv6Address }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
+// List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
 func (o LookupClbResultOutput) Enis() GetClbEnisOutput {
 	return o.ApplyT(func(v LookupClbResult) GetClbEnis { return v.Enis }).(GetClbEnisOutput)
 }
 
-// 独占集群Id。
+// Dedicated cluster ID
 func (o LookupClbResultOutput) ExclusiveClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.ExclusiveClusterId }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例到期时间。
+// Expiration time of the load balancer instance
 func (o LookupClbResultOutput) ExpiredTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.ExpiredTime }).(pulumi.StringOutput)
 }
@@ -265,132 +265,132 @@ func (o LookupClbResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例中监听器的信息。
+// Listener information in the load balancer instance
 func (o LookupClbResultOutput) Listeners() GetClbListenerArrayOutput {
 	return o.ApplyT(func(v LookupClbResult) []GetClbListener { return v.Listeners }).(GetClbListenerArrayOutput)
 }
 
-// CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
+// CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
 func (o LookupClbResultOutput) LoadBalancerBillingType() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupClbResult) float64 { return v.LoadBalancerBillingType }).(pulumi.Float64Output)
 }
 
-// 负载均衡实例ID。
+// Load balancer instance ID
 func (o LookupClbResultOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例的名称。
+// Name of the load balancer instance
 func (o LookupClbResultOutput) LoadBalancerName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.LoadBalancerName }).(pulumi.StringOutput)
 }
 
-// CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
+// CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
 func (o LookupClbResultOutput) LoadBalancerSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.LoadBalancerSpec }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例被冻结的原因。
+// Reason why the load balancer instance is frozen
 func (o LookupClbResultOutput) LockReason() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.LockReason }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例的主可用区ID。
+// Main availability zone ID of the load balancer instance
 func (o LookupClbResultOutput) MasterZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.MasterZoneId }).(pulumi.StringOutput)
 }
 
-// 设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
+// Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
 func (o LookupClbResultOutput) ModificationProtectionReason() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.ModificationProtectionReason }).(pulumi.StringOutput)
 }
 
-// CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
+// Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
 func (o LookupClbResultOutput) ModificationProtectionStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.ModificationProtectionStatus }).(pulumi.StringOutput)
 }
 
-// 是否为新架构。
+// Whether it is a new architecture
 func (o LookupClbResultOutput) NewArch() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupClbResult) bool { return v.NewArch }).(pulumi.BoolOutput)
 }
 
-// 订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
+// Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
 func (o LookupClbResultOutput) OrderId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.OrderId }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例的冻结时间。
+// Freeze time of the load balancer instance
 func (o LookupClbResultOutput) OverdueTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.OverdueTime }).(pulumi.StringOutput)
 }
 
-// 购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
+// Duration for purchasing a CLB instance by year or by month. Default is '1'. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
 func (o LookupClbResultOutput) Period() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupClbResult) float64 { return v.Period }).(pulumi.Float64Output)
 }
 
-// 购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
+// Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
 func (o LookupClbResultOutput) PeriodUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.PeriodUnit }).(pulumi.StringOutput)
 }
 
-// CLB实例所属项目的名称。
+// Name of the project associated with the CLB instance
 func (o LookupClbResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例中后端服务器组的信息。
+// Backend server group information in the load balancer instance
 func (o LookupClbResultOutput) ServerGroups() GetClbServerGroupArrayOutput {
 	return o.ApplyT(func(v LookupClbResult) []GetClbServerGroup { return v.ServerGroups }).(GetClbServerGroupArrayOutput)
 }
 
-// CLB实例是否为托管资源。
+// Whether the CLB instance is a managed resource
 func (o LookupClbResultOutput) ServiceManaged() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupClbResult) bool { return v.ServiceManaged }).(pulumi.BoolOutput)
 }
 
-// 负载均衡实例的备可用区ID。
+// Secondary availability zone ID of the load balancer instance
 func (o LookupClbResultOutput) SlaveZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.SlaveZoneId }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例状态，Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+// Load balancer instance status: Inactive: stopped. Active: running. Creating: creating. Provisioning: creating. Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
 func (o LookupClbResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例所属VPC内的子网ID。
+// Subnet ID within the VPC of the load balancer instance
 func (o LookupClbResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// CLB实例标签。
+// CLB instance tags
 func (o LookupClbResultOutput) Tags() GetClbTagArrayOutput {
 	return o.ApplyT(func(v LookupClbResult) []GetClbTag { return v.Tags }).(GetClbTagArrayOutput)
 }
 
-// 是否开启 TCP Timestamp 清除功能。
+// Enable TCP timestamp removal
 func (o LookupClbResultOutput) TimestampRemoveEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.TimestampRemoveEnabled }).(pulumi.StringOutput)
 }
 
-// CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
+// CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
 func (o LookupClbResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例的最近操作时间。
+// Most recent operation time of the load balancer instance
 func (o LookupClbResultOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.UpdateTime }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例所属的VPC ID。
+// VPC ID of the load balancer instance
 func (o LookupClbResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例的可用区类型。
+// Availability zone type of the load balancer instance
 func (o LookupClbResultOutput) ZoneType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.ZoneType }).(pulumi.StringOutput)
 }

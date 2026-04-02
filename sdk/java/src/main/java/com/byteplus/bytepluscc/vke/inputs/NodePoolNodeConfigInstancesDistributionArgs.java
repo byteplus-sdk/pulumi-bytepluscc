@@ -17,14 +17,14 @@ public final class NodePoolNodeConfigInstancesDistributionArgs extends com.pulum
     public static final NodePoolNodeConfigInstancesDistributionArgs Empty = new NodePoolNodeConfigInstancesDistributionArgs();
 
     /**
-     * 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+     * Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
      * 
      */
     @Import(name="capacityRebalance")
     private @Nullable Output<Boolean> capacityRebalance;
 
     /**
-     * @return 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+     * @return Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
      * 
      */
     public Optional<Output<Boolean>> capacityRebalance() {
@@ -32,14 +32,14 @@ public final class NodePoolNodeConfigInstancesDistributionArgs extends com.pulum
     }
 
     /**
-     * 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+     * On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
      * 
      */
     @Import(name="compensateWithOnDemand")
     private @Nullable Output<Boolean> compensateWithOnDemand;
 
     /**
-     * @return 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+     * @return On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
      * 
      */
     public Optional<Output<Boolean>> compensateWithOnDemand() {
@@ -47,14 +47,14 @@ public final class NodePoolNodeConfigInstancesDistributionArgs extends com.pulum
     }
 
     /**
-     * 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+     * Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
      * 
      */
     @Import(name="onDemandBaseCapacity")
     private @Nullable Output<Integer> onDemandBaseCapacity;
 
     /**
-     * @return 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+     * @return Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
      * 
      */
     public Optional<Output<Integer>> onDemandBaseCapacity() {
@@ -62,14 +62,14 @@ public final class NodePoolNodeConfigInstancesDistributionArgs extends com.pulum
     }
 
     /**
-     * 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+     * Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
      * 
      */
     @Import(name="onDemandPercentageAboveBaseCapacity")
     private @Nullable Output<Integer> onDemandPercentageAboveBaseCapacity;
 
     /**
-     * @return 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+     * @return Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
      * 
      */
     public Optional<Output<Integer>> onDemandPercentageAboveBaseCapacity() {
@@ -104,7 +104,7 @@ public final class NodePoolNodeConfigInstancesDistributionArgs extends com.pulum
         }
 
         /**
-         * @param capacityRebalance 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+         * @param capacityRebalance Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class NodePoolNodeConfigInstancesDistributionArgs extends com.pulum
         }
 
         /**
-         * @param capacityRebalance 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+         * @param capacityRebalance Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class NodePoolNodeConfigInstancesDistributionArgs extends com.pulum
         }
 
         /**
-         * @param compensateWithOnDemand 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+         * @param compensateWithOnDemand On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class NodePoolNodeConfigInstancesDistributionArgs extends com.pulum
         }
 
         /**
-         * @param compensateWithOnDemand 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+         * @param compensateWithOnDemand On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class NodePoolNodeConfigInstancesDistributionArgs extends com.pulum
         }
 
         /**
-         * @param onDemandBaseCapacity 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+         * @param onDemandBaseCapacity Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class NodePoolNodeConfigInstancesDistributionArgs extends com.pulum
         }
 
         /**
-         * @param onDemandBaseCapacity 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+         * @param onDemandBaseCapacity Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class NodePoolNodeConfigInstancesDistributionArgs extends com.pulum
         }
 
         /**
-         * @param onDemandPercentageAboveBaseCapacity 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+         * @param onDemandPercentageAboveBaseCapacity Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class NodePoolNodeConfigInstancesDistributionArgs extends com.pulum
         }
 
         /**
-         * @param onDemandPercentageAboveBaseCapacity 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+         * @param onDemandPercentageAboveBaseCapacity Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
          * 
          * @return builder
          * 

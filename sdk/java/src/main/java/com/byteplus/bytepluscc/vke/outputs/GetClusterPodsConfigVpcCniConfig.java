@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterPodsConfigVpcCniConfig {
     /**
-     * @return VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+     * @return List of Pod subnet IDs for the VPC-CNI container network model.
      * 
      */
     private List<String> subnetIds;
     /**
-     * @return 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+     * @return Whether to enable Trunk mode for the VPC-CNI container network model
      * 
      */
     private Boolean trunkEniEnabled;
 
     private GetClusterPodsConfigVpcCniConfig() {}
     /**
-     * @return VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+     * @return List of Pod subnet IDs for the VPC-CNI container network model.
      * 
      */
     public List<String> subnetIds() {
         return this.subnetIds;
     }
     /**
-     * @return 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+     * @return Whether to enable Trunk mode for the VPC-CNI container network model
      * 
      */
     public Boolean trunkEniEnabled() {

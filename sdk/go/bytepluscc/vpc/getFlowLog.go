@@ -30,47 +30,47 @@ type LookupFlowLogArgs struct {
 
 // A collection of values returned by getFlowLog.
 type LookupFlowLogResult struct {
-	// 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+	// Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
 	AggregationInterval int `pulumi:"aggregationInterval"`
-	// 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+	// Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
 	BusinessStatus string `pulumi:"businessStatus"`
-	// 流日志的创建时间。
+	// Creation time of the flow log.
 	CreatedAt string `pulumi:"createdAt"`
-	// 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
 	Description string `pulumi:"description"`
-	// 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+	// Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
 	EnableIndex bool `pulumi:"enableIndex"`
-	// 流日志的ID。
+	// Stream log ID.
 	FlowLogId string `pulumi:"flowLogId"`
-	// 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+	// Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
 	FlowLogName string `pulumi:"flowLogName"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+	// Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
 	LockReason string `pulumi:"lockReason"`
-	// 流日志项目的ID。
+	// Flow log project ID.
 	LogProjectId string `pulumi:"logProjectId"`
-	// 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+	// Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
 	LogProjectName string `pulumi:"logProjectName"`
-	// 流日志主题的ID。
+	// Flow log topic ID.
 	LogTopicId string `pulumi:"logTopicId"`
-	// 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+	// Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
 	LogTopicName string `pulumi:"logTopicName"`
-	// 流流日志所属项目的名称。
+	// Name of the project to which the flow log belongs.
 	ProjectName string `pulumi:"projectName"`
-	// 要捕获流量的资源ID。
+	// Resource ID for traffic capture.
 	ResourceId string `pulumi:"resourceId"`
-	// 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+	// Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
 	ResourceType string `pulumi:"resourceType"`
-	// 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+	// Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
 	Status string `pulumi:"status"`
-	// 流日志的标签信息。
+	// Tag information for the flow log.
 	Tags []GetFlowLogTag `pulumi:"tags"`
-	// 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+	// Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
 	TrafficType string `pulumi:"trafficType"`
-	// 更新流日志的时间。
+	// Time when the stream log was updated.
 	UpdatedAt string `pulumi:"updatedAt"`
-	// 流日志的VPC的ID。
+	// VPC ID for the flow log.
 	VpcId string `pulumi:"vpcId"`
 }
 
@@ -108,37 +108,37 @@ func (o LookupFlowLogResultOutput) ToLookupFlowLogResultOutputWithContext(ctx co
 	return o
 }
 
-// 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+// Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
 func (o LookupFlowLogResultOutput) AggregationInterval() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) int { return v.AggregationInterval }).(pulumi.IntOutput)
 }
 
-// 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+// Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
 func (o LookupFlowLogResultOutput) BusinessStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.BusinessStatus }).(pulumi.StringOutput)
 }
 
-// 流日志的创建时间。
+// Creation time of the flow log.
 func (o LookupFlowLogResultOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+// Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
 func (o LookupFlowLogResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+// Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
 func (o LookupFlowLogResultOutput) EnableIndex() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) bool { return v.EnableIndex }).(pulumi.BoolOutput)
 }
 
-// 流日志的ID。
+// Stream log ID.
 func (o LookupFlowLogResultOutput) FlowLogId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.FlowLogId }).(pulumi.StringOutput)
 }
 
-// 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+// Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
 func (o LookupFlowLogResultOutput) FlowLogName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.FlowLogName }).(pulumi.StringOutput)
 }
@@ -148,67 +148,67 @@ func (o LookupFlowLogResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+// Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
 func (o LookupFlowLogResultOutput) LockReason() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.LockReason }).(pulumi.StringOutput)
 }
 
-// 流日志项目的ID。
+// Flow log project ID.
 func (o LookupFlowLogResultOutput) LogProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.LogProjectId }).(pulumi.StringOutput)
 }
 
-// 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+// Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
 func (o LookupFlowLogResultOutput) LogProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.LogProjectName }).(pulumi.StringOutput)
 }
 
-// 流日志主题的ID。
+// Flow log topic ID.
 func (o LookupFlowLogResultOutput) LogTopicId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.LogTopicId }).(pulumi.StringOutput)
 }
 
-// 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+// Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
 func (o LookupFlowLogResultOutput) LogTopicName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.LogTopicName }).(pulumi.StringOutput)
 }
 
-// 流流日志所属项目的名称。
+// Name of the project to which the flow log belongs.
 func (o LookupFlowLogResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 要捕获流量的资源ID。
+// Resource ID for traffic capture.
 func (o LookupFlowLogResultOutput) ResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.ResourceId }).(pulumi.StringOutput)
 }
 
-// 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+// Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
 func (o LookupFlowLogResultOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
-// 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+// Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
 func (o LookupFlowLogResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 流日志的标签信息。
+// Tag information for the flow log.
 func (o LookupFlowLogResultOutput) Tags() GetFlowLogTagArrayOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) []GetFlowLogTag { return v.Tags }).(GetFlowLogTagArrayOutput)
 }
 
-// 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+// Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
 func (o LookupFlowLogResultOutput) TrafficType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.TrafficType }).(pulumi.StringOutput)
 }
 
-// 更新流日志的时间。
+// Time when the stream log was updated.
 func (o LookupFlowLogResultOutput) UpdatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.UpdatedAt }).(pulumi.StringOutput)
 }
 
-// 流日志的VPC的ID。
+// VPC ID for the flow log.
 func (o LookupFlowLogResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFlowLogResult) string { return v.VpcId }).(pulumi.StringOutput)
 }

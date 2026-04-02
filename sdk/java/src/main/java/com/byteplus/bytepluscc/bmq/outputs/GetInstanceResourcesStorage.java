@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceResourcesStorage {
     /**
-     * @return 资源大小。
+     * @return Resource size
      * 
      */
     private Integer size;
     /**
-     * @return 资源单位。
+     * @return Resource unit
      * 
      */
     private String unit;
 
     private GetInstanceResourcesStorage() {}
     /**
-     * @return 资源大小。
+     * @return Resource size
      * 
      */
     public Integer size() {
         return this.size;
     }
     /**
-     * @return 资源单位。
+     * @return Resource unit
      * 
      */
     public String unit() {

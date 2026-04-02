@@ -16,14 +16,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
     public static final DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionArgs Empty = new DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionArgs();
 
     /**
-     * 表示如果鉴权状态码既不是 FailCode，又不是 SuccessCode 时，内容分发网络处理鉴权请求的方式。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+     * Specifies how the content delivery network handles authentication requests when the authentication status code is neither FailCode nor SuccessCode. This parameter has the following values: reject: the content delivery network considers authentication failed; pass: the content delivery network considers authentication successful.
      * 
      */
     @Import(name="defaultAction")
     private @Nullable Output<String> defaultAction;
 
     /**
-     * @return 表示如果鉴权状态码既不是 FailCode，又不是 SuccessCode 时，内容分发网络处理鉴权请求的方式。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+     * @return Specifies how the content delivery network handles authentication requests when the authentication status code is neither FailCode nor SuccessCode. This parameter has the following values: reject: the content delivery network considers authentication failed; pass: the content delivery network considers authentication successful.
      * 
      */
     public Optional<Output<String>> defaultAction() {
@@ -31,14 +31,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
     }
 
     /**
-     * 表示鉴权失败时的鉴权状态码。您可以指定范围在 400-499 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 4xx 表示 400-499 中的任意一个状态码。该参数的默认值是 401。
+     * Indicates the authentication status code returned when authentication fails. You can specify one or more status codes in the range 400–499. Separate multiple status codes with a semicolon (;). You can also specify 4xx to indicate any status code between 400 and 499. The default value for this parameter is 401.
      * 
      */
     @Import(name="failCode")
     private @Nullable Output<String> failCode;
 
     /**
-     * @return 表示鉴权失败时的鉴权状态码。您可以指定范围在 400-499 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 4xx 表示 400-499 中的任意一个状态码。该参数的默认值是 401。
+     * @return Indicates the authentication status code returned when authentication fails. You can specify one or more status codes in the range 400–499. Separate multiple status codes with a semicolon (;). You can also specify 4xx to indicate any status code between 400 and 499. The default value for this parameter is 401.
      * 
      */
     public Optional<Output<String>> failCode() {
@@ -46,14 +46,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
     }
 
     /**
-     * 表示鉴权成功时的鉴权状态码。您可以指定范围在 200-299 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 2xx 表示 200-299 中的任意一个状态码。该参数的默认值是 200。
+     * Indicates the authentication status code for successful authentication. You can specify one or more status codes in the range 200–299. Separate multiple status codes with a semicolon (;). You can also specify 2xx to represent any status code from 200–299. The default value is 200.
      * 
      */
     @Import(name="successCode")
     private @Nullable Output<String> successCode;
 
     /**
-     * @return 表示鉴权成功时的鉴权状态码。您可以指定范围在 200-299 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 2xx 表示 200-299 中的任意一个状态码。该参数的默认值是 200。
+     * @return Indicates the authentication status code for successful authentication. You can specify one or more status codes in the range 200–299. Separate multiple status codes with a semicolon (;). You can also specify 2xx to represent any status code from 200–299. The default value is 200.
      * 
      */
     public Optional<Output<String>> successCode() {
@@ -87,7 +87,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param defaultAction 表示如果鉴权状态码既不是 FailCode，又不是 SuccessCode 时，内容分发网络处理鉴权请求的方式。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+         * @param defaultAction Specifies how the content delivery network handles authentication requests when the authentication status code is neither FailCode nor SuccessCode. This parameter has the following values: reject: the content delivery network considers authentication failed; pass: the content delivery network considers authentication successful.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param defaultAction 表示如果鉴权状态码既不是 FailCode，又不是 SuccessCode 时，内容分发网络处理鉴权请求的方式。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+         * @param defaultAction Specifies how the content delivery network handles authentication requests when the authentication status code is neither FailCode nor SuccessCode. This parameter has the following values: reject: the content delivery network considers authentication failed; pass: the content delivery network considers authentication successful.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param failCode 表示鉴权失败时的鉴权状态码。您可以指定范围在 400-499 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 4xx 表示 400-499 中的任意一个状态码。该参数的默认值是 401。
+         * @param failCode Indicates the authentication status code returned when authentication fails. You can specify one or more status codes in the range 400–499. Separate multiple status codes with a semicolon (;). You can also specify 4xx to indicate any status code between 400 and 499. The default value for this parameter is 401.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param failCode 表示鉴权失败时的鉴权状态码。您可以指定范围在 400-499 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 4xx 表示 400-499 中的任意一个状态码。该参数的默认值是 401。
+         * @param failCode Indicates the authentication status code returned when authentication fails. You can specify one or more status codes in the range 400–499. Separate multiple status codes with a semicolon (;). You can also specify 4xx to indicate any status code between 400 and 499. The default value for this parameter is 401.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param successCode 表示鉴权成功时的鉴权状态码。您可以指定范围在 200-299 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 2xx 表示 200-299 中的任意一个状态码。该参数的默认值是 200。
+         * @param successCode Indicates the authentication status code for successful authentication. You can specify one or more status codes in the range 200–299. Separate multiple status codes with a semicolon (;). You can also specify 2xx to represent any status code from 200–299. The default value is 200.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param successCode 表示鉴权成功时的鉴权状态码。您可以指定范围在 200-299 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 2xx 表示 200-299 中的任意一个状态码。该参数的默认值是 200。
+         * @param successCode Indicates the authentication status code for successful authentication. You can specify one or more status codes in the range 200–299. Separate multiple status codes with a semicolon (;). You can also specify 2xx to represent any status code from 200–299. The default value is 200.
          * 
          * @return builder
          * 

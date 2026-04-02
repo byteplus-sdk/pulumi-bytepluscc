@@ -16,14 +16,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     public static final AllowListAssociatedInstanceArgs Empty = new AllowListAssociatedInstanceArgs();
 
     /**
-     * 已绑定当前白名单的实例 ID。
+     * Instance ID bound to the current allowlist.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 已绑定当前白名单的实例 ID。
+     * @return Instance ID bound to the current allowlist.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -31,14 +31,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     }
 
     /**
-     * 已绑定当前白名单的实例名称。
+     * Instance name bound to the current allowlist.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 已绑定当前白名单的实例名称。
+     * @return Instance name bound to the current allowlist.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -46,14 +46,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     }
 
     /**
-     * 实例所属的项目名称。
+     * Project name of the instance.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 实例所属的项目名称。
+     * @return Project name of the instance.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -61,14 +61,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     }
 
     /**
-     * 实例所属的私有网络 ID。
+     * Private network ID of the instance.
      * 
      */
     @Import(name="vpc")
     private @Nullable Output<String> vpc;
 
     /**
-     * @return 实例所属的私有网络 ID。
+     * @return Private network ID of the instance.
      * 
      */
     public Optional<Output<String>> vpc() {
@@ -103,7 +103,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceId 已绑定当前白名单的实例 ID。
+         * @param instanceId Instance ID bound to the current allowlist.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceId 已绑定当前白名单的实例 ID。
+         * @param instanceId Instance ID bound to the current allowlist.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceName 已绑定当前白名单的实例名称。
+         * @param instanceName Instance name bound to the current allowlist.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceName 已绑定当前白名单的实例名称。
+         * @param instanceName Instance name bound to the current allowlist.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param projectName 实例所属的项目名称。
+         * @param projectName Project name of the instance.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param projectName 实例所属的项目名称。
+         * @param projectName Project name of the instance.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param vpc 实例所属的私有网络 ID。
+         * @param vpc Private network ID of the instance.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param vpc 实例所属的私有网络 ID。
+         * @param vpc Private network ID of the instance.
          * 
          * @return builder
          * 

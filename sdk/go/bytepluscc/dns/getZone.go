@@ -30,51 +30,51 @@ type LookupZoneArgs struct {
 
 // A collection of values returned by getZone.
 type LookupZoneResult struct {
-	// 云解析 DNS 分配给域名的 DNS 服务器列表。
+	// List of DNS servers assigned to the domain by Cloud DNS
 	AllocateDnsServerLists []string `pulumi:"allocateDnsServerLists"`
-	// 是否开启域名自动续费。true：开启域名自动续费。false：关闭域名自动续费。
+	// Whether domain auto-renewal is enabled. true: Auto-renewal enabled. false: Auto-renewal disabled.
 	AutoRenew bool `pulumi:"autoRenew"`
-	// 域名所有权的状态。该参数有以下取值：0：表示您是域名的所有者。您添加此域名后，就可以管理该域名的 DNS 解析。1：表示您不是域名的所有者。您添加此域名后，该域名的状态是 域名待找回。如果您要管理该域名的 DNS 解析，您需要在控制台根据提示验证您的域名所有权。
+	// Domain ownership status. This parameter has the following values: 0: You are the domain owner. After adding this domain, you can manage its DNS resolution. 1: You are not the domain owner. After adding this domain, its status is 'domain reclaim pending.' To manage DNS resolution, you must verify domain ownership in the console as prompted.
 	CacheStage int `pulumi:"cacheStage"`
-	// 域名的创建时间。
+	// Domain creation time.
 	CreatedTime string `pulumi:"createdTime"`
-	// DNS DDoS 防护服务的版本。dns*security*standard_inner：安全防护标准版。""：无安全防护版。
+	// Version of DNS DDoS protection service. dns*security*standard_inner: Standard protection edition. "": No protection edition.
 	DnsSecurity string `pulumi:"dnsSecurity"`
-	// 实例的过期时间。格式是 Unix 时间戳。对于云解析 DNS 免费版，该字段的值为 null。
+	// Instance expiration time. Format is Unix timestamp. For Cloud DNS Free Edition, this field is null.
 	ExpiredTime int `pulumi:"expiredTime"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 实例的 ID。对于云解析 DNS 免费版，该字段的值为 null。
+	// Instance ID. For Cloud DNS Free Edition, this field is null.
 	InstanceId string `pulumi:"instanceId"`
-	// 实例的 ID。对于云解析 DNS 免费版，该字段的值为 null。
+	// Instance ID. For Cloud DNS Free Edition, this field is null.
 	InstanceNo string `pulumi:"instanceNo"`
-	// DNS 服务器的配置是否正确。如果配置正确，该域名在云解析 DNS 中的状态是 正常。该参数有以下取值：true： RealDNSServerList的 DNS 服务器列表包含所有 AllocateDNSServerList中的 DNS 服务器。此时，DNS 服务器的配置是正确的。false： RealDNSServerList的 DNS 服务器列表包含部分或者未包含 AllocateDNSServerList中的 DNS 服务器。此时，DNS 服务器的配置是不正确的。
+	// Whether the DNS server configuration is correct. If configured correctly, the domain status in Cloud DNS is Normal. This parameter has the following values: true: The DNS server list in RealDNSServerList includes all DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is correct. false: The DNS server list in RealDNSServerList includes only some or none of the DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is incorrect.
 	IsNsCorrect bool `pulumi:"isNsCorrect"`
-	// 是否是子域名。true：子域名。false：主域名。
+	// Whether it is a subdomain. true: Subdomain. false: Primary domain.
 	IsSubDomain bool `pulumi:"isSubDomain"`
-	// 创建该域名的用户的账号的 ID。
+	// ID of the account that created the domain.
 	LastOperator string `pulumi:"lastOperator"`
-	// 域名的项目。
+	// Domain project.
 	ProjectName string `pulumi:"projectName"`
-	// 域名实际使用的 DNS 服务器列表。
+	// List of DNS servers actually used by the domain.
 	RealDnsServerLists []string `pulumi:"realDnsServerLists"`
-	// 域名所包含的解析记录的总数。
+	// Total number of DNS records contained in the domain.
 	RecordCount int `pulumi:"recordCount"`
-	// 域名的备注。
+	// Domain notes
 	Remark string `pulumi:"remark"`
-	// 域名的状态。该参数有以下取值：0：正常。在该状态下，该域名的解析记录处于生效状态。1：域名待找回。在该状态下，该域名的解析记录不生效。该状态表示您不是该域名的所有者。如果您需要管理域名解析，您需要验证您的域名所有权。2：未使用TrafficRoute解析。在该状态下，该域名的解析记录不生效。该状态表示分配给该域名的 DNS 服务器不是云解析 DNS 的 DNS 服务器。3：异常。在该状态下，该域名的解析记录不生效。引起该状态的常见原因如下：域名未实名认证导致域名被注册局或注册商停用。域名未配置 DNS 服务器。域名未注册。API 在查询域名时超时。超时原因可能是网络问题。5：请变更DNS服务器。该状态表示由于云解析 DNS 的服务升级或变更，您需要把域名的 DNS 服务器更新为云解析 DNS 新分配的 DNS 服务器。
+	// Domain status. This parameter has the following values: 0: Normal. In this state, the domain's DNS resolution records are active. 1: Domain reclaim pending. In this state, the domain's DNS resolution records are inactive. This status indicates you are not the owner of the domain. If you need to manage DNS resolution, you must verify domain ownership. 2: TrafficRoute not used for resolution. In this state, the domain's DNS resolution records are inactive. This status means the DNS server assigned to the domain is not a Cloud DNS server. 3: Abnormal. In this state, the domain's DNS resolution records are inactive. Common causes for this status include: the domain is disabled by the registry or registrar due to lack of real-name verification; DNS server not configured; domain not registered; API timeout when querying the domain, possibly due to network issues. 5: Please change DNS server. This status means you need to update the domain's DNS server to the newly assigned Cloud DNS server due to service upgrade or change.
 	Stage int `pulumi:"stage"`
-	// 子域名的域名前缀。如果该域名不是子域名，那么该参数为 null。
+	// Prefix of the subdomain. If the domain is not a subdomain, this parameter is null.
 	SubDomainHost string `pulumi:"subDomainHost"`
-	// 该域名的标签。默认为空。
+	// Tags for the domain. Default is empty.
 	Tags []GetZoneTag `pulumi:"tags"`
-	// 域名的功能版本。该参数有以下取值：free*inner：免费版。professional*inner：专业版。enterprise*inner：企业版。ultimate*inner：旗舰版。ultimate*exclusive*inner：尊享版。
+	// Domain feature version. This parameter has the following values: free*inner: Free Edition; professional*inner: Professional Edition; enterprise*inner: Enterprise Edition; ultimate*inner: Flagship Edition; ultimate*exclusive*inner: Premium Edition.
 	TradeCode string `pulumi:"tradeCode"`
-	// 域名最近一次的更新时间。更新操作包括：更新域名备注在域名下创建解析记录。
+	// Last update time for the domain. Update operations include: updating domain remarks, creating DNS records under the domain.
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 域名的 ID。
+	// Domain ID.
 	Zid string `pulumi:"zid"`
-	// 域名。
+	// Domain name.
 	ZoneName string `pulumi:"zoneName"`
 }
 
@@ -112,32 +112,32 @@ func (o LookupZoneResultOutput) ToLookupZoneResultOutputWithContext(ctx context.
 	return o
 }
 
-// 云解析 DNS 分配给域名的 DNS 服务器列表。
+// List of DNS servers assigned to the domain by Cloud DNS
 func (o LookupZoneResultOutput) AllocateDnsServerLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupZoneResult) []string { return v.AllocateDnsServerLists }).(pulumi.StringArrayOutput)
 }
 
-// 是否开启域名自动续费。true：开启域名自动续费。false：关闭域名自动续费。
+// Whether domain auto-renewal is enabled. true: Auto-renewal enabled. false: Auto-renewal disabled.
 func (o LookupZoneResultOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupZoneResult) bool { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// 域名所有权的状态。该参数有以下取值：0：表示您是域名的所有者。您添加此域名后，就可以管理该域名的 DNS 解析。1：表示您不是域名的所有者。您添加此域名后，该域名的状态是 域名待找回。如果您要管理该域名的 DNS 解析，您需要在控制台根据提示验证您的域名所有权。
+// Domain ownership status. This parameter has the following values: 0: You are the domain owner. After adding this domain, you can manage its DNS resolution. 1: You are not the domain owner. After adding this domain, its status is 'domain reclaim pending.' To manage DNS resolution, you must verify domain ownership in the console as prompted.
 func (o LookupZoneResultOutput) CacheStage() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupZoneResult) int { return v.CacheStage }).(pulumi.IntOutput)
 }
 
-// 域名的创建时间。
+// Domain creation time.
 func (o LookupZoneResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZoneResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// DNS DDoS 防护服务的版本。dns*security*standard_inner：安全防护标准版。""：无安全防护版。
+// Version of DNS DDoS protection service. dns*security*standard_inner: Standard protection edition. "": No protection edition.
 func (o LookupZoneResultOutput) DnsSecurity() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZoneResult) string { return v.DnsSecurity }).(pulumi.StringOutput)
 }
 
-// 实例的过期时间。格式是 Unix 时间戳。对于云解析 DNS 免费版，该字段的值为 null。
+// Instance expiration time. Format is Unix timestamp. For Cloud DNS Free Edition, this field is null.
 func (o LookupZoneResultOutput) ExpiredTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupZoneResult) int { return v.ExpiredTime }).(pulumi.IntOutput)
 }
@@ -147,82 +147,82 @@ func (o LookupZoneResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZoneResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 实例的 ID。对于云解析 DNS 免费版，该字段的值为 null。
+// Instance ID. For Cloud DNS Free Edition, this field is null.
 func (o LookupZoneResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZoneResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 实例的 ID。对于云解析 DNS 免费版，该字段的值为 null。
+// Instance ID. For Cloud DNS Free Edition, this field is null.
 func (o LookupZoneResultOutput) InstanceNo() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZoneResult) string { return v.InstanceNo }).(pulumi.StringOutput)
 }
 
-// DNS 服务器的配置是否正确。如果配置正确，该域名在云解析 DNS 中的状态是 正常。该参数有以下取值：true： RealDNSServerList的 DNS 服务器列表包含所有 AllocateDNSServerList中的 DNS 服务器。此时，DNS 服务器的配置是正确的。false： RealDNSServerList的 DNS 服务器列表包含部分或者未包含 AllocateDNSServerList中的 DNS 服务器。此时，DNS 服务器的配置是不正确的。
+// Whether the DNS server configuration is correct. If configured correctly, the domain status in Cloud DNS is Normal. This parameter has the following values: true: The DNS server list in RealDNSServerList includes all DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is correct. false: The DNS server list in RealDNSServerList includes only some or none of the DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is incorrect.
 func (o LookupZoneResultOutput) IsNsCorrect() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupZoneResult) bool { return v.IsNsCorrect }).(pulumi.BoolOutput)
 }
 
-// 是否是子域名。true：子域名。false：主域名。
+// Whether it is a subdomain. true: Subdomain. false: Primary domain.
 func (o LookupZoneResultOutput) IsSubDomain() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupZoneResult) bool { return v.IsSubDomain }).(pulumi.BoolOutput)
 }
 
-// 创建该域名的用户的账号的 ID。
+// ID of the account that created the domain.
 func (o LookupZoneResultOutput) LastOperator() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZoneResult) string { return v.LastOperator }).(pulumi.StringOutput)
 }
 
-// 域名的项目。
+// Domain project.
 func (o LookupZoneResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZoneResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 域名实际使用的 DNS 服务器列表。
+// List of DNS servers actually used by the domain.
 func (o LookupZoneResultOutput) RealDnsServerLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupZoneResult) []string { return v.RealDnsServerLists }).(pulumi.StringArrayOutput)
 }
 
-// 域名所包含的解析记录的总数。
+// Total number of DNS records contained in the domain.
 func (o LookupZoneResultOutput) RecordCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupZoneResult) int { return v.RecordCount }).(pulumi.IntOutput)
 }
 
-// 域名的备注。
+// Domain notes
 func (o LookupZoneResultOutput) Remark() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZoneResult) string { return v.Remark }).(pulumi.StringOutput)
 }
 
-// 域名的状态。该参数有以下取值：0：正常。在该状态下，该域名的解析记录处于生效状态。1：域名待找回。在该状态下，该域名的解析记录不生效。该状态表示您不是该域名的所有者。如果您需要管理域名解析，您需要验证您的域名所有权。2：未使用TrafficRoute解析。在该状态下，该域名的解析记录不生效。该状态表示分配给该域名的 DNS 服务器不是云解析 DNS 的 DNS 服务器。3：异常。在该状态下，该域名的解析记录不生效。引起该状态的常见原因如下：域名未实名认证导致域名被注册局或注册商停用。域名未配置 DNS 服务器。域名未注册。API 在查询域名时超时。超时原因可能是网络问题。5：请变更DNS服务器。该状态表示由于云解析 DNS 的服务升级或变更，您需要把域名的 DNS 服务器更新为云解析 DNS 新分配的 DNS 服务器。
+// Domain status. This parameter has the following values: 0: Normal. In this state, the domain's DNS resolution records are active. 1: Domain reclaim pending. In this state, the domain's DNS resolution records are inactive. This status indicates you are not the owner of the domain. If you need to manage DNS resolution, you must verify domain ownership. 2: TrafficRoute not used for resolution. In this state, the domain's DNS resolution records are inactive. This status means the DNS server assigned to the domain is not a Cloud DNS server. 3: Abnormal. In this state, the domain's DNS resolution records are inactive. Common causes for this status include: the domain is disabled by the registry or registrar due to lack of real-name verification; DNS server not configured; domain not registered; API timeout when querying the domain, possibly due to network issues. 5: Please change DNS server. This status means you need to update the domain's DNS server to the newly assigned Cloud DNS server due to service upgrade or change.
 func (o LookupZoneResultOutput) Stage() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupZoneResult) int { return v.Stage }).(pulumi.IntOutput)
 }
 
-// 子域名的域名前缀。如果该域名不是子域名，那么该参数为 null。
+// Prefix of the subdomain. If the domain is not a subdomain, this parameter is null.
 func (o LookupZoneResultOutput) SubDomainHost() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZoneResult) string { return v.SubDomainHost }).(pulumi.StringOutput)
 }
 
-// 该域名的标签。默认为空。
+// Tags for the domain. Default is empty.
 func (o LookupZoneResultOutput) Tags() GetZoneTagArrayOutput {
 	return o.ApplyT(func(v LookupZoneResult) []GetZoneTag { return v.Tags }).(GetZoneTagArrayOutput)
 }
 
-// 域名的功能版本。该参数有以下取值：free*inner：免费版。professional*inner：专业版。enterprise*inner：企业版。ultimate*inner：旗舰版。ultimate*exclusive*inner：尊享版。
+// Domain feature version. This parameter has the following values: free*inner: Free Edition; professional*inner: Professional Edition; enterprise*inner: Enterprise Edition; ultimate*inner: Flagship Edition; ultimate*exclusive*inner: Premium Edition.
 func (o LookupZoneResultOutput) TradeCode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZoneResult) string { return v.TradeCode }).(pulumi.StringOutput)
 }
 
-// 域名最近一次的更新时间。更新操作包括：更新域名备注在域名下创建解析记录。
+// Last update time for the domain. Update operations include: updating domain remarks, creating DNS records under the domain.
 func (o LookupZoneResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZoneResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 域名的 ID。
+// Domain ID.
 func (o LookupZoneResultOutput) Zid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZoneResult) string { return v.Zid }).(pulumi.StringOutput)
 }
 
-// 域名。
+// Domain name.
 func (o LookupZoneResultOutput) ZoneName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupZoneResult) string { return v.ZoneName }).(pulumi.StringOutput)
 }

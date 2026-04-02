@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Privatezone
 {
     /// <summary>
-    /// 在把外部的 DNS 查询请求转发到解析器的场景中，您需要创建终端节点。收到解析器转发的 DNS 查询请求后，终端节点出站终端节点会把 DNS 查询请求转发到外部的 DNS 服务器。收到来自外部的 DNS 查询请求后，入站终端节点会把 DNS 查询请求转发到解析器。
+    /// In scenarios where external DNS query requests are forwarded to the resolver, you need to create an endpoint. After receiving DNS query requests forwarded by the resolver, outbound endpoints forward DNS queries to external DNS servers. After receiving DNS query requests from external sources, inbound endpoints forward DNS queries to the resolver
     /// 
     /// ## Import
     /// 
@@ -23,25 +23,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
     public partial class ResolverEndpoint : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 创建时间
+        /// Creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+        /// DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
         /// </summary>
         [Output("direction")]
         public Output<string> Direction { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点的 ID。
+        /// Endpoint ID
         /// </summary>
         [Output("endpointId")]
         public Output<string> EndpointId { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+        /// Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
         /// </summary>
         [Output("endpointType")]
         public Output<string> EndpointType { get; private set; } = null!;
@@ -50,25 +50,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         public Output<ImmutableArray<Outputs.ResolverEndpointIpConfig>> IpConfigs { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点的名称。支持 UTF-8 格式。
+        /// Endpoint name. Supports UTF-8 format
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点所属的项目名称。默认为 default。
+        /// Project name to which the endpoint belongs. Default is default
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+        /// Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
         /// </summary>
         [Output("securityGroupId")]
         public Output<string> SecurityGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+        /// Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -77,19 +77,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         public Output<ImmutableArray<Outputs.ResolverEndpointTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间
+        /// Update time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点所在的 VPC 的 ID。
+        /// VPC ID where the endpoint is located
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点所在的 VPC 的地域。
+        /// Region of the VPC where the endpoint is located
         /// </summary>
         [Output("vpcRegion")]
         public Output<string> VpcRegion { get; private set; } = null!;
@@ -142,13 +142,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
     public sealed class ResolverEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+        /// DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
         /// </summary>
         [Input("direction")]
         public Input<string>? Direction { get; set; }
 
         /// <summary>
-        /// 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+        /// Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
         /// </summary>
         [Input("endpointType")]
         public Input<string>? EndpointType { get; set; }
@@ -162,13 +162,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         }
 
         /// <summary>
-        /// 终端节点的名称。支持 UTF-8 格式。
+        /// Endpoint name. Supports UTF-8 format
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// 终端节点所属的项目名称。默认为 default。
+        /// Project name to which the endpoint belongs. Default is default
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -182,13 +182,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         }
 
         /// <summary>
-        /// 终端节点所在的 VPC 的 ID。
+        /// VPC ID where the endpoint is located
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
 
         /// <summary>
-        /// 终端节点所在的 VPC 的地域。
+        /// Region of the VPC where the endpoint is located
         /// </summary>
         [Input("vpcRegion", required: true)]
         public Input<string> VpcRegion { get; set; } = null!;
@@ -202,25 +202,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
     public sealed class ResolverEndpointState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 创建时间
+        /// Creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+        /// DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
         /// </summary>
         [Input("direction")]
         public Input<string>? Direction { get; set; }
 
         /// <summary>
-        /// 终端节点的 ID。
+        /// Endpoint ID
         /// </summary>
         [Input("endpointId")]
         public Input<string>? EndpointId { get; set; }
 
         /// <summary>
-        /// 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+        /// Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
         /// </summary>
         [Input("endpointType")]
         public Input<string>? EndpointType { get; set; }
@@ -234,25 +234,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         }
 
         /// <summary>
-        /// 终端节点的名称。支持 UTF-8 格式。
+        /// Endpoint name. Supports UTF-8 format
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 终端节点所属的项目名称。默认为 default。
+        /// Project name to which the endpoint belongs. Default is default
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+        /// Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
         /// </summary>
         [Input("securityGroupId")]
         public Input<string>? SecurityGroupId { get; set; }
 
         /// <summary>
-        /// 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+        /// Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -266,19 +266,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         }
 
         /// <summary>
-        /// 更新时间
+        /// Update time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 终端节点所在的 VPC 的 ID。
+        /// VPC ID where the endpoint is located
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// 终端节点所在的 VPC 的地域。
+        /// Region of the VPC where the endpoint is located
         /// </summary>
         [Input("vpcRegion")]
         public Input<string>? VpcRegion { get; set; }

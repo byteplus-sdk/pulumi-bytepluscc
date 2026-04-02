@@ -17,14 +17,14 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
     public static final InstanceInstanceConfigurationWarmNodeStorageSpecArgs Empty = new InstanceInstanceConfigurationWarmNodeStorageSpecArgs();
 
     /**
-     * 存储规格的描述信息
+     * Description of storage specification.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 存储规格的描述信息
+     * @return Description of storage specification.
      * 
      */
     public Optional<Output<String>> description() {
@@ -32,14 +32,14 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
     }
 
     /**
-     * 存储规格的显示名称
+     * Display name of storage specification.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return 存储规格的显示名称
+     * @return Display name of storage specification.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -47,14 +47,14 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
     }
 
     /**
-     * 存储规格的最大值，单位为 GiB
+     * Maximum storage specification, measured in GiB
      * 
      */
     @Import(name="maxSize")
     private @Nullable Output<Integer> maxSize;
 
     /**
-     * @return 存储规格的最大值，单位为 GiB
+     * @return Maximum storage specification, measured in GiB
      * 
      */
     public Optional<Output<Integer>> maxSize() {
@@ -62,14 +62,14 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
     }
 
     /**
-     * 存储规格最小值，单位为 GiB
+     * Minimum value for storage specification, unit: GiB.
      * 
      */
     @Import(name="minSize")
     private @Nullable Output<Integer> minSize;
 
     /**
-     * @return 存储规格最小值，单位为 GiB
+     * @return Minimum value for storage specification, unit: GiB.
      * 
      */
     public Optional<Output<Integer>> minSize() {
@@ -77,14 +77,14 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
     }
 
     /**
-     * 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+     * Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+     * @return Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
      * 
      */
     public Optional<Output<String>> name() {
@@ -92,14 +92,14 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
     }
 
     /**
-     * 当前存储规格值，单位为 GiB
+     * Current storage specification value, in GiB.
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return 当前存储规格值，单位为 GiB
+     * @return Current storage specification value, in GiB.
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -136,7 +136,7 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
         }
 
         /**
-         * @param description 存储规格的描述信息
+         * @param description Description of storage specification.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
         }
 
         /**
-         * @param description 存储规格的描述信息
+         * @param description Description of storage specification.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
         }
 
         /**
-         * @param displayName 存储规格的显示名称
+         * @param displayName Display name of storage specification.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
         }
 
         /**
-         * @param displayName 存储规格的显示名称
+         * @param displayName Display name of storage specification.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
         }
 
         /**
-         * @param maxSize 存储规格的最大值，单位为 GiB
+         * @param maxSize Maximum storage specification, measured in GiB
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
         }
 
         /**
-         * @param maxSize 存储规格的最大值，单位为 GiB
+         * @param maxSize Maximum storage specification, measured in GiB
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
         }
 
         /**
-         * @param minSize 存储规格最小值，单位为 GiB
+         * @param minSize Minimum value for storage specification, unit: GiB.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
         }
 
         /**
-         * @param minSize 存储规格最小值，单位为 GiB
+         * @param minSize Minimum value for storage specification, unit: GiB.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
         }
 
         /**
-         * @param name 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+         * @param name Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
         }
 
         /**
-         * @param name 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+         * @param name Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
         }
 
         /**
-         * @param size 当前存储规格值，单位为 GiB
+         * @param size Current storage specification value, in GiB.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class InstanceInstanceConfigurationWarmNodeStorageSpecArgs extends 
         }
 
         /**
-         * @param size 当前存储规格值，单位为 GiB
+         * @param size Current storage specification value, in GiB.
          * 
          * @return builder
          * 

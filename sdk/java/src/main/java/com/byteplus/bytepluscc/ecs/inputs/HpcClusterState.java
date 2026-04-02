@@ -18,14 +18,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
     public static final HpcClusterState Empty = new HpcClusterState();
 
     /**
-     * 创建时间，格式满足RFC3339。
+     * Creation time, formatted according to RFC3339
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间，格式满足RFC3339。
+     * @return Creation time, formatted according to RFC3339
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -33,14 +33,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+     * High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+     * @return High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
      * 
      */
     public Optional<Output<String>> description() {
@@ -48,14 +48,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 高性能计算集群ID。
+     * High performance compute cluster ID
      * 
      */
     @Import(name="hpcClusterId")
     private @Nullable Output<String> hpcClusterId;
 
     /**
-     * @return 高性能计算集群ID。
+     * @return High performance compute cluster ID
      * 
      */
     public Optional<Output<String>> hpcClusterId() {
@@ -63,14 +63,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+     * High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+     * @return High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
      * 
      */
     public Optional<Output<String>> name() {
@@ -78,14 +78,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 项目名称。
+     * Project name
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -100,14 +100,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新时间，格式满足RFC3339。
+     * Update time, formatted according to RFC3339
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间，格式满足RFC3339。
+     * @return Update time, formatted according to RFC3339
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -115,14 +115,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 私有网络ID。
+     * Private network ID
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 私有网络ID。
+     * @return Private network ID
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -130,14 +130,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 高性能计算集群所属可用区ID。
+     * Availability zone ID of the high performance compute cluster
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 高性能计算集群所属可用区ID。
+     * @return Availability zone ID of the high performance compute cluster
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -177,7 +177,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间，格式满足RFC3339。
+         * @param createdTime Creation time, formatted according to RFC3339
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间，格式满足RFC3339。
+         * @param createdTime Creation time, formatted according to RFC3339
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+         * @param description High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+         * @param description High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hpcClusterId 高性能计算集群ID。
+         * @param hpcClusterId High performance compute cluster ID
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hpcClusterId 高性能计算集群ID。
+         * @param hpcClusterId High performance compute cluster ID
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+         * @param name High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+         * @param name High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
          * 
          * @return builder
          * 
@@ -261,7 +261,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间，格式满足RFC3339。
+         * @param updatedTime Update time, formatted according to RFC3339
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间，格式满足RFC3339。
+         * @param updatedTime Update time, formatted according to RFC3339
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络ID。
+         * @param vpcId Private network ID
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络ID。
+         * @param vpcId Private network ID
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 高性能计算集群所属可用区ID。
+         * @param zoneId Availability zone ID of the high performance compute cluster
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 高性能计算集群所属可用区ID。
+         * @param zoneId Availability zone ID of the high performance compute cluster
          * 
          * @return builder
          * 

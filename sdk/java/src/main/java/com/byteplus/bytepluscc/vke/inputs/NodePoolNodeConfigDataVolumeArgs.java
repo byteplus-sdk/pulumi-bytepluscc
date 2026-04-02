@@ -17,14 +17,14 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
     public static final NodePoolNodeConfigDataVolumeArgs Empty = new NodePoolNodeConfigDataVolumeArgs();
 
     /**
-     * 文件系统，取值：  - Ext4 (默认值)  - Xfs
+     * File system. Options:   - Ext4 (default)   - Xfs
      * 
      */
     @Import(name="fileSystem")
     private @Nullable Output<String> fileSystem;
 
     /**
-     * @return 文件系统，取值：  - Ext4 (默认值)  - Xfs
+     * @return File system. Options:   - Ext4 (default)   - Xfs
      * 
      */
     public Optional<Output<String>> fileSystem() {
@@ -32,14 +32,14 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
     }
 
     /**
-     * 磁盘格式化后的目标挂载目录。
+     * Target mount directory after disk formatting.
      * 
      */
     @Import(name="mountPoint")
     private @Nullable Output<String> mountPoint;
 
     /**
-     * @return 磁盘格式化后的目标挂载目录。
+     * @return Target mount directory after disk formatting.
      * 
      */
     public Optional<Output<String>> mountPoint() {
@@ -47,14 +47,14 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
     }
 
     /**
-     * 放置组Id
+     * Placement group ID
      * 
      */
     @Import(name="placementGroupId")
     private @Nullable Output<String> placementGroupId;
 
     /**
-     * @return 放置组Id
+     * @return Placement group ID
      * 
      */
     public Optional<Output<String>> placementGroupId() {
@@ -62,14 +62,14 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
     }
 
     /**
-     * 磁盘容量，单位 GiB。
+     * Disk capacity, in GiB.
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return 磁盘容量，单位 GiB。
+     * @return Disk capacity, in GiB.
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -77,14 +77,14 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
     }
 
     /**
-     * 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+     * Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the &#39;available&#39; status can be used to create new disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; status cannot be used to create new disks.
      * 
      */
     @Import(name="snapshotId")
     private @Nullable Output<String> snapshotId;
 
     /**
-     * @return 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+     * @return Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the &#39;available&#39; status can be used to create new disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; status cannot be used to create new disks.
      * 
      */
     public Optional<Output<String>> snapshotId() {
@@ -92,14 +92,14 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
     }
 
     /**
-     * 放置子组
+     * Placement subgroup
      * 
      */
     @Import(name="subgroupNumber")
     private @Nullable Output<Integer> subgroupNumber;
 
     /**
-     * @return 放置子组
+     * @return Placement subgroup
      * 
      */
     public Optional<Output<Integer>> subgroupNumber() {
@@ -107,14 +107,14 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
     }
 
     /**
-     * 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+     * Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+     * @return Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
      * 
      */
     public Optional<Output<String>> type() {
@@ -152,7 +152,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param fileSystem 文件系统，取值：  - Ext4 (默认值)  - Xfs
+         * @param fileSystem File system. Options:   - Ext4 (default)   - Xfs
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param fileSystem 文件系统，取值：  - Ext4 (默认值)  - Xfs
+         * @param fileSystem File system. Options:   - Ext4 (default)   - Xfs
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param mountPoint 磁盘格式化后的目标挂载目录。
+         * @param mountPoint Target mount directory after disk formatting.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param mountPoint 磁盘格式化后的目标挂载目录。
+         * @param mountPoint Target mount directory after disk formatting.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param placementGroupId 放置组Id
+         * @param placementGroupId Placement group ID
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param placementGroupId 放置组Id
+         * @param placementGroupId Placement group ID
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param size 磁盘容量，单位 GiB。
+         * @param size Disk capacity, in GiB.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param size 磁盘容量，单位 GiB。
+         * @param size Disk capacity, in GiB.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param snapshotId 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+         * @param snapshotId Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the &#39;available&#39; status can be used to create new disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; status cannot be used to create new disks.
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param snapshotId 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+         * @param snapshotId Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the &#39;available&#39; status can be used to create new disks. Snapshots in &#39;creating&#39;, &#39;rolling back&#39;, &#39;deleting&#39;, or &#39;error&#39; status cannot be used to create new disks.
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param subgroupNumber 放置子组
+         * @param subgroupNumber Placement subgroup
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param subgroupNumber 放置子组
+         * @param subgroupNumber Placement subgroup
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         * @param type Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class NodePoolNodeConfigDataVolumeArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         * @param type Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
          * 
          * @return builder
          * 

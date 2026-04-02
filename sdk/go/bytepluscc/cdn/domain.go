@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 加速域名是您希望加速内容传输的域名。当您将域名添加到内容分发网络中后，该域名在内容分发网络中就成了一个加速域名。内容分发网络会为该域名分配一个 CNAME。在您创建一条 DNS 记录将您的域名解析到该 CNAME 后，用户向您域名发送的请求就会被路由到您的加速域名，实现内容传输的加速。
+// An accelerated domain name is the domain you want to speed up content delivery for. After you add the domain to the content delivery network, it becomes an accelerated domain name in the CDN. The CDN assigns a CNAME to this domain. Once you create a DNS record to resolve your domain to this CNAME, requests sent by users to your domain are routed to your accelerated domain name, enabling faster content delivery.
 //
 // ## Import
 //
@@ -22,117 +22,116 @@ import (
 type Domain struct {
 	pulumi.CustomResourceState
 
-	// 表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
 	AreaAccessRule DomainAreaAccessRuleOutput `pulumi:"areaAccessRule"`
-	// 表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
+	// Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
 	BackupOrigins pulumi.StringArrayOutput     `pulumi:"backupOrigins"`
 	BrowserCaches DomainBrowserCachArrayOutput `pulumi:"browserCaches"`
-	// 表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
+	// Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
 	CacheHost DomainCacheHostOutput     `pulumi:"cacheHost"`
 	CacheKeys DomainCacheKeyArrayOutput `pulumi:"cacheKeys"`
-	// 表示该域名在 "共享缓存" 配置中的角色。该参数有以下取值：target*host：表示 "目标域名"。cache*shared_on：表示 "配置域名"。如果该域名未在任何 "共享缓存" 配置中，该参数值是空（""）。
+	// Indicates the role of this domain in the 'shared cache' configuration. The parameter has the following values: target*host: indicates the 'target domain'. cache*shared_on: indicates the 'configured domain'. If this domain is not included in any 'shared cache' configuration, the parameter value is an empty string ('').
 	CacheShared pulumi.StringOutput `pulumi:"cacheShared"`
-	// 如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 "共享缓存" 配置中的 "目标域名"。
-	// 如果 CacheShared 是 target_host，该参数值为空（""）。
+	// If CacheShared is cache*shared*on, this parameter indicates the 'Target Domain' in the 'Shared Cache' configuration for this domain name. If CacheShared is target_host, this parameter is empty ("").
 	CacheSharedTargetHost pulumi.StringOutput   `pulumi:"cacheSharedTargetHost"`
 	Caches                DomainCachArrayOutput `pulumi:"caches"`
-	// 表示内容分发网络为该加速域名分配的 CNAME。
+	// Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
 	Cname pulumi.StringOutput `pulumi:"cname"`
-	// 表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
 	Compression DomainCompressionOutput `pulumi:"compression"`
-	// 表示 "条件源站" 特性的配置模块。
+	// Specifies the configuration module for the 'Conditional Origin' feature.
 	ConditionalOrigin DomainConditionalOriginOutput `pulumi:"conditionalOrigin"`
-	// 表示该加速域名的创建时间，格式是 Unix 时间戳。
+	// Indicates the creation time of this accelerated domain name, in Unix timestamp format.
 	CreatedTime pulumi.IntOutput `pulumi:"createdTime"`
-	// 表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
 	CustomErrorPage DomainCustomErrorPageOutput `pulumi:"customErrorPage"`
-	// 表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
 	CustomizeAccessRule DomainCustomizeAccessRuleOutput `pulumi:"customizeAccessRule"`
-	// 表示该加速域名。
+	// Indicates the acceleration domain name.
 	Domain pulumi.StringOutput `pulumi:"domain"`
-	// 表示该域名的锁定状态。
+	// Indicates the lock status of this domain name.
 	DomainLock DomainDomainLockOutput `pulumi:"domainLock"`
-	// 表示 "下载限速" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
 	DownloadSpeedLimit DomainDownloadSpeedLimitOutput `pulumi:"downloadSpeedLimit"`
-	// 表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+	// Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
 	FollowRedirect pulumi.BoolOutput `pulumi:"followRedirect"`
-	// 表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
+	// Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
 	HttpForcedRedirect DomainHttpForcedRedirectOutput `pulumi:"httpForcedRedirect"`
-	// 表示 HTTPS 配置模块。该功能默认是禁用。
+	// Indicates the HTTPS configuration module. This feature is disabled by default.
 	Https DomainHttpsOutput `pulumi:"https"`
-	// 表示 IPv6 特性的配置模块。
+	// Indicates the configuration module for the IPv6 feature.
 	IPv6 DomainIPv6Output `pulumi:"iPv6"`
-	// 表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+	// Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
 	IpAccessRule DomainIpAccessRuleOutput `pulumi:"ipAccessRule"`
-	// 表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
+	// Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
 	IsConflictDomain pulumi.BoolOutput `pulumi:"isConflictDomain"`
-	// 表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
+	// Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
 	LockStatus pulumi.StringOutput `pulumi:"lockStatus"`
-	// 表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
 	MethodDeniedRule DomainMethodDeniedRuleOutput `pulumi:"methodDeniedRule"`
-	// 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the multi-range feature. This feature is disabled by default
 	MultiRange     DomainMultiRangeOutput        `pulumi:"multiRange"`
 	NegativeCaches DomainNegativeCachArrayOutput `pulumi:"negativeCaches"`
-	// 表示 "离线缓存" 特性的配置模块。
+	// Indicates the configuration module for the 'offline cache' feature.
 	OfflineCache DomainOfflineCacheOutput `pulumi:"offlineCache"`
-	// 表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
 	OriginAccessRule DomainOriginAccessRuleOutput `pulumi:"originAccessRule"`
 	OriginArgs       DomainOriginArgArrayOutput   `pulumi:"originArgs"`
-	// 源站证书校验
+	// Origin certificate validation
 	OriginCertCheck DomainOriginCertCheckOutput `pulumi:"originCertCheck"`
-	// 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+	// If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
 	OriginHost pulumi.StringOutput `pulumi:"originHost"`
-	// 表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+	// Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
 	OriginIPv6 pulumi.StringOutput `pulumi:"originIPv6"`
-	// 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+	// Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
 	OriginProtocol pulumi.StringOutput `pulumi:"originProtocol"`
-	// 表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+	// Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
 	OriginRange pulumi.BoolOutput `pulumi:"originRange"`
-	// 表示 "回源重试设置" 特性的配置模块。
+	// Indicates the configuration module for the "origin fetch retry settings" feature.
 	OriginRetry DomainOriginRetryOutput `pulumi:"originRetry"`
-	// 表示 "回源 URL 改写" 特性的配置模块。
+	// Indicates the configuration module for the 'Origin URL Rewrite' feature.
 	OriginRewrite DomainOriginRewriteOutput `pulumi:"originRewrite"`
-	// 表示 "回源 SNI" 特性的配置模块。
+	// Indicates the configuration module for the 'origin SNI' feature.
 	OriginSni DomainOriginSniOutput   `pulumi:"originSni"`
 	Origins   DomainOriginArrayOutput `pulumi:"origins"`
-	// 表示 "页面优化" 特性的配置模块。
+	// Specifies the configuration module for the 'page optimization' feature.
 	PageOptimization DomainPageOptimizationOutput `pulumi:"pageOptimization"`
-	// 表示该域名配置的主源站列表。
+	// Indicates the list of primary origin servers configured for this domain name.
 	PrimaryOrigins pulumi.StringArrayOutput `pulumi:"primaryOrigins"`
-	// 表示该加速域名归属的项目。
+	// Indicates the project to which the acceleration domain belongs
 	Project pulumi.StringOutput `pulumi:"project"`
-	// 表示 QUIC 特性的配置模块。该特性默认是禁用。
+	// Indicates the configuration module for the QUIC feature. This feature is disabled by default.
 	Quic DomainQuicOutput `pulumi:"quic"`
-	// 表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
 	RedirectionRewrite DomainRedirectionRewriteOutput `pulumi:"redirectionRewrite"`
-	// 表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
 	RefererAccessRule DomainRefererAccessRuleOutput `pulumi:"refererAccessRule"`
-	// 表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
 	RemoteAuth DomainRemoteAuthOutput `pulumi:"remoteAuth"`
-	// 表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
 	RequestBlockRule DomainRequestBlockRuleOutput    `pulumi:"requestBlockRule"`
 	RequestHeaders   DomainRequestHeaderArrayOutput  `pulumi:"requestHeaders"`
 	ResponseHeaders  DomainResponseHeaderArrayOutput `pulumi:"responseHeaders"`
-	// 表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 	RewriteHls DomainRewriteHlsOutput `pulumi:"rewriteHls"`
-	// 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+	// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
 	ServiceRegion pulumi.StringOutput `pulumi:"serviceRegion"`
-	// 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+	// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
 	ServiceType pulumi.StringOutput `pulumi:"serviceType"`
-	// 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
 	SignedUrlAuth DomainSignedUrlAuthOutput `pulumi:"signedUrlAuth"`
-	// 表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
+	// Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
 	Status pulumi.StringOutput  `pulumi:"status"`
 	Tags   DomainTagArrayOutput `pulumi:"tags"`
-	// 表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
 	Timeout DomainTimeoutOutput `pulumi:"timeout"`
-	// 表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
 	UaAccessRule DomainUaAccessRuleOutput `pulumi:"uaAccessRule"`
-	// 表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
+	// Indicates the most recent update time for this domain configuration, in Unix timestamp format.
 	UpdatedTime pulumi.IntOutput `pulumi:"updatedTime"`
-	// 表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
+	// Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
 	UrlNormalize DomainUrlNormalizeOutput `pulumi:"urlNormalize"`
-	// 表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
 	VideoDrag DomainVideoDragOutput `pulumi:"videoDrag"`
 }
 
@@ -175,232 +174,230 @@ func GetDomain(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Domain resources.
 type domainState struct {
-	// 表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
 	AreaAccessRule *DomainAreaAccessRule `pulumi:"areaAccessRule"`
-	// 表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
+	// Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
 	BackupOrigins []string            `pulumi:"backupOrigins"`
 	BrowserCaches []DomainBrowserCach `pulumi:"browserCaches"`
-	// 表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
+	// Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
 	CacheHost *DomainCacheHost `pulumi:"cacheHost"`
 	CacheKeys []DomainCacheKey `pulumi:"cacheKeys"`
-	// 表示该域名在 "共享缓存" 配置中的角色。该参数有以下取值：target*host：表示 "目标域名"。cache*shared_on：表示 "配置域名"。如果该域名未在任何 "共享缓存" 配置中，该参数值是空（""）。
+	// Indicates the role of this domain in the 'shared cache' configuration. The parameter has the following values: target*host: indicates the 'target domain'. cache*shared_on: indicates the 'configured domain'. If this domain is not included in any 'shared cache' configuration, the parameter value is an empty string ('').
 	CacheShared *string `pulumi:"cacheShared"`
-	// 如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 "共享缓存" 配置中的 "目标域名"。
-	// 如果 CacheShared 是 target_host，该参数值为空（""）。
+	// If CacheShared is cache*shared*on, this parameter indicates the 'Target Domain' in the 'Shared Cache' configuration for this domain name. If CacheShared is target_host, this parameter is empty ("").
 	CacheSharedTargetHost *string      `pulumi:"cacheSharedTargetHost"`
 	Caches                []DomainCach `pulumi:"caches"`
-	// 表示内容分发网络为该加速域名分配的 CNAME。
+	// Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
 	Cname *string `pulumi:"cname"`
-	// 表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
 	Compression *DomainCompression `pulumi:"compression"`
-	// 表示 "条件源站" 特性的配置模块。
+	// Specifies the configuration module for the 'Conditional Origin' feature.
 	ConditionalOrigin *DomainConditionalOrigin `pulumi:"conditionalOrigin"`
-	// 表示该加速域名的创建时间，格式是 Unix 时间戳。
+	// Indicates the creation time of this accelerated domain name, in Unix timestamp format.
 	CreatedTime *int `pulumi:"createdTime"`
-	// 表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
 	CustomErrorPage *DomainCustomErrorPage `pulumi:"customErrorPage"`
-	// 表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
 	CustomizeAccessRule *DomainCustomizeAccessRule `pulumi:"customizeAccessRule"`
-	// 表示该加速域名。
+	// Indicates the acceleration domain name.
 	Domain *string `pulumi:"domain"`
-	// 表示该域名的锁定状态。
+	// Indicates the lock status of this domain name.
 	DomainLock *DomainDomainLock `pulumi:"domainLock"`
-	// 表示 "下载限速" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
 	DownloadSpeedLimit *DomainDownloadSpeedLimit `pulumi:"downloadSpeedLimit"`
-	// 表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+	// Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
 	FollowRedirect *bool `pulumi:"followRedirect"`
-	// 表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
+	// Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
 	HttpForcedRedirect *DomainHttpForcedRedirect `pulumi:"httpForcedRedirect"`
-	// 表示 HTTPS 配置模块。该功能默认是禁用。
+	// Indicates the HTTPS configuration module. This feature is disabled by default.
 	Https *DomainHttps `pulumi:"https"`
-	// 表示 IPv6 特性的配置模块。
+	// Indicates the configuration module for the IPv6 feature.
 	IPv6 *DomainIPv6 `pulumi:"iPv6"`
-	// 表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+	// Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
 	IpAccessRule *DomainIpAccessRule `pulumi:"ipAccessRule"`
-	// 表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
+	// Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
 	IsConflictDomain *bool `pulumi:"isConflictDomain"`
-	// 表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
+	// Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
 	LockStatus *string `pulumi:"lockStatus"`
-	// 表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
 	MethodDeniedRule *DomainMethodDeniedRule `pulumi:"methodDeniedRule"`
-	// 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the multi-range feature. This feature is disabled by default
 	MultiRange     *DomainMultiRange    `pulumi:"multiRange"`
 	NegativeCaches []DomainNegativeCach `pulumi:"negativeCaches"`
-	// 表示 "离线缓存" 特性的配置模块。
+	// Indicates the configuration module for the 'offline cache' feature.
 	OfflineCache *DomainOfflineCache `pulumi:"offlineCache"`
-	// 表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
 	OriginAccessRule *DomainOriginAccessRule `pulumi:"originAccessRule"`
 	OriginArgs       []DomainOriginArg       `pulumi:"originArgs"`
-	// 源站证书校验
+	// Origin certificate validation
 	OriginCertCheck *DomainOriginCertCheck `pulumi:"originCertCheck"`
-	// 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+	// If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
 	OriginHost *string `pulumi:"originHost"`
-	// 表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+	// Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
 	OriginIPv6 *string `pulumi:"originIPv6"`
-	// 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+	// Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
 	OriginProtocol *string `pulumi:"originProtocol"`
-	// 表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+	// Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
 	OriginRange *bool `pulumi:"originRange"`
-	// 表示 "回源重试设置" 特性的配置模块。
+	// Indicates the configuration module for the "origin fetch retry settings" feature.
 	OriginRetry *DomainOriginRetry `pulumi:"originRetry"`
-	// 表示 "回源 URL 改写" 特性的配置模块。
+	// Indicates the configuration module for the 'Origin URL Rewrite' feature.
 	OriginRewrite *DomainOriginRewrite `pulumi:"originRewrite"`
-	// 表示 "回源 SNI" 特性的配置模块。
+	// Indicates the configuration module for the 'origin SNI' feature.
 	OriginSni *DomainOriginSni `pulumi:"originSni"`
 	Origins   []DomainOrigin   `pulumi:"origins"`
-	// 表示 "页面优化" 特性的配置模块。
+	// Specifies the configuration module for the 'page optimization' feature.
 	PageOptimization *DomainPageOptimization `pulumi:"pageOptimization"`
-	// 表示该域名配置的主源站列表。
+	// Indicates the list of primary origin servers configured for this domain name.
 	PrimaryOrigins []string `pulumi:"primaryOrigins"`
-	// 表示该加速域名归属的项目。
+	// Indicates the project to which the acceleration domain belongs
 	Project *string `pulumi:"project"`
-	// 表示 QUIC 特性的配置模块。该特性默认是禁用。
+	// Indicates the configuration module for the QUIC feature. This feature is disabled by default.
 	Quic *DomainQuic `pulumi:"quic"`
-	// 表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
 	RedirectionRewrite *DomainRedirectionRewrite `pulumi:"redirectionRewrite"`
-	// 表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
 	RefererAccessRule *DomainRefererAccessRule `pulumi:"refererAccessRule"`
-	// 表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
 	RemoteAuth *DomainRemoteAuth `pulumi:"remoteAuth"`
-	// 表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
 	RequestBlockRule *DomainRequestBlockRule `pulumi:"requestBlockRule"`
 	RequestHeaders   []DomainRequestHeader   `pulumi:"requestHeaders"`
 	ResponseHeaders  []DomainResponseHeader  `pulumi:"responseHeaders"`
-	// 表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 	RewriteHls *DomainRewriteHls `pulumi:"rewriteHls"`
-	// 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+	// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
 	ServiceRegion *string `pulumi:"serviceRegion"`
-	// 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+	// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
 	ServiceType *string `pulumi:"serviceType"`
-	// 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
 	SignedUrlAuth *DomainSignedUrlAuth `pulumi:"signedUrlAuth"`
-	// 表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
+	// Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
 	Status *string     `pulumi:"status"`
 	Tags   []DomainTag `pulumi:"tags"`
-	// 表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
 	Timeout *DomainTimeout `pulumi:"timeout"`
-	// 表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
 	UaAccessRule *DomainUaAccessRule `pulumi:"uaAccessRule"`
-	// 表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
+	// Indicates the most recent update time for this domain configuration, in Unix timestamp format.
 	UpdatedTime *int `pulumi:"updatedTime"`
-	// 表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
+	// Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
 	UrlNormalize *DomainUrlNormalize `pulumi:"urlNormalize"`
-	// 表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
 	VideoDrag *DomainVideoDrag `pulumi:"videoDrag"`
 }
 
 type DomainState struct {
-	// 表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
 	AreaAccessRule DomainAreaAccessRulePtrInput
-	// 表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
+	// Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
 	BackupOrigins pulumi.StringArrayInput
 	BrowserCaches DomainBrowserCachArrayInput
-	// 表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
+	// Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
 	CacheHost DomainCacheHostPtrInput
 	CacheKeys DomainCacheKeyArrayInput
-	// 表示该域名在 "共享缓存" 配置中的角色。该参数有以下取值：target*host：表示 "目标域名"。cache*shared_on：表示 "配置域名"。如果该域名未在任何 "共享缓存" 配置中，该参数值是空（""）。
+	// Indicates the role of this domain in the 'shared cache' configuration. The parameter has the following values: target*host: indicates the 'target domain'. cache*shared_on: indicates the 'configured domain'. If this domain is not included in any 'shared cache' configuration, the parameter value is an empty string ('').
 	CacheShared pulumi.StringPtrInput
-	// 如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 "共享缓存" 配置中的 "目标域名"。
-	// 如果 CacheShared 是 target_host，该参数值为空（""）。
+	// If CacheShared is cache*shared*on, this parameter indicates the 'Target Domain' in the 'Shared Cache' configuration for this domain name. If CacheShared is target_host, this parameter is empty ("").
 	CacheSharedTargetHost pulumi.StringPtrInput
 	Caches                DomainCachArrayInput
-	// 表示内容分发网络为该加速域名分配的 CNAME。
+	// Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
 	Cname pulumi.StringPtrInput
-	// 表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
 	Compression DomainCompressionPtrInput
-	// 表示 "条件源站" 特性的配置模块。
+	// Specifies the configuration module for the 'Conditional Origin' feature.
 	ConditionalOrigin DomainConditionalOriginPtrInput
-	// 表示该加速域名的创建时间，格式是 Unix 时间戳。
+	// Indicates the creation time of this accelerated domain name, in Unix timestamp format.
 	CreatedTime pulumi.IntPtrInput
-	// 表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
 	CustomErrorPage DomainCustomErrorPagePtrInput
-	// 表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
 	CustomizeAccessRule DomainCustomizeAccessRulePtrInput
-	// 表示该加速域名。
+	// Indicates the acceleration domain name.
 	Domain pulumi.StringPtrInput
-	// 表示该域名的锁定状态。
+	// Indicates the lock status of this domain name.
 	DomainLock DomainDomainLockPtrInput
-	// 表示 "下载限速" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
 	DownloadSpeedLimit DomainDownloadSpeedLimitPtrInput
-	// 表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+	// Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
 	FollowRedirect pulumi.BoolPtrInput
-	// 表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
+	// Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
 	HttpForcedRedirect DomainHttpForcedRedirectPtrInput
-	// 表示 HTTPS 配置模块。该功能默认是禁用。
+	// Indicates the HTTPS configuration module. This feature is disabled by default.
 	Https DomainHttpsPtrInput
-	// 表示 IPv6 特性的配置模块。
+	// Indicates the configuration module for the IPv6 feature.
 	IPv6 DomainIPv6PtrInput
-	// 表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+	// Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
 	IpAccessRule DomainIpAccessRulePtrInput
-	// 表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
+	// Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
 	IsConflictDomain pulumi.BoolPtrInput
-	// 表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
+	// Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
 	LockStatus pulumi.StringPtrInput
-	// 表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
 	MethodDeniedRule DomainMethodDeniedRulePtrInput
-	// 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the multi-range feature. This feature is disabled by default
 	MultiRange     DomainMultiRangePtrInput
 	NegativeCaches DomainNegativeCachArrayInput
-	// 表示 "离线缓存" 特性的配置模块。
+	// Indicates the configuration module for the 'offline cache' feature.
 	OfflineCache DomainOfflineCachePtrInput
-	// 表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
 	OriginAccessRule DomainOriginAccessRulePtrInput
 	OriginArgs       DomainOriginArgArrayInput
-	// 源站证书校验
+	// Origin certificate validation
 	OriginCertCheck DomainOriginCertCheckPtrInput
-	// 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+	// If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
 	OriginHost pulumi.StringPtrInput
-	// 表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+	// Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
 	OriginIPv6 pulumi.StringPtrInput
-	// 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+	// Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
 	OriginProtocol pulumi.StringPtrInput
-	// 表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+	// Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
 	OriginRange pulumi.BoolPtrInput
-	// 表示 "回源重试设置" 特性的配置模块。
+	// Indicates the configuration module for the "origin fetch retry settings" feature.
 	OriginRetry DomainOriginRetryPtrInput
-	// 表示 "回源 URL 改写" 特性的配置模块。
+	// Indicates the configuration module for the 'Origin URL Rewrite' feature.
 	OriginRewrite DomainOriginRewritePtrInput
-	// 表示 "回源 SNI" 特性的配置模块。
+	// Indicates the configuration module for the 'origin SNI' feature.
 	OriginSni DomainOriginSniPtrInput
 	Origins   DomainOriginArrayInput
-	// 表示 "页面优化" 特性的配置模块。
+	// Specifies the configuration module for the 'page optimization' feature.
 	PageOptimization DomainPageOptimizationPtrInput
-	// 表示该域名配置的主源站列表。
+	// Indicates the list of primary origin servers configured for this domain name.
 	PrimaryOrigins pulumi.StringArrayInput
-	// 表示该加速域名归属的项目。
+	// Indicates the project to which the acceleration domain belongs
 	Project pulumi.StringPtrInput
-	// 表示 QUIC 特性的配置模块。该特性默认是禁用。
+	// Indicates the configuration module for the QUIC feature. This feature is disabled by default.
 	Quic DomainQuicPtrInput
-	// 表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
 	RedirectionRewrite DomainRedirectionRewritePtrInput
-	// 表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
 	RefererAccessRule DomainRefererAccessRulePtrInput
-	// 表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
 	RemoteAuth DomainRemoteAuthPtrInput
-	// 表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
 	RequestBlockRule DomainRequestBlockRulePtrInput
 	RequestHeaders   DomainRequestHeaderArrayInput
 	ResponseHeaders  DomainResponseHeaderArrayInput
-	// 表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 	RewriteHls DomainRewriteHlsPtrInput
-	// 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+	// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
 	ServiceRegion pulumi.StringPtrInput
-	// 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+	// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
 	ServiceType pulumi.StringPtrInput
-	// 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
 	SignedUrlAuth DomainSignedUrlAuthPtrInput
-	// 表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
+	// Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
 	Status pulumi.StringPtrInput
 	Tags   DomainTagArrayInput
-	// 表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
 	Timeout DomainTimeoutPtrInput
-	// 表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
 	UaAccessRule DomainUaAccessRulePtrInput
-	// 表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
+	// Indicates the most recent update time for this domain configuration, in Unix timestamp format.
 	UpdatedTime pulumi.IntPtrInput
-	// 表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
+	// Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
 	UrlNormalize DomainUrlNormalizePtrInput
-	// 表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
 	VideoDrag DomainVideoDragPtrInput
 }
 
@@ -409,187 +406,187 @@ func (DomainState) ElementType() reflect.Type {
 }
 
 type domainArgs struct {
-	// 表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
 	AreaAccessRule *DomainAreaAccessRule `pulumi:"areaAccessRule"`
 	BrowserCaches  []DomainBrowserCach   `pulumi:"browserCaches"`
-	// 表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
+	// Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
 	CacheHost *DomainCacheHost `pulumi:"cacheHost"`
 	CacheKeys []DomainCacheKey `pulumi:"cacheKeys"`
 	Caches    []DomainCach     `pulumi:"caches"`
-	// 表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
 	Compression *DomainCompression `pulumi:"compression"`
-	// 表示 "条件源站" 特性的配置模块。
+	// Specifies the configuration module for the 'Conditional Origin' feature.
 	ConditionalOrigin *DomainConditionalOrigin `pulumi:"conditionalOrigin"`
-	// 表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
 	CustomErrorPage *DomainCustomErrorPage `pulumi:"customErrorPage"`
-	// 表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
 	CustomizeAccessRule *DomainCustomizeAccessRule `pulumi:"customizeAccessRule"`
-	// 表示该加速域名。
+	// Indicates the acceleration domain name.
 	Domain string `pulumi:"domain"`
-	// 表示 "下载限速" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
 	DownloadSpeedLimit *DomainDownloadSpeedLimit `pulumi:"downloadSpeedLimit"`
-	// 表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+	// Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
 	FollowRedirect *bool `pulumi:"followRedirect"`
-	// 表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
+	// Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
 	HttpForcedRedirect *DomainHttpForcedRedirect `pulumi:"httpForcedRedirect"`
-	// 表示 HTTPS 配置模块。该功能默认是禁用。
+	// Indicates the HTTPS configuration module. This feature is disabled by default.
 	Https *DomainHttps `pulumi:"https"`
-	// 表示 IPv6 特性的配置模块。
+	// Indicates the configuration module for the IPv6 feature.
 	IPv6 *DomainIPv6 `pulumi:"iPv6"`
-	// 表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+	// Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
 	IpAccessRule *DomainIpAccessRule `pulumi:"ipAccessRule"`
-	// 表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
 	MethodDeniedRule *DomainMethodDeniedRule `pulumi:"methodDeniedRule"`
-	// 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the multi-range feature. This feature is disabled by default
 	MultiRange     *DomainMultiRange    `pulumi:"multiRange"`
 	NegativeCaches []DomainNegativeCach `pulumi:"negativeCaches"`
-	// 表示 "离线缓存" 特性的配置模块。
+	// Indicates the configuration module for the 'offline cache' feature.
 	OfflineCache *DomainOfflineCache `pulumi:"offlineCache"`
-	// 表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
 	OriginAccessRule *DomainOriginAccessRule `pulumi:"originAccessRule"`
 	OriginArgs       []DomainOriginArg       `pulumi:"originArgs"`
-	// 源站证书校验
+	// Origin certificate validation
 	OriginCertCheck *DomainOriginCertCheck `pulumi:"originCertCheck"`
-	// 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+	// If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
 	OriginHost *string `pulumi:"originHost"`
-	// 表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+	// Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
 	OriginIPv6 *string `pulumi:"originIPv6"`
-	// 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+	// Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
 	OriginProtocol *string `pulumi:"originProtocol"`
-	// 表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+	// Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
 	OriginRange *bool `pulumi:"originRange"`
-	// 表示 "回源重试设置" 特性的配置模块。
+	// Indicates the configuration module for the "origin fetch retry settings" feature.
 	OriginRetry *DomainOriginRetry `pulumi:"originRetry"`
-	// 表示 "回源 URL 改写" 特性的配置模块。
+	// Indicates the configuration module for the 'Origin URL Rewrite' feature.
 	OriginRewrite *DomainOriginRewrite `pulumi:"originRewrite"`
-	// 表示 "回源 SNI" 特性的配置模块。
+	// Indicates the configuration module for the 'origin SNI' feature.
 	OriginSni *DomainOriginSni `pulumi:"originSni"`
 	Origins   []DomainOrigin   `pulumi:"origins"`
-	// 表示 "页面优化" 特性的配置模块。
+	// Specifies the configuration module for the 'page optimization' feature.
 	PageOptimization *DomainPageOptimization `pulumi:"pageOptimization"`
-	// 表示该加速域名归属的项目。
+	// Indicates the project to which the acceleration domain belongs
 	Project *string `pulumi:"project"`
-	// 表示 QUIC 特性的配置模块。该特性默认是禁用。
+	// Indicates the configuration module for the QUIC feature. This feature is disabled by default.
 	Quic *DomainQuic `pulumi:"quic"`
-	// 表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
 	RedirectionRewrite *DomainRedirectionRewrite `pulumi:"redirectionRewrite"`
-	// 表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
 	RefererAccessRule *DomainRefererAccessRule `pulumi:"refererAccessRule"`
-	// 表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
 	RemoteAuth *DomainRemoteAuth `pulumi:"remoteAuth"`
-	// 表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
 	RequestBlockRule *DomainRequestBlockRule `pulumi:"requestBlockRule"`
 	RequestHeaders   []DomainRequestHeader   `pulumi:"requestHeaders"`
 	ResponseHeaders  []DomainResponseHeader  `pulumi:"responseHeaders"`
-	// 表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 	RewriteHls *DomainRewriteHls `pulumi:"rewriteHls"`
-	// 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+	// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
 	ServiceRegion *string `pulumi:"serviceRegion"`
-	// 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+	// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
 	ServiceType string `pulumi:"serviceType"`
-	// 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
 	SignedUrlAuth *DomainSignedUrlAuth `pulumi:"signedUrlAuth"`
 	Tags          []DomainTag          `pulumi:"tags"`
-	// 表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
 	Timeout *DomainTimeout `pulumi:"timeout"`
-	// 表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
 	UaAccessRule *DomainUaAccessRule `pulumi:"uaAccessRule"`
-	// 表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
+	// Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
 	UrlNormalize *DomainUrlNormalize `pulumi:"urlNormalize"`
-	// 表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
 	VideoDrag *DomainVideoDrag `pulumi:"videoDrag"`
 }
 
 // The set of arguments for constructing a Domain resource.
 type DomainArgs struct {
-	// 表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
 	AreaAccessRule DomainAreaAccessRulePtrInput
 	BrowserCaches  DomainBrowserCachArrayInput
-	// 表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
+	// Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
 	CacheHost DomainCacheHostPtrInput
 	CacheKeys DomainCacheKeyArrayInput
 	Caches    DomainCachArrayInput
-	// 表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
 	Compression DomainCompressionPtrInput
-	// 表示 "条件源站" 特性的配置模块。
+	// Specifies the configuration module for the 'Conditional Origin' feature.
 	ConditionalOrigin DomainConditionalOriginPtrInput
-	// 表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
 	CustomErrorPage DomainCustomErrorPagePtrInput
-	// 表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
 	CustomizeAccessRule DomainCustomizeAccessRulePtrInput
-	// 表示该加速域名。
+	// Indicates the acceleration domain name.
 	Domain pulumi.StringInput
-	// 表示 "下载限速" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
 	DownloadSpeedLimit DomainDownloadSpeedLimitPtrInput
-	// 表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+	// Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
 	FollowRedirect pulumi.BoolPtrInput
-	// 表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
+	// Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
 	HttpForcedRedirect DomainHttpForcedRedirectPtrInput
-	// 表示 HTTPS 配置模块。该功能默认是禁用。
+	// Indicates the HTTPS configuration module. This feature is disabled by default.
 	Https DomainHttpsPtrInput
-	// 表示 IPv6 特性的配置模块。
+	// Indicates the configuration module for the IPv6 feature.
 	IPv6 DomainIPv6PtrInput
-	// 表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+	// Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
 	IpAccessRule DomainIpAccessRulePtrInput
-	// 表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
 	MethodDeniedRule DomainMethodDeniedRulePtrInput
-	// 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the multi-range feature. This feature is disabled by default
 	MultiRange     DomainMultiRangePtrInput
 	NegativeCaches DomainNegativeCachArrayInput
-	// 表示 "离线缓存" 特性的配置模块。
+	// Indicates the configuration module for the 'offline cache' feature.
 	OfflineCache DomainOfflineCachePtrInput
-	// 表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
 	OriginAccessRule DomainOriginAccessRulePtrInput
 	OriginArgs       DomainOriginArgArrayInput
-	// 源站证书校验
+	// Origin certificate validation
 	OriginCertCheck DomainOriginCertCheckPtrInput
-	// 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+	// If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
 	OriginHost pulumi.StringPtrInput
-	// 表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+	// Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
 	OriginIPv6 pulumi.StringPtrInput
-	// 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+	// Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
 	OriginProtocol pulumi.StringPtrInput
-	// 表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+	// Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
 	OriginRange pulumi.BoolPtrInput
-	// 表示 "回源重试设置" 特性的配置模块。
+	// Indicates the configuration module for the "origin fetch retry settings" feature.
 	OriginRetry DomainOriginRetryPtrInput
-	// 表示 "回源 URL 改写" 特性的配置模块。
+	// Indicates the configuration module for the 'Origin URL Rewrite' feature.
 	OriginRewrite DomainOriginRewritePtrInput
-	// 表示 "回源 SNI" 特性的配置模块。
+	// Indicates the configuration module for the 'origin SNI' feature.
 	OriginSni DomainOriginSniPtrInput
 	Origins   DomainOriginArrayInput
-	// 表示 "页面优化" 特性的配置模块。
+	// Specifies the configuration module for the 'page optimization' feature.
 	PageOptimization DomainPageOptimizationPtrInput
-	// 表示该加速域名归属的项目。
+	// Indicates the project to which the acceleration domain belongs
 	Project pulumi.StringPtrInput
-	// 表示 QUIC 特性的配置模块。该特性默认是禁用。
+	// Indicates the configuration module for the QUIC feature. This feature is disabled by default.
 	Quic DomainQuicPtrInput
-	// 表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
+	// Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
 	RedirectionRewrite DomainRedirectionRewritePtrInput
-	// 表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
 	RefererAccessRule DomainRefererAccessRulePtrInput
-	// 表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
 	RemoteAuth DomainRemoteAuthPtrInput
-	// 表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
 	RequestBlockRule DomainRequestBlockRulePtrInput
 	RequestHeaders   DomainRequestHeaderArrayInput
 	ResponseHeaders  DomainResponseHeaderArrayInput
-	// 表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 	RewriteHls DomainRewriteHlsPtrInput
-	// 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+	// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
 	ServiceRegion pulumi.StringPtrInput
-	// 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+	// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
 	ServiceType pulumi.StringInput
-	// 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
 	SignedUrlAuth DomainSignedUrlAuthPtrInput
 	Tags          DomainTagArrayInput
-	// 表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
 	Timeout DomainTimeoutPtrInput
-	// 表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
 	UaAccessRule DomainUaAccessRulePtrInput
-	// 表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
+	// Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
 	UrlNormalize DomainUrlNormalizePtrInput
-	// 表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+	// Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
 	VideoDrag DomainVideoDragPtrInput
 }
 
@@ -680,12 +677,12 @@ func (o DomainOutput) ToDomainOutputWithContext(ctx context.Context) DomainOutpu
 	return o
 }
 
-// 表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
+// Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
 func (o DomainOutput) AreaAccessRule() DomainAreaAccessRuleOutput {
 	return o.ApplyT(func(v *Domain) DomainAreaAccessRuleOutput { return v.AreaAccessRule }).(DomainAreaAccessRuleOutput)
 }
 
-// 表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
+// Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
 func (o DomainOutput) BackupOrigins() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringArrayOutput { return v.BackupOrigins }).(pulumi.StringArrayOutput)
 }
@@ -694,7 +691,7 @@ func (o DomainOutput) BrowserCaches() DomainBrowserCachArrayOutput {
 	return o.ApplyT(func(v *Domain) DomainBrowserCachArrayOutput { return v.BrowserCaches }).(DomainBrowserCachArrayOutput)
 }
 
-// 表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
+// Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
 func (o DomainOutput) CacheHost() DomainCacheHostOutput {
 	return o.ApplyT(func(v *Domain) DomainCacheHostOutput { return v.CacheHost }).(DomainCacheHostOutput)
 }
@@ -703,13 +700,12 @@ func (o DomainOutput) CacheKeys() DomainCacheKeyArrayOutput {
 	return o.ApplyT(func(v *Domain) DomainCacheKeyArrayOutput { return v.CacheKeys }).(DomainCacheKeyArrayOutput)
 }
 
-// 表示该域名在 "共享缓存" 配置中的角色。该参数有以下取值：target*host：表示 "目标域名"。cache*shared_on：表示 "配置域名"。如果该域名未在任何 "共享缓存" 配置中，该参数值是空（""）。
+// Indicates the role of this domain in the 'shared cache' configuration. The parameter has the following values: target*host: indicates the 'target domain'. cache*shared_on: indicates the 'configured domain'. If this domain is not included in any 'shared cache' configuration, the parameter value is an empty string (”).
 func (o DomainOutput) CacheShared() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.CacheShared }).(pulumi.StringOutput)
 }
 
-// 如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 "共享缓存" 配置中的 "目标域名"。
-// 如果 CacheShared 是 target_host，该参数值为空（""）。
+// If CacheShared is cache*shared*on, this parameter indicates the 'Target Domain' in the 'Shared Cache' configuration for this domain name. If CacheShared is target_host, this parameter is empty ("").
 func (o DomainOutput) CacheSharedTargetHost() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.CacheSharedTargetHost }).(pulumi.StringOutput)
 }
@@ -718,92 +714,92 @@ func (o DomainOutput) Caches() DomainCachArrayOutput {
 	return o.ApplyT(func(v *Domain) DomainCachArrayOutput { return v.Caches }).(DomainCachArrayOutput)
 }
 
-// 表示内容分发网络为该加速域名分配的 CNAME。
+// Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
 func (o DomainOutput) Cname() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.Cname }).(pulumi.StringOutput)
 }
 
-// 表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
+// Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
 func (o DomainOutput) Compression() DomainCompressionOutput {
 	return o.ApplyT(func(v *Domain) DomainCompressionOutput { return v.Compression }).(DomainCompressionOutput)
 }
 
-// 表示 "条件源站" 特性的配置模块。
+// Specifies the configuration module for the 'Conditional Origin' feature.
 func (o DomainOutput) ConditionalOrigin() DomainConditionalOriginOutput {
 	return o.ApplyT(func(v *Domain) DomainConditionalOriginOutput { return v.ConditionalOrigin }).(DomainConditionalOriginOutput)
 }
 
-// 表示该加速域名的创建时间，格式是 Unix 时间戳。
+// Indicates the creation time of this accelerated domain name, in Unix timestamp format.
 func (o DomainOutput) CreatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.CreatedTime }).(pulumi.IntOutput)
 }
 
-// 表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
+// Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
 func (o DomainOutput) CustomErrorPage() DomainCustomErrorPageOutput {
 	return o.ApplyT(func(v *Domain) DomainCustomErrorPageOutput { return v.CustomErrorPage }).(DomainCustomErrorPageOutput)
 }
 
-// 表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
+// Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
 func (o DomainOutput) CustomizeAccessRule() DomainCustomizeAccessRuleOutput {
 	return o.ApplyT(func(v *Domain) DomainCustomizeAccessRuleOutput { return v.CustomizeAccessRule }).(DomainCustomizeAccessRuleOutput)
 }
 
-// 表示该加速域名。
+// Indicates the acceleration domain name.
 func (o DomainOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 表示该域名的锁定状态。
+// Indicates the lock status of this domain name.
 func (o DomainOutput) DomainLock() DomainDomainLockOutput {
 	return o.ApplyT(func(v *Domain) DomainDomainLockOutput { return v.DomainLock }).(DomainDomainLockOutput)
 }
 
-// 表示 "下载限速" 特性的配置模块。该特性默认为禁用。
+// Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
 func (o DomainOutput) DownloadSpeedLimit() DomainDownloadSpeedLimitOutput {
 	return o.ApplyT(func(v *Domain) DomainDownloadSpeedLimitOutput { return v.DownloadSpeedLimit }).(DomainDownloadSpeedLimitOutput)
 }
 
-// 表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+// Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
 func (o DomainOutput) FollowRedirect() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Domain) pulumi.BoolOutput { return v.FollowRedirect }).(pulumi.BoolOutput)
 }
 
-// 表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
+// Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
 func (o DomainOutput) HttpForcedRedirect() DomainHttpForcedRedirectOutput {
 	return o.ApplyT(func(v *Domain) DomainHttpForcedRedirectOutput { return v.HttpForcedRedirect }).(DomainHttpForcedRedirectOutput)
 }
 
-// 表示 HTTPS 配置模块。该功能默认是禁用。
+// Indicates the HTTPS configuration module. This feature is disabled by default.
 func (o DomainOutput) Https() DomainHttpsOutput {
 	return o.ApplyT(func(v *Domain) DomainHttpsOutput { return v.Https }).(DomainHttpsOutput)
 }
 
-// 表示 IPv6 特性的配置模块。
+// Indicates the configuration module for the IPv6 feature.
 func (o DomainOutput) IPv6() DomainIPv6Output {
 	return o.ApplyT(func(v *Domain) DomainIPv6Output { return v.IPv6 }).(DomainIPv6Output)
 }
 
-// 表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+// Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
 func (o DomainOutput) IpAccessRule() DomainIpAccessRuleOutput {
 	return o.ApplyT(func(v *Domain) DomainIpAccessRuleOutput { return v.IpAccessRule }).(DomainIpAccessRuleOutput)
 }
 
-// 表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
+// Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
 func (o DomainOutput) IsConflictDomain() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Domain) pulumi.BoolOutput { return v.IsConflictDomain }).(pulumi.BoolOutput)
 }
 
-// 表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
+// Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
 func (o DomainOutput) LockStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.LockStatus }).(pulumi.StringOutput)
 }
 
-// 表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
+// Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
 func (o DomainOutput) MethodDeniedRule() DomainMethodDeniedRuleOutput {
 	return o.ApplyT(func(v *Domain) DomainMethodDeniedRuleOutput { return v.MethodDeniedRule }).(DomainMethodDeniedRuleOutput)
 }
 
-// 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+// Indicates the configuration module for the multi-range feature. This feature is disabled by default
 func (o DomainOutput) MultiRange() DomainMultiRangeOutput {
 	return o.ApplyT(func(v *Domain) DomainMultiRangeOutput { return v.MultiRange }).(DomainMultiRangeOutput)
 }
@@ -812,12 +808,12 @@ func (o DomainOutput) NegativeCaches() DomainNegativeCachArrayOutput {
 	return o.ApplyT(func(v *Domain) DomainNegativeCachArrayOutput { return v.NegativeCaches }).(DomainNegativeCachArrayOutput)
 }
 
-// 表示 "离线缓存" 特性的配置模块。
+// Indicates the configuration module for the 'offline cache' feature.
 func (o DomainOutput) OfflineCache() DomainOfflineCacheOutput {
 	return o.ApplyT(func(v *Domain) DomainOfflineCacheOutput { return v.OfflineCache }).(DomainOfflineCacheOutput)
 }
 
-// 表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
+// Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
 func (o DomainOutput) OriginAccessRule() DomainOriginAccessRuleOutput {
 	return o.ApplyT(func(v *Domain) DomainOriginAccessRuleOutput { return v.OriginAccessRule }).(DomainOriginAccessRuleOutput)
 }
@@ -826,42 +822,42 @@ func (o DomainOutput) OriginArgs() DomainOriginArgArrayOutput {
 	return o.ApplyT(func(v *Domain) DomainOriginArgArrayOutput { return v.OriginArgs }).(DomainOriginArgArrayOutput)
 }
 
-// 源站证书校验
+// Origin certificate validation
 func (o DomainOutput) OriginCertCheck() DomainOriginCertCheckOutput {
 	return o.ApplyT(func(v *Domain) DomainOriginCertCheckOutput { return v.OriginCertCheck }).(DomainOriginCertCheckOutput)
 }
 
-// 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+// If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
 func (o DomainOutput) OriginHost() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.OriginHost }).(pulumi.StringOutput)
 }
 
-// 表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+// Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
 func (o DomainOutput) OriginIPv6() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.OriginIPv6 }).(pulumi.StringOutput)
 }
 
-// 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+// Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
 func (o DomainOutput) OriginProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.OriginProtocol }).(pulumi.StringOutput)
 }
 
-// 表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+// Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
 func (o DomainOutput) OriginRange() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Domain) pulumi.BoolOutput { return v.OriginRange }).(pulumi.BoolOutput)
 }
 
-// 表示 "回源重试设置" 特性的配置模块。
+// Indicates the configuration module for the "origin fetch retry settings" feature.
 func (o DomainOutput) OriginRetry() DomainOriginRetryOutput {
 	return o.ApplyT(func(v *Domain) DomainOriginRetryOutput { return v.OriginRetry }).(DomainOriginRetryOutput)
 }
 
-// 表示 "回源 URL 改写" 特性的配置模块。
+// Indicates the configuration module for the 'Origin URL Rewrite' feature.
 func (o DomainOutput) OriginRewrite() DomainOriginRewriteOutput {
 	return o.ApplyT(func(v *Domain) DomainOriginRewriteOutput { return v.OriginRewrite }).(DomainOriginRewriteOutput)
 }
 
-// 表示 "回源 SNI" 特性的配置模块。
+// Indicates the configuration module for the 'origin SNI' feature.
 func (o DomainOutput) OriginSni() DomainOriginSniOutput {
 	return o.ApplyT(func(v *Domain) DomainOriginSniOutput { return v.OriginSni }).(DomainOriginSniOutput)
 }
@@ -870,42 +866,42 @@ func (o DomainOutput) Origins() DomainOriginArrayOutput {
 	return o.ApplyT(func(v *Domain) DomainOriginArrayOutput { return v.Origins }).(DomainOriginArrayOutput)
 }
 
-// 表示 "页面优化" 特性的配置模块。
+// Specifies the configuration module for the 'page optimization' feature.
 func (o DomainOutput) PageOptimization() DomainPageOptimizationOutput {
 	return o.ApplyT(func(v *Domain) DomainPageOptimizationOutput { return v.PageOptimization }).(DomainPageOptimizationOutput)
 }
 
-// 表示该域名配置的主源站列表。
+// Indicates the list of primary origin servers configured for this domain name.
 func (o DomainOutput) PrimaryOrigins() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringArrayOutput { return v.PrimaryOrigins }).(pulumi.StringArrayOutput)
 }
 
-// 表示该加速域名归属的项目。
+// Indicates the project to which the acceleration domain belongs
 func (o DomainOutput) Project() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.Project }).(pulumi.StringOutput)
 }
 
-// 表示 QUIC 特性的配置模块。该特性默认是禁用。
+// Indicates the configuration module for the QUIC feature. This feature is disabled by default.
 func (o DomainOutput) Quic() DomainQuicOutput {
 	return o.ApplyT(func(v *Domain) DomainQuicOutput { return v.Quic }).(DomainQuicOutput)
 }
 
-// 表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
+// Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
 func (o DomainOutput) RedirectionRewrite() DomainRedirectionRewriteOutput {
 	return o.ApplyT(func(v *Domain) DomainRedirectionRewriteOutput { return v.RedirectionRewrite }).(DomainRedirectionRewriteOutput)
 }
 
-// 表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
+// Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
 func (o DomainOutput) RefererAccessRule() DomainRefererAccessRuleOutput {
 	return o.ApplyT(func(v *Domain) DomainRefererAccessRuleOutput { return v.RefererAccessRule }).(DomainRefererAccessRuleOutput)
 }
 
-// 表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
+// Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
 func (o DomainOutput) RemoteAuth() DomainRemoteAuthOutput {
 	return o.ApplyT(func(v *Domain) DomainRemoteAuthOutput { return v.RemoteAuth }).(DomainRemoteAuthOutput)
 }
 
-// 表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
+// Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
 func (o DomainOutput) RequestBlockRule() DomainRequestBlockRuleOutput {
 	return o.ApplyT(func(v *Domain) DomainRequestBlockRuleOutput { return v.RequestBlockRule }).(DomainRequestBlockRuleOutput)
 }
@@ -918,27 +914,27 @@ func (o DomainOutput) ResponseHeaders() DomainResponseHeaderArrayOutput {
 	return o.ApplyT(func(v *Domain) DomainResponseHeaderArrayOutput { return v.ResponseHeaders }).(DomainResponseHeaderArrayOutput)
 }
 
-// 表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
+// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 func (o DomainOutput) RewriteHls() DomainRewriteHlsOutput {
 	return o.ApplyT(func(v *Domain) DomainRewriteHlsOutput { return v.RewriteHls }).(DomainRewriteHlsOutput)
 }
 
-// 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
 func (o DomainOutput) ServiceRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.ServiceRegion }).(pulumi.StringOutput)
 }
 
-// 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
 func (o DomainOutput) ServiceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.ServiceType }).(pulumi.StringOutput)
 }
 
-// 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+// Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
 func (o DomainOutput) SignedUrlAuth() DomainSignedUrlAuthOutput {
 	return o.ApplyT(func(v *Domain) DomainSignedUrlAuthOutput { return v.SignedUrlAuth }).(DomainSignedUrlAuthOutput)
 }
 
-// 表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
+// Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
 func (o DomainOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -947,27 +943,27 @@ func (o DomainOutput) Tags() DomainTagArrayOutput {
 	return o.ApplyT(func(v *Domain) DomainTagArrayOutput { return v.Tags }).(DomainTagArrayOutput)
 }
 
-// 表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
+// Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
 func (o DomainOutput) Timeout() DomainTimeoutOutput {
 	return o.ApplyT(func(v *Domain) DomainTimeoutOutput { return v.Timeout }).(DomainTimeoutOutput)
 }
 
-// 表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
+// Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
 func (o DomainOutput) UaAccessRule() DomainUaAccessRuleOutput {
 	return o.ApplyT(func(v *Domain) DomainUaAccessRuleOutput { return v.UaAccessRule }).(DomainUaAccessRuleOutput)
 }
 
-// 表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
+// Indicates the most recent update time for this domain configuration, in Unix timestamp format.
 func (o DomainOutput) UpdatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.UpdatedTime }).(pulumi.IntOutput)
 }
 
-// 表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
+// Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
 func (o DomainOutput) UrlNormalize() DomainUrlNormalizeOutput {
 	return o.ApplyT(func(v *Domain) DomainUrlNormalizeOutput { return v.UrlNormalize }).(DomainUrlNormalizeOutput)
 }
 
-// 表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+// Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
 func (o DomainOutput) VideoDrag() DomainVideoDragOutput {
 	return o.ApplyT(func(v *Domain) DomainVideoDragOutput { return v.VideoDrag }).(DomainVideoDragOutput)
 }

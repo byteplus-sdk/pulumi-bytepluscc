@@ -20,14 +20,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     public static final EipState Empty = new EipState();
 
     /**
-     * 公网IP的ID。
+     * Public IP ID.
      * 
      */
     @Import(name="allocationId")
     private @Nullable Output<String> allocationId;
 
     /**
-     * @return 公网IP的ID。
+     * @return Public IP ID.
      * 
      */
     public Optional<Output<String>> allocationId() {
@@ -35,14 +35,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP的带宽上限，默认为“1”，单位：Mbps,BillingType传入1：取值范围1 ~ 500。BillingType传入2：取值范围1 ~ 500。BillingType传入3：取值范围1 ~ 200。
+     * Maximum bandwidth of the public IP. Default is &#39;1&#39;, unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
      * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
-     * @return 公网IP的带宽上限，默认为“1”，单位：Mbps,BillingType传入1：取值范围1 ~ 500。BillingType传入2：取值范围1 ~ 500。BillingType传入3：取值范围1 ~ 200。
+     * @return Maximum bandwidth of the public IP. Default is &#39;1&#39;, unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
      * 
      */
     public Optional<Output<Integer>> bandwidth() {
@@ -50,14 +50,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 共享带宽包的ID，表示将公网IP加入到共享带宽包。公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的地域相同。公网IP的计费方式必须是按量计费。共享带宽包为IPv4类型。
+     * Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
      * 
      */
     @Import(name="bandwidthPackageId")
     private @Nullable Output<String> bandwidthPackageId;
 
     /**
-     * @return 共享带宽包的ID，表示将公网IP加入到共享带宽包。公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的地域相同。公网IP的计费方式必须是按量计费。共享带宽包为IPv4类型。
+     * @return Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
      * 
      */
     public Optional<Output<String>> bandwidthPackageId() {
@@ -65,14 +65,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP的计费方式。取值如下：1：包年包月。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
      * 
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
-     * @return 公网IP的计费方式。取值如下：1：包年包月。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * @return Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
      * 
      */
     public Optional<Output<Integer>> billingType() {
@@ -80,14 +80,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * Whether the public IP is locked. Normal: normal. FinancialLocked: locked.
      * 
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
-     * @return 公网IP是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * @return Whether the public IP is locked. Normal: normal. FinancialLocked: locked.
      * 
      */
     public Optional<Output<String>> businessStatus() {
@@ -95,14 +95,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP的创建时间。
+     * Creation time of the public IP.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 公网IP的创建时间。
+     * @return Creation time of the public IP.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -110,14 +110,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 预期资源强制回收时间。包年包月公网IP，此参数有返回值。按量计费公网IP，仅欠费冻结时，此参数有返回值。
+     * Expected forced resource recycle time. For subscription public IPs, this parameter returns a value. For pay-as-you-go public IPs, this parameter returns a value only when frozen due to overdue payment.
      * 
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
-     * @return 预期资源强制回收时间。包年包月公网IP，此参数有返回值。按量计费公网IP，仅欠费冻结时，此参数有返回值。
+     * @return Expected forced resource recycle time. For subscription public IPs, this parameter returns a value. For pay-as-you-go public IPs, this parameter returns a value only when frozen due to overdue payment.
      * 
      */
     public Optional<Output<String>> deletedTime() {
@@ -125,14 +125,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP的描述信息。
+     * Description of the public IP.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 公网IP的描述信息。
+     * @return Description of the public IP.
      * 
      */
     public Optional<Output<String>> description() {
@@ -140,14 +140,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+     * Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
      * 
      */
     @Import(name="directMode")
     private @Nullable Output<Boolean> directMode;
 
     /**
-     * @return 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+     * @return Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
      * 
      */
     public Optional<Output<Boolean>> directMode() {
@@ -155,14 +155,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP地址。
+     * Public IP address.
      * 
      */
     @Import(name="eipAddress")
     private @Nullable Output<String> eipAddress;
 
     /**
-     * @return 公网IP地址。
+     * @return Public IP address.
      * 
      */
     public Optional<Output<String>> eipAddress() {
@@ -170,14 +170,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP的到期时间。包年包月，返回值为到期时间。按量计费，返回值为空。
+     * Expiration time of the public IP. For subscription billing, the return value is the expiration time. For pay-as-you-go billing, the return value is empty.
      * 
      */
     @Import(name="expiredTime")
     private @Nullable Output<String> expiredTime;
 
     /**
-     * @return 公网IP的到期时间。包年包月，返回值为到期时间。按量计费，返回值为空。
+     * @return Expiration time of the public IP. For subscription billing, the return value is the expiration time. For pay-as-you-go billing, the return value is empty.
      * 
      */
     public Optional<Output<String>> expiredTime() {
@@ -185,14 +185,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 当前绑定的实例ID。
+     * Currently bound instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 当前绑定的实例ID。
+     * @return Currently bound instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -200,14 +200,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 当前绑定的实例类型。Nat：公网NAT网关。NetworkInterface: 弹性网卡。ClbInstance: 负载均衡。EcsInstance：云服务器。HaVip：高可用虚拟IP。
+     * Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
-     * @return 当前绑定的实例类型。Nat：公网NAT网关。NetworkInterface: 弹性网卡。ClbInstance: 负载均衡。EcsInstance：云服务器。HaVip：高可用虚拟IP。
+     * @return Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
      * 
      */
     public Optional<Output<String>> instanceType() {
@@ -215,14 +215,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 申请申请指定的公网IP地址。仅支持填写使用后释放的IP地址，不填则表示自动分配。指定的公网IP地址
+     * Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return 申请申请指定的公网IP地址。仅支持填写使用后释放的IP地址，不填则表示自动分配。指定的公网IP地址
+     * @return Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -230,14 +230,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IP地址池的ID。
+     * IP address pool ID.
      * 
      */
     @Import(name="ipAddressPoolId")
     private @Nullable Output<String> ipAddressPoolId;
 
     /**
-     * @return IP地址池的ID。
+     * @return IP address pool ID.
      * 
      */
     public Optional<Output<String>> ipAddressPoolId() {
@@ -245,14 +245,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否被封禁。true：是。false：否。
+     * Whether it is blocked. true: yes. false: no.
      * 
      */
     @Import(name="isBlocked")
     private @Nullable Output<Boolean> isBlocked;
 
     /**
-     * @return 是否被封禁。true：是。false：否。
+     * @return Whether it is blocked. true: yes. false: no.
      * 
      */
     public Optional<Output<Boolean>> isBlocked() {
@@ -260,14 +260,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 线路类型。BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：中国电信静态单线。ChinaUnicom：中国联通静态单线。SingleLine*BGP：BGP单线。Fusion*BGP：融合BGP。ChinaMobile*Value：中国移动惠选型静态单线。ChinaUnicom*Value：中国联通惠选型静态单线。ChinaTelecom_Value：中国电信惠选型静态单线。
+     * Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
      * 
      */
     @Import(name="isp")
     private @Nullable Output<String> isp;
 
     /**
-     * @return 线路类型。BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：中国电信静态单线。ChinaUnicom：中国联通静态单线。SingleLine*BGP：BGP单线。Fusion*BGP：融合BGP。ChinaMobile*Value：中国移动惠选型静态单线。ChinaUnicom*Value：中国联通惠选型静态单线。ChinaTelecom_Value：中国电信惠选型静态单线。
+     * @return Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
      * 
      */
     public Optional<Output<String>> isp() {
@@ -275,14 +275,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP被锁定的原因。financial: 因欠费被锁定。unlock: 欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * Reason for public IP lock. financial: locked due to overdue payment. unlock: restoring after recharge following suspension for overdue payment. Empty value: not locked.
      * 
      */
     @Import(name="lockReason")
     private @Nullable Output<String> lockReason;
 
     /**
-     * @return 公网IP被锁定的原因。financial: 因欠费被锁定。unlock: 欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * @return Reason for public IP lock. financial: locked due to overdue payment. unlock: restoring after recharge following suspension for overdue payment. Empty value: not locked.
      * 
      */
     public Optional<Output<String>> lockReason() {
@@ -290,14 +290,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP的名称。
+     * Name of the public IP.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 公网IP的名称。
+     * @return Name of the public IP.
      * 
      */
     public Optional<Output<String>> name() {
@@ -305,14 +305,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+     * Resource freeze time. This parameter returns a value only when the resource is frozen due to overdue payment.
      * 
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
-     * @return 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+     * @return Resource freeze time. This parameter returns a value only when the resource is frozen due to overdue payment.
      * 
      */
     public Optional<Output<String>> overdueTime() {
@@ -320,14 +320,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 代表购买包年包月公网IP的时长时，默认为“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36、48、60。当PeriodUnit传入2，Period取值范围：1～5。代表临时升配的时长时：单位为小时，取值范围：1～720。
+     * When representing the duration for purchasing a subscription public IP, the default is &#39;1&#39;. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
      * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
-     * @return 代表购买包年包月公网IP的时长时，默认为“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36、48、60。当PeriodUnit传入2，Period取值范围：1～5。代表临时升配的时长时：单位为小时，取值范围：1～720。
+     * @return When representing the duration for purchasing a subscription public IP, the default is &#39;1&#39;. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
      * 
      */
     public Optional<Output<Integer>> period() {
@@ -335,14 +335,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 购买包年包月公网IP时长的单位。取值如下：1（默认值）：月。2 ：年。
+     * Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
      * 
      */
     @Import(name="periodUnit")
     private @Nullable Output<Integer> periodUnit;
 
     /**
-     * @return 购买包年包月公网IP时长的单位。取值如下：1（默认值）：月。2 ：年。
+     * @return Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
      * 
      */
     public Optional<Output<Integer>> periodUnit() {
@@ -350,14 +350,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 要绑定公网IP的实例的私网IP地址。只支持传入云服务ECS主网卡的私网IP地址和辅助网卡IP地址。若不填写：InstanceType传入EcsInstance，则绑定云服务器ECS主网卡的主私网IP地址。InstanceType传入NetworkInterface，则绑定辅助网卡主私网IP地址。
+     * Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
      * 
      */
     @Import(name="privateIpAddress")
     private @Nullable Output<String> privateIpAddress;
 
     /**
-     * @return 要绑定公网IP的实例的私网IP地址。只支持传入云服务ECS主网卡的私网IP地址和辅助网卡IP地址。若不填写：InstanceType传入EcsInstance，则绑定云服务器ECS主网卡的主私网IP地址。InstanceType传入NetworkInterface，则绑定辅助网卡主私网IP地址。
+     * @return Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
      * 
      */
     public Optional<Output<String>> privateIpAddress() {
@@ -365,14 +365,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP所属项目的名称。
+     * Name of the project to which the public IP belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 公网IP所属项目的名称。
+     * @return Name of the project to which the public IP belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -380,14 +380,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否随云服务器实例删除。仅按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放。true：是。false：否。
+     * Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
      * 
      */
     @Import(name="releaseWithInstance")
     private @Nullable Output<Boolean> releaseWithInstance;
 
     /**
-     * @return 是否随云服务器实例删除。仅按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放。true：是。false：否。
+     * @return Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
      * 
      */
     public Optional<Output<Boolean>> releaseWithInstance() {
@@ -395,14 +395,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自动续费的时长，取值范围1、2、3、6、12，单位：月。若RenewType传入2，则必须传入RenewPeriodTimes
+     * Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
      * 
      */
     @Import(name="renewPeriodTimes")
     private @Nullable Output<Integer> renewPeriodTimes;
 
     /**
-     * @return 自动续费的时长，取值范围1、2、3、6、12，单位：月。若RenewType传入2，则必须传入RenewPeriodTimes
+     * @return Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
      * 
      */
     public Optional<Output<Integer>> renewPeriodTimes() {
@@ -410,14 +410,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 包年包月公网IP续费的方式。取值如下：1（默认值）：手动续费。2：自动续费。3：到期不续费。
+     * Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
      * 
      */
     @Import(name="renewType")
     private @Nullable Output<Integer> renewType;
 
     /**
-     * @return 包年包月公网IP续费的方式。取值如下：1（默认值）：手动续费。2：自动续费。3：到期不续费。
+     * @return Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
      * 
      */
     public Optional<Output<Integer>> renewType() {
@@ -425,14 +425,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * DDoS原生防护（企业版）ID。您可以调用 DescInstanceList 接口，查询DDoS原生防护（企业版）的ID。当SecurityProtectionTypes传入AntiDDoS_Enhanced时，此参数必须传入。
+     * DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
      * 
      */
     @Import(name="securityProtectionInstanceId")
     private @Nullable Output<Integer> securityProtectionInstanceId;
 
     /**
-     * @return DDoS原生防护（企业版）ID。您可以调用 DescInstanceList 接口，查询DDoS原生防护（企业版）的ID。当SecurityProtectionTypes传入AntiDDoS_Enhanced时，此参数必须传入。
+     * @return DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
      * 
      */
     public Optional<Output<Integer>> securityProtectionInstanceId() {
@@ -440,14 +440,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 防护类型。AntiDDoS_Enhanced：增强防护类型的公网IP，可以加入到DDoS原生防护（企业版）实例。空值：默认防护类型的公网IP。
+     * Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
      * 
      */
     @Import(name="securityProtectionTypes")
     private @Nullable Output<List<String>> securityProtectionTypes;
 
     /**
-     * @return 防护类型。AntiDDoS_Enhanced：增强防护类型的公网IP，可以加入到DDoS原生防护（企业版）实例。空值：默认防护类型的公网IP。
+     * @return Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
      * 
      */
     public Optional<Output<List<String>>> securityProtectionTypes() {
@@ -455,14 +455,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否由服务管理
+     * Managed by service
      * 
      */
     @Import(name="serviceManaged")
     private @Nullable Output<Boolean> serviceManaged;
 
     /**
-     * @return 是否由服务管理
+     * @return Managed by service
      * 
      */
     public Optional<Output<Boolean>> serviceManaged() {
@@ -470,14 +470,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP的状态。Attaching：绑定中。Detaching：解绑中。Attached：已绑定。Available：可用。Deleting：删除中。
+     * Status of the public IP. Attaching: binding in progress. Detaching: unbinding in progress. Attached: bound. Available: available. Deleting: deleting.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 公网IP的状态。Attaching：绑定中。Detaching：解绑中。Attached：已绑定。Available：可用。Deleting：删除中。
+     * @return Status of the public IP. Attaching: binding in progress. Detaching: unbinding in progress. Attached: bound. Available: available. Deleting: deleting.
      * 
      */
     public Optional<Output<String>> status() {
@@ -492,14 +492,14 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新公网IP的时间。
+     * Time when the public IP was updated.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新公网IP的时间。
+     * @return Time when the public IP was updated.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -563,7 +563,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allocationId 公网IP的ID。
+         * @param allocationId Public IP ID.
          * 
          * @return builder
          * 
@@ -574,7 +574,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allocationId 公网IP的ID。
+         * @param allocationId Public IP ID.
          * 
          * @return builder
          * 
@@ -584,7 +584,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidth 公网IP的带宽上限，默认为“1”，单位：Mbps,BillingType传入1：取值范围1 ~ 500。BillingType传入2：取值范围1 ~ 500。BillingType传入3：取值范围1 ~ 200。
+         * @param bandwidth Maximum bandwidth of the public IP. Default is &#39;1&#39;, unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
          * 
          * @return builder
          * 
@@ -595,7 +595,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidth 公网IP的带宽上限，默认为“1”，单位：Mbps,BillingType传入1：取值范围1 ~ 500。BillingType传入2：取值范围1 ~ 500。BillingType传入3：取值范围1 ~ 200。
+         * @param bandwidth Maximum bandwidth of the public IP. Default is &#39;1&#39;, unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
          * 
          * @return builder
          * 
@@ -605,7 +605,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidthPackageId 共享带宽包的ID，表示将公网IP加入到共享带宽包。公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的地域相同。公网IP的计费方式必须是按量计费。共享带宽包为IPv4类型。
+         * @param bandwidthPackageId Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
          * 
          * @return builder
          * 
@@ -616,7 +616,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidthPackageId 共享带宽包的ID，表示将公网IP加入到共享带宽包。公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的地域相同。公网IP的计费方式必须是按量计费。共享带宽包为IPv4类型。
+         * @param bandwidthPackageId Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
          * 
          * @return builder
          * 
@@ -626,7 +626,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType 公网IP的计费方式。取值如下：1：包年包月。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+         * @param billingType Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
          * 
          * @return builder
          * 
@@ -637,7 +637,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType 公网IP的计费方式。取值如下：1：包年包月。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+         * @param billingType Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
          * 
          * @return builder
          * 
@@ -647,7 +647,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param businessStatus 公网IP是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+         * @param businessStatus Whether the public IP is locked. Normal: normal. FinancialLocked: locked.
          * 
          * @return builder
          * 
@@ -658,7 +658,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param businessStatus 公网IP是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+         * @param businessStatus Whether the public IP is locked. Normal: normal. FinancialLocked: locked.
          * 
          * @return builder
          * 
@@ -668,7 +668,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 公网IP的创建时间。
+         * @param createdTime Creation time of the public IP.
          * 
          * @return builder
          * 
@@ -679,7 +679,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 公网IP的创建时间。
+         * @param createdTime Creation time of the public IP.
          * 
          * @return builder
          * 
@@ -689,7 +689,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletedTime 预期资源强制回收时间。包年包月公网IP，此参数有返回值。按量计费公网IP，仅欠费冻结时，此参数有返回值。
+         * @param deletedTime Expected forced resource recycle time. For subscription public IPs, this parameter returns a value. For pay-as-you-go public IPs, this parameter returns a value only when frozen due to overdue payment.
          * 
          * @return builder
          * 
@@ -700,7 +700,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletedTime 预期资源强制回收时间。包年包月公网IP，此参数有返回值。按量计费公网IP，仅欠费冻结时，此参数有返回值。
+         * @param deletedTime Expected forced resource recycle time. For subscription public IPs, this parameter returns a value. For pay-as-you-go public IPs, this parameter returns a value only when frozen due to overdue payment.
          * 
          * @return builder
          * 
@@ -710,7 +710,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 公网IP的描述信息。
+         * @param description Description of the public IP.
          * 
          * @return builder
          * 
@@ -721,7 +721,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 公网IP的描述信息。
+         * @param description Description of the public IP.
          * 
          * @return builder
          * 
@@ -731,7 +731,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param directMode 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+         * @param directMode Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
          * 
          * @return builder
          * 
@@ -742,7 +742,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param directMode 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+         * @param directMode Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
          * 
          * @return builder
          * 
@@ -752,7 +752,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipAddress 公网IP地址。
+         * @param eipAddress Public IP address.
          * 
          * @return builder
          * 
@@ -763,7 +763,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipAddress 公网IP地址。
+         * @param eipAddress Public IP address.
          * 
          * @return builder
          * 
@@ -773,7 +773,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredTime 公网IP的到期时间。包年包月，返回值为到期时间。按量计费，返回值为空。
+         * @param expiredTime Expiration time of the public IP. For subscription billing, the return value is the expiration time. For pay-as-you-go billing, the return value is empty.
          * 
          * @return builder
          * 
@@ -784,7 +784,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredTime 公网IP的到期时间。包年包月，返回值为到期时间。按量计费，返回值为空。
+         * @param expiredTime Expiration time of the public IP. For subscription billing, the return value is the expiration time. For pay-as-you-go billing, the return value is empty.
          * 
          * @return builder
          * 
@@ -794,7 +794,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 当前绑定的实例ID。
+         * @param instanceId Currently bound instance ID.
          * 
          * @return builder
          * 
@@ -805,7 +805,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 当前绑定的实例ID。
+         * @param instanceId Currently bound instance ID.
          * 
          * @return builder
          * 
@@ -815,7 +815,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 当前绑定的实例类型。Nat：公网NAT网关。NetworkInterface: 弹性网卡。ClbInstance: 负载均衡。EcsInstance：云服务器。HaVip：高可用虚拟IP。
+         * @param instanceType Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
          * 
          * @return builder
          * 
@@ -826,7 +826,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 当前绑定的实例类型。Nat：公网NAT网关。NetworkInterface: 弹性网卡。ClbInstance: 负载均衡。EcsInstance：云服务器。HaVip：高可用虚拟IP。
+         * @param instanceType Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
          * 
          * @return builder
          * 
@@ -836,7 +836,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddress 申请申请指定的公网IP地址。仅支持填写使用后释放的IP地址，不填则表示自动分配。指定的公网IP地址
+         * @param ipAddress Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
          * 
          * @return builder
          * 
@@ -847,7 +847,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddress 申请申请指定的公网IP地址。仅支持填写使用后释放的IP地址，不填则表示自动分配。指定的公网IP地址
+         * @param ipAddress Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
          * 
          * @return builder
          * 
@@ -857,7 +857,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddressPoolId IP地址池的ID。
+         * @param ipAddressPoolId IP address pool ID.
          * 
          * @return builder
          * 
@@ -868,7 +868,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddressPoolId IP地址池的ID。
+         * @param ipAddressPoolId IP address pool ID.
          * 
          * @return builder
          * 
@@ -878,7 +878,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isBlocked 是否被封禁。true：是。false：否。
+         * @param isBlocked Whether it is blocked. true: yes. false: no.
          * 
          * @return builder
          * 
@@ -889,7 +889,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isBlocked 是否被封禁。true：是。false：否。
+         * @param isBlocked Whether it is blocked. true: yes. false: no.
          * 
          * @return builder
          * 
@@ -899,7 +899,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isp 线路类型。BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：中国电信静态单线。ChinaUnicom：中国联通静态单线。SingleLine*BGP：BGP单线。Fusion*BGP：融合BGP。ChinaMobile*Value：中国移动惠选型静态单线。ChinaUnicom*Value：中国联通惠选型静态单线。ChinaTelecom_Value：中国电信惠选型静态单线。
+         * @param isp Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
          * 
          * @return builder
          * 
@@ -910,7 +910,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isp 线路类型。BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：中国电信静态单线。ChinaUnicom：中国联通静态单线。SingleLine*BGP：BGP单线。Fusion*BGP：融合BGP。ChinaMobile*Value：中国移动惠选型静态单线。ChinaUnicom*Value：中国联通惠选型静态单线。ChinaTelecom_Value：中国电信惠选型静态单线。
+         * @param isp Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
          * 
          * @return builder
          * 
@@ -920,7 +920,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lockReason 公网IP被锁定的原因。financial: 因欠费被锁定。unlock: 欠费关停后充值恢复过程中。空值 : 没有被锁定。
+         * @param lockReason Reason for public IP lock. financial: locked due to overdue payment. unlock: restoring after recharge following suspension for overdue payment. Empty value: not locked.
          * 
          * @return builder
          * 
@@ -931,7 +931,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lockReason 公网IP被锁定的原因。financial: 因欠费被锁定。unlock: 欠费关停后充值恢复过程中。空值 : 没有被锁定。
+         * @param lockReason Reason for public IP lock. financial: locked due to overdue payment. unlock: restoring after recharge following suspension for overdue payment. Empty value: not locked.
          * 
          * @return builder
          * 
@@ -941,7 +941,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 公网IP的名称。
+         * @param name Name of the public IP.
          * 
          * @return builder
          * 
@@ -952,7 +952,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 公网IP的名称。
+         * @param name Name of the public IP.
          * 
          * @return builder
          * 
@@ -962,7 +962,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueTime 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+         * @param overdueTime Resource freeze time. This parameter returns a value only when the resource is frozen due to overdue payment.
          * 
          * @return builder
          * 
@@ -973,7 +973,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueTime 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+         * @param overdueTime Resource freeze time. This parameter returns a value only when the resource is frozen due to overdue payment.
          * 
          * @return builder
          * 
@@ -983,7 +983,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param period 代表购买包年包月公网IP的时长时，默认为“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36、48、60。当PeriodUnit传入2，Period取值范围：1～5。代表临时升配的时长时：单位为小时，取值范围：1～720。
+         * @param period When representing the duration for purchasing a subscription public IP, the default is &#39;1&#39;. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
          * 
          * @return builder
          * 
@@ -994,7 +994,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param period 代表购买包年包月公网IP的时长时，默认为“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36、48、60。当PeriodUnit传入2，Period取值范围：1～5。代表临时升配的时长时：单位为小时，取值范围：1～720。
+         * @param period When representing the duration for purchasing a subscription public IP, the default is &#39;1&#39;. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
          * 
          * @return builder
          * 
@@ -1004,7 +1004,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param periodUnit 购买包年包月公网IP时长的单位。取值如下：1（默认值）：月。2 ：年。
+         * @param periodUnit Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
          * 
          * @return builder
          * 
@@ -1015,7 +1015,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param periodUnit 购买包年包月公网IP时长的单位。取值如下：1（默认值）：月。2 ：年。
+         * @param periodUnit Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
          * 
          * @return builder
          * 
@@ -1025,7 +1025,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateIpAddress 要绑定公网IP的实例的私网IP地址。只支持传入云服务ECS主网卡的私网IP地址和辅助网卡IP地址。若不填写：InstanceType传入EcsInstance，则绑定云服务器ECS主网卡的主私网IP地址。InstanceType传入NetworkInterface，则绑定辅助网卡主私网IP地址。
+         * @param privateIpAddress Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
          * 
          * @return builder
          * 
@@ -1036,7 +1036,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateIpAddress 要绑定公网IP的实例的私网IP地址。只支持传入云服务ECS主网卡的私网IP地址和辅助网卡IP地址。若不填写：InstanceType传入EcsInstance，则绑定云服务器ECS主网卡的主私网IP地址。InstanceType传入NetworkInterface，则绑定辅助网卡主私网IP地址。
+         * @param privateIpAddress Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
          * 
          * @return builder
          * 
@@ -1046,7 +1046,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 公网IP所属项目的名称。
+         * @param projectName Name of the project to which the public IP belongs.
          * 
          * @return builder
          * 
@@ -1057,7 +1057,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 公网IP所属项目的名称。
+         * @param projectName Name of the project to which the public IP belongs.
          * 
          * @return builder
          * 
@@ -1067,7 +1067,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param releaseWithInstance 是否随云服务器实例删除。仅按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放。true：是。false：否。
+         * @param releaseWithInstance Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
          * 
          * @return builder
          * 
@@ -1078,7 +1078,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param releaseWithInstance 是否随云服务器实例删除。仅按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放。true：是。false：否。
+         * @param releaseWithInstance Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
          * 
          * @return builder
          * 
@@ -1088,7 +1088,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param renewPeriodTimes 自动续费的时长，取值范围1、2、3、6、12，单位：月。若RenewType传入2，则必须传入RenewPeriodTimes
+         * @param renewPeriodTimes Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
          * 
          * @return builder
          * 
@@ -1099,7 +1099,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param renewPeriodTimes 自动续费的时长，取值范围1、2、3、6、12，单位：月。若RenewType传入2，则必须传入RenewPeriodTimes
+         * @param renewPeriodTimes Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
          * 
          * @return builder
          * 
@@ -1109,7 +1109,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param renewType 包年包月公网IP续费的方式。取值如下：1（默认值）：手动续费。2：自动续费。3：到期不续费。
+         * @param renewType Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
          * 
          * @return builder
          * 
@@ -1120,7 +1120,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param renewType 包年包月公网IP续费的方式。取值如下：1（默认值）：手动续费。2：自动续费。3：到期不续费。
+         * @param renewType Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
          * 
          * @return builder
          * 
@@ -1130,7 +1130,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityProtectionInstanceId DDoS原生防护（企业版）ID。您可以调用 DescInstanceList 接口，查询DDoS原生防护（企业版）的ID。当SecurityProtectionTypes传入AntiDDoS_Enhanced时，此参数必须传入。
+         * @param securityProtectionInstanceId DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
          * 
          * @return builder
          * 
@@ -1141,7 +1141,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityProtectionInstanceId DDoS原生防护（企业版）ID。您可以调用 DescInstanceList 接口，查询DDoS原生防护（企业版）的ID。当SecurityProtectionTypes传入AntiDDoS_Enhanced时，此参数必须传入。
+         * @param securityProtectionInstanceId DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
          * 
          * @return builder
          * 
@@ -1151,7 +1151,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityProtectionTypes 防护类型。AntiDDoS_Enhanced：增强防护类型的公网IP，可以加入到DDoS原生防护（企业版）实例。空值：默认防护类型的公网IP。
+         * @param securityProtectionTypes Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
          * 
          * @return builder
          * 
@@ -1162,7 +1162,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityProtectionTypes 防护类型。AntiDDoS_Enhanced：增强防护类型的公网IP，可以加入到DDoS原生防护（企业版）实例。空值：默认防护类型的公网IP。
+         * @param securityProtectionTypes Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
          * 
          * @return builder
          * 
@@ -1172,7 +1172,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityProtectionTypes 防护类型。AntiDDoS_Enhanced：增强防护类型的公网IP，可以加入到DDoS原生防护（企业版）实例。空值：默认防护类型的公网IP。
+         * @param securityProtectionTypes Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
          * 
          * @return builder
          * 
@@ -1182,7 +1182,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceManaged 是否由服务管理
+         * @param serviceManaged Managed by service
          * 
          * @return builder
          * 
@@ -1193,7 +1193,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceManaged 是否由服务管理
+         * @param serviceManaged Managed by service
          * 
          * @return builder
          * 
@@ -1203,7 +1203,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 公网IP的状态。Attaching：绑定中。Detaching：解绑中。Attached：已绑定。Available：可用。Deleting：删除中。
+         * @param status Status of the public IP. Attaching: binding in progress. Detaching: unbinding in progress. Attached: bound. Available: available. Deleting: deleting.
          * 
          * @return builder
          * 
@@ -1214,7 +1214,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 公网IP的状态。Attaching：绑定中。Detaching：解绑中。Attached：已绑定。Available：可用。Deleting：删除中。
+         * @param status Status of the public IP. Attaching: binding in progress. Detaching: unbinding in progress. Attached: bound. Available: available. Deleting: deleting.
          * 
          * @return builder
          * 
@@ -1237,7 +1237,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新公网IP的时间。
+         * @param updatedTime Time when the public IP was updated.
          * 
          * @return builder
          * 
@@ -1248,7 +1248,7 @@ public final class EipState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新公网IP的时间。
+         * @param updatedTime Time when the public IP was updated.
          * 
          * @return builder
          * 

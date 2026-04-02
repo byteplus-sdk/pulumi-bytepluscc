@@ -16,14 +16,14 @@ public final class ClusterClusterConfigApiServerPublicAccessConfigArgs extends c
     public static final ClusterClusterConfigApiServerPublicAccessConfigArgs Empty = new ClusterClusterConfigApiServerPublicAccessConfigArgs();
 
     /**
-     * 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+     * Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
      * 
      */
     @Import(name="publicAccessNetworkConfig")
     private @Nullable Output<ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigArgs> publicAccessNetworkConfig;
 
     /**
-     * @return 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+     * @return Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
      * 
      */
     public Optional<Output<ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigArgs>> publicAccessNetworkConfig() {
@@ -55,7 +55,7 @@ public final class ClusterClusterConfigApiServerPublicAccessConfigArgs extends c
         }
 
         /**
-         * @param publicAccessNetworkConfig 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+         * @param publicAccessNetworkConfig Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class ClusterClusterConfigApiServerPublicAccessConfigArgs extends c
         }
 
         /**
-         * @param publicAccessNetworkConfig 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+         * @param publicAccessNetworkConfig Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
          * 
          * @return builder
          * 

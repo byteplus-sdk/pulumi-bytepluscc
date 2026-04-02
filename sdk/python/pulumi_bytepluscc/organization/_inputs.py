@@ -32,27 +32,27 @@ if not MYPY:
     class AccountSecureContactInfoArgsDict(TypedDict):
         email: NotRequired[pulumi.Input[builtins.str]]
         """
-        安全邮箱。
+        Security email
         """
         email_verified: NotRequired[pulumi.Input[builtins.int]]
         """
-        安全邮箱是否验证，1: 未验证，2: 已验证。
+        Security email verification status: 1. Not verified, 2. Verified
         """
         new_email: NotRequired[pulumi.Input[builtins.str]]
         """
-        变更中的新邮箱。
+        New email being changed
         """
         new_phone: NotRequired[pulumi.Input[builtins.str]]
         """
-        变更中的新手机号。
+        New mobile number being changed
         """
         phone: NotRequired[pulumi.Input[builtins.str]]
         """
-        安全手机号。
+        Security mobile number
         """
         phone_verified: NotRequired[pulumi.Input[builtins.int]]
         """
-        安全手机号是否验证，1: 未验证，2: 已验证。
+        Security mobile number verification status: 1. Not verified, 2. Verified
         """
 elif False:
     AccountSecureContactInfoArgsDict: TypeAlias = Mapping[str, Any]
@@ -67,12 +67,12 @@ class AccountSecureContactInfoArgs:
                  phone: Optional[pulumi.Input[builtins.str]] = None,
                  phone_verified: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] email: 安全邮箱。
-        :param pulumi.Input[builtins.int] email_verified: 安全邮箱是否验证，1: 未验证，2: 已验证。
-        :param pulumi.Input[builtins.str] new_email: 变更中的新邮箱。
-        :param pulumi.Input[builtins.str] new_phone: 变更中的新手机号。
-        :param pulumi.Input[builtins.str] phone: 安全手机号。
-        :param pulumi.Input[builtins.int] phone_verified: 安全手机号是否验证，1: 未验证，2: 已验证。
+        :param pulumi.Input[builtins.str] email: Security email
+        :param pulumi.Input[builtins.int] email_verified: Security email verification status: 1. Not verified, 2. Verified
+        :param pulumi.Input[builtins.str] new_email: New email being changed
+        :param pulumi.Input[builtins.str] new_phone: New mobile number being changed
+        :param pulumi.Input[builtins.str] phone: Security mobile number
+        :param pulumi.Input[builtins.int] phone_verified: Security mobile number verification status: 1. Not verified, 2. Verified
         """
         if email is not None:
             pulumi.set(__self__, "email", email)
@@ -91,7 +91,7 @@ class AccountSecureContactInfoArgs:
     @pulumi.getter
     def email(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全邮箱。
+        Security email
         """
         return pulumi.get(self, "email")
 
@@ -103,7 +103,7 @@ class AccountSecureContactInfoArgs:
     @pulumi.getter(name="emailVerified")
     def email_verified(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        安全邮箱是否验证，1: 未验证，2: 已验证。
+        Security email verification status: 1. Not verified, 2. Verified
         """
         return pulumi.get(self, "email_verified")
 
@@ -115,7 +115,7 @@ class AccountSecureContactInfoArgs:
     @pulumi.getter(name="newEmail")
     def new_email(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        变更中的新邮箱。
+        New email being changed
         """
         return pulumi.get(self, "new_email")
 
@@ -127,7 +127,7 @@ class AccountSecureContactInfoArgs:
     @pulumi.getter(name="newPhone")
     def new_phone(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        变更中的新手机号。
+        New mobile number being changed
         """
         return pulumi.get(self, "new_phone")
 
@@ -139,7 +139,7 @@ class AccountSecureContactInfoArgs:
     @pulumi.getter
     def phone(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全手机号。
+        Security mobile number
         """
         return pulumi.get(self, "phone")
 
@@ -151,7 +151,7 @@ class AccountSecureContactInfoArgs:
     @pulumi.getter(name="phoneVerified")
     def phone_verified(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        安全手机号是否验证，1: 未验证，2: 已验证。
+        Security mobile number verification status: 1. Not verified, 2. Verified
         """
         return pulumi.get(self, "phone_verified")
 
@@ -164,11 +164,11 @@ if not MYPY:
     class AccountTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Tag key
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value
         """
 elif False:
     AccountTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -179,8 +179,8 @@ class AccountTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -191,7 +191,7 @@ class AccountTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -203,7 +203,7 @@ class AccountTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -216,31 +216,31 @@ if not MYPY:
     class OrganizationOrganizationArgsDict(TypedDict):
         created_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        创建时间
+        Creation Time
         """
         description: NotRequired[pulumi.Input[builtins.str]]
         """
-        描述
+        Description
         """
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        组织名称
+        Organization Name
         """
         owner: NotRequired[pulumi.Input[builtins.str]]
         """
-        管理员ID
+        Administrator ID
         """
         status: NotRequired[pulumi.Input[builtins.int]]
         """
-        状态
+        Status
         """
         type: NotRequired[pulumi.Input[builtins.int]]
         """
-        组织类型，企业组织固定是 1
+        Organization type, enterprise organization is always 1
         """
         updated_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        更新时间
+        Last Updated
         """
 elif False:
     OrganizationOrganizationArgsDict: TypeAlias = Mapping[str, Any]
@@ -256,13 +256,13 @@ class OrganizationOrganizationArgs:
                  type: Optional[pulumi.Input[builtins.int]] = None,
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] created_time: 创建时间
-        :param pulumi.Input[builtins.str] description: 描述
-        :param pulumi.Input[builtins.str] name: 组织名称
-        :param pulumi.Input[builtins.str] owner: 管理员ID
-        :param pulumi.Input[builtins.int] status: 状态
-        :param pulumi.Input[builtins.int] type: 组织类型，企业组织固定是 1
-        :param pulumi.Input[builtins.str] updated_time: 更新时间
+        :param pulumi.Input[builtins.str] created_time: Creation Time
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] name: Organization Name
+        :param pulumi.Input[builtins.str] owner: Administrator ID
+        :param pulumi.Input[builtins.int] status: Status
+        :param pulumi.Input[builtins.int] type: Organization type, enterprise organization is always 1
+        :param pulumi.Input[builtins.str] updated_time: Last Updated
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -283,7 +283,7 @@ class OrganizationOrganizationArgs:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -295,7 +295,7 @@ class OrganizationOrganizationArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        描述
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -307,7 +307,7 @@ class OrganizationOrganizationArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组织名称
+        Organization Name
         """
         return pulumi.get(self, "name")
 
@@ -319,7 +319,7 @@ class OrganizationOrganizationArgs:
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        管理员ID
+        Administrator ID
         """
         return pulumi.get(self, "owner")
 
@@ -331,7 +331,7 @@ class OrganizationOrganizationArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        状态
+        Status
         """
         return pulumi.get(self, "status")
 
@@ -343,7 +343,7 @@ class OrganizationOrganizationArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        组织类型，企业组织固定是 1
+        Organization type, enterprise organization is always 1
         """
         return pulumi.get(self, "type")
 
@@ -355,7 +355,7 @@ class OrganizationOrganizationArgs:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间
+        Last Updated
         """
         return pulumi.get(self, "updated_time")
 
@@ -368,15 +368,15 @@ if not MYPY:
     class OrganizationOwnerArgsDict(TypedDict):
         account_id: NotRequired[pulumi.Input[builtins.int]]
         """
-        账号ID
+        Account ID
         """
         account_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        账号名称
+        Account Name
         """
         main_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        主体名称
+        Entity Name
         """
 elif False:
     OrganizationOwnerArgsDict: TypeAlias = Mapping[str, Any]
@@ -388,9 +388,9 @@ class OrganizationOwnerArgs:
                  account_name: Optional[pulumi.Input[builtins.str]] = None,
                  main_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.int] account_id: 账号ID
-        :param pulumi.Input[builtins.str] account_name: 账号名称
-        :param pulumi.Input[builtins.str] main_name: 主体名称
+        :param pulumi.Input[builtins.int] account_id: Account ID
+        :param pulumi.Input[builtins.str] account_name: Account Name
+        :param pulumi.Input[builtins.str] main_name: Entity Name
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -403,7 +403,7 @@ class OrganizationOwnerArgs:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        账号ID
+        Account ID
         """
         return pulumi.get(self, "account_id")
 
@@ -415,7 +415,7 @@ class OrganizationOwnerArgs:
     @pulumi.getter(name="accountName")
     def account_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号名称
+        Account Name
         """
         return pulumi.get(self, "account_name")
 
@@ -427,7 +427,7 @@ class OrganizationOwnerArgs:
     @pulumi.getter(name="mainName")
     def main_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        主体名称
+        Entity Name
         """
         return pulumi.get(self, "main_name")
 

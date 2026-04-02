@@ -17,14 +17,14 @@ public final class UpstreamSourceSourceSpecArgs extends com.pulumi.resources.Res
     public static final UpstreamSourceSourceSpecArgs Empty = new UpstreamSourceSourceSpecArgs();
 
     /**
-     * 容器集群来源。
+     * Container cluster source
      * 
      */
     @Import(name="k8SSource")
     private @Nullable Output<UpstreamSourceSourceSpecK8SSourceArgs> k8SSource;
 
     /**
-     * @return 容器集群来源。
+     * @return Container cluster source
      * 
      */
     public Optional<Output<UpstreamSourceSourceSpecK8SSourceArgs>> k8SSource() {
@@ -32,14 +32,14 @@ public final class UpstreamSourceSourceSpecArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 注册中心来源。
+     * Registry source
      * 
      */
     @Import(name="nacosSource")
     private @Nullable Output<UpstreamSourceSourceSpecNacosSourceArgs> nacosSource;
 
     /**
-     * @return 注册中心来源。
+     * @return Registry source
      * 
      */
     public Optional<Output<UpstreamSourceSourceSpecNacosSourceArgs>> nacosSource() {
@@ -72,7 +72,7 @@ public final class UpstreamSourceSourceSpecArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param k8SSource 容器集群来源。
+         * @param k8SSource Container cluster source
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class UpstreamSourceSourceSpecArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param k8SSource 容器集群来源。
+         * @param k8SSource Container cluster source
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class UpstreamSourceSourceSpecArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param nacosSource 注册中心来源。
+         * @param nacosSource Registry source
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class UpstreamSourceSourceSpecArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param nacosSource 注册中心来源。
+         * @param nacosSource Registry source
          * 
          * @return builder
          * 

@@ -17,14 +17,14 @@ public final class DomainTimeoutTimeoutRuleArgs extends com.pulumi.resources.Res
     public static final DomainTimeoutTimeoutRuleArgs Empty = new DomainTimeoutTimeoutRuleArgs();
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainTimeoutTimeoutRuleConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainTimeoutTimeoutRuleConditionArgs>> condition() {
@@ -32,14 +32,14 @@ public final class DomainTimeoutTimeoutRuleArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 表示超时时间的配置。
+     * Indicates the timeout configuration.
      * 
      */
     @Import(name="timeoutAction")
     private @Nullable Output<DomainTimeoutTimeoutRuleTimeoutActionArgs> timeoutAction;
 
     /**
-     * @return 表示超时时间的配置。
+     * @return Indicates the timeout configuration.
      * 
      */
     public Optional<Output<DomainTimeoutTimeoutRuleTimeoutActionArgs>> timeoutAction() {
@@ -72,7 +72,7 @@ public final class DomainTimeoutTimeoutRuleArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainTimeoutTimeoutRuleArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainTimeoutTimeoutRuleArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeoutAction 表示超时时间的配置。
+         * @param timeoutAction Indicates the timeout configuration.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainTimeoutTimeoutRuleArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeoutAction 表示超时时间的配置。
+         * @param timeoutAction Indicates the timeout configuration.
          * 
          * @return builder
          * 

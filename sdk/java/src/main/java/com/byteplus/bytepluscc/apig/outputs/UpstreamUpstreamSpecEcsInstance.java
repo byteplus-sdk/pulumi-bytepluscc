@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamUpstreamSpecEcsInstance {
     /**
-     * @return 云服务器ID。
+     * @return Cloud server ID
      * 
      */
     private @Nullable String ecsId;
     /**
-     * @return IP地址。
+     * @return IP address
      * 
      */
     private @Nullable String ip;
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     private @Nullable Integer port;
 
     private UpstreamUpstreamSpecEcsInstance() {}
     /**
-     * @return 云服务器ID。
+     * @return Cloud server ID
      * 
      */
     public Optional<String> ecsId() {
         return Optional.ofNullable(this.ecsId);
     }
     /**
-     * @return IP地址。
+     * @return IP address
      * 
      */
     public Optional<String> ip() {
         return Optional.ofNullable(this.ip);
     }
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     public Optional<Integer> port() {

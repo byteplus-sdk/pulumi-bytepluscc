@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
     public sealed class ClbEipArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 带宽峰值。
+        /// Peak bandwidth
         /// </summary>
         [Input("bandwidth")]
         public Input<double>? Bandwidth { get; set; }
 
         /// <summary>
-        /// 共享带宽包ID。
+        /// Shared bandwidth package ID
         /// </summary>
         [Input("bandwidthPackageId")]
         public Input<string>? BandwidthPackageId { get; set; }
 
         /// <summary>
-        /// 计费方式。
+        /// Billing method
         /// </summary>
         [Input("eipBillingType")]
         public Input<double>? EipBillingType { get; set; }
 
         /// <summary>
-        /// 线路类型。
+        /// Line type
         /// </summary>
         [Input("isp")]
         public Input<string>? Isp { get; set; }
 
         /// <summary>
-        /// 防护包ID。
+        /// Protection package ID
         /// </summary>
         [Input("securityProtectionInstanceId")]
         public Input<double>? SecurityProtectionInstanceId { get; set; }
@@ -47,7 +47,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
         private InputList<string>? _securityProtectionTypes;
 
         /// <summary>
-        /// 安全防护类型。
+        /// Security protection type
         /// </summary>
         public InputList<string> SecurityProtectionTypes
         {

@@ -14,12 +14,12 @@ import java.util.Objects;
 @CustomType
 public final class GetPermissionSetResult {
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     private String createdTime;
     /**
-     * @return 权限集描述。
+     * @return Permission Set Description
      * 
      */
     private String description;
@@ -29,51 +29,51 @@ public final class GetPermissionSetResult {
      */
     private String id;
     /**
-     * @return 权限集名称。
+     * @return Permission Set Name
      * 
      */
     private String name;
     /**
-     * @return 权限集下的策略列表。
+     * @return Policy List Under Permission Set
      * 
      */
     private List<GetPermissionSetPermissionPolicy> permissionPolicies;
     /**
-     * @return 权限集 ID。
+     * @return Permission Set ID
      * 
      */
     private String permissionSetId;
     /**
-     * @return 跳转控制台 URL。
+     * @return Console Redirect URL
      * 
      */
     private String relayState;
     /**
-     * @return session 过期时间，单位秒。
+     * @return Session Expiration Time (seconds)
      * 
      */
     private Integer sessionDuration;
     /**
-     * @return 状态通知配置。
+     * @return Status Notification Configuration
      * 
      */
     private List<String> statusNotifications;
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     private String updatedTime;
 
     private GetPermissionSetResult() {}
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 权限集描述。
+     * @return Permission Set Description
      * 
      */
     public String description() {
@@ -87,49 +87,49 @@ public final class GetPermissionSetResult {
         return this.id;
     }
     /**
-     * @return 权限集名称。
+     * @return Permission Set Name
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 权限集下的策略列表。
+     * @return Policy List Under Permission Set
      * 
      */
     public List<GetPermissionSetPermissionPolicy> permissionPolicies() {
         return this.permissionPolicies;
     }
     /**
-     * @return 权限集 ID。
+     * @return Permission Set ID
      * 
      */
     public String permissionSetId() {
         return this.permissionSetId;
     }
     /**
-     * @return 跳转控制台 URL。
+     * @return Console Redirect URL
      * 
      */
     public String relayState() {
         return this.relayState;
     }
     /**
-     * @return session 过期时间，单位秒。
+     * @return Session Expiration Time (seconds)
      * 
      */
     public Integer sessionDuration() {
         return this.sessionDuration;
     }
     /**
-     * @return 状态通知配置。
+     * @return Status Notification Configuration
      * 
      */
     public List<String> statusNotifications() {
         return this.statusNotifications;
     }
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     public String updatedTime() {

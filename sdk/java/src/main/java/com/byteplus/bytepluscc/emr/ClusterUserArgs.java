@@ -18,14 +18,14 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
     public static final ClusterUserArgs Empty = new ClusterUserArgs();
 
     /**
-     * 集群ID。
+     * Cluster ID.
      * 
      */
     @Import(name="clusterId", required=true)
     private Output<String> clusterId;
 
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     public Output<String> clusterId() {
@@ -33,14 +33,14 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组描述。
+     * User group description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 用户组描述。
+     * @return User group description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -48,14 +48,14 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 旧的用户的登录密码。修改密码时必填。
+     * Old user login password. Required when changing password.
      * 
      */
     @Import(name="oldPassword")
     private @Nullable Output<String> oldPassword;
 
     /**
-     * @return 旧的用户的登录密码。修改密码时必填。
+     * @return Old user login password. Required when changing password.
      * 
      */
     public Optional<Output<String>> oldPassword() {
@@ -63,14 +63,14 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+     * New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
      * 
      */
     @Import(name="password", required=true)
     private Output<String> password;
 
     /**
-     * @return 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+     * @return New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
      * 
      */
     public Output<String> password() {
@@ -78,14 +78,14 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 所属用户组名称。
+     * User group name.
      * 
      */
     @Import(name="userGroupNames")
     private @Nullable Output<List<String>> userGroupNames;
 
     /**
-     * @return 所属用户组名称。
+     * @return User group name.
      * 
      */
     public Optional<Output<List<String>>> userGroupNames() {
@@ -93,14 +93,14 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群用户名。仅支持小写字母。
+     * Cluster username. Only lowercase letters are supported.
      * 
      */
     @Import(name="userName", required=true)
     private Output<String> userName;
 
     /**
-     * @return 集群用户名。仅支持小写字母。
+     * @return Cluster username. Only lowercase letters are supported.
      * 
      */
     public Output<String> userName() {
@@ -137,7 +137,7 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 集群ID。
+         * @param clusterId Cluster ID.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 集群ID。
+         * @param clusterId Cluster ID.
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 用户组描述。
+         * @param description User group description.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 用户组描述。
+         * @param description User group description.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param oldPassword 旧的用户的登录密码。修改密码时必填。
+         * @param oldPassword Old user login password. Required when changing password.
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param oldPassword 旧的用户的登录密码。修改密码时必填。
+         * @param oldPassword Old user login password. Required when changing password.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+         * @param password New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+         * @param password New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userGroupNames 所属用户组名称。
+         * @param userGroupNames User group name.
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userGroupNames 所属用户组名称。
+         * @param userGroupNames User group name.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userGroupNames 所属用户组名称。
+         * @param userGroupNames User group name.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 集群用户名。仅支持小写字母。
+         * @param userName Cluster username. Only lowercase letters are supported.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class ClusterUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 集群用户名。仅支持小写字母。
+         * @param userName Cluster username. Only lowercase letters are supported.
          * 
          * @return builder
          * 

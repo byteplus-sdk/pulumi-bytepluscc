@@ -17,14 +17,14 @@ public final class ClusterMonitoringConfigComponentConfigArgs extends com.pulumi
     public static final ClusterMonitoringConfigComponentConfigArgs Empty = new ClusterMonitoringConfigComponentConfigArgs();
 
     /**
-     * 是否启用该监控组件，true 表示启用，false 表示禁用。
+     * Whether to enable this monitoring component. true means enabled; false means disabled.
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return 是否启用该监控组件，true 表示启用，false 表示禁用。
+     * @return Whether to enable this monitoring component. true means enabled; false means disabled.
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -32,14 +32,14 @@ public final class ClusterMonitoringConfigComponentConfigArgs extends com.pulumi
     }
 
     /**
-     * 监控组件的名称，例如 &#39;prometheus&#39;、&#39;grafana&#39; 等。
+     * Name of the monitoring component, such as &#39;prometheus&#39;, &#39;grafana&#39;, etc.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 监控组件的名称，例如 &#39;prometheus&#39;、&#39;grafana&#39; 等。
+     * @return Name of the monitoring component, such as &#39;prometheus&#39;, &#39;grafana&#39;, etc.
      * 
      */
     public Optional<Output<String>> name() {
@@ -72,7 +72,7 @@ public final class ClusterMonitoringConfigComponentConfigArgs extends com.pulumi
         }
 
         /**
-         * @param enabled 是否启用该监控组件，true 表示启用，false 表示禁用。
+         * @param enabled Whether to enable this monitoring component. true means enabled; false means disabled.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class ClusterMonitoringConfigComponentConfigArgs extends com.pulumi
         }
 
         /**
-         * @param enabled 是否启用该监控组件，true 表示启用，false 表示禁用。
+         * @param enabled Whether to enable this monitoring component. true means enabled; false means disabled.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class ClusterMonitoringConfigComponentConfigArgs extends com.pulumi
         }
 
         /**
-         * @param name 监控组件的名称，例如 &#39;prometheus&#39;、&#39;grafana&#39; 等。
+         * @param name Name of the monitoring component, such as &#39;prometheus&#39;, &#39;grafana&#39;, etc.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class ClusterMonitoringConfigComponentConfigArgs extends com.pulumi
         }
 
         /**
-         * @param name 监控组件的名称，例如 &#39;prometheus&#39;、&#39;grafana&#39; 等。
+         * @param name Name of the monitoring component, such as &#39;prometheus&#39;, &#39;grafana&#39;, etc.
          * 
          * @return builder
          * 

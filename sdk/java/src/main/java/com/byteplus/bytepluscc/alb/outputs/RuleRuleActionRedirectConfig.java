@@ -12,62 +12,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleRuleActionRedirectConfig {
     /**
-     * @return 重定向域名，仅支持精确域名。
+     * @return Redirect domain. Only exact domains are supported.
      * 
      */
     private @Nullable String host;
     /**
-     * @return 重定向状态码，支持301，302，307，308。
+     * @return Redirect status codes supported: 301, 302, 307, 308.
      * 
      */
     private @Nullable String httpCode;
     /**
-     * @return 重定向 URI。。
+     * @return Redirect URI..
      * 
      */
     private @Nullable String path;
     /**
-     * @return 重定向端口。
+     * @return Redirect port.
      * 
      */
     private @Nullable String port;
     /**
-     * @return 重定向使用的协议，支持HTTP，HTTPS。
+     * @return Protocol used for redirect. Supports HTTP and HTTPS.
      * 
      */
     private @Nullable String protocol;
 
     private RuleRuleActionRedirectConfig() {}
     /**
-     * @return 重定向域名，仅支持精确域名。
+     * @return Redirect domain. Only exact domains are supported.
      * 
      */
     public Optional<String> host() {
         return Optional.ofNullable(this.host);
     }
     /**
-     * @return 重定向状态码，支持301，302，307，308。
+     * @return Redirect status codes supported: 301, 302, 307, 308.
      * 
      */
     public Optional<String> httpCode() {
         return Optional.ofNullable(this.httpCode);
     }
     /**
-     * @return 重定向 URI。。
+     * @return Redirect URI..
      * 
      */
     public Optional<String> path() {
         return Optional.ofNullable(this.path);
     }
     /**
-     * @return 重定向端口。
+     * @return Redirect port.
      * 
      */
     public Optional<String> port() {
         return Optional.ofNullable(this.port);
     }
     /**
-     * @return 重定向使用的协议，支持HTTP，HTTPS。
+     * @return Protocol used for redirect. Supports HTTP and HTTPS.
      * 
      */
     public Optional<String> protocol() {

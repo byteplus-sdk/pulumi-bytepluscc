@@ -100,7 +100,7 @@ class GetClusterResult:
     @pulumi.getter(name="clusterConfig")
     def cluster_config(self) -> 'outputs.GetClusterClusterConfigResult':
         """
-        集群控制面及部分节点的网络配置。
+        Network configuration for the cluster control plane and some nodes.
         """
         return pulumi.get(self, "cluster_config")
 
@@ -108,7 +108,7 @@ class GetClusterResult:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> builtins.str:
         """
-        集群 ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -116,7 +116,7 @@ class GetClusterResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+        Cluster creation time. Standard RFC3339 format, UTC+0.
         """
         return pulumi.get(self, "created_time")
 
@@ -124,7 +124,7 @@ class GetClusterResult:
     @pulumi.getter(name="deleteProtectionEnabled")
     def delete_protection_enabled(self) -> builtins.bool:
         """
-        集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+        Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
         """
         return pulumi.get(self, "delete_protection_enabled")
 
@@ -132,7 +132,7 @@ class GetClusterResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        集群描述。长度限制为 300 个字符以内。
+        Cluster description. Maximum length is 300 characters.
         """
         return pulumi.get(self, "description")
 
@@ -148,7 +148,7 @@ class GetClusterResult:
     @pulumi.getter(name="irsaConfig")
     def irsa_config(self) -> 'outputs.GetClusterIrsaConfigResult':
         """
-        IRSA（IAM Role for Service Account）能力相关参数配置。
+        IRSA (IAM Role for Service Account) capability parameter configuration
         """
         return pulumi.get(self, "irsa_config")
 
@@ -156,7 +156,7 @@ class GetClusterResult:
     @pulumi.getter(name="kubernetesVersion")
     def kubernetes_version(self) -> builtins.str:
         """
-        集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+        Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
         """
         return pulumi.get(self, "kubernetes_version")
 
@@ -164,7 +164,7 @@ class GetClusterResult:
     @pulumi.getter(name="kubernetesVersionCreate")
     def kubernetes_version_create(self) -> builtins.str:
         """
-        集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+        Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
         """
         return pulumi.get(self, "kubernetes_version_create")
 
@@ -172,7 +172,7 @@ class GetClusterResult:
     @pulumi.getter(name="loggingConfig")
     def logging_config(self) -> 'outputs.GetClusterLoggingConfigResult':
         """
-        集群的日志配置信息。
+        Cluster log configuration information.
         """
         return pulumi.get(self, "logging_config")
 
@@ -180,7 +180,7 @@ class GetClusterResult:
     @pulumi.getter
     def message(self) -> builtins.str:
         """
-        集群状态描述。
+        Cluster status description.
         """
         return pulumi.get(self, "message")
 
@@ -188,7 +188,7 @@ class GetClusterResult:
     @pulumi.getter(name="monitoringConfig")
     def monitoring_config(self) -> 'outputs.GetClusterMonitoringConfigResult':
         """
-        监控配置信息。
+        Monitoring configuration information.
         """
         return pulumi.get(self, "monitoring_config")
 
@@ -196,7 +196,7 @@ class GetClusterResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
         """
         return pulumi.get(self, "name")
 
@@ -204,7 +204,7 @@ class GetClusterResult:
     @pulumi.getter(name="nodeStatistics")
     def node_statistics(self) -> 'outputs.GetClusterNodeStatisticsResult':
         """
-        集群中各主状态下对应的节点数量统计。
+        Statistics of node counts for each main status in the cluster.
         """
         return pulumi.get(self, "node_statistics")
 
@@ -212,7 +212,7 @@ class GetClusterResult:
     @pulumi.getter(name="podsConfig")
     def pods_config(self) -> 'outputs.GetClusterPodsConfigResult':
         """
-        Pod 的网络配置。
+        Pod network configuration.
         """
         return pulumi.get(self, "pods_config")
 
@@ -220,7 +220,7 @@ class GetClusterResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+        Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
         """
         return pulumi.get(self, "project_name")
 
@@ -228,7 +228,7 @@ class GetClusterResult:
     @pulumi.getter(name="servicesConfig")
     def services_config(self) -> 'outputs.GetClusterServicesConfigResult':
         """
-        服务的网络配置。
+        Network configuration for the service.
         """
         return pulumi.get(self, "services_config")
 
@@ -236,7 +236,7 @@ class GetClusterResult:
     @pulumi.getter(name="sourceRegion")
     def source_region(self) -> builtins.str:
         """
-        集群源地域。
+        Cluster source region
         """
         return pulumi.get(self, "source_region")
 
@@ -244,7 +244,7 @@ class GetClusterResult:
     @pulumi.getter
     def status(self) -> 'outputs.GetClusterStatusResult':
         """
-        集群状态。
+        Cluster status.
         """
         return pulumi.get(self, "status")
 
@@ -252,7 +252,7 @@ class GetClusterResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetClusterTagResult']:
         """
-        集群的标签。
+        Cluster tags.
         """
         return pulumi.get(self, "tags")
 
@@ -260,7 +260,7 @@ class GetClusterResult:
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        集群类型。
+        Cluster type.
         """
         return pulumi.get(self, "type")
 
@@ -268,7 +268,7 @@ class GetClusterResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+        Last update time of the cluster. Standard RFC3339 format, UTC+0.
         """
         return pulumi.get(self, "updated_time")
 

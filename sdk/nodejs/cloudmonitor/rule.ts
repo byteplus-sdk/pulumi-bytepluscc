@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 如果您需要监控某一云产品资源的数据状态，则可以创建云监控告警策略。当被监控的云产品资源数据达到告警的触发条件时，系统会通过您指定的方式推送告警通知，便于您及时发现存在异常数据的资源。
+ * If you need to monitor the data status of a cloud product resource, you can create a cloud monitoring alert policy. When the monitored resource data meets the alert trigger conditions, the system will send alert notifications using your specified method, helping you quickly identify resources with abnormal data.
  *
  * ## Import
  *
@@ -44,123 +44,123 @@ export class Rule extends pulumi.CustomResource {
     }
 
     /**
-     * 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+     * Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
      */
     public readonly alertMethods!: pulumi.Output<string[]>;
     /**
-     * 告警状态。 alerting：告警中 normal：正常。
+     * Alert status. alerting: In alert; normal: Normal.
      */
     public /*out*/ readonly alertState!: pulumi.Output<string>;
     /**
-     * 多指标判定条件。&&：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+     * Multi-metric determination condition. &&: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
      */
     public readonly conditionOperator!: pulumi.Output<string>;
     public readonly conditions!: pulumi.Output<outputs.cloudmonitor.RuleCondition[]>;
     /**
-     * 告警策略绑定的告警通知组 ID。
+     * Alert notification group ID bound to the alert policy.
      */
     public readonly contactGroupIds!: pulumi.Output<string[]>;
     /**
-     * 告警策略创建时间，时间戳格式。
+     * Alert policy creation time, in timestamp format.
      */
     public /*out*/ readonly createdAt!: pulumi.Output<string>;
     /**
-     * 告警策略描述信息。
+     * Alert policy description.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * Dimension 配置。
+     * Dimension configuration.
      */
     public readonly dimensionConditions!: pulumi.Output<outputs.cloudmonitor.RuleDimensionConditions>;
     /**
-     * 策略生效的截止时间，格式为HH:MM。
+     * Policy expiration time, in HH:MM format.
      */
     public readonly effectEndAt!: pulumi.Output<string>;
     /**
-     * 告警策略生效的开始时间，格式为HH:MM。
+     * Policy start time, in HH:MM format.
      */
     public readonly effectStartAt!: pulumi.Output<string>;
     /**
-     * 告警策略的开启状态。,enable：开启,disable：禁用
+     * Alert policy status. enable: enabled, disable: disabled
      */
     public readonly enableState!: pulumi.Output<string>;
     /**
-     * 触发告警需要持续的周期。单位为分钟。
+     * Duration required to trigger an alert, in minutes.
      */
     public readonly evaluationCount!: pulumi.Output<number>;
     /**
-     * 告警级别。critical：严重,warning：警告,notice：通知
+     * Alert level. critical: critical, warning: warning, notice: notification
      */
     public readonly level!: pulumi.Output<string>;
     public readonly levelConditions!: pulumi.Output<outputs.cloudmonitor.RuleLevelCondition[]>;
     /**
-     * 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+     * Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
      */
     public readonly multipleConditions!: pulumi.Output<boolean>;
     /**
-     * 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+     * Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
      */
     public readonly namespace!: pulumi.Output<string>;
     /**
-     * 无数据告警。
+     * No data alert.
      */
     public readonly noData!: pulumi.Output<outputs.cloudmonitor.RuleNoData>;
     /**
-     * 通知策略 ID。
+     * Notification policy ID.
      */
     public readonly notificationId!: pulumi.Output<string>;
     public readonly notifyTemplates!: pulumi.Output<outputs.cloudmonitor.RuleNotifyTemplate[]>;
     /**
-     * 告警策略检测的资源 ID。
+     * Resource ID detected by the alert policy.
      */
     public readonly originalDimensions!: pulumi.Output<outputs.cloudmonitor.RuleOriginalDimensions>;
     /**
-     * 告警策略所属项目。
+     * Project to which the alert policy belongs.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 告警恢复通知。
+     * Alert recovery notification.
      */
     public readonly recoveryNotify!: pulumi.Output<outputs.cloudmonitor.RuleRecoveryNotify>;
     /**
-     * 云产品所属可用区 ID。
+     * Availability zone ID of the cloud product.
      */
     public readonly regions!: pulumi.Output<string[]>;
     /**
-     * 告警策略检测的资源类型。
+     * Resource type detected by the alert policy.
      */
     public /*out*/ readonly resourceType!: pulumi.Output<string>;
     /**
-     * 告警策略 ID。
+     * Alarm policy ID.
      */
     public /*out*/ readonly ruleId!: pulumi.Output<string>;
     /**
-     * 告警策略名称。
+     * Alert policy name.
      */
     public readonly ruleName!: pulumi.Output<string>;
     /**
-     * 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+     * Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
      */
     public readonly ruleType!: pulumi.Output<string>;
     /**
-     * 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+     * Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
      */
     public readonly silenceTime!: pulumi.Output<number>;
     /**
-     * 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+     * Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
      */
     public readonly subNamespace!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.cloudmonitor.RuleTag[]>;
     /**
-     * 告警策略更新时间，时间戳格式。
+     * Alarm policy update time, in timestamp format.
      */
     public /*out*/ readonly updatedAt!: pulumi.Output<string>;
     /**
-     * 告警策略绑定的告警回调 URL 地址。
+     * Alarm callback URL bound to the alarm policy.
      */
     public readonly webhook!: pulumi.Output<string>;
     /**
-     * 告警发生时告警回调 ID 列表。
+     * Alarm callback ID list when an alarm occurs.
      */
     public readonly webhookIds!: pulumi.Output<string[]>;
 
@@ -286,123 +286,123 @@ export class Rule extends pulumi.CustomResource {
  */
 export interface RuleState {
     /**
-     * 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+     * Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
      */
     alertMethods?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 告警状态。 alerting：告警中 normal：正常。
+     * Alert status. alerting: In alert; normal: Normal.
      */
     alertState?: pulumi.Input<string>;
     /**
-     * 多指标判定条件。&&：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+     * Multi-metric determination condition. &&: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
      */
     conditionOperator?: pulumi.Input<string>;
     conditions?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleCondition>[]>;
     /**
-     * 告警策略绑定的告警通知组 ID。
+     * Alert notification group ID bound to the alert policy.
      */
     contactGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 告警策略创建时间，时间戳格式。
+     * Alert policy creation time, in timestamp format.
      */
     createdAt?: pulumi.Input<string>;
     /**
-     * 告警策略描述信息。
+     * Alert policy description.
      */
     description?: pulumi.Input<string>;
     /**
-     * Dimension 配置。
+     * Dimension configuration.
      */
     dimensionConditions?: pulumi.Input<inputs.cloudmonitor.RuleDimensionConditions>;
     /**
-     * 策略生效的截止时间，格式为HH:MM。
+     * Policy expiration time, in HH:MM format.
      */
     effectEndAt?: pulumi.Input<string>;
     /**
-     * 告警策略生效的开始时间，格式为HH:MM。
+     * Policy start time, in HH:MM format.
      */
     effectStartAt?: pulumi.Input<string>;
     /**
-     * 告警策略的开启状态。,enable：开启,disable：禁用
+     * Alert policy status. enable: enabled, disable: disabled
      */
     enableState?: pulumi.Input<string>;
     /**
-     * 触发告警需要持续的周期。单位为分钟。
+     * Duration required to trigger an alert, in minutes.
      */
     evaluationCount?: pulumi.Input<number>;
     /**
-     * 告警级别。critical：严重,warning：警告,notice：通知
+     * Alert level. critical: critical, warning: warning, notice: notification
      */
     level?: pulumi.Input<string>;
     levelConditions?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleLevelCondition>[]>;
     /**
-     * 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+     * Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
      */
     multipleConditions?: pulumi.Input<boolean>;
     /**
-     * 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+     * Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
      */
     namespace?: pulumi.Input<string>;
     /**
-     * 无数据告警。
+     * No data alert.
      */
     noData?: pulumi.Input<inputs.cloudmonitor.RuleNoData>;
     /**
-     * 通知策略 ID。
+     * Notification policy ID.
      */
     notificationId?: pulumi.Input<string>;
     notifyTemplates?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleNotifyTemplate>[]>;
     /**
-     * 告警策略检测的资源 ID。
+     * Resource ID detected by the alert policy.
      */
     originalDimensions?: pulumi.Input<inputs.cloudmonitor.RuleOriginalDimensions>;
     /**
-     * 告警策略所属项目。
+     * Project to which the alert policy belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 告警恢复通知。
+     * Alert recovery notification.
      */
     recoveryNotify?: pulumi.Input<inputs.cloudmonitor.RuleRecoveryNotify>;
     /**
-     * 云产品所属可用区 ID。
+     * Availability zone ID of the cloud product.
      */
     regions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 告警策略检测的资源类型。
+     * Resource type detected by the alert policy.
      */
     resourceType?: pulumi.Input<string>;
     /**
-     * 告警策略 ID。
+     * Alarm policy ID.
      */
     ruleId?: pulumi.Input<string>;
     /**
-     * 告警策略名称。
+     * Alert policy name.
      */
     ruleName?: pulumi.Input<string>;
     /**
-     * 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+     * Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
      */
     ruleType?: pulumi.Input<string>;
     /**
-     * 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+     * Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
      */
     silenceTime?: pulumi.Input<number>;
     /**
-     * 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+     * Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
      */
     subNamespace?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleTag>[]>;
     /**
-     * 告警策略更新时间，时间戳格式。
+     * Alarm policy update time, in timestamp format.
      */
     updatedAt?: pulumi.Input<string>;
     /**
-     * 告警策略绑定的告警回调 URL 地址。
+     * Alarm callback URL bound to the alarm policy.
      */
     webhook?: pulumi.Input<string>;
     /**
-     * 告警发生时告警回调 ID 列表。
+     * Alarm callback ID list when an alarm occurs.
      */
     webhookIds?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -412,103 +412,103 @@ export interface RuleState {
  */
 export interface RuleArgs {
     /**
-     * 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+     * Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
      */
     alertMethods?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 多指标判定条件。&&：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+     * Multi-metric determination condition. &&: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
      */
     conditionOperator?: pulumi.Input<string>;
     conditions?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleCondition>[]>;
     /**
-     * 告警策略绑定的告警通知组 ID。
+     * Alert notification group ID bound to the alert policy.
      */
     contactGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 告警策略描述信息。
+     * Alert policy description.
      */
     description?: pulumi.Input<string>;
     /**
-     * Dimension 配置。
+     * Dimension configuration.
      */
     dimensionConditions?: pulumi.Input<inputs.cloudmonitor.RuleDimensionConditions>;
     /**
-     * 策略生效的截止时间，格式为HH:MM。
+     * Policy expiration time, in HH:MM format.
      */
     effectEndAt: pulumi.Input<string>;
     /**
-     * 告警策略生效的开始时间，格式为HH:MM。
+     * Policy start time, in HH:MM format.
      */
     effectStartAt: pulumi.Input<string>;
     /**
-     * 告警策略的开启状态。,enable：开启,disable：禁用
+     * Alert policy status. enable: enabled, disable: disabled
      */
     enableState: pulumi.Input<string>;
     /**
-     * 触发告警需要持续的周期。单位为分钟。
+     * Duration required to trigger an alert, in minutes.
      */
     evaluationCount: pulumi.Input<number>;
     /**
-     * 告警级别。critical：严重,warning：警告,notice：通知
+     * Alert level. critical: critical, warning: warning, notice: notification
      */
     level: pulumi.Input<string>;
     levelConditions?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleLevelCondition>[]>;
     /**
-     * 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+     * Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
      */
     multipleConditions?: pulumi.Input<boolean>;
     /**
-     * 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+     * Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
      */
     namespace: pulumi.Input<string>;
     /**
-     * 无数据告警。
+     * No data alert.
      */
     noData?: pulumi.Input<inputs.cloudmonitor.RuleNoData>;
     /**
-     * 通知策略 ID。
+     * Notification policy ID.
      */
     notificationId?: pulumi.Input<string>;
     notifyTemplates?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleNotifyTemplate>[]>;
     /**
-     * 告警策略检测的资源 ID。
+     * Resource ID detected by the alert policy.
      */
     originalDimensions?: pulumi.Input<inputs.cloudmonitor.RuleOriginalDimensions>;
     /**
-     * 告警策略所属项目。
+     * Project to which the alert policy belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 告警恢复通知。
+     * Alert recovery notification.
      */
     recoveryNotify?: pulumi.Input<inputs.cloudmonitor.RuleRecoveryNotify>;
     /**
-     * 云产品所属可用区 ID。
+     * Availability zone ID of the cloud product.
      */
     regions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 告警策略名称。
+     * Alert policy name.
      */
     ruleName: pulumi.Input<string>;
     /**
-     * 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+     * Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
      */
     ruleType: pulumi.Input<string>;
     /**
-     * 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+     * Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
      */
     silenceTime: pulumi.Input<number>;
     /**
-     * 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+     * Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
      */
     subNamespace: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleTag>[]>;
     /**
-     * 告警策略绑定的告警回调 URL 地址。
+     * Alarm callback URL bound to the alarm policy.
      */
     webhook?: pulumi.Input<string>;
     /**
-     * 告警发生时告警回调 ID 列表。
+     * Alarm callback ID list when an alarm occurs.
      */
     webhookIds?: pulumi.Input<pulumi.Input<string>[]>;
 }

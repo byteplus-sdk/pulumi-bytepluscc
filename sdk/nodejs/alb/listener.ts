@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 每个 ALB 实例至少要有一个监听器才能正常工作。监听器接收客户端请求，并根据您配置的转发规则和负载均衡算法将请求分发到后端服务器上。您可以在一个 ALB 实例下创建多个监听器，并为监听器配置不同的监听协议，以处理使用不同协议的客户端请求。
+ * Each ALB instance must have at least one listener to function properly. The listener receives client requests and distributes them to backend servers based on your configured forwarding rules and load balancing algorithm. You can create multiple listeners under one ALB instance and configure different protocols for each listener to handle client requests using different protocols.
  *
  * ## Import
  *
@@ -44,114 +44,114 @@ export class Listener extends pulumi.CustomResource {
     }
 
     /**
-     * 监听器是否已开启“在访问日志中记录自定义header”的功能：on：表示该功能已开启。off：表示该功能未开启。
+     * Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
      */
     public readonly accessLogRecordCustomizedHeadersEnabled!: pulumi.Output<string>;
     /**
-     * 监听器绑定的访问控制策略组 ID。当AclStatus参数配置为 on 时，AclIds为必填参数。
+     * Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
      */
     public readonly aclIds!: pulumi.Output<string[]>;
     /**
-     * 是否开启访问控制功能。取值如下：on：开启。off ：不开启（默认）。
+     * Enable access control. Values: on: enabled. off: disabled (default).
      */
     public readonly aclStatus!: pulumi.Output<string>;
     /**
-     * 访问控制的方式，取值如下：white：白名单方式。表示监听器仅转发来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器不会转发任何请求。black：黑名单方式。表示仅拒绝来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器会转发全部请求。当AclStatus参数配置为 on 时，AclType为必填参数。
+     * Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
      */
     public readonly aclType!: pulumi.Output<string>;
     /**
-     * HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 alb 时，必须指定 CACertificateId 参数。
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
      */
     public readonly caCertificateId!: pulumi.Output<string>;
     /**
-     * HTTPS 监听器关联的 CA 证书的来源，用于双向认证。alb（默认）：表示通过 ALB 上传的证书。标准版 ALB 实例不支持此来源的证书。pca*root：表示通过火山引擎证书中心购买或上传的私有根 CA 证书。pca*sub：表示通过火山引擎证书中心购买或上传的私有子 CA 证书。
+     * Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
      */
     public readonly caCertificateSource!: pulumi.Output<string>;
     /**
-     * HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 certCenter 时必传。
+     * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
      */
     public readonly certCenterCertificateId!: pulumi.Output<string>;
     /**
-     * HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 alb 时必传。
+     * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
      */
     public readonly certificateId!: pulumi.Output<string>;
     /**
-     * HTTPS监听器关联的默认证书的来源，取值：alb：表示通过 ALB 上传的证书。cert*center：表示通过火山引擎证书中心购买或上传的 SSL 证书。pca*leaf：表示通过火山引擎证书中心购买或上传的私有叶子证书。
+     * The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
      */
     public readonly certificateSource!: pulumi.Output<string>;
     /**
-     * 监听器的创建时间。
+     * Listener creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 个性化配置ID，未绑定时值为空字符串。
+     * Personalized configuration ID. If not bound, the value is an empty string.
      */
     public readonly customizedCfgId!: pulumi.Output<string>;
     /**
-     * 监听器的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      */
     public readonly description!: pulumi.Output<string>;
     public readonly domainExtensions!: pulumi.Output<outputs.alb.ListenerDomainExtension[]>;
     /**
-     * HTTP2.0 特性开关，该参数仅对 HTTPS 监听器有效。取值如下：on：开启。off：关闭（默认）。
+     * HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
      */
     public readonly enableHttp2!: pulumi.Output<string>;
     /**
-     * QUIC 特性开关，该参数仅对 HTTPS 监听器有效，取值如下：on：开启。off：关闭（默认）。只有标准版 ALB 实例支持 QUIC。
+     * QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
      */
     public readonly enableQuic!: pulumi.Output<string>;
     /**
-     * 监听器开启/关闭，取值如下：on：开启（默认）。off：关闭。
+     * Listener on/off status. Values: on: On (default). off: Off.
      */
     public readonly enabled!: pulumi.Output<string>;
     /**
-     * 监听器 ID。
+     * Listener ID.
      */
     public /*out*/ readonly listenerId!: pulumi.Output<string>;
     /**
-     * 监听器的名字。不填写时以“协议-端口”格式命名。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1-128字符之间。
+     * Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
      */
     public readonly listenerName!: pulumi.Output<string>;
     /**
-     * 监听器所属的负载均衡实例 ID。
+     * Load balancer instance ID to which the listener belongs.
      */
     public readonly loadBalancerId!: pulumi.Output<string>;
     /**
-     * HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pcaLeaf 时必传。
+     * Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
      */
     public readonly pcaLeafCertificateId!: pulumi.Output<string>;
     /**
-     * HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pcaRoot 时，必须指定 PcaRootCACertificateId 参数。
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
      */
     public readonly pcaRootCaCertificateId!: pulumi.Output<string>;
     /**
-     * HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pcaSub 时，必须指定 PcaSubCACertificateId 参数。
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
      */
     public readonly pcaSubCaCertificateId!: pulumi.Output<string>;
     /**
-     * 监听器的监听端口，取值：1   - 65535 。
+     * The listener port. Values: 1   - 65535.
      */
     public readonly port!: pulumi.Output<number>;
     /**
-     * 监听器所属项目名称。
+     * Name of the project to which the listener belongs.
      */
     public /*out*/ readonly projectName!: pulumi.Output<string>;
     /**
-     * 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
+     * Listener protocol. Supports HTTP and HTTPS protocols.
      */
     public readonly protocol!: pulumi.Output<string>;
     /**
-     * 监听器的默认服务器组。
+     * Default server group for the listener.
      */
     public readonly serverGroupId!: pulumi.Output<string>;
     public readonly serverGroups!: pulumi.Output<outputs.alb.ListenerServerGroup[]>;
     /**
-     * 监听器的状态。取值如下：Creating：创建中。Active： 运行中。Pending： 变配中。Disabled：已停止。Deleting：删除中。
+     * Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.alb.ListenerTag[]>;
     /**
-     * 监听器最近一次的操作时间。
+     * Time of the listener's most recent operation.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -253,114 +253,114 @@ export class Listener extends pulumi.CustomResource {
  */
 export interface ListenerState {
     /**
-     * 监听器是否已开启“在访问日志中记录自定义header”的功能：on：表示该功能已开启。off：表示该功能未开启。
+     * Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
      */
     accessLogRecordCustomizedHeadersEnabled?: pulumi.Input<string>;
     /**
-     * 监听器绑定的访问控制策略组 ID。当AclStatus参数配置为 on 时，AclIds为必填参数。
+     * Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
      */
     aclIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 是否开启访问控制功能。取值如下：on：开启。off ：不开启（默认）。
+     * Enable access control. Values: on: enabled. off: disabled (default).
      */
     aclStatus?: pulumi.Input<string>;
     /**
-     * 访问控制的方式，取值如下：white：白名单方式。表示监听器仅转发来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器不会转发任何请求。black：黑名单方式。表示仅拒绝来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器会转发全部请求。当AclStatus参数配置为 on 时，AclType为必填参数。
+     * Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
      */
     aclType?: pulumi.Input<string>;
     /**
-     * HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 alb 时，必须指定 CACertificateId 参数。
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
      */
     caCertificateId?: pulumi.Input<string>;
     /**
-     * HTTPS 监听器关联的 CA 证书的来源，用于双向认证。alb（默认）：表示通过 ALB 上传的证书。标准版 ALB 实例不支持此来源的证书。pca*root：表示通过火山引擎证书中心购买或上传的私有根 CA 证书。pca*sub：表示通过火山引擎证书中心购买或上传的私有子 CA 证书。
+     * Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
      */
     caCertificateSource?: pulumi.Input<string>;
     /**
-     * HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 certCenter 时必传。
+     * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
      */
     certCenterCertificateId?: pulumi.Input<string>;
     /**
-     * HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 alb 时必传。
+     * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
      */
     certificateId?: pulumi.Input<string>;
     /**
-     * HTTPS监听器关联的默认证书的来源，取值：alb：表示通过 ALB 上传的证书。cert*center：表示通过火山引擎证书中心购买或上传的 SSL 证书。pca*leaf：表示通过火山引擎证书中心购买或上传的私有叶子证书。
+     * The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
      */
     certificateSource?: pulumi.Input<string>;
     /**
-     * 监听器的创建时间。
+     * Listener creation time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 个性化配置ID，未绑定时值为空字符串。
+     * Personalized configuration ID. If not bound, the value is an empty string.
      */
     customizedCfgId?: pulumi.Input<string>;
     /**
-     * 监听器的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      */
     description?: pulumi.Input<string>;
     domainExtensions?: pulumi.Input<pulumi.Input<inputs.alb.ListenerDomainExtension>[]>;
     /**
-     * HTTP2.0 特性开关，该参数仅对 HTTPS 监听器有效。取值如下：on：开启。off：关闭（默认）。
+     * HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
      */
     enableHttp2?: pulumi.Input<string>;
     /**
-     * QUIC 特性开关，该参数仅对 HTTPS 监听器有效，取值如下：on：开启。off：关闭（默认）。只有标准版 ALB 实例支持 QUIC。
+     * QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
      */
     enableQuic?: pulumi.Input<string>;
     /**
-     * 监听器开启/关闭，取值如下：on：开启（默认）。off：关闭。
+     * Listener on/off status. Values: on: On (default). off: Off.
      */
     enabled?: pulumi.Input<string>;
     /**
-     * 监听器 ID。
+     * Listener ID.
      */
     listenerId?: pulumi.Input<string>;
     /**
-     * 监听器的名字。不填写时以“协议-端口”格式命名。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1-128字符之间。
+     * Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
      */
     listenerName?: pulumi.Input<string>;
     /**
-     * 监听器所属的负载均衡实例 ID。
+     * Load balancer instance ID to which the listener belongs.
      */
     loadBalancerId?: pulumi.Input<string>;
     /**
-     * HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pcaLeaf 时必传。
+     * Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
      */
     pcaLeafCertificateId?: pulumi.Input<string>;
     /**
-     * HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pcaRoot 时，必须指定 PcaRootCACertificateId 参数。
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
      */
     pcaRootCaCertificateId?: pulumi.Input<string>;
     /**
-     * HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pcaSub 时，必须指定 PcaSubCACertificateId 参数。
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
      */
     pcaSubCaCertificateId?: pulumi.Input<string>;
     /**
-     * 监听器的监听端口，取值：1   - 65535 。
+     * The listener port. Values: 1   - 65535.
      */
     port?: pulumi.Input<number>;
     /**
-     * 监听器所属项目名称。
+     * Name of the project to which the listener belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
+     * Listener protocol. Supports HTTP and HTTPS protocols.
      */
     protocol?: pulumi.Input<string>;
     /**
-     * 监听器的默认服务器组。
+     * Default server group for the listener.
      */
     serverGroupId?: pulumi.Input<string>;
     serverGroups?: pulumi.Input<pulumi.Input<inputs.alb.ListenerServerGroup>[]>;
     /**
-     * 监听器的状态。取值如下：Creating：创建中。Active： 运行中。Pending： 变配中。Disabled：已停止。Deleting：删除中。
+     * Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.alb.ListenerTag>[]>;
     /**
-     * 监听器最近一次的操作时间。
+     * Time of the listener's most recent operation.
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -370,92 +370,92 @@ export interface ListenerState {
  */
 export interface ListenerArgs {
     /**
-     * 监听器是否已开启“在访问日志中记录自定义header”的功能：on：表示该功能已开启。off：表示该功能未开启。
+     * Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
      */
     accessLogRecordCustomizedHeadersEnabled?: pulumi.Input<string>;
     /**
-     * 监听器绑定的访问控制策略组 ID。当AclStatus参数配置为 on 时，AclIds为必填参数。
+     * Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
      */
     aclIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 是否开启访问控制功能。取值如下：on：开启。off ：不开启（默认）。
+     * Enable access control. Values: on: enabled. off: disabled (default).
      */
     aclStatus?: pulumi.Input<string>;
     /**
-     * 访问控制的方式，取值如下：white：白名单方式。表示监听器仅转发来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器不会转发任何请求。black：黑名单方式。表示仅拒绝来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器会转发全部请求。当AclStatus参数配置为 on 时，AclType为必填参数。
+     * Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
      */
     aclType?: pulumi.Input<string>;
     /**
-     * HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 alb 时，必须指定 CACertificateId 参数。
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
      */
     caCertificateId?: pulumi.Input<string>;
     /**
-     * HTTPS 监听器关联的 CA 证书的来源，用于双向认证。alb（默认）：表示通过 ALB 上传的证书。标准版 ALB 实例不支持此来源的证书。pca*root：表示通过火山引擎证书中心购买或上传的私有根 CA 证书。pca*sub：表示通过火山引擎证书中心购买或上传的私有子 CA 证书。
+     * Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
      */
     caCertificateSource?: pulumi.Input<string>;
     /**
-     * HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 certCenter 时必传。
+     * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
      */
     certCenterCertificateId?: pulumi.Input<string>;
     /**
-     * HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 alb 时必传。
+     * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
      */
     certificateId?: pulumi.Input<string>;
     /**
-     * HTTPS监听器关联的默认证书的来源，取值：alb：表示通过 ALB 上传的证书。cert*center：表示通过火山引擎证书中心购买或上传的 SSL 证书。pca*leaf：表示通过火山引擎证书中心购买或上传的私有叶子证书。
+     * The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
      */
     certificateSource?: pulumi.Input<string>;
     /**
-     * 个性化配置ID，未绑定时值为空字符串。
+     * Personalized configuration ID. If not bound, the value is an empty string.
      */
     customizedCfgId?: pulumi.Input<string>;
     /**
-     * 监听器的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      */
     description?: pulumi.Input<string>;
     domainExtensions?: pulumi.Input<pulumi.Input<inputs.alb.ListenerDomainExtension>[]>;
     /**
-     * HTTP2.0 特性开关，该参数仅对 HTTPS 监听器有效。取值如下：on：开启。off：关闭（默认）。
+     * HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
      */
     enableHttp2?: pulumi.Input<string>;
     /**
-     * QUIC 特性开关，该参数仅对 HTTPS 监听器有效，取值如下：on：开启。off：关闭（默认）。只有标准版 ALB 实例支持 QUIC。
+     * QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
      */
     enableQuic?: pulumi.Input<string>;
     /**
-     * 监听器开启/关闭，取值如下：on：开启（默认）。off：关闭。
+     * Listener on/off status. Values: on: On (default). off: Off.
      */
     enabled?: pulumi.Input<string>;
     /**
-     * 监听器的名字。不填写时以“协议-端口”格式命名。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1-128字符之间。
+     * Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
      */
     listenerName?: pulumi.Input<string>;
     /**
-     * 监听器所属的负载均衡实例 ID。
+     * Load balancer instance ID to which the listener belongs.
      */
     loadBalancerId: pulumi.Input<string>;
     /**
-     * HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pcaLeaf 时必传。
+     * Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
      */
     pcaLeafCertificateId?: pulumi.Input<string>;
     /**
-     * HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pcaRoot 时，必须指定 PcaRootCACertificateId 参数。
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
      */
     pcaRootCaCertificateId?: pulumi.Input<string>;
     /**
-     * HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pcaSub 时，必须指定 PcaSubCACertificateId 参数。
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
      */
     pcaSubCaCertificateId?: pulumi.Input<string>;
     /**
-     * 监听器的监听端口，取值：1   - 65535 。
+     * The listener port. Values: 1   - 65535.
      */
     port: pulumi.Input<number>;
     /**
-     * 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
+     * Listener protocol. Supports HTTP and HTTPS protocols.
      */
     protocol: pulumi.Input<string>;
     /**
-     * 监听器的默认服务器组。
+     * Default server group for the listener.
      */
     serverGroupId: pulumi.Input<string>;
     serverGroups?: pulumi.Input<pulumi.Input<inputs.alb.ListenerServerGroup>[]>;

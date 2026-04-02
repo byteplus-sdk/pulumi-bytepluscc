@@ -15,23 +15,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class InstanceSecondaryNetworkInterface
     {
         /// <summary>
-        /// 实例的IPv6地址数量。
+        /// The number of IPv6 addresses for the instance.
         /// </summary>
         public readonly int? Ipv6AddressCount;
         /// <summary>
-        /// 实例的主IP地址。
+        /// Instance primary IP address
         /// </summary>
         public readonly string? PrimaryIpAddress;
         /// <summary>
-        /// 实例的私有IP地址。
+        /// Instance private IP address.
         /// </summary>
         public readonly ImmutableArray<string> PrivateIpAddresses;
         /// <summary>
-        /// 实例的安全组ID。
+        /// Instance security group ID
         /// </summary>
         public readonly ImmutableArray<string> SecurityGroupIds;
         /// <summary>
-        /// 实例的子网ID。
+        /// Instance subnet ID.
         /// </summary>
         public readonly string? SubnetId;
 

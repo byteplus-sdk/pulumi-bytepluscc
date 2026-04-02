@@ -15,23 +15,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class GetInstanceRdmaNetworkInterfaceDetailResult
     {
         /// <summary>
-        /// 网关地址。
+        /// Gateway address.
         /// </summary>
         public readonly string Gateway;
         /// <summary>
-        /// IP地址。
+        /// IP address
         /// </summary>
         public readonly string Ip;
         /// <summary>
-        /// 子网掩码。
+        /// Subnet mask.
         /// </summary>
         public readonly string Mask;
         /// <summary>
-        /// 交换机名称。
+        /// Switch name.
         /// </summary>
         public readonly string SwitchName;
         /// <summary>
-        /// 交换机端口。
+        /// Switch port.
         /// </summary>
         public readonly string SwitchPort;
 

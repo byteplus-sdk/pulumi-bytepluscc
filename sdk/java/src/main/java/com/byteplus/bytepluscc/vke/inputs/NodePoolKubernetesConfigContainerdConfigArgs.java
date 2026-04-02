@@ -18,14 +18,14 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
     public static final NodePoolKubernetesConfigContainerdConfigArgs Empty = new NodePoolKubernetesConfigContainerdConfigArgs();
 
     /**
-     * 指定跳过证书认证的容器镜像仓库地址。
+     * Specify the container image repository address to skip certificate verification.
      * 
      */
     @Import(name="insecureRegistries")
     private @Nullable Output<List<String>> insecureRegistries;
 
     /**
-     * @return 指定跳过证书认证的容器镜像仓库地址。
+     * @return Specify the container image repository address to skip certificate verification.
      * 
      */
     public Optional<Output<List<String>>> insecureRegistries() {
@@ -65,7 +65,7 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
         }
 
         /**
-         * @param insecureRegistries 指定跳过证书认证的容器镜像仓库地址。
+         * @param insecureRegistries Specify the container image repository address to skip certificate verification.
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
         }
 
         /**
-         * @param insecureRegistries 指定跳过证书认证的容器镜像仓库地址。
+         * @param insecureRegistries Specify the container image repository address to skip certificate verification.
          * 
          * @return builder
          * 
@@ -86,7 +86,7 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
         }
 
         /**
-         * @param insecureRegistries 指定跳过证书认证的容器镜像仓库地址。
+         * @param insecureRegistries Specify the container image repository address to skip certificate verification.
          * 
          * @return builder
          * 

@@ -13,122 +13,122 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodeGroupNode {
     /**
-     * @return 节点创建时间。
+     * @return Node creation time.
      * 
      */
     private @Nullable Integer createdTime;
     /**
-     * @return ecs实例规格。
+     * @return ecs instance specification.
      * 
      */
     private @Nullable String ecsInstanceType;
     /**
-     * @return 节点FQDN。
+     * @return Node FQDN.
      * 
      */
     private @Nullable String nodeFqdn;
     /**
-     * @return 节点ID。
+     * @return Node ID.
      * 
      */
     private @Nullable String nodeId;
     /**
-     * @return 节点名称。
+     * @return Node name.
      * 
      */
     private @Nullable String nodeName;
     /**
-     * @return 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+     * @return Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
      * 
      */
     private @Nullable String nodeState;
     /**
-     * @return 私有IP。
+     * @return Private IP.
      * 
      */
     private @Nullable String privateIp;
     /**
-     * @return 公网IP。
+     * @return Public IP.
      * 
      */
     private @Nullable String publicIp;
     /**
-     * @return 准备完毕时间。
+     * @return Ready time.
      * 
      */
     private @Nullable Integer readyTime;
     /**
-     * @return 集群终止时间。
+     * @return Cluster termination time.
      * 
      */
     private @Nullable Integer terminateTime;
 
     private NodeGroupNode() {}
     /**
-     * @return 节点创建时间。
+     * @return Node creation time.
      * 
      */
     public Optional<Integer> createdTime() {
         return Optional.ofNullable(this.createdTime);
     }
     /**
-     * @return ecs实例规格。
+     * @return ecs instance specification.
      * 
      */
     public Optional<String> ecsInstanceType() {
         return Optional.ofNullable(this.ecsInstanceType);
     }
     /**
-     * @return 节点FQDN。
+     * @return Node FQDN.
      * 
      */
     public Optional<String> nodeFqdn() {
         return Optional.ofNullable(this.nodeFqdn);
     }
     /**
-     * @return 节点ID。
+     * @return Node ID.
      * 
      */
     public Optional<String> nodeId() {
         return Optional.ofNullable(this.nodeId);
     }
     /**
-     * @return 节点名称。
+     * @return Node name.
      * 
      */
     public Optional<String> nodeName() {
         return Optional.ofNullable(this.nodeName);
     }
     /**
-     * @return 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+     * @return Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
      * 
      */
     public Optional<String> nodeState() {
         return Optional.ofNullable(this.nodeState);
     }
     /**
-     * @return 私有IP。
+     * @return Private IP.
      * 
      */
     public Optional<String> privateIp() {
         return Optional.ofNullable(this.privateIp);
     }
     /**
-     * @return 公网IP。
+     * @return Public IP.
      * 
      */
     public Optional<String> publicIp() {
         return Optional.ofNullable(this.publicIp);
     }
     /**
-     * @return 准备完毕时间。
+     * @return Ready time.
      * 
      */
     public Optional<Integer> readyTime() {
         return Optional.ofNullable(this.readyTime);
     }
     /**
-     * @return 集群终止时间。
+     * @return Cluster termination time.
      * 
      */
     public Optional<Integer> terminateTime() {

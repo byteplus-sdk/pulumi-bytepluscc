@@ -31,51 +31,51 @@ export interface GetRuleArgs {
  */
 export interface GetRuleResult {
     /**
-     * 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+     * Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
      */
     readonly alertMethods: string[];
     /**
-     * 告警状态。 alerting：告警中 normal：正常。
+     * Alert status. alerting: In alert; normal: Normal.
      */
     readonly alertState: string;
     /**
-     * 多指标判定条件。&&：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+     * Multi-metric determination condition. &&: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
      */
     readonly conditionOperator: string;
     /**
-     * 告警条件。数组形式，支持填写多个指标判断语句，最多 10 个。
+     * Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
      */
     readonly conditions: outputs.cloudmonitor.GetRuleCondition[];
     /**
-     * 告警策略绑定的告警通知组 ID。
+     * Alert notification group ID bound to the alert policy.
      */
     readonly contactGroupIds: string[];
     /**
-     * 告警策略创建时间，时间戳格式。
+     * Alert policy creation time, in timestamp format.
      */
     readonly createdAt: string;
     /**
-     * 告警策略描述信息。
+     * Alert policy description.
      */
     readonly description: string;
     /**
-     * Dimension 配置。
+     * Dimension configuration.
      */
     readonly dimensionConditions: outputs.cloudmonitor.GetRuleDimensionConditions;
     /**
-     * 策略生效的截止时间，格式为HH:MM。
+     * Policy expiration time, in HH:MM format.
      */
     readonly effectEndAt: string;
     /**
-     * 告警策略生效的开始时间，格式为HH:MM。
+     * Policy start time, in HH:MM format.
      */
     readonly effectStartAt: string;
     /**
-     * 告警策略的开启状态。,enable：开启,disable：禁用
+     * Alert policy status. enable: enabled, disable: disabled
      */
     readonly enableState: string;
     /**
-     * 触发告警需要持续的周期。单位为分钟。
+     * Duration required to trigger an alert, in minutes.
      */
     readonly evaluationCount: number;
     /**
@@ -83,87 +83,87 @@ export interface GetRuleResult {
      */
     readonly id: string;
     /**
-     * 告警级别。critical：严重,warning：警告,notice：通知
+     * Alert level. critical: critical, warning: warning, notice: notification
      */
     readonly level: string;
     /**
-     * 告警分级配置。
+     * Alert severity configuration.
      */
     readonly levelConditions: outputs.cloudmonitor.GetRuleLevelCondition[];
     /**
-     * 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+     * Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
      */
     readonly multipleConditions: boolean;
     /**
-     * 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+     * Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
      */
     readonly namespace: string;
     /**
-     * 无数据告警。
+     * No data alert.
      */
     readonly noData: outputs.cloudmonitor.GetRuleNoData;
     /**
-     * 通知策略 ID。
+     * Notification policy ID.
      */
     readonly notificationId: string;
     /**
-     * 通知模版配置。
+     * Notification template configuration.
      */
     readonly notifyTemplates: outputs.cloudmonitor.GetRuleNotifyTemplate[];
     /**
-     * 告警策略检测的资源 ID。
+     * Resource ID detected by the alert policy.
      */
     readonly originalDimensions: outputs.cloudmonitor.GetRuleOriginalDimensions;
     /**
-     * 告警策略所属项目。
+     * Project to which the alert policy belongs.
      */
     readonly projectName: string;
     /**
-     * 告警恢复通知。
+     * Alert recovery notification.
      */
     readonly recoveryNotify: outputs.cloudmonitor.GetRuleRecoveryNotify;
     /**
-     * 云产品所属可用区 ID。
+     * Availability zone ID of the cloud product.
      */
     readonly regions: string[];
     /**
-     * 告警策略检测的资源类型。
+     * Resource type detected by the alert policy.
      */
     readonly resourceType: string;
     /**
-     * 告警策略 ID。
+     * Alarm policy ID.
      */
     readonly ruleId: string;
     /**
-     * 告警策略名称。
+     * Alert policy name.
      */
     readonly ruleName: string;
     /**
-     * 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+     * Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
      */
     readonly ruleType: string;
     /**
-     * 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+     * Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
      */
     readonly silenceTime: number;
     /**
-     * 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+     * Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
      */
     readonly subNamespace: string;
     /**
-     * 告警策略绑定 Tag。
+     * Bind alert policy to Tag.
      */
     readonly tags: outputs.cloudmonitor.GetRuleTag[];
     /**
-     * 告警策略更新时间，时间戳格式。
+     * Alarm policy update time, in timestamp format.
      */
     readonly updatedAt: string;
     /**
-     * 告警策略绑定的告警回调 URL 地址。
+     * Alarm callback URL bound to the alarm policy.
      */
     readonly webhook: string;
     /**
-     * 告警发生时告警回调 ID 列表。
+     * Alarm callback ID list when an alarm occurs.
      */
     readonly webhookIds: string[];
 }

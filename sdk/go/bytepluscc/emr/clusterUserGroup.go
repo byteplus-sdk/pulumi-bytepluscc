@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// E-MapReduce（EMR）集群中支持对用户进行组管理，允许您创建、编辑和删除用户组。
+// User group management is supported in E-MapReduce (EMR) clusters, allowing you to create, edit, and delete user groups.
 //
 // ## Example Usage
 //
@@ -54,13 +54,13 @@ import (
 type ClusterUserGroup struct {
 	pulumi.CustomResourceState
 
-	// 集群ID。
+	// Cluster ID.
 	ClusterId pulumi.StringOutput `pulumi:"clusterId"`
-	// 用户组描述。
+	// User group description.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 用户组成员。不支持操作特殊用户，如admin等。
+	// Operations on special users, such as admin, are not supported.
 	Members pulumi.StringArrayOutput `pulumi:"members"`
-	// 用户组名称。
+	// User group name.
 	UserGroupName pulumi.StringOutput `pulumi:"userGroupName"`
 }
 
@@ -100,24 +100,24 @@ func GetClusterUserGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ClusterUserGroup resources.
 type clusterUserGroupState struct {
-	// 集群ID。
+	// Cluster ID.
 	ClusterId *string `pulumi:"clusterId"`
-	// 用户组描述。
+	// User group description.
 	Description *string `pulumi:"description"`
-	// 用户组成员。不支持操作特殊用户，如admin等。
+	// Operations on special users, such as admin, are not supported.
 	Members []string `pulumi:"members"`
-	// 用户组名称。
+	// User group name.
 	UserGroupName *string `pulumi:"userGroupName"`
 }
 
 type ClusterUserGroupState struct {
-	// 集群ID。
+	// Cluster ID.
 	ClusterId pulumi.StringPtrInput
-	// 用户组描述。
+	// User group description.
 	Description pulumi.StringPtrInput
-	// 用户组成员。不支持操作特殊用户，如admin等。
+	// Operations on special users, such as admin, are not supported.
 	Members pulumi.StringArrayInput
-	// 用户组名称。
+	// User group name.
 	UserGroupName pulumi.StringPtrInput
 }
 
@@ -126,25 +126,25 @@ func (ClusterUserGroupState) ElementType() reflect.Type {
 }
 
 type clusterUserGroupArgs struct {
-	// 集群ID。
+	// Cluster ID.
 	ClusterId string `pulumi:"clusterId"`
-	// 用户组描述。
+	// User group description.
 	Description *string `pulumi:"description"`
-	// 用户组成员。不支持操作特殊用户，如admin等。
+	// Operations on special users, such as admin, are not supported.
 	Members []string `pulumi:"members"`
-	// 用户组名称。
+	// User group name.
 	UserGroupName string `pulumi:"userGroupName"`
 }
 
 // The set of arguments for constructing a ClusterUserGroup resource.
 type ClusterUserGroupArgs struct {
-	// 集群ID。
+	// Cluster ID.
 	ClusterId pulumi.StringInput
-	// 用户组描述。
+	// User group description.
 	Description pulumi.StringPtrInput
-	// 用户组成员。不支持操作特殊用户，如admin等。
+	// Operations on special users, such as admin, are not supported.
 	Members pulumi.StringArrayInput
-	// 用户组名称。
+	// User group name.
 	UserGroupName pulumi.StringInput
 }
 
@@ -235,22 +235,22 @@ func (o ClusterUserGroupOutput) ToClusterUserGroupOutputWithContext(ctx context.
 	return o
 }
 
-// 集群ID。
+// Cluster ID.
 func (o ClusterUserGroupOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterUserGroup) pulumi.StringOutput { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 用户组描述。
+// User group description.
 func (o ClusterUserGroupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterUserGroup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 用户组成员。不支持操作特殊用户，如admin等。
+// Operations on special users, such as admin, are not supported.
 func (o ClusterUserGroupOutput) Members() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterUserGroup) pulumi.StringArrayOutput { return v.Members }).(pulumi.StringArrayOutput)
 }
 
-// 用户组名称。
+// User group name.
 func (o ClusterUserGroupOutput) UserGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterUserGroup) pulumi.StringOutput { return v.UserGroupName }).(pulumi.StringOutput)
 }

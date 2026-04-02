@@ -29,15 +29,15 @@ export interface GetRecordArgs {
  */
 export interface GetRecordResult {
     /**
-     * 解析记录的创建时间。
+     * Creation time of the DNS record.
      */
     readonly createdAt: string;
     /**
-     * 解析记录是否被启用。
+     * Indicates whether the DNS record is enabled.
      */
     readonly enable: boolean;
     /**
-     * 子域名的域名前缀。
+     * Domain prefix for the subdomain.
      */
     readonly host: string;
     /**
@@ -45,47 +45,47 @@ export interface GetRecordResult {
      */
     readonly id: string;
     /**
-     * 最近一次更新解析记录的账号 ID。
+     * Account ID of the most recent update to the DNS record.
      */
     readonly lastOperator: string;
     /**
-     * 解析记录的线路，只能是默认线路 default。
+     * DNS record route, only the default route 'default' is supported.
      */
     readonly line: string;
     /**
-     * 解析记录 ID。
+     * DNS record ID.
      */
     readonly recordId: string;
     /**
-     * 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+     * Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      */
     readonly remark: string;
     /**
-     * 解析记录的过期时间。单位为秒。默认值为 600。
+     * DNS record TTL (time to live), in seconds. Default is 600.
      */
     readonly ttl: number;
     /**
-     * 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+     * DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
      */
     readonly type: string;
     /**
-     * 解析记录最近一次的更新时间。
+     * Last update time of the DNS record.
      */
     readonly updatedAt: string;
     /**
-     * 记录值。
+     * Record value.
      */
     readonly value: string;
     /**
-     * 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+     * Record weight. The weight takes effect only when load balancing is enabled for the domain name.
      */
     readonly weight: number;
     /**
-     * 该记录集是否开启了负载均衡。
+     * Indicates whether load balancing is enabled for this record set.
      */
     readonly weightEnabled: boolean;
     /**
-     * 域名 ID。
+     * Domain name ID.
      */
     readonly zid: number;
 }

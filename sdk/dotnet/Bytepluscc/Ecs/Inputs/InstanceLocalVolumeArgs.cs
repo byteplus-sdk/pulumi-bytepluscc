@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class InstanceLocalVolumeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例挂载的本地盘数量。
+        /// The number of local disks attached to the instance.
         /// </summary>
         [Input("count")]
         public Input<int>? Count { get; set; }
 
         /// <summary>
-        /// 实例挂载的本地盘的单盘容量，单位GiB。
+        /// Capacity of each local disk mounted to the instance (GiB).
         /// </summary>
         [Input("size")]
         public Input<int>? Size { get; set; }
 
         /// <summary>
-        /// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+        /// Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
         /// </summary>
         [Input("volumeType")]
         public Input<string>? VolumeType { get; set; }

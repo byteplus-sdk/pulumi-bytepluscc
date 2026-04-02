@@ -18,14 +18,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     public static final CertificateState Empty = new CertificateState();
 
     /**
-     * 证书ID。
+     * Certificate ID
      * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
-     * @return 证书ID。
+     * @return Certificate ID
      * 
      */
     public Optional<Output<String>> certificateId() {
@@ -33,14 +33,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+     * Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      * 
      */
     @Import(name="certificateName")
     private @Nullable Output<String> certificateName;
 
     /**
-     * @return 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+     * @return Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      * 
      */
     public Optional<Output<String>> certificateName() {
@@ -48,14 +48,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书类型，取值：CA：CA证书、Server：服务器证书。
+     * Certificate type. Options: CA: CA certificate; Server: server certificate
      * 
      */
     @Import(name="certificateType")
     private @Nullable Output<String> certificateType;
 
     /**
-     * @return 证书类型，取值：CA：CA证书、Server：服务器证书。
+     * @return Certificate type. Options: CA: CA certificate; Server: server certificate
      * 
      */
     public Optional<Output<String>> certificateType() {
@@ -63,14 +63,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书创建时间。
+     * Certificate creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 证书创建时间。
+     * @return Certificate creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -78,14 +78,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书描述。
+     * Certificate description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 证书描述。
+     * @return Certificate description
      * 
      */
     public Optional<Output<String>> description() {
@@ -93,14 +93,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书域名。
+     * Certificate domain name
      * 
      */
     @Import(name="domainName")
     private @Nullable Output<String> domainName;
 
     /**
-     * @return 证书域名。
+     * @return Certificate domain name
      * 
      */
     public Optional<Output<String>> domainName() {
@@ -108,14 +108,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书过期时间。
+     * Certificate expiration time
      * 
      */
     @Import(name="expiredAt")
     private @Nullable Output<String> expiredAt;
 
     /**
-     * @return 证书过期时间。
+     * @return Certificate expiration time
      * 
      */
     public Optional<Output<String>> expiredAt() {
@@ -123,14 +123,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书关联的监听器列表。
+     * List of listeners associated with the certificate
      * 
      */
     @Import(name="listeners")
     private @Nullable Output<List<String>> listeners;
 
     /**
-     * @return 证书关联的监听器列表。
+     * @return List of listeners associated with the certificate
      * 
      */
     public Optional<Output<List<String>>> listeners() {
@@ -138,14 +138,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 服务器证书的私钥，当证书类型为Server时必填。
+     * Server certificate private key. Required when certificate type is Server
      * 
      */
     @Import(name="privateKey")
     private @Nullable Output<String> privateKey;
 
     /**
-     * @return 服务器证书的私钥，当证书类型为Server时必填。
+     * @return Server certificate private key. Required when certificate type is Server
      * 
      */
     public Optional<Output<String>> privateKey() {
@@ -153,14 +153,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 项目名称。
+     * Project name
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -168,14 +168,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 服务器证书的公钥。
+     * Server certificate public key
      * 
      */
     @Import(name="publicKey")
     private @Nullable Output<String> publicKey;
 
     /**
-     * @return 服务器证书的公钥。
+     * @return Server certificate public key
      * 
      */
     public Optional<Output<String>> publicKey() {
@@ -183,14 +183,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书扩展域名列表，用英文&#39;,&#39; 分隔多个域名， 包含(commonName,DnsName,IP)。
+     * Certificate subject alternative name list. Use English &#39;,&#39; to separate multiple domain names. Includes (commonName, DnsName, IP)
      * 
      */
     @Import(name="san")
     private @Nullable Output<String> san;
 
     /**
-     * @return 证书扩展域名列表，用英文&#39;,&#39; 分隔多个域名， 包含(commonName,DnsName,IP)。
+     * @return Certificate subject alternative name list. Use English &#39;,&#39; to separate multiple domain names. Includes (commonName, DnsName, IP)
      * 
      */
     public Optional<Output<String>> san() {
@@ -198,14 +198,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+     * Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+     * @return Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
      * 
      */
     public Optional<Output<String>> status() {
@@ -257,7 +257,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId 证书ID。
+         * @param certificateId Certificate ID
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId 证书ID。
+         * @param certificateId Certificate ID
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateName 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+         * @param certificateName Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateName 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+         * @param certificateName Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateType 证书类型，取值：CA：CA证书、Server：服务器证书。
+         * @param certificateType Certificate type. Options: CA: CA certificate; Server: server certificate
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateType 证书类型，取值：CA：CA证书、Server：服务器证书。
+         * @param certificateType Certificate type. Options: CA: CA certificate; Server: server certificate
          * 
          * @return builder
          * 
@@ -320,7 +320,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 证书创建时间。
+         * @param createdTime Certificate creation time
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 证书创建时间。
+         * @param createdTime Certificate creation time
          * 
          * @return builder
          * 
@@ -341,7 +341,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 证书描述。
+         * @param description Certificate description
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 证书描述。
+         * @param description Certificate description
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domainName 证书域名。
+         * @param domainName Certificate domain name
          * 
          * @return builder
          * 
@@ -373,7 +373,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domainName 证书域名。
+         * @param domainName Certificate domain name
          * 
          * @return builder
          * 
@@ -383,7 +383,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredAt 证书过期时间。
+         * @param expiredAt Certificate expiration time
          * 
          * @return builder
          * 
@@ -394,7 +394,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredAt 证书过期时间。
+         * @param expiredAt Certificate expiration time
          * 
          * @return builder
          * 
@@ -404,7 +404,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listeners 证书关联的监听器列表。
+         * @param listeners List of listeners associated with the certificate
          * 
          * @return builder
          * 
@@ -415,7 +415,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listeners 证书关联的监听器列表。
+         * @param listeners List of listeners associated with the certificate
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listeners 证书关联的监听器列表。
+         * @param listeners List of listeners associated with the certificate
          * 
          * @return builder
          * 
@@ -435,7 +435,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKey 服务器证书的私钥，当证书类型为Server时必填。
+         * @param privateKey Server certificate private key. Required when certificate type is Server
          * 
          * @return builder
          * 
@@ -446,7 +446,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKey 服务器证书的私钥，当证书类型为Server时必填。
+         * @param privateKey Server certificate private key. Required when certificate type is Server
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -467,7 +467,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicKey 服务器证书的公钥。
+         * @param publicKey Server certificate public key
          * 
          * @return builder
          * 
@@ -488,7 +488,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicKey 服务器证书的公钥。
+         * @param publicKey Server certificate public key
          * 
          * @return builder
          * 
@@ -498,7 +498,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param san 证书扩展域名列表，用英文&#39;,&#39; 分隔多个域名， 包含(commonName,DnsName,IP)。
+         * @param san Certificate subject alternative name list. Use English &#39;,&#39; to separate multiple domain names. Includes (commonName, DnsName, IP)
          * 
          * @return builder
          * 
@@ -509,7 +509,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param san 证书扩展域名列表，用英文&#39;,&#39; 分隔多个域名， 包含(commonName,DnsName,IP)。
+         * @param san Certificate subject alternative name list. Use English &#39;,&#39; to separate multiple domain names. Includes (commonName, DnsName, IP)
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+         * @param status Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
          * 
          * @return builder
          * 
@@ -530,7 +530,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+         * @param status Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
          * 
          * @return builder
          * 

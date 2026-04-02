@@ -17,14 +17,14 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
     public static final TrafficMirrorFilterIngressFilterRuleArgs Empty = new TrafficMirrorFilterIngressFilterRuleArgs();
 
     /**
-     * 筛选规则实例描述。
+     * Filter rule instance description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 筛选规则实例描述。
+     * @return Filter rule instance description
      * 
      */
     public Optional<Output<String>> description() {
@@ -32,14 +32,14 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 筛选规则目的地址。
+     * Filter rule destination address
      * 
      */
     @Import(name="destinationCidrBlock")
     private @Nullable Output<String> destinationCidrBlock;
 
     /**
-     * @return 筛选规则目的地址。
+     * @return Filter rule destination address
      * 
      */
     public Optional<Output<String>> destinationCidrBlock() {
@@ -47,14 +47,14 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 筛选规则目的端口范围。
+     * Filter rule destination port range
      * 
      */
     @Import(name="destinationPortRange")
     private @Nullable Output<String> destinationPortRange;
 
     /**
-     * @return 筛选规则目的端口范围。
+     * @return Filter rule destination port range
      * 
      */
     public Optional<Output<String>> destinationPortRange() {
@@ -62,14 +62,14 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+     * Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
      * 
      */
     @Import(name="policy")
     private @Nullable Output<String> policy;
 
     /**
-     * @return 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+     * @return Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
      * 
      */
     public Optional<Output<String>> policy() {
@@ -77,14 +77,14 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 筛选规则优先级。
+     * Filter rule priority
      * 
      */
     @Import(name="priority")
     private @Nullable Output<Integer> priority;
 
     /**
-     * @return 筛选规则优先级。
+     * @return Filter rule priority
      * 
      */
     public Optional<Output<Integer>> priority() {
@@ -92,14 +92,14 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 所属项目的名称。
+     * Project name
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 所属项目的名称。
+     * @return Project name
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -107,14 +107,14 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 筛选规则协议类型。
+     * Filter rule protocol type
      * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
-     * @return 筛选规则协议类型。
+     * @return Filter rule protocol type
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -122,14 +122,14 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 筛选规则源地址。
+     * Filter rule source address
      * 
      */
     @Import(name="sourceCidrBlock")
     private @Nullable Output<String> sourceCidrBlock;
 
     /**
-     * @return 筛选规则源地址。
+     * @return Filter rule source address
      * 
      */
     public Optional<Output<String>> sourceCidrBlock() {
@@ -137,14 +137,14 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 筛选规则源端口范围。
+     * Filter rule source port range
      * 
      */
     @Import(name="sourcePortRange")
     private @Nullable Output<String> sourcePortRange;
 
     /**
-     * @return 筛选规则源端口范围。
+     * @return Filter rule source port range
      * 
      */
     public Optional<Output<String>> sourcePortRange() {
@@ -152,14 +152,14 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 筛选规则状态。
+     * Filter rule status
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 筛选规则状态。
+     * @return Filter rule status
      * 
      */
     public Optional<Output<String>> status() {
@@ -167,14 +167,14 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 筛选规则方向。egress：出方向。ingress：入方向。
+     * Filter rule direction. egress: Outbound. ingress: Inbound
      * 
      */
     @Import(name="trafficDirection")
     private @Nullable Output<String> trafficDirection;
 
     /**
-     * @return 筛选规则方向。egress：出方向。ingress：入方向。
+     * @return Filter rule direction. egress: Outbound. ingress: Inbound
      * 
      */
     public Optional<Output<String>> trafficDirection() {
@@ -182,14 +182,14 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 筛选条件实例ID。
+     * Filter condition instance ID
      * 
      */
     @Import(name="trafficMirrorFilterId")
     private @Nullable Output<String> trafficMirrorFilterId;
 
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     public Optional<Output<String>> trafficMirrorFilterId() {
@@ -197,14 +197,14 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 筛选规则实例ID。
+     * Filter rule instance ID
      * 
      */
     @Import(name="trafficMirrorFilterRuleId")
     private @Nullable Output<String> trafficMirrorFilterRuleId;
 
     /**
-     * @return 筛选规则实例ID。
+     * @return Filter rule instance ID
      * 
      */
     public Optional<Output<String>> trafficMirrorFilterRuleId() {
@@ -248,7 +248,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param description 筛选规则实例描述。
+         * @param description Filter rule instance description
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param description 筛选规则实例描述。
+         * @param description Filter rule instance description
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param destinationCidrBlock 筛选规则目的地址。
+         * @param destinationCidrBlock Filter rule destination address
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param destinationCidrBlock 筛选规则目的地址。
+         * @param destinationCidrBlock Filter rule destination address
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param destinationPortRange 筛选规则目的端口范围。
+         * @param destinationPortRange Filter rule destination port range
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param destinationPortRange 筛选规则目的端口范围。
+         * @param destinationPortRange Filter rule destination port range
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param policy 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+         * @param policy Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param policy 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+         * @param policy Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param priority 筛选规则优先级。
+         * @param priority Filter rule priority
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param priority 筛选规则优先级。
+         * @param priority Filter rule priority
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param projectName 所属项目的名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param projectName 所属项目的名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -374,7 +374,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param protocol 筛选规则协议类型。
+         * @param protocol Filter rule protocol type
          * 
          * @return builder
          * 
@@ -385,7 +385,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param protocol 筛选规则协议类型。
+         * @param protocol Filter rule protocol type
          * 
          * @return builder
          * 
@@ -395,7 +395,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param sourceCidrBlock 筛选规则源地址。
+         * @param sourceCidrBlock Filter rule source address
          * 
          * @return builder
          * 
@@ -406,7 +406,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param sourceCidrBlock 筛选规则源地址。
+         * @param sourceCidrBlock Filter rule source address
          * 
          * @return builder
          * 
@@ -416,7 +416,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param sourcePortRange 筛选规则源端口范围。
+         * @param sourcePortRange Filter rule source port range
          * 
          * @return builder
          * 
@@ -427,7 +427,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param sourcePortRange 筛选规则源端口范围。
+         * @param sourcePortRange Filter rule source port range
          * 
          * @return builder
          * 
@@ -437,7 +437,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param status 筛选规则状态。
+         * @param status Filter rule status
          * 
          * @return builder
          * 
@@ -448,7 +448,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param status 筛选规则状态。
+         * @param status Filter rule status
          * 
          * @return builder
          * 
@@ -458,7 +458,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param trafficDirection 筛选规则方向。egress：出方向。ingress：入方向。
+         * @param trafficDirection Filter rule direction. egress: Outbound. ingress: Inbound
          * 
          * @return builder
          * 
@@ -469,7 +469,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param trafficDirection 筛选规则方向。egress：出方向。ingress：入方向。
+         * @param trafficDirection Filter rule direction. egress: Outbound. ingress: Inbound
          * 
          * @return builder
          * 
@@ -479,7 +479,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param trafficMirrorFilterId 筛选条件实例ID。
+         * @param trafficMirrorFilterId Filter condition instance ID
          * 
          * @return builder
          * 
@@ -490,7 +490,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param trafficMirrorFilterId 筛选条件实例ID。
+         * @param trafficMirrorFilterId Filter condition instance ID
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param trafficMirrorFilterRuleId 筛选规则实例ID。
+         * @param trafficMirrorFilterRuleId Filter rule instance ID
          * 
          * @return builder
          * 
@@ -511,7 +511,7 @@ public final class TrafficMirrorFilterIngressFilterRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param trafficMirrorFilterRuleId 筛选规则实例ID。
+         * @param trafficMirrorFilterRuleId Filter rule instance ID
          * 
          * @return builder
          * 

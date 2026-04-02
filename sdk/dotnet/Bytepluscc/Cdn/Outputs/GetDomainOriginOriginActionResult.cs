@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainOriginOriginActionResult
     {
         /// <summary>
-        /// 表示一个源站配置列表。每个配置可以包含一个或者多个源站。
+        /// Indicates a list of origin configurations. Each configuration can include one or more origins.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainOriginOriginActionOriginLineResult> OriginLines;
 

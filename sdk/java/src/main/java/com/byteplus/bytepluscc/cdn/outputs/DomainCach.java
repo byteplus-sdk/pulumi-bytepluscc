@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainCach {
     /**
-     * @return 表示缓存行为的相关配置。
+     * @return Indicates the relevant configuration for cache behavior.
      * 
      */
     private @Nullable DomainCachCacheAction cacheAction;
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private @Nullable DomainCachCondition condition;
 
     private DomainCach() {}
     /**
-     * @return 表示缓存行为的相关配置。
+     * @return Indicates the relevant configuration for cache behavior.
      * 
      */
     public Optional<DomainCachCacheAction> cacheAction() {
         return Optional.ofNullable(this.cacheAction);
     }
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<DomainCachCondition> condition() {

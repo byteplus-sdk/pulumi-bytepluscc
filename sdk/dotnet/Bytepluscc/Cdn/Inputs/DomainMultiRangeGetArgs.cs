@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainMultiRangeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。该特性启用后，CDN 允许指定了多重范围的 Range 请求。false：表示不启用该特性。如果收到一个指定了多重范围的 Range 请求，CDN 会拒绝该请求并返回 416 响应状态码。该参数的默认值是 false。
+        /// Indicates whether the feature is enabled. This parameter has the following values: true: enables the feature. When enabled, CDN allows Range requests with multiple ranges. false: disables the feature. If a Range request with multiple ranges is received, CDN rejects the request and returns a 416 response status code. The default value is false.
         /// </summary>
         [Input("switch")]
         public Input<bool>? Switch { get; set; }

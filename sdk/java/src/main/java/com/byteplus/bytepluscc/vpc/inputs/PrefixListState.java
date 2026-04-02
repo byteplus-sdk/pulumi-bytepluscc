@@ -22,14 +22,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
     public static final PrefixListState Empty = new PrefixListState();
 
     /**
-     * 前缀列表关联的资源数量。
+     * Number of resources associated with the prefix list.
      * 
      */
     @Import(name="associationCount")
     private @Nullable Output<Integer> associationCount;
 
     /**
-     * @return 前缀列表关联的资源数量。
+     * @return Number of resources associated with the prefix list.
      * 
      */
     public Optional<Output<Integer>> associationCount() {
@@ -51,14 +51,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 前缀列表的创建时间。
+     * Creation time of the prefix list.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 前缀列表的创建时间。
+     * @return Creation time of the prefix list.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -66,14 +66,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     public Optional<Output<String>> description() {
@@ -81,14 +81,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+     * IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
      * 
      */
     @Import(name="ipVersion")
     private @Nullable Output<String> ipVersion;
 
     /**
-     * @return IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+     * @return IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
      * 
      */
     public Optional<Output<String>> ipVersion() {
@@ -96,14 +96,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+     * Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
      * 
      */
     @Import(name="maxEntries")
     private @Nullable Output<Integer> maxEntries;
 
     /**
-     * @return 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+     * @return Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
      * 
      */
     public Optional<Output<Integer>> maxEntries() {
@@ -118,14 +118,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 前缀列表的ID。
+     * Prefix list ID.
      * 
      */
     @Import(name="prefixListId")
     private @Nullable Output<String> prefixListId;
 
     /**
-     * @return 前缀列表的ID。
+     * @return Prefix list ID.
      * 
      */
     public Optional<Output<String>> prefixListId() {
@@ -133,14 +133,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+     * Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
      * 
      */
     @Import(name="prefixListName")
     private @Nullable Output<String> prefixListName;
 
     /**
-     * @return 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+     * @return Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
      * 
      */
     public Optional<Output<String>> prefixListName() {
@@ -148,14 +148,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 前缀列表所属项目的名称，不填默认加入default项目。
+     * Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 前缀列表所属项目的名称，不填默认加入default项目。
+     * @return Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -163,14 +163,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+     * Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+     * @return Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
      * 
      */
     public Optional<Output<String>> status() {
@@ -185,14 +185,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 前缀列表的最近一次修改时间。
+     * Last modification time of the prefix list.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 前缀列表的最近一次修改时间。
+     * @return Last modification time of the prefix list.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -237,7 +237,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associationCount 前缀列表关联的资源数量。
+         * @param associationCount Number of resources associated with the prefix list.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associationCount 前缀列表关联的资源数量。
+         * @param associationCount Number of resources associated with the prefix list.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 前缀列表的创建时间。
+         * @param createdTime Creation time of the prefix list.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 前缀列表的创建时间。
+         * @param createdTime Creation time of the prefix list.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipVersion IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+         * @param ipVersion IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipVersion IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+         * @param ipVersion IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxEntries 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+         * @param maxEntries Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxEntries 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+         * @param maxEntries Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
          * 
          * @return builder
          * 
@@ -381,7 +381,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prefixListId 前缀列表的ID。
+         * @param prefixListId Prefix list ID.
          * 
          * @return builder
          * 
@@ -392,7 +392,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prefixListId 前缀列表的ID。
+         * @param prefixListId Prefix list ID.
          * 
          * @return builder
          * 
@@ -402,7 +402,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prefixListName 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+         * @param prefixListName Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
          * 
          * @return builder
          * 
@@ -413,7 +413,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param prefixListName 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+         * @param prefixListName Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
          * 
          * @return builder
          * 
@@ -423,7 +423,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 前缀列表所属项目的名称，不填默认加入default项目。
+         * @param projectName Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
          * 
          * @return builder
          * 
@@ -434,7 +434,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 前缀列表所属项目的名称，不填默认加入default项目。
+         * @param projectName Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
          * 
          * @return builder
          * 
@@ -444,7 +444,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+         * @param status Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
          * 
          * @return builder
          * 
@@ -455,7 +455,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+         * @param status Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
          * 
          * @return builder
          * 
@@ -478,7 +478,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 前缀列表的最近一次修改时间。
+         * @param updatedTime Last modification time of the prefix list.
          * 
          * @return builder
          * 
@@ -489,7 +489,7 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 前缀列表的最近一次修改时间。
+         * @param updatedTime Last modification time of the prefix list.
          * 
          * @return builder
          * 

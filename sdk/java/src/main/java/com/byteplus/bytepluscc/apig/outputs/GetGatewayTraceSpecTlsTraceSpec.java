@@ -21,7 +21,7 @@ public final class GetGatewayTraceSpecTlsTraceSpec {
      */
     private String iamUserSk;
     /**
-     * @return 日志项目ID。
+     * @return Log project ID
      * 
      */
     private String projectId;
@@ -47,7 +47,7 @@ public final class GetGatewayTraceSpecTlsTraceSpec {
         return this.iamUserSk;
     }
     /**
-     * @return 日志项目ID。
+     * @return Log project ID
      * 
      */
     public String projectId() {

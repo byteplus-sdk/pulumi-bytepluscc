@@ -15,43 +15,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class GetEndpointAddressResult
     {
         /// <summary>
-        /// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+        /// false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
         /// </summary>
         public readonly bool DnsVisibility;
         /// <summary>
-        /// 连接域名。
+        /// Connection domain name.
         /// </summary>
         public readonly string Domain;
         /// <summary>
-        /// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+        /// Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
         /// </summary>
         public readonly string DomainPrefix;
         /// <summary>
-        /// EIP 的 ID，仅对 Public 地址有效。
+        /// EIP ID, valid only for Public addresses.
         /// </summary>
         public readonly string EipId;
         /// <summary>
-        /// 连接终端使用的 EIP 是否因欠费关停。取值：true：是。false：否。
+        /// Whether the EIP used by the connection endpoint is suspended due to overdue payment. Options: true: yes. false: no.
         /// </summary>
         public readonly bool EipLocked;
         /// <summary>
-        /// IP 协议版本。取值为 IPv4。
+        /// IP protocol version. Value: IPv4.
         /// </summary>
         public readonly string InternetProtocol;
         /// <summary>
-        /// IP 地址。
+        /// IP address.
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
-        /// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+        /// Network address type. Options: Private: private network address. Public: public network address.
         /// </summary>
         public readonly string NetworkType;
         /// <summary>
-        /// 端口。
+        /// Port.
         /// </summary>
         public readonly string Port;
         /// <summary>
-        /// 子网 ID，仅对 Private 地址有效。
+        /// Subnet ID, valid only for Private addresses.
         /// </summary>
         public readonly string SubnetId;
 

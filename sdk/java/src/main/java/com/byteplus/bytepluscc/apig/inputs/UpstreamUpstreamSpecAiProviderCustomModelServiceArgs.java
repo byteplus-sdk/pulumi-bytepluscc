@@ -17,14 +17,14 @@ public final class UpstreamUpstreamSpecAiProviderCustomModelServiceArgs extends 
     public static final UpstreamUpstreamSpecAiProviderCustomModelServiceArgs Empty = new UpstreamUpstreamSpecAiProviderCustomModelServiceArgs();
 
     /**
-     * 模型服务名称。
+     * Model Service Name
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 模型服务名称。
+     * @return Model Service Name
      * 
      */
     public Optional<Output<String>> name() {
@@ -32,14 +32,14 @@ public final class UpstreamUpstreamSpecAiProviderCustomModelServiceArgs extends 
     }
 
     /**
-     * 命名空间。
+     * Namespace
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return 命名空间。
+     * @return Namespace
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -47,14 +47,14 @@ public final class UpstreamUpstreamSpecAiProviderCustomModelServiceArgs extends 
     }
 
     /**
-     * 端口。
+     * Port
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -88,7 +88,7 @@ public final class UpstreamUpstreamSpecAiProviderCustomModelServiceArgs extends 
         }
 
         /**
-         * @param name 模型服务名称。
+         * @param name Model Service Name
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class UpstreamUpstreamSpecAiProviderCustomModelServiceArgs extends 
         }
 
         /**
-         * @param name 模型服务名称。
+         * @param name Model Service Name
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class UpstreamUpstreamSpecAiProviderCustomModelServiceArgs extends 
         }
 
         /**
-         * @param namespace 命名空间。
+         * @param namespace Namespace
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class UpstreamUpstreamSpecAiProviderCustomModelServiceArgs extends 
         }
 
         /**
-         * @param namespace 命名空间。
+         * @param namespace Namespace
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class UpstreamUpstreamSpecAiProviderCustomModelServiceArgs extends 
         }
 
         /**
-         * @param port 端口。
+         * @param port Port
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class UpstreamUpstreamSpecAiProviderCustomModelServiceArgs extends 
         }
 
         /**
-         * @param port 端口。
+         * @param port Port
          * 
          * @return builder
          * 

@@ -19,14 +19,14 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
     public static final VpnAttachmentState Empty = new VpnAttachmentState();
 
     /**
-     * 是否自动同步TR路由到网络实例路由表中。
+     * Whether to automatically sync TR routes to the network instance route table.
      * 
      */
     @Import(name="autoPublishRouteEnabled")
     private @Nullable Output<Boolean> autoPublishRouteEnabled;
 
     /**
-     * @return 是否自动同步TR路由到网络实例路由表中。
+     * @return Whether to automatically sync TR routes to the network instance route table.
      * 
      */
     public Optional<Output<Boolean>> autoPublishRouteEnabled() {
@@ -34,14 +34,14 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 创建时间。
+     * Creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -49,14 +49,14 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * @return Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -64,14 +64,14 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+     * Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
      * 
      */
     @Import(name="healthCheckRevokeRouteEnabled")
     private @Nullable Output<Boolean> healthCheckRevokeRouteEnabled;
 
     /**
-     * @return 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+     * @return Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
      * 
      */
     public Optional<Output<Boolean>> healthCheckRevokeRouteEnabled() {
@@ -79,14 +79,14 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 是否开启IPv6功能。
+     * Whether to enable IPv6.
      * 
      */
     @Import(name="ipv6Enabled")
     private @Nullable Output<Boolean> ipv6Enabled;
 
     /**
-     * @return 是否开启IPv6功能。
+     * @return Whether to enable IPv6.
      * 
      */
     public Optional<Output<Boolean>> ipv6Enabled() {
@@ -94,14 +94,14 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+     * Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+     * @return Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
      * 
      */
     public Optional<Output<String>> status() {
@@ -116,14 +116,14 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 网络实例连接的ID。
+     * Network instance connection ID.
      * 
      */
     @Import(name="transitRouterAttachmentId")
     private @Nullable Output<String> transitRouterAttachmentId;
 
     /**
-     * @return 网络实例连接的ID。
+     * @return Network instance connection ID.
      * 
      */
     public Optional<Output<String>> transitRouterAttachmentId() {
@@ -131,14 +131,14 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+     * Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
      * 
      */
     @Import(name="transitRouterAttachmentName")
     private @Nullable Output<String> transitRouterAttachmentName;
 
     /**
-     * @return 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+     * @return Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
      * 
      */
     public Optional<Output<String>> transitRouterAttachmentName() {
@@ -146,14 +146,14 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 中转路由器实例的ID。
+     * Transit router instance ID.
      * 
      */
     @Import(name="transitRouterId")
     private @Nullable Output<String> transitRouterId;
 
     /**
-     * @return 中转路由器实例的ID。
+     * @return Transit router instance ID.
      * 
      */
     public Optional<Output<String>> transitRouterId() {
@@ -161,14 +161,14 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 关联的TR路由表ID。
+     * Associated TR route table ID.
      * 
      */
     @Import(name="transitRouterRouteTableId")
     private @Nullable Output<String> transitRouterRouteTableId;
 
     /**
-     * @return 关联的TR路由表ID。
+     * @return Associated TR route table ID.
      * 
      */
     public Optional<Output<String>> transitRouterRouteTableId() {
@@ -176,14 +176,14 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 更新时间。
+     * Update time.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -191,14 +191,14 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * IPsec连接的ID。
+     * IPsec connection ID.
      * 
      */
     @Import(name="vpnConnectionId")
     private @Nullable Output<String> vpnConnectionId;
 
     /**
-     * @return IPsec连接的ID。
+     * @return IPsec connection ID.
      * 
      */
     public Optional<Output<String>> vpnConnectionId() {
@@ -206,14 +206,14 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * IPsec连接所属可用区的ID。
+     * ID of the availability zone to which the IPsec connection belongs.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return IPsec连接所属可用区的ID。
+     * @return ID of the availability zone to which the IPsec connection belongs.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -258,7 +258,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param autoPublishRouteEnabled 是否自动同步TR路由到网络实例路由表中。
+         * @param autoPublishRouteEnabled Whether to automatically sync TR routes to the network instance route table.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param autoPublishRouteEnabled 是否自动同步TR路由到网络实例路由表中。
+         * @param autoPublishRouteEnabled Whether to automatically sync TR routes to the network instance route table.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time.
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+         * @param description Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+         * @param description Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param healthCheckRevokeRouteEnabled 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+         * @param healthCheckRevokeRouteEnabled Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param healthCheckRevokeRouteEnabled 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+         * @param healthCheckRevokeRouteEnabled Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv6Enabled 是否开启IPv6功能。
+         * @param ipv6Enabled Whether to enable IPv6.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv6Enabled 是否开启IPv6功能。
+         * @param ipv6Enabled Whether to enable IPv6.
          * 
          * @return builder
          * 
@@ -363,7 +363,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param status 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+         * @param status Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
          * 
          * @return builder
          * 
@@ -374,7 +374,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param status 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+         * @param status Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param transitRouterAttachmentId 网络实例连接的ID。
+         * @param transitRouterAttachmentId Network instance connection ID.
          * 
          * @return builder
          * 
@@ -408,7 +408,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param transitRouterAttachmentId 网络实例连接的ID。
+         * @param transitRouterAttachmentId Network instance connection ID.
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param transitRouterAttachmentName 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+         * @param transitRouterAttachmentName Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param transitRouterAttachmentName 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+         * @param transitRouterAttachmentName Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param transitRouterId 中转路由器实例的ID。
+         * @param transitRouterId Transit router instance ID.
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param transitRouterId 中转路由器实例的ID。
+         * @param transitRouterId Transit router instance ID.
          * 
          * @return builder
          * 
@@ -460,7 +460,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param transitRouterRouteTableId 关联的TR路由表ID。
+         * @param transitRouterRouteTableId Associated TR route table ID.
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param transitRouterRouteTableId 关联的TR路由表ID。
+         * @param transitRouterRouteTableId Associated TR route table ID.
          * 
          * @return builder
          * 
@@ -481,7 +481,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time.
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time.
          * 
          * @return builder
          * 
@@ -502,7 +502,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param vpnConnectionId IPsec连接的ID。
+         * @param vpnConnectionId IPsec connection ID.
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param vpnConnectionId IPsec连接的ID。
+         * @param vpnConnectionId IPsec connection ID.
          * 
          * @return builder
          * 
@@ -523,7 +523,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param zoneId IPsec连接所属可用区的ID。
+         * @param zoneId ID of the availability zone to which the IPsec connection belongs.
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param zoneId IPsec连接所属可用区的ID。
+         * @param zoneId ID of the availability zone to which the IPsec connection belongs.
          * 
          * @return builder
          * 

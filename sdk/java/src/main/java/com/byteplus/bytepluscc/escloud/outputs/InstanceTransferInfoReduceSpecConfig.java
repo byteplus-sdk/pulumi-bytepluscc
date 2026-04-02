@@ -13,62 +13,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceTransferInfoReduceSpecConfig {
     /**
-     * @return 冷节点数量。
+     * @return Number of cold nodes.
      * 
      */
     private @Nullable Integer coldNodeNum;
     /**
-     * @return 数据节点数量。
+     * @return Number of data nodes
      * 
      */
     private @Nullable Integer dataNodeNum;
     /**
-     * @return Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+     * @return Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
      * 
      */
     private @Nullable Boolean enablePureMaster;
     /**
-     * @return Master 节点数量。
+     * @return Number of master nodes.
      * 
      */
     private @Nullable Integer masterNodeNum;
     /**
-     * @return 温节点数量。
+     * @return Number of warm nodes
      * 
      */
     private @Nullable Integer warmNodeNum;
 
     private InstanceTransferInfoReduceSpecConfig() {}
     /**
-     * @return 冷节点数量。
+     * @return Number of cold nodes.
      * 
      */
     public Optional<Integer> coldNodeNum() {
         return Optional.ofNullable(this.coldNodeNum);
     }
     /**
-     * @return 数据节点数量。
+     * @return Number of data nodes
      * 
      */
     public Optional<Integer> dataNodeNum() {
         return Optional.ofNullable(this.dataNodeNum);
     }
     /**
-     * @return Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+     * @return Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
      * 
      */
     public Optional<Boolean> enablePureMaster() {
         return Optional.ofNullable(this.enablePureMaster);
     }
     /**
-     * @return Master 节点数量。
+     * @return Number of master nodes.
      * 
      */
     public Optional<Integer> masterNodeNum() {
         return Optional.ofNullable(this.masterNodeNum);
     }
     /**
-     * @return 温节点数量。
+     * @return Number of warm nodes
      * 
      */
     public Optional<Integer> warmNodeNum() {

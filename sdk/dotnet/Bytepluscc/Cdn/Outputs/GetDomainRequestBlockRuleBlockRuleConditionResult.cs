@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainRequestBlockRuleBlockRuleConditionResult
     {
         /// <summary>
-        /// 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        /// Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainRequestBlockRuleBlockRuleConditionConditionRuleResult> ConditionRules;
         /// <summary>
-        /// 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        /// Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         /// </summary>
         public readonly string Connective;
 

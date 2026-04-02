@@ -16,14 +16,14 @@ public final class ResolverRuleVpCArgs extends com.pulumi.resources.ResourceArgs
     public static final ResolverRuleVpCArgs Empty = new ResolverRuleVpCArgs();
 
     /**
-     * VPC 的地域。
+     * Region of the VPC
      * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
-     * @return VPC 的地域。
+     * @return Region of the VPC
      * 
      */
     public Optional<Output<String>> region() {
@@ -31,14 +31,14 @@ public final class ResolverRuleVpCArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * VPC 的 ID。
+     * VPC ID
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return VPC 的 ID。
+     * @return VPC ID
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -71,7 +71,7 @@ public final class ResolverRuleVpCArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param region VPC 的地域。
+         * @param region Region of the VPC
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ResolverRuleVpCArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param region VPC 的地域。
+         * @param region Region of the VPC
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ResolverRuleVpCArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param vpcId VPC 的 ID。
+         * @param vpcId VPC ID
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ResolverRuleVpCArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param vpcId VPC 的 ID。
+         * @param vpcId VPC ID
          * 
          * @return builder
          * 

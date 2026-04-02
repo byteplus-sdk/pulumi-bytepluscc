@@ -16,14 +16,14 @@ public final class NodePoolKubernetesConfigKubeletConfigEvictionHardArgs extends
     public static final NodePoolKubernetesConfigKubeletConfigEvictionHardArgs Empty = new NodePoolKubernetesConfigKubeletConfigEvictionHardArgs();
 
     /**
-     * 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+     * Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+     * @return Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class NodePoolKubernetesConfigKubeletConfigEvictionHardArgs extends
     }
 
     /**
-     * 硬性门限值。
+     * Hard threshold value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 硬性门限值。
+     * @return Hard threshold value.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class NodePoolKubernetesConfigKubeletConfigEvictionHardArgs extends
         }
 
         /**
-         * @param key 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+         * @param key Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class NodePoolKubernetesConfigKubeletConfigEvictionHardArgs extends
         }
 
         /**
-         * @param key 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+         * @param key Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class NodePoolKubernetesConfigKubeletConfigEvictionHardArgs extends
         }
 
         /**
-         * @param value 硬性门限值。
+         * @param value Hard threshold value.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class NodePoolKubernetesConfigKubeletConfigEvictionHardArgs extends
         }
 
         /**
-         * @param value 硬性门限值。
+         * @param value Hard threshold value.
          * 
          * @return builder
          * 

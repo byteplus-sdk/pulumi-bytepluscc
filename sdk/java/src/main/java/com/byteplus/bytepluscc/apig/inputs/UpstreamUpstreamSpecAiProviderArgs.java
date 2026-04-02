@@ -17,14 +17,14 @@ public final class UpstreamUpstreamSpecAiProviderArgs extends com.pulumi.resourc
     public static final UpstreamUpstreamSpecAiProviderArgs Empty = new UpstreamUpstreamSpecAiProviderArgs();
 
     /**
-     * 模型地址。
+     * Model address
      * 
      */
     @Import(name="baseUrl")
     private @Nullable Output<String> baseUrl;
 
     /**
-     * @return 模型地址。
+     * @return Model address
      * 
      */
     public Optional<Output<String>> baseUrl() {
@@ -32,14 +32,14 @@ public final class UpstreamUpstreamSpecAiProviderArgs extends com.pulumi.resourc
     }
 
     /**
-     * 火山自部署模型服务。
+     * Volcano Engine self-hosted model service
      * 
      */
     @Import(name="customModelService")
     private @Nullable Output<UpstreamUpstreamSpecAiProviderCustomModelServiceArgs> customModelService;
 
     /**
-     * @return 火山自部署模型服务。
+     * @return Volcano Engine self-hosted model service
      * 
      */
     public Optional<Output<UpstreamUpstreamSpecAiProviderCustomModelServiceArgs>> customModelService() {
@@ -47,14 +47,14 @@ public final class UpstreamUpstreamSpecAiProviderArgs extends com.pulumi.resourc
     }
 
     /**
-     * 模型服务商名称。
+     * Model Service Provider Name
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 模型服务商名称。
+     * @return Model Service Provider Name
      * 
      */
     public Optional<Output<String>> name() {
@@ -62,14 +62,14 @@ public final class UpstreamUpstreamSpecAiProviderArgs extends com.pulumi.resourc
     }
 
     /**
-     * 模型API key。
+     * Model API key
      * 
      */
     @Import(name="token")
     private @Nullable Output<String> token;
 
     /**
-     * @return 模型API key。
+     * @return Model API key
      * 
      */
     public Optional<Output<String>> token() {
@@ -104,7 +104,7 @@ public final class UpstreamUpstreamSpecAiProviderArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param baseUrl 模型地址。
+         * @param baseUrl Model address
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class UpstreamUpstreamSpecAiProviderArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param baseUrl 模型地址。
+         * @param baseUrl Model address
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class UpstreamUpstreamSpecAiProviderArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param customModelService 火山自部署模型服务。
+         * @param customModelService Volcano Engine self-hosted model service
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class UpstreamUpstreamSpecAiProviderArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param customModelService 火山自部署模型服务。
+         * @param customModelService Volcano Engine self-hosted model service
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class UpstreamUpstreamSpecAiProviderArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param name 模型服务商名称。
+         * @param name Model Service Provider Name
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class UpstreamUpstreamSpecAiProviderArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param name 模型服务商名称。
+         * @param name Model Service Provider Name
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class UpstreamUpstreamSpecAiProviderArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param token 模型API key。
+         * @param token Model API key
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class UpstreamUpstreamSpecAiProviderArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param token 模型API key。
+         * @param token Model API key
          * 
          * @return builder
          * 

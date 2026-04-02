@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class LoadBalancerGlobalAcceleratorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 绑定的全球加速实例的ID。
+        /// ID of the bound Global Accelerator instance.
         /// </summary>
         [Input("acceleratorId")]
         public Input<string>? AcceleratorId { get; set; }
 
         /// <summary>
-        /// 绑定的全球加速监听器的ID。
+        /// ID of the bound Global Accelerator listener.
         /// </summary>
         [Input("acceleratorListenerId")]
         public Input<string>? AcceleratorListenerId { get; set; }
 
         /// <summary>
-        /// 绑定的终端节点组的ID。
+        /// ID of the bound endpoint group.
         /// </summary>
         [Input("endpointGroupId")]
         public Input<string>? EndpointGroupId { get; set; }
 
         /// <summary>
-        /// 后端服务器的权重，决定流量分发比例。
+        /// Weight of the backend server, determines traffic distribution ratio.
         /// </summary>
         [Input("weight")]
         public Input<int>? Weight { get; set; }

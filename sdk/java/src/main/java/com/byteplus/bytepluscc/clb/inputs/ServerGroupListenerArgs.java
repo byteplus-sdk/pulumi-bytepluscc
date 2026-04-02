@@ -16,14 +16,14 @@ public final class ServerGroupListenerArgs extends com.pulumi.resources.Resource
     public static final ServerGroupListenerArgs Empty = new ServerGroupListenerArgs();
 
     /**
-     * 监听器的ID。
+     * Listener ID.
      * 
      */
     @Import(name="listenerId")
     private @Nullable Output<String> listenerId;
 
     /**
-     * @return 监听器的ID。
+     * @return Listener ID.
      * 
      */
     public Optional<Output<String>> listenerId() {
@@ -55,7 +55,7 @@ public final class ServerGroupListenerArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param listenerId 监听器的ID。
+         * @param listenerId Listener ID.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class ServerGroupListenerArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param listenerId 监听器的ID。
+         * @param listenerId Listener ID.
          * 
          * @return builder
          * 

@@ -17,14 +17,14 @@ public final class InstanceEndpointReadOnlyNodeWeightArgs extends com.pulumi.res
     public static final InstanceEndpointReadOnlyNodeWeightArgs Empty = new InstanceEndpointReadOnlyNodeWeightArgs();
 
     /**
-     * 只读节点需要传入 NodeId，主节点无需传入。
+     * Read-only nodes require NodeId. Primary nodes do not require it
      * 
      */
     @Import(name="nodeId")
     private @Nullable Output<String> nodeId;
 
     /**
-     * @return 只读节点需要传入 NodeId，主节点无需传入。
+     * @return Read-only nodes require NodeId. Primary nodes do not require it
      * 
      */
     public Optional<Output<String>> nodeId() {
@@ -32,14 +32,14 @@ public final class InstanceEndpointReadOnlyNodeWeightArgs extends com.pulumi.res
     }
 
     /**
-     * 节点类型。Primary：主节点。ReadOnly：只读节点。
+     * Node type. Primary: primary node. ReadOnly: read-only node
      * 
      */
     @Import(name="nodeType")
     private @Nullable Output<String> nodeType;
 
     /**
-     * @return 节点类型。Primary：主节点。ReadOnly：只读节点。
+     * @return Node type. Primary: primary node. ReadOnly: read-only node
      * 
      */
     public Optional<Output<String>> nodeType() {
@@ -47,14 +47,14 @@ public final class InstanceEndpointReadOnlyNodeWeightArgs extends com.pulumi.res
     }
 
     /**
-     * 节点的读权重，以 100 递增，最大值为 10000。
+     * Node read weight, increments of 100, maximum value is 10000.
      * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
-     * @return 节点的读权重，以 100 递增，最大值为 10000。
+     * @return Node read weight, increments of 100, maximum value is 10000.
      * 
      */
     public Optional<Output<Integer>> weight() {
@@ -88,7 +88,7 @@ public final class InstanceEndpointReadOnlyNodeWeightArgs extends com.pulumi.res
         }
 
         /**
-         * @param nodeId 只读节点需要传入 NodeId，主节点无需传入。
+         * @param nodeId Read-only nodes require NodeId. Primary nodes do not require it
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class InstanceEndpointReadOnlyNodeWeightArgs extends com.pulumi.res
         }
 
         /**
-         * @param nodeId 只读节点需要传入 NodeId，主节点无需传入。
+         * @param nodeId Read-only nodes require NodeId. Primary nodes do not require it
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class InstanceEndpointReadOnlyNodeWeightArgs extends com.pulumi.res
         }
 
         /**
-         * @param nodeType 节点类型。Primary：主节点。ReadOnly：只读节点。
+         * @param nodeType Node type. Primary: primary node. ReadOnly: read-only node
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class InstanceEndpointReadOnlyNodeWeightArgs extends com.pulumi.res
         }
 
         /**
-         * @param nodeType 节点类型。Primary：主节点。ReadOnly：只读节点。
+         * @param nodeType Node type. Primary: primary node. ReadOnly: read-only node
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class InstanceEndpointReadOnlyNodeWeightArgs extends com.pulumi.res
         }
 
         /**
-         * @param weight 节点的读权重，以 100 递增，最大值为 10000。
+         * @param weight Node read weight, increments of 100, maximum value is 10000.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class InstanceEndpointReadOnlyNodeWeightArgs extends com.pulumi.res
         }
 
         /**
-         * @param weight 节点的读权重，以 100 递增，最大值为 10000。
+         * @param weight Node read weight, increments of 100, maximum value is 10000.
          * 
          * @return builder
          * 

@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleRuleConditionHostConfig {
     /**
-     * @return 转发规则的域名，支持泛域名和精确域名。
+     * @return Domain name of the forwarding rule. Supports wildcard and exact domains.
      * 
      */
     private List<String> values;
 
     private GetRuleRuleConditionHostConfig() {}
     /**
-     * @return 转发规则的域名，支持泛域名和精确域名。
+     * @return Domain name of the forwarding rule. Supports wildcard and exact domains.
      * 
      */
     public List<String> values() {

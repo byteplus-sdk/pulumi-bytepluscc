@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 镜像仓库（Container Registry，CR）提供安全高可用的容器镜像、Helm Chart 等符合 OCI 标准的云原生制品托管服务，方便企业用户管理容器镜像和 Helm Chart 的全生命周期。
+// Container Registry (CR) provides secure, highly available hosting services for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts
 //
 // ## Example Usage
 //
@@ -56,26 +56,26 @@ import (
 type Registry struct {
 	pulumi.CustomResourceState
 
-	// 镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
+	// Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
 	ChargeType pulumi.StringOutput `pulumi:"chargeType"`
-	// 创建镜像仓库实例的时间。
+	// Creation time of the container registry instance
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 仅计费类型为HybridCharge有值，实例到期时间
+	// Instance expiration time is only available for HybridCharge billing type
 	ExpireTime pulumi.StringOutput `pulumi:"expireTime"`
-	// 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+	// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 填写实例需要关联的项目。一个实例仅支持关联一个项目
+	// Enter the project to associate with the instance. Each instance can only be associated with one project
 	Project pulumi.StringOutput `pulumi:"project"`
-	// ProxyCache配置，设置为ProxyCache时必填
+	// ProxyCache configuration. Required when set as ProxyCache
 	ProxyCache RegistryProxyCacheOutput `pulumi:"proxyCache"`
-	// 是否设置为ProxyCache实例
+	// Set as ProxyCache instance
 	ProxyCacheEnabled pulumi.BoolOutput `pulumi:"proxyCacheEnabled"`
-	// 仅计费类型为HybridCharge有值，实例自动续费类型
+	// Instance auto-renewal type is only available for HybridCharge billing type
 	RenewType pulumi.StringOutput `pulumi:"renewType"`
-	// 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+	// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
 	Status RegistryStatusOutput   `pulumi:"status"`
 	Tags   RegistryTagArrayOutput `pulumi:"tags"`
-	// 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+	// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
 	Type pulumi.StringOutput `pulumi:"type"`
 }
 
@@ -112,50 +112,50 @@ func GetRegistry(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Registry resources.
 type registryState struct {
-	// 镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
+	// Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
 	ChargeType *string `pulumi:"chargeType"`
-	// 创建镜像仓库实例的时间。
+	// Creation time of the container registry instance
 	CreatedTime *string `pulumi:"createdTime"`
-	// 仅计费类型为HybridCharge有值，实例到期时间
+	// Instance expiration time is only available for HybridCharge billing type
 	ExpireTime *string `pulumi:"expireTime"`
-	// 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+	// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
 	Name *string `pulumi:"name"`
-	// 填写实例需要关联的项目。一个实例仅支持关联一个项目
+	// Enter the project to associate with the instance. Each instance can only be associated with one project
 	Project *string `pulumi:"project"`
-	// ProxyCache配置，设置为ProxyCache时必填
+	// ProxyCache configuration. Required when set as ProxyCache
 	ProxyCache *RegistryProxyCache `pulumi:"proxyCache"`
-	// 是否设置为ProxyCache实例
+	// Set as ProxyCache instance
 	ProxyCacheEnabled *bool `pulumi:"proxyCacheEnabled"`
-	// 仅计费类型为HybridCharge有值，实例自动续费类型
+	// Instance auto-renewal type is only available for HybridCharge billing type
 	RenewType *string `pulumi:"renewType"`
-	// 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+	// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
 	Status *RegistryStatus `pulumi:"status"`
 	Tags   []RegistryTag   `pulumi:"tags"`
-	// 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+	// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
 	Type *string `pulumi:"type"`
 }
 
 type RegistryState struct {
-	// 镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
+	// Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
 	ChargeType pulumi.StringPtrInput
-	// 创建镜像仓库实例的时间。
+	// Creation time of the container registry instance
 	CreatedTime pulumi.StringPtrInput
-	// 仅计费类型为HybridCharge有值，实例到期时间
+	// Instance expiration time is only available for HybridCharge billing type
 	ExpireTime pulumi.StringPtrInput
-	// 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+	// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
 	Name pulumi.StringPtrInput
-	// 填写实例需要关联的项目。一个实例仅支持关联一个项目
+	// Enter the project to associate with the instance. Each instance can only be associated with one project
 	Project pulumi.StringPtrInput
-	// ProxyCache配置，设置为ProxyCache时必填
+	// ProxyCache configuration. Required when set as ProxyCache
 	ProxyCache RegistryProxyCachePtrInput
-	// 是否设置为ProxyCache实例
+	// Set as ProxyCache instance
 	ProxyCacheEnabled pulumi.BoolPtrInput
-	// 仅计费类型为HybridCharge有值，实例自动续费类型
+	// Instance auto-renewal type is only available for HybridCharge billing type
 	RenewType pulumi.StringPtrInput
-	// 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+	// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
 	Status RegistryStatusPtrInput
 	Tags   RegistryTagArrayInput
-	// 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+	// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
 	Type pulumi.StringPtrInput
 }
 
@@ -164,27 +164,27 @@ func (RegistryState) ElementType() reflect.Type {
 }
 
 type registryArgs struct {
-	// 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+	// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
 	Name string `pulumi:"name"`
-	// 填写实例需要关联的项目。一个实例仅支持关联一个项目
+	// Enter the project to associate with the instance. Each instance can only be associated with one project
 	Project *string `pulumi:"project"`
-	// 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+	// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
 	Status *RegistryStatus `pulumi:"status"`
 	Tags   []RegistryTag   `pulumi:"tags"`
-	// 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+	// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
 	Type *string `pulumi:"type"`
 }
 
 // The set of arguments for constructing a Registry resource.
 type RegistryArgs struct {
-	// 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+	// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
 	Name pulumi.StringInput
-	// 填写实例需要关联的项目。一个实例仅支持关联一个项目
+	// Enter the project to associate with the instance. Each instance can only be associated with one project
 	Project pulumi.StringPtrInput
-	// 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+	// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
 	Status RegistryStatusPtrInput
 	Tags   RegistryTagArrayInput
-	// 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+	// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
 	Type pulumi.StringPtrInput
 }
 
@@ -275,47 +275,47 @@ func (o RegistryOutput) ToRegistryOutputWithContext(ctx context.Context) Registr
 	return o
 }
 
-// 镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
+// Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
 func (o RegistryOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 创建镜像仓库实例的时间。
+// Creation time of the container registry instance
 func (o RegistryOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 仅计费类型为HybridCharge有值，实例到期时间
+// Instance expiration time is only available for HybridCharge billing type
 func (o RegistryOutput) ExpireTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.ExpireTime }).(pulumi.StringOutput)
 }
 
-// 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
 func (o RegistryOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 填写实例需要关联的项目。一个实例仅支持关联一个项目
+// Enter the project to associate with the instance. Each instance can only be associated with one project
 func (o RegistryOutput) Project() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.Project }).(pulumi.StringOutput)
 }
 
-// ProxyCache配置，设置为ProxyCache时必填
+// ProxyCache configuration. Required when set as ProxyCache
 func (o RegistryOutput) ProxyCache() RegistryProxyCacheOutput {
 	return o.ApplyT(func(v *Registry) RegistryProxyCacheOutput { return v.ProxyCache }).(RegistryProxyCacheOutput)
 }
 
-// 是否设置为ProxyCache实例
+// Set as ProxyCache instance
 func (o RegistryOutput) ProxyCacheEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Registry) pulumi.BoolOutput { return v.ProxyCacheEnabled }).(pulumi.BoolOutput)
 }
 
-// 仅计费类型为HybridCharge有值，实例自动续费类型
+// Instance auto-renewal type is only available for HybridCharge billing type
 func (o RegistryOutput) RenewType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.RenewType }).(pulumi.StringOutput)
 }
 
-// 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
 func (o RegistryOutput) Status() RegistryStatusOutput {
 	return o.ApplyT(func(v *Registry) RegistryStatusOutput { return v.Status }).(RegistryStatusOutput)
 }
@@ -324,7 +324,7 @@ func (o RegistryOutput) Tags() RegistryTagArrayOutput {
 	return o.ApplyT(func(v *Registry) RegistryTagArrayOutput { return v.Tags }).(RegistryTagArrayOutput)
 }
 
-// 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
 func (o RegistryOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

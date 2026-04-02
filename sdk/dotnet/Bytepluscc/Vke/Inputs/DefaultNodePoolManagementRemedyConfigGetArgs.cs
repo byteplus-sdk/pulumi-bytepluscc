@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class DefaultNodePoolManagementRemedyConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启检查自愈。
+        /// Enable self-healing check
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// 检查自愈规则ID。
+        /// Self-healing rule ID
         /// </summary>
         [Input("remedyId")]
         public Input<string>? RemedyId { get; set; }

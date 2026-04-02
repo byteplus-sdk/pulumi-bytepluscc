@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 实例启动模板是一系列实例配置信息的集合，用于快速购买实例。在模板中，您可以存储除密码外的全部配置信息，包括密钥对、计算规格、云盘、网络等，如果配置信息均有效，便可以一键成功购买实例，无需进行重复配置。
+ * An instance launch template is a collection of instance configuration information for quickly purchasing instances. You can store all configuration information except passwords in the template, including key pairs, compute specifications, cloud disks, networks, etc. If all configuration information is valid, you can purchase instances with one click without repeated configuration.
  *
  * ## Import
  *
@@ -44,36 +44,36 @@ export class LaunchTemplate extends pulumi.CustomResource {
     }
 
     /**
-     * 实例启动模板的创建时间。
+     * Instance launch template creation time
      */
     public /*out*/ readonly createdAt!: pulumi.Output<string>;
     /**
-     * 实例启动模板的默认版本号。
+     * Instance launch template default version number
      */
     public readonly defaultVersionNumber!: pulumi.Output<number>;
     /**
-     * 实例启动模的最新版本号。
+     * Latest version number of the instance launch template.
      */
     public /*out*/ readonly latestVersionNumber!: pulumi.Output<number>;
     /**
-     * 实例启动模板 ID。
+     * Instance launch template ID
      */
     public /*out*/ readonly launchTemplateId!: pulumi.Output<string>;
     /**
-     * 实例启动模板名称。
+     * Instance launch template name.
      */
     public readonly launchTemplateName!: pulumi.Output<string>;
     /**
-     * 实例启动模版所属项目。
+     * Project associated with the instance launch template.
      */
     public readonly launchTemplateProjectName!: pulumi.Output<string>;
     public readonly launchTemplateTags!: pulumi.Output<outputs.ecs.LaunchTemplateLaunchTemplateTag[]>;
     /**
-     * 实例启动模板版本信息。
+     * Instance launch template version information
      */
     public readonly launchTemplateVersion!: pulumi.Output<outputs.ecs.LaunchTemplateLaunchTemplateVersion>;
     /**
-     * 实例启动模板的更新时间。
+     * Instance launch template update time
      */
     public /*out*/ readonly updatedAt!: pulumi.Output<string>;
 
@@ -124,36 +124,36 @@ export class LaunchTemplate extends pulumi.CustomResource {
  */
 export interface LaunchTemplateState {
     /**
-     * 实例启动模板的创建时间。
+     * Instance launch template creation time
      */
     createdAt?: pulumi.Input<string>;
     /**
-     * 实例启动模板的默认版本号。
+     * Instance launch template default version number
      */
     defaultVersionNumber?: pulumi.Input<number>;
     /**
-     * 实例启动模的最新版本号。
+     * Latest version number of the instance launch template.
      */
     latestVersionNumber?: pulumi.Input<number>;
     /**
-     * 实例启动模板 ID。
+     * Instance launch template ID
      */
     launchTemplateId?: pulumi.Input<string>;
     /**
-     * 实例启动模板名称。
+     * Instance launch template name.
      */
     launchTemplateName?: pulumi.Input<string>;
     /**
-     * 实例启动模版所属项目。
+     * Project associated with the instance launch template.
      */
     launchTemplateProjectName?: pulumi.Input<string>;
     launchTemplateTags?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateTag>[]>;
     /**
-     * 实例启动模板版本信息。
+     * Instance launch template version information
      */
     launchTemplateVersion?: pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateVersion>;
     /**
-     * 实例启动模板的更新时间。
+     * Instance launch template update time
      */
     updatedAt?: pulumi.Input<string>;
 }
@@ -163,20 +163,20 @@ export interface LaunchTemplateState {
  */
 export interface LaunchTemplateArgs {
     /**
-     * 实例启动模板的默认版本号。
+     * Instance launch template default version number
      */
     defaultVersionNumber?: pulumi.Input<number>;
     /**
-     * 实例启动模板名称。
+     * Instance launch template name.
      */
     launchTemplateName: pulumi.Input<string>;
     /**
-     * 实例启动模版所属项目。
+     * Project associated with the instance launch template.
      */
     launchTemplateProjectName?: pulumi.Input<string>;
     launchTemplateTags?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateTag>[]>;
     /**
-     * 实例启动模板版本信息。
+     * Instance launch template version information
      */
     launchTemplateVersion?: pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateVersion>;
 }

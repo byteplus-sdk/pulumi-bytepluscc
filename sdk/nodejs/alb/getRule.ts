@@ -31,15 +31,15 @@ export interface GetRuleArgs {
  */
 export interface GetRuleResult {
     /**
-     * 转发规则的描述。
+     * Forwarding rule description.
      */
     readonly description: string;
     /**
-     * 转发规则的域名。
+     * Domain name of the forwarding rule.
      */
     readonly domain: string;
     /**
-     * 转发规则服务器组配置
+     * Forwarding rule server group configuration.
      */
     readonly forwardGroupConfig: outputs.alb.GetRuleForwardGroupConfig;
     /**
@@ -47,55 +47,55 @@ export interface GetRuleResult {
      */
     readonly id: string;
     /**
-     * 监听器ID。
+     * Listener ID.
      */
     readonly listenerId: string;
     /**
-     * 标准版转发规则优先级。
+     * Standard edition forwarding rule priority.
      */
     readonly priority: number;
     /**
-     * 重定向相关配置信息。
+     * Redirect-related configuration information.
      */
     readonly redirectConfig: outputs.alb.GetRuleRedirectConfig;
     /**
-     * 重定向相关配置信息。
+     * Redirect-related configuration information.
      */
     readonly rewriteConfig: outputs.alb.GetRuleRewriteConfig;
     /**
-     * 转发规则重写配置开关。on：开启。off：关闭。
+     * Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
      */
     readonly rewriteEnabled: string;
     /**
-     * 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+     * Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
      */
     readonly ruleAction: string;
     /**
-     * 标准版转发规则动作。
+     * Standard edition forwarding rule action.
      */
     readonly ruleActions: outputs.alb.GetRuleRuleAction[];
     /**
-     * 标准版转发规则条件。
+     * Standard edition forwarding rule condition.
      */
     readonly ruleConditions: outputs.alb.GetRuleRuleCondition[];
     /**
-     * 转发规则ID。
+     * Forwarding rule ID.
      */
     readonly ruleId: string;
     /**
-     * 转发规则关联的后端服务器组ID。
+     * Backend server group ID associated with the forwarding rule.
      */
     readonly serverGroupId: string;
     /**
-     * 转发规则 QPS 限速开关。on：开启。off：关闭。
+     * Forwarding rule QPS throttling switch. on: enabled. off: disabled.
      */
     readonly trafficLimitEnabled: string;
     /**
-     * 每秒请求数。取值范围：100～100000。
+     * Requests per second. Range: 100–100000.
      */
     readonly trafficLimitQps: number;
     /**
-     * 转发规则的URL。
+     * Forwarding rule URL.
      */
     readonly url: string;
 }

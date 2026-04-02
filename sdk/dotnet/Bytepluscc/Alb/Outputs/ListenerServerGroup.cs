@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class ListenerServerGroup
     {
         /// <summary>
-        /// 服务器组 ID 。
+        /// Server group ID.
         /// </summary>
         public readonly string? ServerGroupId;
         /// <summary>
-        /// 服务器组名称。
+        /// Server group name.
         /// </summary>
         public readonly string? ServerGroupName;
 

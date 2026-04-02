@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleRuleConditionHeaderConfig {
     /**
-     * @return 头字段键。
+     * @return Header field key.
      * 
      */
     private String key;
     /**
-     * @return 头字段值。
+     * @return Header field value.
      * 
      */
     private List<String> values;
 
     private GetRuleRuleConditionHeaderConfig() {}
     /**
-     * @return 头字段键。
+     * @return Header field key.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 头字段值。
+     * @return Header field value.
      * 
      */
     public List<String> values() {

@@ -17,14 +17,14 @@ public final class CustomizedCfgListenerArgs extends com.pulumi.resources.Resour
     public static final CustomizedCfgListenerArgs Empty = new CustomizedCfgListenerArgs();
 
     /**
-     * 监听器的 ID。
+     * Listener ID.
      * 
      */
     @Import(name="listenerId")
     private @Nullable Output<String> listenerId;
 
     /**
-     * @return 监听器的 ID。
+     * @return Listener ID.
      * 
      */
     public Optional<Output<String>> listenerId() {
@@ -32,14 +32,14 @@ public final class CustomizedCfgListenerArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 监听器的名称。
+     * Listener name.
      * 
      */
     @Import(name="listenerName")
     private @Nullable Output<String> listenerName;
 
     /**
-     * @return 监听器的名称。
+     * @return Listener name.
      * 
      */
     public Optional<Output<String>> listenerName() {
@@ -47,14 +47,14 @@ public final class CustomizedCfgListenerArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 监听器的端口。
+     * Listener port.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 监听器的端口。
+     * @return Listener port.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -62,14 +62,14 @@ public final class CustomizedCfgListenerArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 监听器的协议。
+     * Listener protocol.
      * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
-     * @return 监听器的协议。
+     * @return Listener protocol.
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -104,7 +104,7 @@ public final class CustomizedCfgListenerArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param listenerId 监听器的 ID。
+         * @param listenerId Listener ID.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class CustomizedCfgListenerArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param listenerId 监听器的 ID。
+         * @param listenerId Listener ID.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class CustomizedCfgListenerArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param listenerName 监听器的名称。
+         * @param listenerName Listener name.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class CustomizedCfgListenerArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param listenerName 监听器的名称。
+         * @param listenerName Listener name.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class CustomizedCfgListenerArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param port 监听器的端口。
+         * @param port Listener port.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class CustomizedCfgListenerArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param port 监听器的端口。
+         * @param port Listener port.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class CustomizedCfgListenerArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param protocol 监听器的协议。
+         * @param protocol Listener protocol.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class CustomizedCfgListenerArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param protocol 监听器的协议。
+         * @param protocol Listener protocol.
          * 
          * @return builder
          * 

@@ -32,13 +32,13 @@ class VpnAttachmentArgs:
                  transit_router_route_table_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a VpnAttachment resource.
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID。
-        :param pulumi.Input[builtins.str] vpn_connection_id: IPsec连接的ID。
-        :param pulumi.Input[builtins.str] zone_id: IPsec连接所属可用区的ID。
-        :param pulumi.Input[builtins.str] description: 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.bool] health_check_revoke_route_enabled: 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
-        :param pulumi.Input[builtins.str] transit_router_attachment_name: 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
-        :param pulumi.Input[builtins.str] transit_router_route_table_id: 关联的TR路由表ID。
+        :param pulumi.Input[builtins.str] transit_router_id: Transit router instance ID.
+        :param pulumi.Input[builtins.str] vpn_connection_id: IPsec connection ID.
+        :param pulumi.Input[builtins.str] zone_id: ID of the availability zone to which the IPsec connection belongs.
+        :param pulumi.Input[builtins.str] description: Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
+        :param pulumi.Input[builtins.bool] health_check_revoke_route_enabled: Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
+        :param pulumi.Input[builtins.str] transit_router_attachment_name: Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
+        :param pulumi.Input[builtins.str] transit_router_route_table_id: Associated TR route table ID.
         """
         pulumi.set(__self__, "transit_router_id", transit_router_id)
         pulumi.set(__self__, "vpn_connection_id", vpn_connection_id)
@@ -58,7 +58,7 @@ class VpnAttachmentArgs:
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> pulumi.Input[builtins.str]:
         """
-        中转路由器实例的ID。
+        Transit router instance ID.
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -70,7 +70,7 @@ class VpnAttachmentArgs:
     @pulumi.getter(name="vpnConnectionId")
     def vpn_connection_id(self) -> pulumi.Input[builtins.str]:
         """
-        IPsec连接的ID。
+        IPsec connection ID.
         """
         return pulumi.get(self, "vpn_connection_id")
 
@@ -82,7 +82,7 @@ class VpnAttachmentArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[builtins.str]:
         """
-        IPsec连接所属可用区的ID。
+        ID of the availability zone to which the IPsec connection belongs.
         """
         return pulumi.get(self, "zone_id")
 
@@ -94,7 +94,7 @@ class VpnAttachmentArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -106,7 +106,7 @@ class VpnAttachmentArgs:
     @pulumi.getter(name="healthCheckRevokeRouteEnabled")
     def health_check_revoke_route_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+        Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
         """
         return pulumi.get(self, "health_check_revoke_route_enabled")
 
@@ -127,7 +127,7 @@ class VpnAttachmentArgs:
     @pulumi.getter(name="transitRouterAttachmentName")
     def transit_router_attachment_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_name")
 
@@ -139,7 +139,7 @@ class VpnAttachmentArgs:
     @pulumi.getter(name="transitRouterRouteTableId")
     def transit_router_route_table_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        关联的TR路由表ID。
+        Associated TR route table ID.
         """
         return pulumi.get(self, "transit_router_route_table_id")
 
@@ -167,19 +167,19 @@ class _VpnAttachmentState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering VpnAttachment resources.
-        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: 是否自动同步TR路由到网络实例路由表中。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.bool] health_check_revoke_route_enabled: 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
-        :param pulumi.Input[builtins.bool] ipv6_enabled: 是否开启IPv6功能。
-        :param pulumi.Input[builtins.str] status: 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
-        :param pulumi.Input[builtins.str] transit_router_attachment_id: 网络实例连接的ID。
-        :param pulumi.Input[builtins.str] transit_router_attachment_name: 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID。
-        :param pulumi.Input[builtins.str] transit_router_route_table_id: 关联的TR路由表ID。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
-        :param pulumi.Input[builtins.str] vpn_connection_id: IPsec连接的ID。
-        :param pulumi.Input[builtins.str] zone_id: IPsec连接所属可用区的ID。
+        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: Whether to automatically sync TR routes to the network instance route table.
+        :param pulumi.Input[builtins.str] created_time: Creation time.
+        :param pulumi.Input[builtins.str] description: Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
+        :param pulumi.Input[builtins.bool] health_check_revoke_route_enabled: Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
+        :param pulumi.Input[builtins.bool] ipv6_enabled: Whether to enable IPv6.
+        :param pulumi.Input[builtins.str] status: Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
+        :param pulumi.Input[builtins.str] transit_router_attachment_id: Network instance connection ID.
+        :param pulumi.Input[builtins.str] transit_router_attachment_name: Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
+        :param pulumi.Input[builtins.str] transit_router_id: Transit router instance ID.
+        :param pulumi.Input[builtins.str] transit_router_route_table_id: Associated TR route table ID.
+        :param pulumi.Input[builtins.str] updated_time: Update time.
+        :param pulumi.Input[builtins.str] vpn_connection_id: IPsec connection ID.
+        :param pulumi.Input[builtins.str] zone_id: ID of the availability zone to which the IPsec connection belongs.
         """
         if auto_publish_route_enabled is not None:
             pulumi.set(__self__, "auto_publish_route_enabled", auto_publish_route_enabled)
@@ -214,7 +214,7 @@ class _VpnAttachmentState:
     @pulumi.getter(name="autoPublishRouteEnabled")
     def auto_publish_route_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否自动同步TR路由到网络实例路由表中。
+        Whether to automatically sync TR routes to the network instance route table.
         """
         return pulumi.get(self, "auto_publish_route_enabled")
 
@@ -226,7 +226,7 @@ class _VpnAttachmentState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -238,7 +238,7 @@ class _VpnAttachmentState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -250,7 +250,7 @@ class _VpnAttachmentState:
     @pulumi.getter(name="healthCheckRevokeRouteEnabled")
     def health_check_revoke_route_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+        Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
         """
         return pulumi.get(self, "health_check_revoke_route_enabled")
 
@@ -262,7 +262,7 @@ class _VpnAttachmentState:
     @pulumi.getter(name="ipv6Enabled")
     def ipv6_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启IPv6功能。
+        Whether to enable IPv6.
         """
         return pulumi.get(self, "ipv6_enabled")
 
@@ -274,7 +274,7 @@ class _VpnAttachmentState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+        Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
         """
         return pulumi.get(self, "status")
 
@@ -295,7 +295,7 @@ class _VpnAttachmentState:
     @pulumi.getter(name="transitRouterAttachmentId")
     def transit_router_attachment_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的ID。
+        Network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_id")
 
@@ -307,7 +307,7 @@ class _VpnAttachmentState:
     @pulumi.getter(name="transitRouterAttachmentName")
     def transit_router_attachment_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_name")
 
@@ -319,7 +319,7 @@ class _VpnAttachmentState:
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例的ID。
+        Transit router instance ID.
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -331,7 +331,7 @@ class _VpnAttachmentState:
     @pulumi.getter(name="transitRouterRouteTableId")
     def transit_router_route_table_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        关联的TR路由表ID。
+        Associated TR route table ID.
         """
         return pulumi.get(self, "transit_router_route_table_id")
 
@@ -343,7 +343,7 @@ class _VpnAttachmentState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -355,7 +355,7 @@ class _VpnAttachmentState:
     @pulumi.getter(name="vpnConnectionId")
     def vpn_connection_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPsec连接的ID。
+        IPsec connection ID.
         """
         return pulumi.get(self, "vpn_connection_id")
 
@@ -367,7 +367,7 @@ class _VpnAttachmentState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPsec连接所属可用区的ID。
+        ID of the availability zone to which the IPsec connection belongs.
         """
         return pulumi.get(self, "zone_id")
 
@@ -392,7 +392,7 @@ class VpnAttachment(pulumi.CustomResource):
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        通过在VPN连接的IPsec连接和中转路由器之间建立连接，可以实现VPN连通的网络与中转路由器的私网互通。
+        By establishing a connection between the IPsec connection of the VPN and the transit router, you can enable communication between the VPN-connected network and the private network of the transit router.
 
         ## Example Usage
 
@@ -421,13 +421,13 @@ class VpnAttachment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.bool] health_check_revoke_route_enabled: 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
-        :param pulumi.Input[builtins.str] transit_router_attachment_name: 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID。
-        :param pulumi.Input[builtins.str] transit_router_route_table_id: 关联的TR路由表ID。
-        :param pulumi.Input[builtins.str] vpn_connection_id: IPsec连接的ID。
-        :param pulumi.Input[builtins.str] zone_id: IPsec连接所属可用区的ID。
+        :param pulumi.Input[builtins.str] description: Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
+        :param pulumi.Input[builtins.bool] health_check_revoke_route_enabled: Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
+        :param pulumi.Input[builtins.str] transit_router_attachment_name: Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
+        :param pulumi.Input[builtins.str] transit_router_id: Transit router instance ID.
+        :param pulumi.Input[builtins.str] transit_router_route_table_id: Associated TR route table ID.
+        :param pulumi.Input[builtins.str] vpn_connection_id: IPsec connection ID.
+        :param pulumi.Input[builtins.str] zone_id: ID of the availability zone to which the IPsec connection belongs.
         """
         ...
     @overload
@@ -436,7 +436,7 @@ class VpnAttachment(pulumi.CustomResource):
                  args: VpnAttachmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        通过在VPN连接的IPsec连接和中转路由器之间建立连接，可以实现VPN连通的网络与中转路由器的私网互通。
+        By establishing a connection between the IPsec connection of the VPN and the transit router, you can enable communication between the VPN-connected network and the private network of the transit router.
 
         ## Example Usage
 
@@ -546,19 +546,19 @@ class VpnAttachment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: 是否自动同步TR路由到网络实例路由表中。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.bool] health_check_revoke_route_enabled: 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
-        :param pulumi.Input[builtins.bool] ipv6_enabled: 是否开启IPv6功能。
-        :param pulumi.Input[builtins.str] status: 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
-        :param pulumi.Input[builtins.str] transit_router_attachment_id: 网络实例连接的ID。
-        :param pulumi.Input[builtins.str] transit_router_attachment_name: 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID。
-        :param pulumi.Input[builtins.str] transit_router_route_table_id: 关联的TR路由表ID。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
-        :param pulumi.Input[builtins.str] vpn_connection_id: IPsec连接的ID。
-        :param pulumi.Input[builtins.str] zone_id: IPsec连接所属可用区的ID。
+        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: Whether to automatically sync TR routes to the network instance route table.
+        :param pulumi.Input[builtins.str] created_time: Creation time.
+        :param pulumi.Input[builtins.str] description: Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
+        :param pulumi.Input[builtins.bool] health_check_revoke_route_enabled: Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
+        :param pulumi.Input[builtins.bool] ipv6_enabled: Whether to enable IPv6.
+        :param pulumi.Input[builtins.str] status: Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
+        :param pulumi.Input[builtins.str] transit_router_attachment_id: Network instance connection ID.
+        :param pulumi.Input[builtins.str] transit_router_attachment_name: Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
+        :param pulumi.Input[builtins.str] transit_router_id: Transit router instance ID.
+        :param pulumi.Input[builtins.str] transit_router_route_table_id: Associated TR route table ID.
+        :param pulumi.Input[builtins.str] updated_time: Update time.
+        :param pulumi.Input[builtins.str] vpn_connection_id: IPsec connection ID.
+        :param pulumi.Input[builtins.str] zone_id: ID of the availability zone to which the IPsec connection belongs.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -584,7 +584,7 @@ class VpnAttachment(pulumi.CustomResource):
     @pulumi.getter(name="autoPublishRouteEnabled")
     def auto_publish_route_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否自动同步TR路由到网络实例路由表中。
+        Whether to automatically sync TR routes to the network instance route table.
         """
         return pulumi.get(self, "auto_publish_route_enabled")
 
@@ -592,7 +592,7 @@ class VpnAttachment(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -600,7 +600,7 @@ class VpnAttachment(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -608,7 +608,7 @@ class VpnAttachment(pulumi.CustomResource):
     @pulumi.getter(name="healthCheckRevokeRouteEnabled")
     def health_check_revoke_route_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+        Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
         """
         return pulumi.get(self, "health_check_revoke_route_enabled")
 
@@ -616,7 +616,7 @@ class VpnAttachment(pulumi.CustomResource):
     @pulumi.getter(name="ipv6Enabled")
     def ipv6_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启IPv6功能。
+        Whether to enable IPv6.
         """
         return pulumi.get(self, "ipv6_enabled")
 
@@ -624,7 +624,7 @@ class VpnAttachment(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+        Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
         """
         return pulumi.get(self, "status")
 
@@ -637,7 +637,7 @@ class VpnAttachment(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterAttachmentId")
     def transit_router_attachment_id(self) -> pulumi.Output[builtins.str]:
         """
-        网络实例连接的ID。
+        Network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_id")
 
@@ -645,7 +645,7 @@ class VpnAttachment(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterAttachmentName")
     def transit_router_attachment_name(self) -> pulumi.Output[builtins.str]:
         """
-        网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_name")
 
@@ -653,7 +653,7 @@ class VpnAttachment(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> pulumi.Output[builtins.str]:
         """
-        中转路由器实例的ID。
+        Transit router instance ID.
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -661,7 +661,7 @@ class VpnAttachment(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterRouteTableId")
     def transit_router_route_table_id(self) -> pulumi.Output[builtins.str]:
         """
-        关联的TR路由表ID。
+        Associated TR route table ID.
         """
         return pulumi.get(self, "transit_router_route_table_id")
 
@@ -669,7 +669,7 @@ class VpnAttachment(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -677,7 +677,7 @@ class VpnAttachment(pulumi.CustomResource):
     @pulumi.getter(name="vpnConnectionId")
     def vpn_connection_id(self) -> pulumi.Output[builtins.str]:
         """
-        IPsec连接的ID。
+        IPsec connection ID.
         """
         return pulumi.get(self, "vpn_connection_id")
 
@@ -685,7 +685,7 @@ class VpnAttachment(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        IPsec连接所属可用区的ID。
+        ID of the availability zone to which the IPsec connection belongs.
         """
         return pulumi.get(self, "zone_id")
 

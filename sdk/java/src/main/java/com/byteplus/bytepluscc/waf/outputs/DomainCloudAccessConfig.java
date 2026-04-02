@@ -13,98 +13,98 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainCloudAccessConfig {
     /**
-     * @return 接入协议类型。
+     * @return Access protocol type
      * 
      */
     private @Nullable String accessProtocol;
     /**
-     * @return 防护模式。
+     * @return Protection mode
      * 
      */
     private @Nullable Integer defenceMode;
     /**
-     * @return 负载均衡实例 ID。
+     * @return Load balancing instance ID.
      * 
      */
     private @Nullable String instanceId;
     /**
-     * @return 负载均衡实例名称。
+     * @return Load balancer instance name.
      * 
      */
     private @Nullable String instanceName;
     /**
-     * @return 负载均衡监听器 ID。
+     * @return Load balancing listener ID.
      * 
      */
     private @Nullable String listenerId;
     /**
-     * @return 是否从 ALB 中丢失关联。
+     * @return Disassociated from ALB
      * 
      */
     private @Nullable Integer lostAssociationFromAlb;
     /**
-     * @return 监听器转发规则的端口号。
+     * @return Listener forwarding rule port number
      * 
      */
     private @Nullable String port;
     /**
-     * @return 监听器转发规则的协议类型。
+     * @return Protocol type for listener forwarding rules.
      * 
      */
     private @Nullable String protocol;
 
     private DomainCloudAccessConfig() {}
     /**
-     * @return 接入协议类型。
+     * @return Access protocol type
      * 
      */
     public Optional<String> accessProtocol() {
         return Optional.ofNullable(this.accessProtocol);
     }
     /**
-     * @return 防护模式。
+     * @return Protection mode
      * 
      */
     public Optional<Integer> defenceMode() {
         return Optional.ofNullable(this.defenceMode);
     }
     /**
-     * @return 负载均衡实例 ID。
+     * @return Load balancing instance ID.
      * 
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
     }
     /**
-     * @return 负载均衡实例名称。
+     * @return Load balancer instance name.
      * 
      */
     public Optional<String> instanceName() {
         return Optional.ofNullable(this.instanceName);
     }
     /**
-     * @return 负载均衡监听器 ID。
+     * @return Load balancing listener ID.
      * 
      */
     public Optional<String> listenerId() {
         return Optional.ofNullable(this.listenerId);
     }
     /**
-     * @return 是否从 ALB 中丢失关联。
+     * @return Disassociated from ALB
      * 
      */
     public Optional<Integer> lostAssociationFromAlb() {
         return Optional.ofNullable(this.lostAssociationFromAlb);
     }
     /**
-     * @return 监听器转发规则的端口号。
+     * @return Listener forwarding rule port number
      * 
      */
     public Optional<String> port() {
         return Optional.ofNullable(this.port);
     }
     /**
-     * @return 监听器转发规则的协议类型。
+     * @return Protocol type for listener forwarding rules.
      * 
      */
     public Optional<String> protocol() {

@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 public final class DbAccountTableColumnPrivilege {
     private @Nullable List<DbAccountTableColumnPrivilegeColumnPrivilege> columnPrivileges;
     /**
-     * @return 对账号进行权限设置的表所属的数据库的名称。
+     * @return Name of the database to which the table belongs for setting permissions for the account.
      * 
      */
     private @Nullable String dbName;
@@ -27,7 +27,7 @@ public final class DbAccountTableColumnPrivilege {
         return this.columnPrivileges == null ? List.of() : this.columnPrivileges;
     }
     /**
-     * @return 对账号进行权限设置的表所属的数据库的名称。
+     * @return Name of the database to which the table belongs for setting permissions for the account.
      * 
      */
     public Optional<String> dbName() {

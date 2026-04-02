@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// 前缀列表是一组CIDR地址块的集合，用于简化安全组规则、路由表条目的配置。当前缀列表修改时，所有关联它的资源均会同步修改。
+    /// A prefix list is a collection of CIDR blocks used to simplify the configuration of security group rules and route table entries. When the prefix list is modified, all associated resources are updated synchronously.
     /// 
     /// ## Example Usage
     /// 
@@ -61,7 +61,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class PrefixList : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 前缀列表关联的资源数量。
+        /// Number of resources associated with the prefix list.
         /// </summary>
         [Output("associationCount")]
         public Output<int> AssociationCount { get; private set; } = null!;
@@ -73,25 +73,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.PrefixListAssociationsSecurityGroup>> AssociationsSecurityGroups { get; private set; } = null!;
 
         /// <summary>
-        /// 前缀列表的创建时间。
+        /// Creation time of the prefix list.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+        /// IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
         /// </summary>
         [Output("ipVersion")]
         public Output<string> IpVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+        /// Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
         /// </summary>
         [Output("maxEntries")]
         public Output<int> MaxEntries { get; private set; } = null!;
@@ -100,25 +100,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.PrefixListPrefixListEntry>> PrefixListEntries { get; private set; } = null!;
 
         /// <summary>
-        /// 前缀列表的ID。
+        /// Prefix list ID.
         /// </summary>
         [Output("prefixListId")]
         public Output<string> PrefixListId { get; private set; } = null!;
 
         /// <summary>
-        /// 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+        /// Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
         /// </summary>
         [Output("prefixListName")]
         public Output<string> PrefixListName { get; private set; } = null!;
 
         /// <summary>
-        /// 前缀列表所属项目的名称，不填默认加入default项目。
+        /// Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+        /// Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -127,7 +127,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.PrefixListTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 前缀列表的最近一次修改时间。
+        /// Last modification time of the prefix list.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -180,19 +180,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class PrefixListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+        /// IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
         /// </summary>
         [Input("ipVersion")]
         public Input<string>? IpVersion { get; set; }
 
         /// <summary>
-        /// 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+        /// Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
         /// </summary>
         [Input("maxEntries", required: true)]
         public Input<int> MaxEntries { get; set; } = null!;
@@ -206,13 +206,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+        /// Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
         /// </summary>
         [Input("prefixListName")]
         public Input<string>? PrefixListName { get; set; }
 
         /// <summary>
-        /// 前缀列表所属项目的名称，不填默认加入default项目。
+        /// Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -234,7 +234,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class PrefixListState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 前缀列表关联的资源数量。
+        /// Number of resources associated with the prefix list.
         /// </summary>
         [Input("associationCount")]
         public Input<int>? AssociationCount { get; set; }
@@ -256,25 +256,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 前缀列表的创建时间。
+        /// Creation time of the prefix list.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+        /// IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
         /// </summary>
         [Input("ipVersion")]
         public Input<string>? IpVersion { get; set; }
 
         /// <summary>
-        /// 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+        /// Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
         /// </summary>
         [Input("maxEntries")]
         public Input<int>? MaxEntries { get; set; }
@@ -288,25 +288,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 前缀列表的ID。
+        /// Prefix list ID.
         /// </summary>
         [Input("prefixListId")]
         public Input<string>? PrefixListId { get; set; }
 
         /// <summary>
-        /// 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+        /// Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
         /// </summary>
         [Input("prefixListName")]
         public Input<string>? PrefixListName { get; set; }
 
         /// <summary>
-        /// 前缀列表所属项目的名称，不填默认加入default项目。
+        /// Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+        /// Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -320,7 +320,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 前缀列表的最近一次修改时间。
+        /// Last modification time of the prefix list.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

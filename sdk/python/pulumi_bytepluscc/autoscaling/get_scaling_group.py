@@ -28,7 +28,7 @@ class GetScalingGroupResult:
     """
     A collection of values returned by getScalingGroup.
     """
-    def __init__(__self__, active_scaling_configuration_id=None, created_time=None, db_instance_ids=None, default_cooldown=None, desire_instance_number=None, health_check_type=None, id=None, instance_terminate_policy=None, instances_distribution=None, is_enable_scaling_group=None, launch_template_id=None, launch_template_overrides=None, launch_template_version=None, lifecycle_state=None, load_balancer_health_check_grace_period=None, max_instance_number=None, min_instance_number=None, multi_az_policy=None, project_name=None, scaling_group_id=None, scaling_group_name=None, scaling_mode=None, server_group_attributes=None, stopped_instance_count=None, subnet_ids=None, suspended_processes=None, tags=None, total_instance_count=None, updated_time=None, vpc_id=None):
+    def __init__(__self__, active_scaling_configuration_id=None, created_time=None, db_instance_ids=None, default_cooldown=None, desire_instance_number=None, health_check_type=None, id=None, instance_remove_policies=None, instance_terminate_policy=None, instances=None, instances_distribution=None, is_enable_scaling_group=None, launch_template_id=None, launch_template_overrides=None, launch_template_version=None, lifecycle_state=None, load_balancer_health_check_grace_period=None, max_instance_number=None, min_instance_number=None, multi_az_policy=None, project_name=None, scaling_group_id=None, scaling_group_name=None, scaling_mode=None, server_group_attributes=None, stopped_instance_count=None, subnet_ids=None, suspended_processes=None, tags=None, total_instance_count=None, updated_time=None, vpc_id=None):
         if active_scaling_configuration_id and not isinstance(active_scaling_configuration_id, str):
             raise TypeError("Expected argument 'active_scaling_configuration_id' to be a str")
         pulumi.set(__self__, "active_scaling_configuration_id", active_scaling_configuration_id)
@@ -50,9 +50,15 @@ class GetScalingGroupResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if instance_remove_policies and not isinstance(instance_remove_policies, list):
+            raise TypeError("Expected argument 'instance_remove_policies' to be a list")
+        pulumi.set(__self__, "instance_remove_policies", instance_remove_policies)
         if instance_terminate_policy and not isinstance(instance_terminate_policy, str):
             raise TypeError("Expected argument 'instance_terminate_policy' to be a str")
         pulumi.set(__self__, "instance_terminate_policy", instance_terminate_policy)
+        if instances and not isinstance(instances, list):
+            raise TypeError("Expected argument 'instances' to be a list")
+        pulumi.set(__self__, "instances", instances)
         if instances_distribution and not isinstance(instances_distribution, dict):
             raise TypeError("Expected argument 'instances_distribution' to be a dict")
         pulumi.set(__self__, "instances_distribution", instances_distribution)
@@ -124,7 +130,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="activeScalingConfigurationId")
     def active_scaling_configuration_id(self) -> builtins.str:
         """
-        伸缩组绑定的伸缩配置的ID。
+        ID of the scaling configuration bound to the scaling group
         """
         return pulumi.get(self, "active_scaling_configuration_id")
 
@@ -132,7 +138,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        伸缩组创建时间。
+        Scaling group creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -140,7 +146,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="dbInstanceIds")
     def db_instance_ids(self) -> Sequence[builtins.str]:
         """
-        RDS数据库实例的ID。
+        ID of the RDS database instance.
         """
         return pulumi.get(self, "db_instance_ids")
 
@@ -148,7 +154,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="defaultCooldown")
     def default_cooldown(self) -> builtins.int:
         """
-        执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+        Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
         """
         return pulumi.get(self, "default_cooldown")
 
@@ -156,7 +162,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="desireInstanceNumber")
     def desire_instance_number(self) -> builtins.int:
         """
-        伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+        Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
         """
         return pulumi.get(self, "desire_instance_number")
 
@@ -164,7 +170,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="healthCheckType")
     def health_check_type(self) -> builtins.str:
         """
-        伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
+        Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
         """
         return pulumi.get(self, "health_check_type")
 
@@ -177,18 +183,34 @@ class GetScalingGroupResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="instanceRemovePolicies")
+    def instance_remove_policies(self) -> Sequence['outputs.GetScalingGroupInstanceRemovePolicyResult']:
+        """
+        Instance removal policy
+        """
+        return pulumi.get(self, "instance_remove_policies")
+
+    @property
     @pulumi.getter(name="instanceTerminatePolicy")
     def instance_terminate_policy(self) -> builtins.str:
         """
-        实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
+        Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
         """
         return pulumi.get(self, "instance_terminate_policy")
+
+    @property
+    @pulumi.getter
+    def instances(self) -> Sequence['outputs.GetScalingGroupInstanceResult']:
+        """
+        Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+        """
+        return pulumi.get(self, "instances")
 
     @property
     @pulumi.getter(name="instancesDistribution")
     def instances_distribution(self) -> 'outputs.GetScalingGroupInstancesDistributionResult':
         """
-        实例分布策略。
+        Instance distribution policy.
         """
         return pulumi.get(self, "instances_distribution")
 
@@ -196,7 +218,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="isEnableScalingGroup")
     def is_enable_scaling_group(self) -> builtins.bool:
         """
-        是否启用伸缩组。true：启用。false：停止
+        Whether to enable the scaling group. true: enabled. false: stopped
         """
         return pulumi.get(self, "is_enable_scaling_group")
 
@@ -204,7 +226,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="launchTemplateId")
     def launch_template_id(self) -> builtins.str:
         """
-        实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+        Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
         """
         return pulumi.get(self, "launch_template_id")
 
@@ -212,7 +234,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="launchTemplateOverrides")
     def launch_template_overrides(self) -> Sequence['outputs.GetScalingGroupLaunchTemplateOverrideResult']:
         """
-        实例启动模版信息。
+        Instance launch template information
         """
         return pulumi.get(self, "launch_template_overrides")
 
@@ -220,7 +242,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="launchTemplateVersion")
     def launch_template_version(self) -> builtins.str:
         """
-        实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+        Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
         """
         return pulumi.get(self, "launch_template_version")
 
@@ -228,7 +250,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="lifecycleState")
     def lifecycle_state(self) -> builtins.str:
         """
-        伸缩组的状态。Active：已启用。InActive：未激活。Deleting：删除中。Locked: 已锁定。CoolingDown: 冷却中。Unknown: 未知状态。
+        Status of the scaling group. Active: enabled. InActive: not activated. Deleting: deleting. Locked: locked. CoolingDown: cooling down. Unknown: unknown status.
         """
         return pulumi.get(self, "lifecycle_state")
 
@@ -236,7 +258,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="loadBalancerHealthCheckGracePeriod")
     def load_balancer_health_check_grace_period(self) -> builtins.int:
         """
-        伸缩组实例CLB健康状况检查宽限期。
+        Grace period for CLB health checks on scaling group instances
         """
         return pulumi.get(self, "load_balancer_health_check_grace_period")
 
@@ -244,7 +266,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="maxInstanceNumber")
     def max_instance_number(self) -> builtins.int:
         """
-        伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+        Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
         """
         return pulumi.get(self, "max_instance_number")
 
@@ -252,7 +274,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="minInstanceNumber")
     def min_instance_number(self) -> builtins.int:
         """
-        伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+        Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
         """
         return pulumi.get(self, "min_instance_number")
 
@@ -260,7 +282,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="multiAzPolicy")
     def multi_az_policy(self) -> builtins.str:
         """
-        扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+        Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
         """
         return pulumi.get(self, "multi_az_policy")
 
@@ -268,7 +290,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        Project to which the scaling group belongs. Default is 'default'. A resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length: 64 characters.
         """
         return pulumi.get(self, "project_name")
 
@@ -276,7 +298,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="scalingGroupId")
     def scaling_group_id(self) -> builtins.str:
         """
-        伸缩组ID。
+        Scaling group ID.
         """
         return pulumi.get(self, "scaling_group_id")
 
@@ -284,7 +306,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="scalingGroupName")
     def scaling_group_name(self) -> builtins.str:
         """
-        伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+        Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
         """
         return pulumi.get(self, "scaling_group_name")
 
@@ -292,7 +314,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="scalingMode")
     def scaling_mode(self) -> builtins.str:
         """
-        伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+        Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
         """
         return pulumi.get(self, "scaling_mode")
 
@@ -300,7 +322,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="serverGroupAttributes")
     def server_group_attributes(self) -> Sequence['outputs.GetScalingGroupServerGroupAttributeResult']:
         """
-        伸缩组关联的负载均衡信息。
+        Load balancer information associated with the scaling group.
         """
         return pulumi.get(self, "server_group_attributes")
 
@@ -308,7 +330,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="stoppedInstanceCount")
     def stopped_instance_count(self) -> builtins.int:
         """
-        伸缩组内处于停用中状态的实例数量。
+        Number of instances in the scaling group that are in the disabled state.
         """
         return pulumi.get(self, "stopped_instance_count")
 
@@ -316,7 +338,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Sequence[builtins.str]:
         """
-        伸缩组中实例主网卡的子网ID列表。
+        List of subnet IDs for the primary network interface of instances in the scaling group
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -324,7 +346,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="suspendedProcesses")
     def suspended_processes(self) -> Sequence[builtins.str]:
         """
-        暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+        Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
         """
         return pulumi.get(self, "suspended_processes")
 
@@ -332,7 +354,7 @@ class GetScalingGroupResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetScalingGroupTagResult']:
         """
-        标签列表。
+        Tag list.
         """
         return pulumi.get(self, "tags")
 
@@ -340,7 +362,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="totalInstanceCount")
     def total_instance_count(self) -> builtins.int:
         """
-        当前伸缩组内实例的个数。
+        Number of instances currently in the scaling group
         """
         return pulumi.get(self, "total_instance_count")
 
@@ -348,7 +370,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        伸缩组更新时间。
+        Scaling group update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -356,7 +378,7 @@ class GetScalingGroupResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        伸缩组所属私有网络ID。
+        VPC ID to which the scaling group belongs
         """
         return pulumi.get(self, "vpc_id")
 
@@ -374,7 +396,9 @@ class AwaitableGetScalingGroupResult(GetScalingGroupResult):
             desire_instance_number=self.desire_instance_number,
             health_check_type=self.health_check_type,
             id=self.id,
+            instance_remove_policies=self.instance_remove_policies,
             instance_terminate_policy=self.instance_terminate_policy,
+            instances=self.instances,
             instances_distribution=self.instances_distribution,
             is_enable_scaling_group=self.is_enable_scaling_group,
             launch_template_id=self.launch_template_id,
@@ -420,7 +444,9 @@ def get_scaling_group(id: Optional[builtins.str] = None,
         desire_instance_number=pulumi.get(__ret__, 'desire_instance_number'),
         health_check_type=pulumi.get(__ret__, 'health_check_type'),
         id=pulumi.get(__ret__, 'id'),
+        instance_remove_policies=pulumi.get(__ret__, 'instance_remove_policies'),
         instance_terminate_policy=pulumi.get(__ret__, 'instance_terminate_policy'),
+        instances=pulumi.get(__ret__, 'instances'),
         instances_distribution=pulumi.get(__ret__, 'instances_distribution'),
         is_enable_scaling_group=pulumi.get(__ret__, 'is_enable_scaling_group'),
         launch_template_id=pulumi.get(__ret__, 'launch_template_id'),
@@ -463,7 +489,9 @@ def get_scaling_group_output(id: Optional[pulumi.Input[builtins.str]] = None,
         desire_instance_number=pulumi.get(__response__, 'desire_instance_number'),
         health_check_type=pulumi.get(__response__, 'health_check_type'),
         id=pulumi.get(__response__, 'id'),
+        instance_remove_policies=pulumi.get(__response__, 'instance_remove_policies'),
         instance_terminate_policy=pulumi.get(__response__, 'instance_terminate_policy'),
+        instances=pulumi.get(__response__, 'instances'),
         instances_distribution=pulumi.get(__response__, 'instances_distribution'),
         is_enable_scaling_group=pulumi.get(__response__, 'is_enable_scaling_group'),
         launch_template_id=pulumi.get(__response__, 'launch_template_id'),

@@ -14,13 +14,13 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type CenInstance struct {
-	// 网络实例的ID。
+	// Network instance ID
 	InstanceId *string `pulumi:"instanceId"`
-	// 网络实例所属账号的ID。
+	// Account ID for the network instance
 	InstanceOwnerId *string `pulumi:"instanceOwnerId"`
-	// 网络实例所在的地域。
+	// Region where the network instance is located
 	InstanceRegionId *string `pulumi:"instanceRegionId"`
-	// 网络实例的类型。
+	// Type of the network instance
 	InstanceType *string `pulumi:"instanceType"`
 }
 
@@ -36,13 +36,13 @@ type CenInstanceInput interface {
 }
 
 type CenInstanceArgs struct {
-	// 网络实例的ID。
+	// Network instance ID
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// 网络实例所属账号的ID。
+	// Account ID for the network instance
 	InstanceOwnerId pulumi.StringPtrInput `pulumi:"instanceOwnerId"`
-	// 网络实例所在的地域。
+	// Region where the network instance is located
 	InstanceRegionId pulumi.StringPtrInput `pulumi:"instanceRegionId"`
-	// 网络实例的类型。
+	// Type of the network instance
 	InstanceType pulumi.StringPtrInput `pulumi:"instanceType"`
 }
 
@@ -97,22 +97,22 @@ func (o CenInstanceOutput) ToCenInstanceOutputWithContext(ctx context.Context) C
 	return o
 }
 
-// 网络实例的ID。
+// Network instance ID
 func (o CenInstanceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CenInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 网络实例所属账号的ID。
+// Account ID for the network instance
 func (o CenInstanceOutput) InstanceOwnerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CenInstance) *string { return v.InstanceOwnerId }).(pulumi.StringPtrOutput)
 }
 
-// 网络实例所在的地域。
+// Region where the network instance is located
 func (o CenInstanceOutput) InstanceRegionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CenInstance) *string { return v.InstanceRegionId }).(pulumi.StringPtrOutput)
 }
 
-// 网络实例的类型。
+// Type of the network instance
 func (o CenInstanceOutput) InstanceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CenInstance) *string { return v.InstanceType }).(pulumi.StringPtrOutput)
 }
@@ -138,9 +138,9 @@ func (o CenInstanceArrayOutput) Index(i pulumi.IntInput) CenInstanceOutput {
 }
 
 type CenTag struct {
-	// 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+	// Tag key for user labels. Length limit: 1–128 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Duplicate tag keys are not allowed for the same resource
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+	// Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @
 	Value *string `pulumi:"value"`
 }
 
@@ -156,9 +156,9 @@ type CenTagInput interface {
 }
 
 type CenTagArgs struct {
-	// 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+	// Tag key for user labels. Length limit: 1–128 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Duplicate tag keys are not allowed for the same resource
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+	// Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -213,12 +213,12 @@ func (o CenTagOutput) ToCenTagOutputWithContext(ctx context.Context) CenTagOutpu
 	return o
 }
 
-// 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+// Tag key for user labels. Length limit: 1–128 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Duplicate tag keys are not allowed for the same resource
 func (o CenTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CenTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+// Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @
 func (o CenTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CenTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -244,19 +244,19 @@ func (o CenTagArrayOutput) Index(i pulumi.IntInput) CenTagOutput {
 }
 
 type GetCenInstance struct {
-	// 云企业网实例的ID。
+	// CEN instance ID
 	CenId string `pulumi:"cenId"`
-	// 网络实例的创建时间。
+	// Creation time of the network instance
 	CreationTime string `pulumi:"creationTime"`
-	// 网络实例的ID。
+	// Network instance ID
 	InstanceId string `pulumi:"instanceId"`
-	// 网络实例所属账号的ID。
+	// Account ID for the network instance
 	InstanceOwnerId string `pulumi:"instanceOwnerId"`
-	// 网络实例所在的地域。
+	// Region where the network instance is located
 	InstanceRegionId string `pulumi:"instanceRegionId"`
-	// 网络实例的类型。
+	// Type of the network instance
 	InstanceType string `pulumi:"instanceType"`
-	// 网络实例的加载状态。Attaching：加载中Available：可用
+	// Loading status of the network instance. Attaching: Loading; Available: Available
 	Status string `pulumi:"status"`
 }
 
@@ -272,19 +272,19 @@ type GetCenInstanceInput interface {
 }
 
 type GetCenInstanceArgs struct {
-	// 云企业网实例的ID。
+	// CEN instance ID
 	CenId pulumi.StringInput `pulumi:"cenId"`
-	// 网络实例的创建时间。
+	// Creation time of the network instance
 	CreationTime pulumi.StringInput `pulumi:"creationTime"`
-	// 网络实例的ID。
+	// Network instance ID
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 网络实例所属账号的ID。
+	// Account ID for the network instance
 	InstanceOwnerId pulumi.StringInput `pulumi:"instanceOwnerId"`
-	// 网络实例所在的地域。
+	// Region where the network instance is located
 	InstanceRegionId pulumi.StringInput `pulumi:"instanceRegionId"`
-	// 网络实例的类型。
+	// Type of the network instance
 	InstanceType pulumi.StringInput `pulumi:"instanceType"`
-	// 网络实例的加载状态。Attaching：加载中Available：可用
+	// Loading status of the network instance. Attaching: Loading; Available: Available
 	Status pulumi.StringInput `pulumi:"status"`
 }
 
@@ -339,37 +339,37 @@ func (o GetCenInstanceOutput) ToGetCenInstanceOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 云企业网实例的ID。
+// CEN instance ID
 func (o GetCenInstanceOutput) CenId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCenInstance) string { return v.CenId }).(pulumi.StringOutput)
 }
 
-// 网络实例的创建时间。
+// Creation time of the network instance
 func (o GetCenInstanceOutput) CreationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCenInstance) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
-// 网络实例的ID。
+// Network instance ID
 func (o GetCenInstanceOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCenInstance) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 网络实例所属账号的ID。
+// Account ID for the network instance
 func (o GetCenInstanceOutput) InstanceOwnerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCenInstance) string { return v.InstanceOwnerId }).(pulumi.StringOutput)
 }
 
-// 网络实例所在的地域。
+// Region where the network instance is located
 func (o GetCenInstanceOutput) InstanceRegionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCenInstance) string { return v.InstanceRegionId }).(pulumi.StringOutput)
 }
 
-// 网络实例的类型。
+// Type of the network instance
 func (o GetCenInstanceOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCenInstance) string { return v.InstanceType }).(pulumi.StringOutput)
 }
 
-// 网络实例的加载状态。Attaching：加载中Available：可用
+// Loading status of the network instance. Attaching: Loading; Available: Available
 func (o GetCenInstanceOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCenInstance) string { return v.Status }).(pulumi.StringOutput)
 }
@@ -395,9 +395,9 @@ func (o GetCenInstanceArrayOutput) Index(i pulumi.IntInput) GetCenInstanceOutput
 }
 
 type GetCenTag struct {
-	// 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+	// Tag key for user labels. Length limit: 1–128 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Duplicate tag keys are not allowed for the same resource
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+	// Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @
 	Value string `pulumi:"value"`
 }
 
@@ -413,9 +413,9 @@ type GetCenTagInput interface {
 }
 
 type GetCenTagArgs struct {
-	// 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+	// Tag key for user labels. Length limit: 1–128 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Duplicate tag keys are not allowed for the same resource
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+	// Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -470,12 +470,12 @@ func (o GetCenTagOutput) ToGetCenTagOutputWithContext(ctx context.Context) GetCe
 	return o
 }
 
-// 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+// Tag key for user labels. Length limit: 1–128 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Duplicate tag keys are not allowed for the same resource
 func (o GetCenTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCenTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+// Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @
 func (o GetCenTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCenTag) string { return v.Value }).(pulumi.StringOutput)
 }

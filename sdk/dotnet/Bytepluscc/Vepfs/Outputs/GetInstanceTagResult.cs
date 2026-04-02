@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs.Outputs
     public sealed class GetInstanceTagResult
     {
         /// <summary>
-        /// 用户标签的标签键。
+        /// User tag key.
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// 标签类型，说明如下：Custom: 用户自定义标签。System: 系统标签。
+        /// Tag type. Descriptions are as follows: Custom: User-defined tag. System: System tag.
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// 用户标签的标签值。
+        /// User tag value.
         /// </summary>
         public readonly string Value;
 

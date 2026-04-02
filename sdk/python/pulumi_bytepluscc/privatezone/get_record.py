@@ -78,7 +78,7 @@ class GetRecordResult:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> builtins.str:
         """
-        解析记录的创建时间。
+        Creation time of the DNS record.
         """
         return pulumi.get(self, "created_at")
 
@@ -86,7 +86,7 @@ class GetRecordResult:
     @pulumi.getter
     def enable(self) -> builtins.bool:
         """
-        解析记录是否被启用。
+        Indicates whether the DNS record is enabled.
         """
         return pulumi.get(self, "enable")
 
@@ -94,7 +94,7 @@ class GetRecordResult:
     @pulumi.getter
     def host(self) -> builtins.str:
         """
-        子域名的域名前缀。
+        Domain prefix for the subdomain.
         """
         return pulumi.get(self, "host")
 
@@ -110,7 +110,7 @@ class GetRecordResult:
     @pulumi.getter(name="lastOperator")
     def last_operator(self) -> builtins.str:
         """
-        最近一次更新解析记录的账号 ID。
+        Account ID of the most recent update to the DNS record.
         """
         return pulumi.get(self, "last_operator")
 
@@ -118,7 +118,7 @@ class GetRecordResult:
     @pulumi.getter
     def line(self) -> builtins.str:
         """
-        解析记录的线路，只能是默认线路 default。
+        DNS record route, only the default route 'default' is supported.
         """
         return pulumi.get(self, "line")
 
@@ -126,7 +126,7 @@ class GetRecordResult:
     @pulumi.getter(name="recordId")
     def record_id(self) -> builtins.str:
         """
-        解析记录 ID。
+        DNS record ID.
         """
         return pulumi.get(self, "record_id")
 
@@ -134,7 +134,7 @@ class GetRecordResult:
     @pulumi.getter
     def remark(self) -> builtins.str:
         """
-        备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+        Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
         """
         return pulumi.get(self, "remark")
 
@@ -142,7 +142,7 @@ class GetRecordResult:
     @pulumi.getter
     def ttl(self) -> builtins.int:
         """
-        解析记录的过期时间。单位为秒。默认值为 600。
+        DNS record TTL (time to live), in seconds. Default is 600.
         """
         return pulumi.get(self, "ttl")
 
@@ -150,7 +150,7 @@ class GetRecordResult:
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+        DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
         """
         return pulumi.get(self, "type")
 
@@ -158,7 +158,7 @@ class GetRecordResult:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> builtins.str:
         """
-        解析记录最近一次的更新时间。
+        Last update time of the DNS record.
         """
         return pulumi.get(self, "updated_at")
 
@@ -166,7 +166,7 @@ class GetRecordResult:
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        记录值。
+        Record value.
         """
         return pulumi.get(self, "value")
 
@@ -174,7 +174,7 @@ class GetRecordResult:
     @pulumi.getter
     def weight(self) -> builtins.int:
         """
-        记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+        Record weight. The weight takes effect only when load balancing is enabled for the domain name.
         """
         return pulumi.get(self, "weight")
 
@@ -182,7 +182,7 @@ class GetRecordResult:
     @pulumi.getter(name="weightEnabled")
     def weight_enabled(self) -> builtins.bool:
         """
-        该记录集是否开启了负载均衡。
+        Indicates whether load balancing is enabled for this record set.
         """
         return pulumi.get(self, "weight_enabled")
 
@@ -190,7 +190,7 @@ class GetRecordResult:
     @pulumi.getter
     def zid(self) -> builtins.int:
         """
-        域名 ID。
+        Domain name ID.
         """
         return pulumi.get(self, "zid")
 

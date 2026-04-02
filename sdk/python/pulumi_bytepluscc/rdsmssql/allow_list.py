@@ -34,15 +34,15 @@ class AllowListArgs:
                  user_allow_list: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a AllowList resource.
-        :param pulumi.Input[builtins.str] allow_list_name: 白名单名称。
-        :param pulumi.Input[builtins.str] allow_list: IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
-        :param pulumi.Input[builtins.str] allow_list_category: 白名单分类。
-        :param pulumi.Input[builtins.str] allow_list_desc: 白名单描述。
-        :param pulumi.Input[builtins.str] allow_list_type: 白名单内的IP地址类型，当前仅支持IPv4。
-        :param pulumi.Input[builtins.int] associated_instance_num: 绑定的实例数量。解绑实例的白名单时必传。
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input[builtins.str] user_allow_list: 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+        :param pulumi.Input[builtins.str] allow_list_name: Allowlist name
+        :param pulumi.Input[builtins.str] allow_list: IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
+        :param pulumi.Input[builtins.str] allow_list_category: Allowlist category
+        :param pulumi.Input[builtins.str] allow_list_desc: Allowlist description
+        :param pulumi.Input[builtins.str] allow_list_type: IP address type in the allowlist. Only IPv4 is supported
+        :param pulumi.Input[builtins.int] associated_instance_num: Number of bound instances. Required when unbinding an instance from the allowlist
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[builtins.str] user_allow_list: IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
         """
         pulumi.set(__self__, "allow_list_name", allow_list_name)
         if allow_list is not None:
@@ -68,7 +68,7 @@ class AllowListArgs:
     @pulumi.getter(name="allowListName")
     def allow_list_name(self) -> pulumi.Input[builtins.str]:
         """
-        白名单名称。
+        Allowlist name
         """
         return pulumi.get(self, "allow_list_name")
 
@@ -80,7 +80,7 @@ class AllowListArgs:
     @pulumi.getter(name="allowList")
     def allow_list(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+        IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
         """
         return pulumi.get(self, "allow_list")
 
@@ -92,7 +92,7 @@ class AllowListArgs:
     @pulumi.getter(name="allowListCategory")
     def allow_list_category(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单分类。
+        Allowlist category
         """
         return pulumi.get(self, "allow_list_category")
 
@@ -104,7 +104,7 @@ class AllowListArgs:
     @pulumi.getter(name="allowListDesc")
     def allow_list_desc(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单描述。
+        Allowlist description
         """
         return pulumi.get(self, "allow_list_desc")
 
@@ -116,7 +116,7 @@ class AllowListArgs:
     @pulumi.getter(name="allowListType")
     def allow_list_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单内的IP地址类型，当前仅支持IPv4。
+        IP address type in the allowlist. Only IPv4 is supported
         """
         return pulumi.get(self, "allow_list_type")
 
@@ -128,7 +128,7 @@ class AllowListArgs:
     @pulumi.getter(name="associatedInstanceNum")
     def associated_instance_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        绑定的实例数量。解绑实例的白名单时必传。
+        Number of bound instances. Required when unbinding an instance from the allowlist
         """
         return pulumi.get(self, "associated_instance_num")
 
@@ -149,7 +149,7 @@ class AllowListArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -161,7 +161,7 @@ class AllowListArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -173,7 +173,7 @@ class AllowListArgs:
     @pulumi.getter(name="userAllowList")
     def user_allow_list(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+        IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
         """
         return pulumi.get(self, "user_allow_list")
 
@@ -199,17 +199,17 @@ class _AllowListState:
                  user_allow_list: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering AllowList resources.
-        :param pulumi.Input[builtins.str] allow_list: IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
-        :param pulumi.Input[builtins.str] allow_list_category: 白名单分类。
-        :param pulumi.Input[builtins.str] allow_list_desc: 白名单描述。
-        :param pulumi.Input[builtins.str] allow_list_id: 白名单的id。
-        :param pulumi.Input[builtins.int] allow_list_ip_num: AllowListIP数量。
-        :param pulumi.Input[builtins.str] allow_list_name: 白名单名称。
-        :param pulumi.Input[builtins.str] allow_list_type: 白名单内的IP地址类型，当前仅支持IPv4。
-        :param pulumi.Input[builtins.int] associated_instance_num: 绑定的实例数量。解绑实例的白名单时必传。
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input[builtins.str] user_allow_list: 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+        :param pulumi.Input[builtins.str] allow_list: IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
+        :param pulumi.Input[builtins.str] allow_list_category: Allowlist category
+        :param pulumi.Input[builtins.str] allow_list_desc: Allowlist description
+        :param pulumi.Input[builtins.str] allow_list_id: Allowlist ID
+        :param pulumi.Input[builtins.int] allow_list_ip_num: Allowlist IP count
+        :param pulumi.Input[builtins.str] allow_list_name: Allowlist name
+        :param pulumi.Input[builtins.str] allow_list_type: IP address type in the allowlist. Only IPv4 is supported
+        :param pulumi.Input[builtins.int] associated_instance_num: Number of bound instances. Required when unbinding an instance from the allowlist
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[builtins.str] user_allow_list: IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
         """
         if allow_list is not None:
             pulumi.set(__self__, "allow_list", allow_list)
@@ -240,7 +240,7 @@ class _AllowListState:
     @pulumi.getter(name="allowList")
     def allow_list(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+        IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
         """
         return pulumi.get(self, "allow_list")
 
@@ -252,7 +252,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListCategory")
     def allow_list_category(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单分类。
+        Allowlist category
         """
         return pulumi.get(self, "allow_list_category")
 
@@ -264,7 +264,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListDesc")
     def allow_list_desc(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单描述。
+        Allowlist description
         """
         return pulumi.get(self, "allow_list_desc")
 
@@ -276,7 +276,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListId")
     def allow_list_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单的id。
+        Allowlist ID
         """
         return pulumi.get(self, "allow_list_id")
 
@@ -288,7 +288,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListIpNum")
     def allow_list_ip_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        AllowListIP数量。
+        Allowlist IP count
         """
         return pulumi.get(self, "allow_list_ip_num")
 
@@ -300,7 +300,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListName")
     def allow_list_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单名称。
+        Allowlist name
         """
         return pulumi.get(self, "allow_list_name")
 
@@ -312,7 +312,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListType")
     def allow_list_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单内的IP地址类型，当前仅支持IPv4。
+        IP address type in the allowlist. Only IPv4 is supported
         """
         return pulumi.get(self, "allow_list_type")
 
@@ -324,7 +324,7 @@ class _AllowListState:
     @pulumi.getter(name="associatedInstanceNum")
     def associated_instance_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        绑定的实例数量。解绑实例的白名单时必传。
+        Number of bound instances. Required when unbinding an instance from the allowlist
         """
         return pulumi.get(self, "associated_instance_num")
 
@@ -345,7 +345,7 @@ class _AllowListState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -357,7 +357,7 @@ class _AllowListState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -369,7 +369,7 @@ class _AllowListState:
     @pulumi.getter(name="userAllowList")
     def user_allow_list(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+        IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
         """
         return pulumi.get(self, "user_allow_list")
 
@@ -396,7 +396,7 @@ class AllowList(pulumi.CustomResource):
                  user_allow_list: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        API请求参数 - 创建RDS SQL Server白名单（CreateAllowList）。
+        API request parameter - Create RDS SQL Server allowlist (CreateAllowList)
 
         ## Import
 
@@ -406,15 +406,15 @@ class AllowList(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] allow_list: IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
-        :param pulumi.Input[builtins.str] allow_list_category: 白名单分类。
-        :param pulumi.Input[builtins.str] allow_list_desc: 白名单描述。
-        :param pulumi.Input[builtins.str] allow_list_name: 白名单名称。
-        :param pulumi.Input[builtins.str] allow_list_type: 白名单内的IP地址类型，当前仅支持IPv4。
-        :param pulumi.Input[builtins.int] associated_instance_num: 绑定的实例数量。解绑实例的白名单时必传。
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input[builtins.str] user_allow_list: 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+        :param pulumi.Input[builtins.str] allow_list: IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
+        :param pulumi.Input[builtins.str] allow_list_category: Allowlist category
+        :param pulumi.Input[builtins.str] allow_list_desc: Allowlist description
+        :param pulumi.Input[builtins.str] allow_list_name: Allowlist name
+        :param pulumi.Input[builtins.str] allow_list_type: IP address type in the allowlist. Only IPv4 is supported
+        :param pulumi.Input[builtins.int] associated_instance_num: Number of bound instances. Required when unbinding an instance from the allowlist
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[builtins.str] user_allow_list: IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
         """
         ...
     @overload
@@ -423,7 +423,7 @@ class AllowList(pulumi.CustomResource):
                  args: AllowListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        API请求参数 - 创建RDS SQL Server白名单（CreateAllowList）。
+        API request parameter - Create RDS SQL Server allowlist (CreateAllowList)
 
         ## Import
 
@@ -508,17 +508,17 @@ class AllowList(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] allow_list: IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
-        :param pulumi.Input[builtins.str] allow_list_category: 白名单分类。
-        :param pulumi.Input[builtins.str] allow_list_desc: 白名单描述。
-        :param pulumi.Input[builtins.str] allow_list_id: 白名单的id。
-        :param pulumi.Input[builtins.int] allow_list_ip_num: AllowListIP数量。
-        :param pulumi.Input[builtins.str] allow_list_name: 白名单名称。
-        :param pulumi.Input[builtins.str] allow_list_type: 白名单内的IP地址类型，当前仅支持IPv4。
-        :param pulumi.Input[builtins.int] associated_instance_num: 绑定的实例数量。解绑实例的白名单时必传。
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input[builtins.str] user_allow_list: 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+        :param pulumi.Input[builtins.str] allow_list: IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
+        :param pulumi.Input[builtins.str] allow_list_category: Allowlist category
+        :param pulumi.Input[builtins.str] allow_list_desc: Allowlist description
+        :param pulumi.Input[builtins.str] allow_list_id: Allowlist ID
+        :param pulumi.Input[builtins.int] allow_list_ip_num: Allowlist IP count
+        :param pulumi.Input[builtins.str] allow_list_name: Allowlist name
+        :param pulumi.Input[builtins.str] allow_list_type: IP address type in the allowlist. Only IPv4 is supported
+        :param pulumi.Input[builtins.int] associated_instance_num: Number of bound instances. Required when unbinding an instance from the allowlist
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[builtins.str] user_allow_list: IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -542,7 +542,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowList")
     def allow_list(self) -> pulumi.Output[builtins.str]:
         """
-        IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+        IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
         """
         return pulumi.get(self, "allow_list")
 
@@ -550,7 +550,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListCategory")
     def allow_list_category(self) -> pulumi.Output[builtins.str]:
         """
-        白名单分类。
+        Allowlist category
         """
         return pulumi.get(self, "allow_list_category")
 
@@ -558,7 +558,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListDesc")
     def allow_list_desc(self) -> pulumi.Output[builtins.str]:
         """
-        白名单描述。
+        Allowlist description
         """
         return pulumi.get(self, "allow_list_desc")
 
@@ -566,7 +566,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListId")
     def allow_list_id(self) -> pulumi.Output[builtins.str]:
         """
-        白名单的id。
+        Allowlist ID
         """
         return pulumi.get(self, "allow_list_id")
 
@@ -574,7 +574,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListIpNum")
     def allow_list_ip_num(self) -> pulumi.Output[builtins.int]:
         """
-        AllowListIP数量。
+        Allowlist IP count
         """
         return pulumi.get(self, "allow_list_ip_num")
 
@@ -582,7 +582,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListName")
     def allow_list_name(self) -> pulumi.Output[builtins.str]:
         """
-        白名单名称。
+        Allowlist name
         """
         return pulumi.get(self, "allow_list_name")
 
@@ -590,7 +590,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListType")
     def allow_list_type(self) -> pulumi.Output[builtins.str]:
         """
-        白名单内的IP地址类型，当前仅支持IPv4。
+        IP address type in the allowlist. Only IPv4 is supported
         """
         return pulumi.get(self, "allow_list_type")
 
@@ -598,7 +598,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="associatedInstanceNum")
     def associated_instance_num(self) -> pulumi.Output[builtins.int]:
         """
-        绑定的实例数量。解绑实例的白名单时必传。
+        Number of bound instances. Required when unbinding an instance from the allowlist
         """
         return pulumi.get(self, "associated_instance_num")
 
@@ -611,7 +611,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -619,7 +619,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -627,7 +627,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="userAllowList")
     def user_allow_list(self) -> pulumi.Output[builtins.str]:
         """
-        安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+        IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
         """
         return pulumi.get(self, "user_allow_list")
 

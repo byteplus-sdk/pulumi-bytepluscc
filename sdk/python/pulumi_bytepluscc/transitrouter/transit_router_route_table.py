@@ -28,9 +28,9 @@ class TransitRouterRouteTableArgs:
                  transit_router_route_table_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a TransitRouterRouteTable resource.
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID
-        :param pulumi.Input[builtins.str] description: TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] transit_router_route_table_name: TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+        :param pulumi.Input[builtins.str] transit_router_id: Transit Router instance ID
+        :param pulumi.Input[builtins.str] description: Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
+        :param pulumi.Input[builtins.str] transit_router_route_table_name: Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
         """
         pulumi.set(__self__, "transit_router_id", transit_router_id)
         if description is not None:
@@ -44,7 +44,7 @@ class TransitRouterRouteTableArgs:
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> pulumi.Input[builtins.str]:
         """
-        中转路由器实例的ID
+        Transit Router instance ID
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -56,7 +56,7 @@ class TransitRouterRouteTableArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -77,7 +77,7 @@ class TransitRouterRouteTableArgs:
     @pulumi.getter(name="transitRouterRouteTableName")
     def transit_router_route_table_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+        Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
         """
         return pulumi.get(self, "transit_router_route_table_name")
 
@@ -102,16 +102,16 @@ class _TransitRouterRouteTableState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering TransitRouterRouteTable resources.
-        :param pulumi.Input[builtins.str] created_time: TR路由表的创建时间
-        :param pulumi.Input[builtins.str] description: TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] in_route_policy_table_id: TR路由表关联的收方向路由策略的ID
-        :param pulumi.Input[builtins.str] out_route_policy_table_id: TR路由表关联的发方向路由策略的ID
-        :param pulumi.Input[builtins.str] status: TR路由表的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID
-        :param pulumi.Input[builtins.str] transit_router_route_table_id: TR路由表的ID
-        :param pulumi.Input[builtins.str] transit_router_route_table_name: TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
-        :param pulumi.Input[builtins.str] transit_router_route_table_type: TR路由表的类型。System：系统路由表。Custom：自定义路由表。
-        :param pulumi.Input[builtins.str] updated_time: TR路由表的最近操作时间
+        :param pulumi.Input[builtins.str] created_time: Creation time of the TR routing table
+        :param pulumi.Input[builtins.str] description: Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
+        :param pulumi.Input[builtins.str] in_route_policy_table_id: ID of the inbound routing policy associated with the TR routing table
+        :param pulumi.Input[builtins.str] out_route_policy_table_id: ID of the outbound routing policy associated with the TR routing table
+        :param pulumi.Input[builtins.str] status: Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
+        :param pulumi.Input[builtins.str] transit_router_id: Transit Router instance ID
+        :param pulumi.Input[builtins.str] transit_router_route_table_id: TR routing table ID
+        :param pulumi.Input[builtins.str] transit_router_route_table_name: Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
+        :param pulumi.Input[builtins.str] transit_router_route_table_type: Type of TR routing table. System: system routing table. Custom: custom routing table.
+        :param pulumi.Input[builtins.str] updated_time: Last operation time of the TR routing table
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -140,7 +140,7 @@ class _TransitRouterRouteTableState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由表的创建时间
+        Creation time of the TR routing table
         """
         return pulumi.get(self, "created_time")
 
@@ -152,7 +152,7 @@ class _TransitRouterRouteTableState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -164,7 +164,7 @@ class _TransitRouterRouteTableState:
     @pulumi.getter(name="inRoutePolicyTableId")
     def in_route_policy_table_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由表关联的收方向路由策略的ID
+        ID of the inbound routing policy associated with the TR routing table
         """
         return pulumi.get(self, "in_route_policy_table_id")
 
@@ -176,7 +176,7 @@ class _TransitRouterRouteTableState:
     @pulumi.getter(name="outRoutePolicyTableId")
     def out_route_policy_table_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由表关联的发方向路由策略的ID
+        ID of the outbound routing policy associated with the TR routing table
         """
         return pulumi.get(self, "out_route_policy_table_id")
 
@@ -188,7 +188,7 @@ class _TransitRouterRouteTableState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由表的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用
+        Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
         """
         return pulumi.get(self, "status")
 
@@ -209,7 +209,7 @@ class _TransitRouterRouteTableState:
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例的ID
+        Transit Router instance ID
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -221,7 +221,7 @@ class _TransitRouterRouteTableState:
     @pulumi.getter(name="transitRouterRouteTableId")
     def transit_router_route_table_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由表的ID
+        TR routing table ID
         """
         return pulumi.get(self, "transit_router_route_table_id")
 
@@ -233,7 +233,7 @@ class _TransitRouterRouteTableState:
     @pulumi.getter(name="transitRouterRouteTableName")
     def transit_router_route_table_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+        Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
         """
         return pulumi.get(self, "transit_router_route_table_name")
 
@@ -245,7 +245,7 @@ class _TransitRouterRouteTableState:
     @pulumi.getter(name="transitRouterRouteTableType")
     def transit_router_route_table_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由表的类型。System：系统路由表。Custom：自定义路由表。
+        Type of TR routing table. System: system routing table. Custom: custom routing table.
         """
         return pulumi.get(self, "transit_router_route_table_type")
 
@@ -257,7 +257,7 @@ class _TransitRouterRouteTableState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由表的最近操作时间
+        Last operation time of the TR routing table
         """
         return pulumi.get(self, "updated_time")
 
@@ -278,7 +278,7 @@ class TransitRouterRouteTable(pulumi.CustomResource):
                  transit_router_route_table_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        中转路由器转发流量的依据，具有关联转发、静态路由、路由学习、路由同步等能力。每个TR实例下可以创建多个TR路由表，分别用于转发具有不同访问需求的网络实例的流量。多条网络实例连接可以关联同一个TR路由表。
+        Basis for Transit Router to forward traffic, supporting associated forwarding, static routing, route learning, and route synchronization. Multiple TR routing tables can be created under each TR instance to forward traffic for network instances with different access requirements. Multiple network instance connections can be associated with the same TR routing table.
 
         ## Example Usage
 
@@ -304,9 +304,9 @@ class TransitRouterRouteTable(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID
-        :param pulumi.Input[builtins.str] transit_router_route_table_name: TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+        :param pulumi.Input[builtins.str] description: Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
+        :param pulumi.Input[builtins.str] transit_router_id: Transit Router instance ID
+        :param pulumi.Input[builtins.str] transit_router_route_table_name: Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
         """
         ...
     @overload
@@ -315,7 +315,7 @@ class TransitRouterRouteTable(pulumi.CustomResource):
                  args: TransitRouterRouteTableArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        中转路由器转发流量的依据，具有关联转发、静态路由、路由学习、路由同步等能力。每个TR实例下可以创建多个TR路由表，分别用于转发具有不同访问需求的网络实例的流量。多条网络实例连接可以关联同一个TR路由表。
+        Basis for Transit Router to forward traffic, supporting associated forwarding, static routing, route learning, and route synchronization. Multiple TR routing tables can be created under each TR instance to forward traffic for network instances with different access requirements. Multiple network instance connections can be associated with the same TR routing table.
 
         ## Example Usage
 
@@ -408,16 +408,16 @@ class TransitRouterRouteTable(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: TR路由表的创建时间
-        :param pulumi.Input[builtins.str] description: TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] in_route_policy_table_id: TR路由表关联的收方向路由策略的ID
-        :param pulumi.Input[builtins.str] out_route_policy_table_id: TR路由表关联的发方向路由策略的ID
-        :param pulumi.Input[builtins.str] status: TR路由表的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID
-        :param pulumi.Input[builtins.str] transit_router_route_table_id: TR路由表的ID
-        :param pulumi.Input[builtins.str] transit_router_route_table_name: TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
-        :param pulumi.Input[builtins.str] transit_router_route_table_type: TR路由表的类型。System：系统路由表。Custom：自定义路由表。
-        :param pulumi.Input[builtins.str] updated_time: TR路由表的最近操作时间
+        :param pulumi.Input[builtins.str] created_time: Creation time of the TR routing table
+        :param pulumi.Input[builtins.str] description: Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
+        :param pulumi.Input[builtins.str] in_route_policy_table_id: ID of the inbound routing policy associated with the TR routing table
+        :param pulumi.Input[builtins.str] out_route_policy_table_id: ID of the outbound routing policy associated with the TR routing table
+        :param pulumi.Input[builtins.str] status: Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
+        :param pulumi.Input[builtins.str] transit_router_id: Transit Router instance ID
+        :param pulumi.Input[builtins.str] transit_router_route_table_id: TR routing table ID
+        :param pulumi.Input[builtins.str] transit_router_route_table_name: Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
+        :param pulumi.Input[builtins.str] transit_router_route_table_type: Type of TR routing table. System: system routing table. Custom: custom routing table.
+        :param pulumi.Input[builtins.str] updated_time: Last operation time of the TR routing table
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -440,7 +440,7 @@ class TransitRouterRouteTable(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        TR路由表的创建时间
+        Creation time of the TR routing table
         """
         return pulumi.get(self, "created_time")
 
@@ -448,7 +448,7 @@ class TransitRouterRouteTable(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -456,7 +456,7 @@ class TransitRouterRouteTable(pulumi.CustomResource):
     @pulumi.getter(name="inRoutePolicyTableId")
     def in_route_policy_table_id(self) -> pulumi.Output[builtins.str]:
         """
-        TR路由表关联的收方向路由策略的ID
+        ID of the inbound routing policy associated with the TR routing table
         """
         return pulumi.get(self, "in_route_policy_table_id")
 
@@ -464,7 +464,7 @@ class TransitRouterRouteTable(pulumi.CustomResource):
     @pulumi.getter(name="outRoutePolicyTableId")
     def out_route_policy_table_id(self) -> pulumi.Output[builtins.str]:
         """
-        TR路由表关联的发方向路由策略的ID
+        ID of the outbound routing policy associated with the TR routing table
         """
         return pulumi.get(self, "out_route_policy_table_id")
 
@@ -472,7 +472,7 @@ class TransitRouterRouteTable(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        TR路由表的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用
+        Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
         """
         return pulumi.get(self, "status")
 
@@ -485,7 +485,7 @@ class TransitRouterRouteTable(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> pulumi.Output[builtins.str]:
         """
-        中转路由器实例的ID
+        Transit Router instance ID
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -493,7 +493,7 @@ class TransitRouterRouteTable(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterRouteTableId")
     def transit_router_route_table_id(self) -> pulumi.Output[builtins.str]:
         """
-        TR路由表的ID
+        TR routing table ID
         """
         return pulumi.get(self, "transit_router_route_table_id")
 
@@ -501,7 +501,7 @@ class TransitRouterRouteTable(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterRouteTableName")
     def transit_router_route_table_name(self) -> pulumi.Output[builtins.str]:
         """
-        TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+        Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
         """
         return pulumi.get(self, "transit_router_route_table_name")
 
@@ -509,7 +509,7 @@ class TransitRouterRouteTable(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterRouteTableType")
     def transit_router_route_table_type(self) -> pulumi.Output[builtins.str]:
         """
-        TR路由表的类型。System：系统路由表。Custom：自定义路由表。
+        Type of TR routing table. System: system routing table. Custom: custom routing table.
         """
         return pulumi.get(self, "transit_router_route_table_type")
 
@@ -517,7 +517,7 @@ class TransitRouterRouteTable(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        TR路由表的最近操作时间
+        Last operation time of the TR routing table
         """
         return pulumi.get(self, "updated_time")
 

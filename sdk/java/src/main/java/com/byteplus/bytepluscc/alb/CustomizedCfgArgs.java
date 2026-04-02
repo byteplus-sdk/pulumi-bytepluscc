@@ -19,14 +19,16 @@ public final class CustomizedCfgArgs extends com.pulumi.resources.ResourceArgs {
     public static final CustomizedCfgArgs Empty = new CustomizedCfgArgs();
 
     /**
-     * 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过&#34;;\r\n&#34;分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+     * Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by &#39;;
+     * &#39;. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
      * 
      */
     @Import(name="customizedCfgContent", required=true)
     private Output<String> customizedCfgContent;
 
     /**
-     * @return 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过&#34;;\r\n&#34;分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+     * @return Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by &#39;;
+     * &#39;. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
      * 
      */
     public Output<String> customizedCfgContent() {
@@ -34,14 +36,14 @@ public final class CustomizedCfgArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+     * Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="customizedCfgName", required=true)
     private Output<String> customizedCfgName;
 
     /**
-     * @return 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+     * @return Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     public Output<String> customizedCfgName() {
@@ -49,14 +51,14 @@ public final class CustomizedCfgArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * @return Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -64,14 +66,14 @@ public final class CustomizedCfgArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 个性化配置所属项目名称。
+     * Project name to which the personalized configuration belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 个性化配置所属项目名称。
+     * @return Project name to which the personalized configuration belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -114,7 +116,8 @@ public final class CustomizedCfgArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customizedCfgContent 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过&#34;;\r\n&#34;分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+         * @param customizedCfgContent Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by &#39;;
+         * &#39;. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
          * 
          * @return builder
          * 
@@ -125,7 +128,8 @@ public final class CustomizedCfgArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customizedCfgContent 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过&#34;;\r\n&#34;分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+         * @param customizedCfgContent Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by &#39;;
+         * &#39;. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
          * 
          * @return builder
          * 
@@ -135,7 +139,7 @@ public final class CustomizedCfgArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customizedCfgName 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+         * @param customizedCfgName Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -146,7 +150,7 @@ public final class CustomizedCfgArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customizedCfgName 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+         * @param customizedCfgName Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -156,7 +160,7 @@ public final class CustomizedCfgArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+         * @param description Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -167,7 +171,7 @@ public final class CustomizedCfgArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+         * @param description Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -177,7 +181,7 @@ public final class CustomizedCfgArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 个性化配置所属项目名称。
+         * @param projectName Project name to which the personalized configuration belongs.
          * 
          * @return builder
          * 
@@ -188,7 +192,7 @@ public final class CustomizedCfgArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 个性化配置所属项目名称。
+         * @param projectName Project name to which the personalized configuration belongs.
          * 
          * @return builder
          * 

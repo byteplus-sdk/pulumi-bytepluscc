@@ -16,7 +16,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     {
         public readonly ImmutableArray<Outputs.NodeStatusCondition> Conditions;
         /// <summary>
-        /// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+        /// Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
         /// </summary>
         public readonly string? Phase;
 

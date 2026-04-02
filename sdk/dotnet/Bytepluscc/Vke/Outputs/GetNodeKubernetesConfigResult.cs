@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetNodeKubernetesConfigResult
     {
         /// <summary>
-        /// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+        /// Node lock configuration. Options: false (default): not locked; true: locked
         /// </summary>
         public readonly bool Cordon;
         /// <summary>
-        /// 节点池/节点的 Kubernetes 标签（Labels）信息。最多可传入 20 个标签。
+        /// Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodeKubernetesConfigLabelResult> Labels;
         /// <summary>
-        /// 节点池/节点的 Kubernetes 污点（Taints）信息。最多可传入 20 个污点。
+        /// Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodeKubernetesConfigTaintResult> Taints;
 

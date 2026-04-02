@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainResponseHeaderCondition {
     /**
-     * @return 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+     * @return Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
      * 
      */
     private List<GetDomainResponseHeaderConditionConditionRule> conditionRules;
     /**
-     * @return 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 &#34;AND&#34;。OR：表示逻辑关系是 &#34;OR&#34;。该参数的默认值是 OR。
+     * @return Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
      * 
      */
     private String connective;
 
     private GetDomainResponseHeaderCondition() {}
     /**
-     * @return 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+     * @return Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
      * 
      */
     public List<GetDomainResponseHeaderConditionConditionRule> conditionRules() {
         return this.conditionRules;
     }
     /**
-     * @return 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 &#34;AND&#34;。OR：表示逻辑关系是 &#34;OR&#34;。该参数的默认值是 OR。
+     * @return Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
      * 
      */
     public String connective() {

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class ShareConfigDenyRefererAccessRule
     {
         /// <summary>
-        /// 表示是否允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示允许。false：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。该参数的默认值是 true。
+        /// Indicates whether requests with an empty Referer header or without a Referer header are allowed. This parameter has the following values: true: Allowed. false: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. The default value is true.
         /// </summary>
         public readonly bool? AllowEmpty;
         /// <summary>
-        /// 表示该通用列表的内容。
+        /// Specifies the contents of the common list.
         /// </summary>
         public readonly Outputs.ShareConfigDenyRefererAccessRuleCommonType? CommonType;
 

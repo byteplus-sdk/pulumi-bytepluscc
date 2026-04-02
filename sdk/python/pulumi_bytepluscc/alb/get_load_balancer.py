@@ -130,7 +130,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="addressIpVersion")
     def address_ip_version(self) -> builtins.str:
         """
-        ALB 实例的 IP 类型。IPv4：IPv4 类型；DualStack：IPv4&IPv6 双栈类型。
+        IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 & IPv6 dual stack type.
         """
         return pulumi.get(self, "address_ip_version")
 
@@ -138,7 +138,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="bandwidthPackageId")
     def bandwidth_package_id(self) -> builtins.str:
         """
-        绑定的共享带宽包ID，可实现带宽共享。
+        ID of the bound shared bandwidth package, enabling bandwidth sharing.
         """
         return pulumi.get(self, "bandwidth_package_id")
 
@@ -146,7 +146,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> builtins.str:
         """
-        ALB 实例的服务状态。Normal：正常；FinancialLocked：因欠费被锁定。
+        Service status of the ALB instance. Normal: normal; FinancialLocked: locked due to overdue payment.
         """
         return pulumi.get(self, "business_status")
 
@@ -154,7 +154,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="createTime")
     def create_time(self) -> builtins.str:
         """
-        ALB 实例的创建时间。
+        Creation time of the ALB instance.
         """
         return pulumi.get(self, "create_time")
 
@@ -162,7 +162,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="deleteProtection")
     def delete_protection(self) -> builtins.str:
         """
-        删除保护开关。on：开启；off：关闭。
+        Delete protection switch. on: enabled; off: disabled.
         """
         return pulumi.get(self, "delete_protection")
 
@@ -170,7 +170,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> builtins.str:
         """
-        ALB 实例的预期回收时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+        Expected reclamation time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
         """
         return pulumi.get(self, "deleted_time")
 
@@ -178,7 +178,7 @@ class GetLoadBalancerResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        ALB 实例的描述。
+        Description of the ALB instance.
         """
         return pulumi.get(self, "description")
 
@@ -186,7 +186,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="dnsName")
     def dns_name(self) -> builtins.str:
         """
-        DNS域名。
+        DNS domain name.
         """
         return pulumi.get(self, "dns_name")
 
@@ -194,7 +194,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="eipBillingConfig")
     def eip_billing_config(self) -> 'outputs.GetLoadBalancerEipBillingConfigResult':
         """
-        公网IP的计费配置，仅适用于公网实例。
+        Billing configuration for public IP, only applicable to public instances.
         """
         return pulumi.get(self, "eip_billing_config")
 
@@ -202,7 +202,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="globalAccelerator")
     def global_accelerator(self) -> 'outputs.GetLoadBalancerGlobalAcceleratorResult':
         """
-        全球加速器配置，用于提升跨地域访问速度。
+        Global accelerator configuration, used to improve cross-region access speed.
         """
         return pulumi.get(self, "global_accelerator")
 
@@ -218,7 +218,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="ipv6BandwidthPackageId")
     def ipv6_bandwidth_package_id(self) -> builtins.str:
         """
-        创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+        When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
         """
         return pulumi.get(self, "ipv6_bandwidth_package_id")
 
@@ -226,7 +226,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="ipv6EipBillingConfig")
     def ipv6_eip_billing_config(self) -> 'outputs.GetLoadBalancerIpv6EipBillingConfigResult':
         """
-        IPv6公网IP的计費配置，仅适用于公网实例。
+        Billing configuration for IPv6 public IP, only applicable to public instances.
         """
         return pulumi.get(self, "ipv6_eip_billing_config")
 
@@ -234,7 +234,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="loadBalancerBillingType")
     def load_balancer_billing_type(self) -> builtins.int:
         """
-        ALB实例计费类型，当前仅支持按量计费（取值为1）。
+        ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
         """
         return pulumi.get(self, "load_balancer_billing_type")
 
@@ -242,7 +242,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="loadBalancerEdition")
     def load_balancer_edition(self) -> builtins.str:
         """
-        应用型负载均衡的版本。Basic：基础版；Standard：标准版。
+        Version of the application load balancer. Basic: Basic version; Standard: Standard version.
         """
         return pulumi.get(self, "load_balancer_edition")
 
@@ -250,7 +250,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> builtins.str:
         """
-        ALB 实例 ID。
+        ALB instance ID.
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -258,7 +258,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="loadBalancerName")
     def load_balancer_name(self) -> builtins.str:
         """
-        ALB 实例的名称。
+        Name of the ALB instance.
         """
         return pulumi.get(self, "load_balancer_name")
 
@@ -266,7 +266,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> builtins.str:
         """
-        ALB 实例被冻结的原因，例如 Financial（欠费）或 Security（安全原因）。仅在实例被锁定时返回。
+        Reason for ALB instance freeze, such as Financial (arrears) or Security (security reasons). Returned only when the instance is locked.
         """
         return pulumi.get(self, "lock_reason")
 
@@ -274,7 +274,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="modificationProtectionReason")
     def modification_protection_reason(self) -> builtins.str:
         """
-        修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
+        Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
         """
         return pulumi.get(self, "modification_protection_reason")
 
@@ -282,7 +282,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="modificationProtectionStatus")
     def modification_protection_status(self) -> builtins.str:
         """
-        修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
+        Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
         """
         return pulumi.get(self, "modification_protection_status")
 
@@ -290,7 +290,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> builtins.str:
         """
-        ALB 实例的冻结时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+        Freeze time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -298,7 +298,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        实例所属项目名称。
+        Name of the project to which the instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -306,7 +306,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="proxyProtocolEnabled")
     def proxy_protocol_enabled(self) -> builtins.str:
         """
-        ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+        ALB supports the Proxy Protocol and records the client's real IP.
         """
         return pulumi.get(self, "proxy_protocol_enabled")
 
@@ -314,7 +314,7 @@ class GetLoadBalancerResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
+        ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
         """
         return pulumi.get(self, "status")
 
@@ -322,7 +322,7 @@ class GetLoadBalancerResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetLoadBalancerTagResult']:
         """
-        为实例绑定的标签列表，用于分类和计费。
+        List of tags bound to the instance, used for categorization and billing.
         """
         return pulumi.get(self, "tags")
 
@@ -330,7 +330,7 @@ class GetLoadBalancerResult:
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
+        Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
         """
         return pulumi.get(self, "type")
 
@@ -338,7 +338,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> builtins.str:
         """
-        ALB 实例的最后更新时间。
+        Last update time of the ALB instance.
         """
         return pulumi.get(self, "update_time")
 
@@ -346,7 +346,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        负载均衡实例所属的私有网络（VPC）的ID。
+        ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -354,7 +354,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="wafInstanceId")
     def waf_instance_id(self) -> builtins.str:
         """
-        ALB 实例绑定的 WAF 安全防护实例 ID。
+        ID of the WAF security protection instance bound to the ALB instance.
         """
         return pulumi.get(self, "waf_instance_id")
 
@@ -362,7 +362,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="wafProtectedDomain")
     def waf_protected_domain(self) -> builtins.str:
         """
-        WAF防护的域名，用于精确匹配防护规则。
+        Domain name protected by WAF, used for precise rule matching.
         """
         return pulumi.get(self, "waf_protected_domain")
 
@@ -370,7 +370,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="wafProtectionEnabled")
     def waf_protection_enabled(self) -> builtins.str:
         """
-        WAF 安全防护开关。on：开启；off：关闭。
+        WAF security protection switch. on: enabled; off: disabled.
         """
         return pulumi.get(self, "waf_protection_enabled")
 
@@ -378,7 +378,7 @@ class GetLoadBalancerResult:
     @pulumi.getter(name="zoneMappings")
     def zone_mappings(self) -> Sequence['outputs.GetLoadBalancerZoneMappingResult']:
         """
-        可用区映射列表，定义了实例在哪些可用区提供服务。
+        Availability zone mapping list, defines which availability zones the instance provides services in.
         """
         return pulumi.get(self, "zone_mappings")
 

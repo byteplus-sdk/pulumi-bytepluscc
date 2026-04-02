@@ -30,11 +30,11 @@ class DnsControlPolicyArgs:
                  status: Optional[pulumi.Input[builtins.bool]] = None):
         """
         The set of arguments for constructing a DnsControlPolicy resource.
-        :param pulumi.Input[builtins.str] destination: 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
-        :param pulumi.Input[builtins.str] destination_type: 访问目的的类型。domain：域名；group：域名地址簿。
-        :param pulumi.Input[builtins.str] description: 策略的描述信息。
-        :param pulumi.Input[builtins.str] internet_firewall_id: 互联网边界防火墙实例ID。
-        :param pulumi.Input[builtins.bool] status: 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+        :param pulumi.Input[builtins.str] destination: Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
+        :param pulumi.Input[builtins.str] destination_type: Type of access target. domain: domain; group: domain address book.
+        :param pulumi.Input[builtins.str] description: Policy description information.
+        :param pulumi.Input[builtins.str] internet_firewall_id: Internet border firewall instance ID.
+        :param pulumi.Input[builtins.bool] status: Switch status of the domain denylist access control policy. false: Off; true: On.
         """
         pulumi.set(__self__, "destination", destination)
         pulumi.set(__self__, "destination_type", destination_type)
@@ -51,7 +51,7 @@ class DnsControlPolicyArgs:
     @pulumi.getter
     def destination(self) -> pulumi.Input[builtins.str]:
         """
-        访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+        Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
         """
         return pulumi.get(self, "destination")
 
@@ -63,7 +63,7 @@ class DnsControlPolicyArgs:
     @pulumi.getter(name="destinationType")
     def destination_type(self) -> pulumi.Input[builtins.str]:
         """
-        访问目的的类型。domain：域名；group：域名地址簿。
+        Type of access target. domain: domain; group: domain address book.
         """
         return pulumi.get(self, "destination_type")
 
@@ -75,7 +75,7 @@ class DnsControlPolicyArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略的描述信息。
+        Policy description information.
         """
         return pulumi.get(self, "description")
 
@@ -87,7 +87,7 @@ class DnsControlPolicyArgs:
     @pulumi.getter(name="internetFirewallId")
     def internet_firewall_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        互联网边界防火墙实例ID。
+        Internet border firewall instance ID.
         """
         return pulumi.get(self, "internet_firewall_id")
 
@@ -108,7 +108,7 @@ class DnsControlPolicyArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+        Switch status of the domain denylist access control policy. false: Off; true: On.
         """
         return pulumi.get(self, "status")
 
@@ -136,18 +136,18 @@ class _DnsControlPolicyState:
                  use_count: Optional[pulumi.Input[builtins.int]] = None):
         """
         Input properties used for looking up and filtering DnsControlPolicy resources.
-        :param pulumi.Input[builtins.str] account_id: 用户的唯一标识ID。
-        :param pulumi.Input[builtins.str] description: 策略的描述信息。
-        :param pulumi.Input[builtins.str] destination: 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] destination_group_lists: 域名地址簿名称列表。
-        :param pulumi.Input[builtins.str] destination_type: 访问目的的类型。domain：域名；group：域名地址簿。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] domain_lists: 域名列表。
-        :param pulumi.Input[builtins.int] hit_cnt: 命中计数，表示该域名黑名单访问控制策略被触发的次数。
-        :param pulumi.Input[builtins.str] internet_firewall_id: 互联网边界防火墙实例ID。
-        :param pulumi.Input[builtins.int] last_hit_time: 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
-        :param pulumi.Input[builtins.str] rule_id: 访问控制策略的唯一标识ID。
-        :param pulumi.Input[builtins.bool] status: 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
-        :param pulumi.Input[builtins.int] use_count: 该域名黑名单访问控制策略占用的策略数量。
+        :param pulumi.Input[builtins.str] account_id: User's unique identifier.
+        :param pulumi.Input[builtins.str] description: Policy description information.
+        :param pulumi.Input[builtins.str] destination: Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] destination_group_lists: Domain address book name list.
+        :param pulumi.Input[builtins.str] destination_type: Type of access target. domain: domain; group: domain address book.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] domain_lists: Domain list.
+        :param pulumi.Input[builtins.int] hit_cnt: Hit count, indicating the number of times the domain denylist access control policy was triggered.
+        :param pulumi.Input[builtins.str] internet_firewall_id: Internet border firewall instance ID.
+        :param pulumi.Input[builtins.int] last_hit_time: Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
+        :param pulumi.Input[builtins.str] rule_id: Unique identifier of the access control policy.
+        :param pulumi.Input[builtins.bool] status: Switch status of the domain denylist access control policy. false: Off; true: On.
+        :param pulumi.Input[builtins.int] use_count: Number of policies occupied by this domain denylist access control policy.
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -182,7 +182,7 @@ class _DnsControlPolicyState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户的唯一标识ID。
+        User's unique identifier.
         """
         return pulumi.get(self, "account_id")
 
@@ -194,7 +194,7 @@ class _DnsControlPolicyState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略的描述信息。
+        Policy description information.
         """
         return pulumi.get(self, "description")
 
@@ -206,7 +206,7 @@ class _DnsControlPolicyState:
     @pulumi.getter
     def destination(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+        Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
         """
         return pulumi.get(self, "destination")
 
@@ -218,7 +218,7 @@ class _DnsControlPolicyState:
     @pulumi.getter(name="destinationGroupLists")
     def destination_group_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        域名地址簿名称列表。
+        Domain address book name list.
         """
         return pulumi.get(self, "destination_group_lists")
 
@@ -230,7 +230,7 @@ class _DnsControlPolicyState:
     @pulumi.getter(name="destinationType")
     def destination_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问目的的类型。domain：域名；group：域名地址簿。
+        Type of access target. domain: domain; group: domain address book.
         """
         return pulumi.get(self, "destination_type")
 
@@ -251,7 +251,7 @@ class _DnsControlPolicyState:
     @pulumi.getter(name="domainLists")
     def domain_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        域名列表。
+        Domain list.
         """
         return pulumi.get(self, "domain_lists")
 
@@ -263,7 +263,7 @@ class _DnsControlPolicyState:
     @pulumi.getter(name="hitCnt")
     def hit_cnt(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        命中计数，表示该域名黑名单访问控制策略被触发的次数。
+        Hit count, indicating the number of times the domain denylist access control policy was triggered.
         """
         return pulumi.get(self, "hit_cnt")
 
@@ -275,7 +275,7 @@ class _DnsControlPolicyState:
     @pulumi.getter(name="internetFirewallId")
     def internet_firewall_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        互联网边界防火墙实例ID。
+        Internet border firewall instance ID.
         """
         return pulumi.get(self, "internet_firewall_id")
 
@@ -287,7 +287,7 @@ class _DnsControlPolicyState:
     @pulumi.getter(name="lastHitTime")
     def last_hit_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+        Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
         """
         return pulumi.get(self, "last_hit_time")
 
@@ -299,7 +299,7 @@ class _DnsControlPolicyState:
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问控制策略的唯一标识ID。
+        Unique identifier of the access control policy.
         """
         return pulumi.get(self, "rule_id")
 
@@ -320,7 +320,7 @@ class _DnsControlPolicyState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+        Switch status of the domain denylist access control policy. false: Off; true: On.
         """
         return pulumi.get(self, "status")
 
@@ -332,7 +332,7 @@ class _DnsControlPolicyState:
     @pulumi.getter(name="useCount")
     def use_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        该域名黑名单访问控制策略占用的策略数量。
+        Number of policies occupied by this domain denylist access control policy.
         """
         return pulumi.get(self, "use_count")
 
@@ -355,7 +355,7 @@ class DnsControlPolicy(pulumi.CustomResource):
                  status: Optional[pulumi.Input[builtins.bool]] = None,
                  __props__=None):
         """
-        域名黑名单访问控制策略。
+        Domain denylist access control policy.
 
         ## Import
 
@@ -365,11 +365,11 @@ class DnsControlPolicy(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 策略的描述信息。
-        :param pulumi.Input[builtins.str] destination: 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
-        :param pulumi.Input[builtins.str] destination_type: 访问目的的类型。domain：域名；group：域名地址簿。
-        :param pulumi.Input[builtins.str] internet_firewall_id: 互联网边界防火墙实例ID。
-        :param pulumi.Input[builtins.bool] status: 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+        :param pulumi.Input[builtins.str] description: Policy description information.
+        :param pulumi.Input[builtins.str] destination: Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
+        :param pulumi.Input[builtins.str] destination_type: Type of access target. domain: domain; group: domain address book.
+        :param pulumi.Input[builtins.str] internet_firewall_id: Internet border firewall instance ID.
+        :param pulumi.Input[builtins.bool] status: Switch status of the domain denylist access control policy. false: Off; true: On.
         """
         ...
     @overload
@@ -378,7 +378,7 @@ class DnsControlPolicy(pulumi.CustomResource):
                  args: DnsControlPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        域名黑名单访问控制策略。
+        Domain denylist access control policy.
 
         ## Import
 
@@ -465,18 +465,18 @@ class DnsControlPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_id: 用户的唯一标识ID。
-        :param pulumi.Input[builtins.str] description: 策略的描述信息。
-        :param pulumi.Input[builtins.str] destination: 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] destination_group_lists: 域名地址簿名称列表。
-        :param pulumi.Input[builtins.str] destination_type: 访问目的的类型。domain：域名；group：域名地址簿。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] domain_lists: 域名列表。
-        :param pulumi.Input[builtins.int] hit_cnt: 命中计数，表示该域名黑名单访问控制策略被触发的次数。
-        :param pulumi.Input[builtins.str] internet_firewall_id: 互联网边界防火墙实例ID。
-        :param pulumi.Input[builtins.int] last_hit_time: 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
-        :param pulumi.Input[builtins.str] rule_id: 访问控制策略的唯一标识ID。
-        :param pulumi.Input[builtins.bool] status: 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
-        :param pulumi.Input[builtins.int] use_count: 该域名黑名单访问控制策略占用的策略数量。
+        :param pulumi.Input[builtins.str] account_id: User's unique identifier.
+        :param pulumi.Input[builtins.str] description: Policy description information.
+        :param pulumi.Input[builtins.str] destination: Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] destination_group_lists: Domain address book name list.
+        :param pulumi.Input[builtins.str] destination_type: Type of access target. domain: domain; group: domain address book.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] domain_lists: Domain list.
+        :param pulumi.Input[builtins.int] hit_cnt: Hit count, indicating the number of times the domain denylist access control policy was triggered.
+        :param pulumi.Input[builtins.str] internet_firewall_id: Internet border firewall instance ID.
+        :param pulumi.Input[builtins.int] last_hit_time: Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
+        :param pulumi.Input[builtins.str] rule_id: Unique identifier of the access control policy.
+        :param pulumi.Input[builtins.bool] status: Switch status of the domain denylist access control policy. false: Off; true: On.
+        :param pulumi.Input[builtins.int] use_count: Number of policies occupied by this domain denylist access control policy.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -502,7 +502,7 @@ class DnsControlPolicy(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        用户的唯一标识ID。
+        User's unique identifier.
         """
         return pulumi.get(self, "account_id")
 
@@ -510,7 +510,7 @@ class DnsControlPolicy(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        策略的描述信息。
+        Policy description information.
         """
         return pulumi.get(self, "description")
 
@@ -518,7 +518,7 @@ class DnsControlPolicy(pulumi.CustomResource):
     @pulumi.getter
     def destination(self) -> pulumi.Output[builtins.str]:
         """
-        访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+        Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
         """
         return pulumi.get(self, "destination")
 
@@ -526,7 +526,7 @@ class DnsControlPolicy(pulumi.CustomResource):
     @pulumi.getter(name="destinationGroupLists")
     def destination_group_lists(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        域名地址簿名称列表。
+        Domain address book name list.
         """
         return pulumi.get(self, "destination_group_lists")
 
@@ -534,7 +534,7 @@ class DnsControlPolicy(pulumi.CustomResource):
     @pulumi.getter(name="destinationType")
     def destination_type(self) -> pulumi.Output[builtins.str]:
         """
-        访问目的的类型。domain：域名；group：域名地址簿。
+        Type of access target. domain: domain; group: domain address book.
         """
         return pulumi.get(self, "destination_type")
 
@@ -547,7 +547,7 @@ class DnsControlPolicy(pulumi.CustomResource):
     @pulumi.getter(name="domainLists")
     def domain_lists(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        域名列表。
+        Domain list.
         """
         return pulumi.get(self, "domain_lists")
 
@@ -555,7 +555,7 @@ class DnsControlPolicy(pulumi.CustomResource):
     @pulumi.getter(name="hitCnt")
     def hit_cnt(self) -> pulumi.Output[builtins.int]:
         """
-        命中计数，表示该域名黑名单访问控制策略被触发的次数。
+        Hit count, indicating the number of times the domain denylist access control policy was triggered.
         """
         return pulumi.get(self, "hit_cnt")
 
@@ -563,7 +563,7 @@ class DnsControlPolicy(pulumi.CustomResource):
     @pulumi.getter(name="internetFirewallId")
     def internet_firewall_id(self) -> pulumi.Output[builtins.str]:
         """
-        互联网边界防火墙实例ID。
+        Internet border firewall instance ID.
         """
         return pulumi.get(self, "internet_firewall_id")
 
@@ -571,7 +571,7 @@ class DnsControlPolicy(pulumi.CustomResource):
     @pulumi.getter(name="lastHitTime")
     def last_hit_time(self) -> pulumi.Output[builtins.int]:
         """
-        最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+        Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
         """
         return pulumi.get(self, "last_hit_time")
 
@@ -579,7 +579,7 @@ class DnsControlPolicy(pulumi.CustomResource):
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> pulumi.Output[builtins.str]:
         """
-        访问控制策略的唯一标识ID。
+        Unique identifier of the access control policy.
         """
         return pulumi.get(self, "rule_id")
 
@@ -592,7 +592,7 @@ class DnsControlPolicy(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.bool]:
         """
-        域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+        Switch status of the domain denylist access control policy. false: Off; true: On.
         """
         return pulumi.get(self, "status")
 
@@ -600,7 +600,7 @@ class DnsControlPolicy(pulumi.CustomResource):
     @pulumi.getter(name="useCount")
     def use_count(self) -> pulumi.Output[builtins.int]:
         """
-        该域名黑名单访问控制策略占用的策略数量。
+        Number of policies occupied by this domain denylist access control policy.
         """
         return pulumi.get(self, "use_count")
 

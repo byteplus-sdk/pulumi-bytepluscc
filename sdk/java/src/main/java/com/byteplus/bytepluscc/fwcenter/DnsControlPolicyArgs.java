@@ -20,14 +20,14 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
     public static final DnsControlPolicyArgs Empty = new DnsControlPolicyArgs();
 
     /**
-     * 策略的描述信息。
+     * Policy description information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 策略的描述信息。
+     * @return Policy description information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -35,14 +35,14 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+     * Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
      * 
      */
     @Import(name="destination", required=true)
     private Output<String> destination;
 
     /**
-     * @return 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+     * @return Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
      * 
      */
     public Output<String> destination() {
@@ -50,14 +50,14 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 访问目的的类型。domain：域名；group：域名地址簿。
+     * Type of access target. domain: domain; group: domain address book.
      * 
      */
     @Import(name="destinationType", required=true)
     private Output<String> destinationType;
 
     /**
-     * @return 访问目的的类型。domain：域名；group：域名地址簿。
+     * @return Type of access target. domain: domain; group: domain address book.
      * 
      */
     public Output<String> destinationType() {
@@ -65,14 +65,14 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 互联网边界防火墙实例ID。
+     * Internet border firewall instance ID.
      * 
      */
     @Import(name="internetFirewallId")
     private @Nullable Output<String> internetFirewallId;
 
     /**
-     * @return 互联网边界防火墙实例ID。
+     * @return Internet border firewall instance ID.
      * 
      */
     public Optional<Output<String>> internetFirewallId() {
@@ -87,14 +87,14 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+     * Switch status of the domain denylist access control policy. false: Off; true: On.
      * 
      */
     @Import(name="status")
     private @Nullable Output<Boolean> status;
 
     /**
-     * @return 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+     * @return Switch status of the domain denylist access control policy. false: Off; true: On.
      * 
      */
     public Optional<Output<Boolean>> status() {
@@ -131,7 +131,7 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description 策略的描述信息。
+         * @param description Policy description information.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description 策略的描述信息。
+         * @param description Policy description information.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param destination 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+         * @param destination Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param destination 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+         * @param destination Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param destinationType 访问目的的类型。domain：域名；group：域名地址簿。
+         * @param destinationType Type of access target. domain: domain; group: domain address book.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param destinationType 访问目的的类型。domain：域名；group：域名地址簿。
+         * @param destinationType Type of access target. domain: domain; group: domain address book.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param internetFirewallId 互联网边界防火墙实例ID。
+         * @param internetFirewallId Internet border firewall instance ID.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param internetFirewallId 互联网边界防火墙实例ID。
+         * @param internetFirewallId Internet border firewall instance ID.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param status 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+         * @param status Switch status of the domain denylist access control policy. false: Off; true: On.
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param status 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+         * @param status Switch status of the domain denylist access control policy. false: Off; true: On.
          * 
          * @return builder
          * 

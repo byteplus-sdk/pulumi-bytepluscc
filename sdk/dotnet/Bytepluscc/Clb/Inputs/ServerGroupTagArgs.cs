@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
     public sealed class ServerGroupTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 绑定的标签键信息。
+        /// Information about bound tag keys.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 绑定的标签值信息。
+        /// Bound tag value information.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

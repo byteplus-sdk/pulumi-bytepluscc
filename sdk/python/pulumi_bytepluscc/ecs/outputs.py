@@ -23,6 +23,7 @@ __all__ = [
     'HpcClusterTag',
     'ImageDetectionResults',
     'ImageDetectionResultsItem',
+    'ImageImportImage',
     'ImageSnapshot',
     'ImageTag',
     'InstanceCpuMemory',
@@ -60,6 +61,7 @@ __all__ = [
     'GetHpcClusterTagResult',
     'GetImageDetectionResultsResult',
     'GetImageDetectionResultsItemResult',
+    'GetImageImportImageResult',
     'GetImageSnapshotResult',
     'GetImageTagResult',
     'GetInstanceCpuMemoryResult',
@@ -133,15 +135,15 @@ class CommandParameterDefinition(dict):
                  required: Optional[builtins.bool] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.int decimal_precision: 自定义参数值（数字）允许的小数点后位数。
-        :param builtins.str default_value: 自定义参数默认值。
-        :param builtins.int max_length: 自定义参数值（字符串）的最大长度。
-        :param builtins.str max_value: 自定义参数值（数字）的最大值。
-        :param builtins.int min_length: 自定义参数值（字符串）的最小长度。
-        :param builtins.str min_value: 自定义参数值（数字）的最小值。
-        :param builtins.str name: 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
-        :param builtins.bool required: 是否必填。
-        :param builtins.str type: 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+        :param builtins.int decimal_precision: Allowed decimal places for custom parameter (number).
+        :param builtins.str default_value: Default value for custom parameter.
+        :param builtins.int max_length: Maximum length for custom parameter (string).
+        :param builtins.str max_value: Maximum value for custom parameter (number).
+        :param builtins.int min_length: Minimum length for custom parameter (string).
+        :param builtins.str min_value: Minimum value for custom parameter (number).
+        :param builtins.str name: Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
+        :param builtins.bool required: Whether it is required.
+        :param builtins.str type: Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
         """
         if decimal_precision is not None:
             pulumi.set(__self__, "decimal_precision", decimal_precision)
@@ -166,7 +168,7 @@ class CommandParameterDefinition(dict):
     @pulumi.getter(name="decimalPrecision")
     def decimal_precision(self) -> Optional[builtins.int]:
         """
-        自定义参数值（数字）允许的小数点后位数。
+        Allowed decimal places for custom parameter (number).
         """
         return pulumi.get(self, "decimal_precision")
 
@@ -174,7 +176,7 @@ class CommandParameterDefinition(dict):
     @pulumi.getter(name="defaultValue")
     def default_value(self) -> Optional[builtins.str]:
         """
-        自定义参数默认值。
+        Default value for custom parameter.
         """
         return pulumi.get(self, "default_value")
 
@@ -182,7 +184,7 @@ class CommandParameterDefinition(dict):
     @pulumi.getter(name="maxLength")
     def max_length(self) -> Optional[builtins.int]:
         """
-        自定义参数值（字符串）的最大长度。
+        Maximum length for custom parameter (string).
         """
         return pulumi.get(self, "max_length")
 
@@ -190,7 +192,7 @@ class CommandParameterDefinition(dict):
     @pulumi.getter(name="maxValue")
     def max_value(self) -> Optional[builtins.str]:
         """
-        自定义参数值（数字）的最大值。
+        Maximum value for custom parameter (number).
         """
         return pulumi.get(self, "max_value")
 
@@ -198,7 +200,7 @@ class CommandParameterDefinition(dict):
     @pulumi.getter(name="minLength")
     def min_length(self) -> Optional[builtins.int]:
         """
-        自定义参数值（字符串）的最小长度。
+        Minimum length for custom parameter (string).
         """
         return pulumi.get(self, "min_length")
 
@@ -206,7 +208,7 @@ class CommandParameterDefinition(dict):
     @pulumi.getter(name="minValue")
     def min_value(self) -> Optional[builtins.str]:
         """
-        自定义参数值（数字）的最小值。
+        Minimum value for custom parameter (number).
         """
         return pulumi.get(self, "min_value")
 
@@ -214,7 +216,7 @@ class CommandParameterDefinition(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+        Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
         """
         return pulumi.get(self, "name")
 
@@ -222,7 +224,7 @@ class CommandParameterDefinition(dict):
     @pulumi.getter
     def required(self) -> Optional[builtins.bool]:
         """
-        是否必填。
+        Whether it is required.
         """
         return pulumi.get(self, "required")
 
@@ -230,7 +232,7 @@ class CommandParameterDefinition(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+        Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
         """
         return pulumi.get(self, "type")
 
@@ -241,8 +243,8 @@ class CommandTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
-        :param builtins.str value: 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        :param builtins.str key: User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
+        :param builtins.str value: User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -253,7 +255,7 @@ class CommandTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "key")
 
@@ -261,7 +263,7 @@ class CommandTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
         """
         return pulumi.get(self, "value")
 
@@ -294,9 +296,9 @@ class DeploymentSetCapacity(dict):
                  used_count: Optional[builtins.int] = None,
                  zone_id: Optional[builtins.str] = None):
         """
-        :param builtins.int available_count: 该可用区内，还可以加入当前部署集的ECS实例数量。
-        :param builtins.int used_count: 部署集内属于该可用区的ECS实例数量。
-        :param builtins.str zone_id: 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+        :param builtins.int available_count: You can also include the number of ECS instances in the current deployment set within this availability zone.
+        :param builtins.int used_count: Number of ECS instances in the deployment set that belong to this availability zone.
+        :param builtins.str zone_id: Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
         """
         if available_count is not None:
             pulumi.set(__self__, "available_count", available_count)
@@ -309,7 +311,7 @@ class DeploymentSetCapacity(dict):
     @pulumi.getter(name="availableCount")
     def available_count(self) -> Optional[builtins.int]:
         """
-        该可用区内，还可以加入当前部署集的ECS实例数量。
+        You can also include the number of ECS instances in the current deployment set within this availability zone.
         """
         return pulumi.get(self, "available_count")
 
@@ -317,7 +319,7 @@ class DeploymentSetCapacity(dict):
     @pulumi.getter(name="usedCount")
     def used_count(self) -> Optional[builtins.int]:
         """
-        部署集内属于该可用区的ECS实例数量。
+        Number of ECS instances in the deployment set that belong to this availability zone.
         """
         return pulumi.get(self, "used_count")
 
@@ -325,7 +327,7 @@ class DeploymentSetCapacity(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[builtins.str]:
         """
-        可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+        Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
         """
         return pulumi.get(self, "zone_id")
 
@@ -336,8 +338,8 @@ class HpcClusterTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -348,7 +350,7 @@ class HpcClusterTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -356,7 +358,7 @@ class HpcClusterTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -384,7 +386,7 @@ class ImageDetectionResults(dict):
                  detection_status: Optional[builtins.str] = None,
                  items: Optional[Sequence['outputs.ImageDetectionResultsItem']] = None):
         """
-        :param builtins.str detection_status: 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+        :param builtins.str detection_status: Check status. Options: Finished (completed), Processing (in progress).
         """
         if detection_status is not None:
             pulumi.set(__self__, "detection_status", detection_status)
@@ -395,7 +397,7 @@ class ImageDetectionResults(dict):
     @pulumi.getter(name="detectionStatus")
     def detection_status(self) -> Optional[builtins.str]:
         """
-        检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+        Check status. Options: Finished (completed), Processing (in progress).
         """
         return pulumi.get(self, "detection_status")
 
@@ -432,10 +434,10 @@ class ImageDetectionResultsItem(dict):
                  risk_code: Optional[builtins.str] = None,
                  risk_level: Optional[builtins.str] = None):
         """
-        :param builtins.str name: 检测项名称。
-        :param builtins.str result: 该检测项对应结果。
-        :param builtins.str risk_code: 风险描述码。
-        :param builtins.str risk_level: 风险等级。若该参数返回值为空，表示无风险。
+        :param builtins.str name: Check item name
+        :param builtins.str result: Result for this check item.
+        :param builtins.str risk_code: Risk description code
+        :param builtins.str risk_level: Risk level. If this parameter is empty, it means no risk
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -450,7 +452,7 @@ class ImageDetectionResultsItem(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        检测项名称。
+        Check item name
         """
         return pulumi.get(self, "name")
 
@@ -458,7 +460,7 @@ class ImageDetectionResultsItem(dict):
     @pulumi.getter
     def result(self) -> Optional[builtins.str]:
         """
-        该检测项对应结果。
+        Result for this check item.
         """
         return pulumi.get(self, "result")
 
@@ -466,7 +468,7 @@ class ImageDetectionResultsItem(dict):
     @pulumi.getter(name="riskCode")
     def risk_code(self) -> Optional[builtins.str]:
         """
-        风险描述码。
+        Risk description code
         """
         return pulumi.get(self, "risk_code")
 
@@ -474,9 +476,57 @@ class ImageDetectionResultsItem(dict):
     @pulumi.getter(name="riskLevel")
     def risk_level(self) -> Optional[builtins.str]:
         """
-        风险等级。若该参数返回值为空，表示无风险。
+        Risk level. If this parameter is empty, it means no risk
         """
         return pulumi.get(self, "risk_level")
+
+
+@pulumi.output_type
+class ImageImportImage(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "importDataVolumes":
+            suggest = "import_data_volumes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ImageImportImage. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ImageImportImage.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ImageImportImage.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 import_data_volumes: Optional[Sequence[builtins.str]] = None,
+                 url: Optional[builtins.str] = None):
+        """
+        :param Sequence[builtins.str] import_data_volumes: Data disk files included in the custom image, at the TOS bucket URL.
+        :param builtins.str url: System disk files included in the custom image, at the TOS bucket URL.
+        """
+        if import_data_volumes is not None:
+            pulumi.set(__self__, "import_data_volumes", import_data_volumes)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter(name="importDataVolumes")
+    def import_data_volumes(self) -> Optional[Sequence[builtins.str]]:
+        """
+        Data disk files included in the custom image, at the TOS bucket URL.
+        """
+        return pulumi.get(self, "import_data_volumes")
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[builtins.str]:
+        """
+        System disk files included in the custom image, at the TOS bucket URL.
+        """
+        return pulumi.get(self, "url")
 
 
 @pulumi.output_type
@@ -505,9 +555,9 @@ class ImageSnapshot(dict):
                  snapshot_id: Optional[builtins.str] = None,
                  volume_kind: Optional[builtins.str] = None):
         """
-        :param builtins.int size: 快照大小。单位为GiB。
-        :param builtins.str snapshot_id: 快照ID。
-        :param builtins.str volume_kind: 云盘种类。system：系统盘。data：数据盘。
+        :param builtins.int size: Snapshot size (GiB)
+        :param builtins.str snapshot_id: Snapshot ID
+        :param builtins.str volume_kind: Cloud disk type. system: System disk. data: Data disk.
         """
         if size is not None:
             pulumi.set(__self__, "size", size)
@@ -520,7 +570,7 @@ class ImageSnapshot(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        快照大小。单位为GiB。
+        Snapshot size (GiB)
         """
         return pulumi.get(self, "size")
 
@@ -528,7 +578,7 @@ class ImageSnapshot(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[builtins.str]:
         """
-        快照ID。
+        Snapshot ID
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -536,7 +586,7 @@ class ImageSnapshot(dict):
     @pulumi.getter(name="volumeKind")
     def volume_kind(self) -> Optional[builtins.str]:
         """
-        云盘种类。system：系统盘。data：数据盘。
+        Cloud disk type. system: System disk. data: Data disk.
         """
         return pulumi.get(self, "volume_kind")
 
@@ -547,8 +597,8 @@ class ImageTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 镜像标签的标签键。
-        :param builtins.str value: 镜像标签的值。
+        :param builtins.str key: Tag key for the image label.
+        :param builtins.str value: Image tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -559,7 +609,7 @@ class ImageTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        镜像标签的标签键。
+        Tag key for the image label.
         """
         return pulumi.get(self, "key")
 
@@ -567,7 +617,7 @@ class ImageTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        镜像标签的值。
+        Image tag value
         """
         return pulumi.get(self, "value")
 
@@ -603,10 +653,10 @@ class InstanceCpuMemory(dict):
                  memory_size: Optional[builtins.int] = None,
                  threads_per_core: Optional[builtins.int] = None):
         """
-        :param builtins.int core_count: 实例的核数。
-        :param builtins.int cpu_number: 实例的CPU数量。
-        :param builtins.int memory_size: 实例的内存大小，单位MB。
-        :param builtins.int threads_per_core: 实例的每核线程数。
+        :param builtins.int core_count: Number of instance cores.
+        :param builtins.int cpu_number: Number of vCPUs for the instance.
+        :param builtins.int memory_size: Instance memory size (MB).
+        :param builtins.int threads_per_core: Threads per core for the instance.
         """
         if core_count is not None:
             pulumi.set(__self__, "core_count", core_count)
@@ -621,7 +671,7 @@ class InstanceCpuMemory(dict):
     @pulumi.getter(name="coreCount")
     def core_count(self) -> Optional[builtins.int]:
         """
-        实例的核数。
+        Number of instance cores.
         """
         return pulumi.get(self, "core_count")
 
@@ -629,7 +679,7 @@ class InstanceCpuMemory(dict):
     @pulumi.getter(name="cpuNumber")
     def cpu_number(self) -> Optional[builtins.int]:
         """
-        实例的CPU数量。
+        Number of vCPUs for the instance.
         """
         return pulumi.get(self, "cpu_number")
 
@@ -637,7 +687,7 @@ class InstanceCpuMemory(dict):
     @pulumi.getter(name="memorySize")
     def memory_size(self) -> Optional[builtins.int]:
         """
-        实例的内存大小，单位MB。
+        Instance memory size (MB).
         """
         return pulumi.get(self, "memory_size")
 
@@ -645,7 +695,7 @@ class InstanceCpuMemory(dict):
     @pulumi.getter(name="threadsPerCore")
     def threads_per_core(self) -> Optional[builtins.int]:
         """
-        实例的每核线程数。
+        Threads per core for the instance.
         """
         return pulumi.get(self, "threads_per_core")
 
@@ -694,36 +744,36 @@ class InstanceEipAddress(dict):
                  security_protection_instance_id: Optional[builtins.int] = None,
                  security_protection_types: Optional[Sequence[builtins.str]] = None):
         """
-        :param builtins.str allocation_id: 实例的分配ID。
-        :param builtins.int bandwidth_mbps: 公网IP的带宽上限，默认值为1，单位：Mbps。
-                   - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-                   - `ChargeType`传入`PayByTraffic`：取值范围1～200。
-        :param builtins.str bandwidth_package_id: 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-                   - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-                   - 公网IP加入到共享带宽包必须同时满足如下条件：
-                     - 二者的安全防护类型相同。
-                     - 二者的地域相同。
-                     - 公网IP的计费方式必须是按量计费。
-                     - 共享带宽包为IPv4类型。
-        :param builtins.str charge_type: 公网IP的计费方式，取值：
-                   - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-                   - PayByTraffic：按量计费-按实际流量计费。
-                   - PrePaid：包年包月。
+        :param builtins.str allocation_id: Instance allocation ID
+        :param builtins.int bandwidth_mbps: Maximum bandwidth for public IP. Default value is 1, unit: Mbps.
+                   - If `ChargeType` is `PayByBandwidth`: value range is 1–500.
+                   - If `ChargeType` is `PayByTraffic`: value range is 1–200.
+        :param builtins.str bandwidth_package_id: Shared bandwidth package ID, used to add a public IP to the shared bandwidth package.
+                   - You can call the [DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685) API to query the shared bandwidth package ID.
+                   - To add a public IP to a shared bandwidth package, all of the following conditions must be met:
+                     - Both must have the same security protection type.
+                     - Both must be in the same region.
+                     - The public IP must use pay-as-you-go billing.
+                     - The shared bandwidth package must be IPv4 type.
+        :param builtins.str charge_type: Public IP billing method. Values:
+                   - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
+                   - PayByTraffic: Pay-as-you-go—billed by actual traffic.
+                   - PrePaid: Subscription.
                  
-                 **提示:**
-                 实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-        :param builtins.str ip_address: 实例的IP地址。
-        :param builtins.str isp: 公网IP的线路类型，默认为BGP。取值：
-                   - BGP：BGP（多线）。
-                   - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-                     - ChinaMobile：中国移动静态单线。
-                     - ChinaTelecom：中国电信静态单线。
-                     - ChinaUnicom：中国联通静态单线。
-                   - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-                   - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
-        :param builtins.bool release_with_instance: 实例是否随实例释放。
-        :param builtins.int security_protection_instance_id: DDoS原生防护（企业版）ID。
-        :param Sequence[builtins.str] security_protection_types: 公网IP的安全防护类型。
+                 **Note:**
+                 When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+        :param builtins.str ip_address: Instance IP address.
+        :param builtins.str isp: Line type for the public IP. Default is BGP. Values:
+                   - BGP: BGP (multi-line)
+                   - If your account has applied for and enabled static single-line permissions, you can use the following values:
+                     - ChinaMobile: China Mobile static single-line
+                     - ChinaTelecom: China Telecom static single-line
+                     - ChinaUnicom: China Unicom static single-line
+                   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.
+                   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP
+        :param builtins.bool release_with_instance: Whether this resource is released when the instance is released.
+        :param builtins.int security_protection_instance_id: DDoS Native Protection (Enterprise Edition) ID.
+        :param Sequence[builtins.str] security_protection_types: Public IP security protection type.
         """
         if allocation_id is not None:
             pulumi.set(__self__, "allocation_id", allocation_id)
@@ -748,7 +798,7 @@ class InstanceEipAddress(dict):
     @pulumi.getter(name="allocationId")
     def allocation_id(self) -> Optional[builtins.str]:
         """
-        实例的分配ID。
+        Instance allocation ID
         """
         return pulumi.get(self, "allocation_id")
 
@@ -756,9 +806,9 @@ class InstanceEipAddress(dict):
     @pulumi.getter(name="bandwidthMbps")
     def bandwidth_mbps(self) -> Optional[builtins.int]:
         """
-        公网IP的带宽上限，默认值为1，单位：Mbps。
-            - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-            - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+        Maximum bandwidth for public IP. Default value is 1, unit: Mbps.
+            - If `ChargeType` is `PayByBandwidth`: value range is 1–500.
+            - If `ChargeType` is `PayByTraffic`: value range is 1–200.
         """
         return pulumi.get(self, "bandwidth_mbps")
 
@@ -766,13 +816,13 @@ class InstanceEipAddress(dict):
     @pulumi.getter(name="bandwidthPackageId")
     def bandwidth_package_id(self) -> Optional[builtins.str]:
         """
-        共享带宽包的ID，表示将公网IP加入到共享带宽包。
-            - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-            - 公网IP加入到共享带宽包必须同时满足如下条件：
-              - 二者的安全防护类型相同。
-              - 二者的地域相同。
-              - 公网IP的计费方式必须是按量计费。
-              - 共享带宽包为IPv4类型。
+        Shared bandwidth package ID, used to add a public IP to the shared bandwidth package.
+            - You can call the [DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685) API to query the shared bandwidth package ID.
+            - To add a public IP to a shared bandwidth package, all of the following conditions must be met:
+              - Both must have the same security protection type.
+              - Both must be in the same region.
+              - The public IP must use pay-as-you-go billing.
+              - The shared bandwidth package must be IPv4 type.
         """
         return pulumi.get(self, "bandwidth_package_id")
 
@@ -780,13 +830,13 @@ class InstanceEipAddress(dict):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[builtins.str]:
         """
-        公网IP的计费方式，取值：
-            - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-            - PayByTraffic：按量计费-按实际流量计费。
-            - PrePaid：包年包月。
+        Public IP billing method. Values:
+            - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
+            - PayByTraffic: Pay-as-you-go—billed by actual traffic.
+            - PrePaid: Subscription.
           
-          **提示:**
-          实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+          **Note:**
+          When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
         """
         return pulumi.get(self, "charge_type")
 
@@ -794,7 +844,7 @@ class InstanceEipAddress(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[builtins.str]:
         """
-        实例的IP地址。
+        Instance IP address.
         """
         return pulumi.get(self, "ip_address")
 
@@ -802,14 +852,14 @@ class InstanceEipAddress(dict):
     @pulumi.getter
     def isp(self) -> Optional[builtins.str]:
         """
-        公网IP的线路类型，默认为BGP。取值：
-            - BGP：BGP（多线）。
-            - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-              - ChinaMobile：中国移动静态单线。
-              - ChinaTelecom：中国电信静态单线。
-              - ChinaUnicom：中国联通静态单线。
-            - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-            - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+        Line type for the public IP. Default is BGP. Values:
+            - BGP: BGP (multi-line)
+            - If your account has applied for and enabled static single-line permissions, you can use the following values:
+              - ChinaMobile: China Mobile static single-line
+              - ChinaTelecom: China Telecom static single-line
+              - ChinaUnicom: China Unicom static single-line
+            - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.
+            - If your account has applied for and enabled static BGP permissions, you can use Static_BGP
         """
         return pulumi.get(self, "isp")
 
@@ -817,7 +867,7 @@ class InstanceEipAddress(dict):
     @pulumi.getter(name="releaseWithInstance")
     def release_with_instance(self) -> Optional[builtins.bool]:
         """
-        实例是否随实例释放。
+        Whether this resource is released when the instance is released.
         """
         return pulumi.get(self, "release_with_instance")
 
@@ -825,7 +875,7 @@ class InstanceEipAddress(dict):
     @pulumi.getter(name="securityProtectionInstanceId")
     def security_protection_instance_id(self) -> Optional[builtins.int]:
         """
-        DDoS原生防护（企业版）ID。
+        DDoS Native Protection (Enterprise Edition) ID.
         """
         return pulumi.get(self, "security_protection_instance_id")
 
@@ -833,7 +883,7 @@ class InstanceEipAddress(dict):
     @pulumi.getter(name="securityProtectionTypes")
     def security_protection_types(self) -> Optional[Sequence[builtins.str]]:
         """
-        公网IP的安全防护类型。
+        Public IP security protection type.
         """
         return pulumi.get(self, "security_protection_types")
 
@@ -869,10 +919,10 @@ class InstanceImage(dict):
                  keep_image_credential: Optional[builtins.bool] = None,
                  security_enhancement_strategy: Optional[builtins.str] = None):
         """
-        :param builtins.str image_id: 实例的镜像ID。
-        :param builtins.str image_release_version: 实例的镜像发布版本。
-        :param builtins.bool keep_image_credential: 实例是否保留镜像凭证。
-        :param builtins.str security_enhancement_strategy: 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+        :param builtins.str image_id: Instance image ID.
+        :param builtins.str image_release_version: The image release version of the instance.
+        :param builtins.bool keep_image_credential: Whether the instance retains image credentials
+        :param builtins.str security_enhancement_strategy: Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
         """
         pulumi.set(__self__, "image_id", image_id)
         if image_release_version is not None:
@@ -886,7 +936,7 @@ class InstanceImage(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> builtins.str:
         """
-        实例的镜像ID。
+        Instance image ID.
         """
         return pulumi.get(self, "image_id")
 
@@ -894,7 +944,7 @@ class InstanceImage(dict):
     @pulumi.getter(name="imageReleaseVersion")
     def image_release_version(self) -> Optional[builtins.str]:
         """
-        实例的镜像发布版本。
+        The image release version of the instance.
         """
         return pulumi.get(self, "image_release_version")
 
@@ -902,7 +952,7 @@ class InstanceImage(dict):
     @pulumi.getter(name="keepImageCredential")
     def keep_image_credential(self) -> Optional[builtins.bool]:
         """
-        实例是否保留镜像凭证。
+        Whether the instance retains image credentials
         """
         return pulumi.get(self, "keep_image_credential")
 
@@ -910,7 +960,7 @@ class InstanceImage(dict):
     @pulumi.getter(name="securityEnhancementStrategy")
     def security_enhancement_strategy(self) -> Optional[builtins.str]:
         """
-        实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+        Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
         """
         return pulumi.get(self, "security_enhancement_strategy")
 
@@ -940,8 +990,8 @@ class InstanceKeyPair(dict):
                  key_pair_id: Optional[builtins.str] = None,
                  key_pair_name: Optional[builtins.str] = None):
         """
-        :param builtins.str key_pair_id: 实例的公钥。
-        :param builtins.str key_pair_name: 实例的密钥对名称。
+        :param builtins.str key_pair_id: Instance public key
+        :param builtins.str key_pair_name: Instance key pair name
         """
         if key_pair_id is not None:
             pulumi.set(__self__, "key_pair_id", key_pair_id)
@@ -952,7 +1002,7 @@ class InstanceKeyPair(dict):
     @pulumi.getter(name="keyPairId")
     def key_pair_id(self) -> Optional[builtins.str]:
         """
-        实例的公钥。
+        Instance public key
         """
         return pulumi.get(self, "key_pair_id")
 
@@ -960,7 +1010,7 @@ class InstanceKeyPair(dict):
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> Optional[builtins.str]:
         """
-        实例的密钥对名称。
+        Instance key pair name
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -989,9 +1039,9 @@ class InstanceLocalVolume(dict):
                  size: Optional[builtins.int] = None,
                  volume_type: Optional[builtins.str] = None):
         """
-        :param builtins.int count: 实例挂载的本地盘数量。
-        :param builtins.int size: 实例挂载的本地盘的单盘容量，单位GiB。
-        :param builtins.str volume_type: 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+        :param builtins.int count: The number of local disks attached to the instance.
+        :param builtins.int size: Capacity of each local disk mounted to the instance (GiB).
+        :param builtins.str volume_type: Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
         """
         if count is not None:
             pulumi.set(__self__, "count", count)
@@ -1004,7 +1054,7 @@ class InstanceLocalVolume(dict):
     @pulumi.getter
     def count(self) -> Optional[builtins.int]:
         """
-        实例挂载的本地盘数量。
+        The number of local disks attached to the instance.
         """
         return pulumi.get(self, "count")
 
@@ -1012,7 +1062,7 @@ class InstanceLocalVolume(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        实例挂载的本地盘的单盘容量，单位GiB。
+        Capacity of each local disk mounted to the instance (GiB).
         """
         return pulumi.get(self, "size")
 
@@ -1020,7 +1070,7 @@ class InstanceLocalVolume(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> Optional[builtins.str]:
         """
-        本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+        Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
         """
         return pulumi.get(self, "volume_type")
 
@@ -1031,8 +1081,8 @@ class InstanceOperationSystem(dict):
                  name: Optional[builtins.str] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str name: 实例的操作系统名称。
-        :param builtins.str type: 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+        :param builtins.str name: Instance operating system name.
+        :param builtins.str type: Operating system type of the instance. Linux: Linux system. Windows: Windows system.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1043,7 +1093,7 @@ class InstanceOperationSystem(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        实例的操作系统名称。
+        Instance operating system name.
         """
         return pulumi.get(self, "name")
 
@@ -1051,7 +1101,7 @@ class InstanceOperationSystem(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+        Operating system type of the instance. Linux: Linux system. Windows: Windows system.
         """
         return pulumi.get(self, "type")
 
@@ -1083,10 +1133,10 @@ class InstancePlacement(dict):
                  dedicated_host_id: Optional[builtins.str] = None,
                  tenancy: Optional[builtins.str] = None):
         """
-        :param builtins.str affinity: 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
-        :param builtins.str dedicated_host_cluster_id: 实例的专用主机集群ID。
-        :param builtins.str dedicated_host_id: 实例的专用主机ID。
-        :param builtins.str tenancy: 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+        :param builtins.str affinity: For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
+        :param builtins.str dedicated_host_cluster_id: Instance dedicated host cluster ID.
+        :param builtins.str dedicated_host_id: Dedicated host ID for the instance.
+        :param builtins.str tenancy: Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
         """
         if affinity is not None:
             pulumi.set(__self__, "affinity", affinity)
@@ -1101,7 +1151,7 @@ class InstancePlacement(dict):
     @pulumi.getter
     def affinity(self) -> Optional[builtins.str]:
         """
-        针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+        For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
         """
         return pulumi.get(self, "affinity")
 
@@ -1109,7 +1159,7 @@ class InstancePlacement(dict):
     @pulumi.getter(name="dedicatedHostClusterId")
     def dedicated_host_cluster_id(self) -> Optional[builtins.str]:
         """
-        实例的专用主机集群ID。
+        Instance dedicated host cluster ID.
         """
         return pulumi.get(self, "dedicated_host_cluster_id")
 
@@ -1117,7 +1167,7 @@ class InstancePlacement(dict):
     @pulumi.getter(name="dedicatedHostId")
     def dedicated_host_id(self) -> Optional[builtins.str]:
         """
-        实例的专用主机ID。
+        Dedicated host ID for the instance.
         """
         return pulumi.get(self, "dedicated_host_id")
 
@@ -1125,7 +1175,7 @@ class InstancePlacement(dict):
     @pulumi.getter
     def tenancy(self) -> Optional[builtins.str]:
         """
-        是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+        Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
         """
         return pulumi.get(self, "tenancy")
 
@@ -1176,15 +1226,15 @@ class InstancePrimaryNetworkInterface(dict):
                  subnet_id: Optional[builtins.str] = None,
                  vpc_id: Optional[builtins.str] = None):
         """
-        :param builtins.int ipv6_address_count: 实例的IPv6地址数量。
-        :param Sequence[builtins.str] ipv6_addresses: 实例的IPv6地址。
-        :param builtins.str mac_address: 实例的MAC地址。
-        :param builtins.str network_interface_id: 实例的网络接口ID。
-        :param builtins.str primary_ip_address: 实例的主IP地址。
-        :param Sequence[builtins.str] private_ip_addresses: 实例的私有IP地址。
-        :param Sequence[builtins.str] security_group_ids: 实例的安全组ID。
-        :param builtins.str subnet_id: 实例的子网ID。
-        :param builtins.str vpc_id: 实例的VPC ID。
+        :param builtins.int ipv6_address_count: The number of IPv6 addresses for the instance.
+        :param Sequence[builtins.str] ipv6_addresses: IPv6 address of the instance.
+        :param builtins.str mac_address: Instance MAC address.
+        :param builtins.str network_interface_id: The network interface ID of the instance.
+        :param builtins.str primary_ip_address: Instance primary IP address
+        :param Sequence[builtins.str] private_ip_addresses: Instance private IP address.
+        :param Sequence[builtins.str] security_group_ids: Instance security group ID
+        :param builtins.str subnet_id: Instance subnet ID.
+        :param builtins.str vpc_id: VPC ID of the instance.
         """
         if ipv6_address_count is not None:
             pulumi.set(__self__, "ipv6_address_count", ipv6_address_count)
@@ -1209,7 +1259,7 @@ class InstancePrimaryNetworkInterface(dict):
     @pulumi.getter(name="ipv6AddressCount")
     def ipv6_address_count(self) -> Optional[builtins.int]:
         """
-        实例的IPv6地址数量。
+        The number of IPv6 addresses for the instance.
         """
         return pulumi.get(self, "ipv6_address_count")
 
@@ -1217,7 +1267,7 @@ class InstancePrimaryNetworkInterface(dict):
     @pulumi.getter(name="ipv6Addresses")
     def ipv6_addresses(self) -> Optional[Sequence[builtins.str]]:
         """
-        实例的IPv6地址。
+        IPv6 address of the instance.
         """
         return pulumi.get(self, "ipv6_addresses")
 
@@ -1225,7 +1275,7 @@ class InstancePrimaryNetworkInterface(dict):
     @pulumi.getter(name="macAddress")
     def mac_address(self) -> Optional[builtins.str]:
         """
-        实例的MAC地址。
+        Instance MAC address.
         """
         return pulumi.get(self, "mac_address")
 
@@ -1233,7 +1283,7 @@ class InstancePrimaryNetworkInterface(dict):
     @pulumi.getter(name="networkInterfaceId")
     def network_interface_id(self) -> Optional[builtins.str]:
         """
-        实例的网络接口ID。
+        The network interface ID of the instance.
         """
         return pulumi.get(self, "network_interface_id")
 
@@ -1241,7 +1291,7 @@ class InstancePrimaryNetworkInterface(dict):
     @pulumi.getter(name="primaryIpAddress")
     def primary_ip_address(self) -> Optional[builtins.str]:
         """
-        实例的主IP地址。
+        Instance primary IP address
         """
         return pulumi.get(self, "primary_ip_address")
 
@@ -1249,7 +1299,7 @@ class InstancePrimaryNetworkInterface(dict):
     @pulumi.getter(name="privateIpAddresses")
     def private_ip_addresses(self) -> Optional[Sequence[builtins.str]]:
         """
-        实例的私有IP地址。
+        Instance private IP address.
         """
         return pulumi.get(self, "private_ip_addresses")
 
@@ -1257,7 +1307,7 @@ class InstancePrimaryNetworkInterface(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        实例的安全组ID。
+        Instance security group ID
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -1265,7 +1315,7 @@ class InstancePrimaryNetworkInterface(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[builtins.str]:
         """
-        实例的子网ID。
+        Instance subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1273,7 +1323,7 @@ class InstancePrimaryNetworkInterface(dict):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[builtins.str]:
         """
-        实例的VPC ID。
+        VPC ID of the instance.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1306,11 +1356,11 @@ class InstanceRdmaNetworkInterfaceDetail(dict):
                  switch_name: Optional[builtins.str] = None,
                  switch_port: Optional[builtins.str] = None):
         """
-        :param builtins.str gateway: 网关地址。
-        :param builtins.str ip: IP地址。
-        :param builtins.str mask: 子网掩码。
-        :param builtins.str switch_name: 交换机名称。
-        :param builtins.str switch_port: 交换机端口。
+        :param builtins.str gateway: Gateway address.
+        :param builtins.str ip: IP address
+        :param builtins.str mask: Subnet mask.
+        :param builtins.str switch_name: Switch name.
+        :param builtins.str switch_port: Switch port.
         """
         if gateway is not None:
             pulumi.set(__self__, "gateway", gateway)
@@ -1327,7 +1377,7 @@ class InstanceRdmaNetworkInterfaceDetail(dict):
     @pulumi.getter
     def gateway(self) -> Optional[builtins.str]:
         """
-        网关地址。
+        Gateway address.
         """
         return pulumi.get(self, "gateway")
 
@@ -1335,7 +1385,7 @@ class InstanceRdmaNetworkInterfaceDetail(dict):
     @pulumi.getter
     def ip(self) -> Optional[builtins.str]:
         """
-        IP地址。
+        IP address
         """
         return pulumi.get(self, "ip")
 
@@ -1343,7 +1393,7 @@ class InstanceRdmaNetworkInterfaceDetail(dict):
     @pulumi.getter
     def mask(self) -> Optional[builtins.str]:
         """
-        子网掩码。
+        Subnet mask.
         """
         return pulumi.get(self, "mask")
 
@@ -1351,7 +1401,7 @@ class InstanceRdmaNetworkInterfaceDetail(dict):
     @pulumi.getter(name="switchName")
     def switch_name(self) -> Optional[builtins.str]:
         """
-        交换机名称。
+        Switch name.
         """
         return pulumi.get(self, "switch_name")
 
@@ -1359,7 +1409,7 @@ class InstanceRdmaNetworkInterfaceDetail(dict):
     @pulumi.getter(name="switchPort")
     def switch_port(self) -> Optional[builtins.str]:
         """
-        交换机端口。
+        Switch port.
         """
         return pulumi.get(self, "switch_port")
 
@@ -1387,8 +1437,8 @@ class InstanceRenewInfo(dict):
                  period: Optional[builtins.int] = None,
                  period_unit: Optional[builtins.str] = None):
         """
-        :param builtins.int period: 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
-        :param builtins.str period_unit: 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+        :param builtins.int period: Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
+        :param builtins.str period_unit: Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
         """
         if period is not None:
             pulumi.set(__self__, "period", period)
@@ -1399,7 +1449,7 @@ class InstanceRenewInfo(dict):
     @pulumi.getter
     def period(self) -> Optional[builtins.int]:
         """
-        续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+        Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
         """
         return pulumi.get(self, "period")
 
@@ -1407,7 +1457,7 @@ class InstanceRenewInfo(dict):
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[builtins.str]:
         """
-        续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+        Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
         """
         return pulumi.get(self, "period_unit")
 
@@ -1446,11 +1496,11 @@ class InstanceSecondaryNetworkInterface(dict):
                  security_group_ids: Optional[Sequence[builtins.str]] = None,
                  subnet_id: Optional[builtins.str] = None):
         """
-        :param builtins.int ipv6_address_count: 实例的IPv6地址数量。
-        :param builtins.str primary_ip_address: 实例的主IP地址。
-        :param Sequence[builtins.str] private_ip_addresses: 实例的私有IP地址。
-        :param Sequence[builtins.str] security_group_ids: 实例的安全组ID。
-        :param builtins.str subnet_id: 实例的子网ID。
+        :param builtins.int ipv6_address_count: The number of IPv6 addresses for the instance.
+        :param builtins.str primary_ip_address: Instance primary IP address
+        :param Sequence[builtins.str] private_ip_addresses: Instance private IP address.
+        :param Sequence[builtins.str] security_group_ids: Instance security group ID
+        :param builtins.str subnet_id: Instance subnet ID.
         """
         if ipv6_address_count is not None:
             pulumi.set(__self__, "ipv6_address_count", ipv6_address_count)
@@ -1467,7 +1517,7 @@ class InstanceSecondaryNetworkInterface(dict):
     @pulumi.getter(name="ipv6AddressCount")
     def ipv6_address_count(self) -> Optional[builtins.int]:
         """
-        实例的IPv6地址数量。
+        The number of IPv6 addresses for the instance.
         """
         return pulumi.get(self, "ipv6_address_count")
 
@@ -1475,7 +1525,7 @@ class InstanceSecondaryNetworkInterface(dict):
     @pulumi.getter(name="primaryIpAddress")
     def primary_ip_address(self) -> Optional[builtins.str]:
         """
-        实例的主IP地址。
+        Instance primary IP address
         """
         return pulumi.get(self, "primary_ip_address")
 
@@ -1483,7 +1533,7 @@ class InstanceSecondaryNetworkInterface(dict):
     @pulumi.getter(name="privateIpAddresses")
     def private_ip_addresses(self) -> Optional[Sequence[builtins.str]]:
         """
-        实例的私有IP地址。
+        Instance private IP address.
         """
         return pulumi.get(self, "private_ip_addresses")
 
@@ -1491,7 +1541,7 @@ class InstanceSecondaryNetworkInterface(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        实例的安全组ID。
+        Instance security group ID
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -1499,7 +1549,7 @@ class InstanceSecondaryNetworkInterface(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[builtins.str]:
         """
-        实例的子网ID。
+        Instance subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1545,14 +1595,21 @@ class InstanceSystemVolume(dict):
                  volume_id: Optional[builtins.str] = None,
                  volume_type: Optional[builtins.str] = None):
         """
-        :param builtins.bool delete_with_instance: 实例是否随实例删除。
-        :param builtins.int extra_performance_iops: 实例的额外性能IOPS。
-        :param builtins.int extra_performance_throughput_mb: 实例的额外性能吞吐量，单位MB。
-        :param builtins.str extra_performance_type_id: 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
-        :param builtins.int size: 实例的大小，单位GiB。
-        :param builtins.str snapshot_id: 实例的快照ID。
-        :param builtins.str volume_id: 实例的卷ID。
-        :param builtins.str volume_type: 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+        :param builtins.bool delete_with_instance: Whether the attached resources are deleted along with the instance.
+        :param builtins.int extra_performance_iops: Additional performance IOPS for the instance
+        :param builtins.int extra_performance_throughput_mb: The additional performance throughput of the instance, in MB.
+        :param builtins.str extra_performance_type_id: Type of additional performance. Values:
+                 Balance: Balanced additional performance
+                 IOPS: IOPS additional performance
+                 Throughput: Throughput additional performance
+        :param builtins.int size: Instance size, in GiB
+        :param builtins.str snapshot_id: Instance snapshot ID
+        :param builtins.str volume_id: Instance volume ID.
+        :param builtins.str volume_type: Cloud disk type. Values:
+                 PTSSD: Performance SSD.
+                 ESSD_PL0: Ultra SSD disk, PL0 specification.
+                 ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+                 TSSD_TL0: Throughput SSD disk.
         """
         if delete_with_instance is not None:
             pulumi.set(__self__, "delete_with_instance", delete_with_instance)
@@ -1575,7 +1632,7 @@ class InstanceSystemVolume(dict):
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> Optional[builtins.bool]:
         """
-        实例是否随实例删除。
+        Whether the attached resources are deleted along with the instance.
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -1583,7 +1640,7 @@ class InstanceSystemVolume(dict):
     @pulumi.getter(name="extraPerformanceIops")
     def extra_performance_iops(self) -> Optional[builtins.int]:
         """
-        实例的额外性能IOPS。
+        Additional performance IOPS for the instance
         """
         return pulumi.get(self, "extra_performance_iops")
 
@@ -1591,7 +1648,7 @@ class InstanceSystemVolume(dict):
     @pulumi.getter(name="extraPerformanceThroughputMb")
     def extra_performance_throughput_mb(self) -> Optional[builtins.int]:
         """
-        实例的额外性能吞吐量，单位MB。
+        The additional performance throughput of the instance, in MB.
         """
         return pulumi.get(self, "extra_performance_throughput_mb")
 
@@ -1599,7 +1656,10 @@ class InstanceSystemVolume(dict):
     @pulumi.getter(name="extraPerformanceTypeId")
     def extra_performance_type_id(self) -> Optional[builtins.str]:
         """
-        额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+        Type of additional performance. Values:
+          Balance: Balanced additional performance
+          IOPS: IOPS additional performance
+          Throughput: Throughput additional performance
         """
         return pulumi.get(self, "extra_performance_type_id")
 
@@ -1607,7 +1667,7 @@ class InstanceSystemVolume(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        实例的大小，单位GiB。
+        Instance size, in GiB
         """
         return pulumi.get(self, "size")
 
@@ -1615,7 +1675,7 @@ class InstanceSystemVolume(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[builtins.str]:
         """
-        实例的快照ID。
+        Instance snapshot ID
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -1623,7 +1683,7 @@ class InstanceSystemVolume(dict):
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> Optional[builtins.str]:
         """
-        实例的卷ID。
+        Instance volume ID.
         """
         return pulumi.get(self, "volume_id")
 
@@ -1631,7 +1691,11 @@ class InstanceSystemVolume(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> Optional[builtins.str]:
         """
-        云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+        Cloud disk type. Values:
+          PTSSD: Performance SSD.
+          ESSD_PL0: Ultra SSD disk, PL0 specification.
+          ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+          TSSD_TL0: Throughput SSD disk.
         """
         return pulumi.get(self, "volume_type")
 
@@ -1642,8 +1706,8 @@ class InstanceTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 实例的键。
-        :param builtins.str value: 实例的值。
+        :param builtins.str key: Instance key.
+        :param builtins.str value: Instance value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1654,7 +1718,7 @@ class InstanceTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        实例的键。
+        Instance key.
         """
         return pulumi.get(self, "key")
 
@@ -1662,7 +1726,7 @@ class InstanceTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        实例的值。
+        Instance value.
         """
         return pulumi.get(self, "value")
 
@@ -1718,18 +1782,18 @@ class InvocationInvocationResult(dict):
                  start_time: Optional[builtins.str] = None,
                  username: Optional[builtins.str] = None):
         """
-        :param builtins.str command_id: 命令ID。
-        :param builtins.str end_time: 命令执行的完成时间。
-        :param builtins.str error_code: 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
-        :param builtins.str error_message: 命令执行失败的错误信息。
-        :param builtins.int exit_code: 脚本执行后的退出状态码。
-        :param builtins.str instance_id: 实例ID。
-        :param builtins.str invocation_id: 任务执行ID。
-        :param builtins.str invocation_result_id: 任务执行结果ID。
-        :param builtins.str invocation_result_status: 单台实例的命令进度状态。
-        :param builtins.str output: 经过Base64编码的命令执行后输出信息。
-        :param builtins.str start_time: 命令在实例中开始执行的时间。
-        :param builtins.str username: 在实例中执行命令的用户名称。
+        :param builtins.str command_id: Command ID.
+        :param builtins.str end_time: Command execution completion time.
+        :param builtins.str error_code: Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
+        :param builtins.str error_message: Error message for command execution failure.
+        :param builtins.int exit_code: Exit status code after script execution.
+        :param builtins.str instance_id: Instance ID.
+        :param builtins.str invocation_id: Task execution ID.
+        :param builtins.str invocation_result_id: Task execution result ID.
+        :param builtins.str invocation_result_status: Command progress status for a single instance.
+        :param builtins.str output: Output information after command execution, encoded in Base64.
+        :param builtins.str start_time: Time when the command starts executing in the instance.
+        :param builtins.str username: User name for executing the command in the instance.
         """
         if command_id is not None:
             pulumi.set(__self__, "command_id", command_id)
@@ -1760,7 +1824,7 @@ class InvocationInvocationResult(dict):
     @pulumi.getter(name="commandId")
     def command_id(self) -> Optional[builtins.str]:
         """
-        命令ID。
+        Command ID.
         """
         return pulumi.get(self, "command_id")
 
@@ -1768,7 +1832,7 @@ class InvocationInvocationResult(dict):
     @pulumi.getter(name="endTime")
     def end_time(self) -> Optional[builtins.str]:
         """
-        命令执行的完成时间。
+        Command execution completion time.
         """
         return pulumi.get(self, "end_time")
 
@@ -1776,7 +1840,7 @@ class InvocationInvocationResult(dict):
     @pulumi.getter(name="errorCode")
     def error_code(self) -> Optional[builtins.str]:
         """
-        命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+        Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
         """
         return pulumi.get(self, "error_code")
 
@@ -1784,7 +1848,7 @@ class InvocationInvocationResult(dict):
     @pulumi.getter(name="errorMessage")
     def error_message(self) -> Optional[builtins.str]:
         """
-        命令执行失败的错误信息。
+        Error message for command execution failure.
         """
         return pulumi.get(self, "error_message")
 
@@ -1792,7 +1856,7 @@ class InvocationInvocationResult(dict):
     @pulumi.getter(name="exitCode")
     def exit_code(self) -> Optional[builtins.int]:
         """
-        脚本执行后的退出状态码。
+        Exit status code after script execution.
         """
         return pulumi.get(self, "exit_code")
 
@@ -1800,7 +1864,7 @@ class InvocationInvocationResult(dict):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[builtins.str]:
         """
-        实例ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -1808,7 +1872,7 @@ class InvocationInvocationResult(dict):
     @pulumi.getter(name="invocationId")
     def invocation_id(self) -> Optional[builtins.str]:
         """
-        任务执行ID。
+        Task execution ID.
         """
         return pulumi.get(self, "invocation_id")
 
@@ -1816,7 +1880,7 @@ class InvocationInvocationResult(dict):
     @pulumi.getter(name="invocationResultId")
     def invocation_result_id(self) -> Optional[builtins.str]:
         """
-        任务执行结果ID。
+        Task execution result ID.
         """
         return pulumi.get(self, "invocation_result_id")
 
@@ -1824,7 +1888,7 @@ class InvocationInvocationResult(dict):
     @pulumi.getter(name="invocationResultStatus")
     def invocation_result_status(self) -> Optional[builtins.str]:
         """
-        单台实例的命令进度状态。
+        Command progress status for a single instance.
         """
         return pulumi.get(self, "invocation_result_status")
 
@@ -1832,7 +1896,7 @@ class InvocationInvocationResult(dict):
     @pulumi.getter
     def output(self) -> Optional[builtins.str]:
         """
-        经过Base64编码的命令执行后输出信息。
+        Output information after command execution, encoded in Base64.
         """
         return pulumi.get(self, "output")
 
@@ -1840,7 +1904,7 @@ class InvocationInvocationResult(dict):
     @pulumi.getter(name="startTime")
     def start_time(self) -> Optional[builtins.str]:
         """
-        命令在实例中开始执行的时间。
+        Time when the command starts executing in the instance.
         """
         return pulumi.get(self, "start_time")
 
@@ -1848,7 +1912,7 @@ class InvocationInvocationResult(dict):
     @pulumi.getter
     def username(self) -> Optional[builtins.str]:
         """
-        在实例中执行命令的用户名称。
+        User name for executing the command in the instance.
         """
         return pulumi.get(self, "username")
 
@@ -1893,15 +1957,15 @@ class InvocationParameterDefinition(dict):
                  required: Optional[builtins.bool] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.int decimal_precision: 自定义参数值（数字）允许的小数点后位数。
-        :param builtins.str default_value: 自定义参数默认值。
-        :param builtins.int max_length: 自定义参数值（字符串）的最大长度。
-        :param builtins.str max_value: 自定义参数值（数字）的最大值。
-        :param builtins.int min_length: 自定义参数值（字符串）的最小长度。
-        :param builtins.str min_value: 自定义参数值（数字）的最小值。
-        :param builtins.str name: 自定义参数名称，需要在脚本中通过{{Param}}定义 。
-        :param builtins.bool required: 是否必填。true：必填。false：非必填。
-        :param builtins.str type: 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+        :param builtins.int decimal_precision: Allowed number of decimal places for custom parameter values (numeric).
+        :param builtins.str default_value: Default value for custom parameter.
+        :param builtins.int max_length: Maximum length for custom parameter value (string).
+        :param builtins.str max_value: Maximum value for custom parameter (numeric).
+        :param builtins.int min_length: Minimum length for custom parameter values (string).
+        :param builtins.str min_value: Minimum value for custom parameter (numeric).
+        :param builtins.str name: Custom parameter name. Must be defined in the script using {{Param}}.
+        :param builtins.bool required: Required. true: Required. false: Optional.
+        :param builtins.str type: Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
         """
         if decimal_precision is not None:
             pulumi.set(__self__, "decimal_precision", decimal_precision)
@@ -1926,7 +1990,7 @@ class InvocationParameterDefinition(dict):
     @pulumi.getter(name="decimalPrecision")
     def decimal_precision(self) -> Optional[builtins.int]:
         """
-        自定义参数值（数字）允许的小数点后位数。
+        Allowed number of decimal places for custom parameter values (numeric).
         """
         return pulumi.get(self, "decimal_precision")
 
@@ -1934,7 +1998,7 @@ class InvocationParameterDefinition(dict):
     @pulumi.getter(name="defaultValue")
     def default_value(self) -> Optional[builtins.str]:
         """
-        自定义参数默认值。
+        Default value for custom parameter.
         """
         return pulumi.get(self, "default_value")
 
@@ -1942,7 +2006,7 @@ class InvocationParameterDefinition(dict):
     @pulumi.getter(name="maxLength")
     def max_length(self) -> Optional[builtins.int]:
         """
-        自定义参数值（字符串）的最大长度。
+        Maximum length for custom parameter value (string).
         """
         return pulumi.get(self, "max_length")
 
@@ -1950,7 +2014,7 @@ class InvocationParameterDefinition(dict):
     @pulumi.getter(name="maxValue")
     def max_value(self) -> Optional[builtins.str]:
         """
-        自定义参数值（数字）的最大值。
+        Maximum value for custom parameter (numeric).
         """
         return pulumi.get(self, "max_value")
 
@@ -1958,7 +2022,7 @@ class InvocationParameterDefinition(dict):
     @pulumi.getter(name="minLength")
     def min_length(self) -> Optional[builtins.int]:
         """
-        自定义参数值（字符串）的最小长度。
+        Minimum length for custom parameter values (string).
         """
         return pulumi.get(self, "min_length")
 
@@ -1966,7 +2030,7 @@ class InvocationParameterDefinition(dict):
     @pulumi.getter(name="minValue")
     def min_value(self) -> Optional[builtins.str]:
         """
-        自定义参数值（数字）的最小值。
+        Minimum value for custom parameter (numeric).
         """
         return pulumi.get(self, "min_value")
 
@@ -1974,7 +2038,7 @@ class InvocationParameterDefinition(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        自定义参数名称，需要在脚本中通过{{Param}}定义 。
+        Custom parameter name. Must be defined in the script using {{Param}}.
         """
         return pulumi.get(self, "name")
 
@@ -1982,7 +2046,7 @@ class InvocationParameterDefinition(dict):
     @pulumi.getter
     def required(self) -> Optional[builtins.bool]:
         """
-        是否必填。true：必填。false：非必填。
+        Required. true: Required. false: Optional.
         """
         return pulumi.get(self, "required")
 
@@ -1990,7 +2054,7 @@ class InvocationParameterDefinition(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+        Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
         """
         return pulumi.get(self, "type")
 
@@ -2001,8 +2065,8 @@ class InvocationTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
-        :param builtins.str value: 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        :param builtins.str key: Tag key for user tags. Naming rules: Cannot start with any combination of 'volc:' or 'sys:' in any case. Can only contain letters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
+        :param builtins.str value: User tag value. Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty; length must be between 0 and 256 characters.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2013,7 +2077,7 @@ class InvocationTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        Tag key for user tags. Naming rules: Cannot start with any combination of 'volc:' or 'sys:' in any case. Can only contain letters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "key")
 
@@ -2021,7 +2085,7 @@ class InvocationTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        User tag value. Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty; length must be between 0 and 256 characters.
         """
         return pulumi.get(self, "value")
 
@@ -2032,8 +2096,8 @@ class KeypairTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2044,7 +2108,7 @@ class KeypairTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -2052,7 +2116,7 @@ class KeypairTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -2063,8 +2127,8 @@ class LaunchTemplateLaunchTemplateTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 给资源添加的用户标签的标签键。
-        :param builtins.str value: 给资源添加的用户标签的标签值。
+        :param builtins.str key: Tag key for user tags added to the resource.
+        :param builtins.str value: User tag value added to the resource
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2075,7 +2139,7 @@ class LaunchTemplateLaunchTemplateTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        给资源添加的用户标签的标签键。
+        Tag key for user tags added to the resource.
         """
         return pulumi.get(self, "key")
 
@@ -2083,7 +2147,7 @@ class LaunchTemplateLaunchTemplateTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        给资源添加的用户标签的标签值。
+        User tag value added to the resource
         """
         return pulumi.get(self, "value")
 
@@ -2180,30 +2244,30 @@ class LaunchTemplateLaunchTemplateVersion(dict):
                  vpc_id: Optional[builtins.str] = None,
                  zone_id: Optional[builtins.str] = None):
         """
-        :param builtins.int deployment_set_group_number: 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
-        :param builtins.str deployment_set_id: 实例需要加入的部署集ID。
-        :param builtins.str description: 实例的描述。
-        :param 'LaunchTemplateLaunchTemplateVersionEipArgs' eip: 实例绑定的公网IP信息。
-        :param builtins.str host_name: 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
-        :param builtins.str hpc_cluster_id: 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
-        :param builtins.str image_id: 镜像ID。
-        :param builtins.str image_name: 镜像名称。
-        :param builtins.str instance_charge_type: 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
-        :param builtins.str instance_name: 实例的名称。
-        :param builtins.str instance_type_id: 实例的规格。
-        :param builtins.bool keep_image_credential: 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
-        :param builtins.str key_pair_name: 实例绑定的密钥对。
-        :param builtins.str project_name: 实例所属项目。
-        :param 'LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs' scheduled_instance: 弹性预约单信息。
-        :param builtins.str security_enhancement_strategy: 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
-        :param builtins.float spot_price_limit: 抢占式实例的每小时最高价格。
-        :param builtins.str spot_strategy: 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
-        :param builtins.int suffix_index: 有序后缀的起始序号。
-        :param builtins.bool unique_suffix: 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
-        :param builtins.str user_data: 实例的自定义数据。
-        :param builtins.str version_description: 模版版本描述。
-        :param builtins.str vpc_id: 私有网络ID。
-        :param builtins.str zone_id: 实例所属可用区ID。
+        :param builtins.int deployment_set_group_number: When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
+        :param builtins.str deployment_set_id: Deployment set ID the instance needs to join.
+        :param builtins.str description: Instance description
+        :param 'LaunchTemplateLaunchTemplateVersionEipArgs' eip: Public IP information bound to the instance
+        :param builtins.str host_name: Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
+        :param builtins.str hpc_cluster_id: When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
+        :param builtins.str image_id: Image ID.
+        :param builtins.str image_name: Image name.
+        :param builtins.str instance_charge_type: Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
+        :param builtins.str instance_name: Instance name.
+        :param builtins.str instance_type_id: Instance specification
+        :param builtins.bool keep_image_credential: Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
+        :param builtins.str key_pair_name: Key pair bound to the instance.
+        :param builtins.str project_name: Project associated with the instance.
+        :param 'LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs' scheduled_instance: Elastic reservation order information
+        :param builtins.str security_enhancement_strategy: Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
+        :param builtins.float spot_price_limit: Maximum hourly price for preemptible instances
+        :param builtins.str spot_strategy: Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
+        :param builtins.int suffix_index: Starting number for the sequential suffix
+        :param builtins.bool unique_suffix: Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
+        :param builtins.str user_data: Custom data for the instance.
+        :param builtins.str version_description: Template version description.
+        :param builtins.str vpc_id: Private network ID.
+        :param builtins.str zone_id: Instance availability zone ID
         """
         if deployment_set_group_number is not None:
             pulumi.set(__self__, "deployment_set_group_number", deployment_set_group_number)
@@ -2264,7 +2328,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> Optional[builtins.int]:
         """
-        当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+        When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -2272,7 +2336,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> Optional[builtins.str]:
         """
-        实例需要加入的部署集ID。
+        Deployment set ID the instance needs to join.
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -2280,7 +2344,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        实例的描述。
+        Instance description
         """
         return pulumi.get(self, "description")
 
@@ -2288,7 +2352,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter
     def eip(self) -> Optional['outputs.LaunchTemplateLaunchTemplateVersionEip']:
         """
-        实例绑定的公网IP信息。
+        Public IP information bound to the instance
         """
         return pulumi.get(self, "eip")
 
@@ -2296,7 +2360,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[builtins.str]:
         """
-        实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+        Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
         """
         return pulumi.get(self, "host_name")
 
@@ -2304,7 +2368,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> Optional[builtins.str]:
         """
-        当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+        When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -2312,7 +2376,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[builtins.str]:
         """
-        镜像ID。
+        Image ID.
         """
         return pulumi.get(self, "image_id")
 
@@ -2320,7 +2384,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="imageName")
     def image_name(self) -> Optional[builtins.str]:
         """
-        镜像名称。
+        Image name.
         """
         return pulumi.get(self, "image_name")
 
@@ -2328,7 +2392,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> Optional[builtins.str]:
         """
-        实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+        Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -2336,7 +2400,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[builtins.str]:
         """
-        实例的名称。
+        Instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -2344,7 +2408,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="instanceTypeId")
     def instance_type_id(self) -> Optional[builtins.str]:
         """
-        实例的规格。
+        Instance specification
         """
         return pulumi.get(self, "instance_type_id")
 
@@ -2352,7 +2416,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="keepImageCredential")
     def keep_image_credential(self) -> Optional[builtins.bool]:
         """
-        是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+        Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
         """
         return pulumi.get(self, "keep_image_credential")
 
@@ -2360,7 +2424,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> Optional[builtins.str]:
         """
-        实例绑定的密钥对。
+        Key pair bound to the instance.
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -2373,7 +2437,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[builtins.str]:
         """
-        实例所属项目。
+        Project associated with the instance.
         """
         return pulumi.get(self, "project_name")
 
@@ -2381,7 +2445,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="scheduledInstance")
     def scheduled_instance(self) -> Optional['outputs.LaunchTemplateLaunchTemplateVersionScheduledInstance']:
         """
-        弹性预约单信息。
+        Elastic reservation order information
         """
         return pulumi.get(self, "scheduled_instance")
 
@@ -2389,7 +2453,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="securityEnhancementStrategy")
     def security_enhancement_strategy(self) -> Optional[builtins.str]:
         """
-        是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+        Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
         """
         return pulumi.get(self, "security_enhancement_strategy")
 
@@ -2397,7 +2461,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="spotPriceLimit")
     def spot_price_limit(self) -> Optional[builtins.float]:
         """
-        抢占式实例的每小时最高价格。
+        Maximum hourly price for preemptible instances
         """
         return pulumi.get(self, "spot_price_limit")
 
@@ -2405,7 +2469,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> Optional[builtins.str]:
         """
-        按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+        Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -2413,7 +2477,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="suffixIndex")
     def suffix_index(self) -> Optional[builtins.int]:
         """
-        有序后缀的起始序号。
+        Starting number for the sequential suffix
         """
         return pulumi.get(self, "suffix_index")
 
@@ -2426,7 +2490,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="uniqueSuffix")
     def unique_suffix(self) -> Optional[builtins.bool]:
         """
-        表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+        Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
         """
         return pulumi.get(self, "unique_suffix")
 
@@ -2434,7 +2498,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="userData")
     def user_data(self) -> Optional[builtins.str]:
         """
-        实例的自定义数据。
+        Custom data for the instance.
         """
         return pulumi.get(self, "user_data")
 
@@ -2442,7 +2506,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="versionDescription")
     def version_description(self) -> Optional[builtins.str]:
         """
-        模版版本描述。
+        Template version description.
         """
         return pulumi.get(self, "version_description")
 
@@ -2455,7 +2519,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[builtins.str]:
         """
-        私有网络ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -2463,7 +2527,7 @@ class LaunchTemplateLaunchTemplateVersion(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[builtins.str]:
         """
-        实例所属可用区ID。
+        Instance availability zone ID
         """
         return pulumi.get(self, "zone_id")
 
@@ -2504,13 +2568,13 @@ class LaunchTemplateLaunchTemplateVersionEip(dict):
                  security_protection_instance_id: Optional[builtins.int] = None,
                  security_protection_types: Optional[Sequence[builtins.str]] = None):
         """
-        :param builtins.int bandwidth: 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
-        :param builtins.str bandwidth_package_id: 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-        :param builtins.int billing_type: 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
-        :param builtins.str isp: 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
-        :param builtins.bool release_with_instance: 公网IP是否随实例删除，仅按量计费公网IP生效。
-        :param builtins.int security_protection_instance_id: 安全防护包ID。
-        :param Sequence[builtins.str] security_protection_types: 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+        :param builtins.int bandwidth: Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
+        :param builtins.str bandwidth_package_id: Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
+        :param builtins.int billing_type: Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
+        :param builtins.str isp: Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
+        :param builtins.bool release_with_instance: Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
+        :param builtins.int security_protection_instance_id: Security protection package ID
+        :param Sequence[builtins.str] security_protection_types: Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
         """
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
@@ -2531,7 +2595,7 @@ class LaunchTemplateLaunchTemplateVersionEip(dict):
     @pulumi.getter
     def bandwidth(self) -> Optional[builtins.int]:
         """
-        公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+        Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -2539,7 +2603,7 @@ class LaunchTemplateLaunchTemplateVersionEip(dict):
     @pulumi.getter(name="bandwidthPackageId")
     def bandwidth_package_id(self) -> Optional[builtins.str]:
         """
-        共享带宽包的ID，表示将公网IP加入到共享带宽包。
+        Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
         """
         return pulumi.get(self, "bandwidth_package_id")
 
@@ -2547,7 +2611,7 @@ class LaunchTemplateLaunchTemplateVersionEip(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[builtins.int]:
         """
-        公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+        Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
         """
         return pulumi.get(self, "billing_type")
 
@@ -2555,7 +2619,7 @@ class LaunchTemplateLaunchTemplateVersionEip(dict):
     @pulumi.getter
     def isp(self) -> Optional[builtins.str]:
         """
-        公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+        Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
         """
         return pulumi.get(self, "isp")
 
@@ -2563,7 +2627,7 @@ class LaunchTemplateLaunchTemplateVersionEip(dict):
     @pulumi.getter(name="releaseWithInstance")
     def release_with_instance(self) -> Optional[builtins.bool]:
         """
-        公网IP是否随实例删除，仅按量计费公网IP生效。
+        Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
         """
         return pulumi.get(self, "release_with_instance")
 
@@ -2571,7 +2635,7 @@ class LaunchTemplateLaunchTemplateVersionEip(dict):
     @pulumi.getter(name="securityProtectionInstanceId")
     def security_protection_instance_id(self) -> Optional[builtins.int]:
         """
-        安全防护包ID。
+        Security protection package ID
         """
         return pulumi.get(self, "security_protection_instance_id")
 
@@ -2579,7 +2643,7 @@ class LaunchTemplateLaunchTemplateVersionEip(dict):
     @pulumi.getter(name="securityProtectionTypes")
     def security_protection_types(self) -> Optional[Sequence[builtins.str]]:
         """
-        公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+        Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
         """
         return pulumi.get(self, "security_protection_types")
 
@@ -2609,8 +2673,8 @@ class LaunchTemplateLaunchTemplateVersionNetworkInterface(dict):
                  security_group_ids: Optional[Sequence[builtins.str]] = None,
                  subnet_id: Optional[builtins.str] = None):
         """
-        :param Sequence[builtins.str] security_group_ids: 网卡关联的安全组ID。
-        :param builtins.str subnet_id: 实例的私有网络子网ID。
+        :param Sequence[builtins.str] security_group_ids: Security group ID associated with the network interface.
+        :param builtins.str subnet_id: Instance VPC subnet ID
         """
         if security_group_ids is not None:
             pulumi.set(__self__, "security_group_ids", security_group_ids)
@@ -2621,7 +2685,7 @@ class LaunchTemplateLaunchTemplateVersionNetworkInterface(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        网卡关联的安全组ID。
+        Security group ID associated with the network interface.
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -2629,7 +2693,7 @@ class LaunchTemplateLaunchTemplateVersionNetworkInterface(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[builtins.str]:
         """
-        实例的私有网络子网ID。
+        Instance VPC subnet ID
         """
         return pulumi.get(self, "subnet_id")
 
@@ -2659,8 +2723,8 @@ class LaunchTemplateLaunchTemplateVersionScheduledInstance(dict):
                  scheduled_instance_description: Optional[builtins.str] = None,
                  scheduled_instance_name: Optional[builtins.str] = None):
         """
-        :param builtins.str scheduled_instance_description: 弹性预约单的描述。
-        :param builtins.str scheduled_instance_name: 弹性预约单的名称。
+        :param builtins.str scheduled_instance_description: Description of the elastic reservation order
+        :param builtins.str scheduled_instance_name: Name of the elastic reservation order
         """
         if scheduled_instance_description is not None:
             pulumi.set(__self__, "scheduled_instance_description", scheduled_instance_description)
@@ -2671,7 +2735,7 @@ class LaunchTemplateLaunchTemplateVersionScheduledInstance(dict):
     @pulumi.getter(name="scheduledInstanceDescription")
     def scheduled_instance_description(self) -> Optional[builtins.str]:
         """
-        弹性预约单的描述。
+        Description of the elastic reservation order
         """
         return pulumi.get(self, "scheduled_instance_description")
 
@@ -2679,7 +2743,7 @@ class LaunchTemplateLaunchTemplateVersionScheduledInstance(dict):
     @pulumi.getter(name="scheduledInstanceName")
     def scheduled_instance_name(self) -> Optional[builtins.str]:
         """
-        弹性预约单的名称。
+        Name of the elastic reservation order
         """
         return pulumi.get(self, "scheduled_instance_name")
 
@@ -2690,8 +2754,8 @@ class LaunchTemplateLaunchTemplateVersionTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 给资源添加的用户标签的标签键。
-        :param builtins.str value: 给资源添加的用户标签的标签值。
+        :param builtins.str key: Tag key for user tags added to the resource.
+        :param builtins.str value: User tag value added to the resource
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2702,7 +2766,7 @@ class LaunchTemplateLaunchTemplateVersionTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        给资源添加的用户标签的标签键。
+        Tag key for user tags added to the resource.
         """
         return pulumi.get(self, "key")
 
@@ -2710,7 +2774,7 @@ class LaunchTemplateLaunchTemplateVersionTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        给资源添加的用户标签的标签值。
+        User tag value added to the resource
         """
         return pulumi.get(self, "value")
 
@@ -2753,13 +2817,13 @@ class LaunchTemplateLaunchTemplateVersionVolume(dict):
                  snapshot_id: Optional[builtins.str] = None,
                  volume_type: Optional[builtins.str] = None):
         """
-        :param builtins.bool delete_with_instance: 云盘是否随实例释放。
-        :param builtins.int extra_performance_iops: 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
-        :param builtins.int extra_performance_throughput_mb: 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
-        :param builtins.str extra_performance_type_id: 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
-        :param builtins.int size: 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
-        :param builtins.str snapshot_id: 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
-        :param builtins.str volume_type: 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+        :param builtins.bool delete_with_instance: Whether the cloud disk is released with the instance
+        :param builtins.int extra_performance_iops: Cloud disk extra IOPS performance size, supported only by ESSD FlexPL data disks, unit: operations/second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. The value ranges for each extra performance type are as follows: IOPS type: 1–50000. Balance type: 1–50000.
+        :param builtins.int extra_performance_throughput_mb: Extra throughput performance size for the cloud disk, in MB/s. Only supported by ESSD FlexPL data disks. This parameter must be set when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
+        :param builtins.str extra_performance_type_id: Type of cloud disk extra performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Cloud Disk Extra Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance.
+        :param builtins.int size: Cloud disk size, unit: GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
+        :param builtins.str snapshot_id: Create a cloud disk using a snapshot, only supports creating data disks. You can call the DescribeSnapshots API to query the snapshot ID.
+        :param builtins.str volume_type: Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
         """
         if delete_with_instance is not None:
             pulumi.set(__self__, "delete_with_instance", delete_with_instance)
@@ -2780,7 +2844,7 @@ class LaunchTemplateLaunchTemplateVersionVolume(dict):
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> Optional[builtins.bool]:
         """
-        云盘是否随实例释放。
+        Whether the cloud disk is released with the instance
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -2788,7 +2852,7 @@ class LaunchTemplateLaunchTemplateVersionVolume(dict):
     @pulumi.getter(name="extraPerformanceIops")
     def extra_performance_iops(self) -> Optional[builtins.int]:
         """
-        云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+        Cloud disk extra IOPS performance size, supported only by ESSD FlexPL data disks, unit: operations/second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. The value ranges for each extra performance type are as follows: IOPS type: 1–50000. Balance type: 1–50000.
         """
         return pulumi.get(self, "extra_performance_iops")
 
@@ -2796,7 +2860,7 @@ class LaunchTemplateLaunchTemplateVersionVolume(dict):
     @pulumi.getter(name="extraPerformanceThroughputMb")
     def extra_performance_throughput_mb(self) -> Optional[builtins.int]:
         """
-        云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+        Extra throughput performance size for the cloud disk, in MB/s. Only supported by ESSD FlexPL data disks. This parameter must be set when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
         """
         return pulumi.get(self, "extra_performance_throughput_mb")
 
@@ -2804,7 +2868,7 @@ class LaunchTemplateLaunchTemplateVersionVolume(dict):
     @pulumi.getter(name="extraPerformanceTypeId")
     def extra_performance_type_id(self) -> Optional[builtins.str]:
         """
-        云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+        Type of cloud disk extra performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Cloud Disk Extra Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance.
         """
         return pulumi.get(self, "extra_performance_type_id")
 
@@ -2812,7 +2876,7 @@ class LaunchTemplateLaunchTemplateVersionVolume(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+        Cloud disk size, unit: GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
         """
         return pulumi.get(self, "size")
 
@@ -2820,7 +2884,7 @@ class LaunchTemplateLaunchTemplateVersionVolume(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[builtins.str]:
         """
-        使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+        Create a cloud disk using a snapshot, only supports creating data disks. You can call the DescribeSnapshots API to query the snapshot ID.
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -2828,7 +2892,7 @@ class LaunchTemplateLaunchTemplateVersionVolume(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> Optional[builtins.str]:
         """
-        云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+        Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
         """
         return pulumi.get(self, "volume_type")
 
@@ -2869,13 +2933,13 @@ class LaunchTemplateVersionEip(dict):
                  security_protection_instance_id: Optional[builtins.int] = None,
                  security_protection_types: Optional[Sequence[builtins.str]] = None):
         """
-        :param builtins.int bandwidth: 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
-        :param builtins.str bandwidth_package_id: 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-        :param builtins.int billing_type: 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
-        :param builtins.str isp: 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
-        :param builtins.bool release_with_instance: 公网IP是否随实例删除，仅按量计费公网IP生效。
-        :param builtins.int security_protection_instance_id: 安全防护包ID。
-        :param Sequence[builtins.str] security_protection_types: 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+        :param builtins.int bandwidth: Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
+        :param builtins.str bandwidth_package_id: Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
+        :param builtins.int billing_type: Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
+        :param builtins.str isp: Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
+        :param builtins.bool release_with_instance: Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
+        :param builtins.int security_protection_instance_id: Security protection package ID.
+        :param Sequence[builtins.str] security_protection_types: Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
         """
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
@@ -2896,7 +2960,7 @@ class LaunchTemplateVersionEip(dict):
     @pulumi.getter
     def bandwidth(self) -> Optional[builtins.int]:
         """
-        公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+        Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
         """
         return pulumi.get(self, "bandwidth")
 
@@ -2904,7 +2968,7 @@ class LaunchTemplateVersionEip(dict):
     @pulumi.getter(name="bandwidthPackageId")
     def bandwidth_package_id(self) -> Optional[builtins.str]:
         """
-        共享带宽包的ID，表示将公网IP加入到共享带宽包。
+        Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
         """
         return pulumi.get(self, "bandwidth_package_id")
 
@@ -2912,7 +2976,7 @@ class LaunchTemplateVersionEip(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[builtins.int]:
         """
-        公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+        Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
         """
         return pulumi.get(self, "billing_type")
 
@@ -2920,7 +2984,7 @@ class LaunchTemplateVersionEip(dict):
     @pulumi.getter
     def isp(self) -> Optional[builtins.str]:
         """
-        公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+        Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
         """
         return pulumi.get(self, "isp")
 
@@ -2928,7 +2992,7 @@ class LaunchTemplateVersionEip(dict):
     @pulumi.getter(name="releaseWithInstance")
     def release_with_instance(self) -> Optional[builtins.bool]:
         """
-        公网IP是否随实例删除，仅按量计费公网IP生效。
+        Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
         """
         return pulumi.get(self, "release_with_instance")
 
@@ -2936,7 +3000,7 @@ class LaunchTemplateVersionEip(dict):
     @pulumi.getter(name="securityProtectionInstanceId")
     def security_protection_instance_id(self) -> Optional[builtins.int]:
         """
-        安全防护包ID。
+        Security protection package ID.
         """
         return pulumi.get(self, "security_protection_instance_id")
 
@@ -2944,7 +3008,7 @@ class LaunchTemplateVersionEip(dict):
     @pulumi.getter(name="securityProtectionTypes")
     def security_protection_types(self) -> Optional[Sequence[builtins.str]]:
         """
-        公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+        Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
         """
         return pulumi.get(self, "security_protection_types")
 
@@ -2974,8 +3038,8 @@ class LaunchTemplateVersionNetworkInterface(dict):
                  security_group_ids: Optional[Sequence[builtins.str]] = None,
                  subnet_id: Optional[builtins.str] = None):
         """
-        :param Sequence[builtins.str] security_group_ids: 网卡关联的安全组ID。
-        :param builtins.str subnet_id: 实例的私有网络子网ID。
+        :param Sequence[builtins.str] security_group_ids: Security group ID associated with the network interface.
+        :param builtins.str subnet_id: Private network subnet ID of the instance.
         """
         if security_group_ids is not None:
             pulumi.set(__self__, "security_group_ids", security_group_ids)
@@ -2986,7 +3050,7 @@ class LaunchTemplateVersionNetworkInterface(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Optional[Sequence[builtins.str]]:
         """
-        网卡关联的安全组ID。
+        Security group ID associated with the network interface.
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -2994,7 +3058,7 @@ class LaunchTemplateVersionNetworkInterface(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[builtins.str]:
         """
-        实例的私有网络子网ID。
+        Private network subnet ID of the instance.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -3024,8 +3088,8 @@ class LaunchTemplateVersionScheduledInstance(dict):
                  scheduled_instance_description: Optional[builtins.str] = None,
                  scheduled_instance_name: Optional[builtins.str] = None):
         """
-        :param builtins.str scheduled_instance_description: 弹性预约单的描述。
-        :param builtins.str scheduled_instance_name: 弹性预约单的名称。
+        :param builtins.str scheduled_instance_description: Description of the elastic reservation order
+        :param builtins.str scheduled_instance_name: Name of the elastic reservation order
         """
         if scheduled_instance_description is not None:
             pulumi.set(__self__, "scheduled_instance_description", scheduled_instance_description)
@@ -3036,7 +3100,7 @@ class LaunchTemplateVersionScheduledInstance(dict):
     @pulumi.getter(name="scheduledInstanceDescription")
     def scheduled_instance_description(self) -> Optional[builtins.str]:
         """
-        弹性预约单的描述。
+        Description of the elastic reservation order
         """
         return pulumi.get(self, "scheduled_instance_description")
 
@@ -3044,7 +3108,7 @@ class LaunchTemplateVersionScheduledInstance(dict):
     @pulumi.getter(name="scheduledInstanceName")
     def scheduled_instance_name(self) -> Optional[builtins.str]:
         """
-        弹性预约单的名称。
+        Name of the elastic reservation order
         """
         return pulumi.get(self, "scheduled_instance_name")
 
@@ -3055,8 +3119,8 @@ class LaunchTemplateVersionTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 给资源添加的用户标签的标签键。
-        :param builtins.str value: 给资源添加的用户标签的标签值。
+        :param builtins.str key: Tag key for user tags added to the resource.
+        :param builtins.str value: Tag value for user tags added to the resource
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -3067,7 +3131,7 @@ class LaunchTemplateVersionTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        给资源添加的用户标签的标签键。
+        Tag key for user tags added to the resource.
         """
         return pulumi.get(self, "key")
 
@@ -3075,7 +3139,7 @@ class LaunchTemplateVersionTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        给资源添加的用户标签的标签值。
+        Tag value for user tags added to the resource
         """
         return pulumi.get(self, "value")
 
@@ -3118,13 +3182,13 @@ class LaunchTemplateVersionVolume(dict):
                  snapshot_id: Optional[builtins.str] = None,
                  volume_type: Optional[builtins.str] = None):
         """
-        :param builtins.bool delete_with_instance: 云盘是否随实例释放。
-        :param builtins.int extra_performance_iops: 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
-        :param builtins.int extra_performance_throughput_mb: 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
-        :param builtins.str extra_performance_type_id: 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
-        :param builtins.int size: 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
-        :param builtins.str snapshot_id: 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
-        :param builtins.str volume_type: 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+        :param builtins.bool delete_with_instance: Whether the disk is released with the instance
+        :param builtins.int extra_performance_iops: Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
+        :param builtins.int extra_performance_throughput_mb: Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
+        :param builtins.str extra_performance_type_id: Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
+        :param builtins.int size: Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
+        :param builtins.str snapshot_id: Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
+        :param builtins.str volume_type: Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
         """
         if delete_with_instance is not None:
             pulumi.set(__self__, "delete_with_instance", delete_with_instance)
@@ -3145,7 +3209,7 @@ class LaunchTemplateVersionVolume(dict):
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> Optional[builtins.bool]:
         """
-        云盘是否随实例释放。
+        Whether the disk is released with the instance
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -3153,7 +3217,7 @@ class LaunchTemplateVersionVolume(dict):
     @pulumi.getter(name="extraPerformanceIops")
     def extra_performance_iops(self) -> Optional[builtins.int]:
         """
-        云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+        Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
         """
         return pulumi.get(self, "extra_performance_iops")
 
@@ -3161,7 +3225,7 @@ class LaunchTemplateVersionVolume(dict):
     @pulumi.getter(name="extraPerformanceThroughputMb")
     def extra_performance_throughput_mb(self) -> Optional[builtins.int]:
         """
-        云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+        Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
         """
         return pulumi.get(self, "extra_performance_throughput_mb")
 
@@ -3169,7 +3233,7 @@ class LaunchTemplateVersionVolume(dict):
     @pulumi.getter(name="extraPerformanceTypeId")
     def extra_performance_type_id(self) -> Optional[builtins.str]:
         """
-        云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+        Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
         """
         return pulumi.get(self, "extra_performance_type_id")
 
@@ -3177,7 +3241,7 @@ class LaunchTemplateVersionVolume(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+        Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
         """
         return pulumi.get(self, "size")
 
@@ -3185,7 +3249,7 @@ class LaunchTemplateVersionVolume(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[builtins.str]:
         """
-        使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+        Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -3193,7 +3257,7 @@ class LaunchTemplateVersionVolume(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> Optional[builtins.str]:
         """
-        云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+        Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
         """
         return pulumi.get(self, "volume_type")
 
@@ -3211,15 +3275,15 @@ class GetCommandParameterDefinitionResult(dict):
                  required: builtins.bool,
                  type: builtins.str):
         """
-        :param builtins.int decimal_precision: 自定义参数值（数字）允许的小数点后位数。
-        :param builtins.str default_value: 自定义参数默认值。
-        :param builtins.int max_length: 自定义参数值（字符串）的最大长度。
-        :param builtins.str max_value: 自定义参数值（数字）的最大值。
-        :param builtins.int min_length: 自定义参数值（字符串）的最小长度。
-        :param builtins.str min_value: 自定义参数值（数字）的最小值。
-        :param builtins.str name: 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
-        :param builtins.bool required: 是否必填。
-        :param builtins.str type: 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+        :param builtins.int decimal_precision: Allowed decimal places for custom parameter (number).
+        :param builtins.str default_value: Default value for custom parameter.
+        :param builtins.int max_length: Maximum length for custom parameter (string).
+        :param builtins.str max_value: Maximum value for custom parameter (number).
+        :param builtins.int min_length: Minimum length for custom parameter (string).
+        :param builtins.str min_value: Minimum value for custom parameter (number).
+        :param builtins.str name: Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
+        :param builtins.bool required: Whether it is required.
+        :param builtins.str type: Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
         """
         pulumi.set(__self__, "decimal_precision", decimal_precision)
         pulumi.set(__self__, "default_value", default_value)
@@ -3235,7 +3299,7 @@ class GetCommandParameterDefinitionResult(dict):
     @pulumi.getter(name="decimalPrecision")
     def decimal_precision(self) -> builtins.int:
         """
-        自定义参数值（数字）允许的小数点后位数。
+        Allowed decimal places for custom parameter (number).
         """
         return pulumi.get(self, "decimal_precision")
 
@@ -3243,7 +3307,7 @@ class GetCommandParameterDefinitionResult(dict):
     @pulumi.getter(name="defaultValue")
     def default_value(self) -> builtins.str:
         """
-        自定义参数默认值。
+        Default value for custom parameter.
         """
         return pulumi.get(self, "default_value")
 
@@ -3251,7 +3315,7 @@ class GetCommandParameterDefinitionResult(dict):
     @pulumi.getter(name="maxLength")
     def max_length(self) -> builtins.int:
         """
-        自定义参数值（字符串）的最大长度。
+        Maximum length for custom parameter (string).
         """
         return pulumi.get(self, "max_length")
 
@@ -3259,7 +3323,7 @@ class GetCommandParameterDefinitionResult(dict):
     @pulumi.getter(name="maxValue")
     def max_value(self) -> builtins.str:
         """
-        自定义参数值（数字）的最大值。
+        Maximum value for custom parameter (number).
         """
         return pulumi.get(self, "max_value")
 
@@ -3267,7 +3331,7 @@ class GetCommandParameterDefinitionResult(dict):
     @pulumi.getter(name="minLength")
     def min_length(self) -> builtins.int:
         """
-        自定义参数值（字符串）的最小长度。
+        Minimum length for custom parameter (string).
         """
         return pulumi.get(self, "min_length")
 
@@ -3275,7 +3339,7 @@ class GetCommandParameterDefinitionResult(dict):
     @pulumi.getter(name="minValue")
     def min_value(self) -> builtins.str:
         """
-        自定义参数值（数字）的最小值。
+        Minimum value for custom parameter (number).
         """
         return pulumi.get(self, "min_value")
 
@@ -3283,7 +3347,7 @@ class GetCommandParameterDefinitionResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+        Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
         """
         return pulumi.get(self, "name")
 
@@ -3291,7 +3355,7 @@ class GetCommandParameterDefinitionResult(dict):
     @pulumi.getter
     def required(self) -> builtins.bool:
         """
-        是否必填。
+        Whether it is required.
         """
         return pulumi.get(self, "required")
 
@@ -3299,7 +3363,7 @@ class GetCommandParameterDefinitionResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+        Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
         """
         return pulumi.get(self, "type")
 
@@ -3310,8 +3374,8 @@ class GetCommandTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
-        :param builtins.str value: 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        :param builtins.str key: User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
+        :param builtins.str value: User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -3320,7 +3384,7 @@ class GetCommandTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "key")
 
@@ -3328,7 +3392,7 @@ class GetCommandTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
         """
         return pulumi.get(self, "value")
 
@@ -3340,9 +3404,9 @@ class GetDeploymentSetCapacityResult(dict):
                  used_count: builtins.int,
                  zone_id: builtins.str):
         """
-        :param builtins.int available_count: 该可用区内，还可以加入当前部署集的ECS实例数量。
-        :param builtins.int used_count: 部署集内属于该可用区的ECS实例数量。
-        :param builtins.str zone_id: 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+        :param builtins.int available_count: You can also include the number of ECS instances in the current deployment set within this availability zone.
+        :param builtins.int used_count: Number of ECS instances in the deployment set that belong to this availability zone.
+        :param builtins.str zone_id: Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
         """
         pulumi.set(__self__, "available_count", available_count)
         pulumi.set(__self__, "used_count", used_count)
@@ -3352,7 +3416,7 @@ class GetDeploymentSetCapacityResult(dict):
     @pulumi.getter(name="availableCount")
     def available_count(self) -> builtins.int:
         """
-        该可用区内，还可以加入当前部署集的ECS实例数量。
+        You can also include the number of ECS instances in the current deployment set within this availability zone.
         """
         return pulumi.get(self, "available_count")
 
@@ -3360,7 +3424,7 @@ class GetDeploymentSetCapacityResult(dict):
     @pulumi.getter(name="usedCount")
     def used_count(self) -> builtins.int:
         """
-        部署集内属于该可用区的ECS实例数量。
+        Number of ECS instances in the deployment set that belong to this availability zone.
         """
         return pulumi.get(self, "used_count")
 
@@ -3368,7 +3432,7 @@ class GetDeploymentSetCapacityResult(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+        Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
         """
         return pulumi.get(self, "zone_id")
 
@@ -3379,8 +3443,8 @@ class GetHpcClusterTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -3389,7 +3453,7 @@ class GetHpcClusterTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -3397,7 +3461,7 @@ class GetHpcClusterTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -3408,8 +3472,8 @@ class GetImageDetectionResultsResult(dict):
                  detection_status: builtins.str,
                  items: Sequence['outputs.GetImageDetectionResultsItemResult']):
         """
-        :param builtins.str detection_status: 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
-        :param Sequence['GetImageDetectionResultsItemArgs'] items: 镜像检测项详情。
+        :param builtins.str detection_status: Check status. Options: Finished (completed), Processing (in progress).
+        :param Sequence['GetImageDetectionResultsItemArgs'] items: Details of image check items.
         """
         pulumi.set(__self__, "detection_status", detection_status)
         pulumi.set(__self__, "items", items)
@@ -3418,7 +3482,7 @@ class GetImageDetectionResultsResult(dict):
     @pulumi.getter(name="detectionStatus")
     def detection_status(self) -> builtins.str:
         """
-        检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+        Check status. Options: Finished (completed), Processing (in progress).
         """
         return pulumi.get(self, "detection_status")
 
@@ -3426,7 +3490,7 @@ class GetImageDetectionResultsResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetImageDetectionResultsItemResult']:
         """
-        镜像检测项详情。
+        Details of image check items.
         """
         return pulumi.get(self, "items")
 
@@ -3439,10 +3503,10 @@ class GetImageDetectionResultsItemResult(dict):
                  risk_code: builtins.str,
                  risk_level: builtins.str):
         """
-        :param builtins.str name: 检测项名称。
-        :param builtins.str result: 该检测项对应结果。
-        :param builtins.str risk_code: 风险描述码。
-        :param builtins.str risk_level: 风险等级。若该参数返回值为空，表示无风险。
+        :param builtins.str name: Check item name
+        :param builtins.str result: Result for this check item.
+        :param builtins.str risk_code: Risk description code
+        :param builtins.str risk_level: Risk level. If this parameter is empty, it means no risk
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "result", result)
@@ -3453,7 +3517,7 @@ class GetImageDetectionResultsItemResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        检测项名称。
+        Check item name
         """
         return pulumi.get(self, "name")
 
@@ -3461,7 +3525,7 @@ class GetImageDetectionResultsItemResult(dict):
     @pulumi.getter
     def result(self) -> builtins.str:
         """
-        该检测项对应结果。
+        Result for this check item.
         """
         return pulumi.get(self, "result")
 
@@ -3469,7 +3533,7 @@ class GetImageDetectionResultsItemResult(dict):
     @pulumi.getter(name="riskCode")
     def risk_code(self) -> builtins.str:
         """
-        风险描述码。
+        Risk description code
         """
         return pulumi.get(self, "risk_code")
 
@@ -3477,9 +3541,38 @@ class GetImageDetectionResultsItemResult(dict):
     @pulumi.getter(name="riskLevel")
     def risk_level(self) -> builtins.str:
         """
-        风险等级。若该参数返回值为空，表示无风险。
+        Risk level. If this parameter is empty, it means no risk
         """
         return pulumi.get(self, "risk_level")
+
+
+@pulumi.output_type
+class GetImageImportImageResult(dict):
+    def __init__(__self__, *,
+                 import_data_volumes: Sequence[builtins.str],
+                 url: builtins.str):
+        """
+        :param Sequence[builtins.str] import_data_volumes: Data disk files included in the custom image, at the TOS bucket URL.
+        :param builtins.str url: System disk files included in the custom image, at the TOS bucket URL.
+        """
+        pulumi.set(__self__, "import_data_volumes", import_data_volumes)
+        pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter(name="importDataVolumes")
+    def import_data_volumes(self) -> Sequence[builtins.str]:
+        """
+        Data disk files included in the custom image, at the TOS bucket URL.
+        """
+        return pulumi.get(self, "import_data_volumes")
+
+    @property
+    @pulumi.getter
+    def url(self) -> builtins.str:
+        """
+        System disk files included in the custom image, at the TOS bucket URL.
+        """
+        return pulumi.get(self, "url")
 
 
 @pulumi.output_type
@@ -3489,9 +3582,9 @@ class GetImageSnapshotResult(dict):
                  snapshot_id: builtins.str,
                  volume_kind: builtins.str):
         """
-        :param builtins.int size: 快照大小。单位为GiB。
-        :param builtins.str snapshot_id: 快照ID。
-        :param builtins.str volume_kind: 云盘种类。system：系统盘。data：数据盘。
+        :param builtins.int size: Snapshot size (GiB)
+        :param builtins.str snapshot_id: Snapshot ID
+        :param builtins.str volume_kind: Cloud disk type. system: System disk. data: Data disk.
         """
         pulumi.set(__self__, "size", size)
         pulumi.set(__self__, "snapshot_id", snapshot_id)
@@ -3501,7 +3594,7 @@ class GetImageSnapshotResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        快照大小。单位为GiB。
+        Snapshot size (GiB)
         """
         return pulumi.get(self, "size")
 
@@ -3509,7 +3602,7 @@ class GetImageSnapshotResult(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> builtins.str:
         """
-        快照ID。
+        Snapshot ID
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -3517,7 +3610,7 @@ class GetImageSnapshotResult(dict):
     @pulumi.getter(name="volumeKind")
     def volume_kind(self) -> builtins.str:
         """
-        云盘种类。system：系统盘。data：数据盘。
+        Cloud disk type. system: System disk. data: Data disk.
         """
         return pulumi.get(self, "volume_kind")
 
@@ -3528,8 +3621,8 @@ class GetImageTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 镜像标签的标签键。
-        :param builtins.str value: 镜像标签的值。
+        :param builtins.str key: Tag key for the image label.
+        :param builtins.str value: Image tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -3538,7 +3631,7 @@ class GetImageTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        镜像标签的标签键。
+        Tag key for the image label.
         """
         return pulumi.get(self, "key")
 
@@ -3546,7 +3639,7 @@ class GetImageTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        镜像标签的值。
+        Image tag value
         """
         return pulumi.get(self, "value")
 
@@ -3559,10 +3652,10 @@ class GetInstanceCpuMemoryResult(dict):
                  memory_size: builtins.int,
                  threads_per_core: builtins.int):
         """
-        :param builtins.int core_count: 实例的核数。
-        :param builtins.int cpu_number: 实例的CPU数量。
-        :param builtins.int memory_size: 实例的内存大小，单位MB。
-        :param builtins.int threads_per_core: 实例的每核线程数。
+        :param builtins.int core_count: Number of instance cores.
+        :param builtins.int cpu_number: Number of vCPUs for the instance.
+        :param builtins.int memory_size: Instance memory size (MB).
+        :param builtins.int threads_per_core: Threads per core for the instance.
         """
         pulumi.set(__self__, "core_count", core_count)
         pulumi.set(__self__, "cpu_number", cpu_number)
@@ -3573,7 +3666,7 @@ class GetInstanceCpuMemoryResult(dict):
     @pulumi.getter(name="coreCount")
     def core_count(self) -> builtins.int:
         """
-        实例的核数。
+        Number of instance cores.
         """
         return pulumi.get(self, "core_count")
 
@@ -3581,7 +3674,7 @@ class GetInstanceCpuMemoryResult(dict):
     @pulumi.getter(name="cpuNumber")
     def cpu_number(self) -> builtins.int:
         """
-        实例的CPU数量。
+        Number of vCPUs for the instance.
         """
         return pulumi.get(self, "cpu_number")
 
@@ -3589,7 +3682,7 @@ class GetInstanceCpuMemoryResult(dict):
     @pulumi.getter(name="memorySize")
     def memory_size(self) -> builtins.int:
         """
-        实例的内存大小，单位MB。
+        Instance memory size (MB).
         """
         return pulumi.get(self, "memory_size")
 
@@ -3597,7 +3690,7 @@ class GetInstanceCpuMemoryResult(dict):
     @pulumi.getter(name="threadsPerCore")
     def threads_per_core(self) -> builtins.int:
         """
-        实例的每核线程数。
+        Threads per core for the instance.
         """
         return pulumi.get(self, "threads_per_core")
 
@@ -3615,36 +3708,36 @@ class GetInstanceEipAddressResult(dict):
                  security_protection_instance_id: builtins.int,
                  security_protection_types: Sequence[builtins.str]):
         """
-        :param builtins.str allocation_id: 实例的分配ID。
-        :param builtins.int bandwidth_mbps: 公网IP的带宽上限，默认值为1，单位：Mbps。
-                   - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-                   - `ChargeType`传入`PayByTraffic`：取值范围1～200。
-        :param builtins.str bandwidth_package_id: 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-                   - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-                   - 公网IP加入到共享带宽包必须同时满足如下条件：
-                     - 二者的安全防护类型相同。
-                     - 二者的地域相同。
-                     - 公网IP的计费方式必须是按量计费。
-                     - 共享带宽包为IPv4类型。
-        :param builtins.str charge_type: 公网IP的计费方式，取值：
-                   - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-                   - PayByTraffic：按量计费-按实际流量计费。
-                   - PrePaid：包年包月。
+        :param builtins.str allocation_id: Instance allocation ID
+        :param builtins.int bandwidth_mbps: Maximum bandwidth for public IP. Default value is 1, unit: Mbps.
+                   - If `ChargeType` is `PayByBandwidth`: value range is 1–500.
+                   - If `ChargeType` is `PayByTraffic`: value range is 1–200.
+        :param builtins.str bandwidth_package_id: Shared bandwidth package ID, used to add a public IP to the shared bandwidth package.
+                   - You can call the [DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685) API to query the shared bandwidth package ID.
+                   - To add a public IP to a shared bandwidth package, all of the following conditions must be met:
+                     - Both must have the same security protection type.
+                     - Both must be in the same region.
+                     - The public IP must use pay-as-you-go billing.
+                     - The shared bandwidth package must be IPv4 type.
+        :param builtins.str charge_type: Public IP billing method. Values:
+                   - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
+                   - PayByTraffic: Pay-as-you-go—billed by actual traffic.
+                   - PrePaid: Subscription.
                  
-                 **提示:**
-                 实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-        :param builtins.str ip_address: 实例的IP地址。
-        :param builtins.str isp: 公网IP的线路类型，默认为BGP。取值：
-                   - BGP：BGP（多线）。
-                   - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-                     - ChinaMobile：中国移动静态单线。
-                     - ChinaTelecom：中国电信静态单线。
-                     - ChinaUnicom：中国联通静态单线。
-                   - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-                   - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
-        :param builtins.bool release_with_instance: 实例是否随实例释放。
-        :param builtins.int security_protection_instance_id: DDoS原生防护（企业版）ID。
-        :param Sequence[builtins.str] security_protection_types: 公网IP的安全防护类型。
+                 **Note:**
+                 When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+        :param builtins.str ip_address: Instance IP address.
+        :param builtins.str isp: Line type for the public IP. Default is BGP. Values:
+                   - BGP: BGP (multi-line)
+                   - If your account has applied for and enabled static single-line permissions, you can use the following values:
+                     - ChinaMobile: China Mobile static single-line
+                     - ChinaTelecom: China Telecom static single-line
+                     - ChinaUnicom: China Unicom static single-line
+                   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.
+                   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP
+        :param builtins.bool release_with_instance: Whether this resource is released when the instance is released.
+        :param builtins.int security_protection_instance_id: DDoS Native Protection (Enterprise Edition) ID.
+        :param Sequence[builtins.str] security_protection_types: Public IP security protection type.
         """
         pulumi.set(__self__, "allocation_id", allocation_id)
         pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
@@ -3660,7 +3753,7 @@ class GetInstanceEipAddressResult(dict):
     @pulumi.getter(name="allocationId")
     def allocation_id(self) -> builtins.str:
         """
-        实例的分配ID。
+        Instance allocation ID
         """
         return pulumi.get(self, "allocation_id")
 
@@ -3668,9 +3761,9 @@ class GetInstanceEipAddressResult(dict):
     @pulumi.getter(name="bandwidthMbps")
     def bandwidth_mbps(self) -> builtins.int:
         """
-        公网IP的带宽上限，默认值为1，单位：Mbps。
-            - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-            - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+        Maximum bandwidth for public IP. Default value is 1, unit: Mbps.
+            - If `ChargeType` is `PayByBandwidth`: value range is 1–500.
+            - If `ChargeType` is `PayByTraffic`: value range is 1–200.
         """
         return pulumi.get(self, "bandwidth_mbps")
 
@@ -3678,13 +3771,13 @@ class GetInstanceEipAddressResult(dict):
     @pulumi.getter(name="bandwidthPackageId")
     def bandwidth_package_id(self) -> builtins.str:
         """
-        共享带宽包的ID，表示将公网IP加入到共享带宽包。
-            - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-            - 公网IP加入到共享带宽包必须同时满足如下条件：
-              - 二者的安全防护类型相同。
-              - 二者的地域相同。
-              - 公网IP的计费方式必须是按量计费。
-              - 共享带宽包为IPv4类型。
+        Shared bandwidth package ID, used to add a public IP to the shared bandwidth package.
+            - You can call the [DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685) API to query the shared bandwidth package ID.
+            - To add a public IP to a shared bandwidth package, all of the following conditions must be met:
+              - Both must have the same security protection type.
+              - Both must be in the same region.
+              - The public IP must use pay-as-you-go billing.
+              - The shared bandwidth package must be IPv4 type.
         """
         return pulumi.get(self, "bandwidth_package_id")
 
@@ -3692,13 +3785,13 @@ class GetInstanceEipAddressResult(dict):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        公网IP的计费方式，取值：
-            - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-            - PayByTraffic：按量计费-按实际流量计费。
-            - PrePaid：包年包月。
+        Public IP billing method. Values:
+            - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
+            - PayByTraffic: Pay-as-you-go—billed by actual traffic.
+            - PrePaid: Subscription.
           
-          **提示:**
-          实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+          **Note:**
+          When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
         """
         return pulumi.get(self, "charge_type")
 
@@ -3706,7 +3799,7 @@ class GetInstanceEipAddressResult(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> builtins.str:
         """
-        实例的IP地址。
+        Instance IP address.
         """
         return pulumi.get(self, "ip_address")
 
@@ -3714,14 +3807,14 @@ class GetInstanceEipAddressResult(dict):
     @pulumi.getter
     def isp(self) -> builtins.str:
         """
-        公网IP的线路类型，默认为BGP。取值：
-            - BGP：BGP（多线）。
-            - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-              - ChinaMobile：中国移动静态单线。
-              - ChinaTelecom：中国电信静态单线。
-              - ChinaUnicom：中国联通静态单线。
-            - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-            - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+        Line type for the public IP. Default is BGP. Values:
+            - BGP: BGP (multi-line)
+            - If your account has applied for and enabled static single-line permissions, you can use the following values:
+              - ChinaMobile: China Mobile static single-line
+              - ChinaTelecom: China Telecom static single-line
+              - ChinaUnicom: China Unicom static single-line
+            - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.
+            - If your account has applied for and enabled static BGP permissions, you can use Static_BGP
         """
         return pulumi.get(self, "isp")
 
@@ -3729,7 +3822,7 @@ class GetInstanceEipAddressResult(dict):
     @pulumi.getter(name="releaseWithInstance")
     def release_with_instance(self) -> builtins.bool:
         """
-        实例是否随实例释放。
+        Whether this resource is released when the instance is released.
         """
         return pulumi.get(self, "release_with_instance")
 
@@ -3737,7 +3830,7 @@ class GetInstanceEipAddressResult(dict):
     @pulumi.getter(name="securityProtectionInstanceId")
     def security_protection_instance_id(self) -> builtins.int:
         """
-        DDoS原生防护（企业版）ID。
+        DDoS Native Protection (Enterprise Edition) ID.
         """
         return pulumi.get(self, "security_protection_instance_id")
 
@@ -3745,7 +3838,7 @@ class GetInstanceEipAddressResult(dict):
     @pulumi.getter(name="securityProtectionTypes")
     def security_protection_types(self) -> Sequence[builtins.str]:
         """
-        公网IP的安全防护类型。
+        Public IP security protection type.
         """
         return pulumi.get(self, "security_protection_types")
 
@@ -3758,10 +3851,10 @@ class GetInstanceImageResult(dict):
                  keep_image_credential: builtins.bool,
                  security_enhancement_strategy: builtins.str):
         """
-        :param builtins.str image_id: 实例的镜像ID。
-        :param builtins.str image_release_version: 实例的镜像发布版本。
-        :param builtins.bool keep_image_credential: 实例是否保留镜像凭证。
-        :param builtins.str security_enhancement_strategy: 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+        :param builtins.str image_id: Instance image ID.
+        :param builtins.str image_release_version: The image release version of the instance.
+        :param builtins.bool keep_image_credential: Whether the instance retains image credentials
+        :param builtins.str security_enhancement_strategy: Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
         """
         pulumi.set(__self__, "image_id", image_id)
         pulumi.set(__self__, "image_release_version", image_release_version)
@@ -3772,7 +3865,7 @@ class GetInstanceImageResult(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> builtins.str:
         """
-        实例的镜像ID。
+        Instance image ID.
         """
         return pulumi.get(self, "image_id")
 
@@ -3780,7 +3873,7 @@ class GetInstanceImageResult(dict):
     @pulumi.getter(name="imageReleaseVersion")
     def image_release_version(self) -> builtins.str:
         """
-        实例的镜像发布版本。
+        The image release version of the instance.
         """
         return pulumi.get(self, "image_release_version")
 
@@ -3788,7 +3881,7 @@ class GetInstanceImageResult(dict):
     @pulumi.getter(name="keepImageCredential")
     def keep_image_credential(self) -> builtins.bool:
         """
-        实例是否保留镜像凭证。
+        Whether the instance retains image credentials
         """
         return pulumi.get(self, "keep_image_credential")
 
@@ -3796,7 +3889,7 @@ class GetInstanceImageResult(dict):
     @pulumi.getter(name="securityEnhancementStrategy")
     def security_enhancement_strategy(self) -> builtins.str:
         """
-        实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+        Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
         """
         return pulumi.get(self, "security_enhancement_strategy")
 
@@ -3807,8 +3900,8 @@ class GetInstanceKeyPairResult(dict):
                  key_pair_id: builtins.str,
                  key_pair_name: builtins.str):
         """
-        :param builtins.str key_pair_id: 实例的公钥。
-        :param builtins.str key_pair_name: 实例的密钥对名称。
+        :param builtins.str key_pair_id: Instance public key
+        :param builtins.str key_pair_name: Instance key pair name
         """
         pulumi.set(__self__, "key_pair_id", key_pair_id)
         pulumi.set(__self__, "key_pair_name", key_pair_name)
@@ -3817,7 +3910,7 @@ class GetInstanceKeyPairResult(dict):
     @pulumi.getter(name="keyPairId")
     def key_pair_id(self) -> builtins.str:
         """
-        实例的公钥。
+        Instance public key
         """
         return pulumi.get(self, "key_pair_id")
 
@@ -3825,7 +3918,7 @@ class GetInstanceKeyPairResult(dict):
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> builtins.str:
         """
-        实例的密钥对名称。
+        Instance key pair name
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -3837,9 +3930,9 @@ class GetInstanceLocalVolumeResult(dict):
                  size: builtins.int,
                  volume_type: builtins.str):
         """
-        :param builtins.int count: 实例挂载的本地盘数量。
-        :param builtins.int size: 实例挂载的本地盘的单盘容量，单位GiB。
-        :param builtins.str volume_type: 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+        :param builtins.int count: The number of local disks attached to the instance.
+        :param builtins.int size: Capacity of each local disk mounted to the instance (GiB).
+        :param builtins.str volume_type: Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
         """
         pulumi.set(__self__, "count", count)
         pulumi.set(__self__, "size", size)
@@ -3849,7 +3942,7 @@ class GetInstanceLocalVolumeResult(dict):
     @pulumi.getter
     def count(self) -> builtins.int:
         """
-        实例挂载的本地盘数量。
+        The number of local disks attached to the instance.
         """
         return pulumi.get(self, "count")
 
@@ -3857,7 +3950,7 @@ class GetInstanceLocalVolumeResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        实例挂载的本地盘的单盘容量，单位GiB。
+        Capacity of each local disk mounted to the instance (GiB).
         """
         return pulumi.get(self, "size")
 
@@ -3865,7 +3958,7 @@ class GetInstanceLocalVolumeResult(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> builtins.str:
         """
-        本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+        Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
         """
         return pulumi.get(self, "volume_type")
 
@@ -3876,8 +3969,8 @@ class GetInstanceOperationSystemResult(dict):
                  name: builtins.str,
                  type: builtins.str):
         """
-        :param builtins.str name: 实例的操作系统名称。
-        :param builtins.str type: 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+        :param builtins.str name: Instance operating system name.
+        :param builtins.str type: Operating system type of the instance. Linux: Linux system. Windows: Windows system.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "type", type)
@@ -3886,7 +3979,7 @@ class GetInstanceOperationSystemResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        实例的操作系统名称。
+        Instance operating system name.
         """
         return pulumi.get(self, "name")
 
@@ -3894,7 +3987,7 @@ class GetInstanceOperationSystemResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+        Operating system type of the instance. Linux: Linux system. Windows: Windows system.
         """
         return pulumi.get(self, "type")
 
@@ -3907,10 +4000,10 @@ class GetInstancePlacementResult(dict):
                  dedicated_host_id: builtins.str,
                  tenancy: builtins.str):
         """
-        :param builtins.str affinity: 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
-        :param builtins.str dedicated_host_cluster_id: 实例的专用主机集群ID。
-        :param builtins.str dedicated_host_id: 实例的专用主机ID。
-        :param builtins.str tenancy: 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+        :param builtins.str affinity: For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
+        :param builtins.str dedicated_host_cluster_id: Instance dedicated host cluster ID.
+        :param builtins.str dedicated_host_id: Dedicated host ID for the instance.
+        :param builtins.str tenancy: Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
         """
         pulumi.set(__self__, "affinity", affinity)
         pulumi.set(__self__, "dedicated_host_cluster_id", dedicated_host_cluster_id)
@@ -3921,7 +4014,7 @@ class GetInstancePlacementResult(dict):
     @pulumi.getter
     def affinity(self) -> builtins.str:
         """
-        针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+        For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
         """
         return pulumi.get(self, "affinity")
 
@@ -3929,7 +4022,7 @@ class GetInstancePlacementResult(dict):
     @pulumi.getter(name="dedicatedHostClusterId")
     def dedicated_host_cluster_id(self) -> builtins.str:
         """
-        实例的专用主机集群ID。
+        Instance dedicated host cluster ID.
         """
         return pulumi.get(self, "dedicated_host_cluster_id")
 
@@ -3937,7 +4030,7 @@ class GetInstancePlacementResult(dict):
     @pulumi.getter(name="dedicatedHostId")
     def dedicated_host_id(self) -> builtins.str:
         """
-        实例的专用主机ID。
+        Dedicated host ID for the instance.
         """
         return pulumi.get(self, "dedicated_host_id")
 
@@ -3945,7 +4038,7 @@ class GetInstancePlacementResult(dict):
     @pulumi.getter
     def tenancy(self) -> builtins.str:
         """
-        是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+        Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
         """
         return pulumi.get(self, "tenancy")
 
@@ -3963,15 +4056,15 @@ class GetInstancePrimaryNetworkInterfaceResult(dict):
                  subnet_id: builtins.str,
                  vpc_id: builtins.str):
         """
-        :param builtins.int ipv6_address_count: 实例的IPv6地址数量。
-        :param Sequence[builtins.str] ipv6_addresses: 实例的IPv6地址。
-        :param builtins.str mac_address: 实例的MAC地址。
-        :param builtins.str network_interface_id: 实例的网络接口ID。
-        :param builtins.str primary_ip_address: 实例的主IP地址。
-        :param Sequence[builtins.str] private_ip_addresses: 实例的私有IP地址。
-        :param Sequence[builtins.str] security_group_ids: 实例的安全组ID。
-        :param builtins.str subnet_id: 实例的子网ID。
-        :param builtins.str vpc_id: 实例的VPC ID。
+        :param builtins.int ipv6_address_count: The number of IPv6 addresses for the instance.
+        :param Sequence[builtins.str] ipv6_addresses: IPv6 address of the instance.
+        :param builtins.str mac_address: Instance MAC address.
+        :param builtins.str network_interface_id: The network interface ID of the instance.
+        :param builtins.str primary_ip_address: Instance primary IP address
+        :param Sequence[builtins.str] private_ip_addresses: Instance private IP address.
+        :param Sequence[builtins.str] security_group_ids: Instance security group ID
+        :param builtins.str subnet_id: Instance subnet ID.
+        :param builtins.str vpc_id: VPC ID of the instance.
         """
         pulumi.set(__self__, "ipv6_address_count", ipv6_address_count)
         pulumi.set(__self__, "ipv6_addresses", ipv6_addresses)
@@ -3987,7 +4080,7 @@ class GetInstancePrimaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="ipv6AddressCount")
     def ipv6_address_count(self) -> builtins.int:
         """
-        实例的IPv6地址数量。
+        The number of IPv6 addresses for the instance.
         """
         return pulumi.get(self, "ipv6_address_count")
 
@@ -3995,7 +4088,7 @@ class GetInstancePrimaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="ipv6Addresses")
     def ipv6_addresses(self) -> Sequence[builtins.str]:
         """
-        实例的IPv6地址。
+        IPv6 address of the instance.
         """
         return pulumi.get(self, "ipv6_addresses")
 
@@ -4003,7 +4096,7 @@ class GetInstancePrimaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="macAddress")
     def mac_address(self) -> builtins.str:
         """
-        实例的MAC地址。
+        Instance MAC address.
         """
         return pulumi.get(self, "mac_address")
 
@@ -4011,7 +4104,7 @@ class GetInstancePrimaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="networkInterfaceId")
     def network_interface_id(self) -> builtins.str:
         """
-        实例的网络接口ID。
+        The network interface ID of the instance.
         """
         return pulumi.get(self, "network_interface_id")
 
@@ -4019,7 +4112,7 @@ class GetInstancePrimaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="primaryIpAddress")
     def primary_ip_address(self) -> builtins.str:
         """
-        实例的主IP地址。
+        Instance primary IP address
         """
         return pulumi.get(self, "primary_ip_address")
 
@@ -4027,7 +4120,7 @@ class GetInstancePrimaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="privateIpAddresses")
     def private_ip_addresses(self) -> Sequence[builtins.str]:
         """
-        实例的私有IP地址。
+        Instance private IP address.
         """
         return pulumi.get(self, "private_ip_addresses")
 
@@ -4035,7 +4128,7 @@ class GetInstancePrimaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Sequence[builtins.str]:
         """
-        实例的安全组ID。
+        Instance security group ID
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -4043,7 +4136,7 @@ class GetInstancePrimaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        实例的子网ID。
+        Instance subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -4051,7 +4144,7 @@ class GetInstancePrimaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        实例的VPC ID。
+        VPC ID of the instance.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -4065,11 +4158,11 @@ class GetInstanceRdmaNetworkInterfaceDetailResult(dict):
                  switch_name: builtins.str,
                  switch_port: builtins.str):
         """
-        :param builtins.str gateway: 网关地址。
-        :param builtins.str ip: IP地址。
-        :param builtins.str mask: 子网掩码。
-        :param builtins.str switch_name: 交换机名称。
-        :param builtins.str switch_port: 交换机端口。
+        :param builtins.str gateway: Gateway address.
+        :param builtins.str ip: IP address
+        :param builtins.str mask: Subnet mask.
+        :param builtins.str switch_name: Switch name.
+        :param builtins.str switch_port: Switch port.
         """
         pulumi.set(__self__, "gateway", gateway)
         pulumi.set(__self__, "ip", ip)
@@ -4081,7 +4174,7 @@ class GetInstanceRdmaNetworkInterfaceDetailResult(dict):
     @pulumi.getter
     def gateway(self) -> builtins.str:
         """
-        网关地址。
+        Gateway address.
         """
         return pulumi.get(self, "gateway")
 
@@ -4089,7 +4182,7 @@ class GetInstanceRdmaNetworkInterfaceDetailResult(dict):
     @pulumi.getter
     def ip(self) -> builtins.str:
         """
-        IP地址。
+        IP address
         """
         return pulumi.get(self, "ip")
 
@@ -4097,7 +4190,7 @@ class GetInstanceRdmaNetworkInterfaceDetailResult(dict):
     @pulumi.getter
     def mask(self) -> builtins.str:
         """
-        子网掩码。
+        Subnet mask.
         """
         return pulumi.get(self, "mask")
 
@@ -4105,7 +4198,7 @@ class GetInstanceRdmaNetworkInterfaceDetailResult(dict):
     @pulumi.getter(name="switchName")
     def switch_name(self) -> builtins.str:
         """
-        交换机名称。
+        Switch name.
         """
         return pulumi.get(self, "switch_name")
 
@@ -4113,7 +4206,7 @@ class GetInstanceRdmaNetworkInterfaceDetailResult(dict):
     @pulumi.getter(name="switchPort")
     def switch_port(self) -> builtins.str:
         """
-        交换机端口。
+        Switch port.
         """
         return pulumi.get(self, "switch_port")
 
@@ -4124,8 +4217,8 @@ class GetInstanceRenewInfoResult(dict):
                  period: builtins.int,
                  period_unit: builtins.str):
         """
-        :param builtins.int period: 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
-        :param builtins.str period_unit: 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+        :param builtins.int period: Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
+        :param builtins.str period_unit: Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
         """
         pulumi.set(__self__, "period", period)
         pulumi.set(__self__, "period_unit", period_unit)
@@ -4134,7 +4227,7 @@ class GetInstanceRenewInfoResult(dict):
     @pulumi.getter
     def period(self) -> builtins.int:
         """
-        续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+        Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
         """
         return pulumi.get(self, "period")
 
@@ -4142,7 +4235,7 @@ class GetInstanceRenewInfoResult(dict):
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> builtins.str:
         """
-        续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+        Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
         """
         return pulumi.get(self, "period_unit")
 
@@ -4160,15 +4253,15 @@ class GetInstanceSecondaryNetworkInterfaceResult(dict):
                  subnet_id: builtins.str,
                  vpc_id: builtins.str):
         """
-        :param builtins.int ipv6_address_count: 实例的IPv6地址数量。
-        :param Sequence[builtins.str] ipv6_addresses: 实例的IPv6地址。
-        :param builtins.str mac_address: 实例的MAC地址。
-        :param builtins.str network_interface_id: 实例的网络接口ID。
-        :param builtins.str primary_ip_address: 实例的主IP地址。
-        :param Sequence[builtins.str] private_ip_addresses: 实例的私有IP地址。
-        :param Sequence[builtins.str] security_group_ids: 实例的安全组ID。
-        :param builtins.str subnet_id: 实例的子网ID。
-        :param builtins.str vpc_id: 实例的VPC ID。
+        :param builtins.int ipv6_address_count: The number of IPv6 addresses for the instance.
+        :param Sequence[builtins.str] ipv6_addresses: IPv6 address of the instance.
+        :param builtins.str mac_address: Instance MAC address.
+        :param builtins.str network_interface_id: The network interface ID of the instance.
+        :param builtins.str primary_ip_address: Instance primary IP address
+        :param Sequence[builtins.str] private_ip_addresses: Instance private IP address.
+        :param Sequence[builtins.str] security_group_ids: Instance security group ID
+        :param builtins.str subnet_id: Instance subnet ID.
+        :param builtins.str vpc_id: VPC ID of the instance.
         """
         pulumi.set(__self__, "ipv6_address_count", ipv6_address_count)
         pulumi.set(__self__, "ipv6_addresses", ipv6_addresses)
@@ -4184,7 +4277,7 @@ class GetInstanceSecondaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="ipv6AddressCount")
     def ipv6_address_count(self) -> builtins.int:
         """
-        实例的IPv6地址数量。
+        The number of IPv6 addresses for the instance.
         """
         return pulumi.get(self, "ipv6_address_count")
 
@@ -4192,7 +4285,7 @@ class GetInstanceSecondaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="ipv6Addresses")
     def ipv6_addresses(self) -> Sequence[builtins.str]:
         """
-        实例的IPv6地址。
+        IPv6 address of the instance.
         """
         return pulumi.get(self, "ipv6_addresses")
 
@@ -4200,7 +4293,7 @@ class GetInstanceSecondaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="macAddress")
     def mac_address(self) -> builtins.str:
         """
-        实例的MAC地址。
+        Instance MAC address.
         """
         return pulumi.get(self, "mac_address")
 
@@ -4208,7 +4301,7 @@ class GetInstanceSecondaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="networkInterfaceId")
     def network_interface_id(self) -> builtins.str:
         """
-        实例的网络接口ID。
+        The network interface ID of the instance.
         """
         return pulumi.get(self, "network_interface_id")
 
@@ -4216,7 +4309,7 @@ class GetInstanceSecondaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="primaryIpAddress")
     def primary_ip_address(self) -> builtins.str:
         """
-        实例的主IP地址。
+        Instance primary IP address
         """
         return pulumi.get(self, "primary_ip_address")
 
@@ -4224,7 +4317,7 @@ class GetInstanceSecondaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="privateIpAddresses")
     def private_ip_addresses(self) -> Sequence[builtins.str]:
         """
-        实例的私有IP地址。
+        Instance private IP address.
         """
         return pulumi.get(self, "private_ip_addresses")
 
@@ -4232,7 +4325,7 @@ class GetInstanceSecondaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Sequence[builtins.str]:
         """
-        实例的安全组ID。
+        Instance security group ID
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -4240,7 +4333,7 @@ class GetInstanceSecondaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        实例的子网ID。
+        Instance subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -4248,7 +4341,7 @@ class GetInstanceSecondaryNetworkInterfaceResult(dict):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        实例的VPC ID。
+        VPC ID of the instance.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -4265,14 +4358,21 @@ class GetInstanceSystemVolumeResult(dict):
                  volume_id: builtins.str,
                  volume_type: builtins.str):
         """
-        :param builtins.bool delete_with_instance: 实例是否随实例删除。
-        :param builtins.int extra_performance_iops: 实例的额外性能IOPS。
-        :param builtins.int extra_performance_throughput_mb: 实例的额外性能吞吐量，单位MB。
-        :param builtins.str extra_performance_type_id: 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
-        :param builtins.int size: 实例的大小，单位GiB。
-        :param builtins.str snapshot_id: 实例的快照ID。
-        :param builtins.str volume_id: 实例的卷ID。
-        :param builtins.str volume_type: 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+        :param builtins.bool delete_with_instance: Whether the attached resources are deleted along with the instance.
+        :param builtins.int extra_performance_iops: Additional performance IOPS for the instance
+        :param builtins.int extra_performance_throughput_mb: The additional performance throughput of the instance, in MB.
+        :param builtins.str extra_performance_type_id: Type of additional performance. Values:
+                 Balance: Balanced additional performance
+                 IOPS: IOPS additional performance
+                 Throughput: Throughput additional performance
+        :param builtins.int size: Instance size, in GiB
+        :param builtins.str snapshot_id: Instance snapshot ID
+        :param builtins.str volume_id: Instance volume ID.
+        :param builtins.str volume_type: Cloud disk type. Values:
+                 PTSSD: Performance SSD.
+                 ESSD_PL0: Ultra SSD disk, PL0 specification.
+                 ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+                 TSSD_TL0: Throughput SSD disk.
         """
         pulumi.set(__self__, "delete_with_instance", delete_with_instance)
         pulumi.set(__self__, "extra_performance_iops", extra_performance_iops)
@@ -4287,7 +4387,7 @@ class GetInstanceSystemVolumeResult(dict):
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> builtins.bool:
         """
-        实例是否随实例删除。
+        Whether the attached resources are deleted along with the instance.
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -4295,7 +4395,7 @@ class GetInstanceSystemVolumeResult(dict):
     @pulumi.getter(name="extraPerformanceIops")
     def extra_performance_iops(self) -> builtins.int:
         """
-        实例的额外性能IOPS。
+        Additional performance IOPS for the instance
         """
         return pulumi.get(self, "extra_performance_iops")
 
@@ -4303,7 +4403,7 @@ class GetInstanceSystemVolumeResult(dict):
     @pulumi.getter(name="extraPerformanceThroughputMb")
     def extra_performance_throughput_mb(self) -> builtins.int:
         """
-        实例的额外性能吞吐量，单位MB。
+        The additional performance throughput of the instance, in MB.
         """
         return pulumi.get(self, "extra_performance_throughput_mb")
 
@@ -4311,7 +4411,10 @@ class GetInstanceSystemVolumeResult(dict):
     @pulumi.getter(name="extraPerformanceTypeId")
     def extra_performance_type_id(self) -> builtins.str:
         """
-        额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+        Type of additional performance. Values:
+          Balance: Balanced additional performance
+          IOPS: IOPS additional performance
+          Throughput: Throughput additional performance
         """
         return pulumi.get(self, "extra_performance_type_id")
 
@@ -4319,7 +4422,7 @@ class GetInstanceSystemVolumeResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        实例的大小，单位GiB。
+        Instance size, in GiB
         """
         return pulumi.get(self, "size")
 
@@ -4327,7 +4430,7 @@ class GetInstanceSystemVolumeResult(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> builtins.str:
         """
-        实例的快照ID。
+        Instance snapshot ID
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -4335,7 +4438,7 @@ class GetInstanceSystemVolumeResult(dict):
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> builtins.str:
         """
-        实例的卷ID。
+        Instance volume ID.
         """
         return pulumi.get(self, "volume_id")
 
@@ -4343,7 +4446,11 @@ class GetInstanceSystemVolumeResult(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> builtins.str:
         """
-        云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+        Cloud disk type. Values:
+          PTSSD: Performance SSD.
+          ESSD_PL0: Ultra SSD disk, PL0 specification.
+          ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+          TSSD_TL0: Throughput SSD disk.
         """
         return pulumi.get(self, "volume_type")
 
@@ -4354,8 +4461,8 @@ class GetInstanceTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 实例的键。
-        :param builtins.str value: 实例的值。
+        :param builtins.str key: Instance key.
+        :param builtins.str value: Instance value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -4364,7 +4471,7 @@ class GetInstanceTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        实例的键。
+        Instance key.
         """
         return pulumi.get(self, "key")
 
@@ -4372,7 +4479,7 @@ class GetInstanceTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        实例的值。
+        Instance value.
         """
         return pulumi.get(self, "value")
 
@@ -4393,18 +4500,18 @@ class GetInvocationInvocationResultResult(dict):
                  start_time: builtins.str,
                  username: builtins.str):
         """
-        :param builtins.str command_id: 命令ID。
-        :param builtins.str end_time: 命令执行的完成时间。
-        :param builtins.str error_code: 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
-        :param builtins.str error_message: 命令执行失败的错误信息。
-        :param builtins.int exit_code: 脚本执行后的退出状态码。
-        :param builtins.str instance_id: 实例ID。
-        :param builtins.str invocation_id: 任务执行ID。
-        :param builtins.str invocation_result_id: 任务执行结果ID。
-        :param builtins.str invocation_result_status: 单台实例的命令进度状态。
-        :param builtins.str output: 经过Base64编码的命令执行后输出信息。
-        :param builtins.str start_time: 命令在实例中开始执行的时间。
-        :param builtins.str username: 在实例中执行命令的用户名称。
+        :param builtins.str command_id: Command ID.
+        :param builtins.str end_time: Command execution completion time.
+        :param builtins.str error_code: Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
+        :param builtins.str error_message: Error message for command execution failure.
+        :param builtins.int exit_code: Exit status code after script execution.
+        :param builtins.str instance_id: Instance ID.
+        :param builtins.str invocation_id: Task execution ID.
+        :param builtins.str invocation_result_id: Task execution result ID.
+        :param builtins.str invocation_result_status: Command progress status for a single instance.
+        :param builtins.str output: Output information after command execution, encoded in Base64.
+        :param builtins.str start_time: Time when the command starts executing in the instance.
+        :param builtins.str username: User name for executing the command in the instance.
         """
         pulumi.set(__self__, "command_id", command_id)
         pulumi.set(__self__, "end_time", end_time)
@@ -4423,7 +4530,7 @@ class GetInvocationInvocationResultResult(dict):
     @pulumi.getter(name="commandId")
     def command_id(self) -> builtins.str:
         """
-        命令ID。
+        Command ID.
         """
         return pulumi.get(self, "command_id")
 
@@ -4431,7 +4538,7 @@ class GetInvocationInvocationResultResult(dict):
     @pulumi.getter(name="endTime")
     def end_time(self) -> builtins.str:
         """
-        命令执行的完成时间。
+        Command execution completion time.
         """
         return pulumi.get(self, "end_time")
 
@@ -4439,7 +4546,7 @@ class GetInvocationInvocationResultResult(dict):
     @pulumi.getter(name="errorCode")
     def error_code(self) -> builtins.str:
         """
-        命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+        Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
         """
         return pulumi.get(self, "error_code")
 
@@ -4447,7 +4554,7 @@ class GetInvocationInvocationResultResult(dict):
     @pulumi.getter(name="errorMessage")
     def error_message(self) -> builtins.str:
         """
-        命令执行失败的错误信息。
+        Error message for command execution failure.
         """
         return pulumi.get(self, "error_message")
 
@@ -4455,7 +4562,7 @@ class GetInvocationInvocationResultResult(dict):
     @pulumi.getter(name="exitCode")
     def exit_code(self) -> builtins.int:
         """
-        脚本执行后的退出状态码。
+        Exit status code after script execution.
         """
         return pulumi.get(self, "exit_code")
 
@@ -4463,7 +4570,7 @@ class GetInvocationInvocationResultResult(dict):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -4471,7 +4578,7 @@ class GetInvocationInvocationResultResult(dict):
     @pulumi.getter(name="invocationId")
     def invocation_id(self) -> builtins.str:
         """
-        任务执行ID。
+        Task execution ID.
         """
         return pulumi.get(self, "invocation_id")
 
@@ -4479,7 +4586,7 @@ class GetInvocationInvocationResultResult(dict):
     @pulumi.getter(name="invocationResultId")
     def invocation_result_id(self) -> builtins.str:
         """
-        任务执行结果ID。
+        Task execution result ID.
         """
         return pulumi.get(self, "invocation_result_id")
 
@@ -4487,7 +4594,7 @@ class GetInvocationInvocationResultResult(dict):
     @pulumi.getter(name="invocationResultStatus")
     def invocation_result_status(self) -> builtins.str:
         """
-        单台实例的命令进度状态。
+        Command progress status for a single instance.
         """
         return pulumi.get(self, "invocation_result_status")
 
@@ -4495,7 +4602,7 @@ class GetInvocationInvocationResultResult(dict):
     @pulumi.getter
     def output(self) -> builtins.str:
         """
-        经过Base64编码的命令执行后输出信息。
+        Output information after command execution, encoded in Base64.
         """
         return pulumi.get(self, "output")
 
@@ -4503,7 +4610,7 @@ class GetInvocationInvocationResultResult(dict):
     @pulumi.getter(name="startTime")
     def start_time(self) -> builtins.str:
         """
-        命令在实例中开始执行的时间。
+        Time when the command starts executing in the instance.
         """
         return pulumi.get(self, "start_time")
 
@@ -4511,7 +4618,7 @@ class GetInvocationInvocationResultResult(dict):
     @pulumi.getter
     def username(self) -> builtins.str:
         """
-        在实例中执行命令的用户名称。
+        User name for executing the command in the instance.
         """
         return pulumi.get(self, "username")
 
@@ -4529,15 +4636,15 @@ class GetInvocationParameterDefinitionResult(dict):
                  required: builtins.bool,
                  type: builtins.str):
         """
-        :param builtins.int decimal_precision: 自定义参数值（数字）允许的小数点后位数。
-        :param builtins.str default_value: 自定义参数默认值。
-        :param builtins.int max_length: 自定义参数值（字符串）的最大长度。
-        :param builtins.str max_value: 自定义参数值（数字）的最大值。
-        :param builtins.int min_length: 自定义参数值（字符串）的最小长度。
-        :param builtins.str min_value: 自定义参数值（数字）的最小值。
-        :param builtins.str name: 自定义参数名称，需要在脚本中通过{{Param}}定义 。
-        :param builtins.bool required: 是否必填。true：必填。false：非必填。
-        :param builtins.str type: 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+        :param builtins.int decimal_precision: Allowed number of decimal places for custom parameter values (numeric).
+        :param builtins.str default_value: Default value for custom parameter.
+        :param builtins.int max_length: Maximum length for custom parameter value (string).
+        :param builtins.str max_value: Maximum value for custom parameter (numeric).
+        :param builtins.int min_length: Minimum length for custom parameter values (string).
+        :param builtins.str min_value: Minimum value for custom parameter (numeric).
+        :param builtins.str name: Custom parameter name. Must be defined in the script using {{Param}}.
+        :param builtins.bool required: Required. true: Required. false: Optional.
+        :param builtins.str type: Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
         """
         pulumi.set(__self__, "decimal_precision", decimal_precision)
         pulumi.set(__self__, "default_value", default_value)
@@ -4553,7 +4660,7 @@ class GetInvocationParameterDefinitionResult(dict):
     @pulumi.getter(name="decimalPrecision")
     def decimal_precision(self) -> builtins.int:
         """
-        自定义参数值（数字）允许的小数点后位数。
+        Allowed number of decimal places for custom parameter values (numeric).
         """
         return pulumi.get(self, "decimal_precision")
 
@@ -4561,7 +4668,7 @@ class GetInvocationParameterDefinitionResult(dict):
     @pulumi.getter(name="defaultValue")
     def default_value(self) -> builtins.str:
         """
-        自定义参数默认值。
+        Default value for custom parameter.
         """
         return pulumi.get(self, "default_value")
 
@@ -4569,7 +4676,7 @@ class GetInvocationParameterDefinitionResult(dict):
     @pulumi.getter(name="maxLength")
     def max_length(self) -> builtins.int:
         """
-        自定义参数值（字符串）的最大长度。
+        Maximum length for custom parameter value (string).
         """
         return pulumi.get(self, "max_length")
 
@@ -4577,7 +4684,7 @@ class GetInvocationParameterDefinitionResult(dict):
     @pulumi.getter(name="maxValue")
     def max_value(self) -> builtins.str:
         """
-        自定义参数值（数字）的最大值。
+        Maximum value for custom parameter (numeric).
         """
         return pulumi.get(self, "max_value")
 
@@ -4585,7 +4692,7 @@ class GetInvocationParameterDefinitionResult(dict):
     @pulumi.getter(name="minLength")
     def min_length(self) -> builtins.int:
         """
-        自定义参数值（字符串）的最小长度。
+        Minimum length for custom parameter values (string).
         """
         return pulumi.get(self, "min_length")
 
@@ -4593,7 +4700,7 @@ class GetInvocationParameterDefinitionResult(dict):
     @pulumi.getter(name="minValue")
     def min_value(self) -> builtins.str:
         """
-        自定义参数值（数字）的最小值。
+        Minimum value for custom parameter (numeric).
         """
         return pulumi.get(self, "min_value")
 
@@ -4601,7 +4708,7 @@ class GetInvocationParameterDefinitionResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        自定义参数名称，需要在脚本中通过{{Param}}定义 。
+        Custom parameter name. Must be defined in the script using {{Param}}.
         """
         return pulumi.get(self, "name")
 
@@ -4609,7 +4716,7 @@ class GetInvocationParameterDefinitionResult(dict):
     @pulumi.getter
     def required(self) -> builtins.bool:
         """
-        是否必填。true：必填。false：非必填。
+        Required. true: Required. false: Optional.
         """
         return pulumi.get(self, "required")
 
@@ -4617,7 +4724,7 @@ class GetInvocationParameterDefinitionResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+        Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
         """
         return pulumi.get(self, "type")
 
@@ -4628,8 +4735,8 @@ class GetInvocationTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
-        :param builtins.str value: 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        :param builtins.str key: Tag key for user tags. Naming rules: Cannot start with any combination of 'volc:' or 'sys:' in any case. Can only contain letters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
+        :param builtins.str value: User tag value. Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty; length must be between 0 and 256 characters.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -4638,7 +4745,7 @@ class GetInvocationTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        Tag key for user tags. Naming rules: Cannot start with any combination of 'volc:' or 'sys:' in any case. Can only contain letters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "key")
 
@@ -4646,7 +4753,7 @@ class GetInvocationTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        User tag value. Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty; length must be between 0 and 256 characters.
         """
         return pulumi.get(self, "value")
 
@@ -4657,8 +4764,8 @@ class GetKeypairTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -4667,7 +4774,7 @@ class GetKeypairTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -4675,7 +4782,7 @@ class GetKeypairTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -4686,8 +4793,8 @@ class GetLaunchTemplateLaunchTemplateTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 给资源添加的用户标签的标签键。
-        :param builtins.str value: 给资源添加的用户标签的标签值。
+        :param builtins.str key: Tag key for user tags added to the resource.
+        :param builtins.str value: User tag value added to the resource
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -4696,7 +4803,7 @@ class GetLaunchTemplateLaunchTemplateTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        给资源添加的用户标签的标签键。
+        Tag key for user tags added to the resource.
         """
         return pulumi.get(self, "key")
 
@@ -4704,7 +4811,7 @@ class GetLaunchTemplateLaunchTemplateTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        给资源添加的用户标签的标签值。
+        User tag value added to the resource
         """
         return pulumi.get(self, "value")
 
@@ -4740,33 +4847,33 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
                  vpc_id: builtins.str,
                  zone_id: builtins.str):
         """
-        :param builtins.int deployment_set_group_number: 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
-        :param builtins.str deployment_set_id: 实例需要加入的部署集ID。
-        :param builtins.str description: 实例的描述。
-        :param 'GetLaunchTemplateLaunchTemplateVersionEipArgs' eip: 实例绑定的公网IP信息。
-        :param builtins.str host_name: 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
-        :param builtins.str hpc_cluster_id: 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
-        :param builtins.str image_id: 镜像ID。
-        :param builtins.str image_name: 镜像名称。
-        :param builtins.str instance_charge_type: 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
-        :param builtins.str instance_name: 实例的名称。
-        :param builtins.str instance_type_id: 实例的规格。
-        :param builtins.bool keep_image_credential: 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
-        :param builtins.str key_pair_name: 实例绑定的密钥对。
-        :param Sequence['GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs'] network_interfaces: 实例挂载的网卡信息。
-        :param builtins.str project_name: 实例所属项目。
-        :param 'GetLaunchTemplateLaunchTemplateVersionScheduledInstanceArgs' scheduled_instance: 弹性预约单信息。
-        :param builtins.str security_enhancement_strategy: 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
-        :param builtins.float spot_price_limit: 抢占式实例的每小时最高价格。
-        :param builtins.str spot_strategy: 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
-        :param builtins.int suffix_index: 有序后缀的起始序号。
-        :param Sequence['GetLaunchTemplateLaunchTemplateVersionTagArgs'] tags: 实例的标签信息。
-        :param builtins.bool unique_suffix: 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
-        :param builtins.str user_data: 实例的自定义数据。
-        :param builtins.str version_description: 模版版本描述。
-        :param Sequence['GetLaunchTemplateLaunchTemplateVersionVolumeArgs'] volumes: 实例绑定的云盘信息。
-        :param builtins.str vpc_id: 私有网络ID。
-        :param builtins.str zone_id: 实例所属可用区ID。
+        :param builtins.int deployment_set_group_number: When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
+        :param builtins.str deployment_set_id: Deployment set ID the instance needs to join.
+        :param builtins.str description: Instance description
+        :param 'GetLaunchTemplateLaunchTemplateVersionEipArgs' eip: Public IP information bound to the instance
+        :param builtins.str host_name: Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
+        :param builtins.str hpc_cluster_id: When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
+        :param builtins.str image_id: Image ID.
+        :param builtins.str image_name: Image name.
+        :param builtins.str instance_charge_type: Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
+        :param builtins.str instance_name: Instance name.
+        :param builtins.str instance_type_id: Instance specification
+        :param builtins.bool keep_image_credential: Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
+        :param builtins.str key_pair_name: Key pair bound to the instance.
+        :param Sequence['GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs'] network_interfaces: Network interface information mounted to the instance.
+        :param builtins.str project_name: Project associated with the instance.
+        :param 'GetLaunchTemplateLaunchTemplateVersionScheduledInstanceArgs' scheduled_instance: Elastic reservation order information
+        :param builtins.str security_enhancement_strategy: Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
+        :param builtins.float spot_price_limit: Maximum hourly price for preemptible instances
+        :param builtins.str spot_strategy: Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
+        :param builtins.int suffix_index: Starting number for the sequential suffix
+        :param Sequence['GetLaunchTemplateLaunchTemplateVersionTagArgs'] tags: Tag information for the instance.
+        :param builtins.bool unique_suffix: Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
+        :param builtins.str user_data: Custom data for the instance.
+        :param builtins.str version_description: Template version description.
+        :param Sequence['GetLaunchTemplateLaunchTemplateVersionVolumeArgs'] volumes: Cloud disk information bound to the instance
+        :param builtins.str vpc_id: Private network ID.
+        :param builtins.str zone_id: Instance availability zone ID
         """
         pulumi.set(__self__, "deployment_set_group_number", deployment_set_group_number)
         pulumi.set(__self__, "deployment_set_id", deployment_set_id)
@@ -4800,7 +4907,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> builtins.int:
         """
-        当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+        When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -4808,7 +4915,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> builtins.str:
         """
-        实例需要加入的部署集ID。
+        Deployment set ID the instance needs to join.
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -4816,7 +4923,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        实例的描述。
+        Instance description
         """
         return pulumi.get(self, "description")
 
@@ -4824,7 +4931,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter
     def eip(self) -> 'outputs.GetLaunchTemplateLaunchTemplateVersionEipResult':
         """
-        实例绑定的公网IP信息。
+        Public IP information bound to the instance
         """
         return pulumi.get(self, "eip")
 
@@ -4832,7 +4939,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="hostName")
     def host_name(self) -> builtins.str:
         """
-        实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+        Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
         """
         return pulumi.get(self, "host_name")
 
@@ -4840,7 +4947,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> builtins.str:
         """
-        当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+        When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -4848,7 +4955,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> builtins.str:
         """
-        镜像ID。
+        Image ID.
         """
         return pulumi.get(self, "image_id")
 
@@ -4856,7 +4963,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="imageName")
     def image_name(self) -> builtins.str:
         """
-        镜像名称。
+        Image name.
         """
         return pulumi.get(self, "image_name")
 
@@ -4864,7 +4971,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> builtins.str:
         """
-        实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+        Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -4872,7 +4979,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> builtins.str:
         """
-        实例的名称。
+        Instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -4880,7 +4987,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="instanceTypeId")
     def instance_type_id(self) -> builtins.str:
         """
-        实例的规格。
+        Instance specification
         """
         return pulumi.get(self, "instance_type_id")
 
@@ -4888,7 +4995,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="keepImageCredential")
     def keep_image_credential(self) -> builtins.bool:
         """
-        是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+        Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
         """
         return pulumi.get(self, "keep_image_credential")
 
@@ -4896,7 +5003,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> builtins.str:
         """
-        实例绑定的密钥对。
+        Key pair bound to the instance.
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -4904,7 +5011,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="networkInterfaces")
     def network_interfaces(self) -> Sequence['outputs.GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceResult']:
         """
-        实例挂载的网卡信息。
+        Network interface information mounted to the instance.
         """
         return pulumi.get(self, "network_interfaces")
 
@@ -4912,7 +5019,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        实例所属项目。
+        Project associated with the instance.
         """
         return pulumi.get(self, "project_name")
 
@@ -4920,7 +5027,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="scheduledInstance")
     def scheduled_instance(self) -> 'outputs.GetLaunchTemplateLaunchTemplateVersionScheduledInstanceResult':
         """
-        弹性预约单信息。
+        Elastic reservation order information
         """
         return pulumi.get(self, "scheduled_instance")
 
@@ -4928,7 +5035,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="securityEnhancementStrategy")
     def security_enhancement_strategy(self) -> builtins.str:
         """
-        是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+        Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
         """
         return pulumi.get(self, "security_enhancement_strategy")
 
@@ -4936,7 +5043,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="spotPriceLimit")
     def spot_price_limit(self) -> builtins.float:
         """
-        抢占式实例的每小时最高价格。
+        Maximum hourly price for preemptible instances
         """
         return pulumi.get(self, "spot_price_limit")
 
@@ -4944,7 +5051,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> builtins.str:
         """
-        按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+        Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -4952,7 +5059,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="suffixIndex")
     def suffix_index(self) -> builtins.int:
         """
-        有序后缀的起始序号。
+        Starting number for the sequential suffix
         """
         return pulumi.get(self, "suffix_index")
 
@@ -4960,7 +5067,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetLaunchTemplateLaunchTemplateVersionTagResult']:
         """
-        实例的标签信息。
+        Tag information for the instance.
         """
         return pulumi.get(self, "tags")
 
@@ -4968,7 +5075,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="uniqueSuffix")
     def unique_suffix(self) -> builtins.bool:
         """
-        表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+        Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
         """
         return pulumi.get(self, "unique_suffix")
 
@@ -4976,7 +5083,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="userData")
     def user_data(self) -> builtins.str:
         """
-        实例的自定义数据。
+        Custom data for the instance.
         """
         return pulumi.get(self, "user_data")
 
@@ -4984,7 +5091,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="versionDescription")
     def version_description(self) -> builtins.str:
         """
-        模版版本描述。
+        Template version description.
         """
         return pulumi.get(self, "version_description")
 
@@ -4992,7 +5099,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter
     def volumes(self) -> Sequence['outputs.GetLaunchTemplateLaunchTemplateVersionVolumeResult']:
         """
-        实例绑定的云盘信息。
+        Cloud disk information bound to the instance
         """
         return pulumi.get(self, "volumes")
 
@@ -5000,7 +5107,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        私有网络ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -5008,7 +5115,7 @@ class GetLaunchTemplateLaunchTemplateVersionResult(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        实例所属可用区ID。
+        Instance availability zone ID
         """
         return pulumi.get(self, "zone_id")
 
@@ -5024,13 +5131,13 @@ class GetLaunchTemplateLaunchTemplateVersionEipResult(dict):
                  security_protection_instance_id: builtins.int,
                  security_protection_types: Sequence[builtins.str]):
         """
-        :param builtins.int bandwidth: 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
-        :param builtins.str bandwidth_package_id: 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-        :param builtins.int billing_type: 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
-        :param builtins.str isp: 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
-        :param builtins.bool release_with_instance: 公网IP是否随实例删除，仅按量计费公网IP生效。
-        :param builtins.int security_protection_instance_id: 安全防护包ID。
-        :param Sequence[builtins.str] security_protection_types: 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+        :param builtins.int bandwidth: Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
+        :param builtins.str bandwidth_package_id: Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
+        :param builtins.int billing_type: Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
+        :param builtins.str isp: Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
+        :param builtins.bool release_with_instance: Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
+        :param builtins.int security_protection_instance_id: Security protection package ID
+        :param Sequence[builtins.str] security_protection_types: Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
         """
         pulumi.set(__self__, "bandwidth", bandwidth)
         pulumi.set(__self__, "bandwidth_package_id", bandwidth_package_id)
@@ -5044,7 +5151,7 @@ class GetLaunchTemplateLaunchTemplateVersionEipResult(dict):
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+        Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -5052,7 +5159,7 @@ class GetLaunchTemplateLaunchTemplateVersionEipResult(dict):
     @pulumi.getter(name="bandwidthPackageId")
     def bandwidth_package_id(self) -> builtins.str:
         """
-        共享带宽包的ID，表示将公网IP加入到共享带宽包。
+        Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
         """
         return pulumi.get(self, "bandwidth_package_id")
 
@@ -5060,7 +5167,7 @@ class GetLaunchTemplateLaunchTemplateVersionEipResult(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.int:
         """
-        公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+        Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
         """
         return pulumi.get(self, "billing_type")
 
@@ -5068,7 +5175,7 @@ class GetLaunchTemplateLaunchTemplateVersionEipResult(dict):
     @pulumi.getter
     def isp(self) -> builtins.str:
         """
-        公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+        Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
         """
         return pulumi.get(self, "isp")
 
@@ -5076,7 +5183,7 @@ class GetLaunchTemplateLaunchTemplateVersionEipResult(dict):
     @pulumi.getter(name="releaseWithInstance")
     def release_with_instance(self) -> builtins.bool:
         """
-        公网IP是否随实例删除，仅按量计费公网IP生效。
+        Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
         """
         return pulumi.get(self, "release_with_instance")
 
@@ -5084,7 +5191,7 @@ class GetLaunchTemplateLaunchTemplateVersionEipResult(dict):
     @pulumi.getter(name="securityProtectionInstanceId")
     def security_protection_instance_id(self) -> builtins.int:
         """
-        安全防护包ID。
+        Security protection package ID
         """
         return pulumi.get(self, "security_protection_instance_id")
 
@@ -5092,7 +5199,7 @@ class GetLaunchTemplateLaunchTemplateVersionEipResult(dict):
     @pulumi.getter(name="securityProtectionTypes")
     def security_protection_types(self) -> Sequence[builtins.str]:
         """
-        公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+        Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
         """
         return pulumi.get(self, "security_protection_types")
 
@@ -5103,8 +5210,8 @@ class GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceResult(dict):
                  security_group_ids: Sequence[builtins.str],
                  subnet_id: builtins.str):
         """
-        :param Sequence[builtins.str] security_group_ids: 网卡关联的安全组ID。
-        :param builtins.str subnet_id: 实例的私有网络子网ID。
+        :param Sequence[builtins.str] security_group_ids: Security group ID associated with the network interface.
+        :param builtins.str subnet_id: Instance VPC subnet ID
         """
         pulumi.set(__self__, "security_group_ids", security_group_ids)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -5113,7 +5220,7 @@ class GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceResult(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Sequence[builtins.str]:
         """
-        网卡关联的安全组ID。
+        Security group ID associated with the network interface.
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -5121,7 +5228,7 @@ class GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        实例的私有网络子网ID。
+        Instance VPC subnet ID
         """
         return pulumi.get(self, "subnet_id")
 
@@ -5132,8 +5239,8 @@ class GetLaunchTemplateLaunchTemplateVersionScheduledInstanceResult(dict):
                  scheduled_instance_description: builtins.str,
                  scheduled_instance_name: builtins.str):
         """
-        :param builtins.str scheduled_instance_description: 弹性预约单的描述。
-        :param builtins.str scheduled_instance_name: 弹性预约单的名称。
+        :param builtins.str scheduled_instance_description: Description of the elastic reservation order
+        :param builtins.str scheduled_instance_name: Name of the elastic reservation order
         """
         pulumi.set(__self__, "scheduled_instance_description", scheduled_instance_description)
         pulumi.set(__self__, "scheduled_instance_name", scheduled_instance_name)
@@ -5142,7 +5249,7 @@ class GetLaunchTemplateLaunchTemplateVersionScheduledInstanceResult(dict):
     @pulumi.getter(name="scheduledInstanceDescription")
     def scheduled_instance_description(self) -> builtins.str:
         """
-        弹性预约单的描述。
+        Description of the elastic reservation order
         """
         return pulumi.get(self, "scheduled_instance_description")
 
@@ -5150,7 +5257,7 @@ class GetLaunchTemplateLaunchTemplateVersionScheduledInstanceResult(dict):
     @pulumi.getter(name="scheduledInstanceName")
     def scheduled_instance_name(self) -> builtins.str:
         """
-        弹性预约单的名称。
+        Name of the elastic reservation order
         """
         return pulumi.get(self, "scheduled_instance_name")
 
@@ -5161,8 +5268,8 @@ class GetLaunchTemplateLaunchTemplateVersionTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 给资源添加的用户标签的标签键。
-        :param builtins.str value: 给资源添加的用户标签的标签值。
+        :param builtins.str key: Tag key for user tags added to the resource.
+        :param builtins.str value: User tag value added to the resource
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -5171,7 +5278,7 @@ class GetLaunchTemplateLaunchTemplateVersionTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        给资源添加的用户标签的标签键。
+        Tag key for user tags added to the resource.
         """
         return pulumi.get(self, "key")
 
@@ -5179,7 +5286,7 @@ class GetLaunchTemplateLaunchTemplateVersionTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        给资源添加的用户标签的标签值。
+        User tag value added to the resource
         """
         return pulumi.get(self, "value")
 
@@ -5195,13 +5302,13 @@ class GetLaunchTemplateLaunchTemplateVersionVolumeResult(dict):
                  snapshot_id: builtins.str,
                  volume_type: builtins.str):
         """
-        :param builtins.bool delete_with_instance: 云盘是否随实例释放。
-        :param builtins.int extra_performance_iops: 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
-        :param builtins.int extra_performance_throughput_mb: 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
-        :param builtins.str extra_performance_type_id: 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
-        :param builtins.int size: 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
-        :param builtins.str snapshot_id: 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
-        :param builtins.str volume_type: 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+        :param builtins.bool delete_with_instance: Whether the cloud disk is released with the instance
+        :param builtins.int extra_performance_iops: Cloud disk extra IOPS performance size, supported only by ESSD FlexPL data disks, unit: operations/second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. The value ranges for each extra performance type are as follows: IOPS type: 1–50000. Balance type: 1–50000.
+        :param builtins.int extra_performance_throughput_mb: Extra throughput performance size for the cloud disk, in MB/s. Only supported by ESSD FlexPL data disks. This parameter must be set when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
+        :param builtins.str extra_performance_type_id: Type of cloud disk extra performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Cloud Disk Extra Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance.
+        :param builtins.int size: Cloud disk size, unit: GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
+        :param builtins.str snapshot_id: Create a cloud disk using a snapshot, only supports creating data disks. You can call the DescribeSnapshots API to query the snapshot ID.
+        :param builtins.str volume_type: Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
         """
         pulumi.set(__self__, "delete_with_instance", delete_with_instance)
         pulumi.set(__self__, "extra_performance_iops", extra_performance_iops)
@@ -5215,7 +5322,7 @@ class GetLaunchTemplateLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> builtins.bool:
         """
-        云盘是否随实例释放。
+        Whether the cloud disk is released with the instance
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -5223,7 +5330,7 @@ class GetLaunchTemplateLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter(name="extraPerformanceIops")
     def extra_performance_iops(self) -> builtins.int:
         """
-        云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+        Cloud disk extra IOPS performance size, supported only by ESSD FlexPL data disks, unit: operations/second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. The value ranges for each extra performance type are as follows: IOPS type: 1–50000. Balance type: 1–50000.
         """
         return pulumi.get(self, "extra_performance_iops")
 
@@ -5231,7 +5338,7 @@ class GetLaunchTemplateLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter(name="extraPerformanceThroughputMb")
     def extra_performance_throughput_mb(self) -> builtins.int:
         """
-        云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+        Extra throughput performance size for the cloud disk, in MB/s. Only supported by ESSD FlexPL data disks. This parameter must be set when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
         """
         return pulumi.get(self, "extra_performance_throughput_mb")
 
@@ -5239,7 +5346,7 @@ class GetLaunchTemplateLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter(name="extraPerformanceTypeId")
     def extra_performance_type_id(self) -> builtins.str:
         """
-        云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+        Type of cloud disk extra performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Cloud Disk Extra Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance.
         """
         return pulumi.get(self, "extra_performance_type_id")
 
@@ -5247,7 +5354,7 @@ class GetLaunchTemplateLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+        Cloud disk size, unit: GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
         """
         return pulumi.get(self, "size")
 
@@ -5255,7 +5362,7 @@ class GetLaunchTemplateLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> builtins.str:
         """
-        使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+        Create a cloud disk using a snapshot, only supports creating data disks. You can call the DescribeSnapshots API to query the snapshot ID.
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -5263,7 +5370,7 @@ class GetLaunchTemplateLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> builtins.str:
         """
-        云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+        Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
         """
         return pulumi.get(self, "volume_type")
 
@@ -5279,13 +5386,13 @@ class GetLaunchTemplateVersionEipResult(dict):
                  security_protection_instance_id: builtins.int,
                  security_protection_types: Sequence[builtins.str]):
         """
-        :param builtins.int bandwidth: 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
-        :param builtins.str bandwidth_package_id: 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-        :param builtins.int billing_type: 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
-        :param builtins.str isp: 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
-        :param builtins.bool release_with_instance: 公网IP是否随实例删除，仅按量计费公网IP生效。
-        :param builtins.int security_protection_instance_id: 安全防护包ID。
-        :param Sequence[builtins.str] security_protection_types: 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+        :param builtins.int bandwidth: Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
+        :param builtins.str bandwidth_package_id: Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
+        :param builtins.int billing_type: Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
+        :param builtins.str isp: Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
+        :param builtins.bool release_with_instance: Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
+        :param builtins.int security_protection_instance_id: Security protection package ID.
+        :param Sequence[builtins.str] security_protection_types: Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
         """
         pulumi.set(__self__, "bandwidth", bandwidth)
         pulumi.set(__self__, "bandwidth_package_id", bandwidth_package_id)
@@ -5299,7 +5406,7 @@ class GetLaunchTemplateVersionEipResult(dict):
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+        Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
         """
         return pulumi.get(self, "bandwidth")
 
@@ -5307,7 +5414,7 @@ class GetLaunchTemplateVersionEipResult(dict):
     @pulumi.getter(name="bandwidthPackageId")
     def bandwidth_package_id(self) -> builtins.str:
         """
-        共享带宽包的ID，表示将公网IP加入到共享带宽包。
+        Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
         """
         return pulumi.get(self, "bandwidth_package_id")
 
@@ -5315,7 +5422,7 @@ class GetLaunchTemplateVersionEipResult(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.int:
         """
-        公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+        Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
         """
         return pulumi.get(self, "billing_type")
 
@@ -5323,7 +5430,7 @@ class GetLaunchTemplateVersionEipResult(dict):
     @pulumi.getter
     def isp(self) -> builtins.str:
         """
-        公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+        Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
         """
         return pulumi.get(self, "isp")
 
@@ -5331,7 +5438,7 @@ class GetLaunchTemplateVersionEipResult(dict):
     @pulumi.getter(name="releaseWithInstance")
     def release_with_instance(self) -> builtins.bool:
         """
-        公网IP是否随实例删除，仅按量计费公网IP生效。
+        Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
         """
         return pulumi.get(self, "release_with_instance")
 
@@ -5339,7 +5446,7 @@ class GetLaunchTemplateVersionEipResult(dict):
     @pulumi.getter(name="securityProtectionInstanceId")
     def security_protection_instance_id(self) -> builtins.int:
         """
-        安全防护包ID。
+        Security protection package ID.
         """
         return pulumi.get(self, "security_protection_instance_id")
 
@@ -5347,7 +5454,7 @@ class GetLaunchTemplateVersionEipResult(dict):
     @pulumi.getter(name="securityProtectionTypes")
     def security_protection_types(self) -> Sequence[builtins.str]:
         """
-        公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+        Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
         """
         return pulumi.get(self, "security_protection_types")
 
@@ -5358,8 +5465,8 @@ class GetLaunchTemplateVersionNetworkInterfaceResult(dict):
                  security_group_ids: Sequence[builtins.str],
                  subnet_id: builtins.str):
         """
-        :param Sequence[builtins.str] security_group_ids: 网卡关联的安全组ID。
-        :param builtins.str subnet_id: 实例的私有网络子网ID。
+        :param Sequence[builtins.str] security_group_ids: Security group ID associated with the network interface.
+        :param builtins.str subnet_id: Private network subnet ID of the instance.
         """
         pulumi.set(__self__, "security_group_ids", security_group_ids)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -5368,7 +5475,7 @@ class GetLaunchTemplateVersionNetworkInterfaceResult(dict):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Sequence[builtins.str]:
         """
-        网卡关联的安全组ID。
+        Security group ID associated with the network interface.
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -5376,7 +5483,7 @@ class GetLaunchTemplateVersionNetworkInterfaceResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        实例的私有网络子网ID。
+        Private network subnet ID of the instance.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -5387,8 +5494,8 @@ class GetLaunchTemplateVersionScheduledInstanceResult(dict):
                  scheduled_instance_description: builtins.str,
                  scheduled_instance_name: builtins.str):
         """
-        :param builtins.str scheduled_instance_description: 弹性预约单的描述。
-        :param builtins.str scheduled_instance_name: 弹性预约单的名称。
+        :param builtins.str scheduled_instance_description: Description of the elastic reservation order
+        :param builtins.str scheduled_instance_name: Name of the elastic reservation order
         """
         pulumi.set(__self__, "scheduled_instance_description", scheduled_instance_description)
         pulumi.set(__self__, "scheduled_instance_name", scheduled_instance_name)
@@ -5397,7 +5504,7 @@ class GetLaunchTemplateVersionScheduledInstanceResult(dict):
     @pulumi.getter(name="scheduledInstanceDescription")
     def scheduled_instance_description(self) -> builtins.str:
         """
-        弹性预约单的描述。
+        Description of the elastic reservation order
         """
         return pulumi.get(self, "scheduled_instance_description")
 
@@ -5405,7 +5512,7 @@ class GetLaunchTemplateVersionScheduledInstanceResult(dict):
     @pulumi.getter(name="scheduledInstanceName")
     def scheduled_instance_name(self) -> builtins.str:
         """
-        弹性预约单的名称。
+        Name of the elastic reservation order
         """
         return pulumi.get(self, "scheduled_instance_name")
 
@@ -5416,8 +5523,8 @@ class GetLaunchTemplateVersionTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 给资源添加的用户标签的标签键。
-        :param builtins.str value: 给资源添加的用户标签的标签值。
+        :param builtins.str key: Tag key for user tags added to the resource.
+        :param builtins.str value: Tag value for user tags added to the resource
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -5426,7 +5533,7 @@ class GetLaunchTemplateVersionTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        给资源添加的用户标签的标签键。
+        Tag key for user tags added to the resource.
         """
         return pulumi.get(self, "key")
 
@@ -5434,7 +5541,7 @@ class GetLaunchTemplateVersionTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        给资源添加的用户标签的标签值。
+        Tag value for user tags added to the resource
         """
         return pulumi.get(self, "value")
 
@@ -5450,13 +5557,13 @@ class GetLaunchTemplateVersionVolumeResult(dict):
                  snapshot_id: builtins.str,
                  volume_type: builtins.str):
         """
-        :param builtins.bool delete_with_instance: 云盘是否随实例释放。
-        :param builtins.int extra_performance_iops: 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
-        :param builtins.int extra_performance_throughput_mb: 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
-        :param builtins.str extra_performance_type_id: 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
-        :param builtins.int size: 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
-        :param builtins.str snapshot_id: 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
-        :param builtins.str volume_type: 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+        :param builtins.bool delete_with_instance: Whether the disk is released with the instance
+        :param builtins.int extra_performance_iops: Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
+        :param builtins.int extra_performance_throughput_mb: Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
+        :param builtins.str extra_performance_type_id: Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
+        :param builtins.int size: Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
+        :param builtins.str snapshot_id: Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
+        :param builtins.str volume_type: Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
         """
         pulumi.set(__self__, "delete_with_instance", delete_with_instance)
         pulumi.set(__self__, "extra_performance_iops", extra_performance_iops)
@@ -5470,7 +5577,7 @@ class GetLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> builtins.bool:
         """
-        云盘是否随实例释放。
+        Whether the disk is released with the instance
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -5478,7 +5585,7 @@ class GetLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter(name="extraPerformanceIops")
     def extra_performance_iops(self) -> builtins.int:
         """
-        云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+        Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
         """
         return pulumi.get(self, "extra_performance_iops")
 
@@ -5486,7 +5593,7 @@ class GetLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter(name="extraPerformanceThroughputMb")
     def extra_performance_throughput_mb(self) -> builtins.int:
         """
-        云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+        Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
         """
         return pulumi.get(self, "extra_performance_throughput_mb")
 
@@ -5494,7 +5601,7 @@ class GetLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter(name="extraPerformanceTypeId")
     def extra_performance_type_id(self) -> builtins.str:
         """
-        云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+        Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
         """
         return pulumi.get(self, "extra_performance_type_id")
 
@@ -5502,7 +5609,7 @@ class GetLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+        Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
         """
         return pulumi.get(self, "size")
 
@@ -5510,7 +5617,7 @@ class GetLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> builtins.str:
         """
-        使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+        Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -5518,7 +5625,7 @@ class GetLaunchTemplateVersionVolumeResult(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> builtins.str:
         """
-        云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+        Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
         """
         return pulumi.get(self, "volume_type")
 

@@ -23,14 +23,14 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
     public static final SandboxArgs Empty = new SandboxArgs();
 
     /**
-     * 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+     * Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
      * 
      */
     @Import(name="cpuMilli")
     private @Nullable Output<Integer> cpuMilli;
 
     /**
-     * @return 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+     * @return Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
      * 
      */
     public Optional<Output<Integer>> cpuMilli() {
@@ -45,14 +45,14 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例所属的沙箱应用 ID。
+     * Sandbox application ID to which the sandbox instance belongs
      * 
      */
     @Import(name="functionId", required=true)
     private Output<String> functionId;
 
     /**
-     * @return 沙箱实例所属的沙箱应用 ID。
+     * @return Sandbox application ID to which the sandbox instance belongs
      * 
      */
     public Output<String> functionId() {
@@ -60,14 +60,14 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+     * Sandbox instance image information, including image address, startup command, and listening port.
      * 
      */
     @Import(name="instanceImageInfo")
     private @Nullable Output<SandboxInstanceImageInfoArgs> instanceImageInfo;
 
     /**
-     * @return 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+     * @return Sandbox instance image information, including image address, startup command, and listening port.
      * 
      */
     public Optional<Output<SandboxInstanceImageInfoArgs>> instanceImageInfo() {
@@ -75,14 +75,14 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例级别对象存储（TOS）存储挂载配置。
+     * Instance-level object storage (TOS) mount configuration for the sandbox instance
      * 
      */
     @Import(name="instanceTosMountConfig")
     private @Nullable Output<SandboxInstanceTosMountConfigArgs> instanceTosMountConfig;
 
     /**
-     * @return 沙箱实例级别对象存储（TOS）存储挂载配置。
+     * @return Instance-level object storage (TOS) mount configuration for the sandbox instance
      * 
      */
     public Optional<Output<SandboxInstanceTosMountConfigArgs>> instanceTosMountConfig() {
@@ -90,14 +90,14 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+     * Maximum concurrent requests per instance: range: 10~1000, default: 100
      * 
      */
     @Import(name="maxConcurrency")
     private @Nullable Output<Integer> maxConcurrency;
 
     /**
-     * @return 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+     * @return Maximum concurrent requests per instance: range: 10~1000, default: 100
      * 
      */
     public Optional<Output<Integer>> maxConcurrency() {
@@ -105,14 +105,14 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+     * Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
      * 
      */
     @Import(name="memoryMb")
     private @Nullable Output<Integer> memoryMb;
 
     /**
-     * @return 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+     * @return Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
      * 
      */
     public Optional<Output<Integer>> memoryMb() {
@@ -127,14 +127,14 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+     * Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
      * 
      */
     @Import(name="requestTimeout")
     private @Nullable Output<Integer> requestTimeout;
 
     /**
-     * @return 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+     * @return Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
      * 
      */
     public Optional<Output<Integer>> requestTimeout() {
@@ -142,14 +142,14 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+     * Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
      * 
      */
     @Import(name="timeout")
     private @Nullable Output<Integer> timeout;
 
     /**
-     * @return 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+     * @return Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
      * 
      */
     public Optional<Output<Integer>> timeout() {
@@ -190,7 +190,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cpuMilli 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+         * @param cpuMilli Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cpuMilli 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+         * @param cpuMilli Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
          * 
          * @return builder
          * 
@@ -224,7 +224,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param functionId 沙箱实例所属的沙箱应用 ID。
+         * @param functionId Sandbox application ID to which the sandbox instance belongs
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param functionId 沙箱实例所属的沙箱应用 ID。
+         * @param functionId Sandbox application ID to which the sandbox instance belongs
          * 
          * @return builder
          * 
@@ -245,7 +245,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceImageInfo 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+         * @param instanceImageInfo Sandbox instance image information, including image address, startup command, and listening port.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceImageInfo 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+         * @param instanceImageInfo Sandbox instance image information, including image address, startup command, and listening port.
          * 
          * @return builder
          * 
@@ -266,7 +266,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceTosMountConfig 沙箱实例级别对象存储（TOS）存储挂载配置。
+         * @param instanceTosMountConfig Instance-level object storage (TOS) mount configuration for the sandbox instance
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceTosMountConfig 沙箱实例级别对象存储（TOS）存储挂载配置。
+         * @param instanceTosMountConfig Instance-level object storage (TOS) mount configuration for the sandbox instance
          * 
          * @return builder
          * 
@@ -287,7 +287,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxConcurrency 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+         * @param maxConcurrency Maximum concurrent requests per instance: range: 10~1000, default: 100
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxConcurrency 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+         * @param maxConcurrency Maximum concurrent requests per instance: range: 10~1000, default: 100
          * 
          * @return builder
          * 
@@ -308,7 +308,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param memoryMb 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+         * @param memoryMb Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
          * 
          * @return builder
          * 
@@ -319,7 +319,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param memoryMb 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+         * @param memoryMb Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param requestTimeout 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+         * @param requestTimeout Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param requestTimeout 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+         * @param requestTimeout Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
          * 
          * @return builder
          * 
@@ -363,7 +363,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeout 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+         * @param timeout Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
          * 
          * @return builder
          * 
@@ -374,7 +374,7 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeout 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+         * @param timeout Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
          * 
          * @return builder
          * 

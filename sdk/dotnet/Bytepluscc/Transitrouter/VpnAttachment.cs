@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 {
     /// <summary>
-    /// 通过在VPN连接的IPsec连接和中转路由器之间建立连接，可以实现VPN连通的网络与中转路由器的私网互通。
+    /// By establishing a connection between the IPsec connection of the VPN and the transit router, you can enable communication between the VPN-connected network and the private network of the transit router.
     /// 
     /// ## Example Usage
     /// 
@@ -54,37 +54,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     public partial class VpnAttachment : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 是否自动同步TR路由到网络实例路由表中。
+        /// Whether to automatically sync TR routes to the network instance route table.
         /// </summary>
         [Output("autoPublishRouteEnabled")]
         public Output<bool> AutoPublishRouteEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        /// Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+        /// Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
         /// </summary>
         [Output("healthCheckRevokeRouteEnabled")]
         public Output<bool> HealthCheckRevokeRouteEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启IPv6功能。
+        /// Whether to enable IPv6.
         /// </summary>
         [Output("ipv6Enabled")]
         public Output<bool> Ipv6Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+        /// Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -93,43 +93,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         public Output<ImmutableArray<Outputs.VpnAttachmentTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 网络实例连接的ID。
+        /// Network instance connection ID.
         /// </summary>
         [Output("transitRouterAttachmentId")]
         public Output<string> TransitRouterAttachmentId { get; private set; } = null!;
 
         /// <summary>
-        /// 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        /// Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         /// </summary>
         [Output("transitRouterAttachmentName")]
         public Output<string> TransitRouterAttachmentName { get; private set; } = null!;
 
         /// <summary>
-        /// 中转路由器实例的ID。
+        /// Transit router instance ID.
         /// </summary>
         [Output("transitRouterId")]
         public Output<string> TransitRouterId { get; private set; } = null!;
 
         /// <summary>
-        /// 关联的TR路由表ID。
+        /// Associated TR route table ID.
         /// </summary>
         [Output("transitRouterRouteTableId")]
         public Output<string> TransitRouterRouteTableId { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update time.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// IPsec连接的ID。
+        /// IPsec connection ID.
         /// </summary>
         [Output("vpnConnectionId")]
         public Output<string> VpnConnectionId { get; private set; } = null!;
 
         /// <summary>
-        /// IPsec连接所属可用区的ID。
+        /// ID of the availability zone to which the IPsec connection belongs.
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
@@ -182,13 +182,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     public sealed class VpnAttachmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        /// Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+        /// Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
         /// </summary>
         [Input("healthCheckRevokeRouteEnabled")]
         public Input<bool>? HealthCheckRevokeRouteEnabled { get; set; }
@@ -202,31 +202,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         }
 
         /// <summary>
-        /// 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        /// Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         /// </summary>
         [Input("transitRouterAttachmentName")]
         public Input<string>? TransitRouterAttachmentName { get; set; }
 
         /// <summary>
-        /// 中转路由器实例的ID。
+        /// Transit router instance ID.
         /// </summary>
         [Input("transitRouterId", required: true)]
         public Input<string> TransitRouterId { get; set; } = null!;
 
         /// <summary>
-        /// 关联的TR路由表ID。
+        /// Associated TR route table ID.
         /// </summary>
         [Input("transitRouterRouteTableId")]
         public Input<string>? TransitRouterRouteTableId { get; set; }
 
         /// <summary>
-        /// IPsec连接的ID。
+        /// IPsec connection ID.
         /// </summary>
         [Input("vpnConnectionId", required: true)]
         public Input<string> VpnConnectionId { get; set; } = null!;
 
         /// <summary>
-        /// IPsec连接所属可用区的ID。
+        /// ID of the availability zone to which the IPsec connection belongs.
         /// </summary>
         [Input("zoneId", required: true)]
         public Input<string> ZoneId { get; set; } = null!;
@@ -240,37 +240,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     public sealed class VpnAttachmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否自动同步TR路由到网络实例路由表中。
+        /// Whether to automatically sync TR routes to the network instance route table.
         /// </summary>
         [Input("autoPublishRouteEnabled")]
         public Input<bool>? AutoPublishRouteEnabled { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        /// Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+        /// Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
         /// </summary>
         [Input("healthCheckRevokeRouteEnabled")]
         public Input<bool>? HealthCheckRevokeRouteEnabled { get; set; }
 
         /// <summary>
-        /// 是否开启IPv6功能。
+        /// Whether to enable IPv6.
         /// </summary>
         [Input("ipv6Enabled")]
         public Input<bool>? Ipv6Enabled { get; set; }
 
         /// <summary>
-        /// 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+        /// Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -284,43 +284,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         }
 
         /// <summary>
-        /// 网络实例连接的ID。
+        /// Network instance connection ID.
         /// </summary>
         [Input("transitRouterAttachmentId")]
         public Input<string>? TransitRouterAttachmentId { get; set; }
 
         /// <summary>
-        /// 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        /// Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         /// </summary>
         [Input("transitRouterAttachmentName")]
         public Input<string>? TransitRouterAttachmentName { get; set; }
 
         /// <summary>
-        /// 中转路由器实例的ID。
+        /// Transit router instance ID.
         /// </summary>
         [Input("transitRouterId")]
         public Input<string>? TransitRouterId { get; set; }
 
         /// <summary>
-        /// 关联的TR路由表ID。
+        /// Associated TR route table ID.
         /// </summary>
         [Input("transitRouterRouteTableId")]
         public Input<string>? TransitRouterRouteTableId { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update time.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// IPsec连接的ID。
+        /// IPsec connection ID.
         /// </summary>
         [Input("vpnConnectionId")]
         public Input<string>? VpnConnectionId { get; set; }
 
         /// <summary>
-        /// IPsec连接所属可用区的ID。
+        /// ID of the availability zone to which the IPsec connection belongs.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

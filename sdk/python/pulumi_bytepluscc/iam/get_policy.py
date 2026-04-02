@@ -76,7 +76,7 @@ class GetPolicyResult:
     @pulumi.getter(name="attachmentCount")
     def attachment_count(self) -> builtins.int:
         """
-        策略绑定的身份数量。
+        Number of identities bound to the policy.
         """
         return pulumi.get(self, "attachment_count")
 
@@ -84,7 +84,7 @@ class GetPolicyResult:
     @pulumi.getter
     def category(self) -> builtins.str:
         """
-        系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+        Category of the system preset policy, usually the service code. This field is not returned for custom policies.
         """
         return pulumi.get(self, "category")
 
@@ -92,7 +92,7 @@ class GetPolicyResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        策略创建时间。
+        Policy creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -100,7 +100,7 @@ class GetPolicyResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        策略描述，长度不超过128。
+        Policy description, no more than 128 characters.
         """
         return pulumi.get(self, "description")
 
@@ -116,7 +116,7 @@ class GetPolicyResult:
     @pulumi.getter(name="isServiceRolePolicy")
     def is_service_role_policy(self) -> builtins.int:
         """
-        是否是服务关联角色的策略，0代表否，1代表是。
+        Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
         """
         return pulumi.get(self, "is_service_role_policy")
 
@@ -124,7 +124,7 @@ class GetPolicyResult:
     @pulumi.getter(name="policyDocument")
     def policy_document(self) -> builtins.str:
         """
-        策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+        Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
         """
         return pulumi.get(self, "policy_document")
 
@@ -132,7 +132,7 @@ class GetPolicyResult:
     @pulumi.getter(name="policyName")
     def policy_name(self) -> builtins.str:
         """
-        策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+        Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
         """
         return pulumi.get(self, "policy_name")
 
@@ -140,7 +140,7 @@ class GetPolicyResult:
     @pulumi.getter(name="policyRoles")
     def policy_roles(self) -> Sequence['outputs.GetPolicyPolicyRoleResult']:
         """
-        策略绑定的角色列表。
+        List of roles bound to the policy.
         """
         return pulumi.get(self, "policy_roles")
 
@@ -148,7 +148,7 @@ class GetPolicyResult:
     @pulumi.getter(name="policyTrn")
     def policy_trn(self) -> builtins.str:
         """
-        策略的TRN。
+        Policy TRN.
         """
         return pulumi.get(self, "policy_trn")
 
@@ -156,7 +156,7 @@ class GetPolicyResult:
     @pulumi.getter(name="policyType")
     def policy_type(self) -> builtins.str:
         """
-        策略类型。System代表系统预设策略，Custom代表自定义策略。
+        Policy type. System indicates a system preset policy; Custom indicates a custom policy.
         """
         return pulumi.get(self, "policy_type")
 
@@ -164,7 +164,7 @@ class GetPolicyResult:
     @pulumi.getter(name="policyUserGroups")
     def policy_user_groups(self) -> Sequence['outputs.GetPolicyPolicyUserGroupResult']:
         """
-        策略绑定的用户组列表。
+        List of user groups bound to the policy.
         """
         return pulumi.get(self, "policy_user_groups")
 
@@ -172,7 +172,7 @@ class GetPolicyResult:
     @pulumi.getter(name="policyUsers")
     def policy_users(self) -> Sequence['outputs.GetPolicyPolicyUserResult']:
         """
-        策略绑定的用户列表。
+        List of users bound to the policy.
         """
         return pulumi.get(self, "policy_users")
 
@@ -180,7 +180,7 @@ class GetPolicyResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        策略更新时间。
+        Policy update time.
         """
         return pulumi.get(self, "updated_time")
 

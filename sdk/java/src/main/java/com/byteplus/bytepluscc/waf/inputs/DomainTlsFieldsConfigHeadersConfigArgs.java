@@ -18,14 +18,14 @@ public final class DomainTlsFieldsConfigHeadersConfigArgs extends com.pulumi.res
     public static final DomainTlsFieldsConfigHeadersConfigArgs Empty = new DomainTlsFieldsConfigHeadersConfigArgs();
 
     /**
-     * 是否记录全量 header。
+     * Record all header fields
      * 
      */
     @Import(name="enable")
     private @Nullable Output<Integer> enable;
 
     /**
-     * @return 是否记录全量 header。
+     * @return Record all header fields
      * 
      */
     public Optional<Output<Integer>> enable() {
@@ -33,14 +33,14 @@ public final class DomainTlsFieldsConfigHeadersConfigArgs extends com.pulumi.res
     }
 
     /**
-     * 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+     * Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
      * 
      */
     @Import(name="excludedKeyLists")
     private @Nullable Output<List<String>> excludedKeyLists;
 
     /**
-     * @return 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+     * @return Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
      * 
      */
     public Optional<Output<List<String>>> excludedKeyLists() {
@@ -48,14 +48,14 @@ public final class DomainTlsFieldsConfigHeadersConfigArgs extends com.pulumi.res
     }
 
     /**
-     * 统计 header 字段，将对应字段用于日志统计分析和告警。
+     * Statistics header fields. Use the specified fields for log analysis and alerts.
      * 
      */
     @Import(name="statisticalKeyLists")
     private @Nullable Output<List<String>> statisticalKeyLists;
 
     /**
-     * @return 统计 header 字段，将对应字段用于日志统计分析和告警。
+     * @return Statistics header fields. Use the specified fields for log analysis and alerts.
      * 
      */
     public Optional<Output<List<String>>> statisticalKeyLists() {
@@ -89,7 +89,7 @@ public final class DomainTlsFieldsConfigHeadersConfigArgs extends com.pulumi.res
         }
 
         /**
-         * @param enable 是否记录全量 header。
+         * @param enable Record all header fields
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class DomainTlsFieldsConfigHeadersConfigArgs extends com.pulumi.res
         }
 
         /**
-         * @param enable 是否记录全量 header。
+         * @param enable Record all header fields
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class DomainTlsFieldsConfigHeadersConfigArgs extends com.pulumi.res
         }
 
         /**
-         * @param excludedKeyLists 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+         * @param excludedKeyLists Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class DomainTlsFieldsConfigHeadersConfigArgs extends com.pulumi.res
         }
 
         /**
-         * @param excludedKeyLists 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+         * @param excludedKeyLists Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class DomainTlsFieldsConfigHeadersConfigArgs extends com.pulumi.res
         }
 
         /**
-         * @param excludedKeyLists 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+         * @param excludedKeyLists Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class DomainTlsFieldsConfigHeadersConfigArgs extends com.pulumi.res
         }
 
         /**
-         * @param statisticalKeyLists 统计 header 字段，将对应字段用于日志统计分析和告警。
+         * @param statisticalKeyLists Statistics header fields. Use the specified fields for log analysis and alerts.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class DomainTlsFieldsConfigHeadersConfigArgs extends com.pulumi.res
         }
 
         /**
-         * @param statisticalKeyLists 统计 header 字段，将对应字段用于日志统计分析和告警。
+         * @param statisticalKeyLists Statistics header fields. Use the specified fields for log analysis and alerts.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class DomainTlsFieldsConfigHeadersConfigArgs extends com.pulumi.res
         }
 
         /**
-         * @param statisticalKeyLists 统计 header 字段，将对应字段用于日志统计分析和告警。
+         * @param statisticalKeyLists Statistics header fields. Use the specified fields for log analysis and alerts.
          * 
          * @return builder
          * 

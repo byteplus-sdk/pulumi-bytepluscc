@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * E-MapReduce（EMR）集群中的用户分为普通用户和系统用户两类。其中:普通用户是您在用户管理模块手动通过导入、创建操作向集群中添加的用户；系统用户则是集群在初始化过程中为每个组件内置的管理用户，不支持编辑和删除操作。
+ * Users in an E-MapReduce (EMR) cluster are divided into regular users and system users. Regular users are added to the cluster manually through import or creation in the user management module. System users are built-in management users for each component created during cluster initialization and cannot be edited or deleted.
  *
  * ## Example Usage
  *
@@ -60,39 +60,39 @@ export class ClusterUser extends pulumi.CustomResource {
     }
 
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     public readonly clusterId!: pulumi.Output<string>;
     /**
-     * 创建时间。
+     * Creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<number>;
     /**
-     * 创建者用户名。
+     * Creator username.
      */
     public /*out*/ readonly creatorName!: pulumi.Output<string>;
     /**
-     * 用户组描述。
+     * User group description.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 旧的用户的登录密码。修改密码时必填。
+     * Old user login password. Required when changing password.
      */
     public readonly oldPassword!: pulumi.Output<string>;
     /**
-     * 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+     * New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
      */
     public readonly password!: pulumi.Output<string>;
     /**
-     * 更新时间。
+     * Last updated time.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<number>;
     /**
-     * 所属用户组名称。
+     * User group name.
      */
     public readonly userGroupNames!: pulumi.Output<string[]>;
     /**
-     * 集群用户名。仅支持小写字母。
+     * Cluster username. Only lowercase letters are supported.
      */
     public readonly userName!: pulumi.Output<string>;
 
@@ -149,39 +149,39 @@ export class ClusterUser extends pulumi.CustomResource {
  */
 export interface ClusterUserState {
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     clusterId?: pulumi.Input<string>;
     /**
-     * 创建时间。
+     * Creation time.
      */
     createdTime?: pulumi.Input<number>;
     /**
-     * 创建者用户名。
+     * Creator username.
      */
     creatorName?: pulumi.Input<string>;
     /**
-     * 用户组描述。
+     * User group description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 旧的用户的登录密码。修改密码时必填。
+     * Old user login password. Required when changing password.
      */
     oldPassword?: pulumi.Input<string>;
     /**
-     * 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+     * New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
      */
     password?: pulumi.Input<string>;
     /**
-     * 更新时间。
+     * Last updated time.
      */
     updatedTime?: pulumi.Input<number>;
     /**
-     * 所属用户组名称。
+     * User group name.
      */
     userGroupNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 集群用户名。仅支持小写字母。
+     * Cluster username. Only lowercase letters are supported.
      */
     userName?: pulumi.Input<string>;
 }
@@ -191,27 +191,27 @@ export interface ClusterUserState {
  */
 export interface ClusterUserArgs {
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     clusterId: pulumi.Input<string>;
     /**
-     * 用户组描述。
+     * User group description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 旧的用户的登录密码。修改密码时必填。
+     * Old user login password. Required when changing password.
      */
     oldPassword?: pulumi.Input<string>;
     /**
-     * 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+     * New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
      */
     password: pulumi.Input<string>;
     /**
-     * 所属用户组名称。
+     * User group name.
      */
     userGroupNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 集群用户名。仅支持小写字母。
+     * Cluster username. Only lowercase letters are supported.
      */
     userName: pulumi.Input<string>;
 }

@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetBackupDbTableInfo {
     /**
-     * @return 数据库名。
+     * @return Database name
      * 
      */
     private String database;
     /**
-     * @return 表名列表。
+     * @return Table name list
      * 
      */
     private List<String> tables;
 
     private GetBackupDbTableInfo() {}
     /**
-     * @return 数据库名。
+     * @return Database name
      * 
      */
     public String database() {
         return this.database;
     }
     /**
-     * @return 表名列表。
+     * @return Table name list
      * 
      */
     public List<String> tables() {

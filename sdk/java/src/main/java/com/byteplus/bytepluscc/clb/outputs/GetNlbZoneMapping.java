@@ -12,146 +12,146 @@ import java.util.Objects;
 @CustomType
 public final class GetNlbZoneMapping {
     /**
-     * @return 网卡ID。
+     * @return Network interface card ID.
      * 
      */
     private String eniId;
     /**
-     * @return NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+     * @return Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
      * 
      */
     private String ipv4Address;
     /**
-     * @return NLB实例的公网IPv4 EIP地址。
+     * @return Public IPv4 EIP address of the NLB instance.
      * 
      */
     private String ipv4EipAddress;
     /**
-     * @return NLB实例的公网IPv4 EIP ID。
+     * @return Public IPv4 EIP ID of the NLB instance.
      * 
      */
     private String ipv4EipId;
     /**
-     * @return NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+     * @return Health status of the NLB instance&#39;s private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
      * 
      */
     private String ipv4HcStatus;
     /**
-     * @return NLB实例的私网IPv4 LIP地址。
+     * @return Private IPv4 LIP address of the NLB instance.
      * 
      */
     private List<String> ipv4LocalAddresses;
     /**
-     * @return NLB实例的私网IPv6 VIP地址。
+     * @return Private IPv6 VIP address of the NLB instance.
      * 
      */
     private String ipv6Address;
     /**
-     * @return NLB实例关联的IPv6公网带宽的ID。
+     * @return ID of the IPv6 public bandwidth associated with the NLB instance.
      * 
      */
     private String ipv6EipId;
     /**
-     * @return NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+     * @return Health status of the NLB instance&#39;s private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
      * 
      */
     private String ipv6HcStatus;
     /**
-     * @return NLB实例的私网IPv6 LIP地址。
+     * @return Private IPv6 LIP address of the NLB instance.
      * 
      */
     private List<String> ipv6LocalAddresses;
     /**
-     * @return NLB实例所属的子网ID。
+     * @return Subnet ID to which the NLB instance belongs.
      * 
      */
     private String subnetId;
     /**
-     * @return NLB实例所属的可用区ID。
+     * @return Availability zone ID to which the NLB instance belongs.
      * 
      */
     private String zoneId;
 
     private GetNlbZoneMapping() {}
     /**
-     * @return 网卡ID。
+     * @return Network interface card ID.
      * 
      */
     public String eniId() {
         return this.eniId;
     }
     /**
-     * @return NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+     * @return Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
      * 
      */
     public String ipv4Address() {
         return this.ipv4Address;
     }
     /**
-     * @return NLB实例的公网IPv4 EIP地址。
+     * @return Public IPv4 EIP address of the NLB instance.
      * 
      */
     public String ipv4EipAddress() {
         return this.ipv4EipAddress;
     }
     /**
-     * @return NLB实例的公网IPv4 EIP ID。
+     * @return Public IPv4 EIP ID of the NLB instance.
      * 
      */
     public String ipv4EipId() {
         return this.ipv4EipId;
     }
     /**
-     * @return NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+     * @return Health status of the NLB instance&#39;s private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
      * 
      */
     public String ipv4HcStatus() {
         return this.ipv4HcStatus;
     }
     /**
-     * @return NLB实例的私网IPv4 LIP地址。
+     * @return Private IPv4 LIP address of the NLB instance.
      * 
      */
     public List<String> ipv4LocalAddresses() {
         return this.ipv4LocalAddresses;
     }
     /**
-     * @return NLB实例的私网IPv6 VIP地址。
+     * @return Private IPv6 VIP address of the NLB instance.
      * 
      */
     public String ipv6Address() {
         return this.ipv6Address;
     }
     /**
-     * @return NLB实例关联的IPv6公网带宽的ID。
+     * @return ID of the IPv6 public bandwidth associated with the NLB instance.
      * 
      */
     public String ipv6EipId() {
         return this.ipv6EipId;
     }
     /**
-     * @return NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+     * @return Health status of the NLB instance&#39;s private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
      * 
      */
     public String ipv6HcStatus() {
         return this.ipv6HcStatus;
     }
     /**
-     * @return NLB实例的私网IPv6 LIP地址。
+     * @return Private IPv6 LIP address of the NLB instance.
      * 
      */
     public List<String> ipv6LocalAddresses() {
         return this.ipv6LocalAddresses;
     }
     /**
-     * @return NLB实例所属的子网ID。
+     * @return Subnet ID to which the NLB instance belongs.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return NLB实例所属的可用区ID。
+     * @return Availability zone ID to which the NLB instance belongs.
      * 
      */
     public String zoneId() {

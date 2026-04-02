@@ -65,31 +65,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class GetIpv6AddressBandwidthResult
     {
         /// <summary>
-        /// IPv6公网带宽的ID。
+        /// IPv6 public bandwidth ID
         /// </summary>
         public readonly string AllocationId;
         /// <summary>
-        /// IPv6公网带宽的带宽上限。
+        /// IPv6 public bandwidth cap
         /// </summary>
         public readonly int Bandwidth;
         /// <summary>
-        /// IPv6共享带宽包的ID。
+        /// IPv6 shared bandwidth package ID
         /// </summary>
         public readonly string BandwidthPackageId;
         /// <summary>
-        /// IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+        /// IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
         /// </summary>
         public readonly int BillingType;
         /// <summary>
-        /// IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+        /// Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
         /// </summary>
         public readonly string BusinessStatus;
         /// <summary>
-        /// IPv6公网带宽的开通时间。
+        /// IPv6 public bandwidth activation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// IPv6公网带宽的删除时间。
+        /// IPv6 public bandwidth deletion time
         /// </summary>
         public readonly string DeletedTime;
         /// <summary>
@@ -97,55 +97,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// IPv6公网带宽关联的实例ID。
+        /// Instance ID associated with IPv6 public bandwidth
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+        /// Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
         /// </summary>
         public readonly string InstanceType;
         /// <summary>
-        /// IPv6地址。
+        /// IPv6 address
         /// </summary>
         public readonly string Ipv6Address;
         /// <summary>
-        /// IPv6网关的ID。
+        /// IPv6 gateway ID
         /// </summary>
         public readonly string Ipv6GatewayId;
         /// <summary>
-        /// IPv6公网带宽的线路类型。BGP：BGP（多线）。
+        /// IPv6 public bandwidth line type. BGP: BGP (multi-line).
         /// </summary>
         public readonly string Isp;
         /// <summary>
-        /// IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+        /// Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
         /// </summary>
         public readonly string LockReason;
         /// <summary>
-        /// IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+        /// IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
         /// </summary>
         public readonly string NetworkType;
         /// <summary>
-        /// IPv6公网带宽欠费关停的时间。
+        /// IPv6 public bandwidth deactivation time due to overdue payment
         /// </summary>
         public readonly string OverdueTime;
         /// <summary>
-        /// IPv6公网带宽的项目。
+        /// IPv6 public bandwidth project
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 是否为服务托管。
+        /// Service hosting status
         /// </summary>
         public readonly bool ServiceManaged;
         /// <summary>
-        /// IPv6公网带宽的状态。Creating：创建中。Available：可用。
+        /// IPv6 public bandwidth status. Creating: Creating. Available: Available.
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 标签信息
+        /// Tag information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIpv6AddressBandwidthTagResult> Tags;
         /// <summary>
-        /// IPv6公网带宽的最近操作时间。
+        /// IPv6 public bandwidth last operation time
         /// </summary>
         public readonly string UpdatedTime;
 

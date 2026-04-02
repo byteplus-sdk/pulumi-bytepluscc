@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Clb
 {
     /// <summary>
-    /// 后端服务器组是一组后端服务器。
+    /// A backend server group is a collection of backend servers.
     /// 
     /// ## Import
     /// 
@@ -23,25 +23,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     public partial class ServerGroup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+        /// IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
         /// </summary>
         [Output("addressIpVersion")]
         public Output<string> AddressIpVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+        /// Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
         /// </summary>
         [Output("anyPortEnabled")]
         public Output<string> AnyPortEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 后端服务器组的创建时间。
+        /// Creation time of the backend server group.
         /// </summary>
         [Output("createTime")]
         public Output<string> CreateTime { get; private set; } = null!;
 
         /// <summary>
-        /// 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+        /// Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -50,19 +50,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         public Output<ImmutableArray<Outputs.ServerGroupListener>> Listeners { get; private set; } = null!;
 
         /// <summary>
-        /// 后端服务器组所属的CLB实例ID。
+        /// CLB instance ID to which the backend server group belongs.
         /// </summary>
         [Output("loadBalancerId")]
         public Output<string> LoadBalancerId { get; private set; } = null!;
 
         /// <summary>
-        /// 后端服务器组的ID。
+        /// Backend server group ID.
         /// </summary>
         [Output("serverGroupId")]
         public Output<string> ServerGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+        /// Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
         /// </summary>
         [Output("serverGroupName")]
         public Output<string> ServerGroupName { get; private set; } = null!;
@@ -74,13 +74,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         public Output<ImmutableArray<Outputs.ServerGroupTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+        /// Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// 后端服务器组的最近操作时间。
+        /// Last operation time of the backend server group.
         /// </summary>
         [Output("updateTime")]
         public Output<string> UpdateTime { get; private set; } = null!;
@@ -133,31 +133,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     public sealed class ServerGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+        /// IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
         /// </summary>
         [Input("addressIpVersion")]
         public Input<string>? AddressIpVersion { get; set; }
 
         /// <summary>
-        /// 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+        /// Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
         /// </summary>
         [Input("anyPortEnabled")]
         public Input<string>? AnyPortEnabled { get; set; }
 
         /// <summary>
-        /// 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+        /// Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 后端服务器组所属的CLB实例ID。
+        /// CLB instance ID to which the backend server group belongs.
         /// </summary>
         [Input("loadBalancerId", required: true)]
         public Input<string> LoadBalancerId { get; set; } = null!;
 
         /// <summary>
-        /// 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+        /// Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
         /// </summary>
         [Input("serverGroupName")]
         public Input<string>? ServerGroupName { get; set; }
@@ -179,7 +179,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         }
 
         /// <summary>
-        /// 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+        /// Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
@@ -193,25 +193,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     public sealed class ServerGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+        /// IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
         /// </summary>
         [Input("addressIpVersion")]
         public Input<string>? AddressIpVersion { get; set; }
 
         /// <summary>
-        /// 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+        /// Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
         /// </summary>
         [Input("anyPortEnabled")]
         public Input<string>? AnyPortEnabled { get; set; }
 
         /// <summary>
-        /// 后端服务器组的创建时间。
+        /// Creation time of the backend server group.
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+        /// Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -225,19 +225,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         }
 
         /// <summary>
-        /// 后端服务器组所属的CLB实例ID。
+        /// CLB instance ID to which the backend server group belongs.
         /// </summary>
         [Input("loadBalancerId")]
         public Input<string>? LoadBalancerId { get; set; }
 
         /// <summary>
-        /// 后端服务器组的ID。
+        /// Backend server group ID.
         /// </summary>
         [Input("serverGroupId")]
         public Input<string>? ServerGroupId { get; set; }
 
         /// <summary>
-        /// 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+        /// Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
         /// </summary>
         [Input("serverGroupName")]
         public Input<string>? ServerGroupName { get; set; }
@@ -259,13 +259,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         }
 
         /// <summary>
-        /// 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+        /// Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// 后端服务器组的最近操作时间。
+        /// Last operation time of the backend server group.
         /// </summary>
         [Input("updateTime")]
         public Input<string>? UpdateTime { get; set; }

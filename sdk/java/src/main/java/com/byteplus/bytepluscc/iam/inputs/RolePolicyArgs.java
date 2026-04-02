@@ -16,14 +16,14 @@ public final class RolePolicyArgs extends com.pulumi.resources.ResourceArgs {
     public static final RolePolicyArgs Empty = new RolePolicyArgs();
 
     /**
-     * 策略名。
+     * Policy name
      * 
      */
     @Import(name="policyName")
     private @Nullable Output<String> policyName;
 
     /**
-     * @return 策略名。
+     * @return Policy name
      * 
      */
     public Optional<Output<String>> policyName() {
@@ -31,14 +31,14 @@ public final class RolePolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      * 
      */
     @Import(name="policyType")
     private @Nullable Output<String> policyType;
 
     /**
-     * @return 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      * 
      */
     public Optional<Output<String>> policyType() {
@@ -71,7 +71,7 @@ public final class RolePolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyName 策略名。
+         * @param policyName Policy name
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class RolePolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyName 策略名。
+         * @param policyName Policy name
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class RolePolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyType 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+         * @param policyType Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class RolePolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyType 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+         * @param policyType Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
          * 
          * @return builder
          * 

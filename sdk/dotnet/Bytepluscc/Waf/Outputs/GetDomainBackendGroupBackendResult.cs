@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Outputs
     public sealed class GetDomainBackendGroupBackendResult
     {
         /// <summary>
-        /// 源站 IP 地址。
+        /// Origin IP address
         /// </summary>
         public readonly string Ip;
         /// <summary>
-        /// 源站端口。
+        /// Origin port
         /// </summary>
         public readonly int Port;
         /// <summary>
-        /// 源站协议。
+        /// Origin protocol.
         /// </summary>
         public readonly string Protocol;
         /// <summary>
-        /// 源站权重。
+        /// Origin weight
         /// </summary>
         public readonly int Weight;
 

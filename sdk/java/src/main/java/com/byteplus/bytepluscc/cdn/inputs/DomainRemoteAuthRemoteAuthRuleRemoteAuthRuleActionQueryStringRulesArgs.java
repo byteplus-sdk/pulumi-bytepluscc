@@ -18,14 +18,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
     public static final DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesArgs Empty = new DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesArgs();
 
     /**
-     * 表示鉴权请求参数的设置策略。
+     * Indicates the strategy for setting authentication request parameters.
      * 
      */
     @Import(name="queryStringComponents")
     private @Nullable Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgs> queryStringComponents;
 
     /**
-     * @return 表示鉴权请求参数的设置策略。
+     * @return Indicates the strategy for setting authentication request parameters.
      * 
      */
     public Optional<Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgs>> queryStringComponents() {
@@ -65,7 +65,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
         }
 
         /**
-         * @param queryStringComponents 表示鉴权请求参数的设置策略。
+         * @param queryStringComponents Indicates the strategy for setting authentication request parameters.
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
         }
 
         /**
-         * @param queryStringComponents 表示鉴权请求参数的设置策略。
+         * @param queryStringComponents Indicates the strategy for setting authentication request parameters.
          * 
          * @return builder
          * 

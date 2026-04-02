@@ -12,74 +12,74 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamCircuitBreakingSettings {
     /**
-     * @return 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+     * @return Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
      * 
      */
     private Integer baseEjectionTime;
     /**
-     * @return 连续失败次数。取值限制为1~100。默认值为5。
+     * @return Consecutive failure count. Value range: 1~100. Default: 5
      * 
      */
     private Integer consecutiveErrors;
     /**
-     * @return 开启。
+     * @return Enable
      * 
      */
     private Boolean enable;
     /**
-     * @return 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+     * @return Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
      * 
      */
     private Integer interval;
     /**
-     * @return 最大熔断比例。取值限制为1~100。默认值为20%。
+     * @return Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
      * 
      */
     private Integer maxEjectionPercent;
     /**
-     * @return 最小健康比例。取值限制为0~100。默认值为60%。
+     * @return Minimum health ratio. Value range: 0~100. Default: 60%
      * 
      */
     private Integer minHealthPercent;
 
     private GetUpstreamCircuitBreakingSettings() {}
     /**
-     * @return 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+     * @return Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
      * 
      */
     public Integer baseEjectionTime() {
         return this.baseEjectionTime;
     }
     /**
-     * @return 连续失败次数。取值限制为1~100。默认值为5。
+     * @return Consecutive failure count. Value range: 1~100. Default: 5
      * 
      */
     public Integer consecutiveErrors() {
         return this.consecutiveErrors;
     }
     /**
-     * @return 开启。
+     * @return Enable
      * 
      */
     public Boolean enable() {
         return this.enable;
     }
     /**
-     * @return 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+     * @return Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
      * 
      */
     public Integer interval() {
         return this.interval;
     }
     /**
-     * @return 最大熔断比例。取值限制为1~100。默认值为20%。
+     * @return Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
      * 
      */
     public Integer maxEjectionPercent() {
         return this.maxEjectionPercent;
     }
     /**
-     * @return 最小健康比例。取值限制为0~100。默认值为60%。
+     * @return Minimum health ratio. Value range: 0~100. Default: 60%
      * 
      */
     public Integer minHealthPercent() {

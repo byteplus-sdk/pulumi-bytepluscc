@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ImageSnapshot {
     /**
-     * @return 快照大小。单位为GiB。
+     * @return Snapshot size (GiB)
      * 
      */
     private @Nullable Integer size;
     /**
-     * @return 快照ID。
+     * @return Snapshot ID
      * 
      */
     private @Nullable String snapshotId;
     /**
-     * @return 云盘种类。system：系统盘。data：数据盘。
+     * @return Cloud disk type. system: System disk. data: Data disk.
      * 
      */
     private @Nullable String volumeKind;
 
     private ImageSnapshot() {}
     /**
-     * @return 快照大小。单位为GiB。
+     * @return Snapshot size (GiB)
      * 
      */
     public Optional<Integer> size() {
         return Optional.ofNullable(this.size);
     }
     /**
-     * @return 快照ID。
+     * @return Snapshot ID
      * 
      */
     public Optional<String> snapshotId() {
         return Optional.ofNullable(this.snapshotId);
     }
     /**
-     * @return 云盘种类。system：系统盘。data：数据盘。
+     * @return Cloud disk type. system: System disk. data: Data disk.
      * 
      */
     public Optional<String> volumeKind() {

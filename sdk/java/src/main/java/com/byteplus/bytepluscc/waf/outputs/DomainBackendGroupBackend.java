@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainBackendGroupBackend {
     /**
-     * @return 源站 IP 地址。
+     * @return Origin IP address
      * 
      */
     private @Nullable String ip;
     /**
-     * @return 源站端口。
+     * @return Origin port
      * 
      */
     private @Nullable Integer port;
     /**
-     * @return 源站协议。
+     * @return Origin protocol.
      * 
      */
     private @Nullable String protocol;
     /**
-     * @return 源站权重。
+     * @return Origin weight
      * 
      */
     private @Nullable Integer weight;
 
     private DomainBackendGroupBackend() {}
     /**
-     * @return 源站 IP 地址。
+     * @return Origin IP address
      * 
      */
     public Optional<String> ip() {
         return Optional.ofNullable(this.ip);
     }
     /**
-     * @return 源站端口。
+     * @return Origin port
      * 
      */
     public Optional<Integer> port() {
         return Optional.ofNullable(this.port);
     }
     /**
-     * @return 源站协议。
+     * @return Origin protocol.
      * 
      */
     public Optional<String> protocol() {
         return Optional.ofNullable(this.protocol);
     }
     /**
-     * @return 源站权重。
+     * @return Origin weight
      * 
      */
     public Optional<Integer> weight() {

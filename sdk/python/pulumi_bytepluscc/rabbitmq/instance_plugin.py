@@ -24,8 +24,8 @@ class InstancePluginArgs:
                  plugin_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a InstancePlugin resource.
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] plugin_name: 插件名称。
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] plugin_name: Plugin name
         """
         pulumi.set(__self__, "instance_id", instance_id)
         if plugin_name is not None:
@@ -35,7 +35,7 @@ class InstancePluginArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例 ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -47,7 +47,7 @@ class InstancePluginArgs:
     @pulumi.getter(name="pluginName")
     def plugin_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        插件名称。
+        Plugin name
         """
         return pulumi.get(self, "plugin_name")
 
@@ -70,15 +70,15 @@ class _InstancePluginState:
                  version: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering InstancePlugin resources.
-        :param pulumi.Input[builtins.str] description: 插件描述。
-        :param pulumi.Input[builtins.str] disable_prompt: 关闭此插件的注意事项说明。
-        :param pulumi.Input[builtins.str] enable_prompt: 开启此插件的注意事项说明。
-        :param pulumi.Input[builtins.bool] enabled: 是否已开启插件。true：插件已开启。false：插件已关闭。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.bool] need_reboot_on_change: 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
-        :param pulumi.Input[builtins.str] plugin_name: 插件名称。
-        :param pulumi.Input[builtins.int] port: 插件监听的端口。
-        :param pulumi.Input[builtins.str] version: 插件版本。
+        :param pulumi.Input[builtins.str] description: Plugin description
+        :param pulumi.Input[builtins.str] disable_prompt: Notes for disabling this plugin
+        :param pulumi.Input[builtins.str] enable_prompt: Notes for enabling this plugin
+        :param pulumi.Input[builtins.bool] enabled: Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.bool] need_reboot_on_change: Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
+        :param pulumi.Input[builtins.str] plugin_name: Plugin name
+        :param pulumi.Input[builtins.int] port: Plugin listening port
+        :param pulumi.Input[builtins.str] version: Plugin version
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -103,7 +103,7 @@ class _InstancePluginState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        插件描述。
+        Plugin description
         """
         return pulumi.get(self, "description")
 
@@ -115,7 +115,7 @@ class _InstancePluginState:
     @pulumi.getter(name="disablePrompt")
     def disable_prompt(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        关闭此插件的注意事项说明。
+        Notes for disabling this plugin
         """
         return pulumi.get(self, "disable_prompt")
 
@@ -127,7 +127,7 @@ class _InstancePluginState:
     @pulumi.getter(name="enablePrompt")
     def enable_prompt(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        开启此插件的注意事项说明。
+        Notes for enabling this plugin
         """
         return pulumi.get(self, "enable_prompt")
 
@@ -139,7 +139,7 @@ class _InstancePluginState:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否已开启插件。true：插件已开启。false：插件已关闭。
+        Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
         """
         return pulumi.get(self, "enabled")
 
@@ -151,7 +151,7 @@ class _InstancePluginState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -163,7 +163,7 @@ class _InstancePluginState:
     @pulumi.getter(name="needRebootOnChange")
     def need_reboot_on_change(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+        Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
         """
         return pulumi.get(self, "need_reboot_on_change")
 
@@ -175,7 +175,7 @@ class _InstancePluginState:
     @pulumi.getter(name="pluginName")
     def plugin_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        插件名称。
+        Plugin name
         """
         return pulumi.get(self, "plugin_name")
 
@@ -187,7 +187,7 @@ class _InstancePluginState:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        插件监听的端口。
+        Plugin listening port
         """
         return pulumi.get(self, "port")
 
@@ -199,7 +199,7 @@ class _InstancePluginState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        插件版本。
+        Plugin version
         """
         return pulumi.get(self, "version")
 
@@ -218,7 +218,7 @@ class InstancePlugin(pulumi.CustomResource):
                  plugin_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        在消息队列 RabbitMQ版控制台中创建实例之后，实例插件默认为关闭状态，您可以手动为实例开启/关闭插件。开启/关闭部分插件会导致集群滚动重启，建议避开业务运行时段执行该操作。集群滚动重启时会造成未持久化的消息丢失，也会出现短暂的连接不稳定现象，例如连接断开，断开后会根据客户端配置决定是否自动重连。
+        After you create an instance in the RabbitMQ console, plugins are disabled by default. You can manually enable or disable plugins for the instance. Enabling or disabling certain plugins will cause a rolling restart of the cluster. It is recommended to perform this operation outside of business hours. A rolling restart may result in the loss of non-persistent messages and temporary connection instability, such as connection drops. After a connection drop, whether the client automatically reconnects depends on its configuration
 
         ## Example Usage
 
@@ -239,8 +239,8 @@ class InstancePlugin(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] plugin_name: 插件名称。
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] plugin_name: Plugin name
         """
         ...
     @overload
@@ -249,7 +249,7 @@ class InstancePlugin(pulumi.CustomResource):
                  args: InstancePluginArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        在消息队列 RabbitMQ版控制台中创建实例之后，实例插件默认为关闭状态，您可以手动为实例开启/关闭插件。开启/关闭部分插件会导致集群滚动重启，建议避开业务运行时段执行该操作。集群滚动重启时会造成未持久化的消息丢失，也会出现短暂的连接不稳定现象，例如连接断开，断开后会根据客户端配置决定是否自动重连。
+        After you create an instance in the RabbitMQ console, plugins are disabled by default. You can manually enable or disable plugins for the instance. Enabling or disabling certain plugins will cause a rolling restart of the cluster. It is recommended to perform this operation outside of business hours. A rolling restart may result in the loss of non-persistent messages and temporary connection instability, such as connection drops. After a connection drop, whether the client automatically reconnects depends on its configuration
 
         ## Example Usage
 
@@ -331,15 +331,15 @@ class InstancePlugin(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 插件描述。
-        :param pulumi.Input[builtins.str] disable_prompt: 关闭此插件的注意事项说明。
-        :param pulumi.Input[builtins.str] enable_prompt: 开启此插件的注意事项说明。
-        :param pulumi.Input[builtins.bool] enabled: 是否已开启插件。true：插件已开启。false：插件已关闭。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.bool] need_reboot_on_change: 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
-        :param pulumi.Input[builtins.str] plugin_name: 插件名称。
-        :param pulumi.Input[builtins.int] port: 插件监听的端口。
-        :param pulumi.Input[builtins.str] version: 插件版本。
+        :param pulumi.Input[builtins.str] description: Plugin description
+        :param pulumi.Input[builtins.str] disable_prompt: Notes for disabling this plugin
+        :param pulumi.Input[builtins.str] enable_prompt: Notes for enabling this plugin
+        :param pulumi.Input[builtins.bool] enabled: Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.bool] need_reboot_on_change: Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
+        :param pulumi.Input[builtins.str] plugin_name: Plugin name
+        :param pulumi.Input[builtins.int] port: Plugin listening port
+        :param pulumi.Input[builtins.str] version: Plugin version
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -360,7 +360,7 @@ class InstancePlugin(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        插件描述。
+        Plugin description
         """
         return pulumi.get(self, "description")
 
@@ -368,7 +368,7 @@ class InstancePlugin(pulumi.CustomResource):
     @pulumi.getter(name="disablePrompt")
     def disable_prompt(self) -> pulumi.Output[builtins.str]:
         """
-        关闭此插件的注意事项说明。
+        Notes for disabling this plugin
         """
         return pulumi.get(self, "disable_prompt")
 
@@ -376,7 +376,7 @@ class InstancePlugin(pulumi.CustomResource):
     @pulumi.getter(name="enablePrompt")
     def enable_prompt(self) -> pulumi.Output[builtins.str]:
         """
-        开启此插件的注意事项说明。
+        Notes for enabling this plugin
         """
         return pulumi.get(self, "enable_prompt")
 
@@ -384,7 +384,7 @@ class InstancePlugin(pulumi.CustomResource):
     @pulumi.getter
     def enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否已开启插件。true：插件已开启。false：插件已关闭。
+        Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
         """
         return pulumi.get(self, "enabled")
 
@@ -392,7 +392,7 @@ class InstancePlugin(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例 ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -400,7 +400,7 @@ class InstancePlugin(pulumi.CustomResource):
     @pulumi.getter(name="needRebootOnChange")
     def need_reboot_on_change(self) -> pulumi.Output[builtins.bool]:
         """
-        开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+        Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
         """
         return pulumi.get(self, "need_reboot_on_change")
 
@@ -408,7 +408,7 @@ class InstancePlugin(pulumi.CustomResource):
     @pulumi.getter(name="pluginName")
     def plugin_name(self) -> pulumi.Output[builtins.str]:
         """
-        插件名称。
+        Plugin name
         """
         return pulumi.get(self, "plugin_name")
 
@@ -416,7 +416,7 @@ class InstancePlugin(pulumi.CustomResource):
     @pulumi.getter
     def port(self) -> pulumi.Output[builtins.int]:
         """
-        插件监听的端口。
+        Plugin listening port
         """
         return pulumi.get(self, "port")
 
@@ -424,7 +424,7 @@ class InstancePlugin(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[builtins.str]:
         """
-        插件版本。
+        Plugin version
         """
         return pulumi.get(self, "version")
 

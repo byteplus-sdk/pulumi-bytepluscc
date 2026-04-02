@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs.Inputs
     public sealed class InstanceCapacityInfoGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
+        /// Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
         /// </summary>
         [Input("totalTiB")]
         public Input<int>? TotalTiB { get; set; }
 
         /// <summary>
-        /// 已使用容量（GiB）。
+        /// Used capacity (GiB).
         /// </summary>
         [Input("usedGiB")]
         public Input<int>? UsedGiB { get; set; }

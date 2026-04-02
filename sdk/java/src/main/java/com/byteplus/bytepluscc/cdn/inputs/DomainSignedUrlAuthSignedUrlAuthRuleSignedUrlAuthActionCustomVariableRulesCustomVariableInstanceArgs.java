@@ -16,14 +16,14 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustom
     public static final DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceArgs Empty = new DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceArgs();
 
     /**
-     * 表示变量的匹配方式。该参数的取值只能是 match。
+     * Indicates the matching method for the variable. The value of this parameter can only be match.
      * 
      */
     @Import(name="operator")
     private @Nullable Output<String> operator;
 
     /**
-     * @return 表示变量的匹配方式。该参数的取值只能是 match。
+     * @return Indicates the matching method for the variable. The value of this parameter can only be match.
      * 
      */
     public Optional<Output<String>> operator() {
@@ -31,14 +31,14 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustom
     }
 
     /**
-     * 表示变量的类型。该参数有以下取值：queryString：表示该变量是请求中的一个查询参数。requestHeader：表示该变量是请求中的一个头部字段。
+     * Indicates the variable type. This parameter has the following values: queryString: indicates the variable is a query parameter in the request. requestHeader: indicates the variable is a header field in the request.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 表示变量的类型。该参数有以下取值：queryString：表示该变量是请求中的一个查询参数。requestHeader：表示该变量是请求中的一个头部字段。
+     * @return Indicates the variable type. This parameter has the following values: queryString: indicates the variable is a query parameter in the request. requestHeader: indicates the variable is a header field in the request.
      * 
      */
     public Optional<Output<String>> type() {
@@ -46,14 +46,14 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustom
     }
 
     /**
-     * 表示变量的名称，长度不超过 100 个字符。变量名称的要求如下：如果 Type 是 queryString，变量名称可以包含字母、数字、连字符（-）、逗号（,）、句号（.）、感叹号（!）。如果 Type 是 requestHeader，变量名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（&#34;）、冒号（:）、Delete（ASCII code 127）
+     * Specifies the variable name, with a maximum length of 100 characters. Variable name requirements are as follows: If Type is queryString, the variable name can include letters, numbers, hyphens (-), commas (,), periods (.), and exclamation marks (!). If Type is requestHeader, the variable name can include any printable ASCII character except: underscore (_), space, double quotes (&#34;), colon (:), and Delete (ASCII code 127).
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 表示变量的名称，长度不超过 100 个字符。变量名称的要求如下：如果 Type 是 queryString，变量名称可以包含字母、数字、连字符（-）、逗号（,）、句号（.）、感叹号（!）。如果 Type 是 requestHeader，变量名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（&#34;）、冒号（:）、Delete（ASCII code 127）
+     * @return Specifies the variable name, with a maximum length of 100 characters. Variable name requirements are as follows: If Type is queryString, the variable name can include letters, numbers, hyphens (-), commas (,), periods (.), and exclamation marks (!). If Type is requestHeader, the variable name can include any printable ASCII character except: underscore (_), space, double quotes (&#34;), colon (:), and Delete (ASCII code 127).
      * 
      */
     public Optional<Output<String>> value() {
@@ -87,7 +87,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustom
         }
 
         /**
-         * @param operator 表示变量的匹配方式。该参数的取值只能是 match。
+         * @param operator Indicates the matching method for the variable. The value of this parameter can only be match.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustom
         }
 
         /**
-         * @param operator 表示变量的匹配方式。该参数的取值只能是 match。
+         * @param operator Indicates the matching method for the variable. The value of this parameter can only be match.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustom
         }
 
         /**
-         * @param type 表示变量的类型。该参数有以下取值：queryString：表示该变量是请求中的一个查询参数。requestHeader：表示该变量是请求中的一个头部字段。
+         * @param type Indicates the variable type. This parameter has the following values: queryString: indicates the variable is a query parameter in the request. requestHeader: indicates the variable is a header field in the request.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustom
         }
 
         /**
-         * @param type 表示变量的类型。该参数有以下取值：queryString：表示该变量是请求中的一个查询参数。requestHeader：表示该变量是请求中的一个头部字段。
+         * @param type Indicates the variable type. This parameter has the following values: queryString: indicates the variable is a query parameter in the request. requestHeader: indicates the variable is a header field in the request.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustom
         }
 
         /**
-         * @param value 表示变量的名称，长度不超过 100 个字符。变量名称的要求如下：如果 Type 是 queryString，变量名称可以包含字母、数字、连字符（-）、逗号（,）、句号（.）、感叹号（!）。如果 Type 是 requestHeader，变量名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（&#34;）、冒号（:）、Delete（ASCII code 127）
+         * @param value Specifies the variable name, with a maximum length of 100 characters. Variable name requirements are as follows: If Type is queryString, the variable name can include letters, numbers, hyphens (-), commas (,), periods (.), and exclamation marks (!). If Type is requestHeader, the variable name can include any printable ASCII character except: underscore (_), space, double quotes (&#34;), colon (:), and Delete (ASCII code 127).
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustom
         }
 
         /**
-         * @param value 表示变量的名称，长度不超过 100 个字符。变量名称的要求如下：如果 Type 是 queryString，变量名称可以包含字母、数字、连字符（-）、逗号（,）、句号（.）、感叹号（!）。如果 Type 是 requestHeader，变量名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（&#34;）、冒号（:）、Delete（ASCII code 127）
+         * @param value Specifies the variable name, with a maximum length of 100 characters. Variable name requirements are as follows: If Type is queryString, the variable name can include letters, numbers, hyphens (-), commas (,), periods (.), and exclamation marks (!). If Type is requestHeader, the variable name can include any printable ASCII character except: underscore (_), space, double quotes (&#34;), colon (:), and Delete (ASCII code 127).
          * 
          * @return builder
          * 

@@ -28,10 +28,10 @@ class GroupArgs:
                  reset_info: Optional[pulumi.Input['GroupResetInfoArgs']] = None):
         """
         The set of arguments for constructing a Group resource.
-        :param pulumi.Input[builtins.str] description: Consumer Group 描述。
-        :param pulumi.Input[builtins.str] group_name: 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
-        :param pulumi.Input[builtins.str] instance_id: 所属 BMQ 实例 ID。
-        :param pulumi.Input['GroupResetInfoArgs'] reset_info: 重置消费位点信息。
+        :param pulumi.Input[builtins.str] description: Consumer Group description.
+        :param pulumi.Input[builtins.str] group_name: Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+        :param pulumi.Input[builtins.str] instance_id: BMQ instance ID.
+        :param pulumi.Input['GroupResetInfoArgs'] reset_info: Reset consumption position information.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -46,7 +46,7 @@ class GroupArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Consumer Group 描述。
+        Consumer Group description.
         """
         return pulumi.get(self, "description")
 
@@ -58,7 +58,7 @@ class GroupArgs:
     @pulumi.getter(name="groupName")
     def group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+        Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
         """
         return pulumi.get(self, "group_name")
 
@@ -70,7 +70,7 @@ class GroupArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        所属 BMQ 实例 ID。
+        BMQ instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -82,7 +82,7 @@ class GroupArgs:
     @pulumi.getter(name="resetInfo")
     def reset_info(self) -> Optional[pulumi.Input['GroupResetInfoArgs']]:
         """
-        重置消费位点信息。
+        Reset consumption position information.
         """
         return pulumi.get(self, "reset_info")
 
@@ -106,15 +106,15 @@ class _GroupState:
                  topic_infos: Optional[pulumi.Input[Sequence[pulumi.Input['GroupTopicInfoArgs']]]] = None):
         """
         Input properties used for looking up and filtering Group resources.
-        :param pulumi.Input[builtins.str] created_time: Consumer Group 创建时间。
-        :param pulumi.Input[builtins.str] description: Consumer Group 描述。
-        :param pulumi.Input[builtins.str] group_id: Consumer Group 的 ID。
-        :param pulumi.Input[builtins.str] group_name: 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
-        :param pulumi.Input[builtins.str] instance_id: 所属 BMQ 实例 ID。
-        :param pulumi.Input[builtins.str] owner_id: Consumer Group 所属用户的 ID。
-        :param pulumi.Input[builtins.str] owner_name: Consumer Group 所属用户的名称。
-        :param pulumi.Input['GroupResetInfoArgs'] reset_info: 重置消费位点信息。
-        :param pulumi.Input[builtins.str] status: Consumer Group 的状态。
+        :param pulumi.Input[builtins.str] created_time: Consumer Group creation time.
+        :param pulumi.Input[builtins.str] description: Consumer Group description.
+        :param pulumi.Input[builtins.str] group_id: Consumer Group ID.
+        :param pulumi.Input[builtins.str] group_name: Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+        :param pulumi.Input[builtins.str] instance_id: BMQ instance ID.
+        :param pulumi.Input[builtins.str] owner_id: User ID associated with the Consumer Group.
+        :param pulumi.Input[builtins.str] owner_name: Name of the user associated with the Consumer Group.
+        :param pulumi.Input['GroupResetInfoArgs'] reset_info: Reset consumption position information.
+        :param pulumi.Input[builtins.str] status: Consumer Group status.
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -141,7 +141,7 @@ class _GroupState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Consumer Group 创建时间。
+        Consumer Group creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -153,7 +153,7 @@ class _GroupState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Consumer Group 描述。
+        Consumer Group description.
         """
         return pulumi.get(self, "description")
 
@@ -165,7 +165,7 @@ class _GroupState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Consumer Group 的 ID。
+        Consumer Group ID.
         """
         return pulumi.get(self, "group_id")
 
@@ -177,7 +177,7 @@ class _GroupState:
     @pulumi.getter(name="groupName")
     def group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+        Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
         """
         return pulumi.get(self, "group_name")
 
@@ -189,7 +189,7 @@ class _GroupState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        所属 BMQ 实例 ID。
+        BMQ instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -201,7 +201,7 @@ class _GroupState:
     @pulumi.getter(name="ownerId")
     def owner_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Consumer Group 所属用户的 ID。
+        User ID associated with the Consumer Group.
         """
         return pulumi.get(self, "owner_id")
 
@@ -213,7 +213,7 @@ class _GroupState:
     @pulumi.getter(name="ownerName")
     def owner_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Consumer Group 所属用户的名称。
+        Name of the user associated with the Consumer Group.
         """
         return pulumi.get(self, "owner_name")
 
@@ -225,7 +225,7 @@ class _GroupState:
     @pulumi.getter(name="resetInfo")
     def reset_info(self) -> Optional[pulumi.Input['GroupResetInfoArgs']]:
         """
-        重置消费位点信息。
+        Reset consumption position information.
         """
         return pulumi.get(self, "reset_info")
 
@@ -237,7 +237,7 @@ class _GroupState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Consumer Group 的状态。
+        Consumer Group status.
         """
         return pulumi.get(self, "status")
 
@@ -267,7 +267,26 @@ class Group(pulumi.CustomResource):
                  reset_info: Optional[pulumi.Input[Union['GroupResetInfoArgs', 'GroupResetInfoArgsDict']]] = None,
                  __props__=None):
         """
-        一组具有相同 Group ID 的消费端。当一个 Topic 被同一个 Group 的多个 Consumer 消费时，每一条消息都只会被投递到一个 Consumer，实现消费的负载均衡。通过 Group，您可以确保一个 Topic 的消息被并行消费。
+        A group of consumers with the same Group ID. When a Topic is consumed by multiple Consumers in the same Group, each message is delivered to only one Consumer, enabling load balancing. Using Groups ensures that messages in a Topic are consumed in parallel.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_byteplus as byteplus
+
+        b_mq_group_demo = byteplus.index.BmqGroup("BMQGroupDemo",
+            description=this is test group,
+            group_name=cBMQGroupDemo,
+            instance_id=bmq-4ld4vpjzd32tq1gxxxxx,
+            reset_info={
+                topicId: 5f81fcab96cb46c7955659fdxxxxx,
+                resetBy: OFFSET,
+                offsetType: LATEST,
+                resetValue: 4,
+                partitionId: 1,
+            })
+        ```
 
         ## Import
 
@@ -277,10 +296,10 @@ class Group(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: Consumer Group 描述。
-        :param pulumi.Input[builtins.str] group_name: 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
-        :param pulumi.Input[builtins.str] instance_id: 所属 BMQ 实例 ID。
-        :param pulumi.Input[Union['GroupResetInfoArgs', 'GroupResetInfoArgsDict']] reset_info: 重置消费位点信息。
+        :param pulumi.Input[builtins.str] description: Consumer Group description.
+        :param pulumi.Input[builtins.str] group_name: Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+        :param pulumi.Input[builtins.str] instance_id: BMQ instance ID.
+        :param pulumi.Input[Union['GroupResetInfoArgs', 'GroupResetInfoArgsDict']] reset_info: Reset consumption position information.
         """
         ...
     @overload
@@ -289,7 +308,26 @@ class Group(pulumi.CustomResource):
                  args: Optional[GroupArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        一组具有相同 Group ID 的消费端。当一个 Topic 被同一个 Group 的多个 Consumer 消费时，每一条消息都只会被投递到一个 Consumer，实现消费的负载均衡。通过 Group，您可以确保一个 Topic 的消息被并行消费。
+        A group of consumers with the same Group ID. When a Topic is consumed by multiple Consumers in the same Group, each message is delivered to only one Consumer, enabling load balancing. Using Groups ensures that messages in a Topic are consumed in parallel.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_byteplus as byteplus
+
+        b_mq_group_demo = byteplus.index.BmqGroup("BMQGroupDemo",
+            description=this is test group,
+            group_name=cBMQGroupDemo,
+            instance_id=bmq-4ld4vpjzd32tq1gxxxxx,
+            reset_info={
+                topicId: 5f81fcab96cb46c7955659fdxxxxx,
+                resetBy: OFFSET,
+                offsetType: LATEST,
+                resetValue: 4,
+                partitionId: 1,
+            })
+        ```
 
         ## Import
 
@@ -362,15 +400,15 @@ class Group(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: Consumer Group 创建时间。
-        :param pulumi.Input[builtins.str] description: Consumer Group 描述。
-        :param pulumi.Input[builtins.str] group_id: Consumer Group 的 ID。
-        :param pulumi.Input[builtins.str] group_name: 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
-        :param pulumi.Input[builtins.str] instance_id: 所属 BMQ 实例 ID。
-        :param pulumi.Input[builtins.str] owner_id: Consumer Group 所属用户的 ID。
-        :param pulumi.Input[builtins.str] owner_name: Consumer Group 所属用户的名称。
-        :param pulumi.Input[Union['GroupResetInfoArgs', 'GroupResetInfoArgsDict']] reset_info: 重置消费位点信息。
-        :param pulumi.Input[builtins.str] status: Consumer Group 的状态。
+        :param pulumi.Input[builtins.str] created_time: Consumer Group creation time.
+        :param pulumi.Input[builtins.str] description: Consumer Group description.
+        :param pulumi.Input[builtins.str] group_id: Consumer Group ID.
+        :param pulumi.Input[builtins.str] group_name: Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+        :param pulumi.Input[builtins.str] instance_id: BMQ instance ID.
+        :param pulumi.Input[builtins.str] owner_id: User ID associated with the Consumer Group.
+        :param pulumi.Input[builtins.str] owner_name: Name of the user associated with the Consumer Group.
+        :param pulumi.Input[Union['GroupResetInfoArgs', 'GroupResetInfoArgsDict']] reset_info: Reset consumption position information.
+        :param pulumi.Input[builtins.str] status: Consumer Group status.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -392,7 +430,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        Consumer Group 创建时间。
+        Consumer Group creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -400,7 +438,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        Consumer Group 描述。
+        Consumer Group description.
         """
         return pulumi.get(self, "description")
 
@@ -408,7 +446,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[builtins.str]:
         """
-        Consumer Group 的 ID。
+        Consumer Group ID.
         """
         return pulumi.get(self, "group_id")
 
@@ -416,7 +454,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="groupName")
     def group_name(self) -> pulumi.Output[builtins.str]:
         """
-        自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+        Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
         """
         return pulumi.get(self, "group_name")
 
@@ -424,7 +462,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        所属 BMQ 实例 ID。
+        BMQ instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -432,7 +470,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="ownerId")
     def owner_id(self) -> pulumi.Output[builtins.str]:
         """
-        Consumer Group 所属用户的 ID。
+        User ID associated with the Consumer Group.
         """
         return pulumi.get(self, "owner_id")
 
@@ -440,7 +478,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="ownerName")
     def owner_name(self) -> pulumi.Output[builtins.str]:
         """
-        Consumer Group 所属用户的名称。
+        Name of the user associated with the Consumer Group.
         """
         return pulumi.get(self, "owner_name")
 
@@ -448,7 +486,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="resetInfo")
     def reset_info(self) -> pulumi.Output['outputs.GroupResetInfo']:
         """
-        重置消费位点信息。
+        Reset consumption position information.
         """
         return pulumi.get(self, "reset_info")
 
@@ -456,7 +494,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        Consumer Group 的状态。
+        Consumer Group status.
         """
         return pulumi.get(self, "status")
 

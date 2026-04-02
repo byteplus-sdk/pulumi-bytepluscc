@@ -14,50 +14,50 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayTraceSpec {
     /**
-     * @return 应用性能监控全链路版链路追踪配置。
+     * @return Application performance monitoring full-link trace configuration
      * 
      */
     private GetGatewayTraceSpecApmTraceSpec apmTraceSpec;
     /**
-     * @return 是否启用链路追踪。
+     * @return Whether to enable trace
      * 
      */
     private Boolean enable;
     /**
-     * @return 链路追踪配置信息。
+     * @return Link tracing configuration information.
      * 
      */
     private GetGatewayTraceSpecTlsTraceSpec tlsTraceSpec;
     /**
-     * @return 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+     * @return Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
      * 
      */
     private String traceType;
 
     private GetGatewayTraceSpec() {}
     /**
-     * @return 应用性能监控全链路版链路追踪配置。
+     * @return Application performance monitoring full-link trace configuration
      * 
      */
     public GetGatewayTraceSpecApmTraceSpec apmTraceSpec() {
         return this.apmTraceSpec;
     }
     /**
-     * @return 是否启用链路追踪。
+     * @return Whether to enable trace
      * 
      */
     public Boolean enable() {
         return this.enable;
     }
     /**
-     * @return 链路追踪配置信息。
+     * @return Link tracing configuration information.
      * 
      */
     public GetGatewayTraceSpecTlsTraceSpec tlsTraceSpec() {
         return this.tlsTraceSpec;
     }
     /**
-     * @return 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+     * @return Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
      * 
      */
     public String traceType() {

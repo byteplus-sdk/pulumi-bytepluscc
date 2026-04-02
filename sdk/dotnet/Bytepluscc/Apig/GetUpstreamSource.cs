@@ -65,15 +65,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public sealed class GetUpstreamSourceResult
     {
         /// <summary>
-        /// 备注，长度限制为0~253个字符。
+        /// Remarks, length limit: 0–253 characters
         /// </summary>
         public readonly string Comments;
         /// <summary>
-        /// 创建时间。
+        /// Creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 网关实例ID。
+        /// Gateway instance ID
         /// </summary>
         public readonly string GatewayId;
         /// <summary>
@@ -81,35 +81,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+        /// Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
         /// </summary>
         public readonly Outputs.GetUpstreamSourceIngressSettingsResult IngressSettings;
         /// <summary>
-        /// Upstream来源配置。
+        /// Upstream source configuration
         /// </summary>
         public readonly Outputs.GetUpstreamSourceSourceSpecResult SourceSpec;
         /// <summary>
-        /// Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+        /// Upstream source type. Options: K8S: Container cluster. Nacos: Registry
         /// </summary>
         public readonly string SourceType;
         /// <summary>
-        /// 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+        /// Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+        /// Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
         /// </summary>
         public readonly string StatusMessage;
         /// <summary>
-        /// 更新时间。
+        /// Update time
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// Upstream来源ID。
+        /// Upstream source ID
         /// </summary>
         public readonly string UpstreamSourceId;
         /// <summary>
-        /// 指定命名空间。
+        /// Specify namespace
         /// </summary>
         public readonly ImmutableArray<string> WatchNamespaces;
 

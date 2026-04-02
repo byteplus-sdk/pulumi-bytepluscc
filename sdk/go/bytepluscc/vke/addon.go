@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 集群中支持安装多种类型的组件，包括 网络、存储、监控、DNS、安全、镜像、GPU 等，满足您多种业务场景需求。您可按需部署、升级或卸载组件。
+// The cluster supports installation of various types of components, including network, storage, monitoring, DNS, security, image, GPU, and more, to meet your diverse business needs. You can deploy, upgrade, or uninstall components as needed.
 //
 // ## Example Usage
 //
@@ -52,23 +52,23 @@ import (
 type Addon struct {
 	pulumi.CustomResourceState
 
-	// 组件所在集群 ID。
+	// Cluster ID where the component is located.
 	ClusterId pulumi.StringOutput `pulumi:"clusterId"`
-	// 组件配置。
+	// Component configuration.
 	Config pulumi.StringOutput `pulumi:"config"`
-	// 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Component installation time. Standard RFC3339 format, UTC+0 time.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+	// Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
 	DeployMode pulumi.StringOutput `pulumi:"deployMode"`
-	// 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+	// Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
 	DeployNodeType pulumi.StringOutput `pulumi:"deployNodeType"`
-	// 组件名称。
+	// Component name.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 组件状态。
+	// Component status.
 	Status AddonStatusOutput `pulumi:"status"`
-	// 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Component update time. Standard RFC3339 format, UTC+0 time.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
-	// 组件版本。
+	// Component version.
 	Version pulumi.StringOutput `pulumi:"version"`
 }
 
@@ -102,44 +102,44 @@ func GetAddon(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Addon resources.
 type addonState struct {
-	// 组件所在集群 ID。
+	// Cluster ID where the component is located.
 	ClusterId *string `pulumi:"clusterId"`
-	// 组件配置。
+	// Component configuration.
 	Config *string `pulumi:"config"`
-	// 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Component installation time. Standard RFC3339 format, UTC+0 time.
 	CreatedTime *string `pulumi:"createdTime"`
-	// 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+	// Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
 	DeployMode *string `pulumi:"deployMode"`
-	// 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+	// Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
 	DeployNodeType *string `pulumi:"deployNodeType"`
-	// 组件名称。
+	// Component name.
 	Name *string `pulumi:"name"`
-	// 组件状态。
+	// Component status.
 	Status *AddonStatus `pulumi:"status"`
-	// 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Component update time. Standard RFC3339 format, UTC+0 time.
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// 组件版本。
+	// Component version.
 	Version *string `pulumi:"version"`
 }
 
 type AddonState struct {
-	// 组件所在集群 ID。
+	// Cluster ID where the component is located.
 	ClusterId pulumi.StringPtrInput
-	// 组件配置。
+	// Component configuration.
 	Config pulumi.StringPtrInput
-	// 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Component installation time. Standard RFC3339 format, UTC+0 time.
 	CreatedTime pulumi.StringPtrInput
-	// 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+	// Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
 	DeployMode pulumi.StringPtrInput
-	// 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+	// Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
 	DeployNodeType pulumi.StringPtrInput
-	// 组件名称。
+	// Component name.
 	Name pulumi.StringPtrInput
-	// 组件状态。
+	// Component status.
 	Status AddonStatusPtrInput
-	// 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Component update time. Standard RFC3339 format, UTC+0 time.
 	UpdatedTime pulumi.StringPtrInput
-	// 组件版本。
+	// Component version.
 	Version pulumi.StringPtrInput
 }
 
@@ -148,37 +148,37 @@ func (AddonState) ElementType() reflect.Type {
 }
 
 type addonArgs struct {
-	// 组件所在集群 ID。
+	// Cluster ID where the component is located.
 	ClusterId *string `pulumi:"clusterId"`
-	// 组件配置。
+	// Component configuration.
 	Config *string `pulumi:"config"`
-	// 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+	// Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
 	DeployMode *string `pulumi:"deployMode"`
-	// 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+	// Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
 	DeployNodeType *string `pulumi:"deployNodeType"`
-	// 组件名称。
+	// Component name.
 	Name *string `pulumi:"name"`
-	// 组件状态。
+	// Component status.
 	Status *AddonStatus `pulumi:"status"`
-	// 组件版本。
+	// Component version.
 	Version *string `pulumi:"version"`
 }
 
 // The set of arguments for constructing a Addon resource.
 type AddonArgs struct {
-	// 组件所在集群 ID。
+	// Cluster ID where the component is located.
 	ClusterId pulumi.StringPtrInput
-	// 组件配置。
+	// Component configuration.
 	Config pulumi.StringPtrInput
-	// 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+	// Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
 	DeployMode pulumi.StringPtrInput
-	// 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+	// Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
 	DeployNodeType pulumi.StringPtrInput
-	// 组件名称。
+	// Component name.
 	Name pulumi.StringPtrInput
-	// 组件状态。
+	// Component status.
 	Status AddonStatusPtrInput
-	// 组件版本。
+	// Component version.
 	Version pulumi.StringPtrInput
 }
 
@@ -269,47 +269,47 @@ func (o AddonOutput) ToAddonOutputWithContext(ctx context.Context) AddonOutput {
 	return o
 }
 
-// 组件所在集群 ID。
+// Cluster ID where the component is located.
 func (o AddonOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 组件配置。
+// Component configuration.
 func (o AddonOutput) Config() pulumi.StringOutput {
 	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.Config }).(pulumi.StringOutput)
 }
 
-// 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+// Component installation time. Standard RFC3339 format, UTC+0 time.
 func (o AddonOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+// Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
 func (o AddonOutput) DeployMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.DeployMode }).(pulumi.StringOutput)
 }
 
-// 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+// Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
 func (o AddonOutput) DeployNodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.DeployNodeType }).(pulumi.StringOutput)
 }
 
-// 组件名称。
+// Component name.
 func (o AddonOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 组件状态。
+// Component status.
 func (o AddonOutput) Status() AddonStatusOutput {
 	return o.ApplyT(func(v *Addon) AddonStatusOutput { return v.Status }).(AddonStatusOutput)
 }
 
-// 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+// Component update time. Standard RFC3339 format, UTC+0 time.
 func (o AddonOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 组件版本。
+// Component version.
 func (o AddonOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }

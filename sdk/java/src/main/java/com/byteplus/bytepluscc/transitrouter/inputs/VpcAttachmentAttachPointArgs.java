@@ -15,14 +15,14 @@ public final class VpcAttachmentAttachPointArgs extends com.pulumi.resources.Res
     public static final VpcAttachmentAttachPointArgs Empty = new VpcAttachmentAttachPointArgs();
 
     /**
-     * 连接点的子网ID。
+     * Subnet ID of the connection point.
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return 连接点的子网ID。
+     * @return Subnet ID of the connection point.
      * 
      */
     public Output<String> subnetId() {
@@ -30,14 +30,14 @@ public final class VpcAttachmentAttachPointArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 连接点的可用区ID。
+     * Availability zone ID of the connection point.
      * 
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
-     * @return 连接点的可用区ID。
+     * @return Availability zone ID of the connection point.
      * 
      */
     public Output<String> zoneId() {
@@ -70,7 +70,7 @@ public final class VpcAttachmentAttachPointArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param subnetId 连接点的子网ID。
+         * @param subnetId Subnet ID of the connection point.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class VpcAttachmentAttachPointArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param subnetId 连接点的子网ID。
+         * @param subnetId Subnet ID of the connection point.
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class VpcAttachmentAttachPointArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param zoneId 连接点的可用区ID。
+         * @param zoneId Availability zone ID of the connection point.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class VpcAttachmentAttachPointArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param zoneId 连接点的可用区ID。
+         * @param zoneId Availability zone ID of the connection point.
          * 
          * @return builder
          * 

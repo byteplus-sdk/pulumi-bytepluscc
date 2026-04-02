@@ -29,14 +29,14 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 待创建的Topic默认是否对所有用户都开启读写权限。true：（默认）所有用户都具备此 Topic 的读写权限。false：并非所有用户都具备此 Topic 的读写权限。默认情况下，用户对于此 Topic 的权限沿用用户的默认权限，如果默认权限不满足需求，您也可以通过 AccessPolicies 指定某个用户对于此 Topic 的自定义权限。
+     * Whether read/write permissions are enabled by default for all users on the Topic to be created. true: (default) All users have read/write permissions for this Topic. false: Not all users have read/write permissions for this Topic. By default, users inherit their default permissions for this Topic. If the default permissions do not meet your requirements, you can specify custom permissions for a user on this Topic through AccessPolicies.
      * 
      */
     @Import(name="allAuthority")
     private @Nullable Output<Boolean> allAuthority;
 
     /**
-     * @return 待创建的Topic默认是否对所有用户都开启读写权限。true：（默认）所有用户都具备此 Topic 的读写权限。false：并非所有用户都具备此 Topic 的读写权限。默认情况下，用户对于此 Topic 的权限沿用用户的默认权限，如果默认权限不满足需求，您也可以通过 AccessPolicies 指定某个用户对于此 Topic 的自定义权限。
+     * @return Whether read/write permissions are enabled by default for all users on the Topic to be created. true: (default) All users have read/write permissions for this Topic. false: Not all users have read/write permissions for this Topic. By default, users inherit their default permissions for this Topic. If the default permissions do not meet your requirements, you can specify custom permissions for a user on this Topic through AccessPolicies.
      * 
      */
     public Optional<Output<Boolean>> allAuthority() {
@@ -44,14 +44,14 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Topic 的消息清理策略，支持以下三种取值方式：[delete]：默认的消息清理策略。在磁盘容量充足的情况下，保留在最长保留时间范围内的消息；在磁盘容量不足时，将提前删除旧消息，以保证服务可用性。[compact]：COMPACT 消息清理策略针对每个消息的 Key 进行整合，对于有相同 Key 的消息，只保留最新的 value 值，旧的记录则会被清除。[delete,compact]：同时配置 DELETE 和 COMPACT 两种消息清理策略。只要消息满足任一条清理策略时，都将被清除。
+     * Topic message cleanup policy supports the following three options: [delete]: The default message cleanup policy. When disk space is sufficient, messages are retained within the maximum retention period; when disk space is insufficient, old messages are deleted early to ensure service availability. [compact]: The COMPACT message cleanup policy consolidates messages by Key, retaining only the latest value for messages with the same Key, and removing older records. [delete,compact]: Configures both DELETE and COMPACT message cleanup policies. Messages will be deleted as soon as they meet any of the cleanup criteria.
      * 
      */
     @Import(name="cleanupPolicies")
     private @Nullable Output<List<String>> cleanupPolicies;
 
     /**
-     * @return Topic 的消息清理策略，支持以下三种取值方式：[delete]：默认的消息清理策略。在磁盘容量充足的情况下，保留在最长保留时间范围内的消息；在磁盘容量不足时，将提前删除旧消息，以保证服务可用性。[compact]：COMPACT 消息清理策略针对每个消息的 Key 进行整合，对于有相同 Key 的消息，只保留最新的 value 值，旧的记录则会被清除。[delete,compact]：同时配置 DELETE 和 COMPACT 两种消息清理策略。只要消息满足任一条清理策略时，都将被清除。
+     * @return Topic message cleanup policy supports the following three options: [delete]: The default message cleanup policy. When disk space is sufficient, messages are retained within the maximum retention period; when disk space is insufficient, old messages are deleted early to ensure service availability. [compact]: The COMPACT message cleanup policy consolidates messages by Key, retaining only the latest value for messages with the same Key, and removing older records. [delete,compact]: Configures both DELETE and COMPACT message cleanup policies. Messages will be deleted as soon as they meet any of the cleanup criteria.
      * 
      */
     public Optional<Output<List<String>>> cleanupPolicies() {
@@ -59,14 +59,14 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Topic 的描述信息。长度不超过 128 个字符。
+     * Topic description. Maximum length: 128 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Topic 的描述信息。长度不超过 128 个字符。
+     * @return Topic description. Maximum length: 128 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -74,14 +74,14 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID。
+     * Instance ID.
      * 
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public Output<String> instanceId() {
@@ -89,14 +89,14 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Topic 级别的参数配置。Parameters 参数说明 MinInsyncReplicaNumber:2：最小同步副本个数。当同步副本个数小于配置值时，消息将无法写入对应 Topic。配置值越大，数据可靠性增加，但是可用性将会降低。默认值为副本数减 1。考虑到 Topic 的可用性，建议设置为副本数减 1。MessageMaxByte:12：最大消息大小。单位为 MB，取值范围为 1～12。默认沿用实例的最大消息大小设置。LogRetentionHours:72：消息保留时长。单位为小时，取值范围为 0～2160，即消息最久保留 90 天。默认沿用实例的消息保留时长设置。
+     * Topic-level parameter configuration. Parameters description MinInsyncReplicaNumber:2: Minimum number of in-sync replicas. If the number of in-sync replicas is less than the configured value, messages cannot be written to the Topic. Higher values increase data reliability but reduce availability. The default is replica count minus 1. For Topic availability, it is recommended to set this to replica count minus 1. MessageMaxByte:12: Maximum message size, in MB, range 1–12. By default, inherits the instance&#39;s maximum message size setting. LogRetentionHours:72: Message retention period, in hours, range 0–2160 (up to 90 days). By default, inherits the instance&#39;s message retention period setting.
      * 
      */
     @Import(name="parameters")
     private @Nullable Output<String> parameters;
 
     /**
-     * @return Topic 级别的参数配置。Parameters 参数说明 MinInsyncReplicaNumber:2：最小同步副本个数。当同步副本个数小于配置值时，消息将无法写入对应 Topic。配置值越大，数据可靠性增加，但是可用性将会降低。默认值为副本数减 1。考虑到 Topic 的可用性，建议设置为副本数减 1。MessageMaxByte:12：最大消息大小。单位为 MB，取值范围为 1～12。默认沿用实例的最大消息大小设置。LogRetentionHours:72：消息保留时长。单位为小时，取值范围为 0～2160，即消息最久保留 90 天。默认沿用实例的消息保留时长设置。
+     * @return Topic-level parameter configuration. Parameters description MinInsyncReplicaNumber:2: Minimum number of in-sync replicas. If the number of in-sync replicas is less than the configured value, messages cannot be written to the Topic. Higher values increase data reliability but reduce availability. The default is replica count minus 1. For Topic availability, it is recommended to set this to replica count minus 1. MessageMaxByte:12: Maximum message size, in MB, range 1–12. By default, inherits the instance&#39;s maximum message size setting. LogRetentionHours:72: Message retention period, in hours, range 0–2160 (up to 90 days). By default, inherits the instance&#39;s message retention period setting.
      * 
      */
     public Optional<Output<String>> parameters() {
@@ -104,14 +104,14 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Topic 分区数。取值范围为 1~300，如果实例中已创建了其他 Topic，则所有 Topic 的分区数之和不超过该实例的分区数上限。如果分区数无法满足业务需求，您可以购买更多分区，提升实例的分区数量上限。
+     * Number of Topic partitions. The range is 1–300. If other Topics have already been created in the instance, the total number of partitions across all Topics must not exceed the partition limit of the instance. If the number of partitions does not meet your business needs, you can purchase more partitions to increase the partition limit of the instance.
      * 
      */
     @Import(name="partitionNumber", required=true)
     private Output<Integer> partitionNumber;
 
     /**
-     * @return Topic 分区数。取值范围为 1~300，如果实例中已创建了其他 Topic，则所有 Topic 的分区数之和不超过该实例的分区数上限。如果分区数无法满足业务需求，您可以购买更多分区，提升实例的分区数量上限。
+     * @return Number of Topic partitions. The range is 1–300. If other Topics have already been created in the instance, the total number of partitions across all Topics must not exceed the partition limit of the instance. If the number of partitions does not meet your business needs, you can purchase more partitions to increase the partition limit of the instance.
      * 
      */
     public Output<Integer> partitionNumber() {
@@ -119,14 +119,14 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Topic 副本个数。可设置为为 2 或 3，默认值为 3。
+     * Number of Topic replicas. Can be set to 2 or 3; the default is 3.
      * 
      */
     @Import(name="replicaNumber")
     private @Nullable Output<Integer> replicaNumber;
 
     /**
-     * @return Topic 副本个数。可设置为为 2 或 3，默认值为 3。
+     * @return Number of Topic replicas. Can be set to 2 or 3; the default is 3.
      * 
      */
     public Optional<Output<Integer>> replicaNumber() {
@@ -141,14 +141,14 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 待创建的 Topic 名称。3～64 个字符。必须以英文或数字开头。支持的字符包括英文、数字、连字符（-）、下划线（_）和英文句号（.）。
+     * Name of the Topic to be created. 3–64 characters. Must start with a letter or number. Supported characters include letters, numbers, hyphens (-), underscores (_), and periods (.).
      * 
      */
     @Import(name="topicName", required=true)
     private Output<String> topicName;
 
     /**
-     * @return 待创建的 Topic 名称。3～64 个字符。必须以英文或数字开头。支持的字符包括英文、数字、连字符（-）、下划线（_）和英文句号（.）。
+     * @return Name of the Topic to be created. 3–64 characters. Must start with a letter or number. Supported characters include letters, numbers, hyphens (-), underscores (_), and periods (.).
      * 
      */
     public Output<String> topicName() {
@@ -202,7 +202,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allAuthority 待创建的Topic默认是否对所有用户都开启读写权限。true：（默认）所有用户都具备此 Topic 的读写权限。false：并非所有用户都具备此 Topic 的读写权限。默认情况下，用户对于此 Topic 的权限沿用用户的默认权限，如果默认权限不满足需求，您也可以通过 AccessPolicies 指定某个用户对于此 Topic 的自定义权限。
+         * @param allAuthority Whether read/write permissions are enabled by default for all users on the Topic to be created. true: (default) All users have read/write permissions for this Topic. false: Not all users have read/write permissions for this Topic. By default, users inherit their default permissions for this Topic. If the default permissions do not meet your requirements, you can specify custom permissions for a user on this Topic through AccessPolicies.
          * 
          * @return builder
          * 
@@ -213,7 +213,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allAuthority 待创建的Topic默认是否对所有用户都开启读写权限。true：（默认）所有用户都具备此 Topic 的读写权限。false：并非所有用户都具备此 Topic 的读写权限。默认情况下，用户对于此 Topic 的权限沿用用户的默认权限，如果默认权限不满足需求，您也可以通过 AccessPolicies 指定某个用户对于此 Topic 的自定义权限。
+         * @param allAuthority Whether read/write permissions are enabled by default for all users on the Topic to be created. true: (default) All users have read/write permissions for this Topic. false: Not all users have read/write permissions for this Topic. By default, users inherit their default permissions for this Topic. If the default permissions do not meet your requirements, you can specify custom permissions for a user on this Topic through AccessPolicies.
          * 
          * @return builder
          * 
@@ -223,7 +223,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cleanupPolicies Topic 的消息清理策略，支持以下三种取值方式：[delete]：默认的消息清理策略。在磁盘容量充足的情况下，保留在最长保留时间范围内的消息；在磁盘容量不足时，将提前删除旧消息，以保证服务可用性。[compact]：COMPACT 消息清理策略针对每个消息的 Key 进行整合，对于有相同 Key 的消息，只保留最新的 value 值，旧的记录则会被清除。[delete,compact]：同时配置 DELETE 和 COMPACT 两种消息清理策略。只要消息满足任一条清理策略时，都将被清除。
+         * @param cleanupPolicies Topic message cleanup policy supports the following three options: [delete]: The default message cleanup policy. When disk space is sufficient, messages are retained within the maximum retention period; when disk space is insufficient, old messages are deleted early to ensure service availability. [compact]: The COMPACT message cleanup policy consolidates messages by Key, retaining only the latest value for messages with the same Key, and removing older records. [delete,compact]: Configures both DELETE and COMPACT message cleanup policies. Messages will be deleted as soon as they meet any of the cleanup criteria.
          * 
          * @return builder
          * 
@@ -234,7 +234,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cleanupPolicies Topic 的消息清理策略，支持以下三种取值方式：[delete]：默认的消息清理策略。在磁盘容量充足的情况下，保留在最长保留时间范围内的消息；在磁盘容量不足时，将提前删除旧消息，以保证服务可用性。[compact]：COMPACT 消息清理策略针对每个消息的 Key 进行整合，对于有相同 Key 的消息，只保留最新的 value 值，旧的记录则会被清除。[delete,compact]：同时配置 DELETE 和 COMPACT 两种消息清理策略。只要消息满足任一条清理策略时，都将被清除。
+         * @param cleanupPolicies Topic message cleanup policy supports the following three options: [delete]: The default message cleanup policy. When disk space is sufficient, messages are retained within the maximum retention period; when disk space is insufficient, old messages are deleted early to ensure service availability. [compact]: The COMPACT message cleanup policy consolidates messages by Key, retaining only the latest value for messages with the same Key, and removing older records. [delete,compact]: Configures both DELETE and COMPACT message cleanup policies. Messages will be deleted as soon as they meet any of the cleanup criteria.
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cleanupPolicies Topic 的消息清理策略，支持以下三种取值方式：[delete]：默认的消息清理策略。在磁盘容量充足的情况下，保留在最长保留时间范围内的消息；在磁盘容量不足时，将提前删除旧消息，以保证服务可用性。[compact]：COMPACT 消息清理策略针对每个消息的 Key 进行整合，对于有相同 Key 的消息，只保留最新的 value 值，旧的记录则会被清除。[delete,compact]：同时配置 DELETE 和 COMPACT 两种消息清理策略。只要消息满足任一条清理策略时，都将被清除。
+         * @param cleanupPolicies Topic message cleanup policy supports the following three options: [delete]: The default message cleanup policy. When disk space is sufficient, messages are retained within the maximum retention period; when disk space is insufficient, old messages are deleted early to ensure service availability. [compact]: The COMPACT message cleanup policy consolidates messages by Key, retaining only the latest value for messages with the same Key, and removing older records. [delete,compact]: Configures both DELETE and COMPACT message cleanup policies. Messages will be deleted as soon as they meet any of the cleanup criteria.
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Topic 的描述信息。长度不超过 128 个字符。
+         * @param description Topic description. Maximum length: 128 characters.
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Topic 的描述信息。长度不超过 128 个字符。
+         * @param description Topic description. Maximum length: 128 characters.
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parameters Topic 级别的参数配置。Parameters 参数说明 MinInsyncReplicaNumber:2：最小同步副本个数。当同步副本个数小于配置值时，消息将无法写入对应 Topic。配置值越大，数据可靠性增加，但是可用性将会降低。默认值为副本数减 1。考虑到 Topic 的可用性，建议设置为副本数减 1。MessageMaxByte:12：最大消息大小。单位为 MB，取值范围为 1～12。默认沿用实例的最大消息大小设置。LogRetentionHours:72：消息保留时长。单位为小时，取值范围为 0～2160，即消息最久保留 90 天。默认沿用实例的消息保留时长设置。
+         * @param parameters Topic-level parameter configuration. Parameters description MinInsyncReplicaNumber:2: Minimum number of in-sync replicas. If the number of in-sync replicas is less than the configured value, messages cannot be written to the Topic. Higher values increase data reliability but reduce availability. The default is replica count minus 1. For Topic availability, it is recommended to set this to replica count minus 1. MessageMaxByte:12: Maximum message size, in MB, range 1–12. By default, inherits the instance&#39;s maximum message size setting. LogRetentionHours:72: Message retention period, in hours, range 0–2160 (up to 90 days). By default, inherits the instance&#39;s message retention period setting.
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parameters Topic 级别的参数配置。Parameters 参数说明 MinInsyncReplicaNumber:2：最小同步副本个数。当同步副本个数小于配置值时，消息将无法写入对应 Topic。配置值越大，数据可靠性增加，但是可用性将会降低。默认值为副本数减 1。考虑到 Topic 的可用性，建议设置为副本数减 1。MessageMaxByte:12：最大消息大小。单位为 MB，取值范围为 1～12。默认沿用实例的最大消息大小设置。LogRetentionHours:72：消息保留时长。单位为小时，取值范围为 0～2160，即消息最久保留 90 天。默认沿用实例的消息保留时长设置。
+         * @param parameters Topic-level parameter configuration. Parameters description MinInsyncReplicaNumber:2: Minimum number of in-sync replicas. If the number of in-sync replicas is less than the configured value, messages cannot be written to the Topic. Higher values increase data reliability but reduce availability. The default is replica count minus 1. For Topic availability, it is recommended to set this to replica count minus 1. MessageMaxByte:12: Maximum message size, in MB, range 1–12. By default, inherits the instance&#39;s maximum message size setting. LogRetentionHours:72: Message retention period, in hours, range 0–2160 (up to 90 days). By default, inherits the instance&#39;s message retention period setting.
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param partitionNumber Topic 分区数。取值范围为 1~300，如果实例中已创建了其他 Topic，则所有 Topic 的分区数之和不超过该实例的分区数上限。如果分区数无法满足业务需求，您可以购买更多分区，提升实例的分区数量上限。
+         * @param partitionNumber Number of Topic partitions. The range is 1–300. If other Topics have already been created in the instance, the total number of partitions across all Topics must not exceed the partition limit of the instance. If the number of partitions does not meet your business needs, you can purchase more partitions to increase the partition limit of the instance.
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param partitionNumber Topic 分区数。取值范围为 1~300，如果实例中已创建了其他 Topic，则所有 Topic 的分区数之和不超过该实例的分区数上限。如果分区数无法满足业务需求，您可以购买更多分区，提升实例的分区数量上限。
+         * @param partitionNumber Number of Topic partitions. The range is 1–300. If other Topics have already been created in the instance, the total number of partitions across all Topics must not exceed the partition limit of the instance. If the number of partitions does not meet your business needs, you can purchase more partitions to increase the partition limit of the instance.
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param replicaNumber Topic 副本个数。可设置为为 2 或 3，默认值为 3。
+         * @param replicaNumber Number of Topic replicas. Can be set to 2 or 3; the default is 3.
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param replicaNumber Topic 副本个数。可设置为为 2 或 3，默认值为 3。
+         * @param replicaNumber Number of Topic replicas. Can be set to 2 or 3; the default is 3.
          * 
          * @return builder
          * 
@@ -372,7 +372,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicName 待创建的 Topic 名称。3～64 个字符。必须以英文或数字开头。支持的字符包括英文、数字、连字符（-）、下划线（_）和英文句号（.）。
+         * @param topicName Name of the Topic to be created. 3–64 characters. Must start with a letter or number. Supported characters include letters, numbers, hyphens (-), underscores (_), and periods (.).
          * 
          * @return builder
          * 
@@ -383,7 +383,7 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicName 待创建的 Topic 名称。3～64 个字符。必须以英文或数字开头。支持的字符包括英文、数字、连字符（-）、下划线（_）和英文句号（.）。
+         * @param topicName Name of the Topic to be created. 3–64 characters. Must start with a letter or number. Supported characters include letters, numbers, hyphens (-), underscores (_), and periods (.).
          * 
          * @return builder
          * 

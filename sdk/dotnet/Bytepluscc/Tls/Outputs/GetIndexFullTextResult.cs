@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls.Outputs
     public sealed class GetIndexFullTextResult
     {
         /// <summary>
-        /// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+        /// Case sensitivity. true: Case sensitive. false: Not case sensitive.
         /// </summary>
         public readonly bool CaseSensitive;
         /// <summary>
-        /// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&amp;*()-_=\\"', &lt;&gt;/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+        /// Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !@#%^&amp;*()-_=\\"', &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
         /// </summary>
         public readonly string Delimiter;
         /// <summary>
-        /// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+        /// When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
         /// </summary>
         public readonly bool IncludeChinese;
 

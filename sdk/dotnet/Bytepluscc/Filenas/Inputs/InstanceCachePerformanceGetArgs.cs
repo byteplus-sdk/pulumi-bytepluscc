@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas.Inputs
     public sealed class InstanceCachePerformanceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 预配置带宽，用于增加文件系统带宽。
+        /// Provisioned bandwidth, used to increase file system bandwidth
         /// </summary>
         [Input("cacheBandwidth")]
         public Input<int>? CacheBandwidth { get; set; }

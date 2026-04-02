@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainQuic
     {
         /// <summary>
-        /// QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+        /// QUIC configuration switch. The parameter values are as follows: true: enables QUIC. false: disables QUIC. To enable QUIC, you must first enable HTTPS.
         /// </summary>
         public readonly bool? Switch;
 

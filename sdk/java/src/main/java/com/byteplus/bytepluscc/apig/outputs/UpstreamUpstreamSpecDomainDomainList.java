@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamUpstreamSpecDomainDomainList {
     /**
-     * @return 域名。
+     * @return Domain name
      * 
      */
     private @Nullable String domain;
     /**
-     * @return 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+     * @return Port. Default: 80 for HTTP, 443 for HTTPS
      * 
      */
     private @Nullable Integer port;
 
     private UpstreamUpstreamSpecDomainDomainList() {}
     /**
-     * @return 域名。
+     * @return Domain name
      * 
      */
     public Optional<String> domain() {
         return Optional.ofNullable(this.domain);
     }
     /**
-     * @return 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+     * @return Port. Default: 80 for HTTP, 443 for HTTPS
      * 
      */
     public Optional<Integer> port() {

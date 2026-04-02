@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Alb
 {
     /// <summary>
-    /// 每个 ALB 实例至少要有一个监听器才能正常工作。监听器接收客户端请求，并根据您配置的转发规则和负载均衡算法将请求分发到后端服务器上。您可以在一个 ALB 实例下创建多个监听器，并为监听器配置不同的监听协议，以处理使用不同协议的客户端请求。
+    /// Each ALB instance must have at least one listener to function properly. The listener receives client requests and distributes them to backend servers based on your configured forwarding rules and load balancing algorithm. You can create multiple listeners under one ALB instance and configure different protocols for each listener to handle client requests using different protocols.
     /// 
     /// ## Import
     /// 
@@ -23,73 +23,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public partial class Listener : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 监听器是否已开启“在访问日志中记录自定义header”的功能：on：表示该功能已开启。off：表示该功能未开启。
+        /// Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
         /// </summary>
         [Output("accessLogRecordCustomizedHeadersEnabled")]
         public Output<string> AccessLogRecordCustomizedHeadersEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器绑定的访问控制策略组 ID。当AclStatus参数配置为 on 时，AclIds为必填参数。
+        /// Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
         /// </summary>
         [Output("aclIds")]
         public Output<ImmutableArray<string>> AclIds { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启访问控制功能。取值如下：on：开启。off ：不开启（默认）。
+        /// Enable access control. Values: on: enabled. off: disabled (default).
         /// </summary>
         [Output("aclStatus")]
         public Output<string> AclStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 访问控制的方式，取值如下：white：白名单方式。表示监听器仅转发来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器不会转发任何请求。black：黑名单方式。表示仅拒绝来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器会转发全部请求。当AclStatus参数配置为 on 时，AclType为必填参数。
+        /// Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
         /// </summary>
         [Output("aclType")]
         public Output<string> AclType { get; private set; } = null!;
 
         /// <summary>
-        /// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 alb 时，必须指定 CACertificateId 参数。
+        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
         /// </summary>
         [Output("caCertificateId")]
         public Output<string> CaCertificateId { get; private set; } = null!;
 
         /// <summary>
-        /// HTTPS 监听器关联的 CA 证书的来源，用于双向认证。alb（默认）：表示通过 ALB 上传的证书。标准版 ALB 实例不支持此来源的证书。pca*root：表示通过火山引擎证书中心购买或上传的私有根 CA 证书。pca*sub：表示通过火山引擎证书中心购买或上传的私有子 CA 证书。
+        /// Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
         /// </summary>
         [Output("caCertificateSource")]
         public Output<string> CaCertificateSource { get; private set; } = null!;
 
         /// <summary>
-        /// HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 cert_center 时必传。
+        /// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
         /// </summary>
         [Output("certCenterCertificateId")]
         public Output<string> CertCenterCertificateId { get; private set; } = null!;
 
         /// <summary>
-        /// HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 alb 时必传。
+        /// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
         /// </summary>
         [Output("certificateId")]
         public Output<string> CertificateId { get; private set; } = null!;
 
         /// <summary>
-        /// HTTPS监听器关联的默认证书的来源，取值：alb：表示通过 ALB 上传的证书。cert*center：表示通过火山引擎证书中心购买或上传的 SSL 证书。pca*leaf：表示通过火山引擎证书中心购买或上传的私有叶子证书。
+        /// The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
         /// </summary>
         [Output("certificateSource")]
         public Output<string> CertificateSource { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器的创建时间。
+        /// Listener creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 个性化配置ID，未绑定时值为空字符串。
+        /// Personalized configuration ID. If not bound, the value is an empty string.
         /// </summary>
         [Output("customizedCfgId")]
         public Output<string> CustomizedCfgId { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+        /// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -98,79 +98,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<ImmutableArray<Outputs.ListenerDomainExtension>> DomainExtensions { get; private set; } = null!;
 
         /// <summary>
-        /// HTTP2.0 特性开关，该参数仅对 HTTPS 监听器有效。取值如下：on：开启。off：关闭（默认）。
+        /// HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
         /// </summary>
         [Output("enableHttp2")]
         public Output<string> EnableHttp2 { get; private set; } = null!;
 
         /// <summary>
-        /// QUIC 特性开关，该参数仅对 HTTPS 监听器有效，取值如下：on：开启。off：关闭（默认）。只有标准版 ALB 实例支持 QUIC。
+        /// QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
         /// </summary>
         [Output("enableQuic")]
         public Output<string> EnableQuic { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器开启/关闭，取值如下：on：开启（默认）。off：关闭。
+        /// Listener on/off status. Values: on: On (default). off: Off.
         /// </summary>
         [Output("enabled")]
         public Output<string> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器 ID。
+        /// Listener ID.
         /// </summary>
         [Output("listenerId")]
         public Output<string> ListenerId { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器的名字。不填写时以“协议-端口”格式命名。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1-128字符之间。
+        /// Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
         /// </summary>
         [Output("listenerName")]
         public Output<string> ListenerName { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器所属的负载均衡实例 ID。
+        /// Load balancer instance ID to which the listener belongs.
         /// </summary>
         [Output("loadBalancerId")]
         public Output<string> LoadBalancerId { get; private set; } = null!;
 
         /// <summary>
-        /// HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+        /// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
         /// </summary>
         [Output("pcaLeafCertificateId")]
         public Output<string> PcaLeafCertificateId { get; private set; } = null!;
 
         /// <summary>
-        /// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_root 时，必须指定 PcaRootCACertificateId 参数。
+        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
         /// </summary>
         [Output("pcaRootCaCertificateId")]
         public Output<string> PcaRootCaCertificateId { get; private set; } = null!;
 
         /// <summary>
-        /// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_sub 时，必须指定 PcaSubCACertificateId 参数。
+        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
         /// </summary>
         [Output("pcaSubCaCertificateId")]
         public Output<string> PcaSubCaCertificateId { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器的监听端口，取值：1   - 65535 。
+        /// The listener port. Values: 1   - 65535.
         /// </summary>
         [Output("port")]
         public Output<int> Port { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器所属项目名称。
+        /// Name of the project to which the listener belongs.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
+        /// Listener protocol. Supports HTTP and HTTPS protocols.
         /// </summary>
         [Output("protocol")]
         public Output<string> Protocol { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器的默认服务器组。
+        /// Default server group for the listener.
         /// </summary>
         [Output("serverGroupId")]
         public Output<string> ServerGroupId { get; private set; } = null!;
@@ -179,7 +179,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<ImmutableArray<Outputs.ListenerServerGroup>> ServerGroups { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器的状态。取值如下：Creating：创建中。Active： 运行中。Pending： 变配中。Disabled：已停止。Deleting：删除中。
+        /// Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -188,7 +188,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<ImmutableArray<Outputs.ListenerTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器最近一次的操作时间。
+        /// Time of the listener's most recent operation.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -241,7 +241,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class ListenerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 监听器是否已开启“在访问日志中记录自定义header”的功能：on：表示该功能已开启。off：表示该功能未开启。
+        /// Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
         /// </summary>
         [Input("accessLogRecordCustomizedHeadersEnabled")]
         public Input<string>? AccessLogRecordCustomizedHeadersEnabled { get; set; }
@@ -250,7 +250,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         private InputList<string>? _aclIds;
 
         /// <summary>
-        /// 监听器绑定的访问控制策略组 ID。当AclStatus参数配置为 on 时，AclIds为必填参数。
+        /// Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
         /// </summary>
         public InputList<string> AclIds
         {
@@ -259,55 +259,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// 是否开启访问控制功能。取值如下：on：开启。off ：不开启（默认）。
+        /// Enable access control. Values: on: enabled. off: disabled (default).
         /// </summary>
         [Input("aclStatus")]
         public Input<string>? AclStatus { get; set; }
 
         /// <summary>
-        /// 访问控制的方式，取值如下：white：白名单方式。表示监听器仅转发来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器不会转发任何请求。black：黑名单方式。表示仅拒绝来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器会转发全部请求。当AclStatus参数配置为 on 时，AclType为必填参数。
+        /// Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
         /// </summary>
         [Input("aclType")]
         public Input<string>? AclType { get; set; }
 
         /// <summary>
-        /// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 alb 时，必须指定 CACertificateId 参数。
+        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
         /// </summary>
         [Input("caCertificateId")]
         public Input<string>? CaCertificateId { get; set; }
 
         /// <summary>
-        /// HTTPS 监听器关联的 CA 证书的来源，用于双向认证。alb（默认）：表示通过 ALB 上传的证书。标准版 ALB 实例不支持此来源的证书。pca*root：表示通过火山引擎证书中心购买或上传的私有根 CA 证书。pca*sub：表示通过火山引擎证书中心购买或上传的私有子 CA 证书。
+        /// Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
         /// </summary>
         [Input("caCertificateSource")]
         public Input<string>? CaCertificateSource { get; set; }
 
         /// <summary>
-        /// HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 cert_center 时必传。
+        /// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
         /// </summary>
         [Input("certCenterCertificateId")]
         public Input<string>? CertCenterCertificateId { get; set; }
 
         /// <summary>
-        /// HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 alb 时必传。
+        /// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
         /// </summary>
         [Input("certificateId")]
         public Input<string>? CertificateId { get; set; }
 
         /// <summary>
-        /// HTTPS监听器关联的默认证书的来源，取值：alb：表示通过 ALB 上传的证书。cert*center：表示通过火山引擎证书中心购买或上传的 SSL 证书。pca*leaf：表示通过火山引擎证书中心购买或上传的私有叶子证书。
+        /// The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
         /// </summary>
         [Input("certificateSource")]
         public Input<string>? CertificateSource { get; set; }
 
         /// <summary>
-        /// 个性化配置ID，未绑定时值为空字符串。
+        /// Personalized configuration ID. If not bound, the value is an empty string.
         /// </summary>
         [Input("customizedCfgId")]
         public Input<string>? CustomizedCfgId { get; set; }
 
         /// <summary>
-        /// 监听器的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+        /// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -321,67 +321,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// HTTP2.0 特性开关，该参数仅对 HTTPS 监听器有效。取值如下：on：开启。off：关闭（默认）。
+        /// HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
         /// </summary>
         [Input("enableHttp2")]
         public Input<string>? EnableHttp2 { get; set; }
 
         /// <summary>
-        /// QUIC 特性开关，该参数仅对 HTTPS 监听器有效，取值如下：on：开启。off：关闭（默认）。只有标准版 ALB 实例支持 QUIC。
+        /// QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
         /// </summary>
         [Input("enableQuic")]
         public Input<string>? EnableQuic { get; set; }
 
         /// <summary>
-        /// 监听器开启/关闭，取值如下：on：开启（默认）。off：关闭。
+        /// Listener on/off status. Values: on: On (default). off: Off.
         /// </summary>
         [Input("enabled")]
         public Input<string>? Enabled { get; set; }
 
         /// <summary>
-        /// 监听器的名字。不填写时以“协议-端口”格式命名。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1-128字符之间。
+        /// Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
         /// </summary>
         [Input("listenerName")]
         public Input<string>? ListenerName { get; set; }
 
         /// <summary>
-        /// 监听器所属的负载均衡实例 ID。
+        /// Load balancer instance ID to which the listener belongs.
         /// </summary>
         [Input("loadBalancerId", required: true)]
         public Input<string> LoadBalancerId { get; set; } = null!;
 
         /// <summary>
-        /// HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+        /// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
         /// </summary>
         [Input("pcaLeafCertificateId")]
         public Input<string>? PcaLeafCertificateId { get; set; }
 
         /// <summary>
-        /// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_root 时，必须指定 PcaRootCACertificateId 参数。
+        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
         /// </summary>
         [Input("pcaRootCaCertificateId")]
         public Input<string>? PcaRootCaCertificateId { get; set; }
 
         /// <summary>
-        /// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_sub 时，必须指定 PcaSubCACertificateId 参数。
+        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
         /// </summary>
         [Input("pcaSubCaCertificateId")]
         public Input<string>? PcaSubCaCertificateId { get; set; }
 
         /// <summary>
-        /// 监听器的监听端口，取值：1   - 65535 。
+        /// The listener port. Values: 1   - 65535.
         /// </summary>
         [Input("port", required: true)]
         public Input<int> Port { get; set; } = null!;
 
         /// <summary>
-        /// 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
+        /// Listener protocol. Supports HTTP and HTTPS protocols.
         /// </summary>
         [Input("protocol", required: true)]
         public Input<string> Protocol { get; set; } = null!;
 
         /// <summary>
-        /// 监听器的默认服务器组。
+        /// Default server group for the listener.
         /// </summary>
         [Input("serverGroupId", required: true)]
         public Input<string> ServerGroupId { get; set; } = null!;
@@ -411,7 +411,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class ListenerState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 监听器是否已开启“在访问日志中记录自定义header”的功能：on：表示该功能已开启。off：表示该功能未开启。
+        /// Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
         /// </summary>
         [Input("accessLogRecordCustomizedHeadersEnabled")]
         public Input<string>? AccessLogRecordCustomizedHeadersEnabled { get; set; }
@@ -420,7 +420,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         private InputList<string>? _aclIds;
 
         /// <summary>
-        /// 监听器绑定的访问控制策略组 ID。当AclStatus参数配置为 on 时，AclIds为必填参数。
+        /// Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
         /// </summary>
         public InputList<string> AclIds
         {
@@ -429,61 +429,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// 是否开启访问控制功能。取值如下：on：开启。off ：不开启（默认）。
+        /// Enable access control. Values: on: enabled. off: disabled (default).
         /// </summary>
         [Input("aclStatus")]
         public Input<string>? AclStatus { get; set; }
 
         /// <summary>
-        /// 访问控制的方式，取值如下：white：白名单方式。表示监听器仅转发来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器不会转发任何请求。black：黑名单方式。表示仅拒绝来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器会转发全部请求。当AclStatus参数配置为 on 时，AclType为必填参数。
+        /// Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
         /// </summary>
         [Input("aclType")]
         public Input<string>? AclType { get; set; }
 
         /// <summary>
-        /// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 alb 时，必须指定 CACertificateId 参数。
+        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
         /// </summary>
         [Input("caCertificateId")]
         public Input<string>? CaCertificateId { get; set; }
 
         /// <summary>
-        /// HTTPS 监听器关联的 CA 证书的来源，用于双向认证。alb（默认）：表示通过 ALB 上传的证书。标准版 ALB 实例不支持此来源的证书。pca*root：表示通过火山引擎证书中心购买或上传的私有根 CA 证书。pca*sub：表示通过火山引擎证书中心购买或上传的私有子 CA 证书。
+        /// Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
         /// </summary>
         [Input("caCertificateSource")]
         public Input<string>? CaCertificateSource { get; set; }
 
         /// <summary>
-        /// HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 cert_center 时必传。
+        /// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
         /// </summary>
         [Input("certCenterCertificateId")]
         public Input<string>? CertCenterCertificateId { get; set; }
 
         /// <summary>
-        /// HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 alb 时必传。
+        /// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
         /// </summary>
         [Input("certificateId")]
         public Input<string>? CertificateId { get; set; }
 
         /// <summary>
-        /// HTTPS监听器关联的默认证书的来源，取值：alb：表示通过 ALB 上传的证书。cert*center：表示通过火山引擎证书中心购买或上传的 SSL 证书。pca*leaf：表示通过火山引擎证书中心购买或上传的私有叶子证书。
+        /// The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
         /// </summary>
         [Input("certificateSource")]
         public Input<string>? CertificateSource { get; set; }
 
         /// <summary>
-        /// 监听器的创建时间。
+        /// Listener creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 个性化配置ID，未绑定时值为空字符串。
+        /// Personalized configuration ID. If not bound, the value is an empty string.
         /// </summary>
         [Input("customizedCfgId")]
         public Input<string>? CustomizedCfgId { get; set; }
 
         /// <summary>
-        /// 监听器的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+        /// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -497,79 +497,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// HTTP2.0 特性开关，该参数仅对 HTTPS 监听器有效。取值如下：on：开启。off：关闭（默认）。
+        /// HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
         /// </summary>
         [Input("enableHttp2")]
         public Input<string>? EnableHttp2 { get; set; }
 
         /// <summary>
-        /// QUIC 特性开关，该参数仅对 HTTPS 监听器有效，取值如下：on：开启。off：关闭（默认）。只有标准版 ALB 实例支持 QUIC。
+        /// QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
         /// </summary>
         [Input("enableQuic")]
         public Input<string>? EnableQuic { get; set; }
 
         /// <summary>
-        /// 监听器开启/关闭，取值如下：on：开启（默认）。off：关闭。
+        /// Listener on/off status. Values: on: On (default). off: Off.
         /// </summary>
         [Input("enabled")]
         public Input<string>? Enabled { get; set; }
 
         /// <summary>
-        /// 监听器 ID。
+        /// Listener ID.
         /// </summary>
         [Input("listenerId")]
         public Input<string>? ListenerId { get; set; }
 
         /// <summary>
-        /// 监听器的名字。不填写时以“协议-端口”格式命名。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1-128字符之间。
+        /// Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
         /// </summary>
         [Input("listenerName")]
         public Input<string>? ListenerName { get; set; }
 
         /// <summary>
-        /// 监听器所属的负载均衡实例 ID。
+        /// Load balancer instance ID to which the listener belongs.
         /// </summary>
         [Input("loadBalancerId")]
         public Input<string>? LoadBalancerId { get; set; }
 
         /// <summary>
-        /// HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+        /// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
         /// </summary>
         [Input("pcaLeafCertificateId")]
         public Input<string>? PcaLeafCertificateId { get; set; }
 
         /// <summary>
-        /// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_root 时，必须指定 PcaRootCACertificateId 参数。
+        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
         /// </summary>
         [Input("pcaRootCaCertificateId")]
         public Input<string>? PcaRootCaCertificateId { get; set; }
 
         /// <summary>
-        /// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_sub 时，必须指定 PcaSubCACertificateId 参数。
+        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
         /// </summary>
         [Input("pcaSubCaCertificateId")]
         public Input<string>? PcaSubCaCertificateId { get; set; }
 
         /// <summary>
-        /// 监听器的监听端口，取值：1   - 65535 。
+        /// The listener port. Values: 1   - 65535.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// 监听器所属项目名称。
+        /// Name of the project to which the listener belongs.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
+        /// Listener protocol. Supports HTTP and HTTPS protocols.
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
 
         /// <summary>
-        /// 监听器的默认服务器组。
+        /// Default server group for the listener.
         /// </summary>
         [Input("serverGroupId")]
         public Input<string>? ServerGroupId { get; set; }
@@ -583,7 +583,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// 监听器的状态。取值如下：Creating：创建中。Active： 运行中。Pending： 变配中。Disabled：已停止。Deleting：删除中。
+        /// Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -597,7 +597,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// 监听器最近一次的操作时间。
+        /// Time of the listener's most recent operation.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

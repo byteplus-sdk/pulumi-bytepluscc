@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointModelReference {
     /**
-     * @return 定制模型的ID。
+     * @return Custom model ID
      * 
      */
     private String customModelId;
     /**
-     * @return 基础模型。
+     * @return Base model
      * 
      */
     private GetEndpointModelReferenceFoundationModel foundationModel;
 
     private GetEndpointModelReference() {}
     /**
-     * @return 定制模型的ID。
+     * @return Custom model ID
      * 
      */
     public String customModelId() {
         return this.customModelId;
     }
     /**
-     * @return 基础模型。
+     * @return Base model
      * 
      */
     public GetEndpointModelReferenceFoundationModel foundationModel() {

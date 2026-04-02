@@ -17,14 +17,14 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
     public static final InstanceEndpointAddressArgs Empty = new InstanceEndpointAddressArgs();
 
     /**
-     * 解析方式。当前返回值只能为 false。
+     * Parsing method. The current return value can only be false.
      * 
      */
     @Import(name="dnsVisibility")
     private @Nullable Output<Boolean> dnsVisibility;
 
     /**
-     * @return 解析方式。当前返回值只能为 false。
+     * @return Parsing method. The current return value can only be false.
      * 
      */
     public Optional<Output<Boolean>> dnsVisibility() {
@@ -32,14 +32,14 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 实例内网访问域名。
+     * Instance private access domain name.
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return 实例内网访问域名。
+     * @return Instance private access domain name.
      * 
      */
     public Optional<Output<String>> domain() {
@@ -47,14 +47,14 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 公网 ID。
+     * Public network ID.
      * 
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
-     * @return 公网 ID。
+     * @return Public network ID.
      * 
      */
     public Optional<Output<String>> eipId() {
@@ -62,14 +62,14 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * IP 地址。
+     * IP address.
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return IP 地址。
+     * @return IP address.
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -77,14 +77,14 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 网络类型：Private：私有网络 VPC。Public：公网访问。
+     * Network type: Private: private network VPC. Public: public access.
      * 
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
-     * @return 网络类型：Private：私有网络 VPC。Public：公网访问。
+     * @return Network type: Private: private network VPC. Public: public access.
      * 
      */
     public Optional<Output<String>> networkType() {
@@ -92,14 +92,14 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 实例内网访问端口。
+     * Instance private network access port.
      * 
      */
     @Import(name="port")
     private @Nullable Output<String> port;
 
     /**
-     * @return 实例内网访问端口。
+     * @return Instance private network access port.
      * 
      */
     public Optional<Output<String>> port() {
@@ -107,14 +107,14 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 子网 ID。子网必须属于所选的可用区。
+     * Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 子网 ID。子网必须属于所选的可用区。
+     * @return Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -152,7 +152,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param dnsVisibility 解析方式。当前返回值只能为 false。
+         * @param dnsVisibility Parsing method. The current return value can only be false.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param dnsVisibility 解析方式。当前返回值只能为 false。
+         * @param dnsVisibility Parsing method. The current return value can only be false.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param domain 实例内网访问域名。
+         * @param domain Instance private access domain name.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param domain 实例内网访问域名。
+         * @param domain Instance private access domain name.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param eipId 公网 ID。
+         * @param eipId Public network ID.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param eipId 公网 ID。
+         * @param eipId Public network ID.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ipAddress IP 地址。
+         * @param ipAddress IP address.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ipAddress IP 地址。
+         * @param ipAddress IP address.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param networkType 网络类型：Private：私有网络 VPC。Public：公网访问。
+         * @param networkType Network type: Private: private network VPC. Public: public access.
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param networkType 网络类型：Private：私有网络 VPC。Public：公网访问。
+         * @param networkType Network type: Private: private network VPC. Public: public access.
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param port 实例内网访问端口。
+         * @param port Instance private network access port.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param port 实例内网访问端口。
+         * @param port Instance private network access port.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param subnetId 子网 ID。子网必须属于所选的可用区。
+         * @param subnetId Subnet ID. The subnet must belong to the selected availability zone.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class InstanceEndpointAddressArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param subnetId 子网 ID。子网必须属于所选的可用区。
+         * @param subnetId Subnet ID. The subnet must belong to the selected availability zone.
          * 
          * @return builder
          * 

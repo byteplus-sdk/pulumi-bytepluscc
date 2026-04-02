@@ -17,14 +17,14 @@ public final class DeploymentSetCapacityArgs extends com.pulumi.resources.Resour
     public static final DeploymentSetCapacityArgs Empty = new DeploymentSetCapacityArgs();
 
     /**
-     * 该可用区内，还可以加入当前部署集的ECS实例数量。
+     * You can also include the number of ECS instances in the current deployment set within this availability zone.
      * 
      */
     @Import(name="availableCount")
     private @Nullable Output<Integer> availableCount;
 
     /**
-     * @return 该可用区内，还可以加入当前部署集的ECS实例数量。
+     * @return You can also include the number of ECS instances in the current deployment set within this availability zone.
      * 
      */
     public Optional<Output<Integer>> availableCount() {
@@ -32,14 +32,14 @@ public final class DeploymentSetCapacityArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 部署集内属于该可用区的ECS实例数量。
+     * Number of ECS instances in the deployment set that belong to this availability zone.
      * 
      */
     @Import(name="usedCount")
     private @Nullable Output<Integer> usedCount;
 
     /**
-     * @return 部署集内属于该可用区的ECS实例数量。
+     * @return Number of ECS instances in the deployment set that belong to this availability zone.
      * 
      */
     public Optional<Output<Integer>> usedCount() {
@@ -47,14 +47,14 @@ public final class DeploymentSetCapacityArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+     * Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+     * @return Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -88,7 +88,7 @@ public final class DeploymentSetCapacityArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param availableCount 该可用区内，还可以加入当前部署集的ECS实例数量。
+         * @param availableCount You can also include the number of ECS instances in the current deployment set within this availability zone.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class DeploymentSetCapacityArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param availableCount 该可用区内，还可以加入当前部署集的ECS实例数量。
+         * @param availableCount You can also include the number of ECS instances in the current deployment set within this availability zone.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class DeploymentSetCapacityArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param usedCount 部署集内属于该可用区的ECS实例数量。
+         * @param usedCount Number of ECS instances in the deployment set that belong to this availability zone.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class DeploymentSetCapacityArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param usedCount 部署集内属于该可用区的ECS实例数量。
+         * @param usedCount Number of ECS instances in the deployment set that belong to this availability zone.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class DeploymentSetCapacityArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param zoneId 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+         * @param zoneId Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class DeploymentSetCapacityArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param zoneId 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+         * @param zoneId Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
          * 
          * @return builder
          * 

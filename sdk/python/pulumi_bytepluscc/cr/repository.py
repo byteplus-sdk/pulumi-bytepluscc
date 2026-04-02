@@ -27,11 +27,11 @@ class RepositoryArgs:
                  description: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Repository resource.
-        :param pulumi.Input[builtins.str] name: OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
-        :param pulumi.Input[builtins.str] namespace: 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
-        :param pulumi.Input[builtins.str] registry: 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
-        :param pulumi.Input[builtins.str] access_level: 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
-        :param pulumi.Input[builtins.str] description: 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+        :param pulumi.Input[builtins.str] name: OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] namespace: Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
+        :param pulumi.Input[builtins.str] registry: Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
+        :param pulumi.Input[builtins.str] access_level: Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
+        :param pulumi.Input[builtins.str] description: Image repository description, with a length of 0–300 UTF-8 characters.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
@@ -45,7 +45,7 @@ class RepositoryArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+        OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "name")
 
@@ -57,7 +57,7 @@ class RepositoryArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[builtins.str]:
         """
-        目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+        Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
         """
         return pulumi.get(self, "namespace")
 
@@ -69,7 +69,7 @@ class RepositoryArgs:
     @pulumi.getter
     def registry(self) -> pulumi.Input[builtins.str]:
         """
-        指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+        Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
         """
         return pulumi.get(self, "registry")
 
@@ -81,7 +81,7 @@ class RepositoryArgs:
     @pulumi.getter(name="accessLevel")
     def access_level(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+        Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
         """
         return pulumi.get(self, "access_level")
 
@@ -93,7 +93,7 @@ class RepositoryArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+        Image repository description, with a length of 0–300 UTF-8 characters.
         """
         return pulumi.get(self, "description")
 
@@ -114,13 +114,13 @@ class _RepositoryState:
                  update_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Repository resources.
-        :param pulumi.Input[builtins.str] access_level: 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
-        :param pulumi.Input[builtins.str] create_time: 创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
-        :param pulumi.Input[builtins.str] description: 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
-        :param pulumi.Input[builtins.str] name: OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
-        :param pulumi.Input[builtins.str] namespace: 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
-        :param pulumi.Input[builtins.str] registry: 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
-        :param pulumi.Input[builtins.str] update_time: 最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+        :param pulumi.Input[builtins.str] access_level: Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
+        :param pulumi.Input[builtins.str] create_time: Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
+        :param pulumi.Input[builtins.str] description: Image repository description, with a length of 0–300 UTF-8 characters.
+        :param pulumi.Input[builtins.str] name: OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] namespace: Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
+        :param pulumi.Input[builtins.str] registry: Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
+        :param pulumi.Input[builtins.str] update_time: Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
         """
         if access_level is not None:
             pulumi.set(__self__, "access_level", access_level)
@@ -141,7 +141,7 @@ class _RepositoryState:
     @pulumi.getter(name="accessLevel")
     def access_level(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+        Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
         """
         return pulumi.get(self, "access_level")
 
@@ -153,7 +153,7 @@ class _RepositoryState:
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+        Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
         """
         return pulumi.get(self, "create_time")
 
@@ -165,7 +165,7 @@ class _RepositoryState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+        Image repository description, with a length of 0–300 UTF-8 characters.
         """
         return pulumi.get(self, "description")
 
@@ -177,7 +177,7 @@ class _RepositoryState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+        OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "name")
 
@@ -189,7 +189,7 @@ class _RepositoryState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+        Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
         """
         return pulumi.get(self, "namespace")
 
@@ -201,7 +201,7 @@ class _RepositoryState:
     @pulumi.getter
     def registry(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+        Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
         """
         return pulumi.get(self, "registry")
 
@@ -213,7 +213,7 @@ class _RepositoryState:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+        Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
         """
         return pulumi.get(self, "update_time")
 
@@ -235,7 +235,7 @@ class Repository(pulumi.CustomResource):
                  registry: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        OCI 制品仓库用于存储容器镜像或 Helm Chart 等，符合开源容器标准的 OCI（Open Container Initiative） 制品。
+        The OCI artifact repository is used to store container images, Helm Charts, and other OCI (Open Container Initiative) artifacts that comply with open container standards.
 
         ## Example Usage
 
@@ -259,11 +259,11 @@ class Repository(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] access_level: 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
-        :param pulumi.Input[builtins.str] description: 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
-        :param pulumi.Input[builtins.str] name: OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
-        :param pulumi.Input[builtins.str] namespace: 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
-        :param pulumi.Input[builtins.str] registry: 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+        :param pulumi.Input[builtins.str] access_level: Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
+        :param pulumi.Input[builtins.str] description: Image repository description, with a length of 0–300 UTF-8 characters.
+        :param pulumi.Input[builtins.str] name: OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] namespace: Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
+        :param pulumi.Input[builtins.str] registry: Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
         """
         ...
     @overload
@@ -272,7 +272,7 @@ class Repository(pulumi.CustomResource):
                  args: RepositoryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        OCI 制品仓库用于存储容器镜像或 Helm Chart 等，符合开源容器标准的 OCI（Open Container Initiative） 制品。
+        The OCI artifact repository is used to store container images, Helm Charts, and other OCI (Open Container Initiative) artifacts that comply with open container standards.
 
         ## Example Usage
 
@@ -360,13 +360,13 @@ class Repository(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] access_level: 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
-        :param pulumi.Input[builtins.str] create_time: 创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
-        :param pulumi.Input[builtins.str] description: 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
-        :param pulumi.Input[builtins.str] name: OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
-        :param pulumi.Input[builtins.str] namespace: 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
-        :param pulumi.Input[builtins.str] registry: 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
-        :param pulumi.Input[builtins.str] update_time: 最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+        :param pulumi.Input[builtins.str] access_level: Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
+        :param pulumi.Input[builtins.str] create_time: Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
+        :param pulumi.Input[builtins.str] description: Image repository description, with a length of 0–300 UTF-8 characters.
+        :param pulumi.Input[builtins.str] name: OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
+        :param pulumi.Input[builtins.str] namespace: Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
+        :param pulumi.Input[builtins.str] registry: Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
+        :param pulumi.Input[builtins.str] update_time: Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -385,7 +385,7 @@ class Repository(pulumi.CustomResource):
     @pulumi.getter(name="accessLevel")
     def access_level(self) -> pulumi.Output[builtins.str]:
         """
-        访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+        Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
         """
         return pulumi.get(self, "access_level")
 
@@ -393,7 +393,7 @@ class Repository(pulumi.CustomResource):
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+        Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
         """
         return pulumi.get(self, "create_time")
 
@@ -401,7 +401,7 @@ class Repository(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+        Image repository description, with a length of 0–300 UTF-8 characters.
         """
         return pulumi.get(self, "description")
 
@@ -409,7 +409,7 @@ class Repository(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+        OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single '.' or '/', one or more '-', or one or two '_'. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "name")
 
@@ -417,7 +417,7 @@ class Repository(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[builtins.str]:
         """
-        目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+        Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
         """
         return pulumi.get(self, "namespace")
 
@@ -425,7 +425,7 @@ class Repository(pulumi.CustomResource):
     @pulumi.getter
     def registry(self) -> pulumi.Output[builtins.str]:
         """
-        指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+        Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
         """
         return pulumi.get(self, "registry")
 
@@ -433,7 +433,7 @@ class Repository(pulumi.CustomResource):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> pulumi.Output[builtins.str]:
         """
-        最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+        Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
         """
         return pulumi.get(self, "update_time")
 

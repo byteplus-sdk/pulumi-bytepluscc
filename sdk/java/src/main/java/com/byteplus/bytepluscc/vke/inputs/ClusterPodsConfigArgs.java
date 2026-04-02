@@ -18,14 +18,14 @@ public final class ClusterPodsConfigArgs extends com.pulumi.resources.ResourceAr
     public static final ClusterPodsConfigArgs Empty = new ClusterPodsConfigArgs();
 
     /**
-     * Flannel 网络配置。
+     * Flannel network configuration.
      * 
      */
     @Import(name="flannelConfig")
     private @Nullable Output<ClusterPodsConfigFlannelConfigArgs> flannelConfig;
 
     /**
-     * @return Flannel 网络配置。
+     * @return Flannel network configuration.
      * 
      */
     public Optional<Output<ClusterPodsConfigFlannelConfigArgs>> flannelConfig() {
@@ -33,14 +33,14 @@ public final class ClusterPodsConfigArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+     * Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
      * 
      */
     @Import(name="podNetworkMode")
     private @Nullable Output<String> podNetworkMode;
 
     /**
-     * @return 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+     * @return Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
      * 
      */
     public Optional<Output<String>> podNetworkMode() {
@@ -48,14 +48,14 @@ public final class ClusterPodsConfigArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * VPC-CNI 网络配置。
+     * VPC-CNI network configuration.
      * 
      */
     @Import(name="vpcCniConfig")
     private @Nullable Output<ClusterPodsConfigVpcCniConfigArgs> vpcCniConfig;
 
     /**
-     * @return VPC-CNI 网络配置。
+     * @return VPC-CNI network configuration.
      * 
      */
     public Optional<Output<ClusterPodsConfigVpcCniConfigArgs>> vpcCniConfig() {
@@ -89,7 +89,7 @@ public final class ClusterPodsConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param flannelConfig Flannel 网络配置。
+         * @param flannelConfig Flannel network configuration.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class ClusterPodsConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param flannelConfig Flannel 网络配置。
+         * @param flannelConfig Flannel network configuration.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class ClusterPodsConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param podNetworkMode 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+         * @param podNetworkMode Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class ClusterPodsConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param podNetworkMode 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+         * @param podNetworkMode Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class ClusterPodsConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param vpcCniConfig VPC-CNI 网络配置。
+         * @param vpcCniConfig VPC-CNI network configuration.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class ClusterPodsConfigArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param vpcCniConfig VPC-CNI 网络配置。
+         * @param vpcCniConfig VPC-CNI network configuration.
          * 
          * @return builder
          * 

@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetMountPointClient {
     /**
-     * @return 客户端的私有网络 IP 地址。
+     * @return Client&#39;s private network IP address.
      * 
      */
     private String ip;
     /**
-     * @return 挂载协议版本号。取值：NFSv3。
+     * @return Mount protocol version. Value: NFSv3.
      * 
      */
     private String protocolVersion;
     /**
-     * @return 私有网络名称。
+     * @return Private network name.
      * 
      */
     private String vpcName;
 
     private GetMountPointClient() {}
     /**
-     * @return 客户端的私有网络 IP 地址。
+     * @return Client&#39;s private network IP address.
      * 
      */
     public String ip() {
         return this.ip;
     }
     /**
-     * @return 挂载协议版本号。取值：NFSv3。
+     * @return Mount protocol version. Value: NFSv3.
      * 
      */
     public String protocolVersion() {
         return this.protocolVersion;
     }
     /**
-     * @return 私有网络名称。
+     * @return Private network name.
      * 
      */
     public String vpcName() {

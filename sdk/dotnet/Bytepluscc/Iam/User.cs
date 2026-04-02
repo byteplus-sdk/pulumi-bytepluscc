@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Iam
 {
     /// <summary>
-    /// IAM子用户是访问控制的一种身份，由账号或是拥有权限的用户创建。用户被授予权限后，可登录控制台或使用访问密钥调用API访问云资源。
+    /// An IAM sub-user is an identity for access control, created by an account or a user with permissions. After permissions are granted, the user can log in to the console or use the access key to call APIs to access cloud resources.
     /// 
     /// ## Import
     /// 
@@ -26,61 +26,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         public Output<ImmutableArray<Outputs.UserAccessKey>> AccessKeys { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户归属的主账号。
+        /// Main account to which the sub-user belongs.
         /// </summary>
         [Output("accountId")]
         public Output<double> AccountId { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户对应的创建时间。
+        /// Sub-user's creation time.
         /// </summary>
         [Output("createDate")]
         public Output<string> CreateDate { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户对应的描述信息，长度不超过255。
+        /// Description for the sub-user, up to 255 characters.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+        /// Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户对应的电子邮件地址。
+        /// Sub-user's email address.
         /// </summary>
         [Output("email")]
         public Output<string> Email { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+        /// Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
         /// </summary>
         [Output("emailIsVerify")]
         public Output<bool> EmailIsVerify { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户归属的用户组。
+        /// User group to which the sub-user belongs.
         /// </summary>
         [Output("groups")]
         public Output<ImmutableArray<string>> Groups { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户的登录配置。
+        /// Login configuration for the sub-user.
         /// </summary>
         [Output("loginProfile")]
         public Output<Outputs.UserLoginProfile> LoginProfile { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户对应的手机号。
+        /// Sub-user's mobile number.
         /// </summary>
         [Output("mobilePhone")]
         public Output<string> MobilePhone { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户手机号是否已验证。true代表已验证，false代表未验证。
+        /// Whether the sub-user's phone number is verified. 'true' means verified, 'false' means not verified.
         /// </summary>
         [Output("mobilePhoneIsVerify")]
         public Output<bool> MobilePhoneIsVerify { get; private set; } = null!;
@@ -89,7 +89,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         public Output<ImmutableArray<Outputs.UserPolicy>> Policies { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户的操作保护配置。
+        /// Operation protection configuration for the sub-user.
         /// </summary>
         [Output("securityConfig")]
         public Output<Outputs.UserSecurityConfig> SecurityConfig { get; private set; } = null!;
@@ -98,25 +98,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         public Output<ImmutableArray<Outputs.UserTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户对应的Trn表达式。
+        /// TRN expression for the sub-user.
         /// </summary>
         [Output("trn")]
         public Output<string> Trn { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户对应的更新时间。
+        /// Update time for the sub-user.
         /// </summary>
         [Output("updateDate")]
         public Output<string> UpdateDate { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户的ID。
+        /// Sub-user's ID.
         /// </summary>
         [Output("userId")]
         public Output<int> UserId { get; private set; } = null!;
 
         /// <summary>
-        /// 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+        /// Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
         /// </summary>
         [Output("userName")]
         public Output<string> UserName { get; private set; } = null!;
@@ -169,25 +169,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public sealed class UserArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 子用户对应的描述信息，长度不超过255。
+        /// Description for the sub-user, up to 255 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+        /// Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// 子用户对应的电子邮件地址。
+        /// Sub-user's email address.
         /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
 
         /// <summary>
-        /// 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+        /// Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
         /// </summary>
         [Input("emailIsVerify")]
         public Input<bool>? EmailIsVerify { get; set; }
@@ -196,7 +196,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         private InputList<string>? _groups;
 
         /// <summary>
-        /// 子用户归属的用户组。
+        /// User group to which the sub-user belongs.
         /// </summary>
         public InputList<string> Groups
         {
@@ -205,22 +205,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         }
 
         /// <summary>
-        /// 子用户的登录配置。
+        /// Login configuration for the sub-user.
         /// </summary>
         [Input("loginProfile")]
         public Input<Inputs.UserLoginProfileArgs>? LoginProfile { get; set; }
 
         /// <summary>
-        /// 子用户对应的手机号。
+        /// Sub-user's mobile number.
         /// </summary>
         [Input("mobilePhone")]
         public Input<string>? MobilePhone { get; set; }
-
-        /// <summary>
-        /// 子用户手机号是否已验证。true代表已验证，false代表未验证。
-        /// </summary>
-        [Input("mobilePhoneIsVerify")]
-        public Input<bool>? MobilePhoneIsVerify { get; set; }
 
         [Input("policies")]
         private InputList<Inputs.UserPolicyArgs>? _policies;
@@ -231,7 +225,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         }
 
         /// <summary>
-        /// 子用户的操作保护配置。
+        /// Operation protection configuration for the sub-user.
         /// </summary>
         [Input("securityConfig")]
         public Input<Inputs.UserSecurityConfigArgs>? SecurityConfig { get; set; }
@@ -245,7 +239,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         }
 
         /// <summary>
-        /// 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+        /// Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
         /// </summary>
         [Input("userName", required: true)]
         public Input<string> UserName { get; set; } = null!;
@@ -267,37 +261,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         }
 
         /// <summary>
-        /// 子用户归属的主账号。
+        /// Main account to which the sub-user belongs.
         /// </summary>
         [Input("accountId")]
         public Input<double>? AccountId { get; set; }
 
         /// <summary>
-        /// 子用户对应的创建时间。
+        /// Sub-user's creation time.
         /// </summary>
         [Input("createDate")]
         public Input<string>? CreateDate { get; set; }
 
         /// <summary>
-        /// 子用户对应的描述信息，长度不超过255。
+        /// Description for the sub-user, up to 255 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+        /// Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// 子用户对应的电子邮件地址。
+        /// Sub-user's email address.
         /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
 
         /// <summary>
-        /// 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+        /// Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
         /// </summary>
         [Input("emailIsVerify")]
         public Input<bool>? EmailIsVerify { get; set; }
@@ -306,7 +300,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         private InputList<string>? _groups;
 
         /// <summary>
-        /// 子用户归属的用户组。
+        /// User group to which the sub-user belongs.
         /// </summary>
         public InputList<string> Groups
         {
@@ -315,19 +309,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         }
 
         /// <summary>
-        /// 子用户的登录配置。
+        /// Login configuration for the sub-user.
         /// </summary>
         [Input("loginProfile")]
         public Input<Inputs.UserLoginProfileGetArgs>? LoginProfile { get; set; }
 
         /// <summary>
-        /// 子用户对应的手机号。
+        /// Sub-user's mobile number.
         /// </summary>
         [Input("mobilePhone")]
         public Input<string>? MobilePhone { get; set; }
 
         /// <summary>
-        /// 子用户手机号是否已验证。true代表已验证，false代表未验证。
+        /// Whether the sub-user's phone number is verified. 'true' means verified, 'false' means not verified.
         /// </summary>
         [Input("mobilePhoneIsVerify")]
         public Input<bool>? MobilePhoneIsVerify { get; set; }
@@ -341,7 +335,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         }
 
         /// <summary>
-        /// 子用户的操作保护配置。
+        /// Operation protection configuration for the sub-user.
         /// </summary>
         [Input("securityConfig")]
         public Input<Inputs.UserSecurityConfigGetArgs>? SecurityConfig { get; set; }
@@ -355,25 +349,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         }
 
         /// <summary>
-        /// 子用户对应的Trn表达式。
+        /// TRN expression for the sub-user.
         /// </summary>
         [Input("trn")]
         public Input<string>? Trn { get; set; }
 
         /// <summary>
-        /// 子用户对应的更新时间。
+        /// Update time for the sub-user.
         /// </summary>
         [Input("updateDate")]
         public Input<string>? UpdateDate { get; set; }
 
         /// <summary>
-        /// 子用户的ID。
+        /// Sub-user's ID.
         /// </summary>
         [Input("userId")]
         public Input<int>? UserId { get; set; }
 
         /// <summary>
-        /// 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+        /// Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }

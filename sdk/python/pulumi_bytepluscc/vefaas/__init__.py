@@ -6,6 +6,9 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .function import *
+from .get_function import *
+from .get_functions import *
 from .get_kafka_trigger import *
 from .get_kafka_triggers import *
 from .get_sandbox import *

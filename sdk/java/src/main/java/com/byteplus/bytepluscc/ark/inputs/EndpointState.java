@@ -23,14 +23,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     public static final EndpointState Empty = new EndpointState();
 
     /**
-     * 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+     * Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
      * 
      */
     @Import(name="batchOnly")
     private @Nullable Output<Boolean> batchOnly;
 
     /**
-     * @return 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+     * @return Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
      * 
      */
     public Optional<Output<Boolean>> batchOnly() {
@@ -38,14 +38,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书信息。
+     * Certificate information
      * 
      */
     @Import(name="certificate")
     private @Nullable Output<EndpointCertificateArgs> certificate;
 
     /**
-     * @return 证书信息。
+     * @return Certificate information
      * 
      */
     public Optional<Output<EndpointCertificateArgs>> certificate() {
@@ -53,14 +53,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入点创建时间，RFC3339格式。
+     * Endpoint creation time, RFC3339 format
      * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
-     * @return 接入点创建时间，RFC3339格式。
+     * @return Endpoint creation time, RFC3339 format
      * 
      */
     public Optional<Output<String>> createTime() {
@@ -68,14 +68,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入点描述。
+     * Endpoint description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 接入点描述。
+     * @return Endpoint description
      * 
      */
     public Optional<Output<String>> description() {
@@ -83,14 +83,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 推理接入点的ID。
+     * Inference access point ID.
      * 
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
-     * @return 推理接入点的ID。
+     * @return Inference access point ID.
      * 
      */
     public Optional<Output<String>> endpointId() {
@@ -98,14 +98,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+     * Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
      * 
      */
     @Import(name="endpointModelType")
     private @Nullable Output<String> endpointModelType;
 
     /**
-     * @return 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+     * @return Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
      * 
      */
     public Optional<Output<String>> endpointModelType() {
@@ -113,14 +113,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入点接入模型。
+     * Endpoint access model
      * 
      */
     @Import(name="modelReference")
     private @Nullable Output<EndpointModelReferenceArgs> modelReference;
 
     /**
-     * @return 接入点接入模型。
+     * @return Endpoint access model
      * 
      */
     public Optional<Output<EndpointModelReferenceArgs>> modelReference() {
@@ -128,14 +128,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 模型单元，为空表示后付费；否则预付费。
+     * Model unit. If empty, indicates postpaid; otherwise, prepaid.
      * 
      */
     @Import(name="modelUnitId")
     private @Nullable Output<String> modelUnitId;
 
     /**
-     * @return 模型单元，为空表示后付费；否则预付费。
+     * @return Model unit. If empty, indicates postpaid; otherwise, prepaid.
      * 
      */
     public Optional<Output<String>> modelUnitId() {
@@ -143,14 +143,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 内容护栏方案。
+     * Content guardrail scheme
      * 
      */
     @Import(name="moderation")
     private @Nullable Output<EndpointModerationArgs> moderation;
 
     /**
-     * @return 内容护栏方案。
+     * @return Content guardrail scheme
      * 
      */
     public Optional<Output<EndpointModerationArgs>> moderation() {
@@ -158,14 +158,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入点名称。
+     * Endpoint name
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 接入点名称。
+     * @return Endpoint name
      * 
      */
     public Optional<Output<String>> name() {
@@ -173,14 +173,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 资源所属的项目名称，默认值为default。
+     * Project name the resource belongs to; default value is &#34;default&#34;
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 资源所属的项目名称，默认值为default。
+     * @return Project name the resource belongs to; default value is &#34;default&#34;
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -188,14 +188,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入点限流。
+     * Endpoint rate limiting
      * 
      */
     @Import(name="rateLimit")
     private @Nullable Output<EndpointRateLimitArgs> rateLimit;
 
     /**
-     * @return 接入点限流。
+     * @return Endpoint rate limiting
      * 
      */
     public Optional<Output<EndpointRateLimitArgs>> rateLimit() {
@@ -203,14 +203,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入点切换的Id。
+     * Endpoint switch ID
      * 
      */
     @Import(name="rollingId")
     private @Nullable Output<String> rollingId;
 
     /**
-     * @return 接入点切换的Id。
+     * @return Endpoint switch ID
      * 
      */
     public Optional<Output<String>> rollingId() {
@@ -218,14 +218,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+     * If a TPM protection package exists, this is the TPM protection package ID.
      * 
      */
     @Import(name="scaleTierId")
     private @Nullable Output<String> scaleTierId;
 
     /**
-     * @return 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+     * @return If a TPM protection package exists, this is the TPM protection package ID.
      * 
      */
     public Optional<Output<String>> scaleTierId() {
@@ -233,14 +233,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入点状态。
+     * Endpoint status
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 接入点状态。
+     * @return Endpoint status
      * 
      */
     public Optional<Output<String>> status() {
@@ -248,14 +248,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 状态附加说明信息。
+     * Additional status information
      * 
      */
     @Import(name="statusReason")
     private @Nullable Output<String> statusReason;
 
     /**
-     * @return 状态附加说明信息。
+     * @return Additional status information
      * 
      */
     public Optional<Output<String>> statusReason() {
@@ -263,14 +263,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否支持接入点切换模型版本。
+     * Whether endpoint supports switching model versions
      * 
      */
     @Import(name="supportRolling")
     private @Nullable Output<Boolean> supportRolling;
 
     /**
-     * @return 是否支持接入点切换模型版本。
+     * @return Whether endpoint supports switching model versions
      * 
      */
     public Optional<Output<Boolean>> supportRolling() {
@@ -278,14 +278,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否支持TPM保障包。
+     * Whether TPM protection package is supported
      * 
      */
     @Import(name="supportScaleTier")
     private @Nullable Output<Boolean> supportScaleTier;
 
     /**
-     * @return 是否支持TPM保障包。
+     * @return Whether TPM protection package is supported
      * 
      */
     public Optional<Output<Boolean>> supportScaleTier() {
@@ -300,14 +300,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入点更新时间，RFC3339格式。
+     * Endpoint update time, RFC3339 format
      * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
-     * @return 接入点更新时间，RFC3339格式。
+     * @return Endpoint update time, RFC3339 format
      * 
      */
     public Optional<Output<String>> updateTime() {
@@ -358,7 +358,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param batchOnly 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+         * @param batchOnly Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param batchOnly 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+         * @param batchOnly Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificate 证书信息。
+         * @param certificate Certificate information
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificate 证书信息。
+         * @param certificate Certificate information
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 接入点创建时间，RFC3339格式。
+         * @param createTime Endpoint creation time, RFC3339 format
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 接入点创建时间，RFC3339格式。
+         * @param createTime Endpoint creation time, RFC3339 format
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 接入点描述。
+         * @param description Endpoint description
          * 
          * @return builder
          * 
@@ -432,7 +432,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 接入点描述。
+         * @param description Endpoint description
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointId 推理接入点的ID。
+         * @param endpointId Inference access point ID.
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointId 推理接入点的ID。
+         * @param endpointId Inference access point ID.
          * 
          * @return builder
          * 
@@ -463,7 +463,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointModelType 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+         * @param endpointModelType Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
          * 
          * @return builder
          * 
@@ -474,7 +474,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointModelType 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+         * @param endpointModelType Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
          * 
          * @return builder
          * 
@@ -484,7 +484,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelReference 接入点接入模型。
+         * @param modelReference Endpoint access model
          * 
          * @return builder
          * 
@@ -495,7 +495,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelReference 接入点接入模型。
+         * @param modelReference Endpoint access model
          * 
          * @return builder
          * 
@@ -505,7 +505,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelUnitId 模型单元，为空表示后付费；否则预付费。
+         * @param modelUnitId Model unit. If empty, indicates postpaid; otherwise, prepaid.
          * 
          * @return builder
          * 
@@ -516,7 +516,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelUnitId 模型单元，为空表示后付费；否则预付费。
+         * @param modelUnitId Model unit. If empty, indicates postpaid; otherwise, prepaid.
          * 
          * @return builder
          * 
@@ -526,7 +526,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param moderation 内容护栏方案。
+         * @param moderation Content guardrail scheme
          * 
          * @return builder
          * 
@@ -537,7 +537,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param moderation 内容护栏方案。
+         * @param moderation Content guardrail scheme
          * 
          * @return builder
          * 
@@ -547,7 +547,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 接入点名称。
+         * @param name Endpoint name
          * 
          * @return builder
          * 
@@ -558,7 +558,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 接入点名称。
+         * @param name Endpoint name
          * 
          * @return builder
          * 
@@ -568,7 +568,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属的项目名称，默认值为default。
+         * @param projectName Project name the resource belongs to; default value is &#34;default&#34;
          * 
          * @return builder
          * 
@@ -579,7 +579,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属的项目名称，默认值为default。
+         * @param projectName Project name the resource belongs to; default value is &#34;default&#34;
          * 
          * @return builder
          * 
@@ -589,7 +589,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rateLimit 接入点限流。
+         * @param rateLimit Endpoint rate limiting
          * 
          * @return builder
          * 
@@ -600,7 +600,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rateLimit 接入点限流。
+         * @param rateLimit Endpoint rate limiting
          * 
          * @return builder
          * 
@@ -610,7 +610,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rollingId 接入点切换的Id。
+         * @param rollingId Endpoint switch ID
          * 
          * @return builder
          * 
@@ -621,7 +621,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rollingId 接入点切换的Id。
+         * @param rollingId Endpoint switch ID
          * 
          * @return builder
          * 
@@ -631,7 +631,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scaleTierId 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+         * @param scaleTierId If a TPM protection package exists, this is the TPM protection package ID.
          * 
          * @return builder
          * 
@@ -642,7 +642,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scaleTierId 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+         * @param scaleTierId If a TPM protection package exists, this is the TPM protection package ID.
          * 
          * @return builder
          * 
@@ -652,7 +652,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 接入点状态。
+         * @param status Endpoint status
          * 
          * @return builder
          * 
@@ -663,7 +663,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 接入点状态。
+         * @param status Endpoint status
          * 
          * @return builder
          * 
@@ -673,7 +673,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param statusReason 状态附加说明信息。
+         * @param statusReason Additional status information
          * 
          * @return builder
          * 
@@ -684,7 +684,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param statusReason 状态附加说明信息。
+         * @param statusReason Additional status information
          * 
          * @return builder
          * 
@@ -694,7 +694,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param supportRolling 是否支持接入点切换模型版本。
+         * @param supportRolling Whether endpoint supports switching model versions
          * 
          * @return builder
          * 
@@ -705,7 +705,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param supportRolling 是否支持接入点切换模型版本。
+         * @param supportRolling Whether endpoint supports switching model versions
          * 
          * @return builder
          * 
@@ -715,7 +715,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param supportScaleTier 是否支持TPM保障包。
+         * @param supportScaleTier Whether TPM protection package is supported
          * 
          * @return builder
          * 
@@ -726,7 +726,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param supportScaleTier 是否支持TPM保障包。
+         * @param supportScaleTier Whether TPM protection package is supported
          * 
          * @return builder
          * 
@@ -749,7 +749,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateTime 接入点更新时间，RFC3339格式。
+         * @param updateTime Endpoint update time, RFC3339 format
          * 
          * @return builder
          * 
@@ -760,7 +760,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateTime 接入点更新时间，RFC3339格式。
+         * @param updateTime Endpoint update time, RFC3339 format
          * 
          * @return builder
          * 

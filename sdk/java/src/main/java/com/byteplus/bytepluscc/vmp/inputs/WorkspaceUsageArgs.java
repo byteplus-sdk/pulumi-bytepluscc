@@ -17,14 +17,14 @@ public final class WorkspaceUsageArgs extends com.pulumi.resources.ResourceArgs 
     public static final WorkspaceUsageArgs Empty = new WorkspaceUsageArgs();
 
     /**
-     * 活跃时序数。
+     * Active time series count
      * 
      */
     @Import(name="activeSeries")
     private @Nullable Output<Integer> activeSeries;
 
     /**
-     * @return 活跃时序数。
+     * @return Active time series count
      * 
      */
     public Optional<Output<Integer>> activeSeries() {
@@ -32,14 +32,14 @@ public final class WorkspaceUsageArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 每秒写入样本数。
+     * Samples written per second
      * 
      */
     @Import(name="ingestedSamplesPerSecond")
     private @Nullable Output<Double> ingestedSamplesPerSecond;
 
     /**
-     * @return 每秒写入样本数。
+     * @return Samples written per second
      * 
      */
     public Optional<Output<Double>> ingestedSamplesPerSecond() {
@@ -72,7 +72,7 @@ public final class WorkspaceUsageArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param activeSeries 活跃时序数。
+         * @param activeSeries Active time series count
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class WorkspaceUsageArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param activeSeries 活跃时序数。
+         * @param activeSeries Active time series count
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class WorkspaceUsageArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ingestedSamplesPerSecond 每秒写入样本数。
+         * @param ingestedSamplesPerSecond Samples written per second
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class WorkspaceUsageArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ingestedSamplesPerSecond 每秒写入样本数。
+         * @param ingestedSamplesPerSecond Samples written per second
          * 
          * @return builder
          * 

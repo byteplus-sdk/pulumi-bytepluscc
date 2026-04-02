@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ScalingGroupLaunchTemplateOverride {
     /**
-     * @return 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+     * @return Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
      * 
      */
     private @Nullable String instanceType;
     /**
-     * @return 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+     * @return Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template&#39;s billing mode is SpotWithPriceLimit.
      * 
      */
     private @Nullable Double priceLimit;
 
     private ScalingGroupLaunchTemplateOverride() {}
     /**
-     * @return 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+     * @return Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
      * 
      */
     public Optional<String> instanceType() {
         return Optional.ofNullable(this.instanceType);
     }
     /**
-     * @return 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+     * @return Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template&#39;s billing mode is SpotWithPriceLimit.
      * 
      */
     public Optional<Double> priceLimit() {

@@ -16,14 +16,14 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
     public static final WorkspaceQuotaArgs Empty = new WorkspaceQuotaArgs();
 
     /**
-     * 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+     * Maximum active time series count. Integer, default range is 1–50000000
      * 
      */
     @Import(name="activeSeries")
     private @Nullable Output<Integer> activeSeries;
 
     /**
-     * @return 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+     * @return Maximum active time series count. Integer, default range is 1–50000000
      * 
      */
     public Optional<Output<Integer>> activeSeries() {
@@ -31,14 +31,14 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+     * Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
      * 
      */
     @Import(name="ingestSamplesPerSecond")
     private @Nullable Output<Integer> ingestSamplesPerSecond;
 
     /**
-     * @return 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+     * @return Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
      * 
      */
     public Optional<Output<Integer>> ingestSamplesPerSecond() {
@@ -46,14 +46,44 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 最大查询 QPS。整数形式，默认取值范围为 1～500。
+     * Workspace public Query bandwidth (Mbps).
+     * 
+     */
+    @Import(name="publicQueryBandwidth")
+    private @Nullable Output<Integer> publicQueryBandwidth;
+
+    /**
+     * @return Workspace public Query bandwidth (Mbps).
+     * 
+     */
+    public Optional<Output<Integer>> publicQueryBandwidth() {
+        return Optional.ofNullable(this.publicQueryBandwidth);
+    }
+
+    /**
+     * Workspace public RemoteWrite bandwidth (Mbps).
+     * 
+     */
+    @Import(name="publicWriteBandwidth")
+    private @Nullable Output<Integer> publicWriteBandwidth;
+
+    /**
+     * @return Workspace public RemoteWrite bandwidth (Mbps).
+     * 
+     */
+    public Optional<Output<Integer>> publicWriteBandwidth() {
+        return Optional.ofNullable(this.publicWriteBandwidth);
+    }
+
+    /**
+     * Maximum query QPS. Integer, default range is 1–500
      * 
      */
     @Import(name="queryPerSecond")
     private @Nullable Output<Integer> queryPerSecond;
 
     /**
-     * @return 最大查询 QPS。整数形式，默认取值范围为 1～500。
+     * @return Maximum query QPS. Integer, default range is 1–500
      * 
      */
     public Optional<Output<Integer>> queryPerSecond() {
@@ -61,14 +91,14 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+     * Maximum samples scanned per second. Integer, default range is 1–1000000000
      * 
      */
     @Import(name="scanSamplesPerSecond")
     private @Nullable Output<Integer> scanSamplesPerSecond;
 
     /**
-     * @return 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+     * @return Maximum samples scanned per second. Integer, default range is 1–1000000000
      * 
      */
     public Optional<Output<Integer>> scanSamplesPerSecond() {
@@ -76,14 +106,14 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+     * Maximum time series scanned per second. Integer, default range is 1–200000
      * 
      */
     @Import(name="scanSeriesPerSecond")
     private @Nullable Output<Integer> scanSeriesPerSecond;
 
     /**
-     * @return 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+     * @return Maximum time series scanned per second. Integer, default range is 1–200000
      * 
      */
     public Optional<Output<Integer>> scanSeriesPerSecond() {
@@ -95,6 +125,8 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
     private WorkspaceQuotaArgs(WorkspaceQuotaArgs $) {
         this.activeSeries = $.activeSeries;
         this.ingestSamplesPerSecond = $.ingestSamplesPerSecond;
+        this.publicQueryBandwidth = $.publicQueryBandwidth;
+        this.publicWriteBandwidth = $.publicWriteBandwidth;
         this.queryPerSecond = $.queryPerSecond;
         this.scanSamplesPerSecond = $.scanSamplesPerSecond;
         this.scanSeriesPerSecond = $.scanSeriesPerSecond;
@@ -119,7 +151,7 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param activeSeries 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+         * @param activeSeries Maximum active time series count. Integer, default range is 1–50000000
          * 
          * @return builder
          * 
@@ -130,7 +162,7 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param activeSeries 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+         * @param activeSeries Maximum active time series count. Integer, default range is 1–50000000
          * 
          * @return builder
          * 
@@ -140,7 +172,7 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ingestSamplesPerSecond 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+         * @param ingestSamplesPerSecond Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
          * 
          * @return builder
          * 
@@ -151,7 +183,7 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ingestSamplesPerSecond 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+         * @param ingestSamplesPerSecond Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
          * 
          * @return builder
          * 
@@ -161,7 +193,49 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param queryPerSecond 最大查询 QPS。整数形式，默认取值范围为 1～500。
+         * @param publicQueryBandwidth Workspace public Query bandwidth (Mbps).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicQueryBandwidth(@Nullable Output<Integer> publicQueryBandwidth) {
+            $.publicQueryBandwidth = publicQueryBandwidth;
+            return this;
+        }
+
+        /**
+         * @param publicQueryBandwidth Workspace public Query bandwidth (Mbps).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicQueryBandwidth(Integer publicQueryBandwidth) {
+            return publicQueryBandwidth(Output.of(publicQueryBandwidth));
+        }
+
+        /**
+         * @param publicWriteBandwidth Workspace public RemoteWrite bandwidth (Mbps).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicWriteBandwidth(@Nullable Output<Integer> publicWriteBandwidth) {
+            $.publicWriteBandwidth = publicWriteBandwidth;
+            return this;
+        }
+
+        /**
+         * @param publicWriteBandwidth Workspace public RemoteWrite bandwidth (Mbps).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicWriteBandwidth(Integer publicWriteBandwidth) {
+            return publicWriteBandwidth(Output.of(publicWriteBandwidth));
+        }
+
+        /**
+         * @param queryPerSecond Maximum query QPS. Integer, default range is 1–500
          * 
          * @return builder
          * 
@@ -172,7 +246,7 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param queryPerSecond 最大查询 QPS。整数形式，默认取值范围为 1～500。
+         * @param queryPerSecond Maximum query QPS. Integer, default range is 1–500
          * 
          * @return builder
          * 
@@ -182,7 +256,7 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param scanSamplesPerSecond 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+         * @param scanSamplesPerSecond Maximum samples scanned per second. Integer, default range is 1–1000000000
          * 
          * @return builder
          * 
@@ -193,7 +267,7 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param scanSamplesPerSecond 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+         * @param scanSamplesPerSecond Maximum samples scanned per second. Integer, default range is 1–1000000000
          * 
          * @return builder
          * 
@@ -203,7 +277,7 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param scanSeriesPerSecond 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+         * @param scanSeriesPerSecond Maximum time series scanned per second. Integer, default range is 1–200000
          * 
          * @return builder
          * 
@@ -214,7 +288,7 @@ public final class WorkspaceQuotaArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param scanSeriesPerSecond 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+         * @param scanSeriesPerSecond Maximum time series scanned per second. Integer, default range is 1–200000
          * 
          * @return builder
          * 

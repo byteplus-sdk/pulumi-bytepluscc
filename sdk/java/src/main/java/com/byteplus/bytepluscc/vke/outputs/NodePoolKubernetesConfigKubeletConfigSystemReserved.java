@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolKubernetesConfigKubeletConfigSystemReserved {
     /**
-     * @return 资源名称，取值为 cpu 或 memory。
+     * @return Resource name. Valid values: cpu or memory.
      * 
      */
     private @Nullable String name;
     /**
-     * @return 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+     * @return Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
      * 
      */
     private @Nullable String quantity;
 
     private NodePoolKubernetesConfigKubeletConfigSystemReserved() {}
     /**
-     * @return 资源名称，取值为 cpu 或 memory。
+     * @return Resource name. Valid values: cpu or memory.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+     * @return Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
      * 
      */
     public Optional<String> quantity() {

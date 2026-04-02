@@ -33,15 +33,15 @@ class ScalingPolicyArgs:
                  scheduled_policy: Optional[pulumi.Input['ScalingPolicyScheduledPolicyArgs']] = None):
         """
         The set of arguments for constructing a ScalingPolicy resource.
-        :param pulumi.Input[builtins.str] scaling_group_id: 伸缩组ID。
-        :param pulumi.Input[builtins.str] scaling_policy_name: 伸缩规则名称。
-        :param pulumi.Input[builtins.str] scaling_policy_type: 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
-        :param pulumi.Input[builtins.str] adjustment_type: 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
-        :param pulumi.Input[builtins.int] adjustment_value: 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
-        :param pulumi.Input['ScalingPolicyAlarmPolicyArgs'] alarm_policy: 报警任务的详细信息。
-        :param pulumi.Input[builtins.int] cooldown: 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
-        :param pulumi.Input[builtins.bool] is_enabled_policy: 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
-        :param pulumi.Input['ScalingPolicyScheduledPolicyArgs'] scheduled_policy: 定时任务/周期任务的详细信息。
+        :param pulumi.Input[builtins.str] scaling_group_id: Scaling group ID.
+        :param pulumi.Input[builtins.str] scaling_policy_name: Name of the scaling rule.
+        :param pulumi.Input[builtins.str] scaling_policy_type: Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
+        :param pulumi.Input[builtins.str] adjustment_type: Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
+        :param pulumi.Input[builtins.int] adjustment_value: Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
+        :param pulumi.Input['ScalingPolicyAlarmPolicyArgs'] alarm_policy: Detailed information about the alarm task.
+        :param pulumi.Input[builtins.int] cooldown: Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
+        :param pulumi.Input[builtins.bool] is_enabled_policy: Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
+        :param pulumi.Input['ScalingPolicyScheduledPolicyArgs'] scheduled_policy: Detailed information for scheduled/recurring tasks.
         """
         pulumi.set(__self__, "scaling_group_id", scaling_group_id)
         pulumi.set(__self__, "scaling_policy_name", scaling_policy_name)
@@ -63,7 +63,7 @@ class ScalingPolicyArgs:
     @pulumi.getter(name="scalingGroupId")
     def scaling_group_id(self) -> pulumi.Input[builtins.str]:
         """
-        伸缩组ID。
+        Scaling group ID.
         """
         return pulumi.get(self, "scaling_group_id")
 
@@ -75,7 +75,7 @@ class ScalingPolicyArgs:
     @pulumi.getter(name="scalingPolicyName")
     def scaling_policy_name(self) -> pulumi.Input[builtins.str]:
         """
-        伸缩规则名称。
+        Name of the scaling rule.
         """
         return pulumi.get(self, "scaling_policy_name")
 
@@ -87,7 +87,7 @@ class ScalingPolicyArgs:
     @pulumi.getter(name="scalingPolicyType")
     def scaling_policy_type(self) -> pulumi.Input[builtins.str]:
         """
-        伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+        Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
         """
         return pulumi.get(self, "scaling_policy_type")
 
@@ -99,7 +99,7 @@ class ScalingPolicyArgs:
     @pulumi.getter(name="adjustmentType")
     def adjustment_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+        Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
         """
         return pulumi.get(self, "adjustment_type")
 
@@ -111,7 +111,7 @@ class ScalingPolicyArgs:
     @pulumi.getter(name="adjustmentValue")
     def adjustment_value(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+        Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
         """
         return pulumi.get(self, "adjustment_value")
 
@@ -123,7 +123,7 @@ class ScalingPolicyArgs:
     @pulumi.getter(name="alarmPolicy")
     def alarm_policy(self) -> Optional[pulumi.Input['ScalingPolicyAlarmPolicyArgs']]:
         """
-        报警任务的详细信息。
+        Detailed information about the alarm task.
         """
         return pulumi.get(self, "alarm_policy")
 
@@ -135,7 +135,7 @@ class ScalingPolicyArgs:
     @pulumi.getter
     def cooldown(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+        Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
         """
         return pulumi.get(self, "cooldown")
 
@@ -147,7 +147,7 @@ class ScalingPolicyArgs:
     @pulumi.getter(name="isEnabledPolicy")
     def is_enabled_policy(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+        Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
         """
         return pulumi.get(self, "is_enabled_policy")
 
@@ -159,7 +159,7 @@ class ScalingPolicyArgs:
     @pulumi.getter(name="scheduledPolicy")
     def scheduled_policy(self) -> Optional[pulumi.Input['ScalingPolicyScheduledPolicyArgs']]:
         """
-        定时任务/周期任务的详细信息。
+        Detailed information for scheduled/recurring tasks.
         """
         return pulumi.get(self, "scheduled_policy")
 
@@ -184,17 +184,17 @@ class _ScalingPolicyState:
                  status: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering ScalingPolicy resources.
-        :param pulumi.Input[builtins.str] adjustment_type: 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
-        :param pulumi.Input[builtins.int] adjustment_value: 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
-        :param pulumi.Input['ScalingPolicyAlarmPolicyArgs'] alarm_policy: 报警任务的详细信息。
-        :param pulumi.Input[builtins.int] cooldown: 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
-        :param pulumi.Input[builtins.bool] is_enabled_policy: 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
-        :param pulumi.Input[builtins.str] scaling_group_id: 伸缩组ID。
-        :param pulumi.Input[builtins.str] scaling_policy_id: 伸缩规则ID。
-        :param pulumi.Input[builtins.str] scaling_policy_name: 伸缩规则名称。
-        :param pulumi.Input[builtins.str] scaling_policy_type: 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
-        :param pulumi.Input['ScalingPolicyScheduledPolicyArgs'] scheduled_policy: 定时任务/周期任务的详细信息。
-        :param pulumi.Input[builtins.str] status: 伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+        :param pulumi.Input[builtins.str] adjustment_type: Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
+        :param pulumi.Input[builtins.int] adjustment_value: Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
+        :param pulumi.Input['ScalingPolicyAlarmPolicyArgs'] alarm_policy: Detailed information about the alarm task.
+        :param pulumi.Input[builtins.int] cooldown: Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
+        :param pulumi.Input[builtins.bool] is_enabled_policy: Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
+        :param pulumi.Input[builtins.str] scaling_group_id: Scaling group ID.
+        :param pulumi.Input[builtins.str] scaling_policy_id: Scaling rule ID.
+        :param pulumi.Input[builtins.str] scaling_policy_name: Name of the scaling rule.
+        :param pulumi.Input[builtins.str] scaling_policy_type: Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
+        :param pulumi.Input['ScalingPolicyScheduledPolicyArgs'] scheduled_policy: Detailed information for scheduled/recurring tasks.
+        :param pulumi.Input[builtins.str] status: Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
         """
         if adjustment_type is not None:
             pulumi.set(__self__, "adjustment_type", adjustment_type)
@@ -223,7 +223,7 @@ class _ScalingPolicyState:
     @pulumi.getter(name="adjustmentType")
     def adjustment_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+        Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
         """
         return pulumi.get(self, "adjustment_type")
 
@@ -235,7 +235,7 @@ class _ScalingPolicyState:
     @pulumi.getter(name="adjustmentValue")
     def adjustment_value(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+        Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
         """
         return pulumi.get(self, "adjustment_value")
 
@@ -247,7 +247,7 @@ class _ScalingPolicyState:
     @pulumi.getter(name="alarmPolicy")
     def alarm_policy(self) -> Optional[pulumi.Input['ScalingPolicyAlarmPolicyArgs']]:
         """
-        报警任务的详细信息。
+        Detailed information about the alarm task.
         """
         return pulumi.get(self, "alarm_policy")
 
@@ -259,7 +259,7 @@ class _ScalingPolicyState:
     @pulumi.getter
     def cooldown(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+        Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
         """
         return pulumi.get(self, "cooldown")
 
@@ -271,7 +271,7 @@ class _ScalingPolicyState:
     @pulumi.getter(name="isEnabledPolicy")
     def is_enabled_policy(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+        Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
         """
         return pulumi.get(self, "is_enabled_policy")
 
@@ -283,7 +283,7 @@ class _ScalingPolicyState:
     @pulumi.getter(name="scalingGroupId")
     def scaling_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩组ID。
+        Scaling group ID.
         """
         return pulumi.get(self, "scaling_group_id")
 
@@ -295,7 +295,7 @@ class _ScalingPolicyState:
     @pulumi.getter(name="scalingPolicyId")
     def scaling_policy_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩规则ID。
+        Scaling rule ID.
         """
         return pulumi.get(self, "scaling_policy_id")
 
@@ -307,7 +307,7 @@ class _ScalingPolicyState:
     @pulumi.getter(name="scalingPolicyName")
     def scaling_policy_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩规则名称。
+        Name of the scaling rule.
         """
         return pulumi.get(self, "scaling_policy_name")
 
@@ -319,7 +319,7 @@ class _ScalingPolicyState:
     @pulumi.getter(name="scalingPolicyType")
     def scaling_policy_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+        Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
         """
         return pulumi.get(self, "scaling_policy_type")
 
@@ -331,7 +331,7 @@ class _ScalingPolicyState:
     @pulumi.getter(name="scheduledPolicy")
     def scheduled_policy(self) -> Optional[pulumi.Input['ScalingPolicyScheduledPolicyArgs']]:
         """
-        定时任务/周期任务的详细信息。
+        Detailed information for scheduled/recurring tasks.
         """
         return pulumi.get(self, "scheduled_policy")
 
@@ -343,7 +343,7 @@ class _ScalingPolicyState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+        Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
         """
         return pulumi.get(self, "status")
 
@@ -369,7 +369,7 @@ class ScalingPolicy(pulumi.CustomResource):
                  scheduled_policy: Optional[pulumi.Input[Union['ScalingPolicyScheduledPolicyArgs', 'ScalingPolicyScheduledPolicyArgsDict']]] = None,
                  __props__=None):
         """
-        伸缩规则用于定义触发扩缩容行为的条件和方式，包括规则类型、触发时间、伸缩行为、冷却时间等。在同一个伸缩组中，您可以启用多条伸缩规则，满足任意类型时均会执行伸缩动作。但当同一时间满足多个类型时，将优先执行手动触发的伸缩行为。
+        Scaling rules define the conditions and methods for triggering scaling actions, including rule type, trigger time, scaling action, cooldown time. You can enable multiple scaling rules within the same scaling group. Scaling actions are executed when any rule type is met. If multiple rule types are met at the same time, manual scaling actions take priority.
 
         ## Import
 
@@ -379,15 +379,15 @@ class ScalingPolicy(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] adjustment_type: 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
-        :param pulumi.Input[builtins.int] adjustment_value: 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
-        :param pulumi.Input[Union['ScalingPolicyAlarmPolicyArgs', 'ScalingPolicyAlarmPolicyArgsDict']] alarm_policy: 报警任务的详细信息。
-        :param pulumi.Input[builtins.int] cooldown: 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
-        :param pulumi.Input[builtins.bool] is_enabled_policy: 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
-        :param pulumi.Input[builtins.str] scaling_group_id: 伸缩组ID。
-        :param pulumi.Input[builtins.str] scaling_policy_name: 伸缩规则名称。
-        :param pulumi.Input[builtins.str] scaling_policy_type: 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
-        :param pulumi.Input[Union['ScalingPolicyScheduledPolicyArgs', 'ScalingPolicyScheduledPolicyArgsDict']] scheduled_policy: 定时任务/周期任务的详细信息。
+        :param pulumi.Input[builtins.str] adjustment_type: Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
+        :param pulumi.Input[builtins.int] adjustment_value: Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
+        :param pulumi.Input[Union['ScalingPolicyAlarmPolicyArgs', 'ScalingPolicyAlarmPolicyArgsDict']] alarm_policy: Detailed information about the alarm task.
+        :param pulumi.Input[builtins.int] cooldown: Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
+        :param pulumi.Input[builtins.bool] is_enabled_policy: Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
+        :param pulumi.Input[builtins.str] scaling_group_id: Scaling group ID.
+        :param pulumi.Input[builtins.str] scaling_policy_name: Name of the scaling rule.
+        :param pulumi.Input[builtins.str] scaling_policy_type: Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
+        :param pulumi.Input[Union['ScalingPolicyScheduledPolicyArgs', 'ScalingPolicyScheduledPolicyArgsDict']] scheduled_policy: Detailed information for scheduled/recurring tasks.
         """
         ...
     @overload
@@ -396,7 +396,7 @@ class ScalingPolicy(pulumi.CustomResource):
                  args: ScalingPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        伸缩规则用于定义触发扩缩容行为的条件和方式，包括规则类型、触发时间、伸缩行为、冷却时间等。在同一个伸缩组中，您可以启用多条伸缩规则，满足任意类型时均会执行伸缩动作。但当同一时间满足多个类型时，将优先执行手动触发的伸缩行为。
+        Scaling rules define the conditions and methods for triggering scaling actions, including rule type, trigger time, scaling action, cooldown time. You can enable multiple scaling rules within the same scaling group. Scaling actions are executed when any rule type is met. If multiple rule types are met at the same time, manual scaling actions take priority.
 
         ## Import
 
@@ -482,17 +482,17 @@ class ScalingPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] adjustment_type: 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
-        :param pulumi.Input[builtins.int] adjustment_value: 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
-        :param pulumi.Input[Union['ScalingPolicyAlarmPolicyArgs', 'ScalingPolicyAlarmPolicyArgsDict']] alarm_policy: 报警任务的详细信息。
-        :param pulumi.Input[builtins.int] cooldown: 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
-        :param pulumi.Input[builtins.bool] is_enabled_policy: 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
-        :param pulumi.Input[builtins.str] scaling_group_id: 伸缩组ID。
-        :param pulumi.Input[builtins.str] scaling_policy_id: 伸缩规则ID。
-        :param pulumi.Input[builtins.str] scaling_policy_name: 伸缩规则名称。
-        :param pulumi.Input[builtins.str] scaling_policy_type: 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
-        :param pulumi.Input[Union['ScalingPolicyScheduledPolicyArgs', 'ScalingPolicyScheduledPolicyArgsDict']] scheduled_policy: 定时任务/周期任务的详细信息。
-        :param pulumi.Input[builtins.str] status: 伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+        :param pulumi.Input[builtins.str] adjustment_type: Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
+        :param pulumi.Input[builtins.int] adjustment_value: Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
+        :param pulumi.Input[Union['ScalingPolicyAlarmPolicyArgs', 'ScalingPolicyAlarmPolicyArgsDict']] alarm_policy: Detailed information about the alarm task.
+        :param pulumi.Input[builtins.int] cooldown: Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
+        :param pulumi.Input[builtins.bool] is_enabled_policy: Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
+        :param pulumi.Input[builtins.str] scaling_group_id: Scaling group ID.
+        :param pulumi.Input[builtins.str] scaling_policy_id: Scaling rule ID.
+        :param pulumi.Input[builtins.str] scaling_policy_name: Name of the scaling rule.
+        :param pulumi.Input[builtins.str] scaling_policy_type: Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
+        :param pulumi.Input[Union['ScalingPolicyScheduledPolicyArgs', 'ScalingPolicyScheduledPolicyArgsDict']] scheduled_policy: Detailed information for scheduled/recurring tasks.
+        :param pulumi.Input[builtins.str] status: Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -515,7 +515,7 @@ class ScalingPolicy(pulumi.CustomResource):
     @pulumi.getter(name="adjustmentType")
     def adjustment_type(self) -> pulumi.Output[builtins.str]:
         """
-        伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+        Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
         """
         return pulumi.get(self, "adjustment_type")
 
@@ -523,7 +523,7 @@ class ScalingPolicy(pulumi.CustomResource):
     @pulumi.getter(name="adjustmentValue")
     def adjustment_value(self) -> pulumi.Output[builtins.int]:
         """
-        伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+        Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
         """
         return pulumi.get(self, "adjustment_value")
 
@@ -531,7 +531,7 @@ class ScalingPolicy(pulumi.CustomResource):
     @pulumi.getter(name="alarmPolicy")
     def alarm_policy(self) -> pulumi.Output['outputs.ScalingPolicyAlarmPolicy']:
         """
-        报警任务的详细信息。
+        Detailed information about the alarm task.
         """
         return pulumi.get(self, "alarm_policy")
 
@@ -539,7 +539,7 @@ class ScalingPolicy(pulumi.CustomResource):
     @pulumi.getter
     def cooldown(self) -> pulumi.Output[builtins.int]:
         """
-        伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+        Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
         """
         return pulumi.get(self, "cooldown")
 
@@ -547,7 +547,7 @@ class ScalingPolicy(pulumi.CustomResource):
     @pulumi.getter(name="isEnabledPolicy")
     def is_enabled_policy(self) -> pulumi.Output[builtins.bool]:
         """
-        伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+        Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
         """
         return pulumi.get(self, "is_enabled_policy")
 
@@ -555,7 +555,7 @@ class ScalingPolicy(pulumi.CustomResource):
     @pulumi.getter(name="scalingGroupId")
     def scaling_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        伸缩组ID。
+        Scaling group ID.
         """
         return pulumi.get(self, "scaling_group_id")
 
@@ -563,7 +563,7 @@ class ScalingPolicy(pulumi.CustomResource):
     @pulumi.getter(name="scalingPolicyId")
     def scaling_policy_id(self) -> pulumi.Output[builtins.str]:
         """
-        伸缩规则ID。
+        Scaling rule ID.
         """
         return pulumi.get(self, "scaling_policy_id")
 
@@ -571,7 +571,7 @@ class ScalingPolicy(pulumi.CustomResource):
     @pulumi.getter(name="scalingPolicyName")
     def scaling_policy_name(self) -> pulumi.Output[builtins.str]:
         """
-        伸缩规则名称。
+        Name of the scaling rule.
         """
         return pulumi.get(self, "scaling_policy_name")
 
@@ -579,7 +579,7 @@ class ScalingPolicy(pulumi.CustomResource):
     @pulumi.getter(name="scalingPolicyType")
     def scaling_policy_type(self) -> pulumi.Output[builtins.str]:
         """
-        伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+        Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
         """
         return pulumi.get(self, "scaling_policy_type")
 
@@ -587,7 +587,7 @@ class ScalingPolicy(pulumi.CustomResource):
     @pulumi.getter(name="scheduledPolicy")
     def scheduled_policy(self) -> pulumi.Output['outputs.ScalingPolicyScheduledPolicy']:
         """
-        定时任务/周期任务的详细信息。
+        Detailed information for scheduled/recurring tasks.
         """
         return pulumi.get(self, "scheduled_policy")
 
@@ -595,7 +595,7 @@ class ScalingPolicy(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+        Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
         """
         return pulumi.get(self, "status")
 

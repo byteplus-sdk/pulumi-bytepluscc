@@ -25,14 +25,14 @@ public final class DomainCompressionArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+     * Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+     * @return Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -78,7 +78,7 @@ public final class DomainCompressionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param switch_ 智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+         * @param switch_ Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class DomainCompressionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param switch_ 智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+         * @param switch_ Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
          * 
          * @return builder
          * 

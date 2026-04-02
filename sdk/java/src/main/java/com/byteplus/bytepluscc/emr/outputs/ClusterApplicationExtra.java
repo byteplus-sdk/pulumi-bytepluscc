@@ -17,17 +17,17 @@ public final class ClusterApplicationExtra {
     private @Nullable List<ClusterApplicationExtraApplicationComponentLayout> applicationComponentLayouts;
     private @Nullable List<ClusterApplicationExtraApplicationConfig> applicationConfigs;
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     private @Nullable String applicationName;
     /**
-     * @return 元数据连接id。
+     * @return Metadata connection ID.
      * 
      */
     private @Nullable String connectionId;
     /**
-     * @return 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+     * @return Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
      * 
      */
     private @Nullable String connectionType;
@@ -40,21 +40,21 @@ public final class ClusterApplicationExtra {
         return this.applicationConfigs == null ? List.of() : this.applicationConfigs;
     }
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     public Optional<String> applicationName() {
         return Optional.ofNullable(this.applicationName);
     }
     /**
-     * @return 元数据连接id。
+     * @return Metadata connection ID.
      * 
      */
     public Optional<String> connectionId() {
         return Optional.ofNullable(this.connectionId);
     }
     /**
-     * @return 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+     * @return Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
      * 
      */
     public Optional<String> connectionType() {

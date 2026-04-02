@@ -15,43 +15,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq.Outputs
     public sealed class InstanceChargeDetail
     {
         /// <summary>
-        /// 包年包月实例到期后是否自动续费。
+        /// Whether to automatically renew the subscription instance after expiration.
         /// </summary>
         public readonly bool? AutoRenew;
         /// <summary>
-        /// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        /// Instance billing end time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
         /// </summary>
         public readonly string? ChargeEndTime;
         /// <summary>
-        /// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        /// Expiration time of the subscription instance. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
         /// </summary>
         public readonly string? ChargeExpireTime;
         /// <summary>
-        /// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        /// Instance billing start time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
         /// </summary>
         public readonly string? ChargeStartTime;
         /// <summary>
-        /// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+        /// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
         /// </summary>
         public readonly string? ChargeStatus;
         /// <summary>
-        /// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+        /// Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
         /// </summary>
         public readonly string? ChargeType;
         /// <summary>
-        /// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        /// Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         /// </summary>
         public readonly string? OverdueReclaimTime;
         /// <summary>
-        /// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        /// Instance suspension time due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         /// </summary>
         public readonly string? OverdueTime;
         /// <summary>
-        /// 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+        /// Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
         /// </summary>
         public readonly int? Period;
         /// <summary>
-        /// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+        /// Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
         /// </summary>
         public readonly string? PeriodUnit;
 

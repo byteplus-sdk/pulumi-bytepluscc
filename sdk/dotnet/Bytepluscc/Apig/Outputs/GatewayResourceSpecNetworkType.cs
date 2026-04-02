@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GatewayResourceSpecNetworkType
     {
         /// <summary>
-        /// 是否启用私网。
+        /// Whether to enable private network
         /// </summary>
         public readonly bool? EnablePrivateNetwork;
         /// <summary>
-        /// 是否启用公网。
+        /// Whether to enable public network
         /// </summary>
         public readonly bool? EnablePublicNetwork;
 

@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceTag {
     /**
-     * @return 实例所绑定标签的标签键。
+     * @return Tag key of the tags bound to the instance
      * 
      */
     private @Nullable String key;
     /**
-     * @return 实例所绑定标签的标签值。
+     * @return Tag values bound to the instance.
      * 
      */
     private @Nullable String value;
 
     private InstanceTag() {}
     /**
-     * @return 实例所绑定标签的标签键。
+     * @return Tag key of the tags bound to the instance
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 实例所绑定标签的标签值。
+     * @return Tag values bound to the instance.
      * 
      */
     public Optional<String> value() {

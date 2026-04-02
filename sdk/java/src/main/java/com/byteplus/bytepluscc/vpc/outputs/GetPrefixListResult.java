@@ -17,27 +17,27 @@ import java.util.Objects;
 @CustomType
 public final class GetPrefixListResult {
     /**
-     * @return 前缀列表关联的资源数量。
+     * @return Number of resources associated with the prefix list.
      * 
      */
     private Integer associationCount;
     /**
-     * @return 前缀列表关联的路由表信息。
+     * @return Route table information associated with the prefix list.
      * 
      */
     private List<GetPrefixListAssociationsRouteTable> associationsRouteTables;
     /**
-     * @return 前缀列表关联的安全组信息。
+     * @return Security group information associated with the prefix list.
      * 
      */
     private List<GetPrefixListAssociationsSecurityGroup> associationsSecurityGroups;
     /**
-     * @return 前缀列表的创建时间。
+     * @return Creation time of the prefix list.
      * 
      */
     private String createdTime;
     /**
-     * @return 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     private String description;
@@ -47,82 +47,82 @@ public final class GetPrefixListResult {
      */
     private String id;
     /**
-     * @return IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+     * @return IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
      * 
      */
     private String ipVersion;
     /**
-     * @return 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+     * @return Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
      * 
      */
     private Integer maxEntries;
     /**
-     * @return 前缀列表条目的CIDR。
+     * @return CIDR of the prefix list entry.
      * 
      */
     private List<GetPrefixListPrefixListEntry> prefixListEntries;
     /**
-     * @return 前缀列表的ID。
+     * @return Prefix list ID.
      * 
      */
     private String prefixListId;
     /**
-     * @return 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+     * @return Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
      * 
      */
     private String prefixListName;
     /**
-     * @return 前缀列表所属项目的名称，不填默认加入default项目。
+     * @return Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
      * 
      */
     private String projectName;
     /**
-     * @return 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+     * @return Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
      * 
      */
     private String status;
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     private List<GetPrefixListTag> tags;
     /**
-     * @return 前缀列表的最近一次修改时间。
+     * @return Last modification time of the prefix list.
      * 
      */
     private String updatedTime;
 
     private GetPrefixListResult() {}
     /**
-     * @return 前缀列表关联的资源数量。
+     * @return Number of resources associated with the prefix list.
      * 
      */
     public Integer associationCount() {
         return this.associationCount;
     }
     /**
-     * @return 前缀列表关联的路由表信息。
+     * @return Route table information associated with the prefix list.
      * 
      */
     public List<GetPrefixListAssociationsRouteTable> associationsRouteTables() {
         return this.associationsRouteTables;
     }
     /**
-     * @return 前缀列表关联的安全组信息。
+     * @return Security group information associated with the prefix list.
      * 
      */
     public List<GetPrefixListAssociationsSecurityGroup> associationsSecurityGroups() {
         return this.associationsSecurityGroups;
     }
     /**
-     * @return 前缀列表的创建时间。
+     * @return Creation time of the prefix list.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     public String description() {
@@ -136,63 +136,63 @@ public final class GetPrefixListResult {
         return this.id;
     }
     /**
-     * @return IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+     * @return IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
      * 
      */
     public String ipVersion() {
         return this.ipVersion;
     }
     /**
-     * @return 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+     * @return Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
      * 
      */
     public Integer maxEntries() {
         return this.maxEntries;
     }
     /**
-     * @return 前缀列表条目的CIDR。
+     * @return CIDR of the prefix list entry.
      * 
      */
     public List<GetPrefixListPrefixListEntry> prefixListEntries() {
         return this.prefixListEntries;
     }
     /**
-     * @return 前缀列表的ID。
+     * @return Prefix list ID.
      * 
      */
     public String prefixListId() {
         return this.prefixListId;
     }
     /**
-     * @return 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+     * @return Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
      * 
      */
     public String prefixListName() {
         return this.prefixListName;
     }
     /**
-     * @return 前缀列表所属项目的名称，不填默认加入default项目。
+     * @return Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+     * @return Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     public List<GetPrefixListTag> tags() {
         return this.tags;
     }
     /**
-     * @return 前缀列表的最近一次修改时间。
+     * @return Last modification time of the prefix list.
      * 
      */
     public String updatedTime() {

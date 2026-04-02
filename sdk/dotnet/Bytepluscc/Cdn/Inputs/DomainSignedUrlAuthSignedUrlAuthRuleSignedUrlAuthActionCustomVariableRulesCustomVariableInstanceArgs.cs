@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示变量的匹配方式。该参数的取值只能是 match。
+        /// Indicates the matching method for the variable. The value of this parameter can only be match.
         /// </summary>
         [Input("operator")]
         public Input<string>? Operator { get; set; }
 
         /// <summary>
-        /// 表示变量的类型。该参数有以下取值：queryString：表示该变量是请求中的一个查询参数。requestHeader：表示该变量是请求中的一个头部字段。
+        /// Indicates the variable type. This parameter has the following values: queryString: indicates the variable is a query parameter in the request. requestHeader: indicates the variable is a header field in the request.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// 表示变量的名称，长度不超过 100 个字符。变量名称的要求如下：如果 Type 是 queryString，变量名称可以包含字母、数字、连字符（-）、逗号（,）、句号（.）、感叹号（!）。如果 Type 是 requestHeader，变量名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"）、冒号（:）、Delete（ASCII code 127）
+        /// Specifies the variable name, with a maximum length of 100 characters. Variable name requirements are as follows: If Type is queryString, the variable name can include letters, numbers, hyphens (-), commas (,), periods (.), and exclamation marks (!). If Type is requestHeader, the variable name can include any printable ASCII character except: underscore (_), space, double quotes ("), colon (:), and Delete (ASCII code 127).
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

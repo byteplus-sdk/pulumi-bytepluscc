@@ -16,7 +16,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     {
         public readonly ImmutableArray<Outputs.DomainNegativeCachConditionConditionRule> ConditionRules;
         /// <summary>
-        /// 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        /// Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         /// </summary>
         public readonly string? Connective;
 

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
     public sealed class ClusterStateChangeReasonArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 状态更新码。
+        /// Status update code.
         /// </summary>
         [Input("code")]
         public Input<string>? Code { get; set; }
 
         /// <summary>
-        /// 状态更新原因。
+        /// Status update reason.
         /// </summary>
         [Input("reason")]
         public Input<string>? Reason { get; set; }

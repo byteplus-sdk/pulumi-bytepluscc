@@ -26,10 +26,10 @@ class ClusterUserGroupArgs:
                  members: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
         The set of arguments for constructing a ClusterUserGroup resource.
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[builtins.str] user_group_name: 用户组名称。
-        :param pulumi.Input[builtins.str] description: 用户组描述。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] members: 用户组成员。不支持操作特殊用户，如admin等。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.str] user_group_name: User group name.
+        :param pulumi.Input[builtins.str] description: User group description.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] members: Operations on special users, such as admin, are not supported.
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
         pulumi.set(__self__, "user_group_name", user_group_name)
@@ -42,7 +42,7 @@ class ClusterUserGroupArgs:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Input[builtins.str]:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -54,7 +54,7 @@ class ClusterUserGroupArgs:
     @pulumi.getter(name="userGroupName")
     def user_group_name(self) -> pulumi.Input[builtins.str]:
         """
-        用户组名称。
+        User group name.
         """
         return pulumi.get(self, "user_group_name")
 
@@ -66,7 +66,7 @@ class ClusterUserGroupArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组描述。
+        User group description.
         """
         return pulumi.get(self, "description")
 
@@ -78,7 +78,7 @@ class ClusterUserGroupArgs:
     @pulumi.getter
     def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        用户组成员。不支持操作特殊用户，如admin等。
+        Operations on special users, such as admin, are not supported.
         """
         return pulumi.get(self, "members")
 
@@ -96,10 +96,10 @@ class _ClusterUserGroupState:
                  user_group_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering ClusterUserGroup resources.
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[builtins.str] description: 用户组描述。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] members: 用户组成员。不支持操作特殊用户，如admin等。
-        :param pulumi.Input[builtins.str] user_group_name: 用户组名称。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.str] description: User group description.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] members: Operations on special users, such as admin, are not supported.
+        :param pulumi.Input[builtins.str] user_group_name: User group name.
         """
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
@@ -114,7 +114,7 @@ class _ClusterUserGroupState:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -126,7 +126,7 @@ class _ClusterUserGroupState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组描述。
+        User group description.
         """
         return pulumi.get(self, "description")
 
@@ -138,7 +138,7 @@ class _ClusterUserGroupState:
     @pulumi.getter
     def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        用户组成员。不支持操作特殊用户，如admin等。
+        Operations on special users, such as admin, are not supported.
         """
         return pulumi.get(self, "members")
 
@@ -150,7 +150,7 @@ class _ClusterUserGroupState:
     @pulumi.getter(name="userGroupName")
     def user_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组名称。
+        User group name.
         """
         return pulumi.get(self, "user_group_name")
 
@@ -171,7 +171,7 @@ class ClusterUserGroup(pulumi.CustomResource):
                  user_group_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        E-MapReduce（EMR）集群中支持对用户进行组管理，允许您创建、编辑和删除用户组。
+        User group management is supported in E-MapReduce (EMR) clusters, allowing you to create, edit, and delete user groups.
 
         ## Example Usage
 
@@ -197,10 +197,10 @@ class ClusterUserGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[builtins.str] description: 用户组描述。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] members: 用户组成员。不支持操作特殊用户，如admin等。
-        :param pulumi.Input[builtins.str] user_group_name: 用户组名称。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.str] description: User group description.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] members: Operations on special users, such as admin, are not supported.
+        :param pulumi.Input[builtins.str] user_group_name: User group name.
         """
         ...
     @overload
@@ -209,7 +209,7 @@ class ClusterUserGroup(pulumi.CustomResource):
                  args: ClusterUserGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        E-MapReduce（EMR）集群中支持对用户进行组管理，允许您创建、编辑和删除用户组。
+        User group management is supported in E-MapReduce (EMR) clusters, allowing you to create, edit, and delete user groups.
 
         ## Example Usage
 
@@ -290,10 +290,10 @@ class ClusterUserGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[builtins.str] description: 用户组描述。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] members: 用户组成员。不支持操作特殊用户，如admin等。
-        :param pulumi.Input[builtins.str] user_group_name: 用户组名称。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.str] description: User group description.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] members: Operations on special users, such as admin, are not supported.
+        :param pulumi.Input[builtins.str] user_group_name: User group name.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -309,7 +309,7 @@ class ClusterUserGroup(pulumi.CustomResource):
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[builtins.str]:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -317,7 +317,7 @@ class ClusterUserGroup(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        用户组描述。
+        User group description.
         """
         return pulumi.get(self, "description")
 
@@ -325,7 +325,7 @@ class ClusterUserGroup(pulumi.CustomResource):
     @pulumi.getter
     def members(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        用户组成员。不支持操作特殊用户，如admin等。
+        Operations on special users, such as admin, are not supported.
         """
         return pulumi.get(self, "members")
 
@@ -333,7 +333,7 @@ class ClusterUserGroup(pulumi.CustomResource):
     @pulumi.getter(name="userGroupName")
     def user_group_name(self) -> pulumi.Output[builtins.str]:
         """
-        用户组名称。
+        User group name.
         """
         return pulumi.get(self, "user_group_name")
 

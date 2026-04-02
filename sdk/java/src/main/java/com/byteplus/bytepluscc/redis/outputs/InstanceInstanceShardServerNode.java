@@ -12,50 +12,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceInstanceShardServerNode {
     /**
-     * @return 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+     * @return Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
      * 
      */
     private @Nullable String currentRole;
     /**
-     * @return 节点 ID。
+     * @return Node ID.
      * 
      */
     private @Nullable String nodeId;
     /**
-     * @return 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+     * @return Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
      * 
      */
     private @Nullable String status;
     /**
-     * @return 节点所在的可用区。
+     * @return Availability zone where the node is located.
      * 
      */
     private @Nullable String zoneId;
 
     private InstanceInstanceShardServerNode() {}
     /**
-     * @return 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+     * @return Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
      * 
      */
     public Optional<String> currentRole() {
         return Optional.ofNullable(this.currentRole);
     }
     /**
-     * @return 节点 ID。
+     * @return Node ID.
      * 
      */
     public Optional<String> nodeId() {
         return Optional.ofNullable(this.nodeId);
     }
     /**
-     * @return 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+     * @return Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
      * 
      */
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
     /**
-     * @return 节点所在的可用区。
+     * @return Availability zone where the node is located.
      * 
      */
     public Optional<String> zoneId() {

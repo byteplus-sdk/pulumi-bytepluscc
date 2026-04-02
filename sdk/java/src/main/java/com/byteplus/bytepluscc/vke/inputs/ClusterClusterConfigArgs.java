@@ -20,14 +20,14 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
     public static final ClusterClusterConfigArgs Empty = new ClusterClusterConfigArgs();
 
     /**
-     * 集群 API Server 访问的 IPv4 地址信息。
+     * Cluster API Server access IPv4 address information
      * 
      */
     @Import(name="apiServerEndpoints")
     private @Nullable Output<ClusterClusterConfigApiServerEndpointsArgs> apiServerEndpoints;
 
     /**
-     * @return 集群 API Server 访问的 IPv4 地址信息。
+     * @return Cluster API Server access IPv4 address information
      * 
      */
     public Optional<Output<ClusterClusterConfigApiServerEndpointsArgs>> apiServerEndpoints() {
@@ -35,14 +35,14 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+     * Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
      * 
      */
     @Import(name="apiServerPublicAccessConfig")
     private @Nullable Output<ClusterClusterConfigApiServerPublicAccessConfigArgs> apiServerPublicAccessConfig;
 
     /**
-     * @return 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+     * @return Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
      * 
      */
     public Optional<Output<ClusterClusterConfigApiServerPublicAccessConfigArgs>> apiServerPublicAccessConfig() {
@@ -50,14 +50,14 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+     * Node public access configuration. Parameter value description: false: Disabled. true: Enabled
      * 
      */
     @Import(name="apiServerPublicAccessEnabled")
     private @Nullable Output<Boolean> apiServerPublicAccessEnabled;
 
     /**
-     * @return 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+     * @return Node public access configuration. Parameter value description: false: Disabled. true: Enabled
      * 
      */
     public Optional<Output<Boolean>> apiServerPublicAccessEnabled() {
@@ -65,14 +65,14 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+     * Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
      * 
      */
     @Import(name="ipFamily")
     private @Nullable Output<String> ipFamily;
 
     /**
-     * @return 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+     * @return Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
      * 
      */
     public Optional<Output<String>> ipFamily() {
@@ -80,14 +80,14 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+     * Node public access configuration. Parameter value description: false: Disabled. true: Enabled
      * 
      */
     @Import(name="resourcePublicAccessDefaultEnabled")
     private @Nullable Output<Boolean> resourcePublicAccessDefaultEnabled;
 
     /**
-     * @return 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+     * @return Node public access configuration. Parameter value description: false: Disabled. true: Enabled
      * 
      */
     public Optional<Output<Boolean>> resourcePublicAccessDefaultEnabled() {
@@ -95,14 +95,14 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 集群控制面及节点使用的的安全组。
+     * Security group used by the cluster control plane and nodes.
      * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
-     * @return 集群控制面及节点使用的的安全组。
+     * @return Security group used by the cluster control plane and nodes.
      * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
@@ -110,14 +110,14 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 集群控制面在私有网络内通信的子网 ID。
+     * Subnet ID for cluster control plane communication within the private network.
      * 
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
-     * @return 集群控制面在私有网络内通信的子网 ID。
+     * @return Subnet ID for cluster control plane communication within the private network.
      * 
      */
     public Optional<Output<List<String>>> subnetIds() {
@@ -125,14 +125,14 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+     * Private network (VPC) ID where the cluster control plane and some nodes are located.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+     * @return Private network (VPC) ID where the cluster control plane and some nodes are located.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -171,7 +171,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param apiServerEndpoints 集群 API Server 访问的 IPv4 地址信息。
+         * @param apiServerEndpoints Cluster API Server access IPv4 address information
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param apiServerEndpoints 集群 API Server 访问的 IPv4 地址信息。
+         * @param apiServerEndpoints Cluster API Server access IPv4 address information
          * 
          * @return builder
          * 
@@ -192,7 +192,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param apiServerPublicAccessConfig 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+         * @param apiServerPublicAccessConfig Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param apiServerPublicAccessConfig 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+         * @param apiServerPublicAccessConfig Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
          * 
          * @return builder
          * 
@@ -213,7 +213,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param apiServerPublicAccessEnabled 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+         * @param apiServerPublicAccessEnabled Node public access configuration. Parameter value description: false: Disabled. true: Enabled
          * 
          * @return builder
          * 
@@ -224,7 +224,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param apiServerPublicAccessEnabled 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+         * @param apiServerPublicAccessEnabled Node public access configuration. Parameter value description: false: Disabled. true: Enabled
          * 
          * @return builder
          * 
@@ -234,7 +234,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param ipFamily 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+         * @param ipFamily Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
          * 
          * @return builder
          * 
@@ -245,7 +245,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param ipFamily 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+         * @param ipFamily Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
          * 
          * @return builder
          * 
@@ -255,7 +255,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param resourcePublicAccessDefaultEnabled 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+         * @param resourcePublicAccessDefaultEnabled Node public access configuration. Parameter value description: false: Disabled. true: Enabled
          * 
          * @return builder
          * 
@@ -266,7 +266,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param resourcePublicAccessDefaultEnabled 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+         * @param resourcePublicAccessDefaultEnabled Node public access configuration. Parameter value description: false: Disabled. true: Enabled
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param securityGroupIds 集群控制面及节点使用的的安全组。
+         * @param securityGroupIds Security group used by the cluster control plane and nodes.
          * 
          * @return builder
          * 
@@ -287,7 +287,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param securityGroupIds 集群控制面及节点使用的的安全组。
+         * @param securityGroupIds Security group used by the cluster control plane and nodes.
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param securityGroupIds 集群控制面及节点使用的的安全组。
+         * @param securityGroupIds Security group used by the cluster control plane and nodes.
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param subnetIds 集群控制面在私有网络内通信的子网 ID。
+         * @param subnetIds Subnet ID for cluster control plane communication within the private network.
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param subnetIds 集群控制面在私有网络内通信的子网 ID。
+         * @param subnetIds Subnet ID for cluster control plane communication within the private network.
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param subnetIds 集群控制面在私有网络内通信的子网 ID。
+         * @param subnetIds Subnet ID for cluster control plane communication within the private network.
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param vpcId 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+         * @param vpcId Private network (VPC) ID where the cluster control plane and some nodes are located.
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param vpcId 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+         * @param vpcId Private network (VPC) ID where the cluster control plane and some nodes are located.
          * 
          * @return builder
          * 

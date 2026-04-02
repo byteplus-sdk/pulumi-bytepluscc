@@ -33,14 +33,14 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 应用名称。
+     * Application name.
      * 
      */
     @Import(name="applicationName")
     private @Nullable Output<String> applicationName;
 
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     public Optional<Output<String>> applicationName() {
@@ -48,14 +48,14 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 元数据连接id。
+     * Metadata connection ID.
      * 
      */
     @Import(name="connectionId")
     private @Nullable Output<String> connectionId;
 
     /**
-     * @return 元数据连接id。
+     * @return Metadata connection ID.
      * 
      */
     public Optional<Output<String>> connectionId() {
@@ -63,14 +63,14 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+     * Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
      * 
      */
     @Import(name="connectionType")
     private @Nullable Output<String> connectionType;
 
     /**
-     * @return 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+     * @return Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
      * 
      */
     public Optional<Output<String>> connectionType() {
@@ -132,7 +132,7 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param applicationName 应用名称。
+         * @param applicationName Application name.
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param applicationName 应用名称。
+         * @param applicationName Application name.
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param connectionId 元数据连接id。
+         * @param connectionId Metadata connection ID.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param connectionId 元数据连接id。
+         * @param connectionId Metadata connection ID.
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param connectionType 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+         * @param connectionType Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param connectionType 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+         * @param connectionType Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
          * 
          * @return builder
          * 

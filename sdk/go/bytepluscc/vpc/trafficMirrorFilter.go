@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 通过流量镜像，您可以按自己设定的筛选条件复制网卡的流量，并将复制的流量私网转发到目标服务进行监控分析。
+// With traffic mirroring, you can mirror network interface traffic based on your filter conditions and forward the mirrored traffic over the private network to a target service for monitoring and analysis
 //
 // ## Example Usage
 //
@@ -55,20 +55,20 @@ import (
 type TrafficMirrorFilter struct {
 	pulumi.CustomResourceState
 
-	// 筛选条件的创建时间。
+	// Filter condition creation time
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 筛选条件实例描述。
+	// Filter condition instance description
 	Description        pulumi.StringOutput                             `pulumi:"description"`
 	EgressFilterRules  TrafficMirrorFilterEgressFilterRuleArrayOutput  `pulumi:"egressFilterRules"`
 	IngressFilterRules TrafficMirrorFilterIngressFilterRuleArrayOutput `pulumi:"ingressFilterRules"`
-	// 筛选条件所属项目的名称。
+	// Project name of the filter condition
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 筛选条件状态。
+	// Filter condition status
 	Status pulumi.StringOutput               `pulumi:"status"`
 	Tags   TrafficMirrorFilterTagArrayOutput `pulumi:"tags"`
-	// 筛选条件实例ID。
+	// Filter condition instance ID
 	TrafficMirrorFilterId pulumi.StringOutput `pulumi:"trafficMirrorFilterId"`
-	// 筛选条件名称。
+	// Filter condition name
 	TrafficMirrorFilterName pulumi.StringOutput `pulumi:"trafficMirrorFilterName"`
 }
 
@@ -102,38 +102,38 @@ func GetTrafficMirrorFilter(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering TrafficMirrorFilter resources.
 type trafficMirrorFilterState struct {
-	// 筛选条件的创建时间。
+	// Filter condition creation time
 	CreatedTime *string `pulumi:"createdTime"`
-	// 筛选条件实例描述。
+	// Filter condition instance description
 	Description        *string                                `pulumi:"description"`
 	EgressFilterRules  []TrafficMirrorFilterEgressFilterRule  `pulumi:"egressFilterRules"`
 	IngressFilterRules []TrafficMirrorFilterIngressFilterRule `pulumi:"ingressFilterRules"`
-	// 筛选条件所属项目的名称。
+	// Project name of the filter condition
 	ProjectName *string `pulumi:"projectName"`
-	// 筛选条件状态。
+	// Filter condition status
 	Status *string                  `pulumi:"status"`
 	Tags   []TrafficMirrorFilterTag `pulumi:"tags"`
-	// 筛选条件实例ID。
+	// Filter condition instance ID
 	TrafficMirrorFilterId *string `pulumi:"trafficMirrorFilterId"`
-	// 筛选条件名称。
+	// Filter condition name
 	TrafficMirrorFilterName *string `pulumi:"trafficMirrorFilterName"`
 }
 
 type TrafficMirrorFilterState struct {
-	// 筛选条件的创建时间。
+	// Filter condition creation time
 	CreatedTime pulumi.StringPtrInput
-	// 筛选条件实例描述。
+	// Filter condition instance description
 	Description        pulumi.StringPtrInput
 	EgressFilterRules  TrafficMirrorFilterEgressFilterRuleArrayInput
 	IngressFilterRules TrafficMirrorFilterIngressFilterRuleArrayInput
-	// 筛选条件所属项目的名称。
+	// Project name of the filter condition
 	ProjectName pulumi.StringPtrInput
-	// 筛选条件状态。
+	// Filter condition status
 	Status pulumi.StringPtrInput
 	Tags   TrafficMirrorFilterTagArrayInput
-	// 筛选条件实例ID。
+	// Filter condition instance ID
 	TrafficMirrorFilterId pulumi.StringPtrInput
-	// 筛选条件名称。
+	// Filter condition name
 	TrafficMirrorFilterName pulumi.StringPtrInput
 }
 
@@ -142,23 +142,23 @@ func (TrafficMirrorFilterState) ElementType() reflect.Type {
 }
 
 type trafficMirrorFilterArgs struct {
-	// 筛选条件实例描述。
+	// Filter condition instance description
 	Description *string `pulumi:"description"`
-	// 筛选条件所属项目的名称。
+	// Project name of the filter condition
 	ProjectName *string                  `pulumi:"projectName"`
 	Tags        []TrafficMirrorFilterTag `pulumi:"tags"`
-	// 筛选条件名称。
+	// Filter condition name
 	TrafficMirrorFilterName *string `pulumi:"trafficMirrorFilterName"`
 }
 
 // The set of arguments for constructing a TrafficMirrorFilter resource.
 type TrafficMirrorFilterArgs struct {
-	// 筛选条件实例描述。
+	// Filter condition instance description
 	Description pulumi.StringPtrInput
-	// 筛选条件所属项目的名称。
+	// Project name of the filter condition
 	ProjectName pulumi.StringPtrInput
 	Tags        TrafficMirrorFilterTagArrayInput
-	// 筛选条件名称。
+	// Filter condition name
 	TrafficMirrorFilterName pulumi.StringPtrInput
 }
 
@@ -249,12 +249,12 @@ func (o TrafficMirrorFilterOutput) ToTrafficMirrorFilterOutputWithContext(ctx co
 	return o
 }
 
-// 筛选条件的创建时间。
+// Filter condition creation time
 func (o TrafficMirrorFilterOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrafficMirrorFilter) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 筛选条件实例描述。
+// Filter condition instance description
 func (o TrafficMirrorFilterOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrafficMirrorFilter) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -271,12 +271,12 @@ func (o TrafficMirrorFilterOutput) IngressFilterRules() TrafficMirrorFilterIngre
 	}).(TrafficMirrorFilterIngressFilterRuleArrayOutput)
 }
 
-// 筛选条件所属项目的名称。
+// Project name of the filter condition
 func (o TrafficMirrorFilterOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrafficMirrorFilter) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 筛选条件状态。
+// Filter condition status
 func (o TrafficMirrorFilterOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrafficMirrorFilter) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -285,12 +285,12 @@ func (o TrafficMirrorFilterOutput) Tags() TrafficMirrorFilterTagArrayOutput {
 	return o.ApplyT(func(v *TrafficMirrorFilter) TrafficMirrorFilterTagArrayOutput { return v.Tags }).(TrafficMirrorFilterTagArrayOutput)
 }
 
-// 筛选条件实例ID。
+// Filter condition instance ID
 func (o TrafficMirrorFilterOutput) TrafficMirrorFilterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrafficMirrorFilter) pulumi.StringOutput { return v.TrafficMirrorFilterId }).(pulumi.StringOutput)
 }
 
-// 筛选条件名称。
+// Filter condition name
 func (o TrafficMirrorFilterOutput) TrafficMirrorFilterName() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrafficMirrorFilter) pulumi.StringOutput { return v.TrafficMirrorFilterName }).(pulumi.StringOutput)
 }

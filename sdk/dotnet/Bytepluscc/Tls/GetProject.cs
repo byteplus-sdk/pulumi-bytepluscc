@@ -65,15 +65,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     public sealed class GetProjectResult
     {
         /// <summary>
-        /// 日志项目创建时间。
+        /// Log project creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 日志项目的简单描述。
+        /// Brief description of the log project
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 日志项目所属的 IAM 项目。
+        /// The IAM project associated with the log project
         /// </summary>
         public readonly string IamProjectName;
         /// <summary>
@@ -81,23 +81,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 私网连接域名。
+        /// Private network connection domain name
         /// </summary>
         public readonly string InnerNetDomain;
         /// <summary>
-        /// 日志项目的 ID。
+        /// Log project ID
         /// </summary>
         public readonly string ProjectId;
         /// <summary>
-        /// 日志项目名称。
+        /// Log project name
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 标签信息。
+        /// Tag information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectTagResult> Tags;
         /// <summary>
-        /// 当前日志项目下的日志主题数量。
+        /// Number of log topics in the current log project
         /// </summary>
         public readonly int TopicCount;
 

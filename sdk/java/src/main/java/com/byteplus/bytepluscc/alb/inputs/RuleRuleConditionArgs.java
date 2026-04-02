@@ -96,14 +96,14 @@ public final class RuleRuleConditionArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+     * Standard forwarding rule condition types. Host: domain name. Path: path. Header: HTTP header field. Method: request method. QueryString: query parameter.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+     * @return Standard forwarding rule condition types. Host: domain name. Path: path. Header: HTTP header field. Method: request method. QueryString: query parameter.
      * 
      */
     public Optional<Output<String>> type() {
@@ -245,7 +245,7 @@ public final class RuleRuleConditionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param type 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+         * @param type Standard forwarding rule condition types. Host: domain name. Path: path. Header: HTTP header field. Method: request method. QueryString: query parameter.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class RuleRuleConditionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param type 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+         * @param type Standard forwarding rule condition types. Host: domain name. Path: path. Header: HTTP header field. Method: request method. QueryString: query parameter.
          * 
          * @return builder
          * 

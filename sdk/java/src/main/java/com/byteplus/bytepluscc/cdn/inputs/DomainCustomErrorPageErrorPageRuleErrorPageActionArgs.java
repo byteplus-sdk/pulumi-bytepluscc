@@ -16,14 +16,14 @@ public final class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs extends
     public static final DomainCustomErrorPageErrorPageRuleErrorPageActionArgs Empty = new DomainCustomErrorPageErrorPageRuleErrorPageActionArgs();
 
     /**
-     * 表示实际的操作。当前您只能指定该参数值为 redirect。表示对客户端请求进行重定向。
+     * Indicates the actual operation. Currently, you can only set this parameter to redirect. This means the client request will be redirected.
      * 
      */
     @Import(name="action")
     private @Nullable Output<String> action;
 
     /**
-     * @return 表示实际的操作。当前您只能指定该参数值为 redirect。表示对客户端请求进行重定向。
+     * @return Indicates the actual operation. Currently, you can only set this parameter to redirect. This means the client request will be redirected.
      * 
      */
     public Optional<Output<String>> action() {
@@ -31,14 +31,14 @@ public final class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs extends
     }
 
     /**
-     * 表示重定向的响应状态码。您可以根据需求选择合适的状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+     * Indicates the response status code for redirection. You can select an appropriate status code as needed. The available values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original request and will not be changed.
      * 
      */
     @Import(name="redirectCode")
     private @Nullable Output<String> redirectCode;
 
     /**
-     * @return 表示重定向的响应状态码。您可以根据需求选择合适的状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+     * @return Indicates the response status code for redirection. You can select an appropriate status code as needed. The available values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original request and will not be changed.
      * 
      */
     public Optional<Output<String>> redirectCode() {
@@ -46,14 +46,14 @@ public final class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs extends
     }
 
     /**
-     * 表示跳转的目标地址，长度不能超过 1,024 个字符。地址必须包含协议，域名以及路径，并且符合 URL 的规范。
+     * Indicates the target address for redirection. The length must not exceed 1,024 characters. The address must include the protocol, domain name, and path, and comply with URL specifications.
      * 
      */
     @Import(name="redirectUrl")
     private @Nullable Output<String> redirectUrl;
 
     /**
-     * @return 表示跳转的目标地址，长度不能超过 1,024 个字符。地址必须包含协议，域名以及路径，并且符合 URL 的规范。
+     * @return Indicates the target address for redirection. The length must not exceed 1,024 characters. The address must include the protocol, domain name, and path, and comply with URL specifications.
      * 
      */
     public Optional<Output<String>> redirectUrl() {
@@ -61,14 +61,14 @@ public final class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs extends
     }
 
     /**
-     * 表示一个状态码，取值范围是 400-599。您可以输入 4xx 或者 5xx。4xx 表示 400-499 之间的所有状态码。5xx 表示 500-599 之间的所有状态码。
+     * Indicates a status code, with a value range of 400–599. You can enter 4xx or 5xx. 4xx covers all status codes from 400 to 499. 5xx covers all status codes from 500 to 599.
      * 
      */
     @Import(name="statusCode")
     private @Nullable Output<String> statusCode;
 
     /**
-     * @return 表示一个状态码，取值范围是 400-599。您可以输入 4xx 或者 5xx。4xx 表示 400-499 之间的所有状态码。5xx 表示 500-599 之间的所有状态码。
+     * @return Indicates a status code, with a value range of 400–599. You can enter 4xx or 5xx. 4xx covers all status codes from 400 to 499. 5xx covers all status codes from 500 to 599.
      * 
      */
     public Optional<Output<String>> statusCode() {
@@ -103,7 +103,7 @@ public final class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs extends
         }
 
         /**
-         * @param action 表示实际的操作。当前您只能指定该参数值为 redirect。表示对客户端请求进行重定向。
+         * @param action Indicates the actual operation. Currently, you can only set this parameter to redirect. This means the client request will be redirected.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs extends
         }
 
         /**
-         * @param action 表示实际的操作。当前您只能指定该参数值为 redirect。表示对客户端请求进行重定向。
+         * @param action Indicates the actual operation. Currently, you can only set this parameter to redirect. This means the client request will be redirected.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs extends
         }
 
         /**
-         * @param redirectCode 表示重定向的响应状态码。您可以根据需求选择合适的状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+         * @param redirectCode Indicates the response status code for redirection. You can select an appropriate status code as needed. The available values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original request and will not be changed.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs extends
         }
 
         /**
-         * @param redirectCode 表示重定向的响应状态码。您可以根据需求选择合适的状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+         * @param redirectCode Indicates the response status code for redirection. You can select an appropriate status code as needed. The available values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original request and will not be changed.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs extends
         }
 
         /**
-         * @param redirectUrl 表示跳转的目标地址，长度不能超过 1,024 个字符。地址必须包含协议，域名以及路径，并且符合 URL 的规范。
+         * @param redirectUrl Indicates the target address for redirection. The length must not exceed 1,024 characters. The address must include the protocol, domain name, and path, and comply with URL specifications.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs extends
         }
 
         /**
-         * @param redirectUrl 表示跳转的目标地址，长度不能超过 1,024 个字符。地址必须包含协议，域名以及路径，并且符合 URL 的规范。
+         * @param redirectUrl Indicates the target address for redirection. The length must not exceed 1,024 characters. The address must include the protocol, domain name, and path, and comply with URL specifications.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs extends
         }
 
         /**
-         * @param statusCode 表示一个状态码，取值范围是 400-599。您可以输入 4xx 或者 5xx。4xx 表示 400-499 之间的所有状态码。5xx 表示 500-599 之间的所有状态码。
+         * @param statusCode Indicates a status code, with a value range of 400–599. You can enter 4xx or 5xx. 4xx covers all status codes from 400 to 499. 5xx covers all status codes from 500 to 599.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs extends
         }
 
         /**
-         * @param statusCode 表示一个状态码，取值范围是 400-599。您可以输入 4xx 或者 5xx。4xx 表示 400-499 之间的所有状态码。5xx 表示 500-599 之间的所有状态码。
+         * @param statusCode Indicates a status code, with a value range of 400–599. You can enter 4xx or 5xx. 4xx covers all status codes from 400 to 499. 5xx covers all status codes from 500 to 599.
          * 
          * @return builder
          * 

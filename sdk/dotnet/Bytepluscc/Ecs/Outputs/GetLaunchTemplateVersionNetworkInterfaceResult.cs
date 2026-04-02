@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class GetLaunchTemplateVersionNetworkInterfaceResult
     {
         /// <summary>
-        /// 网卡关联的安全组ID。
+        /// Security group ID associated with the network interface.
         /// </summary>
         public readonly ImmutableArray<string> SecurityGroupIds;
         /// <summary>
-        /// 实例的私有网络子网ID。
+        /// Private network subnet ID of the instance.
         /// </summary>
         public readonly string SubnetId;
 

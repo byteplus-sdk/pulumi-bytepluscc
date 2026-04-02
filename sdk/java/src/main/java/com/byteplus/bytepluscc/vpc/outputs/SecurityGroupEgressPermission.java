@@ -13,122 +13,122 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SecurityGroupEgressPermission {
     /**
-     * @return 源地址的IPv4 CIDR或IPv6 CIDR
+     * @return IPv4 CIDR or IPv6 CIDR of the source address
      * 
      */
     private @Nullable String cidrIp;
     /**
-     * @return 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+     * @return Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
      * 
      */
     private @Nullable String description;
     /**
-     * @return 安全组规则方向。ingress：入方向。egress：出方向
+     * @return Security group rule direction. ingress: inbound direction. egress: outbound direction
      * 
      */
     private @Nullable String direction;
     /**
-     * @return 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+     * @return Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
      * 
      */
     private @Nullable String policy;
     /**
-     * @return 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+     * @return Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
      * 
      */
     private @Nullable Integer portEnd;
     /**
-     * @return 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+     * @return Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
      * 
      */
     private @Nullable Integer portStart;
     /**
-     * @return 前缀列表的ID
+     * @return Prefix list ID
      * 
      */
     private @Nullable String prefixListId;
     /**
-     * @return 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+     * @return Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
      * 
      */
     private @Nullable Integer priority;
     /**
-     * @return 协议类型。tcp、udp、icmp、icmpv6、all
+     * @return Protocol type. tcp, udp, icmp, icmpv6, all
      * 
      */
     private @Nullable String protocol;
     /**
-     * @return 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+     * @return Source address security group ID. All NIC addresses in this security group are used as source addresses
      * 
      */
     private @Nullable String sourceGroupId;
 
     private SecurityGroupEgressPermission() {}
     /**
-     * @return 源地址的IPv4 CIDR或IPv6 CIDR
+     * @return IPv4 CIDR or IPv6 CIDR of the source address
      * 
      */
     public Optional<String> cidrIp() {
         return Optional.ofNullable(this.cidrIp);
     }
     /**
-     * @return 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+     * @return Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return 安全组规则方向。ingress：入方向。egress：出方向
+     * @return Security group rule direction. ingress: inbound direction. egress: outbound direction
      * 
      */
     public Optional<String> direction() {
         return Optional.ofNullable(this.direction);
     }
     /**
-     * @return 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+     * @return Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
      * 
      */
     public Optional<String> policy() {
         return Optional.ofNullable(this.policy);
     }
     /**
-     * @return 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+     * @return Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
      * 
      */
     public Optional<Integer> portEnd() {
         return Optional.ofNullable(this.portEnd);
     }
     /**
-     * @return 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+     * @return Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
      * 
      */
     public Optional<Integer> portStart() {
         return Optional.ofNullable(this.portStart);
     }
     /**
-     * @return 前缀列表的ID
+     * @return Prefix list ID
      * 
      */
     public Optional<String> prefixListId() {
         return Optional.ofNullable(this.prefixListId);
     }
     /**
-     * @return 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+     * @return Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
      * 
      */
     public Optional<Integer> priority() {
         return Optional.ofNullable(this.priority);
     }
     /**
-     * @return 协议类型。tcp、udp、icmp、icmpv6、all
+     * @return Protocol type. tcp, udp, icmp, icmpv6, all
      * 
      */
     public Optional<String> protocol() {
         return Optional.ofNullable(this.protocol);
     }
     /**
-     * @return 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+     * @return Source address security group ID. All NIC addresses in this security group are used as source addresses
      * 
      */
     public Optional<String> sourceGroupId() {

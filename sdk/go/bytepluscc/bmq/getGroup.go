@@ -30,27 +30,27 @@ type LookupGroupArgs struct {
 
 // A collection of values returned by getGroup.
 type LookupGroupResult struct {
-	// Consumer Group 创建时间。
+	// Consumer Group creation time.
 	CreatedTime string `pulumi:"createdTime"`
-	// Consumer Group 描述。
+	// Consumer Group description.
 	Description string `pulumi:"description"`
-	// Consumer Group 的 ID。
+	// Consumer Group ID.
 	GroupId string `pulumi:"groupId"`
-	// 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+	// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
 	GroupName string `pulumi:"groupName"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 所属 BMQ 实例 ID。
+	// BMQ instance ID.
 	InstanceId string `pulumi:"instanceId"`
-	// Consumer Group 所属用户的 ID。
+	// User ID associated with the Consumer Group.
 	OwnerId string `pulumi:"ownerId"`
-	// Consumer Group 所属用户的名称。
+	// Name of the user associated with the Consumer Group.
 	OwnerName string `pulumi:"ownerName"`
-	// 重置消费位点信息。
+	// Reset consumption position information.
 	ResetInfo GetGroupResetInfo `pulumi:"resetInfo"`
-	// Consumer Group 的状态。
+	// Consumer Group status.
 	Status string `pulumi:"status"`
-	// Topic 列表。
+	// Topic list.
 	TopicInfos []GetGroupTopicInfo `pulumi:"topicInfos"`
 }
 
@@ -88,22 +88,22 @@ func (o LookupGroupResultOutput) ToLookupGroupResultOutputWithContext(ctx contex
 	return o
 }
 
-// Consumer Group 创建时间。
+// Consumer Group creation time.
 func (o LookupGroupResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// Consumer Group 描述。
+// Consumer Group description.
 func (o LookupGroupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Consumer Group 的 ID。
+// Consumer Group ID.
 func (o LookupGroupResultOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
 func (o LookupGroupResultOutput) GroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.GroupName }).(pulumi.StringOutput)
 }
@@ -113,32 +113,32 @@ func (o LookupGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 所属 BMQ 实例 ID。
+// BMQ instance ID.
 func (o LookupGroupResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// Consumer Group 所属用户的 ID。
+// User ID associated with the Consumer Group.
 func (o LookupGroupResultOutput) OwnerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.OwnerId }).(pulumi.StringOutput)
 }
 
-// Consumer Group 所属用户的名称。
+// Name of the user associated with the Consumer Group.
 func (o LookupGroupResultOutput) OwnerName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.OwnerName }).(pulumi.StringOutput)
 }
 
-// 重置消费位点信息。
+// Reset consumption position information.
 func (o LookupGroupResultOutput) ResetInfo() GetGroupResetInfoOutput {
 	return o.ApplyT(func(v LookupGroupResult) GetGroupResetInfo { return v.ResetInfo }).(GetGroupResetInfoOutput)
 }
 
-// Consumer Group 的状态。
+// Consumer Group status.
 func (o LookupGroupResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// Topic 列表。
+// Topic list.
 func (o LookupGroupResultOutput) TopicInfos() GetGroupTopicInfoArrayOutput {
 	return o.ApplyT(func(v LookupGroupResult) []GetGroupTopicInfo { return v.TopicInfos }).(GetGroupTopicInfoArrayOutput)
 }

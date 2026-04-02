@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Dns.Inputs
     public sealed class ZoneTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 标签的键。
+        /// Tag key
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 标签的值。
+        /// Tag value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

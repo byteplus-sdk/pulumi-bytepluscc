@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class ClusterMonitoringConfigComponentConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否启用该监控组件，true 表示启用，false 表示禁用。
+        /// Whether to enable this monitoring component. true means enabled; false means disabled.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// 监控组件的名称，例如 'prometheus'、'grafana' 等。
+        /// Name of the monitoring component, such as 'prometheus', 'grafana', etc.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

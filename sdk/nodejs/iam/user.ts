@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * IAM子用户是访问控制的一种身份，由账号或是拥有权限的用户创建。用户被授予权限后，可登录控制台或使用访问密钥调用API访问云资源。
+ * An IAM sub-user is an identity for access control, created by an account or a user with permissions. After permissions are granted, the user can log in to the console or use the access key to call APIs to access cloud resources.
  *
  * ## Import
  *
@@ -45,65 +45,65 @@ export class User extends pulumi.CustomResource {
 
     public /*out*/ readonly accessKeys!: pulumi.Output<outputs.iam.UserAccessKey[]>;
     /**
-     * 子用户归属的主账号。
+     * Main account to which the sub-user belongs.
      */
     public /*out*/ readonly accountId!: pulumi.Output<number>;
     /**
-     * 子用户对应的创建时间。
+     * Sub-user's creation time.
      */
     public /*out*/ readonly createDate!: pulumi.Output<string>;
     /**
-     * 子用户对应的描述信息，长度不超过255。
+     * Description for the sub-user, up to 255 characters.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+     * Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * 子用户对应的电子邮件地址。
+     * Sub-user's email address.
      */
     public readonly email!: pulumi.Output<string>;
     /**
-     * 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+     * Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
      */
     public readonly emailIsVerify!: pulumi.Output<boolean>;
     /**
-     * 子用户归属的用户组。
+     * User group to which the sub-user belongs.
      */
     public readonly groups!: pulumi.Output<string[]>;
     /**
-     * 子用户的登录配置。
+     * Login configuration for the sub-user.
      */
     public readonly loginProfile!: pulumi.Output<outputs.iam.UserLoginProfile>;
     /**
-     * 子用户对应的手机号。
+     * Sub-user's mobile number.
      */
     public readonly mobilePhone!: pulumi.Output<string>;
     /**
-     * 子用户手机号是否已验证。true代表已验证，false代表未验证。
+     * Whether the sub-user's phone number is verified. 'true' means verified, 'false' means not verified.
      */
-    public readonly mobilePhoneIsVerify!: pulumi.Output<boolean>;
+    public /*out*/ readonly mobilePhoneIsVerify!: pulumi.Output<boolean>;
     public readonly policies!: pulumi.Output<outputs.iam.UserPolicy[]>;
     /**
-     * 子用户的操作保护配置。
+     * Operation protection configuration for the sub-user.
      */
     public readonly securityConfig!: pulumi.Output<outputs.iam.UserSecurityConfig>;
     public readonly tags!: pulumi.Output<outputs.iam.UserTag[]>;
     /**
-     * 子用户对应的Trn表达式。
+     * TRN expression for the sub-user.
      */
     public /*out*/ readonly trn!: pulumi.Output<string>;
     /**
-     * 子用户对应的更新时间。
+     * Update time for the sub-user.
      */
     public /*out*/ readonly updateDate!: pulumi.Output<string>;
     /**
-     * 子用户的ID。
+     * Sub-user's ID.
      */
     public /*out*/ readonly userId!: pulumi.Output<number>;
     /**
-     * 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+     * Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
      */
     public readonly userName!: pulumi.Output<string>;
 
@@ -150,7 +150,6 @@ export class User extends pulumi.CustomResource {
             resourceInputs["groups"] = args ? args.groups : undefined;
             resourceInputs["loginProfile"] = args ? args.loginProfile : undefined;
             resourceInputs["mobilePhone"] = args ? args.mobilePhone : undefined;
-            resourceInputs["mobilePhoneIsVerify"] = args ? args.mobilePhoneIsVerify : undefined;
             resourceInputs["policies"] = args ? args.policies : undefined;
             resourceInputs["securityConfig"] = args ? args.securityConfig : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
@@ -158,6 +157,7 @@ export class User extends pulumi.CustomResource {
             resourceInputs["accessKeys"] = undefined /*out*/;
             resourceInputs["accountId"] = undefined /*out*/;
             resourceInputs["createDate"] = undefined /*out*/;
+            resourceInputs["mobilePhoneIsVerify"] = undefined /*out*/;
             resourceInputs["trn"] = undefined /*out*/;
             resourceInputs["updateDate"] = undefined /*out*/;
             resourceInputs["userId"] = undefined /*out*/;
@@ -173,65 +173,65 @@ export class User extends pulumi.CustomResource {
 export interface UserState {
     accessKeys?: pulumi.Input<pulumi.Input<inputs.iam.UserAccessKey>[]>;
     /**
-     * 子用户归属的主账号。
+     * Main account to which the sub-user belongs.
      */
     accountId?: pulumi.Input<number>;
     /**
-     * 子用户对应的创建时间。
+     * Sub-user's creation time.
      */
     createDate?: pulumi.Input<string>;
     /**
-     * 子用户对应的描述信息，长度不超过255。
+     * Description for the sub-user, up to 255 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+     * Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * 子用户对应的电子邮件地址。
+     * Sub-user's email address.
      */
     email?: pulumi.Input<string>;
     /**
-     * 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+     * Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
      */
     emailIsVerify?: pulumi.Input<boolean>;
     /**
-     * 子用户归属的用户组。
+     * User group to which the sub-user belongs.
      */
     groups?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 子用户的登录配置。
+     * Login configuration for the sub-user.
      */
     loginProfile?: pulumi.Input<inputs.iam.UserLoginProfile>;
     /**
-     * 子用户对应的手机号。
+     * Sub-user's mobile number.
      */
     mobilePhone?: pulumi.Input<string>;
     /**
-     * 子用户手机号是否已验证。true代表已验证，false代表未验证。
+     * Whether the sub-user's phone number is verified. 'true' means verified, 'false' means not verified.
      */
     mobilePhoneIsVerify?: pulumi.Input<boolean>;
     policies?: pulumi.Input<pulumi.Input<inputs.iam.UserPolicy>[]>;
     /**
-     * 子用户的操作保护配置。
+     * Operation protection configuration for the sub-user.
      */
     securityConfig?: pulumi.Input<inputs.iam.UserSecurityConfig>;
     tags?: pulumi.Input<pulumi.Input<inputs.iam.UserTag>[]>;
     /**
-     * 子用户对应的Trn表达式。
+     * TRN expression for the sub-user.
      */
     trn?: pulumi.Input<string>;
     /**
-     * 子用户对应的更新时间。
+     * Update time for the sub-user.
      */
     updateDate?: pulumi.Input<string>;
     /**
-     * 子用户的ID。
+     * Sub-user's ID.
      */
     userId?: pulumi.Input<number>;
     /**
-     * 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+     * Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
      */
     userName?: pulumi.Input<string>;
 }
@@ -241,45 +241,41 @@ export interface UserState {
  */
 export interface UserArgs {
     /**
-     * 子用户对应的描述信息，长度不超过255。
+     * Description for the sub-user, up to 255 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+     * Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * 子用户对应的电子邮件地址。
+     * Sub-user's email address.
      */
     email?: pulumi.Input<string>;
     /**
-     * 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+     * Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
      */
     emailIsVerify?: pulumi.Input<boolean>;
     /**
-     * 子用户归属的用户组。
+     * User group to which the sub-user belongs.
      */
     groups?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 子用户的登录配置。
+     * Login configuration for the sub-user.
      */
     loginProfile?: pulumi.Input<inputs.iam.UserLoginProfile>;
     /**
-     * 子用户对应的手机号。
+     * Sub-user's mobile number.
      */
     mobilePhone?: pulumi.Input<string>;
-    /**
-     * 子用户手机号是否已验证。true代表已验证，false代表未验证。
-     */
-    mobilePhoneIsVerify?: pulumi.Input<boolean>;
     policies?: pulumi.Input<pulumi.Input<inputs.iam.UserPolicy>[]>;
     /**
-     * 子用户的操作保护配置。
+     * Operation protection configuration for the sub-user.
      */
     securityConfig?: pulumi.Input<inputs.iam.UserSecurityConfig>;
     tags?: pulumi.Input<pulumi.Input<inputs.iam.UserTag>[]>;
     /**
-     * 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+     * Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
      */
     userName: pulumi.Input<string>;
 }

@@ -17,14 +17,14 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
     public static final ServerGroupHealthCheckArgs Empty = new ServerGroupHealthCheckArgs();
 
     /**
-     * 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+     * Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. Each level of the domain name can contain letters, digits, &#39;-&#39;, and &#39;.&#39; characters, and &#39;-&#39; cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+     * @return Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. Each level of the domain name can contain letters, digits, &#39;-&#39;, and &#39;.&#39; characters, and &#39;-&#39; cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
      * 
      */
     public Optional<Output<String>> domain() {
@@ -32,14 +32,14 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+     * Whether the listener enables health check. Values: on: enabled (default), off: disabled.
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<String> enabled;
 
     /**
-     * @return 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+     * @return Whether the listener enables health check. Values: on: enabled (default), off: disabled.
      * 
      */
     public Optional<Output<String>> enabled() {
@@ -47,14 +47,14 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+     * Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
      * 
      */
     @Import(name="healthyThreshold")
     private @Nullable Output<Integer> healthyThreshold;
 
     /**
-     * @return 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+     * @return Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
      * 
      */
     public Optional<Output<Integer>> healthyThreshold() {
@@ -62,14 +62,14 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+     * HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
      * 
      */
     @Import(name="httpCode")
     private @Nullable Output<String> httpCode;
 
     /**
-     * @return 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+     * @return HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
      * 
      */
     public Optional<Output<String>> httpCode() {
@@ -77,14 +77,14 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+     * Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
      * 
      */
     @Import(name="httpVersion")
     private @Nullable Output<String> httpVersion;
 
     /**
-     * @return 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+     * @return Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
      * 
      */
     public Optional<Output<String>> httpVersion() {
@@ -92,14 +92,14 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+     * After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
      * 
      */
     @Import(name="interval")
     private @Nullable Output<Integer> interval;
 
     /**
-     * @return 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+     * @return After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
      * 
      */
     public Optional<Output<Integer>> interval() {
@@ -107,14 +107,14 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+     * Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
      * 
      */
     @Import(name="method")
     private @Nullable Output<String> method;
 
     /**
-     * @return 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+     * @return Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
      * 
      */
     public Optional<Output<String>> method() {
@@ -122,14 +122,14 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+     * Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+     * @return Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -137,14 +137,14 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+     * Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
      * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
-     * @return 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+     * @return Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -152,14 +152,14 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+     * Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
      * 
      */
     @Import(name="timeout")
     private @Nullable Output<Integer> timeout;
 
     /**
-     * @return 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+     * @return Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
      * 
      */
     public Optional<Output<Integer>> timeout() {
@@ -167,14 +167,14 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+     * Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
      * 
      */
     @Import(name="unhealthyThreshold")
     private @Nullable Output<Integer> unhealthyThreshold;
 
     /**
-     * @return 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+     * @return Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
      * 
      */
     public Optional<Output<Integer>> unhealthyThreshold() {
@@ -182,14 +182,14 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&amp;’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+     * Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with &#39;/&#39;. Only letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is &#39;/&#39;.
      * 
      */
     @Import(name="uri")
     private @Nullable Output<String> uri;
 
     /**
-     * @return 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&amp;’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+     * @return Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with &#39;/&#39;. Only letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is &#39;/&#39;.
      * 
      */
     public Optional<Output<String>> uri() {
@@ -232,7 +232,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param domain 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+         * @param domain Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. Each level of the domain name can contain letters, digits, &#39;-&#39;, and &#39;.&#39; characters, and &#39;-&#39; cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param domain 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+         * @param domain Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. Each level of the domain name can contain letters, digits, &#39;-&#39;, and &#39;.&#39; characters, and &#39;-&#39; cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param enabled 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+         * @param enabled Whether the listener enables health check. Values: on: enabled (default), off: disabled.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param enabled 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+         * @param enabled Whether the listener enables health check. Values: on: enabled (default), off: disabled.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param healthyThreshold 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+         * @param healthyThreshold Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param healthyThreshold 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+         * @param healthyThreshold Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param httpCode 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+         * @param httpCode HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param httpCode 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+         * @param httpCode HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param httpVersion 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+         * @param httpVersion Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param httpVersion 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+         * @param httpVersion Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param interval 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+         * @param interval After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param interval 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+         * @param interval After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param method 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+         * @param method Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param method 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+         * @param method Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param port 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+         * @param port Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param port 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+         * @param port Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param protocol 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+         * @param protocol Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param protocol 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+         * @param protocol Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param timeout 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+         * @param timeout Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
          * 
          * @return builder
          * 
@@ -432,7 +432,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param timeout 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+         * @param timeout Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param unhealthyThreshold 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+         * @param unhealthyThreshold Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param unhealthyThreshold 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+         * @param unhealthyThreshold Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
          * 
          * @return builder
          * 
@@ -463,7 +463,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param uri 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&amp;’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+         * @param uri Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with &#39;/&#39;. Only letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is &#39;/&#39;.
          * 
          * @return builder
          * 
@@ -474,7 +474,7 @@ public final class ServerGroupHealthCheckArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param uri 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&amp;’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+         * @param uri Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with &#39;/&#39;. Only letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is &#39;/&#39;.
          * 
          * @return builder
          * 

@@ -14,79 +14,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
     public sealed class NlbServerGroupHealthCheckArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 健康检查的域名。
+        /// Health check domain name
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
         /// <summary>
-        /// 是否开启健康检查。
+        /// Enable health check
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+        /// Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with 'normal' results, it is considered health check 'normal'
         /// </summary>
         [Input("healthyThreshold")]
         public Input<int>? HealthyThreshold { get; set; }
 
         /// <summary>
-        /// 健康检查正常的HTTP状态码。
+        /// HTTP status codes indicating a healthy health check.
         /// </summary>
         [Input("httpCode")]
         public Input<string>? HttpCode { get; set; }
 
         /// <summary>
-        /// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+        /// Health check interval, range: 1–300 seconds, default: 10 seconds.
         /// </summary>
         [Input("interval")]
         public Input<int>? Interval { get; set; }
 
         /// <summary>
-        /// 健康检查的请求方法。
+        /// Health check request method
         /// </summary>
         [Input("method")]
         public Input<string>? Method { get; set; }
 
         /// <summary>
-        /// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+        /// Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server's port is used for health checks. If full port forwarding is enabled, this parameter must be specified
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+        /// Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check 'abnormal'
         /// </summary>
         [Input("timeout")]
         public Input<int>? Timeout { get; set; }
 
         /// <summary>
-        /// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+        /// Health check protocol type. Options: TCP (default), HTTP, UDP
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+        /// UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
         /// </summary>
         [Input("udpExpect")]
         public Input<string>? UdpExpect { get; set; }
 
         /// <summary>
-        /// UDP健康检查的预期响应字符串。
+        /// Expected response string for UDP health check
         /// </summary>
         [Input("udpRequest")]
         public Input<string>? UdpRequest { get; set; }
 
         /// <summary>
-        /// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+        /// Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with 'abnormal' results, it is considered health check abnormal
         /// </summary>
         [Input("unhealthyThreshold")]
         public Input<int>? UnhealthyThreshold { get; set; }
 
         /// <summary>
-        /// 健康检查的路径。
+        /// Health check path
         /// </summary>
         [Input("uri")]
         public Input<string>? Uri { get; set; }

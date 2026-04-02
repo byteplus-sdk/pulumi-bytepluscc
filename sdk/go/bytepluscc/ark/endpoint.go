@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 在使用大语言模型进行推理服务时，推理接入点（Endpoint）是模型调用的关键入口。开发者只需通过指定的 ID 即可向大模型发起 API / SDK 推理请求，实现快速接入与灵活调用。系统提供统一的 API 调用方式、调用监控、限流策略与安全保障机制，确保推理过程的稳定性与安全性。
+// When using large language models for inference services, the inference endpoint is the key entry point for model invocation. Developers can initiate API/SDK inference requests to the large model simply by specifying the ID, enabling quick access and flexible invocation. The system provides a unified API invocation method, call monitoring, rate limiting strategies, and security mechanisms to ensure stability and security during inference
 //
 // ## Import
 //
@@ -22,44 +22,44 @@ import (
 type Endpoint struct {
 	pulumi.CustomResourceState
 
-	// 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+	// Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
 	BatchOnly pulumi.BoolOutput `pulumi:"batchOnly"`
-	// 证书信息。
+	// Certificate information
 	Certificate EndpointCertificateOutput `pulumi:"certificate"`
-	// 接入点创建时间，RFC3339格式。
+	// Endpoint creation time, RFC3339 format
 	CreateTime pulumi.StringOutput `pulumi:"createTime"`
-	// 接入点描述。
+	// Endpoint description
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 推理接入点的ID。
+	// Inference access point ID.
 	EndpointId pulumi.StringOutput `pulumi:"endpointId"`
-	// 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+	// Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
 	EndpointModelType pulumi.StringOutput `pulumi:"endpointModelType"`
-	// 接入点接入模型。
+	// Endpoint access model
 	ModelReference EndpointModelReferenceOutput `pulumi:"modelReference"`
-	// 模型单元，为空表示后付费；否则预付费。
+	// Model unit. If empty, indicates postpaid; otherwise, prepaid.
 	ModelUnitId pulumi.StringOutput `pulumi:"modelUnitId"`
-	// 内容护栏方案。
+	// Content guardrail scheme
 	Moderation EndpointModerationOutput `pulumi:"moderation"`
-	// 接入点名称。
+	// Endpoint name
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 资源所属的项目名称，默认值为default。
+	// Project name the resource belongs to; default value is "default"
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 接入点限流。
+	// Endpoint rate limiting
 	RateLimit EndpointRateLimitOutput `pulumi:"rateLimit"`
-	// 接入点切换的Id。
+	// Endpoint switch ID
 	RollingId pulumi.StringOutput `pulumi:"rollingId"`
-	// 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+	// If a TPM protection package exists, this is the TPM protection package ID.
 	ScaleTierId pulumi.StringOutput `pulumi:"scaleTierId"`
-	// 接入点状态。
+	// Endpoint status
 	Status pulumi.StringOutput `pulumi:"status"`
-	// 状态附加说明信息。
+	// Additional status information
 	StatusReason pulumi.StringOutput `pulumi:"statusReason"`
-	// 是否支持接入点切换模型版本。
+	// Whether endpoint supports switching model versions
 	SupportRolling pulumi.BoolOutput `pulumi:"supportRolling"`
-	// 是否支持TPM保障包。
+	// Whether TPM protection package is supported
 	SupportScaleTier pulumi.BoolOutput      `pulumi:"supportScaleTier"`
 	Tags             EndpointTagArrayOutput `pulumi:"tags"`
-	// 接入点更新时间，RFC3339格式。
+	// Endpoint update time, RFC3339 format
 	UpdateTime pulumi.StringOutput `pulumi:"updateTime"`
 }
 
@@ -99,86 +99,86 @@ func GetEndpoint(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Endpoint resources.
 type endpointState struct {
-	// 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+	// Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
 	BatchOnly *bool `pulumi:"batchOnly"`
-	// 证书信息。
+	// Certificate information
 	Certificate *EndpointCertificate `pulumi:"certificate"`
-	// 接入点创建时间，RFC3339格式。
+	// Endpoint creation time, RFC3339 format
 	CreateTime *string `pulumi:"createTime"`
-	// 接入点描述。
+	// Endpoint description
 	Description *string `pulumi:"description"`
-	// 推理接入点的ID。
+	// Inference access point ID.
 	EndpointId *string `pulumi:"endpointId"`
-	// 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+	// Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
 	EndpointModelType *string `pulumi:"endpointModelType"`
-	// 接入点接入模型。
+	// Endpoint access model
 	ModelReference *EndpointModelReference `pulumi:"modelReference"`
-	// 模型单元，为空表示后付费；否则预付费。
+	// Model unit. If empty, indicates postpaid; otherwise, prepaid.
 	ModelUnitId *string `pulumi:"modelUnitId"`
-	// 内容护栏方案。
+	// Content guardrail scheme
 	Moderation *EndpointModeration `pulumi:"moderation"`
-	// 接入点名称。
+	// Endpoint name
 	Name *string `pulumi:"name"`
-	// 资源所属的项目名称，默认值为default。
+	// Project name the resource belongs to; default value is "default"
 	ProjectName *string `pulumi:"projectName"`
-	// 接入点限流。
+	// Endpoint rate limiting
 	RateLimit *EndpointRateLimit `pulumi:"rateLimit"`
-	// 接入点切换的Id。
+	// Endpoint switch ID
 	RollingId *string `pulumi:"rollingId"`
-	// 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+	// If a TPM protection package exists, this is the TPM protection package ID.
 	ScaleTierId *string `pulumi:"scaleTierId"`
-	// 接入点状态。
+	// Endpoint status
 	Status *string `pulumi:"status"`
-	// 状态附加说明信息。
+	// Additional status information
 	StatusReason *string `pulumi:"statusReason"`
-	// 是否支持接入点切换模型版本。
+	// Whether endpoint supports switching model versions
 	SupportRolling *bool `pulumi:"supportRolling"`
-	// 是否支持TPM保障包。
+	// Whether TPM protection package is supported
 	SupportScaleTier *bool         `pulumi:"supportScaleTier"`
 	Tags             []EndpointTag `pulumi:"tags"`
-	// 接入点更新时间，RFC3339格式。
+	// Endpoint update time, RFC3339 format
 	UpdateTime *string `pulumi:"updateTime"`
 }
 
 type EndpointState struct {
-	// 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+	// Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
 	BatchOnly pulumi.BoolPtrInput
-	// 证书信息。
+	// Certificate information
 	Certificate EndpointCertificatePtrInput
-	// 接入点创建时间，RFC3339格式。
+	// Endpoint creation time, RFC3339 format
 	CreateTime pulumi.StringPtrInput
-	// 接入点描述。
+	// Endpoint description
 	Description pulumi.StringPtrInput
-	// 推理接入点的ID。
+	// Inference access point ID.
 	EndpointId pulumi.StringPtrInput
-	// 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+	// Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
 	EndpointModelType pulumi.StringPtrInput
-	// 接入点接入模型。
+	// Endpoint access model
 	ModelReference EndpointModelReferencePtrInput
-	// 模型单元，为空表示后付费；否则预付费。
+	// Model unit. If empty, indicates postpaid; otherwise, prepaid.
 	ModelUnitId pulumi.StringPtrInput
-	// 内容护栏方案。
+	// Content guardrail scheme
 	Moderation EndpointModerationPtrInput
-	// 接入点名称。
+	// Endpoint name
 	Name pulumi.StringPtrInput
-	// 资源所属的项目名称，默认值为default。
+	// Project name the resource belongs to; default value is "default"
 	ProjectName pulumi.StringPtrInput
-	// 接入点限流。
+	// Endpoint rate limiting
 	RateLimit EndpointRateLimitPtrInput
-	// 接入点切换的Id。
+	// Endpoint switch ID
 	RollingId pulumi.StringPtrInput
-	// 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+	// If a TPM protection package exists, this is the TPM protection package ID.
 	ScaleTierId pulumi.StringPtrInput
-	// 接入点状态。
+	// Endpoint status
 	Status pulumi.StringPtrInput
-	// 状态附加说明信息。
+	// Additional status information
 	StatusReason pulumi.StringPtrInput
-	// 是否支持接入点切换模型版本。
+	// Whether endpoint supports switching model versions
 	SupportRolling pulumi.BoolPtrInput
-	// 是否支持TPM保障包。
+	// Whether TPM protection package is supported
 	SupportScaleTier pulumi.BoolPtrInput
 	Tags             EndpointTagArrayInput
-	// 接入点更新时间，RFC3339格式。
+	// Endpoint update time, RFC3339 format
 	UpdateTime pulumi.StringPtrInput
 }
 
@@ -187,38 +187,38 @@ func (EndpointState) ElementType() reflect.Type {
 }
 
 type endpointArgs struct {
-	// 接入点描述。
+	// Endpoint description
 	Description *string `pulumi:"description"`
-	// 接入点接入模型。
+	// Endpoint access model
 	ModelReference EndpointModelReference `pulumi:"modelReference"`
-	// 模型单元，为空表示后付费；否则预付费。
+	// Model unit. If empty, indicates postpaid; otherwise, prepaid.
 	ModelUnitId *string `pulumi:"modelUnitId"`
-	// 内容护栏方案。
+	// Content guardrail scheme
 	Moderation *EndpointModeration `pulumi:"moderation"`
-	// 接入点名称。
+	// Endpoint name
 	Name string `pulumi:"name"`
-	// 资源所属的项目名称，默认值为default。
+	// Project name the resource belongs to; default value is "default"
 	ProjectName *string `pulumi:"projectName"`
-	// 接入点限流。
+	// Endpoint rate limiting
 	RateLimit *EndpointRateLimit `pulumi:"rateLimit"`
 	Tags      []EndpointTag      `pulumi:"tags"`
 }
 
 // The set of arguments for constructing a Endpoint resource.
 type EndpointArgs struct {
-	// 接入点描述。
+	// Endpoint description
 	Description pulumi.StringPtrInput
-	// 接入点接入模型。
+	// Endpoint access model
 	ModelReference EndpointModelReferenceInput
-	// 模型单元，为空表示后付费；否则预付费。
+	// Model unit. If empty, indicates postpaid; otherwise, prepaid.
 	ModelUnitId pulumi.StringPtrInput
-	// 内容护栏方案。
+	// Content guardrail scheme
 	Moderation EndpointModerationPtrInput
-	// 接入点名称。
+	// Endpoint name
 	Name pulumi.StringInput
-	// 资源所属的项目名称，默认值为default。
+	// Project name the resource belongs to; default value is "default"
 	ProjectName pulumi.StringPtrInput
-	// 接入点限流。
+	// Endpoint rate limiting
 	RateLimit EndpointRateLimitPtrInput
 	Tags      EndpointTagArrayInput
 }
@@ -310,92 +310,92 @@ func (o EndpointOutput) ToEndpointOutputWithContext(ctx context.Context) Endpoin
 	return o
 }
 
-// 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+// Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
 func (o EndpointOutput) BatchOnly() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.BoolOutput { return v.BatchOnly }).(pulumi.BoolOutput)
 }
 
-// 证书信息。
+// Certificate information
 func (o EndpointOutput) Certificate() EndpointCertificateOutput {
 	return o.ApplyT(func(v *Endpoint) EndpointCertificateOutput { return v.Certificate }).(EndpointCertificateOutput)
 }
 
-// 接入点创建时间，RFC3339格式。
+// Endpoint creation time, RFC3339 format
 func (o EndpointOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 接入点描述。
+// Endpoint description
 func (o EndpointOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 推理接入点的ID。
+// Inference access point ID.
 func (o EndpointOutput) EndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.EndpointId }).(pulumi.StringOutput)
 }
 
-// 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+// Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
 func (o EndpointOutput) EndpointModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.EndpointModelType }).(pulumi.StringOutput)
 }
 
-// 接入点接入模型。
+// Endpoint access model
 func (o EndpointOutput) ModelReference() EndpointModelReferenceOutput {
 	return o.ApplyT(func(v *Endpoint) EndpointModelReferenceOutput { return v.ModelReference }).(EndpointModelReferenceOutput)
 }
 
-// 模型单元，为空表示后付费；否则预付费。
+// Model unit. If empty, indicates postpaid; otherwise, prepaid.
 func (o EndpointOutput) ModelUnitId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.ModelUnitId }).(pulumi.StringOutput)
 }
 
-// 内容护栏方案。
+// Content guardrail scheme
 func (o EndpointOutput) Moderation() EndpointModerationOutput {
 	return o.ApplyT(func(v *Endpoint) EndpointModerationOutput { return v.Moderation }).(EndpointModerationOutput)
 }
 
-// 接入点名称。
+// Endpoint name
 func (o EndpointOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 资源所属的项目名称，默认值为default。
+// Project name the resource belongs to; default value is "default"
 func (o EndpointOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 接入点限流。
+// Endpoint rate limiting
 func (o EndpointOutput) RateLimit() EndpointRateLimitOutput {
 	return o.ApplyT(func(v *Endpoint) EndpointRateLimitOutput { return v.RateLimit }).(EndpointRateLimitOutput)
 }
 
-// 接入点切换的Id。
+// Endpoint switch ID
 func (o EndpointOutput) RollingId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.RollingId }).(pulumi.StringOutput)
 }
 
-// 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+// If a TPM protection package exists, this is the TPM protection package ID.
 func (o EndpointOutput) ScaleTierId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.ScaleTierId }).(pulumi.StringOutput)
 }
 
-// 接入点状态。
+// Endpoint status
 func (o EndpointOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// 状态附加说明信息。
+// Additional status information
 func (o EndpointOutput) StatusReason() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.StatusReason }).(pulumi.StringOutput)
 }
 
-// 是否支持接入点切换模型版本。
+// Whether endpoint supports switching model versions
 func (o EndpointOutput) SupportRolling() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.BoolOutput { return v.SupportRolling }).(pulumi.BoolOutput)
 }
 
-// 是否支持TPM保障包。
+// Whether TPM protection package is supported
 func (o EndpointOutput) SupportScaleTier() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.BoolOutput { return v.SupportScaleTier }).(pulumi.BoolOutput)
 }
@@ -404,7 +404,7 @@ func (o EndpointOutput) Tags() EndpointTagArrayOutput {
 	return o.ApplyT(func(v *Endpoint) EndpointTagArrayOutput { return v.Tags }).(EndpointTagArrayOutput)
 }
 
-// 接入点更新时间，RFC3339格式。
+// Endpoint update time, RFC3339 format
 func (o EndpointOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.UpdateTime }).(pulumi.StringOutput)
 }

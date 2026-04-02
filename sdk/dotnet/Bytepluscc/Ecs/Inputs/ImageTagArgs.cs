@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class ImageTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 镜像标签的标签键。
+        /// Tag key for the image label.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 镜像标签的值。
+        /// Image tag value
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

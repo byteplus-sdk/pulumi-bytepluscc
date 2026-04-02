@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class GetDbAccountTableColumnPrivilegeResult
     {
         /// <summary>
-        /// 账号的列权限信息。
+        /// Account column permission information.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbAccountTableColumnPrivilegeColumnPrivilegeResult> ColumnPrivileges;
         /// <summary>
-        /// 对账号进行权限设置的表所属的数据库的名称。
+        /// Name of the database to which the table belongs for setting permissions for the account.
         /// </summary>
         public readonly string DbName;
         /// <summary>
-        /// 账号的表权限信息。
+        /// Account table permission information.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbAccountTableColumnPrivilegeTablePrivilegeResult> TablePrivileges;
 

@@ -15,50 +15,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolNodeConfigSecurity {
     /**
-     * @return 节点的访问方式配置。
+     * @return Node access configuration.
      * 
      */
     private @Nullable NodePoolNodeConfigSecurityLogin login;
     /**
-     * @return 节点网络所在的安全组 ID 列表。
+     * @return List of security group IDs for the node network
      * 
      */
     private @Nullable List<String> securityGroupIds;
     /**
-     * @return 节点的安全策略，参数值说明：Hids：主机安全加固。
+     * @return Node security policy. Parameter description: Hids: Host security hardening.
      * 
      */
     private @Nullable List<String> securityStrategies;
     /**
-     * @return 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+     * @return Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
      * 
      */
     private @Nullable Boolean securityStrategyEnabled;
 
     private NodePoolNodeConfigSecurity() {}
     /**
-     * @return 节点的访问方式配置。
+     * @return Node access configuration.
      * 
      */
     public Optional<NodePoolNodeConfigSecurityLogin> login() {
         return Optional.ofNullable(this.login);
     }
     /**
-     * @return 节点网络所在的安全组 ID 列表。
+     * @return List of security group IDs for the node network
      * 
      */
     public List<String> securityGroupIds() {
         return this.securityGroupIds == null ? List.of() : this.securityGroupIds;
     }
     /**
-     * @return 节点的安全策略，参数值说明：Hids：主机安全加固。
+     * @return Node security policy. Parameter description: Hids: Host security hardening.
      * 
      */
     public List<String> securityStrategies() {
         return this.securityStrategies == null ? List.of() : this.securityStrategies;
     }
     /**
-     * @return 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+     * @return Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
      * 
      */
     public Optional<Boolean> securityStrategyEnabled() {

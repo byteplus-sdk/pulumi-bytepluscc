@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class UpstreamUpstreamSpecAiProvider
     {
         /// <summary>
-        /// 模型地址。
+        /// Model address
         /// </summary>
         public readonly string? BaseUrl;
         /// <summary>
-        /// 火山自部署模型服务。
+        /// Volcano Engine self-hosted model service
         /// </summary>
         public readonly Outputs.UpstreamUpstreamSpecAiProviderCustomModelService? CustomModelService;
         /// <summary>
-        /// 模型服务商名称。
+        /// Model Service Provider Name
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// 模型API key。
+        /// Model API key
         /// </summary>
         public readonly string? Token;
 

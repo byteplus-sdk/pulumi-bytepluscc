@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 针对HTTPS协议，提供统一的证书管理服务，证书无需上传到后端服务器，支持在CLB实例上解密处理，降低了后端服务器的CPU开销。
+ * Provides unified certificate management service for HTTPS protocol. Certificates do not need to be uploaded to backend servers. Supports decryption processing on CLB instances, reducing CPU overhead on backend servers.
  *
  * ## Example Usage
  *
@@ -65,51 +65,51 @@ export class Certificate extends pulumi.CustomResource {
     }
 
     /**
-     * 证书的ID。
+     * Certificate ID.
      */
     public /*out*/ readonly certificateId!: pulumi.Output<string>;
     /**
-     * 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+     * Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
      */
     public readonly certificateName!: pulumi.Output<string>;
     /**
-     * 证书的创建时间。
+     * Certificate creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 证书的主域名。
+     * Certificate primary domain name.
      */
     public /*out*/ readonly domainName!: pulumi.Output<string>;
     /**
-     * 证书的过期时间。
+     * Certificate expiration time.
      */
     public /*out*/ readonly expiredAt!: pulumi.Output<string>;
     /**
-     * 证书关联的监听器的ID。
+     * ID of the listener associated with the certificate.
      */
     public /*out*/ readonly listeners!: pulumi.Output<string[]>;
     /**
-     * 证书的私钥。
+     * Certificate private key.
      */
     public readonly privateKey!: pulumi.Output<string>;
     /**
-     * 证书所属项目的名称。不填默认为default。
+     * Name of the project the certificate belongs to. If not specified, defaults to 'default'.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 证书的公钥。
+     * Certificate public key.
      */
     public readonly publicKey!: pulumi.Output<string>;
     /**
-     * 是否为托管资源。true：托管资源。false：非托管资源。
+     * Managed resource status. true: managed resource. false: unmanaged resource.
      */
     public /*out*/ readonly serviceManaged!: pulumi.Output<boolean>;
     /**
-     * 证书的备用域名列表。
+     * List of alternate domain names for the certificate.
      */
     public /*out*/ readonly subjectAlternativeNames!: pulumi.Output<string[]>;
     public readonly tags!: pulumi.Output<outputs.clb.CertificateTag[]>;
@@ -172,51 +172,51 @@ export class Certificate extends pulumi.CustomResource {
  */
 export interface CertificateState {
     /**
-     * 证书的ID。
+     * Certificate ID.
      */
     certificateId?: pulumi.Input<string>;
     /**
-     * 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+     * Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
      */
     certificateName?: pulumi.Input<string>;
     /**
-     * 证书的创建时间。
+     * Certificate creation time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 证书的主域名。
+     * Certificate primary domain name.
      */
     domainName?: pulumi.Input<string>;
     /**
-     * 证书的过期时间。
+     * Certificate expiration time.
      */
     expiredAt?: pulumi.Input<string>;
     /**
-     * 证书关联的监听器的ID。
+     * ID of the listener associated with the certificate.
      */
     listeners?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 证书的私钥。
+     * Certificate private key.
      */
     privateKey?: pulumi.Input<string>;
     /**
-     * 证书所属项目的名称。不填默认为default。
+     * Name of the project the certificate belongs to. If not specified, defaults to 'default'.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 证书的公钥。
+     * Certificate public key.
      */
     publicKey?: pulumi.Input<string>;
     /**
-     * 是否为托管资源。true：托管资源。false：非托管资源。
+     * Managed resource status. true: managed resource. false: unmanaged resource.
      */
     serviceManaged?: pulumi.Input<boolean>;
     /**
-     * 证书的备用域名列表。
+     * List of alternate domain names for the certificate.
      */
     subjectAlternativeNames?: pulumi.Input<pulumi.Input<string>[]>;
     tags?: pulumi.Input<pulumi.Input<inputs.clb.CertificateTag>[]>;
@@ -227,23 +227,23 @@ export interface CertificateState {
  */
 export interface CertificateArgs {
     /**
-     * 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+     * Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
      */
     certificateName?: pulumi.Input<string>;
     /**
-     * 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 证书的私钥。
+     * Certificate private key.
      */
     privateKey: pulumi.Input<string>;
     /**
-     * 证书所属项目的名称。不填默认为default。
+     * Name of the project the certificate belongs to. If not specified, defaults to 'default'.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 证书的公钥。
+     * Certificate public key.
      */
     publicKey: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.clb.CertificateTag>[]>;

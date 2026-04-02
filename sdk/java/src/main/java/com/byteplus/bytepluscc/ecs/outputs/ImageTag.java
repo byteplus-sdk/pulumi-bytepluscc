@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ImageTag {
     /**
-     * @return 镜像标签的标签键。
+     * @return Tag key for the image label.
      * 
      */
     private @Nullable String key;
     /**
-     * @return 镜像标签的值。
+     * @return Image tag value
      * 
      */
     private @Nullable String value;
 
     private ImageTag() {}
     /**
-     * @return 镜像标签的标签键。
+     * @return Tag key for the image label.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 镜像标签的值。
+     * @return Image tag value
      * 
      */
     public Optional<String> value() {

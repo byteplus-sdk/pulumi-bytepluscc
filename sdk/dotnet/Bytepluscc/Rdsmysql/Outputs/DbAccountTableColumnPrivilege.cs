@@ -16,7 +16,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     {
         public readonly ImmutableArray<Outputs.DbAccountTableColumnPrivilegeColumnPrivilege> ColumnPrivileges;
         /// <summary>
-        /// 对账号进行权限设置的表所属的数据库的名称。
+        /// Name of the database to which the table belongs for setting permissions for the account.
         /// </summary>
         public readonly string? DbName;
         public readonly ImmutableArray<Outputs.DbAccountTableColumnPrivilegeTablePrivilege> TablePrivileges;

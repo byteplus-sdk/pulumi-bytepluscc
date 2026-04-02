@@ -22,14 +22,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     public static final DefaultNodePoolKubernetesConfigKubeletConfigArgs Empty = new DefaultNodePoolKubernetesConfigKubeletConfigArgs();
 
     /**
-     * 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+     * Configure kubelet&#39;s CpuManagerPolicy. Includes none and static strategies
      * 
      */
     @Import(name="cpuManagerPolicy")
     private @Nullable Output<String> cpuManagerPolicy;
 
     /**
-     * @return 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+     * @return Configure kubelet&#39;s CpuManagerPolicy. Includes none and static strategies
      * 
      */
     public Optional<Output<String>> cpuManagerPolicy() {
@@ -37,14 +37,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     }
 
     /**
-     * 特性门控。
+     * Feature gate.
      * 
      */
     @Import(name="featureGates")
     private @Nullable Output<DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs> featureGates;
 
     /**
-     * @return 特性门控。
+     * @return Feature gate.
      * 
      */
     public Optional<Output<DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs>> featureGates() {
@@ -52,14 +52,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     }
 
     /**
-     * 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+     * Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
      * 
      */
     @Import(name="kubeApiBurst")
     private @Nullable Output<Integer> kubeApiBurst;
 
     /**
-     * @return 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+     * @return Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
      * 
      */
     public Optional<Output<Integer>> kubeApiBurst() {
@@ -67,14 +67,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     }
 
     /**
-     * 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+     * Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
      * 
      */
     @Import(name="kubeApiQps")
     private @Nullable Output<Integer> kubeApiQps;
 
     /**
-     * @return 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+     * @return Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
      * 
      */
     public Optional<Output<Integer>> kubeApiQps() {
@@ -89,14 +89,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     }
 
     /**
-     * 配置 kubelet 支持的最大 Pod 数量
+     * Configure the maximum number of Pods supported by kubelet
      * 
      */
     @Import(name="maxPods")
     private @Nullable Output<Integer> maxPods;
 
     /**
-     * @return 配置 kubelet 支持的最大 Pod 数量
+     * @return Configure the maximum number of Pods supported by kubelet
      * 
      */
     public Optional<Output<Integer>> maxPods() {
@@ -104,14 +104,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     }
 
     /**
-     * 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+     * Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
      * 
      */
     @Import(name="registryBurst")
     private @Nullable Output<Integer> registryBurst;
 
     /**
-     * @return 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+     * @return Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
      * 
      */
     public Optional<Output<Integer>> registryBurst() {
@@ -119,14 +119,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     }
 
     /**
-     * 可用来限制镜像仓库的 QPS 上限
+     * Can be used to limit the QPS cap for the image repository
      * 
      */
     @Import(name="registryPullQps")
     private @Nullable Output<Integer> registryPullQps;
 
     /**
-     * @return 可用来限制镜像仓库的 QPS 上限
+     * @return Can be used to limit the QPS cap for the image repository
      * 
      */
     public Optional<Output<Integer>> registryPullQps() {
@@ -134,14 +134,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     }
 
     /**
-     * 逐一拉取镜像。
+     * Pull images one by one
      * 
      */
     @Import(name="serializeImagePulls")
     private @Nullable Output<Boolean> serializeImagePulls;
 
     /**
-     * @return 逐一拉取镜像。
+     * @return Pull images one by one
      * 
      */
     public Optional<Output<Boolean>> serializeImagePulls() {
@@ -156,14 +156,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     }
 
     /**
-     * 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+     * Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
      * 
      */
     @Import(name="topologyManagerPolicy")
     private @Nullable Output<String> topologyManagerPolicy;
 
     /**
-     * @return 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+     * @return Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
      * 
      */
     public Optional<Output<String>> topologyManagerPolicy() {
@@ -171,14 +171,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     }
 
     /**
-     * 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+     * Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
      * 
      */
     @Import(name="topologyManagerScope")
     private @Nullable Output<String> topologyManagerScope;
 
     /**
-     * @return 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+     * @return Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
      * 
      */
     public Optional<Output<String>> topologyManagerScope() {
@@ -221,7 +221,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param cpuManagerPolicy 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+         * @param cpuManagerPolicy Configure kubelet&#39;s CpuManagerPolicy. Includes none and static strategies
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param cpuManagerPolicy 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+         * @param cpuManagerPolicy Configure kubelet&#39;s CpuManagerPolicy. Includes none and static strategies
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param featureGates 特性门控。
+         * @param featureGates Feature gate.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param featureGates 特性门控。
+         * @param featureGates Feature gate.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param kubeApiBurst 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+         * @param kubeApiBurst Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param kubeApiBurst 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+         * @param kubeApiBurst Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param kubeApiQps 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+         * @param kubeApiQps Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param kubeApiQps 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+         * @param kubeApiQps Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param maxPods 配置 kubelet 支持的最大 Pod 数量
+         * @param maxPods Configure the maximum number of Pods supported by kubelet
          * 
          * @return builder
          * 
@@ -329,7 +329,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param maxPods 配置 kubelet 支持的最大 Pod 数量
+         * @param maxPods Configure the maximum number of Pods supported by kubelet
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param registryBurst 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+         * @param registryBurst Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
          * 
          * @return builder
          * 
@@ -350,7 +350,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param registryBurst 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+         * @param registryBurst Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
          * 
          * @return builder
          * 
@@ -360,7 +360,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param registryPullQps 可用来限制镜像仓库的 QPS 上限
+         * @param registryPullQps Can be used to limit the QPS cap for the image repository
          * 
          * @return builder
          * 
@@ -371,7 +371,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param registryPullQps 可用来限制镜像仓库的 QPS 上限
+         * @param registryPullQps Can be used to limit the QPS cap for the image repository
          * 
          * @return builder
          * 
@@ -381,7 +381,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param serializeImagePulls 逐一拉取镜像。
+         * @param serializeImagePulls Pull images one by one
          * 
          * @return builder
          * 
@@ -392,7 +392,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param serializeImagePulls 逐一拉取镜像。
+         * @param serializeImagePulls Pull images one by one
          * 
          * @return builder
          * 
@@ -415,7 +415,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param topologyManagerPolicy 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+         * @param topologyManagerPolicy Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
          * 
          * @return builder
          * 
@@ -426,7 +426,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param topologyManagerPolicy 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+         * @param topologyManagerPolicy Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
          * 
          * @return builder
          * 
@@ -436,7 +436,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param topologyManagerScope 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+         * @param topologyManagerScope Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
          * 
          * @return builder
          * 
@@ -447,7 +447,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         }
 
         /**
-         * @param topologyManagerScope 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+         * @param topologyManagerScope Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
          * 
          * @return builder
          * 

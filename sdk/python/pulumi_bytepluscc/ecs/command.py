@@ -36,16 +36,16 @@ class CommandArgs:
                  working_dir: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Command resource.
-        :param pulumi.Input[builtins.str] command_content: 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
-        :param pulumi.Input[builtins.str] name: 命令名称。字符长度1~32。不限制特殊字符。
-        :param pulumi.Input[builtins.str] type: 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
-        :param pulumi.Input[builtins.str] content_encoding: 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
-        :param pulumi.Input[builtins.str] description: 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
-        :param pulumi.Input[builtins.bool] enable_parameter: 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目，一个资源只能归属于一个项目。
-        :param pulumi.Input[builtins.int] timeout: 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
-        :param pulumi.Input[builtins.str] username: 执行命令时的用户名。
-        :param pulumi.Input[builtins.str] working_dir: 创建的命令在ECS实例中运行的目录。
+        :param pulumi.Input[builtins.str] command_content: Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
+        :param pulumi.Input[builtins.str] name: Command name. Character length: 1~32. No restriction on special characters.
+        :param pulumi.Input[builtins.str] type: Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
+        :param pulumi.Input[builtins.str] content_encoding: Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
+        :param pulumi.Input[builtins.str] description: Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
+        :param pulumi.Input[builtins.bool] enable_parameter: Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. Each resource can belong to only one project.
+        :param pulumi.Input[builtins.int] timeout: Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
+        :param pulumi.Input[builtins.str] username: Username for executing the command.
+        :param pulumi.Input[builtins.str] working_dir: Directory where the created command runs on ECS instances.
         """
         pulumi.set(__self__, "command_content", command_content)
         pulumi.set(__self__, "name", name)
@@ -73,7 +73,7 @@ class CommandArgs:
     @pulumi.getter(name="commandContent")
     def command_content(self) -> pulumi.Input[builtins.str]:
         """
-        命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+        Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
         """
         return pulumi.get(self, "command_content")
 
@@ -85,7 +85,7 @@ class CommandArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        命令名称。字符长度1~32。不限制特殊字符。
+        Command name. Character length: 1~32. No restriction on special characters.
         """
         return pulumi.get(self, "name")
 
@@ -97,7 +97,7 @@ class CommandArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[builtins.str]:
         """
-        命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+        Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
         """
         return pulumi.get(self, "type")
 
@@ -109,7 +109,7 @@ class CommandArgs:
     @pulumi.getter(name="contentEncoding")
     def content_encoding(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+        Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
         """
         return pulumi.get(self, "content_encoding")
 
@@ -121,7 +121,7 @@ class CommandArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+        Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
         """
         return pulumi.get(self, "description")
 
@@ -133,7 +133,7 @@ class CommandArgs:
     @pulumi.getter(name="enableParameter")
     def enable_parameter(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+        Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
         """
         return pulumi.get(self, "enable_parameter")
 
@@ -154,7 +154,7 @@ class CommandArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源所属项目，一个资源只能归属于一个项目。
+        Project to which the resource belongs. Each resource can belong to only one project.
         """
         return pulumi.get(self, "project_name")
 
@@ -175,7 +175,7 @@ class CommandArgs:
     @pulumi.getter
     def timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+        Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
         """
         return pulumi.get(self, "timeout")
 
@@ -187,7 +187,7 @@ class CommandArgs:
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        执行命令时的用户名。
+        Username for executing the command.
         """
         return pulumi.get(self, "username")
 
@@ -199,7 +199,7 @@ class CommandArgs:
     @pulumi.getter(name="workingDir")
     def working_dir(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建的命令在ECS实例中运行的目录。
+        Directory where the created command runs on ECS instances.
         """
         return pulumi.get(self, "working_dir")
 
@@ -230,21 +230,21 @@ class _CommandState:
                  working_dir: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Command resources.
-        :param pulumi.Input[builtins.str] command_content: 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
-        :param pulumi.Input[builtins.str] command_id: 自定义命令ID。
-        :param pulumi.Input[builtins.str] content_encoding: 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
-        :param pulumi.Input[builtins.bool] enable_parameter: 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
-        :param pulumi.Input[builtins.int] invocation_times: 命令被调用次数。
-        :param pulumi.Input[builtins.str] name: 命令名称。字符长度1~32。不限制特殊字符。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目，一个资源只能归属于一个项目。
-        :param pulumi.Input[builtins.str] provider_name: 命令的提供方。
-        :param pulumi.Input[builtins.int] timeout: 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
-        :param pulumi.Input[builtins.str] type: 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
-        :param pulumi.Input[builtins.str] username: 执行命令时的用户名。
-        :param pulumi.Input[builtins.str] working_dir: 创建的命令在ECS实例中运行的目录。
+        :param pulumi.Input[builtins.str] command_content: Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
+        :param pulumi.Input[builtins.str] command_id: Custom command ID.
+        :param pulumi.Input[builtins.str] content_encoding: Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
+        :param pulumi.Input[builtins.str] created_time: Creation time.
+        :param pulumi.Input[builtins.str] description: Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
+        :param pulumi.Input[builtins.bool] enable_parameter: Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
+        :param pulumi.Input[builtins.int] invocation_times: Number of times the command has been invoked.
+        :param pulumi.Input[builtins.str] name: Command name. Character length: 1~32. No restriction on special characters.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. Each resource can belong to only one project.
+        :param pulumi.Input[builtins.str] provider_name: Command provider.
+        :param pulumi.Input[builtins.int] timeout: Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
+        :param pulumi.Input[builtins.str] type: Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
+        :param pulumi.Input[builtins.str] updated_time: Update time.
+        :param pulumi.Input[builtins.str] username: Username for executing the command.
+        :param pulumi.Input[builtins.str] working_dir: Directory where the created command runs on ECS instances.
         """
         if command_content is not None:
             pulumi.set(__self__, "command_content", command_content)
@@ -285,7 +285,7 @@ class _CommandState:
     @pulumi.getter(name="commandContent")
     def command_content(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+        Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
         """
         return pulumi.get(self, "command_content")
 
@@ -297,7 +297,7 @@ class _CommandState:
     @pulumi.getter(name="commandId")
     def command_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        自定义命令ID。
+        Custom command ID.
         """
         return pulumi.get(self, "command_id")
 
@@ -309,7 +309,7 @@ class _CommandState:
     @pulumi.getter(name="contentEncoding")
     def content_encoding(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+        Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
         """
         return pulumi.get(self, "content_encoding")
 
@@ -321,7 +321,7 @@ class _CommandState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -333,7 +333,7 @@ class _CommandState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+        Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
         """
         return pulumi.get(self, "description")
 
@@ -345,7 +345,7 @@ class _CommandState:
     @pulumi.getter(name="enableParameter")
     def enable_parameter(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+        Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
         """
         return pulumi.get(self, "enable_parameter")
 
@@ -357,7 +357,7 @@ class _CommandState:
     @pulumi.getter(name="invocationTimes")
     def invocation_times(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        命令被调用次数。
+        Number of times the command has been invoked.
         """
         return pulumi.get(self, "invocation_times")
 
@@ -369,7 +369,7 @@ class _CommandState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        命令名称。字符长度1~32。不限制特殊字符。
+        Command name. Character length: 1~32. No restriction on special characters.
         """
         return pulumi.get(self, "name")
 
@@ -390,7 +390,7 @@ class _CommandState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源所属项目，一个资源只能归属于一个项目。
+        Project to which the resource belongs. Each resource can belong to only one project.
         """
         return pulumi.get(self, "project_name")
 
@@ -402,7 +402,7 @@ class _CommandState:
     @pulumi.getter(name="providerName")
     def provider_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        命令的提供方。
+        Command provider.
         """
         return pulumi.get(self, "provider_name")
 
@@ -423,7 +423,7 @@ class _CommandState:
     @pulumi.getter
     def timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+        Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
         """
         return pulumi.get(self, "timeout")
 
@@ -435,7 +435,7 @@ class _CommandState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+        Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
         """
         return pulumi.get(self, "type")
 
@@ -447,7 +447,7 @@ class _CommandState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -459,7 +459,7 @@ class _CommandState:
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        执行命令时的用户名。
+        Username for executing the command.
         """
         return pulumi.get(self, "username")
 
@@ -471,7 +471,7 @@ class _CommandState:
     @pulumi.getter(name="workingDir")
     def working_dir(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建的命令在ECS实例中运行的目录。
+        Directory where the created command runs on ECS instances.
         """
         return pulumi.get(self, "working_dir")
 
@@ -500,7 +500,7 @@ class Command(pulumi.CustomResource):
                  working_dir: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        自定义命令是云助手提供的满足您个性化运维需求的功能，您可以在预置的公共命令不满足需求时创建自定义命令，并通过运维任务在实例中批量执行您编写的自定义命令。
+        Custom commands are features provided by Cloud Assistant to meet your personalized O&M needs. If the preset public commands do not meet your requirements, you can create custom commands and batch execute your custom commands on instances using O&M tasks.
 
         ## Import
 
@@ -510,16 +510,16 @@ class Command(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] command_content: 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
-        :param pulumi.Input[builtins.str] content_encoding: 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
-        :param pulumi.Input[builtins.str] description: 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
-        :param pulumi.Input[builtins.bool] enable_parameter: 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
-        :param pulumi.Input[builtins.str] name: 命令名称。字符长度1~32。不限制特殊字符。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目，一个资源只能归属于一个项目。
-        :param pulumi.Input[builtins.int] timeout: 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
-        :param pulumi.Input[builtins.str] type: 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
-        :param pulumi.Input[builtins.str] username: 执行命令时的用户名。
-        :param pulumi.Input[builtins.str] working_dir: 创建的命令在ECS实例中运行的目录。
+        :param pulumi.Input[builtins.str] command_content: Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
+        :param pulumi.Input[builtins.str] content_encoding: Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
+        :param pulumi.Input[builtins.str] description: Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
+        :param pulumi.Input[builtins.bool] enable_parameter: Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
+        :param pulumi.Input[builtins.str] name: Command name. Character length: 1~32. No restriction on special characters.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. Each resource can belong to only one project.
+        :param pulumi.Input[builtins.int] timeout: Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
+        :param pulumi.Input[builtins.str] type: Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
+        :param pulumi.Input[builtins.str] username: Username for executing the command.
+        :param pulumi.Input[builtins.str] working_dir: Directory where the created command runs on ECS instances.
         """
         ...
     @overload
@@ -528,7 +528,7 @@ class Command(pulumi.CustomResource):
                  args: CommandArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        自定义命令是云助手提供的满足您个性化运维需求的功能，您可以在预置的公共命令不满足需求时创建自定义命令，并通过运维任务在实例中批量执行您编写的自定义命令。
+        Custom commands are features provided by Cloud Assistant to meet your personalized O&M needs. If the preset public commands do not meet your requirements, you can create custom commands and batch execute your custom commands on instances using O&M tasks.
 
         ## Import
 
@@ -629,21 +629,21 @@ class Command(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] command_content: 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
-        :param pulumi.Input[builtins.str] command_id: 自定义命令ID。
-        :param pulumi.Input[builtins.str] content_encoding: 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
-        :param pulumi.Input[builtins.bool] enable_parameter: 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
-        :param pulumi.Input[builtins.int] invocation_times: 命令被调用次数。
-        :param pulumi.Input[builtins.str] name: 命令名称。字符长度1~32。不限制特殊字符。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目，一个资源只能归属于一个项目。
-        :param pulumi.Input[builtins.str] provider_name: 命令的提供方。
-        :param pulumi.Input[builtins.int] timeout: 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
-        :param pulumi.Input[builtins.str] type: 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
-        :param pulumi.Input[builtins.str] username: 执行命令时的用户名。
-        :param pulumi.Input[builtins.str] working_dir: 创建的命令在ECS实例中运行的目录。
+        :param pulumi.Input[builtins.str] command_content: Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
+        :param pulumi.Input[builtins.str] command_id: Custom command ID.
+        :param pulumi.Input[builtins.str] content_encoding: Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
+        :param pulumi.Input[builtins.str] created_time: Creation time.
+        :param pulumi.Input[builtins.str] description: Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
+        :param pulumi.Input[builtins.bool] enable_parameter: Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
+        :param pulumi.Input[builtins.int] invocation_times: Number of times the command has been invoked.
+        :param pulumi.Input[builtins.str] name: Command name. Character length: 1~32. No restriction on special characters.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. Each resource can belong to only one project.
+        :param pulumi.Input[builtins.str] provider_name: Command provider.
+        :param pulumi.Input[builtins.int] timeout: Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
+        :param pulumi.Input[builtins.str] type: Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
+        :param pulumi.Input[builtins.str] updated_time: Update time.
+        :param pulumi.Input[builtins.str] username: Username for executing the command.
+        :param pulumi.Input[builtins.str] working_dir: Directory where the created command runs on ECS instances.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -672,7 +672,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter(name="commandContent")
     def command_content(self) -> pulumi.Output[builtins.str]:
         """
-        命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+        Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
         """
         return pulumi.get(self, "command_content")
 
@@ -680,7 +680,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter(name="commandId")
     def command_id(self) -> pulumi.Output[builtins.str]:
         """
-        自定义命令ID。
+        Custom command ID.
         """
         return pulumi.get(self, "command_id")
 
@@ -688,7 +688,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter(name="contentEncoding")
     def content_encoding(self) -> pulumi.Output[builtins.str]:
         """
-        命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+        Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
         """
         return pulumi.get(self, "content_encoding")
 
@@ -696,7 +696,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -704,7 +704,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+        Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
         """
         return pulumi.get(self, "description")
 
@@ -712,7 +712,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter(name="enableParameter")
     def enable_parameter(self) -> pulumi.Output[builtins.bool]:
         """
-        创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+        Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
         """
         return pulumi.get(self, "enable_parameter")
 
@@ -720,7 +720,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter(name="invocationTimes")
     def invocation_times(self) -> pulumi.Output[builtins.int]:
         """
-        命令被调用次数。
+        Number of times the command has been invoked.
         """
         return pulumi.get(self, "invocation_times")
 
@@ -728,7 +728,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        命令名称。字符长度1~32。不限制特殊字符。
+        Command name. Character length: 1~32. No restriction on special characters.
         """
         return pulumi.get(self, "name")
 
@@ -741,7 +741,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        资源所属项目，一个资源只能归属于一个项目。
+        Project to which the resource belongs. Each resource can belong to only one project.
         """
         return pulumi.get(self, "project_name")
 
@@ -749,7 +749,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter(name="providerName")
     def provider_name(self) -> pulumi.Output[builtins.str]:
         """
-        命令的提供方。
+        Command provider.
         """
         return pulumi.get(self, "provider_name")
 
@@ -762,7 +762,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter
     def timeout(self) -> pulumi.Output[builtins.int]:
         """
-        创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+        Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
         """
         return pulumi.get(self, "timeout")
 
@@ -770,7 +770,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[builtins.str]:
         """
-        命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+        Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
         """
         return pulumi.get(self, "type")
 
@@ -778,7 +778,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -786,7 +786,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter
     def username(self) -> pulumi.Output[builtins.str]:
         """
-        执行命令时的用户名。
+        Username for executing the command.
         """
         return pulumi.get(self, "username")
 
@@ -794,7 +794,7 @@ class Command(pulumi.CustomResource):
     @pulumi.getter(name="workingDir")
     def working_dir(self) -> pulumi.Output[builtins.str]:
         """
-        创建的命令在ECS实例中运行的目录。
+        Directory where the created command runs on ECS instances.
         """
         return pulumi.get(self, "working_dir")
 

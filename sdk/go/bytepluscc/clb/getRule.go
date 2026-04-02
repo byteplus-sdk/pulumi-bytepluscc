@@ -30,25 +30,25 @@ type LookupRuleArgs struct {
 
 // A collection of values returned by getRule.
 type LookupRuleResult struct {
-	// 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+	// Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
 	ActionType string `pulumi:"actionType"`
-	// 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
 	Description string `pulumi:"description"`
-	// 转发规则的域名。
+	// Domain name of the forwarding rule.
 	Domain string `pulumi:"domain"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 监听器ID。
+	// Listener ID.
 	ListenerId string `pulumi:"listenerId"`
-	// 重定向相关配置信息。
+	// Redirection-related configuration information.
 	RedirectConfig GetRuleRedirectConfig `pulumi:"redirectConfig"`
-	// 转发规则ID。
+	// Forwarding rule ID.
 	RuleId string `pulumi:"ruleId"`
-	// 转发规则关联的后端服务器组的ID。
+	// ID of the backend server group associated with the forwarding rule.
 	ServerGroupId string `pulumi:"serverGroupId"`
-	// 标签列表。
+	// Tag list.
 	Tags []GetRuleTag `pulumi:"tags"`
-	// 转发规则的URL。
+	// URL of the forwarding rule.
 	Url string `pulumi:"url"`
 }
 
@@ -86,17 +86,17 @@ func (o LookupRuleResultOutput) ToLookupRuleResultOutputWithContext(ctx context.
 	return o
 }
 
-// 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+// Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
 func (o LookupRuleResultOutput) ActionType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.ActionType }).(pulumi.StringOutput)
 }
 
-// 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+// Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
 func (o LookupRuleResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 转发规则的域名。
+// Domain name of the forwarding rule.
 func (o LookupRuleResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Domain }).(pulumi.StringOutput)
 }
@@ -106,32 +106,32 @@ func (o LookupRuleResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 监听器ID。
+// Listener ID.
 func (o LookupRuleResultOutput) ListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.ListenerId }).(pulumi.StringOutput)
 }
 
-// 重定向相关配置信息。
+// Redirection-related configuration information.
 func (o LookupRuleResultOutput) RedirectConfig() GetRuleRedirectConfigOutput {
 	return o.ApplyT(func(v LookupRuleResult) GetRuleRedirectConfig { return v.RedirectConfig }).(GetRuleRedirectConfigOutput)
 }
 
-// 转发规则ID。
+// Forwarding rule ID.
 func (o LookupRuleResultOutput) RuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.RuleId }).(pulumi.StringOutput)
 }
 
-// 转发规则关联的后端服务器组的ID。
+// ID of the backend server group associated with the forwarding rule.
 func (o LookupRuleResultOutput) ServerGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.ServerGroupId }).(pulumi.StringOutput)
 }
 
-// 标签列表。
+// Tag list.
 func (o LookupRuleResultOutput) Tags() GetRuleTagArrayOutput {
 	return o.ApplyT(func(v LookupRuleResult) []GetRuleTag { return v.Tags }).(GetRuleTagArrayOutput)
 }
 
-// 转发规则的URL。
+// URL of the forwarding rule.
 func (o LookupRuleResultOutput) Url() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Url }).(pulumi.StringOutput)
 }

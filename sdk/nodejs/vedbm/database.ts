@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 云数据库管理
+ * Cloud Database Management
  *
  * ## Import
  *
@@ -44,20 +44,20 @@ export class Database extends pulumi.CustomResource {
     }
 
     /**
-     * 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+     * Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
      */
     public readonly characterSetName!: pulumi.Output<string>;
     public readonly databasesPrivileges!: pulumi.Output<outputs.vedbm.DatabaseDatabasesPrivilege[]>;
     /**
-     * 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+     * Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
      */
     public readonly dbDesc!: pulumi.Output<string>;
     /**
-     * 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+     * Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
      */
     public readonly dbName!: pulumi.Output<string>;
     /**
-     * 实例ID。
+     * Instance ID
      */
     public readonly instanceId!: pulumi.Output<string>;
 
@@ -100,20 +100,20 @@ export class Database extends pulumi.CustomResource {
  */
 export interface DatabaseState {
     /**
-     * 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+     * Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
      */
     characterSetName?: pulumi.Input<string>;
     databasesPrivileges?: pulumi.Input<pulumi.Input<inputs.vedbm.DatabaseDatabasesPrivilege>[]>;
     /**
-     * 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+     * Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
      */
     dbDesc?: pulumi.Input<string>;
     /**
-     * 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+     * Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
      */
     dbName?: pulumi.Input<string>;
     /**
-     * 实例ID。
+     * Instance ID
      */
     instanceId?: pulumi.Input<string>;
 }
@@ -123,20 +123,20 @@ export interface DatabaseState {
  */
 export interface DatabaseArgs {
     /**
-     * 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+     * Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
      */
     characterSetName?: pulumi.Input<string>;
     databasesPrivileges?: pulumi.Input<pulumi.Input<inputs.vedbm.DatabaseDatabasesPrivilege>[]>;
     /**
-     * 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+     * Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
      */
     dbDesc?: pulumi.Input<string>;
     /**
-     * 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+     * Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
      */
     dbName?: pulumi.Input<string>;
     /**
-     * 实例ID。
+     * Instance ID
      */
     instanceId: pulumi.Input<string>;
 }

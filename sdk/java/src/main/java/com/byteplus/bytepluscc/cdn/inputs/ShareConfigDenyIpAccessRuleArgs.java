@@ -17,14 +17,14 @@ public final class ShareConfigDenyIpAccessRuleArgs extends com.pulumi.resources.
     public static final ShareConfigDenyIpAccessRuleArgs Empty = new ShareConfigDenyIpAccessRuleArgs();
 
     /**
-     * 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+     * Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
      * 
      */
     @Import(name="rules")
     private @Nullable Output<List<String>> rules;
 
     /**
-     * @return 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+     * @return Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
      * 
      */
     public Optional<Output<List<String>>> rules() {
@@ -56,7 +56,7 @@ public final class ShareConfigDenyIpAccessRuleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param rules 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+         * @param rules Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class ShareConfigDenyIpAccessRuleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param rules 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+         * @param rules Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class ShareConfigDenyIpAccessRuleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param rules 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+         * @param rules Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
          * 
          * @return builder
          * 

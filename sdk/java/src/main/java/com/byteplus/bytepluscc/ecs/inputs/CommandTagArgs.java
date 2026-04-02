@@ -16,14 +16,14 @@ public final class CommandTagArgs extends com.pulumi.resources.ResourceArgs {
     public static final CommandTagArgs Empty = new CommandTagArgs();
 
     /**
-     * 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。长度限制在1～128个字符之间。
+     * User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。长度限制在1～128个字符之间。
+     * @return User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Length must be between 1 and 128 characters.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class CommandTagArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。允许为空，长度限制在0～256个字符之间。
+     * User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Can be empty. Length must be between 0 and 256 characters.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。允许为空，长度限制在0～256个字符之间。
+     * @return User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Can be empty. Length must be between 0 and 256 characters.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class CommandTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。长度限制在1～128个字符之间。
+         * @param key User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class CommandTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。长度限制在1～128个字符之间。
+         * @param key User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class CommandTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。允许为空，长度限制在0～256个字符之间。
+         * @param value User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Can be empty. Length must be between 0 and 256 characters.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class CommandTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。允许为空，长度限制在0～256个字符之间。
+         * @param value User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Can be empty. Length must be between 0 and 256 characters.
          * 
          * @return builder
          * 

@@ -17,14 +17,14 @@ public final class DbAccountTableColumnPrivilegeColumnPrivilegeArgs extends com.
     public static final DbAccountTableColumnPrivilegeColumnPrivilegeArgs Empty = new DbAccountTableColumnPrivilegeColumnPrivilegeArgs();
 
     /**
-     * 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+     * Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
      * 
      */
     @Import(name="accountPrivilegeDetails")
     private @Nullable Output<List<String>> accountPrivilegeDetails;
 
     /**
-     * @return 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+     * @return Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
      * 
      */
     public Optional<Output<List<String>>> accountPrivilegeDetails() {
@@ -32,14 +32,14 @@ public final class DbAccountTableColumnPrivilegeColumnPrivilegeArgs extends com.
     }
 
     /**
-     * 对账号进行列权限设置的列的名称。
+     * Name of the column for setting column permissions for the account.
      * 
      */
     @Import(name="columnName")
     private @Nullable Output<String> columnName;
 
     /**
-     * @return 对账号进行列权限设置的列的名称。
+     * @return Name of the column for setting column permissions for the account.
      * 
      */
     public Optional<Output<String>> columnName() {
@@ -47,14 +47,14 @@ public final class DbAccountTableColumnPrivilegeColumnPrivilegeArgs extends com.
     }
 
     /**
-     * 对账号进行列权限设置的表所属的数据库的名称。
+     * Name of the database to which the table belongs for setting column permissions for the account.
      * 
      */
     @Import(name="tableName")
     private @Nullable Output<String> tableName;
 
     /**
-     * @return 对账号进行列权限设置的表所属的数据库的名称。
+     * @return Name of the database to which the table belongs for setting column permissions for the account.
      * 
      */
     public Optional<Output<String>> tableName() {
@@ -88,7 +88,7 @@ public final class DbAccountTableColumnPrivilegeColumnPrivilegeArgs extends com.
         }
 
         /**
-         * @param accountPrivilegeDetails 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+         * @param accountPrivilegeDetails Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class DbAccountTableColumnPrivilegeColumnPrivilegeArgs extends com.
         }
 
         /**
-         * @param accountPrivilegeDetails 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+         * @param accountPrivilegeDetails Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class DbAccountTableColumnPrivilegeColumnPrivilegeArgs extends com.
         }
 
         /**
-         * @param accountPrivilegeDetails 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+         * @param accountPrivilegeDetails Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DbAccountTableColumnPrivilegeColumnPrivilegeArgs extends com.
         }
 
         /**
-         * @param columnName 对账号进行列权限设置的列的名称。
+         * @param columnName Name of the column for setting column permissions for the account.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class DbAccountTableColumnPrivilegeColumnPrivilegeArgs extends com.
         }
 
         /**
-         * @param columnName 对账号进行列权限设置的列的名称。
+         * @param columnName Name of the column for setting column permissions for the account.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DbAccountTableColumnPrivilegeColumnPrivilegeArgs extends com.
         }
 
         /**
-         * @param tableName 对账号进行列权限设置的表所属的数据库的名称。
+         * @param tableName Name of the database to which the table belongs for setting column permissions for the account.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class DbAccountTableColumnPrivilegeColumnPrivilegeArgs extends com.
         }
 
         /**
-         * @param tableName 对账号进行列权限设置的表所属的数据库的名称。
+         * @param tableName Name of the database to which the table belongs for setting column permissions for the account.
          * 
          * @return builder
          * 

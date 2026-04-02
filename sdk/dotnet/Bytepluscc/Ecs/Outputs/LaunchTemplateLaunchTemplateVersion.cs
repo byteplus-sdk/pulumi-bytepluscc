@@ -15,102 +15,102 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class LaunchTemplateLaunchTemplateVersion
     {
         /// <summary>
-        /// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+        /// When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
         /// </summary>
         public readonly int? DeploymentSetGroupNumber;
         /// <summary>
-        /// 实例需要加入的部署集ID。
+        /// Deployment set ID the instance needs to join.
         /// </summary>
         public readonly string? DeploymentSetId;
         /// <summary>
-        /// 实例的描述。
+        /// Instance description
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// 实例绑定的公网IP信息。
+        /// Public IP information bound to the instance
         /// </summary>
         public readonly Outputs.LaunchTemplateLaunchTemplateVersionEip? Eip;
         /// <summary>
-        /// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+        /// Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
         /// </summary>
         public readonly string? HostName;
         /// <summary>
-        /// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+        /// When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
         /// </summary>
         public readonly string? HpcClusterId;
         /// <summary>
-        /// 镜像ID。
+        /// Image ID.
         /// </summary>
         public readonly string? ImageId;
         /// <summary>
-        /// 镜像名称。
+        /// Image name.
         /// </summary>
         public readonly string? ImageName;
         /// <summary>
-        /// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+        /// Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
         /// </summary>
         public readonly string? InstanceChargeType;
         /// <summary>
-        /// 实例的名称。
+        /// Instance name.
         /// </summary>
         public readonly string? InstanceName;
         /// <summary>
-        /// 实例的规格。
+        /// Instance specification
         /// </summary>
         public readonly string? InstanceTypeId;
         /// <summary>
-        /// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+        /// Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
         /// </summary>
         public readonly bool? KeepImageCredential;
         /// <summary>
-        /// 实例绑定的密钥对。
+        /// Key pair bound to the instance.
         /// </summary>
         public readonly string? KeyPairName;
         public readonly ImmutableArray<Outputs.LaunchTemplateLaunchTemplateVersionNetworkInterface> NetworkInterfaces;
         /// <summary>
-        /// 实例所属项目。
+        /// Project associated with the instance.
         /// </summary>
         public readonly string? ProjectName;
         /// <summary>
-        /// 弹性预约单信息。
+        /// Elastic reservation order information
         /// </summary>
         public readonly Outputs.LaunchTemplateLaunchTemplateVersionScheduledInstance? ScheduledInstance;
         /// <summary>
-        /// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+        /// Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
         /// </summary>
         public readonly string? SecurityEnhancementStrategy;
         /// <summary>
-        /// 抢占式实例的每小时最高价格。
+        /// Maximum hourly price for preemptible instances
         /// </summary>
         public readonly double? SpotPriceLimit;
         /// <summary>
-        /// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+        /// Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
         /// </summary>
         public readonly string? SpotStrategy;
         /// <summary>
-        /// 有序后缀的起始序号。
+        /// Starting number for the sequential suffix
         /// </summary>
         public readonly int? SuffixIndex;
         public readonly ImmutableArray<Outputs.LaunchTemplateLaunchTemplateVersionTag> Tags;
         /// <summary>
-        /// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+        /// Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
         /// </summary>
         public readonly bool? UniqueSuffix;
         /// <summary>
-        /// 实例的自定义数据。
+        /// Custom data for the instance.
         /// </summary>
         public readonly string? UserData;
         /// <summary>
-        /// 模版版本描述。
+        /// Template version description.
         /// </summary>
         public readonly string? VersionDescription;
         public readonly ImmutableArray<Outputs.LaunchTemplateLaunchTemplateVersionVolume> Volumes;
         /// <summary>
-        /// 私有网络ID。
+        /// Private network ID.
         /// </summary>
         public readonly string? VpcId;
         /// <summary>
-        /// 实例所属可用区ID。
+        /// Instance availability zone ID
         /// </summary>
         public readonly string? ZoneId;
 

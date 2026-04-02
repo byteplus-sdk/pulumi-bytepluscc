@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Outputs
     public sealed class GetClusterBootstrapScriptEffectiveScopeResult
     {
         /// <summary>
-        /// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+        /// Component name list. Required when EffectiveType=COMPONENT_NAME.
         /// </summary>
         public readonly ImmutableArray<string> ComponentNames;
         /// <summary>
-        /// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+        /// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
         /// </summary>
         public readonly string EffectiveType;
         /// <summary>
-        /// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+        /// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
         /// </summary>
         public readonly ImmutableArray<string> NodeGroupIds;
         /// <summary>
-        /// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+        /// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
         /// </summary>
         public readonly ImmutableArray<string> NodeGroupNames;
         /// <summary>
-        /// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+        /// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
         /// </summary>
         public readonly ImmutableArray<string> NodeGroupTypes;
         /// <summary>
-        /// 节点ID列表，EffectiveType=NODE_ID时，必选。
+        /// Node ID list. Required when EffectiveType=NODE_ID.
         /// </summary>
         public readonly ImmutableArray<string> NodeIds;
         /// <summary>
-        /// 节点名列表，EffectiveType=NODE_NAME时，必选。
+        /// Node name list. Required when EffectiveType=NODE_NAME.
         /// </summary>
         public readonly ImmutableArray<string> NodeNames;
 

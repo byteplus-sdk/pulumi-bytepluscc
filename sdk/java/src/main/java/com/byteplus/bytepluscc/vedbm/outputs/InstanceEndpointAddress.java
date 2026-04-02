@@ -13,86 +13,86 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceEndpointAddress {
     /**
-     * @return 解析方式。当前返回值只能为 false。
+     * @return Parsing method. The current return value can only be false.
      * 
      */
     private @Nullable Boolean dnsVisibility;
     /**
-     * @return 实例内网访问域名。
+     * @return Instance private access domain name.
      * 
      */
     private @Nullable String domain;
     /**
-     * @return 公网 ID。
+     * @return Public network ID.
      * 
      */
     private @Nullable String eipId;
     /**
-     * @return IP 地址。
+     * @return IP address.
      * 
      */
     private @Nullable String ipAddress;
     /**
-     * @return 网络类型：Private：私有网络 VPC。Public：公网访问。
+     * @return Network type: Private: private network VPC. Public: public access.
      * 
      */
     private @Nullable String networkType;
     /**
-     * @return 实例内网访问端口。
+     * @return Instance private network access port.
      * 
      */
     private @Nullable String port;
     /**
-     * @return 子网 ID。子网必须属于所选的可用区。
+     * @return Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     private @Nullable String subnetId;
 
     private InstanceEndpointAddress() {}
     /**
-     * @return 解析方式。当前返回值只能为 false。
+     * @return Parsing method. The current return value can only be false.
      * 
      */
     public Optional<Boolean> dnsVisibility() {
         return Optional.ofNullable(this.dnsVisibility);
     }
     /**
-     * @return 实例内网访问域名。
+     * @return Instance private access domain name.
      * 
      */
     public Optional<String> domain() {
         return Optional.ofNullable(this.domain);
     }
     /**
-     * @return 公网 ID。
+     * @return Public network ID.
      * 
      */
     public Optional<String> eipId() {
         return Optional.ofNullable(this.eipId);
     }
     /**
-     * @return IP 地址。
+     * @return IP address.
      * 
      */
     public Optional<String> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
     }
     /**
-     * @return 网络类型：Private：私有网络 VPC。Public：公网访问。
+     * @return Network type: Private: private network VPC. Public: public access.
      * 
      */
     public Optional<String> networkType() {
         return Optional.ofNullable(this.networkType);
     }
     /**
-     * @return 实例内网访问端口。
+     * @return Instance private network access port.
      * 
      */
     public Optional<String> port() {
         return Optional.ofNullable(this.port);
     }
     /**
-     * @return 子网 ID。子网必须属于所选的可用区。
+     * @return Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     public Optional<String> subnetId() {

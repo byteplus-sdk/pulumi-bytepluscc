@@ -17,14 +17,14 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
     public static final NlbListenerHealthArgs Empty = new NlbListenerHealthArgs();
 
     /**
-     * 后端服务器的实例 ID或IP地址。
+     * Backend server instance ID or IP address
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 后端服务器的实例 ID或IP地址。
+     * @return Backend server instance ID or IP address
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -32,14 +32,14 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 后端服务器的IP地址。
+     * Backend server IP address
      * 
      */
     @Import(name="ip")
     private @Nullable Output<String> ip;
 
     /**
-     * @return 后端服务器的IP地址。
+     * @return Backend server IP address
      * 
      */
     public Optional<Output<String>> ip() {
@@ -47,14 +47,14 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 后端服务器提供服务的端口。
+     * Port on which the backend server provides services
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 后端服务器提供服务的端口。
+     * @return Port on which the backend server provides services
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -62,14 +62,14 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 后端服务器ID。
+     * Backend server ID
      * 
      */
     @Import(name="serverId")
     private @Nullable Output<String> serverId;
 
     /**
-     * @return 后端服务器ID。
+     * @return Backend server ID
      * 
      */
     public Optional<Output<String>> serverId() {
@@ -77,14 +77,14 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+     * Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
      * 
      */
     @Import(name="serverType")
     private @Nullable Output<String> serverType;
 
     /**
-     * @return 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+     * @return Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
      * 
      */
     public Optional<Output<String>> serverType() {
@@ -92,14 +92,14 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+     * Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server&#39;s zone)
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+     * @return Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server&#39;s zone)
      * 
      */
     public Optional<Output<String>> status() {
@@ -107,14 +107,14 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 健康状态最后更新时间。
+     * Last update time of health status
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 健康状态最后更新时间。
+     * @return Last update time of health status
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -122,14 +122,14 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 后端服务器接收访问流量的可用区ID。
+     * Zone ID where the backend server receives traffic
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 后端服务器接收访问流量的可用区ID。
+     * @return Zone ID where the backend server receives traffic
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -168,7 +168,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param instanceId 后端服务器的实例 ID或IP地址。
+         * @param instanceId Backend server instance ID or IP address
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param instanceId 后端服务器的实例 ID或IP地址。
+         * @param instanceId Backend server instance ID or IP address
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ip 后端服务器的IP地址。
+         * @param ip Backend server IP address
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ip 后端服务器的IP地址。
+         * @param ip Backend server IP address
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param port 后端服务器提供服务的端口。
+         * @param port Port on which the backend server provides services
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param port 后端服务器提供服务的端口。
+         * @param port Port on which the backend server provides services
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param serverId 后端服务器ID。
+         * @param serverId Backend server ID
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param serverId 后端服务器ID。
+         * @param serverId Backend server ID
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param serverType 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+         * @param serverType Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param serverType 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+         * @param serverType Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param status 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+         * @param status Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server&#39;s zone)
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param status 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+         * @param status Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server&#39;s zone)
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param updatedTime 健康状态最后更新时间。
+         * @param updatedTime Last update time of health status
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param updatedTime 健康状态最后更新时间。
+         * @param updatedTime Last update time of health status
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param zoneId 后端服务器接收访问流量的可用区ID。
+         * @param zoneId Zone ID where the backend server receives traffic
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class NlbListenerHealthArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param zoneId 后端服务器接收访问流量的可用区ID。
+         * @param zoneId Zone ID where the backend server receives traffic
          * 
          * @return builder
          * 

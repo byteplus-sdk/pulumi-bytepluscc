@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Inputs
     public sealed class DomainTlsFieldsConfigHeadersConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否记录全量 header。
+        /// Record all header fields
         /// </summary>
         [Input("enable")]
         public Input<int>? Enable { get; set; }
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Inputs
         private InputList<string>? _excludedKeyLists;
 
         /// <summary>
-        /// 例外 header 字段，将对应字段从字段的 JSON 中排除，可帮助节约日志存储空间。
+        /// Exception header fields. Exclude the specified fields from the JSON to help save log storage space.
         /// </summary>
         public InputList<string> ExcludedKeyLists
         {
@@ -35,7 +35,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Inputs
         private InputList<string>? _statisticalKeyLists;
 
         /// <summary>
-        /// 统计 header 字段，将对应字段用于日志统计分析和告警。
+        /// Statistics header fields. Use the specified fields for log analysis and alerts.
         /// </summary>
         public InputList<string> StatisticalKeyLists
         {

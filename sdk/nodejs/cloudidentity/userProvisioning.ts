@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。
+ * After you create a Cloud Identity Center user, you need to grant the user login access to each account.
  *
  * ## Example Usage
  *
@@ -60,55 +60,55 @@ export class UserProvisioning extends pulumi.CustomResource {
     }
 
     /**
-     * 创建时间。
+     * Creation Time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 删除策略。
+     * Deletion Policy
      */
     public readonly deletionStrategy!: pulumi.Output<string>;
     /**
-     * 任务描述。
+     * Task Description
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 用户名冲突策略。
+     * Username Conflict Policy
      */
     public readonly duplicationStrategy!: pulumi.Output<string>;
     /**
-     * 本次同步IAM用户名称后缀。
+     * Suffix for IAM user name in this synchronization
      */
     public readonly duplicationSuffix!: pulumi.Output<string>;
     /**
-     * 身份源冲突策略。
+     * Identity Source Conflict Policy
      */
     public readonly identitySourceStrategy!: pulumi.Output<string>;
     /**
-     * 身份id。
+     * Identity ID
      */
     public readonly principalId!: pulumi.Output<string>;
     /**
-     * 目标名称。
+     * Target Name
      */
     public /*out*/ readonly principalName!: pulumi.Output<string>;
     /**
-     * 身份类型。
+     * Identity Type
      */
     public readonly principalType!: pulumi.Output<string>;
     /**
-     * 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+     * Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
      */
     public /*out*/ readonly provisionStatus!: pulumi.Output<string>;
     /**
-     * 目标id。
+     * Target ID
      */
     public readonly targetId!: pulumi.Output<string>;
     /**
-     * 更新时间。
+     * Update Time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * IAM 用户同步任务ID。
+     * IAM User Synchronization Task ID
      */
     public /*out*/ readonly userProvisioningId!: pulumi.Output<string>;
 
@@ -182,55 +182,55 @@ export class UserProvisioning extends pulumi.CustomResource {
  */
 export interface UserProvisioningState {
     /**
-     * 创建时间。
+     * Creation Time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 删除策略。
+     * Deletion Policy
      */
     deletionStrategy?: pulumi.Input<string>;
     /**
-     * 任务描述。
+     * Task Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 用户名冲突策略。
+     * Username Conflict Policy
      */
     duplicationStrategy?: pulumi.Input<string>;
     /**
-     * 本次同步IAM用户名称后缀。
+     * Suffix for IAM user name in this synchronization
      */
     duplicationSuffix?: pulumi.Input<string>;
     /**
-     * 身份源冲突策略。
+     * Identity Source Conflict Policy
      */
     identitySourceStrategy?: pulumi.Input<string>;
     /**
-     * 身份id。
+     * Identity ID
      */
     principalId?: pulumi.Input<string>;
     /**
-     * 目标名称。
+     * Target Name
      */
     principalName?: pulumi.Input<string>;
     /**
-     * 身份类型。
+     * Identity Type
      */
     principalType?: pulumi.Input<string>;
     /**
-     * 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+     * Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
      */
     provisionStatus?: pulumi.Input<string>;
     /**
-     * 目标id。
+     * Target ID
      */
     targetId?: pulumi.Input<string>;
     /**
-     * 更新时间。
+     * Update Time
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * IAM 用户同步任务ID。
+     * IAM User Synchronization Task ID
      */
     userProvisioningId?: pulumi.Input<string>;
 }
@@ -240,35 +240,35 @@ export interface UserProvisioningState {
  */
 export interface UserProvisioningArgs {
     /**
-     * 删除策略。
+     * Deletion Policy
      */
     deletionStrategy: pulumi.Input<string>;
     /**
-     * 任务描述。
+     * Task Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 用户名冲突策略。
+     * Username Conflict Policy
      */
     duplicationStrategy: pulumi.Input<string>;
     /**
-     * 本次同步IAM用户名称后缀。
+     * Suffix for IAM user name in this synchronization
      */
     duplicationSuffix?: pulumi.Input<string>;
     /**
-     * 身份源冲突策略。
+     * Identity Source Conflict Policy
      */
     identitySourceStrategy: pulumi.Input<string>;
     /**
-     * 身份id。
+     * Identity ID
      */
     principalId: pulumi.Input<string>;
     /**
-     * 身份类型。
+     * Identity Type
      */
     principalType: pulumi.Input<string>;
     /**
-     * 目标id。
+     * Target ID
      */
     targetId: pulumi.Input<string>;
 }

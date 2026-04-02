@@ -14,146 +14,146 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceShardNode {
     /**
-     * @return 节点延迟时间。单位：秒。
+     * @return Node latency. Unit: seconds.
      * 
      */
     private @Nullable Integer nodeDelayTime;
     /**
-     * @return 节点 ID。
+     * @return Node ID.
      * 
      */
     private @Nullable String nodeId;
     /**
-     * @return 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+     * @return Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
      * 
      */
     private @Nullable String nodeRole;
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     private @Nullable String nodeSpec;
     /**
-     * @return 节点状态。
+     * @return Node status.
      * 
      */
     private @Nullable String nodeStatus;
     /**
-     * @return 总内存。单位：GiB。
+     * @return Total memory. Unit: GiB.
      * 
      */
     private @Nullable Double totalMemoryGb;
     /**
-     * @return 该节点的总存储空间。单位：GiB。
+     * @return Total storage space for this node. Unit: GiB.
      * 
      */
     private @Nullable Double totalStorageGb;
     /**
-     * @return 总核数。
+     * @return Total cores.
      * 
      */
     private @Nullable Double totalvCpu;
     /**
-     * @return 已用内存。单位：GiB。
+     * @return Used memory. Unit: GiB.
      * 
      */
     private @Nullable Double usedMemoryGb;
     /**
-     * @return 该节点已用的存储空间。单位：GiB。
+     * @return Storage space used by this node. Unit: GiB.
      * 
      */
     private @Nullable Double usedStorageGb;
     /**
-     * @return 已用核数。
+     * @return Used cores.
      * 
      */
     private @Nullable Double usedvCpu;
     /**
-     * @return 当前节点所属的可用区 ID。
+     * @return Availability zone ID of the current node.
      * 
      */
     private @Nullable String zoneId;
 
     private InstanceShardNode() {}
     /**
-     * @return 节点延迟时间。单位：秒。
+     * @return Node latency. Unit: seconds.
      * 
      */
     public Optional<Integer> nodeDelayTime() {
         return Optional.ofNullable(this.nodeDelayTime);
     }
     /**
-     * @return 节点 ID。
+     * @return Node ID.
      * 
      */
     public Optional<String> nodeId() {
         return Optional.ofNullable(this.nodeId);
     }
     /**
-     * @return 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+     * @return Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
      * 
      */
     public Optional<String> nodeRole() {
         return Optional.ofNullable(this.nodeRole);
     }
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     public Optional<String> nodeSpec() {
         return Optional.ofNullable(this.nodeSpec);
     }
     /**
-     * @return 节点状态。
+     * @return Node status.
      * 
      */
     public Optional<String> nodeStatus() {
         return Optional.ofNullable(this.nodeStatus);
     }
     /**
-     * @return 总内存。单位：GiB。
+     * @return Total memory. Unit: GiB.
      * 
      */
     public Optional<Double> totalMemoryGb() {
         return Optional.ofNullable(this.totalMemoryGb);
     }
     /**
-     * @return 该节点的总存储空间。单位：GiB。
+     * @return Total storage space for this node. Unit: GiB.
      * 
      */
     public Optional<Double> totalStorageGb() {
         return Optional.ofNullable(this.totalStorageGb);
     }
     /**
-     * @return 总核数。
+     * @return Total cores.
      * 
      */
     public Optional<Double> totalvCpu() {
         return Optional.ofNullable(this.totalvCpu);
     }
     /**
-     * @return 已用内存。单位：GiB。
+     * @return Used memory. Unit: GiB.
      * 
      */
     public Optional<Double> usedMemoryGb() {
         return Optional.ofNullable(this.usedMemoryGb);
     }
     /**
-     * @return 该节点已用的存储空间。单位：GiB。
+     * @return Storage space used by this node. Unit: GiB.
      * 
      */
     public Optional<Double> usedStorageGb() {
         return Optional.ofNullable(this.usedStorageGb);
     }
     /**
-     * @return 已用核数。
+     * @return Used cores.
      * 
      */
     public Optional<Double> usedvCpu() {
         return Optional.ofNullable(this.usedvCpu);
     }
     /**
-     * @return 当前节点所属的可用区 ID。
+     * @return Availability zone ID of the current node.
      * 
      */
     public Optional<String> zoneId() {

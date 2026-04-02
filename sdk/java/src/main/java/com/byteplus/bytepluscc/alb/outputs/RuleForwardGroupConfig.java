@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 public final class RuleForwardGroupConfig {
     private @Nullable List<RuleForwardGroupConfigServerGroupTuple> serverGroupTuples;
     /**
-     * @return 是否开启组间会话保持。on：开启。off：不开启。
+     * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
      * 
      */
     private @Nullable String stickySessionEnabled;
     /**
-     * @return 组件回话保持的超时时间。单位：秒。
+     * @return Component session stickiness timeout. Unit: seconds.
      * 
      */
     private @Nullable Integer stickySessionTimeout;
@@ -31,14 +31,14 @@ public final class RuleForwardGroupConfig {
         return this.serverGroupTuples == null ? List.of() : this.serverGroupTuples;
     }
     /**
-     * @return 是否开启组间会话保持。on：开启。off：不开启。
+     * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
      * 
      */
     public Optional<String> stickySessionEnabled() {
         return Optional.ofNullable(this.stickySessionEnabled);
     }
     /**
-     * @return 组件回话保持的超时时间。单位：秒。
+     * @return Component session stickiness timeout. Unit: seconds.
      * 
      */
     public Optional<Integer> stickySessionTimeout() {

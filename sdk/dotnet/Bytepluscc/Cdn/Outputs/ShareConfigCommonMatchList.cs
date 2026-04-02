@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class ShareConfigCommonMatchList
     {
         /// <summary>
-        /// 表示该通用列表的内容。
+        /// Specifies the contents of the common list.
         /// </summary>
         public readonly Outputs.ShareConfigCommonMatchListCommonType? CommonType;
 

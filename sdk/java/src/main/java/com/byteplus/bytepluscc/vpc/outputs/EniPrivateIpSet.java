@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class EniPrivateIpSet {
     /**
-     * @return 网卡主私网IPv4关联的公网IP的信息。
+     * @return Information about the public IP associated with the primary private IPv4 address of the network interface.
      * 
      */
     private @Nullable EniPrivateIpSetAssociatedElasticIp associatedElasticIp;
     /**
-     * @return 网卡的私网IP地址。
+     * @return Private IP address of the network interface.
      * 
      */
     private @Nullable String privateIpAddress;
 
     private EniPrivateIpSet() {}
     /**
-     * @return 网卡主私网IPv4关联的公网IP的信息。
+     * @return Information about the public IP associated with the primary private IPv4 address of the network interface.
      * 
      */
     public Optional<EniPrivateIpSetAssociatedElasticIp> associatedElasticIp() {
         return Optional.ofNullable(this.associatedElasticIp);
     }
     /**
-     * @return 网卡的私网IP地址。
+     * @return Private IP address of the network interface.
      * 
      */
     public Optional<String> privateIpAddress() {

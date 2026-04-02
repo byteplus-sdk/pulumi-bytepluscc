@@ -16,14 +16,14 @@ public final class RuleRuleConditionQueryStringConfigValueArgs extends com.pulum
     public static final RuleRuleConditionQueryStringConfigValueArgs Empty = new RuleRuleConditionQueryStringConfigValueArgs();
 
     /**
-     * 查询字符串键。
+     * Query string key.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 查询字符串键。
+     * @return Query string key.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class RuleRuleConditionQueryStringConfigValueArgs extends com.pulum
     }
 
     /**
-     * 查询字符串值。
+     * Query string value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 查询字符串值。
+     * @return Query string value.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class RuleRuleConditionQueryStringConfigValueArgs extends com.pulum
         }
 
         /**
-         * @param key 查询字符串键。
+         * @param key Query string key.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class RuleRuleConditionQueryStringConfigValueArgs extends com.pulum
         }
 
         /**
-         * @param key 查询字符串键。
+         * @param key Query string key.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class RuleRuleConditionQueryStringConfigValueArgs extends com.pulum
         }
 
         /**
-         * @param value 查询字符串值。
+         * @param value Query string value.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class RuleRuleConditionQueryStringConfigValueArgs extends com.pulum
         }
 
         /**
-         * @param value 查询字符串值。
+         * @param value Query string value.
          * 
          * @return builder
          * 

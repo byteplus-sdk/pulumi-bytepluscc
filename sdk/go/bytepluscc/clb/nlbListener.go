@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 监听器负责根据指定的协议和端口，监听NLB实例接收到的用户访问请求。NLB将按照该监听器关联的服务器组配置的调度算法，将访问请求转发至该服务器组内健康的后端服务器。
+// The listener monitors user access requests received by the NLB instance based on the specified protocol and port. NLB forwards requests to healthy backend servers in the associated server group according to the scheduling algorithm configured for that group.
 //
 // ## Example Usage
 //
@@ -61,39 +61,39 @@ import (
 type NlbListener struct {
 	pulumi.CustomResourceState
 
-	// TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+	// TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
 	CertificateId pulumi.StringOutput `pulumi:"certificateId"`
-	// 监听器的连接超时时间（秒）。
+	// Listener connection timeout (seconds)
 	ConnectionTimeout pulumi.IntOutput `pulumi:"connectionTimeout"`
-	// 监听器的创建时间。
+	// Listener creation time
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 监听器描述信息。
+	// Listener description
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 是否启用监听器。true：开启；false：关闭。
+	// Listener enabled: true (enabled); false (disabled)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// 全端口监听的结束端口，仅当Port为0时有效。
+	// End port for all-port listening. Valid only when Port is 0.
 	EndPort pulumi.IntOutput             `pulumi:"endPort"`
 	Healths NlbListenerHealthArrayOutput `pulumi:"healths"`
-	// 监听器唯一标识。
+	// Listener unique identifier
 	ListenerId pulumi.StringOutput `pulumi:"listenerId"`
-	// 监听器名称。
+	// Listener name
 	ListenerName pulumi.StringOutput `pulumi:"listenerName"`
-	// 负载均衡实例ID。
+	// Load balancer instance ID
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
-	// 监听器接收请求的端口，0表示启用全端口监听。
+	// Port on which the listener receives requests. 0 indicates all-port listening is enabled.
 	Port pulumi.IntOutput `pulumi:"port"`
-	// 监听协议类型。TCP,UDP,TLS
+	// Listener protocol type: TCP, UDP, TLS
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
-	// TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+	// TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// 监听器关联的服务器组ID。
+	// Server group ID associated with the listener
 	ServerGroupId pulumi.StringOutput `pulumi:"serverGroupId"`
-	// 全端口监听的起始端口，仅当Port为0时有效。
+	// Start port for all-port listening. Valid only when Port is 0.
 	StartPort pulumi.IntOutput `pulumi:"startPort"`
-	// 监听器的状态。
+	// Listener status
 	Status pulumi.StringOutput       `pulumi:"status"`
 	Tags   NlbListenerTagArrayOutput `pulumi:"tags"`
-	// 监听器最近操作时间。
+	// Listener's most recent operation time
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -139,76 +139,76 @@ func GetNlbListener(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NlbListener resources.
 type nlbListenerState struct {
-	// TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+	// TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
 	CertificateId *string `pulumi:"certificateId"`
-	// 监听器的连接超时时间（秒）。
+	// Listener connection timeout (seconds)
 	ConnectionTimeout *int `pulumi:"connectionTimeout"`
-	// 监听器的创建时间。
+	// Listener creation time
 	CreatedTime *string `pulumi:"createdTime"`
-	// 监听器描述信息。
+	// Listener description
 	Description *string `pulumi:"description"`
-	// 是否启用监听器。true：开启；false：关闭。
+	// Listener enabled: true (enabled); false (disabled)
 	Enabled *bool `pulumi:"enabled"`
-	// 全端口监听的结束端口，仅当Port为0时有效。
+	// End port for all-port listening. Valid only when Port is 0.
 	EndPort *int                `pulumi:"endPort"`
 	Healths []NlbListenerHealth `pulumi:"healths"`
-	// 监听器唯一标识。
+	// Listener unique identifier
 	ListenerId *string `pulumi:"listenerId"`
-	// 监听器名称。
+	// Listener name
 	ListenerName *string `pulumi:"listenerName"`
-	// 负载均衡实例ID。
+	// Load balancer instance ID
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
-	// 监听器接收请求的端口，0表示启用全端口监听。
+	// Port on which the listener receives requests. 0 indicates all-port listening is enabled.
 	Port *int `pulumi:"port"`
-	// 监听协议类型。TCP,UDP,TLS
+	// Listener protocol type: TCP, UDP, TLS
 	Protocol *string `pulumi:"protocol"`
-	// TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+	// TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// 监听器关联的服务器组ID。
+	// Server group ID associated with the listener
 	ServerGroupId *string `pulumi:"serverGroupId"`
-	// 全端口监听的起始端口，仅当Port为0时有效。
+	// Start port for all-port listening. Valid only when Port is 0.
 	StartPort *int `pulumi:"startPort"`
-	// 监听器的状态。
+	// Listener status
 	Status *string          `pulumi:"status"`
 	Tags   []NlbListenerTag `pulumi:"tags"`
-	// 监听器最近操作时间。
+	// Listener's most recent operation time
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type NlbListenerState struct {
-	// TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+	// TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
 	CertificateId pulumi.StringPtrInput
-	// 监听器的连接超时时间（秒）。
+	// Listener connection timeout (seconds)
 	ConnectionTimeout pulumi.IntPtrInput
-	// 监听器的创建时间。
+	// Listener creation time
 	CreatedTime pulumi.StringPtrInput
-	// 监听器描述信息。
+	// Listener description
 	Description pulumi.StringPtrInput
-	// 是否启用监听器。true：开启；false：关闭。
+	// Listener enabled: true (enabled); false (disabled)
 	Enabled pulumi.BoolPtrInput
-	// 全端口监听的结束端口，仅当Port为0时有效。
+	// End port for all-port listening. Valid only when Port is 0.
 	EndPort pulumi.IntPtrInput
 	Healths NlbListenerHealthArrayInput
-	// 监听器唯一标识。
+	// Listener unique identifier
 	ListenerId pulumi.StringPtrInput
-	// 监听器名称。
+	// Listener name
 	ListenerName pulumi.StringPtrInput
-	// 负载均衡实例ID。
+	// Load balancer instance ID
 	LoadBalancerId pulumi.StringPtrInput
-	// 监听器接收请求的端口，0表示启用全端口监听。
+	// Port on which the listener receives requests. 0 indicates all-port listening is enabled.
 	Port pulumi.IntPtrInput
-	// 监听协议类型。TCP,UDP,TLS
+	// Listener protocol type: TCP, UDP, TLS
 	Protocol pulumi.StringPtrInput
-	// TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+	// TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
 	SecurityPolicyId pulumi.StringPtrInput
-	// 监听器关联的服务器组ID。
+	// Server group ID associated with the listener
 	ServerGroupId pulumi.StringPtrInput
-	// 全端口监听的起始端口，仅当Port为0时有效。
+	// Start port for all-port listening. Valid only when Port is 0.
 	StartPort pulumi.IntPtrInput
-	// 监听器的状态。
+	// Listener status
 	Status pulumi.StringPtrInput
 	Tags   NlbListenerTagArrayInput
-	// 监听器最近操作时间。
+	// Listener's most recent operation time
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -217,60 +217,60 @@ func (NlbListenerState) ElementType() reflect.Type {
 }
 
 type nlbListenerArgs struct {
-	// TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+	// TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
 	CertificateId *string `pulumi:"certificateId"`
-	// 监听器的连接超时时间（秒）。
+	// Listener connection timeout (seconds)
 	ConnectionTimeout *int `pulumi:"connectionTimeout"`
-	// 监听器描述信息。
+	// Listener description
 	Description *string `pulumi:"description"`
-	// 是否启用监听器。true：开启；false：关闭。
+	// Listener enabled: true (enabled); false (disabled)
 	Enabled *bool `pulumi:"enabled"`
-	// 全端口监听的结束端口，仅当Port为0时有效。
+	// End port for all-port listening. Valid only when Port is 0.
 	EndPort *int                `pulumi:"endPort"`
 	Healths []NlbListenerHealth `pulumi:"healths"`
-	// 监听器名称。
+	// Listener name
 	ListenerName *string `pulumi:"listenerName"`
-	// 负载均衡实例ID。
+	// Load balancer instance ID
 	LoadBalancerId string `pulumi:"loadBalancerId"`
-	// 监听器接收请求的端口，0表示启用全端口监听。
+	// Port on which the listener receives requests. 0 indicates all-port listening is enabled.
 	Port int `pulumi:"port"`
-	// 监听协议类型。TCP,UDP,TLS
+	// Listener protocol type: TCP, UDP, TLS
 	Protocol string `pulumi:"protocol"`
-	// TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+	// TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// 监听器关联的服务器组ID。
+	// Server group ID associated with the listener
 	ServerGroupId string `pulumi:"serverGroupId"`
-	// 全端口监听的起始端口，仅当Port为0时有效。
+	// Start port for all-port listening. Valid only when Port is 0.
 	StartPort *int             `pulumi:"startPort"`
 	Tags      []NlbListenerTag `pulumi:"tags"`
 }
 
 // The set of arguments for constructing a NlbListener resource.
 type NlbListenerArgs struct {
-	// TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+	// TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
 	CertificateId pulumi.StringPtrInput
-	// 监听器的连接超时时间（秒）。
+	// Listener connection timeout (seconds)
 	ConnectionTimeout pulumi.IntPtrInput
-	// 监听器描述信息。
+	// Listener description
 	Description pulumi.StringPtrInput
-	// 是否启用监听器。true：开启；false：关闭。
+	// Listener enabled: true (enabled); false (disabled)
 	Enabled pulumi.BoolPtrInput
-	// 全端口监听的结束端口，仅当Port为0时有效。
+	// End port for all-port listening. Valid only when Port is 0.
 	EndPort pulumi.IntPtrInput
 	Healths NlbListenerHealthArrayInput
-	// 监听器名称。
+	// Listener name
 	ListenerName pulumi.StringPtrInput
-	// 负载均衡实例ID。
+	// Load balancer instance ID
 	LoadBalancerId pulumi.StringInput
-	// 监听器接收请求的端口，0表示启用全端口监听。
+	// Port on which the listener receives requests. 0 indicates all-port listening is enabled.
 	Port pulumi.IntInput
-	// 监听协议类型。TCP,UDP,TLS
+	// Listener protocol type: TCP, UDP, TLS
 	Protocol pulumi.StringInput
-	// TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+	// TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
 	SecurityPolicyId pulumi.StringPtrInput
-	// 监听器关联的服务器组ID。
+	// Server group ID associated with the listener
 	ServerGroupId pulumi.StringInput
-	// 全端口监听的起始端口，仅当Port为0时有效。
+	// Start port for all-port listening. Valid only when Port is 0.
 	StartPort pulumi.IntPtrInput
 	Tags      NlbListenerTagArrayInput
 }
@@ -362,32 +362,32 @@ func (o NlbListenerOutput) ToNlbListenerOutputWithContext(ctx context.Context) N
 	return o
 }
 
-// TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+// TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
 func (o NlbListenerOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.StringOutput { return v.CertificateId }).(pulumi.StringOutput)
 }
 
-// 监听器的连接超时时间（秒）。
+// Listener connection timeout (seconds)
 func (o NlbListenerOutput) ConnectionTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.IntOutput { return v.ConnectionTimeout }).(pulumi.IntOutput)
 }
 
-// 监听器的创建时间。
+// Listener creation time
 func (o NlbListenerOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 监听器描述信息。
+// Listener description
 func (o NlbListenerOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 是否启用监听器。true：开启；false：关闭。
+// Listener enabled: true (enabled); false (disabled)
 func (o NlbListenerOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 全端口监听的结束端口，仅当Port为0时有效。
+// End port for all-port listening. Valid only when Port is 0.
 func (o NlbListenerOutput) EndPort() pulumi.IntOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.IntOutput { return v.EndPort }).(pulumi.IntOutput)
 }
@@ -396,47 +396,47 @@ func (o NlbListenerOutput) Healths() NlbListenerHealthArrayOutput {
 	return o.ApplyT(func(v *NlbListener) NlbListenerHealthArrayOutput { return v.Healths }).(NlbListenerHealthArrayOutput)
 }
 
-// 监听器唯一标识。
+// Listener unique identifier
 func (o NlbListenerOutput) ListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.StringOutput { return v.ListenerId }).(pulumi.StringOutput)
 }
 
-// 监听器名称。
+// Listener name
 func (o NlbListenerOutput) ListenerName() pulumi.StringOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.StringOutput { return v.ListenerName }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例ID。
+// Load balancer instance ID
 func (o NlbListenerOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.StringOutput { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
 
-// 监听器接收请求的端口，0表示启用全端口监听。
+// Port on which the listener receives requests. 0 indicates all-port listening is enabled.
 func (o NlbListenerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
 }
 
-// 监听协议类型。TCP,UDP,TLS
+// Listener protocol type: TCP, UDP, TLS
 func (o NlbListenerOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.StringOutput { return v.Protocol }).(pulumi.StringOutput)
 }
 
-// TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+// TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
 func (o NlbListenerOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
-// 监听器关联的服务器组ID。
+// Server group ID associated with the listener
 func (o NlbListenerOutput) ServerGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.StringOutput { return v.ServerGroupId }).(pulumi.StringOutput)
 }
 
-// 全端口监听的起始端口，仅当Port为0时有效。
+// Start port for all-port listening. Valid only when Port is 0.
 func (o NlbListenerOutput) StartPort() pulumi.IntOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.IntOutput { return v.StartPort }).(pulumi.IntOutput)
 }
 
-// 监听器的状态。
+// Listener status
 func (o NlbListenerOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -445,7 +445,7 @@ func (o NlbListenerOutput) Tags() NlbListenerTagArrayOutput {
 	return o.ApplyT(func(v *NlbListener) NlbListenerTagArrayOutput { return v.Tags }).(NlbListenerTagArrayOutput)
 }
 
-// 监听器最近操作时间。
+// Listener's most recent operation time
 func (o NlbListenerOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *NlbListener) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

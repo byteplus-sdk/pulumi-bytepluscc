@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainRedirectionRewriteRedirectionRule {
     /**
-     * @return 表示一个 URL 重定向改写的规则。
+     * @return Indicates a URL redirect rewrite rule
      * 
      */
     private @Nullable DomainRedirectionRewriteRedirectionRuleRedirectionAction redirectionAction;
 
     private DomainRedirectionRewriteRedirectionRule() {}
     /**
-     * @return 表示一个 URL 重定向改写的规则。
+     * @return Indicates a URL redirect rewrite rule
      * 
      */
     public Optional<DomainRedirectionRewriteRedirectionRuleRedirectionAction> redirectionAction() {

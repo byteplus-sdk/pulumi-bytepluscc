@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamConnectionPoolSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 开启。
+        /// Enable
         /// </summary>
         [Input("enable")]
         public Input<bool>? Enable { get; set; }
 
         /// <summary>
-        /// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+        /// Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
         /// </summary>
         [Input("http1MaxPendingRequests")]
         public Input<int>? Http1MaxPendingRequests { get; set; }
 
         /// <summary>
-        /// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+        /// Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
         /// </summary>
         [Input("idleTimeout")]
         public Input<int>? IdleTimeout { get; set; }
 
         /// <summary>
-        /// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+        /// Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
         /// </summary>
         [Input("maxConnections")]
         public Input<int>? MaxConnections { get; set; }

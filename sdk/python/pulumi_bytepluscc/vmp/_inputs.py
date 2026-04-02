@@ -18,6 +18,10 @@ from .. import _utilities
 __all__ = [
     'WorkspaceInstanceTypeArgs',
     'WorkspaceInstanceTypeArgsDict',
+    'WorkspaceInstanceTypeCalculatePriceParamArgs',
+    'WorkspaceInstanceTypeCalculatePriceParamArgsDict',
+    'WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs',
+    'WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgsDict',
     'WorkspaceQuotaArgs',
     'WorkspaceQuotaArgsDict',
     'WorkspaceTagArgs',
@@ -32,43 +36,44 @@ if not MYPY:
     class WorkspaceInstanceTypeArgsDict(TypedDict):
         active_series: NotRequired[pulumi.Input[builtins.int]]
         """
-        最大活跃时序数。
+        Maximum active time series count
         """
         availability_zone_replicas: NotRequired[pulumi.Input[builtins.int]]
         """
-        可用区（az）数。
+        Number of availability zones (az)
         """
+        calculate_price_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceInstanceTypeCalculatePriceParamArgsDict']]]]
         downsampling_periods: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        降采样策略。
+        Downsampling policy
         """
         ingest_samples_per_second: NotRequired[pulumi.Input[builtins.int]]
         """
-        最大每秒写入样本数。
+        Maximum samples written per second
         """
         query_concurrency: NotRequired[pulumi.Input[builtins.int]]
         """
-        最大查询并发数。
+        Maximum query concurrency
         """
         query_per_second: NotRequired[pulumi.Input[builtins.int]]
         """
-        最大查询 QPS。
+        Maximum query QPS
         """
         replicas_per_zone: NotRequired[pulumi.Input[builtins.int]]
         """
-        每个可用区（az）的数据副本数。
+        Number of data replicas per availability zone (az)
         """
         retention_period: NotRequired[pulumi.Input[builtins.str]]
         """
-        最长数据保留时间。
+        Maximum data retention period
         """
         scan_samples_per_second: NotRequired[pulumi.Input[builtins.int]]
         """
-        最大每秒扫描样本数。
+        Maximum samples scanned per second
         """
         scan_series_per_second: NotRequired[pulumi.Input[builtins.int]]
         """
-        最大每秒扫描时序数。
+        Maximum time series scanned per second
         """
 elif False:
     WorkspaceInstanceTypeArgsDict: TypeAlias = Mapping[str, Any]
@@ -78,6 +83,7 @@ class WorkspaceInstanceTypeArgs:
     def __init__(__self__, *,
                  active_series: Optional[pulumi.Input[builtins.int]] = None,
                  availability_zone_replicas: Optional[pulumi.Input[builtins.int]] = None,
+                 calculate_price_params: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceInstanceTypeCalculatePriceParamArgs']]]] = None,
                  downsampling_periods: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  ingest_samples_per_second: Optional[pulumi.Input[builtins.int]] = None,
                  query_concurrency: Optional[pulumi.Input[builtins.int]] = None,
@@ -87,21 +93,23 @@ class WorkspaceInstanceTypeArgs:
                  scan_samples_per_second: Optional[pulumi.Input[builtins.int]] = None,
                  scan_series_per_second: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.int] active_series: 最大活跃时序数。
-        :param pulumi.Input[builtins.int] availability_zone_replicas: 可用区（az）数。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] downsampling_periods: 降采样策略。
-        :param pulumi.Input[builtins.int] ingest_samples_per_second: 最大每秒写入样本数。
-        :param pulumi.Input[builtins.int] query_concurrency: 最大查询并发数。
-        :param pulumi.Input[builtins.int] query_per_second: 最大查询 QPS。
-        :param pulumi.Input[builtins.int] replicas_per_zone: 每个可用区（az）的数据副本数。
-        :param pulumi.Input[builtins.str] retention_period: 最长数据保留时间。
-        :param pulumi.Input[builtins.int] scan_samples_per_second: 最大每秒扫描样本数。
-        :param pulumi.Input[builtins.int] scan_series_per_second: 最大每秒扫描时序数。
+        :param pulumi.Input[builtins.int] active_series: Maximum active time series count
+        :param pulumi.Input[builtins.int] availability_zone_replicas: Number of availability zones (az)
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] downsampling_periods: Downsampling policy
+        :param pulumi.Input[builtins.int] ingest_samples_per_second: Maximum samples written per second
+        :param pulumi.Input[builtins.int] query_concurrency: Maximum query concurrency
+        :param pulumi.Input[builtins.int] query_per_second: Maximum query QPS
+        :param pulumi.Input[builtins.int] replicas_per_zone: Number of data replicas per availability zone (az)
+        :param pulumi.Input[builtins.str] retention_period: Maximum data retention period
+        :param pulumi.Input[builtins.int] scan_samples_per_second: Maximum samples scanned per second
+        :param pulumi.Input[builtins.int] scan_series_per_second: Maximum time series scanned per second
         """
         if active_series is not None:
             pulumi.set(__self__, "active_series", active_series)
         if availability_zone_replicas is not None:
             pulumi.set(__self__, "availability_zone_replicas", availability_zone_replicas)
+        if calculate_price_params is not None:
+            pulumi.set(__self__, "calculate_price_params", calculate_price_params)
         if downsampling_periods is not None:
             pulumi.set(__self__, "downsampling_periods", downsampling_periods)
         if ingest_samples_per_second is not None:
@@ -123,7 +131,7 @@ class WorkspaceInstanceTypeArgs:
     @pulumi.getter(name="activeSeries")
     def active_series(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最大活跃时序数。
+        Maximum active time series count
         """
         return pulumi.get(self, "active_series")
 
@@ -135,7 +143,7 @@ class WorkspaceInstanceTypeArgs:
     @pulumi.getter(name="availabilityZoneReplicas")
     def availability_zone_replicas(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        可用区（az）数。
+        Number of availability zones (az)
         """
         return pulumi.get(self, "availability_zone_replicas")
 
@@ -144,10 +152,19 @@ class WorkspaceInstanceTypeArgs:
         pulumi.set(self, "availability_zone_replicas", value)
 
     @property
+    @pulumi.getter(name="calculatePriceParams")
+    def calculate_price_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceInstanceTypeCalculatePriceParamArgs']]]]:
+        return pulumi.get(self, "calculate_price_params")
+
+    @calculate_price_params.setter
+    def calculate_price_params(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceInstanceTypeCalculatePriceParamArgs']]]]):
+        pulumi.set(self, "calculate_price_params", value)
+
+    @property
     @pulumi.getter(name="downsamplingPeriods")
     def downsampling_periods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        降采样策略。
+        Downsampling policy
         """
         return pulumi.get(self, "downsampling_periods")
 
@@ -159,7 +176,7 @@ class WorkspaceInstanceTypeArgs:
     @pulumi.getter(name="ingestSamplesPerSecond")
     def ingest_samples_per_second(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最大每秒写入样本数。
+        Maximum samples written per second
         """
         return pulumi.get(self, "ingest_samples_per_second")
 
@@ -171,7 +188,7 @@ class WorkspaceInstanceTypeArgs:
     @pulumi.getter(name="queryConcurrency")
     def query_concurrency(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最大查询并发数。
+        Maximum query concurrency
         """
         return pulumi.get(self, "query_concurrency")
 
@@ -183,7 +200,7 @@ class WorkspaceInstanceTypeArgs:
     @pulumi.getter(name="queryPerSecond")
     def query_per_second(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最大查询 QPS。
+        Maximum query QPS
         """
         return pulumi.get(self, "query_per_second")
 
@@ -195,7 +212,7 @@ class WorkspaceInstanceTypeArgs:
     @pulumi.getter(name="replicasPerZone")
     def replicas_per_zone(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        每个可用区（az）的数据副本数。
+        Number of data replicas per availability zone (az)
         """
         return pulumi.get(self, "replicas_per_zone")
 
@@ -207,7 +224,7 @@ class WorkspaceInstanceTypeArgs:
     @pulumi.getter(name="retentionPeriod")
     def retention_period(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        最长数据保留时间。
+        Maximum data retention period
         """
         return pulumi.get(self, "retention_period")
 
@@ -219,7 +236,7 @@ class WorkspaceInstanceTypeArgs:
     @pulumi.getter(name="scanSamplesPerSecond")
     def scan_samples_per_second(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最大每秒扫描样本数。
+        Maximum samples scanned per second
         """
         return pulumi.get(self, "scan_samples_per_second")
 
@@ -231,7 +248,7 @@ class WorkspaceInstanceTypeArgs:
     @pulumi.getter(name="scanSeriesPerSecond")
     def scan_series_per_second(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最大每秒扫描时序数。
+        Maximum time series scanned per second
         """
         return pulumi.get(self, "scan_series_per_second")
 
@@ -241,26 +258,151 @@ class WorkspaceInstanceTypeArgs:
 
 
 if not MYPY:
+    class WorkspaceInstanceTypeCalculatePriceParamArgsDict(TypedDict):
+        cal_charge_item_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgsDict']]]]
+        configuration_code: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Configuration item code.
+        """
+        period: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Billing cycle.
+        """
+elif False:
+    WorkspaceInstanceTypeCalculatePriceParamArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class WorkspaceInstanceTypeCalculatePriceParamArgs:
+    def __init__(__self__, *,
+                 cal_charge_item_lists: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs']]]] = None,
+                 configuration_code: Optional[pulumi.Input[builtins.str]] = None,
+                 period: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] configuration_code: Configuration item code.
+        :param pulumi.Input[builtins.str] period: Billing cycle.
+        """
+        if cal_charge_item_lists is not None:
+            pulumi.set(__self__, "cal_charge_item_lists", cal_charge_item_lists)
+        if configuration_code is not None:
+            pulumi.set(__self__, "configuration_code", configuration_code)
+        if period is not None:
+            pulumi.set(__self__, "period", period)
+
+    @property
+    @pulumi.getter(name="calChargeItemLists")
+    def cal_charge_item_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs']]]]:
+        return pulumi.get(self, "cal_charge_item_lists")
+
+    @cal_charge_item_lists.setter
+    def cal_charge_item_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs']]]]):
+        pulumi.set(self, "cal_charge_item_lists", value)
+
+    @property
+    @pulumi.getter(name="configurationCode")
+    def configuration_code(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Configuration item code.
+        """
+        return pulumi.get(self, "configuration_code")
+
+    @configuration_code.setter
+    def configuration_code(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "configuration_code", value)
+
+    @property
+    @pulumi.getter
+    def period(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Billing cycle.
+        """
+        return pulumi.get(self, "period")
+
+    @period.setter
+    def period(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "period", value)
+
+
+if not MYPY:
+    class WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgsDict(TypedDict):
+        attr_value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Billing item attribute value.
+        """
+        charge_item_code: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Billing item code.
+        """
+elif False:
+    WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs:
+    def __init__(__self__, *,
+                 attr_value: Optional[pulumi.Input[builtins.str]] = None,
+                 charge_item_code: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] attr_value: Billing item attribute value.
+        :param pulumi.Input[builtins.str] charge_item_code: Billing item code.
+        """
+        if attr_value is not None:
+            pulumi.set(__self__, "attr_value", attr_value)
+        if charge_item_code is not None:
+            pulumi.set(__self__, "charge_item_code", charge_item_code)
+
+    @property
+    @pulumi.getter(name="attrValue")
+    def attr_value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Billing item attribute value.
+        """
+        return pulumi.get(self, "attr_value")
+
+    @attr_value.setter
+    def attr_value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "attr_value", value)
+
+    @property
+    @pulumi.getter(name="chargeItemCode")
+    def charge_item_code(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Billing item code.
+        """
+        return pulumi.get(self, "charge_item_code")
+
+    @charge_item_code.setter
+    def charge_item_code(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "charge_item_code", value)
+
+
+if not MYPY:
     class WorkspaceQuotaArgsDict(TypedDict):
         active_series: NotRequired[pulumi.Input[builtins.int]]
         """
-        最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+        Maximum active time series count. Integer, default range is 1–50000000
         """
         ingest_samples_per_second: NotRequired[pulumi.Input[builtins.int]]
         """
-        指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+        Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
+        """
+        public_query_bandwidth: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Workspace public Query bandwidth (Mbps).
+        """
+        public_write_bandwidth: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Workspace public RemoteWrite bandwidth (Mbps).
         """
         query_per_second: NotRequired[pulumi.Input[builtins.int]]
         """
-        最大查询 QPS。整数形式，默认取值范围为 1～500。
+        Maximum query QPS. Integer, default range is 1–500
         """
         scan_samples_per_second: NotRequired[pulumi.Input[builtins.int]]
         """
-        最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+        Maximum samples scanned per second. Integer, default range is 1–1000000000
         """
         scan_series_per_second: NotRequired[pulumi.Input[builtins.int]]
         """
-        最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+        Maximum time series scanned per second. Integer, default range is 1–200000
         """
 elif False:
     WorkspaceQuotaArgsDict: TypeAlias = Mapping[str, Any]
@@ -270,20 +412,28 @@ class WorkspaceQuotaArgs:
     def __init__(__self__, *,
                  active_series: Optional[pulumi.Input[builtins.int]] = None,
                  ingest_samples_per_second: Optional[pulumi.Input[builtins.int]] = None,
+                 public_query_bandwidth: Optional[pulumi.Input[builtins.int]] = None,
+                 public_write_bandwidth: Optional[pulumi.Input[builtins.int]] = None,
                  query_per_second: Optional[pulumi.Input[builtins.int]] = None,
                  scan_samples_per_second: Optional[pulumi.Input[builtins.int]] = None,
                  scan_series_per_second: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.int] active_series: 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
-        :param pulumi.Input[builtins.int] ingest_samples_per_second: 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
-        :param pulumi.Input[builtins.int] query_per_second: 最大查询 QPS。整数形式，默认取值范围为 1～500。
-        :param pulumi.Input[builtins.int] scan_samples_per_second: 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
-        :param pulumi.Input[builtins.int] scan_series_per_second: 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+        :param pulumi.Input[builtins.int] active_series: Maximum active time series count. Integer, default range is 1–50000000
+        :param pulumi.Input[builtins.int] ingest_samples_per_second: Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
+        :param pulumi.Input[builtins.int] public_query_bandwidth: Workspace public Query bandwidth (Mbps).
+        :param pulumi.Input[builtins.int] public_write_bandwidth: Workspace public RemoteWrite bandwidth (Mbps).
+        :param pulumi.Input[builtins.int] query_per_second: Maximum query QPS. Integer, default range is 1–500
+        :param pulumi.Input[builtins.int] scan_samples_per_second: Maximum samples scanned per second. Integer, default range is 1–1000000000
+        :param pulumi.Input[builtins.int] scan_series_per_second: Maximum time series scanned per second. Integer, default range is 1–200000
         """
         if active_series is not None:
             pulumi.set(__self__, "active_series", active_series)
         if ingest_samples_per_second is not None:
             pulumi.set(__self__, "ingest_samples_per_second", ingest_samples_per_second)
+        if public_query_bandwidth is not None:
+            pulumi.set(__self__, "public_query_bandwidth", public_query_bandwidth)
+        if public_write_bandwidth is not None:
+            pulumi.set(__self__, "public_write_bandwidth", public_write_bandwidth)
         if query_per_second is not None:
             pulumi.set(__self__, "query_per_second", query_per_second)
         if scan_samples_per_second is not None:
@@ -295,7 +445,7 @@ class WorkspaceQuotaArgs:
     @pulumi.getter(name="activeSeries")
     def active_series(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+        Maximum active time series count. Integer, default range is 1–50000000
         """
         return pulumi.get(self, "active_series")
 
@@ -307,7 +457,7 @@ class WorkspaceQuotaArgs:
     @pulumi.getter(name="ingestSamplesPerSecond")
     def ingest_samples_per_second(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+        Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
         """
         return pulumi.get(self, "ingest_samples_per_second")
 
@@ -316,10 +466,34 @@ class WorkspaceQuotaArgs:
         pulumi.set(self, "ingest_samples_per_second", value)
 
     @property
+    @pulumi.getter(name="publicQueryBandwidth")
+    def public_query_bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Workspace public Query bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_query_bandwidth")
+
+    @public_query_bandwidth.setter
+    def public_query_bandwidth(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "public_query_bandwidth", value)
+
+    @property
+    @pulumi.getter(name="publicWriteBandwidth")
+    def public_write_bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Workspace public RemoteWrite bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_write_bandwidth")
+
+    @public_write_bandwidth.setter
+    def public_write_bandwidth(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "public_write_bandwidth", value)
+
+    @property
     @pulumi.getter(name="queryPerSecond")
     def query_per_second(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最大查询 QPS。整数形式，默认取值范围为 1～500。
+        Maximum query QPS. Integer, default range is 1–500
         """
         return pulumi.get(self, "query_per_second")
 
@@ -331,7 +505,7 @@ class WorkspaceQuotaArgs:
     @pulumi.getter(name="scanSamplesPerSecond")
     def scan_samples_per_second(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+        Maximum samples scanned per second. Integer, default range is 1–1000000000
         """
         return pulumi.get(self, "scan_samples_per_second")
 
@@ -343,7 +517,7 @@ class WorkspaceQuotaArgs:
     @pulumi.getter(name="scanSeriesPerSecond")
     def scan_series_per_second(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+        Maximum time series scanned per second. Integer, default range is 1–200000
         """
         return pulumi.get(self, "scan_series_per_second")
 
@@ -356,11 +530,11 @@ if not MYPY:
     class WorkspaceTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Tag key
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value
         """
 elif False:
     WorkspaceTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -371,8 +545,8 @@ class WorkspaceTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -383,7 +557,7 @@ class WorkspaceTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -395,7 +569,7 @@ class WorkspaceTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -408,11 +582,11 @@ if not MYPY:
     class WorkspaceUsageArgsDict(TypedDict):
         active_series: NotRequired[pulumi.Input[builtins.int]]
         """
-        活跃时序数。
+        Active time series count
         """
         ingested_samples_per_second: NotRequired[pulumi.Input[builtins.float]]
         """
-        每秒写入样本数。
+        Samples written per second
         """
 elif False:
     WorkspaceUsageArgsDict: TypeAlias = Mapping[str, Any]
@@ -423,8 +597,8 @@ class WorkspaceUsageArgs:
                  active_series: Optional[pulumi.Input[builtins.int]] = None,
                  ingested_samples_per_second: Optional[pulumi.Input[builtins.float]] = None):
         """
-        :param pulumi.Input[builtins.int] active_series: 活跃时序数。
-        :param pulumi.Input[builtins.float] ingested_samples_per_second: 每秒写入样本数。
+        :param pulumi.Input[builtins.int] active_series: Active time series count
+        :param pulumi.Input[builtins.float] ingested_samples_per_second: Samples written per second
         """
         if active_series is not None:
             pulumi.set(__self__, "active_series", active_series)
@@ -435,7 +609,7 @@ class WorkspaceUsageArgs:
     @pulumi.getter(name="activeSeries")
     def active_series(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        活跃时序数。
+        Active time series count
         """
         return pulumi.get(self, "active_series")
 
@@ -447,7 +621,7 @@ class WorkspaceUsageArgs:
     @pulumi.getter(name="ingestedSamplesPerSecond")
     def ingested_samples_per_second(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        每秒写入样本数。
+        Samples written per second
         """
         return pulumi.get(self, "ingested_samples_per_second")
 

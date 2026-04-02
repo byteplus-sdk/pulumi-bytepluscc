@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Inputs
     public sealed class InstanceNodeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+        /// Node failover priority. Range: 0~15. Higher values indicate higher priority
         /// </summary>
         [Input("failoverPriority")]
         public Input<int>? FailoverPriority { get; set; }
 
         /// <summary>
-        /// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        /// Node type. Values: Primary: primary node. ReadOnly: read-only node.
         /// </summary>
         [Input("nodeType")]
         public Input<string>? NodeType { get; set; }

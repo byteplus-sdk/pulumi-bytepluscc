@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class EndpointRateLimit {
     /**
-     * @return Requests Per Minute，每分钟请求数。
+     * @return Requests Per Minute, number of requests per minute
      * 
      */
     private @Nullable Integer rpm;
     /**
-     * @return Tokens Per Minute，每分钟请求 token 数。
+     * @return Tokens Per Minute, number of tokens requested per minute
      * 
      */
     private @Nullable Integer tpm;
 
     private EndpointRateLimit() {}
     /**
-     * @return Requests Per Minute，每分钟请求数。
+     * @return Requests Per Minute, number of requests per minute
      * 
      */
     public Optional<Integer> rpm() {
         return Optional.ofNullable(this.rpm);
     }
     /**
-     * @return Tokens Per Minute，每分钟请求 token 数。
+     * @return Tokens Per Minute, number of tokens requested per minute
      * 
      */
     public Optional<Integer> tpm() {

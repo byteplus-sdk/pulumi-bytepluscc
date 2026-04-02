@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8Rule {
     /**
-     * @return 表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
+     * @return Indicates whether to retain the original parameters in the URL when rewriting the shard URL. This parameter has the following values: true: removes the original parameters. false: retains the original parameters.
      * 
      */
     private Boolean deleteParam;
     /**
-     * @return 表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+     * @return Indicates whether to add unsigned query parameters from the M3U8 file request to the segment URL. The parameter has the following options: true: add query parameters to the segment URL. false: do not add query parameters.
      * 
      */
     private Boolean keepM3U8Param;
 
     private GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8Rule() {}
     /**
-     * @return 表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
+     * @return Indicates whether to retain the original parameters in the URL when rewriting the shard URL. This parameter has the following values: true: removes the original parameters. false: retains the original parameters.
      * 
      */
     public Boolean deleteParam() {
         return this.deleteParam;
     }
     /**
-     * @return 表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+     * @return Indicates whether to add unsigned query parameters from the M3U8 file request to the segment URL. The parameter has the following options: true: add query parameters to the segment URL. false: do not add query parameters.
      * 
      */
     public Boolean keepM3U8Param() {

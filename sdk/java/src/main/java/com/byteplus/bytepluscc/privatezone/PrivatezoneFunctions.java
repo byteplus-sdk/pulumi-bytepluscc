@@ -10,12 +10,16 @@ import com.byteplus.bytepluscc.privatezone.inputs.GetResolverEndpointArgs;
 import com.byteplus.bytepluscc.privatezone.inputs.GetResolverEndpointPlainArgs;
 import com.byteplus.bytepluscc.privatezone.inputs.GetResolverRuleArgs;
 import com.byteplus.bytepluscc.privatezone.inputs.GetResolverRulePlainArgs;
+import com.byteplus.bytepluscc.privatezone.inputs.GetUserVpcAuthorizationArgs;
+import com.byteplus.bytepluscc.privatezone.inputs.GetUserVpcAuthorizationPlainArgs;
 import com.byteplus.bytepluscc.privatezone.outputs.GetRecordResult;
 import com.byteplus.bytepluscc.privatezone.outputs.GetRecordsResult;
 import com.byteplus.bytepluscc.privatezone.outputs.GetResolverEndpointResult;
 import com.byteplus.bytepluscc.privatezone.outputs.GetResolverEndpointsResult;
 import com.byteplus.bytepluscc.privatezone.outputs.GetResolverRuleResult;
 import com.byteplus.bytepluscc.privatezone.outputs.GetResolverRulesResult;
+import com.byteplus.bytepluscc.privatezone.outputs.GetUserVpcAuthorizationResult;
+import com.byteplus.bytepluscc.privatezone.outputs.GetUserVpcAuthorizationsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -276,5 +280,89 @@ public final class PrivatezoneFunctions {
      */
     public static CompletableFuture<GetResolverRulesResult> getResolverRulesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:privatezone/getResolverRules:getResolverRules", TypeShape.of(GetResolverRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateZone::UserVPCAuthorization
+     * 
+     */
+    public static Output<GetUserVpcAuthorizationResult> getUserVpcAuthorization(GetUserVpcAuthorizationArgs args) {
+        return getUserVpcAuthorization(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateZone::UserVPCAuthorization
+     * 
+     */
+    public static CompletableFuture<GetUserVpcAuthorizationResult> getUserVpcAuthorizationPlain(GetUserVpcAuthorizationPlainArgs args) {
+        return getUserVpcAuthorizationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateZone::UserVPCAuthorization
+     * 
+     */
+    public static Output<GetUserVpcAuthorizationResult> getUserVpcAuthorization(GetUserVpcAuthorizationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatezone/getUserVpcAuthorization:getUserVpcAuthorization", TypeShape.of(GetUserVpcAuthorizationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateZone::UserVPCAuthorization
+     * 
+     */
+    public static Output<GetUserVpcAuthorizationResult> getUserVpcAuthorization(GetUserVpcAuthorizationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatezone/getUserVpcAuthorization:getUserVpcAuthorization", TypeShape.of(GetUserVpcAuthorizationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateZone::UserVPCAuthorization
+     * 
+     */
+    public static CompletableFuture<GetUserVpcAuthorizationResult> getUserVpcAuthorizationPlain(GetUserVpcAuthorizationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:privatezone/getUserVpcAuthorization:getUserVpcAuthorization", TypeShape.of(GetUserVpcAuthorizationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::UserVPCAuthorization
+     * 
+     */
+    public static Output<GetUserVpcAuthorizationsResult> getUserVpcAuthorizations() {
+        return getUserVpcAuthorizations(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::UserVPCAuthorization
+     * 
+     */
+    public static CompletableFuture<GetUserVpcAuthorizationsResult> getUserVpcAuthorizationsPlain() {
+        return getUserVpcAuthorizationsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::UserVPCAuthorization
+     * 
+     */
+    public static Output<GetUserVpcAuthorizationsResult> getUserVpcAuthorizations(InvokeArgs args) {
+        return getUserVpcAuthorizations(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::UserVPCAuthorization
+     * 
+     */
+    public static CompletableFuture<GetUserVpcAuthorizationsResult> getUserVpcAuthorizationsPlain(InvokeArgs args) {
+        return getUserVpcAuthorizationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::UserVPCAuthorization
+     * 
+     */
+    public static Output<GetUserVpcAuthorizationsResult> getUserVpcAuthorizations(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatezone/getUserVpcAuthorizations:getUserVpcAuthorizations", TypeShape.of(GetUserVpcAuthorizationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::UserVPCAuthorization
+     * 
+     */
+    public static Output<GetUserVpcAuthorizationsResult> getUserVpcAuthorizations(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatezone/getUserVpcAuthorizations:getUserVpcAuthorizations", TypeShape.of(GetUserVpcAuthorizationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::UserVPCAuthorization
+     * 
+     */
+    public static CompletableFuture<GetUserVpcAuthorizationsResult> getUserVpcAuthorizationsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:privatezone/getUserVpcAuthorizations:getUserVpcAuthorizations", TypeShape.of(GetUserVpcAuthorizationsResult.class), args, Utilities.withVersion(options));
     }
 }

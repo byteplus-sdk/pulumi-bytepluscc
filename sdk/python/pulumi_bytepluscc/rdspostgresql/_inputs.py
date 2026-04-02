@@ -32,15 +32,15 @@ if not MYPY:
     class AllowListAssociatedInstanceArgsDict(TypedDict):
         instance_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例 ID。
+        Instance ID.
         """
         instance_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例名称。
+        Instance name.
         """
         vpc: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例所属的 VPC ID。
+        VPC ID to which the instance belongs.
         """
 elif False:
     AllowListAssociatedInstanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -52,9 +52,9 @@ class AllowListAssociatedInstanceArgs:
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
                  vpc: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。
-        :param pulumi.Input[builtins.str] vpc: 实例所属的 VPC ID。
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] instance_name: Instance name.
+        :param pulumi.Input[builtins.str] vpc: VPC ID to which the instance belongs.
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
@@ -67,7 +67,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -79,7 +79,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例名称。
+        Instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -91,7 +91,7 @@ class AllowListAssociatedInstanceArgs:
     @pulumi.getter
     def vpc(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的 VPC ID。
+        VPC ID to which the instance belongs.
         """
         return pulumi.get(self, "vpc")
 
@@ -104,19 +104,19 @@ if not MYPY:
     class AllowListSecurityGroupBindInfoArgsDict(TypedDict):
         bind_mode: NotRequired[pulumi.Input[builtins.str]]
         """
-        关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+        Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
         """
         ip_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        安全组中的 IP 列表。
+        IP address list in the security group.
         """
         security_group_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        安全组 ID。
+        Security group ID.
         """
         security_group_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        安全组名称。
+        Security group name.
         """
 elif False:
     AllowListSecurityGroupBindInfoArgsDict: TypeAlias = Mapping[str, Any]
@@ -129,10 +129,10 @@ class AllowListSecurityGroupBindInfoArgs:
                  security_group_id: Optional[pulumi.Input[builtins.str]] = None,
                  security_group_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] bind_mode: 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_lists: 安全组中的 IP 列表。
-        :param pulumi.Input[builtins.str] security_group_id: 安全组 ID。
-        :param pulumi.Input[builtins.str] security_group_name: 安全组名称。
+        :param pulumi.Input[builtins.str] bind_mode: Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_lists: IP address list in the security group.
+        :param pulumi.Input[builtins.str] security_group_id: Security group ID.
+        :param pulumi.Input[builtins.str] security_group_name: Security group name.
         """
         if bind_mode is not None:
             pulumi.set(__self__, "bind_mode", bind_mode)
@@ -147,7 +147,7 @@ class AllowListSecurityGroupBindInfoArgs:
     @pulumi.getter(name="bindMode")
     def bind_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+        Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
         """
         return pulumi.get(self, "bind_mode")
 
@@ -159,7 +159,7 @@ class AllowListSecurityGroupBindInfoArgs:
     @pulumi.getter(name="ipLists")
     def ip_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        安全组中的 IP 列表。
+        IP address list in the security group.
         """
         return pulumi.get(self, "ip_lists")
 
@@ -171,7 +171,7 @@ class AllowListSecurityGroupBindInfoArgs:
     @pulumi.getter(name="securityGroupId")
     def security_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组 ID。
+        Security group ID.
         """
         return pulumi.get(self, "security_group_id")
 
@@ -183,7 +183,7 @@ class AllowListSecurityGroupBindInfoArgs:
     @pulumi.getter(name="securityGroupName")
     def security_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组名称。
+        Security group name.
         """
         return pulumi.get(self, "security_group_name")
 
@@ -196,15 +196,15 @@ if not MYPY:
     class DbEndpointAddressArgsDict(TypedDict):
         dns_visibility: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+        Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
         """
         domain_prefix: NotRequired[pulumi.Input[builtins.str]]
         """
-        新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+        New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
         """
         port: NotRequired[pulumi.Input[builtins.str]]
         """
-        端口号。
+        Port number.
         """
 elif False:
     DbEndpointAddressArgsDict: TypeAlias = Mapping[str, Any]
@@ -216,9 +216,9 @@ class DbEndpointAddressArgs:
                  domain_prefix: Optional[pulumi.Input[builtins.str]] = None,
                  port: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] dns_visibility: 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
-        :param pulumi.Input[builtins.str] domain_prefix: 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
-        :param pulumi.Input[builtins.str] port: 端口号。
+        :param pulumi.Input[builtins.bool] dns_visibility: Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+        :param pulumi.Input[builtins.str] domain_prefix: New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+        :param pulumi.Input[builtins.str] port: Port number.
         """
         if dns_visibility is not None:
             pulumi.set(__self__, "dns_visibility", dns_visibility)
@@ -231,7 +231,7 @@ class DbEndpointAddressArgs:
     @pulumi.getter(name="dnsVisibility")
     def dns_visibility(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+        Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
         """
         return pulumi.get(self, "dns_visibility")
 
@@ -243,7 +243,7 @@ class DbEndpointAddressArgs:
     @pulumi.getter(name="domainPrefix")
     def domain_prefix(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+        New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
         """
         return pulumi.get(self, "domain_prefix")
 
@@ -255,7 +255,7 @@ class DbEndpointAddressArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        端口号。
+        Port number.
         """
         return pulumi.get(self, "port")
 
@@ -268,15 +268,15 @@ if not MYPY:
     class DbEndpointReadOnlyNodeWeightArgsDict(TypedDict):
         node_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        只读节点需要传入 NodeId。
+        Read-only nodes require the NodeId to be provided.
         """
         node_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        Node type. Values: Primary: primary node. ReadOnly: read-only node.
         """
         weight: NotRequired[pulumi.Input[builtins.int]]
         """
-        节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+        Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
         """
 elif False:
     DbEndpointReadOnlyNodeWeightArgsDict: TypeAlias = Mapping[str, Any]
@@ -288,9 +288,9 @@ class DbEndpointReadOnlyNodeWeightArgs:
                  node_type: Optional[pulumi.Input[builtins.str]] = None,
                  weight: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] node_id: 只读节点需要传入 NodeId。
-        :param pulumi.Input[builtins.str] node_type: 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
-        :param pulumi.Input[builtins.int] weight: 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+        :param pulumi.Input[builtins.str] node_id: Read-only nodes require the NodeId to be provided.
+        :param pulumi.Input[builtins.str] node_type: Node type. Values: Primary: primary node. ReadOnly: read-only node.
+        :param pulumi.Input[builtins.int] weight: Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
         """
         if node_id is not None:
             pulumi.set(__self__, "node_id", node_id)
@@ -303,7 +303,7 @@ class DbEndpointReadOnlyNodeWeightArgs:
     @pulumi.getter(name="nodeId")
     def node_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        只读节点需要传入 NodeId。
+        Read-only nodes require the NodeId to be provided.
         """
         return pulumi.get(self, "node_id")
 
@@ -315,7 +315,7 @@ class DbEndpointReadOnlyNodeWeightArgs:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        Node type. Values: Primary: primary node. ReadOnly: read-only node.
         """
         return pulumi.get(self, "node_type")
 
@@ -327,7 +327,7 @@ class DbEndpointReadOnlyNodeWeightArgs:
     @pulumi.getter
     def weight(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+        Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
         """
         return pulumi.get(self, "weight")
 

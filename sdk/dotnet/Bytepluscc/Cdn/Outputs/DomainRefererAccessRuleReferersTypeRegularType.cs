@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainRefererAccessRuleReferersTypeRegularType
     {
         /// <summary>
-        /// 表示一个 Referer 正则表达式的列表。该参数值的长度不能超过 30,000 个字符。
+        /// Indicates a list of Referer regular expressions. The value of this parameter cannot exceed 30,000 characters.
         /// </summary>
         public readonly ImmutableArray<string> Referers;
 

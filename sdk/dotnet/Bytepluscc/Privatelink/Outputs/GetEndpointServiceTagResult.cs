@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink.Outputs
     public sealed class GetEndpointServiceTagResult
     {
         /// <summary>
-        /// 终端节点服务标签的标签键。
+        /// Tag keys for endpoint service tags.
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// 终端节点服务标签的标签值。
+        /// Tag value of the endpoint service tag.
         /// </summary>
         public readonly string Value;
 

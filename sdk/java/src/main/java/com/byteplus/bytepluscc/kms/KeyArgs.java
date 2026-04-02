@@ -21,14 +21,14 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     public static final KeyArgs Empty = new KeyArgs();
 
     /**
-     * 密钥描述:长度为 0   - 8192 个字符。
+     * Key description: Length 0–8192 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 密钥描述:长度为 0   - 8192 个字符。
+     * @return Key description: Length 0–8192 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -36,14 +36,14 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * User master key archive operation (enter 1 to archive, 2 to unarchive).
      * 
      */
     @Import(name="keyArchiveOperation")
     private @Nullable Output<Integer> keyArchiveOperation;
 
     /**
-     * @return 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * @return User master key archive operation (enter 1 to archive, 2 to unarchive).
      * 
      */
     public Optional<Output<Integer>> keyArchiveOperation() {
@@ -51,14 +51,14 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * User master key enable operation (enter 1 to enable, 2 to disable).
      * 
      */
     @Import(name="keyEnableOperation")
     private @Nullable Output<Integer> keyEnableOperation;
 
     /**
-     * @return 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * @return User master key enable operation (enter 1 to enable, 2 to disable).
      * 
      */
     public Optional<Output<Integer>> keyEnableOperation() {
@@ -66,14 +66,14 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      * 
      */
     @Import(name="keyName", required=true)
     private Output<String> keyName;
 
     /**
-     * @return 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * @return Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      * 
      */
     public Output<String> keyName() {
@@ -81,14 +81,14 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * User master key rotation operation (enter 1 to enable, 2 to disable).
      * 
      */
     @Import(name="keyRotationOperation")
     private @Nullable Output<Integer> keyRotationOperation;
 
     /**
-     * @return 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * @return User master key rotation operation (enter 1 to enable, 2 to disable).
      * 
      */
     public Optional<Output<Integer>> keyRotationOperation() {
@@ -96,14 +96,14 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+     * Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
      * 
      */
     @Import(name="keySpec")
     private @Nullable Output<String> keySpec;
 
     /**
-     * @return 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+     * @return Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
      * 
      */
     public Optional<Output<String>> keySpec() {
@@ -111,14 +111,14 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+     * Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
      * 
      */
     @Import(name="keyUsage")
     private @Nullable Output<String> keyUsage;
 
     /**
-     * @return 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+     * @return Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
      * 
      */
     public Optional<Output<String>> keyUsage() {
@@ -126,14 +126,14 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      * 
      */
     @Import(name="keyringName", required=true)
     private Output<String> keyringName;
 
     /**
-     * @return 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * @return Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      * 
      */
     public Output<String> keyringName() {
@@ -141,14 +141,14 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否为 Multi-region 类型的主密钥。
+     * Is this a multi-region type master key.
      * 
      */
     @Import(name="multiRegion")
     private @Nullable Output<Boolean> multiRegion;
 
     /**
-     * @return 是否为 Multi-region 类型的主密钥。
+     * @return Is this a multi-region type master key.
      * 
      */
     public Optional<Output<Boolean>> multiRegion() {
@@ -156,14 +156,14 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+     * Key source. Options: CloudKMS, External, ExternalKeyStore.
      * 
      */
     @Import(name="origin")
     private @Nullable Output<String> origin;
 
     /**
-     * @return 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+     * @return Key source. Options: CloudKMS, External, ExternalKeyStore.
      * 
      */
     public Optional<Output<String>> origin() {
@@ -171,14 +171,14 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥保护级别，取值：SOFTWARE，HSM。
+     * Key protection level. Options: SOFTWARE, HSM.
      * 
      */
     @Import(name="protectionLevel")
     private @Nullable Output<String> protectionLevel;
 
     /**
-     * @return 密钥保护级别，取值：SOFTWARE，HSM。
+     * @return Key protection level. Options: SOFTWARE, HSM.
      * 
      */
     public Optional<Output<String>> protectionLevel() {
@@ -186,14 +186,14 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * Key rotation period (days). Range: [90, 2560].
      * 
      */
     @Import(name="rotateInterval")
     private @Nullable Output<Integer> rotateInterval;
 
     /**
-     * @return 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * @return Key rotation period (days). Range: [90, 2560].
      * 
      */
     public Optional<Output<Integer>> rotateInterval() {
@@ -244,7 +244,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 密钥描述:长度为 0   - 8192 个字符。
+         * @param description Key description: Length 0–8192 characters.
          * 
          * @return builder
          * 
@@ -255,7 +255,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 密钥描述:长度为 0   - 8192 个字符。
+         * @param description Key description: Length 0–8192 characters.
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyArchiveOperation 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+         * @param keyArchiveOperation User master key archive operation (enter 1 to archive, 2 to unarchive).
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyArchiveOperation 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+         * @param keyArchiveOperation User master key archive operation (enter 1 to archive, 2 to unarchive).
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyEnableOperation 用户主密钥启用操作（用户输入1=启用，2=禁用）
+         * @param keyEnableOperation User master key enable operation (enter 1 to enable, 2 to disable).
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyEnableOperation 用户主密钥启用操作（用户输入1=启用，2=禁用）
+         * @param keyEnableOperation User master key enable operation (enter 1 to enable, 2 to disable).
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyName 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+         * @param keyName Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyName 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+         * @param keyName Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyRotationOperation 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+         * @param keyRotationOperation User master key rotation operation (enter 1 to enable, 2 to disable).
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyRotationOperation 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+         * @param keyRotationOperation User master key rotation operation (enter 1 to enable, 2 to disable).
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keySpec 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+         * @param keySpec Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
          * 
          * @return builder
          * 
@@ -360,7 +360,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keySpec 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+         * @param keySpec Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
          * 
          * @return builder
          * 
@@ -370,7 +370,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyUsage 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+         * @param keyUsage Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
          * 
          * @return builder
          * 
@@ -381,7 +381,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyUsage 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+         * @param keyUsage Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyringName 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+         * @param keyringName Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
          * 
          * @return builder
          * 
@@ -402,7 +402,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyringName 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+         * @param keyringName Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
          * 
          * @return builder
          * 
@@ -412,7 +412,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiRegion 是否为 Multi-region 类型的主密钥。
+         * @param multiRegion Is this a multi-region type master key.
          * 
          * @return builder
          * 
@@ -423,7 +423,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiRegion 是否为 Multi-region 类型的主密钥。
+         * @param multiRegion Is this a multi-region type master key.
          * 
          * @return builder
          * 
@@ -433,7 +433,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param origin 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+         * @param origin Key source. Options: CloudKMS, External, ExternalKeyStore.
          * 
          * @return builder
          * 
@@ -444,7 +444,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param origin 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+         * @param origin Key source. Options: CloudKMS, External, ExternalKeyStore.
          * 
          * @return builder
          * 
@@ -454,7 +454,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protectionLevel 密钥保护级别，取值：SOFTWARE，HSM。
+         * @param protectionLevel Key protection level. Options: SOFTWARE, HSM.
          * 
          * @return builder
          * 
@@ -465,7 +465,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protectionLevel 密钥保护级别，取值：SOFTWARE，HSM。
+         * @param protectionLevel Key protection level. Options: SOFTWARE, HSM.
          * 
          * @return builder
          * 
@@ -475,7 +475,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rotateInterval 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+         * @param rotateInterval Key rotation period (days). Range: [90, 2560].
          * 
          * @return builder
          * 
@@ -486,7 +486,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rotateInterval 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+         * @param rotateInterval Key rotation period (days). Range: [90, 2560].
          * 
          * @return builder
          * 

@@ -19,14 +19,14 @@ public final class Ipv6GatewayArgs extends com.pulumi.resources.ResourceArgs {
     public static final Ipv6GatewayArgs Empty = new Ipv6GatewayArgs();
 
     /**
-     * IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
      * 
      */
     public Optional<Output<String>> description() {
@@ -34,14 +34,14 @@ public final class Ipv6GatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+     * Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+     * @return Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
      * 
      */
     public Optional<Output<String>> name() {
@@ -49,14 +49,14 @@ public final class Ipv6GatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IPv6网关所属项目的名称。
+     * Name of the project to which the IPv6 gateway belongs
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return IPv6网关所属项目的名称。
+     * @return Name of the project to which the IPv6 gateway belongs
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -71,14 +71,14 @@ public final class Ipv6GatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+     * VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+     * @return VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
      * 
      */
     public Output<String> vpcId() {
@@ -114,7 +114,7 @@ public final class Ipv6GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class Ipv6GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class Ipv6GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+         * @param name Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class Ipv6GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+         * @param name Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class Ipv6GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName IPv6网关所属项目的名称。
+         * @param projectName Name of the project to which the IPv6 gateway belongs
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class Ipv6GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName IPv6网关所属项目的名称。
+         * @param projectName Name of the project to which the IPv6 gateway belongs
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class Ipv6GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+         * @param vpcId VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class Ipv6GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+         * @param vpcId VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
          * 
          * @return builder
          * 

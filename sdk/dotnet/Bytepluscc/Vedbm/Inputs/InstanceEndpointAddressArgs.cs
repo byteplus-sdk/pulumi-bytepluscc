@@ -14,43 +14,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Inputs
     public sealed class InstanceEndpointAddressArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 解析方式。当前返回值只能为 false。
+        /// Parsing method. The current return value can only be false.
         /// </summary>
         [Input("dnsVisibility")]
         public Input<bool>? DnsVisibility { get; set; }
 
         /// <summary>
-        /// 实例内网访问域名。
+        /// Instance private access domain name.
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
         /// <summary>
-        /// 公网 ID。
+        /// Public network ID.
         /// </summary>
         [Input("eipId")]
         public Input<string>? EipId { get; set; }
 
         /// <summary>
-        /// IP 地址。
+        /// IP address.
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// 网络类型：Private：私有网络 VPC。Public：公网访问。
+        /// Network type: Private: private network VPC. Public: public access.
         /// </summary>
         [Input("networkType")]
         public Input<string>? NetworkType { get; set; }
 
         /// <summary>
-        /// 实例内网访问端口。
+        /// Instance private network access port.
         /// </summary>
         [Input("port")]
         public Input<string>? Port { get; set; }
 
         /// <summary>
-        /// 子网 ID。子网必须属于所选的可用区。
+        /// Subnet ID. The subnet must belong to the selected availability zone.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

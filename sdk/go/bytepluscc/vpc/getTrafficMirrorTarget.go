@@ -30,27 +30,27 @@ type LookupTrafficMirrorTargetArgs struct {
 
 // A collection of values returned by getTrafficMirrorTarget.
 type LookupTrafficMirrorTargetResult struct {
-	// 镜像会话的创建时间。
+	// Creation time of the mirror session.
 	CreatedAt string `pulumi:"createdAt"`
-	// 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+	// Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 镜像目的的资源ID。
+	// Resource ID of the mirror target.
 	InstanceId string `pulumi:"instanceId"`
-	// 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+	// Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
 	InstanceType string `pulumi:"instanceType"`
-	// 镜像目的所属项目的名称。不填默认加入default项目。
+	// Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
 	ProjectName string `pulumi:"projectName"`
-	// 镜像目的状态。Available：可用。Creating：创建中。
+	// Status of the mirror target. Available: Available. Creating: Creating.
 	Status string `pulumi:"status"`
-	// 镜像目的的标签信息。
+	// Tag information of the mirror target.
 	Tags []GetTrafficMirrorTargetTag `pulumi:"tags"`
-	// 镜像目的的ID。
+	// ID of the mirror target.
 	TrafficMirrorTargetId string `pulumi:"trafficMirrorTargetId"`
-	// 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+	// Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is 'protocol-port' as the listener name.
 	TrafficMirrorTargetName string `pulumi:"trafficMirrorTargetName"`
-	// 镜像会话的更新时间。
+	// Update time of the mirror session.
 	UpdatedAt string `pulumi:"updatedAt"`
 }
 
@@ -88,12 +88,12 @@ func (o LookupTrafficMirrorTargetResultOutput) ToLookupTrafficMirrorTargetResult
 	return o
 }
 
-// 镜像会话的创建时间。
+// Creation time of the mirror session.
 func (o LookupTrafficMirrorTargetResultOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorTargetResult) string { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+// Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
 func (o LookupTrafficMirrorTargetResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorTargetResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -103,42 +103,42 @@ func (o LookupTrafficMirrorTargetResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorTargetResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 镜像目的的资源ID。
+// Resource ID of the mirror target.
 func (o LookupTrafficMirrorTargetResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorTargetResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+// Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
 func (o LookupTrafficMirrorTargetResultOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorTargetResult) string { return v.InstanceType }).(pulumi.StringOutput)
 }
 
-// 镜像目的所属项目的名称。不填默认加入default项目。
+// Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
 func (o LookupTrafficMirrorTargetResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorTargetResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 镜像目的状态。Available：可用。Creating：创建中。
+// Status of the mirror target. Available: Available. Creating: Creating.
 func (o LookupTrafficMirrorTargetResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorTargetResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 镜像目的的标签信息。
+// Tag information of the mirror target.
 func (o LookupTrafficMirrorTargetResultOutput) Tags() GetTrafficMirrorTargetTagArrayOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorTargetResult) []GetTrafficMirrorTargetTag { return v.Tags }).(GetTrafficMirrorTargetTagArrayOutput)
 }
 
-// 镜像目的的ID。
+// ID of the mirror target.
 func (o LookupTrafficMirrorTargetResultOutput) TrafficMirrorTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorTargetResult) string { return v.TrafficMirrorTargetId }).(pulumi.StringOutput)
 }
 
-// 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+// Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is 'protocol-port' as the listener name.
 func (o LookupTrafficMirrorTargetResultOutput) TrafficMirrorTargetName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorTargetResult) string { return v.TrafficMirrorTargetName }).(pulumi.StringOutput)
 }
 
-// 镜像会话的更新时间。
+// Update time of the mirror session.
 func (o LookupTrafficMirrorTargetResultOutput) UpdatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorTargetResult) string { return v.UpdatedAt }).(pulumi.StringOutput)
 }

@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GatewayServiceAuthSpec
     {
         /// <summary>
-        /// 是否开启认证。
+        /// Whether authentication is enabled.
         /// </summary>
         public readonly bool? Enable;
 

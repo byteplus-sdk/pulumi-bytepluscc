@@ -19,14 +19,14 @@ public final class DomainBackendGroupArgs extends com.pulumi.resources.ResourceA
     public static final DomainBackendGroupArgs Empty = new DomainBackendGroupArgs();
 
     /**
-     * 接入的端口号。
+     * Access port number.
      * 
      */
     @Import(name="accessPorts")
     private @Nullable Output<List<Integer>> accessPorts;
 
     /**
-     * @return 接入的端口号。
+     * @return Access port number.
      * 
      */
     public Optional<Output<List<Integer>>> accessPorts() {
@@ -41,14 +41,14 @@ public final class DomainBackendGroupArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 源站组名称。
+     * Origin group name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 源站组名称。
+     * @return Origin group name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -82,7 +82,7 @@ public final class DomainBackendGroupArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param accessPorts 接入的端口号。
+         * @param accessPorts Access port number.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainBackendGroupArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param accessPorts 接入的端口号。
+         * @param accessPorts Access port number.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class DomainBackendGroupArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param accessPorts 接入的端口号。
+         * @param accessPorts Access port number.
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class DomainBackendGroupArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param name 源站组名称。
+         * @param name Origin group name.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class DomainBackendGroupArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param name 源站组名称。
+         * @param name Origin group name.
          * 
          * @return builder
          * 

@@ -22,14 +22,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     public static final NlbState Empty = new NlbState();
 
     /**
-     * NLB实例的访问日志信息。
+     * Access log information of the NLB instance.
      * 
      */
     @Import(name="accessLog")
     private @Nullable Output<NlbAccessLogArgs> accessLog;
 
     /**
-     * @return NLB实例的访问日志信息。
+     * @return Access log information of the NLB instance.
      * 
      */
     public Optional<Output<NlbAccessLogArgs>> accessLog() {
@@ -37,14 +37,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例所属的账号ID。
+     * Account ID to which the NLB instance belongs.
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
-     * @return NLB实例所属的账号ID。
+     * @return Account ID to which the NLB instance belongs.
      * 
      */
     public Optional<Output<String>> accountId() {
@@ -52,14 +52,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
+     * Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
      * 
      */
     @Import(name="billingStatus")
     private @Nullable Output<String> billingStatus;
 
     /**
-     * @return NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
+     * @return Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
      * 
      */
     public Optional<Output<String>> billingStatus() {
@@ -67,14 +67,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的计费类型。3：按使用量计费
+     * Billing type of the NLB instance. 3: pay-as-you-go
      * 
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
-     * @return NLB实例的计费类型。3：按使用量计费
+     * @return Billing type of the NLB instance. 3: pay-as-you-go
      * 
      */
     public Optional<Output<Integer>> billingType() {
@@ -82,14 +82,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的创建时间。
+     * Creation time of the NLB instance.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return NLB实例的创建时间。
+     * @return Creation time of the NLB instance.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -97,14 +97,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+     * Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
      * 
      */
     @Import(name="crossZoneEnabled")
     private @Nullable Output<Boolean> crossZoneEnabled;
 
     /**
-     * @return NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+     * @return Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
      * 
      */
     public Optional<Output<Boolean>> crossZoneEnabled() {
@@ -112,14 +112,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+     * Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+     * @return Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -127,14 +127,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的DNS地址。
+     * DNS address of the NLB instance.
      * 
      */
     @Import(name="dnsName")
     private @Nullable Output<String> dnsName;
 
     /**
-     * @return NLB实例的DNS地址。
+     * @return DNS address of the NLB instance.
      * 
      */
     public Optional<Output<String>> dnsName() {
@@ -142,14 +142,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例欠费关停时间。
+     * Time when the NLB instance is suspended due to overdue payment.
      * 
      */
     @Import(name="expectedOverdueTime")
     private @Nullable Output<String> expectedOverdueTime;
 
     /**
-     * @return NLB实例欠费关停时间。
+     * @return Time when the NLB instance is suspended due to overdue payment.
      * 
      */
     public Optional<Output<String>> expectedOverdueTime() {
@@ -157,14 +157,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+     * IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
      * 
      */
     @Import(name="ipAddressVersion")
     private @Nullable Output<String> ipAddressVersion;
 
     /**
-     * @return NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+     * @return IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
      * 
      */
     public Optional<Output<String>> ipAddressVersion() {
@@ -172,14 +172,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IPv4类型的共享带宽包ID。
+     * Shared bandwidth package ID for IPv4 type.
      * 
      */
     @Import(name="ipv4BandwidthPackageId")
     private @Nullable Output<String> ipv4BandwidthPackageId;
 
     /**
-     * @return IPv4类型的共享带宽包ID。
+     * @return Shared bandwidth package ID for IPv4 type.
      * 
      */
     public Optional<Output<String>> ipv4BandwidthPackageId() {
@@ -187,14 +187,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+     * IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
      * 
      */
     @Import(name="ipv4NetworkType")
     private @Nullable Output<String> ipv4NetworkType;
 
     /**
-     * @return NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+     * @return IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
      * 
      */
     public Optional<Output<String>> ipv4NetworkType() {
@@ -202,14 +202,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IPv6类型的共享带宽包ID。
+     * Shared bandwidth package ID for IPv6 type.
      * 
      */
     @Import(name="ipv6BandwidthPackageId")
     private @Nullable Output<String> ipv6BandwidthPackageId;
 
     /**
-     * @return IPv6类型的共享带宽包ID。
+     * @return Shared bandwidth package ID for IPv6 type.
      * 
      */
     public Optional<Output<String>> ipv6BandwidthPackageId() {
@@ -217,14 +217,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+     * IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
      * 
      */
     @Import(name="ipv6NetworkType")
     private @Nullable Output<String> ipv6NetworkType;
 
     /**
-     * @return NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+     * @return IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
      * 
      */
     public Optional<Output<String>> ipv6NetworkType() {
@@ -232,14 +232,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例ID。
+     * NLB instance ID.
      * 
      */
     @Import(name="loadBalancerId")
     private @Nullable Output<String> loadBalancerId;
 
     /**
-     * @return NLB实例ID。
+     * @return NLB instance ID.
      * 
      */
     public Optional<Output<String>> loadBalancerId() {
@@ -247,14 +247,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的名称。
+     * Name of the NLB instance.
      * 
      */
     @Import(name="loadBalancerName")
     private @Nullable Output<String> loadBalancerName;
 
     /**
-     * @return NLB实例的名称。
+     * @return Name of the NLB instance.
      * 
      */
     public Optional<Output<String>> loadBalancerName() {
@@ -262,14 +262,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 系统为NLB实例自动关联的托管安全组ID。
+     * Managed security group ID automatically associated with the NLB instance by the system.
      * 
      */
     @Import(name="managedSecurityGroupId")
     private @Nullable Output<String> managedSecurityGroupId;
 
     /**
-     * @return 系统为NLB实例自动关联的托管安全组ID。
+     * @return Managed security group ID automatically associated with the NLB instance by the system.
      * 
      */
     public Optional<Output<String>> managedSecurityGroupId() {
@@ -277,14 +277,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+     * Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
      * 
      */
     @Import(name="modificationProtectionStatus")
     private @Nullable Output<String> modificationProtectionStatus;
 
     /**
-     * @return NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+     * @return Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
      * 
      */
     public Optional<Output<String>> modificationProtectionStatus() {
@@ -292,14 +292,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例被锁定的时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+     * Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
      * 
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
-     * @return NLB实例被锁定的时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+     * @return Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
      * 
      */
     public Optional<Output<String>> overdueTime() {
@@ -307,14 +307,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例所属项目的名称。
+     * Name of the project to which the NLB instance belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return NLB实例所属项目的名称。
+     * @return Name of the project to which the NLB instance belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -322,14 +322,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的预期回收时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+     * Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
      * 
      */
     @Import(name="reclaimedTime")
     private @Nullable Output<String> reclaimedTime;
 
     /**
-     * @return NLB实例的预期回收时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+     * @return Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
      * 
      */
     public Optional<Output<String>> reclaimedTime() {
@@ -337,14 +337,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例关联的安全组ID列表。
+     * List of security group IDs associated with the NLB instance.
      * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
-     * @return NLB实例关联的安全组ID列表。
+     * @return List of security group IDs associated with the NLB instance.
      * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
@@ -352,14 +352,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB 实例的状态。Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。仅调用API创建NLB实例时存在该状态。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+     * Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return NLB 实例的状态。Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。仅调用API创建NLB实例时存在该状态。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+     * @return Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
      * 
      */
     public Optional<Output<String>> status() {
@@ -374,14 +374,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的更新时间。
+     * Update time of the NLB instance.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return NLB实例的更新时间。
+     * @return Update time of the NLB instance.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -389,14 +389,14 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例所属的VPC ID。
+     * VPC ID to which the NLB instance belongs.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return NLB实例所属的VPC ID。
+     * @return VPC ID to which the NLB instance belongs.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -461,7 +461,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessLog NLB实例的访问日志信息。
+         * @param accessLog Access log information of the NLB instance.
          * 
          * @return builder
          * 
@@ -472,7 +472,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessLog NLB实例的访问日志信息。
+         * @param accessLog Access log information of the NLB instance.
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId NLB实例所属的账号ID。
+         * @param accountId Account ID to which the NLB instance belongs.
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId NLB实例所属的账号ID。
+         * @param accountId Account ID to which the NLB instance belongs.
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingStatus NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
+         * @param billingStatus Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
          * 
          * @return builder
          * 
@@ -514,7 +514,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingStatus NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
+         * @param billingStatus Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType NLB实例的计费类型。3：按使用量计费
+         * @param billingType Billing type of the NLB instance. 3: pay-as-you-go
          * 
          * @return builder
          * 
@@ -535,7 +535,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType NLB实例的计费类型。3：按使用量计费
+         * @param billingType Billing type of the NLB instance. 3: pay-as-you-go
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime NLB实例的创建时间。
+         * @param createdTime Creation time of the NLB instance.
          * 
          * @return builder
          * 
@@ -556,7 +556,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime NLB实例的创建时间。
+         * @param createdTime Creation time of the NLB instance.
          * 
          * @return builder
          * 
@@ -566,7 +566,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param crossZoneEnabled NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+         * @param crossZoneEnabled Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
          * 
          * @return builder
          * 
@@ -577,7 +577,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param crossZoneEnabled NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+         * @param crossZoneEnabled Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
          * 
          * @return builder
          * 
@@ -587,7 +587,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+         * @param description Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
          * 
          * @return builder
          * 
@@ -598,7 +598,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+         * @param description Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
          * 
          * @return builder
          * 
@@ -608,7 +608,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnsName NLB实例的DNS地址。
+         * @param dnsName DNS address of the NLB instance.
          * 
          * @return builder
          * 
@@ -619,7 +619,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnsName NLB实例的DNS地址。
+         * @param dnsName DNS address of the NLB instance.
          * 
          * @return builder
          * 
@@ -629,7 +629,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expectedOverdueTime NLB实例欠费关停时间。
+         * @param expectedOverdueTime Time when the NLB instance is suspended due to overdue payment.
          * 
          * @return builder
          * 
@@ -640,7 +640,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expectedOverdueTime NLB实例欠费关停时间。
+         * @param expectedOverdueTime Time when the NLB instance is suspended due to overdue payment.
          * 
          * @return builder
          * 
@@ -650,7 +650,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddressVersion NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+         * @param ipAddressVersion IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
          * 
          * @return builder
          * 
@@ -661,7 +661,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddressVersion NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+         * @param ipAddressVersion IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
          * 
          * @return builder
          * 
@@ -671,7 +671,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv4BandwidthPackageId IPv4类型的共享带宽包ID。
+         * @param ipv4BandwidthPackageId Shared bandwidth package ID for IPv4 type.
          * 
          * @return builder
          * 
@@ -682,7 +682,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv4BandwidthPackageId IPv4类型的共享带宽包ID。
+         * @param ipv4BandwidthPackageId Shared bandwidth package ID for IPv4 type.
          * 
          * @return builder
          * 
@@ -692,7 +692,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv4NetworkType NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+         * @param ipv4NetworkType IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
          * 
          * @return builder
          * 
@@ -703,7 +703,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv4NetworkType NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+         * @param ipv4NetworkType IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
          * 
          * @return builder
          * 
@@ -713,7 +713,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6BandwidthPackageId IPv6类型的共享带宽包ID。
+         * @param ipv6BandwidthPackageId Shared bandwidth package ID for IPv6 type.
          * 
          * @return builder
          * 
@@ -724,7 +724,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6BandwidthPackageId IPv6类型的共享带宽包ID。
+         * @param ipv6BandwidthPackageId Shared bandwidth package ID for IPv6 type.
          * 
          * @return builder
          * 
@@ -734,7 +734,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6NetworkType NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+         * @param ipv6NetworkType IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
          * 
          * @return builder
          * 
@@ -745,7 +745,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6NetworkType NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+         * @param ipv6NetworkType IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
          * 
          * @return builder
          * 
@@ -755,7 +755,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerId NLB实例ID。
+         * @param loadBalancerId NLB instance ID.
          * 
          * @return builder
          * 
@@ -766,7 +766,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerId NLB实例ID。
+         * @param loadBalancerId NLB instance ID.
          * 
          * @return builder
          * 
@@ -776,7 +776,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerName NLB实例的名称。
+         * @param loadBalancerName Name of the NLB instance.
          * 
          * @return builder
          * 
@@ -787,7 +787,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerName NLB实例的名称。
+         * @param loadBalancerName Name of the NLB instance.
          * 
          * @return builder
          * 
@@ -797,7 +797,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param managedSecurityGroupId 系统为NLB实例自动关联的托管安全组ID。
+         * @param managedSecurityGroupId Managed security group ID automatically associated with the NLB instance by the system.
          * 
          * @return builder
          * 
@@ -808,7 +808,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param managedSecurityGroupId 系统为NLB实例自动关联的托管安全组ID。
+         * @param managedSecurityGroupId Managed security group ID automatically associated with the NLB instance by the system.
          * 
          * @return builder
          * 
@@ -818,7 +818,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modificationProtectionStatus NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+         * @param modificationProtectionStatus Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
          * 
          * @return builder
          * 
@@ -829,7 +829,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modificationProtectionStatus NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+         * @param modificationProtectionStatus Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
          * 
          * @return builder
          * 
@@ -839,7 +839,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueTime NLB实例被锁定的时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+         * @param overdueTime Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
          * 
          * @return builder
          * 
@@ -850,7 +850,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueTime NLB实例被锁定的时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+         * @param overdueTime Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
          * 
          * @return builder
          * 
@@ -860,7 +860,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName NLB实例所属项目的名称。
+         * @param projectName Name of the project to which the NLB instance belongs.
          * 
          * @return builder
          * 
@@ -871,7 +871,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName NLB实例所属项目的名称。
+         * @param projectName Name of the project to which the NLB instance belongs.
          * 
          * @return builder
          * 
@@ -881,7 +881,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param reclaimedTime NLB实例的预期回收时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+         * @param reclaimedTime Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
          * 
          * @return builder
          * 
@@ -892,7 +892,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param reclaimedTime NLB实例的预期回收时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+         * @param reclaimedTime Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
          * 
          * @return builder
          * 
@@ -902,7 +902,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds NLB实例关联的安全组ID列表。
+         * @param securityGroupIds List of security group IDs associated with the NLB instance.
          * 
          * @return builder
          * 
@@ -913,7 +913,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds NLB实例关联的安全组ID列表。
+         * @param securityGroupIds List of security group IDs associated with the NLB instance.
          * 
          * @return builder
          * 
@@ -923,7 +923,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds NLB实例关联的安全组ID列表。
+         * @param securityGroupIds List of security group IDs associated with the NLB instance.
          * 
          * @return builder
          * 
@@ -933,7 +933,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status NLB 实例的状态。Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。仅调用API创建NLB实例时存在该状态。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+         * @param status Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
          * 
          * @return builder
          * 
@@ -944,7 +944,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status NLB 实例的状态。Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。仅调用API创建NLB实例时存在该状态。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+         * @param status Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
          * 
          * @return builder
          * 
@@ -967,7 +967,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime NLB实例的更新时间。
+         * @param updatedTime Update time of the NLB instance.
          * 
          * @return builder
          * 
@@ -978,7 +978,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime NLB实例的更新时间。
+         * @param updatedTime Update time of the NLB instance.
          * 
          * @return builder
          * 
@@ -988,7 +988,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId NLB实例所属的VPC ID。
+         * @param vpcId VPC ID to which the NLB instance belongs.
          * 
          * @return builder
          * 
@@ -999,7 +999,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId NLB实例所属的VPC ID。
+         * @param vpcId VPC ID to which the NLB instance belongs.
          * 
          * @return builder
          * 

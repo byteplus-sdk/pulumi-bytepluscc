@@ -17,14 +17,14 @@ public final class LoadBalancerGlobalAcceleratorArgs extends com.pulumi.resource
     public static final LoadBalancerGlobalAcceleratorArgs Empty = new LoadBalancerGlobalAcceleratorArgs();
 
     /**
-     * 绑定的全球加速实例的ID。
+     * ID of the bound Global Accelerator instance.
      * 
      */
     @Import(name="acceleratorId")
     private @Nullable Output<String> acceleratorId;
 
     /**
-     * @return 绑定的全球加速实例的ID。
+     * @return ID of the bound Global Accelerator instance.
      * 
      */
     public Optional<Output<String>> acceleratorId() {
@@ -32,14 +32,14 @@ public final class LoadBalancerGlobalAcceleratorArgs extends com.pulumi.resource
     }
 
     /**
-     * 绑定的全球加速监听器的ID。
+     * ID of the bound Global Accelerator listener.
      * 
      */
     @Import(name="acceleratorListenerId")
     private @Nullable Output<String> acceleratorListenerId;
 
     /**
-     * @return 绑定的全球加速监听器的ID。
+     * @return ID of the bound Global Accelerator listener.
      * 
      */
     public Optional<Output<String>> acceleratorListenerId() {
@@ -47,14 +47,14 @@ public final class LoadBalancerGlobalAcceleratorArgs extends com.pulumi.resource
     }
 
     /**
-     * 绑定的终端节点组的ID。
+     * ID of the bound endpoint group.
      * 
      */
     @Import(name="endpointGroupId")
     private @Nullable Output<String> endpointGroupId;
 
     /**
-     * @return 绑定的终端节点组的ID。
+     * @return ID of the bound endpoint group.
      * 
      */
     public Optional<Output<String>> endpointGroupId() {
@@ -62,14 +62,14 @@ public final class LoadBalancerGlobalAcceleratorArgs extends com.pulumi.resource
     }
 
     /**
-     * 后端服务器的权重，决定流量分发比例。
+     * Weight of the backend server, determines traffic distribution ratio.
      * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
-     * @return 后端服务器的权重，决定流量分发比例。
+     * @return Weight of the backend server, determines traffic distribution ratio.
      * 
      */
     public Optional<Output<Integer>> weight() {
@@ -104,7 +104,7 @@ public final class LoadBalancerGlobalAcceleratorArgs extends com.pulumi.resource
         }
 
         /**
-         * @param acceleratorId 绑定的全球加速实例的ID。
+         * @param acceleratorId ID of the bound Global Accelerator instance.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class LoadBalancerGlobalAcceleratorArgs extends com.pulumi.resource
         }
 
         /**
-         * @param acceleratorId 绑定的全球加速实例的ID。
+         * @param acceleratorId ID of the bound Global Accelerator instance.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class LoadBalancerGlobalAcceleratorArgs extends com.pulumi.resource
         }
 
         /**
-         * @param acceleratorListenerId 绑定的全球加速监听器的ID。
+         * @param acceleratorListenerId ID of the bound Global Accelerator listener.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class LoadBalancerGlobalAcceleratorArgs extends com.pulumi.resource
         }
 
         /**
-         * @param acceleratorListenerId 绑定的全球加速监听器的ID。
+         * @param acceleratorListenerId ID of the bound Global Accelerator listener.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class LoadBalancerGlobalAcceleratorArgs extends com.pulumi.resource
         }
 
         /**
-         * @param endpointGroupId 绑定的终端节点组的ID。
+         * @param endpointGroupId ID of the bound endpoint group.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class LoadBalancerGlobalAcceleratorArgs extends com.pulumi.resource
         }
 
         /**
-         * @param endpointGroupId 绑定的终端节点组的ID。
+         * @param endpointGroupId ID of the bound endpoint group.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class LoadBalancerGlobalAcceleratorArgs extends com.pulumi.resource
         }
 
         /**
-         * @param weight 后端服务器的权重，决定流量分发比例。
+         * @param weight Weight of the backend server, determines traffic distribution ratio.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class LoadBalancerGlobalAcceleratorArgs extends com.pulumi.resource
         }
 
         /**
-         * @param weight 后端服务器的权重，决定流量分发比例。
+         * @param weight Weight of the backend server, determines traffic distribution ratio.
          * 
          * @return builder
          * 

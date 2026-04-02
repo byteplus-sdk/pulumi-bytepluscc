@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 当私有网络内有多台云服务器实例需要访问公网时，为了节省公网IP且避免在公网上直接暴露云服务器IP，您可以使用公网NAT网关的SNAT规则，安全、便捷、高效地访问公网。SNAT规则支持私有网络、子网、云服务器、自定义网段等四种粒度，您可根据业务需求灵活配置。
+// When multiple cloud server instances in a private network need to access the public network, you can use SNAT rules of the public NAT gateway to save public IPs and avoid exposing cloud server IPs directly to the public network for secure, convenient, and efficient access. SNAT rules support four granularities: private network, subnet, cloud server, and custom network segment. Configure flexibly based on your business needs.
 //
 // ## Example Usage
 //
@@ -31,7 +31,7 @@ import (
 //			_, err := natgateway.NewSnatentry(ctx, "NatGatewaySnatentryDemo", &natgateway.SnatentryArgs{
 //				NatGatewayId:  pulumi.String("ngw-2pc28yhdpbx8g227qo1xxxxx"),
 //				EipId:         pulumi.String("eip-iivdtssgbdog74o8cuxxxxx,eip-btbv1pk36g3k5h0b2vxxxxx"),
-//				SnatEntryName: pulumi.String("私有网络"),
+//				SnatEntryName: pulumi.String("test"),
 //				SourceCidr:    pulumi.String("0.0.0.0/0"),
 //			})
 //			if err != nil {
@@ -51,23 +51,23 @@ import (
 type Snatentry struct {
 	pulumi.CustomResourceState
 
-	// SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+	// IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
 	EipAddress pulumi.StringOutput `pulumi:"eipAddress"`
-	// SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+	// ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
 	EipId pulumi.StringOutput `pulumi:"eipId"`
-	// SNAT规则所属NAT网关的ID。
+	// ID of the NAT gateway associated with the SNAT rule
 	NatGatewayId pulumi.StringOutput `pulumi:"natGatewayId"`
-	// 私网NAT网关的中转IP的ID。
+	// ID of the transit IP for the private NAT gateway
 	NatIpId pulumi.StringOutput `pulumi:"natIpId"`
-	// SNAT规则的ID。
+	// ID of the SNAT rule
 	SnatEntryId pulumi.StringOutput `pulumi:"snatEntryId"`
-	// SNAT规则的名称。
+	// Name of the SNAT rule
 	SnatEntryName pulumi.StringOutput `pulumi:"snatEntryName"`
-	// SNAT规则对应的网段。
+	// Network segment corresponding to the SNAT rule
 	SourceCidr pulumi.StringOutput `pulumi:"sourceCidr"`
-	// SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+	// Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
 	Status pulumi.StringOutput `pulumi:"status"`
-	// SNAT规则关联子网的ID。
+	// ID of the subnet associated with the SNAT rule
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 }
 
@@ -104,44 +104,44 @@ func GetSnatentry(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Snatentry resources.
 type snatentryState struct {
-	// SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+	// IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
 	EipAddress *string `pulumi:"eipAddress"`
-	// SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+	// ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
 	EipId *string `pulumi:"eipId"`
-	// SNAT规则所属NAT网关的ID。
+	// ID of the NAT gateway associated with the SNAT rule
 	NatGatewayId *string `pulumi:"natGatewayId"`
-	// 私网NAT网关的中转IP的ID。
+	// ID of the transit IP for the private NAT gateway
 	NatIpId *string `pulumi:"natIpId"`
-	// SNAT规则的ID。
+	// ID of the SNAT rule
 	SnatEntryId *string `pulumi:"snatEntryId"`
-	// SNAT规则的名称。
+	// Name of the SNAT rule
 	SnatEntryName *string `pulumi:"snatEntryName"`
-	// SNAT规则对应的网段。
+	// Network segment corresponding to the SNAT rule
 	SourceCidr *string `pulumi:"sourceCidr"`
-	// SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+	// Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
 	Status *string `pulumi:"status"`
-	// SNAT规则关联子网的ID。
+	// ID of the subnet associated with the SNAT rule
 	SubnetId *string `pulumi:"subnetId"`
 }
 
 type SnatentryState struct {
-	// SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+	// IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
 	EipAddress pulumi.StringPtrInput
-	// SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+	// ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
 	EipId pulumi.StringPtrInput
-	// SNAT规则所属NAT网关的ID。
+	// ID of the NAT gateway associated with the SNAT rule
 	NatGatewayId pulumi.StringPtrInput
-	// 私网NAT网关的中转IP的ID。
+	// ID of the transit IP for the private NAT gateway
 	NatIpId pulumi.StringPtrInput
-	// SNAT规则的ID。
+	// ID of the SNAT rule
 	SnatEntryId pulumi.StringPtrInput
-	// SNAT规则的名称。
+	// Name of the SNAT rule
 	SnatEntryName pulumi.StringPtrInput
-	// SNAT规则对应的网段。
+	// Network segment corresponding to the SNAT rule
 	SourceCidr pulumi.StringPtrInput
-	// SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+	// Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
 	Status pulumi.StringPtrInput
-	// SNAT规则关联子网的ID。
+	// ID of the subnet associated with the SNAT rule
 	SubnetId pulumi.StringPtrInput
 }
 
@@ -150,33 +150,33 @@ func (SnatentryState) ElementType() reflect.Type {
 }
 
 type snatentryArgs struct {
-	// SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+	// ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
 	EipId *string `pulumi:"eipId"`
-	// SNAT规则所属NAT网关的ID。
+	// ID of the NAT gateway associated with the SNAT rule
 	NatGatewayId string `pulumi:"natGatewayId"`
-	// 私网NAT网关的中转IP的ID。
+	// ID of the transit IP for the private NAT gateway
 	NatIpId *string `pulumi:"natIpId"`
-	// SNAT规则的名称。
+	// Name of the SNAT rule
 	SnatEntryName *string `pulumi:"snatEntryName"`
-	// SNAT规则对应的网段。
+	// Network segment corresponding to the SNAT rule
 	SourceCidr *string `pulumi:"sourceCidr"`
-	// SNAT规则关联子网的ID。
+	// ID of the subnet associated with the SNAT rule
 	SubnetId *string `pulumi:"subnetId"`
 }
 
 // The set of arguments for constructing a Snatentry resource.
 type SnatentryArgs struct {
-	// SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+	// ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
 	EipId pulumi.StringPtrInput
-	// SNAT规则所属NAT网关的ID。
+	// ID of the NAT gateway associated with the SNAT rule
 	NatGatewayId pulumi.StringInput
-	// 私网NAT网关的中转IP的ID。
+	// ID of the transit IP for the private NAT gateway
 	NatIpId pulumi.StringPtrInput
-	// SNAT规则的名称。
+	// Name of the SNAT rule
 	SnatEntryName pulumi.StringPtrInput
-	// SNAT规则对应的网段。
+	// Network segment corresponding to the SNAT rule
 	SourceCidr pulumi.StringPtrInput
-	// SNAT规则关联子网的ID。
+	// ID of the subnet associated with the SNAT rule
 	SubnetId pulumi.StringPtrInput
 }
 
@@ -267,47 +267,47 @@ func (o SnatentryOutput) ToSnatentryOutputWithContext(ctx context.Context) Snate
 	return o
 }
 
-// SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+// IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
 func (o SnatentryOutput) EipAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snatentry) pulumi.StringOutput { return v.EipAddress }).(pulumi.StringOutput)
 }
 
-// SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+// ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
 func (o SnatentryOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snatentry) pulumi.StringOutput { return v.EipId }).(pulumi.StringOutput)
 }
 
-// SNAT规则所属NAT网关的ID。
+// ID of the NAT gateway associated with the SNAT rule
 func (o SnatentryOutput) NatGatewayId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snatentry) pulumi.StringOutput { return v.NatGatewayId }).(pulumi.StringOutput)
 }
 
-// 私网NAT网关的中转IP的ID。
+// ID of the transit IP for the private NAT gateway
 func (o SnatentryOutput) NatIpId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snatentry) pulumi.StringOutput { return v.NatIpId }).(pulumi.StringOutput)
 }
 
-// SNAT规则的ID。
+// ID of the SNAT rule
 func (o SnatentryOutput) SnatEntryId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snatentry) pulumi.StringOutput { return v.SnatEntryId }).(pulumi.StringOutput)
 }
 
-// SNAT规则的名称。
+// Name of the SNAT rule
 func (o SnatentryOutput) SnatEntryName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snatentry) pulumi.StringOutput { return v.SnatEntryName }).(pulumi.StringOutput)
 }
 
-// SNAT规则对应的网段。
+// Network segment corresponding to the SNAT rule
 func (o SnatentryOutput) SourceCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snatentry) pulumi.StringOutput { return v.SourceCidr }).(pulumi.StringOutput)
 }
 
-// SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+// Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
 func (o SnatentryOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snatentry) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// SNAT规则关联子网的ID。
+// ID of the subnet associated with the SNAT rule
 func (o SnatentryOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snatentry) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }

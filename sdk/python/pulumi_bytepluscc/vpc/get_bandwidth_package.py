@@ -103,7 +103,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        共享带宽包的带宽上限，单位：Mbps。BillingType传入1：取值范围5 ~ 5000，BillingType传入2、3、4：取值范围2 ~ 5000。
+        Bandwidth cap of the shared bandwidth package, unit: Mbps. If BillingType is 1: range is 5–5000. If BillingType is 2, 3, or 4: range is 2–5000.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -111,7 +111,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="bandwidthPackageId")
     def bandwidth_package_id(self) -> builtins.str:
         """
-        带宽包ID
+        Bandwidth package ID
         """
         return pulumi.get(self, "bandwidth_package_id")
 
@@ -119,7 +119,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="bandwidthPackageName")
     def bandwidth_package_name(self) -> builtins.str:
         """
-        带宽包名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+        Bandwidth package name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "bandwidth_package_name")
 
@@ -127,7 +127,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.int:
         """
-        共享带宽包的计费方式。取值如下：1：包年包月。2 : 按带宽上限计费（默认值）。3：按主流量计费。4 : 按传统95计费（保底比例默认20%）。
+        Billing methods for shared bandwidth packages. Options are: 1: Annual/monthly subscription. 2: Billed by bandwidth cap (default). 3: Billed by peak traffic. 4: Billed by traditional 95th percentile (minimum ratio defaults to 20%).
         """
         return pulumi.get(self, "billing_type")
 
@@ -135,7 +135,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> builtins.str:
         """
-        计费状态
+        Billing status
         """
         return pulumi.get(self, "business_status")
 
@@ -143,7 +143,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -151,7 +151,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> builtins.str:
         """
-        删除时间
+        Deletion time
         """
         return pulumi.get(self, "deleted_time")
 
@@ -159,7 +159,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        描述信息，长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Description, limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         """
         return pulumi.get(self, "description")
 
@@ -167,7 +167,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="eipAddresses")
     def eip_addresses(self) -> Sequence['outputs.GetBandwidthPackageEipAddressResult']:
         """
-        加入共享带宽包的公网IP信息列表。必须同时满足如下条件：1、二者线路类型相同。2、二者安全防护类型相同。3、二者地域相同。4、公网IP或IPv6公网带宽为按量计费。
+        List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
         """
         return pulumi.get(self, "eip_addresses")
 
@@ -175,7 +175,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="enableDualStack")
     def enable_dual_stack(self) -> builtins.bool:
         """
-        是否启用双栈，取值如下：true：启用双栈。false：不启用双栈。
+        Enable dual stack. Options: true: enable dual stack; false: do not enable dual stack.
         """
         return pulumi.get(self, "enable_dual_stack")
 
@@ -183,7 +183,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> builtins.str:
         """
-        过期时间
+        Expiration time
         """
         return pulumi.get(self, "expired_time")
 
@@ -199,7 +199,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter
     def isp(self) -> builtins.str:
         """
-        线路类型，默认为BGP。BGP：BGP（多线）。1、若您的账号已申请并开通了静态单线权限，则可传入如下取值：1.1、ChinaMobile：中国移动静态单线。1.2、ChinaTelecom：中国电信静态单线。1.3、ChinaUnicom：中国联通静态单线。2、若您的账号已申请并开通了BGP单线权限，则可传入SingleLine*BGP。3、若您的账号已申请并开通了精品BGP权限，则可传入Premium*BGP。4、若您的账号已申请并开通了融合BGP权限，则可传入Fusion*BGP。5、若您的账号已申请并开通了惠选型静态单线权限，则可传入如下取值：5.1、ChinaMobile*Value：中国移动惠选型静态单线。5.2、ChinaUnicom*Value：中国联通惠选型静态单线。5.3、ChinaTelecom*Value：中国电信惠选型静态单线。
+        Line type, default is BGP. BGP: BGP (multi-line). 1. If your account has applied for and enabled static single line permissions, you can use the following values: 1.1, ChinaMobile: China Mobile static single line. 1.2, ChinaTelecom: China Telecom static single line. 1.3, ChinaUnicom: China Unicom static single line. 2. If your account has applied for and enabled BGP single line permissions, you can use SingleLine*BGP. 3. If your account has applied for and enabled Premium BGP permissions, you can use Premium*BGP. 4. If your account has applied for and enabled Fusion BGP permissions, you can use Fusion*BGP. 5. If your account has applied for and enabled Economical static single line permissions, you can use the following values: 5.1, ChinaMobile*Value: China Mobile economical static single line. 5.2, ChinaUnicom*Value: China Unicom economical static single line. 5.3, ChinaTelecom*Value: China Telecom economical static single line.
         """
         return pulumi.get(self, "isp")
 
@@ -207,7 +207,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> builtins.str:
         """
-        欠费时间
+        Overdue time
         """
         return pulumi.get(self, "overdue_time")
 
@@ -215,7 +215,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter
     def period(self) -> builtins.int:
         """
-        购买包年包月共享带宽包的时长，默认“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36。当PeriodUnit传入2，Period取值范围：1～3。
+        Duration for purchasing yearly/monthly shared bandwidth package, default is '1'. If PeriodUnit is 1, Period can be 1–9, 12, 24, or 36. If PeriodUnit is 2, Period can be 1–3.
         """
         return pulumi.get(self, "period")
 
@@ -223,7 +223,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> builtins.int:
         """
-        购买包年包月共享带宽包时长的单位，取值如下：1：月（默认值）。2 ：年。
+        Unit for the duration when purchasing an annual/monthly subscription shared bandwidth package. Options are: 1: Month (default). 2: Year.
         """
         return pulumi.get(self, "period_unit")
 
@@ -231,7 +231,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        项目名称，不填默认加入default项目。
+        Project name. If not specified, added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -239,7 +239,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        共享带宽包的IP协议，取值如下：Dual-stack：双栈协议类型。IPv4：IPv4协议类型协议。仅BillingType传2或4时，本参数支持传入Dual-stack
+        IP protocol of the shared bandwidth package. Options are: Dual-stack: Dual-stack protocol type. IPv4: IPv4 protocol type. This parameter supports Dual-stack only when BillingType is 2 or 4.
         """
         return pulumi.get(self, "protocol")
 
@@ -247,7 +247,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter
     def ratio(self) -> builtins.int:
         """
-        95计费保底比例，单位%，仅95计费共享带宽包实例返回此参数。
+        95 billing minimum ratio, unit: %, this parameter is returned only for 95 billing shared bandwidth package instances.
         """
         return pulumi.get(self, "ratio")
 
@@ -255,7 +255,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="securityProtectionTypes")
     def security_protection_types(self) -> Sequence[builtins.str]:
         """
-        共享带宽包的的安全防护类型。AntiDDoS_Enhanced：创建增强防护类型的共享带宽包，即创建支持添加基础防护类型公网IP的共享带宽包。不填则表示基础防护类型的共享带宽包，即创建支持添加增强防护类型公网IP的共享带宽包。
+        Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
         """
         return pulumi.get(self, "security_protection_types")
 
@@ -263,7 +263,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        共享带宽包的状态。Creating：创建中。Available：可用。Deleting：删除中。
+        Status of the shared bandwidth package. Creating: In progress. Available: Available. Deleting: In progress.
         """
         return pulumi.get(self, "status")
 
@@ -271,7 +271,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetBandwidthPackageTagResult']:
         """
-        标签列表。
+        Tag list.
         """
         return pulumi.get(self, "tags")
 
@@ -279,7 +279,7 @@ class GetBandwidthPackageResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间
+        Update time
         """
         return pulumi.get(self, "updated_time")
 

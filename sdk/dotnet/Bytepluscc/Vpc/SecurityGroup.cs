@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// 安全组是一个逻辑意义上的分组，为同一个私有网络内具有相同安全保护需求并相互信任的网卡提供访问策略。您可以通过配置安全组规则，控制安全组关联网卡的出入流量。
+    /// A security group is a logical grouping that provides access policies for NICs within the same private network that share security requirements and mutual trust. You can control inbound and outbound traffic for associated NICs by configuring security group rules
     /// 
     /// ## Import
     /// 
@@ -23,13 +23,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class SecurityGroup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 安全组创建时间。
+        /// Security group creation time
         /// </summary>
         [Output("creationTime")]
         public Output<string> CreationTime { get; private set; } = null!;
 
         /// <summary>
-        /// 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+        /// Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -41,31 +41,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.SecurityGroupIngressPermission>> IngressPermissions { get; private set; } = null!;
 
         /// <summary>
-        /// 安全组所属项目名称。不填默认项目为default。
+        /// Project name to which the security group belongs. Default project is 'default' if not specified
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 安全组ID。
+        /// Security group ID
         /// </summary>
         [Output("securityGroupId")]
         public Output<string> SecurityGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+        /// Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
         /// </summary>
         [Output("securityGroupName")]
         public Output<string> SecurityGroupName { get; private set; } = null!;
 
         /// <summary>
-        /// 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+        /// Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
         /// </summary>
         [Output("serviceManaged")]
         public Output<bool> ServiceManaged { get; private set; } = null!;
 
         /// <summary>
-        /// 安全组状态。Available为可用，Creating为创建中。
+        /// Security group status. Available means available for use, Creating means being created
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -74,13 +74,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.SecurityGroupTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+        /// Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// 安全组所属的VPC ID。
+        /// VPC ID to which the security group belongs
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
@@ -133,7 +133,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class SecurityGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+        /// Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -155,13 +155,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 安全组所属项目名称。不填默认项目为default。
+        /// Project name to which the security group belongs. Default project is 'default' if not specified
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+        /// Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
         /// </summary>
         [Input("securityGroupName")]
         public Input<string>? SecurityGroupName { get; set; }
@@ -175,7 +175,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 安全组所属的VPC ID。
+        /// VPC ID to which the security group belongs
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
@@ -189,13 +189,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class SecurityGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 安全组创建时间。
+        /// Security group creation time
         /// </summary>
         [Input("creationTime")]
         public Input<string>? CreationTime { get; set; }
 
         /// <summary>
-        /// 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+        /// Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -217,31 +217,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 安全组所属项目名称。不填默认项目为default。
+        /// Project name to which the security group belongs. Default project is 'default' if not specified
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 安全组ID。
+        /// Security group ID
         /// </summary>
         [Input("securityGroupId")]
         public Input<string>? SecurityGroupId { get; set; }
 
         /// <summary>
-        /// 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+        /// Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
         /// </summary>
         [Input("securityGroupName")]
         public Input<string>? SecurityGroupName { get; set; }
 
         /// <summary>
-        /// 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+        /// Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
         /// </summary>
         [Input("serviceManaged")]
         public Input<bool>? ServiceManaged { get; set; }
 
         /// <summary>
-        /// 安全组状态。Available为可用，Creating为创建中。
+        /// Security group status. Available means available for use, Creating means being created
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -255,13 +255,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+        /// Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// 安全组所属的VPC ID。
+        /// VPC ID to which the security group belongs
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }

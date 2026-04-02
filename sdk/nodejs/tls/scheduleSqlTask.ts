@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 定时 SQL 分析任务的资源定义。
+ * Resource definition for the scheduled SQL analysis task.
  *
  * ## Import
  *
@@ -44,87 +44,87 @@ export class ScheduleSqlTask extends pulumi.CustomResource {
     }
 
     /**
-     * 创建时间（秒级 Unix 时间戳）。
+     * Creation time (seconds-level Unix timestamp).
      */
     public /*out*/ readonly createdTime!: pulumi.Output<number>;
     /**
-     * 定时 SQL 分析任务的简单描述。不支持<>、'、\、\。长度范围为 0～64 个字符。
+     * Brief description of the scheduled SQL analysis task. Characters <>, ', \, and \ are not supported. Length: 0–64 characters.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 目标日志项目 ID。
+     * Target log project ID.
      */
     public /*out*/ readonly destProjectId!: pulumi.Output<string>;
     /**
-     * 目标日志主题所属地域。默认为当前地域。
+     * Region of the target log topic. The default is the current region.
      */
     public readonly destRegion!: pulumi.Output<string>;
     /**
-     * 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+     * Target log topic ID for storing scheduled SQL analysis result data.
      */
     public readonly destTopicId!: pulumi.Output<string>;
     /**
-     * 目标日志主题名称。
+     * Target log topic name.
      */
     public /*out*/ readonly destTopicName!: pulumi.Output<string>;
     /**
-     * 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+     * End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
      */
     public readonly processEndTime!: pulumi.Output<number>;
     /**
-     * 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+     * Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
      */
     public readonly processSqlDelay!: pulumi.Output<number>;
     /**
-     * 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+     * Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
      */
     public readonly processStartTime!: pulumi.Output<number>;
     /**
-     * SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+     * SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
      */
     public readonly processTimeWindow!: pulumi.Output<string>;
     /**
-     * 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+     * The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service's retrieval and analysis syntax.
      */
     public readonly query!: pulumi.Output<string>;
     /**
-     * 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+     * Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
      */
     public readonly requestCycle!: pulumi.Output<outputs.tls.ScheduleSqlTaskRequestCycle>;
     /**
-     * 源日志项目 ID。
+     * Source log project ID.
      */
     public /*out*/ readonly sourceProjectId!: pulumi.Output<string>;
     /**
-     * 源日志项目名称。
+     * Source log project name.
      */
     public /*out*/ readonly sourceProjectName!: pulumi.Output<string>;
     /**
-     * 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+     * ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
      */
     public readonly sourceTopicId!: pulumi.Output<string>;
     /**
-     * 源日志主题名称。
+     * Source log topic name.
      */
     public /*out*/ readonly sourceTopicName!: pulumi.Output<string>;
     /**
-     * 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+     * Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
      */
     public readonly status!: pulumi.Output<number>;
     /**
-     * 任务 ID。
+     * Task ID.
      */
     public /*out*/ readonly taskId!: pulumi.Output<string>;
     /**
-     * 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+     * Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
      */
     public readonly taskName!: pulumi.Output<string>;
     /**
-     * 任务类型：0 表示日志到日志；1 表示日志到指标。
+     * Task type: 0 means log to log; 1 means log to metric.
      */
     public readonly taskType!: pulumi.Output<number>;
     /**
-     * 修改时间（秒级 Unix 时间戳）。
+     * Modification time (seconds-level Unix timestamp).
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<number>;
 
@@ -223,87 +223,87 @@ export class ScheduleSqlTask extends pulumi.CustomResource {
  */
 export interface ScheduleSqlTaskState {
     /**
-     * 创建时间（秒级 Unix 时间戳）。
+     * Creation time (seconds-level Unix timestamp).
      */
     createdTime?: pulumi.Input<number>;
     /**
-     * 定时 SQL 分析任务的简单描述。不支持<>、'、\、\。长度范围为 0～64 个字符。
+     * Brief description of the scheduled SQL analysis task. Characters <>, ', \, and \ are not supported. Length: 0–64 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 目标日志项目 ID。
+     * Target log project ID.
      */
     destProjectId?: pulumi.Input<string>;
     /**
-     * 目标日志主题所属地域。默认为当前地域。
+     * Region of the target log topic. The default is the current region.
      */
     destRegion?: pulumi.Input<string>;
     /**
-     * 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+     * Target log topic ID for storing scheduled SQL analysis result data.
      */
     destTopicId?: pulumi.Input<string>;
     /**
-     * 目标日志主题名称。
+     * Target log topic name.
      */
     destTopicName?: pulumi.Input<string>;
     /**
-     * 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+     * End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
      */
     processEndTime?: pulumi.Input<number>;
     /**
-     * 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+     * Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
      */
     processSqlDelay?: pulumi.Input<number>;
     /**
-     * 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+     * Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
      */
     processStartTime?: pulumi.Input<number>;
     /**
-     * SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+     * SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
      */
     processTimeWindow?: pulumi.Input<string>;
     /**
-     * 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+     * The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service's retrieval and analysis syntax.
      */
     query?: pulumi.Input<string>;
     /**
-     * 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+     * Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
      */
     requestCycle?: pulumi.Input<inputs.tls.ScheduleSqlTaskRequestCycle>;
     /**
-     * 源日志项目 ID。
+     * Source log project ID.
      */
     sourceProjectId?: pulumi.Input<string>;
     /**
-     * 源日志项目名称。
+     * Source log project name.
      */
     sourceProjectName?: pulumi.Input<string>;
     /**
-     * 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+     * ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
      */
     sourceTopicId?: pulumi.Input<string>;
     /**
-     * 源日志主题名称。
+     * Source log topic name.
      */
     sourceTopicName?: pulumi.Input<string>;
     /**
-     * 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+     * Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
      */
     status?: pulumi.Input<number>;
     /**
-     * 任务 ID。
+     * Task ID.
      */
     taskId?: pulumi.Input<string>;
     /**
-     * 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+     * Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
      */
     taskName?: pulumi.Input<string>;
     /**
-     * 任务类型：0 表示日志到日志；1 表示日志到指标。
+     * Task type: 0 means log to log; 1 means log to metric.
      */
     taskType?: pulumi.Input<number>;
     /**
-     * 修改时间（秒级 Unix 时间戳）。
+     * Modification time (seconds-level Unix timestamp).
      */
     updatedTime?: pulumi.Input<number>;
 }
@@ -313,55 +313,55 @@ export interface ScheduleSqlTaskState {
  */
 export interface ScheduleSqlTaskArgs {
     /**
-     * 定时 SQL 分析任务的简单描述。不支持<>、'、\、\。长度范围为 0～64 个字符。
+     * Brief description of the scheduled SQL analysis task. Characters <>, ', \, and \ are not supported. Length: 0–64 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 目标日志主题所属地域。默认为当前地域。
+     * Region of the target log topic. The default is the current region.
      */
     destRegion?: pulumi.Input<string>;
     /**
-     * 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+     * Target log topic ID for storing scheduled SQL analysis result data.
      */
     destTopicId: pulumi.Input<string>;
     /**
-     * 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+     * End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
      */
     processEndTime?: pulumi.Input<number>;
     /**
-     * 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+     * Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
      */
     processSqlDelay?: pulumi.Input<number>;
     /**
-     * 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+     * Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
      */
     processStartTime: pulumi.Input<number>;
     /**
-     * SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+     * SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
      */
     processTimeWindow: pulumi.Input<string>;
     /**
-     * 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+     * The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service's retrieval and analysis syntax.
      */
     query: pulumi.Input<string>;
     /**
-     * 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+     * Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
      */
     requestCycle: pulumi.Input<inputs.tls.ScheduleSqlTaskRequestCycle>;
     /**
-     * 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+     * ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
      */
     sourceTopicId: pulumi.Input<string>;
     /**
-     * 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+     * Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
      */
     status: pulumi.Input<number>;
     /**
-     * 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+     * Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
      */
     taskName: pulumi.Input<string>;
     /**
-     * 任务类型：0 表示日志到日志；1 表示日志到指标。
+     * Task type: 0 means log to log; 1 means log to metric.
      */
     taskType: pulumi.Input<number>;
 }

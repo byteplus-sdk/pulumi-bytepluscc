@@ -14,158 +14,158 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NlbServerGroupHealthCheck {
     /**
-     * @return 健康检查的域名。
+     * @return Health check domain name
      * 
      */
     private @Nullable String domain;
     /**
-     * @return 是否开启健康检查。
+     * @return Enable health check
      * 
      */
     private @Nullable Boolean enabled;
     /**
-     * @return 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+     * @return Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with &#39;normal&#39; results, it is considered health check &#39;normal&#39;
      * 
      */
     private @Nullable Integer healthyThreshold;
     /**
-     * @return 健康检查正常的HTTP状态码。
+     * @return HTTP status codes indicating a healthy health check.
      * 
      */
     private @Nullable String httpCode;
     /**
-     * @return 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+     * @return Health check interval, range: 1–300 seconds, default: 10 seconds.
      * 
      */
     private @Nullable Integer interval;
     /**
-     * @return 健康检查的请求方法。
+     * @return Health check request method
      * 
      */
     private @Nullable String method;
     /**
-     * @return 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+     * @return Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server&#39;s port is used for health checks. If full port forwarding is enabled, this parameter must be specified
      * 
      */
     private @Nullable Integer port;
     /**
-     * @return 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+     * @return Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check &#39;abnormal&#39;
      * 
      */
     private @Nullable Integer timeout;
     /**
-     * @return 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+     * @return Health check protocol type. Options: TCP (default), HTTP, UDP
      * 
      */
     private @Nullable String type;
     /**
-     * @return UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+     * @return UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
      * 
      */
     private @Nullable String udpExpect;
     /**
-     * @return UDP健康检查的预期响应字符串。
+     * @return Expected response string for UDP health check
      * 
      */
     private @Nullable String udpRequest;
     /**
-     * @return 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+     * @return Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with &#39;abnormal&#39; results, it is considered health check abnormal
      * 
      */
     private @Nullable Integer unhealthyThreshold;
     /**
-     * @return 健康检查的路径。
+     * @return Health check path
      * 
      */
     private @Nullable String uri;
 
     private NlbServerGroupHealthCheck() {}
     /**
-     * @return 健康检查的域名。
+     * @return Health check domain name
      * 
      */
     public Optional<String> domain() {
         return Optional.ofNullable(this.domain);
     }
     /**
-     * @return 是否开启健康检查。
+     * @return Enable health check
      * 
      */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
     /**
-     * @return 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+     * @return Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with &#39;normal&#39; results, it is considered health check &#39;normal&#39;
      * 
      */
     public Optional<Integer> healthyThreshold() {
         return Optional.ofNullable(this.healthyThreshold);
     }
     /**
-     * @return 健康检查正常的HTTP状态码。
+     * @return HTTP status codes indicating a healthy health check.
      * 
      */
     public Optional<String> httpCode() {
         return Optional.ofNullable(this.httpCode);
     }
     /**
-     * @return 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+     * @return Health check interval, range: 1–300 seconds, default: 10 seconds.
      * 
      */
     public Optional<Integer> interval() {
         return Optional.ofNullable(this.interval);
     }
     /**
-     * @return 健康检查的请求方法。
+     * @return Health check request method
      * 
      */
     public Optional<String> method() {
         return Optional.ofNullable(this.method);
     }
     /**
-     * @return 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+     * @return Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server&#39;s port is used for health checks. If full port forwarding is enabled, this parameter must be specified
      * 
      */
     public Optional<Integer> port() {
         return Optional.ofNullable(this.port);
     }
     /**
-     * @return 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+     * @return Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check &#39;abnormal&#39;
      * 
      */
     public Optional<Integer> timeout() {
         return Optional.ofNullable(this.timeout);
     }
     /**
-     * @return 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+     * @return Health check protocol type. Options: TCP (default), HTTP, UDP
      * 
      */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+     * @return UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
      * 
      */
     public Optional<String> udpExpect() {
         return Optional.ofNullable(this.udpExpect);
     }
     /**
-     * @return UDP健康检查的预期响应字符串。
+     * @return Expected response string for UDP health check
      * 
      */
     public Optional<String> udpRequest() {
         return Optional.ofNullable(this.udpRequest);
     }
     /**
-     * @return 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+     * @return Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with &#39;abnormal&#39; results, it is considered health check abnormal
      * 
      */
     public Optional<Integer> unhealthyThreshold() {
         return Optional.ofNullable(this.unhealthyThreshold);
     }
     /**
-     * @return 健康检查的路径。
+     * @return Health check path
      * 
      */
     public Optional<String> uri() {

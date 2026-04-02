@@ -12,62 +12,86 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceQuota {
     /**
-     * @return 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+     * @return Maximum active time series count. Integer, default range is 1–50000000
      * 
      */
     private @Nullable Integer activeSeries;
     /**
-     * @return 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+     * @return Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
      * 
      */
     private @Nullable Integer ingestSamplesPerSecond;
     /**
-     * @return 最大查询 QPS。整数形式，默认取值范围为 1～500。
+     * @return Workspace public Query bandwidth (Mbps).
+     * 
+     */
+    private @Nullable Integer publicQueryBandwidth;
+    /**
+     * @return Workspace public RemoteWrite bandwidth (Mbps).
+     * 
+     */
+    private @Nullable Integer publicWriteBandwidth;
+    /**
+     * @return Maximum query QPS. Integer, default range is 1–500
      * 
      */
     private @Nullable Integer queryPerSecond;
     /**
-     * @return 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+     * @return Maximum samples scanned per second. Integer, default range is 1–1000000000
      * 
      */
     private @Nullable Integer scanSamplesPerSecond;
     /**
-     * @return 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+     * @return Maximum time series scanned per second. Integer, default range is 1–200000
      * 
      */
     private @Nullable Integer scanSeriesPerSecond;
 
     private WorkspaceQuota() {}
     /**
-     * @return 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+     * @return Maximum active time series count. Integer, default range is 1–50000000
      * 
      */
     public Optional<Integer> activeSeries() {
         return Optional.ofNullable(this.activeSeries);
     }
     /**
-     * @return 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+     * @return Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
      * 
      */
     public Optional<Integer> ingestSamplesPerSecond() {
         return Optional.ofNullable(this.ingestSamplesPerSecond);
     }
     /**
-     * @return 最大查询 QPS。整数形式，默认取值范围为 1～500。
+     * @return Workspace public Query bandwidth (Mbps).
+     * 
+     */
+    public Optional<Integer> publicQueryBandwidth() {
+        return Optional.ofNullable(this.publicQueryBandwidth);
+    }
+    /**
+     * @return Workspace public RemoteWrite bandwidth (Mbps).
+     * 
+     */
+    public Optional<Integer> publicWriteBandwidth() {
+        return Optional.ofNullable(this.publicWriteBandwidth);
+    }
+    /**
+     * @return Maximum query QPS. Integer, default range is 1–500
      * 
      */
     public Optional<Integer> queryPerSecond() {
         return Optional.ofNullable(this.queryPerSecond);
     }
     /**
-     * @return 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+     * @return Maximum samples scanned per second. Integer, default range is 1–1000000000
      * 
      */
     public Optional<Integer> scanSamplesPerSecond() {
         return Optional.ofNullable(this.scanSamplesPerSecond);
     }
     /**
-     * @return 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+     * @return Maximum time series scanned per second. Integer, default range is 1–200000
      * 
      */
     public Optional<Integer> scanSeriesPerSecond() {
@@ -85,6 +109,8 @@ public final class WorkspaceQuota {
     public static final class Builder {
         private @Nullable Integer activeSeries;
         private @Nullable Integer ingestSamplesPerSecond;
+        private @Nullable Integer publicQueryBandwidth;
+        private @Nullable Integer publicWriteBandwidth;
         private @Nullable Integer queryPerSecond;
         private @Nullable Integer scanSamplesPerSecond;
         private @Nullable Integer scanSeriesPerSecond;
@@ -93,6 +119,8 @@ public final class WorkspaceQuota {
     	      Objects.requireNonNull(defaults);
     	      this.activeSeries = defaults.activeSeries;
     	      this.ingestSamplesPerSecond = defaults.ingestSamplesPerSecond;
+    	      this.publicQueryBandwidth = defaults.publicQueryBandwidth;
+    	      this.publicWriteBandwidth = defaults.publicWriteBandwidth;
     	      this.queryPerSecond = defaults.queryPerSecond;
     	      this.scanSamplesPerSecond = defaults.scanSamplesPerSecond;
     	      this.scanSeriesPerSecond = defaults.scanSeriesPerSecond;
@@ -108,6 +136,18 @@ public final class WorkspaceQuota {
         public Builder ingestSamplesPerSecond(@Nullable Integer ingestSamplesPerSecond) {
 
             this.ingestSamplesPerSecond = ingestSamplesPerSecond;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder publicQueryBandwidth(@Nullable Integer publicQueryBandwidth) {
+
+            this.publicQueryBandwidth = publicQueryBandwidth;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder publicWriteBandwidth(@Nullable Integer publicWriteBandwidth) {
+
+            this.publicWriteBandwidth = publicWriteBandwidth;
             return this;
         }
         @CustomType.Setter
@@ -132,6 +172,8 @@ public final class WorkspaceQuota {
             final var _resultValue = new WorkspaceQuota();
             _resultValue.activeSeries = activeSeries;
             _resultValue.ingestSamplesPerSecond = ingestSamplesPerSecond;
+            _resultValue.publicQueryBandwidth = publicQueryBandwidth;
+            _resultValue.publicWriteBandwidth = publicWriteBandwidth;
             _resultValue.queryPerSecond = queryPerSecond;
             _resultValue.scanSamplesPerSecond = scanSamplesPerSecond;
             _resultValue.scanSeriesPerSecond = scanSeriesPerSecond;

@@ -21,14 +21,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     public static final InstanceState Empty = new InstanceState();
 
     /**
-     * 缓存型性能信息。
+     * Cache performance information
      * 
      */
     @Import(name="cachePerformance")
     private @Nullable Output<InstanceCachePerformanceArgs> cachePerformance;
 
     /**
-     * @return 缓存型性能信息。
+     * @return Cache performance information
      * 
      */
     public Optional<Output<InstanceCachePerformanceArgs>> cachePerformance() {
@@ -36,14 +36,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统容量。
+     * File system capacity
      * 
      */
     @Import(name="capacity")
     private @Nullable Output<InstanceCapacityArgs> capacity;
 
     /**
-     * @return 文件系统容量。
+     * @return File system capacity
      * 
      */
     public Optional<Output<InstanceCapacityArgs>> capacity() {
@@ -51,14 +51,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 计费类型，取值 PayAsYouGo，表示按量计费。
+     * Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return 计费类型，取值 PayAsYouGo，表示按量计费。
+     * @return Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -66,14 +66,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建时间
+     * Creation time
      * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
-     * @return 创建时间
+     * @return Creation time
      * 
      */
     public Optional<Output<String>> createTime() {
@@ -81,14 +81,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 描述信息。
+     * Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 描述信息。
+     * @return Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -96,14 +96,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统 ID。
+     * File system ID
      * 
      */
     @Import(name="fileSystemId")
     private @Nullable Output<String> fileSystemId;
 
     /**
-     * @return 文件系统 ID。
+     * @return File system ID
      * 
      */
     public Optional<Output<String>> fileSystemId() {
@@ -111,14 +111,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统名称。
+     * File system name
      * 
      */
     @Import(name="fileSystemName")
     private @Nullable Output<String> fileSystemName;
 
     /**
-     * @return 文件系统名称。
+     * @return File system name
      * 
      */
     public Optional<Output<String>> fileSystemName() {
@@ -126,14 +126,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+     * File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
      * 
      */
     @Import(name="fileSystemType")
     private @Nullable Output<String> fileSystemType;
 
     /**
-     * @return 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+     * @return File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
      * 
      */
     public Optional<Output<String>> fileSystemType() {
@@ -141,14 +141,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 所属项目，默认值为 default 项目。
+     * Project, default value is the Default project
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 所属项目，默认值为 default 项目。
+     * @return Project, default value is the Default project
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -156,14 +156,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+     * File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
      * 
      */
     @Import(name="protocolType")
     private @Nullable Output<String> protocolType;
 
     /**
-     * @return 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+     * @return File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
      * 
      */
     public Optional<Output<String>> protocolType() {
@@ -171,14 +171,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照数量
+     * Number of snapshots
      * 
      */
     @Import(name="snapshotCount")
     private @Nullable Output<Integer> snapshotCount;
 
     /**
-     * @return 快照数量
+     * @return Number of snapshots
      * 
      */
     public Optional<Output<Integer>> snapshotCount() {
@@ -186,14 +186,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+     * Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
      * 
      */
     @Import(name="snapshotId")
     private @Nullable Output<String> snapshotId;
 
     /**
-     * @return 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+     * @return Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
      * 
      */
     public Optional<Output<String>> snapshotId() {
@@ -201,14 +201,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+     * File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+     * @return File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
      * 
      */
     public Optional<Output<String>> status() {
@@ -216,14 +216,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 存储类型，取值Standard，表示标准型。
+     * Storage type. Value: Standard, indicates standard type
      * 
      */
     @Import(name="storageType")
     private @Nullable Output<String> storageType;
 
     /**
-     * @return 存储类型，取值Standard，表示标准型。
+     * @return Storage type. Value: Standard, indicates standard type
      * 
      */
     public Optional<Output<String>> storageType() {
@@ -238,14 +238,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新时间
+     * Update time
      * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
-     * @return 更新时间
+     * @return Update time
      * 
      */
     public Optional<Output<String>> updateTime() {
@@ -253,14 +253,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 可用区 ID。
+     * Availability Zone ID
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 可用区 ID。
+     * @return Availability Zone ID
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -268,14 +268,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 可用区名称。
+     * Availability Zone name
      * 
      */
     @Import(name="zoneName")
     private @Nullable Output<String> zoneName;
 
     /**
-     * @return 可用区名称。
+     * @return Availability Zone name
      * 
      */
     public Optional<Output<String>> zoneName() {
@@ -324,7 +324,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cachePerformance 缓存型性能信息。
+         * @param cachePerformance Cache performance information
          * 
          * @return builder
          * 
@@ -335,7 +335,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cachePerformance 缓存型性能信息。
+         * @param cachePerformance Cache performance information
          * 
          * @return builder
          * 
@@ -345,7 +345,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param capacity 文件系统容量。
+         * @param capacity File system capacity
          * 
          * @return builder
          * 
@@ -356,7 +356,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param capacity 文件系统容量。
+         * @param capacity File system capacity
          * 
          * @return builder
          * 
@@ -366,7 +366,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 计费类型，取值 PayAsYouGo，表示按量计费。
+         * @param chargeType Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
          * 
          * @return builder
          * 
@@ -377,7 +377,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 计费类型，取值 PayAsYouGo，表示按量计费。
+         * @param chargeType Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
          * 
          * @return builder
          * 
@@ -387,7 +387,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 创建时间
+         * @param createTime Creation time
          * 
          * @return builder
          * 
@@ -398,7 +398,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 创建时间
+         * @param createTime Creation time
          * 
          * @return builder
          * 
@@ -408,7 +408,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述信息。
+         * @param description Description
          * 
          * @return builder
          * 
@@ -419,7 +419,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述信息。
+         * @param description Description
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemId 文件系统 ID。
+         * @param fileSystemId File system ID
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemId 文件系统 ID。
+         * @param fileSystemId File system ID
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemName 文件系统名称。
+         * @param fileSystemName File system name
          * 
          * @return builder
          * 
@@ -461,7 +461,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemName 文件系统名称。
+         * @param fileSystemName File system name
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemType 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+         * @param fileSystemType File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemType 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+         * @param fileSystemType File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 所属项目，默认值为 default 项目。
+         * @param projectName Project, default value is the Default project
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 所属项目，默认值为 default 项目。
+         * @param projectName Project, default value is the Default project
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocolType 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+         * @param protocolType File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocolType 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+         * @param protocolType File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotCount 快照数量
+         * @param snapshotCount Number of snapshots
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotCount 快照数量
+         * @param snapshotCount Number of snapshots
          * 
          * @return builder
          * 
@@ -555,7 +555,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotId 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+         * @param snapshotId Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
          * 
          * @return builder
          * 
@@ -566,7 +566,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotId 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+         * @param snapshotId Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
          * 
          * @return builder
          * 
@@ -576,7 +576,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+         * @param status File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
          * 
          * @return builder
          * 
@@ -587,7 +587,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+         * @param status File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
          * 
          * @return builder
          * 
@@ -597,7 +597,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageType 存储类型，取值Standard，表示标准型。
+         * @param storageType Storage type. Value: Standard, indicates standard type
          * 
          * @return builder
          * 
@@ -608,7 +608,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageType 存储类型，取值Standard，表示标准型。
+         * @param storageType Storage type. Value: Standard, indicates standard type
          * 
          * @return builder
          * 
@@ -631,7 +631,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateTime 更新时间
+         * @param updateTime Update time
          * 
          * @return builder
          * 
@@ -642,7 +642,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateTime 更新时间
+         * @param updateTime Update time
          * 
          * @return builder
          * 
@@ -652,7 +652,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区 ID。
+         * @param zoneId Availability Zone ID
          * 
          * @return builder
          * 
@@ -663,7 +663,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区 ID。
+         * @param zoneId Availability Zone ID
          * 
          * @return builder
          * 
@@ -673,7 +673,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneName 可用区名称。
+         * @param zoneName Availability Zone name
          * 
          * @return builder
          * 
@@ -684,7 +684,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneName 可用区名称。
+         * @param zoneName Availability Zone name
          * 
          * @return builder
          * 

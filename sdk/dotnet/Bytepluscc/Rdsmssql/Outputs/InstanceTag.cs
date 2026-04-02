@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql.Outputs
     public sealed class InstanceTag
     {
         /// <summary>
-        /// 用户标签的标签键。
+        /// Tag key for user tags.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 用户标签的标签值。
+        /// User tag value.
         /// </summary>
         public readonly string? Value;
 

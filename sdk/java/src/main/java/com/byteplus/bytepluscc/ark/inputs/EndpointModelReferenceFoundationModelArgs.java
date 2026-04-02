@@ -16,14 +16,14 @@ public final class EndpointModelReferenceFoundationModelArgs extends com.pulumi.
     public static final EndpointModelReferenceFoundationModelArgs Empty = new EndpointModelReferenceFoundationModelArgs();
 
     /**
-     * 基础模型版本。
+     * Base model version
      * 
      */
     @Import(name="modelVersion")
     private @Nullable Output<String> modelVersion;
 
     /**
-     * @return 基础模型版本。
+     * @return Base model version
      * 
      */
     public Optional<Output<String>> modelVersion() {
@@ -31,14 +31,14 @@ public final class EndpointModelReferenceFoundationModelArgs extends com.pulumi.
     }
 
     /**
-     * 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为&#34;doubao-1-5-**&#34;。
+     * Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is &#34;doubao-1-5-**&#34;.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为&#34;doubao-1-5-**&#34;。
+     * @return Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is &#34;doubao-1-5-**&#34;.
      * 
      */
     public Optional<Output<String>> name() {
@@ -71,7 +71,7 @@ public final class EndpointModelReferenceFoundationModelArgs extends com.pulumi.
         }
 
         /**
-         * @param modelVersion 基础模型版本。
+         * @param modelVersion Base model version
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class EndpointModelReferenceFoundationModelArgs extends com.pulumi.
         }
 
         /**
-         * @param modelVersion 基础模型版本。
+         * @param modelVersion Base model version
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class EndpointModelReferenceFoundationModelArgs extends com.pulumi.
         }
 
         /**
-         * @param name 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为&#34;doubao-1-5-**&#34;。
+         * @param name Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is &#34;doubao-1-5-**&#34;.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class EndpointModelReferenceFoundationModelArgs extends com.pulumi.
         }
 
         /**
-         * @param name 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为&#34;doubao-1-5-**&#34;。
+         * @param name Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is &#34;doubao-1-5-**&#34;.
          * 
          * @return builder
          * 

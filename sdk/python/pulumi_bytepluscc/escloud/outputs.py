@@ -183,40 +183,40 @@ class InstanceInstanceConfiguration(dict):
                  zone_id: Optional[builtins.str] = None,
                  zone_number: Optional[builtins.int] = None):
         """
-        :param builtins.str admin_password: 管理员密码。
-        :param builtins.str admin_user_name: 管理员用户名。
-        :param builtins.bool auto_renew: 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
-        :param builtins.str charge_type: 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
-        :param builtins.int cold_node_number: 冷节点数量。
-        :param 'InstanceInstanceConfigurationColdNodeResourceSpecArgs' cold_node_resource_spec: 冷节点的节点规格配置详情。
-        :param 'InstanceInstanceConfigurationColdNodeStorageSpecArgs' cold_node_storage_spec: 冷节点的存储规格配置详情。
-        :param builtins.str configuration_code: 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
-        :param builtins.int coordinator_node_number: 协调节点数量。
-        :param 'InstanceInstanceConfigurationCoordinatorNodeResourceSpecArgs' coordinator_node_resource_spec: 协调节点的节点规格配置详情。
-        :param 'InstanceInstanceConfigurationCoordinatorNodeStorageSpecArgs' coordinator_node_storage_spec: 协调节点的存储规格配置详情。
-        :param builtins.bool deletion_protection: 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
-        :param builtins.bool enable_https: 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
-        :param builtins.bool enable_pure_master: Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
-        :param builtins.int hot_node_number: 数据节点数量。
-        :param 'InstanceInstanceConfigurationHotNodeResourceSpecArgs' hot_node_resource_spec: 数据节点的节点规格配置详情。
-        :param 'InstanceInstanceConfigurationHotNodeStorageSpecArgs' hot_node_storage_spec: 数据节点的存储规格配置详情。
-        :param builtins.str instance_name: 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
-        :param builtins.int kibana_node_number: kibana 节点数量。
-        :param 'InstanceInstanceConfigurationKibanaNodeResourceSpecArgs' kibana_node_resource_spec: Kibana 节点的节点规格配置详情。
-        :param builtins.int master_node_number: master 节点数量。
-        :param 'InstanceInstanceConfigurationMasterNodeResourceSpecArgs' master_node_resource_spec: Master 节点的节点规格配置详情。
-        :param 'InstanceInstanceConfigurationMasterNodeStorageSpecArgs' master_node_storage_spec: Master 节点的存储规格配置详情。
-        :param builtins.int period: 包年包月实例的购买时长，单位：月。
-        :param builtins.str project_name: 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
-        :param builtins.str region_id: 实例所在区域。
-        :param 'InstanceInstanceConfigurationSubnetArgs' subnet: 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
-        :param builtins.str version: API的版本，取值：2023-01-01。
-        :param 'InstanceInstanceConfigurationVpcArgs' vpc: 设置实例的私有网络 VPC 信息。
-        :param builtins.int warm_node_number: 温节点数量。
-        :param 'InstanceInstanceConfigurationWarmNodeResourceSpecArgs' warm_node_resource_spec: 温节点的节点规格配置详情。
-        :param 'InstanceInstanceConfigurationWarmNodeStorageSpecArgs' warm_node_storage_spec: 温节点的存储规格配置详情。
-        :param builtins.str zone_id: 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
-        :param builtins.int zone_number: 实例的可用区数量。
+        :param builtins.str admin_password: Administrator password.
+        :param builtins.str admin_user_name: Administrator username.
+        :param builtins.bool auto_renew: Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
+        :param builtins.str charge_type: Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
+        :param builtins.int cold_node_number: Number of cold nodes.
+        :param 'InstanceInstanceConfigurationColdNodeResourceSpecArgs' cold_node_resource_spec: Node specification details for cold nodes
+        :param 'InstanceInstanceConfigurationColdNodeStorageSpecArgs' cold_node_storage_spec: Details of cold node storage specification configuration
+        :param builtins.str configuration_code: Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
+        :param builtins.int coordinator_node_number: Coordinator node count
+        :param 'InstanceInstanceConfigurationCoordinatorNodeResourceSpecArgs' coordinator_node_resource_spec: Node specification configuration details for coordinator node.
+        :param 'InstanceInstanceConfigurationCoordinatorNodeStorageSpecArgs' coordinator_node_storage_spec: Storage specification configuration details for coordinator node.
+        :param builtins.bool deletion_protection: Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
+        :param builtins.bool enable_https: Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
+        :param builtins.bool enable_pure_master: Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
+        :param builtins.int hot_node_number: Number of data nodes
+        :param 'InstanceInstanceConfigurationHotNodeResourceSpecArgs' hot_node_resource_spec: Node specification configuration details for data node.
+        :param 'InstanceInstanceConfigurationHotNodeStorageSpecArgs' hot_node_storage_spec: Data node storage specification configuration details
+        :param builtins.str instance_name: Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
+        :param builtins.int kibana_node_number: Number of Kibana nodes
+        :param 'InstanceInstanceConfigurationKibanaNodeResourceSpecArgs' kibana_node_resource_spec: Kibana node specification configuration details
+        :param builtins.int master_node_number: Number of master nodes.
+        :param 'InstanceInstanceConfigurationMasterNodeResourceSpecArgs' master_node_resource_spec: Master node specification configuration details
+        :param 'InstanceInstanceConfigurationMasterNodeStorageSpecArgs' master_node_storage_spec: Storage specification details for master node
+        :param builtins.int period: Subscription instance purchase duration, in months.
+        :param builtins.str project_name: Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
+        :param builtins.str region_id: Instance region
+        :param 'InstanceInstanceConfigurationSubnetArgs' subnet: Set subnet information for the instance. Note: The subnet must be in the primary zone.
+        :param builtins.str version: API version. Value: 2023-01-01.
+        :param 'InstanceInstanceConfigurationVpcArgs' vpc: Set VPC information for the instance
+        :param builtins.int warm_node_number: Warm node count.
+        :param 'InstanceInstanceConfigurationWarmNodeResourceSpecArgs' warm_node_resource_spec: Warm node specification configuration details.
+        :param 'InstanceInstanceConfigurationWarmNodeStorageSpecArgs' warm_node_storage_spec: Storage specification details for warm nodes
+        :param builtins.str zone_id: Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
+        :param builtins.int zone_number: Number of instance availability zones.
         """
         if admin_password is not None:
             pulumi.set(__self__, "admin_password", admin_password)
@@ -297,7 +297,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> Optional[builtins.str]:
         """
-        管理员密码。
+        Administrator password.
         """
         return pulumi.get(self, "admin_password")
 
@@ -305,7 +305,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="adminUserName")
     def admin_user_name(self) -> Optional[builtins.str]:
         """
-        管理员用户名。
+        Administrator username.
         """
         return pulumi.get(self, "admin_user_name")
 
@@ -313,7 +313,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[builtins.bool]:
         """
-        包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+        Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -321,7 +321,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[builtins.str]:
         """
-        实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+        Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
         """
         return pulumi.get(self, "charge_type")
 
@@ -329,7 +329,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="coldNodeNumber")
     def cold_node_number(self) -> Optional[builtins.int]:
         """
-        冷节点数量。
+        Number of cold nodes.
         """
         return pulumi.get(self, "cold_node_number")
 
@@ -337,7 +337,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="coldNodeResourceSpec")
     def cold_node_resource_spec(self) -> Optional['outputs.InstanceInstanceConfigurationColdNodeResourceSpec']:
         """
-        冷节点的节点规格配置详情。
+        Node specification details for cold nodes
         """
         return pulumi.get(self, "cold_node_resource_spec")
 
@@ -345,7 +345,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="coldNodeStorageSpec")
     def cold_node_storage_spec(self) -> Optional['outputs.InstanceInstanceConfigurationColdNodeStorageSpec']:
         """
-        冷节点的存储规格配置详情。
+        Details of cold node storage specification configuration
         """
         return pulumi.get(self, "cold_node_storage_spec")
 
@@ -353,7 +353,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="configurationCode")
     def configuration_code(self) -> Optional[builtins.str]:
         """
-        计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+        Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
         """
         return pulumi.get(self, "configuration_code")
 
@@ -361,7 +361,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="coordinatorNodeNumber")
     def coordinator_node_number(self) -> Optional[builtins.int]:
         """
-        协调节点数量。
+        Coordinator node count
         """
         return pulumi.get(self, "coordinator_node_number")
 
@@ -369,7 +369,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="coordinatorNodeResourceSpec")
     def coordinator_node_resource_spec(self) -> Optional['outputs.InstanceInstanceConfigurationCoordinatorNodeResourceSpec']:
         """
-        协调节点的节点规格配置详情。
+        Node specification configuration details for coordinator node.
         """
         return pulumi.get(self, "coordinator_node_resource_spec")
 
@@ -377,7 +377,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="coordinatorNodeStorageSpec")
     def coordinator_node_storage_spec(self) -> Optional['outputs.InstanceInstanceConfigurationCoordinatorNodeStorageSpec']:
         """
-        协调节点的存储规格配置详情。
+        Storage specification configuration details for coordinator node.
         """
         return pulumi.get(self, "coordinator_node_storage_spec")
 
@@ -385,7 +385,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> Optional[builtins.bool]:
         """
-        是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+        Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -393,7 +393,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="enableHttps")
     def enable_https(self) -> Optional[builtins.bool]:
         """
-        是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+        Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
         """
         return pulumi.get(self, "enable_https")
 
@@ -401,7 +401,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="enablePureMaster")
     def enable_pure_master(self) -> Optional[builtins.bool]:
         """
-        Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+        Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
         """
         return pulumi.get(self, "enable_pure_master")
 
@@ -409,7 +409,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="hotNodeNumber")
     def hot_node_number(self) -> Optional[builtins.int]:
         """
-        数据节点数量。
+        Number of data nodes
         """
         return pulumi.get(self, "hot_node_number")
 
@@ -417,7 +417,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="hotNodeResourceSpec")
     def hot_node_resource_spec(self) -> Optional['outputs.InstanceInstanceConfigurationHotNodeResourceSpec']:
         """
-        数据节点的节点规格配置详情。
+        Node specification configuration details for data node.
         """
         return pulumi.get(self, "hot_node_resource_spec")
 
@@ -425,7 +425,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="hotNodeStorageSpec")
     def hot_node_storage_spec(self) -> Optional['outputs.InstanceInstanceConfigurationHotNodeStorageSpec']:
         """
-        数据节点的存储规格配置详情。
+        Data node storage specification configuration details
         """
         return pulumi.get(self, "hot_node_storage_spec")
 
@@ -433,7 +433,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[builtins.str]:
         """
-        自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+        Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -441,7 +441,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="kibanaNodeNumber")
     def kibana_node_number(self) -> Optional[builtins.int]:
         """
-        kibana 节点数量。
+        Number of Kibana nodes
         """
         return pulumi.get(self, "kibana_node_number")
 
@@ -449,7 +449,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="kibanaNodeResourceSpec")
     def kibana_node_resource_spec(self) -> Optional['outputs.InstanceInstanceConfigurationKibanaNodeResourceSpec']:
         """
-        Kibana 节点的节点规格配置详情。
+        Kibana node specification configuration details
         """
         return pulumi.get(self, "kibana_node_resource_spec")
 
@@ -457,7 +457,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="masterNodeNumber")
     def master_node_number(self) -> Optional[builtins.int]:
         """
-        master 节点数量。
+        Number of master nodes.
         """
         return pulumi.get(self, "master_node_number")
 
@@ -465,7 +465,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="masterNodeResourceSpec")
     def master_node_resource_spec(self) -> Optional['outputs.InstanceInstanceConfigurationMasterNodeResourceSpec']:
         """
-        Master 节点的节点规格配置详情。
+        Master node specification configuration details
         """
         return pulumi.get(self, "master_node_resource_spec")
 
@@ -473,7 +473,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="masterNodeStorageSpec")
     def master_node_storage_spec(self) -> Optional['outputs.InstanceInstanceConfigurationMasterNodeStorageSpec']:
         """
-        Master 节点的存储规格配置详情。
+        Storage specification details for master node
         """
         return pulumi.get(self, "master_node_storage_spec")
 
@@ -491,7 +491,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter
     def period(self) -> Optional[builtins.int]:
         """
-        包年包月实例的购买时长，单位：月。
+        Subscription instance purchase duration, in months.
         """
         return pulumi.get(self, "period")
 
@@ -499,7 +499,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[builtins.str]:
         """
-        按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+        Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
         """
         return pulumi.get(self, "project_name")
 
@@ -507,7 +507,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="regionId")
     def region_id(self) -> Optional[builtins.str]:
         """
-        实例所在区域。
+        Instance region
         """
         return pulumi.get(self, "region_id")
 
@@ -515,7 +515,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter
     def subnet(self) -> Optional['outputs.InstanceInstanceConfigurationSubnet']:
         """
-        设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+        Set subnet information for the instance. Note: The subnet must be in the primary zone.
         """
         return pulumi.get(self, "subnet")
 
@@ -528,7 +528,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter
     def version(self) -> Optional[builtins.str]:
         """
-        API的版本，取值：2023-01-01。
+        API version. Value: 2023-01-01.
         """
         return pulumi.get(self, "version")
 
@@ -536,7 +536,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter
     def vpc(self) -> Optional['outputs.InstanceInstanceConfigurationVpc']:
         """
-        设置实例的私有网络 VPC 信息。
+        Set VPC information for the instance
         """
         return pulumi.get(self, "vpc")
 
@@ -544,7 +544,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="warmNodeNumber")
     def warm_node_number(self) -> Optional[builtins.int]:
         """
-        温节点数量。
+        Warm node count.
         """
         return pulumi.get(self, "warm_node_number")
 
@@ -552,7 +552,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="warmNodeResourceSpec")
     def warm_node_resource_spec(self) -> Optional['outputs.InstanceInstanceConfigurationWarmNodeResourceSpec']:
         """
-        温节点的节点规格配置详情。
+        Warm node specification configuration details.
         """
         return pulumi.get(self, "warm_node_resource_spec")
 
@@ -560,7 +560,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="warmNodeStorageSpec")
     def warm_node_storage_spec(self) -> Optional['outputs.InstanceInstanceConfigurationWarmNodeStorageSpec']:
         """
-        温节点的存储规格配置详情。
+        Storage specification details for warm nodes
         """
         return pulumi.get(self, "warm_node_storage_spec")
 
@@ -568,7 +568,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[builtins.str]:
         """
-        实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+        Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
         """
         return pulumi.get(self, "zone_id")
 
@@ -576,7 +576,7 @@ class InstanceInstanceConfiguration(dict):
     @pulumi.getter(name="zoneNumber")
     def zone_number(self) -> Optional[builtins.int]:
         """
-        实例的可用区数量。
+        Number of instance availability zones.
         """
         return pulumi.get(self, "zone_number")
 
@@ -607,11 +607,11 @@ class InstanceInstanceConfigurationColdNodeResourceSpec(dict):
                  memory: Optional[builtins.int] = None,
                  name: Optional[builtins.str] = None):
         """
-        :param builtins.int cpu: 节点规格的 CPU 资源，单位为核（Core）
-        :param builtins.str description: 节点规格的描述信息
-        :param builtins.str display_name: 节点规格的显示名称
-        :param builtins.int memory: 节点规格的内存容量，单位 GiB
-        :param builtins.str name: 节点规格。如需了解节点规格类型和详情
+        :param builtins.int cpu: CPU resources for node specification, measured in cores.
+        :param builtins.str description: Description of node specifications
+        :param builtins.str display_name: Display name of node specification.
+        :param builtins.int memory: Memory capacity for node specification, measured in GiB
+        :param builtins.str name: Node specification. For details on node specification types and details.
         """
         if cpu is not None:
             pulumi.set(__self__, "cpu", cpu)
@@ -628,7 +628,7 @@ class InstanceInstanceConfigurationColdNodeResourceSpec(dict):
     @pulumi.getter
     def cpu(self) -> Optional[builtins.int]:
         """
-        节点规格的 CPU 资源，单位为核（Core）
+        CPU resources for node specification, measured in cores.
         """
         return pulumi.get(self, "cpu")
 
@@ -636,7 +636,7 @@ class InstanceInstanceConfigurationColdNodeResourceSpec(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        节点规格的描述信息
+        Description of node specifications
         """
         return pulumi.get(self, "description")
 
@@ -644,7 +644,7 @@ class InstanceInstanceConfigurationColdNodeResourceSpec(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[builtins.str]:
         """
-        节点规格的显示名称
+        Display name of node specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -652,7 +652,7 @@ class InstanceInstanceConfigurationColdNodeResourceSpec(dict):
     @pulumi.getter
     def memory(self) -> Optional[builtins.int]:
         """
-        节点规格的内存容量，单位 GiB
+        Memory capacity for node specification, measured in GiB
         """
         return pulumi.get(self, "memory")
 
@@ -660,7 +660,7 @@ class InstanceInstanceConfigurationColdNodeResourceSpec(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        节点规格。如需了解节点规格类型和详情
+        Node specification. For details on node specification types and details.
         """
         return pulumi.get(self, "name")
 
@@ -696,12 +696,12 @@ class InstanceInstanceConfigurationColdNodeStorageSpec(dict):
                  name: Optional[builtins.str] = None,
                  size: Optional[builtins.int] = None):
         """
-        :param builtins.str description: 存储规格的描述信息
-        :param builtins.str display_name: 存储规格的显示名称
-        :param builtins.int max_size: 存储规格的最大值，单位为 GiB
-        :param builtins.int min_size: 存储规格最小值，单位为 GiB
-        :param builtins.str name: 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
-        :param builtins.int size: 当前存储规格值，单位为 GiB
+        :param builtins.str description: Description of storage specification
+        :param builtins.str display_name: Display name of storage specification
+        :param builtins.int max_size: Maximum storage specification, measured in GiB
+        :param builtins.int min_size: Minimum storage specification, measured in GiB
+        :param builtins.str name: Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
+        :param builtins.int size: Current storage specification value, in GiB.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -720,7 +720,7 @@ class InstanceInstanceConfigurationColdNodeStorageSpec(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        存储规格的描述信息
+        Description of storage specification
         """
         return pulumi.get(self, "description")
 
@@ -728,7 +728,7 @@ class InstanceInstanceConfigurationColdNodeStorageSpec(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[builtins.str]:
         """
-        存储规格的显示名称
+        Display name of storage specification
         """
         return pulumi.get(self, "display_name")
 
@@ -736,7 +736,7 @@ class InstanceInstanceConfigurationColdNodeStorageSpec(dict):
     @pulumi.getter(name="maxSize")
     def max_size(self) -> Optional[builtins.int]:
         """
-        存储规格的最大值，单位为 GiB
+        Maximum storage specification, measured in GiB
         """
         return pulumi.get(self, "max_size")
 
@@ -744,7 +744,7 @@ class InstanceInstanceConfigurationColdNodeStorageSpec(dict):
     @pulumi.getter(name="minSize")
     def min_size(self) -> Optional[builtins.int]:
         """
-        存储规格最小值，单位为 GiB
+        Minimum storage specification, measured in GiB
         """
         return pulumi.get(self, "min_size")
 
@@ -752,7 +752,7 @@ class InstanceInstanceConfigurationColdNodeStorageSpec(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+        Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
         """
         return pulumi.get(self, "name")
 
@@ -760,7 +760,7 @@ class InstanceInstanceConfigurationColdNodeStorageSpec(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        当前存储规格值，单位为 GiB
+        Current storage specification value, in GiB.
         """
         return pulumi.get(self, "size")
 
@@ -791,11 +791,11 @@ class InstanceInstanceConfigurationCoordinatorNodeResourceSpec(dict):
                  memory: Optional[builtins.int] = None,
                  name: Optional[builtins.str] = None):
         """
-        :param builtins.int cpu: 节点规格的 CPU 资源，单位为核（Core）
-        :param builtins.str description: 节点规格的描述信息
-        :param builtins.str display_name: 节点规格的显示名称
-        :param builtins.int memory: 节点规格的内存容量，单位 GiB
-        :param builtins.str name: 节点规格。如需了解节点规格类型和详情
+        :param builtins.int cpu: CPU resources of node specification, unit: cores.
+        :param builtins.str description: Description of node specifications
+        :param builtins.str display_name: Display name of node specification.
+        :param builtins.int memory: Memory capacity of node specification, unit: GiB.
+        :param builtins.str name: Node specification. For details on node specification types and details.
         """
         if cpu is not None:
             pulumi.set(__self__, "cpu", cpu)
@@ -812,7 +812,7 @@ class InstanceInstanceConfigurationCoordinatorNodeResourceSpec(dict):
     @pulumi.getter
     def cpu(self) -> Optional[builtins.int]:
         """
-        节点规格的 CPU 资源，单位为核（Core）
+        CPU resources of node specification, unit: cores.
         """
         return pulumi.get(self, "cpu")
 
@@ -820,7 +820,7 @@ class InstanceInstanceConfigurationCoordinatorNodeResourceSpec(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        节点规格的描述信息
+        Description of node specifications
         """
         return pulumi.get(self, "description")
 
@@ -828,7 +828,7 @@ class InstanceInstanceConfigurationCoordinatorNodeResourceSpec(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[builtins.str]:
         """
-        节点规格的显示名称
+        Display name of node specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -836,7 +836,7 @@ class InstanceInstanceConfigurationCoordinatorNodeResourceSpec(dict):
     @pulumi.getter
     def memory(self) -> Optional[builtins.int]:
         """
-        节点规格的内存容量，单位 GiB
+        Memory capacity of node specification, unit: GiB.
         """
         return pulumi.get(self, "memory")
 
@@ -844,7 +844,7 @@ class InstanceInstanceConfigurationCoordinatorNodeResourceSpec(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        节点规格。如需了解节点规格类型和详情
+        Node specification. For details on node specification types and details.
         """
         return pulumi.get(self, "name")
 
@@ -880,12 +880,12 @@ class InstanceInstanceConfigurationCoordinatorNodeStorageSpec(dict):
                  name: Optional[builtins.str] = None,
                  size: Optional[builtins.int] = None):
         """
-        :param builtins.str description: 存储规格的描述信息
-        :param builtins.str display_name: 存储规格的显示名称
-        :param builtins.int max_size: 存储规格的最大值，单位为 GiB
-        :param builtins.int min_size: 存储规格最小值，单位为 GiB
-        :param builtins.str name: 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
-        :param builtins.int size: 当前存储规格值，单位为 GiB
+        :param builtins.str description: Description of storage specification.
+        :param builtins.str display_name: Display name of storage specification
+        :param builtins.int max_size: Maximum storage specification, in GiB
+        :param builtins.int min_size: Minimum value for storage specification, unit: GiB.
+        :param builtins.str name: Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
+        :param builtins.int size: Current storage specification value, in GiB.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -904,7 +904,7 @@ class InstanceInstanceConfigurationCoordinatorNodeStorageSpec(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        存储规格的描述信息
+        Description of storage specification.
         """
         return pulumi.get(self, "description")
 
@@ -912,7 +912,7 @@ class InstanceInstanceConfigurationCoordinatorNodeStorageSpec(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[builtins.str]:
         """
-        存储规格的显示名称
+        Display name of storage specification
         """
         return pulumi.get(self, "display_name")
 
@@ -920,7 +920,7 @@ class InstanceInstanceConfigurationCoordinatorNodeStorageSpec(dict):
     @pulumi.getter(name="maxSize")
     def max_size(self) -> Optional[builtins.int]:
         """
-        存储规格的最大值，单位为 GiB
+        Maximum storage specification, in GiB
         """
         return pulumi.get(self, "max_size")
 
@@ -928,7 +928,7 @@ class InstanceInstanceConfigurationCoordinatorNodeStorageSpec(dict):
     @pulumi.getter(name="minSize")
     def min_size(self) -> Optional[builtins.int]:
         """
-        存储规格最小值，单位为 GiB
+        Minimum value for storage specification, unit: GiB.
         """
         return pulumi.get(self, "min_size")
 
@@ -936,7 +936,7 @@ class InstanceInstanceConfigurationCoordinatorNodeStorageSpec(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+        Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
         """
         return pulumi.get(self, "name")
 
@@ -944,7 +944,7 @@ class InstanceInstanceConfigurationCoordinatorNodeStorageSpec(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        当前存储规格值，单位为 GiB
+        Current storage specification value, in GiB.
         """
         return pulumi.get(self, "size")
 
@@ -975,11 +975,11 @@ class InstanceInstanceConfigurationHotNodeResourceSpec(dict):
                  memory: Optional[builtins.int] = None,
                  name: Optional[builtins.str] = None):
         """
-        :param builtins.int cpu: 节点规格的 CPU 资源，单位为核（Core）。
-        :param builtins.str description: 节点规格的描述信息。
-        :param builtins.str display_name: 节点规格的显示名称。
-        :param builtins.int memory: 节点规格的内存容量，单位 GiB。
-        :param builtins.str name: 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+        :param builtins.int cpu: CPU resources of node specification, measured in cores
+        :param builtins.str description: Description of node specification.
+        :param builtins.str display_name: Display name of node specification.
+        :param builtins.int memory: Memory capacity for node specification, measured in GiB.
+        :param builtins.str name: Node specification. For details on node specification types and details, see Product Specifications.
         """
         if cpu is not None:
             pulumi.set(__self__, "cpu", cpu)
@@ -996,7 +996,7 @@ class InstanceInstanceConfigurationHotNodeResourceSpec(dict):
     @pulumi.getter
     def cpu(self) -> Optional[builtins.int]:
         """
-        节点规格的 CPU 资源，单位为核（Core）。
+        CPU resources of node specification, measured in cores
         """
         return pulumi.get(self, "cpu")
 
@@ -1004,7 +1004,7 @@ class InstanceInstanceConfigurationHotNodeResourceSpec(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        节点规格的描述信息。
+        Description of node specification.
         """
         return pulumi.get(self, "description")
 
@@ -1012,7 +1012,7 @@ class InstanceInstanceConfigurationHotNodeResourceSpec(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[builtins.str]:
         """
-        节点规格的显示名称。
+        Display name of node specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -1020,7 +1020,7 @@ class InstanceInstanceConfigurationHotNodeResourceSpec(dict):
     @pulumi.getter
     def memory(self) -> Optional[builtins.int]:
         """
-        节点规格的内存容量，单位 GiB。
+        Memory capacity for node specification, measured in GiB.
         """
         return pulumi.get(self, "memory")
 
@@ -1028,7 +1028,7 @@ class InstanceInstanceConfigurationHotNodeResourceSpec(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        节点规格。如需了解节点规格类型和详情，请参见产品规格。
+        Node specification. For details on node specification types and details, see Product Specifications.
         """
         return pulumi.get(self, "name")
 
@@ -1064,12 +1064,12 @@ class InstanceInstanceConfigurationHotNodeStorageSpec(dict):
                  name: Optional[builtins.str] = None,
                  size: Optional[builtins.int] = None):
         """
-        :param builtins.str description: 存储规格的描述信息。
-        :param builtins.str display_name: 存储规格的显示名称。
-        :param builtins.int max_size: 存储规格的最大值，单位为 GiB。
-        :param builtins.int min_size: 存储规格最小值，单位为 GiB。
-        :param builtins.str name: 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
-        :param builtins.int size: 配置的可用磁盘空间大小。
+        :param builtins.str description: Description of storage specification
+        :param builtins.str display_name: Display name of storage specification.
+        :param builtins.int max_size: Maximum storage specification, in GiB
+        :param builtins.int min_size: Minimum storage specification, measured in GiB.
+        :param builtins.str name: Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
+        :param builtins.int size: Configured available disk space size
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -1088,7 +1088,7 @@ class InstanceInstanceConfigurationHotNodeStorageSpec(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        存储规格的描述信息。
+        Description of storage specification
         """
         return pulumi.get(self, "description")
 
@@ -1096,7 +1096,7 @@ class InstanceInstanceConfigurationHotNodeStorageSpec(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[builtins.str]:
         """
-        存储规格的显示名称。
+        Display name of storage specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -1104,7 +1104,7 @@ class InstanceInstanceConfigurationHotNodeStorageSpec(dict):
     @pulumi.getter(name="maxSize")
     def max_size(self) -> Optional[builtins.int]:
         """
-        存储规格的最大值，单位为 GiB。
+        Maximum storage specification, in GiB
         """
         return pulumi.get(self, "max_size")
 
@@ -1112,7 +1112,7 @@ class InstanceInstanceConfigurationHotNodeStorageSpec(dict):
     @pulumi.getter(name="minSize")
     def min_size(self) -> Optional[builtins.int]:
         """
-        存储规格最小值，单位为 GiB。
+        Minimum storage specification, measured in GiB.
         """
         return pulumi.get(self, "min_size")
 
@@ -1120,7 +1120,7 @@ class InstanceInstanceConfigurationHotNodeStorageSpec(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+        Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
         """
         return pulumi.get(self, "name")
 
@@ -1128,7 +1128,7 @@ class InstanceInstanceConfigurationHotNodeStorageSpec(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        配置的可用磁盘空间大小。
+        Configured available disk space size
         """
         return pulumi.get(self, "size")
 
@@ -1159,11 +1159,11 @@ class InstanceInstanceConfigurationKibanaNodeResourceSpec(dict):
                  memory: Optional[builtins.int] = None,
                  name: Optional[builtins.str] = None):
         """
-        :param builtins.int cpu: 节点规格的 CPU 资源，单位为核（Core）
-        :param builtins.str description: 节点规格的描述信息
-        :param builtins.str display_name: 节点规格的显示名称
-        :param builtins.int memory: 节点规格的内存容量，单位 GiB
-        :param builtins.str name: 节点规格。如需了解节点规格类型和详情
+        :param builtins.int cpu: CPU resources for node specification, measured in cores.
+        :param builtins.str description: Description of node specifications
+        :param builtins.str display_name: Display name of node specification.
+        :param builtins.int memory: Memory capacity for node specification, measured in GiB
+        :param builtins.str name: Node specification. For information about node specification types and details, please refer to the documentation.
         """
         if cpu is not None:
             pulumi.set(__self__, "cpu", cpu)
@@ -1180,7 +1180,7 @@ class InstanceInstanceConfigurationKibanaNodeResourceSpec(dict):
     @pulumi.getter
     def cpu(self) -> Optional[builtins.int]:
         """
-        节点规格的 CPU 资源，单位为核（Core）
+        CPU resources for node specification, measured in cores.
         """
         return pulumi.get(self, "cpu")
 
@@ -1188,7 +1188,7 @@ class InstanceInstanceConfigurationKibanaNodeResourceSpec(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        节点规格的描述信息
+        Description of node specifications
         """
         return pulumi.get(self, "description")
 
@@ -1196,7 +1196,7 @@ class InstanceInstanceConfigurationKibanaNodeResourceSpec(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[builtins.str]:
         """
-        节点规格的显示名称
+        Display name of node specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -1204,7 +1204,7 @@ class InstanceInstanceConfigurationKibanaNodeResourceSpec(dict):
     @pulumi.getter
     def memory(self) -> Optional[builtins.int]:
         """
-        节点规格的内存容量，单位 GiB
+        Memory capacity for node specification, measured in GiB
         """
         return pulumi.get(self, "memory")
 
@@ -1212,7 +1212,7 @@ class InstanceInstanceConfigurationKibanaNodeResourceSpec(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        节点规格。如需了解节点规格类型和详情
+        Node specification. For information about node specification types and details, please refer to the documentation.
         """
         return pulumi.get(self, "name")
 
@@ -1243,11 +1243,11 @@ class InstanceInstanceConfigurationMasterNodeResourceSpec(dict):
                  memory: Optional[builtins.int] = None,
                  name: Optional[builtins.str] = None):
         """
-        :param builtins.int cpu: 节点规格的 CPU 资源，单位为核（Core）
-        :param builtins.str description: 节点规格的描述信息
-        :param builtins.str display_name: 节点规格的显示名称
-        :param builtins.int memory: 节点规格的内存容量，单位 GiB
-        :param builtins.str name: 节点规格。如需了解节点规格类型和详情
+        :param builtins.int cpu: CPU resources of node specification, unit: cores.
+        :param builtins.str description: Description of node specifications
+        :param builtins.str display_name: Display name of node specification
+        :param builtins.int memory: Memory capacity of node specification, unit: GiB.
+        :param builtins.str name: Node specification. For information about node specification types and details, please refer to the documentation.
         """
         if cpu is not None:
             pulumi.set(__self__, "cpu", cpu)
@@ -1264,7 +1264,7 @@ class InstanceInstanceConfigurationMasterNodeResourceSpec(dict):
     @pulumi.getter
     def cpu(self) -> Optional[builtins.int]:
         """
-        节点规格的 CPU 资源，单位为核（Core）
+        CPU resources of node specification, unit: cores.
         """
         return pulumi.get(self, "cpu")
 
@@ -1272,7 +1272,7 @@ class InstanceInstanceConfigurationMasterNodeResourceSpec(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        节点规格的描述信息
+        Description of node specifications
         """
         return pulumi.get(self, "description")
 
@@ -1280,7 +1280,7 @@ class InstanceInstanceConfigurationMasterNodeResourceSpec(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[builtins.str]:
         """
-        节点规格的显示名称
+        Display name of node specification
         """
         return pulumi.get(self, "display_name")
 
@@ -1288,7 +1288,7 @@ class InstanceInstanceConfigurationMasterNodeResourceSpec(dict):
     @pulumi.getter
     def memory(self) -> Optional[builtins.int]:
         """
-        节点规格的内存容量，单位 GiB
+        Memory capacity of node specification, unit: GiB.
         """
         return pulumi.get(self, "memory")
 
@@ -1296,7 +1296,7 @@ class InstanceInstanceConfigurationMasterNodeResourceSpec(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        节点规格。如需了解节点规格类型和详情
+        Node specification. For information about node specification types and details, please refer to the documentation.
         """
         return pulumi.get(self, "name")
 
@@ -1332,12 +1332,12 @@ class InstanceInstanceConfigurationMasterNodeStorageSpec(dict):
                  name: Optional[builtins.str] = None,
                  size: Optional[builtins.int] = None):
         """
-        :param builtins.str description: 存储规格的描述信息
-        :param builtins.str display_name: 存储规格的显示名称
-        :param builtins.int max_size: 存储规格的最大值，单位为 GiB
-        :param builtins.int min_size: 存储规格最小值，单位为 GiB
-        :param builtins.str name: 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
-        :param builtins.int size: 当前存储规格值，单位为 GiB
+        :param builtins.str description: Description of storage specification.
+        :param builtins.str display_name: Display name of storage specification.
+        :param builtins.int max_size: Maximum storage specification, measured in GiB
+        :param builtins.int min_size: Minimum value for storage specification, unit: GiB.
+        :param builtins.str name: Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
+        :param builtins.int size: Current storage specification value, in GiB.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -1356,7 +1356,7 @@ class InstanceInstanceConfigurationMasterNodeStorageSpec(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        存储规格的描述信息
+        Description of storage specification.
         """
         return pulumi.get(self, "description")
 
@@ -1364,7 +1364,7 @@ class InstanceInstanceConfigurationMasterNodeStorageSpec(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[builtins.str]:
         """
-        存储规格的显示名称
+        Display name of storage specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -1372,7 +1372,7 @@ class InstanceInstanceConfigurationMasterNodeStorageSpec(dict):
     @pulumi.getter(name="maxSize")
     def max_size(self) -> Optional[builtins.int]:
         """
-        存储规格的最大值，单位为 GiB
+        Maximum storage specification, measured in GiB
         """
         return pulumi.get(self, "max_size")
 
@@ -1380,7 +1380,7 @@ class InstanceInstanceConfigurationMasterNodeStorageSpec(dict):
     @pulumi.getter(name="minSize")
     def min_size(self) -> Optional[builtins.int]:
         """
-        存储规格最小值，单位为 GiB
+        Minimum value for storage specification, unit: GiB.
         """
         return pulumi.get(self, "min_size")
 
@@ -1388,7 +1388,7 @@ class InstanceInstanceConfigurationMasterNodeStorageSpec(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+        Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
         """
         return pulumi.get(self, "name")
 
@@ -1396,7 +1396,7 @@ class InstanceInstanceConfigurationMasterNodeStorageSpec(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        当前存储规格值，单位为 GiB
+        Current storage specification value, in GiB.
         """
         return pulumi.get(self, "size")
 
@@ -1428,10 +1428,10 @@ class InstanceInstanceConfigurationNetworkSpec(dict):
                  spec_name: Optional[builtins.str] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.int bandwidth: 公网IP的带宽上限，默认为“1”，单位：Mbps。
-        :param builtins.bool is_open: 开启/关闭
-        :param builtins.str spec_name: 实例公网资源规格名称
-        :param builtins.str type: 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+        :param builtins.int bandwidth: Public IP bandwidth limit. Default is '1', unit: Mbps.
+        :param builtins.bool is_open: Enable/Disable
+        :param builtins.str spec_name: Instance public resource specification name
+        :param builtins.str type: Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
         """
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
@@ -1446,7 +1446,7 @@ class InstanceInstanceConfigurationNetworkSpec(dict):
     @pulumi.getter
     def bandwidth(self) -> Optional[builtins.int]:
         """
-        公网IP的带宽上限，默认为“1”，单位：Mbps。
+        Public IP bandwidth limit. Default is '1', unit: Mbps.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -1454,7 +1454,7 @@ class InstanceInstanceConfigurationNetworkSpec(dict):
     @pulumi.getter(name="isOpen")
     def is_open(self) -> Optional[builtins.bool]:
         """
-        开启/关闭
+        Enable/Disable
         """
         return pulumi.get(self, "is_open")
 
@@ -1462,7 +1462,7 @@ class InstanceInstanceConfigurationNetworkSpec(dict):
     @pulumi.getter(name="specName")
     def spec_name(self) -> Optional[builtins.str]:
         """
-        实例公网资源规格名称
+        Instance public resource specification name
         """
         return pulumi.get(self, "spec_name")
 
@@ -1470,7 +1470,7 @@ class InstanceInstanceConfigurationNetworkSpec(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+        Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
         """
         return pulumi.get(self, "type")
 
@@ -1508,12 +1508,12 @@ class InstanceInstanceConfigurationNodeSpecsAssign(dict):
                  storage_spec_name: Optional[builtins.str] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param 'InstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceArgs' extra_performance: 磁盘额外性能包相关配置。
-        :param builtins.int number: 节点数量。配置数据节点数量时，在不同部署方式下，需要注意以下信息：单可用区部署：建议生产环境至少配置 3 个数据节点，配置 2 个节点时存在脑裂风险。如果启用专有主节点，2 个数据节点不会脑裂。双可用区部署，默认启用专有主节点：建议生产环境至少配置 4 个数据节点，即每个可用区两个数据节点。三可用区部署，默认启用专有主节点：建议生产环境至少配置 6 个数据节点，即每个可用区两个数据节点。数据节点数量可设范围为 1~100，如果有更多数据节点的需求，可申请开白提升配额到 200。配置 Master 节点：如果没有启用专有主节点，那么 Master 节点的配置和数据节点相同，否则 Master 配置是独立的。配置专有主节点，如需启用专有主节点，数量默认配置为 3。配置 Kibana 节点，数量固定为 1。配置协调节点，如需启用，生产环境建议至少 2 个协调节点，可配范围为 2~50。温数据节点：如需启用，生产环境建议至少 3 个温数据节点，最多可配置 100 个。冷数据节点：如需启用，生产环境建议至少 2 个温数据节点，最多可配置 100 个。
-        :param builtins.str resource_spec_name: 计算资源规格名称。您可以通过调用DescribeNodeAvailableSpecs接口获取可用的节点规格列表。如需了解规格详情，请参见V2 实例规格
-        :param builtins.int storage_size: 存储容量，单位为 GiB。默认值为 100GiB，调整步长为 10GiB。说明Kibana 节点的 StorageSize 设置为0，即"StorageSize": 0。专有主节点和协调节点的 StorageSize 默认是 20。
-        :param builtins.str storage_spec_name: 存储规格名称，当前支持的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0。es.volume.essd.flexpl-standard：标准版-高性能云盘-flexpl。说明Kibana 节点的 StorageSpecName 设置为空，即"StorageSpecName": ""。
-        :param builtins.str type: 节点类型。请先了解节点类型的作用，然后结合业务判断是否需要创建，详情请参见节点类型。Master：Master 节点。Hot：数据节点。Cold：冷数据节点。Warm：温数据节点。Kibana：Kibana 节点。Coordinator：协调节点。
+        :param 'InstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceArgs' extra_performance: Disk extra performance package configuration.
+        :param builtins.int number: Node count. When configuring the number of data nodes, note the following based on deployment mode: Single availability zone deployment: For production environments, configure at least 3 data nodes. Configuring 2 nodes poses a split-brain risk. If dedicated master nodes are enabled, 2 data nodes will not result in split-brain. Dual availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 4 data nodes—2 per availability zone. Triple availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 6 data nodes—2 per availability zone. You can set the number of data nodes from 1 to 100. If you need more, apply to increase the quota to 200. Master node configuration: If dedicated master nodes are not enabled, master node configuration matches data nodes; otherwise, master node configuration is independent. Dedicated master node configuration: If you need to enable dedicated master nodes, the default number is 3. Kibana node configuration: The number is fixed at 1. Coordinator node configuration: If enabled, configure at least 2 coordinator nodes for production environments. The configurable range is 2–50. Warm data nodes: If enabled, configure at least 3 warm data nodes for production environments, up to 100. Cold data nodes: If enabled, configure at least 2 cold data nodes for production environments, up to 100.
+        :param builtins.str resource_spec_name: Compute resource specification name. You can call the DescribeNodeAvailableSpecs API to get the list of available node specifications. For details, see V2 instance specifications.
+        :param builtins.int storage_size: Storage capacity, measured in GiB. Default value is 100 GiB, adjustment step is 10 GiB. Note: StorageSize for Kibana nodes is set to 0, i.e., "StorageSize": 0. StorageSize for dedicated master and coordinator nodes defaults to 20
+        :param builtins.str storage_spec_name: Storage specification name. Currently supported specifications: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0. es.volume.essd.flexpl-standard: Standard Edition   - High Performance Cloud Disk   - flexpl. Note: StorageSpecName for Kibana nodes is set to empty, i.e., "StorageSpecName": ""
+        :param builtins.str type: Node type. Please understand the function of each node type first, then determine whether to create based on your business needs. For details, see node types. Master: Master node. Hot: Data node. Cold: Cold data node. Warm: Warm data node. Kibana: Kibana node. Coordinator: Coordinator node
         """
         if extra_performance is not None:
             pulumi.set(__self__, "extra_performance", extra_performance)
@@ -1532,7 +1532,7 @@ class InstanceInstanceConfigurationNodeSpecsAssign(dict):
     @pulumi.getter(name="extraPerformance")
     def extra_performance(self) -> Optional['outputs.InstanceInstanceConfigurationNodeSpecsAssignExtraPerformance']:
         """
-        磁盘额外性能包相关配置。
+        Disk extra performance package configuration.
         """
         return pulumi.get(self, "extra_performance")
 
@@ -1540,7 +1540,7 @@ class InstanceInstanceConfigurationNodeSpecsAssign(dict):
     @pulumi.getter
     def number(self) -> Optional[builtins.int]:
         """
-        节点数量。配置数据节点数量时，在不同部署方式下，需要注意以下信息：单可用区部署：建议生产环境至少配置 3 个数据节点，配置 2 个节点时存在脑裂风险。如果启用专有主节点，2 个数据节点不会脑裂。双可用区部署，默认启用专有主节点：建议生产环境至少配置 4 个数据节点，即每个可用区两个数据节点。三可用区部署，默认启用专有主节点：建议生产环境至少配置 6 个数据节点，即每个可用区两个数据节点。数据节点数量可设范围为 1~100，如果有更多数据节点的需求，可申请开白提升配额到 200。配置 Master 节点：如果没有启用专有主节点，那么 Master 节点的配置和数据节点相同，否则 Master 配置是独立的。配置专有主节点，如需启用专有主节点，数量默认配置为 3。配置 Kibana 节点，数量固定为 1。配置协调节点，如需启用，生产环境建议至少 2 个协调节点，可配范围为 2~50。温数据节点：如需启用，生产环境建议至少 3 个温数据节点，最多可配置 100 个。冷数据节点：如需启用，生产环境建议至少 2 个温数据节点，最多可配置 100 个。
+        Node count. When configuring the number of data nodes, note the following based on deployment mode: Single availability zone deployment: For production environments, configure at least 3 data nodes. Configuring 2 nodes poses a split-brain risk. If dedicated master nodes are enabled, 2 data nodes will not result in split-brain. Dual availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 4 data nodes—2 per availability zone. Triple availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 6 data nodes—2 per availability zone. You can set the number of data nodes from 1 to 100. If you need more, apply to increase the quota to 200. Master node configuration: If dedicated master nodes are not enabled, master node configuration matches data nodes; otherwise, master node configuration is independent. Dedicated master node configuration: If you need to enable dedicated master nodes, the default number is 3. Kibana node configuration: The number is fixed at 1. Coordinator node configuration: If enabled, configure at least 2 coordinator nodes for production environments. The configurable range is 2–50. Warm data nodes: If enabled, configure at least 3 warm data nodes for production environments, up to 100. Cold data nodes: If enabled, configure at least 2 cold data nodes for production environments, up to 100.
         """
         return pulumi.get(self, "number")
 
@@ -1548,7 +1548,7 @@ class InstanceInstanceConfigurationNodeSpecsAssign(dict):
     @pulumi.getter(name="resourceSpecName")
     def resource_spec_name(self) -> Optional[builtins.str]:
         """
-        计算资源规格名称。您可以通过调用DescribeNodeAvailableSpecs接口获取可用的节点规格列表。如需了解规格详情，请参见V2 实例规格
+        Compute resource specification name. You can call the DescribeNodeAvailableSpecs API to get the list of available node specifications. For details, see V2 instance specifications.
         """
         return pulumi.get(self, "resource_spec_name")
 
@@ -1556,7 +1556,7 @@ class InstanceInstanceConfigurationNodeSpecsAssign(dict):
     @pulumi.getter(name="storageSize")
     def storage_size(self) -> Optional[builtins.int]:
         """
-        存储容量，单位为 GiB。默认值为 100GiB，调整步长为 10GiB。说明Kibana 节点的 StorageSize 设置为0，即"StorageSize": 0。专有主节点和协调节点的 StorageSize 默认是 20。
+        Storage capacity, measured in GiB. Default value is 100 GiB, adjustment step is 10 GiB. Note: StorageSize for Kibana nodes is set to 0, i.e., "StorageSize": 0. StorageSize for dedicated master and coordinator nodes defaults to 20
         """
         return pulumi.get(self, "storage_size")
 
@@ -1564,7 +1564,7 @@ class InstanceInstanceConfigurationNodeSpecsAssign(dict):
     @pulumi.getter(name="storageSpecName")
     def storage_spec_name(self) -> Optional[builtins.str]:
         """
-        存储规格名称，当前支持的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0。es.volume.essd.flexpl-standard：标准版-高性能云盘-flexpl。说明Kibana 节点的 StorageSpecName 设置为空，即"StorageSpecName": ""。
+        Storage specification name. Currently supported specifications: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0. es.volume.essd.flexpl-standard: Standard Edition   - High Performance Cloud Disk   - flexpl. Note: StorageSpecName for Kibana nodes is set to empty, i.e., "StorageSpecName": ""
         """
         return pulumi.get(self, "storage_spec_name")
 
@@ -1572,7 +1572,7 @@ class InstanceInstanceConfigurationNodeSpecsAssign(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        节点类型。请先了解节点类型的作用，然后结合业务判断是否需要创建，详情请参见节点类型。Master：Master 节点。Hot：数据节点。Cold：冷数据节点。Warm：温数据节点。Kibana：Kibana 节点。Coordinator：协调节点。
+        Node type. Please understand the function of each node type first, then determine whether to create based on your business needs. For details, see node types. Master: Master node. Hot: Data node. Cold: Cold data node. Warm: Warm data node. Kibana: Kibana node. Coordinator: Coordinator node
         """
         return pulumi.get(self, "type")
 
@@ -1582,7 +1582,7 @@ class InstanceInstanceConfigurationNodeSpecsAssignExtraPerformance(dict):
     def __init__(__self__, *,
                  throughput: Optional[builtins.int] = None):
         """
-        :param builtins.int throughput: 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+        :param builtins.int throughput: When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
         """
         if throughput is not None:
             pulumi.set(__self__, "throughput", throughput)
@@ -1591,7 +1591,7 @@ class InstanceInstanceConfigurationNodeSpecsAssignExtraPerformance(dict):
     @pulumi.getter
     def throughput(self) -> Optional[builtins.int]:
         """
-        当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+        When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
         """
         return pulumi.get(self, "throughput")
 
@@ -1622,7 +1622,7 @@ class InstanceInstanceConfigurationSubnet(dict):
                  subnet_name: Optional[builtins.str] = None):
         """
         :param builtins.str subnet_id: Subnet ID。
-        :param builtins.str subnet_name: Subnet 名称。
+        :param builtins.str subnet_name: Subnet name
         """
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
@@ -1641,7 +1641,7 @@ class InstanceInstanceConfigurationSubnet(dict):
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> Optional[builtins.str]:
         """
-        Subnet 名称。
+        Subnet name
         """
         return pulumi.get(self, "subnet_name")
 
@@ -1652,8 +1652,8 @@ class InstanceInstanceConfigurationTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
-        :param builtins.str value: 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+        :param builtins.str key: Tag key for user labels. Length limit: 1–128 characters. Case-sensitive. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and @ are allowed. Duplicate tag keys are not allowed for the same resource
+        :param builtins.str value: Tag value for user tag. Length limit: 0–256 characters. Case-sensitive, cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscore (_), period (.), colon (:), slash (/), equals (=), plus (+), minus (-), and @
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1664,7 +1664,7 @@ class InstanceInstanceConfigurationTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+        Tag key for user labels. Length limit: 1–128 characters. Case-sensitive. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and @ are allowed. Duplicate tag keys are not allowed for the same resource
         """
         return pulumi.get(self, "key")
 
@@ -1672,7 +1672,7 @@ class InstanceInstanceConfigurationTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+        Tag value for user tag. Length limit: 0–256 characters. Case-sensitive, cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscore (_), period (.), colon (:), slash (/), equals (=), plus (+), minus (-), and @
         """
         return pulumi.get(self, "value")
 
@@ -1703,7 +1703,7 @@ class InstanceInstanceConfigurationVpc(dict):
                  vpc_name: Optional[builtins.str] = None):
         """
         :param builtins.str vpc_id: VPC ID。
-        :param builtins.str vpc_name: VPC 名称。
+        :param builtins.str vpc_name: VPC name
         """
         if vpc_id is not None:
             pulumi.set(__self__, "vpc_id", vpc_id)
@@ -1722,7 +1722,7 @@ class InstanceInstanceConfigurationVpc(dict):
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> Optional[builtins.str]:
         """
-        VPC 名称。
+        VPC name
         """
         return pulumi.get(self, "vpc_name")
 
@@ -1753,11 +1753,11 @@ class InstanceInstanceConfigurationWarmNodeResourceSpec(dict):
                  memory: Optional[builtins.int] = None,
                  name: Optional[builtins.str] = None):
         """
-        :param builtins.int cpu: 节点规格的 CPU 资源，单位为核（Core）
-        :param builtins.str description: 节点规格的描述信息
-        :param builtins.str display_name: 节点规格的显示名称
-        :param builtins.int memory: 节点规格的内存容量，单位 GiB
-        :param builtins.str name: 节点规格。如需了解节点规格类型和详情
+        :param builtins.int cpu: CPU resources for node specification, measured in cores.
+        :param builtins.str description: Description of node specification
+        :param builtins.str display_name: Display name of node specification.
+        :param builtins.int memory: Memory capacity for node specification, measured in GiB
+        :param builtins.str name: Node specification. For details on node specification types and details.
         """
         if cpu is not None:
             pulumi.set(__self__, "cpu", cpu)
@@ -1774,7 +1774,7 @@ class InstanceInstanceConfigurationWarmNodeResourceSpec(dict):
     @pulumi.getter
     def cpu(self) -> Optional[builtins.int]:
         """
-        节点规格的 CPU 资源，单位为核（Core）
+        CPU resources for node specification, measured in cores.
         """
         return pulumi.get(self, "cpu")
 
@@ -1782,7 +1782,7 @@ class InstanceInstanceConfigurationWarmNodeResourceSpec(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        节点规格的描述信息
+        Description of node specification
         """
         return pulumi.get(self, "description")
 
@@ -1790,7 +1790,7 @@ class InstanceInstanceConfigurationWarmNodeResourceSpec(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[builtins.str]:
         """
-        节点规格的显示名称
+        Display name of node specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -1798,7 +1798,7 @@ class InstanceInstanceConfigurationWarmNodeResourceSpec(dict):
     @pulumi.getter
     def memory(self) -> Optional[builtins.int]:
         """
-        节点规格的内存容量，单位 GiB
+        Memory capacity for node specification, measured in GiB
         """
         return pulumi.get(self, "memory")
 
@@ -1806,7 +1806,7 @@ class InstanceInstanceConfigurationWarmNodeResourceSpec(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        节点规格。如需了解节点规格类型和详情
+        Node specification. For details on node specification types and details.
         """
         return pulumi.get(self, "name")
 
@@ -1842,12 +1842,12 @@ class InstanceInstanceConfigurationWarmNodeStorageSpec(dict):
                  name: Optional[builtins.str] = None,
                  size: Optional[builtins.int] = None):
         """
-        :param builtins.str description: 存储规格的描述信息
-        :param builtins.str display_name: 存储规格的显示名称
-        :param builtins.int max_size: 存储规格的最大值，单位为 GiB
-        :param builtins.int min_size: 存储规格最小值，单位为 GiB
-        :param builtins.str name: 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
-        :param builtins.int size: 当前存储规格值，单位为 GiB
+        :param builtins.str description: Description of storage specification.
+        :param builtins.str display_name: Display name of storage specification.
+        :param builtins.int max_size: Maximum storage specification, measured in GiB
+        :param builtins.int min_size: Minimum value for storage specification, unit: GiB.
+        :param builtins.str name: Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
+        :param builtins.int size: Current storage specification value, in GiB.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -1866,7 +1866,7 @@ class InstanceInstanceConfigurationWarmNodeStorageSpec(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        存储规格的描述信息
+        Description of storage specification.
         """
         return pulumi.get(self, "description")
 
@@ -1874,7 +1874,7 @@ class InstanceInstanceConfigurationWarmNodeStorageSpec(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[builtins.str]:
         """
-        存储规格的显示名称
+        Display name of storage specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -1882,7 +1882,7 @@ class InstanceInstanceConfigurationWarmNodeStorageSpec(dict):
     @pulumi.getter(name="maxSize")
     def max_size(self) -> Optional[builtins.int]:
         """
-        存储规格的最大值，单位为 GiB
+        Maximum storage specification, measured in GiB
         """
         return pulumi.get(self, "max_size")
 
@@ -1890,7 +1890,7 @@ class InstanceInstanceConfigurationWarmNodeStorageSpec(dict):
     @pulumi.getter(name="minSize")
     def min_size(self) -> Optional[builtins.int]:
         """
-        存储规格最小值，单位为 GiB
+        Minimum value for storage specification, unit: GiB.
         """
         return pulumi.get(self, "min_size")
 
@@ -1898,7 +1898,7 @@ class InstanceInstanceConfigurationWarmNodeStorageSpec(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+        Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
         """
         return pulumi.get(self, "name")
 
@@ -1906,7 +1906,7 @@ class InstanceInstanceConfigurationWarmNodeStorageSpec(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        当前存储规格值，单位为 GiB
+        Current storage specification value, in GiB.
         """
         return pulumi.get(self, "size")
 
@@ -1939,9 +1939,9 @@ class InstanceKibanaConfig(dict):
                  session_keep_alive: Optional[builtins.bool] = None,
                  session_ttl: Optional[builtins.int] = None):
         """
-        :param builtins.int request_timeout: 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
-        :param builtins.bool session_keep_alive: 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
-        :param builtins.int session_ttl: 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+        :param builtins.int request_timeout: API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
+        :param builtins.bool session_keep_alive: Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
+        :param builtins.int session_ttl: Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
         """
         if request_timeout is not None:
             pulumi.set(__self__, "request_timeout", request_timeout)
@@ -1954,7 +1954,7 @@ class InstanceKibanaConfig(dict):
     @pulumi.getter(name="requestTimeout")
     def request_timeout(self) -> Optional[builtins.int]:
         """
-        接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+        API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
         """
         return pulumi.get(self, "request_timeout")
 
@@ -1962,7 +1962,7 @@ class InstanceKibanaConfig(dict):
     @pulumi.getter(name="sessionKeepAlive")
     def session_keep_alive(self) -> Optional[builtins.bool]:
         """
-        是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+        Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
         """
         return pulumi.get(self, "session_keep_alive")
 
@@ -1970,7 +1970,7 @@ class InstanceKibanaConfig(dict):
     @pulumi.getter(name="sessionTtl")
     def session_ttl(self) -> Optional[builtins.int]:
         """
-        会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+        Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
         """
         return pulumi.get(self, "session_ttl")
 
@@ -2003,9 +2003,9 @@ class InstanceSubInstance(dict):
                  sub_instance_status: Optional[builtins.str] = None,
                  sub_instance_type: Optional[builtins.str] = None):
         """
-        :param builtins.str sub_instance_id: 企业级 SQL 分析实例 ID。
-        :param builtins.str sub_instance_status: 实例状态。
-        :param builtins.str sub_instance_type: 实例类型。
+        :param builtins.str sub_instance_id: Enterprise-level SQL analysis instance ID.
+        :param builtins.str sub_instance_status: Instance status
+        :param builtins.str sub_instance_type: Instance type
         """
         if sub_instance_id is not None:
             pulumi.set(__self__, "sub_instance_id", sub_instance_id)
@@ -2018,7 +2018,7 @@ class InstanceSubInstance(dict):
     @pulumi.getter(name="subInstanceId")
     def sub_instance_id(self) -> Optional[builtins.str]:
         """
-        企业级 SQL 分析实例 ID。
+        Enterprise-level SQL analysis instance ID.
         """
         return pulumi.get(self, "sub_instance_id")
 
@@ -2026,7 +2026,7 @@ class InstanceSubInstance(dict):
     @pulumi.getter(name="subInstanceStatus")
     def sub_instance_status(self) -> Optional[builtins.str]:
         """
-        实例状态。
+        Instance status
         """
         return pulumi.get(self, "sub_instance_status")
 
@@ -2034,7 +2034,7 @@ class InstanceSubInstance(dict):
     @pulumi.getter(name="subInstanceType")
     def sub_instance_type(self) -> Optional[builtins.str]:
         """
-        实例类型。
+        Instance type
         """
         return pulumi.get(self, "sub_instance_type")
 
@@ -2074,10 +2074,10 @@ class InstanceTransferInfo(dict):
                  transfer_task_id: Optional[builtins.str] = None):
         """
         :param builtins.bool forbid_stop: ForbidStop
-        :param 'InstanceTransferInfoReduceSpecConfigArgs' reduce_spec_config: 资源信息。
-        :param builtins.float transfer_progress: 数据迁移任务进度，百分制。
-        :param builtins.str transfer_status: 数据迁移任务状态。
-        :param builtins.str transfer_task_id: 数据迁移任务 ID。
+        :param 'InstanceTransferInfoReduceSpecConfigArgs' reduce_spec_config: Resource information
+        :param builtins.float transfer_progress: Data migration task progress, percentage
+        :param builtins.str transfer_status: Data migration task status
+        :param builtins.str transfer_task_id: Data migration task ID
         """
         if forbid_stop is not None:
             pulumi.set(__self__, "forbid_stop", forbid_stop)
@@ -2102,7 +2102,7 @@ class InstanceTransferInfo(dict):
     @pulumi.getter(name="reduceSpecConfig")
     def reduce_spec_config(self) -> Optional['outputs.InstanceTransferInfoReduceSpecConfig']:
         """
-        资源信息。
+        Resource information
         """
         return pulumi.get(self, "reduce_spec_config")
 
@@ -2110,7 +2110,7 @@ class InstanceTransferInfo(dict):
     @pulumi.getter(name="transferProgress")
     def transfer_progress(self) -> Optional[builtins.float]:
         """
-        数据迁移任务进度，百分制。
+        Data migration task progress, percentage
         """
         return pulumi.get(self, "transfer_progress")
 
@@ -2118,7 +2118,7 @@ class InstanceTransferInfo(dict):
     @pulumi.getter(name="transferStatus")
     def transfer_status(self) -> Optional[builtins.str]:
         """
-        数据迁移任务状态。
+        Data migration task status
         """
         return pulumi.get(self, "transfer_status")
 
@@ -2126,7 +2126,7 @@ class InstanceTransferInfo(dict):
     @pulumi.getter(name="transferTaskId")
     def transfer_task_id(self) -> Optional[builtins.str]:
         """
-        数据迁移任务 ID。
+        Data migration task ID
         """
         return pulumi.get(self, "transfer_task_id")
 
@@ -2165,11 +2165,11 @@ class InstanceTransferInfoReduceSpecConfig(dict):
                  master_node_num: Optional[builtins.int] = None,
                  warm_node_num: Optional[builtins.int] = None):
         """
-        :param builtins.int cold_node_num: 冷节点数量。
-        :param builtins.int data_node_num: 数据节点数量。
-        :param builtins.bool enable_pure_master: Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
-        :param builtins.int master_node_num: Master 节点数量。
-        :param builtins.int warm_node_num: 温节点数量。
+        :param builtins.int cold_node_num: Number of cold nodes.
+        :param builtins.int data_node_num: Number of data nodes
+        :param builtins.bool enable_pure_master: Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
+        :param builtins.int master_node_num: Number of master nodes.
+        :param builtins.int warm_node_num: Number of warm nodes
         """
         if cold_node_num is not None:
             pulumi.set(__self__, "cold_node_num", cold_node_num)
@@ -2186,7 +2186,7 @@ class InstanceTransferInfoReduceSpecConfig(dict):
     @pulumi.getter(name="coldNodeNum")
     def cold_node_num(self) -> Optional[builtins.int]:
         """
-        冷节点数量。
+        Number of cold nodes.
         """
         return pulumi.get(self, "cold_node_num")
 
@@ -2194,7 +2194,7 @@ class InstanceTransferInfoReduceSpecConfig(dict):
     @pulumi.getter(name="dataNodeNum")
     def data_node_num(self) -> Optional[builtins.int]:
         """
-        数据节点数量。
+        Number of data nodes
         """
         return pulumi.get(self, "data_node_num")
 
@@ -2202,7 +2202,7 @@ class InstanceTransferInfoReduceSpecConfig(dict):
     @pulumi.getter(name="enablePureMaster")
     def enable_pure_master(self) -> Optional[builtins.bool]:
         """
-        Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+        Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
         """
         return pulumi.get(self, "enable_pure_master")
 
@@ -2210,7 +2210,7 @@ class InstanceTransferInfoReduceSpecConfig(dict):
     @pulumi.getter(name="masterNodeNum")
     def master_node_num(self) -> Optional[builtins.int]:
         """
-        Master 节点数量。
+        Number of master nodes.
         """
         return pulumi.get(self, "master_node_num")
 
@@ -2218,7 +2218,7 @@ class InstanceTransferInfoReduceSpecConfig(dict):
     @pulumi.getter(name="warmNodeNum")
     def warm_node_num(self) -> Optional[builtins.int]:
         """
-        温节点数量。
+        Number of warm nodes
         """
         return pulumi.get(self, "warm_node_num")
 
@@ -2264,43 +2264,43 @@ class GetInstanceInstanceConfigurationResult(dict):
                  zone_id: builtins.str,
                  zone_number: builtins.int):
         """
-        :param builtins.str admin_password: 管理员密码。
-        :param builtins.str admin_user_name: 管理员用户名。
-        :param builtins.bool auto_renew: 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
-        :param builtins.str charge_type: 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
-        :param builtins.int cold_node_number: 冷节点数量。
-        :param 'GetInstanceInstanceConfigurationColdNodeResourceSpecArgs' cold_node_resource_spec: 冷节点的节点规格配置详情。
-        :param 'GetInstanceInstanceConfigurationColdNodeStorageSpecArgs' cold_node_storage_spec: 冷节点的存储规格配置详情。
-        :param builtins.str configuration_code: 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
-        :param builtins.int coordinator_node_number: 协调节点数量。
-        :param 'GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecArgs' coordinator_node_resource_spec: 协调节点的节点规格配置详情。
-        :param 'GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecArgs' coordinator_node_storage_spec: 协调节点的存储规格配置详情。
-        :param builtins.bool deletion_protection: 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
-        :param builtins.bool enable_https: 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
-        :param builtins.bool enable_pure_master: Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
-        :param builtins.int hot_node_number: 数据节点数量。
-        :param 'GetInstanceInstanceConfigurationHotNodeResourceSpecArgs' hot_node_resource_spec: 数据节点的节点规格配置详情。
-        :param 'GetInstanceInstanceConfigurationHotNodeStorageSpecArgs' hot_node_storage_spec: 数据节点的存储规格配置详情。
-        :param builtins.str instance_name: 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
-        :param builtins.int kibana_node_number: kibana 节点数量。
-        :param 'GetInstanceInstanceConfigurationKibanaNodeResourceSpecArgs' kibana_node_resource_spec: Kibana 节点的节点规格配置详情。
-        :param builtins.int master_node_number: master 节点数量。
-        :param 'GetInstanceInstanceConfigurationMasterNodeResourceSpecArgs' master_node_resource_spec: Master 节点的节点规格配置详情。
-        :param 'GetInstanceInstanceConfigurationMasterNodeStorageSpecArgs' master_node_storage_spec: Master 节点的存储规格配置详情。
-        :param Sequence['GetInstanceInstanceConfigurationNetworkSpecArgs'] network_specs: 实例公网规格配置。
-        :param Sequence['GetInstanceInstanceConfigurationNodeSpecsAssignArgs'] node_specs_assigns: 实例中各种节点的数量和规格配置。
-        :param builtins.int period: 包年包月实例的购买时长，单位：月。
-        :param builtins.str project_name: 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
-        :param builtins.str region_id: 实例所在区域。
-        :param 'GetInstanceInstanceConfigurationSubnetArgs' subnet: 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
-        :param Sequence['GetInstanceInstanceConfigurationTagArgs'] tags: 标签信息。
-        :param builtins.str version: API的版本，取值：2023-01-01。
-        :param 'GetInstanceInstanceConfigurationVpcArgs' vpc: 设置实例的私有网络 VPC 信息。
-        :param builtins.int warm_node_number: 温节点数量。
-        :param 'GetInstanceInstanceConfigurationWarmNodeResourceSpecArgs' warm_node_resource_spec: 温节点的节点规格配置详情。
-        :param 'GetInstanceInstanceConfigurationWarmNodeStorageSpecArgs' warm_node_storage_spec: 温节点的存储规格配置详情。
-        :param builtins.str zone_id: 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
-        :param builtins.int zone_number: 实例的可用区数量。
+        :param builtins.str admin_password: Administrator password.
+        :param builtins.str admin_user_name: Administrator username.
+        :param builtins.bool auto_renew: Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
+        :param builtins.str charge_type: Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
+        :param builtins.int cold_node_number: Number of cold nodes.
+        :param 'GetInstanceInstanceConfigurationColdNodeResourceSpecArgs' cold_node_resource_spec: Node specification details for cold nodes
+        :param 'GetInstanceInstanceConfigurationColdNodeStorageSpecArgs' cold_node_storage_spec: Details of cold node storage specification configuration
+        :param builtins.str configuration_code: Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
+        :param builtins.int coordinator_node_number: Coordinator node count
+        :param 'GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecArgs' coordinator_node_resource_spec: Node specification configuration details for coordinator node.
+        :param 'GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecArgs' coordinator_node_storage_spec: Storage specification configuration details for coordinator node.
+        :param builtins.bool deletion_protection: Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
+        :param builtins.bool enable_https: Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
+        :param builtins.bool enable_pure_master: Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
+        :param builtins.int hot_node_number: Number of data nodes
+        :param 'GetInstanceInstanceConfigurationHotNodeResourceSpecArgs' hot_node_resource_spec: Node specification configuration details for data node.
+        :param 'GetInstanceInstanceConfigurationHotNodeStorageSpecArgs' hot_node_storage_spec: Data node storage specification configuration details
+        :param builtins.str instance_name: Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
+        :param builtins.int kibana_node_number: Number of Kibana nodes
+        :param 'GetInstanceInstanceConfigurationKibanaNodeResourceSpecArgs' kibana_node_resource_spec: Kibana node specification configuration details
+        :param builtins.int master_node_number: Number of master nodes.
+        :param 'GetInstanceInstanceConfigurationMasterNodeResourceSpecArgs' master_node_resource_spec: Master node specification configuration details
+        :param 'GetInstanceInstanceConfigurationMasterNodeStorageSpecArgs' master_node_storage_spec: Storage specification details for master node
+        :param Sequence['GetInstanceInstanceConfigurationNetworkSpecArgs'] network_specs: Instance public network specification configuration
+        :param Sequence['GetInstanceInstanceConfigurationNodeSpecsAssignArgs'] node_specs_assigns: Configuration of node counts and specifications in the instance
+        :param builtins.int period: Subscription instance purchase duration, in months.
+        :param builtins.str project_name: Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
+        :param builtins.str region_id: Instance region
+        :param 'GetInstanceInstanceConfigurationSubnetArgs' subnet: Set subnet information for the instance. Note: The subnet must be in the primary zone.
+        :param Sequence['GetInstanceInstanceConfigurationTagArgs'] tags: Tag information
+        :param builtins.str version: API version. Value: 2023-01-01.
+        :param 'GetInstanceInstanceConfigurationVpcArgs' vpc: Set VPC information for the instance
+        :param builtins.int warm_node_number: Warm node count.
+        :param 'GetInstanceInstanceConfigurationWarmNodeResourceSpecArgs' warm_node_resource_spec: Warm node specification configuration details.
+        :param 'GetInstanceInstanceConfigurationWarmNodeStorageSpecArgs' warm_node_storage_spec: Storage specification details for warm nodes
+        :param builtins.str zone_id: Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
+        :param builtins.int zone_number: Number of instance availability zones.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "admin_user_name", admin_user_name)
@@ -2344,7 +2344,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> builtins.str:
         """
-        管理员密码。
+        Administrator password.
         """
         return pulumi.get(self, "admin_password")
 
@@ -2352,7 +2352,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="adminUserName")
     def admin_user_name(self) -> builtins.str:
         """
-        管理员用户名。
+        Administrator username.
         """
         return pulumi.get(self, "admin_user_name")
 
@@ -2360,7 +2360,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> builtins.bool:
         """
-        包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+        Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -2368,7 +2368,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+        Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
         """
         return pulumi.get(self, "charge_type")
 
@@ -2376,7 +2376,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="coldNodeNumber")
     def cold_node_number(self) -> builtins.int:
         """
-        冷节点数量。
+        Number of cold nodes.
         """
         return pulumi.get(self, "cold_node_number")
 
@@ -2384,7 +2384,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="coldNodeResourceSpec")
     def cold_node_resource_spec(self) -> 'outputs.GetInstanceInstanceConfigurationColdNodeResourceSpecResult':
         """
-        冷节点的节点规格配置详情。
+        Node specification details for cold nodes
         """
         return pulumi.get(self, "cold_node_resource_spec")
 
@@ -2392,7 +2392,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="coldNodeStorageSpec")
     def cold_node_storage_spec(self) -> 'outputs.GetInstanceInstanceConfigurationColdNodeStorageSpecResult':
         """
-        冷节点的存储规格配置详情。
+        Details of cold node storage specification configuration
         """
         return pulumi.get(self, "cold_node_storage_spec")
 
@@ -2400,7 +2400,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="configurationCode")
     def configuration_code(self) -> builtins.str:
         """
-        计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+        Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
         """
         return pulumi.get(self, "configuration_code")
 
@@ -2408,7 +2408,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="coordinatorNodeNumber")
     def coordinator_node_number(self) -> builtins.int:
         """
-        协调节点数量。
+        Coordinator node count
         """
         return pulumi.get(self, "coordinator_node_number")
 
@@ -2416,7 +2416,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="coordinatorNodeResourceSpec")
     def coordinator_node_resource_spec(self) -> 'outputs.GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecResult':
         """
-        协调节点的节点规格配置详情。
+        Node specification configuration details for coordinator node.
         """
         return pulumi.get(self, "coordinator_node_resource_spec")
 
@@ -2424,7 +2424,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="coordinatorNodeStorageSpec")
     def coordinator_node_storage_spec(self) -> 'outputs.GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecResult':
         """
-        协调节点的存储规格配置详情。
+        Storage specification configuration details for coordinator node.
         """
         return pulumi.get(self, "coordinator_node_storage_spec")
 
@@ -2432,7 +2432,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> builtins.bool:
         """
-        是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+        Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -2440,7 +2440,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="enableHttps")
     def enable_https(self) -> builtins.bool:
         """
-        是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+        Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
         """
         return pulumi.get(self, "enable_https")
 
@@ -2448,7 +2448,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="enablePureMaster")
     def enable_pure_master(self) -> builtins.bool:
         """
-        Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+        Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
         """
         return pulumi.get(self, "enable_pure_master")
 
@@ -2456,7 +2456,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="hotNodeNumber")
     def hot_node_number(self) -> builtins.int:
         """
-        数据节点数量。
+        Number of data nodes
         """
         return pulumi.get(self, "hot_node_number")
 
@@ -2464,7 +2464,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="hotNodeResourceSpec")
     def hot_node_resource_spec(self) -> 'outputs.GetInstanceInstanceConfigurationHotNodeResourceSpecResult':
         """
-        数据节点的节点规格配置详情。
+        Node specification configuration details for data node.
         """
         return pulumi.get(self, "hot_node_resource_spec")
 
@@ -2472,7 +2472,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="hotNodeStorageSpec")
     def hot_node_storage_spec(self) -> 'outputs.GetInstanceInstanceConfigurationHotNodeStorageSpecResult':
         """
-        数据节点的存储规格配置详情。
+        Data node storage specification configuration details
         """
         return pulumi.get(self, "hot_node_storage_spec")
 
@@ -2480,7 +2480,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> builtins.str:
         """
-        自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+        Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -2488,7 +2488,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="kibanaNodeNumber")
     def kibana_node_number(self) -> builtins.int:
         """
-        kibana 节点数量。
+        Number of Kibana nodes
         """
         return pulumi.get(self, "kibana_node_number")
 
@@ -2496,7 +2496,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="kibanaNodeResourceSpec")
     def kibana_node_resource_spec(self) -> 'outputs.GetInstanceInstanceConfigurationKibanaNodeResourceSpecResult':
         """
-        Kibana 节点的节点规格配置详情。
+        Kibana node specification configuration details
         """
         return pulumi.get(self, "kibana_node_resource_spec")
 
@@ -2504,7 +2504,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="masterNodeNumber")
     def master_node_number(self) -> builtins.int:
         """
-        master 节点数量。
+        Number of master nodes.
         """
         return pulumi.get(self, "master_node_number")
 
@@ -2512,7 +2512,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="masterNodeResourceSpec")
     def master_node_resource_spec(self) -> 'outputs.GetInstanceInstanceConfigurationMasterNodeResourceSpecResult':
         """
-        Master 节点的节点规格配置详情。
+        Master node specification configuration details
         """
         return pulumi.get(self, "master_node_resource_spec")
 
@@ -2520,7 +2520,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="masterNodeStorageSpec")
     def master_node_storage_spec(self) -> 'outputs.GetInstanceInstanceConfigurationMasterNodeStorageSpecResult':
         """
-        Master 节点的存储规格配置详情。
+        Storage specification details for master node
         """
         return pulumi.get(self, "master_node_storage_spec")
 
@@ -2528,7 +2528,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="networkSpecs")
     def network_specs(self) -> Sequence['outputs.GetInstanceInstanceConfigurationNetworkSpecResult']:
         """
-        实例公网规格配置。
+        Instance public network specification configuration
         """
         return pulumi.get(self, "network_specs")
 
@@ -2536,7 +2536,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="nodeSpecsAssigns")
     def node_specs_assigns(self) -> Sequence['outputs.GetInstanceInstanceConfigurationNodeSpecsAssignResult']:
         """
-        实例中各种节点的数量和规格配置。
+        Configuration of node counts and specifications in the instance
         """
         return pulumi.get(self, "node_specs_assigns")
 
@@ -2544,7 +2544,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter
     def period(self) -> builtins.int:
         """
-        包年包月实例的购买时长，单位：月。
+        Subscription instance purchase duration, in months.
         """
         return pulumi.get(self, "period")
 
@@ -2552,7 +2552,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+        Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
         """
         return pulumi.get(self, "project_name")
 
@@ -2560,7 +2560,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="regionId")
     def region_id(self) -> builtins.str:
         """
-        实例所在区域。
+        Instance region
         """
         return pulumi.get(self, "region_id")
 
@@ -2568,7 +2568,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter
     def subnet(self) -> 'outputs.GetInstanceInstanceConfigurationSubnetResult':
         """
-        设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+        Set subnet information for the instance. Note: The subnet must be in the primary zone.
         """
         return pulumi.get(self, "subnet")
 
@@ -2576,7 +2576,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetInstanceInstanceConfigurationTagResult']:
         """
-        标签信息。
+        Tag information
         """
         return pulumi.get(self, "tags")
 
@@ -2584,7 +2584,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter
     def version(self) -> builtins.str:
         """
-        API的版本，取值：2023-01-01。
+        API version. Value: 2023-01-01.
         """
         return pulumi.get(self, "version")
 
@@ -2592,7 +2592,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter
     def vpc(self) -> 'outputs.GetInstanceInstanceConfigurationVpcResult':
         """
-        设置实例的私有网络 VPC 信息。
+        Set VPC information for the instance
         """
         return pulumi.get(self, "vpc")
 
@@ -2600,7 +2600,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="warmNodeNumber")
     def warm_node_number(self) -> builtins.int:
         """
-        温节点数量。
+        Warm node count.
         """
         return pulumi.get(self, "warm_node_number")
 
@@ -2608,7 +2608,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="warmNodeResourceSpec")
     def warm_node_resource_spec(self) -> 'outputs.GetInstanceInstanceConfigurationWarmNodeResourceSpecResult':
         """
-        温节点的节点规格配置详情。
+        Warm node specification configuration details.
         """
         return pulumi.get(self, "warm_node_resource_spec")
 
@@ -2616,7 +2616,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="warmNodeStorageSpec")
     def warm_node_storage_spec(self) -> 'outputs.GetInstanceInstanceConfigurationWarmNodeStorageSpecResult':
         """
-        温节点的存储规格配置详情。
+        Storage specification details for warm nodes
         """
         return pulumi.get(self, "warm_node_storage_spec")
 
@@ -2624,7 +2624,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+        Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
         """
         return pulumi.get(self, "zone_id")
 
@@ -2632,7 +2632,7 @@ class GetInstanceInstanceConfigurationResult(dict):
     @pulumi.getter(name="zoneNumber")
     def zone_number(self) -> builtins.int:
         """
-        实例的可用区数量。
+        Number of instance availability zones.
         """
         return pulumi.get(self, "zone_number")
 
@@ -2646,11 +2646,11 @@ class GetInstanceInstanceConfigurationColdNodeResourceSpecResult(dict):
                  memory: builtins.int,
                  name: builtins.str):
         """
-        :param builtins.int cpu: 节点规格的 CPU 资源，单位为核（Core）
-        :param builtins.str description: 节点规格的描述信息
-        :param builtins.str display_name: 节点规格的显示名称
-        :param builtins.int memory: 节点规格的内存容量，单位 GiB
-        :param builtins.str name: 节点规格。如需了解节点规格类型和详情
+        :param builtins.int cpu: CPU resources for node specification, measured in cores.
+        :param builtins.str description: Description of node specifications
+        :param builtins.str display_name: Display name of node specification.
+        :param builtins.int memory: Memory capacity for node specification, measured in GiB
+        :param builtins.str name: Node specification. For details on node specification types and details.
         """
         pulumi.set(__self__, "cpu", cpu)
         pulumi.set(__self__, "description", description)
@@ -2662,7 +2662,7 @@ class GetInstanceInstanceConfigurationColdNodeResourceSpecResult(dict):
     @pulumi.getter
     def cpu(self) -> builtins.int:
         """
-        节点规格的 CPU 资源，单位为核（Core）
+        CPU resources for node specification, measured in cores.
         """
         return pulumi.get(self, "cpu")
 
@@ -2670,7 +2670,7 @@ class GetInstanceInstanceConfigurationColdNodeResourceSpecResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        节点规格的描述信息
+        Description of node specifications
         """
         return pulumi.get(self, "description")
 
@@ -2678,7 +2678,7 @@ class GetInstanceInstanceConfigurationColdNodeResourceSpecResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        节点规格的显示名称
+        Display name of node specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -2686,7 +2686,7 @@ class GetInstanceInstanceConfigurationColdNodeResourceSpecResult(dict):
     @pulumi.getter
     def memory(self) -> builtins.int:
         """
-        节点规格的内存容量，单位 GiB
+        Memory capacity for node specification, measured in GiB
         """
         return pulumi.get(self, "memory")
 
@@ -2694,7 +2694,7 @@ class GetInstanceInstanceConfigurationColdNodeResourceSpecResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        节点规格。如需了解节点规格类型和详情
+        Node specification. For details on node specification types and details.
         """
         return pulumi.get(self, "name")
 
@@ -2709,12 +2709,12 @@ class GetInstanceInstanceConfigurationColdNodeStorageSpecResult(dict):
                  name: builtins.str,
                  size: builtins.int):
         """
-        :param builtins.str description: 存储规格的描述信息
-        :param builtins.str display_name: 存储规格的显示名称
-        :param builtins.int max_size: 存储规格的最大值，单位为 GiB
-        :param builtins.int min_size: 存储规格最小值，单位为 GiB
-        :param builtins.str name: 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
-        :param builtins.int size: 当前存储规格值，单位为 GiB
+        :param builtins.str description: Description of storage specification
+        :param builtins.str display_name: Display name of storage specification
+        :param builtins.int max_size: Maximum storage specification, measured in GiB
+        :param builtins.int min_size: Minimum storage specification, measured in GiB
+        :param builtins.str name: Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
+        :param builtins.int size: Current storage specification value, in GiB.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
@@ -2727,7 +2727,7 @@ class GetInstanceInstanceConfigurationColdNodeStorageSpecResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        存储规格的描述信息
+        Description of storage specification
         """
         return pulumi.get(self, "description")
 
@@ -2735,7 +2735,7 @@ class GetInstanceInstanceConfigurationColdNodeStorageSpecResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        存储规格的显示名称
+        Display name of storage specification
         """
         return pulumi.get(self, "display_name")
 
@@ -2743,7 +2743,7 @@ class GetInstanceInstanceConfigurationColdNodeStorageSpecResult(dict):
     @pulumi.getter(name="maxSize")
     def max_size(self) -> builtins.int:
         """
-        存储规格的最大值，单位为 GiB
+        Maximum storage specification, measured in GiB
         """
         return pulumi.get(self, "max_size")
 
@@ -2751,7 +2751,7 @@ class GetInstanceInstanceConfigurationColdNodeStorageSpecResult(dict):
     @pulumi.getter(name="minSize")
     def min_size(self) -> builtins.int:
         """
-        存储规格最小值，单位为 GiB
+        Minimum storage specification, measured in GiB
         """
         return pulumi.get(self, "min_size")
 
@@ -2759,7 +2759,7 @@ class GetInstanceInstanceConfigurationColdNodeStorageSpecResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+        Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
         """
         return pulumi.get(self, "name")
 
@@ -2767,7 +2767,7 @@ class GetInstanceInstanceConfigurationColdNodeStorageSpecResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        当前存储规格值，单位为 GiB
+        Current storage specification value, in GiB.
         """
         return pulumi.get(self, "size")
 
@@ -2781,11 +2781,11 @@ class GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecResult(dict):
                  memory: builtins.int,
                  name: builtins.str):
         """
-        :param builtins.int cpu: 节点规格的 CPU 资源，单位为核（Core）
-        :param builtins.str description: 节点规格的描述信息
-        :param builtins.str display_name: 节点规格的显示名称
-        :param builtins.int memory: 节点规格的内存容量，单位 GiB
-        :param builtins.str name: 节点规格。如需了解节点规格类型和详情
+        :param builtins.int cpu: CPU resources of node specification, unit: cores.
+        :param builtins.str description: Description of node specifications
+        :param builtins.str display_name: Display name of node specification.
+        :param builtins.int memory: Memory capacity of node specification, unit: GiB.
+        :param builtins.str name: Node specification. For details on node specification types and details.
         """
         pulumi.set(__self__, "cpu", cpu)
         pulumi.set(__self__, "description", description)
@@ -2797,7 +2797,7 @@ class GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecResult(dict):
     @pulumi.getter
     def cpu(self) -> builtins.int:
         """
-        节点规格的 CPU 资源，单位为核（Core）
+        CPU resources of node specification, unit: cores.
         """
         return pulumi.get(self, "cpu")
 
@@ -2805,7 +2805,7 @@ class GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        节点规格的描述信息
+        Description of node specifications
         """
         return pulumi.get(self, "description")
 
@@ -2813,7 +2813,7 @@ class GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        节点规格的显示名称
+        Display name of node specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -2821,7 +2821,7 @@ class GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecResult(dict):
     @pulumi.getter
     def memory(self) -> builtins.int:
         """
-        节点规格的内存容量，单位 GiB
+        Memory capacity of node specification, unit: GiB.
         """
         return pulumi.get(self, "memory")
 
@@ -2829,7 +2829,7 @@ class GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        节点规格。如需了解节点规格类型和详情
+        Node specification. For details on node specification types and details.
         """
         return pulumi.get(self, "name")
 
@@ -2844,12 +2844,12 @@ class GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecResult(dict):
                  name: builtins.str,
                  size: builtins.int):
         """
-        :param builtins.str description: 存储规格的描述信息
-        :param builtins.str display_name: 存储规格的显示名称
-        :param builtins.int max_size: 存储规格的最大值，单位为 GiB
-        :param builtins.int min_size: 存储规格最小值，单位为 GiB
-        :param builtins.str name: 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
-        :param builtins.int size: 当前存储规格值，单位为 GiB
+        :param builtins.str description: Description of storage specification.
+        :param builtins.str display_name: Display name of storage specification
+        :param builtins.int max_size: Maximum storage specification, in GiB
+        :param builtins.int min_size: Minimum value for storage specification, unit: GiB.
+        :param builtins.str name: Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
+        :param builtins.int size: Current storage specification value, in GiB.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
@@ -2862,7 +2862,7 @@ class GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        存储规格的描述信息
+        Description of storage specification.
         """
         return pulumi.get(self, "description")
 
@@ -2870,7 +2870,7 @@ class GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        存储规格的显示名称
+        Display name of storage specification
         """
         return pulumi.get(self, "display_name")
 
@@ -2878,7 +2878,7 @@ class GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecResult(dict):
     @pulumi.getter(name="maxSize")
     def max_size(self) -> builtins.int:
         """
-        存储规格的最大值，单位为 GiB
+        Maximum storage specification, in GiB
         """
         return pulumi.get(self, "max_size")
 
@@ -2886,7 +2886,7 @@ class GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecResult(dict):
     @pulumi.getter(name="minSize")
     def min_size(self) -> builtins.int:
         """
-        存储规格最小值，单位为 GiB
+        Minimum value for storage specification, unit: GiB.
         """
         return pulumi.get(self, "min_size")
 
@@ -2894,7 +2894,7 @@ class GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+        Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
         """
         return pulumi.get(self, "name")
 
@@ -2902,7 +2902,7 @@ class GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        当前存储规格值，单位为 GiB
+        Current storage specification value, in GiB.
         """
         return pulumi.get(self, "size")
 
@@ -2916,11 +2916,11 @@ class GetInstanceInstanceConfigurationHotNodeResourceSpecResult(dict):
                  memory: builtins.int,
                  name: builtins.str):
         """
-        :param builtins.int cpu: 节点规格的 CPU 资源，单位为核（Core）。
-        :param builtins.str description: 节点规格的描述信息。
-        :param builtins.str display_name: 节点规格的显示名称。
-        :param builtins.int memory: 节点规格的内存容量，单位 GiB。
-        :param builtins.str name: 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+        :param builtins.int cpu: CPU resources of node specification, measured in cores
+        :param builtins.str description: Description of node specification.
+        :param builtins.str display_name: Display name of node specification.
+        :param builtins.int memory: Memory capacity for node specification, measured in GiB.
+        :param builtins.str name: Node specification. For details on node specification types and details, see Product Specifications.
         """
         pulumi.set(__self__, "cpu", cpu)
         pulumi.set(__self__, "description", description)
@@ -2932,7 +2932,7 @@ class GetInstanceInstanceConfigurationHotNodeResourceSpecResult(dict):
     @pulumi.getter
     def cpu(self) -> builtins.int:
         """
-        节点规格的 CPU 资源，单位为核（Core）。
+        CPU resources of node specification, measured in cores
         """
         return pulumi.get(self, "cpu")
 
@@ -2940,7 +2940,7 @@ class GetInstanceInstanceConfigurationHotNodeResourceSpecResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        节点规格的描述信息。
+        Description of node specification.
         """
         return pulumi.get(self, "description")
 
@@ -2948,7 +2948,7 @@ class GetInstanceInstanceConfigurationHotNodeResourceSpecResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        节点规格的显示名称。
+        Display name of node specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -2956,7 +2956,7 @@ class GetInstanceInstanceConfigurationHotNodeResourceSpecResult(dict):
     @pulumi.getter
     def memory(self) -> builtins.int:
         """
-        节点规格的内存容量，单位 GiB。
+        Memory capacity for node specification, measured in GiB.
         """
         return pulumi.get(self, "memory")
 
@@ -2964,7 +2964,7 @@ class GetInstanceInstanceConfigurationHotNodeResourceSpecResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        节点规格。如需了解节点规格类型和详情，请参见产品规格。
+        Node specification. For details on node specification types and details, see Product Specifications.
         """
         return pulumi.get(self, "name")
 
@@ -2979,12 +2979,12 @@ class GetInstanceInstanceConfigurationHotNodeStorageSpecResult(dict):
                  name: builtins.str,
                  size: builtins.int):
         """
-        :param builtins.str description: 存储规格的描述信息。
-        :param builtins.str display_name: 存储规格的显示名称。
-        :param builtins.int max_size: 存储规格的最大值，单位为 GiB。
-        :param builtins.int min_size: 存储规格最小值，单位为 GiB。
-        :param builtins.str name: 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
-        :param builtins.int size: 配置的可用磁盘空间大小。
+        :param builtins.str description: Description of storage specification
+        :param builtins.str display_name: Display name of storage specification.
+        :param builtins.int max_size: Maximum storage specification, in GiB
+        :param builtins.int min_size: Minimum storage specification, measured in GiB.
+        :param builtins.str name: Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
+        :param builtins.int size: Configured available disk space size
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
@@ -2997,7 +2997,7 @@ class GetInstanceInstanceConfigurationHotNodeStorageSpecResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        存储规格的描述信息。
+        Description of storage specification
         """
         return pulumi.get(self, "description")
 
@@ -3005,7 +3005,7 @@ class GetInstanceInstanceConfigurationHotNodeStorageSpecResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        存储规格的显示名称。
+        Display name of storage specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -3013,7 +3013,7 @@ class GetInstanceInstanceConfigurationHotNodeStorageSpecResult(dict):
     @pulumi.getter(name="maxSize")
     def max_size(self) -> builtins.int:
         """
-        存储规格的最大值，单位为 GiB。
+        Maximum storage specification, in GiB
         """
         return pulumi.get(self, "max_size")
 
@@ -3021,7 +3021,7 @@ class GetInstanceInstanceConfigurationHotNodeStorageSpecResult(dict):
     @pulumi.getter(name="minSize")
     def min_size(self) -> builtins.int:
         """
-        存储规格最小值，单位为 GiB。
+        Minimum storage specification, measured in GiB.
         """
         return pulumi.get(self, "min_size")
 
@@ -3029,7 +3029,7 @@ class GetInstanceInstanceConfigurationHotNodeStorageSpecResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+        Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
         """
         return pulumi.get(self, "name")
 
@@ -3037,7 +3037,7 @@ class GetInstanceInstanceConfigurationHotNodeStorageSpecResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        配置的可用磁盘空间大小。
+        Configured available disk space size
         """
         return pulumi.get(self, "size")
 
@@ -3051,11 +3051,11 @@ class GetInstanceInstanceConfigurationKibanaNodeResourceSpecResult(dict):
                  memory: builtins.int,
                  name: builtins.str):
         """
-        :param builtins.int cpu: 节点规格的 CPU 资源，单位为核（Core）
-        :param builtins.str description: 节点规格的描述信息
-        :param builtins.str display_name: 节点规格的显示名称
-        :param builtins.int memory: 节点规格的内存容量，单位 GiB
-        :param builtins.str name: 节点规格。如需了解节点规格类型和详情
+        :param builtins.int cpu: CPU resources for node specification, measured in cores.
+        :param builtins.str description: Description of node specifications
+        :param builtins.str display_name: Display name of node specification.
+        :param builtins.int memory: Memory capacity for node specification, measured in GiB
+        :param builtins.str name: Node specification. For information about node specification types and details, please refer to the documentation.
         """
         pulumi.set(__self__, "cpu", cpu)
         pulumi.set(__self__, "description", description)
@@ -3067,7 +3067,7 @@ class GetInstanceInstanceConfigurationKibanaNodeResourceSpecResult(dict):
     @pulumi.getter
     def cpu(self) -> builtins.int:
         """
-        节点规格的 CPU 资源，单位为核（Core）
+        CPU resources for node specification, measured in cores.
         """
         return pulumi.get(self, "cpu")
 
@@ -3075,7 +3075,7 @@ class GetInstanceInstanceConfigurationKibanaNodeResourceSpecResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        节点规格的描述信息
+        Description of node specifications
         """
         return pulumi.get(self, "description")
 
@@ -3083,7 +3083,7 @@ class GetInstanceInstanceConfigurationKibanaNodeResourceSpecResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        节点规格的显示名称
+        Display name of node specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -3091,7 +3091,7 @@ class GetInstanceInstanceConfigurationKibanaNodeResourceSpecResult(dict):
     @pulumi.getter
     def memory(self) -> builtins.int:
         """
-        节点规格的内存容量，单位 GiB
+        Memory capacity for node specification, measured in GiB
         """
         return pulumi.get(self, "memory")
 
@@ -3099,7 +3099,7 @@ class GetInstanceInstanceConfigurationKibanaNodeResourceSpecResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        节点规格。如需了解节点规格类型和详情
+        Node specification. For information about node specification types and details, please refer to the documentation.
         """
         return pulumi.get(self, "name")
 
@@ -3113,11 +3113,11 @@ class GetInstanceInstanceConfigurationMasterNodeResourceSpecResult(dict):
                  memory: builtins.int,
                  name: builtins.str):
         """
-        :param builtins.int cpu: 节点规格的 CPU 资源，单位为核（Core）
-        :param builtins.str description: 节点规格的描述信息
-        :param builtins.str display_name: 节点规格的显示名称
-        :param builtins.int memory: 节点规格的内存容量，单位 GiB
-        :param builtins.str name: 节点规格。如需了解节点规格类型和详情
+        :param builtins.int cpu: CPU resources of node specification, unit: cores.
+        :param builtins.str description: Description of node specifications
+        :param builtins.str display_name: Display name of node specification
+        :param builtins.int memory: Memory capacity of node specification, unit: GiB.
+        :param builtins.str name: Node specification. For information about node specification types and details, please refer to the documentation.
         """
         pulumi.set(__self__, "cpu", cpu)
         pulumi.set(__self__, "description", description)
@@ -3129,7 +3129,7 @@ class GetInstanceInstanceConfigurationMasterNodeResourceSpecResult(dict):
     @pulumi.getter
     def cpu(self) -> builtins.int:
         """
-        节点规格的 CPU 资源，单位为核（Core）
+        CPU resources of node specification, unit: cores.
         """
         return pulumi.get(self, "cpu")
 
@@ -3137,7 +3137,7 @@ class GetInstanceInstanceConfigurationMasterNodeResourceSpecResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        节点规格的描述信息
+        Description of node specifications
         """
         return pulumi.get(self, "description")
 
@@ -3145,7 +3145,7 @@ class GetInstanceInstanceConfigurationMasterNodeResourceSpecResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        节点规格的显示名称
+        Display name of node specification
         """
         return pulumi.get(self, "display_name")
 
@@ -3153,7 +3153,7 @@ class GetInstanceInstanceConfigurationMasterNodeResourceSpecResult(dict):
     @pulumi.getter
     def memory(self) -> builtins.int:
         """
-        节点规格的内存容量，单位 GiB
+        Memory capacity of node specification, unit: GiB.
         """
         return pulumi.get(self, "memory")
 
@@ -3161,7 +3161,7 @@ class GetInstanceInstanceConfigurationMasterNodeResourceSpecResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        节点规格。如需了解节点规格类型和详情
+        Node specification. For information about node specification types and details, please refer to the documentation.
         """
         return pulumi.get(self, "name")
 
@@ -3176,12 +3176,12 @@ class GetInstanceInstanceConfigurationMasterNodeStorageSpecResult(dict):
                  name: builtins.str,
                  size: builtins.int):
         """
-        :param builtins.str description: 存储规格的描述信息
-        :param builtins.str display_name: 存储规格的显示名称
-        :param builtins.int max_size: 存储规格的最大值，单位为 GiB
-        :param builtins.int min_size: 存储规格最小值，单位为 GiB
-        :param builtins.str name: 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
-        :param builtins.int size: 当前存储规格值，单位为 GiB
+        :param builtins.str description: Description of storage specification.
+        :param builtins.str display_name: Display name of storage specification.
+        :param builtins.int max_size: Maximum storage specification, measured in GiB
+        :param builtins.int min_size: Minimum value for storage specification, unit: GiB.
+        :param builtins.str name: Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
+        :param builtins.int size: Current storage specification value, in GiB.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
@@ -3194,7 +3194,7 @@ class GetInstanceInstanceConfigurationMasterNodeStorageSpecResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        存储规格的描述信息
+        Description of storage specification.
         """
         return pulumi.get(self, "description")
 
@@ -3202,7 +3202,7 @@ class GetInstanceInstanceConfigurationMasterNodeStorageSpecResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        存储规格的显示名称
+        Display name of storage specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -3210,7 +3210,7 @@ class GetInstanceInstanceConfigurationMasterNodeStorageSpecResult(dict):
     @pulumi.getter(name="maxSize")
     def max_size(self) -> builtins.int:
         """
-        存储规格的最大值，单位为 GiB
+        Maximum storage specification, measured in GiB
         """
         return pulumi.get(self, "max_size")
 
@@ -3218,7 +3218,7 @@ class GetInstanceInstanceConfigurationMasterNodeStorageSpecResult(dict):
     @pulumi.getter(name="minSize")
     def min_size(self) -> builtins.int:
         """
-        存储规格最小值，单位为 GiB
+        Minimum value for storage specification, unit: GiB.
         """
         return pulumi.get(self, "min_size")
 
@@ -3226,7 +3226,7 @@ class GetInstanceInstanceConfigurationMasterNodeStorageSpecResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+        Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
         """
         return pulumi.get(self, "name")
 
@@ -3234,7 +3234,7 @@ class GetInstanceInstanceConfigurationMasterNodeStorageSpecResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        当前存储规格值，单位为 GiB
+        Current storage specification value, in GiB.
         """
         return pulumi.get(self, "size")
 
@@ -3247,10 +3247,10 @@ class GetInstanceInstanceConfigurationNetworkSpecResult(dict):
                  spec_name: builtins.str,
                  type: builtins.str):
         """
-        :param builtins.int bandwidth: 公网IP的带宽上限，默认为“1”，单位：Mbps。
-        :param builtins.bool is_open: 开启/关闭
-        :param builtins.str spec_name: 实例公网资源规格名称
-        :param builtins.str type: 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+        :param builtins.int bandwidth: Public IP bandwidth limit. Default is '1', unit: Mbps.
+        :param builtins.bool is_open: Enable/Disable
+        :param builtins.str spec_name: Instance public resource specification name
+        :param builtins.str type: Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
         """
         pulumi.set(__self__, "bandwidth", bandwidth)
         pulumi.set(__self__, "is_open", is_open)
@@ -3261,7 +3261,7 @@ class GetInstanceInstanceConfigurationNetworkSpecResult(dict):
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        公网IP的带宽上限，默认为“1”，单位：Mbps。
+        Public IP bandwidth limit. Default is '1', unit: Mbps.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -3269,7 +3269,7 @@ class GetInstanceInstanceConfigurationNetworkSpecResult(dict):
     @pulumi.getter(name="isOpen")
     def is_open(self) -> builtins.bool:
         """
-        开启/关闭
+        Enable/Disable
         """
         return pulumi.get(self, "is_open")
 
@@ -3277,7 +3277,7 @@ class GetInstanceInstanceConfigurationNetworkSpecResult(dict):
     @pulumi.getter(name="specName")
     def spec_name(self) -> builtins.str:
         """
-        实例公网资源规格名称
+        Instance public resource specification name
         """
         return pulumi.get(self, "spec_name")
 
@@ -3285,7 +3285,7 @@ class GetInstanceInstanceConfigurationNetworkSpecResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+        Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
         """
         return pulumi.get(self, "type")
 
@@ -3300,12 +3300,12 @@ class GetInstanceInstanceConfigurationNodeSpecsAssignResult(dict):
                  storage_spec_name: builtins.str,
                  type: builtins.str):
         """
-        :param 'GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceArgs' extra_performance: 磁盘额外性能包相关配置。
-        :param builtins.int number: 节点数量。配置数据节点数量时，在不同部署方式下，需要注意以下信息：单可用区部署：建议生产环境至少配置 3 个数据节点，配置 2 个节点时存在脑裂风险。如果启用专有主节点，2 个数据节点不会脑裂。双可用区部署，默认启用专有主节点：建议生产环境至少配置 4 个数据节点，即每个可用区两个数据节点。三可用区部署，默认启用专有主节点：建议生产环境至少配置 6 个数据节点，即每个可用区两个数据节点。数据节点数量可设范围为 1~100，如果有更多数据节点的需求，可申请开白提升配额到 200。配置 Master 节点：如果没有启用专有主节点，那么 Master 节点的配置和数据节点相同，否则 Master 配置是独立的。配置专有主节点，如需启用专有主节点，数量默认配置为 3。配置 Kibana 节点，数量固定为 1。配置协调节点，如需启用，生产环境建议至少 2 个协调节点，可配范围为 2~50。温数据节点：如需启用，生产环境建议至少 3 个温数据节点，最多可配置 100 个。冷数据节点：如需启用，生产环境建议至少 2 个温数据节点，最多可配置 100 个。
-        :param builtins.str resource_spec_name: 计算资源规格名称。您可以通过调用DescribeNodeAvailableSpecs接口获取可用的节点规格列表。如需了解规格详情，请参见V2 实例规格
-        :param builtins.int storage_size: 存储容量，单位为 GiB。默认值为 100GiB，调整步长为 10GiB。说明Kibana 节点的 StorageSize 设置为0，即"StorageSize": 0。专有主节点和协调节点的 StorageSize 默认是 20。
-        :param builtins.str storage_spec_name: 存储规格名称，当前支持的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0。es.volume.essd.flexpl-standard：标准版-高性能云盘-flexpl。说明Kibana 节点的 StorageSpecName 设置为空，即"StorageSpecName": ""。
-        :param builtins.str type: 节点类型。请先了解节点类型的作用，然后结合业务判断是否需要创建，详情请参见节点类型。Master：Master 节点。Hot：数据节点。Cold：冷数据节点。Warm：温数据节点。Kibana：Kibana 节点。Coordinator：协调节点。
+        :param 'GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceArgs' extra_performance: Disk extra performance package configuration.
+        :param builtins.int number: Node count. When configuring the number of data nodes, note the following based on deployment mode: Single availability zone deployment: For production environments, configure at least 3 data nodes. Configuring 2 nodes poses a split-brain risk. If dedicated master nodes are enabled, 2 data nodes will not result in split-brain. Dual availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 4 data nodes—2 per availability zone. Triple availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 6 data nodes—2 per availability zone. You can set the number of data nodes from 1 to 100. If you need more, apply to increase the quota to 200. Master node configuration: If dedicated master nodes are not enabled, master node configuration matches data nodes; otherwise, master node configuration is independent. Dedicated master node configuration: If you need to enable dedicated master nodes, the default number is 3. Kibana node configuration: The number is fixed at 1. Coordinator node configuration: If enabled, configure at least 2 coordinator nodes for production environments. The configurable range is 2–50. Warm data nodes: If enabled, configure at least 3 warm data nodes for production environments, up to 100. Cold data nodes: If enabled, configure at least 2 cold data nodes for production environments, up to 100.
+        :param builtins.str resource_spec_name: Compute resource specification name. You can call the DescribeNodeAvailableSpecs API to get the list of available node specifications. For details, see V2 instance specifications.
+        :param builtins.int storage_size: Storage capacity, measured in GiB. Default value is 100 GiB, adjustment step is 10 GiB. Note: StorageSize for Kibana nodes is set to 0, i.e., "StorageSize": 0. StorageSize for dedicated master and coordinator nodes defaults to 20
+        :param builtins.str storage_spec_name: Storage specification name. Currently supported specifications: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0. es.volume.essd.flexpl-standard: Standard Edition   - High Performance Cloud Disk   - flexpl. Note: StorageSpecName for Kibana nodes is set to empty, i.e., "StorageSpecName": ""
+        :param builtins.str type: Node type. Please understand the function of each node type first, then determine whether to create based on your business needs. For details, see node types. Master: Master node. Hot: Data node. Cold: Cold data node. Warm: Warm data node. Kibana: Kibana node. Coordinator: Coordinator node
         """
         pulumi.set(__self__, "extra_performance", extra_performance)
         pulumi.set(__self__, "number", number)
@@ -3318,7 +3318,7 @@ class GetInstanceInstanceConfigurationNodeSpecsAssignResult(dict):
     @pulumi.getter(name="extraPerformance")
     def extra_performance(self) -> 'outputs.GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceResult':
         """
-        磁盘额外性能包相关配置。
+        Disk extra performance package configuration.
         """
         return pulumi.get(self, "extra_performance")
 
@@ -3326,7 +3326,7 @@ class GetInstanceInstanceConfigurationNodeSpecsAssignResult(dict):
     @pulumi.getter
     def number(self) -> builtins.int:
         """
-        节点数量。配置数据节点数量时，在不同部署方式下，需要注意以下信息：单可用区部署：建议生产环境至少配置 3 个数据节点，配置 2 个节点时存在脑裂风险。如果启用专有主节点，2 个数据节点不会脑裂。双可用区部署，默认启用专有主节点：建议生产环境至少配置 4 个数据节点，即每个可用区两个数据节点。三可用区部署，默认启用专有主节点：建议生产环境至少配置 6 个数据节点，即每个可用区两个数据节点。数据节点数量可设范围为 1~100，如果有更多数据节点的需求，可申请开白提升配额到 200。配置 Master 节点：如果没有启用专有主节点，那么 Master 节点的配置和数据节点相同，否则 Master 配置是独立的。配置专有主节点，如需启用专有主节点，数量默认配置为 3。配置 Kibana 节点，数量固定为 1。配置协调节点，如需启用，生产环境建议至少 2 个协调节点，可配范围为 2~50。温数据节点：如需启用，生产环境建议至少 3 个温数据节点，最多可配置 100 个。冷数据节点：如需启用，生产环境建议至少 2 个温数据节点，最多可配置 100 个。
+        Node count. When configuring the number of data nodes, note the following based on deployment mode: Single availability zone deployment: For production environments, configure at least 3 data nodes. Configuring 2 nodes poses a split-brain risk. If dedicated master nodes are enabled, 2 data nodes will not result in split-brain. Dual availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 4 data nodes—2 per availability zone. Triple availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 6 data nodes—2 per availability zone. You can set the number of data nodes from 1 to 100. If you need more, apply to increase the quota to 200. Master node configuration: If dedicated master nodes are not enabled, master node configuration matches data nodes; otherwise, master node configuration is independent. Dedicated master node configuration: If you need to enable dedicated master nodes, the default number is 3. Kibana node configuration: The number is fixed at 1. Coordinator node configuration: If enabled, configure at least 2 coordinator nodes for production environments. The configurable range is 2–50. Warm data nodes: If enabled, configure at least 3 warm data nodes for production environments, up to 100. Cold data nodes: If enabled, configure at least 2 cold data nodes for production environments, up to 100.
         """
         return pulumi.get(self, "number")
 
@@ -3334,7 +3334,7 @@ class GetInstanceInstanceConfigurationNodeSpecsAssignResult(dict):
     @pulumi.getter(name="resourceSpecName")
     def resource_spec_name(self) -> builtins.str:
         """
-        计算资源规格名称。您可以通过调用DescribeNodeAvailableSpecs接口获取可用的节点规格列表。如需了解规格详情，请参见V2 实例规格
+        Compute resource specification name. You can call the DescribeNodeAvailableSpecs API to get the list of available node specifications. For details, see V2 instance specifications.
         """
         return pulumi.get(self, "resource_spec_name")
 
@@ -3342,7 +3342,7 @@ class GetInstanceInstanceConfigurationNodeSpecsAssignResult(dict):
     @pulumi.getter(name="storageSize")
     def storage_size(self) -> builtins.int:
         """
-        存储容量，单位为 GiB。默认值为 100GiB，调整步长为 10GiB。说明Kibana 节点的 StorageSize 设置为0，即"StorageSize": 0。专有主节点和协调节点的 StorageSize 默认是 20。
+        Storage capacity, measured in GiB. Default value is 100 GiB, adjustment step is 10 GiB. Note: StorageSize for Kibana nodes is set to 0, i.e., "StorageSize": 0. StorageSize for dedicated master and coordinator nodes defaults to 20
         """
         return pulumi.get(self, "storage_size")
 
@@ -3350,7 +3350,7 @@ class GetInstanceInstanceConfigurationNodeSpecsAssignResult(dict):
     @pulumi.getter(name="storageSpecName")
     def storage_spec_name(self) -> builtins.str:
         """
-        存储规格名称，当前支持的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0。es.volume.essd.flexpl-standard：标准版-高性能云盘-flexpl。说明Kibana 节点的 StorageSpecName 设置为空，即"StorageSpecName": ""。
+        Storage specification name. Currently supported specifications: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0. es.volume.essd.flexpl-standard: Standard Edition   - High Performance Cloud Disk   - flexpl. Note: StorageSpecName for Kibana nodes is set to empty, i.e., "StorageSpecName": ""
         """
         return pulumi.get(self, "storage_spec_name")
 
@@ -3358,7 +3358,7 @@ class GetInstanceInstanceConfigurationNodeSpecsAssignResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        节点类型。请先了解节点类型的作用，然后结合业务判断是否需要创建，详情请参见节点类型。Master：Master 节点。Hot：数据节点。Cold：冷数据节点。Warm：温数据节点。Kibana：Kibana 节点。Coordinator：协调节点。
+        Node type. Please understand the function of each node type first, then determine whether to create based on your business needs. For details, see node types. Master: Master node. Hot: Data node. Cold: Cold data node. Warm: Warm data node. Kibana: Kibana node. Coordinator: Coordinator node
         """
         return pulumi.get(self, "type")
 
@@ -3368,7 +3368,7 @@ class GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceResult(dict
     def __init__(__self__, *,
                  throughput: builtins.int):
         """
-        :param builtins.int throughput: 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+        :param builtins.int throughput: When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
         """
         pulumi.set(__self__, "throughput", throughput)
 
@@ -3376,7 +3376,7 @@ class GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceResult(dict
     @pulumi.getter
     def throughput(self) -> builtins.int:
         """
-        当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+        When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
         """
         return pulumi.get(self, "throughput")
 
@@ -3388,7 +3388,7 @@ class GetInstanceInstanceConfigurationSubnetResult(dict):
                  subnet_name: builtins.str):
         """
         :param builtins.str subnet_id: Subnet ID。
-        :param builtins.str subnet_name: Subnet 名称。
+        :param builtins.str subnet_name: Subnet name
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "subnet_name", subnet_name)
@@ -3405,7 +3405,7 @@ class GetInstanceInstanceConfigurationSubnetResult(dict):
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> builtins.str:
         """
-        Subnet 名称。
+        Subnet name
         """
         return pulumi.get(self, "subnet_name")
 
@@ -3416,8 +3416,8 @@ class GetInstanceInstanceConfigurationTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
-        :param builtins.str value: 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+        :param builtins.str key: Tag key for user labels. Length limit: 1–128 characters. Case-sensitive. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and @ are allowed. Duplicate tag keys are not allowed for the same resource
+        :param builtins.str value: Tag value for user tag. Length limit: 0–256 characters. Case-sensitive, cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscore (_), period (.), colon (:), slash (/), equals (=), plus (+), minus (-), and @
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -3426,7 +3426,7 @@ class GetInstanceInstanceConfigurationTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+        Tag key for user labels. Length limit: 1–128 characters. Case-sensitive. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and @ are allowed. Duplicate tag keys are not allowed for the same resource
         """
         return pulumi.get(self, "key")
 
@@ -3434,7 +3434,7 @@ class GetInstanceInstanceConfigurationTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+        Tag value for user tag. Length limit: 0–256 characters. Case-sensitive, cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscore (_), period (.), colon (:), slash (/), equals (=), plus (+), minus (-), and @
         """
         return pulumi.get(self, "value")
 
@@ -3446,7 +3446,7 @@ class GetInstanceInstanceConfigurationVpcResult(dict):
                  vpc_name: builtins.str):
         """
         :param builtins.str vpc_id: VPC ID。
-        :param builtins.str vpc_name: VPC 名称。
+        :param builtins.str vpc_name: VPC name
         """
         pulumi.set(__self__, "vpc_id", vpc_id)
         pulumi.set(__self__, "vpc_name", vpc_name)
@@ -3463,7 +3463,7 @@ class GetInstanceInstanceConfigurationVpcResult(dict):
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> builtins.str:
         """
-        VPC 名称。
+        VPC name
         """
         return pulumi.get(self, "vpc_name")
 
@@ -3477,11 +3477,11 @@ class GetInstanceInstanceConfigurationWarmNodeResourceSpecResult(dict):
                  memory: builtins.int,
                  name: builtins.str):
         """
-        :param builtins.int cpu: 节点规格的 CPU 资源，单位为核（Core）
-        :param builtins.str description: 节点规格的描述信息
-        :param builtins.str display_name: 节点规格的显示名称
-        :param builtins.int memory: 节点规格的内存容量，单位 GiB
-        :param builtins.str name: 节点规格。如需了解节点规格类型和详情
+        :param builtins.int cpu: CPU resources for node specification, measured in cores.
+        :param builtins.str description: Description of node specification
+        :param builtins.str display_name: Display name of node specification.
+        :param builtins.int memory: Memory capacity for node specification, measured in GiB
+        :param builtins.str name: Node specification. For details on node specification types and details.
         """
         pulumi.set(__self__, "cpu", cpu)
         pulumi.set(__self__, "description", description)
@@ -3493,7 +3493,7 @@ class GetInstanceInstanceConfigurationWarmNodeResourceSpecResult(dict):
     @pulumi.getter
     def cpu(self) -> builtins.int:
         """
-        节点规格的 CPU 资源，单位为核（Core）
+        CPU resources for node specification, measured in cores.
         """
         return pulumi.get(self, "cpu")
 
@@ -3501,7 +3501,7 @@ class GetInstanceInstanceConfigurationWarmNodeResourceSpecResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        节点规格的描述信息
+        Description of node specification
         """
         return pulumi.get(self, "description")
 
@@ -3509,7 +3509,7 @@ class GetInstanceInstanceConfigurationWarmNodeResourceSpecResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        节点规格的显示名称
+        Display name of node specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -3517,7 +3517,7 @@ class GetInstanceInstanceConfigurationWarmNodeResourceSpecResult(dict):
     @pulumi.getter
     def memory(self) -> builtins.int:
         """
-        节点规格的内存容量，单位 GiB
+        Memory capacity for node specification, measured in GiB
         """
         return pulumi.get(self, "memory")
 
@@ -3525,7 +3525,7 @@ class GetInstanceInstanceConfigurationWarmNodeResourceSpecResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        节点规格。如需了解节点规格类型和详情
+        Node specification. For details on node specification types and details.
         """
         return pulumi.get(self, "name")
 
@@ -3540,12 +3540,12 @@ class GetInstanceInstanceConfigurationWarmNodeStorageSpecResult(dict):
                  name: builtins.str,
                  size: builtins.int):
         """
-        :param builtins.str description: 存储规格的描述信息
-        :param builtins.str display_name: 存储规格的显示名称
-        :param builtins.int max_size: 存储规格的最大值，单位为 GiB
-        :param builtins.int min_size: 存储规格最小值，单位为 GiB
-        :param builtins.str name: 存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
-        :param builtins.int size: 当前存储规格值，单位为 GiB
+        :param builtins.str description: Description of storage specification.
+        :param builtins.str display_name: Display name of storage specification.
+        :param builtins.int max_size: Maximum storage specification, measured in GiB
+        :param builtins.int min_size: Minimum value for storage specification, unit: GiB.
+        :param builtins.str name: Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
+        :param builtins.int size: Current storage specification value, in GiB.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
@@ -3558,7 +3558,7 @@ class GetInstanceInstanceConfigurationWarmNodeStorageSpecResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        存储规格的描述信息
+        Description of storage specification.
         """
         return pulumi.get(self, "description")
 
@@ -3566,7 +3566,7 @@ class GetInstanceInstanceConfigurationWarmNodeStorageSpecResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        存储规格的显示名称
+        Display name of storage specification.
         """
         return pulumi.get(self, "display_name")
 
@@ -3574,7 +3574,7 @@ class GetInstanceInstanceConfigurationWarmNodeStorageSpecResult(dict):
     @pulumi.getter(name="maxSize")
     def max_size(self) -> builtins.int:
         """
-        存储规格的最大值，单位为 GiB
+        Maximum storage specification, measured in GiB
         """
         return pulumi.get(self, "max_size")
 
@@ -3582,7 +3582,7 @@ class GetInstanceInstanceConfigurationWarmNodeStorageSpecResult(dict):
     @pulumi.getter(name="minSize")
     def min_size(self) -> builtins.int:
         """
-        存储规格最小值，单位为 GiB
+        Minimum value for storage specification, unit: GiB.
         """
         return pulumi.get(self, "min_size")
 
@@ -3590,7 +3590,7 @@ class GetInstanceInstanceConfigurationWarmNodeStorageSpecResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        存储规格，当前的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0
+        Storage specification. Current specification: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0
         """
         return pulumi.get(self, "name")
 
@@ -3598,7 +3598,7 @@ class GetInstanceInstanceConfigurationWarmNodeStorageSpecResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        当前存储规格值，单位为 GiB
+        Current storage specification value, in GiB.
         """
         return pulumi.get(self, "size")
 
@@ -3610,9 +3610,9 @@ class GetInstanceKibanaConfigResult(dict):
                  session_keep_alive: builtins.bool,
                  session_ttl: builtins.int):
         """
-        :param builtins.int request_timeout: 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
-        :param builtins.bool session_keep_alive: 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
-        :param builtins.int session_ttl: 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+        :param builtins.int request_timeout: API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
+        :param builtins.bool session_keep_alive: Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
+        :param builtins.int session_ttl: Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
         """
         pulumi.set(__self__, "request_timeout", request_timeout)
         pulumi.set(__self__, "session_keep_alive", session_keep_alive)
@@ -3622,7 +3622,7 @@ class GetInstanceKibanaConfigResult(dict):
     @pulumi.getter(name="requestTimeout")
     def request_timeout(self) -> builtins.int:
         """
-        接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+        API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
         """
         return pulumi.get(self, "request_timeout")
 
@@ -3630,7 +3630,7 @@ class GetInstanceKibanaConfigResult(dict):
     @pulumi.getter(name="sessionKeepAlive")
     def session_keep_alive(self) -> builtins.bool:
         """
-        是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+        Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
         """
         return pulumi.get(self, "session_keep_alive")
 
@@ -3638,7 +3638,7 @@ class GetInstanceKibanaConfigResult(dict):
     @pulumi.getter(name="sessionTtl")
     def session_ttl(self) -> builtins.int:
         """
-        会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+        Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
         """
         return pulumi.get(self, "session_ttl")
 
@@ -3650,9 +3650,9 @@ class GetInstanceSubInstanceResult(dict):
                  sub_instance_status: builtins.str,
                  sub_instance_type: builtins.str):
         """
-        :param builtins.str sub_instance_id: 企业级 SQL 分析实例 ID。
-        :param builtins.str sub_instance_status: 实例状态。
-        :param builtins.str sub_instance_type: 实例类型。
+        :param builtins.str sub_instance_id: Enterprise-level SQL analysis instance ID.
+        :param builtins.str sub_instance_status: Instance status
+        :param builtins.str sub_instance_type: Instance type
         """
         pulumi.set(__self__, "sub_instance_id", sub_instance_id)
         pulumi.set(__self__, "sub_instance_status", sub_instance_status)
@@ -3662,7 +3662,7 @@ class GetInstanceSubInstanceResult(dict):
     @pulumi.getter(name="subInstanceId")
     def sub_instance_id(self) -> builtins.str:
         """
-        企业级 SQL 分析实例 ID。
+        Enterprise-level SQL analysis instance ID.
         """
         return pulumi.get(self, "sub_instance_id")
 
@@ -3670,7 +3670,7 @@ class GetInstanceSubInstanceResult(dict):
     @pulumi.getter(name="subInstanceStatus")
     def sub_instance_status(self) -> builtins.str:
         """
-        实例状态。
+        Instance status
         """
         return pulumi.get(self, "sub_instance_status")
 
@@ -3678,7 +3678,7 @@ class GetInstanceSubInstanceResult(dict):
     @pulumi.getter(name="subInstanceType")
     def sub_instance_type(self) -> builtins.str:
         """
-        实例类型。
+        Instance type
         """
         return pulumi.get(self, "sub_instance_type")
 
@@ -3693,10 +3693,10 @@ class GetInstanceTransferInfoResult(dict):
                  transfer_task_id: builtins.str):
         """
         :param builtins.bool forbid_stop: ForbidStop
-        :param 'GetInstanceTransferInfoReduceSpecConfigArgs' reduce_spec_config: 资源信息。
-        :param builtins.float transfer_progress: 数据迁移任务进度，百分制。
-        :param builtins.str transfer_status: 数据迁移任务状态。
-        :param builtins.str transfer_task_id: 数据迁移任务 ID。
+        :param 'GetInstanceTransferInfoReduceSpecConfigArgs' reduce_spec_config: Resource information
+        :param builtins.float transfer_progress: Data migration task progress, percentage
+        :param builtins.str transfer_status: Data migration task status
+        :param builtins.str transfer_task_id: Data migration task ID
         """
         pulumi.set(__self__, "forbid_stop", forbid_stop)
         pulumi.set(__self__, "reduce_spec_config", reduce_spec_config)
@@ -3716,7 +3716,7 @@ class GetInstanceTransferInfoResult(dict):
     @pulumi.getter(name="reduceSpecConfig")
     def reduce_spec_config(self) -> 'outputs.GetInstanceTransferInfoReduceSpecConfigResult':
         """
-        资源信息。
+        Resource information
         """
         return pulumi.get(self, "reduce_spec_config")
 
@@ -3724,7 +3724,7 @@ class GetInstanceTransferInfoResult(dict):
     @pulumi.getter(name="transferProgress")
     def transfer_progress(self) -> builtins.float:
         """
-        数据迁移任务进度，百分制。
+        Data migration task progress, percentage
         """
         return pulumi.get(self, "transfer_progress")
 
@@ -3732,7 +3732,7 @@ class GetInstanceTransferInfoResult(dict):
     @pulumi.getter(name="transferStatus")
     def transfer_status(self) -> builtins.str:
         """
-        数据迁移任务状态。
+        Data migration task status
         """
         return pulumi.get(self, "transfer_status")
 
@@ -3740,7 +3740,7 @@ class GetInstanceTransferInfoResult(dict):
     @pulumi.getter(name="transferTaskId")
     def transfer_task_id(self) -> builtins.str:
         """
-        数据迁移任务 ID。
+        Data migration task ID
         """
         return pulumi.get(self, "transfer_task_id")
 
@@ -3754,11 +3754,11 @@ class GetInstanceTransferInfoReduceSpecConfigResult(dict):
                  master_node_num: builtins.int,
                  warm_node_num: builtins.int):
         """
-        :param builtins.int cold_node_num: 冷节点数量。
-        :param builtins.int data_node_num: 数据节点数量。
-        :param builtins.bool enable_pure_master: Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
-        :param builtins.int master_node_num: Master 节点数量。
-        :param builtins.int warm_node_num: 温节点数量。
+        :param builtins.int cold_node_num: Number of cold nodes.
+        :param builtins.int data_node_num: Number of data nodes
+        :param builtins.bool enable_pure_master: Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
+        :param builtins.int master_node_num: Number of master nodes.
+        :param builtins.int warm_node_num: Number of warm nodes
         """
         pulumi.set(__self__, "cold_node_num", cold_node_num)
         pulumi.set(__self__, "data_node_num", data_node_num)
@@ -3770,7 +3770,7 @@ class GetInstanceTransferInfoReduceSpecConfigResult(dict):
     @pulumi.getter(name="coldNodeNum")
     def cold_node_num(self) -> builtins.int:
         """
-        冷节点数量。
+        Number of cold nodes.
         """
         return pulumi.get(self, "cold_node_num")
 
@@ -3778,7 +3778,7 @@ class GetInstanceTransferInfoReduceSpecConfigResult(dict):
     @pulumi.getter(name="dataNodeNum")
     def data_node_num(self) -> builtins.int:
         """
-        数据节点数量。
+        Number of data nodes
         """
         return pulumi.get(self, "data_node_num")
 
@@ -3786,7 +3786,7 @@ class GetInstanceTransferInfoReduceSpecConfigResult(dict):
     @pulumi.getter(name="enablePureMaster")
     def enable_pure_master(self) -> builtins.bool:
         """
-        Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+        Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
         """
         return pulumi.get(self, "enable_pure_master")
 
@@ -3794,7 +3794,7 @@ class GetInstanceTransferInfoReduceSpecConfigResult(dict):
     @pulumi.getter(name="masterNodeNum")
     def master_node_num(self) -> builtins.int:
         """
-        Master 节点数量。
+        Number of master nodes.
         """
         return pulumi.get(self, "master_node_num")
 
@@ -3802,7 +3802,7 @@ class GetInstanceTransferInfoReduceSpecConfigResult(dict):
     @pulumi.getter(name="warmNodeNum")
     def warm_node_num(self) -> builtins.int:
         """
-        温节点数量。
+        Number of warm nodes
         """
         return pulumi.get(self, "warm_node_num")
 

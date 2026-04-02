@@ -340,15 +340,15 @@ if not MYPY:
     class DomainAreaAccessRuleArgsDict(TypedDict):
         areas: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示一个国家列表，对该列表应用白名单或者黑名单。当 Switch 是 true 时，该参数为必填。国家的名称使用简写来表示。多个国家名称使用英文逗号（,）分隔。
+        Indicates a list of countries to which an allowlist or denylist is applied. When Switch is true, this parameter is required. Country names are represented in abbreviated form. Multiple country names are separated by commas (,).
         """
         rule_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示 "地域访问控制" 特性的规则类型。该参数有以下取值：deny：表示白名单。allow：表示黑名单。
+        Indicates the rule type for the 'region access control' feature. This parameter has the following values: deny: indicates Denylist. allow: indicates Allowlist.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
         """
 elif False:
     DomainAreaAccessRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -360,9 +360,9 @@ class DomainAreaAccessRuleArgs:
                  rule_type: Optional[pulumi.Input[builtins.str]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] areas: 表示一个国家列表，对该列表应用白名单或者黑名单。当 Switch 是 true 时，该参数为必填。国家的名称使用简写来表示。多个国家名称使用英文逗号（,）分隔。
-        :param pulumi.Input[builtins.str] rule_type: 表示 "地域访问控制" 特性的规则类型。该参数有以下取值：deny：表示白名单。allow：表示黑名单。
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] areas: Indicates a list of countries to which an allowlist or denylist is applied. When Switch is true, this parameter is required. Country names are represented in abbreviated form. Multiple country names are separated by commas (,).
+        :param pulumi.Input[builtins.str] rule_type: Indicates the rule type for the 'region access control' feature. This parameter has the following values: deny: indicates Denylist. allow: indicates Allowlist.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
         """
         if areas is not None:
             pulumi.set(__self__, "areas", areas)
@@ -375,7 +375,7 @@ class DomainAreaAccessRuleArgs:
     @pulumi.getter
     def areas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示一个国家列表，对该列表应用白名单或者黑名单。当 Switch 是 true 时，该参数为必填。国家的名称使用简写来表示。多个国家名称使用英文逗号（,）分隔。
+        Indicates a list of countries to which an allowlist or denylist is applied. When Switch is true, this parameter is required. Country names are represented in abbreviated form. Multiple country names are separated by commas (,).
         """
         return pulumi.get(self, "areas")
 
@@ -387,7 +387,7 @@ class DomainAreaAccessRuleArgs:
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 "地域访问控制" 特性的规则类型。该参数有以下取值：deny：表示白名单。allow：表示黑名单。
+        Indicates the rule type for the 'region access control' feature. This parameter has the following values: deny: indicates Denylist. allow: indicates Allowlist.
         """
         return pulumi.get(self, "rule_type")
 
@@ -399,7 +399,7 @@ class DomainAreaAccessRuleArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
         """
         return pulumi.get(self, "switch")
 
@@ -412,11 +412,11 @@ if not MYPY:
     class DomainBrowserCachArgsDict(TypedDict):
         cache_action: NotRequired[pulumi.Input['DomainBrowserCachCacheActionArgsDict']]
         """
-        表示缓存行为的相关配置。
+        Indicates the relevant configuration for cache behavior.
         """
         condition: NotRequired[pulumi.Input['DomainBrowserCachConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
 elif False:
     DomainBrowserCachArgsDict: TypeAlias = Mapping[str, Any]
@@ -427,8 +427,8 @@ class DomainBrowserCachArgs:
                  cache_action: Optional[pulumi.Input['DomainBrowserCachCacheActionArgs']] = None,
                  condition: Optional[pulumi.Input['DomainBrowserCachConditionArgs']] = None):
         """
-        :param pulumi.Input['DomainBrowserCachCacheActionArgs'] cache_action: 表示缓存行为的相关配置。
-        :param pulumi.Input['DomainBrowserCachConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param pulumi.Input['DomainBrowserCachCacheActionArgs'] cache_action: Indicates the relevant configuration for cache behavior.
+        :param pulumi.Input['DomainBrowserCachConditionArgs'] condition: Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         if cache_action is not None:
             pulumi.set(__self__, "cache_action", cache_action)
@@ -439,7 +439,7 @@ class DomainBrowserCachArgs:
     @pulumi.getter(name="cacheAction")
     def cache_action(self) -> Optional[pulumi.Input['DomainBrowserCachCacheActionArgs']]:
         """
-        表示缓存行为的相关配置。
+        Indicates the relevant configuration for cache behavior.
         """
         return pulumi.get(self, "cache_action")
 
@@ -451,7 +451,7 @@ class DomainBrowserCachArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainBrowserCachConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -464,19 +464,19 @@ if not MYPY:
     class DomainBrowserCachCacheActionArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
         """
         default_policy: NotRequired[pulumi.Input[builtins.str]]
         """
-        该参数被多个 CDN 特性共享。
+        This parameter is shared by multiple CDN features.
         """
         ignore_case: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+        Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
         """
         ttl: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
         """
 elif False:
     DomainBrowserCachCacheActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -489,10 +489,10 @@ class DomainBrowserCachCacheActionArgs:
                  ignore_case: Optional[pulumi.Input[builtins.bool]] = None,
                  ttl: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
-        :param pulumi.Input[builtins.str] default_policy: 该参数被多个 CDN 特性共享。
-        :param pulumi.Input[builtins.bool] ignore_case: 表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
-        :param pulumi.Input[builtins.int] ttl: 表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        :param pulumi.Input[builtins.str] action: Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
+        :param pulumi.Input[builtins.str] default_policy: This parameter is shared by multiple CDN features.
+        :param pulumi.Input[builtins.bool] ignore_case: Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
+        :param pulumi.Input[builtins.int] ttl: Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -507,7 +507,7 @@ class DomainBrowserCachCacheActionArgs:
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
         """
         return pulumi.get(self, "action")
 
@@ -519,7 +519,7 @@ class DomainBrowserCachCacheActionArgs:
     @pulumi.getter(name="defaultPolicy")
     def default_policy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        该参数被多个 CDN 特性共享。
+        This parameter is shared by multiple CDN features.
         """
         return pulumi.get(self, "default_policy")
 
@@ -531,7 +531,7 @@ class DomainBrowserCachCacheActionArgs:
     @pulumi.getter(name="ignoreCase")
     def ignore_case(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+        Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
         """
         return pulumi.get(self, "ignore_case")
 
@@ -543,7 +543,7 @@ class DomainBrowserCachCacheActionArgs:
     @pulumi.getter
     def ttl(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
         """
         return pulumi.get(self, "ttl")
 
@@ -557,7 +557,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainBrowserCachConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainBrowserCachConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -568,7 +568,7 @@ class DomainBrowserCachConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainBrowserCachConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -588,7 +588,7 @@ class DomainBrowserCachConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -601,23 +601,23 @@ if not MYPY:
     class DomainBrowserCachConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainBrowserCachConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -631,11 +631,11 @@ class DomainBrowserCachConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -652,7 +652,7 @@ class DomainBrowserCachConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -664,7 +664,7 @@ class DomainBrowserCachConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -676,7 +676,7 @@ class DomainBrowserCachConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -688,7 +688,7 @@ class DomainBrowserCachConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -700,7 +700,7 @@ class DomainBrowserCachConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -713,11 +713,11 @@ if not MYPY:
     class DomainCachArgsDict(TypedDict):
         cache_action: NotRequired[pulumi.Input['DomainCachCacheActionArgsDict']]
         """
-        表示缓存行为的相关配置。
+        Indicates the relevant configuration for cache behavior.
         """
         condition: NotRequired[pulumi.Input['DomainCachConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
 elif False:
     DomainCachArgsDict: TypeAlias = Mapping[str, Any]
@@ -728,8 +728,8 @@ class DomainCachArgs:
                  cache_action: Optional[pulumi.Input['DomainCachCacheActionArgs']] = None,
                  condition: Optional[pulumi.Input['DomainCachConditionArgs']] = None):
         """
-        :param pulumi.Input['DomainCachCacheActionArgs'] cache_action: 表示缓存行为的相关配置。
-        :param pulumi.Input['DomainCachConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param pulumi.Input['DomainCachCacheActionArgs'] cache_action: Indicates the relevant configuration for cache behavior.
+        :param pulumi.Input['DomainCachConditionArgs'] condition: Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         if cache_action is not None:
             pulumi.set(__self__, "cache_action", cache_action)
@@ -740,7 +740,7 @@ class DomainCachArgs:
     @pulumi.getter(name="cacheAction")
     def cache_action(self) -> Optional[pulumi.Input['DomainCachCacheActionArgs']]:
         """
-        表示缓存行为的相关配置。
+        Indicates the relevant configuration for cache behavior.
         """
         return pulumi.get(self, "cache_action")
 
@@ -752,7 +752,7 @@ class DomainCachArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainCachConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -765,19 +765,19 @@ if not MYPY:
     class DomainCachCacheActionArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
         """
         default_policy: NotRequired[pulumi.Input[builtins.str]]
         """
-        该参数被多个 CDN 特性共享。
+        This parameter is shared by multiple CDN features.
         """
         ignore_case: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+        Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
         """
         ttl: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
         """
 elif False:
     DomainCachCacheActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -790,10 +790,10 @@ class DomainCachCacheActionArgs:
                  ignore_case: Optional[pulumi.Input[builtins.bool]] = None,
                  ttl: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
-        :param pulumi.Input[builtins.str] default_policy: 该参数被多个 CDN 特性共享。
-        :param pulumi.Input[builtins.bool] ignore_case: 表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
-        :param pulumi.Input[builtins.int] ttl: 表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        :param pulumi.Input[builtins.str] action: Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
+        :param pulumi.Input[builtins.str] default_policy: This parameter is shared by multiple CDN features.
+        :param pulumi.Input[builtins.bool] ignore_case: Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
+        :param pulumi.Input[builtins.int] ttl: Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -808,7 +808,7 @@ class DomainCachCacheActionArgs:
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
         """
         return pulumi.get(self, "action")
 
@@ -820,7 +820,7 @@ class DomainCachCacheActionArgs:
     @pulumi.getter(name="defaultPolicy")
     def default_policy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        该参数被多个 CDN 特性共享。
+        This parameter is shared by multiple CDN features.
         """
         return pulumi.get(self, "default_policy")
 
@@ -832,7 +832,7 @@ class DomainCachCacheActionArgs:
     @pulumi.getter(name="ignoreCase")
     def ignore_case(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+        Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
         """
         return pulumi.get(self, "ignore_case")
 
@@ -844,7 +844,7 @@ class DomainCachCacheActionArgs:
     @pulumi.getter
     def ttl(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
         """
         return pulumi.get(self, "ttl")
 
@@ -858,7 +858,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainCachConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainCachConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -869,7 +869,7 @@ class DomainCachConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainCachConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -889,7 +889,7 @@ class DomainCachConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -902,23 +902,23 @@ if not MYPY:
     class DomainCachConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainCachConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -932,11 +932,11 @@ class DomainCachConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -953,7 +953,7 @@ class DomainCachConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -965,7 +965,7 @@ class DomainCachConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -977,7 +977,7 @@ class DomainCachConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -989,7 +989,7 @@ class DomainCachConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -1001,7 +1001,7 @@ class DomainCachConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -1015,7 +1015,7 @@ if not MYPY:
         cache_host_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainCacheHostCacheHostRuleArgsDict']]]]
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
         """
 elif False:
     DomainCacheHostArgsDict: TypeAlias = Mapping[str, Any]
@@ -1026,7 +1026,7 @@ class DomainCacheHostArgs:
                  cache_host_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainCacheHostCacheHostRuleArgs']]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        :param pulumi.Input[builtins.bool] switch: Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
         """
         if cache_host_rules is not None:
             pulumi.set(__self__, "cache_host_rules", cache_host_rules)
@@ -1046,7 +1046,7 @@ class DomainCacheHostArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
         """
         return pulumi.get(self, "switch")
 
@@ -1059,11 +1059,11 @@ if not MYPY:
     class DomainCacheHostCacheHostRuleArgsDict(TypedDict):
         cache_host_action: NotRequired[pulumi.Input['DomainCacheHostCacheHostRuleCacheHostActionArgsDict']]
         """
-        表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        Indicates the target domain. The target domain must be an accelerated domain under your account. This parameter specifies that the Domain shares the cache of CacheHost.
         """
         condition: NotRequired[pulumi.Input['DomainCacheHostCacheHostRuleConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
 elif False:
     DomainCacheHostCacheHostRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -1074,8 +1074,8 @@ class DomainCacheHostCacheHostRuleArgs:
                  cache_host_action: Optional[pulumi.Input['DomainCacheHostCacheHostRuleCacheHostActionArgs']] = None,
                  condition: Optional[pulumi.Input['DomainCacheHostCacheHostRuleConditionArgs']] = None):
         """
-        :param pulumi.Input['DomainCacheHostCacheHostRuleCacheHostActionArgs'] cache_host_action: 表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
-        :param pulumi.Input['DomainCacheHostCacheHostRuleConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param pulumi.Input['DomainCacheHostCacheHostRuleCacheHostActionArgs'] cache_host_action: Indicates the target domain. The target domain must be an accelerated domain under your account. This parameter specifies that the Domain shares the cache of CacheHost.
+        :param pulumi.Input['DomainCacheHostCacheHostRuleConditionArgs'] condition: Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         if cache_host_action is not None:
             pulumi.set(__self__, "cache_host_action", cache_host_action)
@@ -1086,7 +1086,7 @@ class DomainCacheHostCacheHostRuleArgs:
     @pulumi.getter(name="cacheHostAction")
     def cache_host_action(self) -> Optional[pulumi.Input['DomainCacheHostCacheHostRuleCacheHostActionArgs']]:
         """
-        表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        Indicates the target domain. The target domain must be an accelerated domain under your account. This parameter specifies that the Domain shares the cache of CacheHost.
         """
         return pulumi.get(self, "cache_host_action")
 
@@ -1098,7 +1098,7 @@ class DomainCacheHostCacheHostRuleArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainCacheHostCacheHostRuleConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -1111,7 +1111,7 @@ if not MYPY:
     class DomainCacheHostCacheHostRuleCacheHostActionArgsDict(TypedDict):
         cache_host: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        Specifies the target domain name. The target domain name must be an acceleration domain under your account. This parameter indicates that Domain shares the cache of CacheHost.
         """
 elif False:
     DomainCacheHostCacheHostRuleCacheHostActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -1121,7 +1121,7 @@ class DomainCacheHostCacheHostRuleCacheHostActionArgs:
     def __init__(__self__, *,
                  cache_host: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] cache_host: 表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        :param pulumi.Input[builtins.str] cache_host: Specifies the target domain name. The target domain name must be an acceleration domain under your account. This parameter indicates that Domain shares the cache of CacheHost.
         """
         if cache_host is not None:
             pulumi.set(__self__, "cache_host", cache_host)
@@ -1130,7 +1130,7 @@ class DomainCacheHostCacheHostRuleCacheHostActionArgs:
     @pulumi.getter(name="cacheHost")
     def cache_host(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        Specifies the target domain name. The target domain name must be an acceleration domain under your account. This parameter indicates that Domain shares the cache of CacheHost.
         """
         return pulumi.get(self, "cache_host")
 
@@ -1144,7 +1144,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainCacheHostCacheHostRuleConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainCacheHostCacheHostRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -1155,7 +1155,7 @@ class DomainCacheHostCacheHostRuleConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainCacheHostCacheHostRuleConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -1175,7 +1175,7 @@ class DomainCacheHostCacheHostRuleConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -1188,23 +1188,23 @@ if not MYPY:
     class DomainCacheHostCacheHostRuleConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainCacheHostCacheHostRuleConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -1218,11 +1218,11 @@ class DomainCacheHostCacheHostRuleConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1239,7 +1239,7 @@ class DomainCacheHostCacheHostRuleConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -1251,7 +1251,7 @@ class DomainCacheHostCacheHostRuleConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -1263,7 +1263,7 @@ class DomainCacheHostCacheHostRuleConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -1275,7 +1275,7 @@ class DomainCacheHostCacheHostRuleConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -1287,7 +1287,7 @@ class DomainCacheHostCacheHostRuleConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -1300,11 +1300,11 @@ if not MYPY:
     class DomainCacheKeyArgsDict(TypedDict):
         cache_key_action: NotRequired[pulumi.Input['DomainCacheKeyCacheKeyActionArgsDict']]
         """
-        表示在 Condition 情况下，内容分发网络执行的操作。
+        Indicates the action performed by the content delivery network under the Condition scenario.
         """
         condition: NotRequired[pulumi.Input['DomainCacheKeyConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
 elif False:
     DomainCacheKeyArgsDict: TypeAlias = Mapping[str, Any]
@@ -1315,8 +1315,8 @@ class DomainCacheKeyArgs:
                  cache_key_action: Optional[pulumi.Input['DomainCacheKeyCacheKeyActionArgs']] = None,
                  condition: Optional[pulumi.Input['DomainCacheKeyConditionArgs']] = None):
         """
-        :param pulumi.Input['DomainCacheKeyCacheKeyActionArgs'] cache_key_action: 表示在 Condition 情况下，内容分发网络执行的操作。
-        :param pulumi.Input['DomainCacheKeyConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param pulumi.Input['DomainCacheKeyCacheKeyActionArgs'] cache_key_action: Indicates the action performed by the content delivery network under the Condition scenario.
+        :param pulumi.Input['DomainCacheKeyConditionArgs'] condition: Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         if cache_key_action is not None:
             pulumi.set(__self__, "cache_key_action", cache_key_action)
@@ -1327,7 +1327,7 @@ class DomainCacheKeyArgs:
     @pulumi.getter(name="cacheKeyAction")
     def cache_key_action(self) -> Optional[pulumi.Input['DomainCacheKeyCacheKeyActionArgs']]:
         """
-        表示在 Condition 情况下，内容分发网络执行的操作。
+        Indicates the action performed by the content delivery network under the Condition scenario.
         """
         return pulumi.get(self, "cache_key_action")
 
@@ -1339,7 +1339,7 @@ class DomainCacheKeyArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainCacheKeyConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -1375,19 +1375,19 @@ if not MYPY:
     class DomainCacheKeyCacheKeyActionCacheKeyComponentArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        执行动作，修改时需要指定。该参数有以下取值：exclude：缓存键不包括任何查询参数，也就是去参数缓存。include：缓存键包括所有的查询参数，也就是保留参数缓存。includePart：缓存键包括 Subobject 中的查询参数，也就是保留部分参数缓存。excludePart：缓存键不包括 Subobject 中的查询参数，也就是删除部分参数缓存。
+        Specifies the action to perform; required when modifying. This parameter has the following values: exclude: The cache key does not include any query parameters, which means parameters are removed from the cache. include: The cache key includes all query parameters, which means parameters are retained in the cache. includePart: The cache key includes query parameters in Subobject, which means some parameters are retained in the cache. excludePart: The cache key does not include query parameters in Subobject, which means some parameters are removed from the cache.
         """
         ignore_case: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示内容分发网络在匹配 Value 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+        Indicates whether the content delivery network ignores case when matching Value. The parameter values are: true: ignore case. false: do not ignore case. The default value is false.
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示需要设置的对象。当前您仅可指定 queryString。queryString 表示请求 URL 中的查询参数。
+        Indicates the object to be set. Currently, you can only specify queryString. queryString refers to the query parameters in the request URL.
         """
         subobject: NotRequired[pulumi.Input[builtins.str]]
         """
-        指定一个或者多个 Object 类型的对象。该参数的说明如下：如果Action 是 include 或者 exclude，Subobject的值必须是 *。* 表示全部查询参数。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。您指定的查询参数不能是 *，也不能包含连续斜杠（//）、百分号（%）、空格。多个查询参数名称使用英文分号（;）分隔。Subobject 的默认值是 *。
+        Specify one or more objects of the Object type. Parameter details: If Action is include or exclude, Subobject must be *. * means all query parameters. If Action is includePart or excludePart, you can specify one or more query parameters. The query parameters you specify cannot be *, and cannot contain consecutive slashes (//), percent signs (%), or spaces. Use a semicolon (;) to separate multiple query parameter names. The default value for Subobject is *.
         """
 elif False:
     DomainCacheKeyCacheKeyActionCacheKeyComponentArgsDict: TypeAlias = Mapping[str, Any]
@@ -1400,10 +1400,10 @@ class DomainCacheKeyCacheKeyActionCacheKeyComponentArgs:
                  object: Optional[pulumi.Input[builtins.str]] = None,
                  subobject: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 执行动作，修改时需要指定。该参数有以下取值：exclude：缓存键不包括任何查询参数，也就是去参数缓存。include：缓存键包括所有的查询参数，也就是保留参数缓存。includePart：缓存键包括 Subobject 中的查询参数，也就是保留部分参数缓存。excludePart：缓存键不包括 Subobject 中的查询参数，也就是删除部分参数缓存。
-        :param pulumi.Input[builtins.bool] ignore_case: 表示内容分发网络在匹配 Value 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
-        :param pulumi.Input[builtins.str] object: 表示需要设置的对象。当前您仅可指定 queryString。queryString 表示请求 URL 中的查询参数。
-        :param pulumi.Input[builtins.str] subobject: 指定一个或者多个 Object 类型的对象。该参数的说明如下：如果Action 是 include 或者 exclude，Subobject的值必须是 *。* 表示全部查询参数。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。您指定的查询参数不能是 *，也不能包含连续斜杠（//）、百分号（%）、空格。多个查询参数名称使用英文分号（;）分隔。Subobject 的默认值是 *。
+        :param pulumi.Input[builtins.str] action: Specifies the action to perform; required when modifying. This parameter has the following values: exclude: The cache key does not include any query parameters, which means parameters are removed from the cache. include: The cache key includes all query parameters, which means parameters are retained in the cache. includePart: The cache key includes query parameters in Subobject, which means some parameters are retained in the cache. excludePart: The cache key does not include query parameters in Subobject, which means some parameters are removed from the cache.
+        :param pulumi.Input[builtins.bool] ignore_case: Indicates whether the content delivery network ignores case when matching Value. The parameter values are: true: ignore case. false: do not ignore case. The default value is false.
+        :param pulumi.Input[builtins.str] object: Indicates the object to be set. Currently, you can only specify queryString. queryString refers to the query parameters in the request URL.
+        :param pulumi.Input[builtins.str] subobject: Specify one or more objects of the Object type. Parameter details: If Action is include or exclude, Subobject must be *. * means all query parameters. If Action is includePart or excludePart, you can specify one or more query parameters. The query parameters you specify cannot be *, and cannot contain consecutive slashes (//), percent signs (%), or spaces. Use a semicolon (;) to separate multiple query parameter names. The default value for Subobject is *.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -1418,7 +1418,7 @@ class DomainCacheKeyCacheKeyActionCacheKeyComponentArgs:
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        执行动作，修改时需要指定。该参数有以下取值：exclude：缓存键不包括任何查询参数，也就是去参数缓存。include：缓存键包括所有的查询参数，也就是保留参数缓存。includePart：缓存键包括 Subobject 中的查询参数，也就是保留部分参数缓存。excludePart：缓存键不包括 Subobject 中的查询参数，也就是删除部分参数缓存。
+        Specifies the action to perform; required when modifying. This parameter has the following values: exclude: The cache key does not include any query parameters, which means parameters are removed from the cache. include: The cache key includes all query parameters, which means parameters are retained in the cache. includePart: The cache key includes query parameters in Subobject, which means some parameters are retained in the cache. excludePart: The cache key does not include query parameters in Subobject, which means some parameters are removed from the cache.
         """
         return pulumi.get(self, "action")
 
@@ -1430,7 +1430,7 @@ class DomainCacheKeyCacheKeyActionCacheKeyComponentArgs:
     @pulumi.getter(name="ignoreCase")
     def ignore_case(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示内容分发网络在匹配 Value 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+        Indicates whether the content delivery network ignores case when matching Value. The parameter values are: true: ignore case. false: do not ignore case. The default value is false.
         """
         return pulumi.get(self, "ignore_case")
 
@@ -1442,7 +1442,7 @@ class DomainCacheKeyCacheKeyActionCacheKeyComponentArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示需要设置的对象。当前您仅可指定 queryString。queryString 表示请求 URL 中的查询参数。
+        Indicates the object to be set. Currently, you can only specify queryString. queryString refers to the query parameters in the request URL.
         """
         return pulumi.get(self, "object")
 
@@ -1454,7 +1454,7 @@ class DomainCacheKeyCacheKeyActionCacheKeyComponentArgs:
     @pulumi.getter
     def subobject(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定一个或者多个 Object 类型的对象。该参数的说明如下：如果Action 是 include 或者 exclude，Subobject的值必须是 *。* 表示全部查询参数。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。您指定的查询参数不能是 *，也不能包含连续斜杠（//）、百分号（%）、空格。多个查询参数名称使用英文分号（;）分隔。Subobject 的默认值是 *。
+        Specify one or more objects of the Object type. Parameter details: If Action is include or exclude, Subobject must be *. * means all query parameters. If Action is includePart or excludePart, you can specify one or more query parameters. The query parameters you specify cannot be *, and cannot contain consecutive slashes (//), percent signs (%), or spaces. Use a semicolon (;) to separate multiple query parameter names. The default value for Subobject is *.
         """
         return pulumi.get(self, "subobject")
 
@@ -1468,7 +1468,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainCacheKeyConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainCacheKeyConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -1479,7 +1479,7 @@ class DomainCacheKeyConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainCacheKeyConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -1499,7 +1499,7 @@ class DomainCacheKeyConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -1512,23 +1512,23 @@ if not MYPY:
     class DomainCacheKeyConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainCacheKeyConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -1542,11 +1542,11 @@ class DomainCacheKeyConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1563,7 +1563,7 @@ class DomainCacheKeyConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -1575,7 +1575,7 @@ class DomainCacheKeyConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -1587,7 +1587,7 @@ class DomainCacheKeyConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -1599,7 +1599,7 @@ class DomainCacheKeyConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -1611,7 +1611,7 @@ class DomainCacheKeyConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -1625,7 +1625,7 @@ if not MYPY:
         compression_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainCompressionCompressionRuleArgsDict']]]]
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+        Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
         """
 elif False:
     DomainCompressionArgsDict: TypeAlias = Mapping[str, Any]
@@ -1636,7 +1636,7 @@ class DomainCompressionArgs:
                  compression_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainCompressionCompressionRuleArgs']]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+        :param pulumi.Input[builtins.bool] switch: Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
         """
         if compression_rules is not None:
             pulumi.set(__self__, "compression_rules", compression_rules)
@@ -1656,7 +1656,7 @@ class DomainCompressionArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+        Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
         """
         return pulumi.get(self, "switch")
 
@@ -1669,11 +1669,11 @@ if not MYPY:
     class DomainCompressionCompressionRuleArgsDict(TypedDict):
         compression_action: NotRequired[pulumi.Input['DomainCompressionCompressionRuleCompressionActionArgsDict']]
         """
-        表示压缩操作的配置。
+        Represents the configuration for compression operations.
         """
         condition: NotRequired[pulumi.Input['DomainCompressionCompressionRuleConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
 elif False:
     DomainCompressionCompressionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -1684,8 +1684,8 @@ class DomainCompressionCompressionRuleArgs:
                  compression_action: Optional[pulumi.Input['DomainCompressionCompressionRuleCompressionActionArgs']] = None,
                  condition: Optional[pulumi.Input['DomainCompressionCompressionRuleConditionArgs']] = None):
         """
-        :param pulumi.Input['DomainCompressionCompressionRuleCompressionActionArgs'] compression_action: 表示压缩操作的配置。
-        :param pulumi.Input['DomainCompressionCompressionRuleConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param pulumi.Input['DomainCompressionCompressionRuleCompressionActionArgs'] compression_action: Represents the configuration for compression operations.
+        :param pulumi.Input['DomainCompressionCompressionRuleConditionArgs'] condition: Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         if compression_action is not None:
             pulumi.set(__self__, "compression_action", compression_action)
@@ -1696,7 +1696,7 @@ class DomainCompressionCompressionRuleArgs:
     @pulumi.getter(name="compressionAction")
     def compression_action(self) -> Optional[pulumi.Input['DomainCompressionCompressionRuleCompressionActionArgs']]:
         """
-        表示压缩操作的配置。
+        Represents the configuration for compression operations.
         """
         return pulumi.get(self, "compression_action")
 
@@ -1708,7 +1708,7 @@ class DomainCompressionCompressionRuleArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainCompressionCompressionRuleConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -1721,23 +1721,23 @@ if not MYPY:
     class DomainCompressionCompressionRuleCompressionActionArgsDict(TypedDict):
         compression_format: NotRequired[pulumi.Input[builtins.str]]
         """
-        如果匹配条件是基于 Content-Type 头部（此时，Condition 是 null 或不指定），该参数用来指定 Content-Type 的匹配条件，有以下取值：default: 表示匹配条件是 Content-Type 头部匹配默认 Content-Type 列表中包含的文件类型。customize：表示匹配条件是 Content-Type 头部匹配自定义的文件类型。如果 Conditon 不为 null，表示匹配条件是在 ConditionRule 中定义的。此时，该参数必须设置为 all。
+        If the matching condition is based on the Content-Type header (when Condition is null or not specified), this parameter specifies the matching criteria for Content-Type. The values are as follows: default: matches file types included in the default Content-Type list. customize: matches custom file types in the Content-Type header. If Condition is not null, the matching criteria are defined in ConditionRule. In this case, this parameter must be set to all.
         """
         compression_target: NotRequired[pulumi.Input[builtins.str]]
         """
-        指定压缩的文件类型。该参数的说明如下：如果 CompressionFormat 为 default，该参数必须设置为 *，表示默认的 Content-Type 列表。该列表包含以下文件类型：text/html、text/xml、text/plain、text/css、application/javascript、application/x-javascript、application/rss+xml、text/javascript、image/tiff、image/svg+xml、application/json、application/xml、text/plain; charset=utf-8。如果 CompressionFormat 为 customize，需要指定一个或者多个文件类型。多个文件类型以逗号（,）分隔。如果 CompressionFormat 为 all，该参数必须设置为 *。
+        Specifies the file types to compress. The parameter is described as follows: If CompressionFormat is default, this parameter must be set to *, indicating the default Content-Type list. The list includes the following file types: text/html, text/xml, text/plain, text/css, application/javascript, application/x-javascript, application/rss+xml, text/javascript, image/tiff, image/svg+xml, application/json, application/xml, text/plain; charset=utf-8. If CompressionFormat is customize, you need to specify one or more file types. Multiple file types are separated by commas (,). If CompressionFormat is all, this parameter must be set to *.
         """
         compression_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        压缩算法，gzip,br 指定类型压缩，default：默认所有文件压缩，次数Target为*；customize：自定义文件类型压缩. choices: [default, customize]
+        Compression algorithm: gzip and br specify the compression type. default: compresses all files by default, with the target count as *. customize: compresses custom file types. Choices: [default, customize]
         """
         max_file_size_kb: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示文件大小范围的最小值，CDN 仅对大小在 MinFileSizeKB 和 MaxFileSizeKB 所表示的范围内的文件进行压缩。该参数的取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。该参数的默认值是 0。
+        Indicates the minimum value for the file size range. CDN only compresses files within the range specified by MinFileSizeKB and MaxFileSizeKB. The parameter value range is 0   - 2,147,483,647, the unit is KB, and the base is 1,024. The default value is 0.
         """
         min_file_size_kb: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示文件大小范围的最大值，取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。如果不指定该参数，表示您不限制文件大小的上限。
+        Indicates the maximum value for the file size range. The value range is 0   - 2,147,483,647, in KB, using a base of 1,024. If this parameter is not specified, there is no upper limit for file size.
         """
 elif False:
     DomainCompressionCompressionRuleCompressionActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -1751,11 +1751,11 @@ class DomainCompressionCompressionRuleCompressionActionArgs:
                  max_file_size_kb: Optional[pulumi.Input[builtins.int]] = None,
                  min_file_size_kb: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] compression_format: 如果匹配条件是基于 Content-Type 头部（此时，Condition 是 null 或不指定），该参数用来指定 Content-Type 的匹配条件，有以下取值：default: 表示匹配条件是 Content-Type 头部匹配默认 Content-Type 列表中包含的文件类型。customize：表示匹配条件是 Content-Type 头部匹配自定义的文件类型。如果 Conditon 不为 null，表示匹配条件是在 ConditionRule 中定义的。此时，该参数必须设置为 all。
-        :param pulumi.Input[builtins.str] compression_target: 指定压缩的文件类型。该参数的说明如下：如果 CompressionFormat 为 default，该参数必须设置为 *，表示默认的 Content-Type 列表。该列表包含以下文件类型：text/html、text/xml、text/plain、text/css、application/javascript、application/x-javascript、application/rss+xml、text/javascript、image/tiff、image/svg+xml、application/json、application/xml、text/plain; charset=utf-8。如果 CompressionFormat 为 customize，需要指定一个或者多个文件类型。多个文件类型以逗号（,）分隔。如果 CompressionFormat 为 all，该参数必须设置为 *。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] compression_types: 压缩算法，gzip,br 指定类型压缩，default：默认所有文件压缩，次数Target为*；customize：自定义文件类型压缩. choices: [default, customize]
-        :param pulumi.Input[builtins.int] max_file_size_kb: 表示文件大小范围的最小值，CDN 仅对大小在 MinFileSizeKB 和 MaxFileSizeKB 所表示的范围内的文件进行压缩。该参数的取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。该参数的默认值是 0。
-        :param pulumi.Input[builtins.int] min_file_size_kb: 表示文件大小范围的最大值，取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。如果不指定该参数，表示您不限制文件大小的上限。
+        :param pulumi.Input[builtins.str] compression_format: If the matching condition is based on the Content-Type header (when Condition is null or not specified), this parameter specifies the matching criteria for Content-Type. The values are as follows: default: matches file types included in the default Content-Type list. customize: matches custom file types in the Content-Type header. If Condition is not null, the matching criteria are defined in ConditionRule. In this case, this parameter must be set to all.
+        :param pulumi.Input[builtins.str] compression_target: Specifies the file types to compress. The parameter is described as follows: If CompressionFormat is default, this parameter must be set to *, indicating the default Content-Type list. The list includes the following file types: text/html, text/xml, text/plain, text/css, application/javascript, application/x-javascript, application/rss+xml, text/javascript, image/tiff, image/svg+xml, application/json, application/xml, text/plain; charset=utf-8. If CompressionFormat is customize, you need to specify one or more file types. Multiple file types are separated by commas (,). If CompressionFormat is all, this parameter must be set to *.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] compression_types: Compression algorithm: gzip and br specify the compression type. default: compresses all files by default, with the target count as *. customize: compresses custom file types. Choices: [default, customize]
+        :param pulumi.Input[builtins.int] max_file_size_kb: Indicates the minimum value for the file size range. CDN only compresses files within the range specified by MinFileSizeKB and MaxFileSizeKB. The parameter value range is 0   - 2,147,483,647, the unit is KB, and the base is 1,024. The default value is 0.
+        :param pulumi.Input[builtins.int] min_file_size_kb: Indicates the maximum value for the file size range. The value range is 0   - 2,147,483,647, in KB, using a base of 1,024. If this parameter is not specified, there is no upper limit for file size.
         """
         if compression_format is not None:
             pulumi.set(__self__, "compression_format", compression_format)
@@ -1772,7 +1772,7 @@ class DomainCompressionCompressionRuleCompressionActionArgs:
     @pulumi.getter(name="compressionFormat")
     def compression_format(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        如果匹配条件是基于 Content-Type 头部（此时，Condition 是 null 或不指定），该参数用来指定 Content-Type 的匹配条件，有以下取值：default: 表示匹配条件是 Content-Type 头部匹配默认 Content-Type 列表中包含的文件类型。customize：表示匹配条件是 Content-Type 头部匹配自定义的文件类型。如果 Conditon 不为 null，表示匹配条件是在 ConditionRule 中定义的。此时，该参数必须设置为 all。
+        If the matching condition is based on the Content-Type header (when Condition is null or not specified), this parameter specifies the matching criteria for Content-Type. The values are as follows: default: matches file types included in the default Content-Type list. customize: matches custom file types in the Content-Type header. If Condition is not null, the matching criteria are defined in ConditionRule. In this case, this parameter must be set to all.
         """
         return pulumi.get(self, "compression_format")
 
@@ -1784,7 +1784,7 @@ class DomainCompressionCompressionRuleCompressionActionArgs:
     @pulumi.getter(name="compressionTarget")
     def compression_target(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定压缩的文件类型。该参数的说明如下：如果 CompressionFormat 为 default，该参数必须设置为 *，表示默认的 Content-Type 列表。该列表包含以下文件类型：text/html、text/xml、text/plain、text/css、application/javascript、application/x-javascript、application/rss+xml、text/javascript、image/tiff、image/svg+xml、application/json、application/xml、text/plain; charset=utf-8。如果 CompressionFormat 为 customize，需要指定一个或者多个文件类型。多个文件类型以逗号（,）分隔。如果 CompressionFormat 为 all，该参数必须设置为 *。
+        Specifies the file types to compress. The parameter is described as follows: If CompressionFormat is default, this parameter must be set to *, indicating the default Content-Type list. The list includes the following file types: text/html, text/xml, text/plain, text/css, application/javascript, application/x-javascript, application/rss+xml, text/javascript, image/tiff, image/svg+xml, application/json, application/xml, text/plain; charset=utf-8. If CompressionFormat is customize, you need to specify one or more file types. Multiple file types are separated by commas (,). If CompressionFormat is all, this parameter must be set to *.
         """
         return pulumi.get(self, "compression_target")
 
@@ -1796,7 +1796,7 @@ class DomainCompressionCompressionRuleCompressionActionArgs:
     @pulumi.getter(name="compressionTypes")
     def compression_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        压缩算法，gzip,br 指定类型压缩，default：默认所有文件压缩，次数Target为*；customize：自定义文件类型压缩. choices: [default, customize]
+        Compression algorithm: gzip and br specify the compression type. default: compresses all files by default, with the target count as *. customize: compresses custom file types. Choices: [default, customize]
         """
         return pulumi.get(self, "compression_types")
 
@@ -1808,7 +1808,7 @@ class DomainCompressionCompressionRuleCompressionActionArgs:
     @pulumi.getter(name="maxFileSizeKb")
     def max_file_size_kb(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示文件大小范围的最小值，CDN 仅对大小在 MinFileSizeKB 和 MaxFileSizeKB 所表示的范围内的文件进行压缩。该参数的取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。该参数的默认值是 0。
+        Indicates the minimum value for the file size range. CDN only compresses files within the range specified by MinFileSizeKB and MaxFileSizeKB. The parameter value range is 0   - 2,147,483,647, the unit is KB, and the base is 1,024. The default value is 0.
         """
         return pulumi.get(self, "max_file_size_kb")
 
@@ -1820,7 +1820,7 @@ class DomainCompressionCompressionRuleCompressionActionArgs:
     @pulumi.getter(name="minFileSizeKb")
     def min_file_size_kb(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示文件大小范围的最大值，取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。如果不指定该参数，表示您不限制文件大小的上限。
+        Indicates the maximum value for the file size range. The value range is 0   - 2,147,483,647, in KB, using a base of 1,024. If this parameter is not specified, there is no upper limit for file size.
         """
         return pulumi.get(self, "min_file_size_kb")
 
@@ -1834,7 +1834,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainCompressionCompressionRuleConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainCompressionCompressionRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -1845,7 +1845,7 @@ class DomainCompressionCompressionRuleConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainCompressionCompressionRuleConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -1865,7 +1865,7 @@ class DomainCompressionCompressionRuleConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -1878,23 +1878,23 @@ if not MYPY:
     class DomainCompressionCompressionRuleConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainCompressionCompressionRuleConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -1908,11 +1908,11 @@ class DomainCompressionCompressionRuleConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1929,7 +1929,7 @@ class DomainCompressionCompressionRuleConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -1941,7 +1941,7 @@ class DomainCompressionCompressionRuleConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -1953,7 +1953,7 @@ class DomainCompressionCompressionRuleConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -1965,7 +1965,7 @@ class DomainCompressionCompressionRuleConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -1977,7 +1977,7 @@ class DomainCompressionCompressionRuleConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -1990,11 +1990,11 @@ if not MYPY:
     class DomainConditionalOriginArgsDict(TypedDict):
         origin_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainConditionalOriginOriginRuleArgsDict']]]]
         """
-        表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+        Indicates a list of rules. Each rule in the list defines a filter and the action the content delivery network performs on requests that meet the filter criteria.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         """
 elif False:
     DomainConditionalOriginArgsDict: TypeAlias = Mapping[str, Any]
@@ -2005,8 +2005,8 @@ class DomainConditionalOriginArgs:
                  origin_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainConditionalOriginOriginRuleArgs']]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['DomainConditionalOriginOriginRuleArgs']]] origin_rules: 表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        :param pulumi.Input[Sequence[pulumi.Input['DomainConditionalOriginOriginRuleArgs']]] origin_rules: Indicates a list of rules. Each rule in the list defines a filter and the action the content delivery network performs on requests that meet the filter criteria.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         """
         if origin_rules is not None:
             pulumi.set(__self__, "origin_rules", origin_rules)
@@ -2017,7 +2017,7 @@ class DomainConditionalOriginArgs:
     @pulumi.getter(name="originRules")
     def origin_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainConditionalOriginOriginRuleArgs']]]]:
         """
-        表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+        Indicates a list of rules. Each rule in the list defines a filter and the action the content delivery network performs on requests that meet the filter criteria.
         """
         return pulumi.get(self, "origin_rules")
 
@@ -2029,7 +2029,7 @@ class DomainConditionalOriginArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         """
         return pulumi.get(self, "switch")
 
@@ -2042,11 +2042,11 @@ if not MYPY:
     class DomainConditionalOriginOriginRuleArgsDict(TypedDict):
         actions: NotRequired[pulumi.Input['DomainConditionalOriginOriginRuleActionsArgsDict']]
         """
-        表示列表中一条规则的操作配置。
+        Indicates the operation configuration for a rule in the list.
         """
         condition: NotRequired[pulumi.Input['DomainConditionalOriginOriginRuleConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
 elif False:
     DomainConditionalOriginOriginRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -2057,8 +2057,8 @@ class DomainConditionalOriginOriginRuleArgs:
                  actions: Optional[pulumi.Input['DomainConditionalOriginOriginRuleActionsArgs']] = None,
                  condition: Optional[pulumi.Input['DomainConditionalOriginOriginRuleConditionArgs']] = None):
         """
-        :param pulumi.Input['DomainConditionalOriginOriginRuleActionsArgs'] actions: 表示列表中一条规则的操作配置。
-        :param pulumi.Input['DomainConditionalOriginOriginRuleConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param pulumi.Input['DomainConditionalOriginOriginRuleActionsArgs'] actions: Indicates the operation configuration for a rule in the list.
+        :param pulumi.Input['DomainConditionalOriginOriginRuleConditionArgs'] condition: Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         if actions is not None:
             pulumi.set(__self__, "actions", actions)
@@ -2069,7 +2069,7 @@ class DomainConditionalOriginOriginRuleArgs:
     @pulumi.getter
     def actions(self) -> Optional[pulumi.Input['DomainConditionalOriginOriginRuleActionsArgs']]:
         """
-        表示列表中一条规则的操作配置。
+        Indicates the operation configuration for a rule in the list.
         """
         return pulumi.get(self, "actions")
 
@@ -2081,7 +2081,7 @@ class DomainConditionalOriginOriginRuleArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainConditionalOriginOriginRuleConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -2117,23 +2117,23 @@ if not MYPY:
     class DomainConditionalOriginOriginRuleActionsOriginLineArgsDict(TypedDict):
         address: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个源站的地址。当 InstanceType 是 ip 时，Address 表示一个 IPv4 或者 IPv6 地址。当 InstanceType 是 domain 时，Address 表示一个域名。该域名不能是泛域名。如果您指定了 OriginLines，Address 必填。
+        Represents the address of an origin server. When InstanceType is ip, Address specifies an IPv4 or IPv6 address. When InstanceType is domain, Address specifies a domain name. The domain name cannot be a wildcard domain. If you specify OriginLines, Address is required.
         """
         http_port: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示内容分发网络使用 HTTP 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 80。如果源站没有开放该端口，您无需指定该参数。
+        Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The valid range is 1–65535, with a default value of 80. If the origin server does not have this port open, you do not need to specify this parameter.
         """
         https_port: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示内容分发网络使用 HTTPS 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 443。如果源站没有开放该端口，您无需指定该参数。
+        Specifies the port used by the content delivery network to access the origin server via HTTPS. The value range is 1–65535, and the default is 443. If the origin server does not open this port, you do not need to specify this parameter.
         """
         instance_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示源站的类型。该参数有以下取值：ip：表示 IP 地址。domain：表示域名。如果您指定了 OriginLines，InstanceType 必填。
+        Indicates the type of origin. The parameter has the following values: ip: indicates an IP address. domain: indicates a domain name. InstanceType is required if OriginLines is specified.
         """
         origin_host: NotRequired[pulumi.Input[builtins.str]]
         """
-        如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数的优先级高于全局 OriginHost 参数。该参数值的长度不能超过 1,024 个字符。该参数的默认值与全局 OriginHost 相同。
+        If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter takes precedence over the global OriginHost parameter. The value of this parameter cannot exceed 1,024 characters. The default value is the same as the global OriginHost.
         """
 elif False:
     DomainConditionalOriginOriginRuleActionsOriginLineArgsDict: TypeAlias = Mapping[str, Any]
@@ -2147,11 +2147,11 @@ class DomainConditionalOriginOriginRuleActionsOriginLineArgs:
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
                  origin_host: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] address: 表示一个源站的地址。当 InstanceType 是 ip 时，Address 表示一个 IPv4 或者 IPv6 地址。当 InstanceType 是 domain 时，Address 表示一个域名。该域名不能是泛域名。如果您指定了 OriginLines，Address 必填。
-        :param pulumi.Input[builtins.str] http_port: 表示内容分发网络使用 HTTP 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 80。如果源站没有开放该端口，您无需指定该参数。
-        :param pulumi.Input[builtins.str] https_port: 表示内容分发网络使用 HTTPS 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 443。如果源站没有开放该端口，您无需指定该参数。
-        :param pulumi.Input[builtins.str] instance_type: 表示源站的类型。该参数有以下取值：ip：表示 IP 地址。domain：表示域名。如果您指定了 OriginLines，InstanceType 必填。
-        :param pulumi.Input[builtins.str] origin_host: 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数的优先级高于全局 OriginHost 参数。该参数值的长度不能超过 1,024 个字符。该参数的默认值与全局 OriginHost 相同。
+        :param pulumi.Input[builtins.str] address: Represents the address of an origin server. When InstanceType is ip, Address specifies an IPv4 or IPv6 address. When InstanceType is domain, Address specifies a domain name. The domain name cannot be a wildcard domain. If you specify OriginLines, Address is required.
+        :param pulumi.Input[builtins.str] http_port: Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The valid range is 1–65535, with a default value of 80. If the origin server does not have this port open, you do not need to specify this parameter.
+        :param pulumi.Input[builtins.str] https_port: Specifies the port used by the content delivery network to access the origin server via HTTPS. The value range is 1–65535, and the default is 443. If the origin server does not open this port, you do not need to specify this parameter.
+        :param pulumi.Input[builtins.str] instance_type: Indicates the type of origin. The parameter has the following values: ip: indicates an IP address. domain: indicates a domain name. InstanceType is required if OriginLines is specified.
+        :param pulumi.Input[builtins.str] origin_host: If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter takes precedence over the global OriginHost parameter. The value of this parameter cannot exceed 1,024 characters. The default value is the same as the global OriginHost.
         """
         if address is not None:
             pulumi.set(__self__, "address", address)
@@ -2168,7 +2168,7 @@ class DomainConditionalOriginOriginRuleActionsOriginLineArgs:
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个源站的地址。当 InstanceType 是 ip 时，Address 表示一个 IPv4 或者 IPv6 地址。当 InstanceType 是 domain 时，Address 表示一个域名。该域名不能是泛域名。如果您指定了 OriginLines，Address 必填。
+        Represents the address of an origin server. When InstanceType is ip, Address specifies an IPv4 or IPv6 address. When InstanceType is domain, Address specifies a domain name. The domain name cannot be a wildcard domain. If you specify OriginLines, Address is required.
         """
         return pulumi.get(self, "address")
 
@@ -2180,7 +2180,7 @@ class DomainConditionalOriginOriginRuleActionsOriginLineArgs:
     @pulumi.getter(name="httpPort")
     def http_port(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示内容分发网络使用 HTTP 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 80。如果源站没有开放该端口，您无需指定该参数。
+        Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The valid range is 1–65535, with a default value of 80. If the origin server does not have this port open, you do not need to specify this parameter.
         """
         return pulumi.get(self, "http_port")
 
@@ -2192,7 +2192,7 @@ class DomainConditionalOriginOriginRuleActionsOriginLineArgs:
     @pulumi.getter(name="httpsPort")
     def https_port(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示内容分发网络使用 HTTPS 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 443。如果源站没有开放该端口，您无需指定该参数。
+        Specifies the port used by the content delivery network to access the origin server via HTTPS. The value range is 1–65535, and the default is 443. If the origin server does not open this port, you do not need to specify this parameter.
         """
         return pulumi.get(self, "https_port")
 
@@ -2204,7 +2204,7 @@ class DomainConditionalOriginOriginRuleActionsOriginLineArgs:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示源站的类型。该参数有以下取值：ip：表示 IP 地址。domain：表示域名。如果您指定了 OriginLines，InstanceType 必填。
+        Indicates the type of origin. The parameter has the following values: ip: indicates an IP address. domain: indicates a domain name. InstanceType is required if OriginLines is specified.
         """
         return pulumi.get(self, "instance_type")
 
@@ -2216,7 +2216,7 @@ class DomainConditionalOriginOriginRuleActionsOriginLineArgs:
     @pulumi.getter(name="originHost")
     def origin_host(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数的优先级高于全局 OriginHost 参数。该参数值的长度不能超过 1,024 个字符。该参数的默认值与全局 OriginHost 相同。
+        If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter takes precedence over the global OriginHost parameter. The value of this parameter cannot exceed 1,024 characters. The default value is the same as the global OriginHost.
         """
         return pulumi.get(self, "origin_host")
 
@@ -2230,11 +2230,11 @@ if not MYPY:
         condition_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainConditionalOriginOriginRuleConditionConditionGroupArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 "或"。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 "与"。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+        Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an 'or' relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an 'and' relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
         """
         is_group: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+        Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
         """
 elif False:
     DomainConditionalOriginOriginRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -2246,8 +2246,8 @@ class DomainConditionalOriginOriginRuleConditionArgs:
                  connective: Optional[pulumi.Input[builtins.str]] = None,
                  is_group: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 "或"。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 "与"。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
-        :param pulumi.Input[builtins.bool] is_group: 表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+        :param pulumi.Input[builtins.str] connective: Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an 'or' relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an 'and' relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
+        :param pulumi.Input[builtins.bool] is_group: Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
         """
         if condition_groups is not None:
             pulumi.set(__self__, "condition_groups", condition_groups)
@@ -2269,7 +2269,7 @@ class DomainConditionalOriginOriginRuleConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 "或"。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 "与"。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+        Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an 'or' relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an 'and' relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
         """
         return pulumi.get(self, "connective")
 
@@ -2281,7 +2281,7 @@ class DomainConditionalOriginOriginRuleConditionArgs:
     @pulumi.getter(name="isGroup")
     def is_group(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+        Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
         """
         return pulumi.get(self, "is_group")
 
@@ -2294,7 +2294,7 @@ if not MYPY:
     class DomainConditionalOriginOriginRuleConditionConditionGroupArgsDict(TypedDict):
         condition: NotRequired[pulumi.Input['DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
 elif False:
     DomainConditionalOriginOriginRuleConditionConditionGroupArgsDict: TypeAlias = Mapping[str, Any]
@@ -2304,7 +2304,7 @@ class DomainConditionalOriginOriginRuleConditionConditionGroupArgs:
     def __init__(__self__, *,
                  condition: Optional[pulumi.Input['DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgs']] = None):
         """
-        :param pulumi.Input['DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param pulumi.Input['DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgs'] condition: Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
@@ -2313,7 +2313,7 @@ class DomainConditionalOriginOriginRuleConditionConditionGroupArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -2326,15 +2326,15 @@ if not MYPY:
     class DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgsDict(TypedDict):
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个过滤类型。该参数有以下取值：path：表示请求 URL 中的完整路径。directory：表示路径中的任意一个目录。假设路径是 /a/b/c/d/file，则 /a/、/b/c/、/d/ 都是目录。filetype：表示路径末尾的扩展名。full*querystring：表示请求 URL 中的查询字符串。client*ip：表示客户端的 IP 地址或者 IP 地址的归属地。如果您指定了 Condition，Object 必填。
+        Indicates a filter type. This parameter has the following values: path: The full path in the request URL. directory: Any directory in the path. For example, if the path is /a/b/c/d/file, then /a/, /b/c/, and /d/ are directories. filetype: The extension at the end of the path. full*querystring: The query string in the request URL. client*ip: The client's IP address or the location associated with the IP address. If you specify Condition, Object is required.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个对比类型。不同的 Object 对应不同的取值。当 Object 是 path、directory 或 filetype 时，该参数的取值有 equal、not*equal。当 Object 是 path 时，该参数还有额外取值 regex*match、regex*not*match。当 Object 是 full*querystring 时，该参数的取值有 regex*match、regex*not*match。当 Object 是 client*ip 时，该参数的取值有 equal、not*equal、belong、not*belong。各对比类型的说明如下：equal：表示如果 Object 匹配了 Value 中的某个过滤值，该请求就满足这个过滤条件。not*equal：表示如果 Object 不匹配 Value 中的所有过滤值，该请求才满足这个过滤条件。regex*match：表示如果 Value 中的某个正则表达式匹配了 Object 中的任何部分，该请求就满足这个过滤条件。regex*not*match：表示如果 Value 中的所有正则表达式都不匹配 Object 中的任何部分，该请求才满足这个过滤条件。belong：表示如果客户端 IP 地址归属地在 Value 所表示国家和地区列表中，该请求就满足这个过滤条件。not*belong：表示如果客户端 IP 地址归属地不在 Value 所表示国家和地区列表中，该请求才满足这个过滤条件。如果您指定了 Condition，Operator 必填。
+        Specifies a comparison type. Different Objects correspond to different values. When Object is path, directory, or filetype, the parameter values are equal and not*equal. When Object is path, additional values are regex*match and regex*not*match. When Object is full*querystring, the values are regex*match and regex*not*match. When Object is client*ip, the values are equal, not*equal, belong, and not*belong. The comparison types are explained as follows: equal: If Object matches any filter value in Value, the request meets this filter condition. not*equal: If Object does not match any filter value in Value, the request meets this filter condition. regex*match: If any regular expression in Value matches any part of Object, the request meets this filter condition. regex*not*match: If none of the regular expressions in Value match any part of Object, the request meets this filter condition. belong: If the client IP address belongs to any country or region listed in Value, the request meets this filter condition. not*belong: If the client IP address does not belong to any country or region listed in Value, the request meets this filter condition. If you specify Condition, Operator is required.
         """
         values: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示一个或者多个过滤值。过滤值之间使用分号（;）分隔。该参数的输入要求如下：当 Object 是 path、directory 或 filetype 时，所有过滤值的总长度不能超过 1,024 个字符，不能包含以下字符：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。当 Object 是 path 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头，但不能以 / 结尾。您可以在过滤值中使用一个或者多个星号（*），每个星号表示一个或者多个字符。例如：/www/img/my*image.png。当 Object 是 directory 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头和结尾。例如：/www/img/。当 Object 是 filetype 时，该参数有以下额外要求：每个过滤值无需以句点（.）开头。例如：png;txt。当 Object 是 full*querystring 时，该参数的输入要求如下：所有过滤值的总长度不能超过 256 个字符。过滤值可以包含数字、字母、百分号（%）、下划线（*）、中划线（-）。当 Object 是 client*ip 时，如果 Operator 是 equal 或者 not*equal，该参数的输入要求如下：IP 地址的数量不能超过 5 个。IP 地址必须是 IPv4 地址。如果您指定了 Condition，Value 必填。
+        Represents one or more filter values. Filter values are separated by semicolons (;). The input requirements for this parameter are as follows: When Object is path, directory, or filetype, the total length of all filter values must not exceed 1,024 characters and must not contain the following characters: consecutive slashes (//), spaces, dollar sign ($), question mark (?), or Delete (ASCII code 127). When Object is path, this parameter has the following additional requirements: each filter value must start with a slash (/) but must not end with a slash (/). You can use one or more asterisks (*) in the filter value, where each asterisk represents one or more characters. For example: /www/img/my*image.png. When Object is directory, this parameter has the following additional requirements: each filter value must start and end with a slash (/). For example: /www/img/. When Object is filetype, this parameter has the following additional requirements: each filter value does not need to start with a period (.). For example: png;txt. When Object is full*querystring, the input requirements for this parameter are as follows: the total length of all filter values must not exceed 256 characters. Filter values can include numbers, letters, percent sign (%), underscore (*), and hyphen (-). When Object is client*ip, if Operator is equal or not*equal, the input requirements for this parameter are as follows: the number of IP addresses must not exceed 5. IP addresses must be IPv4 addresses. If you specify Condition, Value is required.
         """
 elif False:
     DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -2346,9 +2346,9 @@ class DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgs:
                  operator: Optional[pulumi.Input[builtins.str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.str] object: 表示一个过滤类型。该参数有以下取值：path：表示请求 URL 中的完整路径。directory：表示路径中的任意一个目录。假设路径是 /a/b/c/d/file，则 /a/、/b/c/、/d/ 都是目录。filetype：表示路径末尾的扩展名。full*querystring：表示请求 URL 中的查询字符串。client*ip：表示客户端的 IP 地址或者 IP 地址的归属地。如果您指定了 Condition，Object 必填。
-        :param pulumi.Input[builtins.str] operator: 表示一个对比类型。不同的 Object 对应不同的取值。当 Object 是 path、directory 或 filetype 时，该参数的取值有 equal、not*equal。当 Object 是 path 时，该参数还有额外取值 regex*match、regex*not*match。当 Object 是 full*querystring 时，该参数的取值有 regex*match、regex*not*match。当 Object 是 client*ip 时，该参数的取值有 equal、not*equal、belong、not*belong。各对比类型的说明如下：equal：表示如果 Object 匹配了 Value 中的某个过滤值，该请求就满足这个过滤条件。not*equal：表示如果 Object 不匹配 Value 中的所有过滤值，该请求才满足这个过滤条件。regex*match：表示如果 Value 中的某个正则表达式匹配了 Object 中的任何部分，该请求就满足这个过滤条件。regex*not*match：表示如果 Value 中的所有正则表达式都不匹配 Object 中的任何部分，该请求才满足这个过滤条件。belong：表示如果客户端 IP 地址归属地在 Value 所表示国家和地区列表中，该请求就满足这个过滤条件。not*belong：表示如果客户端 IP 地址归属地不在 Value 所表示国家和地区列表中，该请求才满足这个过滤条件。如果您指定了 Condition，Operator 必填。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] values: 表示一个或者多个过滤值。过滤值之间使用分号（;）分隔。该参数的输入要求如下：当 Object 是 path、directory 或 filetype 时，所有过滤值的总长度不能超过 1,024 个字符，不能包含以下字符：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。当 Object 是 path 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头，但不能以 / 结尾。您可以在过滤值中使用一个或者多个星号（*），每个星号表示一个或者多个字符。例如：/www/img/my*image.png。当 Object 是 directory 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头和结尾。例如：/www/img/。当 Object 是 filetype 时，该参数有以下额外要求：每个过滤值无需以句点（.）开头。例如：png;txt。当 Object 是 full*querystring 时，该参数的输入要求如下：所有过滤值的总长度不能超过 256 个字符。过滤值可以包含数字、字母、百分号（%）、下划线（*）、中划线（-）。当 Object 是 client*ip 时，如果 Operator 是 equal 或者 not*equal，该参数的输入要求如下：IP 地址的数量不能超过 5 个。IP 地址必须是 IPv4 地址。如果您指定了 Condition，Value 必填。
+        :param pulumi.Input[builtins.str] object: Indicates a filter type. This parameter has the following values: path: The full path in the request URL. directory: Any directory in the path. For example, if the path is /a/b/c/d/file, then /a/, /b/c/, and /d/ are directories. filetype: The extension at the end of the path. full*querystring: The query string in the request URL. client*ip: The client's IP address or the location associated with the IP address. If you specify Condition, Object is required.
+        :param pulumi.Input[builtins.str] operator: Specifies a comparison type. Different Objects correspond to different values. When Object is path, directory, or filetype, the parameter values are equal and not*equal. When Object is path, additional values are regex*match and regex*not*match. When Object is full*querystring, the values are regex*match and regex*not*match. When Object is client*ip, the values are equal, not*equal, belong, and not*belong. The comparison types are explained as follows: equal: If Object matches any filter value in Value, the request meets this filter condition. not*equal: If Object does not match any filter value in Value, the request meets this filter condition. regex*match: If any regular expression in Value matches any part of Object, the request meets this filter condition. regex*not*match: If none of the regular expressions in Value match any part of Object, the request meets this filter condition. belong: If the client IP address belongs to any country or region listed in Value, the request meets this filter condition. not*belong: If the client IP address does not belong to any country or region listed in Value, the request meets this filter condition. If you specify Condition, Operator is required.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] values: Represents one or more filter values. Filter values are separated by semicolons (;). The input requirements for this parameter are as follows: When Object is path, directory, or filetype, the total length of all filter values must not exceed 1,024 characters and must not contain the following characters: consecutive slashes (//), spaces, dollar sign ($), question mark (?), or Delete (ASCII code 127). When Object is path, this parameter has the following additional requirements: each filter value must start with a slash (/) but must not end with a slash (/). You can use one or more asterisks (*) in the filter value, where each asterisk represents one or more characters. For example: /www/img/my*image.png. When Object is directory, this parameter has the following additional requirements: each filter value must start and end with a slash (/). For example: /www/img/. When Object is filetype, this parameter has the following additional requirements: each filter value does not need to start with a period (.). For example: png;txt. When Object is full*querystring, the input requirements for this parameter are as follows: the total length of all filter values must not exceed 256 characters. Filter values can include numbers, letters, percent sign (%), underscore (*), and hyphen (-). When Object is client*ip, if Operator is equal or not*equal, the input requirements for this parameter are as follows: the number of IP addresses must not exceed 5. IP addresses must be IPv4 addresses. If you specify Condition, Value is required.
         """
         if object is not None:
             pulumi.set(__self__, "object", object)
@@ -2361,7 +2361,7 @@ class DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个过滤类型。该参数有以下取值：path：表示请求 URL 中的完整路径。directory：表示路径中的任意一个目录。假设路径是 /a/b/c/d/file，则 /a/、/b/c/、/d/ 都是目录。filetype：表示路径末尾的扩展名。full*querystring：表示请求 URL 中的查询字符串。client*ip：表示客户端的 IP 地址或者 IP 地址的归属地。如果您指定了 Condition，Object 必填。
+        Indicates a filter type. This parameter has the following values: path: The full path in the request URL. directory: Any directory in the path. For example, if the path is /a/b/c/d/file, then /a/, /b/c/, and /d/ are directories. filetype: The extension at the end of the path. full*querystring: The query string in the request URL. client*ip: The client's IP address or the location associated with the IP address. If you specify Condition, Object is required.
         """
         return pulumi.get(self, "object")
 
@@ -2373,7 +2373,7 @@ class DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个对比类型。不同的 Object 对应不同的取值。当 Object 是 path、directory 或 filetype 时，该参数的取值有 equal、not*equal。当 Object 是 path 时，该参数还有额外取值 regex*match、regex*not*match。当 Object 是 full*querystring 时，该参数的取值有 regex*match、regex*not*match。当 Object 是 client*ip 时，该参数的取值有 equal、not*equal、belong、not*belong。各对比类型的说明如下：equal：表示如果 Object 匹配了 Value 中的某个过滤值，该请求就满足这个过滤条件。not*equal：表示如果 Object 不匹配 Value 中的所有过滤值，该请求才满足这个过滤条件。regex*match：表示如果 Value 中的某个正则表达式匹配了 Object 中的任何部分，该请求就满足这个过滤条件。regex*not*match：表示如果 Value 中的所有正则表达式都不匹配 Object 中的任何部分，该请求才满足这个过滤条件。belong：表示如果客户端 IP 地址归属地在 Value 所表示国家和地区列表中，该请求就满足这个过滤条件。not*belong：表示如果客户端 IP 地址归属地不在 Value 所表示国家和地区列表中，该请求才满足这个过滤条件。如果您指定了 Condition，Operator 必填。
+        Specifies a comparison type. Different Objects correspond to different values. When Object is path, directory, or filetype, the parameter values are equal and not*equal. When Object is path, additional values are regex*match and regex*not*match. When Object is full*querystring, the values are regex*match and regex*not*match. When Object is client*ip, the values are equal, not*equal, belong, and not*belong. The comparison types are explained as follows: equal: If Object matches any filter value in Value, the request meets this filter condition. not*equal: If Object does not match any filter value in Value, the request meets this filter condition. regex*match: If any regular expression in Value matches any part of Object, the request meets this filter condition. regex*not*match: If none of the regular expressions in Value match any part of Object, the request meets this filter condition. belong: If the client IP address belongs to any country or region listed in Value, the request meets this filter condition. not*belong: If the client IP address does not belong to any country or region listed in Value, the request meets this filter condition. If you specify Condition, Operator is required.
         """
         return pulumi.get(self, "operator")
 
@@ -2385,7 +2385,7 @@ class DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgs:
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示一个或者多个过滤值。过滤值之间使用分号（;）分隔。该参数的输入要求如下：当 Object 是 path、directory 或 filetype 时，所有过滤值的总长度不能超过 1,024 个字符，不能包含以下字符：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。当 Object 是 path 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头，但不能以 / 结尾。您可以在过滤值中使用一个或者多个星号（*），每个星号表示一个或者多个字符。例如：/www/img/my*image.png。当 Object 是 directory 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头和结尾。例如：/www/img/。当 Object 是 filetype 时，该参数有以下额外要求：每个过滤值无需以句点（.）开头。例如：png;txt。当 Object 是 full*querystring 时，该参数的输入要求如下：所有过滤值的总长度不能超过 256 个字符。过滤值可以包含数字、字母、百分号（%）、下划线（*）、中划线（-）。当 Object 是 client*ip 时，如果 Operator 是 equal 或者 not*equal，该参数的输入要求如下：IP 地址的数量不能超过 5 个。IP 地址必须是 IPv4 地址。如果您指定了 Condition，Value 必填。
+        Represents one or more filter values. Filter values are separated by semicolons (;). The input requirements for this parameter are as follows: When Object is path, directory, or filetype, the total length of all filter values must not exceed 1,024 characters and must not contain the following characters: consecutive slashes (//), spaces, dollar sign ($), question mark (?), or Delete (ASCII code 127). When Object is path, this parameter has the following additional requirements: each filter value must start with a slash (/) but must not end with a slash (/). You can use one or more asterisks (*) in the filter value, where each asterisk represents one or more characters. For example: /www/img/my*image.png. When Object is directory, this parameter has the following additional requirements: each filter value must start and end with a slash (/). For example: /www/img/. When Object is filetype, this parameter has the following additional requirements: each filter value does not need to start with a period (.). For example: png;txt. When Object is full*querystring, the input requirements for this parameter are as follows: the total length of all filter values must not exceed 256 characters. Filter values can include numbers, letters, percent sign (%), underscore (*), and hyphen (-). When Object is client*ip, if Operator is equal or not*equal, the input requirements for this parameter are as follows: the number of IP addresses must not exceed 5. IP addresses must be IPv4 addresses. If you specify Condition, Value is required.
         """
         return pulumi.get(self, "values")
 
@@ -2399,7 +2399,7 @@ if not MYPY:
         error_page_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainCustomErrorPageErrorPageRuleArgsDict']]]]
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
         """
 elif False:
     DomainCustomErrorPageArgsDict: TypeAlias = Mapping[str, Any]
@@ -2410,7 +2410,7 @@ class DomainCustomErrorPageArgs:
                  error_page_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainCustomErrorPageErrorPageRuleArgs']]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
         """
         if error_page_rules is not None:
             pulumi.set(__self__, "error_page_rules", error_page_rules)
@@ -2430,7 +2430,7 @@ class DomainCustomErrorPageArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
         """
         return pulumi.get(self, "switch")
 
@@ -2443,7 +2443,7 @@ if not MYPY:
     class DomainCustomErrorPageErrorPageRuleArgsDict(TypedDict):
         error_page_action: NotRequired[pulumi.Input['DomainCustomErrorPageErrorPageRuleErrorPageActionArgsDict']]
         """
-        表示规则的相关配置。
+        Indicates the relevant configuration for the rule.
         """
 elif False:
     DomainCustomErrorPageErrorPageRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -2453,7 +2453,7 @@ class DomainCustomErrorPageErrorPageRuleArgs:
     def __init__(__self__, *,
                  error_page_action: Optional[pulumi.Input['DomainCustomErrorPageErrorPageRuleErrorPageActionArgs']] = None):
         """
-        :param pulumi.Input['DomainCustomErrorPageErrorPageRuleErrorPageActionArgs'] error_page_action: 表示规则的相关配置。
+        :param pulumi.Input['DomainCustomErrorPageErrorPageRuleErrorPageActionArgs'] error_page_action: Indicates the relevant configuration for the rule.
         """
         if error_page_action is not None:
             pulumi.set(__self__, "error_page_action", error_page_action)
@@ -2462,7 +2462,7 @@ class DomainCustomErrorPageErrorPageRuleArgs:
     @pulumi.getter(name="errorPageAction")
     def error_page_action(self) -> Optional[pulumi.Input['DomainCustomErrorPageErrorPageRuleErrorPageActionArgs']]:
         """
-        表示规则的相关配置。
+        Indicates the relevant configuration for the rule.
         """
         return pulumi.get(self, "error_page_action")
 
@@ -2475,19 +2475,19 @@ if not MYPY:
     class DomainCustomErrorPageErrorPageRuleErrorPageActionArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示实际的操作。当前您只能指定该参数值为 redirect。表示对客户端请求进行重定向。
+        Indicates the actual operation. Currently, you can only set this parameter to redirect. This means the client request will be redirected.
         """
         redirect_code: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示重定向的响应状态码。您可以根据需求选择合适的状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+        Indicates the response status code for redirection. You can select an appropriate status code as needed. The available values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original request and will not be changed.
         """
         redirect_url: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示跳转的目标地址，长度不能超过 1,024 个字符。地址必须包含协议，域名以及路径，并且符合 URL 的规范。
+        Indicates the target address for redirection. The length must not exceed 1,024 characters. The address must include the protocol, domain name, and path, and comply with URL specifications.
         """
         status_code: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个状态码，取值范围是 400-599。您可以输入 4xx 或者 5xx。4xx 表示 400-499 之间的所有状态码。5xx 表示 500-599 之间的所有状态码。
+        Indicates a status code, with a value range of 400–599. You can enter 4xx or 5xx. 4xx covers all status codes from 400 to 499. 5xx covers all status codes from 500 to 599.
         """
 elif False:
     DomainCustomErrorPageErrorPageRuleErrorPageActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -2500,10 +2500,10 @@ class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs:
                  redirect_url: Optional[pulumi.Input[builtins.str]] = None,
                  status_code: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 表示实际的操作。当前您只能指定该参数值为 redirect。表示对客户端请求进行重定向。
-        :param pulumi.Input[builtins.str] redirect_code: 表示重定向的响应状态码。您可以根据需求选择合适的状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
-        :param pulumi.Input[builtins.str] redirect_url: 表示跳转的目标地址，长度不能超过 1,024 个字符。地址必须包含协议，域名以及路径，并且符合 URL 的规范。
-        :param pulumi.Input[builtins.str] status_code: 表示一个状态码，取值范围是 400-599。您可以输入 4xx 或者 5xx。4xx 表示 400-499 之间的所有状态码。5xx 表示 500-599 之间的所有状态码。
+        :param pulumi.Input[builtins.str] action: Indicates the actual operation. Currently, you can only set this parameter to redirect. This means the client request will be redirected.
+        :param pulumi.Input[builtins.str] redirect_code: Indicates the response status code for redirection. You can select an appropriate status code as needed. The available values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original request and will not be changed.
+        :param pulumi.Input[builtins.str] redirect_url: Indicates the target address for redirection. The length must not exceed 1,024 characters. The address must include the protocol, domain name, and path, and comply with URL specifications.
+        :param pulumi.Input[builtins.str] status_code: Indicates a status code, with a value range of 400–599. You can enter 4xx or 5xx. 4xx covers all status codes from 400 to 499. 5xx covers all status codes from 500 to 599.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -2518,7 +2518,7 @@ class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs:
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示实际的操作。当前您只能指定该参数值为 redirect。表示对客户端请求进行重定向。
+        Indicates the actual operation. Currently, you can only set this parameter to redirect. This means the client request will be redirected.
         """
         return pulumi.get(self, "action")
 
@@ -2530,7 +2530,7 @@ class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs:
     @pulumi.getter(name="redirectCode")
     def redirect_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示重定向的响应状态码。您可以根据需求选择合适的状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+        Indicates the response status code for redirection. You can select an appropriate status code as needed. The available values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original request and will not be changed.
         """
         return pulumi.get(self, "redirect_code")
 
@@ -2542,7 +2542,7 @@ class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs:
     @pulumi.getter(name="redirectUrl")
     def redirect_url(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示跳转的目标地址，长度不能超过 1,024 个字符。地址必须包含协议，域名以及路径，并且符合 URL 的规范。
+        Indicates the target address for redirection. The length must not exceed 1,024 characters. The address must include the protocol, domain name, and path, and comply with URL specifications.
         """
         return pulumi.get(self, "redirect_url")
 
@@ -2554,7 +2554,7 @@ class DomainCustomErrorPageErrorPageRuleErrorPageActionArgs:
     @pulumi.getter(name="statusCode")
     def status_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个状态码，取值范围是 400-599。您可以输入 4xx 或者 5xx。4xx 表示 400-499 之间的所有状态码。5xx 表示 500-599 之间的所有状态码。
+        Indicates a status code, with a value range of 400–599. You can enter 4xx or 5xx. 4xx covers all status codes from 400 to 499. 5xx covers all status codes from 500 to 599.
         """
         return pulumi.get(self, "status_code")
 
@@ -2568,7 +2568,7 @@ if not MYPY:
         customize_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceArgsDict']]]]
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
         """
 elif False:
     DomainCustomizeAccessRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -2579,7 +2579,7 @@ class DomainCustomizeAccessRuleArgs:
                  customize_instances: Optional[pulumi.Input[Sequence[pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceArgs']]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
         """
         if customize_instances is not None:
             pulumi.set(__self__, "customize_instances", customize_instances)
@@ -2599,7 +2599,7 @@ class DomainCustomizeAccessRuleArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
         """
         return pulumi.get(self, "switch")
 
@@ -2612,7 +2612,7 @@ if not MYPY:
     class DomainCustomizeAccessRuleCustomizeInstanceArgsDict(TypedDict):
         customize_rule: NotRequired[pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgsDict']]
         """
-        表示列表中一条规则的配置。
+        Describes the configuration for a rule in the list.
         """
 elif False:
     DomainCustomizeAccessRuleCustomizeInstanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -2622,7 +2622,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceArgs:
     def __init__(__self__, *,
                  customize_rule: Optional[pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs']] = None):
         """
-        :param pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs'] customize_rule: 表示列表中一条规则的配置。
+        :param pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs'] customize_rule: Describes the configuration for a rule in the list.
         """
         if customize_rule is not None:
             pulumi.set(__self__, "customize_rule", customize_rule)
@@ -2631,7 +2631,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceArgs:
     @pulumi.getter(name="customizeRule")
     def customize_rule(self) -> Optional[pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs']]:
         """
-        表示列表中一条规则的配置。
+        Describes the configuration for a rule in the list.
         """
         return pulumi.get(self, "customize_rule")
 
@@ -2644,11 +2644,11 @@ if not MYPY:
     class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgsDict(TypedDict):
         access_action: NotRequired[pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgsDict']]
         """
-        表示该规则中的黑名单或者白名单的配置。
+        Indicates the configuration of the denylist or allowlist in this rule.
         """
         condition: NotRequired[pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
 elif False:
     DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -2659,8 +2659,8 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs:
                  access_action: Optional[pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs']] = None,
                  condition: Optional[pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionArgs']] = None):
         """
-        :param pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs'] access_action: 表示该规则中的黑名单或者白名单的配置。
-        :param pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs'] access_action: Indicates the configuration of the denylist or allowlist in this rule.
+        :param pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionArgs'] condition: Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         if access_action is not None:
             pulumi.set(__self__, "access_action", access_action)
@@ -2671,7 +2671,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs:
     @pulumi.getter(name="accessAction")
     def access_action(self) -> Optional[pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs']]:
         """
-        表示该规则中的黑名单或者白名单的配置。
+        Indicates the configuration of the denylist or allowlist in this rule.
         """
         return pulumi.get(self, "access_action")
 
@@ -2683,7 +2683,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -2696,19 +2696,19 @@ if not MYPY:
     class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgsDict(TypedDict):
         allow_empty: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示 CDN 是否接受 RequestHeader 的值为空的用户请求。头部值为空指的是以下任意情况：用户请求不包含 RequestHeader。用户请求包含 RequestHeader，但头部值为空（""）。
+        Indicates whether the CDN accepts user requests where the RequestHeader value is empty. An empty header value refers to either of the following situations: The user request does not include RequestHeader. The user request includes RequestHeader, but the header value is empty ("").
         """
         list_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示一个正则表达式列表，用于匹配请求头的值。列表中的正则表达式不能超过 20 个，所有正则表达式总长度不能超过 1,024 个字符。正则表达式之间的关系是或。也就是说，如果一个用户请求中 RequestHeader 的值匹配任何一个正则表达式，该规则就匹配了这个请求。
+        Indicates a list of regular expressions used to match the value of the request header. The list can contain up to 20 regular expressions, and the total length of all expressions cannot exceed 1,024 characters. The relationship between the regular expressions is OR. That is, if the value of RequestHeader in a user request matches any regular expression, the rule applies to the request.
         """
         request_header: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个指定的请求头。头部名称不区分大小写，并且有以下要求：名称的长度不超过 1,024 个字符，名称不能是 Referer、User-Agent 或 Origin。名称可以包含字母，数字，下划线（_），连字符（-）。名称不能以数字开头。
+        Indicates a specified request header. Header names are case-insensitive and must meet the following requirements: The name must not exceed 1,024 characters. The name cannot be Referer, User-Agent, or Origin. The name can contain letters, digits, underscores (_), and hyphens (-). The name cannot start with a digit.
         """
         rule_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示名单的类型。该参数有以下取值：allow：表示该规则中定义的是一个白名单。如果一个用户请求不匹配白名单，CDN 会拒绝该请求，响应 403 状态码。deny：表示该规则中定义的是一个黑名单。如果一个用户请求匹配了黑名单，CDN 会拒绝该请求，响应 403 状态码。
+        Indicates the type of list. This parameter has the following values: allow: defines an allowlist in this rule. If a user request does not match the allowlist, the CDN rejects the request and returns a 403 status code. deny: defines a denylist in this rule. If a user request matches the denylist, the CDN rejects the request and returns a 403 status code.
         """
 elif False:
     DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -2721,10 +2721,10 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs:
                  request_header: Optional[pulumi.Input[builtins.str]] = None,
                  rule_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] allow_empty: 表示 CDN 是否接受 RequestHeader 的值为空的用户请求。头部值为空指的是以下任意情况：用户请求不包含 RequestHeader。用户请求包含 RequestHeader，但头部值为空（""）。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] list_rules: 表示一个正则表达式列表，用于匹配请求头的值。列表中的正则表达式不能超过 20 个，所有正则表达式总长度不能超过 1,024 个字符。正则表达式之间的关系是或。也就是说，如果一个用户请求中 RequestHeader 的值匹配任何一个正则表达式，该规则就匹配了这个请求。
-        :param pulumi.Input[builtins.str] request_header: 表示一个指定的请求头。头部名称不区分大小写，并且有以下要求：名称的长度不超过 1,024 个字符，名称不能是 Referer、User-Agent 或 Origin。名称可以包含字母，数字，下划线（_），连字符（-）。名称不能以数字开头。
-        :param pulumi.Input[builtins.str] rule_type: 表示名单的类型。该参数有以下取值：allow：表示该规则中定义的是一个白名单。如果一个用户请求不匹配白名单，CDN 会拒绝该请求，响应 403 状态码。deny：表示该规则中定义的是一个黑名单。如果一个用户请求匹配了黑名单，CDN 会拒绝该请求，响应 403 状态码。
+        :param pulumi.Input[builtins.bool] allow_empty: Indicates whether the CDN accepts user requests where the RequestHeader value is empty. An empty header value refers to either of the following situations: The user request does not include RequestHeader. The user request includes RequestHeader, but the header value is empty ("").
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] list_rules: Indicates a list of regular expressions used to match the value of the request header. The list can contain up to 20 regular expressions, and the total length of all expressions cannot exceed 1,024 characters. The relationship between the regular expressions is OR. That is, if the value of RequestHeader in a user request matches any regular expression, the rule applies to the request.
+        :param pulumi.Input[builtins.str] request_header: Indicates a specified request header. Header names are case-insensitive and must meet the following requirements: The name must not exceed 1,024 characters. The name cannot be Referer, User-Agent, or Origin. The name can contain letters, digits, underscores (_), and hyphens (-). The name cannot start with a digit.
+        :param pulumi.Input[builtins.str] rule_type: Indicates the type of list. This parameter has the following values: allow: defines an allowlist in this rule. If a user request does not match the allowlist, the CDN rejects the request and returns a 403 status code. deny: defines a denylist in this rule. If a user request matches the denylist, the CDN rejects the request and returns a 403 status code.
         """
         if allow_empty is not None:
             pulumi.set(__self__, "allow_empty", allow_empty)
@@ -2739,7 +2739,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs:
     @pulumi.getter(name="allowEmpty")
     def allow_empty(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示 CDN 是否接受 RequestHeader 的值为空的用户请求。头部值为空指的是以下任意情况：用户请求不包含 RequestHeader。用户请求包含 RequestHeader，但头部值为空（""）。
+        Indicates whether the CDN accepts user requests where the RequestHeader value is empty. An empty header value refers to either of the following situations: The user request does not include RequestHeader. The user request includes RequestHeader, but the header value is empty ("").
         """
         return pulumi.get(self, "allow_empty")
 
@@ -2751,7 +2751,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs:
     @pulumi.getter(name="listRules")
     def list_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示一个正则表达式列表，用于匹配请求头的值。列表中的正则表达式不能超过 20 个，所有正则表达式总长度不能超过 1,024 个字符。正则表达式之间的关系是或。也就是说，如果一个用户请求中 RequestHeader 的值匹配任何一个正则表达式，该规则就匹配了这个请求。
+        Indicates a list of regular expressions used to match the value of the request header. The list can contain up to 20 regular expressions, and the total length of all expressions cannot exceed 1,024 characters. The relationship between the regular expressions is OR. That is, if the value of RequestHeader in a user request matches any regular expression, the rule applies to the request.
         """
         return pulumi.get(self, "list_rules")
 
@@ -2763,7 +2763,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs:
     @pulumi.getter(name="requestHeader")
     def request_header(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个指定的请求头。头部名称不区分大小写，并且有以下要求：名称的长度不超过 1,024 个字符，名称不能是 Referer、User-Agent 或 Origin。名称可以包含字母，数字，下划线（_），连字符（-）。名称不能以数字开头。
+        Indicates a specified request header. Header names are case-insensitive and must meet the following requirements: The name must not exceed 1,024 characters. The name cannot be Referer, User-Agent, or Origin. The name can contain letters, digits, underscores (_), and hyphens (-). The name cannot start with a digit.
         """
         return pulumi.get(self, "request_header")
 
@@ -2775,7 +2775,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs:
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示名单的类型。该参数有以下取值：allow：表示该规则中定义的是一个白名单。如果一个用户请求不匹配白名单，CDN 会拒绝该请求，响应 403 状态码。deny：表示该规则中定义的是一个黑名单。如果一个用户请求匹配了黑名单，CDN 会拒绝该请求，响应 403 状态码。
+        Indicates the type of list. This parameter has the following values: allow: defines an allowlist in this rule. If a user request does not match the allowlist, the CDN rejects the request and returns a 403 status code. deny: defines a denylist in this rule. If a user request matches the denylist, the CDN rejects the request and returns a 403 status code.
         """
         return pulumi.get(self, "rule_type")
 
@@ -2789,7 +2789,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -2800,7 +2800,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -2820,7 +2820,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -2833,23 +2833,23 @@ if not MYPY:
     class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -2863,11 +2863,11 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionR
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -2884,7 +2884,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionR
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -2896,7 +2896,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionR
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -2908,7 +2908,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionR
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -2920,7 +2920,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionR
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -2932,7 +2932,7 @@ class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionR
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -2945,11 +2945,11 @@ if not MYPY:
     class DomainDomainLockArgsDict(TypedDict):
         remark: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示该加速域名被锁定的原因。如果 Status 是 on，该参数值表示原因的描述。如果 Status 是 off，该参数值是空（""）。
+        Indicates the reason why the acceleration domain is locked. If Status is on, this parameter provides a description of the reason. If Status is off, this parameter is empty ("")
         """
         status: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示该加速域名的锁定状态。该参数有以下取值：on：表示该加速域名已被锁定。off：表示该加速域名未被锁定。
+        Indicates the lock status of the acceleration domain name. The parameter has the following values: on: the acceleration domain name is locked. off: the acceleration domain name is not locked.
         """
 elif False:
     DomainDomainLockArgsDict: TypeAlias = Mapping[str, Any]
@@ -2960,8 +2960,8 @@ class DomainDomainLockArgs:
                  remark: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] remark: 表示该加速域名被锁定的原因。如果 Status 是 on，该参数值表示原因的描述。如果 Status 是 off，该参数值是空（""）。
-        :param pulumi.Input[builtins.str] status: 表示该加速域名的锁定状态。该参数有以下取值：on：表示该加速域名已被锁定。off：表示该加速域名未被锁定。
+        :param pulumi.Input[builtins.str] remark: Indicates the reason why the acceleration domain is locked. If Status is on, this parameter provides a description of the reason. If Status is off, this parameter is empty ("")
+        :param pulumi.Input[builtins.str] status: Indicates the lock status of the acceleration domain name. The parameter has the following values: on: the acceleration domain name is locked. off: the acceleration domain name is not locked.
         """
         if remark is not None:
             pulumi.set(__self__, "remark", remark)
@@ -2972,7 +2972,7 @@ class DomainDomainLockArgs:
     @pulumi.getter
     def remark(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该加速域名被锁定的原因。如果 Status 是 on，该参数值表示原因的描述。如果 Status 是 off，该参数值是空（""）。
+        Indicates the reason why the acceleration domain is locked. If Status is on, this parameter provides a description of the reason. If Status is off, this parameter is empty ("")
         """
         return pulumi.get(self, "remark")
 
@@ -2984,7 +2984,7 @@ class DomainDomainLockArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该加速域名的锁定状态。该参数有以下取值：on：表示该加速域名已被锁定。off：表示该加速域名未被锁定。
+        Indicates the lock status of the acceleration domain name. The parameter has the following values: on: the acceleration domain name is locked. off: the acceleration domain name is not locked.
         """
         return pulumi.get(self, "status")
 
@@ -2998,7 +2998,7 @@ if not MYPY:
         download_speed_limit_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgsDict']]]]
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         """
 elif False:
     DomainDownloadSpeedLimitArgsDict: TypeAlias = Mapping[str, Any]
@@ -3009,7 +3009,7 @@ class DomainDownloadSpeedLimitArgs:
                  download_speed_limit_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs']]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         """
         if download_speed_limit_rules is not None:
             pulumi.set(__self__, "download_speed_limit_rules", download_speed_limit_rules)
@@ -3029,7 +3029,7 @@ class DomainDownloadSpeedLimitArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         """
         return pulumi.get(self, "switch")
 
@@ -3042,11 +3042,11 @@ if not MYPY:
     class DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgsDict(TypedDict):
         condition: NotRequired[pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         download_speed_limit_action: NotRequired[pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgsDict']]
         """
-        表示限速配置。
+        Indicates the rate limiting configuration.
         """
 elif False:
     DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -3057,8 +3057,8 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs:
                  condition: Optional[pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs']] = None,
                  download_speed_limit_action: Optional[pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs']] = None):
         """
-        :param pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
-        :param pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs'] download_speed_limit_action: 表示限速配置。
+        :param pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs'] condition: Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
+        :param pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs'] download_speed_limit_action: Indicates the rate limiting configuration.
         """
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
@@ -3069,7 +3069,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -3081,7 +3081,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs:
     @pulumi.getter(name="downloadSpeedLimitAction")
     def download_speed_limit_action(self) -> Optional[pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs']]:
         """
-        表示限速配置。
+        Indicates the rate limiting configuration.
         """
         return pulumi.get(self, "download_speed_limit_action")
 
@@ -3095,7 +3095,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -3106,7 +3106,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -3126,7 +3126,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -3139,23 +3139,23 @@ if not MYPY:
     class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -3169,11 +3169,11 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -3190,7 +3190,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -3202,7 +3202,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -3214,7 +3214,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -3226,7 +3226,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -3238,7 +3238,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -3251,15 +3251,15 @@ if not MYPY:
     class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgsDict(TypedDict):
         speed_limit_rate: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+        Indicates the maximum download speed for a single request, measured in B/S. The parameter range is 1–1,073,741,824,000,000, using a base conversion of 1,024.
         """
         speed_limit_rate_after: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+        Represents a data volume. Download throttling is enabled for a request only when the amount of data downloaded in a single request reaches this value. Unit: Byte. The parameter range is 0–1,073,741,824,000,000, using a base of 1,024 for conversion.
         """
         speed_limit_time: NotRequired[pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgsDict']]
         """
-        表示限速发生的日期和时间段。
+        Indicates the date and time period when rate limiting occurs.
         """
 elif False:
     DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -3271,9 +3271,9 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs
                  speed_limit_rate_after: Optional[pulumi.Input[builtins.int]] = None,
                  speed_limit_time: Optional[pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgs']] = None):
         """
-        :param pulumi.Input[builtins.int] speed_limit_rate: 表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
-        :param pulumi.Input[builtins.int] speed_limit_rate_after: 表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
-        :param pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgs'] speed_limit_time: 表示限速发生的日期和时间段。
+        :param pulumi.Input[builtins.int] speed_limit_rate: Indicates the maximum download speed for a single request, measured in B/S. The parameter range is 1–1,073,741,824,000,000, using a base conversion of 1,024.
+        :param pulumi.Input[builtins.int] speed_limit_rate_after: Represents a data volume. Download throttling is enabled for a request only when the amount of data downloaded in a single request reaches this value. Unit: Byte. The parameter range is 0–1,073,741,824,000,000, using a base of 1,024 for conversion.
+        :param pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgs'] speed_limit_time: Indicates the date and time period when rate limiting occurs.
         """
         if speed_limit_rate is not None:
             pulumi.set(__self__, "speed_limit_rate", speed_limit_rate)
@@ -3286,7 +3286,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs
     @pulumi.getter(name="speedLimitRate")
     def speed_limit_rate(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+        Indicates the maximum download speed for a single request, measured in B/S. The parameter range is 1–1,073,741,824,000,000, using a base conversion of 1,024.
         """
         return pulumi.get(self, "speed_limit_rate")
 
@@ -3298,7 +3298,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs
     @pulumi.getter(name="speedLimitRateAfter")
     def speed_limit_rate_after(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+        Represents a data volume. Download throttling is enabled for a request only when the amount of data downloaded in a single request reaches this value. Unit: Byte. The parameter range is 0–1,073,741,824,000,000, using a base of 1,024 for conversion.
         """
         return pulumi.get(self, "speed_limit_rate_after")
 
@@ -3310,7 +3310,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs
     @pulumi.getter(name="speedLimitTime")
     def speed_limit_time(self) -> Optional[pulumi.Input['DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgs']]:
         """
-        表示限速发生的日期和时间段。
+        Indicates the date and time period when rate limiting occurs.
         """
         return pulumi.get(self, "speed_limit_time")
 
@@ -3323,15 +3323,15 @@ if not MYPY:
     class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgsDict(TypedDict):
         begin_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+        Indicates the start time for rate limiting. The time format is mm:ss. If the DayWeek parameter value is unlimited, the default values for BeginTime and EndTime will be set to 00:00 and 23:59, respectively.
         """
         day_week: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
+        Specifies the date when rate limiting occurs. This parameter has the following values: monday, tuesday, wednesday, thursday, friday, saturday, sunday, unlimited. unlimited means every day. You can specify one or more values. Separate multiple values with a semicolon (;).
         """
         end_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+        Indicates the end time for rate limiting. The time format is mm:ss. If the DayWeek parameter is set to unlimited, the default values for BeginTime and EndTime are 00:00 and 23:59, respectively.
         """
 elif False:
     DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgsDict: TypeAlias = Mapping[str, Any]
@@ -3343,9 +3343,9 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpee
                  day_week: Optional[pulumi.Input[builtins.str]] = None,
                  end_time: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] begin_time: 表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
-        :param pulumi.Input[builtins.str] day_week: 表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
-        :param pulumi.Input[builtins.str] end_time: 表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+        :param pulumi.Input[builtins.str] begin_time: Indicates the start time for rate limiting. The time format is mm:ss. If the DayWeek parameter value is unlimited, the default values for BeginTime and EndTime will be set to 00:00 and 23:59, respectively.
+        :param pulumi.Input[builtins.str] day_week: Specifies the date when rate limiting occurs. This parameter has the following values: monday, tuesday, wednesday, thursday, friday, saturday, sunday, unlimited. unlimited means every day. You can specify one or more values. Separate multiple values with a semicolon (;).
+        :param pulumi.Input[builtins.str] end_time: Indicates the end time for rate limiting. The time format is mm:ss. If the DayWeek parameter is set to unlimited, the default values for BeginTime and EndTime are 00:00 and 23:59, respectively.
         """
         if begin_time is not None:
             pulumi.set(__self__, "begin_time", begin_time)
@@ -3358,7 +3358,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpee
     @pulumi.getter(name="beginTime")
     def begin_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+        Indicates the start time for rate limiting. The time format is mm:ss. If the DayWeek parameter value is unlimited, the default values for BeginTime and EndTime will be set to 00:00 and 23:59, respectively.
         """
         return pulumi.get(self, "begin_time")
 
@@ -3370,7 +3370,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpee
     @pulumi.getter(name="dayWeek")
     def day_week(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
+        Specifies the date when rate limiting occurs. This parameter has the following values: monday, tuesday, wednesday, thursday, friday, saturday, sunday, unlimited. unlimited means every day. You can specify one or more values. Separate multiple values with a semicolon (;).
         """
         return pulumi.get(self, "day_week")
 
@@ -3382,7 +3382,7 @@ class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpee
     @pulumi.getter(name="endTime")
     def end_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+        Indicates the end time for rate limiting. The time format is mm:ss. If the DayWeek parameter is set to unlimited, the default values for BeginTime and EndTime are 00:00 and 23:59, respectively.
         """
         return pulumi.get(self, "end_time")
 
@@ -3395,11 +3395,11 @@ if not MYPY:
     class DomainHttpForcedRedirectArgsDict(TypedDict):
         enable_forced_redirect: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTPS 请求重定向到 HTTP 请求。false：表示禁用该特性。内容分发网络不会将 HTTPS 请求重定向到 HTTP 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+        Indicates whether this feature is enabled. The parameter values are: true: enables the feature. When enabled, the content delivery network redirects incoming HTTPS requests to HTTP requests. false: disables the feature. The content delivery network does not redirect HTTPS requests to HTTP requests. To enable this feature, your acceleration domain must have HTTPS enabled.
         """
         status_code: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示当收到 HTTPS 请求时，内容分发网络返回的重定向状态码。该参数有以下取值：301：表示 301 响应状态码。302：表示 302 响应状态码。该参数的默认值是 301。
+        Indicates the redirect status code returned by the content delivery network when it receives an HTTPS request. This parameter has the following values: 301: indicates the 301 response status code. 302: indicates the 302 response status code. The default value for this parameter is 301.
         """
 elif False:
     DomainHttpForcedRedirectArgsDict: TypeAlias = Mapping[str, Any]
@@ -3410,8 +3410,8 @@ class DomainHttpForcedRedirectArgs:
                  enable_forced_redirect: Optional[pulumi.Input[builtins.bool]] = None,
                  status_code: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] enable_forced_redirect: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTPS 请求重定向到 HTTP 请求。false：表示禁用该特性。内容分发网络不会将 HTTPS 请求重定向到 HTTP 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
-        :param pulumi.Input[builtins.str] status_code: 表示当收到 HTTPS 请求时，内容分发网络返回的重定向状态码。该参数有以下取值：301：表示 301 响应状态码。302：表示 302 响应状态码。该参数的默认值是 301。
+        :param pulumi.Input[builtins.bool] enable_forced_redirect: Indicates whether this feature is enabled. The parameter values are: true: enables the feature. When enabled, the content delivery network redirects incoming HTTPS requests to HTTP requests. false: disables the feature. The content delivery network does not redirect HTTPS requests to HTTP requests. To enable this feature, your acceleration domain must have HTTPS enabled.
+        :param pulumi.Input[builtins.str] status_code: Indicates the redirect status code returned by the content delivery network when it receives an HTTPS request. This parameter has the following values: 301: indicates the 301 response status code. 302: indicates the 302 response status code. The default value for this parameter is 301.
         """
         if enable_forced_redirect is not None:
             pulumi.set(__self__, "enable_forced_redirect", enable_forced_redirect)
@@ -3422,7 +3422,7 @@ class DomainHttpForcedRedirectArgs:
     @pulumi.getter(name="enableForcedRedirect")
     def enable_forced_redirect(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTPS 请求重定向到 HTTP 请求。false：表示禁用该特性。内容分发网络不会将 HTTPS 请求重定向到 HTTP 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+        Indicates whether this feature is enabled. The parameter values are: true: enables the feature. When enabled, the content delivery network redirects incoming HTTPS requests to HTTP requests. false: disables the feature. The content delivery network does not redirect HTTPS requests to HTTP requests. To enable this feature, your acceleration domain must have HTTPS enabled.
         """
         return pulumi.get(self, "enable_forced_redirect")
 
@@ -3434,7 +3434,7 @@ class DomainHttpForcedRedirectArgs:
     @pulumi.getter(name="statusCode")
     def status_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示当收到 HTTPS 请求时，内容分发网络返回的重定向状态码。该参数有以下取值：301：表示 301 响应状态码。302：表示 302 响应状态码。该参数的默认值是 301。
+        Indicates the redirect status code returned by the content delivery network when it receives an HTTPS request. This parameter has the following values: 301: indicates the 301 response status code. 302: indicates the 302 response status code. The default value for this parameter is 301.
         """
         return pulumi.get(self, "status_code")
 
@@ -3447,40 +3447,40 @@ if not MYPY:
     class DomainHttpsArgsDict(TypedDict):
         cert_check: NotRequired[pulumi.Input['DomainHttpsCertCheckArgsDict']]
         """
-        表示 "访问双向认证" 特性的配置模块。要配置 "访问双向认证"。
+        Indicates the configuration module for the 'mutual authentication' feature. To configure 'mutual authentication'.
         """
         cert_info: NotRequired[pulumi.Input['DomainHttpsCertInfoArgsDict']]
         """
-        表示要与加速域名关联的单本证书。
+        Indicates the single certificate to be associated with the acceleration domain name.
         """
         cert_info_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainHttpsCertInfoListArgsDict']]]]
         disable_http: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否允许请求 URL 中 Scheme 是 HTTP 的请求。该参数有以下取值：true：表示允许 Scheme 是 HTTP 的请求。false：表示不允许 Scheme 是 HTTP 的请求。该参数的默认值是 false。
+        Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
         """
         forced_redirect: NotRequired[pulumi.Input['DomainHttpsForcedRedirectArgsDict']]
         """
-        表示 "HTTP 强制跳转到 HTTPS" 特性的配置模块。该特性默认是禁用。
+        Indicates the configuration module for the 'HTTP Forced Redirect to HTTPS' feature. This feature is disabled by default.
         """
         hsts: NotRequired[pulumi.Input['DomainHttpsHstsArgsDict']]
         """
-        表示 HSTS 特性的配置模块。该特性默认是禁用。
+        Indicates the configuration module for the HSTS feature. This feature is disabled by default.
         """
         http2: NotRequired[pulumi.Input[builtins.bool]]
         """
-        HTTP/2 配置开关。该参数有以下取值：true：表示启用 HTTP/2。false：表示禁用 HTTP/2。要启用 HTTP/2，您必须先启用 HTTPS。该功能默认是禁用。但是在以下场景中，HTTP/2 默认是启用的：加速域名的业务类型是网页，也就是 ServiceType 是 web。加速域名已经启用了 HTTPS。
+        HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
         """
         ocsp: NotRequired[pulumi.Input[builtins.bool]]
         """
-        指定是否启用 OCSP 装订。该参数有以下取值：true：表示启用 OCSP 装订。false：表示禁用 OCSP 装订。要启用 OCSP 装订，您必须先启用 HTTPS。该参数的默认值是 false。
+        Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用 HTTPS 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。如果 Switch 是 true，您必须指定证书。如果您指定的是单本证书，您需要指定 CertInfo。如果您指定的是双证书，您需要指定 CertInfoList。您指定的证书可以是托管在证书中心，也可以是托管在内容分发网络。
+        Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
         """
         tls_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示 "TLS 版本" 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
+        Indicates the configuration module for the "TLS Version" feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
         """
 elif False:
     DomainHttpsArgsDict: TypeAlias = Mapping[str, Any]
@@ -3499,15 +3499,15 @@ class DomainHttpsArgs:
                  switch: Optional[pulumi.Input[builtins.bool]] = None,
                  tls_versions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input['DomainHttpsCertCheckArgs'] cert_check: 表示 "访问双向认证" 特性的配置模块。要配置 "访问双向认证"。
-        :param pulumi.Input['DomainHttpsCertInfoArgs'] cert_info: 表示要与加速域名关联的单本证书。
-        :param pulumi.Input[builtins.bool] disable_http: 表示是否允许请求 URL 中 Scheme 是 HTTP 的请求。该参数有以下取值：true：表示允许 Scheme 是 HTTP 的请求。false：表示不允许 Scheme 是 HTTP 的请求。该参数的默认值是 false。
-        :param pulumi.Input['DomainHttpsForcedRedirectArgs'] forced_redirect: 表示 "HTTP 强制跳转到 HTTPS" 特性的配置模块。该特性默认是禁用。
-        :param pulumi.Input['DomainHttpsHstsArgs'] hsts: 表示 HSTS 特性的配置模块。该特性默认是禁用。
-        :param pulumi.Input[builtins.bool] http2: HTTP/2 配置开关。该参数有以下取值：true：表示启用 HTTP/2。false：表示禁用 HTTP/2。要启用 HTTP/2，您必须先启用 HTTPS。该功能默认是禁用。但是在以下场景中，HTTP/2 默认是启用的：加速域名的业务类型是网页，也就是 ServiceType 是 web。加速域名已经启用了 HTTPS。
-        :param pulumi.Input[builtins.bool] ocsp: 指定是否启用 OCSP 装订。该参数有以下取值：true：表示启用 OCSP 装订。false：表示禁用 OCSP 装订。要启用 OCSP 装订，您必须先启用 HTTPS。该参数的默认值是 false。
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用 HTTPS 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。如果 Switch 是 true，您必须指定证书。如果您指定的是单本证书，您需要指定 CertInfo。如果您指定的是双证书，您需要指定 CertInfoList。您指定的证书可以是托管在证书中心，也可以是托管在内容分发网络。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tls_versions: 表示 "TLS 版本" 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
+        :param pulumi.Input['DomainHttpsCertCheckArgs'] cert_check: Indicates the configuration module for the 'mutual authentication' feature. To configure 'mutual authentication'.
+        :param pulumi.Input['DomainHttpsCertInfoArgs'] cert_info: Indicates the single certificate to be associated with the acceleration domain name.
+        :param pulumi.Input[builtins.bool] disable_http: Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
+        :param pulumi.Input['DomainHttpsForcedRedirectArgs'] forced_redirect: Indicates the configuration module for the 'HTTP Forced Redirect to HTTPS' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainHttpsHstsArgs'] hsts: Indicates the configuration module for the HSTS feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.bool] http2: HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
+        :param pulumi.Input[builtins.bool] ocsp: Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tls_versions: Indicates the configuration module for the "TLS Version" feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
         """
         if cert_check is not None:
             pulumi.set(__self__, "cert_check", cert_check)
@@ -3534,7 +3534,7 @@ class DomainHttpsArgs:
     @pulumi.getter(name="certCheck")
     def cert_check(self) -> Optional[pulumi.Input['DomainHttpsCertCheckArgs']]:
         """
-        表示 "访问双向认证" 特性的配置模块。要配置 "访问双向认证"。
+        Indicates the configuration module for the 'mutual authentication' feature. To configure 'mutual authentication'.
         """
         return pulumi.get(self, "cert_check")
 
@@ -3546,7 +3546,7 @@ class DomainHttpsArgs:
     @pulumi.getter(name="certInfo")
     def cert_info(self) -> Optional[pulumi.Input['DomainHttpsCertInfoArgs']]:
         """
-        表示要与加速域名关联的单本证书。
+        Indicates the single certificate to be associated with the acceleration domain name.
         """
         return pulumi.get(self, "cert_info")
 
@@ -3567,7 +3567,7 @@ class DomainHttpsArgs:
     @pulumi.getter(name="disableHttp")
     def disable_http(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否允许请求 URL 中 Scheme 是 HTTP 的请求。该参数有以下取值：true：表示允许 Scheme 是 HTTP 的请求。false：表示不允许 Scheme 是 HTTP 的请求。该参数的默认值是 false。
+        Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
         """
         return pulumi.get(self, "disable_http")
 
@@ -3579,7 +3579,7 @@ class DomainHttpsArgs:
     @pulumi.getter(name="forcedRedirect")
     def forced_redirect(self) -> Optional[pulumi.Input['DomainHttpsForcedRedirectArgs']]:
         """
-        表示 "HTTP 强制跳转到 HTTPS" 特性的配置模块。该特性默认是禁用。
+        Indicates the configuration module for the 'HTTP Forced Redirect to HTTPS' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "forced_redirect")
 
@@ -3591,7 +3591,7 @@ class DomainHttpsArgs:
     @pulumi.getter
     def hsts(self) -> Optional[pulumi.Input['DomainHttpsHstsArgs']]:
         """
-        表示 HSTS 特性的配置模块。该特性默认是禁用。
+        Indicates the configuration module for the HSTS feature. This feature is disabled by default.
         """
         return pulumi.get(self, "hsts")
 
@@ -3603,7 +3603,7 @@ class DomainHttpsArgs:
     @pulumi.getter
     def http2(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        HTTP/2 配置开关。该参数有以下取值：true：表示启用 HTTP/2。false：表示禁用 HTTP/2。要启用 HTTP/2，您必须先启用 HTTPS。该功能默认是禁用。但是在以下场景中，HTTP/2 默认是启用的：加速域名的业务类型是网页，也就是 ServiceType 是 web。加速域名已经启用了 HTTPS。
+        HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
         """
         return pulumi.get(self, "http2")
 
@@ -3615,7 +3615,7 @@ class DomainHttpsArgs:
     @pulumi.getter
     def ocsp(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        指定是否启用 OCSP 装订。该参数有以下取值：true：表示启用 OCSP 装订。false：表示禁用 OCSP 装订。要启用 OCSP 装订，您必须先启用 HTTPS。该参数的默认值是 false。
+        Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
         """
         return pulumi.get(self, "ocsp")
 
@@ -3627,7 +3627,7 @@ class DomainHttpsArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用 HTTPS 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。如果 Switch 是 true，您必须指定证书。如果您指定的是单本证书，您需要指定 CertInfo。如果您指定的是双证书，您需要指定 CertInfoList。您指定的证书可以是托管在证书中心，也可以是托管在内容分发网络。
+        Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
         """
         return pulumi.get(self, "switch")
 
@@ -3639,7 +3639,7 @@ class DomainHttpsArgs:
     @pulumi.getter(name="tlsVersions")
     def tls_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示 "TLS 版本" 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
+        Indicates the configuration module for the "TLS Version" feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
         """
         return pulumi.get(self, "tls_versions")
 
@@ -3653,7 +3653,7 @@ if not MYPY:
         cert_info_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainHttpsCertCheckCertInfoListArgsDict']]]]
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
         """
 elif False:
     DomainHttpsCertCheckArgsDict: TypeAlias = Mapping[str, Any]
@@ -3664,7 +3664,7 @@ class DomainHttpsCertCheckArgs:
                  cert_info_lists: Optional[pulumi.Input[Sequence[pulumi.Input['DomainHttpsCertCheckCertInfoListArgs']]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        :param pulumi.Input[builtins.bool] switch: Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
         """
         if cert_info_lists is not None:
             pulumi.set(__self__, "cert_info_lists", cert_info_lists)
@@ -3684,7 +3684,7 @@ class DomainHttpsCertCheckArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
         """
         return pulumi.get(self, "switch")
 
@@ -3697,31 +3697,31 @@ if not MYPY:
     class DomainHttpsCertCheckCertInfoListArgsDict(TypedDict):
         cert_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
         """
         cert_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        Represents the content of the Common Name (CN) field in the CA certificate.
         """
         certificate: NotRequired[pulumi.Input['DomainHttpsCertCheckCertInfoListCertificateArgsDict']]
         """
-        表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
         """
         effective_time: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示该证书的签发时间，单位是 Unix 时间戳。
+        Indicates the issuance time of the certificate, in Unix timestamp.
         """
         encry_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
         """
         expire_time: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示该证书的到期时间，单位是 Unix 时间戳。
+        Indicates the expiration time of the certificate, as a Unix timestamp.
         """
         source: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
         """
 elif False:
     DomainHttpsCertCheckCertInfoListArgsDict: TypeAlias = Mapping[str, Any]
@@ -3737,13 +3737,13 @@ class DomainHttpsCertCheckCertInfoListArgs:
                  expire_time: Optional[pulumi.Input[builtins.int]] = None,
                  source: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] cert_id: 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
-        :param pulumi.Input[builtins.str] cert_name: 表示该 CA 证书的 Common Name (CN) 字段中的内容。
-        :param pulumi.Input['DomainHttpsCertCheckCertInfoListCertificateArgs'] certificate: 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
-        :param pulumi.Input[builtins.int] effective_time: 表示该证书的签发时间，单位是 Unix 时间戳。
-        :param pulumi.Input[builtins.str] encry_type: 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
-        :param pulumi.Input[builtins.int] expire_time: 表示该证书的到期时间，单位是 Unix 时间戳。
-        :param pulumi.Input[builtins.str] source: 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        :param pulumi.Input[builtins.str] cert_id: Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
+        :param pulumi.Input[builtins.str] cert_name: Represents the content of the Common Name (CN) field in the CA certificate.
+        :param pulumi.Input['DomainHttpsCertCheckCertInfoListCertificateArgs'] certificate: Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
+        :param pulumi.Input[builtins.int] effective_time: Indicates the issuance time of the certificate, in Unix timestamp.
+        :param pulumi.Input[builtins.str] encry_type: Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
+        :param pulumi.Input[builtins.int] expire_time: Indicates the expiration time of the certificate, as a Unix timestamp.
+        :param pulumi.Input[builtins.str] source: Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
         """
         if cert_id is not None:
             pulumi.set(__self__, "cert_id", cert_id)
@@ -3764,7 +3764,7 @@ class DomainHttpsCertCheckCertInfoListArgs:
     @pulumi.getter(name="certId")
     def cert_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
         """
         return pulumi.get(self, "cert_id")
 
@@ -3776,7 +3776,7 @@ class DomainHttpsCertCheckCertInfoListArgs:
     @pulumi.getter(name="certName")
     def cert_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        Represents the content of the Common Name (CN) field in the CA certificate.
         """
         return pulumi.get(self, "cert_name")
 
@@ -3788,7 +3788,7 @@ class DomainHttpsCertCheckCertInfoListArgs:
     @pulumi.getter
     def certificate(self) -> Optional[pulumi.Input['DomainHttpsCertCheckCertInfoListCertificateArgs']]:
         """
-        表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
         """
         return pulumi.get(self, "certificate")
 
@@ -3800,7 +3800,7 @@ class DomainHttpsCertCheckCertInfoListArgs:
     @pulumi.getter(name="effectiveTime")
     def effective_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示该证书的签发时间，单位是 Unix 时间戳。
+        Indicates the issuance time of the certificate, in Unix timestamp.
         """
         return pulumi.get(self, "effective_time")
 
@@ -3812,7 +3812,7 @@ class DomainHttpsCertCheckCertInfoListArgs:
     @pulumi.getter(name="encryType")
     def encry_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
         """
         return pulumi.get(self, "encry_type")
 
@@ -3824,7 +3824,7 @@ class DomainHttpsCertCheckCertInfoListArgs:
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示该证书的到期时间，单位是 Unix 时间戳。
+        Indicates the expiration time of the certificate, as a Unix timestamp.
         """
         return pulumi.get(self, "expire_time")
 
@@ -3836,7 +3836,7 @@ class DomainHttpsCertCheckCertInfoListArgs:
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
         """
         return pulumi.get(self, "source")
 
@@ -3849,19 +3849,19 @@ if not MYPY:
     class DomainHttpsCertCheckCertInfoListCertificateArgsDict(TypedDict):
         certificate: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
         """
         encryption_cert: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
         """
         encryption_key: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
         """
         private_key: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
         """
 elif False:
     DomainHttpsCertCheckCertInfoListCertificateArgsDict: TypeAlias = Mapping[str, Any]
@@ -3874,10 +3874,10 @@ class DomainHttpsCertCheckCertInfoListCertificateArgs:
                  encryption_key: Optional[pulumi.Input[builtins.str]] = None,
                  private_key: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] certificate: 表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
-        :param pulumi.Input[builtins.str] encryption_cert: 表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
-        :param pulumi.Input[builtins.str] encryption_key: 表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
-        :param pulumi.Input[builtins.str] private_key: 表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        :param pulumi.Input[builtins.str] certificate: Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+        :param pulumi.Input[builtins.str] encryption_cert: Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+        :param pulumi.Input[builtins.str] encryption_key: Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+        :param pulumi.Input[builtins.str] private_key: Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
         """
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
@@ -3892,7 +3892,7 @@ class DomainHttpsCertCheckCertInfoListCertificateArgs:
     @pulumi.getter
     def certificate(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
         """
         return pulumi.get(self, "certificate")
 
@@ -3904,7 +3904,7 @@ class DomainHttpsCertCheckCertInfoListCertificateArgs:
     @pulumi.getter(name="encryptionCert")
     def encryption_cert(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
         """
         return pulumi.get(self, "encryption_cert")
 
@@ -3916,7 +3916,7 @@ class DomainHttpsCertCheckCertInfoListCertificateArgs:
     @pulumi.getter(name="encryptionKey")
     def encryption_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
         """
         return pulumi.get(self, "encryption_key")
 
@@ -3928,7 +3928,7 @@ class DomainHttpsCertCheckCertInfoListCertificateArgs:
     @pulumi.getter(name="privateKey")
     def private_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
         """
         return pulumi.get(self, "private_key")
 
@@ -3941,31 +3941,31 @@ if not MYPY:
     class DomainHttpsCertInfoArgsDict(TypedDict):
         cert_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        Represents the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
         """
         cert_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        Indicates the content of the Common Name (CN) field in the CA certificate.
         """
         certificate: NotRequired[pulumi.Input['DomainHttpsCertInfoCertificateArgsDict']]
         """
-        表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the CDN.
         """
         effective_time: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示该证书的签发时间，单位是 Unix 时间戳。
+        Indicates the issuance time of the certificate, in Unix timestamp.
         """
         encry_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
         """
         expire_time: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示该证书的到期时间，单位是 Unix 时间戳。
+        Indicates the expiration time of the certificate, in Unix timestamp.
         """
         source: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        Indicates the location where the certificate is hosted. This parameter has the following values: volc*cert*center: Certificate Center. cdn*cert*hosting: Content Delivery Network.
         """
 elif False:
     DomainHttpsCertInfoArgsDict: TypeAlias = Mapping[str, Any]
@@ -3981,13 +3981,13 @@ class DomainHttpsCertInfoArgs:
                  expire_time: Optional[pulumi.Input[builtins.int]] = None,
                  source: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] cert_id: 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
-        :param pulumi.Input[builtins.str] cert_name: 表示该 CA 证书的 Common Name (CN) 字段中的内容。
-        :param pulumi.Input['DomainHttpsCertInfoCertificateArgs'] certificate: 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
-        :param pulumi.Input[builtins.int] effective_time: 表示该证书的签发时间，单位是 Unix 时间戳。
-        :param pulumi.Input[builtins.str] encry_type: 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
-        :param pulumi.Input[builtins.int] expire_time: 表示该证书的到期时间，单位是 Unix 时间戳。
-        :param pulumi.Input[builtins.str] source: 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        :param pulumi.Input[builtins.str] cert_id: Represents the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
+        :param pulumi.Input[builtins.str] cert_name: Indicates the content of the Common Name (CN) field in the CA certificate.
+        :param pulumi.Input['DomainHttpsCertInfoCertificateArgs'] certificate: Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the CDN.
+        :param pulumi.Input[builtins.int] effective_time: Indicates the issuance time of the certificate, in Unix timestamp.
+        :param pulumi.Input[builtins.str] encry_type: Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
+        :param pulumi.Input[builtins.int] expire_time: Indicates the expiration time of the certificate, in Unix timestamp.
+        :param pulumi.Input[builtins.str] source: Indicates the location where the certificate is hosted. This parameter has the following values: volc*cert*center: Certificate Center. cdn*cert*hosting: Content Delivery Network.
         """
         if cert_id is not None:
             pulumi.set(__self__, "cert_id", cert_id)
@@ -4008,7 +4008,7 @@ class DomainHttpsCertInfoArgs:
     @pulumi.getter(name="certId")
     def cert_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        Represents the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
         """
         return pulumi.get(self, "cert_id")
 
@@ -4020,7 +4020,7 @@ class DomainHttpsCertInfoArgs:
     @pulumi.getter(name="certName")
     def cert_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        Indicates the content of the Common Name (CN) field in the CA certificate.
         """
         return pulumi.get(self, "cert_name")
 
@@ -4032,7 +4032,7 @@ class DomainHttpsCertInfoArgs:
     @pulumi.getter
     def certificate(self) -> Optional[pulumi.Input['DomainHttpsCertInfoCertificateArgs']]:
         """
-        表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the CDN.
         """
         return pulumi.get(self, "certificate")
 
@@ -4044,7 +4044,7 @@ class DomainHttpsCertInfoArgs:
     @pulumi.getter(name="effectiveTime")
     def effective_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示该证书的签发时间，单位是 Unix 时间戳。
+        Indicates the issuance time of the certificate, in Unix timestamp.
         """
         return pulumi.get(self, "effective_time")
 
@@ -4056,7 +4056,7 @@ class DomainHttpsCertInfoArgs:
     @pulumi.getter(name="encryType")
     def encry_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
         """
         return pulumi.get(self, "encry_type")
 
@@ -4068,7 +4068,7 @@ class DomainHttpsCertInfoArgs:
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示该证书的到期时间，单位是 Unix 时间戳。
+        Indicates the expiration time of the certificate, in Unix timestamp.
         """
         return pulumi.get(self, "expire_time")
 
@@ -4080,7 +4080,7 @@ class DomainHttpsCertInfoArgs:
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        Indicates the location where the certificate is hosted. This parameter has the following values: volc*cert*center: Certificate Center. cdn*cert*hosting: Content Delivery Network.
         """
         return pulumi.get(self, "source")
 
@@ -4093,19 +4093,19 @@ if not MYPY:
     class DomainHttpsCertInfoCertificateArgsDict(TypedDict):
         certificate: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
         """
         encryption_cert: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
         """
         encryption_key: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
         """
         private_key: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
         """
 elif False:
     DomainHttpsCertInfoCertificateArgsDict: TypeAlias = Mapping[str, Any]
@@ -4118,10 +4118,10 @@ class DomainHttpsCertInfoCertificateArgs:
                  encryption_key: Optional[pulumi.Input[builtins.str]] = None,
                  private_key: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] certificate: 表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
-        :param pulumi.Input[builtins.str] encryption_cert: 表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
-        :param pulumi.Input[builtins.str] encryption_key: 表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
-        :param pulumi.Input[builtins.str] private_key: 表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        :param pulumi.Input[builtins.str] certificate: Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+        :param pulumi.Input[builtins.str] encryption_cert: Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+        :param pulumi.Input[builtins.str] encryption_key: Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+        :param pulumi.Input[builtins.str] private_key: Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
         """
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
@@ -4136,7 +4136,7 @@ class DomainHttpsCertInfoCertificateArgs:
     @pulumi.getter
     def certificate(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
         """
         return pulumi.get(self, "certificate")
 
@@ -4148,7 +4148,7 @@ class DomainHttpsCertInfoCertificateArgs:
     @pulumi.getter(name="encryptionCert")
     def encryption_cert(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
         """
         return pulumi.get(self, "encryption_cert")
 
@@ -4160,7 +4160,7 @@ class DomainHttpsCertInfoCertificateArgs:
     @pulumi.getter(name="encryptionKey")
     def encryption_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
         """
         return pulumi.get(self, "encryption_key")
 
@@ -4172,7 +4172,7 @@ class DomainHttpsCertInfoCertificateArgs:
     @pulumi.getter(name="privateKey")
     def private_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
         """
         return pulumi.get(self, "private_key")
 
@@ -4185,31 +4185,31 @@ if not MYPY:
     class DomainHttpsCertInfoListArgsDict(TypedDict):
         cert_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
         """
         cert_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        Represents the content of the Common Name (CN) field in the CA certificate.
         """
         certificate: NotRequired[pulumi.Input['DomainHttpsCertInfoListCertificateArgsDict']]
         """
-        表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
         """
         effective_time: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示该证书的签发时间，单位是 Unix 时间戳。
+        Indicates the issuance time of the certificate, in Unix timestamp.
         """
         encry_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
         """
         expire_time: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示该证书的到期时间，单位是 Unix 时间戳。
+        Indicates the expiration time of the certificate, as a Unix timestamp.
         """
         source: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
         """
 elif False:
     DomainHttpsCertInfoListArgsDict: TypeAlias = Mapping[str, Any]
@@ -4225,13 +4225,13 @@ class DomainHttpsCertInfoListArgs:
                  expire_time: Optional[pulumi.Input[builtins.int]] = None,
                  source: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] cert_id: 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
-        :param pulumi.Input[builtins.str] cert_name: 表示该 CA 证书的 Common Name (CN) 字段中的内容。
-        :param pulumi.Input['DomainHttpsCertInfoListCertificateArgs'] certificate: 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
-        :param pulumi.Input[builtins.int] effective_time: 表示该证书的签发时间，单位是 Unix 时间戳。
-        :param pulumi.Input[builtins.str] encry_type: 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
-        :param pulumi.Input[builtins.int] expire_time: 表示该证书的到期时间，单位是 Unix 时间戳。
-        :param pulumi.Input[builtins.str] source: 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        :param pulumi.Input[builtins.str] cert_id: Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
+        :param pulumi.Input[builtins.str] cert_name: Represents the content of the Common Name (CN) field in the CA certificate.
+        :param pulumi.Input['DomainHttpsCertInfoListCertificateArgs'] certificate: Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
+        :param pulumi.Input[builtins.int] effective_time: Indicates the issuance time of the certificate, in Unix timestamp.
+        :param pulumi.Input[builtins.str] encry_type: Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
+        :param pulumi.Input[builtins.int] expire_time: Indicates the expiration time of the certificate, as a Unix timestamp.
+        :param pulumi.Input[builtins.str] source: Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
         """
         if cert_id is not None:
             pulumi.set(__self__, "cert_id", cert_id)
@@ -4252,7 +4252,7 @@ class DomainHttpsCertInfoListArgs:
     @pulumi.getter(name="certId")
     def cert_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
         """
         return pulumi.get(self, "cert_id")
 
@@ -4264,7 +4264,7 @@ class DomainHttpsCertInfoListArgs:
     @pulumi.getter(name="certName")
     def cert_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        Represents the content of the Common Name (CN) field in the CA certificate.
         """
         return pulumi.get(self, "cert_name")
 
@@ -4276,7 +4276,7 @@ class DomainHttpsCertInfoListArgs:
     @pulumi.getter
     def certificate(self) -> Optional[pulumi.Input['DomainHttpsCertInfoListCertificateArgs']]:
         """
-        表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
         """
         return pulumi.get(self, "certificate")
 
@@ -4288,7 +4288,7 @@ class DomainHttpsCertInfoListArgs:
     @pulumi.getter(name="effectiveTime")
     def effective_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示该证书的签发时间，单位是 Unix 时间戳。
+        Indicates the issuance time of the certificate, in Unix timestamp.
         """
         return pulumi.get(self, "effective_time")
 
@@ -4300,7 +4300,7 @@ class DomainHttpsCertInfoListArgs:
     @pulumi.getter(name="encryType")
     def encry_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
         """
         return pulumi.get(self, "encry_type")
 
@@ -4312,7 +4312,7 @@ class DomainHttpsCertInfoListArgs:
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示该证书的到期时间，单位是 Unix 时间戳。
+        Indicates the expiration time of the certificate, as a Unix timestamp.
         """
         return pulumi.get(self, "expire_time")
 
@@ -4324,7 +4324,7 @@ class DomainHttpsCertInfoListArgs:
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
         """
         return pulumi.get(self, "source")
 
@@ -4337,19 +4337,19 @@ if not MYPY:
     class DomainHttpsCertInfoListCertificateArgsDict(TypedDict):
         certificate: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
         """
         encryption_cert: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
         """
         encryption_key: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
         """
         private_key: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
         """
 elif False:
     DomainHttpsCertInfoListCertificateArgsDict: TypeAlias = Mapping[str, Any]
@@ -4362,10 +4362,10 @@ class DomainHttpsCertInfoListCertificateArgs:
                  encryption_key: Optional[pulumi.Input[builtins.str]] = None,
                  private_key: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] certificate: 表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
-        :param pulumi.Input[builtins.str] encryption_cert: 表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
-        :param pulumi.Input[builtins.str] encryption_key: 表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
-        :param pulumi.Input[builtins.str] private_key: 表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        :param pulumi.Input[builtins.str] certificate: Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+        :param pulumi.Input[builtins.str] encryption_cert: Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+        :param pulumi.Input[builtins.str] encryption_key: Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+        :param pulumi.Input[builtins.str] private_key: Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
         """
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
@@ -4380,7 +4380,7 @@ class DomainHttpsCertInfoListCertificateArgs:
     @pulumi.getter
     def certificate(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
         """
         return pulumi.get(self, "certificate")
 
@@ -4392,7 +4392,7 @@ class DomainHttpsCertInfoListCertificateArgs:
     @pulumi.getter(name="encryptionCert")
     def encryption_cert(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
         """
         return pulumi.get(self, "encryption_cert")
 
@@ -4404,7 +4404,7 @@ class DomainHttpsCertInfoListCertificateArgs:
     @pulumi.getter(name="encryptionKey")
     def encryption_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
         """
         return pulumi.get(self, "encryption_key")
 
@@ -4416,7 +4416,7 @@ class DomainHttpsCertInfoListCertificateArgs:
     @pulumi.getter(name="privateKey")
     def private_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
         """
         return pulumi.get(self, "private_key")
 
@@ -4429,11 +4429,11 @@ if not MYPY:
     class DomainHttpsForcedRedirectArgsDict(TypedDict):
         enable_forced_redirect: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTP 请求重定向到 HTTPS 请求。false：表示禁用该特性。禁用后，内容分发网络不会将 HTTP 请求重定向到 HTTPS 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+        Indicates whether to enable this feature. This parameter has the following values: true: enables the feature. When enabled, the content delivery network redirects HTTP requests to HTTPS requests. false: disables the feature. When disabled, the content delivery network does not redirect HTTP requests to HTTPS requests. To enable this feature, your acceleration domain must have HTTPS enabled.
         """
         status_code: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示当收到 HTTPS 请求时内容分发网络的重定向响应状态码。该参数有以下取值：301：表示返回的状态码是 301。302：表示返回的状态码是 302。该参数的默认值是 301。
+        Indicates the redirect response status code for the CDN when receiving HTTPS requests. The parameter values are: 301: returns status code 301. 302: returns status code 302. The default value is 301.
         """
 elif False:
     DomainHttpsForcedRedirectArgsDict: TypeAlias = Mapping[str, Any]
@@ -4444,8 +4444,8 @@ class DomainHttpsForcedRedirectArgs:
                  enable_forced_redirect: Optional[pulumi.Input[builtins.bool]] = None,
                  status_code: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] enable_forced_redirect: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTP 请求重定向到 HTTPS 请求。false：表示禁用该特性。禁用后，内容分发网络不会将 HTTP 请求重定向到 HTTPS 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
-        :param pulumi.Input[builtins.str] status_code: 表示当收到 HTTPS 请求时内容分发网络的重定向响应状态码。该参数有以下取值：301：表示返回的状态码是 301。302：表示返回的状态码是 302。该参数的默认值是 301。
+        :param pulumi.Input[builtins.bool] enable_forced_redirect: Indicates whether to enable this feature. This parameter has the following values: true: enables the feature. When enabled, the content delivery network redirects HTTP requests to HTTPS requests. false: disables the feature. When disabled, the content delivery network does not redirect HTTP requests to HTTPS requests. To enable this feature, your acceleration domain must have HTTPS enabled.
+        :param pulumi.Input[builtins.str] status_code: Indicates the redirect response status code for the CDN when receiving HTTPS requests. The parameter values are: 301: returns status code 301. 302: returns status code 302. The default value is 301.
         """
         if enable_forced_redirect is not None:
             pulumi.set(__self__, "enable_forced_redirect", enable_forced_redirect)
@@ -4456,7 +4456,7 @@ class DomainHttpsForcedRedirectArgs:
     @pulumi.getter(name="enableForcedRedirect")
     def enable_forced_redirect(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTP 请求重定向到 HTTPS 请求。false：表示禁用该特性。禁用后，内容分发网络不会将 HTTP 请求重定向到 HTTPS 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+        Indicates whether to enable this feature. This parameter has the following values: true: enables the feature. When enabled, the content delivery network redirects HTTP requests to HTTPS requests. false: disables the feature. When disabled, the content delivery network does not redirect HTTP requests to HTTPS requests. To enable this feature, your acceleration domain must have HTTPS enabled.
         """
         return pulumi.get(self, "enable_forced_redirect")
 
@@ -4468,7 +4468,7 @@ class DomainHttpsForcedRedirectArgs:
     @pulumi.getter(name="statusCode")
     def status_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示当收到 HTTPS 请求时内容分发网络的重定向响应状态码。该参数有以下取值：301：表示返回的状态码是 301。302：表示返回的状态码是 302。该参数的默认值是 301。
+        Indicates the redirect response status code for the CDN when receiving HTTPS requests. The parameter values are: 301: returns status code 301. 302: returns status code 302. The default value is 301.
         """
         return pulumi.get(self, "status_code")
 
@@ -4481,15 +4481,15 @@ if not MYPY:
     class DomainHttpsHstsArgsDict(TypedDict):
         subdomain: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
+        Indicates whether the HSTS configuration also applies to subdomains of the accelerated domain. The parameter has the following values: include: applies HSTS configuration to subdomain sites. exclude: does not apply HSTS configuration to subdomain sites. The default value is exclude.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
         """
         ttl: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+        Indicates the cache expiration time for the Strict-Transport-Security response header in the browser, in seconds. If Switch is true, this parameter is required. The value range is 0–31,536,000. 31,536,000 seconds equals 365 days. If the value is 0, it is equivalent to disabling the HSTS setting.
         """
 elif False:
     DomainHttpsHstsArgsDict: TypeAlias = Mapping[str, Any]
@@ -4501,9 +4501,9 @@ class DomainHttpsHstsArgs:
                  switch: Optional[pulumi.Input[builtins.bool]] = None,
                  ttl: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] subdomain: 表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
-        :param pulumi.Input[builtins.int] ttl: 表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+        :param pulumi.Input[builtins.str] subdomain: Indicates whether the HSTS configuration also applies to subdomains of the accelerated domain. The parameter has the following values: include: applies HSTS configuration to subdomain sites. exclude: does not apply HSTS configuration to subdomain sites. The default value is exclude.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
+        :param pulumi.Input[builtins.int] ttl: Indicates the cache expiration time for the Strict-Transport-Security response header in the browser, in seconds. If Switch is true, this parameter is required. The value range is 0–31,536,000. 31,536,000 seconds equals 365 days. If the value is 0, it is equivalent to disabling the HSTS setting.
         """
         if subdomain is not None:
             pulumi.set(__self__, "subdomain", subdomain)
@@ -4516,7 +4516,7 @@ class DomainHttpsHstsArgs:
     @pulumi.getter
     def subdomain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
+        Indicates whether the HSTS configuration also applies to subdomains of the accelerated domain. The parameter has the following values: include: applies HSTS configuration to subdomain sites. exclude: does not apply HSTS configuration to subdomain sites. The default value is exclude.
         """
         return pulumi.get(self, "subdomain")
 
@@ -4528,7 +4528,7 @@ class DomainHttpsHstsArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
         """
         return pulumi.get(self, "switch")
 
@@ -4540,7 +4540,7 @@ class DomainHttpsHstsArgs:
     @pulumi.getter
     def ttl(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+        Indicates the cache expiration time for the Strict-Transport-Security response header in the browser, in seconds. If Switch is true, this parameter is required. The value range is 0–31,536,000. 31,536,000 seconds equals 365 days. If the value is 0, it is equivalent to disabling the HSTS setting.
         """
         return pulumi.get(self, "ttl")
 
@@ -4553,7 +4553,7 @@ if not MYPY:
     class DomainIPv6ArgsDict(TypedDict):
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+        Specifies whether to enable IPv6 configuration. This parameter has the following values: true: Enables IPv6. false: Disables IPv6.
         """
 elif False:
     DomainIPv6ArgsDict: TypeAlias = Mapping[str, Any]
@@ -4563,7 +4563,7 @@ class DomainIPv6Args:
     def __init__(__self__, *,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+        :param pulumi.Input[builtins.bool] switch: Specifies whether to enable IPv6 configuration. This parameter has the following values: true: Enables IPv6. false: Disables IPv6.
         """
         if switch is not None:
             pulumi.set(__self__, "switch", switch)
@@ -4572,7 +4572,7 @@ class DomainIPv6Args:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+        Specifies whether to enable IPv6 configuration. This parameter has the following values: true: Enables IPv6. false: Disables IPv6.
         """
         return pulumi.get(self, "switch")
 
@@ -4585,19 +4585,19 @@ if not MYPY:
     class DomainIpAccessRuleArgsDict(TypedDict):
         ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示黑名单或白名单中的 IP 地址。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址和 IP 地址网段。IP 地址和网段可以是 IPv4 或 IPv6 格式。您最多可输入 1,000 个地址。如果您指定了 SharedConfig，就不能指定该参数。
+        Specifies IP addresses in the denylist or allowlist. This parameter is required when Switch is true. You can specify one or more IP addresses and IP address ranges. IP addresses and ranges can be in IPv4 or IPv6 format. You can enter up to 1,000 addresses. If you specify SharedConfig, you cannot specify this parameter.
         """
         rule_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示 IP 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。如果您指定了 SharedConfig，就不能指定该参数。
+        Indicates the type of IP list. This parameter is required when Switch is true. Valid values are: allow: indicates Allowlist. deny: indicates Denylist. If you specify SharedConfig, you cannot specify this parameter.
         """
         shared_config: NotRequired[pulumi.Input['DomainIpAccessRuleSharedConfigArgsDict']]
         """
-        表示一个全局配置。如果您指定了该参数，就不能指定 RuleType 和 Ip。
+        Represents a global configuration. If you specify this parameter, you cannot specify RuleType and Ip.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         """
 elif False:
     DomainIpAccessRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -4610,10 +4610,10 @@ class DomainIpAccessRuleArgs:
                  shared_config: Optional[pulumi.Input['DomainIpAccessRuleSharedConfigArgs']] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ips: 表示黑名单或白名单中的 IP 地址。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址和 IP 地址网段。IP 地址和网段可以是 IPv4 或 IPv6 格式。您最多可输入 1,000 个地址。如果您指定了 SharedConfig，就不能指定该参数。
-        :param pulumi.Input[builtins.str] rule_type: 表示 IP 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。如果您指定了 SharedConfig，就不能指定该参数。
-        :param pulumi.Input['DomainIpAccessRuleSharedConfigArgs'] shared_config: 表示一个全局配置。如果您指定了该参数，就不能指定 RuleType 和 Ip。
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ips: Specifies IP addresses in the denylist or allowlist. This parameter is required when Switch is true. You can specify one or more IP addresses and IP address ranges. IP addresses and ranges can be in IPv4 or IPv6 format. You can enter up to 1,000 addresses. If you specify SharedConfig, you cannot specify this parameter.
+        :param pulumi.Input[builtins.str] rule_type: Indicates the type of IP list. This parameter is required when Switch is true. Valid values are: allow: indicates Allowlist. deny: indicates Denylist. If you specify SharedConfig, you cannot specify this parameter.
+        :param pulumi.Input['DomainIpAccessRuleSharedConfigArgs'] shared_config: Represents a global configuration. If you specify this parameter, you cannot specify RuleType and Ip.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         """
         if ips is not None:
             pulumi.set(__self__, "ips", ips)
@@ -4628,7 +4628,7 @@ class DomainIpAccessRuleArgs:
     @pulumi.getter
     def ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示黑名单或白名单中的 IP 地址。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址和 IP 地址网段。IP 地址和网段可以是 IPv4 或 IPv6 格式。您最多可输入 1,000 个地址。如果您指定了 SharedConfig，就不能指定该参数。
+        Specifies IP addresses in the denylist or allowlist. This parameter is required when Switch is true. You can specify one or more IP addresses and IP address ranges. IP addresses and ranges can be in IPv4 or IPv6 format. You can enter up to 1,000 addresses. If you specify SharedConfig, you cannot specify this parameter.
         """
         return pulumi.get(self, "ips")
 
@@ -4640,7 +4640,7 @@ class DomainIpAccessRuleArgs:
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 IP 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。如果您指定了 SharedConfig，就不能指定该参数。
+        Indicates the type of IP list. This parameter is required when Switch is true. Valid values are: allow: indicates Allowlist. deny: indicates Denylist. If you specify SharedConfig, you cannot specify this parameter.
         """
         return pulumi.get(self, "rule_type")
 
@@ -4652,7 +4652,7 @@ class DomainIpAccessRuleArgs:
     @pulumi.getter(name="sharedConfig")
     def shared_config(self) -> Optional[pulumi.Input['DomainIpAccessRuleSharedConfigArgs']]:
         """
-        表示一个全局配置。如果您指定了该参数，就不能指定 RuleType 和 Ip。
+        Represents a global configuration. If you specify this parameter, you cannot specify RuleType and Ip.
         """
         return pulumi.get(self, "shared_config")
 
@@ -4664,7 +4664,7 @@ class DomainIpAccessRuleArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         """
         return pulumi.get(self, "switch")
 
@@ -4677,7 +4677,7 @@ if not MYPY:
     class DomainIpAccessRuleSharedConfigArgsDict(TypedDict):
         config_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个全局配置的名称。
+        Indicates the name of a global configuration.
         """
 elif False:
     DomainIpAccessRuleSharedConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -4687,7 +4687,7 @@ class DomainIpAccessRuleSharedConfigArgs:
     def __init__(__self__, *,
                  config_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] config_name: 表示一个全局配置的名称。
+        :param pulumi.Input[builtins.str] config_name: Indicates the name of a global configuration.
         """
         if config_name is not None:
             pulumi.set(__self__, "config_name", config_name)
@@ -4696,7 +4696,7 @@ class DomainIpAccessRuleSharedConfigArgs:
     @pulumi.getter(name="configName")
     def config_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个全局配置的名称。
+        Indicates the name of a global configuration.
         """
         return pulumi.get(self, "config_name")
 
@@ -4709,11 +4709,11 @@ if not MYPY:
     class DomainMethodDeniedRuleArgsDict(TypedDict):
         methods: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示被禁用的一个或多个 HTTP 请求方法。当 Switch 是 true 时，该参数为必填。多个方法使用逗号（,）分隔。该参数有以下取值：get：表示禁用 GET 请求方法。post：表示禁用 POST 请求方法。delete：表示禁用 DELETE 请求方法。put：表示禁用 PUT 请求方法。head：表示禁用 HEAD 请求方法。patch：表示 PATCH 请求方法。connect：表示 CONNECT 请求方法。options：表示 OPTIONS 请求方法。
+        Indicates one or more HTTP request methods that are disabled. When Switch is true, this parameter is required. Use commas (,) to separate multiple methods. The parameter values are: get: disables the GET request method. post: disables the POST request method. delete: disables the DELETE request method. put: disables the PUT request method. head: disables the HEAD request method. patch: disables the PATCH request method. connect: disables the CONNECT request method. options: disables the OPTIONS request method.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        配置开关 禁用方法，多个用逗号,分割，开启时必填. choices: [get, post, head, delete, put]
+        Configuration switch for disabling methods. Use commas to separate multiple methods. Required when enabled. choices: [get, post, head, delete, put]
         """
 elif False:
     DomainMethodDeniedRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -4724,8 +4724,8 @@ class DomainMethodDeniedRuleArgs:
                  methods: Optional[pulumi.Input[builtins.str]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.str] methods: 表示被禁用的一个或多个 HTTP 请求方法。当 Switch 是 true 时，该参数为必填。多个方法使用逗号（,）分隔。该参数有以下取值：get：表示禁用 GET 请求方法。post：表示禁用 POST 请求方法。delete：表示禁用 DELETE 请求方法。put：表示禁用 PUT 请求方法。head：表示禁用 HEAD 请求方法。patch：表示 PATCH 请求方法。connect：表示 CONNECT 请求方法。options：表示 OPTIONS 请求方法。
-        :param pulumi.Input[builtins.bool] switch: 配置开关 禁用方法，多个用逗号,分割，开启时必填. choices: [get, post, head, delete, put]
+        :param pulumi.Input[builtins.str] methods: Indicates one or more HTTP request methods that are disabled. When Switch is true, this parameter is required. Use commas (,) to separate multiple methods. The parameter values are: get: disables the GET request method. post: disables the POST request method. delete: disables the DELETE request method. put: disables the PUT request method. head: disables the HEAD request method. patch: disables the PATCH request method. connect: disables the CONNECT request method. options: disables the OPTIONS request method.
+        :param pulumi.Input[builtins.bool] switch: Configuration switch for disabling methods. Use commas to separate multiple methods. Required when enabled. choices: [get, post, head, delete, put]
         """
         if methods is not None:
             pulumi.set(__self__, "methods", methods)
@@ -4736,7 +4736,7 @@ class DomainMethodDeniedRuleArgs:
     @pulumi.getter
     def methods(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示被禁用的一个或多个 HTTP 请求方法。当 Switch 是 true 时，该参数为必填。多个方法使用逗号（,）分隔。该参数有以下取值：get：表示禁用 GET 请求方法。post：表示禁用 POST 请求方法。delete：表示禁用 DELETE 请求方法。put：表示禁用 PUT 请求方法。head：表示禁用 HEAD 请求方法。patch：表示 PATCH 请求方法。connect：表示 CONNECT 请求方法。options：表示 OPTIONS 请求方法。
+        Indicates one or more HTTP request methods that are disabled. When Switch is true, this parameter is required. Use commas (,) to separate multiple methods. The parameter values are: get: disables the GET request method. post: disables the POST request method. delete: disables the DELETE request method. put: disables the PUT request method. head: disables the HEAD request method. patch: disables the PATCH request method. connect: disables the CONNECT request method. options: disables the OPTIONS request method.
         """
         return pulumi.get(self, "methods")
 
@@ -4748,7 +4748,7 @@ class DomainMethodDeniedRuleArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        配置开关 禁用方法，多个用逗号,分割，开启时必填. choices: [get, post, head, delete, put]
+        Configuration switch for disabling methods. Use commas to separate multiple methods. Required when enabled. choices: [get, post, head, delete, put]
         """
         return pulumi.get(self, "switch")
 
@@ -4761,7 +4761,7 @@ if not MYPY:
     class DomainMultiRangeArgsDict(TypedDict):
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。该特性启用后，CDN 允许指定了多重范围的 Range 请求。false：表示不启用该特性。如果收到一个指定了多重范围的 Range 请求，CDN 会拒绝该请求并返回 416 响应状态码。该参数的默认值是 false。
+        Indicates whether the feature is enabled. This parameter has the following values: true: enables the feature. When enabled, CDN allows Range requests with multiple ranges. false: disables the feature. If a Range request with multiple ranges is received, CDN rejects the request and returns a 416 response status code. The default value is false.
         """
 elif False:
     DomainMultiRangeArgsDict: TypeAlias = Mapping[str, Any]
@@ -4771,7 +4771,7 @@ class DomainMultiRangeArgs:
     def __init__(__self__, *,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。该特性启用后，CDN 允许指定了多重范围的 Range 请求。false：表示不启用该特性。如果收到一个指定了多重范围的 Range 请求，CDN 会拒绝该请求并返回 416 响应状态码。该参数的默认值是 false。
+        :param pulumi.Input[builtins.bool] switch: Indicates whether the feature is enabled. This parameter has the following values: true: enables the feature. When enabled, CDN allows Range requests with multiple ranges. false: disables the feature. If a Range request with multiple ranges is received, CDN rejects the request and returns a 416 response status code. The default value is false.
         """
         if switch is not None:
             pulumi.set(__self__, "switch", switch)
@@ -4780,7 +4780,7 @@ class DomainMultiRangeArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。该特性启用后，CDN 允许指定了多重范围的 Range 请求。false：表示不启用该特性。如果收到一个指定了多重范围的 Range 请求，CDN 会拒绝该请求并返回 416 响应状态码。该参数的默认值是 false。
+        Indicates whether the feature is enabled. This parameter has the following values: true: enables the feature. When enabled, CDN allows Range requests with multiple ranges. false: disables the feature. If a Range request with multiple ranges is received, CDN rejects the request and returns a 416 response status code. The default value is false.
         """
         return pulumi.get(self, "switch")
 
@@ -4793,11 +4793,11 @@ if not MYPY:
     class DomainNegativeCachArgsDict(TypedDict):
         condition: NotRequired[pulumi.Input['DomainNegativeCachConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         negative_cache_rule: NotRequired[pulumi.Input['DomainNegativeCachNegativeCacheRuleArgsDict']]
         """
-        表示一个列表。该列表的每个元素是一个状态码缓存规则。
+        Represents a list. Each element in the list is a status code cache rule.
         """
 elif False:
     DomainNegativeCachArgsDict: TypeAlias = Mapping[str, Any]
@@ -4808,8 +4808,8 @@ class DomainNegativeCachArgs:
                  condition: Optional[pulumi.Input['DomainNegativeCachConditionArgs']] = None,
                  negative_cache_rule: Optional[pulumi.Input['DomainNegativeCachNegativeCacheRuleArgs']] = None):
         """
-        :param pulumi.Input['DomainNegativeCachConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
-        :param pulumi.Input['DomainNegativeCachNegativeCacheRuleArgs'] negative_cache_rule: 表示一个列表。该列表的每个元素是一个状态码缓存规则。
+        :param pulumi.Input['DomainNegativeCachConditionArgs'] condition: Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
+        :param pulumi.Input['DomainNegativeCachNegativeCacheRuleArgs'] negative_cache_rule: Represents a list. Each element in the list is a status code cache rule.
         """
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
@@ -4820,7 +4820,7 @@ class DomainNegativeCachArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainNegativeCachConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -4832,7 +4832,7 @@ class DomainNegativeCachArgs:
     @pulumi.getter(name="negativeCacheRule")
     def negative_cache_rule(self) -> Optional[pulumi.Input['DomainNegativeCachNegativeCacheRuleArgs']]:
         """
-        表示一个列表。该列表的每个元素是一个状态码缓存规则。
+        Represents a list. Each element in the list is a status code cache rule.
         """
         return pulumi.get(self, "negative_cache_rule")
 
@@ -4846,7 +4846,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainNegativeCachConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainNegativeCachConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -4857,7 +4857,7 @@ class DomainNegativeCachConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainNegativeCachConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -4877,7 +4877,7 @@ class DomainNegativeCachConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -4890,23 +4890,23 @@ if not MYPY:
     class DomainNegativeCachConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainNegativeCachConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -4920,11 +4920,11 @@ class DomainNegativeCachConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -4941,7 +4941,7 @@ class DomainNegativeCachConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -4953,7 +4953,7 @@ class DomainNegativeCachConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -4965,7 +4965,7 @@ class DomainNegativeCachConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -4977,7 +4977,7 @@ class DomainNegativeCachConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -4989,7 +4989,7 @@ class DomainNegativeCachConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -5002,19 +5002,19 @@ if not MYPY:
     class DomainNegativeCachNegativeCacheRuleArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
         """
         ignore_case: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示内容分发网络对请求的文件匹配 ConditionRule 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+        Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
         """
         status_code: NotRequired[pulumi.Input[builtins.str]]
         """
-        指定一个需要缓存的状态码。状态码的范围是 400-599。您也可以指定 4xx 或者 5xx。4xx 表示 400 到 499 之间的所有状态码。5xx 表示 500 到 599 之间的所有状态码。
+        Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
         """
         ttl: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示状态码的缓存时间。单位是秒。时间的范围是 1-315,360,000。315,360,000 表示 10年。
+        Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
         """
 elif False:
     DomainNegativeCachNegativeCacheRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -5027,10 +5027,10 @@ class DomainNegativeCachNegativeCacheRuleArgs:
                  status_code: Optional[pulumi.Input[builtins.str]] = None,
                  ttl: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
-        :param pulumi.Input[builtins.bool] ignore_case: 表示内容分发网络对请求的文件匹配 ConditionRule 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
-        :param pulumi.Input[builtins.str] status_code: 指定一个需要缓存的状态码。状态码的范围是 400-599。您也可以指定 4xx 或者 5xx。4xx 表示 400 到 499 之间的所有状态码。5xx 表示 500 到 599 之间的所有状态码。
-        :param pulumi.Input[builtins.int] ttl: 表示状态码的缓存时间。单位是秒。时间的范围是 1-315,360,000。315,360,000 表示 10年。
+        :param pulumi.Input[builtins.str] action: Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
+        :param pulumi.Input[builtins.bool] ignore_case: Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
+        :param pulumi.Input[builtins.str] status_code: Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
+        :param pulumi.Input[builtins.int] ttl: Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -5045,7 +5045,7 @@ class DomainNegativeCachNegativeCacheRuleArgs:
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
         """
         return pulumi.get(self, "action")
 
@@ -5057,7 +5057,7 @@ class DomainNegativeCachNegativeCacheRuleArgs:
     @pulumi.getter(name="ignoreCase")
     def ignore_case(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示内容分发网络对请求的文件匹配 ConditionRule 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+        Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
         """
         return pulumi.get(self, "ignore_case")
 
@@ -5069,7 +5069,7 @@ class DomainNegativeCachNegativeCacheRuleArgs:
     @pulumi.getter(name="statusCode")
     def status_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定一个需要缓存的状态码。状态码的范围是 400-599。您也可以指定 4xx 或者 5xx。4xx 表示 400 到 499 之间的所有状态码。5xx 表示 500 到 599 之间的所有状态码。
+        Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
         """
         return pulumi.get(self, "status_code")
 
@@ -5081,7 +5081,7 @@ class DomainNegativeCachNegativeCacheRuleArgs:
     @pulumi.getter
     def ttl(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示状态码的缓存时间。单位是秒。时间的范围是 1-315,360,000。315,360,000 表示 10年。
+        Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
         """
         return pulumi.get(self, "ttl")
 
@@ -5094,15 +5094,15 @@ if not MYPY:
     class DomainOfflineCacheArgsDict(TypedDict):
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示该特性的触发条件，该参数有以下取值：request*error：表示回源请求异常。当回源请求出现异常时，CDN 无法从源站获取文件，并且 CDN 没有获得任何来自源站的响应状态码。error*code：表示 CDN 无法从源站获取文件，并且源站的响应状态码是 5xx。request*error,error*code：表示以上两个条件都包含。
+        Indicates the trigger conditions for this feature. The parameter has the following values: request*error: indicates an origin request exception. When an origin request exception occurs, the CDN cannot retrieve files from the origin and does not receive any response status code from the origin. error*code: indicates the CDN cannot retrieve files from the origin, and the origin's response status code is 5xx. request*error,error*code: indicates both conditions are included.
         """
         status_code: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示具体的 5xx 响应状态码，范围是 500-599。多个状态码之间使用分号（;）分隔。您也可以输入 5xx，表示任意以数字 5 开头的状态码。当 Object 是 error*code 或者 request*error,error_code 时，该参数才有效。
+        Specifies the specific 5xx response status codes, ranging from 500 to 599. Separate multiple status codes with a semicolon (;). You can also enter 5xx to indicate any status code starting with the digit 5. This parameter is valid only when Object is error*code or request*error,error_code.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         """
 elif False:
     DomainOfflineCacheArgsDict: TypeAlias = Mapping[str, Any]
@@ -5114,9 +5114,9 @@ class DomainOfflineCacheArgs:
                  status_code: Optional[pulumi.Input[builtins.str]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.str] object: 表示该特性的触发条件，该参数有以下取值：request*error：表示回源请求异常。当回源请求出现异常时，CDN 无法从源站获取文件，并且 CDN 没有获得任何来自源站的响应状态码。error*code：表示 CDN 无法从源站获取文件，并且源站的响应状态码是 5xx。request*error,error*code：表示以上两个条件都包含。
-        :param pulumi.Input[builtins.str] status_code: 表示具体的 5xx 响应状态码，范围是 500-599。多个状态码之间使用分号（;）分隔。您也可以输入 5xx，表示任意以数字 5 开头的状态码。当 Object 是 error*code 或者 request*error,error_code 时，该参数才有效。
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        :param pulumi.Input[builtins.str] object: Indicates the trigger conditions for this feature. The parameter has the following values: request*error: indicates an origin request exception. When an origin request exception occurs, the CDN cannot retrieve files from the origin and does not receive any response status code from the origin. error*code: indicates the CDN cannot retrieve files from the origin, and the origin's response status code is 5xx. request*error,error*code: indicates both conditions are included.
+        :param pulumi.Input[builtins.str] status_code: Specifies the specific 5xx response status codes, ranging from 500 to 599. Separate multiple status codes with a semicolon (;). You can also enter 5xx to indicate any status code starting with the digit 5. This parameter is valid only when Object is error*code or request*error,error_code.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         """
         if object is not None:
             pulumi.set(__self__, "object", object)
@@ -5129,7 +5129,7 @@ class DomainOfflineCacheArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该特性的触发条件，该参数有以下取值：request*error：表示回源请求异常。当回源请求出现异常时，CDN 无法从源站获取文件，并且 CDN 没有获得任何来自源站的响应状态码。error*code：表示 CDN 无法从源站获取文件，并且源站的响应状态码是 5xx。request*error,error*code：表示以上两个条件都包含。
+        Indicates the trigger conditions for this feature. The parameter has the following values: request*error: indicates an origin request exception. When an origin request exception occurs, the CDN cannot retrieve files from the origin and does not receive any response status code from the origin. error*code: indicates the CDN cannot retrieve files from the origin, and the origin's response status code is 5xx. request*error,error*code: indicates both conditions are included.
         """
         return pulumi.get(self, "object")
 
@@ -5141,7 +5141,7 @@ class DomainOfflineCacheArgs:
     @pulumi.getter(name="statusCode")
     def status_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示具体的 5xx 响应状态码，范围是 500-599。多个状态码之间使用分号（;）分隔。您也可以输入 5xx，表示任意以数字 5 开头的状态码。当 Object 是 error*code 或者 request*error,error_code 时，该参数才有效。
+        Specifies the specific 5xx response status codes, ranging from 500 to 599. Separate multiple status codes with a semicolon (;). You can also enter 5xx to indicate any status code starting with the digit 5. This parameter is valid only when Object is error*code or request*error,error_code.
         """
         return pulumi.get(self, "status_code")
 
@@ -5153,7 +5153,7 @@ class DomainOfflineCacheArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         """
         return pulumi.get(self, "switch")
 
@@ -5166,11 +5166,11 @@ if not MYPY:
     class DomainOriginArgsDict(TypedDict):
         origin_action: pulumi.Input['DomainOriginOriginActionArgsDict']
         """
-        表示源站配置。
+        Indicates origin configuration.
         """
         condition: NotRequired[pulumi.Input['DomainOriginConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
 elif False:
     DomainOriginArgsDict: TypeAlias = Mapping[str, Any]
@@ -5181,8 +5181,8 @@ class DomainOriginArgs:
                  origin_action: pulumi.Input['DomainOriginOriginActionArgs'],
                  condition: Optional[pulumi.Input['DomainOriginConditionArgs']] = None):
         """
-        :param pulumi.Input['DomainOriginOriginActionArgs'] origin_action: 表示源站配置。
-        :param pulumi.Input['DomainOriginConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param pulumi.Input['DomainOriginOriginActionArgs'] origin_action: Indicates origin configuration.
+        :param pulumi.Input['DomainOriginConditionArgs'] condition: Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         pulumi.set(__self__, "origin_action", origin_action)
         if condition is not None:
@@ -5192,7 +5192,7 @@ class DomainOriginArgs:
     @pulumi.getter(name="originAction")
     def origin_action(self) -> pulumi.Input['DomainOriginOriginActionArgs']:
         """
-        表示源站配置。
+        Indicates origin configuration.
         """
         return pulumi.get(self, "origin_action")
 
@@ -5204,7 +5204,7 @@ class DomainOriginArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainOriginConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -5217,23 +5217,23 @@ if not MYPY:
     class DomainOriginAccessRuleArgsDict(TypedDict):
         allow_empty: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示用户请求头的 Origin 头部为空（""）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+        Specifies whether requests are allowed when the Origin header in the user request is empty (""). The parameter values are: true: allow; false: do not allow. The default value is false.
         """
         ignore_case: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
+        Indicates whether Origin is case sensitive. This parameter has the following values: true: Origin is case insensitive; false: Origin is case sensitive. The default value is true.
         """
         origins: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+        The address list corresponding to RuleType. When Switch is true, this parameter is required. You can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domain names. Domain names can be second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 100 addresses. When entering domain names, you do not need to include http:// or https://. The value length cannot exceed 3,000 characters.
         """
         rule_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+        Origin list configuration type. When Switch is true, this parameter is required. The parameter has the following values: allow: indicates allowlist. deny: indicates denylist.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         """
 elif False:
     DomainOriginAccessRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -5247,11 +5247,11 @@ class DomainOriginAccessRuleArgs:
                  rule_type: Optional[pulumi.Input[builtins.str]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] allow_empty: 表示用户请求头的 Origin 头部为空（""）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
-        :param pulumi.Input[builtins.bool] ignore_case: 表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] origins: RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
-        :param pulumi.Input[builtins.str] rule_type: Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        :param pulumi.Input[builtins.bool] allow_empty: Specifies whether requests are allowed when the Origin header in the user request is empty (""). The parameter values are: true: allow; false: do not allow. The default value is false.
+        :param pulumi.Input[builtins.bool] ignore_case: Indicates whether Origin is case sensitive. This parameter has the following values: true: Origin is case insensitive; false: Origin is case sensitive. The default value is true.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] origins: The address list corresponding to RuleType. When Switch is true, this parameter is required. You can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domain names. Domain names can be second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 100 addresses. When entering domain names, you do not need to include http:// or https://. The value length cannot exceed 3,000 characters.
+        :param pulumi.Input[builtins.str] rule_type: Origin list configuration type. When Switch is true, this parameter is required. The parameter has the following values: allow: indicates allowlist. deny: indicates denylist.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         """
         if allow_empty is not None:
             pulumi.set(__self__, "allow_empty", allow_empty)
@@ -5268,7 +5268,7 @@ class DomainOriginAccessRuleArgs:
     @pulumi.getter(name="allowEmpty")
     def allow_empty(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示用户请求头的 Origin 头部为空（""）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+        Specifies whether requests are allowed when the Origin header in the user request is empty (""). The parameter values are: true: allow; false: do not allow. The default value is false.
         """
         return pulumi.get(self, "allow_empty")
 
@@ -5280,7 +5280,7 @@ class DomainOriginAccessRuleArgs:
     @pulumi.getter(name="ignoreCase")
     def ignore_case(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
+        Indicates whether Origin is case sensitive. This parameter has the following values: true: Origin is case insensitive; false: Origin is case sensitive. The default value is true.
         """
         return pulumi.get(self, "ignore_case")
 
@@ -5292,7 +5292,7 @@ class DomainOriginAccessRuleArgs:
     @pulumi.getter
     def origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+        The address list corresponding to RuleType. When Switch is true, this parameter is required. You can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domain names. Domain names can be second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 100 addresses. When entering domain names, you do not need to include http:// or https://. The value length cannot exceed 3,000 characters.
         """
         return pulumi.get(self, "origins")
 
@@ -5304,7 +5304,7 @@ class DomainOriginAccessRuleArgs:
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+        Origin list configuration type. When Switch is true, this parameter is required. The parameter has the following values: allow: indicates allowlist. deny: indicates denylist.
         """
         return pulumi.get(self, "rule_type")
 
@@ -5316,7 +5316,7 @@ class DomainOriginAccessRuleArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         """
         return pulumi.get(self, "switch")
 
@@ -5329,11 +5329,11 @@ if not MYPY:
     class DomainOriginArgArgsDict(TypedDict):
         condition: NotRequired[pulumi.Input['DomainOriginArgConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         origin_arg_action: NotRequired[pulumi.Input['DomainOriginArgOriginArgActionArgsDict']]
         """
-        表示在满足 Condition 条件时所执行的操作。
+        Represents the action performed when the Condition is met.
         """
 elif False:
     DomainOriginArgArgsDict: TypeAlias = Mapping[str, Any]
@@ -5344,8 +5344,8 @@ class DomainOriginArgArgs:
                  condition: Optional[pulumi.Input['DomainOriginArgConditionArgs']] = None,
                  origin_arg_action: Optional[pulumi.Input['DomainOriginArgOriginArgActionArgs']] = None):
         """
-        :param pulumi.Input['DomainOriginArgConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
-        :param pulumi.Input['DomainOriginArgOriginArgActionArgs'] origin_arg_action: 表示在满足 Condition 条件时所执行的操作。
+        :param pulumi.Input['DomainOriginArgConditionArgs'] condition: Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
+        :param pulumi.Input['DomainOriginArgOriginArgActionArgs'] origin_arg_action: Represents the action performed when the Condition is met.
         """
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
@@ -5356,7 +5356,7 @@ class DomainOriginArgArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainOriginArgConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -5368,7 +5368,7 @@ class DomainOriginArgArgs:
     @pulumi.getter(name="originArgAction")
     def origin_arg_action(self) -> Optional[pulumi.Input['DomainOriginArgOriginArgActionArgs']]:
         """
-        表示在满足 Condition 条件时所执行的操作。
+        Represents the action performed when the Condition is met.
         """
         return pulumi.get(self, "origin_arg_action")
 
@@ -5382,7 +5382,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainOriginArgConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainOriginArgConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -5393,7 +5393,7 @@ class DomainOriginArgConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainOriginArgConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -5413,7 +5413,7 @@ class DomainOriginArgConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -5426,23 +5426,23 @@ if not MYPY:
     class DomainOriginArgConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainOriginArgConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -5456,11 +5456,11 @@ class DomainOriginArgConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -5477,7 +5477,7 @@ class DomainOriginArgConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -5489,7 +5489,7 @@ class DomainOriginArgConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -5501,7 +5501,7 @@ class DomainOriginArgConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -5513,7 +5513,7 @@ class DomainOriginArgConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -5525,7 +5525,7 @@ class DomainOriginArgConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -5561,15 +5561,15 @@ if not MYPY:
     class DomainOriginArgOriginArgActionOriginArgComponentArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        include: 表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。exclude：表示回源请求 URL 中不包含用户请求 URL 中的任何查询参数。addPart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，并额外包含 Subobject 中指定的查询参数。includePart：表示如果用户请求 URL 中包含 Subobject 中指定的查询参数，那么回源请求 URL 中包含这些指定的查询参数。excludePart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，除了Subobject 中指定的查询参数。set：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。同时，对于您在 Subobject 中指定的查询参数和参数值，CDN 会执行以下操作:如果这些查询参数在用户请求 URL 中，CDN 会在回源请求 URL 中将这些参数的值设置为您指定的值。如果用户请求 URL 中不包含这些查询参数，CDN 会在回源请求 URL 中添加这些查询参数。
+        include: Indicates that the origin request URL includes all query parameters from the user request URL. exclude: Indicates that the origin request URL does not include any query parameters from the user request URL. addPart: Indicates that the origin request URL includes all query parameters from the user request URL, plus the query parameters specified in the Subobject. includePart: Indicates that if the user request URL contains the query parameters specified in the Subobject, the origin request URL will include these specified query parameters. excludePart: Indicates that the origin request URL includes all query parameters from the user request URL except those specified in the Subobject. set: Indicates that the origin request URL includes all query parameters from the user request URL. For the query parameters and values you specify in the Subobject, CDN will perform the following actions: If these query parameters exist in the user request URL, CDN will set their values in the origin request URL to the values you specify. If the user request URL does not contain these query parameters, CDN will add them to the origin request URL.
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示 CDN 对哪个对象执行 Action。当前，该参数值只能是 queryString，表示请求 URL 中的查询字符串。
+        Indicates which object the CDN performs the Action on. Currently, this parameter can only be set to queryString, which refers to the query string in the request URL.
         """
         subobject: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个或者多个查询参数。多个查询参数之间使用分号（;）分隔，总长度不能超过 1,024 个字符。Subobject 只能包含字母、数字、下划线（_）、逗号（,）、短横线（-）、句点（.）和感叹号（!）。在匹配请求 URL 中的查询参数时，Subobject 中的参数是大小写敏感的。Subobject 的额外说明如下：当 Action 是 include 或 exclude 时，Subobject 必须是 *，表示请求 URL 中的所有查询参数。当 Action 是 includePart 或 excludePart 时，Subobject 表示一个或者多个查询参数。例如 param1;param2。当 Action 是 addPart 或 set 时，Subobject 表示一个或者多个查询参数和参数值，格式是 key=value。例如 param1=val1;param2=val2;param3=val3。
+        Represents one or more query parameters. Use semicolons (;) to separate multiple query parameters. The total length must not exceed 1,024 characters. Subobject can only contain letters, numbers, underscores (_), commas (,), hyphens (-), periods (.), and exclamation marks (!). When matching query parameters in the request URL, parameters in Subobject are case-sensitive. Additional notes for Subobject: When Action is include or exclude, Subobject must be *, which represents all query parameters in the request URL. When Action is includePart or excludePart, Subobject represents one or more query parameters, for example, param1;param2. When Action is addPart or set, Subobject represents one or more query parameters and their values in the format key=value, for example, param1=val1;param2=val2;param3=val3.
         """
 elif False:
     DomainOriginArgOriginArgActionOriginArgComponentArgsDict: TypeAlias = Mapping[str, Any]
@@ -5581,9 +5581,9 @@ class DomainOriginArgOriginArgActionOriginArgComponentArgs:
                  object: Optional[pulumi.Input[builtins.str]] = None,
                  subobject: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] action: include: 表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。exclude：表示回源请求 URL 中不包含用户请求 URL 中的任何查询参数。addPart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，并额外包含 Subobject 中指定的查询参数。includePart：表示如果用户请求 URL 中包含 Subobject 中指定的查询参数，那么回源请求 URL 中包含这些指定的查询参数。excludePart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，除了Subobject 中指定的查询参数。set：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。同时，对于您在 Subobject 中指定的查询参数和参数值，CDN 会执行以下操作:如果这些查询参数在用户请求 URL 中，CDN 会在回源请求 URL 中将这些参数的值设置为您指定的值。如果用户请求 URL 中不包含这些查询参数，CDN 会在回源请求 URL 中添加这些查询参数。
-        :param pulumi.Input[builtins.str] object: 表示 CDN 对哪个对象执行 Action。当前，该参数值只能是 queryString，表示请求 URL 中的查询字符串。
-        :param pulumi.Input[builtins.str] subobject: 表示一个或者多个查询参数。多个查询参数之间使用分号（;）分隔，总长度不能超过 1,024 个字符。Subobject 只能包含字母、数字、下划线（_）、逗号（,）、短横线（-）、句点（.）和感叹号（!）。在匹配请求 URL 中的查询参数时，Subobject 中的参数是大小写敏感的。Subobject 的额外说明如下：当 Action 是 include 或 exclude 时，Subobject 必须是 *，表示请求 URL 中的所有查询参数。当 Action 是 includePart 或 excludePart 时，Subobject 表示一个或者多个查询参数。例如 param1;param2。当 Action 是 addPart 或 set 时，Subobject 表示一个或者多个查询参数和参数值，格式是 key=value。例如 param1=val1;param2=val2;param3=val3。
+        :param pulumi.Input[builtins.str] action: include: Indicates that the origin request URL includes all query parameters from the user request URL. exclude: Indicates that the origin request URL does not include any query parameters from the user request URL. addPart: Indicates that the origin request URL includes all query parameters from the user request URL, plus the query parameters specified in the Subobject. includePart: Indicates that if the user request URL contains the query parameters specified in the Subobject, the origin request URL will include these specified query parameters. excludePart: Indicates that the origin request URL includes all query parameters from the user request URL except those specified in the Subobject. set: Indicates that the origin request URL includes all query parameters from the user request URL. For the query parameters and values you specify in the Subobject, CDN will perform the following actions: If these query parameters exist in the user request URL, CDN will set their values in the origin request URL to the values you specify. If the user request URL does not contain these query parameters, CDN will add them to the origin request URL.
+        :param pulumi.Input[builtins.str] object: Indicates which object the CDN performs the Action on. Currently, this parameter can only be set to queryString, which refers to the query string in the request URL.
+        :param pulumi.Input[builtins.str] subobject: Represents one or more query parameters. Use semicolons (;) to separate multiple query parameters. The total length must not exceed 1,024 characters. Subobject can only contain letters, numbers, underscores (_), commas (,), hyphens (-), periods (.), and exclamation marks (!). When matching query parameters in the request URL, parameters in Subobject are case-sensitive. Additional notes for Subobject: When Action is include or exclude, Subobject must be *, which represents all query parameters in the request URL. When Action is includePart or excludePart, Subobject represents one or more query parameters, for example, param1;param2. When Action is addPart or set, Subobject represents one or more query parameters and their values in the format key=value, for example, param1=val1;param2=val2;param3=val3.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -5596,7 +5596,7 @@ class DomainOriginArgOriginArgActionOriginArgComponentArgs:
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        include: 表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。exclude：表示回源请求 URL 中不包含用户请求 URL 中的任何查询参数。addPart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，并额外包含 Subobject 中指定的查询参数。includePart：表示如果用户请求 URL 中包含 Subobject 中指定的查询参数，那么回源请求 URL 中包含这些指定的查询参数。excludePart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，除了Subobject 中指定的查询参数。set：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。同时，对于您在 Subobject 中指定的查询参数和参数值，CDN 会执行以下操作:如果这些查询参数在用户请求 URL 中，CDN 会在回源请求 URL 中将这些参数的值设置为您指定的值。如果用户请求 URL 中不包含这些查询参数，CDN 会在回源请求 URL 中添加这些查询参数。
+        include: Indicates that the origin request URL includes all query parameters from the user request URL. exclude: Indicates that the origin request URL does not include any query parameters from the user request URL. addPart: Indicates that the origin request URL includes all query parameters from the user request URL, plus the query parameters specified in the Subobject. includePart: Indicates that if the user request URL contains the query parameters specified in the Subobject, the origin request URL will include these specified query parameters. excludePart: Indicates that the origin request URL includes all query parameters from the user request URL except those specified in the Subobject. set: Indicates that the origin request URL includes all query parameters from the user request URL. For the query parameters and values you specify in the Subobject, CDN will perform the following actions: If these query parameters exist in the user request URL, CDN will set their values in the origin request URL to the values you specify. If the user request URL does not contain these query parameters, CDN will add them to the origin request URL.
         """
         return pulumi.get(self, "action")
 
@@ -5608,7 +5608,7 @@ class DomainOriginArgOriginArgActionOriginArgComponentArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 CDN 对哪个对象执行 Action。当前，该参数值只能是 queryString，表示请求 URL 中的查询字符串。
+        Indicates which object the CDN performs the Action on. Currently, this parameter can only be set to queryString, which refers to the query string in the request URL.
         """
         return pulumi.get(self, "object")
 
@@ -5620,7 +5620,7 @@ class DomainOriginArgOriginArgActionOriginArgComponentArgs:
     @pulumi.getter
     def subobject(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个或者多个查询参数。多个查询参数之间使用分号（;）分隔，总长度不能超过 1,024 个字符。Subobject 只能包含字母、数字、下划线（_）、逗号（,）、短横线（-）、句点（.）和感叹号（!）。在匹配请求 URL 中的查询参数时，Subobject 中的参数是大小写敏感的。Subobject 的额外说明如下：当 Action 是 include 或 exclude 时，Subobject 必须是 *，表示请求 URL 中的所有查询参数。当 Action 是 includePart 或 excludePart 时，Subobject 表示一个或者多个查询参数。例如 param1;param2。当 Action 是 addPart 或 set 时，Subobject 表示一个或者多个查询参数和参数值，格式是 key=value。例如 param1=val1;param2=val2;param3=val3。
+        Represents one or more query parameters. Use semicolons (;) to separate multiple query parameters. The total length must not exceed 1,024 characters. Subobject can only contain letters, numbers, underscores (_), commas (,), hyphens (-), periods (.), and exclamation marks (!). When matching query parameters in the request URL, parameters in Subobject are case-sensitive. Additional notes for Subobject: When Action is include or exclude, Subobject must be *, which represents all query parameters in the request URL. When Action is includePart or excludePart, Subobject represents one or more query parameters, for example, param1;param2. When Action is addPart or set, Subobject represents one or more query parameters and their values in the format key=value, for example, param1=val1;param2=val2;param3=val3.
         """
         return pulumi.get(self, "subobject")
 
@@ -5666,7 +5666,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainOriginConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainOriginConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -5677,7 +5677,7 @@ class DomainOriginConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainOriginConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -5697,7 +5697,7 @@ class DomainOriginConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -5710,23 +5710,23 @@ if not MYPY:
     class DomainOriginConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainOriginConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -5740,11 +5740,11 @@ class DomainOriginConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -5761,7 +5761,7 @@ class DomainOriginConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -5773,7 +5773,7 @@ class DomainOriginConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -5785,7 +5785,7 @@ class DomainOriginConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -5797,7 +5797,7 @@ class DomainOriginConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -5809,7 +5809,7 @@ class DomainOriginConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -5844,43 +5844,43 @@ if not MYPY:
     class DomainOriginOriginActionOriginLineArgsDict(TypedDict):
         address: pulumi.Input[builtins.str]
         """
-        表示源站地址。该参数有以下说明：如果 InstanceType 是 ip，您可以设置一个 IP 地址。IP 地址可以是 IPv4 或 IPv6 地址。如果 InstanceType 是 domain，您可以设置一个域名。该域名不能是泛域名。如果 InstanceType 是 tos，您可以设置一个对象存储桶的域名。该存储桶可以来自阿里云、腾讯云、AWS。如果您在该 API 请求中指定了多个源站配置：所有主源站配置中的 InstanceType 必须相同。所有备源站配置中的 InstanceType 也必须相同。如果主源站配置中的 InstanceType 是 ip 或者 domain，备源站配置中的 InstanceType 必须是 ip 或者 domain。主源站地址和和备源站地址的总数不能超过 50 个。
+        Indicates the origin address. The parameter has the following instructions: If InstanceType is ip, you can set an IP address. The IP address can be either IPv4 or IPv6. If InstanceType is domain, you can set a domain name. The domain name cannot be a wildcard domain. If InstanceType is tos, you can set the domain name of an object storage bucket. The bucket can be from Alibaba Cloud, Tencent Cloud, or AWS. If you specify multiple origin configurations in this API request: All primary origin configurations must have the same InstanceType. All backup origin configurations must also have the same InstanceType. If the InstanceType in the primary origin configuration is ip or domain, the InstanceType in the backup origin configuration must also be ip or domain. The total number of primary and backup origin addresses cannot exceed 50.
         """
         instance_type: pulumi.Input[builtins.str]
         """
-        表示源站的类型。该参数有以下取值：ip：表示源站是通过 IP 地址来访问的。domain：表示源站是通过域名来访问的。tos：表示源站是一个对象存储桶。
+        Indicates the type of origin server. This parameter has the following values: ip: The origin server is accessed via IP address. domain: The origin server is accessed via domain name. tos: The origin server is an object storage bucket.
         """
         origin_type: pulumi.Input[builtins.str]
         """
-        表示源站的类别。该参数有以下取值：   - primary：表示主源站。   - backup：表示备源站。 该 API 请求中至少需要包含一个主源站配置。备源站配置是可选的。
+        Indicates the type of origin server. This parameter has the following values:   - primary: Primary origin server.   - backup: Backup origin server. At least one primary origin server configuration must be included in this API request. Backup origin server configuration is optional.
         """
         http_port: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示内容分发网络使用 HTTP 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 80。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The value range is 1–65535, and the default value is 80. If the origin server does not support access on this port, you can specify the default value. This parameter is only valid when InstanceType is ip or domain.
         """
         https_port: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示内容分发网络使用 HTTPS 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 443。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        Indicates the port used by the content delivery network to access the origin server via HTTPS. The value range is 1-65535, and the default value is 443. If the origin server does not support access on this port, you can specify the default value. This parameter is only valid when InstanceType is ip or domain.
         """
         origin_host: NotRequired[pulumi.Input[builtins.str]]
         """
-        如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+        If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
         """
         private_bucket_access: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示对象存储桶是否开启了私有读权限。该参数仅当 InstanceType 为 tos 时才有效。该参数有以下取值：true：表示开启了该权限。false：表示未开启该权限。该参数的默认值是 false。
+        Indicates whether private read permissions are enabled for the object storage bucket. This parameter is only valid when InstanceType is tos. The parameter values are: true: Enabled. false: Not enabled. The default value is false.
         """
         private_bucket_auth: NotRequired[pulumi.Input['DomainOriginOriginActionOriginLinePrivateBucketAuthArgsDict']]
         """
-        表示第三方云厂商的对象存储桶的鉴权信息。
+        Represents the authentication information for the object storage bucket of a third-party cloud provider.
         """
         region: NotRequired[pulumi.Input[builtins.str]]
         """
-        该参数暂不对外开放，请勿使用该参数。
+        This parameter is not currently available externally. Do not use this parameter.
         """
         weight: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示该源站的权重，取值范围是 1-100，默认值是 1。权重越大，该源站在内容分发网络发送回源请求时被选择到的概率也越大。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        Specifies the weight of the origin. Value range is 1–100, default is 1. The higher the weight, the more likely this origin is selected when the content delivery network sends a request to the origin. This parameter is only valid when InstanceType is ip or domain.
         """
 elif False:
     DomainOriginOriginActionOriginLineArgsDict: TypeAlias = Mapping[str, Any]
@@ -5899,16 +5899,16 @@ class DomainOriginOriginActionOriginLineArgs:
                  region: Optional[pulumi.Input[builtins.str]] = None,
                  weight: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] address: 表示源站地址。该参数有以下说明：如果 InstanceType 是 ip，您可以设置一个 IP 地址。IP 地址可以是 IPv4 或 IPv6 地址。如果 InstanceType 是 domain，您可以设置一个域名。该域名不能是泛域名。如果 InstanceType 是 tos，您可以设置一个对象存储桶的域名。该存储桶可以来自阿里云、腾讯云、AWS。如果您在该 API 请求中指定了多个源站配置：所有主源站配置中的 InstanceType 必须相同。所有备源站配置中的 InstanceType 也必须相同。如果主源站配置中的 InstanceType 是 ip 或者 domain，备源站配置中的 InstanceType 必须是 ip 或者 domain。主源站地址和和备源站地址的总数不能超过 50 个。
-        :param pulumi.Input[builtins.str] instance_type: 表示源站的类型。该参数有以下取值：ip：表示源站是通过 IP 地址来访问的。domain：表示源站是通过域名来访问的。tos：表示源站是一个对象存储桶。
-        :param pulumi.Input[builtins.str] origin_type: 表示源站的类别。该参数有以下取值：   - primary：表示主源站。   - backup：表示备源站。 该 API 请求中至少需要包含一个主源站配置。备源站配置是可选的。
-        :param pulumi.Input[builtins.str] http_port: 表示内容分发网络使用 HTTP 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 80。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
-        :param pulumi.Input[builtins.str] https_port: 表示内容分发网络使用 HTTPS 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 443。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
-        :param pulumi.Input[builtins.str] origin_host: 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
-        :param pulumi.Input[builtins.bool] private_bucket_access: 表示对象存储桶是否开启了私有读权限。该参数仅当 InstanceType 为 tos 时才有效。该参数有以下取值：true：表示开启了该权限。false：表示未开启该权限。该参数的默认值是 false。
-        :param pulumi.Input['DomainOriginOriginActionOriginLinePrivateBucketAuthArgs'] private_bucket_auth: 表示第三方云厂商的对象存储桶的鉴权信息。
-        :param pulumi.Input[builtins.str] region: 该参数暂不对外开放，请勿使用该参数。
-        :param pulumi.Input[builtins.str] weight: 表示该源站的权重，取值范围是 1-100，默认值是 1。权重越大，该源站在内容分发网络发送回源请求时被选择到的概率也越大。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        :param pulumi.Input[builtins.str] address: Indicates the origin address. The parameter has the following instructions: If InstanceType is ip, you can set an IP address. The IP address can be either IPv4 or IPv6. If InstanceType is domain, you can set a domain name. The domain name cannot be a wildcard domain. If InstanceType is tos, you can set the domain name of an object storage bucket. The bucket can be from Alibaba Cloud, Tencent Cloud, or AWS. If you specify multiple origin configurations in this API request: All primary origin configurations must have the same InstanceType. All backup origin configurations must also have the same InstanceType. If the InstanceType in the primary origin configuration is ip or domain, the InstanceType in the backup origin configuration must also be ip or domain. The total number of primary and backup origin addresses cannot exceed 50.
+        :param pulumi.Input[builtins.str] instance_type: Indicates the type of origin server. This parameter has the following values: ip: The origin server is accessed via IP address. domain: The origin server is accessed via domain name. tos: The origin server is an object storage bucket.
+        :param pulumi.Input[builtins.str] origin_type: Indicates the type of origin server. This parameter has the following values:   - primary: Primary origin server.   - backup: Backup origin server. At least one primary origin server configuration must be included in this API request. Backup origin server configuration is optional.
+        :param pulumi.Input[builtins.str] http_port: Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The value range is 1–65535, and the default value is 80. If the origin server does not support access on this port, you can specify the default value. This parameter is only valid when InstanceType is ip or domain.
+        :param pulumi.Input[builtins.str] https_port: Indicates the port used by the content delivery network to access the origin server via HTTPS. The value range is 1-65535, and the default value is 443. If the origin server does not support access on this port, you can specify the default value. This parameter is only valid when InstanceType is ip or domain.
+        :param pulumi.Input[builtins.str] origin_host: If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
+        :param pulumi.Input[builtins.bool] private_bucket_access: Indicates whether private read permissions are enabled for the object storage bucket. This parameter is only valid when InstanceType is tos. The parameter values are: true: Enabled. false: Not enabled. The default value is false.
+        :param pulumi.Input['DomainOriginOriginActionOriginLinePrivateBucketAuthArgs'] private_bucket_auth: Represents the authentication information for the object storage bucket of a third-party cloud provider.
+        :param pulumi.Input[builtins.str] region: This parameter is not currently available externally. Do not use this parameter.
+        :param pulumi.Input[builtins.str] weight: Specifies the weight of the origin. Value range is 1–100, default is 1. The higher the weight, the more likely this origin is selected when the content delivery network sends a request to the origin. This parameter is only valid when InstanceType is ip or domain.
         """
         pulumi.set(__self__, "address", address)
         pulumi.set(__self__, "instance_type", instance_type)
@@ -5932,7 +5932,7 @@ class DomainOriginOriginActionOriginLineArgs:
     @pulumi.getter
     def address(self) -> pulumi.Input[builtins.str]:
         """
-        表示源站地址。该参数有以下说明：如果 InstanceType 是 ip，您可以设置一个 IP 地址。IP 地址可以是 IPv4 或 IPv6 地址。如果 InstanceType 是 domain，您可以设置一个域名。该域名不能是泛域名。如果 InstanceType 是 tos，您可以设置一个对象存储桶的域名。该存储桶可以来自阿里云、腾讯云、AWS。如果您在该 API 请求中指定了多个源站配置：所有主源站配置中的 InstanceType 必须相同。所有备源站配置中的 InstanceType 也必须相同。如果主源站配置中的 InstanceType 是 ip 或者 domain，备源站配置中的 InstanceType 必须是 ip 或者 domain。主源站地址和和备源站地址的总数不能超过 50 个。
+        Indicates the origin address. The parameter has the following instructions: If InstanceType is ip, you can set an IP address. The IP address can be either IPv4 or IPv6. If InstanceType is domain, you can set a domain name. The domain name cannot be a wildcard domain. If InstanceType is tos, you can set the domain name of an object storage bucket. The bucket can be from Alibaba Cloud, Tencent Cloud, or AWS. If you specify multiple origin configurations in this API request: All primary origin configurations must have the same InstanceType. All backup origin configurations must also have the same InstanceType. If the InstanceType in the primary origin configuration is ip or domain, the InstanceType in the backup origin configuration must also be ip or domain. The total number of primary and backup origin addresses cannot exceed 50.
         """
         return pulumi.get(self, "address")
 
@@ -5944,7 +5944,7 @@ class DomainOriginOriginActionOriginLineArgs:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> pulumi.Input[builtins.str]:
         """
-        表示源站的类型。该参数有以下取值：ip：表示源站是通过 IP 地址来访问的。domain：表示源站是通过域名来访问的。tos：表示源站是一个对象存储桶。
+        Indicates the type of origin server. This parameter has the following values: ip: The origin server is accessed via IP address. domain: The origin server is accessed via domain name. tos: The origin server is an object storage bucket.
         """
         return pulumi.get(self, "instance_type")
 
@@ -5956,7 +5956,7 @@ class DomainOriginOriginActionOriginLineArgs:
     @pulumi.getter(name="originType")
     def origin_type(self) -> pulumi.Input[builtins.str]:
         """
-        表示源站的类别。该参数有以下取值：   - primary：表示主源站。   - backup：表示备源站。 该 API 请求中至少需要包含一个主源站配置。备源站配置是可选的。
+        Indicates the type of origin server. This parameter has the following values:   - primary: Primary origin server.   - backup: Backup origin server. At least one primary origin server configuration must be included in this API request. Backup origin server configuration is optional.
         """
         return pulumi.get(self, "origin_type")
 
@@ -5968,7 +5968,7 @@ class DomainOriginOriginActionOriginLineArgs:
     @pulumi.getter(name="httpPort")
     def http_port(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示内容分发网络使用 HTTP 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 80。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The value range is 1–65535, and the default value is 80. If the origin server does not support access on this port, you can specify the default value. This parameter is only valid when InstanceType is ip or domain.
         """
         return pulumi.get(self, "http_port")
 
@@ -5980,7 +5980,7 @@ class DomainOriginOriginActionOriginLineArgs:
     @pulumi.getter(name="httpsPort")
     def https_port(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示内容分发网络使用 HTTPS 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 443。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        Indicates the port used by the content delivery network to access the origin server via HTTPS. The value range is 1-65535, and the default value is 443. If the origin server does not support access on this port, you can specify the default value. This parameter is only valid when InstanceType is ip or domain.
         """
         return pulumi.get(self, "https_port")
 
@@ -5992,7 +5992,7 @@ class DomainOriginOriginActionOriginLineArgs:
     @pulumi.getter(name="originHost")
     def origin_host(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+        If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
         """
         return pulumi.get(self, "origin_host")
 
@@ -6004,7 +6004,7 @@ class DomainOriginOriginActionOriginLineArgs:
     @pulumi.getter(name="privateBucketAccess")
     def private_bucket_access(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示对象存储桶是否开启了私有读权限。该参数仅当 InstanceType 为 tos 时才有效。该参数有以下取值：true：表示开启了该权限。false：表示未开启该权限。该参数的默认值是 false。
+        Indicates whether private read permissions are enabled for the object storage bucket. This parameter is only valid when InstanceType is tos. The parameter values are: true: Enabled. false: Not enabled. The default value is false.
         """
         return pulumi.get(self, "private_bucket_access")
 
@@ -6016,7 +6016,7 @@ class DomainOriginOriginActionOriginLineArgs:
     @pulumi.getter(name="privateBucketAuth")
     def private_bucket_auth(self) -> Optional[pulumi.Input['DomainOriginOriginActionOriginLinePrivateBucketAuthArgs']]:
         """
-        表示第三方云厂商的对象存储桶的鉴权信息。
+        Represents the authentication information for the object storage bucket of a third-party cloud provider.
         """
         return pulumi.get(self, "private_bucket_auth")
 
@@ -6028,7 +6028,7 @@ class DomainOriginOriginActionOriginLineArgs:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        该参数暂不对外开放，请勿使用该参数。
+        This parameter is not currently available externally. Do not use this parameter.
         """
         return pulumi.get(self, "region")
 
@@ -6040,7 +6040,7 @@ class DomainOriginOriginActionOriginLineArgs:
     @pulumi.getter
     def weight(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该源站的权重，取值范围是 1-100，默认值是 1。权重越大，该源站在内容分发网络发送回源请求时被选择到的概率也越大。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        Specifies the weight of the origin. Value range is 1–100, default is 1. The higher the weight, the more likely this origin is selected when the content delivery network sends a request to the origin. This parameter is only valid when InstanceType is ip or domain.
         """
         return pulumi.get(self, "weight")
 
@@ -6053,15 +6053,15 @@ if not MYPY:
     class DomainOriginOriginActionOriginLinePrivateBucketAuthArgsDict(TypedDict):
         auth_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+        Indicates the third-party cloud provider where the object storage bucket is located. The parameter values are: cos: Tencent Cloud. oss: Alibaba Cloud. aws: Amazon AWS.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+        Indicates whether the object storage bucket is from a third-party cloud provider. This parameter has the following values: true: the object storage bucket is from a third-party cloud provider. The default value is false
         """
         tos_auth_information: NotRequired[pulumi.Input['DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgsDict']]
         """
-        表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+        Specifies the access key for the third-party cloud provider. This parameter is only valid when Switch is true.
         """
 elif False:
     DomainOriginOriginActionOriginLinePrivateBucketAuthArgsDict: TypeAlias = Mapping[str, Any]
@@ -6073,9 +6073,9 @@ class DomainOriginOriginActionOriginLinePrivateBucketAuthArgs:
                  switch: Optional[pulumi.Input[builtins.bool]] = None,
                  tos_auth_information: Optional[pulumi.Input['DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgs']] = None):
         """
-        :param pulumi.Input[builtins.str] auth_type: 表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
-        :param pulumi.Input[builtins.bool] switch: 表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
-        :param pulumi.Input['DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgs'] tos_auth_information: 表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+        :param pulumi.Input[builtins.str] auth_type: Indicates the third-party cloud provider where the object storage bucket is located. The parameter values are: cos: Tencent Cloud. oss: Alibaba Cloud. aws: Amazon AWS.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether the object storage bucket is from a third-party cloud provider. This parameter has the following values: true: the object storage bucket is from a third-party cloud provider. The default value is false
+        :param pulumi.Input['DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgs'] tos_auth_information: Specifies the access key for the third-party cloud provider. This parameter is only valid when Switch is true.
         """
         if auth_type is not None:
             pulumi.set(__self__, "auth_type", auth_type)
@@ -6088,7 +6088,7 @@ class DomainOriginOriginActionOriginLinePrivateBucketAuthArgs:
     @pulumi.getter(name="authType")
     def auth_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+        Indicates the third-party cloud provider where the object storage bucket is located. The parameter values are: cos: Tencent Cloud. oss: Alibaba Cloud. aws: Amazon AWS.
         """
         return pulumi.get(self, "auth_type")
 
@@ -6100,7 +6100,7 @@ class DomainOriginOriginActionOriginLinePrivateBucketAuthArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+        Indicates whether the object storage bucket is from a third-party cloud provider. This parameter has the following values: true: the object storage bucket is from a third-party cloud provider. The default value is false
         """
         return pulumi.get(self, "switch")
 
@@ -6112,7 +6112,7 @@ class DomainOriginOriginActionOriginLinePrivateBucketAuthArgs:
     @pulumi.getter(name="tosAuthInformation")
     def tos_auth_information(self) -> Optional[pulumi.Input['DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgs']]:
         """
-        表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+        Specifies the access key for the third-party cloud provider. This parameter is only valid when Switch is true.
         """
         return pulumi.get(self, "tos_auth_information")
 
@@ -6125,11 +6125,11 @@ if not MYPY:
     class DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgsDict(TypedDict):
         access_key_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+        Specifies the AccessKey ID for your Alibaba Cloud account, SecretId for your Tencent Cloud account, or access key ID for your AWS account.
         """
         access_key_secret: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+        Indicates the AccessKey Secret for your Alibaba Cloud account, the SecretKey for your Tencent Cloud account, or the secret access key for your AWS account.
         """
 elif False:
     DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgsDict: TypeAlias = Mapping[str, Any]
@@ -6140,8 +6140,8 @@ class DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgs:
                  access_key_id: Optional[pulumi.Input[builtins.str]] = None,
                  access_key_secret: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] access_key_id: 表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
-        :param pulumi.Input[builtins.str] access_key_secret: 表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+        :param pulumi.Input[builtins.str] access_key_id: Specifies the AccessKey ID for your Alibaba Cloud account, SecretId for your Tencent Cloud account, or access key ID for your AWS account.
+        :param pulumi.Input[builtins.str] access_key_secret: Indicates the AccessKey Secret for your Alibaba Cloud account, the SecretKey for your Tencent Cloud account, or the secret access key for your AWS account.
         """
         if access_key_id is not None:
             pulumi.set(__self__, "access_key_id", access_key_id)
@@ -6152,7 +6152,7 @@ class DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgs:
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+        Specifies the AccessKey ID for your Alibaba Cloud account, SecretId for your Tencent Cloud account, or access key ID for your AWS account.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -6164,7 +6164,7 @@ class DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgs:
     @pulumi.getter(name="accessKeySecret")
     def access_key_secret(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+        Indicates the AccessKey Secret for your Alibaba Cloud account, the SecretKey for your Tencent Cloud account, or the secret access key for your AWS account.
         """
         return pulumi.get(self, "access_key_secret")
 
@@ -6177,11 +6177,11 @@ if not MYPY:
     class DomainOriginRetryArgsDict(TypedDict):
         status_code: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示范围在 400-599 之间的一个或者多个状态码。多个状态码之间使用分号（;）分隔。您可以输入 4xx 或者 5xx，表示所有以数字 4 或 数字 5 开头的状态码。
+        Indicates one or more status codes in the range 400–599. Separate multiple status codes with a semicolon (;). You can enter 4xx or 5xx to represent all status codes starting with the digit 4 or 5.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
         """
 elif False:
     DomainOriginRetryArgsDict: TypeAlias = Mapping[str, Any]
@@ -6192,8 +6192,8 @@ class DomainOriginRetryArgs:
                  status_code: Optional[pulumi.Input[builtins.str]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.str] status_code: 表示范围在 400-599 之间的一个或者多个状态码。多个状态码之间使用分号（;）分隔。您可以输入 4xx 或者 5xx，表示所有以数字 4 或 数字 5 开头的状态码。
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        :param pulumi.Input[builtins.str] status_code: Indicates one or more status codes in the range 400–599. Separate multiple status codes with a semicolon (;). You can enter 4xx or 5xx to represent all status codes starting with the digit 4 or 5.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
         """
         if status_code is not None:
             pulumi.set(__self__, "status_code", status_code)
@@ -6204,7 +6204,7 @@ class DomainOriginRetryArgs:
     @pulumi.getter(name="statusCode")
     def status_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示范围在 400-599 之间的一个或者多个状态码。多个状态码之间使用分号（;）分隔。您可以输入 4xx 或者 5xx，表示所有以数字 4 或 数字 5 开头的状态码。
+        Indicates one or more status codes in the range 400–599. Separate multiple status codes with a semicolon (;). You can enter 4xx or 5xx to represent all status codes starting with the digit 4 or 5.
         """
         return pulumi.get(self, "status_code")
 
@@ -6216,7 +6216,7 @@ class DomainOriginRetryArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
         """
         return pulumi.get(self, "switch")
 
@@ -6230,7 +6230,7 @@ if not MYPY:
         origin_rewrite_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainOriginRewriteOriginRewriteRuleArgsDict']]]]
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该模块。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        Indicates whether to enable this module. The parameter has the following values: true: enables the module. false: disables the module. The default value is false.
         """
 elif False:
     DomainOriginRewriteArgsDict: TypeAlias = Mapping[str, Any]
@@ -6241,7 +6241,7 @@ class DomainOriginRewriteArgs:
                  origin_rewrite_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainOriginRewriteOriginRewriteRuleArgs']]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该模块。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        :param pulumi.Input[builtins.bool] switch: Indicates whether to enable this module. The parameter has the following values: true: enables the module. false: disables the module. The default value is false.
         """
         if origin_rewrite_rules is not None:
             pulumi.set(__self__, "origin_rewrite_rules", origin_rewrite_rules)
@@ -6261,7 +6261,7 @@ class DomainOriginRewriteArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该模块。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        Indicates whether to enable this module. The parameter has the following values: true: enables the module. false: disables the module. The default value is false.
         """
         return pulumi.get(self, "switch")
 
@@ -6274,11 +6274,11 @@ if not MYPY:
     class DomainOriginRewriteOriginRewriteRuleArgsDict(TypedDict):
         condition: NotRequired[pulumi.Input['DomainOriginRewriteOriginRewriteRuleConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         origin_rewrite_action: NotRequired[pulumi.Input['DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgsDict']]
         """
-        表示一个回源路径改写的规则配置。
+        Indicates a rule configuration for origin path rewrite.
         """
 elif False:
     DomainOriginRewriteOriginRewriteRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -6289,8 +6289,8 @@ class DomainOriginRewriteOriginRewriteRuleArgs:
                  condition: Optional[pulumi.Input['DomainOriginRewriteOriginRewriteRuleConditionArgs']] = None,
                  origin_rewrite_action: Optional[pulumi.Input['DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs']] = None):
         """
-        :param pulumi.Input['DomainOriginRewriteOriginRewriteRuleConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
-        :param pulumi.Input['DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs'] origin_rewrite_action: 表示一个回源路径改写的规则配置。
+        :param pulumi.Input['DomainOriginRewriteOriginRewriteRuleConditionArgs'] condition: Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
+        :param pulumi.Input['DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs'] origin_rewrite_action: Indicates a rule configuration for origin path rewrite.
         """
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
@@ -6301,7 +6301,7 @@ class DomainOriginRewriteOriginRewriteRuleArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainOriginRewriteOriginRewriteRuleConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -6313,7 +6313,7 @@ class DomainOriginRewriteOriginRewriteRuleArgs:
     @pulumi.getter(name="originRewriteAction")
     def origin_rewrite_action(self) -> Optional[pulumi.Input['DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs']]:
         """
-        表示一个回源路径改写的规则配置。
+        Indicates a rule configuration for origin path rewrite.
         """
         return pulumi.get(self, "origin_rewrite_action")
 
@@ -6327,7 +6327,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainOriginRewriteOriginRewriteRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -6338,7 +6338,7 @@ class DomainOriginRewriteOriginRewriteRuleConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -6358,7 +6358,7 @@ class DomainOriginRewriteOriginRewriteRuleConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -6371,23 +6371,23 @@ if not MYPY:
     class DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -6401,11 +6401,11 @@ class DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -6422,7 +6422,7 @@ class DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -6434,7 +6434,7 @@ class DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -6446,7 +6446,7 @@ class DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -6458,7 +6458,7 @@ class DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -6470,7 +6470,7 @@ class DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -6483,15 +6483,15 @@ if not MYPY:
     class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgsDict(TypedDict):
         rewrite_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示改写类型。该参数有以下取值：rewrite*path：表示对请求 URL 中的路径进行改写。rewrite*url：表示对请求 URL 中的路径和查询字符串进行改写。该参数的默认值是 rewrite_path。
+        Indicates the rewrite type. This parameter supports the following values: rewrite*path: rewrites the path in the request URL. rewrite*url: rewrites both the path and query string in the request URL. The default value is rewrite_path.
         """
         source_path: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个正则表达式，长度不能超过 1,024 个字符，用于匹配用户请求 URL 中的对象。对于一个用户请求，如果该正则表达式匹配了对象中的任何部分，这条规则就匹配了这个用户请求。当 RewriteType 是 rewrite*path 时，该对象指的是请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象指的是请求 URL 中的路径和查询字符串。
+        Indicates a regular expression, with a maximum length of 1,024 characters, used to match objects in the user's request URL. For a user request, if the regular expression matches any part of the object, this rule applies to the request. When RewriteType is rewrite*path, the object refers to the path in the request URL. When RewriteType is rewrite*url, the object refers to both the path and query string in the request URL.
         """
         target_path: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示改写后，回源请求 URL 中的对象。当 RewriteType 是 rewrite*path 时，该对象是回源请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象是回源请求 URL 中的路径和查询字符串。您可以在 TargetPath 中使用 $1、$2、$3 等表示您在 SourcePath 的正则表达式中定义的组。
+        Indicates the object in the origin request URL after rewriting. When RewriteType is rewrite*path, this object is the path in the origin request URL. When RewriteType is rewrite*url, this object is the path and query string in the origin request URL. You can use $1, $2, $3, etc. in TargetPath to represent groups defined in the regular expression of SourcePath.
         """
 elif False:
     DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -6503,9 +6503,9 @@ class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs:
                  source_path: Optional[pulumi.Input[builtins.str]] = None,
                  target_path: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] rewrite_type: 表示改写类型。该参数有以下取值：rewrite*path：表示对请求 URL 中的路径进行改写。rewrite*url：表示对请求 URL 中的路径和查询字符串进行改写。该参数的默认值是 rewrite_path。
-        :param pulumi.Input[builtins.str] source_path: 表示一个正则表达式，长度不能超过 1,024 个字符，用于匹配用户请求 URL 中的对象。对于一个用户请求，如果该正则表达式匹配了对象中的任何部分，这条规则就匹配了这个用户请求。当 RewriteType 是 rewrite*path 时，该对象指的是请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象指的是请求 URL 中的路径和查询字符串。
-        :param pulumi.Input[builtins.str] target_path: 表示改写后，回源请求 URL 中的对象。当 RewriteType 是 rewrite*path 时，该对象是回源请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象是回源请求 URL 中的路径和查询字符串。您可以在 TargetPath 中使用 $1、$2、$3 等表示您在 SourcePath 的正则表达式中定义的组。
+        :param pulumi.Input[builtins.str] rewrite_type: Indicates the rewrite type. This parameter supports the following values: rewrite*path: rewrites the path in the request URL. rewrite*url: rewrites both the path and query string in the request URL. The default value is rewrite_path.
+        :param pulumi.Input[builtins.str] source_path: Indicates a regular expression, with a maximum length of 1,024 characters, used to match objects in the user's request URL. For a user request, if the regular expression matches any part of the object, this rule applies to the request. When RewriteType is rewrite*path, the object refers to the path in the request URL. When RewriteType is rewrite*url, the object refers to both the path and query string in the request URL.
+        :param pulumi.Input[builtins.str] target_path: Indicates the object in the origin request URL after rewriting. When RewriteType is rewrite*path, this object is the path in the origin request URL. When RewriteType is rewrite*url, this object is the path and query string in the origin request URL. You can use $1, $2, $3, etc. in TargetPath to represent groups defined in the regular expression of SourcePath.
         """
         if rewrite_type is not None:
             pulumi.set(__self__, "rewrite_type", rewrite_type)
@@ -6518,7 +6518,7 @@ class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs:
     @pulumi.getter(name="rewriteType")
     def rewrite_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示改写类型。该参数有以下取值：rewrite*path：表示对请求 URL 中的路径进行改写。rewrite*url：表示对请求 URL 中的路径和查询字符串进行改写。该参数的默认值是 rewrite_path。
+        Indicates the rewrite type. This parameter supports the following values: rewrite*path: rewrites the path in the request URL. rewrite*url: rewrites both the path and query string in the request URL. The default value is rewrite_path.
         """
         return pulumi.get(self, "rewrite_type")
 
@@ -6530,7 +6530,7 @@ class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs:
     @pulumi.getter(name="sourcePath")
     def source_path(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个正则表达式，长度不能超过 1,024 个字符，用于匹配用户请求 URL 中的对象。对于一个用户请求，如果该正则表达式匹配了对象中的任何部分，这条规则就匹配了这个用户请求。当 RewriteType 是 rewrite*path 时，该对象指的是请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象指的是请求 URL 中的路径和查询字符串。
+        Indicates a regular expression, with a maximum length of 1,024 characters, used to match objects in the user's request URL. For a user request, if the regular expression matches any part of the object, this rule applies to the request. When RewriteType is rewrite*path, the object refers to the path in the request URL. When RewriteType is rewrite*url, the object refers to both the path and query string in the request URL.
         """
         return pulumi.get(self, "source_path")
 
@@ -6542,7 +6542,7 @@ class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs:
     @pulumi.getter(name="targetPath")
     def target_path(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示改写后，回源请求 URL 中的对象。当 RewriteType 是 rewrite*path 时，该对象是回源请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象是回源请求 URL 中的路径和查询字符串。您可以在 TargetPath 中使用 $1、$2、$3 等表示您在 SourcePath 的正则表达式中定义的组。
+        Indicates the object in the origin request URL after rewriting. When RewriteType is rewrite*path, this object is the path in the origin request URL. When RewriteType is rewrite*url, this object is the path and query string in the origin request URL. You can use $1, $2, $3, etc. in TargetPath to represent groups defined in the regular expression of SourcePath.
         """
         return pulumi.get(self, "target_path")
 
@@ -6555,11 +6555,11 @@ if not MYPY:
     class DomainOriginSniArgsDict(TypedDict):
         sni_domain: NotRequired[pulumi.Input[builtins.str]]
         """
-        指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
+        Specifies the domain name for origin SNI. When Switch is true, this parameter is required. The value cannot exceed 1,024 characters.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
         """
 elif False:
     DomainOriginSniArgsDict: TypeAlias = Mapping[str, Any]
@@ -6570,8 +6570,8 @@ class DomainOriginSniArgs:
                  sni_domain: Optional[pulumi.Input[builtins.str]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.str] sni_domain: 指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        :param pulumi.Input[builtins.str] sni_domain: Specifies the domain name for origin SNI. When Switch is true, this parameter is required. The value cannot exceed 1,024 characters.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
         """
         if sni_domain is not None:
             pulumi.set(__self__, "sni_domain", sni_domain)
@@ -6582,7 +6582,7 @@ class DomainOriginSniArgs:
     @pulumi.getter(name="sniDomain")
     def sni_domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
+        Specifies the domain name for origin SNI. When Switch is true, this parameter is required. The value cannot exceed 1,024 characters.
         """
         return pulumi.get(self, "sni_domain")
 
@@ -6594,7 +6594,7 @@ class DomainOriginSniArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
         """
         return pulumi.get(self, "switch")
 
@@ -6607,11 +6607,11 @@ if not MYPY:
     class DomainPageOptimizationArgsDict(TypedDict):
         optimization_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示优化的对象。该参数有以下取值：html: 表示 HTML 页面。js: 表示 Javascript 代码。css: 表示 CSS 代码。该参数的默认值是 html。如果您指定了 js 或者 js，html 也必须指定。
+        Specifies the optimization target. This parameter has the following values: html: HTML page. js: JavaScript code. css: CSS code. The default value is html. If you specify js or css, html must also be specified.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether this feature is enabled. The parameter values are: true: The feature is enabled. false: The feature is disabled.
         """
 elif False:
     DomainPageOptimizationArgsDict: TypeAlias = Mapping[str, Any]
@@ -6622,8 +6622,8 @@ class DomainPageOptimizationArgs:
                  optimization_types: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] optimization_types: 表示优化的对象。该参数有以下取值：html: 表示 HTML 页面。js: 表示 Javascript 代码。css: 表示 CSS 代码。该参数的默认值是 html。如果您指定了 js 或者 js，html 也必须指定。
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] optimization_types: Specifies the optimization target. This parameter has the following values: html: HTML page. js: JavaScript code. css: CSS code. The default value is html. If you specify js or css, html must also be specified.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this feature is enabled. The parameter values are: true: The feature is enabled. false: The feature is disabled.
         """
         if optimization_types is not None:
             pulumi.set(__self__, "optimization_types", optimization_types)
@@ -6634,7 +6634,7 @@ class DomainPageOptimizationArgs:
     @pulumi.getter(name="optimizationTypes")
     def optimization_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示优化的对象。该参数有以下取值：html: 表示 HTML 页面。js: 表示 Javascript 代码。css: 表示 CSS 代码。该参数的默认值是 html。如果您指定了 js 或者 js，html 也必须指定。
+        Specifies the optimization target. This parameter has the following values: html: HTML page. js: JavaScript code. css: CSS code. The default value is html. If you specify js or css, html must also be specified.
         """
         return pulumi.get(self, "optimization_types")
 
@@ -6646,7 +6646,7 @@ class DomainPageOptimizationArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether this feature is enabled. The parameter values are: true: The feature is enabled. false: The feature is disabled.
         """
         return pulumi.get(self, "switch")
 
@@ -6659,7 +6659,7 @@ if not MYPY:
     class DomainQuicArgsDict(TypedDict):
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+        QUIC configuration switch. The parameter values are as follows: true: enables QUIC. false: disables QUIC. To enable QUIC, you must first enable HTTPS.
         """
 elif False:
     DomainQuicArgsDict: TypeAlias = Mapping[str, Any]
@@ -6669,7 +6669,7 @@ class DomainQuicArgs:
     def __init__(__self__, *,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+        :param pulumi.Input[builtins.bool] switch: QUIC configuration switch. The parameter values are as follows: true: enables QUIC. false: disables QUIC. To enable QUIC, you must first enable HTTPS.
         """
         if switch is not None:
             pulumi.set(__self__, "switch", switch)
@@ -6678,7 +6678,7 @@ class DomainQuicArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+        QUIC configuration switch. The parameter values are as follows: true: enables QUIC. false: disables QUIC. To enable QUIC, you must first enable HTTPS.
         """
         return pulumi.get(self, "switch")
 
@@ -6692,7 +6692,7 @@ if not MYPY:
         redirection_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainRedirectionRewriteRedirectionRuleArgsDict']]]]
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+        Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
         """
 elif False:
     DomainRedirectionRewriteArgsDict: TypeAlias = Mapping[str, Any]
@@ -6703,7 +6703,7 @@ class DomainRedirectionRewriteArgs:
                  redirection_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainRedirectionRewriteRedirectionRuleArgs']]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
         """
         if redirection_rules is not None:
             pulumi.set(__self__, "redirection_rules", redirection_rules)
@@ -6723,7 +6723,7 @@ class DomainRedirectionRewriteArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+        Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
         """
         return pulumi.get(self, "switch")
 
@@ -6736,7 +6736,7 @@ if not MYPY:
     class DomainRedirectionRewriteRedirectionRuleArgsDict(TypedDict):
         redirection_action: NotRequired[pulumi.Input['DomainRedirectionRewriteRedirectionRuleRedirectionActionArgsDict']]
         """
-        表示一个 URL 重定向改写的规则。
+        Indicates a URL redirect rewrite rule
         """
 elif False:
     DomainRedirectionRewriteRedirectionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -6746,7 +6746,7 @@ class DomainRedirectionRewriteRedirectionRuleArgs:
     def __init__(__self__, *,
                  redirection_action: Optional[pulumi.Input['DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs']] = None):
         """
-        :param pulumi.Input['DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs'] redirection_action: 表示一个 URL 重定向改写的规则。
+        :param pulumi.Input['DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs'] redirection_action: Indicates a URL redirect rewrite rule
         """
         if redirection_action is not None:
             pulumi.set(__self__, "redirection_action", redirection_action)
@@ -6755,7 +6755,7 @@ class DomainRedirectionRewriteRedirectionRuleArgs:
     @pulumi.getter(name="redirectionAction")
     def redirection_action(self) -> Optional[pulumi.Input['DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs']]:
         """
-        表示一个 URL 重定向改写的规则。
+        Indicates a URL redirect rewrite rule
         """
         return pulumi.get(self, "redirection_action")
 
@@ -6768,27 +6768,27 @@ if not MYPY:
     class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgsDict(TypedDict):
         redirect_code: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示 URL 重定向的响应状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+        Indicates the response status code for URL redirection. Valid values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original and is not changed.
         """
         source_path: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示文件的原路径。也就是请求中包含的路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+        Specifies the original file path, which is the path included in the request. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value of this parameter cannot exceed 1,024 characters.
         """
         target_host: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标路径所归属站点的域名或者 IP 地址。IP 地址必须是 IPv4 类型的地址。该参数值的长度不能超过 1,024 个字符。该参数的默认值就是您的加速域名。
+        Indicates the domain name or IP address of the site to which the target path belongs. The IP address must be IPv4. The parameter value cannot exceed 1,024 characters. The default value is your acceleration domain name.
         """
         target_path: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示跳转后的目标路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+        Indicates the target path after redirection. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value cannot exceed 1,024 characters.
         """
         target_protocol: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示 URL重定向后的新请求所使用的协议。该参数有以下取值：followclient：表示使用原请求的协议。http：表示新请求强制使用 HTTP 协议。https：表示新请求强制使用 HTTPS 协议。
+        Specifies the protocol used for the new request after URL redirection. The parameter values are: followclient: use the protocol of the original request; http: force the new request to use HTTP; https: force the new request to use HTTPS.
         """
         target_query_components: NotRequired[pulumi.Input['DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsArgsDict']]
         """
-        表示原请求 URL 中的查询参数的处理方式。
+        Indicates how the query parameters in the original request URL are handled.
         """
 elif False:
     DomainRedirectionRewriteRedirectionRuleRedirectionActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -6803,12 +6803,12 @@ class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs:
                  target_protocol: Optional[pulumi.Input[builtins.str]] = None,
                  target_query_components: Optional[pulumi.Input['DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsArgs']] = None):
         """
-        :param pulumi.Input[builtins.str] redirect_code: 表示 URL 重定向的响应状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
-        :param pulumi.Input[builtins.str] source_path: 表示文件的原路径。也就是请求中包含的路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
-        :param pulumi.Input[builtins.str] target_host: 表示目标路径所归属站点的域名或者 IP 地址。IP 地址必须是 IPv4 类型的地址。该参数值的长度不能超过 1,024 个字符。该参数的默认值就是您的加速域名。
-        :param pulumi.Input[builtins.str] target_path: 表示跳转后的目标路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
-        :param pulumi.Input[builtins.str] target_protocol: 表示 URL重定向后的新请求所使用的协议。该参数有以下取值：followclient：表示使用原请求的协议。http：表示新请求强制使用 HTTP 协议。https：表示新请求强制使用 HTTPS 协议。
-        :param pulumi.Input['DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsArgs'] target_query_components: 表示原请求 URL 中的查询参数的处理方式。
+        :param pulumi.Input[builtins.str] redirect_code: Indicates the response status code for URL redirection. Valid values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original and is not changed.
+        :param pulumi.Input[builtins.str] source_path: Specifies the original file path, which is the path included in the request. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value of this parameter cannot exceed 1,024 characters.
+        :param pulumi.Input[builtins.str] target_host: Indicates the domain name or IP address of the site to which the target path belongs. The IP address must be IPv4. The parameter value cannot exceed 1,024 characters. The default value is your acceleration domain name.
+        :param pulumi.Input[builtins.str] target_path: Indicates the target path after redirection. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value cannot exceed 1,024 characters.
+        :param pulumi.Input[builtins.str] target_protocol: Specifies the protocol used for the new request after URL redirection. The parameter values are: followclient: use the protocol of the original request; http: force the new request to use HTTP; https: force the new request to use HTTPS.
+        :param pulumi.Input['DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsArgs'] target_query_components: Indicates how the query parameters in the original request URL are handled.
         """
         if redirect_code is not None:
             pulumi.set(__self__, "redirect_code", redirect_code)
@@ -6827,7 +6827,7 @@ class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs:
     @pulumi.getter(name="redirectCode")
     def redirect_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 URL 重定向的响应状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+        Indicates the response status code for URL redirection. Valid values are 301, 302, 303, 307, and 308. Note: For 301 and 302, if the original request method is not GET, the client may use GET when sending the new request to the new URL. For 303, the new request method is GET. For 307 and 308, the new request method remains the same as the original and is not changed.
         """
         return pulumi.get(self, "redirect_code")
 
@@ -6839,7 +6839,7 @@ class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs:
     @pulumi.getter(name="sourcePath")
     def source_path(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示文件的原路径。也就是请求中包含的路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+        Specifies the original file path, which is the path included in the request. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value of this parameter cannot exceed 1,024 characters.
         """
         return pulumi.get(self, "source_path")
 
@@ -6851,7 +6851,7 @@ class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs:
     @pulumi.getter(name="targetHost")
     def target_host(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标路径所归属站点的域名或者 IP 地址。IP 地址必须是 IPv4 类型的地址。该参数值的长度不能超过 1,024 个字符。该参数的默认值就是您的加速域名。
+        Indicates the domain name or IP address of the site to which the target path belongs. The IP address must be IPv4. The parameter value cannot exceed 1,024 characters. The default value is your acceleration domain name.
         """
         return pulumi.get(self, "target_host")
 
@@ -6863,7 +6863,7 @@ class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs:
     @pulumi.getter(name="targetPath")
     def target_path(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示跳转后的目标路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+        Indicates the target path after redirection. The path must start with a slash (/) and cannot contain consecutive slashes (//), percent signs (%), or spaces. The value cannot exceed 1,024 characters.
         """
         return pulumi.get(self, "target_path")
 
@@ -6875,7 +6875,7 @@ class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs:
     @pulumi.getter(name="targetProtocol")
     def target_protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 URL重定向后的新请求所使用的协议。该参数有以下取值：followclient：表示使用原请求的协议。http：表示新请求强制使用 HTTP 协议。https：表示新请求强制使用 HTTPS 协议。
+        Specifies the protocol used for the new request after URL redirection. The parameter values are: followclient: use the protocol of the original request; http: force the new request to use HTTP; https: force the new request to use HTTPS.
         """
         return pulumi.get(self, "target_protocol")
 
@@ -6887,7 +6887,7 @@ class DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs:
     @pulumi.getter(name="targetQueryComponents")
     def target_query_components(self) -> Optional[pulumi.Input['DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsArgs']]:
         """
-        表示原请求 URL 中的查询参数的处理方式。
+        Indicates how the query parameters in the original request URL are handled.
         """
         return pulumi.get(self, "target_query_components")
 
@@ -6900,11 +6900,11 @@ if not MYPY:
     class DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示原请求 URL 中的查询参数的处理方式。该参数有以下取值：include：表示在跳转后的 URL 中包含原请求 URL 中的所有查询参数。exclude：表示在跳转后的 URL 中不包含原请求 URL 中的任何查询参数。includePart：表示在跳转后的 URL 中包含原请求 URL 中特定的查询参数。excludePart：表示在跳转后的 URL 中不包含原请求 URL 中特定的查询参数。
+        Indicates how to handle query parameters in the original request URL. This parameter has the following values: include: includes all query parameters from the original request URL in the redirected URL. exclude: excludes all query parameters from the original request URL in the redirected URL. includePart: includes specific query parameters from the original request URL in the redirected URL. excludePart: excludes specific query parameters from the original request URL in the redirected URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示要保留或删除的查询参数。多个查询参数间使用英文分号（;）分隔。指定的查询参数不能包含连续斜杠（//）、百分号（"）、空格。Value 的默认值是 *，表示所有的查询参数。如果 Action 是 include 或者 exclude, 则 Value 必须为 *。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。此时，您指定的查询参数不能是 *。
+        Indicates the query parameters to retain or remove. Multiple query parameters are separated by a semicolon (;). The specified query parameters cannot contain consecutive slashes (//), percent signs ("), or spaces. The default value of Value is *, which means all query parameters. If Action is include or exclude, Value must be *. If Action is includePart or excludePart, you can specify one or more query parameters. In this case, the specified query parameters cannot be *.
         """
 elif False:
     DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsArgsDict: TypeAlias = Mapping[str, Any]
@@ -6915,8 +6915,8 @@ class DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryCompone
                  action: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 表示原请求 URL 中的查询参数的处理方式。该参数有以下取值：include：表示在跳转后的 URL 中包含原请求 URL 中的所有查询参数。exclude：表示在跳转后的 URL 中不包含原请求 URL 中的任何查询参数。includePart：表示在跳转后的 URL 中包含原请求 URL 中特定的查询参数。excludePart：表示在跳转后的 URL 中不包含原请求 URL 中特定的查询参数。
-        :param pulumi.Input[builtins.str] value: 表示要保留或删除的查询参数。多个查询参数间使用英文分号（;）分隔。指定的查询参数不能包含连续斜杠（//）、百分号（"）、空格。Value 的默认值是 *，表示所有的查询参数。如果 Action 是 include 或者 exclude, 则 Value 必须为 *。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。此时，您指定的查询参数不能是 *。
+        :param pulumi.Input[builtins.str] action: Indicates how to handle query parameters in the original request URL. This parameter has the following values: include: includes all query parameters from the original request URL in the redirected URL. exclude: excludes all query parameters from the original request URL in the redirected URL. includePart: includes specific query parameters from the original request URL in the redirected URL. excludePart: excludes specific query parameters from the original request URL in the redirected URL.
+        :param pulumi.Input[builtins.str] value: Indicates the query parameters to retain or remove. Multiple query parameters are separated by a semicolon (;). The specified query parameters cannot contain consecutive slashes (//), percent signs ("), or spaces. The default value of Value is *, which means all query parameters. If Action is include or exclude, Value must be *. If Action is includePart or excludePart, you can specify one or more query parameters. In this case, the specified query parameters cannot be *.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -6927,7 +6927,7 @@ class DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryCompone
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示原请求 URL 中的查询参数的处理方式。该参数有以下取值：include：表示在跳转后的 URL 中包含原请求 URL 中的所有查询参数。exclude：表示在跳转后的 URL 中不包含原请求 URL 中的任何查询参数。includePart：表示在跳转后的 URL 中包含原请求 URL 中特定的查询参数。excludePart：表示在跳转后的 URL 中不包含原请求 URL 中特定的查询参数。
+        Indicates how to handle query parameters in the original request URL. This parameter has the following values: include: includes all query parameters from the original request URL in the redirected URL. exclude: excludes all query parameters from the original request URL in the redirected URL. includePart: includes specific query parameters from the original request URL in the redirected URL. excludePart: excludes specific query parameters from the original request URL in the redirected URL.
         """
         return pulumi.get(self, "action")
 
@@ -6939,7 +6939,7 @@ class DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryCompone
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示要保留或删除的查询参数。多个查询参数间使用英文分号（;）分隔。指定的查询参数不能包含连续斜杠（//）、百分号（"）、空格。Value 的默认值是 *，表示所有的查询参数。如果 Action 是 include 或者 exclude, 则 Value 必须为 *。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。此时，您指定的查询参数不能是 *。
+        Indicates the query parameters to retain or remove. Multiple query parameters are separated by a semicolon (;). The specified query parameters cannot contain consecutive slashes (//), percent signs ("), or spaces. The default value of Value is *, which means all query parameters. If Action is include or exclude, Value must be *. If Action is includePart or excludePart, you can specify one or more query parameters. In this case, the specified query parameters cannot be *.
         """
         return pulumi.get(self, "value")
 
@@ -6952,27 +6952,27 @@ if not MYPY:
     class DomainRefererAccessRuleArgsDict(TypedDict):
         allow_empty: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示用户请求头的 Referer 头部为空（""）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+        Specifies whether the content delivery network accepts a request when the Referer header in the user's request is empty (""). This parameter has the following values: true: accepts the request; false: rejects the request. The default value is false.
         """
         referers: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+        Indicates a list of Referers. The input requirements for this parameter are consistent with those for Referers under the CommonType of ReferersType. We recommend using ReferersType to specify the Referer list. If you specify SharedConfig, you cannot specify this parameter.
         """
         referers_type: NotRequired[pulumi.Input['DomainRefererAccessRuleReferersTypeArgsDict']]
         """
-        表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+        Indicates a ReferersType object. It contains a CommonType object and a RegularType object, representing a standard Referer list and a Referer regular expression list, respectively. If you specify SharedConfig, you cannot specify this parameter.
         """
         rule_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+        Indicates the type of Referer list. This parameter is required when Switch is true. This parameter has the following values: allow: indicates Allowlist. deny: indicates Denylist.
         """
         shared_config: NotRequired[pulumi.Input['DomainRefererAccessRuleSharedConfigArgsDict']]
         """
-        表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+        Represents a global configuration. If you specify this parameter, you cannot specify Referers or ReferersType.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         """
 elif False:
     DomainRefererAccessRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -6987,12 +6987,12 @@ class DomainRefererAccessRuleArgs:
                  shared_config: Optional[pulumi.Input['DomainRefererAccessRuleSharedConfigArgs']] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] allow_empty: 表示用户请求头的 Referer 头部为空（""）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] referers: 表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
-        :param pulumi.Input['DomainRefererAccessRuleReferersTypeArgs'] referers_type: 表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
-        :param pulumi.Input[builtins.str] rule_type: 表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
-        :param pulumi.Input['DomainRefererAccessRuleSharedConfigArgs'] shared_config: 表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        :param pulumi.Input[builtins.bool] allow_empty: Specifies whether the content delivery network accepts a request when the Referer header in the user's request is empty (""). This parameter has the following values: true: accepts the request; false: rejects the request. The default value is false.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] referers: Indicates a list of Referers. The input requirements for this parameter are consistent with those for Referers under the CommonType of ReferersType. We recommend using ReferersType to specify the Referer list. If you specify SharedConfig, you cannot specify this parameter.
+        :param pulumi.Input['DomainRefererAccessRuleReferersTypeArgs'] referers_type: Indicates a ReferersType object. It contains a CommonType object and a RegularType object, representing a standard Referer list and a Referer regular expression list, respectively. If you specify SharedConfig, you cannot specify this parameter.
+        :param pulumi.Input[builtins.str] rule_type: Indicates the type of Referer list. This parameter is required when Switch is true. This parameter has the following values: allow: indicates Allowlist. deny: indicates Denylist.
+        :param pulumi.Input['DomainRefererAccessRuleSharedConfigArgs'] shared_config: Represents a global configuration. If you specify this parameter, you cannot specify Referers or ReferersType.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         """
         if allow_empty is not None:
             pulumi.set(__self__, "allow_empty", allow_empty)
@@ -7011,7 +7011,7 @@ class DomainRefererAccessRuleArgs:
     @pulumi.getter(name="allowEmpty")
     def allow_empty(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示用户请求头的 Referer 头部为空（""）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+        Specifies whether the content delivery network accepts a request when the Referer header in the user's request is empty (""). This parameter has the following values: true: accepts the request; false: rejects the request. The default value is false.
         """
         return pulumi.get(self, "allow_empty")
 
@@ -7023,7 +7023,7 @@ class DomainRefererAccessRuleArgs:
     @pulumi.getter
     def referers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+        Indicates a list of Referers. The input requirements for this parameter are consistent with those for Referers under the CommonType of ReferersType. We recommend using ReferersType to specify the Referer list. If you specify SharedConfig, you cannot specify this parameter.
         """
         return pulumi.get(self, "referers")
 
@@ -7035,7 +7035,7 @@ class DomainRefererAccessRuleArgs:
     @pulumi.getter(name="referersType")
     def referers_type(self) -> Optional[pulumi.Input['DomainRefererAccessRuleReferersTypeArgs']]:
         """
-        表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+        Indicates a ReferersType object. It contains a CommonType object and a RegularType object, representing a standard Referer list and a Referer regular expression list, respectively. If you specify SharedConfig, you cannot specify this parameter.
         """
         return pulumi.get(self, "referers_type")
 
@@ -7047,7 +7047,7 @@ class DomainRefererAccessRuleArgs:
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+        Indicates the type of Referer list. This parameter is required when Switch is true. This parameter has the following values: allow: indicates Allowlist. deny: indicates Denylist.
         """
         return pulumi.get(self, "rule_type")
 
@@ -7059,7 +7059,7 @@ class DomainRefererAccessRuleArgs:
     @pulumi.getter(name="sharedConfig")
     def shared_config(self) -> Optional[pulumi.Input['DomainRefererAccessRuleSharedConfigArgs']]:
         """
-        表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+        Represents a global configuration. If you specify this parameter, you cannot specify Referers or ReferersType.
         """
         return pulumi.get(self, "shared_config")
 
@@ -7071,7 +7071,7 @@ class DomainRefererAccessRuleArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         """
         return pulumi.get(self, "switch")
 
@@ -7084,11 +7084,11 @@ if not MYPY:
     class DomainRefererAccessRuleReferersTypeArgsDict(TypedDict):
         common_type: NotRequired[pulumi.Input['DomainRefererAccessRuleReferersTypeCommonTypeArgsDict']]
         """
-        表示一个 CommonType 对象，其包含一个常规 Referer 的列表。
+        Indicates a CommonType object that contains a list of standard Referers.
         """
         regular_type: NotRequired[pulumi.Input['DomainRefererAccessRuleReferersTypeRegularTypeArgsDict']]
         """
-        表示一个 RegularType 对象，其包含一个正则表达式列表用来匹配请求的 Referer 头部值。该参数为白名单功能。要使用该参数，请提交工单。需要注意的是，如果请求的 Referer 头部值匹配 CommonType 下的 Referers 名单或者 RegularType 下的 Referers 名单，内容分发网络就认为是匹配。
+        Specifies a RegularType object, which contains a list of regular expressions used to match the Referer header value in requests This parameter provides the allowlist feature To use this parameter, submit a ticket Note that if the Referer header value in a request matches the Referers list under CommonType or the Referers list under RegularType, the content delivery network considers it a match
         """
 elif False:
     DomainRefererAccessRuleReferersTypeArgsDict: TypeAlias = Mapping[str, Any]
@@ -7099,8 +7099,8 @@ class DomainRefererAccessRuleReferersTypeArgs:
                  common_type: Optional[pulumi.Input['DomainRefererAccessRuleReferersTypeCommonTypeArgs']] = None,
                  regular_type: Optional[pulumi.Input['DomainRefererAccessRuleReferersTypeRegularTypeArgs']] = None):
         """
-        :param pulumi.Input['DomainRefererAccessRuleReferersTypeCommonTypeArgs'] common_type: 表示一个 CommonType 对象，其包含一个常规 Referer 的列表。
-        :param pulumi.Input['DomainRefererAccessRuleReferersTypeRegularTypeArgs'] regular_type: 表示一个 RegularType 对象，其包含一个正则表达式列表用来匹配请求的 Referer 头部值。该参数为白名单功能。要使用该参数，请提交工单。需要注意的是，如果请求的 Referer 头部值匹配 CommonType 下的 Referers 名单或者 RegularType 下的 Referers 名单，内容分发网络就认为是匹配。
+        :param pulumi.Input['DomainRefererAccessRuleReferersTypeCommonTypeArgs'] common_type: Indicates a CommonType object that contains a list of standard Referers.
+        :param pulumi.Input['DomainRefererAccessRuleReferersTypeRegularTypeArgs'] regular_type: Specifies a RegularType object, which contains a list of regular expressions used to match the Referer header value in requests This parameter provides the allowlist feature To use this parameter, submit a ticket Note that if the Referer header value in a request matches the Referers list under CommonType or the Referers list under RegularType, the content delivery network considers it a match
         """
         if common_type is not None:
             pulumi.set(__self__, "common_type", common_type)
@@ -7111,7 +7111,7 @@ class DomainRefererAccessRuleReferersTypeArgs:
     @pulumi.getter(name="commonType")
     def common_type(self) -> Optional[pulumi.Input['DomainRefererAccessRuleReferersTypeCommonTypeArgs']]:
         """
-        表示一个 CommonType 对象，其包含一个常规 Referer 的列表。
+        Indicates a CommonType object that contains a list of standard Referers.
         """
         return pulumi.get(self, "common_type")
 
@@ -7123,7 +7123,7 @@ class DomainRefererAccessRuleReferersTypeArgs:
     @pulumi.getter(name="regularType")
     def regular_type(self) -> Optional[pulumi.Input['DomainRefererAccessRuleReferersTypeRegularTypeArgs']]:
         """
-        表示一个 RegularType 对象，其包含一个正则表达式列表用来匹配请求的 Referer 头部值。该参数为白名单功能。要使用该参数，请提交工单。需要注意的是，如果请求的 Referer 头部值匹配 CommonType 下的 Referers 名单或者 RegularType 下的 Referers 名单，内容分发网络就认为是匹配。
+        Specifies a RegularType object, which contains a list of regular expressions used to match the Referer header value in requests This parameter provides the allowlist feature To use this parameter, submit a ticket Note that if the Referer header value in a request matches the Referers list under CommonType or the Referers list under RegularType, the content delivery network considers it a match
         """
         return pulumi.get(self, "regular_type")
 
@@ -7136,15 +7136,15 @@ if not MYPY:
     class DomainRefererAccessRuleReferersTypeCommonTypeArgsDict(TypedDict):
         ignore_case: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示 CommonType 下的这个 Referers 列表在匹配时是否是大小写敏感的。该参数有以下取值：true: 表示大小写不敏感。false: 表示大小写敏感。该参数的默认值是 true。
+        Specifies whether the Referers list under CommonType is case sensitive during matching. The parameter supports the following values: true: not case sensitive. false: case sensitive. The default value is true.
         """
         ignore_scheme: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示匹配 CommonType 下的这个 Referers 列表的 Referer 头部值是否必须以 HTTP 或者 HTTPS 开头。该参数有以下取值：true: 表示不以 HTTP 或者 HTTPS 开头的 Referer 头部值是合法的。在这个情况下，内容分发网络会尝试将其与 Referers 列表匹配。false: 表示不以 HTTP 或者 HTTPS 开头 Referer 头部值是非法的。在这个情况下，内容分发网络判定为不匹配 CommonType 下的这个 Referers 列表。该参数的默认值是 false。
+        Indicates whether the Referer header value in this Referers list under CommonType must start with HTTP or HTTPS. This parameter has the following values: true: Referer header values that do not start with HTTP or HTTPS are valid. In this case, the content delivery network will attempt to match them with the Referers list. false: Referer header values that do not start with HTTP or HTTPS are invalid. In this case, the content delivery network determines that they do not match the Referers list under CommonType. The default value is false.
         """
         referers: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示一个常规 Referer 的列表。在该列表中，您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入 1,000 个 IP 地址。输入的域名不能包含 http:// 或 https://。在匹配时，内容分发网络会将请求 Referer 头部值中的域名与 Referer 列表进行匹配。该参数值的长度不能超过 30,000 个字符。
+        Represents a standard Referer list. In this list, you can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domains. Domain names can include second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 1,000 IP addresses. The domain names entered must not include http:// or https://. During matching, the content delivery network compares the domain name in the Referer header of the request with the Referer list. The value of this parameter must not exceed 30,000 characters.
         """
 elif False:
     DomainRefererAccessRuleReferersTypeCommonTypeArgsDict: TypeAlias = Mapping[str, Any]
@@ -7156,9 +7156,9 @@ class DomainRefererAccessRuleReferersTypeCommonTypeArgs:
                  ignore_scheme: Optional[pulumi.Input[builtins.bool]] = None,
                  referers: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.bool] ignore_case: 表示 CommonType 下的这个 Referers 列表在匹配时是否是大小写敏感的。该参数有以下取值：true: 表示大小写不敏感。false: 表示大小写敏感。该参数的默认值是 true。
-        :param pulumi.Input[builtins.bool] ignore_scheme: 表示匹配 CommonType 下的这个 Referers 列表的 Referer 头部值是否必须以 HTTP 或者 HTTPS 开头。该参数有以下取值：true: 表示不以 HTTP 或者 HTTPS 开头的 Referer 头部值是合法的。在这个情况下，内容分发网络会尝试将其与 Referers 列表匹配。false: 表示不以 HTTP 或者 HTTPS 开头 Referer 头部值是非法的。在这个情况下，内容分发网络判定为不匹配 CommonType 下的这个 Referers 列表。该参数的默认值是 false。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] referers: 表示一个常规 Referer 的列表。在该列表中，您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入 1,000 个 IP 地址。输入的域名不能包含 http:// 或 https://。在匹配时，内容分发网络会将请求 Referer 头部值中的域名与 Referer 列表进行匹配。该参数值的长度不能超过 30,000 个字符。
+        :param pulumi.Input[builtins.bool] ignore_case: Specifies whether the Referers list under CommonType is case sensitive during matching. The parameter supports the following values: true: not case sensitive. false: case sensitive. The default value is true.
+        :param pulumi.Input[builtins.bool] ignore_scheme: Indicates whether the Referer header value in this Referers list under CommonType must start with HTTP or HTTPS. This parameter has the following values: true: Referer header values that do not start with HTTP or HTTPS are valid. In this case, the content delivery network will attempt to match them with the Referers list. false: Referer header values that do not start with HTTP or HTTPS are invalid. In this case, the content delivery network determines that they do not match the Referers list under CommonType. The default value is false.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] referers: Represents a standard Referer list. In this list, you can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domains. Domain names can include second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 1,000 IP addresses. The domain names entered must not include http:// or https://. During matching, the content delivery network compares the domain name in the Referer header of the request with the Referer list. The value of this parameter must not exceed 30,000 characters.
         """
         if ignore_case is not None:
             pulumi.set(__self__, "ignore_case", ignore_case)
@@ -7171,7 +7171,7 @@ class DomainRefererAccessRuleReferersTypeCommonTypeArgs:
     @pulumi.getter(name="ignoreCase")
     def ignore_case(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示 CommonType 下的这个 Referers 列表在匹配时是否是大小写敏感的。该参数有以下取值：true: 表示大小写不敏感。false: 表示大小写敏感。该参数的默认值是 true。
+        Specifies whether the Referers list under CommonType is case sensitive during matching. The parameter supports the following values: true: not case sensitive. false: case sensitive. The default value is true.
         """
         return pulumi.get(self, "ignore_case")
 
@@ -7183,7 +7183,7 @@ class DomainRefererAccessRuleReferersTypeCommonTypeArgs:
     @pulumi.getter(name="ignoreScheme")
     def ignore_scheme(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示匹配 CommonType 下的这个 Referers 列表的 Referer 头部值是否必须以 HTTP 或者 HTTPS 开头。该参数有以下取值：true: 表示不以 HTTP 或者 HTTPS 开头的 Referer 头部值是合法的。在这个情况下，内容分发网络会尝试将其与 Referers 列表匹配。false: 表示不以 HTTP 或者 HTTPS 开头 Referer 头部值是非法的。在这个情况下，内容分发网络判定为不匹配 CommonType 下的这个 Referers 列表。该参数的默认值是 false。
+        Indicates whether the Referer header value in this Referers list under CommonType must start with HTTP or HTTPS. This parameter has the following values: true: Referer header values that do not start with HTTP or HTTPS are valid. In this case, the content delivery network will attempt to match them with the Referers list. false: Referer header values that do not start with HTTP or HTTPS are invalid. In this case, the content delivery network determines that they do not match the Referers list under CommonType. The default value is false.
         """
         return pulumi.get(self, "ignore_scheme")
 
@@ -7195,7 +7195,7 @@ class DomainRefererAccessRuleReferersTypeCommonTypeArgs:
     @pulumi.getter
     def referers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示一个常规 Referer 的列表。在该列表中，您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入 1,000 个 IP 地址。输入的域名不能包含 http:// 或 https://。在匹配时，内容分发网络会将请求 Referer 头部值中的域名与 Referer 列表进行匹配。该参数值的长度不能超过 30,000 个字符。
+        Represents a standard Referer list. In this list, you can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domains. Domain names can include second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 1,000 IP addresses. The domain names entered must not include http:// or https://. During matching, the content delivery network compares the domain name in the Referer header of the request with the Referer list. The value of this parameter must not exceed 30,000 characters.
         """
         return pulumi.get(self, "referers")
 
@@ -7208,7 +7208,7 @@ if not MYPY:
     class DomainRefererAccessRuleReferersTypeRegularTypeArgsDict(TypedDict):
         referers: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示一个 Referer 正则表达式的列表。该参数值的长度不能超过 30,000 个字符。
+        Indicates a list of Referer regular expressions. The value of this parameter cannot exceed 30,000 characters.
         """
 elif False:
     DomainRefererAccessRuleReferersTypeRegularTypeArgsDict: TypeAlias = Mapping[str, Any]
@@ -7218,7 +7218,7 @@ class DomainRefererAccessRuleReferersTypeRegularTypeArgs:
     def __init__(__self__, *,
                  referers: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] referers: 表示一个 Referer 正则表达式的列表。该参数值的长度不能超过 30,000 个字符。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] referers: Indicates a list of Referer regular expressions. The value of this parameter cannot exceed 30,000 characters.
         """
         if referers is not None:
             pulumi.set(__self__, "referers", referers)
@@ -7227,7 +7227,7 @@ class DomainRefererAccessRuleReferersTypeRegularTypeArgs:
     @pulumi.getter
     def referers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示一个 Referer 正则表达式的列表。该参数值的长度不能超过 30,000 个字符。
+        Indicates a list of Referer regular expressions. The value of this parameter cannot exceed 30,000 characters.
         """
         return pulumi.get(self, "referers")
 
@@ -7240,7 +7240,7 @@ if not MYPY:
     class DomainRefererAccessRuleSharedConfigArgsDict(TypedDict):
         config_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个全局配置的名称。
+        Indicates the name of a global configuration.
         """
 elif False:
     DomainRefererAccessRuleSharedConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -7250,7 +7250,7 @@ class DomainRefererAccessRuleSharedConfigArgs:
     def __init__(__self__, *,
                  config_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] config_name: 表示一个全局配置的名称。
+        :param pulumi.Input[builtins.str] config_name: Indicates the name of a global configuration.
         """
         if config_name is not None:
             pulumi.set(__self__, "config_name", config_name)
@@ -7259,7 +7259,7 @@ class DomainRefererAccessRuleSharedConfigArgs:
     @pulumi.getter(name="configName")
     def config_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个全局配置的名称。
+        Indicates the name of a global configuration.
         """
         return pulumi.get(self, "config_name")
 
@@ -7273,7 +7273,7 @@ if not MYPY:
         remote_auth_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainRemoteAuthRemoteAuthRuleArgsDict']]]]
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
         """
 elif False:
     DomainRemoteAuthArgsDict: TypeAlias = Mapping[str, Any]
@@ -7284,7 +7284,7 @@ class DomainRemoteAuthArgs:
                  remote_auth_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainRemoteAuthRemoteAuthRuleArgs']]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
         """
         if remote_auth_rules is not None:
             pulumi.set(__self__, "remote_auth_rules", remote_auth_rules)
@@ -7304,7 +7304,7 @@ class DomainRemoteAuthArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
         """
         return pulumi.get(self, "switch")
 
@@ -7317,11 +7317,11 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleArgsDict(TypedDict):
         condition: NotRequired[pulumi.Input['DomainRemoteAuthRemoteAuthRuleConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         remote_auth_rule_action: NotRequired[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgsDict']]
         """
-        表示具体的鉴权配置。
+        Indicates the specific authentication configuration.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -7332,8 +7332,8 @@ class DomainRemoteAuthRemoteAuthRuleArgs:
                  condition: Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleConditionArgs']] = None,
                  remote_auth_rule_action: Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs']] = None):
         """
-        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
-        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs'] remote_auth_rule_action: 表示具体的鉴权配置。
+        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleConditionArgs'] condition: Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
+        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs'] remote_auth_rule_action: Indicates the specific authentication configuration.
         """
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
@@ -7344,7 +7344,7 @@ class DomainRemoteAuthRemoteAuthRuleArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -7356,7 +7356,7 @@ class DomainRemoteAuthRemoteAuthRuleArgs:
     @pulumi.getter(name="remoteAuthRuleAction")
     def remote_auth_rule_action(self) -> Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs']]:
         """
-        表示具体的鉴权配置。
+        Indicates the specific authentication configuration.
         """
         return pulumi.get(self, "remote_auth_rule_action")
 
@@ -7370,7 +7370,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainRemoteAuthRemoteAuthRuleConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -7381,7 +7381,7 @@ class DomainRemoteAuthRemoteAuthRuleConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainRemoteAuthRemoteAuthRuleConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -7401,7 +7401,7 @@ class DomainRemoteAuthRemoteAuthRuleConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -7414,23 +7414,23 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -7444,11 +7444,11 @@ class DomainRemoteAuthRemoteAuthRuleConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -7465,7 +7465,7 @@ class DomainRemoteAuthRemoteAuthRuleConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -7477,7 +7477,7 @@ class DomainRemoteAuthRemoteAuthRuleConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -7489,7 +7489,7 @@ class DomainRemoteAuthRemoteAuthRuleConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -7501,7 +7501,7 @@ class DomainRemoteAuthRemoteAuthRuleConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -7513,7 +7513,7 @@ class DomainRemoteAuthRemoteAuthRuleConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -7526,23 +7526,23 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgsDict(TypedDict):
         auth_mode_config: NotRequired[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgsDict']]
         """
-        表示鉴权服务器的配置。
+        Indicates the configuration of the authentication server.
         """
         auth_response_config: NotRequired[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgsDict']]
         """
-        内容分发网络需要对鉴权服务器返回的鉴权状态码进行处理。该参数表示相关的配置。
+        The content delivery network needs to handle the authentication status codes returned by the authentication server. This parameter specifies the relevant configuration.
         """
         query_string_rules: NotRequired[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesArgsDict']]
         """
-        表示鉴权请求的参数设置。
+        Represents the parameter settings for authentication requests.
         """
         request_body_rules: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示鉴权请求正文的规则。您可以不指定该参数或者设置该参数值为 default。default 表示请求正文为空（""）。
+        Indicates the rule for the authentication request body. You can leave this parameter unspecified or set its value to default. default means the request body is empty ("").
         """
         request_header_rules: NotRequired[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgsDict']]
         """
-        表示鉴权请求头的设置。您最多可以设置 50 个请求头。
+        Indicates the settings for authentication request headers. You can set up to 50 request headers.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -7556,11 +7556,11 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs:
                  request_body_rules: Optional[pulumi.Input[builtins.str]] = None,
                  request_header_rules: Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgs']] = None):
         """
-        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgs'] auth_mode_config: 表示鉴权服务器的配置。
-        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgs'] auth_response_config: 内容分发网络需要对鉴权服务器返回的鉴权状态码进行处理。该参数表示相关的配置。
-        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesArgs'] query_string_rules: 表示鉴权请求的参数设置。
-        :param pulumi.Input[builtins.str] request_body_rules: 表示鉴权请求正文的规则。您可以不指定该参数或者设置该参数值为 default。default 表示请求正文为空（""）。
-        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgs'] request_header_rules: 表示鉴权请求头的设置。您最多可以设置 50 个请求头。
+        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgs'] auth_mode_config: Indicates the configuration of the authentication server.
+        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgs'] auth_response_config: The content delivery network needs to handle the authentication status codes returned by the authentication server. This parameter specifies the relevant configuration.
+        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesArgs'] query_string_rules: Represents the parameter settings for authentication requests.
+        :param pulumi.Input[builtins.str] request_body_rules: Indicates the rule for the authentication request body. You can leave this parameter unspecified or set its value to default. default means the request body is empty ("").
+        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgs'] request_header_rules: Indicates the settings for authentication request headers. You can set up to 50 request headers.
         """
         if auth_mode_config is not None:
             pulumi.set(__self__, "auth_mode_config", auth_mode_config)
@@ -7577,7 +7577,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs:
     @pulumi.getter(name="authModeConfig")
     def auth_mode_config(self) -> Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgs']]:
         """
-        表示鉴权服务器的配置。
+        Indicates the configuration of the authentication server.
         """
         return pulumi.get(self, "auth_mode_config")
 
@@ -7589,7 +7589,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs:
     @pulumi.getter(name="authResponseConfig")
     def auth_response_config(self) -> Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgs']]:
         """
-        内容分发网络需要对鉴权服务器返回的鉴权状态码进行处理。该参数表示相关的配置。
+        The content delivery network needs to handle the authentication status codes returned by the authentication server. This parameter specifies the relevant configuration.
         """
         return pulumi.get(self, "auth_response_config")
 
@@ -7601,7 +7601,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs:
     @pulumi.getter(name="queryStringRules")
     def query_string_rules(self) -> Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesArgs']]:
         """
-        表示鉴权请求的参数设置。
+        Represents the parameter settings for authentication requests.
         """
         return pulumi.get(self, "query_string_rules")
 
@@ -7613,7 +7613,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs:
     @pulumi.getter(name="requestBodyRules")
     def request_body_rules(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示鉴权请求正文的规则。您可以不指定该参数或者设置该参数值为 default。default 表示请求正文为空（""）。
+        Indicates the rule for the authentication request body. You can leave this parameter unspecified or set its value to default. default means the request body is empty ("").
         """
         return pulumi.get(self, "request_body_rules")
 
@@ -7625,7 +7625,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs:
     @pulumi.getter(name="requestHeaderRules")
     def request_header_rules(self) -> Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgs']]:
         """
-        表示鉴权请求头的设置。您最多可以设置 50 个请求头。
+        Indicates the settings for authentication request headers. You can set up to 50 request headers.
         """
         return pulumi.get(self, "request_header_rules")
 
@@ -7638,23 +7638,23 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgsDict(TypedDict):
         backup_remote_addr: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示鉴权服务器的备地址。地址格式和要求与主地址相同。
+        Indicates the backup address of the authentication server. The address format and requirements are the same as the primary address.
         """
         master_remote_addr: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示鉴权服务器的主地址，长度不能超过 100 个字符。主地址的格式是 \\n\\n://\\n\\n:\\n\\n 或 \\n\\n://\\n\\n:\\n\\n，其中：\\n\\n 是 http 或者 https。\\n\\n 不能是 localhost。\\n\\n 不能是 127.0.0.1。\\n\\n 是可选的。
+        Indicates the primary address of the authentication server. The length must not exceed 100 characters. The primary address format is \\n\\n://\\n\\n:\\n\\n or \\n\\n://\\n\\n:\\n\\n, where: \\n\\n is http or https. \\n\\n cannot be localhost. \\n\\n cannot be 127.0.0.1. \\n\\n is optional.
         """
         path_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示鉴权请求的路径。鉴权地址和请求路径组成了完整的鉴权 URL。内容分发网络会把用户的请求转发到该鉴权 URL。该参数有以下取值：constant：表示鉴权请求中的路径与用户请求中的路径相同。variable：表示您需要在 pathValue 参数中指定一个鉴权请求中的路径。
+        Indicates the path for the authentication request. The authentication address and request path together form the complete authentication URL. The content delivery network forwards the user's request to this authentication URL. The parameter accepts the following values: constant: The path in the authentication request is the same as the path in the user's request. variable: You need to specify a path for the authentication request in the pathValue parameter.
         """
         path_value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个鉴权请求的路径，长度不能超过 100 个字符。路径必须以斜杠（/）开头，可以包含除了以下字符的可打印 ASCII 字符：连续斜杠（//）、百分号（%）、美元符号（$）、空格、问号（?）、Delete（ASCII code 127）
+        Represents the path for an authentication request. The path cannot exceed 100 characters. It must start with a slash (/), and can include any printable ASCII characters except the following: consecutive slashes (//), percent sign (%), dollar sign ($), space, question mark (?), and Delete (ASCII code 127).
         """
         request_method: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示在发送鉴权请求时，内容分发网络所使用的请求方法。该参数有以下取值：default：表示鉴权请求所使用的方法与用户的请求相同。get：表示鉴权请求使用 GET 方法。post：表示鉴权请求使用 POST方法。head：表示鉴权请求使用 HEAD 方法。
+        Indicates the request method used by the content delivery network when sending authentication requests. The parameter has the following values: default: uses the same method as the user's request. get: uses the GET method. post: uses the POST method. head: uses the HEAD method.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -7668,11 +7668,11 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgs:
                  path_value: Optional[pulumi.Input[builtins.str]] = None,
                  request_method: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] backup_remote_addr: 表示鉴权服务器的备地址。地址格式和要求与主地址相同。
-        :param pulumi.Input[builtins.str] master_remote_addr: 表示鉴权服务器的主地址，长度不能超过 100 个字符。主地址的格式是 \\n\\n://\\n\\n:\\n\\n 或 \\n\\n://\\n\\n:\\n\\n，其中：\\n\\n 是 http 或者 https。\\n\\n 不能是 localhost。\\n\\n 不能是 127.0.0.1。\\n\\n 是可选的。
-        :param pulumi.Input[builtins.str] path_type: 表示鉴权请求的路径。鉴权地址和请求路径组成了完整的鉴权 URL。内容分发网络会把用户的请求转发到该鉴权 URL。该参数有以下取值：constant：表示鉴权请求中的路径与用户请求中的路径相同。variable：表示您需要在 pathValue 参数中指定一个鉴权请求中的路径。
-        :param pulumi.Input[builtins.str] path_value: 表示一个鉴权请求的路径，长度不能超过 100 个字符。路径必须以斜杠（/）开头，可以包含除了以下字符的可打印 ASCII 字符：连续斜杠（//）、百分号（%）、美元符号（$）、空格、问号（?）、Delete（ASCII code 127）
-        :param pulumi.Input[builtins.str] request_method: 表示在发送鉴权请求时，内容分发网络所使用的请求方法。该参数有以下取值：default：表示鉴权请求所使用的方法与用户的请求相同。get：表示鉴权请求使用 GET 方法。post：表示鉴权请求使用 POST方法。head：表示鉴权请求使用 HEAD 方法。
+        :param pulumi.Input[builtins.str] backup_remote_addr: Indicates the backup address of the authentication server. The address format and requirements are the same as the primary address.
+        :param pulumi.Input[builtins.str] master_remote_addr: Indicates the primary address of the authentication server. The length must not exceed 100 characters. The primary address format is \\n\\n://\\n\\n:\\n\\n or \\n\\n://\\n\\n:\\n\\n, where: \\n\\n is http or https. \\n\\n cannot be localhost. \\n\\n cannot be 127.0.0.1. \\n\\n is optional.
+        :param pulumi.Input[builtins.str] path_type: Indicates the path for the authentication request. The authentication address and request path together form the complete authentication URL. The content delivery network forwards the user's request to this authentication URL. The parameter accepts the following values: constant: The path in the authentication request is the same as the path in the user's request. variable: You need to specify a path for the authentication request in the pathValue parameter.
+        :param pulumi.Input[builtins.str] path_value: Represents the path for an authentication request. The path cannot exceed 100 characters. It must start with a slash (/), and can include any printable ASCII characters except the following: consecutive slashes (//), percent sign (%), dollar sign ($), space, question mark (?), and Delete (ASCII code 127).
+        :param pulumi.Input[builtins.str] request_method: Indicates the request method used by the content delivery network when sending authentication requests. The parameter has the following values: default: uses the same method as the user's request. get: uses the GET method. post: uses the POST method. head: uses the HEAD method.
         """
         if backup_remote_addr is not None:
             pulumi.set(__self__, "backup_remote_addr", backup_remote_addr)
@@ -7689,7 +7689,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgs:
     @pulumi.getter(name="backupRemoteAddr")
     def backup_remote_addr(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示鉴权服务器的备地址。地址格式和要求与主地址相同。
+        Indicates the backup address of the authentication server. The address format and requirements are the same as the primary address.
         """
         return pulumi.get(self, "backup_remote_addr")
 
@@ -7701,7 +7701,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgs:
     @pulumi.getter(name="masterRemoteAddr")
     def master_remote_addr(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示鉴权服务器的主地址，长度不能超过 100 个字符。主地址的格式是 \\n\\n://\\n\\n:\\n\\n 或 \\n\\n://\\n\\n:\\n\\n，其中：\\n\\n 是 http 或者 https。\\n\\n 不能是 localhost。\\n\\n 不能是 127.0.0.1。\\n\\n 是可选的。
+        Indicates the primary address of the authentication server. The length must not exceed 100 characters. The primary address format is \\n\\n://\\n\\n:\\n\\n or \\n\\n://\\n\\n:\\n\\n, where: \\n\\n is http or https. \\n\\n cannot be localhost. \\n\\n cannot be 127.0.0.1. \\n\\n is optional.
         """
         return pulumi.get(self, "master_remote_addr")
 
@@ -7713,7 +7713,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgs:
     @pulumi.getter(name="pathType")
     def path_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示鉴权请求的路径。鉴权地址和请求路径组成了完整的鉴权 URL。内容分发网络会把用户的请求转发到该鉴权 URL。该参数有以下取值：constant：表示鉴权请求中的路径与用户请求中的路径相同。variable：表示您需要在 pathValue 参数中指定一个鉴权请求中的路径。
+        Indicates the path for the authentication request. The authentication address and request path together form the complete authentication URL. The content delivery network forwards the user's request to this authentication URL. The parameter accepts the following values: constant: The path in the authentication request is the same as the path in the user's request. variable: You need to specify a path for the authentication request in the pathValue parameter.
         """
         return pulumi.get(self, "path_type")
 
@@ -7725,7 +7725,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgs:
     @pulumi.getter(name="pathValue")
     def path_value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个鉴权请求的路径，长度不能超过 100 个字符。路径必须以斜杠（/）开头，可以包含除了以下字符的可打印 ASCII 字符：连续斜杠（//）、百分号（%）、美元符号（$）、空格、问号（?）、Delete（ASCII code 127）
+        Represents the path for an authentication request. The path cannot exceed 100 characters. It must start with a slash (/), and can include any printable ASCII characters except the following: consecutive slashes (//), percent sign (%), dollar sign ($), space, question mark (?), and Delete (ASCII code 127).
         """
         return pulumi.get(self, "path_value")
 
@@ -7737,7 +7737,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgs:
     @pulumi.getter(name="requestMethod")
     def request_method(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示在发送鉴权请求时，内容分发网络所使用的请求方法。该参数有以下取值：default：表示鉴权请求所使用的方法与用户的请求相同。get：表示鉴权请求使用 GET 方法。post：表示鉴权请求使用 POST方法。head：表示鉴权请求使用 HEAD 方法。
+        Indicates the request method used by the content delivery network when sending authentication requests. The parameter has the following values: default: uses the same method as the user's request. get: uses the GET method. post: uses the POST method. head: uses the HEAD method.
         """
         return pulumi.get(self, "request_method")
 
@@ -7750,19 +7750,19 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgsDict(TypedDict):
         cache_action: NotRequired[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionArgsDict']]
         """
-        内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+        The content delivery network can cache authentication status codes. This parameter indicates the related configuration.
         """
         response_action: NotRequired[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionArgsDict']]
         """
-        表示鉴权失败时，内容分发网络如何响应用户。
+        Indicates how the content delivery network responds to users when authentication fails.
         """
         status_code_action: NotRequired[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionArgsDict']]
         """
-        表示内容分发网络对鉴权状态码的处理方式。
+        Specifies how the content delivery network handles authentication status codes.
         """
         time_out_action: NotRequired[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionArgsDict']]
         """
-        表示鉴权超时后，内容分发网络如何处理鉴权请求。
+        Specifies how the content delivery network handles authentication requests after authentication timeout.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -7775,10 +7775,10 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgs:
                  status_code_action: Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionArgs']] = None,
                  time_out_action: Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionArgs']] = None):
         """
-        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionArgs'] cache_action: 内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
-        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionArgs'] response_action: 表示鉴权失败时，内容分发网络如何响应用户。
-        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionArgs'] status_code_action: 表示内容分发网络对鉴权状态码的处理方式。
-        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionArgs'] time_out_action: 表示鉴权超时后，内容分发网络如何处理鉴权请求。
+        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionArgs'] cache_action: The content delivery network can cache authentication status codes. This parameter indicates the related configuration.
+        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionArgs'] response_action: Indicates how the content delivery network responds to users when authentication fails.
+        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionArgs'] status_code_action: Specifies how the content delivery network handles authentication status codes.
+        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionArgs'] time_out_action: Specifies how the content delivery network handles authentication requests after authentication timeout.
         """
         if cache_action is not None:
             pulumi.set(__self__, "cache_action", cache_action)
@@ -7793,7 +7793,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgs:
     @pulumi.getter(name="cacheAction")
     def cache_action(self) -> Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionArgs']]:
         """
-        内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+        The content delivery network can cache authentication status codes. This parameter indicates the related configuration.
         """
         return pulumi.get(self, "cache_action")
 
@@ -7805,7 +7805,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgs:
     @pulumi.getter(name="responseAction")
     def response_action(self) -> Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionArgs']]:
         """
-        表示鉴权失败时，内容分发网络如何响应用户。
+        Indicates how the content delivery network responds to users when authentication fails.
         """
         return pulumi.get(self, "response_action")
 
@@ -7817,7 +7817,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgs:
     @pulumi.getter(name="statusCodeAction")
     def status_code_action(self) -> Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionArgs']]:
         """
-        表示内容分发网络对鉴权状态码的处理方式。
+        Specifies how the content delivery network handles authentication status codes.
         """
         return pulumi.get(self, "status_code_action")
 
@@ -7829,7 +7829,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgs:
     @pulumi.getter(name="timeOutAction")
     def time_out_action(self) -> Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionArgs']]:
         """
-        表示鉴权超时后，内容分发网络如何处理鉴权请求。
+        Specifies how the content delivery network handles authentication requests after authentication timeout.
         """
         return pulumi.get(self, "time_out_action")
 
@@ -7842,15 +7842,15 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示内容分发网络是否缓存鉴权状态码。该参数有以下取值：nocache：表示内容分发网络不缓存鉴权状态码。cache：内容分发网络缓存鉴权状态码。
+        Indicates whether the CDN caches authentication status codes. The parameter values are: nocache: CDN does not cache authentication status codes. cache: CDN caches authentication status codes.
         """
         cache_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        缓存 key 指定了用于区分不同请求 URI 的查询参数。每个参数都必须以 $ 开头。
+        The cache key specifies the query parameters used to distinguish different request URIs. Each parameter must start with $.
         """
         ttl: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示鉴权状态码的缓存时间。单位是秒。取值范围是 1-86400。86400秒表示 24小时。
+        Indicates the cache duration for authentication status codes, measured in seconds. The range is 1–86400. 86400 seconds equals 24 hours.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -7862,9 +7862,9 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheA
                  cache_keys: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  ttl: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 表示内容分发网络是否缓存鉴权状态码。该参数有以下取值：nocache：表示内容分发网络不缓存鉴权状态码。cache：内容分发网络缓存鉴权状态码。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] cache_keys: 缓存 key 指定了用于区分不同请求 URI 的查询参数。每个参数都必须以 $ 开头。
-        :param pulumi.Input[builtins.int] ttl: 表示鉴权状态码的缓存时间。单位是秒。取值范围是 1-86400。86400秒表示 24小时。
+        :param pulumi.Input[builtins.str] action: Indicates whether the CDN caches authentication status codes. The parameter values are: nocache: CDN does not cache authentication status codes. cache: CDN caches authentication status codes.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] cache_keys: The cache key specifies the query parameters used to distinguish different request URIs. Each parameter must start with $.
+        :param pulumi.Input[builtins.int] ttl: Indicates the cache duration for authentication status codes, measured in seconds. The range is 1–86400. 86400 seconds equals 24 hours.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -7877,7 +7877,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheA
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示内容分发网络是否缓存鉴权状态码。该参数有以下取值：nocache：表示内容分发网络不缓存鉴权状态码。cache：内容分发网络缓存鉴权状态码。
+        Indicates whether the CDN caches authentication status codes. The parameter values are: nocache: CDN does not cache authentication status codes. cache: CDN caches authentication status codes.
         """
         return pulumi.get(self, "action")
 
@@ -7889,7 +7889,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheA
     @pulumi.getter(name="cacheKeys")
     def cache_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        缓存 key 指定了用于区分不同请求 URI 的查询参数。每个参数都必须以 $ 开头。
+        The cache key specifies the query parameters used to distinguish different request URIs. Each parameter must start with $.
         """
         return pulumi.get(self, "cache_keys")
 
@@ -7901,7 +7901,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheA
     @pulumi.getter
     def ttl(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示鉴权状态码的缓存时间。单位是秒。取值范围是 1-86400。86400秒表示 24小时。
+        Indicates the cache duration for authentication status codes, measured in seconds. The range is 1–86400. 86400 seconds equals 24 hours.
         """
         return pulumi.get(self, "ttl")
 
@@ -7914,7 +7914,7 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionArgsDict(TypedDict):
         status_code: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示鉴权失败时，内容分发网络响应用户的状态码。您可以指定范围在 400-499 中的任意一个状态码。该参数的默认值是 403。
+        Indicates the status code returned by the content delivery network to the user when authentication fails. You can specify any status code in the range 400–499. The default value is 403.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -7924,7 +7924,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigRespon
     def __init__(__self__, *,
                  status_code: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] status_code: 表示鉴权失败时，内容分发网络响应用户的状态码。您可以指定范围在 400-499 中的任意一个状态码。该参数的默认值是 403。
+        :param pulumi.Input[builtins.str] status_code: Indicates the status code returned by the content delivery network to the user when authentication fails. You can specify any status code in the range 400–499. The default value is 403.
         """
         if status_code is not None:
             pulumi.set(__self__, "status_code", status_code)
@@ -7933,7 +7933,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigRespon
     @pulumi.getter(name="statusCode")
     def status_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示鉴权失败时，内容分发网络响应用户的状态码。您可以指定范围在 400-499 中的任意一个状态码。该参数的默认值是 403。
+        Indicates the status code returned by the content delivery network to the user when authentication fails. You can specify any status code in the range 400–499. The default value is 403.
         """
         return pulumi.get(self, "status_code")
 
@@ -7946,15 +7946,15 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionArgsDict(TypedDict):
         default_action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示如果鉴权状态码既不是 FailCode，又不是 SuccessCode 时，内容分发网络处理鉴权请求的方式。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+        Specifies how the content delivery network handles authentication requests when the authentication status code is neither FailCode nor SuccessCode. This parameter has the following values: reject: the content delivery network considers authentication failed; pass: the content delivery network considers authentication successful.
         """
         fail_code: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示鉴权失败时的鉴权状态码。您可以指定范围在 400-499 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 4xx 表示 400-499 中的任意一个状态码。该参数的默认值是 401。
+        Indicates the authentication status code returned when authentication fails. You can specify one or more status codes in the range 400–499. Separate multiple status codes with a semicolon (;). You can also specify 4xx to indicate any status code between 400 and 499. The default value for this parameter is 401.
         """
         success_code: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示鉴权成功时的鉴权状态码。您可以指定范围在 200-299 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 2xx 表示 200-299 中的任意一个状态码。该参数的默认值是 200。
+        Indicates the authentication status code for successful authentication. You can specify one or more status codes in the range 200–299. Separate multiple status codes with a semicolon (;). You can also specify 2xx to represent any status code from 200–299. The default value is 200.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -7966,9 +7966,9 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatus
                  fail_code: Optional[pulumi.Input[builtins.str]] = None,
                  success_code: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] default_action: 表示如果鉴权状态码既不是 FailCode，又不是 SuccessCode 时，内容分发网络处理鉴权请求的方式。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
-        :param pulumi.Input[builtins.str] fail_code: 表示鉴权失败时的鉴权状态码。您可以指定范围在 400-499 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 4xx 表示 400-499 中的任意一个状态码。该参数的默认值是 401。
-        :param pulumi.Input[builtins.str] success_code: 表示鉴权成功时的鉴权状态码。您可以指定范围在 200-299 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 2xx 表示 200-299 中的任意一个状态码。该参数的默认值是 200。
+        :param pulumi.Input[builtins.str] default_action: Specifies how the content delivery network handles authentication requests when the authentication status code is neither FailCode nor SuccessCode. This parameter has the following values: reject: the content delivery network considers authentication failed; pass: the content delivery network considers authentication successful.
+        :param pulumi.Input[builtins.str] fail_code: Indicates the authentication status code returned when authentication fails. You can specify one or more status codes in the range 400–499. Separate multiple status codes with a semicolon (;). You can also specify 4xx to indicate any status code between 400 and 499. The default value for this parameter is 401.
+        :param pulumi.Input[builtins.str] success_code: Indicates the authentication status code for successful authentication. You can specify one or more status codes in the range 200–299. Separate multiple status codes with a semicolon (;). You can also specify 2xx to represent any status code from 200–299. The default value is 200.
         """
         if default_action is not None:
             pulumi.set(__self__, "default_action", default_action)
@@ -7981,7 +7981,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatus
     @pulumi.getter(name="defaultAction")
     def default_action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示如果鉴权状态码既不是 FailCode，又不是 SuccessCode 时，内容分发网络处理鉴权请求的方式。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+        Specifies how the content delivery network handles authentication requests when the authentication status code is neither FailCode nor SuccessCode. This parameter has the following values: reject: the content delivery network considers authentication failed; pass: the content delivery network considers authentication successful.
         """
         return pulumi.get(self, "default_action")
 
@@ -7993,7 +7993,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatus
     @pulumi.getter(name="failCode")
     def fail_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示鉴权失败时的鉴权状态码。您可以指定范围在 400-499 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 4xx 表示 400-499 中的任意一个状态码。该参数的默认值是 401。
+        Indicates the authentication status code returned when authentication fails. You can specify one or more status codes in the range 400–499. Separate multiple status codes with a semicolon (;). You can also specify 4xx to indicate any status code between 400 and 499. The default value for this parameter is 401.
         """
         return pulumi.get(self, "fail_code")
 
@@ -8005,7 +8005,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatus
     @pulumi.getter(name="successCode")
     def success_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示鉴权成功时的鉴权状态码。您可以指定范围在 200-299 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 2xx 表示 200-299 中的任意一个状态码。该参数的默认值是 200。
+        Indicates the authentication status code for successful authentication. You can specify one or more status codes in the range 200–299. Separate multiple status codes with a semicolon (;). You can also specify 2xx to represent any status code from 200–299. The default value is 200.
         """
         return pulumi.get(self, "success_code")
 
@@ -8018,11 +8018,11 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示鉴权超时后，内容分发网络处理鉴权请求的策略。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+        Indicates the strategy for handling authentication requests after a timeout in the content delivery network. This parameter supports the following values: reject: The content delivery network considers authentication failed. pass: The content delivery network considers authentication successful.
         """
         time: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示鉴权超时的时间，单位是毫秒。该参数的默认值为 200，取值范围是 200   - 3600。
+        Specifies the authentication timeout in milliseconds. The default value is 200. The valid range is 200–3600.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -8033,8 +8033,8 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOu
                  action: Optional[pulumi.Input[builtins.str]] = None,
                  time: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 表示鉴权超时后，内容分发网络处理鉴权请求的策略。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
-        :param pulumi.Input[builtins.int] time: 表示鉴权超时的时间，单位是毫秒。该参数的默认值为 200，取值范围是 200   - 3600。
+        :param pulumi.Input[builtins.str] action: Indicates the strategy for handling authentication requests after a timeout in the content delivery network. This parameter supports the following values: reject: The content delivery network considers authentication failed. pass: The content delivery network considers authentication successful.
+        :param pulumi.Input[builtins.int] time: Specifies the authentication timeout in milliseconds. The default value is 200. The valid range is 200–3600.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -8045,7 +8045,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOu
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示鉴权超时后，内容分发网络处理鉴权请求的策略。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+        Indicates the strategy for handling authentication requests after a timeout in the content delivery network. This parameter supports the following values: reject: The content delivery network considers authentication failed. pass: The content delivery network considers authentication successful.
         """
         return pulumi.get(self, "action")
 
@@ -8057,7 +8057,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOu
     @pulumi.getter
     def time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示鉴权超时的时间，单位是毫秒。该参数的默认值为 200，取值范围是 200   - 3600。
+        Specifies the authentication timeout in milliseconds. The default value is 200. The valid range is 200–3600.
         """
         return pulumi.get(self, "time")
 
@@ -8070,7 +8070,7 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesArgsDict(TypedDict):
         query_string_components: NotRequired[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgsDict']]
         """
-        表示鉴权请求参数的设置策略。
+        Indicates the strategy for setting authentication request parameters.
         """
         query_string_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceArgsDict']]]]
 elif False:
@@ -8082,7 +8082,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesArgs:
                  query_string_components: Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgs']] = None,
                  query_string_instances: Optional[pulumi.Input[Sequence[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceArgs']]]] = None):
         """
-        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgs'] query_string_components: 表示鉴权请求参数的设置策略。
+        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgs'] query_string_components: Indicates the strategy for setting authentication request parameters.
         """
         if query_string_components is not None:
             pulumi.set(__self__, "query_string_components", query_string_components)
@@ -8093,7 +8093,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesArgs:
     @pulumi.getter(name="queryStringComponents")
     def query_string_components(self) -> Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgs']]:
         """
-        表示鉴权请求参数的设置策略。
+        Indicates the strategy for setting authentication request parameters.
         """
         return pulumi.get(self, "query_string_components")
 
@@ -8115,11 +8115,11 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示鉴权请求是否包含用户请求 URL 中的查询参数。该参数有以下取值：exclude：表示鉴权请求不包含任何查询参数。include：表示鉴权请求包含所有查询参数。includePart：表示鉴权请求包含指定的查询参数。
+        Indicates whether the authentication request includes query parameters from the user's request URL. The parameter accepts the following values: exclude: The authentication request does not include any query parameters. include: The authentication request includes all query parameters. includePart: The authentication request includes specified query parameters.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示 Action 参数所对应的参数值，长度不能超过1,024 个字符。该参数有以下取值：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，您需要在 Value 参数中指定用户请求 URL 中的一个或者多个查询参数，多个查询参数使用英文分号（;）分隔。您不能指定 *。查询参数是区分大小写的，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）该参数的默认值是 *。
+        Indicates the parameter value corresponding to the Action parameter. The length cannot exceed 1,024 characters. The parameter accepts the following values: If Action is exclude or include, Value must be *. If Action is includePart, you need to specify one or more query parameters from the user's request URL in the Value parameter, separated by semicolons (;). You cannot specify *. Query parameters are case-sensitive and can include printable ASCII characters except for the following: double quotes (") , spaces, and Delete (ASCII code 127). The default value for this parameter is *.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgsDict: TypeAlias = Mapping[str, Any]
@@ -8130,8 +8130,8 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStr
                  action: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 表示鉴权请求是否包含用户请求 URL 中的查询参数。该参数有以下取值：exclude：表示鉴权请求不包含任何查询参数。include：表示鉴权请求包含所有查询参数。includePart：表示鉴权请求包含指定的查询参数。
-        :param pulumi.Input[builtins.str] value: 表示 Action 参数所对应的参数值，长度不能超过1,024 个字符。该参数有以下取值：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，您需要在 Value 参数中指定用户请求 URL 中的一个或者多个查询参数，多个查询参数使用英文分号（;）分隔。您不能指定 *。查询参数是区分大小写的，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）该参数的默认值是 *。
+        :param pulumi.Input[builtins.str] action: Indicates whether the authentication request includes query parameters from the user's request URL. The parameter accepts the following values: exclude: The authentication request does not include any query parameters. include: The authentication request includes all query parameters. includePart: The authentication request includes specified query parameters.
+        :param pulumi.Input[builtins.str] value: Indicates the parameter value corresponding to the Action parameter. The length cannot exceed 1,024 characters. The parameter accepts the following values: If Action is exclude or include, Value must be *. If Action is includePart, you need to specify one or more query parameters from the user's request URL in the Value parameter, separated by semicolons (;). You cannot specify *. Query parameters are case-sensitive and can include printable ASCII characters except for the following: double quotes (") , spaces, and Delete (ASCII code 127). The default value for this parameter is *.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -8142,7 +8142,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStr
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示鉴权请求是否包含用户请求 URL 中的查询参数。该参数有以下取值：exclude：表示鉴权请求不包含任何查询参数。include：表示鉴权请求包含所有查询参数。includePart：表示鉴权请求包含指定的查询参数。
+        Indicates whether the authentication request includes query parameters from the user's request URL. The parameter accepts the following values: exclude: The authentication request does not include any query parameters. include: The authentication request includes all query parameters. includePart: The authentication request includes specified query parameters.
         """
         return pulumi.get(self, "action")
 
@@ -8154,7 +8154,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStr
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 Action 参数所对应的参数值，长度不能超过1,024 个字符。该参数有以下取值：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，您需要在 Value 参数中指定用户请求 URL 中的一个或者多个查询参数，多个查询参数使用英文分号（;）分隔。您不能指定 *。查询参数是区分大小写的，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）该参数的默认值是 *。
+        Indicates the parameter value corresponding to the Action parameter. The length cannot exceed 1,024 characters. The parameter accepts the following values: If Action is exclude or include, Value must be *. If Action is includePart, you need to specify one or more query parameters from the user's request URL in the Value parameter, separated by semicolons (;). You cannot specify *. Query parameters are case-sensitive and can include printable ASCII characters except for the following: double quotes (") , spaces, and Delete (ASCII code 127). The default value for this parameter is *.
         """
         return pulumi.get(self, "value")
 
@@ -8167,19 +8167,19 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示如何设置鉴权请求参数。当前您只能设置 Action 为 set。set 表示设置参数。您需要在 Key 中指定您需要设置的鉴权请求参数。如果您指定的鉴权请求参数不存在，内容分发网络会在鉴权请求中添加该参数。如果您指定的鉴权请求参数已存在，内容分发网络会使用 Value 的值作为该鉴权请求参数的值。
+        Describes how to set authentication request parameters. Currently, you can only set Action to set. set means to configure parameters. You need to specify the authentication request parameter to set in Key. If the specified authentication request parameter does not exist, the content delivery network adds the parameter to the authentication request. If the specified authentication request parameter already exists, the content delivery network uses the value of Value as the parameter's value.
         """
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示您需要设置的鉴权请求参数，长度不能超过 1,024 个字符。鉴权请求参数可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）
+        Indicates the authentication request parameter you need to set. The length must not exceed 1,024 characters. The authentication request parameter can contain printable ASCII characters except for the following: double quotes ("), space, and Delete (ASCII code 127)
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示鉴权请求参数的值，长度不能超过 1,024 个字符，并且区分大小写。Value有以下取值：当 ValueType 是 constant 时，表示鉴权请求参数的值是一个常量。您需要指定该常量值。常量值不能以美元符号（$）开头，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、Delete（ASCII code 127）当 ValueType 是 variable 时，表示鉴权请求参数的值来自一个变量。您可以指定该变量列表中的变量。当 ValueType 是 customize 时，表示鉴权请求参数的值是列表中的变量与固定字符串拼接后的字符串。在拼接的字符串中，变量使用 ${变量名} 表示。示例值：bind${request*uri}to${local*ip}done
+        Indicates the value of the authentication request parameter. The length cannot exceed 1,024 characters and is case-sensitive. Value has the following options: When ValueType is constant, the authentication request parameter value is a constant. You need to specify this constant value. The constant value cannot start with a dollar sign ($) and can include any printable ASCII character except the following: double quotes (") and Delete (ASCII code 127). When ValueType is variable, the authentication request parameter value comes from a variable. You can specify a variable from the variable list. When ValueType is customize, the authentication request parameter value is a string formed by concatenating variables from the list with fixed strings. In the concatenated string, variables are represented as ${variable*name}. Example value: bind${request*uri}to${local_ip}done
         """
         value_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示您在 Key 中设置的鉴权请求参数的类型。ValueType 有以下取值：constant：表示鉴权请求参数是一个常量。此时，您需要在 Value 中指定该常量的值。variable：表示鉴权请求参数的值来自一个变量。参见 Value 的说明。customize：表示鉴权请求参数的值是一个变量与固定字符串拼接后的字符串。
+        Indicates the type of authentication request parameter set in Key. ValueType has the following options: constant: The authentication request parameter is a constant. In this case, you need to specify the constant value in Value. variable: The authentication request parameter value comes from a variable. See the description for Value. customize: The authentication request parameter value is a string formed by concatenating a variable and a fixed string.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -8192,10 +8192,10 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStr
                  value: Optional[pulumi.Input[builtins.str]] = None,
                  value_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 表示如何设置鉴权请求参数。当前您只能设置 Action 为 set。set 表示设置参数。您需要在 Key 中指定您需要设置的鉴权请求参数。如果您指定的鉴权请求参数不存在，内容分发网络会在鉴权请求中添加该参数。如果您指定的鉴权请求参数已存在，内容分发网络会使用 Value 的值作为该鉴权请求参数的值。
-        :param pulumi.Input[builtins.str] key: 表示您需要设置的鉴权请求参数，长度不能超过 1,024 个字符。鉴权请求参数可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）
-        :param pulumi.Input[builtins.str] value: 表示鉴权请求参数的值，长度不能超过 1,024 个字符，并且区分大小写。Value有以下取值：当 ValueType 是 constant 时，表示鉴权请求参数的值是一个常量。您需要指定该常量值。常量值不能以美元符号（$）开头，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、Delete（ASCII code 127）当 ValueType 是 variable 时，表示鉴权请求参数的值来自一个变量。您可以指定该变量列表中的变量。当 ValueType 是 customize 时，表示鉴权请求参数的值是列表中的变量与固定字符串拼接后的字符串。在拼接的字符串中，变量使用 ${变量名} 表示。示例值：bind${request*uri}to${local*ip}done
-        :param pulumi.Input[builtins.str] value_type: 表示您在 Key 中设置的鉴权请求参数的类型。ValueType 有以下取值：constant：表示鉴权请求参数是一个常量。此时，您需要在 Value 中指定该常量的值。variable：表示鉴权请求参数的值来自一个变量。参见 Value 的说明。customize：表示鉴权请求参数的值是一个变量与固定字符串拼接后的字符串。
+        :param pulumi.Input[builtins.str] action: Describes how to set authentication request parameters. Currently, you can only set Action to set. set means to configure parameters. You need to specify the authentication request parameter to set in Key. If the specified authentication request parameter does not exist, the content delivery network adds the parameter to the authentication request. If the specified authentication request parameter already exists, the content delivery network uses the value of Value as the parameter's value.
+        :param pulumi.Input[builtins.str] key: Indicates the authentication request parameter you need to set. The length must not exceed 1,024 characters. The authentication request parameter can contain printable ASCII characters except for the following: double quotes ("), space, and Delete (ASCII code 127)
+        :param pulumi.Input[builtins.str] value: Indicates the value of the authentication request parameter. The length cannot exceed 1,024 characters and is case-sensitive. Value has the following options: When ValueType is constant, the authentication request parameter value is a constant. You need to specify this constant value. The constant value cannot start with a dollar sign ($) and can include any printable ASCII character except the following: double quotes (") and Delete (ASCII code 127). When ValueType is variable, the authentication request parameter value comes from a variable. You can specify a variable from the variable list. When ValueType is customize, the authentication request parameter value is a string formed by concatenating variables from the list with fixed strings. In the concatenated string, variables are represented as ${variable*name}. Example value: bind${request*uri}to${local_ip}done
+        :param pulumi.Input[builtins.str] value_type: Indicates the type of authentication request parameter set in Key. ValueType has the following options: constant: The authentication request parameter is a constant. In this case, you need to specify the constant value in Value. variable: The authentication request parameter value comes from a variable. See the description for Value. customize: The authentication request parameter value is a string formed by concatenating a variable and a fixed string.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -8210,7 +8210,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStr
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示如何设置鉴权请求参数。当前您只能设置 Action 为 set。set 表示设置参数。您需要在 Key 中指定您需要设置的鉴权请求参数。如果您指定的鉴权请求参数不存在，内容分发网络会在鉴权请求中添加该参数。如果您指定的鉴权请求参数已存在，内容分发网络会使用 Value 的值作为该鉴权请求参数的值。
+        Describes how to set authentication request parameters. Currently, you can only set Action to set. set means to configure parameters. You need to specify the authentication request parameter to set in Key. If the specified authentication request parameter does not exist, the content delivery network adds the parameter to the authentication request. If the specified authentication request parameter already exists, the content delivery network uses the value of Value as the parameter's value.
         """
         return pulumi.get(self, "action")
 
@@ -8222,7 +8222,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStr
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示您需要设置的鉴权请求参数，长度不能超过 1,024 个字符。鉴权请求参数可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）
+        Indicates the authentication request parameter you need to set. The length must not exceed 1,024 characters. The authentication request parameter can contain printable ASCII characters except for the following: double quotes ("), space, and Delete (ASCII code 127)
         """
         return pulumi.get(self, "key")
 
@@ -8234,7 +8234,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStr
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示鉴权请求参数的值，长度不能超过 1,024 个字符，并且区分大小写。Value有以下取值：当 ValueType 是 constant 时，表示鉴权请求参数的值是一个常量。您需要指定该常量值。常量值不能以美元符号（$）开头，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、Delete（ASCII code 127）当 ValueType 是 variable 时，表示鉴权请求参数的值来自一个变量。您可以指定该变量列表中的变量。当 ValueType 是 customize 时，表示鉴权请求参数的值是列表中的变量与固定字符串拼接后的字符串。在拼接的字符串中，变量使用 ${变量名} 表示。示例值：bind${request*uri}to${local*ip}done
+        Indicates the value of the authentication request parameter. The length cannot exceed 1,024 characters and is case-sensitive. Value has the following options: When ValueType is constant, the authentication request parameter value is a constant. You need to specify this constant value. The constant value cannot start with a dollar sign ($) and can include any printable ASCII character except the following: double quotes (") and Delete (ASCII code 127). When ValueType is variable, the authentication request parameter value comes from a variable. You can specify a variable from the variable list. When ValueType is customize, the authentication request parameter value is a string formed by concatenating variables from the list with fixed strings. In the concatenated string, variables are represented as ${variable*name}. Example value: bind${request*uri}to${local_ip}done
         """
         return pulumi.get(self, "value")
 
@@ -8246,7 +8246,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStr
     @pulumi.getter(name="valueType")
     def value_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示您在 Key 中设置的鉴权请求参数的类型。ValueType 有以下取值：constant：表示鉴权请求参数是一个常量。此时，您需要在 Value 中指定该常量的值。variable：表示鉴权请求参数的值来自一个变量。参见 Value 的说明。customize：表示鉴权请求参数的值是一个变量与固定字符串拼接后的字符串。
+        Indicates the type of authentication request parameter set in Key. ValueType has the following options: constant: The authentication request parameter is a constant. In this case, you need to specify the constant value in Value. variable: The authentication request parameter value comes from a variable. See the description for Value. customize: The authentication request parameter value is a string formed by concatenating a variable and a fixed string.
         """
         return pulumi.get(self, "value_type")
 
@@ -8259,12 +8259,12 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgsDict(TypedDict):
         request_header_components: NotRequired[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsArgsDict']]
         """
-        表示鉴权请求头的设置策略。
+        Indicates the configuration policy for authentication request headers.
         """
         request_header_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceArgsDict']]]]
         request_host: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+        Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgsDict: TypeAlias = Mapping[str, Any]
@@ -8276,8 +8276,8 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgs:
                  request_header_instances: Optional[pulumi.Input[Sequence[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceArgs']]]] = None,
                  request_host: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsArgs'] request_header_components: 表示鉴权请求头的设置策略。
-        :param pulumi.Input[builtins.str] request_host: 表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+        :param pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsArgs'] request_header_components: Indicates the configuration policy for authentication request headers.
+        :param pulumi.Input[builtins.str] request_host: Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
         """
         if request_header_components is not None:
             pulumi.set(__self__, "request_header_components", request_header_components)
@@ -8290,7 +8290,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgs:
     @pulumi.getter(name="requestHeaderComponents")
     def request_header_components(self) -> Optional[pulumi.Input['DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsArgs']]:
         """
-        表示鉴权请求头的设置策略。
+        Indicates the configuration policy for authentication request headers.
         """
         return pulumi.get(self, "request_header_components")
 
@@ -8311,7 +8311,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgs:
     @pulumi.getter(name="requestHost")
     def request_host(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+        Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
         """
         return pulumi.get(self, "request_host")
 
@@ -8324,11 +8324,11 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示鉴权请求头是否包含用户请求头。该参数有以下取值：exclude：表示鉴权请求头中不包含任何用户请求头。include：表示鉴权请求头中包含所有用户请求头。includePart：表示鉴权请求头包含指定的用户请求头。
+        Indicates whether the authentication request header includes user request headers. The parameter values are: exclude: the authentication request header does not include any user request headers. include: the authentication request header includes all user request headers. includePart: the authentication request header includes specified user request headers.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示 Action 参数所对应的参数值，长度不能超过 1,024 个字符。该参数有以下说明：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，Value 参数的取值是用户请求中的一个或者多个头部。多个头部使用英文分号（;）分隔。其取值不能只是 *，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）该参数的默认值是 *。
+        Indicates the parameter value corresponding to the Action parameter. The length must not exceed 1,024 characters. The parameter has the following notes: If Action is exclude or include, Value must be *. If Action is includePart, the Value parameter can be one or more headers from the user's request. Multiple headers are separated by a semicolon (;). The value cannot be only *, and can include printable ASCII characters except for the following: underscore (_), space, double quotes ("), Delete (ASCII code 127). The default value for this parameter is *.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsArgsDict: TypeAlias = Mapping[str, Any]
@@ -8339,8 +8339,8 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesReques
                  action: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 表示鉴权请求头是否包含用户请求头。该参数有以下取值：exclude：表示鉴权请求头中不包含任何用户请求头。include：表示鉴权请求头中包含所有用户请求头。includePart：表示鉴权请求头包含指定的用户请求头。
-        :param pulumi.Input[builtins.str] value: 表示 Action 参数所对应的参数值，长度不能超过 1,024 个字符。该参数有以下说明：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，Value 参数的取值是用户请求中的一个或者多个头部。多个头部使用英文分号（;）分隔。其取值不能只是 *，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）该参数的默认值是 *。
+        :param pulumi.Input[builtins.str] action: Indicates whether the authentication request header includes user request headers. The parameter values are: exclude: the authentication request header does not include any user request headers. include: the authentication request header includes all user request headers. includePart: the authentication request header includes specified user request headers.
+        :param pulumi.Input[builtins.str] value: Indicates the parameter value corresponding to the Action parameter. The length must not exceed 1,024 characters. The parameter has the following notes: If Action is exclude or include, Value must be *. If Action is includePart, the Value parameter can be one or more headers from the user's request. Multiple headers are separated by a semicolon (;). The value cannot be only *, and can include printable ASCII characters except for the following: underscore (_), space, double quotes ("), Delete (ASCII code 127). The default value for this parameter is *.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -8351,7 +8351,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesReques
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示鉴权请求头是否包含用户请求头。该参数有以下取值：exclude：表示鉴权请求头中不包含任何用户请求头。include：表示鉴权请求头中包含所有用户请求头。includePart：表示鉴权请求头包含指定的用户请求头。
+        Indicates whether the authentication request header includes user request headers. The parameter values are: exclude: the authentication request header does not include any user request headers. include: the authentication request header includes all user request headers. includePart: the authentication request header includes specified user request headers.
         """
         return pulumi.get(self, "action")
 
@@ -8363,7 +8363,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesReques
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 Action 参数所对应的参数值，长度不能超过 1,024 个字符。该参数有以下说明：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，Value 参数的取值是用户请求中的一个或者多个头部。多个头部使用英文分号（;）分隔。其取值不能只是 *，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）该参数的默认值是 *。
+        Indicates the parameter value corresponding to the Action parameter. The length must not exceed 1,024 characters. The parameter has the following notes: If Action is exclude or include, Value must be *. If Action is includePart, the Value parameter can be one or more headers from the user's request. Multiple headers are separated by a semicolon (;). The value cannot be only *, and can include printable ASCII characters except for the following: underscore (_), space, double quotes ("), Delete (ASCII code 127). The default value for this parameter is *.
         """
         return pulumi.get(self, "value")
 
@@ -8376,19 +8376,19 @@ if not MYPY:
     class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+        Indicates how to set the authentication request header. Currently, you can only set this parameter to set. set means to configure the request header. You need to specify the request header in Key. If the request header does not exist, the content delivery network adds it to the authentication request. If the request header already exists, the content delivery network uses the value specified in Value as the header value.
         """
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        Specifies the name of a header. The name cannot exceed 1,024 characters and is case insensitive. It can contain any printable ASCII character except: underscore (_), space, double quotes ("), and Delete (ASCII code 127).
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        Indicates the value of the Key. This parameter is only valid when Action equals "set". If Action does not equal "set", this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can contain any printable ASCII character except the following: dollar sign ($), Delete (ASCII code 127)
         """
         value_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        Specifies the value type for the Key. This parameter is only valid when Action is set to 'set'. If Action is not 'set', this parameter is invalid. The parameter has the following values: constant: the Key value is a fixed string. variable: the Key value comes from a variable. customize: the Key value is a string formed by concatenating a variable and a fixed string.
         """
 elif False:
     DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -8401,10 +8401,10 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesReques
                  value: Optional[pulumi.Input[builtins.str]] = None,
                  value_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
-        :param pulumi.Input[builtins.str] key: 指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
-        :param pulumi.Input[builtins.str] value: 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
-        :param pulumi.Input[builtins.str] value_type: 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        :param pulumi.Input[builtins.str] action: Indicates how to set the authentication request header. Currently, you can only set this parameter to set. set means to configure the request header. You need to specify the request header in Key. If the request header does not exist, the content delivery network adds it to the authentication request. If the request header already exists, the content delivery network uses the value specified in Value as the header value.
+        :param pulumi.Input[builtins.str] key: Specifies the name of a header. The name cannot exceed 1,024 characters and is case insensitive. It can contain any printable ASCII character except: underscore (_), space, double quotes ("), and Delete (ASCII code 127).
+        :param pulumi.Input[builtins.str] value: Indicates the value of the Key. This parameter is only valid when Action equals "set". If Action does not equal "set", this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can contain any printable ASCII character except the following: dollar sign ($), Delete (ASCII code 127)
+        :param pulumi.Input[builtins.str] value_type: Specifies the value type for the Key. This parameter is only valid when Action is set to 'set'. If Action is not 'set', this parameter is invalid. The parameter has the following values: constant: the Key value is a fixed string. variable: the Key value comes from a variable. customize: the Key value is a string formed by concatenating a variable and a fixed string.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -8419,7 +8419,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesReques
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+        Indicates how to set the authentication request header. Currently, you can only set this parameter to set. set means to configure the request header. You need to specify the request header in Key. If the request header does not exist, the content delivery network adds it to the authentication request. If the request header already exists, the content delivery network uses the value specified in Value as the header value.
         """
         return pulumi.get(self, "action")
 
@@ -8431,7 +8431,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesReques
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        Specifies the name of a header. The name cannot exceed 1,024 characters and is case insensitive. It can contain any printable ASCII character except: underscore (_), space, double quotes ("), and Delete (ASCII code 127).
         """
         return pulumi.get(self, "key")
 
@@ -8443,7 +8443,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesReques
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        Indicates the value of the Key. This parameter is only valid when Action equals "set". If Action does not equal "set", this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can contain any printable ASCII character except the following: dollar sign ($), Delete (ASCII code 127)
         """
         return pulumi.get(self, "value")
 
@@ -8455,7 +8455,7 @@ class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesReques
     @pulumi.getter(name="valueType")
     def value_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        Specifies the value type for the Key. This parameter is only valid when Action is set to 'set'. If Action is not 'set', this parameter is invalid. The parameter has the following values: constant: the Key value is a fixed string. variable: the Key value comes from a variable. customize: the Key value is a string formed by concatenating a variable and a fixed string.
         """
         return pulumi.get(self, "value_type")
 
@@ -8469,7 +8469,7 @@ if not MYPY:
         block_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainRequestBlockRuleBlockRuleArgsDict']]]]
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
         """
 elif False:
     DomainRequestBlockRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -8480,7 +8480,7 @@ class DomainRequestBlockRuleArgs:
                  block_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainRequestBlockRuleBlockRuleArgs']]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        :param pulumi.Input[builtins.bool] switch: Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
         """
         if block_rules is not None:
             pulumi.set(__self__, "block_rules", block_rules)
@@ -8500,7 +8500,7 @@ class DomainRequestBlockRuleArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
         """
         return pulumi.get(self, "switch")
 
@@ -8513,15 +8513,15 @@ if not MYPY:
     class DomainRequestBlockRuleBlockRuleArgsDict(TypedDict):
         block_action: NotRequired[pulumi.Input['DomainRequestBlockRuleBlockRuleBlockActionArgsDict']]
         """
-        表示列表中一条规则的拦截配置。
+        Indicates the interception configuration for a rule in the list.
         """
         condition: NotRequired[pulumi.Input['DomainRequestBlockRuleBlockRuleConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         rule_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示规则的名称，长度不超过 20 个字符，可以包含字母、数字、下划线（_）、中划线（-）、汉字。一个汉字占 3 个字符。
+        Indicates the name of the rule, which must not exceed 20 characters and can include letters, numbers, underscores (_), hyphens (-), and Chinese characters. One Chinese character counts as 3 characters.
         """
 elif False:
     DomainRequestBlockRuleBlockRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -8533,9 +8533,9 @@ class DomainRequestBlockRuleBlockRuleArgs:
                  condition: Optional[pulumi.Input['DomainRequestBlockRuleBlockRuleConditionArgs']] = None,
                  rule_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input['DomainRequestBlockRuleBlockRuleBlockActionArgs'] block_action: 表示列表中一条规则的拦截配置。
-        :param pulumi.Input['DomainRequestBlockRuleBlockRuleConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
-        :param pulumi.Input[builtins.str] rule_name: 表示规则的名称，长度不超过 20 个字符，可以包含字母、数字、下划线（_）、中划线（-）、汉字。一个汉字占 3 个字符。
+        :param pulumi.Input['DomainRequestBlockRuleBlockRuleBlockActionArgs'] block_action: Indicates the interception configuration for a rule in the list.
+        :param pulumi.Input['DomainRequestBlockRuleBlockRuleConditionArgs'] condition: Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
+        :param pulumi.Input[builtins.str] rule_name: Indicates the name of the rule, which must not exceed 20 characters and can include letters, numbers, underscores (_), hyphens (-), and Chinese characters. One Chinese character counts as 3 characters.
         """
         if block_action is not None:
             pulumi.set(__self__, "block_action", block_action)
@@ -8548,7 +8548,7 @@ class DomainRequestBlockRuleBlockRuleArgs:
     @pulumi.getter(name="blockAction")
     def block_action(self) -> Optional[pulumi.Input['DomainRequestBlockRuleBlockRuleBlockActionArgs']]:
         """
-        表示列表中一条规则的拦截配置。
+        Indicates the interception configuration for a rule in the list.
         """
         return pulumi.get(self, "block_action")
 
@@ -8560,7 +8560,7 @@ class DomainRequestBlockRuleBlockRuleArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainRequestBlockRuleBlockRuleConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -8572,7 +8572,7 @@ class DomainRequestBlockRuleBlockRuleArgs:
     @pulumi.getter(name="ruleName")
     def rule_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示规则的名称，长度不超过 20 个字符，可以包含字母、数字、下划线（_）、中划线（-）、汉字。一个汉字占 3 个字符。
+        Indicates the name of the rule, which must not exceed 20 characters and can include letters, numbers, underscores (_), hyphens (-), and Chinese characters. One Chinese character counts as 3 characters.
         """
         return pulumi.get(self, "rule_name")
 
@@ -8585,19 +8585,19 @@ if not MYPY:
     class DomainRequestBlockRuleBlockRuleBlockActionArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示内容分发网络如何拦截匹配的请求。该参数有以下取值：refuse：表示内容分发网络拒绝请求并响应一个 4xx 的错误码。错误码在 StatusCode 中指定。redirect：表示内容分发网络将请求重定向到 RedirectUrl 中指定的 URL。
+        Specifies how the content delivery network intercepts matching requests. This parameter has the following values: refuse: The content delivery network rejects the request and returns a 4xx error code. The error code is specified in StatusCode. redirect: The content delivery network redirects the request to the URL specified in RedirectUrl.
         """
         error_page: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Action 是 refuse 时，该参数是可选的，说明如下：如果指定该参数，该参数表示全局配置下的一个自定义响应页面的名称。也就是说，当内容分发网络拒绝请求时，返回该自定义页面。需要留意的是，"全局配置" 是一个白名单功能。要使用该功能，请 提交工单。如果不指定该参数，表示内容分发网络使用 StatusCode 中指定错误码的标准响应正文。当 Action 是 redirect 时，该参数无效，可以不指定。
+        When Action is refuse, this parameter is optional, as explained below: If specified, this parameter indicates the name of a custom response page under global configuration. When the content delivery network refuses a request, it returns this custom page. Note that 'global configuration' is an Allowlist feature. To use this feature, submit a ticket. If this parameter is not specified, the content delivery network uses the standard response body for the error code specified in StatusCode. When Action is redirect, this parameter is invalid and can be omitted.
         """
         redirect_url: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Action 是 redirect 时，该参数必填，表示重定向 URL。URL 必须以 http:// 或 https:// 开头，长度不能超过 1,024 个字符。当 Action 是 refuse 时，该参数无效，可以不指定。
+        When Action is redirect, this parameter is required and specifies the redirect URL. The URL must start with http:// or https:// and cannot exceed 1,024 characters. When Action is refuse, this parameter is invalid and can be omitted.
         """
         status_code: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示对于拦截的请求，内容分发网络的响应状态码。当 Action 是 refuse 时，该参数表示一个 400-499 范围内的错误码。当 Action 是 redirect 时，该参数有以下取值：301：表示响应状态码是 301。302：表示响应状态码是 302。
+        Represents the response status code from the content delivery network for intercepted requests. When Action is refuse, this parameter specifies an error code in the range 400–499. When Action is redirect, this parameter can be: 301: The response status code is 301. 302: The response status code is 302.
         """
 elif False:
     DomainRequestBlockRuleBlockRuleBlockActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -8610,10 +8610,10 @@ class DomainRequestBlockRuleBlockRuleBlockActionArgs:
                  redirect_url: Optional[pulumi.Input[builtins.str]] = None,
                  status_code: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 表示内容分发网络如何拦截匹配的请求。该参数有以下取值：refuse：表示内容分发网络拒绝请求并响应一个 4xx 的错误码。错误码在 StatusCode 中指定。redirect：表示内容分发网络将请求重定向到 RedirectUrl 中指定的 URL。
-        :param pulumi.Input[builtins.str] error_page: 当 Action 是 refuse 时，该参数是可选的，说明如下：如果指定该参数，该参数表示全局配置下的一个自定义响应页面的名称。也就是说，当内容分发网络拒绝请求时，返回该自定义页面。需要留意的是，"全局配置" 是一个白名单功能。要使用该功能，请 提交工单。如果不指定该参数，表示内容分发网络使用 StatusCode 中指定错误码的标准响应正文。当 Action 是 redirect 时，该参数无效，可以不指定。
-        :param pulumi.Input[builtins.str] redirect_url: 当 Action 是 redirect 时，该参数必填，表示重定向 URL。URL 必须以 http:// 或 https:// 开头，长度不能超过 1,024 个字符。当 Action 是 refuse 时，该参数无效，可以不指定。
-        :param pulumi.Input[builtins.str] status_code: 表示对于拦截的请求，内容分发网络的响应状态码。当 Action 是 refuse 时，该参数表示一个 400-499 范围内的错误码。当 Action 是 redirect 时，该参数有以下取值：301：表示响应状态码是 301。302：表示响应状态码是 302。
+        :param pulumi.Input[builtins.str] action: Specifies how the content delivery network intercepts matching requests. This parameter has the following values: refuse: The content delivery network rejects the request and returns a 4xx error code. The error code is specified in StatusCode. redirect: The content delivery network redirects the request to the URL specified in RedirectUrl.
+        :param pulumi.Input[builtins.str] error_page: When Action is refuse, this parameter is optional, as explained below: If specified, this parameter indicates the name of a custom response page under global configuration. When the content delivery network refuses a request, it returns this custom page. Note that 'global configuration' is an Allowlist feature. To use this feature, submit a ticket. If this parameter is not specified, the content delivery network uses the standard response body for the error code specified in StatusCode. When Action is redirect, this parameter is invalid and can be omitted.
+        :param pulumi.Input[builtins.str] redirect_url: When Action is redirect, this parameter is required and specifies the redirect URL. The URL must start with http:// or https:// and cannot exceed 1,024 characters. When Action is refuse, this parameter is invalid and can be omitted.
+        :param pulumi.Input[builtins.str] status_code: Represents the response status code from the content delivery network for intercepted requests. When Action is refuse, this parameter specifies an error code in the range 400–499. When Action is redirect, this parameter can be: 301: The response status code is 301. 302: The response status code is 302.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -8628,7 +8628,7 @@ class DomainRequestBlockRuleBlockRuleBlockActionArgs:
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示内容分发网络如何拦截匹配的请求。该参数有以下取值：refuse：表示内容分发网络拒绝请求并响应一个 4xx 的错误码。错误码在 StatusCode 中指定。redirect：表示内容分发网络将请求重定向到 RedirectUrl 中指定的 URL。
+        Specifies how the content delivery network intercepts matching requests. This parameter has the following values: refuse: The content delivery network rejects the request and returns a 4xx error code. The error code is specified in StatusCode. redirect: The content delivery network redirects the request to the URL specified in RedirectUrl.
         """
         return pulumi.get(self, "action")
 
@@ -8640,7 +8640,7 @@ class DomainRequestBlockRuleBlockRuleBlockActionArgs:
     @pulumi.getter(name="errorPage")
     def error_page(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Action 是 refuse 时，该参数是可选的，说明如下：如果指定该参数，该参数表示全局配置下的一个自定义响应页面的名称。也就是说，当内容分发网络拒绝请求时，返回该自定义页面。需要留意的是，"全局配置" 是一个白名单功能。要使用该功能，请 提交工单。如果不指定该参数，表示内容分发网络使用 StatusCode 中指定错误码的标准响应正文。当 Action 是 redirect 时，该参数无效，可以不指定。
+        When Action is refuse, this parameter is optional, as explained below: If specified, this parameter indicates the name of a custom response page under global configuration. When the content delivery network refuses a request, it returns this custom page. Note that 'global configuration' is an Allowlist feature. To use this feature, submit a ticket. If this parameter is not specified, the content delivery network uses the standard response body for the error code specified in StatusCode. When Action is redirect, this parameter is invalid and can be omitted.
         """
         return pulumi.get(self, "error_page")
 
@@ -8652,7 +8652,7 @@ class DomainRequestBlockRuleBlockRuleBlockActionArgs:
     @pulumi.getter(name="redirectUrl")
     def redirect_url(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Action 是 redirect 时，该参数必填，表示重定向 URL。URL 必须以 http:// 或 https:// 开头，长度不能超过 1,024 个字符。当 Action 是 refuse 时，该参数无效，可以不指定。
+        When Action is redirect, this parameter is required and specifies the redirect URL. The URL must start with http:// or https:// and cannot exceed 1,024 characters. When Action is refuse, this parameter is invalid and can be omitted.
         """
         return pulumi.get(self, "redirect_url")
 
@@ -8664,7 +8664,7 @@ class DomainRequestBlockRuleBlockRuleBlockActionArgs:
     @pulumi.getter(name="statusCode")
     def status_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示对于拦截的请求，内容分发网络的响应状态码。当 Action 是 refuse 时，该参数表示一个 400-499 范围内的错误码。当 Action 是 redirect 时，该参数有以下取值：301：表示响应状态码是 301。302：表示响应状态码是 302。
+        Represents the response status code from the content delivery network for intercepted requests. When Action is refuse, this parameter specifies an error code in the range 400–499. When Action is redirect, this parameter can be: 301: The response status code is 301. 302: The response status code is 302.
         """
         return pulumi.get(self, "status_code")
 
@@ -8678,7 +8678,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainRequestBlockRuleBlockRuleConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainRequestBlockRuleBlockRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -8689,7 +8689,7 @@ class DomainRequestBlockRuleBlockRuleConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainRequestBlockRuleBlockRuleConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -8709,7 +8709,7 @@ class DomainRequestBlockRuleBlockRuleConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -8722,23 +8722,23 @@ if not MYPY:
     class DomainRequestBlockRuleBlockRuleConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainRequestBlockRuleBlockRuleConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -8752,11 +8752,11 @@ class DomainRequestBlockRuleBlockRuleConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -8773,7 +8773,7 @@ class DomainRequestBlockRuleBlockRuleConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -8785,7 +8785,7 @@ class DomainRequestBlockRuleBlockRuleConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -8797,7 +8797,7 @@ class DomainRequestBlockRuleBlockRuleConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -8809,7 +8809,7 @@ class DomainRequestBlockRuleBlockRuleConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -8821,7 +8821,7 @@ class DomainRequestBlockRuleBlockRuleConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -8834,11 +8834,11 @@ if not MYPY:
     class DomainRequestHeaderArgsDict(TypedDict):
         condition: NotRequired[pulumi.Input['DomainRequestHeaderConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         request_header_action: NotRequired[pulumi.Input['DomainRequestHeaderRequestHeaderActionArgsDict']]
         """
-        表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+        Represents a list of configuration rules for request headers. Each rule includes settings for header operations. You can add up to 50 rules.
         """
 elif False:
     DomainRequestHeaderArgsDict: TypeAlias = Mapping[str, Any]
@@ -8849,8 +8849,8 @@ class DomainRequestHeaderArgs:
                  condition: Optional[pulumi.Input['DomainRequestHeaderConditionArgs']] = None,
                  request_header_action: Optional[pulumi.Input['DomainRequestHeaderRequestHeaderActionArgs']] = None):
         """
-        :param pulumi.Input['DomainRequestHeaderConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
-        :param pulumi.Input['DomainRequestHeaderRequestHeaderActionArgs'] request_header_action: 表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+        :param pulumi.Input['DomainRequestHeaderConditionArgs'] condition: Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
+        :param pulumi.Input['DomainRequestHeaderRequestHeaderActionArgs'] request_header_action: Represents a list of configuration rules for request headers. Each rule includes settings for header operations. You can add up to 50 rules.
         """
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
@@ -8861,7 +8861,7 @@ class DomainRequestHeaderArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainRequestHeaderConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -8873,7 +8873,7 @@ class DomainRequestHeaderArgs:
     @pulumi.getter(name="requestHeaderAction")
     def request_header_action(self) -> Optional[pulumi.Input['DomainRequestHeaderRequestHeaderActionArgs']]:
         """
-        表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+        Represents a list of configuration rules for request headers. Each rule includes settings for header operations. You can add up to 50 rules.
         """
         return pulumi.get(self, "request_header_action")
 
@@ -8887,7 +8887,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainRequestHeaderConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainRequestHeaderConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -8898,7 +8898,7 @@ class DomainRequestHeaderConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainRequestHeaderConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -8918,7 +8918,7 @@ class DomainRequestHeaderConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -8931,23 +8931,23 @@ if not MYPY:
     class DomainRequestHeaderConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainRequestHeaderConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -8961,11 +8961,11 @@ class DomainRequestHeaderConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -8982,7 +8982,7 @@ class DomainRequestHeaderConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -8994,7 +8994,7 @@ class DomainRequestHeaderConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -9006,7 +9006,7 @@ class DomainRequestHeaderConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -9018,7 +9018,7 @@ class DomainRequestHeaderConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -9030,7 +9030,7 @@ class DomainRequestHeaderConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -9066,19 +9066,19 @@ if not MYPY:
     class DomainRequestHeaderRequestHeaderActionRequestHeaderInstanceArgsDict(TypedDict):
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+        Indicates how to set the authentication request header. Currently, you can only set this parameter to set. set means to configure the request header. You need to specify the request header in Key. If the request header does not exist, the content delivery network adds it to the authentication request. If the request header already exists, the content delivery network uses the value specified in Value as the header value.
         """
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        Specifies the name of a header. The name cannot exceed 1,024 characters and is case insensitive. It can contain any printable ASCII character except: underscore (_), space, double quotes ("), and Delete (ASCII code 127).
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        Indicates the value of the Key. This parameter is only valid when Action equals "set". If Action does not equal "set", this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can contain any printable ASCII character except the following: dollar sign ($), Delete (ASCII code 127)
         """
         value_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        Specifies the value type for the Key. This parameter is only valid when Action is set to 'set'. If Action is not 'set', this parameter is invalid. The parameter has the following values: constant: the Key value is a fixed string. variable: the Key value comes from a variable. customize: the Key value is a string formed by concatenating a variable and a fixed string.
         """
 elif False:
     DomainRequestHeaderRequestHeaderActionRequestHeaderInstanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -9091,10 +9091,10 @@ class DomainRequestHeaderRequestHeaderActionRequestHeaderInstanceArgs:
                  value: Optional[pulumi.Input[builtins.str]] = None,
                  value_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] action: 表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
-        :param pulumi.Input[builtins.str] key: 指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
-        :param pulumi.Input[builtins.str] value: 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
-        :param pulumi.Input[builtins.str] value_type: 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        :param pulumi.Input[builtins.str] action: Indicates how to set the authentication request header. Currently, you can only set this parameter to set. set means to configure the request header. You need to specify the request header in Key. If the request header does not exist, the content delivery network adds it to the authentication request. If the request header already exists, the content delivery network uses the value specified in Value as the header value.
+        :param pulumi.Input[builtins.str] key: Specifies the name of a header. The name cannot exceed 1,024 characters and is case insensitive. It can contain any printable ASCII character except: underscore (_), space, double quotes ("), and Delete (ASCII code 127).
+        :param pulumi.Input[builtins.str] value: Indicates the value of the Key. This parameter is only valid when Action equals "set". If Action does not equal "set", this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can contain any printable ASCII character except the following: dollar sign ($), Delete (ASCII code 127)
+        :param pulumi.Input[builtins.str] value_type: Specifies the value type for the Key. This parameter is only valid when Action is set to 'set'. If Action is not 'set', this parameter is invalid. The parameter has the following values: constant: the Key value is a fixed string. variable: the Key value comes from a variable. customize: the Key value is a string formed by concatenating a variable and a fixed string.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -9109,7 +9109,7 @@ class DomainRequestHeaderRequestHeaderActionRequestHeaderInstanceArgs:
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+        Indicates how to set the authentication request header. Currently, you can only set this parameter to set. set means to configure the request header. You need to specify the request header in Key. If the request header does not exist, the content delivery network adds it to the authentication request. If the request header already exists, the content delivery network uses the value specified in Value as the header value.
         """
         return pulumi.get(self, "action")
 
@@ -9121,7 +9121,7 @@ class DomainRequestHeaderRequestHeaderActionRequestHeaderInstanceArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        Specifies the name of a header. The name cannot exceed 1,024 characters and is case insensitive. It can contain any printable ASCII character except: underscore (_), space, double quotes ("), and Delete (ASCII code 127).
         """
         return pulumi.get(self, "key")
 
@@ -9133,7 +9133,7 @@ class DomainRequestHeaderRequestHeaderActionRequestHeaderInstanceArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        Indicates the value of the Key. This parameter is only valid when Action equals "set". If Action does not equal "set", this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can contain any printable ASCII character except the following: dollar sign ($), Delete (ASCII code 127)
         """
         return pulumi.get(self, "value")
 
@@ -9145,7 +9145,7 @@ class DomainRequestHeaderRequestHeaderActionRequestHeaderInstanceArgs:
     @pulumi.getter(name="valueType")
     def value_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        Specifies the value type for the Key. This parameter is only valid when Action is set to 'set'. If Action is not 'set', this parameter is invalid. The parameter has the following values: constant: the Key value is a fixed string. variable: the Key value comes from a variable. customize: the Key value is a string formed by concatenating a variable and a fixed string.
         """
         return pulumi.get(self, "value_type")
 
@@ -9158,11 +9158,11 @@ if not MYPY:
     class DomainResponseHeaderArgsDict(TypedDict):
         condition: NotRequired[pulumi.Input['DomainResponseHeaderConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         response_header_action: NotRequired[pulumi.Input['DomainResponseHeaderResponseHeaderActionArgsDict']]
         """
-        表示内容分发网络在响应用户请求的时候，对响应头的操作。
+        Indicates operations on the response header performed by the Content Delivery Network when responding to user requests.
         """
 elif False:
     DomainResponseHeaderArgsDict: TypeAlias = Mapping[str, Any]
@@ -9173,8 +9173,8 @@ class DomainResponseHeaderArgs:
                  condition: Optional[pulumi.Input['DomainResponseHeaderConditionArgs']] = None,
                  response_header_action: Optional[pulumi.Input['DomainResponseHeaderResponseHeaderActionArgs']] = None):
         """
-        :param pulumi.Input['DomainResponseHeaderConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
-        :param pulumi.Input['DomainResponseHeaderResponseHeaderActionArgs'] response_header_action: 表示内容分发网络在响应用户请求的时候，对响应头的操作。
+        :param pulumi.Input['DomainResponseHeaderConditionArgs'] condition: Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
+        :param pulumi.Input['DomainResponseHeaderResponseHeaderActionArgs'] response_header_action: Indicates operations on the response header performed by the Content Delivery Network when responding to user requests.
         """
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
@@ -9185,7 +9185,7 @@ class DomainResponseHeaderArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainResponseHeaderConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -9197,7 +9197,7 @@ class DomainResponseHeaderArgs:
     @pulumi.getter(name="responseHeaderAction")
     def response_header_action(self) -> Optional[pulumi.Input['DomainResponseHeaderResponseHeaderActionArgs']]:
         """
-        表示内容分发网络在响应用户请求的时候，对响应头的操作。
+        Indicates operations on the response header performed by the Content Delivery Network when responding to user requests.
         """
         return pulumi.get(self, "response_header_action")
 
@@ -9211,7 +9211,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainResponseHeaderConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainResponseHeaderConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -9222,7 +9222,7 @@ class DomainResponseHeaderConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainResponseHeaderConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -9242,7 +9242,7 @@ class DomainResponseHeaderConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -9255,23 +9255,23 @@ if not MYPY:
     class DomainResponseHeaderConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainResponseHeaderConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -9285,11 +9285,11 @@ class DomainResponseHeaderConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -9306,7 +9306,7 @@ class DomainResponseHeaderConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -9318,7 +9318,7 @@ class DomainResponseHeaderConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -9330,7 +9330,7 @@ class DomainResponseHeaderConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -9342,7 +9342,7 @@ class DomainResponseHeaderConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -9354,7 +9354,7 @@ class DomainResponseHeaderConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -9390,23 +9390,23 @@ if not MYPY:
     class DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgsDict(TypedDict):
         access_origin_control: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示在内容分发网络响应用户请求时，是否校验请求头中的 Origin 字段。该参数有以下取值：true：表示内容分发网络会校验 Origin 字段。如果校验成功，内容分发网络会在响应头中包含 Access-Control-Allow-Origin 字段。字段值与 Origin 字段值相同。如果校验失败，响应头中不会包含 Access-Control-Allow-Origin 字段。false：表示内容分发网络不会校验 Origin 字段。在响应头中，内容分发网络会包含 Access-Control-Allow-Origin 字段。字段值是您配置的 Access-Control-Allow-Origin 的内容。该参数的默认值是 false。该参数仅在以下条件都满足的情况下有效：Action 是 set。Key 是 Access-Control-Allow-Origin。ValueType 是 constant。
+        Indicates whether the Origin field in the request header is validated when the content delivery network responds to user requests. Valid values are: true: The content delivery network validates the Origin field. If validation succeeds, the response header includes the Access-Control-Allow-Origin field, with the value matching the Origin field. If validation fails, the response header does not include the Access-Control-Allow-Origin field. false: The content delivery network does not validate the Origin field. The response header includes the Access-Control-Allow-Origin field, with the value set to your configured Access-Control-Allow-Origin content. The default value is false. This parameter is only effective when all the following conditions are met: Action is set. Key is Access-Control-Allow-Origin. ValueType is constant.
         """
         action: NotRequired[pulumi.Input[builtins.str]]
         """
-        指定对响应头的操作。该参数有以下取值：set：表示设置一个头部。设置操作包括添加与修改。如果源站响应中已包含该头部，该头部的值会被覆盖。如果源站响应中没有包含该头部，该头部会被添加。delete，表示删除一个头部。
+        Specifies the operation on the response header. This parameter has the following values: set: sets a header. The set operation includes adding and modifying. If the header already exists in the origin response, its value will be overwritten. If the header does not exist in the origin response, it will be added. delete: deletes a header
         """
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        指定一个头部的名称。名称不能超过 1,024个字符，不区分大小写，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        Specifies the name of a header. The name cannot exceed 1,024 characters, is case-insensitive, and can include any printable ASCII character except the following: underscore (_), space, double quotes ("), and Delete (ASCII code 127)
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        Indicates the value of the Key. This parameter is valid only when Action is set. If Action is not set, this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can include printable ASCII characters except for the following: dollar sign ($), Delete (ASCII code 127).
         """
         value_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        Specifies the value type for Key. This parameter is only valid when Action is set. If Action is not set, this parameter is invalid. The parameter supports the following values: constant: Key is a fixed string. variable: Key is sourced from a variable. customize: Key is a string formed by concatenating a variable and a fixed string.
         """
 elif False:
     DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -9420,11 +9420,11 @@ class DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgs:
                  value: Optional[pulumi.Input[builtins.str]] = None,
                  value_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] access_origin_control: 表示在内容分发网络响应用户请求时，是否校验请求头中的 Origin 字段。该参数有以下取值：true：表示内容分发网络会校验 Origin 字段。如果校验成功，内容分发网络会在响应头中包含 Access-Control-Allow-Origin 字段。字段值与 Origin 字段值相同。如果校验失败，响应头中不会包含 Access-Control-Allow-Origin 字段。false：表示内容分发网络不会校验 Origin 字段。在响应头中，内容分发网络会包含 Access-Control-Allow-Origin 字段。字段值是您配置的 Access-Control-Allow-Origin 的内容。该参数的默认值是 false。该参数仅在以下条件都满足的情况下有效：Action 是 set。Key 是 Access-Control-Allow-Origin。ValueType 是 constant。
-        :param pulumi.Input[builtins.str] action: 指定对响应头的操作。该参数有以下取值：set：表示设置一个头部。设置操作包括添加与修改。如果源站响应中已包含该头部，该头部的值会被覆盖。如果源站响应中没有包含该头部，该头部会被添加。delete，表示删除一个头部。
-        :param pulumi.Input[builtins.str] key: 指定一个头部的名称。名称不能超过 1,024个字符，不区分大小写，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
-        :param pulumi.Input[builtins.str] value: 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
-        :param pulumi.Input[builtins.str] value_type: 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        :param pulumi.Input[builtins.bool] access_origin_control: Indicates whether the Origin field in the request header is validated when the content delivery network responds to user requests. Valid values are: true: The content delivery network validates the Origin field. If validation succeeds, the response header includes the Access-Control-Allow-Origin field, with the value matching the Origin field. If validation fails, the response header does not include the Access-Control-Allow-Origin field. false: The content delivery network does not validate the Origin field. The response header includes the Access-Control-Allow-Origin field, with the value set to your configured Access-Control-Allow-Origin content. The default value is false. This parameter is only effective when all the following conditions are met: Action is set. Key is Access-Control-Allow-Origin. ValueType is constant.
+        :param pulumi.Input[builtins.str] action: Specifies the operation on the response header. This parameter has the following values: set: sets a header. The set operation includes adding and modifying. If the header already exists in the origin response, its value will be overwritten. If the header does not exist in the origin response, it will be added. delete: deletes a header
+        :param pulumi.Input[builtins.str] key: Specifies the name of a header. The name cannot exceed 1,024 characters, is case-insensitive, and can include any printable ASCII character except the following: underscore (_), space, double quotes ("), and Delete (ASCII code 127)
+        :param pulumi.Input[builtins.str] value: Indicates the value of the Key. This parameter is valid only when Action is set. If Action is not set, this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can include printable ASCII characters except for the following: dollar sign ($), Delete (ASCII code 127).
+        :param pulumi.Input[builtins.str] value_type: Specifies the value type for Key. This parameter is only valid when Action is set. If Action is not set, this parameter is invalid. The parameter supports the following values: constant: Key is a fixed string. variable: Key is sourced from a variable. customize: Key is a string formed by concatenating a variable and a fixed string.
         """
         if access_origin_control is not None:
             pulumi.set(__self__, "access_origin_control", access_origin_control)
@@ -9441,7 +9441,7 @@ class DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgs:
     @pulumi.getter(name="accessOriginControl")
     def access_origin_control(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示在内容分发网络响应用户请求时，是否校验请求头中的 Origin 字段。该参数有以下取值：true：表示内容分发网络会校验 Origin 字段。如果校验成功，内容分发网络会在响应头中包含 Access-Control-Allow-Origin 字段。字段值与 Origin 字段值相同。如果校验失败，响应头中不会包含 Access-Control-Allow-Origin 字段。false：表示内容分发网络不会校验 Origin 字段。在响应头中，内容分发网络会包含 Access-Control-Allow-Origin 字段。字段值是您配置的 Access-Control-Allow-Origin 的内容。该参数的默认值是 false。该参数仅在以下条件都满足的情况下有效：Action 是 set。Key 是 Access-Control-Allow-Origin。ValueType 是 constant。
+        Indicates whether the Origin field in the request header is validated when the content delivery network responds to user requests. Valid values are: true: The content delivery network validates the Origin field. If validation succeeds, the response header includes the Access-Control-Allow-Origin field, with the value matching the Origin field. If validation fails, the response header does not include the Access-Control-Allow-Origin field. false: The content delivery network does not validate the Origin field. The response header includes the Access-Control-Allow-Origin field, with the value set to your configured Access-Control-Allow-Origin content. The default value is false. This parameter is only effective when all the following conditions are met: Action is set. Key is Access-Control-Allow-Origin. ValueType is constant.
         """
         return pulumi.get(self, "access_origin_control")
 
@@ -9453,7 +9453,7 @@ class DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgs:
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定对响应头的操作。该参数有以下取值：set：表示设置一个头部。设置操作包括添加与修改。如果源站响应中已包含该头部，该头部的值会被覆盖。如果源站响应中没有包含该头部，该头部会被添加。delete，表示删除一个头部。
+        Specifies the operation on the response header. This parameter has the following values: set: sets a header. The set operation includes adding and modifying. If the header already exists in the origin response, its value will be overwritten. If the header does not exist in the origin response, it will be added. delete: deletes a header
         """
         return pulumi.get(self, "action")
 
@@ -9465,7 +9465,7 @@ class DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定一个头部的名称。名称不能超过 1,024个字符，不区分大小写，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        Specifies the name of a header. The name cannot exceed 1,024 characters, is case-insensitive, and can include any printable ASCII character except the following: underscore (_), space, double quotes ("), and Delete (ASCII code 127)
         """
         return pulumi.get(self, "key")
 
@@ -9477,7 +9477,7 @@ class DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        Indicates the value of the Key. This parameter is valid only when Action is set. If Action is not set, this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can include printable ASCII characters except for the following: dollar sign ($), Delete (ASCII code 127).
         """
         return pulumi.get(self, "value")
 
@@ -9489,7 +9489,7 @@ class DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgs:
     @pulumi.getter(name="valueType")
     def value_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        Specifies the value type for Key. This parameter is only valid when Action is set. If Action is not set, this parameter is invalid. The parameter supports the following values: constant: Key is a fixed string. variable: Key is sourced from a variable. customize: Key is a string formed by concatenating a variable and a fixed string.
         """
         return pulumi.get(self, "value_type")
 
@@ -9502,11 +9502,11 @@ if not MYPY:
     class DomainRewriteHlsArgsDict(TypedDict):
         sign_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。该参数的默认值是 DrmAuthToken。
+        Indicates the name of the signature parameter, which cannot exceed 100 characters. Parameter names are case-sensitive and can include letters, numbers, underscores (_), hyphens (-), commas (,), periods (.), and exclamation marks (!). The default value is DrmAuthToken.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
         """
 elif False:
     DomainRewriteHlsArgsDict: TypeAlias = Mapping[str, Any]
@@ -9517,8 +9517,8 @@ class DomainRewriteHlsArgs:
                  sign_name: Optional[pulumi.Input[builtins.str]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.str] sign_name: 表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。该参数的默认值是 DrmAuthToken。
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        :param pulumi.Input[builtins.str] sign_name: Indicates the name of the signature parameter, which cannot exceed 100 characters. Parameter names are case-sensitive and can include letters, numbers, underscores (_), hyphens (-), commas (,), periods (.), and exclamation marks (!). The default value is DrmAuthToken.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
         """
         if sign_name is not None:
             pulumi.set(__self__, "sign_name", sign_name)
@@ -9529,7 +9529,7 @@ class DomainRewriteHlsArgs:
     @pulumi.getter(name="signName")
     def sign_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。该参数的默认值是 DrmAuthToken。
+        Indicates the name of the signature parameter, which cannot exceed 100 characters. Parameter names are case-sensitive and can include letters, numbers, underscores (_), hyphens (-), commas (,), periods (.), and exclamation marks (!). The default value is DrmAuthToken.
         """
         return pulumi.get(self, "sign_name")
 
@@ -9541,7 +9541,7 @@ class DomainRewriteHlsArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
         """
         return pulumi.get(self, "switch")
 
@@ -9555,7 +9555,7 @@ if not MYPY:
         signed_url_auth_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleArgsDict']]]]
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
         """
 elif False:
     DomainSignedUrlAuthArgsDict: TypeAlias = Mapping[str, Any]
@@ -9566,7 +9566,7 @@ class DomainSignedUrlAuthArgs:
                  signed_url_auth_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleArgs']]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        :param pulumi.Input[builtins.bool] switch: Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
         """
         if signed_url_auth_rules is not None:
             pulumi.set(__self__, "signed_url_auth_rules", signed_url_auth_rules)
@@ -9586,7 +9586,7 @@ class DomainSignedUrlAuthArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
         """
         return pulumi.get(self, "switch")
 
@@ -9599,11 +9599,11 @@ if not MYPY:
     class DomainSignedUrlAuthSignedUrlAuthRuleArgsDict(TypedDict):
         condition: NotRequired[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         signed_url_auth_action: NotRequired[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgsDict']]
         """
-        表示签名计算的配置。
+        Indicates the configuration for signature calculation.
         """
 elif False:
     DomainSignedUrlAuthSignedUrlAuthRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -9614,8 +9614,8 @@ class DomainSignedUrlAuthSignedUrlAuthRuleArgs:
                  condition: Optional[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleConditionArgs']] = None,
                  signed_url_auth_action: Optional[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs']] = None):
         """
-        :param pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
-        :param pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs'] signed_url_auth_action: 表示签名计算的配置。
+        :param pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleConditionArgs'] condition: Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
+        :param pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs'] signed_url_auth_action: Indicates the configuration for signature calculation.
         """
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
@@ -9626,7 +9626,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -9638,7 +9638,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleArgs:
     @pulumi.getter(name="signedUrlAuthAction")
     def signed_url_auth_action(self) -> Optional[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs']]:
         """
-        表示签名计算的配置。
+        Indicates the configuration for signature calculation.
         """
         return pulumi.get(self, "signed_url_auth_action")
 
@@ -9652,7 +9652,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainSignedUrlAuthSignedUrlAuthRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -9663,7 +9663,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -9683,7 +9683,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -9696,23 +9696,23 @@ if not MYPY:
     class DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -9726,11 +9726,11 @@ class DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -9747,7 +9747,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -9759,7 +9759,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -9771,7 +9771,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -9783,7 +9783,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -9795,7 +9795,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -9808,55 +9808,55 @@ if not MYPY:
     class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgsDict(TypedDict):
         auth_algorithm: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示签名计算使用的算法。该配置有以下取值：md5：表示 MD5 算法。sha256：表示 SHA-256 算法。该参数的默认值是 md5。
+        Indicates the algorithm used for signature calculation. This configuration has the following values: md5: MD5 algorithm. sha256: SHA-256 algorithm. The default value for this parameter is md5.
         """
         backup_secret_key: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示备密钥。备密钥的长度为 6-40个字符可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        Indicates the backup secret key. The backup secret key must be 6–40 characters long and can contain any printable ASCII character except Delete (ASCII code 127).
         """
         custom_variable_rules: NotRequired[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesArgsDict']]
         """
-        表示自定义签算变量。
+        Indicates custom signature calculation variables.
         """
         duration: NotRequired[pulumi.Input[builtins.int]]
         """
-        签名的有效时间，单位是秒。该参数与请求中包含时间戳搭配使用，用来计算签名的过期时间。该参数的取值范围是 0-315,360,000。签名的过期时间 = 时间戳 + Duration。在内容分发网络收到某个请求时，如果签名的过期时间小于当前时间，内容分发网络判定签名已过期。
+        The validity period of the signature, in seconds. This parameter is used with the timestamp included in the request to calculate the expiration time of the signature. The value range for this parameter is 0–315,360,000. Signature expiration time = timestamp + Duration. When the content delivery network receives a request, if the signature expiration time is less than the current time, the content delivery network determines that the signature has expired.
         """
         keep_origin_arg: NotRequired[pulumi.Input[builtins.bool]]
         """
-        该参数暂不对外开放，请勿使用该参数。
+        This parameter is not currently available to external users. Do not use this parameter.
         """
         master_secret_key: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示主密钥，长度为 6-40个字符，可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        Indicates the primary key, with a length of 6–40 characters. It can include printable ASCII characters except Delete (ASCII code 127)
         """
         rewrite_m3_u8: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示在响应一个 .m3u8 文件的请求时，内容分发网络是否对 .m3u8 文件中每个分片文件的 URL 添加签名参数。每个分片 URL 的签名是基于改写后分片 URL，使用签名规则计算的。该参数有以下取值：true：表示启用。false：表示禁用。
+        Indicates whether the content delivery network adds signature parameters to the URL of each segment file in a .m3u8 file when responding to a .m3u8 file request. The signature for each segment URL is calculated based on the rewritten segment URL using the signature rules. The parameter values are as follows: true: enabled. false: disabled.
         """
         rewrite_m3_u8_rule: NotRequired[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleArgsDict']]
         """
-        表示 "M3U8 改写" 功能的配置。该配置仅当以下条件都满足时才有效：RewriteM3u8 是 true。URLAuthType 不是 typee。
+        Specifies the configuration for the 'M3U8 Rewrite' feature. This configuration is valid only when both of the following conditions are met: RewriteM3u8 is true; URLAuthType is not typee.
         """
         sign_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。
+        Indicates the name of the signature parameter. The length cannot exceed 100 characters. Parameter names are case-sensitive and can include letters, numbers, underscores (_), hyphens (-), commas (,), periods (.), and exclamation marks (!).
         """
         signature_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        当 URLAuthType 为 typee 时，该参数为必填，表示需要纳入签名计算的字段。必须纳入签名计算的字段如下：key：秘钥，即MasterSecretKey或BackupSecretKey的传参内容。uri：表示用户请求资源的 URI。如果 URI 包含中文字符，您需要对 URI 编码。TimeName：表示时间戳参数的传参内容。可选择纳入签名计算的字段如下：domain：表示加速域名。referer：表示用户请求携带的 referer 值。ua：表示用户请求携带的 User-Agent 值。ip：表示用户请求的客户端 IP。origin：表示用户请求携带的 Origin 值。自定义变量：表示您在 CustomVariableInstances 中定义的变量名称。列表中填充的顺序即为签名计算时MD5()中各值顺序。
+        When URLAuthType is set to typee, this parameter is required and specifies the fields to be included in the signature calculation. The following fields must be included in the signature calculation: key: the secret key, which is the parameter value for MasterSecretKey or BackupSecretKey. uri: the URI of the resource requested by the user. If the URI contains Chinese characters, you need to encode the URI. TimeName: the parameter value for the timestamp. The following fields can optionally be included in the signature calculation: domain: the acceleration domain name. referer: the referer value carried in the user's request. ua: the User-Agent value carried in the user's request. ip: the client IP of the user's request. origin: the Origin value carried in the user's request. Custom variables: the variable names you define in CustomVariableInstances. The order in which the fields are listed determines the order of values in MD5() during signature calculation.
         """
         time_format: NotRequired[pulumi.Input[builtins.str]]
         """
-        进制配置。该参数有以下取值：decimal：十进制。heximal：十六进制。当 URLAuthType 为 typed、typee 时，该参数为必填。当 URLAuthType 为 typec 时，无论您是否设置该参数，该参数的值会被强制设置为 heximal。对于 URLAuthType 的其他值，该参数不生效。
+        Numeral system configuration. This parameter has the following values: decimal: decimal system; hexadecimal: hexadecimal system. When URLAuthType is typed or typee, this parameter is required. When URLAuthType is typec, regardless of your setting, this parameter is forcibly set to hexadecimal. For other URLAuthType values, this parameter is not effective.
         """
         time_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示时间戳参数的名称。TimeName 的值可以包括英文字母、数字、下划线（_）、中划线（-）、句号（.）、逗号（,）、感叹号（!），长度为 1-100 个字符。TimenName 不能与 SignName 相同。当 URLAuthType 为 typed、typee 时，该参数为必填。对于其他类型，该参数不生效。
+        Indicates the name of the timestamp parameter. The value of TimeName can include English letters, numbers, underscores (_), hyphens (-), periods (.), commas (,), and exclamation marks (!), with a length of 1–100 characters. TimeName cannot be the same as SignName. When URLAuthType is typed or typee, this parameter is required. For other types, this parameter does not apply.
         """
         url_auth_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        签名类型。
+        Signature type
         """
 elif False:
     DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -9878,19 +9878,19 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
                  time_name: Optional[pulumi.Input[builtins.str]] = None,
                  url_auth_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] auth_algorithm: 表示签名计算使用的算法。该配置有以下取值：md5：表示 MD5 算法。sha256：表示 SHA-256 算法。该参数的默认值是 md5。
-        :param pulumi.Input[builtins.str] backup_secret_key: 表示备密钥。备密钥的长度为 6-40个字符可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
-        :param pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesArgs'] custom_variable_rules: 表示自定义签算变量。
-        :param pulumi.Input[builtins.int] duration: 签名的有效时间，单位是秒。该参数与请求中包含时间戳搭配使用，用来计算签名的过期时间。该参数的取值范围是 0-315,360,000。签名的过期时间 = 时间戳 + Duration。在内容分发网络收到某个请求时，如果签名的过期时间小于当前时间，内容分发网络判定签名已过期。
-        :param pulumi.Input[builtins.bool] keep_origin_arg: 该参数暂不对外开放，请勿使用该参数。
-        :param pulumi.Input[builtins.str] master_secret_key: 表示主密钥，长度为 6-40个字符，可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
-        :param pulumi.Input[builtins.bool] rewrite_m3_u8: 表示在响应一个 .m3u8 文件的请求时，内容分发网络是否对 .m3u8 文件中每个分片文件的 URL 添加签名参数。每个分片 URL 的签名是基于改写后分片 URL，使用签名规则计算的。该参数有以下取值：true：表示启用。false：表示禁用。
-        :param pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleArgs'] rewrite_m3_u8_rule: 表示 "M3U8 改写" 功能的配置。该配置仅当以下条件都满足时才有效：RewriteM3u8 是 true。URLAuthType 不是 typee。
-        :param pulumi.Input[builtins.str] sign_name: 表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] signature_rules: 当 URLAuthType 为 typee 时，该参数为必填，表示需要纳入签名计算的字段。必须纳入签名计算的字段如下：key：秘钥，即MasterSecretKey或BackupSecretKey的传参内容。uri：表示用户请求资源的 URI。如果 URI 包含中文字符，您需要对 URI 编码。TimeName：表示时间戳参数的传参内容。可选择纳入签名计算的字段如下：domain：表示加速域名。referer：表示用户请求携带的 referer 值。ua：表示用户请求携带的 User-Agent 值。ip：表示用户请求的客户端 IP。origin：表示用户请求携带的 Origin 值。自定义变量：表示您在 CustomVariableInstances 中定义的变量名称。列表中填充的顺序即为签名计算时MD5()中各值顺序。
-        :param pulumi.Input[builtins.str] time_format: 进制配置。该参数有以下取值：decimal：十进制。heximal：十六进制。当 URLAuthType 为 typed、typee 时，该参数为必填。当 URLAuthType 为 typec 时，无论您是否设置该参数，该参数的值会被强制设置为 heximal。对于 URLAuthType 的其他值，该参数不生效。
-        :param pulumi.Input[builtins.str] time_name: 表示时间戳参数的名称。TimeName 的值可以包括英文字母、数字、下划线（_）、中划线（-）、句号（.）、逗号（,）、感叹号（!），长度为 1-100 个字符。TimenName 不能与 SignName 相同。当 URLAuthType 为 typed、typee 时，该参数为必填。对于其他类型，该参数不生效。
-        :param pulumi.Input[builtins.str] url_auth_type: 签名类型。
+        :param pulumi.Input[builtins.str] auth_algorithm: Indicates the algorithm used for signature calculation. This configuration has the following values: md5: MD5 algorithm. sha256: SHA-256 algorithm. The default value for this parameter is md5.
+        :param pulumi.Input[builtins.str] backup_secret_key: Indicates the backup secret key. The backup secret key must be 6–40 characters long and can contain any printable ASCII character except Delete (ASCII code 127).
+        :param pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesArgs'] custom_variable_rules: Indicates custom signature calculation variables.
+        :param pulumi.Input[builtins.int] duration: The validity period of the signature, in seconds. This parameter is used with the timestamp included in the request to calculate the expiration time of the signature. The value range for this parameter is 0–315,360,000. Signature expiration time = timestamp + Duration. When the content delivery network receives a request, if the signature expiration time is less than the current time, the content delivery network determines that the signature has expired.
+        :param pulumi.Input[builtins.bool] keep_origin_arg: This parameter is not currently available to external users. Do not use this parameter.
+        :param pulumi.Input[builtins.str] master_secret_key: Indicates the primary key, with a length of 6–40 characters. It can include printable ASCII characters except Delete (ASCII code 127)
+        :param pulumi.Input[builtins.bool] rewrite_m3_u8: Indicates whether the content delivery network adds signature parameters to the URL of each segment file in a .m3u8 file when responding to a .m3u8 file request. The signature for each segment URL is calculated based on the rewritten segment URL using the signature rules. The parameter values are as follows: true: enabled. false: disabled.
+        :param pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleArgs'] rewrite_m3_u8_rule: Specifies the configuration for the 'M3U8 Rewrite' feature. This configuration is valid only when both of the following conditions are met: RewriteM3u8 is true; URLAuthType is not typee.
+        :param pulumi.Input[builtins.str] sign_name: Indicates the name of the signature parameter. The length cannot exceed 100 characters. Parameter names are case-sensitive and can include letters, numbers, underscores (_), hyphens (-), commas (,), periods (.), and exclamation marks (!).
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] signature_rules: When URLAuthType is set to typee, this parameter is required and specifies the fields to be included in the signature calculation. The following fields must be included in the signature calculation: key: the secret key, which is the parameter value for MasterSecretKey or BackupSecretKey. uri: the URI of the resource requested by the user. If the URI contains Chinese characters, you need to encode the URI. TimeName: the parameter value for the timestamp. The following fields can optionally be included in the signature calculation: domain: the acceleration domain name. referer: the referer value carried in the user's request. ua: the User-Agent value carried in the user's request. ip: the client IP of the user's request. origin: the Origin value carried in the user's request. Custom variables: the variable names you define in CustomVariableInstances. The order in which the fields are listed determines the order of values in MD5() during signature calculation.
+        :param pulumi.Input[builtins.str] time_format: Numeral system configuration. This parameter has the following values: decimal: decimal system; hexadecimal: hexadecimal system. When URLAuthType is typed or typee, this parameter is required. When URLAuthType is typec, regardless of your setting, this parameter is forcibly set to hexadecimal. For other URLAuthType values, this parameter is not effective.
+        :param pulumi.Input[builtins.str] time_name: Indicates the name of the timestamp parameter. The value of TimeName can include English letters, numbers, underscores (_), hyphens (-), periods (.), commas (,), and exclamation marks (!), with a length of 1–100 characters. TimeName cannot be the same as SignName. When URLAuthType is typed or typee, this parameter is required. For other types, this parameter does not apply.
+        :param pulumi.Input[builtins.str] url_auth_type: Signature type
         """
         if auth_algorithm is not None:
             pulumi.set(__self__, "auth_algorithm", auth_algorithm)
@@ -9923,7 +9923,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
     @pulumi.getter(name="authAlgorithm")
     def auth_algorithm(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示签名计算使用的算法。该配置有以下取值：md5：表示 MD5 算法。sha256：表示 SHA-256 算法。该参数的默认值是 md5。
+        Indicates the algorithm used for signature calculation. This configuration has the following values: md5: MD5 algorithm. sha256: SHA-256 algorithm. The default value for this parameter is md5.
         """
         return pulumi.get(self, "auth_algorithm")
 
@@ -9935,7 +9935,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
     @pulumi.getter(name="backupSecretKey")
     def backup_secret_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示备密钥。备密钥的长度为 6-40个字符可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        Indicates the backup secret key. The backup secret key must be 6–40 characters long and can contain any printable ASCII character except Delete (ASCII code 127).
         """
         return pulumi.get(self, "backup_secret_key")
 
@@ -9947,7 +9947,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
     @pulumi.getter(name="customVariableRules")
     def custom_variable_rules(self) -> Optional[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesArgs']]:
         """
-        表示自定义签算变量。
+        Indicates custom signature calculation variables.
         """
         return pulumi.get(self, "custom_variable_rules")
 
@@ -9959,7 +9959,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
     @pulumi.getter
     def duration(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        签名的有效时间，单位是秒。该参数与请求中包含时间戳搭配使用，用来计算签名的过期时间。该参数的取值范围是 0-315,360,000。签名的过期时间 = 时间戳 + Duration。在内容分发网络收到某个请求时，如果签名的过期时间小于当前时间，内容分发网络判定签名已过期。
+        The validity period of the signature, in seconds. This parameter is used with the timestamp included in the request to calculate the expiration time of the signature. The value range for this parameter is 0–315,360,000. Signature expiration time = timestamp + Duration. When the content delivery network receives a request, if the signature expiration time is less than the current time, the content delivery network determines that the signature has expired.
         """
         return pulumi.get(self, "duration")
 
@@ -9971,7 +9971,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
     @pulumi.getter(name="keepOriginArg")
     def keep_origin_arg(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        该参数暂不对外开放，请勿使用该参数。
+        This parameter is not currently available to external users. Do not use this parameter.
         """
         return pulumi.get(self, "keep_origin_arg")
 
@@ -9983,7 +9983,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
     @pulumi.getter(name="masterSecretKey")
     def master_secret_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示主密钥，长度为 6-40个字符，可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        Indicates the primary key, with a length of 6–40 characters. It can include printable ASCII characters except Delete (ASCII code 127)
         """
         return pulumi.get(self, "master_secret_key")
 
@@ -9995,7 +9995,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
     @pulumi.getter(name="rewriteM3U8")
     def rewrite_m3_u8(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示在响应一个 .m3u8 文件的请求时，内容分发网络是否对 .m3u8 文件中每个分片文件的 URL 添加签名参数。每个分片 URL 的签名是基于改写后分片 URL，使用签名规则计算的。该参数有以下取值：true：表示启用。false：表示禁用。
+        Indicates whether the content delivery network adds signature parameters to the URL of each segment file in a .m3u8 file when responding to a .m3u8 file request. The signature for each segment URL is calculated based on the rewritten segment URL using the signature rules. The parameter values are as follows: true: enabled. false: disabled.
         """
         return pulumi.get(self, "rewrite_m3_u8")
 
@@ -10007,7 +10007,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
     @pulumi.getter(name="rewriteM3U8Rule")
     def rewrite_m3_u8_rule(self) -> Optional[pulumi.Input['DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleArgs']]:
         """
-        表示 "M3U8 改写" 功能的配置。该配置仅当以下条件都满足时才有效：RewriteM3u8 是 true。URLAuthType 不是 typee。
+        Specifies the configuration for the 'M3U8 Rewrite' feature. This configuration is valid only when both of the following conditions are met: RewriteM3u8 is true; URLAuthType is not typee.
         """
         return pulumi.get(self, "rewrite_m3_u8_rule")
 
@@ -10019,7 +10019,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
     @pulumi.getter(name="signName")
     def sign_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。
+        Indicates the name of the signature parameter. The length cannot exceed 100 characters. Parameter names are case-sensitive and can include letters, numbers, underscores (_), hyphens (-), commas (,), periods (.), and exclamation marks (!).
         """
         return pulumi.get(self, "sign_name")
 
@@ -10031,7 +10031,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
     @pulumi.getter(name="signatureRules")
     def signature_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        当 URLAuthType 为 typee 时，该参数为必填，表示需要纳入签名计算的字段。必须纳入签名计算的字段如下：key：秘钥，即MasterSecretKey或BackupSecretKey的传参内容。uri：表示用户请求资源的 URI。如果 URI 包含中文字符，您需要对 URI 编码。TimeName：表示时间戳参数的传参内容。可选择纳入签名计算的字段如下：domain：表示加速域名。referer：表示用户请求携带的 referer 值。ua：表示用户请求携带的 User-Agent 值。ip：表示用户请求的客户端 IP。origin：表示用户请求携带的 Origin 值。自定义变量：表示您在 CustomVariableInstances 中定义的变量名称。列表中填充的顺序即为签名计算时MD5()中各值顺序。
+        When URLAuthType is set to typee, this parameter is required and specifies the fields to be included in the signature calculation. The following fields must be included in the signature calculation: key: the secret key, which is the parameter value for MasterSecretKey or BackupSecretKey. uri: the URI of the resource requested by the user. If the URI contains Chinese characters, you need to encode the URI. TimeName: the parameter value for the timestamp. The following fields can optionally be included in the signature calculation: domain: the acceleration domain name. referer: the referer value carried in the user's request. ua: the User-Agent value carried in the user's request. ip: the client IP of the user's request. origin: the Origin value carried in the user's request. Custom variables: the variable names you define in CustomVariableInstances. The order in which the fields are listed determines the order of values in MD5() during signature calculation.
         """
         return pulumi.get(self, "signature_rules")
 
@@ -10043,7 +10043,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
     @pulumi.getter(name="timeFormat")
     def time_format(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        进制配置。该参数有以下取值：decimal：十进制。heximal：十六进制。当 URLAuthType 为 typed、typee 时，该参数为必填。当 URLAuthType 为 typec 时，无论您是否设置该参数，该参数的值会被强制设置为 heximal。对于 URLAuthType 的其他值，该参数不生效。
+        Numeral system configuration. This parameter has the following values: decimal: decimal system; hexadecimal: hexadecimal system. When URLAuthType is typed or typee, this parameter is required. When URLAuthType is typec, regardless of your setting, this parameter is forcibly set to hexadecimal. For other URLAuthType values, this parameter is not effective.
         """
         return pulumi.get(self, "time_format")
 
@@ -10055,7 +10055,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
     @pulumi.getter(name="timeName")
     def time_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示时间戳参数的名称。TimeName 的值可以包括英文字母、数字、下划线（_）、中划线（-）、句号（.）、逗号（,）、感叹号（!），长度为 1-100 个字符。TimenName 不能与 SignName 相同。当 URLAuthType 为 typed、typee 时，该参数为必填。对于其他类型，该参数不生效。
+        Indicates the name of the timestamp parameter. The value of TimeName can include English letters, numbers, underscores (_), hyphens (-), periods (.), commas (,), and exclamation marks (!), with a length of 1–100 characters. TimeName cannot be the same as SignName. When URLAuthType is typed or typee, this parameter is required. For other types, this parameter does not apply.
         """
         return pulumi.get(self, "time_name")
 
@@ -10067,7 +10067,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs:
     @pulumi.getter(name="urlAuthType")
     def url_auth_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        签名类型。
+        Signature type
         """
         return pulumi.get(self, "url_auth_type")
 
@@ -10103,15 +10103,15 @@ if not MYPY:
     class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceArgsDict(TypedDict):
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示变量的匹配方式。该参数的取值只能是 match。
+        Indicates the matching method for the variable. The value of this parameter can only be match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示变量的类型。该参数有以下取值：queryString：表示该变量是请求中的一个查询参数。requestHeader：表示该变量是请求中的一个头部字段。
+        Indicates the variable type. This parameter has the following values: queryString: indicates the variable is a query parameter in the request. requestHeader: indicates the variable is a header field in the request.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示变量的名称，长度不超过 100 个字符。变量名称的要求如下：如果 Type 是 queryString，变量名称可以包含字母、数字、连字符（-）、逗号（,）、句号（.）、感叹号（!）。如果 Type 是 requestHeader，变量名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"）、冒号（:）、Delete（ASCII code 127）
+        Specifies the variable name, with a maximum length of 100 characters. Variable name requirements are as follows: If Type is queryString, the variable name can include letters, numbers, hyphens (-), commas (,), periods (.), and exclamation marks (!). If Type is requestHeader, the variable name can include any printable ASCII character except: underscore (_), space, double quotes ("), colon (:), and Delete (ASCII code 127).
         """
 elif False:
     DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceArgsDict: TypeAlias = Mapping[str, Any]
@@ -10123,9 +10123,9 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] operator: 表示变量的匹配方式。该参数的取值只能是 match。
-        :param pulumi.Input[builtins.str] type: 表示变量的类型。该参数有以下取值：queryString：表示该变量是请求中的一个查询参数。requestHeader：表示该变量是请求中的一个头部字段。
-        :param pulumi.Input[builtins.str] value: 表示变量的名称，长度不超过 100 个字符。变量名称的要求如下：如果 Type 是 queryString，变量名称可以包含字母、数字、连字符（-）、逗号（,）、句号（.）、感叹号（!）。如果 Type 是 requestHeader，变量名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"）、冒号（:）、Delete（ASCII code 127）
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method for the variable. The value of this parameter can only be match.
+        :param pulumi.Input[builtins.str] type: Indicates the variable type. This parameter has the following values: queryString: indicates the variable is a query parameter in the request. requestHeader: indicates the variable is a header field in the request.
+        :param pulumi.Input[builtins.str] value: Specifies the variable name, with a maximum length of 100 characters. Variable name requirements are as follows: If Type is queryString, the variable name can include letters, numbers, hyphens (-), commas (,), periods (.), and exclamation marks (!). If Type is requestHeader, the variable name can include any printable ASCII character except: underscore (_), space, double quotes ("), colon (:), and Delete (ASCII code 127).
         """
         if operator is not None:
             pulumi.set(__self__, "operator", operator)
@@ -10138,7 +10138,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示变量的匹配方式。该参数的取值只能是 match。
+        Indicates the matching method for the variable. The value of this parameter can only be match.
         """
         return pulumi.get(self, "operator")
 
@@ -10150,7 +10150,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示变量的类型。该参数有以下取值：queryString：表示该变量是请求中的一个查询参数。requestHeader：表示该变量是请求中的一个头部字段。
+        Indicates the variable type. This parameter has the following values: queryString: indicates the variable is a query parameter in the request. requestHeader: indicates the variable is a header field in the request.
         """
         return pulumi.get(self, "type")
 
@@ -10162,7 +10162,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示变量的名称，长度不超过 100 个字符。变量名称的要求如下：如果 Type 是 queryString，变量名称可以包含字母、数字、连字符（-）、逗号（,）、句号（.）、感叹号（!）。如果 Type 是 requestHeader，变量名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"）、冒号（:）、Delete（ASCII code 127）
+        Specifies the variable name, with a maximum length of 100 characters. Variable name requirements are as follows: If Type is queryString, the variable name can include letters, numbers, hyphens (-), commas (,), periods (.), and exclamation marks (!). If Type is requestHeader, the variable name can include any printable ASCII character except: underscore (_), space, double quotes ("), colon (:), and Delete (ASCII code 127).
         """
         return pulumi.get(self, "value")
 
@@ -10175,11 +10175,11 @@ if not MYPY:
     class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleArgsDict(TypedDict):
         delete_param: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
+        Indicates whether to retain the original parameters in the URL when rewriting the shard URL. This parameter has the following values: true: removes the original parameters. false: retains the original parameters.
         """
         keep_m3_u8_param: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+        Indicates whether to add unsigned query parameters from the M3U8 file request to the segment URL. The parameter has the following options: true: add query parameters to the segment URL. false: do not add query parameters.
         """
 elif False:
     DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -10190,8 +10190,8 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleArgs
                  delete_param: Optional[pulumi.Input[builtins.bool]] = None,
                  keep_m3_u8_param: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] delete_param: 表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
-        :param pulumi.Input[builtins.bool] keep_m3_u8_param: 表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+        :param pulumi.Input[builtins.bool] delete_param: Indicates whether to retain the original parameters in the URL when rewriting the shard URL. This parameter has the following values: true: removes the original parameters. false: retains the original parameters.
+        :param pulumi.Input[builtins.bool] keep_m3_u8_param: Indicates whether to add unsigned query parameters from the M3U8 file request to the segment URL. The parameter has the following options: true: add query parameters to the segment URL. false: do not add query parameters.
         """
         if delete_param is not None:
             pulumi.set(__self__, "delete_param", delete_param)
@@ -10202,7 +10202,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleArgs
     @pulumi.getter(name="deleteParam")
     def delete_param(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
+        Indicates whether to retain the original parameters in the URL when rewriting the shard URL. This parameter has the following values: true: removes the original parameters. false: retains the original parameters.
         """
         return pulumi.get(self, "delete_param")
 
@@ -10214,7 +10214,7 @@ class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleArgs
     @pulumi.getter(name="keepM3U8Param")
     def keep_m3_u8_param(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+        Indicates whether to add unsigned query parameters from the M3U8 file request to the segment URL. The parameter has the following options: true: add query parameters to the segment URL. false: do not add query parameters.
         """
         return pulumi.get(self, "keep_m3_u8_param")
 
@@ -10227,11 +10227,11 @@ if not MYPY:
     class DomainTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Tag key
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value.
         """
 elif False:
     DomainTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -10242,8 +10242,8 @@ class DomainTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -10254,7 +10254,7 @@ class DomainTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -10266,7 +10266,7 @@ class DomainTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -10279,7 +10279,7 @@ if not MYPY:
     class DomainTimeoutArgsDict(TypedDict):
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        指定是否启用回源超时时间的配置。该参数有以下取值：true：表示启用回源超时时间的配置。false：表示禁用回源超时时间的配置。此时，TCP 请求和 HTTP 请求的超时时间使用系统默认值，分别是 2 秒和 60 秒。
+        Specify whether to enable origin timeout configuration. This parameter has the following values: true: enables origin timeout configuration. false: disables origin timeout configuration. In this case, the system default timeout values are used for TCP and HTTP requests, which are 2 seconds and 60 seconds respectively.
         """
         timeout_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainTimeoutTimeoutRuleArgsDict']]]]
 elif False:
@@ -10291,7 +10291,7 @@ class DomainTimeoutArgs:
                  switch: Optional[pulumi.Input[builtins.bool]] = None,
                  timeout_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainTimeoutTimeoutRuleArgs']]]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 指定是否启用回源超时时间的配置。该参数有以下取值：true：表示启用回源超时时间的配置。false：表示禁用回源超时时间的配置。此时，TCP 请求和 HTTP 请求的超时时间使用系统默认值，分别是 2 秒和 60 秒。
+        :param pulumi.Input[builtins.bool] switch: Specify whether to enable origin timeout configuration. This parameter has the following values: true: enables origin timeout configuration. false: disables origin timeout configuration. In this case, the system default timeout values are used for TCP and HTTP requests, which are 2 seconds and 60 seconds respectively.
         """
         if switch is not None:
             pulumi.set(__self__, "switch", switch)
@@ -10302,7 +10302,7 @@ class DomainTimeoutArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        指定是否启用回源超时时间的配置。该参数有以下取值：true：表示启用回源超时时间的配置。false：表示禁用回源超时时间的配置。此时，TCP 请求和 HTTP 请求的超时时间使用系统默认值，分别是 2 秒和 60 秒。
+        Specify whether to enable origin timeout configuration. This parameter has the following values: true: enables origin timeout configuration. false: disables origin timeout configuration. In this case, the system default timeout values are used for TCP and HTTP requests, which are 2 seconds and 60 seconds respectively.
         """
         return pulumi.get(self, "switch")
 
@@ -10324,11 +10324,11 @@ if not MYPY:
     class DomainTimeoutTimeoutRuleArgsDict(TypedDict):
         condition: NotRequired[pulumi.Input['DomainTimeoutTimeoutRuleConditionArgsDict']]
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         timeout_action: NotRequired[pulumi.Input['DomainTimeoutTimeoutRuleTimeoutActionArgsDict']]
         """
-        表示超时时间的配置。
+        Indicates the timeout configuration.
         """
 elif False:
     DomainTimeoutTimeoutRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -10339,8 +10339,8 @@ class DomainTimeoutTimeoutRuleArgs:
                  condition: Optional[pulumi.Input['DomainTimeoutTimeoutRuleConditionArgs']] = None,
                  timeout_action: Optional[pulumi.Input['DomainTimeoutTimeoutRuleTimeoutActionArgs']] = None):
         """
-        :param pulumi.Input['DomainTimeoutTimeoutRuleConditionArgs'] condition: 表示该配置模块的生效条件，由一组规则组成。
-        :param pulumi.Input['DomainTimeoutTimeoutRuleTimeoutActionArgs'] timeout_action: 表示超时时间的配置。
+        :param pulumi.Input['DomainTimeoutTimeoutRuleConditionArgs'] condition: Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
+        :param pulumi.Input['DomainTimeoutTimeoutRuleTimeoutActionArgs'] timeout_action: Indicates the timeout configuration.
         """
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
@@ -10351,7 +10351,7 @@ class DomainTimeoutTimeoutRuleArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['DomainTimeoutTimeoutRuleConditionArgs']]:
         """
-        表示该配置模块的生效条件，由一组规则组成。
+        Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         """
         return pulumi.get(self, "condition")
 
@@ -10363,7 +10363,7 @@ class DomainTimeoutTimeoutRuleArgs:
     @pulumi.getter(name="timeoutAction")
     def timeout_action(self) -> Optional[pulumi.Input['DomainTimeoutTimeoutRuleTimeoutActionArgs']]:
         """
-        表示超时时间的配置。
+        Indicates the timeout configuration.
         """
         return pulumi.get(self, "timeout_action")
 
@@ -10377,7 +10377,7 @@ if not MYPY:
         condition_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DomainTimeoutTimeoutRuleConditionConditionRuleArgsDict']]]]
         connective: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
 elif False:
     DomainTimeoutTimeoutRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -10388,7 +10388,7 @@ class DomainTimeoutTimeoutRuleConditionArgs:
                  condition_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainTimeoutTimeoutRuleConditionConditionRuleArgs']]]] = None,
                  connective: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        :param pulumi.Input[builtins.str] connective: Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         if condition_rules is not None:
             pulumi.set(__self__, "condition_rules", condition_rules)
@@ -10408,7 +10408,7 @@ class DomainTimeoutTimeoutRuleConditionArgs:
     @pulumi.getter
     def connective(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is 'AND'. OR: indicates the logical relationship is 'OR'. The default value is OR.
         """
         return pulumi.get(self, "connective")
 
@@ -10421,23 +10421,23 @@ if not MYPY:
     class DomainTimeoutTimeoutRuleConditionConditionRuleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         object: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         operator: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
 elif False:
     DomainTimeoutTimeoutRuleConditionConditionRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -10451,11 +10451,11 @@ class DomainTimeoutTimeoutRuleConditionConditionRuleArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
-        :param pulumi.Input[builtins.str] object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
-        :param pulumi.Input[builtins.str] operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
-        :param pulumi.Input[builtins.str] type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
-        :param pulumi.Input[builtins.str] value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        :param pulumi.Input[builtins.str] name: When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
+        :param pulumi.Input[builtins.str] object: Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
+        :param pulumi.Input[builtins.str] operator: Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
+        :param pulumi.Input[builtins.str] type: Specifies the target type. The value of this parameter is url, indicating the target is a URL.
+        :param pulumi.Input[builtins.str] value: Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -10472,7 +10472,7 @@ class DomainTimeoutTimeoutRuleConditionConditionRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
         """
         return pulumi.get(self, "name")
 
@@ -10484,7 +10484,7 @@ class DomainTimeoutTimeoutRuleConditionConditionRuleArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
         """
         return pulumi.get(self, "object")
 
@@ -10496,7 +10496,7 @@ class DomainTimeoutTimeoutRuleConditionConditionRuleArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
         """
         return pulumi.get(self, "operator")
 
@@ -10508,7 +10508,7 @@ class DomainTimeoutTimeoutRuleConditionConditionRuleArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        Specifies the target type. The value of this parameter is url, indicating the target is a URL.
         """
         return pulumi.get(self, "type")
 
@@ -10520,7 +10520,7 @@ class DomainTimeoutTimeoutRuleConditionConditionRuleArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
         """
         return pulumi.get(self, "value")
 
@@ -10533,11 +10533,11 @@ if not MYPY:
     class DomainTimeoutTimeoutRuleTimeoutActionArgsDict(TypedDict):
         http_timeout: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+        Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
         """
         tcp_timeout: NotRequired[pulumi.Input[builtins.int]]
         """
-        表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+        Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
         """
 elif False:
     DomainTimeoutTimeoutRuleTimeoutActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -10548,8 +10548,8 @@ class DomainTimeoutTimeoutRuleTimeoutActionArgs:
                  http_timeout: Optional[pulumi.Input[builtins.int]] = None,
                  tcp_timeout: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.int] http_timeout: 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
-        :param pulumi.Input[builtins.int] tcp_timeout: 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+        :param pulumi.Input[builtins.int] http_timeout: Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
+        :param pulumi.Input[builtins.int] tcp_timeout: Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
         """
         if http_timeout is not None:
             pulumi.set(__self__, "http_timeout", http_timeout)
@@ -10560,7 +10560,7 @@ class DomainTimeoutTimeoutRuleTimeoutActionArgs:
     @pulumi.getter(name="httpTimeout")
     def http_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+        Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
         """
         return pulumi.get(self, "http_timeout")
 
@@ -10572,7 +10572,7 @@ class DomainTimeoutTimeoutRuleTimeoutActionArgs:
     @pulumi.getter(name="tcpTimeout")
     def tcp_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+        Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
         """
         return pulumi.get(self, "tcp_timeout")
 
@@ -10585,23 +10585,23 @@ if not MYPY:
     class DomainUaAccessRuleArgsDict(TypedDict):
         allow_empty: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否允许 UA 为空（""）或者不包含 UA 字段的请求访问加速域名。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+        Indicates whether requests with an empty UA ("") or without a UA field are allowed to access the acceleration domain. The parameter has the following values: true: allowed. false: not allowed. The default value is false.
         """
         ignore_case: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示 UA 字符串是否是大小写敏感的。该参数有以下取值：true: 表示 UA 字符串是大小写不敏感的。false: 表示 UA 字符串是大小写敏感的。该参数的默认值是 false。
+        Indicates whether the UA string is case-sensitive. The parameter has the following options: true: The UA string is case-insensitive. false: The UA string is case-sensitive. The default value for this parameter is false.
         """
         rule_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        表示指定的是黑名单还是白名单。当 Switch 是 true 时，该参数为必填。该参数有以下取值：deny: 表示指定的是黑名单。allow: 表示指定的是白名单。
+        Specifies whether a denylist or allowlist is used. When Switch is true, this parameter is required. The parameter values are as follows: deny: specifies a denylist. allow: specifies an allowlist.
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否启用 UA 黑白名单功能。该参数有以下取值：true: 表示启用。false: 表示禁用。
+        Indicates whether the UA allowlist and blocklist feature is enabled. This parameter has the following values: true: enabled. false: disabled.
         """
         user_agents: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示一个 UA 的列表。当 Switch 是 true 时，该参数为必填。该列表最多包含 1,000 个 UA。该参数的说明如下：该参数值的长度不能超过 30,000 个字符。如果 RuleType 是 allow，表示仅允许包含列表中的 UA 的请求访问加速域名。如果 RuleType 是 deny，表示如果访问请求包含列表中的 UA，则不允许访问加速域名。UA 能包含的字符有以下限制：UA 中可以使用 * 表示一个或者多个字符。* 仅可以出现在 UA 的开头和末尾。UA 不能只包含 *或者空格。UA 可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。UA 如果包含符号，符号必须是被 HTML 编码的。
+        Represents a list of UAs. When Switch is true, this parameter is required. The list can contain up to 1,000 UAs. The parameter details are as follows: The value length cannot exceed 30,000 characters. If RuleType is allow, only requests containing UAs in the list are permitted to access the acceleration domain. If RuleType is deny, requests containing UAs in the list are not permitted to access the acceleration domain. UA character restrictions are as follows: You can use * in a UA to represent one or more characters. * can only appear at the beginning or end of the UA. A UA cannot consist only of * or spaces. A UA can contain printable ASCII characters except Delete (ASCII code 127). If a UA contains symbols, the symbols must be HTML encoded.
         """
 elif False:
     DomainUaAccessRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -10615,11 +10615,11 @@ class DomainUaAccessRuleArgs:
                  switch: Optional[pulumi.Input[builtins.bool]] = None,
                  user_agents: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.bool] allow_empty: 表示是否允许 UA 为空（""）或者不包含 UA 字段的请求访问加速域名。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
-        :param pulumi.Input[builtins.bool] ignore_case: 表示 UA 字符串是否是大小写敏感的。该参数有以下取值：true: 表示 UA 字符串是大小写不敏感的。false: 表示 UA 字符串是大小写敏感的。该参数的默认值是 false。
-        :param pulumi.Input[builtins.str] rule_type: 表示指定的是黑名单还是白名单。当 Switch 是 true 时，该参数为必填。该参数有以下取值：deny: 表示指定的是黑名单。allow: 表示指定的是白名单。
-        :param pulumi.Input[builtins.bool] switch: 表示是否启用 UA 黑白名单功能。该参数有以下取值：true: 表示启用。false: 表示禁用。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_agents: 表示一个 UA 的列表。当 Switch 是 true 时，该参数为必填。该列表最多包含 1,000 个 UA。该参数的说明如下：该参数值的长度不能超过 30,000 个字符。如果 RuleType 是 allow，表示仅允许包含列表中的 UA 的请求访问加速域名。如果 RuleType 是 deny，表示如果访问请求包含列表中的 UA，则不允许访问加速域名。UA 能包含的字符有以下限制：UA 中可以使用 * 表示一个或者多个字符。* 仅可以出现在 UA 的开头和末尾。UA 不能只包含 *或者空格。UA 可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。UA 如果包含符号，符号必须是被 HTML 编码的。
+        :param pulumi.Input[builtins.bool] allow_empty: Indicates whether requests with an empty UA ("") or without a UA field are allowed to access the acceleration domain. The parameter has the following values: true: allowed. false: not allowed. The default value is false.
+        :param pulumi.Input[builtins.bool] ignore_case: Indicates whether the UA string is case-sensitive. The parameter has the following options: true: The UA string is case-insensitive. false: The UA string is case-sensitive. The default value for this parameter is false.
+        :param pulumi.Input[builtins.str] rule_type: Specifies whether a denylist or allowlist is used. When Switch is true, this parameter is required. The parameter values are as follows: deny: specifies a denylist. allow: specifies an allowlist.
+        :param pulumi.Input[builtins.bool] switch: Indicates whether the UA allowlist and blocklist feature is enabled. This parameter has the following values: true: enabled. false: disabled.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_agents: Represents a list of UAs. When Switch is true, this parameter is required. The list can contain up to 1,000 UAs. The parameter details are as follows: The value length cannot exceed 30,000 characters. If RuleType is allow, only requests containing UAs in the list are permitted to access the acceleration domain. If RuleType is deny, requests containing UAs in the list are not permitted to access the acceleration domain. UA character restrictions are as follows: You can use * in a UA to represent one or more characters. * can only appear at the beginning or end of the UA. A UA cannot consist only of * or spaces. A UA can contain printable ASCII characters except Delete (ASCII code 127). If a UA contains symbols, the symbols must be HTML encoded.
         """
         if allow_empty is not None:
             pulumi.set(__self__, "allow_empty", allow_empty)
@@ -10636,7 +10636,7 @@ class DomainUaAccessRuleArgs:
     @pulumi.getter(name="allowEmpty")
     def allow_empty(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否允许 UA 为空（""）或者不包含 UA 字段的请求访问加速域名。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+        Indicates whether requests with an empty UA ("") or without a UA field are allowed to access the acceleration domain. The parameter has the following values: true: allowed. false: not allowed. The default value is false.
         """
         return pulumi.get(self, "allow_empty")
 
@@ -10648,7 +10648,7 @@ class DomainUaAccessRuleArgs:
     @pulumi.getter(name="ignoreCase")
     def ignore_case(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示 UA 字符串是否是大小写敏感的。该参数有以下取值：true: 表示 UA 字符串是大小写不敏感的。false: 表示 UA 字符串是大小写敏感的。该参数的默认值是 false。
+        Indicates whether the UA string is case-sensitive. The parameter has the following options: true: The UA string is case-insensitive. false: The UA string is case-sensitive. The default value for this parameter is false.
         """
         return pulumi.get(self, "ignore_case")
 
@@ -10660,7 +10660,7 @@ class DomainUaAccessRuleArgs:
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示指定的是黑名单还是白名单。当 Switch 是 true 时，该参数为必填。该参数有以下取值：deny: 表示指定的是黑名单。allow: 表示指定的是白名单。
+        Specifies whether a denylist or allowlist is used. When Switch is true, this parameter is required. The parameter values are as follows: deny: specifies a denylist. allow: specifies an allowlist.
         """
         return pulumi.get(self, "rule_type")
 
@@ -10672,7 +10672,7 @@ class DomainUaAccessRuleArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用 UA 黑白名单功能。该参数有以下取值：true: 表示启用。false: 表示禁用。
+        Indicates whether the UA allowlist and blocklist feature is enabled. This parameter has the following values: true: enabled. false: disabled.
         """
         return pulumi.get(self, "switch")
 
@@ -10684,7 +10684,7 @@ class DomainUaAccessRuleArgs:
     @pulumi.getter(name="userAgents")
     def user_agents(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示一个 UA 的列表。当 Switch 是 true 时，该参数为必填。该列表最多包含 1,000 个 UA。该参数的说明如下：该参数值的长度不能超过 30,000 个字符。如果 RuleType 是 allow，表示仅允许包含列表中的 UA 的请求访问加速域名。如果 RuleType 是 deny，表示如果访问请求包含列表中的 UA，则不允许访问加速域名。UA 能包含的字符有以下限制：UA 中可以使用 * 表示一个或者多个字符。* 仅可以出现在 UA 的开头和末尾。UA 不能只包含 *或者空格。UA 可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。UA 如果包含符号，符号必须是被 HTML 编码的。
+        Represents a list of UAs. When Switch is true, this parameter is required. The list can contain up to 1,000 UAs. The parameter details are as follows: The value length cannot exceed 30,000 characters. If RuleType is allow, only requests containing UAs in the list are permitted to access the acceleration domain. If RuleType is deny, requests containing UAs in the list are not permitted to access the acceleration domain. UA character restrictions are as follows: You can use * in a UA to represent one or more characters. * can only appear at the beginning or end of the UA. A UA cannot consist only of * or spaces. A UA can contain printable ASCII characters except Delete (ASCII code 127). If a UA contains symbols, the symbols must be HTML encoded.
         """
         return pulumi.get(self, "user_agents")
 
@@ -10697,11 +10697,11 @@ if not MYPY:
     class DomainUrlNormalizeArgsDict(TypedDict):
         normalize_objects: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+        This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
         """
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+        This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
         """
 elif False:
     DomainUrlNormalizeArgsDict: TypeAlias = Mapping[str, Any]
@@ -10712,8 +10712,8 @@ class DomainUrlNormalizeArgs:
                  normalize_objects: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] normalize_objects: 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
-        :param pulumi.Input[builtins.bool] switch: 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] normalize_objects: This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
+        :param pulumi.Input[builtins.bool] switch: This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
         """
         if normalize_objects is not None:
             pulumi.set(__self__, "normalize_objects", normalize_objects)
@@ -10724,7 +10724,7 @@ class DomainUrlNormalizeArgs:
     @pulumi.getter(name="normalizeObjects")
     def normalize_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+        This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
         """
         return pulumi.get(self, "normalize_objects")
 
@@ -10736,7 +10736,7 @@ class DomainUrlNormalizeArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+        This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
         """
         return pulumi.get(self, "switch")
 
@@ -10749,7 +10749,7 @@ if not MYPY:
     class DomainVideoDragArgsDict(TypedDict):
         switch: NotRequired[pulumi.Input[builtins.bool]]
         """
-        智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+        Smart compression configuration switch. The parameter has the following options: true: enable video seeking. false: disable video seeking.
         """
 elif False:
     DomainVideoDragArgsDict: TypeAlias = Mapping[str, Any]
@@ -10759,7 +10759,7 @@ class DomainVideoDragArgs:
     def __init__(__self__, *,
                  switch: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.bool] switch: 智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+        :param pulumi.Input[builtins.bool] switch: Smart compression configuration switch. The parameter has the following options: true: enable video seeking. false: disable video seeking.
         """
         if switch is not None:
             pulumi.set(__self__, "switch", switch)
@@ -10768,7 +10768,7 @@ class DomainVideoDragArgs:
     @pulumi.getter
     def switch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+        Smart compression configuration switch. The parameter has the following options: true: enable video seeking. false: disable video seeking.
         """
         return pulumi.get(self, "switch")
 
@@ -10781,7 +10781,7 @@ if not MYPY:
     class ShareConfigAllowIpAccessRuleArgsDict(TypedDict):
         rules: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示一个条目列表。列表中的每个条目是一个 IP 地址或 CIDR 网段。IP 地址和网段可以是 IPv4 和 IPv6 格式。列表的额度如下：对于 AddSharedConfig，列表中条目的数量不能超过 30,000 个。
+        Specifies a list of entries. Each entry in the list is an IP address or CIDR block. IP addresses and blocks can be in IPv4 or IPv6 format. List limits: For AddSharedConfig, the number of entries in the list cannot exceed 30,000.
         """
 elif False:
     ShareConfigAllowIpAccessRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -10791,7 +10791,7 @@ class ShareConfigAllowIpAccessRuleArgs:
     def __init__(__self__, *,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rules: 表示一个条目列表。列表中的每个条目是一个 IP 地址或 CIDR 网段。IP 地址和网段可以是 IPv4 和 IPv6 格式。列表的额度如下：对于 AddSharedConfig，列表中条目的数量不能超过 30,000 个。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rules: Specifies a list of entries. Each entry in the list is an IP address or CIDR block. IP addresses and blocks can be in IPv4 or IPv6 format. List limits: For AddSharedConfig, the number of entries in the list cannot exceed 30,000.
         """
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
@@ -10800,7 +10800,7 @@ class ShareConfigAllowIpAccessRuleArgs:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示一个条目列表。列表中的每个条目是一个 IP 地址或 CIDR 网段。IP 地址和网段可以是 IPv4 和 IPv6 格式。列表的额度如下：对于 AddSharedConfig，列表中条目的数量不能超过 30,000 个。
+        Specifies a list of entries. Each entry in the list is an IP address or CIDR block. IP addresses and blocks can be in IPv4 or IPv6 format. List limits: For AddSharedConfig, the number of entries in the list cannot exceed 30,000.
         """
         return pulumi.get(self, "rules")
 
@@ -10813,11 +10813,11 @@ if not MYPY:
     class ShareConfigAllowRefererAccessRuleArgsDict(TypedDict):
         allow_empty: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否不允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。false：表示允许。该参数的默认值是 false。
+        Indicates whether requests with an empty Referer header or without a Referer header are not allowed. This parameter has the following values: true: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. false: Allowed. The default value is false.
         """
         common_type: NotRequired[pulumi.Input['ShareConfigAllowRefererAccessRuleCommonTypeArgsDict']]
         """
-        表示该通用列表的内容。
+        Specifies the contents of the common list.
         """
 elif False:
     ShareConfigAllowRefererAccessRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -10828,8 +10828,8 @@ class ShareConfigAllowRefererAccessRuleArgs:
                  allow_empty: Optional[pulumi.Input[builtins.bool]] = None,
                  common_type: Optional[pulumi.Input['ShareConfigAllowRefererAccessRuleCommonTypeArgs']] = None):
         """
-        :param pulumi.Input[builtins.bool] allow_empty: 表示是否不允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。false：表示允许。该参数的默认值是 false。
-        :param pulumi.Input['ShareConfigAllowRefererAccessRuleCommonTypeArgs'] common_type: 表示该通用列表的内容。
+        :param pulumi.Input[builtins.bool] allow_empty: Indicates whether requests with an empty Referer header or without a Referer header are not allowed. This parameter has the following values: true: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. false: Allowed. The default value is false.
+        :param pulumi.Input['ShareConfigAllowRefererAccessRuleCommonTypeArgs'] common_type: Specifies the contents of the common list.
         """
         if allow_empty is not None:
             pulumi.set(__self__, "allow_empty", allow_empty)
@@ -10840,7 +10840,7 @@ class ShareConfigAllowRefererAccessRuleArgs:
     @pulumi.getter(name="allowEmpty")
     def allow_empty(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否不允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。false：表示允许。该参数的默认值是 false。
+        Indicates whether requests with an empty Referer header or without a Referer header are not allowed. This parameter has the following values: true: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. false: Allowed. The default value is false.
         """
         return pulumi.get(self, "allow_empty")
 
@@ -10852,7 +10852,7 @@ class ShareConfigAllowRefererAccessRuleArgs:
     @pulumi.getter(name="commonType")
     def common_type(self) -> Optional[pulumi.Input['ShareConfigAllowRefererAccessRuleCommonTypeArgs']]:
         """
-        表示该通用列表的内容。
+        Specifies the contents of the common list.
         """
         return pulumi.get(self, "common_type")
 
@@ -10865,11 +10865,11 @@ if not MYPY:
     class ShareConfigAllowRefererAccessRuleCommonTypeArgsDict(TypedDict):
         ignore_case: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+        Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
         """
         rules: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+        Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
         """
 elif False:
     ShareConfigAllowRefererAccessRuleCommonTypeArgsDict: TypeAlias = Mapping[str, Any]
@@ -10880,8 +10880,8 @@ class ShareConfigAllowRefererAccessRuleCommonTypeArgs:
                  ignore_case: Optional[pulumi.Input[builtins.bool]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.bool] ignore_case: 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rules: 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+        :param pulumi.Input[builtins.bool] ignore_case: Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rules: Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
         """
         if ignore_case is not None:
             pulumi.set(__self__, "ignore_case", ignore_case)
@@ -10892,7 +10892,7 @@ class ShareConfigAllowRefererAccessRuleCommonTypeArgs:
     @pulumi.getter(name="ignoreCase")
     def ignore_case(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+        Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
         """
         return pulumi.get(self, "ignore_case")
 
@@ -10904,7 +10904,7 @@ class ShareConfigAllowRefererAccessRuleCommonTypeArgs:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+        Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
         """
         return pulumi.get(self, "rules")
 
@@ -10917,7 +10917,7 @@ if not MYPY:
     class ShareConfigCommonMatchListArgsDict(TypedDict):
         common_type: NotRequired[pulumi.Input['ShareConfigCommonMatchListCommonTypeArgsDict']]
         """
-        表示该通用列表的内容。
+        Specifies the contents of the common list.
         """
 elif False:
     ShareConfigCommonMatchListArgsDict: TypeAlias = Mapping[str, Any]
@@ -10927,7 +10927,7 @@ class ShareConfigCommonMatchListArgs:
     def __init__(__self__, *,
                  common_type: Optional[pulumi.Input['ShareConfigCommonMatchListCommonTypeArgs']] = None):
         """
-        :param pulumi.Input['ShareConfigCommonMatchListCommonTypeArgs'] common_type: 表示该通用列表的内容。
+        :param pulumi.Input['ShareConfigCommonMatchListCommonTypeArgs'] common_type: Specifies the contents of the common list.
         """
         if common_type is not None:
             pulumi.set(__self__, "common_type", common_type)
@@ -10936,7 +10936,7 @@ class ShareConfigCommonMatchListArgs:
     @pulumi.getter(name="commonType")
     def common_type(self) -> Optional[pulumi.Input['ShareConfigCommonMatchListCommonTypeArgs']]:
         """
-        表示该通用列表的内容。
+        Specifies the contents of the common list.
         """
         return pulumi.get(self, "common_type")
 
@@ -10949,11 +10949,11 @@ if not MYPY:
     class ShareConfigCommonMatchListCommonTypeArgsDict(TypedDict):
         ignore_case: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+        Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
         """
         rules: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+        Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
         """
 elif False:
     ShareConfigCommonMatchListCommonTypeArgsDict: TypeAlias = Mapping[str, Any]
@@ -10964,8 +10964,8 @@ class ShareConfigCommonMatchListCommonTypeArgs:
                  ignore_case: Optional[pulumi.Input[builtins.bool]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.bool] ignore_case: 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rules: 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+        :param pulumi.Input[builtins.bool] ignore_case: Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rules: Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
         """
         if ignore_case is not None:
             pulumi.set(__self__, "ignore_case", ignore_case)
@@ -10976,7 +10976,7 @@ class ShareConfigCommonMatchListCommonTypeArgs:
     @pulumi.getter(name="ignoreCase")
     def ignore_case(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+        Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
         """
         return pulumi.get(self, "ignore_case")
 
@@ -10988,7 +10988,7 @@ class ShareConfigCommonMatchListCommonTypeArgs:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+        Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
         """
         return pulumi.get(self, "rules")
 
@@ -11001,7 +11001,7 @@ if not MYPY:
     class ShareConfigDenyIpAccessRuleArgsDict(TypedDict):
         rules: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+        Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
         """
 elif False:
     ShareConfigDenyIpAccessRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -11011,7 +11011,7 @@ class ShareConfigDenyIpAccessRuleArgs:
     def __init__(__self__, *,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rules: 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rules: Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
         """
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
@@ -11020,7 +11020,7 @@ class ShareConfigDenyIpAccessRuleArgs:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+        Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
         """
         return pulumi.get(self, "rules")
 
@@ -11033,11 +11033,11 @@ if not MYPY:
     class ShareConfigDenyRefererAccessRuleArgsDict(TypedDict):
         allow_empty: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示是否允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示允许。false：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。该参数的默认值是 true。
+        Indicates whether requests with an empty Referer header or without a Referer header are allowed. This parameter has the following values: true: Allowed. false: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. The default value is true.
         """
         common_type: NotRequired[pulumi.Input['ShareConfigDenyRefererAccessRuleCommonTypeArgsDict']]
         """
-        表示该通用列表的内容。
+        Specifies the contents of the common list.
         """
 elif False:
     ShareConfigDenyRefererAccessRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -11048,8 +11048,8 @@ class ShareConfigDenyRefererAccessRuleArgs:
                  allow_empty: Optional[pulumi.Input[builtins.bool]] = None,
                  common_type: Optional[pulumi.Input['ShareConfigDenyRefererAccessRuleCommonTypeArgs']] = None):
         """
-        :param pulumi.Input[builtins.bool] allow_empty: 表示是否允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示允许。false：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。该参数的默认值是 true。
-        :param pulumi.Input['ShareConfigDenyRefererAccessRuleCommonTypeArgs'] common_type: 表示该通用列表的内容。
+        :param pulumi.Input[builtins.bool] allow_empty: Indicates whether requests with an empty Referer header or without a Referer header are allowed. This parameter has the following values: true: Allowed. false: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. The default value is true.
+        :param pulumi.Input['ShareConfigDenyRefererAccessRuleCommonTypeArgs'] common_type: Specifies the contents of the common list.
         """
         if allow_empty is not None:
             pulumi.set(__self__, "allow_empty", allow_empty)
@@ -11060,7 +11060,7 @@ class ShareConfigDenyRefererAccessRuleArgs:
     @pulumi.getter(name="allowEmpty")
     def allow_empty(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示允许。false：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。该参数的默认值是 true。
+        Indicates whether requests with an empty Referer header or without a Referer header are allowed. This parameter has the following values: true: Allowed. false: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. The default value is true.
         """
         return pulumi.get(self, "allow_empty")
 
@@ -11072,7 +11072,7 @@ class ShareConfigDenyRefererAccessRuleArgs:
     @pulumi.getter(name="commonType")
     def common_type(self) -> Optional[pulumi.Input['ShareConfigDenyRefererAccessRuleCommonTypeArgs']]:
         """
-        表示该通用列表的内容。
+        Specifies the contents of the common list.
         """
         return pulumi.get(self, "common_type")
 
@@ -11085,11 +11085,11 @@ if not MYPY:
     class ShareConfigDenyRefererAccessRuleCommonTypeArgsDict(TypedDict):
         ignore_case: NotRequired[pulumi.Input[builtins.bool]]
         """
-        表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+        Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
         """
         rules: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+        Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
         """
 elif False:
     ShareConfigDenyRefererAccessRuleCommonTypeArgsDict: TypeAlias = Mapping[str, Any]
@@ -11100,8 +11100,8 @@ class ShareConfigDenyRefererAccessRuleCommonTypeArgs:
                  ignore_case: Optional[pulumi.Input[builtins.bool]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.bool] ignore_case: 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rules: 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+        :param pulumi.Input[builtins.bool] ignore_case: Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rules: Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
         """
         if ignore_case is not None:
             pulumi.set(__self__, "ignore_case", ignore_case)
@@ -11112,7 +11112,7 @@ class ShareConfigDenyRefererAccessRuleCommonTypeArgs:
     @pulumi.getter(name="ignoreCase")
     def ignore_case(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+        Indicates whether entries in Rules are case-sensitive. This parameter has the following values: true: Not case-sensitive. false: Case-sensitive. The default value is true.
         """
         return pulumi.get(self, "ignore_case")
 
@@ -11124,7 +11124,7 @@ class ShareConfigDenyRefererAccessRuleCommonTypeArgs:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+        Indicates an entry list, where each entry is a string. List quotas are as follows: The list can contain up to 4,000 entries. The total length of all entries cannot exceed 200,000 characters. When the CDN creates this global configuration, duplicate entries in the list are removed. Duplicate entries do not count toward the quota.
         """
         return pulumi.get(self, "rules")
 

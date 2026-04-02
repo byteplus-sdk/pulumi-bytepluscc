@@ -14,37 +14,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis.Inputs
     public sealed class InstanceVisitAddrArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+        /// Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
         /// </summary>
         [Input("addrType")]
         public Input<string>? AddrType { get; set; }
 
         /// <summary>
-        /// IP 地址或者域名。
+        /// IP address or domain name.
         /// </summary>
         [Input("address")]
         public Input<string>? Address { get; set; }
 
         /// <summary>
-        /// 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+        /// EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
         /// </summary>
         [Input("eipId")]
         public Input<string>? EipId { get; set; }
 
         /// <summary>
-        /// 端口号。
+        /// Port number.
         /// </summary>
         [Input("port")]
         public Input<string>? Port { get; set; }
 
         /// <summary>
-        /// 连接地址所对应的 IPv6 地址。
+        /// IPv6 address corresponding to the connection address.
         /// </summary>
         [Input("viPv6")]
         public Input<string>? ViPv6 { get; set; }
 
         /// <summary>
-        /// 连接地址所对应的 IPv4 地址。
+        /// The IPv4 address corresponding to the connection address.
         /// </summary>
         [Input("vip")]
         public Input<string>? Vip { get; set; }

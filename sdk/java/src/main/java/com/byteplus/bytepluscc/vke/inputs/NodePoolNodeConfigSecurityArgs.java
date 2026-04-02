@@ -19,14 +19,14 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
     public static final NodePoolNodeConfigSecurityArgs Empty = new NodePoolNodeConfigSecurityArgs();
 
     /**
-     * 节点的访问方式配置。
+     * Node access configuration.
      * 
      */
     @Import(name="login")
     private @Nullable Output<NodePoolNodeConfigSecurityLoginArgs> login;
 
     /**
-     * @return 节点的访问方式配置。
+     * @return Node access configuration.
      * 
      */
     public Optional<Output<NodePoolNodeConfigSecurityLoginArgs>> login() {
@@ -34,14 +34,14 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 节点网络所在的安全组 ID 列表。
+     * List of security group IDs for the node network
      * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
-     * @return 节点网络所在的安全组 ID 列表。
+     * @return List of security group IDs for the node network
      * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
@@ -49,14 +49,14 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 节点的安全策略，参数值说明：Hids：主机安全加固。
+     * Node security policy. Parameter description: Hids: Host security hardening.
      * 
      */
     @Import(name="securityStrategies")
     private @Nullable Output<List<String>> securityStrategies;
 
     /**
-     * @return 节点的安全策略，参数值说明：Hids：主机安全加固。
+     * @return Node security policy. Parameter description: Hids: Host security hardening.
      * 
      */
     public Optional<Output<List<String>>> securityStrategies() {
@@ -64,14 +64,14 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+     * Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
      * 
      */
     @Import(name="securityStrategyEnabled")
     private @Nullable Output<Boolean> securityStrategyEnabled;
 
     /**
-     * @return 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+     * @return Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
      * 
      */
     public Optional<Output<Boolean>> securityStrategyEnabled() {
@@ -106,7 +106,7 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param login 节点的访问方式配置。
+         * @param login Node access configuration.
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param login 节点的访问方式配置。
+         * @param login Node access configuration.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param securityGroupIds 节点网络所在的安全组 ID 列表。
+         * @param securityGroupIds List of security group IDs for the node network
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param securityGroupIds 节点网络所在的安全组 ID 列表。
+         * @param securityGroupIds List of security group IDs for the node network
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param securityGroupIds 节点网络所在的安全组 ID 列表。
+         * @param securityGroupIds List of security group IDs for the node network
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param securityStrategies 节点的安全策略，参数值说明：Hids：主机安全加固。
+         * @param securityStrategies Node security policy. Parameter description: Hids: Host security hardening.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param securityStrategies 节点的安全策略，参数值说明：Hids：主机安全加固。
+         * @param securityStrategies Node security policy. Parameter description: Hids: Host security hardening.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param securityStrategies 节点的安全策略，参数值说明：Hids：主机安全加固。
+         * @param securityStrategies Node security policy. Parameter description: Hids: Host security hardening.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param securityStrategyEnabled 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+         * @param securityStrategyEnabled Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class NodePoolNodeConfigSecurityArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param securityStrategyEnabled 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+         * @param securityStrategyEnabled Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
          * 
          * @return builder
          * 

@@ -9,8 +9,11 @@ import typing
 from .customer_gateway import *
 from .get_customer_gateway import *
 from .get_customer_gateways import *
+from .get_vpn_connection import *
+from .get_vpn_connections import *
 from .get_vpn_gateway import *
 from .get_vpn_gateways import *
+from .vpn_connection import *
 from .vpn_gateway import *
 from ._inputs import *
 from . import outputs

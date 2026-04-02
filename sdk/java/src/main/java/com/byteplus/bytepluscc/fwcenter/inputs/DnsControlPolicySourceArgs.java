@@ -16,14 +16,14 @@ public final class DnsControlPolicySourceArgs extends com.pulumi.resources.Resou
     public static final DnsControlPolicySourceArgs Empty = new DnsControlPolicySourceArgs();
 
     /**
-     * VPC地域信息。
+     * VPC region information.
      * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
-     * @return VPC地域信息。
+     * @return VPC region information.
      * 
      */
     public Optional<Output<String>> region() {
@@ -71,7 +71,7 @@ public final class DnsControlPolicySourceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param region VPC地域信息。
+         * @param region VPC region information.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class DnsControlPolicySourceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param region VPC地域信息。
+         * @param region VPC region information.
          * 
          * @return builder
          * 

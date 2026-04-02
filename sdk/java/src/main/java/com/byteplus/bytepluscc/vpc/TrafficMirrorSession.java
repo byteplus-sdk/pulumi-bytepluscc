@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 镜像会话关联镜像源、镜像目的、筛选条件，使从镜像源复制的流量私网转发到镜像目的，是流量镜像的载体。
+ * The mirror session links the mirror source, mirror destination, and filter conditions, enabling private network forwarding of traffic copied from the mirror source to the mirror destination. It serves as the carrier for traffic mirroring
  * 
  * ## Example Usage
  * 
@@ -77,126 +77,126 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/trafficMirrorSession:TrafficMirrorSession")
 public class TrafficMirrorSession extends com.pulumi.resources.CustomResource {
     /**
-     * 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+     * Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
      * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
-     * @return 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+     * @return Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
      * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
-     * 创建时间。
+     * Creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 镜像会话实例描述。
+     * Mirror session instance description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 镜像会话实例描述。
+     * @return Mirror session instance description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 锁定原因。
+     * Lock reason
      * 
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
-     * @return 锁定原因。
+     * @return Lock reason
      * 
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
-     * 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+     * Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
      * 
      */
     @Export(name="networkInterfaceId", refs={String.class}, tree="[0]")
     private Output<String> networkInterfaceId;
 
     /**
-     * @return 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+     * @return Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
      * 
      */
     public Output<String> networkInterfaceId() {
         return this.networkInterfaceId;
     }
     /**
-     * 镜像会话MTU，超过被截断，取值范围：64～9600。
+     * Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
      * 
      */
     @Export(name="packetLength", refs={Integer.class}, tree="[0]")
     private Output<Integer> packetLength;
 
     /**
-     * @return 镜像会话MTU，超过被截断，取值范围：64～9600。
+     * @return Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
      * 
      */
     public Output<Integer> packetLength() {
         return this.packetLength;
     }
     /**
-     * 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+     * Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
      * 
      */
     @Export(name="priority", refs={Integer.class}, tree="[0]")
     private Output<Integer> priority;
 
     /**
-     * @return 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+     * @return Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
      * 
      */
     public Output<Integer> priority() {
         return this.priority;
     }
     /**
-     * 所属项目的名称
+     * Name of the associated project
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 所属项目的名称
+     * @return Name of the associated project
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 会话状态。
+     * Session status
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 会话状态。
+     * @return Session status
      * 
      */
     public Output<String> status() {
@@ -209,84 +209,84 @@ public class TrafficMirrorSession extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 筛选条件实例ID。
+     * Filter condition instance ID
      * 
      */
     @Export(name="trafficMirrorFilterId", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorFilterId;
 
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     public Output<String> trafficMirrorFilterId() {
         return this.trafficMirrorFilterId;
     }
     /**
-     * 镜像会话实例ID。
+     * Mirror session instance ID
      * 
      */
     @Export(name="trafficMirrorSessionId", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorSessionId;
 
     /**
-     * @return 镜像会话实例ID。
+     * @return Mirror session instance ID
      * 
      */
     public Output<String> trafficMirrorSessionId() {
         return this.trafficMirrorSessionId;
     }
     /**
-     * 镜像会话名称。
+     * Mirror session name
      * 
      */
     @Export(name="trafficMirrorSessionName", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorSessionName;
 
     /**
-     * @return 镜像会话名称。
+     * @return Mirror session name
      * 
      */
     public Output<String> trafficMirrorSessionName() {
         return this.trafficMirrorSessionName;
     }
     /**
-     * 镜像源实例列表。
+     * Mirror source instance list
      * 
      */
     @Export(name="trafficMirrorSourceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> trafficMirrorSourceIds;
 
     /**
-     * @return 镜像源实例列表。
+     * @return Mirror source instance list
      * 
      */
     public Output<List<String>> trafficMirrorSourceIds() {
         return this.trafficMirrorSourceIds;
     }
     /**
-     * 镜像目的实例ID。
+     * Mirror destination instance ID
      * 
      */
     @Export(name="trafficMirrorTargetId", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorTargetId;
 
     /**
-     * @return 镜像目的实例ID。
+     * @return Mirror destination instance ID
      * 
      */
     public Output<String> trafficMirrorTargetId() {
         return this.trafficMirrorTargetId;
     }
     /**
-     * 镜像会话VNI，取值范围1 ～ 16777215。
+     * Mirror session VNI. Range: 1–16777215
      * 
      */
     @Export(name="virtualNetworkId", refs={Integer.class}, tree="[0]")
     private Output<Integer> virtualNetworkId;
 
     /**
-     * @return 镜像会话VNI，取值范围1 ～ 16777215。
+     * @return Mirror session VNI. Range: 1–16777215
      * 
      */
     public Output<Integer> virtualNetworkId() {

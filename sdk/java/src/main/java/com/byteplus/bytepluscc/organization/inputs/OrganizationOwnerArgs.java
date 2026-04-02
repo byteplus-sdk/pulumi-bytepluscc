@@ -17,14 +17,14 @@ public final class OrganizationOwnerArgs extends com.pulumi.resources.ResourceAr
     public static final OrganizationOwnerArgs Empty = new OrganizationOwnerArgs();
 
     /**
-     * 账号ID
+     * Account ID
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<Integer> accountId;
 
     /**
-     * @return 账号ID
+     * @return Account ID
      * 
      */
     public Optional<Output<Integer>> accountId() {
@@ -32,14 +32,14 @@ public final class OrganizationOwnerArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 账号名称
+     * Account Name
      * 
      */
     @Import(name="accountName")
     private @Nullable Output<String> accountName;
 
     /**
-     * @return 账号名称
+     * @return Account Name
      * 
      */
     public Optional<Output<String>> accountName() {
@@ -47,14 +47,14 @@ public final class OrganizationOwnerArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 主体名称
+     * Entity Name
      * 
      */
     @Import(name="mainName")
     private @Nullable Output<String> mainName;
 
     /**
-     * @return 主体名称
+     * @return Entity Name
      * 
      */
     public Optional<Output<String>> mainName() {
@@ -88,7 +88,7 @@ public final class OrganizationOwnerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param accountId 账号ID
+         * @param accountId Account ID
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class OrganizationOwnerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param accountId 账号ID
+         * @param accountId Account ID
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class OrganizationOwnerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param accountName 账号名称
+         * @param accountName Account Name
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class OrganizationOwnerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param accountName 账号名称
+         * @param accountName Account Name
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class OrganizationOwnerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param mainName 主体名称
+         * @param mainName Entity Name
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class OrganizationOwnerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param mainName 主体名称
+         * @param mainName Entity Name
          * 
          * @return builder
          * 

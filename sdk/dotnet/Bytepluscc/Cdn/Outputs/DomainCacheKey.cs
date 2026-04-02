@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainCacheKey
     {
         /// <summary>
-        /// 表示在 Condition 情况下，内容分发网络执行的操作。
+        /// Indicates the action performed by the content delivery network under the Condition scenario.
         /// </summary>
         public readonly Outputs.DomainCacheKeyCacheKeyAction? CacheKeyAction;
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         public readonly Outputs.DomainCacheKeyCondition? Condition;
 

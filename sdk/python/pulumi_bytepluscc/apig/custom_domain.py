@@ -28,12 +28,12 @@ class CustomDomainArgs:
                  ssl_redirect: Optional[pulumi.Input[builtins.bool]] = None):
         """
         The set of arguments for constructing a CustomDomain resource.
-        :param pulumi.Input[builtins.str] domain: 自定义域名。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: 协议，取值：HTTP。HTTPS。
-        :param pulumi.Input[builtins.str] service_id: 服务ID。
-        :param pulumi.Input[builtins.str] certificate_id: 自定义域名证书ID。
-        :param pulumi.Input[builtins.str] comments: 备注。
-        :param pulumi.Input[builtins.bool] ssl_redirect: 重定向到HTTPS。
+        :param pulumi.Input[builtins.str] domain: Custom Domain
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: Protocol. Values: HTTP, HTTPS
+        :param pulumi.Input[builtins.str] service_id: Service ID
+        :param pulumi.Input[builtins.str] certificate_id: Custom Domain Certificate ID
+        :param pulumi.Input[builtins.str] comments: Remarks
+        :param pulumi.Input[builtins.bool] ssl_redirect: Redirect to HTTPS
         """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "protocols", protocols)
@@ -49,7 +49,7 @@ class CustomDomainArgs:
     @pulumi.getter
     def domain(self) -> pulumi.Input[builtins.str]:
         """
-        自定义域名。
+        Custom Domain
         """
         return pulumi.get(self, "domain")
 
@@ -61,7 +61,7 @@ class CustomDomainArgs:
     @pulumi.getter
     def protocols(self) -> pulumi.Input[Sequence[pulumi.Input[builtins.str]]]:
         """
-        协议，取值：HTTP。HTTPS。
+        Protocol. Values: HTTP, HTTPS
         """
         return pulumi.get(self, "protocols")
 
@@ -73,7 +73,7 @@ class CustomDomainArgs:
     @pulumi.getter(name="serviceId")
     def service_id(self) -> pulumi.Input[builtins.str]:
         """
-        服务ID。
+        Service ID
         """
         return pulumi.get(self, "service_id")
 
@@ -85,7 +85,7 @@ class CustomDomainArgs:
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        自定义域名证书ID。
+        Custom Domain Certificate ID
         """
         return pulumi.get(self, "certificate_id")
 
@@ -97,7 +97,7 @@ class CustomDomainArgs:
     @pulumi.getter
     def comments(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备注。
+        Remarks
         """
         return pulumi.get(self, "comments")
 
@@ -109,7 +109,7 @@ class CustomDomainArgs:
     @pulumi.getter(name="sslRedirect")
     def ssl_redirect(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        重定向到HTTPS。
+        Redirect to HTTPS
         """
         return pulumi.get(self, "ssl_redirect")
 
@@ -133,16 +133,16 @@ class _CustomDomainState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering CustomDomain resources.
-        :param pulumi.Input[builtins.str] certificate_id: 自定义域名证书ID。
-        :param pulumi.Input[builtins.str] comments: 备注。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] custom_domain_id: 自定义域名ID。
-        :param pulumi.Input[builtins.str] domain: 自定义域名。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: 协议，取值：HTTP。HTTPS。
-        :param pulumi.Input[builtins.str] service_id: 服务ID。
-        :param pulumi.Input[builtins.bool] ssl_redirect: 重定向到HTTPS。
-        :param pulumi.Input[builtins.str] status: 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
+        :param pulumi.Input[builtins.str] certificate_id: Custom Domain Certificate ID
+        :param pulumi.Input[builtins.str] comments: Remarks
+        :param pulumi.Input[builtins.str] created_time: Creation Time
+        :param pulumi.Input[builtins.str] custom_domain_id: Custom Domain ID
+        :param pulumi.Input[builtins.str] domain: Custom Domain
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: Protocol. Values: HTTP, HTTPS
+        :param pulumi.Input[builtins.str] service_id: Service ID
+        :param pulumi.Input[builtins.bool] ssl_redirect: Redirect to HTTPS
+        :param pulumi.Input[builtins.str] status: Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
+        :param pulumi.Input[builtins.str] updated_time: Update Time
         """
         if certificate_id is not None:
             pulumi.set(__self__, "certificate_id", certificate_id)
@@ -169,7 +169,7 @@ class _CustomDomainState:
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        自定义域名证书ID。
+        Custom Domain Certificate ID
         """
         return pulumi.get(self, "certificate_id")
 
@@ -181,7 +181,7 @@ class _CustomDomainState:
     @pulumi.getter
     def comments(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备注。
+        Remarks
         """
         return pulumi.get(self, "comments")
 
@@ -193,7 +193,7 @@ class _CustomDomainState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -205,7 +205,7 @@ class _CustomDomainState:
     @pulumi.getter(name="customDomainId")
     def custom_domain_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        自定义域名ID。
+        Custom Domain ID
         """
         return pulumi.get(self, "custom_domain_id")
 
@@ -217,7 +217,7 @@ class _CustomDomainState:
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        自定义域名。
+        Custom Domain
         """
         return pulumi.get(self, "domain")
 
@@ -229,7 +229,7 @@ class _CustomDomainState:
     @pulumi.getter
     def protocols(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        协议，取值：HTTP。HTTPS。
+        Protocol. Values: HTTP, HTTPS
         """
         return pulumi.get(self, "protocols")
 
@@ -241,7 +241,7 @@ class _CustomDomainState:
     @pulumi.getter(name="serviceId")
     def service_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        服务ID。
+        Service ID
         """
         return pulumi.get(self, "service_id")
 
@@ -253,7 +253,7 @@ class _CustomDomainState:
     @pulumi.getter(name="sslRedirect")
     def ssl_redirect(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        重定向到HTTPS。
+        Redirect to HTTPS
         """
         return pulumi.get(self, "ssl_redirect")
 
@@ -265,7 +265,7 @@ class _CustomDomainState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+        Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
         """
         return pulumi.get(self, "status")
 
@@ -277,7 +277,7 @@ class _CustomDomainState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间。
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 
@@ -300,7 +300,7 @@ class CustomDomain(pulumi.CustomResource):
                  ssl_redirect: Optional[pulumi.Input[builtins.bool]] = None,
                  __props__=None):
         """
-        服务作为业务对外暴露的入口，可以通过绑定域名功能，将您的自定义域名绑定至服务。
+        The service serves as the entry point for external access. You can bind your custom domain to the service using the domain binding feature
 
         ## Example Usage
 
@@ -328,12 +328,12 @@ class CustomDomain(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] certificate_id: 自定义域名证书ID。
-        :param pulumi.Input[builtins.str] comments: 备注。
-        :param pulumi.Input[builtins.str] domain: 自定义域名。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: 协议，取值：HTTP。HTTPS。
-        :param pulumi.Input[builtins.str] service_id: 服务ID。
-        :param pulumi.Input[builtins.bool] ssl_redirect: 重定向到HTTPS。
+        :param pulumi.Input[builtins.str] certificate_id: Custom Domain Certificate ID
+        :param pulumi.Input[builtins.str] comments: Remarks
+        :param pulumi.Input[builtins.str] domain: Custom Domain
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: Protocol. Values: HTTP, HTTPS
+        :param pulumi.Input[builtins.str] service_id: Service ID
+        :param pulumi.Input[builtins.bool] ssl_redirect: Redirect to HTTPS
         """
         ...
     @overload
@@ -342,7 +342,7 @@ class CustomDomain(pulumi.CustomResource):
                  args: CustomDomainArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        服务作为业务对外暴露的入口，可以通过绑定域名功能，将您的自定义域名绑定至服务。
+        The service serves as the entry point for external access. You can bind your custom domain to the service using the domain binding feature
 
         ## Example Usage
 
@@ -441,16 +441,16 @@ class CustomDomain(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] certificate_id: 自定义域名证书ID。
-        :param pulumi.Input[builtins.str] comments: 备注。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] custom_domain_id: 自定义域名ID。
-        :param pulumi.Input[builtins.str] domain: 自定义域名。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: 协议，取值：HTTP。HTTPS。
-        :param pulumi.Input[builtins.str] service_id: 服务ID。
-        :param pulumi.Input[builtins.bool] ssl_redirect: 重定向到HTTPS。
-        :param pulumi.Input[builtins.str] status: 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
+        :param pulumi.Input[builtins.str] certificate_id: Custom Domain Certificate ID
+        :param pulumi.Input[builtins.str] comments: Remarks
+        :param pulumi.Input[builtins.str] created_time: Creation Time
+        :param pulumi.Input[builtins.str] custom_domain_id: Custom Domain ID
+        :param pulumi.Input[builtins.str] domain: Custom Domain
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: Protocol. Values: HTTP, HTTPS
+        :param pulumi.Input[builtins.str] service_id: Service ID
+        :param pulumi.Input[builtins.bool] ssl_redirect: Redirect to HTTPS
+        :param pulumi.Input[builtins.str] status: Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
+        :param pulumi.Input[builtins.str] updated_time: Update Time
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -472,7 +472,7 @@ class CustomDomain(pulumi.CustomResource):
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> pulumi.Output[builtins.str]:
         """
-        自定义域名证书ID。
+        Custom Domain Certificate ID
         """
         return pulumi.get(self, "certificate_id")
 
@@ -480,7 +480,7 @@ class CustomDomain(pulumi.CustomResource):
     @pulumi.getter
     def comments(self) -> pulumi.Output[builtins.str]:
         """
-        备注。
+        Remarks
         """
         return pulumi.get(self, "comments")
 
@@ -488,7 +488,7 @@ class CustomDomain(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -496,7 +496,7 @@ class CustomDomain(pulumi.CustomResource):
     @pulumi.getter(name="customDomainId")
     def custom_domain_id(self) -> pulumi.Output[builtins.str]:
         """
-        自定义域名ID。
+        Custom Domain ID
         """
         return pulumi.get(self, "custom_domain_id")
 
@@ -504,7 +504,7 @@ class CustomDomain(pulumi.CustomResource):
     @pulumi.getter
     def domain(self) -> pulumi.Output[builtins.str]:
         """
-        自定义域名。
+        Custom Domain
         """
         return pulumi.get(self, "domain")
 
@@ -512,7 +512,7 @@ class CustomDomain(pulumi.CustomResource):
     @pulumi.getter
     def protocols(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        协议，取值：HTTP。HTTPS。
+        Protocol. Values: HTTP, HTTPS
         """
         return pulumi.get(self, "protocols")
 
@@ -520,7 +520,7 @@ class CustomDomain(pulumi.CustomResource):
     @pulumi.getter(name="serviceId")
     def service_id(self) -> pulumi.Output[builtins.str]:
         """
-        服务ID。
+        Service ID
         """
         return pulumi.get(self, "service_id")
 
@@ -528,7 +528,7 @@ class CustomDomain(pulumi.CustomResource):
     @pulumi.getter(name="sslRedirect")
     def ssl_redirect(self) -> pulumi.Output[builtins.bool]:
         """
-        重定向到HTTPS。
+        Redirect to HTTPS
         """
         return pulumi.get(self, "ssl_redirect")
 
@@ -536,7 +536,7 @@ class CustomDomain(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+        Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
         """
         return pulumi.get(self, "status")
 
@@ -544,7 +544,7 @@ class CustomDomain(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间。
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 

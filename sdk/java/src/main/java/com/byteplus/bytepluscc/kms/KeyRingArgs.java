@@ -17,14 +17,14 @@ public final class KeyRingArgs extends com.pulumi.resources.ResourceArgs {
     public static final KeyRingArgs Empty = new KeyRingArgs();
 
     /**
-     * 密钥环描述，长度为 0   - 8192 个字符。
+     * Keyring description, length: 0–8192 characters
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 密钥环描述，长度为 0   - 8192 个字符。
+     * @return Keyring description, length: 0–8192 characters
      * 
      */
     public Optional<Output<String>> description() {
@@ -32,14 +32,14 @@ public final class KeyRingArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+     * Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
      * 
      */
     @Import(name="keyringName", required=true)
     private Output<String> keyringName;
 
     /**
-     * @return 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+     * @return Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
      * 
      */
     public Output<String> keyringName() {
@@ -47,14 +47,14 @@ public final class KeyRingArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥环类型，取值：CustomKeyring。
+     * Keyring type, value: CustomKeyring
      * 
      */
     @Import(name="keyringType")
     private @Nullable Output<String> keyringType;
 
     /**
-     * @return 密钥环类型，取值：CustomKeyring。
+     * @return Keyring type, value: CustomKeyring
      * 
      */
     public Optional<Output<String>> keyringType() {
@@ -62,14 +62,14 @@ public final class KeyRingArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 项目名称，默认值：default。
+     * Project name, default value: default
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 项目名称，默认值：default。
+     * @return Project name, default value: default
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -104,7 +104,7 @@ public final class KeyRingArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 密钥环描述，长度为 0   - 8192 个字符。
+         * @param description Keyring description, length: 0–8192 characters
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class KeyRingArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 密钥环描述，长度为 0   - 8192 个字符。
+         * @param description Keyring description, length: 0–8192 characters
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class KeyRingArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyringName 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+         * @param keyringName Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class KeyRingArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyringName 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+         * @param keyringName Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class KeyRingArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyringType 密钥环类型，取值：CustomKeyring。
+         * @param keyringType Keyring type, value: CustomKeyring
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class KeyRingArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyringType 密钥环类型，取值：CustomKeyring。
+         * @param keyringType Keyring type, value: CustomKeyring
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class KeyRingArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称，默认值：default。
+         * @param projectName Project name, default value: default
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class KeyRingArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称，默认值：default。
+         * @param projectName Project name, default value: default
          * 
          * @return builder
          * 

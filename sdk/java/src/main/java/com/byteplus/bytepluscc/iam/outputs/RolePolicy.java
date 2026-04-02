@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RolePolicy {
     /**
-     * @return 策略名。
+     * @return Policy name
      * 
      */
     private @Nullable String policyName;
     /**
-     * @return 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      * 
      */
     private @Nullable String policyType;
 
     private RolePolicy() {}
     /**
-     * @return 策略名。
+     * @return Policy name
      * 
      */
     public Optional<String> policyName() {
         return Optional.ofNullable(this.policyName);
     }
     /**
-     * @return 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      * 
      */
     public Optional<String> policyType() {

@@ -28,9 +28,9 @@ class TrafficMirrorFilterArgs:
                  traffic_mirror_filter_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a TrafficMirrorFilter resource.
-        :param pulumi.Input[builtins.str] description: 筛选条件实例描述。
-        :param pulumi.Input[builtins.str] project_name: 筛选条件所属项目的名称。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_name: 筛选条件名称。
+        :param pulumi.Input[builtins.str] description: Filter condition instance description
+        :param pulumi.Input[builtins.str] project_name: Project name of the filter condition
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_name: Filter condition name
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -45,7 +45,7 @@ class TrafficMirrorFilterArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选条件实例描述。
+        Filter condition instance description
         """
         return pulumi.get(self, "description")
 
@@ -57,7 +57,7 @@ class TrafficMirrorFilterArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选条件所属项目的名称。
+        Project name of the filter condition
         """
         return pulumi.get(self, "project_name")
 
@@ -78,7 +78,7 @@ class TrafficMirrorFilterArgs:
     @pulumi.getter(name="trafficMirrorFilterName")
     def traffic_mirror_filter_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选条件名称。
+        Filter condition name
         """
         return pulumi.get(self, "traffic_mirror_filter_name")
 
@@ -101,12 +101,12 @@ class _TrafficMirrorFilterState:
                  traffic_mirror_filter_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering TrafficMirrorFilter resources.
-        :param pulumi.Input[builtins.str] created_time: 筛选条件的创建时间。
-        :param pulumi.Input[builtins.str] description: 筛选条件实例描述。
-        :param pulumi.Input[builtins.str] project_name: 筛选条件所属项目的名称。
-        :param pulumi.Input[builtins.str] status: 筛选条件状态。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: 筛选条件实例ID。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_name: 筛选条件名称。
+        :param pulumi.Input[builtins.str] created_time: Filter condition creation time
+        :param pulumi.Input[builtins.str] description: Filter condition instance description
+        :param pulumi.Input[builtins.str] project_name: Project name of the filter condition
+        :param pulumi.Input[builtins.str] status: Filter condition status
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: Filter condition instance ID
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_name: Filter condition name
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -131,7 +131,7 @@ class _TrafficMirrorFilterState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选条件的创建时间。
+        Filter condition creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -143,7 +143,7 @@ class _TrafficMirrorFilterState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选条件实例描述。
+        Filter condition instance description
         """
         return pulumi.get(self, "description")
 
@@ -173,7 +173,7 @@ class _TrafficMirrorFilterState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选条件所属项目的名称。
+        Project name of the filter condition
         """
         return pulumi.get(self, "project_name")
 
@@ -185,7 +185,7 @@ class _TrafficMirrorFilterState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选条件状态。
+        Filter condition status
         """
         return pulumi.get(self, "status")
 
@@ -206,7 +206,7 @@ class _TrafficMirrorFilterState:
     @pulumi.getter(name="trafficMirrorFilterId")
     def traffic_mirror_filter_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选条件实例ID。
+        Filter condition instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_id")
 
@@ -218,7 +218,7 @@ class _TrafficMirrorFilterState:
     @pulumi.getter(name="trafficMirrorFilterName")
     def traffic_mirror_filter_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        筛选条件名称。
+        Filter condition name
         """
         return pulumi.get(self, "traffic_mirror_filter_name")
 
@@ -239,7 +239,7 @@ class TrafficMirrorFilter(pulumi.CustomResource):
                  traffic_mirror_filter_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        通过流量镜像，您可以按自己设定的筛选条件复制网卡的流量，并将复制的流量私网转发到目标服务进行监控分析。
+        With traffic mirroring, you can mirror network interface traffic based on your filter conditions and forward the mirrored traffic over the private network to a target service for monitoring and analysis
 
         ## Example Usage
 
@@ -265,9 +265,9 @@ class TrafficMirrorFilter(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 筛选条件实例描述。
-        :param pulumi.Input[builtins.str] project_name: 筛选条件所属项目的名称。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_name: 筛选条件名称。
+        :param pulumi.Input[builtins.str] description: Filter condition instance description
+        :param pulumi.Input[builtins.str] project_name: Project name of the filter condition
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_name: Filter condition name
         """
         ...
     @overload
@@ -276,7 +276,7 @@ class TrafficMirrorFilter(pulumi.CustomResource):
                  args: Optional[TrafficMirrorFilterArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        通过流量镜像，您可以按自己设定的筛选条件复制网卡的流量，并将复制的流量私网转发到目标服务进行监控分析。
+        With traffic mirroring, you can mirror network interface traffic based on your filter conditions and forward the mirrored traffic over the private network to a target service for monitoring and analysis
 
         ## Example Usage
 
@@ -363,12 +363,12 @@ class TrafficMirrorFilter(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 筛选条件的创建时间。
-        :param pulumi.Input[builtins.str] description: 筛选条件实例描述。
-        :param pulumi.Input[builtins.str] project_name: 筛选条件所属项目的名称。
-        :param pulumi.Input[builtins.str] status: 筛选条件状态。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: 筛选条件实例ID。
-        :param pulumi.Input[builtins.str] traffic_mirror_filter_name: 筛选条件名称。
+        :param pulumi.Input[builtins.str] created_time: Filter condition creation time
+        :param pulumi.Input[builtins.str] description: Filter condition instance description
+        :param pulumi.Input[builtins.str] project_name: Project name of the filter condition
+        :param pulumi.Input[builtins.str] status: Filter condition status
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: Filter condition instance ID
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_name: Filter condition name
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -389,7 +389,7 @@ class TrafficMirrorFilter(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        筛选条件的创建时间。
+        Filter condition creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -397,7 +397,7 @@ class TrafficMirrorFilter(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        筛选条件实例描述。
+        Filter condition instance description
         """
         return pulumi.get(self, "description")
 
@@ -415,7 +415,7 @@ class TrafficMirrorFilter(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        筛选条件所属项目的名称。
+        Project name of the filter condition
         """
         return pulumi.get(self, "project_name")
 
@@ -423,7 +423,7 @@ class TrafficMirrorFilter(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        筛选条件状态。
+        Filter condition status
         """
         return pulumi.get(self, "status")
 
@@ -436,7 +436,7 @@ class TrafficMirrorFilter(pulumi.CustomResource):
     @pulumi.getter(name="trafficMirrorFilterId")
     def traffic_mirror_filter_id(self) -> pulumi.Output[builtins.str]:
         """
-        筛选条件实例ID。
+        Filter condition instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_id")
 
@@ -444,7 +444,7 @@ class TrafficMirrorFilter(pulumi.CustomResource):
     @pulumi.getter(name="trafficMirrorFilterName")
     def traffic_mirror_filter_name(self) -> pulumi.Output[builtins.str]:
         """
-        筛选条件名称。
+        Filter condition name
         """
         return pulumi.get(self, "traffic_mirror_filter_name")
 

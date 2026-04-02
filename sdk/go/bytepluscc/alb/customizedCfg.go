@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ALB 提供监听维度的个性化配置功能。通过控制台可以创建并管理常规的 NGINX 配置策略，在监听器详情页一键关联配置策略，无需提交工单即可完成满足业务需求的个性化配置。
+// ALB provides personalized configuration functionality at the listener level. You can create and manage standard NGINX configuration policies in the console, associate configuration policies with listeners in one click on the listener details page, and complete personalized configurations to meet business requirements without submitting a ticket.
 //
 // ## Example Usage
 //
@@ -72,23 +72,24 @@ import (
 type CustomizedCfg struct {
 	pulumi.CustomResourceState
 
-	// 个性化配置的创建时间。
+	// Creation time of the personalized configuration.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过";\r\n"分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+	// Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by ';
+	// '. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
 	CustomizedCfgContent pulumi.StringOutput `pulumi:"customizedCfgContent"`
-	// 个性化配置的 ID 。
+	// Personalized configuration ID.
 	CustomizedCfgId pulumi.StringOutput `pulumi:"customizedCfgId"`
-	// 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+	// Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	CustomizedCfgName pulumi.StringOutput `pulumi:"customizedCfgName"`
-	// 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+	// Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
 	Description pulumi.StringOutput              `pulumi:"description"`
 	Listeners   CustomizedCfgListenerArrayOutput `pulumi:"listeners"`
-	// 个性化配置所属项目名称。
+	// Project name to which the personalized configuration belongs.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 个性化配置状态。包括Active、Configuring、Creating或者Deleting。
+	// Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
 	Status pulumi.StringOutput         `pulumi:"status"`
 	Tags   CustomizedCfgTagArrayOutput `pulumi:"tags"`
-	// 个性化配置的最近操作时间。
+	// Last operation time of the personalized configuration.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -128,44 +129,46 @@ func GetCustomizedCfg(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CustomizedCfg resources.
 type customizedCfgState struct {
-	// 个性化配置的创建时间。
+	// Creation time of the personalized configuration.
 	CreatedTime *string `pulumi:"createdTime"`
-	// 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过";\r\n"分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+	// Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by ';
+	// '. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
 	CustomizedCfgContent *string `pulumi:"customizedCfgContent"`
-	// 个性化配置的 ID 。
+	// Personalized configuration ID.
 	CustomizedCfgId *string `pulumi:"customizedCfgId"`
-	// 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+	// Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	CustomizedCfgName *string `pulumi:"customizedCfgName"`
-	// 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+	// Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
 	Description *string                 `pulumi:"description"`
 	Listeners   []CustomizedCfgListener `pulumi:"listeners"`
-	// 个性化配置所属项目名称。
+	// Project name to which the personalized configuration belongs.
 	ProjectName *string `pulumi:"projectName"`
-	// 个性化配置状态。包括Active、Configuring、Creating或者Deleting。
+	// Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
 	Status *string            `pulumi:"status"`
 	Tags   []CustomizedCfgTag `pulumi:"tags"`
-	// 个性化配置的最近操作时间。
+	// Last operation time of the personalized configuration.
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type CustomizedCfgState struct {
-	// 个性化配置的创建时间。
+	// Creation time of the personalized configuration.
 	CreatedTime pulumi.StringPtrInput
-	// 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过";\r\n"分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+	// Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by ';
+	// '. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
 	CustomizedCfgContent pulumi.StringPtrInput
-	// 个性化配置的 ID 。
+	// Personalized configuration ID.
 	CustomizedCfgId pulumi.StringPtrInput
-	// 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+	// Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	CustomizedCfgName pulumi.StringPtrInput
-	// 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+	// Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
 	Description pulumi.StringPtrInput
 	Listeners   CustomizedCfgListenerArrayInput
-	// 个性化配置所属项目名称。
+	// Project name to which the personalized configuration belongs.
 	ProjectName pulumi.StringPtrInput
-	// 个性化配置状态。包括Active、Configuring、Creating或者Deleting。
+	// Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
 	Status pulumi.StringPtrInput
 	Tags   CustomizedCfgTagArrayInput
-	// 个性化配置的最近操作时间。
+	// Last operation time of the personalized configuration.
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -174,26 +177,28 @@ func (CustomizedCfgState) ElementType() reflect.Type {
 }
 
 type customizedCfgArgs struct {
-	// 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过";\r\n"分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+	// Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by ';
+	// '. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
 	CustomizedCfgContent string `pulumi:"customizedCfgContent"`
-	// 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+	// Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	CustomizedCfgName string `pulumi:"customizedCfgName"`
-	// 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+	// Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
 	Description *string `pulumi:"description"`
-	// 个性化配置所属项目名称。
+	// Project name to which the personalized configuration belongs.
 	ProjectName *string            `pulumi:"projectName"`
 	Tags        []CustomizedCfgTag `pulumi:"tags"`
 }
 
 // The set of arguments for constructing a CustomizedCfg resource.
 type CustomizedCfgArgs struct {
-	// 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过";\r\n"分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+	// Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by ';
+	// '. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
 	CustomizedCfgContent pulumi.StringInput
-	// 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+	// Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	CustomizedCfgName pulumi.StringInput
-	// 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+	// Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
 	Description pulumi.StringPtrInput
-	// 个性化配置所属项目名称。
+	// Project name to which the personalized configuration belongs.
 	ProjectName pulumi.StringPtrInput
 	Tags        CustomizedCfgTagArrayInput
 }
@@ -285,27 +290,28 @@ func (o CustomizedCfgOutput) ToCustomizedCfgOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 个性化配置的创建时间。
+// Creation time of the personalized configuration.
 func (o CustomizedCfgOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomizedCfg) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过";\r\n"分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+// Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by ';
+// '. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
 func (o CustomizedCfgOutput) CustomizedCfgContent() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomizedCfg) pulumi.StringOutput { return v.CustomizedCfgContent }).(pulumi.StringOutput)
 }
 
-// 个性化配置的 ID 。
+// Personalized configuration ID.
 func (o CustomizedCfgOutput) CustomizedCfgId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomizedCfg) pulumi.StringOutput { return v.CustomizedCfgId }).(pulumi.StringOutput)
 }
 
-// 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+// Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 func (o CustomizedCfgOutput) CustomizedCfgName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomizedCfg) pulumi.StringOutput { return v.CustomizedCfgName }).(pulumi.StringOutput)
 }
 
-// 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+// Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
 func (o CustomizedCfgOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomizedCfg) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -314,12 +320,12 @@ func (o CustomizedCfgOutput) Listeners() CustomizedCfgListenerArrayOutput {
 	return o.ApplyT(func(v *CustomizedCfg) CustomizedCfgListenerArrayOutput { return v.Listeners }).(CustomizedCfgListenerArrayOutput)
 }
 
-// 个性化配置所属项目名称。
+// Project name to which the personalized configuration belongs.
 func (o CustomizedCfgOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomizedCfg) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 个性化配置状态。包括Active、Configuring、Creating或者Deleting。
+// Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
 func (o CustomizedCfgOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomizedCfg) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -328,7 +334,7 @@ func (o CustomizedCfgOutput) Tags() CustomizedCfgTagArrayOutput {
 	return o.ApplyT(func(v *CustomizedCfg) CustomizedCfgTagArrayOutput { return v.Tags }).(CustomizedCfgTagArrayOutput)
 }
 
-// 个性化配置的最近操作时间。
+// Last operation time of the personalized configuration.
 func (o CustomizedCfgOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomizedCfg) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

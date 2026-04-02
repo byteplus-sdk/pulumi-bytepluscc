@@ -14,27 +14,28 @@ import java.util.Objects;
 @CustomType
 public final class GetCustomizedCfgResult {
     /**
-     * @return 个性化配置的创建时间。
+     * @return Creation time of the personalized configuration.
      * 
      */
     private String createdTime;
     /**
-     * @return 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过&#34;;\r\n&#34;分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+     * @return Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by &#39;;
+     * &#39;. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
      * 
      */
     private String customizedCfgContent;
     /**
-     * @return 个性化配置的 ID 。
+     * @return Personalized configuration ID.
      * 
      */
     private String customizedCfgId;
     /**
-     * @return 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+     * @return Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     private String customizedCfgName;
     /**
-     * @return 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * @return Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     private String description;
@@ -44,62 +45,63 @@ public final class GetCustomizedCfgResult {
      */
     private String id;
     /**
-     * @return 个性化配置关联的监听器列表。
+     * @return List of listeners associated with the personalized configuration.
      * 
      */
     private List<GetCustomizedCfgListener> listeners;
     /**
-     * @return 个性化配置所属项目名称。
+     * @return Project name to which the personalized configuration belongs.
      * 
      */
     private String projectName;
     /**
-     * @return 个性化配置状态。包括Active、Configuring、Creating或者Deleting。
+     * @return Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
      * 
      */
     private String status;
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     private List<GetCustomizedCfgTag> tags;
     /**
-     * @return 个性化配置的最近操作时间。
+     * @return Last operation time of the personalized configuration.
      * 
      */
     private String updatedTime;
 
     private GetCustomizedCfgResult() {}
     /**
-     * @return 个性化配置的创建时间。
+     * @return Creation time of the personalized configuration.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过&#34;;\r\n&#34;分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+     * @return Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by &#39;;
+     * &#39;. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
      * 
      */
     public String customizedCfgContent() {
         return this.customizedCfgContent;
     }
     /**
-     * @return 个性化配置的 ID 。
+     * @return Personalized configuration ID.
      * 
      */
     public String customizedCfgId() {
         return this.customizedCfgId;
     }
     /**
-     * @return 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+     * @return Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     public String customizedCfgName() {
         return this.customizedCfgName;
     }
     /**
-     * @return 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * @return Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     public String description() {
@@ -113,35 +115,35 @@ public final class GetCustomizedCfgResult {
         return this.id;
     }
     /**
-     * @return 个性化配置关联的监听器列表。
+     * @return List of listeners associated with the personalized configuration.
      * 
      */
     public List<GetCustomizedCfgListener> listeners() {
         return this.listeners;
     }
     /**
-     * @return 个性化配置所属项目名称。
+     * @return Project name to which the personalized configuration belongs.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 个性化配置状态。包括Active、Configuring、Creating或者Deleting。
+     * @return Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     public List<GetCustomizedCfgTag> tags() {
         return this.tags;
     }
     /**
-     * @return 个性化配置的最近操作时间。
+     * @return Last operation time of the personalized configuration.
      * 
      */
     public String updatedTime() {

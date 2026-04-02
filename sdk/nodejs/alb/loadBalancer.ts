@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 应用型负载均衡（ALB）是对“七层”网络协议的流量进行分发的服务。
+ * Application Load Balancer (ALB) is a service that distributes traffic for Layer 7 network protocols.
  *
  * ## Import
  *
@@ -44,120 +44,120 @@ export class LoadBalancer extends pulumi.CustomResource {
     }
 
     /**
-     * ALB 实例的 IP 类型。IPv4：IPv4 类型；DualStack：IPv4&IPv6 双栈类型。
+     * IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 & IPv6 dual stack type.
      */
     public readonly addressIpVersion!: pulumi.Output<string>;
     /**
-     * 绑定的共享带宽包ID，可实现带宽共享。
+     * ID of the bound shared bandwidth package, enabling bandwidth sharing.
      */
     public readonly bandwidthPackageId!: pulumi.Output<string>;
     /**
-     * ALB 实例的服务状态。Normal：正常；FinancialLocked：因欠费被锁定。
+     * Service status of the ALB instance. Normal: normal; FinancialLocked: locked due to overdue payment.
      */
     public /*out*/ readonly businessStatus!: pulumi.Output<string>;
     /**
-     * ALB 实例的创建时间。
+     * Creation time of the ALB instance.
      */
     public /*out*/ readonly createTime!: pulumi.Output<string>;
     /**
-     * 删除保护开关。on：开启；off：关闭。
+     * Delete protection switch. on: enabled; off: disabled.
      */
     public readonly deleteProtection!: pulumi.Output<string>;
     /**
-     * ALB 实例的预期回收时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+     * Expected reclamation time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
      */
     public /*out*/ readonly deletedTime!: pulumi.Output<string>;
     /**
-     * ALB 实例的描述。
+     * Description of the ALB instance.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * DNS域名。
+     * DNS domain name.
      */
     public /*out*/ readonly dnsName!: pulumi.Output<string>;
     /**
-     * 公网IP的计费配置，仅适用于公网实例。
+     * Billing configuration for public IP, only applicable to public instances.
      */
     public readonly eipBillingConfig!: pulumi.Output<outputs.alb.LoadBalancerEipBillingConfig>;
     /**
-     * 全球加速器配置，用于提升跨地域访问速度。
+     * Global accelerator configuration, used to improve cross-region access speed.
      */
     public readonly globalAccelerator!: pulumi.Output<outputs.alb.LoadBalancerGlobalAccelerator>;
     /**
-     * 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
      */
     public readonly ipv6BandwidthPackageId!: pulumi.Output<string>;
     /**
-     * IPv6公网IP的计費配置，仅适用于公网实例。
+     * Billing configuration for IPv6 public IP, only applicable to public instances.
      */
     public readonly ipv6EipBillingConfig!: pulumi.Output<outputs.alb.LoadBalancerIpv6EipBillingConfig>;
     /**
-     * ALB实例计费类型，当前仅支持按量计费（取值为1）。
+     * ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
      */
     public readonly loadBalancerBillingType!: pulumi.Output<number>;
     /**
-     * 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
+     * Version of the application load balancer. Basic: Basic version; Standard: Standard version.
      */
     public readonly loadBalancerEdition!: pulumi.Output<string>;
     /**
-     * ALB 实例 ID。
+     * ALB instance ID.
      */
     public /*out*/ readonly loadBalancerId!: pulumi.Output<string>;
     /**
-     * ALB 实例的名称。
+     * Name of the ALB instance.
      */
     public readonly loadBalancerName!: pulumi.Output<string>;
     /**
-     * ALB 实例被冻结的原因，例如 Financial（欠费）或 Security（安全原因）。仅在实例被锁定时返回。
+     * Reason for ALB instance freeze, such as Financial (arrears) or Security (security reasons). Returned only when the instance is locked.
      */
     public /*out*/ readonly lockReason!: pulumi.Output<string>;
     /**
-     * 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
+     * Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
      */
     public readonly modificationProtectionReason!: pulumi.Output<string>;
     /**
-     * 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
+     * Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
      */
     public readonly modificationProtectionStatus!: pulumi.Output<string>;
     /**
-     * ALB 实例的冻结时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+     * Freeze time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
      */
     public /*out*/ readonly overdueTime!: pulumi.Output<string>;
     /**
-     * 实例所属项目名称。
+     * Name of the project to which the instance belongs.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * ALB supports the Proxy Protocol and records the client's real IP.
      */
     public readonly proxyProtocolEnabled!: pulumi.Output<string>;
     /**
-     * ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
+     * ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.alb.LoadBalancerTag[]>;
     /**
-     * ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
+     * Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      */
     public readonly type!: pulumi.Output<string>;
     /**
-     * ALB 实例的最后更新时间。
+     * Last update time of the ALB instance.
      */
     public /*out*/ readonly updateTime!: pulumi.Output<string>;
     /**
-     * 负载均衡实例所属的私有网络（VPC）的ID。
+     * ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
      */
     public readonly vpcId!: pulumi.Output<string>;
     /**
-     * ALB 实例绑定的 WAF 安全防护实例 ID。
+     * ID of the WAF security protection instance bound to the ALB instance.
      */
     public readonly wafInstanceId!: pulumi.Output<string>;
     /**
-     * WAF防护的域名，用于精确匹配防护规则。
+     * Domain name protected by WAF, used for precise rule matching.
      */
     public readonly wafProtectedDomain!: pulumi.Output<string>;
     /**
-     * WAF 安全防护开关。on：开启；off：关闭。
+     * WAF security protection switch. on: enabled; off: disabled.
      */
     public readonly wafProtectionEnabled!: pulumi.Output<string>;
     public readonly zoneMappings!: pulumi.Output<outputs.alb.LoadBalancerZoneMapping[]>;
@@ -256,120 +256,120 @@ export class LoadBalancer extends pulumi.CustomResource {
  */
 export interface LoadBalancerState {
     /**
-     * ALB 实例的 IP 类型。IPv4：IPv4 类型；DualStack：IPv4&IPv6 双栈类型。
+     * IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 & IPv6 dual stack type.
      */
     addressIpVersion?: pulumi.Input<string>;
     /**
-     * 绑定的共享带宽包ID，可实现带宽共享。
+     * ID of the bound shared bandwidth package, enabling bandwidth sharing.
      */
     bandwidthPackageId?: pulumi.Input<string>;
     /**
-     * ALB 实例的服务状态。Normal：正常；FinancialLocked：因欠费被锁定。
+     * Service status of the ALB instance. Normal: normal; FinancialLocked: locked due to overdue payment.
      */
     businessStatus?: pulumi.Input<string>;
     /**
-     * ALB 实例的创建时间。
+     * Creation time of the ALB instance.
      */
     createTime?: pulumi.Input<string>;
     /**
-     * 删除保护开关。on：开启；off：关闭。
+     * Delete protection switch. on: enabled; off: disabled.
      */
     deleteProtection?: pulumi.Input<string>;
     /**
-     * ALB 实例的预期回收时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+     * Expected reclamation time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
      */
     deletedTime?: pulumi.Input<string>;
     /**
-     * ALB 实例的描述。
+     * Description of the ALB instance.
      */
     description?: pulumi.Input<string>;
     /**
-     * DNS域名。
+     * DNS domain name.
      */
     dnsName?: pulumi.Input<string>;
     /**
-     * 公网IP的计费配置，仅适用于公网实例。
+     * Billing configuration for public IP, only applicable to public instances.
      */
     eipBillingConfig?: pulumi.Input<inputs.alb.LoadBalancerEipBillingConfig>;
     /**
-     * 全球加速器配置，用于提升跨地域访问速度。
+     * Global accelerator configuration, used to improve cross-region access speed.
      */
     globalAccelerator?: pulumi.Input<inputs.alb.LoadBalancerGlobalAccelerator>;
     /**
-     * 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
      */
     ipv6BandwidthPackageId?: pulumi.Input<string>;
     /**
-     * IPv6公网IP的计費配置，仅适用于公网实例。
+     * Billing configuration for IPv6 public IP, only applicable to public instances.
      */
     ipv6EipBillingConfig?: pulumi.Input<inputs.alb.LoadBalancerIpv6EipBillingConfig>;
     /**
-     * ALB实例计费类型，当前仅支持按量计费（取值为1）。
+     * ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
      */
     loadBalancerBillingType?: pulumi.Input<number>;
     /**
-     * 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
+     * Version of the application load balancer. Basic: Basic version; Standard: Standard version.
      */
     loadBalancerEdition?: pulumi.Input<string>;
     /**
-     * ALB 实例 ID。
+     * ALB instance ID.
      */
     loadBalancerId?: pulumi.Input<string>;
     /**
-     * ALB 实例的名称。
+     * Name of the ALB instance.
      */
     loadBalancerName?: pulumi.Input<string>;
     /**
-     * ALB 实例被冻结的原因，例如 Financial（欠费）或 Security（安全原因）。仅在实例被锁定时返回。
+     * Reason for ALB instance freeze, such as Financial (arrears) or Security (security reasons). Returned only when the instance is locked.
      */
     lockReason?: pulumi.Input<string>;
     /**
-     * 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
+     * Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
      */
     modificationProtectionReason?: pulumi.Input<string>;
     /**
-     * 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
+     * Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
      */
     modificationProtectionStatus?: pulumi.Input<string>;
     /**
-     * ALB 实例的冻结时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+     * Freeze time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
      */
     overdueTime?: pulumi.Input<string>;
     /**
-     * 实例所属项目名称。
+     * Name of the project to which the instance belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * ALB supports the Proxy Protocol and records the client's real IP.
      */
     proxyProtocolEnabled?: pulumi.Input<string>;
     /**
-     * ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
+     * ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.alb.LoadBalancerTag>[]>;
     /**
-     * ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
+     * Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      */
     type?: pulumi.Input<string>;
     /**
-     * ALB 实例的最后更新时间。
+     * Last update time of the ALB instance.
      */
     updateTime?: pulumi.Input<string>;
     /**
-     * 负载均衡实例所属的私有网络（VPC）的ID。
+     * ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * ALB 实例绑定的 WAF 安全防护实例 ID。
+     * ID of the WAF security protection instance bound to the ALB instance.
      */
     wafInstanceId?: pulumi.Input<string>;
     /**
-     * WAF防护的域名，用于精确匹配防护规则。
+     * Domain name protected by WAF, used for precise rule matching.
      */
     wafProtectedDomain?: pulumi.Input<string>;
     /**
-     * WAF 安全防护开关。on：开启；off：关闭。
+     * WAF security protection switch. on: enabled; off: disabled.
      */
     wafProtectionEnabled?: pulumi.Input<string>;
     zoneMappings?: pulumi.Input<pulumi.Input<inputs.alb.LoadBalancerZoneMapping>[]>;
@@ -380,84 +380,84 @@ export interface LoadBalancerState {
  */
 export interface LoadBalancerArgs {
     /**
-     * ALB 实例的 IP 类型。IPv4：IPv4 类型；DualStack：IPv4&IPv6 双栈类型。
+     * IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 & IPv6 dual stack type.
      */
     addressIpVersion?: pulumi.Input<string>;
     /**
-     * 绑定的共享带宽包ID，可实现带宽共享。
+     * ID of the bound shared bandwidth package, enabling bandwidth sharing.
      */
     bandwidthPackageId?: pulumi.Input<string>;
     /**
-     * 删除保护开关。on：开启；off：关闭。
+     * Delete protection switch. on: enabled; off: disabled.
      */
     deleteProtection?: pulumi.Input<string>;
     /**
-     * ALB 实例的描述。
+     * Description of the ALB instance.
      */
     description?: pulumi.Input<string>;
     /**
-     * 公网IP的计费配置，仅适用于公网实例。
+     * Billing configuration for public IP, only applicable to public instances.
      */
     eipBillingConfig?: pulumi.Input<inputs.alb.LoadBalancerEipBillingConfig>;
     /**
-     * 全球加速器配置，用于提升跨地域访问速度。
+     * Global accelerator configuration, used to improve cross-region access speed.
      */
     globalAccelerator?: pulumi.Input<inputs.alb.LoadBalancerGlobalAccelerator>;
     /**
-     * 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
      */
     ipv6BandwidthPackageId?: pulumi.Input<string>;
     /**
-     * IPv6公网IP的计費配置，仅适用于公网实例。
+     * Billing configuration for IPv6 public IP, only applicable to public instances.
      */
     ipv6EipBillingConfig?: pulumi.Input<inputs.alb.LoadBalancerIpv6EipBillingConfig>;
     /**
-     * ALB实例计费类型，当前仅支持按量计费（取值为1）。
+     * ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
      */
     loadBalancerBillingType?: pulumi.Input<number>;
     /**
-     * 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
+     * Version of the application load balancer. Basic: Basic version; Standard: Standard version.
      */
     loadBalancerEdition?: pulumi.Input<string>;
     /**
-     * ALB 实例的名称。
+     * Name of the ALB instance.
      */
     loadBalancerName?: pulumi.Input<string>;
     /**
-     * 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
+     * Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
      */
     modificationProtectionReason?: pulumi.Input<string>;
     /**
-     * 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
+     * Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
      */
     modificationProtectionStatus?: pulumi.Input<string>;
     /**
-     * 实例所属项目名称。
+     * Name of the project to which the instance belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * ALB supports the Proxy Protocol and records the client's real IP.
      */
     proxyProtocolEnabled?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.alb.LoadBalancerTag>[]>;
     /**
-     * ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
+     * Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      */
     type: pulumi.Input<string>;
     /**
-     * 负载均衡实例所属的私有网络（VPC）的ID。
+     * ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
      */
     vpcId: pulumi.Input<string>;
     /**
-     * ALB 实例绑定的 WAF 安全防护实例 ID。
+     * ID of the WAF security protection instance bound to the ALB instance.
      */
     wafInstanceId?: pulumi.Input<string>;
     /**
-     * WAF防护的域名，用于精确匹配防护规则。
+     * Domain name protected by WAF, used for precise rule matching.
      */
     wafProtectedDomain?: pulumi.Input<string>;
     /**
-     * WAF 安全防护开关。on：开启；off：关闭。
+     * WAF security protection switch. on: enabled; off: disabled.
      */
     wafProtectionEnabled?: pulumi.Input<string>;
     zoneMappings?: pulumi.Input<pulumi.Input<inputs.alb.LoadBalancerZoneMapping>[]>;

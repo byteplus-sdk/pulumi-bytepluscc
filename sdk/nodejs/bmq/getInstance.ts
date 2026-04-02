@@ -31,39 +31,39 @@ export interface GetInstanceArgs {
  */
 export interface GetInstanceResult {
     /**
-     * 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+     * Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
      */
     readonly autoRenew: string;
     /**
-     * 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+     * Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
      */
     readonly billingPeriod: string;
     /**
-     * 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+     * Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
      */
     readonly billingType: string;
     /**
-     * 实例的创建时间。
+     * Instance creation time
      */
     readonly createdTime: string;
     /**
-     * 实例的描述语句。
+     * Instance description statement
      */
     readonly description: string;
     /**
-     * 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+     * Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
      */
     readonly eipId: string;
     /**
-     * 实例所有接入点响应数据。
+     * Response data for all instance endpoints
      */
     readonly endpoints: outputs.bmq.GetInstanceEndpoints;
     /**
-     * 实例过期时间。
+     * Instance expiration time
      */
     readonly expirationTime: string;
     /**
-     * 实例消费组数量上限。
+     * Maximum number of consumer groups per instance
      */
     readonly groupLimit: number;
     /**
@@ -71,67 +71,67 @@ export interface GetInstanceResult {
      */
     readonly id: string;
     /**
-     * 实例ID。
+     * Instance ID
      */
     readonly instanceId: string;
     /**
-     * 实例下所有 Topic 的消息保留时长，单位为小时。
+     * Message retention period for all topics under the instance, in hours
      */
     readonly messageRetention: number;
     /**
-     * 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+     * Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      */
     readonly name: string;
     /**
-     * 实例分区数量上限。
+     * Maximum number of partitions per instance
      */
     readonly partitionLimit: number;
     /**
-     * 实例所属项目名称。
+     * Project name to which the instance belongs
      */
     readonly projectName: string;
     /**
-     * 实例资源标签列表。
+     * Instance resource tag list
      */
     readonly resourceTags: outputs.bmq.GetInstanceResourceTag[];
     /**
-     * 实例资源统计响应数据。
+     * Instance resource statistics response data
      */
     readonly resources: outputs.bmq.GetInstanceResources;
     /**
-     * 实例使用安全组列表。
+     * List of security groups used by the instance
      */
     readonly securityGroupIdLists: string[];
     /**
-     * 实例规格。
+     * Instance specification
      */
     readonly specification: string;
     /**
-     * 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+     * Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
      */
     readonly status: string;
     /**
-     * 实例使用的子网列表。
+     * List of subnets used by the instance
      */
     readonly subnetIdLists: string[];
     /**
-     * 实例资源标签列表。
+     * Instance resource tag list
      */
     readonly tags: outputs.bmq.GetInstanceTag[];
     /**
-     * 包年包月类型实例的购买时长，单位为月。
+     * Purchase duration for subscription instances, in months
      */
     readonly times: number;
     /**
-     * 实例Topic数量上限。
+     * Maximum number of topics per instance
      */
     readonly topicLimit: number;
     /**
-     * 实例所在VPC ID。
+     * VPC ID where the instance is located
      */
     readonly vpcId: string;
     /**
-     * 实例所在可用区列表。
+     * List of availability zones where the instance is located
      */
     readonly zoneIdLists: string[];
 }

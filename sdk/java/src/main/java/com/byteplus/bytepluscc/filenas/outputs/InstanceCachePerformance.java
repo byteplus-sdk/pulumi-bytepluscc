@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceCachePerformance {
     /**
-     * @return 预配置带宽，用于增加文件系统带宽。
+     * @return Provisioned bandwidth, used to increase file system bandwidth
      * 
      */
     private @Nullable Integer cacheBandwidth;
 
     private InstanceCachePerformance() {}
     /**
-     * @return 预配置带宽，用于增加文件系统带宽。
+     * @return Provisioned bandwidth, used to increase file system bandwidth
      * 
      */
     public Optional<Integer> cacheBandwidth() {

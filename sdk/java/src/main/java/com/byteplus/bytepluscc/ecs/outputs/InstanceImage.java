@@ -14,50 +14,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceImage {
     /**
-     * @return 实例的镜像ID。
+     * @return Instance image ID.
      * 
      */
     private String imageId;
     /**
-     * @return 实例的镜像发布版本。
+     * @return The image release version of the instance.
      * 
      */
     private @Nullable String imageReleaseVersion;
     /**
-     * @return 实例是否保留镜像凭证。
+     * @return Whether the instance retains image credentials
      * 
      */
     private @Nullable Boolean keepImageCredential;
     /**
-     * @return 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+     * @return Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
      * 
      */
     private @Nullable String securityEnhancementStrategy;
 
     private InstanceImage() {}
     /**
-     * @return 实例的镜像ID。
+     * @return Instance image ID.
      * 
      */
     public String imageId() {
         return this.imageId;
     }
     /**
-     * @return 实例的镜像发布版本。
+     * @return The image release version of the instance.
      * 
      */
     public Optional<String> imageReleaseVersion() {
         return Optional.ofNullable(this.imageReleaseVersion);
     }
     /**
-     * @return 实例是否保留镜像凭证。
+     * @return Whether the instance retains image credentials
      * 
      */
     public Optional<Boolean> keepImageCredential() {
         return Optional.ofNullable(this.keepImageCredential);
     }
     /**
-     * @return 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+     * @return Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
      * 
      */
     public Optional<String> securityEnhancementStrategy() {

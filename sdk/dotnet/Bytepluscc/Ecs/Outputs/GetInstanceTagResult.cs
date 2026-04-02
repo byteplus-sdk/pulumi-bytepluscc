@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class GetInstanceTagResult
     {
         /// <summary>
-        /// 实例的键。
+        /// Instance key.
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// 实例的值。
+        /// Instance value.
         /// </summary>
         public readonly string Value;
 

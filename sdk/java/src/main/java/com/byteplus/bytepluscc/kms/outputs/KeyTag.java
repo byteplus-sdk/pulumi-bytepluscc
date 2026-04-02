@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class KeyTag {
     /**
-     * @return KMS密钥的标签键
+     * @return KMS key label key.
      * 
      */
     private @Nullable String key;
     /**
-     * @return KMS密钥的标签值
+     * @return KMS key label value.
      * 
      */
     private @Nullable String value;
 
     private KeyTag() {}
     /**
-     * @return KMS密钥的标签键
+     * @return KMS key label key.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return KMS密钥的标签值
+     * @return KMS key label value.
      * 
      */
     public Optional<String> value() {

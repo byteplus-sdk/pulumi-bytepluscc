@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// IPv6网关服务的运行载体，创建IPv6网关实例是进行IPv6公网配置的前提。
+// Carrier for the IPv6 gateway service. Creating an IPv6 gateway instance is required for IPv6 public network configuration
 //
 // ## Example Usage
 //
@@ -57,24 +57,24 @@ import (
 type Ipv6Gateway struct {
 	pulumi.CustomResourceState
 
-	// IPv6网关实例的创建时间。
+	// Creation time of the IPv6 gateway instance
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
 	Description pulumi.StringOutput `pulumi:"description"`
-	// IPv6网关实例的ID。
+	// IPv6 gateway instance ID
 	Ipv6GatewayId pulumi.StringOutput `pulumi:"ipv6GatewayId"`
-	// IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+	// Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
 	Name pulumi.StringOutput `pulumi:"name"`
-	// IPv6网关所属项目的名称。
+	// Name of the project to which the IPv6 gateway belongs
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// IPv6网关实例关联的路由表ID。
+	// Route table ID associated with the IPv6 gateway instance
 	RouteTableId pulumi.StringOutput `pulumi:"routeTableId"`
-	// IPv6网关实例的运行状态。取值如下：Creating：创建中。Deleting：删除中。Available：可用。
+	// Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
 	Status pulumi.StringOutput       `pulumi:"status"`
 	Tags   Ipv6GatewayTagArrayOutput `pulumi:"tags"`
-	// IPv6网关实例的修改时间。
+	// Modification time of the IPv6 gateway instance
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
-	// 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+	// VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
 	VpcId pulumi.StringOutput `pulumi:"vpcId"`
 }
 
@@ -111,46 +111,46 @@ func GetIpv6Gateway(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Ipv6Gateway resources.
 type ipv6GatewayState struct {
-	// IPv6网关实例的创建时间。
+	// Creation time of the IPv6 gateway instance
 	CreatedTime *string `pulumi:"createdTime"`
-	// IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
 	Description *string `pulumi:"description"`
-	// IPv6网关实例的ID。
+	// IPv6 gateway instance ID
 	Ipv6GatewayId *string `pulumi:"ipv6GatewayId"`
-	// IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+	// Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
 	Name *string `pulumi:"name"`
-	// IPv6网关所属项目的名称。
+	// Name of the project to which the IPv6 gateway belongs
 	ProjectName *string `pulumi:"projectName"`
-	// IPv6网关实例关联的路由表ID。
+	// Route table ID associated with the IPv6 gateway instance
 	RouteTableId *string `pulumi:"routeTableId"`
-	// IPv6网关实例的运行状态。取值如下：Creating：创建中。Deleting：删除中。Available：可用。
+	// Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
 	Status *string          `pulumi:"status"`
 	Tags   []Ipv6GatewayTag `pulumi:"tags"`
-	// IPv6网关实例的修改时间。
+	// Modification time of the IPv6 gateway instance
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+	// VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
 	VpcId *string `pulumi:"vpcId"`
 }
 
 type Ipv6GatewayState struct {
-	// IPv6网关实例的创建时间。
+	// Creation time of the IPv6 gateway instance
 	CreatedTime pulumi.StringPtrInput
-	// IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
 	Description pulumi.StringPtrInput
-	// IPv6网关实例的ID。
+	// IPv6 gateway instance ID
 	Ipv6GatewayId pulumi.StringPtrInput
-	// IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+	// Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
 	Name pulumi.StringPtrInput
-	// IPv6网关所属项目的名称。
+	// Name of the project to which the IPv6 gateway belongs
 	ProjectName pulumi.StringPtrInput
-	// IPv6网关实例关联的路由表ID。
+	// Route table ID associated with the IPv6 gateway instance
 	RouteTableId pulumi.StringPtrInput
-	// IPv6网关实例的运行状态。取值如下：Creating：创建中。Deleting：删除中。Available：可用。
+	// Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
 	Status pulumi.StringPtrInput
 	Tags   Ipv6GatewayTagArrayInput
-	// IPv6网关实例的修改时间。
+	// Modification time of the IPv6 gateway instance
 	UpdatedTime pulumi.StringPtrInput
-	// 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+	// VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
 	VpcId pulumi.StringPtrInput
 }
 
@@ -159,27 +159,27 @@ func (Ipv6GatewayState) ElementType() reflect.Type {
 }
 
 type ipv6GatewayArgs struct {
-	// IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
 	Description *string `pulumi:"description"`
-	// IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+	// Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
 	Name *string `pulumi:"name"`
-	// IPv6网关所属项目的名称。
+	// Name of the project to which the IPv6 gateway belongs
 	ProjectName *string          `pulumi:"projectName"`
 	Tags        []Ipv6GatewayTag `pulumi:"tags"`
-	// 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+	// VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
 	VpcId string `pulumi:"vpcId"`
 }
 
 // The set of arguments for constructing a Ipv6Gateway resource.
 type Ipv6GatewayArgs struct {
-	// IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
 	Description pulumi.StringPtrInput
-	// IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+	// Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
 	Name pulumi.StringPtrInput
-	// IPv6网关所属项目的名称。
+	// Name of the project to which the IPv6 gateway belongs
 	ProjectName pulumi.StringPtrInput
 	Tags        Ipv6GatewayTagArrayInput
-	// 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+	// VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
 	VpcId pulumi.StringInput
 }
 
@@ -270,37 +270,37 @@ func (o Ipv6GatewayOutput) ToIpv6GatewayOutputWithContext(ctx context.Context) I
 	return o
 }
 
-// IPv6网关实例的创建时间。
+// Creation time of the IPv6 gateway instance
 func (o Ipv6GatewayOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6Gateway) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+// Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
 func (o Ipv6GatewayOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6Gateway) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// IPv6网关实例的ID。
+// IPv6 gateway instance ID
 func (o Ipv6GatewayOutput) Ipv6GatewayId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6Gateway) pulumi.StringOutput { return v.Ipv6GatewayId }).(pulumi.StringOutput)
 }
 
-// IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+// Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
 func (o Ipv6GatewayOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6Gateway) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// IPv6网关所属项目的名称。
+// Name of the project to which the IPv6 gateway belongs
 func (o Ipv6GatewayOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6Gateway) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// IPv6网关实例关联的路由表ID。
+// Route table ID associated with the IPv6 gateway instance
 func (o Ipv6GatewayOutput) RouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6Gateway) pulumi.StringOutput { return v.RouteTableId }).(pulumi.StringOutput)
 }
 
-// IPv6网关实例的运行状态。取值如下：Creating：创建中。Deleting：删除中。Available：可用。
+// Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
 func (o Ipv6GatewayOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6Gateway) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -309,12 +309,12 @@ func (o Ipv6GatewayOutput) Tags() Ipv6GatewayTagArrayOutput {
 	return o.ApplyT(func(v *Ipv6Gateway) Ipv6GatewayTagArrayOutput { return v.Tags }).(Ipv6GatewayTagArrayOutput)
 }
 
-// IPv6网关实例的修改时间。
+// Modification time of the IPv6 gateway instance
 func (o Ipv6GatewayOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6Gateway) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+// VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
 func (o Ipv6GatewayOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6Gateway) pulumi.StringOutput { return v.VpcId }).(pulumi.StringOutput)
 }

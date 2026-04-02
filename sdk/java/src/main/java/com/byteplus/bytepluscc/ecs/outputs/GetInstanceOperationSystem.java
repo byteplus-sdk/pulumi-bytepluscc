@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceOperationSystem {
     /**
-     * @return 实例的操作系统名称。
+     * @return Instance operating system name.
      * 
      */
     private String name;
     /**
-     * @return 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+     * @return Operating system type of the instance. Linux: Linux system. Windows: Windows system.
      * 
      */
     private String type;
 
     private GetInstanceOperationSystem() {}
     /**
-     * @return 实例的操作系统名称。
+     * @return Instance operating system name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+     * @return Operating system type of the instance. Linux: Linux system. Windows: Windows system.
      * 
      */
     public String type() {

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class NodePoolKubernetesConfigKubeletConfigSystemReservedArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 资源名称，取值为 cpu 或 memory。
+        /// Resource name. Valid values: cpu or memory.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+        /// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
         /// </summary>
         [Input("quantity")]
         public Input<string>? Quantity { get; set; }

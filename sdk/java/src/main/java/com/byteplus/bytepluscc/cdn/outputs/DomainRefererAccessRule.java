@@ -16,74 +16,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainRefererAccessRule {
     /**
-     * @return 表示用户请求头的 Referer 头部为空（&#34;&#34;）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+     * @return Specifies whether the content delivery network accepts a request when the Referer header in the user&#39;s request is empty (&#34;&#34;). This parameter has the following values: true: accepts the request; false: rejects the request. The default value is false.
      * 
      */
     private @Nullable Boolean allowEmpty;
     /**
-     * @return 表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+     * @return Indicates a list of Referers. The input requirements for this parameter are consistent with those for Referers under the CommonType of ReferersType. We recommend using ReferersType to specify the Referer list. If you specify SharedConfig, you cannot specify this parameter.
      * 
      */
     private @Nullable List<String> referers;
     /**
-     * @return 表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+     * @return Indicates a ReferersType object. It contains a CommonType object and a RegularType object, representing a standard Referer list and a Referer regular expression list, respectively. If you specify SharedConfig, you cannot specify this parameter.
      * 
      */
     private @Nullable DomainRefererAccessRuleReferersType referersType;
     /**
-     * @return 表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+     * @return Indicates the type of Referer list. This parameter is required when Switch is true. This parameter has the following values: allow: indicates Allowlist. deny: indicates Denylist.
      * 
      */
     private @Nullable String ruleType;
     /**
-     * @return 表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+     * @return Represents a global configuration. If you specify this parameter, you cannot specify Referers or ReferersType.
      * 
      */
     private @Nullable DomainRefererAccessRuleSharedConfig sharedConfig;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
      * 
      */
     private @Nullable Boolean switch_;
 
     private DomainRefererAccessRule() {}
     /**
-     * @return 表示用户请求头的 Referer 头部为空（&#34;&#34;）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+     * @return Specifies whether the content delivery network accepts a request when the Referer header in the user&#39;s request is empty (&#34;&#34;). This parameter has the following values: true: accepts the request; false: rejects the request. The default value is false.
      * 
      */
     public Optional<Boolean> allowEmpty() {
         return Optional.ofNullable(this.allowEmpty);
     }
     /**
-     * @return 表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+     * @return Indicates a list of Referers. The input requirements for this parameter are consistent with those for Referers under the CommonType of ReferersType. We recommend using ReferersType to specify the Referer list. If you specify SharedConfig, you cannot specify this parameter.
      * 
      */
     public List<String> referers() {
         return this.referers == null ? List.of() : this.referers;
     }
     /**
-     * @return 表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+     * @return Indicates a ReferersType object. It contains a CommonType object and a RegularType object, representing a standard Referer list and a Referer regular expression list, respectively. If you specify SharedConfig, you cannot specify this parameter.
      * 
      */
     public Optional<DomainRefererAccessRuleReferersType> referersType() {
         return Optional.ofNullable(this.referersType);
     }
     /**
-     * @return 表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+     * @return Indicates the type of Referer list. This parameter is required when Switch is true. This parameter has the following values: allow: indicates Allowlist. deny: indicates Denylist.
      * 
      */
     public Optional<String> ruleType() {
         return Optional.ofNullable(this.ruleType);
     }
     /**
-     * @return 表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+     * @return Represents a global configuration. If you specify this parameter, you cannot specify Referers or ReferersType.
      * 
      */
     public Optional<DomainRefererAccessRuleSharedConfig> sharedConfig() {
         return Optional.ofNullable(this.sharedConfig);
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
      * 
      */
     public Optional<Boolean> switch_() {

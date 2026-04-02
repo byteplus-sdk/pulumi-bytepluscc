@@ -16,14 +16,14 @@ public final class GroupAttachedPolicyPolicyScopeArgs extends com.pulumi.resourc
     public static final GroupAttachedPolicyPolicyScopeArgs Empty = new GroupAttachedPolicyPolicyScopeArgs();
 
     /**
-     * 项目授权时间。
+     * Project authorization time.
      * 
      */
     @Import(name="attachTime")
     private @Nullable Output<String> attachTime;
 
     /**
-     * @return 项目授权时间。
+     * @return Project authorization time.
      * 
      */
     public Optional<Output<String>> attachTime() {
@@ -31,14 +31,14 @@ public final class GroupAttachedPolicyPolicyScopeArgs extends com.pulumi.resourc
     }
 
     /**
-     * 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+     * Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
      * 
      */
     @Import(name="policyScopeType")
     private @Nullable Output<String> policyScopeType;
 
     /**
-     * @return 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+     * @return Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
      * 
      */
     public Optional<Output<String>> policyScopeType() {
@@ -46,14 +46,14 @@ public final class GroupAttachedPolicyPolicyScopeArgs extends com.pulumi.resourc
     }
 
     /**
-     * 按项目授权时的项目显示名。
+     * Project display name for project-based authorization.
      * 
      */
     @Import(name="projectDisplayName")
     private @Nullable Output<String> projectDisplayName;
 
     /**
-     * @return 按项目授权时的项目显示名。
+     * @return Project display name for project-based authorization.
      * 
      */
     public Optional<Output<String>> projectDisplayName() {
@@ -61,14 +61,14 @@ public final class GroupAttachedPolicyPolicyScopeArgs extends com.pulumi.resourc
     }
 
     /**
-     * 按项目授权时的项目名。
+     * Project name for project-based authorization.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 按项目授权时的项目名。
+     * @return Project name for project-based authorization.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -103,7 +103,7 @@ public final class GroupAttachedPolicyPolicyScopeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param attachTime 项目授权时间。
+         * @param attachTime Project authorization time.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class GroupAttachedPolicyPolicyScopeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param attachTime 项目授权时间。
+         * @param attachTime Project authorization time.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class GroupAttachedPolicyPolicyScopeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param policyScopeType 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+         * @param policyScopeType Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class GroupAttachedPolicyPolicyScopeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param policyScopeType 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+         * @param policyScopeType Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class GroupAttachedPolicyPolicyScopeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param projectDisplayName 按项目授权时的项目显示名。
+         * @param projectDisplayName Project display name for project-based authorization.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class GroupAttachedPolicyPolicyScopeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param projectDisplayName 按项目授权时的项目显示名。
+         * @param projectDisplayName Project display name for project-based authorization.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class GroupAttachedPolicyPolicyScopeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param projectName 按项目授权时的项目名。
+         * @param projectName Project name for project-based authorization.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class GroupAttachedPolicyPolicyScopeArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param projectName 按项目授权时的项目名。
+         * @param projectName Project name for project-based authorization.
          * 
          * @return builder
          * 

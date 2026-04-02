@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Emr
 {
     /// <summary>
-    /// E-MapReduce（EMR）集群中的用户分为普通用户和系统用户两类。其中:普通用户是您在用户管理模块手动通过导入、创建操作向集群中添加的用户；系统用户则是集群在初始化过程中为每个组件内置的管理用户，不支持编辑和删除操作。
+    /// Users in an E-MapReduce (EMR) cluster are divided into regular users and system users. Regular users are added to the cluster manually through import or creation in the user management module. System users are built-in management users for each component created during cluster initialization and cannot be edited or deleted.
     /// 
     /// ## Example Usage
     /// 
@@ -49,55 +49,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     public partial class ClusterUser : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         [Output("clusterId")]
         public Output<string> ClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<int> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 创建者用户名。
+        /// Creator username.
         /// </summary>
         [Output("creatorName")]
         public Output<string> CreatorName { get; private set; } = null!;
 
         /// <summary>
-        /// 用户组描述。
+        /// User group description.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 旧的用户的登录密码。修改密码时必填。
+        /// Old user login password. Required when changing password.
         /// </summary>
         [Output("oldPassword")]
         public Output<string> OldPassword { get; private set; } = null!;
 
         /// <summary>
-        /// 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+        /// New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
         /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Last updated time.
         /// </summary>
         [Output("updatedTime")]
         public Output<int> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 所属用户组名称。
+        /// User group name.
         /// </summary>
         [Output("userGroupNames")]
         public Output<ImmutableArray<string>> UserGroupNames { get; private set; } = null!;
 
         /// <summary>
-        /// 集群用户名。仅支持小写字母。
+        /// Cluster username. Only lowercase letters are supported.
         /// </summary>
         [Output("userName")]
         public Output<string> UserName { get; private set; } = null!;
@@ -150,25 +150,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     public sealed class ClusterUserArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         [Input("clusterId", required: true)]
         public Input<string> ClusterId { get; set; } = null!;
 
         /// <summary>
-        /// 用户组描述。
+        /// User group description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 旧的用户的登录密码。修改密码时必填。
+        /// Old user login password. Required when changing password.
         /// </summary>
         [Input("oldPassword")]
         public Input<string>? OldPassword { get; set; }
 
         /// <summary>
-        /// 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+        /// New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
         /// </summary>
         [Input("password", required: true)]
         public Input<string> Password { get; set; } = null!;
@@ -177,7 +177,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         private InputList<string>? _userGroupNames;
 
         /// <summary>
-        /// 所属用户组名称。
+        /// User group name.
         /// </summary>
         public InputList<string> UserGroupNames
         {
@@ -186,7 +186,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 集群用户名。仅支持小写字母。
+        /// Cluster username. Only lowercase letters are supported.
         /// </summary>
         [Input("userName", required: true)]
         public Input<string> UserName { get; set; } = null!;
@@ -200,43 +200,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     public sealed class ClusterUserState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<int>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 创建者用户名。
+        /// Creator username.
         /// </summary>
         [Input("creatorName")]
         public Input<string>? CreatorName { get; set; }
 
         /// <summary>
-        /// 用户组描述。
+        /// User group description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 旧的用户的登录密码。修改密码时必填。
+        /// Old user login password. Required when changing password.
         /// </summary>
         [Input("oldPassword")]
         public Input<string>? OldPassword { get; set; }
 
         /// <summary>
-        /// 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+        /// New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
         /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Last updated time.
         /// </summary>
         [Input("updatedTime")]
         public Input<int>? UpdatedTime { get; set; }
@@ -245,7 +245,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         private InputList<string>? _userGroupNames;
 
         /// <summary>
-        /// 所属用户组名称。
+        /// User group name.
         /// </summary>
         public InputList<string> UserGroupNames
         {
@@ -254,7 +254,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 集群用户名。仅支持小写字母。
+        /// Cluster username. Only lowercase letters are supported.
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }

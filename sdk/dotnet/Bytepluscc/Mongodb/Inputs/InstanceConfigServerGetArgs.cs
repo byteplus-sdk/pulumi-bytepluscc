@@ -14,49 +14,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb.Inputs
     public sealed class InstanceConfigServerGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// ConfigServer 的节点 ID。
+        /// ConfigServer node ID
         /// </summary>
         [Input("configServerNodeId")]
         public Input<string>? ConfigServerNodeId { get; set; }
 
         /// <summary>
-        /// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+        /// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
         /// </summary>
         [Input("nodeRole")]
         public Input<string>? NodeRole { get; set; }
 
         /// <summary>
-        /// 节点状态。
+        /// Node status.
         /// </summary>
         [Input("nodeStatus")]
         public Input<string>? NodeStatus { get; set; }
 
         /// <summary>
-        /// 总内存。单位：GiB。
+        /// Total memory. Unit: GiB.
         /// </summary>
         [Input("totalMemoryGb")]
         public Input<double>? TotalMemoryGb { get; set; }
 
         /// <summary>
-        /// 总核数。
+        /// Total cores.
         /// </summary>
         [Input("totalvCpu")]
         public Input<double>? TotalvCpu { get; set; }
 
         /// <summary>
-        /// 已用内存。单位：GiB。
+        /// Used memory. Unit: GiB.
         /// </summary>
         [Input("usedMemoryGb")]
         public Input<double>? UsedMemoryGb { get; set; }
 
         /// <summary>
-        /// 已用核数。
+        /// Used cores.
         /// </summary>
         [Input("usedvCpu")]
         public Input<double>? UsedvCpu { get; set; }
 
         /// <summary>
-        /// 当前节点所属的可用区 ID。
+        /// Availability zone ID of the current node.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
     public sealed class RolePolicy
     {
         /// <summary>
-        /// 策略名。
+        /// Policy name
         /// </summary>
         public readonly string? PolicyName;
         /// <summary>
-        /// 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+        /// Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
         /// </summary>
         public readonly string? PolicyType;
 

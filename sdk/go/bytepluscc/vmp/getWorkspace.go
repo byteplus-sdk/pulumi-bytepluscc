@@ -30,43 +30,61 @@ type LookupWorkspaceArgs struct {
 
 // A collection of values returned by getWorkspace.
 type LookupWorkspaceResult struct {
-	// 工作区创建时间，RFC3339 格式。
+	// Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+	AuthType string `pulumi:"authType"`
+	// Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+	BearerToken string `pulumi:"bearerToken"`
+	// Workspace creation time, RFC3339 format
 	CreateTime string `pulumi:"createTime"`
-	// 是否开启工作区删除保护,true：开启，false：关闭。
+	// Enable workspace deletion protection: true for enabled, false for disabled
 	DeleteProtectionEnabled bool `pulumi:"deleteProtectionEnabled"`
-	// 工作区描述信息，字符串形式，长度限制为 0～200。
+	// Workspace description, string, length limit 0–200
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 工作区规格详情。
+	// Workspace specification details
 	InstanceType GetWorkspaceInstanceType `pulumi:"instanceType"`
-	// 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+	// Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
 	InstanceTypeId string `pulumi:"instanceTypeId"`
-	// 工作区名称，字符串形式，长度限制为 1～100。
+	// Workspace name, string, length limit 1–100
 	Name string `pulumi:"name"`
-	// 工作区预期欠费回收时间，RFC3339 格式。
+	// Workspace expected overdue recovery time, RFC3339 format
 	OverdueReclaimTime string `pulumi:"overdueReclaimTime"`
-	// 工作区 BasicAuth 密码。
+	// Workspace BasicAuth password
 	Password string `pulumi:"password"`
-	// 项目名称。
+	// Project name
 	ProjectName string `pulumi:"projectName"`
-	// 工作区 Push Gateway URL 地址。
+	// Workspace public Push Gateway URL address.
+	PrometheusPushEndpoint string `pulumi:"prometheusPushEndpoint"`
+	// Workspace Push Gateway URL address
 	PrometheusPushIntranetEndpoint string `pulumi:"prometheusPushIntranetEndpoint"`
-	// 工作区 Query URL 地址。
+	// Workspace public Query URL address.
+	PrometheusQueryEndpoint string `pulumi:"prometheusQueryEndpoint"`
+	// Workspace Query URL address
 	PrometheusQueryIntranetEndpoint string `pulumi:"prometheusQueryIntranetEndpoint"`
-	// 工作区 RemoteWrite URL 地址。
+	// Workspace public RemoteWrite URL address.
+	PrometheusWriteEndpoint string `pulumi:"prometheusWriteEndpoint"`
+	// Workspace RemoteWrite URL address
 	PrometheusWriteIntranetEndpoint string `pulumi:"prometheusWriteIntranetEndpoint"`
-	// 工作区配额详情。
+	// Whether to enable workspace public access capability. true: enabled, false: disabled.
+	PublicAccessEnabled bool `pulumi:"publicAccessEnabled"`
+	// Workspace public Query bandwidth (Mbps).
+	PublicQueryBandwidth int `pulumi:"publicQueryBandwidth"`
+	// Workspace public RemoteWrite bandwidth (Mbps).
+	PublicWriteBandwidth int `pulumi:"publicWriteBandwidth"`
+	// Workspace quota details
 	Quota GetWorkspaceQuota `pulumi:"quota"`
-	// 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+	// Workspace public Query search latency offset.
+	SearchLatencyOffset string `pulumi:"searchLatencyOffset"`
+	// Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
 	Status string `pulumi:"status"`
-	// 工作区标签。
+	// Workspace tags
 	Tags []GetWorkspaceTag `pulumi:"tags"`
-	// 工作区用量。
+	// Workspace usage
 	Usage GetWorkspaceUsage `pulumi:"usage"`
-	// 工作区 BasicAuth 用户名。
+	// Workspace BasicAuth username
 	Username string `pulumi:"username"`
-	// 工作区Id。
+	// Workspace ID
 	WorkspaceId string `pulumi:"workspaceId"`
 }
 
@@ -104,17 +122,27 @@ func (o LookupWorkspaceResultOutput) ToLookupWorkspaceResultOutputWithContext(ct
 	return o
 }
 
-// 工作区创建时间，RFC3339 格式。
+// Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+func (o LookupWorkspaceResultOutput) AuthType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.AuthType }).(pulumi.StringOutput)
+}
+
+// Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+func (o LookupWorkspaceResultOutput) BearerToken() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.BearerToken }).(pulumi.StringOutput)
+}
+
+// Workspace creation time, RFC3339 format
 func (o LookupWorkspaceResultOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 是否开启工作区删除保护,true：开启，false：关闭。
+// Enable workspace deletion protection: true for enabled, false for disabled
 func (o LookupWorkspaceResultOutput) DeleteProtectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) bool { return v.DeleteProtectionEnabled }).(pulumi.BoolOutput)
 }
 
-// 工作区描述信息，字符串形式，长度限制为 0～200。
+// Workspace description, string, length limit 0–200
 func (o LookupWorkspaceResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -124,77 +152,112 @@ func (o LookupWorkspaceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 工作区规格详情。
+// Workspace specification details
 func (o LookupWorkspaceResultOutput) InstanceType() GetWorkspaceInstanceTypeOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) GetWorkspaceInstanceType { return v.InstanceType }).(GetWorkspaceInstanceTypeOutput)
 }
 
-// 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+// Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
 func (o LookupWorkspaceResultOutput) InstanceTypeId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.InstanceTypeId }).(pulumi.StringOutput)
 }
 
-// 工作区名称，字符串形式，长度限制为 1～100。
+// Workspace name, string, length limit 1–100
 func (o LookupWorkspaceResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 工作区预期欠费回收时间，RFC3339 格式。
+// Workspace expected overdue recovery time, RFC3339 format
 func (o LookupWorkspaceResultOutput) OverdueReclaimTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.OverdueReclaimTime }).(pulumi.StringOutput)
 }
 
-// 工作区 BasicAuth 密码。
+// Workspace BasicAuth password
 func (o LookupWorkspaceResultOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// 项目名称。
+// Project name
 func (o LookupWorkspaceResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 工作区 Push Gateway URL 地址。
+// Workspace public Push Gateway URL address.
+func (o LookupWorkspaceResultOutput) PrometheusPushEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.PrometheusPushEndpoint }).(pulumi.StringOutput)
+}
+
+// Workspace Push Gateway URL address
 func (o LookupWorkspaceResultOutput) PrometheusPushIntranetEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.PrometheusPushIntranetEndpoint }).(pulumi.StringOutput)
 }
 
-// 工作区 Query URL 地址。
+// Workspace public Query URL address.
+func (o LookupWorkspaceResultOutput) PrometheusQueryEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.PrometheusQueryEndpoint }).(pulumi.StringOutput)
+}
+
+// Workspace Query URL address
 func (o LookupWorkspaceResultOutput) PrometheusQueryIntranetEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.PrometheusQueryIntranetEndpoint }).(pulumi.StringOutput)
 }
 
-// 工作区 RemoteWrite URL 地址。
+// Workspace public RemoteWrite URL address.
+func (o LookupWorkspaceResultOutput) PrometheusWriteEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.PrometheusWriteEndpoint }).(pulumi.StringOutput)
+}
+
+// Workspace RemoteWrite URL address
 func (o LookupWorkspaceResultOutput) PrometheusWriteIntranetEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.PrometheusWriteIntranetEndpoint }).(pulumi.StringOutput)
 }
 
-// 工作区配额详情。
+// Whether to enable workspace public access capability. true: enabled, false: disabled.
+func (o LookupWorkspaceResultOutput) PublicAccessEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) bool { return v.PublicAccessEnabled }).(pulumi.BoolOutput)
+}
+
+// Workspace public Query bandwidth (Mbps).
+func (o LookupWorkspaceResultOutput) PublicQueryBandwidth() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) int { return v.PublicQueryBandwidth }).(pulumi.IntOutput)
+}
+
+// Workspace public RemoteWrite bandwidth (Mbps).
+func (o LookupWorkspaceResultOutput) PublicWriteBandwidth() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) int { return v.PublicWriteBandwidth }).(pulumi.IntOutput)
+}
+
+// Workspace quota details
 func (o LookupWorkspaceResultOutput) Quota() GetWorkspaceQuotaOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) GetWorkspaceQuota { return v.Quota }).(GetWorkspaceQuotaOutput)
 }
 
-// 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+// Workspace public Query search latency offset.
+func (o LookupWorkspaceResultOutput) SearchLatencyOffset() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.SearchLatencyOffset }).(pulumi.StringOutput)
+}
+
+// Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
 func (o LookupWorkspaceResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 工作区标签。
+// Workspace tags
 func (o LookupWorkspaceResultOutput) Tags() GetWorkspaceTagArrayOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) []GetWorkspaceTag { return v.Tags }).(GetWorkspaceTagArrayOutput)
 }
 
-// 工作区用量。
+// Workspace usage
 func (o LookupWorkspaceResultOutput) Usage() GetWorkspaceUsageOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) GetWorkspaceUsage { return v.Usage }).(GetWorkspaceUsageOutput)
 }
 
-// 工作区 BasicAuth 用户名。
+// Workspace BasicAuth username
 func (o LookupWorkspaceResultOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.Username }).(pulumi.StringOutput)
 }
 
-// 工作区Id。
+// Workspace ID
 func (o LookupWorkspaceResultOutput) WorkspaceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceResult) string { return v.WorkspaceId }).(pulumi.StringOutput)
 }

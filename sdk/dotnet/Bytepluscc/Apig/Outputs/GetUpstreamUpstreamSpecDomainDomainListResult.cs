@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetUpstreamUpstreamSpecDomainDomainListResult
     {
         /// <summary>
-        /// 域名。
+        /// Domain name
         /// </summary>
         public readonly string Domain;
         /// <summary>
-        /// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+        /// Port. Default: 80 for HTTP, 443 for HTTPS
         /// </summary>
         public readonly int Port;
 

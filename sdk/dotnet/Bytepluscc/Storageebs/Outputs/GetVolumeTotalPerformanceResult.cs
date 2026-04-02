@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs.Outputs
     public sealed class GetVolumeTotalPerformanceResult
     {
         /// <summary>
-        /// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+        /// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
         /// </summary>
         public readonly double Iops;
         /// <summary>
-        /// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+        /// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
         /// </summary>
         public readonly double Throughput;
 

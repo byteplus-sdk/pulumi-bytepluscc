@@ -16,7 +16,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 高可用虚拟IP是一种可独立持有，可根据实际业务需要随时创建或删除的私网IP资源。在主备集群场景下，高可用虚拟IP通常与高可用软件（如Keepalived、Window Server Failover Cluster）搭配使用，搭建高可用主备服务。
+ * A high availability virtual IP (HAVIP) is a private IP resource that can be independently owned, created, or deleted at any time based on business needs. In primary/secondary cluster scenarios, HAVIP is typically used with high availability software (such as Keepalived or Windows Server Failover Cluster) to build high availability primary/secondary services
  * 
  * ## Example Usage
  * 
@@ -77,182 +77,182 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/haVip:HaVip")
 public class HaVip extends com.pulumi.resources.CustomResource {
     /**
-     * HAVIP绑定的公网IP的IP地址。
+     * IP address of the public IP bound to the HAVIP
      * 
      */
     @Export(name="associatedEipAddress", refs={String.class}, tree="[0]")
     private Output<String> associatedEipAddress;
 
     /**
-     * @return HAVIP绑定的公网IP的IP地址。
+     * @return IP address of the public IP bound to the HAVIP
      * 
      */
     public Output<String> associatedEipAddress() {
         return this.associatedEipAddress;
     }
     /**
-     * HAVIP绑定的公网IP的ID。
+     * ID of the public IP bound to the HAVIP
      * 
      */
     @Export(name="associatedEipId", refs={String.class}, tree="[0]")
     private Output<String> associatedEipId;
 
     /**
-     * @return HAVIP绑定的公网IP的ID。
+     * @return ID of the public IP bound to the HAVIP
      * 
      */
     public Output<String> associatedEipId() {
         return this.associatedEipId;
     }
     /**
-     * 绑定HAVIP的实例ID列表。
+     * List of instance IDs bound to the HAVIP
      * 
      */
     @Export(name="associatedInstanceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> associatedInstanceIds;
 
     /**
-     * @return 绑定HAVIP的实例ID列表。
+     * @return List of instance IDs bound to the HAVIP
      * 
      */
     public Output<List<String>> associatedInstanceIds() {
         return this.associatedInstanceIds;
     }
     /**
-     * 绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+     * Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
      * 
      */
     @Export(name="associatedInstanceType", refs={String.class}, tree="[0]")
     private Output<String> associatedInstanceType;
 
     /**
-     * @return 绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+     * @return Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
      * 
      */
     public Output<String> associatedInstanceType() {
         return this.associatedInstanceType;
     }
     /**
-     * HAVIP的创建时间。
+     * Creation time of the HAVIP
      * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
-     * @return HAVIP的创建时间。
+     * @return Creation time of the HAVIP
      * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
-     * HAVIP的描述。长度限制为0～255个字符。
+     * Description of the HAVIP. Length limit: 0–255 characters
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return HAVIP的描述。长度限制为0～255个字符。
+     * @return Description of the HAVIP. Length limit: 0–255 characters
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * HAVIP的ID。
+     * ID of the HAVIP
      * 
      */
     @Export(name="haVipId", refs={String.class}, tree="[0]")
     private Output<String> haVipId;
 
     /**
-     * @return HAVIP的ID。
+     * @return ID of the HAVIP
      * 
      */
     public Output<String> haVipId() {
         return this.haVipId;
     }
     /**
-     * HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+     * Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
      * 
      */
     @Export(name="haVipName", refs={String.class}, tree="[0]")
     private Output<String> haVipName;
 
     /**
-     * @return HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+     * @return Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
      * 
      */
     public Output<String> haVipName() {
         return this.haVipName;
     }
     /**
-     * HAVIP的IP地址。
+     * IP address of the HAVIP
      * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
-     * @return HAVIP的IP地址。
+     * @return IP address of the HAVIP
      * 
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
     }
     /**
-     * 与HAVIP绑定的主实例的ID。
+     * ID of the primary instance bound to the HAVIP
      * 
      */
     @Export(name="masterInstanceId", refs={String.class}, tree="[0]")
     private Output<String> masterInstanceId;
 
     /**
-     * @return 与HAVIP绑定的主实例的ID。
+     * @return ID of the primary instance bound to the HAVIP
      * 
      */
     public Output<String> masterInstanceId() {
         return this.masterInstanceId;
     }
     /**
-     * HAVIP的项目名称。
+     * Project name of the HAVIP
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return HAVIP的项目名称。
+     * @return Project name of the HAVIP
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * HAVIP的状态。Available：可用。Creating：创建中。InUse：使用中。Deleting：删除中。
+     * Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return HAVIP的状态。Available：可用。Creating：创建中。InUse：使用中。Deleting：删除中。
+     * @return Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * HAVIP所属的子网 ID。
+     * Subnet ID to which the HAVIP belongs
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return HAVIP所属的子网 ID。
+     * @return Subnet ID to which the HAVIP belongs
      * 
      */
     public Output<String> subnetId() {
@@ -265,28 +265,28 @@ public class HaVip extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * HAVIP最近一次的修改时间。
+     * Last modification time of the HAVIP
      * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
-     * @return HAVIP最近一次的修改时间。
+     * @return Last modification time of the HAVIP
      * 
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
-     * HAVIP所属的VPC ID。
+     * VPC ID to which the HAVIP belongs
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return HAVIP所属的VPC ID。
+     * @return VPC ID to which the HAVIP belongs
      * 
      */
     public Output<String> vpcId() {

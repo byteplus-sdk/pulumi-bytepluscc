@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class AddonStatus {
     private @Nullable List<AddonStatusCondition> conditions;
     /**
-     * @return 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+     * @return Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
      * 
      */
     private @Nullable String phase;
@@ -25,7 +25,7 @@ public final class AddonStatus {
         return this.conditions == null ? List.of() : this.conditions;
     }
     /**
-     * @return 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+     * @return Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
      * 
      */
     public Optional<String> phase() {

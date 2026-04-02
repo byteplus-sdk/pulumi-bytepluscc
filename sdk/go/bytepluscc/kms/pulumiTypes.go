@@ -14,9 +14,9 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type KeyMultiRegionConfiguration struct {
-	// 多区域密钥的类型。
+	// Multi-region key type.
 	MultiRegionKeyType *string `pulumi:"multiRegionKeyType"`
-	// 主多区域键的事务识别号和区域 ID。
+	// Primary multi-region key transaction identifier and region ID.
 	PrimaryKey  *KeyMultiRegionConfigurationPrimaryKey  `pulumi:"primaryKey"`
 	ReplicaKeys []KeyMultiRegionConfigurationReplicaKey `pulumi:"replicaKeys"`
 }
@@ -33,9 +33,9 @@ type KeyMultiRegionConfigurationInput interface {
 }
 
 type KeyMultiRegionConfigurationArgs struct {
-	// 多区域密钥的类型。
+	// Multi-region key type.
 	MultiRegionKeyType pulumi.StringPtrInput `pulumi:"multiRegionKeyType"`
-	// 主多区域键的事务识别号和区域 ID。
+	// Primary multi-region key transaction identifier and region ID.
 	PrimaryKey  KeyMultiRegionConfigurationPrimaryKeyPtrInput   `pulumi:"primaryKey"`
 	ReplicaKeys KeyMultiRegionConfigurationReplicaKeyArrayInput `pulumi:"replicaKeys"`
 }
@@ -117,12 +117,12 @@ func (o KeyMultiRegionConfigurationOutput) ToKeyMultiRegionConfigurationPtrOutpu
 	}).(KeyMultiRegionConfigurationPtrOutput)
 }
 
-// 多区域密钥的类型。
+// Multi-region key type.
 func (o KeyMultiRegionConfigurationOutput) MultiRegionKeyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeyMultiRegionConfiguration) *string { return v.MultiRegionKeyType }).(pulumi.StringPtrOutput)
 }
 
-// 主多区域键的事务识别号和区域 ID。
+// Primary multi-region key transaction identifier and region ID.
 func (o KeyMultiRegionConfigurationOutput) PrimaryKey() KeyMultiRegionConfigurationPrimaryKeyPtrOutput {
 	return o.ApplyT(func(v KeyMultiRegionConfiguration) *KeyMultiRegionConfigurationPrimaryKey { return v.PrimaryKey }).(KeyMultiRegionConfigurationPrimaryKeyPtrOutput)
 }
@@ -155,7 +155,7 @@ func (o KeyMultiRegionConfigurationPtrOutput) Elem() KeyMultiRegionConfiguration
 	}).(KeyMultiRegionConfigurationOutput)
 }
 
-// 多区域密钥的类型。
+// Multi-region key type.
 func (o KeyMultiRegionConfigurationPtrOutput) MultiRegionKeyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KeyMultiRegionConfiguration) *string {
 		if v == nil {
@@ -165,7 +165,7 @@ func (o KeyMultiRegionConfigurationPtrOutput) MultiRegionKeyType() pulumi.String
 	}).(pulumi.StringPtrOutput)
 }
 
-// 主多区域键的事务识别号和区域 ID。
+// Primary multi-region key transaction identifier and region ID.
 func (o KeyMultiRegionConfigurationPtrOutput) PrimaryKey() KeyMultiRegionConfigurationPrimaryKeyPtrOutput {
 	return o.ApplyT(func(v *KeyMultiRegionConfiguration) *KeyMultiRegionConfigurationPrimaryKey {
 		if v == nil {
@@ -185,9 +185,9 @@ func (o KeyMultiRegionConfigurationPtrOutput) ReplicaKeys() KeyMultiRegionConfig
 }
 
 type KeyMultiRegionConfigurationPrimaryKey struct {
-	// 多区域密钥的区域 ID。
+	// Multi-region key region ID.
 	Region *string `pulumi:"region"`
-	// 多区域密钥的 TRN。
+	// Multi-region key TRN.
 	Trn *string `pulumi:"trn"`
 }
 
@@ -203,9 +203,9 @@ type KeyMultiRegionConfigurationPrimaryKeyInput interface {
 }
 
 type KeyMultiRegionConfigurationPrimaryKeyArgs struct {
-	// 多区域密钥的区域 ID。
+	// Multi-region key region ID.
 	Region pulumi.StringPtrInput `pulumi:"region"`
-	// 多区域密钥的 TRN。
+	// Multi-region key TRN.
 	Trn pulumi.StringPtrInput `pulumi:"trn"`
 }
 
@@ -286,12 +286,12 @@ func (o KeyMultiRegionConfigurationPrimaryKeyOutput) ToKeyMultiRegionConfigurati
 	}).(KeyMultiRegionConfigurationPrimaryKeyPtrOutput)
 }
 
-// 多区域密钥的区域 ID。
+// Multi-region key region ID.
 func (o KeyMultiRegionConfigurationPrimaryKeyOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeyMultiRegionConfigurationPrimaryKey) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
-// 多区域密钥的 TRN。
+// Multi-region key TRN.
 func (o KeyMultiRegionConfigurationPrimaryKeyOutput) Trn() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeyMultiRegionConfigurationPrimaryKey) *string { return v.Trn }).(pulumi.StringPtrOutput)
 }
@@ -320,7 +320,7 @@ func (o KeyMultiRegionConfigurationPrimaryKeyPtrOutput) Elem() KeyMultiRegionCon
 	}).(KeyMultiRegionConfigurationPrimaryKeyOutput)
 }
 
-// 多区域密钥的区域 ID。
+// Multi-region key region ID.
 func (o KeyMultiRegionConfigurationPrimaryKeyPtrOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KeyMultiRegionConfigurationPrimaryKey) *string {
 		if v == nil {
@@ -330,7 +330,7 @@ func (o KeyMultiRegionConfigurationPrimaryKeyPtrOutput) Region() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// 多区域密钥的 TRN。
+// Multi-region key TRN.
 func (o KeyMultiRegionConfigurationPrimaryKeyPtrOutput) Trn() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KeyMultiRegionConfigurationPrimaryKey) *string {
 		if v == nil {
@@ -341,9 +341,9 @@ func (o KeyMultiRegionConfigurationPrimaryKeyPtrOutput) Trn() pulumi.StringPtrOu
 }
 
 type KeyMultiRegionConfigurationReplicaKey struct {
-	// 多区域密钥的区域 ID。
+	// Multi-region key region ID.
 	Region *string `pulumi:"region"`
-	// 多区域密钥的转换。
+	// Multi-region key conversion.
 	Trn *string `pulumi:"trn"`
 }
 
@@ -359,9 +359,9 @@ type KeyMultiRegionConfigurationReplicaKeyInput interface {
 }
 
 type KeyMultiRegionConfigurationReplicaKeyArgs struct {
-	// 多区域密钥的区域 ID。
+	// Multi-region key region ID.
 	Region pulumi.StringPtrInput `pulumi:"region"`
-	// 多区域密钥的转换。
+	// Multi-region key conversion.
 	Trn pulumi.StringPtrInput `pulumi:"trn"`
 }
 
@@ -416,12 +416,12 @@ func (o KeyMultiRegionConfigurationReplicaKeyOutput) ToKeyMultiRegionConfigurati
 	return o
 }
 
-// 多区域密钥的区域 ID。
+// Multi-region key region ID.
 func (o KeyMultiRegionConfigurationReplicaKeyOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeyMultiRegionConfigurationReplicaKey) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
-// 多区域密钥的转换。
+// Multi-region key conversion.
 func (o KeyMultiRegionConfigurationReplicaKeyOutput) Trn() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeyMultiRegionConfigurationReplicaKey) *string { return v.Trn }).(pulumi.StringPtrOutput)
 }
@@ -447,9 +447,9 @@ func (o KeyMultiRegionConfigurationReplicaKeyArrayOutput) Index(i pulumi.IntInpu
 }
 
 type KeyTag struct {
-	// KMS密钥的标签键
+	// KMS key label key.
 	Key *string `pulumi:"key"`
-	// KMS密钥的标签值
+	// KMS key label value.
 	Value *string `pulumi:"value"`
 }
 
@@ -465,9 +465,9 @@ type KeyTagInput interface {
 }
 
 type KeyTagArgs struct {
-	// KMS密钥的标签键
+	// KMS key label key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// KMS密钥的标签值
+	// KMS key label value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -522,12 +522,12 @@ func (o KeyTagOutput) ToKeyTagOutputWithContext(ctx context.Context) KeyTagOutpu
 	return o
 }
 
-// KMS密钥的标签键
+// KMS key label key.
 func (o KeyTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeyTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// KMS密钥的标签值
+// KMS key label value.
 func (o KeyTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeyTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -553,11 +553,11 @@ func (o KeyTagArrayOutput) Index(i pulumi.IntInput) KeyTagOutput {
 }
 
 type GetKeyMultiRegionConfiguration struct {
-	// 多区域密钥的类型。
+	// Multi-region key type.
 	MultiRegionKeyType string `pulumi:"multiRegionKeyType"`
-	// 主多区域键的事务识别号和区域 ID。
+	// Primary multi-region key transaction identifier and region ID.
 	PrimaryKey GetKeyMultiRegionConfigurationPrimaryKey `pulumi:"primaryKey"`
-	// 副本多区域密钥的事务记录编号和区域 ID。
+	// Replica multi-region key transaction record number and region ID.
 	ReplicaKeys []GetKeyMultiRegionConfigurationReplicaKey `pulumi:"replicaKeys"`
 }
 
@@ -573,11 +573,11 @@ type GetKeyMultiRegionConfigurationInput interface {
 }
 
 type GetKeyMultiRegionConfigurationArgs struct {
-	// 多区域密钥的类型。
+	// Multi-region key type.
 	MultiRegionKeyType pulumi.StringInput `pulumi:"multiRegionKeyType"`
-	// 主多区域键的事务识别号和区域 ID。
+	// Primary multi-region key transaction identifier and region ID.
 	PrimaryKey GetKeyMultiRegionConfigurationPrimaryKeyInput `pulumi:"primaryKey"`
-	// 副本多区域密钥的事务记录编号和区域 ID。
+	// Replica multi-region key transaction record number and region ID.
 	ReplicaKeys GetKeyMultiRegionConfigurationReplicaKeyArrayInput `pulumi:"replicaKeys"`
 }
 
@@ -607,17 +607,17 @@ func (o GetKeyMultiRegionConfigurationOutput) ToGetKeyMultiRegionConfigurationOu
 	return o
 }
 
-// 多区域密钥的类型。
+// Multi-region key type.
 func (o GetKeyMultiRegionConfigurationOutput) MultiRegionKeyType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyMultiRegionConfiguration) string { return v.MultiRegionKeyType }).(pulumi.StringOutput)
 }
 
-// 主多区域键的事务识别号和区域 ID。
+// Primary multi-region key transaction identifier and region ID.
 func (o GetKeyMultiRegionConfigurationOutput) PrimaryKey() GetKeyMultiRegionConfigurationPrimaryKeyOutput {
 	return o.ApplyT(func(v GetKeyMultiRegionConfiguration) GetKeyMultiRegionConfigurationPrimaryKey { return v.PrimaryKey }).(GetKeyMultiRegionConfigurationPrimaryKeyOutput)
 }
 
-// 副本多区域密钥的事务记录编号和区域 ID。
+// Replica multi-region key transaction record number and region ID.
 func (o GetKeyMultiRegionConfigurationOutput) ReplicaKeys() GetKeyMultiRegionConfigurationReplicaKeyArrayOutput {
 	return o.ApplyT(func(v GetKeyMultiRegionConfiguration) []GetKeyMultiRegionConfigurationReplicaKey {
 		return v.ReplicaKeys
@@ -625,9 +625,9 @@ func (o GetKeyMultiRegionConfigurationOutput) ReplicaKeys() GetKeyMultiRegionCon
 }
 
 type GetKeyMultiRegionConfigurationPrimaryKey struct {
-	// 多区域密钥的区域 ID。
+	// Multi-region key region ID.
 	Region string `pulumi:"region"`
-	// 多区域密钥的 TRN。
+	// Multi-region key TRN.
 	Trn string `pulumi:"trn"`
 }
 
@@ -643,9 +643,9 @@ type GetKeyMultiRegionConfigurationPrimaryKeyInput interface {
 }
 
 type GetKeyMultiRegionConfigurationPrimaryKeyArgs struct {
-	// 多区域密钥的区域 ID。
+	// Multi-region key region ID.
 	Region pulumi.StringInput `pulumi:"region"`
-	// 多区域密钥的 TRN。
+	// Multi-region key TRN.
 	Trn pulumi.StringInput `pulumi:"trn"`
 }
 
@@ -675,20 +675,20 @@ func (o GetKeyMultiRegionConfigurationPrimaryKeyOutput) ToGetKeyMultiRegionConfi
 	return o
 }
 
-// 多区域密钥的区域 ID。
+// Multi-region key region ID.
 func (o GetKeyMultiRegionConfigurationPrimaryKeyOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyMultiRegionConfigurationPrimaryKey) string { return v.Region }).(pulumi.StringOutput)
 }
 
-// 多区域密钥的 TRN。
+// Multi-region key TRN.
 func (o GetKeyMultiRegionConfigurationPrimaryKeyOutput) Trn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyMultiRegionConfigurationPrimaryKey) string { return v.Trn }).(pulumi.StringOutput)
 }
 
 type GetKeyMultiRegionConfigurationReplicaKey struct {
-	// 多区域密钥的区域 ID。
+	// Multi-region key region ID.
 	Region string `pulumi:"region"`
-	// 多区域密钥的转换。
+	// Multi-region key conversion.
 	Trn string `pulumi:"trn"`
 }
 
@@ -704,9 +704,9 @@ type GetKeyMultiRegionConfigurationReplicaKeyInput interface {
 }
 
 type GetKeyMultiRegionConfigurationReplicaKeyArgs struct {
-	// 多区域密钥的区域 ID。
+	// Multi-region key region ID.
 	Region pulumi.StringInput `pulumi:"region"`
-	// 多区域密钥的转换。
+	// Multi-region key conversion.
 	Trn pulumi.StringInput `pulumi:"trn"`
 }
 
@@ -761,12 +761,12 @@ func (o GetKeyMultiRegionConfigurationReplicaKeyOutput) ToGetKeyMultiRegionConfi
 	return o
 }
 
-// 多区域密钥的区域 ID。
+// Multi-region key region ID.
 func (o GetKeyMultiRegionConfigurationReplicaKeyOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyMultiRegionConfigurationReplicaKey) string { return v.Region }).(pulumi.StringOutput)
 }
 
-// 多区域密钥的转换。
+// Multi-region key conversion.
 func (o GetKeyMultiRegionConfigurationReplicaKeyOutput) Trn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyMultiRegionConfigurationReplicaKey) string { return v.Trn }).(pulumi.StringOutput)
 }
@@ -792,9 +792,9 @@ func (o GetKeyMultiRegionConfigurationReplicaKeyArrayOutput) Index(i pulumi.IntI
 }
 
 type GetKeyTag struct {
-	// KMS密钥的标签键
+	// KMS key label key.
 	Key string `pulumi:"key"`
-	// KMS密钥的标签值
+	// KMS key label value.
 	Value string `pulumi:"value"`
 }
 
@@ -810,9 +810,9 @@ type GetKeyTagInput interface {
 }
 
 type GetKeyTagArgs struct {
-	// KMS密钥的标签键
+	// KMS key label key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// KMS密钥的标签值
+	// KMS key label value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -867,12 +867,12 @@ func (o GetKeyTagOutput) ToGetKeyTagOutputWithContext(ctx context.Context) GetKe
 	return o
 }
 
-// KMS密钥的标签键
+// KMS key label key.
 func (o GetKeyTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// KMS密钥的标签值
+// KMS key label value.
 func (o GetKeyTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyTag) string { return v.Value }).(pulumi.StringOutput)
 }

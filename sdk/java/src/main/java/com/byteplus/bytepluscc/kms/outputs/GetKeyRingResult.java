@@ -12,12 +12,12 @@ import java.util.Objects;
 @CustomType
 public final class GetKeyRingResult {
     /**
-     * @return 密钥环创建日期。
+     * @return Keyring creation date
      * 
      */
     private Integer createDate;
     /**
-     * @return 密钥环描述，长度为 0   - 8192 个字符。
+     * @return Keyring description, length: 0–8192 characters
      * 
      */
     private String description;
@@ -27,51 +27,51 @@ public final class GetKeyRingResult {
      */
     private String id;
     /**
-     * @return 密钥环密钥次数。
+     * @return Number of keys in keyring
      * 
      */
     private Integer keyCount;
     /**
-     * @return 密钥环唯一标识符，UUID形式。
+     * @return Keyring unique identifier, in UUID format
      * 
      */
     private String keyRingId;
     /**
-     * @return 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+     * @return Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
      * 
      */
     private String keyringName;
     /**
-     * @return 密钥环类型，取值：CustomKeyring。
+     * @return Keyring type, value: CustomKeyring
      * 
      */
     private String keyringType;
     /**
-     * @return 项目名称，默认值：default。
+     * @return Project name, default value: default
      * 
      */
     private String projectName;
     /**
-     * @return 密钥环租户ID。
+     * @return Keyring tenant ID
      * 
      */
     private String uid;
     /**
-     * @return 密钥环更新日期。
+     * @return Keyring update date
      * 
      */
     private Integer updateDate;
 
     private GetKeyRingResult() {}
     /**
-     * @return 密钥环创建日期。
+     * @return Keyring creation date
      * 
      */
     public Integer createDate() {
         return this.createDate;
     }
     /**
-     * @return 密钥环描述，长度为 0   - 8192 个字符。
+     * @return Keyring description, length: 0–8192 characters
      * 
      */
     public String description() {
@@ -85,49 +85,49 @@ public final class GetKeyRingResult {
         return this.id;
     }
     /**
-     * @return 密钥环密钥次数。
+     * @return Number of keys in keyring
      * 
      */
     public Integer keyCount() {
         return this.keyCount;
     }
     /**
-     * @return 密钥环唯一标识符，UUID形式。
+     * @return Keyring unique identifier, in UUID format
      * 
      */
     public String keyRingId() {
         return this.keyRingId;
     }
     /**
-     * @return 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+     * @return Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
      * 
      */
     public String keyringName() {
         return this.keyringName;
     }
     /**
-     * @return 密钥环类型，取值：CustomKeyring。
+     * @return Keyring type, value: CustomKeyring
      * 
      */
     public String keyringType() {
         return this.keyringType;
     }
     /**
-     * @return 项目名称，默认值：default。
+     * @return Project name, default value: default
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 密钥环租户ID。
+     * @return Keyring tenant ID
      * 
      */
     public String uid() {
         return this.uid;
     }
     /**
-     * @return 密钥环更新日期。
+     * @return Keyring update date
      * 
      */
     public Integer updateDate() {

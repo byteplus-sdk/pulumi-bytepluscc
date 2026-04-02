@@ -16,14 +16,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     public static final AllowListAssociatedInstanceArgs Empty = new AllowListAssociatedInstanceArgs();
 
     /**
-     * 白名单绑定的实例ID。
+     * ID of the instance bound to the allowlist
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 白名单绑定的实例ID。
+     * @return ID of the instance bound to the allowlist
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -55,7 +55,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceId 白名单绑定的实例ID。
+         * @param instanceId ID of the instance bound to the allowlist
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceId 白名单绑定的实例ID。
+         * @param instanceId ID of the instance bound to the allowlist
          * 
          * @return builder
          * 

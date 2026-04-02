@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamUpstreamSpecDomainDomainListGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 域名。
+        /// Domain name
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
         /// <summary>
-        /// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+        /// Port. Default: 80 for HTTP, 443 for HTTPS
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }

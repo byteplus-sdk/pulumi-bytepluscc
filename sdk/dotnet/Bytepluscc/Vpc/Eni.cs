@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// 网卡即虚拟网卡。在私有网络里，网卡是挂载在云服务器、负载均衡等云资源上的一种网络接口。每张网卡均有一个主私网IP地址。若有需要，可手动为其分配多个辅助私网IP地址。
+    /// A network interface is a virtual network interface. In a private network, it serves as a network interface attached to cloud servers, load balancers, and other cloud resources. Each network interface has a primary private IP address. You can manually assign multiple auxiliary private IP addresses if needed.
     /// 
     /// ## Import
     /// 
@@ -23,73 +23,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class Eni : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 网卡所有者ID。
+        /// NIC owner ID
         /// </summary>
         [Output("accountId")]
         public Output<string> AccountId { get; private set; } = null!;
 
         /// <summary>
-        /// 网卡创建时间。
+        /// NIC creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启随云服务器实例删除，true为开启，false为不开启。
+        /// Enable release with cloud server instance deletion. true to enable, false to disable
         /// </summary>
         [Output("deleteOnTermination")]
         public Output<bool> DeleteOnTermination { get; private set; } = null!;
 
         /// <summary>
-        /// 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+        /// Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+        /// ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+        /// Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
         /// </summary>
         [Output("ipv6AddressCount")]
         public Output<int> Ipv6AddressCount { get; private set; } = null!;
 
         /// <summary>
-        /// 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+        /// IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
         /// </summary>
         [Output("ipv6Sets")]
         public Output<ImmutableArray<string>> Ipv6Sets { get; private set; } = null!;
 
         /// <summary>
-        /// 网卡的MAC地址。
+        /// MAC address of the network interface.
         /// </summary>
         [Output("macAddress")]
         public Output<string> MacAddress { get; private set; } = null!;
 
         /// <summary>
-        /// 网卡ID。
+        /// Network interface ID.
         /// </summary>
         [Output("networkInterfaceId")]
         public Output<string> NetworkInterfaceId { get; private set; } = null!;
 
         /// <summary>
-        /// 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+        /// NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
         /// </summary>
         [Output("networkInterfaceName")]
         public Output<string> NetworkInterfaceName { get; private set; } = null!;
 
         /// <summary>
-        /// 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+        /// Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
         /// </summary>
         [Output("portSecurityEnabled")]
         public Output<bool> PortSecurityEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+        /// Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
         /// </summary>
         [Output("primaryIpAddress")]
         public Output<Outputs.EniPrimaryIpAddress> PrimaryIpAddress { get; private set; } = null!;
@@ -98,37 +98,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.EniPrivateIpSet>> PrivateIpSets { get; private set; } = null!;
 
         /// <summary>
-        /// 网卡所属项目的名称。
+        /// Name of the project to which the NIC belongs
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+        /// Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
         /// </summary>
         [Output("secondaryPrivateIpAddressCount")]
         public Output<int> SecondaryPrivateIpAddressCount { get; private set; } = null!;
 
         /// <summary>
-        /// 辅助网卡加入一个或多个安全组的ID。
+        /// ID of one or more security groups joined by the auxiliary network interface.
         /// </summary>
         [Output("securityGroupIds")]
         public Output<ImmutableArray<string>> SecurityGroupIds { get; private set; } = null!;
 
         /// <summary>
-        /// 是否为官方服务网卡，true为是，false为否。
+        /// Indicates whether this is an official service network interface. true for yes, false for no.
         /// </summary>
         [Output("serviceManaged")]
         public Output<bool> ServiceManaged { get; private set; } = null!;
 
         /// <summary>
-        /// 网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
+        /// Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 辅助网卡所在子网的ID。
+        /// ID of the subnet where the auxiliary network interface resides.
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -137,31 +137,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.EniTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 网卡类型。primary：主网卡，secondary：辅助网卡
+        /// NIC type. primary: primary NIC, secondary: secondary NIC
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// 更新网卡的时间。
+        /// NIC update time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 网卡所属的VPC的ID。
+        /// ID of the VPC to which the network interface belongs.
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// 网卡所属VPC的名称。
+        /// Name of the VPC to which the NIC belongs
         /// </summary>
         [Output("vpcName")]
         public Output<string> VpcName { get; private set; } = null!;
 
         /// <summary>
-        /// 网卡所属可用区的ID。
+        /// ID of the availability zone to which the network interface belongs.
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
@@ -214,25 +214,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class EniArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启随云服务器实例删除，true为开启，false为不开启。
+        /// Enable release with cloud server instance deletion. true to enable, false to disable
         /// </summary>
         [Input("deleteOnTermination")]
         public Input<bool>? DeleteOnTermination { get; set; }
 
         /// <summary>
-        /// 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+        /// Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+        /// ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+        /// Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
         /// </summary>
         [Input("ipv6AddressCount")]
         public Input<int>? Ipv6AddressCount { get; set; }
@@ -241,7 +241,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         private InputList<string>? _ipv6Sets;
 
         /// <summary>
-        /// 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+        /// IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
         /// </summary>
         public InputList<string> Ipv6Sets
         {
@@ -250,19 +250,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+        /// NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
         /// </summary>
         [Input("networkInterfaceName")]
         public Input<string>? NetworkInterfaceName { get; set; }
 
         /// <summary>
-        /// 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+        /// Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
         /// </summary>
         [Input("portSecurityEnabled")]
         public Input<bool>? PortSecurityEnabled { get; set; }
 
         /// <summary>
-        /// 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+        /// Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
         /// </summary>
         [Input("primaryIpAddress")]
         public Input<Inputs.EniPrimaryIpAddressArgs>? PrimaryIpAddress { get; set; }
@@ -276,13 +276,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 网卡所属项目的名称。
+        /// Name of the project to which the NIC belongs
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+        /// Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
         /// </summary>
         [Input("secondaryPrivateIpAddressCount")]
         public Input<int>? SecondaryPrivateIpAddressCount { get; set; }
@@ -291,7 +291,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         private InputList<string>? _securityGroupIds;
 
         /// <summary>
-        /// 辅助网卡加入一个或多个安全组的ID。
+        /// ID of one or more security groups joined by the auxiliary network interface.
         /// </summary>
         public InputList<string> SecurityGroupIds
         {
@@ -300,7 +300,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 辅助网卡所在子网的ID。
+        /// ID of the subnet where the auxiliary network interface resides.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
@@ -322,37 +322,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class EniState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 网卡所有者ID。
+        /// NIC owner ID
         /// </summary>
         [Input("accountId")]
         public Input<string>? AccountId { get; set; }
 
         /// <summary>
-        /// 网卡创建时间。
+        /// NIC creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 是否开启随云服务器实例删除，true为开启，false为不开启。
+        /// Enable release with cloud server instance deletion. true to enable, false to disable
         /// </summary>
         [Input("deleteOnTermination")]
         public Input<bool>? DeleteOnTermination { get; set; }
 
         /// <summary>
-        /// 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+        /// Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+        /// ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+        /// Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
         /// </summary>
         [Input("ipv6AddressCount")]
         public Input<int>? Ipv6AddressCount { get; set; }
@@ -361,7 +361,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         private InputList<string>? _ipv6Sets;
 
         /// <summary>
-        /// 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+        /// IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
         /// </summary>
         public InputList<string> Ipv6Sets
         {
@@ -370,31 +370,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 网卡的MAC地址。
+        /// MAC address of the network interface.
         /// </summary>
         [Input("macAddress")]
         public Input<string>? MacAddress { get; set; }
 
         /// <summary>
-        /// 网卡ID。
+        /// Network interface ID.
         /// </summary>
         [Input("networkInterfaceId")]
         public Input<string>? NetworkInterfaceId { get; set; }
 
         /// <summary>
-        /// 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+        /// NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
         /// </summary>
         [Input("networkInterfaceName")]
         public Input<string>? NetworkInterfaceName { get; set; }
 
         /// <summary>
-        /// 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+        /// Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
         /// </summary>
         [Input("portSecurityEnabled")]
         public Input<bool>? PortSecurityEnabled { get; set; }
 
         /// <summary>
-        /// 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+        /// Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
         /// </summary>
         [Input("primaryIpAddress")]
         public Input<Inputs.EniPrimaryIpAddressGetArgs>? PrimaryIpAddress { get; set; }
@@ -408,13 +408,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 网卡所属项目的名称。
+        /// Name of the project to which the NIC belongs
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+        /// Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
         /// </summary>
         [Input("secondaryPrivateIpAddressCount")]
         public Input<int>? SecondaryPrivateIpAddressCount { get; set; }
@@ -423,7 +423,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         private InputList<string>? _securityGroupIds;
 
         /// <summary>
-        /// 辅助网卡加入一个或多个安全组的ID。
+        /// ID of one or more security groups joined by the auxiliary network interface.
         /// </summary>
         public InputList<string> SecurityGroupIds
         {
@@ -432,19 +432,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 是否为官方服务网卡，true为是，false为否。
+        /// Indicates whether this is an official service network interface. true for yes, false for no.
         /// </summary>
         [Input("serviceManaged")]
         public Input<bool>? ServiceManaged { get; set; }
 
         /// <summary>
-        /// 网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
+        /// Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 辅助网卡所在子网的ID。
+        /// ID of the subnet where the auxiliary network interface resides.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
@@ -458,31 +458,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 网卡类型。primary：主网卡，secondary：辅助网卡
+        /// NIC type. primary: primary NIC, secondary: secondary NIC
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// 更新网卡的时间。
+        /// NIC update time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 网卡所属的VPC的ID。
+        /// ID of the VPC to which the network interface belongs.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// 网卡所属VPC的名称。
+        /// Name of the VPC to which the NIC belongs
         /// </summary>
         [Input("vpcName")]
         public Input<string>? VpcName { get; set; }
 
         /// <summary>
-        /// 网卡所属可用区的ID。
+        /// ID of the availability zone to which the network interface belongs.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

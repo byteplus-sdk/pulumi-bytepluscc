@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 公网IP（Elastic IP Address，EIP）及其公网出口带宽，是火山引擎为云资源提供的可独立购买和持有的IP连通服务。公网IP支持直接绑定云服务器（包括ECS云服务器、EBM裸金属服务器、GPU云服务器），还支持绑定公网NAT网关、负载均衡、辅助网卡等组件，为云服务器提供公网互通能力。
+ * Public IP (Elastic IP Address, EIP) and its public outbound bandwidth are IP connectivity services provided by Volcano Engine for cloud resources, which can be purchased and held independently. Public IP supports direct binding to cloud servers (including ECS cloud servers, EBM bare metal servers, GPU cloud servers), and also supports binding to public NAT gateways, load balancers, and secondary network interfaces, providing public network connectivity for cloud servers.
  *
  * ## Example Usage
  *
@@ -69,132 +69,132 @@ export class Eip extends pulumi.CustomResource {
     }
 
     /**
-     * 公网IP的ID。
+     * Public IP ID.
      */
     public /*out*/ readonly allocationId!: pulumi.Output<string>;
     /**
-     * 公网IP的带宽上限，默认为“1”，单位：Mbps,BillingType传入1：取值范围1 ~ 500。BillingType传入2：取值范围1 ~ 500。BillingType传入3：取值范围1 ~ 200。
+     * Maximum bandwidth of the public IP. Default is '1', unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
      */
     public readonly bandwidth!: pulumi.Output<number>;
     /**
-     * 共享带宽包的ID，表示将公网IP加入到共享带宽包。公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的地域相同。公网IP的计费方式必须是按量计费。共享带宽包为IPv4类型。
+     * Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
      */
     public readonly bandwidthPackageId!: pulumi.Output<string>;
     /**
-     * 公网IP的计费方式。取值如下：1：包年包月。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
      */
     public readonly billingType!: pulumi.Output<number>;
     /**
-     * 公网IP是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * Whether the public IP is locked. Normal: normal. FinancialLocked: locked.
      */
     public /*out*/ readonly businessStatus!: pulumi.Output<string>;
     /**
-     * 公网IP的创建时间。
+     * Creation time of the public IP.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 预期资源强制回收时间。包年包月公网IP，此参数有返回值。按量计费公网IP，仅欠费冻结时，此参数有返回值。
+     * Expected forced resource recycle time. For subscription public IPs, this parameter returns a value. For pay-as-you-go public IPs, this parameter returns a value only when frozen due to overdue payment.
      */
     public /*out*/ readonly deletedTime!: pulumi.Output<string>;
     /**
-     * 公网IP的描述信息。
+     * Description of the public IP.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+     * Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
      */
     public readonly directMode!: pulumi.Output<boolean>;
     /**
-     * 公网IP地址。
+     * Public IP address.
      */
     public /*out*/ readonly eipAddress!: pulumi.Output<string>;
     /**
-     * 公网IP的到期时间。包年包月，返回值为到期时间。按量计费，返回值为空。
+     * Expiration time of the public IP. For subscription billing, the return value is the expiration time. For pay-as-you-go billing, the return value is empty.
      */
     public /*out*/ readonly expiredTime!: pulumi.Output<string>;
     /**
-     * 当前绑定的实例ID。
+     * Currently bound instance ID.
      */
     public readonly instanceId!: pulumi.Output<string>;
     /**
-     * 当前绑定的实例类型。Nat：公网NAT网关。NetworkInterface: 弹性网卡。ClbInstance: 负载均衡。EcsInstance：云服务器。HaVip：高可用虚拟IP。
+     * Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
      */
     public readonly instanceType!: pulumi.Output<string>;
     /**
-     * 申请申请指定的公网IP地址。仅支持填写使用后释放的IP地址，不填则表示自动分配。指定的公网IP地址
+     * Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
      */
     public readonly ipAddress!: pulumi.Output<string>;
     /**
-     * IP地址池的ID。
+     * IP address pool ID.
      */
     public readonly ipAddressPoolId!: pulumi.Output<string>;
     /**
-     * 是否被封禁。true：是。false：否。
+     * Whether it is blocked. true: yes. false: no.
      */
     public /*out*/ readonly isBlocked!: pulumi.Output<boolean>;
     /**
-     * 线路类型。BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：中国电信静态单线。ChinaUnicom：中国联通静态单线。SingleLine*BGP：BGP单线。Fusion*BGP：融合BGP。ChinaMobile*Value：中国移动惠选型静态单线。ChinaUnicom*Value：中国联通惠选型静态单线。ChinaTelecom_Value：中国电信惠选型静态单线。
+     * Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
      */
     public readonly isp!: pulumi.Output<string>;
     /**
-     * 公网IP被锁定的原因。financial: 因欠费被锁定。unlock: 欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * Reason for public IP lock. financial: locked due to overdue payment. unlock: restoring after recharge following suspension for overdue payment. Empty value: not locked.
      */
     public /*out*/ readonly lockReason!: pulumi.Output<string>;
     /**
-     * 公网IP的名称。
+     * Name of the public IP.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+     * Resource freeze time. This parameter returns a value only when the resource is frozen due to overdue payment.
      */
     public /*out*/ readonly overdueTime!: pulumi.Output<string>;
     /**
-     * 代表购买包年包月公网IP的时长时，默认为“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36、48、60。当PeriodUnit传入2，Period取值范围：1～5。代表临时升配的时长时：单位为小时，取值范围：1～720。
+     * When representing the duration for purchasing a subscription public IP, the default is '1'. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
      */
     public readonly period!: pulumi.Output<number>;
     /**
-     * 购买包年包月公网IP时长的单位。取值如下：1（默认值）：月。2 ：年。
+     * Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
      */
     public readonly periodUnit!: pulumi.Output<number>;
     /**
-     * 要绑定公网IP的实例的私网IP地址。只支持传入云服务ECS主网卡的私网IP地址和辅助网卡IP地址。若不填写：InstanceType传入EcsInstance，则绑定云服务器ECS主网卡的主私网IP地址。InstanceType传入NetworkInterface，则绑定辅助网卡主私网IP地址。
+     * Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
      */
     public readonly privateIpAddress!: pulumi.Output<string>;
     /**
-     * 公网IP所属项目的名称。
+     * Name of the project to which the public IP belongs.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 是否随云服务器实例删除。仅按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放。true：是。false：否。
+     * Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
      */
     public readonly releaseWithInstance!: pulumi.Output<boolean>;
     /**
-     * 自动续费的时长，取值范围1、2、3、6、12，单位：月。若RenewType传入2，则必须传入RenewPeriodTimes
+     * Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
      */
     public readonly renewPeriodTimes!: pulumi.Output<number>;
     /**
-     * 包年包月公网IP续费的方式。取值如下：1（默认值）：手动续费。2：自动续费。3：到期不续费。
+     * Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
      */
     public readonly renewType!: pulumi.Output<number>;
     /**
-     * DDoS原生防护（企业版）ID。您可以调用 DescInstanceList 接口，查询DDoS原生防护（企业版）的ID。当SecurityProtectionTypes传入AntiDDoS_Enhanced时，此参数必须传入。
+     * DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
      */
     public readonly securityProtectionInstanceId!: pulumi.Output<number>;
     /**
-     * 防护类型。AntiDDoS_Enhanced：增强防护类型的公网IP，可以加入到DDoS原生防护（企业版）实例。空值：默认防护类型的公网IP。
+     * Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
      */
     public readonly securityProtectionTypes!: pulumi.Output<string[]>;
     /**
-     * 是否由服务管理
+     * Managed by service
      */
     public /*out*/ readonly serviceManaged!: pulumi.Output<boolean>;
     /**
-     * 公网IP的状态。Attaching：绑定中。Detaching：解绑中。Attached：已绑定。Available：可用。Deleting：删除中。
+     * Status of the public IP. Attaching: binding in progress. Detaching: unbinding in progress. Attached: bound. Available: available. Deleting: deleting.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.vpc.EipTag[]>;
     /**
-     * 更新公网IP的时间。
+     * Time when the public IP was updated.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -293,132 +293,132 @@ export class Eip extends pulumi.CustomResource {
  */
 export interface EipState {
     /**
-     * 公网IP的ID。
+     * Public IP ID.
      */
     allocationId?: pulumi.Input<string>;
     /**
-     * 公网IP的带宽上限，默认为“1”，单位：Mbps,BillingType传入1：取值范围1 ~ 500。BillingType传入2：取值范围1 ~ 500。BillingType传入3：取值范围1 ~ 200。
+     * Maximum bandwidth of the public IP. Default is '1', unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
      */
     bandwidth?: pulumi.Input<number>;
     /**
-     * 共享带宽包的ID，表示将公网IP加入到共享带宽包。公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的地域相同。公网IP的计费方式必须是按量计费。共享带宽包为IPv4类型。
+     * Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
      */
     bandwidthPackageId?: pulumi.Input<string>;
     /**
-     * 公网IP的计费方式。取值如下：1：包年包月。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
      */
     billingType?: pulumi.Input<number>;
     /**
-     * 公网IP是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * Whether the public IP is locked. Normal: normal. FinancialLocked: locked.
      */
     businessStatus?: pulumi.Input<string>;
     /**
-     * 公网IP的创建时间。
+     * Creation time of the public IP.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 预期资源强制回收时间。包年包月公网IP，此参数有返回值。按量计费公网IP，仅欠费冻结时，此参数有返回值。
+     * Expected forced resource recycle time. For subscription public IPs, this parameter returns a value. For pay-as-you-go public IPs, this parameter returns a value only when frozen due to overdue payment.
      */
     deletedTime?: pulumi.Input<string>;
     /**
-     * 公网IP的描述信息。
+     * Description of the public IP.
      */
     description?: pulumi.Input<string>;
     /**
-     * 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+     * Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
      */
     directMode?: pulumi.Input<boolean>;
     /**
-     * 公网IP地址。
+     * Public IP address.
      */
     eipAddress?: pulumi.Input<string>;
     /**
-     * 公网IP的到期时间。包年包月，返回值为到期时间。按量计费，返回值为空。
+     * Expiration time of the public IP. For subscription billing, the return value is the expiration time. For pay-as-you-go billing, the return value is empty.
      */
     expiredTime?: pulumi.Input<string>;
     /**
-     * 当前绑定的实例ID。
+     * Currently bound instance ID.
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 当前绑定的实例类型。Nat：公网NAT网关。NetworkInterface: 弹性网卡。ClbInstance: 负载均衡。EcsInstance：云服务器。HaVip：高可用虚拟IP。
+     * Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
      */
     instanceType?: pulumi.Input<string>;
     /**
-     * 申请申请指定的公网IP地址。仅支持填写使用后释放的IP地址，不填则表示自动分配。指定的公网IP地址
+     * Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
      */
     ipAddress?: pulumi.Input<string>;
     /**
-     * IP地址池的ID。
+     * IP address pool ID.
      */
     ipAddressPoolId?: pulumi.Input<string>;
     /**
-     * 是否被封禁。true：是。false：否。
+     * Whether it is blocked. true: yes. false: no.
      */
     isBlocked?: pulumi.Input<boolean>;
     /**
-     * 线路类型。BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：中国电信静态单线。ChinaUnicom：中国联通静态单线。SingleLine*BGP：BGP单线。Fusion*BGP：融合BGP。ChinaMobile*Value：中国移动惠选型静态单线。ChinaUnicom*Value：中国联通惠选型静态单线。ChinaTelecom_Value：中国电信惠选型静态单线。
+     * Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
      */
     isp?: pulumi.Input<string>;
     /**
-     * 公网IP被锁定的原因。financial: 因欠费被锁定。unlock: 欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * Reason for public IP lock. financial: locked due to overdue payment. unlock: restoring after recharge following suspension for overdue payment. Empty value: not locked.
      */
     lockReason?: pulumi.Input<string>;
     /**
-     * 公网IP的名称。
+     * Name of the public IP.
      */
     name?: pulumi.Input<string>;
     /**
-     * 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+     * Resource freeze time. This parameter returns a value only when the resource is frozen due to overdue payment.
      */
     overdueTime?: pulumi.Input<string>;
     /**
-     * 代表购买包年包月公网IP的时长时，默认为“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36、48、60。当PeriodUnit传入2，Period取值范围：1～5。代表临时升配的时长时：单位为小时，取值范围：1～720。
+     * When representing the duration for purchasing a subscription public IP, the default is '1'. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
      */
     period?: pulumi.Input<number>;
     /**
-     * 购买包年包月公网IP时长的单位。取值如下：1（默认值）：月。2 ：年。
+     * Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
      */
     periodUnit?: pulumi.Input<number>;
     /**
-     * 要绑定公网IP的实例的私网IP地址。只支持传入云服务ECS主网卡的私网IP地址和辅助网卡IP地址。若不填写：InstanceType传入EcsInstance，则绑定云服务器ECS主网卡的主私网IP地址。InstanceType传入NetworkInterface，则绑定辅助网卡主私网IP地址。
+     * Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
      */
     privateIpAddress?: pulumi.Input<string>;
     /**
-     * 公网IP所属项目的名称。
+     * Name of the project to which the public IP belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 是否随云服务器实例删除。仅按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放。true：是。false：否。
+     * Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
      */
     releaseWithInstance?: pulumi.Input<boolean>;
     /**
-     * 自动续费的时长，取值范围1、2、3、6、12，单位：月。若RenewType传入2，则必须传入RenewPeriodTimes
+     * Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
      */
     renewPeriodTimes?: pulumi.Input<number>;
     /**
-     * 包年包月公网IP续费的方式。取值如下：1（默认值）：手动续费。2：自动续费。3：到期不续费。
+     * Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
      */
     renewType?: pulumi.Input<number>;
     /**
-     * DDoS原生防护（企业版）ID。您可以调用 DescInstanceList 接口，查询DDoS原生防护（企业版）的ID。当SecurityProtectionTypes传入AntiDDoS_Enhanced时，此参数必须传入。
+     * DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
      */
     securityProtectionInstanceId?: pulumi.Input<number>;
     /**
-     * 防护类型。AntiDDoS_Enhanced：增强防护类型的公网IP，可以加入到DDoS原生防护（企业版）实例。空值：默认防护类型的公网IP。
+     * Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
      */
     securityProtectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 是否由服务管理
+     * Managed by service
      */
     serviceManaged?: pulumi.Input<boolean>;
     /**
-     * 公网IP的状态。Attaching：绑定中。Detaching：解绑中。Attached：已绑定。Available：可用。Deleting：删除中。
+     * Status of the public IP. Attaching: binding in progress. Detaching: unbinding in progress. Attached: bound. Available: available. Deleting: deleting.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.EipTag>[]>;
     /**
-     * 更新公网IP的时间。
+     * Time when the public IP was updated.
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -428,83 +428,83 @@ export interface EipState {
  */
 export interface EipArgs {
     /**
-     * 公网IP的带宽上限，默认为“1”，单位：Mbps,BillingType传入1：取值范围1 ~ 500。BillingType传入2：取值范围1 ~ 500。BillingType传入3：取值范围1 ~ 200。
+     * Maximum bandwidth of the public IP. Default is '1', unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
      */
     bandwidth?: pulumi.Input<number>;
     /**
-     * 共享带宽包的ID，表示将公网IP加入到共享带宽包。公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的地域相同。公网IP的计费方式必须是按量计费。共享带宽包为IPv4类型。
+     * Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
      */
     bandwidthPackageId?: pulumi.Input<string>;
     /**
-     * 公网IP的计费方式。取值如下：1：包年包月。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
      */
     billingType: pulumi.Input<number>;
     /**
-     * 公网IP的描述信息。
+     * Description of the public IP.
      */
     description?: pulumi.Input<string>;
     /**
-     * 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+     * Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
      */
     directMode?: pulumi.Input<boolean>;
     /**
-     * 当前绑定的实例ID。
+     * Currently bound instance ID.
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 当前绑定的实例类型。Nat：公网NAT网关。NetworkInterface: 弹性网卡。ClbInstance: 负载均衡。EcsInstance：云服务器。HaVip：高可用虚拟IP。
+     * Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
      */
     instanceType?: pulumi.Input<string>;
     /**
-     * 申请申请指定的公网IP地址。仅支持填写使用后释放的IP地址，不填则表示自动分配。指定的公网IP地址
+     * Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
      */
     ipAddress?: pulumi.Input<string>;
     /**
-     * IP地址池的ID。
+     * IP address pool ID.
      */
     ipAddressPoolId?: pulumi.Input<string>;
     /**
-     * 线路类型。BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：中国电信静态单线。ChinaUnicom：中国联通静态单线。SingleLine*BGP：BGP单线。Fusion*BGP：融合BGP。ChinaMobile*Value：中国移动惠选型静态单线。ChinaUnicom*Value：中国联通惠选型静态单线。ChinaTelecom_Value：中国电信惠选型静态单线。
+     * Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
      */
     isp?: pulumi.Input<string>;
     /**
-     * 公网IP的名称。
+     * Name of the public IP.
      */
     name?: pulumi.Input<string>;
     /**
-     * 代表购买包年包月公网IP的时长时，默认为“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36、48、60。当PeriodUnit传入2，Period取值范围：1～5。代表临时升配的时长时：单位为小时，取值范围：1～720。
+     * When representing the duration for purchasing a subscription public IP, the default is '1'. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
      */
     period?: pulumi.Input<number>;
     /**
-     * 购买包年包月公网IP时长的单位。取值如下：1（默认值）：月。2 ：年。
+     * Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
      */
     periodUnit?: pulumi.Input<number>;
     /**
-     * 要绑定公网IP的实例的私网IP地址。只支持传入云服务ECS主网卡的私网IP地址和辅助网卡IP地址。若不填写：InstanceType传入EcsInstance，则绑定云服务器ECS主网卡的主私网IP地址。InstanceType传入NetworkInterface，则绑定辅助网卡主私网IP地址。
+     * Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
      */
     privateIpAddress?: pulumi.Input<string>;
     /**
-     * 公网IP所属项目的名称。
+     * Name of the project to which the public IP belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 是否随云服务器实例删除。仅按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放。true：是。false：否。
+     * Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
      */
     releaseWithInstance?: pulumi.Input<boolean>;
     /**
-     * 自动续费的时长，取值范围1、2、3、6、12，单位：月。若RenewType传入2，则必须传入RenewPeriodTimes
+     * Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
      */
     renewPeriodTimes?: pulumi.Input<number>;
     /**
-     * 包年包月公网IP续费的方式。取值如下：1（默认值）：手动续费。2：自动续费。3：到期不续费。
+     * Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
      */
     renewType?: pulumi.Input<number>;
     /**
-     * DDoS原生防护（企业版）ID。您可以调用 DescInstanceList 接口，查询DDoS原生防护（企业版）的ID。当SecurityProtectionTypes传入AntiDDoS_Enhanced时，此参数必须传入。
+     * DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
      */
     securityProtectionInstanceId?: pulumi.Input<number>;
     /**
-     * 防护类型。AntiDDoS_Enhanced：增强防护类型的公网IP，可以加入到DDoS原生防护（企业版）实例。空值：默认防护类型的公网IP。
+     * Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
      */
     securityProtectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.EipTag>[]>;

@@ -22,13 +22,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
         }
 
         /// <summary>
-        /// 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+        /// Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update time
         /// </summary>
         [Input("updateTime")]
         public Input<string>? UpdateTime { get; set; }

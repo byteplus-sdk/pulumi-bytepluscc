@@ -19,14 +19,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     public static final AllowListState Empty = new AllowListState();
 
     /**
-     * IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
      * 
      */
     @Import(name="allowList")
     private @Nullable Output<String> allowList;
 
     /**
-     * @return IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * @return IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
      * 
      */
     public Optional<Output<String>> allowList() {
@@ -34,14 +34,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单描述。
+     * Allowlist description.
      * 
      */
     @Import(name="allowListDesc")
     private @Nullable Output<String> allowListDesc;
 
     /**
-     * @return 白名单描述。
+     * @return Allowlist description.
      * 
      */
     public Optional<Output<String>> allowListDesc() {
@@ -49,14 +49,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单的id。
+     * Allowlist ID.
      * 
      */
     @Import(name="allowListId")
     private @Nullable Output<String> allowListId;
 
     /**
-     * @return 白名单的id。
+     * @return Allowlist ID.
      * 
      */
     public Optional<Output<String>> allowListId() {
@@ -64,14 +64,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单内的 IP 地址（或地址段）总数。
+     * Total number of IP addresses (or address ranges) in the allowlist.
      * 
      */
     @Import(name="allowListIpNum")
     private @Nullable Output<Integer> allowListIpNum;
 
     /**
-     * @return 白名单内的 IP 地址（或地址段）总数。
+     * @return Total number of IP addresses (or address ranges) in the allowlist.
      * 
      */
     public Optional<Output<Integer>> allowListIpNum() {
@@ -79,14 +79,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单名称。
+     * Allowlist name.
      * 
      */
     @Import(name="allowListName")
     private @Nullable Output<String> allowListName;
 
     /**
-     * @return 白名单名称。
+     * @return Allowlist name.
      * 
      */
     public Optional<Output<String>> allowListName() {
@@ -94,14 +94,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单内的IP地址类型，当前仅支持IPv4。
+     * IP address type in the allowlist. Only IPv4 is currently supported.
      * 
      */
     @Import(name="allowListType")
     private @Nullable Output<String> allowListType;
 
     /**
-     * @return 白名单内的IP地址类型，当前仅支持IPv4。
+     * @return IP address type in the allowlist. Only IPv4 is currently supported.
      * 
      */
     public Optional<Output<String>> allowListType() {
@@ -109,14 +109,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单下绑定的实例总数
+     * Total number of instances bound to the allowlist.
      * 
      */
     @Import(name="associatedInstanceNum")
     private @Nullable Output<Integer> associatedInstanceNum;
 
     /**
-     * @return 白名单下绑定的实例总数
+     * @return Total number of instances bound to the allowlist.
      * 
      */
     public Optional<Output<Integer>> associatedInstanceNum() {
@@ -131,14 +131,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+     * How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
      * 
      */
     @Import(name="modifyMode")
     private @Nullable Output<String> modifyMode;
 
     /**
-     * @return 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+     * @return How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
      * 
      */
     public Optional<Output<String>> modifyMode() {
@@ -146,14 +146,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+     * Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+     * @return Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -194,7 +194,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowList IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+         * @param allowList IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowList IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+         * @param allowList IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListDesc 白名单描述。
+         * @param allowListDesc Allowlist description.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListDesc 白名单描述。
+         * @param allowListDesc Allowlist description.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListId 白名单的id。
+         * @param allowListId Allowlist ID.
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListId 白名单的id。
+         * @param allowListId Allowlist ID.
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIpNum 白名单内的 IP 地址（或地址段）总数。
+         * @param allowListIpNum Total number of IP addresses (or address ranges) in the allowlist.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIpNum 白名单内的 IP 地址（或地址段）总数。
+         * @param allowListIpNum Total number of IP addresses (or address ranges) in the allowlist.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListName 白名单名称。
+         * @param allowListName Allowlist name.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListName 白名单名称。
+         * @param allowListName Allowlist name.
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListType 白名单内的IP地址类型，当前仅支持IPv4。
+         * @param allowListType IP address type in the allowlist. Only IPv4 is currently supported.
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListType 白名单内的IP地址类型，当前仅支持IPv4。
+         * @param allowListType IP address type in the allowlist. Only IPv4 is currently supported.
          * 
          * @return builder
          * 
@@ -320,7 +320,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associatedInstanceNum 白名单下绑定的实例总数
+         * @param associatedInstanceNum Total number of instances bound to the allowlist.
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param associatedInstanceNum 白名单下绑定的实例总数
+         * @param associatedInstanceNum Total number of instances bound to the allowlist.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modifyMode 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+         * @param modifyMode How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modifyMode 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+         * @param modifyMode How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+         * @param projectName Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
          * 
          * @return builder
          * 
@@ -386,7 +386,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+         * @param projectName Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
          * 
          * @return builder
          * 

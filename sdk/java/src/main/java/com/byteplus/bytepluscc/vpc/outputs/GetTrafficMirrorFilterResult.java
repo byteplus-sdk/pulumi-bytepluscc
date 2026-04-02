@@ -15,17 +15,17 @@ import java.util.Objects;
 @CustomType
 public final class GetTrafficMirrorFilterResult {
     /**
-     * @return 筛选条件的创建时间。
+     * @return Filter condition creation time
      * 
      */
     private String createdTime;
     /**
-     * @return 筛选条件实例描述。
+     * @return Filter condition instance description
      * 
      */
     private String description;
     /**
-     * @return 出方向筛选规则的详细信息。
+     * @return Outbound filter rule details
      * 
      */
     private List<GetTrafficMirrorFilterEgressFilterRule> egressFilterRules;
@@ -35,53 +35,53 @@ public final class GetTrafficMirrorFilterResult {
      */
     private String id;
     /**
-     * @return 入方向筛选规则的详细信息。
+     * @return Inbound filter rule details
      * 
      */
     private List<GetTrafficMirrorFilterIngressFilterRule> ingressFilterRules;
     /**
-     * @return 筛选条件所属项目的名称。
+     * @return Project name of the filter condition
      * 
      */
     private String projectName;
     /**
-     * @return 筛选条件状态。
+     * @return Filter condition status
      * 
      */
     private String status;
     /**
-     * @return 标签信息
+     * @return Tag information
      * 
      */
     private List<GetTrafficMirrorFilterTag> tags;
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     private String trafficMirrorFilterId;
     /**
-     * @return 筛选条件名称。
+     * @return Filter condition name
      * 
      */
     private String trafficMirrorFilterName;
 
     private GetTrafficMirrorFilterResult() {}
     /**
-     * @return 筛选条件的创建时间。
+     * @return Filter condition creation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 筛选条件实例描述。
+     * @return Filter condition instance description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 出方向筛选规则的详细信息。
+     * @return Outbound filter rule details
      * 
      */
     public List<GetTrafficMirrorFilterEgressFilterRule> egressFilterRules() {
@@ -95,42 +95,42 @@ public final class GetTrafficMirrorFilterResult {
         return this.id;
     }
     /**
-     * @return 入方向筛选规则的详细信息。
+     * @return Inbound filter rule details
      * 
      */
     public List<GetTrafficMirrorFilterIngressFilterRule> ingressFilterRules() {
         return this.ingressFilterRules;
     }
     /**
-     * @return 筛选条件所属项目的名称。
+     * @return Project name of the filter condition
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 筛选条件状态。
+     * @return Filter condition status
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 标签信息
+     * @return Tag information
      * 
      */
     public List<GetTrafficMirrorFilterTag> tags() {
         return this.tags;
     }
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     public String trafficMirrorFilterId() {
         return this.trafficMirrorFilterId;
     }
     /**
-     * @return 筛选条件名称。
+     * @return Filter condition name
      * 
      */
     public String trafficMirrorFilterName() {

@@ -22,13 +22,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
         }
 
         /// <summary>
-        /// 是否开启组间会话保持。on：开启。off：不开启。
+        /// Whether to enable inter-group session persistence. on: enabled. off: disabled.
         /// </summary>
         [Input("stickySessionEnabled")]
         public Input<string>? StickySessionEnabled { get; set; }
 
         /// <summary>
-        /// 组件回话保持的超时时间。单位：秒。
+        /// Component session stickiness timeout. Unit: seconds.
         /// </summary>
         [Input("stickySessionTimeout")]
         public Input<int>? StickySessionTimeout { get; set; }

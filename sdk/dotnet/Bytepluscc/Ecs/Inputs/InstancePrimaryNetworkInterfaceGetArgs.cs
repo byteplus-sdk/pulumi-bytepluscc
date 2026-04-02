@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class InstancePrimaryNetworkInterfaceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例的IPv6地址数量。
+        /// The number of IPv6 addresses for the instance.
         /// </summary>
         [Input("ipv6AddressCount")]
         public Input<int>? Ipv6AddressCount { get; set; }
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         private InputList<string>? _ipv6Addresses;
 
         /// <summary>
-        /// 实例的IPv6地址。
+        /// IPv6 address of the instance.
         /// </summary>
         public InputList<string> Ipv6Addresses
         {
@@ -32,19 +32,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         }
 
         /// <summary>
-        /// 实例的MAC地址。
+        /// Instance MAC address.
         /// </summary>
         [Input("macAddress")]
         public Input<string>? MacAddress { get; set; }
 
         /// <summary>
-        /// 实例的网络接口ID。
+        /// The network interface ID of the instance.
         /// </summary>
         [Input("networkInterfaceId")]
         public Input<string>? NetworkInterfaceId { get; set; }
 
         /// <summary>
-        /// 实例的主IP地址。
+        /// Instance primary IP address
         /// </summary>
         [Input("primaryIpAddress")]
         public Input<string>? PrimaryIpAddress { get; set; }
@@ -53,7 +53,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         private InputList<string>? _privateIpAddresses;
 
         /// <summary>
-        /// 实例的私有IP地址。
+        /// Instance private IP address.
         /// </summary>
         public InputList<string> PrivateIpAddresses
         {
@@ -65,7 +65,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         private InputList<string>? _securityGroupIds;
 
         /// <summary>
-        /// 实例的安全组ID。
+        /// Instance security group ID
         /// </summary>
         public InputList<string> SecurityGroupIds
         {
@@ -74,13 +74,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         }
 
         /// <summary>
-        /// 实例的子网ID。
+        /// Instance subnet ID.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
         /// <summary>
-        /// 实例的VPC ID。
+        /// VPC ID of the instance.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }

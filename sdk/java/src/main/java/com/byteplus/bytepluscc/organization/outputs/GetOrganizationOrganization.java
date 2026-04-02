@@ -12,86 +12,86 @@ import java.util.Objects;
 @CustomType
 public final class GetOrganizationOrganization {
     /**
-     * @return 创建时间
+     * @return Creation Time
      * 
      */
     private String createdTime;
     /**
-     * @return 描述
+     * @return Description
      * 
      */
     private String description;
     /**
-     * @return 组织名称
+     * @return Organization Name
      * 
      */
     private String name;
     /**
-     * @return 管理员ID
+     * @return Administrator ID
      * 
      */
     private String owner;
     /**
-     * @return 状态
+     * @return Status
      * 
      */
     private Integer status;
     /**
-     * @return 组织类型，企业组织固定是 1
+     * @return Organization type, enterprise organization is always 1
      * 
      */
     private Integer type;
     /**
-     * @return 更新时间
+     * @return Last Updated
      * 
      */
     private String updatedTime;
 
     private GetOrganizationOrganization() {}
     /**
-     * @return 创建时间
+     * @return Creation Time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 描述
+     * @return Description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 组织名称
+     * @return Organization Name
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 管理员ID
+     * @return Administrator ID
      * 
      */
     public String owner() {
         return this.owner;
     }
     /**
-     * @return 状态
+     * @return Status
      * 
      */
     public Integer status() {
         return this.status;
     }
     /**
-     * @return 组织类型，企业组织固定是 1
+     * @return Organization type, enterprise organization is always 1
      * 
      */
     public Integer type() {
         return this.type;
     }
     /**
-     * @return 更新时间
+     * @return Last Updated
      * 
      */
     public String updatedTime() {

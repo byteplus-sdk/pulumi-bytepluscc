@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointServiceTag {
     /**
-     * @return 终端节点服务标签的标签键。
+     * @return Tag keys for endpoint service tags.
      * 
      */
     private String key;
     /**
-     * @return 终端节点服务标签的标签值。
+     * @return Tag value of the endpoint service tag.
      * 
      */
     private String value;
 
     private GetEndpointServiceTag() {}
     /**
-     * @return 终端节点服务标签的标签键。
+     * @return Tag keys for endpoint service tags.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 终端节点服务标签的标签值。
+     * @return Tag value of the endpoint service tag.
      * 
      */
     public String value() {

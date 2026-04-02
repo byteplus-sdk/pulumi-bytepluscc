@@ -30,35 +30,35 @@ type LookupCertificateArgs struct {
 
 // A collection of values returned by getCertificate.
 type LookupCertificateResult struct {
-	// 证书ID。
+	// Certificate ID
 	CertificateId string `pulumi:"certificateId"`
-	// 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+	// Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
 	CertificateName string `pulumi:"certificateName"`
-	// 证书类型，取值：CA：CA证书、Server：服务器证书。
+	// Certificate type. Options: CA: CA certificate; Server: server certificate
 	CertificateType string `pulumi:"certificateType"`
-	// 证书创建时间。
+	// Certificate creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// 证书描述。
+	// Certificate description
 	Description string `pulumi:"description"`
-	// 证书域名。
+	// Certificate domain name
 	DomainName string `pulumi:"domainName"`
-	// 证书过期时间。
+	// Certificate expiration time
 	ExpiredAt string `pulumi:"expiredAt"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 证书关联的监听器列表。
+	// List of listeners associated with the certificate
 	Listeners []string `pulumi:"listeners"`
-	// 服务器证书的私钥，当证书类型为Server时必填。
+	// Server certificate private key. Required when certificate type is Server
 	PrivateKey string `pulumi:"privateKey"`
-	// 项目名称。
+	// Project name
 	ProjectName string `pulumi:"projectName"`
-	// 服务器证书的公钥。
+	// Server certificate public key
 	PublicKey string `pulumi:"publicKey"`
-	// 证书扩展域名列表，用英文',' 分隔多个域名， 包含(commonName,DnsName,IP)。
+	// Certificate subject alternative name list. Use English ',' to separate multiple domain names. Includes (commonName, DnsName, IP)
 	San string `pulumi:"san"`
-	// 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+	// Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
 	Status string `pulumi:"status"`
-	// 标签列表。
+	// Tag list
 	Tags []GetCertificateTag `pulumi:"tags"`
 }
 
@@ -96,37 +96,37 @@ func (o LookupCertificateResultOutput) ToLookupCertificateResultOutputWithContex
 	return o
 }
 
-// 证书ID。
+// Certificate ID
 func (o LookupCertificateResultOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.CertificateId }).(pulumi.StringOutput)
 }
 
-// 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+// Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
 func (o LookupCertificateResultOutput) CertificateName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.CertificateName }).(pulumi.StringOutput)
 }
 
-// 证书类型，取值：CA：CA证书、Server：服务器证书。
+// Certificate type. Options: CA: CA certificate; Server: server certificate
 func (o LookupCertificateResultOutput) CertificateType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.CertificateType }).(pulumi.StringOutput)
 }
 
-// 证书创建时间。
+// Certificate creation time
 func (o LookupCertificateResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 证书描述。
+// Certificate description
 func (o LookupCertificateResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 证书域名。
+// Certificate domain name
 func (o LookupCertificateResultOutput) DomainName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.DomainName }).(pulumi.StringOutput)
 }
 
-// 证书过期时间。
+// Certificate expiration time
 func (o LookupCertificateResultOutput) ExpiredAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.ExpiredAt }).(pulumi.StringOutput)
 }
@@ -136,37 +136,37 @@ func (o LookupCertificateResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 证书关联的监听器列表。
+// List of listeners associated with the certificate
 func (o LookupCertificateResultOutput) Listeners() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCertificateResult) []string { return v.Listeners }).(pulumi.StringArrayOutput)
 }
 
-// 服务器证书的私钥，当证书类型为Server时必填。
+// Server certificate private key. Required when certificate type is Server
 func (o LookupCertificateResultOutput) PrivateKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.PrivateKey }).(pulumi.StringOutput)
 }
 
-// 项目名称。
+// Project name
 func (o LookupCertificateResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 服务器证书的公钥。
+// Server certificate public key
 func (o LookupCertificateResultOutput) PublicKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.PublicKey }).(pulumi.StringOutput)
 }
 
-// 证书扩展域名列表，用英文',' 分隔多个域名， 包含(commonName,DnsName,IP)。
+// Certificate subject alternative name list. Use English ',' to separate multiple domain names. Includes (commonName, DnsName, IP)
 func (o LookupCertificateResultOutput) San() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.San }).(pulumi.StringOutput)
 }
 
-// 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+// Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
 func (o LookupCertificateResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 标签列表。
+// Tag list
 func (o LookupCertificateResultOutput) Tags() GetCertificateTagArrayOutput {
 	return o.ApplyT(func(v LookupCertificateResult) []GetCertificateTag { return v.Tags }).(GetCertificateTagArrayOutput)
 }

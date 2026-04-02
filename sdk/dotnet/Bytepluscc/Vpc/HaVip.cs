@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// 高可用虚拟IP是一种可独立持有，可根据实际业务需要随时创建或删除的私网IP资源。在主备集群场景下，高可用虚拟IP通常与高可用软件（如Keepalived、Window Server Failover Cluster）搭配使用，搭建高可用主备服务。
+    /// A high availability virtual IP (HAVIP) is a private IP resource that can be independently owned, created, or deleted at any time based on business needs. In primary/secondary cluster scenarios, HAVIP is typically used with high availability software (such as Keepalived or Windows Server Failover Cluster) to build high availability primary/secondary services
     /// 
     /// ## Example Usage
     /// 
@@ -60,79 +60,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class HaVip : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// HAVIP绑定的公网IP的IP地址。
+        /// IP address of the public IP bound to the HAVIP
         /// </summary>
         [Output("associatedEipAddress")]
         public Output<string> AssociatedEipAddress { get; private set; } = null!;
 
         /// <summary>
-        /// HAVIP绑定的公网IP的ID。
+        /// ID of the public IP bound to the HAVIP
         /// </summary>
         [Output("associatedEipId")]
         public Output<string> AssociatedEipId { get; private set; } = null!;
 
         /// <summary>
-        /// 绑定HAVIP的实例ID列表。
+        /// List of instance IDs bound to the HAVIP
         /// </summary>
         [Output("associatedInstanceIds")]
         public Output<ImmutableArray<string>> AssociatedInstanceIds { get; private set; } = null!;
 
         /// <summary>
-        /// 绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+        /// Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
         /// </summary>
         [Output("associatedInstanceType")]
         public Output<string> AssociatedInstanceType { get; private set; } = null!;
 
         /// <summary>
-        /// HAVIP的创建时间。
+        /// Creation time of the HAVIP
         /// </summary>
         [Output("createdAt")]
         public Output<string> CreatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// HAVIP的描述。长度限制为0～255个字符。
+        /// Description of the HAVIP. Length limit: 0–255 characters
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// HAVIP的ID。
+        /// ID of the HAVIP
         /// </summary>
         [Output("haVipId")]
         public Output<string> HaVipId { get; private set; } = null!;
 
         /// <summary>
-        /// HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+        /// Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
         /// </summary>
         [Output("haVipName")]
         public Output<string> HaVipName { get; private set; } = null!;
 
         /// <summary>
-        /// HAVIP的IP地址。
+        /// IP address of the HAVIP
         /// </summary>
         [Output("ipAddress")]
         public Output<string> IpAddress { get; private set; } = null!;
 
         /// <summary>
-        /// 与HAVIP绑定的主实例的ID。
+        /// ID of the primary instance bound to the HAVIP
         /// </summary>
         [Output("masterInstanceId")]
         public Output<string> MasterInstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// HAVIP的项目名称。
+        /// Project name of the HAVIP
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// HAVIP的状态。Available：可用。Creating：创建中。InUse：使用中。Deleting：删除中。
+        /// Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// HAVIP所属的子网 ID。
+        /// Subnet ID to which the HAVIP belongs
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -141,13 +141,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.HaVipTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// HAVIP最近一次的修改时间。
+        /// Last modification time of the HAVIP
         /// </summary>
         [Output("updatedAt")]
         public Output<string> UpdatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// HAVIP所属的VPC ID。
+        /// VPC ID to which the HAVIP belongs
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
@@ -200,7 +200,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class HaVipArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// HAVIP绑定的公网IP的ID。
+        /// ID of the public IP bound to the HAVIP
         /// </summary>
         [Input("associatedEipId")]
         public Input<string>? AssociatedEipId { get; set; }
@@ -209,7 +209,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         private InputList<string>? _associatedInstanceIds;
 
         /// <summary>
-        /// 绑定HAVIP的实例ID列表。
+        /// List of instance IDs bound to the HAVIP
         /// </summary>
         public InputList<string> AssociatedInstanceIds
         {
@@ -218,31 +218,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+        /// Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
         /// </summary>
         [Input("associatedInstanceType")]
         public Input<string>? AssociatedInstanceType { get; set; }
 
         /// <summary>
-        /// HAVIP的描述。长度限制为0～255个字符。
+        /// Description of the HAVIP. Length limit: 0–255 characters
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+        /// Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
         /// </summary>
         [Input("haVipName")]
         public Input<string>? HaVipName { get; set; }
 
         /// <summary>
-        /// HAVIP的IP地址。
+        /// IP address of the HAVIP
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// HAVIP所属的子网 ID。
+        /// Subnet ID to which the HAVIP belongs
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
@@ -264,13 +264,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class HaVipState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// HAVIP绑定的公网IP的IP地址。
+        /// IP address of the public IP bound to the HAVIP
         /// </summary>
         [Input("associatedEipAddress")]
         public Input<string>? AssociatedEipAddress { get; set; }
 
         /// <summary>
-        /// HAVIP绑定的公网IP的ID。
+        /// ID of the public IP bound to the HAVIP
         /// </summary>
         [Input("associatedEipId")]
         public Input<string>? AssociatedEipId { get; set; }
@@ -279,7 +279,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         private InputList<string>? _associatedInstanceIds;
 
         /// <summary>
-        /// 绑定HAVIP的实例ID列表。
+        /// List of instance IDs bound to the HAVIP
         /// </summary>
         public InputList<string> AssociatedInstanceIds
         {
@@ -288,61 +288,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+        /// Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
         /// </summary>
         [Input("associatedInstanceType")]
         public Input<string>? AssociatedInstanceType { get; set; }
 
         /// <summary>
-        /// HAVIP的创建时间。
+        /// Creation time of the HAVIP
         /// </summary>
         [Input("createdAt")]
         public Input<string>? CreatedAt { get; set; }
 
         /// <summary>
-        /// HAVIP的描述。长度限制为0～255个字符。
+        /// Description of the HAVIP. Length limit: 0–255 characters
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// HAVIP的ID。
+        /// ID of the HAVIP
         /// </summary>
         [Input("haVipId")]
         public Input<string>? HaVipId { get; set; }
 
         /// <summary>
-        /// HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+        /// Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
         /// </summary>
         [Input("haVipName")]
         public Input<string>? HaVipName { get; set; }
 
         /// <summary>
-        /// HAVIP的IP地址。
+        /// IP address of the HAVIP
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// 与HAVIP绑定的主实例的ID。
+        /// ID of the primary instance bound to the HAVIP
         /// </summary>
         [Input("masterInstanceId")]
         public Input<string>? MasterInstanceId { get; set; }
 
         /// <summary>
-        /// HAVIP的项目名称。
+        /// Project name of the HAVIP
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// HAVIP的状态。Available：可用。Creating：创建中。InUse：使用中。Deleting：删除中。
+        /// Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// HAVIP所属的子网 ID。
+        /// Subnet ID to which the HAVIP belongs
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
@@ -356,13 +356,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// HAVIP最近一次的修改时间。
+        /// Last modification time of the HAVIP
         /// </summary>
         [Input("updatedAt")]
         public Input<string>? UpdatedAt { get; set; }
 
         /// <summary>
-        /// HAVIP所属的VPC ID。
+        /// VPC ID to which the HAVIP belongs
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }

@@ -12,98 +12,98 @@ import java.util.Objects;
 @CustomType
 public final class GetNlbListenerHealth {
     /**
-     * @return 后端服务器的实例 ID或IP地址。
+     * @return Backend server instance ID or IP address
      * 
      */
     private String instanceId;
     /**
-     * @return 后端服务器的IP地址。
+     * @return Backend server IP address
      * 
      */
     private String ip;
     /**
-     * @return 后端服务器提供服务的端口。
+     * @return Port on which the backend server provides services
      * 
      */
     private Integer port;
     /**
-     * @return 后端服务器ID。
+     * @return Backend server ID
      * 
      */
     private String serverId;
     /**
-     * @return 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+     * @return Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
      * 
      */
     private String serverType;
     /**
-     * @return 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+     * @return Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server&#39;s zone)
      * 
      */
     private String status;
     /**
-     * @return 健康状态最后更新时间。
+     * @return Last update time of health status
      * 
      */
     private String updatedTime;
     /**
-     * @return 后端服务器接收访问流量的可用区ID。
+     * @return Zone ID where the backend server receives traffic
      * 
      */
     private String zoneId;
 
     private GetNlbListenerHealth() {}
     /**
-     * @return 后端服务器的实例 ID或IP地址。
+     * @return Backend server instance ID or IP address
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 后端服务器的IP地址。
+     * @return Backend server IP address
      * 
      */
     public String ip() {
         return this.ip;
     }
     /**
-     * @return 后端服务器提供服务的端口。
+     * @return Port on which the backend server provides services
      * 
      */
     public Integer port() {
         return this.port;
     }
     /**
-     * @return 后端服务器ID。
+     * @return Backend server ID
      * 
      */
     public String serverId() {
         return this.serverId;
     }
     /**
-     * @return 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+     * @return Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
      * 
      */
     public String serverType() {
         return this.serverType;
     }
     /**
-     * @return 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+     * @return Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server&#39;s zone)
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 健康状态最后更新时间。
+     * @return Last update time of health status
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 后端服务器接收访问流量的可用区ID。
+     * @return Zone ID where the backend server receives traffic
      * 
      */
     public String zoneId() {

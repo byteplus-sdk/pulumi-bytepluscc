@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 全局配置扩展了域名的配置能力，具有以下优点：提升了黑白名单的容量。例如，IP 黑名单可以包含高达 30,000 个条目。提升了域名配置的效率。一个全局配置可与多个域名关联。提供了通用列表类型，可以在额外的域名配置中被使用。一个全局配置的修改可立刻应用于其关联的所有域名。
+// Global configuration extends domain configuration capabilities with the following advantages: increases the capacity of denylist and allowlist. For example, an IP denylist can contain up to 30,000 entries. Improves domain configuration efficiency. A single global configuration can be associated with multiple domains. Provides a common list type that can be used in additional domain configurations. Modifications to a global configuration are immediately applied to all associated domains.
 //
 // ## Import
 //
@@ -21,27 +21,27 @@ import (
 type ShareConfig struct {
 	pulumi.CustomResourceState
 
-	// 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+	// Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
 	AllowIpAccessRule ShareConfigAllowIpAccessRuleOutput `pulumi:"allowIpAccessRule"`
-	// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+	// Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
 	AllowRefererAccessRule ShareConfigAllowRefererAccessRuleOutput `pulumi:"allowRefererAccessRule"`
-	// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+	// Specifies the configuration for a common list, where ConfigType is common*match*list.
 	CommonMatchList ShareConfigCommonMatchListOutput `pulumi:"commonMatchList"`
-	// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+	// Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
 	ConfigName pulumi.StringOutput `pulumi:"configName"`
-	// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+	// This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
 	ConfigType pulumi.StringOutput `pulumi:"configType"`
-	// 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+	// Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
 	DenyIpAccessRule ShareConfigDenyIpAccessRuleOutput `pulumi:"denyIpAccessRule"`
-	// 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+	// Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
 	DenyRefererAccessRule ShareConfigDenyRefererAccessRuleOutput `pulumi:"denyRefererAccessRule"`
-	// 表示与该全局配置关联的加速域名的数量。
+	// Indicates the number of accelerated domains associated with this global configuration.
 	DomainCount pulumi.IntOutput `pulumi:"domainCount"`
-	// 表示该全局配置所归属的项目名称。
+	// Specifies the project name to which the global configuration belongs.
 	Project pulumi.StringOutput `pulumi:"project"`
-	// 表示该自定义错误页面的 HTML 代码。
+	// Specifies the HTML code for the custom error page.
 	RuleContent pulumi.StringOutput `pulumi:"ruleContent"`
-	// 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+	// Indicates the last modification time of this global configuration, in Unix timestamp.
 	UpdatedTime pulumi.IntOutput `pulumi:"updatedTime"`
 }
 
@@ -75,52 +75,52 @@ func GetShareConfig(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ShareConfig resources.
 type shareConfigState struct {
-	// 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+	// Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
 	AllowIpAccessRule *ShareConfigAllowIpAccessRule `pulumi:"allowIpAccessRule"`
-	// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+	// Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
 	AllowRefererAccessRule *ShareConfigAllowRefererAccessRule `pulumi:"allowRefererAccessRule"`
-	// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+	// Specifies the configuration for a common list, where ConfigType is common*match*list.
 	CommonMatchList *ShareConfigCommonMatchList `pulumi:"commonMatchList"`
-	// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+	// Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
 	ConfigName *string `pulumi:"configName"`
-	// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+	// This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
 	ConfigType *string `pulumi:"configType"`
-	// 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+	// Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
 	DenyIpAccessRule *ShareConfigDenyIpAccessRule `pulumi:"denyIpAccessRule"`
-	// 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+	// Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
 	DenyRefererAccessRule *ShareConfigDenyRefererAccessRule `pulumi:"denyRefererAccessRule"`
-	// 表示与该全局配置关联的加速域名的数量。
+	// Indicates the number of accelerated domains associated with this global configuration.
 	DomainCount *int `pulumi:"domainCount"`
-	// 表示该全局配置所归属的项目名称。
+	// Specifies the project name to which the global configuration belongs.
 	Project *string `pulumi:"project"`
-	// 表示该自定义错误页面的 HTML 代码。
+	// Specifies the HTML code for the custom error page.
 	RuleContent *string `pulumi:"ruleContent"`
-	// 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+	// Indicates the last modification time of this global configuration, in Unix timestamp.
 	UpdatedTime *int `pulumi:"updatedTime"`
 }
 
 type ShareConfigState struct {
-	// 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+	// Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
 	AllowIpAccessRule ShareConfigAllowIpAccessRulePtrInput
-	// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+	// Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
 	AllowRefererAccessRule ShareConfigAllowRefererAccessRulePtrInput
-	// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+	// Specifies the configuration for a common list, where ConfigType is common*match*list.
 	CommonMatchList ShareConfigCommonMatchListPtrInput
-	// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+	// Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
 	ConfigName pulumi.StringPtrInput
-	// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+	// This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
 	ConfigType pulumi.StringPtrInput
-	// 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+	// Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
 	DenyIpAccessRule ShareConfigDenyIpAccessRulePtrInput
-	// 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+	// Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
 	DenyRefererAccessRule ShareConfigDenyRefererAccessRulePtrInput
-	// 表示与该全局配置关联的加速域名的数量。
+	// Indicates the number of accelerated domains associated with this global configuration.
 	DomainCount pulumi.IntPtrInput
-	// 表示该全局配置所归属的项目名称。
+	// Specifies the project name to which the global configuration belongs.
 	Project pulumi.StringPtrInput
-	// 表示该自定义错误页面的 HTML 代码。
+	// Specifies the HTML code for the custom error page.
 	RuleContent pulumi.StringPtrInput
-	// 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+	// Indicates the last modification time of this global configuration, in Unix timestamp.
 	UpdatedTime pulumi.IntPtrInput
 }
 
@@ -129,41 +129,41 @@ func (ShareConfigState) ElementType() reflect.Type {
 }
 
 type shareConfigArgs struct {
-	// 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+	// Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
 	AllowIpAccessRule *ShareConfigAllowIpAccessRule `pulumi:"allowIpAccessRule"`
-	// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+	// Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
 	AllowRefererAccessRule *ShareConfigAllowRefererAccessRule `pulumi:"allowRefererAccessRule"`
-	// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+	// Specifies the configuration for a common list, where ConfigType is common*match*list.
 	CommonMatchList *ShareConfigCommonMatchList `pulumi:"commonMatchList"`
-	// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+	// Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
 	ConfigName *string `pulumi:"configName"`
-	// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+	// This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
 	ConfigType *string `pulumi:"configType"`
-	// 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+	// Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
 	DenyIpAccessRule *ShareConfigDenyIpAccessRule `pulumi:"denyIpAccessRule"`
-	// 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+	// Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
 	DenyRefererAccessRule *ShareConfigDenyRefererAccessRule `pulumi:"denyRefererAccessRule"`
-	// 表示该全局配置所归属的项目名称。
+	// Specifies the project name to which the global configuration belongs.
 	Project *string `pulumi:"project"`
 }
 
 // The set of arguments for constructing a ShareConfig resource.
 type ShareConfigArgs struct {
-	// 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+	// Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
 	AllowIpAccessRule ShareConfigAllowIpAccessRulePtrInput
-	// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+	// Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
 	AllowRefererAccessRule ShareConfigAllowRefererAccessRulePtrInput
-	// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+	// Specifies the configuration for a common list, where ConfigType is common*match*list.
 	CommonMatchList ShareConfigCommonMatchListPtrInput
-	// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+	// Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
 	ConfigName pulumi.StringPtrInput
-	// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+	// This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
 	ConfigType pulumi.StringPtrInput
-	// 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+	// Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
 	DenyIpAccessRule ShareConfigDenyIpAccessRulePtrInput
-	// 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+	// Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
 	DenyRefererAccessRule ShareConfigDenyRefererAccessRulePtrInput
-	// 表示该全局配置所归属的项目名称。
+	// Specifies the project name to which the global configuration belongs.
 	Project pulumi.StringPtrInput
 }
 
@@ -254,57 +254,57 @@ func (o ShareConfigOutput) ToShareConfigOutputWithContext(ctx context.Context) S
 	return o
 }
 
-// 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+// Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
 func (o ShareConfigOutput) AllowIpAccessRule() ShareConfigAllowIpAccessRuleOutput {
 	return o.ApplyT(func(v *ShareConfig) ShareConfigAllowIpAccessRuleOutput { return v.AllowIpAccessRule }).(ShareConfigAllowIpAccessRuleOutput)
 }
 
-// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+// Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
 func (o ShareConfigOutput) AllowRefererAccessRule() ShareConfigAllowRefererAccessRuleOutput {
 	return o.ApplyT(func(v *ShareConfig) ShareConfigAllowRefererAccessRuleOutput { return v.AllowRefererAccessRule }).(ShareConfigAllowRefererAccessRuleOutput)
 }
 
-// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+// Specifies the configuration for a common list, where ConfigType is common*match*list.
 func (o ShareConfigOutput) CommonMatchList() ShareConfigCommonMatchListOutput {
 	return o.ApplyT(func(v *ShareConfig) ShareConfigCommonMatchListOutput { return v.CommonMatchList }).(ShareConfigCommonMatchListOutput)
 }
 
-// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+// Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
 func (o ShareConfigOutput) ConfigName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ShareConfig) pulumi.StringOutput { return v.ConfigName }).(pulumi.StringOutput)
 }
 
-// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+// This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
 func (o ShareConfigOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ShareConfig) pulumi.StringOutput { return v.ConfigType }).(pulumi.StringOutput)
 }
 
-// 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+// Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
 func (o ShareConfigOutput) DenyIpAccessRule() ShareConfigDenyIpAccessRuleOutput {
 	return o.ApplyT(func(v *ShareConfig) ShareConfigDenyIpAccessRuleOutput { return v.DenyIpAccessRule }).(ShareConfigDenyIpAccessRuleOutput)
 }
 
-// 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+// Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
 func (o ShareConfigOutput) DenyRefererAccessRule() ShareConfigDenyRefererAccessRuleOutput {
 	return o.ApplyT(func(v *ShareConfig) ShareConfigDenyRefererAccessRuleOutput { return v.DenyRefererAccessRule }).(ShareConfigDenyRefererAccessRuleOutput)
 }
 
-// 表示与该全局配置关联的加速域名的数量。
+// Indicates the number of accelerated domains associated with this global configuration.
 func (o ShareConfigOutput) DomainCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ShareConfig) pulumi.IntOutput { return v.DomainCount }).(pulumi.IntOutput)
 }
 
-// 表示该全局配置所归属的项目名称。
+// Specifies the project name to which the global configuration belongs.
 func (o ShareConfigOutput) Project() pulumi.StringOutput {
 	return o.ApplyT(func(v *ShareConfig) pulumi.StringOutput { return v.Project }).(pulumi.StringOutput)
 }
 
-// 表示该自定义错误页面的 HTML 代码。
+// Specifies the HTML code for the custom error page.
 func (o ShareConfigOutput) RuleContent() pulumi.StringOutput {
 	return o.ApplyT(func(v *ShareConfig) pulumi.StringOutput { return v.RuleContent }).(pulumi.StringOutput)
 }
 
-// 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+// Indicates the last modification time of this global configuration, in Unix timestamp.
 func (o ShareConfigOutput) UpdatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v *ShareConfig) pulumi.IntOutput { return v.UpdatedTime }).(pulumi.IntOutput)
 }

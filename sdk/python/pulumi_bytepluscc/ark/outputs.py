@@ -71,13 +71,13 @@ class EndpointCertificate(dict):
                  pca_root_ca_certificate: Optional[builtins.str] = None,
                  pca_sub_ca_certificate: Optional[builtins.str] = None):
         """
-        :param builtins.int not_after: X509私有证书过期的时间。使用秒级时间戳表示。
-        :param builtins.int not_before: X509私有证书开始生效的时间。使用秒级时间戳表示。
-        :param builtins.str pca_host: 证书方。
-        :param builtins.str pca_instance_certificate: PEM 格式的叶子证书。
-        :param builtins.str pca_name: 证书名称。
-        :param builtins.str pca_root_ca_certificate: PEM 格式的根证书。
-        :param builtins.str pca_sub_ca_certificate: PEM 格式的中间根证书和根证书。
+        :param builtins.int not_after: X509 private certificate expiration time, represented as a timestamp in seconds
+        :param builtins.int not_before: X509 private certificate activation time, represented as a timestamp in seconds
+        :param builtins.str pca_host: Certificate subject
+        :param builtins.str pca_instance_certificate: PEM format leaf certificate
+        :param builtins.str pca_name: Certificate name
+        :param builtins.str pca_root_ca_certificate: PEM format root certificate
+        :param builtins.str pca_sub_ca_certificate: Intermediate certificate and root certificate in PEM format
         """
         if not_after is not None:
             pulumi.set(__self__, "not_after", not_after)
@@ -98,7 +98,7 @@ class EndpointCertificate(dict):
     @pulumi.getter(name="notAfter")
     def not_after(self) -> Optional[builtins.int]:
         """
-        X509私有证书过期的时间。使用秒级时间戳表示。
+        X509 private certificate expiration time, represented as a timestamp in seconds
         """
         return pulumi.get(self, "not_after")
 
@@ -106,7 +106,7 @@ class EndpointCertificate(dict):
     @pulumi.getter(name="notBefore")
     def not_before(self) -> Optional[builtins.int]:
         """
-        X509私有证书开始生效的时间。使用秒级时间戳表示。
+        X509 private certificate activation time, represented as a timestamp in seconds
         """
         return pulumi.get(self, "not_before")
 
@@ -114,7 +114,7 @@ class EndpointCertificate(dict):
     @pulumi.getter(name="pcaHost")
     def pca_host(self) -> Optional[builtins.str]:
         """
-        证书方。
+        Certificate subject
         """
         return pulumi.get(self, "pca_host")
 
@@ -122,7 +122,7 @@ class EndpointCertificate(dict):
     @pulumi.getter(name="pcaInstanceCertificate")
     def pca_instance_certificate(self) -> Optional[builtins.str]:
         """
-        PEM 格式的叶子证书。
+        PEM format leaf certificate
         """
         return pulumi.get(self, "pca_instance_certificate")
 
@@ -130,7 +130,7 @@ class EndpointCertificate(dict):
     @pulumi.getter(name="pcaName")
     def pca_name(self) -> Optional[builtins.str]:
         """
-        证书名称。
+        Certificate name
         """
         return pulumi.get(self, "pca_name")
 
@@ -138,7 +138,7 @@ class EndpointCertificate(dict):
     @pulumi.getter(name="pcaRootCaCertificate")
     def pca_root_ca_certificate(self) -> Optional[builtins.str]:
         """
-        PEM 格式的根证书。
+        PEM format root certificate
         """
         return pulumi.get(self, "pca_root_ca_certificate")
 
@@ -146,7 +146,7 @@ class EndpointCertificate(dict):
     @pulumi.getter(name="pcaSubCaCertificate")
     def pca_sub_ca_certificate(self) -> Optional[builtins.str]:
         """
-        PEM 格式的中间根证书和根证书。
+        Intermediate certificate and root certificate in PEM format
         """
         return pulumi.get(self, "pca_sub_ca_certificate")
 
@@ -176,8 +176,8 @@ class EndpointModelReference(dict):
                  custom_model_id: Optional[builtins.str] = None,
                  foundation_model: Optional['outputs.EndpointModelReferenceFoundationModel'] = None):
         """
-        :param builtins.str custom_model_id: 定制模型的ID。
-        :param 'EndpointModelReferenceFoundationModelArgs' foundation_model: 基础模型。
+        :param builtins.str custom_model_id: Custom model ID
+        :param 'EndpointModelReferenceFoundationModelArgs' foundation_model: Base model
         """
         if custom_model_id is not None:
             pulumi.set(__self__, "custom_model_id", custom_model_id)
@@ -188,7 +188,7 @@ class EndpointModelReference(dict):
     @pulumi.getter(name="customModelId")
     def custom_model_id(self) -> Optional[builtins.str]:
         """
-        定制模型的ID。
+        Custom model ID
         """
         return pulumi.get(self, "custom_model_id")
 
@@ -196,7 +196,7 @@ class EndpointModelReference(dict):
     @pulumi.getter(name="foundationModel")
     def foundation_model(self) -> Optional['outputs.EndpointModelReferenceFoundationModel']:
         """
-        基础模型。
+        Base model
         """
         return pulumi.get(self, "foundation_model")
 
@@ -224,8 +224,8 @@ class EndpointModelReferenceFoundationModel(dict):
                  model_version: Optional[builtins.str] = None,
                  name: Optional[builtins.str] = None):
         """
-        :param builtins.str model_version: 基础模型版本。
-        :param builtins.str name: 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+        :param builtins.str model_version: Base model version
+        :param builtins.str name: Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
         """
         if model_version is not None:
             pulumi.set(__self__, "model_version", model_version)
@@ -236,7 +236,7 @@ class EndpointModelReferenceFoundationModel(dict):
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[builtins.str]:
         """
-        基础模型版本。
+        Base model version
         """
         return pulumi.get(self, "model_version")
 
@@ -244,7 +244,7 @@ class EndpointModelReferenceFoundationModel(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+        Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
         """
         return pulumi.get(self, "name")
 
@@ -254,7 +254,7 @@ class EndpointModeration(dict):
     def __init__(__self__, *,
                  strategy: Optional[builtins.str] = None):
         """
-        :param builtins.str strategy: 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+        :param builtins.str strategy: Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
         """
         if strategy is not None:
             pulumi.set(__self__, "strategy", strategy)
@@ -263,7 +263,7 @@ class EndpointModeration(dict):
     @pulumi.getter
     def strategy(self) -> Optional[builtins.str]:
         """
-        内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+        Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
         """
         return pulumi.get(self, "strategy")
 
@@ -274,8 +274,8 @@ class EndpointRateLimit(dict):
                  rpm: Optional[builtins.int] = None,
                  tpm: Optional[builtins.int] = None):
         """
-        :param builtins.int rpm: Requests Per Minute，每分钟请求数。
-        :param builtins.int tpm: Tokens Per Minute，每分钟请求 token 数。
+        :param builtins.int rpm: Requests Per Minute, number of requests per minute
+        :param builtins.int tpm: Tokens Per Minute, number of tokens requested per minute
         """
         if rpm is not None:
             pulumi.set(__self__, "rpm", rpm)
@@ -286,7 +286,7 @@ class EndpointRateLimit(dict):
     @pulumi.getter
     def rpm(self) -> Optional[builtins.int]:
         """
-        Requests Per Minute，每分钟请求数。
+        Requests Per Minute, number of requests per minute
         """
         return pulumi.get(self, "rpm")
 
@@ -294,7 +294,7 @@ class EndpointRateLimit(dict):
     @pulumi.getter
     def tpm(self) -> Optional[builtins.int]:
         """
-        Tokens Per Minute，每分钟请求 token 数。
+        Tokens Per Minute, number of tokens requested per minute
         """
         return pulumi.get(self, "tpm")
 
@@ -305,8 +305,8 @@ class EndpointTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -317,7 +317,7 @@ class EndpointTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -325,7 +325,7 @@ class EndpointTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -341,13 +341,13 @@ class GetEndpointCertificateResult(dict):
                  pca_root_ca_certificate: builtins.str,
                  pca_sub_ca_certificate: builtins.str):
         """
-        :param builtins.int not_after: X509私有证书过期的时间。使用秒级时间戳表示。
-        :param builtins.int not_before: X509私有证书开始生效的时间。使用秒级时间戳表示。
-        :param builtins.str pca_host: 证书方。
-        :param builtins.str pca_instance_certificate: PEM 格式的叶子证书。
-        :param builtins.str pca_name: 证书名称。
-        :param builtins.str pca_root_ca_certificate: PEM 格式的根证书。
-        :param builtins.str pca_sub_ca_certificate: PEM 格式的中间根证书和根证书。
+        :param builtins.int not_after: X509 private certificate expiration time, represented as a timestamp in seconds
+        :param builtins.int not_before: X509 private certificate activation time, represented as a timestamp in seconds
+        :param builtins.str pca_host: Certificate subject
+        :param builtins.str pca_instance_certificate: PEM format leaf certificate
+        :param builtins.str pca_name: Certificate name
+        :param builtins.str pca_root_ca_certificate: PEM format root certificate
+        :param builtins.str pca_sub_ca_certificate: Intermediate certificate and root certificate in PEM format
         """
         pulumi.set(__self__, "not_after", not_after)
         pulumi.set(__self__, "not_before", not_before)
@@ -361,7 +361,7 @@ class GetEndpointCertificateResult(dict):
     @pulumi.getter(name="notAfter")
     def not_after(self) -> builtins.int:
         """
-        X509私有证书过期的时间。使用秒级时间戳表示。
+        X509 private certificate expiration time, represented as a timestamp in seconds
         """
         return pulumi.get(self, "not_after")
 
@@ -369,7 +369,7 @@ class GetEndpointCertificateResult(dict):
     @pulumi.getter(name="notBefore")
     def not_before(self) -> builtins.int:
         """
-        X509私有证书开始生效的时间。使用秒级时间戳表示。
+        X509 private certificate activation time, represented as a timestamp in seconds
         """
         return pulumi.get(self, "not_before")
 
@@ -377,7 +377,7 @@ class GetEndpointCertificateResult(dict):
     @pulumi.getter(name="pcaHost")
     def pca_host(self) -> builtins.str:
         """
-        证书方。
+        Certificate subject
         """
         return pulumi.get(self, "pca_host")
 
@@ -385,7 +385,7 @@ class GetEndpointCertificateResult(dict):
     @pulumi.getter(name="pcaInstanceCertificate")
     def pca_instance_certificate(self) -> builtins.str:
         """
-        PEM 格式的叶子证书。
+        PEM format leaf certificate
         """
         return pulumi.get(self, "pca_instance_certificate")
 
@@ -393,7 +393,7 @@ class GetEndpointCertificateResult(dict):
     @pulumi.getter(name="pcaName")
     def pca_name(self) -> builtins.str:
         """
-        证书名称。
+        Certificate name
         """
         return pulumi.get(self, "pca_name")
 
@@ -401,7 +401,7 @@ class GetEndpointCertificateResult(dict):
     @pulumi.getter(name="pcaRootCaCertificate")
     def pca_root_ca_certificate(self) -> builtins.str:
         """
-        PEM 格式的根证书。
+        PEM format root certificate
         """
         return pulumi.get(self, "pca_root_ca_certificate")
 
@@ -409,7 +409,7 @@ class GetEndpointCertificateResult(dict):
     @pulumi.getter(name="pcaSubCaCertificate")
     def pca_sub_ca_certificate(self) -> builtins.str:
         """
-        PEM 格式的中间根证书和根证书。
+        Intermediate certificate and root certificate in PEM format
         """
         return pulumi.get(self, "pca_sub_ca_certificate")
 
@@ -420,8 +420,8 @@ class GetEndpointModelReferenceResult(dict):
                  custom_model_id: builtins.str,
                  foundation_model: 'outputs.GetEndpointModelReferenceFoundationModelResult'):
         """
-        :param builtins.str custom_model_id: 定制模型的ID。
-        :param 'GetEndpointModelReferenceFoundationModelArgs' foundation_model: 基础模型。
+        :param builtins.str custom_model_id: Custom model ID
+        :param 'GetEndpointModelReferenceFoundationModelArgs' foundation_model: Base model
         """
         pulumi.set(__self__, "custom_model_id", custom_model_id)
         pulumi.set(__self__, "foundation_model", foundation_model)
@@ -430,7 +430,7 @@ class GetEndpointModelReferenceResult(dict):
     @pulumi.getter(name="customModelId")
     def custom_model_id(self) -> builtins.str:
         """
-        定制模型的ID。
+        Custom model ID
         """
         return pulumi.get(self, "custom_model_id")
 
@@ -438,7 +438,7 @@ class GetEndpointModelReferenceResult(dict):
     @pulumi.getter(name="foundationModel")
     def foundation_model(self) -> 'outputs.GetEndpointModelReferenceFoundationModelResult':
         """
-        基础模型。
+        Base model
         """
         return pulumi.get(self, "foundation_model")
 
@@ -449,8 +449,8 @@ class GetEndpointModelReferenceFoundationModelResult(dict):
                  model_version: builtins.str,
                  name: builtins.str):
         """
-        :param builtins.str model_version: 基础模型版本。
-        :param builtins.str name: 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+        :param builtins.str model_version: Base model version
+        :param builtins.str name: Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
         """
         pulumi.set(__self__, "model_version", model_version)
         pulumi.set(__self__, "name", name)
@@ -459,7 +459,7 @@ class GetEndpointModelReferenceFoundationModelResult(dict):
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> builtins.str:
         """
-        基础模型版本。
+        Base model version
         """
         return pulumi.get(self, "model_version")
 
@@ -467,7 +467,7 @@ class GetEndpointModelReferenceFoundationModelResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+        Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
         """
         return pulumi.get(self, "name")
 
@@ -477,7 +477,7 @@ class GetEndpointModerationResult(dict):
     def __init__(__self__, *,
                  strategy: builtins.str):
         """
-        :param builtins.str strategy: 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+        :param builtins.str strategy: Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
         """
         pulumi.set(__self__, "strategy", strategy)
 
@@ -485,7 +485,7 @@ class GetEndpointModerationResult(dict):
     @pulumi.getter
     def strategy(self) -> builtins.str:
         """
-        内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+        Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
         """
         return pulumi.get(self, "strategy")
 
@@ -496,8 +496,8 @@ class GetEndpointRateLimitResult(dict):
                  rpm: builtins.int,
                  tpm: builtins.int):
         """
-        :param builtins.int rpm: Requests Per Minute，每分钟请求数。
-        :param builtins.int tpm: Tokens Per Minute，每分钟请求 token 数。
+        :param builtins.int rpm: Requests Per Minute, number of requests per minute
+        :param builtins.int tpm: Tokens Per Minute, number of tokens requested per minute
         """
         pulumi.set(__self__, "rpm", rpm)
         pulumi.set(__self__, "tpm", tpm)
@@ -506,7 +506,7 @@ class GetEndpointRateLimitResult(dict):
     @pulumi.getter
     def rpm(self) -> builtins.int:
         """
-        Requests Per Minute，每分钟请求数。
+        Requests Per Minute, number of requests per minute
         """
         return pulumi.get(self, "rpm")
 
@@ -514,7 +514,7 @@ class GetEndpointRateLimitResult(dict):
     @pulumi.getter
     def tpm(self) -> builtins.int:
         """
-        Tokens Per Minute，每分钟请求 token 数。
+        Tokens Per Minute, number of tokens requested per minute
         """
         return pulumi.get(self, "tpm")
 
@@ -525,8 +525,8 @@ class GetEndpointTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -535,7 +535,7 @@ class GetEndpointTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -543,7 +543,7 @@ class GetEndpointTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 

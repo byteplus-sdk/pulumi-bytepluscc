@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 通过 CNAME 或是负载均衡方式接入防护网站，并配置接入能力和回源能力，将业务流量接入到 WAF 实例，实现防护。
+// Connect the protected site via CNAME or load balancing, configure access and origin capabilities, and route business traffic to the WAF instance for protection
 //
 // ## Import
 //
@@ -22,165 +22,165 @@ import (
 type Domain struct {
 	pulumi.CustomResourceState
 
-	// 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+	// Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
 	AccessMode pulumi.IntOutput `pulumi:"accessMode"`
-	// 高防实例 IP。高防型 WAF 接入展示，否则为空。
+	// High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
 	AdvancedDefenseIp pulumi.StringOutput `pulumi:"advancedDefenseIp"`
-	// 高防实例 Ipv6。高防型 WAF 接入展示，否则为空。
+	// High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
 	AdvancedDefenseIpv6 pulumi.StringOutput `pulumi:"advancedDefenseIpv6"`
-	// 是否开启了 API 防护策略。0：关闭，1：开启。
+	// API protection policy enabled. 0: Off, 1: On
 	ApiEnable pulumi.IntOutput `pulumi:"apiEnable"`
-	// 攻击状态。0:未发现攻击,1:发现攻击。
+	// Attack status. 0: No attack detected, 1: Attack detected.
 	AttackStatus pulumi.IntOutput `pulumi:"attackStatus"`
-	// 是否开启智能 CC 防护策略。0：关闭，1：开启。
+	// Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
 	AutoCcEnable pulumi.IntOutput `pulumi:"autoCcEnable"`
-	// 是否开启自动封禁。0：关闭，1：开启。
+	// Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
 	AutomaticBlackEnable pulumi.IntOutput              `pulumi:"automaticBlackEnable"`
 	BackendGroups        DomainBackendGroupArrayOutput `pulumi:"backendGroups"`
-	// 是否开启了黑名单策略。0：关闭, 1：开启。
+	// Denylist policy enabled. 0: Off, 1: On
 	BlackIpEnable pulumi.IntOutput `pulumi:"blackIpEnable"`
-	// 是否开启了区域封禁策略。0：关闭;1：开启。
+	// Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
 	BlackLctEnable pulumi.IntOutput `pulumi:"blackLctEnable"`
-	// 是否开启动态Token防护。
+	// Dynamic token protection enabled
 	BotDytokenEnable pulumi.IntOutput `pulumi:"botDytokenEnable"`
-	// 是否开启 bot 频率限制策略。
-	// 0：关闭
-	// 1：开启。
+	// Bot rate limit policy enabled.
+	// 0: Off
+	// 1: On
 	BotFrequencyEnable pulumi.IntOutput `pulumi:"botFrequencyEnable"`
-	// 是否开启 bot 统计防护策略。
-	// 0：关闭
-	// 1：开启。
+	// Bot statistics protection policy enabled.
+	// 0: Off
+	// 1: On
 	BotRepeatEnable pulumi.IntOutput `pulumi:"botRepeatEnable"`
-	// 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-	// 0：观察
-	// 2：拦截
-	// 6：JS 挑战
-	// 7：人机验证。
+	// Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+	// 0: Observe
+	// 2: Intercept
+	// 6: JS Challenge
+	// 7: CAPTCHA.
 	BotSequenceDefaultAction pulumi.IntOutput `pulumi:"botSequenceDefaultAction"`
-	// 是否开启 bot 行为地图。
-	// 0：关闭
-	// 1：开启。
+	// Whether to enable bot behavior map.
+	// 0: Off
+	// 1: On.
 	BotSequenceEnable pulumi.IntOutput `pulumi:"botSequenceEnable"`
-	// 是否开启 CC 防护策略。
-	// 0：关闭
-	// 1：开启。
+	// Whether to enable CC protection policy.
+	// 0: Disabled
+	// 1: Enabled.
 	CcEnable pulumi.IntOutput `pulumi:"ccEnable"`
-	// 托管至证书中心的证书ID。
+	// Certificate ID managed in Certificate Center
 	CertificateId pulumi.StringOutput `pulumi:"certificateId"`
-	// 证书名称，协议类型包含 HTTPS 时显示。
+	// Certificate name. Displayed when protocol type includes HTTPS.
 	CertificateName pulumi.StringOutput `pulumi:"certificateName"`
-	// 证书托管平台:waf/certificate_service。
+	// Certificate hosting platform: waf/certificate_service.
 	CertificatePlatform pulumi.StringOutput `pulumi:"certificatePlatform"`
-	// CLB实例ID。
+	// CLB instance ID.
 	ClbInstanceIds pulumi.StringOutput `pulumi:"clbInstanceIds"`
-	// CLB监听器ID。
+	// CLB listener ID.
 	ClbListenerId pulumi.StringOutput `pulumi:"clbListenerId"`
-	// CLB后端服务器组ID。
+	// CLB backend server group ID.
 	ClbPoolId pulumi.StringOutput `pulumi:"clbPoolId"`
-	// CLB后端服务器ID。
+	// CLB backend server ID
 	ClbServerId pulumi.StringOutput `pulumi:"clbServerId"`
-	// 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+	// Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
 	ClientIpLocation pulumi.IntOutput `pulumi:"clientIpLocation"`
-	// 客户端请求body最大值(MB)。
+	// Maximum client request body size (MB).
 	ClientMaxBodySize  pulumi.IntOutput                   `pulumi:"clientMaxBodySize"`
 	CloudAccessConfigs DomainCloudAccessConfigArrayOutput `pulumi:"cloudAccessConfigs"`
-	// CNAME记录。
+	// CNAME record.
 	Cname pulumi.StringOutput `pulumi:"cname"`
-	// 是否开启自定义BOT防护。
+	// Whether to enable custom bot protection.
 	CustomBotEnable pulumi.IntOutput `pulumi:"customBotEnable"`
-	// 自定义Header。
+	// Custom header.
 	CustomHeaders pulumi.StringArrayOutput `pulumi:"customHeaders"`
-	// 是否开启自定义响应。
+	// Whether to enable custom response.
 	CustomRspEnable pulumi.IntOutput `pulumi:"customRspEnable"`
-	// 自定义SNI。
+	// Custom SNI.
 	CustomSni pulumi.StringOutput `pulumi:"customSni"`
-	// 为例外 ALB 实例设置防护模式。
-	// 1：启用防护，已配置的防护策略生效。
-	// 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-	// 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-	// 设置例外防护实例后，域名可能还会存在以下防护状态：
-	// 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-	// 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-	// 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+	// Set protection mode for exception ALB instances.
+	// 1: Enable protection. The configured protection policies take effect.
+	// 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+	// 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+	// After configuring exception protection instances, the domain may also have the following protection statuses:
+	// 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+	// 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+	// 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
 	DefenceMode pulumi.IntOutput `pulumi:"defenceMode"`
-	// 是否开启数据泄露防护。
+	// Data leakage protection enabled
 	DlpEnable pulumi.IntOutput `pulumi:"dlpEnable"`
-	// 防护的域名信息，支持泛域名和精确域名。
+	// Protected domain information. Supports wildcard and exact domains
 	Domain pulumi.StringOutput `pulumi:"domain"`
-	// 是否开启用户自定义重定向。0:关闭,1:开启。
+	// User-defined redirection enabled. 0: Off, 1: On
 	EnableCustomRedirect pulumi.IntOutput `pulumi:"enableCustomRedirect"`
-	// 是否开启HTTP2.0。0:关闭,1:开启。
+	// Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
 	EnableHttp2 pulumi.IntOutput `pulumi:"enableHttp2"`
-	// 是否支持防护Ipv6请求。0:关闭,1:开启。
+	// IPv6 request protection supported. 0: Off, 1: On
 	EnableIpv6 pulumi.IntOutput `pulumi:"enableIpv6"`
-	// 是否开启SNI配置。0:关闭,1:开启。
+	// Whether to enable SNI configuration. 0: Off, 1: On.
 	EnableSni pulumi.IntOutput `pulumi:"enableSni"`
-	// 长连接复用个数。
+	// Persistent connection reuse count
 	KeepAliveRequest pulumi.IntOutput `pulumi:"keepAliveRequest"`
-	// 长连接保持时间(秒)。
+	// Persistent connection keep-alive time (seconds)
 	KeepAliveTimeout pulumi.IntOutput `pulumi:"keepAliveTimeout"`
-	// 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+	// Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
 	LbAlgorithm pulumi.StringOutput `pulumi:"lbAlgorithm"`
-	// 端口号。
+	// Port number
 	Port pulumi.IntOutput `pulumi:"port"`
-	// 项目名称。
+	// Project name.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 是否开启协议跟随。0:关闭,1:开启。
+	// Protocol following enabled. 0: Off, 1: On
 	ProtocolFollow pulumi.IntOutput `pulumi:"protocolFollow"`
-	// 接入端口信息。
+	// Access port information
 	ProtocolPorts DomainProtocolPortsOutput `pulumi:"protocolPorts"`
-	// 接入协议类型,支持HTTP/HTTPS。
+	// Access protocol type: supports HTTP/HTTPS
 	Protocols pulumi.StringArrayOutput `pulumi:"protocols"`
-	// 是否开启代理配置。0:关闭,1:开启。
+	// Proxy configuration enabled. 0: Off, 1: On
 	ProxyConfig pulumi.IntOutput `pulumi:"proxyConfig"`
-	// WAF和后端服务器的建连超时时间(秒)。
+	// Connection timeout between WAF and backend server (seconds).
 	ProxyConnectTimeout pulumi.IntOutput `pulumi:"proxyConnectTimeout"`
-	// WAF回源长连接可复用个数。
+	// Number of reusable WAF origin persistent connections.
 	ProxyKeepAlive pulumi.IntOutput `pulumi:"proxyKeepAlive"`
-	// 空闲长连接超时时间(秒)。
+	// Idle persistent connection timeout (seconds)
 	ProxyKeepAliveTimeout pulumi.IntOutput `pulumi:"proxyKeepAliveTimeout"`
-	// WAF从后端服务器读取响应的超时时间(秒)。
+	// Timeout for WAF to read response from backend server (seconds).
 	ProxyReadTimeout pulumi.IntOutput `pulumi:"proxyReadTimeout"`
-	// WAF回源重试次数。
+	// WAF origin retry count.
 	ProxyRetry pulumi.IntOutput `pulumi:"proxyRetry"`
-	// WAF将请求传输到后端服务器的超时时间(秒)。
+	// Timeout for WAF to transmit request to backend server (seconds).
 	ProxyWriteTimeout pulumi.IntOutput `pulumi:"proxyWriteTimeout"`
-	// CNAME接入回源方式。0:私网回源,1:公网回源。
+	// CNAME access origin method. 0: Private network origin, 1: Public network origin.
 	PublicRealServer pulumi.IntOutput `pulumi:"publicRealServer"`
-	// 是否开启异常响应防护。
+	// Whether to enable abnormal response protection.
 	RspAbnormalEnable pulumi.IntOutput `pulumi:"rspAbnormalEnable"`
-	// 服务IP。
+	// Service IP
 	ServerIps pulumi.StringOutput `pulumi:"serverIps"`
-	// WAF回源IP。
+	// WAF origin IP.
 	SrcIps pulumi.StringOutput `pulumi:"srcIps"`
-	// 源站协议。
+	// Origin protocol.
 	SrcProtocol pulumi.StringOutput `pulumi:"srcProtocol"`
-	// 加密套件。
+	// Cipher suite
 	SslCiphers pulumi.StringArrayOutput `pulumi:"sslCiphers"`
-	// TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+	// TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
 	SslProtocols pulumi.StringArrayOutput `pulumi:"sslProtocols"`
-	// 接入状态。0:正常,1:DNS未解析,2:配置中,3:配置失败,4:配置未生效,5:更新中,6:实例已删除。
+	// Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
 	Status pulumi.IntOutput `pulumi:"status"`
-	// 是否开启托管BOT防护。
+	// Whether to enable managed bot protection.
 	SystemBotEnable pulumi.IntOutput `pulumi:"systemBotEnable"`
-	// 是否开启防篡改。
+	// Whether to enable anti-tampering.
 	TamperProofEnable  pulumi.IntOutput                   `pulumi:"tamperProofEnable"`
 	TcpListenerConfigs DomainTcpListenerConfigArrayOutput `pulumi:"tcpListenerConfigs"`
-	// 是否开启日志服务。0:关闭,1:开启。
+	// Log service enabled. 0: Off, 1: On
 	TlsEnable pulumi.IntOutput `pulumi:"tlsEnable"`
-	// 日志字段配置详情。
+	// Log field configuration details
 	TlsFieldsConfig DomainTlsFieldsConfigOutput `pulumi:"tlsFieldsConfig"`
-	// 更新时间。
+	// Update time
 	UpdateTime pulumi.StringOutput `pulumi:"updateTime"`
 	// VPC ID。
 	VpcId pulumi.StringOutput `pulumi:"vpcId"`
-	// 是否开启WAF防护。
+	// WAF protection enabled
 	WafEnable pulumi.IntOutput `pulumi:"wafEnable"`
-	// 是否开启白名单请求防护。
+	// Allowlist request protection enabled
 	WafWhiteReqEnable pulumi.IntOutput `pulumi:"wafWhiteReqEnable"`
-	// 是否开启白名单防护。
+	// Whether to enable allowlist protection.
 	WhiteEnable pulumi.IntOutput `pulumi:"whiteEnable"`
-	// 是否开启字段白名单防护。
+	// Field allowlist protection enabled
 	WhiteFieldEnable pulumi.IntOutput `pulumi:"whiteFieldEnable"`
 }
 
@@ -220,328 +220,328 @@ func GetDomain(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Domain resources.
 type domainState struct {
-	// 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+	// Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
 	AccessMode *int `pulumi:"accessMode"`
-	// 高防实例 IP。高防型 WAF 接入展示，否则为空。
+	// High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
 	AdvancedDefenseIp *string `pulumi:"advancedDefenseIp"`
-	// 高防实例 Ipv6。高防型 WAF 接入展示，否则为空。
+	// High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
 	AdvancedDefenseIpv6 *string `pulumi:"advancedDefenseIpv6"`
-	// 是否开启了 API 防护策略。0：关闭，1：开启。
+	// API protection policy enabled. 0: Off, 1: On
 	ApiEnable *int `pulumi:"apiEnable"`
-	// 攻击状态。0:未发现攻击,1:发现攻击。
+	// Attack status. 0: No attack detected, 1: Attack detected.
 	AttackStatus *int `pulumi:"attackStatus"`
-	// 是否开启智能 CC 防护策略。0：关闭，1：开启。
+	// Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
 	AutoCcEnable *int `pulumi:"autoCcEnable"`
-	// 是否开启自动封禁。0：关闭，1：开启。
+	// Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
 	AutomaticBlackEnable *int                 `pulumi:"automaticBlackEnable"`
 	BackendGroups        []DomainBackendGroup `pulumi:"backendGroups"`
-	// 是否开启了黑名单策略。0：关闭, 1：开启。
+	// Denylist policy enabled. 0: Off, 1: On
 	BlackIpEnable *int `pulumi:"blackIpEnable"`
-	// 是否开启了区域封禁策略。0：关闭;1：开启。
+	// Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
 	BlackLctEnable *int `pulumi:"blackLctEnable"`
-	// 是否开启动态Token防护。
+	// Dynamic token protection enabled
 	BotDytokenEnable *int `pulumi:"botDytokenEnable"`
-	// 是否开启 bot 频率限制策略。
-	// 0：关闭
-	// 1：开启。
+	// Bot rate limit policy enabled.
+	// 0: Off
+	// 1: On
 	BotFrequencyEnable *int `pulumi:"botFrequencyEnable"`
-	// 是否开启 bot 统计防护策略。
-	// 0：关闭
-	// 1：开启。
+	// Bot statistics protection policy enabled.
+	// 0: Off
+	// 1: On
 	BotRepeatEnable *int `pulumi:"botRepeatEnable"`
-	// 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-	// 0：观察
-	// 2：拦截
-	// 6：JS 挑战
-	// 7：人机验证。
+	// Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+	// 0: Observe
+	// 2: Intercept
+	// 6: JS Challenge
+	// 7: CAPTCHA.
 	BotSequenceDefaultAction *int `pulumi:"botSequenceDefaultAction"`
-	// 是否开启 bot 行为地图。
-	// 0：关闭
-	// 1：开启。
+	// Whether to enable bot behavior map.
+	// 0: Off
+	// 1: On.
 	BotSequenceEnable *int `pulumi:"botSequenceEnable"`
-	// 是否开启 CC 防护策略。
-	// 0：关闭
-	// 1：开启。
+	// Whether to enable CC protection policy.
+	// 0: Disabled
+	// 1: Enabled.
 	CcEnable *int `pulumi:"ccEnable"`
-	// 托管至证书中心的证书ID。
+	// Certificate ID managed in Certificate Center
 	CertificateId *string `pulumi:"certificateId"`
-	// 证书名称，协议类型包含 HTTPS 时显示。
+	// Certificate name. Displayed when protocol type includes HTTPS.
 	CertificateName *string `pulumi:"certificateName"`
-	// 证书托管平台:waf/certificate_service。
+	// Certificate hosting platform: waf/certificate_service.
 	CertificatePlatform *string `pulumi:"certificatePlatform"`
-	// CLB实例ID。
+	// CLB instance ID.
 	ClbInstanceIds *string `pulumi:"clbInstanceIds"`
-	// CLB监听器ID。
+	// CLB listener ID.
 	ClbListenerId *string `pulumi:"clbListenerId"`
-	// CLB后端服务器组ID。
+	// CLB backend server group ID.
 	ClbPoolId *string `pulumi:"clbPoolId"`
-	// CLB后端服务器ID。
+	// CLB backend server ID
 	ClbServerId *string `pulumi:"clbServerId"`
-	// 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+	// Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
 	ClientIpLocation *int `pulumi:"clientIpLocation"`
-	// 客户端请求body最大值(MB)。
+	// Maximum client request body size (MB).
 	ClientMaxBodySize  *int                      `pulumi:"clientMaxBodySize"`
 	CloudAccessConfigs []DomainCloudAccessConfig `pulumi:"cloudAccessConfigs"`
-	// CNAME记录。
+	// CNAME record.
 	Cname *string `pulumi:"cname"`
-	// 是否开启自定义BOT防护。
+	// Whether to enable custom bot protection.
 	CustomBotEnable *int `pulumi:"customBotEnable"`
-	// 自定义Header。
+	// Custom header.
 	CustomHeaders []string `pulumi:"customHeaders"`
-	// 是否开启自定义响应。
+	// Whether to enable custom response.
 	CustomRspEnable *int `pulumi:"customRspEnable"`
-	// 自定义SNI。
+	// Custom SNI.
 	CustomSni *string `pulumi:"customSni"`
-	// 为例外 ALB 实例设置防护模式。
-	// 1：启用防护，已配置的防护策略生效。
-	// 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-	// 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-	// 设置例外防护实例后，域名可能还会存在以下防护状态：
-	// 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-	// 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-	// 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+	// Set protection mode for exception ALB instances.
+	// 1: Enable protection. The configured protection policies take effect.
+	// 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+	// 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+	// After configuring exception protection instances, the domain may also have the following protection statuses:
+	// 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+	// 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+	// 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
 	DefenceMode *int `pulumi:"defenceMode"`
-	// 是否开启数据泄露防护。
+	// Data leakage protection enabled
 	DlpEnable *int `pulumi:"dlpEnable"`
-	// 防护的域名信息，支持泛域名和精确域名。
+	// Protected domain information. Supports wildcard and exact domains
 	Domain *string `pulumi:"domain"`
-	// 是否开启用户自定义重定向。0:关闭,1:开启。
+	// User-defined redirection enabled. 0: Off, 1: On
 	EnableCustomRedirect *int `pulumi:"enableCustomRedirect"`
-	// 是否开启HTTP2.0。0:关闭,1:开启。
+	// Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
 	EnableHttp2 *int `pulumi:"enableHttp2"`
-	// 是否支持防护Ipv6请求。0:关闭,1:开启。
+	// IPv6 request protection supported. 0: Off, 1: On
 	EnableIpv6 *int `pulumi:"enableIpv6"`
-	// 是否开启SNI配置。0:关闭,1:开启。
+	// Whether to enable SNI configuration. 0: Off, 1: On.
 	EnableSni *int `pulumi:"enableSni"`
-	// 长连接复用个数。
+	// Persistent connection reuse count
 	KeepAliveRequest *int `pulumi:"keepAliveRequest"`
-	// 长连接保持时间(秒)。
+	// Persistent connection keep-alive time (seconds)
 	KeepAliveTimeout *int `pulumi:"keepAliveTimeout"`
-	// 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+	// Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
 	LbAlgorithm *string `pulumi:"lbAlgorithm"`
-	// 端口号。
+	// Port number
 	Port *int `pulumi:"port"`
-	// 项目名称。
+	// Project name.
 	ProjectName *string `pulumi:"projectName"`
-	// 是否开启协议跟随。0:关闭,1:开启。
+	// Protocol following enabled. 0: Off, 1: On
 	ProtocolFollow *int `pulumi:"protocolFollow"`
-	// 接入端口信息。
+	// Access port information
 	ProtocolPorts *DomainProtocolPorts `pulumi:"protocolPorts"`
-	// 接入协议类型,支持HTTP/HTTPS。
+	// Access protocol type: supports HTTP/HTTPS
 	Protocols []string `pulumi:"protocols"`
-	// 是否开启代理配置。0:关闭,1:开启。
+	// Proxy configuration enabled. 0: Off, 1: On
 	ProxyConfig *int `pulumi:"proxyConfig"`
-	// WAF和后端服务器的建连超时时间(秒)。
+	// Connection timeout between WAF and backend server (seconds).
 	ProxyConnectTimeout *int `pulumi:"proxyConnectTimeout"`
-	// WAF回源长连接可复用个数。
+	// Number of reusable WAF origin persistent connections.
 	ProxyKeepAlive *int `pulumi:"proxyKeepAlive"`
-	// 空闲长连接超时时间(秒)。
+	// Idle persistent connection timeout (seconds)
 	ProxyKeepAliveTimeout *int `pulumi:"proxyKeepAliveTimeout"`
-	// WAF从后端服务器读取响应的超时时间(秒)。
+	// Timeout for WAF to read response from backend server (seconds).
 	ProxyReadTimeout *int `pulumi:"proxyReadTimeout"`
-	// WAF回源重试次数。
+	// WAF origin retry count.
 	ProxyRetry *int `pulumi:"proxyRetry"`
-	// WAF将请求传输到后端服务器的超时时间(秒)。
+	// Timeout for WAF to transmit request to backend server (seconds).
 	ProxyWriteTimeout *int `pulumi:"proxyWriteTimeout"`
-	// CNAME接入回源方式。0:私网回源,1:公网回源。
+	// CNAME access origin method. 0: Private network origin, 1: Public network origin.
 	PublicRealServer *int `pulumi:"publicRealServer"`
-	// 是否开启异常响应防护。
+	// Whether to enable abnormal response protection.
 	RspAbnormalEnable *int `pulumi:"rspAbnormalEnable"`
-	// 服务IP。
+	// Service IP
 	ServerIps *string `pulumi:"serverIps"`
-	// WAF回源IP。
+	// WAF origin IP.
 	SrcIps *string `pulumi:"srcIps"`
-	// 源站协议。
+	// Origin protocol.
 	SrcProtocol *string `pulumi:"srcProtocol"`
-	// 加密套件。
+	// Cipher suite
 	SslCiphers []string `pulumi:"sslCiphers"`
-	// TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+	// TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
 	SslProtocols []string `pulumi:"sslProtocols"`
-	// 接入状态。0:正常,1:DNS未解析,2:配置中,3:配置失败,4:配置未生效,5:更新中,6:实例已删除。
+	// Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
 	Status *int `pulumi:"status"`
-	// 是否开启托管BOT防护。
+	// Whether to enable managed bot protection.
 	SystemBotEnable *int `pulumi:"systemBotEnable"`
-	// 是否开启防篡改。
+	// Whether to enable anti-tampering.
 	TamperProofEnable  *int                      `pulumi:"tamperProofEnable"`
 	TcpListenerConfigs []DomainTcpListenerConfig `pulumi:"tcpListenerConfigs"`
-	// 是否开启日志服务。0:关闭,1:开启。
+	// Log service enabled. 0: Off, 1: On
 	TlsEnable *int `pulumi:"tlsEnable"`
-	// 日志字段配置详情。
+	// Log field configuration details
 	TlsFieldsConfig *DomainTlsFieldsConfig `pulumi:"tlsFieldsConfig"`
-	// 更新时间。
+	// Update time
 	UpdateTime *string `pulumi:"updateTime"`
 	// VPC ID。
 	VpcId *string `pulumi:"vpcId"`
-	// 是否开启WAF防护。
+	// WAF protection enabled
 	WafEnable *int `pulumi:"wafEnable"`
-	// 是否开启白名单请求防护。
+	// Allowlist request protection enabled
 	WafWhiteReqEnable *int `pulumi:"wafWhiteReqEnable"`
-	// 是否开启白名单防护。
+	// Whether to enable allowlist protection.
 	WhiteEnable *int `pulumi:"whiteEnable"`
-	// 是否开启字段白名单防护。
+	// Field allowlist protection enabled
 	WhiteFieldEnable *int `pulumi:"whiteFieldEnable"`
 }
 
 type DomainState struct {
-	// 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+	// Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
 	AccessMode pulumi.IntPtrInput
-	// 高防实例 IP。高防型 WAF 接入展示，否则为空。
+	// High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
 	AdvancedDefenseIp pulumi.StringPtrInput
-	// 高防实例 Ipv6。高防型 WAF 接入展示，否则为空。
+	// High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
 	AdvancedDefenseIpv6 pulumi.StringPtrInput
-	// 是否开启了 API 防护策略。0：关闭，1：开启。
+	// API protection policy enabled. 0: Off, 1: On
 	ApiEnable pulumi.IntPtrInput
-	// 攻击状态。0:未发现攻击,1:发现攻击。
+	// Attack status. 0: No attack detected, 1: Attack detected.
 	AttackStatus pulumi.IntPtrInput
-	// 是否开启智能 CC 防护策略。0：关闭，1：开启。
+	// Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
 	AutoCcEnable pulumi.IntPtrInput
-	// 是否开启自动封禁。0：关闭，1：开启。
+	// Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
 	AutomaticBlackEnable pulumi.IntPtrInput
 	BackendGroups        DomainBackendGroupArrayInput
-	// 是否开启了黑名单策略。0：关闭, 1：开启。
+	// Denylist policy enabled. 0: Off, 1: On
 	BlackIpEnable pulumi.IntPtrInput
-	// 是否开启了区域封禁策略。0：关闭;1：开启。
+	// Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
 	BlackLctEnable pulumi.IntPtrInput
-	// 是否开启动态Token防护。
+	// Dynamic token protection enabled
 	BotDytokenEnable pulumi.IntPtrInput
-	// 是否开启 bot 频率限制策略。
-	// 0：关闭
-	// 1：开启。
+	// Bot rate limit policy enabled.
+	// 0: Off
+	// 1: On
 	BotFrequencyEnable pulumi.IntPtrInput
-	// 是否开启 bot 统计防护策略。
-	// 0：关闭
-	// 1：开启。
+	// Bot statistics protection policy enabled.
+	// 0: Off
+	// 1: On
 	BotRepeatEnable pulumi.IntPtrInput
-	// 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-	// 0：观察
-	// 2：拦截
-	// 6：JS 挑战
-	// 7：人机验证。
+	// Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+	// 0: Observe
+	// 2: Intercept
+	// 6: JS Challenge
+	// 7: CAPTCHA.
 	BotSequenceDefaultAction pulumi.IntPtrInput
-	// 是否开启 bot 行为地图。
-	// 0：关闭
-	// 1：开启。
+	// Whether to enable bot behavior map.
+	// 0: Off
+	// 1: On.
 	BotSequenceEnable pulumi.IntPtrInput
-	// 是否开启 CC 防护策略。
-	// 0：关闭
-	// 1：开启。
+	// Whether to enable CC protection policy.
+	// 0: Disabled
+	// 1: Enabled.
 	CcEnable pulumi.IntPtrInput
-	// 托管至证书中心的证书ID。
+	// Certificate ID managed in Certificate Center
 	CertificateId pulumi.StringPtrInput
-	// 证书名称，协议类型包含 HTTPS 时显示。
+	// Certificate name. Displayed when protocol type includes HTTPS.
 	CertificateName pulumi.StringPtrInput
-	// 证书托管平台:waf/certificate_service。
+	// Certificate hosting platform: waf/certificate_service.
 	CertificatePlatform pulumi.StringPtrInput
-	// CLB实例ID。
+	// CLB instance ID.
 	ClbInstanceIds pulumi.StringPtrInput
-	// CLB监听器ID。
+	// CLB listener ID.
 	ClbListenerId pulumi.StringPtrInput
-	// CLB后端服务器组ID。
+	// CLB backend server group ID.
 	ClbPoolId pulumi.StringPtrInput
-	// CLB后端服务器ID。
+	// CLB backend server ID
 	ClbServerId pulumi.StringPtrInput
-	// 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+	// Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
 	ClientIpLocation pulumi.IntPtrInput
-	// 客户端请求body最大值(MB)。
+	// Maximum client request body size (MB).
 	ClientMaxBodySize  pulumi.IntPtrInput
 	CloudAccessConfigs DomainCloudAccessConfigArrayInput
-	// CNAME记录。
+	// CNAME record.
 	Cname pulumi.StringPtrInput
-	// 是否开启自定义BOT防护。
+	// Whether to enable custom bot protection.
 	CustomBotEnable pulumi.IntPtrInput
-	// 自定义Header。
+	// Custom header.
 	CustomHeaders pulumi.StringArrayInput
-	// 是否开启自定义响应。
+	// Whether to enable custom response.
 	CustomRspEnable pulumi.IntPtrInput
-	// 自定义SNI。
+	// Custom SNI.
 	CustomSni pulumi.StringPtrInput
-	// 为例外 ALB 实例设置防护模式。
-	// 1：启用防护，已配置的防护策略生效。
-	// 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-	// 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-	// 设置例外防护实例后，域名可能还会存在以下防护状态：
-	// 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-	// 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-	// 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+	// Set protection mode for exception ALB instances.
+	// 1: Enable protection. The configured protection policies take effect.
+	// 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+	// 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+	// After configuring exception protection instances, the domain may also have the following protection statuses:
+	// 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+	// 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+	// 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
 	DefenceMode pulumi.IntPtrInput
-	// 是否开启数据泄露防护。
+	// Data leakage protection enabled
 	DlpEnable pulumi.IntPtrInput
-	// 防护的域名信息，支持泛域名和精确域名。
+	// Protected domain information. Supports wildcard and exact domains
 	Domain pulumi.StringPtrInput
-	// 是否开启用户自定义重定向。0:关闭,1:开启。
+	// User-defined redirection enabled. 0: Off, 1: On
 	EnableCustomRedirect pulumi.IntPtrInput
-	// 是否开启HTTP2.0。0:关闭,1:开启。
+	// Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
 	EnableHttp2 pulumi.IntPtrInput
-	// 是否支持防护Ipv6请求。0:关闭,1:开启。
+	// IPv6 request protection supported. 0: Off, 1: On
 	EnableIpv6 pulumi.IntPtrInput
-	// 是否开启SNI配置。0:关闭,1:开启。
+	// Whether to enable SNI configuration. 0: Off, 1: On.
 	EnableSni pulumi.IntPtrInput
-	// 长连接复用个数。
+	// Persistent connection reuse count
 	KeepAliveRequest pulumi.IntPtrInput
-	// 长连接保持时间(秒)。
+	// Persistent connection keep-alive time (seconds)
 	KeepAliveTimeout pulumi.IntPtrInput
-	// 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+	// Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
 	LbAlgorithm pulumi.StringPtrInput
-	// 端口号。
+	// Port number
 	Port pulumi.IntPtrInput
-	// 项目名称。
+	// Project name.
 	ProjectName pulumi.StringPtrInput
-	// 是否开启协议跟随。0:关闭,1:开启。
+	// Protocol following enabled. 0: Off, 1: On
 	ProtocolFollow pulumi.IntPtrInput
-	// 接入端口信息。
+	// Access port information
 	ProtocolPorts DomainProtocolPortsPtrInput
-	// 接入协议类型,支持HTTP/HTTPS。
+	// Access protocol type: supports HTTP/HTTPS
 	Protocols pulumi.StringArrayInput
-	// 是否开启代理配置。0:关闭,1:开启。
+	// Proxy configuration enabled. 0: Off, 1: On
 	ProxyConfig pulumi.IntPtrInput
-	// WAF和后端服务器的建连超时时间(秒)。
+	// Connection timeout between WAF and backend server (seconds).
 	ProxyConnectTimeout pulumi.IntPtrInput
-	// WAF回源长连接可复用个数。
+	// Number of reusable WAF origin persistent connections.
 	ProxyKeepAlive pulumi.IntPtrInput
-	// 空闲长连接超时时间(秒)。
+	// Idle persistent connection timeout (seconds)
 	ProxyKeepAliveTimeout pulumi.IntPtrInput
-	// WAF从后端服务器读取响应的超时时间(秒)。
+	// Timeout for WAF to read response from backend server (seconds).
 	ProxyReadTimeout pulumi.IntPtrInput
-	// WAF回源重试次数。
+	// WAF origin retry count.
 	ProxyRetry pulumi.IntPtrInput
-	// WAF将请求传输到后端服务器的超时时间(秒)。
+	// Timeout for WAF to transmit request to backend server (seconds).
 	ProxyWriteTimeout pulumi.IntPtrInput
-	// CNAME接入回源方式。0:私网回源,1:公网回源。
+	// CNAME access origin method. 0: Private network origin, 1: Public network origin.
 	PublicRealServer pulumi.IntPtrInput
-	// 是否开启异常响应防护。
+	// Whether to enable abnormal response protection.
 	RspAbnormalEnable pulumi.IntPtrInput
-	// 服务IP。
+	// Service IP
 	ServerIps pulumi.StringPtrInput
-	// WAF回源IP。
+	// WAF origin IP.
 	SrcIps pulumi.StringPtrInput
-	// 源站协议。
+	// Origin protocol.
 	SrcProtocol pulumi.StringPtrInput
-	// 加密套件。
+	// Cipher suite
 	SslCiphers pulumi.StringArrayInput
-	// TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+	// TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
 	SslProtocols pulumi.StringArrayInput
-	// 接入状态。0:正常,1:DNS未解析,2:配置中,3:配置失败,4:配置未生效,5:更新中,6:实例已删除。
+	// Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
 	Status pulumi.IntPtrInput
-	// 是否开启托管BOT防护。
+	// Whether to enable managed bot protection.
 	SystemBotEnable pulumi.IntPtrInput
-	// 是否开启防篡改。
+	// Whether to enable anti-tampering.
 	TamperProofEnable  pulumi.IntPtrInput
 	TcpListenerConfigs DomainTcpListenerConfigArrayInput
-	// 是否开启日志服务。0:关闭,1:开启。
+	// Log service enabled. 0: Off, 1: On
 	TlsEnable pulumi.IntPtrInput
-	// 日志字段配置详情。
+	// Log field configuration details
 	TlsFieldsConfig DomainTlsFieldsConfigPtrInput
-	// 更新时间。
+	// Update time
 	UpdateTime pulumi.StringPtrInput
 	// VPC ID。
 	VpcId pulumi.StringPtrInput
-	// 是否开启WAF防护。
+	// WAF protection enabled
 	WafEnable pulumi.IntPtrInput
-	// 是否开启白名单请求防护。
+	// Allowlist request protection enabled
 	WafWhiteReqEnable pulumi.IntPtrInput
-	// 是否开启白名单防护。
+	// Whether to enable allowlist protection.
 	WhiteEnable pulumi.IntPtrInput
-	// 是否开启字段白名单防护。
+	// Field allowlist protection enabled
 	WhiteFieldEnable pulumi.IntPtrInput
 }
 
@@ -550,259 +550,259 @@ func (DomainState) ElementType() reflect.Type {
 }
 
 type domainArgs struct {
-	// 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+	// Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
 	AccessMode int `pulumi:"accessMode"`
-	// 是否开启了 API 防护策略。0：关闭，1：开启。
+	// API protection policy enabled. 0: Off, 1: On
 	ApiEnable *int `pulumi:"apiEnable"`
-	// 是否开启智能 CC 防护策略。0：关闭，1：开启。
+	// Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
 	AutoCcEnable  *int                 `pulumi:"autoCcEnable"`
 	BackendGroups []DomainBackendGroup `pulumi:"backendGroups"`
-	// 是否开启了黑名单策略。0：关闭, 1：开启。
+	// Denylist policy enabled. 0: Off, 1: On
 	BlackIpEnable *int `pulumi:"blackIpEnable"`
-	// 是否开启了区域封禁策略。0：关闭;1：开启。
+	// Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
 	BlackLctEnable *int `pulumi:"blackLctEnable"`
-	// 是否开启动态Token防护。
+	// Dynamic token protection enabled
 	BotDytokenEnable *int `pulumi:"botDytokenEnable"`
-	// 是否开启 bot 频率限制策略。
-	// 0：关闭
-	// 1：开启。
+	// Bot rate limit policy enabled.
+	// 0: Off
+	// 1: On
 	BotFrequencyEnable *int `pulumi:"botFrequencyEnable"`
-	// 是否开启 bot 统计防护策略。
-	// 0：关闭
-	// 1：开启。
+	// Bot statistics protection policy enabled.
+	// 0: Off
+	// 1: On
 	BotRepeatEnable *int `pulumi:"botRepeatEnable"`
-	// 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-	// 0：观察
-	// 2：拦截
-	// 6：JS 挑战
-	// 7：人机验证。
+	// Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+	// 0: Observe
+	// 2: Intercept
+	// 6: JS Challenge
+	// 7: CAPTCHA.
 	BotSequenceDefaultAction *int `pulumi:"botSequenceDefaultAction"`
-	// 是否开启 bot 行为地图。
-	// 0：关闭
-	// 1：开启。
+	// Whether to enable bot behavior map.
+	// 0: Off
+	// 1: On.
 	BotSequenceEnable *int `pulumi:"botSequenceEnable"`
-	// 是否开启 CC 防护策略。
-	// 0：关闭
-	// 1：开启。
+	// Whether to enable CC protection policy.
+	// 0: Disabled
+	// 1: Enabled.
 	CcEnable *int `pulumi:"ccEnable"`
-	// 托管至证书中心的证书ID。
+	// Certificate ID managed in Certificate Center
 	CertificateId *string `pulumi:"certificateId"`
-	// 证书托管平台:waf/certificate_service。
+	// Certificate hosting platform: waf/certificate_service.
 	CertificatePlatform *string `pulumi:"certificatePlatform"`
-	// 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+	// Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
 	ClientIpLocation *int `pulumi:"clientIpLocation"`
-	// 客户端请求body最大值(MB)。
+	// Maximum client request body size (MB).
 	ClientMaxBodySize  *int                      `pulumi:"clientMaxBodySize"`
 	CloudAccessConfigs []DomainCloudAccessConfig `pulumi:"cloudAccessConfigs"`
-	// 是否开启自定义BOT防护。
+	// Whether to enable custom bot protection.
 	CustomBotEnable *int `pulumi:"customBotEnable"`
-	// 自定义Header。
+	// Custom header.
 	CustomHeaders []string `pulumi:"customHeaders"`
-	// 是否开启自定义响应。
+	// Whether to enable custom response.
 	CustomRspEnable *int `pulumi:"customRspEnable"`
-	// 自定义SNI。
+	// Custom SNI.
 	CustomSni *string `pulumi:"customSni"`
-	// 为例外 ALB 实例设置防护模式。
-	// 1：启用防护，已配置的防护策略生效。
-	// 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-	// 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-	// 设置例外防护实例后，域名可能还会存在以下防护状态：
-	// 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-	// 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-	// 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+	// Set protection mode for exception ALB instances.
+	// 1: Enable protection. The configured protection policies take effect.
+	// 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+	// 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+	// After configuring exception protection instances, the domain may also have the following protection statuses:
+	// 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+	// 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+	// 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
 	DefenceMode *int `pulumi:"defenceMode"`
-	// 是否开启数据泄露防护。
+	// Data leakage protection enabled
 	DlpEnable *int `pulumi:"dlpEnable"`
-	// 防护的域名信息，支持泛域名和精确域名。
+	// Protected domain information. Supports wildcard and exact domains
 	Domain string `pulumi:"domain"`
-	// 是否开启用户自定义重定向。0:关闭,1:开启。
+	// User-defined redirection enabled. 0: Off, 1: On
 	EnableCustomRedirect *int `pulumi:"enableCustomRedirect"`
-	// 是否开启HTTP2.0。0:关闭,1:开启。
+	// Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
 	EnableHttp2 *int `pulumi:"enableHttp2"`
-	// 是否支持防护Ipv6请求。0:关闭,1:开启。
+	// IPv6 request protection supported. 0: Off, 1: On
 	EnableIpv6 *int `pulumi:"enableIpv6"`
-	// 是否开启SNI配置。0:关闭,1:开启。
+	// Whether to enable SNI configuration. 0: Off, 1: On.
 	EnableSni *int `pulumi:"enableSni"`
-	// 长连接复用个数。
+	// Persistent connection reuse count
 	KeepAliveRequest *int `pulumi:"keepAliveRequest"`
-	// 长连接保持时间(秒)。
+	// Persistent connection keep-alive time (seconds)
 	KeepAliveTimeout *int `pulumi:"keepAliveTimeout"`
-	// 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+	// Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
 	LbAlgorithm *string `pulumi:"lbAlgorithm"`
-	// 项目名称。
+	// Project name.
 	ProjectName *string `pulumi:"projectName"`
-	// 是否开启协议跟随。0:关闭,1:开启。
+	// Protocol following enabled. 0: Off, 1: On
 	ProtocolFollow *int `pulumi:"protocolFollow"`
-	// 接入端口信息。
+	// Access port information
 	ProtocolPorts *DomainProtocolPorts `pulumi:"protocolPorts"`
-	// 接入协议类型,支持HTTP/HTTPS。
+	// Access protocol type: supports HTTP/HTTPS
 	Protocols []string `pulumi:"protocols"`
-	// 是否开启代理配置。0:关闭,1:开启。
+	// Proxy configuration enabled. 0: Off, 1: On
 	ProxyConfig *int `pulumi:"proxyConfig"`
-	// WAF和后端服务器的建连超时时间(秒)。
+	// Connection timeout between WAF and backend server (seconds).
 	ProxyConnectTimeout *int `pulumi:"proxyConnectTimeout"`
-	// WAF回源长连接可复用个数。
+	// Number of reusable WAF origin persistent connections.
 	ProxyKeepAlive *int `pulumi:"proxyKeepAlive"`
-	// 空闲长连接超时时间(秒)。
+	// Idle persistent connection timeout (seconds)
 	ProxyKeepAliveTimeout *int `pulumi:"proxyKeepAliveTimeout"`
-	// WAF从后端服务器读取响应的超时时间(秒)。
+	// Timeout for WAF to read response from backend server (seconds).
 	ProxyReadTimeout *int `pulumi:"proxyReadTimeout"`
-	// WAF回源重试次数。
+	// WAF origin retry count.
 	ProxyRetry *int `pulumi:"proxyRetry"`
-	// WAF将请求传输到后端服务器的超时时间(秒)。
+	// Timeout for WAF to transmit request to backend server (seconds).
 	ProxyWriteTimeout *int `pulumi:"proxyWriteTimeout"`
-	// CNAME接入回源方式。0:私网回源,1:公网回源。
+	// CNAME access origin method. 0: Private network origin, 1: Public network origin.
 	PublicRealServer *int `pulumi:"publicRealServer"`
-	// 加密套件。
+	// Cipher suite
 	SslCiphers []string `pulumi:"sslCiphers"`
-	// TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+	// TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
 	SslProtocols []string `pulumi:"sslProtocols"`
-	// 是否开启托管BOT防护。
+	// Whether to enable managed bot protection.
 	SystemBotEnable *int `pulumi:"systemBotEnable"`
-	// 是否开启防篡改。
+	// Whether to enable anti-tampering.
 	TamperProofEnable *int `pulumi:"tamperProofEnable"`
-	// 是否开启日志服务。0:关闭,1:开启。
+	// Log service enabled. 0: Off, 1: On
 	TlsEnable *int `pulumi:"tlsEnable"`
-	// 日志字段配置详情。
+	// Log field configuration details
 	TlsFieldsConfig *DomainTlsFieldsConfig `pulumi:"tlsFieldsConfig"`
 	// VPC ID。
 	VpcId *string `pulumi:"vpcId"`
-	// 是否开启WAF防护。
+	// WAF protection enabled
 	WafEnable *int `pulumi:"wafEnable"`
-	// 是否开启白名单请求防护。
+	// Allowlist request protection enabled
 	WafWhiteReqEnable *int `pulumi:"wafWhiteReqEnable"`
-	// 是否开启白名单防护。
+	// Whether to enable allowlist protection.
 	WhiteEnable *int `pulumi:"whiteEnable"`
-	// 是否开启字段白名单防护。
+	// Field allowlist protection enabled
 	WhiteFieldEnable *int `pulumi:"whiteFieldEnable"`
 }
 
 // The set of arguments for constructing a Domain resource.
 type DomainArgs struct {
-	// 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+	// Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
 	AccessMode pulumi.IntInput
-	// 是否开启了 API 防护策略。0：关闭，1：开启。
+	// API protection policy enabled. 0: Off, 1: On
 	ApiEnable pulumi.IntPtrInput
-	// 是否开启智能 CC 防护策略。0：关闭，1：开启。
+	// Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
 	AutoCcEnable  pulumi.IntPtrInput
 	BackendGroups DomainBackendGroupArrayInput
-	// 是否开启了黑名单策略。0：关闭, 1：开启。
+	// Denylist policy enabled. 0: Off, 1: On
 	BlackIpEnable pulumi.IntPtrInput
-	// 是否开启了区域封禁策略。0：关闭;1：开启。
+	// Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
 	BlackLctEnable pulumi.IntPtrInput
-	// 是否开启动态Token防护。
+	// Dynamic token protection enabled
 	BotDytokenEnable pulumi.IntPtrInput
-	// 是否开启 bot 频率限制策略。
-	// 0：关闭
-	// 1：开启。
+	// Bot rate limit policy enabled.
+	// 0: Off
+	// 1: On
 	BotFrequencyEnable pulumi.IntPtrInput
-	// 是否开启 bot 统计防护策略。
-	// 0：关闭
-	// 1：开启。
+	// Bot statistics protection policy enabled.
+	// 0: Off
+	// 1: On
 	BotRepeatEnable pulumi.IntPtrInput
-	// 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-	// 0：观察
-	// 2：拦截
-	// 6：JS 挑战
-	// 7：人机验证。
+	// Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+	// 0: Observe
+	// 2: Intercept
+	// 6: JS Challenge
+	// 7: CAPTCHA.
 	BotSequenceDefaultAction pulumi.IntPtrInput
-	// 是否开启 bot 行为地图。
-	// 0：关闭
-	// 1：开启。
+	// Whether to enable bot behavior map.
+	// 0: Off
+	// 1: On.
 	BotSequenceEnable pulumi.IntPtrInput
-	// 是否开启 CC 防护策略。
-	// 0：关闭
-	// 1：开启。
+	// Whether to enable CC protection policy.
+	// 0: Disabled
+	// 1: Enabled.
 	CcEnable pulumi.IntPtrInput
-	// 托管至证书中心的证书ID。
+	// Certificate ID managed in Certificate Center
 	CertificateId pulumi.StringPtrInput
-	// 证书托管平台:waf/certificate_service。
+	// Certificate hosting platform: waf/certificate_service.
 	CertificatePlatform pulumi.StringPtrInput
-	// 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+	// Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
 	ClientIpLocation pulumi.IntPtrInput
-	// 客户端请求body最大值(MB)。
+	// Maximum client request body size (MB).
 	ClientMaxBodySize  pulumi.IntPtrInput
 	CloudAccessConfigs DomainCloudAccessConfigArrayInput
-	// 是否开启自定义BOT防护。
+	// Whether to enable custom bot protection.
 	CustomBotEnable pulumi.IntPtrInput
-	// 自定义Header。
+	// Custom header.
 	CustomHeaders pulumi.StringArrayInput
-	// 是否开启自定义响应。
+	// Whether to enable custom response.
 	CustomRspEnable pulumi.IntPtrInput
-	// 自定义SNI。
+	// Custom SNI.
 	CustomSni pulumi.StringPtrInput
-	// 为例外 ALB 实例设置防护模式。
-	// 1：启用防护，已配置的防护策略生效。
-	// 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-	// 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-	// 设置例外防护实例后，域名可能还会存在以下防护状态：
-	// 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-	// 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-	// 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+	// Set protection mode for exception ALB instances.
+	// 1: Enable protection. The configured protection policies take effect.
+	// 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+	// 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+	// After configuring exception protection instances, the domain may also have the following protection statuses:
+	// 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+	// 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+	// 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
 	DefenceMode pulumi.IntPtrInput
-	// 是否开启数据泄露防护。
+	// Data leakage protection enabled
 	DlpEnable pulumi.IntPtrInput
-	// 防护的域名信息，支持泛域名和精确域名。
+	// Protected domain information. Supports wildcard and exact domains
 	Domain pulumi.StringInput
-	// 是否开启用户自定义重定向。0:关闭,1:开启。
+	// User-defined redirection enabled. 0: Off, 1: On
 	EnableCustomRedirect pulumi.IntPtrInput
-	// 是否开启HTTP2.0。0:关闭,1:开启。
+	// Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
 	EnableHttp2 pulumi.IntPtrInput
-	// 是否支持防护Ipv6请求。0:关闭,1:开启。
+	// IPv6 request protection supported. 0: Off, 1: On
 	EnableIpv6 pulumi.IntPtrInput
-	// 是否开启SNI配置。0:关闭,1:开启。
+	// Whether to enable SNI configuration. 0: Off, 1: On.
 	EnableSni pulumi.IntPtrInput
-	// 长连接复用个数。
+	// Persistent connection reuse count
 	KeepAliveRequest pulumi.IntPtrInput
-	// 长连接保持时间(秒)。
+	// Persistent connection keep-alive time (seconds)
 	KeepAliveTimeout pulumi.IntPtrInput
-	// 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+	// Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
 	LbAlgorithm pulumi.StringPtrInput
-	// 项目名称。
+	// Project name.
 	ProjectName pulumi.StringPtrInput
-	// 是否开启协议跟随。0:关闭,1:开启。
+	// Protocol following enabled. 0: Off, 1: On
 	ProtocolFollow pulumi.IntPtrInput
-	// 接入端口信息。
+	// Access port information
 	ProtocolPorts DomainProtocolPortsPtrInput
-	// 接入协议类型,支持HTTP/HTTPS。
+	// Access protocol type: supports HTTP/HTTPS
 	Protocols pulumi.StringArrayInput
-	// 是否开启代理配置。0:关闭,1:开启。
+	// Proxy configuration enabled. 0: Off, 1: On
 	ProxyConfig pulumi.IntPtrInput
-	// WAF和后端服务器的建连超时时间(秒)。
+	// Connection timeout between WAF and backend server (seconds).
 	ProxyConnectTimeout pulumi.IntPtrInput
-	// WAF回源长连接可复用个数。
+	// Number of reusable WAF origin persistent connections.
 	ProxyKeepAlive pulumi.IntPtrInput
-	// 空闲长连接超时时间(秒)。
+	// Idle persistent connection timeout (seconds)
 	ProxyKeepAliveTimeout pulumi.IntPtrInput
-	// WAF从后端服务器读取响应的超时时间(秒)。
+	// Timeout for WAF to read response from backend server (seconds).
 	ProxyReadTimeout pulumi.IntPtrInput
-	// WAF回源重试次数。
+	// WAF origin retry count.
 	ProxyRetry pulumi.IntPtrInput
-	// WAF将请求传输到后端服务器的超时时间(秒)。
+	// Timeout for WAF to transmit request to backend server (seconds).
 	ProxyWriteTimeout pulumi.IntPtrInput
-	// CNAME接入回源方式。0:私网回源,1:公网回源。
+	// CNAME access origin method. 0: Private network origin, 1: Public network origin.
 	PublicRealServer pulumi.IntPtrInput
-	// 加密套件。
+	// Cipher suite
 	SslCiphers pulumi.StringArrayInput
-	// TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+	// TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
 	SslProtocols pulumi.StringArrayInput
-	// 是否开启托管BOT防护。
+	// Whether to enable managed bot protection.
 	SystemBotEnable pulumi.IntPtrInput
-	// 是否开启防篡改。
+	// Whether to enable anti-tampering.
 	TamperProofEnable pulumi.IntPtrInput
-	// 是否开启日志服务。0:关闭,1:开启。
+	// Log service enabled. 0: Off, 1: On
 	TlsEnable pulumi.IntPtrInput
-	// 日志字段配置详情。
+	// Log field configuration details
 	TlsFieldsConfig DomainTlsFieldsConfigPtrInput
 	// VPC ID。
 	VpcId pulumi.StringPtrInput
-	// 是否开启WAF防护。
+	// WAF protection enabled
 	WafEnable pulumi.IntPtrInput
-	// 是否开启白名单请求防护。
+	// Allowlist request protection enabled
 	WafWhiteReqEnable pulumi.IntPtrInput
-	// 是否开启白名单防护。
+	// Whether to enable allowlist protection.
 	WhiteEnable pulumi.IntPtrInput
-	// 是否开启字段白名单防护。
+	// Field allowlist protection enabled
 	WhiteFieldEnable pulumi.IntPtrInput
 }
 
@@ -893,37 +893,37 @@ func (o DomainOutput) ToDomainOutputWithContext(ctx context.Context) DomainOutpu
 	return o
 }
 
-// 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+// Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
 func (o DomainOutput) AccessMode() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.AccessMode }).(pulumi.IntOutput)
 }
 
-// 高防实例 IP。高防型 WAF 接入展示，否则为空。
+// High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
 func (o DomainOutput) AdvancedDefenseIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.AdvancedDefenseIp }).(pulumi.StringOutput)
 }
 
-// 高防实例 Ipv6。高防型 WAF 接入展示，否则为空。
+// High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
 func (o DomainOutput) AdvancedDefenseIpv6() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.AdvancedDefenseIpv6 }).(pulumi.StringOutput)
 }
 
-// 是否开启了 API 防护策略。0：关闭，1：开启。
+// API protection policy enabled. 0: Off, 1: On
 func (o DomainOutput) ApiEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.ApiEnable }).(pulumi.IntOutput)
 }
 
-// 攻击状态。0:未发现攻击,1:发现攻击。
+// Attack status. 0: No attack detected, 1: Attack detected.
 func (o DomainOutput) AttackStatus() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.AttackStatus }).(pulumi.IntOutput)
 }
 
-// 是否开启智能 CC 防护策略。0：关闭，1：开启。
+// Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
 func (o DomainOutput) AutoCcEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.AutoCcEnable }).(pulumi.IntOutput)
 }
 
-// 是否开启自动封禁。0：关闭，1：开启。
+// Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
 func (o DomainOutput) AutomaticBlackEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.AutomaticBlackEnable }).(pulumi.IntOutput)
 }
@@ -932,99 +932,99 @@ func (o DomainOutput) BackendGroups() DomainBackendGroupArrayOutput {
 	return o.ApplyT(func(v *Domain) DomainBackendGroupArrayOutput { return v.BackendGroups }).(DomainBackendGroupArrayOutput)
 }
 
-// 是否开启了黑名单策略。0：关闭, 1：开启。
+// Denylist policy enabled. 0: Off, 1: On
 func (o DomainOutput) BlackIpEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.BlackIpEnable }).(pulumi.IntOutput)
 }
 
-// 是否开启了区域封禁策略。0：关闭;1：开启。
+// Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
 func (o DomainOutput) BlackLctEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.BlackLctEnable }).(pulumi.IntOutput)
 }
 
-// 是否开启动态Token防护。
+// Dynamic token protection enabled
 func (o DomainOutput) BotDytokenEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.BotDytokenEnable }).(pulumi.IntOutput)
 }
 
-// 是否开启 bot 频率限制策略。
-// 0：关闭
-// 1：开启。
+// Bot rate limit policy enabled.
+// 0: Off
+// 1: On
 func (o DomainOutput) BotFrequencyEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.BotFrequencyEnable }).(pulumi.IntOutput)
 }
 
-// 是否开启 bot 统计防护策略。
-// 0：关闭
-// 1：开启。
+// Bot statistics protection policy enabled.
+// 0: Off
+// 1: On
 func (o DomainOutput) BotRepeatEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.BotRepeatEnable }).(pulumi.IntOutput)
 }
 
-// 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-// 0：观察
-// 2：拦截
-// 6：JS 挑战
-// 7：人机验证。
+// Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+// 0: Observe
+// 2: Intercept
+// 6: JS Challenge
+// 7: CAPTCHA.
 func (o DomainOutput) BotSequenceDefaultAction() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.BotSequenceDefaultAction }).(pulumi.IntOutput)
 }
 
-// 是否开启 bot 行为地图。
-// 0：关闭
-// 1：开启。
+// Whether to enable bot behavior map.
+// 0: Off
+// 1: On.
 func (o DomainOutput) BotSequenceEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.BotSequenceEnable }).(pulumi.IntOutput)
 }
 
-// 是否开启 CC 防护策略。
-// 0：关闭
-// 1：开启。
+// Whether to enable CC protection policy.
+// 0: Disabled
+// 1: Enabled.
 func (o DomainOutput) CcEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.CcEnable }).(pulumi.IntOutput)
 }
 
-// 托管至证书中心的证书ID。
+// Certificate ID managed in Certificate Center
 func (o DomainOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.CertificateId }).(pulumi.StringOutput)
 }
 
-// 证书名称，协议类型包含 HTTPS 时显示。
+// Certificate name. Displayed when protocol type includes HTTPS.
 func (o DomainOutput) CertificateName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.CertificateName }).(pulumi.StringOutput)
 }
 
-// 证书托管平台:waf/certificate_service。
+// Certificate hosting platform: waf/certificate_service.
 func (o DomainOutput) CertificatePlatform() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.CertificatePlatform }).(pulumi.StringOutput)
 }
 
-// CLB实例ID。
+// CLB instance ID.
 func (o DomainOutput) ClbInstanceIds() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.ClbInstanceIds }).(pulumi.StringOutput)
 }
 
-// CLB监听器ID。
+// CLB listener ID.
 func (o DomainOutput) ClbListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.ClbListenerId }).(pulumi.StringOutput)
 }
 
-// CLB后端服务器组ID。
+// CLB backend server group ID.
 func (o DomainOutput) ClbPoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.ClbPoolId }).(pulumi.StringOutput)
 }
 
-// CLB后端服务器ID。
+// CLB backend server ID
 func (o DomainOutput) ClbServerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.ClbServerId }).(pulumi.StringOutput)
 }
 
-// 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+// Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
 func (o DomainOutput) ClientIpLocation() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.ClientIpLocation }).(pulumi.IntOutput)
 }
 
-// 客户端请求body最大值(MB)。
+// Maximum client request body size (MB).
 func (o DomainOutput) ClientMaxBodySize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.ClientMaxBodySize }).(pulumi.IntOutput)
 }
@@ -1033,194 +1033,194 @@ func (o DomainOutput) CloudAccessConfigs() DomainCloudAccessConfigArrayOutput {
 	return o.ApplyT(func(v *Domain) DomainCloudAccessConfigArrayOutput { return v.CloudAccessConfigs }).(DomainCloudAccessConfigArrayOutput)
 }
 
-// CNAME记录。
+// CNAME record.
 func (o DomainOutput) Cname() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.Cname }).(pulumi.StringOutput)
 }
 
-// 是否开启自定义BOT防护。
+// Whether to enable custom bot protection.
 func (o DomainOutput) CustomBotEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.CustomBotEnable }).(pulumi.IntOutput)
 }
 
-// 自定义Header。
+// Custom header.
 func (o DomainOutput) CustomHeaders() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringArrayOutput { return v.CustomHeaders }).(pulumi.StringArrayOutput)
 }
 
-// 是否开启自定义响应。
+// Whether to enable custom response.
 func (o DomainOutput) CustomRspEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.CustomRspEnable }).(pulumi.IntOutput)
 }
 
-// 自定义SNI。
+// Custom SNI.
 func (o DomainOutput) CustomSni() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.CustomSni }).(pulumi.StringOutput)
 }
 
-// 为例外 ALB 实例设置防护模式。
-// 1：启用防护，已配置的防护策略生效。
-// 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-// 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-// 设置例外防护实例后，域名可能还会存在以下防护状态：
-// 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-// 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-// 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+// Set protection mode for exception ALB instances.
+// 1: Enable protection. The configured protection policies take effect.
+// 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+// 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+// After configuring exception protection instances, the domain may also have the following protection statuses:
+// 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+// 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+// 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
 func (o DomainOutput) DefenceMode() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.DefenceMode }).(pulumi.IntOutput)
 }
 
-// 是否开启数据泄露防护。
+// Data leakage protection enabled
 func (o DomainOutput) DlpEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.DlpEnable }).(pulumi.IntOutput)
 }
 
-// 防护的域名信息，支持泛域名和精确域名。
+// Protected domain information. Supports wildcard and exact domains
 func (o DomainOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 是否开启用户自定义重定向。0:关闭,1:开启。
+// User-defined redirection enabled. 0: Off, 1: On
 func (o DomainOutput) EnableCustomRedirect() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.EnableCustomRedirect }).(pulumi.IntOutput)
 }
 
-// 是否开启HTTP2.0。0:关闭,1:开启。
+// Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
 func (o DomainOutput) EnableHttp2() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.EnableHttp2 }).(pulumi.IntOutput)
 }
 
-// 是否支持防护Ipv6请求。0:关闭,1:开启。
+// IPv6 request protection supported. 0: Off, 1: On
 func (o DomainOutput) EnableIpv6() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.EnableIpv6 }).(pulumi.IntOutput)
 }
 
-// 是否开启SNI配置。0:关闭,1:开启。
+// Whether to enable SNI configuration. 0: Off, 1: On.
 func (o DomainOutput) EnableSni() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.EnableSni }).(pulumi.IntOutput)
 }
 
-// 长连接复用个数。
+// Persistent connection reuse count
 func (o DomainOutput) KeepAliveRequest() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.KeepAliveRequest }).(pulumi.IntOutput)
 }
 
-// 长连接保持时间(秒)。
+// Persistent connection keep-alive time (seconds)
 func (o DomainOutput) KeepAliveTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.KeepAliveTimeout }).(pulumi.IntOutput)
 }
 
-// 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+// Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
 func (o DomainOutput) LbAlgorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.LbAlgorithm }).(pulumi.StringOutput)
 }
 
-// 端口号。
+// Port number
 func (o DomainOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
 }
 
-// 项目名称。
+// Project name.
 func (o DomainOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 是否开启协议跟随。0:关闭,1:开启。
+// Protocol following enabled. 0: Off, 1: On
 func (o DomainOutput) ProtocolFollow() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.ProtocolFollow }).(pulumi.IntOutput)
 }
 
-// 接入端口信息。
+// Access port information
 func (o DomainOutput) ProtocolPorts() DomainProtocolPortsOutput {
 	return o.ApplyT(func(v *Domain) DomainProtocolPortsOutput { return v.ProtocolPorts }).(DomainProtocolPortsOutput)
 }
 
-// 接入协议类型,支持HTTP/HTTPS。
+// Access protocol type: supports HTTP/HTTPS
 func (o DomainOutput) Protocols() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringArrayOutput { return v.Protocols }).(pulumi.StringArrayOutput)
 }
 
-// 是否开启代理配置。0:关闭,1:开启。
+// Proxy configuration enabled. 0: Off, 1: On
 func (o DomainOutput) ProxyConfig() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.ProxyConfig }).(pulumi.IntOutput)
 }
 
-// WAF和后端服务器的建连超时时间(秒)。
+// Connection timeout between WAF and backend server (seconds).
 func (o DomainOutput) ProxyConnectTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.ProxyConnectTimeout }).(pulumi.IntOutput)
 }
 
-// WAF回源长连接可复用个数。
+// Number of reusable WAF origin persistent connections.
 func (o DomainOutput) ProxyKeepAlive() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.ProxyKeepAlive }).(pulumi.IntOutput)
 }
 
-// 空闲长连接超时时间(秒)。
+// Idle persistent connection timeout (seconds)
 func (o DomainOutput) ProxyKeepAliveTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.ProxyKeepAliveTimeout }).(pulumi.IntOutput)
 }
 
-// WAF从后端服务器读取响应的超时时间(秒)。
+// Timeout for WAF to read response from backend server (seconds).
 func (o DomainOutput) ProxyReadTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.ProxyReadTimeout }).(pulumi.IntOutput)
 }
 
-// WAF回源重试次数。
+// WAF origin retry count.
 func (o DomainOutput) ProxyRetry() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.ProxyRetry }).(pulumi.IntOutput)
 }
 
-// WAF将请求传输到后端服务器的超时时间(秒)。
+// Timeout for WAF to transmit request to backend server (seconds).
 func (o DomainOutput) ProxyWriteTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.ProxyWriteTimeout }).(pulumi.IntOutput)
 }
 
-// CNAME接入回源方式。0:私网回源,1:公网回源。
+// CNAME access origin method. 0: Private network origin, 1: Public network origin.
 func (o DomainOutput) PublicRealServer() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.PublicRealServer }).(pulumi.IntOutput)
 }
 
-// 是否开启异常响应防护。
+// Whether to enable abnormal response protection.
 func (o DomainOutput) RspAbnormalEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.RspAbnormalEnable }).(pulumi.IntOutput)
 }
 
-// 服务IP。
+// Service IP
 func (o DomainOutput) ServerIps() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.ServerIps }).(pulumi.StringOutput)
 }
 
-// WAF回源IP。
+// WAF origin IP.
 func (o DomainOutput) SrcIps() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.SrcIps }).(pulumi.StringOutput)
 }
 
-// 源站协议。
+// Origin protocol.
 func (o DomainOutput) SrcProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.SrcProtocol }).(pulumi.StringOutput)
 }
 
-// 加密套件。
+// Cipher suite
 func (o DomainOutput) SslCiphers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringArrayOutput { return v.SslCiphers }).(pulumi.StringArrayOutput)
 }
 
-// TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+// TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
 func (o DomainOutput) SslProtocols() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringArrayOutput { return v.SslProtocols }).(pulumi.StringArrayOutput)
 }
 
-// 接入状态。0:正常,1:DNS未解析,2:配置中,3:配置失败,4:配置未生效,5:更新中,6:实例已删除。
+// Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
 func (o DomainOutput) Status() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.Status }).(pulumi.IntOutput)
 }
 
-// 是否开启托管BOT防护。
+// Whether to enable managed bot protection.
 func (o DomainOutput) SystemBotEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.SystemBotEnable }).(pulumi.IntOutput)
 }
 
-// 是否开启防篡改。
+// Whether to enable anti-tampering.
 func (o DomainOutput) TamperProofEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.TamperProofEnable }).(pulumi.IntOutput)
 }
@@ -1229,17 +1229,17 @@ func (o DomainOutput) TcpListenerConfigs() DomainTcpListenerConfigArrayOutput {
 	return o.ApplyT(func(v *Domain) DomainTcpListenerConfigArrayOutput { return v.TcpListenerConfigs }).(DomainTcpListenerConfigArrayOutput)
 }
 
-// 是否开启日志服务。0:关闭,1:开启。
+// Log service enabled. 0: Off, 1: On
 func (o DomainOutput) TlsEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.TlsEnable }).(pulumi.IntOutput)
 }
 
-// 日志字段配置详情。
+// Log field configuration details
 func (o DomainOutput) TlsFieldsConfig() DomainTlsFieldsConfigOutput {
 	return o.ApplyT(func(v *Domain) DomainTlsFieldsConfigOutput { return v.TlsFieldsConfig }).(DomainTlsFieldsConfigOutput)
 }
 
-// 更新时间。
+// Update time
 func (o DomainOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.UpdateTime }).(pulumi.StringOutput)
 }
@@ -1249,22 +1249,22 @@ func (o DomainOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 是否开启WAF防护。
+// WAF protection enabled
 func (o DomainOutput) WafEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.WafEnable }).(pulumi.IntOutput)
 }
 
-// 是否开启白名单请求防护。
+// Allowlist request protection enabled
 func (o DomainOutput) WafWhiteReqEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.WafWhiteReqEnable }).(pulumi.IntOutput)
 }
 
-// 是否开启白名单防护。
+// Whether to enable allowlist protection.
 func (o DomainOutput) WhiteEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.WhiteEnable }).(pulumi.IntOutput)
 }
 
-// 是否开启字段白名单防护。
+// Field allowlist protection enabled
 func (o DomainOutput) WhiteFieldEnable() pulumi.IntOutput {
 	return o.ApplyT(func(v *Domain) pulumi.IntOutput { return v.WhiteFieldEnable }).(pulumi.IntOutput)
 }

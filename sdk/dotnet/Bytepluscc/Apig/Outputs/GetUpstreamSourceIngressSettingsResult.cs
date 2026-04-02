@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetUpstreamSourceIngressSettingsResult
     {
         /// <summary>
-        /// 是否启用所有Ingress类。
+        /// Whether to enable all Ingress classes
         /// </summary>
         public readonly bool EnableAllIngressClasses;
         /// <summary>
-        /// 是否全部命名空间。
+        /// Whether all namespaces
         /// </summary>
         public readonly bool EnableAllNamespaces;
         /// <summary>
-        /// 是否开启。
+        /// Whether enabled
         /// </summary>
         public readonly bool EnableIngress;
         /// <summary>
-        /// 是否监听IngressClass为空的资源。
+        /// Whether to monitor resources with empty IngressClass
         /// </summary>
         public readonly bool EnableIngressWithoutIngressClass;
         /// <summary>
-        /// 指定IngressClass。
+        /// Specify IngressClass
         /// </summary>
         public readonly ImmutableArray<string> IngressClasses;
         /// <summary>
-        /// 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+        /// Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
         /// </summary>
         public readonly bool UpdateStatus;
         /// <summary>
-        /// 指定命名空间。
+        /// Specify namespace
         /// </summary>
         public readonly ImmutableArray<string> WatchNamespaces;
 

@@ -11,62 +11,62 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleRuleActionRedirectConfig {
     /**
-     * @return 重定向域名，仅支持精确域名。
+     * @return Redirect domain. Only exact domains are supported.
      * 
      */
     private String host;
     /**
-     * @return 重定向状态码，支持301，302，307，308。
+     * @return Redirect status codes supported: 301, 302, 307, 308.
      * 
      */
     private String httpCode;
     /**
-     * @return 重定向 URI。。
+     * @return Redirect URI..
      * 
      */
     private String path;
     /**
-     * @return 重定向端口。
+     * @return Redirect port.
      * 
      */
     private String port;
     /**
-     * @return 重定向使用的协议，支持HTTP，HTTPS。
+     * @return Protocol used for redirect. Supports HTTP and HTTPS.
      * 
      */
     private String protocol;
 
     private GetRuleRuleActionRedirectConfig() {}
     /**
-     * @return 重定向域名，仅支持精确域名。
+     * @return Redirect domain. Only exact domains are supported.
      * 
      */
     public String host() {
         return this.host;
     }
     /**
-     * @return 重定向状态码，支持301，302，307，308。
+     * @return Redirect status codes supported: 301, 302, 307, 308.
      * 
      */
     public String httpCode() {
         return this.httpCode;
     }
     /**
-     * @return 重定向 URI。。
+     * @return Redirect URI..
      * 
      */
     public String path() {
         return this.path;
     }
     /**
-     * @return 重定向端口。
+     * @return Redirect port.
      * 
      */
     public String port() {
         return this.port;
     }
     /**
-     * @return 重定向使用的协议，支持HTTP，HTTPS。
+     * @return Protocol used for redirect. Supports HTTP and HTTPS.
      * 
      */
     public String protocol() {

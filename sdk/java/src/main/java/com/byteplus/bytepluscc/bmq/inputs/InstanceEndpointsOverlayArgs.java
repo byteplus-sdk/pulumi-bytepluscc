@@ -18,14 +18,14 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
     public static final InstanceEndpointsOverlayArgs Empty = new InstanceEndpointsOverlayArgs();
 
     /**
-     * 域名映射地址。
+     * Domain mapping address
      * 
      */
     @Import(name="address")
     private @Nullable Output<String> address;
 
     /**
-     * @return 域名映射地址。
+     * @return Domain mapping address
      * 
      */
     public Optional<Output<String>> address() {
@@ -33,14 +33,14 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 实例绑定的EIP的ID。
+     * ID of the EIP bound to the instance
      * 
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
-     * @return 实例绑定的EIP的ID。
+     * @return ID of the EIP bound to the instance
      * 
      */
     public Optional<Output<String>> eipId() {
@@ -48,14 +48,14 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 私网Plain接入点。
+     * Private network Plain endpoint
      * 
      */
     @Import(name="plain")
     private @Nullable Output<String> plain;
 
     /**
-     * @return 私网Plain接入点。
+     * @return Private network Plain endpoint
      * 
      */
     public Optional<Output<String>> plain() {
@@ -63,14 +63,14 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 普通接入点端口。
+     * Standard endpoint port
      * 
      */
     @Import(name="plainPort")
     private @Nullable Output<Integer> plainPort;
 
     /**
-     * @return 普通接入点端口。
+     * @return Standard endpoint port
      * 
      */
     public Optional<Output<Integer>> plainPort() {
@@ -78,14 +78,14 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 私网SASL认证接入点。
+     * Private network SASL authentication endpoint
      * 
      */
     @Import(name="sasl")
     private @Nullable Output<String> sasl;
 
     /**
-     * @return 私网SASL认证接入点。
+     * @return Private network SASL authentication endpoint
      * 
      */
     public Optional<Output<String>> sasl() {
@@ -93,14 +93,14 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 认证接入点端口。
+     * Authentication endpoint port
      * 
      */
     @Import(name="saslPort")
     private @Nullable Output<Integer> saslPort;
 
     /**
-     * @return 认证接入点端口。
+     * @return Authentication endpoint port
      * 
      */
     public Optional<Output<Integer>> saslPort() {
@@ -108,14 +108,14 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 加密接入点。
+     * Encrypted endpoint
      * 
      */
     @Import(name="ssl")
     private @Nullable Output<String> ssl;
 
     /**
-     * @return 加密接入点。
+     * @return Encrypted endpoint
      * 
      */
     public Optional<Output<String>> ssl() {
@@ -123,14 +123,14 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 加密接入点端口。
+     * Encrypted endpoint port
      * 
      */
     @Import(name="sslPort")
     private @Nullable Output<Integer> sslPort;
 
     /**
-     * @return 加密接入点端口。
+     * @return Encrypted endpoint port
      * 
      */
     public Optional<Output<Integer>> sslPort() {
@@ -138,14 +138,14 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 接入点状态。
+     * Endpoint status
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 接入点状态。
+     * @return Endpoint status
      * 
      */
     public Optional<Output<String>> status() {
@@ -153,14 +153,14 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 售卖区网络关联的VPC ID列表。
+     * List of VPC IDs associated with the sales zone network
      * 
      */
     @Import(name="vpcIds")
     private @Nullable Output<List<String>> vpcIds;
 
     /**
-     * @return 售卖区网络关联的VPC ID列表。
+     * @return List of VPC IDs associated with the sales zone network
      * 
      */
     public Optional<Output<List<String>>> vpcIds() {
@@ -201,7 +201,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param address 域名映射地址。
+         * @param address Domain mapping address
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param address 域名映射地址。
+         * @param address Domain mapping address
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param eipId 实例绑定的EIP的ID。
+         * @param eipId ID of the EIP bound to the instance
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param eipId 实例绑定的EIP的ID。
+         * @param eipId ID of the EIP bound to the instance
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param plain 私网Plain接入点。
+         * @param plain Private network Plain endpoint
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param plain 私网Plain接入点。
+         * @param plain Private network Plain endpoint
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param plainPort 普通接入点端口。
+         * @param plainPort Standard endpoint port
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param plainPort 普通接入点端口。
+         * @param plainPort Standard endpoint port
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param sasl 私网SASL认证接入点。
+         * @param sasl Private network SASL authentication endpoint
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param sasl 私网SASL认证接入点。
+         * @param sasl Private network SASL authentication endpoint
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param saslPort 认证接入点端口。
+         * @param saslPort Authentication endpoint port
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param saslPort 认证接入点端口。
+         * @param saslPort Authentication endpoint port
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ssl 加密接入点。
+         * @param ssl Encrypted endpoint
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ssl 加密接入点。
+         * @param ssl Encrypted endpoint
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param sslPort 加密接入点端口。
+         * @param sslPort Encrypted endpoint port
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param sslPort 加密接入点端口。
+         * @param sslPort Encrypted endpoint port
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param status 接入点状态。
+         * @param status Endpoint status
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param status 接入点状态。
+         * @param status Endpoint status
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param vpcIds 售卖区网络关联的VPC ID列表。
+         * @param vpcIds List of VPC IDs associated with the sales zone network
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param vpcIds 售卖区网络关联的VPC ID列表。
+         * @param vpcIds List of VPC IDs associated with the sales zone network
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class InstanceEndpointsOverlayArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param vpcIds 售卖区网络关联的VPC ID列表。
+         * @param vpcIds List of VPC IDs associated with the sales zone network
          * 
          * @return builder
          * 

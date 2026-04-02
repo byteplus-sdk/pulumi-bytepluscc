@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark.Inputs
     public sealed class EndpointModelReferenceFoundationModelArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 基础模型版本。
+        /// Base model version
         /// </summary>
         [Input("modelVersion")]
         public Input<string>? ModelVersion { get; set; }
 
         /// <summary>
-        /// 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+        /// Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

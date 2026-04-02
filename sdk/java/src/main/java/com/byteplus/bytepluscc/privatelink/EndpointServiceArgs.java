@@ -20,14 +20,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     public static final EndpointServiceArgs Empty = new EndpointServiceArgs();
 
     /**
-     * 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+     * Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
      * 
      */
     @Import(name="autoAcceptEnabled")
     private @Nullable Output<Boolean> autoAcceptEnabled;
 
     /**
-     * @return 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+     * @return Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
      * 
      */
     public Optional<Output<Boolean>> autoAcceptEnabled() {
@@ -35,14 +35,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 终端节点服务的描述信息。
+     * Description of the endpoint service.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 终端节点服务的描述信息。
+     * @return Description of the endpoint service.
      * 
      */
     public Optional<Output<String>> description() {
@@ -50,14 +50,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+     * IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
      * 
      */
     @Import(name="ipAddressVersions")
     private @Nullable Output<List<String>> ipAddressVersions;
 
     /**
-     * @return 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+     * @return IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
      * 
      */
     public Optional<Output<List<String>>> ipAddressVersions() {
@@ -65,14 +65,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+     * Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
      * 
      */
     @Import(name="payer")
     private @Nullable Output<String> payer;
 
     /**
-     * @return 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+     * @return Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
      * 
      */
     public Optional<Output<String>> payer() {
@@ -80,14 +80,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+     * Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
      * 
      */
     @Import(name="privateDnsEnabled")
     private @Nullable Output<Boolean> privateDnsEnabled;
 
     /**
-     * @return 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+     * @return Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
      * 
      */
     public Optional<Output<Boolean>> privateDnsEnabled() {
@@ -95,14 +95,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+     * Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
      * 
      */
     @Import(name="privateDnsName")
     private @Nullable Output<String> privateDnsName;
 
     /**
-     * @return 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+     * @return Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
      * 
      */
     public Optional<Output<String>> privateDnsName() {
@@ -110,14 +110,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+     * Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
      * 
      */
     @Import(name="privateDnsType")
     private @Nullable Output<String> privateDnsType;
 
     /**
-     * @return 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+     * @return Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
      * 
      */
     public Optional<Output<String>> privateDnsType() {
@@ -125,14 +125,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 终端节点服务所属的项目名称。
+     * Project name to which the endpoint service belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 终端节点服务所属的项目名称。
+     * @return Project name to which the endpoint service belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -147,14 +147,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+     * Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
      * 
      */
     @Import(name="serviceNameManaged")
     private @Nullable Output<String> serviceNameManaged;
 
     /**
-     * @return 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+     * @return Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
      * 
      */
     public Optional<Output<String>> serviceNameManaged() {
@@ -162,14 +162,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.&lt;地域ID&gt;.&lt;名称后缀&gt;的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+     * Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
      * 
      */
     @Import(name="serviceNameSuffix")
     private @Nullable Output<String> serviceNameSuffix;
 
     /**
-     * @return 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.&lt;地域ID&gt;.&lt;名称后缀&gt;的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+     * @return Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
      * 
      */
     public Optional<Output<String>> serviceNameSuffix() {
@@ -177,14 +177,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 当前服务主体。
+     * Current service principal.
      * 
      */
     @Import(name="serviceOwner")
     private @Nullable Output<String> serviceOwner;
 
     /**
-     * @return 当前服务主体。
+     * @return Current service principal.
      * 
      */
     public Optional<Output<String>> serviceOwner() {
@@ -192,14 +192,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+     * Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
      * 
      */
     @Import(name="serviceResourceType")
     private @Nullable Output<String> serviceResourceType;
 
     /**
-     * @return 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+     * @return Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
      * 
      */
     public Optional<Output<String>> serviceResourceType() {
@@ -207,14 +207,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 终端节点服务的类型。Interface：接口终端节点服务。
+     * Type of the endpoint service. Interface: Interface endpoint service.
      * 
      */
     @Import(name="serviceType")
     private @Nullable Output<String> serviceType;
 
     /**
-     * @return 终端节点服务的类型。Interface：接口终端节点服务。
+     * @return Type of the endpoint service. Interface: Interface endpoint service.
      * 
      */
     public Optional<Output<String>> serviceType() {
@@ -229,14 +229,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 是否启用通配符域名。true：启用。false：未启用。
+     * Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
      * 
      */
     @Import(name="wildcardDomainEnabled")
     private @Nullable Output<Boolean> wildcardDomainEnabled;
 
     /**
-     * @return 是否启用通配符域名。true：启用。false：未启用。
+     * @return Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
      * 
      */
     public Optional<Output<Boolean>> wildcardDomainEnabled() {
@@ -283,7 +283,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param autoAcceptEnabled 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+         * @param autoAcceptEnabled Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param autoAcceptEnabled 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+         * @param autoAcceptEnabled Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description 终端节点服务的描述信息。
+         * @param description Description of the endpoint service.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description 终端节点服务的描述信息。
+         * @param description Description of the endpoint service.
          * 
          * @return builder
          * 
@@ -325,7 +325,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ipAddressVersions 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+         * @param ipAddressVersions IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ipAddressVersions 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+         * @param ipAddressVersions IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
          * 
          * @return builder
          * 
@@ -346,7 +346,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ipAddressVersions 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+         * @param ipAddressVersions IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
          * 
          * @return builder
          * 
@@ -356,7 +356,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param payer 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+         * @param payer Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
          * 
          * @return builder
          * 
@@ -367,7 +367,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param payer 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+         * @param payer Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
          * 
          * @return builder
          * 
@@ -377,7 +377,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param privateDnsEnabled 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+         * @param privateDnsEnabled Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param privateDnsEnabled 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+         * @param privateDnsEnabled Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
          * 
          * @return builder
          * 
@@ -398,7 +398,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param privateDnsName 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+         * @param privateDnsName Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param privateDnsName 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+         * @param privateDnsName Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
          * 
          * @return builder
          * 
@@ -419,7 +419,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param privateDnsType 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+         * @param privateDnsType Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param privateDnsType 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+         * @param privateDnsType Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param projectName 终端节点服务所属的项目名称。
+         * @param projectName Project name to which the endpoint service belongs.
          * 
          * @return builder
          * 
@@ -451,7 +451,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param projectName 终端节点服务所属的项目名称。
+         * @param projectName Project name to which the endpoint service belongs.
          * 
          * @return builder
          * 
@@ -474,7 +474,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceNameManaged 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+         * @param serviceNameManaged Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
          * 
          * @return builder
          * 
@@ -485,7 +485,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceNameManaged 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+         * @param serviceNameManaged Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
          * 
          * @return builder
          * 
@@ -495,7 +495,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceNameSuffix 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.&lt;地域ID&gt;.&lt;名称后缀&gt;的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+         * @param serviceNameSuffix Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
          * 
          * @return builder
          * 
@@ -506,7 +506,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceNameSuffix 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.&lt;地域ID&gt;.&lt;名称后缀&gt;的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+         * @param serviceNameSuffix Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
          * 
          * @return builder
          * 
@@ -516,7 +516,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceOwner 当前服务主体。
+         * @param serviceOwner Current service principal.
          * 
          * @return builder
          * 
@@ -527,7 +527,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceOwner 当前服务主体。
+         * @param serviceOwner Current service principal.
          * 
          * @return builder
          * 
@@ -537,7 +537,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceResourceType 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+         * @param serviceResourceType Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
          * 
          * @return builder
          * 
@@ -548,7 +548,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceResourceType 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+         * @param serviceResourceType Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
          * 
          * @return builder
          * 
@@ -558,7 +558,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceType 终端节点服务的类型。Interface：接口终端节点服务。
+         * @param serviceType Type of the endpoint service. Interface: Interface endpoint service.
          * 
          * @return builder
          * 
@@ -569,7 +569,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceType 终端节点服务的类型。Interface：接口终端节点服务。
+         * @param serviceType Type of the endpoint service. Interface: Interface endpoint service.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param wildcardDomainEnabled 是否启用通配符域名。true：启用。false：未启用。
+         * @param wildcardDomainEnabled Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
          * 
          * @return builder
          * 
@@ -603,7 +603,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param wildcardDomainEnabled 是否启用通配符域名。true：启用。false：未启用。
+         * @param wildcardDomainEnabled Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
          * 
          * @return builder
          * 

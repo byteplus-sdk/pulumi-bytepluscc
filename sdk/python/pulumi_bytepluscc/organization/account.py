@@ -35,16 +35,16 @@ class AccountArgs:
                  verification_relation_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Account resource.
-        :param pulumi.Input[builtins.str] account_name: 账户名称。5-20个字符。
-        :param pulumi.Input[builtins.str] show_name: 显示名称。
-        :param pulumi.Input[builtins.int] allow_console: 允许控制台访问，1: 允许，2: 不允许。
-        :param pulumi.Input[builtins.int] allow_exit: 允许退出，1: 允许，2: 不允许。
-        :param pulumi.Input[builtins.str] delete_uk: 删除标记。
-        :param pulumi.Input[builtins.str] description: 描述。
-        :param pulumi.Input[builtins.str] org_unit_id: 组织单元ID。传入 0 加入到 root 单元。
-        :param pulumi.Input[builtins.str] password: 账户密码。
-        :param pulumi.Input['AccountSecureContactInfoArgs'] secure_contact_info: 安全联系信息。
-        :param pulumi.Input[builtins.str] verification_relation_id: 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+        :param pulumi.Input[builtins.str] account_name: Account name. 5–20 characters
+        :param pulumi.Input[builtins.str] show_name: Display name
+        :param pulumi.Input[builtins.int] allow_console: Allow console access: 1. Allowed, 2. Not allowed
+        :param pulumi.Input[builtins.int] allow_exit: Allow exit: 1. Allowed, 2. Not allowed
+        :param pulumi.Input[builtins.str] delete_uk: Deletion flag
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] org_unit_id: Organizational unit ID. Enter 0 to join the root unit
+        :param pulumi.Input[builtins.str] password: Account password
+        :param pulumi.Input['AccountSecureContactInfoArgs'] secure_contact_info: Security contact information
+        :param pulumi.Input[builtins.str] verification_relation_id: Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
         """
         pulumi.set(__self__, "account_name", account_name)
         pulumi.set(__self__, "show_name", show_name)
@@ -71,7 +71,7 @@ class AccountArgs:
     @pulumi.getter(name="accountName")
     def account_name(self) -> pulumi.Input[builtins.str]:
         """
-        账户名称。5-20个字符。
+        Account name. 5–20 characters
         """
         return pulumi.get(self, "account_name")
 
@@ -83,7 +83,7 @@ class AccountArgs:
     @pulumi.getter(name="showName")
     def show_name(self) -> pulumi.Input[builtins.str]:
         """
-        显示名称。
+        Display name
         """
         return pulumi.get(self, "show_name")
 
@@ -95,7 +95,7 @@ class AccountArgs:
     @pulumi.getter(name="allowConsole")
     def allow_console(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        允许控制台访问，1: 允许，2: 不允许。
+        Allow console access: 1. Allowed, 2. Not allowed
         """
         return pulumi.get(self, "allow_console")
 
@@ -107,7 +107,7 @@ class AccountArgs:
     @pulumi.getter(name="allowExit")
     def allow_exit(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        允许退出，1: 允许，2: 不允许。
+        Allow exit: 1. Allowed, 2. Not allowed
         """
         return pulumi.get(self, "allow_exit")
 
@@ -119,7 +119,7 @@ class AccountArgs:
     @pulumi.getter(name="deleteUk")
     def delete_uk(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        删除标记。
+        Deletion flag
         """
         return pulumi.get(self, "delete_uk")
 
@@ -131,7 +131,7 @@ class AccountArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        描述。
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -143,7 +143,7 @@ class AccountArgs:
     @pulumi.getter(name="orgUnitId")
     def org_unit_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组织单元ID。传入 0 加入到 root 单元。
+        Organizational unit ID. Enter 0 to join the root unit
         """
         return pulumi.get(self, "org_unit_id")
 
@@ -155,7 +155,7 @@ class AccountArgs:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账户密码。
+        Account password
         """
         return pulumi.get(self, "password")
 
@@ -167,7 +167,7 @@ class AccountArgs:
     @pulumi.getter(name="secureContactInfo")
     def secure_contact_info(self) -> Optional[pulumi.Input['AccountSecureContactInfoArgs']]:
         """
-        安全联系信息。
+        Security contact information
         """
         return pulumi.get(self, "secure_contact_info")
 
@@ -188,7 +188,7 @@ class AccountArgs:
     @pulumi.getter(name="verificationRelationId")
     def verification_relation_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+        Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
         """
         return pulumi.get(self, "verification_relation_id")
 
@@ -227,30 +227,30 @@ class _AccountState:
                  verification_relation_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Account resources.
-        :param pulumi.Input[builtins.str] account_id: 火山账号ID。
-        :param pulumi.Input[builtins.str] account_name: 账户名称。5-20个字符。
-        :param pulumi.Input[builtins.int] allow_console: 允许控制台访问，1: 允许，2: 不允许。
-        :param pulumi.Input[builtins.int] allow_exit: 允许退出，1: 允许，2: 不允许。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] delete_uk: 删除标记。
-        :param pulumi.Input[builtins.str] deleted_time: 删除时间。
-        :param pulumi.Input[builtins.str] description: 描述。
-        :param pulumi.Input[builtins.str] iam_role: IAM角色名称。
-        :param pulumi.Input[builtins.int] is_owner: 是否是管理员，0.非管理员，1.管理员。
-        :param pulumi.Input[builtins.int] join_type: 加入类型，1: 创建，2: 邀请。
-        :param pulumi.Input[builtins.str] main_name: 主体名称。
-        :param pulumi.Input[builtins.str] member_account_id: 组织成员账号ID。
-        :param pulumi.Input[builtins.str] org_id: 组织ID。
-        :param pulumi.Input[builtins.int] org_type: 组织类型，1.企业组织。
-        :param pulumi.Input[builtins.str] org_unit_id: 组织单元ID。传入 0 加入到 root 单元。
-        :param pulumi.Input[builtins.str] org_unit_name: 组织单元名称。
-        :param pulumi.Input[builtins.str] org_verification_id: 认证主体ID。
-        :param pulumi.Input[builtins.str] owner: 管理员ID。
-        :param pulumi.Input[builtins.str] password: 账户密码。
-        :param pulumi.Input['AccountSecureContactInfoArgs'] secure_contact_info: 安全联系信息。
-        :param pulumi.Input[builtins.str] show_name: 显示名称。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
-        :param pulumi.Input[builtins.str] verification_relation_id: 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+        :param pulumi.Input[builtins.str] account_id: Volcano account ID
+        :param pulumi.Input[builtins.str] account_name: Account name. 5–20 characters
+        :param pulumi.Input[builtins.int] allow_console: Allow console access: 1. Allowed, 2. Not allowed
+        :param pulumi.Input[builtins.int] allow_exit: Allow exit: 1. Allowed, 2. Not allowed
+        :param pulumi.Input[builtins.str] created_time: Creation time
+        :param pulumi.Input[builtins.str] delete_uk: Deletion flag
+        :param pulumi.Input[builtins.str] deleted_time: Deletion time
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] iam_role: IAM role name
+        :param pulumi.Input[builtins.int] is_owner: Administrator status: 0. Non-administrator, 1. Administrator
+        :param pulumi.Input[builtins.int] join_type: Join type: 1. Create, 2. Invite
+        :param pulumi.Input[builtins.str] main_name: Subject name
+        :param pulumi.Input[builtins.str] member_account_id: Organization member account ID
+        :param pulumi.Input[builtins.str] org_id: Organization ID
+        :param pulumi.Input[builtins.int] org_type: Organization type: 1. Enterprise organization
+        :param pulumi.Input[builtins.str] org_unit_id: Organizational unit ID. Enter 0 to join the root unit
+        :param pulumi.Input[builtins.str] org_unit_name: Organizational unit name
+        :param pulumi.Input[builtins.str] org_verification_id: Authentication subject ID
+        :param pulumi.Input[builtins.str] owner: Administrator ID
+        :param pulumi.Input[builtins.str] password: Account password
+        :param pulumi.Input['AccountSecureContactInfoArgs'] secure_contact_info: Security contact information
+        :param pulumi.Input[builtins.str] show_name: Display name
+        :param pulumi.Input[builtins.str] updated_time: Update time
+        :param pulumi.Input[builtins.str] verification_relation_id: Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -307,7 +307,7 @@ class _AccountState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        火山账号ID。
+        Volcano account ID
         """
         return pulumi.get(self, "account_id")
 
@@ -319,7 +319,7 @@ class _AccountState:
     @pulumi.getter(name="accountName")
     def account_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账户名称。5-20个字符。
+        Account name. 5–20 characters
         """
         return pulumi.get(self, "account_name")
 
@@ -331,7 +331,7 @@ class _AccountState:
     @pulumi.getter(name="allowConsole")
     def allow_console(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        允许控制台访问，1: 允许，2: 不允许。
+        Allow console access: 1. Allowed, 2. Not allowed
         """
         return pulumi.get(self, "allow_console")
 
@@ -343,7 +343,7 @@ class _AccountState:
     @pulumi.getter(name="allowExit")
     def allow_exit(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        允许退出，1: 允许，2: 不允许。
+        Allow exit: 1. Allowed, 2. Not allowed
         """
         return pulumi.get(self, "allow_exit")
 
@@ -355,7 +355,7 @@ class _AccountState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -367,7 +367,7 @@ class _AccountState:
     @pulumi.getter(name="deleteUk")
     def delete_uk(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        删除标记。
+        Deletion flag
         """
         return pulumi.get(self, "delete_uk")
 
@@ -379,7 +379,7 @@ class _AccountState:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        删除时间。
+        Deletion time
         """
         return pulumi.get(self, "deleted_time")
 
@@ -391,7 +391,7 @@ class _AccountState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        描述。
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -403,7 +403,7 @@ class _AccountState:
     @pulumi.getter(name="iamRole")
     def iam_role(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IAM角色名称。
+        IAM role name
         """
         return pulumi.get(self, "iam_role")
 
@@ -415,7 +415,7 @@ class _AccountState:
     @pulumi.getter(name="isOwner")
     def is_owner(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        是否是管理员，0.非管理员，1.管理员。
+        Administrator status: 0. Non-administrator, 1. Administrator
         """
         return pulumi.get(self, "is_owner")
 
@@ -427,7 +427,7 @@ class _AccountState:
     @pulumi.getter(name="joinType")
     def join_type(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        加入类型，1: 创建，2: 邀请。
+        Join type: 1. Create, 2. Invite
         """
         return pulumi.get(self, "join_type")
 
@@ -439,7 +439,7 @@ class _AccountState:
     @pulumi.getter(name="mainName")
     def main_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        主体名称。
+        Subject name
         """
         return pulumi.get(self, "main_name")
 
@@ -451,7 +451,7 @@ class _AccountState:
     @pulumi.getter(name="memberAccountId")
     def member_account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组织成员账号ID。
+        Organization member account ID
         """
         return pulumi.get(self, "member_account_id")
 
@@ -463,7 +463,7 @@ class _AccountState:
     @pulumi.getter(name="orgId")
     def org_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组织ID。
+        Organization ID
         """
         return pulumi.get(self, "org_id")
 
@@ -475,7 +475,7 @@ class _AccountState:
     @pulumi.getter(name="orgType")
     def org_type(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        组织类型，1.企业组织。
+        Organization type: 1. Enterprise organization
         """
         return pulumi.get(self, "org_type")
 
@@ -487,7 +487,7 @@ class _AccountState:
     @pulumi.getter(name="orgUnitId")
     def org_unit_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组织单元ID。传入 0 加入到 root 单元。
+        Organizational unit ID. Enter 0 to join the root unit
         """
         return pulumi.get(self, "org_unit_id")
 
@@ -499,7 +499,7 @@ class _AccountState:
     @pulumi.getter(name="orgUnitName")
     def org_unit_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组织单元名称。
+        Organizational unit name
         """
         return pulumi.get(self, "org_unit_name")
 
@@ -511,7 +511,7 @@ class _AccountState:
     @pulumi.getter(name="orgVerificationId")
     def org_verification_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        认证主体ID。
+        Authentication subject ID
         """
         return pulumi.get(self, "org_verification_id")
 
@@ -523,7 +523,7 @@ class _AccountState:
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        管理员ID。
+        Administrator ID
         """
         return pulumi.get(self, "owner")
 
@@ -535,7 +535,7 @@ class _AccountState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账户密码。
+        Account password
         """
         return pulumi.get(self, "password")
 
@@ -547,7 +547,7 @@ class _AccountState:
     @pulumi.getter(name="secureContactInfo")
     def secure_contact_info(self) -> Optional[pulumi.Input['AccountSecureContactInfoArgs']]:
         """
-        安全联系信息。
+        Security contact information
         """
         return pulumi.get(self, "secure_contact_info")
 
@@ -559,7 +559,7 @@ class _AccountState:
     @pulumi.getter(name="showName")
     def show_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        显示名称。
+        Display name
         """
         return pulumi.get(self, "show_name")
 
@@ -580,7 +580,7 @@ class _AccountState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间。
+        Update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -592,7 +592,7 @@ class _AccountState:
     @pulumi.getter(name="verificationRelationId")
     def verification_relation_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+        Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
         """
         return pulumi.get(self, "verification_relation_id")
 
@@ -620,7 +620,7 @@ class Account(pulumi.CustomResource):
                  verification_relation_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        查看和管理您组织内的所有账号。每个账号可以直接放在根节点中，也可以移动到您创建的任意组织节点层级结构中，每个账号只能归属于一个节点。您可以分层树状结构管理您的组织结构以及成员账号。
+        View and manage all accounts in your organization. Each account can be placed directly in the root node or moved to any organizational node hierarchy you create. Each account can belong to only one node. You can manage your organizational structure and member accounts in a layered tree structure
 
         ## Import
 
@@ -630,16 +630,16 @@ class Account(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_name: 账户名称。5-20个字符。
-        :param pulumi.Input[builtins.int] allow_console: 允许控制台访问，1: 允许，2: 不允许。
-        :param pulumi.Input[builtins.int] allow_exit: 允许退出，1: 允许，2: 不允许。
-        :param pulumi.Input[builtins.str] delete_uk: 删除标记。
-        :param pulumi.Input[builtins.str] description: 描述。
-        :param pulumi.Input[builtins.str] org_unit_id: 组织单元ID。传入 0 加入到 root 单元。
-        :param pulumi.Input[builtins.str] password: 账户密码。
-        :param pulumi.Input[Union['AccountSecureContactInfoArgs', 'AccountSecureContactInfoArgsDict']] secure_contact_info: 安全联系信息。
-        :param pulumi.Input[builtins.str] show_name: 显示名称。
-        :param pulumi.Input[builtins.str] verification_relation_id: 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+        :param pulumi.Input[builtins.str] account_name: Account name. 5–20 characters
+        :param pulumi.Input[builtins.int] allow_console: Allow console access: 1. Allowed, 2. Not allowed
+        :param pulumi.Input[builtins.int] allow_exit: Allow exit: 1. Allowed, 2. Not allowed
+        :param pulumi.Input[builtins.str] delete_uk: Deletion flag
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] org_unit_id: Organizational unit ID. Enter 0 to join the root unit
+        :param pulumi.Input[builtins.str] password: Account password
+        :param pulumi.Input[Union['AccountSecureContactInfoArgs', 'AccountSecureContactInfoArgsDict']] secure_contact_info: Security contact information
+        :param pulumi.Input[builtins.str] show_name: Display name
+        :param pulumi.Input[builtins.str] verification_relation_id: Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
         """
         ...
     @overload
@@ -648,7 +648,7 @@ class Account(pulumi.CustomResource):
                  args: AccountArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        查看和管理您组织内的所有账号。每个账号可以直接放在根节点中，也可以移动到您创建的任意组织节点层级结构中，每个账号只能归属于一个节点。您可以分层树状结构管理您的组织结构以及成员账号。
+        View and manage all accounts in your organization. Each account can be placed directly in the root node or moved to any organizational node hierarchy you create. Each account can belong to only one node. You can manage your organizational structure and member accounts in a layered tree structure
 
         ## Import
 
@@ -762,30 +762,30 @@ class Account(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_id: 火山账号ID。
-        :param pulumi.Input[builtins.str] account_name: 账户名称。5-20个字符。
-        :param pulumi.Input[builtins.int] allow_console: 允许控制台访问，1: 允许，2: 不允许。
-        :param pulumi.Input[builtins.int] allow_exit: 允许退出，1: 允许，2: 不允许。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] delete_uk: 删除标记。
-        :param pulumi.Input[builtins.str] deleted_time: 删除时间。
-        :param pulumi.Input[builtins.str] description: 描述。
-        :param pulumi.Input[builtins.str] iam_role: IAM角色名称。
-        :param pulumi.Input[builtins.int] is_owner: 是否是管理员，0.非管理员，1.管理员。
-        :param pulumi.Input[builtins.int] join_type: 加入类型，1: 创建，2: 邀请。
-        :param pulumi.Input[builtins.str] main_name: 主体名称。
-        :param pulumi.Input[builtins.str] member_account_id: 组织成员账号ID。
-        :param pulumi.Input[builtins.str] org_id: 组织ID。
-        :param pulumi.Input[builtins.int] org_type: 组织类型，1.企业组织。
-        :param pulumi.Input[builtins.str] org_unit_id: 组织单元ID。传入 0 加入到 root 单元。
-        :param pulumi.Input[builtins.str] org_unit_name: 组织单元名称。
-        :param pulumi.Input[builtins.str] org_verification_id: 认证主体ID。
-        :param pulumi.Input[builtins.str] owner: 管理员ID。
-        :param pulumi.Input[builtins.str] password: 账户密码。
-        :param pulumi.Input[Union['AccountSecureContactInfoArgs', 'AccountSecureContactInfoArgsDict']] secure_contact_info: 安全联系信息。
-        :param pulumi.Input[builtins.str] show_name: 显示名称。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
-        :param pulumi.Input[builtins.str] verification_relation_id: 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+        :param pulumi.Input[builtins.str] account_id: Volcano account ID
+        :param pulumi.Input[builtins.str] account_name: Account name. 5–20 characters
+        :param pulumi.Input[builtins.int] allow_console: Allow console access: 1. Allowed, 2. Not allowed
+        :param pulumi.Input[builtins.int] allow_exit: Allow exit: 1. Allowed, 2. Not allowed
+        :param pulumi.Input[builtins.str] created_time: Creation time
+        :param pulumi.Input[builtins.str] delete_uk: Deletion flag
+        :param pulumi.Input[builtins.str] deleted_time: Deletion time
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] iam_role: IAM role name
+        :param pulumi.Input[builtins.int] is_owner: Administrator status: 0. Non-administrator, 1. Administrator
+        :param pulumi.Input[builtins.int] join_type: Join type: 1. Create, 2. Invite
+        :param pulumi.Input[builtins.str] main_name: Subject name
+        :param pulumi.Input[builtins.str] member_account_id: Organization member account ID
+        :param pulumi.Input[builtins.str] org_id: Organization ID
+        :param pulumi.Input[builtins.int] org_type: Organization type: 1. Enterprise organization
+        :param pulumi.Input[builtins.str] org_unit_id: Organizational unit ID. Enter 0 to join the root unit
+        :param pulumi.Input[builtins.str] org_unit_name: Organizational unit name
+        :param pulumi.Input[builtins.str] org_verification_id: Authentication subject ID
+        :param pulumi.Input[builtins.str] owner: Administrator ID
+        :param pulumi.Input[builtins.str] password: Account password
+        :param pulumi.Input[Union['AccountSecureContactInfoArgs', 'AccountSecureContactInfoArgsDict']] secure_contact_info: Security contact information
+        :param pulumi.Input[builtins.str] show_name: Display name
+        :param pulumi.Input[builtins.str] updated_time: Update time
+        :param pulumi.Input[builtins.str] verification_relation_id: Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -822,7 +822,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        火山账号ID。
+        Volcano account ID
         """
         return pulumi.get(self, "account_id")
 
@@ -830,7 +830,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="accountName")
     def account_name(self) -> pulumi.Output[builtins.str]:
         """
-        账户名称。5-20个字符。
+        Account name. 5–20 characters
         """
         return pulumi.get(self, "account_name")
 
@@ -838,7 +838,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="allowConsole")
     def allow_console(self) -> pulumi.Output[builtins.int]:
         """
-        允许控制台访问，1: 允许，2: 不允许。
+        Allow console access: 1. Allowed, 2. Not allowed
         """
         return pulumi.get(self, "allow_console")
 
@@ -846,7 +846,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="allowExit")
     def allow_exit(self) -> pulumi.Output[builtins.int]:
         """
-        允许退出，1: 允许，2: 不允许。
+        Allow exit: 1. Allowed, 2. Not allowed
         """
         return pulumi.get(self, "allow_exit")
 
@@ -854,7 +854,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -862,7 +862,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="deleteUk")
     def delete_uk(self) -> pulumi.Output[builtins.str]:
         """
-        删除标记。
+        Deletion flag
         """
         return pulumi.get(self, "delete_uk")
 
@@ -870,7 +870,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> pulumi.Output[builtins.str]:
         """
-        删除时间。
+        Deletion time
         """
         return pulumi.get(self, "deleted_time")
 
@@ -878,7 +878,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        描述。
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -886,7 +886,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="iamRole")
     def iam_role(self) -> pulumi.Output[builtins.str]:
         """
-        IAM角色名称。
+        IAM role name
         """
         return pulumi.get(self, "iam_role")
 
@@ -894,7 +894,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="isOwner")
     def is_owner(self) -> pulumi.Output[builtins.int]:
         """
-        是否是管理员，0.非管理员，1.管理员。
+        Administrator status: 0. Non-administrator, 1. Administrator
         """
         return pulumi.get(self, "is_owner")
 
@@ -902,7 +902,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="joinType")
     def join_type(self) -> pulumi.Output[builtins.int]:
         """
-        加入类型，1: 创建，2: 邀请。
+        Join type: 1. Create, 2. Invite
         """
         return pulumi.get(self, "join_type")
 
@@ -910,7 +910,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="mainName")
     def main_name(self) -> pulumi.Output[builtins.str]:
         """
-        主体名称。
+        Subject name
         """
         return pulumi.get(self, "main_name")
 
@@ -918,7 +918,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="memberAccountId")
     def member_account_id(self) -> pulumi.Output[builtins.str]:
         """
-        组织成员账号ID。
+        Organization member account ID
         """
         return pulumi.get(self, "member_account_id")
 
@@ -926,7 +926,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="orgId")
     def org_id(self) -> pulumi.Output[builtins.str]:
         """
-        组织ID。
+        Organization ID
         """
         return pulumi.get(self, "org_id")
 
@@ -934,7 +934,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="orgType")
     def org_type(self) -> pulumi.Output[builtins.int]:
         """
-        组织类型，1.企业组织。
+        Organization type: 1. Enterprise organization
         """
         return pulumi.get(self, "org_type")
 
@@ -942,7 +942,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="orgUnitId")
     def org_unit_id(self) -> pulumi.Output[builtins.str]:
         """
-        组织单元ID。传入 0 加入到 root 单元。
+        Organizational unit ID. Enter 0 to join the root unit
         """
         return pulumi.get(self, "org_unit_id")
 
@@ -950,7 +950,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="orgUnitName")
     def org_unit_name(self) -> pulumi.Output[builtins.str]:
         """
-        组织单元名称。
+        Organizational unit name
         """
         return pulumi.get(self, "org_unit_name")
 
@@ -958,7 +958,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="orgVerificationId")
     def org_verification_id(self) -> pulumi.Output[builtins.str]:
         """
-        认证主体ID。
+        Authentication subject ID
         """
         return pulumi.get(self, "org_verification_id")
 
@@ -966,7 +966,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter
     def owner(self) -> pulumi.Output[builtins.str]:
         """
-        管理员ID。
+        Administrator ID
         """
         return pulumi.get(self, "owner")
 
@@ -974,7 +974,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output[builtins.str]:
         """
-        账户密码。
+        Account password
         """
         return pulumi.get(self, "password")
 
@@ -982,7 +982,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="secureContactInfo")
     def secure_contact_info(self) -> pulumi.Output['outputs.AccountSecureContactInfo']:
         """
-        安全联系信息。
+        Security contact information
         """
         return pulumi.get(self, "secure_contact_info")
 
@@ -990,7 +990,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="showName")
     def show_name(self) -> pulumi.Output[builtins.str]:
         """
-        显示名称。
+        Display name
         """
         return pulumi.get(self, "show_name")
 
@@ -1003,7 +1003,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间。
+        Update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -1011,7 +1011,7 @@ class Account(pulumi.CustomResource):
     @pulumi.getter(name="verificationRelationId")
     def verification_relation_id(self) -> pulumi.Output[builtins.str]:
         """
-        被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+        Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
         """
         return pulumi.get(self, "verification_relation_id")
 

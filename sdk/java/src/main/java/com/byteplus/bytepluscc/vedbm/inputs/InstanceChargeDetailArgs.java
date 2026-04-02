@@ -18,14 +18,14 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
     public static final InstanceChargeDetailArgs Empty = new InstanceChargeDetailArgs();
 
     /**
-     * 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+     * Whether to enable auto-renewal in prepaid scenarios. Values: true: auto-renewal. false: no auto-renewal.
      * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
-     * @return 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+     * @return Whether to enable auto-renewal in prepaid scenarios. Values: true: auto-renewal. false: no auto-renewal.
      * 
      */
     public Optional<Output<Boolean>> autoRenew() {
@@ -33,14 +33,14 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 预付费场景下计费到期的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Billing expiration time for prepaid scenarios, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     @Import(name="chargeEndTime")
     private @Nullable Output<String> chargeEndTime;
 
     /**
-     * @return 预付费场景下计费到期的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Billing expiration time for prepaid scenarios, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     public Optional<Output<String>> chargeEndTime() {
@@ -48,14 +48,14 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 计费开始的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Billing start time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     @Import(name="chargeStartTime")
     private @Nullable Output<String> chargeStartTime;
 
     /**
-     * @return 计费开始的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Billing start time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     public Optional<Output<String>> chargeStartTime() {
@@ -63,14 +63,14 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 付费状态：Normal：正常。Overdue：欠费。Shutdown：关停。
+     * Payment status: Normal: Normal. Overdue: Overdue. Shutdown: Shutdown
      * 
      */
     @Import(name="chargeStatus")
     private @Nullable Output<String> chargeStatus;
 
     /**
-     * @return 付费状态：Normal：正常。Overdue：欠费。Shutdown：关停。
+     * @return Payment status: Normal: Normal. Overdue: Overdue. Shutdown: Shutdown
      * 
      */
     public Optional<Output<String>> chargeStatus() {
@@ -78,14 +78,14 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 计费类型。PostPaid：按量计费；PrePaid：包年包月。
+     * Billing type. PostPaid: Pay-as-you-go. PrePaid: yearly/monthly subscription
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return 计费类型。PostPaid：按量计费；PrePaid：包年包月。
+     * @return Billing type. PostPaid: Pay-as-you-go. PrePaid: yearly/monthly subscription
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -93,14 +93,14 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 欠费关停时预计释放时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Estimated release time when shut down due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     @Import(name="overdueReclaimTime")
     private @Nullable Output<String> overdueReclaimTime;
 
     /**
-     * @return 欠费关停时预计释放时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Estimated release time when shut down due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     public Optional<Output<String>> overdueReclaimTime() {
@@ -108,14 +108,14 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 欠费关停时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Shutdown time for overdue payments. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
      * 
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
-     * @return 欠费关停时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Shutdown time for overdue payments. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
      * 
      */
     public Optional<Output<String>> overdueTime() {
@@ -123,14 +123,14 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 预付费场景下的购买时长。
+     * Purchase duration for prepaid scenarios.
      * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
-     * @return 预付费场景下的购买时长。
+     * @return Purchase duration for prepaid scenarios.
      * 
      */
     public Optional<Output<Integer>> period() {
@@ -138,14 +138,14 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 预付费场景下的购买周期。Month：包月。Year：包年。
+     * Purchase period for prepaid scenarios. Month: monthly subscription. Year: annual subscription.
      * 
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
-     * @return 预付费场景下的购买周期。Month：包月。Year：包年。
+     * @return Purchase period for prepaid scenarios. Month: monthly subscription. Year: annual subscription.
      * 
      */
     public Optional<Output<String>> periodUnit() {
@@ -185,7 +185,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param autoRenew 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+         * @param autoRenew Whether to enable auto-renewal in prepaid scenarios. Values: true: auto-renewal. false: no auto-renewal.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param autoRenew 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+         * @param autoRenew Whether to enable auto-renewal in prepaid scenarios. Values: true: auto-renewal. false: no auto-renewal.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param chargeEndTime 预付费场景下计费到期的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param chargeEndTime Billing expiration time for prepaid scenarios, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param chargeEndTime 预付费场景下计费到期的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param chargeEndTime Billing expiration time for prepaid scenarios, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param chargeStartTime 计费开始的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param chargeStartTime Billing start time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param chargeStartTime 计费开始的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param chargeStartTime Billing start time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param chargeStatus 付费状态：Normal：正常。Overdue：欠费。Shutdown：关停。
+         * @param chargeStatus Payment status: Normal: Normal. Overdue: Overdue. Shutdown: Shutdown
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param chargeStatus 付费状态：Normal：正常。Overdue：欠费。Shutdown：关停。
+         * @param chargeStatus Payment status: Normal: Normal. Overdue: Overdue. Shutdown: Shutdown
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param chargeType 计费类型。PostPaid：按量计费；PrePaid：包年包月。
+         * @param chargeType Billing type. PostPaid: Pay-as-you-go. PrePaid: yearly/monthly subscription
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param chargeType 计费类型。PostPaid：按量计费；PrePaid：包年包月。
+         * @param chargeType Billing type. PostPaid: Pay-as-you-go. PrePaid: yearly/monthly subscription
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param overdueReclaimTime 欠费关停时预计释放时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param overdueReclaimTime Estimated release time when shut down due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param overdueReclaimTime 欠费关停时预计释放时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param overdueReclaimTime Estimated release time when shut down due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param overdueTime 欠费关停时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param overdueTime Shutdown time for overdue payments. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param overdueTime 欠费关停时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param overdueTime Shutdown time for overdue payments. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param period 预付费场景下的购买时长。
+         * @param period Purchase duration for prepaid scenarios.
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param period 预付费场景下的购买时长。
+         * @param period Purchase duration for prepaid scenarios.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param periodUnit 预付费场景下的购买周期。Month：包月。Year：包年。
+         * @param periodUnit Purchase period for prepaid scenarios. Month: monthly subscription. Year: annual subscription.
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class InstanceChargeDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param periodUnit 预付费场景下的购买周期。Month：包月。Year：包年。
+         * @param periodUnit Purchase period for prepaid scenarios. Month: monthly subscription. Year: annual subscription.
          * 
          * @return builder
          * 

@@ -31,15 +31,15 @@ export interface GetTrafficMirrorSessionArgs {
  */
 export interface GetTrafficMirrorSessionResult {
     /**
-     * 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+     * Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
      */
     readonly businessStatus: string;
     /**
-     * 创建时间。
+     * Creation time
      */
     readonly createdTime: string;
     /**
-     * 镜像会话实例描述。
+     * Mirror session instance description
      */
     readonly description: string;
     /**
@@ -47,55 +47,55 @@ export interface GetTrafficMirrorSessionResult {
      */
     readonly id: string;
     /**
-     * 锁定原因。
+     * Lock reason
      */
     readonly lockReason: string;
     /**
-     * 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+     * Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
      */
     readonly networkInterfaceId: string;
     /**
-     * 镜像会话MTU，超过被截断，取值范围：64～9600。
+     * Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
      */
     readonly packetLength: number;
     /**
-     * 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+     * Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
      */
     readonly priority: number;
     /**
-     * 所属项目的名称
+     * Name of the associated project
      */
     readonly projectName: string;
     /**
-     * 会话状态。
+     * Session status
      */
     readonly status: string;
     /**
-     * 标签信息。
+     * Tag information
      */
     readonly tags: outputs.vpc.GetTrafficMirrorSessionTag[];
     /**
-     * 筛选条件实例ID。
+     * Filter condition instance ID
      */
     readonly trafficMirrorFilterId: string;
     /**
-     * 镜像会话实例ID。
+     * Mirror session instance ID
      */
     readonly trafficMirrorSessionId: string;
     /**
-     * 镜像会话名称。
+     * Mirror session name
      */
     readonly trafficMirrorSessionName: string;
     /**
-     * 镜像源实例列表。
+     * Mirror source instance list
      */
     readonly trafficMirrorSourceIds: string[];
     /**
-     * 镜像目的实例ID。
+     * Mirror destination instance ID
      */
     readonly trafficMirrorTargetId: string;
     /**
-     * 镜像会话VNI，取值范围1 ～ 16777215。
+     * Mirror session VNI. Range: 1–16777215
      */
     readonly virtualNetworkId: number;
 }

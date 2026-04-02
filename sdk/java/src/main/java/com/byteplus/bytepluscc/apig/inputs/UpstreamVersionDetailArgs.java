@@ -25,14 +25,14 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+     * Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+     * @return Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
      * 
      */
     public Optional<Output<String>> name() {
@@ -40,14 +40,14 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 更新时间。
+     * Update time
      * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public Optional<Output<String>> updateTime() {
@@ -94,7 +94,7 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param name 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+         * @param name Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
          * 
          * @return builder
          * 
@@ -105,7 +105,7 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param name 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+         * @param name Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param updateTime 更新时间。
+         * @param updateTime Update time
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param updateTime 更新时间。
+         * @param updateTime Update time
          * 
          * @return builder
          * 

@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainCacheKeyCacheKeyAction {
     /**
-     * @return 表示一个操作配置的列表。当前您仅可设置一个操作配置。
+     * @return Indicates a list of operation configurations. Currently, you can only set one operation configuration.
      * 
      */
     private List<GetDomainCacheKeyCacheKeyActionCacheKeyComponent> cacheKeyComponents;
 
     private GetDomainCacheKeyCacheKeyAction() {}
     /**
-     * @return 表示一个操作配置的列表。当前您仅可设置一个操作配置。
+     * @return Indicates a list of operation configurations. Currently, you can only set one operation configuration.
      * 
      */
     public List<GetDomainCacheKeyCacheKeyActionCacheKeyComponent> cacheKeyComponents() {

@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
     public sealed class GetRuleDimensionConditionsResult
     {
         /// <summary>
-        /// 根据资源名称选择告警对象的条件。当Type为meta时必填。
+        /// Condition for selecting alert objects based on resource name. Required when Type is meta.
         /// </summary>
         public readonly Outputs.GetRuleDimensionConditionsMetaConditionResult MetaCondition;
         /// <summary>
-        /// 根据项目选择告警对象的条件。当Type为project时必填。
+        /// Condition for selecting alert targets by project. Required when Type is project.
         /// </summary>
         public readonly Outputs.GetRuleDimensionConditionsProjectConditionResult ProjectCondition;
         /// <summary>
-        /// 根据标签选择告警对象的条件。当Type为tag时必填。
+        /// Condition for selecting alert objects by tag. Required when Type is tag.
         /// </summary>
         public readonly Outputs.GetRuleDimensionConditionsTagConditionResult TagCondition;
         /// <summary>
-        /// Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+        /// Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
         /// </summary>
         public readonly string Type;
 

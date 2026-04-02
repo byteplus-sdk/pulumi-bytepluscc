@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vke
 {
     /// <summary>
-    /// 容器服务通过深度融合新一代云原生技术，提供以容器为核心的高性能 Kubernetes 容器集群管理服务。在云端一键构建高可用 Kubernetes 集群，并实现容器化应用的可视化全生命周期管理，助力用户快速构建容器化应用。
+    /// Container Service deeply integrates next-generation cloud-native technologies to provide high-performance Kubernetes cluster management centered on containers. Build highly available Kubernetes clusters in the cloud with one click and achieve visualized full lifecycle management of containerized applications, helping users quickly build containerized applications.
     /// 
     /// ## Import
     /// 
@@ -23,109 +23,109 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public partial class Cluster : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 集群控制面及部分节点的网络配置。
+        /// Network configuration for the cluster control plane and some nodes.
         /// </summary>
         [Output("clusterConfig")]
         public Output<Outputs.ClusterClusterConfig> ClusterConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 集群 ID。
+        /// Cluster ID.
         /// </summary>
         [Output("clusterId")]
         public Output<string> ClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+        /// Cluster creation time. Standard RFC3339 format, UTC+0.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+        /// Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
         /// </summary>
         [Output("deleteProtectionEnabled")]
         public Output<bool> DeleteProtectionEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 集群描述。长度限制为 300 个字符以内。
+        /// Cluster description. Maximum length is 300 characters.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// IRSA（IAM Role for Service Account）能力相关参数配置。
+        /// IRSA (IAM Role for Service Account) capability parameter configuration
         /// </summary>
         [Output("irsaConfig")]
         public Output<Outputs.ClusterIrsaConfig> IrsaConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+        /// Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
         /// </summary>
         [Output("kubernetesVersion")]
         public Output<string> KubernetesVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+        /// Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
         /// </summary>
         [Output("kubernetesVersionCreate")]
         public Output<string> KubernetesVersionCreate { get; private set; } = null!;
 
         /// <summary>
-        /// 集群的日志配置信息。
+        /// Cluster log configuration information.
         /// </summary>
         [Output("loggingConfig")]
         public Output<Outputs.ClusterLoggingConfig> LoggingConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 集群状态描述。
+        /// Cluster status description.
         /// </summary>
         [Output("message")]
         public Output<string> Message { get; private set; } = null!;
 
         /// <summary>
-        /// 监控配置信息。
+        /// Monitoring configuration information.
         /// </summary>
         [Output("monitoringConfig")]
         public Output<Outputs.ClusterMonitoringConfig> MonitoringConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        /// Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 集群中各主状态下对应的节点数量统计。
+        /// Statistics of node counts for each main status in the cluster.
         /// </summary>
         [Output("nodeStatistics")]
         public Output<Outputs.ClusterNodeStatistics> NodeStatistics { get; private set; } = null!;
 
         /// <summary>
-        /// Pod 的网络配置。
+        /// Pod network configuration.
         /// </summary>
         [Output("podsConfig")]
         public Output<Outputs.ClusterPodsConfig> PodsConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+        /// Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 服务的网络配置。
+        /// Network configuration for the service.
         /// </summary>
         [Output("servicesConfig")]
         public Output<Outputs.ClusterServicesConfig> ServicesConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 集群源地域。
+        /// Cluster source region
         /// </summary>
         [Output("sourceRegion")]
         public Output<string> SourceRegion { get; private set; } = null!;
 
         /// <summary>
-        /// 集群状态。
+        /// Cluster status.
         /// </summary>
         [Output("status")]
         public Output<Outputs.ClusterStatus> Status { get; private set; } = null!;
@@ -134,13 +134,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         public Output<ImmutableArray<Outputs.ClusterTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 集群类型。
+        /// Cluster type.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+        /// Last update time of the cluster. Standard RFC3339 format, UTC+0.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -193,73 +193,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public sealed class ClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 集群控制面及部分节点的网络配置。
+        /// Network configuration for the cluster control plane and some nodes.
         /// </summary>
         [Input("clusterConfig")]
         public Input<Inputs.ClusterClusterConfigArgs>? ClusterConfig { get; set; }
 
         /// <summary>
-        /// 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+        /// Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
         /// </summary>
         [Input("deleteProtectionEnabled")]
         public Input<bool>? DeleteProtectionEnabled { get; set; }
 
         /// <summary>
-        /// 集群描述。长度限制为 300 个字符以内。
+        /// Cluster description. Maximum length is 300 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// IRSA（IAM Role for Service Account）能力相关参数配置。
+        /// IRSA (IAM Role for Service Account) capability parameter configuration
         /// </summary>
         [Input("irsaConfig")]
         public Input<Inputs.ClusterIrsaConfigArgs>? IrsaConfig { get; set; }
 
         /// <summary>
-        /// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+        /// Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
         /// </summary>
         [Input("kubernetesVersionCreate")]
         public Input<string>? KubernetesVersionCreate { get; set; }
 
         /// <summary>
-        /// 集群的日志配置信息。
+        /// Cluster log configuration information.
         /// </summary>
         [Input("loggingConfig")]
         public Input<Inputs.ClusterLoggingConfigArgs>? LoggingConfig { get; set; }
 
         /// <summary>
-        /// 监控配置信息。
+        /// Monitoring configuration information.
         /// </summary>
         [Input("monitoringConfig")]
         public Input<Inputs.ClusterMonitoringConfigArgs>? MonitoringConfig { get; set; }
 
         /// <summary>
-        /// 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        /// Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// Pod 的网络配置。
+        /// Pod network configuration.
         /// </summary>
         [Input("podsConfig")]
         public Input<Inputs.ClusterPodsConfigArgs>? PodsConfig { get; set; }
 
         /// <summary>
-        /// 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+        /// Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 服务的网络配置。
+        /// Network configuration for the service.
         /// </summary>
         [Input("servicesConfig")]
         public Input<Inputs.ClusterServicesConfigArgs>? ServicesConfig { get; set; }
 
         /// <summary>
-        /// 集群源地域。
+        /// Cluster source region
         /// </summary>
         [Input("sourceRegion")]
         public Input<string>? SourceRegion { get; set; }
@@ -281,109 +281,109 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public sealed class ClusterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 集群控制面及部分节点的网络配置。
+        /// Network configuration for the cluster control plane and some nodes.
         /// </summary>
         [Input("clusterConfig")]
         public Input<Inputs.ClusterClusterConfigGetArgs>? ClusterConfig { get; set; }
 
         /// <summary>
-        /// 集群 ID。
+        /// Cluster ID.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+        /// Cluster creation time. Standard RFC3339 format, UTC+0.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+        /// Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
         /// </summary>
         [Input("deleteProtectionEnabled")]
         public Input<bool>? DeleteProtectionEnabled { get; set; }
 
         /// <summary>
-        /// 集群描述。长度限制为 300 个字符以内。
+        /// Cluster description. Maximum length is 300 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// IRSA（IAM Role for Service Account）能力相关参数配置。
+        /// IRSA (IAM Role for Service Account) capability parameter configuration
         /// </summary>
         [Input("irsaConfig")]
         public Input<Inputs.ClusterIrsaConfigGetArgs>? IrsaConfig { get; set; }
 
         /// <summary>
-        /// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+        /// Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
         /// </summary>
         [Input("kubernetesVersion")]
         public Input<string>? KubernetesVersion { get; set; }
 
         /// <summary>
-        /// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+        /// Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
         /// </summary>
         [Input("kubernetesVersionCreate")]
         public Input<string>? KubernetesVersionCreate { get; set; }
 
         /// <summary>
-        /// 集群的日志配置信息。
+        /// Cluster log configuration information.
         /// </summary>
         [Input("loggingConfig")]
         public Input<Inputs.ClusterLoggingConfigGetArgs>? LoggingConfig { get; set; }
 
         /// <summary>
-        /// 集群状态描述。
+        /// Cluster status description.
         /// </summary>
         [Input("message")]
         public Input<string>? Message { get; set; }
 
         /// <summary>
-        /// 监控配置信息。
+        /// Monitoring configuration information.
         /// </summary>
         [Input("monitoringConfig")]
         public Input<Inputs.ClusterMonitoringConfigGetArgs>? MonitoringConfig { get; set; }
 
         /// <summary>
-        /// 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        /// Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 集群中各主状态下对应的节点数量统计。
+        /// Statistics of node counts for each main status in the cluster.
         /// </summary>
         [Input("nodeStatistics")]
         public Input<Inputs.ClusterNodeStatisticsGetArgs>? NodeStatistics { get; set; }
 
         /// <summary>
-        /// Pod 的网络配置。
+        /// Pod network configuration.
         /// </summary>
         [Input("podsConfig")]
         public Input<Inputs.ClusterPodsConfigGetArgs>? PodsConfig { get; set; }
 
         /// <summary>
-        /// 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+        /// Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 服务的网络配置。
+        /// Network configuration for the service.
         /// </summary>
         [Input("servicesConfig")]
         public Input<Inputs.ClusterServicesConfigGetArgs>? ServicesConfig { get; set; }
 
         /// <summary>
-        /// 集群源地域。
+        /// Cluster source region
         /// </summary>
         [Input("sourceRegion")]
         public Input<string>? SourceRegion { get; set; }
 
         /// <summary>
-        /// 集群状态。
+        /// Cluster status.
         /// </summary>
         [Input("status")]
         public Input<Inputs.ClusterStatusGetArgs>? Status { get; set; }
@@ -397,13 +397,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         }
 
         /// <summary>
-        /// 集群类型。
+        /// Cluster type.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+        /// Last update time of the cluster. Standard RFC3339 format, UTC+0.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

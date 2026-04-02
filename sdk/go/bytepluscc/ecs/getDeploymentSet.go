@@ -30,29 +30,29 @@ type LookupDeploymentSetArgs struct {
 
 // A collection of values returned by getDeploymentSet.
 type LookupDeploymentSetResult struct {
-	// 实例启动模板版本信息。
+	// Instance launch template version information.
 	Capacities []GetDeploymentSetCapacity `pulumi:"capacities"`
-	// 部署集的创建时间。
+	// Deployment set creation time.
 	CreatedAt string `pulumi:"createdAt"`
-	// 部署集组的序号，取值范围：1～7。
+	// Deployment set group index. Value range: 1–7.
 	DeploymentSetGroupNumber int `pulumi:"deploymentSetGroupNumber"`
-	// 部署集ID。
+	// Deployment set ID.
 	DeploymentSetId string `pulumi:"deploymentSetId"`
-	// 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+	// Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
 	DeploymentSetName string `pulumi:"deploymentSetName"`
-	// 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+	// Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
 	Description string `pulumi:"description"`
-	// 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+	// Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
 	Granularity string `pulumi:"granularity"`
-	// 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+	// Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
 	GroupCount int `pulumi:"groupCount"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 部署集内的ECS实例数量。
+	// Number of ECS instances in the deployment set.
 	InstanceAmount int `pulumi:"instanceAmount"`
-	// 部署集内的ECS实例ID列表。
+	// List of ECS instance IDs in the deployment set.
 	InstanceIds []string `pulumi:"instanceIds"`
-	// 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+	// Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
 	Strategy string `pulumi:"strategy"`
 }
 
@@ -90,42 +90,42 @@ func (o LookupDeploymentSetResultOutput) ToLookupDeploymentSetResultOutputWithCo
 	return o
 }
 
-// 实例启动模板版本信息。
+// Instance launch template version information.
 func (o LookupDeploymentSetResultOutput) Capacities() GetDeploymentSetCapacityArrayOutput {
 	return o.ApplyT(func(v LookupDeploymentSetResult) []GetDeploymentSetCapacity { return v.Capacities }).(GetDeploymentSetCapacityArrayOutput)
 }
 
-// 部署集的创建时间。
+// Deployment set creation time.
 func (o LookupDeploymentSetResultOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentSetResult) string { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// 部署集组的序号，取值范围：1～7。
+// Deployment set group index. Value range: 1–7.
 func (o LookupDeploymentSetResultOutput) DeploymentSetGroupNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDeploymentSetResult) int { return v.DeploymentSetGroupNumber }).(pulumi.IntOutput)
 }
 
-// 部署集ID。
+// Deployment set ID.
 func (o LookupDeploymentSetResultOutput) DeploymentSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentSetResult) string { return v.DeploymentSetId }).(pulumi.StringOutput)
 }
 
-// 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+// Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
 func (o LookupDeploymentSetResultOutput) DeploymentSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentSetResult) string { return v.DeploymentSetName }).(pulumi.StringOutput)
 }
 
-// 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+// Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
 func (o LookupDeploymentSetResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentSetResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+// Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
 func (o LookupDeploymentSetResultOutput) Granularity() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentSetResult) string { return v.Granularity }).(pulumi.StringOutput)
 }
 
-// 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+// Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
 func (o LookupDeploymentSetResultOutput) GroupCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDeploymentSetResult) int { return v.GroupCount }).(pulumi.IntOutput)
 }
@@ -135,17 +135,17 @@ func (o LookupDeploymentSetResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentSetResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 部署集内的ECS实例数量。
+// Number of ECS instances in the deployment set.
 func (o LookupDeploymentSetResultOutput) InstanceAmount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDeploymentSetResult) int { return v.InstanceAmount }).(pulumi.IntOutput)
 }
 
-// 部署集内的ECS实例ID列表。
+// List of ECS instance IDs in the deployment set.
 func (o LookupDeploymentSetResultOutput) InstanceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDeploymentSetResult) []string { return v.InstanceIds }).(pulumi.StringArrayOutput)
 }
 
-// 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+// Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
 func (o LookupDeploymentSetResultOutput) Strategy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentSetResult) string { return v.Strategy }).(pulumi.StringOutput)
 }

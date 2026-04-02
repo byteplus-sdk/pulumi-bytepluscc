@@ -17,14 +17,14 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
     public static final InstanceConnectionInfoAddressArgs Empty = new InstanceConnectionInfoAddressArgs();
 
     /**
-     * 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+     * Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
      * 
      */
     @Import(name="dnsVisibility")
     private @Nullable Output<Boolean> dnsVisibility;
 
     /**
-     * @return 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+     * @return Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
      * 
      */
     public Optional<Output<Boolean>> dnsVisibility() {
@@ -32,14 +32,14 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
     }
 
     /**
-     * 域名。
+     * Domain name.
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return 域名。
+     * @return Domain name.
      * 
      */
     public Optional<Output<String>> domain() {
@@ -47,14 +47,14 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
     }
 
     /**
-     * EIP的ID，仅对公网地址有效。
+     * EIP ID, valid only for public addresses.
      * 
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
-     * @return EIP的ID，仅对公网地址有效。
+     * @return EIP ID, valid only for public addresses.
      * 
      */
     public Optional<Output<String>> eipId() {
@@ -62,14 +62,14 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
     }
 
     /**
-     * IP地址。
+     * IP address.
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return IP地址。
+     * @return IP address.
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -77,14 +77,14 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
     }
 
     /**
-     * 网络地址类型。取值：Private：私网类型。Public：公网类型。
+     * Network address type. Possible values: Private: private network type. Public: public network type.
      * 
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
-     * @return 网络地址类型。取值：Private：私网类型。Public：公网类型。
+     * @return Network address type. Possible values: Private: private network type. Public: public network type.
      * 
      */
     public Optional<Output<String>> networkType() {
@@ -92,14 +92,14 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
     }
 
     /**
-     * 端口。
+     * Port.
      * 
      */
     @Import(name="port")
     private @Nullable Output<String> port;
 
     /**
-     * @return 端口。
+     * @return Port.
      * 
      */
     public Optional<Output<String>> port() {
@@ -107,14 +107,14 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
     }
 
     /**
-     * 子网 ID，仅对私网地址有效。
+     * Subnet ID, valid only for private network addresses.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 子网 ID，仅对私网地址有效。
+     * @return Subnet ID, valid only for private network addresses.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -152,7 +152,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param dnsVisibility 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+         * @param dnsVisibility Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param dnsVisibility 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+         * @param dnsVisibility Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param domain 域名。
+         * @param domain Domain name.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param domain 域名。
+         * @param domain Domain name.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param eipId EIP的ID，仅对公网地址有效。
+         * @param eipId EIP ID, valid only for public addresses.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param eipId EIP的ID，仅对公网地址有效。
+         * @param eipId EIP ID, valid only for public addresses.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ipAddress IP地址。
+         * @param ipAddress IP address.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ipAddress IP地址。
+         * @param ipAddress IP address.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param networkType 网络地址类型。取值：Private：私网类型。Public：公网类型。
+         * @param networkType Network address type. Possible values: Private: private network type. Public: public network type.
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param networkType 网络地址类型。取值：Private：私网类型。Public：公网类型。
+         * @param networkType Network address type. Possible values: Private: private network type. Public: public network type.
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param port 端口。
+         * @param port Port.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param port 端口。
+         * @param port Port.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param subnetId 子网 ID，仅对私网地址有效。
+         * @param subnetId Subnet ID, valid only for private network addresses.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class InstanceConnectionInfoAddressArgs extends com.pulumi.resource
         }
 
         /**
-         * @param subnetId 子网 ID，仅对私网地址有效。
+         * @param subnetId Subnet ID, valid only for private network addresses.
          * 
          * @return builder
          * 

@@ -31,11 +31,11 @@ export interface GetPermissionSetArgs {
  */
 export interface GetPermissionSetResult {
     /**
-     * 创建时间。
+     * Creation Time
      */
     readonly createdTime: string;
     /**
-     * 权限集描述。
+     * Permission Set Description
      */
     readonly description: string;
     /**
@@ -43,31 +43,31 @@ export interface GetPermissionSetResult {
      */
     readonly id: string;
     /**
-     * 权限集名称。
+     * Permission Set Name
      */
     readonly name: string;
     /**
-     * 权限集下的策略列表。
+     * Policy List Under Permission Set
      */
     readonly permissionPolicies: outputs.cloudidentity.GetPermissionSetPermissionPolicy[];
     /**
-     * 权限集 ID。
+     * Permission Set ID
      */
     readonly permissionSetId: string;
     /**
-     * 跳转控制台 URL。
+     * Console Redirect URL
      */
     readonly relayState: string;
     /**
-     * session 过期时间，单位秒。
+     * Session Expiration Time (seconds)
      */
     readonly sessionDuration: number;
     /**
-     * 状态通知配置。
+     * Status Notification Configuration
      */
     readonly statusNotifications: string[];
     /**
-     * 更新时间。
+     * Update Time
      */
     readonly updatedTime: string;
 }

@@ -25,9 +25,9 @@ class SnapshotArgs:
                  description: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Snapshot resource.
-        :param pulumi.Input[builtins.str] file_system_id: 文件系统 ID。
-        :param pulumi.Input[builtins.str] snapshot_name: 快照名称。
-        :param pulumi.Input[builtins.str] description: 快照描述信息。
+        :param pulumi.Input[builtins.str] file_system_id: File System ID
+        :param pulumi.Input[builtins.str] snapshot_name: Snapshot Name
+        :param pulumi.Input[builtins.str] description: Snapshot Description
         """
         pulumi.set(__self__, "file_system_id", file_system_id)
         pulumi.set(__self__, "snapshot_name", snapshot_name)
@@ -38,7 +38,7 @@ class SnapshotArgs:
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> pulumi.Input[builtins.str]:
         """
-        文件系统 ID。
+        File System ID
         """
         return pulumi.get(self, "file_system_id")
 
@@ -50,7 +50,7 @@ class SnapshotArgs:
     @pulumi.getter(name="snapshotName")
     def snapshot_name(self) -> pulumi.Input[builtins.str]:
         """
-        快照名称。
+        Snapshot Name
         """
         return pulumi.get(self, "snapshot_name")
 
@@ -62,7 +62,7 @@ class SnapshotArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        快照描述信息。
+        Snapshot Description
         """
         return pulumi.get(self, "description")
 
@@ -90,20 +90,20 @@ class _SnapshotState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Snapshot resources.
-        :param pulumi.Input[builtins.str] created_time: 快照创建时间。
-        :param pulumi.Input[builtins.str] description: 快照描述信息。
-        :param pulumi.Input[builtins.str] file_system_id: 文件系统 ID。
-        :param pulumi.Input[builtins.str] file_system_name: 文件系统名称。
-        :param pulumi.Input[builtins.bool] is_encrypt: 是否加密，当前仅支持false，即不加密。
-        :param pulumi.Input[builtins.str] progress: 快照创建进度。
-        :param pulumi.Input[builtins.int] retention_days: 快照保留时间，默认为2147483647，即永久保留。
-        :param pulumi.Input[builtins.str] snapshot_id: 快照 ID。
-        :param pulumi.Input[builtins.str] snapshot_name: 快照名称。
-        :param pulumi.Input[builtins.str] snapshot_type: 快照类型，默认为Manual，即手动快照。
-        :param pulumi.Input[builtins.int] source_size: 文件系统容量，单位为 GiB。
-        :param pulumi.Input[builtins.str] source_version: 文件系统版本。
-        :param pulumi.Input[builtins.str] status: 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
-        :param pulumi.Input[builtins.str] zone_id: 可用区 ID。
+        :param pulumi.Input[builtins.str] created_time: Snapshot Creation Time
+        :param pulumi.Input[builtins.str] description: Snapshot Description
+        :param pulumi.Input[builtins.str] file_system_id: File System ID
+        :param pulumi.Input[builtins.str] file_system_name: File System Name
+        :param pulumi.Input[builtins.bool] is_encrypt: Is encryption enabled. Currently only false is supported (not encrypted)
+        :param pulumi.Input[builtins.str] progress: Snapshot Creation Progress
+        :param pulumi.Input[builtins.int] retention_days: Snapshot Retention Period. Default is 2147483647 (permanent retention)
+        :param pulumi.Input[builtins.str] snapshot_id: Snapshot ID
+        :param pulumi.Input[builtins.str] snapshot_name: Snapshot Name
+        :param pulumi.Input[builtins.str] snapshot_type: Snapshot Type. Default is Manual (manual snapshot)
+        :param pulumi.Input[builtins.int] source_size: File System Capacity (GiB)
+        :param pulumi.Input[builtins.str] source_version: File System Version
+        :param pulumi.Input[builtins.str] status: Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
+        :param pulumi.Input[builtins.str] zone_id: Availability Zone ID
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -138,7 +138,7 @@ class _SnapshotState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        快照创建时间。
+        Snapshot Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -150,7 +150,7 @@ class _SnapshotState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        快照描述信息。
+        Snapshot Description
         """
         return pulumi.get(self, "description")
 
@@ -162,7 +162,7 @@ class _SnapshotState:
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统 ID。
+        File System ID
         """
         return pulumi.get(self, "file_system_id")
 
@@ -174,7 +174,7 @@ class _SnapshotState:
     @pulumi.getter(name="fileSystemName")
     def file_system_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统名称。
+        File System Name
         """
         return pulumi.get(self, "file_system_name")
 
@@ -186,7 +186,7 @@ class _SnapshotState:
     @pulumi.getter(name="isEncrypt")
     def is_encrypt(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否加密，当前仅支持false，即不加密。
+        Is encryption enabled. Currently only false is supported (not encrypted)
         """
         return pulumi.get(self, "is_encrypt")
 
@@ -198,7 +198,7 @@ class _SnapshotState:
     @pulumi.getter
     def progress(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        快照创建进度。
+        Snapshot Creation Progress
         """
         return pulumi.get(self, "progress")
 
@@ -210,7 +210,7 @@ class _SnapshotState:
     @pulumi.getter(name="retentionDays")
     def retention_days(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        快照保留时间，默认为2147483647，即永久保留。
+        Snapshot Retention Period. Default is 2147483647 (permanent retention)
         """
         return pulumi.get(self, "retention_days")
 
@@ -222,7 +222,7 @@ class _SnapshotState:
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        快照 ID。
+        Snapshot ID
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -234,7 +234,7 @@ class _SnapshotState:
     @pulumi.getter(name="snapshotName")
     def snapshot_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        快照名称。
+        Snapshot Name
         """
         return pulumi.get(self, "snapshot_name")
 
@@ -246,7 +246,7 @@ class _SnapshotState:
     @pulumi.getter(name="snapshotType")
     def snapshot_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        快照类型，默认为Manual，即手动快照。
+        Snapshot Type. Default is Manual (manual snapshot)
         """
         return pulumi.get(self, "snapshot_type")
 
@@ -258,7 +258,7 @@ class _SnapshotState:
     @pulumi.getter(name="sourceSize")
     def source_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        文件系统容量，单位为 GiB。
+        File System Capacity (GiB)
         """
         return pulumi.get(self, "source_size")
 
@@ -270,7 +270,7 @@ class _SnapshotState:
     @pulumi.getter(name="sourceVersion")
     def source_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统版本。
+        File System Version
         """
         return pulumi.get(self, "source_version")
 
@@ -282,7 +282,7 @@ class _SnapshotState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+        Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
         """
         return pulumi.get(self, "status")
 
@@ -294,7 +294,7 @@ class _SnapshotState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        可用区 ID。
+        Availability Zone ID
         """
         return pulumi.get(self, "zone_id")
 
@@ -314,7 +314,7 @@ class Snapshot(pulumi.CustomResource):
                  snapshot_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        快照是一种备份方式，每个快照都是文件存储在某个时间点的备份。当数据丢失或故障时，您可以通过快照恢复文件存储数据，找回丢失的数据。
+        A snapshot is a backup method. Each snapshot is a backup of file storage at a specific point in time. If data is lost or a failure occurs, you can use snapshots to restore file storage and recover lost data
 
         ## Example Usage
 
@@ -336,9 +336,9 @@ class Snapshot(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 快照描述信息。
-        :param pulumi.Input[builtins.str] file_system_id: 文件系统 ID。
-        :param pulumi.Input[builtins.str] snapshot_name: 快照名称。
+        :param pulumi.Input[builtins.str] description: Snapshot Description
+        :param pulumi.Input[builtins.str] file_system_id: File System ID
+        :param pulumi.Input[builtins.str] snapshot_name: Snapshot Name
         """
         ...
     @overload
@@ -347,7 +347,7 @@ class Snapshot(pulumi.CustomResource):
                  args: SnapshotArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        快照是一种备份方式，每个快照都是文件存储在某个时间点的备份。当数据丢失或故障时，您可以通过快照恢复文件存储数据，找回丢失的数据。
+        A snapshot is a backup method. Each snapshot is a backup of file storage at a specific point in time. If data is lost or a failure occurs, you can use snapshots to restore file storage and recover lost data
 
         ## Example Usage
 
@@ -443,20 +443,20 @@ class Snapshot(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 快照创建时间。
-        :param pulumi.Input[builtins.str] description: 快照描述信息。
-        :param pulumi.Input[builtins.str] file_system_id: 文件系统 ID。
-        :param pulumi.Input[builtins.str] file_system_name: 文件系统名称。
-        :param pulumi.Input[builtins.bool] is_encrypt: 是否加密，当前仅支持false，即不加密。
-        :param pulumi.Input[builtins.str] progress: 快照创建进度。
-        :param pulumi.Input[builtins.int] retention_days: 快照保留时间，默认为2147483647，即永久保留。
-        :param pulumi.Input[builtins.str] snapshot_id: 快照 ID。
-        :param pulumi.Input[builtins.str] snapshot_name: 快照名称。
-        :param pulumi.Input[builtins.str] snapshot_type: 快照类型，默认为Manual，即手动快照。
-        :param pulumi.Input[builtins.int] source_size: 文件系统容量，单位为 GiB。
-        :param pulumi.Input[builtins.str] source_version: 文件系统版本。
-        :param pulumi.Input[builtins.str] status: 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
-        :param pulumi.Input[builtins.str] zone_id: 可用区 ID。
+        :param pulumi.Input[builtins.str] created_time: Snapshot Creation Time
+        :param pulumi.Input[builtins.str] description: Snapshot Description
+        :param pulumi.Input[builtins.str] file_system_id: File System ID
+        :param pulumi.Input[builtins.str] file_system_name: File System Name
+        :param pulumi.Input[builtins.bool] is_encrypt: Is encryption enabled. Currently only false is supported (not encrypted)
+        :param pulumi.Input[builtins.str] progress: Snapshot Creation Progress
+        :param pulumi.Input[builtins.int] retention_days: Snapshot Retention Period. Default is 2147483647 (permanent retention)
+        :param pulumi.Input[builtins.str] snapshot_id: Snapshot ID
+        :param pulumi.Input[builtins.str] snapshot_name: Snapshot Name
+        :param pulumi.Input[builtins.str] snapshot_type: Snapshot Type. Default is Manual (manual snapshot)
+        :param pulumi.Input[builtins.int] source_size: File System Capacity (GiB)
+        :param pulumi.Input[builtins.str] source_version: File System Version
+        :param pulumi.Input[builtins.str] status: Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
+        :param pulumi.Input[builtins.str] zone_id: Availability Zone ID
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -482,7 +482,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        快照创建时间。
+        Snapshot Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -490,7 +490,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        快照描述信息。
+        Snapshot Description
         """
         return pulumi.get(self, "description")
 
@@ -498,7 +498,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统 ID。
+        File System ID
         """
         return pulumi.get(self, "file_system_id")
 
@@ -506,7 +506,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="fileSystemName")
     def file_system_name(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统名称。
+        File System Name
         """
         return pulumi.get(self, "file_system_name")
 
@@ -514,7 +514,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="isEncrypt")
     def is_encrypt(self) -> pulumi.Output[builtins.bool]:
         """
-        是否加密，当前仅支持false，即不加密。
+        Is encryption enabled. Currently only false is supported (not encrypted)
         """
         return pulumi.get(self, "is_encrypt")
 
@@ -522,7 +522,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter
     def progress(self) -> pulumi.Output[builtins.str]:
         """
-        快照创建进度。
+        Snapshot Creation Progress
         """
         return pulumi.get(self, "progress")
 
@@ -530,7 +530,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="retentionDays")
     def retention_days(self) -> pulumi.Output[builtins.int]:
         """
-        快照保留时间，默认为2147483647，即永久保留。
+        Snapshot Retention Period. Default is 2147483647 (permanent retention)
         """
         return pulumi.get(self, "retention_days")
 
@@ -538,7 +538,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> pulumi.Output[builtins.str]:
         """
-        快照 ID。
+        Snapshot ID
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -546,7 +546,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="snapshotName")
     def snapshot_name(self) -> pulumi.Output[builtins.str]:
         """
-        快照名称。
+        Snapshot Name
         """
         return pulumi.get(self, "snapshot_name")
 
@@ -554,7 +554,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="snapshotType")
     def snapshot_type(self) -> pulumi.Output[builtins.str]:
         """
-        快照类型，默认为Manual，即手动快照。
+        Snapshot Type. Default is Manual (manual snapshot)
         """
         return pulumi.get(self, "snapshot_type")
 
@@ -562,7 +562,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="sourceSize")
     def source_size(self) -> pulumi.Output[builtins.int]:
         """
-        文件系统容量，单位为 GiB。
+        File System Capacity (GiB)
         """
         return pulumi.get(self, "source_size")
 
@@ -570,7 +570,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="sourceVersion")
     def source_version(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统版本。
+        File System Version
         """
         return pulumi.get(self, "source_version")
 
@@ -578,7 +578,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+        Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
         """
         return pulumi.get(self, "status")
 
@@ -586,7 +586,7 @@ class Snapshot(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        可用区 ID。
+        Availability Zone ID
         """
         return pulumi.get(self, "zone_id")
 

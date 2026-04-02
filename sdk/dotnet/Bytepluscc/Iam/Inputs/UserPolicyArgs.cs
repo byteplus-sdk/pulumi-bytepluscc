@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Inputs
     public sealed class UserPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
+        /// Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
         /// </summary>
         [Input("policyName")]
         public Input<string>? PolicyName { get; set; }
 
         /// <summary>
-        /// 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+        /// Permission policy type. 'System' indicates system preset policy, 'Custom' indicates custom policy.
         /// </summary>
         [Input("policyType")]
         public Input<string>? PolicyType { get; set; }

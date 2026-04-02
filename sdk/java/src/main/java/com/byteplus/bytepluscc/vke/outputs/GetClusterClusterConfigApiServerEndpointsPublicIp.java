@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterClusterConfigApiServerEndpointsPublicIp {
     /**
-     * @return 公网 IP 的 IPv4 地址。
+     * @return IPv4 address of the public IP.
      * 
      */
     private String ipv4;
 
     private GetClusterClusterConfigApiServerEndpointsPublicIp() {}
     /**
-     * @return 公网 IP 的 IPv4 地址。
+     * @return IPv4 address of the public IP.
      * 
      */
     public String ipv4() {

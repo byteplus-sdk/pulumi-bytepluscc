@@ -20,32 +20,32 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayResult {
     /**
-     * @return 后端服务配置信息。
+     * @return Backend service configuration information
      * 
      */
     private GetGatewayBackendSpec backendSpec;
     /**
-     * @return 网关备注信息。长度限制为0~253个字符。
+     * @return Gateway remarks. Length limit: 0–253 characters.
      * 
      */
     private String comments;
     /**
-     * @return 网关创建时间。
+     * @return Gateway creation time
      * 
      */
     private String createdTime;
     /**
-     * @return 自定义日志配置。
+     * @return Custom log configuration
      * 
      */
     private GetGatewayCustomLog customLog;
     /**
-     * @return 事件。
+     * @return Event
      * 
      */
     private List<GetGatewayEvent> events;
     /**
-     * @return 网关实例ID。
+     * @return Gateway instance ID
      * 
      */
     private String gatewayId;
@@ -55,62 +55,62 @@ public final class GetGatewayResult {
      */
     private String id;
     /**
-     * @return 日志配置。
+     * @return Log configuration
      * 
      */
     private GetGatewayLogSpec logSpec;
     /**
-     * @return 网关创建失败、删除失败或异常时的错误信息。
+     * @return Error message for gateway creation failure, deletion failure, or abnormal status
      * 
      */
     private String message;
     /**
-     * @return 监控配置信息。
+     * @return Monitoring configuration information
      * 
      */
     private GetGatewayMonitorSpec monitorSpec;
     /**
-     * @return 网关名称。
+     * @return Gateway name
      * 
      */
     private String name;
     /**
-     * @return 网络配置信息。
+     * @return Network configuration information
      * 
      */
     private GetGatewayNetworkSpec networkSpec;
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     private String projectName;
     /**
-     * @return 资源规格配置信息。
+     * @return Resource specification configuration information
      * 
      */
     private GetGatewayResourceSpec resourceSpec;
     /**
-     * @return 网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+     * @return Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
      * 
      */
     private String status;
     /**
-     * @return 子网ID列表。长度限制为1~2个。
+     * @return Subnet ID list. Length limit: 1–2
      * 
      */
     private List<String> subnetIds;
     /**
-     * @return 链路追踪配置信息。
+     * @return Link tracing configuration information.
      * 
      */
     private GetGatewayTraceSpec traceSpec;
     /**
-     * @return 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+     * @return Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
      * 
      */
     private String type;
     /**
-     * @return 网关版本。
+     * @return Gateway version.
      * 
      */
     private String version;
@@ -122,42 +122,42 @@ public final class GetGatewayResult {
 
     private GetGatewayResult() {}
     /**
-     * @return 后端服务配置信息。
+     * @return Backend service configuration information
      * 
      */
     public GetGatewayBackendSpec backendSpec() {
         return this.backendSpec;
     }
     /**
-     * @return 网关备注信息。长度限制为0~253个字符。
+     * @return Gateway remarks. Length limit: 0–253 characters.
      * 
      */
     public String comments() {
         return this.comments;
     }
     /**
-     * @return 网关创建时间。
+     * @return Gateway creation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 自定义日志配置。
+     * @return Custom log configuration
      * 
      */
     public GetGatewayCustomLog customLog() {
         return this.customLog;
     }
     /**
-     * @return 事件。
+     * @return Event
      * 
      */
     public List<GetGatewayEvent> events() {
         return this.events;
     }
     /**
-     * @return 网关实例ID。
+     * @return Gateway instance ID
      * 
      */
     public String gatewayId() {
@@ -171,84 +171,84 @@ public final class GetGatewayResult {
         return this.id;
     }
     /**
-     * @return 日志配置。
+     * @return Log configuration
      * 
      */
     public GetGatewayLogSpec logSpec() {
         return this.logSpec;
     }
     /**
-     * @return 网关创建失败、删除失败或异常时的错误信息。
+     * @return Error message for gateway creation failure, deletion failure, or abnormal status
      * 
      */
     public String message() {
         return this.message;
     }
     /**
-     * @return 监控配置信息。
+     * @return Monitoring configuration information
      * 
      */
     public GetGatewayMonitorSpec monitorSpec() {
         return this.monitorSpec;
     }
     /**
-     * @return 网关名称。
+     * @return Gateway name
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 网络配置信息。
+     * @return Network configuration information
      * 
      */
     public GetGatewayNetworkSpec networkSpec() {
         return this.networkSpec;
     }
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 资源规格配置信息。
+     * @return Resource specification configuration information
      * 
      */
     public GetGatewayResourceSpec resourceSpec() {
         return this.resourceSpec;
     }
     /**
-     * @return 网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+     * @return Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 子网ID列表。长度限制为1~2个。
+     * @return Subnet ID list. Length limit: 1–2
      * 
      */
     public List<String> subnetIds() {
         return this.subnetIds;
     }
     /**
-     * @return 链路追踪配置信息。
+     * @return Link tracing configuration information.
      * 
      */
     public GetGatewayTraceSpec traceSpec() {
         return this.traceSpec;
     }
     /**
-     * @return 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+     * @return Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return 网关版本。
+     * @return Gateway version.
      * 
      */
     public String version() {

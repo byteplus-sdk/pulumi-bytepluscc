@@ -17,14 +17,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     public static final DbAccountState Empty = new DbAccountState();
 
     /**
-     * 数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+     * Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
      * 
      */
     @Import(name="accountName")
     private @Nullable Output<String> accountName;
 
     /**
-     * @return 数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+     * @return Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
      * 
      */
     public Optional<Output<String>> accountName() {
@@ -32,14 +32,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !{@literal @}#$%^*()&amp;_+-=。
+     * Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !{@literal @}#$%^*()&amp;_+-=.
      * 
      */
     @Import(name="accountPassword")
     private @Nullable Output<String> accountPassword;
 
     /**
-     * @return 数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !{@literal @}#$%^*()&amp;_+-=。
+     * @return Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !{@literal @}#$%^*()&amp;_+-=.
      * 
      */
     public Optional<Output<String>> accountPassword() {
@@ -47,14 +47,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数
+     * Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
      * 
      */
     @Import(name="accountPrivileges")
     private @Nullable Output<String> accountPrivileges;
 
     /**
-     * @return 账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数
+     * @return Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
      * 
      */
     public Optional<Output<String>> accountPrivileges() {
@@ -62,14 +62,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。
+     * Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
      * 
      */
     @Import(name="accountType")
     private @Nullable Output<String> accountType;
 
     /**
-     * @return 数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。
+     * @return Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
      * 
      */
     public Optional<Output<String>> accountType() {
@@ -77,14 +77,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID
+     * Instance ID
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例 ID
+     * @return Instance ID
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -92,14 +92,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+     * Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
      * 
      */
     @Import(name="notAllowPrivileges")
     private @Nullable Output<List<String>> notAllowPrivileges;
 
     /**
-     * @return 为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+     * @return Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
      * 
      */
     public Optional<Output<List<String>>> notAllowPrivileges() {
@@ -136,7 +136,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountName 数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+         * @param accountName Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountName 数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+         * @param accountName Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountPassword 数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !{@literal @}#$%^*()&amp;_+-=。
+         * @param accountPassword Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !{@literal @}#$%^*()&amp;_+-=.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountPassword 数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !{@literal @}#$%^*()&amp;_+-=。
+         * @param accountPassword Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !{@literal @}#$%^*()&amp;_+-=.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountPrivileges 账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数
+         * @param accountPrivileges Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountPrivileges 账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数
+         * @param accountPrivileges Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountType 数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。
+         * @param accountType Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountType 数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。
+         * @param accountType Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param notAllowPrivileges 为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+         * @param notAllowPrivileges Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param notAllowPrivileges 为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+         * @param notAllowPrivileges Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
          * 
          * @return builder
          * 
@@ -262,7 +262,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param notAllowPrivileges 为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+         * @param notAllowPrivileges Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
          * 
          * @return builder
          * 

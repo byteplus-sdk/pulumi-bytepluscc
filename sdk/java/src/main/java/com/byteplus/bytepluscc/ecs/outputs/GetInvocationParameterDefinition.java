@@ -13,110 +13,110 @@ import java.util.Objects;
 @CustomType
 public final class GetInvocationParameterDefinition {
     /**
-     * @return 自定义参数值（数字）允许的小数点后位数。
+     * @return Allowed number of decimal places for custom parameter values (numeric).
      * 
      */
     private Integer decimalPrecision;
     /**
-     * @return 自定义参数默认值。
+     * @return Default value for custom parameter.
      * 
      */
     private String defaultValue;
     /**
-     * @return 自定义参数值（字符串）的最大长度。
+     * @return Maximum length for custom parameter value (string).
      * 
      */
     private Integer maxLength;
     /**
-     * @return 自定义参数值（数字）的最大值。
+     * @return Maximum value for custom parameter (numeric).
      * 
      */
     private String maxValue;
     /**
-     * @return 自定义参数值（字符串）的最小长度。
+     * @return Minimum length for custom parameter values (string).
      * 
      */
     private Integer minLength;
     /**
-     * @return 自定义参数值（数字）的最小值。
+     * @return Minimum value for custom parameter (numeric).
      * 
      */
     private String minValue;
     /**
-     * @return 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+     * @return Custom parameter name. Must be defined in the script using {{Param}}.
      * 
      */
     private String name;
     /**
-     * @return 是否必填。true：必填。false：非必填。
+     * @return Required. true: Required. false: Optional.
      * 
      */
     private Boolean required;
     /**
-     * @return 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+     * @return Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
      * 
      */
     private String type;
 
     private GetInvocationParameterDefinition() {}
     /**
-     * @return 自定义参数值（数字）允许的小数点后位数。
+     * @return Allowed number of decimal places for custom parameter values (numeric).
      * 
      */
     public Integer decimalPrecision() {
         return this.decimalPrecision;
     }
     /**
-     * @return 自定义参数默认值。
+     * @return Default value for custom parameter.
      * 
      */
     public String defaultValue() {
         return this.defaultValue;
     }
     /**
-     * @return 自定义参数值（字符串）的最大长度。
+     * @return Maximum length for custom parameter value (string).
      * 
      */
     public Integer maxLength() {
         return this.maxLength;
     }
     /**
-     * @return 自定义参数值（数字）的最大值。
+     * @return Maximum value for custom parameter (numeric).
      * 
      */
     public String maxValue() {
         return this.maxValue;
     }
     /**
-     * @return 自定义参数值（字符串）的最小长度。
+     * @return Minimum length for custom parameter values (string).
      * 
      */
     public Integer minLength() {
         return this.minLength;
     }
     /**
-     * @return 自定义参数值（数字）的最小值。
+     * @return Minimum value for custom parameter (numeric).
      * 
      */
     public String minValue() {
         return this.minValue;
     }
     /**
-     * @return 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+     * @return Custom parameter name. Must be defined in the script using {{Param}}.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 是否必填。true：必填。false：非必填。
+     * @return Required. true: Required. false: Optional.
      * 
      */
     public Boolean required() {
         return this.required;
     }
     /**
-     * @return 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+     * @return Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
      * 
      */
     public String type() {

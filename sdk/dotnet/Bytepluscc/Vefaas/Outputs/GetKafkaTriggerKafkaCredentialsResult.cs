@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas.Outputs
     public sealed class GetKafkaTriggerKafkaCredentialsResult
     {
         /// <summary>
-        /// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+        /// Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
         /// </summary>
         public readonly string Mechanism;
         /// <summary>
-        /// 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+        /// SASL/PLAIN password set when creating the Kafka instance.
         /// </summary>
         public readonly string Password;
         /// <summary>
-        /// 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+        /// SASL/PLAIN username set when creating the Kafka instance.
         /// </summary>
         public readonly string Username;
 

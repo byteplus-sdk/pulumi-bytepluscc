@@ -12,86 +12,86 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointCertificate {
     /**
-     * @return X509私有证书过期的时间。使用秒级时间戳表示。
+     * @return X509 private certificate expiration time, represented as a timestamp in seconds
      * 
      */
     private Integer notAfter;
     /**
-     * @return X509私有证书开始生效的时间。使用秒级时间戳表示。
+     * @return X509 private certificate activation time, represented as a timestamp in seconds
      * 
      */
     private Integer notBefore;
     /**
-     * @return 证书方。
+     * @return Certificate subject
      * 
      */
     private String pcaHost;
     /**
-     * @return PEM 格式的叶子证书。
+     * @return PEM format leaf certificate
      * 
      */
     private String pcaInstanceCertificate;
     /**
-     * @return 证书名称。
+     * @return Certificate name
      * 
      */
     private String pcaName;
     /**
-     * @return PEM 格式的根证书。
+     * @return PEM format root certificate
      * 
      */
     private String pcaRootCaCertificate;
     /**
-     * @return PEM 格式的中间根证书和根证书。
+     * @return Intermediate certificate and root certificate in PEM format
      * 
      */
     private String pcaSubCaCertificate;
 
     private GetEndpointCertificate() {}
     /**
-     * @return X509私有证书过期的时间。使用秒级时间戳表示。
+     * @return X509 private certificate expiration time, represented as a timestamp in seconds
      * 
      */
     public Integer notAfter() {
         return this.notAfter;
     }
     /**
-     * @return X509私有证书开始生效的时间。使用秒级时间戳表示。
+     * @return X509 private certificate activation time, represented as a timestamp in seconds
      * 
      */
     public Integer notBefore() {
         return this.notBefore;
     }
     /**
-     * @return 证书方。
+     * @return Certificate subject
      * 
      */
     public String pcaHost() {
         return this.pcaHost;
     }
     /**
-     * @return PEM 格式的叶子证书。
+     * @return PEM format leaf certificate
      * 
      */
     public String pcaInstanceCertificate() {
         return this.pcaInstanceCertificate;
     }
     /**
-     * @return 证书名称。
+     * @return Certificate name
      * 
      */
     public String pcaName() {
         return this.pcaName;
     }
     /**
-     * @return PEM 格式的根证书。
+     * @return PEM format root certificate
      * 
      */
     public String pcaRootCaCertificate() {
         return this.pcaRootCaCertificate;
     }
     /**
-     * @return PEM 格式的中间根证书和根证书。
+     * @return Intermediate certificate and root certificate in PEM format
      * 
      */
     public String pcaSubCaCertificate() {

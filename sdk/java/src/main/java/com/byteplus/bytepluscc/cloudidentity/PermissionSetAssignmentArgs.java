@@ -15,14 +15,14 @@ public final class PermissionSetAssignmentArgs extends com.pulumi.resources.Reso
     public static final PermissionSetAssignmentArgs Empty = new PermissionSetAssignmentArgs();
 
     /**
-     * 权限集 ID。
+     * Permission set ID
      * 
      */
     @Import(name="permissionSetId", required=true)
     private Output<String> permissionSetId;
 
     /**
-     * @return 权限集 ID。
+     * @return Permission set ID
      * 
      */
     public Output<String> permissionSetId() {
@@ -30,14 +30,14 @@ public final class PermissionSetAssignmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 云身份中心对象 ID
+     * Cloud Identity Center object ID
      * 
      */
     @Import(name="principalId", required=true)
     private Output<String> principalId;
 
     /**
-     * @return 云身份中心对象 ID
+     * @return Cloud Identity Center object ID
      * 
      */
     public Output<String> principalId() {
@@ -45,14 +45,14 @@ public final class PermissionSetAssignmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 云身份中心对象类型，User 或者 Group。
+     * Cloud Identity Center object type: User or Group
      * 
      */
     @Import(name="principalType", required=true)
     private Output<String> principalType;
 
     /**
-     * @return 云身份中心对象类型，User 或者 Group。
+     * @return Cloud Identity Center object type: User or Group
      * 
      */
     public Output<String> principalType() {
@@ -60,14 +60,14 @@ public final class PermissionSetAssignmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 授权账号 ID。
+     * Authorized account ID
      * 
      */
     @Import(name="targetId", required=true)
     private Output<String> targetId;
 
     /**
-     * @return 授权账号 ID。
+     * @return Authorized account ID
      * 
      */
     public Output<String> targetId() {
@@ -102,7 +102,7 @@ public final class PermissionSetAssignmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param permissionSetId 权限集 ID。
+         * @param permissionSetId Permission set ID
          * 
          * @return builder
          * 
@@ -113,7 +113,7 @@ public final class PermissionSetAssignmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param permissionSetId 权限集 ID。
+         * @param permissionSetId Permission set ID
          * 
          * @return builder
          * 
@@ -123,7 +123,7 @@ public final class PermissionSetAssignmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param principalId 云身份中心对象 ID
+         * @param principalId Cloud Identity Center object ID
          * 
          * @return builder
          * 
@@ -134,7 +134,7 @@ public final class PermissionSetAssignmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param principalId 云身份中心对象 ID
+         * @param principalId Cloud Identity Center object ID
          * 
          * @return builder
          * 
@@ -144,7 +144,7 @@ public final class PermissionSetAssignmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param principalType 云身份中心对象类型，User 或者 Group。
+         * @param principalType Cloud Identity Center object type: User or Group
          * 
          * @return builder
          * 
@@ -155,7 +155,7 @@ public final class PermissionSetAssignmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param principalType 云身份中心对象类型，User 或者 Group。
+         * @param principalType Cloud Identity Center object type: User or Group
          * 
          * @return builder
          * 
@@ -165,7 +165,7 @@ public final class PermissionSetAssignmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param targetId 授权账号 ID。
+         * @param targetId Authorized account ID
          * 
          * @return builder
          * 
@@ -176,7 +176,7 @@ public final class PermissionSetAssignmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param targetId 授权账号 ID。
+         * @param targetId Authorized account ID
          * 
          * @return builder
          * 

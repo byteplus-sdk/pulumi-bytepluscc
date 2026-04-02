@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClbEnis {
     /**
-     * @return 负载均衡实例的私网IP地址。
+     * @return Private IP address of the load balancer instance
      * 
      */
     private @Nullable String eniAddress;
     /**
-     * @return 负载均衡实例占用的网卡ID。
+     * @return Network interface ID occupied by the load balancer instance
      * 
      */
     private @Nullable String eniId;
 
     private ClbEnis() {}
     /**
-     * @return 负载均衡实例的私网IP地址。
+     * @return Private IP address of the load balancer instance
      * 
      */
     public Optional<String> eniAddress() {
         return Optional.ofNullable(this.eniAddress);
     }
     /**
-     * @return 负载均衡实例占用的网卡ID。
+     * @return Network interface ID occupied by the load balancer instance
      * 
      */
     public Optional<String> eniId() {

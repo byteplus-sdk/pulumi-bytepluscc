@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Outputs
     public sealed class GetClbListenerResult
     {
         /// <summary>
-        /// 监听器的ID。
+        /// Listener ID
         /// </summary>
         public readonly string ListenerId;
         /// <summary>
-        /// 监听器的名称。
+        /// Listener name
         /// </summary>
         public readonly string ListenerName;
 

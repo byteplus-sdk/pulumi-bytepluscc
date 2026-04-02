@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointServicePrivateDnsNameConfiguration {
     /**
-     * @return 域验证名称。
+     * @return Domain verification name.
      * 
      */
     private String name;
     /**
-     * @return 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+     * @return Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
      * 
      */
     private String status;
     /**
-     * @return 域验证类型。TXT：TXT记录。
+     * @return Domain verification type. TXT: TXT record.
      * 
      */
     private String type;
     /**
-     * @return 域验证值。
+     * @return Domain verification value.
      * 
      */
     private String value;
 
     private GetEndpointServicePrivateDnsNameConfiguration() {}
     /**
-     * @return 域验证名称。
+     * @return Domain verification name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+     * @return Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 域验证类型。TXT：TXT记录。
+     * @return Domain verification type. TXT: TXT record.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return 域验证值。
+     * @return Domain verification value.
      * 
      */
     public String value() {

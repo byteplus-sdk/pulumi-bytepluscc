@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainCustomizeAccessRuleCustomizeInstance {
     /**
-     * @return 表示列表中一条规则的配置。
+     * @return Describes the configuration for a rule in the list.
      * 
      */
     private @Nullable DomainCustomizeAccessRuleCustomizeInstanceCustomizeRule customizeRule;
 
     private DomainCustomizeAccessRuleCustomizeInstance() {}
     /**
-     * @return 表示列表中一条规则的配置。
+     * @return Describes the configuration for a rule in the list.
      * 
      */
     public Optional<DomainCustomizeAccessRuleCustomizeInstanceCustomizeRule> customizeRule() {

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Alb
 {
     /// <summary>
-    /// ALB 按照您设置的转发规则，对不同特征的访问流量进行分发。您可以为一个监听器配置多条转发规则。基础版 ALB 实例支持基于域名和路径的转发规则。标准版 ALB 实例支持基于域名、路径和 HTTP 标头的转发规则，并支持复合转发条件。
+    /// ALB distributes incoming traffic based on the forwarding rules you set. You can configure multiple forwarding rules for a single listener. Basic edition ALB instances support forwarding rules based on domain and path. Standard edition ALB instances support forwarding rules based on domain, path, and HTTP headers, and support composite forwarding conditions.
     /// 
     /// ## Import
     /// 
@@ -23,55 +23,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public partial class Rule : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 转发规则的描述。
+        /// Forwarding rule description.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则的域名。
+        /// Domain name of the forwarding rule.
         /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则服务器组配置
+        /// Forwarding rule server group configuration.
         /// </summary>
         [Output("forwardGroupConfig")]
         public Output<Outputs.RuleForwardGroupConfig> ForwardGroupConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器ID。
+        /// Listener ID.
         /// </summary>
         [Output("listenerId")]
         public Output<string> ListenerId { get; private set; } = null!;
 
         /// <summary>
-        /// 标准版转发规则优先级。
+        /// Standard edition forwarding rule priority.
         /// </summary>
         [Output("priority")]
         public Output<int> Priority { get; private set; } = null!;
 
         /// <summary>
-        /// 重定向相关配置信息。
+        /// Redirect-related configuration information.
         /// </summary>
         [Output("redirectConfig")]
         public Output<Outputs.RuleRedirectConfig> RedirectConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 重定向相关配置信息。
+        /// Redirect-related configuration information.
         /// </summary>
         [Output("rewriteConfig")]
         public Output<Outputs.RuleRewriteConfig> RewriteConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则重写配置开关。on：开启。off：关闭。
+        /// Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
         /// </summary>
         [Output("rewriteEnabled")]
         public Output<string> RewriteEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+        /// Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
         /// </summary>
         [Output("ruleAction")]
         public Output<string> RuleAction { get; private set; } = null!;
@@ -83,31 +83,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<ImmutableArray<Outputs.RuleRuleCondition>> RuleConditions { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则ID。
+        /// Forwarding rule ID.
         /// </summary>
         [Output("ruleId")]
         public Output<string> RuleId { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则关联的后端服务器组ID。
+        /// Backend server group ID associated with the forwarding rule.
         /// </summary>
         [Output("serverGroupId")]
         public Output<string> ServerGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则 QPS 限速开关。on：开启。off：关闭。
+        /// Forwarding rule QPS throttling switch. on: enabled. off: disabled.
         /// </summary>
         [Output("trafficLimitEnabled")]
         public Output<string> TrafficLimitEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 每秒请求数。取值范围：100～100000。
+        /// Requests per second. Range: 100–100000.
         /// </summary>
         [Output("trafficLimitQps")]
         public Output<int> TrafficLimitQps { get; private set; } = null!;
 
         /// <summary>
-        /// 转发规则的URL。
+        /// Forwarding rule URL.
         /// </summary>
         [Output("url")]
         public Output<string> Url { get; private set; } = null!;
@@ -160,55 +160,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class RuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 转发规则的描述。
+        /// Forwarding rule description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 转发规则的域名。
+        /// Domain name of the forwarding rule.
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
         /// <summary>
-        /// 转发规则服务器组配置
+        /// Forwarding rule server group configuration.
         /// </summary>
         [Input("forwardGroupConfig")]
         public Input<Inputs.RuleForwardGroupConfigArgs>? ForwardGroupConfig { get; set; }
 
         /// <summary>
-        /// 监听器ID。
+        /// Listener ID.
         /// </summary>
         [Input("listenerId", required: true)]
         public Input<string> ListenerId { get; set; } = null!;
 
         /// <summary>
-        /// 标准版转发规则优先级。
+        /// Standard edition forwarding rule priority.
         /// </summary>
         [Input("priority")]
         public Input<int>? Priority { get; set; }
 
         /// <summary>
-        /// 重定向相关配置信息。
+        /// Redirect-related configuration information.
         /// </summary>
         [Input("redirectConfig")]
         public Input<Inputs.RuleRedirectConfigArgs>? RedirectConfig { get; set; }
 
         /// <summary>
-        /// 重定向相关配置信息。
+        /// Redirect-related configuration information.
         /// </summary>
         [Input("rewriteConfig")]
         public Input<Inputs.RuleRewriteConfigArgs>? RewriteConfig { get; set; }
 
         /// <summary>
-        /// 转发规则重写配置开关。on：开启。off：关闭。
+        /// Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
         /// </summary>
         [Input("rewriteEnabled")]
         public Input<string>? RewriteEnabled { get; set; }
 
         /// <summary>
-        /// 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+        /// Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
         /// </summary>
         [Input("ruleAction")]
         public Input<string>? RuleAction { get; set; }
@@ -230,25 +230,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// 转发规则关联的后端服务器组ID。
+        /// Backend server group ID associated with the forwarding rule.
         /// </summary>
         [Input("serverGroupId")]
         public Input<string>? ServerGroupId { get; set; }
 
         /// <summary>
-        /// 转发规则 QPS 限速开关。on：开启。off：关闭。
+        /// Forwarding rule QPS throttling switch. on: enabled. off: disabled.
         /// </summary>
         [Input("trafficLimitEnabled")]
         public Input<string>? TrafficLimitEnabled { get; set; }
 
         /// <summary>
-        /// 每秒请求数。取值范围：100～100000。
+        /// Requests per second. Range: 100–100000.
         /// </summary>
         [Input("trafficLimitQps")]
         public Input<int>? TrafficLimitQps { get; set; }
 
         /// <summary>
-        /// 转发规则的URL。
+        /// Forwarding rule URL.
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
@@ -262,55 +262,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class RuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 转发规则的描述。
+        /// Forwarding rule description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 转发规则的域名。
+        /// Domain name of the forwarding rule.
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
         /// <summary>
-        /// 转发规则服务器组配置
+        /// Forwarding rule server group configuration.
         /// </summary>
         [Input("forwardGroupConfig")]
         public Input<Inputs.RuleForwardGroupConfigGetArgs>? ForwardGroupConfig { get; set; }
 
         /// <summary>
-        /// 监听器ID。
+        /// Listener ID.
         /// </summary>
         [Input("listenerId")]
         public Input<string>? ListenerId { get; set; }
 
         /// <summary>
-        /// 标准版转发规则优先级。
+        /// Standard edition forwarding rule priority.
         /// </summary>
         [Input("priority")]
         public Input<int>? Priority { get; set; }
 
         /// <summary>
-        /// 重定向相关配置信息。
+        /// Redirect-related configuration information.
         /// </summary>
         [Input("redirectConfig")]
         public Input<Inputs.RuleRedirectConfigGetArgs>? RedirectConfig { get; set; }
 
         /// <summary>
-        /// 重定向相关配置信息。
+        /// Redirect-related configuration information.
         /// </summary>
         [Input("rewriteConfig")]
         public Input<Inputs.RuleRewriteConfigGetArgs>? RewriteConfig { get; set; }
 
         /// <summary>
-        /// 转发规则重写配置开关。on：开启。off：关闭。
+        /// Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
         /// </summary>
         [Input("rewriteEnabled")]
         public Input<string>? RewriteEnabled { get; set; }
 
         /// <summary>
-        /// 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+        /// Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
         /// </summary>
         [Input("ruleAction")]
         public Input<string>? RuleAction { get; set; }
@@ -332,31 +332,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// 转发规则ID。
+        /// Forwarding rule ID.
         /// </summary>
         [Input("ruleId")]
         public Input<string>? RuleId { get; set; }
 
         /// <summary>
-        /// 转发规则关联的后端服务器组ID。
+        /// Backend server group ID associated with the forwarding rule.
         /// </summary>
         [Input("serverGroupId")]
         public Input<string>? ServerGroupId { get; set; }
 
         /// <summary>
-        /// 转发规则 QPS 限速开关。on：开启。off：关闭。
+        /// Forwarding rule QPS throttling switch. on: enabled. off: disabled.
         /// </summary>
         [Input("trafficLimitEnabled")]
         public Input<string>? TrafficLimitEnabled { get; set; }
 
         /// <summary>
-        /// 每秒请求数。取值范围：100～100000。
+        /// Requests per second. Range: 100–100000.
         /// </summary>
         [Input("trafficLimitQps")]
         public Input<int>? TrafficLimitQps { get; set; }
 
         /// <summary>
-        /// 转发规则的URL。
+        /// Forwarding rule URL.
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }

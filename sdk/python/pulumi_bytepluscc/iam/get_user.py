@@ -91,7 +91,7 @@ class GetUserResult:
     @pulumi.getter(name="accessKeys")
     def access_keys(self) -> Sequence['outputs.GetUserAccessKeyResult']:
         """
-        子用户的访问密钥。
+        Sub-user's access key.
         """
         return pulumi.get(self, "access_keys")
 
@@ -99,7 +99,7 @@ class GetUserResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.float:
         """
-        子用户归属的主账号。
+        Main account to which the sub-user belongs.
         """
         return pulumi.get(self, "account_id")
 
@@ -107,7 +107,7 @@ class GetUserResult:
     @pulumi.getter(name="createDate")
     def create_date(self) -> builtins.str:
         """
-        子用户对应的创建时间。
+        Sub-user's creation time.
         """
         return pulumi.get(self, "create_date")
 
@@ -115,7 +115,7 @@ class GetUserResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        子用户对应的描述信息，长度不超过255。
+        Description for the sub-user, up to 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -123,7 +123,7 @@ class GetUserResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+        Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
         """
         return pulumi.get(self, "display_name")
 
@@ -131,7 +131,7 @@ class GetUserResult:
     @pulumi.getter
     def email(self) -> builtins.str:
         """
-        子用户对应的电子邮件地址。
+        Sub-user's email address.
         """
         return pulumi.get(self, "email")
 
@@ -139,7 +139,7 @@ class GetUserResult:
     @pulumi.getter(name="emailIsVerify")
     def email_is_verify(self) -> builtins.bool:
         """
-        子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+        Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
         """
         return pulumi.get(self, "email_is_verify")
 
@@ -147,7 +147,7 @@ class GetUserResult:
     @pulumi.getter
     def groups(self) -> Sequence[builtins.str]:
         """
-        子用户归属的用户组。
+        User group to which the sub-user belongs.
         """
         return pulumi.get(self, "groups")
 
@@ -163,7 +163,7 @@ class GetUserResult:
     @pulumi.getter(name="loginProfile")
     def login_profile(self) -> 'outputs.GetUserLoginProfileResult':
         """
-        子用户的登录配置。
+        Login configuration for the sub-user.
         """
         return pulumi.get(self, "login_profile")
 
@@ -171,7 +171,7 @@ class GetUserResult:
     @pulumi.getter(name="mobilePhone")
     def mobile_phone(self) -> builtins.str:
         """
-        子用户对应的手机号。
+        Sub-user's mobile number.
         """
         return pulumi.get(self, "mobile_phone")
 
@@ -179,7 +179,7 @@ class GetUserResult:
     @pulumi.getter(name="mobilePhoneIsVerify")
     def mobile_phone_is_verify(self) -> builtins.bool:
         """
-        子用户手机号是否已验证。true代表已验证，false代表未验证。
+        Whether the sub-user's phone number is verified. 'true' means verified, 'false' means not verified.
         """
         return pulumi.get(self, "mobile_phone_is_verify")
 
@@ -187,7 +187,7 @@ class GetUserResult:
     @pulumi.getter
     def policies(self) -> Sequence['outputs.GetUserPolicyResult']:
         """
-        子用户对应的权限策略。
+        Sub-user's permission policy.
         """
         return pulumi.get(self, "policies")
 
@@ -195,7 +195,7 @@ class GetUserResult:
     @pulumi.getter(name="securityConfig")
     def security_config(self) -> 'outputs.GetUserSecurityConfigResult':
         """
-        子用户的操作保护配置。
+        Operation protection configuration for the sub-user.
         """
         return pulumi.get(self, "security_config")
 
@@ -203,7 +203,7 @@ class GetUserResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetUserTagResult']:
         """
-        子用户对应的资源标签。
+        Sub-user's resource tags.
         """
         return pulumi.get(self, "tags")
 
@@ -211,7 +211,7 @@ class GetUserResult:
     @pulumi.getter
     def trn(self) -> builtins.str:
         """
-        子用户对应的Trn表达式。
+        TRN expression for the sub-user.
         """
         return pulumi.get(self, "trn")
 
@@ -219,7 +219,7 @@ class GetUserResult:
     @pulumi.getter(name="updateDate")
     def update_date(self) -> builtins.str:
         """
-        子用户对应的更新时间。
+        Update time for the sub-user.
         """
         return pulumi.get(self, "update_date")
 
@@ -227,7 +227,7 @@ class GetUserResult:
     @pulumi.getter(name="userId")
     def user_id(self) -> builtins.int:
         """
-        子用户的ID。
+        Sub-user's ID.
         """
         return pulumi.get(self, "user_id")
 
@@ -235,7 +235,7 @@ class GetUserResult:
     @pulumi.getter(name="userName")
     def user_name(self) -> builtins.str:
         """
-        子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+        Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
         """
         return pulumi.get(self, "user_name")
 

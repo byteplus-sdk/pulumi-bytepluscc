@@ -30,25 +30,25 @@ type LookupTrafficMirrorFilterArgs struct {
 
 // A collection of values returned by getTrafficMirrorFilter.
 type LookupTrafficMirrorFilterResult struct {
-	// 筛选条件的创建时间。
+	// Filter condition creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// 筛选条件实例描述。
+	// Filter condition instance description
 	Description string `pulumi:"description"`
-	// 出方向筛选规则的详细信息。
+	// Outbound filter rule details
 	EgressFilterRules []GetTrafficMirrorFilterEgressFilterRule `pulumi:"egressFilterRules"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 入方向筛选规则的详细信息。
+	// Inbound filter rule details
 	IngressFilterRules []GetTrafficMirrorFilterIngressFilterRule `pulumi:"ingressFilterRules"`
-	// 筛选条件所属项目的名称。
+	// Project name of the filter condition
 	ProjectName string `pulumi:"projectName"`
-	// 筛选条件状态。
+	// Filter condition status
 	Status string `pulumi:"status"`
-	// 标签信息
+	// Tag information
 	Tags []GetTrafficMirrorFilterTag `pulumi:"tags"`
-	// 筛选条件实例ID。
+	// Filter condition instance ID
 	TrafficMirrorFilterId string `pulumi:"trafficMirrorFilterId"`
-	// 筛选条件名称。
+	// Filter condition name
 	TrafficMirrorFilterName string `pulumi:"trafficMirrorFilterName"`
 }
 
@@ -86,17 +86,17 @@ func (o LookupTrafficMirrorFilterResultOutput) ToLookupTrafficMirrorFilterResult
 	return o
 }
 
-// 筛选条件的创建时间。
+// Filter condition creation time
 func (o LookupTrafficMirrorFilterResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorFilterResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 筛选条件实例描述。
+// Filter condition instance description
 func (o LookupTrafficMirrorFilterResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorFilterResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 出方向筛选规则的详细信息。
+// Outbound filter rule details
 func (o LookupTrafficMirrorFilterResultOutput) EgressFilterRules() GetTrafficMirrorFilterEgressFilterRuleArrayOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorFilterResult) []GetTrafficMirrorFilterEgressFilterRule {
 		return v.EgressFilterRules
@@ -108,34 +108,34 @@ func (o LookupTrafficMirrorFilterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorFilterResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 入方向筛选规则的详细信息。
+// Inbound filter rule details
 func (o LookupTrafficMirrorFilterResultOutput) IngressFilterRules() GetTrafficMirrorFilterIngressFilterRuleArrayOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorFilterResult) []GetTrafficMirrorFilterIngressFilterRule {
 		return v.IngressFilterRules
 	}).(GetTrafficMirrorFilterIngressFilterRuleArrayOutput)
 }
 
-// 筛选条件所属项目的名称。
+// Project name of the filter condition
 func (o LookupTrafficMirrorFilterResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorFilterResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 筛选条件状态。
+// Filter condition status
 func (o LookupTrafficMirrorFilterResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorFilterResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 标签信息
+// Tag information
 func (o LookupTrafficMirrorFilterResultOutput) Tags() GetTrafficMirrorFilterTagArrayOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorFilterResult) []GetTrafficMirrorFilterTag { return v.Tags }).(GetTrafficMirrorFilterTagArrayOutput)
 }
 
-// 筛选条件实例ID。
+// Filter condition instance ID
 func (o LookupTrafficMirrorFilterResultOutput) TrafficMirrorFilterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorFilterResult) string { return v.TrafficMirrorFilterId }).(pulumi.StringOutput)
 }
 
-// 筛选条件名称。
+// Filter condition name
 func (o LookupTrafficMirrorFilterResultOutput) TrafficMirrorFilterName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTrafficMirrorFilterResult) string { return v.TrafficMirrorFilterName }).(pulumi.StringOutput)
 }

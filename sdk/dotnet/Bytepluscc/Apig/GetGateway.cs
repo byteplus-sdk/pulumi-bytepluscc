@@ -65,27 +65,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public sealed class GetGatewayResult
     {
         /// <summary>
-        /// 后端服务配置信息。
+        /// Backend service configuration information
         /// </summary>
         public readonly Outputs.GetGatewayBackendSpecResult BackendSpec;
         /// <summary>
-        /// 网关备注信息。长度限制为0~253个字符。
+        /// Gateway remarks. Length limit: 0–253 characters.
         /// </summary>
         public readonly string Comments;
         /// <summary>
-        /// 网关创建时间。
+        /// Gateway creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 自定义日志配置。
+        /// Custom log configuration
         /// </summary>
         public readonly Outputs.GetGatewayCustomLogResult CustomLog;
         /// <summary>
-        /// 事件。
+        /// Event
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGatewayEventResult> Events;
         /// <summary>
-        /// 网关实例ID。
+        /// Gateway instance ID
         /// </summary>
         public readonly string GatewayId;
         /// <summary>
@@ -93,51 +93,51 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 日志配置。
+        /// Log configuration
         /// </summary>
         public readonly Outputs.GetGatewayLogSpecResult LogSpec;
         /// <summary>
-        /// 网关创建失败、删除失败或异常时的错误信息。
+        /// Error message for gateway creation failure, deletion failure, or abnormal status
         /// </summary>
         public readonly string Message;
         /// <summary>
-        /// 监控配置信息。
+        /// Monitoring configuration information
         /// </summary>
         public readonly Outputs.GetGatewayMonitorSpecResult MonitorSpec;
         /// <summary>
-        /// 网关名称。
+        /// Gateway name
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 网络配置信息。
+        /// Network configuration information
         /// </summary>
         public readonly Outputs.GetGatewayNetworkSpecResult NetworkSpec;
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 资源规格配置信息。
+        /// Resource specification configuration information
         /// </summary>
         public readonly Outputs.GetGatewayResourceSpecResult ResourceSpec;
         /// <summary>
-        /// 网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+        /// Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 子网ID列表。长度限制为1~2个。
+        /// Subnet ID list. Length limit: 1–2
         /// </summary>
         public readonly ImmutableArray<string> SubnetIds;
         /// <summary>
-        /// 链路追踪配置信息。
+        /// Link tracing configuration information.
         /// </summary>
         public readonly Outputs.GetGatewayTraceSpecResult TraceSpec;
         /// <summary>
-        /// 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+        /// Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// 网关版本。
+        /// Gateway version.
         /// </summary>
         public readonly string Version;
         /// <summary>

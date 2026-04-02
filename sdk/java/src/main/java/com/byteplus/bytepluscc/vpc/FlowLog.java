@@ -18,7 +18,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 流日志对网卡出入流量的日志数据按需聚合处理后，投递至 日志服务 存储和检索分析，您可以根据流日志的分析监控网络流量、排查网络问题、优化网络架构。VPC流日志记录VPC网络流量的详细信息，用于网络监控、流量分析和故障排查。
+ * After aggregating log data for inbound and outbound traffic on network interfaces as needed, flow logs are delivered to Log Service for storage and analysis. You can use flow log analysis to monitor network traffic, troubleshoot network issues, and optimize network architecture. VPC flow logs record detailed information about VPC network traffic for network monitoring, traffic analysis, and troubleshooting.
  * 
  * ## Example Usage
  * 
@@ -79,224 +79,224 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/flowLog:FlowLog")
 public class FlowLog extends com.pulumi.resources.CustomResource {
     /**
-     * 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+     * Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
      * 
      */
     @Export(name="aggregationInterval", refs={Integer.class}, tree="[0]")
     private Output<Integer> aggregationInterval;
 
     /**
-     * @return 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+     * @return Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
      * 
      */
     public Output<Integer> aggregationInterval() {
         return this.aggregationInterval;
     }
     /**
-     * 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
      * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
-     * @return 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * @return Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
      * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
-     * 流日志的创建时间。
+     * Creation time of the flow log.
      * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
-     * @return 流日志的创建时间。
+     * @return Creation time of the flow log.
      * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
-     * 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+     * Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
      * 
      */
     @Export(name="enableIndex", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableIndex;
 
     /**
-     * @return 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+     * @return Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
      * 
      */
     public Output<Boolean> enableIndex() {
         return this.enableIndex;
     }
     /**
-     * 流日志的ID。
+     * Stream log ID.
      * 
      */
     @Export(name="flowLogId", refs={String.class}, tree="[0]")
     private Output<String> flowLogId;
 
     /**
-     * @return 流日志的ID。
+     * @return Stream log ID.
      * 
      */
     public Output<String> flowLogId() {
         return this.flowLogId;
     }
     /**
-     * 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+     * Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
      * 
      */
     @Export(name="flowLogName", refs={String.class}, tree="[0]")
     private Output<String> flowLogName;
 
     /**
-     * @return 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+     * @return Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
      * 
      */
     public Output<String> flowLogName() {
         return this.flowLogName;
     }
     /**
-     * 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
      * 
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
-     * @return 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * @return Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
      * 
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
-     * 流日志项目的ID。
+     * Flow log project ID.
      * 
      */
     @Export(name="logProjectId", refs={String.class}, tree="[0]")
     private Output<String> logProjectId;
 
     /**
-     * @return 流日志项目的ID。
+     * @return Flow log project ID.
      * 
      */
     public Output<String> logProjectId() {
         return this.logProjectId;
     }
     /**
-     * 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      * 
      */
     @Export(name="logProjectName", refs={String.class}, tree="[0]")
     private Output<String> logProjectName;
 
     /**
-     * @return 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * @return Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      * 
      */
     public Output<String> logProjectName() {
         return this.logProjectName;
     }
     /**
-     * 流日志主题的ID。
+     * Flow log topic ID.
      * 
      */
     @Export(name="logTopicId", refs={String.class}, tree="[0]")
     private Output<String> logTopicId;
 
     /**
-     * @return 流日志主题的ID。
+     * @return Flow log topic ID.
      * 
      */
     public Output<String> logTopicId() {
         return this.logTopicId;
     }
     /**
-     * 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      * 
      */
     @Export(name="logTopicName", refs={String.class}, tree="[0]")
     private Output<String> logTopicName;
 
     /**
-     * @return 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * @return Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      * 
      */
     public Output<String> logTopicName() {
         return this.logTopicName;
     }
     /**
-     * 流流日志所属项目的名称。
+     * Name of the project to which the flow log belongs.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 流流日志所属项目的名称。
+     * @return Name of the project to which the flow log belongs.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 要捕获流量的资源ID。
+     * Resource ID for traffic capture.
      * 
      */
     @Export(name="resourceId", refs={String.class}, tree="[0]")
     private Output<String> resourceId;
 
     /**
-     * @return 要捕获流量的资源ID。
+     * @return Resource ID for traffic capture.
      * 
      */
     public Output<String> resourceId() {
         return this.resourceId;
     }
     /**
-     * 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+     * Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
      * 
      */
     @Export(name="resourceType", refs={String.class}, tree="[0]")
     private Output<String> resourceType;
 
     /**
-     * @return 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+     * @return Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
      * 
      */
     public Output<String> resourceType() {
         return this.resourceType;
     }
     /**
-     * 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+     * Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+     * @return Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
      * 
      */
     public Output<String> status() {
@@ -309,42 +309,42 @@ public class FlowLog extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+     * Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
      * 
      */
     @Export(name="trafficType", refs={String.class}, tree="[0]")
     private Output<String> trafficType;
 
     /**
-     * @return 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+     * @return Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
      * 
      */
     public Output<String> trafficType() {
         return this.trafficType;
     }
     /**
-     * 更新流日志的时间。
+     * Time when the stream log was updated.
      * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
-     * @return 更新流日志的时间。
+     * @return Time when the stream log was updated.
      * 
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
-     * 流日志的VPC的ID。
+     * VPC ID for the flow log.
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 流日志的VPC的ID。
+     * @return VPC ID for the flow log.
      * 
      */
     public Output<String> vpcId() {

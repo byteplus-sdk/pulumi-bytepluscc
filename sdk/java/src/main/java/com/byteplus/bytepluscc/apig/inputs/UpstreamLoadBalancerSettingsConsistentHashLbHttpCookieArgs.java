@@ -17,14 +17,14 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs ex
     public static final UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs Empty = new UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs();
 
     /**
-     * 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+     * Name. Supports printable ASCII characters. Length: 0~256 characters
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+     * @return Name. Supports printable ASCII characters. Length: 0~256 characters
      * 
      */
     public Optional<Output<String>> name() {
@@ -32,14 +32,14 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs ex
     }
 
     /**
-     * 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+     * Path. Supports printable ASCII characters. Length: 1~256 characters
      * 
      */
     @Import(name="path")
     private @Nullable Output<String> path;
 
     /**
-     * @return 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+     * @return Path. Supports printable ASCII characters. Length: 1~256 characters
      * 
      */
     public Optional<Output<String>> path() {
@@ -47,14 +47,14 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs ex
     }
 
     /**
-     * 有效期。单位为秒。
+     * Validity period, in seconds
      * 
      */
     @Import(name="ttl")
     private @Nullable Output<Integer> ttl;
 
     /**
-     * @return 有效期。单位为秒。
+     * @return Validity period, in seconds
      * 
      */
     public Optional<Output<Integer>> ttl() {
@@ -88,7 +88,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs ex
         }
 
         /**
-         * @param name 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+         * @param name Name. Supports printable ASCII characters. Length: 0~256 characters
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs ex
         }
 
         /**
-         * @param name 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+         * @param name Name. Supports printable ASCII characters. Length: 0~256 characters
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs ex
         }
 
         /**
-         * @param path 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+         * @param path Path. Supports printable ASCII characters. Length: 1~256 characters
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs ex
         }
 
         /**
-         * @param path 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+         * @param path Path. Supports printable ASCII characters. Length: 1~256 characters
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs ex
         }
 
         /**
-         * @param ttl 有效期。单位为秒。
+         * @param ttl Validity period, in seconds
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs ex
         }
 
         /**
-         * @param ttl 有效期。单位为秒。
+         * @param ttl Validity period, in seconds
          * 
          * @return builder
          * 

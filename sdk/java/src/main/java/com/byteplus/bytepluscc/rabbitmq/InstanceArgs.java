@@ -21,14 +21,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceArgs Empty = new InstanceArgs();
 
     /**
-     * 实例的计费方式等计费信息。
+     * Instance billing method and related billing information.
      * 
      */
     @Import(name="chargeDetail")
     private @Nullable Output<InstanceChargeDetailArgs> chargeDetail;
 
     /**
-     * @return 实例的计费方式等计费信息。
+     * @return Instance billing method and related billing information.
      * 
      */
     public Optional<Output<InstanceChargeDetailArgs>> chargeDetail() {
@@ -36,14 +36,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * RabbitMQ实例的计算规格。
+     * Compute specification of the RabbitMQ instance.
      * 
      */
     @Import(name="computeSpec", required=true)
     private Output<String> computeSpec;
 
     /**
-     * @return RabbitMQ实例的计算规格。
+     * @return Compute specification of the RabbitMQ instance.
      * 
      */
     public Output<String> computeSpec() {
@@ -51,14 +51,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * EIP的ID。
+     * EIP ID.
      * 
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
-     * @return EIP的ID。
+     * @return EIP ID.
      * 
      */
     public Optional<Output<String>> eipId() {
@@ -66,14 +66,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的简单描述。
+     * Brief description of the instance.
      * 
      */
     @Import(name="instanceDescription")
     private @Nullable Output<String> instanceDescription;
 
     /**
-     * @return 实例的简单描述。
+     * @return Brief description of the instance.
      * 
      */
     public Optional<Output<String>> instanceDescription() {
@@ -81,14 +81,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * RabbitMQ 实例名称。
+     * RabbitMQ instance name.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return RabbitMQ 实例名称。
+     * @return RabbitMQ instance name.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -96,14 +96,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所属的IAM项目。
+     * IAM project to which the instance belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 实例所属的IAM项目。
+     * @return IAM project to which the instance belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -111,14 +111,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例总存储空间。单位为 GiB。
+     * Total storage space of the instance, measured in GiB.
      * 
      */
     @Import(name="storageSpace", required=true)
     private Output<Integer> storageSpace;
 
     /**
-     * @return 实例总存储空间。单位为 GiB。
+     * @return Total storage space of the instance, measured in GiB.
      * 
      */
     public Output<Integer> storageSpace() {
@@ -126,14 +126,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC的子网ID。
+     * VPC subnet ID.
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return VPC的子网ID。
+     * @return VPC subnet ID.
      * 
      */
     public Output<String> subnetId() {
@@ -148,14 +148,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * RabbitMQ WebUI管理员账号名。
+     * RabbitMQ WebUI administrator account name.
      * 
      */
     @Import(name="userName", required=true)
     private Output<String> userName;
 
     /**
-     * @return RabbitMQ WebUI管理员账号名。
+     * @return RabbitMQ WebUI administrator account name.
      * 
      */
     public Output<String> userName() {
@@ -163,14 +163,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * RabbitMQ WebUI管理员密码。
+     * RabbitMQ WebUI administrator password.
      * 
      */
     @Import(name="userPassword", required=true)
     private Output<String> userPassword;
 
     /**
-     * @return RabbitMQ WebUI管理员密码。
+     * @return RabbitMQ WebUI administrator password.
      * 
      */
     public Output<String> userPassword() {
@@ -178,14 +178,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+     * Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
      * 
      */
     @Import(name="version", required=true)
     private Output<String> version;
 
     /**
-     * @return 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+     * @return Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
      * 
      */
     public Output<String> version() {
@@ -193,14 +193,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 私有网络（VPC）ID。
+     * Private network (VPC) ID.
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return 私有网络（VPC）ID。
+     * @return Private network (VPC) ID.
      * 
      */
     public Output<String> vpcId() {
@@ -208,14 +208,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+     * Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
      * 
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
-     * @return 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+     * @return Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
      * 
      */
     public Output<String> zoneId() {
@@ -260,7 +260,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeDetail 实例的计费方式等计费信息。
+         * @param chargeDetail Instance billing method and related billing information.
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeDetail 实例的计费方式等计费信息。
+         * @param chargeDetail Instance billing method and related billing information.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param computeSpec RabbitMQ实例的计算规格。
+         * @param computeSpec Compute specification of the RabbitMQ instance.
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param computeSpec RabbitMQ实例的计算规格。
+         * @param computeSpec Compute specification of the RabbitMQ instance.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId EIP的ID。
+         * @param eipId EIP ID.
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId EIP的ID。
+         * @param eipId EIP ID.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceDescription 实例的简单描述。
+         * @param instanceDescription Brief description of the instance.
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceDescription 实例的简单描述。
+         * @param instanceDescription Brief description of the instance.
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName RabbitMQ 实例名称。
+         * @param instanceName RabbitMQ instance name.
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName RabbitMQ 实例名称。
+         * @param instanceName RabbitMQ instance name.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属的IAM项目。
+         * @param projectName IAM project to which the instance belongs.
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属的IAM项目。
+         * @param projectName IAM project to which the instance belongs.
          * 
          * @return builder
          * 
@@ -386,7 +386,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageSpace 实例总存储空间。单位为 GiB。
+         * @param storageSpace Total storage space of the instance, measured in GiB.
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageSpace 实例总存储空间。单位为 GiB。
+         * @param storageSpace Total storage space of the instance, measured in GiB.
          * 
          * @return builder
          * 
@@ -407,7 +407,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId VPC的子网ID。
+         * @param subnetId VPC subnet ID.
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId VPC的子网ID。
+         * @param subnetId VPC subnet ID.
          * 
          * @return builder
          * 
@@ -441,7 +441,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName RabbitMQ WebUI管理员账号名。
+         * @param userName RabbitMQ WebUI administrator account name.
          * 
          * @return builder
          * 
@@ -452,7 +452,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName RabbitMQ WebUI管理员账号名。
+         * @param userName RabbitMQ WebUI administrator account name.
          * 
          * @return builder
          * 
@@ -462,7 +462,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userPassword RabbitMQ WebUI管理员密码。
+         * @param userPassword RabbitMQ WebUI administrator password.
          * 
          * @return builder
          * 
@@ -473,7 +473,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userPassword RabbitMQ WebUI管理员密码。
+         * @param userPassword RabbitMQ WebUI administrator password.
          * 
          * @return builder
          * 
@@ -483,7 +483,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param version 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+         * @param version Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
          * 
          * @return builder
          * 
@@ -494,7 +494,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param version 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+         * @param version Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
          * 
          * @return builder
          * 
@@ -504,7 +504,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络（VPC）ID。
+         * @param vpcId Private network (VPC) ID.
          * 
          * @return builder
          * 
@@ -515,7 +515,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络（VPC）ID。
+         * @param vpcId Private network (VPC) ID.
          * 
          * @return builder
          * 
@@ -525,7 +525,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+         * @param zoneId Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
          * 
          * @return builder
          * 
@@ -536,7 +536,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+         * @param zoneId Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
          * 
          * @return builder
          * 

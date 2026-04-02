@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter.Inputs
     public sealed class DnsControlPolicyDomainListV1GetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 具体地址信息。
+        /// Specific address information.
         /// </summary>
         [Input("address")]
         public Input<string>? Address { get; set; }
 
         /// <summary>
-        /// 描述信息。
+        /// Description information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+        /// Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

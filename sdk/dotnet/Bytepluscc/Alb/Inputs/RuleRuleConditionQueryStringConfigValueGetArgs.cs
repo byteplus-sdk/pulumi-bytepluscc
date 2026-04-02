@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class RuleRuleConditionQueryStringConfigValueGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 查询字符串键。
+        /// Query string key.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 查询字符串值。
+        /// Query string value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

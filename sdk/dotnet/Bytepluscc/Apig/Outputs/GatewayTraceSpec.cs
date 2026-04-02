@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GatewayTraceSpec
     {
         /// <summary>
-        /// 应用性能监控全链路版链路追踪配置。
+        /// Application performance monitoring full-link trace configuration
         /// </summary>
         public readonly Outputs.GatewayTraceSpecApmTraceSpec? ApmTraceSpec;
         /// <summary>
-        /// 是否启用链路追踪。
+        /// Whether to enable trace
         /// </summary>
         public readonly bool? Enable;
         /// <summary>
-        /// 链路追踪配置信息。
+        /// Link tracing configuration information.
         /// </summary>
         public readonly Outputs.GatewayTraceSpecTlsTraceSpec? TlsTraceSpec;
         /// <summary>
-        /// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+        /// Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
         /// </summary>
         public readonly string? TraceType;
 

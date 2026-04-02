@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 当私有网络内有多台云服务器实例需要访问公网时，为了节省公网IP且避免在公网上直接暴露云服务器IP，您可以使用公网NAT网关的SNAT规则，安全、便捷、高效地访问公网。SNAT规则支持私有网络、子网、云服务器、自定义网段等四种粒度，您可根据业务需求灵活配置。
+ * When multiple cloud server instances in a private network need to access the public network, you can use SNAT rules of the public NAT gateway to save public IPs and avoid exposing cloud server IPs directly to the public network for secure, convenient, and efficient access. SNAT rules support four granularities: private network, subnet, cloud server, and custom network segment. Configure flexibly based on your business needs.
  *
  * ## Example Usage
  *
@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * const natGatewaySnatentryDemo = new bytepluscc.natgateway.Snatentry("NatGatewaySnatentryDemo", {
  *     natGatewayId: "ngw-2pc28yhdpbx8g227qo1xxxxx",
  *     eipId: "eip-iivdtssgbdog74o8cuxxxxx,eip-btbv1pk36g3k5h0b2vxxxxx",
- *     snatEntryName: "私有网络",
+ *     snatEntryName: "test",
  *     sourceCidr: "0.0.0.0/0",
  * });
  * ```
@@ -56,39 +56,39 @@ export class Snatentry extends pulumi.CustomResource {
     }
 
     /**
-     * SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+     * IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
      */
     public /*out*/ readonly eipAddress!: pulumi.Output<string>;
     /**
-     * SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+     * ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
      */
     public readonly eipId!: pulumi.Output<string>;
     /**
-     * SNAT规则所属NAT网关的ID。
+     * ID of the NAT gateway associated with the SNAT rule
      */
     public readonly natGatewayId!: pulumi.Output<string>;
     /**
-     * 私网NAT网关的中转IP的ID。
+     * ID of the transit IP for the private NAT gateway
      */
     public readonly natIpId!: pulumi.Output<string>;
     /**
-     * SNAT规则的ID。
+     * ID of the SNAT rule
      */
     public /*out*/ readonly snatEntryId!: pulumi.Output<string>;
     /**
-     * SNAT规则的名称。
+     * Name of the SNAT rule
      */
     public readonly snatEntryName!: pulumi.Output<string>;
     /**
-     * SNAT规则对应的网段。
+     * Network segment corresponding to the SNAT rule
      */
     public readonly sourceCidr!: pulumi.Output<string>;
     /**
-     * SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * SNAT规则关联子网的ID。
+     * ID of the subnet associated with the SNAT rule
      */
     public readonly subnetId!: pulumi.Output<string>;
 
@@ -139,39 +139,39 @@ export class Snatentry extends pulumi.CustomResource {
  */
 export interface SnatentryState {
     /**
-     * SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+     * IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
      */
     eipAddress?: pulumi.Input<string>;
     /**
-     * SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+     * ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
      */
     eipId?: pulumi.Input<string>;
     /**
-     * SNAT规则所属NAT网关的ID。
+     * ID of the NAT gateway associated with the SNAT rule
      */
     natGatewayId?: pulumi.Input<string>;
     /**
-     * 私网NAT网关的中转IP的ID。
+     * ID of the transit IP for the private NAT gateway
      */
     natIpId?: pulumi.Input<string>;
     /**
-     * SNAT规则的ID。
+     * ID of the SNAT rule
      */
     snatEntryId?: pulumi.Input<string>;
     /**
-     * SNAT规则的名称。
+     * Name of the SNAT rule
      */
     snatEntryName?: pulumi.Input<string>;
     /**
-     * SNAT规则对应的网段。
+     * Network segment corresponding to the SNAT rule
      */
     sourceCidr?: pulumi.Input<string>;
     /**
-     * SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
      */
     status?: pulumi.Input<string>;
     /**
-     * SNAT规则关联子网的ID。
+     * ID of the subnet associated with the SNAT rule
      */
     subnetId?: pulumi.Input<string>;
 }
@@ -181,27 +181,27 @@ export interface SnatentryState {
  */
 export interface SnatentryArgs {
     /**
-     * SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+     * ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
      */
     eipId?: pulumi.Input<string>;
     /**
-     * SNAT规则所属NAT网关的ID。
+     * ID of the NAT gateway associated with the SNAT rule
      */
     natGatewayId: pulumi.Input<string>;
     /**
-     * 私网NAT网关的中转IP的ID。
+     * ID of the transit IP for the private NAT gateway
      */
     natIpId?: pulumi.Input<string>;
     /**
-     * SNAT规则的名称。
+     * Name of the SNAT rule
      */
     snatEntryName?: pulumi.Input<string>;
     /**
-     * SNAT规则对应的网段。
+     * Network segment corresponding to the SNAT rule
      */
     sourceCidr?: pulumi.Input<string>;
     /**
-     * SNAT规则关联子网的ID。
+     * ID of the subnet associated with the SNAT rule
      */
     subnetId?: pulumi.Input<string>;
 }

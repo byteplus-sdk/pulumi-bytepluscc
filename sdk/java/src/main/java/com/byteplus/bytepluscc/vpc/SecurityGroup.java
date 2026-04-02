@@ -19,7 +19,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 安全组是一个逻辑意义上的分组，为同一个私有网络内具有相同安全保护需求并相互信任的网卡提供访问策略。您可以通过配置安全组规则，控制安全组关联网卡的出入流量。
+ * A security group is a logical grouping that provides access policies for NICs within the same private network that share security requirements and mutual trust. You can control inbound and outbound traffic for associated NICs by configuring security group rules
  * 
  * ## Example Usage
  * 
@@ -36,28 +36,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/securityGroup:SecurityGroup")
 public class SecurityGroup extends com.pulumi.resources.CustomResource {
     /**
-     * 安全组创建时间。
+     * Security group creation time
      * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
-     * @return 安全组创建时间。
+     * @return Security group creation time
      * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
-     * 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+     * Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+     * @return Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
      * 
      */
     public Output<String> description() {
@@ -76,70 +76,70 @@ public class SecurityGroup extends com.pulumi.resources.CustomResource {
         return this.ingressPermissions;
     }
     /**
-     * 安全组所属项目名称。不填默认项目为default。
+     * Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 安全组所属项目名称。不填默认项目为default。
+     * @return Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 安全组ID。
+     * Security group ID
      * 
      */
     @Export(name="securityGroupId", refs={String.class}, tree="[0]")
     private Output<String> securityGroupId;
 
     /**
-     * @return 安全组ID。
+     * @return Security group ID
      * 
      */
     public Output<String> securityGroupId() {
         return this.securityGroupId;
     }
     /**
-     * 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+     * Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
      * 
      */
     @Export(name="securityGroupName", refs={String.class}, tree="[0]")
     private Output<String> securityGroupName;
 
     /**
-     * @return 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+     * @return Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
      * 
      */
     public Output<String> securityGroupName() {
         return this.securityGroupName;
     }
     /**
-     * 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+     * Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
      * 
      */
     @Export(name="serviceManaged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> serviceManaged;
 
     /**
-     * @return 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+     * @return Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
      * 
      */
     public Output<Boolean> serviceManaged() {
         return this.serviceManaged;
     }
     /**
-     * 安全组状态。Available为可用，Creating为创建中。
+     * Security group status. Available means available for use, Creating means being created
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 安全组状态。Available为可用，Creating为创建中。
+     * @return Security group status. Available means available for use, Creating means being created
      * 
      */
     public Output<String> status() {
@@ -152,28 +152,28 @@ public class SecurityGroup extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+     * Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+     * @return Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
      * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
-     * 安全组所属的VPC ID。
+     * VPC ID to which the security group belongs
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 安全组所属的VPC ID。
+     * @return VPC ID to which the security group belongs
      * 
      */
     public Output<String> vpcId() {

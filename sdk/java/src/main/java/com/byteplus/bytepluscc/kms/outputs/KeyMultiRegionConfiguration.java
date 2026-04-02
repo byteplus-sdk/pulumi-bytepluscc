@@ -15,12 +15,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class KeyMultiRegionConfiguration {
     /**
-     * @return 多区域密钥的类型。
+     * @return Multi-region key type.
      * 
      */
     private @Nullable String multiRegionKeyType;
     /**
-     * @return 主多区域键的事务识别号和区域 ID。
+     * @return Primary multi-region key transaction identifier and region ID.
      * 
      */
     private @Nullable KeyMultiRegionConfigurationPrimaryKey primaryKey;
@@ -28,14 +28,14 @@ public final class KeyMultiRegionConfiguration {
 
     private KeyMultiRegionConfiguration() {}
     /**
-     * @return 多区域密钥的类型。
+     * @return Multi-region key type.
      * 
      */
     public Optional<String> multiRegionKeyType() {
         return Optional.ofNullable(this.multiRegionKeyType);
     }
     /**
-     * @return 主多区域键的事务识别号和区域 ID。
+     * @return Primary multi-region key transaction identifier and region ID.
      * 
      */
     public Optional<KeyMultiRegionConfigurationPrimaryKey> primaryKey() {

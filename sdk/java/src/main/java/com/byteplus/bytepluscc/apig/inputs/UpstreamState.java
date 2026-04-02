@@ -31,14 +31,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 服务熔断配置。
+     * Service circuit breaking configuration
      * 
      */
     @Import(name="circuitBreakingSettings")
     private @Nullable Output<UpstreamCircuitBreakingSettingsArgs> circuitBreakingSettings;
 
     /**
-     * @return 服务熔断配置。
+     * @return Service circuit breaking configuration
      * 
      */
     public Optional<Output<UpstreamCircuitBreakingSettingsArgs>> circuitBreakingSettings() {
@@ -46,14 +46,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备注。
+     * Remarks
      * 
      */
     @Import(name="comments")
     private @Nullable Output<String> comments;
 
     /**
-     * @return 备注。
+     * @return Remarks
      * 
      */
     public Optional<Output<String>> comments() {
@@ -61,14 +61,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 连接池配置。
+     * Connection Pool Configuration
      * 
      */
     @Import(name="connectionPoolSettings")
     private @Nullable Output<UpstreamConnectionPoolSettingsArgs> connectionPoolSettings;
 
     /**
-     * @return 连接池配置。
+     * @return Connection Pool Configuration
      * 
      */
     public Optional<Output<UpstreamConnectionPoolSettingsArgs>> connectionPoolSettings() {
@@ -76,14 +76,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Upstream创建时间。
+     * Upstream creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return Upstream创建时间。
+     * @return Upstream creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -91,14 +91,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网关实例ID。
+     * Gateway Instance ID
      * 
      */
     @Import(name="gatewayId")
     private @Nullable Output<String> gatewayId;
 
     /**
-     * @return 网关实例ID。
+     * @return Gateway Instance ID
      * 
      */
     public Optional<Output<String>> gatewayId() {
@@ -106,14 +106,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡配置。
+     * Load Balancing Configuration
      * 
      */
     @Import(name="loadBalancerSettings")
     private @Nullable Output<UpstreamLoadBalancerSettingsArgs> loadBalancerSettings;
 
     /**
-     * @return 负载均衡配置。
+     * @return Load Balancing Configuration
      * 
      */
     public Optional<Output<UpstreamLoadBalancerSettingsArgs>> loadBalancerSettings() {
@@ -121,14 +121,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Upstream名称。
+     * Upstream name
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return Upstream名称。
+     * @return Upstream name
      * 
      */
     public Optional<Output<String>> name() {
@@ -136,14 +136,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+     * Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
      * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
-     * @return 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+     * @return Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -151,14 +151,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+     * Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
      * 
      */
     @Import(name="sourceType")
     private @Nullable Output<String> sourceType;
 
     /**
-     * @return Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+     * @return Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
      * 
      */
     public Optional<Output<String>> sourceType() {
@@ -166,14 +166,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * TLS配置。
+     * TLS Configuration
      * 
      */
     @Import(name="tlsSettings")
     private @Nullable Output<UpstreamTlsSettingsArgs> tlsSettings;
 
     /**
-     * @return TLS配置。
+     * @return TLS Configuration
      * 
      */
     public Optional<Output<UpstreamTlsSettingsArgs>> tlsSettings() {
@@ -181,14 +181,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Upstream更新时间。
+     * Upstream update time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return Upstream更新时间。
+     * @return Upstream update time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -211,14 +211,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Upstream配置。
+     * Upstream Configuration
      * 
      */
     @Import(name="upstreamSpec")
     private @Nullable Output<UpstreamUpstreamSpecArgs> upstreamSpec;
 
     /**
-     * @return Upstream配置。
+     * @return Upstream Configuration
      * 
      */
     public Optional<Output<UpstreamUpstreamSpecArgs>> upstreamSpec() {
@@ -284,7 +284,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param circuitBreakingSettings 服务熔断配置。
+         * @param circuitBreakingSettings Service circuit breaking configuration
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param circuitBreakingSettings 服务熔断配置。
+         * @param circuitBreakingSettings Service circuit breaking configuration
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param comments 备注。
+         * @param comments Remarks
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param comments 备注。
+         * @param comments Remarks
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionPoolSettings 连接池配置。
+         * @param connectionPoolSettings Connection Pool Configuration
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionPoolSettings 连接池配置。
+         * @param connectionPoolSettings Connection Pool Configuration
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime Upstream创建时间。
+         * @param createdTime Upstream creation time
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime Upstream创建时间。
+         * @param createdTime Upstream creation time
          * 
          * @return builder
          * 
@@ -368,7 +368,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param gatewayId 网关实例ID。
+         * @param gatewayId Gateway Instance ID
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param gatewayId 网关实例ID。
+         * @param gatewayId Gateway Instance ID
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerSettings 负载均衡配置。
+         * @param loadBalancerSettings Load Balancing Configuration
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerSettings 负载均衡配置。
+         * @param loadBalancerSettings Load Balancing Configuration
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Upstream名称。
+         * @param name Upstream name
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Upstream名称。
+         * @param name Upstream name
          * 
          * @return builder
          * 
@@ -431,7 +431,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+         * @param protocol Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+         * @param protocol Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
          * 
          * @return builder
          * 
@@ -452,7 +452,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceType Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+         * @param sourceType Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
          * 
          * @return builder
          * 
@@ -463,7 +463,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceType Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+         * @param sourceType Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
          * 
          * @return builder
          * 
@@ -473,7 +473,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tlsSettings TLS配置。
+         * @param tlsSettings TLS Configuration
          * 
          * @return builder
          * 
@@ -484,7 +484,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tlsSettings TLS配置。
+         * @param tlsSettings TLS Configuration
          * 
          * @return builder
          * 
@@ -494,7 +494,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime Upstream更新时间。
+         * @param updatedTime Upstream update time
          * 
          * @return builder
          * 
@@ -505,7 +505,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime Upstream更新时间。
+         * @param updatedTime Upstream update time
          * 
          * @return builder
          * 
@@ -536,7 +536,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param upstreamSpec Upstream配置。
+         * @param upstreamSpec Upstream Configuration
          * 
          * @return builder
          * 
@@ -547,7 +547,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param upstreamSpec Upstream配置。
+         * @param upstreamSpec Upstream Configuration
          * 
          * @return builder
          * 

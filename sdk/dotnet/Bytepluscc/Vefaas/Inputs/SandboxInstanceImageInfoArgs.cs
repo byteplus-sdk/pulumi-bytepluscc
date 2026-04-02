@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas.Inputs
     public sealed class SandboxInstanceImageInfoArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+        /// Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
         /// </summary>
         [Input("command")]
         public Input<string>? Command { get; set; }
 
         /// <summary>
-        /// 沙箱实例使用的已预热镜像地址。
+        /// Preheated image address used by the sandbox instance
         /// </summary>
         [Input("image")]
         public Input<string>? Image { get; set; }
 
         /// <summary>
-        /// 沙箱实例使用的已预热镜像 ID。
+        /// Pre-warmed image ID used by the sandbox instance.
         /// </summary>
         [Input("imageId")]
         public Input<string>? ImageId { get; set; }
 
         /// <summary>
-        /// 沙箱实例镜像监听端口。
+        /// Listening port of the sandbox instance image.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }

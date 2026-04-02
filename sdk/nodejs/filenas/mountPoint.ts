@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 挂载点是 NAS 文件系统在网络环境中的连接点。NAS 文件系统需要挂载在计算节点中才能完成数据的访问与存储。挂载是将计算节点与 NAS 文件系统相连接的操作。
+ * Mount point is the connection point for the NAS file system in a network environment. The NAS file system must be mounted on a compute node to enable data access and storage. Mounting is the operation that connects the compute node to the NAS file system.
  *
  * ## Example Usage
  *
@@ -60,59 +60,59 @@ export class MountPoint extends pulumi.CustomResource {
 
     public /*out*/ readonly clients!: pulumi.Output<outputs.filenas.MountPointClient[]>;
     /**
-     * 挂载点创建时间。
+     * Mount point creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * DNS 地址。
+     * DNS address.
      */
     public /*out*/ readonly domain!: pulumi.Output<string>;
     /**
-     * 文件系统 ID。
+     * File system ID.
      */
     public readonly fileSystemId!: pulumi.Output<string>;
     /**
-     * 挂载点地址。
+     * Mount point address.
      */
     public /*out*/ readonly ip!: pulumi.Output<string>;
     /**
-     * 挂载点 ID。
+     * Mount point ID.
      */
     public /*out*/ readonly mountPointId!: pulumi.Output<string>;
     /**
-     * 挂载点名称。
+     * Mount point name.
      */
     public readonly mountPointName!: pulumi.Output<string>;
     /**
-     * 挂载点绑定的权限组信息。
+     * Permission group information bound to the mount point.
      */
     public /*out*/ readonly permissionGroup!: pulumi.Output<outputs.filenas.MountPointPermissionGroup>;
     /**
-     * 权限组 ID。
+     * Permission group ID.
      */
     public readonly permissionGroupId!: pulumi.Output<string>;
     /**
-     * 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+     * Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 子网 ID。
+     * Subnet ID.
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
-     * 子网名称。
+     * Subnet name.
      */
     public /*out*/ readonly subnetName!: pulumi.Output<string>;
     /**
-     * 挂载点更新时间。
+     * Mount point update time.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * 私有网络 ID。
+     * Private network ID.
      */
     public readonly vpcId!: pulumi.Output<string>;
     /**
-     * 私有网络名称。
+     * Private network name.
      */
     public /*out*/ readonly vpcName!: pulumi.Output<string>;
 
@@ -188,59 +188,59 @@ export class MountPoint extends pulumi.CustomResource {
 export interface MountPointState {
     clients?: pulumi.Input<pulumi.Input<inputs.filenas.MountPointClient>[]>;
     /**
-     * 挂载点创建时间。
+     * Mount point creation time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * DNS 地址。
+     * DNS address.
      */
     domain?: pulumi.Input<string>;
     /**
-     * 文件系统 ID。
+     * File system ID.
      */
     fileSystemId?: pulumi.Input<string>;
     /**
-     * 挂载点地址。
+     * Mount point address.
      */
     ip?: pulumi.Input<string>;
     /**
-     * 挂载点 ID。
+     * Mount point ID.
      */
     mountPointId?: pulumi.Input<string>;
     /**
-     * 挂载点名称。
+     * Mount point name.
      */
     mountPointName?: pulumi.Input<string>;
     /**
-     * 挂载点绑定的权限组信息。
+     * Permission group information bound to the mount point.
      */
     permissionGroup?: pulumi.Input<inputs.filenas.MountPointPermissionGroup>;
     /**
-     * 权限组 ID。
+     * Permission group ID.
      */
     permissionGroupId?: pulumi.Input<string>;
     /**
-     * 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+     * Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
      */
     status?: pulumi.Input<string>;
     /**
-     * 子网 ID。
+     * Subnet ID.
      */
     subnetId?: pulumi.Input<string>;
     /**
-     * 子网名称。
+     * Subnet name.
      */
     subnetName?: pulumi.Input<string>;
     /**
-     * 挂载点更新时间。
+     * Mount point update time.
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * 私有网络 ID。
+     * Private network ID.
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * 私有网络名称。
+     * Private network name.
      */
     vpcName?: pulumi.Input<string>;
 }
@@ -250,23 +250,23 @@ export interface MountPointState {
  */
 export interface MountPointArgs {
     /**
-     * 文件系统 ID。
+     * File system ID.
      */
     fileSystemId: pulumi.Input<string>;
     /**
-     * 挂载点名称。
+     * Mount point name.
      */
     mountPointName: pulumi.Input<string>;
     /**
-     * 权限组 ID。
+     * Permission group ID.
      */
     permissionGroupId: pulumi.Input<string>;
     /**
-     * 子网 ID。
+     * Subnet ID.
      */
     subnetId: pulumi.Input<string>;
     /**
-     * 私有网络 ID。
+     * Private network ID.
      */
     vpcId: pulumi.Input<string>;
 }

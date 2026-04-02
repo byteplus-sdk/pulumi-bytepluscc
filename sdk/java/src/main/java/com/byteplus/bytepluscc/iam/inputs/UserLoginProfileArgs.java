@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,14 +19,14 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
     public static final UserLoginProfileArgs Empty = new UserLoginProfileArgs();
 
     /**
-     * 登录配置创建时间。
+     * Login configuration creation time.
      * 
      */
     @Import(name="createDate")
     private @Nullable Output<String> createDate;
 
     /**
-     * @return 登录配置创建时间。
+     * @return Login configuration creation time.
      * 
      */
     public Optional<Output<String>> createDate() {
@@ -33,14 +34,14 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 上次登录时间。
+     * Last login time.
      * 
      */
     @Import(name="lastLoginDate")
     private @Nullable Output<String> lastLoginDate;
 
     /**
-     * @return 上次登录时间。
+     * @return Last login time.
      * 
      */
     public Optional<Output<String>> lastLoginDate() {
@@ -48,14 +49,14 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 上次登录IP。
+     * Last login IP.
      * 
      */
     @Import(name="lastLoginIp")
     private @Nullable Output<String> lastLoginIp;
 
     /**
-     * @return 上次登录IP。
+     * @return Last login IP.
      * 
      */
     public Optional<Output<String>> lastLoginIp() {
@@ -63,29 +64,29 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
+     * Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
      * 
      */
     @Import(name="lastResetPasswordTime")
-    private @Nullable Output<Double> lastResetPasswordTime;
+    private @Nullable Output<Integer> lastResetPasswordTime;
 
     /**
-     * @return 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
+     * @return Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
      * 
      */
-    public Optional<Output<Double>> lastResetPasswordTime() {
+    public Optional<Output<Integer>> lastResetPasswordTime() {
         return Optional.ofNullable(this.lastResetPasswordTime);
     }
 
     /**
-     * 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+     * Whether login is allowed. &#39;true&#39; means allowed, &#39;false&#39; means not allowed. Default is &#39;false&#39;.
      * 
      */
     @Import(name="loginAllowed")
     private @Nullable Output<Boolean> loginAllowed;
 
     /**
-     * @return 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+     * @return Whether login is allowed. &#39;true&#39; means allowed, &#39;false&#39; means not allowed. Default is &#39;false&#39;.
      * 
      */
     public Optional<Output<Boolean>> loginAllowed() {
@@ -93,14 +94,14 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+     * Whether login is locked. &#39;true&#39; means locked, &#39;false&#39; means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
      * 
      */
     @Import(name="loginLocked")
     private @Nullable Output<Boolean> loginLocked;
 
     /**
-     * @return 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+     * @return Whether login is locked. &#39;true&#39; means locked, &#39;false&#39; means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
      * 
      */
     public Optional<Output<Boolean>> loginLocked() {
@@ -108,14 +109,14 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 登录密码。
+     * Login password.
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return 登录密码。
+     * @return Login password.
      * 
      */
     public Optional<Output<String>> password() {
@@ -123,29 +124,29 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
+     * Password expiration time. &#39;0&#39; means never expires; non-zero means the expiration timestamp.
      * 
      */
     @Import(name="passwordExpireAt")
-    private @Nullable Output<Double> passwordExpireAt;
+    private @Nullable Output<Integer> passwordExpireAt;
 
     /**
-     * @return 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
+     * @return Password expiration time. &#39;0&#39; means never expires; non-zero means the expiration timestamp.
      * 
      */
-    public Optional<Output<Double>> passwordExpireAt() {
+    public Optional<Output<Integer>> passwordExpireAt() {
         return Optional.ofNullable(this.passwordExpireAt);
     }
 
     /**
-     * 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+     * Whether password reset is required on next login. Whether password reset is required on next login. &#39;true&#39; means password reset is required, &#39;false&#39; means not required. Default is &#39;false&#39;.
      * 
      */
     @Import(name="passwordResetRequired")
     private @Nullable Output<Boolean> passwordResetRequired;
 
     /**
-     * @return 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+     * @return Whether password reset is required on next login. Whether password reset is required on next login. &#39;true&#39; means password reset is required, &#39;false&#39; means not required. Default is &#39;false&#39;.
      * 
      */
     public Optional<Output<Boolean>> passwordResetRequired() {
@@ -153,14 +154,14 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+     * Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
      * 
      */
     @Import(name="safeAuthExemptDuration")
     private @Nullable Output<Double> safeAuthExemptDuration;
 
     /**
-     * @return 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+     * @return Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
      * 
      */
     public Optional<Output<Double>> safeAuthExemptDuration() {
@@ -168,14 +169,14 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+     * Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
      * 
      */
     @Import(name="safeAuthExemptRequired")
     private @Nullable Output<Double> safeAuthExemptRequired;
 
     /**
-     * @return 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+     * @return Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
      * 
      */
     public Optional<Output<Double>> safeAuthExemptRequired() {
@@ -183,14 +184,14 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+     * Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
      * 
      */
     @Import(name="safeAuthExemptUnit")
     private @Nullable Output<Double> safeAuthExemptUnit;
 
     /**
-     * @return 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+     * @return Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
      * 
      */
     public Optional<Output<Double>> safeAuthExemptUnit() {
@@ -198,14 +199,14 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+     * Whether login protection is enabled. &#39;true&#39; means enabled, &#39;false&#39; means disabled. Default is &#39;false&#39;.
      * 
      */
     @Import(name="safeAuthFlag")
     private @Nullable Output<Boolean> safeAuthFlag;
 
     /**
-     * @return 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+     * @return Whether login protection is enabled. &#39;true&#39; means enabled, &#39;false&#39; means disabled. Default is &#39;false&#39;.
      * 
      */
     public Optional<Output<Boolean>> safeAuthFlag() {
@@ -213,14 +214,14 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+     * Login protection type. Login protection type. &#39;phone&#39; represents mobile verification, &#39;email&#39; represents email verification, &#39;vmfa&#39; represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
      * 
      */
     @Import(name="safeAuthType")
     private @Nullable Output<String> safeAuthType;
 
     /**
-     * @return 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+     * @return Login protection type. Login protection type. &#39;phone&#39; represents mobile verification, &#39;email&#39; represents email verification, &#39;vmfa&#39; represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
      * 
      */
     public Optional<Output<String>> safeAuthType() {
@@ -228,14 +229,14 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 登录配置更新时间。
+     * Login configuration update time.
      * 
      */
     @Import(name="updateDate")
     private @Nullable Output<String> updateDate;
 
     /**
-     * @return 登录配置更新时间。
+     * @return Login configuration update time.
      * 
      */
     public Optional<Output<String>> updateDate() {
@@ -281,7 +282,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param createDate 登录配置创建时间。
+         * @param createDate Login configuration creation time.
          * 
          * @return builder
          * 
@@ -292,7 +293,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param createDate 登录配置创建时间。
+         * @param createDate Login configuration creation time.
          * 
          * @return builder
          * 
@@ -302,7 +303,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param lastLoginDate 上次登录时间。
+         * @param lastLoginDate Last login time.
          * 
          * @return builder
          * 
@@ -313,7 +314,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param lastLoginDate 上次登录时间。
+         * @param lastLoginDate Last login time.
          * 
          * @return builder
          * 
@@ -323,7 +324,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param lastLoginIp 上次登录IP。
+         * @param lastLoginIp Last login IP.
          * 
          * @return builder
          * 
@@ -334,7 +335,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param lastLoginIp 上次登录IP。
+         * @param lastLoginIp Last login IP.
          * 
          * @return builder
          * 
@@ -344,28 +345,28 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param lastResetPasswordTime 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
+         * @param lastResetPasswordTime Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
          * 
          * @return builder
          * 
          */
-        public Builder lastResetPasswordTime(@Nullable Output<Double> lastResetPasswordTime) {
+        public Builder lastResetPasswordTime(@Nullable Output<Integer> lastResetPasswordTime) {
             $.lastResetPasswordTime = lastResetPasswordTime;
             return this;
         }
 
         /**
-         * @param lastResetPasswordTime 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
+         * @param lastResetPasswordTime Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
          * 
          * @return builder
          * 
          */
-        public Builder lastResetPasswordTime(Double lastResetPasswordTime) {
+        public Builder lastResetPasswordTime(Integer lastResetPasswordTime) {
             return lastResetPasswordTime(Output.of(lastResetPasswordTime));
         }
 
         /**
-         * @param loginAllowed 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+         * @param loginAllowed Whether login is allowed. &#39;true&#39; means allowed, &#39;false&#39; means not allowed. Default is &#39;false&#39;.
          * 
          * @return builder
          * 
@@ -376,7 +377,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param loginAllowed 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+         * @param loginAllowed Whether login is allowed. &#39;true&#39; means allowed, &#39;false&#39; means not allowed. Default is &#39;false&#39;.
          * 
          * @return builder
          * 
@@ -386,7 +387,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param loginLocked 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+         * @param loginLocked Whether login is locked. &#39;true&#39; means locked, &#39;false&#39; means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
          * 
          * @return builder
          * 
@@ -397,7 +398,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param loginLocked 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+         * @param loginLocked Whether login is locked. &#39;true&#39; means locked, &#39;false&#39; means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
          * 
          * @return builder
          * 
@@ -407,7 +408,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param password 登录密码。
+         * @param password Login password.
          * 
          * @return builder
          * 
@@ -418,7 +419,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param password 登录密码。
+         * @param password Login password.
          * 
          * @return builder
          * 
@@ -428,28 +429,28 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param passwordExpireAt 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
+         * @param passwordExpireAt Password expiration time. &#39;0&#39; means never expires; non-zero means the expiration timestamp.
          * 
          * @return builder
          * 
          */
-        public Builder passwordExpireAt(@Nullable Output<Double> passwordExpireAt) {
+        public Builder passwordExpireAt(@Nullable Output<Integer> passwordExpireAt) {
             $.passwordExpireAt = passwordExpireAt;
             return this;
         }
 
         /**
-         * @param passwordExpireAt 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
+         * @param passwordExpireAt Password expiration time. &#39;0&#39; means never expires; non-zero means the expiration timestamp.
          * 
          * @return builder
          * 
          */
-        public Builder passwordExpireAt(Double passwordExpireAt) {
+        public Builder passwordExpireAt(Integer passwordExpireAt) {
             return passwordExpireAt(Output.of(passwordExpireAt));
         }
 
         /**
-         * @param passwordResetRequired 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+         * @param passwordResetRequired Whether password reset is required on next login. Whether password reset is required on next login. &#39;true&#39; means password reset is required, &#39;false&#39; means not required. Default is &#39;false&#39;.
          * 
          * @return builder
          * 
@@ -460,7 +461,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param passwordResetRequired 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+         * @param passwordResetRequired Whether password reset is required on next login. Whether password reset is required on next login. &#39;true&#39; means password reset is required, &#39;false&#39; means not required. Default is &#39;false&#39;.
          * 
          * @return builder
          * 
@@ -470,7 +471,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param safeAuthExemptDuration 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+         * @param safeAuthExemptDuration Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
          * 
          * @return builder
          * 
@@ -481,7 +482,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param safeAuthExemptDuration 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+         * @param safeAuthExemptDuration Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
          * 
          * @return builder
          * 
@@ -491,7 +492,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param safeAuthExemptRequired 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+         * @param safeAuthExemptRequired Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
          * 
          * @return builder
          * 
@@ -502,7 +503,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param safeAuthExemptRequired 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+         * @param safeAuthExemptRequired Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
          * 
          * @return builder
          * 
@@ -512,7 +513,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param safeAuthExemptUnit 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+         * @param safeAuthExemptUnit Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
          * 
          * @return builder
          * 
@@ -523,7 +524,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param safeAuthExemptUnit 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+         * @param safeAuthExemptUnit Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
          * 
          * @return builder
          * 
@@ -533,7 +534,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param safeAuthFlag 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+         * @param safeAuthFlag Whether login protection is enabled. &#39;true&#39; means enabled, &#39;false&#39; means disabled. Default is &#39;false&#39;.
          * 
          * @return builder
          * 
@@ -544,7 +545,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param safeAuthFlag 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+         * @param safeAuthFlag Whether login protection is enabled. &#39;true&#39; means enabled, &#39;false&#39; means disabled. Default is &#39;false&#39;.
          * 
          * @return builder
          * 
@@ -554,7 +555,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param safeAuthType 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+         * @param safeAuthType Login protection type. Login protection type. &#39;phone&#39; represents mobile verification, &#39;email&#39; represents email verification, &#39;vmfa&#39; represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
          * 
          * @return builder
          * 
@@ -565,7 +566,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param safeAuthType 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+         * @param safeAuthType Login protection type. Login protection type. &#39;phone&#39; represents mobile verification, &#39;email&#39; represents email verification, &#39;vmfa&#39; represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
          * 
          * @return builder
          * 
@@ -575,7 +576,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param updateDate 登录配置更新时间。
+         * @param updateDate Login configuration update time.
          * 
          * @return builder
          * 
@@ -586,7 +587,7 @@ public final class UserLoginProfileArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param updateDate 登录配置更新时间。
+         * @param updateDate Login configuration update time.
          * 
          * @return builder
          * 

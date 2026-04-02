@@ -33,13 +33,13 @@ class VpcAttachmentArgs:
                  transit_router_attachment_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a VpcAttachment resource.
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络实例的ID。
-        :param pulumi.Input[builtins.bool] appliance_mode_enabled: 是否启动路径一致模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。开启后，TR转发流量至该VPC连接时，将选择相同的可用区连接点转发请求流量和返回流量。false：否。
-        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: 是否自动同步TR路由到网络实例路由表中。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是，表示系统会自动同步该网络实例连接关联转发的TR路由表中的路由条目到网络实例的路由表中，仅当该参数配置为true，且网络实例连接关联转发的TR路由表中存在路由条目时，系统才会自动同步TR路由到网络实例的路由表中。false（默认值）：否。
-        :param pulumi.Input[builtins.str] description: 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.bool] ipv6_enabled: 是否开启IPv6功能。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。false：否。
-        :param pulumi.Input[builtins.str] transit_router_attachment_name: 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        :param pulumi.Input[builtins.str] transit_router_id: Transit router instance ID.
+        :param pulumi.Input[builtins.str] vpc_id: Private network instance ID.
+        :param pulumi.Input[builtins.bool] appliance_mode_enabled: Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
+        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance's route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
+        :param pulumi.Input[builtins.str] description: Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
+        :param pulumi.Input[builtins.bool] ipv6_enabled: Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
+        :param pulumi.Input[builtins.str] transit_router_attachment_name: Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         """
         pulumi.set(__self__, "attach_points", attach_points)
         pulumi.set(__self__, "transit_router_id", transit_router_id)
@@ -70,7 +70,7 @@ class VpcAttachmentArgs:
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> pulumi.Input[builtins.str]:
         """
-        中转路由器实例的ID。
+        Transit router instance ID.
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -82,7 +82,7 @@ class VpcAttachmentArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        私有网络实例的ID。
+        Private network instance ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -94,7 +94,7 @@ class VpcAttachmentArgs:
     @pulumi.getter(name="applianceModeEnabled")
     def appliance_mode_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否启动路径一致模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。开启后，TR转发流量至该VPC连接时，将选择相同的可用区连接点转发请求流量和返回流量。false：否。
+        Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
         """
         return pulumi.get(self, "appliance_mode_enabled")
 
@@ -106,7 +106,7 @@ class VpcAttachmentArgs:
     @pulumi.getter(name="autoPublishRouteEnabled")
     def auto_publish_route_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否自动同步TR路由到网络实例路由表中。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是，表示系统会自动同步该网络实例连接关联转发的TR路由表中的路由条目到网络实例的路由表中，仅当该参数配置为true，且网络实例连接关联转发的TR路由表中存在路由条目时，系统才会自动同步TR路由到网络实例的路由表中。false（默认值）：否。
+        Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance's route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
         """
         return pulumi.get(self, "auto_publish_route_enabled")
 
@@ -118,7 +118,7 @@ class VpcAttachmentArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -130,7 +130,7 @@ class VpcAttachmentArgs:
     @pulumi.getter(name="ipv6Enabled")
     def ipv6_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启IPv6功能。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。false：否。
+        Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
         """
         return pulumi.get(self, "ipv6_enabled")
 
@@ -151,7 +151,7 @@ class VpcAttachmentArgs:
     @pulumi.getter(name="transitRouterAttachmentName")
     def transit_router_attachment_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_name")
 
@@ -179,18 +179,18 @@ class _VpcAttachmentState:
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering VpcAttachment resources.
-        :param pulumi.Input[builtins.bool] appliance_mode_enabled: 是否启动路径一致模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。开启后，TR转发流量至该VPC连接时，将选择相同的可用区连接点转发请求流量和返回流量。false：否。
-        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: 是否自动同步TR路由到网络实例路由表中。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是，表示系统会自动同步该网络实例连接关联转发的TR路由表中的路由条目到网络实例的路由表中，仅当该参数配置为true，且网络实例连接关联转发的TR路由表中存在路由条目时，系统才会自动同步TR路由到网络实例的路由表中。false（默认值）：否。
-        :param pulumi.Input[builtins.int] bandwidth: 网络实例连接的带宽上限，单位为Gbps。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.bool] ipv6_enabled: 是否开启IPv6功能。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。false：否。
-        :param pulumi.Input[builtins.str] status: 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
-        :param pulumi.Input[builtins.str] transit_router_attachment_id: 网络实例连接的ID。
-        :param pulumi.Input[builtins.str] transit_router_attachment_name: 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络实例的ID。
+        :param pulumi.Input[builtins.bool] appliance_mode_enabled: Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
+        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance's route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
+        :param pulumi.Input[builtins.int] bandwidth: Maximum bandwidth for the network instance connection, in Gbps.
+        :param pulumi.Input[builtins.str] created_time: Creation time.
+        :param pulumi.Input[builtins.str] description: Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
+        :param pulumi.Input[builtins.bool] ipv6_enabled: Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
+        :param pulumi.Input[builtins.str] status: Network instance connection status. Creating: Creating. Deleting: Deleting. Pending: Configuring. Available: Available.
+        :param pulumi.Input[builtins.str] transit_router_attachment_id: Network instance connection ID.
+        :param pulumi.Input[builtins.str] transit_router_attachment_name: Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
+        :param pulumi.Input[builtins.str] transit_router_id: Transit router instance ID.
+        :param pulumi.Input[builtins.str] updated_time: Update time.
+        :param pulumi.Input[builtins.str] vpc_id: Private network instance ID.
         """
         if appliance_mode_enabled is not None:
             pulumi.set(__self__, "appliance_mode_enabled", appliance_mode_enabled)
@@ -225,7 +225,7 @@ class _VpcAttachmentState:
     @pulumi.getter(name="applianceModeEnabled")
     def appliance_mode_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否启动路径一致模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。开启后，TR转发流量至该VPC连接时，将选择相同的可用区连接点转发请求流量和返回流量。false：否。
+        Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
         """
         return pulumi.get(self, "appliance_mode_enabled")
 
@@ -246,7 +246,7 @@ class _VpcAttachmentState:
     @pulumi.getter(name="autoPublishRouteEnabled")
     def auto_publish_route_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否自动同步TR路由到网络实例路由表中。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是，表示系统会自动同步该网络实例连接关联转发的TR路由表中的路由条目到网络实例的路由表中，仅当该参数配置为true，且网络实例连接关联转发的TR路由表中存在路由条目时，系统才会自动同步TR路由到网络实例的路由表中。false（默认值）：否。
+        Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance's route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
         """
         return pulumi.get(self, "auto_publish_route_enabled")
 
@@ -258,7 +258,7 @@ class _VpcAttachmentState:
     @pulumi.getter
     def bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        网络实例连接的带宽上限，单位为Gbps。
+        Maximum bandwidth for the network instance connection, in Gbps.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -270,7 +270,7 @@ class _VpcAttachmentState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -282,7 +282,7 @@ class _VpcAttachmentState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -294,7 +294,7 @@ class _VpcAttachmentState:
     @pulumi.getter(name="ipv6Enabled")
     def ipv6_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启IPv6功能。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。false：否。
+        Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
         """
         return pulumi.get(self, "ipv6_enabled")
 
@@ -306,7 +306,7 @@ class _VpcAttachmentState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        Network instance connection status. Creating: Creating. Deleting: Deleting. Pending: Configuring. Available: Available.
         """
         return pulumi.get(self, "status")
 
@@ -327,7 +327,7 @@ class _VpcAttachmentState:
     @pulumi.getter(name="transitRouterAttachmentId")
     def transit_router_attachment_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的ID。
+        Network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_id")
 
@@ -339,7 +339,7 @@ class _VpcAttachmentState:
     @pulumi.getter(name="transitRouterAttachmentName")
     def transit_router_attachment_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_name")
 
@@ -351,7 +351,7 @@ class _VpcAttachmentState:
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例的ID。
+        Transit router instance ID.
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -363,7 +363,7 @@ class _VpcAttachmentState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -375,7 +375,7 @@ class _VpcAttachmentState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私有网络实例的ID。
+        Private network instance ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -401,7 +401,7 @@ class VpcAttachment(pulumi.CustomResource):
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        通过在私有网络和中转路由器之间建立连接，可以实现私有网络与中转路由器的私网互通。
+        By establishing a connection between the private network and the transit router, you can enable private network communication between the private network and the transit router.
 
         ## Import
 
@@ -411,13 +411,13 @@ class VpcAttachment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.bool] appliance_mode_enabled: 是否启动路径一致模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。开启后，TR转发流量至该VPC连接时，将选择相同的可用区连接点转发请求流量和返回流量。false：否。
-        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: 是否自动同步TR路由到网络实例路由表中。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是，表示系统会自动同步该网络实例连接关联转发的TR路由表中的路由条目到网络实例的路由表中，仅当该参数配置为true，且网络实例连接关联转发的TR路由表中存在路由条目时，系统才会自动同步TR路由到网络实例的路由表中。false（默认值）：否。
-        :param pulumi.Input[builtins.str] description: 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.bool] ipv6_enabled: 是否开启IPv6功能。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。false：否。
-        :param pulumi.Input[builtins.str] transit_router_attachment_name: 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络实例的ID。
+        :param pulumi.Input[builtins.bool] appliance_mode_enabled: Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
+        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance's route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
+        :param pulumi.Input[builtins.str] description: Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
+        :param pulumi.Input[builtins.bool] ipv6_enabled: Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
+        :param pulumi.Input[builtins.str] transit_router_attachment_name: Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
+        :param pulumi.Input[builtins.str] transit_router_id: Transit router instance ID.
+        :param pulumi.Input[builtins.str] vpc_id: Private network instance ID.
         """
         ...
     @overload
@@ -426,7 +426,7 @@ class VpcAttachment(pulumi.CustomResource):
                  args: VpcAttachmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        通过在私有网络和中转路由器之间建立连接，可以实现私有网络与中转路由器的私网互通。
+        By establishing a connection between the private network and the transit router, you can enable private network communication between the private network and the transit router.
 
         ## Import
 
@@ -518,18 +518,18 @@ class VpcAttachment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.bool] appliance_mode_enabled: 是否启动路径一致模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。开启后，TR转发流量至该VPC连接时，将选择相同的可用区连接点转发请求流量和返回流量。false：否。
-        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: 是否自动同步TR路由到网络实例路由表中。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是，表示系统会自动同步该网络实例连接关联转发的TR路由表中的路由条目到网络实例的路由表中，仅当该参数配置为true，且网络实例连接关联转发的TR路由表中存在路由条目时，系统才会自动同步TR路由到网络实例的路由表中。false（默认值）：否。
-        :param pulumi.Input[builtins.int] bandwidth: 网络实例连接的带宽上限，单位为Gbps。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.bool] ipv6_enabled: 是否开启IPv6功能。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。false：否。
-        :param pulumi.Input[builtins.str] status: 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
-        :param pulumi.Input[builtins.str] transit_router_attachment_id: 网络实例连接的ID。
-        :param pulumi.Input[builtins.str] transit_router_attachment_name: 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络实例的ID。
+        :param pulumi.Input[builtins.bool] appliance_mode_enabled: Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
+        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance's route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
+        :param pulumi.Input[builtins.int] bandwidth: Maximum bandwidth for the network instance connection, in Gbps.
+        :param pulumi.Input[builtins.str] created_time: Creation time.
+        :param pulumi.Input[builtins.str] description: Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
+        :param pulumi.Input[builtins.bool] ipv6_enabled: Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
+        :param pulumi.Input[builtins.str] status: Network instance connection status. Creating: Creating. Deleting: Deleting. Pending: Configuring. Available: Available.
+        :param pulumi.Input[builtins.str] transit_router_attachment_id: Network instance connection ID.
+        :param pulumi.Input[builtins.str] transit_router_attachment_name: Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
+        :param pulumi.Input[builtins.str] transit_router_id: Transit router instance ID.
+        :param pulumi.Input[builtins.str] updated_time: Update time.
+        :param pulumi.Input[builtins.str] vpc_id: Private network instance ID.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -555,7 +555,7 @@ class VpcAttachment(pulumi.CustomResource):
     @pulumi.getter(name="applianceModeEnabled")
     def appliance_mode_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否启动路径一致模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。开启后，TR转发流量至该VPC连接时，将选择相同的可用区连接点转发请求流量和返回流量。false：否。
+        Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
         """
         return pulumi.get(self, "appliance_mode_enabled")
 
@@ -568,7 +568,7 @@ class VpcAttachment(pulumi.CustomResource):
     @pulumi.getter(name="autoPublishRouteEnabled")
     def auto_publish_route_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否自动同步TR路由到网络实例路由表中。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是，表示系统会自动同步该网络实例连接关联转发的TR路由表中的路由条目到网络实例的路由表中，仅当该参数配置为true，且网络实例连接关联转发的TR路由表中存在路由条目时，系统才会自动同步TR路由到网络实例的路由表中。false（默认值）：否。
+        Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance's route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
         """
         return pulumi.get(self, "auto_publish_route_enabled")
 
@@ -576,7 +576,7 @@ class VpcAttachment(pulumi.CustomResource):
     @pulumi.getter
     def bandwidth(self) -> pulumi.Output[builtins.int]:
         """
-        网络实例连接的带宽上限，单位为Gbps。
+        Maximum bandwidth for the network instance connection, in Gbps.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -584,7 +584,7 @@ class VpcAttachment(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -592,7 +592,7 @@ class VpcAttachment(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -600,7 +600,7 @@ class VpcAttachment(pulumi.CustomResource):
     @pulumi.getter(name="ipv6Enabled")
     def ipv6_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启IPv6功能。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。false：否。
+        Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
         """
         return pulumi.get(self, "ipv6_enabled")
 
@@ -608,7 +608,7 @@ class VpcAttachment(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        Network instance connection status. Creating: Creating. Deleting: Deleting. Pending: Configuring. Available: Available.
         """
         return pulumi.get(self, "status")
 
@@ -621,7 +621,7 @@ class VpcAttachment(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterAttachmentId")
     def transit_router_attachment_id(self) -> pulumi.Output[builtins.str]:
         """
-        网络实例连接的ID。
+        Network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_id")
 
@@ -629,7 +629,7 @@ class VpcAttachment(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterAttachmentName")
     def transit_router_attachment_name(self) -> pulumi.Output[builtins.str]:
         """
-        网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_name")
 
@@ -637,7 +637,7 @@ class VpcAttachment(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> pulumi.Output[builtins.str]:
         """
-        中转路由器实例的ID。
+        Transit router instance ID.
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -645,7 +645,7 @@ class VpcAttachment(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -653,7 +653,7 @@ class VpcAttachment(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        私有网络实例的ID。
+        Private network instance ID.
         """
         return pulumi.get(self, "vpc_id")
 

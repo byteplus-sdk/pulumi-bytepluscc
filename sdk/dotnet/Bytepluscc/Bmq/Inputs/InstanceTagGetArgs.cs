@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
     public sealed class InstanceTagGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 标签键。
+        /// Tag key
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+        /// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// 标签值。
+        /// Tag value
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

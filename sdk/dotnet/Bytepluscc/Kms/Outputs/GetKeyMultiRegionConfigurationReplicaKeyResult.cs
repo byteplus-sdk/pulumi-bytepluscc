@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms.Outputs
     public sealed class GetKeyMultiRegionConfigurationReplicaKeyResult
     {
         /// <summary>
-        /// 多区域密钥的区域 ID。
+        /// Multi-region key region ID.
         /// </summary>
         public readonly string Region;
         /// <summary>
-        /// 多区域密钥的转换。
+        /// Multi-region key conversion.
         /// </summary>
         public readonly string Trn;
 

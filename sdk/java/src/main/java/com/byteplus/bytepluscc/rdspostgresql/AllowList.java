@@ -19,7 +19,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 白名单是数据库连接的安全防控手段，只有白名单内的 IP 地址才能访问数据库。PostgreSQL 实例在创建后，不会绑定任何白名单，默认禁止所有 IP 地址访问实例。因此无论是通过私网还是通过公网连接访问实例，都需要先为实例配置白名单，才能保证实例可连接。
+ * An allowlist is a security measure for database connections. Only IP addresses in the allowlist can access the database. After a PostgreSQL instance is created, it is not bound to any allowlist, and all IP addresses are denied access by default. To connect to the instance via private or public network, you must first configure an allowlist for the instance to ensure connectivity.
  * 
  * ## Example Usage
  * 
@@ -72,112 +72,112 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:rdspostgresql/allowList:AllowList")
 public class AllowList extends com.pulumi.resources.CustomResource {
     /**
-     * 白名单分类。取值：Ordinary：普通白名单。Default：默认白名单。说明该参数作为请求参数时无默认值，不传入时则查询所有类别的白名单。
+     * Allowlist category. Values: Ordinary: ordinary allowlist; Default: default allowlist. Note: This parameter has no default value when used as a request parameter. If not provided, all categories of allowlists are queried.
      * 
      */
     @Export(name="allowListCategory", refs={String.class}, tree="[0]")
     private Output<String> allowListCategory;
 
     /**
-     * @return 白名单分类。取值：Ordinary：普通白名单。Default：默认白名单。说明该参数作为请求参数时无默认值，不传入时则查询所有类别的白名单。
+     * @return Allowlist category. Values: Ordinary: ordinary allowlist; Default: default allowlist. Note: This parameter has no default value when used as a request parameter. If not provided, all categories of allowlists are queried.
      * 
      */
     public Output<String> allowListCategory() {
         return this.allowListCategory;
     }
     /**
-     * 白名单的描述信息。长度在 200 字符以内。默认值为空字符串。
+     * Description of the allowlist. Up to 200 characters. Default value is an empty string.
      * 
      */
     @Export(name="allowListDesc", refs={String.class}, tree="[0]")
     private Output<String> allowListDesc;
 
     /**
-     * @return 白名单的描述信息。长度在 200 字符以内。默认值为空字符串。
+     * @return Description of the allowlist. Up to 200 characters. Default value is an empty string.
      * 
      */
     public Output<String> allowListDesc() {
         return this.allowListDesc;
     }
     /**
-     * 白名单 ID。
+     * Allowlist ID.
      * 
      */
     @Export(name="allowListId", refs={String.class}, tree="[0]")
     private Output<String> allowListId;
 
     /**
-     * @return 白名单 ID。
+     * @return Allowlist ID.
      * 
      */
     public Output<String> allowListId() {
         return this.allowListId;
     }
     /**
-     * 白名单中 IP 地址或 IP 地址段的数量。
+     * Number of IP addresses or IP segments in the allowlist.
      * 
      */
     @Export(name="allowListIpNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowListIpNum;
 
     /**
-     * @return 白名单中 IP 地址或 IP 地址段的数量。
+     * @return Number of IP addresses or IP segments in the allowlist.
      * 
      */
     public Output<Integer> allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
-     * 白名单名称的命名规则如下：在当前地域内，白名单名称唯一。以中文、字母或下划线（*）开头。只能包含中文、字母、数字、下划线（*）和中划线（-）。长度为 1~128 个字符。
+     * Allowlist naming rules: The allowlist name must be unique within the current region. It must start with a Chinese character, letter, or underscore (*). It can only contain Chinese characters, letters, numbers, underscores (*), and hyphens (-). Length must be 1–128 characters.
      * 
      */
     @Export(name="allowListName", refs={String.class}, tree="[0]")
     private Output<String> allowListName;
 
     /**
-     * @return 白名单名称的命名规则如下：在当前地域内，白名单名称唯一。以中文、字母或下划线（*）开头。只能包含中文、字母、数字、下划线（*）和中划线（-）。长度为 1~128 个字符。
+     * @return Allowlist naming rules: The allowlist name must be unique within the current region. It must start with a Chinese character, letter, or underscore (*). It can only contain Chinese characters, letters, numbers, underscores (*), and hyphens (-). Length must be 1–128 characters.
      * 
      */
     public Output<String> allowListName() {
         return this.allowListName;
     }
     /**
-     * 白名单采用的网络协议类型。取值为 IPv4（默认值）。
+     * Network protocol type used by the allowlist. Value: IPv4 (default).
      * 
      */
     @Export(name="allowListType", refs={String.class}, tree="[0]")
     private Output<String> allowListType;
 
     /**
-     * @return 白名单采用的网络协议类型。取值为 IPv4（默认值）。
+     * @return Network protocol type used by the allowlist. Value: IPv4 (default).
      * 
      */
     public Output<String> allowListType() {
         return this.allowListType;
     }
     /**
-     * 白名单中包含的 IP 地址。支持以下两种格式：IP 地址格式。例如：10.23.12.24。CIDR 的 IP 地址段格式。例如：10.23.12.0/24（无类别域间路由，24 表示了地址中前缀的长度，范围为 1~32）。说明每个白名单最多可添加 300 个 IP 或 IP 地址段，当 IP 较多时，建议合并为 IP 段填入，例如10.23.12.0/24。禁止将 0.0.0.0/0 之外的形如 x.x.x.x/0 结尾的 IP 地址加入白名单。该字段不能与 UserAllowList 字段同时使用。
+     * IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
      * 
      */
     @Export(name="allowLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowLists;
 
     /**
-     * @return 白名单中包含的 IP 地址。支持以下两种格式：IP 地址格式。例如：10.23.12.24。CIDR 的 IP 地址段格式。例如：10.23.12.0/24（无类别域间路由，24 表示了地址中前缀的长度，范围为 1~32）。说明每个白名单最多可添加 300 个 IP 或 IP 地址段，当 IP 较多时，建议合并为 IP 段填入，例如10.23.12.0/24。禁止将 0.0.0.0/0 之外的形如 x.x.x.x/0 结尾的 IP 地址加入白名单。该字段不能与 UserAllowList 字段同时使用。
+     * @return IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
      * 
      */
     public Output<List<String>> allowLists() {
         return this.allowLists;
     }
     /**
-     * 该白名单绑定的实例数量。
+     * Number of instances bound to this allowlist.
      * 
      */
     @Export(name="associatedInstanceNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> associatedInstanceNum;
 
     /**
-     * @return 该白名单绑定的实例数量。
+     * @return Number of instances bound to this allowlist.
      * 
      */
     public Output<Integer> associatedInstanceNum() {
@@ -190,28 +190,28 @@ public class AllowList extends com.pulumi.resources.CustomResource {
         return this.associatedInstances;
     }
     /**
-     * 按 IP 地址查询白名单。支持传入多个 IP 地址，多个 IP 地址使用英文逗号（,）分隔。说明如果白名单包含了多个 IP 地址的任意子集，该白名单就会被返回。
+     * Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
      * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
-     * @return 按 IP 地址查询白名单。支持传入多个 IP 地址，多个 IP 地址使用英文逗号（,）分隔。说明如果白名单包含了多个 IP 地址的任意子集，该白名单就会被返回。
+     * @return Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
      * 
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
     }
     /**
-     * 修改白名单的方式。取值：Cover：覆盖，即使用 AllowList 字段的值覆盖原白名单。默认值。Append：追加，即在原白名单中增加 AllowList 字段包含的 IP 地址。Delete：删除，即在原白名单中删除 AllowList 字段包含的 IP 地址。至少需要保留一个 IP 地址。注意如需修改的白名单绑定有安全组，或需要在修改白名单时为白名单绑定安全组，则 ModifyMode 只能取值为 Cover。
+     * Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
      * 
      */
     @Export(name="modifyMode", refs={String.class}, tree="[0]")
     private Output<String> modifyMode;
 
     /**
-     * @return 修改白名单的方式。取值：Cover：覆盖，即使用 AllowList 字段的值覆盖原白名单。默认值。Append：追加，即在原白名单中增加 AllowList 字段包含的 IP 地址。Delete：删除，即在原白名单中删除 AllowList 字段包含的 IP 地址。至少需要保留一个 IP 地址。注意如需修改的白名单绑定有安全组，或需要在修改白名单时为白名单绑定安全组，则 ModifyMode 只能取值为 Cover。
+     * @return Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
      * 
      */
     public Output<String> modifyMode() {
@@ -224,28 +224,28 @@ public class AllowList extends com.pulumi.resources.CustomResource {
         return this.securityGroupBindInfos;
     }
     /**
-     * 是否更新白名单所绑定的安全组。取值：true：更新。false：不更新。默认值。
+     * Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
      * 
      */
     @Export(name="updateSecurityGroup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> updateSecurityGroup;
 
     /**
-     * @return 是否更新白名单所绑定的安全组。取值：true：更新。false：不更新。默认值。
+     * @return Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
      * 
      */
     public Output<Boolean> updateSecurityGroup() {
         return this.updateSecurityGroup;
     }
     /**
-     * 安全组之外的、需要加入白名单的 IP 地址。可输入 IP 地址或 CIDR 格式的 IP 地址段。说明该字段不能与 AllowList 字段同时使用。
+     * IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
      * 
      */
     @Export(name="userAllowList", refs={String.class}, tree="[0]")
     private Output<String> userAllowList;
 
     /**
-     * @return 安全组之外的、需要加入白名单的 IP 地址。可输入 IP 地址或 CIDR 格式的 IP 地址段。说明该字段不能与 AllowList 字段同时使用。
+     * @return IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
      * 
      */
     public Output<String> userAllowList() {

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// 流日志对网卡出入流量的日志数据按需聚合处理后，投递至 日志服务 存储和检索分析，您可以根据流日志的分析监控网络流量、排查网络问题、优化网络架构。VPC流日志记录VPC网络流量的详细信息，用于网络监控、流量分析和故障排查。
+    /// After aggregating log data for inbound and outbound traffic on network interfaces as needed, flow logs are delivered to Log Service for storage and analysis. You can use flow log analysis to monitor network traffic, troubleshoot network issues, and optimize network architecture. VPC flow logs record detailed information about VPC network traffic for network monitoring, traffic analysis, and troubleshooting.
     /// 
     /// ## Example Usage
     /// 
@@ -58,97 +58,97 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class FlowLog : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+        /// Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
         /// </summary>
         [Output("aggregationInterval")]
         public Output<int> AggregationInterval { get; private set; } = null!;
 
         /// <summary>
-        /// 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+        /// Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
         /// </summary>
         [Output("businessStatus")]
         public Output<string> BusinessStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 流日志的创建时间。
+        /// Creation time of the flow log.
         /// </summary>
         [Output("createdAt")]
         public Output<string> CreatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+        /// Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
         /// </summary>
         [Output("enableIndex")]
         public Output<bool> EnableIndex { get; private set; } = null!;
 
         /// <summary>
-        /// 流日志的ID。
+        /// Stream log ID.
         /// </summary>
         [Output("flowLogId")]
         public Output<string> FlowLogId { get; private set; } = null!;
 
         /// <summary>
-        /// 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+        /// Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
         /// </summary>
         [Output("flowLogName")]
         public Output<string> FlowLogName { get; private set; } = null!;
 
         /// <summary>
-        /// 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+        /// Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
         /// </summary>
         [Output("lockReason")]
         public Output<string> LockReason { get; private set; } = null!;
 
         /// <summary>
-        /// 流日志项目的ID。
+        /// Flow log project ID.
         /// </summary>
         [Output("logProjectId")]
         public Output<string> LogProjectId { get; private set; } = null!;
 
         /// <summary>
-        /// 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+        /// Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
         /// </summary>
         [Output("logProjectName")]
         public Output<string> LogProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 流日志主题的ID。
+        /// Flow log topic ID.
         /// </summary>
         [Output("logTopicId")]
         public Output<string> LogTopicId { get; private set; } = null!;
 
         /// <summary>
-        /// 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+        /// Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
         /// </summary>
         [Output("logTopicName")]
         public Output<string> LogTopicName { get; private set; } = null!;
 
         /// <summary>
-        /// 流流日志所属项目的名称。
+        /// Name of the project to which the flow log belongs.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 要捕获流量的资源ID。
+        /// Resource ID for traffic capture.
         /// </summary>
         [Output("resourceId")]
         public Output<string> ResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+        /// Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
         /// </summary>
         [Output("resourceType")]
         public Output<string> ResourceType { get; private set; } = null!;
 
         /// <summary>
-        /// 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+        /// Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -157,19 +157,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.FlowLogTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+        /// Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
         /// </summary>
         [Output("trafficType")]
         public Output<string> TrafficType { get; private set; } = null!;
 
         /// <summary>
-        /// 更新流日志的时间。
+        /// Time when the stream log was updated.
         /// </summary>
         [Output("updatedAt")]
         public Output<string> UpdatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 流日志的VPC的ID。
+        /// VPC ID for the flow log.
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
@@ -222,55 +222,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class FlowLogArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+        /// Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
         /// </summary>
         [Input("aggregationInterval", required: true)]
         public Input<int> AggregationInterval { get; set; } = null!;
 
         /// <summary>
-        /// 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+        /// Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
         /// </summary>
         [Input("flowLogName", required: true)]
         public Input<string> FlowLogName { get; set; } = null!;
 
         /// <summary>
-        /// 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+        /// Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
         /// </summary>
         [Input("logProjectName", required: true)]
         public Input<string> LogProjectName { get; set; } = null!;
 
         /// <summary>
-        /// 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+        /// Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
         /// </summary>
         [Input("logTopicName", required: true)]
         public Input<string> LogTopicName { get; set; } = null!;
 
         /// <summary>
-        /// 流流日志所属项目的名称。
+        /// Name of the project to which the flow log belongs.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 要捕获流量的资源ID。
+        /// Resource ID for traffic capture.
         /// </summary>
         [Input("resourceId", required: true)]
         public Input<string> ResourceId { get; set; } = null!;
 
         /// <summary>
-        /// 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+        /// Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
         /// </summary>
         [Input("resourceType", required: true)]
         public Input<string> ResourceType { get; set; } = null!;
 
         /// <summary>
-        /// 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+        /// Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -284,7 +284,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+        /// Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
         /// </summary>
         [Input("trafficType", required: true)]
         public Input<string> TrafficType { get; set; } = null!;
@@ -298,97 +298,97 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class FlowLogState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+        /// Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
         /// </summary>
         [Input("aggregationInterval")]
         public Input<int>? AggregationInterval { get; set; }
 
         /// <summary>
-        /// 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+        /// Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
         /// </summary>
         [Input("businessStatus")]
         public Input<string>? BusinessStatus { get; set; }
 
         /// <summary>
-        /// 流日志的创建时间。
+        /// Creation time of the flow log.
         /// </summary>
         [Input("createdAt")]
         public Input<string>? CreatedAt { get; set; }
 
         /// <summary>
-        /// 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+        /// Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
         /// </summary>
         [Input("enableIndex")]
         public Input<bool>? EnableIndex { get; set; }
 
         /// <summary>
-        /// 流日志的ID。
+        /// Stream log ID.
         /// </summary>
         [Input("flowLogId")]
         public Input<string>? FlowLogId { get; set; }
 
         /// <summary>
-        /// 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+        /// Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
         /// </summary>
         [Input("flowLogName")]
         public Input<string>? FlowLogName { get; set; }
 
         /// <summary>
-        /// 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+        /// Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
         /// </summary>
         [Input("lockReason")]
         public Input<string>? LockReason { get; set; }
 
         /// <summary>
-        /// 流日志项目的ID。
+        /// Flow log project ID.
         /// </summary>
         [Input("logProjectId")]
         public Input<string>? LogProjectId { get; set; }
 
         /// <summary>
-        /// 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+        /// Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
         /// </summary>
         [Input("logProjectName")]
         public Input<string>? LogProjectName { get; set; }
 
         /// <summary>
-        /// 流日志主题的ID。
+        /// Flow log topic ID.
         /// </summary>
         [Input("logTopicId")]
         public Input<string>? LogTopicId { get; set; }
 
         /// <summary>
-        /// 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+        /// Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
         /// </summary>
         [Input("logTopicName")]
         public Input<string>? LogTopicName { get; set; }
 
         /// <summary>
-        /// 流流日志所属项目的名称。
+        /// Name of the project to which the flow log belongs.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 要捕获流量的资源ID。
+        /// Resource ID for traffic capture.
         /// </summary>
         [Input("resourceId")]
         public Input<string>? ResourceId { get; set; }
 
         /// <summary>
-        /// 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+        /// Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }
 
         /// <summary>
-        /// 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+        /// Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -402,19 +402,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+        /// Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
         /// </summary>
         [Input("trafficType")]
         public Input<string>? TrafficType { get; set; }
 
         /// <summary>
-        /// 更新流日志的时间。
+        /// Time when the stream log was updated.
         /// </summary>
         [Input("updatedAt")]
         public Input<string>? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 流日志的VPC的ID。
+        /// VPC ID for the flow log.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }

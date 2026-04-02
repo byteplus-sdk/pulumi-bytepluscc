@@ -25,14 +25,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     public static final DefaultNodePoolNodeConfigArgs Empty = new DefaultNodePoolNodeConfigArgs();
 
     /**
-     * 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+     * Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
      * 
      */
     @Import(name="additionalContainerStorageEnabled")
     private @Nullable Output<Boolean> additionalContainerStorageEnabled;
 
     /**
-     * @return 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+     * @return Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
      * 
      */
     public Optional<Output<Boolean>> additionalContainerStorageEnabled() {
@@ -40,14 +40,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+     * Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
      * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
-     * @return 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+     * @return Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
      * 
      */
     public Optional<Output<Boolean>> autoRenew() {
@@ -55,14 +55,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+     * Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
      * 
      */
     @Import(name="autoRenewPeriod")
     private @Nullable Output<Integer> autoRenewPeriod;
 
     /**
-     * @return 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+     * @return Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
      * 
      */
     public Optional<Output<Integer>> autoRenewPeriod() {
@@ -77,14 +77,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 实例在部署集中的分组号，0表示未设置
+     * Group number of the instance in the deployment set. 0 means not set
      * 
      */
     @Import(name="deploymentSetGroupNumber")
     private @Nullable Output<Integer> deploymentSetGroupNumber;
 
     /**
-     * @return 实例在部署集中的分组号，0表示未设置
+     * @return Group number of the instance in the deployment set. 0 means not set
      * 
      */
     public Optional<Output<Integer>> deploymentSetGroupNumber() {
@@ -92,14 +92,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 实例需要加入的部署集ID
+     * Deployment set ID to be added to the instance
      * 
      */
     @Import(name="deploymentSetId")
     private @Nullable Output<String> deploymentSetId;
 
     /**
-     * @return 实例需要加入的部署集ID
+     * @return Deployment set ID to be added to the instance
      * 
      */
     public Optional<Output<String>> deploymentSetId() {
@@ -107,14 +107,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点对应的主机名称。
+     * Host name corresponding to the node
      * 
      */
     @Import(name="hostname")
     private @Nullable Output<String> hostname;
 
     /**
-     * @return 节点对应的主机名称。
+     * @return Host name corresponding to the node
      * 
      */
     public Optional<Output<String>> hostname() {
@@ -122,14 +122,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+     * High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
      * 
      */
     @Import(name="hpcClusterIds")
     private @Nullable Output<List<String>> hpcClusterIds;
 
     /**
-     * @return 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+     * @return High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
      * 
      */
     public Optional<Output<List<String>>> hpcClusterIds() {
@@ -137,14 +137,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点对应云服务器所使用的镜像 ID。
+     * Image ID used by the cloud server corresponding to the node
      * 
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
-     * @return 节点对应云服务器所使用的镜像 ID。
+     * @return Image ID used by the cloud server corresponding to the node
      * 
      */
     public Optional<Output<String>> imageId() {
@@ -152,14 +152,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+     * Custom script executed after creating and initializing the node. Shell script in Base64 encoding
      * 
      */
     @Import(name="initializeScript")
     private @Nullable Output<String> initializeScript;
 
     /**
-     * @return 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+     * @return Custom script executed after creating and initializing the node. Shell script in Base64 encoding
      * 
      */
     public Optional<Output<String>> initializeScript() {
@@ -167,14 +167,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+     * Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
      * 
      */
     @Import(name="instanceChargeType")
     private @Nullable Output<String> instanceChargeType;
 
     /**
-     * @return 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+     * @return Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
      * 
      */
     public Optional<Output<String>> instanceChargeType() {
@@ -182,14 +182,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点（实例）名称。
+     * Node (instance) name
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 节点（实例）名称。
+     * @return Node (instance) name
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -197,14 +197,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点对应的云服务器实例规格 ID 列表。
+     * List of cloud server instance type IDs corresponding to the node
      * 
      */
     @Import(name="instanceTypeIds")
     private @Nullable Output<List<String>> instanceTypeIds;
 
     /**
-     * @return 节点对应的云服务器实例规格 ID 列表。
+     * @return List of cloud server instance type IDs corresponding to the node
      * 
      */
     public Optional<Output<List<String>>> instanceTypeIds() {
@@ -212,14 +212,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+     * Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
      * 
      */
     @Import(name="instancesDistribution")
     private @Nullable Output<DefaultNodePoolNodeConfigInstancesDistributionArgs> instancesDistribution;
 
     /**
-     * @return 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+     * @return Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
      * 
      */
     public Optional<Output<DefaultNodePoolNodeConfigInstancesDistributionArgs>> instancesDistribution() {
@@ -227,14 +227,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+     * Node name prefix. An empty string or nil means the node name prefix policy is not enabled
      * 
      */
     @Import(name="namePrefix")
     private @Nullable Output<String> namePrefix;
 
     /**
-     * @return 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+     * @return Node name prefix. An empty string or nil means the node name prefix policy is not enabled
      * 
      */
     public Optional<Output<String>> namePrefix() {
@@ -242,14 +242,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点间的网络通讯模式。
+     * Network communication mode between nodes
      * 
      */
     @Import(name="networkTrafficMode")
     private @Nullable Output<String> networkTrafficMode;
 
     /**
-     * @return 节点间的网络通讯模式。
+     * @return Network communication mode between nodes
      * 
      */
     public Optional<Output<String>> networkTrafficMode() {
@@ -257,14 +257,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+     * Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
      * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
-     * @return 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+     * @return Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
      * 
      */
     public Optional<Output<Integer>> period() {
@@ -272,14 +272,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 部署节点前执行脚本。
+     * Script executed before deploying nodes
      * 
      */
     @Import(name="preScript")
     private @Nullable Output<String> preScript;
 
     /**
-     * @return 部署节点前执行脚本。
+     * @return Script executed before deploying nodes
      * 
      */
     public Optional<Output<String>> preScript() {
@@ -287,14 +287,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * ECS所属项目，一个ECS只能归属于一个项目。
+     * The project to which the ECS belongs. Each ECS can only belong to one project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return ECS所属项目，一个ECS只能归属于一个项目。
+     * @return The project to which the ECS belongs. Each ECS can only belong to one project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -302,14 +302,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点自动开启公网访问的配置信息
+     * Configuration for automatic public network access for nodes
      * 
      */
     @Import(name="publicAccessConfig")
     private @Nullable Output<DefaultNodePoolNodeConfigPublicAccessConfigArgs> publicAccessConfig;
 
     /**
-     * @return 节点自动开启公网访问的配置信息
+     * @return Configuration for automatic public network access for nodes
      * 
      */
     public Optional<Output<DefaultNodePoolNodeConfigPublicAccessConfigArgs>> publicAccessConfig() {
@@ -317,14 +317,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+     * Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
      * 
      */
     @Import(name="publicAccessEnabled")
     private @Nullable Output<Boolean> publicAccessEnabled;
 
     /**
-     * @return 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+     * @return Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
      * 
      */
     public Optional<Output<Boolean>> publicAccessEnabled() {
@@ -332,14 +332,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点安全配置。
+     * Node security configuration.
      * 
      */
     @Import(name="security")
     private @Nullable Output<DefaultNodePoolNodeConfigSecurityArgs> security;
 
     /**
-     * @return 节点安全配置。
+     * @return Node security configuration.
      * 
      */
     public Optional<Output<DefaultNodePoolNodeConfigSecurityArgs>> security() {
@@ -347,14 +347,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+     * Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
      * 
      */
     @Import(name="spotStrategy")
     private @Nullable Output<String> spotStrategy;
 
     /**
-     * @return 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+     * @return Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
      * 
      */
     public Optional<Output<String>> spotStrategy() {
@@ -362,14 +362,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点网络所属的子网 ID 列表。
+     * List of subnet IDs to which the node network belongs.
      * 
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
-     * @return 节点网络所属的子网 ID 列表。
+     * @return List of subnet IDs to which the node network belongs.
      * 
      */
     public Optional<Output<List<String>>> subnetIds() {
@@ -377,14 +377,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 节点的系统盘配置。
+     * System disk configuration for the node
      * 
      */
     @Import(name="systemVolume")
     private @Nullable Output<DefaultNodePoolNodeConfigSystemVolumeArgs> systemVolume;
 
     /**
-     * @return 节点的系统盘配置。
+     * @return System disk configuration for the node
      * 
      */
     public Optional<Output<DefaultNodePoolNodeConfigSystemVolumeArgs>> systemVolume() {
@@ -448,7 +448,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param additionalContainerStorageEnabled 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+         * @param additionalContainerStorageEnabled Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
          * 
          * @return builder
          * 
@@ -459,7 +459,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param additionalContainerStorageEnabled 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+         * @param additionalContainerStorageEnabled Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
          * 
          * @return builder
          * 
@@ -469,7 +469,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autoRenew 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+         * @param autoRenew Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
          * 
          * @return builder
          * 
@@ -480,7 +480,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autoRenew 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+         * @param autoRenew Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
          * 
          * @return builder
          * 
@@ -490,7 +490,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autoRenewPeriod 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+         * @param autoRenewPeriod Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
          * 
          * @return builder
          * 
@@ -501,7 +501,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autoRenewPeriod 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+         * @param autoRenewPeriod Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param deploymentSetGroupNumber 实例在部署集中的分组号，0表示未设置
+         * @param deploymentSetGroupNumber Group number of the instance in the deployment set. 0 means not set
          * 
          * @return builder
          * 
@@ -535,7 +535,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param deploymentSetGroupNumber 实例在部署集中的分组号，0表示未设置
+         * @param deploymentSetGroupNumber Group number of the instance in the deployment set. 0 means not set
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param deploymentSetId 实例需要加入的部署集ID
+         * @param deploymentSetId Deployment set ID to be added to the instance
          * 
          * @return builder
          * 
@@ -556,7 +556,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param deploymentSetId 实例需要加入的部署集ID
+         * @param deploymentSetId Deployment set ID to be added to the instance
          * 
          * @return builder
          * 
@@ -566,7 +566,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param hostname 节点对应的主机名称。
+         * @param hostname Host name corresponding to the node
          * 
          * @return builder
          * 
@@ -577,7 +577,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param hostname 节点对应的主机名称。
+         * @param hostname Host name corresponding to the node
          * 
          * @return builder
          * 
@@ -587,7 +587,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param hpcClusterIds 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+         * @param hpcClusterIds High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
          * 
          * @return builder
          * 
@@ -598,7 +598,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param hpcClusterIds 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+         * @param hpcClusterIds High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
          * 
          * @return builder
          * 
@@ -608,7 +608,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param hpcClusterIds 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+         * @param hpcClusterIds High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
          * 
          * @return builder
          * 
@@ -618,7 +618,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param imageId 节点对应云服务器所使用的镜像 ID。
+         * @param imageId Image ID used by the cloud server corresponding to the node
          * 
          * @return builder
          * 
@@ -629,7 +629,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param imageId 节点对应云服务器所使用的镜像 ID。
+         * @param imageId Image ID used by the cloud server corresponding to the node
          * 
          * @return builder
          * 
@@ -639,7 +639,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param initializeScript 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+         * @param initializeScript Custom script executed after creating and initializing the node. Shell script in Base64 encoding
          * 
          * @return builder
          * 
@@ -650,7 +650,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param initializeScript 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+         * @param initializeScript Custom script executed after creating and initializing the node. Shell script in Base64 encoding
          * 
          * @return builder
          * 
@@ -660,7 +660,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param instanceChargeType 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+         * @param instanceChargeType Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
          * 
          * @return builder
          * 
@@ -671,7 +671,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param instanceChargeType 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+         * @param instanceChargeType Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
          * 
          * @return builder
          * 
@@ -681,7 +681,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param instanceName 节点（实例）名称。
+         * @param instanceName Node (instance) name
          * 
          * @return builder
          * 
@@ -692,7 +692,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param instanceName 节点（实例）名称。
+         * @param instanceName Node (instance) name
          * 
          * @return builder
          * 
@@ -702,7 +702,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param instanceTypeIds 节点对应的云服务器实例规格 ID 列表。
+         * @param instanceTypeIds List of cloud server instance type IDs corresponding to the node
          * 
          * @return builder
          * 
@@ -713,7 +713,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param instanceTypeIds 节点对应的云服务器实例规格 ID 列表。
+         * @param instanceTypeIds List of cloud server instance type IDs corresponding to the node
          * 
          * @return builder
          * 
@@ -723,7 +723,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param instanceTypeIds 节点对应的云服务器实例规格 ID 列表。
+         * @param instanceTypeIds List of cloud server instance type IDs corresponding to the node
          * 
          * @return builder
          * 
@@ -733,7 +733,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param instancesDistribution 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+         * @param instancesDistribution Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
          * 
          * @return builder
          * 
@@ -744,7 +744,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param instancesDistribution 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+         * @param instancesDistribution Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
          * 
          * @return builder
          * 
@@ -754,7 +754,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param namePrefix 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+         * @param namePrefix Node name prefix. An empty string or nil means the node name prefix policy is not enabled
          * 
          * @return builder
          * 
@@ -765,7 +765,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param namePrefix 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+         * @param namePrefix Node name prefix. An empty string or nil means the node name prefix policy is not enabled
          * 
          * @return builder
          * 
@@ -775,7 +775,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param networkTrafficMode 节点间的网络通讯模式。
+         * @param networkTrafficMode Network communication mode between nodes
          * 
          * @return builder
          * 
@@ -786,7 +786,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param networkTrafficMode 节点间的网络通讯模式。
+         * @param networkTrafficMode Network communication mode between nodes
          * 
          * @return builder
          * 
@@ -796,7 +796,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param period 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+         * @param period Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
          * 
          * @return builder
          * 
@@ -807,7 +807,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param period 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+         * @param period Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
          * 
          * @return builder
          * 
@@ -817,7 +817,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param preScript 部署节点前执行脚本。
+         * @param preScript Script executed before deploying nodes
          * 
          * @return builder
          * 
@@ -828,7 +828,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param preScript 部署节点前执行脚本。
+         * @param preScript Script executed before deploying nodes
          * 
          * @return builder
          * 
@@ -838,7 +838,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param projectName ECS所属项目，一个ECS只能归属于一个项目。
+         * @param projectName The project to which the ECS belongs. Each ECS can only belong to one project.
          * 
          * @return builder
          * 
@@ -849,7 +849,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param projectName ECS所属项目，一个ECS只能归属于一个项目。
+         * @param projectName The project to which the ECS belongs. Each ECS can only belong to one project.
          * 
          * @return builder
          * 
@@ -859,7 +859,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param publicAccessConfig 节点自动开启公网访问的配置信息
+         * @param publicAccessConfig Configuration for automatic public network access for nodes
          * 
          * @return builder
          * 
@@ -870,7 +870,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param publicAccessConfig 节点自动开启公网访问的配置信息
+         * @param publicAccessConfig Configuration for automatic public network access for nodes
          * 
          * @return builder
          * 
@@ -880,7 +880,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param publicAccessEnabled 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+         * @param publicAccessEnabled Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
          * 
          * @return builder
          * 
@@ -891,7 +891,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param publicAccessEnabled 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+         * @param publicAccessEnabled Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
          * 
          * @return builder
          * 
@@ -901,7 +901,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param security 节点安全配置。
+         * @param security Node security configuration.
          * 
          * @return builder
          * 
@@ -912,7 +912,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param security 节点安全配置。
+         * @param security Node security configuration.
          * 
          * @return builder
          * 
@@ -922,7 +922,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param spotStrategy 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+         * @param spotStrategy Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
          * 
          * @return builder
          * 
@@ -933,7 +933,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param spotStrategy 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+         * @param spotStrategy Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
          * 
          * @return builder
          * 
@@ -943,7 +943,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param subnetIds 节点网络所属的子网 ID 列表。
+         * @param subnetIds List of subnet IDs to which the node network belongs.
          * 
          * @return builder
          * 
@@ -954,7 +954,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param subnetIds 节点网络所属的子网 ID 列表。
+         * @param subnetIds List of subnet IDs to which the node network belongs.
          * 
          * @return builder
          * 
@@ -964,7 +964,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param subnetIds 节点网络所属的子网 ID 列表。
+         * @param subnetIds List of subnet IDs to which the node network belongs.
          * 
          * @return builder
          * 
@@ -974,7 +974,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param systemVolume 节点的系统盘配置。
+         * @param systemVolume System disk configuration for the node
          * 
          * @return builder
          * 
@@ -985,7 +985,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param systemVolume 节点的系统盘配置。
+         * @param systemVolume System disk configuration for the node
          * 
          * @return builder
          * 

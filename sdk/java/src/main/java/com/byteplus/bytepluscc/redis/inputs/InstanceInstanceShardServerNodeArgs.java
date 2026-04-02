@@ -16,14 +16,14 @@ public final class InstanceInstanceShardServerNodeArgs extends com.pulumi.resour
     public static final InstanceInstanceShardServerNodeArgs Empty = new InstanceInstanceShardServerNodeArgs();
 
     /**
-     * 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+     * Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
      * 
      */
     @Import(name="currentRole")
     private @Nullable Output<String> currentRole;
 
     /**
-     * @return 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+     * @return Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
      * 
      */
     public Optional<Output<String>> currentRole() {
@@ -31,14 +31,14 @@ public final class InstanceInstanceShardServerNodeArgs extends com.pulumi.resour
     }
 
     /**
-     * 节点 ID。
+     * Node ID.
      * 
      */
     @Import(name="nodeId")
     private @Nullable Output<String> nodeId;
 
     /**
-     * @return 节点 ID。
+     * @return Node ID.
      * 
      */
     public Optional<Output<String>> nodeId() {
@@ -46,14 +46,14 @@ public final class InstanceInstanceShardServerNodeArgs extends com.pulumi.resour
     }
 
     /**
-     * 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+     * Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+     * @return Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
      * 
      */
     public Optional<Output<String>> status() {
@@ -61,14 +61,14 @@ public final class InstanceInstanceShardServerNodeArgs extends com.pulumi.resour
     }
 
     /**
-     * 节点所在的可用区。
+     * Availability zone where the node is located.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 节点所在的可用区。
+     * @return Availability zone where the node is located.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -103,7 +103,7 @@ public final class InstanceInstanceShardServerNodeArgs extends com.pulumi.resour
         }
 
         /**
-         * @param currentRole 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+         * @param currentRole Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class InstanceInstanceShardServerNodeArgs extends com.pulumi.resour
         }
 
         /**
-         * @param currentRole 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+         * @param currentRole Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class InstanceInstanceShardServerNodeArgs extends com.pulumi.resour
         }
 
         /**
-         * @param nodeId 节点 ID。
+         * @param nodeId Node ID.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class InstanceInstanceShardServerNodeArgs extends com.pulumi.resour
         }
 
         /**
-         * @param nodeId 节点 ID。
+         * @param nodeId Node ID.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class InstanceInstanceShardServerNodeArgs extends com.pulumi.resour
         }
 
         /**
-         * @param status 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+         * @param status Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class InstanceInstanceShardServerNodeArgs extends com.pulumi.resour
         }
 
         /**
-         * @param status 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+         * @param status Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class InstanceInstanceShardServerNodeArgs extends com.pulumi.resour
         }
 
         /**
-         * @param zoneId 节点所在的可用区。
+         * @param zoneId Availability zone where the node is located.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class InstanceInstanceShardServerNodeArgs extends com.pulumi.resour
         }
 
         /**
-         * @param zoneId 节点所在的可用区。
+         * @param zoneId Availability zone where the node is located.
          * 
          * @return builder
          * 

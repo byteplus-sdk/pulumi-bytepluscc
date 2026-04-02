@@ -26,10 +26,10 @@ class SchemaArgs:
                  schema_name: pulumi.Input[builtins.str]):
         """
         The set of arguments for constructing a Schema resource.
-        :param pulumi.Input[builtins.str] db_name: 数据库名称
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID
-        :param pulumi.Input[builtins.str] owner: Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
-        :param pulumi.Input[builtins.str] schema_name: Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+        :param pulumi.Input[builtins.str] db_name: Database name
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] owner: Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
+        :param pulumi.Input[builtins.str] schema_name: Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
         """
         pulumi.set(__self__, "db_name", db_name)
         pulumi.set(__self__, "instance_id", instance_id)
@@ -40,7 +40,7 @@ class SchemaArgs:
     @pulumi.getter(name="dbName")
     def db_name(self) -> pulumi.Input[builtins.str]:
         """
-        数据库名称
+        Database name
         """
         return pulumi.get(self, "db_name")
 
@@ -52,7 +52,7 @@ class SchemaArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例 ID
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -64,7 +64,7 @@ class SchemaArgs:
     @pulumi.getter
     def owner(self) -> pulumi.Input[builtins.str]:
         """
-        Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
+        Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
         """
         return pulumi.get(self, "owner")
 
@@ -76,7 +76,7 @@ class SchemaArgs:
     @pulumi.getter(name="schemaName")
     def schema_name(self) -> pulumi.Input[builtins.str]:
         """
-        Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+        Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
         """
         return pulumi.get(self, "schema_name")
 
@@ -94,10 +94,10 @@ class _SchemaState:
                  schema_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Schema resources.
-        :param pulumi.Input[builtins.str] db_name: 数据库名称
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID
-        :param pulumi.Input[builtins.str] owner: Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
-        :param pulumi.Input[builtins.str] schema_name: Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+        :param pulumi.Input[builtins.str] db_name: Database name
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] owner: Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
+        :param pulumi.Input[builtins.str] schema_name: Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
         """
         if db_name is not None:
             pulumi.set(__self__, "db_name", db_name)
@@ -112,7 +112,7 @@ class _SchemaState:
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库名称
+        Database name
         """
         return pulumi.get(self, "db_name")
 
@@ -124,7 +124,7 @@ class _SchemaState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -136,7 +136,7 @@ class _SchemaState:
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
+        Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
         """
         return pulumi.get(self, "owner")
 
@@ -148,7 +148,7 @@ class _SchemaState:
     @pulumi.getter(name="schemaName")
     def schema_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+        Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
         """
         return pulumi.get(self, "schema_name")
 
@@ -169,7 +169,7 @@ class Schema(pulumi.CustomResource):
                  schema_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        RDS PostgreSQL Schema 资源类型
+        RDS PostgreSQL Schema resource type
 
         ## Example Usage
 
@@ -192,10 +192,10 @@ class Schema(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] db_name: 数据库名称
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID
-        :param pulumi.Input[builtins.str] owner: Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
-        :param pulumi.Input[builtins.str] schema_name: Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+        :param pulumi.Input[builtins.str] db_name: Database name
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] owner: Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
+        :param pulumi.Input[builtins.str] schema_name: Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
         """
         ...
     @overload
@@ -204,7 +204,7 @@ class Schema(pulumi.CustomResource):
                  args: SchemaArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        RDS PostgreSQL Schema 资源类型
+        RDS PostgreSQL Schema resource type
 
         ## Example Usage
 
@@ -286,10 +286,10 @@ class Schema(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] db_name: 数据库名称
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID
-        :param pulumi.Input[builtins.str] owner: Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
-        :param pulumi.Input[builtins.str] schema_name: Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+        :param pulumi.Input[builtins.str] db_name: Database name
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] owner: Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
+        :param pulumi.Input[builtins.str] schema_name: Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -305,7 +305,7 @@ class Schema(pulumi.CustomResource):
     @pulumi.getter(name="dbName")
     def db_name(self) -> pulumi.Output[builtins.str]:
         """
-        数据库名称
+        Database name
         """
         return pulumi.get(self, "db_name")
 
@@ -313,7 +313,7 @@ class Schema(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例 ID
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -321,7 +321,7 @@ class Schema(pulumi.CustomResource):
     @pulumi.getter
     def owner(self) -> pulumi.Output[builtins.str]:
         """
-        Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
+        Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
         """
         return pulumi.get(self, "owner")
 
@@ -329,7 +329,7 @@ class Schema(pulumi.CustomResource):
     @pulumi.getter(name="schemaName")
     def schema_name(self) -> pulumi.Output[builtins.str]:
         """
-        Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+        Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
         """
         return pulumi.get(self, "schema_name")
 

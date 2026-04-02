@@ -16,14 +16,14 @@ public final class ImageDetectionResultsItemArgs extends com.pulumi.resources.Re
     public static final ImageDetectionResultsItemArgs Empty = new ImageDetectionResultsItemArgs();
 
     /**
-     * 检测项名称。
+     * Check item name
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 检测项名称。
+     * @return Check item name
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +31,14 @@ public final class ImageDetectionResultsItemArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 该检测项对应结果。
+     * Result for this check item.
      * 
      */
     @Import(name="result")
     private @Nullable Output<String> result;
 
     /**
-     * @return 该检测项对应结果。
+     * @return Result for this check item.
      * 
      */
     public Optional<Output<String>> result() {
@@ -46,14 +46,14 @@ public final class ImageDetectionResultsItemArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 风险描述码。
+     * Risk description code
      * 
      */
     @Import(name="riskCode")
     private @Nullable Output<String> riskCode;
 
     /**
-     * @return 风险描述码。
+     * @return Risk description code
      * 
      */
     public Optional<Output<String>> riskCode() {
@@ -61,14 +61,14 @@ public final class ImageDetectionResultsItemArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 风险等级。若该参数返回值为空，表示无风险。
+     * Risk level. If this parameter is empty, it means no risk
      * 
      */
     @Import(name="riskLevel")
     private @Nullable Output<String> riskLevel;
 
     /**
-     * @return 风险等级。若该参数返回值为空，表示无风险。
+     * @return Risk level. If this parameter is empty, it means no risk
      * 
      */
     public Optional<Output<String>> riskLevel() {
@@ -103,7 +103,7 @@ public final class ImageDetectionResultsItemArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name 检测项名称。
+         * @param name Check item name
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class ImageDetectionResultsItemArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name 检测项名称。
+         * @param name Check item name
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class ImageDetectionResultsItemArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param result 该检测项对应结果。
+         * @param result Result for this check item.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class ImageDetectionResultsItemArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param result 该检测项对应结果。
+         * @param result Result for this check item.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class ImageDetectionResultsItemArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param riskCode 风险描述码。
+         * @param riskCode Risk description code
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class ImageDetectionResultsItemArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param riskCode 风险描述码。
+         * @param riskCode Risk description code
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class ImageDetectionResultsItemArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param riskLevel 风险等级。若该参数返回值为空，表示无风险。
+         * @param riskLevel Risk level. If this parameter is empty, it means no risk
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class ImageDetectionResultsItemArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param riskLevel 风险等级。若该参数返回值为空，表示无风险。
+         * @param riskLevel Risk level. If this parameter is empty, it means no risk
          * 
          * @return builder
          * 

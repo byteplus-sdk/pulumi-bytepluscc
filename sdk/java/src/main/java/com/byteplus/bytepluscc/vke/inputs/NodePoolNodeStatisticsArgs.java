@@ -16,14 +16,14 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
     public static final NodePoolNodeStatisticsArgs Empty = new NodePoolNodeStatisticsArgs();
 
     /**
-     * Phase=Creating的节点总数量。
+     * Total number of nodes in Phase=Creating.
      * 
      */
     @Import(name="creatingCount")
     private @Nullable Output<Integer> creatingCount;
 
     /**
-     * @return Phase=Creating的节点总数量。
+     * @return Total number of nodes in Phase=Creating.
      * 
      */
     public Optional<Output<Integer>> creatingCount() {
@@ -31,14 +31,14 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Phase=Deleting的节点总数量。
+     * Total number of nodes with Phase=Deleting
      * 
      */
     @Import(name="deletingCount")
     private @Nullable Output<Integer> deletingCount;
 
     /**
-     * @return Phase=Deleting的节点总数量。
+     * @return Total number of nodes with Phase=Deleting
      * 
      */
     public Optional<Output<Integer>> deletingCount() {
@@ -46,14 +46,14 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Phase=Failed的节点总数量。
+     * Total number of nodes with Phase=Failed
      * 
      */
     @Import(name="failedCount")
     private @Nullable Output<Integer> failedCount;
 
     /**
-     * @return Phase=Failed的节点总数量。
+     * @return Total number of nodes with Phase=Failed
      * 
      */
     public Optional<Output<Integer>> failedCount() {
@@ -61,14 +61,14 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Phase=Running的节点总数量。
+     * Total number of nodes with Phase=Running
      * 
      */
     @Import(name="runningCount")
     private @Nullable Output<Integer> runningCount;
 
     /**
-     * @return Phase=Running的节点总数量。
+     * @return Total number of nodes with Phase=Running
      * 
      */
     public Optional<Output<Integer>> runningCount() {
@@ -76,14 +76,14 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 节点池中的节点总数量。
+     * Total number of nodes in the node pool
      * 
      */
     @Import(name="totalCount")
     private @Nullable Output<Integer> totalCount;
 
     /**
-     * @return 节点池中的节点总数量。
+     * @return Total number of nodes in the node pool
      * 
      */
     public Optional<Output<Integer>> totalCount() {
@@ -91,14 +91,14 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Phase=Updating的节点总数量。
+     * Total number of nodes with Phase=Updating
      * 
      */
     @Import(name="updatingCount")
     private @Nullable Output<Integer> updatingCount;
 
     /**
-     * @return Phase=Updating的节点总数量。
+     * @return Total number of nodes with Phase=Updating
      * 
      */
     public Optional<Output<Integer>> updatingCount() {
@@ -135,7 +135,7 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param creatingCount Phase=Creating的节点总数量。
+         * @param creatingCount Total number of nodes in Phase=Creating.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param creatingCount Phase=Creating的节点总数量。
+         * @param creatingCount Total number of nodes in Phase=Creating.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param deletingCount Phase=Deleting的节点总数量。
+         * @param deletingCount Total number of nodes with Phase=Deleting
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param deletingCount Phase=Deleting的节点总数量。
+         * @param deletingCount Total number of nodes with Phase=Deleting
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param failedCount Phase=Failed的节点总数量。
+         * @param failedCount Total number of nodes with Phase=Failed
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param failedCount Phase=Failed的节点总数量。
+         * @param failedCount Total number of nodes with Phase=Failed
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param runningCount Phase=Running的节点总数量。
+         * @param runningCount Total number of nodes with Phase=Running
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param runningCount Phase=Running的节点总数量。
+         * @param runningCount Total number of nodes with Phase=Running
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param totalCount 节点池中的节点总数量。
+         * @param totalCount Total number of nodes in the node pool
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param totalCount 节点池中的节点总数量。
+         * @param totalCount Total number of nodes in the node pool
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param updatingCount Phase=Updating的节点总数量。
+         * @param updatingCount Total number of nodes with Phase=Updating
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class NodePoolNodeStatisticsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param updatingCount Phase=Updating的节点总数量。
+         * @param updatingCount Total number of nodes with Phase=Updating
          * 
          * @return builder
          * 

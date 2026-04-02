@@ -30,31 +30,31 @@ type LookupUnitArgs struct {
 
 // A collection of values returned by getUnit.
 type LookupUnitResult struct {
-	// 创建时间。
+	// Creation time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 删除标识。
+	// Deletion flag.
 	DeleteUk string `pulumi:"deleteUk"`
-	// 删除时间。
+	// Deletion time.
 	DeletedTime string `pulumi:"deletedTime"`
-	// 深度。
+	// Depth.
 	Depth int `pulumi:"depth"`
-	// 描述。
+	// Description.
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 组织单元名称。
+	// Organizational unit name.
 	Name string `pulumi:"name"`
-	// 组织ID。
+	// Organization ID.
 	OrgId string `pulumi:"orgId"`
-	// 组织类型。企业组织： 1
+	// Organization type. Enterprise organization: 1
 	OrgType int `pulumi:"orgType"`
-	// 组织单元ID。
+	// Organizational unit ID.
 	OrgUnitId string `pulumi:"orgUnitId"`
-	// 管理员ID。
+	// Administrator ID.
 	Owner string `pulumi:"owner"`
-	// 父单元Id。
+	// Parent unit ID.
 	ParentId string `pulumi:"parentId"`
-	// 更新时间。
+	// Update time.
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -92,27 +92,27 @@ func (o LookupUnitResultOutput) ToLookupUnitResultOutputWithContext(ctx context.
 	return o
 }
 
-// 创建时间。
+// Creation time.
 func (o LookupUnitResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUnitResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 删除标识。
+// Deletion flag.
 func (o LookupUnitResultOutput) DeleteUk() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUnitResult) string { return v.DeleteUk }).(pulumi.StringOutput)
 }
 
-// 删除时间。
+// Deletion time.
 func (o LookupUnitResultOutput) DeletedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUnitResult) string { return v.DeletedTime }).(pulumi.StringOutput)
 }
 
-// 深度。
+// Depth.
 func (o LookupUnitResultOutput) Depth() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupUnitResult) int { return v.Depth }).(pulumi.IntOutput)
 }
 
-// 描述。
+// Description.
 func (o LookupUnitResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUnitResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -122,37 +122,37 @@ func (o LookupUnitResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUnitResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 组织单元名称。
+// Organizational unit name.
 func (o LookupUnitResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUnitResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 组织ID。
+// Organization ID.
 func (o LookupUnitResultOutput) OrgId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUnitResult) string { return v.OrgId }).(pulumi.StringOutput)
 }
 
-// 组织类型。企业组织： 1
+// Organization type. Enterprise organization: 1
 func (o LookupUnitResultOutput) OrgType() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupUnitResult) int { return v.OrgType }).(pulumi.IntOutput)
 }
 
-// 组织单元ID。
+// Organizational unit ID.
 func (o LookupUnitResultOutput) OrgUnitId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUnitResult) string { return v.OrgUnitId }).(pulumi.StringOutput)
 }
 
-// 管理员ID。
+// Administrator ID.
 func (o LookupUnitResultOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUnitResult) string { return v.Owner }).(pulumi.StringOutput)
 }
 
-// 父单元Id。
+// Parent unit ID.
 func (o LookupUnitResultOutput) ParentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUnitResult) string { return v.ParentId }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update time.
 func (o LookupUnitResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUnitResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

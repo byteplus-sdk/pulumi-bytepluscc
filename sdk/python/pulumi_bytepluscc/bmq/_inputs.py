@@ -46,19 +46,19 @@ if not MYPY:
     class GroupResetInfoArgsDict(TypedDict):
         offset_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+        This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
         """
         partition_id: NotRequired[pulumi.Input[builtins.int]]
         """
-        分区序号。
+        Partition number.
         """
         reset_by: NotRequired[pulumi.Input[builtins.str]]
         """
-        重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+        Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
         """
         reset_value: NotRequired[pulumi.Input[builtins.int]]
         """
-        重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+        Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
         """
         topic_id: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -76,10 +76,10 @@ class GroupResetInfoArgs:
                  reset_value: Optional[pulumi.Input[builtins.int]] = None,
                  topic_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] offset_type: 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
-        :param pulumi.Input[builtins.int] partition_id: 分区序号。
-        :param pulumi.Input[builtins.str] reset_by: 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
-        :param pulumi.Input[builtins.int] reset_value: 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+        :param pulumi.Input[builtins.str] offset_type: This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+        :param pulumi.Input[builtins.int] partition_id: Partition number.
+        :param pulumi.Input[builtins.str] reset_by: Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+        :param pulumi.Input[builtins.int] reset_value: Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
         :param pulumi.Input[builtins.str] topic_id: Topic ID。
         """
         if offset_type is not None:
@@ -97,7 +97,7 @@ class GroupResetInfoArgs:
     @pulumi.getter(name="offsetType")
     def offset_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+        This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
         """
         return pulumi.get(self, "offset_type")
 
@@ -109,7 +109,7 @@ class GroupResetInfoArgs:
     @pulumi.getter(name="partitionId")
     def partition_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        分区序号。
+        Partition number.
         """
         return pulumi.get(self, "partition_id")
 
@@ -121,7 +121,7 @@ class GroupResetInfoArgs:
     @pulumi.getter(name="resetBy")
     def reset_by(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+        Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
         """
         return pulumi.get(self, "reset_by")
 
@@ -133,7 +133,7 @@ class GroupResetInfoArgs:
     @pulumi.getter(name="resetValue")
     def reset_value(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+        Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
         """
         return pulumi.get(self, "reset_value")
 
@@ -158,28 +158,28 @@ if not MYPY:
     class GroupTopicInfoArgsDict(TypedDict):
         create_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        Topic 的创建时间。
+        Topic creation time.
         """
         description: NotRequired[pulumi.Input[builtins.str]]
         """
-        Topic 的描述语句。
+        Topic description.
         """
         lag: NotRequired[pulumi.Input[builtins.int]]
         """
-        Topic 中未被消费的消息条数。
+        Number of unconsumed messages in the Topic.
         """
         partition_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['GroupTopicInfoPartitionInfoArgsDict']]]]
         partitions: NotRequired[pulumi.Input[builtins.int]]
         """
-        Topic 分区数。
+        Number of Topic partitions.
         """
         retention: NotRequired[pulumi.Input[builtins.int]]
         """
-        数据在 Topic 中的保留时长，单位为小时。
+        Retention period of data in the Topic, in hours.
         """
         status: NotRequired[pulumi.Input[builtins.str]]
         """
-        Topic 的状态。
+        Topic status.
         """
         topic_id: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -187,7 +187,7 @@ if not MYPY:
         """
         topic_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        Topic 的名称。
+        Topic name.
         """
 elif False:
     GroupTopicInfoArgsDict: TypeAlias = Mapping[str, Any]
@@ -205,14 +205,14 @@ class GroupTopicInfoArgs:
                  topic_id: Optional[pulumi.Input[builtins.str]] = None,
                  topic_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] create_time: Topic 的创建时间。
-        :param pulumi.Input[builtins.str] description: Topic 的描述语句。
-        :param pulumi.Input[builtins.int] lag: Topic 中未被消费的消息条数。
-        :param pulumi.Input[builtins.int] partitions: Topic 分区数。
-        :param pulumi.Input[builtins.int] retention: 数据在 Topic 中的保留时长，单位为小时。
-        :param pulumi.Input[builtins.str] status: Topic 的状态。
+        :param pulumi.Input[builtins.str] create_time: Topic creation time.
+        :param pulumi.Input[builtins.str] description: Topic description.
+        :param pulumi.Input[builtins.int] lag: Number of unconsumed messages in the Topic.
+        :param pulumi.Input[builtins.int] partitions: Number of Topic partitions.
+        :param pulumi.Input[builtins.int] retention: Retention period of data in the Topic, in hours.
+        :param pulumi.Input[builtins.str] status: Topic status.
         :param pulumi.Input[builtins.str] topic_id: Topic ID。
-        :param pulumi.Input[builtins.str] topic_name: Topic 的名称。
+        :param pulumi.Input[builtins.str] topic_name: Topic name.
         """
         if create_time is not None:
             pulumi.set(__self__, "create_time", create_time)
@@ -237,7 +237,7 @@ class GroupTopicInfoArgs:
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Topic 的创建时间。
+        Topic creation time.
         """
         return pulumi.get(self, "create_time")
 
@@ -249,7 +249,7 @@ class GroupTopicInfoArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Topic 的描述语句。
+        Topic description.
         """
         return pulumi.get(self, "description")
 
@@ -261,7 +261,7 @@ class GroupTopicInfoArgs:
     @pulumi.getter
     def lag(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Topic 中未被消费的消息条数。
+        Number of unconsumed messages in the Topic.
         """
         return pulumi.get(self, "lag")
 
@@ -282,7 +282,7 @@ class GroupTopicInfoArgs:
     @pulumi.getter
     def partitions(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Topic 分区数。
+        Number of Topic partitions.
         """
         return pulumi.get(self, "partitions")
 
@@ -294,7 +294,7 @@ class GroupTopicInfoArgs:
     @pulumi.getter
     def retention(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        数据在 Topic 中的保留时长，单位为小时。
+        Retention period of data in the Topic, in hours.
         """
         return pulumi.get(self, "retention")
 
@@ -306,7 +306,7 @@ class GroupTopicInfoArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Topic 的状态。
+        Topic status.
         """
         return pulumi.get(self, "status")
 
@@ -330,7 +330,7 @@ class GroupTopicInfoArgs:
     @pulumi.getter(name="topicName")
     def topic_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Topic 的名称。
+        Topic name.
         """
         return pulumi.get(self, "topic_name")
 
@@ -343,27 +343,27 @@ if not MYPY:
     class GroupTopicInfoPartitionInfoArgsDict(TypedDict):
         current_offset: NotRequired[pulumi.Input[builtins.int]]
         """
-        当前消费位点。
+        Current consumption position.
         """
         group_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        Consumer Group 的名称。
+        Name of the Consumer Group.
         """
         lag: NotRequired[pulumi.Input[builtins.int]]
         """
-        分区中未被消费的消息条数。
+        Number of unconsumed messages in the partition.
         """
         latest_offset: NotRequired[pulumi.Input[builtins.int]]
         """
-        最新消费位点。
+        Latest consumption position.
         """
         partition_id: NotRequired[pulumi.Input[builtins.int]]
         """
-        分区序号。
+        Partition number.
         """
         topic_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        Consumer Group 订阅的 Topic 名称。
+        Name of the Topic subscribed by the Consumer Group.
         """
 elif False:
     GroupTopicInfoPartitionInfoArgsDict: TypeAlias = Mapping[str, Any]
@@ -378,12 +378,12 @@ class GroupTopicInfoPartitionInfoArgs:
                  partition_id: Optional[pulumi.Input[builtins.int]] = None,
                  topic_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.int] current_offset: 当前消费位点。
-        :param pulumi.Input[builtins.str] group_name: Consumer Group 的名称。
-        :param pulumi.Input[builtins.int] lag: 分区中未被消费的消息条数。
-        :param pulumi.Input[builtins.int] latest_offset: 最新消费位点。
-        :param pulumi.Input[builtins.int] partition_id: 分区序号。
-        :param pulumi.Input[builtins.str] topic_name: Consumer Group 订阅的 Topic 名称。
+        :param pulumi.Input[builtins.int] current_offset: Current consumption position.
+        :param pulumi.Input[builtins.str] group_name: Name of the Consumer Group.
+        :param pulumi.Input[builtins.int] lag: Number of unconsumed messages in the partition.
+        :param pulumi.Input[builtins.int] latest_offset: Latest consumption position.
+        :param pulumi.Input[builtins.int] partition_id: Partition number.
+        :param pulumi.Input[builtins.str] topic_name: Name of the Topic subscribed by the Consumer Group.
         """
         if current_offset is not None:
             pulumi.set(__self__, "current_offset", current_offset)
@@ -402,7 +402,7 @@ class GroupTopicInfoPartitionInfoArgs:
     @pulumi.getter(name="currentOffset")
     def current_offset(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        当前消费位点。
+        Current consumption position.
         """
         return pulumi.get(self, "current_offset")
 
@@ -414,7 +414,7 @@ class GroupTopicInfoPartitionInfoArgs:
     @pulumi.getter(name="groupName")
     def group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Consumer Group 的名称。
+        Name of the Consumer Group.
         """
         return pulumi.get(self, "group_name")
 
@@ -426,7 +426,7 @@ class GroupTopicInfoPartitionInfoArgs:
     @pulumi.getter
     def lag(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        分区中未被消费的消息条数。
+        Number of unconsumed messages in the partition.
         """
         return pulumi.get(self, "lag")
 
@@ -438,7 +438,7 @@ class GroupTopicInfoPartitionInfoArgs:
     @pulumi.getter(name="latestOffset")
     def latest_offset(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最新消费位点。
+        Latest consumption position.
         """
         return pulumi.get(self, "latest_offset")
 
@@ -450,7 +450,7 @@ class GroupTopicInfoPartitionInfoArgs:
     @pulumi.getter(name="partitionId")
     def partition_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        分区序号。
+        Partition number.
         """
         return pulumi.get(self, "partition_id")
 
@@ -462,7 +462,7 @@ class GroupTopicInfoPartitionInfoArgs:
     @pulumi.getter(name="topicName")
     def topic_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Consumer Group 订阅的 Topic 名称。
+        Name of the Topic subscribed by the Consumer Group.
         """
         return pulumi.get(self, "topic_name")
 
@@ -475,11 +475,11 @@ if not MYPY:
     class InstanceEndpointsArgsDict(TypedDict):
         overlay: NotRequired[pulumi.Input['InstanceEndpointsOverlayArgsDict']]
         """
-        实例私网访问接入点响应数据。
+        Instance private network access endpoint response data
         """
         public: NotRequired[pulumi.Input['InstanceEndpointsPublicArgsDict']]
         """
-        实例公网访问接入点响应数据。
+        Instance public access endpoint response data
         """
 elif False:
     InstanceEndpointsArgsDict: TypeAlias = Mapping[str, Any]
@@ -490,8 +490,8 @@ class InstanceEndpointsArgs:
                  overlay: Optional[pulumi.Input['InstanceEndpointsOverlayArgs']] = None,
                  public: Optional[pulumi.Input['InstanceEndpointsPublicArgs']] = None):
         """
-        :param pulumi.Input['InstanceEndpointsOverlayArgs'] overlay: 实例私网访问接入点响应数据。
-        :param pulumi.Input['InstanceEndpointsPublicArgs'] public: 实例公网访问接入点响应数据。
+        :param pulumi.Input['InstanceEndpointsOverlayArgs'] overlay: Instance private network access endpoint response data
+        :param pulumi.Input['InstanceEndpointsPublicArgs'] public: Instance public access endpoint response data
         """
         if overlay is not None:
             pulumi.set(__self__, "overlay", overlay)
@@ -502,7 +502,7 @@ class InstanceEndpointsArgs:
     @pulumi.getter
     def overlay(self) -> Optional[pulumi.Input['InstanceEndpointsOverlayArgs']]:
         """
-        实例私网访问接入点响应数据。
+        Instance private network access endpoint response data
         """
         return pulumi.get(self, "overlay")
 
@@ -514,7 +514,7 @@ class InstanceEndpointsArgs:
     @pulumi.getter
     def public(self) -> Optional[pulumi.Input['InstanceEndpointsPublicArgs']]:
         """
-        实例公网访问接入点响应数据。
+        Instance public access endpoint response data
         """
         return pulumi.get(self, "public")
 
@@ -527,43 +527,43 @@ if not MYPY:
     class InstanceEndpointsOverlayArgsDict(TypedDict):
         address: NotRequired[pulumi.Input[builtins.str]]
         """
-        域名映射地址。
+        Domain mapping address
         """
         eip_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例绑定的EIP的ID。
+        ID of the EIP bound to the instance
         """
         plain: NotRequired[pulumi.Input[builtins.str]]
         """
-        私网Plain接入点。
+        Private network Plain endpoint
         """
         plain_port: NotRequired[pulumi.Input[builtins.int]]
         """
-        普通接入点端口。
+        Standard endpoint port
         """
         sasl: NotRequired[pulumi.Input[builtins.str]]
         """
-        私网SASL认证接入点。
+        Private network SASL authentication endpoint
         """
         sasl_port: NotRequired[pulumi.Input[builtins.int]]
         """
-        认证接入点端口。
+        Authentication endpoint port
         """
         ssl: NotRequired[pulumi.Input[builtins.str]]
         """
-        加密接入点。
+        Encrypted endpoint
         """
         ssl_port: NotRequired[pulumi.Input[builtins.int]]
         """
-        加密接入点端口。
+        Encrypted endpoint port
         """
         status: NotRequired[pulumi.Input[builtins.str]]
         """
-        接入点状态。
+        Endpoint status
         """
         vpc_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        售卖区网络关联的VPC ID列表。
+        List of VPC IDs associated with the sales zone network
         """
 elif False:
     InstanceEndpointsOverlayArgsDict: TypeAlias = Mapping[str, Any]
@@ -582,16 +582,16 @@ class InstanceEndpointsOverlayArgs:
                  status: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.str] address: 域名映射地址。
-        :param pulumi.Input[builtins.str] eip_id: 实例绑定的EIP的ID。
-        :param pulumi.Input[builtins.str] plain: 私网Plain接入点。
-        :param pulumi.Input[builtins.int] plain_port: 普通接入点端口。
-        :param pulumi.Input[builtins.str] sasl: 私网SASL认证接入点。
-        :param pulumi.Input[builtins.int] sasl_port: 认证接入点端口。
-        :param pulumi.Input[builtins.str] ssl: 加密接入点。
-        :param pulumi.Input[builtins.int] ssl_port: 加密接入点端口。
-        :param pulumi.Input[builtins.str] status: 接入点状态。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] vpc_ids: 售卖区网络关联的VPC ID列表。
+        :param pulumi.Input[builtins.str] address: Domain mapping address
+        :param pulumi.Input[builtins.str] eip_id: ID of the EIP bound to the instance
+        :param pulumi.Input[builtins.str] plain: Private network Plain endpoint
+        :param pulumi.Input[builtins.int] plain_port: Standard endpoint port
+        :param pulumi.Input[builtins.str] sasl: Private network SASL authentication endpoint
+        :param pulumi.Input[builtins.int] sasl_port: Authentication endpoint port
+        :param pulumi.Input[builtins.str] ssl: Encrypted endpoint
+        :param pulumi.Input[builtins.int] ssl_port: Encrypted endpoint port
+        :param pulumi.Input[builtins.str] status: Endpoint status
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] vpc_ids: List of VPC IDs associated with the sales zone network
         """
         if address is not None:
             pulumi.set(__self__, "address", address)
@@ -618,7 +618,7 @@ class InstanceEndpointsOverlayArgs:
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域名映射地址。
+        Domain mapping address
         """
         return pulumi.get(self, "address")
 
@@ -630,7 +630,7 @@ class InstanceEndpointsOverlayArgs:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例绑定的EIP的ID。
+        ID of the EIP bound to the instance
         """
         return pulumi.get(self, "eip_id")
 
@@ -642,7 +642,7 @@ class InstanceEndpointsOverlayArgs:
     @pulumi.getter
     def plain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私网Plain接入点。
+        Private network Plain endpoint
         """
         return pulumi.get(self, "plain")
 
@@ -654,7 +654,7 @@ class InstanceEndpointsOverlayArgs:
     @pulumi.getter(name="plainPort")
     def plain_port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        普通接入点端口。
+        Standard endpoint port
         """
         return pulumi.get(self, "plain_port")
 
@@ -666,7 +666,7 @@ class InstanceEndpointsOverlayArgs:
     @pulumi.getter
     def sasl(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私网SASL认证接入点。
+        Private network SASL authentication endpoint
         """
         return pulumi.get(self, "sasl")
 
@@ -678,7 +678,7 @@ class InstanceEndpointsOverlayArgs:
     @pulumi.getter(name="saslPort")
     def sasl_port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        认证接入点端口。
+        Authentication endpoint port
         """
         return pulumi.get(self, "sasl_port")
 
@@ -690,7 +690,7 @@ class InstanceEndpointsOverlayArgs:
     @pulumi.getter
     def ssl(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        加密接入点。
+        Encrypted endpoint
         """
         return pulumi.get(self, "ssl")
 
@@ -702,7 +702,7 @@ class InstanceEndpointsOverlayArgs:
     @pulumi.getter(name="sslPort")
     def ssl_port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        加密接入点端口。
+        Encrypted endpoint port
         """
         return pulumi.get(self, "ssl_port")
 
@@ -714,7 +714,7 @@ class InstanceEndpointsOverlayArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        接入点状态。
+        Endpoint status
         """
         return pulumi.get(self, "status")
 
@@ -726,7 +726,7 @@ class InstanceEndpointsOverlayArgs:
     @pulumi.getter(name="vpcIds")
     def vpc_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        售卖区网络关联的VPC ID列表。
+        List of VPC IDs associated with the sales zone network
         """
         return pulumi.get(self, "vpc_ids")
 
@@ -739,43 +739,43 @@ if not MYPY:
     class InstanceEndpointsPublicArgsDict(TypedDict):
         address: NotRequired[pulumi.Input[builtins.str]]
         """
-        域名映射地址。
+        Domain mapping address
         """
         eip_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例绑定的EIP的ID。
+        ID of the EIP bound to the instance
         """
         plain: NotRequired[pulumi.Input[builtins.str]]
         """
-        私网Plain接入点。
+        Private network Plain endpoint
         """
         plain_port: NotRequired[pulumi.Input[builtins.int]]
         """
-        普通接入点端口。
+        Standard endpoint port
         """
         sasl: NotRequired[pulumi.Input[builtins.str]]
         """
-        私网SASL认证接入点。
+        Private network SASL authentication endpoint
         """
         sasl_port: NotRequired[pulumi.Input[builtins.int]]
         """
-        认证接入点端口。
+        Authentication endpoint port
         """
         ssl: NotRequired[pulumi.Input[builtins.str]]
         """
-        加密接入点。
+        Encrypted endpoint
         """
         ssl_port: NotRequired[pulumi.Input[builtins.int]]
         """
-        加密接入点端口。
+        Encrypted endpoint port
         """
         status: NotRequired[pulumi.Input[builtins.str]]
         """
-        接入点状态。
+        Endpoint status
         """
         vpc_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        售卖区网络关联的VPC ID列表。
+        List of VPC IDs associated with the sales zone network
         """
 elif False:
     InstanceEndpointsPublicArgsDict: TypeAlias = Mapping[str, Any]
@@ -794,16 +794,16 @@ class InstanceEndpointsPublicArgs:
                  status: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.str] address: 域名映射地址。
-        :param pulumi.Input[builtins.str] eip_id: 实例绑定的EIP的ID。
-        :param pulumi.Input[builtins.str] plain: 私网Plain接入点。
-        :param pulumi.Input[builtins.int] plain_port: 普通接入点端口。
-        :param pulumi.Input[builtins.str] sasl: 私网SASL认证接入点。
-        :param pulumi.Input[builtins.int] sasl_port: 认证接入点端口。
-        :param pulumi.Input[builtins.str] ssl: 加密接入点。
-        :param pulumi.Input[builtins.int] ssl_port: 加密接入点端口。
-        :param pulumi.Input[builtins.str] status: 接入点状态。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] vpc_ids: 售卖区网络关联的VPC ID列表。
+        :param pulumi.Input[builtins.str] address: Domain mapping address
+        :param pulumi.Input[builtins.str] eip_id: ID of the EIP bound to the instance
+        :param pulumi.Input[builtins.str] plain: Private network Plain endpoint
+        :param pulumi.Input[builtins.int] plain_port: Standard endpoint port
+        :param pulumi.Input[builtins.str] sasl: Private network SASL authentication endpoint
+        :param pulumi.Input[builtins.int] sasl_port: Authentication endpoint port
+        :param pulumi.Input[builtins.str] ssl: Encrypted endpoint
+        :param pulumi.Input[builtins.int] ssl_port: Encrypted endpoint port
+        :param pulumi.Input[builtins.str] status: Endpoint status
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] vpc_ids: List of VPC IDs associated with the sales zone network
         """
         if address is not None:
             pulumi.set(__self__, "address", address)
@@ -830,7 +830,7 @@ class InstanceEndpointsPublicArgs:
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域名映射地址。
+        Domain mapping address
         """
         return pulumi.get(self, "address")
 
@@ -842,7 +842,7 @@ class InstanceEndpointsPublicArgs:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例绑定的EIP的ID。
+        ID of the EIP bound to the instance
         """
         return pulumi.get(self, "eip_id")
 
@@ -854,7 +854,7 @@ class InstanceEndpointsPublicArgs:
     @pulumi.getter
     def plain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私网Plain接入点。
+        Private network Plain endpoint
         """
         return pulumi.get(self, "plain")
 
@@ -866,7 +866,7 @@ class InstanceEndpointsPublicArgs:
     @pulumi.getter(name="plainPort")
     def plain_port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        普通接入点端口。
+        Standard endpoint port
         """
         return pulumi.get(self, "plain_port")
 
@@ -878,7 +878,7 @@ class InstanceEndpointsPublicArgs:
     @pulumi.getter
     def sasl(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私网SASL认证接入点。
+        Private network SASL authentication endpoint
         """
         return pulumi.get(self, "sasl")
 
@@ -890,7 +890,7 @@ class InstanceEndpointsPublicArgs:
     @pulumi.getter(name="saslPort")
     def sasl_port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        认证接入点端口。
+        Authentication endpoint port
         """
         return pulumi.get(self, "sasl_port")
 
@@ -902,7 +902,7 @@ class InstanceEndpointsPublicArgs:
     @pulumi.getter
     def ssl(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        加密接入点。
+        Encrypted endpoint
         """
         return pulumi.get(self, "ssl")
 
@@ -914,7 +914,7 @@ class InstanceEndpointsPublicArgs:
     @pulumi.getter(name="sslPort")
     def ssl_port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        加密接入点端口。
+        Encrypted endpoint port
         """
         return pulumi.get(self, "ssl_port")
 
@@ -926,7 +926,7 @@ class InstanceEndpointsPublicArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        接入点状态。
+        Endpoint status
         """
         return pulumi.get(self, "status")
 
@@ -938,7 +938,7 @@ class InstanceEndpointsPublicArgs:
     @pulumi.getter(name="vpcIds")
     def vpc_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        售卖区网络关联的VPC ID列表。
+        List of VPC IDs associated with the sales zone network
         """
         return pulumi.get(self, "vpc_ids")
 
@@ -952,7 +952,7 @@ if not MYPY:
         tag_kvs: NotRequired[pulumi.Input[Sequence[pulumi.Input['InstanceResourceTagTagKvArgsDict']]]]
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+        Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
         """
 elif False:
     InstanceResourceTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -963,7 +963,7 @@ class InstanceResourceTagArgs:
                  tag_kvs: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceResourceTagTagKvArgs']]]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] type: 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+        :param pulumi.Input[builtins.str] type: Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
         """
         if tag_kvs is not None:
             pulumi.set(__self__, "tag_kvs", tag_kvs)
@@ -983,7 +983,7 @@ class InstanceResourceTagArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+        Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
         """
         return pulumi.get(self, "type")
 
@@ -996,15 +996,15 @@ if not MYPY:
     class InstanceResourceTagTagKvArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Tag key
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+        Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value
         """
 elif False:
     InstanceResourceTagTagKvArgsDict: TypeAlias = Mapping[str, Any]
@@ -1016,9 +1016,9 @@ class InstanceResourceTagTagKvArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] type: 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] type: Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+        :param pulumi.Input[builtins.str] value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1031,7 +1031,7 @@ class InstanceResourceTagTagKvArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -1043,7 +1043,7 @@ class InstanceResourceTagTagKvArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+        Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
         """
         return pulumi.get(self, "type")
 
@@ -1055,7 +1055,7 @@ class InstanceResourceTagTagKvArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -1068,7 +1068,7 @@ if not MYPY:
     class InstanceResourcesArgsDict(TypedDict):
         storage: NotRequired[pulumi.Input['InstanceResourcesStorageArgsDict']]
         """
-        资源统计响应数据。
+        Resource statistics response data
         """
 elif False:
     InstanceResourcesArgsDict: TypeAlias = Mapping[str, Any]
@@ -1078,7 +1078,7 @@ class InstanceResourcesArgs:
     def __init__(__self__, *,
                  storage: Optional[pulumi.Input['InstanceResourcesStorageArgs']] = None):
         """
-        :param pulumi.Input['InstanceResourcesStorageArgs'] storage: 资源统计响应数据。
+        :param pulumi.Input['InstanceResourcesStorageArgs'] storage: Resource statistics response data
         """
         if storage is not None:
             pulumi.set(__self__, "storage", storage)
@@ -1087,7 +1087,7 @@ class InstanceResourcesArgs:
     @pulumi.getter
     def storage(self) -> Optional[pulumi.Input['InstanceResourcesStorageArgs']]:
         """
-        资源统计响应数据。
+        Resource statistics response data
         """
         return pulumi.get(self, "storage")
 
@@ -1100,11 +1100,11 @@ if not MYPY:
     class InstanceResourcesStorageArgsDict(TypedDict):
         size: NotRequired[pulumi.Input[builtins.int]]
         """
-        资源大小。
+        Resource size
         """
         unit: NotRequired[pulumi.Input[builtins.str]]
         """
-        资源单位。
+        Resource unit
         """
 elif False:
     InstanceResourcesStorageArgsDict: TypeAlias = Mapping[str, Any]
@@ -1115,8 +1115,8 @@ class InstanceResourcesStorageArgs:
                  size: Optional[pulumi.Input[builtins.int]] = None,
                  unit: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.int] size: 资源大小。
-        :param pulumi.Input[builtins.str] unit: 资源单位。
+        :param pulumi.Input[builtins.int] size: Resource size
+        :param pulumi.Input[builtins.str] unit: Resource unit
         """
         if size is not None:
             pulumi.set(__self__, "size", size)
@@ -1127,7 +1127,7 @@ class InstanceResourcesStorageArgs:
     @pulumi.getter
     def size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        资源大小。
+        Resource size
         """
         return pulumi.get(self, "size")
 
@@ -1139,7 +1139,7 @@ class InstanceResourcesStorageArgs:
     @pulumi.getter
     def unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源单位。
+        Resource unit
         """
         return pulumi.get(self, "unit")
 
@@ -1152,15 +1152,15 @@ if not MYPY:
     class InstanceTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Tag key
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+        Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value
         """
 elif False:
     InstanceTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -1172,9 +1172,9 @@ class InstanceTagArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] type: 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] type: Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+        :param pulumi.Input[builtins.str] value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1187,7 +1187,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -1199,7 +1199,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+        Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
         """
         return pulumi.get(self, "type")
 
@@ -1211,7 +1211,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 

@@ -17,14 +17,14 @@ public final class ShareConfigDenyRefererAccessRuleArgs extends com.pulumi.resou
     public static final ShareConfigDenyRefererAccessRuleArgs Empty = new ShareConfigDenyRefererAccessRuleArgs();
 
     /**
-     * 表示是否允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示允许。false：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。该参数的默认值是 true。
+     * Indicates whether requests with an empty Referer header or without a Referer header are allowed. This parameter has the following values: true: Allowed. false: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. The default value is true.
      * 
      */
     @Import(name="allowEmpty")
     private @Nullable Output<Boolean> allowEmpty;
 
     /**
-     * @return 表示是否允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示允许。false：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。该参数的默认值是 true。
+     * @return Indicates whether requests with an empty Referer header or without a Referer header are allowed. This parameter has the following values: true: Allowed. false: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. The default value is true.
      * 
      */
     public Optional<Output<Boolean>> allowEmpty() {
@@ -32,14 +32,14 @@ public final class ShareConfigDenyRefererAccessRuleArgs extends com.pulumi.resou
     }
 
     /**
-     * 表示该通用列表的内容。
+     * Specifies the contents of the common list.
      * 
      */
     @Import(name="commonType")
     private @Nullable Output<ShareConfigDenyRefererAccessRuleCommonTypeArgs> commonType;
 
     /**
-     * @return 表示该通用列表的内容。
+     * @return Specifies the contents of the common list.
      * 
      */
     public Optional<Output<ShareConfigDenyRefererAccessRuleCommonTypeArgs>> commonType() {
@@ -72,7 +72,7 @@ public final class ShareConfigDenyRefererAccessRuleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param allowEmpty 表示是否允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示允许。false：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。该参数的默认值是 true。
+         * @param allowEmpty Indicates whether requests with an empty Referer header or without a Referer header are allowed. This parameter has the following values: true: Allowed. false: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. The default value is true.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class ShareConfigDenyRefererAccessRuleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param allowEmpty 表示是否允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示允许。false：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。该参数的默认值是 true。
+         * @param allowEmpty Indicates whether requests with an empty Referer header or without a Referer header are allowed. This parameter has the following values: true: Allowed. false: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. The default value is true.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class ShareConfigDenyRefererAccessRuleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param commonType 表示该通用列表的内容。
+         * @param commonType Specifies the contents of the common list.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class ShareConfigDenyRefererAccessRuleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param commonType 表示该通用列表的内容。
+         * @param commonType Specifies the contents of the common list.
          * 
          * @return builder
          * 

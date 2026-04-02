@@ -11,22 +11,22 @@ import java.util.Objects;
 @CustomType
 public final class GetDnatentryResult {
     /**
-     * @return DNAT规则的ID。
+     * @return ID of the DNAT rule.
      * 
      */
     private String dnatEntryId;
     /**
-     * @return DNAT规则的名称。
+     * @return Name of the DNAT rule.
      * 
      */
     private String dnatEntryName;
     /**
-     * @return NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+     * @return IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
      * 
      */
     private String externalIp;
     /**
-     * @return 接收来自公网外部请求的端口或端口段。
+     * @return Port or port range that receives requests from the public network.
      * 
      */
     private String externalPort;
@@ -36,60 +36,60 @@ public final class GetDnatentryResult {
      */
     private String id;
     /**
-     * @return 云服务器实例的私网IP。
+     * @return Private IP address of the cloud server instance.
      * 
      */
     private String internalIp;
     /**
-     * @return 云服务器实例私网IP的端口或端口段。
+     * @return Port or port range of the private IP address of the cloud server instance.
      * 
      */
     private String internalPort;
     /**
-     * @return DNAT规则所属NAT网关的ID。
+     * @return ID of the NAT gateway to which the DNAT rule belongs.
      * 
      */
     private String natGatewayId;
     /**
-     * @return DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+     * @return Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
      * 
      */
     private String portType;
     /**
-     * @return 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+     * @return Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
      * 
      */
     private String protocol;
     /**
-     * @return DNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * @return Status of the DNAT rule. Creating: Creating. Deleting: Deleting. Available: Available.
      * 
      */
     private String status;
 
     private GetDnatentryResult() {}
     /**
-     * @return DNAT规则的ID。
+     * @return ID of the DNAT rule.
      * 
      */
     public String dnatEntryId() {
         return this.dnatEntryId;
     }
     /**
-     * @return DNAT规则的名称。
+     * @return Name of the DNAT rule.
      * 
      */
     public String dnatEntryName() {
         return this.dnatEntryName;
     }
     /**
-     * @return NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+     * @return IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
      * 
      */
     public String externalIp() {
         return this.externalIp;
     }
     /**
-     * @return 接收来自公网外部请求的端口或端口段。
+     * @return Port or port range that receives requests from the public network.
      * 
      */
     public String externalPort() {
@@ -103,42 +103,42 @@ public final class GetDnatentryResult {
         return this.id;
     }
     /**
-     * @return 云服务器实例的私网IP。
+     * @return Private IP address of the cloud server instance.
      * 
      */
     public String internalIp() {
         return this.internalIp;
     }
     /**
-     * @return 云服务器实例私网IP的端口或端口段。
+     * @return Port or port range of the private IP address of the cloud server instance.
      * 
      */
     public String internalPort() {
         return this.internalPort;
     }
     /**
-     * @return DNAT规则所属NAT网关的ID。
+     * @return ID of the NAT gateway to which the DNAT rule belongs.
      * 
      */
     public String natGatewayId() {
         return this.natGatewayId;
     }
     /**
-     * @return DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+     * @return Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
      * 
      */
     public String portType() {
         return this.portType;
     }
     /**
-     * @return 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+     * @return Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
      * 
      */
     public String protocol() {
         return this.protocol;
     }
     /**
-     * @return DNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * @return Status of the DNAT rule. Creating: Creating. Deleting: Deleting. Available: Available.
      * 
      */
     public String status() {

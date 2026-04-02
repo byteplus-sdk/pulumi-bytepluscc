@@ -16,14 +16,14 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
     public static final InstanceRdmaNetworkInterfaceDetailArgs Empty = new InstanceRdmaNetworkInterfaceDetailArgs();
 
     /**
-     * 网关地址。
+     * Gateway address.
      * 
      */
     @Import(name="gateway")
     private @Nullable Output<String> gateway;
 
     /**
-     * @return 网关地址。
+     * @return Gateway address.
      * 
      */
     public Optional<Output<String>> gateway() {
@@ -31,14 +31,14 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
     }
 
     /**
-     * IP地址。
+     * IP address
      * 
      */
     @Import(name="ip")
     private @Nullable Output<String> ip;
 
     /**
-     * @return IP地址。
+     * @return IP address
      * 
      */
     public Optional<Output<String>> ip() {
@@ -46,14 +46,14 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
     }
 
     /**
-     * 子网掩码。
+     * Subnet mask.
      * 
      */
     @Import(name="mask")
     private @Nullable Output<String> mask;
 
     /**
-     * @return 子网掩码。
+     * @return Subnet mask.
      * 
      */
     public Optional<Output<String>> mask() {
@@ -61,14 +61,14 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
     }
 
     /**
-     * 交换机名称。
+     * Switch name.
      * 
      */
     @Import(name="switchName")
     private @Nullable Output<String> switchName;
 
     /**
-     * @return 交换机名称。
+     * @return Switch name.
      * 
      */
     public Optional<Output<String>> switchName() {
@@ -76,14 +76,14 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
     }
 
     /**
-     * 交换机端口。
+     * Switch port.
      * 
      */
     @Import(name="switchPort")
     private @Nullable Output<String> switchPort;
 
     /**
-     * @return 交换机端口。
+     * @return Switch port.
      * 
      */
     public Optional<Output<String>> switchPort() {
@@ -119,7 +119,7 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
         }
 
         /**
-         * @param gateway 网关地址。
+         * @param gateway Gateway address.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
         }
 
         /**
-         * @param gateway 网关地址。
+         * @param gateway Gateway address.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
         }
 
         /**
-         * @param ip IP地址。
+         * @param ip IP address
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
         }
 
         /**
-         * @param ip IP地址。
+         * @param ip IP address
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
         }
 
         /**
-         * @param mask 子网掩码。
+         * @param mask Subnet mask.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
         }
 
         /**
-         * @param mask 子网掩码。
+         * @param mask Subnet mask.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
         }
 
         /**
-         * @param switchName 交换机名称。
+         * @param switchName Switch name.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
         }
 
         /**
-         * @param switchName 交换机名称。
+         * @param switchName Switch name.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
         }
 
         /**
-         * @param switchPort 交换机端口。
+         * @param switchPort Switch port.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class InstanceRdmaNetworkInterfaceDetailArgs extends com.pulumi.res
         }
 
         /**
-         * @param switchPort 交换机端口。
+         * @param switchPort Switch port.
          * 
          * @return builder
          * 

@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type InstanceCachePerformance struct {
-	// 预配置带宽，用于增加文件系统带宽。
+	// Provisioned bandwidth, used to increase file system bandwidth
 	CacheBandwidth *int `pulumi:"cacheBandwidth"`
 }
 
@@ -30,7 +30,7 @@ type InstanceCachePerformanceInput interface {
 }
 
 type InstanceCachePerformanceArgs struct {
-	// 预配置带宽，用于增加文件系统带宽。
+	// Provisioned bandwidth, used to increase file system bandwidth
 	CacheBandwidth pulumi.IntPtrInput `pulumi:"cacheBandwidth"`
 }
 
@@ -111,7 +111,7 @@ func (o InstanceCachePerformanceOutput) ToInstanceCachePerformancePtrOutputWithC
 	}).(InstanceCachePerformancePtrOutput)
 }
 
-// 预配置带宽，用于增加文件系统带宽。
+// Provisioned bandwidth, used to increase file system bandwidth
 func (o InstanceCachePerformanceOutput) CacheBandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceCachePerformance) *int { return v.CacheBandwidth }).(pulumi.IntPtrOutput)
 }
@@ -140,7 +140,7 @@ func (o InstanceCachePerformancePtrOutput) Elem() InstanceCachePerformanceOutput
 	}).(InstanceCachePerformanceOutput)
 }
 
-// 预配置带宽，用于增加文件系统带宽。
+// Provisioned bandwidth, used to increase file system bandwidth
 func (o InstanceCachePerformancePtrOutput) CacheBandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceCachePerformance) *int {
 		if v == nil {
@@ -151,9 +151,9 @@ func (o InstanceCachePerformancePtrOutput) CacheBandwidth() pulumi.IntPtrOutput 
 }
 
 type InstanceCapacity struct {
-	// 文件系统可用总容量，单位为 GiB。
+	// Total available file system capacity, in GiB
 	Total *float64 `pulumi:"total"`
-	// 文件系统已使用容量，单位为 MiB。
+	// Used file system capacity, in MiB
 	Used *float64 `pulumi:"used"`
 }
 
@@ -169,9 +169,9 @@ type InstanceCapacityInput interface {
 }
 
 type InstanceCapacityArgs struct {
-	// 文件系统可用总容量，单位为 GiB。
+	// Total available file system capacity, in GiB
 	Total pulumi.Float64PtrInput `pulumi:"total"`
-	// 文件系统已使用容量，单位为 MiB。
+	// Used file system capacity, in MiB
 	Used pulumi.Float64PtrInput `pulumi:"used"`
 }
 
@@ -252,12 +252,12 @@ func (o InstanceCapacityOutput) ToInstanceCapacityPtrOutputWithContext(ctx conte
 	}).(InstanceCapacityPtrOutput)
 }
 
-// 文件系统可用总容量，单位为 GiB。
+// Total available file system capacity, in GiB
 func (o InstanceCapacityOutput) Total() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceCapacity) *float64 { return v.Total }).(pulumi.Float64PtrOutput)
 }
 
-// 文件系统已使用容量，单位为 MiB。
+// Used file system capacity, in MiB
 func (o InstanceCapacityOutput) Used() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceCapacity) *float64 { return v.Used }).(pulumi.Float64PtrOutput)
 }
@@ -286,7 +286,7 @@ func (o InstanceCapacityPtrOutput) Elem() InstanceCapacityOutput {
 	}).(InstanceCapacityOutput)
 }
 
-// 文件系统可用总容量，单位为 GiB。
+// Total available file system capacity, in GiB
 func (o InstanceCapacityPtrOutput) Total() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *InstanceCapacity) *float64 {
 		if v == nil {
@@ -296,7 +296,7 @@ func (o InstanceCapacityPtrOutput) Total() pulumi.Float64PtrOutput {
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 文件系统已使用容量，单位为 MiB。
+// Used file system capacity, in MiB
 func (o InstanceCapacityPtrOutput) Used() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *InstanceCapacity) *float64 {
 		if v == nil {
@@ -307,11 +307,11 @@ func (o InstanceCapacityPtrOutput) Used() pulumi.Float64PtrOutput {
 }
 
 type InstanceTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签类型。
+	// Tag type
 	Type *string `pulumi:"type"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -327,11 +327,11 @@ type InstanceTagInput interface {
 }
 
 type InstanceTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签类型。
+	// Tag type
 	Type pulumi.StringPtrInput `pulumi:"type"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -386,17 +386,17 @@ func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) I
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签类型。
+// Tag type
 func (o InstanceTagOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -422,11 +422,11 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 }
 
 type MountPointClient struct {
-	// 客户端的私有网络 IP 地址。
+	// Client's private network IP address.
 	Ip *string `pulumi:"ip"`
-	// 挂载协议版本号。取值：NFSv3。
+	// Mount protocol version. Value: NFSv3.
 	ProtocolVersion *string `pulumi:"protocolVersion"`
-	// 私有网络名称。
+	// Private network name.
 	VpcName *string `pulumi:"vpcName"`
 }
 
@@ -442,11 +442,11 @@ type MountPointClientInput interface {
 }
 
 type MountPointClientArgs struct {
-	// 客户端的私有网络 IP 地址。
+	// Client's private network IP address.
 	Ip pulumi.StringPtrInput `pulumi:"ip"`
-	// 挂载协议版本号。取值：NFSv3。
+	// Mount protocol version. Value: NFSv3.
 	ProtocolVersion pulumi.StringPtrInput `pulumi:"protocolVersion"`
-	// 私有网络名称。
+	// Private network name.
 	VpcName pulumi.StringPtrInput `pulumi:"vpcName"`
 }
 
@@ -501,17 +501,17 @@ func (o MountPointClientOutput) ToMountPointClientOutputWithContext(ctx context.
 	return o
 }
 
-// 客户端的私有网络 IP 地址。
+// Client's private network IP address.
 func (o MountPointClientOutput) Ip() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MountPointClient) *string { return v.Ip }).(pulumi.StringPtrOutput)
 }
 
-// 挂载协议版本号。取值：NFSv3。
+// Mount protocol version. Value: NFSv3.
 func (o MountPointClientOutput) ProtocolVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MountPointClient) *string { return v.ProtocolVersion }).(pulumi.StringPtrOutput)
 }
 
-// 私有网络名称。
+// Private network name.
 func (o MountPointClientOutput) VpcName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MountPointClient) *string { return v.VpcName }).(pulumi.StringPtrOutput)
 }
@@ -537,18 +537,18 @@ func (o MountPointClientArrayOutput) Index(i pulumi.IntInput) MountPointClientOu
 }
 
 type MountPointPermissionGroup struct {
-	// 权限组创建时间。
+	// Permission group creation time.
 	CreateTime *string `pulumi:"createTime"`
-	// 权限组描述信息。
+	// Permission group description information.
 	Description *string `pulumi:"description"`
-	// 关联该权限组的文件系统数量。
+	// Number of file systems associated with this permission group.
 	FileSystemCount *int `pulumi:"fileSystemCount"`
-	// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+	// File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
 	FileSystemType *string                               `pulumi:"fileSystemType"`
 	MountPoints    []MountPointPermissionGroupMountPoint `pulumi:"mountPoints"`
-	// 权限组名称。
+	// Permission group name.
 	PermissionGroupName *string `pulumi:"permissionGroupName"`
-	// 权限规则数量。
+	// Number of permission rules.
 	PermissionRuleCount *int `pulumi:"permissionRuleCount"`
 }
 
@@ -564,18 +564,18 @@ type MountPointPermissionGroupInput interface {
 }
 
 type MountPointPermissionGroupArgs struct {
-	// 权限组创建时间。
+	// Permission group creation time.
 	CreateTime pulumi.StringPtrInput `pulumi:"createTime"`
-	// 权限组描述信息。
+	// Permission group description information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 关联该权限组的文件系统数量。
+	// Number of file systems associated with this permission group.
 	FileSystemCount pulumi.IntPtrInput `pulumi:"fileSystemCount"`
-	// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+	// File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
 	FileSystemType pulumi.StringPtrInput                         `pulumi:"fileSystemType"`
 	MountPoints    MountPointPermissionGroupMountPointArrayInput `pulumi:"mountPoints"`
-	// 权限组名称。
+	// Permission group name.
 	PermissionGroupName pulumi.StringPtrInput `pulumi:"permissionGroupName"`
-	// 权限规则数量。
+	// Number of permission rules.
 	PermissionRuleCount pulumi.IntPtrInput `pulumi:"permissionRuleCount"`
 }
 
@@ -656,22 +656,22 @@ func (o MountPointPermissionGroupOutput) ToMountPointPermissionGroupPtrOutputWit
 	}).(MountPointPermissionGroupPtrOutput)
 }
 
-// 权限组创建时间。
+// Permission group creation time.
 func (o MountPointPermissionGroupOutput) CreateTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MountPointPermissionGroup) *string { return v.CreateTime }).(pulumi.StringPtrOutput)
 }
 
-// 权限组描述信息。
+// Permission group description information.
 func (o MountPointPermissionGroupOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MountPointPermissionGroup) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 关联该权限组的文件系统数量。
+// Number of file systems associated with this permission group.
 func (o MountPointPermissionGroupOutput) FileSystemCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MountPointPermissionGroup) *int { return v.FileSystemCount }).(pulumi.IntPtrOutput)
 }
 
-// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+// File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
 func (o MountPointPermissionGroupOutput) FileSystemType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MountPointPermissionGroup) *string { return v.FileSystemType }).(pulumi.StringPtrOutput)
 }
@@ -680,12 +680,12 @@ func (o MountPointPermissionGroupOutput) MountPoints() MountPointPermissionGroup
 	return o.ApplyT(func(v MountPointPermissionGroup) []MountPointPermissionGroupMountPoint { return v.MountPoints }).(MountPointPermissionGroupMountPointArrayOutput)
 }
 
-// 权限组名称。
+// Permission group name.
 func (o MountPointPermissionGroupOutput) PermissionGroupName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MountPointPermissionGroup) *string { return v.PermissionGroupName }).(pulumi.StringPtrOutput)
 }
 
-// 权限规则数量。
+// Number of permission rules.
 func (o MountPointPermissionGroupOutput) PermissionRuleCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MountPointPermissionGroup) *int { return v.PermissionRuleCount }).(pulumi.IntPtrOutput)
 }
@@ -714,7 +714,7 @@ func (o MountPointPermissionGroupPtrOutput) Elem() MountPointPermissionGroupOutp
 	}).(MountPointPermissionGroupOutput)
 }
 
-// 权限组创建时间。
+// Permission group creation time.
 func (o MountPointPermissionGroupPtrOutput) CreateTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MountPointPermissionGroup) *string {
 		if v == nil {
@@ -724,7 +724,7 @@ func (o MountPointPermissionGroupPtrOutput) CreateTime() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 权限组描述信息。
+// Permission group description information.
 func (o MountPointPermissionGroupPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MountPointPermissionGroup) *string {
 		if v == nil {
@@ -734,7 +734,7 @@ func (o MountPointPermissionGroupPtrOutput) Description() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 关联该权限组的文件系统数量。
+// Number of file systems associated with this permission group.
 func (o MountPointPermissionGroupPtrOutput) FileSystemCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *MountPointPermissionGroup) *int {
 		if v == nil {
@@ -744,7 +744,7 @@ func (o MountPointPermissionGroupPtrOutput) FileSystemCount() pulumi.IntPtrOutpu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+// File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
 func (o MountPointPermissionGroupPtrOutput) FileSystemType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MountPointPermissionGroup) *string {
 		if v == nil {
@@ -763,7 +763,7 @@ func (o MountPointPermissionGroupPtrOutput) MountPoints() MountPointPermissionGr
 	}).(MountPointPermissionGroupMountPointArrayOutput)
 }
 
-// 权限组名称。
+// Permission group name.
 func (o MountPointPermissionGroupPtrOutput) PermissionGroupName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MountPointPermissionGroup) *string {
 		if v == nil {
@@ -773,7 +773,7 @@ func (o MountPointPermissionGroupPtrOutput) PermissionGroupName() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// 权限规则数量。
+// Number of permission rules.
 func (o MountPointPermissionGroupPtrOutput) PermissionRuleCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *MountPointPermissionGroup) *int {
 		if v == nil {
@@ -784,11 +784,11 @@ func (o MountPointPermissionGroupPtrOutput) PermissionRuleCount() pulumi.IntPtrO
 }
 
 type MountPointPermissionGroupMountPoint struct {
-	// 文件系统 ID。
+	// File system ID.
 	FileSystemId *string `pulumi:"fileSystemId"`
-	// 挂载点 ID。
+	// Mount point ID.
 	MountPointId *string `pulumi:"mountPointId"`
-	// 挂载点名称。
+	// Mount point name.
 	MountPointName *string `pulumi:"mountPointName"`
 }
 
@@ -804,11 +804,11 @@ type MountPointPermissionGroupMountPointInput interface {
 }
 
 type MountPointPermissionGroupMountPointArgs struct {
-	// 文件系统 ID。
+	// File system ID.
 	FileSystemId pulumi.StringPtrInput `pulumi:"fileSystemId"`
-	// 挂载点 ID。
+	// Mount point ID.
 	MountPointId pulumi.StringPtrInput `pulumi:"mountPointId"`
-	// 挂载点名称。
+	// Mount point name.
 	MountPointName pulumi.StringPtrInput `pulumi:"mountPointName"`
 }
 
@@ -863,17 +863,17 @@ func (o MountPointPermissionGroupMountPointOutput) ToMountPointPermissionGroupMo
 	return o
 }
 
-// 文件系统 ID。
+// File system ID.
 func (o MountPointPermissionGroupMountPointOutput) FileSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MountPointPermissionGroupMountPoint) *string { return v.FileSystemId }).(pulumi.StringPtrOutput)
 }
 
-// 挂载点 ID。
+// Mount point ID.
 func (o MountPointPermissionGroupMountPointOutput) MountPointId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MountPointPermissionGroupMountPoint) *string { return v.MountPointId }).(pulumi.StringPtrOutput)
 }
 
-// 挂载点名称。
+// Mount point name.
 func (o MountPointPermissionGroupMountPointOutput) MountPointName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MountPointPermissionGroupMountPoint) *string { return v.MountPointName }).(pulumi.StringPtrOutput)
 }
@@ -899,7 +899,7 @@ func (o MountPointPermissionGroupMountPointArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetInstanceCachePerformance struct {
-	// 预配置带宽，用于增加文件系统带宽。
+	// Provisioned bandwidth, used to increase file system bandwidth
 	CacheBandwidth int `pulumi:"cacheBandwidth"`
 }
 
@@ -915,7 +915,7 @@ type GetInstanceCachePerformanceInput interface {
 }
 
 type GetInstanceCachePerformanceArgs struct {
-	// 预配置带宽，用于增加文件系统带宽。
+	// Provisioned bandwidth, used to increase file system bandwidth
 	CacheBandwidth pulumi.IntInput `pulumi:"cacheBandwidth"`
 }
 
@@ -945,15 +945,15 @@ func (o GetInstanceCachePerformanceOutput) ToGetInstanceCachePerformanceOutputWi
 	return o
 }
 
-// 预配置带宽，用于增加文件系统带宽。
+// Provisioned bandwidth, used to increase file system bandwidth
 func (o GetInstanceCachePerformanceOutput) CacheBandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceCachePerformance) int { return v.CacheBandwidth }).(pulumi.IntOutput)
 }
 
 type GetInstanceCapacity struct {
-	// 文件系统可用总容量，单位为 GiB。
+	// Total available file system capacity, in GiB
 	Total float64 `pulumi:"total"`
-	// 文件系统已使用容量，单位为 MiB。
+	// Used file system capacity, in MiB
 	Used float64 `pulumi:"used"`
 }
 
@@ -969,9 +969,9 @@ type GetInstanceCapacityInput interface {
 }
 
 type GetInstanceCapacityArgs struct {
-	// 文件系统可用总容量，单位为 GiB。
+	// Total available file system capacity, in GiB
 	Total pulumi.Float64Input `pulumi:"total"`
-	// 文件系统已使用容量，单位为 MiB。
+	// Used file system capacity, in MiB
 	Used pulumi.Float64Input `pulumi:"used"`
 }
 
@@ -1001,22 +1001,22 @@ func (o GetInstanceCapacityOutput) ToGetInstanceCapacityOutputWithContext(ctx co
 	return o
 }
 
-// 文件系统可用总容量，单位为 GiB。
+// Total available file system capacity, in GiB
 func (o GetInstanceCapacityOutput) Total() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceCapacity) float64 { return v.Total }).(pulumi.Float64Output)
 }
 
-// 文件系统已使用容量，单位为 MiB。
+// Used file system capacity, in MiB
 func (o GetInstanceCapacityOutput) Used() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceCapacity) float64 { return v.Used }).(pulumi.Float64Output)
 }
 
 type GetInstanceTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签类型。
+	// Tag type
 	Type string `pulumi:"type"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -1032,11 +1032,11 @@ type GetInstanceTagInput interface {
 }
 
 type GetInstanceTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签类型。
+	// Tag type
 	Type pulumi.StringInput `pulumi:"type"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1091,17 +1091,17 @@ func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签类型。
+// Tag type
 func (o GetInstanceTagOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1127,11 +1127,11 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 }
 
 type GetMountPointClient struct {
-	// 客户端的私有网络 IP 地址。
+	// Client's private network IP address.
 	Ip string `pulumi:"ip"`
-	// 挂载协议版本号。取值：NFSv3。
+	// Mount protocol version. Value: NFSv3.
 	ProtocolVersion string `pulumi:"protocolVersion"`
-	// 私有网络名称。
+	// Private network name.
 	VpcName string `pulumi:"vpcName"`
 }
 
@@ -1147,11 +1147,11 @@ type GetMountPointClientInput interface {
 }
 
 type GetMountPointClientArgs struct {
-	// 客户端的私有网络 IP 地址。
+	// Client's private network IP address.
 	Ip pulumi.StringInput `pulumi:"ip"`
-	// 挂载协议版本号。取值：NFSv3。
+	// Mount protocol version. Value: NFSv3.
 	ProtocolVersion pulumi.StringInput `pulumi:"protocolVersion"`
-	// 私有网络名称。
+	// Private network name.
 	VpcName pulumi.StringInput `pulumi:"vpcName"`
 }
 
@@ -1206,17 +1206,17 @@ func (o GetMountPointClientOutput) ToGetMountPointClientOutputWithContext(ctx co
 	return o
 }
 
-// 客户端的私有网络 IP 地址。
+// Client's private network IP address.
 func (o GetMountPointClientOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountPointClient) string { return v.Ip }).(pulumi.StringOutput)
 }
 
-// 挂载协议版本号。取值：NFSv3。
+// Mount protocol version. Value: NFSv3.
 func (o GetMountPointClientOutput) ProtocolVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountPointClient) string { return v.ProtocolVersion }).(pulumi.StringOutput)
 }
 
-// 私有网络名称。
+// Private network name.
 func (o GetMountPointClientOutput) VpcName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountPointClient) string { return v.VpcName }).(pulumi.StringOutput)
 }
@@ -1242,19 +1242,19 @@ func (o GetMountPointClientArrayOutput) Index(i pulumi.IntInput) GetMountPointCl
 }
 
 type GetMountPointPermissionGroup struct {
-	// 权限组创建时间。
+	// Permission group creation time.
 	CreateTime string `pulumi:"createTime"`
-	// 权限组描述信息。
+	// Permission group description information.
 	Description string `pulumi:"description"`
-	// 关联该权限组的文件系统数量。
+	// Number of file systems associated with this permission group.
 	FileSystemCount int `pulumi:"fileSystemCount"`
-	// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+	// File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
 	FileSystemType string `pulumi:"fileSystemType"`
-	// 使用该权限组的挂载点信息。
+	// Information about mount points that use this permission group.
 	MountPoints []GetMountPointPermissionGroupMountPoint `pulumi:"mountPoints"`
-	// 权限组名称。
+	// Permission group name.
 	PermissionGroupName string `pulumi:"permissionGroupName"`
-	// 权限规则数量。
+	// Number of permission rules.
 	PermissionRuleCount int `pulumi:"permissionRuleCount"`
 }
 
@@ -1270,19 +1270,19 @@ type GetMountPointPermissionGroupInput interface {
 }
 
 type GetMountPointPermissionGroupArgs struct {
-	// 权限组创建时间。
+	// Permission group creation time.
 	CreateTime pulumi.StringInput `pulumi:"createTime"`
-	// 权限组描述信息。
+	// Permission group description information.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 关联该权限组的文件系统数量。
+	// Number of file systems associated with this permission group.
 	FileSystemCount pulumi.IntInput `pulumi:"fileSystemCount"`
-	// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+	// File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
 	FileSystemType pulumi.StringInput `pulumi:"fileSystemType"`
-	// 使用该权限组的挂载点信息。
+	// Information about mount points that use this permission group.
 	MountPoints GetMountPointPermissionGroupMountPointArrayInput `pulumi:"mountPoints"`
-	// 权限组名称。
+	// Permission group name.
 	PermissionGroupName pulumi.StringInput `pulumi:"permissionGroupName"`
-	// 权限规则数量。
+	// Number of permission rules.
 	PermissionRuleCount pulumi.IntInput `pulumi:"permissionRuleCount"`
 }
 
@@ -1312,47 +1312,47 @@ func (o GetMountPointPermissionGroupOutput) ToGetMountPointPermissionGroupOutput
 	return o
 }
 
-// 权限组创建时间。
+// Permission group creation time.
 func (o GetMountPointPermissionGroupOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountPointPermissionGroup) string { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 权限组描述信息。
+// Permission group description information.
 func (o GetMountPointPermissionGroupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountPointPermissionGroup) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 关联该权限组的文件系统数量。
+// Number of file systems associated with this permission group.
 func (o GetMountPointPermissionGroupOutput) FileSystemCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMountPointPermissionGroup) int { return v.FileSystemCount }).(pulumi.IntOutput)
 }
 
-// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+// File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
 func (o GetMountPointPermissionGroupOutput) FileSystemType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountPointPermissionGroup) string { return v.FileSystemType }).(pulumi.StringOutput)
 }
 
-// 使用该权限组的挂载点信息。
+// Information about mount points that use this permission group.
 func (o GetMountPointPermissionGroupOutput) MountPoints() GetMountPointPermissionGroupMountPointArrayOutput {
 	return o.ApplyT(func(v GetMountPointPermissionGroup) []GetMountPointPermissionGroupMountPoint { return v.MountPoints }).(GetMountPointPermissionGroupMountPointArrayOutput)
 }
 
-// 权限组名称。
+// Permission group name.
 func (o GetMountPointPermissionGroupOutput) PermissionGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountPointPermissionGroup) string { return v.PermissionGroupName }).(pulumi.StringOutput)
 }
 
-// 权限规则数量。
+// Number of permission rules.
 func (o GetMountPointPermissionGroupOutput) PermissionRuleCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMountPointPermissionGroup) int { return v.PermissionRuleCount }).(pulumi.IntOutput)
 }
 
 type GetMountPointPermissionGroupMountPoint struct {
-	// 文件系统 ID。
+	// File system ID.
 	FileSystemId string `pulumi:"fileSystemId"`
-	// 挂载点 ID。
+	// Mount point ID.
 	MountPointId string `pulumi:"mountPointId"`
-	// 挂载点名称。
+	// Mount point name.
 	MountPointName string `pulumi:"mountPointName"`
 }
 
@@ -1368,11 +1368,11 @@ type GetMountPointPermissionGroupMountPointInput interface {
 }
 
 type GetMountPointPermissionGroupMountPointArgs struct {
-	// 文件系统 ID。
+	// File system ID.
 	FileSystemId pulumi.StringInput `pulumi:"fileSystemId"`
-	// 挂载点 ID。
+	// Mount point ID.
 	MountPointId pulumi.StringInput `pulumi:"mountPointId"`
-	// 挂载点名称。
+	// Mount point name.
 	MountPointName pulumi.StringInput `pulumi:"mountPointName"`
 }
 
@@ -1427,17 +1427,17 @@ func (o GetMountPointPermissionGroupMountPointOutput) ToGetMountPointPermissionG
 	return o
 }
 
-// 文件系统 ID。
+// File system ID.
 func (o GetMountPointPermissionGroupMountPointOutput) FileSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountPointPermissionGroupMountPoint) string { return v.FileSystemId }).(pulumi.StringOutput)
 }
 
-// 挂载点 ID。
+// Mount point ID.
 func (o GetMountPointPermissionGroupMountPointOutput) MountPointId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountPointPermissionGroupMountPoint) string { return v.MountPointId }).(pulumi.StringOutput)
 }
 
-// 挂载点名称。
+// Mount point name.
 func (o GetMountPointPermissionGroupMountPointOutput) MountPointName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountPointPermissionGroupMountPoint) string { return v.MountPointName }).(pulumi.StringOutput)
 }

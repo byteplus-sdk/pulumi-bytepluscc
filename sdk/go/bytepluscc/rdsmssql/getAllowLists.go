@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Plural Data Source schema for Byteplus::RDSMsSQL::Allowlist
+// Plural Data Source schema for Byteplus::RDSMsSQL::AllowList
 func GetAllowLists(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetAllowListsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAllowListsResult

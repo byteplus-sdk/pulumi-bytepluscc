@@ -29,9 +29,9 @@ class AclArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['AclTagArgs']]]] = None):
         """
         The set of arguments for constructing a Acl resource.
-        :param pulumi.Input[builtins.str] acl_name: 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
-        :param pulumi.Input[builtins.str] description: 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
-        :param pulumi.Input[builtins.str] project_name: 访问控制策略组所属项目的名称。不填默认为default。
+        :param pulumi.Input[builtins.str] acl_name: Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
+        :param pulumi.Input[builtins.str] description: Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
         """
         if acl_entries is not None:
             pulumi.set(__self__, "acl_entries", acl_entries)
@@ -57,7 +57,7 @@ class AclArgs:
     @pulumi.getter(name="aclName")
     def acl_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+        Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
         """
         return pulumi.get(self, "acl_name")
 
@@ -69,7 +69,7 @@ class AclArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+        Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -81,7 +81,7 @@ class AclArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问控制策略组所属项目的名称。不填默认为default。
+        Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
         """
         return pulumi.get(self, "project_name")
 
@@ -116,15 +116,15 @@ class _AclState:
                  update_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Acl resources.
-        :param pulumi.Input[builtins.int] acl_entry_count: 访问控制策略组包含的IP条目数量。
-        :param pulumi.Input[builtins.str] acl_id: 访问控制策略组的ID。
-        :param pulumi.Input[builtins.str] acl_name: 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
-        :param pulumi.Input[builtins.str] create_time: 访问控制策略组的创建时间。
-        :param pulumi.Input[builtins.str] description: 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
-        :param pulumi.Input[builtins.str] project_name: 访问控制策略组所属项目的名称。不填默认为default。
-        :param pulumi.Input[builtins.bool] service_managed: 是否为托管资源。true：是。false：否。
-        :param pulumi.Input[builtins.str] status: 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
-        :param pulumi.Input[builtins.str] update_time: 访问控制策略组的最近操作时间。
+        :param pulumi.Input[builtins.int] acl_entry_count: Number of IP entries contained in the access control policy group.
+        :param pulumi.Input[builtins.str] acl_id: Access control policy group ID
+        :param pulumi.Input[builtins.str] acl_name: Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
+        :param pulumi.Input[builtins.str] create_time: Creation time of the access control policy group
+        :param pulumi.Input[builtins.str] description: Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
+        :param pulumi.Input[builtins.bool] service_managed: Is this a managed resource. true: yes. false: no.
+        :param pulumi.Input[builtins.str] status: Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
+        :param pulumi.Input[builtins.str] update_time: Last operation time of the access control policy group
         """
         if acl_entries is not None:
             pulumi.set(__self__, "acl_entries", acl_entries)
@@ -164,7 +164,7 @@ class _AclState:
     @pulumi.getter(name="aclEntryCount")
     def acl_entry_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        访问控制策略组包含的IP条目数量。
+        Number of IP entries contained in the access control policy group.
         """
         return pulumi.get(self, "acl_entry_count")
 
@@ -176,7 +176,7 @@ class _AclState:
     @pulumi.getter(name="aclId")
     def acl_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问控制策略组的ID。
+        Access control policy group ID
         """
         return pulumi.get(self, "acl_id")
 
@@ -188,7 +188,7 @@ class _AclState:
     @pulumi.getter(name="aclName")
     def acl_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+        Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
         """
         return pulumi.get(self, "acl_name")
 
@@ -200,7 +200,7 @@ class _AclState:
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问控制策略组的创建时间。
+        Creation time of the access control policy group
         """
         return pulumi.get(self, "create_time")
 
@@ -212,7 +212,7 @@ class _AclState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+        Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -233,7 +233,7 @@ class _AclState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问控制策略组所属项目的名称。不填默认为default。
+        Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
         """
         return pulumi.get(self, "project_name")
 
@@ -245,7 +245,7 @@ class _AclState:
     @pulumi.getter(name="serviceManaged")
     def service_managed(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否为托管资源。true：是。false：否。
+        Is this a managed resource. true: yes. false: no.
         """
         return pulumi.get(self, "service_managed")
 
@@ -257,7 +257,7 @@ class _AclState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+        Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
         """
         return pulumi.get(self, "status")
 
@@ -278,7 +278,7 @@ class _AclState:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问控制策略组的最近操作时间。
+        Last operation time of the access control policy group
         """
         return pulumi.get(self, "update_time")
 
@@ -300,7 +300,7 @@ class Acl(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AclTagArgs', 'AclTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        CLB提供监听级别的访问控制，如果您希望仅允许某些IP、或仅拒绝某些IP通过监听端口访问CLB实例，可以对该监听器设置访问控制策略。
+        CLB provides listener-level access control. If you want to allow only certain IPs or deny only certain IPs from accessing the CLB instance through the listener port, you can set an access control policy for the listener.
 
         ## Example Usage
 
@@ -336,9 +336,9 @@ class Acl(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] acl_name: 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
-        :param pulumi.Input[builtins.str] description: 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
-        :param pulumi.Input[builtins.str] project_name: 访问控制策略组所属项目的名称。不填默认为default。
+        :param pulumi.Input[builtins.str] acl_name: Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
+        :param pulumi.Input[builtins.str] description: Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
         """
         ...
     @overload
@@ -347,7 +347,7 @@ class Acl(pulumi.CustomResource):
                  args: Optional[AclArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        CLB提供监听级别的访问控制，如果您希望仅允许某些IP、或仅拒绝某些IP通过监听端口访问CLB实例，可以对该监听器设置访问控制策略。
+        CLB provides listener-level access control. If you want to allow only certain IPs or deny only certain IPs from accessing the CLB instance through the listener port, you can set an access control policy for the listener.
 
         ## Example Usage
 
@@ -451,15 +451,15 @@ class Acl(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] acl_entry_count: 访问控制策略组包含的IP条目数量。
-        :param pulumi.Input[builtins.str] acl_id: 访问控制策略组的ID。
-        :param pulumi.Input[builtins.str] acl_name: 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
-        :param pulumi.Input[builtins.str] create_time: 访问控制策略组的创建时间。
-        :param pulumi.Input[builtins.str] description: 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
-        :param pulumi.Input[builtins.str] project_name: 访问控制策略组所属项目的名称。不填默认为default。
-        :param pulumi.Input[builtins.bool] service_managed: 是否为托管资源。true：是。false：否。
-        :param pulumi.Input[builtins.str] status: 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
-        :param pulumi.Input[builtins.str] update_time: 访问控制策略组的最近操作时间。
+        :param pulumi.Input[builtins.int] acl_entry_count: Number of IP entries contained in the access control policy group.
+        :param pulumi.Input[builtins.str] acl_id: Access control policy group ID
+        :param pulumi.Input[builtins.str] acl_name: Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
+        :param pulumi.Input[builtins.str] create_time: Creation time of the access control policy group
+        :param pulumi.Input[builtins.str] description: Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
+        :param pulumi.Input[builtins.bool] service_managed: Is this a managed resource. true: yes. false: no.
+        :param pulumi.Input[builtins.str] status: Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
+        :param pulumi.Input[builtins.str] update_time: Last operation time of the access control policy group
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -488,7 +488,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter(name="aclEntryCount")
     def acl_entry_count(self) -> pulumi.Output[builtins.int]:
         """
-        访问控制策略组包含的IP条目数量。
+        Number of IP entries contained in the access control policy group.
         """
         return pulumi.get(self, "acl_entry_count")
 
@@ -496,7 +496,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter(name="aclId")
     def acl_id(self) -> pulumi.Output[builtins.str]:
         """
-        访问控制策略组的ID。
+        Access control policy group ID
         """
         return pulumi.get(self, "acl_id")
 
@@ -504,7 +504,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter(name="aclName")
     def acl_name(self) -> pulumi.Output[builtins.str]:
         """
-        访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+        Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
         """
         return pulumi.get(self, "acl_name")
 
@@ -512,7 +512,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[builtins.str]:
         """
-        访问控制策略组的创建时间。
+        Creation time of the access control policy group
         """
         return pulumi.get(self, "create_time")
 
@@ -520,7 +520,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+        Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -533,7 +533,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        访问控制策略组所属项目的名称。不填默认为default。
+        Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
         """
         return pulumi.get(self, "project_name")
 
@@ -541,7 +541,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter(name="serviceManaged")
     def service_managed(self) -> pulumi.Output[builtins.bool]:
         """
-        是否为托管资源。true：是。false：否。
+        Is this a managed resource. true: yes. false: no.
         """
         return pulumi.get(self, "service_managed")
 
@@ -549,7 +549,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+        Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
         """
         return pulumi.get(self, "status")
 
@@ -562,7 +562,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> pulumi.Output[builtins.str]:
         """
-        访问控制策略组的最近操作时间。
+        Last operation time of the access control policy group
         """
         return pulumi.get(self, "update_time")
 

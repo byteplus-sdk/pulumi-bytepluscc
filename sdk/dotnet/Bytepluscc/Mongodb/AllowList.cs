@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 {
     /// <summary>
-    /// 文档数据库 MongoDB 版实例创建成功后，您可以为实例设置白名单，以允许外部设备访问该实例。本文介绍如何通过控制台设置白名单。
+    /// After you create a MongoDB document database instance, you can set an allowlist for the instance to permit external devices to access it. This article describes how to set an allowlist in the console.
     /// 
     /// ## Import
     /// 
@@ -23,49 +23,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
     public partial class AllowList : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+        /// Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
         /// </summary>
         [Output("allowListCategory")]
         public Output<string> AllowListCategory { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单的备注信息，长度不可超过 200 个字符。
+        /// Allowlist remarks. Maximum length: 200 characters.
         /// </summary>
         [Output("allowListDesc")]
         public Output<string> AllowListDesc { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单 ID。
+        /// Allowlist ID.
         /// </summary>
         [Output("allowListId")]
         public Output<string> AllowListId { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单内的 IP 地址（或地址段）总数。
+        /// Total number of IP addresses (or address ranges) in the allowlist.
         /// </summary>
         [Output("allowListIpNum")]
         public Output<int> AllowListIpNum { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+        /// Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
         /// </summary>
         [Output("allowListName")]
         public Output<string> AllowListName { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+        /// IP address type in the allowlist. Only IPv4 addresses are currently supported.
         /// </summary>
         [Output("allowListType")]
         public Output<string> AllowListType { get; private set; } = null!;
 
         /// <summary>
-        /// 输入 IP 地址或 CIDR 格式的 IP 地址段。
+        /// Enter an IP address or a CIDR-format IP address range.
         /// </summary>
         [Output("allowLists")]
         public Output<ImmutableArray<string>> AllowListValue { get; private set; } = null!;
 
         /// <summary>
-        /// 已绑定当前白名单的实例总数。
+        /// Total number of instances bound to the current allowlist.
         /// </summary>
         [Output("associatedInstanceNum")]
         public Output<int> AssociatedInstanceNum { get; private set; } = null!;
@@ -74,7 +74,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         public Output<ImmutableArray<Outputs.AllowListAssociatedInstance>> AssociatedInstances { get; private set; } = null!;
 
         /// <summary>
-        /// 当前白名单所属的项目。
+        /// Project to which the current allowlist belongs.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
@@ -127,25 +127,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
     public sealed class AllowListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+        /// Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
         /// </summary>
         [Input("allowListCategory")]
         public Input<string>? AllowListCategory { get; set; }
 
         /// <summary>
-        /// 白名单的备注信息，长度不可超过 200 个字符。
+        /// Allowlist remarks. Maximum length: 200 characters.
         /// </summary>
         [Input("allowListDesc")]
         public Input<string>? AllowListDesc { get; set; }
 
         /// <summary>
-        /// 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+        /// Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
         /// </summary>
         [Input("allowListName", required: true)]
         public Input<string> AllowListName { get; set; } = null!;
 
         /// <summary>
-        /// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+        /// IP address type in the allowlist. Only IPv4 addresses are currently supported.
         /// </summary>
         [Input("allowListType")]
         public Input<string>? AllowListType { get; set; }
@@ -154,7 +154,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         private InputList<string>? _allowLists;
 
         /// <summary>
-        /// 输入 IP 地址或 CIDR 格式的 IP 地址段。
+        /// Enter an IP address or a CIDR-format IP address range.
         /// </summary>
         public InputList<string> AllowListValue
         {
@@ -171,7 +171,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         }
 
         /// <summary>
-        /// 当前白名单所属的项目。
+        /// Project to which the current allowlist belongs.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -185,37 +185,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
     public sealed class AllowListState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+        /// Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
         /// </summary>
         [Input("allowListCategory")]
         public Input<string>? AllowListCategory { get; set; }
 
         /// <summary>
-        /// 白名单的备注信息，长度不可超过 200 个字符。
+        /// Allowlist remarks. Maximum length: 200 characters.
         /// </summary>
         [Input("allowListDesc")]
         public Input<string>? AllowListDesc { get; set; }
 
         /// <summary>
-        /// 白名单 ID。
+        /// Allowlist ID.
         /// </summary>
         [Input("allowListId")]
         public Input<string>? AllowListId { get; set; }
 
         /// <summary>
-        /// 白名单内的 IP 地址（或地址段）总数。
+        /// Total number of IP addresses (or address ranges) in the allowlist.
         /// </summary>
         [Input("allowListIpNum")]
         public Input<int>? AllowListIpNum { get; set; }
 
         /// <summary>
-        /// 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+        /// Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
         /// </summary>
         [Input("allowListName")]
         public Input<string>? AllowListName { get; set; }
 
         /// <summary>
-        /// 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+        /// IP address type in the allowlist. Only IPv4 addresses are currently supported.
         /// </summary>
         [Input("allowListType")]
         public Input<string>? AllowListType { get; set; }
@@ -224,7 +224,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         private InputList<string>? _allowLists;
 
         /// <summary>
-        /// 输入 IP 地址或 CIDR 格式的 IP 地址段。
+        /// Enter an IP address or a CIDR-format IP address range.
         /// </summary>
         public InputList<string> AllowListValue
         {
@@ -233,7 +233,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         }
 
         /// <summary>
-        /// 已绑定当前白名单的实例总数。
+        /// Total number of instances bound to the current allowlist.
         /// </summary>
         [Input("associatedInstanceNum")]
         public Input<int>? AssociatedInstanceNum { get; set; }
@@ -247,7 +247,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         }
 
         /// <summary>
-        /// 当前白名单所属的项目。
+        /// Project to which the current allowlist belongs.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }

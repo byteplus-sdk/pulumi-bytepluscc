@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Outputs
     public sealed class GetNlbAccessLogResult
     {
         /// <summary>
-        /// 是否开启访问日志。true：是。flase：否。
+        /// Enable access logs. true: yes. false: no.
         /// </summary>
         public readonly bool AccessLogEnabled;
         /// <summary>
-        /// 日志项目的ID。
+        /// Log project ID.
         /// </summary>
         public readonly string ProjectId;
         /// <summary>
-        /// 日志主题的ID。
+        /// Log topic ID.
         /// </summary>
         public readonly string TopicId;
 

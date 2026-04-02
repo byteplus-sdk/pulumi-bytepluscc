@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 企业组织的创建者管理员账号可以新建组织单元来搭建企业的组织结构，对账号进行分组织单元管理。组织单元可以分多个组织单元层级，管理员账号也可属于任意层级的任意组织单元节点。
+ * The administrator account that created the enterprise organization can create organizational units to build the enterprise's organizational structure and manage accounts by organizational unit. Organizational units can have multiple hierarchical levels, and administrator accounts can belong to any organizational unit node at any level.
  *
  * ## Example Usage
  *
@@ -55,51 +55,51 @@ export class Unit extends pulumi.CustomResource {
     }
 
     /**
-     * 创建时间。
+     * Creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 删除标识。
+     * Deletion flag.
      */
     public /*out*/ readonly deleteUk!: pulumi.Output<string>;
     /**
-     * 删除时间。
+     * Deletion time.
      */
     public /*out*/ readonly deletedTime!: pulumi.Output<string>;
     /**
-     * 深度。
+     * Depth.
      */
     public /*out*/ readonly depth!: pulumi.Output<number>;
     /**
-     * 描述。
+     * Description.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 组织单元名称。
+     * Organizational unit name.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * 组织ID。
+     * Organization ID.
      */
     public /*out*/ readonly orgId!: pulumi.Output<string>;
     /**
-     * 组织类型。企业组织： 1
+     * Organization type. Enterprise organization: 1
      */
     public /*out*/ readonly orgType!: pulumi.Output<number>;
     /**
-     * 组织单元ID。
+     * Organizational unit ID.
      */
     public /*out*/ readonly orgUnitId!: pulumi.Output<string>;
     /**
-     * 管理员ID。
+     * Administrator ID.
      */
     public /*out*/ readonly owner!: pulumi.Output<string>;
     /**
-     * 父单元Id。
+     * Parent unit ID.
      */
     public readonly parentId!: pulumi.Output<string>;
     /**
-     * 更新时间。
+     * Update time.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -159,51 +159,51 @@ export class Unit extends pulumi.CustomResource {
  */
 export interface UnitState {
     /**
-     * 创建时间。
+     * Creation time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 删除标识。
+     * Deletion flag.
      */
     deleteUk?: pulumi.Input<string>;
     /**
-     * 删除时间。
+     * Deletion time.
      */
     deletedTime?: pulumi.Input<string>;
     /**
-     * 深度。
+     * Depth.
      */
     depth?: pulumi.Input<number>;
     /**
-     * 描述。
+     * Description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 组织单元名称。
+     * Organizational unit name.
      */
     name?: pulumi.Input<string>;
     /**
-     * 组织ID。
+     * Organization ID.
      */
     orgId?: pulumi.Input<string>;
     /**
-     * 组织类型。企业组织： 1
+     * Organization type. Enterprise organization: 1
      */
     orgType?: pulumi.Input<number>;
     /**
-     * 组织单元ID。
+     * Organizational unit ID.
      */
     orgUnitId?: pulumi.Input<string>;
     /**
-     * 管理员ID。
+     * Administrator ID.
      */
     owner?: pulumi.Input<string>;
     /**
-     * 父单元Id。
+     * Parent unit ID.
      */
     parentId?: pulumi.Input<string>;
     /**
-     * 更新时间。
+     * Update time.
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -213,15 +213,15 @@ export interface UnitState {
  */
 export interface UnitArgs {
     /**
-     * 描述。
+     * Description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 组织单元名称。
+     * Organizational unit name.
      */
     name: pulumi.Input<string>;
     /**
-     * 父单元Id。
+     * Parent unit ID.
      */
     parentId: pulumi.Input<string>;
 }

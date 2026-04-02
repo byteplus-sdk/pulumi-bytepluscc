@@ -85,7 +85,7 @@ class GetRuleResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        转发规则的描述。
+        Forwarding rule description.
         """
         return pulumi.get(self, "description")
 
@@ -93,7 +93,7 @@ class GetRuleResult:
     @pulumi.getter
     def domain(self) -> builtins.str:
         """
-        转发规则的域名。
+        Domain name of the forwarding rule.
         """
         return pulumi.get(self, "domain")
 
@@ -101,7 +101,7 @@ class GetRuleResult:
     @pulumi.getter(name="forwardGroupConfig")
     def forward_group_config(self) -> 'outputs.GetRuleForwardGroupConfigResult':
         """
-        转发规则服务器组配置
+        Forwarding rule server group configuration.
         """
         return pulumi.get(self, "forward_group_config")
 
@@ -117,7 +117,7 @@ class GetRuleResult:
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> builtins.str:
         """
-        监听器ID。
+        Listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -125,7 +125,7 @@ class GetRuleResult:
     @pulumi.getter
     def priority(self) -> builtins.int:
         """
-        标准版转发规则优先级。
+        Standard edition forwarding rule priority.
         """
         return pulumi.get(self, "priority")
 
@@ -133,7 +133,7 @@ class GetRuleResult:
     @pulumi.getter(name="redirectConfig")
     def redirect_config(self) -> 'outputs.GetRuleRedirectConfigResult':
         """
-        重定向相关配置信息。
+        Redirect-related configuration information.
         """
         return pulumi.get(self, "redirect_config")
 
@@ -141,7 +141,7 @@ class GetRuleResult:
     @pulumi.getter(name="rewriteConfig")
     def rewrite_config(self) -> 'outputs.GetRuleRewriteConfigResult':
         """
-        重定向相关配置信息。
+        Redirect-related configuration information.
         """
         return pulumi.get(self, "rewrite_config")
 
@@ -149,7 +149,7 @@ class GetRuleResult:
     @pulumi.getter(name="rewriteEnabled")
     def rewrite_enabled(self) -> builtins.str:
         """
-        转发规则重写配置开关。on：开启。off：关闭。
+        Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
         """
         return pulumi.get(self, "rewrite_enabled")
 
@@ -157,7 +157,7 @@ class GetRuleResult:
     @pulumi.getter(name="ruleAction")
     def rule_action(self) -> builtins.str:
         """
-        转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+        Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
         """
         return pulumi.get(self, "rule_action")
 
@@ -165,7 +165,7 @@ class GetRuleResult:
     @pulumi.getter(name="ruleActions")
     def rule_actions(self) -> Sequence['outputs.GetRuleRuleActionResult']:
         """
-        标准版转发规则动作。
+        Standard edition forwarding rule action.
         """
         return pulumi.get(self, "rule_actions")
 
@@ -173,7 +173,7 @@ class GetRuleResult:
     @pulumi.getter(name="ruleConditions")
     def rule_conditions(self) -> Sequence['outputs.GetRuleRuleConditionResult']:
         """
-        标准版转发规则条件。
+        Standard edition forwarding rule condition.
         """
         return pulumi.get(self, "rule_conditions")
 
@@ -181,7 +181,7 @@ class GetRuleResult:
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> builtins.str:
         """
-        转发规则ID。
+        Forwarding rule ID.
         """
         return pulumi.get(self, "rule_id")
 
@@ -189,7 +189,7 @@ class GetRuleResult:
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> builtins.str:
         """
-        转发规则关联的后端服务器组ID。
+        Backend server group ID associated with the forwarding rule.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -197,7 +197,7 @@ class GetRuleResult:
     @pulumi.getter(name="trafficLimitEnabled")
     def traffic_limit_enabled(self) -> builtins.str:
         """
-        转发规则 QPS 限速开关。on：开启。off：关闭。
+        Forwarding rule QPS throttling switch. on: enabled. off: disabled.
         """
         return pulumi.get(self, "traffic_limit_enabled")
 
@@ -205,7 +205,7 @@ class GetRuleResult:
     @pulumi.getter(name="trafficLimitQps")
     def traffic_limit_qps(self) -> builtins.int:
         """
-        每秒请求数。取值范围：100～100000。
+        Requests per second. Range: 100–100000.
         """
         return pulumi.get(self, "traffic_limit_qps")
 
@@ -213,7 +213,7 @@ class GetRuleResult:
     @pulumi.getter
     def url(self) -> builtins.str:
         """
-        转发规则的URL。
+        Forwarding rule URL.
         """
         return pulumi.get(self, "url")
 

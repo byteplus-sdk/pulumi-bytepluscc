@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * API网关(Gateway)是API管理服务的核心组件，负责接收、处理、转发API请求，并提供安全认证、流量控制等功能。
+ * API Gateway (Gateway) is the core component of the API management service. It receives, processes, and forwards API requests, and provides security authentication, traffic control, and other features
  *
  * ## Import
  *
@@ -44,72 +44,72 @@ export class Gateway extends pulumi.CustomResource {
     }
 
     /**
-     * 后端服务配置信息。
+     * Backend service configuration information
      */
     public /*out*/ readonly backendSpec!: pulumi.Output<outputs.apig.GatewayBackendSpec>;
     /**
-     * 网关备注信息。长度限制为0~253个字符。
+     * Gateway remarks. Length limit: 0–253 characters.
      */
     public readonly comments!: pulumi.Output<string>;
     /**
-     * 网关创建时间。
+     * Gateway creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 自定义日志配置。
+     * Custom log configuration
      */
     public readonly customLog!: pulumi.Output<outputs.apig.GatewayCustomLog>;
     public /*out*/ readonly events!: pulumi.Output<outputs.apig.GatewayEvent[]>;
     /**
-     * 网关实例ID。
+     * Gateway instance ID
      */
     public /*out*/ readonly gatewayId!: pulumi.Output<string>;
     /**
-     * 日志配置。
+     * Log configuration
      */
     public readonly logSpec!: pulumi.Output<outputs.apig.GatewayLogSpec>;
     /**
-     * 网关创建失败、删除失败或异常时的错误信息。
+     * Error message for gateway creation failure, deletion failure, or abnormal status
      */
     public /*out*/ readonly message!: pulumi.Output<string>;
     /**
-     * 监控配置信息。
+     * Monitoring configuration information
      */
     public readonly monitorSpec!: pulumi.Output<outputs.apig.GatewayMonitorSpec>;
     /**
-     * 网关名称。
+     * Gateway name
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * 网络配置信息。
+     * Network configuration information
      */
     public /*out*/ readonly networkSpec!: pulumi.Output<outputs.apig.GatewayNetworkSpec>;
     /**
-     * 项目名称。
+     * Project name
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 资源规格配置信息。
+     * Resource specification configuration information
      */
     public readonly resourceSpec!: pulumi.Output<outputs.apig.GatewayResourceSpec>;
     /**
-     * 网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+     * Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 子网ID列表。长度限制为1~2个。
+     * Subnet ID list. Length limit: 1–2
      */
     public readonly subnetIds!: pulumi.Output<string[]>;
     /**
-     * 链路追踪配置信息。
+     * Link tracing configuration information.
      */
     public readonly traceSpec!: pulumi.Output<outputs.apig.GatewayTraceSpec>;
     /**
-     * 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+     * Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
      */
     public readonly type!: pulumi.Output<string>;
     /**
-     * 网关版本。
+     * Gateway version.
      */
     public /*out*/ readonly version!: pulumi.Output<string>;
     /**
@@ -184,72 +184,72 @@ export class Gateway extends pulumi.CustomResource {
  */
 export interface GatewayState {
     /**
-     * 后端服务配置信息。
+     * Backend service configuration information
      */
     backendSpec?: pulumi.Input<inputs.apig.GatewayBackendSpec>;
     /**
-     * 网关备注信息。长度限制为0~253个字符。
+     * Gateway remarks. Length limit: 0–253 characters.
      */
     comments?: pulumi.Input<string>;
     /**
-     * 网关创建时间。
+     * Gateway creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 自定义日志配置。
+     * Custom log configuration
      */
     customLog?: pulumi.Input<inputs.apig.GatewayCustomLog>;
     events?: pulumi.Input<pulumi.Input<inputs.apig.GatewayEvent>[]>;
     /**
-     * 网关实例ID。
+     * Gateway instance ID
      */
     gatewayId?: pulumi.Input<string>;
     /**
-     * 日志配置。
+     * Log configuration
      */
     logSpec?: pulumi.Input<inputs.apig.GatewayLogSpec>;
     /**
-     * 网关创建失败、删除失败或异常时的错误信息。
+     * Error message for gateway creation failure, deletion failure, or abnormal status
      */
     message?: pulumi.Input<string>;
     /**
-     * 监控配置信息。
+     * Monitoring configuration information
      */
     monitorSpec?: pulumi.Input<inputs.apig.GatewayMonitorSpec>;
     /**
-     * 网关名称。
+     * Gateway name
      */
     name?: pulumi.Input<string>;
     /**
-     * 网络配置信息。
+     * Network configuration information
      */
     networkSpec?: pulumi.Input<inputs.apig.GatewayNetworkSpec>;
     /**
-     * 项目名称。
+     * Project name
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 资源规格配置信息。
+     * Resource specification configuration information
      */
     resourceSpec?: pulumi.Input<inputs.apig.GatewayResourceSpec>;
     /**
-     * 网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+     * Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
      */
     status?: pulumi.Input<string>;
     /**
-     * 子网ID列表。长度限制为1~2个。
+     * Subnet ID list. Length limit: 1–2
      */
     subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 链路追踪配置信息。
+     * Link tracing configuration information.
      */
     traceSpec?: pulumi.Input<inputs.apig.GatewayTraceSpec>;
     /**
-     * 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+     * Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
      */
     type?: pulumi.Input<string>;
     /**
-     * 网关版本。
+     * Gateway version.
      */
     version?: pulumi.Input<string>;
     /**
@@ -263,43 +263,43 @@ export interface GatewayState {
  */
 export interface GatewayArgs {
     /**
-     * 网关备注信息。长度限制为0~253个字符。
+     * Gateway remarks. Length limit: 0–253 characters.
      */
     comments?: pulumi.Input<string>;
     /**
-     * 自定义日志配置。
+     * Custom log configuration
      */
     customLog?: pulumi.Input<inputs.apig.GatewayCustomLog>;
     /**
-     * 日志配置。
+     * Log configuration
      */
     logSpec?: pulumi.Input<inputs.apig.GatewayLogSpec>;
     /**
-     * 监控配置信息。
+     * Monitoring configuration information
      */
     monitorSpec?: pulumi.Input<inputs.apig.GatewayMonitorSpec>;
     /**
-     * 网关名称。
+     * Gateway name
      */
     name: pulumi.Input<string>;
     /**
-     * 项目名称。
+     * Project name
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 资源规格配置信息。
+     * Resource specification configuration information
      */
     resourceSpec?: pulumi.Input<inputs.apig.GatewayResourceSpec>;
     /**
-     * 子网ID列表。长度限制为1~2个。
+     * Subnet ID list. Length limit: 1–2
      */
     subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 链路追踪配置信息。
+     * Link tracing configuration information.
      */
     traceSpec?: pulumi.Input<inputs.apig.GatewayTraceSpec>;
     /**
-     * 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+     * Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
      */
     type?: pulumi.Input<string>;
     /**

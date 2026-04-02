@@ -16,14 +16,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
     public static final DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsArgs Empty = new DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsArgs();
 
     /**
-     * 表示鉴权请求头是否包含用户请求头。该参数有以下取值：exclude：表示鉴权请求头中不包含任何用户请求头。include：表示鉴权请求头中包含所有用户请求头。includePart：表示鉴权请求头包含指定的用户请求头。
+     * Indicates whether the authentication request header includes user request headers. The parameter values are: exclude: the authentication request header does not include any user request headers. include: the authentication request header includes all user request headers. includePart: the authentication request header includes specified user request headers.
      * 
      */
     @Import(name="action")
     private @Nullable Output<String> action;
 
     /**
-     * @return 表示鉴权请求头是否包含用户请求头。该参数有以下取值：exclude：表示鉴权请求头中不包含任何用户请求头。include：表示鉴权请求头中包含所有用户请求头。includePart：表示鉴权请求头包含指定的用户请求头。
+     * @return Indicates whether the authentication request header includes user request headers. The parameter values are: exclude: the authentication request header does not include any user request headers. include: the authentication request header includes all user request headers. includePart: the authentication request header includes specified user request headers.
      * 
      */
     public Optional<Output<String>> action() {
@@ -31,14 +31,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
     }
 
     /**
-     * 表示 Action 参数所对应的参数值，长度不能超过 1,024 个字符。该参数有以下说明：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，Value 参数的取值是用户请求中的一个或者多个头部。多个头部使用英文分号（;）分隔。其取值不能只是 *，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（&#34;），Delete（ASCII code 127）该参数的默认值是 *。
+     * Indicates the parameter value corresponding to the Action parameter. The length must not exceed 1,024 characters. The parameter has the following notes: If Action is exclude or include, Value must be *. If Action is includePart, the Value parameter can be one or more headers from the user&#39;s request. Multiple headers are separated by a semicolon (;). The value cannot be only *, and can include printable ASCII characters except for the following: underscore (_), space, double quotes (&#34;), Delete (ASCII code 127). The default value for this parameter is *.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 表示 Action 参数所对应的参数值，长度不能超过 1,024 个字符。该参数有以下说明：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，Value 参数的取值是用户请求中的一个或者多个头部。多个头部使用英文分号（;）分隔。其取值不能只是 *，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（&#34;），Delete（ASCII code 127）该参数的默认值是 *。
+     * @return Indicates the parameter value corresponding to the Action parameter. The length must not exceed 1,024 characters. The parameter has the following notes: If Action is exclude or include, Value must be *. If Action is includePart, the Value parameter can be one or more headers from the user&#39;s request. Multiple headers are separated by a semicolon (;). The value cannot be only *, and can include printable ASCII characters except for the following: underscore (_), space, double quotes (&#34;), Delete (ASCII code 127). The default value for this parameter is *.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
         }
 
         /**
-         * @param action 表示鉴权请求头是否包含用户请求头。该参数有以下取值：exclude：表示鉴权请求头中不包含任何用户请求头。include：表示鉴权请求头中包含所有用户请求头。includePart：表示鉴权请求头包含指定的用户请求头。
+         * @param action Indicates whether the authentication request header includes user request headers. The parameter values are: exclude: the authentication request header does not include any user request headers. include: the authentication request header includes all user request headers. includePart: the authentication request header includes specified user request headers.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
         }
 
         /**
-         * @param action 表示鉴权请求头是否包含用户请求头。该参数有以下取值：exclude：表示鉴权请求头中不包含任何用户请求头。include：表示鉴权请求头中包含所有用户请求头。includePart：表示鉴权请求头包含指定的用户请求头。
+         * @param action Indicates whether the authentication request header includes user request headers. The parameter values are: exclude: the authentication request header does not include any user request headers. include: the authentication request header includes all user request headers. includePart: the authentication request header includes specified user request headers.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
         }
 
         /**
-         * @param value 表示 Action 参数所对应的参数值，长度不能超过 1,024 个字符。该参数有以下说明：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，Value 参数的取值是用户请求中的一个或者多个头部。多个头部使用英文分号（;）分隔。其取值不能只是 *，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（&#34;），Delete（ASCII code 127）该参数的默认值是 *。
+         * @param value Indicates the parameter value corresponding to the Action parameter. The length must not exceed 1,024 characters. The parameter has the following notes: If Action is exclude or include, Value must be *. If Action is includePart, the Value parameter can be one or more headers from the user&#39;s request. Multiple headers are separated by a semicolon (;). The value cannot be only *, and can include printable ASCII characters except for the following: underscore (_), space, double quotes (&#34;), Delete (ASCII code 127). The default value for this parameter is *.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
         }
 
         /**
-         * @param value 表示 Action 参数所对应的参数值，长度不能超过 1,024 个字符。该参数有以下说明：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，Value 参数的取值是用户请求中的一个或者多个头部。多个头部使用英文分号（;）分隔。其取值不能只是 *，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（&#34;），Delete（ASCII code 127）该参数的默认值是 *。
+         * @param value Indicates the parameter value corresponding to the Action parameter. The length must not exceed 1,024 characters. The parameter has the following notes: If Action is exclude or include, Value must be *. If Action is includePart, the Value parameter can be one or more headers from the user&#39;s request. Multiple headers are separated by a semicolon (;). The value cannot be only *, and can include printable ASCII characters except for the following: underscore (_), space, double quotes (&#34;), Delete (ASCII code 127). The default value for this parameter is *.
          * 
          * @return builder
          * 

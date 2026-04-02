@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetClusterServicesConfigResult
     {
         /// <summary>
-        /// Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+        /// IPv4 private network address exposed by Kubernetes Service.
         /// </summary>
         public readonly ImmutableArray<string> ServiceCidrsv4s;
 

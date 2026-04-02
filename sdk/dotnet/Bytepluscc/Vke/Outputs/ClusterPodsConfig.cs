@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class ClusterPodsConfig
     {
         /// <summary>
-        /// Flannel 网络配置。
+        /// Flannel network configuration.
         /// </summary>
         public readonly Outputs.ClusterPodsConfigFlannelConfig? FlannelConfig;
         /// <summary>
-        /// 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+        /// Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
         /// </summary>
         public readonly string? PodNetworkMode;
         /// <summary>
-        /// VPC-CNI 网络配置。
+        /// VPC-CNI network configuration.
         /// </summary>
         public readonly Outputs.ClusterPodsConfigVpcCniConfig? VpcCniConfig;
 

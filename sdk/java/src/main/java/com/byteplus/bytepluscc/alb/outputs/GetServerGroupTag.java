@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetServerGroupTag {
     /**
-     * @return 标签的标签键。同一资源的标签键不允许重复。
+     * @return Tag key. Tag keys for the same resource must be unique.
      * 
      */
     private String key;
     /**
-     * @return 标签的标签值。
+     * @return Tag value of the tag.
      * 
      */
     private String value;
 
     private GetServerGroupTag() {}
     /**
-     * @return 标签的标签键。同一资源的标签键不允许重复。
+     * @return Tag key. Tag keys for the same resource must be unique.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 标签的标签值。
+     * @return Tag value of the tag.
      * 
      */
     public String value() {

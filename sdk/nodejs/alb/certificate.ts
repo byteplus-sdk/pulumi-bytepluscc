@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ALB 支持上传服务器证书、CA 证书到控制台，对上传的证书单独管理。
+ * ALB supports uploading server certificates and CA certificates to the console and manages uploaded certificates separately
  *
  * ## Example Usage
  *
@@ -63,55 +63,55 @@ export class Certificate extends pulumi.CustomResource {
     }
 
     /**
-     * 证书ID。
+     * Certificate ID
      */
     public /*out*/ readonly certificateId!: pulumi.Output<string>;
     /**
-     * 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+     * Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      */
     public readonly certificateName!: pulumi.Output<string>;
     /**
-     * 证书类型，取值：CA：CA证书、Server：服务器证书。
+     * Certificate type. Options: CA: CA certificate; Server: server certificate
      */
     public readonly certificateType!: pulumi.Output<string>;
     /**
-     * 证书创建时间。
+     * Certificate creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 证书描述。
+     * Certificate description
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 证书域名。
+     * Certificate domain name
      */
     public /*out*/ readonly domainName!: pulumi.Output<string>;
     /**
-     * 证书过期时间。
+     * Certificate expiration time
      */
     public /*out*/ readonly expiredAt!: pulumi.Output<string>;
     /**
-     * 证书关联的监听器列表。
+     * List of listeners associated with the certificate
      */
     public /*out*/ readonly listeners!: pulumi.Output<string[]>;
     /**
-     * 服务器证书的私钥，当证书类型为Server时必填。
+     * Server certificate private key. Required when certificate type is Server
      */
     public readonly privateKey!: pulumi.Output<string>;
     /**
-     * 项目名称。
+     * Project name
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 服务器证书的公钥。
+     * Server certificate public key
      */
     public readonly publicKey!: pulumi.Output<string>;
     /**
-     * 证书扩展域名列表，用英文',' 分隔多个域名， 包含(commonName,DnsName,IP)。
+     * Certificate subject alternative name list. Use English ',' to separate multiple domain names. Includes (commonName, DnsName, IP)
      */
     public /*out*/ readonly san!: pulumi.Output<string>;
     /**
-     * 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+     * Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.alb.CertificateTag[]>;
@@ -176,55 +176,55 @@ export class Certificate extends pulumi.CustomResource {
  */
 export interface CertificateState {
     /**
-     * 证书ID。
+     * Certificate ID
      */
     certificateId?: pulumi.Input<string>;
     /**
-     * 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+     * Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      */
     certificateName?: pulumi.Input<string>;
     /**
-     * 证书类型，取值：CA：CA证书、Server：服务器证书。
+     * Certificate type. Options: CA: CA certificate; Server: server certificate
      */
     certificateType?: pulumi.Input<string>;
     /**
-     * 证书创建时间。
+     * Certificate creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 证书描述。
+     * Certificate description
      */
     description?: pulumi.Input<string>;
     /**
-     * 证书域名。
+     * Certificate domain name
      */
     domainName?: pulumi.Input<string>;
     /**
-     * 证书过期时间。
+     * Certificate expiration time
      */
     expiredAt?: pulumi.Input<string>;
     /**
-     * 证书关联的监听器列表。
+     * List of listeners associated with the certificate
      */
     listeners?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 服务器证书的私钥，当证书类型为Server时必填。
+     * Server certificate private key. Required when certificate type is Server
      */
     privateKey?: pulumi.Input<string>;
     /**
-     * 项目名称。
+     * Project name
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 服务器证书的公钥。
+     * Server certificate public key
      */
     publicKey?: pulumi.Input<string>;
     /**
-     * 证书扩展域名列表，用英文',' 分隔多个域名， 包含(commonName,DnsName,IP)。
+     * Certificate subject alternative name list. Use English ',' to separate multiple domain names. Includes (commonName, DnsName, IP)
      */
     san?: pulumi.Input<string>;
     /**
-     * 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+     * Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.alb.CertificateTag>[]>;
@@ -235,27 +235,27 @@ export interface CertificateState {
  */
 export interface CertificateArgs {
     /**
-     * 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+     * Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      */
     certificateName?: pulumi.Input<string>;
     /**
-     * 证书类型，取值：CA：CA证书、Server：服务器证书。
+     * Certificate type. Options: CA: CA certificate; Server: server certificate
      */
     certificateType: pulumi.Input<string>;
     /**
-     * 证书描述。
+     * Certificate description
      */
     description?: pulumi.Input<string>;
     /**
-     * 服务器证书的私钥，当证书类型为Server时必填。
+     * Server certificate private key. Required when certificate type is Server
      */
     privateKey?: pulumi.Input<string>;
     /**
-     * 项目名称。
+     * Project name
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 服务器证书的公钥。
+     * Server certificate public key
      */
     publicKey: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.alb.CertificateTag>[]>;

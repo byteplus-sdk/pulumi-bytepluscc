@@ -19,14 +19,14 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
     public static final UpstreamSourceState Empty = new UpstreamSourceState();
 
     /**
-     * 备注，长度限制为0~253个字符。
+     * Remarks, length limit: 0–253 characters
      * 
      */
     @Import(name="comments")
     private @Nullable Output<String> comments;
 
     /**
-     * @return 备注，长度限制为0~253个字符。
+     * @return Remarks, length limit: 0–253 characters
      * 
      */
     public Optional<Output<String>> comments() {
@@ -34,14 +34,14 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 创建时间。
+     * Creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -49,14 +49,14 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 网关实例ID。
+     * Gateway instance ID
      * 
      */
     @Import(name="gatewayId")
     private @Nullable Output<String> gatewayId;
 
     /**
-     * @return 网关实例ID。
+     * @return Gateway instance ID
      * 
      */
     public Optional<Output<String>> gatewayId() {
@@ -64,14 +64,14 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+     * Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
      * 
      */
     @Import(name="ingressSettings")
     private @Nullable Output<UpstreamSourceIngressSettingsArgs> ingressSettings;
 
     /**
-     * @return 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+     * @return Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
      * 
      */
     public Optional<Output<UpstreamSourceIngressSettingsArgs>> ingressSettings() {
@@ -79,14 +79,14 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Upstream来源配置。
+     * Upstream source configuration
      * 
      */
     @Import(name="sourceSpec")
     private @Nullable Output<UpstreamSourceSourceSpecArgs> sourceSpec;
 
     /**
-     * @return Upstream来源配置。
+     * @return Upstream source configuration
      * 
      */
     public Optional<Output<UpstreamSourceSourceSpecArgs>> sourceSpec() {
@@ -94,14 +94,14 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+     * Upstream source type. Options: K8S: Container cluster. Nacos: Registry
      * 
      */
     @Import(name="sourceType")
     private @Nullable Output<String> sourceType;
 
     /**
-     * @return Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+     * @return Upstream source type. Options: K8S: Container cluster. Nacos: Registry
      * 
      */
     public Optional<Output<String>> sourceType() {
@@ -109,14 +109,14 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+     * Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+     * @return Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
      * 
      */
     public Optional<Output<String>> status() {
@@ -124,14 +124,14 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+     * Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
      * 
      */
     @Import(name="statusMessage")
     private @Nullable Output<String> statusMessage;
 
     /**
-     * @return 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+     * @return Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
      * 
      */
     public Optional<Output<String>> statusMessage() {
@@ -139,14 +139,14 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 更新时间。
+     * Update time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -154,14 +154,14 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Upstream来源ID。
+     * Upstream source ID
      * 
      */
     @Import(name="upstreamSourceId")
     private @Nullable Output<String> upstreamSourceId;
 
     /**
-     * @return Upstream来源ID。
+     * @return Upstream source ID
      * 
      */
     public Optional<Output<String>> upstreamSourceId() {
@@ -169,14 +169,14 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 指定命名空间。
+     * Specify namespace
      * 
      */
     @Import(name="watchNamespaces")
     private @Nullable Output<List<String>> watchNamespaces;
 
     /**
-     * @return 指定命名空间。
+     * @return Specify namespace
      * 
      */
     public Optional<Output<List<String>>> watchNamespaces() {
@@ -218,7 +218,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param comments 备注，长度限制为0~253个字符。
+         * @param comments Remarks, length limit: 0–253 characters
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param comments 备注，长度限制为0~253个字符。
+         * @param comments Remarks, length limit: 0–253 characters
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time
          * 
          * @return builder
          * 
@@ -250,7 +250,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time
          * 
          * @return builder
          * 
@@ -260,7 +260,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param gatewayId 网关实例ID。
+         * @param gatewayId Gateway instance ID
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param gatewayId 网关实例ID。
+         * @param gatewayId Gateway instance ID
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ingressSettings 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+         * @param ingressSettings Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ingressSettings 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+         * @param ingressSettings Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sourceSpec Upstream来源配置。
+         * @param sourceSpec Upstream source configuration
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sourceSpec Upstream来源配置。
+         * @param sourceSpec Upstream source configuration
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sourceType Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+         * @param sourceType Upstream source type. Options: K8S: Container cluster. Nacos: Registry
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sourceType Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+         * @param sourceType Upstream source type. Options: K8S: Container cluster. Nacos: Registry
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param status 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+         * @param status Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param status 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+         * @param status Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param statusMessage 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+         * @param statusMessage Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param statusMessage 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+         * @param statusMessage Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
          * 
          * @return builder
          * 
@@ -386,7 +386,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time
          * 
          * @return builder
          * 
@@ -407,7 +407,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param upstreamSourceId Upstream来源ID。
+         * @param upstreamSourceId Upstream source ID
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param upstreamSourceId Upstream来源ID。
+         * @param upstreamSourceId Upstream source ID
          * 
          * @return builder
          * 
@@ -428,7 +428,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param watchNamespaces 指定命名空间。
+         * @param watchNamespaces Specify namespace
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param watchNamespaces 指定命名空间。
+         * @param watchNamespaces Specify namespace
          * 
          * @return builder
          * 
@@ -449,7 +449,7 @@ public final class UpstreamSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param watchNamespaces 指定命名空间。
+         * @param watchNamespaces Specify namespace
          * 
          * @return builder
          * 

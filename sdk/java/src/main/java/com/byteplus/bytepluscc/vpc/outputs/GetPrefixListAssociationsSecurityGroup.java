@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetPrefixListAssociationsSecurityGroup {
     /**
-     * @return 关联资源的ID。
+     * @return ID of the associated resource.
      * 
      */
     private String resourceId;
     /**
-     * @return 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+     * @return Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
      * 
      */
     private String resourceType;
 
     private GetPrefixListAssociationsSecurityGroup() {}
     /**
-     * @return 关联资源的ID。
+     * @return ID of the associated resource.
      * 
      */
     public String resourceId() {
         return this.resourceId;
     }
     /**
-     * @return 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+     * @return Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
      * 
      */
     public String resourceType() {

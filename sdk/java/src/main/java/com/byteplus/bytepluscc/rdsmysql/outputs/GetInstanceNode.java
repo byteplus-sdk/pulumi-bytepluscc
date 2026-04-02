@@ -12,134 +12,134 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceNode {
     /**
-     * @return 节点的创建时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Node creation time (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
      * 
      */
     private String createTime;
     /**
-     * @return 只读节点的延迟复制时间，取值为 0~604800，单位为秒。
+     * @return Replication delay time for read-only nodes. Value range: 0–604800, unit: seconds
      * 
      */
     private Integer delayReplicationTime;
     /**
-     * @return 内存大小，单位为 GB。
+     * @return Memory size, in GB.
      * 
      */
     private Integer memory;
     /**
-     * @return 节点 ID。
+     * @return Node ID.
      * 
      */
     private String nodeId;
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     private String nodeSpec;
     /**
-     * @return 节点状态，取值：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Restoring：恢复中。Updating：变更中。Upgrading：升级中。Error：错误。
+     * @return Node status. Values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Restoring: restoring. Updating: updating. Upgrading: upgrading. Error: error
      * 
      */
     private String nodeStatus;
     /**
-     * @return 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+     * @return Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
      * 
      */
     private String nodeType;
     /**
-     * @return 节点与主节点之间的延迟时间。单位为毫秒（ms）。
+     * @return Latency between node and primary node, in milliseconds (ms).
      * 
      */
     private Integer syncDelay;
     /**
-     * @return 节点更新本地时间。
+     * @return Node updates local time.
      * 
      */
     private String updateTime;
     /**
-     * @return 节点的 CPU 核数。
+     * @return Number of CPU cores for the node
      * 
      */
     private Integer vcpu;
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID
      * 
      */
     private String zoneId;
 
     private GetInstanceNode() {}
     /**
-     * @return 节点的创建时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Node creation time (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return 只读节点的延迟复制时间，取值为 0~604800，单位为秒。
+     * @return Replication delay time for read-only nodes. Value range: 0–604800, unit: seconds
      * 
      */
     public Integer delayReplicationTime() {
         return this.delayReplicationTime;
     }
     /**
-     * @return 内存大小，单位为 GB。
+     * @return Memory size, in GB.
      * 
      */
     public Integer memory() {
         return this.memory;
     }
     /**
-     * @return 节点 ID。
+     * @return Node ID.
      * 
      */
     public String nodeId() {
         return this.nodeId;
     }
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     public String nodeSpec() {
         return this.nodeSpec;
     }
     /**
-     * @return 节点状态，取值：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Restoring：恢复中。Updating：变更中。Upgrading：升级中。Error：错误。
+     * @return Node status. Values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Restoring: restoring. Updating: updating. Upgrading: upgrading. Error: error
      * 
      */
     public String nodeStatus() {
         return this.nodeStatus;
     }
     /**
-     * @return 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+     * @return Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
      * 
      */
     public String nodeType() {
         return this.nodeType;
     }
     /**
-     * @return 节点与主节点之间的延迟时间。单位为毫秒（ms）。
+     * @return Latency between node and primary node, in milliseconds (ms).
      * 
      */
     public Integer syncDelay() {
         return this.syncDelay;
     }
     /**
-     * @return 节点更新本地时间。
+     * @return Node updates local time.
      * 
      */
     public String updateTime() {
         return this.updateTime;
     }
     /**
-     * @return 节点的 CPU 核数。
+     * @return Number of CPU cores for the node
      * 
      */
     public Integer vcpu() {
         return this.vcpu;
     }
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID
      * 
      */
     public String zoneId() {

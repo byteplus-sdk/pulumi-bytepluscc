@@ -14,43 +14,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql.Inputs
     public sealed class InstanceConnectionInfoAddressArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+        /// Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
         /// </summary>
         [Input("dnsVisibility")]
         public Input<bool>? DnsVisibility { get; set; }
 
         /// <summary>
-        /// 域名。
+        /// Domain name.
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
         /// <summary>
-        /// EIP的ID，仅对公网地址有效。
+        /// EIP ID, valid only for public addresses.
         /// </summary>
         [Input("eipId")]
         public Input<string>? EipId { get; set; }
 
         /// <summary>
-        /// IP地址。
+        /// IP address.
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// 网络地址类型。取值：Private：私网类型。Public：公网类型。
+        /// Network address type. Possible values: Private: private network type. Public: public network type.
         /// </summary>
         [Input("networkType")]
         public Input<string>? NetworkType { get; set; }
 
         /// <summary>
-        /// 端口。
+        /// Port.
         /// </summary>
         [Input("port")]
         public Input<string>? Port { get; set; }
 
         /// <summary>
-        /// 子网 ID，仅对私网地址有效。
+        /// Subnet ID, valid only for private network addresses.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

@@ -22,7 +22,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * Upstream 是对 API 网关实例后端的抽象。您可以将具有相同功能的后端应用抽象为一个 Upstream，实现路由和后端应用解耦，更灵活地支持后端应用的灰度发布、多版本管理等场景。本文为您介绍 Upstream 的概念及作用。
+ * Upstream is an abstraction of the backend for API gateway instances. You can group backend applications with the same functionality into an upstream, which decouples routing from backend applications and provides flexible support for scenarios such as canary releases and multi-version management. This article introduces the concept and purpose of upstream
  * 
  * ## Example Usage
  * 
@@ -45,154 +45,154 @@ public class Upstream extends com.pulumi.resources.CustomResource {
         return this.backendTargets;
     }
     /**
-     * 服务熔断配置。
+     * Service circuit breaking configuration
      * 
      */
     @Export(name="circuitBreakingSettings", refs={UpstreamCircuitBreakingSettings.class}, tree="[0]")
     private Output<UpstreamCircuitBreakingSettings> circuitBreakingSettings;
 
     /**
-     * @return 服务熔断配置。
+     * @return Service circuit breaking configuration
      * 
      */
     public Output<UpstreamCircuitBreakingSettings> circuitBreakingSettings() {
         return this.circuitBreakingSettings;
     }
     /**
-     * 备注。
+     * Remarks
      * 
      */
     @Export(name="comments", refs={String.class}, tree="[0]")
     private Output<String> comments;
 
     /**
-     * @return 备注。
+     * @return Remarks
      * 
      */
     public Output<String> comments() {
         return this.comments;
     }
     /**
-     * 连接池配置。
+     * Connection Pool Configuration
      * 
      */
     @Export(name="connectionPoolSettings", refs={UpstreamConnectionPoolSettings.class}, tree="[0]")
     private Output<UpstreamConnectionPoolSettings> connectionPoolSettings;
 
     /**
-     * @return 连接池配置。
+     * @return Connection Pool Configuration
      * 
      */
     public Output<UpstreamConnectionPoolSettings> connectionPoolSettings() {
         return this.connectionPoolSettings;
     }
     /**
-     * Upstream创建时间。
+     * Upstream creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return Upstream创建时间。
+     * @return Upstream creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 网关实例ID。
+     * Gateway Instance ID
      * 
      */
     @Export(name="gatewayId", refs={String.class}, tree="[0]")
     private Output<String> gatewayId;
 
     /**
-     * @return 网关实例ID。
+     * @return Gateway Instance ID
      * 
      */
     public Output<String> gatewayId() {
         return this.gatewayId;
     }
     /**
-     * 负载均衡配置。
+     * Load Balancing Configuration
      * 
      */
     @Export(name="loadBalancerSettings", refs={UpstreamLoadBalancerSettings.class}, tree="[0]")
     private Output<UpstreamLoadBalancerSettings> loadBalancerSettings;
 
     /**
-     * @return 负载均衡配置。
+     * @return Load Balancing Configuration
      * 
      */
     public Output<UpstreamLoadBalancerSettings> loadBalancerSettings() {
         return this.loadBalancerSettings;
     }
     /**
-     * Upstream名称。
+     * Upstream name
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return Upstream名称。
+     * @return Upstream name
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+     * Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
      * 
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
-     * @return 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+     * @return Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
      * 
      */
     public Output<String> protocol() {
         return this.protocol;
     }
     /**
-     * Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+     * Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
      * 
      */
     @Export(name="sourceType", refs={String.class}, tree="[0]")
     private Output<String> sourceType;
 
     /**
-     * @return Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+     * @return Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
      * 
      */
     public Output<String> sourceType() {
         return this.sourceType;
     }
     /**
-     * TLS配置。
+     * TLS Configuration
      * 
      */
     @Export(name="tlsSettings", refs={UpstreamTlsSettings.class}, tree="[0]")
     private Output<UpstreamTlsSettings> tlsSettings;
 
     /**
-     * @return TLS配置。
+     * @return TLS Configuration
      * 
      */
     public Output<UpstreamTlsSettings> tlsSettings() {
         return this.tlsSettings;
     }
     /**
-     * Upstream更新时间。
+     * Upstream update time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return Upstream更新时间。
+     * @return Upstream update time
      * 
      */
     public Output<String> updatedTime() {
@@ -213,14 +213,14 @@ public class Upstream extends com.pulumi.resources.CustomResource {
         return this.upstreamId;
     }
     /**
-     * Upstream配置。
+     * Upstream Configuration
      * 
      */
     @Export(name="upstreamSpec", refs={UpstreamUpstreamSpec.class}, tree="[0]")
     private Output<UpstreamUpstreamSpec> upstreamSpec;
 
     /**
-     * @return Upstream配置。
+     * @return Upstream Configuration
      * 
      */
     public Output<UpstreamUpstreamSpec> upstreamSpec() {

@@ -14,38 +14,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainBackendGroup {
     /**
-     * @return 接入的端口号。
+     * @return Access port number.
      * 
      */
     private List<Integer> accessPorts;
     /**
-     * @return 源站组详情。
+     * @return Origin group details.
      * 
      */
     private List<GetDomainBackendGroupBackend> backends;
     /**
-     * @return 源站组名称。
+     * @return Origin group name.
      * 
      */
     private String name;
 
     private GetDomainBackendGroup() {}
     /**
-     * @return 接入的端口号。
+     * @return Access port number.
      * 
      */
     public List<Integer> accessPorts() {
         return this.accessPorts;
     }
     /**
-     * @return 源站组详情。
+     * @return Origin group details.
      * 
      */
     public List<GetDomainBackendGroupBackend> backends() {
         return this.backends;
     }
     /**
-     * @return 源站组名称。
+     * @return Origin group name.
      * 
      */
     public String name() {

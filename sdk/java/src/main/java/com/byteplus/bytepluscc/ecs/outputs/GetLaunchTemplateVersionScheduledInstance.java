@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetLaunchTemplateVersionScheduledInstance {
     /**
-     * @return 弹性预约单的描述。
+     * @return Description of the elastic reservation order
      * 
      */
     private String scheduledInstanceDescription;
     /**
-     * @return 弹性预约单的名称。
+     * @return Name of the elastic reservation order
      * 
      */
     private String scheduledInstanceName;
 
     private GetLaunchTemplateVersionScheduledInstance() {}
     /**
-     * @return 弹性预约单的描述。
+     * @return Description of the elastic reservation order
      * 
      */
     public String scheduledInstanceDescription() {
         return this.scheduledInstanceDescription;
     }
     /**
-     * @return 弹性预约单的名称。
+     * @return Name of the elastic reservation order
      * 
      */
     public String scheduledInstanceName() {

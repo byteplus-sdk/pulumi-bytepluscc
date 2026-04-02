@@ -20,14 +20,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
     public static final LaunchTemplateState Empty = new LaunchTemplateState();
 
     /**
-     * 实例启动模板的创建时间。
+     * Instance launch template creation time
      * 
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
-     * @return 实例启动模板的创建时间。
+     * @return Instance launch template creation time
      * 
      */
     public Optional<Output<String>> createdAt() {
@@ -35,14 +35,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 实例启动模板的默认版本号。
+     * Instance launch template default version number
      * 
      */
     @Import(name="defaultVersionNumber")
     private @Nullable Output<Integer> defaultVersionNumber;
 
     /**
-     * @return 实例启动模板的默认版本号。
+     * @return Instance launch template default version number
      * 
      */
     public Optional<Output<Integer>> defaultVersionNumber() {
@@ -50,14 +50,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 实例启动模的最新版本号。
+     * Latest version number of the instance launch template.
      * 
      */
     @Import(name="latestVersionNumber")
     private @Nullable Output<Integer> latestVersionNumber;
 
     /**
-     * @return 实例启动模的最新版本号。
+     * @return Latest version number of the instance launch template.
      * 
      */
     public Optional<Output<Integer>> latestVersionNumber() {
@@ -65,14 +65,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 实例启动模板 ID。
+     * Instance launch template ID
      * 
      */
     @Import(name="launchTemplateId")
     private @Nullable Output<String> launchTemplateId;
 
     /**
-     * @return 实例启动模板 ID。
+     * @return Instance launch template ID
      * 
      */
     public Optional<Output<String>> launchTemplateId() {
@@ -80,14 +80,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 实例启动模板名称。
+     * Instance launch template name.
      * 
      */
     @Import(name="launchTemplateName")
     private @Nullable Output<String> launchTemplateName;
 
     /**
-     * @return 实例启动模板名称。
+     * @return Instance launch template name.
      * 
      */
     public Optional<Output<String>> launchTemplateName() {
@@ -95,14 +95,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 实例启动模版所属项目。
+     * Project associated with the instance launch template.
      * 
      */
     @Import(name="launchTemplateProjectName")
     private @Nullable Output<String> launchTemplateProjectName;
 
     /**
-     * @return 实例启动模版所属项目。
+     * @return Project associated with the instance launch template.
      * 
      */
     public Optional<Output<String>> launchTemplateProjectName() {
@@ -117,14 +117,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 实例启动模板版本信息。
+     * Instance launch template version information
      * 
      */
     @Import(name="launchTemplateVersion")
     private @Nullable Output<LaunchTemplateLaunchTemplateVersionArgs> launchTemplateVersion;
 
     /**
-     * @return 实例启动模板版本信息。
+     * @return Instance launch template version information
      * 
      */
     public Optional<Output<LaunchTemplateLaunchTemplateVersionArgs>> launchTemplateVersion() {
@@ -132,14 +132,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 实例启动模板的更新时间。
+     * Instance launch template update time
      * 
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
-     * @return 实例启动模板的更新时间。
+     * @return Instance launch template update time
      * 
      */
     public Optional<Output<String>> updatedAt() {
@@ -179,7 +179,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param createdAt 实例启动模板的创建时间。
+         * @param createdAt Instance launch template creation time
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param createdAt 实例启动模板的创建时间。
+         * @param createdAt Instance launch template creation time
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param defaultVersionNumber 实例启动模板的默认版本号。
+         * @param defaultVersionNumber Instance launch template default version number
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param defaultVersionNumber 实例启动模板的默认版本号。
+         * @param defaultVersionNumber Instance launch template default version number
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param latestVersionNumber 实例启动模的最新版本号。
+         * @param latestVersionNumber Latest version number of the instance launch template.
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param latestVersionNumber 实例启动模的最新版本号。
+         * @param latestVersionNumber Latest version number of the instance launch template.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param launchTemplateId 实例启动模板 ID。
+         * @param launchTemplateId Instance launch template ID
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param launchTemplateId 实例启动模板 ID。
+         * @param launchTemplateId Instance launch template ID
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param launchTemplateName 实例启动模板名称。
+         * @param launchTemplateName Instance launch template name.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param launchTemplateName 实例启动模板名称。
+         * @param launchTemplateName Instance launch template name.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param launchTemplateProjectName 实例启动模版所属项目。
+         * @param launchTemplateProjectName Project associated with the instance launch template.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param launchTemplateProjectName 实例启动模版所属项目。
+         * @param launchTemplateProjectName Project associated with the instance launch template.
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param launchTemplateVersion 实例启动模板版本信息。
+         * @param launchTemplateVersion Instance launch template version information
          * 
          * @return builder
          * 
@@ -329,7 +329,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param launchTemplateVersion 实例启动模板版本信息。
+         * @param launchTemplateVersion Instance launch template version information
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param updatedAt 实例启动模板的更新时间。
+         * @param updatedAt Instance launch template update time
          * 
          * @return builder
          * 
@@ -350,7 +350,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param updatedAt 实例启动模板的更新时间。
+         * @param updatedAt Instance launch template update time
          * 
          * @return builder
          * 

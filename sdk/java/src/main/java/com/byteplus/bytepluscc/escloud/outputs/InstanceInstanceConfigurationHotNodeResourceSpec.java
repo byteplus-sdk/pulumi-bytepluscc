@@ -13,62 +13,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceInstanceConfigurationHotNodeResourceSpec {
     /**
-     * @return 节点规格的 CPU 资源，单位为核（Core）。
+     * @return CPU resources of node specification, measured in cores
      * 
      */
     private @Nullable Integer cpu;
     /**
-     * @return 节点规格的描述信息。
+     * @return Description of node specification.
      * 
      */
     private @Nullable String description;
     /**
-     * @return 节点规格的显示名称。
+     * @return Display name of node specification.
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return 节点规格的内存容量，单位 GiB。
+     * @return Memory capacity for node specification, measured in GiB.
      * 
      */
     private @Nullable Integer memory;
     /**
-     * @return 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+     * @return Node specification. For details on node specification types and details, see Product Specifications.
      * 
      */
     private @Nullable String name;
 
     private InstanceInstanceConfigurationHotNodeResourceSpec() {}
     /**
-     * @return 节点规格的 CPU 资源，单位为核（Core）。
+     * @return CPU resources of node specification, measured in cores
      * 
      */
     public Optional<Integer> cpu() {
         return Optional.ofNullable(this.cpu);
     }
     /**
-     * @return 节点规格的描述信息。
+     * @return Description of node specification.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return 节点规格的显示名称。
+     * @return Display name of node specification.
      * 
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return 节点规格的内存容量，单位 GiB。
+     * @return Memory capacity for node specification, measured in GiB.
      * 
      */
     public Optional<Integer> memory() {
         return Optional.ofNullable(this.memory);
     }
     /**
-     * @return 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+     * @return Node specification. For details on node specification types and details, see Product Specifications.
      * 
      */
     public Optional<String> name() {

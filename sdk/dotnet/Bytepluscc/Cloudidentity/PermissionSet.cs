@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
 {
     /// <summary>
-    /// 当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。当用户访问火山引擎云资源的权限访问具备可抽象的共性时，如：网络运维权限、安全管理权限等，您可以在云身份中心预置访问权限集作为权限模版，最终基于访问权限集来实现中心化授权。云身份中心将会为您同步分发访问权限集到各个账号，减少企业权限的运维成本。
+    /// After you create a Cloud Identity Center user, you need to grant the user login access permissions to each account. When access permissions to Volcano Engine cloud resources share common characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission operation and maintenance costs
     /// 
     /// ## Import
     /// 
@@ -23,19 +23,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public partial class PermissionSet : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation Time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 权限集描述。
+        /// Permission Set Description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 权限集名称。
+        /// Permission Set Name
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -44,31 +44,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         public Output<ImmutableArray<Outputs.PermissionSetPermissionPolicy>> PermissionPolicies { get; private set; } = null!;
 
         /// <summary>
-        /// 权限集 ID。
+        /// Permission Set ID
         /// </summary>
         [Output("permissionSetId")]
         public Output<string> PermissionSetId { get; private set; } = null!;
 
         /// <summary>
-        /// 跳转控制台 URL。
+        /// Console Redirect URL
         /// </summary>
         [Output("relayState")]
         public Output<string> RelayState { get; private set; } = null!;
 
         /// <summary>
-        /// session 过期时间，单位秒。
+        /// Session Expiration Time (seconds)
         /// </summary>
         [Output("sessionDuration")]
         public Output<int> SessionDuration { get; private set; } = null!;
 
         /// <summary>
-        /// 状态通知配置。
+        /// Status Notification Configuration
         /// </summary>
         [Output("statusNotifications")]
         public Output<ImmutableArray<string>> StatusNotifications { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update Time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -121,13 +121,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class PermissionSetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 权限集描述。
+        /// Permission Set Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 权限集名称。
+        /// Permission Set Name
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -141,13 +141,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         }
 
         /// <summary>
-        /// 跳转控制台 URL。
+        /// Console Redirect URL
         /// </summary>
         [Input("relayState")]
         public Input<string>? RelayState { get; set; }
 
         /// <summary>
-        /// session 过期时间，单位秒。
+        /// Session Expiration Time (seconds)
         /// </summary>
         [Input("sessionDuration")]
         public Input<int>? SessionDuration { get; set; }
@@ -161,19 +161,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class PermissionSetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation Time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 权限集描述。
+        /// Permission Set Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 权限集名称。
+        /// Permission Set Name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -187,19 +187,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         }
 
         /// <summary>
-        /// 权限集 ID。
+        /// Permission Set ID
         /// </summary>
         [Input("permissionSetId")]
         public Input<string>? PermissionSetId { get; set; }
 
         /// <summary>
-        /// 跳转控制台 URL。
+        /// Console Redirect URL
         /// </summary>
         [Input("relayState")]
         public Input<string>? RelayState { get; set; }
 
         /// <summary>
-        /// session 过期时间，单位秒。
+        /// Session Expiration Time (seconds)
         /// </summary>
         [Input("sessionDuration")]
         public Input<int>? SessionDuration { get; set; }
@@ -208,7 +208,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         private InputList<string>? _statusNotifications;
 
         /// <summary>
-        /// 状态通知配置。
+        /// Status Notification Configuration
         /// </summary>
         public InputList<string> StatusNotifications
         {
@@ -217,7 +217,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         }
 
         /// <summary>
-        /// 更新时间。
+        /// Update Time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

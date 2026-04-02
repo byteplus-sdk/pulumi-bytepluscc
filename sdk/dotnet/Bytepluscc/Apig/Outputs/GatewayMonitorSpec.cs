@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GatewayMonitorSpec
     {
         /// <summary>
-        /// 托管Prometheus（VMP）服务。
+        /// Managed Prometheus (VMP) service
         /// </summary>
         public readonly bool? Enable;
         /// <summary>
-        /// Prometheus工作区ID。
+        /// Prometheus workspace ID
         /// </summary>
         public readonly string? WorkspaceId;
 

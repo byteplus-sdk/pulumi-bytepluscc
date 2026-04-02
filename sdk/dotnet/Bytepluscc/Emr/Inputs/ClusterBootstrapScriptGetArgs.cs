@@ -14,49 +14,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
     public sealed class ClusterBootstrapScriptGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 脚本执行范围。
+        /// Script execution scope.
         /// </summary>
         [Input("effectiveScope")]
         public Input<Inputs.ClusterBootstrapScriptEffectiveScopeGetArgs>? EffectiveScope { get; set; }
 
         /// <summary>
-        /// 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+        /// Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
         /// </summary>
         [Input("executionFailStrategy")]
         public Input<string>? ExecutionFailStrategy { get; set; }
 
         /// <summary>
-        /// 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+        /// Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
         /// </summary>
         [Input("executionMoment")]
         public Input<string>? ExecutionMoment { get; set; }
 
         /// <summary>
-        /// 脚本执行优先级。取值范围：1~1000。默认值1。
+        /// Script execution priority. Range: 1~1000. Default: 1.
         /// </summary>
         [Input("priority")]
         public Input<string>? Priority { get; set; }
 
         /// <summary>
-        /// 脚本参数。
+        /// Script parameters.
         /// </summary>
         [Input("scriptArgs")]
         public Input<string>? ScriptArgs { get; set; }
 
         /// <summary>
-        /// 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+        /// Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
         /// </summary>
         [Input("scriptName")]
         public Input<string>? ScriptName { get; set; }
 
         /// <summary>
-        /// 脚本所在TOS路径。必填。以 tos:： 开头。
+        /// Script TOS path. Required. Must start with 'tos:'.
         /// </summary>
         [Input("scriptPath")]
         public Input<string>? ScriptPath { get; set; }
 
         /// <summary>
-        /// 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+        /// Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
         /// </summary>
         [Input("scriptType")]
         public Input<string>? ScriptType { get; set; }

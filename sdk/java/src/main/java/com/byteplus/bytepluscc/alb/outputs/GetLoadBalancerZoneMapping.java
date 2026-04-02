@@ -13,38 +13,38 @@ import java.util.Objects;
 @CustomType
 public final class GetLoadBalancerZoneMapping {
     /**
-     * @return 该可用区下负载均衡提供的IP地址列表。
+     * @return List of IP addresses provided by the load balancer in this availability zone.
      * 
      */
     private List<GetLoadBalancerZoneMappingLoadBalancerAddress> loadBalancerAddresses;
     /**
-     * @return 可用区内提供服务的子网ID。
+     * @return Subnet ID providing services within the availability zone.
      * 
      */
     private String subnetId;
     /**
-     * @return 可用区的唯一标识符。
+     * @return Unique identifier of the availability zone.
      * 
      */
     private String zoneId;
 
     private GetLoadBalancerZoneMapping() {}
     /**
-     * @return 该可用区下负载均衡提供的IP地址列表。
+     * @return List of IP addresses provided by the load balancer in this availability zone.
      * 
      */
     public List<GetLoadBalancerZoneMappingLoadBalancerAddress> loadBalancerAddresses() {
         return this.loadBalancerAddresses;
     }
     /**
-     * @return 可用区内提供服务的子网ID。
+     * @return Subnet ID providing services within the availability zone.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return 可用区的唯一标识符。
+     * @return Unique identifier of the availability zone.
      * 
      */
     public String zoneId() {

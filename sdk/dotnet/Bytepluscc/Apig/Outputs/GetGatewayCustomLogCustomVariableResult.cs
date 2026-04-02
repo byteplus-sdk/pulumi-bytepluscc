@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetGatewayCustomLogCustomVariableResult
     {
         /// <summary>
-        /// 字段别名。
+        /// Field alias
         /// </summary>
         public readonly string AliasesInLog;
         /// <summary>
-        /// 请求头键。
+        /// Request header key
         /// </summary>
         public readonly string Key;
 

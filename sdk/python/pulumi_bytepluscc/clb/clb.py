@@ -55,34 +55,34 @@ class ClbArgs:
                  zone_type: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Clb resource.
-        :param pulumi.Input['ClbAccessLogArgs'] access_log: 负载均衡实例中访问日志的信息。
-        :param pulumi.Input[builtins.str] address_ip_version: CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allowed_ports: 允许的多个端口范围。
-        :param pulumi.Input[builtins.bool] auto_renewal: 是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
-        :param pulumi.Input[builtins.str] bypass_security_group_enabled: 是否开启bypass安全组功能。
-        :param pulumi.Input[builtins.str] description: 负载均衡实例的描述。
-        :param pulumi.Input['ClbEipArgs'] eip: 负载均衡实例的公网IP的信息。
-        :param pulumi.Input[builtins.str] eip_address: 公网IP地址。
-        :param pulumi.Input[builtins.str] eip_id: 公网IP ID。
-        :param pulumi.Input[builtins.float] eni_address_num: 负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
-        :param pulumi.Input['ClbEnisArgs'] enis: 负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
-        :param pulumi.Input[builtins.str] exclusive_cluster_id: 独占集群Id。
-        :param pulumi.Input[builtins.float] load_balancer_billing_type: CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
-        :param pulumi.Input[builtins.str] load_balancer_name: 负载均衡实例的名称。
-        :param pulumi.Input[builtins.str] load_balancer_spec: CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
-        :param pulumi.Input[builtins.str] master_zone_id: 负载均衡实例的主可用区ID。
-        :param pulumi.Input[builtins.str] modification_protection_reason: 设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
-        :param pulumi.Input[builtins.str] modification_protection_status: CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
-        :param pulumi.Input[builtins.bool] new_arch: 是否为新架构。
-        :param pulumi.Input[builtins.str] order_id: 订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
-        :param pulumi.Input[builtins.float] period: 购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
-        :param pulumi.Input[builtins.str] period_unit: 购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
-        :param pulumi.Input[builtins.str] project_name: CLB实例所属项目的名称。
-        :param pulumi.Input[builtins.str] slave_zone_id: 负载均衡实例的备可用区ID。
-        :param pulumi.Input[builtins.str] subnet_id: 负载均衡实例所属VPC内的子网ID。
-        :param pulumi.Input[builtins.str] type: CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
-        :param pulumi.Input[builtins.str] vpc_id: 负载均衡实例所属的VPC ID。
-        :param pulumi.Input[builtins.str] zone_type: 负载均衡实例的可用区类型。
+        :param pulumi.Input['ClbAccessLogArgs'] access_log: Access log information in the load balancer instance
+        :param pulumi.Input[builtins.str] address_ip_version: IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allowed_ports: Allowed port ranges
+        :param pulumi.Input[builtins.bool] auto_renewal: Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
+        :param pulumi.Input[builtins.str] bypass_security_group_enabled: Whether to enable bypass security group feature
+        :param pulumi.Input[builtins.str] description: Description of the load balancer instance
+        :param pulumi.Input['ClbEipArgs'] eip: Public IP information of the load balancer instance
+        :param pulumi.Input[builtins.str] eip_address: Public IP address
+        :param pulumi.Input[builtins.str] eip_id: Public IP ID
+        :param pulumi.Input[builtins.float] eni_address_num: Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
+        :param pulumi.Input['ClbEnisArgs'] enis: List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
+        :param pulumi.Input[builtins.str] exclusive_cluster_id: Dedicated cluster ID
+        :param pulumi.Input[builtins.float] load_balancer_billing_type: CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
+        :param pulumi.Input[builtins.str] load_balancer_name: Name of the load balancer instance
+        :param pulumi.Input[builtins.str] load_balancer_spec: CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
+        :param pulumi.Input[builtins.str] master_zone_id: Main availability zone ID of the load balancer instance
+        :param pulumi.Input[builtins.str] modification_protection_reason: Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
+        :param pulumi.Input[builtins.str] modification_protection_status: Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
+        :param pulumi.Input[builtins.bool] new_arch: Whether it is a new architecture
+        :param pulumi.Input[builtins.str] order_id: Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
+        :param pulumi.Input[builtins.float] period: Duration for purchasing a CLB instance by year or by month. Default is '1'. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
+        :param pulumi.Input[builtins.str] period_unit: Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
+        :param pulumi.Input[builtins.str] project_name: Name of the project associated with the CLB instance
+        :param pulumi.Input[builtins.str] slave_zone_id: Secondary availability zone ID of the load balancer instance
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID within the VPC of the load balancer instance
+        :param pulumi.Input[builtins.str] type: CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID of the load balancer instance
+        :param pulumi.Input[builtins.str] zone_type: Availability zone type of the load balancer instance
         """
         if access_log is not None:
             pulumi.set(__self__, "access_log", access_log)
@@ -151,7 +151,7 @@ class ClbArgs:
     @pulumi.getter(name="accessLog")
     def access_log(self) -> Optional[pulumi.Input['ClbAccessLogArgs']]:
         """
-        负载均衡实例中访问日志的信息。
+        Access log information in the load balancer instance
         """
         return pulumi.get(self, "access_log")
 
@@ -163,7 +163,7 @@ class ClbArgs:
     @pulumi.getter(name="addressIpVersion")
     def address_ip_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
+        IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
         """
         return pulumi.get(self, "address_ip_version")
 
@@ -175,7 +175,7 @@ class ClbArgs:
     @pulumi.getter(name="allowedPorts")
     def allowed_ports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        允许的多个端口范围。
+        Allowed port ranges
         """
         return pulumi.get(self, "allowed_ports")
 
@@ -187,7 +187,7 @@ class ClbArgs:
     @pulumi.getter(name="autoRenewal")
     def auto_renewal(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
+        Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
         """
         return pulumi.get(self, "auto_renewal")
 
@@ -199,7 +199,7 @@ class ClbArgs:
     @pulumi.getter(name="bypassSecurityGroupEnabled")
     def bypass_security_group_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启bypass安全组功能。
+        Whether to enable bypass security group feature
         """
         return pulumi.get(self, "bypass_security_group_enabled")
 
@@ -211,7 +211,7 @@ class ClbArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的描述。
+        Description of the load balancer instance
         """
         return pulumi.get(self, "description")
 
@@ -223,7 +223,7 @@ class ClbArgs:
     @pulumi.getter
     def eip(self) -> Optional[pulumi.Input['ClbEipArgs']]:
         """
-        负载均衡实例的公网IP的信息。
+        Public IP information of the load balancer instance
         """
         return pulumi.get(self, "eip")
 
@@ -235,7 +235,7 @@ class ClbArgs:
     @pulumi.getter(name="eipAddress")
     def eip_address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        公网IP地址。
+        Public IP address
         """
         return pulumi.get(self, "eip_address")
 
@@ -247,7 +247,7 @@ class ClbArgs:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        公网IP ID。
+        Public IP ID
         """
         return pulumi.get(self, "eip_id")
 
@@ -259,7 +259,7 @@ class ClbArgs:
     @pulumi.getter(name="eniAddressNum")
     def eni_address_num(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
+        Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
         """
         return pulumi.get(self, "eni_address_num")
 
@@ -271,7 +271,7 @@ class ClbArgs:
     @pulumi.getter
     def enis(self) -> Optional[pulumi.Input['ClbEnisArgs']]:
         """
-        负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
+        List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
         """
         return pulumi.get(self, "enis")
 
@@ -283,7 +283,7 @@ class ClbArgs:
     @pulumi.getter(name="exclusiveClusterId")
     def exclusive_cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        独占集群Id。
+        Dedicated cluster ID
         """
         return pulumi.get(self, "exclusive_cluster_id")
 
@@ -304,7 +304,7 @@ class ClbArgs:
     @pulumi.getter(name="loadBalancerBillingType")
     def load_balancer_billing_type(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
+        CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
         """
         return pulumi.get(self, "load_balancer_billing_type")
 
@@ -316,7 +316,7 @@ class ClbArgs:
     @pulumi.getter(name="loadBalancerName")
     def load_balancer_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的名称。
+        Name of the load balancer instance
         """
         return pulumi.get(self, "load_balancer_name")
 
@@ -328,7 +328,7 @@ class ClbArgs:
     @pulumi.getter(name="loadBalancerSpec")
     def load_balancer_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
+        CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
         """
         return pulumi.get(self, "load_balancer_spec")
 
@@ -340,7 +340,7 @@ class ClbArgs:
     @pulumi.getter(name="masterZoneId")
     def master_zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的主可用区ID。
+        Main availability zone ID of the load balancer instance
         """
         return pulumi.get(self, "master_zone_id")
 
@@ -352,7 +352,7 @@ class ClbArgs:
     @pulumi.getter(name="modificationProtectionReason")
     def modification_protection_reason(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
+        Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
         """
         return pulumi.get(self, "modification_protection_reason")
 
@@ -364,7 +364,7 @@ class ClbArgs:
     @pulumi.getter(name="modificationProtectionStatus")
     def modification_protection_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
+        Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
         """
         return pulumi.get(self, "modification_protection_status")
 
@@ -376,7 +376,7 @@ class ClbArgs:
     @pulumi.getter(name="newArch")
     def new_arch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否为新架构。
+        Whether it is a new architecture
         """
         return pulumi.get(self, "new_arch")
 
@@ -388,7 +388,7 @@ class ClbArgs:
     @pulumi.getter(name="orderId")
     def order_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
+        Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
         """
         return pulumi.get(self, "order_id")
 
@@ -400,7 +400,7 @@ class ClbArgs:
     @pulumi.getter
     def period(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
+        Duration for purchasing a CLB instance by year or by month. Default is '1'. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
         """
         return pulumi.get(self, "period")
 
@@ -412,7 +412,7 @@ class ClbArgs:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
+        Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
         """
         return pulumi.get(self, "period_unit")
 
@@ -424,7 +424,7 @@ class ClbArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CLB实例所属项目的名称。
+        Name of the project associated with the CLB instance
         """
         return pulumi.get(self, "project_name")
 
@@ -445,7 +445,7 @@ class ClbArgs:
     @pulumi.getter(name="slaveZoneId")
     def slave_zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的备可用区ID。
+        Secondary availability zone ID of the load balancer instance
         """
         return pulumi.get(self, "slave_zone_id")
 
@@ -457,7 +457,7 @@ class ClbArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例所属VPC内的子网ID。
+        Subnet ID within the VPC of the load balancer instance
         """
         return pulumi.get(self, "subnet_id")
 
@@ -478,7 +478,7 @@ class ClbArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
+        CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
         """
         return pulumi.get(self, "type")
 
@@ -490,7 +490,7 @@ class ClbArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例所属的VPC ID。
+        VPC ID of the load balancer instance
         """
         return pulumi.get(self, "vpc_id")
 
@@ -502,7 +502,7 @@ class ClbArgs:
     @pulumi.getter(name="zoneType")
     def zone_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的可用区类型。
+        Availability zone type of the load balancer instance
         """
         return pulumi.get(self, "zone_type")
 
@@ -562,49 +562,49 @@ class _ClbState:
                  zone_type: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Clb resources.
-        :param pulumi.Input['ClbAccessLogArgs'] access_log: 负载均衡实例中访问日志的信息。
-        :param pulumi.Input[builtins.str] account_id: 负载均衡实例所属的账号ID。
-        :param pulumi.Input[builtins.str] address_ip_version: CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allowed_ports: 允许的多个端口范围。
-        :param pulumi.Input[builtins.bool] auto_renewal: 是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
-        :param pulumi.Input[builtins.str] business_status: 负载均衡实例是否被锁定。
-        :param pulumi.Input[builtins.str] bypass_security_group_enabled: 是否开启bypass安全组功能。
-        :param pulumi.Input[builtins.str] create_time: 负载均衡实例的创建时间。
-        :param pulumi.Input[builtins.str] deleted_time: 负载均衡实例的预期回收时间。
-        :param pulumi.Input[builtins.str] description: 负载均衡实例的描述。
-        :param pulumi.Input['ClbEipArgs'] eip: 负载均衡实例的公网IP的信息。
-        :param pulumi.Input[builtins.str] eip_address: 公网IP地址。
-        :param pulumi.Input[builtins.str] eip_id: 公网IP ID。
-        :param pulumi.Input[builtins.bool] enabled: 负载均衡实例的启用状态。
-        :param pulumi.Input['ClbEniArgs'] eni: 负载均衡实例的私网IPv4地址信息。
-        :param pulumi.Input[builtins.float] eni_address_num: 负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
-        :param pulumi.Input[builtins.str] eni_ipv6_address: 负载均衡实例的私网IPv6地址。
-        :param pulumi.Input['ClbEnisArgs'] enis: 负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
-        :param pulumi.Input[builtins.str] exclusive_cluster_id: 独占集群Id。
-        :param pulumi.Input[builtins.str] expired_time: 负载均衡实例到期时间。
-        :param pulumi.Input[builtins.float] load_balancer_billing_type: CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
-        :param pulumi.Input[builtins.str] load_balancer_id: 负载均衡实例ID。
-        :param pulumi.Input[builtins.str] load_balancer_name: 负载均衡实例的名称。
-        :param pulumi.Input[builtins.str] load_balancer_spec: CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
-        :param pulumi.Input[builtins.str] lock_reason: 负载均衡实例被冻结的原因。
-        :param pulumi.Input[builtins.str] master_zone_id: 负载均衡实例的主可用区ID。
-        :param pulumi.Input[builtins.str] modification_protection_reason: 设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
-        :param pulumi.Input[builtins.str] modification_protection_status: CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
-        :param pulumi.Input[builtins.bool] new_arch: 是否为新架构。
-        :param pulumi.Input[builtins.str] order_id: 订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
-        :param pulumi.Input[builtins.str] overdue_time: 负载均衡实例的冻结时间。
-        :param pulumi.Input[builtins.float] period: 购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
-        :param pulumi.Input[builtins.str] period_unit: 购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
-        :param pulumi.Input[builtins.str] project_name: CLB实例所属项目的名称。
-        :param pulumi.Input[builtins.bool] service_managed: CLB实例是否为托管资源。
-        :param pulumi.Input[builtins.str] slave_zone_id: 负载均衡实例的备可用区ID。
-        :param pulumi.Input[builtins.str] status: 负载均衡实例状态，Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
-        :param pulumi.Input[builtins.str] subnet_id: 负载均衡实例所属VPC内的子网ID。
-        :param pulumi.Input[builtins.str] timestamp_remove_enabled: 是否开启 TCP Timestamp 清除功能。
-        :param pulumi.Input[builtins.str] type: CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
-        :param pulumi.Input[builtins.str] update_time: 负载均衡实例的最近操作时间。
-        :param pulumi.Input[builtins.str] vpc_id: 负载均衡实例所属的VPC ID。
-        :param pulumi.Input[builtins.str] zone_type: 负载均衡实例的可用区类型。
+        :param pulumi.Input['ClbAccessLogArgs'] access_log: Access log information in the load balancer instance
+        :param pulumi.Input[builtins.str] account_id: Account ID to which the load balancer instance belongs
+        :param pulumi.Input[builtins.str] address_ip_version: IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allowed_ports: Allowed port ranges
+        :param pulumi.Input[builtins.bool] auto_renewal: Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
+        :param pulumi.Input[builtins.str] business_status: Whether the load balancer instance is locked
+        :param pulumi.Input[builtins.str] bypass_security_group_enabled: Whether to enable bypass security group feature
+        :param pulumi.Input[builtins.str] create_time: Creation time of the load balancer instance
+        :param pulumi.Input[builtins.str] deleted_time: Expected recycling time of the load balancer instance
+        :param pulumi.Input[builtins.str] description: Description of the load balancer instance
+        :param pulumi.Input['ClbEipArgs'] eip: Public IP information of the load balancer instance
+        :param pulumi.Input[builtins.str] eip_address: Public IP address
+        :param pulumi.Input[builtins.str] eip_id: Public IP ID
+        :param pulumi.Input[builtins.bool] enabled: Enable status of the load balancer instance
+        :param pulumi.Input['ClbEniArgs'] eni: Private IPv4 address information of the load balancer instance
+        :param pulumi.Input[builtins.float] eni_address_num: Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
+        :param pulumi.Input[builtins.str] eni_ipv6_address: Private IPv6 address of the load balancer instance
+        :param pulumi.Input['ClbEnisArgs'] enis: List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
+        :param pulumi.Input[builtins.str] exclusive_cluster_id: Dedicated cluster ID
+        :param pulumi.Input[builtins.str] expired_time: Expiration time of the load balancer instance
+        :param pulumi.Input[builtins.float] load_balancer_billing_type: CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
+        :param pulumi.Input[builtins.str] load_balancer_id: Load balancer instance ID
+        :param pulumi.Input[builtins.str] load_balancer_name: Name of the load balancer instance
+        :param pulumi.Input[builtins.str] load_balancer_spec: CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
+        :param pulumi.Input[builtins.str] lock_reason: Reason why the load balancer instance is frozen
+        :param pulumi.Input[builtins.str] master_zone_id: Main availability zone ID of the load balancer instance
+        :param pulumi.Input[builtins.str] modification_protection_reason: Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
+        :param pulumi.Input[builtins.str] modification_protection_status: Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
+        :param pulumi.Input[builtins.bool] new_arch: Whether it is a new architecture
+        :param pulumi.Input[builtins.str] order_id: Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
+        :param pulumi.Input[builtins.str] overdue_time: Freeze time of the load balancer instance
+        :param pulumi.Input[builtins.float] period: Duration for purchasing a CLB instance by year or by month. Default is '1'. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
+        :param pulumi.Input[builtins.str] period_unit: Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
+        :param pulumi.Input[builtins.str] project_name: Name of the project associated with the CLB instance
+        :param pulumi.Input[builtins.bool] service_managed: Whether the CLB instance is a managed resource
+        :param pulumi.Input[builtins.str] slave_zone_id: Secondary availability zone ID of the load balancer instance
+        :param pulumi.Input[builtins.str] status: Load balancer instance status: Inactive: stopped. Active: running. Creating: creating. Provisioning: creating. Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID within the VPC of the load balancer instance
+        :param pulumi.Input[builtins.str] timestamp_remove_enabled: Enable TCP timestamp removal
+        :param pulumi.Input[builtins.str] type: CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
+        :param pulumi.Input[builtins.str] update_time: Most recent operation time of the load balancer instance
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID of the load balancer instance
+        :param pulumi.Input[builtins.str] zone_type: Availability zone type of the load balancer instance
         """
         if access_log is not None:
             pulumi.set(__self__, "access_log", access_log)
@@ -703,7 +703,7 @@ class _ClbState:
     @pulumi.getter(name="accessLog")
     def access_log(self) -> Optional[pulumi.Input['ClbAccessLogArgs']]:
         """
-        负载均衡实例中访问日志的信息。
+        Access log information in the load balancer instance
         """
         return pulumi.get(self, "access_log")
 
@@ -715,7 +715,7 @@ class _ClbState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例所属的账号ID。
+        Account ID to which the load balancer instance belongs
         """
         return pulumi.get(self, "account_id")
 
@@ -727,7 +727,7 @@ class _ClbState:
     @pulumi.getter(name="addressIpVersion")
     def address_ip_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
+        IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
         """
         return pulumi.get(self, "address_ip_version")
 
@@ -739,7 +739,7 @@ class _ClbState:
     @pulumi.getter(name="allowedPorts")
     def allowed_ports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        允许的多个端口范围。
+        Allowed port ranges
         """
         return pulumi.get(self, "allowed_ports")
 
@@ -751,7 +751,7 @@ class _ClbState:
     @pulumi.getter(name="autoRenewal")
     def auto_renewal(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
+        Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
         """
         return pulumi.get(self, "auto_renewal")
 
@@ -763,7 +763,7 @@ class _ClbState:
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例是否被锁定。
+        Whether the load balancer instance is locked
         """
         return pulumi.get(self, "business_status")
 
@@ -775,7 +775,7 @@ class _ClbState:
     @pulumi.getter(name="bypassSecurityGroupEnabled")
     def bypass_security_group_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启bypass安全组功能。
+        Whether to enable bypass security group feature
         """
         return pulumi.get(self, "bypass_security_group_enabled")
 
@@ -787,7 +787,7 @@ class _ClbState:
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的创建时间。
+        Creation time of the load balancer instance
         """
         return pulumi.get(self, "create_time")
 
@@ -799,7 +799,7 @@ class _ClbState:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的预期回收时间。
+        Expected recycling time of the load balancer instance
         """
         return pulumi.get(self, "deleted_time")
 
@@ -811,7 +811,7 @@ class _ClbState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的描述。
+        Description of the load balancer instance
         """
         return pulumi.get(self, "description")
 
@@ -823,7 +823,7 @@ class _ClbState:
     @pulumi.getter
     def eip(self) -> Optional[pulumi.Input['ClbEipArgs']]:
         """
-        负载均衡实例的公网IP的信息。
+        Public IP information of the load balancer instance
         """
         return pulumi.get(self, "eip")
 
@@ -835,7 +835,7 @@ class _ClbState:
     @pulumi.getter(name="eipAddress")
     def eip_address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        公网IP地址。
+        Public IP address
         """
         return pulumi.get(self, "eip_address")
 
@@ -847,7 +847,7 @@ class _ClbState:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        公网IP ID。
+        Public IP ID
         """
         return pulumi.get(self, "eip_id")
 
@@ -859,7 +859,7 @@ class _ClbState:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        负载均衡实例的启用状态。
+        Enable status of the load balancer instance
         """
         return pulumi.get(self, "enabled")
 
@@ -871,7 +871,7 @@ class _ClbState:
     @pulumi.getter
     def eni(self) -> Optional[pulumi.Input['ClbEniArgs']]:
         """
-        负载均衡实例的私网IPv4地址信息。
+        Private IPv4 address information of the load balancer instance
         """
         return pulumi.get(self, "eni")
 
@@ -883,7 +883,7 @@ class _ClbState:
     @pulumi.getter(name="eniAddressNum")
     def eni_address_num(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
+        Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
         """
         return pulumi.get(self, "eni_address_num")
 
@@ -895,7 +895,7 @@ class _ClbState:
     @pulumi.getter(name="eniIpv6Address")
     def eni_ipv6_address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的私网IPv6地址。
+        Private IPv6 address of the load balancer instance
         """
         return pulumi.get(self, "eni_ipv6_address")
 
@@ -907,7 +907,7 @@ class _ClbState:
     @pulumi.getter
     def enis(self) -> Optional[pulumi.Input['ClbEnisArgs']]:
         """
-        负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
+        List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
         """
         return pulumi.get(self, "enis")
 
@@ -919,7 +919,7 @@ class _ClbState:
     @pulumi.getter(name="exclusiveClusterId")
     def exclusive_cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        独占集群Id。
+        Dedicated cluster ID
         """
         return pulumi.get(self, "exclusive_cluster_id")
 
@@ -931,7 +931,7 @@ class _ClbState:
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例到期时间。
+        Expiration time of the load balancer instance
         """
         return pulumi.get(self, "expired_time")
 
@@ -952,7 +952,7 @@ class _ClbState:
     @pulumi.getter(name="loadBalancerBillingType")
     def load_balancer_billing_type(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
+        CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
         """
         return pulumi.get(self, "load_balancer_billing_type")
 
@@ -964,7 +964,7 @@ class _ClbState:
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例ID。
+        Load balancer instance ID
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -976,7 +976,7 @@ class _ClbState:
     @pulumi.getter(name="loadBalancerName")
     def load_balancer_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的名称。
+        Name of the load balancer instance
         """
         return pulumi.get(self, "load_balancer_name")
 
@@ -988,7 +988,7 @@ class _ClbState:
     @pulumi.getter(name="loadBalancerSpec")
     def load_balancer_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
+        CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
         """
         return pulumi.get(self, "load_balancer_spec")
 
@@ -1000,7 +1000,7 @@ class _ClbState:
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例被冻结的原因。
+        Reason why the load balancer instance is frozen
         """
         return pulumi.get(self, "lock_reason")
 
@@ -1012,7 +1012,7 @@ class _ClbState:
     @pulumi.getter(name="masterZoneId")
     def master_zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的主可用区ID。
+        Main availability zone ID of the load balancer instance
         """
         return pulumi.get(self, "master_zone_id")
 
@@ -1024,7 +1024,7 @@ class _ClbState:
     @pulumi.getter(name="modificationProtectionReason")
     def modification_protection_reason(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
+        Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
         """
         return pulumi.get(self, "modification_protection_reason")
 
@@ -1036,7 +1036,7 @@ class _ClbState:
     @pulumi.getter(name="modificationProtectionStatus")
     def modification_protection_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
+        Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
         """
         return pulumi.get(self, "modification_protection_status")
 
@@ -1048,7 +1048,7 @@ class _ClbState:
     @pulumi.getter(name="newArch")
     def new_arch(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否为新架构。
+        Whether it is a new architecture
         """
         return pulumi.get(self, "new_arch")
 
@@ -1060,7 +1060,7 @@ class _ClbState:
     @pulumi.getter(name="orderId")
     def order_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
+        Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
         """
         return pulumi.get(self, "order_id")
 
@@ -1072,7 +1072,7 @@ class _ClbState:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的冻结时间。
+        Freeze time of the load balancer instance
         """
         return pulumi.get(self, "overdue_time")
 
@@ -1084,7 +1084,7 @@ class _ClbState:
     @pulumi.getter
     def period(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
+        Duration for purchasing a CLB instance by year or by month. Default is '1'. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
         """
         return pulumi.get(self, "period")
 
@@ -1096,7 +1096,7 @@ class _ClbState:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
+        Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
         """
         return pulumi.get(self, "period_unit")
 
@@ -1108,7 +1108,7 @@ class _ClbState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CLB实例所属项目的名称。
+        Name of the project associated with the CLB instance
         """
         return pulumi.get(self, "project_name")
 
@@ -1129,7 +1129,7 @@ class _ClbState:
     @pulumi.getter(name="serviceManaged")
     def service_managed(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        CLB实例是否为托管资源。
+        Whether the CLB instance is a managed resource
         """
         return pulumi.get(self, "service_managed")
 
@@ -1141,7 +1141,7 @@ class _ClbState:
     @pulumi.getter(name="slaveZoneId")
     def slave_zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的备可用区ID。
+        Secondary availability zone ID of the load balancer instance
         """
         return pulumi.get(self, "slave_zone_id")
 
@@ -1153,7 +1153,7 @@ class _ClbState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例状态，Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+        Load balancer instance status: Inactive: stopped. Active: running. Creating: creating. Provisioning: creating. Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
         """
         return pulumi.get(self, "status")
 
@@ -1165,7 +1165,7 @@ class _ClbState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例所属VPC内的子网ID。
+        Subnet ID within the VPC of the load balancer instance
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1186,7 +1186,7 @@ class _ClbState:
     @pulumi.getter(name="timestampRemoveEnabled")
     def timestamp_remove_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启 TCP Timestamp 清除功能。
+        Enable TCP timestamp removal
         """
         return pulumi.get(self, "timestamp_remove_enabled")
 
@@ -1198,7 +1198,7 @@ class _ClbState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
+        CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
         """
         return pulumi.get(self, "type")
 
@@ -1210,7 +1210,7 @@ class _ClbState:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的最近操作时间。
+        Most recent operation time of the load balancer instance
         """
         return pulumi.get(self, "update_time")
 
@@ -1222,7 +1222,7 @@ class _ClbState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例所属的VPC ID。
+        VPC ID of the load balancer instance
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1234,7 +1234,7 @@ class _ClbState:
     @pulumi.getter(name="zoneType")
     def zone_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        负载均衡实例的可用区类型。
+        Availability zone type of the load balancer instance
         """
         return pulumi.get(self, "zone_type")
 
@@ -1282,7 +1282,7 @@ class Clb(pulumi.CustomResource):
                  zone_type: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        负载均衡实例
+        Load balancer instance
 
         ## Import
 
@@ -1292,34 +1292,34 @@ class Clb(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ClbAccessLogArgs', 'ClbAccessLogArgsDict']] access_log: 负载均衡实例中访问日志的信息。
-        :param pulumi.Input[builtins.str] address_ip_version: CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allowed_ports: 允许的多个端口范围。
-        :param pulumi.Input[builtins.bool] auto_renewal: 是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
-        :param pulumi.Input[builtins.str] bypass_security_group_enabled: 是否开启bypass安全组功能。
-        :param pulumi.Input[builtins.str] description: 负载均衡实例的描述。
-        :param pulumi.Input[Union['ClbEipArgs', 'ClbEipArgsDict']] eip: 负载均衡实例的公网IP的信息。
-        :param pulumi.Input[builtins.str] eip_address: 公网IP地址。
-        :param pulumi.Input[builtins.str] eip_id: 公网IP ID。
-        :param pulumi.Input[builtins.float] eni_address_num: 负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
-        :param pulumi.Input[Union['ClbEnisArgs', 'ClbEnisArgsDict']] enis: 负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
-        :param pulumi.Input[builtins.str] exclusive_cluster_id: 独占集群Id。
-        :param pulumi.Input[builtins.float] load_balancer_billing_type: CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
-        :param pulumi.Input[builtins.str] load_balancer_name: 负载均衡实例的名称。
-        :param pulumi.Input[builtins.str] load_balancer_spec: CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
-        :param pulumi.Input[builtins.str] master_zone_id: 负载均衡实例的主可用区ID。
-        :param pulumi.Input[builtins.str] modification_protection_reason: 设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
-        :param pulumi.Input[builtins.str] modification_protection_status: CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
-        :param pulumi.Input[builtins.bool] new_arch: 是否为新架构。
-        :param pulumi.Input[builtins.str] order_id: 订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
-        :param pulumi.Input[builtins.float] period: 购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
-        :param pulumi.Input[builtins.str] period_unit: 购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
-        :param pulumi.Input[builtins.str] project_name: CLB实例所属项目的名称。
-        :param pulumi.Input[builtins.str] slave_zone_id: 负载均衡实例的备可用区ID。
-        :param pulumi.Input[builtins.str] subnet_id: 负载均衡实例所属VPC内的子网ID。
-        :param pulumi.Input[builtins.str] type: CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
-        :param pulumi.Input[builtins.str] vpc_id: 负载均衡实例所属的VPC ID。
-        :param pulumi.Input[builtins.str] zone_type: 负载均衡实例的可用区类型。
+        :param pulumi.Input[Union['ClbAccessLogArgs', 'ClbAccessLogArgsDict']] access_log: Access log information in the load balancer instance
+        :param pulumi.Input[builtins.str] address_ip_version: IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allowed_ports: Allowed port ranges
+        :param pulumi.Input[builtins.bool] auto_renewal: Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
+        :param pulumi.Input[builtins.str] bypass_security_group_enabled: Whether to enable bypass security group feature
+        :param pulumi.Input[builtins.str] description: Description of the load balancer instance
+        :param pulumi.Input[Union['ClbEipArgs', 'ClbEipArgsDict']] eip: Public IP information of the load balancer instance
+        :param pulumi.Input[builtins.str] eip_address: Public IP address
+        :param pulumi.Input[builtins.str] eip_id: Public IP ID
+        :param pulumi.Input[builtins.float] eni_address_num: Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
+        :param pulumi.Input[Union['ClbEnisArgs', 'ClbEnisArgsDict']] enis: List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
+        :param pulumi.Input[builtins.str] exclusive_cluster_id: Dedicated cluster ID
+        :param pulumi.Input[builtins.float] load_balancer_billing_type: CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
+        :param pulumi.Input[builtins.str] load_balancer_name: Name of the load balancer instance
+        :param pulumi.Input[builtins.str] load_balancer_spec: CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
+        :param pulumi.Input[builtins.str] master_zone_id: Main availability zone ID of the load balancer instance
+        :param pulumi.Input[builtins.str] modification_protection_reason: Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
+        :param pulumi.Input[builtins.str] modification_protection_status: Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
+        :param pulumi.Input[builtins.bool] new_arch: Whether it is a new architecture
+        :param pulumi.Input[builtins.str] order_id: Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
+        :param pulumi.Input[builtins.float] period: Duration for purchasing a CLB instance by year or by month. Default is '1'. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
+        :param pulumi.Input[builtins.str] period_unit: Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
+        :param pulumi.Input[builtins.str] project_name: Name of the project associated with the CLB instance
+        :param pulumi.Input[builtins.str] slave_zone_id: Secondary availability zone ID of the load balancer instance
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID within the VPC of the load balancer instance
+        :param pulumi.Input[builtins.str] type: CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID of the load balancer instance
+        :param pulumi.Input[builtins.str] zone_type: Availability zone type of the load balancer instance
         """
         ...
     @overload
@@ -1328,7 +1328,7 @@ class Clb(pulumi.CustomResource):
                  args: Optional[ClbArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        负载均衡实例
+        Load balancer instance
 
         ## Import
 
@@ -1500,49 +1500,49 @@ class Clb(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ClbAccessLogArgs', 'ClbAccessLogArgsDict']] access_log: 负载均衡实例中访问日志的信息。
-        :param pulumi.Input[builtins.str] account_id: 负载均衡实例所属的账号ID。
-        :param pulumi.Input[builtins.str] address_ip_version: CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allowed_ports: 允许的多个端口范围。
-        :param pulumi.Input[builtins.bool] auto_renewal: 是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
-        :param pulumi.Input[builtins.str] business_status: 负载均衡实例是否被锁定。
-        :param pulumi.Input[builtins.str] bypass_security_group_enabled: 是否开启bypass安全组功能。
-        :param pulumi.Input[builtins.str] create_time: 负载均衡实例的创建时间。
-        :param pulumi.Input[builtins.str] deleted_time: 负载均衡实例的预期回收时间。
-        :param pulumi.Input[builtins.str] description: 负载均衡实例的描述。
-        :param pulumi.Input[Union['ClbEipArgs', 'ClbEipArgsDict']] eip: 负载均衡实例的公网IP的信息。
-        :param pulumi.Input[builtins.str] eip_address: 公网IP地址。
-        :param pulumi.Input[builtins.str] eip_id: 公网IP ID。
-        :param pulumi.Input[builtins.bool] enabled: 负载均衡实例的启用状态。
-        :param pulumi.Input[Union['ClbEniArgs', 'ClbEniArgsDict']] eni: 负载均衡实例的私网IPv4地址信息。
-        :param pulumi.Input[builtins.float] eni_address_num: 负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
-        :param pulumi.Input[builtins.str] eni_ipv6_address: 负载均衡实例的私网IPv6地址。
-        :param pulumi.Input[Union['ClbEnisArgs', 'ClbEnisArgsDict']] enis: 负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
-        :param pulumi.Input[builtins.str] exclusive_cluster_id: 独占集群Id。
-        :param pulumi.Input[builtins.str] expired_time: 负载均衡实例到期时间。
-        :param pulumi.Input[builtins.float] load_balancer_billing_type: CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
-        :param pulumi.Input[builtins.str] load_balancer_id: 负载均衡实例ID。
-        :param pulumi.Input[builtins.str] load_balancer_name: 负载均衡实例的名称。
-        :param pulumi.Input[builtins.str] load_balancer_spec: CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
-        :param pulumi.Input[builtins.str] lock_reason: 负载均衡实例被冻结的原因。
-        :param pulumi.Input[builtins.str] master_zone_id: 负载均衡实例的主可用区ID。
-        :param pulumi.Input[builtins.str] modification_protection_reason: 设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
-        :param pulumi.Input[builtins.str] modification_protection_status: CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
-        :param pulumi.Input[builtins.bool] new_arch: 是否为新架构。
-        :param pulumi.Input[builtins.str] order_id: 订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
-        :param pulumi.Input[builtins.str] overdue_time: 负载均衡实例的冻结时间。
-        :param pulumi.Input[builtins.float] period: 购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
-        :param pulumi.Input[builtins.str] period_unit: 购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
-        :param pulumi.Input[builtins.str] project_name: CLB实例所属项目的名称。
-        :param pulumi.Input[builtins.bool] service_managed: CLB实例是否为托管资源。
-        :param pulumi.Input[builtins.str] slave_zone_id: 负载均衡实例的备可用区ID。
-        :param pulumi.Input[builtins.str] status: 负载均衡实例状态，Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
-        :param pulumi.Input[builtins.str] subnet_id: 负载均衡实例所属VPC内的子网ID。
-        :param pulumi.Input[builtins.str] timestamp_remove_enabled: 是否开启 TCP Timestamp 清除功能。
-        :param pulumi.Input[builtins.str] type: CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
-        :param pulumi.Input[builtins.str] update_time: 负载均衡实例的最近操作时间。
-        :param pulumi.Input[builtins.str] vpc_id: 负载均衡实例所属的VPC ID。
-        :param pulumi.Input[builtins.str] zone_type: 负载均衡实例的可用区类型。
+        :param pulumi.Input[Union['ClbAccessLogArgs', 'ClbAccessLogArgsDict']] access_log: Access log information in the load balancer instance
+        :param pulumi.Input[builtins.str] account_id: Account ID to which the load balancer instance belongs
+        :param pulumi.Input[builtins.str] address_ip_version: IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allowed_ports: Allowed port ranges
+        :param pulumi.Input[builtins.bool] auto_renewal: Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
+        :param pulumi.Input[builtins.str] business_status: Whether the load balancer instance is locked
+        :param pulumi.Input[builtins.str] bypass_security_group_enabled: Whether to enable bypass security group feature
+        :param pulumi.Input[builtins.str] create_time: Creation time of the load balancer instance
+        :param pulumi.Input[builtins.str] deleted_time: Expected recycling time of the load balancer instance
+        :param pulumi.Input[builtins.str] description: Description of the load balancer instance
+        :param pulumi.Input[Union['ClbEipArgs', 'ClbEipArgsDict']] eip: Public IP information of the load balancer instance
+        :param pulumi.Input[builtins.str] eip_address: Public IP address
+        :param pulumi.Input[builtins.str] eip_id: Public IP ID
+        :param pulumi.Input[builtins.bool] enabled: Enable status of the load balancer instance
+        :param pulumi.Input[Union['ClbEniArgs', 'ClbEniArgsDict']] eni: Private IPv4 address information of the load balancer instance
+        :param pulumi.Input[builtins.float] eni_address_num: Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
+        :param pulumi.Input[builtins.str] eni_ipv6_address: Private IPv6 address of the load balancer instance
+        :param pulumi.Input[Union['ClbEnisArgs', 'ClbEnisArgsDict']] enis: List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
+        :param pulumi.Input[builtins.str] exclusive_cluster_id: Dedicated cluster ID
+        :param pulumi.Input[builtins.str] expired_time: Expiration time of the load balancer instance
+        :param pulumi.Input[builtins.float] load_balancer_billing_type: CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
+        :param pulumi.Input[builtins.str] load_balancer_id: Load balancer instance ID
+        :param pulumi.Input[builtins.str] load_balancer_name: Name of the load balancer instance
+        :param pulumi.Input[builtins.str] load_balancer_spec: CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
+        :param pulumi.Input[builtins.str] lock_reason: Reason why the load balancer instance is frozen
+        :param pulumi.Input[builtins.str] master_zone_id: Main availability zone ID of the load balancer instance
+        :param pulumi.Input[builtins.str] modification_protection_reason: Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
+        :param pulumi.Input[builtins.str] modification_protection_status: Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
+        :param pulumi.Input[builtins.bool] new_arch: Whether it is a new architecture
+        :param pulumi.Input[builtins.str] order_id: Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
+        :param pulumi.Input[builtins.str] overdue_time: Freeze time of the load balancer instance
+        :param pulumi.Input[builtins.float] period: Duration for purchasing a CLB instance by year or by month. Default is '1'. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
+        :param pulumi.Input[builtins.str] period_unit: Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
+        :param pulumi.Input[builtins.str] project_name: Name of the project associated with the CLB instance
+        :param pulumi.Input[builtins.bool] service_managed: Whether the CLB instance is a managed resource
+        :param pulumi.Input[builtins.str] slave_zone_id: Secondary availability zone ID of the load balancer instance
+        :param pulumi.Input[builtins.str] status: Load balancer instance status: Inactive: stopped. Active: running. Creating: creating. Provisioning: creating. Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID within the VPC of the load balancer instance
+        :param pulumi.Input[builtins.str] timestamp_remove_enabled: Enable TCP timestamp removal
+        :param pulumi.Input[builtins.str] type: CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
+        :param pulumi.Input[builtins.str] update_time: Most recent operation time of the load balancer instance
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID of the load balancer instance
+        :param pulumi.Input[builtins.str] zone_type: Availability zone type of the load balancer instance
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1600,7 +1600,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="accessLog")
     def access_log(self) -> pulumi.Output['outputs.ClbAccessLog']:
         """
-        负载均衡实例中访问日志的信息。
+        Access log information in the load balancer instance
         """
         return pulumi.get(self, "access_log")
 
@@ -1608,7 +1608,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例所属的账号ID。
+        Account ID to which the load balancer instance belongs
         """
         return pulumi.get(self, "account_id")
 
@@ -1616,7 +1616,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="addressIpVersion")
     def address_ip_version(self) -> pulumi.Output[builtins.str]:
         """
-        CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
+        IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
         """
         return pulumi.get(self, "address_ip_version")
 
@@ -1624,7 +1624,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="allowedPorts")
     def allowed_ports(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        允许的多个端口范围。
+        Allowed port ranges
         """
         return pulumi.get(self, "allowed_ports")
 
@@ -1632,7 +1632,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="autoRenewal")
     def auto_renewal(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
+        Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
         """
         return pulumi.get(self, "auto_renewal")
 
@@ -1640,7 +1640,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例是否被锁定。
+        Whether the load balancer instance is locked
         """
         return pulumi.get(self, "business_status")
 
@@ -1648,7 +1648,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="bypassSecurityGroupEnabled")
     def bypass_security_group_enabled(self) -> pulumi.Output[builtins.str]:
         """
-        是否开启bypass安全组功能。
+        Whether to enable bypass security group feature
         """
         return pulumi.get(self, "bypass_security_group_enabled")
 
@@ -1656,7 +1656,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例的创建时间。
+        Creation time of the load balancer instance
         """
         return pulumi.get(self, "create_time")
 
@@ -1664,7 +1664,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例的预期回收时间。
+        Expected recycling time of the load balancer instance
         """
         return pulumi.get(self, "deleted_time")
 
@@ -1672,7 +1672,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例的描述。
+        Description of the load balancer instance
         """
         return pulumi.get(self, "description")
 
@@ -1680,7 +1680,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter
     def eip(self) -> pulumi.Output['outputs.ClbEip']:
         """
-        负载均衡实例的公网IP的信息。
+        Public IP information of the load balancer instance
         """
         return pulumi.get(self, "eip")
 
@@ -1688,7 +1688,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="eipAddress")
     def eip_address(self) -> pulumi.Output[builtins.str]:
         """
-        公网IP地址。
+        Public IP address
         """
         return pulumi.get(self, "eip_address")
 
@@ -1696,7 +1696,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="eipId")
     def eip_id(self) -> pulumi.Output[builtins.str]:
         """
-        公网IP ID。
+        Public IP ID
         """
         return pulumi.get(self, "eip_id")
 
@@ -1704,7 +1704,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter
     def enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        负载均衡实例的启用状态。
+        Enable status of the load balancer instance
         """
         return pulumi.get(self, "enabled")
 
@@ -1712,7 +1712,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter
     def eni(self) -> pulumi.Output['outputs.ClbEni']:
         """
-        负载均衡实例的私网IPv4地址信息。
+        Private IPv4 address information of the load balancer instance
         """
         return pulumi.get(self, "eni")
 
@@ -1720,7 +1720,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="eniAddressNum")
     def eni_address_num(self) -> pulumi.Output[builtins.float]:
         """
-        负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
+        Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
         """
         return pulumi.get(self, "eni_address_num")
 
@@ -1728,7 +1728,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="eniIpv6Address")
     def eni_ipv6_address(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例的私网IPv6地址。
+        Private IPv6 address of the load balancer instance
         """
         return pulumi.get(self, "eni_ipv6_address")
 
@@ -1736,7 +1736,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter
     def enis(self) -> pulumi.Output['outputs.ClbEnis']:
         """
-        负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
+        List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
         """
         return pulumi.get(self, "enis")
 
@@ -1744,7 +1744,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="exclusiveClusterId")
     def exclusive_cluster_id(self) -> pulumi.Output[builtins.str]:
         """
-        独占集群Id。
+        Dedicated cluster ID
         """
         return pulumi.get(self, "exclusive_cluster_id")
 
@@ -1752,7 +1752,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例到期时间。
+        Expiration time of the load balancer instance
         """
         return pulumi.get(self, "expired_time")
 
@@ -1765,7 +1765,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="loadBalancerBillingType")
     def load_balancer_billing_type(self) -> pulumi.Output[builtins.float]:
         """
-        CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
+        CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
         """
         return pulumi.get(self, "load_balancer_billing_type")
 
@@ -1773,7 +1773,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例ID。
+        Load balancer instance ID
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -1781,7 +1781,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="loadBalancerName")
     def load_balancer_name(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例的名称。
+        Name of the load balancer instance
         """
         return pulumi.get(self, "load_balancer_name")
 
@@ -1789,7 +1789,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="loadBalancerSpec")
     def load_balancer_spec(self) -> pulumi.Output[builtins.str]:
         """
-        CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
+        CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
         """
         return pulumi.get(self, "load_balancer_spec")
 
@@ -1797,7 +1797,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例被冻结的原因。
+        Reason why the load balancer instance is frozen
         """
         return pulumi.get(self, "lock_reason")
 
@@ -1805,7 +1805,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="masterZoneId")
     def master_zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例的主可用区ID。
+        Main availability zone ID of the load balancer instance
         """
         return pulumi.get(self, "master_zone_id")
 
@@ -1813,7 +1813,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="modificationProtectionReason")
     def modification_protection_reason(self) -> pulumi.Output[builtins.str]:
         """
-        设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
+        Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
         """
         return pulumi.get(self, "modification_protection_reason")
 
@@ -1821,7 +1821,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="modificationProtectionStatus")
     def modification_protection_status(self) -> pulumi.Output[builtins.str]:
         """
-        CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
+        Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
         """
         return pulumi.get(self, "modification_protection_status")
 
@@ -1829,7 +1829,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="newArch")
     def new_arch(self) -> pulumi.Output[builtins.bool]:
         """
-        是否为新架构。
+        Whether it is a new architecture
         """
         return pulumi.get(self, "new_arch")
 
@@ -1837,7 +1837,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="orderId")
     def order_id(self) -> pulumi.Output[builtins.str]:
         """
-        订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
+        Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
         """
         return pulumi.get(self, "order_id")
 
@@ -1845,7 +1845,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例的冻结时间。
+        Freeze time of the load balancer instance
         """
         return pulumi.get(self, "overdue_time")
 
@@ -1853,7 +1853,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter
     def period(self) -> pulumi.Output[builtins.float]:
         """
-        购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
+        Duration for purchasing a CLB instance by year or by month. Default is '1'. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
         """
         return pulumi.get(self, "period")
 
@@ -1861,7 +1861,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> pulumi.Output[builtins.str]:
         """
-        购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
+        Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
         """
         return pulumi.get(self, "period_unit")
 
@@ -1869,7 +1869,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        CLB实例所属项目的名称。
+        Name of the project associated with the CLB instance
         """
         return pulumi.get(self, "project_name")
 
@@ -1882,7 +1882,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="serviceManaged")
     def service_managed(self) -> pulumi.Output[builtins.bool]:
         """
-        CLB实例是否为托管资源。
+        Whether the CLB instance is a managed resource
         """
         return pulumi.get(self, "service_managed")
 
@@ -1890,7 +1890,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="slaveZoneId")
     def slave_zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例的备可用区ID。
+        Secondary availability zone ID of the load balancer instance
         """
         return pulumi.get(self, "slave_zone_id")
 
@@ -1898,7 +1898,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例状态，Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+        Load balancer instance status: Inactive: stopped. Active: running. Creating: creating. Provisioning: creating. Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
         """
         return pulumi.get(self, "status")
 
@@ -1906,7 +1906,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例所属VPC内的子网ID。
+        Subnet ID within the VPC of the load balancer instance
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1919,7 +1919,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="timestampRemoveEnabled")
     def timestamp_remove_enabled(self) -> pulumi.Output[builtins.str]:
         """
-        是否开启 TCP Timestamp 清除功能。
+        Enable TCP timestamp removal
         """
         return pulumi.get(self, "timestamp_remove_enabled")
 
@@ -1927,7 +1927,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[builtins.str]:
         """
-        CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
+        CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
         """
         return pulumi.get(self, "type")
 
@@ -1935,7 +1935,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例的最近操作时间。
+        Most recent operation time of the load balancer instance
         """
         return pulumi.get(self, "update_time")
 
@@ -1943,7 +1943,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例所属的VPC ID。
+        VPC ID of the load balancer instance
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1951,7 +1951,7 @@ class Clb(pulumi.CustomResource):
     @pulumi.getter(name="zoneType")
     def zone_type(self) -> pulumi.Output[builtins.str]:
         """
-        负载均衡实例的可用区类型。
+        Availability zone type of the load balancer instance
         """
         return pulumi.get(self, "zone_type")
 

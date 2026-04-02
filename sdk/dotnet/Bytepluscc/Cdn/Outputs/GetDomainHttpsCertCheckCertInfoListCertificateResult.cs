@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainHttpsCertCheckCertInfoListCertificateResult
     {
         /// <summary>
-        /// 表示证书文件的内容。内容中的换行必须使用 \r\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        /// Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
         /// </summary>
         public readonly string Certificate;
         /// <summary>
-        /// 表示国密证书的证书文件的内容。内容中的换行必须使用 \r\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        /// Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
         /// </summary>
         public readonly string EncryptionCert;
         /// <summary>
-        /// 表示国密证书的私钥文件的内容。内容中的换行必须使用 \r\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 &lt;domain&gt;_encrypt.key。
+        /// Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to &lt;domain&gt;_encrypt.key.
         /// </summary>
         public readonly string EncryptionKey;
         /// <summary>
-        /// 表示私钥文件的内容。内容中的换行必须使用 \r\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 &lt;domain&gt;.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 &lt;domain&gt;_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        /// Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to &lt;domain&gt;.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to &lt;domain&gt;_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
         /// </summary>
         public readonly string PrivateKey;
 

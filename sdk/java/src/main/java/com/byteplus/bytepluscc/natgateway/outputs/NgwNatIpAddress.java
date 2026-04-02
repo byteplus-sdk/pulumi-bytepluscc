@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NgwNatIpAddress {
     /**
-     * @return 中转Ip地址。
+     * @return Transit IP address
      * 
      */
     private @Nullable String natIpAddress;
     /**
-     * @return 中转Ip id。
+     * @return Transit IP ID
      * 
      */
     private @Nullable String natIpId;
 
     private NgwNatIpAddress() {}
     /**
-     * @return 中转Ip地址。
+     * @return Transit IP address
      * 
      */
     public Optional<String> natIpAddress() {
         return Optional.ofNullable(this.natIpAddress);
     }
     /**
-     * @return 中转Ip id。
+     * @return Transit IP ID
      * 
      */
     public Optional<String> natIpId() {

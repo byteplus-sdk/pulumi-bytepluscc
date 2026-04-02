@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
     public sealed class AclAclEntryGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        /// Description of the IP entry. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+        /// Address range of the IP entry. Only CIDR addresses are supported. Both IPv4 and IPv6 entries can be provided.
         /// </summary>
         [Input("entry")]
         public Input<string>? Entry { get; set; }

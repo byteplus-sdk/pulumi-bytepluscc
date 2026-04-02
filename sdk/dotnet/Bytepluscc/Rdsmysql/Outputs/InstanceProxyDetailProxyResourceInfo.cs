@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class InstanceProxyDetailProxyResourceInfo
     {
         /// <summary>
-        /// 实例数据库代理服务当前的核数。
+        /// Current number of cores for the instance database proxy service
         /// </summary>
         public readonly int? CurrentProxyCpuNum;
         /// <summary>
-        /// 用户可为数据库代理服务配置的最多核数。
+        /// Maximum number of cores configurable for database proxy service.
         /// </summary>
         public readonly int? MaxProxyCpuNum;
         /// <summary>
-        /// 用户可为数据库代理服务配置的最少核数。
+        /// Minimum number of CPU cores configurable for the database proxy service
         /// </summary>
         public readonly int? MinProxyCpuNum;
 

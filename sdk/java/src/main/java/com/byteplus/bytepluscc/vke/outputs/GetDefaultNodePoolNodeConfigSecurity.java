@@ -14,50 +14,50 @@ import java.util.Objects;
 @CustomType
 public final class GetDefaultNodePoolNodeConfigSecurity {
     /**
-     * @return 节点的访问方式配置。
+     * @return Node access configuration
      * 
      */
     private GetDefaultNodePoolNodeConfigSecurityLogin login;
     /**
-     * @return 节点网络所在的安全组 ID 列表。
+     * @return List of security group IDs for the node network
      * 
      */
     private List<String> securityGroupIds;
     /**
-     * @return 节点的安全策略，参数值说明：Hids：主机安全加固。
+     * @return Node security policy. Parameter value description: Hids: host security hardening
      * 
      */
     private List<String> securityStrategies;
     /**
-     * @return 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+     * @return Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
      * 
      */
     private Boolean securityStrategyEnabled;
 
     private GetDefaultNodePoolNodeConfigSecurity() {}
     /**
-     * @return 节点的访问方式配置。
+     * @return Node access configuration
      * 
      */
     public GetDefaultNodePoolNodeConfigSecurityLogin login() {
         return this.login;
     }
     /**
-     * @return 节点网络所在的安全组 ID 列表。
+     * @return List of security group IDs for the node network
      * 
      */
     public List<String> securityGroupIds() {
         return this.securityGroupIds;
     }
     /**
-     * @return 节点的安全策略，参数值说明：Hids：主机安全加固。
+     * @return Node security policy. Parameter value description: Hids: host security hardening
      * 
      */
     public List<String> securityStrategies() {
         return this.securityStrategies;
     }
     /**
-     * @return 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+     * @return Whether security hardening is enabled for the node. Parameter value description: true: enabled. false: not enabled.
      * 
      */
     public Boolean securityStrategyEnabled() {

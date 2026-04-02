@@ -23,7 +23,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 实例启动模板版本是一系列实例配置信息的集合，用于快速购买实例。在模板中，您可以存储除密码外的全部配置信息，包括密钥对、计算规格、云盘、网络等，如果配置信息均有效，便可以一键成功购买实例，无需进行重复配置。
+ * Instance launch template version is a collection of instance configuration information used for quick instance purchase. In the template, you can store all configuration information except passwords, including key pairs, compute specifications, disks, network, etc. If all configuration information is valid, you can purchase an instance with one click without repeated configuration
  * 
  * ## Example Usage
  * 
@@ -40,196 +40,196 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:ecs/launchTemplateVersion:LaunchTemplateVersion")
 public class LaunchTemplateVersion extends com.pulumi.resources.CustomResource {
     /**
-     * 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+     * When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
      * 
      */
     @Export(name="deploymentSetGroupNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> deploymentSetGroupNumber;
 
     /**
-     * @return 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+     * @return When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
      * 
      */
     public Output<Integer> deploymentSetGroupNumber() {
         return this.deploymentSetGroupNumber;
     }
     /**
-     * 实例需要加入的部署集ID。
+     * Deployment set ID to join for the instance.
      * 
      */
     @Export(name="deploymentSetId", refs={String.class}, tree="[0]")
     private Output<String> deploymentSetId;
 
     /**
-     * @return 实例需要加入的部署集ID。
+     * @return Deployment set ID to join for the instance.
      * 
      */
     public Output<String> deploymentSetId() {
         return this.deploymentSetId;
     }
     /**
-     * 实例的描述。
+     * Instance description.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 实例的描述。
+     * @return Instance description.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 实例绑定的公网IP信息。
+     * Public IP information bound to the instance.
      * 
      */
     @Export(name="eip", refs={LaunchTemplateVersionEip.class}, tree="[0]")
     private Output<LaunchTemplateVersionEip> eip;
 
     /**
-     * @return 实例绑定的公网IP信息。
+     * @return Public IP information bound to the instance.
      * 
      */
     public Output<LaunchTemplateVersionEip> eip() {
         return this.eip;
     }
     /**
-     * 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+     * Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
      * 
      */
     @Export(name="hostName", refs={String.class}, tree="[0]")
     private Output<String> hostName;
 
     /**
-     * @return 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+     * @return Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
      * 
      */
     public Output<String> hostName() {
         return this.hostName;
     }
     /**
-     * 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+     * Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
      * 
      */
     @Export(name="hpcClusterId", refs={String.class}, tree="[0]")
     private Output<String> hpcClusterId;
 
     /**
-     * @return 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+     * @return Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
      * 
      */
     public Output<String> hpcClusterId() {
         return this.hpcClusterId;
     }
     /**
-     * 镜像ID。
+     * Image ID
      * 
      */
     @Export(name="imageId", refs={String.class}, tree="[0]")
     private Output<String> imageId;
 
     /**
-     * @return 镜像ID。
+     * @return Image ID
      * 
      */
     public Output<String> imageId() {
         return this.imageId;
     }
     /**
-     * 镜像名称。
+     * Image name.
      * 
      */
     @Export(name="imageName", refs={String.class}, tree="[0]")
     private Output<String> imageName;
 
     /**
-     * @return 镜像名称。
+     * @return Image name.
      * 
      */
     public Output<String> imageName() {
         return this.imageName;
     }
     /**
-     * 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+     * Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
      * 
      */
     @Export(name="instanceChargeType", refs={String.class}, tree="[0]")
     private Output<String> instanceChargeType;
 
     /**
-     * @return 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+     * @return Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
      * 
      */
     public Output<String> instanceChargeType() {
         return this.instanceChargeType;
     }
     /**
-     * 实例的名称。
+     * Instance name.
      * 
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
-     * @return 实例的名称。
+     * @return Instance name.
      * 
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
-     * 实例的规格。
+     * Instance specifications
      * 
      */
     @Export(name="instanceTypeId", refs={String.class}, tree="[0]")
     private Output<String> instanceTypeId;
 
     /**
-     * @return 实例的规格。
+     * @return Instance specifications
      * 
      */
     public Output<String> instanceTypeId() {
         return this.instanceTypeId;
     }
     /**
-     * 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+     * Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
      * 
      */
     @Export(name="keepImageCredential", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> keepImageCredential;
 
     /**
-     * @return 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+     * @return Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
      * 
      */
     public Output<Boolean> keepImageCredential() {
         return this.keepImageCredential;
     }
     /**
-     * 实例绑定的密钥对。
+     * Key pair bound to the instance.
      * 
      */
     @Export(name="keyPairName", refs={String.class}, tree="[0]")
     private Output<String> keyPairName;
 
     /**
-     * @return 实例绑定的密钥对。
+     * @return Key pair bound to the instance.
      * 
      */
     public Output<String> keyPairName() {
         return this.keyPairName;
     }
     /**
-     * 实例启动模板 ID。
+     * Instance launch template ID.
      * 
      */
     @Export(name="launchTemplateId", refs={String.class}, tree="[0]")
     private Output<String> launchTemplateId;
 
     /**
-     * @return 实例启动模板 ID。
+     * @return Instance launch template ID.
      * 
      */
     public Output<String> launchTemplateId() {
@@ -242,84 +242,84 @@ public class LaunchTemplateVersion extends com.pulumi.resources.CustomResource {
         return this.networkInterfaces;
     }
     /**
-     * 实例所属项目。
+     * Project to which the instance belongs.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 实例所属项目。
+     * @return Project to which the instance belongs.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 弹性预约单信息。
+     * Elastic reservation order information
      * 
      */
     @Export(name="scheduledInstance", refs={LaunchTemplateVersionScheduledInstance.class}, tree="[0]")
     private Output<LaunchTemplateVersionScheduledInstance> scheduledInstance;
 
     /**
-     * @return 弹性预约单信息。
+     * @return Elastic reservation order information
      * 
      */
     public Output<LaunchTemplateVersionScheduledInstance> scheduledInstance() {
         return this.scheduledInstance;
     }
     /**
-     * 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+     * Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
      * 
      */
     @Export(name="securityEnhancementStrategy", refs={String.class}, tree="[0]")
     private Output<String> securityEnhancementStrategy;
 
     /**
-     * @return 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+     * @return Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
      * 
      */
     public Output<String> securityEnhancementStrategy() {
         return this.securityEnhancementStrategy;
     }
     /**
-     * 抢占式实例的每小时最高价格。
+     * Maximum hourly price for preemptible instances.
      * 
      */
     @Export(name="spotPriceLimit", refs={Double.class}, tree="[0]")
     private Output<Double> spotPriceLimit;
 
     /**
-     * @return 抢占式实例的每小时最高价格。
+     * @return Maximum hourly price for preemptible instances.
      * 
      */
     public Output<Double> spotPriceLimit() {
         return this.spotPriceLimit;
     }
     /**
-     * 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+     * Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
      * 
      */
     @Export(name="spotStrategy", refs={String.class}, tree="[0]")
     private Output<String> spotStrategy;
 
     /**
-     * @return 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+     * @return Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
      * 
      */
     public Output<String> spotStrategy() {
         return this.spotStrategy;
     }
     /**
-     * 有序后缀的起始序号。
+     * Starting sequence number for the ordered suffix.
      * 
      */
     @Export(name="suffixIndex", refs={Integer.class}, tree="[0]")
     private Output<Integer> suffixIndex;
 
     /**
-     * @return 有序后缀的起始序号。
+     * @return Starting sequence number for the ordered suffix.
      * 
      */
     public Output<Integer> suffixIndex() {
@@ -332,56 +332,56 @@ public class LaunchTemplateVersion extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+     * Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
      * 
      */
     @Export(name="uniqueSuffix", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> uniqueSuffix;
 
     /**
-     * @return 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+     * @return Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
      * 
      */
     public Output<Boolean> uniqueSuffix() {
         return this.uniqueSuffix;
     }
     /**
-     * 实例的自定义数据。
+     * Custom data for the instance.
      * 
      */
     @Export(name="userData", refs={String.class}, tree="[0]")
     private Output<String> userData;
 
     /**
-     * @return 实例的自定义数据。
+     * @return Custom data for the instance.
      * 
      */
     public Output<String> userData() {
         return this.userData;
     }
     /**
-     * 模版版本描述。
+     * Template version description.
      * 
      */
     @Export(name="versionDescription", refs={String.class}, tree="[0]")
     private Output<String> versionDescription;
 
     /**
-     * @return 模版版本描述。
+     * @return Template version description.
      * 
      */
     public Output<String> versionDescription() {
         return this.versionDescription;
     }
     /**
-     * 模板版本号。
+     * Template version number.
      * 
      */
     @Export(name="versionNumber", refs={String.class}, tree="[0]")
     private Output<String> versionNumber;
 
     /**
-     * @return 模板版本号。
+     * @return Template version number.
      * 
      */
     public Output<String> versionNumber() {
@@ -394,28 +394,28 @@ public class LaunchTemplateVersion extends com.pulumi.resources.CustomResource {
         return this.volumes;
     }
     /**
-     * 私有网络ID。
+     * Private network ID
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 私有网络ID。
+     * @return Private network ID
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * 实例所属可用区ID。
+     * Availability zone ID of the instance
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
-     * @return 实例所属可用区ID。
+     * @return Availability zone ID of the instance
      * 
      */
     public Output<String> zoneId() {

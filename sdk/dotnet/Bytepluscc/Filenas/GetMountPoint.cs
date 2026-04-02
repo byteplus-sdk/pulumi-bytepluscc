@@ -65,19 +65,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
     public sealed class GetMountPointResult
     {
         /// <summary>
-        /// 客户端信息。
+        /// Client information.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMountPointClientResult> Clients;
         /// <summary>
-        /// 挂载点创建时间。
+        /// Mount point creation time.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// DNS 地址。
+        /// DNS address.
         /// </summary>
         public readonly string Domain;
         /// <summary>
-        /// 文件系统 ID。
+        /// File system ID.
         /// </summary>
         public readonly string FileSystemId;
         /// <summary>
@@ -85,47 +85,47 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 挂载点地址。
+        /// Mount point address.
         /// </summary>
         public readonly string Ip;
         /// <summary>
-        /// 挂载点 ID。
+        /// Mount point ID.
         /// </summary>
         public readonly string MountPointId;
         /// <summary>
-        /// 挂载点名称。
+        /// Mount point name.
         /// </summary>
         public readonly string MountPointName;
         /// <summary>
-        /// 挂载点绑定的权限组信息。
+        /// Permission group information bound to the mount point.
         /// </summary>
         public readonly Outputs.GetMountPointPermissionGroupResult PermissionGroup;
         /// <summary>
-        /// 权限组 ID。
+        /// Permission group ID.
         /// </summary>
         public readonly string PermissionGroupId;
         /// <summary>
-        /// 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+        /// Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 子网 ID。
+        /// Subnet ID.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
-        /// 子网名称。
+        /// Subnet name.
         /// </summary>
         public readonly string SubnetName;
         /// <summary>
-        /// 挂载点更新时间。
+        /// Mount point update time.
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// 私有网络 ID。
+        /// Private network ID.
         /// </summary>
         public readonly string VpcId;
         /// <summary>
-        /// 私有网络名称。
+        /// Private network name.
         /// </summary>
         public readonly string VpcName;
 

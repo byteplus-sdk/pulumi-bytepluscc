@@ -18,7 +18,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 通过流量镜像，您可以按自己设定的筛选条件复制网卡的流量，并将复制的流量私网转发到目标服务进行监控分析。
+ * With traffic mirroring, you can mirror network interface traffic based on your filter conditions and forward the mirrored traffic over the private network to a target service for monitoring and analysis
  * 
  * ## Example Usage
  * 
@@ -72,28 +72,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/trafficMirrorFilter:TrafficMirrorFilter")
 public class TrafficMirrorFilter extends com.pulumi.resources.CustomResource {
     /**
-     * 筛选条件的创建时间。
+     * Filter condition creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 筛选条件的创建时间。
+     * @return Filter condition creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 筛选条件实例描述。
+     * Filter condition instance description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 筛选条件实例描述。
+     * @return Filter condition instance description
      * 
      */
     public Output<String> description() {
@@ -112,28 +112,28 @@ public class TrafficMirrorFilter extends com.pulumi.resources.CustomResource {
         return this.ingressFilterRules;
     }
     /**
-     * 筛选条件所属项目的名称。
+     * Project name of the filter condition
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 筛选条件所属项目的名称。
+     * @return Project name of the filter condition
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 筛选条件状态。
+     * Filter condition status
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 筛选条件状态。
+     * @return Filter condition status
      * 
      */
     public Output<String> status() {
@@ -146,28 +146,28 @@ public class TrafficMirrorFilter extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 筛选条件实例ID。
+     * Filter condition instance ID
      * 
      */
     @Export(name="trafficMirrorFilterId", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorFilterId;
 
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     public Output<String> trafficMirrorFilterId() {
         return this.trafficMirrorFilterId;
     }
     /**
-     * 筛选条件名称。
+     * Filter condition name
      * 
      */
     @Export(name="trafficMirrorFilterName", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorFilterName;
 
     /**
-     * @return 筛选条件名称。
+     * @return Filter condition name
      * 
      */
     public Output<String> trafficMirrorFilterName() {

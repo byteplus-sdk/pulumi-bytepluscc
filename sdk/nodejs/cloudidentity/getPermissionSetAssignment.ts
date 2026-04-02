@@ -29,7 +29,7 @@ export interface GetPermissionSetAssignmentArgs {
  */
 export interface GetPermissionSetAssignmentResult {
     /**
-     * 授权创建时间。
+     * Authorization creation time
      */
     readonly createdTime: string;
     /**
@@ -37,31 +37,31 @@ export interface GetPermissionSetAssignmentResult {
      */
     readonly id: string;
     /**
-     * 权限集 ID。
+     * Permission set ID
      */
     readonly permissionSetId: string;
     /**
-     * 权限集名称。
+     * Permission set name
      */
     readonly permissionSetName: string;
     /**
-     * 云身份中心对象 ID
+     * Cloud Identity Center object ID
      */
     readonly principalId: string;
     /**
-     * 云身份中心对象名。
+     * Cloud Identity Center object name
      */
     readonly principalName: string;
     /**
-     * 云身份中心对象类型，User 或者 Group。
+     * Cloud Identity Center object type: User or Group
      */
     readonly principalType: string;
     /**
-     * 授权账号 ID。
+     * Authorized account ID
      */
     readonly targetId: string;
     /**
-     * 授权账号名。
+     * Authorized account name
      */
     readonly targetName: string;
 }

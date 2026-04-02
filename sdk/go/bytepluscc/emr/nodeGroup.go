@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// E-MapReduce集群由多个不同类型的实例节点组成，包括主实例节点（Master）、核心实例节点（Core）和计算实例节点（Task）。不同实例节点上部署的服务进程不同，负责完成的任务也不同。
+// An E-MapReduce cluster consists of multiple types of instance nodes, including master instance nodes (Master), core instance nodes (Core), and task instance nodes (Task). Different service processes are deployed on each node type, and each is responsible for different tasks.
 //
 // ## Import
 //
@@ -23,41 +23,41 @@ type NodeGroup struct {
 	pulumi.CustomResourceState
 
 	ApplicationLayouts NodeGroupApplicationLayoutArrayOutput `pulumi:"applicationLayouts"`
-	// 包周期付费配置。
+	// Subscription payment configuration.
 	ChargePreConfig NodeGroupChargePreConfigOutput `pulumi:"chargePreConfig"`
-	// 付费类型。PRE表示包月，POST表示按量计费。
+	// Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
 	ChargeType pulumi.StringOutput `pulumi:"chargeType"`
-	// 集群ID。
+	// Cluster ID.
 	ClusterId pulumi.StringOutput `pulumi:"clusterId"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime pulumi.IntOutput             `pulumi:"createdTime"`
 	DataDisks   NodeGroupDataDiskArrayOutput `pulumi:"dataDisks"`
-	// ECS实例规格列表。当前修改仅支持单个实例规格。
+	// ECS instance specification list. Currently, only a single instance specification can be modified.
 	EcsInstanceTypes pulumi.StringArrayOutput `pulumi:"ecsInstanceTypes"`
-	// 返回的节点组组件的自定义配置参数列表。
+	// Custom configuration parameter list for the returned node group components.
 	LayoutComponentNames pulumi.StringArrayOutput `pulumi:"layoutComponentNames"`
-	// 节点数量。取值范围：1~1000。
+	// Node count. Value range: 1~1000.
 	NodeCount pulumi.IntOutput `pulumi:"nodeCount"`
-	// 节点组ID。
+	// Node group ID.
 	NodeGroupId pulumi.StringOutput `pulumi:"nodeGroupId"`
-	// 节点组名称。
+	// Node group name.
 	NodeGroupName pulumi.StringOutput `pulumi:"nodeGroupName"`
-	// 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+	// Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
 	NodeGroupState pulumi.StringOutput `pulumi:"nodeGroupState"`
-	// 节点组类型。
+	// Node group type.
 	NodeGroupType pulumi.StringOutput      `pulumi:"nodeGroupType"`
 	Nodes         NodeGroupNodeArrayOutput `pulumi:"nodes"`
-	// 子网ID列表。
+	// Subnet ID list.
 	SubnetIds pulumi.StringArrayOutput `pulumi:"subnetIds"`
-	// 系统盘。
+	// System disk.
 	SystemDisk NodeGroupSystemDiskOutput `pulumi:"systemDisk"`
-	// 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+	// Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
 	TargetDiskSize pulumi.IntOutput `pulumi:"targetDiskSize"`
-	// 集群终止时间。
+	// Cluster termination time.
 	TerminateTime pulumi.StringOutput `pulumi:"terminateTime"`
-	// ECS是否附带公网IP。
+	// Whether the ECS instance includes a public IP.
 	WithPublicIp pulumi.BoolOutput `pulumi:"withPublicIp"`
-	// zoneId，为空时默认复用集群的zoneId。
+	// zoneId. If empty, the cluster's zoneId is reused by default.
 	ZoneId pulumi.StringOutput `pulumi:"zoneId"`
 }
 
@@ -107,81 +107,81 @@ func GetNodeGroup(ctx *pulumi.Context,
 // Input properties used for looking up and filtering NodeGroup resources.
 type nodeGroupState struct {
 	ApplicationLayouts []NodeGroupApplicationLayout `pulumi:"applicationLayouts"`
-	// 包周期付费配置。
+	// Subscription payment configuration.
 	ChargePreConfig *NodeGroupChargePreConfig `pulumi:"chargePreConfig"`
-	// 付费类型。PRE表示包月，POST表示按量计费。
+	// Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
 	ChargeType *string `pulumi:"chargeType"`
-	// 集群ID。
+	// Cluster ID.
 	ClusterId *string `pulumi:"clusterId"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime *int                `pulumi:"createdTime"`
 	DataDisks   []NodeGroupDataDisk `pulumi:"dataDisks"`
-	// ECS实例规格列表。当前修改仅支持单个实例规格。
+	// ECS instance specification list. Currently, only a single instance specification can be modified.
 	EcsInstanceTypes []string `pulumi:"ecsInstanceTypes"`
-	// 返回的节点组组件的自定义配置参数列表。
+	// Custom configuration parameter list for the returned node group components.
 	LayoutComponentNames []string `pulumi:"layoutComponentNames"`
-	// 节点数量。取值范围：1~1000。
+	// Node count. Value range: 1~1000.
 	NodeCount *int `pulumi:"nodeCount"`
-	// 节点组ID。
+	// Node group ID.
 	NodeGroupId *string `pulumi:"nodeGroupId"`
-	// 节点组名称。
+	// Node group name.
 	NodeGroupName *string `pulumi:"nodeGroupName"`
-	// 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+	// Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
 	NodeGroupState *string `pulumi:"nodeGroupState"`
-	// 节点组类型。
+	// Node group type.
 	NodeGroupType *string         `pulumi:"nodeGroupType"`
 	Nodes         []NodeGroupNode `pulumi:"nodes"`
-	// 子网ID列表。
+	// Subnet ID list.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 系统盘。
+	// System disk.
 	SystemDisk *NodeGroupSystemDisk `pulumi:"systemDisk"`
-	// 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+	// Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
 	TargetDiskSize *int `pulumi:"targetDiskSize"`
-	// 集群终止时间。
+	// Cluster termination time.
 	TerminateTime *string `pulumi:"terminateTime"`
-	// ECS是否附带公网IP。
+	// Whether the ECS instance includes a public IP.
 	WithPublicIp *bool `pulumi:"withPublicIp"`
-	// zoneId，为空时默认复用集群的zoneId。
+	// zoneId. If empty, the cluster's zoneId is reused by default.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
 type NodeGroupState struct {
 	ApplicationLayouts NodeGroupApplicationLayoutArrayInput
-	// 包周期付费配置。
+	// Subscription payment configuration.
 	ChargePreConfig NodeGroupChargePreConfigPtrInput
-	// 付费类型。PRE表示包月，POST表示按量计费。
+	// Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
 	ChargeType pulumi.StringPtrInput
-	// 集群ID。
+	// Cluster ID.
 	ClusterId pulumi.StringPtrInput
-	// 创建时间。
+	// Creation time.
 	CreatedTime pulumi.IntPtrInput
 	DataDisks   NodeGroupDataDiskArrayInput
-	// ECS实例规格列表。当前修改仅支持单个实例规格。
+	// ECS instance specification list. Currently, only a single instance specification can be modified.
 	EcsInstanceTypes pulumi.StringArrayInput
-	// 返回的节点组组件的自定义配置参数列表。
+	// Custom configuration parameter list for the returned node group components.
 	LayoutComponentNames pulumi.StringArrayInput
-	// 节点数量。取值范围：1~1000。
+	// Node count. Value range: 1~1000.
 	NodeCount pulumi.IntPtrInput
-	// 节点组ID。
+	// Node group ID.
 	NodeGroupId pulumi.StringPtrInput
-	// 节点组名称。
+	// Node group name.
 	NodeGroupName pulumi.StringPtrInput
-	// 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+	// Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
 	NodeGroupState pulumi.StringPtrInput
-	// 节点组类型。
+	// Node group type.
 	NodeGroupType pulumi.StringPtrInput
 	Nodes         NodeGroupNodeArrayInput
-	// 子网ID列表。
+	// Subnet ID list.
 	SubnetIds pulumi.StringArrayInput
-	// 系统盘。
+	// System disk.
 	SystemDisk NodeGroupSystemDiskPtrInput
-	// 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+	// Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
 	TargetDiskSize pulumi.IntPtrInput
-	// 集群终止时间。
+	// Cluster termination time.
 	TerminateTime pulumi.StringPtrInput
-	// ECS是否附带公网IP。
+	// Whether the ECS instance includes a public IP.
 	WithPublicIp pulumi.BoolPtrInput
-	// zoneId，为空时默认复用集群的zoneId。
+	// zoneId. If empty, the cluster's zoneId is reused by default.
 	ZoneId pulumi.StringPtrInput
 }
 
@@ -191,60 +191,60 @@ func (NodeGroupState) ElementType() reflect.Type {
 
 type nodeGroupArgs struct {
 	ApplicationLayouts []NodeGroupApplicationLayout `pulumi:"applicationLayouts"`
-	// 包周期付费配置。
+	// Subscription payment configuration.
 	ChargePreConfig *NodeGroupChargePreConfig `pulumi:"chargePreConfig"`
-	// 付费类型。PRE表示包月，POST表示按量计费。
+	// Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
 	ChargeType string `pulumi:"chargeType"`
-	// 集群ID。
+	// Cluster ID.
 	ClusterId string              `pulumi:"clusterId"`
 	DataDisks []NodeGroupDataDisk `pulumi:"dataDisks"`
-	// ECS实例规格列表。当前修改仅支持单个实例规格。
+	// ECS instance specification list. Currently, only a single instance specification can be modified.
 	EcsInstanceTypes []string `pulumi:"ecsInstanceTypes"`
-	// 节点数量。取值范围：1~1000。
+	// Node count. Value range: 1~1000.
 	NodeCount int `pulumi:"nodeCount"`
-	// 节点组名称。
+	// Node group name.
 	NodeGroupName string `pulumi:"nodeGroupName"`
-	// 节点组类型。
+	// Node group type.
 	NodeGroupType string `pulumi:"nodeGroupType"`
-	// 子网ID列表。
+	// Subnet ID list.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 系统盘。
+	// System disk.
 	SystemDisk *NodeGroupSystemDisk `pulumi:"systemDisk"`
-	// 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+	// Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
 	TargetDiskSize *int `pulumi:"targetDiskSize"`
-	// ECS是否附带公网IP。
+	// Whether the ECS instance includes a public IP.
 	WithPublicIp *bool `pulumi:"withPublicIp"`
-	// zoneId，为空时默认复用集群的zoneId。
+	// zoneId. If empty, the cluster's zoneId is reused by default.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
 // The set of arguments for constructing a NodeGroup resource.
 type NodeGroupArgs struct {
 	ApplicationLayouts NodeGroupApplicationLayoutArrayInput
-	// 包周期付费配置。
+	// Subscription payment configuration.
 	ChargePreConfig NodeGroupChargePreConfigPtrInput
-	// 付费类型。PRE表示包月，POST表示按量计费。
+	// Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
 	ChargeType pulumi.StringInput
-	// 集群ID。
+	// Cluster ID.
 	ClusterId pulumi.StringInput
 	DataDisks NodeGroupDataDiskArrayInput
-	// ECS实例规格列表。当前修改仅支持单个实例规格。
+	// ECS instance specification list. Currently, only a single instance specification can be modified.
 	EcsInstanceTypes pulumi.StringArrayInput
-	// 节点数量。取值范围：1~1000。
+	// Node count. Value range: 1~1000.
 	NodeCount pulumi.IntInput
-	// 节点组名称。
+	// Node group name.
 	NodeGroupName pulumi.StringInput
-	// 节点组类型。
+	// Node group type.
 	NodeGroupType pulumi.StringInput
-	// 子网ID列表。
+	// Subnet ID list.
 	SubnetIds pulumi.StringArrayInput
-	// 系统盘。
+	// System disk.
 	SystemDisk NodeGroupSystemDiskPtrInput
-	// 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+	// Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
 	TargetDiskSize pulumi.IntPtrInput
-	// ECS是否附带公网IP。
+	// Whether the ECS instance includes a public IP.
 	WithPublicIp pulumi.BoolPtrInput
-	// zoneId，为空时默认复用集群的zoneId。
+	// zoneId. If empty, the cluster's zoneId is reused by default.
 	ZoneId pulumi.StringPtrInput
 }
 
@@ -339,22 +339,22 @@ func (o NodeGroupOutput) ApplicationLayouts() NodeGroupApplicationLayoutArrayOut
 	return o.ApplyT(func(v *NodeGroup) NodeGroupApplicationLayoutArrayOutput { return v.ApplicationLayouts }).(NodeGroupApplicationLayoutArrayOutput)
 }
 
-// 包周期付费配置。
+// Subscription payment configuration.
 func (o NodeGroupOutput) ChargePreConfig() NodeGroupChargePreConfigOutput {
 	return o.ApplyT(func(v *NodeGroup) NodeGroupChargePreConfigOutput { return v.ChargePreConfig }).(NodeGroupChargePreConfigOutput)
 }
 
-// 付费类型。PRE表示包月，POST表示按量计费。
+// Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
 func (o NodeGroupOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.StringOutput { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 集群ID。
+// Cluster ID.
 func (o NodeGroupOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.StringOutput { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 创建时间。
+// Creation time.
 func (o NodeGroupOutput) CreatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.IntOutput { return v.CreatedTime }).(pulumi.IntOutput)
 }
@@ -363,37 +363,37 @@ func (o NodeGroupOutput) DataDisks() NodeGroupDataDiskArrayOutput {
 	return o.ApplyT(func(v *NodeGroup) NodeGroupDataDiskArrayOutput { return v.DataDisks }).(NodeGroupDataDiskArrayOutput)
 }
 
-// ECS实例规格列表。当前修改仅支持单个实例规格。
+// ECS instance specification list. Currently, only a single instance specification can be modified.
 func (o NodeGroupOutput) EcsInstanceTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.StringArrayOutput { return v.EcsInstanceTypes }).(pulumi.StringArrayOutput)
 }
 
-// 返回的节点组组件的自定义配置参数列表。
+// Custom configuration parameter list for the returned node group components.
 func (o NodeGroupOutput) LayoutComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.StringArrayOutput { return v.LayoutComponentNames }).(pulumi.StringArrayOutput)
 }
 
-// 节点数量。取值范围：1~1000。
+// Node count. Value range: 1~1000.
 func (o NodeGroupOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.IntOutput { return v.NodeCount }).(pulumi.IntOutput)
 }
 
-// 节点组ID。
+// Node group ID.
 func (o NodeGroupOutput) NodeGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.StringOutput { return v.NodeGroupId }).(pulumi.StringOutput)
 }
 
-// 节点组名称。
+// Node group name.
 func (o NodeGroupOutput) NodeGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.StringOutput { return v.NodeGroupName }).(pulumi.StringOutput)
 }
 
-// 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+// Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
 func (o NodeGroupOutput) NodeGroupState() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.StringOutput { return v.NodeGroupState }).(pulumi.StringOutput)
 }
 
-// 节点组类型。
+// Node group type.
 func (o NodeGroupOutput) NodeGroupType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.StringOutput { return v.NodeGroupType }).(pulumi.StringOutput)
 }
@@ -402,32 +402,32 @@ func (o NodeGroupOutput) Nodes() NodeGroupNodeArrayOutput {
 	return o.ApplyT(func(v *NodeGroup) NodeGroupNodeArrayOutput { return v.Nodes }).(NodeGroupNodeArrayOutput)
 }
 
-// 子网ID列表。
+// Subnet ID list.
 func (o NodeGroupOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.StringArrayOutput { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 系统盘。
+// System disk.
 func (o NodeGroupOutput) SystemDisk() NodeGroupSystemDiskOutput {
 	return o.ApplyT(func(v *NodeGroup) NodeGroupSystemDiskOutput { return v.SystemDisk }).(NodeGroupSystemDiskOutput)
 }
 
-// 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+// Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
 func (o NodeGroupOutput) TargetDiskSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.IntOutput { return v.TargetDiskSize }).(pulumi.IntOutput)
 }
 
-// 集群终止时间。
+// Cluster termination time.
 func (o NodeGroupOutput) TerminateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.StringOutput { return v.TerminateTime }).(pulumi.StringOutput)
 }
 
-// ECS是否附带公网IP。
+// Whether the ECS instance includes a public IP.
 func (o NodeGroupOutput) WithPublicIp() pulumi.BoolOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.BoolOutput { return v.WithPublicIp }).(pulumi.BoolOutput)
 }
 
-// zoneId，为空时默认复用集群的zoneId。
+// zoneId. If empty, the cluster's zoneId is reused by default.
 func (o NodeGroupOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodeGroup) pulumi.StringOutput { return v.ZoneId }).(pulumi.StringOutput)
 }

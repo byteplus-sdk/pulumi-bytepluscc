@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Apig
 {
     /// <summary>
-    /// 服务是一组路由对外暴露的入口，用于区分流量的来源和协议，实现业务、环境、逻辑租户隔离。服务可以绑定独立的访问域名，以域名维度访问业务。
+    /// A service is a set of routes exposed as entry points to distinguish traffic sources and protocols, enabling business, environment, and logical tenant isolation. Services can bind independent access domains, allowing access by domain.
     /// 
     /// ## Import
     /// 
@@ -23,19 +23,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public partial class GatewayService : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 认证配置。
+        /// Authentication configuration.
         /// </summary>
         [Output("authSpec")]
         public Output<Outputs.GatewayServiceAuthSpec> AuthSpec { get; private set; } = null!;
 
         /// <summary>
-        /// 备注，长度限制为0~253个字符。
+        /// Remarks. Length must be 0–253 characters.
         /// </summary>
         [Output("comments")]
         public Output<string> Comments { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
@@ -44,13 +44,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         public Output<ImmutableArray<Outputs.GatewayServiceCustomDomain>> CustomDomains { get; private set; } = null!;
 
         /// <summary>
-        /// 域名详情。
+        /// Domain details.
         /// </summary>
         [Output("domainSpec")]
         public Output<Outputs.GatewayServiceDomainSpec> DomainSpec { get; private set; } = null!;
 
         /// <summary>
-        /// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+        /// Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
         /// </summary>
         [Output("domainType")]
         public Output<string> DomainType { get; private set; } = null!;
@@ -59,55 +59,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         public Output<ImmutableArray<Outputs.GatewayServiceDomain>> Domains { get; private set; } = null!;
 
         /// <summary>
-        /// 网关ID。
+        /// Gateway ID.
         /// </summary>
         [Output("gatewayId")]
         public Output<string> GatewayId { get; private set; } = null!;
 
         /// <summary>
-        /// 网关名称。
+        /// Gateway name.
         /// </summary>
         [Output("gatewayName")]
         public Output<string> GatewayName { get; private set; } = null!;
 
         /// <summary>
-        /// 服务创建失败、删除失败或异常时的错误信息。
+        /// Error message for service creation failure, deletion failure, or abnormal status.
         /// </summary>
         [Output("message")]
         public Output<string> Message { get; private set; } = null!;
 
         /// <summary>
-        /// 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+        /// Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
         /// </summary>
         [Output("protocols")]
         public Output<ImmutableArray<string>> Protocols { get; private set; } = null!;
 
         /// <summary>
-        /// 服务ID。
+        /// Service ID.
         /// </summary>
         [Output("serviceId")]
         public Output<string> ServiceId { get; private set; } = null!;
 
         /// <summary>
-        /// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+        /// Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
         /// </summary>
         [Output("serviceName")]
         public Output<string> ServiceName { get; private set; } = null!;
 
         /// <summary>
-        /// 服务默认域名网络配置。。
+        /// Default domain network configuration..
         /// </summary>
         [Output("serviceNetworkSpec")]
         public Output<Outputs.GatewayServiceServiceNetworkSpec> ServiceNetworkSpec { get; private set; } = null!;
 
         /// <summary>
-        /// 服务类型，取值：AIProvider：AI模型代理。
+        /// Service type. Options: AIProvider: AI model proxy.
         /// </summary>
         [Output("serviceType")]
         public Output<string> ServiceType { get; private set; } = null!;
 
         /// <summary>
-        /// Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+        /// Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -160,13 +160,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public sealed class GatewayServiceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 认证配置。
+        /// Authentication configuration.
         /// </summary>
         [Input("authSpec", required: true)]
         public Input<Inputs.GatewayServiceAuthSpecArgs> AuthSpec { get; set; } = null!;
 
         /// <summary>
-        /// 备注，长度限制为0~253个字符。
+        /// Remarks. Length must be 0–253 characters.
         /// </summary>
         [Input("comments")]
         public Input<string>? Comments { get; set; }
@@ -180,13 +180,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         }
 
         /// <summary>
-        /// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+        /// Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
         /// </summary>
         [Input("domainType")]
         public Input<string>? DomainType { get; set; }
 
         /// <summary>
-        /// 网关ID。
+        /// Gateway ID.
         /// </summary>
         [Input("gatewayId", required: true)]
         public Input<string> GatewayId { get; set; } = null!;
@@ -195,7 +195,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         private InputList<string>? _protocols;
 
         /// <summary>
-        /// 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+        /// Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
         /// </summary>
         public InputList<string> Protocols
         {
@@ -204,19 +204,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         }
 
         /// <summary>
-        /// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+        /// Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
         /// </summary>
         [Input("serviceName", required: true)]
         public Input<string> ServiceName { get; set; } = null!;
 
         /// <summary>
-        /// 服务默认域名网络配置。。
+        /// Default domain network configuration..
         /// </summary>
         [Input("serviceNetworkSpec")]
         public Input<Inputs.GatewayServiceServiceNetworkSpecArgs>? ServiceNetworkSpec { get; set; }
 
         /// <summary>
-        /// 服务类型，取值：AIProvider：AI模型代理。
+        /// Service type. Options: AIProvider: AI model proxy.
         /// </summary>
         [Input("serviceType")]
         public Input<string>? ServiceType { get; set; }
@@ -230,19 +230,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public sealed class GatewayServiceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 认证配置。
+        /// Authentication configuration.
         /// </summary>
         [Input("authSpec")]
         public Input<Inputs.GatewayServiceAuthSpecGetArgs>? AuthSpec { get; set; }
 
         /// <summary>
-        /// 备注，长度限制为0~253个字符。
+        /// Remarks. Length must be 0–253 characters.
         /// </summary>
         [Input("comments")]
         public Input<string>? Comments { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
@@ -256,13 +256,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         }
 
         /// <summary>
-        /// 域名详情。
+        /// Domain details.
         /// </summary>
         [Input("domainSpec")]
         public Input<Inputs.GatewayServiceDomainSpecGetArgs>? DomainSpec { get; set; }
 
         /// <summary>
-        /// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+        /// Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
         /// </summary>
         [Input("domainType")]
         public Input<string>? DomainType { get; set; }
@@ -276,19 +276,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         }
 
         /// <summary>
-        /// 网关ID。
+        /// Gateway ID.
         /// </summary>
         [Input("gatewayId")]
         public Input<string>? GatewayId { get; set; }
 
         /// <summary>
-        /// 网关名称。
+        /// Gateway name.
         /// </summary>
         [Input("gatewayName")]
         public Input<string>? GatewayName { get; set; }
 
         /// <summary>
-        /// 服务创建失败、删除失败或异常时的错误信息。
+        /// Error message for service creation failure, deletion failure, or abnormal status.
         /// </summary>
         [Input("message")]
         public Input<string>? Message { get; set; }
@@ -297,7 +297,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         private InputList<string>? _protocols;
 
         /// <summary>
-        /// 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+        /// Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
         /// </summary>
         public InputList<string> Protocols
         {
@@ -306,31 +306,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         }
 
         /// <summary>
-        /// 服务ID。
+        /// Service ID.
         /// </summary>
         [Input("serviceId")]
         public Input<string>? ServiceId { get; set; }
 
         /// <summary>
-        /// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+        /// Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
         /// </summary>
         [Input("serviceName")]
         public Input<string>? ServiceName { get; set; }
 
         /// <summary>
-        /// 服务默认域名网络配置。。
+        /// Default domain network configuration..
         /// </summary>
         [Input("serviceNetworkSpec")]
         public Input<Inputs.GatewayServiceServiceNetworkSpecGetArgs>? ServiceNetworkSpec { get; set; }
 
         /// <summary>
-        /// 服务类型，取值：AIProvider：AI模型代理。
+        /// Service type. Options: AIProvider: AI model proxy.
         /// </summary>
         [Input("serviceType")]
         public Input<string>? ServiceType { get; set; }
 
         /// <summary>
-        /// Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+        /// Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }

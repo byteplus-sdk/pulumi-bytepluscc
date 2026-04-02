@@ -15,76 +15,76 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter.Outputs
     public sealed class TransitRouterAttachment
     {
         /// <summary>
-        /// 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+        /// Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
         /// </summary>
         public readonly bool? AutoPublishRouteEnabled;
         /// <summary>
-        /// 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+        /// Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
         /// </summary>
         public readonly string? BusinessStatus;
         /// <summary>
-        /// 网络实例连接的创建时间。
+        /// Creation time of the network instance connection.
         /// </summary>
         public readonly string? CreationTime;
         /// <summary>
-        /// 网络实例连接的删除时间。
+        /// Deletion time of the network instance connection.
         /// </summary>
         public readonly string? DeletedTime;
         /// <summary>
-        /// 网络实例连接的描述信息。
+        /// Description of the network instance connection.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// 是否开启IPv6功能。true：是。false：否。
+        /// Whether IPv6 is enabled. true: yes. false: no
         /// </summary>
         public readonly bool? Ipv6Enabled;
         /// <summary>
-        /// 网络实例连接的欠费关停时间。
+        /// Shutdown time due to overdue payment for the network instance connection
         /// </summary>
         public readonly string? OverdueTime;
         /// <summary>
-        /// 网络实例的ID。
+        /// ID of the network instance
         /// </summary>
         public readonly string? ResourceId;
         /// <summary>
-        /// 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        /// Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
         /// </summary>
         public readonly string? ResourceType;
         /// <summary>
-        /// 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        /// Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
         /// </summary>
         public readonly string? Status;
         public readonly ImmutableArray<Outputs.TransitRouterAttachmentTag> Tags;
         /// <summary>
-        /// 网络实例连接的ID。
+        /// Network instance connection ID.
         /// </summary>
         public readonly string? TransitRouterAttachmentId;
         /// <summary>
-        /// 网络实例连接的名称。
+        /// Name of the network instance connection
         /// </summary>
         public readonly string? TransitRouterAttachmentName;
         /// <summary>
-        /// 跨地域连接关联的转发策略的ID。
+        /// ID of the forwarding policy associated with the cross-region connection
         /// </summary>
         public readonly string? TransitRouterForwardPolicyTableId;
         /// <summary>
-        /// 中转路由器实例的ID。
+        /// Transit router instance ID.
         /// </summary>
         public readonly string? TransitRouterId;
         /// <summary>
-        /// 网络实例连接关联转发的路由表ID。
+        /// Route table ID associated with the forwarding of the network instance connection.
         /// </summary>
         public readonly string? TransitRouterRouteTableId;
         /// <summary>
-        /// 跨地域连接关联的流标记策略的ID。
+        /// ID of the flow marking policy associated with the cross-region connection
         /// </summary>
         public readonly string? TransitRouterTrafficQosMarkingPolicyId;
         /// <summary>
-        /// 跨地域连接关联的流队列策略的ID。
+        /// ID of the flow queue policy associated with the cross-region connection
         /// </summary>
         public readonly string? TransitRouterTrafficQosQueuePolicyId;
         /// <summary>
-        /// 网络实例连接的最近操作时间。
+        /// Last operation time of the network instance connection
         /// </summary>
         public readonly string? UpdateTime;
 

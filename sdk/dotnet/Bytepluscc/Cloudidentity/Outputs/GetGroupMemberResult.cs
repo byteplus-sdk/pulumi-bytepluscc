@@ -15,39 +15,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity.Outputs
     public sealed class GetGroupMemberResult
     {
         /// <summary>
-        /// 用户描述信息
+        /// User Description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 用户显示名称。
+        /// User Display Name
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// 用户邮箱。
+        /// User Email
         /// </summary>
         public readonly string Email;
         /// <summary>
-        /// 用户身份类型。
+        /// User Identity Type
         /// </summary>
         public readonly string IdentityType;
         /// <summary>
-        /// 用户加入用户组的时间。
+        /// User Group Join Time
         /// </summary>
         public readonly string JoinTime;
         /// <summary>
-        /// 用户手机号。
+        /// User Phone Number
         /// </summary>
         public readonly string Phone;
         /// <summary>
-        /// 用户来源。
+        /// User Source
         /// </summary>
         public readonly string Source;
         /// <summary>
-        /// 用户id。
+        /// User ID
         /// </summary>
         public readonly string UserId;
         /// <summary>
-        /// 用户名。
+        /// Username
         /// </summary>
         public readonly string UserName;
 

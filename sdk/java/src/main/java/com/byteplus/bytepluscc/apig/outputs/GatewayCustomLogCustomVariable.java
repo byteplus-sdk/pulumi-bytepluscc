@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GatewayCustomLogCustomVariable {
     /**
-     * @return 字段别名。
+     * @return Field alias
      * 
      */
     private @Nullable String aliasesInLog;
     /**
-     * @return 请求头键。
+     * @return Request header key
      * 
      */
     private @Nullable String key;
 
     private GatewayCustomLogCustomVariable() {}
     /**
-     * @return 字段别名。
+     * @return Field alias
      * 
      */
     public Optional<String> aliasesInLog() {
         return Optional.ofNullable(this.aliasesInLog);
     }
     /**
-     * @return 请求头键。
+     * @return Request header key
      * 
      */
     public Optional<String> key() {

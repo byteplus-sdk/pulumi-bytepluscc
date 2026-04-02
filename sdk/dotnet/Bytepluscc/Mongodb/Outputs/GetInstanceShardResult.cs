@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb.Outputs
     public sealed class GetInstanceShardResult
     {
         /// <summary>
-        /// Shard 分片中各节点的信息列表。
+        /// List of node information in each Shard.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceShardNodeResult> Nodes;
         /// <summary>
-        /// Shard 节点的 ID。
+        /// Shard node ID.
         /// </summary>
         public readonly string ShardId;
 

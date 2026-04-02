@@ -16,42 +16,42 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceResult {
     /**
-     * @return 缓存型性能信息。
+     * @return Cache performance information
      * 
      */
     private GetInstanceCachePerformance cachePerformance;
     /**
-     * @return 文件系统容量。
+     * @return File system capacity
      * 
      */
     private GetInstanceCapacity capacity;
     /**
-     * @return 计费类型，取值 PayAsYouGo，表示按量计费。
+     * @return Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
      * 
      */
     private String chargeType;
     /**
-     * @return 创建时间
+     * @return Creation time
      * 
      */
     private String createTime;
     /**
-     * @return 描述信息。
+     * @return Description
      * 
      */
     private String description;
     /**
-     * @return 文件系统 ID。
+     * @return File system ID
      * 
      */
     private String fileSystemId;
     /**
-     * @return 文件系统名称。
+     * @return File system name
      * 
      */
     private String fileSystemName;
     /**
-     * @return 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+     * @return File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
      * 
      */
     private String fileSystemType;
@@ -61,108 +61,108 @@ public final class GetInstanceResult {
      */
     private String id;
     /**
-     * @return 所属项目，默认值为 default 项目。
+     * @return Project, default value is the Default project
      * 
      */
     private String projectName;
     /**
-     * @return 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+     * @return File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
      * 
      */
     private String protocolType;
     /**
-     * @return 快照数量
+     * @return Number of snapshots
      * 
      */
     private Integer snapshotCount;
     /**
-     * @return 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+     * @return Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
      * 
      */
     private String snapshotId;
     /**
-     * @return 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+     * @return File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
      * 
      */
     private String status;
     /**
-     * @return 存储类型，取值Standard，表示标准型。
+     * @return Storage type. Value: Standard, indicates standard type
      * 
      */
     private String storageType;
     /**
-     * @return 文件系统的标签信息
+     * @return File system tag information
      * 
      */
     private List<GetInstanceTag> tags;
     /**
-     * @return 更新时间
+     * @return Update time
      * 
      */
     private String updateTime;
     /**
-     * @return 可用区 ID。
+     * @return Availability Zone ID
      * 
      */
     private String zoneId;
     /**
-     * @return 可用区名称。
+     * @return Availability Zone name
      * 
      */
     private String zoneName;
 
     private GetInstanceResult() {}
     /**
-     * @return 缓存型性能信息。
+     * @return Cache performance information
      * 
      */
     public GetInstanceCachePerformance cachePerformance() {
         return this.cachePerformance;
     }
     /**
-     * @return 文件系统容量。
+     * @return File system capacity
      * 
      */
     public GetInstanceCapacity capacity() {
         return this.capacity;
     }
     /**
-     * @return 计费类型，取值 PayAsYouGo，表示按量计费。
+     * @return Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
      * 
      */
     public String chargeType() {
         return this.chargeType;
     }
     /**
-     * @return 创建时间
+     * @return Creation time
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return 描述信息。
+     * @return Description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 文件系统 ID。
+     * @return File system ID
      * 
      */
     public String fileSystemId() {
         return this.fileSystemId;
     }
     /**
-     * @return 文件系统名称。
+     * @return File system name
      * 
      */
     public String fileSystemName() {
         return this.fileSystemName;
     }
     /**
-     * @return 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+     * @return File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
      * 
      */
     public String fileSystemType() {
@@ -176,70 +176,70 @@ public final class GetInstanceResult {
         return this.id;
     }
     /**
-     * @return 所属项目，默认值为 default 项目。
+     * @return Project, default value is the Default project
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+     * @return File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
      * 
      */
     public String protocolType() {
         return this.protocolType;
     }
     /**
-     * @return 快照数量
+     * @return Number of snapshots
      * 
      */
     public Integer snapshotCount() {
         return this.snapshotCount;
     }
     /**
-     * @return 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+     * @return Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
      * 
      */
     public String snapshotId() {
         return this.snapshotId;
     }
     /**
-     * @return 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+     * @return File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 存储类型，取值Standard，表示标准型。
+     * @return Storage type. Value: Standard, indicates standard type
      * 
      */
     public String storageType() {
         return this.storageType;
     }
     /**
-     * @return 文件系统的标签信息
+     * @return File system tag information
      * 
      */
     public List<GetInstanceTag> tags() {
         return this.tags;
     }
     /**
-     * @return 更新时间
+     * @return Update time
      * 
      */
     public String updateTime() {
         return this.updateTime;
     }
     /**
-     * @return 可用区 ID。
+     * @return Availability Zone ID
      * 
      */
     public String zoneId() {
         return this.zoneId;
     }
     /**
-     * @return 可用区名称。
+     * @return Availability Zone name
      * 
      */
     public String zoneName() {

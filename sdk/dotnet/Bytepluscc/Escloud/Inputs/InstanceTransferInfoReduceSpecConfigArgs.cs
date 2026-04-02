@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Inputs
     public sealed class InstanceTransferInfoReduceSpecConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 冷节点数量。
+        /// Number of cold nodes.
         /// </summary>
         [Input("coldNodeNum")]
         public Input<int>? ColdNodeNum { get; set; }
 
         /// <summary>
-        /// 数据节点数量。
+        /// Number of data nodes
         /// </summary>
         [Input("dataNodeNum")]
         public Input<int>? DataNodeNum { get; set; }
 
         /// <summary>
-        /// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+        /// Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
         /// </summary>
         [Input("enablePureMaster")]
         public Input<bool>? EnablePureMaster { get; set; }
 
         /// <summary>
-        /// Master 节点数量。
+        /// Number of master nodes.
         /// </summary>
         [Input("masterNodeNum")]
         public Input<int>? MasterNodeNum { get; set; }
 
         /// <summary>
-        /// 温节点数量。
+        /// Number of warm nodes
         /// </summary>
         [Input("warmNodeNum")]
         public Input<int>? WarmNodeNum { get; set; }

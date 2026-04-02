@@ -31,35 +31,35 @@ export interface GetInstanceArgs {
  */
 export interface GetInstanceResult {
     /**
-     * 缓存型性能信息。
+     * Cache performance information
      */
     readonly cachePerformance: outputs.filenas.GetInstanceCachePerformance;
     /**
-     * 文件系统容量。
+     * File system capacity
      */
     readonly capacity: outputs.filenas.GetInstanceCapacity;
     /**
-     * 计费类型，取值 PayAsYouGo，表示按量计费。
+     * Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
      */
     readonly chargeType: string;
     /**
-     * 创建时间
+     * Creation time
      */
     readonly createTime: string;
     /**
-     * 描述信息。
+     * Description
      */
     readonly description: string;
     /**
-     * 文件系统 ID。
+     * File system ID
      */
     readonly fileSystemId: string;
     /**
-     * 文件系统名称。
+     * File system name
      */
     readonly fileSystemName: string;
     /**
-     * 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+     * File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
      */
     readonly fileSystemType: string;
     /**
@@ -67,43 +67,43 @@ export interface GetInstanceResult {
      */
     readonly id: string;
     /**
-     * 所属项目，默认值为 default 项目。
+     * Project, default value is the Default project
      */
     readonly projectName: string;
     /**
-     * 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+     * File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
      */
     readonly protocolType: string;
     /**
-     * 快照数量
+     * Number of snapshots
      */
     readonly snapshotCount: number;
     /**
-     * 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+     * Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
      */
     readonly snapshotId: string;
     /**
-     * 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+     * File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
      */
     readonly status: string;
     /**
-     * 存储类型，取值Standard，表示标准型。
+     * Storage type. Value: Standard, indicates standard type
      */
     readonly storageType: string;
     /**
-     * 文件系统的标签信息
+     * File system tag information
      */
     readonly tags: outputs.filenas.GetInstanceTag[];
     /**
-     * 更新时间
+     * Update time
      */
     readonly updateTime: string;
     /**
-     * 可用区 ID。
+     * Availability Zone ID
      */
     readonly zoneId: string;
     /**
-     * 可用区名称。
+     * Availability Zone name
      */
     readonly zoneName: string;
 }
